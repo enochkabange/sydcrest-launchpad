@@ -16,6 +16,8 @@ import {
   Skeleton, SkeletonText, SkeletonCard, LaunchLoader, Spinner, PageLoader,
   Tabs, TabPanel,
 } from "./components/ui/index.js";
+import StatTile from "./components/dashboard/StatTile.jsx";
+import LessonCard from "./components/dashboard/LessonCard.jsx";
 
 const NAV = [
   { id: "learn", label: "Learn", icon: "lesson" },
@@ -373,6 +375,28 @@ export default function Showcase() {
               <Card variant="sunken"><CardBody>Sunken</CardBody></Card>
               <SkeletonText lines={3} />
               <Skeleton className="h-11 w-40" />
+            </div>
+          </Row>
+
+          <Row title="Dashboard composites (derived from the foundation)">
+            <div className="grid w-full gap-4 sm:grid-cols-3">
+              <StatTile icon="streak" value="12" label="Day streak" well="launch" trend="+3 this week" />
+              <StatTile icon="progress" value="68%" label="Cohort progress" well="depth" />
+              <StatTile icon="certificate" value="2" label="Certificates earned" well="success" />
+            </div>
+            <div className="grid w-full gap-4 sm:grid-cols-2 mt-4">
+              <LessonCard
+                week={5}
+                title="Variables and the mutability trap"
+                summary="Why `let` beats `var`, and the bug a shared reference causes."
+                percent={40}
+              />
+              <LessonCard
+                week={3}
+                title="HTML & CSS fundamentals"
+                summary="Semantic markup, the box model, and flex basics."
+                percent={100}
+              />
             </div>
           </Row>
 

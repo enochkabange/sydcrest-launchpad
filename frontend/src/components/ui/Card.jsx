@@ -24,7 +24,7 @@ export default function Card({
         "rounded-lg",
         variants[variant] ?? variants.default,
         interactive
-          ? "transition-shadow duration-150 hover:shadow-md cursor-pointer"
+          ? "transition-[box-shadow,transform] duration-150 hover:shadow-lg hover:-translate-y-0.5 cursor-pointer"
           : "",
         className,
       ].filter(Boolean).join(" ")}
