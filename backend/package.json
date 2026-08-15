@@ -2,7 +2,7 @@
   "name": "sydcrest-backend",
   "private": true,
   "version": "0.1.0",
-  "engines": { "node": ">=20" },
+  "engines": { "node": ">=22" },
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js"
