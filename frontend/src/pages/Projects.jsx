@@ -1,0 +1,129 @@
+/**
+ * Projects — wired to GET/POST /api/projects.
+ *
+ * Mentee-facing only for now: submit a project, see its review status.
+ * The mentor review UI (POST /:id/review) doesn't have a home yet — no
+ * mentor-facing nav destination exists in App.jsx's NAV, so building that
+ * screen now would be UI with nowhere real to link from. Flagging rather
+ * than guessing at a mentor dashboard's shape.
+ */
+import { useEffect, useState } from "react";
+import { api, ApiError } from "../lib/api.js";
+import { Page, PageSection, Card, CardHeader, CardTitle, CardBody, CardFooter, Badge, Button, Input, Textarea, Modal, EmptyState, Alert, PageLoader } from "../components/ui/index.js";
+
+const STATUS_TONE = {
+  draft: "neutral",
+  submitted: "info",
+  ai_reviewed: "info",
+  mentor_reviewed: "success",
+  revision_requested: "warning",
+  approved: "success",
+};
+
+export default function Projects() {
+  const [projects, setProjects] = useState(null);
+  const [error, setError] = useState("");
+  const [modalOpen, setModalOpen] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [form, setForm] = useState({ week_number: "", title: "", description: "", submission_url: "" });
+
+  const load = () => api.get("/api/projects").then(({ projects }) => setProjects(projects));
+
+  useEffect(() => {
+    load().catch((err) => setError(err instanceof ApiError ? err.message : "Couldn't load your projects."));
+  }, []);
+
+  const set = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setError("");
+    try {
+      await api.post("/api/projects", { ...form, week_number: Number(form.week_number) });
+      setModalOpen(false);
+      setForm({ week_number: "", title: "", description: "", submission_url: "" });
+      await load();
+    } catch (err) {
+      setError(err instanceof ApiError ? err.message : "Couldn't submit this project.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  if (projects === null && !error) return <PageLoader message="Loading your projects…" />;
+
+  return (
+    <Page
+      title="Projects"
+      description="Everything you build during the cohort."
+      actions={<Button icon="add" onClick={() => setModalOpen(true)}>Submit a project</Button>}
+    >
+      {error && <Alert tone="danger" className="mb-4" onDismiss={() => setError("")}>{error}</Alert>}
+
+      {projects?.length === 0 ? (
+        <EmptyState
+          icon="project"
+          title="No projects yet"
+          description="Submit your first project whenever it's ready — it doesn't have to wait for a specific week to open."
+          action="Submit a project"
+          onAction={() => setModalOpen(true)}
+        />
+      ) : (
+        <PageSection>
+          <div className="flex flex-col gap-4">
+            {projects?.map((p) => (
+              <Card key={p.id}>
+                <CardHeader>
+                  <div className="flex items-center justify-between gap-3">
+                    <CardTitle>Week {p.week_number} — {p.title}</CardTitle>
+                    <Badge tone={STATUS_TONE[p.status] ?? "neutral"}>{p.status.replace(/_/g, " ")}</Badge>
+                  </div>
+                </CardHeader>
+                <CardBody className="flex flex-col gap-2">
+                  {p.description && <p className="text-sm text-content-2">{p.description}</p>}
+                  {p.submission_url && (
+                    <a href={p.submission_url} target="_blank" rel="noreferrer" className="text-sm font-medium text-content-link">
+                      {p.submission_url}
+                    </a>
+                  )}
+                  {p.mentor_feedback && (
+                    <div className="rounded-md bg-surface-sunken border border-line p-3 text-sm">
+                      <span className="font-semibold text-content">Mentor feedback: </span>
+                      <span className="text-content-2">{p.mentor_feedback}</span>
+                      {p.final_score != null && <span className="ml-2 font-semibold text-content">({p.final_score}/100)</span>}
+                    </div>
+                  )}
+                </CardBody>
+                <CardFooter>
+                  <span className="text-sm text-content-2">
+                    Submitted {new Date(p.submitted_at).toLocaleDateString()}
+                  </span>
+                </CardFooter>
+              </Card>
+            ))}
+          </div>
+        </PageSection>
+      )}
+
+      <Modal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        title="Submit a project"
+        footer={
+          <>
+            <Button variant="secondary" onClick={() => setModalOpen(false)}>Cancel</Button>
+            <Button form="submit-project-form" type="submit" loading={submitting}>Submit</Button>
+          </>
+        }
+      >
+        <form id="submit-project-form" onSubmit={handleSubmit} className="flex flex-col gap-4">
+          <Input label="Week number" type="number" min="1" required value={form.week_number} onChange={set("week_number")} />
+          <Input label="Title" required value={form.title} onChange={set("title")} />
+          <Textarea label="Description" value={form.description} onChange={set("description")} />
+          <Input label="Link to your work" type="url" placeholder="https://github.com/…" value={form.submission_url} onChange={set("submission_url")} />
+        </form>
+      </Modal>
+    </Page>
+  );
+}

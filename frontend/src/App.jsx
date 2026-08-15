@@ -5,6 +5,7 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Learn from "./pages/Learn.jsx";
 import PathDetail from "./pages/PathDetail.jsx";
+import Projects from "./pages/Projects.jsx";
 import ComingSoon from "./pages/ComingSoon.jsx";
 import Showcase from "./Showcase.jsx";
 
@@ -84,18 +85,7 @@ export default function App() {
               </RequireAuth>
             }
           />
-          <Route
-            path="/projects"
-            element={
-              <RequireAuth>
-                <ComingSoon
-                  title="Projects"
-                  icon="project"
-                  description="Project submissions aren't wired up yet — the backend routes are still scaffolded."
-                />
-              </RequireAuth>
-            }
-          />
+          <Route path="/projects" element={<RequireAuth><Projects /></RequireAuth>} />
 
           {/* Design-system build harness — see docs/design-system.md. Not a
               product screen; not linked from the real nav. */}
