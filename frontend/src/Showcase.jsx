@@ -18,6 +18,7 @@ import {
 } from "./components/ui/index.js";
 import StatTile from "./components/dashboard/StatTile.jsx";
 import LessonCard from "./components/dashboard/LessonCard.jsx";
+import MentorCard from "./components/dashboard/MentorCard.jsx";
 
 const NAV = [
   { id: "learn", label: "Learn", icon: "lesson" },
@@ -161,15 +162,23 @@ export default function Showcase() {
           description="You're four weeks in. Week 5 unlocks on Monday."
           actions={<Button icon="start">Continue Week 4</Button>}
         >
+          <PageSection title="Your progress">
+            <div className="grid gap-4 sm:grid-cols-3">
+              <StatTile icon="streak" value="12" label="Day streak" well="launch" trend="+3 this week" />
+              <StatTile icon="progress" value="4/12" label="Weeks complete" well="depth" />
+              <StatTile icon="certificate" value="3" label="Projects approved" well="success" />
+            </div>
+          </PageSection>
+
           <PageSection title="This week">
             <div className="grid gap-4 sm:grid-cols-2">
-              <Card variant="accent" interactive>
-                <CardHeader><CardTitle>Week 4 — Version control</CardTitle></CardHeader>
-                <CardBody>
-                  <Progress value={72} label="Your progress" />
-                </CardBody>
-                <CardFooter>Closes Friday, 23:59 GMT</CardFooter>
-              </Card>
+              <LessonCard
+                week={4}
+                title="Version control"
+                summary="Git basics: commit, branch, and resolving merge conflicts."
+                percent={72}
+                onContinue={() => setView("lesson")}
+              />
               <Card interactive>
                 <CardHeader><CardTitle>Mentor session</CardTitle></CardHeader>
                 <CardBody>
@@ -222,9 +231,30 @@ export default function Showcase() {
 
       {view === "mentors" && (
         <Page title="Mentors" description="Book a session or message your assigned mentor.">
-          <div className="flex flex-col gap-3">
-            <SkeletonCard />
-            <SkeletonCard />
+          <div className="grid gap-4 sm:grid-cols-2">
+            <MentorCard
+              name="Ama Boateng"
+              headline="Senior Frontend Engineer @ Amalitech | React & career switches"
+              specialties={["React", "Career switch", "Portfolio review"]}
+              rating={4.9}
+              reviewCount={21}
+              menteesGuided={14}
+            />
+            <MentorCard
+              name="Kwame Owusu"
+              headline="Backend Engineer @ Stitch | Node.js, systems design"
+              specialties={["Node.js", "System design", "Interview prep"]}
+              rating={5.0}
+              reviewCount={9}
+              menteesGuided={6}
+            />
+            <MentorCard
+              name="Naa Adjeley"
+              headline="Product Designer, ex-Andela | Design systems, Figma"
+              specialties={["Design systems", "Figma", "UX writing"]}
+              reviewCount={0}
+              menteesGuided={0}
+            />
           </div>
         </Page>
       )}

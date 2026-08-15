@@ -16,7 +16,7 @@ import {
   CircleCheck, CircleAlert, TriangleAlert, Info, CircleX, Check,
   ChevronRight, ChevronDown, ChevronLeft, X, Menu, Search, Settings,
   LogOut, Download, Upload, ExternalLink, Plus, Trash2, Pencil, Eye,
-  FileText, CircleHelp, Sun, Moon, Paperclip,
+  FileText, CircleHelp, Sun, Moon, Paperclip, Star,
 } from "lucide-react";
 
 /* Domain vocabulary first, interface vocabulary second. */
@@ -30,6 +30,7 @@ const registry = {
   goal: Target,
   progress: TrendingUp,
   streak: Flame,
+  rating: Star,
 
   // People
   mentor: UserRound,
