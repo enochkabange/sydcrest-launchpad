@@ -3,7 +3,7 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 const { body, validationResult } = require('express-validator');
-const { supabase } = require('../config/supabase');
+const { supabase, supabaseAnon } = require('../config/supabase');
 const { auth } = require('../middleware/auth');
 const { notifyWelcome } = require('../services/whatsapp');
 
@@ -64,7 +64,12 @@ router.post('/login', [
   if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
 
   try {
-    const { data, error } = await supabase.auth.signInWithPassword({
+    /* supabaseAnon, never the service-role `supabase` singleton: signing in
+       mutates a client's in-memory session, and that singleton is shared
+       across every route in the process — one login would silently switch
+       every other request server-wide onto this user's RLS-restricted
+       context until the next login overwrote it again. */
+    const { data, error } = await supabaseAnon.auth.signInWithPassword({
       email: req.body.email, password: req.body.password,
     });
     if (error) return res.status(401).json({ error: 'Invalid email or password' });
@@ -108,8 +113,9 @@ router.post('/change-password', auth, [
   if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
 
   try {
-    // Verify current password by attempting sign-in
-    const { error } = await supabase.auth.signInWithPassword({
+    // Verify current password by attempting sign-in — supabaseAnon, see the
+    // note in /login on why this must never be the service-role singleton.
+    const { error } = await supabaseAnon.auth.signInWithPassword({
       email: req.user.email, password: req.body.current_password,
     });
     if (error) return res.status(401).json({ error: 'Current password incorrect' });
@@ -132,7 +138,7 @@ router.post('/change-password', auth, [
 
 // POST /api/auth/forgot-password
 router.post('/forgot-password', [body('email').isEmail()], async (req, res) => {
-  const { data } = await supabase.auth.resetPasswordForEmail(req.body.email, {
+  const { data } = await supabaseAnon.auth.resetPasswordForEmail(req.body.email, {
     redirectTo: `${process.env.CLIENT_URL}/reset-password`,
   });
   // Always return success to prevent email enumeration

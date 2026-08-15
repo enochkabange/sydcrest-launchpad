@@ -5,6 +5,7 @@ const helmet = require('helmet');
 const morgan = require('morgan');
 const rateLimit = require('express-rate-limit');
 const { v4: uuidv4 } = require('uuid');
+const { supabase } = require('./config/supabase');
 
 const app = express();
 
@@ -110,7 +111,6 @@ app.use('/api/sessions',     require('./routes/sessions'));
 
 // ─── HEALTH / READINESS ───────────────────────────────────────
 app.get('/api/health', async (req, res) => {
-  const { supabase } = require('./config/supabase');
   let db = 'ok';
   try {
     await supabase.from('profiles').select('id').limit(1);

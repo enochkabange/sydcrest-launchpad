@@ -37,9 +37,23 @@ create table profiles (
 );
 alter table profiles enable row level security;
 create policy "Own profile" on profiles for all using (auth.uid() = user_id);
-create policy "Admins see all" on profiles for select using (
-  exists (select 1 from profiles p where p.user_id=auth.uid() and p.role in ('platform_admin','super_admin'))
-);
+
+/* SECURITY DEFINER is load-bearing, not decoration: this function is called
+   from a policy ON profiles itself. A plain SQL function here would run
+   under the CALLING role, re-triggering RLS on its own `from profiles`
+   query — which re-evaluates this same policy — infinite recursion
+   ("infinite recursion detected in policy for relation profiles"). Running
+   as the function owner bypasses RLS for this one internal lookup, which
+   is exactly the narrow, read-only escape hatch this needs. Redefined
+   (not dropped) in policies.sql, where every other table's policies use
+   it too — keep both definitions identical. */
+create or replace function auth_is_admin() returns boolean as $$
+  select exists (
+    select 1 from profiles where user_id = auth.uid() and role in ('platform_admin','super_admin')
+  );
+$$ language sql stable security definer set search_path = public;
+
+create policy "Admins see all" on profiles for select using (auth_is_admin());
 
 -- ─── COHORTS ─────────────────────────────────────────────────
 create table cohorts (
