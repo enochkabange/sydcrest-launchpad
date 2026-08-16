@@ -9,7 +9,7 @@
  */
 import { useEffect, useState } from "react";
 import { api, ApiError } from "../lib/api.js";
-import { Page, PageSection, Card, CardHeader, CardTitle, CardBody, CardFooter, Badge, Button, Input, Textarea, Modal, EmptyState, Alert, PageLoader } from "../components/ui/index.js";
+import { Page, PageSection, Card, CardHeader, CardTitle, CardBody, CardFooter, Badge, Button, Input, Textarea, FileUpload, Modal, EmptyState, Alert, PageLoader, Icon } from "../components/ui/index.js";
 
 const STATUS_TONE = {
   draft: "neutral",
@@ -26,6 +26,7 @@ export default function Projects() {
   const [modalOpen, setModalOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ week_number: "", title: "", description: "", submission_url: "" });
+  const [files, setFiles] = useState([]);
   const [assessingId, setAssessingId] = useState(null);
   const [aiUnconfigured, setAiUnconfigured] = useState(false);
 
@@ -56,9 +57,19 @@ export default function Projects() {
     setSubmitting(true);
     setError("");
     try {
-      await api.post("/api/projects", { ...form, week_number: Number(form.week_number) });
+      const { project } = await api.post("/api/projects", { ...form, week_number: Number(form.week_number) });
+      if (files[0]) {
+        const body = new FormData();
+        body.append("file", files[0]);
+        // The submission itself is what matters — a failed attachment upload
+        // shouldn't roll back an otherwise-successful submission, just surface.
+        await api.postForm(`/api/projects/${project.id}/upload`, body).catch((err) => {
+          setError(err instanceof ApiError ? `Submitted, but the file didn't upload: ${err.message}` : "Submitted, but the file didn't upload.");
+        });
+      }
       setModalOpen(false);
       setForm({ week_number: "", title: "", description: "", submission_url: "" });
+      setFiles([]);
       await load();
     } catch (err) {
       setError(err instanceof ApiError ? err.message : "Couldn't submit this project.");
@@ -101,6 +112,11 @@ export default function Projects() {
                   {p.submission_url && (
                     <a href={p.submission_url} target="_blank" rel="noreferrer" className="text-sm font-medium text-content-link">
                       {p.submission_url}
+                    </a>
+                  )}
+                  {p.file_url && (
+                    <a href={p.file_url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-sm font-medium text-content-link">
+                      <Icon name="attachment" size="sm" /> Attached file
                     </a>
                   )}
                   {p.mentor_feedback && (
@@ -159,6 +175,12 @@ export default function Projects() {
           <Input label="Title" required value={form.title} onChange={set("title")} />
           <Textarea label="Description" value={form.description} onChange={set("description")} />
           <Input label="Link to your work" type="url" placeholder="https://github.com/…" value={form.submission_url} onChange={set("submission_url")} />
+          <FileUpload
+            label="Attach a file (optional)"
+            hint="A screenshot, zip, or PDF — whatever a link alone doesn't cover."
+            value={files}
+            onChange={setFiles}
+          />
         </form>
       </Modal>
     </Page>
