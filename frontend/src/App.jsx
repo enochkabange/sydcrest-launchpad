@@ -6,13 +6,15 @@ import Register from "./pages/Register.jsx";
 import Learn from "./pages/Learn.jsx";
 import PathDetail from "./pages/PathDetail.jsx";
 import Projects from "./pages/Projects.jsx";
-import ComingSoon from "./pages/ComingSoon.jsx";
+import Mentors from "./pages/Mentors.jsx";
+import Community from "./pages/Community.jsx";
 import Showcase from "./Showcase.jsx";
 
 const NAV = [
   { id: "learn", label: "Learn", icon: "lesson", path: "/" },
   { id: "mentors", label: "Mentors", icon: "mentor", path: "/mentors" },
   { id: "projects", label: "Projects", icon: "project", path: "/projects" },
+  { id: "community", label: "Community", icon: "community", path: "/community" },
 ];
 
 /* AppShell's nav is controlled and router-unaware by design (see its own
@@ -73,19 +75,9 @@ export default function App() {
 
           <Route path="/" element={<RequireAuth><Learn /></RequireAuth>} />
           <Route path="/learn/:pathId" element={<RequireAuth><PathDetailRoute /></RequireAuth>} />
-          <Route
-            path="/mentors"
-            element={
-              <RequireAuth>
-                <ComingSoon
-                  title="Mentors"
-                  icon="mentor"
-                  description="The mentor marketplace isn't wired up yet — the backend routes are still scaffolded."
-                />
-              </RequireAuth>
-            }
-          />
+          <Route path="/mentors" element={<RequireAuth><Mentors /></RequireAuth>} />
           <Route path="/projects" element={<RequireAuth><Projects /></RequireAuth>} />
+          <Route path="/community" element={<RequireAuth><Community /></RequireAuth>} />
 
           {/* Design-system build harness — see docs/design-system.md. Not a
               product screen; not linked from the real nav. */}

@@ -16,7 +16,7 @@ import {
   CircleCheck, CircleAlert, TriangleAlert, Info, CircleX, Check,
   ChevronRight, ChevronDown, ChevronLeft, X, Menu, Search, Settings,
   LogOut, Download, Upload, ExternalLink, Plus, Trash2, Pencil, Eye,
-  FileText, CircleHelp, Sun, Moon, Paperclip, Star,
+  FileText, CircleHelp, Sun, Moon, Paperclip, Star, Heart,
 } from "lucide-react";
 
 /* Domain vocabulary first, interface vocabulary second. */
@@ -36,6 +36,7 @@ const registry = {
   mentor: UserRound,
   cohort: Users,
   community: MessagesSquare,
+  like: Heart,
   session: CalendarDays,
 
   // Opportunities + AI

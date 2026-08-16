@@ -33,12 +33,18 @@ router.get('/posts', async (req, res) => {
 
   const { data: posts, error } = await supabase
     .from('posts')
-    .select('*, profiles!author_id(full_name, avatar_url)')
+    .select('*, profiles!author_id(full_name, avatar_url), post_replies(*, profiles!author_id(full_name, avatar_url))')
     .eq('cohort_id', cohort_id)
     .eq('is_deleted', false)
     .order('is_pinned', { ascending: false })
     .order('created_at', { ascending: false });
   if (error) return res.status(500).json({ error: error.message });
+
+  posts.forEach((p) => {
+    p.post_replies = (p.post_replies || [])
+      .filter((r) => !r.is_deleted)
+      .sort((a, b) => new Date(a.created_at) - new Date(b.created_at));
+  });
 
   // Which of these the caller has liked, so the client can render filled
   // vs outline without a second round trip per post.
