@@ -64,11 +64,18 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // ─── GLOBAL RATE LIMITS ───────────────────────────────────────
+// The integration suite (test/) makes real register/login calls against
+// this same app, from one IP, well past any of these limits — that's a
+// property of testing against the real API, not something to lower the
+// limits for. Skipping in test env is the standard escape hatch.
+const skipInTest = () => process.env.NODE_ENV === 'test';
+
 const globalLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: process.env.NODE_ENV === 'production' ? 200 : 1000,
   standardHeaders: true,
   legacyHeaders: false,
+  skip: skipInTest,
   /* No custom keyGenerator. The original code used `req => req.ip`, which
      keys on the raw address: an IPv6 user holds a whole /64 and can rotate
      through billions of addresses to bypass the limit entirely. The library's
@@ -79,6 +86,7 @@ const globalLimiter = rateLimit({
 const authLimiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 10,
+  skip: skipInTest,
   message: { error: 'Too many auth attempts. Please wait 15 minutes.' },
   skipSuccessfulRequests: false,
 });
@@ -86,6 +94,7 @@ const authLimiter = rateLimit({
 const aiLimiter = rateLimit({
   windowMs: 60 * 1000,
   max: 15,
+  skip: skipInTest,
   message: { error: 'AI rate limit reached. Please wait a moment.' },
 });
 
@@ -142,20 +151,25 @@ app.use((err, req, res, next) => {
 });
 
 // ─── GRACEFUL SHUTDOWN ────────────────────────────────────────
-const server = app.listen(process.env.PORT || 5000, () => {
-  console.log(`\n🚀  SydCrest API`);
-  console.log(`    Port:     ${process.env.PORT || 5000}`);
-  console.log(`    Env:      ${process.env.NODE_ENV}`);
-  console.log(`    Supabase: ${process.env.SUPABASE_URL ? '✓' : '✗ MISSING'}`);
-  console.log(`    Claude:   ${process.env.ANTHROPIC_API_KEY ? '✓' : '✗ MISSING'}`);
-  console.log(`    MoMo:     ${process.env.HUBTEL_CLIENT_ID ? '✓' : '✗ not configured'}\n`);
-});
+// Guarded so `require('./index')` from the test suite (supertest manages
+// its own ephemeral listener against the exported `app`) doesn't also bind
+// the real port and register a second set of signal handlers.
+if (require.main === module) {
+  const server = app.listen(process.env.PORT || 5000, () => {
+    console.log(`\n🚀  SydCrest API`);
+    console.log(`    Port:     ${process.env.PORT || 5000}`);
+    console.log(`    Env:      ${process.env.NODE_ENV}`);
+    console.log(`    Supabase: ${process.env.SUPABASE_URL ? '✓' : '✗ MISSING'}`);
+    console.log(`    Claude:   ${process.env.ANTHROPIC_API_KEY ? '✓' : '✗ MISSING'}`);
+    console.log(`    MoMo:     ${process.env.HUBTEL_CLIENT_ID ? '✓' : '✗ not configured'}\n`);
+  });
 
-process.on('SIGTERM', () => {
-  console.log('SIGTERM received. Draining connections...');
-  server.close(() => { console.log('Server closed.'); process.exit(0); });
-});
-process.on('SIGINT', () => server.close(() => process.exit(0)));
+  process.on('SIGTERM', () => {
+    console.log('SIGTERM received. Draining connections...');
+    server.close(() => { console.log('Server closed.'); process.exit(0); });
+  });
+  process.on('SIGINT', () => server.close(() => process.exit(0)));
+}
 process.on('unhandledRejection', (reason) => console.error('Unhandled rejection:', reason));
 process.on('uncaughtException', (err) => { console.error('Uncaught exception:', err); process.exit(1); });
 
