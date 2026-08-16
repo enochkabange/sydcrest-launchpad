@@ -8,16 +8,23 @@ import PathDetail from "./pages/PathDetail.jsx";
 import Projects from "./pages/Projects.jsx";
 import Mentors from "./pages/Mentors.jsx";
 import Community from "./pages/Community.jsx";
+import MentorDashboard from "./pages/MentorDashboard.jsx";
 import Admin from "./pages/admin/Admin.jsx";
 import Showcase from "./Showcase.jsx";
 
-const BASE_NAV = [
-  { id: "learn", label: "Learn", icon: "lesson", path: "/" },
-  { id: "mentors", label: "Mentors", icon: "mentor", path: "/mentors" },
-  { id: "projects", label: "Projects", icon: "project", path: "/projects" },
-  { id: "community", label: "Community", icon: "community", path: "/community" },
-];
 const ADMIN_ROLES = ["cohort_admin", "platform_admin", "super_admin"];
+// Anyone who isn't a mentee lands on MentorDashboard at "/" — see HomeRoute.
+const MENTOR_SIDE_ROLES = ["mentor", "cohort_admin", "platform_admin", "super_admin"];
+
+function navFor(role) {
+  const base = [
+    { id: "learn", label: MENTOR_SIDE_ROLES.includes(role) ? "Dashboard" : "Learn", icon: "lesson", path: "/" },
+    { id: "mentors", label: "Mentors", icon: "mentor", path: "/mentors" },
+    { id: "projects", label: "Projects", icon: "project", path: "/projects" },
+    { id: "community", label: "Community", icon: "community", path: "/community" },
+  ];
+  return ADMIN_ROLES.includes(role) ? [...base, { id: "admin", label: "Admin", icon: "settings", path: "/admin" }] : base;
+}
 
 /* AppShell's nav is controlled and router-unaware by design (see its own
    header comment) — this is the adapter, not a reason to touch AppShell. */
@@ -26,9 +33,7 @@ function AuthedLayout({ children }) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const nav = ADMIN_ROLES.includes(profile?.role)
-    ? [...BASE_NAV, { id: "admin", label: "Admin", icon: "settings", path: "/admin" }]
-    : BASE_NAV;
+  const nav = navFor(profile?.role);
 
   const current = nav.find((n) => n.path === "/" ? location.pathname === "/" : location.pathname.startsWith(n.path))?.id
     ?? (location.pathname.startsWith("/learn") ? "learn" : undefined);
@@ -68,6 +73,11 @@ function RequireAdmin({ children }) {
   return children;
 }
 
+function HomeRoute() {
+  const { profile } = useAuth();
+  return MENTOR_SIDE_ROLES.includes(profile?.role) ? <MentorDashboard /> : <Learn />;
+}
+
 function RedirectIfAuthed({ children }) {
   const { status } = useAuth();
   if (status === "loading") return <PageLoader message="Loading…" />;
@@ -88,7 +98,7 @@ export default function App() {
           <Route path="/login" element={<RedirectIfAuthed><Login /></RedirectIfAuthed>} />
           <Route path="/register" element={<RedirectIfAuthed><Register /></RedirectIfAuthed>} />
 
-          <Route path="/" element={<RequireAuth><Learn /></RequireAuth>} />
+          <Route path="/" element={<RequireAuth><HomeRoute /></RequireAuth>} />
           <Route path="/learn/:pathId" element={<RequireAuth><PathDetailRoute /></RequireAuth>} />
           <Route path="/mentors" element={<RequireAuth><Mentors /></RequireAuth>} />
           <Route path="/projects" element={<RequireAuth><Projects /></RequireAuth>} />
