@@ -59,3 +59,73 @@ jobs:
       - run: npm run build
         env:
           VITE_API_URL: http://localhost:3001
+
+  # Railway and Vercel deploy on push to main via their own git integrations
+  # (Railway: project connected in its dashboard; Vercel: its GitHub App) —
+  # neither of those triggers is this workflow's job. What's missing without
+  # these two is visibility: a merge could silently fail to deploy and the
+  # only sign would be someone noticing the site is stale. Both poll for the
+  # deployment tied to *this exact commit* and fail the check if it errors
+  # or doesn't show up in time, so a bad deploy shows up as a red X on the
+  # commit instead of a surprise later.
+  railway-deploy-status:
+    name: Railway deploy status
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    steps:
+      - run: npm install -g @railway/cli
+      - name: Wait for the Railway deployment for this commit
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: |
+          for i in $(seq 1 30); do
+            DEPLOY=$(railway status --json | jq -c --arg svc "sydcrest-backend" \
+              '.environments.edges[0].node.serviceInstances.edges[].node | select(.serviceName==$svc) | .latestDeployment')
+            SHA=$(echo "$DEPLOY" | jq -r '.meta.commitHash // empty')
+            STATUS=$(echo "$DEPLOY" | jq -r '.status // empty')
+
+            if [ "$SHA" = "$GITHUB_SHA" ]; then
+              echo "Railway deployment for $GITHUB_SHA: $STATUS"
+              case "$STATUS" in
+                SUCCESS) exit 0 ;;
+                FAILED|CRASHED|REMOVED) echo "::error::Railway deployment failed: $STATUS"; exit 1 ;;
+              esac
+            else
+              echo "Latest Railway deployment ($SHA) doesn't match this commit yet — waiting..."
+            fi
+            sleep 10
+          done
+          echo "::error::Timed out waiting for Railway to deploy $GITHUB_SHA"
+          exit 1
+
+  vercel-deploy-status:
+    name: Vercel deploy status
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+    env:
+      VERCEL_PROJECT_ID: prj_QHcxXMnP5UcABWQLryi8T0aS56co
+      VERCEL_TEAM_ID: team_c3xMCYVFW4OzMKzayGvmP1qO
+    steps:
+      - name: Wait for the Vercel deployment for this commit
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+        run: |
+          for i in $(seq 1 30); do
+            DEPLOY=$(curl -s "https://api.vercel.com/v6/deployments?projectId=$VERCEL_PROJECT_ID&teamId=$VERCEL_TEAM_ID&target=production&limit=10" \
+              -H "Authorization: Bearer $VERCEL_TOKEN" \
+              | jq -c --arg sha "$GITHUB_SHA" '.deployments[] | select(.meta.githubCommitSha==$sha)')
+
+            if [ -n "$DEPLOY" ]; then
+              STATE=$(echo "$DEPLOY" | jq -r '.readyState')
+              echo "Vercel deployment for $GITHUB_SHA: $STATE"
+              case "$STATE" in
+                READY) exit 0 ;;
+                ERROR|CANCELED) echo "::error::Vercel deployment failed: $STATE"; exit 1 ;;
+              esac
+            else
+              echo "No Vercel deployment for this commit yet — waiting..."
+            fi
+            sleep 10
+          done
+          echo "::error::Timed out waiting for Vercel to deploy $GITHUB_SHA"
+          exit 1
