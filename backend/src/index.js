@@ -104,9 +104,13 @@ app.use('/api/auth/register', authLimiter);
 app.use('/api/learning/paths/generate', aiLimiter);
 app.use('/api/learning/chat', aiLimiter);
 app.use('/api/learning/quiz/generate', aiLimiter);
-app.use('/api/opportunities/research', aiLimiter);
-app.use('/api/opportunities/roadmap', aiLimiter);
-app.use('/api/opportunities/assistant', aiLimiter);
+/* The routes are /:id/research etc — these three never matched anything
+   before the :id segment was added, so the per-minute limiter silently
+   never applied to opportunities' AI routes. Caught while adding the
+   per-user daily cap in services/claude.js, which these now also use. */
+app.use('/api/opportunities/:id/research', aiLimiter);
+app.use('/api/opportunities/:id/roadmap', aiLimiter);
+app.use('/api/opportunities/:id/assistant', aiLimiter);
 app.use('/api/projects/:id/ai-assess', aiLimiter);
 
 // ─── ROUTES ───────────────────────────────────────────────────

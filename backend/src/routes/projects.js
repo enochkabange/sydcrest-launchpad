@@ -13,8 +13,8 @@ const router = express.Router();
 const multer = require('multer');
 const { randomUUID } = require('crypto');
 const { supabase } = require('../config/supabase');
-const { auth, requireLevel } = require('../middleware/auth');
-const { client, MODEL, requireAI, parseJsonResponse } = require('../services/claude');
+const { auth, requireLevel, audit } = require('../middleware/auth');
+const { client, MODEL, requireAI, requireDailyAiCap, parseJsonResponse } = require('../services/claude');
 
 const REVIEW_STATUSES = ['mentor_reviewed', 'revision_requested', 'approved'];
 
@@ -166,7 +166,7 @@ router.post('/:id/review', requireLevel('mentor'), async (req, res) => {
 // POST /api/projects/:id/ai-assess – mentee gets a quick first pass before
 // a mentor's time is spent. Only moves status submitted -> ai_reviewed;
 // never downgrades a project a mentor has already reviewed or approved.
-router.post('/:id/ai-assess', requireAI, async (req, res) => {
+router.post('/:id/ai-assess', requireAI, requireDailyAiCap, audit('ai.project_assess'), async (req, res) => {
   const { data: project } = await supabase.from('projects').select('*').eq('id', req.params.id).single();
   if (!project) return res.status(404).json({ error: 'Project not found' });
   if (project.mentee_id !== req.user.id && !(await canReviewCohort(req.user, project.cohort_id)))

@@ -16,6 +16,12 @@ describe.skipIf(Boolean(process.env.ANTHROPIC_API_KEY))('AI endpoints without AN
       request(app).post('/api/learning/chat').set('Authorization', `Bearer ${token}`).send({ messages: [{ role: 'user', content: 'hi' }] }),
       request(app).post('/api/learning/quiz/generate').set('Authorization', `Bearer ${token}`).send({ week_number: 1, track: 'frontend' }),
       request(app).post('/api/projects/00000000-0000-0000-0000-000000000000/ai-assess').set('Authorization', `Bearer ${token}`),
+      // opportunities.js used to build its own always-on Anthropic client —
+      // these three would have thrown a raw SDK error instead of a clean
+      // 503 before it was switched to the shared gated client.
+      request(app).post('/api/opportunities/00000000-0000-0000-0000-000000000000/research').set('Authorization', `Bearer ${token}`),
+      request(app).post('/api/opportunities/00000000-0000-0000-0000-000000000000/roadmap').set('Authorization', `Bearer ${token}`),
+      request(app).post('/api/opportunities/00000000-0000-0000-0000-000000000000/assistant').set('Authorization', `Bearer ${token}`).send({ messages: [{ role: 'user', content: 'hi' }] }),
     ];
 
     for (const call of await Promise.all(calls)) {

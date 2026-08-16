@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const { supabase } = require('../config/supabase');
-const { auth } = require('../middleware/auth');
-const Anthropic = require('@anthropic-ai/sdk');
-
-const client = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const { auth, audit } = require('../middleware/auth');
+// Shares the gated client from services/claude.js rather than constructing
+// its own — the previous version built `new Anthropic(...)` unconditionally
+// at module load, so with no ANTHROPIC_API_KEY set these routes would throw
+// a raw SDK auth error instead of the clean 503 every other AI route gives.
+const { client, requireAI, requireDailyAiCap } = require('../services/claude');
 /* The original code pinned claude-sonnet-4-20250514, which is deprecated.
    Default is now Opus 5. Cost is a live decision for this project, not a
    default I should make quietly: MASTER_PLAN §11 names AI spend as a risk and
@@ -45,7 +47,7 @@ router.delete('/:id', auth, async (req, res) => {
 });
 
 // POST /api/opportunities/:id/research – Claude deep research
-router.post('/:id/research', auth, async (req, res) => {
+router.post('/:id/research', auth, requireAI, requireDailyAiCap, audit('ai.opportunity_research'), async (req, res) => {
   const { data: opp } = await supabase.from('opportunities').select('*').eq('id', req.params.id).eq('user_id', req.user.id).single();
   if (!opp) return res.status(404).json({ error: 'Opportunity not found' });
 
@@ -75,7 +77,7 @@ Respond ONLY in valid JSON:
 });
 
 // POST /api/opportunities/:id/roadmap – generate application roadmap
-router.post('/:id/roadmap', auth, async (req, res) => {
+router.post('/:id/roadmap', auth, requireAI, requireDailyAiCap, audit('ai.opportunity_roadmap'), async (req, res) => {
   const { data: opp } = await supabase.from('opportunities').select('*').eq('id', req.params.id).eq('user_id', req.user.id).single();
   if (!opp) return res.status(404).json({ error: 'Opportunity not found' });
 
@@ -103,7 +105,7 @@ Respond ONLY in valid JSON:
 });
 
 // POST /api/opportunities/:id/assistant – streaming personal assistant
-router.post('/:id/assistant', auth, async (req, res) => {
+router.post('/:id/assistant', auth, requireAI, requireDailyAiCap, audit('ai.opportunity_assistant'), async (req, res) => {
   const { messages } = req.body;
   const { data: opp } = await supabase.from('opportunities').select('*').eq('id', req.params.id).eq('user_id', req.user.id).single();
   if (!opp) return res.status(404).json({ error: 'Opportunity not found' });
@@ -112,7 +114,10 @@ router.post('/:id/assistant', auth, async (req, res) => {
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('Connection', 'keep-alive');
 
-  const systemPrompt = `You are a personal career assistant for ${req.user.full_name}, a tech talent from Ghana using SydCrest Launchpad.
+  // First name only, per MASTER_PLAN §6: "no PII sent to Claude beyond
+  // first name + learning context."
+  const firstName = req.user.full_name?.split(' ')[0] || 'there';
+  const systemPrompt = `You are a personal career assistant for ${firstName}, a tech talent from Ghana using SydCrest Launchpad.
 Opportunity: ${opp.type} — ${opp.title} at ${opp.org} (${opp.location}). Deadline: ${opp.deadline}.
 Your job is to DO the hard work: draft full emails, write complete cover letters, build checklists, coach for interviews. Be action-oriented and produce ready-to-use content, not just tips. Write warmly and professionally.`;
 
