@@ -64,9 +64,32 @@ export class ApiError extends Error {
   }
 }
 
+/* multipart uploads bypass `request()`'s JSON body handling entirely — a
+   FormData body must NOT get `Content-Type: application/json` (that would
+   stop the browser from setting its own `multipart/form-data; boundary=…`)
+   and must not be JSON.stringify'd. */
+async function requestForm(path, formData) {
+  const token = tokenStore.get();
+  const res = await fetch(`${BASE_URL}${path}`, {
+    method: 'POST',
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+    body: formData,
+  });
+
+  const isJson = res.headers.get('content-type')?.includes('application/json');
+  const data = isJson ? await res.json().catch(() => null) : null;
+
+  if (!res.ok) {
+    if (res.status === 401 && token) listeners.forEach((fn) => fn());
+    throw new ApiError(data?.error || `Request failed (${res.status})`, res.status, data);
+  }
+  return data;
+}
+
 export const api = {
   get: (path) => request(path),
   post: (path, body) => request(path, { method: 'POST', body }),
   patch: (path, body) => request(path, { method: 'PATCH', body }),
   delete: (path) => request(path, { method: 'DELETE' }),
+  postForm: (path, formData) => requestForm(path, formData),
 };

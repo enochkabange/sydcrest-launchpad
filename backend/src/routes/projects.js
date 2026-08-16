@@ -10,11 +10,22 @@
  */
 const express = require('express');
 const router = express.Router();
+const multer = require('multer');
+const { randomUUID } = require('crypto');
 const { supabase } = require('../config/supabase');
 const { auth, requireLevel } = require('../middleware/auth');
 const { client, MODEL, requireAI, parseJsonResponse } = require('../services/claude');
 
 const REVIEW_STATUSES = ['mentor_reviewed', 'revision_requested', 'approved'];
+
+/* Memory storage, not disk — Railway's filesystem is ephemeral per deploy,
+   so anything written to disk here would vanish on the next restart. The
+   file only passes through this process on its way to Supabase Storage. */
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 10 * 1024 * 1024 }, // matches the bucket's own 10MB limit
+});
+const STORAGE_BUCKET = 'project-submissions';
 
 /* A mentor/cohort_admin can only review projects in a cohort they actually
    run — being ANY mentor isn't enough, or one mentor could review (and see
@@ -75,6 +86,44 @@ router.post('/', async (req, res) => {
     .select().single();
   if (error) return res.status(400).json({ error: error.message });
   res.status(201).json({ project: data });
+});
+
+// POST /api/projects/:id/upload – mentee attaches a file to their own
+// project (screenshot, zip, PDF — bucket is public since submissions
+// aren't sensitive, matching the simplicity call in the task plan).
+// multer parses multipart before this handler runs; a bad/missing file
+// surfaces as its own error via the error-handling middleware in index.js.
+router.post('/:id/upload', (req, res, next) => {
+  upload.single('file')(req, res, (err) => {
+    if (err instanceof multer.MulterError) return res.status(400).json({ error: err.message });
+    if (err) return next(err);
+    next();
+  });
+}, async (req, res) => {
+  if (!req.file) return res.status(400).json({ error: 'file required' });
+
+  const { data: project } = await supabase.from('projects').select('mentee_id').eq('id', req.params.id).single();
+  if (!project) return res.status(404).json({ error: 'Project not found' });
+  if (project.mentee_id !== req.user.id) return res.status(404).json({ error: 'Project not found' });
+
+  const ext = req.file.originalname.includes('.') ? req.file.originalname.split('.').pop() : '';
+  const path = `${req.params.id}/${randomUUID()}${ext ? `.${ext}` : ''}`;
+
+  const { error: uploadError } = await supabase.storage
+    .from(STORAGE_BUCKET)
+    .upload(path, req.file.buffer, { contentType: req.file.mimetype, upsert: false });
+  if (uploadError) return res.status(400).json({ error: uploadError.message });
+
+  const { data: { publicUrl } } = supabase.storage.from(STORAGE_BUCKET).getPublicUrl(path);
+
+  const { data: updated, error } = await supabase
+    .from('projects')
+    .update({ file_url: publicUrl })
+    .eq('id', req.params.id)
+    .select().single();
+  if (error) return res.status(400).json({ error: error.message });
+
+  res.status(201).json({ project: updated });
 });
 
 // GET /api/projects/:id
