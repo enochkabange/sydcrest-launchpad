@@ -1,11 +1,9 @@
 /**
  * Projects — wired to GET/POST /api/projects.
  *
- * Mentee-facing only for now: submit a project, see its review status.
- * The mentor review UI (POST /:id/review) doesn't have a home yet — no
- * mentor-facing nav destination exists in App.jsx's NAV, so building that
- * screen now would be UI with nowhere real to link from. Flagging rather
- * than guessing at a mentor dashboard's shape.
+ * Mentee-facing: submit a project, see its review status, get AI feedback,
+ * attach a file. The mentor-side review UI (POST /:id/review) lives in
+ * MentorDashboard.jsx instead of here.
  */
 import { useEffect, useState } from "react";
 import { api, ApiError } from "../lib/api.js";

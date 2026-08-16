@@ -13,8 +13,8 @@
 const express = require('express');
 const router = express.Router();
 const { supabase } = require('../config/supabase');
-const { auth } = require('../middleware/auth');
-const { client, MODEL, requireAI, parseJsonResponse } = require('../services/claude');
+const { auth, audit } = require('../middleware/auth');
+const { client, MODEL, requireAI, requireDailyAiCap, parseJsonResponse } = require('../services/claude');
 
 router.use(auth);
 
@@ -37,7 +37,7 @@ router.get('/paths', async (req, res) => {
 });
 
 // POST /api/learning/paths/generate – { track, total_weeks?, goals? }
-router.post('/paths/generate', requireAI, async (req, res) => {
+router.post('/paths/generate', requireAI, requireDailyAiCap, audit('ai.path_generate'), async (req, res) => {
   const { track, total_weeks = 12, goals } = req.body;
   if (!track) return res.status(400).json({ error: 'track required' });
 
@@ -166,7 +166,7 @@ router.post('/weeks/:weekId/complete', async (req, res) => {
 // a refresh — the client still sends full `messages` each call rather than
 // this route reloading history itself, matching opportunities.js's
 // /:id/assistant pattern.
-router.post('/chat', requireAI, async (req, res) => {
+router.post('/chat', requireAI, requireDailyAiCap, audit('ai.chat'), async (req, res) => {
   const { messages, context } = req.body;
   if (!Array.isArray(messages) || messages.length === 0) return res.status(400).json({ error: 'messages required' });
 
@@ -179,7 +179,10 @@ router.post('/chat', requireAI, async (req, res) => {
   res.setHeader('Cache-Control', 'no-cache');
   res.setHeader('Connection', 'keep-alive');
 
-  const systemPrompt = `You are Study Buddy, an encouraging but precise coding tutor for ${req.user.full_name}, a self-taught learner in Ghana's Delta Mentoring Program.${context ? ` Current context: ${context}.` : ''} Explain concepts with small, concrete code examples. Never just give away an assignment's answer outright — guide toward it.`;
+  // First name only, per MASTER_PLAN §6: "no PII sent to Claude beyond
+  // first name + learning context."
+  const firstName = req.user.full_name?.split(' ')[0] || 'there';
+  const systemPrompt = `You are Study Buddy, an encouraging but precise coding tutor for ${firstName}, a self-taught learner in Ghana's Delta Mentoring Program.${context ? ` Current context: ${context}.` : ''} Explain concepts with small, concrete code examples. Never just give away an assignment's answer outright — guide toward it.`;
 
   let fullReply = '';
   try {
@@ -208,7 +211,7 @@ router.post('/chat', requireAI, async (req, res) => {
 });
 
 // POST /api/learning/quiz/generate – { week_number, track }
-router.post('/quiz/generate', requireAI, async (req, res) => {
+router.post('/quiz/generate', requireAI, requireDailyAiCap, audit('ai.quiz_generate'), async (req, res) => {
   const { week_number, track } = req.body;
   if (!week_number || !track) return res.status(400).json({ error: 'week_number and track required' });
 
