@@ -26,6 +26,8 @@ export default function Projects() {
   const [modalOpen, setModalOpen] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [form, setForm] = useState({ week_number: "", title: "", description: "", submission_url: "" });
+  const [assessingId, setAssessingId] = useState(null);
+  const [aiUnconfigured, setAiUnconfigured] = useState(false);
 
   const load = () => api.get("/api/projects").then(({ projects }) => setProjects(projects));
 
@@ -34,6 +36,20 @@ export default function Projects() {
   }, []);
 
   const set = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
+
+  const requestAiFeedback = async (id) => {
+    setAssessingId(id);
+    setError("");
+    try {
+      const { project } = await api.post(`/api/projects/${id}/ai-assess`, {});
+      setProjects((ps) => ps.map((p) => (p.id === project.id ? project : p)));
+    } catch (err) {
+      if (err instanceof ApiError && err.status === 503) setAiUnconfigured(true);
+      else setError(err instanceof ApiError ? err.message : "Couldn't get AI feedback.");
+    } finally {
+      setAssessingId(null);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -93,6 +109,27 @@ export default function Projects() {
                       <span className="text-content-2">{p.mentor_feedback}</span>
                       {p.final_score != null && <span className="ml-2 font-semibold text-content">({p.final_score}/100)</span>}
                     </div>
+                  )}
+                  {p.ai_feedback && (
+                    <div className="rounded-md bg-info-bg border border-blue-200 p-3 text-sm">
+                      <p className="font-semibold text-content mb-1">AI first pass{p.ai_feedback.suggested_score != null ? ` (${p.ai_feedback.suggested_score}/100)` : ""}</p>
+                      <p className="text-content-2 mb-2">{p.ai_feedback.summary}</p>
+                      {p.ai_feedback.strengths?.length > 0 && (
+                        <ul className="list-disc pl-5 text-content-2">
+                          {p.ai_feedback.strengths.map((s, i) => <li key={`s${i}`}>{s}</li>)}
+                        </ul>
+                      )}
+                      {p.ai_feedback.areas_to_improve?.length > 0 && (
+                        <ul className="list-disc pl-5 text-content-2 mt-1">
+                          {p.ai_feedback.areas_to_improve.map((s, i) => <li key={`a${i}`}>{s}</li>)}
+                        </ul>
+                      )}
+                    </div>
+                  )}
+                  {!p.ai_feedback && p.status === "submitted" && !aiUnconfigured && (
+                    <Button variant="secondary" size="sm" loading={assessingId === p.id} onClick={() => requestAiFeedback(p.id)}>
+                      Get AI feedback
+                    </Button>
                   )}
                 </CardBody>
                 <CardFooter>

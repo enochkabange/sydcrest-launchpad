@@ -5,6 +5,7 @@ import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Learn from "./pages/Learn.jsx";
 import PathDetail from "./pages/PathDetail.jsx";
+import StudyBuddy from "./pages/StudyBuddy.jsx";
 import Projects from "./pages/Projects.jsx";
 import Mentors from "./pages/Mentors.jsx";
 import Community from "./pages/Community.jsx";
@@ -23,6 +24,9 @@ function navFor(role) {
     { id: "projects", label: "Projects", icon: "project", path: "/projects" },
     { id: "community", label: "Community", icon: "community", path: "/community" },
   ];
+  // Study Buddy chat_messages is keyed by mentee_id — mentee-side only, same
+  // boundary as Learn's own curriculum data.
+  if (!MENTOR_SIDE_ROLES.includes(role)) base.splice(1, 0, { id: "study-buddy", label: "Study Buddy", icon: "studyBuddy", path: "/study-buddy" });
   return ADMIN_ROLES.includes(role) ? [...base, { id: "admin", label: "Admin", icon: "settings", path: "/admin" }] : base;
 }
 
@@ -100,6 +104,7 @@ export default function App() {
 
           <Route path="/" element={<RequireAuth><HomeRoute /></RequireAuth>} />
           <Route path="/learn/:pathId" element={<RequireAuth><PathDetailRoute /></RequireAuth>} />
+          <Route path="/study-buddy" element={<RequireAuth><StudyBuddy /></RequireAuth>} />
           <Route path="/mentors" element={<RequireAuth><Mentors /></RequireAuth>} />
           <Route path="/projects" element={<RequireAuth><Projects /></RequireAuth>} />
           <Route path="/community" element={<RequireAuth><Community /></RequireAuth>} />

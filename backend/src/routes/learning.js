@@ -5,21 +5,16 @@
  * already exist in schema.sql; this is where the 12-week DMP curriculum is
  * served and where Study Buddy streams over SSE.
  *
- * Phase B (curriculum delivery + progress) is implemented below. Phase C
- * (AI path/quiz generation, Study Buddy chat) is still a 501 scaffold — each
- * of those needs a model/cost decision like the one made in opportunities.js
- * (MASTER_PLAN §11), not a default picked quietly here.
+ * Phase C (AI path/quiz generation, chat) is implemented below using the
+ * model decision in services/claude.js (Sonnet 5, MASTER_PLAN §11) — every
+ * route is gated by requireAI, which 503s cleanly until ANTHROPIC_API_KEY
+ * is actually set, same convention as Hubtel in marketplace.js.
  */
 const express = require('express');
 const router = express.Router();
 const { supabase } = require('../config/supabase');
 const { auth } = require('../middleware/auth');
-
-const notYet = (phase) => (req, res) =>
-  res.status(501).json({
-    error: 'Not implemented',
-    detail: `${req.method} ${req.baseUrl}${req.path} is scheduled for ${phase}.`,
-  });
+const { client, MODEL, requireAI, parseJsonResponse } = require('../services/claude');
 
 router.use(auth);
 
@@ -41,7 +36,48 @@ router.get('/paths', async (req, res) => {
   res.json({ paths });
 });
 
-router.post('/paths/generate', notYet('Phase C'));
+// POST /api/learning/paths/generate – { track, total_weeks?, goals? }
+router.post('/paths/generate', requireAI, async (req, res) => {
+  const { track, total_weeks = 12, goals } = req.body;
+  if (!track) return res.status(400).json({ error: 'track required' });
+
+  try {
+    const response = await client.messages.create({
+      model: MODEL,
+      max_tokens: 4000,
+      system: 'You design practical, project-based coding curricula for self-taught tech talent in Ghana with limited bandwidth and low-end Android devices. Respond ONLY with valid JSON, no prose.',
+      messages: [{
+        role: 'user',
+        content: `Design a ${total_weeks}-week ${track} curriculum.${goals ? ` Learner's stated goal: ${goals}.` : ''}
+Each week builds on the last. Assignments should be small enough to finish on a phone hotspot connection.
+
+Respond ONLY in this exact JSON shape:
+{"title":"","tagline":"","weeks":[{"week_number":1,"theme":"","objectives":["",""],"resource_name":"","resource_url":"","assignment":""}]}`,
+      }],
+    });
+
+    const text = response.content.map((b) => b.text || '').join('');
+    const generated = parseJsonResponse(text);
+
+    const { data: path, error: pathError } = await supabase
+      .from('learning_paths')
+      .insert({
+        mentee_id: req.user.id, title: generated.title, tagline: generated.tagline,
+        track, total_weeks: generated.weeks.length, raw_json: generated,
+      })
+      .select().single();
+    if (pathError) return res.status(400).json({ error: pathError.message });
+
+    const weeks = generated.weeks.map((w) => ({ ...w, path_id: path.id }));
+    const { error: weeksError } = await supabase.from('learning_weeks').insert(weeks);
+    if (weeksError) return res.status(400).json({ error: weeksError.message });
+
+    res.status(201).json({ path });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Curriculum generation failed' });
+  }
+});
 
 // GET /api/learning/weeks/:pathId – ordered curriculum for one path
 router.get('/weeks/:pathId', async (req, res) => {
@@ -125,7 +161,87 @@ router.post('/weeks/:weekId/complete', async (req, res) => {
   res.json({ week: updatedWeek });
 });
 
-router.post('/chat', notYet('Phase C — SSE, verify streaming through the Railway proxy early'));
-router.post('/quiz/generate', notYet('Phase C'));
+// POST /api/learning/chat – Study Buddy, streamed over SSE. { messages, context? }
+// Persists both sides of the exchange to chat_messages so history survives
+// a refresh — the client still sends full `messages` each call rather than
+// this route reloading history itself, matching opportunities.js's
+// /:id/assistant pattern.
+router.post('/chat', requireAI, async (req, res) => {
+  const { messages, context } = req.body;
+  if (!Array.isArray(messages) || messages.length === 0) return res.status(400).json({ error: 'messages required' });
+
+  const lastUserMessage = [...messages].reverse().find((m) => m.role === 'user');
+  if (lastUserMessage) {
+    await supabase.from('chat_messages').insert({ mentee_id: req.user.id, role: 'user', content: lastUserMessage.content, context });
+  }
+
+  res.setHeader('Content-Type', 'text/event-stream');
+  res.setHeader('Cache-Control', 'no-cache');
+  res.setHeader('Connection', 'keep-alive');
+
+  const systemPrompt = `You are Study Buddy, an encouraging but precise coding tutor for ${req.user.full_name}, a self-taught learner in Ghana's Delta Mentoring Program.${context ? ` Current context: ${context}.` : ''} Explain concepts with small, concrete code examples. Never just give away an assignment's answer outright — guide toward it.`;
+
+  let fullReply = '';
+  try {
+    const stream = await client.messages.stream({
+      model: MODEL, max_tokens: 1000, system: systemPrompt,
+      messages: messages.map((m) => ({ role: m.role, content: m.content })),
+    });
+
+    for await (const event of stream) {
+      if (event.type === 'content_block_delta' && event.delta.type === 'text_delta') {
+        fullReply += event.delta.text;
+        res.write(`data: ${JSON.stringify({ text: event.delta.text })}\n\n`);
+      }
+    }
+    res.write('data: [DONE]\n\n');
+    res.end();
+
+    if (fullReply) {
+      await supabase.from('chat_messages').insert({ mentee_id: req.user.id, role: 'assistant', content: fullReply, context });
+    }
+  } catch (err) {
+    console.error(err);
+    if (!res.headersSent) res.status(500).json({ error: 'Study Buddy failed' });
+    else res.end();
+  }
+});
+
+// POST /api/learning/quiz/generate – { week_number, track }
+router.post('/quiz/generate', requireAI, async (req, res) => {
+  const { week_number, track } = req.body;
+  if (!week_number || !track) return res.status(400).json({ error: 'week_number and track required' });
+
+  try {
+    const response = await client.messages.create({
+      model: MODEL, max_tokens: 1500,
+      system: 'You write short comprehension quizzes for a self-taught coding curriculum. Respond ONLY with valid JSON, no prose.',
+      messages: [{
+        role: 'user',
+        content: `Write a 5-question multiple-choice quiz testing week ${week_number} of a ${track} curriculum. Test understanding, not memorization of trivia.
+
+Respond ONLY in this exact JSON shape:
+{"questions":[{"question":"","options":["",""," ",""],"correct_index":0}]}`,
+      }],
+    });
+
+    const text = response.content.map((b) => b.text || '').join('');
+    const generated = parseJsonResponse(text);
+
+    const { data: quiz, error } = await supabase
+      .from('quizzes')
+      .insert({
+        mentee_id: req.user.id, week_number, track,
+        questions: generated.questions, max_score: generated.questions.length,
+      })
+      .select().single();
+    if (error) return res.status(400).json({ error: error.message });
+
+    res.status(201).json({ quiz });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Quiz generation failed' });
+  }
+});
 
 module.exports = router;

@@ -107,6 +107,7 @@ app.use('/api/learning/quiz/generate', aiLimiter);
 app.use('/api/opportunities/research', aiLimiter);
 app.use('/api/opportunities/roadmap', aiLimiter);
 app.use('/api/opportunities/assistant', aiLimiter);
+app.use('/api/projects/:id/ai-assess', aiLimiter);
 
 // ─── ROUTES ───────────────────────────────────────────────────
 app.use('/api/auth',         require('./routes/auth'));

@@ -4,20 +4,15 @@
  * Phase B's exit test runs through here: a learner submits, a mentor
  * reviews. `projects` and `project_rubrics` exist in schema.sql.
  *
- * AI assessment (Phase C) is left as a 501 — same reasoning as the AI
- * endpoints in learning.js and opportunities.js: needs a model/cost
- * decision, not a default picked quietly here.
+ * AI assessment uses the model decision in services/claude.js (Sonnet 5,
+ * MASTER_PLAN §11) — gives the mentee a quick first pass before a mentor's
+ * time is spent, gated by requireAI same as learning.js's AI routes.
  */
 const express = require('express');
 const router = express.Router();
 const { supabase } = require('../config/supabase');
 const { auth, requireLevel } = require('../middleware/auth');
-
-const notYet = (phase) => (req, res) =>
-  res.status(501).json({
-    error: 'Not implemented',
-    detail: `${req.method} ${req.baseUrl}${req.path} is scheduled for ${phase}.`,
-  });
+const { client, MODEL, requireAI, parseJsonResponse } = require('../services/claude');
 
 const REVIEW_STATUSES = ['mentor_reviewed', 'revision_requested', 'approved'];
 
@@ -119,6 +114,45 @@ router.post('/:id/review', requireLevel('mentor'), async (req, res) => {
   res.json({ project: data });
 });
 
-router.post('/:id/ai-assess', notYet('Phase C'));
+// POST /api/projects/:id/ai-assess – mentee gets a quick first pass before
+// a mentor's time is spent. Only moves status submitted -> ai_reviewed;
+// never downgrades a project a mentor has already reviewed or approved.
+router.post('/:id/ai-assess', requireAI, async (req, res) => {
+  const { data: project } = await supabase.from('projects').select('*').eq('id', req.params.id).single();
+  if (!project) return res.status(404).json({ error: 'Project not found' });
+  if (project.mentee_id !== req.user.id && !(await canReviewCohort(req.user, project.cohort_id)))
+    return res.status(404).json({ error: 'Project not found' });
+
+  try {
+    const response = await client.messages.create({
+      model: MODEL, max_tokens: 1000,
+      system: 'You give brief, constructive first-pass feedback on a coding bootcamp project submission, before a human mentor reviews it. Respond ONLY with valid JSON, no prose.',
+      messages: [{
+        role: 'user',
+        content: `Project: "${project.title}" (week ${project.week_number})
+Description: ${project.description || 'none given'}
+Submission: ${project.submission_url || project.file_url || 'no link given'}
+
+Respond ONLY in this exact JSON shape:
+{"strengths":[""],"areas_to_improve":[""],"summary":"","suggested_score":0}`,
+      }],
+    });
+
+    const text = response.content.map((b) => b.text || '').join('');
+    const feedback = parseJsonResponse(text);
+
+    const { data: updated, error } = await supabase
+      .from('projects')
+      .update({ ai_feedback: feedback, status: project.status === 'submitted' ? 'ai_reviewed' : project.status })
+      .eq('id', req.params.id)
+      .select().single();
+    if (error) return res.status(400).json({ error: error.message });
+
+    res.json({ project: updated });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'AI assessment failed' });
+  }
+});
 
 module.exports = router;
