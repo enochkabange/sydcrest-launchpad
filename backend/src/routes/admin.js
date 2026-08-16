@@ -90,6 +90,16 @@ router.post('/cohorts', requireLevel('platform_admin'), audit('cohort.create'), 
 });
 
 router.patch('/cohorts/:id', requireLevel('cohort_admin'), async (req, res) => {
+  // requireLevel only checks the caller's role, not that this is THEIR
+  // cohort — a cohort_admin could otherwise edit any cohort in the
+  // platform, not just the ones they run. platform_admin+ bypass this,
+  // matching the read-side scoping in GET /cohorts above.
+  if (!['platform_admin', 'super_admin'].includes(req.user.role)) {
+    const { data: cohort } = await supabase.from('cohorts').select('mentor_id').eq('id', req.params.id).single();
+    if (!cohort || cohort.mentor_id !== req.user.id)
+      return res.status(403).json({ error: 'You do not run this cohort' });
+  }
+
   const { data, error } = await supabase.from('cohorts').update(req.body).eq('id', req.params.id).select().single();
   if (error) return res.status(400).json({ error: error.message });
   res.json({ cohort: data });

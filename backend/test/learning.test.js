@@ -1,4 +1,4 @@
-const { app, request, supabase, registerUser, deleteUser } = require('./helpers');
+const { app, request, supabase, registerUser, deleteUser, cleanupCohort } = require('./helpers');
 
 async function seedPath(menteeId, weekCount = 2) {
   const { data: path } = await supabase
@@ -18,7 +18,16 @@ async function seedPath(menteeId, weekCount = 2) {
 
 describe('learning', () => {
   const cleanup = [];
-  afterEach(async () => { await Promise.all(cleanup.splice(0).map(deleteUser)); });
+  const cohorts = [];
+  // Cleanup lives in afterEach, not inline at the end of each test body:
+  // an inline `await supabase.from(...).delete()` after the assertions
+  // never runs if an expect() throws first, which is exactly how this
+  // suite leaked over a dozen "T"/"Test Cohort" rows into the real
+  // Supabase project across several runs before this was caught.
+  afterEach(async () => {
+    await Promise.all(cohorts.splice(0).map(cleanupCohort));
+    await Promise.all(cleanup.splice(0).map(deleteUser));
+  });
 
   it('an account with no path gets an empty list, not an error', async () => {
     const { token, email } = await registerUser('mentee');
@@ -62,6 +71,7 @@ describe('learning', () => {
     cleanup.push(mentor.email, mentee.email);
 
     const { data: cohort } = await supabase.from('cohorts').insert({ name: 'T', track: 'frontend', mentor_id: mentor.profile.id }).select().single();
+    cohorts.push(cohort.id);
     await supabase.from('enrollments').insert({ mentee_id: mentee.profile.id, cohort_id: cohort.id });
     const { data: path } = await supabase.from('learning_paths').insert({ mentee_id: mentee.profile.id, cohort_id: cohort.id, title: 'T', track: 'frontend', total_weeks: 1 }).select().single();
     const { data: week } = await supabase.from('learning_weeks').insert({ path_id: path.id, week_number: 1, theme: 'T' }).select().single();
@@ -72,9 +82,6 @@ describe('learning', () => {
     const { data: enrollment } = await supabase.from('enrollments').select('*').eq('mentee_id', mentee.profile.id).single();
     expect(enrollment.streak_days).toBe(1);
     expect(enrollment.xp_points).toBe(100);
-
-    await supabase.from('enrollments').delete().eq('cohort_id', cohort.id);
-    await supabase.from('cohorts').delete().eq('id', cohort.id);
   });
 
   it('completing the same week twice is rejected with 409', async () => {
