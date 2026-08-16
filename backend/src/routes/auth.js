@@ -98,6 +98,35 @@ router.get('/me', auth, async (req, res) => {
   res.json({ profile: req.user });
 });
 
+// PATCH /api/auth/me – self-edit. Deliberately excludes email/role/password:
+// email changes need Supabase Auth's own confirm flow, role is admin-only
+// (see admin.js), password has its own dedicated verified-current-password
+// route below.
+router.patch('/me', auth, [
+  body('full_name').optional().trim().isLength({ min: 2 }),
+  body('phone').optional({ nullable: true }).trim(),
+  body('region').optional({ nullable: true }).trim(),
+  body('bio').optional({ nullable: true }).trim(),
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
+
+  const updates = {};
+  for (const key of ['full_name', 'phone', 'region', 'bio']) {
+    if (key in req.body) updates[key] = req.body[key];
+  }
+  if (Object.keys(updates).length === 0) return res.status(400).json({ error: 'No editable fields provided' });
+
+  const { data: profile, error } = await supabase
+    .from('profiles')
+    .update(updates)
+    .eq('id', req.user.id)
+    .select().single();
+  if (error) return res.status(400).json({ error: error.message });
+
+  res.json({ profile });
+});
+
 // POST /api/auth/refresh
 router.post('/refresh', auth, async (req, res) => {
   const token = signToken(req.user.id, req.user.token_version || 0);
@@ -143,6 +172,41 @@ router.post('/forgot-password', [body('email').isEmail()], async (req, res) => {
   });
   // Always return success to prevent email enumeration
   res.json({ success: true, message: 'If that email exists, a reset link has been sent.' });
+});
+
+// POST /api/auth/reset-password – the link from forgot-password's email
+// lands here with a Supabase access_token in the URL fragment. Verifying it
+// via supabaseAnon.auth.getUser(access_token) proves the caller actually
+// holds the emailed link, without needing @supabase/supabase-js on the
+// frontend or a signed-in session (the user is, by definition, logged out).
+router.post('/reset-password', [
+  body('access_token').notEmpty(),
+  body('new_password').isLength({ min: 8 }),
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
+
+  try {
+    const { data: userData, error: verifyError } = await supabaseAnon.auth.getUser(req.body.access_token);
+    if (verifyError || !userData?.user) return res.status(401).json({ error: 'This reset link is invalid or has expired.' });
+
+    const { error: updateError } = await supabase.auth.admin.updateUserById(
+      userData.user.id, { password: req.body.new_password }
+    );
+    if (updateError) return res.status(400).json({ error: updateError.message });
+
+    // Same session-invalidation as change-password — a reset link that
+    // worked once shouldn't leave old sessions valid.
+    const { data: profile } = await supabase.from('profiles').select('token_version').eq('user_id', userData.user.id).single();
+    if (profile) {
+      await supabase.from('profiles').update({ token_version: (profile.token_version || 0) + 1 }).eq('user_id', userData.user.id);
+    }
+
+    res.json({ success: true, message: 'Password reset. Please log in with your new password.' });
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'Password reset failed' });
+  }
 });
 
 module.exports = router;

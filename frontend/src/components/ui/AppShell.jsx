@@ -145,8 +145,9 @@ export default function AppShell({
             {user && (
               <button
                 type="button"
+                onClick={() => onNavigate?.("profile")}
                 className="rounded-full transition-opacity hover:opacity-80"
-                aria-label={`Account menu for ${user.name}`}
+                aria-label={`${user.name}'s profile`}
               >
                 <Avatar name={user.name} src={user.avatar} size="sm" />
               </button>
