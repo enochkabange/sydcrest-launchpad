@@ -47,14 +47,19 @@ export default function Login() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <Input
-            label="Password"
-            type="password"
-            autoComplete="current-password"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
+          <div>
+            <Input
+              label="Password"
+              type="password"
+              autoComplete="current-password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            <Link to="/forgot-password" className="mt-1.5 inline-block text-sm text-content-link font-medium">
+              Forgot password?
+            </Link>
+          </div>
 
           <Button type="submit" loading={loading} fullWidth>Log in</Button>
         </form>

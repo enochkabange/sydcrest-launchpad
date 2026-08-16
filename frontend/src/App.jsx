@@ -6,6 +6,9 @@ import Register from "./pages/Register.jsx";
 import Learn from "./pages/Learn.jsx";
 import PathDetail from "./pages/PathDetail.jsx";
 import StudyBuddy from "./pages/StudyBuddy.jsx";
+import Profile from "./pages/Profile.jsx";
+import ForgotPassword from "./pages/ForgotPassword.jsx";
+import ResetPassword from "./pages/ResetPassword.jsx";
 import Projects from "./pages/Projects.jsx";
 import Mentors from "./pages/Mentors.jsx";
 import Community from "./pages/Community.jsx";
@@ -48,6 +51,7 @@ function AuthedLayout({ children }) {
       current={current}
       onNavigate={(id) => {
         if (id === "logout") return logout();
+        if (id === "profile") return navigate("/profile");
         const item = nav.find((n) => n.id === id);
         if (item) navigate(item.path);
       }}
@@ -101,6 +105,8 @@ export default function App() {
         <Routes>
           <Route path="/login" element={<RedirectIfAuthed><Login /></RedirectIfAuthed>} />
           <Route path="/register" element={<RedirectIfAuthed><Register /></RedirectIfAuthed>} />
+          <Route path="/forgot-password" element={<RedirectIfAuthed><ForgotPassword /></RedirectIfAuthed>} />
+          <Route path="/reset-password" element={<RedirectIfAuthed><ResetPassword /></RedirectIfAuthed>} />
 
           <Route path="/" element={<RequireAuth><HomeRoute /></RequireAuth>} />
           <Route path="/learn/:pathId" element={<RequireAuth><PathDetailRoute /></RequireAuth>} />
@@ -108,6 +114,7 @@ export default function App() {
           <Route path="/mentors" element={<RequireAuth><Mentors /></RequireAuth>} />
           <Route path="/projects" element={<RequireAuth><Projects /></RequireAuth>} />
           <Route path="/community" element={<RequireAuth><Community /></RequireAuth>} />
+          <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
           <Route path="/admin" element={<RequireAuth><RequireAdmin><Admin /></RequireAdmin></RequireAuth>} />
 
           {/* Design-system build harness — see docs/design-system.md. Not a

@@ -47,8 +47,12 @@ export function AuthProvider({ children }) {
 
   const logout = useCallback(() => clear(), [clear]);
 
+  // Called after PATCH /api/auth/me so the shell's header/nav (which read
+  // `profile` from this context) reflect an edit without a full refetch.
+  const updateProfile = useCallback((patch) => setProfile((p) => ({ ...p, ...patch })), []);
+
   return (
-    <AuthContext.Provider value={{ profile, status, login, register, logout }}>
+    <AuthContext.Provider value={{ profile, status, login, register, logout, updateProfile }}>
       {children}
     </AuthContext.Provider>
   );
