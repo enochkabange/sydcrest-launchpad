@@ -8,14 +8,16 @@ import PathDetail from "./pages/PathDetail.jsx";
 import Projects from "./pages/Projects.jsx";
 import Mentors from "./pages/Mentors.jsx";
 import Community from "./pages/Community.jsx";
+import Admin from "./pages/admin/Admin.jsx";
 import Showcase from "./Showcase.jsx";
 
-const NAV = [
+const BASE_NAV = [
   { id: "learn", label: "Learn", icon: "lesson", path: "/" },
   { id: "mentors", label: "Mentors", icon: "mentor", path: "/mentors" },
   { id: "projects", label: "Projects", icon: "project", path: "/projects" },
   { id: "community", label: "Community", icon: "community", path: "/community" },
 ];
+const ADMIN_ROLES = ["cohort_admin", "platform_admin", "super_admin"];
 
 /* AppShell's nav is controlled and router-unaware by design (see its own
    header comment) — this is the adapter, not a reason to touch AppShell. */
@@ -24,16 +26,20 @@ function AuthedLayout({ children }) {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const current = NAV.find((n) => n.path === "/" ? location.pathname === "/" : location.pathname.startsWith(n.path))?.id
+  const nav = ADMIN_ROLES.includes(profile?.role)
+    ? [...BASE_NAV, { id: "admin", label: "Admin", icon: "settings", path: "/admin" }]
+    : BASE_NAV;
+
+  const current = nav.find((n) => n.path === "/" ? location.pathname === "/" : location.pathname.startsWith(n.path))?.id
     ?? (location.pathname.startsWith("/learn") ? "learn" : undefined);
 
   return (
     <AppShell
-      nav={NAV}
+      nav={nav}
       current={current}
       onNavigate={(id) => {
         if (id === "logout") return logout();
-        const item = NAV.find((n) => n.id === id);
+        const item = nav.find((n) => n.id === id);
         if (item) navigate(item.path);
       }}
       user={{ name: profile?.full_name }}
@@ -51,6 +57,15 @@ function RequireAuth({ children }) {
   if (status === "anon") return <Navigate to="/login" state={{ from: location.pathname }} replace />;
 
   return <AuthedLayout>{children}</AuthedLayout>;
+}
+
+function RequireAdmin({ children }) {
+  const { profile } = useAuth();
+  // RequireAuth (wrapping this) already handles loading/anon — by the time
+  // this renders, profile is populated. Hiding the nav item isn't access
+  // control on its own; a mentee typing /admin directly must still bounce.
+  if (!ADMIN_ROLES.includes(profile?.role)) return <Navigate to="/" replace />;
+  return children;
 }
 
 function RedirectIfAuthed({ children }) {
@@ -78,6 +93,7 @@ export default function App() {
           <Route path="/mentors" element={<RequireAuth><Mentors /></RequireAuth>} />
           <Route path="/projects" element={<RequireAuth><Projects /></RequireAuth>} />
           <Route path="/community" element={<RequireAuth><Community /></RequireAuth>} />
+          <Route path="/admin" element={<RequireAuth><RequireAdmin><Admin /></RequireAdmin></RequireAuth>} />
 
           {/* Design-system build harness — see docs/design-system.md. Not a
               product screen; not linked from the real nav. */}

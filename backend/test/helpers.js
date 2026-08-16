@@ -39,6 +39,20 @@ async function registerUser(role = 'mentee', overrides = {}) {
   return { token: res.body.token, profile: res.body.profile, email };
 }
 
+/** /api/auth/register only accepts role: mentee|mentor (by design — nobody
+    self-registers as an admin). Test admin accounts the same way a real
+    super_admin would create one: register normally, then promote via the
+    service-role client directly. The existing JWT stays valid — it only
+    encodes profileId/tokenVersion, and auth middleware re-fetches the
+    profile (with its now-updated role) on every request. */
+async function registerAdmin(role) {
+  const user = await registerUser('mentee');
+  const { error } = await supabase.from('profiles').update({ role }).eq('id', user.profile.id);
+  if (error) throw error;
+  user.profile.role = role;
+  return user;
+}
+
 /** Deletes a test user's profile + auth.users row, and its email pattern
     guarantees this never touches real data (see uniqueEmail above). */
 async function deleteUser(email) {
@@ -63,9 +77,22 @@ async function enroll(menteeId, cohortId) {
   return data;
 }
 
+/* Every table with a cohort_id FK, except enrollments — schema.sql gives
+   enrollments.cohort_id ON DELETE CASCADE but deliberately not the rest
+   (learning_paths, sessions, projects, project_rubrics, posts). Deleting
+   a cohort while any of those still reference it fails the DELETE with a
+   foreign-key violation. This helper's previous version didn't check the
+   `error` Supabase returns on a failed delete, so that failure was
+   silent — the cohort just... stayed, and 21 orphaned "T"/"Test Cohort"
+   rows accumulated in the real Supabase project across several runs
+   before this was caught via the admin dashboard's Overview tab. */
 async function cleanupCohort(cohortId) {
-  await supabase.from('enrollments').delete().eq('cohort_id', cohortId);
-  await supabase.from('cohorts').delete().eq('id', cohortId);
+  for (const table of ['enrollments', 'learning_paths', 'sessions', 'projects', 'project_rubrics', 'posts']) {
+    const { error } = await supabase.from(table).delete().eq('cohort_id', cohortId);
+    if (error) throw new Error(`cleanupCohort: failed to clear ${table} for cohort ${cohortId}: ${error.message}`);
+  }
+  const { error } = await supabase.from('cohorts').delete().eq('id', cohortId);
+  if (error) throw new Error(`cleanupCohort: failed to delete cohort ${cohortId}: ${error.message}`);
 }
 
-module.exports = { app, request, supabase, registerUser, deleteUser, createCohort, enroll, cleanupCohort };
+module.exports = { app, request, supabase, registerUser, registerAdmin, deleteUser, createCohort, enroll, cleanupCohort };
