@@ -1,4 +1,7 @@
 require('dotenv').config();
+// First require after dotenv, before anything else — Sentry's own guidance:
+// auto-instrumentation only covers modules imported after init() runs.
+const { Sentry, enabled: sentryEnabled } = require('./services/sentry');
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
@@ -142,6 +145,12 @@ app.get('/api/health', async (req, res) => {
 // ─── 404 ──────────────────────────────────────────────────────
 app.use((req, res) => res.status(404).json({ error: 'Not found', path: req.path }));
 
+// ─── SENTRY ───────────────────────────────────────────────────
+// Must sit after every route/404 handler and before the error handler below
+// — it only captures what actually reaches this point, no duplicate error
+// logic, same shape as index.js's own error handler already had.
+if (sentryEnabled) Sentry.setupExpressErrorHandler(app);
+
 // ─── GLOBAL ERROR HANDLER ─────────────────────────────────────
 app.use((err, req, res, next) => {
   const status = err.status || err.statusCode || 500;
@@ -166,7 +175,8 @@ if (require.main === module) {
     console.log(`    Env:      ${process.env.NODE_ENV}`);
     console.log(`    Supabase: ${process.env.SUPABASE_URL ? '✓' : '✗ MISSING'}`);
     console.log(`    Claude:   ${process.env.ANTHROPIC_API_KEY ? '✓' : '✗ MISSING'}`);
-    console.log(`    MoMo:     ${process.env.HUBTEL_CLIENT_ID ? '✓' : '✗ not configured'}\n`);
+    console.log(`    MoMo:     ${process.env.HUBTEL_CLIENT_ID ? '✓' : '✗ not configured'}`);
+    console.log(`    Sentry:   ${sentryEnabled ? '✓' : '✗ not configured'}\n`);
   });
 
   process.on('SIGTERM', () => {
