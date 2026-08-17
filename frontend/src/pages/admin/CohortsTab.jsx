@@ -7,6 +7,7 @@ export default function CohortsTab({ isPlatformAdmin }) {
   const [error, setError] = useState("");
   const [createOpen, setCreateOpen] = useState(false);
   const [enrollTarget, setEnrollTarget] = useState(null); // cohort being enrolled into
+  const [curriculumTarget, setCurriculumTarget] = useState(null); // cohort getting the DMP curriculum
 
   const load = () => api.get("/api/admin/cohorts").then(({ cohorts }) => setCohorts(cohorts));
 
@@ -43,11 +44,16 @@ export default function CohortsTab({ isPlatformAdmin }) {
                 <p className="text-content-2">
                   Enrolled: <span className="text-content font-medium">{c.enrollments?.[0]?.count ?? 0}/{c.max_size}</span>
                 </p>
-                {isPlatformAdmin && (
-                  <Button size="sm" variant="secondary" className="self-start mt-1" onClick={() => setEnrollTarget(c)}>
-                    Enroll mentees
+                <div className="flex flex-wrap gap-2 mt-1">
+                  {isPlatformAdmin && (
+                    <Button size="sm" variant="secondary" onClick={() => setEnrollTarget(c)}>
+                      Enroll mentees
+                    </Button>
+                  )}
+                  <Button size="sm" variant="secondary" onClick={() => setCurriculumTarget(c)}>
+                    Assign DMP curriculum
                   </Button>
-                )}
+                </div>
               </CardBody>
             </Card>
           ))}
@@ -56,7 +62,66 @@ export default function CohortsTab({ isPlatformAdmin }) {
 
       <CreateCohortModal open={createOpen} onClose={() => setCreateOpen(false)} onCreated={load} />
       <EnrollModal cohort={enrollTarget} onClose={() => setEnrollTarget(null)} onEnrolled={load} />
+      <AssignCurriculumModal cohort={curriculumTarget} onClose={() => setCurriculumTarget(null)} />
     </div>
+  );
+}
+
+const DMP_TRACKS = [
+  { value: "seo", label: "SEO & Content Marketing" },
+  { value: "social_media", label: "Social Media Marketing" },
+  { value: "google_ads", label: "Google Ads (SEM)" },
+];
+
+function AssignCurriculumModal({ cohort, onClose }) {
+  const [track, setTrack] = useState("seo");
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
+  const [result, setResult] = useState(null);
+
+  useEffect(() => {
+    if (cohort) { setTrack("seo"); setError(""); setResult(null); }
+  }, [cohort]);
+
+  const handleAssign = async () => {
+    setSubmitting(true);
+    setError("");
+    try {
+      const { assigned } = await api.post(`/api/admin/cohorts/${cohort.id}/assign-curriculum`, { track });
+      setResult(assigned);
+    } catch (err) {
+      setError(err instanceof ApiError ? err.message : "Couldn't assign the curriculum.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  return (
+    <Modal
+      open={!!cohort}
+      onClose={onClose}
+      title={`Assign DMP curriculum — ${cohort?.name ?? ""}`}
+      footer={
+        <>
+          <Button variant="secondary" onClick={onClose}>Close</Button>
+          <Button onClick={handleAssign} loading={submitting}>Assign</Button>
+        </>
+      }
+    >
+      {error && <Alert tone="danger" className="mb-3">{error}</Alert>}
+      {result !== null && (
+        <Alert tone="success" className="mb-3">
+          {result === 0
+            ? "Every enrolled mentee already has this curriculum — nothing to do."
+            : `Assigned the 12-week curriculum to ${result} mentee${result === 1 ? "" : "s"}.`}
+        </Alert>
+      )}
+      <p className="text-sm text-content-2 mb-3">
+        Gives every mentee currently enrolled in this cohort the real 12-week Delta Mentoring Program
+        curriculum. Safe to run again later — mentees who already have it are skipped.
+      </p>
+      <Select label="Specialization track" value={track} onChange={(e) => setTrack(e.target.value)} options={DMP_TRACKS} />
+    </Modal>
   );
 }
 
@@ -106,6 +171,7 @@ function CreateCohortModal({ open, onClose, onCreated }) {
             { value: "backend", label: "Backend" },
             { value: "fullstack", label: "Full-stack" },
             { value: "data", label: "Data" },
+            ...DMP_TRACKS,
           ]}
         />
         <Input label="Total weeks" type="number" min="1" value={form.total_weeks} onChange={set("total_weeks")} />

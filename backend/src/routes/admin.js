@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { supabase } = require('../config/supabase');
 const { auth, requireLevel, audit } = require('../middleware/auth');
+const { TRACKS: DMP_TRACKS, buildWeeks } = require('../data/dmp-curriculum');
 
 // All admin routes require at least cohort_admin level
 router.use(auth, requireLevel('cohort_admin'));
@@ -112,6 +113,55 @@ router.post('/cohorts/:id/enroll', requireLevel('platform_admin'), async (req, r
   const { data, error } = await supabase.from('enrollments').insert(rows).select();
   if (error) return res.status(400).json({ error: error.message });
   res.json({ enrolled: data.length });
+});
+
+// POST /api/admin/cohorts/:id/assign-curriculum – give the real DMP
+// curriculum (data/dmp-curriculum.js) to every mentee currently enrolled in
+// this cohort. Idempotent by design: skips any mentee who already has a
+// learning_paths row for this cohort, so it's safe to re-run after new
+// enrollments land rather than needing an auto-assign-on-enroll trigger.
+router.post('/cohorts/:id/assign-curriculum', requireLevel('cohort_admin'), audit('cohort.assign_curriculum'), async (req, res) => {
+  const { track } = req.body;
+  if (!DMP_TRACKS.includes(track))
+    return res.status(400).json({ error: `track must be one of: ${DMP_TRACKS.join(', ')}` });
+
+  // Same ownership scoping as PATCH /cohorts/:id above.
+  if (!['platform_admin', 'super_admin'].includes(req.user.role)) {
+    const { data: cohort } = await supabase.from('cohorts').select('mentor_id').eq('id', req.params.id).single();
+    if (!cohort || cohort.mentor_id !== req.user.id)
+      return res.status(403).json({ error: 'You do not run this cohort' });
+  }
+
+  const { data: enrollments, error: enrollError } = await supabase
+    .from('enrollments').select('mentee_id').eq('cohort_id', req.params.id);
+  if (enrollError) return res.status(500).json({ error: enrollError.message });
+  if (!enrollments.length) return res.json({ assigned: 0 });
+
+  const { data: existingPaths, error: existingError } = await supabase
+    .from('learning_paths').select('mentee_id').eq('cohort_id', req.params.id);
+  if (existingError) return res.status(500).json({ error: existingError.message });
+  const alreadyAssigned = new Set(existingPaths.map((p) => p.mentee_id));
+
+  const toAssign = enrollments.map((e) => e.mentee_id).filter((id) => !alreadyAssigned.has(id));
+  if (!toAssign.length) return res.json({ assigned: 0 });
+
+  const weeks = buildWeeks(track);
+  let assigned = 0;
+  for (const mentee_id of toAssign) {
+    const { data: path, error: pathError } = await supabase
+      .from('learning_paths')
+      .insert({ mentee_id, cohort_id: req.params.id, title: 'Delta Mentoring Program', track, total_weeks: weeks.length })
+      .select().single();
+    if (pathError) return res.status(400).json({ error: pathError.message });
+
+    const { error: weeksError } = await supabase
+      .from('learning_weeks').insert(weeks.map((w) => ({ ...w, path_id: path.id })));
+    if (weeksError) return res.status(400).json({ error: weeksError.message });
+
+    assigned += 1;
+  }
+
+  res.json({ assigned });
 });
 
 // ── AUDIT LOGS (super_admin only) ────────────────────────────
