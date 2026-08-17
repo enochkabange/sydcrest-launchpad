@@ -9,6 +9,8 @@ import StudyBuddy from "./pages/StudyBuddy.jsx";
 import Profile from "./pages/Profile.jsx";
 import ForgotPassword from "./pages/ForgotPassword.jsx";
 import ResetPassword from "./pages/ResetPassword.jsx";
+import Privacy from "./pages/Privacy.jsx";
+import Terms from "./pages/Terms.jsx";
 import Projects from "./pages/Projects.jsx";
 import Mentors from "./pages/Mentors.jsx";
 import Community from "./pages/Community.jsx";
@@ -107,6 +109,11 @@ export default function App() {
           <Route path="/register" element={<RedirectIfAuthed><Register /></RedirectIfAuthed>} />
           <Route path="/forgot-password" element={<RedirectIfAuthed><ForgotPassword /></RedirectIfAuthed>} />
           <Route path="/reset-password" element={<RedirectIfAuthed><ResetPassword /></RedirectIfAuthed>} />
+
+          {/* Public regardless of auth state — a logged-in user should be
+              able to read these too, not get bounced like Login/Register. */}
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
 
           <Route path="/" element={<RequireAuth><HomeRoute /></RequireAuth>} />
           <Route path="/learn/:pathId" element={<RequireAuth><PathDetailRoute /></RequireAuth>} />
