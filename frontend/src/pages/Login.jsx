@@ -67,6 +67,11 @@ export default function Login() {
         <p className="text-center text-sm text-content-2">
           New here? <Link to="/register" className="text-content-link font-medium">Create an account</Link>
         </p>
+        <p className="text-center text-xs text-content-3">
+          <Link to="/privacy" className="hover:underline">Privacy Policy</Link>
+          {" · "}
+          <Link to="/terms" className="hover:underline">Terms of Service</Link>
+        </p>
       </div>
     </div>
   );

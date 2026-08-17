@@ -80,6 +80,12 @@ export default function Register() {
         <p className="text-center text-sm text-content-2">
           Already have an account? <Link to="/login" className="text-content-link font-medium">Log in</Link>
         </p>
+        <p className="text-center text-xs text-content-3">
+          By creating an account you agree to our{" "}
+          <Link to="/terms" className="hover:underline">Terms of Service</Link>
+          {" "}and{" "}
+          <Link to="/privacy" className="hover:underline">Privacy Policy</Link>.
+        </p>
       </div>
     </div>
   );
