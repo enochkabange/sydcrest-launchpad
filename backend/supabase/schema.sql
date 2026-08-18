@@ -7,7 +7,8 @@ create extension if not exists "uuid-ossp";
 create extension if not exists "pgcrypto";
 
 -- ─── ENUMS ───────────────────────────────────────────────────
-create type user_role as enum ('mentee','mentor','cohort_admin','platform_admin','super_admin');
+create type user_role as enum ('mentee','mentor','cohort_admin','platform_admin','super_admin','reviewer');
+create type application_status as enum ('applied','under_review','accepted','waitlisted','rejected');
 create type mentee_status as enum ('active','at_risk','inactive','graduated');
 create type project_status as enum ('draft','submitted','ai_reviewed','mentor_reviewed','revision_requested','approved');
 create type event_type as enum ('workshop','game_show','hackathon','demo_day','summit');
@@ -71,9 +72,39 @@ create table programs (
   eligibility_max_age    int,
   eligibility_notes      text,
   certification_criteria jsonb,
+  screening_test         jsonb,
   is_active              boolean default true,
   created_at             timestamptz default now()
 );
+
+-- ─── APPLICATIONS ────────────────────────────────────────────
+-- PLATFORM_SPEC.md §3 — public submission (no account required), reviewed
+-- by the 'reviewer' role (separate from mentors, see user_role above).
+-- No unique constraint on email: a rejected applicant can reapply next
+-- cycle as a fresh row, not an update to the old one.
+create table applications (
+  id                uuid primary key default uuid_generate_v4(),
+  program_id        uuid references programs(id) not null,
+  reference_code    text not null unique,
+  full_name         text not null,
+  email             text not null,
+  phone             text,
+  date_of_birth     date,
+  region            text,
+  gender            text,
+  is_underserved    boolean default false,
+  essay             text,
+  screening_answers jsonb,
+  screening_score   int,
+  status            application_status default 'applied',
+  reviewer_id       uuid references profiles(id),
+  reviewer_notes    text,
+  decided_at        timestamptz,
+  created_at        timestamptz default now()
+);
+create index on applications(program_id);
+create index on applications(email);
+create index on applications(status);
 
 -- ─── COHORTS ─────────────────────────────────────────────────
 create table cohorts (

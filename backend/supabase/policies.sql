@@ -51,6 +51,21 @@ create policy "Admins manage programs" on programs for insert with check (auth_i
 create policy "Admins update programs" on programs for update using (auth_is_admin());
 create policy "Admins delete programs" on programs for delete using (auth_is_admin());
 
+create or replace function auth_is_reviewer() returns boolean as $$
+  select auth_is_admin() or exists (
+    select 1 from profiles where user_id = auth.uid() and role = 'reviewer'
+  );
+$$ language sql stable;
+
+-- ─── APPLICATIONS ────────────────────────────────────────────
+-- No public select policy: status lookup goes through the backend's
+-- service-role client with an explicit email+reference_code check, not
+-- direct table access. No insert policy either — submission is
+-- unauthenticated and goes through the service-role client too.
+alter table applications enable row level security;
+create policy "Reviewers and admins manage applications" on applications for select using (auth_is_reviewer());
+create policy "Reviewers and admins update applications" on applications for update using (auth_is_reviewer());
+
 -- ─── COHORTS ─────────────────────────────────────────────────
 alter table cohorts enable row level security;
 create policy "Members and admins can view" on cohorts for select using (auth_in_cohort(id));

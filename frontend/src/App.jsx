@@ -11,6 +11,8 @@ import ForgotPassword from "./pages/ForgotPassword.jsx";
 import ResetPassword from "./pages/ResetPassword.jsx";
 import Privacy from "./pages/Privacy.jsx";
 import Terms from "./pages/Terms.jsx";
+import Apply from "./pages/Apply.jsx";
+import ApplicationStatus from "./pages/ApplicationStatus.jsx";
 import Projects from "./pages/Projects.jsx";
 import Mentors from "./pages/Mentors.jsx";
 import Community from "./pages/Community.jsx";
@@ -18,9 +20,13 @@ import MentorDashboard from "./pages/MentorDashboard.jsx";
 import Admin from "./pages/admin/Admin.jsx";
 import Showcase from "./Showcase.jsx";
 
-const ADMIN_ROLES = ["cohort_admin", "platform_admin", "super_admin"];
+// 'reviewer' is included here (not in backend ROLE_LEVELS' admin chain,
+// but operationally the same "not a mentee" bucket for nav/routing
+// purposes) — otherwise a reviewer-only account can never reach the
+// Admin > Applications tab the backend already lets them use.
+const ADMIN_ROLES = ["cohort_admin", "platform_admin", "super_admin", "reviewer"];
 // Anyone who isn't a mentee lands on MentorDashboard at "/" — see HomeRoute.
-const MENTOR_SIDE_ROLES = ["mentor", "cohort_admin", "platform_admin", "super_admin"];
+const MENTOR_SIDE_ROLES = ["mentor", "cohort_admin", "platform_admin", "super_admin", "reviewer"];
 
 function navFor(role) {
   const base = [
@@ -114,6 +120,8 @@ export default function App() {
               able to read these too, not get bounced like Login/Register. */}
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/apply/status" element={<ApplicationStatus />} />
+          <Route path="/apply/:slug" element={<Apply />} />
 
           <Route path="/" element={<RequireAuth><HomeRoute /></RequireAuth>} />
           <Route path="/learn/:pathId" element={<RequireAuth><PathDetailRoute /></RequireAuth>} />
