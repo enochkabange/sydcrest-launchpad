@@ -128,6 +128,13 @@ create policy "Participants update" on sessions for update using (
   mentor_id = auth_profile_id() or mentee_id = auth_profile_id() or auth_is_admin()
 );
 
+alter table session_attendees enable row level security;
+create policy "Participants and admins" on session_attendees for select using (
+  profile_id = auth_profile_id()
+  or exists (select 1 from sessions s where s.id = session_id and (s.mentor_id = auth_profile_id() or s.mentee_id = auth_profile_id()))
+  or auth_is_admin()
+);
+
 -- ─── PROJECTS / RUBRICS ──────────────────────────────────────
 alter table projects enable row level security;
 create policy "Own project or cohort staff" on projects for select using (

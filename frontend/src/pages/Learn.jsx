@@ -11,7 +11,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { api, ApiError, BASE_URL } from "../lib/api.js";
 import { useAuth } from "../auth/AuthContext.jsx";
-import { Page, PageSection, Card, CardHeader, CardTitle, CardBody, Badge, Progress, EmptyState, Alert, PageLoader, Button, Input, Textarea } from "../components/ui/index.js";
+import { Page, PageSection, Card, CardHeader, CardTitle, CardBody, Badge, Progress, EmptyState, Alert, PageLoader, Button, Input, Textarea, Avatar } from "../components/ui/index.js";
+import VideoCall from "../components/video/VideoCall.jsx";
 
 const TRACKS = [
   { value: "frontend", label: "Frontend" },
@@ -91,6 +92,8 @@ export default function Learn() {
   const [error, setError] = useState("");
   const [onboarding, setOnboarding] = useState(null);
   const [nudges, setNudges] = useState([]);
+  const [sessions, setSessions] = useState(null);
+  const [joining, setJoining] = useState(null);
 
   useEffect(() => {
     api.get("/api/learning/paths")
@@ -105,6 +108,11 @@ export default function Learn() {
     // filters to unacknowledged nudge_worthy rows.
     api.get("/api/achievements/me?nudge=true")
       .then(({ achievements }) => setNudges(achievements))
+      .catch(() => {});
+    // Role-scoped to the caller already (sessions.js) — a mentee only
+    // ever sees their own sessions here.
+    api.get("/api/sessions")
+      .then(({ sessions }) => setSessions(sessions.filter((s) => s.status === "scheduled")))
       .catch(() => {});
   }, []);
 
@@ -147,6 +155,42 @@ export default function Learn() {
           </a>.
         </Alert>
       ))}
+      {sessions?.length > 0 && (
+        <PageSection title={`Upcoming sessions (${sessions.length})`}>
+          <div className="flex flex-col gap-3">
+            {sessions.map((s) => (
+              <Card key={s.id}>
+                <CardBody className="flex flex-col gap-3">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <Avatar name={s.mentor?.full_name} size="sm" />
+                      <div>
+                        <p className="text-sm font-semibold text-content">
+                          {s.mentor?.full_name}
+                          {s.session_type === "group" && <Badge tone="info" className="ml-2">Group</Badge>}
+                        </p>
+                        <p className="text-xs text-content-2">{new Date(s.scheduled_at).toLocaleString()} · {s.duration_mins}min</p>
+                      </div>
+                    </div>
+                    {s.daily_room_url ? (
+                      <Button size="sm" onClick={() => setJoining(joining === s.id ? null : s.id)}>
+                        {joining === s.id ? "Hide call" : "Join"}
+                      </Button>
+                    ) : s.meet_link ? (
+                      <a href={s.meet_link} target="_blank" rel="noreferrer">
+                        <Button size="sm" variant="secondary">Open meeting link</Button>
+                      </a>
+                    ) : null}
+                  </div>
+                  {joining === s.id && s.daily_room_url && (
+                    <VideoCall joinFn={() => api.post(`/api/sessions/${s.id}/join`, {})} />
+                  )}
+                </CardBody>
+              </Card>
+            ))}
+          </div>
+        </PageSection>
+      )}
       {paths.length === 0 ? (
         <div className="flex flex-col gap-6">
           <EmptyState

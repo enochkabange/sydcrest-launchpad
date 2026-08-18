@@ -71,8 +71,8 @@ async function createCohort(mentorId, overrides = {}) {
   return data;
 }
 
-async function enroll(menteeId, cohortId) {
-  const { data, error } = await supabase.from('enrollments').insert({ mentee_id: menteeId, cohort_id: cohortId }).select().single();
+async function enroll(menteeId, cohortId, overrides = {}) {
+  const { data, error } = await supabase.from('enrollments').insert({ mentee_id: menteeId, cohort_id: cohortId, ...overrides }).select().single();
   if (error) throw error;
   return data;
 }

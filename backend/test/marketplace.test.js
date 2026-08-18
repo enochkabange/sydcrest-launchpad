@@ -1,4 +1,4 @@
-const { app, request, supabase, registerUser, deleteUser } = require('./helpers');
+const { app, request, supabase, registerUser, deleteUser, createCohort, enroll, cleanupCohort } = require('./helpers');
 
 // registerUser('mentor') already auto-creates a mentor_listings row
 // (mentor_id is unique) — update it rather than inserting a second one.
@@ -87,5 +87,56 @@ describe('marketplace caseload cap', () => {
     });
     expect(book.status).toBe(201);
     bookingIds.push(book.body.booking.id);
+  });
+});
+
+describe('marketplace video safeguarding', () => {
+  const cleanup = [];
+  const listingIds = [];
+  const bookingIds = [];
+  const cohorts = [];
+
+  afterEach(async () => {
+    await Promise.all(bookingIds.splice(0).map((id) => supabase.from('bookings').delete().eq('id', id)));
+    await Promise.all(listingIds.splice(0).map((id) => supabase.from('mentor_listings').delete().eq('id', id)));
+    await Promise.all(cohorts.splice(0).map(cleanupCohort));
+    await Promise.all(cleanup.splice(0).map(deleteUser));
+  });
+
+  it('blocks a minor mentee from booking a private paid session', async () => {
+    const mentor = await registerUser('mentor');
+    const mentee = await registerUser('mentee');
+    cleanup.push(mentor.email, mentee.email);
+    const cohort = await createCohort(mentor.profile.id);
+    cohorts.push(cohort.id);
+    await enroll(mentee.profile.id, cohort.id, { guardian_consent_required: true });
+    const listing = await createListing(mentor.profile.id);
+    listingIds.push(listing.id);
+
+    const res = await request(app).post('/api/marketplace/book').set('Authorization', `Bearer ${mentee.token}`).send({
+      listing_id: listing.id, scheduled_at: new Date(Date.now() + 86400000).toISOString(), payment_method: 'mtn_momo',
+    });
+    expect(res.status).toBe(403);
+  });
+
+  it('join route 404s for a non-participant, and for a booking with no video room', async () => {
+    const mentor = await registerUser('mentor');
+    const mentee = await registerUser('mentee');
+    const outsider = await registerUser('mentee');
+    cleanup.push(mentor.email, mentee.email, outsider.email);
+    const listing = await createListing(mentor.profile.id);
+    listingIds.push(listing.id);
+
+    const book = await request(app).post('/api/marketplace/book').set('Authorization', `Bearer ${mentee.token}`).send({
+      listing_id: listing.id, scheduled_at: new Date(Date.now() + 86400000).toISOString(), payment_method: 'mtn_momo',
+    });
+    bookingIds.push(book.body.booking.id);
+
+    // No DAILY_API_KEY in the test env, so no room was ever attached.
+    const noRoom = await request(app).post(`/api/marketplace/bookings/${book.body.booking.id}/join`).set('Authorization', `Bearer ${mentee.token}`).send({});
+    expect(noRoom.status).toBe(404);
+
+    const notAParticipant = await request(app).post(`/api/marketplace/bookings/${book.body.booking.id}/join`).set('Authorization', `Bearer ${outsider.token}`).send({});
+    expect(notAParticipant.status).toBe(404);
   });
 });

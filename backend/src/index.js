@@ -35,7 +35,7 @@ app.use(helmet({
       styleSrc: ["'self'", "'unsafe-inline'"],
       imgSrc: ["'self'", "data:", "https:"],
       connectSrc: ["'self'", process.env.SUPABASE_URL],
-      frameSrc: ["'none'"],
+      frameSrc: ["'self'", "https://*.daily.co"],
       objectSrc: ["'none'"],
     },
   },
