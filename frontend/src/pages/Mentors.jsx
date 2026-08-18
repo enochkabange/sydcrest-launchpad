@@ -6,6 +6,7 @@
  * this page just surfaces whatever message the API actually returns.
  */
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { api, ApiError } from "../lib/api.js";
 import { Page, PageSection, Modal, Select, Input, Textarea, Button, Alert, PageLoader } from "../components/ui/index.js";
 import MentorCard from "../components/dashboard/MentorCard.jsx";
@@ -17,12 +18,22 @@ const PAYMENT_METHODS = [
 ];
 
 export default function Mentors() {
+  const navigate = useNavigate();
   const [listings, setListings] = useState(null);
   const [error, setError] = useState("");
   const [booking, setBooking] = useState(null); // the listing being booked
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState(null); // { booking, payment } after a successful POST
   const [form, setForm] = useState({ scheduled_at: "", duration_mins: "60", session_focus: "", payment_method: "mtn_momo" });
+
+  const message = async (mentorProfileId) => {
+    try {
+      const { conversation } = await api.post("/api/chat/conversations/dm", { other_profile_id: mentorProfileId });
+      navigate(`/messages/${conversation.id}`);
+    } catch (err) {
+      setError(err instanceof ApiError ? err.message : "Couldn't start a conversation.");
+    }
+  };
 
   useEffect(() => {
     api.get("/api/marketplace")
@@ -77,6 +88,7 @@ export default function Mentors() {
               menteesGuided={l.total_sessions}
               full={l.is_full}
               onBook={() => openBooking(l)}
+              onMessage={() => message(l.mentor_id)}
             />
           ))}
         </div>

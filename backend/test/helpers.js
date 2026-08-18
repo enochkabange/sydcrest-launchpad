@@ -80,15 +80,17 @@ async function enroll(menteeId, cohortId) {
 /* Every table with a cohort_id FK, except enrollments — schema.sql gives
    enrollments.cohort_id ON DELETE CASCADE but deliberately not the rest
    (learning_paths, sessions, projects, project_rubrics, posts,
-   achievements, certificates). Deleting a cohort while any of those
-   still reference it fails the DELETE with a foreign-key violation. This
-   helper's previous version didn't check the
+   achievements, certificates, conversations). Deleting a cohort while any
+   of those still reference it fails the DELETE with a foreign-key
+   violation. This helper's previous version didn't check the
    `error` Supabase returns on a failed delete, so that failure was
    silent — the cohort just... stayed, and 21 orphaned "T"/"Test Cohort"
    rows accumulated in the real Supabase project across several runs
-   before this was caught via the admin dashboard's Overview tab. */
+   before this was caught via the admin dashboard's Overview tab.
+   conversations cascades to conversation_participants/chat_thread_messages
+   itself, so deleting it here is enough — no separate pass for those two. */
 async function cleanupCohort(cohortId) {
-  for (const table of ['enrollments', 'learning_paths', 'sessions', 'projects', 'project_rubrics', 'posts', 'achievements', 'certificates']) {
+  for (const table of ['enrollments', 'learning_paths', 'sessions', 'projects', 'project_rubrics', 'posts', 'achievements', 'certificates', 'conversations']) {
     const { error } = await supabase.from(table).delete().eq('cohort_id', cohortId);
     if (error) throw new Error(`cleanupCohort: failed to clear ${table} for cohort ${cohortId}: ${error.message}`);
   }

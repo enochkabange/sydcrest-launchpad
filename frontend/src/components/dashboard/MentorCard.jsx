@@ -25,6 +25,7 @@ export default function MentorCard({
   menteesGuided = 0,
   full = false,
   onBook,
+  onMessage,
   className = "",
   ...props
 }) {
@@ -64,11 +65,14 @@ export default function MentorCard({
           <Icon name="cohort" size="sm" />
           {menteesGuided} mentee{menteesGuided === 1 ? "" : "s"} mentored
         </span>
-        {full ? (
-          <Badge tone="neutral">Fully booked</Badge>
-        ) : (
-          <Button variant="accent" size="sm" onClick={onBook}>Book intro call</Button>
-        )}
+        <div className="flex items-center gap-2">
+          {onMessage && <Button variant="secondary" size="sm" onClick={onMessage}>Message</Button>}
+          {full ? (
+            <Badge tone="neutral">Fully booked</Badge>
+          ) : (
+            <Button variant="accent" size="sm" onClick={onBook}>Book intro call</Button>
+          )}
+        </div>
       </div>
     </Card>
   );

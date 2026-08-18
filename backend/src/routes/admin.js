@@ -119,6 +119,13 @@ router.post('/cohorts', requireLevel('platform_admin'), audit('cohort.create'), 
     .insert({ name, track, program_id, mentor_id, start_date, end_date, total_weeks, max_size })
     .select().single();
   if (error) return res.status(400).json({ error: error.message });
+
+  // PLATFORM_SPEC.md §11 — one group-chat conversation per cohort, no
+  // user action needed to start it. Mentor joins now; mentees join at
+  // enroll time below.
+  const { data: conversation } = await supabase.from('conversations').insert({ type: 'cohort', cohort_id: data.id }).select().single();
+  if (mentor_id) await supabase.from('conversation_participants').insert({ conversation_id: conversation.id, profile_id: mentor_id });
+
   res.status(201).json({ cohort: data });
 });
 
@@ -175,6 +182,17 @@ router.post('/cohorts/:id/enroll', requireLevel('platform_admin'), async (req, r
     mentee_id: e.mentee_id, type: 'enrolled', program_id: cohort?.program_id ?? null, cohort_id: e.cohort_id,
     scope_key: `enrolled:${e.cohort_id}`, label: 'Enrolled in a cohort', is_minor: e.guardian_consent_required,
   })));
+
+  // PLATFORM_SPEC.md §11 — join each newly-enrolled mentee to the
+  // cohort's existing group-chat conversation. ignoreDuplicates makes
+  // this safe to run for mentees who somehow already have a row (there
+  // shouldn't be any, since enrollment itself is what adds them, but
+  // matches this codebase's general idempotent-sync discipline).
+  const { data: conversation } = await supabase.from('conversations').select('id').eq('cohort_id', req.params.id).maybeSingle();
+  if (conversation) {
+    await supabase.from('conversation_participants')
+      .upsert(data.map((e) => ({ conversation_id: conversation.id, profile_id: e.mentee_id })), { onConflict: 'conversation_id,profile_id', ignoreDuplicates: true });
+  }
 
   res.json({ enrolled: data.length, guardian_consent_flagged: data.filter((e) => e.guardian_consent_required).length });
 });
