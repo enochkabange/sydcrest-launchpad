@@ -66,6 +66,11 @@ app.use(morgan(
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
+// Serves backend/public/og-share.png — the static branded Open Graph
+// image referenced by the achievement/certificate share pages (see
+// utils/ogPage.js's header comment on why it's static, not generated).
+app.use(express.static('public'));
+
 // ─── GLOBAL RATE LIMITS ───────────────────────────────────────
 // The integration suite (test/) makes real register/login calls against
 // this same app, from one IP, well past any of these limits — that's a
@@ -131,6 +136,11 @@ app.use('/api/onboarding',   require('./routes/onboarding'));
 // public admissions endpoints with authenticated review ones under
 // different logical resources — see applications.js's own header comment.
 app.use('/api',              require('./routes/applications'));
+// Same "own full paths" shape as applications.js: public share/verify
+// pages mixed with authenticated self-service (achievementPages.js) or
+// bare-public machine verification (certificates.js).
+app.use('/api',              require('./routes/achievementPages'));
+app.use('/api',              require('./routes/certificates'));
 
 // ─── HEALTH / READINESS ───────────────────────────────────────
 app.get('/api/health', async (req, res) => {

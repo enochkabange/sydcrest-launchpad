@@ -22,6 +22,8 @@ const { randomBytes } = require('crypto');
 const { body, query, validationResult } = require('express-validator');
 const { supabase } = require('../config/supabase');
 const { auth, requireRole, audit } = require('../middleware/auth');
+const { isMinor } = require('../utils/age');
+const { mintAchievement } = require('../services/achievements');
 
 /* No router-wide auth gate here, unlike admin.js — this router mixes
    public routes (submit, status lookup) with reviewer-only ones (list,
@@ -184,6 +186,24 @@ router.patch('/applications/:id', auth, requireRole(...REVIEW_ROLES), audit('app
 
   const { data, error } = await supabase.from('applications').update(updates).eq('id', req.params.id).select().single();
   if (error) return res.status(400).json({ error: error.message });
+
+  // PLATFORM_SPEC.md §8 — accepted applicants are pre-registration
+  // (ApplicationStatus.jsx's own copy: "register with the same email to
+  // get started"), so this only mints if a profile already happens to
+  // exist for this email. The usual apply-then-register ordering is
+  // covered by auth.js's register handler instead; whichever fires
+  // second is a no-op via the unique(mentee_id, type, scope_key) constraint.
+  if (data.status === 'accepted') {
+    const { data: profile } = await supabase.from('profiles').select('id').eq('email', data.email).maybeSingle();
+    if (profile) {
+      await mintAchievement({
+        mentee_id: profile.id, type: 'accepted', program_id: data.program_id,
+        scope_key: `accepted:${data.program_id}`, label: 'Accepted into the program',
+        is_minor: isMinor(data.date_of_birth), nudge_worthy: true,
+      });
+    }
+  }
+
   res.json({ application: data });
 });
 

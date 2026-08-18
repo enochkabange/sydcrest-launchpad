@@ -4,6 +4,8 @@ const crypto = require('crypto');
 const { supabase } = require('../config/supabase');
 const { auth, requireLevel, audit } = require('../middleware/auth');
 const { TRACKS: DMP_TRACKS, buildWeeks } = require('../data/dmp-curriculum');
+const { isMinor } = require('../utils/age');
+const { mintAchievement } = require('../services/achievements');
 
 // All admin routes require at least cohort_admin level
 router.use(auth, requireLevel('cohort_admin'));
@@ -136,16 +138,6 @@ router.patch('/cohorts/:id', requireLevel('cohort_admin'), async (req, res) => {
   res.json({ cohort: data });
 });
 
-function isMinor(dateOfBirth) {
-  if (!dateOfBirth) return false;
-  const dob = new Date(dateOfBirth);
-  const now = new Date();
-  let age = now.getFullYear() - dob.getFullYear();
-  const monthDiff = now.getMonth() - dob.getMonth();
-  if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < dob.getDate())) age--;
-  return age < 18;
-}
-
 // POST /api/admin/cohorts/:id/enroll – PLATFORM_SPEC.md §5's guardian-
 // consent auto-flag lives here: for each mentee, their most recent
 // *accepted* application (§3) already has a date_of_birth from admissions
@@ -177,6 +169,13 @@ router.post('/cohorts/:id/enroll', requireLevel('platform_admin'), async (req, r
 
   const { data, error } = await supabase.from('enrollments').insert(rows).select();
   if (error) return res.status(400).json({ error: error.message });
+
+  const { data: cohort } = await supabase.from('cohorts').select('program_id').eq('id', req.params.id).single();
+  await Promise.all(data.map((e) => mintAchievement({
+    mentee_id: e.mentee_id, type: 'enrolled', program_id: cohort?.program_id ?? null, cohort_id: e.cohort_id,
+    scope_key: `enrolled:${e.cohort_id}`, label: 'Enrolled in a cohort', is_minor: e.guardian_consent_required,
+  })));
+
   res.json({ enrolled: data.length, guardian_consent_flagged: data.filter((e) => e.guardian_consent_required).length });
 });
 
@@ -258,6 +257,107 @@ router.patch('/enrollments/:id/guardian-email', requireLevel('cohort_admin'), au
   if (error) return res.status(400).json({ error: error.message });
 
   res.json({ enrollment: data, confirmation_url: `${process.env.CLIENT_URL}/guardian-consent/${token}` });
+});
+
+// GET /api/admin/cohorts/:id/certification-candidates – PLATFORM_SPEC.md
+// §7: certification is a manual mentor trigger, not automatic, but the
+// system flags who's *ready* by checking the program's own
+// certification_criteria against real progress (learning_weeks
+// completion %, project approval). requires_peer_review is honestly
+// reported as "can't verify" rather than silently treated as satisfied —
+// no peer-review data model exists yet.
+router.get('/cohorts/:id/certification-candidates', async (req, res) => {
+  if (!['platform_admin', 'super_admin'].includes(req.user.role)) {
+    const { data: cohort } = await supabase.from('cohorts').select('mentor_id').eq('id', req.params.id).single();
+    if (!cohort || cohort.mentor_id !== req.user.id)
+      return res.status(403).json({ error: 'You do not run this cohort' });
+  }
+
+  const { data: cohort } = await supabase.from('cohorts').select('program_id').eq('id', req.params.id).single();
+  const criteria = cohort?.program_id
+    ? (await supabase.from('programs').select('certification_criteria').eq('id', cohort.program_id).single()).data?.certification_criteria
+    : null;
+
+  const { data: enrollments } = await supabase
+    .from('enrollments')
+    .select('id, mentee_id, status, profiles!mentee_id(full_name, email)')
+    .eq('cohort_id', req.params.id)
+    .neq('status', 'graduated');
+
+  const candidates = await Promise.all((enrollments ?? []).map(async (e) => {
+    const { data: path } = await supabase.from('learning_paths').select('id').eq('mentee_id', e.mentee_id).eq('cohort_id', req.params.id).maybeSingle();
+    const { data: weeks } = path ? await supabase.from('learning_weeks').select('status').eq('path_id', path.id) : { data: [] };
+    const total = weeks?.length ?? 0;
+    const completed = weeks?.filter((w) => w.status === 'completed').length ?? 0;
+    const completion_pct = total ? Math.round((completed / total) * 100) : 0;
+
+    const { data: projects } = await supabase.from('projects').select('status').eq('mentee_id', e.mentee_id).eq('cohort_id', req.params.id);
+    const allProjectsApproved = (projects?.length ?? 0) > 0 && projects.every((p) => p.status === 'approved');
+
+    let ready = true;
+    if (!criteria) ready = false;
+    else {
+      if (criteria.min_completion_pct != null && completion_pct < criteria.min_completion_pct) ready = false;
+      if (criteria.requires_all_projects && !allProjectsApproved) ready = false;
+      if (criteria.requires_peer_review) ready = false; // can't verify — no peer-review system yet
+    }
+
+    return {
+      enrollment_id: e.id, mentee_id: e.mentee_id, full_name: e.profiles?.full_name, email: e.profiles?.email,
+      completion_pct, all_projects_approved: allProjectsApproved, ready,
+    };
+  }));
+
+  res.json({ candidates, criteria });
+});
+
+// POST /api/admin/enrollments/:id/certify – PLATFORM_SPEC.md §7's manual
+// mentor trigger. Self-issued Open Badges v3 assertion, no Credly
+// dependency — badge_json is served verbatim at
+// GET /api/certificates/:verificationId/badge.json for machine verification.
+router.post('/enrollments/:id/certify', requireLevel('cohort_admin'), audit('enrollment.certify'), async (req, res) => {
+  const { data: enrollment } = await supabase
+    .from('enrollments').select('*, cohorts(program_id, name, mentor_id)').eq('id', req.params.id).single();
+  if (!enrollment) return res.status(404).json({ error: 'Enrollment not found' });
+  if (!['platform_admin', 'super_admin'].includes(req.user.role) && enrollment.cohorts?.mentor_id !== req.user.id)
+    return res.status(403).json({ error: 'You do not run this cohort' });
+  if (enrollment.status === 'graduated') return res.status(400).json({ error: 'Already certified' });
+
+  const { data: mentee } = await supabase.from('profiles').select('full_name').eq('id', enrollment.mentee_id).single();
+  const { data: program } = enrollment.cohorts?.program_id
+    ? await supabase.from('programs').select('name').eq('id', enrollment.cohorts.program_id).single()
+    : { data: null };
+
+  const verification_id = crypto.randomBytes(8).toString('hex');
+  const badge_json = {
+    '@context': 'https://purl.imsglobal.org/spec/ob/v3p0/context.json',
+    type: ['VerifiableCredential', 'OpenBadgeCredential'],
+    issuer: { type: 'Profile', name: 'SydCrest Launchpad' },
+    issuanceDate: new Date().toISOString(),
+    credentialSubject: {
+      type: 'AchievementSubject',
+      achievement: {
+        type: 'Achievement',
+        name: program?.name ? `${program.name} Certificate` : 'Program Certificate',
+        description: `Awarded to ${mentee?.full_name ?? 'a learner'} for completing ${enrollment.cohorts?.name ?? 'their cohort'}.`,
+      },
+    },
+  };
+
+  const { data: certificate, error } = await supabase.from('certificates').insert({
+    mentee_id: enrollment.mentee_id, program_id: enrollment.cohorts?.program_id ?? null, cohort_id: enrollment.cohort_id,
+    verification_id, badge_json, issued_by: req.user.id,
+  }).select().single();
+  if (error) return res.status(400).json({ error: error.message });
+
+  await supabase.from('enrollments').update({ status: 'graduated' }).eq('id', enrollment.id);
+  await mintAchievement({
+    mentee_id: enrollment.mentee_id, type: 'certified', program_id: enrollment.cohorts?.program_id ?? null, cohort_id: enrollment.cohort_id,
+    scope_key: `certified:${enrollment.cohort_id}`, label: 'Program certified',
+    is_minor: enrollment.guardian_consent_required, nudge_worthy: true,
+  });
+
+  res.json({ certificate });
 });
 
 // POST /api/admin/cohorts/:id/assign-curriculum – give the real DMP

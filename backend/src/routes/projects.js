@@ -15,6 +15,7 @@ const { randomUUID } = require('crypto');
 const { supabase } = require('../config/supabase');
 const { auth, requireLevel, audit } = require('../middleware/auth');
 const { client, MODEL, requireAI, requireDailyAiCap, parseJsonResponse } = require('../services/claude');
+const { mintAchievement } = require('../services/achievements');
 
 const REVIEW_STATUSES = ['mentor_reviewed', 'revision_requested', 'approved'];
 
@@ -160,6 +161,21 @@ router.post('/:id/review', requireLevel('mentor'), async (req, res) => {
     .eq('id', req.params.id)
     .select().single();
   if (error) return res.status(400).json({ error: error.message });
+
+  // PLATFORM_SPEC.md §8 — this route is re-callable (a mentor can revise
+  // a decision already made), so this relies on mintAchievement's
+  // unique-constraint no-op rather than checking project.status first.
+  if (status === 'approved') {
+    const { data: enrollment } = await supabase
+      .from('enrollments').select('guardian_consent_required')
+      .eq('mentee_id', data.mentee_id).eq('cohort_id', data.cohort_id).maybeSingle();
+    await mintAchievement({
+      mentee_id: data.mentee_id, type: 'project_approved', cohort_id: data.cohort_id,
+      scope_key: `project_approved:${data.id}`, label: `Project approved: ${data.title}`,
+      is_minor: enrollment?.guardian_consent_required ?? false,
+    });
+  }
+
   res.json({ project: data });
 });
 
