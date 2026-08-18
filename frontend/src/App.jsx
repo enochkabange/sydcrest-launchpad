@@ -18,6 +18,11 @@ import Terms from "./pages/Terms.jsx";
 import Apply from "./pages/Apply.jsx";
 import ApplyMentor from "./pages/ApplyMentor.jsx";
 import ApplicationStatus from "./pages/ApplicationStatus.jsx";
+import Home from "./pages/public/Home.jsx";
+import Programs from "./pages/public/Programs.jsx";
+import ProgramDetail from "./pages/public/ProgramDetail.jsx";
+import Partnerships from "./pages/public/Partnerships.jsx";
+import About from "./pages/public/About.jsx";
 import Projects from "./pages/Projects.jsx";
 import Mentors from "./pages/Mentors.jsx";
 import Community from "./pages/Community.jsx";
@@ -121,6 +126,18 @@ function HomeRoute() {
   return MENTOR_SIDE_ROLES.includes(profile?.role) ? <MentorDashboard /> : <Learn />;
 }
 
+/* "/" is public-aware, unlike every other authed route: PLATFORM_SPEC.md
+   §13's public site renders here for an anon visitor (no marketing site
+   existed before this), while a signed-in session still lands on their
+   own dashboard exactly as before. Not wrapped in RequireAuth — that
+   would bounce an anon visitor to /login instead of showing Home. */
+function RootRoute() {
+  const { status } = useAuth();
+  if (status === "loading") return <PageLoader message="Loading…" />;
+  if (status === "anon") return <Home />;
+  return <AuthedLayout><HomeRoute /></AuthedLayout>;
+}
+
 function RedirectIfAuthed({ children }) {
   const { status } = useAuth();
   if (status === "loading") return <PageLoader message="Loading…" />;
@@ -151,8 +168,12 @@ export default function App() {
           <Route path="/apply-as-mentor" element={<ApplyMentor />} />
           <Route path="/apply/:slug" element={<Apply />} />
           <Route path="/guardian-consent/:token" element={<GuardianConsent />} />
+          <Route path="/programs" element={<Programs />} />
+          <Route path="/programs/:slug" element={<ProgramDetail />} />
+          <Route path="/partnerships" element={<Partnerships />} />
+          <Route path="/about" element={<About />} />
 
-          <Route path="/" element={<RequireAuth><HomeRoute /></RequireAuth>} />
+          <Route path="/" element={<RootRoute />} />
           <Route path="/learn/:pathId" element={<RequireAuth><PathDetailRoute /></RequireAuth>} />
           <Route path="/study-buddy" element={<RequireAuth><StudyBuddy /></RequireAuth>} />
           <Route path="/onboarding" element={<RequireAuth><Onboarding /></RequireAuth>} />

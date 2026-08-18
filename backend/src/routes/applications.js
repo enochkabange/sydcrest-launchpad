@@ -58,6 +58,37 @@ router.get('/programs/:slug', async (req, res) => {
   res.json({ program });
 });
 
+// GET /api/programs – public, the Programs listing page. Same field
+// allowlist as GET /api/programs/:slug (screening_test omitted here —
+// only the detail/apply flow needs it).
+router.get('/programs', async (req, res) => {
+  const { data: programs, error } = await supabase
+    .from('programs')
+    .select('id, name, slug, description, duration_weeks')
+    .eq('is_active', true)
+    .order('created_at', { ascending: true });
+  if (error) return res.status(500).json({ error: error.message });
+  res.json({ programs });
+});
+
+// POST /api/partner-inquiries – public Partnerships page form, §13. Same
+// "no account needed" trust boundary as /applications.
+router.post('/partner-inquiries', [
+  body('org_name').trim().isLength({ min: 2 }),
+  body('contact_name').trim().isLength({ min: 2 }),
+  body('email').isEmail().normalizeEmail(),
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
+
+  const { org_name, contact_name, email, phone, inquiry_type, message } = req.body;
+  const { error } = await supabase
+    .from('partner_inquiries')
+    .insert({ org_name, contact_name, email, phone, inquiry_type: inquiry_type || 'other', message });
+  if (error) return res.status(400).json({ error: error.message });
+  res.status(201).json({ success: true });
+});
+
 // POST /api/applications
 router.post('/applications', [
   body('program_id').isUUID(),

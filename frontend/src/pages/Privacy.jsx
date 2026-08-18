@@ -8,14 +8,13 @@
  * legal advice — flagged at the top, same caveat MASTER_PLAN §8 gives the
  * company-registration step.
  */
-import { Link } from "react-router-dom";
-import { Logo, Page, Prose, Alert } from "../components/ui/index.js";
+import { Page, Prose, Alert } from "../components/ui/index.js";
+import PublicShell from "../components/public/PublicShell.jsx";
 
 export default function Privacy() {
   return (
-    <div className="min-h-screen bg-surface-sunken">
+    <PublicShell>
       <div className="mx-auto w-full max-w-3xl px-4 py-8 sm:px-6">
-        <Logo size={36} className="mb-6" />
         <Page title="Privacy Policy" description="Last updated: August 2026" width="wide" className="!px-0 !py-0">
           <Alert tone="warning" title="Draft — pending founder and legal review" className="mb-6">
             This policy has not yet been reviewed by counsel or filed with Ghana's Data Protection
@@ -99,11 +98,7 @@ export default function Privacy() {
             </p>
           </Prose>
         </Page>
-
-        <p className="mt-8 text-center text-sm text-content-2">
-          <Link to="/login" className="text-content-link font-medium">Back to log in</Link>
-        </p>
       </div>
-    </div>
+    </PublicShell>
   );
 }

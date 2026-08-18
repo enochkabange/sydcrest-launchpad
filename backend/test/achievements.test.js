@@ -27,6 +27,14 @@ describe('achievements & milestones', () => {
   afterEach(async () => {
     await Promise.all(applicationIds.splice(0).map((id) => supabase.from('applications').delete().eq('id', id)));
     await Promise.all(cohortIds.splice(0).map(cleanupCohort));
+    // achievements minted with type 'accepted' (auth.js's register handler)
+    // carry program_id but no cohort_id, so cleanupCohort's cohort-scoped
+    // delete above never touches them — left in place, they silently fail
+    // (unchecked error) the programs delete below via
+    // achievements_program_id_fkey, orphaning the program row in
+    // production forever. This is the actual root cause found while
+    // debugging why "Achievements Test Program" rows kept reappearing.
+    await Promise.all(programIds.map((id) => supabase.from('achievements').delete().eq('program_id', id)));
     await Promise.all(programIds.splice(0).map((id) => supabase.from('programs').delete().eq('id', id)));
     await Promise.all(cleanup.splice(0).map(deleteUser));
   });

@@ -13,7 +13,8 @@
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { api, ApiError } from "../lib/api.js";
-import { Logo, Page, PageSection, Card, CardBody, Input, Select, Textarea, Button, Alert, PageLoader } from "../components/ui/index.js";
+import { Page, PageSection, Card, CardBody, Input, Select, Textarea, Button, Alert, PageLoader } from "../components/ui/index.js";
+import PublicShell from "../components/public/PublicShell.jsx";
 
 const REGIONS = [
   "Northern", "North East", "Savannah", "Upper East", "Upper West",
@@ -63,18 +64,18 @@ export default function Apply() {
 
   if (notFound) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-surface-sunken px-4">
-        <Alert tone="danger" title="Program not found">This application isn't open, or the link is wrong.</Alert>
-      </div>
+      <PublicShell>
+        <div className="flex items-center justify-center px-4 py-16">
+          <Alert tone="danger" title="Program not found">This application isn't open, or the link is wrong.</Alert>
+        </div>
+      </PublicShell>
     );
   }
-  if (!program && !error) return <PageLoader message="Loading…" />;
+  if (!program && !error) return <PublicShell><PageLoader message="Loading…" /></PublicShell>;
 
   return (
-    <div className="min-h-screen bg-surface-sunken">
+    <PublicShell>
       <div className="mx-auto w-full max-w-2xl px-4 py-8 sm:px-6">
-        <Logo size={36} className="mb-6" />
-
         {referenceCode ? (
           <Card>
             <CardBody className="flex flex-col gap-3">
@@ -142,6 +143,6 @@ export default function Apply() {
           </Page>
         )}
       </div>
-    </div>
+    </PublicShell>
   );
 }

@@ -1,9 +1,12 @@
-const { app, request, supabase, registerAdmin, deleteUser } = require('./helpers');
+const { app, request, supabase, registerAdmin, deleteUser, cleanupCohort } = require('./helpers');
 
 describe('programs', () => {
   const cleanup = [];
   const programIds = [];
+  const cohortIds = [];
   afterEach(async () => {
+    // Cohorts before programs — cohorts.program_id references programs(id).
+    await Promise.all(cohortIds.splice(0).map(cleanupCohort));
     await Promise.all(programIds.splice(0).map((id) => supabase.from('programs').delete().eq('id', id)));
     await Promise.all(cleanup.splice(0).map(deleteUser));
   });
@@ -77,7 +80,6 @@ describe('programs', () => {
     });
     expect(cohort.status).toBe(201);
     expect(cohort.body.cohort.program_id).toBe(program.body.program.id);
-
-    await supabase.from('cohorts').delete().eq('id', cohort.body.cohort.id);
+    cohortIds.push(cohort.body.cohort.id);
   });
 });

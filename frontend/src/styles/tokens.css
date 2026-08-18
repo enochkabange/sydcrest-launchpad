@@ -289,32 +289,43 @@
   }
 }
 
-/* --- Base ----------------------------------------------------------------- */
-html {
-  font-family: var(--font-sans);
-  -webkit-text-size-adjust: 100%;
-}
-body {
-  background: var(--color-surface);
-  color: var(--color-content);
-  font-size: var(--text-base);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-h1, h2, h3, h4 { font-weight: var(--font-weight-bold); letter-spacing: -0.02em; }
-a { color: var(--content-link); }
+/* --- Base -------------------------------------------------------------
+   Wrapped in @layer base: CSS cascade layers always lose to un-layered
+   rules regardless of specificity or source order, and Tailwind's own
+   utilities live in @layer utilities — an un-layered `a { color }` here
+   would silently beat every text-color utility ever applied to a <Link>
+   or <a> app-wide (found via the public site's nav rendering link-blue
+   instead of its intended muted/ink colors, no matter what class was
+   applied). Layering this block is what makes `className="text-..."`
+   on a Link actually override this default, as Tailwind users expect.
+   ----------------------------------------------------------------------- */
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-surface);
+    color: var(--color-content);
+    font-size: var(--text-base);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3, h4 { font-weight: var(--font-weight-bold); letter-spacing: -0.02em; }
+  a { color: var(--content-link); }
 
-/* One focus treatment everywhere — visible on both themes. */
-:where(a, button, input, select, textarea, [tabindex]):focus-visible {
-  outline: 2px solid var(--focus-ring);
-  outline-offset: 2px;
-  border-radius: var(--radius-sm);
-}
+  /* One focus treatment everywhere — visible on both themes. */
+  :where(a, button, input, select, textarea, [tabindex]):focus-visible {
+    outline: 2px solid var(--focus-ring);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 }
 
