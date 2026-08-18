@@ -25,6 +25,7 @@ create type opp_stage as enum ('researching','researched','roadmap','applying','
 -- re-callable (application accept, project approval) without per-type
 -- partial indexes.
 create type achievement_type as enum ('accepted','enrolled','week_completed','project_approved','certified');
+create type conversation_type as enum ('dm', 'cohort');
 
 -- ─── PROFILES ────────────────────────────────────────────────
 create table profiles (
@@ -468,6 +469,44 @@ create table certificates (
   issued_by       uuid references profiles(id),
   issued_at       timestamptz default now()
 );
+
+-- ─── REAL-TIME CHAT ──────────────────────────────────────────
+-- PLATFORM_SPEC.md §11 (chat only — video is a separate PR). The existing
+-- posts/post_replies community feed stays async and separate; this is
+-- genuinely new infrastructure, delivered via short polling rather than
+-- WebSockets/Supabase Realtime (see chat.js's header comment) since the
+-- frontend has no Supabase client today and a dropped poll degrades more
+-- honestly on a flaky mobile connection than a dropped socket does.
+--
+-- One conversation per cohort (type='cohort', unique cohort_id) plus
+-- one per mentor<->mentee DM pair (type='dm', cohort_id null).
+-- chat_thread_messages is a deliberately different name from
+-- chat_messages — that table is Study Buddy's AI-chat log
+-- (mentee_id, role, content), an unrelated shape.
+create table conversations (
+  id          uuid primary key default uuid_generate_v4(),
+  type        conversation_type not null,
+  cohort_id   uuid references cohorts(id),
+  created_at  timestamptz default now(),
+  unique(cohort_id)
+);
+
+create table conversation_participants (
+  conversation_id uuid references conversations(id) on delete cascade,
+  profile_id      uuid references profiles(id) on delete cascade,
+  last_read_at    timestamptz,
+  primary key (conversation_id, profile_id)
+);
+
+create table chat_thread_messages (
+  id              uuid primary key default uuid_generate_v4(),
+  conversation_id uuid references conversations(id) on delete cascade,
+  sender_id       uuid references profiles(id) on delete cascade,
+  content         text not null,
+  deleted_at      timestamptz,
+  created_at      timestamptz default now()
+);
+create index on chat_thread_messages(conversation_id, created_at);
 
 -- ─── RECOMMENDERS ────────────────────────────────────────────
 create table recommenders (

@@ -1,5 +1,7 @@
+import { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, Navigate, useNavigate, useLocation, useParams } from "react-router-dom";
 import { AuthProvider, useAuth } from "./auth/AuthContext.jsx";
+import { api } from "./lib/api.js";
 import { AppShell, PageLoader } from "./components/ui/index.js";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
@@ -19,6 +21,7 @@ import ApplicationStatus from "./pages/ApplicationStatus.jsx";
 import Projects from "./pages/Projects.jsx";
 import Mentors from "./pages/Mentors.jsx";
 import Community from "./pages/Community.jsx";
+import Messages from "./pages/Messages.jsx";
 import MentorDashboard from "./pages/MentorDashboard.jsx";
 import Admin from "./pages/admin/Admin.jsx";
 import Showcase from "./Showcase.jsx";
@@ -31,12 +34,19 @@ const ADMIN_ROLES = ["cohort_admin", "platform_admin", "super_admin", "reviewer"
 // Anyone who isn't a mentee lands on MentorDashboard at "/" — see HomeRoute.
 const MENTOR_SIDE_ROLES = ["mentor", "cohort_admin", "platform_admin", "super_admin", "reviewer"];
 
-function navFor(role) {
+function navFor(role, unreadCount) {
+  // AppShell's mobile tab bar only ever shows the first 5 items
+  // (nav.slice(0, 5)) — "messages" goes last, not next to "mentors",
+  // so on the mentee side (which already has 5 items before it) it's the
+  // one that falls off the mobile bar rather than bumping "community"
+  // (which has no other in-app entry point; Messages also has one via
+  // the Mentors page's own "Message" button).
   const base = [
     { id: "learn", label: MENTOR_SIDE_ROLES.includes(role) ? "Dashboard" : "Learn", icon: "lesson", path: "/" },
     { id: "mentors", label: "Mentors", icon: "mentor", path: "/mentors" },
     { id: "projects", label: "Projects", icon: "project", path: "/projects" },
     { id: "community", label: "Community", icon: "community", path: "/community" },
+    { id: "messages", label: "Messages", icon: "chat", path: "/messages", badge: unreadCount },
   ];
   // Study Buddy chat_messages is keyed by mentee_id — mentee-side only, same
   // boundary as Learn's own curriculum data.
@@ -50,8 +60,22 @@ function AuthedLayout({ children }) {
   const { profile, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const [unreadCount, setUnreadCount] = useState(0);
 
-  const nav = navFor(profile?.role);
+  // Nav-badge polling is deliberately much slower than a thread's own
+  // ~4s poll (Messages.jsx) — this runs for the whole authed session, not
+  // just while a conversation is open, so it stays cheap on the same
+  // flaky/metered mobile connections this platform is built around.
+  useEffect(() => {
+    const poll = () => api.get("/api/chat/conversations")
+      .then(({ conversations }) => setUnreadCount(conversations.reduce((sum, c) => sum + c.unread_count, 0)))
+      .catch(() => {});
+    poll();
+    const interval = setInterval(poll, 20000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const nav = navFor(profile?.role, unreadCount);
 
   const current = nav.find((n) => n.path === "/" ? location.pathname === "/" : location.pathname.startsWith(n.path))?.id
     ?? (location.pathname.startsWith("/learn") ? "learn" : undefined);
@@ -135,6 +159,8 @@ export default function App() {
           <Route path="/mentors" element={<RequireAuth><Mentors /></RequireAuth>} />
           <Route path="/projects" element={<RequireAuth><Projects /></RequireAuth>} />
           <Route path="/community" element={<RequireAuth><Community /></RequireAuth>} />
+          <Route path="/messages" element={<RequireAuth><Messages /></RequireAuth>} />
+          <Route path="/messages/:conversationId" element={<RequireAuth><Messages /></RequireAuth>} />
           <Route path="/profile" element={<RequireAuth><Profile /></RequireAuth>} />
           <Route path="/admin" element={<RequireAuth><RequireAdmin><Admin /></RequireAdmin></RequireAuth>} />
 

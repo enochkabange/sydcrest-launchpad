@@ -261,6 +261,28 @@ create policy "Own certificates or cohort staff" on certificates for select usin
   mentee_id = auth_profile_id() or auth_is_admin() or (cohort_id is not null and auth_in_cohort(cohort_id))
 );
 
+-- ─── REAL-TIME CHAT ──────────────────────────────────────────
+-- Defense-in-depth, not load-bearing — routes use the service-role
+-- client and check conversation_participants membership themselves.
+alter table conversations enable row level security;
+create policy "Participants can view their conversations" on conversations for select using (
+  auth_is_admin() or exists (
+    select 1 from conversation_participants cp where cp.conversation_id = conversations.id and cp.profile_id = auth_profile_id()
+  )
+);
+
+alter table conversation_participants enable row level security;
+create policy "Own participant rows or admin" on conversation_participants for select using (
+  auth_is_admin() or profile_id = auth_profile_id()
+);
+
+alter table chat_thread_messages enable row level security;
+create policy "Participants can view messages" on chat_thread_messages for select using (
+  auth_is_admin() or exists (
+    select 1 from conversation_participants cp where cp.conversation_id = chat_thread_messages.conversation_id and cp.profile_id = auth_profile_id()
+  )
+);
+
 -- ─── RECOMMENDERS ────────────────────────────────────────────
 -- Contains a recommender's phone number — treat as sensitive PII,
 -- visible only to the owning mentee and admins, never cohort peers.
