@@ -106,6 +106,38 @@ create index on applications(program_id);
 create index on applications(email);
 create index on applications(status);
 
+-- ─── MENTOR APPLICATIONS ─────────────────────────────────────
+-- PLATFORM_SPEC.md §4 — a deliberately separate table from `applications`,
+-- not a variant of it: a mentor isn't vetted for one program's cohort the
+-- way a learner is, so forcing the same program_id-scoped shape would be
+-- a schema mismatch, not real reuse. Shares the pattern (reference-code
+-- lookup, application_status, reviewer role gate), not the table.
+create table mentor_applications (
+  id                  uuid primary key default uuid_generate_v4(),
+  reference_code      text not null unique,
+  full_name           text not null,
+  email               text not null,
+  phone               text,
+  expertise_areas     text[],
+  portfolio_url       text,
+  bio                 text,
+  reference_1_name    text,
+  reference_1_contact text,
+  reference_2_name    text,
+  reference_2_contact text,
+  -- The safeguarding tie-in: a reviewer confirms they actually contacted
+  -- these references. The review route refuses to accept a mentor unless
+  -- this is already true — see applications.js.
+  references_checked  boolean default false,
+  status              application_status default 'applied',
+  reviewer_id         uuid references profiles(id),
+  reviewer_notes      text,
+  decided_at          timestamptz,
+  created_at          timestamptz default now()
+);
+create index on mentor_applications(email);
+create index on mentor_applications(status);
+
 -- ─── COHORTS ─────────────────────────────────────────────────
 create table cohorts (
   id            uuid primary key default uuid_generate_v4(),
@@ -299,6 +331,11 @@ create table mentor_listings (
   total_sessions int default 0,
   avg_rating    numeric(3,2) default 0,
   bio           text,
+  -- PLATFORM_SPEC.md §4 hard caseload cap. Null = unlimited. Counts
+  -- distinct mentees who have ever booked, not session volume — a
+  -- repeat booking from an existing mentee never counts against a full
+  -- listing, only a genuinely new mentee does. See marketplace.js.
+  max_mentees   int,
   created_at    timestamptz default now(),
   updated_at    timestamptz default now()
 );

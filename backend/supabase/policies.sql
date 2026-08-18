@@ -66,6 +66,11 @@ alter table applications enable row level security;
 create policy "Reviewers and admins manage applications" on applications for select using (auth_is_reviewer());
 create policy "Reviewers and admins update applications" on applications for update using (auth_is_reviewer());
 
+-- ─── MENTOR APPLICATIONS ─────────────────────────────────────
+alter table mentor_applications enable row level security;
+create policy "Reviewers and admins manage mentor applications" on mentor_applications for select using (auth_is_reviewer());
+create policy "Reviewers and admins update mentor applications" on mentor_applications for update using (auth_is_reviewer());
+
 -- ─── COHORTS ─────────────────────────────────────────────────
 alter table cohorts enable row level security;
 create policy "Members and admins can view" on cohorts for select using (auth_in_cohort(id));

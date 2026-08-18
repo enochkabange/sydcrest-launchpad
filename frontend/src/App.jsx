@@ -12,6 +12,7 @@ import ResetPassword from "./pages/ResetPassword.jsx";
 import Privacy from "./pages/Privacy.jsx";
 import Terms from "./pages/Terms.jsx";
 import Apply from "./pages/Apply.jsx";
+import ApplyMentor from "./pages/ApplyMentor.jsx";
 import ApplicationStatus from "./pages/ApplicationStatus.jsx";
 import Projects from "./pages/Projects.jsx";
 import Mentors from "./pages/Mentors.jsx";
@@ -121,6 +122,7 @@ export default function App() {
           <Route path="/privacy" element={<Privacy />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/apply/status" element={<ApplicationStatus />} />
+          <Route path="/apply-as-mentor" element={<ApplyMentor />} />
           <Route path="/apply/:slug" element={<Apply />} />
 
           <Route path="/" element={<RequireAuth><HomeRoute /></RequireAuth>} />
