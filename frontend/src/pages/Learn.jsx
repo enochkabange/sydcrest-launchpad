@@ -89,11 +89,16 @@ export default function Learn() {
   const { profile } = useAuth();
   const [paths, setPaths] = useState(null);
   const [error, setError] = useState("");
+  const [onboarding, setOnboarding] = useState(null);
 
   useEffect(() => {
     api.get("/api/learning/paths")
       .then(({ paths }) => setPaths(paths))
       .catch((err) => setError(err instanceof ApiError ? err.message : "Couldn't load your paths."));
+    // 404 here just means "not enrolled yet" — not an error, no banner.
+    api.get("/api/onboarding/me")
+      .then(({ enrollment }) => setOnboarding(enrollment))
+      .catch(() => {});
   }, []);
 
   const handleGenerated = (path) => {
@@ -116,6 +121,12 @@ export default function Learn() {
       title={`Welcome back, ${profile?.full_name?.split(" ")[0] ?? ""}`}
       description={paths.length ? "Pick up where you left off." : "Your curriculum hasn't been assigned yet."}
     >
+      {onboarding && (!onboarding.device_check_completed_at || !onboarding.orientation_completed_at) && (
+        <Alert tone="info" title="Finish getting set up" className="mb-6">
+          A quick device check and orientation checklist will help you get the most out of your cohort.{" "}
+          <Link to="/onboarding" className="font-semibold underline">Complete onboarding</Link>
+        </Alert>
+      )}
       {paths.length === 0 ? (
         <div className="flex flex-col gap-6">
           <EmptyState
