@@ -13,6 +13,8 @@ const router = express.Router();
 const { supabase } = require('../config/supabase');
 const { auth } = require('../middleware/auth');
 const { initiateMoMoPayment, enabled: hubtelEnabled } = require('../services/hubtel');
+const { isMinorMentee } = require('../utils/age');
+const video = require('../services/video');
 
 router.use(auth);
 
@@ -60,6 +62,13 @@ router.post('/book', async (req, res) => {
   const { data: listing } = await supabase.from('mentor_listings').select('*').eq('id', listing_id).eq('is_active', true).single();
   if (!listing) return res.status(404).json({ error: 'Listing not found or inactive' });
 
+  // Safeguarding (PLATFORM_SPEC.md §11): minors never get a private 1:1
+  // video session. The marketplace has no group-booking concept, so
+  // unlike sessions.js there's no group fallback here — booking is
+  // simply blocked, pointing the mentee at their mentor's group sessions.
+  if (await isMinorMentee(supabase, req.user.id))
+    return res.status(403).json({ error: "Private paid sessions aren't available for accounts under 18 — ask your mentor to schedule a group session instead." });
+
   // Hard caseload cap (PLATFORM_SPEC.md §4): only blocks a genuinely new
   // mentee. An existing mentee can always book again — the cap limits how
   // many distinct mentees a mentor takes on, not total session volume.
@@ -105,6 +114,13 @@ router.post('/book', async (req, res) => {
     await supabase.from('bookings').update({ payment_ref: payment.transactionId }).eq('id', booking.id);
   }
 
+  const room = await video.createRoom(`booking-${booking.id}`, { expiresAt: new Date(new Date(scheduled_at).getTime() + duration_mins * 60000) });
+  if (room.configured && room.url) {
+    await supabase.from('bookings').update({ daily_room_url: room.url, daily_room_name: room.name }).eq('id', booking.id);
+    booking.daily_room_url = room.url;
+    booking.daily_room_name = room.name;
+  }
+
   res.status(201).json({
     booking,
     payment: hubtelEnabled
@@ -135,6 +151,28 @@ router.post('/webhook/hubtel', async (req, res) => {
     .eq('id', ClientReference);
 
   res.status(200).json({ received: true });
+});
+
+// POST /api/marketplace/bookings/:id/join – mirrors sessions.js's join
+// route: participant-gated, issues a Daily meeting token, stamps a
+// server-side joined_at at issuance time.
+router.post('/bookings/:id/join', async (req, res) => {
+  const { data: booking } = await supabase.from('bookings').select('*').eq('id', req.params.id).single();
+  if (!booking) return res.status(404).json({ error: 'Booking not found' });
+
+  const isMentee = booking.mentee_id === req.user.id;
+  const isMentor = booking.mentor_id === req.user.id;
+  if (!isMentee && !isMentor) return res.status(404).json({ error: 'Booking not found' });
+
+  if (!booking.daily_room_url) return res.status(404).json({ error: 'No video room for this booking' });
+
+  const result = await video.createMeetingToken(booking.daily_room_name, { userName: req.user.full_name, isOwner: isMentor });
+  if (!result.configured || result.error) return res.status(503).json({ error: result.error || 'Video is not configured' });
+
+  const now = new Date().toISOString();
+  await supabase.from('bookings').update(isMentor ? { mentor_joined_at: now } : { mentee_joined_at: now }).eq('id', booking.id);
+
+  res.json({ url: booking.daily_room_url, token: result.token });
 });
 
 module.exports = router;

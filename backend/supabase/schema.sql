@@ -240,7 +240,27 @@ create table sessions (
   mentor_notes  text,
   mentee_notes  text,
   rating        int check (rating between 1 and 5),
+  -- Video Conferencing PR (PLATFORM_SPEC.md §11, step 8): Daily.co room,
+  -- created server-side (services/video.js). Null when DAILY_API_KEY isn't
+  -- configured — meet_link above stays the honest fallback. joined_at is
+  -- stamped server-side at meeting-token issuance (real attendance
+  -- evidence), not a client-reported checkbox.
+  daily_room_url   text,
+  daily_room_name  text,
+  mentor_joined_at timestamptz,
+  mentee_joined_at timestamptz,
   created_at    timestamptz default now()
+);
+
+-- Group-session attendees beyond sessions.mentee_id. Required whenever the
+-- primary mentee is a minor (guardian_consent_required) — safeguarding
+-- constraint from §11: minors never get a private 1:1 video session.
+create table session_attendees (
+  id          uuid primary key default uuid_generate_v4(),
+  session_id  uuid references sessions(id) on delete cascade,
+  profile_id  uuid references profiles(id) on delete cascade,
+  joined_at   timestamptz,
+  unique(session_id, profile_id)
 );
 
 -- ─── PROJECTS ────────────────────────────────────────────────
@@ -386,6 +406,11 @@ create table bookings (
   mentee_rating   int check (mentee_rating between 1 and 5),
   mentee_review   text,
   meet_link       text,
+  -- Same Daily.co video fields as sessions above.
+  daily_room_url   text,
+  daily_room_name  text,
+  mentor_joined_at timestamptz,
+  mentee_joined_at timestamptz,
   created_at      timestamptz default now(),
   confirmed_at    timestamptz,
   completed_at    timestamptz
