@@ -43,7 +43,7 @@ export default function Programs() {
                     <p className="text-content-2">{p.description}</p>
                     <p className="text-sm text-content-3">{p.duration_weeks} weeks</p>
                     <Link to={`/programs/${p.slug}`}>
-                      <Button variant="accent">Learn more</Button>
+                      <Button variant="primary">Learn more</Button>
                     </Link>
                   </CardBody>
                 </Card>

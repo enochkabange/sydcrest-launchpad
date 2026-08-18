@@ -24,6 +24,7 @@ const { supabase } = require('../config/supabase');
 const { auth, requireRole, audit } = require('../middleware/auth');
 const { isMinor } = require('../utils/age');
 const { mintAchievement } = require('../services/achievements');
+const { TRACKS: DMP_TRACKS, TRACK_LABELS: DMP_TRACK_LABELS, buildWeeks } = require('../data/dmp-curriculum');
 
 /* No router-wide auth gate here, unlike admin.js — this router mixes
    public routes (submit, status lookup) with reviewer-only ones (list,
@@ -69,6 +70,23 @@ router.get('/programs', async (req, res) => {
     .order('created_at', { ascending: true });
   if (error) return res.status(500).json({ error: error.message });
   res.json({ programs });
+});
+
+// GET /api/programs/:slug/curriculum – public curriculum preview for the
+// Programs detail page. DMP-only for now (404 for anything else) — same
+// "no second program exists yet" honesty as Apply.jsx's own comment;
+// this doesn't try to generalize a curriculum shape that only one real
+// program has. Themes only, not the full objectives/resources/assignment
+// text — a public preview, not the whole curriculum handed out for free.
+router.get('/programs/:slug/curriculum', async (req, res) => {
+  if (req.params.slug !== 'dmp') return res.status(404).json({ error: 'No curriculum preview for this program' });
+
+  const tracks = DMP_TRACKS.map((track) => ({
+    track,
+    label: DMP_TRACK_LABELS[track],
+    weeks: buildWeeks(track).map((w) => ({ week_number: w.week_number, theme: w.theme })),
+  }));
+  res.json({ tracks });
 });
 
 // POST /api/partner-inquiries – public Partnerships page form, §13. Same

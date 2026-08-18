@@ -59,6 +59,24 @@ describe('applications', () => {
     expect(res.body.programs.some((p) => p.id === program.id)).toBe(false);
   });
 
+  it('GET /api/programs/dmp/curriculum returns real week themes per track', async () => {
+    const res = await request(app).get('/api/programs/dmp/curriculum');
+    expect(res.status).toBe(200);
+    expect(res.body.tracks.length).toBe(3);
+    for (const t of res.body.tracks) {
+      expect(t.weeks.length).toBe(12);
+      expect(t.weeks[0].theme).toBeTruthy();
+    }
+  });
+
+  it('GET /api/programs/:slug/curriculum 404s for a non-DMP program', async () => {
+    const program = await createTestProgram();
+    programIds.push(program.id);
+
+    const res = await request(app).get(`/api/programs/${program.slug}/curriculum`);
+    expect(res.status).toBe(404);
+  });
+
   it('404s for an unknown or inactive program slug', async () => {
     const res = await request(app).get('/api/programs/does-not-exist');
     expect(res.status).toBe(404);

@@ -16,6 +16,12 @@ const TARGETS = [
   { title: "Corporate", body: "Companies hiring junior tech talent, or looking to sponsor a cohort." },
 ];
 
+const PROCESS = [
+  { step: "1", title: "Reach out", body: "Tell us who you are and what you had in mind — five minutes, no commitment." },
+  { step: "2", title: "We scope a fit", body: "A quick call to figure out whether a referral pipeline, sponsorship, or joint cohort makes sense." },
+  { step: "3", title: "We build it together", body: "From there it's a real, ongoing partnership — not a one-off." },
+];
+
 const INQUIRY_TYPES = [
   { value: "university", label: "University" },
   { value: "hub", label: "Hub / community" },
@@ -59,6 +65,20 @@ export default function Partnerships() {
               <div key={t.title}>
                 <h3 className="font-bold text-content">{t.title}</h3>
                 <p className="mt-1 text-sm text-content-2">{t.body}</p>
+              </div>
+            ))}
+          </div>
+        </PageSection>
+
+        <PageSection title="How it works">
+          <div className="grid gap-6 sm:grid-cols-3">
+            {PROCESS.map((s) => (
+              <div key={s.step} className="flex flex-col gap-2">
+                <span className="flex size-9 items-center justify-center rounded-full bg-surface-sunken text-sm font-bold text-content">
+                  {s.step}
+                </span>
+                <h3 className="font-bold text-content">{s.title}</h3>
+                <p className="text-sm text-content-2">{s.body}</p>
               </div>
             ))}
           </div>

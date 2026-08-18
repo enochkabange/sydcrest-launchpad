@@ -1,38 +1,51 @@
 /**
- * ProgramDetail — one page combining description + eligibility + duration,
- * PLATFORM_SPEC.md §13. Not split into a separate "Requirements &
- * Eligibility" page — that's a few paragraphs, not enough content to
+ * ProgramDetail — one page combining description + eligibility + duration
+ * + a real curriculum preview, PLATFORM_SPEC.md §13. Not split into a
+ * separate "Requirements & Eligibility" page — not enough content to
  * justify a second page and a second click before Apply.
+ *
+ * The curriculum section (GET /api/programs/:slug/curriculum,
+ * applications.js) is real content from backend/src/data/dmp-
+ * curriculum.js — the actual week-by-week DMP curriculum — not invented
+ * marketing copy. It's currently DMP-only (404s for any other slug),
+ * so this section is skipped entirely when the route 404s.
  */
 import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { api, ApiError } from "../../lib/api.js";
 import PublicShell from "../../components/public/PublicShell.jsx";
-import { Button, Alert, PageLoader } from "../../components/ui/index.js";
+import { Button, Badge, Alert, PageLoader } from "../../components/ui/index.js";
 
 export default function ProgramDetail() {
   const { slug } = useParams();
   const [program, setProgram] = useState(null);
   const [notFound, setNotFound] = useState(false);
   const [error, setError] = useState("");
+  const [curriculum, setCurriculum] = useState(null); // null = not loaded yet, [] = none available
+  const [activeTrack, setActiveTrack] = useState(0);
 
   useEffect(() => {
     api.get(`/api/programs/${slug}`)
       .then(({ program }) => setProgram(program))
       .catch((err) => (err instanceof ApiError && err.status === 404 ? setNotFound(true) : setError("Couldn't load this program.")));
+    api.get(`/api/programs/${slug}/curriculum`)
+      .then(({ tracks }) => setCurriculum(tracks))
+      .catch(() => setCurriculum([]));
   }, [slug]);
 
   if (notFound) {
     return (
       <PublicShell>
-        <div className="mx-auto w-full max-w-2xl px-4 py-16 sm:px-6">
-          <Alert tone="danger" title="Program not found">This program isn't open, or the link is wrong.</Alert>
+        <div className="flex items-center justify-center px-4 py-16">
+          <Alert tone="danger" title="Program not found">This application isn't open, or the link is wrong.</Alert>
         </div>
       </PublicShell>
     );
   }
 
   if (!program && !error) return <PublicShell><PageLoader message="Loading…" /></PublicShell>;
+
+  const track = curriculum?.[activeTrack];
 
   return (
     <PublicShell>
@@ -56,7 +69,40 @@ export default function ProgramDetail() {
               </div>
             )}
 
-            <div className="mt-8">
+            {curriculum?.length > 0 && (
+              <div className="mt-10">
+                <h2 className="text-xl font-extrabold text-content">What you'll learn</h2>
+                <p className="mt-1 text-content-2">
+                  Weeks 1–6 are shared across every track, then you specialize.
+                </p>
+
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {curriculum.map((t, i) => (
+                    <button
+                      key={t.track}
+                      type="button"
+                      onClick={() => setActiveTrack(i)}
+                      className={`rounded-full border px-3 py-1.5 text-sm font-semibold transition-colors ${
+                        activeTrack === i ? "border-content bg-content text-surface" : "border-line text-content-2 hover:border-line-strong"
+                      }`}
+                    >
+                      {t.label}
+                    </button>
+                  ))}
+                </div>
+
+                <ol className="mt-6 flex flex-col gap-2">
+                  {track.weeks.map((w) => (
+                    <li key={w.week_number} className="flex items-start gap-3 rounded-md border border-line px-4 py-3">
+                      <Badge tone="neutral">Week {w.week_number}</Badge>
+                      <span className="text-content">{w.theme}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            )}
+
+            <div className="mt-10">
               <Link to={`/apply/${program.slug}`}>
                 <Button variant="accent">Apply to this program</Button>
               </Link>

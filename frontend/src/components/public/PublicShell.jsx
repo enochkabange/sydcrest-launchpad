@@ -8,7 +8,7 @@
  * bare logo with no way to get anywhere else on the site.
  */
 import { Link } from "react-router-dom";
-import { Logo } from "../ui/index.js";
+import { Logo, Button } from "../ui/index.js";
 
 const NAV = [
   { label: "Home", to: "/" },
@@ -32,12 +32,7 @@ export default function PublicShell({ children }) {
           </nav>
           <div className="flex items-center gap-3">
             <Link to="/login" className="text-sm font-semibold text-content-2 hover:text-content">Log in</Link>
-            <Link
-              to="/apply/dmp"
-              className="rounded-md bg-orange-800 px-4 py-2 text-sm font-bold text-white hover:bg-orange-900 transition-colors"
-            >
-              Apply now
-            </Link>
+            <Link to="/apply/dmp"><Button variant="accent" size="sm">Apply now</Button></Link>
           </div>
         </div>
       </header>
