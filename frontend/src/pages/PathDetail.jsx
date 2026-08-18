@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { api, ApiError } from "../lib/api.js";
 import { Page, PageSection, Card, CardHeader, CardTitle, CardBody, CardFooter, Badge, Button, Alert, PageLoader, Icon } from "../components/ui/index.js";
+import LessonCard from "../components/dashboard/LessonCard.jsx";
 
 function QuizBlock({ weekNumber, track }) {
   const [quiz, setQuiz] = useState(null);
@@ -138,14 +139,29 @@ export default function PathDetail() {
 
   if (weeks === null) return <PageLoader message="Loading curriculum…" />;
 
+  const nextWeek = weeks.find((w) => w.status !== "completed");
+
   return (
     <Page eyebrow={<Link to="/" className="hover:underline">← Back to Learn</Link>} title="Curriculum">
       {error && <Alert tone="danger" className="mb-4" onDismiss={() => setError("")}>{error}</Alert>}
 
+      {nextWeek && (
+        <PageSection title="Continue where you left off">
+          <LessonCard
+            week={nextWeek.week_number}
+            title={nextWeek.theme}
+            summary={nextWeek.assignment}
+            percent={0}
+            onContinue={() => document.getElementById(`week-${nextWeek.id}`)?.scrollIntoView({ behavior: "smooth", block: "center" })}
+            className="max-w-md"
+          />
+        </PageSection>
+      )}
+
       <PageSection>
         <div className="flex flex-col gap-4">
           {weeks.map((week) => (
-            <Card key={week.id} variant={week.status === "completed" ? "default" : "accent"}>
+            <Card key={week.id} id={`week-${week.id}`} variant={week.status === "completed" ? "default" : "accent"}>
               <CardHeader>
                 <div className="flex items-center justify-between gap-3">
                   <CardTitle>Week {week.week_number} — {week.theme}</CardTitle>

@@ -23,7 +23,7 @@ export default function EmptyState({
       className={`flex flex-col items-center justify-center gap-3 rounded-lg border border-dashed border-line-strong px-6 py-12 text-center ${className}`}
       {...props}
     >
-      <span className="flex size-12 items-center justify-center rounded-full bg-surface-sunken text-content-3">
+      <span className="flex size-12 items-center justify-center rounded-full bg-[image:var(--gradient-launch)] text-content">
         <Icon name={icon} size="lg" />
       </span>
 
@@ -34,7 +34,7 @@ export default function EmptyState({
       )}
 
       {action && (
-        <Button onClick={onAction} className="mt-2">{action}</Button>
+        <Button variant="accent" onClick={onAction} className="mt-2">{action}</Button>
       )}
 
       {children}
