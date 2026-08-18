@@ -13,6 +13,7 @@ import { useState } from "react";
 import { useAuth } from "../../auth/AuthContext.jsx";
 import { Page, Tabs, TabPanel } from "../../components/ui/index.js";
 import OverviewTab from "./OverviewTab.jsx";
+import ProgramsTab from "./ProgramsTab.jsx";
 import CohortsTab from "./CohortsTab.jsx";
 import UsersTab from "./UsersTab.jsx";
 
@@ -25,6 +26,7 @@ export default function Admin() {
 
   const tabs = [
     ...(isPlatformAdmin ? [{ id: "overview", label: "Overview", icon: "progress" }] : []),
+    ...(isPlatformAdmin ? [{ id: "programs", label: "Programs", icon: "curriculum" }] : []),
     { id: "cohorts", label: "Cohorts", icon: "cohort" },
     ...(isPlatformAdmin ? [{ id: "users", label: "Users", icon: "mentor" }] : []),
   ];
@@ -34,6 +36,7 @@ export default function Admin() {
     <Page title="Admin" description="Run cohorts and manage the platform.">
       <Tabs tabs={tabs} value={tab} onChange={setTab} />
       <TabPanel id="overview" value={tab}><OverviewTab /></TabPanel>
+      <TabPanel id="programs" value={tab}><ProgramsTab /></TabPanel>
       <TabPanel id="cohorts" value={tab}><CohortsTab isPlatformAdmin={isPlatformAdmin} /></TabPanel>
       <TabPanel id="users" value={tab}><UsersTab isSuperAdmin={profile?.role === "super_admin"} /></TabPanel>
     </Page>
