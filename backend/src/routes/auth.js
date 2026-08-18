@@ -2,12 +2,24 @@ const express = require('express');
 const router = express.Router();
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
+const multer = require('multer');
+const { randomUUID } = require('crypto');
 const { body, validationResult } = require('express-validator');
 const { supabase, supabaseAnon } = require('../config/supabase');
 const { auth } = require('../middleware/auth');
 const { notifyWelcome } = require('../services/whatsapp');
 const { isMinor } = require('../utils/age');
 const { mintAchievement } = require('../services/achievements');
+
+// Same memory-storage pattern as projects.js's upload route — Railway's
+// filesystem is ephemeral, the file only passes through this process on
+// its way to Supabase Storage.
+const avatarUpload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 5 * 1024 * 1024 },
+  fileFilter: (req, file, cb) => cb(null, file.mimetype.startsWith('image/')),
+});
+const AVATAR_BUCKET = 'avatars';
 
 function signToken(profileId, tokenVersion = 0) {
   return jwt.sign(
@@ -142,6 +154,40 @@ router.patch('/me', auth, [
   const { data: profile, error } = await supabase
     .from('profiles')
     .update(updates)
+    .eq('id', req.user.id)
+    .select().single();
+  if (error) return res.status(400).json({ error: error.message });
+
+  res.json({ profile });
+});
+
+// POST /api/auth/me/avatar – self-only, mirrors projects.js's upload
+// route (backend/src/routes/projects.js:92-126). Bucket is public since a
+// profile photo is meant to be seen everywhere the profile is (Mentors
+// card, Community posts, nav).
+router.post('/me/avatar', auth, (req, res, next) => {
+  avatarUpload.single('file')(req, res, (err) => {
+    if (err instanceof multer.MulterError) return res.status(400).json({ error: err.message });
+    if (err) return next(err);
+    next();
+  });
+}, async (req, res) => {
+  if (!req.file) return res.status(400).json({ error: 'An image file is required' });
+  if (!req.file.mimetype.startsWith('image/')) return res.status(400).json({ error: 'File must be an image' });
+
+  const ext = req.file.originalname.includes('.') ? req.file.originalname.split('.').pop() : 'jpg';
+  const path = `${req.user.id}/${randomUUID()}.${ext}`;
+
+  const { error: uploadError } = await supabase.storage
+    .from(AVATAR_BUCKET)
+    .upload(path, req.file.buffer, { contentType: req.file.mimetype, upsert: false });
+  if (uploadError) return res.status(400).json({ error: uploadError.message });
+
+  const { data: { publicUrl } } = supabase.storage.from(AVATAR_BUCKET).getPublicUrl(path);
+
+  const { data: profile, error } = await supabase
+    .from('profiles')
+    .update({ avatar_url: publicUrl })
     .eq('id', req.user.id)
     .select().single();
   if (error) return res.status(400).json({ error: error.message });

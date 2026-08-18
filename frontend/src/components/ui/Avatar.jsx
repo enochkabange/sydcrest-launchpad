@@ -4,11 +4,7 @@
  * name so the same learner always gets the same colour; all five options take
  * white text at ≥4.8:1.
  */
-
-const palette = [
-  "bg-blue-500", "bg-orange-800", "bg-role-cohort",
-  "bg-neutral-600", "bg-blue-800",
-];
+import { pickAvatarColor } from "../../lib/colorHash.js";
 
 const sizes = {
   xs: "size-6  text-xs",
@@ -22,12 +18,6 @@ function initials(name = "") {
   const parts = name.trim().split(/\s+/).filter(Boolean);
   if (!parts.length) return "?";
   return (parts[0][0] + (parts.length > 1 ? parts[parts.length - 1][0] : "")).toUpperCase();
-}
-
-function pick(name = "") {
-  let h = 0;
-  for (let i = 0; i < name.length; i++) h = (h * 31 + name.charCodeAt(i)) >>> 0;
-  return palette[h % palette.length];
 }
 
 export default function Avatar({ name = "", src, size = "md", className = "", ...props }) {
@@ -49,7 +39,7 @@ export default function Avatar({ name = "", src, size = "md", className = "", ..
       role="img"
       aria-label={name ? `${name}'s avatar` : "Avatar"}
       className={[
-        dim, pick(name),
+        dim, pickAvatarColor(name),
         "rounded-full inline-flex items-center justify-center",
         "font-bold text-white leading-none",
         className,

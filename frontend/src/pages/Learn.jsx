@@ -136,11 +136,17 @@ export default function Learn() {
   if (paths === null) return <PageLoader message="Loading your paths…" />;
 
   return (
-    <Page
-      eyebrow="Delta Mentoring Program"
-      title={`Welcome back, ${profile?.full_name?.split(" ")[0] ?? ""}`}
-      description={paths.length ? "Pick up where you left off." : "Your curriculum hasn't been assigned yet."}
-    >
+    <Page title={`Welcome back, ${profile?.full_name?.split(" ")[0] ?? ""}`} titleHidden width="wide">
+      <div className="mb-8 overflow-hidden rounded-2xl bg-[image:var(--gradient-launch)] px-6 py-10 sm:px-10">
+        <p className="text-xs font-bold uppercase tracking-widest text-[#5c2e00]/80">Delta Mentoring Program</p>
+        <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-[#211d1d] sm:text-4xl">
+          Welcome back, {profile?.full_name?.split(" ")[0] ?? ""}
+        </h1>
+        <p className="mt-2 max-w-xl text-[#211d1d]/80">
+          {paths.length ? "Pick up where you left off." : "Your curriculum hasn't been assigned yet."}
+        </p>
+      </div>
+
       {onboarding && (!onboarding.device_check_completed_at || !onboarding.orientation_completed_at) && (
         <Alert tone="info" title="Finish getting set up" className="mb-6">
           A quick device check and orientation checklist will help you get the most out of your cohort.{" "}

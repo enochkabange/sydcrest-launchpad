@@ -6,7 +6,51 @@
 import { useEffect, useState } from "react";
 import { useAuth, ApiError } from "../auth/AuthContext.jsx";
 import { api, BASE_URL } from "../lib/api.js";
-import { Page, PageSection, Card, CardHeader, CardTitle, CardBody, Input, Textarea, Button, Alert, Badge } from "../components/ui/index.js";
+import { Page, PageSection, Card, CardHeader, CardTitle, CardBody, Input, Textarea, Button, Alert, Badge, Avatar, FileUpload } from "../components/ui/index.js";
+
+function AvatarSection() {
+  const { profile, updateProfile } = useAuth();
+  const [files, setFiles] = useState([]);
+  const [busy, setBusy] = useState(false);
+  const [error, setError] = useState("");
+
+  const upload = async (newFiles) => {
+    setFiles(newFiles);
+    const file = newFiles[0];
+    if (!file) return;
+    setBusy(true);
+    setError("");
+    try {
+      const body = new FormData();
+      body.append("file", file);
+      const { profile: updated } = await api.postForm("/api/auth/me/avatar", body);
+      updateProfile(updated);
+    } catch (err) {
+      setError(err instanceof ApiError ? err.message : "Couldn't upload that photo.");
+    } finally {
+      setBusy(false);
+      setFiles([]);
+    }
+  };
+
+  return (
+    <div className="flex items-center gap-5">
+      <Avatar name={profile?.full_name} src={profile?.avatar_url} size="xl" />
+      <div className="flex-1">
+        {error && <Alert tone="danger" className="mb-2">{error}</Alert>}
+        <FileUpload
+          label="Profile photo"
+          hint="A real photo helps mentees and mentors recognize each other."
+          accept="image/*"
+          maxSizeMB={5}
+          value={files}
+          onChange={upload}
+          disabled={busy}
+        />
+      </div>
+    </div>
+  );
+}
 
 function ProfileForm() {
   const { profile, updateProfile } = useAuth();
@@ -147,6 +191,9 @@ export default function Profile() {
   return (
     <Page eyebrow="Account" title="Your profile" description="Manage your details and password.">
       <div className="flex flex-col gap-8">
+        <PageSection title="Photo">
+          <Card><CardBody><AvatarSection /></CardBody></Card>
+        </PageSection>
         <PageSection title="Details">
           <Card><CardBody><ProfileForm /></CardBody></Card>
         </PageSection>

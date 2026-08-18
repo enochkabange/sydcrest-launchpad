@@ -17,6 +17,24 @@ const PAYMENT_METHODS = [
   { value: "airteltigo_money", label: "AirtelTigo Money" },
 ];
 
+// Client-side search/filter — listing counts are small at pilot scale,
+// same reasoning marketplace.js's own GET / handler already gives for
+// doing aggregation in-process instead of a DB view or endpoint.
+function specialtiesFrom(listings) {
+  const set = new Set();
+  for (const l of listings ?? []) for (const s of l.specialties ?? []) set.add(s);
+  return [...set].sort();
+}
+
+function filterListings(listings, query, specialty) {
+  const q = query.trim().toLowerCase();
+  return (listings ?? []).filter((l) => {
+    if (specialty && !l.specialties?.includes(specialty)) return false;
+    if (!q) return true;
+    return l.profiles.full_name.toLowerCase().includes(q) || l.specialties?.some((s) => s.toLowerCase().includes(q));
+  });
+}
+
 export default function Mentors() {
   const navigate = useNavigate();
   const [listings, setListings] = useState(null);
@@ -25,6 +43,8 @@ export default function Mentors() {
   const [submitting, setSubmitting] = useState(false);
   const [result, setResult] = useState(null); // { booking, payment } after a successful POST
   const [form, setForm] = useState({ scheduled_at: "", duration_mins: "60", session_focus: "", payment_method: "mtn_momo" });
+  const [query, setQuery] = useState("");
+  const [activeSpecialty, setActiveSpecialty] = useState(null);
 
   const message = async (mentorProfileId) => {
     try {
@@ -70,28 +90,79 @@ export default function Mentors() {
 
   if (listings === null && !error) return <PageLoader message="Loading mentors…" />;
 
+  const allSpecialties = specialtiesFrom(listings);
+  const filtered = filterListings(listings, query, activeSpecialty);
+
   return (
-    <Page title="Mentors" description="Book a session with a mentor from the marketplace.">
+    <Page title="Mentors" titleHidden width="wide">
+      <div className="mb-8 overflow-hidden rounded-2xl bg-[image:var(--gradient-launch)] px-6 py-10 sm:px-10">
+        <p className="text-xs font-bold uppercase tracking-widest text-[#5c2e00]/80">Delta Mentoring Program</p>
+        <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-[#211d1d] sm:text-4xl">
+          Find a mentor who's done it before
+        </h1>
+        <p className="mt-2 max-w-xl text-[#211d1d]/80">
+          Every mentor here is vetted. Browse by specialty, message before you book, or go straight to an intro call.
+        </p>
+        <div className="mt-6 max-w-md">
+          <Input
+            placeholder="Search by name or specialty…"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            className="bg-surface"
+          />
+        </div>
+      </div>
+
       {error && <Alert tone="danger" className="mb-4" onDismiss={() => setError("")}>{error}</Alert>}
 
-      <PageSection>
-        <div className="grid gap-4 sm:grid-cols-2">
-          {listings?.map((l) => (
-            <MentorCard
-              key={l.id}
-              name={l.profiles.full_name}
-              photo={l.profiles.avatar_url}
-              headline={l.profiles.bio || `${l.specialties?.[0] ?? "Mentor"} · GHS ${l.hourly_rate}/hr`}
-              specialties={l.specialties || []}
-              rating={l.avg_rating || 0}
-              reviewCount={l.total_sessions}
-              menteesGuided={l.total_sessions}
-              full={l.is_full}
-              onBook={() => openBooking(l)}
-              onMessage={() => message(l.mentor_id)}
-            />
+      {allSpecialties.length > 0 && (
+        <div className="mb-6 flex flex-wrap gap-2">
+          <button
+            type="button"
+            onClick={() => setActiveSpecialty(null)}
+            className={`rounded-full border px-3 py-1.5 text-sm font-semibold transition-colors ${
+              activeSpecialty === null ? "border-orange-800 bg-orange-50 text-orange-800" : "border-line text-content-2 hover:border-line-strong"
+            }`}
+          >
+            All
+          </button>
+          {allSpecialties.map((s) => (
+            <button
+              key={s}
+              type="button"
+              onClick={() => setActiveSpecialty(activeSpecialty === s ? null : s)}
+              className={`rounded-full border px-3 py-1.5 text-sm font-semibold transition-colors ${
+                activeSpecialty === s ? "border-orange-800 bg-orange-50 text-orange-800" : "border-line text-content-2 hover:border-line-strong"
+              }`}
+            >
+              {s}
+            </button>
           ))}
         </div>
+      )}
+
+      <PageSection>
+        {filtered.length === 0 ? (
+          <Alert tone="info">No mentors match that search.</Alert>
+        ) : (
+          <div className="grid gap-4 sm:grid-cols-2">
+            {filtered.map((l) => (
+              <MentorCard
+                key={l.id}
+                name={l.profiles.full_name}
+                photo={l.profiles.avatar_url}
+                headline={l.profiles.bio || `${l.specialties?.[0] ?? "Mentor"} · GHS ${l.hourly_rate}/hr`}
+                specialties={l.specialties || []}
+                rating={l.avg_rating || 0}
+                reviewCount={l.total_sessions}
+                menteesGuided={l.total_sessions}
+                full={l.is_full}
+                onBook={() => openBooking(l)}
+                onMessage={() => message(l.mentor_id)}
+              />
+            ))}
+          </div>
+        )}
       </PageSection>
 
       <Modal
