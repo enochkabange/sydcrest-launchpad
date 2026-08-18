@@ -164,6 +164,26 @@ create table enrollments (
   streak_days   int default 0,
   last_active   timestamptz default now(),
   enrolled_at   timestamptz default now(),
+  -- PLATFORM_SPEC.md §5 onboarding — device/connectivity check, async
+  -- orientation, buddy pairing, guardian consent for minors. All
+  -- nullable: onboarding is advisory (Learn.jsx banners toward it), not
+  -- a hard gate on using the platform.
+  device_type                   text,
+  data_plan                     text,
+  availability_hours            text,
+  device_check_completed_at     timestamptz,
+  orientation_completed_at      timestamptz,
+  buddy_id                      uuid references profiles(id),
+  -- Auto-set at enrollment time by cross-referencing the accepted
+  -- application's date_of_birth (admin.js's /cohorts/:id/enroll) — not a
+  -- manually-flagged field. guardian_consent_token has no real email
+  -- service behind it (see onboarding.js's header comment): the admin
+  -- relays the confirmation link directly, same honest pattern as every
+  -- other unconfigured integration this session.
+  guardian_consent_required     boolean default false,
+  guardian_email                text,
+  guardian_consent_token        text unique,
+  guardian_consent_confirmed_at timestamptz,
   unique(mentee_id, cohort_id)
 );
 

@@ -8,6 +8,7 @@ export default function CohortsTab({ isPlatformAdmin }) {
   const [createOpen, setCreateOpen] = useState(false);
   const [enrollTarget, setEnrollTarget] = useState(null); // cohort being enrolled into
   const [curriculumTarget, setCurriculumTarget] = useState(null); // cohort getting the DMP curriculum
+  const [onboardingTarget, setOnboardingTarget] = useState(null); // cohort whose onboarding roster is open
 
   const load = () => api.get("/api/admin/cohorts").then(({ cohorts }) => setCohorts(cohorts));
 
@@ -53,6 +54,9 @@ export default function CohortsTab({ isPlatformAdmin }) {
                   <Button size="sm" variant="secondary" onClick={() => setCurriculumTarget(c)}>
                     Assign DMP curriculum
                   </Button>
+                  <Button size="sm" variant="secondary" onClick={() => setOnboardingTarget(c)}>
+                    View onboarding
+                  </Button>
                 </div>
               </CardBody>
             </Card>
@@ -63,6 +67,7 @@ export default function CohortsTab({ isPlatformAdmin }) {
       <CreateCohortModal open={createOpen} onClose={() => setCreateOpen(false)} onCreated={load} />
       <EnrollModal cohort={enrollTarget} onClose={() => setEnrollTarget(null)} onEnrolled={load} />
       <AssignCurriculumModal cohort={curriculumTarget} onClose={() => setCurriculumTarget(null)} />
+      <OnboardingRosterModal cohort={onboardingTarget} onClose={() => setOnboardingTarget(null)} />
     </div>
   );
 }
@@ -190,6 +195,139 @@ function CreateCohortModal({ open, onClose, onCreated }) {
         <Input label="Total weeks" type="number" min="1" value={form.total_weeks} onChange={set("total_weeks")} />
         <Input label="Max size" type="number" min="1" value={form.max_size} onChange={set("max_size")} />
       </form>
+    </Modal>
+  );
+}
+
+// OnboardingRosterModal — PLATFORM_SPEC.md §5. "How's onboarding going for
+// this cohort" made answerable for the first time: each mentee's device
+// check / orientation / buddy / guardian-consent status, plus actions for
+// the two things that need an admin — pairing buddies and generating a
+// guardian consent link to relay manually (no email service exists, see
+// backend/src/routes/onboarding.js's header comment).
+function OnboardingRosterModal({ cohort, onClose }) {
+  const [enrollments, setEnrollments] = useState(null);
+  const [error, setError] = useState("");
+  const [pairing, setPairing] = useState(false);
+  const [pairResult, setPairResult] = useState(null);
+  const [linkFor, setLinkFor] = useState(null); // enrollment id currently generating a link
+  const [links, setLinks] = useState({}); // enrollment id -> confirmation_url
+  const [guardianEmails, setGuardianEmails] = useState({}); // enrollment id -> draft email
+
+  const load = () =>
+    api.get(`/api/admin/cohorts/${cohort.id}/enrollments`).then(({ enrollments }) => setEnrollments(enrollments));
+
+  useEffect(() => {
+    if (!cohort) return;
+    setEnrollments(null);
+    setError("");
+    setPairResult(null);
+    setLinks({});
+    load().catch((err) => setError(err instanceof ApiError ? err.message : "Couldn't load the onboarding roster."));
+  }, [cohort]);
+
+  const pairBuddies = async () => {
+    setPairing(true);
+    setError("");
+    try {
+      const result = await api.post(`/api/admin/cohorts/${cohort.id}/pair-buddies`);
+      setPairResult(result);
+      await load();
+    } catch (err) {
+      setError(err instanceof ApiError ? err.message : "Couldn't pair buddies.");
+    } finally {
+      setPairing(false);
+    }
+  };
+
+  const generateLink = async (enrollmentId) => {
+    const guardian_email = guardianEmails[enrollmentId];
+    if (!guardian_email) return;
+    setLinkFor(enrollmentId);
+    setError("");
+    try {
+      const { confirmation_url } = await api.patch(`/api/admin/enrollments/${enrollmentId}/guardian-email`, { guardian_email });
+      setLinks((prev) => ({ ...prev, [enrollmentId]: confirmation_url }));
+    } catch (err) {
+      setError(err instanceof ApiError ? err.message : "Couldn't generate a consent link.");
+    } finally {
+      setLinkFor(null);
+    }
+  };
+
+  return (
+    <Modal
+      open={!!cohort}
+      onClose={onClose}
+      title={`Onboarding — ${cohort?.name ?? ""}`}
+      footer={
+        <>
+          <Button variant="secondary" onClick={onClose}>Close</Button>
+          <Button onClick={pairBuddies} loading={pairing}>Pair buddies</Button>
+        </>
+      }
+    >
+      {error && <Alert tone="danger" className="mb-3">{error}</Alert>}
+      {pairResult && (
+        <Alert tone="success" className="mb-3">
+          Paired {pairResult.paired} mentee{pairResult.paired === 1 ? "" : "s"}.
+          {pairResult.unpaired_leftover > 0 && " One mentee is left unpaired (odd number in the cohort)."}
+        </Alert>
+      )}
+      {enrollments === null ? (
+        <PageLoader message="Loading roster…" />
+      ) : enrollments.length === 0 ? (
+        <p className="text-sm text-content-2">No mentees enrolled yet.</p>
+      ) : (
+        <div className="flex flex-col gap-2 max-h-96 overflow-y-auto">
+          {enrollments.map((e) => (
+            <div key={e.id} className="rounded-md border border-line p-3 flex flex-col gap-1.5 text-sm">
+              <div className="flex items-center justify-between gap-2">
+                <span className="font-medium text-content">{e.profiles?.full_name}</span>
+                <span className="text-xs text-content-3">{e.profiles?.email}</span>
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                <Badge tone={e.device_check_completed_at ? "success" : "neutral"}>
+                  {e.device_check_completed_at ? "Device check done" : "Device check pending"}
+                </Badge>
+                <Badge tone={e.orientation_completed_at ? "success" : "neutral"}>
+                  {e.orientation_completed_at ? "Orientation done" : "Orientation pending"}
+                </Badge>
+                {e.buddy_id && <Badge tone="info">Buddy paired</Badge>}
+                {e.guardian_consent_required && (
+                  <Badge tone={e.guardian_consent_confirmed_at ? "success" : "warning"}>
+                    {e.guardian_consent_confirmed_at ? "Guardian consent confirmed" : "Guardian consent needed"}
+                  </Badge>
+                )}
+              </div>
+              {e.guardian_consent_required && !e.guardian_consent_confirmed_at && (
+                links[e.id] ? (
+                  <p className="text-xs text-content-2 break-all">
+                    Relay this link to the guardian: <span className="font-mono">{links[e.id]}</span>
+                  </p>
+                ) : (
+                  <div className="flex items-center gap-2">
+                    <Input
+                      className="max-w-xs"
+                      type="email"
+                      placeholder="Guardian's email"
+                      value={guardianEmails[e.id] ?? ""}
+                      onChange={(ev) => setGuardianEmails((prev) => ({ ...prev, [e.id]: ev.target.value }))}
+                    />
+                    <Button
+                      size="sm" variant="secondary" loading={linkFor === e.id}
+                      disabled={!guardianEmails[e.id]}
+                      onClick={() => generateLink(e.id)}
+                    >
+                      Generate consent link
+                    </Button>
+                  </div>
+                )
+              )}
+            </div>
+          ))}
+        </div>
+      )}
     </Modal>
   );
 }

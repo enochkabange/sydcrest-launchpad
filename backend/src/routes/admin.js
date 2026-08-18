@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const crypto = require('crypto');
 const { supabase } = require('../config/supabase');
 const { auth, requireLevel, audit } = require('../middleware/auth');
 const { TRACKS: DMP_TRACKS, buildWeeks } = require('../data/dmp-curriculum');
@@ -135,13 +136,128 @@ router.patch('/cohorts/:id', requireLevel('cohort_admin'), async (req, res) => {
   res.json({ cohort: data });
 });
 
-// POST /api/admin/cohorts/:id/enroll
+function isMinor(dateOfBirth) {
+  if (!dateOfBirth) return false;
+  const dob = new Date(dateOfBirth);
+  const now = new Date();
+  let age = now.getFullYear() - dob.getFullYear();
+  const monthDiff = now.getMonth() - dob.getMonth();
+  if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < dob.getDate())) age--;
+  return age < 18;
+}
+
+// POST /api/admin/cohorts/:id/enroll – PLATFORM_SPEC.md §5's guardian-
+// consent auto-flag lives here: for each mentee, their most recent
+// *accepted* application (§3) already has a date_of_birth from admissions
+// review — if it implies a minor, the new enrollment is created with
+// guardian_consent_required: true automatically. No separate "flag this
+// mentee" admin action, no new roster UI just for this rare case.
 router.post('/cohorts/:id/enroll', requireLevel('platform_admin'), async (req, res) => {
   const { mentee_ids } = req.body;
-  const rows = mentee_ids.map(id => ({ mentee_id: id, cohort_id: req.params.id }));
+
+  const { data: mentees } = await supabase.from('profiles').select('id, email').in('id', mentee_ids);
+  const emailById = new Map((mentees ?? []).map((m) => [m.id, m.email]));
+
+  const rows = await Promise.all(mentee_ids.map(async (id) => {
+    const email = emailById.get(id);
+    let guardian_consent_required = false;
+    if (email) {
+      const { data: application } = await supabase
+        .from('applications')
+        .select('date_of_birth')
+        .eq('email', email)
+        .eq('status', 'accepted')
+        .order('created_at', { ascending: false })
+        .limit(1)
+        .maybeSingle();
+      guardian_consent_required = isMinor(application?.date_of_birth);
+    }
+    return { mentee_id: id, cohort_id: req.params.id, guardian_consent_required };
+  }));
+
   const { data, error } = await supabase.from('enrollments').insert(rows).select();
   if (error) return res.status(400).json({ error: error.message });
-  res.json({ enrolled: data.length });
+  res.json({ enrolled: data.length, guardian_consent_flagged: data.filter((e) => e.guardian_consent_required).length });
+});
+
+// GET /api/admin/cohorts/:id/enrollments – the onboarding roster
+// (PLATFORM_SPEC.md §5): each enrolled mentee plus device-check/
+// orientation/buddy/guardian-consent status. Same ownership scoping as
+// PATCH /cohorts/:id — a cohort_admin only sees their own cohort's roster.
+router.get('/cohorts/:id/enrollments', async (req, res) => {
+  if (!['platform_admin', 'super_admin'].includes(req.user.role)) {
+    const { data: cohort } = await supabase.from('cohorts').select('mentor_id').eq('id', req.params.id).single();
+    if (!cohort || cohort.mentor_id !== req.user.id)
+      return res.status(403).json({ error: 'You do not run this cohort' });
+  }
+
+  const { data, error } = await supabase
+    .from('enrollments')
+    .select('*, profiles!mentee_id(full_name, email)')
+    .eq('cohort_id', req.params.id)
+    .order('enrolled_at', { ascending: true });
+  if (error) return res.status(500).json({ error: error.message });
+  res.json({ enrollments: data });
+});
+
+// POST /api/admin/cohorts/:id/pair-buddies – idempotent, same shape as
+// assign-curriculum: only pairs mentees who don't already have a
+// buddy_id. Odd one out is left unpaired (documented, not a group-of-
+// three) — safe to re-run after new enrollments land.
+router.post('/cohorts/:id/pair-buddies', requireLevel('cohort_admin'), audit('cohort.pair_buddies'), async (req, res) => {
+  if (!['platform_admin', 'super_admin'].includes(req.user.role)) {
+    const { data: cohort } = await supabase.from('cohorts').select('mentor_id').eq('id', req.params.id).single();
+    if (!cohort || cohort.mentor_id !== req.user.id)
+      return res.status(403).json({ error: 'You do not run this cohort' });
+  }
+
+  const { data: unpaired, error } = await supabase
+    .from('enrollments')
+    .select('id, mentee_id')
+    .eq('cohort_id', req.params.id)
+    .is('buddy_id', null);
+  if (error) return res.status(500).json({ error: error.message });
+
+  // Fisher-Yates shuffle so pairing isn't just enrollment order.
+  const shuffled = [...unpaired];
+  for (let i = shuffled.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+
+  let paired = 0;
+  for (let i = 0; i + 1 < shuffled.length; i += 2) {
+    const [a, b] = [shuffled[i], shuffled[i + 1]];
+    await supabase.from('enrollments').update({ buddy_id: b.mentee_id }).eq('id', a.id);
+    await supabase.from('enrollments').update({ buddy_id: a.mentee_id }).eq('id', b.id);
+    paired += 2;
+  }
+
+  res.json({ paired, unpaired_leftover: shuffled.length % 2 });
+});
+
+// PATCH /api/admin/enrollments/:id/guardian-email – sets the guardian's
+// email and generates a fresh consent token, returning the confirmation
+// URL for the admin to relay directly (see onboarding.js's header
+// comment on why this isn't auto-sent).
+router.patch('/enrollments/:id/guardian-email', requireLevel('cohort_admin'), audit('enrollment.guardian_email_set'), async (req, res) => {
+  const { guardian_email } = req.body;
+  if (!guardian_email) return res.status(400).json({ error: 'guardian_email required' });
+
+  const { data: enrollment } = await supabase.from('enrollments').select('guardian_consent_required').eq('id', req.params.id).single();
+  if (!enrollment) return res.status(404).json({ error: 'Enrollment not found' });
+  if (!enrollment.guardian_consent_required)
+    return res.status(400).json({ error: 'This enrollment was not flagged as needing guardian consent.' });
+
+  const token = crypto.randomBytes(16).toString('hex');
+  const { data, error } = await supabase
+    .from('enrollments')
+    .update({ guardian_email, guardian_consent_token: token })
+    .eq('id', req.params.id)
+    .select().single();
+  if (error) return res.status(400).json({ error: error.message });
+
+  res.json({ enrollment: data, confirmation_url: `${process.env.CLIENT_URL}/guardian-consent/${token}` });
 });
 
 // POST /api/admin/cohorts/:id/assign-curriculum – give the real DMP

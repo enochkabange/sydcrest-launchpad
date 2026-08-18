@@ -125,6 +125,7 @@ app.use('/api/community',    require('./routes/community'));
 app.use('/api/opportunities',require('./routes/opportunities'));
 app.use('/api/admin',        require('./routes/admin'));
 app.use('/api/sessions',     require('./routes/sessions'));
+app.use('/api/onboarding',   require('./routes/onboarding'));
 // Mounted at root, not a prefix: this router defines its own full paths
 // (/applications, /applications/status, /programs/:slug) since it mixes
 // public admissions endpoints with authenticated review ones under

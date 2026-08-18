@@ -4,6 +4,8 @@ import { AppShell, PageLoader } from "./components/ui/index.js";
 import Login from "./pages/Login.jsx";
 import Register from "./pages/Register.jsx";
 import Learn from "./pages/Learn.jsx";
+import Onboarding from "./pages/Onboarding.jsx";
+import GuardianConsent from "./pages/GuardianConsent.jsx";
 import PathDetail from "./pages/PathDetail.jsx";
 import StudyBuddy from "./pages/StudyBuddy.jsx";
 import Profile from "./pages/Profile.jsx";
@@ -124,10 +126,12 @@ export default function App() {
           <Route path="/apply/status" element={<ApplicationStatus />} />
           <Route path="/apply-as-mentor" element={<ApplyMentor />} />
           <Route path="/apply/:slug" element={<Apply />} />
+          <Route path="/guardian-consent/:token" element={<GuardianConsent />} />
 
           <Route path="/" element={<RequireAuth><HomeRoute /></RequireAuth>} />
           <Route path="/learn/:pathId" element={<RequireAuth><PathDetailRoute /></RequireAuth>} />
           <Route path="/study-buddy" element={<RequireAuth><StudyBuddy /></RequireAuth>} />
+          <Route path="/onboarding" element={<RequireAuth><Onboarding /></RequireAuth>} />
           <Route path="/mentors" element={<RequireAuth><Mentors /></RequireAuth>} />
           <Route path="/projects" element={<RequireAuth><Projects /></RequireAuth>} />
           <Route path="/community" element={<RequireAuth><Community /></RequireAuth>} />
