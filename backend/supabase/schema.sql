@@ -55,11 +55,32 @@ $$ language sql stable security definer set search_path = public;
 
 create policy "Admins see all" on profiles for select using (auth_is_admin());
 
+-- ─── PROGRAMS ────────────────────────────────────────────────
+-- PLATFORM_SPEC.md §2 — the entity everything downstream (admissions,
+-- mentor vetting, certification criteria) is scoped per-program against.
+-- Seeded with one row ("Delta Mentoring Program") on the live project;
+-- cohorts.program_id below is nullable so existing legacy cohorts that
+-- predate this model aren't forced to backfill.
+create table programs (
+  id                     uuid primary key default uuid_generate_v4(),
+  name                   text not null,
+  slug                   text not null unique,
+  description            text,
+  duration_weeks         int default 12,
+  eligibility_min_age    int,
+  eligibility_max_age    int,
+  eligibility_notes      text,
+  certification_criteria jsonb,
+  is_active              boolean default true,
+  created_at             timestamptz default now()
+);
+
 -- ─── COHORTS ─────────────────────────────────────────────────
 create table cohorts (
   id            uuid primary key default uuid_generate_v4(),
   name          text not null,
   track         text not null,
+  program_id    uuid references programs(id),
   mentor_id     uuid references profiles(id),
   start_date    date,
   end_date      date,

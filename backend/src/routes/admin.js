@@ -70,6 +70,35 @@ router.post('/users/:id/reset-password', requireLevel('super_admin'), async (req
 });
 
 // ── COHORT MANAGEMENT ─────────────────────────────────────────
+// ── PROGRAMS (PLATFORM_SPEC.md §2) ────────────────────────────
+// The entity cohorts attach to. Read is cohort_admin+ (same as this
+// router's own base gate) — anyone who creates a cohort needs to see the
+// options. Write is platform_admin+, same level POST /cohorts already
+// requires — a new program is a bigger structural decision than a cohort.
+router.get('/programs', async (req, res) => {
+  const { data, error } = await supabase.from('programs').select('*').order('created_at', { ascending: false });
+  if (error) return res.status(500).json({ error: error.message });
+  res.json({ programs: data });
+});
+
+router.post('/programs', requireLevel('platform_admin'), audit('program.create'), async (req, res) => {
+  const { name, slug, description, duration_weeks, eligibility_min_age, eligibility_max_age, eligibility_notes, certification_criteria } = req.body;
+  if (!name || !slug) return res.status(400).json({ error: 'name and slug required' });
+
+  const { data, error } = await supabase
+    .from('programs')
+    .insert({ name, slug, description, duration_weeks, eligibility_min_age, eligibility_max_age, eligibility_notes, certification_criteria })
+    .select().single();
+  if (error) return res.status(400).json({ error: error.message });
+  res.status(201).json({ program: data });
+});
+
+router.patch('/programs/:id', requireLevel('platform_admin'), audit('program.update'), async (req, res) => {
+  const { data, error } = await supabase.from('programs').update(req.body).eq('id', req.params.id).select().single();
+  if (error) return res.status(400).json({ error: error.message });
+  res.json({ program: data });
+});
+
 router.get('/cohorts', async (req, res) => {
   let query = supabase.from('cohorts').select('*, profiles!mentor_id(full_name, email), enrollments(count)');
   // cohort_admin only sees their own cohorts
@@ -82,9 +111,9 @@ router.get('/cohorts', async (req, res) => {
 });
 
 router.post('/cohorts', requireLevel('platform_admin'), audit('cohort.create'), async (req, res) => {
-  const { name, track, mentor_id, start_date, end_date, total_weeks, max_size } = req.body;
+  const { name, track, program_id, mentor_id, start_date, end_date, total_weeks, max_size } = req.body;
   const { data, error } = await supabase.from('cohorts')
-    .insert({ name, track, mentor_id, start_date, end_date, total_weeks, max_size })
+    .insert({ name, track, program_id, mentor_id, start_date, end_date, total_weeks, max_size })
     .select().single();
   if (error) return res.status(400).json({ error: error.message });
   res.status(201).json({ cohort: data });

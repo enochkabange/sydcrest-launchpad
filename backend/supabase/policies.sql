@@ -44,6 +44,13 @@ create or replace function auth_in_cohort(p_cohort_id uuid) returns boolean as $
     or exists (select 1 from cohorts c where c.id = p_cohort_id and c.mentor_id = auth_profile_id());
 $$ language sql stable;
 
+-- ─── PROGRAMS ────────────────────────────────────────────────
+alter table programs enable row level security;
+create policy "Anyone authenticated can view active programs" on programs for select using (is_active = true or auth_is_admin());
+create policy "Admins manage programs" on programs for insert with check (auth_is_admin());
+create policy "Admins update programs" on programs for update using (auth_is_admin());
+create policy "Admins delete programs" on programs for delete using (auth_is_admin());
+
 -- ─── COHORTS ─────────────────────────────────────────────────
 alter table cohorts enable row level security;
 create policy "Members and admins can view" on cohorts for select using (auth_in_cohort(id));

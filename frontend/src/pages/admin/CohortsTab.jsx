@@ -126,10 +126,16 @@ function AssignCurriculumModal({ cohort, onClose }) {
 }
 
 function CreateCohortModal({ open, onClose, onCreated }) {
-  const [form, setForm] = useState({ name: "", track: "frontend", total_weeks: "12", max_size: "20" });
+  const [form, setForm] = useState({ name: "", track: "frontend", program_id: "", total_weeks: "12", max_size: "20" });
+  const [programs, setPrograms] = useState(null);
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState("");
   const set = (key) => (e) => setForm((f) => ({ ...f, [key]: e.target.value }));
+
+  useEffect(() => {
+    if (!open) return;
+    api.get("/api/admin/programs").then(({ programs }) => setPrograms(programs)).catch(() => setPrograms([]));
+  }, [open]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -137,11 +143,11 @@ function CreateCohortModal({ open, onClose, onCreated }) {
     setError("");
     try {
       await api.post("/api/admin/cohorts", {
-        ...form, total_weeks: Number(form.total_weeks), max_size: Number(form.max_size),
+        ...form, program_id: form.program_id || undefined, total_weeks: Number(form.total_weeks), max_size: Number(form.max_size),
       });
       onCreated();
       onClose();
-      setForm({ name: "", track: "frontend", total_weeks: "12", max_size: "20" });
+      setForm({ name: "", track: "frontend", program_id: "", total_weeks: "12", max_size: "20" });
     } catch (err) {
       setError(err instanceof ApiError ? err.message : "Couldn't create cohort.");
     } finally {
@@ -164,6 +170,13 @@ function CreateCohortModal({ open, onClose, onCreated }) {
       <form id="create-cohort-form" onSubmit={handleSubmit} className="flex flex-col gap-4">
         {error && <Alert tone="danger">{error}</Alert>}
         <Input label="Name" required value={form.name} onChange={set("name")} />
+        <Select
+          label="Program (optional)" value={form.program_id} onChange={set("program_id")}
+          options={[
+            { value: "", label: "— None —" },
+            ...(programs ?? []).map((p) => ({ value: p.id, label: p.name })),
+          ]}
+        />
         <Select
           label="Track" value={form.track} onChange={set("track")}
           options={[
