@@ -562,6 +562,24 @@ create index on audit_logs(user_id);
 create index on audit_logs(action);
 create index on audit_logs(created_at desc);
 
+-- ─── PARTNER INQUIRIES ────────────────────────────────────────
+-- PLATFORM_SPEC.md §13 — public Partnerships page inquiry form. No
+-- dedicated admin UI yet (stated cut in the Public Site PR); reviewed via
+-- GET /api/admin/partner-inquiries directly at pilot scale.
+create type partner_inquiry_type as enum ('university', 'hub', 'corporate', 'other');
+
+create table partner_inquiries (
+  id            uuid primary key default uuid_generate_v4(),
+  org_name      text not null,
+  contact_name  text not null,
+  email         text not null,
+  phone         text,
+  inquiry_type  partner_inquiry_type not null default 'other',
+  message       text,
+  status        text default 'new',
+  created_at    timestamptz default now()
+);
+
 -- ─── SYSTEM SETTINGS ─────────────────────────────────────────
 create table system_settings (
   key       text primary key,

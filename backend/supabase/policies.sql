@@ -315,3 +315,8 @@ create policy "Anyone signed in can read settings" on system_settings for select
 create policy "Super admin writes settings" on system_settings for update using (
   exists (select 1 from profiles where user_id = auth.uid() and role = 'super_admin')
 );
+
+-- ─── PARTNER INQUIRIES ────────────────────────────────────────
+-- Public insert (the Partnerships page form, no auth) — admin-only read.
+alter table partner_inquiries enable row level security;
+create policy "Admins only" on partner_inquiries for select using (auth_is_admin());

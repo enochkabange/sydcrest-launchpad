@@ -84,6 +84,15 @@ router.get('/programs', async (req, res) => {
   res.json({ programs: data });
 });
 
+// GET /api/admin/partner-inquiries – §13's Partnerships form has no
+// dedicated admin UI yet (stated cut in the Public Site PR); this route
+// is how they get reviewed at pilot scale.
+router.get('/partner-inquiries', async (req, res) => {
+  const { data, error } = await supabase.from('partner_inquiries').select('*').order('created_at', { ascending: false });
+  if (error) return res.status(500).json({ error: error.message });
+  res.json({ inquiries: data });
+});
+
 router.post('/programs', requireLevel('platform_admin'), audit('program.create'), async (req, res) => {
   const { name, slug, description, duration_weeks, eligibility_min_age, eligibility_max_age, eligibility_notes, certification_criteria } = req.body;
   if (!name || !slug) return res.status(400).json({ error: 'name and slug required' });

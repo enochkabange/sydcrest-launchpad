@@ -41,6 +41,24 @@ describe('applications', () => {
     expect(res.body.program.screening_test.questions.length).toBe(2);
   });
 
+  it('GET /api/programs lists active programs for the public Programs page', async () => {
+    const program = await createTestProgram();
+    programIds.push(program.id);
+
+    const res = await request(app).get('/api/programs');
+    expect(res.status).toBe(200);
+    expect(res.body.programs.some((p) => p.id === program.id)).toBe(true);
+  });
+
+  it('GET /api/programs excludes inactive programs', async () => {
+    const program = await createTestProgram({ is_active: false });
+    programIds.push(program.id);
+
+    const res = await request(app).get('/api/programs');
+    expect(res.status).toBe(200);
+    expect(res.body.programs.some((p) => p.id === program.id)).toBe(false);
+  });
+
   it('404s for an unknown or inactive program slug', async () => {
     const res = await request(app).get('/api/programs/does-not-exist');
     expect(res.status).toBe(404);
@@ -171,5 +189,37 @@ describe('applications', () => {
       expect(decide.body.application.reviewer_id).toBe(reviewer.profile.id);
       expect(decide.body.application.decided_at).toBeTruthy();
     });
+  });
+});
+
+describe('partner inquiries', () => {
+  const inquiryIds = [];
+  const cleanup = [];
+
+  afterEach(async () => {
+    await Promise.all(inquiryIds.splice(0).map((id) => supabase.from('partner_inquiries').delete().eq('id', id)));
+    await Promise.all(cleanup.splice(0).map(deleteUser));
+  });
+
+  it('submits a partnership inquiry and a cohort_admin can list it', async () => {
+    const submit = await request(app).post('/api/partner-inquiries').send({
+      org_name: 'KNUST CS Club', contact_name: 'Ama Boateng', email: 'ama@example.test',
+      inquiry_type: 'university', message: 'Interested in a cohort partnership.',
+    });
+    expect(submit.status).toBe(201);
+
+    const admin = await registerAdmin('cohort_admin');
+    cleanup.push(admin.email);
+
+    const list = await request(app).get('/api/admin/partner-inquiries').set('Authorization', `Bearer ${admin.token}`);
+    expect(list.status).toBe(200);
+    const found = list.body.inquiries.find((i) => i.email === 'ama@example.test');
+    expect(found).toBeTruthy();
+    inquiryIds.push(found.id);
+  });
+
+  it('rejects a submission missing required fields', async () => {
+    const res = await request(app).post('/api/partner-inquiries').send({ org_name: 'X' });
+    expect(res.status).toBe(400);
   });
 });

@@ -7,7 +7,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { api, ApiError } from "../lib/api.js";
-import { Logo, Page, PageSection, Card, CardBody, Input, Textarea, Button, Alert } from "../components/ui/index.js";
+import { Page, PageSection, Card, CardBody, Input, Textarea, Button, Alert } from "../components/ui/index.js";
+import PublicShell from "../components/public/PublicShell.jsx";
 
 export default function ApplyMentor() {
   const [form, setForm] = useState({
@@ -38,10 +39,8 @@ export default function ApplyMentor() {
   };
 
   return (
-    <div className="min-h-screen bg-surface-sunken">
+    <PublicShell>
       <div className="mx-auto w-full max-w-2xl px-4 py-8 sm:px-6">
-        <Logo size={36} className="mb-6" />
-
         {referenceCode ? (
           <Card>
             <CardBody className="flex flex-col gap-3">
@@ -90,6 +89,6 @@ export default function ApplyMentor() {
           </Page>
         )}
       </div>
-    </div>
+    </PublicShell>
   );
 }
