@@ -9,7 +9,7 @@
  */
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { api, ApiError } from "../lib/api.js";
+import { api, ApiError, BASE_URL } from "../lib/api.js";
 import { useAuth } from "../auth/AuthContext.jsx";
 import { Page, PageSection, Card, CardHeader, CardTitle, CardBody, Badge, Progress, EmptyState, Alert, PageLoader, Button, Input, Textarea } from "../components/ui/index.js";
 
@@ -90,6 +90,7 @@ export default function Learn() {
   const [paths, setPaths] = useState(null);
   const [error, setError] = useState("");
   const [onboarding, setOnboarding] = useState(null);
+  const [nudges, setNudges] = useState([]);
 
   useEffect(() => {
     api.get("/api/learning/paths")
@@ -99,7 +100,18 @@ export default function Learn() {
     api.get("/api/onboarding/me")
       .then(({ enrollment }) => setOnboarding(enrollment))
       .catch(() => {});
+    // PLATFORM_SPEC.md §8 — reserved for acceptance/halfway/certification
+    // (nudge_worthy), never every milestone; the endpoint itself already
+    // filters to unacknowledged nudge_worthy rows.
+    api.get("/api/achievements/me?nudge=true")
+      .then(({ achievements }) => setNudges(achievements))
+      .catch(() => {});
   }, []);
+
+  const acknowledgeNudge = (id) => {
+    setNudges((prev) => prev.filter((n) => n.id !== id));
+    api.post(`/api/achievements/${id}/acknowledge`).catch(() => {});
+  };
 
   const handleGenerated = (path) => {
     setPaths((prev) => [{ ...path, weeks_total: path.total_weeks, weeks_completed: 0, percent_complete: 0 }, ...(prev || [])]);
@@ -127,6 +139,14 @@ export default function Learn() {
           <Link to="/onboarding" className="font-semibold underline">Complete onboarding</Link>
         </Alert>
       )}
+      {nudges.map((n) => (
+        <Alert key={n.id} tone="success" title={n.label} onDismiss={() => acknowledgeNudge(n.id)} className="mb-6">
+          Worth sharing —{" "}
+          <a href={`${BASE_URL}/api/achievements/${n.id}`} target="_blank" rel="noreferrer" className="font-semibold underline">
+            view your shareable page
+          </a>.
+        </Alert>
+      ))}
       {paths.length === 0 ? (
         <div className="flex flex-col gap-6">
           <EmptyState

@@ -15,6 +15,7 @@ const router = express.Router();
 const { supabase } = require('../config/supabase');
 const { auth, audit } = require('../middleware/auth');
 const { client, MODEL, requireAI, requireDailyAiCap, parseJsonResponse } = require('../services/claude');
+const { mintAchievement } = require('../services/achievements');
 
 router.use(auth);
 
@@ -104,7 +105,7 @@ router.post('/weeks/:weekId/complete', async (req, res) => {
 
   const { data: week } = await supabase
     .from('learning_weeks')
-    .select('*, learning_paths!inner(id, mentee_id, cohort_id)')
+    .select('*, learning_paths!inner(id, mentee_id, cohort_id, total_weeks)')
     .eq('id', req.params.weekId)
     .single();
   if (!week || week.learning_paths.mentee_id !== req.user.id)
@@ -155,6 +156,18 @@ router.post('/weeks/:weekId/complete', async (req, res) => {
           last_active: now.toISOString(),
         })
         .eq('id', enrollment.id);
+
+      // PLATFORM_SPEC.md §8 — logged for every week (quiet internal
+      // tracking), but only the halfway week is nudge_worthy; acceptance
+      // and certification are the other two reserved moments.
+      const halfway = Math.ceil((week.learning_paths.total_weeks || 12) / 2);
+      await mintAchievement({
+        mentee_id: req.user.id, type: 'week_completed', cohort_id: cohortId,
+        scope_key: `week_completed:${cohortId}:${week.week_number}`,
+        label: `Completed week ${week.week_number}`,
+        is_minor: enrollment.guardian_consent_required,
+        nudge_worthy: week.week_number === halfway,
+      });
     }
   }
 

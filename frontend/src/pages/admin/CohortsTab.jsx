@@ -9,6 +9,7 @@ export default function CohortsTab({ isPlatformAdmin }) {
   const [enrollTarget, setEnrollTarget] = useState(null); // cohort being enrolled into
   const [curriculumTarget, setCurriculumTarget] = useState(null); // cohort getting the DMP curriculum
   const [onboardingTarget, setOnboardingTarget] = useState(null); // cohort whose onboarding roster is open
+  const [certificationTarget, setCertificationTarget] = useState(null); // cohort whose certification candidates are open
 
   const load = () => api.get("/api/admin/cohorts").then(({ cohorts }) => setCohorts(cohorts));
 
@@ -57,6 +58,9 @@ export default function CohortsTab({ isPlatformAdmin }) {
                   <Button size="sm" variant="secondary" onClick={() => setOnboardingTarget(c)}>
                     View onboarding
                   </Button>
+                  <Button size="sm" variant="secondary" onClick={() => setCertificationTarget(c)}>
+                    View certification
+                  </Button>
                 </div>
               </CardBody>
             </Card>
@@ -68,6 +72,7 @@ export default function CohortsTab({ isPlatformAdmin }) {
       <EnrollModal cohort={enrollTarget} onClose={() => setEnrollTarget(null)} onEnrolled={load} />
       <AssignCurriculumModal cohort={curriculumTarget} onClose={() => setCurriculumTarget(null)} />
       <OnboardingRosterModal cohort={onboardingTarget} onClose={() => setOnboardingTarget(null)} />
+      <CertificationModal cohort={certificationTarget} onClose={() => setCertificationTarget(null)} />
     </div>
   );
 }
@@ -324,6 +329,67 @@ function OnboardingRosterModal({ cohort, onClose }) {
                   </div>
                 )
               )}
+            </div>
+          ))}
+        </div>
+      )}
+    </Modal>
+  );
+}
+
+// CertificationModal — PLATFORM_SPEC.md §7: certification is a manual
+// mentor/admin trigger, never automatic. Lists each mentee's readiness
+// against the program's own certification_criteria, computed server-side
+// (GET .../certification-candidates) — this modal is just the trigger UI.
+function CertificationModal({ cohort, onClose }) {
+  const [candidates, setCandidates] = useState(null);
+  const [error, setError] = useState("");
+  const [certifying, setCertifying] = useState(null); // enrollment id in flight
+
+  const load = () =>
+    api.get(`/api/admin/cohorts/${cohort.id}/certification-candidates`).then(({ candidates }) => setCandidates(candidates));
+
+  useEffect(() => {
+    if (!cohort) return;
+    setCandidates(null);
+    setError("");
+    load().catch((err) => setError(err instanceof ApiError ? err.message : "Couldn't load certification candidates."));
+  }, [cohort]);
+
+  const certify = async (enrollmentId) => {
+    setCertifying(enrollmentId);
+    setError("");
+    try {
+      await api.post(`/api/admin/enrollments/${enrollmentId}/certify`);
+      await load();
+    } catch (err) {
+      setError(err instanceof ApiError ? err.message : "Couldn't certify this mentee.");
+    } finally {
+      setCertifying(null);
+    }
+  };
+
+  return (
+    <Modal open={!!cohort} onClose={onClose} title={`Certification — ${cohort?.name ?? ""}`} footer={<Button variant="secondary" onClick={onClose}>Close</Button>}>
+      {error && <Alert tone="danger" className="mb-3">{error}</Alert>}
+      {candidates === null ? (
+        <PageLoader message="Loading candidates…" />
+      ) : candidates.length === 0 ? (
+        <p className="text-sm text-content-2">No mentees enrolled yet.</p>
+      ) : (
+        <div className="flex flex-col gap-2 max-h-96 overflow-y-auto">
+          {candidates.map((c) => (
+            <div key={c.enrollment_id} className="rounded-md border border-line p-3 flex items-center justify-between gap-3 text-sm">
+              <div>
+                <p className="text-content font-medium">{c.full_name}</p>
+                <p className="text-content-3 text-xs">{c.completion_pct}% complete{c.all_projects_approved ? " · all projects approved" : ""}</p>
+              </div>
+              <div className="flex items-center gap-2">
+                <Badge tone={c.ready ? "success" : "neutral"}>{c.ready ? "Ready" : "Not ready"}</Badge>
+                <Button size="sm" disabled={!c.ready} loading={certifying === c.enrollment_id} onClick={() => certify(c.enrollment_id)}>
+                  Certify
+                </Button>
+              </div>
             </div>
           ))}
         </div>

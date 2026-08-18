@@ -3,10 +3,10 @@
  * (POST /api/auth/change-password, already existed on the backend with no
  * frontend home until now).
  */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth, ApiError } from "../auth/AuthContext.jsx";
-import { api } from "../lib/api.js";
-import { Page, PageSection, Card, CardHeader, CardTitle, CardBody, Input, Textarea, Button, Alert } from "../components/ui/index.js";
+import { api, BASE_URL } from "../lib/api.js";
+import { Page, PageSection, Card, CardHeader, CardTitle, CardBody, Input, Textarea, Button, Alert, Badge } from "../components/ui/index.js";
 
 function ProfileForm() {
   const { profile, updateProfile } = useAuth();
@@ -104,6 +104,45 @@ function ChangePasswordForm() {
   );
 }
 
+// AchievementsSection — PLATFORM_SPEC.md §8's "quiet internal tracking":
+// unlike the Learn banner (reserved for accepted/halfway/certified), this
+// lists every earned milestone. A minor's rows show a plain badge instead
+// of a share link — the public page itself also blocks these, this just
+// avoids offering a link that won't work.
+function AchievementsSection() {
+  const [achievements, setAchievements] = useState(null);
+
+  useEffect(() => {
+    api.get("/api/achievements/me").then(({ achievements }) => setAchievements(achievements)).catch(() => setAchievements([]));
+  }, []);
+
+  if (!achievements?.length) return null;
+
+  return (
+    <PageSection title="Achievements">
+      <Card>
+        <CardBody className="flex flex-col gap-3">
+          {achievements.map((a) => (
+            <div key={a.id} className="flex items-center justify-between gap-3 text-sm">
+              <div>
+                <p className="text-content font-medium">{a.label}</p>
+                <p className="text-content-3 text-xs">{new Date(a.earned_at).toLocaleDateString()}</p>
+              </div>
+              {a.is_minor ? (
+                <Badge tone="neutral">Not shareable</Badge>
+              ) : (
+                <a href={`${BASE_URL}/api/achievements/${a.id}`} target="_blank" rel="noreferrer" className="text-content-link text-sm font-medium">
+                  Share
+                </a>
+              )}
+            </div>
+          ))}
+        </CardBody>
+      </Card>
+    </PageSection>
+  );
+}
+
 export default function Profile() {
   return (
     <Page eyebrow="Account" title="Your profile" description="Manage your details and password.">
@@ -114,6 +153,7 @@ export default function Profile() {
         <PageSection title="Password">
           <Card><CardBody><ChangePasswordForm /></CardBody></Card>
         </PageSection>
+        <AchievementsSection />
       </div>
     </Page>
   );

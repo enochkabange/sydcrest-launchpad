@@ -17,6 +17,14 @@ create type payment_method as enum ('mtn_momo','vodafone_cash','airteltigo_money
 create type payment_status as enum ('pending','held_escrow','released','refunded','failed');
 create type opp_type as enum ('job','school','scholarship','fellowship','internship');
 create type opp_stage as enum ('researching','researched','roadmap','applying','submitted','outcome_positive','outcome_negative');
+-- PLATFORM_SPEC.md §8 — the earlier achievements table (mentee_id, badge,
+-- label, earned_at) was rebuilt: zero code ever referenced it, and it
+-- lacked program/cohort scoping and typed milestones needed for the
+-- public share-page mechanism. scope_key + unique(mentee_id, type,
+-- scope_key) makes minting idempotent for the two trigger points that are
+-- re-callable (application accept, project approval) without per-type
+-- partial indexes.
+create type achievement_type as enum ('accepted','enrolled','week_completed','project_approved','certified');
 
 -- ─── PROFILES ────────────────────────────────────────────────
 create table profiles (
@@ -423,13 +431,42 @@ create table notifications (
 );
 create index on notifications(user_id, is_read);
 
--- ─── ACHIEVEMENTS ────────────────────────────────────────────
+-- ─── ACHIEVEMENTS & CERTIFICATES ─────────────────────────────
+-- is_minor is computed at mint time (enrollments.guardian_consent_required
+-- for cohort-scoped types, isMinor(application.date_of_birth) for the
+-- pre-enrollment 'accepted' type) and gates the public share/verify HTML
+-- routes — a socially-shareable page is a different privacy posture from
+-- the internal roster that guardian consent exists for in the first place.
+-- nudge_worthy marks the milestones PLATFORM_SPEC.md §8 reserves the
+-- in-app share nudge for (acceptance, halfway, certification) — weekly
+-- progress is still logged here but stays quiet internal tracking.
 create table achievements (
-  id            uuid primary key default uuid_generate_v4(),
-  mentee_id     uuid references profiles(id) on delete cascade,
-  badge         text not null,
-  label         text not null,
-  earned_at     timestamptz default now()
+  id              uuid primary key default uuid_generate_v4(),
+  mentee_id       uuid references profiles(id) on delete cascade,
+  type            achievement_type not null,
+  program_id      uuid references programs(id),
+  cohort_id       uuid references cohorts(id),
+  scope_key       text not null,
+  label           text not null,
+  is_minor        boolean not null default false,
+  nudge_worthy    boolean not null default false,
+  acknowledged_at timestamptz,
+  earned_at       timestamptz default now(),
+  unique(mentee_id, type, scope_key)
+);
+
+-- Self-issued Open Badges v3 (PLATFORM_SPEC.md §7) — no Credly dependency.
+-- badge_json is the assertion payload served verbatim at
+-- /api/certificates/:verificationId/badge.json for machine verification.
+create table certificates (
+  id              uuid primary key default uuid_generate_v4(),
+  mentee_id       uuid references profiles(id) on delete cascade,
+  program_id      uuid references programs(id),
+  cohort_id       uuid references cohorts(id),
+  verification_id text unique not null,
+  badge_json      jsonb not null,
+  issued_by       uuid references profiles(id),
+  issued_at       timestamptz default now()
 );
 
 -- ─── RECOMMENDERS ────────────────────────────────────────────

@@ -5,7 +5,7 @@
  * calls stay more readable than a codegen layer would. Handles the two
  * things every call needs: the bearer token and a consistent error shape.
  */
-const BASE_URL = import.meta.env.VITE_API_URL;
+export const BASE_URL = import.meta.env.VITE_API_URL;
 
 if (!BASE_URL && import.meta.env.DEV) {
   throw new Error('VITE_API_URL is not set. Add it to frontend/.env.local.');

@@ -247,10 +247,18 @@ alter table notifications enable row level security;
 create policy "Own notifications" on notifications for select using (user_id = auth_profile_id());
 create policy "Mark own notifications read" on notifications for update using (user_id = auth_profile_id());
 
--- ─── ACHIEVEMENTS ────────────────────────────────────────────
+-- ─── ACHIEVEMENTS & CERTIFICATES ─────────────────────────────
+-- All writes go through the service-role client from backend routes (same
+-- as everywhere else) — this is defense-in-depth for future direct-client
+-- use, not load-bearing today.
 alter table achievements enable row level security;
-create policy "Own achievements or admin" on achievements for select using (
-  mentee_id = auth_profile_id() or auth_is_admin()
+create policy "Own achievements or cohort staff" on achievements for select using (
+  mentee_id = auth_profile_id() or auth_is_admin() or (cohort_id is not null and auth_in_cohort(cohort_id))
+);
+
+alter table certificates enable row level security;
+create policy "Own certificates or cohort staff" on certificates for select using (
+  mentee_id = auth_profile_id() or auth_is_admin() or (cohort_id is not null and auth_in_cohort(cohort_id))
 );
 
 -- ─── RECOMMENDERS ────────────────────────────────────────────

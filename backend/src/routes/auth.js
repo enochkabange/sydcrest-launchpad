@@ -6,6 +6,8 @@ const { body, validationResult } = require('express-validator');
 const { supabase, supabaseAnon } = require('../config/supabase');
 const { auth } = require('../middleware/auth');
 const { notifyWelcome } = require('../services/whatsapp');
+const { isMinor } = require('../utils/age');
+const { mintAchievement } = require('../services/achievements');
 
 function signToken(profileId, tokenVersion = 0) {
   return jwt.sign(
@@ -45,6 +47,26 @@ router.post('/register', [
 
     if (phone && role === 'mentee') {
       notifyWelcome(phone, { menteeName: full_name, cohortName: 'Delta Cohort', mentorName: 'your assigned mentor' }).catch(() => {});
+    }
+
+    // PLATFORM_SPEC.md §8 — covers the normal apply-then-register order
+    // (applications.js's accept handler covers accept-after-registration
+    // instead); whichever fires second is a no-op via the achievements
+    // unique constraint. Awaited, unlike notifyWelcome above: that's a
+    // slow, genuinely non-critical external call; this is a fast local
+    // insert a caller might immediately check for (e.g. this test suite).
+    if (role === 'mentee') {
+      const { data: application } = await supabase
+        .from('applications').select('program_id, date_of_birth')
+        .eq('email', email).eq('status', 'accepted')
+        .order('created_at', { ascending: false }).limit(1).maybeSingle();
+      if (application) {
+        await mintAchievement({
+          mentee_id: profile.id, type: 'accepted', program_id: application.program_id,
+          scope_key: `accepted:${application.program_id}`, label: 'Accepted into the program',
+          is_minor: isMinor(application.date_of_birth), nudge_worthy: true,
+        }).catch(() => {});
+      }
     }
 
     const token = signToken(profile.id, profile.token_version || 0);
