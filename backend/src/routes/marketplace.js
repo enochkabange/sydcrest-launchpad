@@ -16,15 +16,37 @@ const { initiateMoMoPayment, enabled: hubtelEnabled } = require('../services/hub
 
 router.use(auth);
 
-// GET /api/marketplace – active listings, most-booked first
+// GET /api/marketplace – active listings, most-booked first. Each listing
+// gets mentee_count (distinct mentees who've ever booked) and is_full
+// (PLATFORM_SPEC.md §4 hard caseload cap) computed here rather than via a
+// DB view — listing counts are small at pilot scale, and one batched
+// query for all bookings is simpler than a Postgres function for a
+// "distinct count per group" that only this route needs.
 router.get('/', async (req, res) => {
-  const { data, error } = await supabase
+  const { data: listings, error } = await supabase
     .from('mentor_listings')
     .select('*, profiles!mentor_id(full_name, avatar_url, bio)')
     .eq('is_active', true)
     .order('total_sessions', { ascending: false });
   if (error) return res.status(500).json({ error: error.message });
-  res.json({ listings: data });
+
+  const listingIds = listings.map((l) => l.id);
+  const { data: bookings } = listingIds.length
+    ? await supabase.from('bookings').select('listing_id, mentee_id').in('listing_id', listingIds)
+    : { data: [] };
+
+  const menteesByListing = new Map();
+  for (const b of bookings ?? []) {
+    if (!menteesByListing.has(b.listing_id)) menteesByListing.set(b.listing_id, new Set());
+    menteesByListing.get(b.listing_id).add(b.mentee_id);
+  }
+
+  const enriched = listings.map((l) => {
+    const mentee_count = menteesByListing.get(l.id)?.size ?? 0;
+    return { ...l, mentee_count, is_full: l.max_mentees != null && mentee_count >= l.max_mentees };
+  });
+
+  res.json({ listings: enriched });
 });
 
 // POST /api/marketplace/book – mentee books a paid session with a listed mentor
@@ -37,6 +59,19 @@ router.post('/book', async (req, res) => {
 
   const { data: listing } = await supabase.from('mentor_listings').select('*').eq('id', listing_id).eq('is_active', true).single();
   if (!listing) return res.status(404).json({ error: 'Listing not found or inactive' });
+
+  // Hard caseload cap (PLATFORM_SPEC.md §4): only blocks a genuinely new
+  // mentee. An existing mentee can always book again — the cap limits how
+  // many distinct mentees a mentor takes on, not total session volume.
+  if (listing.max_mentees != null) {
+    const { data: priorBooking } = await supabase.from('bookings').select('id').eq('listing_id', listing_id).eq('mentee_id', req.user.id).limit(1).maybeSingle();
+    if (!priorBooking) {
+      const { data: distinctMentees } = await supabase.from('bookings').select('mentee_id').eq('listing_id', listing_id);
+      const menteeCount = new Set((distinctMentees ?? []).map((b) => b.mentee_id)).size;
+      if (menteeCount >= listing.max_mentees)
+        return res.status(409).json({ error: 'This mentor is at capacity. Check back later or pick another mentor.' });
+    }
+  }
 
   const total_amount = Number((listing.hourly_rate * (duration_mins / 60)).toFixed(2));
 

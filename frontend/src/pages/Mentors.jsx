@@ -75,6 +75,7 @@ export default function Mentors() {
               rating={l.avg_rating || 0}
               reviewCount={l.total_sessions}
               menteesGuided={l.total_sessions}
+              full={l.is_full}
               onBook={() => openBooking(l)}
             />
           ))}

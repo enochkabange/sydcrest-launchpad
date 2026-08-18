@@ -1,15 +1,20 @@
 /**
- * Applications — admissions endpoints, PLATFORM_SPEC.md §3. Mounted at
- * bare /api in index.js (not /api/applications) because this router
- * defines two logical resources with different trust boundaries:
- * /programs/:slug + /applications (+/status) are public — submitting an
- * application happens before anyone has an account — while /applications
- * (GET) and /applications/:id (PATCH) are reviewer-only. Each route is
+ * Applications — admissions (PLATFORM_SPEC.md §3) and mentor-vetting
+ * (§4) endpoints. Mounted at bare /api in index.js (not /api/applications)
+ * because this router defines several logical resources with different
+ * trust boundaries: /programs/:slug + /applications(+/status) +
+ * /mentor-applications (POST) are public — submitting happens before
+ * anyone has an account — while /applications, /mentor-applications
+ * (GET), and their /:id (PATCH) routes are reviewer-only. Each route is
  * gated individually rather than with router.use(), which is also why
  * this doesn't live in admin.js: that router's own router.use(auth,
  * requireLevel('cohort_admin')) would block the 'reviewer' role, which
  * sits outside that hierarchy on purpose (see ROLE_LEVELS in
  * middleware/auth.js).
+ *
+ * mentor_applications is a separate table from applications, not a
+ * variant of it — see schema.sql's own comment on why forcing the same
+ * program_id-scoped shape onto mentor vetting would be a mismatch.
  */
 const express = require('express');
 const router = express.Router();
@@ -96,15 +101,52 @@ router.get('/applications/status', [
   const errors = validationResult(req);
   if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
 
+  const email = req.query.email;
+  const referenceCode = req.query.reference_code.toUpperCase();
+
   const { data: application } = await supabase
     .from('applications')
     .select('status, created_at, decided_at')
-    .eq('email', req.query.email)
-    .eq('reference_code', req.query.reference_code.toUpperCase())
+    .eq('email', email)
+    .eq('reference_code', referenceCode)
     .maybeSingle();
-  if (!application) return res.status(404).json({ error: 'No application found for that email and reference code' });
+  if (application) return res.json({ application });
 
-  res.json({ application });
+  // Falls back to mentor_applications — one status-lookup UX regardless
+  // of which pipeline the applicant went through. Reference codes are
+  // random enough that a cross-table collision isn't a real concern.
+  const { data: mentorApplication } = await supabase
+    .from('mentor_applications')
+    .select('status, created_at, decided_at')
+    .eq('email', email)
+    .eq('reference_code', referenceCode)
+    .maybeSingle();
+  if (mentorApplication) return res.json({ application: mentorApplication });
+
+  res.status(404).json({ error: 'No application found for that email and reference code' });
+});
+
+// POST /api/mentor-applications
+router.post('/mentor-applications', [
+  body('full_name').trim().isLength({ min: 2 }),
+  body('email').isEmail().normalizeEmail(),
+], async (req, res) => {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) return res.status(400).json({ errors: errors.array() });
+
+  const { full_name, email, phone, expertise_areas, portfolio_url, bio, reference_1_name, reference_1_contact, reference_2_name, reference_2_contact } = req.body;
+
+  const { data, error } = await supabase
+    .from('mentor_applications')
+    .insert({
+      full_name, email, phone, expertise_areas, portfolio_url, bio,
+      reference_1_name, reference_1_contact, reference_2_name, reference_2_contact,
+      reference_code: generateReferenceCode(),
+    })
+    .select('reference_code').single();
+  if (error) return res.status(400).json({ error: error.message });
+
+  res.status(201).json({ reference_code: data.reference_code });
 });
 
 // ── REVIEW (reviewer / platform_admin+, PLATFORM_SPEC.md §3) ──────────
@@ -141,6 +183,48 @@ router.patch('/applications/:id', auth, requireRole(...REVIEW_ROLES), audit('app
   }
 
   const { data, error } = await supabase.from('applications').update(updates).eq('id', req.params.id).select().single();
+  if (error) return res.status(400).json({ error: error.message });
+  res.json({ application: data });
+});
+
+// GET /api/mentor-applications?status= – the mentor review queue.
+router.get('/mentor-applications', auth, requireRole(...REVIEW_ROLES), async (req, res) => {
+  let q = supabase.from('mentor_applications').select('*').order('created_at', { ascending: true });
+  if (req.query.status) q = q.eq('status', req.query.status);
+
+  const { data, error } = await q;
+  if (error) return res.status(500).json({ error: error.message });
+  res.json({ applications: data });
+});
+
+// PATCH /api/mentor-applications/:id – PLATFORM_SPEC.md §4's safeguarding
+// tie-in: a mentor cannot be accepted until a reviewer has confirmed
+// (references_checked, set via this same route or a prior call) that the
+// references were actually contacted. Rejecting/waitlisting has no such
+// gate — only acceptance grants access to mentees.
+router.patch('/mentor-applications/:id', auth, requireRole(...REVIEW_ROLES), audit('mentor_application.review'), async (req, res) => {
+  const { status, reviewer_notes, references_checked } = req.body;
+  if (status && !DECISION_STATUSES.includes(status) && status !== 'under_review')
+    return res.status(400).json({ error: `status must be one of: under_review, ${DECISION_STATUSES.join(', ')}` });
+
+  const updates = { reviewer_notes };
+  if (references_checked !== undefined) updates.references_checked = Boolean(references_checked);
+
+  if (status) {
+    if (status === 'accepted') {
+      const { data: current } = await supabase.from('mentor_applications').select('references_checked').eq('id', req.params.id).single();
+      const willBeChecked = updates.references_checked ?? current?.references_checked;
+      if (!willBeChecked)
+        return res.status(400).json({ error: 'References must be checked before a mentor can be accepted.' });
+    }
+    updates.status = status;
+    if (DECISION_STATUSES.includes(status)) {
+      updates.reviewer_id = req.user.id;
+      updates.decided_at = new Date().toISOString();
+    }
+  }
+
+  const { data, error } = await supabase.from('mentor_applications').update(updates).eq('id', req.params.id).select().single();
   if (error) return res.status(400).json({ error: error.message });
   res.json({ application: data });
 });
