@@ -131,8 +131,9 @@ export default function Learn() {
         <PageSection title="Your paths">
           <div className="grid gap-4 sm:grid-cols-2">
             {paths.map((path) => (
-              <Link key={path.id} to={`/learn/${path.id}`} className="block">
-                <Card interactive className="h-full">
+              <Link key={path.id} to={`/learn/${path.id}`} className="block h-full">
+                <Card interactive className="h-full overflow-hidden p-0">
+                  <div className="h-[3px] bg-[image:var(--gradient-launch)]" />
                   <CardHeader>
                     <div className="flex items-center justify-between gap-2">
                       <CardTitle>{path.title}</CardTitle>
