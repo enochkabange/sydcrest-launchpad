@@ -75,7 +75,12 @@ export default function Community() {
 
   if (cohortId === null) {
     return (
-      <Page title="Community">
+      <Page title="Community" titleHidden width="wide">
+        <div className="mb-8 overflow-hidden rounded-2xl bg-[image:var(--gradient-launch)] px-6 py-10 sm:px-10">
+          <p className="text-xs font-bold uppercase tracking-widest text-[#5c2e00]/80">Delta Mentoring Program</p>
+          <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-[#211d1d] sm:text-4xl">Community</h1>
+          <p className="mt-2 max-w-xl text-[#211d1d]/80">What your cohort is talking about.</p>
+        </div>
         <EmptyState icon="community" title="Not in a cohort yet" description="The community feed is scoped to your cohort — it'll show up once you're placed in one." />
       </Page>
     );
@@ -84,7 +89,13 @@ export default function Community() {
   if (posts === null && !error) return <PageLoader message="Loading the feed…" />;
 
   return (
-    <Page title="Community" description="What your cohort is talking about.">
+    <Page title="Community" titleHidden width="wide">
+      <div className="mb-8 overflow-hidden rounded-2xl bg-[image:var(--gradient-launch)] px-6 py-10 sm:px-10">
+        <p className="text-xs font-bold uppercase tracking-widest text-[#5c2e00]/80">Delta Mentoring Program</p>
+        <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-[#211d1d] sm:text-4xl">Community</h1>
+        <p className="mt-2 max-w-xl text-[#211d1d]/80">What your cohort is talking about.</p>
+      </div>
+
       {error && <Alert tone="danger" className="mb-4" onDismiss={() => setError("")}>{error}</Alert>}
 
       <PageSection>

@@ -1,4 +1,11 @@
-const { app, request, registerUser, deleteUser } = require('./helpers');
+const { app, request, supabase, registerUser, deleteUser } = require('./helpers');
+
+// Minimal valid 1x1 PNG — real image bytes, not just a renamed text file,
+// so the route's fileFilter (image/* mimetype) is exercised honestly.
+const PNG_BYTES = Buffer.from(
+  'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=',
+  'base64'
+);
 
 describe('auth', () => {
   const cleanup = [];
@@ -46,5 +53,33 @@ describe('auth', () => {
   it('rejects a request with no token', async () => {
     const res = await request(app).get('/api/auth/me');
     expect(res.status).toBe(401);
+  });
+
+  it('uploads an avatar and sets avatar_url on the profile', async () => {
+    const { token, email, profile } = await registerUser('mentee');
+    cleanup.push(email);
+
+    const res = await request(app)
+      .post('/api/auth/me/avatar')
+      .set('Authorization', `Bearer ${token}`)
+      .attach('file', PNG_BYTES, { filename: 'photo.png', contentType: 'image/png' });
+
+    expect(res.status).toBe(200);
+    expect(res.body.profile.avatar_url).toMatch(/avatars.*photo|\.png/);
+
+    const { data: files } = await supabase.storage.from('avatars').list(profile.id);
+    if (files?.length) await supabase.storage.from('avatars').remove(files.map((f) => `${profile.id}/${f.name}`));
+  });
+
+  it('rejects a non-image file for avatar upload', async () => {
+    const { token, email } = await registerUser('mentee');
+    cleanup.push(email);
+
+    const res = await request(app)
+      .post('/api/auth/me/avatar')
+      .set('Authorization', `Bearer ${token}`)
+      .attach('file', Buffer.from('not an image'), { filename: 'notes.txt', contentType: 'text/plain' });
+
+    expect(res.status).toBe(400);
   });
 });

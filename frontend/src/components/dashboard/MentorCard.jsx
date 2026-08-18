@@ -14,6 +14,7 @@ import Avatar from "../ui/Avatar.jsx";
 import Badge from "../ui/Badge.jsx";
 import Button from "../ui/Button.jsx";
 import Icon from "../ui/Icon.jsx";
+import { pickTagTone } from "../../lib/colorHash.js";
 
 export default function MentorCard({
   name,
@@ -55,7 +56,7 @@ export default function MentorCard({
       {specialties.length > 0 && (
         <div className="mt-3 flex flex-wrap gap-1.5">
           {specialties.map((s) => (
-            <Badge key={s} tone="neutral">{s}</Badge>
+            <Badge key={s} tone={pickTagTone(s)}>{s}</Badge>
           ))}
         </div>
       )}
