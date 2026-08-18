@@ -2,9 +2,15 @@ const jwt = require('jsonwebtoken');
 const { supabase } = require('../config/supabase');
 
 // Role hierarchy: super_admin > platform_admin > cohort_admin > mentor > mentee
+// `reviewer` sits at mentor's tier deliberately — a lateral trusted
+// function (application vetting, PLATFORM_SPEC.md §3), not a rung in the
+// admin escalation chain. Routes that need it use requireRole(), an
+// exact-membership check, rather than requireLevel()'s threshold — a
+// reviewer shouldn't inherit cohort_admin permissions, or vice versa.
 const ROLE_LEVELS = {
   mentee: 1,
   mentor: 2,
+  reviewer: 2,
   cohort_admin: 3,
   platform_admin: 4,
   super_admin: 5,

@@ -125,6 +125,11 @@ app.use('/api/community',    require('./routes/community'));
 app.use('/api/opportunities',require('./routes/opportunities'));
 app.use('/api/admin',        require('./routes/admin'));
 app.use('/api/sessions',     require('./routes/sessions'));
+// Mounted at root, not a prefix: this router defines its own full paths
+// (/applications, /applications/status, /programs/:slug) since it mixes
+// public admissions endpoints with authenticated review ones under
+// different logical resources — see applications.js's own header comment.
+app.use('/api',              require('./routes/applications'));
 
 // ─── HEALTH / READINESS ───────────────────────────────────────
 app.get('/api/health', async (req, res) => {
