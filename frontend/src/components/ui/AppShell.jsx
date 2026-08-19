@@ -17,6 +17,7 @@ import Icon from "./Icon.jsx";
 import Avatar from "./Avatar.jsx";
 import { LogoMark } from "./Logo.jsx";
 import Logo from "./Logo.jsx";
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "./dropdown-menu.jsx";
 
 /**
  * Theme. Three states, not two: "system" is the default and follows the OS,
@@ -143,14 +144,28 @@ export default function AppShell({
               )}
             </button>
             {user && (
-              <button
-                type="button"
-                onClick={() => onNavigate?.("profile")}
-                className="rounded-full transition-opacity hover:opacity-80"
-                aria-label={`${user.name}'s profile`}
-              >
-                <Avatar name={user.name} src={user.avatar} size="sm" />
-              </button>
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <button
+                    type="button"
+                    className="rounded-full transition-opacity hover:opacity-80"
+                    aria-label={`${user.name}'s account menu`}
+                  >
+                    <Avatar name={user.name} src={user.avatar} size="sm" />
+                  </button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent>
+                  <DropdownMenuItem onSelect={() => onNavigate?.("profile")}>
+                    <Icon name="settings" size="sm" />
+                    Profile
+                  </DropdownMenuItem>
+                  <DropdownMenuSeparator />
+                  <DropdownMenuItem onSelect={() => onNavigate?.("logout")}>
+                    <Icon name="logout" size="sm" />
+                    Log out
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
             )}
           </div>
         </div>

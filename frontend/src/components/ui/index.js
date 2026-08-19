@@ -12,6 +12,7 @@ export { default as FileUpload } from "./FileUpload.jsx";
 
 // Layout
 export { default as AppShell, useTheme, ThemeToggle } from "./AppShell.jsx";
+export { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator } from "./dropdown-menu.jsx";
 export { default as Page, PageSection } from "./Page.jsx";
 
 // Lesson content
