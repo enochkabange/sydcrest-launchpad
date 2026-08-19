@@ -187,6 +187,35 @@
   --color-warning-fg: #a16207;  --color-warning-bg: #fefaeb;
   --color-danger-fg:  #b91c1c;  --color-danger-bg:  #fef2f2;
   --color-info-fg:    #165b93;  --color-info-bg:    #f1f7fb;
+
+  /* Aliases for shadcn/ui components (Radix primitives, restyled to this
+     token system rather than shadcn's own default palette) — pointing at
+     the semantic tokens above means dark mode "just works" via the same
+     [data-theme] re-pointing every other component already relies on, no
+     separate .dark class or duplicate variable block needed.
+     `menu-hover`/`menu-hover-fg` is deliberately NOT named `accent` —
+     shadcn's convention uses "accent" for a menu item's hover state,
+     which would collide with this app's actual brand accent
+     (Button.jsx's `variant="accent"`, the orange gradient fill). Using
+     "accent" here would make every dropdown hover orange. */
+  --color-popover:            var(--color-surface-raised);
+  --color-popover-foreground: var(--color-content);
+  --color-menu-hover:         var(--color-surface-sunken);
+  --color-menu-hover-fg:      var(--color-content);
+  --color-border:             var(--color-line);
+  --color-ring:               var(--focus-ring);
+  --color-destructive:        var(--color-danger-700);
+
+  /* content-link/content-accent were previously defined only in the plain
+     :root block below, outside @theme — Tailwind v4 only generates real
+     color utilities from names in the --color- namespace inside
+     @theme, so `text-content-link`/`text-content-accent` (used in
+     ApplicationStatus.jsx, Apply.jsx, MentorDashboard.jsx, etc.) were
+     dead classes; those links only ever got their color from the global
+     `a { color: var(--content-link) }` base rule. Aliased here so the
+     utility classes actually work as the call sites already assume. */
+  --color-content-link:   var(--content-link);
+  --color-content-accent: var(--content-accent);
 }
 
 /* Signature loader: the logo's four bars rising along their own shear axis,
