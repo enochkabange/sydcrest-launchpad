@@ -6,9 +6,20 @@
  * each of those pages used to hand-roll individually — one real nav
  * (Home/Programs/Partnerships/About, Log in, Apply now) instead of a
  * bare logo with no way to get anywhere else on the site.
+ *
+ * Defaults to the light theme regardless of OS preference: the brand
+ * (white/blue major, orange/yellow strictly as accent) is a deliberate
+ * marketing-site choice, not something that should flip to the dark
+ * palette just because a visitor's OS is in dark mode. useTheme's
+ * "system" default is right for the in-app product (a learner working
+ * for hours should get their OS preference without touching a setting)
+ * but wrong for a first marketing impression — so a visitor with no
+ * explicit stored preference gets nudged to light once, while
+ * ThemeToggle still lets them switch to dark if they want it.
  */
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Logo, Button } from "../ui/index.js";
+import { Logo, Button, useTheme, ThemeToggle } from "../ui/index.js";
 
 const NAV = [
   { label: "Home", to: "/" },
@@ -18,6 +29,15 @@ const NAV = [
 ];
 
 export default function PublicShell({ children }) {
+  const [theme, setTheme] = useTheme();
+  useEffect(() => {
+    if (theme === "system") setTheme("light");
+    // Only ever nudge away from "system" (no stored preference) — never
+    // override a theme the visitor (or their earlier authed session)
+    // already chose explicitly.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <div className="min-h-screen bg-surface flex flex-col">
       <header className="border-b border-line">
@@ -31,6 +51,7 @@ export default function PublicShell({ children }) {
             ))}
           </nav>
           <div className="flex items-center gap-3">
+            <ThemeToggle />
             <Link to="/login" className="text-sm font-semibold text-content-2 hover:text-content">Log in</Link>
             <Link to="/apply/dmp"><Button variant="accent" size="sm">Apply now</Button></Link>
           </div>
