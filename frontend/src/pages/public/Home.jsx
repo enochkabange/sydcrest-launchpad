@@ -40,7 +40,7 @@ export default function Home() {
     <PublicShell>
       <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-20">
         <div className="flex flex-col items-start gap-6">
-          <Badge tone="accent">Delta Mentoring Program</Badge>
+          <Badge tone="info">Delta Mentoring Program</Badge>
           <h1 className="max-w-2xl text-4xl font-extrabold tracking-tight text-content sm:text-5xl">
             Not another online course.
           </h1>

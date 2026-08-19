@@ -11,7 +11,7 @@ export { default as Select } from "./Select.jsx";
 export { default as FileUpload } from "./FileUpload.jsx";
 
 // Layout
-export { default as AppShell, useTheme } from "./AppShell.jsx";
+export { default as AppShell, useTheme, ThemeToggle } from "./AppShell.jsx";
 export { default as Page, PageSection } from "./Page.jsx";
 
 // Lesson content
