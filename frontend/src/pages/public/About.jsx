@@ -14,6 +14,7 @@
  */
 import PublicShell from "../../components/public/PublicShell.jsx";
 import { Prose, Badge, Icon } from "../../components/ui/index.js";
+import { SectionAccent } from "../../components/public/illustrations.jsx";
 
 const VISION_GOALS = [
   { icon: "cohort", label: "6–8 completed cohorts, 300–500 alumni" },
@@ -26,7 +27,8 @@ export default function About() {
   return (
     <PublicShell>
       <div className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-6">
-        <p className="text-xs font-bold uppercase tracking-widest text-content-3">About</p>
+        <SectionAccent />
+        <p className="mt-3 text-xs font-bold uppercase tracking-widest text-content-3">About</p>
         <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-content sm:text-4xl">
           Why SydCrest exists
         </h1>
