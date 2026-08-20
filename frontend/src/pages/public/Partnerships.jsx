@@ -9,6 +9,7 @@ import { useState } from "react";
 import PublicShell from "../../components/public/PublicShell.jsx";
 import { api, ApiError } from "../../lib/api.js";
 import { Card, CardBody, PageSection, Input, Select, Textarea, Button, Alert } from "../../components/ui/index.js";
+import { StepGraphic, SectionAccent } from "../../components/public/illustrations.jsx";
 
 const TARGETS = [
   { title: "Universities", body: "KNUST, University of Ghana, Ashesi, and CS departments/tech clubs across Ghana." },
@@ -54,7 +55,8 @@ export default function Partnerships() {
   return (
     <PublicShell>
       <div className="mx-auto w-full max-w-3xl px-4 py-12 sm:px-6">
-        <p className="text-xs font-bold uppercase tracking-widest text-content-3">Partnerships</p>
+        <SectionAccent />
+        <p className="mt-3 text-xs font-bold uppercase tracking-widest text-content-3">Partnerships</p>
         <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-content sm:text-4xl">
           Let's build Ghana's tech talent pipeline together
         </h1>
@@ -72,11 +74,9 @@ export default function Partnerships() {
 
         <PageSection title="How it works">
           <div className="grid gap-6 sm:grid-cols-3">
-            {PROCESS.map((s) => (
-              <div key={s.step} className="flex flex-col gap-2">
-                <span className="flex size-9 items-center justify-center rounded-full bg-surface-sunken text-sm font-bold text-content">
-                  {s.step}
-                </span>
+            {PROCESS.map((s, i) => (
+              <div key={s.step} className="flex flex-col gap-3">
+                <StepGraphic index={i} />
                 <h3 className="font-bold text-content">{s.title}</h3>
                 <p className="text-sm text-content-2">{s.body}</p>
               </div>

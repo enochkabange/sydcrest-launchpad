@@ -20,6 +20,7 @@
 import { Link } from "react-router-dom";
 import PublicShell from "../../components/public/PublicShell.jsx";
 import { Icon, Button, Badge } from "../../components/ui/index.js";
+import { HeroGraphic, StepGraphic } from "../../components/public/illustrations.jsx";
 
 const FACTS = ["12 weeks", "Free to apply", "1:1 mentor match", "Ghana-built curriculum"];
 
@@ -39,34 +40,35 @@ export default function Home() {
   return (
     <PublicShell>
       <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6 sm:py-20">
-        <div className="flex flex-col items-start gap-6">
-          <Badge tone="info">Delta Mentoring Program</Badge>
-          <h1 className="max-w-2xl text-4xl font-extrabold tracking-tight text-content sm:text-5xl">
-            Not another online course.
-          </h1>
-          <p className="max-w-xl text-lg text-content-2">
-            A 12-week guided cohort with a real mentor, an AI study buddy, and a path to real
-            opportunities — built in Ghana, for Ghana.
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link to="/apply/dmp"><Button variant="accent">Apply now</Button></Link>
-            <Link to="/programs"><Button variant="secondary">Browse programs</Button></Link>
+        <div className="grid items-center gap-10 md:grid-cols-[minmax(0,1fr)_320px]">
+          <div className="flex flex-col items-start gap-6">
+            <Badge tone="info">Delta Mentoring Program</Badge>
+            <h1 className="max-w-2xl text-4xl font-extrabold tracking-tight text-content sm:text-5xl">
+              Not another online course.
+            </h1>
+            <p className="max-w-xl text-lg text-content-2">
+              A 12-week guided cohort with a real mentor, an AI study buddy, and a path to real
+              opportunities — built in Ghana, for Ghana.
+            </p>
+            <div className="flex flex-wrap gap-3">
+              <Link to="/apply/dmp"><Button variant="accent">Apply now</Button></Link>
+              <Link to="/programs"><Button variant="secondary">Browse programs</Button></Link>
+            </div>
+            <div className="flex flex-wrap gap-2 pt-2">
+              {FACTS.map((f) => (
+                <Badge key={f} tone="neutral">{f}</Badge>
+              ))}
+            </div>
           </div>
-          <div className="flex flex-wrap gap-2 pt-2">
-            {FACTS.map((f) => (
-              <Badge key={f} tone="neutral">{f}</Badge>
-            ))}
-          </div>
+          <HeroGraphic className="hidden w-full max-w-xs justify-self-center md:block" />
         </div>
 
         <div className="mt-16 border-t border-line pt-16">
           <h2 className="text-2xl font-extrabold text-content">How it works</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-3">
-            {HOW_IT_WORKS.map((s) => (
-              <div key={s.step} className="flex flex-col gap-2">
-                <span className="flex size-9 items-center justify-center rounded-full bg-surface-sunken text-sm font-bold text-content">
-                  {s.step}
-                </span>
+            {HOW_IT_WORKS.map((s, i) => (
+              <div key={s.step} className="flex flex-col gap-3">
+                <StepGraphic index={i} />
                 <h3 className="font-bold text-content">{s.title}</h3>
                 <p className="text-sm text-content-2">{s.body}</p>
               </div>

@@ -15,6 +15,7 @@ import { useParams, Link } from "react-router-dom";
 import { api, ApiError } from "../../lib/api.js";
 import PublicShell from "../../components/public/PublicShell.jsx";
 import { Button, Badge, Alert, PageLoader } from "../../components/ui/index.js";
+import { SectionAccent } from "../../components/public/illustrations.jsx";
 
 export default function ProgramDetail() {
   const { slug } = useParams();
@@ -53,7 +54,8 @@ export default function ProgramDetail() {
         {error && <Alert tone="danger" className="mb-4">{error}</Alert>}
         {program && (
           <>
-            <p className="text-xs font-bold uppercase tracking-widest text-content-3">{program.duration_weeks}-week program</p>
+            <SectionAccent />
+            <p className="mt-3 text-xs font-bold uppercase tracking-widest text-content-3">{program.duration_weeks}-week program</p>
             <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-content sm:text-4xl">{program.name}</h1>
             <p className="mt-4 text-lg text-content-2">{program.description}</p>
 

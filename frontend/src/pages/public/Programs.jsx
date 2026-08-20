@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { api, ApiError } from "../../lib/api.js";
 import PublicShell from "../../components/public/PublicShell.jsx";
 import { Card, CardBody, Button, Alert, PageLoader, EmptyState } from "../../components/ui/index.js";
+import { SectionAccent } from "../../components/public/illustrations.jsx";
 
 export default function Programs() {
   const [programs, setPrograms] = useState(null);
@@ -22,7 +23,8 @@ export default function Programs() {
   return (
     <PublicShell>
       <div className="mx-auto w-full max-w-6xl px-4 py-12 sm:px-6">
-        <p className="text-xs font-bold uppercase tracking-widest text-content-3">Programs</p>
+        <SectionAccent />
+        <p className="mt-3 text-xs font-bold uppercase tracking-widest text-content-3">Programs</p>
         <h1 className="mt-1 text-3xl font-extrabold tracking-tight text-content sm:text-4xl">
           Find your track
         </h1>
