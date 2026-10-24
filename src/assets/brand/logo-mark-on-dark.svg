@@ -1,0 +1,20 @@
+<!-- On-dark treatment, per the app icons in the brand guideline: the two cool
+     bars become solid white; the warm bars keep their gradient. Use this on
+     Sea Blue, charcoal, ink and photography — never the full-colour mark. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1186 1069" role="img" aria-label="SydCrest Launchpad">
+  <title>SydCrest Launchpad</title>
+  <defs>
+    <linearGradient id="sydWarmD" gradientUnits="userSpaceOnUse" x1="655" y1="654.5" x2="1120.5" y2="188.5">
+      <stop offset="0" stop-color="#F1EF1E"/>
+      <stop offset="1" stop-color="#F79020"/>
+    </linearGradient>
+    <linearGradient id="sydWarmRevD" gradientUnits="userSpaceOnUse" x1="61.5" y1="833" x2="557.5" y2="400">
+      <stop offset="0" stop-color="#F79020"/>
+      <stop offset="1" stop-color="#F1EF1E"/>
+    </linearGradient>
+  </defs>
+  <path fill="#FFFFFF"              d="M162 239 775 0 843 174 229 413Z"/>
+  <path fill="url(#sydWarmD)"       d="M589 589 1055 122 1186 255 721 720Z"/>
+  <path fill="url(#sydWarmRevD)"    d="M0 763 496 330 619 470 123 903Z"/>
+  <path fill="#FFFFFF"              d="M385 900 980 620 1061 788 465 1069Z"/>
+</svg>
