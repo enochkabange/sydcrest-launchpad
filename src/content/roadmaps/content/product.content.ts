@@ -39,7 +39,7 @@ A product person does not usually write the code or draw the screens. Their job 
 * **Product roles.** Product manager is only one title. Business analysts, product analysts, product operations staff and associate product managers all do product work, and these are often more realistic first jobs.
 * **How products work in Ghana.** Mobile money, USSD, WhatsApp and agent networks shape what people expect and trust here.
 * **Business basics and pricing.** Revenue, costs, margins and what customers will pay in cedis.
-* **Communicating with stakeholders.** Listening, writing short updates and presenting a recommendation. Job adverts ask for this more than any tool.
+* **Communicating with stakeholders.** Listening, writing short updates and presenting a recommendation. Employers often ask for this, whatever tools the job uses.
 
 ## A small example
 
@@ -49,7 +49,7 @@ Notice what she used: curiosity, a few conversations, and clear notes she could 
 
 ## How to use this roadmap
 
-Each lesson has an explanation, a short practice task and a quiz. The tasks build on each other, so keep one notebook or Google Doc as your product journal. By the end it becomes the raw material for your portfolio.`,
+Each lesson has an explanation, a short practice task and a quiz. The people, businesses and numbers in the worked examples are made up to illustrate ideas; they are not real data. The tasks build on each other, so keep one notebook or Google Doc as your product journal. By the end it becomes the raw material for your portfolio.`,
       practice_task_md: `**Goal:** start your product journal and look at one product with fresh eyes.
 
 1. Create a Google Doc or a notebook page called "Product journal".
@@ -94,7 +94,7 @@ Each lesson has an explanation, a short practice task and a quiz. The tasks buil
             "Her conversations showed that trust and the daily susu habit mattered more than interest rates.",
           ),
           q(
-            "According to the lesson, which skill do job adverts for product roles ask for more than any tool?",
+            "According to the lesson, which skill do employers often ask for in product roles, whatever tools the job uses?",
             [
               "Advanced coding",
               "Graphic design",
@@ -102,20 +102,20 @@ Each lesson has an explanation, a short practice task and a quiz. The tasks buil
               "Social media marketing",
             ],
             2,
-            "The section notes that adverts ask for communication more than any single tool.",
+            "The section notes that employers often ask for clear communication with stakeholders.",
           ),
         ],
         pass_threshold: 75,
       },
     },
     "what-product-roles-do": {
-      explanation_md: `If you search Ghanaian job boards for "product manager", most adverts ask for several years of experience. That can feel discouraging until you notice the other titles that do product work and accept people earlier in their careers. Knowing these roles tells you where to aim first.
+      explanation_md: `If you search Ghanaian job boards for "product manager", you will find that most product manager roles ask for several years of experience. That can feel discouraging until you notice the other titles that do product work and accept people earlier in their careers. Knowing these roles tells you where to aim first.
 
 ## The main roles
 
 * **Product manager (PM).** Owns a product or feature. Decides what problem to solve next, sets priorities, writes or approves requirements, and checks results after release. Usually a mid or senior role.
 * **Associate product manager (APM).** A junior PM who supports a senior one: writing user stories, preparing for releases, gathering research and keeping documentation up to date.
-* **Business analyst (BA).** Studies how a business process works today, gathers requirements from staff and customers, writes functional specifications and user stories, and often tests the system before it goes live. Banks, telecoms and manufacturers in Accra and Kumasi hire many BAs.
+* **Business analyst (BA).** Studies how a business process works today, gathers requirements from staff and customers, writes functional specifications and user stories, and often tests the system before it goes live. Banks, telecoms and manufacturers, for example in Accra and Kumasi, hire BAs.
 * **Product analyst.** Uses data to answer product questions: how many users finish sign up, which feature is used, where people drop off. Spreadsheets matter, and some adverts also ask for SQL and dashboard tools.
 * **Product operations.** Keeps a live product running smoothly: onboarding and training clients, writing help guides and procedures, handling escalated problems and passing clear issue reports to engineers.
 
@@ -392,7 +392,7 @@ You do not need to be an accountant. You need to spot when a feature changes the
       },
     },
     "stakeholder-communication": {
-      explanation_md: `A stakeholder is anyone who cares about or affects your product: your manager, engineers, designers, sales staff, customer support, partners, and of course users. In Ghanaian job adverts for business analyst, product operations and associate product roles, communication skills appear more often than any single tool. A good idea that nobody understands goes nowhere.
+      explanation_md: `A stakeholder is anyone who cares about or affects your product: your manager, engineers, designers, sales staff, customer support, partners, and of course users. Employers hiring for business analyst, product operations and associate product roles often ask for good communication, whatever tools the job uses. A good idea that nobody understands goes nowhere.
 
 ## Listen first
 
@@ -424,7 +424,7 @@ An engineer wants detail about how something should behave. A director wants the
 
 ## Worked example: an NGO beneficiary tracker
 
-Amina is a junior analyst at an NGO in Wa. Field officers record beneficiaries of a nutrition programme in a mobile form, but records often duplicate. She sends this update to her manager:
+Here is a made up example. Amina is a junior analyst at an NGO in Wa. Field officers record beneficiaries of a nutrition programme in a mobile form, but records often duplicate. She sends this update to her manager:
 
 > **Beneficiary tracker, week 3.** Done: found that about one in ten records we checked were duplicates, mostly when officers resubmit after a network failure. Next: test a check that warns when the same name and community are entered twice. Need from you: approval to pilot it with two officers next week. Risk: officers may ignore warnings if there are too many.
 
@@ -490,7 +490,7 @@ Strong communication is a habit you can practise daily, in any job, starting now
       },
     },
     discovery: {
-      explanation_md: `Many products fail for a simple reason: nobody needed them. A team spends months building an app, launches it, and finds that people carry on doing things the old way. Discovery is the work you do before building to avoid that waste. Employers value it because it saves money, and job adverts for product and analyst roles mention user research and market research often.
+      explanation_md: `Many products fail for a simple reason: nobody needed them. A team spends months building an app, launches it, and finds that people carry on doing things the old way. Discovery is the work you do before building to avoid that waste. Employers value it because it saves money, and product and analyst roles often ask for user research and market research skills.
 
 ## What discovery means
 
@@ -584,7 +584,7 @@ One afternoon of discovery changed what the team should build first. That is the
 
 People are poor at predicting their own behaviour and kind enough to say what you want to hear. Compare:
 
-* Weak: "Would you use an app to save money every day?" Almost everyone says yes.
+* Weak: "Would you use an app to save money every day?" Most people will politely say yes.
 * Strong: "Tell me about the last time you saved money. How did you do it? What went wrong?"
 
 The strong version gives you facts about real events. Past behaviour is the best guide to future behaviour.
@@ -814,7 +814,7 @@ Before you start, write down what result would mean the idea is worth continuing
 
 ## Worked example: the farmers' market app
 
-Before building anything, Mohammed tests the farmers' market idea by hand. He creates a WhatsApp Business number and a Google Form for buyers in Tamale to order vegetables from three farmer groups. Each morning he reads new orders in his sheet, calls the farmers, arranges a tricycle for delivery, and collects payment by MoMo.
+This example uses made up numbers. Before building anything, Mohammed tests the farmers' market idea by hand. He creates a WhatsApp Business number and a Google Form for buyers in Tamale to order vegetables from three farmer groups. Each morning he reads new orders in his sheet, calls the farmers, arranges a tricycle for delivery, and collects payment by MoMo.
 
 His success rule was 15 orders and 5 repeat buyers in three weeks. Results:
 
@@ -887,7 +887,7 @@ A manual MVP is a test, not a business plan. When the work becomes too much to d
       },
     },
     defining: {
-      explanation_md: `Discovery tells you which problem matters. Defining turns that understanding into clear instructions a team can build from. This is the heart of business analyst work and a big part of associate product manager work. In Ghanaian adverts for these roles, the duties named most often include gathering requirements, writing user stories and functional specifications, and mapping business processes.
+      explanation_md: `Discovery tells you which problem matters. Defining turns that understanding into clear instructions a team can build from. This is the heart of business analyst work and a big part of associate product manager work. Employers hiring for these roles often ask for gathering requirements, writing user stories and functional specifications, and mapping business processes.
 
 ## Why clear definition matters
 
@@ -982,7 +982,7 @@ By the end of this section you will be able to produce each of these pieces your
       },
     },
     "process-mapping": {
-      explanation_md: `Before you can improve how something works, you need to see how it works now. A process map is a simple drawing of the steps in a task, who does each one, and where things go wrong. Business analyst adverts from banks, telecoms and manufacturers in Ghana ask for business process analysis again and again, and NGOs use the same skill to improve field work.
+      explanation_md: `Before you can improve how something works, you need to see how it works now. A process map is a simple drawing of the steps in a task, who does each one, and where things go wrong. Business analyst roles at banks, telecoms and manufacturers in Ghana often ask for business process analysis, and NGOs use the same skill to improve field work.
 
 ## What a process map shows
 
@@ -1078,7 +1078,7 @@ She did not need to code. She needed to look closely, ask why and draw it clearl
       },
     },
     "requirements-and-user-stories": {
-      explanation_md: `If you read adverts for business analyst, associate product manager and product operations roles in Ghana, one duty keeps appearing: turning what users and the business need into clear requirements and user stories. Master this and you can contribute to a product team from your first week.
+      explanation_md: `Adverts for business analyst, associate product manager and product operations roles in Ghana often include one duty in particular: turning what users and the business need into clear requirements and user stories. Master this and you can contribute to a product team from your first week.
 
 ## Requirements
 
@@ -1196,7 +1196,7 @@ He also adds a non functional requirement: the order screen must work on low cos
       },
     },
     "writing-specs": {
-      explanation_md: `User stories describe small pieces of work. A product spec (sometimes called a product requirements document or functional specification) puts the bigger picture in one place: why this feature exists, who it is for, what it must do and how you will know it worked. Adverts for analyst and product roles in Ghana list functional specifications and product documentation as core duties.
+      explanation_md: `User stories describe small pieces of work. A product spec (sometimes called a product requirements document or functional specification) puts the bigger picture in one place: why this feature exists, who it is for, what it must do and how you will know it worked. Analyst and product roles in Ghana often list functional specifications and product documentation as core duties.
 
 A good spec lets designers and engineers work without waiting for you to answer the same questions repeatedly.
 
@@ -1487,7 +1487,7 @@ Neither action involved code. Both kept the team building the right thing.`,
       },
     },
     "agile-basics": {
-      explanation_md: `Most software teams in Ghana, from bank digital teams to startups, use some form of Agile. Adverts for business analysts, product operations staff and associate product managers mention Scrum, Kanban and tools like Jira. You do not need a certificate to start; you need to understand the ideas and why they work.
+      explanation_md: `Many software teams in Ghana, from bank digital teams to startups, use some form of Agile. Adverts for business analysts, product operations staff and associate product managers often mention Scrum, Kanban and tools such as Jira. You do not need a certificate to start; you need to understand the ideas and why they work.
 
 ## The core idea
 
@@ -1498,7 +1498,7 @@ Instead of planning everything for a year and delivering it all at once, Agile t
 * **Backlog.** A prioritised list of work waiting to be done: user stories, bugs and tasks. The product person usually keeps it in order.
 * **Sprint.** A fixed period, often one or two weeks, in which the team commits to finishing a set of backlog items. This rhythm comes from Scrum.
 * **Sprint planning.** A meeting at the start of a sprint where the team picks items from the top of the backlog and agrees what they can finish.
-* **Standup.** A short daily check in, often 15 minutes: what I did, what I will do, what is blocking me.
+* **Standup.** A short daily check in of about 15 minutes. Many teams cover what each person did, what they will do next and what is blocking them.
 * **Review or demo.** At the end of the sprint the team shows what it built to stakeholders.
 * **Retrospective.** The team discusses what went well, what did not, and one or two things to improve.
 * **Board.** A visual view of work in columns such as To do, In progress, In review, Done. Kanban teams work from a board without fixed sprints, limiting how much is in progress at once.
@@ -1513,7 +1513,7 @@ Instead of planning everything for a year and delivering it all at once, Agile t
 
 ## Tools
 
-Jira, Trello, Linear and GitHub Projects are common. Trello and GitHub Projects have free plans. A shared Google Sheet with columns works fine for a small team.
+Teams use tools such as Jira, Trello, Linear or GitHub Projects. At the time of writing, Trello and GitHub Projects both offer free plans. A shared Google Sheet with columns works fine for a small team.
 
 ## Worked example: the farmers' market app
 
@@ -1524,7 +1524,7 @@ At the review, the team demos repeat orders to two chop bar owners over a video 
 Notice how the short cycle caught a new need quickly.`,
       practice_task_md: `**Goal:** run a mini sprint on your own project.
 
-1. Create a free Trello board or a Google Sheet with columns: Backlog, To do, In progress, Done.
+1. Create a board in a free tool such as Trello, or a Google Sheet, with columns: Backlog, To do, In progress, Done.
 2. Add at least eight cards for a small project, such as preparing your portfolio or running your manual MVP.
 3. Order the backlog by priority and pick what you can finish in one week.
 4. Each day, spend two minutes on a personal standup: move cards and note any blocker.
@@ -1701,13 +1701,13 @@ Technical literacy did not make him an engineer. It made him a better partner to
       },
     },
     "working-with-design": {
-      explanation_md: `Designers decide how a product looks and, more importantly, how it works for the person using it. Product people work with them daily. Adverts for associate product roles mention tools like Figma and user experience skills, and in smaller Ghanaian companies the product person may sketch early screens before a designer joins. You need enough design understanding to collaborate well and give useful feedback.
+      explanation_md: `Designers decide how a product looks and, more importantly, how it works for the person using it. Product people work with them daily. Adverts for associate product roles often mention user experience skills and design tools such as Figma, and in smaller Ghanaian companies the product person may sketch early screens before a designer joins. You need enough design understanding to collaborate well and give useful feedback.
 
 ## Key design ideas
 
 * **User flow.** The steps a user takes to complete a task, from start to finish. For example: open app, choose Savings, set amount, confirm with PIN, see receipt.
 * **Wireframe.** A rough sketch of a screen showing layout and content, without colours or polish. Paper is fine.
-* **Prototype.** A clickable mock up that feels like the product, used for testing before engineers build. Figma's free plan can make these.
+* **Prototype.** A clickable mock up that feels like the product, used for testing before engineers build. Design tools such as Figma can make these, and at the time of writing Figma has a free plan that includes prototypes.
 * **Usability test.** Watching real users try to complete a task with a prototype or product, without helping them, to see where they struggle.
 
 ## Giving useful feedback
@@ -1802,7 +1802,7 @@ Wumpini described problems with evidence. Ayishetu designed the fix. That is goo
       },
     },
     "acceptance-testing": {
-      explanation_md: `When engineers say a feature is finished, someone must check it really does what users need before real people depend on it. This is acceptance testing, often called user acceptance testing or UAT. Adverts for business analysts in Ghanaian banks, telecoms and manufacturers, and for associate product roles, list testing before go live and release readiness as duties. Mistakes caught here are far cheaper than mistakes customers find.
+      explanation_md: `When engineers say a feature is finished, someone must check it really does what users need before real people depend on it. This is acceptance testing, often called user acceptance testing or UAT. Adverts for business analysts in Ghanaian banks, telecoms and manufacturers, and for associate product roles, often list testing before go live and release readiness as duties. Mistakes caught here are far cheaper than mistakes customers find.
 
 ## What acceptance testing checks
 
@@ -1849,7 +1849,7 @@ Releasing safely matters as much as testing. Consider:
 
 ## Worked example: the NGO beneficiary tracker
 
-Before the new offline registration goes live, Mariama writes 14 test cases. One says: register a household with no network, then reconnect; expected result, the record appears once on the district dashboard. During testing she finds it appears twice when the phone reconnects slowly. She reports it with clear steps and a screenshot, and the engineer fixes it in a day.
+In this made up example, Mariama writes 14 test cases before the new offline registration goes live. One says: register a household with no network, then reconnect; expected result, the record appears once on the district dashboard. During testing she finds it appears twice when the phone reconnects slowly. She reports it with clear steps and a screenshot, and the engineer fixes it in a day.
 
 Mariama then recommends a pilot with five field officers in one district for two weeks, briefs the support lead, and sets up a daily check of duplicate records. Only after a clean pilot does the tool go to all districts.`,
       practice_task_md: `**Goal:** write and run acceptance tests on a real product.
@@ -1925,7 +1925,7 @@ Mariama then recommends a pilot with five field officers in one district for two
     "live-product": {
       explanation_md: `Launch day is not the end of product work. It is the start of a new kind of work: helping real people use the product, fixing what breaks, and learning what to improve. Someone has to onboard new users, answer their problems, keep help guides current and tell the builders what is going wrong. In many companies this is called product operations, customer success or product support.
 
-This matters for your career. In the adverts researched for this roadmap, product operations, support and implementation roles were among the most realistic doors into product work for people early in their careers. They teach you how users really behave, which is exactly what product managers need to know.
+This matters for your career. Product operations, support and implementation roles are often more open to people early in their careers than product manager roles, which makes them realistic doors into product work. They teach you how users really behave, which is exactly what product managers need to know.
 
 ## What running a live product involves
 
@@ -2128,7 +2128,7 @@ Feedback arrives in different places:
 * Agents, field officers or sales staff who hear complaints in person.
 * Short surveys after a key action, such as one question by SMS.
 
-No single channel tells the full story. People who write reviews are often the angriest; people who call may be the least confident with technology.
+No single channel tells the full story. People who write reviews may be the most frustrated; people who call may be the least confident with technology.
 
 ## Record it consistently
 
@@ -2156,7 +2156,7 @@ Always handle personal data carefully. Do not share phone numbers or names beyon
 
 ## Worked example: the MoMo savings feature
 
-Amina reviews a month of feedback for the savings feature. She records 120 items in a sheet. Sorting by category shows:
+Here is an illustration with made up numbers. Amina reviews a month of feedback for the savings feature and records 120 items in a sheet. Sorting by category shows:
 
 * 41 about "Where is my money?" after the lock period ends.
 * 18 about the evening deduction failing when balance is low.
@@ -2234,7 +2234,7 @@ Numbers can mislead if you are not careful:
 
 * **Vanity numbers** look good but do not show value. Downloads and sign ups can rise while almost nobody uses the product.
 * **Small numbers** jump around. If 4 out of 10 users did something last week and 6 this week, that may be chance.
-* **Correlation is not cause.** Savings rose in December, but so do incomes before Christmas. Your new feature may not be the reason.
+* **Correlation is not cause.** Imagine savings rose in December, the same month you launched a feature. Many people earn and spend differently around Christmas, so your feature may not be the reason.
 * **Missing data** hides problems. If only smartphone users are tracked, USSD users disappear from your charts.
 
 ## What this section covers
@@ -2245,11 +2245,11 @@ Numbers can mislead if you are not careful:
 
 ## Free tools to learn with
 
-Google Sheets is free, works on a phone, and is enough for most beginner analysis. For SQL, free interactive lessons let you practise in a browser without installing anything. Looker Studio, a free Google tool, can turn a sheet into a simple dashboard.
+Google Sheets is free, works on a phone, and is enough for most beginner analysis. For SQL, free interactive lessons let you practise in a browser without installing anything. Google's Looker Studio, which is free to use at the time of writing, can turn a sheet into a simple dashboard.
 
 ## Worked example: the NGO beneficiary tracker
 
-Issahaku is asked whether the new tracker is working. The district director says, "Officers love it." Issahaku looks at the data. In one month, 38 of 40 officers logged in, which looks great. But only 22 registered more than five households. Looking closer, the 18 who registered few households are mostly in areas with weak network.
+This example uses made up numbers. Issahaku is asked whether the new tracker is working. The district director says, "Officers love it." Issahaku looks at the data. In one month, 38 of 40 officers logged in, which looks great. But only 22 registered more than five households. Looking closer, the 18 who registered few households are mostly in areas with weak network.
 
 He calls three of them. They explain that the sync often fails, so they go back to paper. The number showed **what**; the calls showed **why**. Issahaku recommends improving offline sync before adding new features, and he defines "active officer" as one who registers at least five households a week, a measure that reflects real use rather than logins.`,
       practice_task_md: `**Goal:** separate vanity numbers from meaningful ones.
@@ -2288,7 +2288,7 @@ He calls three of them. They explain that the sync often fails, so they go back 
             "Why might savings rising in December not prove a new feature worked?",
             [
               "Data is always wrong in December",
-              "Incomes also rise before Christmas, so correlation is not cause",
+              "Christmas also changes how people earn and spend, so correlation is not cause",
               "Nobody saves in December",
               "Features never affect savings",
             ],
@@ -2531,7 +2531,7 @@ Clear metrics told the team exactly where to look.`,
       },
     },
     experiments: {
-      explanation_md: `When you change a product, how do you know whether the change caused an improvement? An experiment compares people who got the change with people who did not, so you can see the difference fairly. Product analyst adverts at larger fintechs ask for experiment design and analysis. This lesson is optional, but the thinking behind it will make you a sharper product person even if you never run a formal test.
+      explanation_md: `When you change a product, how do you know whether the change caused an improvement? An experiment compares people who got the change with people who did not, so you can see the difference fairly. Some product analyst roles, especially at larger fintechs, ask for experiment design and analysis. This lesson is optional, but the thinking behind it will make you a sharper product person even if you never run a formal test.
 
 ## The basic idea
 
@@ -2573,7 +2573,7 @@ If group B gets a new price **and** a new message, you will not know which one m
 
 ## Worked example: SMS reminders for the farmers' market app
 
-Wumpini wants more buyers to repeat their orders. She writes a hypothesis: "A Sunday evening SMS reminding chop bar owners to reorder will increase Monday repeat orders." She randomly splits 200 regular buyers into two groups of 100. Group A gets no SMS; group B gets the reminder. She decides to run it for four weeks and compare the share placing a Monday order.
+Wumpini wants more buyers to repeat their orders. She writes a hypothesis: "A Sunday evening SMS reminding chop bar owners to reorder will increase Monday repeat orders." In this made up example, she randomly splits 200 regular buyers into two groups of 100. Group A gets no SMS; group B gets the reminder. She decides to run it for four weeks and compare the share placing a Monday order.
 
 After four weeks, group B places noticeably more Monday orders, and the gap holds every week rather than appearing once. Wumpini recommends sending the reminder to everyone, and notes that the cost of SMS is small compared with the extra orders.`,
       practice_task_md: `**Goal:** design a fair experiment on paper.
@@ -2636,22 +2636,22 @@ After four weeks, group B places noticeably more Monday orders, and the gap hold
       },
     },
     "getting-hired": {
-      explanation_md: `Be honest with yourself from the start: in Ghana, true entry level product manager jobs are rare. When we researched Ghanaian and remote adverts for this roadmap, almost every role titled product manager asked for several years of experience, and the remote roles open to Ghana based applicants were mostly senior. That is not a reason to give up. It is a reason to plan a realistic route.
+      explanation_md: `Be honest with yourself from the start: in Ghana, true entry level product manager jobs are rare. Most product manager roles ask for several years of experience, and remote roles open to Ghana based applicants tend to be senior. That is not a reason to give up. It is a reason to plan a realistic route.
 
 ## The realistic picture
 
-The roles that appeared most often for people earlier in their careers were next door to product management:
+The roles more open to people early in their careers tend to sit next door to product management:
 
 * Business analyst and information systems analyst roles in banks, telecoms and manufacturers.
 * Product operations, product support and implementation roles in fintech and software companies.
 * Product analyst and data or M&E roles, including in NGOs running digital programmes.
 * A smaller number of associate product roles, often at companies selling software to other businesses.
 
-Even "entry" adverts often asked for a degree or about two years of relevant work. Your aim is to show the skills and evidence that make an employer willing to take a chance on you.
+Even roles labelled entry level often ask for a degree or some relevant work experience. Your aim is to show the skills and evidence that make an employer willing to take a chance on you.
 
 ## What employers look for
 
-Across the adverts, the same skills kept appearing: gathering requirements, writing user stories and documentation, testing before release, working with data in spreadsheets, and communicating clearly with different people. Every one of those has a lesson in this roadmap, and every practice task you have completed is evidence.
+Employers hiring for these roles often ask for the same skills: gathering requirements, writing user stories and documentation, testing before release, working with data in spreadsheets, and communicating clearly with different people. Every one of those has a lesson in this roadmap, and every practice task you have completed is evidence.
 
 ## What this section covers
 
@@ -2681,15 +2681,15 @@ Think of your first job as a place to practise product skills, not a final desti
       quiz: {
         questions: [
           q(
-            "What did the research for this roadmap find about entry level product manager jobs in Ghana?",
+            "What does the lesson say about entry level product manager jobs in Ghana?",
             [
               "They are very common",
               "They require no skills",
-              "They are rare; most product manager adverts ask for several years of experience",
+              "They are rare; most product manager roles ask for several years of experience",
               "They only exist abroad",
             ],
             2,
-            "Almost every product manager advert asked for experience.",
+            "Most product manager roles ask for experience, so adjacent roles are a better first target.",
           ),
           q(
             "Which of these is a realistic first role named in the lesson?",
@@ -2700,7 +2700,7 @@ Think of your first job as a place to practise product skills, not a final desti
               "Head of engineering",
             ],
             1,
-            "Adjacent roles such as BA, support and product operations appeared more often for early career people.",
+            "Adjacent roles such as BA, support and product operations are more open to people early in their careers.",
           ),
           q(
             "How did Mohammed move toward product work?",
@@ -2855,14 +2855,14 @@ Never invent results, users or quotes. Honest small results are respected; made 
 ## Where to put it
 
 * A Google Doc or Google Slides deck shared with a link, set to "anyone with the link can view".
-* A free Notion page or a simple free website, if you are comfortable with them.
+* A Notion page or a simple website, if you are comfortable with them.
 * A PDF under 5 MB for email and WhatsApp.
 
 Make sure it reads well on a phone, because many recruiters and mentors will open it there. Remove personal details of the people you interviewed.
 
 ## Worked example
 
-Mariama's portfolio has three case studies:
+Here is an illustration. Mariama's portfolio has three case studies:
 
 * **Repeat orders for a farm produce WhatsApp line.** She ran a two week manual MVP with chop bars in Tamale, set a success rule beforehand, and reported 14 orders against a target of 15. She explains why it fell short and what she would change.
 * **Beneficiary registration for a youth NGO.** She mapped the paper process, wrote six user stories and tested a Google Form version with three volunteers.

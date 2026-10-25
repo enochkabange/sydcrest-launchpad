@@ -73,7 +73,7 @@ export const product: RoadmapDraft = {
       slug: "stakeholder-communication",
       title: "Communicating with stakeholders",
       summary:
-        "Learn to listen, write short updates and present a recommendation to managers, engineers and partners. Adverts for junior product roles ask for clear communication more than any single tool.",
+        "Learn to listen, write short updates and present a recommendation to managers, engineers and partners. Employers often ask for clear communication, whatever tools the job uses.",
       parent: "foundations",
       optional: false,
       resources: [RES.lfCommunication, RES.lfBizWriting],
@@ -127,7 +127,7 @@ export const product: RoadmapDraft = {
       slug: "process-mapping",
       title: "Mapping processes",
       summary:
-        "Draw how a task flows today, step by step and person by person, to find delays, errors and handovers. Business analyst adverts ask for this skill again and again.",
+        "Draw how a task flows today, step by step and person by person, to find delays, errors and handovers. Business analyst roles often ask for this skill.",
       parent: "defining",
       optional: false,
       resources: [RES.lfThinking],
@@ -136,7 +136,7 @@ export const product: RoadmapDraft = {
       slug: "requirements-and-user-stories",
       title: "Requirements and user stories",
       summary:
-        "Turn what users and the business need into clear requirements, user stories and acceptance criteria. This is one of the most frequent tasks in junior product and analyst job adverts.",
+        "Turn what users and the business need into clear requirements, user stories and acceptance criteria. Junior product and analyst roles often ask for this skill.",
       parent: "defining",
       optional: false,
       resources: [govAgile, RES.atlassianAgile],
@@ -199,7 +199,7 @@ export const product: RoadmapDraft = {
       slug: "acceptance-testing",
       title: "Acceptance testing and release",
       summary:
-        "Check that what was built meets the acceptance criteria before real users see it, and plan a safe release. Testing before go live appears in many analyst and associate product adverts.",
+        "Check that what was built meets the acceptance criteria before real users see it, and plan a safe release. Analyst and associate product roles often include testing before go live.",
       parent: "building",
       optional: false,
       resources: [govAgile],

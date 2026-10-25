@@ -49,7 +49,7 @@ The outline was revised to teach exactly those skills and to frame
 | O*NET 11-2021.00 Marketing Managers (includes Product Manager title) | https://www.onetonline.org/link/summary/11-2021.00 | 2026-10-25 | O*NET, CC BY 4.0 |
 | O*NET 13-1111.00 Management Analysts | https://www.onetonline.org/link/summary/13-1111.00 | 2026-10-25 | O*NET, CC BY 4.0 |
 | O*NET 15-2051.01 Business Intelligence Analysts | https://www.onetonline.org/link/summary/15-2051.01 | 2026-10-25 | O*NET, CC BY 4.0 |
-| ESCO: ICT business analyst (occupation description via mirror) | https://www.worldoftaxonomy.com/codes/esco_occupations/fe0fa514-b48d-4a53-9757-a283c0baacf0 | 2026-10-25 | ESCO data, EU (mirror). Official ESCO portal and API returned an outage page (sorry.ec.europa.eu) on this date, so skill lists were not captured |
+| ESCO: ICT business analyst (occupation description via mirror) | https://www.worldoftaxonomy.com/codes/esco_occupations/fe0fa514-b48d-4a53-9757-a283c0baacf0 | 2026-10-25 | ESCO data, EU (mirror). Official ESCO portal and API returned an outage page (sorry.ec.europa.eu) on this date, so skill lists were not captured. Retried by the reviewer later on 2026-10-25: the portal loaded only partly ("There is a temporary issue on this page"), the occupation page showed no description or skills, and the ESCO API returned a network error, so skill lists are still not captured. Retry before publishing |
 
 ## Adverts analysed (20)
 
