@@ -1,7 +1,8 @@
+import { Suspense } from "react";
 import Link from "@/components/ui/link";
 import Logo, { LogoMark } from "@/components/brand/Logo";
 import { buttonClasses } from "@/components/ui/button";
-import { MarketingNavLinks } from "./nav-links";
+import { MarketingNavLinks, MarketingNavLinksFallback } from "./nav-links";
 
 export function SiteHeader() {
   return (
@@ -26,7 +27,10 @@ export function SiteHeader() {
           </div>
         </div>
         <nav aria-label="Site" className="pb-2 md:pb-0">
-          <MarketingNavLinks />
+          {/* usePathname is unknown while prerendering a dynamic route's App Shell. */}
+          <Suspense fallback={<MarketingNavLinksFallback />}>
+            <MarketingNavLinks />
+          </Suspense>
         </nav>
       </div>
     </header>
