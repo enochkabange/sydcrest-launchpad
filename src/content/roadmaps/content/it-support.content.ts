@@ -2037,6 +2037,397 @@ Wumpini supports a private school in Tamale. The bursar keeps fees records only 
         pass_threshold: 75,
       },
     },
+    "career-routes": {
+      explanation_md: `## Why this matters
+
+Learning the skills is half the journey. The other half is convincing an employer in Ghana to give you your first chance. IT support adverts usually ask for three things: a qualification (most often a degree, though some accept an HND, a diploma or a certificate), relevant experience, and evidence of practical skill. Some also list certifications as preferred. This section shows you how to build each of these, honestly and affordably, starting from wherever you are.
+
+## What employers look for
+
+Reading adverts from banks, NGOs, schools, telcos and businesses across Ghana, a pattern appears:
+
+* **Entry level roles** (IT assistant, help desk, temporary IT support, part time support assistant, lab technician) ask for basic hardware, software and network troubleshooting, good communication and willingness to learn. Some ask for little or no experience.
+* **Officer and second line roles** (ICT officer, desktop support engineer, systems administrator) want more experience, server and account administration, and sometimes certifications such as CCNA, CompTIA A+ or Network+, ITIL or a Microsoft certification.
+* **Almost all roles** value customer service, documentation, reliability and the ability to explain technical things simply. Some value a local language for supporting staff and customers.
+
+## Three things to build together
+
+1. **Recognised learning.** A local diploma or degree, a widely known entry certification, or both. You do not need all of them; you need the right one for the jobs you want.
+2. **Experience.** Real problems solved for real people. This can start before your first paid job: a school lab, a church office, a family shop, national service, an internship, volunteering.
+3. **Evidence.** A fix log, write ups, network diagrams, checklists and guides you have made. These prove what you can do far better than a list of skills on a CV.
+
+## What this section covers
+
+* **Diplomas and entry certifications:** local routes and the widely recognised certifications, what each proves and how to choose.
+* **Building experience and your first role:** turning your fix log into a portfolio, finding opportunities, writing a CV for IT support and handling a technical interview.
+* **Next steps:** how IT support leads on to cybersecurity, network engineering, systems administration and cloud.
+
+## Learning honestly about cost
+
+Formal programmes and certification exams cost money, and prices change. Before paying for anything, check the official website of the institution or certification body for the current fees, dates and requirements. Free learning, such as the resources linked throughout this roadmap, can take you a long way first. Many local programmes run cohorts in Accra or other cities; you can use this roadmap to prepare so you arrive ready and get more from them.
+
+## A small example
+
+Sumaila, in Wa, has finished senior high school and cannot yet afford a diploma. He works through this roadmap on his phone, volunteers on Saturdays in his old school's computer lab, and keeps a careful fix log with photos. When a local NGO advertises for a temporary IT assistant, he shows his log and two guides he wrote for teachers. The interviewer asks him to talk through a printer fault. He uses the six step method. He gets the job, and saves part of his pay towards a certification.`,
+      practice_task_md: `**Goal:** make your personal career plan.
+
+1. Write the job title you want first (for example help desk officer, IT assistant or lab technician) and where (your town, a nearby city, remote).
+2. From three adverts for that kind of role, list the qualifications, experience and skills asked for.
+3. Mark each one: already have, can build in three months, needs longer.
+4. Choose one recognised learning step, one experience step and one evidence step for the next three months.
+5. Share the plan with a mentor or friend and ask them to check in with you monthly.
+
+**Done looks like:** a one page plan with a target role, a gap list and three concrete next steps with dates.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which three things should you build together to get hired?",
+            options: [
+              "Recognised learning, experience and evidence",
+              "A new phone, a laptop and a printer",
+              "Social media followers, a website and a logo",
+              "Only a degree, nothing else",
+            ],
+            answer_index: 0,
+            explanation: "Employers look for qualifications, real experience and proof of skill.",
+          },
+          {
+            prompt: "What do almost all IT support adverts value, whatever the level?",
+            options: [
+              "Owning an expensive laptop",
+              "Customer service, documentation and explaining things simply",
+              "Knowing many programming languages",
+              "Living in Accra",
+            ],
+            answer_index: 1,
+            explanation: "Communication and reliability matter at every level.",
+          },
+          {
+            prompt: "Before paying for a programme or exam, what should you do?",
+            options: [
+              "Pay whoever asks first",
+              "Borrow money quickly",
+              "Check the official website for current fees, dates and requirements",
+              "Assume the price never changes",
+            ],
+            answer_index: 2,
+            explanation: "Prices and requirements change, so always check the official source.",
+          },
+          {
+            prompt: "In the Wa example, what helped Sumaila most in the interview?",
+            options: [
+              "A degree certificate",
+              "Knowing the interviewer",
+              "A long list of skills on his CV",
+              "His fix log, guides and a clear troubleshooting method",
+            ],
+            answer_index: 3,
+            explanation: "Evidence of real work and a calm method convinced the interviewer.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    qualifications: {
+      explanation_md: `## Why this matters
+
+Ghanaian IT support adverts most often ask for a degree in IT, computer science or a related field, but some accept an HND, a diploma or a certificate, especially for assistant and technician roles. Several list certifications such as CompTIA A+ and Network+, CCNA, ITIL or Microsoft certifications as preferred. Knowing what each option is, and what it proves, helps you spend scarce money and time wisely.
+
+## Local routes
+
+* **Universities** offer degrees in computer science, information technology and related subjects. A degree is the most common requirement for officer roles in banks and larger organisations.
+* **Technical universities** offer HND and degree programmes in computing and ICT. An HND is accepted by some employers, including some rural and community banks.
+* **Private training institutes** in Ghana offer diplomas and certificates in subjects such as hardware and networking, network engineering and preparation for international certifications. Check whether a course is accredited and what employers in your area think of it.
+* **TVET routes.** Ghana's technical and vocational system uses competency based training with national certificates, and some private centres have had computer hardware and networking courses accredited for NVTI certification. Ask the centre exactly which body certifies the course.
+* **Free and low cost programmes.** Some organisations run sponsored cohorts linked to cloud and IT support careers, such as AWS re/Start, which is offered through local partners. Entry rules and locations vary, so check each one.
+
+For any local programme, ask: Who accredits it? Is there hands on practice with real equipment? What did past students go on to do?
+
+## Widely recognised entry certifications
+
+These are international certifications that appear in job adverts. Named here as facts, not recommendations.
+
+* **CompTIA A+.** A vendor neutral entry certification for support technicians. It has two exams: Core 1 covers hardware and networking, and Core 2 covers operating systems and security.
+* **CompTIA Network+.** A vendor neutral networking certification, a common next step after A+.
+* **Google IT Support Professional Certificate.** An online programme on Coursera covering technical support, networking, operating systems, system administration and security. Coursera says financial aid may be available.
+* **Cisco CCNA.** A networking certification focused on Cisco equipment, widely respected for network roles. Cisco Networking Academy courses help prepare for it.
+* **ITIL 4 Foundation.** Covers IT service management ideas such as incidents, service levels and continual improvement. Asked for in some service desk and NOC roles.
+* **Microsoft certifications.** For example, administrator certifications for Microsoft 365 and Windows devices. Older adverts still mention MCSA, which Microsoft retired; look for the current role based certifications on Microsoft Learn.
+
+Exams cost money, often priced in US dollars, and prices change. Learn with free material first and book an exam only when practice tests show you are ready.
+
+## How to choose
+
+* For a first help desk or technician job, an entry certification plus strong practical evidence is a good combination.
+* For bank and officer roles, a degree or HND usually matters most, with certifications as extras.
+* For network work, aim towards Network+ or CCNA. For cloud, look at cloud fundamentals certifications later.
+
+## A small example
+
+Hawa, in Tamale, compares options. She already has an HND in another subject. Adverts near her ask for practical support skills and sometimes A+. She studies free A+ videos, builds her fix log in a school lab, and saves for the exams. Her plan fits her money, time and target jobs.`,
+      practice_task_md: `**Goal:** compare qualification options for your situation.
+
+1. Find two local programmes (a technical university, a private institute or a TVET centre near you) that teach IT support or networking. From their official pages, note: qualification awarded, who accredits it, length and whether it includes hands on practice. Do not rely on social media posts.
+2. Open the official pages for two of the certifications in this lesson and note what topics they cover and how many exams they have.
+3. Make a table comparing the four options for your target job: what it proves, time, whether you can start free, and how it fits your budget.
+4. Write your decision in three sentences.
+
+**Done looks like:** a comparison table using official sources and a short, reasoned decision.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How many exams does CompTIA A+ have?",
+            options: ["One", "Two: Core 1 and Core 2", "Five", "None, it is a course only"],
+            answer_index: 1,
+            explanation: "A+ has two exams; Core 1 covers hardware and networking, Core 2 operating systems and security.",
+          },
+          {
+            prompt: "Which certification focuses on Cisco networking equipment?",
+            options: ["CCNA", "ITIL 4 Foundation", "CompTIA A+", "Google IT Support"],
+            answer_index: 0,
+            explanation: "CCNA is Cisco's networking certification.",
+          },
+          {
+            prompt: "What does ITIL 4 Foundation cover?",
+            options: [
+              "Repairing printers",
+              "Programming in Python",
+              "IT service management ideas such as incidents and service levels",
+              "Graphic design",
+            ],
+            answer_index: 2,
+            explanation: "ITIL is about managing IT services, which fits service desk and NOC roles.",
+          },
+          {
+            prompt: "Which question should you ask about any local programme?",
+            options: [
+              "How many likes its page has",
+              "Whether it has a nice logo",
+              "Whether friends have heard of it",
+              "Who accredits it and whether it includes hands on practice",
+            ],
+            answer_index: 3,
+            explanation: "Accreditation and real practice show whether a programme is worth it.",
+          },
+          {
+            prompt: "Older adverts mention MCSA. What should you know?",
+            options: [
+              "Microsoft retired it; look for current role based certifications",
+              "It is the newest Microsoft certification",
+              "It is a CompTIA exam",
+              "It is required by every employer",
+            ],
+            answer_index: 0,
+            explanation: "MCSA was retired, so check Microsoft Learn for current certifications.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "first-job": {
+      explanation_md: `## Why this matters
+
+Many Ghanaian adverts ask for experience, which feels unfair when you are looking for your first job. But experience does not have to come from a paid IT job. Employers want proof that you have solved real problems for real people, behaved professionally and kept good records. You can start building that proof now.
+
+## Where to get experience
+
+* **School and community labs.** Offer to help maintain the computer lab at your old school, a library or a community centre: cleaning machines, installing updates, keeping an inventory.
+* **Churches, mosques, clinics and NGOs.** Small organisations often have no IT person. Offer to set up their Wi-Fi securely, back up their records or train staff.
+* **Family and local businesses.** Help a shop set up a receipt printer, a pharmacy protect its computer from surges, a trader back up their phone.
+* **National service and internships.** Universities, banks, telcos and public bodies take national service personnel and interns in IT units. Apply early and follow the official process.
+* **Paid small jobs.** Some people start by doing phone and computer support for individuals and small businesses. Be honest about what you can and cannot do.
+
+Always get permission, never access anyone's private files without reason, and leave things better documented than you found them.
+
+## Turn experience into a portfolio
+
+Your fix log is the core. Turn the best entries into short write ups:
+
+* The problem, in the user's words.
+* What you checked, in order.
+* The cause and the fix.
+* What you did to stop it happening again.
+
+Add the guides, checklists, network diagrams and backup plans you made in this roadmap. Remove names, passwords, addresses and anything private. Keep it in a shared folder or a simple document you can send as a link.
+
+## A CV for IT support
+
+* One page if you can. Put a short summary at the top: the role you want and two or three strengths.
+* A skills section using words from adverts you have read: Windows, Android, networking, printers, Microsoft 365, troubleshooting, customer service.
+* Experience, including volunteer work, with results: "Maintained 20 lab computers and cut breakdowns during term" is stronger than "helped in the lab". Only claim what is true.
+* Qualifications and certifications, including ones in progress, labelled honestly.
+
+## The technical interview
+
+Expect scenario questions: "A user cannot print. What do you do?" "The whole office has no internet." "A manager wants a password reset by WhatsApp." Answer with your method: questions you would ask, what you would check first, how you would verify and document. Saying "I would check and escalate if needed" is a good answer when you are unsure. Expect customer service questions too: how you handle an angry user.
+
+## Stay safe while job hunting
+
+Genuine employers do not ask you to pay for a job, an interview or training before hiring. Major job sites warn about this too. If someone asks for money, stop and check.
+
+## A small example
+
+Abdul-Rahman did national service in a district assembly IT unit in the Northern Region. He kept a fix log for the whole year and wrote up ten of the best cases. At his interview for a desktop support role, he walked the panel through two of them, including how he traced a network fault to a damaged cable. The panel offered him the job.`,
+      practice_task_md: `**Goal:** produce a portfolio and CV you can send today.
+
+1. Choose your three best fix log entries (from practice tasks or real help you have given) and turn each into a short write up using the four headings in this lesson.
+2. Collect your best guides, checklists and diagrams from this roadmap into one folder. Remove private details.
+3. Write a one page CV for an entry level IT support role, using skill words from adverts.
+4. Practise answering three interview scenarios aloud: a user cannot print, the whole office has no internet, and an angry manager whose laptop died before a meeting. Record yourself on your phone and listen back.
+
+**Done looks like:** three write ups, a portfolio folder link, a one page CV and recorded interview practice.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these counts as experience for IT support?",
+            options: [
+              "Only paid jobs at large companies",
+              "Real problems solved for real people, including volunteer work and national service",
+              "Watching videos without practising",
+              "Owning many devices",
+            ],
+            answer_index: 1,
+            explanation: "Employers value proof of solving real problems, paid or unpaid.",
+          },
+          {
+            prompt: "What should you remove before sharing your portfolio?",
+            options: [
+              "Names, passwords, addresses and anything private",
+              "Your troubleshooting steps",
+              "The fixes you applied",
+              "Your diagrams",
+            ],
+            answer_index: 0,
+            explanation: "Protect other people's privacy and security in anything you share.",
+          },
+          {
+            prompt: "Which CV line is strongest?",
+            options: [
+              "Helped in the lab",
+              "Good with computers",
+              "Maintained 20 lab computers and cut breakdowns during term",
+              "Hard working person",
+            ],
+            answer_index: 2,
+            explanation: "Specific, true results show what you actually achieved.",
+          },
+          {
+            prompt: "A recruiter asks you to pay a fee before an interview. What should you do?",
+            options: [
+              "Pay quickly to secure the job",
+              "Borrow money from friends",
+              "Send your MoMo PIN instead",
+              "Stop and check, because genuine employers do not ask for payment",
+            ],
+            answer_index: 3,
+            explanation: "Requests for payment are a warning sign of a job scam.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "next-steps": {
+      explanation_md: `## Why this matters
+
+IT support is a respected job in its own right, and many people build long careers in it, becoming senior engineers and IT managers. It is also one of the most common doorways into cybersecurity, network engineering, systems administration and cloud work. Employers in those fields like people who have done support, because they understand how real users, devices and networks behave.
+
+## Path 1: Cybersecurity
+
+Security teams protect organisations from attacks. Entry roles include security operations (SOC) analyst, who watches alerts and investigates suspicious activity, and IT security officer in banks and larger organisations.
+
+What carries over from this roadmap: accounts and access, phishing awareness, updates, backups, Linux and network troubleshooting. What you add: how attacks work, reading logs, security tools, incident response and security frameworks. SydCrest's cybersecurity roadmap builds directly on this one. Certifications often seen at this stage include CompTIA Security+ and the Google Cybersecurity Professional Certificate, named here as examples.
+
+## Path 2: Network engineering
+
+Network engineers design, build and run the networks that banks, telcos, internet providers and campuses depend on. Entry routes include NOC technician and junior network engineer.
+
+What carries over: IP addressing, DNS, routers, switches, Wi-Fi and troubleshooting. What you add: subnetting in depth, routing and switching, VLANs, firewalls and network monitoring. CCNA and Network+ are the certifications most often linked to this path, and Cisco Networking Academy offers structured courses.
+
+## Path 3: Systems administration
+
+System administrators look after servers, directories, email and storage. Ghanaian ICT officer adverts often mix support with this work.
+
+What carries over: Windows, Linux, accounts, backups. What you add: Windows Server and Active Directory in depth, Linux administration, virtualisation and scripting with PowerShell, Bash or Python to automate repeated tasks.
+
+## Path 4: Cloud
+
+More organisations now run email, files and systems in cloud services such as Microsoft 365, Microsoft Azure, Amazon Web Services and Google Cloud. Entry roles include cloud support associate and junior cloud engineer.
+
+What carries over: networking, Linux, accounts and security. What you add: cloud fundamentals, virtual machines and storage, identity in the cloud, and automation. Fundamentals certifications from the big cloud providers are a common first step, and AWS re/Start is one structured programme that runs in Ghana through local partners. SydCrest plans a cloud roadmap that builds on this one.
+
+## Phone or computer?
+
+All four paths need a computer for serious practice: labs, virtual machines and cloud consoles do not work well on a phone. You can study theory on a phone, but plan for regular time at a school lab, library, community centre or on your own laptop when you can.
+
+## How to move while working
+
+* Keep doing your current job well; your support experience is your advantage.
+* Volunteer for tasks that touch your target path: setting up accounts, investigating a suspicious email, configuring a new switch, moving files to the cloud.
+* Study a little every week and keep a learning log, just like your fix log.
+* Tell your manager what you are aiming for. Many first security and network roles are filled by internal support staff.
+
+## A small example
+
+Mariama has worked on a bank's service desk in Tamale for two years. She enjoys investigating phishing reports, so she volunteers to help the security officer review them. She studies security basics in the evenings. When the bank opens a junior security role, she applies with a strong record and a manager who already knows her work.`,
+      practice_task_md: `**Goal:** choose your next path and start it.
+
+1. Read the four paths again and rank them by what interests you most.
+2. For your top path, find two adverts (in Ghana or remote roles open to Ghana based applicants) and list the skills they ask for.
+3. Compare those skills with what you have learned in this roadmap. Mark each: already have, partly, not yet.
+4. Choose one free resource for the top "not yet" skill and complete its first lesson this week.
+5. Write a short note to your future self: the path you chose, why, and what you will learn in the next three months.
+
+**Done looks like:** a ranked list, a skills gap table for your chosen path, one completed lesson and your three month note.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why do employers in security, networking and cloud value IT support experience?",
+            options: [
+              "Support staff never need training",
+              "It shows understanding of how real users, devices and networks behave",
+              "Support work is the same as programming",
+              "It means you own a laptop",
+            ],
+            answer_index: 1,
+            explanation: "Support experience gives practical knowledge those fields build on.",
+          },
+          {
+            prompt: "Which entry role watches alerts and investigates suspicious activity?",
+            options: [
+              "SOC analyst",
+              "Printer technician",
+              "Graphic designer",
+              "Data entry clerk",
+            ],
+            answer_index: 0,
+            explanation: "Security operations (SOC) analysts monitor and investigate alerts.",
+          },
+          {
+            prompt: "Which skills does network engineering add on top of this roadmap?",
+            options: [
+              "Video editing and animation",
+              "Bookkeeping",
+              "Subnetting in depth, routing and switching, VLANs and firewalls",
+              "Social media marketing",
+            ],
+            answer_index: 2,
+            explanation: "Network engineers go deeper into how networks are designed and routed.",
+          },
+          {
+            prompt: "What is a good way to move towards a new path while still in support?",
+            options: [
+              "Stop doing your current job well",
+              "Keep it secret from your manager",
+              "Wait until you are sure before studying",
+              "Volunteer for tasks that touch your target path and study weekly",
+            ],
+            answer_index: 3,
+            explanation: "Related tasks and steady study build the evidence for an internal move.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
