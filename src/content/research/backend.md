@@ -37,8 +37,13 @@ opened).
 | F2 | ESCO occupation search (software developer) | https://esco.ec.europa.eu/ | 2026-10-25 | Skills framework; API and pages returned "server temporarily unavailable", so not used |
 | C1 | MDN Learn web development: Server side website programming | https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Server-side | 2026-10-25 | Open curriculum; page states a Creative Commons licence (MDN prose is CC BY-SA 2.5 per its licence page); topic names only |
 | C2 | freeCodeCamp curriculum | https://www.freecodecamp.org/learn/ | 2026-10-25 | Open curriculum; page rendered empty on fetch, so neither topics nor licence were read and it was not used |
-| D1 | Node.js Learn, Express docs, PostgreSQL tutorial, OWASP Top Ten, Twelve Factor App, Docker Get started | see `resources.ts` | 2026-10-25 | Official documentation, used to check accuracy only |
-| D2 | Ghana Data Protection Commission | https://dpc.gov.gh/ | 2026-10-25 | Official body; Act 843 named in the security lesson |
+| D1 | Node.js: Learn | https://nodejs.org/en/learn | 2026-10-25 | Official documentation, used to check accuracy only |
+| D2 | Express docs | https://expressjs.com/ | 2026-10-25 | Official documentation, used to check accuracy only |
+| D3 | PostgreSQL tutorial (official) | https://www.postgresql.org/docs/current/tutorial.html | 2026-10-25 | Official documentation, used to check accuracy only |
+| D4 | OWASP Top Ten | https://owasp.org/www-project-top-ten/ | 2026-10-25 | Official documentation, used to check accuracy only |
+| D5 | The Twelve Factor App | https://12factor.net/ | 2026-10-25 | Official documentation, used to check accuracy only |
+| D6 | Docker: Get started | https://docs.docker.com/get-started/ | 2026-10-25 | Official documentation, used to check accuracy only |
+| D7 | Ghana Data Protection Commission | https://dpc.gov.gh/ | 2026-10-25 | Official body; Act 843 named in the security lesson |
 
 ## Adverts analysed (20)
 

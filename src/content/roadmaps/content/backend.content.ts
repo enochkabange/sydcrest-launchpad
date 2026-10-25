@@ -16,7 +16,7 @@ Ghanaian fintechs, telcos, banks, logistics startups and software agencies all n
 
 * **Clients, servers and HTTP.** Every app you build later is a conversation between a client (a phone, a browser, another server) and your server. HTTP is the language of that conversation. If you understand requests, responses, status codes and headers, debugging becomes much easier.
 * **The command line.** Most servers run Linux and have no screen. You talk to them by typing commands. The same skill lets you run your own code, install tools and read logs.
-* **Git and GitHub.** Teams track every change to their code with Git, and share it on platforms such as GitHub. Adverts for junior roles list Git almost every time, and your GitHub profile becomes part of your CV.
+* **Git and GitHub.** Teams track every change to their code with Git, and share it on platforms such as GitHub. Teams expect you to use it from your first day, and your GitHub profile becomes part of your CV.
 
 ### Why start here
 
@@ -336,7 +336,7 @@ Practise a little every day. After a week the terminal stops feeling strange and
       },
     },
     "git-and-github": {
-      explanation_md: `Git appears in almost every software job advert, from national service placements to remote roles. Teams use it to track every change, work on features without breaking each other's code and review work before it goes live. For you as a job seeker, a GitHub profile with real projects is often the first thing an employer looks at.
+      explanation_md: `Teams expect you to use Git from your first day, whether at a national service placement, a local startup or a remote company. Teams use it to track every change, work on features without breaking each other's code and review work before it goes live. For you as a job seeker, a GitHub profile with real projects is often the first thing an employer looks at.
 
 ### What Git does
 
@@ -465,7 +465,7 @@ For most beginners in this roadmap, the choice is between JavaScript (running on
 * **Node.js** lets you use the same language as the frontend, which helps if you want full stack roles. Several Ghanaian and remote adverts we studied asked for Node.js with frameworks such as Express or NestJS, often with TypeScript.
 * **Python** is popular for backend work with frameworks such as Django, Flask or FastAPI, and it is also the main language for data work. If data interests you, Python keeps that door open.
 
-Java and C# appear often in bank and large company adverts. They are excellent languages, but they are heavier to set up on a modest machine. You can learn one later if a specific employer needs it.
+Java and C# appear in some bank, payments and large company adverts. They are excellent languages, but they are heavier to set up on a modest machine. You can learn one later if a specific employer needs it.
 
 ### How to decide
 
@@ -666,7 +666,7 @@ Print the result of each function with sample data. Then break one input on purp
       },
     },
     "async-programming": {
-      explanation_md: `A backend spends most of its time waiting: for the database, for a payment provider, for an SMS service. If it simply stopped and waited each time, one slow request would hold up everyone else. Asynchronous code lets a server start a task, deal with other customers while it waits, and come back when the answer arrives. Adverts for Node.js roles often mention asynchronous programming directly, and remote fintech adverts mention asynchronous processing.
+      explanation_md: `A backend spends most of its time waiting: for the database, for a payment provider, for an SMS service. If it simply stopped and waited each time, one slow request would hold up everyone else. Asynchronous code lets a server start a task, deal with other customers while it waits, and come back when the answer arrives. Some of the remote adverts we read mention asynchronous processing by name.
 
 ### The idea, with a chop bar
 
@@ -800,7 +800,7 @@ Payments, webhooks, SMS and background jobs all depend on handling slow and fail
       },
     },
     "databases": {
-      explanation_md: `Nearly every backend job advert we read mentioned databases: SQL, PostgreSQL, MySQL, SQL Server, and sometimes MongoDB or Redis. That makes sense. An app without stored data forgets every customer, every order and every payment the moment it restarts. The database is the memory of the business, and looking after it well is one of the most trusted jobs a backend developer has.
+      explanation_md: `Many of the backend job adverts we read mentioned databases: SQL, PostgreSQL, MySQL, SQL Server, and sometimes MongoDB or Redis. That makes sense. An app without stored data forgets every customer, every order and every payment the moment it restarts. The database is the memory of the business, and looking after it well is one of the most trusted jobs a backend developer has.
 
 ### What a database does
 
@@ -889,7 +889,7 @@ Imagine Abdul-Rahman runs a small shop in Nalerigu that takes orders on WhatsApp
       },
     },
     "sql": {
-      explanation_md: `SQL showed up in a large share of the backend, software and graduate adverts we read, whether the employer used PostgreSQL, MySQL or SQL Server. It is also useful in data, product and support roles, so time spent here pays off widely. The good news is that a small set of commands covers most daily work.
+      explanation_md: `SQL showed up in many of the backend, software and graduate adverts we read, whether the employer used PostgreSQL, MySQL or SQL Server. It is also useful in data, product and support roles, so time spent here pays off widely. The good news is that a small set of commands covers most daily work.
 
 ### Tables, rows and columns
 
@@ -897,9 +897,9 @@ Imagine a table called \`sales\` for Hawa's provisions shop:
 
 | id | item  | qty | price_pesewas | sold_on    |
 |----|-------|-----|---------------|------------|
-| 1  | rice  | 2   | 3000          | 2026-10-01 |
-| 2  | oil   | 1   | 4500          | 2026-10-01 |
-| 3  | sugar | 3   | 1200          | 2026-10-02 |
+| 1  | rice  | 2   | 3000          | 1 Oct      |
+| 2  | oil   | 1   | 4500          | 1 Oct      |
+| 3  | sugar | 3   | 1200          | 2 Oct      |
 
 Each row is one sale. Each column is one detail. Prices are stored in pesewas to avoid rounding errors.
 
@@ -1042,7 +1042,7 @@ Free interactive sites let you type queries in the browser and check results ins
       },
     },
     "database-design": {
-      explanation_md: `Adverts often ask for "database design" or "data modelling" alongside SQL, and graduate assessments sometimes ask you to sketch tables for a scenario. Good design is what keeps an app's data trustworthy as it grows. Poor design shows up later as duplicate customers, orders that point to nothing, and totals that never match the mobile money statement.
+      explanation_md: `Several adverts we read asked for database design skills alongside SQL, and an interviewer may ask you to sketch tables for a scenario. Good design is what keeps an app's data trustworthy as it grows. Poor design shows up later as duplicate customers, orders that point to nothing, and totals that never match the mobile money statement.
 
 ### Start from the real world
 
@@ -1369,7 +1369,7 @@ Start with one relational database. Add a cache when you can see the same slow q
       },
     },
     "apis": {
-      explanation_md: `"Design and build RESTful APIs" was one of the most repeated lines across the adverts we read, from junior roles at Accra startups to remote payment teams. An API (application programming interface) is how a mobile app, a website, a partner company or another service talks to your server. If the database is the memory of a business, the API is its front counter.
+      explanation_md: `Building RESTful APIs was the most repeated requirement across the adverts we read, from junior roles at Accra startups to remote payment teams. An API (application programming interface) is how a mobile app, a website, a partner company or another service talks to your server. If the database is the memory of a business, the API is its front counter.
 
 ### What an API looks like
 
@@ -1480,7 +1480,7 @@ Imagine Amina is building an API for a farmers' cooperative in Savelugu. Officer
       },
     },
     "rest-apis": {
-      explanation_md: `Almost every backend advert we read asked for REST API experience. REST is a style for designing APIs around **resources** (the things your app deals with, like products, orders and payments) and standard HTTP methods. Following it means other developers can guess how your API works before reading a word of documentation.
+      explanation_md: `Most of the backend adverts we read asked for REST API experience. REST is a style for designing APIs around **resources** (the things your app deals with, like products, orders and payments) and standard HTTP methods. Following it means other developers can guess how your API works before reading a word of documentation.
 
 ### Resources and routes
 
@@ -2443,7 +2443,7 @@ Imagine Sumaila has built an API for a farmers' cooperative in Yendi. Before tel
       },
     },
     "security": {
-      explanation_md: `Banks, fintechs and telcos in Ghana handle money and personal data, so security knowledge appears in their adverts even for junior roles. You do not need to be a security specialist, but you must avoid the common mistakes that let attackers in. A short list of well understood problems is behind many real breaches.
+      explanation_md: `Banks, fintechs and telcos in Ghana handle money and personal data, so security knowledge appears in their adverts. You do not need to be a security specialist, but you must avoid the common mistakes that let attackers in. A short list of well understood problems is behind many real breaches.
 
 ### Common attacks and how to stop them
 
@@ -2564,7 +2564,7 @@ The OWASP Top Ten is a free, regularly updated list of the most important web ap
       },
     },
     "testing": {
-      explanation_md: `Unit testing, test coverage and quality appeared in several of the backend adverts we read, and graduate programmes value it too. Tests are small programs that check your code does what you expect. They let you change code without fear, and they show an employer that you care whether things actually work, not just whether they ran once on your laptop.
+      explanation_md: `Unit testing, test coverage and quality appeared in several of the backend adverts we read. Tests are small programs that check your code does what you expect. They let you change code without fear, and they show an employer that you care whether things actually work, not just whether they ran once on your laptop.
 
 ### Why tests matter for backend work
 
