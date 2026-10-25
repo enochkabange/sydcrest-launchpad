@@ -799,6 +799,575 @@ Payments, webhooks, SMS and background jobs all depend on handling slow and fail
         pass_threshold: 80,
       },
     },
+    "databases": {
+      explanation_md: `Nearly every backend job advert we read mentioned databases: SQL, PostgreSQL, MySQL, SQL Server, and sometimes MongoDB or Redis. That makes sense. An app without stored data forgets every customer, every order and every payment the moment it restarts. The database is the memory of the business, and looking after it well is one of the most trusted jobs a backend developer has.
+
+### What a database does
+
+A database stores data so that it survives restarts, can be searched quickly, and stays correct even when many people use it at once. Think of a market trader's record book, but one that can answer "how many bags of maize did we sell in March?" in a fraction of a second and never loses a page.
+
+### Relational databases first
+
+Most systems start with a **relational database** such as PostgreSQL, MySQL or SQL Server. Data lives in **tables** made of rows and columns, a bit like a spreadsheet, and tables are linked to each other by keys. You talk to them with **SQL**, a language that has been around for decades and is still used in nearly every tech role, including data and product work.
+
+Relational databases are a good default because they protect your data. They can enforce rules, such as "every payment must belong to a real order", and they support **transactions**, which make a group of changes happen completely or not at all. For anything involving money, that matters a lot.
+
+### What this section covers
+
+* **SQL fundamentals:** reading, filtering, joining and summarising data.
+* **Designing a database:** turning real things like customers, orders and payments into tables with sensible keys.
+* **Migrations and ORMs:** changing a database safely as your app grows, and using code libraries that map tables to objects.
+* **Caching and other kinds of databases (optional):** when a fast key value store or a document database helps, and why caching can take pressure off your main database.
+
+### Why learn this before a framework
+
+Frameworks come and go, but data outlives them. A badly designed database causes pain for years: duplicate customers, payments that do not add up, reports nobody trusts. A well designed one makes every later feature easier.
+
+### Working on a budget
+
+You do not need a powerful computer or a paid account. SQLite is a small database stored in a single file that runs almost anywhere, including in Termux on Android. Free online SQL practice sites let you write queries in your browser with very little data. Several hosting platforms also offer free database tiers, usually with limits on size and sometimes pausing when idle, which are fine for learning and portfolio projects.
+
+### A picture to keep in mind
+
+Imagine Abdul-Rahman runs a small shop in Nalerigu that takes orders on WhatsApp. Today he keeps a notebook. As a backend developer, you would turn that notebook into tables for customers, products, orders and payments, so he can see who owes what, what is running low and which products sell best. That is the work this section prepares you for.`,
+      practice_task_md: `**Goal:** think like a database designer before you touch any tools.
+
+1. Choose a real record keeping system you know: a shop's credit book, a church dues list, a school fees register or a farmers' group savings book.
+2. On paper or in a notes app, list the **things** it tracks (for example: members, payments, meetings).
+3. For each thing, list four or five **details** you would store (for example, a member has a name, phone number and join date).
+4. Write two questions the owner would love to answer quickly, such as "who has not paid this month?".
+
+**Done looks like:** one page with your things, their details and two questions. Keep it, because you will turn it into real tables in the next lessons.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the main job of a database in a backend?",
+            options: [
+              "To make the app look nicer",
+              "To store data so it survives restarts, can be searched quickly and stays correct",
+              "To send SMS messages to customers",
+              "To replace the need for an API",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes the database as the memory of the business.",
+          },
+          {
+            prompt: "How is data organised in a relational database?",
+            options: [
+              "As one long text file with no structure",
+              "As images stored on a phone",
+              "In tables of rows and columns linked by keys",
+              "Only inside the frontend code",
+            ],
+            answer_index: 2,
+            explanation: "Relational databases store data in linked tables.",
+          },
+          {
+            prompt: "Why are transactions important for money related features?",
+            options: [
+              "They make the database free to use",
+              "They make a group of changes happen completely or not at all",
+              "They hide data from administrators",
+              "They remove the need for backups",
+            ],
+            answer_index: 1,
+            explanation: "The lesson explains transactions as all or nothing changes.",
+          },
+          {
+            prompt: "Which option does the lesson suggest for practising databases on a budget?",
+            options: [
+              "Buying a dedicated server",
+              "Waiting until you get a job",
+              "Using SQLite, a small file based database that runs almost anywhere",
+              "Only reading about databases without practising",
+            ],
+            answer_index: 2,
+            explanation: "SQLite runs on modest devices, including Android with Termux.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "sql": {
+      explanation_md: `SQL showed up in a large share of the backend, software and graduate adverts we read, whether the employer used PostgreSQL, MySQL or SQL Server. It is also useful in data, product and support roles, so time spent here pays off widely. The good news is that a small set of commands covers most daily work.
+
+### Tables, rows and columns
+
+Imagine a table called \`sales\` for Hawa's provisions shop:
+
+| id | item  | qty | price_pesewas | sold_on    |
+|----|-------|-----|---------------|------------|
+| 1  | rice  | 2   | 3000          | 2026-10-01 |
+| 2  | oil   | 1   | 4500          | 2026-10-01 |
+| 3  | sugar | 3   | 1200          | 2026-10-02 |
+
+Each row is one sale. Each column is one detail. Prices are stored in pesewas to avoid rounding errors.
+
+### Reading data with SELECT
+
+\`\`\`sql
+SELECT item, qty FROM sales;
+\`\`\`
+
+Add \`WHERE\` to filter and \`ORDER BY\` to sort:
+
+\`\`\`sql
+SELECT * FROM sales
+WHERE qty >= 2
+ORDER BY sold_on DESC;
+\`\`\`
+
+### Adding, changing and removing
+
+\`\`\`sql
+INSERT INTO sales (item, qty, price_pesewas, sold_on)
+VALUES ('milk', 4, 800, '2026-10-02');
+
+UPDATE sales SET qty = 3 WHERE id = 1;
+
+DELETE FROM sales WHERE id = 2;
+\`\`\`
+
+Always include a \`WHERE\` with \`UPDATE\` and \`DELETE\`. Without it, the command changes or removes **every** row. Some tools ask you to confirm, but many do not.
+
+### Summarising with GROUP BY
+
+To see how many of each item were sold:
+
+\`\`\`sql
+SELECT item, SUM(qty) AS total
+FROM sales
+GROUP BY item;
+\`\`\`
+
+Other useful functions are \`COUNT\`, \`AVG\`, \`MIN\` and \`MAX\`.
+
+### Joining tables
+
+Real databases split data across tables. Suppose \`orders\` has a \`customer_id\` that points to a row in \`customers\`. A **join** brings them together:
+
+\`\`\`sql
+SELECT customers.name, orders.total_pesewas
+FROM orders
+JOIN customers
+  ON customers.id = orders.customer_id;
+\`\`\`
+
+Now you can see each order with the customer's name instead of a number.
+
+### Never build SQL from user input by hand
+
+If you glue a user's text straight into a query, an attacker can type SQL of their own and read or destroy your data. This is called **SQL injection**. Every database library supports **parameters**, where you pass values separately:
+
+\`\`\`js
+db.query(
+  "SELECT * FROM users WHERE phone = $1",
+  [phone]
+);
+\`\`\`
+
+The library makes sure the value is treated as data, never as code. Use this every time.
+
+### How to practise
+
+Free interactive sites let you type queries in the browser and check results instantly. SQLite lets you practise offline on a laptop or in Termux on Android. Try writing a query for a question you care about, such as "which day did we sell the most?".`,
+      practice_task_md: `**Goal:** create and query a small shop database.
+
+1. Install SQLite (\`pkg install sqlite\` in Termux, or download it on a laptop), or use a free online SQL playground.
+2. Create a \`sales\` table with columns \`id\`, \`item\`, \`qty\`, \`price_pesewas\` and \`sold_on\`.
+3. Insert at least eight sales over three days.
+4. Write queries that answer: total quantity per item, total money per day in pesewas, and the single biggest sale.
+5. Add a \`customers\` table and an \`orders\` table, then write one join that shows each order with the customer's name (use names such as Mariama and Issahaku).
+
+**Done looks like:** a file \`shop.sql\` on GitHub with your \`CREATE\`, \`INSERT\` and query statements, plus a comment above each query saying what question it answers.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which SQL command reads data from a table?",
+            options: [
+              "SELECT",
+              "INSERT",
+              "DELETE",
+              "UPDATE",
+            ],
+            answer_index: 0,
+            explanation: "SELECT is used for reading data.",
+          },
+          {
+            prompt: "What happens if you run DELETE FROM sales with no WHERE clause?",
+            options: [
+              "Only the first row is deleted",
+              "Nothing happens until you confirm",
+              "Every row in the table is deleted",
+              "The table is copied to a backup",
+            ],
+            answer_index: 2,
+            explanation: "The lesson warns that UPDATE and DELETE without WHERE affect every row.",
+          },
+          {
+            prompt: "What does GROUP BY help you do?",
+            options: [
+              "Join two databases on different servers",
+              "Summarise rows, such as total quantity for each item",
+              "Encrypt the data in a table",
+              "Sort rows randomly",
+            ],
+            answer_index: 1,
+            explanation: "GROUP BY combines rows into groups for totals and counts.",
+          },
+          {
+            prompt: "What is a join used for?",
+            options: [
+              "Deleting duplicate tables",
+              "Speeding up the internet connection",
+              "Bringing related data from different tables together, such as orders with customer names",
+              "Turning SQL into JavaScript",
+            ],
+            answer_index: 2,
+            explanation: "The join example shows orders alongside customer names.",
+          },
+          {
+            prompt: "How do you protect a query from SQL injection?",
+            options: [
+              "Ask users to type carefully",
+              "Only use SQL at night",
+              "Pass user values as parameters instead of gluing them into the query text",
+              "Store all data in a text file",
+            ],
+            answer_index: 2,
+            explanation: "Parameters make the database treat input as data, never as code.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "database-design": {
+      explanation_md: `Adverts often ask for "database design" or "data modelling" alongside SQL, and graduate assessments sometimes ask you to sketch tables for a scenario. Good design is what keeps an app's data trustworthy as it grows. Poor design shows up later as duplicate customers, orders that point to nothing, and totals that never match the mobile money statement.
+
+### Start from the real world
+
+List the **things** (entities) the business cares about and how they relate. For a small shop that sells on WhatsApp, run by Mariama in Bolgatanga:
+
+* A **customer** places many **orders**.
+* An **order** contains many **order items**, each for one **product**.
+* An order can have one or more **payments** (a first attempt might fail).
+
+### Keys
+
+Every table needs a **primary key**, a column that uniquely identifies each row, usually \`id\`. A **foreign key** is a column that points to a row in another table, such as \`orders.customer_id\` pointing to \`customers.id\`. The database can refuse a foreign key that points to nothing, which stops orphan records.
+
+### A worked design
+
+\`\`\`sql
+CREATE TABLE customers (
+  id SERIAL PRIMARY KEY,
+  name TEXT NOT NULL,
+  phone TEXT NOT NULL UNIQUE
+);
+
+CREATE TABLE orders (
+  id SERIAL PRIMARY KEY,
+  customer_id INT NOT NULL
+    REFERENCES customers(id),
+  status TEXT NOT NULL,
+  total_pesewas INT NOT NULL
+);
+\`\`\`
+
+Notice the rules built into the table: names and phones cannot be empty, and two customers cannot share a phone number. The database enforces these even if your code has a bug.
+
+### Avoid repeating data
+
+If you store the customer's name inside every order, then when Mariama corrects a spelling she must change it in fifty places, and she will miss some. Store each fact **once** and link to it with keys. This idea is called **normalisation**. You do not need to memorise its formal rules at first; just ask "is this fact stored in more than one place?".
+
+### Money and status columns
+
+* Store money as whole pesewas in an integer column, plus a currency if you might handle more than cedis.
+* Use clear status values such as \`pending\`, \`paid\`, \`failed\`, \`refunded\`, and decide which changes are allowed. A \`paid\` order should not quietly become \`pending\` again.
+* Add \`created_at\` timestamps. When a customer disputes a payment, you will want to know exactly when things happened.
+
+### Indexes
+
+An **index** helps the database find rows quickly, like the index at the back of a book. Primary keys get one automatically. Add an index on columns you search often, such as \`phone\`. Do not add indexes everywhere, because each one slows down writes a little.
+
+### Draw before you build
+
+Sketch boxes for tables and lines for relationships on paper. This kind of diagram is often called an entity relationship diagram. It costs nothing and catches mistakes before you write any code, and a clear diagram in your README impresses reviewers.`,
+      practice_task_md: `**Goal:** design the database for a small shop that takes orders on WhatsApp.
+
+1. On paper, draw boxes for \`customers\`, \`products\`, \`orders\`, \`order_items\` and \`payments\`, with lines showing which table points to which.
+2. Write the \`CREATE TABLE\` statements with primary keys, foreign keys, \`NOT NULL\` where needed, a \`UNIQUE\` phone number and money in pesewas.
+3. Run them in SQLite or a free online playground and insert sample data for two customers (for example, Fuseini and Amina) with one order each.
+4. Write one query that lists every order with the customer's name and total.
+
+**Done looks like:** a photo of your diagram and a \`schema.sql\` file in a GitHub repository, with a README paragraph explaining one design choice you made and why.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a foreign key?",
+            options: [
+              "A key used only by foreign customers",
+              "A column that points to a row in another table",
+              "A password for the database",
+              "A column that stores prices",
+            ],
+            answer_index: 1,
+            explanation: "The lesson defines a foreign key as a pointer to another table's row.",
+          },
+          {
+            prompt: "Why should a customer's name not be stored inside every order?",
+            options: [
+              "Names take too much data on a phone",
+              "A correction would need changing in many places, and some would be missed",
+              "Orders cannot contain text",
+              "It makes the database refuse all orders",
+            ],
+            answer_index: 1,
+            explanation: "Storing each fact once avoids inconsistent copies.",
+          },
+          {
+            prompt: "Why is it useful to add a UNIQUE rule to the phone column?",
+            options: [
+              "It makes phone numbers shorter",
+              "It hides phone numbers from the developer",
+              "The database stops two customers sharing a phone number, even if the code has a bug",
+              "It lets the database send SMS automatically",
+            ],
+            answer_index: 2,
+            explanation: "Rules in the table are enforced by the database itself.",
+          },
+          {
+            prompt: "What is an index for?",
+            options: [
+              "Backing up the database",
+              "Helping the database find rows quickly in columns you search often",
+              "Storing images",
+              "Making every write faster",
+            ],
+            answer_index: 1,
+            explanation: "Indexes speed up searches, at a small cost to writes.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "migrations-and-orms": {
+      explanation_md: `Once an app is live, its database keeps changing: a new column for delivery address, a new table for refunds, a rule that phone numbers must be unique. Teams never make these changes by hand on the live server, because one typo can break the app for everyone. They use **migrations**. Adverts we read also named ORMs and query tools such as Entity Framework, Hibernate and Prisma, so it helps to know what they are.
+
+### What a migration is
+
+A migration is a small file that describes one change to the database, kept in Git alongside your code. Each file has a timestamp or number so they run in order:
+
+\`\`\`text
+migrations/
+  001_create_customers.sql
+  002_create_orders.sql
+  003_add_delivery_area.sql
+\`\`\`
+
+The third one might contain:
+
+\`\`\`sql
+ALTER TABLE orders
+ADD COLUMN delivery_area TEXT;
+\`\`\`
+
+A migration tool records which files have already run on each database. When you deploy, it runs only the new ones. Your laptop, your teammate's laptop and the live server all end up with the same structure.
+
+### Why this matters
+
+* **Repeatable:** a new teammate can build the whole database from scratch with one command.
+* **Reviewable:** database changes go through pull requests like any other code.
+* **Traceable:** when something breaks, you can see exactly which change caused it.
+
+### Changing safely
+
+Some changes are risky on a live database with real customers. A safe habit is **expand, then contract**: first add the new thing alongside the old, update the code to use it, and only remove the old thing in a later migration once nothing depends on it. For example, to rename \`phone\` to \`msisdn\`, add \`msisdn\`, copy the data, switch the code, then drop \`phone\` later.
+
+Always back up before a big migration, and try it on a copy of the data first.
+
+### What an ORM is
+
+An **ORM** (object relational mapper) lets you work with tables as objects in your language instead of writing SQL strings. With a typical JavaScript ORM, fetching an order might look like:
+
+\`\`\`js
+const order = await db.order.findUnique({
+  where: { id: 42 },
+  include: { customer: true },
+});
+\`\`\`
+
+The ORM writes the SQL for you. Many ORMs can also generate migrations from your model definitions.
+
+### ORM or plain SQL?
+
+ORMs save time on everyday work and reduce some mistakes, and many teams use them. But they can hide slow queries, and when something goes wrong you still need to understand the SQL underneath. That is why this roadmap teaches SQL first. A sensible approach: use an ORM or a light query builder for routine work, and read the SQL it produces when performance matters.
+
+### A local example
+
+Fuseini runs the backend for a cooperative's savings app in Yendi. Members ask to record their community name. He writes migration \`007_add_community.sql\`, opens a pull request, a teammate reviews it, and it runs automatically when they deploy. No one ever logs into the live database to type commands by hand.`,
+      practice_task_md: `**Goal:** evolve a database with migrations instead of manual edits.
+
+1. In a GitHub repository, create a \`migrations\` folder.
+2. Write \`001_create_members.sql\` for a savings group with \`id\`, \`name\` and \`phone\`.
+3. Write \`002_create_contributions.sql\` with a foreign key to members and an amount in pesewas.
+4. Write \`003_add_community.sql\` that adds a \`community\` column to members.
+5. Delete your SQLite database file, then run the three files in order (for example, \`sqlite3 group.db < migrations/001_create_members.sql\` and so on) to rebuild it from scratch.
+
+**Done looks like:** a repository with the three migration files, a README showing the commands to rebuild the database, and one sentence explaining why you should never edit the live database by hand.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a database migration?",
+            options: [
+              "A small versioned file describing one change to the database, kept with the code",
+              "Moving a database to another country",
+              "A backup stored on a USB drive",
+              "A type of SQL injection attack",
+            ],
+            answer_index: 0,
+            explanation: "The lesson defines a migration as a versioned change file kept in Git.",
+          },
+          {
+            prompt: "How does a migration tool know which changes to run on deploy?",
+            options: [
+              "It runs every file every time",
+              "It asks the customer",
+              "It records which files have already run and runs only the new ones",
+              "It picks files at random",
+            ],
+            answer_index: 2,
+            explanation: "The tool tracks applied migrations and runs only new ones.",
+          },
+          {
+            prompt: "What does expand, then contract mean?",
+            options: [
+              "Make the database bigger every week",
+              "Add the new structure alongside the old, switch the code, then remove the old later",
+              "Delete old data before adding new data",
+              "Compress the database to save space",
+            ],
+            answer_index: 1,
+            explanation: "This pattern keeps the live app working during a change.",
+          },
+          {
+            prompt: "Why does the lesson teach SQL before ORMs?",
+            options: [
+              "ORMs cannot connect to databases",
+              "SQL is required to install an ORM",
+              "ORMs can hide slow queries, and you still need SQL to understand problems",
+              "ORMs are only used in Python",
+            ],
+            answer_index: 2,
+            explanation: "Understanding the SQL underneath helps when things go wrong.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "caching-and-nosql": {
+      explanation_md: `Some backend adverts we read, especially from fintechs and remote payment teams, listed Redis, MongoDB or "NoSQL" next to PostgreSQL or MySQL. You do not need these for your first project, which is why this lesson is optional. But knowing what they are for helps you understand adverts and answer interview questions sensibly.
+
+### What caching is
+
+A **cache** is a quick place to keep an answer you have already worked out, so you do not have to work it out again. Imagine Issahaku's bus booking app in Tamale. Every time someone opens it, the app asks the database for today's routes and prices. The answer only changes a few times a day, yet the database repeats the same work thousands of times. Caching the answer for a few minutes removes most of that load.
+
+\`\`\`js
+async function getRoutes() {
+  const hit = await cache.get("routes");
+  if (hit) return JSON.parse(hit);
+  const routes = await db.getRoutes();
+  await cache.set("routes",
+    JSON.stringify(routes), { EX: 300 });
+  return routes;
+}
+\`\`\`
+
+\`EX: 300\` means the cached copy expires after 300 seconds, so prices never get more than five minutes out of date.
+
+### The hard part: staleness
+
+A cache can serve old data. If a price changes, either wait for the copy to expire or delete it when you update the price. Never cache things that must always be exact at that moment, such as a wallet balance before a payment.
+
+### Key value stores
+
+Tools such as Redis keep data in memory as simple **key and value** pairs, which makes them very fast. Besides caching, teams use them for:
+
+* counting requests to limit abuse (rate limiting)
+* storing short lived things such as one time codes that expire after a few minutes
+* simple job queues for background work
+
+### Document databases
+
+A **document database** such as MongoDB stores records as JSON like documents instead of rows in fixed tables. Each document can have a different shape, which suits data that varies a lot, such as NGO survey responses where each form has different questions.
+
+The trade off is that relational databases are usually better at enforcing rules and joining related data, which is why payment and accounting systems normally keep their core records in SQL. Many teams use both: SQL for orders and money, a document store or cache for other jobs.
+
+### HTTP caching
+
+Caching also happens outside your server. A response header such as \`Cache-Control: max-age=60\` tells browsers and networks they can reuse a response for 60 seconds. For users on expensive data bundles, sensible HTTP caching of things that rarely change, such as product images and lists, saves them real money.
+
+### When to reach for these
+
+Start with one relational database. Add a cache when you can see the same slow query repeating, and add a document store when your data truly does not fit tables. Adding tools before you need them just gives you more things to break.`,
+      practice_task_md: `**Goal:** feel the difference a cache makes, with no extra tools.
+
+1. In Node.js or Python, write a function \`slowPrices()\` that waits two seconds (use \`setTimeout\` or \`time.sleep\`) and then returns a list of three bus routes with fares in pesewas.
+2. Write \`cachedPrices()\` that stores the result in a simple in memory object with the time it was saved, and returns the saved copy if it is less than 30 seconds old.
+3. Call \`cachedPrices()\` five times in a row and print how long each call takes.
+4. Add a function that clears the cache when a fare changes.
+
+**Done looks like:** a script on GitHub whose output shows the first call taking about two seconds and later calls taking almost no time, plus a README note on one thing you should never cache.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a cache?",
+            options: [
+              "A backup of the whole database stored offline",
+              "A quick place to keep an answer you already worked out so you do not repeat the work",
+              "A type of SQL join",
+              "A list of all users who are logged in",
+            ],
+            answer_index: 1,
+            explanation: "The lesson defines a cache as a store of already computed answers.",
+          },
+          {
+            prompt: "In the caching example, what does EX: 300 do?",
+            options: [
+              "Limits the cache to 300 users",
+              "Makes the request 300 times faster",
+              "Makes the cached copy expire after 300 seconds",
+              "Deletes the database after 300 seconds",
+            ],
+            answer_index: 2,
+            explanation: "The value expires after 300 seconds so data stays reasonably fresh.",
+          },
+          {
+            prompt: "Which data does the lesson say you should never cache?",
+            options: [
+              "A list of bus routes that changes a few times a day",
+              "Product images",
+              "Things that must be exact at that moment, such as a wallet balance before a payment",
+              "Public lists that rarely change",
+            ],
+            answer_index: 2,
+            explanation: "Stale balances could cause wrong payments.",
+          },
+          {
+            prompt: "Why do payment systems usually keep core records in a relational database?",
+            options: [
+              "Relational databases are usually better at enforcing rules and joining related data",
+              "Document databases cannot store numbers",
+              "Relational databases do not need a server",
+              "Key value stores are illegal for payments",
+            ],
+            answer_index: 0,
+            explanation: "The lesson explains the trade off in favour of SQL for money.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
