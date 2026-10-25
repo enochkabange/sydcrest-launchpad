@@ -1,12 +1,15 @@
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { CheckboxField, TextField } from "@/components/ui/field";
 
 /** Date of birth and terms consent, shared by sign up and the /welcome step. */
 export function AgeConsentFields({
   defaultDateOfBirth,
+  defaultTerms,
   errors,
 }: {
   defaultDateOfBirth?: string;
+  /** Keeps the box ticked when the form comes back with an error elsewhere. */
+  defaultTerms?: boolean;
   errors?: { date_of_birth?: string; terms?: string };
 }) {
   return (
@@ -21,7 +24,7 @@ export function AgeConsentFields({
         error={errors?.date_of_birth}
         required
       />
-      <CheckboxField id="terms" error={errors?.terms} required>
+      <CheckboxField id="terms" error={errors?.terms} defaultChecked={defaultTerms} required>
         I agree to the{" "}
         <Link href="/terms" target="_blank" className="font-semibold">
           Terms

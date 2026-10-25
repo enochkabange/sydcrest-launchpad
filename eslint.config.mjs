@@ -6,14 +6,13 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   // Links go through the data saver wrapper so prefetch is skipped on
-  // Save-Data and 2G (issue #40). Warning, not error, while other branches
-  // still import next/link directly.
+  // Save-Data and 2G (issue #40).
   {
     files: ["src/**/*.{ts,tsx}"],
     ignores: ["src/components/ui/link.tsx"],
     rules: {
       "no-restricted-imports": [
-        "warn",
+        "error",
         {
           paths: [
             {

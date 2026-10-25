@@ -10,7 +10,7 @@ export type AuthState = {
   errors?: FieldErrors<"full_name" | "email" | "password" | "date_of_birth" | "terms">;
   message?: string;
   sentTo?: string;
-  values?: { full_name?: string; email?: string; date_of_birth?: string };
+  values?: { full_name?: string; email?: string; date_of_birth?: string; terms?: boolean };
 };
 
 export async function signIn(_prev: AuthState, form: FormData): Promise<AuthState> {
@@ -31,7 +31,12 @@ export async function signIn(_prev: AuthState, form: FormData): Promise<AuthStat
 
 export async function signUp(_prev: AuthState, form: FormData): Promise<AuthState> {
   const { data, errors } = parseSignUp(form);
-  const values = { full_name: data.fullName, email: data.email, date_of_birth: data.dateOfBirth };
+  const values = {
+    full_name: data.fullName,
+    email: data.email,
+    date_of_birth: data.dateOfBirth,
+    terms: form.get("terms") === "on",
+  };
   if (Object.keys(errors).length) return { errors, values };
 
   const supabase = await createClient();

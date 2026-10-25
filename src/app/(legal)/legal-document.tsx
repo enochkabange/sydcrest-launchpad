@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { LEGAL_IS_DRAFT, LEGAL_UPDATED, LEGAL_VERSION, PRIVACY_CONTACT_EMAIL } from "@/lib/legal";
 
 /** Headings, paragraphs and lists styled for long reading, without a typography plugin. */
