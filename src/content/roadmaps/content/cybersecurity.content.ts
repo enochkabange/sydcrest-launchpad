@@ -2222,7 +2222,7 @@ The **Payment Card Industry Data Security Standard** applies to organisations th
 
 ## Sector directives in Ghana
 
-The **Bank of Ghana's Cyber and Information Security Directive**, first issued in 2018, sets cyber requirements for the institutions it regulates. The **CSA's CII Directive** sets requirements for owners of critical information infrastructure. Both appear in Ghanaian job adverts. If you join a bank or a CII sector organisation, ask for the parts that apply to your role.
+The **Bank of Ghana's Cyber and Information Security Directive** sets cyber requirements for the institutions it regulates. The **CSA's CII Directive** sets requirements for owners of critical information infrastructure. Both appear in Ghanaian job adverts. If you join a bank or a CII sector organisation, ask for the parts that apply to your role.
 
 ## MITRE ATT&CK
 

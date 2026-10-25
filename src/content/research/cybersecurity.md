@@ -68,6 +68,7 @@ honestly that labs need a computer and offers phone alternatives.
 | D13 | CISA Known Exploited Vulnerabilities catalog | https://www.cisa.gov/known-exploited-vulnerabilities-catalog | 2026-10-25 | Official docs |
 | D14 | Microsoft Learn: Windows security | https://learn.microsoft.com/en-us/windows/security/ | 2026-10-25 | Official docs |
 | D15 | Data Protection Commission, Ghana | https://dpc.gov.gh/ | 2026-10-25 | Official regulator site (registration duty also recorded in the data track's research) |
+| D16 | GNA: Mobile money fraud, a threat to financial inclusion (Bank of Ghana regulates banking; National Communications Authority regulates mobile telecoms) | https://gna.org.gh/2023/11/mobile-money-fraud-a-threat-to-financial-inclusion/ | 2026-10-25 | News report (search summary); used only for which regulator covers what |
 | P1 | SydCrest Planning/12_TRACK_CATALOGUE.md | (internal) | 2026-10-25 | Internal platform survey |
 
 **Evidence depth.** Only 4 of the 19 counted adverts (A1 to A4) were read as full listings;
