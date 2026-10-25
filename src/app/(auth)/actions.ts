@@ -3,8 +3,14 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { siteOrigin } from "@/lib/site-url";
-import { parseAgeAndConsent, parseSignIn, parseSignUp, type FieldErrors } from "@/lib/validation";
+import { parseAgeAndConsent, parseSignIn, parseSignUp, safeNextPath, type FieldErrors } from "@/lib/validation";
 import { UNDER_AGE_MESSAGE } from "@/lib/legal";
+
+/** Where to go after auth: the form's `next` field, checked to be a local path. */
+function nextFrom(form: FormData | undefined) {
+  const next = form?.get("next");
+  return safeNextPath(typeof next === "string" ? next : null);
+}
 
 export type AuthState = {
   errors?: FieldErrors<"full_name" | "email" | "password" | "date_of_birth" | "terms">;
@@ -26,7 +32,7 @@ export async function signIn(_prev: AuthState, form: FormData): Promise<AuthStat
         : "That email and password don't match an account.";
     return { message, values: { email: data.email } };
   }
-  redirect("/dashboard");
+  redirect(nextFrom(form));
 }
 
 export async function signUp(_prev: AuthState, form: FormData): Promise<AuthState> {
@@ -52,7 +58,7 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
         terms_version: data.termsVersion,
         terms_accepted_at: new Date().toISOString(),
       },
-      emailRedirectTo: `${await siteOrigin()}/auth/callback?next=/dashboard`,
+      emailRedirectTo: `${await siteOrigin()}/auth/callback?next=${encodeURIComponent(nextFrom(form))}`,
     },
   });
   if (error) {
@@ -67,7 +73,7 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
     return { message, values };
   }
   // Email confirmation turned off: the user is signed in already.
-  if (result.session) redirect("/dashboard");
+  if (result.session) redirect(nextFrom(form));
   return { sentTo: data.email };
 }
 
@@ -102,14 +108,14 @@ export async function completeWelcome(_prev: AuthState, form: FormData): Promise
   // metadata. Refresh so the proxy and getClaims see it, or /dashboard
   // would bounce straight back here.
   await supabase.auth.refreshSession();
-  redirect("/dashboard");
+  redirect(nextFrom(form));
 }
 
-export async function signInWithGoogle() {
+export async function signInWithGoogle(form?: FormData) {
   const supabase = await createClient();
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
-    options: { redirectTo: `${await siteOrigin()}/auth/callback?next=/dashboard` },
+    options: { redirectTo: `${await siteOrigin()}/auth/callback?next=${encodeURIComponent(nextFrom(form))}` },
   });
   if (error || !data.url) redirect("/login?error=google");
   redirect(data.url);
