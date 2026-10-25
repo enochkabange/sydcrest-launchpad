@@ -5,6 +5,7 @@ import { signIn, type AuthState } from "../actions";
 import { Button } from "@/components/ui/button";
 import { TextField } from "@/components/ui/field";
 import { Alert } from "@/components/ui/alert";
+import { NextField } from "../next-field";
 
 export function LoginForm() {
   const [state, action, pending] = useActionState<AuthState, FormData>(signIn, {});
@@ -12,6 +13,7 @@ export function LoginForm() {
   return (
     <form action={action} className="flex flex-col gap-4" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
+      <NextField />
       <TextField
         id="email"
         label="Email"
