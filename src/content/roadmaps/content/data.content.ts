@@ -749,6 +749,594 @@ Always pilot the questionnaire with a few people similar to your respondents. In
       },
     },
 
+    "mobile-surveys": {
+      explanation_md: `## Why this matters
+
+Paper questionnaires are slow to enter and easy to get wrong. Most NGOs and research teams now collect field data on phones with free tools such as KoboToolbox and ODK, and several M&E and research adverts name them directly. If you can build a working form, test it and download clean results, you have a practical skill that projects across northern Ghana need.
+
+## The tools
+
+**ODK** (Open Data Kit) is a free, open source set of tools for phone data collection. **KoboToolbox** is built on ODK technology and adds a friendly website where you can build forms, store submissions and download data. KoboToolbox offers free accounts, which makes it a good place to start. Forms work in the KoboCollect or ODK Collect Android apps and also in a web browser.
+
+Both tools collect data **offline**. Enumerators fill forms in a village with no signal, and the phone sends the submissions when it next connects.
+
+## Two ways to build a form
+
+* **The Formbuilder** in KoboToolbox lets you add questions by tapping and typing. It is the easiest way to begin.
+* **XLSForm** is a spreadsheet layout that both KoboToolbox and ODK understand. You write each question as a row in a sheet called survey, and list answer options in a sheet called choices. Larger projects use XLSForm because it is easy to review, copy and translate.
+
+A tiny XLSForm survey sheet looks like this:
+
+\`\`\`
+type              name        label
+integer           hh_size     How many people live here?
+select_one yn     has_water   Do you have water at home?
+\`\`\`
+
+The choices sheet then lists the yn options: yes and no.
+
+## Question types
+
+Common types include text, integer, decimal, date, select_one (pick one answer), select_multiple (pick several) and geopoint (record a GPS location). Choosing the right type matters: an integer question will not accept "five", which stops one kind of error.
+
+## Checks and skip logic
+
+Two features make phone forms better than paper:
+
+* **Constraints** reject impossible answers. A constraint like \`. >= 1 and . <= 30\` on household size refuses 0 or 300.
+* **Relevance**, also called skip logic, shows a question only when it applies. A question about a child's school attendance can appear only if the household has children, using a rule such as \`\${has_children} = 'yes'\`.
+
+Required questions make sure important answers are never skipped.
+
+## Collecting and downloading
+
+After deploying a form, test it yourself on a phone. Submit a few fake records, then check them in the data table. When real collection starts, download the results as Excel or CSV and open them in Google Sheets. Delete your test submissions before analysis, or they will be counted.
+
+## A worked example
+
+Wumpini builds an invented water access form for five communities near Savelugu: community (select_one), household size (integer with a constraint), main water source (select_one), minutes to walk there (integer), and a GPS point. She tests it with her sister, finds that "minutes" confused people, and changes the label to "How many minutes does it take to walk to the water source and back?" The final data downloads straight into a tidy table.`,
+      practice_task_md: `**Goal:** build, test and download a small phone survey.
+
+1. Create a free account on KoboToolbox (kobotoolbox.org) using your phone or laptop.
+2. Using the Formbuilder, build the questionnaire you wrote in the survey design lesson, or a 6 question water access survey.
+3. Include at least one select_one question, one integer question with a constraint, one required question and one question with skip logic.
+4. Deploy the form and open it in the KoboCollect app or the web form link. Submit five test responses, including one that tries to break your constraint.
+5. Download the data as Excel or CSV and open it in Google Sheets.
+
+**Done looks like:** a deployed form, a downloaded spreadsheet of test data, and a screenshot of your constraint rejecting a bad answer.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How do KoboToolbox and ODK handle villages with no network?",
+            options: [
+              "They cannot be used without network",
+              "Forms are filled offline and submissions are sent when the phone next connects",
+              "Answers are sent by SMS only",
+              "Enumerators must write on paper first",
+            ],
+            answer_index: 1,
+            explanation: "Both tools collect data offline and upload later.",
+          },
+          {
+            prompt: "In XLSForm, where do you list the answer options for a select_one question?",
+            options: ["The settings sheet", "The choices sheet", "A separate Word document", "The label column only"],
+            answer_index: 1,
+            explanation: "Questions go in the survey sheet and answer options in the choices sheet.",
+          },
+          {
+            prompt: "What does a constraint do?",
+            options: [
+              "Shows a question only when it applies",
+              "Rejects impossible answers, such as a household size of 300",
+              "Translates the form",
+              "Records a GPS point",
+            ],
+            answer_index: 1,
+            explanation: "Constraints stop answers outside the allowed range.",
+          },
+          {
+            prompt: "What should you do with your test submissions before analysis?",
+            options: [
+              "Keep them to make the sample bigger",
+              "Delete them so they are not counted",
+              "Send them to the donor",
+              "Copy them into the choices sheet",
+            ],
+            answer_index: 1,
+            explanation: "Test records would distort the results if left in.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "data-cleaning": {
+      explanation_md: `## Why this matters
+
+Real data is messy. Field forms have duplicates, registers have spelling differences, and exported files mix numbers with text. Several adverts list data cleaning and validation as core duties, and analysts often say cleaning takes more time than analysis itself. If your data is wrong, every chart and report built on it is wrong too.
+
+## Work on a copy
+
+Never clean the original file. Make a copy, name it clearly (for example survey_clean_v1) and keep the raw download untouched. If you make a mistake, you can start again.
+
+## Common problems and fixes
+
+**Duplicates.** The same household submitted twice, often because a phone uploaded twice. Look for repeated IDs or identical rows. In Google Sheets, Data cleanup then Remove duplicates helps, but check what it removes first.
+
+**Inconsistent spellings.** "Tamale", "tamale", "Tamale Metro" and "TML" may all mean the same place. Use TRIM to remove extra spaces and PROPER or LOWER to fix capitals, then agree one standard name and replace the others with Find and replace. A filter on the column shows every distinct spelling at once.
+
+**Missing values.** A blank can mean "not asked", "refused" or "forgot to enter". Find out which. Do not fill blanks with zero or a guess. Record how many are missing and decide with your supervisor whether to follow up, leave them blank or exclude that record from a particular calculation.
+
+**Impossible or unlikely values.** A child aged 45, a farm of 9,000 acres, a date in the future. Sort each number column from smallest to largest to spot extremes quickly. Some extremes are real, so check with the field team before changing anything.
+
+**Wrong data types.** Numbers stored as text will not add up. Amounts written as "200 cedis" need the text removed. Dates in mixed formats need converting to one format.
+
+## Keep a cleaning log
+
+For every change, write down what you changed, why and how many rows were affected. A simple log might read:
+
+* Removed 3 duplicate submissions with the same household ID.
+* Standardised 14 spellings of Tamale to "Tamale".
+* Flagged 2 ages over 100 for the field supervisor to check.
+
+The log lets your supervisor trust your work and lets someone else repeat it. Many M&E teams require one.
+
+## A worked example
+
+Amina downloads an invented school attendance survey from twelve schools around Bolgatanga. She makes a copy, finds two schools entered twice, fixes "Bolga" and "Bolgatanga" to one spelling, and flags a record showing 400 pupils in a class of 40. She calls the enumerator, who confirms a typing slip, and corrects it to 40. Her log has eight lines. Her manager can now report attendance with confidence.
+
+## Cleaning in other tools
+
+The same ideas apply in SQL and in Python's pandas library, which you will meet later. Learn them in a spreadsheet first, where you can see every change.`,
+      practice_task_md: `**Goal:** clean a messy dataset and document every change.
+
+1. In Google Sheets, create an invented survey table with 20 rows and the columns household_id, community, hh_size, monthly_spend_ghs.
+2. Deliberately add problems: two duplicate rows, four different spellings of one community, one hh_size of 250, two blanks and one amount written as "150 cedis".
+3. Make a copy of the sheet named clean_v1 and keep the original untouched.
+4. Fix or flag each problem using TRIM, PROPER, sorting, filters and Remove duplicates.
+5. Write a cleaning log on a separate tab with one line per change.
+
+**Done looks like:** the raw sheet, the cleaned sheet and a clear cleaning log that a mentor could follow step by step.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should you do before you start cleaning?",
+            options: [
+              "Delete the raw download",
+              "Make a copy and keep the original untouched",
+              "Fill all blanks with zero",
+              "Send the file to the donor",
+            ],
+            answer_index: 1,
+            explanation: "Working on a copy lets you start again if you make a mistake.",
+          },
+          {
+            prompt: "A record shows 400 pupils in a class of 40. What is the best response?",
+            options: [
+              "Delete the whole survey",
+              "Leave it, because all data is correct",
+              "Flag it and check with the field team before changing it",
+              "Replace it with the average",
+            ],
+            answer_index: 2,
+            explanation: "Some extremes are real, so check with the field team before changing anything.",
+          },
+          {
+            prompt: "Which functions help fix extra spaces and inconsistent capitals?",
+            options: ["SUM and AVERAGE", "TRIM and PROPER", "COUNTIF and SUMIF", "XLOOKUP and VLOOKUP"],
+            answer_index: 1,
+            explanation: "TRIM removes extra spaces and PROPER fixes capitals.",
+          },
+          {
+            prompt: "Why keep a cleaning log?",
+            options: [
+              "So others can trust and repeat your work",
+              "To make the file bigger",
+              "Because spreadsheets require it to save",
+              "To hide changes from your supervisor",
+            ],
+            answer_index: 0,
+            explanation: "A log records what changed, why and how many rows were affected.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "data-privacy": {
+      explanation_md: `## Why this matters
+
+Field surveys collect names, phone numbers, locations, health details and income. That information belongs to the people who shared it. If it leaks, they can be embarrassed, cheated or put at risk. Employers, especially NGOs and government programmes, expect data staff to handle personal data carefully and to follow their confidentiality rules. Handling it well also protects the trust that lets field teams keep working in communities.
+
+## What counts as personal data
+
+Personal data is any information that identifies a living person, either directly or when combined with other details. Names, phone numbers, Ghana Card numbers and photos identify people directly. A combination such as "female, aged 70, widowed, living in a small community near Nalerigu" can identify someone even without a name. Some data is especially sensitive, such as health conditions, religion or ethnicity, and needs extra care.
+
+## Ghana's law
+
+Ghana's Data Protection Act, 2012 (Act 843) sets rules for anyone who collects and uses personal data, and the Data Protection Commission oversees it. In broad terms the Act expects that you collect data for a clear, lawful purpose, collect only what you need, keep it accurate, keep it secure, and respect people's rights over their own information. Organisations that process personal data are expected to register with the Commission. You do not need to be a lawyer, but you should know the law exists, follow your organisation's policy, and ask when unsure. The Commission's website at dpc.gov.gh has more detail.
+
+## Consent
+
+Before an interview, respondents should be told who you are, why the data is being collected, how it will be used and that they can refuse or stop at any time. Then they choose. In KoboToolbox or ODK you can add a consent question at the start and end the form if the answer is no. Explain consent in the respondent's language, in words they understand.
+
+## Practical habits
+
+* **Collect less.** If you do not need a phone number for the analysis, do not ask for it.
+* **Separate identities from answers.** Store names and contact details in one locked file, and answers in another linked only by an ID. This is called pseudonymisation.
+* **Anonymise before sharing.** Remove names, phone numbers and exact GPS points from files you share for analysis or reports.
+* **Watch small groups.** If a table shows only one person in a category, such as one teacher with a disability in a village, they can be identified. Combine small categories or do not show them.
+* **Secure devices and accounts.** Use strong passwords and screen locks. Do not send respondent files over public WhatsApp groups or leave them on shared computers.
+
+## A worked example
+
+Sumaila receives an invented health survey from Walewale with names, phone numbers and illness details. Before sharing it with an analyst, he moves names and numbers into a protected file, keeps only household IDs in the analysis file, and rounds GPS points to the community level. The analyst gets what they need, and the respondents stay protected.`,
+      practice_task_md: `**Goal:** make a survey file safe to share.
+
+1. Take the cleaned dataset from the data cleaning lesson, or create an invented one with columns name, phone, community, age, health_condition and monthly_spend_ghs.
+2. Create a separate "identity" tab with household_id, name and phone. Remove name and phone from the analysis tab, keeping household_id.
+3. Look for any combination of details that could identify a single person, and group or remove it.
+4. Write a three sentence consent statement in plain English that an enumerator could read aloud before an interview.
+
+**Done looks like:** a pseudonymised analysis tab, a separate identity tab, and a consent statement you can show a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these can identify someone even without a name?",
+            options: [
+              "The total number of surveys collected",
+              "A combination like female, aged 70, widowed, in a small community",
+              "The name of the survey tool",
+              "The date the form was designed",
+            ],
+            answer_index: 1,
+            explanation: "Combined details can identify a person in a small community.",
+          },
+          {
+            prompt: "Which law sets rules for personal data in Ghana?",
+            options: [
+              "The Data Protection Act, 2012 (Act 843)",
+              "The Electronic Transactions Act only",
+              "No law covers personal data in Ghana",
+              "The Kobo Terms of Use",
+            ],
+            answer_index: 0,
+            explanation: "The lesson names the Data Protection Act, 2012 (Act 843), overseen by the Data Protection Commission.",
+          },
+          {
+            prompt: "What is pseudonymisation?",
+            options: [
+              "Publishing names in reports",
+              "Storing names separately and linking answers only by an ID",
+              "Deleting all data after collection",
+              "Translating forms into local languages",
+            ],
+            answer_index: 1,
+            explanation: "Identities and answers are kept apart, linked only by an ID.",
+          },
+          {
+            prompt: "What should respondents be told before an interview?",
+            options: [
+              "Nothing, to save time",
+              "Only the enumerator's name",
+              "Who you are, why the data is collected, how it is used and that they can refuse or stop",
+              "That they must answer every question",
+            ],
+            answer_index: 2,
+            explanation: "Informed consent means people know the purpose and can choose to refuse.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "monitoring-evaluation": {
+      explanation_md: `## Why this matters
+
+Many data jobs in northern Ghana sit inside monitoring and evaluation teams. NGOs, development programmes and government projects working on farming, water, health, education and livelihoods all need to show what they are doing and whether it is working. M&E officers and assistants collect that evidence, check it and report it to managers and donors. If you understand the ideas in this section, M&E adverts will start to read like a description of skills you already have.
+
+## Monitoring and evaluation are different
+
+**Monitoring** is regular tracking while a project runs. Are activities happening on time? How many farmers were trained this month? How many boreholes were repaired? Monitoring answers "are we doing what we said we would do?"
+
+**Evaluation** is a deeper look at specific points, often at the middle or end of a project. Did the training actually improve harvests? Did repaired boreholes reduce time spent fetching water? Evaluation answers "is it making a difference, and why?"
+
+Monitoring happens all the time and is often done by junior staff. Evaluation happens less often and may involve outside specialists, but it relies on good monitoring data.
+
+## The results chain
+
+Most projects describe their logic as a chain:
+
+* **Inputs:** money, staff, seeds, materials.
+* **Activities:** what the project does, such as training sessions.
+* **Outputs:** the direct products, such as 200 farmers trained (an invented example).
+* **Outcomes:** the changes that follow, such as farmers using improved planting methods.
+* **Impact:** the long term goal, such as better food security.
+
+Outputs are easy to count. Outcomes and impact are harder to measure and matter more. A common mistake is to report only outputs and call them results.
+
+## MEAL and accountability
+
+You will often see MEAL: monitoring, evaluation, accountability and learning. Accountability means listening to the people the project serves, for example through feedback lines or community meetings. Learning means using evidence to improve the project rather than just filing reports.
+
+## Where data skills fit
+
+Everything you learned earlier feeds M&E. Survey design and mobile forms collect the data. Cleaning and privacy keep it trustworthy and safe. Spreadsheets and pivot tables summarise it. The two topics in this section add the M&E specific layer: indicators and logframes, then data quality checks and progress reports.
+
+## A worked example
+
+An invented project near Wa trains women's groups in shea butter processing. Monitoring tracks sessions held and women attending each month. A midline survey asks about income from shea. Hawa, the M&E assistant, enters attendance, cleans the survey data and prepares a monthly table for the project officer. When attendance drops in one community, the team learns that sessions clash with market day and moves them. That is monitoring leading to learning.`,
+      practice_task_md: `**Goal:** describe a project's results chain.
+
+1. Choose a real kind of project common in your area, such as school feeding, a borehole repair programme or a farmer training scheme. Use invented details.
+2. Write the five links of the results chain: inputs, activities, outputs, outcomes and impact, with one or two examples for each.
+3. Mark which links you would track through monitoring and which would need an evaluation.
+4. Write one sentence on how the project could hear feedback from the people it serves.
+
+**Done looks like:** a one page results chain with monitoring and evaluation marked, ready to turn into indicators in the next lesson.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which question does monitoring mainly answer?",
+            options: [
+              "Are we doing what we said we would do?",
+              "What is the country's population?",
+              "Which software is cheapest?",
+              "Who should the donor be?",
+            ],
+            answer_index: 0,
+            explanation: "Monitoring is regular tracking of activities while a project runs.",
+          },
+          {
+            prompt: "In a results chain, \"200 farmers trained\" is an example of what?",
+            options: ["An input", "An output", "An impact", "An assumption"],
+            answer_index: 1,
+            explanation: "Outputs are the direct products of activities.",
+          },
+          {
+            prompt: "What does the A in MEAL stand for?",
+            options: ["Analysis", "Accountability", "Attendance", "Audit"],
+            answer_index: 1,
+            explanation: "MEAL is monitoring, evaluation, accountability and learning.",
+          },
+          {
+            prompt: "What common mistake does the lesson warn about?",
+            options: [
+              "Reporting only outputs and calling them results",
+              "Using spreadsheets for M&E",
+              "Listening to communities",
+              "Running a midline survey",
+            ],
+            answer_index: 0,
+            explanation: "Outputs are easy to count, but outcomes and impact matter more.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "indicators-frameworks": {
+      explanation_md: `## Why this matters
+
+Indicators, baselines, targets and logframes appear in almost every M&E advert. They are the language projects use to agree, with donors and communities, what success looks like. If you can read and help build a logframe and calculate indicators from data, you can contribute to an M&E team from your first week.
+
+## What an indicator is
+
+An indicator is a specific measure that shows whether a result is being achieved. "Better nutrition" is a goal, not an indicator. "Percentage of children aged 6 to 23 months who ate from at least four food groups yesterday" is an indicator: you can measure it.
+
+Good indicators are often described as SMART:
+
+* **Specific:** clear about who and what.
+* **Measurable:** you can count or calculate it.
+* **Achievable:** realistic for the project.
+* **Relevant:** linked to the result it tracks.
+* **Time bound:** with a clear period.
+
+Each indicator needs a definition: exactly how to calculate it. For a percentage, write down the numerator (who counts as yes) and the denominator (who is included at all). Two officers using different denominators will report different numbers from the same data.
+
+## Baselines and targets
+
+A **baseline** is the value before the project starts. A **target** is the value the project aims to reach by a date. Progress is measured from baseline towards target. Without a baseline, you cannot show change.
+
+In an invented example, a project in the Upper East Region finds at baseline that 30 percent of households treat their drinking water. Its target is 60 percent in two years. A year later a survey finds 45 percent. The project has covered half the distance from baseline to target.
+
+## Disaggregation
+
+Donors usually want indicators broken down by sex, age group, location and sometimes disability. This is called disaggregation. It shows whether women, young people or remote communities are being reached. Plan for it when designing your survey, because you cannot disaggregate by something you did not collect.
+
+## The logframe
+
+A logical framework, or logframe, is a table that sets out the project's results and how they will be measured. A common layout has four columns:
+
+| Level | Indicators | Means of verification | Assumptions |
+|---|---|---|---|
+
+The rows follow the results chain: goal, outcomes, outputs and sometimes activities. **Means of verification** says where the data comes from, such as attendance registers or a household survey. **Assumptions** are conditions outside the project's control, such as normal rainfall.
+
+## Theory of change
+
+Many organisations also use a theory of change: a diagram or short story explaining how and why activities should lead to the desired change. The logframe is the measurement plan that sits underneath it.
+
+## Calculating an indicator
+
+Abdul-Rahman has invented survey data from 150 households. 63 report treating water. The indicator is 63 divided by 150, which is 42 percent. He uses a pivot table to split it by community and sex of household head, and notes the numerator and denominator in his report so others can check it.`,
+      practice_task_md: `**Goal:** write indicators and a mini logframe.
+
+1. Take the results chain you wrote in the previous lesson.
+2. Write one SMART indicator for one outcome and two outputs. For each, write the numerator, the denominator and how it would be disaggregated.
+3. Invent a baseline and a target for each indicator.
+4. Build a small logframe table in Google Sheets or Docs with the columns: level, indicator, baseline, target, means of verification, assumptions.
+
+**Done looks like:** a mini logframe with three clearly defined indicators that a mentor could check for clarity.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is an indicator rather than a goal?",
+            options: [
+              "Better nutrition",
+              "Stronger communities",
+              "Percentage of children aged 6 to 23 months who ate from at least four food groups yesterday",
+              "Improved lives",
+            ],
+            answer_index: 2,
+            explanation: "An indicator is specific and measurable.",
+          },
+          {
+            prompt: "A project's baseline is 30 percent and its target is 60 percent. A survey finds 45 percent. How far has it come?",
+            options: [
+              "It has not moved",
+              "Half the distance from baseline to target",
+              "It has passed the target",
+              "It has gone backwards",
+            ],
+            answer_index: 1,
+            explanation: "45 is halfway between 30 and 60.",
+          },
+          {
+            prompt: "What does the means of verification column in a logframe describe?",
+            options: [
+              "Where the data for the indicator comes from",
+              "The project budget",
+              "The donor's name",
+              "Conditions outside the project's control",
+            ],
+            answer_index: 0,
+            explanation: "Means of verification names the data source, such as registers or surveys.",
+          },
+          {
+            prompt: "Why must you plan disaggregation when designing a survey?",
+            options: [
+              "Disaggregation makes the survey shorter",
+              "You cannot break results down by something you did not collect",
+              "Donors never ask for it",
+              "It removes the need for a baseline",
+            ],
+            answer_index: 1,
+            explanation: "If sex or age was not collected, you cannot split results by it later.",
+          },
+          {
+            prompt: "Why write down the numerator and denominator of a percentage indicator?",
+            options: [
+              "So different people calculate it the same way",
+              "To make the report longer",
+              "Because spreadsheets require it",
+              "To hide the method",
+            ],
+            answer_index: 0,
+            explanation: "Different denominators give different numbers from the same data.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+
+    "data-quality-reporting": {
+      explanation_md: `## Why this matters
+
+Donors and managers make decisions, and sometimes release funding, based on the numbers M&E teams report. If those numbers are wrong, the project loses credibility. That is why adverts ask for data quality assurance and donor reporting. As a junior, you may be the person who checks the numbers and drafts the monthly table.
+
+## What good quality data looks like
+
+M&E teams often check data against a few qualities:
+
+* **Valid:** it measures what the indicator says it measures.
+* **Reliable:** it is collected the same way every time, by every officer.
+* **Precise:** detailed enough for the decision, such as broken down by community.
+* **Timely:** available when it is needed, not three months late.
+* **Complete:** no missing communities, months or records.
+* **Integrity:** protected from mistakes and from being changed to look better.
+
+## Data quality checks
+
+A common check is to **recount from the source**. Take a reported number, such as 312 farmers trained in March (an invented figure), go back to the attendance sheets and count again. If the recount gives 298, find out why: double counting, a missing sheet, or a typing slip.
+
+Other routine checks:
+
+* Compare totals across months for sudden jumps or drops.
+* Check that subgroups add up to the total, such as men plus women equals all participants.
+* Look for the same person appearing twice under slightly different names.
+* Confirm every community has reported.
+
+Write down what you checked and what you found. A short data quality note builds trust.
+
+## Routine reporting systems
+
+Some sectors report through shared systems. Health programmes often use DHIS2, a free platform where facilities enter monthly figures. Education and agriculture projects may use spreadsheets or their own databases. Whatever the system, the same checks apply.
+
+## Writing a progress report
+
+A monthly or quarterly progress report usually includes a table like this, built from your indicators:
+
+| Indicator | Baseline | Target | This period | Status |
+|---|---|---|---|---|
+
+Under the table, add short notes:
+
+* **What went well**, with the numbers.
+* **What fell behind** and the likely reason.
+* **What the team will do next.**
+* **Data issues**, such as a community that did not report.
+
+Lead with the most important finding. Keep sentences short. Use charts only when they make a point clearer than the table.
+
+## A worked example
+
+Mariama prepares the invented quarterly report for a girls' education project near Yendi. Her recount finds one school's enrolment entered twice, so she corrects the total and notes it. Her table shows attendance on track, but the indicator for girls moving to junior high is behind target. Her note explains that two schools lost teachers mid term and that the team plans to work with the district education office. The manager forwards the report to the donor with confidence.`,
+      practice_task_md: `**Goal:** check a reported figure and draft a progress table.
+
+1. Create an invented attendance register in Google Sheets for a training project: 4 sessions, 25 to 35 participants each, with name, sex and community. Include one person entered twice.
+2. Write a "reported" total that is slightly wrong. Recount from the register using COUNTA or a pivot table and find the difference.
+3. Check that men plus women equals the total.
+4. Build a progress table with indicator, baseline, target, this period and status for two indicators.
+5. Write four short notes: what went well, what fell behind, next steps, data issues.
+
+**Done looks like:** a register, a recount that explains the difference, and a one page progress summary you can show a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a recount from the source?",
+            options: [
+              "Asking the donor to count again",
+              "Going back to original records, such as attendance sheets, to check a reported number",
+              "Copying last month's figures",
+              "Rounding all numbers",
+            ],
+            answer_index: 1,
+            explanation: "A recount checks a reported figure against the original records.",
+          },
+          {
+            prompt: "Which data quality means data is available when it is needed?",
+            options: ["Valid", "Timely", "Precise", "Integrity"],
+            answer_index: 1,
+            explanation: "Timely data arrives in time for the decision.",
+          },
+          {
+            prompt: "Which routine check does the lesson suggest?",
+            options: [
+              "Check that subgroups, such as men plus women, add up to the total",
+              "Delete any month with low numbers",
+              "Only check data from your own community",
+              "Change figures so they reach the target",
+            ],
+            answer_index: 0,
+            explanation: "Subgroups that do not add up point to an error.",
+          },
+          {
+            prompt: "What should a progress report lead with?",
+            options: [
+              "A long history of the organisation",
+              "The most important finding",
+              "Every chart you can make",
+              "The list of staff",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to lead with the most important finding.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
     // NEXT
   },
 };
