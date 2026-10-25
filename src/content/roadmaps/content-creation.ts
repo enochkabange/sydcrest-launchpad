@@ -8,11 +8,11 @@ import type { ResourceDraft, RoadmapDraft } from "./types";
 
 const r = (label: string, url: string, kind: ResourceDraft["kind"] = "article"): ResourceDraft => ({ label, url, kind });
 
-/** Track specific links, each checked to resolve on 2026-10-25. */
+/** Track specific links, each checked to resolve on 2026-10-25 (reviewer updated redirected URLs to their final pages). */
 const L = {
-  ytCreators: r("YouTube for Creators: start and manage a channel", "https://www.youtube.com/creators/how-things-work/"),
-  ytStrategy: r("YouTube for Creators: content strategy", "https://www.youtube.com/creators/how-things-work/content-creation-strategy/"),
-  ytMonetisation: r("YouTube for Creators: earning on YouTube", "https://www.youtube.com/creators/how-things-work/video-monetization/"),
+  ytCreators: r("YouTube for Creators: start and manage a channel", "https://www.youtube.com/creators/get-started/"),
+  ytStrategy: r("YouTube for Creators: optimise your content", "https://www.youtube.com/creators/grow/optimize-your-content/"),
+  ytMonetisation: r("YouTube for Creators: earning on YouTube", "https://www.youtube.com/creators/earn/overview/"),
   ytChannel: r("YouTube Help: create a channel", "https://support.google.com/youtube/answer/1646861", "practice"),
   ytUpload: r("YouTube Help: upload videos", "https://support.google.com/youtube/answer/57407", "practice"),
   ytThumbTips: r("YouTube Help: thumbnail and title tips", "https://support.google.com/youtube/answer/12340300"),
@@ -25,16 +25,17 @@ const L = {
   ytAudioLib: r("YouTube Help: free music in the Audio Library", "https://support.google.com/youtube/answer/3376882", "practice"),
   ytBranded: r("YouTube Help: branded content disclosure", "https://support.google.com/youtube/answer/154235"),
   ytYpp: r("YouTube Help: Partner Program eligibility", "https://support.google.com/youtube/answer/72851"),
+  ytYppCountries: r("YouTube Help: Partner Program availability by country", "https://support.google.com/youtube/answer/7101720"),
   ytQuality: r("YouTube Help: change video quality on Android", "https://support.google.com/youtube/answer/91449"),
   ytEncoding: r("YouTube Help: recommended upload settings", "https://support.google.com/youtube/answer/1722171"),
-  ytGuidelines: r("YouTube Community Guidelines", "https://www.youtube.com/howyoutubeworks/policies/community-guidelines/"),
+  ytGuidelines: r("YouTube Help: Community Guidelines", "https://support.google.com/youtube/answer/9288567"),
   tiktokAcademy: r("TikTok Creator Academy", "https://www.tiktok.com/creator-academy/", "video"),
   metaLearn: r("Meta Blueprint free courses", "https://www.facebook.com/business/learn", "video"),
   khanStory: r("Khan Academy: Pixar in a Box storytelling", "https://www.khanacademy.org/computing/pixar/storytelling", "video"),
-  ccLicenses: r("Creative Commons: about CC licenses", "https://creativecommons.org/share-your-work/cclicenses/"),
+  ccLicenses: r("Creative Commons: about CC licenses", "https://creativecommons.org/cc-licenses/"),
   freesound: r("Freesound: free sound effects", "https://freesound.org/", "practice"),
   snapseed: r("Snapseed Help", "https://support.google.com/snapseed/", "practice"),
-  dataProtection: r("Ghana Data Protection Commission", "https://dataprotection.org.gh/"),
+  dataProtection: r("Ghana Data Protection Commission", "https://dpc.gov.gh/"),
 };
 
 export const contentCreation: RoadmapDraft = {
@@ -135,7 +136,7 @@ export const contentCreation: RoadmapDraft = {
         "Place your subject with intention, choose the right shot size and keep the phone steady. These habits make phone footage look planned instead of accidental.",
       parent: "shooting",
       optional: false,
-      resources: [L.khanStory],
+      resources: [L.ytCreators],
     },
     {
       slug: "phone-photography",
@@ -279,7 +280,7 @@ export const contentCreation: RoadmapDraft = {
         "Compare client work, jobs, platform payouts and selling your own services, and what each really takes. Most beginners earn first from local clients long before any platform pays them.",
       parent: "working-and-earning",
       optional: false,
-      resources: [L.ytYpp, L.ytMonetisation],
+      resources: [L.ytYpp, L.ytYppCountries, L.ytMonetisation],
     },
     {
       slug: "portfolio-and-first-jobs",

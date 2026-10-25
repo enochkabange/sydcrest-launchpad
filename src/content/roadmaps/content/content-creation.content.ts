@@ -358,7 +358,7 @@ Issahaku is asked to make a video for a borehole project run by an NGO near Nale
       },
     },
     "hooks-and-story": {
-      explanation_md: `On TikTok, Reels or Shorts, people decide in the first second or two whether to keep watching. On YouTube the first fifteen seconds matter just as much. Ghanaian adverts for short form editors mention hooks and keeping viewers watching, because a video nobody finishes does nothing for the brand paying for it.
+      explanation_md: `On TikTok, Reels or Shorts, people decide in the first second or two whether to keep watching. On YouTube the opening seconds matter too. Adverts for short form editors, including a remote role open to applicants in Ghana, mention hooks and keeping viewers watching, because a video nobody finishes does nothing for the brand paying for it.
 
 ## The hook
 
@@ -463,7 +463,7 @@ Sumaila makes a video for a barber in Wa. Version one starts with the shop sign 
       },
     },
     "scripts-and-shot-lists": {
-      explanation_md: `Shoots in Ghana often happen in tight windows: a shop owner who can give you thirty minutes before customers arrive, a programme that happens once, light that disappears at six. If you arrive without a plan, you forget shots and have to come back, spending more transport money, battery and goodwill. Adverts for content roles ask for content planning, scripts and storyboards because planning is what makes a creator reliable.
+      explanation_md: `Shoots in Ghana often happen in tight windows: a shop owner who can give you thirty minutes before customers arrive, a programme that happens once, light that disappears at six. If you arrive without a plan, you forget shots and have to come back, spending more transport money, battery and goodwill. Some content adverts ask for planning and scripted video, and skills frameworks for content creators list scriptwriting and storyboarding, because planning is what makes a creator reliable.
 
 ## The script
 
@@ -561,7 +561,7 @@ Her shot list adds b roll of shelves and the street outside. She finishes in twe
       },
     },
     "captions-and-titles": {
-      explanation_md: `A great video with a weak caption or title can still be ignored. The words around your content tell people what it is, why they should care and what to do next. Ghanaian content and social media adverts regularly list captions, copywriting and thumbnails alongside video skills, because the same person usually writes them.
+      explanation_md: `A great video with a weak caption or title can still be ignored. The words around your content tell people what it is, why they should care and what to do next. Several of the content adverts we read list captions, copywriting or thumbnails alongside video skills, because the same person often writes them.
 
 ## Captions for social posts
 
@@ -662,7 +662,7 @@ Abdul-Rahman posts a video for a tailor in Tamale with the caption "Nice work!!"
       },
     },
     "local-languages": {
-      explanation_md: `Many people in Northern Ghana think, joke and decide in Dagbani, Gonja, Dagaare, Frafra, Hausa, Mampruli or another home language, not in English. A video in the language your audience loves can feel like a friend talking, not an advert. NGO and communications adverts in Ghana often ask for fluency in English plus one or more Ghanaian languages, because messages land better when people hear them in their own words.
+      explanation_md: `Many people in Northern Ghana think, joke and decide in Dagbani, Gonja, Dagaare, Frafra, Hausa, Mampruli or another home language, not in English. A video in the language your audience loves can feel like a friend talking, not an advert. Some NGO communications adverts in Ghana ask for English plus Ghanaian languages, because messages land better when people hear them in their own words.
 
 ## When to use a local language
 
@@ -750,7 +750,7 @@ Hawa makes a short video about handwashing for a clinic in Tolon. Her first vers
       },
     },
     shooting: {
-      explanation_md: `When a business owner in Tamale scrolls through your portfolio, they judge it in seconds. Is the picture steady? Can they see faces clearly? Can they hear what people say? Ghanaian adverts for videographers and content creators mention camera operation, lighting, sound and composition again and again, because these basics separate content a brand can use from content it cannot.
+      explanation_md: `When a business owner in Tamale scrolls through your portfolio, they judge it in seconds. Is the picture steady? Can they see faces clearly? Can they hear what people say? Many Ghanaian adverts for videographers and content creators ask for shooting and camera skills, and some name lighting, sound and composition directly, because these basics separate content a brand can use from content it cannot.
 
 ## Four things that make footage look professional
 
@@ -836,7 +836,7 @@ Fuseini films a short interview with a shea butter producer in Savelugu. In his 
       },
     },
     "framing-and-composition": {
-      explanation_md: `Composition is how you arrange what is inside the frame. Good composition makes a viewer look where you want them to look, and makes phone footage feel intentional. Ghanaian adverts for content creators ask for composition and framing skills, and remote editors are often judged on whether they can pick the best framed shots from a pile of footage.
+      explanation_md: `Composition is how you arrange what is inside the frame. Good composition makes a viewer look where you want them to look, and makes phone footage feel intentional. Content adverts ask for composition, and public skills frameworks rate composing and framing shots as a core task for camera work. Editors also need a good eye to pick the best framed shots from a pile of footage.
 
 ## Shot sizes
 
@@ -1037,7 +1037,7 @@ Amina helps a bead seller in Tamale. The seller's old photos show necklaces pile
       },
     },
     "light-on-a-budget": {
-      explanation_md: `Phone cameras have small sensors. In good light they look excellent; in poor light the picture becomes grainy, dull and soft. Lighting appears in Ghanaian videographer adverts because it is one of the clearest signs of quality. The good news is that light from the sun is free, and you can control it with simple things.
+      explanation_md: `Phone cameras have small sensors. In good light they look excellent; in poor light the picture becomes grainy, dull and soft. Lighting appears in some Ghanaian content adverts because it is one of the clearest signs of quality. The good news is that light from the sun is free, and you can control it with simple things.
 
 ## Where is the light coming from?
 
@@ -1135,7 +1135,7 @@ Sumaila records a cooking video for a chop bar in Damongo inside a dark kitchen.
       },
     },
     "sound-on-a-budget": {
-      explanation_md: `Viewers forgive a slightly soft picture much sooner than bad sound. If they cannot hear the speaker, they scroll away. Ghanaian videographer adverts list sound alongside lighting, and remote editing roles mention sound design, because clear audio is part of what clients pay for.
+      explanation_md: `Viewers forgive a slightly soft picture much sooner than bad sound. If they cannot hear the speaker, they scroll away. Some videographer adverts list sound alongside lighting, and remote editing roles mention sound design, because clear audio is part of what clients pay for.
 
 ## Why phone audio often sounds bad
 
@@ -1230,7 +1230,7 @@ Issahaku interviews a teacher in Bolgatanga beside a busy road. Playing it back,
       },
     },
     editing: {
-      explanation_md: `Editing is where raw clips become a story. It is also one of the most requested skills in the adverts we studied: Ghanaian companies ask for content creators who can edit reels and short videos, and remote agencies hire editors from Ghana to cut TikTok, Reels and Shorts for clients abroad. Many of these adverts name free phone editors such as CapCut or InShot, alongside desktop tools like Premiere Pro.
+      explanation_md: `Editing is where raw clips become a story. It is also one of the most requested skills in the adverts we studied: Ghanaian companies ask for content creators who can edit reels and short videos, and some remote agencies hire editors in Ghana to cut TikTok, Reels and Shorts for clients abroad. Some of these adverts name free phone editors such as CapCut or InShot, alongside desktop tools like Premiere Pro.
 
 ## You can edit professionally on a phone
 
@@ -1516,7 +1516,7 @@ Abdul-Rahman edits a promo for a phone repair shop in Tamale. His first version 
       },
     },
     "export-and-organise": {
-      explanation_md: `A beautiful edit is useless if it arrives late, in the wrong shape, blurry or lost. Clients and employers in Ghana list file organisation, content libraries and storage among their requirements, and remote clients expect files delivered on time in the format they asked for. Good habits here are what make you dependable.
+      explanation_md: `A beautiful edit is useless if it arrives late, in the wrong shape, blurry or lost. Some employers in Ghana list keeping a content library and storing files among their requirements, and remote clients expect files delivered on time in the format they asked for. Good habits here are what make you dependable.
 
 ## Export settings
 
@@ -1622,7 +1622,7 @@ Hawa edits weekly videos for a pharmacy and a fashion shop. Early on she sent th
       },
     },
     publishing: {
-      explanation_md: `Making a good video is half the job. The other half is putting it in the right place, in the right form, for the right people, and learning from how they respond. Ghanaian adverts for social media content roles ask for platform management, knowledge of trends, community engagement and reporting on results. Remote roles add YouTube uploads, titles and analytics.
+      explanation_md: `Making a good video is half the job. The other half is putting it in the right place, in the right form, for the right people, and learning from how they respond. Ghanaian adverts for social media content roles ask for platform management, live streaming and audience engagement. Remote roles add YouTube uploads and search friendly titles.
 
 ## Platforms are different rooms
 
@@ -1717,7 +1717,7 @@ Sumaila runs a channel teaching phone repair tips in Hausa and English from Tama
       },
     },
     "short-video": {
-      explanation_md: `Short vertical video is the format Ghanaian employers mention most in content adverts we studied: TikTok, Instagram Reels, Facebook Reels and YouTube Shorts. Some adverts go further and ask for live streaming, including people who can sell products live. WhatsApp Status videos are the local cousin of this format and often drive real orders.
+      explanation_md: `Short vertical video is one of the most common demands in the content adverts we studied, both Ghanaian and remote: TikTok, Instagram Reels, Facebook Reels and YouTube Shorts. Some adverts go further and ask for live streaming, including people who can sell products live. WhatsApp Status videos are the local cousin of this format and often drive real orders.
 
 ## What makes short video work
 
@@ -1826,7 +1826,7 @@ Amina makes Reels for a smock weaver in Bolgatanga. Her best video starts with t
       },
     },
     "youtube-basics": {
-      explanation_md: `YouTube is different from fast scrolling apps. People often go there to search: how to fix something, learn a skill, compare products or hear a story in depth. A good YouTube video can keep finding viewers for years. Remote adverts open to Ghanaian applicants ask for YouTube uploads, titles, descriptions, thumbnails and channel management, and several Ghanaian NGOs and schools now keep channels too.
+      explanation_md: `YouTube is different from fast scrolling apps. People often go there to search: how to fix something, learn a skill, compare products or hear a story in depth. A good YouTube video can keep finding viewers for years. Some remote editing adverts ask for YouTube uploads, search friendly titles and thumbnails, so these skills can lead to paid work.
 
 ## Setting up a channel
 
@@ -1920,7 +1920,7 @@ Fuseini starts a channel teaching smallholder farmers in the Northern Region how
       },
     },
     "building-an-audience": {
-      explanation_md: `Followers are not the goal by themselves. What matters is having people who trust you, come back, and act: buy, share, donate or hire you. Ghanaian adverts for social media content roles ask for audience engagement, community management and growth, and clients who hire you to grow their pages expect you to understand how this works.
+      explanation_md: `Followers are not the goal by themselves. What matters is having people who trust you, come back, and act: buy, share, donate or hire you. Some Ghanaian adverts for social media content roles ask for audience engagement, and clients who hire you to grow their pages expect you to understand how this works.
 
 ## Choose a clear focus
 
@@ -2027,7 +2027,7 @@ Mariama starts a page sharing northern recipes. At first she posts randomly. The
       },
     },
     "reading-your-numbers": {
-      explanation_md: `Clients and employers want to know whether content is working. Ghanaian social media adverts ask for analytics, performance monitoring and reports, and creators use the same numbers to decide what to make next. Every major platform gives free analytics: YouTube Analytics in YouTube Studio, and insights in TikTok, Instagram and Facebook for professional or business accounts.
+      explanation_md: `Clients and employers want to know whether content is working. Skills frameworks for content creators list evaluating how content performs, and creators use the same numbers to decide what to make next. Every major platform gives free analytics: YouTube Analytics in YouTube Studio, and insights in TikTok, Instagram and Facebook for professional or business accounts.
 
 ## The numbers that matter most
 
@@ -2130,7 +2130,7 @@ Practice numbers if needed: Video A had 900 views, 4 seconds average watch time 
 
 Across the Ghanaian and remote adverts we studied, a few expectations repeat beyond camera and editing skills:
 
-* **A portfolio** of real work, often requested with the application.
+* **A portfolio** or samples of real work.
 * **Reliability:** meeting deadlines, communicating clearly and organising files.
 * **Understanding of brands:** following a brief, matching a brand's voice and working with a marketing team.
 * **Respect for rules:** copyright, platform guidelines and, in some adverts, data protection.
@@ -2163,7 +2163,7 @@ Music, footage and photos belong to the people who made them, and people you fil
 
 ## Where this can lead
 
-Some training organisations in Ghana run cohort programmes in content creation and related digital skills, often online or in Accra. This roadmap can help you prepare for them and stand out when you apply, but you do not need a programme to start earning from local clients.
+Some training organisations in Ghana run cohort programmes in content creation and related digital skills. This roadmap can help you prepare for them and stand out when you apply, but you do not need a programme to start earning from local clients.
 
 ## A small example
 
@@ -2231,14 +2231,14 @@ Issahaku has made a few videos for friends in Wa. Then someone on social media o
 
 ## Copyright in plain words
 
-When someone creates music, a recording, a film, a photo or a design, the law usually gives them control over how it is copied and shared. In Ghana this is set out in the Copyright Act, 2005 (Act 690), and the Copyright Office handles registration and complaints. Most countries have similar laws, and platforms like YouTube use automatic systems to detect copyrighted music and video.
+When someone creates music, a recording, a film, a photo or a design, the law usually gives them control over how it is copied and shared. In Ghana this is set out in the Copyright Act, 2005 (Act 690), which the Copyright Office administers. Most countries have similar laws, and platforms like YouTube use automatic systems to detect copyrighted music and video.
 
 Key points:
 
 * **Found online does not mean free to use.** A song on YouTube or a photo on Google still belongs to someone.
 * **Crediting is not permission.** Writing "no copyright intended" or "credit to the owner" does not give you the right to use it.
-* **Permitted uses are limited.** Ghana's law allows some uses, such as review, reporting current events and education, subject to fair practice. These are narrow and depend on the situation. Do not rely on them for a business promo. YouTube explains a similar idea called fair use, which comes from United States law and is also judged case by case.
-* **Folklore is protected too.** Ghana's law treats folklore such as traditional designs and folksongs as a national heritage, and commercial use can need permission from the National Folklore Board. If a brand wants to build a campaign around traditional designs or songs, raise this early.
+* **Permitted uses are limited.** Ghana's law allows some uses without permission, such as personal use, short quotations with the source named, teaching and news reporting, under conditions such as fair practice. These are narrow and depend on the situation. Do not rely on them for a business promo. YouTube explains a similar idea called fair use, which comes from United States law and is also judged case by case.
+* **Folklore is protected too.** Ghana's law protects folklore, such as traditional songs and kente and adinkra designs whose makers are unknown, on behalf of the people of Ghana. Using folklore beyond the permitted uses, for example in a brand campaign, needs permission from the National Folklore Board and may involve a fee. If a brand wants a campaign built on traditional designs or songs, raise this early.
 
 ## Safe sources
 
@@ -2316,22 +2316,22 @@ Hawa edits an advert for a hotel in Tamale using a popular song. Before deliveri
             explanation: "Children need guardian consent and extra protection.",
           },
           {
-            prompt: "Why should a brand campaign using traditional designs or folksongs raise questions early?",
+            prompt: "Why should a brand campaign built on adinkra designs or traditional songs raise questions early?",
             options: [
-              "Commercial use of folklore can need permission from the National Folklore Board",
+              "Using folklore beyond the permitted uses needs permission from the National Folklore Board",
               "Folklore cannot appear in videos at all",
               "It always makes videos longer",
               "Platforms block all traditional music",
             ],
             answer_index: 0,
-            explanation: "Ghana's law protects folklore and can require permission for commercial use.",
+            explanation: "Ghana's law protects folklore, and uses such as a brand campaign need the Board's permission.",
           },
         ],
         pass_threshold: 80,
       },
     },
     "working-with-brands": {
-      explanation_md: `Brands and businesses are where most creators earn first. Ghanaian adverts ask creators to align content with brand strategy, follow brand guidelines, work with marketing teams and meet deadlines. Remote adverts add following a creative brief and delivering in the client's time zone. Clients rehire people who are easy to work with.
+      explanation_md: `Brands and businesses are where most creators earn first. Content adverts and skills frameworks ask creators to match a brand's voice, follow brand guidelines, interpret briefs and meet deadlines. One remote advert we read added meeting deadlines in the client's time zone. Clients rehire people who are easy to work with.
 
 ## Understand the brief
 
@@ -2449,7 +2449,7 @@ Agencies and creators abroad hire editors for short form and YouTube videos, som
 
 ## Route 4: Platform payouts
 
-Some platforms share advertising income with creators who meet their rules. YouTube's Partner Program lists Ghana among available countries, but a channel must first meet eligibility requirements such as a minimum number of subscribers plus enough watch hours or Shorts views, follow monetization policies and link a payment account. Other platforms run creator reward programmes only in certain countries; at the time of writing, Ghana did not appear on the lists we checked for some of them. Rules change, so check each platform's official pages and in app settings. For most creators, platform payouts come late, if at all.
+Some platforms share advertising income with creators who meet their rules. YouTube's Partner Program lists Ghana among available countries, but a channel must first meet eligibility requirements such as a minimum number of subscribers plus enough watch hours or Shorts views, have no active Community Guidelines strikes, turn on two step verification, follow monetization policies and link a payment account. Other platforms, such as TikTok, run creator reward programmes only in certain countries, and Ghana may not be one of them. Do not trust lists on blogs, which often disagree. Rules change, so check each platform's official pages and in app settings. For most creators, platform payouts come late, if at all.
 
 ## Route 5: Brand deals and sponsorships
 
@@ -2526,7 +2526,7 @@ Sumaila in Tamale starts by filming events for churches and two shops. He keeps 
       },
     },
     "portfolio-and-first-jobs": {
-      explanation_md: `Almost every content advert we studied, in Ghana and remote, asked for a portfolio or samples of work. Some care more about the portfolio than about certificates. Your portfolio is your proof: it shows what you can do far better than a list of apps on a CV.
+      explanation_md: `Content adverts, in Ghana and remote, ask for proof that you can shoot and edit, and some ask for a portfolio with the application. Your portfolio is your proof: it shows what you can do far better than a list of apps on a CV.
 
 ## What to include
 
@@ -2561,7 +2561,7 @@ If you have no clients yet, create real work anyway: a video for a family member
 * Write a short, specific message: who you are, what you can do for them, and two links.
 * Mention free tools you use and that you work efficiently on a phone, but let the work speak.
 * Look on Ghanaian job boards, company and NGO career pages, and remote boards. Ignore any offer that asks you to pay.
-* Prepare for a test task: many employers ask candidates to edit sample footage or shoot a short video.
+* Prepare for a test task: some employers ask candidates to edit sample footage or shoot a short video.
 
 ## Keep growing
 
@@ -2627,7 +2627,7 @@ Amina wants a content creator job in Tamale. She builds a one page portfolio wit
             explanation: "Matching work to the advert shows you fit the role.",
           },
           {
-            prompt: "What do many employers ask candidates to do?",
+            prompt: "What might some employers ask candidates to do?",
             options: [
               "Pay an application fee",
               "Buy their products",
