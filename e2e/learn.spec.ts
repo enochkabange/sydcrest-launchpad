@@ -43,6 +43,8 @@ test("a learner studies a node, fails the quiz, passes it and sees progress", as
     await expect(page.getByText("You scored 50%. You need 100% to pass.")).toBeVisible();
     await expect(q1.getByText("Not quite")).toBeVisible();
     await expect(q2.getByText("Correct")).toBeVisible();
+    // A failed attempt keeps the learner's choices.
+    await expect(q2.getByLabel("Across the sheet")).toBeChecked();
   });
 
   await test.step("pass the quiz and see what was earned", async () => {

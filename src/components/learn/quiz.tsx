@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { Check, X } from "lucide-react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -32,6 +32,8 @@ export function Quiz({
   action: (prev: CompletionState, form: FormData) => Promise<CompletionState>;
 }) {
   const [state, formAction, pending] = useActionState(action, {});
+  // Controlled, so a failed attempt keeps the learner's choices (React resets uncontrolled form fields after an action).
+  const [choices, setChoices] = useState<Record<string, number>>({});
   const outcome = state.outcome;
 
   return (
@@ -66,6 +68,8 @@ export function Quiz({
                     type="radio"
                     name={answerField(q.id)}
                     value={oi}
+                    checked={choices[q.id] === oi}
+                    onChange={() => setChoices((c) => ({ ...c, [q.id]: oi }))}
                     required
                     className="size-5 shrink-0 accent-blue-600"
                   />
