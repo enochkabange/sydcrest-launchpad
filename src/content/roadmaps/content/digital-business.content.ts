@@ -378,6 +378,481 @@ When one supplier travelled for a funeral, the other covered his order. His cust
         pass_threshold: 75,
       },
     },
+    money: {
+      explanation_md: `Plenty of sellers in Ghana are busy all day and still wonder where the money went. They sell a lot, but they never worked out what each item really cost, they mixed business money with family money, or they ran out of stock just when buyers were ready. Being good with business numbers is what turns hard work into real income. It is also a skill employers check for: shop and sales adverts regularly ask for pricing, cash handling, record keeping and stock management.
+
+## You do not need to be a maths expert
+
+Business sums use simple addition, subtraction, multiplication and division. What matters is doing them honestly and regularly. A notebook and a calculator work. A free spreadsheet app such as Google Sheets on your phone makes it easier, because it adds up for you.
+
+## The four money habits
+
+This section teaches four habits that protect your business:
+
+* **Costing and pricing.** Work out every cost of one item, then set a price that covers those costs and leaves a profit.
+* **Profit and cash flow.** Understand the difference between money coming in, profit you actually made, and cash you have available today.
+* **Simple bookkeeping.** Write down every sale and every expense the same day.
+* **Stock control.** Know what you have, what has sold and when to reorder.
+
+Each habit supports the others. Good records show you your real costs. Real costs give you better prices. Stock counts stop you promising goods you do not have.
+
+## Keep business money separate
+
+One rule underpins all four habits: keep business money separate from personal money. If you pay school fees, airtime and family needs from the same wallet as your stock money, you cannot tell whether the business is doing well. Many sellers use a second mobile money wallet or a separate box for business cash. Then pay yourself a fixed amount from the business, the way an employer would pay a worker.
+
+## A small example
+
+Amina sells fried snacks and sobolo to offices in Wa. She earns about the same amount every day, so she thought she was doing fine. But each month she struggled to buy new ingredients.
+
+She started writing down every cedi spent on flour, oil, sugar, hibiscus, bottles and transport, and every cedi received. After two weeks she saw the problem: oil prices had risen, but she had not changed her prices. Some days she was selling at almost no profit. She was also taking money for family needs from her sales without noting it.
+
+Amina raised her snack price slightly, opened a second wallet for the business and paid herself a set amount each Friday. Within a month she could buy ingredients without stress. Nothing about her cooking changed. Her numbers did.`,
+      practice_task_md: `**Goal:** Start separating and tracking business money.
+
+**Steps:**
+1. Decide where your business money will live: a second mobile money wallet, a separate envelope or box, or a separate account.
+2. Choose a fixed amount you will pay yourself each week or month from the business.
+3. Create a simple sheet in Google Sheets or a notebook page with three headings: Date, Money in, Money out.
+4. Record every business transaction for three days, even small ones like transport or data.
+
+**Done looks like:** A chosen place for business money, a fixed personal pay amount, and three days of written records you can show a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, what kind of maths do business sums mostly need?",
+            options: [
+              "Advanced algebra and statistics",
+              "Simple addition, subtraction, multiplication and division done honestly and regularly",
+              "Only percentages",
+              "Accounting software that costs money",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says business sums use simple arithmetic; what matters is doing them honestly and regularly.",
+          },
+          {
+            prompt: "Which rule does the lesson say underpins all four money habits?",
+            options: [
+              "Always sell on credit",
+              "Never raise prices",
+              "Keep business money separate from personal money",
+              "Spend all profit immediately on more stock",
+            ],
+            answer_index: 2,
+            explanation: "Mixing business and personal money makes it impossible to see how the business is doing.",
+          },
+          {
+            prompt: "What was the main problem Amina discovered from her records?",
+            options: [
+              "Oil prices had risen but her prices had not, so some days she made almost no profit",
+              "Her customers had stopped buying sobolo",
+              "Her snacks were too expensive",
+              "She was selling to the wrong offices",
+            ],
+            answer_index: 0,
+            explanation: "Her records showed rising costs with unchanged prices, plus untracked family withdrawals.",
+          },
+          {
+            prompt: "Which of these is one of the four money habits in this section?",
+            options: [
+              "Posting on social media every day",
+              "Borrowing to buy stock",
+              "Hiring an accountant",
+              "Stock control: knowing what you have, what has sold and when to reorder",
+            ],
+            answer_index: 3,
+            explanation: "The four habits are costing and pricing, profit and cash flow, bookkeeping and stock control.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "costing-and-pricing": {
+      explanation_md: `Pricing is where many small sellers lose money without noticing. They copy a competitor's price or guess a round number, then find that after transport, packaging and data there is little left. Knowing how to cost and price an item is a basic skill for any trader, and shop and sales roles in Ghana often list pricing and basic maths as requirements.
+
+## Step 1: find the full cost of one item
+
+Start with the **cost per item**. List everything you spend to get one item into a customer's hands:
+
+* **Buying or making the product**: the price you pay, or the ingredients and materials.
+* **Transport to collect stock**: trotro, taxi or motorbike fare, divided across the items you carried.
+* **Packaging**: tubs, bags, labels, tape.
+* **Selling costs**: a share of your data bundle and airtime, and any mobile money charges you pay.
+* **Waste**: items that break, spoil or go missing.
+
+If you buy in bulk, divide the total cost by the number of items. If one trip to the market costs 20 cedis and you bring back 40 items, that trip adds 50 pesewas to each one.
+
+## Step 2: add your profit
+
+Your price must cover the cost and leave **profit**, the money that pays you and helps the business grow. One simple method is to decide how much profit you want on each item and add it to the cost. Another is to add a percentage of the cost, such as a third or a half, depending on the product.
+
+## Step 3: check against the market
+
+Now compare your price with what similar sellers charge. If yours is much higher, either show clearly why it is worth more (better quality, faster delivery, a nicer tub) or look for ways to reduce your cost. If yours is much lower, ask whether you are giving profit away.
+
+## Delivery: decide who pays
+
+Decide whether delivery is included in the price or charged separately. Either can work. What matters is that it is clear to the customer and that you never pay for delivery out of your profit without meaning to.
+
+## A small example
+
+Wumpini makes beaded bracelets in Tamale. Here is her cost for one bracelet:
+
+* Beads and thread: 6 cedis
+* Share of transport to buy beads: 1 cedi
+* Small bag and label: 1 cedi
+* Share of data and airtime: 1 cedi
+
+Her full cost is 9 cedis. She wants about 6 cedis profit on each bracelet, so she prices it at 15 cedis. Other sellers online charge between 12 and 20 cedis, so 15 cedis is fair. Delivery is charged separately, based on the customer's town.
+
+Before, Wumpini sold bracelets for 10 cedis because "that sounded right". She was making only 1 cedi on each. Now every sale actually pays her.`,
+      practice_task_md: `**Goal:** Cost and price one real product.
+
+**Steps:**
+1. Choose one product you sell or could sell.
+2. List every cost for one item: product or materials, transport share, packaging, data and airtime share, and an allowance for waste.
+3. Add them to get the full cost per item.
+4. Decide your profit per item and calculate your price.
+5. Find the prices of three similar products online or in the market and write whether your price is lower, similar or higher, and why.
+
+**Done looks like:** A short costing sheet (notebook or Google Sheets) showing each cost, the total, your profit and your price, plus a one line market comparison.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the first step in pricing according to this lesson?",
+            options: [
+              "Copy the price of the most popular seller",
+              "Find the full cost of getting one item into a customer's hands",
+              "Choose a round number that sounds right",
+              "Ask customers what they want to pay",
+            ],
+            answer_index: 1,
+            explanation: "Step 1 is to find the full cost per item, including transport, packaging and selling costs.",
+          },
+          {
+            prompt: "One market trip costs 20 cedis and you bring back 40 items. How much does that trip add to the cost of each item?",
+            options: ["2 cedis", "20 pesewas", "50 pesewas", "5 cedis"],
+            answer_index: 2,
+            explanation: "20 cedis divided by 40 items is 50 pesewas per item.",
+          },
+          {
+            prompt: "Which of these does the lesson list as a cost to include?",
+            options: [
+              "A share of your data bundle and airtime",
+              "Your competitor's rent",
+              "The price customers saw last year",
+              "Money you plan to save for a holiday",
+            ],
+            answer_index: 0,
+            explanation: "Selling costs like data, airtime and mobile money charges are part of the full cost.",
+          },
+          {
+            prompt: "What was Wumpini's full cost for one bracelet?",
+            options: ["6 cedis", "10 cedis", "15 cedis", "9 cedis"],
+            answer_index: 3,
+            explanation: "6 cedis for beads plus 1 each for transport, packaging and data gives 9 cedis.",
+          },
+          {
+            prompt: "If your price is much higher than similar sellers, what does the lesson suggest?",
+            options: [
+              "Lower it to the cheapest price immediately",
+              "Stop selling the product",
+              "Show clearly why it is worth more, or look for ways to reduce your cost",
+              "Hide the price from customers",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says either show the extra value or reduce your costs.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "profit-and-cash-flow": {
+      explanation_md: `"I sold 2,000 cedis this month!" sounds great, but it does not tell you whether the business made money. Understanding the difference between sales, profit and cash is one of the most useful things a trader can learn. Support programmes, lenders and employers who hire people to run shops all expect you to talk about these clearly.
+
+## Three different numbers
+
+* **Sales (revenue)** is all the money customers paid you.
+* **Profit** is what is left after you subtract all your costs from sales. It can be small even when sales are big.
+* **Cash** is the money you actually have right now, in your wallet, box or account.
+
+These three are often different. You might have high sales but low profit because your costs are high. You might have good profit on paper but little cash, because customers still owe you or because you spent cash on new stock.
+
+## Margin: profit as a share of the price
+
+Your **margin** shows how much of each sale you keep. If you sell something for 20 cedis and it cost you 15 cedis, your profit is 5 cedis. That is a quarter of the price, so your margin is 25 percent.
+
+Products with a thin margin need many sales to earn well. Products with a wider margin can earn more from fewer sales. Knowing your margin helps you decide which products to push, and how much of a discount you can afford.
+
+## Cash flow: timing matters
+
+**Cash flow** is the movement of money in and out over time. A business can run out of cash even when it is profitable, because money goes out before it comes in. Common causes are:
+
+* Buying a lot of stock at once.
+* Selling on credit to customers who pay late.
+* Big costs arriving at the same time, such as a festival season restock and a rent payment.
+
+To protect cash, buy stock in amounts you can sell quickly, collect payment before or on delivery where you can, and keep a small reserve for emergencies.
+
+## A small example
+
+Sumaila sells phone accessories in Damongo. In December he sold 3,000 cedis of goods. He was happy, until January, when he could not buy new stock.
+
+He worked through his numbers. His stock had cost him 2,400 cedis, so his profit was only 600 cedis. On top of that, he had let two shop owners take goods worth 500 cedis on credit, and they had not paid yet. And he had spent part of his cash on a big order of chargers that were still in a box.
+
+So his profit was 600 cedis, but his cash was almost nothing. Sumaila now limits credit to customers he knows well, with a clear payment date, buys stock in smaller amounts more often, and keeps a reserve in a separate wallet. His sales are similar, but his business no longer runs dry.`,
+      practice_task_md: `**Goal:** Calculate sales, profit and margin for a short period.
+
+**Steps:**
+1. Use your records from the last lesson, or make up a realistic week for a small product.
+2. Add up total sales for the week.
+3. Add up the cost of the items you sold, plus other costs like transport and data.
+4. Subtract costs from sales to get profit.
+5. For one product, calculate the margin: profit on one item divided by its price.
+6. Write one sentence about your cash: is any money owed to you, or tied up in unsold stock?
+
+**Done looks like:** A short summary showing sales, costs, profit, one product margin and a note on cash.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is profit according to this lesson?",
+            options: [
+              "All the money customers paid you",
+              "What is left after you subtract all your costs from sales",
+              "The money in your wallet right now",
+              "The value of your unsold stock",
+            ],
+            answer_index: 1,
+            explanation: "Profit is sales minus all costs.",
+          },
+          {
+            prompt: "An item sells for 20 cedis and cost you 15 cedis. What is your margin?",
+            options: ["5 percent", "75 percent", "25 percent", "15 percent"],
+            answer_index: 2,
+            explanation: "Profit is 5 cedis, which is a quarter of the 20 cedi price, or 25 percent.",
+          },
+          {
+            prompt: "Which of these can cause a profitable business to run out of cash?",
+            options: [
+              "Selling on credit to customers who pay late",
+              "Collecting payment before delivery",
+              "Keeping an emergency reserve",
+              "Buying stock in small amounts",
+            ],
+            answer_index: 0,
+            explanation: "Money owed by customers is profit on paper but not cash you can use.",
+          },
+          {
+            prompt: "Why could Sumaila not buy new stock in January?",
+            options: [
+              "His December sales were very low",
+              "His supplier refused to sell to him",
+              "He had made a loss on every item",
+              "His profit was modest, customers owed him money and cash was tied up in unsold chargers",
+            ],
+            answer_index: 3,
+            explanation: "Profit of 600 cedis, 500 cedis owed on credit and cash spent on stock left him with almost no cash.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "simple-bookkeeping": {
+      explanation_md: `Bookkeeping simply means writing down the money that comes in and goes out of your business. It sounds dull, but it is the habit that makes everything else possible: pricing, knowing your profit, applying for support, dealing with tax, and showing an employer that you can be trusted with money. Shop and sales adverts in Ghana regularly ask for record keeping and customer records.
+
+## The basic record
+
+You need just one list, kept every day. Each line records one transaction:
+
+* **Date**
+* **What happened**, such as "Sold 2 tubs shea butter to Hawa, Kumasi" or "Bought 10 tubs".
+* **Money in** (sales)
+* **Money out** (expenses)
+* **How paid**, such as MoMo, cash or bank, and the transaction ID for mobile money
+
+At the end of each week, add up money in and money out. The difference shows how much your cash changed.
+
+## Notebook or spreadsheet?
+
+Both work. A notebook is cheap and needs no battery. A free spreadsheet app like Google Sheets on your phone adds up columns for you, can be backed up to your Google account, and is easy to share with a mentor or a programme officer. The **SUM** function totals a column for you; for example, typing \`=SUM(C2:C50)\` adds every number from row 2 to row 50 in column C.
+
+Whatever you choose, use the same format every day.
+
+## Good habits
+
+* **Write it the same day.** Memory fails by the end of the week.
+* **Record small things too.** Transport, airtime and data add up.
+* **Keep proof.** Screenshot or save mobile money confirmation messages and keep receipts in one envelope or folder.
+* **Record what you take for yourself.** If you pay yourself from the business, write it down as money out.
+* **Back up.** If your records are on a phone, make sure they are saved online or copied somewhere safe.
+
+## Why it pays off
+
+Clean records answer important questions. Which product sells best? Which month is slow? Are costs rising? They also help with formal steps later. The Ghana Revenue Authority's simplified scheme for small traders asks for sales information, and support programmes and lenders usually want to see records before they help.
+
+## A small example
+
+Abdul-Rahman sells second hand clothes from Tamale through WhatsApp. He started a Google Sheet with the five columns above. Every evening he spends five minutes copying in the day's sales from his mobile money messages and his expenses from his notes.
+
+After one month, the totals showed that children's clothes sold out every week while men's shirts sat for weeks. He changed his next order to more children's clothes. When a youth enterprise programme asked applicants for three months of sales records, he had them ready while many others did not.
+
+Five minutes a day gave Abdul-Rahman better decisions and an opportunity he would otherwise have missed.`,
+      practice_task_md: `**Goal:** Set up a working sales and expense record.
+
+**Steps:**
+1. Open Google Sheets (free) or a fresh notebook page.
+2. Create five columns: Date, Description, Money in, Money out, How paid (with transaction ID).
+3. Enter at least ten real or realistic transactions from a week of trading, including small costs like transport and data.
+4. At the bottom, total Money in and Money out. In Sheets use the SUM function.
+5. Write one sentence about what the totals tell you.
+
+**Done looks like:** A tidy record with ten or more entries, weekly totals and one insight. Take a screenshot to show a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does bookkeeping mean in this lesson?",
+            options: [
+              "Writing a business plan for a bank",
+              "Writing down the money that comes in and goes out of your business",
+              "Reading books about business",
+              "Paying an accountant every month",
+            ],
+            answer_index: 1,
+            explanation: "The lesson defines bookkeeping as recording money in and out.",
+          },
+          {
+            prompt: "Which of these is one of the five columns in the basic record?",
+            options: [
+              "Customer's favourite colour",
+              "Number of likes on the post",
+              "How paid, with the transaction ID for mobile money",
+              "Weather that day",
+            ],
+            answer_index: 2,
+            explanation: "The record includes how the money was paid and the mobile money transaction ID.",
+          },
+          {
+            prompt: "Why does the lesson say you should write records the same day?",
+            options: [
+              "Because memory fails by the end of the week",
+              "Because spreadsheets delete old entries",
+              "Because GRA checks records every evening",
+              "Because customers ask to see them",
+            ],
+            answer_index: 0,
+            explanation: "Writing it the same day avoids forgetting transactions.",
+          },
+          {
+            prompt: "What did Abdul-Rahman's records show him after one month?",
+            options: [
+              "That WhatsApp selling does not work",
+              "That he should stop selling clothes",
+              "That his prices were too low on everything",
+              "That children's clothes sold out weekly while men's shirts sat for weeks",
+            ],
+            answer_index: 3,
+            explanation: "His totals showed which products sold fast, so he changed his next order.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "stock-control": {
+      explanation_md: `Few things lose a customer faster than taking their money and then saying the item is finished. On the other side, stock that sits unsold for months is cash you cannot use. Stock control, also called inventory management, keeps you in the middle: enough of what sells, not too much of what does not. It is one of the most common requirements in Ghanaian shop and sales adverts, often alongside cash handling and stock reconciliation.
+
+## The stock record
+
+A stock record tracks each product with a few numbers:
+
+* **Opening stock**: how many you had at the start.
+* **Stock in**: how many you received or made.
+* **Stock out**: how many you sold, gave away, or lost to damage.
+* **Closing stock**: what should be left. Opening stock plus stock in, minus stock out.
+
+You can keep this in a notebook or a simple spreadsheet with one row per product.
+
+## Count and compare
+
+Your record tells you what should be there. A physical count tells you what is actually there. Comparing the two is called **reconciliation**. If the numbers do not match, find out why: a sale you forgot to record, a damaged item, a mistake, or theft. Count often enough to catch problems early. Many small sellers count their fast moving items every week.
+
+## Know when to reorder
+
+For each product, decide a **reorder level**: the number at which you order more. Base it on how fast the item sells and how long your supplier takes. If you sell about ten tubs a week and new stock takes a week to arrive, reorder when you have about ten or a few more left, so you never run out while waiting.
+
+## Watch slow movers
+
+Some items sell slowly. Do not keep reordering them. Consider a small discount, bundling them with popular items, or simply not restocking. Perishable goods like food need extra care: sell the oldest stock first and watch expiry dates.
+
+## Online selling needs honest stock
+
+When you sell online, your catalogue and posts are a promise. If something is out of stock, mark it clearly or remove it. Tell customers honestly when new stock will arrive rather than taking payment and hoping.
+
+## A small example
+
+Mariama, who sells shea butter, keeps a simple sheet with four columns for each size: opening, in, out and closing. On Monday she has 12 small tubs. Her aunt delivers 20 on Wednesday, and she sells 25 during the week. Her record says she should have 7 left.
+
+On Saturday she counts and finds only 6. She checks her chats and finds a tub she gave her cousin and forgot to record. She notes it as stock out.
+
+Since she sells about 25 small tubs a week and her aunt needs four days to make more, she sets her reorder level at 15. Customers no longer hear "finished" from her, and she does not have tubs sitting in a corner.`,
+      practice_task_md: `**Goal:** Build a stock record for three products and practise reconciliation.
+
+**Steps:**
+1. In Google Sheets or a notebook, make columns: Product, Opening, In, Out, Closing (should be), Counted, Difference.
+2. Add three products you sell or could sell, with realistic numbers for one week.
+3. Calculate closing stock for each: Opening plus In minus Out.
+4. Count real items if you have them, or invent a count, and fill in the difference.
+5. For each product, write a reorder level and one sentence explaining it.
+
+**Done looks like:** A small stock sheet for three products with closing figures, a reconciliation column and reorder levels.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How do you calculate closing stock in this lesson?",
+            options: [
+              "Stock in minus opening stock",
+              "Opening stock plus stock in, minus stock out",
+              "Stock out multiplied by price",
+              "Opening stock minus stock in",
+            ],
+            answer_index: 1,
+            explanation: "Closing stock is opening plus stock in, minus stock out.",
+          },
+          {
+            prompt: "What is reconciliation?",
+            options: [
+              "Making peace with an angry customer",
+              "Ordering new stock from a supplier",
+              "Comparing what your record says with what a physical count shows",
+              "Giving discounts on slow items",
+            ],
+            answer_index: 2,
+            explanation: "Reconciliation compares recorded stock with actual stock.",
+          },
+          {
+            prompt: "What should a reorder level be based on?",
+            options: [
+              "How fast the item sells and how long your supplier takes",
+              "The number of followers you have",
+              "Your competitor's stock",
+              "A fixed number used for every product",
+            ],
+            answer_index: 0,
+            explanation: "The lesson bases the reorder level on sales speed and supplier delivery time.",
+          },
+          {
+            prompt: "When Mariama's count showed one tub fewer than her record, what was the cause?",
+            options: [
+              "Theft by a customer",
+              "Her aunt delivered fewer tubs",
+              "A tub broke in transit",
+              "She gave a tub to her cousin and forgot to record it",
+            ],
+            answer_index: 3,
+            explanation: "She checked and found an unrecorded tub given to her cousin.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
     // NEXT
   },
 };
