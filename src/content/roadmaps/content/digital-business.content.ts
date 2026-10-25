@@ -853,6 +853,492 @@ Since she sells about 25 small tubs a week and her aunt needs four days to make 
         pass_threshold: 75,
       },
     },
+    "selling-online": {
+      explanation_md: `In Ghana a great deal of buying now starts in a chat. A customer sees a Status update or a TikTok video, sends a message asking "How much?", agrees a price, pays with mobile money and waits for delivery. Businesses that do this well can sell far beyond their town. Employers have noticed too: Ghanaian adverts for shop staff, sales officers and online sales roles regularly ask for experience selling through WhatsApp, Instagram and TikTok, and some ask for live selling.
+
+## Your phone as a shop window
+
+Think of selling online as running a shop with four parts:
+
+* **The counter:** where customers ask questions and order. For most small sellers this is WhatsApp.
+* **The window display:** where people discover you. This is your Status, Instagram, TikTok or Facebook posts and videos.
+* **The goods on the shelf:** your product photos and descriptions, which must be clear enough that people trust what they will receive.
+* **The shop sign and address:** a catalogue, an online store or a business listing that people can find and share.
+
+## What this section covers
+
+* **Selling on WhatsApp Business.** Setting up a profile, a catalogue, quick replies and labels so every chat is handled well.
+* **Instagram, TikTok and live selling.** Showing products in short videos, replying to messages, and selling during live streams.
+* **Product photos and descriptions.** Taking clear photos with a phone and writing descriptions that answer questions.
+* **A simple online store.** Choosing between a chat catalogue, a marketplace, a free store builder or a business listing.
+
+## Choose a few channels
+
+You do not need to be everywhere. Go where your customers already are, and do two or three channels well rather than five badly. A seller whose buyers are mostly church members and neighbours may need only WhatsApp. A seller targeting young people in cities may need TikTok or Instagram as the window and WhatsApp as the counter.
+
+## Safety and honesty from the start
+
+Online selling only works if people trust you. Use real photos of your own products, state prices clearly, answer honestly about sizes and delivery times, and never ask customers for PINs or codes. Trust takes months to build and one bad deal to lose.
+
+## A small example
+
+Issahaku's baskets from Bolgatanga sold slowly when he only told friends. He set up WhatsApp Business with a catalogue, began posting short videos on TikTok showing the weaving process, and added his WhatsApp link to his TikTok profile.
+
+His TikTok videos became the window: people in Accra discovered the baskets there. WhatsApp became the counter: they messaged to ask sizes and prices, and he confirmed orders and payment there. He did not try Facebook, Instagram and a website all at once. Two channels, done well, were enough to double the people asking about his baskets.
+
+The lessons in this section show you how to set up each part of your online shop step by step.`,
+      practice_task_md: `**Goal:** Plan your online shop.
+
+**Steps:**
+1. Write down where your main customers spend time online (use your customer description from earlier).
+2. Choose your counter (where people will order) and one or two windows (where people will discover you).
+3. For each channel, write one sentence on why it suits your customers.
+4. List the three products you would show first, and note whether you already have good photos of them.
+
+**Done looks like:** A short plan naming your counter and windows, with reasons, and a first list of products to show.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "In this lesson's shop comparison, what is \"the counter\" for most small sellers?",
+            options: [
+              "A physical table in the market",
+              "TikTok videos",
+              "WhatsApp, where customers ask questions and order",
+              "A printed flyer",
+            ],
+            answer_index: 2,
+            explanation: "The counter is where customers ask and order, which for most small sellers is WhatsApp.",
+          },
+          {
+            prompt: "What does the lesson advise about the number of channels?",
+            options: [
+              "Go where your customers are and do two or three channels well",
+              "Open accounts on every app at once",
+              "Use only a website",
+              "Change channels every week",
+            ],
+            answer_index: 0,
+            explanation: "The lesson recommends a few channels done well, chosen by where customers are.",
+          },
+          {
+            prompt: "In Issahaku's example, what role did TikTok play?",
+            options: [
+              "It was where he took payments",
+              "It replaced WhatsApp completely",
+              "It was where he kept his stock records",
+              "It was the window where people discovered his baskets",
+            ],
+            answer_index: 3,
+            explanation: "TikTok videos helped people find him; WhatsApp was where orders were confirmed.",
+          },
+          {
+            prompt: "Which practice does the lesson say builds trust when selling online?",
+            options: [
+              "Using photos copied from bigger sellers",
+              "Using real photos of your own products and stating prices clearly",
+              "Hiding prices until the customer pays",
+              "Promising very fast delivery to everyone",
+            ],
+            answer_index: 1,
+            explanation: "Real photos, clear prices and honest answers build trust.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "whatsapp-business": {
+      explanation_md: `For many Ghanaian businesses, WhatsApp is the shop counter. Customers ask questions, place orders and send payment confirmations there. Sellers who manage WhatsApp well reply faster, lose fewer orders and look more professional. Ghanaian adverts for shop and sales staff mention WhatsApp and WhatsApp Business by name, so this is a job skill as well as a business skill.
+
+## WhatsApp Business is a separate free app
+
+WhatsApp Business is a free app made for small businesses. It works like ordinary WhatsApp, but adds business tools. Many sellers use it on a separate number from their personal WhatsApp, so business chats do not get lost among family messages. Download it from your phone's official app store.
+
+## Key features to set up
+
+* **Business profile:** your business name, a short description, your town or address, opening hours and a clear profile photo or logo. This is the first thing customers check.
+* **Catalogue:** a list of your products with photos, prices and short descriptions. Customers can browse it without asking you to resend pictures, and you can share a single item or the whole catalogue in a chat.
+* **Quick replies:** saved answers to common questions, such as delivery fees, payment details or how to order. You type a short shortcut and the full message appears.
+* **Labels:** coloured tags for chats, such as "New order", "Paid", "Delivered" and "Follow up". They help you see at a glance where each customer is.
+* **Greeting and away messages:** automatic replies that welcome new customers or let them know when you will reply.
+
+Features change from time to time, so check the app's own settings and the official WhatsApp help pages if something looks different.
+
+## Status as your daily display
+
+WhatsApp Status shows photos and short videos to your contacts for a day. Post regularly: new stock, a customer receiving their order (with permission), a behind the scenes video, a reminder of prices. Keep it varied and useful, not just "buy, buy, buy".
+
+## Good chat habits
+
+* Reply as quickly as you reasonably can, and use your away message when you cannot.
+* Confirm every order in writing: item, quantity, price, delivery fee, total and delivery date.
+* Keep payment instructions in a quick reply so they are always correct.
+* Never ask customers to send a PIN or code, and never send yours.
+
+## A small example
+
+Hawa sells smocks. She set up WhatsApp Business with a profile, a catalogue showing each smock with sizes and prices, and three quick replies: "/delivery" for delivery fees by region, "/pay" for her business MoMo name and number, and "/size" for her size chart.
+
+When a customer in Takoradi asks about a smock, Hawa shares the catalogue item, sends "/size", confirms the order with a full summary, and labels the chat "New order". When payment arrives she checks her own wallet, then changes the label to "Paid". At the end of the day she can see every order's stage at a glance. She handles twice as many chats as before, with fewer mistakes.`,
+      practice_task_md: `**Goal:** Set up a WhatsApp Business profile ready for customers.
+
+**Steps:**
+1. Install WhatsApp Business (free) or open it if you already have it. If you cannot use a second number, plan the setup on paper.
+2. Complete the profile: name, description, location, hours and photo.
+3. Add at least three products to the catalogue with a photo, price and short description.
+4. Create three quick replies: delivery fees, how to pay, and how to order.
+5. Create four labels: New order, Paid, Delivered, Follow up.
+
+**Done looks like:** Screenshots of your profile, catalogue and quick replies (with any personal number blurred) that you can show a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why do many sellers use WhatsApp Business on a separate number?",
+            options: [
+              "Because ordinary WhatsApp does not allow photos",
+              "So business chats do not get lost among personal messages",
+              "Because WhatsApp Business only works on a new SIM",
+              "Because customers cannot message personal numbers",
+            ],
+            answer_index: 1,
+            explanation: "A separate number keeps business chats apart from family and friends.",
+          },
+          {
+            prompt: "What is a quick reply in WhatsApp Business?",
+            options: [
+              "A saved answer you send by typing a short shortcut",
+              "A reply that customers must send within one minute",
+              "A paid feature for big companies",
+              "An automatic payment request",
+            ],
+            answer_index: 0,
+            explanation: "Quick replies are saved messages you insert using a shortcut.",
+          },
+          {
+            prompt: "What are labels used for?",
+            options: [
+              "Printing stickers for your products",
+              "Blocking difficult customers",
+              "Tagging chats to show where each customer is, such as New order or Paid",
+              "Setting your prices",
+            ],
+            answer_index: 2,
+            explanation: "Labels help you see each order's stage at a glance.",
+          },
+          {
+            prompt: "What should an order confirmation include, according to the lesson?",
+            options: [
+              "Only the item name",
+              "The customer's PIN for payment",
+              "A list of your other customers",
+              "Item, quantity, price, delivery fee, total and delivery date",
+            ],
+            answer_index: 3,
+            explanation: "Confirming every detail in writing prevents misunderstandings.",
+          },
+          {
+            prompt: "What did Hawa do before changing a chat's label to Paid?",
+            options: [
+              "She checked her own wallet to confirm the payment arrived",
+              "She trusted the customer's screenshot",
+              "She waited for the customer to call",
+              "She asked the customer for their PIN",
+            ],
+            answer_index: 0,
+            explanation: "She confirmed payment in her own wallet before marking it Paid.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "social-and-live-selling": {
+      explanation_md: `Instagram, TikTok and Facebook are where many customers, especially younger ones in cities, discover products. Ghanaian companies now hire people specifically to sell through these apps: adverts ask for selling in direct messages, creating short videos and hosting live sales sessions. Even if you only run your own small business, these skills bring buyers who would never pass your stall.
+
+## Show the product in use
+
+On social apps, people scroll quickly. Short videos that show a product being used work better than a plain list of prices. Ideas that suit small sellers:
+
+* **How it is made:** shea butter being kneaded, a smock being sewn, baskets being woven.
+* **Before and after:** dry hands, then soft hands after shea butter.
+* **Unboxing or packing an order:** shows that you deliver.
+* **Answering a common question** in a short clip, such as how to choose a smock size.
+
+Hold the phone upright, film in good light, speak clearly or add text on screen, and get to the point in the first few seconds.
+
+## Reply and move to the counter
+
+Comments and direct messages are where interest turns into sales. Reply politely and quickly. When someone is ready to buy, move them to WhatsApp or your usual order channel, where you can confirm the order and payment properly. Put your WhatsApp link or number in your profile so people can find it.
+
+Do not post prices that differ from your catalogue, and do not argue in public comments. Calmly offer to help in private.
+
+## Live selling
+
+In a live stream, you show products in real time while viewers ask questions in the comments. Live selling works because people can see the product, hear you explain it and ask questions instantly, a bit like a market stall online.
+
+To run a simple live session:
+
+* **Plan:** choose a few products, prepare prices and have stock ready.
+* **Announce:** tell followers the day and time on Status and your page.
+* **During the live:** greet viewers by name, show each product closely, repeat prices, and answer questions.
+* **After:** follow up every buyer in chat to confirm orders and payment.
+
+Each app has its own rules for who can go live, such as minimum age or follower numbers, so check the current rules in the app.
+
+## Paid ads can wait
+
+Social apps let you pay to show posts to more people. Learn to sell with free posts first. When free posts are already bringing orders, a small, carefully tracked ad budget can help. The Digital Marketer roadmap covers ads in depth.
+
+## A small example
+
+Mariama started posting short TikTok videos of her aunt's group making shea butter, with captions in English and Dagbani. One video of the kneading process was shared widely. She added her WhatsApp number to her profile and answered comments with "Please message me on WhatsApp to order."
+
+She then held a 20 minute live session each Friday evening, showing each tub size and answering questions. After each live she followed up every person who said "I want one". Most of her new customers now find her on TikTok and buy on WhatsApp.`,
+      practice_task_md: `**Goal:** Plan and film one short product video and plan a live session.
+
+**Steps:**
+1. Choose one product and one video idea from the lesson (how it is made, before and after, packing an order, or answering a question).
+2. Film a vertical video of 15 to 30 seconds in daylight. Add a short caption with the price and how to order.
+3. Save it to your phone. You do not have to post it if you are not ready.
+4. Write a simple live session plan: date, time, three products, prices, and how you will follow up buyers.
+
+**Done looks like:** One finished short video and a written live session plan you can show a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson suggest videos that show a product in use?",
+            options: [
+              "Because apps ban photos of products",
+              "Because people scroll quickly and such videos work better than a plain price list",
+              "Because videos are always free to boost",
+              "Because customers prefer long videos",
+            ],
+            answer_index: 1,
+            explanation: "Short videos showing the product in use catch attention while people scroll.",
+          },
+          {
+            prompt: "When someone in your comments is ready to buy, what does the lesson advise?",
+            options: [
+              "Ask them to post their payment details in the comments",
+              "Ignore them until they message again",
+              "Move them to WhatsApp or your usual order channel to confirm order and payment",
+              "Send them a different, lower price in public",
+            ],
+            answer_index: 2,
+            explanation: "Move serious buyers to your counter, where orders and payment can be confirmed properly.",
+          },
+          {
+            prompt: "Which of these is a step in running a simple live session?",
+            options: [
+              "Announce the day and time to followers in advance",
+              "Go live without stock and take orders anyway",
+              "Avoid repeating prices",
+              "Never follow up after the live",
+            ],
+            answer_index: 0,
+            explanation: "Announcing in advance helps followers join; the lesson lists it as a step.",
+          },
+          {
+            prompt: "What does the lesson say about paid ads?",
+            options: [
+              "Start every business with a large ad budget",
+              "Ads are banned for small sellers in Ghana",
+              "Ads replace the need for good photos",
+              "Learn to sell with free posts first, then try a small tracked budget",
+            ],
+            answer_index: 3,
+            explanation: "The lesson advises getting free posts working before spending on ads.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "product-photos": {
+      explanation_md: `Online, customers cannot touch your product. Your photos and descriptions do the job your hands would do at a market stall. Clear photos make people trust you, reduce questions and cut down on complaints. Shop and sales adverts in Ghana increasingly ask for photo and video skills, and online merchants list product photography and descriptions among their core tasks.
+
+## Taking good photos with a phone
+
+You do not need an expensive camera. You need light, a clean background and a steady hand.
+
+* **Use daylight.** Shoot near a window or outside in shade. Avoid harsh midday sun, which makes strong shadows, and avoid dark rooms.
+* **Use a plain background.** A white wall, a clean cloth, a sheet of paper or a wooden table. Remove clutter.
+* **Fill the frame.** Get close so the product is the main thing in the picture.
+* **Take several angles.** Front, back, side and a close up of details like stitching, texture or the label.
+* **Show size.** Place the item next to something familiar, such as a hand, a phone or a coin, or show it being worn or used.
+* **Clean the lens** on your phone with a soft cloth before shooting.
+* **Keep it true.** Light editing to fix brightness is fine. Do not use filters that change the colour, because customers will complain when the real item looks different.
+
+Large photo files use more of your customers' data. Most phones and apps shrink photos when sending, which is usually fine for selling.
+
+## Writing descriptions that answer questions
+
+A good description saves you answering the same questions again and again. Include:
+
+* **Name** of the product.
+* **Price** in cedis.
+* **Size, weight or quantity**, such as 250 grams, medium, or 40 cm across.
+* **What it is made of** and anything special about it.
+* **Colours or options** available.
+* **How to order and pay**, and delivery information.
+
+Keep sentences short. Be honest, and do not make health or medical claims you cannot prove. Food and cosmetics in particular must not promise to cure illnesses.
+
+## A small example
+
+Fuseini's first photo of his dawadawa was taken at night under a yellow bulb, on a table full of other items. It looked dark and nobody asked about it.
+
+He took new photos in the morning near the doorway, with the dawadawa in a clean bowl on a white cloth, and a close up showing its texture. He added a photo of a sealed pack next to his hand for size.
+
+His new description read: "Dawadawa from Savelugu. 250 g sealed pack. 25 cedis. Clean, sun dried and hand sorted. Order on WhatsApp and pay by MoMo. Delivery to Kumasi and Accra by bus parcel, fee depends on town." Customers stopped asking "How much?" and "How big?" and started asking "When can I get it?"`,
+      practice_task_md: `**Goal:** Produce a product listing with good photos and a full description.
+
+**Steps:**
+1. Choose one product.
+2. Take at least four photos in daylight on a plain background: front, another angle, a close up of detail, and one that shows size.
+3. Choose the best two or three and check that the colours look true.
+4. Write a description with name, price in cedis, size, material, options, and how to order, pay and get delivery.
+5. Ask someone to look at your photos and description and tell you one question they still have. Add the answer.
+
+**Done looks like:** A complete product listing (photos plus description) ready for your catalogue or a post.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What kind of light does the lesson recommend for product photos?",
+            options: [
+              "A yellow bulb at night",
+              "Harsh midday sun",
+              "Daylight near a window or outside in shade",
+              "A camera flash in a dark room",
+            ],
+            answer_index: 2,
+            explanation: "Soft daylight gives clear photos without harsh shadows.",
+          },
+          {
+            prompt: "Why does the lesson warn against filters that change colour?",
+            options: [
+              "Customers will complain when the real item looks different",
+              "Filters are illegal on business pages",
+              "Filters use too much battery",
+              "Filters make photos too small",
+            ],
+            answer_index: 0,
+            explanation: "Changed colours mislead customers and lead to complaints.",
+          },
+          {
+            prompt: "Which of these does the lesson say a good description should include?",
+            options: [
+              "Your personal phone PIN",
+              "Size, weight or quantity",
+              "A list of competitor prices",
+              "Claims that the product cures illness",
+            ],
+            answer_index: 1,
+            explanation: "Size, weight or quantity is one of the description items listed.",
+          },
+          {
+            prompt: "How can you show the size of a product in a photo?",
+            options: [
+              "Write \"big\" on the photo",
+              "Use a zoom filter",
+              "Take the photo from far away",
+              "Place it next to something familiar, such as a hand or a phone",
+            ],
+            answer_index: 3,
+            explanation: "A familiar object or showing it in use helps customers judge size.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "online-store": {
+      explanation_md: `As your business grows, sharing photos one chat at a time becomes slow. An online store, in its simplest form, is one place where customers can see all your products, prices and how to buy. Ghanaian employers hiring online sales staff mention running a company website, uploading products and prices, and managing stores on online marketplaces, so understanding the options is useful for jobs as well as for your own business.
+
+## Four simple options
+
+**1. A chat catalogue.** The WhatsApp Business catalogue is free, lives inside the app your customers already use, and can be shared as a link. For many small sellers, this is all the store they need at first.
+
+**2. An online marketplace.** Marketplaces such as Jiji or Jumia (named only as examples) let many sellers list products in one place where buyers already search. Some are free to list on and some charge fees or commissions, and each has its own seller rules. Read the seller terms carefully before you sign up.
+
+**3. A free store or website builder.** Some services let you build a simple store page with product photos, prices and an order button, often with a free starter plan. This looks professional and is easy to share, but free plans usually have limits, and taking card payments directly on the page often needs a payment provider that asks for business registration documents.
+
+**4. A Google Business Profile.** This free listing shows your business on Google Search and Maps with your phone number, location, hours, photos and reviews. It helps people nearby find you, even if you sell mostly on WhatsApp.
+
+## How to choose
+
+Ask three questions:
+
+* **Where do my customers already look?** If they live on WhatsApp, start there.
+* **What can I keep up to date?** An out of date store with wrong prices or sold out items hurts trust. Choose something you can maintain on your phone.
+* **What does it cost?** Count listing fees, commissions, data and time.
+
+Start with the simplest option that works, and add another only when you have a clear reason.
+
+## Keep it consistent
+
+Whatever you choose, use the same business name, photos, prices and contact details everywhere. Customers who see you on TikTok, WhatsApp and Google should recognise the same business.
+
+## A small example
+
+Abdul-Rahman sells second hand clothes from Tamale. He started with a WhatsApp catalogue, which worked well for regular customers. As more strangers asked about him, he created a free Google Business Profile with his shop location near the market, his hours and photos, so people could find him and see that he was real.
+
+He considered a marketplace too, but after reading the seller terms and working out the fees on his small margins, he decided to wait. He shares his catalogue link in his TikTok profile and on his Google profile. Two simple, well kept tools serve him better than four neglected ones.`,
+      practice_task_md: `**Goal:** Choose and set up, or fully plan, one simple online store.
+
+**Steps:**
+1. Write down which of the four options suits you best, using the three questions in the lesson.
+2. If you chose the WhatsApp catalogue, add at least five products and copy the catalogue link.
+3. If you chose a Google Business Profile, a marketplace or a store builder, read its help or seller pages and write the steps you would follow, plus any fees or documents it asks for.
+4. Write the business name, contact details and price list you will use everywhere so they stay consistent.
+
+**Done looks like:** A working catalogue link or a clear written setup plan, plus a one page list of consistent business details.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is an online store in its simplest form, according to the lesson?",
+            options: [
+              "A website built by a professional developer",
+              "One place where customers can see your products, prices and how to buy",
+              "A shop in a shopping mall",
+              "A paid advert on social media",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes a simple online store as one place showing products, prices and how to buy.",
+          },
+          {
+            prompt: "What does a Google Business Profile help with?",
+            options: [
+              "Taking mobile money payments automatically",
+              "Writing your product descriptions",
+              "Showing your business on Google Search and Maps so nearby people can find you",
+              "Delivering parcels",
+            ],
+            answer_index: 2,
+            explanation: "It is a free listing on Search and Maps with your contact details, hours and photos.",
+          },
+          {
+            prompt: "What does the lesson say you should do before signing up to an online marketplace?",
+            options: [
+              "Read the seller terms carefully, including any fees or commissions",
+              "Pay a large deposit to reserve a space",
+              "Copy another seller's listings",
+              "Close your WhatsApp catalogue",
+            ],
+            answer_index: 0,
+            explanation: "Marketplaces have their own rules and costs, so read the terms first.",
+          },
+          {
+            prompt: "Why did Abdul-Rahman decide to wait before joining a marketplace?",
+            options: [
+              "Marketplaces do not allow clothes",
+              "His customers asked him not to",
+              "He did not have a phone",
+              "After reading the terms, the fees did not suit his small margins",
+            ],
+            answer_index: 3,
+            explanation: "He worked out the fees against his margins and decided to wait.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
     // NEXT
   },
 };
