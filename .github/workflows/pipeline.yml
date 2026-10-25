@@ -1,8 +1,14 @@
 name: Pipeline
 
-# The only path to production: verify, migrate the database, deploy the
-# frontend, then prove the live site serves this commit. Any failure stops
-# the run and leaves production as it was.
+# The only path to production. GitHub branch protection is not available on
+# this private repo's plan, so this workflow is the gate:
+#   1. gate        only commits that arrived through a merged PR may deploy
+#   2. verify      lint, types, unit tests, audit, build, migration safety
+#   3. test-db     every migration from scratch, db lint, pgTAP, types in sync
+#   4. e2e         Playwright against the local stack
+#   5. deploy-db   migrations to production
+#   6. deploy-frontend  Vercel, then version check, smoke test, auto rollback
+# Any failure stops the run and leaves production as it was.
 on:
   push:
     branches: [main]
@@ -11,16 +17,48 @@ concurrency:
   group: deploy-production
   cancel-in-progress: false # queue, never kill a half finished deploy
 
+permissions:
+  contents: read
+
 env:
   PROD_REF: vgdnuztoemexrtooofme
   PROD_URL: https://sydcrest-launchpad.vercel.app
+  SUPABASE_INTERNAL_IMAGE_REGISTRY: ghcr.io
 
 jobs:
+  gate:
+    name: Merged PR only
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: write
+    steps:
+      - name: Refuse commits that did not come from a merged PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          prs=$(gh api "repos/$GITHUB_REPOSITORY/commits/$GITHUB_SHA/pulls" \
+            --jq '[.[] | select(.merged_at != null and .base.ref == "main") | .number] | join(",")')
+          if [ -n "$prs" ]; then
+            echo "Commit $GITHUB_SHA comes from merged PR(s): #$prs"
+            exit 0
+          fi
+          echo "::error::$GITHUB_SHA was pushed to main without a merged PR. Not deploying."
+          gh issue create -R "$GITHUB_REPOSITORY" --label bug \
+            --title "Direct push to main blocked from deploying ($GITHUB_SHA)" \
+            --body "Commit $GITHUB_SHA by @$GITHUB_ACTOR reached main without a merged pull request, so the pipeline refused to deploy it. Open a PR for the change (or revert it). Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" || true
+          exit 1
+
   verify:
     name: Verify
+    needs: gate
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
@@ -30,14 +68,76 @@ jobs:
       - run: pnpm lint
       - run: pnpm typecheck
       - run: pnpm test
+      - name: Dependency audit (high and critical, production deps)
+        run: pnpm audit --prod --audit-level high
+      - name: Migration guard (shipped migrations untouched, new ones expand only)
+        run: pnpm tsx scripts/migration-guard-cli.ts "${{ github.event.before }}"
       - run: pnpm build
         env:
           NEXT_PUBLIC_SUPABASE_URL: http://localhost:54321
           NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ci-placeholder
 
+  test-db:
+    name: Database tests
+    needs: gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: 2.114.0 # keep in step with the local CLI; generated types depend on it
+      - run: supabase start -x studio,mailpit,imgproxy,edge-runtime,logflare,vector,realtime,storage-api,supavisor
+      - run: supabase db reset
+      - run: supabase db lint --level error
+      - run: supabase test db
+      - name: Generated types match the migrations
+        run: |
+          set -euo pipefail
+          supabase gen types typescript --local > /tmp/generated.ts
+          diff <(grep -v PostgrestVersion src/lib/supabase/database.types.ts) \
+               <(grep -v PostgrestVersion /tmp/generated.ts)
+
+  e2e:
+    name: End to end
+    needs: gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - uses: supabase/setup-cli@v1
+        with:
+          version: 2.114.0
+      - run: supabase start -x studio,imgproxy,edge-runtime,logflare,vector,realtime,storage-api,postgres-meta,supavisor
+      - name: Point the build at the local stack
+        run: |
+          set -euo pipefail
+          key=$(supabase status -o json | jq -r .PUBLISHABLE_KEY)
+          echo "NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321" >> "$GITHUB_ENV"
+          echo "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=$key" >> "$GITHUB_ENV"
+          service=$(supabase status -o json | jq -r .SERVICE_ROLE_KEY)
+          echo "::add-mask::$service"
+          echo "SUPABASE_SERVICE_ROLE_KEY=$service" >> "$GITHUB_ENV"
+      - run: pnpm build
+      - run: pnpm exec playwright install --with-deps chromium
+      - name: Local secret key for the test step only
+        id: local-keys
+        run: |
+          set -euo pipefail
+          secret=$(supabase status -o json | jq -r .SECRET_KEY)
+          echo "::add-mask::$secret"
+          echo "secret=$secret" >> "$GITHUB_OUTPUT"
+      - run: pnpm e2e
+        env:
+          SUPABASE_SECRET_KEY: ${{ steps.local-keys.outputs.secret }}
+
   deploy-db:
     name: Deploy database
-    needs: verify
+    needs: [verify, test-db, e2e]
     runs-on: ubuntu-latest
     environment: Production
     env:
@@ -47,8 +147,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: supabase/setup-cli@v1
         with:
-          version: 2.114.0 # keep in step with the local CLI; generated types depend on it
+          version: 2.114.0
       - run: supabase link --project-ref "$PROD_REF"
+      - name: Show what will be applied
+        run: supabase migration list --linked
       - run: supabase db push
 
   # deploy-functions: add back (between db and frontend) when supabase/functions
@@ -76,6 +178,7 @@ jobs:
         env:
           NEXT_PUBLIC_BUILD_SHA: ${{ github.sha }}
       - name: Deploy
+        id: deploy
         run: vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"
       - name: Verify production serves this commit
         run: |
@@ -87,3 +190,20 @@ jobs:
             sleep 10
           done
           echo "Production is not serving $GITHUB_SHA"; exit 1
+      - name: Smoke test key pages
+        run: |
+          set -euo pipefail
+          for path in / /roadmaps /start /login /signup /privacy /terms /manifest.webmanifest /sitemap.xml; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$PROD_URL$path")
+            echo "$path $code"
+            [ "$code" = "200" ] || { echo "::error::$path returned $code"; exit 1; }
+          done
+          code=$(curl -s -o /dev/null -w '%{http_code}' "$PROD_URL/dashboard")
+          [ "$code" = "307" ] || { echo "::error::/dashboard should redirect signed out visitors, got $code"; exit 1; }
+      # Only when the new build actually went live and then failed its checks;
+      # a failed build never touched production, so there is nothing to undo.
+      - name: Roll back to the previous production deployment
+        if: failure() && steps.deploy.outcome == 'success'
+        run: |
+          echo "::warning::Deploy checks failed; rolling Vercel back to the previous production deployment."
+          vercel rollback --yes --token="$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID" || echo "::error::Automatic rollback failed. Roll back by hand in Vercel, Deployments."
