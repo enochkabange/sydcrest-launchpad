@@ -31,7 +31,16 @@ export async function admin<T = unknown>(path: string, init: { method?: string; 
   return (text ? JSON.parse(text) : null) as T;
 }
 
-/** Insert rows through PostgREST and return them. */
+/**
+ * Insert rows through PostgREST and return them in order. One request per
+ * row: a bulk insert needs every row to have the same keys, and leaving a
+ * key out is how a row gets the column default.
+ */
 export async function insert<T extends Record<string, unknown>>(table: string, rows: Record<string, unknown>[]) {
-  return admin<(T & { id: string })[]>(`/rest/v1/${table}`, { method: "POST", body: rows });
+  const out: (T & { id: string })[] = [];
+  for (const row of rows) {
+    const [created] = await admin<(T & { id: string })[]>(`/rest/v1/${table}`, { method: "POST", body: row });
+    out.push(created);
+  }
+  return out;
 }
