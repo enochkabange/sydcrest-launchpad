@@ -1,29 +1,35 @@
 # How we work
 
-Fast and structured: weekly sprints, a plan before any build, one deploy path.
+Fast and structured: goal based sprints, a plan before any build, one deploy path.
 Sprint roadmap: `Planning/11_SPRINT_PLAN.md`. Pipeline: `docs/ci-cd.md`.
 
 ## Words
-- **Sprint:** one week, Monday to Sunday, one goal, a GitHub milestone ("Sprint 1").
+- **Sprint:** one goal and a fixed list of issues, a GitHub milestone ("Sprint 1").
+  It lasts as long as it takes to ship the goal; the milestone due date is the
+  estimate, not a deadline.
 - **Issue:** one piece of work with acceptance criteria. Lives in a sprint
   milestone, or in the **backlog** (no milestone).
 - **PR:** a GitHub pull request, always by its number (#28). Says `Closes #n`.
 - **Step:** a Phase 1 build step from `Planning/10` §5 (for example "Roadmap
   data model"). A step usually spans one or two sprints.
 
-## The week
-1. **Monday planning (30 min).** Choose the sprint's issues from the plan and the
+## The cycle
+1. **Sunday: plan.** Choose the sprint's goal and issues from the plan and the
    backlog. Each issue gets: problem, acceptance criteria, out of scope, owner.
-   Founder-only tasks carry `owner:founder`.
-2. **Build.** Branch per issue cluster, PR per branch, CI green (Checks,
-   Migrations, E2E), preview checked, merge. The pipeline deploys.
-3. **Sunday review (30 min).** Demo on production. Close the milestone. Move
-   anything unfinished to the next sprint or the backlog. Write one line on what
+   Founder-only tasks carry `owner:founder`. Set the milestone due date as the
+   estimate.
+2. **Build until the goal ships.** Branch per issue cluster, PR per branch, CI
+   green (Checks, Migrations, E2E), preview checked, merge. The pipeline deploys.
+   If the goal ships midweek, pull the next ready issue from the plan rather than
+   sit idle; it counts toward the next sprint.
+3. **Saturday: review**, the day before the next planning. Demo on production.
+   If the goal shipped, close the milestone. If it is running past its estimate,
+   decide: cut scope or carry on, never quietly grow it. Write one line on what
    to improve.
 
 ## New ideas mid sprint
 Open an **Idea** issue (it lands in the backlog). It is considered at the next
-Monday planning. To pull it into the current sprint, take out something of
+Sunday planning. To pull it into the current sprint, take out something of
 similar size. Small fixes that clearly belong to an open PR's scope can go in;
 say so on the PR.
 
