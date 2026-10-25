@@ -444,6 +444,361 @@ Pin your best projects, give each a clear README that says what it does and how 
         pass_threshold: 75,
       },
     },
+    "a-language": {
+      explanation_md: `Backend job adverts in Ghana and on remote boards ask for many languages: JavaScript with Node.js, Python, Java, C#, PHP, Go and more. That list can feel overwhelming. The good news is that employers mostly want to see that you can build working things well in **one** language. Once you know one deeply, picking up a second for a new job takes weeks, not years.
+
+### Why one language, learned well
+
+Jumping between languages after every tutorial feels like progress, but it leaves you knowing the first chapter of five books. Interviews test whether you can solve a problem, read an error and finish a small project without help. That comes from depth.
+
+Stay with one language until you can:
+
+* build a small program from a blank file without copying a tutorial
+* read an error message and find the cause
+* use the language's package manager to install a library
+* write a simple test
+
+### Choosing between Node.js and Python
+
+For most beginners in this roadmap, the choice is between JavaScript (running on a server with **Node.js**) and **Python**. Both are free, run well on low spec laptops and have huge amounts of free learning material.
+
+* **Node.js** lets you use the same language as the frontend, which helps if you want full stack roles. Several Ghanaian and remote adverts we studied asked for Node.js with frameworks such as Express or NestJS, often with TypeScript.
+* **Python** is popular for backend work with frameworks such as Django, Flask or FastAPI, and it is also the main language for data work. If data interests you, Python keeps that door open.
+
+Java and C# appear often in bank and large company adverts. They are excellent languages, but they are heavier to set up on a modest machine. You can learn one later if a specific employer needs it.
+
+### How to decide
+
+Look at five job adverts you would genuinely apply for, in Ghana or remote. Count which language appears most. If it is close, pick the one whose free course you enjoy more. Enjoyment keeps you going on hard days.
+
+The code examples in this roadmap use JavaScript with Node.js, because it came up often in the junior adverts we read. Every idea, such as routes, validation, webhooks and tests, works the same way in Python.
+
+### What this section covers
+
+* **Programming fundamentals:** variables, functions, data structures, errors and breaking problems into steps.
+* **Asynchronous code:** how a server waits for databases and other services without freezing, and how to cope when the network is slow.
+
+### A word on practice
+
+Imagine Wumpini, learning in Damongo, sets herself one rule: write some code every day, even fifteen minutes on her phone. Short, steady practice like that adds up, and it beats long weekend sessions you cannot keep up.`,
+      practice_task_md: `**Goal:** make an informed language choice and set it up.
+
+1. Search a job board for five junior or entry level backend or software roles in Ghana or remote. For each, write the employer type (bank, fintech, telco, startup, agency) and the languages mentioned. Do not copy the advert text, just the language names.
+2. Count the languages and pick one.
+3. Install it: Node.js from nodejs.org or Python from python.org on a laptop, or \`pkg install nodejs\` or \`pkg install python\` in Termux on Android.
+4. Write a program that prints "Hello from Tamale" and run it from the terminal.
+
+**Done looks like:** your five row table, your choice with one sentence explaining why, and a screenshot of your program running.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, what do employers mostly want to see about languages?",
+            options: [
+              "That you know at least five languages a little",
+              "That you can build working things well in one language",
+              "That you only use the newest language",
+              "That you have a certificate in every language",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says depth in one language matters more than a long list.",
+          },
+          {
+            prompt: "Which is a reason the lesson gives for choosing Node.js?",
+            options: [
+              "It only works on expensive laptops",
+              "It cannot be used with frameworks",
+              "It uses the same language as the frontend, which helps for full stack roles",
+              "It is the only language banks use",
+            ],
+            answer_index: 2,
+            explanation: "Node.js lets you use JavaScript on both frontend and backend.",
+          },
+          {
+            prompt: "Which is a reason the lesson gives for choosing Python?",
+            options: [
+              "It is popular for backend frameworks and is also the main language for data work",
+              "It is the only language that runs on Linux",
+              "It does not need any practice",
+              "It has no free learning material",
+            ],
+            answer_index: 0,
+            explanation: "The lesson notes Python keeps the data path open.",
+          },
+          {
+            prompt: "How does the lesson suggest you decide between languages?",
+            options: [
+              "Pick whichever language has the longest name",
+              "Change language every week until one feels easy",
+              "Count which language appears most in five adverts you would apply for",
+              "Ask a friend to pick at random",
+            ],
+            answer_index: 2,
+            explanation: "The lesson suggests letting real adverts guide the choice.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "programming-fundamentals": {
+      explanation_md: `Graduate programmes and junior roles in Ghana often test data structures, problem solving and clean code before they ask anything about frameworks. Remote employers do the same with short coding exercises. These fundamentals are what let you turn a business need, such as "total today's sales", into code that works.
+
+### The building blocks
+
+* **Variables** hold values: \`const price = 15;\`
+* **Types**: numbers, strings (text), booleans (true or false), and empty values such as \`null\`.
+* **Conditions** choose what to do: \`if\`, \`else\`.
+* **Loops** repeat work: \`for\`, \`while\`, or array methods such as \`map\` and \`filter\`.
+* **Functions** give a name to a piece of work so you can reuse it and test it.
+
+### Data structures you will use daily
+
+An **array** is an ordered list. An **object** (a dictionary in Python) stores values by name. Real backend data is usually a mix of both.
+
+\`\`\`js
+const sales = [
+  { item: "rice", qty: 2, price: 30 },
+  { item: "oil", qty: 1, price: 45 },
+];
+\`\`\`
+
+### A worked example
+
+Hawa runs a stall at Tamale Central Market and wants her total for the day. Break the problem into steps first:
+
+1. For each sale, multiply quantity by price.
+2. Add those amounts together.
+3. Return the total.
+
+\`\`\`js
+function dailyTotal(sales) {
+  let total = 0;
+  for (const s of sales) {
+    total += s.qty * s.price;
+  }
+  return total;
+}
+\`\`\`
+
+\`dailyTotal(sales)\` gives 105. Writing the steps in plain words before coding is the habit that matters most here. Interviewers love to hear you do it out loud.
+
+### Money needs care
+
+Computers store decimal numbers in a way that causes tiny errors: in JavaScript \`0.1 + 0.2\` is not exactly \`0.3\`. For cedis, many systems store amounts as whole **pesewas** (GHS 12.50 becomes 1250) and only format them for display. You will see this again when you handle payments.
+
+### Errors are information
+
+When code fails, it throws an **error** with a message and a line number. Read it slowly. Most beginner bugs are typos, a wrong variable name or a value that is \`undefined\`. Use \`try\` and \`catch\` to handle errors you expect, such as bad input, so your program does not crash.
+
+\`\`\`js
+try {
+  const order = JSON.parse(text);
+} catch (err) {
+  console.log("Bad order data");
+}
+\`\`\`
+
+### Debugging
+
+Add \`console.log\` lines to see what values really are, then remove them. Change one thing at a time. Explain the problem to a friend or even to yourself; often you spot the bug while explaining.
+
+### Practise small and often
+
+Short exercises on free sites, or your own small problems from daily life, build skill quickly. Try a tithe calculator, a bus fare splitter or a stock counter for a provisions shop.`,
+      practice_task_md: `**Goal:** write and test three small functions using local data.
+
+Create a file \`market.js\` (or \`market.py\`) with:
+
+1. \`dailyTotal(sales)\` as in the lesson, using your own list of five sales.
+2. \`bestSeller(sales)\` that returns the item with the highest quantity sold.
+3. \`toPesewas(cedis)\` that turns an amount like 12.5 into 1250 as a whole number.
+
+Print the result of each function with sample data. Then break one input on purpose (for example, a sale with no price) and handle it with \`try\` and \`catch\` or a clear check.
+
+**Done looks like:** a file on GitHub that runs with one command and prints three correct answers plus a friendly message for the bad input.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the first step the lesson recommends before writing code for a problem?",
+            options: [
+              "Search for a framework that solves it",
+              "Break the problem into steps in plain words",
+              "Write the tests for the frontend",
+              "Ask the customer to write the code",
+            ],
+            answer_index: 1,
+            explanation: "The worked example starts by listing steps in plain words.",
+          },
+          {
+            prompt: "Why do many systems store cedi amounts as whole pesewas?",
+            options: [
+              "Because pesewas are no longer used",
+              "Because whole numbers use less data on a phone",
+              "Because decimal numbers can cause tiny rounding errors in computers",
+              "Because banks forbid decimal points",
+            ],
+            answer_index: 2,
+            explanation: "The lesson explains that 0.1 plus 0.2 is not exactly 0.3, so whole pesewas avoid errors.",
+          },
+          {
+            prompt: "In the sales example, what kind of data structure is the list of sales?",
+            options: [
+              "A single string",
+              "A boolean",
+              "An array of objects",
+              "A loop",
+            ],
+            answer_index: 2,
+            explanation: "The sales are an ordered array where each item is an object with named values.",
+          },
+          {
+            prompt: "What is try and catch used for?",
+            options: [
+              "Handling errors you expect, such as bad input, so the program does not crash",
+              "Making loops run twice as fast",
+              "Sending code to GitHub",
+              "Converting cedis to dollars",
+            ],
+            answer_index: 0,
+            explanation: "The lesson shows try and catch handling bad order data.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "async-programming": {
+      explanation_md: `A backend spends most of its time waiting: for the database, for a payment provider, for an SMS service. If it simply stopped and waited each time, one slow request would hold up everyone else. Asynchronous code lets a server start a task, deal with other customers while it waits, and come back when the answer arrives. Adverts for Node.js roles often mention asynchronous programming directly, and remote fintech adverts mention asynchronous processing.
+
+### The idea, with a chop bar
+
+Picture Amina's chop bar. A good server (the person) takes Fuseini's order, passes it to the kitchen and goes to take the next order. She does not stand at the kitchen door until the food is ready. When the food is ready, she brings it out. That is asynchronous work.
+
+### Promises, async and await
+
+In JavaScript, a task that finishes later returns a **promise**. The \`await\` keyword pauses only the current function until the promise settles, while the server keeps handling other requests.
+
+\`\`\`js
+async function getOrder(id) {
+  const order = await db.findOrder(id);
+  return order;
+}
+\`\`\`
+
+Python has the same idea with \`async def\` and \`await\`.
+
+### When things fail
+
+Awaited work can fail: the database might be down, or a provider might return an error. Wrap it in \`try\` and \`catch\`:
+
+\`\`\`js
+try {
+  const res = await fetch(url);
+  const data = await res.json();
+} catch (err) {
+  console.error("Call failed", err);
+}
+\`\`\`
+
+### Timeouts matter in Ghana
+
+Networks drop, power cuts take routers down and partner services slow down at busy times. A call with no time limit can hang for a very long time and tie up your server. Set a **timeout** so you give up after a sensible wait:
+
+\`\`\`js
+const res = await fetch(url, {
+  signal: AbortSignal.timeout(5000),
+});
+\`\`\`
+
+That stops waiting after five seconds and throws an error you can catch. Then you can tell the user to try again, or try again yourself later.
+
+### Doing things at the same time
+
+If you need two independent results, start both and wait for both together instead of one after the other:
+
+\`\`\`js
+const [user, wallet] = await Promise.all([
+  getUser(id),
+  getWallet(id),
+]);
+\`\`\`
+
+This is often much faster. Only do it when the tasks do not depend on each other.
+
+### A common beginner mistake
+
+Forgetting \`await\` gives you a promise instead of the value. If you print something and see \`Promise { <pending> }\`, you probably forgot it.
+
+### Why this sets up later lessons
+
+Payments, webhooks, SMS and background jobs all depend on handling slow and failed calls calmly. Imagine Sumaila is building a bus ticket app in Bolgatanga. If his calls hang or fail silently, customers see a spinner forever and he has no idea why. Timeouts and clear error handling turn those mysteries into messages he can act on.`,
+      practice_task_md: `**Goal:** see asynchronous code, failures and timeouts in action.
+
+1. In Node.js 18 or newer, create \`fetch-test.js\`.
+2. Write an \`async\` function that fetches \`https://httpbin.org/delay/2\` (it replies after two seconds) and prints the status code.
+3. Add a timeout of one second with \`AbortSignal.timeout(1000)\` and catch the error so it prints "Took too long, please try again".
+4. Use \`Promise.all\` to fetch \`https://httpbin.org/get\` twice at the same time and print how long it took using \`Date.now()\`.
+
+**Done looks like:** a script on GitHub that prints a timeout message and a timing result, with a short README explaining what you saw. This uses very little data.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does a backend need asynchronous code?",
+            options: [
+              "So that it never needs a database",
+              "So it can handle other requests while waiting for slow tasks such as database calls",
+              "So that code runs without errors",
+              "So that it uses no electricity",
+            ],
+            answer_index: 1,
+            explanation: "Asynchronous code lets the server keep working while it waits.",
+          },
+          {
+            prompt: "In the chop bar example, what does the server (the person) do after passing an order to the kitchen?",
+            options: [
+              "Stands at the kitchen door until the food is ready",
+              "Closes the chop bar",
+              "Goes to take the next order and returns when the food is ready",
+              "Cooks the food herself",
+            ],
+            answer_index: 2,
+            explanation: "This is the asynchronous pattern the lesson describes.",
+          },
+          {
+            prompt: "What does setting a timeout on a network call do?",
+            options: [
+              "Makes the call use less data",
+              "Stops waiting after a set time and raises an error you can handle",
+              "Guarantees the call succeeds",
+              "Repeats the call forever",
+            ],
+            answer_index: 1,
+            explanation: "A timeout gives up after a sensible wait so the server is not tied up.",
+          },
+          {
+            prompt: "When should you use Promise.all?",
+            options: [
+              "When the second task needs the result of the first",
+              "Only when you have no internet",
+              "When two or more tasks are independent and can run at the same time",
+              "Whenever you want to skip error handling",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says Promise.all is for independent tasks.",
+          },
+          {
+            prompt: "You print a value and see Promise { <pending> }. What is the likely cause?",
+            options: [
+              "The database is full",
+              "The network is down",
+              "You used too many functions",
+              "You forgot to use await",
+            ],
+            answer_index: 3,
+            explanation: "The lesson names a missing await as the usual cause.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
   },
 };
 
