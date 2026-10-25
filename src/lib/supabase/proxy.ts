@@ -1,6 +1,12 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { hasAgeAndConsent } from "@/lib/legal";
+import {
+  ANONYMOUS_ID_COOKIE,
+  ANONYMOUS_ID_COOKIE_OPTIONS,
+  isAnonymousId,
+  newAnonymousId,
+} from "@/lib/analytics/anonymous-id";
 
 /**
  * Refreshes the Supabase session on every request so Server Components always
@@ -8,7 +14,11 @@ import { hasAgeAndConsent } from "@/lib/legal";
  * The signed-out redirect below is only an early exit so the app shell never
  * flashes for visitors; pages still authorize through lib/auth.ts.
  * Signed in users without a date of birth and terms consent in their metadata
- * (Google sign ups, first visit) are sent to /welcome the same way.
+ * (Google sign ups, first visit) are sent to /welcome the same way. This is
+ * the cheap metadata fallback; lib/auth.ts makes the authoritative check
+ * against the consents table.
+ * Signed out visitors get a random first party anonymous id cookie for the
+ * analytics funnel (lib/analytics); nothing personal, no third parties.
  */
 const PROTECTED = ["/dashboard", "/profile"];
 const SIGNED_IN_ONLY = [...PROTECTED, "/welcome"];
@@ -57,6 +67,12 @@ export async function updateSession(request: NextRequest) {
 
   const claims = data?.claims;
   if (!claims && matches(path, SIGNED_IN_ONLY)) return redirectTo("/login");
+
+  // Set after getClaims: the setAll above replaces `response`.
+  if (!claims && !isAnonymousId(request.cookies.get(ANONYMOUS_ID_COOKIE)?.value)) {
+    const id = newAnonymousId();
+    response.cookies.set(ANONYMOUS_ID_COOKIE, id, ANONYMOUS_ID_COOKIE_OPTIONS);
+  }
   if (claims && matches(path, PROTECTED) && !hasAgeAndConsent(claims.user_metadata)) {
     return redirectTo("/welcome");
   }
