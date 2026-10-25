@@ -971,6 +971,468 @@ Spend ten minutes a day reading something in English that interests you: a news 
         pass_threshold: 75,
       },
     },
+
+    "accounts-and-safety": {
+      explanation_md: `Almost everything you will do online needs an account: an email address, a course website, a job portal, a video call app. Each account holds your name, your phone number and sometimes your money. Employers also want staff who will not fall for tricks that put customer information or company money at risk. That is why this section comes before you sign up for anything else.
+
+## What this section covers
+
+* **One email address you control.** How to create a personal email address with a sensible name, and make sure you can always get back into it.
+* **Strong passwords and two step verification.** How to make passwords that are hard to guess, and add a second lock so a stolen password is not enough.
+* **Spotting mobile money and online scams.** The tricks people in Ghana use most often, and simple rules that protect you.
+* **Privacy and shared phones.** What to share and not share about yourself, and how to keep your accounts private when other people use your phone.
+
+## Think of accounts like keys
+
+Your email account is like the master key to your house. If someone gets it, they can reset the passwords of your other accounts, read your messages and pretend to be you. Your MoMo PIN is like the key to your money box. You would not give your house key to a stranger who called and said they were from the landlord. Online, the same common sense applies, but the tricks can be harder to spot.
+
+## A quick story
+
+Abdul-Rahman in Walewale created an email address in a hurry at a business centre. He used his sister's phone number for recovery and a password that was his name and birth year. A year later he forgot the password, and his sister had changed her number. He lost the account, along with an online certificate he had earned. Ten minutes of careful setup would have saved it. This section helps you avoid that.
+
+## How this links to the DMP cohort
+
+In week 1 of the Delta Mentoring Program you will use Gmail to send emails with attachments and learn to recognise phishing emails. Later weeks go deeper into privacy settings and judging online sources. This section gives you the foundation: an account that is yours, protected properly, and the habit of pausing before you trust a message.
+
+## A rule to remember
+
+If a message makes you feel rushed, scared or very excited, stop. Scammers want you to act before you think. A real bank, network or employer will still be there in ten minutes, after you have checked.`,
+      practice_task_md: `**Goal:** Make a list of the accounts you already have.
+
+**Steps**
+
+1. On a piece of paper, list every online account you can remember: email, WhatsApp, Facebook, MoMo, school portal, and any others.
+2. Next to each one, write which phone number it is linked to.
+3. Mark any account linked to a number that is not yours, or that you no longer use.
+4. Mark any accounts that share the same password. Do not write the passwords themselves.
+
+**Done looks like:** A list with your accounts, the linked numbers, and marks showing which ones need fixing during this section. Keep the paper somewhere private.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson compare your email account to a master key?",
+            options: [
+              "Because it is made of metal",
+              "Because someone with it can reset your other accounts and pretend to be you",
+              "Because it opens your front door",
+              "Because it never needs a password",
+            ],
+            answer_index: 1,
+            explanation: "Access to your email lets someone reset other passwords and read your messages.",
+          },
+          {
+            prompt: "What went wrong for Abdul-Rahman?",
+            options: [
+              "He used his own number and a strong password",
+              "He linked his sister's number and used a weak password, then could not recover the account",
+              "He never created an email address",
+              "His phone was stolen at a business centre",
+            ],
+            answer_index: 1,
+            explanation: "A recovery number that was not his and a weak password meant he lost the account.",
+          },
+          {
+            prompt: "A message makes you feel rushed and very excited. What should you do?",
+            options: [
+              "Reply immediately before the offer ends",
+              "Stop and check before you act",
+              "Send your PIN to confirm",
+              "Forward it to all your groups",
+            ],
+            answer_index: 1,
+            explanation: "Scammers want you to act before you think, so stop and check first.",
+          },
+          {
+            prompt: "What will DMP week 1 do with email?",
+            options: [
+              "Nothing, email is not used",
+              "Use Gmail to send emails with attachments and recognise phishing",
+              "Teach you to build an email app",
+              "Only teach phone calls",
+            ],
+            answer_index: 1,
+            explanation: "The lesson explains that week 1 uses Gmail with attachments and covers phishing.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "email-account": {
+      explanation_md: `Every job application, online course, certificate and video call invitation needs an email address. Employers will judge you a little by it, so the name matters. Most importantly, it must be yours: linked to your own phone number, with a password only you know. DMP week 1 uses Gmail, so a Gmail address is a good choice, but any reliable free provider works.
+
+## Choosing a sensible address
+
+Your email address is often the first thing an employer sees. Compare:
+
+* partyboy4real@...
+* wumpini.alhassan@...
+
+The second is clear and professional. Good patterns are your first name and surname, perhaps with a dot or a number if the name is taken. Avoid nicknames, jokes and your birth year if you can, since it shares personal information.
+
+## Creating the account
+
+On an Android phone you already have a Google account if you use the Play Store. You can use that, or create a new one just for work and study. To create one:
+
+1. Open the Gmail app, or go to the Google account sign up page in your browser.
+2. Choose **Create account**, then **For my personal use**.
+3. Enter your real name, your date of birth and choose your address.
+4. Create a strong password. The next lesson explains how.
+5. Add **your own** phone number when asked.
+
+## Making sure you can always get back in
+
+This is the step many people skip. In your Google Account settings, open **Security** and check:
+
+* **Recovery phone.** It must be a number you own and will keep. Not a friend's, not a business centre's.
+* **Recovery email.** Optional, but useful if you have a second address.
+
+If you ever change your SIM, update the recovery number straight away.
+
+## Signing in and out
+
+If you use a shared phone or a computer at a library or business centre, always **sign out** when you finish. Do not tick "remember me" or save the password on a device that is not yours.
+
+## A worked example
+
+Fuseini used to apply for jobs with an address his cousin made for him years ago. He did not know the password and it was linked to his cousin's old number. He created a new address, fuseini.issahaku, linked it to his own MTN number, and wrote down where to find the recovery settings. When he forgot his password two months later, Google sent a code to his phone and he was back in within a minute.
+
+Once your account is ready, DMP week 1 will teach you to use it fully: writing, replying and sending attachments.`,
+      practice_task_md: `**Goal:** Have one professional email address that you fully control.
+
+**Steps**
+
+1. Decide on an address using your real name. Write two backup options in case it is taken.
+2. Create the account, or check an existing one if it already uses your real name.
+3. Open your account's Security settings and confirm the recovery phone is your own current number.
+4. Send a short test email to a friend with a clear subject line, and ask them to reply.
+5. Sign out, then sign in again to make sure you know your password.
+
+**Done looks like:** A professional email address, linked to your own number, that you can sign in to without help. Write the address (not the password) at the top of your notebook.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which email address is the most professional?",
+            options: [
+              "partyboy4real",
+              "wumpini.alhassan",
+              "bigmoneyking",
+              "cutegirl2005",
+            ],
+            answer_index: 1,
+            explanation: "First name and surname is clear and professional.",
+          },
+          {
+            prompt: "Whose phone number should be your recovery number?",
+            options: [
+              "A business centre's number",
+              "Your friend's number",
+              "Your own number that you will keep",
+              "No number at all",
+            ],
+            answer_index: 2,
+            explanation: "Only your own current number lets you recover the account yourself.",
+          },
+          {
+            prompt: "What should you do when you change your SIM?",
+            options: [
+              "Delete your email account",
+              "Update the recovery number straight away",
+              "Nothing, it updates itself",
+              "Share your password with a friend",
+            ],
+            answer_index: 1,
+            explanation: "An old recovery number could stop you getting back into your account.",
+          },
+          {
+            prompt: "What should you do after using email on a library computer?",
+            options: [
+              "Save the password for next time",
+              "Tick remember me",
+              "Sign out when you finish",
+              "Leave it open for the next person",
+            ],
+            answer_index: 2,
+            explanation: "Always sign out on devices that are not yours.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "passwords-and-two-step": {
+      explanation_md: `If someone gets into your email, WhatsApp or MoMo, they can steal money, message your contacts pretending to be you, or lock you out of your own work. At work, a weak password can expose customer records. Two simple habits block most of these problems: strong passwords and two step verification.
+
+## What makes a password strong
+
+A strong password is **long** and **hard to guess**. Length matters more than strange symbols.
+
+Weak passwords include your name, your phone number, your birthday, "123456" or "password". People who know you, or computer programs that try common passwords, can guess these quickly.
+
+A good method is a **passphrase**: three or four random words joined together, perhaps with a number. For example, a phrase like "GuineaFowlRiverLantern7" is long, easy for you to remember and hard to guess. Do not use this exact example.
+
+## One password per important account
+
+If you use the same password everywhere and one website is hacked, criminals try it on your email and other accounts. Use a different password at least for your email, your MoMo or bank app, and your main social media.
+
+Remembering many passwords is hard. Options include a password manager app, or the password saving built into your Google account on your own phone. If you write passwords down, keep the paper at home in a private place, never in your phone case or wallet.
+
+## Two step verification
+
+Two step verification adds a second lock. After your password, the account asks for something only you have, usually a code sent to your phone or a prompt that appears on your phone. A thief with your password still cannot get in.
+
+* **Google account:** open your Google Account, go to **Security**, then turn on **2 Step Verification**. Google also lets you print backup codes. Keep them somewhere safe.
+* **WhatsApp:** open **Settings**, then **Account**, then **Two step verification**, and create a six digit PIN. This stops someone moving your WhatsApp to their phone.
+
+## The golden rule about codes
+
+**Never share a verification code with anyone.** Not a caller saying they are from your network, not a "Google agent", not a friend who says they sent it to you by mistake. Real companies do not ask you for these codes. If someone asks, it is a scam.
+
+## A worked example
+
+Issahaku received an SMS with a WhatsApp code he had not requested, followed by a message from an unknown number: "Sorry, I sent my code to you by mistake, please send it back." He ignored it. Because he had already set a WhatsApp two step PIN, his account stayed safe. The next day, his friend who had shared the code lost his account for a week.`,
+      practice_task_md: `**Goal:** Protect your two most important accounts.
+
+**Steps**
+
+1. Create a new passphrase for your email using three or four random words and a number. Change your email password to it.
+2. Turn on 2 Step Verification for your Google account in the Security settings.
+3. If you can print or write them down, save your Google backup codes somewhere private at home.
+4. In WhatsApp, turn on two step verification and set a PIN you will remember.
+5. Write down, without the passwords, which accounts now use different passwords.
+
+**Done looks like:** Two step verification switched on for both email and WhatsApp, and a new strong email password.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which is the strongest password idea from the lesson?",
+            options: [
+              "Your phone number",
+              "123456",
+              "Three or four random words joined with a number",
+              "Your name and birth year",
+            ],
+            answer_index: 2,
+            explanation: "A long passphrase of random words is easy to remember and hard to guess.",
+          },
+          {
+            prompt: "Why should important accounts have different passwords?",
+            options: [
+              "Websites require it by law",
+              "If one site is hacked, criminals try that password on your other accounts",
+              "Different passwords make your phone faster",
+              "So you can share one of them",
+            ],
+            answer_index: 1,
+            explanation: "Reusing a password lets one leak open many accounts.",
+          },
+          {
+            prompt: "What does two step verification add?",
+            options: [
+              "A second lock, such as a code sent to your phone",
+              "A second email address",
+              "Free data",
+              "A longer username",
+            ],
+            answer_index: 0,
+            explanation: "It asks for something only you have, so a password alone is not enough.",
+          },
+          {
+            prompt: "Someone says they sent their code to you by mistake and asks for it. What should you do?",
+            options: [
+              "Send it quickly to help them",
+              "Never share it, because it is a scam",
+              "Share half of it",
+              "Post it in a group so they can find it",
+            ],
+            answer_index: 1,
+            explanation: "Never share verification codes. Real companies and friends do not need them.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "spotting-scams": {
+      explanation_md: `Scammers in Ghana target people through mobile money, SMS, phone calls, WhatsApp and fake job adverts. People looking for work are a favourite target. Learning the common tricks protects your money, and employers value staff who can spot fraud before it costs the business. Some Ghanaian job sites even remind applicants never to pay a fee to get a job.
+
+## Common tricks to know
+
+* **The fake wrong transfer.** You get an SMS that looks like a MoMo alert saying money was sent to you. Then someone calls, begging you to send it back. Often no money arrived at all. The "alert" came from an ordinary phone number.
+* **The prize or promotion call.** A caller says you have won a prize from your network or a radio station, but you must first send a fee or share a code. Real prizes do not ask you to pay.
+* **The fake agent or customer care.** Someone claims to be from your network or bank and asks for your PIN, or tells you to dial a code to "fix" your account. Dialling codes or approving prompts they give you can move your money.
+* **The fake job offer.** An advert or message offers an easy, well paid job, then asks for a registration, training or medical fee. Real employers do not charge you to get a job.
+* **The family emergency.** A message from a new number says it is a relative with a new phone who urgently needs money.
+
+## Simple rules that protect you
+
+* **Never share your MoMo PIN or any verification code.** Nobody from a real company needs them.
+* **Check your real balance yourself** in your MoMo app or the official menu, not by trusting an SMS.
+* **Call back on the official number.** If someone says they are from your bank or network, hang up and call the customer care number on the official website, the back of your card, or your SIM pack.
+* **Never pay for a job.** Research the company name online and ask people you trust.
+* **Slow down.** Pressure and urgency are warning signs.
+* **Verify family requests** by calling the person's old number or asking a question only they would know.
+
+## A worked example
+
+Mariama, a shop attendant in Tamale, receives an SMS: "You have received GHS 500 from Kwame Mensah." A few minutes later a man calls, crying, asking her to send it back. She checks her MoMo balance through the official menu. No money has arrived. She tells him she will report it to her network, and he hangs up. She warns her colleagues in the shop's WhatsApp group so nobody else falls for it.
+
+If you do lose money, contact your network's official customer care immediately and report it. Acting fast gives the best chance of help.`,
+      practice_task_md: `**Goal:** Learn to recognise scams quickly.
+
+**Steps**
+
+1. Write down the five common tricks from this lesson in your own words.
+2. Look through your SMS and WhatsApp messages for anything that matches one of them. If you find one, write down which trick it was.
+3. Find the official customer care number for your mobile network from its official website or your SIM pack, and save it in your contacts.
+4. Explain two of the tricks to a family member who uses MoMo.
+
+**Done looks like:** Your list of five tricks, any real examples you found, the official number saved, and one person you warned.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "You get an SMS saying money was sent to you, then a caller asks you to send it back. What should you do first?",
+            options: [
+              "Send the money back immediately",
+              "Check your real balance yourself in the MoMo app or official menu",
+              "Give the caller your PIN so they can check",
+              "Forward the SMS to friends",
+            ],
+            answer_index: 1,
+            explanation: "Often no money arrived, so check your real balance yourself first.",
+          },
+          {
+            prompt: "A job offer asks you to pay a training fee before you start. What does this suggest?",
+            options: [
+              "It is a normal part of every job",
+              "It is likely a scam, because real employers do not charge you to get a job",
+              "You should pay quickly before others do",
+              "It guarantees a good salary",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says never to pay for a job.",
+          },
+          {
+            prompt: "Someone calls saying they are from your bank and asks for your PIN. What is the safe response?",
+            options: [
+              "Give the PIN if they sound polite",
+              "Hang up and call the official customer care number yourself",
+              "Dial the code they give you",
+              "Send them a verification code instead",
+            ],
+            answer_index: 1,
+            explanation: "Real companies never need your PIN, so call the official number yourself.",
+          },
+          {
+            prompt: "Which of these is a warning sign of a scam?",
+            options: [
+              "The message gives you plenty of time to check",
+              "The message pressures you to act urgently",
+              "The message comes from a friend you see daily",
+              "The message is a class timetable",
+            ],
+            answer_index: 1,
+            explanation: "Pressure and urgency are common warning signs.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "privacy-and-shared-phones": {
+      explanation_md: `Customer service and front desk jobs often involve customer names, phone numbers and payment details. Adverts for these roles ask for people who keep records confidential and check a caller's identity before sharing information. The habits start with your own information. Many people in Ghana also share a phone with family, which makes privacy a practical daily skill.
+
+## What to share, and what to keep private
+
+Before you post or send something, ask: could a stranger use this to trick me, find me, or pretend to be me?
+
+**Usually fine to share:** your name, your town, your skills, your interests, your professional photo.
+
+**Keep private:** your MoMo PIN, passwords and codes, your Ghana Card number, your full date of birth, photos of your ID or bank card, your exact home location, and your daily routine.
+
+Be careful with WhatsApp status and Facebook posts. A photo of a new ID card or a bank card, even partly covered, can help someone steal your identity.
+
+## Privacy settings to check
+
+* **WhatsApp:** open **Settings**, then **Privacy**. You can choose who sees your profile photo, last seen, about and status: everyone, your contacts, or nobody. You can also control who can add you to groups.
+* **Facebook and other apps:** look for **Privacy** or **Audience** settings and limit who can see your posts and phone number.
+
+## Using a shared phone safely
+
+* **Screen lock.** Use a PIN, pattern or fingerprint that only you know.
+* **Sign out.** On a shared phone, sign out of email and other accounts when you finish, or use a separate account for yourself if the phone allows it. Many Android phones support more than one user profile.
+* **Private browsing.** In Chrome, an Incognito tab does not save your history or passwords after you close it. It does not hide what you do from your network or employer, but it helps on shared devices.
+* **Do not save passwords** in the browser on a phone that is not yours.
+* **App lock.** Some phones and apps, including WhatsApp, let you lock individual apps with your fingerprint or a PIN.
+
+## Respecting other people's information
+
+At work you will see other people's details. Treat them as you want yours treated. Do not share a customer's number, photos or problems with friends. Ghana has a data protection law, and many employers have rules about customer information. Before giving account details over the phone, a good organisation checks who is calling.
+
+## A worked example
+
+Amina shares a phone with her younger brother. She set a fingerprint lock on WhatsApp, made her profile photo visible only to contacts, and signs out of her email after each study session. When she starts work as a customer service agent, verifying a caller's identity before discussing their parcel feels natural, because she already protects her own information the same way.`,
+      practice_task_md: `**Goal:** Tighten your privacy in ten minutes.
+
+**Steps**
+
+1. In WhatsApp, open Settings, then Privacy. Set profile photo, last seen and status to My contacts, and choose who can add you to groups.
+2. Check your phone has a screen lock that only you know.
+3. Look at your last ten WhatsApp statuses or social media posts. Delete any that show an ID card, bank card, PIN or your exact home location.
+4. If you share a phone, sign out of your email now and practise signing back in.
+5. Write down three things you will never post or send.
+
+**Done looks like:** Updated WhatsApp privacy settings, a working screen lock, and your list of three things you keep private.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these should you keep private?",
+            options: [
+              "Your skills",
+              "Your town",
+              "A photo of your ID card or bank card",
+              "Your interests",
+            ],
+            answer_index: 2,
+            explanation: "Photos of ID or bank cards can help someone steal your identity.",
+          },
+          {
+            prompt: "Where can you choose who sees your WhatsApp profile photo and last seen?",
+            options: [
+              "Settings, then Privacy",
+              "The camera button",
+              "The group description",
+              "The Play Store",
+            ],
+            answer_index: 0,
+            explanation: "WhatsApp's Privacy settings control who sees these details.",
+          },
+          {
+            prompt: "What does an Incognito tab in Chrome do on a shared phone?",
+            options: [
+              "Hides everything from your network",
+              "Does not save your history or passwords after you close it",
+              "Makes the internet free",
+              "Locks the phone",
+            ],
+            answer_index: 1,
+            explanation: "Incognito does not save history or passwords, but it does not hide activity from the network.",
+          },
+          {
+            prompt: "Why do customer service jobs care about privacy habits?",
+            options: [
+              "Staff handle customer details and must keep them confidential",
+              "Staff never see customer information",
+              "Privacy makes calls shorter",
+              "It is only needed for managers",
+            ],
+            answer_index: 0,
+            explanation: "These roles handle names, numbers and payment details that must stay confidential.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
