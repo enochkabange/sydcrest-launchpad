@@ -241,6 +241,19 @@
   to   { opacity: 1; }
 }
 
+/* Theme-following logo mark (LogoMark variant="auto"): the full-colour mark
+   is for light grounds only, so dark themes swap in the onDark treatment.
+   Same selectors as the dark theme block below. */
+@layer components {
+  .syd-on-dark { display: none; }
+  :root[data-theme="dark"] .syd-on-light { display: none; }
+  :root[data-theme="dark"] .syd-on-dark { display: inline; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .syd-on-light { display: none; }
+    :root:not([data-theme="light"]) .syd-on-dark { display: inline; }
+  }
+}
+
 /* ==========================================================================
    Semantic layer — components reference these, never raw scale values.
    Re-point them and the whole UI re-themes.
