@@ -1554,7 +1554,7 @@ Some remote assistant and junior operations adverts now ask for experience with 
 
 * **Quick replies and away messages.** WhatsApp Business lets you save quick replies, a greeting message for new customers and an away message for when you are closed. Write them once (AI can help with wording) and reuse them.
 * **Text shortcuts.** Most phone keyboards let you set a short code that expands into a longer phrase, such as typing "addr" to insert your shop's full address and directions.
-* **Forms that fill a sheet.** Google Forms sends every response into a Google Sheet automatically. Use it for orders, event sign ups or simple surveys instead of copying details from chats by hand.
+* **Forms that fill a sheet.** Once you link a Google Form to a Google Sheet, every new response lands in the sheet automatically. Use it for orders, event sign ups or simple surveys instead of copying details from chats by hand.
 * **Calendar reminders.** Recurring reminders for weekly posts, monthly invoices or stock checks.
 
 ## Automations that are easier on a computer
@@ -1589,13 +1589,13 @@ Fuseini organises a coding club in Damongo. Sign ups used to arrive in scattered
           {
             prompt: "What does Google Forms do automatically that saves copying by hand?",
             options: [
-              "Sends every response into a Google Sheet",
+              "Sends every response into a linked Google Sheet",
               "Replies to all WhatsApp messages",
               "Pays customers by MoMo",
               "Writes social media posts",
             ],
             answer_index: 0,
-            explanation: "The lesson says Forms sends every response into a Sheet automatically.",
+            explanation: "The lesson says a linked Form sends every new response into the Sheet automatically.",
           },
           {
             prompt: "Where are Gmail filters created, according to the lesson?",
