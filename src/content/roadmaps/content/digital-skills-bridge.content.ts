@@ -347,7 +347,7 @@ Compare the bundles your network offers before you buy. A bigger bundle that las
             options: [
               "Makes your bundle cheaper to buy",
               "Stops many apps from using data in the background",
-              "Deletes your photos to save space",
+              "Turns off WiFi to protect your phone",
               "Turns off your WiFi",
             ],
             answer_index: 1,
@@ -860,7 +860,7 @@ Rashida in Damongo has her first mentoring session on Google Meet. The day befor
               "It makes the call cheaper for the host",
               "It stops background noise disturbing everyone",
               "It makes your camera clearer",
-              "It is required by law",
+              "It makes your own voice louder for others",
             ],
             answer_index: 1,
             explanation: "Background noise from markets, radios or generators can make it hard for others to hear.",
@@ -1412,7 +1412,7 @@ Amina shares a phone with her younger brother. She set a fingerprint lock on Wha
             options: [
               "Hides everything from your network",
               "Does not save your history or passwords after you close it",
-              "Makes the internet free",
+              "Speeds up your downloads",
               "Locks the phone",
             ],
             answer_index: 1,
@@ -1904,7 +1904,7 @@ You do not need to be fast. You need to be comfortable enough that the computer 
               "Type very fast without any mistakes",
               "Type a short paragraph without looking for every key",
               "Repair computer hardware",
-              "Write code in three languages",
+              "Set up a computer network",
             ],
             answer_index: 1,
             explanation: "The goal is comfort, not speed: a short paragraph without searching for every key.",
@@ -2211,7 +2211,7 @@ Track your progress in your practice log. Seeing improvement week by week keeps 
             options: [
               "Phones cannot type letters",
               "The finger movements are different",
-              "Phone keyboards are illegal at work",
+              "Phone keyboards have fewer letters",
               "Phone typing uses too much data",
             ],
             answer_index: 1,
@@ -2338,7 +2338,7 @@ A simple notebook works perfectly. Writing in your own words, in English or mixe
 
 ## Test yourself
 
-Re-reading feels productive, but testing yourself works better. Take the quiz at the end of each lesson. Cover your notes and try to explain the idea out loud. Come back to a topic a few days later and check you still remember it.
+Reading your notes again feels productive, but testing yourself works better. Take the quiz at the end of each lesson. Cover your notes and try to explain the idea out loud. Come back to a topic a few days later and check you still remember it.
 
 ## Learn with others
 
@@ -2370,7 +2370,7 @@ Amina and Mariama are both preparing for the DMP cohort in Tamale. They agreed t
               "Learn digital marketing this week",
               "Do fifteen minutes of typing",
               "Become an expert by tomorrow",
-              "Read the whole internet",
+              "Watch videos for five hours today",
             ],
             answer_index: 1,
             explanation: "Small, specific goals are easy to start and finish.",
@@ -2387,7 +2387,7 @@ Amina and Mariama are both preparing for the DMP cohort in Tamale. They agreed t
             explanation: "Writing in your own words shows what you have understood.",
           },
           {
-            prompt: "Which study method does the lesson say works better than re-reading?",
+            prompt: "Which study method does the lesson say works better than reading your notes again?",
             options: [
               "Testing yourself",
               "Highlighting everything",
@@ -2395,7 +2395,7 @@ Amina and Mariama are both preparing for the DMP cohort in Tamale. They agreed t
               "Reading faster",
             ],
             answer_index: 0,
-            explanation: "Testing yourself works better than re-reading.",
+            explanation: "Testing yourself works better than reading your notes again.",
           },
           {
             prompt: "What helped Mariama catch up after missing three days?",
@@ -2579,7 +2579,7 @@ Every path above starts with the foundations in this roadmap: confident phone us
               "Mobile game design",
               "Social media marketing",
               "Cybersecurity",
-              "Robotics",
+              "Mobile app development",
             ],
             answer_index: 1,
             explanation: "The specialisations are SEO and content marketing, social media marketing, and Google Ads.",
