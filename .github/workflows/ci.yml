@@ -46,7 +46,13 @@ jobs:
       - name: Generated types match the migrations
         run: |
           set -euo pipefail
-          supabase gen types typescript --local > /tmp/generated.ts
+          # Pulls the postgres-meta image; public ECR sometimes rate limits
+          # shared runners, so retry before calling it a failure.
+          for attempt in 1 2 3; do
+            supabase gen types typescript --local > /tmp/generated.ts && break
+            [ "$attempt" = 3 ] && exit 1
+            echo "gen types failed (attempt $attempt), retrying in 30s"; sleep 30
+          done
           diff <(grep -v PostgrestVersion src/lib/supabase/database.types.ts) \
                <(grep -v PostgrestVersion /tmp/generated.ts) \
             || { echo "database.types.ts is stale. Regenerate it after changing migrations."; exit 1; }
