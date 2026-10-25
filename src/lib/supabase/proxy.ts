@@ -10,7 +10,7 @@ import { hasAgeAndConsent } from "@/lib/legal";
  * Signed in users without a date of birth and terms consent in their metadata
  * (Google sign ups, first visit) are sent to /welcome the same way.
  */
-const PROTECTED = ["/dashboard", "/profile"];
+const PROTECTED = ["/dashboard", "/profile", "/learn"];
 const SIGNED_IN_ONLY = [...PROTECTED, "/welcome"];
 
 function matches(path: string, prefixes: string[]) {
