@@ -12,7 +12,7 @@
  */
 import { useId, type ComponentProps } from "react";
 
-type MarkVariant = "color" | "onDark" | "mono";
+type MarkVariant = "auto" | "color" | "onDark" | "mono";
 
 /**
  * variant:
@@ -23,6 +23,8 @@ type MarkVariant = "color" | "onDark" | "mono";
  *              app icons in the guideline): cool bars become solid white, warm
  *              bars keep their gradient.
  *   "mono"   — single colour, inherits `currentColor`.
+ *   "auto"   — follows the active theme: "color" in light, "onDark" in dark.
+ *              Use it on themed surfaces; tokens.css does the switching.
  */
 export function LogoMark({
   size = 40,
@@ -30,11 +32,20 @@ export function LogoMark({
   className = "",
   ...props
 }: { size?: number; variant?: MarkVariant } & Omit<ComponentProps<"svg">, "width" | "height">) {
+  /* Unique per instance — a header lockup and a nav mark on the same page
+     would otherwise emit duplicate gradient IDs. Called before any early
+     return so hook order never changes. */
+  const id = useId().replace(/:/g, "");
+  if (variant === "auto") {
+    return (
+      <>
+        <LogoMark size={size} variant="color" className={`syd-on-light ${className}`} {...props} />
+        <LogoMark size={size} variant="onDark" className={`syd-on-dark ${className}`} {...props} />
+      </>
+    );
+  }
   const mono = variant === "mono";
   const onDark = variant === "onDark";
-  /* Unique per instance — a header lockup and a nav mark on the same page
-     would otherwise emit duplicate gradient IDs. */
-  const id = useId().replace(/:/g, "");
   const cool = mono ? undefined : onDark ? "#FFFFFF" : `url(#${id}-cool)`;
   const coolRev = mono ? undefined : onDark ? "#FFFFFF" : `url(#${id}-coolRev)`;
   const warm = mono ? undefined : `url(#${id}-warm)`;
@@ -92,7 +103,7 @@ export default function Logo({
   const text = inverse ? "text-white" : "text-content";
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`} {...props}>
-      <LogoMark size={size} variant={variant ?? (inverse ? "onDark" : "color")} />
+      <LogoMark size={size} variant={variant ?? (inverse ? "onDark" : "auto")} />
       <span
         className={`flex flex-col leading-[0.92] ${text}`}
         style={{ fontSize: size * 0.42 }}

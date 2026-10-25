@@ -1,4 +1,6 @@
+import Link from "next/link";
 import Logo from "@/components/brand/Logo";
+import { buttonClasses } from "@/components/ui/button";
 import { HeroGraphic } from "@/components/brand/illustrations";
 
 export default function Home() {
@@ -12,6 +14,14 @@ export default function Home() {
           together, and mentors who have done it before. We are rebuilding the
           platform now.
         </p>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/signup" className={buttonClasses("primary")}>
+            Create a free account
+          </Link>
+          <Link href="/login" className={buttonClasses("secondary")}>
+            Sign in
+          </Link>
+        </div>
       </div>
       <HeroGraphic className="mx-auto w-64 shrink-0 md:w-80" />
     </main>
