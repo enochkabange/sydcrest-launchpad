@@ -1397,6 +1397,515 @@ An awareness session you have actually delivered, with your slides or notes and 
         pass_threshold: 75,
       },
     },
+    "detect-respond": {
+      explanation_md: `## Why this matters
+
+Most junior security jobs advertised by Ghanaian telcos and banks centre on the same duties: monitor security events and alerts, analyse incidents, respond and escalate, and run vulnerability assessments. Banks such as those with their own security operations centres organise analysts in levels, with Level 1 analysts watching alerts and Level 2 analysts handling escalations. This section is the heart of the analyst role.
+
+## Prevention is never perfect
+
+However good the protection, something will eventually get through: a staff member clicks a link, a supplier is hacked, a new weakness is found in common software. Organisations therefore plan to **detect** problems quickly and **respond** in a controlled way. The faster an attack is spotted, the less damage it does.
+
+## The four topics in this section
+
+* **Logs and monitoring:** the records systems keep, and how to read them for signs of trouble.
+* **SOC work and alert triage:** how a security operations centre (SOC) uses tools such as a SIEM to collect alerts, and how Level 1 analysts decide which are real.
+* **Incident response:** the calm, step by step process used once an attack is confirmed, including Ghana's reporting duty under the Cybersecurity Act.
+* **Vulnerability management:** finding and fixing weaknesses on systems the organisation owns before attackers use them.
+
+## What the work feels like
+
+SOC work is often shift work, because attacks do not stop at night or at weekends. Much of it is careful and repetitive: reading alerts, checking facts, writing tickets. Most alerts turn out to be harmless. The skill is staying alert so you notice the one that is not, and writing clearly enough that the next analyst can pick up where you stopped.
+
+## A small example
+
+Wumpini is a Level 1 analyst on the night shift at a payments company. At 2 a.m. the monitoring tool raises an alert: a staff account logged in from two countries within ten minutes. She checks the details. The staff member's normal login is from Accra; the second login came from an address with a poor reputation, after several failed attempts. Wumpini records the facts in the ticket, follows the playbook to disable the account temporarily, and escalates to the Level 2 analyst on call. By morning the password is reset, the second factor is enforced and the staff member has been contacted. Her clear notes made the handover smooth.
+
+## Phone and computer
+
+You can learn the ideas and practise reading logs and alerts on a phone. Hands on SIEM and lab practice works best on a computer; the later lessons point to free browser based options and community computers you can use.`,
+      practice_task_md: `**Goal:** understand the detect and respond cycle with a real story.
+
+1. Find a news report about a cyber incident affecting an organisation in Ghana or elsewhere in Africa, from a reputable news site.
+2. In your journal, write: how it was detected, who responded, what they did, and what they could have done to detect it sooner.
+3. Write three questions you would ask if you had been the analyst on shift.
+4. Keep the summary to half a page and do not copy the article's sentences.
+
+**Done looks like:** a half page incident summary in your own words with three analyst questions. Include the article link.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why do organisations invest in detection and response as well as prevention?",
+            options: [
+              "Because prevention is never perfect",
+              "Because detection is cheaper than any protection",
+              "Because regulators ban prevention",
+              "Because attacks only happen at night",
+            ],
+            answer_index: 0,
+            explanation: "Something will eventually get through, so fast detection limits the damage.",
+          },
+          {
+            prompt: "In a SOC with levels, what do Level 1 analysts mainly do?",
+            options: [
+              "Approve budgets",
+              "Watch and triage alerts, then escalate",
+              "Write the company's laws",
+              "Repair printers",
+            ],
+            answer_index: 1,
+            explanation: "Level 1 analysts watch alerts and escalate real issues to Level 2.",
+          },
+          {
+            prompt: "What is true about most alerts in a SOC?",
+            options: [
+              "Most turn out to be harmless",
+              "Every alert is a confirmed attack",
+              "Alerts only appear during office hours",
+              "Alerts never need writing up",
+            ],
+            answer_index: 0,
+            explanation: "Most alerts are harmless; the skill is spotting the one that is not.",
+          },
+          {
+            prompt: "What made Wumpini's handover smooth?",
+            options: [
+              "She solved everything alone without telling anyone",
+              "She wrote clear notes in the ticket and escalated through the playbook",
+              "She waited until morning to look at the alert",
+              "She deleted the alert",
+            ],
+            answer_index: 1,
+            explanation: "Clear ticket notes and following the playbook let Level 2 act quickly.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "logging-monitoring": {
+      explanation_md: `## Why this matters
+
+Logs are the evidence of what happened on a system. Adverts for analyst roles in Ghana list log analysis and monitoring for malicious activity, and O*NET's description of information security analysts includes monitoring and network tools. Without logs, an investigation is guesswork.
+
+## What a log is
+
+A log is a record a system writes when something happens: a login, a failed password, a file change, a connection, an error. Each entry usually has:
+
+* **When:** a timestamp.
+* **Where:** which system or device.
+* **Who:** a user name or IP address.
+* **What:** the action and whether it succeeded.
+
+## Logs that matter most to defenders
+
+* **Authentication logs:** logins and failures on Windows, Linux, email and business apps.
+* **Firewall and network logs:** which connections were allowed or blocked.
+* **Endpoint and antivirus logs:** malware detections and suspicious programs.
+* **Application logs:** actions inside systems such as a core banking or mobile money platform.
+* **Email logs:** messages sent, received and blocked.
+
+## Reading for the unusual
+
+Monitoring means knowing what **normal** looks like so the **abnormal** stands out. Questions to ask:
+
+* Is this login at a strange time or from a strange place?
+* Are there many failures followed by a success?
+* Is an account doing something it never does, such as an accountant's login creating new users?
+* Did a log suddenly stop or get cleared?
+
+Here is an invented example:
+
+\`\`\`
+2026-10-20 07:58 login ok    user=hawa.a  ip=10.0.2.14
+2026-10-20 23:41 login fail  user=admin   ip=203.0.113.9
+2026-10-20 23:41 login fail  user=admin   ip=203.0.113.9
+2026-10-20 23:42 login ok    user=admin   ip=203.0.113.9
+\`\`\`
+
+The first line is a normal morning login from inside the office. The last three show an outside address failing twice, then succeeding as "admin" late at night. That pattern deserves an immediate escalation.
+
+## Good logging habits
+
+* Make sure clocks on all systems are correct, or timelines will not match.
+* Keep logs long enough to investigate, and protect them from being changed.
+* Send logs to a central place so one hacked machine cannot erase its own evidence. That central place is often a SIEM, covered in the next lesson.
+
+## A small example
+
+Mariama is asked why a shared folder at a Tamale NGO went missing. She checks the file server's logs and finds the folder was deleted at 16:05 by a staff account, from that person's own computer. It was an accident, not an attack. The logs answered the question in minutes and the folder was restored from backup. Logs protect innocent people too.`,
+      practice_task_md: `**Goal:** read a log and write findings.
+
+1. Copy this invented log into your journal or a notes app:
+   * \`08:01 login ok user=amina ip=10.0.1.5\`
+   * \`12:30 login ok user=fuseini ip=10.0.1.8\`
+   * \`01:14 login fail user=amina ip=198.51.100.23\` (repeated 12 times)
+   * \`01:16 login ok user=amina ip=198.51.100.23\`
+   * \`01:18 user created user=support9 by=amina\`
+2. Mark each line normal or suspicious and explain why.
+3. Write a five line incident note: what happened, when, which account, why it matters, what you recommend.
+4. Optional, with a computer: take a free Splunk introductory course and search sample data.
+
+**Done looks like:** an annotated log and a five line note that a Level 2 analyst could act on.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which four pieces of information does a typical log entry contain?",
+            options: [
+              "When, where, who and what",
+              "Price, colour, size and weight",
+              "Name, age, address and phone",
+              "Title, author, page and chapter",
+            ],
+            answer_index: 0,
+            explanation: "Log entries usually record a timestamp, the system, the user or address, and the action.",
+          },
+          {
+            prompt: "In the lesson's log example, why do the last three lines deserve escalation?",
+            options: [
+              "They show a normal morning login",
+              "An outside address failed twice then logged in as admin late at night",
+              "The user changed their password as required",
+              "The clock was wrong",
+            ],
+            answer_index: 1,
+            explanation: "Failures followed by a late night admin success from outside suggest a guessed password.",
+          },
+          {
+            prompt: "Why should logs be sent to a central place?",
+            options: [
+              "So one hacked machine cannot erase its own evidence",
+              "To make computers run faster",
+              "To save printer paper",
+              "Because local logs are illegal",
+            ],
+            answer_index: 0,
+            explanation: "Central storage keeps evidence safe even if one machine is compromised.",
+          },
+          {
+            prompt: "Why do correct clocks on all systems matter?",
+            options: [
+              "So staff arrive on time",
+              "So timelines from different logs match during an investigation",
+              "So backups are smaller",
+              "So passwords expire",
+            ],
+            answer_index: 1,
+            explanation: "Wrong clocks make it hard to line up events from different systems.",
+          },
+          {
+            prompt: "What did the logs show in Mariama's missing folder case?",
+            options: [
+              "An outside hacker deleted it",
+              "A staff member accidentally deleted it from their own computer",
+              "The server deleted it automatically",
+              "Ransomware encrypted it",
+            ],
+            answer_index: 1,
+            explanation: "The logs showed an accidental deletion, and the folder was restored from backup.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "soc-alert-triage": {
+      explanation_md: `## Why this matters
+
+The security operations centre (SOC) is where many analysts start. Ghanaian telcos, banks and fintechs, as well as managed security providers serving clients across Africa, run SOCs. Remote and regional SOC adverts commonly ask for SIEM experience, alert triage, ticketing and clear documentation.
+
+## What a SIEM does
+
+A **SIEM** (security information and event management) system collects logs from many sources: firewalls, servers, laptops, email and business apps. It stores them in one place, lets analysts search them and uses **rules** to raise alerts, such as "ten failed logins then a success within five minutes". Examples named in adverts include Splunk, Microsoft Sentinel, Elastic and QRadar. You do not need to know them all; the thinking is the same.
+
+## Triage: deciding what is real
+
+Triage means sorting alerts by what they really are and how urgent they are. For each alert, a Level 1 analyst:
+
+1. **Reads** the alert: what rule fired, on which system, for which user, when.
+2. **Enriches** it: Is the IP address known to be bad? Is the user travelling? Is this a critical server? Has this happened before?
+3. **Decides**:
+   * **True positive:** real malicious activity. Escalate.
+   * **False positive:** the rule fired but nothing bad happened, for example a staff member mistyping a password. Close it with a note, and suggest tuning the rule if it keeps happening.
+   * **Benign true positive:** the activity happened and is allowed, such as an approved security scan.
+4. **Documents** everything in the ticket: what you checked, what you found and why you decided.
+5. **Escalates** using the playbook if needed.
+
+## Speaking the same language
+
+**MITRE ATT&CK** is a free public knowledge base of attacker tactics and techniques, such as phishing or password guessing. SOC teams use it to label alerts consistently. As a beginner, simply learn to look up a technique and read its description and suggested detections.
+
+## Writing a good ticket note
+
+A good note lets someone else understand the case without asking you:
+
+\`\`\`
+Alert: 10 failed logins then success, user=issahaku.m
+Checked: source IP 203.0.113.9, poor reputation; user is in Tamale office,
+no travel. Login at 02:14, outside working hours.
+Decision: likely true positive. Escalated to L2 at 02:25.
+Action per playbook: account disabled pending reset.
+\`\`\`
+
+## A small example
+
+On her first week, Hawa closes an alert about "unusual login location" as a false positive after confirming with the staff member's manager that he was at a workshop in Kumasi. She writes exactly what she checked. Her lead praises the note, not just the decision, because it shows her reasoning.
+
+## Practice options
+
+LetsDefend and CyberDefenders offer browser based SOC style practice with free content; Splunk offers free introductory training. These need a laptop or a large screen. On a phone, practise writing triage notes for the example alerts in this track.`,
+      practice_task_md: `**Goal:** triage three invented alerts and write ticket notes.
+
+1. For each alert below, decide true positive, false positive or benign true positive, and write a ticket note using the lesson's format.
+   * Alert A: "Login from new country" for a staff member whose manager confirms she is at a conference in Lagos.
+   * Alert B: "Malware detected and quarantined" on a reception computer after a flash drive was used.
+   * Alert C: "Port scan detected" from the IT team's approved monthly vulnerability scanner.
+2. For alert B, look up "Replication Through Removable Media" on MITRE ATT&CK and add the technique name to your note.
+3. Optional, with a computer: try a free SOC practice alert on LetsDefend or a free Splunk course.
+
+**Done looks like:** three clear ticket notes with decisions and reasons.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does a SIEM do?",
+            options: [
+              "Collects logs from many sources, lets analysts search them and raises alerts using rules",
+              "Replaces all antivirus software",
+              "Repairs damaged hard drives",
+              "Sends marketing emails",
+            ],
+            answer_index: 0,
+            explanation: "A SIEM centralises logs, supports searching and raises rule based alerts.",
+          },
+          {
+            prompt: "A rule fires because a staff member mistyped a password, and nothing bad happened. What is this?",
+            options: ["True positive", "False positive", "Benign true positive", "Ransomware"],
+            answer_index: 1,
+            explanation: "The rule fired but there was no malicious activity, so it is a false positive.",
+          },
+          {
+            prompt: "What does enriching an alert mean?",
+            options: [
+              "Charging money for it",
+              "Adding context such as IP reputation, user travel and asset importance",
+              "Deleting old alerts",
+              "Sending it to every staff member",
+            ],
+            answer_index: 1,
+            explanation: "Enrichment adds context that helps decide whether the alert is real.",
+          },
+          {
+            prompt: "What is MITRE ATT&CK?",
+            options: [
+              "A paid antivirus product",
+              "A free knowledge base of attacker tactics and techniques",
+              "A Ghanaian law",
+              "A type of firewall",
+            ],
+            answer_index: 1,
+            explanation: "SOC teams use ATT&CK to label and understand attacker behaviour consistently.",
+          },
+          {
+            prompt: "Why did Hawa's lead praise her note about the false positive?",
+            options: [
+              "It was very long",
+              "It showed exactly what she checked and why she decided",
+              "It used many technical words",
+              "It escalated the alert to the CEO",
+            ],
+            answer_index: 1,
+            explanation: "A good note records the checks and reasoning so others can trust the decision.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "incident-response": {
+      explanation_md: `## Why this matters
+
+When an attack is confirmed, panic causes more damage than the attacker. Ghanaian telco and bank adverts list incident response, containment and escalation as core duties. Ghana's Cybersecurity Act, 2020 also sets a reporting duty, so organisations need staff who know the process.
+
+## The incident response stages
+
+Many teams follow a lifecycle based on guidance from the US National Institute of Standards and Technology (NIST). Its latest incident response guidance, SP 800 61 Revision 3, links incident response to the six functions of the NIST Cybersecurity Framework 2.0. A simple version to remember:
+
+1. **Preparation:** plans, contact lists, playbooks, backups and training, done before anything happens.
+2. **Detection and analysis:** spotting the incident, confirming it is real, and working out scope: which systems, which accounts, which data.
+3. **Containment:** stopping it spreading, for example disconnecting a computer from the network or disabling an account.
+4. **Eradication:** removing the cause, such as malware or an attacker's backdoor account.
+5. **Recovery:** restoring systems and data safely, often from backups, and watching closely for signs of return.
+6. **Lessons learned:** a calm review of what happened and what to improve, without blame.
+
+## The junior analyst's part
+
+As a junior you are unlikely to lead an incident, but you will:
+
+* Follow the playbook exactly and escalate quickly.
+* **Preserve evidence:** do not wipe or reinstall a machine before the team says so, because it may hold clues.
+* Keep a **timeline**: what happened, when, who did what. Write times as you go.
+* Communicate only through agreed channels. Never discuss an incident on social media or personal WhatsApp.
+
+## Ghana's reporting duty
+
+Under section 47 of the **Cybersecurity Act, 2020 (Act 1038)**, a person in charge of an institution must report a cybersecurity incident to the relevant Sectoral Computer Emergency Response Team or the National Computer Emergency Response Team within 24 hours of detecting it. The Cyber Security Authority's National CERT (CERT GH) accepts reports through its listed channels, including call or text 292, WhatsApp 0501603111 and report@csa.gov.gh. Your organisation's managers decide and make the report; your clear timeline helps them do it accurately.
+
+## A small example
+
+At a microfinance company in Wa, Abdul-Rahman notices a staff laptop sending large amounts of data to an unknown address. Following the playbook, he disconnects it from the network but leaves it switched on, starts a timeline, and calls his lead. The team finds malware that arrived in a fake invoice, removes it, resets the affected passwords and restores the laptop from a clean image. Management reports the incident within the required time. At the lessons learned meeting, they add invoice phishing to the next awareness session.`,
+      practice_task_md: `**Goal:** write a simple incident response playbook for one scenario.
+
+1. Choose a scenario: a staff WhatsApp account taken over, a laptop infected with malware, or a lost unencrypted phone with customer contacts.
+2. Write what should happen at each of the six stages, in short bullet points.
+3. Add a contact list with roles only (IT lead, manager, provider support) and the official CSA reporting channels.
+4. Add a blank timeline table with columns: time, what happened, who, action taken.
+
+**Done looks like:** a one to two page playbook you could hand to a small organisation, saved in your portfolio.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which stage involves stopping an incident from spreading, such as disconnecting a computer?",
+            options: ["Preparation", "Containment", "Lessons learned", "Recovery"],
+            answer_index: 1,
+            explanation: "Containment limits the spread before the cause is removed.",
+          },
+          {
+            prompt: "Why should a junior analyst avoid wiping an infected machine straight away?",
+            options: [
+              "Wiping takes too long",
+              "The machine may hold evidence the team needs",
+              "Wiping is illegal in Ghana",
+              "Backups do not work after wiping",
+            ],
+            answer_index: 1,
+            explanation: "Preserving evidence helps the team understand and fully remove the threat.",
+          },
+          {
+            prompt: "Under section 47 of Act 1038, within what time must a person in charge of an institution report a cybersecurity incident to the relevant CERT?",
+            options: ["One week", "24 hours after detection", "30 days", "There is no time limit"],
+            answer_index: 1,
+            explanation: "Section 47(5) sets a maximum of 24 hours after the incident is detected.",
+          },
+          {
+            prompt: "What is the purpose of the lessons learned stage?",
+            options: [
+              "To find someone to blame",
+              "To calmly review what happened and improve, without blame",
+              "To delete all logs",
+              "To announce the incident on social media",
+            ],
+            answer_index: 1,
+            explanation: "Lessons learned improves defences and plans for next time.",
+          },
+          {
+            prompt: "In the example, what did Abdul-Rahman do with the suspicious laptop?",
+            options: [
+              "Reinstalled Windows immediately",
+              "Disconnected it from the network, left it on, started a timeline and called his lead",
+              "Posted about it in the staff WhatsApp group",
+              "Gave it back to the staff member",
+            ],
+            answer_index: 1,
+            explanation: "He contained it, preserved evidence, recorded times and escalated.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "vulnerability-management": {
+      explanation_md: `## Why this matters
+
+Ghanaian telco and bank adverts list vulnerability scanning, vulnerability assessment and risk based prioritisation among analyst duties. New weaknesses in common software are announced constantly, and attackers move quickly to use them. Organisations need people who can find, rank and track fixes for the systems they own.
+
+## Key words
+
+* **Vulnerability:** a weakness in software, hardware or configuration.
+* **CVE:** a public identifier for a known vulnerability, written like \`CVE-2026-0001\` (an invented example).
+* **CVSS:** a common scoring system from 0 to 10 describing severity. Scores are grouped as low, medium, high and critical.
+* **Patch:** an update that fixes a vulnerability.
+* **Exploit:** a method of taking advantage of a vulnerability.
+
+## The vulnerability management cycle
+
+1. **Know your assets.** You cannot protect what you do not know you have. Keep a list of computers, servers, network devices and important software.
+2. **Find vulnerabilities.** Use authorised scanning tools on systems your organisation owns, and follow vendor security notices. Scanning someone else's systems without permission is illegal.
+3. **Prioritise.** Not everything can be fixed today. Consider the severity score, whether the vulnerability is being actively exploited, how exposed the system is (internet facing or internal) and how important it is to the business.
+4. **Fix or reduce the risk.** Apply patches, change settings, or add temporary protections if a patch is not yet possible.
+5. **Verify.** Scan again to confirm the fix worked.
+6. **Report.** Track progress so managers can see what remains open.
+
+## Prioritising wisely
+
+A critical score on an isolated test machine may matter less than a high score on the internet facing customer portal. The US Cybersecurity and Infrastructure Security Agency (CISA) publishes a free **Known Exploited Vulnerabilities catalog** listing vulnerabilities that attackers are actively using. If a vulnerability on your system appears there, it moves to the top of the list.
+
+## A small example
+
+Fuseini is an IT security intern at a hospital in Tamale. The monthly authorised scan lists forty findings. He sorts them: one high severity vulnerability on the internet facing appointment booking server is listed in CISA's catalog, so it goes first. Several medium findings on internal printers can wait for the next maintenance window. He writes a short table with asset, finding, severity, exposure, recommended action and owner. The booking server is patched the same day and a rescan confirms the fix.
+
+## On modest hardware
+
+Running scanners needs a computer and permission. On a phone, you can still practise the most important skill, prioritising: read entries in the National Vulnerability Database and CISA's catalog and decide which would worry you most and why.`,
+      practice_task_md: `**Goal:** prioritise invented scan findings like an analyst.
+
+1. Create a table in Google Sheets with columns: asset, finding, CVSS severity, internet facing (yes or no), in CISA's catalog (yes or no), business importance, priority, action.
+2. Add six invented findings for a small bank branch, such as an outdated web server on the customer portal, a missing Windows update on a teller computer, and an old printer firmware.
+3. Rank them from 1 to 6 and write one sentence explaining the top two choices.
+4. Browse CISA's Known Exploited Vulnerabilities catalog and write down one entry for a product you have heard of.
+
+**Done looks like:** a ranked findings table with short reasons, ready for your portfolio. Do not scan any real systems for this task.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a CVE?",
+            options: [
+              "A public identifier for a known vulnerability",
+              "A type of firewall",
+              "A Ghanaian regulator",
+              "A password manager",
+            ],
+            answer_index: 0,
+            explanation: "A CVE identifier gives each known vulnerability a standard name.",
+          },
+          {
+            prompt: "What is the first step in the vulnerability management cycle?",
+            options: ["Patch everything", "Know your assets", "Write the report", "Buy a new scanner"],
+            answer_index: 1,
+            explanation: "You cannot protect what you do not know you have.",
+          },
+          {
+            prompt: "Why does a listing in CISA's Known Exploited Vulnerabilities catalog raise a vulnerability's priority?",
+            options: [
+              "It means attackers are actively using it",
+              "It means the vulnerability is harmless",
+              "It means the vendor has stopped trading",
+              "It means the system is offline",
+            ],
+            answer_index: 0,
+            explanation: "The catalog lists vulnerabilities being actively exploited, so they need urgent fixes.",
+          },
+          {
+            prompt: "When is it acceptable to run a vulnerability scan?",
+            options: [
+              "On any website you visit",
+              "On systems your organisation owns, with authorisation",
+              "On a competitor's network to compare",
+              "On public Wi Fi to help others",
+            ],
+            answer_index: 1,
+            explanation: "Scanning without permission is illegal; only scan authorised systems.",
+          },
+          {
+            prompt: "Why did Fuseini fix the booking server finding first?",
+            options: [
+              "It was the oldest finding",
+              "It was high severity, internet facing and listed in CISA's catalog",
+              "It was the easiest to fix",
+              "The printer team asked him to",
+            ],
+            answer_index: 1,
+            explanation: "Severity, exposure and active exploitation together made it the top priority.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
   },
 };
 
