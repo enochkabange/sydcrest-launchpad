@@ -1885,6 +1885,464 @@ Writing your own sign in system from scratch is a good learning exercise, but fo
         pass_threshold: 80,
       },
     },
+    "local-integrations": {
+      explanation_md: `This section is where backend skills meet the way Ghana actually does business. Customers pay with mobile money, get updates by SMS or WhatsApp, and sometimes use USSD menus on basic phones. Connections drop, prompts time out and the same message can arrive twice. Fintech and payment adverts we read asked for webhooks, retries, idempotency and reconciliation by name. A developer who handles these calmly is useful to Ghanaian startups, fintechs, telcos and agencies very quickly.
+
+### Talking to other companies' APIs
+
+So far you have built your own API. Now your server becomes the **client** of someone else's: a payment provider, an SMS gateway or a messaging platform. Each provider has its own documentation, test keys and rules, but the pattern is the same:
+
+1. Your server sends a request to the provider, using a secret key.
+2. The provider does something in the real world: asks a customer to approve a payment, or sends an SMS.
+3. Later, the provider tells your server what happened, often by calling a URL on your server. That call is a **webhook**.
+
+### Why this is harder than it looks
+
+When you call your own database, it answers in milliseconds. When you start a mobile money payment, the customer might take a minute to find their phone and enter a PIN, or ignore the prompt entirely. Meanwhile:
+
+* your request to the provider might time out even though it worked
+* the webhook might arrive late, twice, or out of order
+* someone might send a fake webhook pretending a payment succeeded
+
+Code that assumes everything happens once, in order and instantly will eventually lose money or annoy customers.
+
+### What this section covers
+
+* **Mobile money payments and webhooks:** starting payments, receiving and verifying webhooks, and reconciling your records with the provider's.
+* **Timeouts, retries and idempotency:** handling repeats and failures so nobody is charged twice and no order is lost.
+* **SMS and WhatsApp notifications:** sending messages through provider APIs without blocking your app, respecting opt outs, and how USSD menus fit in.
+
+### Learning without spending money
+
+Most payment and messaging providers offer **test** or **sandbox** modes with test keys, where no real money moves and no real SMS is sent. Always build and test there first. Never put live keys in your code or on GitHub, and never test with real customers' money.
+
+To receive webhooks on your laptop, the provider needs a public URL. Free tunnelling tools can give your local server a temporary public address, or you can deploy a small test server on a free hosting tier. There are also free websites that show you any request sent to a temporary URL, which is a cheap way to see what a webhook looks like.
+
+### A note on responsibility
+
+Payment code handles other people's money. Write it slowly, log every important step, and ask for review. A careful junior who asks "what happens if this webhook arrives twice?" earns trust faster than a fast one who never asks.
+
+Imagine Mariama's online store in Tamale. When Fuseini pays for a bag of rice with mobile money, her backend must record the payment exactly once, mark the order paid, and send him a confirmation, even if his network drops halfway. This section teaches you to build exactly that.`,
+      practice_task_md: `**Goal:** understand a real provider's flow before writing code.
+
+1. Pick any payment or SMS provider that operates in Ghana and has public developer documentation. You are choosing it only to study, not because it is the best.
+2. Find and note: how you get test keys, how you start a payment or send a message, what a webhook (sometimes called a callback) looks like, and how they recommend verifying it.
+3. Draw the flow as numbered arrows between Customer, Your Server and Provider.
+4. List three things that could go wrong at each arrow.
+
+**Done looks like:** a one page diagram (photo of paper is fine) and your list of failure cases. Share it with your mentor and discuss which failures worry you most.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "In this section, what is a webhook?",
+            options: [
+              "A type of mobile phone",
+              "A database index",
+              "A call the provider makes to a URL on your server to tell you what happened",
+              "A password for an SMS gateway",
+            ],
+            answer_index: 2,
+            explanation: "The lesson defines a webhook as the provider calling your server.",
+          },
+          {
+            prompt: "Why are payment integrations harder than calling your own database?",
+            options: [
+              "Payment providers do not use HTTP",
+              "Real world steps take time, and requests can time out, repeat or arrive out of order",
+              "Databases cannot store payments",
+              "Webhooks only work at night",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists timeouts, repeats, late and fake webhooks.",
+          },
+          {
+            prompt: "Where should you build and test payment code first?",
+            options: [
+              "In the provider's test or sandbox mode with test keys",
+              "With real customers' money",
+              "Directly on the live server with live keys",
+              "Only on paper, never in code",
+            ],
+            answer_index: 0,
+            explanation: "Sandbox modes let you test without moving real money.",
+          },
+          {
+            prompt: "What question does the lesson say earns a junior developer trust?",
+            options: [
+              "How fast can I merge this?",
+              "Can we skip the review?",
+              "What happens if this webhook arrives twice?",
+              "Which provider is the cheapest?",
+            ],
+            answer_index: 2,
+            explanation: "Thinking about repeats and failures shows care with money.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "payments-and-webhooks": {
+      explanation_md: `Mobile money is an everyday way to pay in Ghana, so payment integration is one of the most practical backend skills you can learn here. Fintech and payment adverts we read mentioned payment APIs, webhooks and reconciliation directly. The details differ between providers, but the shape of the work is the same everywhere.
+
+### The flow
+
+1. Fuseini taps "Pay GHS 50" in Mariama's app.
+2. Your server creates a \`payments\` row with status \`pending\` and a unique reference, then asks the provider to charge his number.
+3. The provider sends a prompt to Fuseini's phone. He approves it with his PIN, or ignores it.
+4. The provider calls your **webhook** URL with the result.
+5. Your server verifies the webhook, updates the payment to \`paid\` or \`failed\`, and only then marks the order paid.
+
+The key idea: **the initial request does not mean the money moved.** The payment stays pending until a trusted result arrives.
+
+### Receiving a webhook
+
+A webhook is just an HTTP \`POST\` to an endpoint you expose:
+
+\`\`\`js
+app.post("/webhooks/payments", async (req, res) => {
+  if (!isGenuine(req)) {
+    return res.status(401).end();
+  }
+  await recordResult(req.body);
+  res.status(200).end();
+});
+\`\`\`
+
+Reply quickly with a \`2xx\` so the provider knows you received it. Do slow work, such as sending receipts, afterwards. Many providers retry webhooks that fail or time out, which is good, but it means you will see repeats.
+
+### Verifying it is genuine
+
+Your webhook URL is public, so anyone could post a fake "payment successful" message. Providers usually protect against this by **signing** each webhook: they compute a code from the body using a secret only you and they know, and put it in a header. You compute the same code and compare. In Node.js:
+
+\`\`\`js
+const crypto = require("crypto");
+const expected = crypto
+  .createHmac("sha256", SECRET)
+  .update(rawBody)
+  .digest("hex");
+\`\`\`
+
+Compare the two with \`crypto.timingSafeEqual\` rather than \`===\`, which leaks timing clues. Follow your provider's documentation exactly, since the algorithm, header name and what counts as the body vary. If they offer an endpoint to look up a transaction's status, calling it to confirm before giving value adds another layer of safety.
+
+### Recording each payment once
+
+Use the provider's transaction id or your own reference as a **unique** column. If the same webhook arrives twice, the second insert fails or is skipped, and the order is not processed again. The next lesson goes deeper into this.
+
+### Pending forever?
+
+Sometimes no webhook arrives at all. Run a small scheduled job that finds payments still pending after, say, fifteen minutes, and asks the provider for their status. Tell the customer honestly what is happening instead of leaving a spinner.
+
+### Reconciliation
+
+At the end of each day, compare your \`paid\` payments with the provider's report or statement. Every transaction should match in amount and status. Any difference, such as money received for an order you marked failed, needs investigating. This is called **reconciliation**, and finance teams value developers who make it easy.
+
+### Money handling rules
+
+* Store amounts in pesewas as integers.
+* Never trust an amount sent by the app; take it from your own order record.
+* Log every status change with a timestamp.
+* Keep secret keys in environment variables, never in Git.`,
+      practice_task_md: `**Goal:** build a safe payment webhook against a simulated provider.
+
+1. Add a \`payments\` table with \`reference\` (unique), \`order_id\`, \`amount_pesewas\`, \`status\` and \`created_at\`.
+2. Build \`POST /orders/:id/pay\` that creates a pending payment with a random reference and returns it. Do not call a real provider.
+3. Build \`POST /webhooks/payments\` that checks an HMAC signature header using a secret from an environment variable, then marks the payment \`paid\` or \`failed\`.
+4. Write a small script that signs a fake webhook body with the same secret and sends it with \`curl\` or \`fetch\`. Send it twice and confirm the order is only marked paid once.
+5. Send one with a wrong signature and confirm it is rejected with \`401\`.
+
+**Done looks like:** code on GitHub with a README showing the flow as numbered steps and the outputs of your four test webhooks.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "After your server asks the provider to charge a customer, what status should the payment have?",
+            options: [
+              "Paid, because the request was sent",
+              "Pending, until a trusted result arrives",
+              "Refunded",
+              "Deleted",
+            ],
+            answer_index: 1,
+            explanation: "The lesson stresses that the initial request does not mean the money moved.",
+          },
+          {
+            prompt: "Why must you verify a webhook's signature?",
+            options: [
+              "To make the webhook arrive faster",
+              "Because providers charge for unsigned webhooks",
+              "To reduce the size of the response",
+              "Because the URL is public and anyone could send a fake success message",
+            ],
+            answer_index: 3,
+            explanation: "Signatures prove the webhook came from the provider.",
+          },
+          {
+            prompt: "Why should a webhook handler reply quickly with a 2xx code?",
+            options: [
+              "So the provider knows it was received and does not keep retrying",
+              "So the customer gets a free bundle",
+              "Because slow replies delete the payment",
+              "Because 2xx codes skip verification",
+            ],
+            answer_index: 0,
+            explanation: "Quick replies stop needless retries; slow work happens afterwards.",
+          },
+          {
+            prompt: "What is reconciliation?",
+            options: [
+              "Sending an apology SMS to every customer",
+              "Deleting failed payments each night",
+              "Comparing your payment records with the provider's report so every transaction matches",
+              "Changing the provider every month",
+            ],
+            answer_index: 2,
+            explanation: "The lesson defines reconciliation as matching records.",
+          },
+          {
+            prompt: "Where should the amount to charge come from?",
+            options: [
+              "From whatever amount the app sends",
+              "From the customer's SMS reply",
+              "From the webhook alone with no checks",
+              "From your own order record on the server",
+            ],
+            answer_index: 3,
+            explanation: "Never trust an amount sent by the client.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "idempotency-and-retries": {
+      explanation_md: `Fintech adverts we read listed retries, idempotency, failure recovery and reconciliation as core duties. These words sound advanced, but the problem behind them is everyday Ghana: a customer taps "Pay", the network drops, they tap again. Did they just pay twice? A good backend makes sure the answer is no.
+
+### Timeouts: decide how long to wait
+
+Every call to another service should have a time limit, as you saw in the asynchronous code lesson. But a timeout does **not** mean the call failed. The provider may have received your request and charged the customer; only the reply got lost. That uncertainty is the heart of this lesson.
+
+### Retries: try again, carefully
+
+Many failures are temporary: a brief network drop, a busy server. Retrying often works. Good retries follow a few rules:
+
+* Retry only errors that might be temporary, such as timeouts and \`5xx\` codes, not \`400\` errors caused by bad input.
+* Wait a little longer between each attempt, for example 1 second, then 2, then 4. This is called **exponential backoff**, and it avoids hammering a service that is already struggling.
+* Stop after a few attempts and record the failure for a person or a scheduled job to follow up.
+
+\`\`\`js
+for (let i = 0; i < 3; i++) {
+  try { return await callProvider(); }
+  catch (e) { await sleep(1000 * 2 ** i); }
+}
+throw new Error("Provider unavailable");
+\`\`\`
+
+### Idempotency: safe to repeat
+
+An operation is **idempotent** if doing it twice has the same effect as doing it once. Reading an order is naturally idempotent. Charging a customer is not, unless you make it so.
+
+The common technique is an **idempotency key**: a unique id for each intended action, created once and sent with every attempt. Many payment providers accept one in a header. Your own API can accept one too:
+
+\`\`\`http
+POST /payments
+Idempotency-Key: order-981-pay
+\`\`\`
+
+When your server receives a request:
+
+1. Look up the key. If you have already processed it, return the **same** result as before and do nothing else.
+2. If not, process it and store the key with the result, in the same database transaction.
+
+A unique constraint on the key column makes this safe even if two identical requests arrive at the same moment.
+
+### Webhooks repeat too
+
+Providers retry webhooks until you reply with a success code. Treat the provider's transaction id as an idempotency key: if you have already recorded it, reply \`200\` and skip the work. Also ignore updates that would move a payment backwards, such as a late \`pending\` arriving after \`paid\`.
+
+### On the phone side
+
+Help the app avoid repeats too. Disable the Pay button after one tap, show a clear "processing" state and generate the idempotency key in the app before the first attempt, so a retry after a dropped connection reuses it.
+
+### A worked scenario
+
+Issahaku pays GHS 30 for a bus ticket in Tamale. The app sends \`POST /payments\` with key \`k1\`. The server starts the charge, but the reply never reaches his phone. The app retries with the same key \`k1\`. The server finds \`k1\`, sees the payment already in progress and returns its status. Issahaku is charged once, and the ticket is issued once when the webhook confirms payment.
+
+### Recovery and reconciliation
+
+Even with all this, some cases stay unclear. A scheduled job that checks old pending payments with the provider, plus daily reconciliation, catches what slips through. Robust systems assume things will go wrong and plan for it.`,
+      practice_task_md: `**Goal:** make a payment endpoint safe to retry.
+
+1. Add an \`idempotency_keys\` table with \`key\` (unique), \`response_json\` and \`created_at\`.
+2. Update your \`POST /orders/:id/pay\` endpoint to require an \`Idempotency-Key\` header. If the key exists, return the stored response. If not, create the payment and store the key and response together in one transaction.
+3. Write a script that sends the same request three times with the same key, then once with a new key. Confirm there are exactly two payments.
+4. Write a retry helper with exponential backoff that calls a fake provider function which fails twice and then succeeds.
+
+**Done looks like:** code on GitHub, plus a README section titled "What happens if the network drops" that explains your design in plain words.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "A call to a payment provider times out. What can you safely conclude?",
+            options: [
+              "The payment definitely failed",
+              "The payment definitely succeeded",
+              "You do not know yet; the provider may have processed it and only the reply was lost",
+              "The customer's account is closed",
+            ],
+            answer_index: 2,
+            explanation: "The lesson stresses that a timeout does not mean failure.",
+          },
+          {
+            prompt: "Which errors are sensible to retry?",
+            options: [
+              "Temporary ones such as timeouts and 5xx server errors",
+              "400 errors caused by bad input",
+              "Every error, forever, without waiting",
+              "None; retries are never useful",
+            ],
+            answer_index: 0,
+            explanation: "Bad input will fail again, but temporary errors may succeed on retry.",
+          },
+          {
+            prompt: "What does exponential backoff mean?",
+            options: [
+              "Retrying as fast as possible",
+              "Retrying only once a day",
+              "Sending requests to many providers at once",
+              "Waiting longer between each retry, such as 1, 2 and then 4 seconds",
+            ],
+            answer_index: 3,
+            explanation: "Growing waits avoid hammering a struggling service.",
+          },
+          {
+            prompt: "What does an idempotency key let your server do?",
+            options: [
+              "Charge the customer twice as fast",
+              "Recognise a repeated request and return the earlier result instead of acting again",
+              "Skip verifying webhooks",
+              "Delete old orders",
+            ],
+            answer_index: 1,
+            explanation: "The key identifies one intended action across retries.",
+          },
+          {
+            prompt: "A late webhook says pending for a payment you already marked paid. What should you do?",
+            options: [
+              "Change the payment back to pending",
+              "Charge the customer again",
+              "Ignore the update because it would move the payment backwards",
+              "Delete the payment",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says to ignore updates that move a payment backwards.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "sms-and-whatsapp": {
+      explanation_md: `Order confirmations, delivery updates, fee reminders and sign in codes reach many Ghanaian customers by SMS or WhatsApp rather than email. Building these features well means integrating with a messaging provider's API, keeping your app fast when messages are slow, and respecting people's right to stop receiving them. Adverts we read mentioned integrations, event based communication and asynchronous processing, which is exactly what this work involves.
+
+### Sending a message through a provider
+
+You do not connect to the mobile network yourself. You sign up with an SMS or messaging provider, get API keys and a sender name, and call their API:
+
+\`\`\`js
+await fetch(SMS_API_URL, {
+  method: "POST",
+  headers: { Authorization: \`Bearer \${KEY}\` },
+  body: JSON.stringify({
+    to: "0241234567",
+    text: "Order 981 is ready. Thank you!",
+  }),
+});
+\`\`\`
+
+Each provider's URL, fields and phone format differ, so read their documentation and use their test mode first. Many also send delivery reports to a webhook, using the same ideas as payment webhooks.
+
+### Do not make users wait for messages
+
+An SMS call might take a few seconds or fail. If your order endpoint waits for it, a slow provider makes your whole app slow. Instead, save the order, reply to the user straight away, and send the message in the **background**:
+
+* Put a row in a \`messages\` table (or a job queue) with status \`queued\`.
+* A separate worker picks up queued messages, sends them, and marks them \`sent\` or \`failed\`.
+* Failed messages are retried a few times with backoff.
+
+This is the background job pattern, and it is how teams handle anything slow: messages, receipts, reports.
+
+### Keep messages short and useful
+
+A standard SMS holds a limited number of characters, and longer texts are split into several parts, each usually billed. Accented letters or emoji can shrink the limit further. Write clearly and briefly: who it is from, what happened, what to do next. Never include passwords or full card or account details.
+
+### Consent and opt outs
+
+Only message people who expect it, and make it easy to stop. Store each person's preference, honour "STOP" replies where your provider supports them, and never send marketing to transactional only contacts. Ghana's Data Protection Act applies to phone numbers like any other personal data.
+
+### WhatsApp
+
+Businesses send WhatsApp messages through an official business platform, either directly or through a provider. Business initiated messages generally need pre approved templates, and customers must have agreed to hear from you. The backend pattern is the same: an API call to send, a webhook to receive replies and delivery updates.
+
+### USSD in one paragraph
+
+USSD menus, the kind you open by dialling a short code, work on basic phones with no data. Behind the scenes, a USSD gateway sends your server a request each time the user picks an option, with a session id and their input so far. Your server replies with the next menu text. Sessions time out quickly, so replies must be fast and menus short. This makes USSD a good fit for customers outside the cities and for cooperatives, schools and NGOs.
+
+Imagine Hawa's school in Bolgatanga. Parents get a fee reminder by SMS, can check balances by USSD, and receive a receipt after paying by mobile money. All three use the same backend and database.`,
+      practice_task_md: `**Goal:** send notifications in the background without slowing your API.
+
+1. Add a \`messages\` table with \`id\`, \`to_phone\`, \`text\`, \`status\`, \`attempts\` and \`created_at\`.
+2. When an order is created, insert a \`queued\` message instead of sending one directly. Return the order response straight away.
+3. Write a worker script that runs every few seconds, picks queued messages, "sends" them by printing to the terminal (or calls a provider's test mode), and marks them \`sent\`.
+4. Make the fake sender fail randomly one time in three, and retry failed messages up to three times.
+5. Add an \`opted_out\` flag to customers and make sure the worker skips them.
+
+**Done looks like:** code on GitHub with terminal output showing messages queued, a failure retried, and an opted out customer skipped.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why should an order endpoint not wait for the SMS to send before replying?",
+            options: [
+              "SMS messages cannot be sent from servers",
+              "A slow or failing provider would make the whole app slow",
+              "Customers prefer to wait",
+              "Databases cannot store messages",
+            ],
+            answer_index: 1,
+            explanation: "Sending in the background keeps the API fast.",
+          },
+          {
+            prompt: "In the background job pattern, what does the worker do?",
+            options: [
+              "Deletes orders that are older than a day",
+              "Designs the frontend",
+              "Picks up queued messages, sends them and records whether they were sent or failed",
+              "Approves mobile money payments",
+            ],
+            answer_index: 2,
+            explanation: "The worker processes the queue separately from the request.",
+          },
+          {
+            prompt: "Why should SMS messages be kept short?",
+            options: [
+              "Short messages are encrypted",
+              "Long messages cannot contain numbers",
+              "Providers refuse any message over ten words",
+              "Longer texts are split into several parts, and each part is usually billed",
+            ],
+            answer_index: 3,
+            explanation: "The lesson explains that long texts split into billed parts.",
+          },
+          {
+            prompt: "How does a USSD service work behind the scenes?",
+            options: [
+              "A gateway sends your server a request for each choice, and your server replies with the next menu",
+              "The phone downloads an app from your server",
+              "Your server calls the user on the phone",
+              "USSD only works with WhatsApp",
+            ],
+            answer_index: 0,
+            explanation: "Each USSD step is a short request and reply.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
