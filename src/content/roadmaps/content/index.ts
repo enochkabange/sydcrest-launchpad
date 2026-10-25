@@ -1,8 +1,9 @@
 import type { TrackContent } from "./types";
+import frontend from "./frontend.content";
 
 /**
  * Lesson content imported by /admin/roadmaps "Import draft roadmaps". Add each
  * track's *.content.ts here when its PR merges (the Vitest in this folder
  * validates every file whether or not it is listed).
  */
-export const TRACK_CONTENT: TrackContent[] = [];
+export const TRACK_CONTENT: TrackContent[] = [frontend];
