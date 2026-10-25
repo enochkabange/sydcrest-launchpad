@@ -13,7 +13,7 @@ const content: TrackContent = {
 
 ## Your free setup
 
-You do not need an expensive machine. A modest laptop with 4 GB of memory can run everything in this roadmap. You need three things:
+You do not need an expensive machine. A modest laptop with 4 GB of memory is enough for most of this roadmap. You need three things:
 
 * **A code editor.** Visual Studio Code is free and works on Windows, macOS and Linux. Install it once on WiFi.
 * **A modern browser.** Chrome or Firefox both have built in developer tools, which you will use every day to inspect pages and find bugs.
@@ -52,8 +52,8 @@ That routine, more than any expensive tool, is what gets people job ready. Set y
         questions: [
           {
             prompt: "What is the minimum you need to start this roadmap?",
-            options: ["A new high end laptop and a paid editor", "A free code editor and a modern browser, or a browser editor on a phone", "A paid hosting account", "A computer science degree"],
-            answer_index: 1,
+            options: ["A free code editor and a modern browser, or a browser editor on a phone", "A new high end laptop and a paid editor", "A paid hosting account", "A computer science degree"],
+            answer_index: 0,
             explanation: "The lesson explains that free tools on a modest laptop, or a browser editor on a phone, are enough to start.",
           },
           {
@@ -64,8 +64,8 @@ That routine, more than any expensive tool, is what gets people job ready. Set y
           },
           {
             prompt: "What are browser developer tools used for, according to the lesson?",
-            options: ["Paying for hosting", "Inspecting pages and finding bugs", "Writing emails", "Installing a code editor"],
-            answer_index: 1,
+            options: ["Inspecting pages and finding bugs", "Paying for hosting", "Writing emails", "Installing a code editor"],
+            answer_index: 0,
             explanation: "Chrome and Firefox include developer tools for inspecting pages and finding bugs.",
           },
           {
@@ -127,20 +127,20 @@ No laptop? Write the five sentences from the lesson and draw the journey on pape
         questions: [
           {
             prompt: "What does DNS do when you type a domain name?",
-            options: ["It styles the page", "It turns the name into the server's numeric address", "It encrypts your password", "It runs the JavaScript"],
-            answer_index: 1,
+            options: ["It styles the page", "It encrypts your password", "It runs the JavaScript", "It turns the name into the server's numeric address"],
+            answer_index: 3,
             explanation: "DNS works like a phone book, turning a name into an address.",
           },
           {
             prompt: "What does an HTTP status code of 404 mean?",
-            options: ["Everything is OK", "The server failed", "The page was not found", "The page is encrypted"],
-            answer_index: 2,
+            options: ["Everything is OK", "The server failed", "The page is encrypted", "The page was not found"],
+            answer_index: 3,
             explanation: "The lesson lists 404 as not found, 200 as OK and 500 as a server failure.",
           },
           {
             prompt: "Which language controls what happens when a user taps a button?",
-            options: ["HTML", "CSS", "JavaScript", "DNS"],
-            answer_index: 2,
+            options: ["HTML", "CSS", "DNS", "JavaScript"],
+            answer_index: 3,
             explanation: "JavaScript is the behaviour layer of a page.",
           },
           {
@@ -212,14 +212,14 @@ Git can feel strange for a week. Keep using it and it becomes automatic.`,
         questions: [
           {
             prompt: "What is a commit in Git?",
-            options: ["A website that hosts code", "A saved snapshot of changes with a message", "A paid GitHub feature", "A type of CSS rule"],
-            answer_index: 1,
+            options: ["A saved snapshot of changes with a message", "A website that hosts code", "A paid GitHub feature", "A type of CSS rule"],
+            answer_index: 0,
             explanation: "A commit records what changed and why.",
           },
           {
             prompt: "What is the usual order of everyday Git steps?",
-            options: ["push, commit, add", "commit, add, push", "add, commit, push", "push, add, commit"],
-            answer_index: 2,
+            options: ["push, commit, add", "commit, add, push", "push, add, commit", "add, commit, push"],
+            answer_index: 3,
             explanation: "You add changed files, commit them with a message, then push to GitHub.",
           },
           {
@@ -289,26 +289,26 @@ Structure first, then style, then test on a phone. Follow that order for every p
         questions: [
           {
             prompt: "What is the job of HTML?",
-            options: ["To describe how things look", "To describe what things are", "To store data on a server", "To send payments"],
-            answer_index: 1,
+            options: ["To describe what things are", "To describe how things look", "To store data on a server", "To send payments"],
+            answer_index: 0,
             explanation: "HTML gives content its structure and meaning.",
           },
           {
             prompt: "Why keep structure (HTML) and style (CSS) separate?",
-            options: ["So screen readers and search engines understand the page, and you can restyle by changing CSS", "Because browsers cannot read both in one file", "Because CSS runs on the server", "So the page uses more data"],
-            answer_index: 0,
+            options: ["Because browsers cannot read both in one file", "So screen readers and search engines understand the page, and you can restyle by changing CSS", "Because CSS runs on the server", "So the page uses more data"],
+            answer_index: 1,
             explanation: "Separation keeps pages accessible, understandable and easy to restyle.",
           },
           {
             prompt: "Which order does the lesson recommend for building a page?",
-            options: ["Style first, then structure, then test", "Test first, then style", "Structure first, then style, then test on a phone", "Framework first, then HTML"],
-            answer_index: 2,
+            options: ["Style first, then structure, then test", "Test first, then style", "Framework first, then HTML", "Structure first, then style, then test on a phone"],
+            answer_index: 3,
             explanation: "Write HTML first, add CSS, then check on a phone.",
           },
           {
             prompt: "Why do frameworks such as React not replace learning HTML and CSS?",
-            options: ["Frameworks are only for backend work", "Frameworks still produce HTML and CSS in the end", "Frameworks do not work on phones", "Employers have stopped using frameworks"],
-            answer_index: 1,
+            options: ["Frameworks are only for backend work", "Frameworks do not work on phones", "Frameworks still produce HTML and CSS in the end", "Employers have stopped using frameworks"],
+            answer_index: 2,
             explanation: "Whatever framework you use, the browser still receives HTML and CSS.",
           },
         ],
@@ -378,20 +378,20 @@ When in doubt, ask: "what is this content?" Then pick the element that says so.`
         questions: [
           {
             prompt: "Why is a `button` element better than a clickable `div` for an action?",
-            options: ["It downloads faster", "It works with the keyboard and screen readers without extra code", "It is the only element CSS can style", "Search engines ignore divs completely"],
-            answer_index: 1,
+            options: ["It downloads faster", "It is the only element CSS can style", "It works with the keyboard and screen readers without extra code", "Search engines ignore divs completely"],
+            answer_index: 2,
             explanation: "A real button can be focused, pressed with Enter or Space, and is announced as a button.",
           },
           {
             prompt: "How should you choose a heading level?",
-            options: ["By the text size you want", "By the meaning and order of the content, then use CSS for size", "Always use h1 for every heading", "Randomly, since browsers ignore headings"],
-            answer_index: 1,
+            options: ["By the text size you want", "Always use h1 for every heading", "Randomly, since browsers ignore headings", "By the meaning and order of the content, then use CSS for size"],
+            answer_index: 3,
             explanation: "Headings form a map; CSS handles size.",
           },
           {
             prompt: "What alt text should a purely decorative image have?",
-            options: ["A long description", "The file name", "An empty alt attribute", "The word image"],
-            answer_index: 2,
+            options: ["A long description", "An empty alt attribute", "The file name", "The word image"],
+            answer_index: 1,
             explanation: "Empty alt text tells screen readers to skip decorative images.",
           },
           {
@@ -471,26 +471,26 @@ Avoid fixed pixel widths for big containers. Let flexbox and grid do the work.`,
         questions: [
           {
             prompt: "When should you reach for flexbox rather than grid?",
-            options: ["When you need rows and columns together", "When you are lining things up in one direction", "When you want to store data", "Only for printing pages"],
-            answer_index: 1,
+            options: ["When you need rows and columns together", "When you want to store data", "Only for printing pages", "When you are lining things up in one direction"],
+            answer_index: 3,
             explanation: "Flexbox handles one direction; grid handles two.",
           },
           {
             prompt: "What does `box-sizing: border-box` do?",
-            options: ["Removes all borders", "Includes padding and border in the element's width", "Makes boxes round", "Turns every element into a grid"],
-            answer_index: 1,
+            options: ["Removes all borders", "Makes boxes round", "Turns every element into a grid", "Includes padding and border in the element's width"],
+            answer_index: 3,
             explanation: "With border-box, widths include padding and border, so boxes do not overflow.",
           },
           {
             prompt: "What does `repeat(auto-fill, minmax(150px, 1fr))` achieve in a grid?",
-            options: ["Exactly three columns on every screen", "As many columns as fit, each at least 150 pixels wide", "One column only", "Columns exactly 1 pixel wide"],
-            answer_index: 1,
+            options: ["As many columns as fit, each at least 150 pixels wide", "Exactly three columns on every screen", "One column only", "Columns exactly 1 pixel wide"],
+            answer_index: 0,
             explanation: "The grid adds or removes columns depending on the space available.",
           },
           {
             prompt: "Which flexbox property sets the space between items?",
-            options: ["gap", "border", "font-size", "alt"],
-            answer_index: 0,
+            options: ["border", "font-size", "alt", "gap"],
+            answer_index: 3,
             explanation: "The gap property controls spacing between flex or grid items.",
           },
         ],
@@ -553,26 +553,26 @@ Browser developer tools have a device mode for simulating phone sizes, which is 
         questions: [
           {
             prompt: "What does mobile first mean in CSS?",
-            options: ["Writing base styles for small screens, then adding media queries for larger ones", "Building a native Android app", "Hiding the page on laptops", "Designing for laptops and shrinking later"],
-            answer_index: 0,
+            options: ["Building a native Android app", "Hiding the page on laptops", "Designing for laptops and shrinking later", "Writing base styles for small screens, then adding media queries for larger ones"],
+            answer_index: 3,
             explanation: "Mobile first starts with the small screen and adds rules as space grows.",
           },
           {
             prompt: "What happens if you leave out the viewport meta tag?",
-            options: ["The page loads faster", "Phones show the page as if on a wide screen, making text tiny", "Images stop loading", "JavaScript stops running"],
-            answer_index: 1,
+            options: ["The page loads faster", "Images stop loading", "Phones show the page as if on a wide screen, making text tiny", "JavaScript stops running"],
+            answer_index: 2,
             explanation: "Without it, phones pretend to be desktop width and shrink the page.",
           },
           {
             prompt: "How should you choose breakpoints?",
-            options: ["Based on one popular phone model", "Where your design starts to look awkward", "Always at exactly 1000 pixels", "Breakpoints are not needed"],
-            answer_index: 1,
+            options: ["Based on one popular phone model", "Always at exactly 1000 pixels", "Breakpoints are not needed", "Where your design starts to look awkward"],
+            answer_index: 3,
             explanation: "Breakpoints should follow your content, not specific devices.",
           },
           {
             prompt: "Which rule stops images from overflowing a small screen?",
-            options: ["img { width: 2000px; }", "img { display: none; }", "img { max-width: 100%; height: auto; }", "img { position: absolute; }"],
-            answer_index: 2,
+            options: ["img { width: 2000px; }", "img { max-width: 100%; height: auto; }", "img { display: none; }", "img { position: absolute; }"],
+            answer_index: 1,
             explanation: "max-width 100% keeps images inside their container while keeping their shape.",
           },
         ],
@@ -642,26 +642,26 @@ Hawa builds an order form for a shea butter cooperative. It asks for name, phone
         questions: [
           {
             prompt: "Why should every input have a visible label linked with `for` and `id`?",
-            options: ["It makes the form submit faster", "Tapping the label focuses the field and screen readers announce it", "It hides the field on phones", "It encrypts the data"],
-            answer_index: 1,
+            options: ["Tapping the label focuses the field and screen readers announce it", "It makes the form submit faster", "It hides the field on phones", "It encrypts the data"],
+            answer_index: 0,
             explanation: "Linked labels help touch users and screen reader users.",
           },
           {
             prompt: "Which input type shows a number pad for phone numbers?",
-            options: ["type=\"text\"", "type=\"email\"", "type=\"tel\"", "type=\"date\""],
-            answer_index: 2,
+            options: ["type=\"text\"", "type=\"tel\"", "type=\"email\"", "type=\"date\""],
+            answer_index: 1,
             explanation: "type tel shows a phone style keypad on mobile.",
           },
           {
             prompt: "Why is browser validation not enough on its own?",
-            options: ["It never works on phones", "It is a first line of help, and the server must check data again", "It deletes user data", "It only works in Firefox"],
-            answer_index: 1,
+            options: ["It never works on phones", "It deletes user data", "It only works in Firefox", "It is a first line of help, and the server must check data again"],
+            answer_index: 3,
             explanation: "Anyone can bypass browser checks, so the server must validate too.",
           },
           {
             prompt: "What makes a good error message?",
-            options: ["The word Invalid in red", "Clearing the form so the user starts again", "Saying what is wrong and how to fix it, next to the field", "A pop up that blocks the whole page"],
-            answer_index: 2,
+            options: ["The word Invalid in red", "Saying what is wrong and how to fix it, next to the field", "Clearing the form so the user starts again", "A pop up that blocks the whole page"],
+            answer_index: 1,
             explanation: "Clear, specific messages next to the field help people recover.",
           },
         ],
@@ -728,8 +728,8 @@ JavaScript files are downloaded to every visitor's phone and must be processed b
           },
           {
             prompt: "Why does the lesson recommend typing code yourself instead of copying it?",
-            options: ["Copying is against the law", "Typing, making mistakes and fixing them is how it sticks", "Browsers reject pasted code", "Typing makes code run faster"],
-            answer_index: 1,
+            options: ["Copying is against the law", "Browsers reject pasted code", "Typing, making mistakes and fixing them is how it sticks", "Typing makes code run faster"],
+            answer_index: 2,
             explanation: "Active practice builds understanding.",
           },
           {
@@ -740,8 +740,8 @@ JavaScript files are downloaded to every visitor's phone and must be processed b
           },
           {
             prompt: "Why should you avoid unnecessary JavaScript?",
-            options: ["JavaScript only works on laptops", "Heavy scripts download to every phone and can make pages feel frozen on low cost devices", "Employers dislike JavaScript", "JavaScript cannot change the page"],
-            answer_index: 1,
+            options: ["Heavy scripts download to every phone and can make pages feel frozen on low cost devices", "JavaScript only works on laptops", "Employers dislike JavaScript", "JavaScript cannot change the page"],
+            answer_index: 0,
             explanation: "Every script costs data and processing time on the user's phone.",
           },
         ],
@@ -820,7 +820,7 @@ Amina keeps a list of the day's sales at her mother's stall as an array of objec
 
 ## How to practise
 
-Solve small problems daily and explain each solution out loud. Free sites such as freeCodeCamp have hundreds of short JavaScript exercises. When you are stuck, write down what you expect to happen, then use \`console.log\` to see what actually happens. The gap between the two is where the bug lives.`,
+Solve small problems daily and explain each solution out loud. Free sites such as freeCodeCamp have many short JavaScript exercises. When you are stuck, write down what you expect to happen, then use \`console.log\` to see what actually happens. The gap between the two is where the bug lives.`,
       practice_task_md: `**Goal:** a small stock tool using only JavaScript fundamentals.
 
 1. Create an array of at least five objects, each with \`name\`, \`price\` and \`stock\`, for a shop you know.
@@ -841,20 +841,20 @@ Solve small problems daily and explain each solution out loud. Free sites such a
           },
           {
             prompt: "Why does the lesson recommend `===` for comparisons?",
-            options: ["It checks both value and type, avoiding surprises", "It is faster to type", "It assigns a value", "It only works with strings"],
-            answer_index: 0,
+            options: ["It is faster to type", "It checks both value and type, avoiding surprises", "It assigns a value", "It only works with strings"],
+            answer_index: 1,
             explanation: "Strict equality compares type as well as value.",
           },
           {
             prompt: "What does the array method `filter` do?",
-            options: ["Turns each item into something new", "Keeps the items that pass a test", "Adds up all the items", "Sorts the items alphabetically"],
-            answer_index: 1,
+            options: ["Turns each item into something new", "Adds up all the items", "Keeps the items that pass a test", "Sorts the items alphabetically"],
+            answer_index: 2,
             explanation: "filter returns a new array containing only matching items.",
           },
           {
             prompt: "What does `totalCost(15, 3)` return if the function multiplies price by quantity?",
-            options: ["18", "153", "45", "5"],
-            answer_index: 2,
+            options: ["18", "153", "5", "45"],
+            answer_index: 3,
             explanation: "15 multiplied by 3 is 45.",
           },
           {
@@ -949,14 +949,14 @@ Use real \`button\` elements for things people tap, so keyboard and screen reade
           },
           {
             prompt: "Which event fires on every change in a text field?",
-            options: ["submit", "input", "load", "change"],
-            answer_index: 1,
+            options: ["submit", "load", "input", "change"],
+            answer_index: 2,
             explanation: "The input event fires each time the field's value changes.",
           },
           {
             prompt: "What does `e.preventDefault()` do in a submit handler?",
-            options: ["Deletes the form", "Stops the browser's default page reload so your code can handle the form", "Sends the form twice", "Hides the submit button"],
-            answer_index: 1,
+            options: ["Stops the browser's default page reload so your code can handle the form", "Deletes the form", "Sends the form twice", "Hides the submit button"],
+            answer_index: 0,
             explanation: "It stops the default action so JavaScript can take over.",
           },
           {
@@ -1040,8 +1040,8 @@ Test every feature with a slow network setting. It is the quickest way to see yo
         questions: [
           {
             prompt: "What format do most web APIs return data in?",
-            options: ["CSS", "JSON", "PNG", "HTML forms"],
-            answer_index: 1,
+            options: ["JSON", "CSS", "PNG", "HTML forms"],
+            answer_index: 0,
             explanation: "APIs usually return JSON, which looks like JavaScript objects.",
           },
           {
@@ -1052,20 +1052,20 @@ Test every feature with a slow network setting. It is the quickest way to see yo
           },
           {
             prompt: "Why must you check `res.ok` after `fetch`?",
-            options: ["fetch does not throw for server errors like 404 or 500", "res.ok makes the request faster", "It converts JSON to HTML", "It is required for CSS to load"],
-            answer_index: 0,
+            options: ["res.ok makes the request faster", "It converts JSON to HTML", "It is required for CSS to load", "fetch does not throw for server errors like 404 or 500"],
+            answer_index: 3,
             explanation: "fetch only throws on network failure, so status errors must be checked.",
           },
           {
             prompt: "Which three states should every request be designed for?",
-            options: ["Red, amber, green", "Loading, success and error", "Start, middle and end", "Online, offline and paused"],
-            answer_index: 1,
+            options: ["Red, amber, green", "Start, middle and end", "Loading, success and error", "Online, offline and paused"],
+            answer_index: 2,
             explanation: "Users should always see loading, the data, or a helpful error.",
           },
           {
             prompt: "Why disable a button while a request is in flight?",
-            options: ["To save electricity", "To prevent double taps that could send an order or payment twice", "Because buttons cannot be clicked during fetch", "To hide the loading message"],
-            answer_index: 1,
+            options: ["To prevent double taps that could send an order or payment twice", "To save electricity", "Because buttons cannot be clicked during fetch", "To hide the loading message"],
+            answer_index: 0,
             explanation: "Disabling prevents duplicate requests.",
           },
         ],
@@ -1131,8 +1131,8 @@ Make this checklist a habit for every project in your portfolio. Reviewers notic
           },
           {
             prompt: "According to the lesson, when should quality work happen?",
-            options: ["Only after launch", "As part of building the feature", "Only if a manager asks", "Once a year"],
-            answer_index: 1,
+            options: ["As part of building the feature", "Only after launch", "Only if a manager asks", "Once a year"],
+            answer_index: 0,
             explanation: "Quality is part of building, not polish added at the end.",
           },
           {
@@ -1208,26 +1208,26 @@ Test with a keyboard and a screen reader regularly. It quickly becomes second na
         questions: [
           {
             prompt: "What are the four principles WCAG is organised around?",
-            options: ["Fast, cheap, pretty and modern", "Perceivable, operable, understandable and robust", "HTML, CSS, JavaScript and ARIA", "Colour, font, layout and motion"],
-            answer_index: 1,
+            options: ["Fast, cheap, pretty and modern", "HTML, CSS, JavaScript and ARIA", "Colour, font, layout and motion", "Perceivable, operable, understandable and robust"],
+            answer_index: 3,
             explanation: "WCAG content must be perceivable, operable, understandable and robust.",
           },
           {
             prompt: "What minimum contrast ratio does WCAG ask for normal text?",
-            options: ["1.5 to 1", "2 to 1", "4.5 to 1", "10 to 1"],
-            answer_index: 2,
+            options: ["1.5 to 1", "2 to 1", "10 to 1", "4.5 to 1"],
+            answer_index: 3,
             explanation: "Normal text needs at least 4.5 to 1 contrast.",
           },
           {
             prompt: "How should an icon only close button get an accessible name?",
-            options: ["Make the icon bigger", "Add an aria-label such as Close menu", "Use a div instead", "Remove the button"],
-            answer_index: 1,
+            options: ["Add an aria-label such as Close menu", "Make the icon bigger", "Use a div instead", "Remove the button"],
+            answer_index: 0,
             explanation: "aria-label gives screen readers a name for icon only buttons.",
           },
           {
             prompt: "What is the first rule of using ARIA?",
-            options: ["Add ARIA to every element", "Prefer native HTML elements, and use ARIA only to fill gaps", "ARIA replaces the need for buttons", "ARIA is only for colour"],
-            answer_index: 1,
+            options: ["Prefer native HTML elements, and use ARIA only to fill gaps", "Add ARIA to every element", "ARIA replaces the need for buttons", "ARIA is only for colour"],
+            answer_index: 0,
             explanation: "Native HTML elements come with built in accessibility.",
           },
           {
@@ -1307,32 +1307,32 @@ Make "how much data does this cost my user?" a question you ask about every feat
         questions: [
           {
             prompt: "What is the usual biggest win for page weight?",
-            options: ["Adding more fonts", "Resizing and compressing images", "Using longer class names", "Adding animations"],
-            answer_index: 1,
+            options: ["Adding more fonts", "Using longer class names", "Adding animations", "Resizing and compressing images"],
+            answer_index: 3,
             explanation: "Images are usually the heaviest part of a page.",
           },
           {
             prompt: "What does `loading=\"lazy\"` do on an image?",
-            options: ["Makes the image blurry", "Delays loading images below the screen until they are needed", "Loads the image twice", "Converts the image to WebP"],
-            answer_index: 1,
+            options: ["Makes the image blurry", "Loads the image twice", "Converts the image to WebP", "Delays loading images below the screen until they are needed"],
+            answer_index: 3,
             explanation: "Lazy loading saves data by waiting until the image is near the screen.",
           },
           {
             prompt: "Why set `width` and `height` on images?",
-            options: ["To reserve space so the page does not jump while images load", "To make images download faster", "To hide images on phones", "Because alt text needs them"],
-            answer_index: 0,
+            options: ["To make images download faster", "To hide images on phones", "Because alt text needs them", "To reserve space so the page does not jump while images load"],
+            answer_index: 3,
             explanation: "Known dimensions let the browser keep space for the image.",
           },
           {
             prompt: "Why does JavaScript cost a user twice?",
-            options: ["It is downloaded, then processed on the phone's chip", "It must be bought from a store", "It runs on the server and the phone", "It is sent by SMS"],
-            answer_index: 0,
+            options: ["It must be bought from a store", "It runs on the server and the phone", "It is downloaded, then processed on the phone's chip", "It is sent by SMS"],
+            answer_index: 2,
             explanation: "Scripts cost data to download and time to run on slower phones.",
           },
           {
             prompt: "Which free tool built into Chrome DevTools scores a page's performance?",
-            options: ["Git", "Lighthouse", "Figma", "TalkBack"],
-            answer_index: 1,
+            options: ["Git", "Figma", "Lighthouse", "TalkBack"],
+            answer_index: 2,
             explanation: "Lighthouse audits performance and suggests fixes.",
           },
         ],
@@ -1403,26 +1403,26 @@ Mariama's order total shows "NaN". She logs the cart and sees prices stored as t
           },
           {
             prompt: "What is the first step in the debugging method?",
-            options: ["Rewrite the whole file", "Reproduce the bug with exact steps", "Ask an AI to fix it", "Change several things at once"],
-            answer_index: 1,
+            options: ["Rewrite the whole file", "Ask an AI to fix it", "Reproduce the bug with exact steps", "Change several things at once"],
+            answer_index: 2,
             explanation: "You need reliable steps to reproduce before you can fix.",
           },
           {
             prompt: "What does a crossed out rule in the Elements panel tell you?",
-            options: ["The CSS file is missing", "That rule was overridden by another rule", "The rule is spelled correctly", "The page is offline"],
-            answer_index: 1,
+            options: ["That rule was overridden by another rule", "The CSS file is missing", "The rule is spelled correctly", "The page is offline"],
+            answer_index: 0,
             explanation: "Crossed out rules show which styles lost to others.",
           },
           {
             prompt: "What does the `debugger` statement do when DevTools is open?",
-            options: ["Deletes the bug", "Pauses code at that line so you can inspect variables", "Sends an error report", "Speeds up the code"],
-            answer_index: 1,
+            options: ["Deletes the bug", "Sends an error report", "Speeds up the code", "Pauses code at that line so you can inspect variables"],
+            answer_index: 3,
             explanation: "debugger acts like a breakpoint written in code.",
           },
           {
             prompt: "How does the lesson suggest using AI coding assistants?",
-            options: ["Trust every suggestion", "As a second opinion, always confirming with DevTools and understanding the fix", "Never read their output", "Only for CSS"],
-            answer_index: 1,
+            options: ["As a second opinion, always confirming with DevTools and understanding the fix", "Trust every suggestion", "Never read their output", "Only for CSS"],
+            answer_index: 0,
             explanation: "AI tools can be wrong, so verify and understand.",
           },
         ],
@@ -1502,26 +1502,26 @@ Sumaila writes a function that formats amounts as cedis. He adds tests for whole
         questions: [
           {
             prompt: "What does a unit test check?",
-            options: ["A full journey in a real browser", "One small piece of code, such as a single function", "The speed of the network", "The design in Figma"],
-            answer_index: 1,
+            options: ["A full journey in a real browser", "The speed of the network", "The design in Figma", "One small piece of code, such as a single function"],
+            answer_index: 3,
             explanation: "Unit tests check one small piece in isolation.",
           },
           {
             prompt: "What should you do after fixing a bug?",
-            options: ["Delete the related tests", "Add a test so the bug never comes back", "Stop running tests", "Rename the file"],
-            answer_index: 1,
+            options: ["Add a test so the bug never comes back", "Delete the related tests", "Stop running tests", "Rename the file"],
+            answer_index: 0,
             explanation: "A test for a fixed bug prevents it returning.",
           },
           {
             prompt: "Why are end to end tests usually written only for the most important journeys?",
-            options: ["They are slower to run", "They cannot run in browsers", "They are illegal in some countries", "They only test CSS"],
-            answer_index: 0,
+            options: ["They cannot run in browsers", "They are illegal in some countries", "They are slower to run", "They only test CSS"],
+            answer_index: 2,
             explanation: "End to end tests drive a real browser, which takes longer.",
           },
           {
             prompt: "What is continuous integration (CI)?",
-            options: ["Writing code without breaks", "Running tests automatically on every pull request", "Hosting a site for free", "A type of CSS layout"],
-            answer_index: 1,
+            options: ["Writing code without breaks", "Hosting a site for free", "Running tests automatically on every pull request", "A type of CSS layout"],
+            answer_index: 2,
             explanation: "CI runs checks automatically so broken changes are caught before merging.",
           },
           {
@@ -1588,14 +1588,14 @@ Abdul-Rahman rebuilds his market price list in React. His filter, list and save 
         questions: [
           {
             prompt: "What is the main idea behind frameworks such as React?",
-            options: ["You describe the screen for the current data and the framework updates the page", "They replace HTML entirely", "They only work on servers", "They make CSS unnecessary"],
-            answer_index: 0,
+            options: ["They replace HTML entirely", "They only work on servers", "You describe the screen for the current data and the framework updates the page", "They make CSS unnecessary"],
+            answer_index: 2,
             explanation: "React updates the page to match your data, so you do not change it by hand.",
           },
           {
             prompt: "What is a component?",
-            options: ["A small, reusable piece of interface such as a ProductCard", "A type of server", "A Git branch", "An image format"],
-            answer_index: 0,
+            options: ["A type of server", "A small, reusable piece of interface such as a ProductCard", "A Git branch", "An image format"],
+            answer_index: 1,
             explanation: "Components are reusable building blocks of an interface.",
           },
           {
@@ -1698,32 +1698,32 @@ Each library you add increases what phones download. Reach for plain React first
         questions: [
           {
             prompt: "What are props in React?",
-            options: ["Data a component remembers between renders", "Inputs passed from a parent to a child component", "CSS files", "Server addresses"],
-            answer_index: 1,
+            options: ["Data a component remembers between renders", "CSS files", "Server addresses", "Inputs passed from a parent to a child component"],
+            answer_index: 3,
             explanation: "Props are inputs, like function arguments, flowing from parent to child.",
           },
           {
             prompt: "What happens when you call the setter from `useState`?",
-            options: ["Nothing until the page reloads", "React re renders the component with the new value", "The component is deleted", "The browser downloads React again"],
-            answer_index: 1,
+            options: ["React re renders the component with the new value", "Nothing until the page reloads", "The component is deleted", "The browser downloads React again"],
+            answer_index: 0,
             explanation: "Calling the setter tells React to re render with new state.",
           },
           {
             prompt: "Why does each item in a rendered list need a stable, unique `key`?",
-            options: ["To help React update the right items efficiently", "To style the item", "To make it a link", "Keys are only for accessibility"],
-            answer_index: 0,
+            options: ["To style the item", "To make it a link", "Keys are only for accessibility", "To help React update the right items efficiently"],
+            answer_index: 3,
             explanation: "Keys let React track which items changed.",
           },
           {
             prompt: "Two sibling components need the same search text. What does the lesson suggest?",
-            options: ["Copy the state into both", "Lift the state up to their closest common parent and pass it down", "Store it in a CSS variable", "Reload the page each time"],
-            answer_index: 1,
+            options: ["Lift the state up to their closest common parent and pass it down", "Copy the state into both", "Store it in a CSS variable", "Reload the page each time"],
+            answer_index: 0,
             explanation: "Lifting state up gives both siblings one source of truth.",
           },
           {
             prompt: "Which hook runs code after rendering, for things such as fetching data?",
-            options: ["useState", "useEffect", "useKey", "useProps"],
-            answer_index: 1,
+            options: ["useState", "useKey", "useProps", "useEffect"],
+            answer_index: 3,
             explanation: "useEffect handles work outside React after render.",
           },
         ],
@@ -1829,32 +1829,32 @@ Start by typing function inputs, props and API data. That covers most of the ben
         questions: [
           {
             prompt: "What does TypeScript add to JavaScript?",
-            options: ["Faster images", "Types that let your editor catch mistakes early", "A new browser", "Automatic hosting"],
-            answer_index: 1,
+            options: ["Faster images", "A new browser", "Types that let your editor catch mistakes early", "Automatic hosting"],
+            answer_index: 2,
             explanation: "TypeScript adds types so errors appear before code runs.",
           },
           {
             prompt: "What does the `?` mean in `photo?: string`?",
-            options: ["The property is required", "The property may be missing", "The property is a number", "The property is private"],
-            answer_index: 1,
+            options: ["The property may be missing", "The property is required", "The property is a number", "The property is private"],
+            answer_index: 0,
             explanation: "A question mark marks an optional property.",
           },
           {
             prompt: "Why is `type PayStatus = \"pending\" | \"success\" | \"failed\"` useful?",
-            options: ["It makes payments faster", "It limits the value to known options, so typos are caught", "It encrypts the status", "It sends the status to the server"],
-            answer_index: 1,
+            options: ["It makes payments faster", "It encrypts the status", "It limits the value to known options, so typos are caught", "It sends the status to the server"],
+            answer_index: 2,
             explanation: "Union types restrict values to a set of allowed options.",
           },
           {
             prompt: "Does TypeScript check data arriving from a server while the app runs?",
-            options: ["Yes, always", "No, so you must still handle missing or wrong data", "Only on Android", "Only for numbers"],
-            answer_index: 1,
+            options: ["Yes, always", "Only on Android", "Only for numbers", "No, so you must still handle missing or wrong data"],
+            answer_index: 3,
             explanation: "Types are removed at build time and cannot check runtime data.",
           },
           {
             prompt: "Do TypeScript types increase what users' phones download?",
-            options: ["Yes, a lot", "No, types are removed when the project is built", "Only on slow networks", "Only in React"],
-            answer_index: 1,
+            options: ["Yes, a lot", "Only on slow networks", "Only in React", "No, types are removed when the project is built"],
+            answer_index: 3,
             explanation: "Types disappear in the built JavaScript.",
           },
         ],
@@ -1930,26 +1930,26 @@ Amina rebuilds a church events site in Next.js. The events list is a server comp
         questions: [
           {
             prompt: "How does Next.js create page addresses in the `app` folder?",
-            options: ["From a config file listing every URL", "Each folder becomes a route, for example app/menu/page.tsx becomes /menu", "From the page title", "Routes must be added in CSS"],
-            answer_index: 1,
+            options: ["From a config file listing every URL", "From the page title", "Routes must be added in CSS", "Each folder becomes a route, for example app/menu/page.tsx becomes /menu"],
+            answer_index: 3,
             explanation: "Next.js uses folder based routing.",
           },
           {
             prompt: "Why can server rendering help users on slow networks?",
-            options: ["The phone receives ready HTML and does less work", "It turns off images", "It makes data free", "It removes the need for HTML"],
-            answer_index: 0,
+            options: ["It turns off images", "It makes data free", "The phone receives ready HTML and does less work", "It removes the need for HTML"],
+            answer_index: 2,
             explanation: "Sending finished HTML shows content sooner on weak connections.",
           },
           {
             prompt: "Which line marks a component as a client component?",
-            options: ["\"use server\"", "\"use client\"", "\"use react\"", "\"use phone\""],
-            answer_index: 1,
+            options: ["\"use server\"", "\"use react\"", "\"use phone\"", "\"use client\""],
+            answer_index: 3,
             explanation: "Client components that need state or events start with use client.",
           },
           {
             prompt: "What habit keeps the JavaScript sent to phones small?",
-            options: ["Make every component a client component", "Keep most of the page as server components and use small client components for interaction", "Avoid HTML", "Load every library on every page"],
-            answer_index: 1,
+            options: ["Make every component a client component", "Avoid HTML", "Keep most of the page as server components and use small client components for interaction", "Load every library on every page"],
+            answer_index: 2,
             explanation: "Only client components send their code to the browser.",
           },
         ],
@@ -2025,26 +2025,26 @@ Mariama receives a Figma design for a Bolgatanga craft shop. She notes four colo
         questions: [
           {
             prompt: "What should you look for when inspecting a Figma design, besides sizes?",
-            options: ["Only the logo", "Spacing, colour and text styles, and every state of each element", "The designer's name", "The file size"],
-            answer_index: 1,
+            options: ["Only the logo", "The designer's name", "The file size", "Spacing, colour and text styles, and every state of each element"],
+            answer_index: 3,
             explanation: "Spacing, styles and states are what make a build accurate.",
           },
           {
             prompt: "What are design tokens in CSS?",
-            options: ["Payment codes", "Named custom properties for repeated values such as colours and spacing", "Login passwords", "Image formats"],
-            answer_index: 1,
+            options: ["Payment codes", "Login passwords", "Image formats", "Named custom properties for repeated values such as colours and spacing"],
+            answer_index: 3,
             explanation: "Tokens like --color-primary keep values consistent and easy to change.",
           },
           {
             prompt: "What does component driven development mean?",
-            options: ["Building each repeating piece as a reusable component, then assembling screens", "Writing all pages in one file", "Designing without a designer", "Using only images for interfaces"],
-            answer_index: 0,
+            options: ["Writing all pages in one file", "Designing without a designer", "Using only images for interfaces", "Building each repeating piece as a reusable component, then assembling screens"],
+            answer_index: 3,
             explanation: "You build reusable pieces first and combine them into pages.",
           },
           {
             prompt: "What should you do if a design only shows a large screen?",
-            options: ["Refuse to build it", "Ask for the phone version or make sensible mobile first decisions and confirm them", "Build only the large screen", "Shrink it with CSS zoom"],
-            answer_index: 1,
+            options: ["Refuse to build it", "Build only the large screen", "Ask for the phone version or make sensible mobile first decisions and confirm them", "Shrink it with CSS zoom"],
+            answer_index: 2,
             explanation: "Ask or decide using mobile first skills, then confirm with the designer.",
           },
         ],
@@ -2100,14 +2100,14 @@ Fuseini's aunt sells shea butter in Tamale and takes orders over WhatsApp. He bu
         questions: [
           {
             prompt: "Why must Ghanaian checkout screens handle mobile money clearly?",
-            options: ["Cards are not allowed in Ghana", "Many people pay with mobile money rather than cards", "Mobile money needs no internet at all", "Mobile money is only used by businesses"],
-            answer_index: 1,
+            options: ["Cards are not allowed in Ghana", "Mobile money needs no internet at all", "Many people pay with mobile money rather than cards", "Mobile money is only used by businesses"],
+            answer_index: 2,
             explanation: "Mobile money is a common way people pay.",
           },
           {
             prompt: "Why should pages load quickly from a shared link?",
-            options: ["People often share links on WhatsApp", "Links expire after one minute", "Search engines require it by law", "Shared links cannot show images"],
-            answer_index: 0,
+            options: ["Links expire after one minute", "People often share links on WhatsApp", "Search engines require it by law", "Shared links cannot show images"],
+            answer_index: 1,
             explanation: "Sharing by link is common, so pages must load well from a shared link.",
           },
           {
@@ -2118,8 +2118,8 @@ Fuseini's aunt sells shea butter in Tamale and takes orders over WhatsApp. He bu
           },
           {
             prompt: "How should you present a payment project that runs in test mode?",
-            options: ["Claim it handles real money", "Say honestly that it uses a test mode", "Invent sales figures", "Hide that it exists"],
-            answer_index: 1,
+            options: ["Claim it handles real money", "Invent sales figures", "Hide that it exists", "Say honestly that it uses a test mode"],
+            answer_index: 3,
             explanation: "Honesty about what your project does builds trust with employers.",
           },
         ],
@@ -2196,8 +2196,8 @@ Wumpini builds a checkout for a school fees demo. After tapping Pay, the button 
           },
           {
             prompt: "What should the screen offer when the payment result is unknown or timed out?",
-            options: ["A Pay again button straight away", "A message that confirmation has not arrived and an option to check the status", "Nothing, just a blank screen", "A request for the PIN"],
-            answer_index: 1,
+            options: ["A message that confirmation has not arrived and an option to check the status", "A Pay again button straight away", "Nothing, just a blank screen", "A request for the PIN"],
+            answer_index: 0,
             explanation: "Checking status first avoids charging the customer twice.",
           },
           {
@@ -2205,6 +2205,526 @@ Wumpini builds a checkout for a school fees demo. After tapping Pay, the button 
             options: ["Disabling the Pay button as soon as it is tapped", "Making the button bigger", "Hiding the amount", "Removing the waiting screen"],
             answer_index: 0,
             explanation: "Disabling the button stops repeated taps from sending more requests.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "offline-and-pwa": {
+      explanation_md: `Many users in Ghana buy small data bundles, travel between towns with patchy signal, or lose connection when a bundle runs out mid task. An app that still shows useful content offline feels far more reliable. Progressive web app (PWA) techniques make this possible with web technology alone. This topic is optional but valuable for products serving northern Ghana.
+
+## What a PWA is
+
+A progressive web app is a website that can:
+
+* Be **installed** to the home screen, opening like an app without an app store.
+* **Work offline or on poor connections**, by saving important files on the phone.
+* Load faster on repeat visits, because files come from the phone instead of the network.
+
+Installing from the browser also saves storage compared with many native apps, which matters on phones with little space.
+
+## The two pieces
+
+**1. A web app manifest.** A small JSON file describing your app's name, icons and colours, linked from your HTML:
+
+\`\`\`html
+<link rel="manifest" href="/manifest.json">
+\`\`\`
+
+\`\`\`json
+{
+  "name": "Tamale Market Prices",
+  "short_name": "Prices",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [{ "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" }]
+}
+\`\`\`
+
+**2. A service worker.** A script that sits between your page and the network. It can save files in a cache and serve them when the network fails.
+
+\`\`\`js
+// register it from your page
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/sw.js");
+}
+\`\`\`
+
+Inside \`sw.js\`, you decide a caching strategy. Two common ones:
+
+* **Cache first:** serve from the cache, fall back to the network. Good for files that rarely change, like your logo and CSS.
+* **Network first:** try the network, fall back to the cache. Good for data that should be fresh but is still useful when slightly old, like today's prices.
+
+Service workers need HTTPS, which free hosts provide. On your own computer, \`localhost\` also works for testing.
+
+## Be honest with users offline
+
+When showing saved data, say so: "You are offline. Showing prices from 8:15 this morning." If someone fills a form offline, either save it and send it later with clear messaging, or tell them plainly it will need a connection.
+
+## Use tools when ready
+
+Writing a service worker by hand teaches you how it works. Libraries such as Workbox help in larger projects. Start by hand with a simple cache, then reach for tools.
+
+## A worked example
+
+Hawa builds a price list app for traders. She adds a manifest so it can be installed, and a service worker that caches the page, CSS and icons with cache first, and fetches prices with network first. When she switches DevTools to offline, the app still opens and shows yesterday's prices with a clear "offline" banner. A trader travelling from Tamale to Yendi can still check prices with no signal.`,
+      practice_task_md: `**Goal:** make one of your projects installable and usable offline.
+
+1. Choose a small project, ideally a list of data such as prices or events.
+2. Add a \`manifest.json\` with a name, start URL, display mode and at least one icon, and link it from your HTML.
+3. Write a simple service worker that caches your HTML, CSS, JavaScript and icon on install, and serves them cache first.
+4. Register the service worker from your page.
+5. Deploy the project to a free HTTPS host (see the next lesson) or test on localhost.
+6. In DevTools, use the Application panel to check the manifest and service worker, then switch the network to offline and reload.
+7. Add a visible message when the page is offline.
+
+**Done looks like:** the app opens offline, shows a clear offline message, and can be added to a phone's home screen. Explain your caching choices in the README.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does a web app manifest describe?",
+            options: ["The server's password", "The app's name, icons and colours for installing", "The CSS layout", "The database tables"],
+            answer_index: 1,
+            explanation: "The manifest tells the phone how to install and display the app.",
+          },
+          {
+            prompt: "What does a service worker do?",
+            options: ["Styles the page", "Sends SMS messages", "Sits between the page and the network and can serve cached files when offline", "Replaces HTML"],
+            answer_index: 2,
+            explanation: "Service workers can intercept requests and use a cache.",
+          },
+          {
+            prompt: "Which caching strategy suits today's prices that should be fresh but still useful when old?",
+            options: ["Cache only", "Never cache", "Network first, falling back to the cache", "Delete the cache every second"],
+            answer_index: 2,
+            explanation: "Network first tries for fresh data and falls back to saved data.",
+          },
+          {
+            prompt: "What should you tell users when showing saved data offline?",
+            options: ["Nothing", "That the server is broken", "That they are offline and when the data was saved", "That they must reinstall the app"],
+            answer_index: 2,
+            explanation: "Honest messaging helps users trust what they see.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "deploy-free": {
+      explanation_md: `A live link you can share on WhatsApp or put on your CV is far more convincing than screenshots. Several adverts mention deployment and CI tools, and putting projects online is a skill in itself. The good news: you can host frontend projects for free.
+
+## Static sites and free hosts
+
+A **static site** is a set of files (HTML, CSS, JavaScript, images) that a host simply serves. Most of your portfolio projects are static, or can be built into static files.
+
+Free options include:
+
+* **GitHub Pages:** serves static sites straight from a GitHub repository.
+* **Platforms such as Vercel, Netlify or Cloudflare Pages:** connect your GitHub repository and they build and deploy automatically on every push. They support React, Vite and Next.js projects.
+
+All of these give you HTTPS for free, which is required for service workers and builds trust.
+
+Free plans have limits and terms that change. Read each host's current free plan page before you rely on it.
+
+## Deploying a plain HTML site with GitHub Pages
+
+1. Push your project to a GitHub repository with an \`index.html\` at the top level.
+2. In the repository, go to **Settings**, then **Pages**.
+3. Choose to deploy from your main branch.
+4. After a short wait, your site is live at an address like \`yourname.github.io/project-name\`.
+
+## Deploying a React or Vite project
+
+These projects need a **build** step, which turns your source into optimised static files:
+
+\`\`\`bash
+npm run build
+\`\`\`
+
+The result usually goes into a \`dist\` or \`build\` folder. Platforms that connect to GitHub run this step for you. You tell them the build command and the output folder, and every push updates the live site.
+
+## Preview deployments
+
+Many platforms create a separate preview link for every pull request. Teams use this to review changes before merging. Using it on your own projects shows employers you know a professional workflow.
+
+## Environment variables and secrets
+
+Never commit API keys. Hosts let you set environment variables in their dashboard. Remember that anything used in frontend code is visible to users, so truly secret keys belong only on a server.
+
+## Check it on a phone
+
+After deploying, open the live link on a phone using mobile data. Run Lighthouse or PageSpeed Insights on the live address. Check the link preview by sending it to yourself on WhatsApp.
+
+## A worked example
+
+Sumaila finishes his bus times page. He pushes it to GitHub and turns on GitHub Pages. Five minutes later he sends the link to his study group. One friend reports that an image is missing; Sumaila sees the file name has a capital letter that worked on his laptop but not on the server. He fixes it, pushes, and the site updates. Now every new commit goes live automatically.`,
+      practice_task_md: `**Goal:** put two projects online with live links.
+
+1. Deploy a plain HTML project with GitHub Pages using the steps in the lesson.
+2. Deploy a React or Vite project by connecting its GitHub repository to a free platform. Set the build command and output folder.
+3. Make a small change, push it, and check that the live site updates.
+4. Open both live links on a phone with mobile data. Run PageSpeed Insights on each.
+5. Send one link to yourself on WhatsApp and check the preview.
+6. Add the live link to the top of each README.
+
+**Done looks like:** two working live links, each in its README, that load well on a phone.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a static site?",
+            options: ["A site with no images", "A site that never changes colour", "A set of files a host simply serves, such as HTML, CSS and JavaScript", "A site that only works offline"],
+            answer_index: 2,
+            explanation: "Static sites are prebuilt files served as they are.",
+          },
+          {
+            prompt: "What does `npm run build` usually produce?",
+            options: ["Optimised static files in a folder such as dist or build", "A Figma file", "A database", "A Git branch"],
+            answer_index: 0,
+            explanation: "The build step turns source code into files ready to host.",
+          },
+          {
+            prompt: "Why should you read a host's current free plan page?",
+            options: ["It is required to use HTML", "Free plans have limits and terms that change", "It makes your site faster", "Hosts charge you for reading it"],
+            answer_index: 1,
+            explanation: "Terms change, so check before you rely on them.",
+          },
+          {
+            prompt: "Where should truly secret API keys live?",
+            options: ["In frontend JavaScript", "In the README", "Only on a server", "In the page title"],
+            answer_index: 2,
+            explanation: "Anything in frontend code is visible, so secrets belong on a server.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "getting-hired": {
+      explanation_md: `Skills alone do not get you hired. You also need proof of what you can do, and a way of showing it to the right people. This section is about turning your learning into income, whether through a job at a Ghanaian company, a remote role, or freelancing for local businesses.
+
+## Three routes to income
+
+* **A job in Ghana.** Tech companies, fintechs, agencies, ecommerce businesses and some public institutions hire web developers. Entry routes include internships and National Service placements, which several adverts we studied were for.
+* **A remote job.** Some companies hire developers anywhere in the world. Competition is strong, so your portfolio and communication must be excellent.
+* **Freelancing.** Local shops, schools, churches and NGOs need simple websites. This can bring income while you look for a job, and it gives you real projects.
+
+Many people combine these: freelancing while applying for jobs.
+
+## What employers look for
+
+Across the adverts we studied, a few things came up again and again beyond technical skills:
+
+* **Proof:** projects with live links and readable code.
+* **Communication:** clear written and spoken English, and explaining technical ideas to non technical people.
+* **Collaboration:** using Git and pull requests, taking feedback, working in a team.
+* **Learning on your own:** picking up new tools without needing a class.
+
+## What this section covers
+
+* **A portfolio employers trust:** choosing and presenting your best projects.
+* **Freelancing for local businesses (optional):** finding clients, scoping work and pricing in cedis.
+* **Job search and technical interviews:** your CV, profiles, applications and interview practice.
+
+## Be patient and persistent
+
+Getting the first role usually takes many applications. Rejections are normal and are not a judgement of your worth. Treat each one as practice, ask for feedback when you can, and keep building. Many developers find their first opportunity through people they know, such as a mentor, a tech community, a former classmate or a client, so stay connected.
+
+## Stay honest
+
+Never claim skills you do not have, invent experience or present someone else's work as your own. Employers check, and trust is hard to rebuild. It is fine to say "I have not used that yet, but here is how I would learn it."
+
+## A worked example
+
+Amina from Nalerigu finishes this roadmap with four solid projects. She builds a simple site for a local clinic as her first paid freelance job. She puts it, with the clinic's permission, at the top of her portfolio. She applies to National Service placements and junior roles in Accra and to a few remote internships, practising interview questions with her SydCrest study group each week. Her clinic project and clear explanations get her through to interviews.`,
+      practice_task_md: `**Goal:** a written plan for getting your first paid work.
+
+1. Decide which route or routes you will pursue first: a Ghanaian job, remote work, freelancing, or a mix.
+2. List your current projects and mark which are strong enough to show employers.
+3. Write down three people or communities who could help you find opportunities (a mentor, a tech hub, a WhatsApp group, a former teacher).
+4. Set a weekly target, for example two applications and one hour of portfolio work.
+5. Share your plan with a mentor or study partner.
+
+**Done looks like:** a one page plan with your chosen routes, project list, contacts and weekly targets.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which three routes to income does the lesson describe?",
+            options: ["Only remote jobs", "Selling phones, teaching and farming", "A job in Ghana, a remote job, and freelancing", "Only government jobs"],
+            answer_index: 2,
+            explanation: "The lesson covers local jobs, remote jobs and freelancing.",
+          },
+          {
+            prompt: "Besides technical skills, what do employers look for, according to the lesson?",
+            options: ["Proof, communication, collaboration and learning on your own", "Expensive laptops", "Only university grades", "A large social media following"],
+            answer_index: 0,
+            explanation: "These came up again and again in the adverts studied.",
+          },
+          {
+            prompt: "How should you treat rejections?",
+            options: ["As normal practice, asking for feedback when you can", "As proof you should stop", "As a reason to invent experience", "By never applying again to that company"],
+            answer_index: 0,
+            explanation: "Rejections are normal and a chance to improve.",
+          },
+          {
+            prompt: "What should you say about a tool you have not used yet?",
+            options: ["Claim you are an expert", "Change the subject", "Say you have not used it yet and explain how you would learn it", "Say the tool is useless"],
+            answer_index: 2,
+            explanation: "Honesty builds trust with employers.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "portfolio": {
+      explanation_md: `Hiring managers in Accra and remote teams often look at your projects before they read your CV. A strong portfolio is your best evidence. It does not need to be fancy; it needs to be clear, honest and easy to check on a phone.
+
+## Quality over quantity
+
+Show three to five of your best projects, not every exercise you have done. A good mix:
+
+* One project built for a **real person or organisation**, such as a shop, school or NGO.
+* One **interactive JavaScript or React app** that loads data and handles loading and errors.
+* One project showing **accessibility and performance** care, with before and after results.
+* Optionally, a **payment flow** or **offline** project that shows you understand Ghanaian users.
+
+Projects built for real users count for more than copies of tutorials. If you followed a tutorial, change it substantially and say what you added.
+
+## What each project needs
+
+For every project, provide:
+
+1. **A live link** that works on a phone.
+2. **A GitHub repository** with a clean commit history.
+3. **A clear README** answering:
+   * What problem does this solve, and for whom?
+   * What did you build, and with which tools?
+   * What was hard, and how did you solve it?
+   * How did you test accessibility and performance?
+   * What would you improve next?
+4. **A screenshot or short screen recording** at the top of the README.
+
+## Your portfolio page
+
+A simple one page site is enough: your name, one line about what you do, your projects with links, and how to contact you. Build it yourself with HTML and CSS, keep it fast, and make it accessible. Your portfolio is itself a sample of your work, so run Lighthouse on it.
+
+## Be honest
+
+* Only include work you did. For team projects, say exactly which parts were yours.
+* Do not invent users, clients or results. If a project runs in test mode, say so.
+* Ask permission before showing a client's site, and respect any private information.
+
+## Keep it current
+
+Add new projects as you improve and remove weaker ones. Pin your best repositories on your GitHub profile and write a short profile README.
+
+## A worked example
+
+Issahaku's portfolio shows four projects. The first is a live site for a tailoring business in Wa, with a README explaining how he cut the page weight so it loads well on customers' phones. The second is a React menu app with tests. The third is a mobile money checkout demo in test mode, explaining how it prevents double payments. The fourth is an accessible school results page tested with TalkBack. Each README is short and clear. When interviewers ask about his work, he can open any of them on his phone and explain every decision.`,
+      practice_task_md: `**Goal:** a portfolio page with your best three to five projects.
+
+1. Choose your three to five strongest projects using the mix in the lesson.
+2. For each, make sure there is a live link, a clean repository and a README answering the five questions.
+3. Add a screenshot to each README.
+4. Build a simple one page portfolio site with HTML and CSS, linking every project.
+5. Run Lighthouse on your portfolio and fix any accessibility or performance issues.
+6. Deploy it and pin your best repositories on GitHub.
+
+**Done looks like:** a live portfolio link that loads quickly on a phone, with three to five projects that each have a live link and a clear README. Share it with your mentor for feedback.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How many projects does the lesson suggest showing?",
+            options: ["Every exercise you have done", "Exactly one", "At least twenty", "Three to five of your best"],
+            answer_index: 3,
+            explanation: "Quality matters more than quantity.",
+          },
+          {
+            prompt: "Which kind of project counts for more than a tutorial copy?",
+            options: ["A project with the most colours", "A project with no README", "A project built for a real person or organisation", "A project that only works on a laptop"],
+            answer_index: 2,
+            explanation: "Real projects show judgement and real problem solving.",
+          },
+          {
+            prompt: "What should a project README explain?",
+            options: ["Only the project name", "Your salary expectations", "The problem, what you built, what was hard, how you tested, and what you would improve", "A copy of the tutorial"],
+            answer_index: 2,
+            explanation: "A good README tells the story of the project.",
+          },
+          {
+            prompt: "What should you do with a team project in your portfolio?",
+            options: ["Claim you built all of it", "Say exactly which parts were yours", "Leave out the team", "Remove the link"],
+            answer_index: 1,
+            explanation: "Being clear about your role keeps your portfolio honest.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "freelancing-for-smes": {
+      explanation_md: `Small businesses across Ghana, from shops in Tamale to schools in Bolgatanga, need simple websites and landing pages. Freelancing for them can bring income while you look for a job, and it gives you real projects for your portfolio. One Accra retail company in our research advertised for a web developer who also knew Shopify and WordPress, which shows these skills have local demand.
+
+## What small businesses often need
+
+* A **one page site** with what they sell, prices, location, opening hours and a WhatsApp link.
+* A **menu or catalogue** that is easy to update.
+* An **order or booking form**.
+* Sometimes an **online shop**, often on a platform such as Shopify or WordPress with WooCommerce, which you can customise.
+
+Many owners care most that the site loads quickly, looks trustworthy and brings customers. Keep it simple.
+
+## Finding clients
+
+* Start with people who know you: family, your church or mosque, your old school, local shops you use.
+* Build one excellent example site, then show it to similar businesses.
+* Ask every happy client for a referral and, with permission, a short honest quote.
+* Join local tech and business WhatsApp groups and hubs.
+
+## Scope: agree in writing
+
+Before starting, write a short scope and share it, even on WhatsApp:
+
+* What you will build (for example, a one page site with five sections and a contact form).
+* What you will not do (for example, writing all the text or taking photos).
+* What the client must provide (logo, photos, prices).
+* How many rounds of changes are included.
+* The deadline and the price in cedis.
+* Who pays for the domain and any hosting.
+
+Clear scope prevents arguments and unpaid extra work.
+
+## Pricing
+
+There is no fixed rate. Consider how long the work will take, what similar local developers charge, and what the site is worth to the business. Ask for part of the payment before you start, for example half, and the rest on delivery. Mobile money makes this easy. Keep a simple record of payments.
+
+## Handing over
+
+* Make sure the client owns their domain and accounts, in their name.
+* Show them how to make simple updates, or agree a small monthly fee for updates.
+* Give them a short written guide.
+
+## A worked example
+
+Mariama builds a site for a pharmacy in Bolgatanga. She writes a scope on WhatsApp: one page, opening hours, services, location map link and a WhatsApp order button, two rounds of changes, delivered in two weeks, with half paid upfront by mobile money. The owner provides photos. She delivers on time, shows the owner how to change opening hours, and asks for a referral. A month later the owner recommends her to a nearby clinic.`,
+      practice_task_md: `**Goal:** prepare to take your first freelance client.
+
+1. Build one example site for a type of local business (real or realistic), such as a chop bar, pharmacy or tailor. Make it fast and phone friendly with a WhatsApp link.
+2. Write a scope template you can reuse, covering what is included, what is not, what the client provides, rounds of changes, deadline, price in cedis and payment terms.
+3. Write a short message you could send to a business owner offering your service, in plain friendly language.
+4. Write a one page handover guide template explaining how to make a simple update.
+
+**Done looks like:** a live example site, a scope template, an outreach message and a handover guide, ready to share with a mentor for feedback.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What do many small business owners care about most in a website?",
+            options: ["Complex animations", "Using the newest framework", "That it loads quickly, looks trustworthy and brings customers", "Having many pages"],
+            answer_index: 2,
+            explanation: "Simple, fast and trustworthy sites serve small businesses best.",
+          },
+          {
+            prompt: "Why agree the scope in writing before starting?",
+            options: ["It is required by every bank", "It makes the site load faster", "So you can skip testing", "It prevents arguments and unpaid extra work"],
+            answer_index: 3,
+            explanation: "A clear scope sets expectations on both sides.",
+          },
+          {
+            prompt: "What payment approach does the lesson suggest?",
+            options: ["Ask for part before starting and the rest on delivery", "Never ask for payment", "Ask for ten times the price", "Accept payment only after a year"],
+            answer_index: 0,
+            explanation: "Partial upfront payment reduces your risk.",
+          },
+          {
+            prompt: "Whose name should the client's domain and accounts be in?",
+            options: ["The developer's", "No one's", "The client's", "A random friend's"],
+            answer_index: 2,
+            explanation: "Clients should own their own domain and accounts.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "job-search": {
+      explanation_md: `Finding your first frontend role takes a clear CV, honest profiles, steady applications and interview practice. Remote adverts we studied often stressed written English and communication, and Ghanaian roles included internships and National Service placements. This lesson brings it together.
+
+## Your CV
+
+Keep it to one page:
+
+* **Top:** name, town, phone, email, portfolio link, GitHub link.
+* **Summary:** two lines, such as "Frontend developer building fast, accessible sites for phones. React, TypeScript, testing."
+* **Projects:** your best two or three, each with one line on the problem and one on what you built, plus a link.
+* **Skills:** only what you can discuss in an interview.
+* **Experience and education:** include freelance work, National Service, volunteering and SydCrest.
+
+Tailor the summary and skills order to each advert. Save it as a PDF with a clear file name, such as \`Wumpini-Frontend-CV.pdf\`.
+
+## Your profiles
+
+Keep your GitHub and LinkedIn consistent with your CV. Pin your best repositories. A clear photo and a one line headline help. Post occasionally about what you are building.
+
+## Where to look
+
+* Ghanaian job boards and company career pages.
+* Tech hubs, meetups and community WhatsApp groups.
+* National Service placements with tech companies.
+* Remote job boards that state they hire in Africa or worldwide. Read location rules carefully.
+
+**Beware of scams.** A real employer never asks you to pay to apply or to be trained before starting.
+
+## The interview stages
+
+Many teams use some of these:
+
+1. **Screening call:** tell your story in two minutes and explain why this role.
+2. **Technical task:** a small take home project or live coding, often using HTML, CSS, JavaScript or React.
+3. **Technical discussion:** walk through a portfolio project. Expect "why did you choose that?" and "what would you change?"
+4. **Team or culture conversation:** how you handle feedback, deadlines and disagreements.
+
+## Practising technical interviews
+
+* **Think out loud.** Say what you are trying and why. Interviewers care about your reasoning.
+* **Ask questions first.** Clarify the task before coding.
+* **Start simple, then improve.** A working simple solution beats an unfinished clever one.
+* **Know your projects deeply.** Be ready to explain any line.
+* Practise with a study partner who plays the interviewer.
+
+A few common topics: semantic HTML, flexbox versus grid, how \`fetch\` and \`async\` work, React state and props, and how you would make a page faster or more accessible.
+
+## A worked example
+
+Abdul-Rahman applies to a junior role at an Accra agency. For the take home task he builds a small product list, writes tests, handles loading and error states, and explains his choices in the README. In the discussion he walks through his mobile money demo, thinking out loud. He does not get that role, so he asks for feedback, learns that his tests were thin, improves them, and goes into his next application better prepared.`,
+      practice_task_md: `**Goal:** a ready to send application pack and interview practice.
+
+1. Write a one page CV using the structure in the lesson and save it as a PDF.
+2. Update your GitHub profile: pin your best repositories and write a short profile README.
+3. Find three real junior or intern adverts (Ghanaian or remote) and note which of your skills match and which you need to build.
+4. Tailor your CV summary for one of them.
+5. With a study partner, do a 20 minute mock interview: two minutes telling your story, then walking through one project and solving a small task out loud. Swap roles.
+
+**Done looks like:** a PDF CV, an updated GitHub profile, notes on three adverts, and written feedback from one mock interview.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How long should your CV be for a junior frontend role?",
+            options: ["Five pages", "As long as possible", "A single sentence", "One page"],
+            answer_index: 3,
+            explanation: "A clear one page CV is easiest for employers to read.",
+          },
+          {
+            prompt: "What should you do during a live coding task?",
+            options: ["Stay silent until finished", "Think out loud and ask clarifying questions first", "Refuse to start without the internet", "Write the most complex solution possible"],
+            answer_index: 1,
+            explanation: "Interviewers want to follow your reasoning.",
+          },
+          {
+            prompt: "Which is a warning sign of a job scam?",
+            options: ["A clear job description", "Being asked to pay to apply or to be trained", "A video interview", "A take home task"],
+            answer_index: 1,
+            explanation: "Real employers do not ask you to pay to apply.",
+          },
+          {
+            prompt: "What does the lesson suggest after a rejection?",
+            options: ["Give up", "Ask for feedback, improve, and keep applying", "Post complaints online", "Stop building projects"],
+            answer_index: 1,
+            explanation: "Feedback helps you improve for the next application.",
           },
         ],
         pass_threshold: 75,
