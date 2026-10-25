@@ -783,6 +783,395 @@ Hawa, at a Bolgatanga school, gets three calls: nobody can print to the staff ro
         pass_threshold: 75,
       },
     },
+    "operating-systems": {
+      explanation_md: `## Why this matters
+
+An operating system (OS) is the main software that runs a device: it manages the hardware, runs apps and gives people a way to use the machine. In Ghanaian workplaces you will meet three again and again. Most office desktops and laptops run Microsoft Windows. Many servers, routers, internet systems and cloud services run Linux. Almost every staff phone runs Android. Job adverts for IT support in Ghana ask for Windows support most often, with Linux appearing for server and network work and mobile device support appearing for staff phones and tablets.
+
+## What every operating system does
+
+Whatever the brand, an OS handles the same jobs:
+
+* **Starts the device** after the firmware hands over.
+* **Manages files and folders** on storage.
+* **Runs apps** and shares memory and processor time between them.
+* **Manages users and permissions**, deciding who can sign in and what they can change.
+* **Talks to hardware** through drivers, small programs that let the OS use a printer, screen or Wi-Fi card.
+* **Connects to networks** and keeps settings such as the device's address.
+* **Updates itself** with fixes for bugs and security holes.
+
+Once you understand these jobs, moving between Windows, Linux and Android is much easier. You will always look for the same things: where are the settings, where are the files, who is the user, what is installed, is it up to date, is it connected.
+
+## What this section covers
+
+* **Supporting Windows.** The tools a technician uses daily: Settings, Task Manager, Device Manager, updates, safe software installation, remote help, and when to repair or reinstall.
+* **Linux basics and the command line.** Files, folders, users and the handful of commands you will use on servers and network devices. This is also the first step towards cybersecurity and cloud work.
+* **Android phones and mobile devices.** Accounts, storage, updates, backups, security and what to do when a phone is lost.
+
+## Phone or computer?
+
+The Android lesson can be practised fully on your own phone. The Windows and Linux lessons need a computer for hands on practice. If you do not have one, you can still learn the ideas here, then practise at a school lab, library, community centre or cyber cafe. Linux can run from a USB stick without changing what is installed on the computer, which makes it safe to try on a borrowed machine, but always ask the owner first.
+
+## A small example
+
+Mariama joins a district health office in Savelugu as an IT assistant. On day one she has three requests: a Windows laptop that is very slow, a Linux based server in the corner that needs its updates checked, and a nurse's Android phone that will not receive work email. Different systems, same questions: what changed, is it up to date, is the account right, is it connected. By the end of the week she has solved all three, using the approach in this section.`,
+      practice_task_md: `**Goal:** compare operating systems by the jobs they do.
+
+1. On your phone, find: the Android version, available storage, the signed in accounts, and when the last security update was installed (Settings, then About phone, Storage, Accounts and Security).
+2. If you can use a Windows computer, find the same four things (Settings, then System and Accounts, plus Windows Update).
+3. Make a table with the OS jobs from this lesson (start, files, apps, users, drivers, networks, updates) as rows, and write where you would look for each on Android and on Windows.
+4. Leave a Linux column empty for now. You will fill it in after the Linux lesson.
+
+**Done looks like:** a comparison table with at least the Android column complete. Keep it as a quick reference card.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is an operating system?",
+            options: [
+              "A type of printer cable",
+              "The main software that runs a device, manages hardware and runs apps",
+              "A website for buying laptops",
+              "A virus scanner only",
+            ],
+            answer_index: 1,
+            explanation: "The OS manages hardware, runs apps and gives people a way to use the device.",
+          },
+          {
+            prompt: "Which operating system runs most office desktops and laptops in Ghanaian workplaces?",
+            options: ["Linux", "Android", "Windows", "iOS"],
+            answer_index: 2,
+            explanation: "Most office computers run Windows, which is why adverts ask for it most.",
+          },
+          {
+            prompt: "What is a driver?",
+            options: [
+              "A small program that lets the OS use a piece of hardware",
+              "The person who delivers computers",
+              "A type of password",
+              "A backup of all your files",
+            ],
+            answer_index: 0,
+            explanation: "Drivers let the operating system talk to printers, screens, Wi-Fi cards and more.",
+          },
+          {
+            prompt: "Why is running Linux from a USB stick useful on a borrowed computer?",
+            options: [
+              "It makes the computer faster forever",
+              "It deletes viruses automatically",
+              "It installs Windows updates",
+              "It lets you try Linux without changing what is installed",
+            ],
+            answer_index: 3,
+            explanation: "A live USB runs Linux without touching the installed system.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "windows-support": {
+      explanation_md: `## Why this matters
+
+Windows support is the skill Ghanaian IT support adverts mention most: installing and configuring Windows, troubleshooting software, managing updates, supporting Microsoft Office and Microsoft 365, and helping users remotely. If you know your way around Windows calmly and quickly, you can handle a large share of first line calls.
+
+## The tools you will use every day
+
+* **Settings.** Open with the Start menu or the Windows key and I. System, Bluetooth and devices, Network and internet, Accounts, Apps and Windows Update all live here.
+* **Task Manager.** Open with \`Ctrl\` + \`Shift\` + \`Esc\`. Shows which apps and processes are using processor, memory and disk. If a machine is slow, look here first. You can end a frozen app from here.
+* **Device Manager.** Right click the Start button to find it. Shows every piece of hardware and flags problems with a yellow warning sign. Use it to update or roll back a driver.
+* **Storage settings.** A nearly full drive makes Windows slow and stops updates. Storage Sense can clear temporary files.
+* **Windows Update.** Installs security fixes. Keep machines up to date, but plan big updates outside busy hours.
+* **Command Prompt and PowerShell.** Text tools for quick checks such as \`ipconfig\` (network settings). You will use these in the networking section.
+
+## Installing software safely
+
+Install only from official sources: the Microsoft Store, the software maker's own website or the organisation's approved list. Pirated or "cracked" software is illegal to use and is a common way malware gets into Ghanaian offices. Uninstall programs nobody uses from Settings, then Apps.
+
+## Supported versions
+
+Microsoft stopped regular support for Windows 10 in October 2025, which means no more free security updates for most users. Organisations still on Windows 10 should plan to move to Windows 11 where the hardware allows, or replace machines. Knowing this helps you give managers sound advice.
+
+## Repair or reinstall
+
+Work from the gentlest fix to the strongest:
+
+1. Restart (many problems clear here).
+2. Update Windows and drivers, or roll back a recent update or driver that caused the trouble.
+3. Start in safe mode, which loads only basic drivers, to remove bad software.
+4. Use System Restore to go back to an earlier restore point, if one exists.
+5. Use Reset this PC, which reinstalls Windows and offers to keep personal files. Back up first anyway.
+
+## Helping remotely
+
+Windows includes Quick Assist, which lets you see and control a user's screen with their permission. Remote support saves trips between branches, but always confirm who you are talking to and never ask users to share passwords.
+
+## A small example
+
+Fuseini supports an accounts office in Tamale. A user says her laptop "freezes every morning". In Task Manager he sees a startup program using most of the disk. He disables it from the Startup apps list, restarts, and the laptop runs normally. He notes the program in the ticket so other machines can be checked.`,
+      practice_task_md: `**Goal:** practise the core Windows tools. This task needs a Windows computer: use your own, a school lab, library, community centre or cyber cafe machine (ask permission, and do not change settings on shared machines beyond looking).
+
+1. Open Task Manager and note the three apps using the most memory.
+2. Open Device Manager and check for any warning signs.
+3. In Settings, find free storage space, the Windows version and the date of the last update.
+4. Open Command Prompt and run \`ipconfig\`. Write down the IPv4 address (you will learn what it means soon).
+5. Write a short "slow computer" checklist using what you found.
+
+**If you have no computer access yet:** write the checklist from this lesson and practise naming each tool and what it is for until you can do it from memory.
+
+**Done looks like:** notes from each step and a slow computer checklist.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "A computer is slow. Which tool shows which apps are using the processor, memory and disk?",
+            options: ["Device Manager", "Task Manager", "Paint", "Calculator"],
+            answer_index: 1,
+            explanation: "Task Manager shows resource use and lets you end frozen apps.",
+          },
+          {
+            prompt: "Where do you look for hardware problems flagged with a yellow warning sign?",
+            options: ["Device Manager", "Windows Update", "The Microsoft Store", "File Explorer"],
+            answer_index: 0,
+            explanation: "Device Manager lists hardware and flags driver or device problems.",
+          },
+          {
+            prompt: "Which is the gentlest first step when fixing a Windows problem?",
+            options: [
+              "Reset this PC",
+              "Replace the hard drive",
+              "Restart the computer",
+              "Install cracked software",
+            ],
+            answer_index: 2,
+            explanation: "Start with the gentlest fix, a restart, before stronger steps.",
+          },
+          {
+            prompt: "Why should you avoid pirated or cracked software?",
+            options: [
+              "It is always slower",
+              "It cannot print",
+              "It only works at night",
+              "It is illegal and a common way malware gets in",
+            ],
+            answer_index: 3,
+            explanation: "Cracked software breaks the law and often carries malware.",
+          },
+          {
+            prompt: "What does Quick Assist let you do?",
+            options: [
+              "See and control a user's screen with their permission",
+              "Print faster",
+              "Reset a router",
+              "Back up a phone",
+            ],
+            answer_index: 0,
+            explanation: "Quick Assist is the built in Windows remote help tool.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "linux-basics": {
+      explanation_md: `## Why this matters
+
+You may not see many Linux desktops in Ghanaian offices, but Linux is everywhere behind the scenes. It runs many web and email servers, the software inside routers and network equipment, cloud systems and security tools. Ghanaian support adverts mention Windows and Linux server administration for second line and NOC roles, and both cybersecurity and cloud careers expect Linux. Learning the basics now opens those doors.
+
+## What Linux is
+
+Linux is a free, open source operating system. It comes in versions called distributions, such as Ubuntu, Debian and Fedora, which package Linux with tools and a desktop. Servers usually run without a desktop at all, so administrators use the command line: a text window (the terminal) where you type commands.
+
+## Files, folders and users
+
+* Everything starts at the root folder, written \`/\`.
+* Each user has a home folder such as \`/home/wumpini\`, shortened to \`~\`.
+* Settings files live mostly under \`/etc\`, and logs under \`/var/log\`.
+* Each file has an owner and permissions: who may read, write or run it.
+* Ordinary users cannot change system files. To run an admin command you put \`sudo\` in front and enter your password. Use it carefully.
+
+## The commands to learn first
+
+\`\`\`
+pwd           # where am I?
+ls -l         # list files with details
+cd /etc       # change folder
+mkdir notes   # make a folder
+cp a.txt b.txt  # copy a file
+mv b.txt old/   # move or rename
+cat a.txt     # show a file
+man ls        # manual for a command
+\`\`\`
+
+For system and network checks:
+
+\`\`\`
+sudo apt update   # refresh package list (Ubuntu, Debian)
+sudo apt upgrade  # install updates
+ip a              # show network addresses
+ping -c 4 example.com  # test a connection
+df -h             # free disk space
+\`\`\`
+
+Be very careful with \`rm\`, which deletes files without a recycle bin. Read a command twice before pressing Enter, especially with \`sudo\`.
+
+## How to practise
+
+Linux practice needs a computer. You can make a "live USB" from the official Ubuntu instructions and start a borrowed machine from it without installing anything, or install Ubuntu on an old laptop that is no longer needed. School labs, libraries and community centres sometimes allow this if you ask. If you only have a phone for now, read through the free Ubuntu command line tutorial, copy the commands into your notebook with what each one does, and practise explaining them. When you reach a computer, you will be ready.
+
+## A small example
+
+Abdul-Rahman starts as a junior technician at an internet provider in Kumasi. His supervisor asks him to check why a small Linux server is misbehaving. He signs in, runs \`df -h\` and sees the disk is full. Using \`ls -l\` in \`/var/log\` he finds an enormous log file. He reports it, and the supervisor sets up automatic log clean up. Three commands found the problem.`,
+      practice_task_md: `**Goal:** learn the first Linux commands. This needs a computer for full practice.
+
+**With a computer:** follow the free Ubuntu tutorial "The Linux command line for beginners" linked to this topic, using a live USB or an installed Ubuntu. Then:
+1. Make a folder called \`it-practice\` in your home folder.
+2. Create a file inside it with a short note, copy it, rename the copy, list the folder with details.
+3. Run \`ip a\` and \`df -h\` and write down what each shows.
+
+**With only a phone:** read the same tutorial in your browser. In your notebook, write each command from this lesson, what it does, and one example. Then fill in the Linux column of the table you made in the operating systems lesson.
+
+**Done looks like:** screenshots or notes of your commands and outputs, or a complete handwritten command sheet you can explain without looking.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Where is Linux most commonly found in workplaces?",
+            options: [
+              "Only on staff phones",
+              "On servers, network equipment and cloud systems",
+              "Only in printers",
+              "Only on gaming computers",
+            ],
+            answer_index: 1,
+            explanation: "Linux mainly runs behind the scenes on servers, routers and cloud systems.",
+          },
+          {
+            prompt: "What does the command `pwd` show?",
+            options: [
+              "Your password",
+              "The printer queue",
+              "The folder you are currently in",
+              "The network speed",
+            ],
+            answer_index: 2,
+            explanation: "`pwd` prints the current working folder.",
+          },
+          {
+            prompt: "Why should you be careful with the `rm` command?",
+            options: [
+              "It deletes files without a recycle bin",
+              "It restarts the router",
+              "It sends email to everyone",
+              "It changes the screen colour",
+            ],
+            answer_index: 0,
+            explanation: "Files removed with `rm` do not go to a recycle bin.",
+          },
+          {
+            prompt: "What does putting `sudo` in front of a command do?",
+            options: [
+              "Makes it run faster",
+              "Runs it on another computer",
+              "Turns it into a comment",
+              "Runs it with administrator rights after you enter your password",
+            ],
+            answer_index: 3,
+            explanation: "`sudo` gives a command admin rights, so use it carefully.",
+          },
+          {
+            prompt: "In the Kumasi example, which command showed that the disk was full?",
+            options: ["`df -h`", "`pwd`", "`mkdir`", "`cat`"],
+            answer_index: 0,
+            explanation: "`df -h` shows disk space in human readable sizes.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "android-and-mobile": {
+      explanation_md: `## Why this matters
+
+In Ghana the phone is often the main work device. Field officers collect survey data on Android tablets, sales staff take orders on WhatsApp, managers read email on their phones, and MoMo runs on everyone's handset. Adverts for IT support mention supporting mobile devices, and some name mobile device management tools. Phone support is also something you can practise fully on the device in your hand.
+
+## Accounts
+
+An Android phone is tied to a Google account, which controls the Play Store, contacts, backups and the find, lock and erase feature. Work phones may also have a Microsoft 365 or other work account for email. Many "my email stopped working" calls are really account problems: a changed password, an expired sign in or the wrong account selected. Check Settings, then Passwords and accounts (the name varies by maker).
+
+## Storage and performance
+
+A full phone is slow, crashes apps and cannot update. Check Settings, then Storage. Common fixes: clear WhatsApp media you no longer need, move photos to a backup, uninstall unused apps, clear an app's cache. Restarting a phone clears many temporary problems.
+
+## Updates and safe apps
+
+* Keep Android system updates and app updates installed; they fix security holes.
+* Install apps only from the Google Play Store or the organisation's approved source. Apps sent as files on WhatsApp (APK files) are a common way scammers take over phones.
+* Google Play Protect scans apps for harmful behaviour. Leave it on.
+* Set a screen lock (PIN, pattern or fingerprint). Never share MoMo or bank PINs with anyone, including IT staff.
+
+## Backup and lost phones
+
+* Turn on Google backup (Settings, then Google, then Backup) so contacts, photos and settings can be restored on a new phone. Back up WhatsApp chats from inside WhatsApp.
+* If a phone is lost or stolen, use Google's find, lock and erase feature from another device, signed in with the same Google account. Then contact the network to block the SIM and change important passwords.
+* Before a factory reset, back up and know the Google account password: after a reset, the phone asks for the previous account to stop thieves using it.
+
+## Work phones and device management
+
+Organisations with many phones use mobile device management (MDM) tools, such as Microsoft Intune or Google's endpoint management, to push apps and settings, require screen locks, and wipe work data if a phone is lost. As a technician you may enrol phones and help users through it.
+
+## A small example
+
+Amina supports twenty field officers for an NGO in Nalerigu. One officer cannot submit survey forms. Amina asks questions and finds the phone storage is full of WhatsApp videos. She helps him back up the photos he wants, clear old media, restart, and the forms send. She adds "storage check" to the monthly field visit checklist.`,
+      practice_task_md: `**Goal:** give your own phone a full support check. Everything here works on any Android phone.
+
+1. Find the Android version and the date of the last security update. Install any waiting updates when you have Wi-Fi or enough data.
+2. Check storage. Free at least some space safely (old WhatsApp media, unused apps) and note how much you freed.
+3. Confirm Google backup is on and see when it last ran.
+4. Check the screen lock is set and that Play Protect is on.
+5. Open the find, lock and erase page (linked to this topic) on another device or browser and confirm your phone appears.
+6. Write a one page "phone health check" that a field officer could follow.
+
+**Done looks like:** notes from each step and a phone health checklist for staff.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which account controls the Play Store, backups and the find, lock and erase feature on Android?",
+            options: ["The SIM card", "The Google account", "The WhatsApp account", "The MoMo wallet"],
+            answer_index: 1,
+            explanation: "Android phones are tied to a Google account for these services.",
+          },
+          {
+            prompt: "A field officer's phone is slow and apps crash. What is a common first check?",
+            options: [
+              "Whether storage is full",
+              "The colour of the case",
+              "The brand of the charger",
+              "The ringtone volume",
+            ],
+            answer_index: 0,
+            explanation: "Full storage causes slowness, crashes and failed updates.",
+          },
+          {
+            prompt: "Why are app files sent on WhatsApp (APK files) risky?",
+            options: [
+              "They use too much battery",
+              "They cannot be opened",
+              "They are a common way scammers take over phones",
+              "They only work on tablets",
+            ],
+            answer_index: 2,
+            explanation: "Install apps only from the Play Store or an approved source.",
+          },
+          {
+            prompt: "What do mobile device management tools let an organisation do?",
+            options: [
+              "Make phone calls cheaper",
+              "Charge phones faster",
+              "Increase signal strength",
+              "Push apps and settings, require screen locks and wipe work data from lost phones",
+            ],
+            answer_index: 3,
+            explanation: "MDM tools manage many phones centrally.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
