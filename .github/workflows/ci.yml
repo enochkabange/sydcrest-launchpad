@@ -2,12 +2,15 @@ name: CI
 
 on:
   pull_request:
-  push:
     branches: [main]
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  build:
-    name: Lint and build
+  checks:
+    name: Checks
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -18,5 +21,32 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
+      - run: pnpm typecheck
       - run: pnpm test
       - run: pnpm build
+        env:
+          # Public values only; placeholders are enough for a build check.
+          NEXT_PUBLIC_SUPABASE_URL: http://localhost:54321
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ci-placeholder
+
+  migrations:
+    name: Migrations
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      # Local Supabase in Docker, trimmed to what migrations and tests need.
+      - run: supabase start -x studio,mailpit,imgproxy,edge-runtime,logflare,vector,realtime,storage-api,postgres-meta,supavisor
+      # Every migration from scratch, then the database linter and pgTAP tests.
+      - run: supabase db reset
+      - run: supabase db lint --level error
+      - run: supabase test db
+      - name: Generated types match the migrations
+        run: |
+          set -euo pipefail
+          supabase gen types typescript --local > /tmp/generated.ts
+          diff <(grep -v PostgrestVersion src/lib/supabase/database.types.ts) \
+               <(grep -v PostgrestVersion /tmp/generated.ts) \
+            || { echo "database.types.ts is stale. Regenerate it after changing migrations."; exit 1; }

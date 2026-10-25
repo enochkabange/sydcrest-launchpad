@@ -1,0 +1,89 @@
+name: Pipeline
+
+# The only path to production: verify, migrate the database, deploy the
+# frontend, then prove the live site serves this commit. Any failure stops
+# the run and leaves production as it was.
+on:
+  push:
+    branches: [main]
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false # queue, never kill a half finished deploy
+
+env:
+  PROD_REF: vgdnuztoemexrtooofme
+  PROD_URL: https://sydcrest-launchpad.vercel.app
+
+jobs:
+  verify:
+    name: Verify
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint
+      - run: pnpm typecheck
+      - run: pnpm test
+      - run: pnpm build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: http://localhost:54321
+          NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ci-placeholder
+
+  deploy-db:
+    name: Deploy database
+    needs: verify
+    runs-on: ubuntu-latest
+    environment: Production
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: supabase/setup-cli@v1
+        with:
+          version: latest
+      - run: supabase link --project-ref "$PROD_REF"
+      - run: supabase db push
+
+  # deploy-functions: add back (between db and frontend) when supabase/functions
+  # exists, for example the Hubtel MoMo webhooks.
+
+  deploy-frontend:
+    name: Deploy frontend (Vercel)
+    needs: deploy-db
+    runs-on: ubuntu-latest
+    environment: Production
+    env:
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+      VERCEL_ORG_ID: team_c3xMCYVFW4OzMKzayGvmP1qO
+      VERCEL_PROJECT_ID: prj_QHcxXMnP5UcABWQLryi8T0aS56co
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: npm install -g vercel@latest
+      - run: vercel pull --yes --environment=production --token="$VERCEL_TOKEN"
+      - run: vercel build --prod --token="$VERCEL_TOKEN"
+        env:
+          NEXT_PUBLIC_BUILD_SHA: ${{ github.sha }}
+      - name: Deploy
+        run: vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"
+      - name: Verify production serves this commit
+        run: |
+          set -euo pipefail
+          for i in $(seq 1 12); do
+            live=$(curl -fsS "$PROD_URL/api/version" | sed -E 's/.*"sha":"([^"]*)".*/\1/' || true)
+            if [ "$live" = "$GITHUB_SHA" ]; then echo "Live is $live"; exit 0; fi
+            echo "Live is '$live', waiting for $GITHUB_SHA"
+            sleep 10
+          done
+          echo "Production is not serving $GITHUB_SHA"; exit 1
