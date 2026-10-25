@@ -3,7 +3,7 @@
 Roadmap slug `ui-ux-designer`, outline in `src/content/roadmaps/ui-ux.ts`, lessons in
 `src/content/roadmaps/content/ui-ux.content.ts`. Research done 25 October 2026 for issue #84.
 
-**Provenance.** No roadmap.sh pages were opened, searched for or used, and no "UI/UX roadmap" style
+**Provenance.** No pages from the roadmap site that CONTENT_GUIDE puts off limits were opened, searched for or used, and no "UI/UX roadmap" style
 searches were run. Job adverts were read for which skills they name; no advert text was copied into
 the lessons. No logins were used, and LinkedIn was not opened or scraped. All lesson text is original.
 
@@ -32,18 +32,27 @@ the lessons. No logins were used, and LinkedIn was not opened or scraped. All le
 | S19 | Jobberman Ghana, Creative and Design category (Accra) | https://www.jobberman.com.gh/jobs/creative-design | 2026-10-25 | Job board listing page (titles only) |
 | S20 | Search snippets on mobile money design roles (M-PESA product designer covering USSD, Telecel Cash PM covering USSD) | https://geezjobs.com/job-detail/mpesa-product-design-manager-safaricom-telecommunication-ethiopia | 2026-10-25 | Search snippet only, supplementary |
 | F1 | O*NET OnLine: Web and Digital Interface Designers 15-1255.00 | https://www.onetonline.org/link/summary/15-1255.00 | 2026-10-25 | CC BY 4.0 (US DOL ETA) |
-| F2 | ESCO: user interface designer (ISCO 2513) | https://esco.ec.europa.eu/ | 2026-10-25 | Portal and API returned "temporarily unavailable"; occupation definition seen only via a search snippet of a mirror. Gap noted. |
+| F2 | ESCO: user interface designer (ISCO 2513) | https://esco.ec.europa.eu/ | 2026-10-25 | Portal and API returned "temporarily unavailable"; occupation definition seen only via a search snippet of a mirror. Retried by the reviewer later on 2026-10-25: the portal shell loads but the classification and the API (https://ec.europa.eu/esco/api/search) still return a network error. Gap noted; no third party proxy used. |
 | C1 | GOV.UK Service Manual: User research (topic list) | https://www.gov.uk/service-manual/user-research | 2026-10-25 | Open Government Licence v3.0 |
 | C2 | W3C WAI: Accessibility fundamentals (topic list) | https://www.w3.org/WAI/fundamentals/ | 2026-10-25 | W3C permissive document licence |
 | D1 | WCAG 2.2 Understanding: Target Size (Minimum) | https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html | 2026-10-25 | W3C document licence; fact checked: 24 by 24 CSS px, Level AA |
 | D2 | Google Accessibility Help: Touch target size | https://support.google.com/accessibility/android/answer/7101858 | 2026-10-25 | Official docs; fact checked: 48 by 48 dp |
 | D3 | Penpot pricing | https://penpot.app/pricing | 2026-10-25 | Official page; checked free and open source |
 | D4 | Figma pricing | https://www.figma.com/pricing/ | 2026-10-25 | Official page; checked free Starter plan exists |
+| D5 | WCAG 2.2 Understanding: Contrast (Minimum) | https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html | 2026-10-25 | W3C document licence; reviewer checked: SC 1.4.3, Level AA, 4.5 to 1 normal text, 3 to 1 large text (18 pt, or 14 pt bold; about 24 px, or about 18.7 px bold) |
+| D6 | Apple HIG: Accessibility (control size table) and Buttons | https://developer.apple.com/design/human-interface-guidelines/accessibility | 2026-10-25 | Apple developer documentation; reviewer checked: iOS and iPadOS default control size 44x44 pt (minimum 28x28 pt); Buttons page says a hit region of at least 44x44 pt |
+| D7 | Twilio glossary: SMS character limit | https://www.twilio.com/docs/glossary/what-sms-character-limit | 2026-10-25 | Vendor documentation (used for facts only, not named in lessons); 160 GSM 7 bit or 70 UCS-2 per single SMS, 153 or 67 per part when concatenated, billed per part |
+| D8 | GSM 03.38 (3GPP TS 23.038) character set summary | https://en.wikipedia.org/wiki/GSM_03.38 | 2026-10-25 | CC BY-SA 4.0; reviewer checked that ɛ, ɔ, ŋ and ₵ are in neither the GSM 7 bit default alphabet nor its extension table, so any of them forces UCS-2 |
+| D9 | Ghana Data Protection Commission | https://dpc.gov.gh/ | 2026-10-25 | Official site; confirms the Commission is established under the Data Protection Act, 2012 (Act 843); no amendment mentioned |
+| D10 | Ghana News Agency: disability groups urge passage of Persons with Disabilities Bill, 2026 | https://gna.org.gh/2026/07/disability-groups-demand-urgent-passage-of-persons-with-disabilities-bill-2026/ | 2026-10-25 | News report (search snippet); as of July 2026 the replacement bill was still pending, so the Persons with Disability Act, 2006 (Act 715) remains the law cited |
+| L1 | Wikipedia: Farefare (Gurenɛ), Kusaal, Mampruli, Gonja, Dagaare, Languages of Ghana | https://en.wikipedia.org/wiki/Farefare_language | 2026-10-25 | CC BY-SA 4.0; reviewer checked: Gurenɛ mainly Upper East; Kusaal north eastern Ghana (Bawku area, Upper East); Mampruli centred on Gambaga and Nalerigu; Gonja in the Damongo area; Dagaare in Upper West; Dagbani spoken by Dagomba in the Tamale and Savelugu area |
 
-Facts used from memory of official sources and kept general: WCAG contrast 4.5 to 1 and 3 to 1 (W3C),
-Apple 44 by 44 pt (Apple HIG), Ghana Data Protection Act, 2012 (Act 843), Persons with Disability Act,
-2006 (Act 715), standard SMS length of 160 GSM characters with fewer when Unicode letters are used,
-Nielsen's ten usability heuristics (NN/g, read for topic names only).
+Facts the author first used from memory were checked by the reviewer against the sources D5 to D10 and
+L1 above: WCAG contrast, Apple 44 by 44 pt, Act 843, Act 715 (still in force; a replacement bill was
+pending in 2026), SMS encoding limits and the language areas. Nielsen's ten usability heuristics
+(NN/g, read for topic names only) remain from memory and are paraphrased, not quoted.
+Note for the SMS lesson: the cedi sign ₵ is itself outside the GSM set, so the lesson's model SMS
+uses "GHS".
 
 ## Adverts analysed (18)
 
@@ -151,7 +160,7 @@ and research in markets).
 | inclusive-design | A: 9 adverts name accessibility or inclusive design; B; P (section) |
 | accessibility | A1, A3, A4, A6 to A8, A10, A12, A16; C2; D1 |
 | literacy-and-language | A11, A15, A16 (users' languages); C1 (non digital users); B |
-| low-end-phones | S20 (USSD in mobile money design roles); A11 (mobile money, unreliable infrastructure); B |
+| low-end-phones | **No advert signal: 0 of 18 adverts name USSD.** Retained on B (learner context: basic phones, USSD mobile money in northern Ghana) and the weak supplementary snippets in S20; A11 (mobile money, unreliable infrastructure) only indirectly |
 | offline-and-slow-data | A15 (offline first, low resource); A11; B |
 | testing | P (section); A: 10 adverts name usability testing |
 | prototyping | A1, A3 to A11, A16 |
@@ -196,8 +205,9 @@ only: AI design to code tools (2 adverts), Agile and Jira (2 adverts), motion de
 
 * No current, clearly junior UI/UX advert based in Tamale, Kumasi or another northern city was found;
   Ghana demand in the sample is Accra or remote. Lessons point learners to remote and NGO routes too.
-* USSD design is supported by brief and supplementary snippets but by none of the 18 adverts directly.
-* The ESCO skills list could not be read on the day (service unavailable).
+* USSD design is supported by the brief (learner context) and two supplementary search snippets but by none of the 18 adverts directly. The reviewer kept the node because basic phones and USSD mobile money are part of the learners' own setting, and softened the lesson so it no longer says adverts mention USSD.
+* The ESCO skills list could not be read on the day (service unavailable), including on a later retry by the reviewer.
+* Ghana's Persons with Disability Act, 2006 (Act 715) is cited as current law. A replacement Persons with Disabilities Bill was still pending in July 2026; if it passes, update the accessibility lesson.
 * CONTENT_GUIDE says `pass_threshold` is a count of correct answers, but the validator and database
   treat it as a percentage from 50 to 100. This track uses 75 for 4 questions and 80 for 5 (3 of 4,
   4 of 5).

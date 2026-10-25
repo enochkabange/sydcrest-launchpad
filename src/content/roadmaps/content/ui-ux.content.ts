@@ -11,7 +11,7 @@ const content: TrackContent = {
     foundations: {
       explanation_md: `## Why design matters for jobs in Ghana
 
-Every week more Ghanaian businesses move onto phones. Banks, mobile money services, hospitals, schools, farm advisory services and online shops all need apps and websites that people can actually use. When a screen is confusing, customers give up, call the support line or walk to the branch instead. Companies hire designers to stop that from happening.
+More and more Ghanaian businesses now serve customers through phones. Banks, mobile money services, hospitals, schools, farm advisory services and online shops all need apps and websites that people can actually use. When a screen is confusing, customers give up, call the support line or walk to the branch instead. Companies hire designers to stop that from happening.
 
 This first section gives you the big picture before you learn any tool. You will see what UX and UI mean, what designers do all day and the simple loop that every design project follows.
 
@@ -321,7 +321,7 @@ Research is not asking people what features they want. People are poor at predic
 
 ## Research in the Ghanaian setting
 
-Research here often looks different from the textbook picture of a quiet lab. You might sit beside a provisions seller in Aboabo market in Tamale, ride along with a motor king rider, or meet a women's savings group under a tree in a Damongo community. You may need to speak Dagbani, Gurene, Dagaare or Twi, or work with someone who does. You will see shared phones, cracked screens and bright sun. All of this is valuable data, not noise.
+Research here often looks different from the textbook picture of a quiet lab. You might sit beside a provisions seller in Aboabo market in Tamale, ride along with a motor king rider, or meet a women's savings group under a tree in a Damongo community. You may need to speak Dagbani, Gonja, Gurene, Dagaare or Twi, or work with someone who does. You will see shared phones, cracked screens and bright sun. All of this is valuable data, not noise.
 
 ## What this section covers
 
@@ -1335,7 +1335,7 @@ Visual design is how a screen guides the eye, builds trust and stays readable. A
 * **Start with neutrals.** Dark text on a light background, or the reverse, does most of the work.
 * **One main brand colour** for the primary action. If every button is bright, nothing stands out.
 * **Meaning colours** for success, warning and error. Never rely on colour alone; add an icon or words, because some people cannot tell red from green.
-* **Contrast.** The WCAG guidelines ask for a contrast ratio of at least 4.5 to 1 for normal text and 3 to 1 for large text. Free contrast checkers online will measure it for you. Strong sun makes weak contrast even worse, so aim higher where you can.
+* **Contrast.** At level AA, the WCAG guidelines ask for a contrast ratio of at least 4.5 to 1 for normal text and 3 to 1 for large text (about 24 pixels, or about 19 pixels if bold). Free contrast checkers online will measure it for you. Strong sun makes weak contrast even worse, so aim higher where you can.
 
 ## Layout and spacing
 
@@ -1441,7 +1441,7 @@ Using familiar patterns is not lazy. It means users can spend their attention on
 
 ## Touch targets and thumbs
 
-Fingers are less precise than a mouse. Material Design recommends touch targets of at least 48 by 48 density independent pixels, and Apple suggests at least 44 by 44 points. WCAG 2.2 sets a minimum of 24 by 24 CSS pixels at its AA level. Leave space between targets so people do not tap the wrong one.
+Fingers are less precise than a mouse. Material Design recommends touch targets of at least 48 by 48 density independent pixels (dp), and Apple's guidelines give 44 by 44 points as the usual hit area for a button. WCAG 2.2 sets a lower floor of 24 by 24 CSS pixels at its AA level, with exceptions such as small targets that have enough space around them. Treat 24 as the floor, not the goal. Leave space between targets so people do not tap the wrong one.
 
 Many people use their phone with one hand while carrying goods, holding a child or serving customers. The bottom and middle of the screen are easiest to reach. Put the main actions there and keep rare or risky actions, such as "Delete account", away from the thumb's natural path.
 
@@ -1463,7 +1463,7 @@ Hawa designs a market price checker for an NGO. Her first version puts the "Chec
 
 **Steps**
 1. Choose a screen you have designed, such as "Buy data" or a price list.
-2. Check every button and link is at least 48 by 48 pixels with space between them.
+2. Check every button and link is at least 48 by 48 with space between them. In a 360 wide phone frame, one pixel in your design tool equals one dp.
 3. Move the main action to where a thumb reaches easily in one handed use.
 4. Use the right keyboard type for any input and put labels above fields.
 5. Create three versions: a small phone (360 wide), a large phone and a laptop. Decide what changes at each size.
@@ -1623,7 +1623,7 @@ Build accessibility into your components: good contrast, large touch targets, vi
               "Parents could not find the fees screen",
             ],
             answer_index: 2,
-            explanation: "Inconsistent buttons confused the developer and users.",
+            explanation: "Inconsistent buttons left the developer guessing which one was right.",
           },
         ],
         pass_threshold: 75,
@@ -1939,13 +1939,13 @@ Wumpini is improving a farm loan app. Her test shows farmers near Savelugu skip 
     "low-end-phones": {
       explanation_md: `## Why this matters
 
-Many people in Ghana use older or low cost Android phones with small screens, little storage and limited memory, and many still use basic phones with no internet at all. Mobile money, airtime and many banking and farm services reach them through USSD codes and SMS. Product designers at fintech and telecom companies design these channels too, and job adverts for mobile money products mention them. If you only design for new smartphones, you design for only part of the market.
+Many people in Ghana use older or low cost Android phones with small screens, little storage and limited memory, and many still use basic phones with no internet at all. Mobile money, airtime and many banking and farm services reach them through USSD codes and SMS. Product designers at fintech and telecom companies may design these channels too, and some mobile money product roles include USSD work. If you only design for new smartphones, you design for only part of the market.
 
 ## Designing for low end smartphones
 
 * **Small screens.** Design first for narrow screens, around 360 pixels wide, and check smaller ones. Keep the main action visible without scrolling.
-* **Little storage.** People delete apps to make space for photos and WhatsApp. A small app, or a lightweight web app that needs no install, is more likely to stay.
-* **Limited memory and older systems.** Heavy animations, large images and long lists slow phones down. Keep screens simple.
+* **Little storage.** People delete apps to free space. A small app, or a light web app that needs no install, is more likely to stay.
+* **Limited memory and older systems.** Heavy animations, large images and long lists slow phones down.
 * **Battery and brightness.** People often keep brightness low to save battery, so strong contrast matters even more.
 * **Shared phones.** Think about privacy: hide balances by default, ask for a PIN before showing sensitive information, and let people log out easily.
 
@@ -1968,15 +1968,17 @@ Good USSD design means:
 
 ## Designing SMS
 
-A standard SMS holds 160 characters, but if you use special characters, such as the letters ɛ or ɔ found in many Ghanaian languages, a single message may hold far fewer, so it splits into several parts that can arrive out of order. Write the key fact first: "Paid GH₵ 50 to Hawa Alhassan. Ref 4821. Balance GH₵ 120." Avoid links that need data unless you know the person has it.
+A single SMS holds 160 characters only when every character comes from the basic GSM set: English letters, digits and common punctuation. Add one character outside that set, such as ɛ, ɔ or ŋ from many Ghanaian languages, or even the cedi sign ₵, and the whole message switches to Unicode. Then a single SMS holds only 70 characters. Longer messages are split into parts (153 characters each in GSM, 67 in Unicode), and each part is usually charged as a separate message. Check your text in a free SMS length counter before sending it to many people.
+
+Write the key fact first: "Paid GHS 50 to Hawa Alhassan. Ref 4821. Balance GHS 120." Using GHS instead of ₵ keeps it in the basic set. Avoid links that need data unless you know the person has it.
 
 ## A small example
 
-Amina redesigns a USSD menu for a cooperative's savings service. The old menu had nine options and three levels before "Check balance". Members in Bolgatanga often timed out. She moves "Check balance" and "Save" to options 1 and 2, cuts the menu to five options, and sends an SMS after every deposit. Members finish tasks before the session ends, and fewer call the cooperative to ask whether their money arrived.
+Amina redesigns a USSD menu for a cooperative's savings service. The old menu had nine options and three levels before "Check balance". Members in Bolgatanga often timed out. She moves "Check balance" and "Save" to options 1 and 2, cuts the menu to five options, and sends an SMS after every deposit. Members now finish before the session ends, and fewer call to ask whether their money arrived.
 
 ## Sketching USSD
 
-Draw each USSD screen as a small box with numbered options. Test it on paper: you read the screen aloud and the person says the number they would press. This works anywhere and needs no data at all.`,
+Draw each USSD screen as a small box with numbered options. Test it on paper: read the screen aloud and the person says the number they would press.`,
       practice_task_md: `**Goal:** design and test a short USSD flow on paper.
 
 **Steps**
@@ -2031,7 +2033,7 @@ Draw each USSD screen as a small box with numbered options. Test it on paper: yo
               "Each message holds fewer characters, so it may split into parts",
             ],
             answer_index: 3,
-            explanation: "Special characters reduce how much fits in one SMS.",
+            explanation: "One character outside the basic GSM set switches the message to Unicode, which fits 70 characters instead of 160.",
           },
           {
             prompt: "On a shared phone, which design choice protects privacy?",
@@ -2682,7 +2684,7 @@ Junior and entry level design work in Ghana and for Ghanaian designers tends to 
 
 ## Your local knowledge is an advantage
 
-Many companies want to serve users in northern Ghana and similar places but have nobody who understands them. If you can show that you researched with traders in Tamale, designed a USSD flow, tested in Dagbani or designed for offline moments, you bring something rare. Put it front and centre in your portfolio.
+Companies that build for users in northern Ghana and similar places need designers who understand those users, and that experience is not easy to find. If you can show that you researched with traders in Tamale, designed a USSD flow, tested in Dagbani or designed for offline moments, you bring something rare. Put it front and centre in your portfolio.
 
 ## Honesty matters
 
@@ -2724,10 +2726,10 @@ Job hunting takes time. Set a weekly routine: improve one case study, apply to a
               "Employers only hire from the north",
               "It means you do not need design skills",
               "It replaces the need for a portfolio",
-              "Many companies want to serve these users but lack people who understand them",
+              "Companies building for these users need designers who understand them, and that experience is not easy to find",
             ],
             answer_index: 3,
-            explanation: "Real experience with these users is rare and valuable.",
+            explanation: "Experience with these users is valuable and not easy to find.",
           },
           {
             prompt: "What should you do if a project was a practice redesign?",
