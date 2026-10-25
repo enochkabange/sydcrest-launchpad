@@ -86,10 +86,6 @@ const cisaPasswords = r("CISA: Use strong passwords", "https://www.cisa.gov/secu
 const cisaPhishing = r("CISA: Recognise and report phishing", "https://www.cisa.gov/secure-our-world/recognize-and-report-phishing");
 const cisaUpdates = r("CISA: Update software", "https://www.cisa.gov/secure-our-world/update-software");
 const ghanaCsa = r("Cyber Security Authority, Ghana", "https://www.csa.gov.gh/");
-const ncscBackup = r(
-  "NCSC small business guide: Backing up your data",
-  "https://www.ncsc.gov.uk/collection/small-business-guide/backing-your-data",
-);
 const googleForms = r("Google Forms help: How to use Google Forms", "https://support.google.com/docs/answer/6281888", "practice");
 const wikiSurge = r("Wikipedia: Surge protector", "https://en.wikipedia.org/wiki/Surge_protector");
 const wikiUps = r("Wikipedia: Uninterruptible power supply", "https://en.wikipedia.org/wiki/Uninterruptible_power_supply");
@@ -307,7 +303,7 @@ export const itSupport: RoadmapDraft = {
         "Hard drives fail, phones get stolen and ransomware locks files, so a tested backup is what saves the day. Learn the three copies rule and how to back up computers and phones cheaply.",
       parent: "accounts-and-security",
       optional: false,
-      resources: [gcfBackup, msBackup, ncscBackup],
+      resources: [gcfBackup, androidBackup, msBackup],
     },
     {
       slug: "career-routes",
