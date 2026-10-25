@@ -59,6 +59,8 @@ Owner inserts and reads their own; revoking goes through `revoke_consent(kind)`,
 
 **events**. First party analytics: name from a fixed list, optional profile_id, anonymous_id, small props object.
 Anyone may insert (profile_id must be null or their own); only admins read.
+The app writes the funnel taxonomy (page_view, signup, quiz_run, path_viewed, node_started, node_completed, invite_sent)
+through `track()` in `src/lib/analytics`; older Phase 1 names stay valid until a contract migration.
 
 **ai_usage**. Study Buddy messages and tokens per learner per day, keyed on the Africa/Accra date (UTC).
 Owner reads; only `record_ai_usage` writes, and it can only increase the counters.
@@ -77,6 +79,7 @@ Anyone inserts; only admins read. A repeat email returns `23505`; treat it as su
 | `submit_node_quiz(node_id, answers)` | signed in | Grade against the hidden key; returns `score`, `passed`, per question `results`. |
 | `record_ai_usage(input_tokens, output_tokens)` | signed in | Add one Study Buddy message to today's row. |
 | `revoke_consent(kind)` | signed in | Revoke the caller's live consent of that kind. |
+| `funnel_by_week(weeks)` | admins | Visitors, sign ups and activations (first node completed) per week, newest first. |
 | `mint_achievement(profile_id, type, ref_id, metadata)` | service role only | Server side minting for `track_chosen`, `path_personalized`, `streak`. |
 | `admin_reports(status)` | admins | The report queue with reporter and reported profile names (no phone or email). Others get `42501`. |
 | `admin_unpublish_profile(profile_id)` | admins | Sets a reported profile's `is_public` to false. Others get `42501`. |

@@ -1,9 +1,11 @@
 import { signInWithGoogle } from "./actions";
 import { buttonClasses } from "@/components/ui/button";
+import { NextField } from "./next-field";
 
 export function GoogleButton() {
   return (
     <form action={signInWithGoogle}>
+      <NextField />
       <button type="submit" className={buttonClasses("secondary", "w-full")}>
         <svg viewBox="0 0 24 24" className="size-5" aria-hidden="true">
           <path fill="#4285F4" d="M22.6 12.2c0-.8-.1-1.5-.2-2.2H12v4.2h6a5.1 5.1 0 0 1-2.2 3.3v2.8h3.6c2.1-1.9 3.2-4.8 3.2-8.1Z" />

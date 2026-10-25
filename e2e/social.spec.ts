@@ -1,5 +1,5 @@
 import { expect, test, type Browser, type Page } from "@playwright/test";
-import { createLearner, mintStreak, PASSWORD, promoteToAdmin, type Learner } from "./supabase-admin";
+import { createLearner, mintStreak, PASSWORD, promoteToAdmin, type Learner } from "./learners";
 
 async function signIn(page: Page, learner: Learner) {
   await page.goto("/login");

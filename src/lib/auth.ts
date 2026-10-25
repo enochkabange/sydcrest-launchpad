@@ -2,7 +2,7 @@ import "server-only";
 import { cache } from "react";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { hasAgeAndConsent } from "@/lib/legal";
+import { hasAgeAndRecordedConsent } from "@/lib/consent-records";
 
 /**
  * The one place that decides who is signed in (the Data Access Layer).
@@ -18,7 +18,9 @@ export const getCurrentUser = cache(async () => {
     id: claims.sub,
     email: typeof claims.email === "string" ? claims.email : null,
     // Google sign ups arrive without these until they finish /welcome.
-    hasAgeAndConsent: hasAgeAndConsent(claims.user_metadata),
+    // Terms and privacy come from the consents table (backfilled from
+    // metadata on first use); the metadata check is the fallback.
+    hasAgeAndConsent: await hasAgeAndRecordedConsent(supabase, claims.sub, claims.user_metadata),
   };
 });
 

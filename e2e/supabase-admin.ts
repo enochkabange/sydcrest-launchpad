@@ -1,57 +1,46 @@
 /**
- * Test setup through the LOCAL Supabase stack with the secret key: create
- * confirmed learners and promote admins. Never point this at hosted projects.
+ * Service role access to the LOCAL Supabase stack, for seeding test data.
+ * CI puts the local stack's secret key in SUPABASE_SECRET_KEY for the E2E
+ * step only. Never point this at a hosted project, and never import it from
+ * app code.
  */
-const URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "http://127.0.0.1:54321";
-const KEY = process.env.SUPABASE_SECRET_KEY ?? "";
+const API = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "http://127.0.0.1:54321";
 
-export const PASSWORD = "Tamale-2027-pilot";
-
-function headers() {
-  if (!KEY) throw new Error("SUPABASE_SECRET_KEY is not set (supabase status -o json | jq -r .SECRET_KEY)");
-  return { apikey: KEY, "Content-Type": "application/json" };
+function secretKey() {
+  const key = process.env.SUPABASE_SECRET_KEY;
+  if (!key) throw new Error("SUPABASE_SECRET_KEY is not set (the local stack's secret key, from `supabase status`).");
+  if (!/^https?:\/\/(127\.0\.0\.1|localhost)[:/]/.test(API)) throw new Error(`Refusing to seed a non local Supabase at ${API}.`);
+  return key;
 }
 
-export type Learner = { id: string; email: string; name: string };
-
-/** A confirmed adult learner who has agreed to the terms, ready to sign in. */
-export async function createLearner(name: string): Promise<Learner> {
-  const email = `${name.split(" ")[0].toLowerCase()}.${crypto.randomUUID().slice(0, 8)}@example.test`;
-  const res = await fetch(`${URL}/auth/v1/admin/users`, {
-    method: "POST",
-    headers: headers(),
-    body: JSON.stringify({
-      email,
-      password: PASSWORD,
-      email_confirm: true,
-      user_metadata: { full_name: name, date_of_birth: "2000-03-14", terms_version: "e2e" },
-    }),
+export async function admin<T = unknown>(path: string, init: { method?: string; body?: unknown } = {}): Promise<T> {
+  const key = secretKey();
+  const res = await fetch(`${API}${path}`, {
+    method: init.method ?? "GET",
+    headers: {
+      apikey: key,
+      // Legacy JWT keys also need the bearer header; sb_secret_ keys must not use it.
+      ...(key.startsWith("eyJ") ? { Authorization: `Bearer ${key}` } : {}),
+      "Content-Type": "application/json",
+      Prefer: "return=representation",
+    },
+    body: init.body === undefined ? undefined : JSON.stringify(init.body),
   });
-  if (!res.ok) throw new Error(`createLearner failed: ${res.status} ${await res.text()}`);
-  const { id } = (await res.json()) as { id: string };
-  return { id, email, name };
+  const text = await res.text();
+  if (!res.ok) throw new Error(`${init.method ?? "GET"} ${path} failed with ${res.status}: ${text}`);
+  return (text ? JSON.parse(text) : null) as T;
 }
 
-export async function promoteToAdmin(id: string) {
-  const res = await fetch(`${URL}/rest/v1/profiles?id=eq.${id}`, {
-    method: "PATCH",
-    headers: headers(),
-    body: JSON.stringify({ role: "admin" }),
-  });
-  if (!res.ok) throw new Error(`promoteToAdmin failed: ${res.status} ${await res.text()}`);
-}
-
-/** Mints a streak achievement the way server code does, and returns its id. */
-export async function mintStreak(profileId: string, days: number): Promise<string> {
-  const mint = await fetch(`${URL}/rest/v1/rpc/mint_achievement`, {
-    method: "POST",
-    headers: headers(),
-    body: JSON.stringify({ p_profile_id: profileId, p_type: "streak", p_ref_id: String(days) }),
-  });
-  if (!mint.ok) throw new Error(`mint_achievement failed: ${mint.status} ${await mint.text()}`);
-  const res = await fetch(`${URL}/rest/v1/achievements?profile_id=eq.${profileId}&type=eq.streak&select=id`, {
-    headers: headers(),
-  });
-  const rows = (await res.json()) as { id: string }[];
-  return rows[0].id;
+/**
+ * Insert rows through PostgREST and return them in order. One request per
+ * row: a bulk insert needs every row to have the same keys, and leaving a
+ * key out is how a row gets the column default.
+ */
+export async function insert<T extends Record<string, unknown>>(table: string, rows: Record<string, unknown>[]) {
+  const out: (T & { id: string })[] = [];
+  for (const row of rows) {
+    const [created] = await admin<(T & { id: string })[]>(`/rest/v1/${table}`, { method: "POST", body: row });
+    out.push(created);
+  }
+  return out;
 }

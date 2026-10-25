@@ -7,6 +7,7 @@ import { TextField } from "@/components/ui/field";
 import { Alert } from "@/components/ui/alert";
 import { MIN_PASSWORD } from "@/lib/validation";
 import { AgeConsentFields } from "../age-consent-fields";
+import { NextField } from "../next-field";
 
 export function SignupForm() {
   const [state, action, pending] = useActionState<AuthState, FormData>(signUp, {});
@@ -23,6 +24,7 @@ export function SignupForm() {
   return (
     <form action={action} className="flex flex-col gap-4" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
+      <NextField />
       <TextField
         id="full_name"
         label="Your name"

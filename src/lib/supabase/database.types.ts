@@ -720,6 +720,15 @@ export type Database = {
         Args: { p_profile_id: string }
         Returns: undefined
       }
+      funnel_by_week: {
+        Args: { p_weeks?: number }
+        Returns: {
+          activations: number
+          signups: number
+          visits: number
+          week_start: string
+        }[]
+      }
       mint_achievement: {
         Args: {
           p_metadata?: Json
