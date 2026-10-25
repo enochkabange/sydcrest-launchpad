@@ -3,17 +3,22 @@ import type { RoadmapDraft } from "./types";
 
 /**
  * The on ramp into the Delta Mentoring Program (src/content/dmp/curriculum.ts).
- * DMP week 1 starts with computer basics, safe browsing and Gmail, so this
- * roadmap stops just before that point and covers what the cohort assumes:
- * phone confidence, data habits, a safe account, keyboard access and the
- * study habits a twelve week programme needs. It deliberately does not
- * re teach DMP weeks 1 to 6.
+ * DMP week 1 starts with computer hardware, files and folders, safe browsing,
+ * phishing and Gmail with attachments, so this roadmap stops just before that
+ * point and covers what the cohort assumes: phone confidence, data habits,
+ * calls and WhatsApp used professionally, an email account you can recover,
+ * files and forms on a phone, first keyboard practice and study habits.
+ * It deliberately does not re teach DMP weeks 1 to 6.
+ *
+ * Revised for issue #84 against entry level Ghanaian adverts (office,
+ * customer service, sales, NGO field roles) and DigComp 3.0. Evidence and the
+ * node by node coverage table: src/content/research/digital-skills-bridge.md.
  */
 export const digitalSkillsBridge: RoadmapDraft = {
   slug: "digital-skills-bridge",
   title: "Digital Skills Bridge",
   description:
-    "Start from your phone and build the everyday digital skills you need before joining a tech course. It ends with you ready to apply for SydCrest's Delta Mentoring Program.",
+    "Start from your phone and build the everyday digital skills that entry level jobs and tech courses expect. It ends with you ready to apply for SydCrest's Delta Mentoring Program.",
   track: "digital-skills-bridge",
   field_category: "foundations",
   locale: "en-GH",
@@ -23,10 +28,19 @@ export const digitalSkillsBridge: RoadmapDraft = {
       slug: "phone-as-a-tool",
       title: "Your phone as a learning tool",
       summary:
-        "The phone you already have can take you a long way. This section helps you set it up for learning without wasting data or money.",
+        "The phone you already have can take you a long way. This section helps you get comfortable with it and set it up for learning without wasting data or money.",
       parent: null,
       optional: false,
       resources: [],
+    },
+    {
+      slug: "phone-first-steps",
+      title: "First steps on a smartphone",
+      summary:
+        "Learn the taps, swipes and buttons that every app uses, and how to switch WiFi and mobile data on and off. Once these feel natural, every other skill gets easier.",
+      parent: "phone-as-a-tool",
+      optional: false,
+      resources: [RES.lfComputer],
     },
     {
       slug: "phone-settings-and-storage",
@@ -41,7 +55,7 @@ export const digitalSkillsBridge: RoadmapDraft = {
       slug: "saving-data",
       title: "Saving data and money",
       summary:
-        "Compare bundles, use WiFi when you can and download lessons and videos to watch offline. Turn off automatic video play and app updates on mobile data.",
+        "Use WiFi when you can, download lessons to watch offline and stop apps from eating your bundle in the background. Small habits make a data bundle last much longer.",
       parent: "phone-as-a-tool",
       optional: false,
       resources: [RES.lfInternet],
@@ -56,10 +70,55 @@ export const digitalSkillsBridge: RoadmapDraft = {
       resources: [RES.lfSafety],
     },
     {
+      slug: "communicating-at-work",
+      title: "Calls, messages and video for work",
+      summary:
+        "Entry level job adverts in Ghana regularly ask for good phone, WhatsApp and email skills. This section turns the phone habits you already have into professional ones.",
+      parent: null,
+      optional: false,
+      resources: [RES.lfCommunication],
+    },
+    {
+      slug: "phone-calls-at-work",
+      title: "Handling work phone calls",
+      summary:
+        "Answer politely, take a clear message and follow up when you promised. Good phone manners are one of the first things a customer notices.",
+      parent: "communicating-at-work",
+      optional: false,
+      resources: [RES.lfCommunication],
+    },
+    {
+      slug: "whatsapp-for-work",
+      title: "WhatsApp for work",
+      summary:
+        "Write clear messages, share photos and documents, and behave well in work and class groups. Many shops, offices and NGOs in Ghana use WhatsApp every day.",
+      parent: "communicating-at-work",
+      optional: false,
+      resources: [RES.whatsappFaq, RES.whatsappBusiness],
+    },
+    {
+      slug: "video-calls",
+      title: "Joining a video call",
+      summary:
+        "Join a video call from a link, use the mute and camera buttons, and save data while you are on the call. Many online classes, meetings and interviews now happen this way.",
+      parent: "communicating-at-work",
+      optional: false,
+      resources: [],
+    },
+    {
+      slug: "clear-english",
+      title: "Reading and writing clear English",
+      summary:
+        "Many free courses and most office jobs use written English, so practise reading short lessons and writing short, polite messages. It is fine to read slowly and look up words at first.",
+      parent: "communicating-at-work",
+      optional: false,
+      resources: [RES.bbcEnglish, RES.lfWriting, RES.lfBizWriting],
+    },
+    {
       slug: "accounts-and-safety",
       title: "Accounts and staying safe",
       summary:
-        "Online learning needs accounts, and accounts need protecting. This section covers the basics before you sign up for anything else.",
+        "Online learning and job applications need accounts, and accounts need protecting. This section covers the basics before you sign up for anything else.",
       parent: null,
       optional: false,
       resources: [RES.lfSafety],
@@ -68,7 +127,7 @@ export const digitalSkillsBridge: RoadmapDraft = {
       slug: "email-account",
       title: "One email address you control",
       summary:
-        "Create a personal email address with a professional name and make sure you can recover it with your own phone number. You will use it for every course, job application and certificate.",
+        "Create a personal email address with a sensible name and make sure you can recover it with your own phone number. You will use it for every course, job application and certificate.",
       parent: "accounts-and-safety",
       optional: false,
       resources: [RES.lfGmail],
@@ -92,10 +151,55 @@ export const digitalSkillsBridge: RoadmapDraft = {
       resources: [RES.lfSafety],
     },
     {
+      slug: "privacy-and-shared-phones",
+      title: "Privacy and shared phones",
+      summary:
+        "Decide what you share about yourself online and keep your accounts private on a phone that others use. Employers trust people who protect their own information and other people's too.",
+      parent: "accounts-and-safety",
+      optional: false,
+      resources: [RES.lfSafety],
+    },
+    {
+      slug: "files-and-forms",
+      title: "Files, forms and finding things",
+      summary:
+        "Jobs and courses ask you to send documents, fill in forms and look things up. This section teaches those skills on your phone, ready for the computer work in the DMP cohort.",
+      parent: null,
+      optional: false,
+      resources: [RES.lfWeb],
+    },
+    {
+      slug: "files-on-your-phone",
+      title: "Photos, documents and files on your phone",
+      summary:
+        "Find what you downloaded, take a clear photo or scan of a document, and send it as a file. Job applications and course registrations usually ask you to attach something.",
+      parent: "files-and-forms",
+      optional: false,
+      resources: [RES.lfDrive],
+    },
+    {
+      slug: "online-forms",
+      title: "Filling in online forms",
+      summary:
+        "Fill in registration, application and survey forms carefully and check them before you press submit. Field and office jobs often involve entering information into forms all day.",
+      parent: "files-and-forms",
+      optional: false,
+      resources: [RES.lfWeb],
+    },
+    {
+      slug: "searching-well",
+      title: "Searching and judging information",
+      summary:
+        "Use better search words to find answers quickly and check whether a source can be trusted. Being able to look things up is one of the most useful skills in any job.",
+      parent: "files-and-forms",
+      optional: false,
+      resources: [RES.lfSearch],
+    },
+    {
       slug: "computer-access",
       title: "Getting comfortable with a computer",
       summary:
-        "Tech courses and jobs need a keyboard sooner or later. This section helps you find access and build basic comfort before a cohort starts.",
+        "Office jobs and tech courses need a keyboard sooner or later. This section helps you find access and build basic comfort before a cohort starts.",
       parent: null,
       optional: false,
       resources: [],
@@ -122,53 +226,26 @@ export const digitalSkillsBridge: RoadmapDraft = {
       slug: "typing",
       title: "Typing practice",
       summary:
-        "Learn to type with all your fingers using free online lessons, a little every day. Faster typing makes every later course easier.",
+        "Learn to type with all your fingers using free online lessons, a little every day. Faster typing makes every later course and office task easier.",
       parent: "computer-access",
       optional: false,
       resources: [RES.lfTyping, RES.monkeytype],
     },
     {
-      slug: "learning-online",
-      title: "Learning online",
+      slug: "learning-and-earning",
+      title: "Learning, records and digital work",
       summary:
-        "Studying alone on a screen is a skill of its own. This section helps you find good information and keep going when it gets hard.",
+        "Digital skills are worth learning because they can lead to income. This section helps you keep learning, keep simple records and see where your skills can take you.",
       parent: null,
       optional: false,
       resources: [],
-    },
-    {
-      slug: "english-for-learning",
-      title: "Reading and writing English for learning",
-      summary:
-        "Many free tech courses are in English, so practise reading short lessons and writing clear messages. It is fine to look up words and read slowly at first.",
-      parent: "learning-online",
-      optional: false,
-      resources: [RES.bbcEnglish, RES.lfWriting],
-    },
-    {
-      slug: "searching-well",
-      title: "Searching and judging information",
-      summary:
-        "Use better search words to find answers quickly and check whether a source can be trusted. Being able to look things up is one of the most useful skills in tech.",
-      parent: "learning-online",
-      optional: false,
-      resources: [RES.lfSearch],
     },
     {
       slug: "study-habits",
       title: "Study habits that last",
       summary:
-        "Set a small daily goal, take notes in your own words and find a study partner or group. Consistency over weeks matters more than long sessions.",
-      parent: "learning-online",
-      optional: false,
-      resources: [],
-    },
-    {
-      slug: "digital-work",
-      title: "Money and work in a digital world",
-      summary:
-        "Digital skills are worth learning because they can lead to income. This section connects what you are learning to real opportunities.",
-      parent: null,
+        "Set a small daily goal, take notes in your own words and find a study partner or group. Steady practice over weeks matters more than long sessions.",
+      parent: "learning-and-earning",
       optional: false,
       resources: [],
     },
@@ -176,19 +253,19 @@ export const digitalSkillsBridge: RoadmapDraft = {
       slug: "money-records",
       title: "Mobile money and simple records",
       summary:
-        "Use mobile money confidently, read your transaction history and keep a simple record of what you spend and earn. These habits matter as soon as you start freelancing.",
-      parent: "digital-work",
+        "Use mobile money confidently, read your transaction history and keep a simple record of sales or spending. Shop, office and field jobs regularly ask for accurate records.",
+      parent: "learning-and-earning",
       optional: false,
-      resources: [RES.lfMoney],
+      resources: [RES.lfMoney, RES.sheetsHelp],
     },
     {
       slug: "digital-careers",
       title: "Exploring digital careers",
       summary:
         "Look at the roadmaps for marketing, design, data, product and software to see what each job involves day to day. You do not need to choose now, but knowing the options helps you stay motivated.",
-      parent: "digital-work",
+      parent: "learning-and-earning",
       optional: false,
-      resources: [],
+      resources: [RES.lfJobsearch],
     },
     {
       slug: "ready-for-dmp",
@@ -203,7 +280,7 @@ export const digitalSkillsBridge: RoadmapDraft = {
       slug: "readiness-check",
       title: "Readiness checklist",
       summary:
-        "Confirm you can type a short paragraph, sign in to your email, join a video call and set aside a few hours each week. If anything is missing, revisit that part of this roadmap first.",
+        "Confirm you can type a short paragraph, sign in to your email, send a document and join a video call. If anything is missing, revisit that part of this roadmap first.",
       parent: "ready-for-dmp",
       optional: false,
       resources: [],
@@ -212,7 +289,7 @@ export const digitalSkillsBridge: RoadmapDraft = {
       slug: "apply-to-dmp",
       title: "Apply to the DMP cohort",
       summary:
-        "Apply for the next cohort and mention the progress you made on this roadmap in your application. If you do not get a seat this time, keep learning on the free roadmaps and apply again.",
+        "Join the waitlist on SydCrest's Programme page for the free pilot cohort and be ready to show the progress you made on this roadmap. If you do not get a seat this time, keep learning on the free roadmaps and apply again if another cohort is announced.",
       parent: "ready-for-dmp",
       optional: false,
       resources: [],
