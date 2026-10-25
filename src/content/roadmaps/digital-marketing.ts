@@ -262,7 +262,7 @@ export const digitalMarketing: RoadmapDraft = {
       slug: "job-applications",
       title: "Certificates, CVs and applications",
       summary:
-        "Earn free platform certificates, write a CV that shows real work, and apply to agencies, companies and NGOs. Never pay anyone to get a job interview.",
+        "Take free platform courses and earn certificates where they are free, write a CV that shows real work, and apply to agencies, companies and NGOs. Never pay anyone to get a job interview.",
       parent: "earning",
       optional: false,
       resources: [RES.skillshop, RES.lfJobsearch, RES.lfInterview],

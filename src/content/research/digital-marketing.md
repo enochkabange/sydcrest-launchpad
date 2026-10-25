@@ -10,7 +10,7 @@ Researched 25 October 2026 for issue #84.
 * Several Jobberman listing URLs redirected to the category page, so for those adverts we saw the listing card (title, employer, location, short skill tags) rather than the full advert. The depth column says which.
 * No roadmap.sh pages, no "field roadmap" searches, no logins, no LinkedIn pages. One fintech advert seen only on LinkedIn (a comms and growth associate role) was excluded.
 * Salary bands shown on some adverts were deliberately not recorded.
-* Pages that returned 404 or 403 are not cited.
+* Pages that failed to load (404, 403 or a redirect to a category list) were used only through their search result snippet and are marked S in the depth column.
 
 ## Sources
 
@@ -34,28 +34,28 @@ Researched 25 October 2026 for issue #84.
 
 Seniority: E = entry or junior, M = mid, S = senior or manager. Depth: F = full advert text, C = listing card, S = search snippet. The frequency table weights entry level adverts; the senior adverts (marked S) are used to confirm which skills grow in importance, not to set the beginner path.
 
-| # | Role | Employer type | Location | Date seen | Level | Depth | Skill keywords |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Junior Digital Marketer | Betting company | Accra | Oct 2026 (3 weeks old) | E | C | digital campaigns, content, social media, performance monitoring, market research |
-| 2 | Marketing Assistant | Anonymous SME | Accra | Oct 2026 | E | C | promotion, customer engagement, communication |
-| 3 | Digital Marketing Intern | Not stated | Ghana | 2026, date unclear | E | S | Canva, Photoshop, CapCut video editing, email campaigns, content |
-| 4 | Marketing and Social Media Assistant | Immigration services SME | Accra | 2026, date unclear | E | S | Canva, Photoshop, Illustrator graphics, email marketing |
-| 5 | Content Curator (internship and graduate) | Lifestyle media | Ghana | Oct 2026 | E | S | finding stories, events, social content |
-| 6 | Content Creation and Digital Marketing Officer | Travel and tour company | Accra | Oct 2026 | E/M | C | content creation, brand visibility, audience engagement, lead generation |
-| 7 | In House Videographer and Content Creator | Automotive company | Accra | Oct 2026 | E/M | C | video capture and editing, vertical short video for TikTok and Reels, product filming |
-| 8 | Social Media Marketer | Electric vehicle company | Accra | Oct 2026 | E/M | C | social media, creative content, results focus |
-| 9 | Graphics and Marketing Personnel | SME | Accra | Oct 2026 | E/M | C | visual content, design tools, AI tools, SEO, campaigns |
-| 10 | Social Media and Live Streaming Sales Officer | Health products company | Ghana | Oct 2026 | E/M | C | live streaming, selling on social, content creation |
-| 11 | Social Media Content and Strategy Executive | Retail and e commerce | Accra | Oct 2026 | M | C | content, platform management, strategy, live streaming |
-| 12 | Community Manager | Tech startup | Ghana | Oct 2026 | M | C | community growth, onboarding, webinars, influencer partnerships |
-| 13 | Social Media Executive | Tech group with online fashion retail | Accra | 2026 | M | S | social strategy, content creation, brand awareness, engagement across platforms |
-| 14 | Digital Marketer | Sports tech platform | Accra | Apr 2026 | M | F | Google Analytics, Google Ads, Meta Ads, SEO, app store listing, graphics, copywriting, video editing, email, WhatsApp marketing, reporting, community, competitor monitoring, brand consistency |
-| 15 | Digital Marketer (hotel client, via recruiter) | Hospitality | Accra | Jul 2026 | M | S | social media, ads, SEO |
-| 16 | Content Developer | Agritech | Accra | 2026 | M | S | blogs, social media, email, website copy, keyword research, SEO |
-| 17 | Digital and Social Media Manager | Corporate | Accra | Oct 2026 | S | C | digital strategy, online reputation, content strategy, influencer partnerships, campaigns, lead generation |
-| 18 | Digital Manager | Advertising agency | Accra | Sep 2026 | S | F | SEO, PPC, paid social, email, content planning, Google Analytics, Meta Business Suite, reporting, budgets, customer journey, Google or Meta certifications |
-| 19 | Communications Officer | Policy think tank (non profit) | Accra | Aug 2026 | S | F | social media, website CMS updates, press releases, newsletters, media relations, engagement metrics reporting, plain language for diverse audiences |
-| 20 | Marketing Assistant (remote) and Social Media Assistant (remote) | Remote agencies | Remote | 2026 | E | S | Canva, email sequences in an email service, scheduling, managing brand accounts, reliable internet |
+| # | Role | Employer type | Location | Date seen | Level | Depth | Skill keywords | Source URL |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | Junior Digital Marketer | Betting company | Accra | Oct 2026 (3 weeks old) | E | C | digital campaigns, content, social media, performance monitoring, market research | https://www.jobberman.com.gh/jobs/marketing-communications/advertising-media-communications/full-time (listing card) |
+| 2 | Marketing Assistant | Anonymous SME | Accra | Oct 2026 | E | C | promotion, customer engagement, communication | https://www.jobberman.com.gh/jobs/marketing-communications/advertising-media-communications/full-time (listing card) |
+| 3 | Digital Marketing Intern | Not stated | Ghana | 2026, date unclear | E | S | Canva, Photoshop, CapCut video editing, email campaigns, content | https://www.jobberman.com.gh/listings/digital-marketing-intern-5dj7d6 (snippet only; page redirected to a category list) |
+| 4 | Marketing and Social Media Assistant | Immigration services SME | Accra | 2026, date unclear | E | S | Canva, Photoshop, Illustrator graphics, email marketing | https://www.jobberman.com.gh/listings/marketing-social-media-assistant-np6q90 (snippet only; page redirected to a category list) |
+| 5 | Content Curator (internship and graduate) | Lifestyle media | Ghana | Oct 2026 | E | S | finding stories, events, social content | https://www.jobberman.com.gh/listings/content-curator-4nke78 (snippet only; page redirected to a category list) |
+| 6 | Content Creation and Digital Marketing Officer | Travel and tour company | Accra | Oct 2026 | E/M | C | content creation, brand visibility, audience engagement, lead generation | Jobberman Creative and Design category page via https://www.jobberman.com.gh/listings/content-creator-amp-social-media-specialist-7w2d98 (listing card) |
+| 7 | In House Videographer and Content Creator | Automotive company | Accra | Oct 2026 | E/M | C | video capture and editing, vertical short video for TikTok and Reels, product filming | Jobberman Creative and Design category page via https://www.jobberman.com.gh/listings/content-creator-amp-social-media-specialist-7w2d98 (listing card) |
+| 8 | Social Media Marketer | Electric vehicle company | Accra | Oct 2026 | E/M | C | social media, creative content, results focus | Jobberman Creative and Design category page via https://www.jobberman.com.gh/listings/content-creator-amp-social-media-specialist-7w2d98 (listing card) |
+| 9 | Graphics and Marketing Personnel | SME | Accra | Oct 2026 | E/M | C | visual content, design tools, AI tools, SEO, campaigns | https://www.jobberman.com.gh/jobs/marketing-communications/advertising-media-communications/full-time (listing card) |
+| 10 | Social Media and Live Streaming Sales Officer | Health products company | Ghana | Oct 2026 | E/M | C | live streaming, selling on social, content creation | https://www.jobberman.com.gh/jobs/marketing-communications/advertising-media-communications/full-time (listing card) |
+| 11 | Social Media Content and Strategy Executive | Retail and e commerce | Accra | Oct 2026 | M | C | content, platform management, strategy, live streaming | https://www.jobberman.com.gh/jobs/marketing-communications/advertising-media-communications/full-time (listing card) |
+| 12 | Community Manager | Tech startup | Ghana | Oct 2026 | M | C | community growth, onboarding, webinars, influencer partnerships | https://www.jobberman.com.gh/jobs/marketing-communications/advertising-media-communications/full-time (listing card) |
+| 13 | Social Media Executive | Tech group with online fashion retail | Accra | 2026 | M | S | social strategy, content creation, brand awareness, engagement across platforms | https://jobberman.com.gh/listings/social-media-executive-vw6k0w (snippet only; page redirected to a category list) |
+| 14 | Digital Marketer | Sports tech platform | Accra | Apr 2026 | M | F | Google Analytics, Google Ads, Meta Ads, SEO, app store listing, graphics, copywriting, video editing, email, WhatsApp marketing, reporting, community, competitor monitoring, brand consistency | https://socaloca.football/job/digital-marketer/ |
+| 15 | Digital Marketer (hotel client, via recruiter) | Hospitality | Accra | Jul 2026 | M | S | social media, ads, SEO | https://jiji.com.gh/labone/advertising-and-marketing-jobs/a-digital-marketer-needed-urgently-at-labone-junction-hjwsVPAsWwh71KATJPZdOklK.html (snippet only; page did not load) |
+| 16 | Content Developer | Agritech | Accra | 2026 | M | S | blogs, social media, email, website copy, keyword research, SEO | https://startup.jobs/digital-marketer-complete-farmer-ltd-8173871 (snippet only; page did not load) |
+| 17 | Digital and Social Media Manager | Corporate | Accra | Oct 2026 | S | C | digital strategy, online reputation, content strategy, influencer partnerships, campaigns, lead generation | https://www.jobberman.com.gh/jobs/marketing-communications/advertising-media-communications/full-time (listing card) |
+| 18 | Digital Manager | Advertising agency | Accra | Sep 2026 | S | F | SEO, PPC, paid social, email, content planning, Google Analytics, Meta Business Suite, reporting, budgets, customer journey, Google or Meta certifications | https://www.jobberman.com.gh/listings/digital-manager-ev0dd9-v1 |
+| 19 | Communications Officer | Policy think tank (non profit) | Accra | Aug 2026 | S | F | social media, website CMS updates, press releases, newsletters, media relations, engagement metrics reporting, plain language for diverse audiences | https://ieagh.org/wp-content/uploads/2026/08/Comms-hiring-IEA-Ghana-Sept-2026.pdf |
+| 20 | Marketing Assistant (remote) and Social Media Assistant (remote) | Remote agencies | Remote (one restricted to South Africa based applicants) | 2026 | E | S | Canva, email sequences in an email service, scheduling, managing brand accounts, reliable internet | https://dynamic.jobgether.com/offer/679b39977196d3f421cad45f-marketing-assistant and https://remoterecruitment.teamtailor.com/jobs/7637757-social-media-assistant (snippets only) |
 
 Also noted but not counted: a Tamale WASH non profit communications coordinator listing (location signal for northern NGO roles, no skill detail visible); a fintech Marketing Associate (social media and community growth, Feb 2026); an Africa wide fintech Growth Marketing Manager (paid search and social, SEO content, retention, growth experiments; senior).
 
