@@ -96,6 +96,15 @@ export const mobileAppDeveloper: RoadmapDraft = {
       resources: [M.flutterFundamentals, M.androidBasics, M.rnDocs],
     },
     {
+      slug: "git-and-github",
+      title: "Git and GitHub",
+      summary:
+        "Track every change to your code with Git and share it on GitHub. Many mobile adverts we read named Git, and your GitHub is where employers will look first.",
+      parent: "start-here",
+      optional: false,
+      resources: [RES.githubDocs, RES.gitBook],
+    },
+    {
       slug: "programming-fundamentals",
       title: "Programming fundamentals with Dart",
       summary:
@@ -139,15 +148,6 @@ export const mobileAppDeveloper: RoadmapDraft = {
       parent: "programming-fundamentals",
       optional: false,
       resources: [M.dartAsync],
-    },
-    {
-      slug: "git-and-github",
-      title: "Git and GitHub",
-      summary:
-        "Track every change to your code with Git and share it on GitHub. Many mobile adverts we read named Git, and your GitHub is where employers will look first.",
-      parent: "programming-fundamentals",
-      optional: false,
-      resources: [RES.githubDocs, RES.gitBook],
     },
     {
       slug: "ui-for-small-screens",
