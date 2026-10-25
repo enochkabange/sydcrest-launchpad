@@ -969,6 +969,571 @@ Use real \`button\` elements for things people tap, so keyboard and screen reade
         pass_threshold: 80,
       },
     },
+    "fetch-and-async": {
+      explanation_md: `Almost every real product loads data from a server: account balances, order history, product lists. Working with REST APIs is one of the skills that appears most often in the adverts we studied. On Ghanaian mobile networks, handling slow and dropped connections well is just as important as getting the data.
+
+## What an API is
+
+An API is a set of addresses on a server that return data instead of web pages, usually as JSON. JSON looks like JavaScript objects:
+
+\`\`\`json
+{ "item": "rice", "price": 20, "inStock": true }
+\`\`\`
+
+## Asynchronous code
+
+Network requests take time. JavaScript does not freeze while it waits; it carries on and comes back when the data arrives. This is called asynchronous code. The modern way to write it uses \`async\` and \`await\`:
+
+\`\`\`js
+async function loadPrices() {
+  const res = await fetch("/api/prices");
+  if (!res.ok) throw new Error("Server said " + res.status);
+  return res.json();
+}
+\`\`\`
+
+\`await\` pauses this function, not the whole page, until the response arrives. \`res.ok\` is true for success codes such as 200. \`fetch\` only throws on network failure, so you must check \`res.ok\` yourself for errors like 404 or 500.
+
+## Every request has three states
+
+Design for all of them:
+
+1. **Loading:** show something straight away, such as "Loading prices..." or a simple placeholder.
+2. **Success:** show the data.
+3. **Error:** explain what happened in plain words and offer a **Retry** button.
+
+\`\`\`js
+try {
+  status.textContent = "Loading prices...";
+  const data = await loadPrices();
+  render(data);
+  status.textContent = "";
+} catch (err) {
+  status.textContent = "Could not load. Check your data and retry.";
+  retryButton.hidden = false;
+}
+\`\`\`
+
+## Designing for slow networks
+
+* **Never leave a blank screen.** A visible loading message tells people the app is working.
+* **Make retry easy.** Connections drop when someone moves between towns or their bundle runs out.
+* **Do not lose user input** when a request fails. Keep what they typed.
+* **Prevent double taps.** Disable the button while a request is in flight, especially for orders and payments.
+* **Request only what you need.** Smaller responses arrive faster and cost less data.
+
+## A worked example
+
+Mariama builds a page showing today's maize prices from a cooperative's API. On a good connection it loads instantly. She uses developer tools to simulate a slow network and sees a blank page for several seconds, so she adds a loading message. She then switches the network to offline, sees an unhelpful crash, and adds a friendly error with a Retry button. Now the page behaves well for a farmer in Damongo on one bar of signal.
+
+Test every feature with a slow network setting. It is the quickest way to see your app the way many of your users will.`,
+      practice_task_md: `**Goal:** load real data with loading, success and error states.
+
+1. Pick a free public API that needs no key, such as one returning sample JSON (for example jsonplaceholder.typicode.com).
+2. Write an \`async\` function that uses \`fetch\`, checks \`res.ok\`, and returns the JSON.
+3. Show "Loading..." before the request, render a list on success, and show a clear error message with a Retry button on failure.
+4. Disable the button while loading so it cannot be tapped twice.
+5. In browser developer tools, set the network to a slow preset, then to offline, and check each state appears.
+
+**Done looks like:** a page that never shows a blank screen, explains errors in plain words, and recovers when you tap Retry after going back online. Commit it with notes on how you tested it.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What format do most web APIs return data in?",
+            options: ["CSS", "JSON", "PNG", "HTML forms"],
+            answer_index: 1,
+            explanation: "APIs usually return JSON, which looks like JavaScript objects.",
+          },
+          {
+            prompt: "What does `await` do inside an async function?",
+            options: ["Freezes the whole page", "Pauses that function until the result arrives, while the page keeps working", "Deletes the request", "Makes the request skip the network"],
+            answer_index: 1,
+            explanation: "await pauses only the async function, not the page.",
+          },
+          {
+            prompt: "Why must you check `res.ok` after `fetch`?",
+            options: ["fetch does not throw for server errors like 404 or 500", "res.ok makes the request faster", "It converts JSON to HTML", "It is required for CSS to load"],
+            answer_index: 0,
+            explanation: "fetch only throws on network failure, so status errors must be checked.",
+          },
+          {
+            prompt: "Which three states should every request be designed for?",
+            options: ["Red, amber, green", "Loading, success and error", "Start, middle and end", "Online, offline and paused"],
+            answer_index: 1,
+            explanation: "Users should always see loading, the data, or a helpful error.",
+          },
+          {
+            prompt: "Why disable a button while a request is in flight?",
+            options: ["To save electricity", "To prevent double taps that could send an order or payment twice", "Because buttons cannot be clicked during fetch", "To hide the loading message"],
+            answer_index: 1,
+            explanation: "Disabling prevents duplicate requests.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "quality": {
+      explanation_md: `Plenty of people can make a page that looks fine on their own laptop. Professional frontend work is measured differently: can everyone use it, on any phone, on any connection, and does it keep working after the next change? This section covers the habits that separate a hobby page from work a team can rely on.
+
+## The four habits
+
+* **Accessibility:** making pages usable by people with disabilities, and by anyone in difficult conditions such as bright sunlight, a cracked screen or a noisy market.
+* **Performance on slow networks and low end phones:** pages that open quickly and cost little data.
+* **Debugging with browser DevTools:** finding and fixing problems yourself, which is what makes you independent on a team.
+* **Testing:** automated checks that confirm your code still works, so you can change it with confidence.
+
+Skills frameworks for web work list quality assurance, troubleshooting and performance analysis among the essentials, and employers in Accra and remote teams ask for testing, accessibility and performance by name.
+
+## Why this matters especially in Ghana
+
+Your users may be on a budget Android phone with limited storage, a prepaid bundle and patchy signal. A page that downloads several megabytes of images and scripts is not just slow for them; it costs them money. A button that only works with a mouse, or grey text that disappears in sunlight, shuts people out.
+
+Getting these things right is not polish you add at the end. It is part of building the feature.
+
+## A simple quality checklist
+
+Before you call any page finished, check:
+
+1. Can I use it with only a keyboard, pressing Tab to move around?
+2. Is the text readable, with strong contrast, at a normal size?
+3. Does it load reasonably with the network set to a slow preset in DevTools?
+4. Are there any red errors in the browser console?
+5. Do my automated tests still pass?
+
+## A worked example
+
+Fuseini finishes a sign up page for a youth football league in Nalerigu. It looks good, so he is tempted to move on. He runs the checklist instead. Pressing Tab skips his "Join" button because it is a \`div\`, so he changes it to a \`button\`. His hero photo is very large, so he compresses it. The console shows an error when the phone field is empty, which he fixes and covers with a test. Ten minutes of checking turned a nice looking page into one that works for everyone.
+
+Make this checklist a habit for every project in your portfolio. Reviewers notice.`,
+      practice_task_md: `**Goal:** audit one of your existing projects with the quality checklist.
+
+1. Choose a page you have already built.
+2. Use only the keyboard: press Tab through the page and note anything you cannot reach or use.
+3. Check text contrast by eye in bright light, or with the contrast checker in DevTools.
+4. In DevTools, set the network to a slow preset and reload. Note how long it takes to show something useful.
+5. Open the console and note any errors.
+6. Write a short report listing at least three problems you found and fix them.
+
+**Done looks like:** a before and after note in your project README listing the problems and your fixes.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which four habits does this section cover?",
+            options: ["Logos, colours, fonts and animations", "Accessibility, performance, debugging and testing", "Marketing, sales, payments and hiring", "HTML, CSS, JavaScript and Git"],
+            answer_index: 1,
+            explanation: "The quality section covers accessibility, performance, debugging and testing.",
+          },
+          {
+            prompt: "Why can a heavy page be a bigger problem for users on prepaid bundles?",
+            options: ["Heavy pages cost them data, which costs money", "Heavy pages cannot be opened on Android", "Browsers block large pages", "Heavy pages use less battery"],
+            answer_index: 0,
+            explanation: "Every megabyte downloaded comes out of the user's bundle.",
+          },
+          {
+            prompt: "According to the lesson, when should quality work happen?",
+            options: ["Only after launch", "As part of building the feature", "Only if a manager asks", "Once a year"],
+            answer_index: 1,
+            explanation: "Quality is part of building, not polish added at the end.",
+          },
+          {
+            prompt: "Which is one of the checklist questions from the lesson?",
+            options: ["Does the page use at least three fonts?", "Can I use it with only a keyboard?", "Is the logo animated?", "Is there a pop up on load?"],
+            answer_index: 1,
+            explanation: "Keyboard only use is the first checklist item.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "accessibility": {
+      explanation_md: `Accessibility means building pages that people with disabilities can use: people who are blind or have low vision, people who cannot use a mouse, people who are deaf, and people with cognitive differences. Employers in Ghana and abroad list it in adverts, and good accessibility also helps everyone reading on a small screen in bright sun.
+
+## The standard: WCAG
+
+The Web Content Accessibility Guidelines (WCAG), published by the W3C, are the international standard. They are organised around four ideas: content must be **perceivable**, **operable**, **understandable** and **robust**. You do not need to memorise it all; start with the checks below.
+
+## Five checks that catch most problems
+
+**1. Semantic HTML.** Use real \`button\`, \`a\`, \`label\`, headings and lists. This gives keyboard and screen reader support for free.
+
+**2. Keyboard use.** Press Tab through the page. Every link, button and field should be reachable, in a sensible order, with a visible focus outline. Never remove the outline without replacing it:
+
+\`\`\`css
+:focus-visible {
+  outline: 3px solid #0b57d0;
+  outline-offset: 2px;
+}
+\`\`\`
+
+**3. Colour contrast.** Text must stand out from its background. WCAG asks for a contrast ratio of at least 4.5 to 1 for normal text. Light grey on white often fails, and it is unreadable outdoors. Chrome DevTools shows the contrast ratio when you inspect text.
+
+**4. Text alternatives.** Meaningful images need \`alt\` text. Icon only buttons need an accessible name:
+
+\`\`\`html
+<button aria-label="Close menu">✕</button>
+\`\`\`
+
+**5. Do not rely on colour alone.** If a failed payment is only shown in red, colour blind users may miss it. Add words or an icon: "Payment failed".
+
+## Announcing changes
+
+When content changes without a page reload, such as "Order placed" appearing, screen reader users may not notice. A live region announces it:
+
+\`\`\`html
+<p role="status" aria-live="polite"></p>
+\`\`\`
+
+Put your status messages inside it.
+
+## ARIA: use sparingly
+
+ARIA attributes add extra meaning for assistive technology. The first rule is to prefer native HTML. A real \`button\` is better than a \`div\` with \`role="button"\`. Use ARIA only to fill gaps HTML cannot.
+
+## A worked example
+
+Wumpini tests a school results page with the free screen reader built into Android, called TalkBack. She discovers her search icon is read as "button" with no name, so she adds an \`aria-label\`. Her grey footnote text fails the contrast check, so she darkens it. Pressing Tab on a laptop, she finds the focus outline invisible and adds a clear one. In twenty minutes the page works for many more students.
+
+Test with a keyboard and a screen reader regularly. It quickly becomes second nature.`,
+      practice_task_md: `**Goal:** make one page pass the five accessibility checks.
+
+1. Choose a project page with a form or buttons.
+2. Tab through it. Fix any element you cannot reach, and add a visible \`:focus-visible\` style.
+3. Inspect your text colours in DevTools and fix anything below a 4.5 to 1 contrast ratio.
+4. Add \`alt\` text to images and \`aria-label\` to any icon only buttons.
+5. Make sure no information is shown with colour alone.
+6. On an Android phone, turn on TalkBack (Settings, Accessibility) and try to use your page. Note what is confusing and fix it.
+
+**Done looks like:** a page you can fully use with a keyboard and with TalkBack, plus a short note in the README listing what you fixed. The free W3C "Easy Checks" page is a helpful reference.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What are the four principles WCAG is organised around?",
+            options: ["Fast, cheap, pretty and modern", "Perceivable, operable, understandable and robust", "HTML, CSS, JavaScript and ARIA", "Colour, font, layout and motion"],
+            answer_index: 1,
+            explanation: "WCAG content must be perceivable, operable, understandable and robust.",
+          },
+          {
+            prompt: "What minimum contrast ratio does WCAG ask for normal text?",
+            options: ["1.5 to 1", "2 to 1", "4.5 to 1", "10 to 1"],
+            answer_index: 2,
+            explanation: "Normal text needs at least 4.5 to 1 contrast.",
+          },
+          {
+            prompt: "How should an icon only close button get an accessible name?",
+            options: ["Make the icon bigger", "Add an aria-label such as Close menu", "Use a div instead", "Remove the button"],
+            answer_index: 1,
+            explanation: "aria-label gives screen readers a name for icon only buttons.",
+          },
+          {
+            prompt: "What is the first rule of using ARIA?",
+            options: ["Add ARIA to every element", "Prefer native HTML elements, and use ARIA only to fill gaps", "ARIA replaces the need for buttons", "ARIA is only for colour"],
+            answer_index: 1,
+            explanation: "Native HTML elements come with built in accessibility.",
+          },
+          {
+            prompt: "Why should a failed payment not be shown in red alone?",
+            options: ["Red is not allowed on the web", "Colour blind users may miss it, so add words or an icon", "Red uses more data", "Screen readers only read blue text"],
+            answer_index: 1,
+            explanation: "Information should never depend on colour alone.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "performance-low-bandwidth": {
+      explanation_md: `A page that opens in a moment on office WiFi can take a long time on a busy mobile network, and every megabyte comes out of someone's prepaid bundle. Performance appears in Accra and remote adverts, and for products serving northern Ghana it often decides whether people use your site at all.
+
+## Measure first
+
+Do not guess. Use free tools:
+
+* **Lighthouse**, built into Chrome DevTools, scores a page and lists what to fix.
+* **PageSpeed Insights** (pagespeed.web.dev) runs similar checks from the web.
+* **Network throttling** in DevTools lets you simulate a slow connection, and **CPU throttling** simulates a slower phone.
+
+Watch the total page weight in the Network tab. Smaller is almost always better.
+
+## Images: the biggest win
+
+Images are usually the heaviest part of a page.
+
+\`\`\`html
+<img src="kente-600.webp"
+     srcset="kente-400.webp 400w, kente-800.webp 800w"
+     sizes="(min-width: 700px) 50vw, 100vw"
+     width="600" height="400"
+     loading="lazy" alt="Kente cloth on display">
+\`\`\`
+
+* **Resize** images to the size they are shown. A phone does not need a photo several thousand pixels wide.
+* **Compress** and use modern formats such as WebP or AVIF. Free tools like Squoosh do this in the browser.
+* **\`srcset\` and \`sizes\`** let the phone choose a smaller file.
+* **\`loading="lazy"\`** delays images below the screen until they are needed.
+* **\`width\` and \`height\`** reserve space so the page does not jump as images load.
+
+## Less JavaScript
+
+JavaScript costs twice: data to download, then processing time on the phone's slower chip.
+
+* Ask whether you need a library at all. Plain HTML and CSS often do the job.
+* Load scripts with \`defer\` so the page can show first.
+* Remove unused code and avoid adding large packages for small features.
+
+## Fonts and CSS
+
+* Use system fonts, or one web font with few weights.
+* Keep CSS small and remove rules you no longer use.
+
+## Caching
+
+When files are cached, returning visitors do not download them again. Most free hosts set sensible caching for static files. Give files new names when they change so users get updates.
+
+## A worked example
+
+Issahaku builds a site for a Wa tailoring business. Lighthouse shows a poor score and a very heavy page. The cause is six large phone photos. He resizes them to 800 pixels wide, converts them to WebP, adds \`loading="lazy"\` and sets \`width\` and \`height\`. He also removes an animation library used for one effect. With the network throttled to a slow preset, the page now shows its content quickly, and it costs a visitor a small fraction of the data it did before.
+
+Make "how much data does this cost my user?" a question you ask about every feature.`,
+      practice_task_md: `**Goal:** make one of your pages measurably lighter and faster.
+
+1. Pick a project with images.
+2. Run Lighthouse in Chrome DevTools in mobile mode. Save a screenshot of the score and the total page weight from the Network tab.
+3. Resize and compress every image (Squoosh at squoosh.app works in the browser). Convert to WebP.
+4. Add \`width\`, \`height\` and \`loading="lazy"\` to images below the first screen.
+5. Add \`defer\` to scripts and remove anything you do not use.
+6. Run Lighthouse again and check the page with a slow network preset.
+
+**Done looks like:** before and after screenshots showing a smaller page weight and a better score, added to your README.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the usual biggest win for page weight?",
+            options: ["Adding more fonts", "Resizing and compressing images", "Using longer class names", "Adding animations"],
+            answer_index: 1,
+            explanation: "Images are usually the heaviest part of a page.",
+          },
+          {
+            prompt: "What does `loading=\"lazy\"` do on an image?",
+            options: ["Makes the image blurry", "Delays loading images below the screen until they are needed", "Loads the image twice", "Converts the image to WebP"],
+            answer_index: 1,
+            explanation: "Lazy loading saves data by waiting until the image is near the screen.",
+          },
+          {
+            prompt: "Why set `width` and `height` on images?",
+            options: ["To reserve space so the page does not jump while images load", "To make images download faster", "To hide images on phones", "Because alt text needs them"],
+            answer_index: 0,
+            explanation: "Known dimensions let the browser keep space for the image.",
+          },
+          {
+            prompt: "Why does JavaScript cost a user twice?",
+            options: ["It is downloaded, then processed on the phone's chip", "It must be bought from a store", "It runs on the server and the phone", "It is sent by SMS"],
+            answer_index: 0,
+            explanation: "Scripts cost data to download and time to run on slower phones.",
+          },
+          {
+            prompt: "Which free tool built into Chrome DevTools scores a page's performance?",
+            options: ["Git", "Lighthouse", "Figma", "TalkBack"],
+            answer_index: 1,
+            explanation: "Lighthouse audits performance and suggests fixes.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "debugging": {
+      explanation_md: `Every developer writes bugs. What makes you valuable on a team is finding and fixing them without needing someone to hold your hand. Adverts ask for debugging and DevTools skills, and skills frameworks list troubleshooting websites as essential. Browser DevTools are your main instrument.
+
+## Open DevTools
+
+In Chrome or Firefox on a laptop, press F12, or right click any element and choose Inspect. The panels you will use most:
+
+* **Elements:** see the HTML and the CSS applied to any element. You can edit styles live to test a fix before changing your file.
+* **Console:** shows errors and anything you \`console.log\`. You can also type JavaScript here to test ideas.
+* **Network:** lists every request with its status code, size and time. Here you can throttle the connection to a slow preset or go offline.
+* **Sources:** lets you pause code with breakpoints and step through it line by line.
+
+## A method for any bug
+
+1. **Reproduce it.** Find the exact steps that cause the problem.
+2. **Read the error.** The console names the error and the file and line. Click the link to jump there.
+3. **Form a guess.** "I think \`items\` is empty when this runs."
+4. **Check the guess.** Add \`console.log(items)\` or set a breakpoint and look.
+5. **Fix one thing, then test again.** Changing many things at once hides what worked.
+
+## Common bugs and where to look
+
+* **Style not applying:** In Elements, crossed out rules show which CSS was overridden and by what.
+* **"Cannot read properties of undefined":** Something you expected to exist is missing. Log the value just before that line.
+* **Data not showing:** In Network, check whether the request returned 200, and preview the response.
+* **Works on WiFi, fails on mobile:** Throttle the network and look for missing loading or error states.
+
+\`\`\`js
+console.log("cart before total:", cart);
+debugger; // pauses here when DevTools is open
+\`\`\`
+
+The \`debugger\` statement pauses your code at that line, so you can inspect every variable.
+
+## Debugging on a phone
+
+Chrome supports remote debugging: connect an Android phone to a laptop with a USB cable, enable developer options on the phone, and inspect the phone's page from the laptop's DevTools. This shows bugs that only appear on real devices.
+
+## About AI assistants
+
+Some adverts mention AI coding tools. They can suggest causes, but they are often confidently wrong. Use them as a second opinion, and always confirm with DevTools that the fix really works and that you understand why.
+
+## A worked example
+
+Mariama's order total shows "NaN". She logs the cart and sees prices stored as text such as "15", not numbers. She converts with \`Number(price)\` and the total is correct. Five minutes, because she followed the method.`,
+      practice_task_md: `**Goal:** practise the debugging method on real bugs.
+
+1. Take one of your JavaScript projects and deliberately add three bugs: a misspelled variable, a CSS rule overridden by another, and a fetch to a wrong address.
+2. Ask a friend to add a fourth bug without telling you where, or swap projects with a study partner.
+3. For each bug, write down: the steps to reproduce, what the console or Network panel showed, your guess, and the fix.
+4. Use at least one breakpoint or \`debugger\` statement.
+5. Use the Elements panel to find the overridden CSS rule.
+
+**Done looks like:** a short debugging log with four bugs, each with evidence and a fix. This makes a good story for interviews.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which DevTools panel shows every request with its status code and size?",
+            options: ["Elements", "Network", "Console", "Sources"],
+            answer_index: 1,
+            explanation: "The Network panel lists requests, sizes, times and status codes.",
+          },
+          {
+            prompt: "What is the first step in the debugging method?",
+            options: ["Rewrite the whole file", "Reproduce the bug with exact steps", "Ask an AI to fix it", "Change several things at once"],
+            answer_index: 1,
+            explanation: "You need reliable steps to reproduce before you can fix.",
+          },
+          {
+            prompt: "What does a crossed out rule in the Elements panel tell you?",
+            options: ["The CSS file is missing", "That rule was overridden by another rule", "The rule is spelled correctly", "The page is offline"],
+            answer_index: 1,
+            explanation: "Crossed out rules show which styles lost to others.",
+          },
+          {
+            prompt: "What does the `debugger` statement do when DevTools is open?",
+            options: ["Deletes the bug", "Pauses code at that line so you can inspect variables", "Sends an error report", "Speeds up the code"],
+            answer_index: 1,
+            explanation: "debugger acts like a breakpoint written in code.",
+          },
+          {
+            prompt: "How does the lesson suggest using AI coding assistants?",
+            options: ["Trust every suggestion", "As a second opinion, always confirming with DevTools and understanding the fix", "Never read their output", "Only for CSS"],
+            answer_index: 1,
+            explanation: "AI tools can be wrong, so verify and understand.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "testing": {
+      explanation_md: `Many of the adverts we studied ask for testing, including entry level roles at a fintech and a National Service placement in Accra. Tests are small programs that check your code does what you expect. They let you change code later without fear, and they show employers you think like a professional.
+
+## Kinds of tests
+
+* **Unit tests** check one small piece, such as a function that calculates a total.
+* **Component or integration tests** check pieces working together, such as a form that shows an error when a field is empty.
+* **End to end tests** drive a real browser through a full journey, such as adding to cart and checking out.
+
+Start with unit tests. They are the quickest to write and run.
+
+## A first unit test
+
+Vitest is a free test runner that works with modern JavaScript projects. Suppose you have:
+
+\`\`\`js
+// cart.js
+export function total(items) {
+  return items.reduce((sum, i) => sum + i.price * i.qty, 0);
+}
+\`\`\`
+
+A test file next to it:
+
+\`\`\`js
+// cart.test.js
+import { test, expect } from "vitest";
+import { total } from "./cart.js";
+
+test("adds price times quantity", () => {
+  const items = [{ price: 15, qty: 2 }, { price: 5, qty: 1 }];
+  expect(total(items)).toBe(35);
+});
+
+test("empty cart is zero", () => {
+  expect(total([])).toBe(0);
+});
+\`\`\`
+
+Run \`npx vitest\` and it tells you which tests pass or fail.
+
+## What to test
+
+* **The normal case:** typical input gives the right answer.
+* **Edge cases:** an empty list, zero, a very large number, missing data.
+* **Bugs you fixed:** when you fix a bug, add a test so it never comes back.
+
+Test what the code does, not how it does it. If you rewrite the inside of \`total\` but the answers stay right, the tests should still pass.
+
+## End to end tests, briefly
+
+Tools such as Playwright open a real browser, tap buttons and check what appears. They are slower, so teams write fewer of them for the most important journeys, like signing up or paying. You can also run them with a phone sized screen and a slow network, which suits products for Ghanaian users.
+
+## Tests and teamwork
+
+Teams run tests automatically on every pull request, a practice called continuous integration (CI). If a test fails, the change is not merged until it is fixed. GitHub Actions offers this free for public repositories.
+
+## A worked example
+
+Sumaila writes a function that formats amounts as cedis. He adds tests for whole numbers, decimals and zero. Later he changes the function to handle thousands with commas, and one test fails because he broke decimals. He fixes it before anyone else sees the bug. That is exactly what tests are for.`,
+      practice_task_md: `**Goal:** your first tested function.
+
+1. On a laptop, create a small project folder and run \`npm init -y\`, then \`npm install -D vitest\` (on WiFi). No laptop? Write the function and tests in a free browser editor such as StackBlitz.
+2. Write a function \`formatCedis(amount)\` that returns text like "GH₵ 25.00".
+3. Write at least four tests: a whole number, a decimal, zero, and a large number.
+4. Run \`npx vitest\` and make every test pass.
+5. Break the function on purpose, watch a test fail, then fix it.
+
+**Done looks like:** a repository with your function, a test file with four or more passing tests, and a README line explaining how to run them. Bonus: add a GitHub Actions workflow that runs the tests on every push.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does a unit test check?",
+            options: ["A full journey in a real browser", "One small piece of code, such as a single function", "The speed of the network", "The design in Figma"],
+            answer_index: 1,
+            explanation: "Unit tests check one small piece in isolation.",
+          },
+          {
+            prompt: "What should you do after fixing a bug?",
+            options: ["Delete the related tests", "Add a test so the bug never comes back", "Stop running tests", "Rename the file"],
+            answer_index: 1,
+            explanation: "A test for a fixed bug prevents it returning.",
+          },
+          {
+            prompt: "Why are end to end tests usually written only for the most important journeys?",
+            options: ["They are slower to run", "They cannot run in browsers", "They are illegal in some countries", "They only test CSS"],
+            answer_index: 0,
+            explanation: "End to end tests drive a real browser, which takes longer.",
+          },
+          {
+            prompt: "What is continuous integration (CI)?",
+            options: ["Writing code without breaks", "Running tests automatically on every pull request", "Hosting a site for free", "A type of CSS layout"],
+            answer_index: 1,
+            explanation: "CI runs checks automatically so broken changes are caught before merging.",
+          },
+          {
+            prompt: "What does it mean to test what the code does, not how it does it?",
+            options: ["Tests should check results, so a rewrite with the same answers still passes", "Tests should copy the code line by line", "Tests should only check variable names", "Tests should never use real inputs"],
+            answer_index: 0,
+            explanation: "Testing behaviour keeps tests useful when you refactor.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
   },
 };
 
