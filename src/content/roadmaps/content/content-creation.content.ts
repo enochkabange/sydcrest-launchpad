@@ -50,33 +50,33 @@ Mariama lives in Damongo and loves filming her friends. She notices that a local
             prompt: "Which skill do Ghanaian content creator adverts most often ask for?",
             options: [
               "Owning a professional cinema camera",
-              "Shooting and editing short vertical videos for social platforms",
               "Writing computer code for websites",
+              "Shooting and editing short vertical videos for social platforms",
               "Running a television station",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "The lesson notes that adverts repeatedly ask for shooting and editing short vertical videos, not expensive equipment.",
           },
           {
             prompt: "Why does client work often earn money sooner than building your own audience?",
             options: [
+              "Because a business can pay you this week while an audience takes months or years to grow",
               "Because platforms pay beginners straight away",
               "Because audiences grow in a few days",
-              "Because a business can pay you this week while an audience takes months or years to grow",
               "Because client work needs no portfolio",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "A shop owner can pay for content now, while an audience builds slowly.",
           },
           {
             prompt: "What does a video editor role usually involve?",
             options: [
-              "Turning raw footage into finished videos, often remotely",
               "Only taking still photos at weddings",
               "Selling phones in a shop",
               "Managing a company's accounts",
+              "Turning raw footage into finished videos, often remotely",
             ],
-            answer_index: 0,
+            answer_index: 3,
             explanation: "The lesson describes a video editor as someone who turns other people's raw footage into finished videos, often remotely.",
           },
           {
@@ -135,36 +135,46 @@ Fuseini is asked to film a pastor's short message for a church page in Tamale. B
         questions: [
           {
             prompt: "Which video setting does the lesson suggest is enough for social media and YouTube?",
-            options: ["4K at 60 frames per second", "1080p at 30 frames per second", "480p at 15 frames per second", "Slow motion only"],
-            answer_index: 1,
+            options: [
+              "1080p at 30 frames per second",
+              "4K at 60 frames per second",
+              "480p at 15 frames per second",
+              "Slow motion only",
+            ],
+            answer_index: 0,
             explanation: "1080p at 30 frames per second is enough and keeps files manageable.",
           },
           {
             prompt: "Why is walking closer usually better than zooming in?",
             options: [
               "Zoom uses more data",
-              "Digital zoom often makes the picture look softer",
               "Walking closer charges the battery",
+              "Digital zoom often makes the picture look softer",
               "Zooming deletes your files",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Digital zoom on most phones reduces sharpness, so moving closer gives a cleaner image.",
           },
           {
             prompt: "What does locking focus and exposure help with?",
             options: [
-              "It stops the picture changing brightness and focus while you film",
               "It makes the video vertical",
+              "It stops the picture changing brightness and focus while you film",
               "It adds music automatically",
               "It uploads the clip to YouTube",
             ],
-            answer_index: 0,
+            answer_index: 1,
             explanation: "Holding on the subject keeps focus and brightness fixed during the shot.",
           },
           {
             prompt: "Which orientation suits TikTok, Reels, Shorts and WhatsApp Status?",
-            options: ["Horizontal", "Square only", "Vertical", "Upside down"],
-            answer_index: 2,
+            options: [
+              "Horizontal",
+              "Square only",
+              "Upside down",
+              "Vertical",
+            ],
+            answer_index: 3,
             explanation: "These formats are vertical, while normal YouTube videos are horizontal.",
           },
           {
@@ -172,10 +182,10 @@ Fuseini is asked to film a pastor's short message for a church page in Tamale. B
             options: [
               "Install as many as possible",
               "Only paid apps give professional results",
-              "Pick one editor and learn it well",
               "Never use an editing app",
+              "Pick one editor and learn it well",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "Learning one free editor well is more useful than installing many.",
           },
         ],
@@ -222,23 +232,23 @@ Hawa in Bolgatanga edits a two minute video for a tailor. She edits fully offlin
           {
             prompt: "Which steps of content creation usually need the internet?",
             options: [
+              "Sending files and publishing",
               "Planning and writing",
               "Shooting and editing",
-              "Sending files and publishing",
               "Charging your phone",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "Planning, shooting and editing work offline; sending and publishing need data.",
           },
           {
             prompt: "What happens when you send a video the normal way on WhatsApp?",
             options: [
-              "It is compressed and loses quality",
               "It always arrives in 4K",
               "It is deleted after one hour",
+              "It is compressed and loses quality",
               "It uses no data",
             ],
-            answer_index: 0,
+            answer_index: 2,
             explanation: "WhatsApp compresses normal video messages; sending as a document keeps full quality.",
           },
           {
@@ -256,11 +266,11 @@ Hawa in Bolgatanga edits a two minute video for a tailor. She edits fully offlin
             prompt: "Which setting stops WhatsApp using your bundle on media you never asked for?",
             options: [
               "Turning on read receipts",
-              "Setting media auto download to WiFi only or off",
               "Changing your profile picture",
+              "Setting media auto download to WiFi only or off",
               "Muting a group",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Auto download settings control whether photos and videos download over mobile data.",
           },
         ],
@@ -302,23 +312,23 @@ Issahaku is asked to make a video for a borehole project run by an NGO near Nale
           {
             prompt: "According to the lesson, what does a client really pay a creator for?",
             options: [
-              "Pressing record on a phone",
               "Making people stop, understand the message and take an action",
+              "Pressing record on a phone",
               "Using as many apps as possible",
               "Posting every hour",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "The value is in getting people to stop, understand and act.",
           },
           {
             prompt: "What is the one sentence test?",
             options: [
               "Writing a caption of one sentence",
-              "Finishing the sentence about who the content is for and what they will feel, know or do after",
               "Filming one shot only",
               "Asking the client for one sentence of feedback",
+              "Finishing the sentence about who the content is for and what they will feel, know or do after",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The test checks you know the audience and the goal before filming.",
           },
           {
@@ -335,12 +345,12 @@ Issahaku is asked to make a video for a borehole project run by an NGO near Nale
           {
             prompt: "In Issahaku's borehole video, what was the story really about?",
             options: [
+              "How clean water near home changed Wumpini's day",
               "The borehole's engineering",
               "The NGO's logo",
-              "How clean water near home changed Wumpini's day",
               "The music he chose",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "He followed one person so the viewer could feel the change.",
           },
         ],
@@ -397,11 +407,11 @@ Sumaila makes a video for a barber in Wa. Version one starts with the shop sign 
             prompt: "What is a hook?",
             options: [
               "The final logo at the end of a video",
-              "An opening that gives viewers a reason to keep watching",
               "A type of microphone",
+              "An opening that gives viewers a reason to keep watching",
               "The background music",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "A hook is the opening that makes people stay.",
           },
           {
@@ -420,32 +430,32 @@ Sumaila makes a video for a barber in Wa. Version one starts with the shop sign 
             options: [
               "End, beginning, middle",
               "Middle, end, beginning",
-              "Beginning, middle, end",
               "Logo, music, credits",
+              "Beginning, middle, end",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "Beginning sets up the problem, middle shows change, end gives the result and next step.",
           },
           {
             prompt: "What does show, do not just tell mean for a soap advert?",
             options: [
               "Reading the ingredients aloud",
-              "Showing a mother bathing her baby with the soap",
               "Printing the price in large text only",
               "Using a longer title",
+              "Showing a mother bathing her baby with the soap",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Letting viewers see the benefit is stronger than stating it.",
           },
           {
             prompt: "Why did Sumaila's second barber video keep more viewers?",
             options: [
+              "Its hook made people want to see the finished haircut",
               "It was longer",
               "It opened with the shop sign",
-              "Its hook made people want to see the finished haircut",
               "It had no ending",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "The messy haircut and promise of a result made people stay for the reveal.",
           },
         ],
@@ -504,8 +514,13 @@ Her shot list adds b roll of shelves and the street outside. She finishes in twe
         questions: [
           {
             prompt: "What are the two parts of the simple script layout in the lesson?",
-            options: ["Price and place", "Say and Show", "Start and stop", "Music and logo"],
-            answer_index: 1,
+            options: [
+              "Price and place",
+              "Start and stop",
+              "Say and Show",
+              "Music and logo",
+            ],
+            answer_index: 2,
             explanation: "Each line pairs what is said with what is shown.",
           },
           {
@@ -523,11 +538,11 @@ Her shot list adds b roll of shelves and the street outside. She finishes in twe
             prompt: "What is b roll?",
             options: [
               "A backup phone battery",
-              "Extra shots like close ups of hands, products and surroundings used to cover cuts",
               "The second version of a script",
+              "Extra shots like close ups of hands, products and surroundings used to cover cuts",
               "A type of background music",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Editors use b roll to hide cuts and keep the video moving.",
           },
           {
@@ -591,44 +606,44 @@ Abdul-Rahman posts a video for a tailor in Tamale with the caption "Nice work!!"
             prompt: "Why should the most important point go in the first line of a caption?",
             options: [
               "Because hashtags must come last",
-              "Because only the first line or two show before people tap more",
               "Because platforms delete long captions",
               "Because it uses less data",
+              "Because only the first line or two show before people tap more",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The opening lines are all most people see.",
           },
           {
             prompt: "Which YouTube title is easier for searchers to find?",
             options: [
               "My farm day",
-              "Vibes only",
               "How to plant soybeans in Northern Ghana",
+              "Vibes only",
               "Watch this",
             ],
-            answer_index: 2,
+            answer_index: 1,
             explanation: "It uses the words people would type into search.",
           },
           {
             prompt: "What should a caption usually end with?",
             options: [
-              "Twenty hashtags",
               "One clear action for the viewer",
+              "Twenty hashtags",
               "The creator's full biography",
               "Nothing, to keep it mysterious",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "A single call to action tells people what to do next.",
           },
           {
             prompt: "Why is on screen text important?",
             options: [
-              "Many people watch without sound",
               "It replaces the need for video",
               "Platforms require it on every frame",
+              "Many people watch without sound",
               "It makes files smaller",
             ],
-            answer_index: 0,
+            answer_index: 2,
             explanation: "Text carries the message for people watching silently.",
           },
           {
@@ -690,11 +705,11 @@ Hawa makes a short video about handwashing for a clinic in Tolon. Her first vers
             prompt: "Why might a health message work better in a local language?",
             options: [
               "Because English is not allowed on social media",
-              "Because messages about health and money are easier to trust in a familiar language",
               "Because local language videos are always shorter",
               "Because subtitles are impossible in English",
+              "Because messages about health and money are easier to trust in a familiar language",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Familiar language builds trust for important messages.",
           },
           {
@@ -702,21 +717,21 @@ Hawa makes a short video about handwashing for a clinic in Tolon. Her first vers
             options: [
               "Trust them completely",
               "Never use them",
-              "Check and correct them by hand, especially for Ghanaian languages and names",
               "Only use them in English",
+              "Check and correct them by hand, especially for Ghanaian languages and names",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "Automatic captions often get local languages and names wrong.",
           },
           {
             prompt: "Which group do subtitles help?",
             options: [
-              "Only people with fast internet",
               "People who speak another language, watch without sound or are deaf or hard of hearing",
+              "Only people with fast internet",
               "Only the creator",
               "Only advertisers",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Subtitles make one video useful to more people.",
           },
           {
@@ -775,45 +790,45 @@ Fuseini films a short interview with a shea butter producer in Savelugu. In his 
           {
             prompt: "Which four basics does this section focus on?",
             options: [
-              "Steadiness, framing, light and sound",
               "Filters, stickers, music and hashtags",
+              "Steadiness, framing, light and sound",
               "Price, place, product and promotion",
               "Speed, size, colour and logo",
             ],
-            answer_index: 0,
+            answer_index: 1,
             explanation: "These four make footage look professional.",
           },
           {
             prompt: "According to the lesson, why is sound so important?",
             options: [
               "Platforms delete silent videos",
-              "People leave quickly when they cannot hear, even if they accept softer video",
               "Sound makes files smaller",
+              "People leave quickly when they cannot hear, even if they accept softer video",
               "Clients never watch the picture",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Poor sound loses viewers faster than slightly soft video.",
           },
           {
             prompt: "What is the lesson's view on buying gear?",
             options: [
+              "Start with your phone; cheap gear helps later but does not replace skill",
               "You must buy a camera before starting",
               "Gear replaces skill",
-              "Start with your phone; cheap gear helps later but does not replace skill",
               "Only expensive lights work",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "Learn your phone first; gear supports skill.",
           },
           {
             prompt: "What did Fuseini change in his second interview attempt?",
             options: [
               "He bought a new phone",
-              "He moved to shade, turned away from the road, steadied the phone and moved closer",
               "He added more music",
               "He filmed at night",
+              "He moved to shade, turned away from the road, steadied the phone and moved closer",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "He fixed light, noise, steadiness and distance with the same phone.",
           },
         ],
@@ -871,30 +886,35 @@ Mariama films a carpenter in Wa. She starts with a wide shot of the workshop, th
         questions: [
           {
             prompt: "Which shot shows the whole scene and tells the viewer where we are?",
-            options: ["Close up", "Medium shot", "Wide shot", "Top down shot"],
-            answer_index: 2,
+            options: [
+              "Close up",
+              "Wide shot",
+              "Medium shot",
+              "Top down shot",
+            ],
+            answer_index: 1,
             explanation: "A wide shot sets the scene.",
           },
           {
             prompt: "What does the rule of thirds suggest?",
             options: [
-              "Always place the subject dead centre",
               "Place important things near where the grid lines cross",
+              "Always place the subject dead centre",
               "Film only three shots",
               "Cut every video into three parts",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Placing subjects near grid intersections often looks natural.",
           },
           {
             prompt: "If someone is looking to the right, where should you leave space?",
             options: [
               "On the left",
-              "On the right, in the direction they are looking",
               "Above their head only",
+              "On the right, in the direction they are looking",
               "Nowhere; fill the frame",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Space in the direction of the look stops them feeling squashed.",
           },
           {
@@ -911,12 +931,12 @@ Mariama films a carpenter in Wa. She starts with a wide shot of the workshop, th
           {
             prompt: "Why should you check the background before recording?",
             options: [
-              "Distractions like a bright window or a pole behind someone's head pull attention away",
               "Backgrounds change the video length",
               "Platforms require plain walls",
               "It saves battery",
+              "Distractions like a bright window or a pole behind someone's head pull attention away",
             ],
-            answer_index: 0,
+            answer_index: 3,
             explanation: "A messy background distracts from the subject.",
           },
         ],
@@ -973,10 +993,10 @@ Amina helps a bead seller in Tamale. The seller's old photos show necklaces pile
             options: [
               "Direct midday sun",
               "Phone flash",
-              "Soft daylight near a window or in open shade",
               "Coloured party lights",
+              "Soft daylight near a window or in open shade",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "Soft light avoids harsh shadows and shows products clearly.",
           },
           {
@@ -994,17 +1014,22 @@ Amina helps a bead seller in Tamale. The seller's old photos show necklaces pile
             prompt: "Why must product colours stay true in editing?",
             options: [
               "Bright colours use too much data",
-              "Customers who receive something different stop trusting the shop",
               "Filters are illegal",
+              "Customers who receive something different stop trusting the shop",
               "True colours look more blurry",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Honest photos protect the seller's reputation.",
           },
           {
             prompt: "Where should you focus in a portrait?",
-            options: ["The background", "The shoes", "The eyes", "The sky"],
-            answer_index: 2,
+            options: [
+              "The background",
+              "The eyes",
+              "The shoes",
+              "The sky",
+            ],
+            answer_index: 1,
             explanation: "Sharp eyes make portraits feel alive.",
           },
         ],
@@ -1054,55 +1079,55 @@ Sumaila records a cooking video for a chop bar in Damongo inside a dark kitchen.
             prompt: "What usually happens when a bright window is behind your subject?",
             options: [
               "Their face looks bright and clear",
-              "Their face becomes a dark shape",
               "The sound improves",
+              "Their face becomes a dark shape",
               "The colours become true",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Strong light from behind leaves the face in shadow.",
           },
           {
             prompt: "What is open shade?",
             options: [
-              "A dark room with no windows",
               "Shade of a tree or building where the subject still faces bright open sky",
+              "A dark room with no windows",
               "Filming at midnight",
               "Covering the lens with your hand",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Open shade gives soft, even light on faces.",
           },
           {
             prompt: "What does a white sheet or card do in lighting?",
             options: [
               "Blocks all light",
-              "Bounces light back into shadows",
               "Records sound",
               "Makes the video vertical",
+              "Bounces light back into shadows",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "A reflector fills in the dark side of a face or product.",
           },
           {
             prompt: "Why avoid mixing indoor bulbs and daylight?",
             options: [
-              "Their different colours can make faces look orange on one side and blue on the other",
               "It drains the battery",
+              "Their different colours can make faces look orange on one side and blue on the other",
               "It is against platform rules",
               "It makes the file larger",
             ],
-            answer_index: 0,
+            answer_index: 1,
             explanation: "Mixed colour temperatures look unnatural.",
           },
           {
             prompt: "Which times of day give softer outdoor light?",
             options: [
-              "Midday",
               "Early morning and late afternoon",
+              "Midday",
               "Only midnight",
               "Any time with flash on",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "The low sun is softer and warmer than midday sun.",
           },
         ],
@@ -1160,11 +1185,11 @@ Issahaku interviews a teacher in Bolgatanga beside a busy road. Playing it back,
             prompt: "What are the two biggest free improvements for phone audio?",
             options: [
               "Add filters and stickers",
-              "Get closer and get quieter",
               "Film in 4K and use slow motion",
+              "Get closer and get quieter",
               "Turn up the music and add effects",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Distance and background noise matter most.",
           },
           {
@@ -1181,23 +1206,23 @@ Issahaku interviews a teacher in Bolgatanga beside a busy road. Playing it back,
           {
             prompt: "Why record a ten second test before the real take?",
             options: [
-              "To find sound problems while you can still fix them",
               "Platforms require test clips",
               "To save battery",
               "To make the video longer",
+              "To find sound problems while you can still fix them",
             ],
-            answer_index: 0,
+            answer_index: 3,
             explanation: "Testing catches problems before the speaker leaves.",
           },
           {
             prompt: "What is one cheap way to record clearer interview audio?",
             options: [
               "Film from across the street",
-              "Use a clip on lapel mic or record a voice note on a second phone close to the speaker",
               "Cover the microphone with your finger",
               "Play music during the interview",
+              "Use a clip on lapel mic or record a voice note on a second phone close to the speaker",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "A mic close to the speaker captures the voice clearly.",
           },
         ],
@@ -1249,23 +1274,23 @@ Wumpini films a ten minute walk through a weekend market in Tamale for a food ve
           {
             prompt: "What does the lesson say about editing on a phone?",
             options: [
-              "Professional editing is impossible on a phone",
               "Free phone editors can do professional short videos; a laptop helps for longer layered videos",
+              "Professional editing is impossible on a phone",
               "Only paid apps can export video",
               "Phones cannot add text",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Phones handle short work well; long complex edits are easier on a laptop.",
           },
           {
             prompt: "Why must you keep original clips until a project is exported?",
             options: [
-              "Editing apps refer to the original files, so deleting them breaks the project",
               "Platforms ask for the originals",
               "Originals make the export smaller",
+              "Editing apps refer to the original files, so deleting them breaks the project",
               "It saves data",
             ],
-            answer_index: 0,
+            answer_index: 2,
             explanation: "Edits are non destructive and depend on the originals.",
           },
           {
@@ -1283,11 +1308,11 @@ Wumpini films a ten minute walk through a weekend market in Tamale for a food ve
             prompt: "In Wumpini's market video, what did editing mainly involve?",
             options: [
               "Keeping all forty clips at full length",
-              "Choosing the best moments, trimming them and adding voice over and price text",
               "Adding as many effects as possible",
+              "Choosing the best moments, trimming them and adding voice over and price text",
               "Turning it into a horizontal ten minute film",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "She selected, trimmed and supported the story with voice and text.",
           },
         ],
@@ -1343,23 +1368,23 @@ Mariama has twelve minutes of footage of a youth football tournament in Wa. Her 
           {
             prompt: "What should you do before you start cutting?",
             options: [
-              "Add music",
               "Review all footage and mark the best takes",
+              "Add music",
               "Export the video",
               "Post the raw clips",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Selecting first makes the rough cut faster and better.",
           },
           {
             prompt: "What is a jump cut?",
             options: [
-              "A cut that removes a pause so the speaker jumps slightly",
               "A spinning transition",
               "A video of someone jumping",
               "Moving a clip to another project",
+              "A cut that removes a pause so the speaker jumps slightly",
             ],
-            answer_index: 0,
+            answer_index: 3,
             explanation: "Jump cuts tighten talking clips and are normal in social video.",
           },
           {
@@ -1376,23 +1401,23 @@ Mariama has twelve minutes of footage of a youth football tournament in Wa. Her 
           {
             prompt: "What does the lesson say about flashy transitions?",
             options: [
-              "Use one between every clip",
               "Straight cuts are used most; save effects for when they add meaning",
+              "Use one between every clip",
               "They are required by platforms",
               "They always increase views",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Simple cuts keep focus on the story.",
           },
           {
             prompt: "Which pace best suits an emotional interview about a family farm?",
             options: [
               "Very fast cuts on every beat",
-              "Slower shots",
               "No cuts at all for ten minutes",
+              "Slower shots",
               "Random order of clips",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Slower pacing suits emotional stories.",
           },
         ],
@@ -1457,11 +1482,11 @@ Abdul-Rahman edits a promo for a phone repair shop in Tamale. His first version 
             prompt: "What should you do with music while someone is speaking?",
             options: [
               "Raise it",
-              "Lower it so the words are clear",
               "Remove the voice",
               "Speed it up",
+              "Lower it so the words are clear",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Speech must stay clear above music.",
           },
           {
@@ -1469,21 +1494,21 @@ Abdul-Rahman edits a promo for a phone repair shop in Tamale. His first version 
             options: [
               "Along the bottom edge",
               "On the right edge",
-              "In the middle area, away from platform buttons",
               "Outside the frame",
+              "In the middle area, away from platform buttons",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "Platform buttons and captions cover the bottom and right.",
           },
           {
             prompt: "What makes on screen text easy to read?",
             options: [
-              "Small thin letters",
               "Large, short text with high contrast, such as white with a dark outline or box",
+              "Small thin letters",
               "Long paragraphs",
               "Text that flashes quickly",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Short, large, high contrast text reads on small screens.",
           },
         ],
@@ -1539,19 +1564,24 @@ Hawa edits weekly videos for a pharmacy and a fashion shop. Early on she sent th
         questions: [
           {
             prompt: "Which aspect ratio suits TikTok, Reels, Shorts and Status?",
-            options: ["16:9 horizontal", "9:16 vertical", "4:3", "21:9 widescreen"],
-            answer_index: 1,
+            options: [
+              "16:9 horizontal",
+              "4:3",
+              "9:16 vertical",
+              "21:9 widescreen",
+            ],
+            answer_index: 2,
             explanation: "These formats are vertical 9:16.",
           },
           {
             prompt: "Why choose the aspect ratio at the start of a project?",
             options: [
-              "So nothing important gets cut off later",
               "Because exports fail otherwise",
+              "So nothing important gets cut off later",
               "To save battery",
               "Because clients ask for it in the title",
             ],
-            answer_index: 0,
+            answer_index: 1,
             explanation: "Changing shape at the end can crop important parts of the frame.",
           },
           {
@@ -1568,23 +1598,23 @@ Hawa edits weekly videos for a pharmacy and a fashion shop. Early on she sent th
           {
             prompt: "What makes a good YouTube thumbnail?",
             options: [
-              "Many small words and several subjects",
               "One clear subject, few large words, strong contrast and honesty",
+              "Many small words and several subjects",
               "A blank background",
               "A misleading picture to get clicks",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Thumbnails must read at a tiny size and reflect the video.",
           },
           {
             prompt: "What does backing up mean in this lesson?",
             options: [
-              "Keeping important projects in at least two places",
               "Deleting files after export",
               "Sending files to strangers",
               "Renaming every file final",
+              "Keeping important projects in at least two places",
             ],
-            answer_index: 0,
+            answer_index: 3,
             explanation: "Two copies protect against a lost or broken phone.",
           },
         ],
@@ -1640,30 +1670,35 @@ Sumaila runs a channel teaching phone repair tips in Hausa and English from Tama
         questions: [
           {
             prompt: "Which platform is described as favouring longer, searchable videos that can find viewers for years?",
-            options: ["WhatsApp Status", "YouTube", "Facebook Reels", "TikTok Live"],
+            options: [
+              "WhatsApp Status",
+              "YouTube",
+              "Facebook Reels",
+              "TikTok Live",
+            ],
             answer_index: 1,
             explanation: "YouTube rewards useful videos people search for.",
           },
           {
             prompt: "What is repurposing?",
             options: [
-              "Deleting old videos",
               "Turning one shoot into content for several platforms",
+              "Deleting old videos",
               "Copying another creator's video",
               "Posting the same file everywhere without changes",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "One shoot can become shorts, photos and Status updates.",
           },
           {
             prompt: "Why is a steady posting rhythm better than bursts?",
             options: [
-              "It builds trust and fits what you can keep up",
               "Platforms ban bursts",
               "It uses more data",
+              "It builds trust and fits what you can keep up",
               "It guarantees viral videos",
             ],
-            answer_index: 0,
+            answer_index: 2,
             explanation: "Consistency helps audiences know what to expect.",
           },
           {
@@ -1733,19 +1768,24 @@ Amina makes Reels for a smock weaver in Bolgatanga. Her best video starts with t
         questions: [
           {
             prompt: "What shape should short platform videos be?",
-            options: ["Horizontal 16:9", "Vertical 9:16", "Circle", "Square only"],
-            answer_index: 1,
+            options: [
+              "Horizontal 16:9",
+              "Circle",
+              "Square only",
+              "Vertical 9:16",
+            ],
+            answer_index: 3,
             explanation: "Vertical 9:16 fills the phone screen.",
           },
           {
             prompt: "Which is a careful way to use a trend for a business?",
             options: [
               "Join every trend, whatever the brand",
-              "Make sure it fits the brand, add your own twist and check the sound is allowed",
               "Use trends that mock people",
               "Copy another creator's video exactly",
+              "Make sure it fits the brand, add your own twist and check the sound is allowed",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Trends must suit the brand and be legally usable.",
           },
           {
@@ -1763,11 +1803,11 @@ Amina makes Reels for a smock weaver in Bolgatanga. Her best video starts with t
             prompt: "Which is part of a well planned live selling session?",
             options: [
               "No prices so people must guess",
-              "Products ready, clear prices, good light, a helper reading comments and a clear way to pay",
               "Going live on a weak connection without testing",
+              "Products ready, clear prices, good light, a helper reading comments and a clear way to pay",
               "Ignoring comments",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Planning makes live selling smooth and trustworthy.",
           },
           {
@@ -1835,33 +1875,33 @@ Fuseini starts a channel teaching smallholder farmers in the Northern Region how
             prompt: "Why might you use a brand channel for a business?",
             options: [
               "It makes videos longer",
-              "Others can help manage it without sharing your personal password",
               "It removes the need for titles",
+              "Others can help manage it without sharing your personal password",
               "It is the only way to upload Shorts",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Brand channels allow shared management safely.",
           },
           {
             prompt: "What must you tell YouTube when uploading?",
             options: [
-              "Your salary",
               "Whether the video is made for children",
+              "Your salary",
               "Your phone model",
               "How long you spent editing",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "The audience setting is required and affects features.",
           },
           {
             prompt: "Why upload as private or unlisted first?",
             options: [
-              "To check everything before the public sees it",
               "Because public uploads cost money",
               "To hide it forever",
               "To make it a Short",
+              "To check everything before the public sees it",
             ],
-            answer_index: 0,
+            answer_index: 3,
             explanation: "A private check catches mistakes before publishing.",
           },
           {
@@ -1930,23 +1970,23 @@ Mariama starts a page sharing northern recipes. At first she posts randomly. The
           {
             prompt: "What is a niche in this lesson?",
             options: [
-              "A type of microphone",
               "A clear focus that tells the right people the content is for them",
+              "A type of microphone",
               "A paid advert",
               "A video length",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "A niche is a clear focus for a channel.",
           },
           {
             prompt: "What does serve before you sell mean?",
             options: [
-              "Make most content helpful or entertaining and only some promotional",
               "Only post adverts",
               "Never mention products",
+              "Make most content helpful or entertaining and only some promotional",
               "Charge for every video",
             ],
-            answer_index: 0,
+            answer_index: 2,
             explanation: "Useful content earns attention for occasional promotion.",
           },
           {
@@ -1964,22 +2004,22 @@ Mariama starts a page sharing northern recipes. At first she posts randomly. The
             prompt: "Which is a good way to build community?",
             options: [
               "Ignore comments",
-              "Reply to comments, ask questions and answer common questions in videos",
               "Post only once a year",
               "Turn off all comments always",
+              "Reply to comments, ask questions and answer common questions in videos",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Conversation makes people feel seen and come back.",
           },
           {
             prompt: "What helped Mariama's recipe page grow?",
             options: [
               "Random posts about everything",
-              "A clear focus, a steady rhythm and replying to her audience",
               "Buying followers",
               "Copying big creators' videos",
+              "A clear focus, a steady rhythm and replying to her audience",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Focus, consistency and conversation built her audience.",
           },
         ],
@@ -2038,49 +2078,567 @@ Practice numbers if needed: Video A had 900 views, 4 seconds average watch time 
           {
             prompt: "What does an audience retention graph show?",
             options: [
-              "How many followers you have",
               "What share of viewers were still watching at each moment",
+              "How many followers you have",
               "Your income",
               "How much data you used",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Retention shows where viewers leave.",
           },
           {
             prompt: "If click through rate is low but retention is good, what probably needs work?",
             options: [
               "The video's middle section",
-              "The title or thumbnail",
               "The music licence",
+              "The title or thumbnail",
               "The file name",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "People who click stay, so the packaging is the issue.",
           },
           {
             prompt: "Why can shares and saves be especially meaningful?",
             options: [
-              "They often mean the content was truly useful",
               "They are the same as views",
+              "They often mean the content was truly useful",
               "They cost money",
               "They only count on YouTube",
             ],
-            answer_index: 0,
+            answer_index: 1,
             explanation: "People share and save what they value.",
           },
           {
             prompt: "What is a vanity metric?",
             options: [
-              "A number that feels good but may not reflect real results like sales",
               "A required tax form",
               "The length of a video",
+              "A number that feels good but may not reflect real results like sales",
               "A type of thumbnail",
             ],
-            answer_index: 0,
+            answer_index: 2,
             explanation: "Likes can look good without bringing customers.",
           },
         ],
         pass_threshold: 75,
+      },
+    },
+    "working-and-earning": {
+      explanation_md: `Many young people in Ghana see creators online and imagine instant money. The truth is more ordinary and more hopeful: content skills can earn real income, but usually step by step, through clients and jobs, long before any platform pays you. This section is about earning honestly, protecting yourself and respecting other people's rights.
+
+## What employers and clients want to see
+
+Across the Ghanaian and remote adverts we studied, a few expectations repeat beyond camera and editing skills:
+
+* **A portfolio** of real work, often requested with the application.
+* **Reliability:** meeting deadlines, communicating clearly and organising files.
+* **Understanding of brands:** following a brief, matching a brand's voice and working with a marketing team.
+* **Respect for rules:** copyright, platform guidelines and, in some adverts, data protection.
+
+None of these need expensive gear. They need professional habits.
+
+## Ways people earn from content
+
+You will look at these honestly in a later lesson. In short:
+
+* **Client work** for local businesses, churches, schools, events and NGOs.
+* **Jobs** as an in house content creator, videographer or social media content officer.
+* **Remote editing** for agencies and creators abroad, which usually needs a reliable connection and often a laptop.
+* **Platform payouts and brand deals** once you have a real audience, depending on the platform and your country.
+
+## Protect yourself
+
+Scams target young creators: fake "brand deals" asking you to pay a fee, fake job offers asking for registration money, or people who take your work and never pay. A real employer does not ask you to pay to get a job. Job boards in Ghana warn users about this too. Agree terms in writing and ask for part payment before big jobs.
+
+## Respect other people's rights
+
+Music, footage and photos belong to the people who made them, and people you film have a right to say no. Getting permission is not just polite; it protects you from removed videos, account strikes and legal trouble.
+
+## What this section covers
+
+* **Copyright, consent and permission.** Using only what you have the right to use, and filming people respectfully.
+* **Working with clients and brands.** Briefs, quotes, agreements and disclosure.
+* **Honest ways to earn.** What each route really involves.
+* **Portfolio and first jobs.** Showing your work and applying.
+
+## Where this can lead
+
+Some training organisations in Ghana run cohort programmes in content creation and related digital skills, often online or in Accra. This roadmap can help you prepare for them and stand out when you apply, but you do not need a programme to start earning from local clients.
+
+## A small example
+
+Issahaku has made a few videos for friends in Wa. Then someone on social media offers him a "brand ambassador" deal if he first pays 200 cedis for a "starter kit". He remembers that real clients pay you, not the other way round, and declines. Instead he offers a free trial video to a real local business, a printing shop, which then pays him for four videos a month.`,
+      practice_task_md: `**Goal:** Prepare to earn safely.
+
+**Steps:**
+1. Write down three kinds of local clients you could approach first, based on your earlier lists.
+2. Write three warning signs of a scam offer in your own words.
+3. Write a short message you could send a local business offering one sample video, explaining what you would make and how long it would take. Do not send it yet if you are not ready.
+
+**Done looks like:** Your client list, scam warning signs and a draft offer message saved in your notes.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, how do most beginners first earn from content skills?",
+            options: [
+              "Clients and jobs, step by step",
+              "Instant platform payouts",
+              "Paying for starter kits",
+              "Buying followers",
+            ],
+            answer_index: 0,
+            explanation: "Client work and jobs usually come long before platform income.",
+          },
+          {
+            prompt: "Which is a warning sign of a scam?",
+            options: [
+              "A client sends a clear brief",
+              "A business asks to see your portfolio",
+              "A client agrees terms in writing",
+              "Someone asks you to pay a fee to get a job or brand deal",
+            ],
+            answer_index: 3,
+            explanation: "Real employers and brands pay you, not the other way round.",
+          },
+          {
+            prompt: "Which expectation appears in adverts beyond camera and editing skills?",
+            options: [
+              "Owning a studio",
+              "A portfolio of real work and reliability",
+              "A large number of followers for every role",
+              "A driving licence",
+            ],
+            answer_index: 1,
+            explanation: "Portfolios and professional habits are commonly requested.",
+          },
+          {
+            prompt: "Why does getting permission for music and people matter?",
+            options: [
+              "It protects you from removed videos, strikes and legal trouble",
+              "It makes videos longer",
+              "It is only a matter of politeness",
+              "Platforms pay you for asking",
+            ],
+            answer_index: 0,
+            explanation: "Permission is both respectful and protective.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "copyright-and-permission": {
+      explanation_md: `Clients trust you with their brand. If you use a song, clip or photo you do not have rights to, their video can be muted or removed, their account can receive a strike, and in serious cases there can be legal claims. Content adverts and skills frameworks list copyright, media asset rules and data protection, because creators handle all three every day.
+
+## Copyright in plain words
+
+When someone creates music, a recording, a film, a photo or a design, the law usually gives them control over how it is copied and shared. In Ghana this is set out in the Copyright Act, 2005 (Act 690), and the Copyright Office handles registration and complaints. Most countries have similar laws, and platforms like YouTube use automatic systems to detect copyrighted music and video.
+
+Key points:
+
+* **Found online does not mean free to use.** A song on YouTube or a photo on Google still belongs to someone.
+* **Crediting is not permission.** Writing "no copyright intended" or "credit to the owner" does not give you the right to use it.
+* **Permitted uses are limited.** Ghana's law allows some uses, such as review, reporting current events and education, subject to fair practice. These are narrow and depend on the situation. Do not rely on them for a business promo. YouTube explains a similar idea called fair use, which comes from United States law and is also judged case by case.
+* **Folklore is protected too.** Ghana's law treats folklore such as traditional designs and folksongs as a national heritage, and commercial use can need permission from the National Folklore Board. If a brand wants to build a campaign around traditional designs or songs, raise this early.
+
+## Safe sources
+
+* Music you made yourself, or that a musician has agreed in writing that you can use.
+* Free libraries with clear terms, such as the YouTube Audio Library.
+* Music offered inside a platform's app for use on that platform, checking whether business accounts may use it.
+* Creative Commons works, which come with licences. Some allow commercial use with credit; others forbid commercial use or changes. Read the licence each time.
+* Your own footage and photos.
+
+## Consent from people you film
+
+People have a right to decide how their image and voice are used. Ghana's Data Protection Act, 2012 (Act 843) sets rules for collecting and using personal information, and a recognisable face or voice can be personal information. Good practice:
+
+* Ask before filming, explain where the video will appear and let people say no.
+* For commercial videos, get consent in writing or as a short recorded statement.
+* For children, get permission from a parent or guardian, and think twice before showing children's faces with their school or location.
+* Be extra careful with sensitive situations, such as health, religion or people in hardship. Protect dignity.
+
+## A small example
+
+Hawa edits an advert for a hotel in Tamale using a popular song. Before delivering, she remembers the risks and replaces it with a track from a free library. She also checks that every guest shown signed a simple consent note, and blurs one person who did not. The hotel's video stays online without problems.`,
+      practice_task_md: `**Goal:** Build your own safe media kit and consent form.
+
+**Steps:**
+1. Find two free music tracks from a library with clear terms, such as the YouTube Audio Library. Note the name, source and any credit required.
+2. Find one Creative Commons image and write down which licence it uses and whether it allows commercial use.
+3. Write a simple consent note in plain English that someone you film could sign or say on camera: their name, what you are filming, where it will be used and their agreement.
+4. If you speak a Ghanaian language, translate the consent note.
+
+**Done looks like:** A note listing your safe music and image with licences, and your consent note ready to use.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Does writing \"credit to the owner\" give you permission to use a song?",
+            options: [
+              "Yes, always",
+              "Yes, if the video is short",
+              "No, crediting is not permission",
+              "Yes, on WhatsApp only",
+            ],
+            answer_index: 2,
+            explanation: "You need actual permission or a licence, not just a credit.",
+          },
+          {
+            prompt: "Which is a safe music source for a client video?",
+            options: [
+              "A popular radio song downloaded online",
+              "A track from a free library with clear terms, such as the YouTube Audio Library",
+              "Music ripped from another creator's video",
+              "Any song if you add credit",
+            ],
+            answer_index: 1,
+            explanation: "Libraries with clear terms give you the right to use the music.",
+          },
+          {
+            prompt: "What should you check with a Creative Commons work?",
+            options: [
+              "Nothing; all CC works can be used any way",
+              "Only the file size",
+              "Only the colour",
+              "The specific licence, such as whether commercial use is allowed",
+            ],
+            answer_index: 3,
+            explanation: "CC licences differ; some forbid commercial use or changes.",
+          },
+          {
+            prompt: "What is good practice when filming children?",
+            options: [
+              "Film freely without asking",
+              "Ask the child only",
+              "Post first and ask later",
+              "Get permission from a parent or guardian and be careful about showing their school or location",
+            ],
+            answer_index: 3,
+            explanation: "Children need guardian consent and extra protection.",
+          },
+          {
+            prompt: "Why should a brand campaign using traditional designs or folksongs raise questions early?",
+            options: [
+              "Commercial use of folklore can need permission from the National Folklore Board",
+              "Folklore cannot appear in videos at all",
+              "It always makes videos longer",
+              "Platforms block all traditional music",
+            ],
+            answer_index: 0,
+            explanation: "Ghana's law protects folklore and can require permission for commercial use.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "working-with-brands": {
+      explanation_md: `Brands and businesses are where most creators earn first. Ghanaian adverts ask creators to align content with brand strategy, follow brand guidelines, work with marketing teams and meet deadlines. Remote adverts add following a creative brief and delivering in the client's time zone. Clients rehire people who are easy to work with.
+
+## Understand the brief
+
+A brief is the client's description of what they want. If they do not give one, ask questions and write it yourself:
+
+* What is the goal: awareness, sales, sign ups or a message?
+* Who is the audience?
+* What must be included: product, price, logo, contact details, key message?
+* Where will it be posted, and in what shape and length?
+* What is the deadline?
+* Are there brand colours, fonts or words to use or avoid?
+
+Send the written brief back and ask the client to confirm it. This one step prevents most arguments later.
+
+## Quote and agree in writing
+
+Before you start, agree in writing, even by WhatsApp message:
+
+* **Deliverables:** for example, three vertical videos of up to thirty seconds and ten photos.
+* **Price and payment:** amount in cedis, how to pay (often mobile money) and when. Asking for part payment upfront on bigger jobs is normal.
+* **Revisions:** how many rounds of changes are included.
+* **Deadline:** when drafts and final files are due.
+* **Usage:** where the client may use the content, and whether you may show it in your portfolio.
+
+Price based on the time and skill involved, the number of deliverables and what similar local creators charge. Raise prices as your portfolio and results grow.
+
+## Disclose paid content
+
+When a brand pays you or gives you free products to feature them on your own channel, your audience has a right to know. Platforms provide tools for this, such as YouTube's paid promotion setting and branded content labels on other apps. Say it clearly in the video or caption too. Hidden adverts break platform rules and destroy trust.
+
+## Be careful with claims
+
+Do not repeat claims you cannot check, especially about health, money or results: "cures malaria", "guaranteed profit", "lose ten kilos in a week". In Ghana, adverts for regulated products such as food, medicines and cosmetics have their own rules from the Food and Drugs Authority. If a brand asks you to promote such products, ask whether the advert has been approved, and refuse content that could mislead or harm people.
+
+## Deliver professionally
+
+Send drafts on time, label files clearly, respond politely to feedback and keep to the agreed revisions. After delivery, ask how the content performed and whether you may share results in your portfolio.
+
+## A small example
+
+Wumpini is asked by a cosmetics seller in Tamale to make three videos. She writes a short brief, confirms the price, part payment by mobile money, two revision rounds and portfolio permission in a WhatsApp message. When the seller asks her to say a cream "removes all dark spots in three days", Wumpini explains she cannot make that claim and suggests showing real customers' routines instead. The seller agrees, and later books her again.`,
+      practice_task_md: `**Goal:** Create a reusable brief and agreement template.
+
+**Steps:**
+1. Write a brief template with the questions from this lesson: goal, audience, must include, platform and shape, deadline, brand rules.
+2. Fill it in for an imaginary or real local client, such as a chop bar or a phone shop.
+3. Write an agreement message covering deliverables, price in cedis, payment method and timing, revisions, deadline and portfolio use.
+4. Write one sentence you could use to disclose a paid partnership in a caption.
+
+**Done looks like:** A filled in brief, an agreement message and a disclosure line, saved as templates you can reuse.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why send a written brief back to the client to confirm?",
+            options: [
+              "Clients enjoy reading",
+              "Platforms require it",
+              "It prevents most misunderstandings and arguments later",
+              "It replaces payment",
+            ],
+            answer_index: 2,
+            explanation: "A confirmed brief sets clear expectations.",
+          },
+          {
+            prompt: "Which item belongs in a written agreement?",
+            options: [
+              "Your favourite song",
+              "Deliverables, price, payment timing, revisions, deadline and usage",
+              "Your follower count only",
+              "The client's home address",
+            ],
+            answer_index: 1,
+            explanation: "These terms protect both you and the client.",
+          },
+          {
+            prompt: "What should you do when a brand pays you to feature them on your channel?",
+            options: [
+              "Hide it so it looks natural",
+              "Only tell your friends",
+              "Disclose it using platform tools and clearly in the video or caption",
+              "Delete the video later",
+            ],
+            answer_index: 2,
+            explanation: "Audiences must know when content is paid for.",
+          },
+          {
+            prompt: "A brand asks you to say a cream removes all dark spots in three days. What should you do?",
+            options: [
+              "Refuse claims you cannot check and suggest an honest alternative",
+              "Say it, since they are paying",
+              "Say it in small text",
+              "Make the claim even bigger",
+            ],
+            answer_index: 0,
+            explanation: "Misleading health claims can harm people and break advertising rules.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "earning-routes": {
+      explanation_md: `"How much do creators make?" is one of the most common questions young people ask. The honest answer is that it varies hugely, many people earn little at first, and nobody can promise you an income. What we can do is explain the main routes, what each one takes and what to watch out for, so you can choose well.
+
+## Route 1: Local client work
+
+Making videos and photos for businesses, churches, schools, events and NGOs near you. This is often the quickest route for beginners because the need is visible and nearby, payment can come by mobile money, and you can start small with a sample. It needs reliability, a basic portfolio and the confidence to approach people.
+
+## Route 2: A job
+
+Ghanaian companies advertise roles such as content creator, in house videographer, photographer and social media content officer. Many are in Accra and Tema, and some ask for a diploma or degree and experience, though entry level and internship roles also appear. A strong portfolio can help you compete. These roles give steadier income and teach you how brands work.
+
+## Route 3: Remote editing and content work
+
+Agencies and creators abroad hire editors for short form and YouTube videos, sometimes accepting applicants from Ghana. These roles often ask for a strong portfolio, fast turnaround, good English, a reliable internet connection and a laptop that can edit HD video. They may also require working in another time zone. Beware of scams: never pay to apply.
+
+## Route 4: Platform payouts
+
+Some platforms share advertising income with creators who meet their rules. YouTube's Partner Program lists Ghana among available countries, but a channel must first meet eligibility requirements such as a minimum number of subscribers plus enough watch hours or Shorts views, follow monetization policies and link a payment account. Other platforms run creator reward programmes only in certain countries; at the time of writing, Ghana did not appear on the lists we checked for some of them. Rules change, so check each platform's official pages and in app settings. For most creators, platform payouts come late, if at all.
+
+## Route 5: Brand deals and sponsorships
+
+Once you have an engaged audience in a clear niche, brands may pay you to feature them. A smaller, trusted audience can attract local brands. Always disclose paid content and only promote what you believe is honest.
+
+## Route 6: Selling your own services or products
+
+Creators sometimes sell training, such as teaching phone video to small business owners, or their own products, using their audience to reach buyers.
+
+## Mixing routes
+
+Most working creators combine routes: client work for steady money while building an audience slowly, for example. Keep simple records of what you earn and spend so you can see what is really working.
+
+## A small example
+
+Sumaila in Tamale starts by filming events for churches and two shops. He keeps a simple notebook of every job and payment. Meanwhile he posts phone repair tips on his own channel. A year later, his channel is still growing slowly and has not yet qualified for payouts, but his client work is steady and his videos help him win a part time role at a local media house.`,
+      practice_task_md: `**Goal:** Choose your first earning route honestly.
+
+**Steps:**
+1. For each of the six routes, write one sentence on what it would take for you right now: skills, equipment, connection and time.
+2. Pick the one or two routes that fit your situation today.
+3. Visit the official YouTube help page on Partner Program eligibility, on WiFi if you can, and write down the current requirements in your own words.
+4. Set one small goal for the next month, such as making one sample video for a local business.
+
+**Done looks like:** Your six sentences, chosen route, notes on the current YouTube requirements and a one month goal.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which route is often quickest for beginners according to the lesson?",
+            options: [
+              "Platform payouts",
+              "Brand deals with no audience",
+              "Paying for a starter kit",
+              "Local client work",
+            ],
+            answer_index: 3,
+            explanation: "Local needs are visible and payment can start small.",
+          },
+          {
+            prompt: "What does YouTube require before a channel can join its Partner Program?",
+            options: [
+              "Nothing; every channel is paid from the first video",
+              "Meeting eligibility rules such as minimum subscribers and watch hours or Shorts views, plus policies and a payment account",
+              "Only a verified phone number",
+              "Paying a joining fee",
+            ],
+            answer_index: 1,
+            explanation: "Eligibility thresholds and policies apply before payouts.",
+          },
+          {
+            prompt: "What do remote editing roles often require?",
+            options: [
+              "A strong portfolio, reliable internet and often a laptop that can edit HD video",
+              "A registration fee",
+              "No portfolio at all",
+              "Living in the client's country",
+            ],
+            answer_index: 0,
+            explanation: "Remote roles expect proof of skill and dependable equipment.",
+          },
+          {
+            prompt: "What is the lesson's honest message about creator income?",
+            options: [
+              "Everyone earns a lot quickly",
+              "Platform payouts are guaranteed",
+              "Income varies, many earn little at first and nobody can promise you an income",
+              "Only famous people earn anything",
+            ],
+            answer_index: 2,
+            explanation: "There are real routes, but no guarantees.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "portfolio-and-first-jobs": {
+      explanation_md: `Almost every content advert we studied, in Ghana and remote, asked for a portfolio or samples of work. Some care more about the portfolio than about certificates. Your portfolio is your proof: it shows what you can do far better than a list of apps on a CV.
+
+## What to include
+
+Quality beats quantity. Aim for a small set of your best work, around six to ten pieces, that shows range:
+
+* **Short vertical videos** for a business or cause.
+* **A longer video,** such as an interview, event highlight or YouTube tutorial.
+* **Product and portrait photos.**
+* **A before and after,** such as a raw clip next to your edit, or old product photos next to yours.
+* **Captions or a script** you wrote.
+
+For each piece, add one or two lines: who it was for, what the goal was, what you did (filmed, edited, wrote) and any honest result you have permission to share, such as "the shop received more WhatsApp orders that week" if the owner told you so. Never invent results or claim work you did not do.
+
+Only include client work if the client agreed, and only include people who gave consent.
+
+## Where to host it cheaply
+
+* An **unlisted YouTube playlist** for videos.
+* A **cloud drive folder** with clearly named files, shared as a view only link.
+* An **Instagram or TikTok profile** used as a public showcase, with highlights grouped by type.
+* A simple **one page document** with links and short descriptions that you can send as a PDF.
+
+Keep links working and check them on a phone before sending.
+
+## Getting the first pieces
+
+If you have no clients yet, create real work anyway: a video for a family member's business, a church programme, a school event or a community clean up, with permission. Volunteer projects for NGOs and community groups count when they are real.
+
+## Applying for jobs
+
+* Read the advert and match your portfolio to it. If they want TikTok product videos, put those first.
+* Write a short, specific message: who you are, what you can do for them, and two links.
+* Mention free tools you use and that you work efficiently on a phone, but let the work speak.
+* Look on Ghanaian job boards, company and NGO career pages, and remote boards. Ignore any offer that asks you to pay.
+* Prepare for a test task: many employers ask candidates to edit sample footage or shoot a short video.
+
+## Keep growing
+
+Update your portfolio every few months, replacing weaker pieces. Ask clients for a short written reference you may quote.
+
+## A small example
+
+Amina wants a content creator job in Tamale. She builds a one page portfolio with links to an unlisted playlist of five videos, a folder of product photos and a before and after of a tailor's page. Each piece has two lines of context. When a local fashion brand advertises for a social media content assistant, she puts her fashion work first and sends a short message with two links. They invite her to a test shoot.`,
+      practice_task_md: `**Goal:** Build version one of your portfolio.
+
+**Steps:**
+1. Choose your best four to six pieces from this roadmap's practice tasks or real projects. Check you have permission from clients and people shown.
+2. Create an unlisted YouTube playlist or a view only cloud folder for them, uploading on WiFi if you can.
+3. Write one or two lines for each piece: who it was for, the goal and what you did.
+4. Make a one page document with your name, a sentence about what you offer, your links and contact details.
+5. Find one real advert for a content role in Ghana or a remote role open to Ghana, and write a three sentence application message matched to it.
+
+**Done looks like:** A working portfolio link, your one page document and a draft application message to show a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does the lesson say matters most in a portfolio?",
+            options: [
+              "Having as many pieces as possible",
+              "A small set of your best work showing range",
+              "Only certificates",
+              "Only photos of your equipment",
+            ],
+            answer_index: 1,
+            explanation: "Quality and range beat quantity.",
+          },
+          {
+            prompt: "What should you write beside each portfolio piece?",
+            options: [
+              "Nothing",
+              "Invented view counts",
+              "Your phone model only",
+              "Who it was for, the goal, what you did and any honest result you may share",
+            ],
+            answer_index: 3,
+            explanation: "Context shows your role and thinking.",
+          },
+          {
+            prompt: "What should you do if you have no clients yet?",
+            options: [
+              "Wait until someone hires you",
+              "Use other creators' videos",
+              "Invent client names",
+              "Create real work with permission, such as for a family business, church or community event",
+            ],
+            answer_index: 3,
+            explanation: "Real projects, even unpaid, build genuine proof.",
+          },
+          {
+            prompt: "How should you tailor your portfolio when applying for a job?",
+            options: [
+              "Put the work that matches the advert first",
+              "Send the same thing to everyone",
+              "Hide your best work",
+              "Send only your CV",
+            ],
+            answer_index: 0,
+            explanation: "Matching work to the advert shows you fit the role.",
+          },
+          {
+            prompt: "What do many employers ask candidates to do?",
+            options: [
+              "Pay an application fee",
+              "Buy their products",
+              "Complete a test task such as editing sample footage",
+              "Bring their own studio",
+            ],
+            answer_index: 2,
+            explanation: "Test tasks check practical skill.",
+          },
+        ],
+        pass_threshold: 80,
       },
     },
   },
