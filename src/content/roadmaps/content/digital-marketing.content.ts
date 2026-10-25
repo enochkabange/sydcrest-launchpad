@@ -2252,6 +2252,466 @@ Issahaku sends his monthly report to the NGO he supports in Tamale. Goal: more p
         pass_threshold: 75,
       },
     },
+    earning: {
+      explanation_md: `Skills only change your life when someone pays you for them. Digital marketing has several doors into paid work, and you can start knocking on some of them before you feel "ready". This section helps you choose a path, collect proof of your skills and get your first paying work in Ghana or remotely.
+
+## Three main paths
+
+* **Employed in a company.** Many organisations hire marketing assistants, social media executives, content creators and communications officers: retailers, banks and fintechs, telecoms, hotels, schools, churches, NGOs and think tanks. You get a salary, colleagues to learn from and steady work.
+* **Agency work.** Marketing and advertising agencies manage campaigns for many clients at once. Agencies move fast and teach a lot, and they often hire juniors who can show real work.
+* **Freelancing.** You work for your own clients, often local businesses, for a monthly fee or per project. You choose your clients, but you also handle your own sales, agreements and invoices.
+
+Many people mix these. You might freelance for two shops in Tamale while applying for agency jobs, or keep one freelance client after you get hired.
+
+## What employers and clients look for
+
+Across Ghanaian and remote adverts for junior marketing roles, the same things keep appearing:
+
+* Evidence you can create good content and manage social pages.
+* Comfort with common free tools for design, video, spreadsheets and analytics.
+* Clear writing and good communication.
+* Some understanding of measuring results.
+* Reliability: showing up, meeting deadlines and being honest.
+
+Notice that most of this is about proof, not paper. A certificate helps, but a real page you grew, a real report you wrote and a reference from a real client often help more.
+
+## What this section covers
+
+* **A portfolio from real businesses:** turning your practice work into convincing case studies.
+* **Certificates, CVs and applications:** free platform courses, a CV that shows real work, and applying safely.
+* **Freelancing and retainers:** packaging services, agreements and getting paid.
+* **Joining a mentored cohort:** SydCrest's Delta Mentoring Program, if you want structure and mentors.
+
+## A small example
+
+Amina finished the earlier sections of this roadmap. She volunteers to run her church's youth WhatsApp and Facebook for three months and helps her aunt's shea butter business set up WhatsApp Business. She documents both as case studies, completes a free Skillshop course and applies for a social media assistant role at a Tamale hotel. In the interview she shows her phone: the church page, the content calendar and a simple report. The manager can see exactly what she can do.
+
+Your first paid work rarely arrives by waiting. It comes from doing real work, showing it and asking.`,
+      practice_task_md: `**Goal:** Choose your first path and make a 30 day plan to move toward paid work.
+
+**Steps:**
+1. Write which path interests you most right now: employed, agency or freelance. Give one reason.
+2. List the evidence you already have, such as pages you run, content you made or reports you wrote.
+3. List two gaps between what you have and what adverts or clients ask for.
+4. Write a 30 day plan with one action per week to close those gaps, such as volunteering for a church page or finishing a free course.
+5. Share the plan with a mentor or friend who will check on you.
+
+**Done looks like:** A short written plan with your chosen path, your evidence, two gaps and four weekly actions.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is described as a main path into digital marketing work?",
+            options: [
+              "Only government jobs",
+              "Agency work managing campaigns for many clients",
+              "Selling followers online",
+              "Waiting until you have a degree",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes employed roles, agency work and freelancing.",
+          },
+          {
+            prompt: "According to the lesson, what often helps more than a certificate?",
+            options: [
+              "Real work, such as a page you grew or a report you wrote",
+              "A long list of apps you have downloaded",
+              "Paying for a job placement",
+              "A very long CV",
+            ],
+            answer_index: 0,
+            explanation: "Proof of real work often helps more than paper alone.",
+          },
+          {
+            prompt: "What is one downside of freelancing mentioned in the lesson?",
+            options: [
+              "You can never choose your clients",
+              "You are not allowed to work for local businesses",
+              "You must work in an office",
+              "You handle your own sales, agreements and invoices",
+            ],
+            answer_index: 3,
+            explanation: "Freelancers manage their own business tasks as well as the marketing.",
+          },
+          {
+            prompt: "How did Amina show the hotel manager what she could do?",
+            options: [
+              "She brought a letter from a celebrity",
+              "She promised to work for free forever",
+              "She showed her real church page, content calendar and a report on her phone",
+              "She described skills she had not yet used",
+            ],
+            answer_index: 2,
+            explanation: "Real work shown on her phone made her skills clear.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    portfolio: {
+      explanation_md: `When an agency, company or client in Ghana decides whether to hire you, a portfolio does the talking. One Ghanaian digital marketer advert we studied asked directly for a portfolio of past campaigns, and many others ask for experience. A portfolio is how a beginner shows experience. It does not need to be fancy. It needs to be real, honest and easy to open on a phone.
+
+## Real beats mock
+
+Practice projects for made up businesses are fine while you learn, but real work convinces people more. Offer a short, clearly defined trial to two or three local businesses or organisations: a shop, a church, a school club, an NGO or a family business. For example, "I will set up your WhatsApp Business and run your Status for four weeks." Agree what you will do, what access you need, and that you can show the work in your portfolio.
+
+## The case study format
+
+For each project, tell a short story:
+
+* **The client.** Who they are, in one or two sentences.
+* **The problem.** What was not working. "Orders were getting lost in personal chats."
+* **What you did.** The specific actions: set up a catalogue, created quick replies, planned a calendar, made five videos.
+* **The results.** What changed, with honest numbers if you have them and the client agrees. "Messages answered within the hour instead of the next day." "Twelve orders came from Status in four weeks." If results were small, say so and explain what you learned.
+* **Evidence.** Before and after screenshots, sample posts, a short report.
+* **A quote.** A line from the client, used with their permission. Never invent one.
+
+## Where to put it
+
+Choose something free that opens well on a phone with little data:
+
+* A **Google Sites** page, which is also what the DMP cohort uses.
+* A **Google Drive folder** with one PDF per case study.
+* A **pinned post or highlight** on your own professional social account.
+
+Keep images small so pages load quickly. Put the link in your CV, your WhatsApp profile and your email signature.
+
+## Protect your clients
+
+Hide customers' names, numbers and messages in screenshots. Do not share private data such as sales figures unless the owner agrees. Your care with their information is part of what makes you hireable.
+
+## A worked example
+
+Wumpini's portfolio has three case studies: a Bolgatanga basket group's WhatsApp Business setup, a church youth conference campaign and a practice Google Ads plan clearly labelled as practice. Each has a short story, before and after screenshots and, for the real clients, a quote they agreed to. It lives on a simple Google Sites page that loads quickly on a phone.`,
+      practice_task_md: `**Goal:** Write your first portfolio case study and publish it somewhere free.
+
+**Steps:**
+1. Choose one piece of work from this roadmap, real if possible, such as a WhatsApp Business setup, a content calendar or a campaign plan.
+2. Write the case study: client, problem, what you did, results, evidence and a quote if the client agrees.
+3. Blur or crop out any customer names and numbers in your screenshots.
+4. Publish it on a free Google Sites page or as a small PDF in a shared Google Drive folder.
+5. Open the link on your phone with mobile data and check it loads quickly.
+
+**Done looks like:** A working link to one honest, phone friendly case study you can send to an employer or client.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson suggest offering a short trial to real local businesses?",
+            options: [
+              "Real work convinces employers and clients more than mock projects",
+              "Mock projects are not allowed in portfolios",
+              "Businesses must pay double for trials",
+              "Trials are required by law",
+            ],
+            answer_index: 0,
+            explanation: "Practice is fine while learning, but real work is more convincing.",
+          },
+          {
+            prompt: "Which part of a case study describes what was not working?",
+            options: ["The results", "The evidence", "The problem", "The quote"],
+            answer_index: 2,
+            explanation: "The problem explains what was not working before you started.",
+          },
+          {
+            prompt: "What should you do if a client has not agreed to give a quote?",
+            options: [
+              "Write one yourself and use their name",
+              "Copy a quote from another business",
+              "Ask a friend to pretend to be the client",
+              "Leave the quote out, because quotes must never be invented",
+            ],
+            answer_index: 3,
+            explanation: "Quotes are only used with permission and are never invented.",
+          },
+          {
+            prompt: "How should you handle customers' names and numbers in screenshots?",
+            options: [
+              "Hide or crop them out",
+              "Make them larger so the work looks real",
+              "Share them only with other marketers",
+              "Leave them as they are",
+            ],
+            answer_index: 0,
+            explanation: "Protecting client and customer data is part of being hireable.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "job-applications": {
+      explanation_md: `Once you have some real work to show, it is time to apply. Ghanaian employers advertise marketing roles on job boards such as Jobberman, on their own career pages, through recruiters and through word of mouth. Some ask for Google or Meta certifications. This lesson covers certificates, CVs, applications and staying safe from job scams.
+
+## Certificates worth your time
+
+Free courses from the platforms themselves are respected because they teach the tools employers use:
+
+* **Google Skillshop** offers free courses and free certifications in Google Ads (including Search) and Google Analytics, plus training on Google Business Profile.
+* **Meta Blueprint** offers free courses on Facebook, Instagram and Meta ads. Its formal certification exams usually charge a fee, so check before you register and do not feel you must pay to start.
+
+Add completed certifications to your CV with the month you earned them. They show initiative, but they work best alongside real portfolio work.
+
+## A CV that shows real work
+
+* **Keep it short.** One page is usually enough for a junior role.
+* **Start with a summary.** Two lines on what you do: "Social media and content marketer in Tamale who helps small businesses sell on WhatsApp and Facebook."
+* **Show results, honestly.** "Set up WhatsApp Business for a basket weaving group and created quick replies, cutting reply time from next day to under an hour."
+* **List tools.** Canva, CapCut, Meta Business Suite, Google Sheets, Google Analytics, whichever you really use.
+* **Link your portfolio.** Make it easy to click.
+
+## Applying well
+
+* **Read the advert carefully.** Match your CV and message to the skills it asks for, using your own words.
+* **Write a short cover message.** Say which role, why you fit, and point to one relevant case study.
+* **Prepare for practical tests.** Marketing interviews often ask you to write captions, critique a page or plan a small campaign. Practise with the tasks in this roadmap.
+* **Remote roles.** Some remote jobs welcome applicants from Ghana, others only hire in certain countries. Read the location rules, working hours and how you will be paid before applying.
+
+## Stay safe
+
+Never pay anyone to get a job, an interview or a "training kit" for a role. Ghanaian job boards warn about this regularly. Be careful with offers that seem too good to be true, ask for your MoMo PIN, or want your Ghana Card details before any proper interview.
+
+## A worked example
+
+Mariama finds an advert for a marketing assistant at a Tamale hotel asking for Canva, social media and email. She updates her CV summary, adds her Skillshop certificate, links a case study about a church newsletter she ran and writes a five line message pointing to it. In the interview she is asked to write three captions for the hotel on the spot, which she has practised.`,
+      practice_task_md: `**Goal:** Prepare a one page CV and one tailored application.
+
+**Steps:**
+1. Start a free Skillshop course related to your interests and note your progress.
+2. Write a one page CV in Google Docs with a two line summary, honest results, tools and a portfolio link.
+3. Find one real junior marketing or communications advert in Ghana or a remote role open to Ghana.
+4. List the skills it asks for and adjust your CV and summary to match, in your own words.
+5. Write a short cover message pointing to one case study.
+
+**Done looks like:** A one page CV, a tailored cover message and a note of which advert you targeted. Never pay any fee to apply.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does the lesson say about Meta Blueprint certification exams?",
+            options: [
+              "They are always free",
+              "They usually charge a fee, so check before registering",
+              "They are only for people in Europe",
+              "They replace the need for a portfolio",
+            ],
+            answer_index: 1,
+            explanation: "Meta's courses are free, but its formal certification exams usually charge a fee.",
+          },
+          {
+            prompt: "Which CV line best follows the lesson's advice?",
+            options: [
+              "Hardworking person who loves social media",
+              "Expert in all marketing tools",
+              "Set up WhatsApp Business for a basket group and cut reply time to under an hour",
+              "Available for any job",
+            ],
+            answer_index: 2,
+            explanation: "Specific, honest results show what you can do.",
+          },
+          {
+            prompt: "What should you check before applying for a remote role?",
+            options: [
+              "Location rules, working hours and how you will be paid",
+              "Whether you can pay a fee to skip the interview",
+              "Whether the company has many followers",
+              "Nothing, remote jobs are open to everyone",
+            ],
+            answer_index: 0,
+            explanation: "Some remote jobs only hire in certain countries, and hours and payment vary.",
+          },
+          {
+            prompt: "Someone offers you a marketing job if you first pay for a training kit. What should you do?",
+            options: [
+              "Pay quickly before someone else takes the job",
+              "Send your MoMo PIN so they can collect the fee",
+              "Pay half now and half later",
+              "Refuse, because you should never pay to get a job",
+            ],
+            answer_index: 3,
+            explanation: "Paying for a job or training kit is a common scam.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    freelancing: {
+      explanation_md: `Many small businesses in Ghana need marketing help but cannot afford a full time employee. That is a real opportunity for freelancers. A shea butter seller, a pharmacy shop, a guest house and a church can each pay for a few hours of your time a week. Freelancing well means treating it as a small business: clear services, clear agreements and getting paid on time.
+
+## Package your services
+
+Owners find it hard to buy "digital marketing". They find it easier to buy something specific. Create two or three packages, for example:
+
+* **Setup.** A one time job: WhatsApp Business profile, catalogue and quick replies, plus a Google Business Profile.
+* **Monthly content.** A set number of posts and Status updates per month, with replies to comments during agreed hours.
+* **Campaign.** A focused push for an event or season, with a plan, content, a small ad budget and a report.
+
+Price each package based on the time it takes and what is fair locally, and quote in cedis. Start modestly while you build a portfolio, but do not work for free for long.
+
+## Write a simple agreement
+
+Even with friends and family, write it down. A one page agreement, shared on WhatsApp or email and confirmed by both sides, should cover:
+
+* What you will do, and what is not included.
+* The fee, when it is due and how it is paid, such as MoMo or bank transfer.
+* A deposit before you start, especially for new clients.
+* Who pays ad spend, and that it is separate from your fee.
+* What access you need, and that the client keeps ownership of their accounts.
+* How either side can end the arrangement, such as two weeks' notice.
+
+## Retainers
+
+A retainer is a monthly fee for ongoing work. It gives you steady income and gives the client consistent marketing. Monthly reports are what keep retainers going, because they show the value of your work.
+
+## Invoices and records
+
+Send a simple invoice for every payment with your name, the client's name, the work, the amount in cedis and how to pay. Keep a sheet of all income and costs. As your income grows, learn about your tax responsibilities from the Ghana Revenue Authority.
+
+## Getting clients
+
+Many local clients find marketers by word of mouth. Do good work, then ask happy clients to recommend you. Show your portfolio on your WhatsApp Status, offer a free short check of a business's pages, and join local business groups.
+
+## A worked example
+
+Fuseini offers three packages to businesses in Tamale. A pharmacy shop takes the monthly content package. He sends a one page agreement covering twelve posts a month, replies during shop hours, a fee paid by MoMo on the first of each month, and ad spend paid directly by the shop. After three months of clear reports, the owner recommends him to a nearby guest house.`,
+      practice_task_md: `**Goal:** Create a simple service menu, agreement and invoice you could use with a first client.
+
+**Steps:**
+1. Write two or three service packages with a clear list of what each includes.
+2. Estimate the hours each package takes per month and set a fair price in cedis.
+3. Draft a one page agreement covering services, fee, deposit, ad spend, access and notice.
+4. Create an invoice template in Google Docs or Sheets.
+5. Ask a mentor or a business owner you know to read your packages and tell you what is unclear.
+
+**Done looks like:** A one page service menu, an agreement template and an invoice template, ready to adapt for a real client.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson suggest creating packages?",
+            options: [
+              "Owners find it easier to buy something specific",
+              "Packages remove the need for agreements",
+              "Packages must always be the same price",
+              "Clients are not allowed to buy single services",
+            ],
+            answer_index: 0,
+            explanation: "Specific packages are easier for owners to understand and buy.",
+          },
+          {
+            prompt: "What is a retainer?",
+            options: [
+              "A one time setup fee",
+              "A fine for late payment",
+              "A monthly fee for ongoing work",
+              "A free trial",
+            ],
+            answer_index: 2,
+            explanation: "A retainer is a regular monthly fee for continuing work.",
+          },
+          {
+            prompt: "Which of these should a freelance agreement include?",
+            options: [
+              "The client's MoMo PIN",
+              "A promise of guaranteed sales",
+              "Ownership of the client's accounts by the freelancer",
+              "Who pays the ad spend, separate from your fee",
+            ],
+            answer_index: 3,
+            explanation: "The agreement should separate ad spend from your fee and keep account ownership with the client.",
+          },
+          {
+            prompt: "What helps keep retainers going, according to the lesson?",
+            options: [
+              "Posting without telling the client",
+              "Monthly reports that show the value of your work",
+              "Raising prices every week",
+              "Avoiding contact with the client",
+            ],
+            answer_index: 1,
+            explanation: "Reports show the client what they are getting for their money.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "dmp-cohort": {
+      explanation_md: `Learning alone on a phone takes real discipline. Some people move faster with a group, a schedule and someone experienced checking their work. SydCrest runs the Delta Mentoring Program, or DMP, a twelve week cohort for digital skills and digital marketing. This roadmap and the DMP are designed to fit together: the roadmap gives you a broad beginner base, and the DMP adds structure, mentors and a specialisation.
+
+## How the twelve weeks are organised
+
+The program has three parts.
+
+**Weeks 1 to 6 are shared by everyone.** They cover computer and internet basics and safety, Google Drive, Docs, Slides and Sheets, online communication and creating a Facebook Page, an introduction to digital marketing channels and Google Business Profile, social media strategy and content, and analytics.
+
+**Weeks 7 to 9 are your specialisation.** You choose one of three:
+
+* **SEO and Content Marketing:** keyword research, on page SEO, backlinks, local SEO and a content strategy.
+* **Social Media Marketing:** ad targeting, video and storytelling, community building and influencer outreach.
+* **Google Ads (SEM):** Skillshop search ads training, keywords and ad copy, and optimisation and budgeting.
+
+**Weeks 10 to 12 bring it together.** You plan an integrated campaign across channels, build a portfolio on Google Sites with at least three pieces of work and get mentor feedback, then finish a capstone project in your specialisation, review a classmate's capstone and complete a final quiz for the program certificate.
+
+## How this roadmap connects
+
+Many lessons here line up with DMP weeks:
+
+* Channels, Google Business Profile and SEO basics prepare you for the shared weeks and the SEO specialisation.
+* Content, short video, community management and social ads prepare you for the Social Media specialisation.
+* Search ads and budgets prepare you for the Google Ads specialisation.
+* Campaign planning, reporting and portfolio lessons prepare you for weeks 10 to 12.
+
+If you are unsure which specialisation to pick, look back at which roadmap lessons you enjoyed most and did best on.
+
+## Is it right for you?
+
+The DMP suits you if you want deadlines, feedback from mentors, a group to learn with and a structured capstone. If you prefer to learn at your own pace, keep going with this roadmap; it stands on its own. Either way, the portfolio you build is what shows employers and clients what you can do.
+
+Places in each cohort are limited. Check SydCrest's site for when applications open, and mention the roadmap lessons you have completed in your application.
+
+## A small example
+
+Hawa completed most of this roadmap on her phone and enjoyed the search lessons most. She applies to the DMP and chooses the SEO and Content Marketing specialisation. Because she already understands keywords and Google Business Profile, she uses the specialisation weeks to go deeper and builds a capstone around a real Tamale guest house.`,
+      practice_task_md: `**Goal:** Decide whether the DMP suits you and which specialisation fits you best.
+
+**Steps:**
+1. List the roadmap lessons you have completed and the three you enjoyed most.
+2. Match those lessons to the three DMP specialisations: SEO and Content Marketing, Social Media Marketing, or Google Ads.
+3. Write two sentences on why you would choose that specialisation.
+4. Write two sentences on whether you prefer a structured cohort or learning at your own pace, and why.
+5. If you choose the cohort, gather two portfolio pieces to mention when applications open.
+
+**Done looks like:** A short note naming your preferred specialisation, your reasons and two pieces of work you could share in an application.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How long is the Delta Mentoring Program?",
+            options: ["Four weeks", "Twelve weeks", "Six months", "One year"],
+            answer_index: 1,
+            explanation: "The DMP is a twelve week cohort.",
+          },
+          {
+            prompt: "Which weeks of the DMP are your specialisation?",
+            options: ["Weeks 1 to 3", "Weeks 4 to 6", "Weeks 10 to 12", "Weeks 7 to 9"],
+            answer_index: 3,
+            explanation: "Weeks 7 to 9 fork by specialisation.",
+          },
+          {
+            prompt: "Which of these is one of the three DMP specialisations?",
+            options: [
+              "Google Ads (SEM)",
+              "Mobile app development",
+              "Data science",
+              "Graphic design for print",
+            ],
+            answer_index: 0,
+            explanation: "The specialisations are SEO and Content Marketing, Social Media Marketing, and Google Ads.",
+          },
+          {
+            prompt: "Where do DMP participants build their portfolio?",
+            options: ["On a paid website builder", "In a printed booklet", "On Google Sites", "On a USB drive"],
+            answer_index: 2,
+            explanation: "Weeks 10 to 12 include building a portfolio on Google Sites.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
