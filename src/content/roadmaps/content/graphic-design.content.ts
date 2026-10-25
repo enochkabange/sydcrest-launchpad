@@ -1260,7 +1260,7 @@ Funeral posters and programmes carry deep meaning for families. Spell every name
 
 ## A small example
 
-Abdul-Rahman designs for a youth association's health screening day in Salaga. For WhatsApp, he makes a portrait flyer with "Free Health Screening" in large letters, the date, time and venue grouped together, and the contact at the bottom. For the A3 poster he keeps the same design with slightly more detail. For the roadside banner he uses only "Free Health Screening", the date and the venue, very large. People driving past read the banner in a second, and the WhatsApp flyer is shared widely.`,
+Abdulai designs for a youth association's health screening day in Salaga. For WhatsApp, he makes a portrait flyer with "Free Health Screening" in large letters, the date, time and venue grouped together, and the contact at the bottom. For the A3 poster he keeps the same design with slightly more detail. For the roadside banner he uses only "Free Health Screening", the date and the venue, very large. People driving past read the banner in a second, and the WhatsApp flyer is shared widely.`,
       practice_task_md: `**Goal:** Design one event in three formats.
 
 **Steps:**
