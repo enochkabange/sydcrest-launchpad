@@ -80,7 +80,7 @@ and live in the workflow files.
    a later release once nothing uses them.
 2. **Never edit a migration that has shipped.** Add a new one with
    `supabase migration new <name>`.
-3. **Regenerate types after every migration**
+3. **Regenerate types after every migration** with the same CLI version as CI (pinned in the workflows)
    (`supabase gen types typescript --local > src/lib/supabase/database.types.ts`).
    CI fails if they are stale.
 4. **Row Level Security on every table**, policies in the same migration, and a
