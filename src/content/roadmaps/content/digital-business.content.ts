@@ -1339,6 +1339,407 @@ He considered a marketplace too, but after reading the seller terms and working 
         pass_threshold: 75,
       },
     },
+    "payments-and-delivery": {
+      explanation_md: `An online sale is only finished when the money is safely in your wallet and the product is safely in your customer's hands. These two moments are where trust is built or broken. A customer who pays and receives the right item on time will come back and tell friends. A seller who loses money to a scam, or a customer whose parcel goes missing, may never trust online buying again. Online merchants and e-commerce staff in Ghana spend much of their time on exactly these tasks: checking payments, processing orders and coordinating deliveries.
+
+## Mobile money is the main way to get paid
+
+Most small online sales in Ghana are paid with mobile money. It is fast and works on any phone, even without internet. But it also attracts fraudsters, who target busy sellers with fake messages and tricks. Learning to handle payments carefully protects your income.
+
+## Delivery is part of the product
+
+For the customer, delivery is part of what they are buying. A beautiful smock that arrives late, damaged or not at all is a bad product, whatever its quality. Clear delivery options, honest timing, good packing and a way to track the order all make your business look professional.
+
+## What this section covers
+
+* **Taking mobile money payments.** Setting up a business wallet, confirming payments properly and deciding when customers pay.
+* **Avoiding payment scams.** Recognising the common tricks and building habits that make you hard to cheat.
+* **Orders, packing and delivery.** Keeping an order list, packing safely and choosing delivery methods.
+
+## One simple order flow
+
+A clear routine stops mistakes. Here is a flow many small sellers use:
+
+1. **Confirm the order in writing:** item, quantity, price, delivery fee, total and delivery date.
+2. **Receive payment** by mobile money to your business wallet.
+3. **Check your own wallet** to make sure the money really arrived. Never rely only on a screenshot or a message the customer forwards.
+4. **Record the sale** with the transaction ID.
+5. **Pack and send** the item, and share the delivery details with the customer.
+6. **Follow up** to make sure it arrived safely.
+
+## A small example
+
+Sumaila sells phone accessories from Damongo to buyers across the north. In his first month, he lost money twice: once to a fake payment message, and once when a power bank broke in a parcel because he wrapped it only in a plastic bag.
+
+He set up the six step flow above. Now he always checks his own wallet before sending anything, wraps fragile items in cardboard and paper, sends customers the bus parcel waybill number and calls the next day to confirm arrival. He has not lost money since, and customers often mention his careful packing when they recommend him.
+
+The next three lessons go through each part of this flow in detail.`,
+      practice_task_md: `**Goal:** Write your own order flow.
+
+**Steps:**
+1. Copy the six step flow from the lesson into your notes.
+2. For each step, write how you will do it for your own business. For example, which wallet you will use and how you will deliver.
+3. Write the exact order confirmation message you would send a customer, with spaces for item, quantity, price, delivery fee, total and date.
+4. Save the confirmation message as a quick reply if you use WhatsApp Business.
+
+**Done looks like:** A personal six step order flow and a ready to use order confirmation template.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, when is an online sale finished?",
+            options: [
+              "When the customer says they will pay",
+              "When the money is safely in your wallet and the product is safely with the customer",
+              "When you post the product online",
+              "When the customer likes your post",
+            ],
+            answer_index: 1,
+            explanation: "The sale is finished when both payment and delivery are safely complete.",
+          },
+          {
+            prompt: "In the order flow, what should you do after receiving payment?",
+            options: [
+              "Send the item immediately based on the customer's screenshot",
+              "Ask the customer for their PIN to confirm",
+              "Check your own wallet to make sure the money really arrived",
+              "Delete the chat",
+            ],
+            answer_index: 2,
+            explanation: "Always confirm payment in your own wallet, not from a forwarded message or screenshot.",
+          },
+          {
+            prompt: "Why does the lesson say delivery is part of the product?",
+            options: [
+              "A good item that arrives late, damaged or not at all is a bad product for the customer",
+              "Delivery companies set your prices",
+              "Customers only care about delivery speed",
+              "Delivery is always free in Ghana",
+            ],
+            answer_index: 0,
+            explanation: "From the customer's view, a poor delivery spoils even a good product.",
+          },
+          {
+            prompt: "What changes did Sumaila make after losing money twice?",
+            options: [
+              "He stopped selling outside Damongo",
+              "He only accepted cash",
+              "He raised all his prices",
+              "He checked his own wallet before sending, packed fragile items carefully and followed up deliveries",
+            ],
+            answer_index: 3,
+            explanation: "He adopted the order flow: wallet checks, better packing, waybill numbers and follow up calls.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "mobile-money-payments": {
+      explanation_md: `Mobile money is how most Ghanaian customers pay small online sellers. Handling it well means more than sharing a number. It means getting paid into the right place, confirming every payment properly, keeping a record and agreeing clearly when the customer pays. Shop and sales adverts often mention cash handling and electronic payments, and online merchants list payment processing among their core tasks.
+
+## Use a business wallet
+
+Keep your business payments separate from your personal ones. There are two common ways:
+
+* **A second personal wallet used only for the business.** Simple to set up, though the name customers see is your own name.
+* **A merchant or business account** from your mobile money provider. These let customers pay a business name or a merchant number, which can look more professional. Providers set their own requirements and charges, which may include business registration, so ask your provider directly for current details.
+
+Whichever you use, give customers the exact wallet name they should see when they pay. If the name on their screen does not match, they will know something is wrong, which protects them from scammers pretending to be you.
+
+## Confirm every payment yourself
+
+When a customer says "I have paid", do not send anything yet. Check your own wallet: look at the official confirmation message from your provider and, if you are unsure, check your balance using your provider's official USSD code or app. The confirmation shows the amount, the sender and a **transaction ID**.
+
+Screenshots and forwarded messages can be faked. Only your own wallet tells the truth.
+
+## Record the transaction ID
+
+Write the transaction ID in your sales record next to the order. If there is ever a dispute, or you need to ask your provider about a payment, this number is what they will ask for.
+
+## When should the customer pay?
+
+Decide your rule and state it clearly before the customer orders:
+
+* **Full payment before delivery.** Safest for you, but some customers worry about paying first. Build trust with real photos, a clear business profile and quick replies.
+* **Part payment before, the rest on delivery.** A middle path, common for bigger or custom orders.
+* **Payment on delivery.** Customers like it, but you risk paying for delivery and getting nothing if the customer refuses or disappears. If you offer it, consider asking for the delivery fee in advance.
+
+## Charges
+
+Mobile money providers may charge fees for some transactions, and rules change. Include any charges you pay in your costs when you set prices, and check current charges with your provider rather than guessing.
+
+## A small example
+
+Amina sells sobolo by the crate to offices in Wa. She set up a second wallet just for the business. Her quick reply for payment says: "Please pay [total] to 024 000 0000. Name shown: Amina Sobolo Business. Send me the transaction ID after paying."
+
+When a customer pays, she checks her own wallet for the provider's confirmation, writes the ID in her Google Sheet next to the order, then sends the crate. For new office clients ordering large amounts, she takes half before delivery and half on arrival. Her records now match her wallet every week.`,
+      practice_task_md: `**Goal:** Set up a safe payment routine.
+
+**Steps:**
+1. Decide whether you will use a second wallet or ask your provider about a merchant account. Write down why.
+2. Write a payment quick reply that includes the amount, the number (use a made up number like 024 000 0000 for practice), the exact wallet name the customer will see, and a request for the transaction ID.
+3. Write your rule for when customers pay (before, part, or on delivery) in one or two sentences you could share with customers.
+4. Add a Transaction ID column to your sales record if it does not have one.
+
+**Done looks like:** A payment quick reply, a written payment rule and an updated sales record.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why should you tell customers the exact wallet name they will see when paying?",
+            options: [
+              "So they can follow you on social media",
+              "So they know something is wrong if the name does not match, which protects them from scammers",
+              "Because providers charge less for named wallets",
+              "So they can share it in public groups",
+            ],
+            answer_index: 1,
+            explanation: "A matching name reassures customers and helps them spot impostors.",
+          },
+          {
+            prompt: "When a customer says \"I have paid\", what should you do first?",
+            options: [
+              "Send the item right away",
+              "Ask them to send a screenshot and trust it",
+              "Check your own wallet for the provider's official confirmation",
+              "Ask for their PIN",
+            ],
+            answer_index: 2,
+            explanation: "Screenshots can be faked; only your own wallet confirms payment.",
+          },
+          {
+            prompt: "Why should you record the transaction ID?",
+            options: [
+              "Your provider will ask for it if there is a dispute or a question about a payment",
+              "It is your customer's password",
+              "It increases your wallet limit",
+              "It is needed to post on TikTok",
+            ],
+            answer_index: 0,
+            explanation: "The transaction ID identifies the payment if you need to raise a dispute.",
+          },
+          {
+            prompt: "What risk does the lesson mention with payment on delivery?",
+            options: [
+              "Customers always pay twice",
+              "It is not allowed in Ghana",
+              "It makes customers trust you less",
+              "You may pay for delivery and get nothing if the customer refuses or disappears",
+            ],
+            answer_index: 3,
+            explanation: "If a customer refuses, you lose the delivery cost and time.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "payment-scams": {
+      explanation_md: `Busy sellers are a favourite target for fraudsters, because they receive many payments and want to serve customers quickly. A single scam can wipe out a week's profit. The good news is that most scams follow a few patterns, and simple habits stop nearly all of them. Being careful with money is also something employers value in anyone who handles sales or payments.
+
+## The golden rule
+
+The Bank of Ghana has warned the public to protect mobile money PINs, passwords and one time codes, and it states that no legitimate bank, mobile money operator or payment provider will ask for them by phone, text, email or social media. So:
+
+* **Never share your PIN or any code sent to your phone**, with anyone, for any reason. Not a "customer", not someone claiming to be from your provider, not even a friend.
+
+## Common tricks
+
+**Fake payment message.** You receive a text that looks like a payment alert, but it comes from an ordinary phone number, not your provider. The scammer then asks you to send the goods. Defence: always check your balance or the official confirmation in your own wallet.
+
+**"I sent it by mistake, please send it back."** Someone claims to have sent money to you by error and begs you to return it. Often no money arrived, or the payment will be reversed later. Defence: check your balance yourself. Do not send money back on your own; ask the person to contact their provider's official customer service, which can handle genuine mistakes.
+
+**Fake screenshot.** A customer sends a screenshot of a "successful" payment. Screenshots are easy to edit. Defence: only trust your own wallet.
+
+**Caller pretending to be your provider.** Someone says your account will be blocked, or you have won a prize, and asks for your PIN or a code, or asks you to dial a number. Defence: hang up. Call your provider's official customer care number yourself.
+
+**Overpayment.** A "buyer" pays more than the price and asks you to send back the difference, then the original payment disappears. Defence: refuse, and wait until any payment is confirmed in your own wallet before discussing refunds.
+
+**Links that "confirm your order".** Messages with links that ask you to log in or enter details. Defence: do not click links from unknown senders.
+
+## Habits that protect you
+
+* Check your own wallet before releasing goods. Every time.
+* Use a strong PIN that is not your birthday or phone number.
+* Lock your phone, and do not let others use your mobile money menu.
+* Slow down when someone rushes you. Pressure is a warning sign.
+* If you are scammed, contact your provider's official customer service quickly and report to the police. Act fast, because quick reports give the best chance of help.
+
+## A small example
+
+Wumpini received a message: "You have received GHS 150.00 from Hawa. Your new balance is..." Minutes later a caller said, "I have paid, please send the bracelets now, I am in a hurry." The message had come from an ordinary mobile number, so Wumpini checked her balance using her provider's official code. Nothing had arrived. She told the caller politely that she would send the order once payment showed in her wallet. The caller hung up and never called back.`,
+      practice_task_md: `**Goal:** Build your personal anti scam checklist.
+
+**Steps:**
+1. Write the six common tricks from the lesson in your notes, each with your one line defence.
+2. Find and save your mobile money provider's official customer care number and the official way to check your balance.
+3. Check that your mobile money PIN is not your birthday or phone number, and change it if it is.
+4. Explain two of the tricks to a family member or friend who trades, in your own words.
+
+**Done looks like:** A saved checklist with six tricks and defences, your provider's official contact saved in your phone, and one conversation with someone else about staying safe.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What has the Bank of Ghana said about PINs and codes?",
+            options: [
+              "Customers should share them only with their mobile money agent",
+              "No legitimate bank, mobile money operator or payment provider will ask for them by phone, text, email or social media",
+              "PINs should be changed every day",
+              "Providers will call you to confirm your PIN once a year",
+            ],
+            answer_index: 1,
+            explanation: "The Bank of Ghana warning says no legitimate provider asks for PINs, passwords or codes.",
+          },
+          {
+            prompt: "Someone says they sent you money by mistake and asks you to send it back. What does the lesson advise?",
+            options: [
+              "Send it back immediately to be polite",
+              "Send back half to be safe",
+              "Check your balance yourself and ask them to contact their provider's official customer service",
+              "Give them your PIN so they can reverse it",
+            ],
+            answer_index: 2,
+            explanation: "Often no money arrived; let the provider handle genuine mistakes.",
+          },
+          {
+            prompt: "Why should you not trust a payment screenshot?",
+            options: [
+              "Screenshots are easy to edit",
+              "Screenshots cost data to open",
+              "Providers ban screenshots",
+              "Screenshots never show the amount",
+            ],
+            answer_index: 0,
+            explanation: "Only your own wallet proves money arrived.",
+          },
+          {
+            prompt: "What made Wumpini suspicious of the payment message?",
+            options: [
+              "It was written in capital letters",
+              "It mentioned the wrong product",
+              "It arrived at night",
+              "It came from an ordinary mobile number, not her provider",
+            ],
+            answer_index: 3,
+            explanation: "Real alerts come from the provider; she checked her balance and found nothing.",
+          },
+          {
+            prompt: "According to the lesson, what is a warning sign during a sale?",
+            options: [
+              "The customer asks about delivery",
+              "Someone rushes you and puts you under pressure",
+              "The customer asks for a size chart",
+              "The customer pays in full before delivery",
+            ],
+            answer_index: 1,
+            explanation: "Pressure to hurry is a common scam tactic, so slow down.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "orders-and-delivery": {
+      explanation_md: `Getting the right item to the right person, on time and in good condition, is what turns a one time buyer into a regular customer. E-commerce adverts in Ghana list order processing, order fulfilment and delivery coordination as core duties, so this is directly useful for jobs too.
+
+## Keep an order list
+
+When orders come in through several chats, it is easy to forget one. Keep a simple order list in a notebook or Google Sheet with these columns:
+
+* **Order date**
+* **Customer name and phone**
+* **Item and quantity**
+* **Total and payment status** (paid, part paid, pay on delivery)
+* **Delivery method and address**
+* **Status** (to pack, sent, delivered)
+* **Tracking details**, such as a waybill number or rider's phone
+
+Check the list every morning and every evening.
+
+## Pack to protect
+
+* **Fragile items** like glass jars or electronics need padding: cardboard, old newspaper or cloth, and a firm box.
+* **Liquids and creams** need sealed lids, tape around the lid, and a plastic bag in case of leaks.
+* **Food** must be clean, sealed and labelled, and sent by a fast route.
+* **Clothes** can go in a clean, sealed bag.
+
+Write the customer's name and phone number clearly on the parcel. Many sellers add a small thank you note with their WhatsApp number, which invites repeat orders.
+
+## Delivery options
+
+* **Pick up:** the customer collects from you or a safe meeting point. Cheapest, good for local buyers.
+* **Dispatch rider or okada delivery:** quick within a town. Agree the fee before the rider leaves.
+* **Bus or transport parcel services:** many intercity bus companies and lorry stations carry parcels between towns. The sender usually receives a waybill or receipt, and the customer collects at the destination station.
+* **Courier companies:** offer door to door delivery and tracking, usually at higher cost.
+
+Prices and services change, so ask locally and compare.
+
+## Addresses and clear information
+
+Ghana has a national digital address system, GhanaPostGPS, which gives each location a short code. Asking customers for their digital address, plus a landmark and phone number, makes delivery easier.
+
+Before the customer pays, tell them clearly: the delivery method, the fee, who pays it, and how long it should take. After sending, share the tracking details and follow up to confirm arrival.
+
+## A small example
+
+Hawa in Tamale received an order for two smocks from a customer in Ho. She added it to her order list, confirmed the total including the bus parcel fee, and checked that payment arrived in her wallet.
+
+She folded the smocks into a clean sealed bag with a thank you note, wrote the customer's name and phone on it, and took it to the bus station. She sent the customer a photo of the waybill and the expected arrival day, and marked the order as "sent". The next day she messaged to check it had been collected, then marked it "delivered". The customer later ordered three more for her brothers.`,
+      practice_task_md: `**Goal:** Build an order list and a delivery information message.
+
+**Steps:**
+1. Create an order list in Google Sheets or a notebook with the seven columns from the lesson.
+2. Enter three realistic orders: one local pick up, one dispatch rider delivery and one to another region.
+3. Find out (by asking at a station, or online) one intercity parcel option from your town, and write down how sending and collecting works.
+4. Write a short message you would send customers explaining your delivery options, fees and times.
+
+**Done looks like:** An order list with three sample orders, notes on one parcel option and a ready to send delivery message.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson recommend keeping an order list?",
+            options: [
+              "Because customers must sign it",
+              "Because with orders in many chats, it is easy to forget one",
+              "Because GRA needs it every day",
+              "Because delivery companies require it",
+            ],
+            answer_index: 1,
+            explanation: "An order list keeps every order visible so none is missed.",
+          },
+          {
+            prompt: "How should you pack creams or liquids?",
+            options: [
+              "In an open container so they can breathe",
+              "Wrapped only in newspaper",
+              "With sealed lids, tape around the lid and a plastic bag in case of leaks",
+              "Loose inside a cardboard box",
+            ],
+            answer_index: 2,
+            explanation: "Sealing and bagging prevents leaks from ruining the parcel.",
+          },
+          {
+            prompt: "What is GhanaPostGPS?",
+            options: [
+              "Ghana's national digital address system that gives each location a short code",
+              "A courier company",
+              "A mobile money service",
+              "A bus parcel service",
+            ],
+            answer_index: 0,
+            explanation: "GhanaPostGPS gives locations a digital address code that helps delivery.",
+          },
+          {
+            prompt: "What should you tell customers about delivery before they pay?",
+            options: [
+              "Nothing; explain after payment",
+              "Only the name of the rider",
+              "Only that delivery is fast",
+              "The method, the fee, who pays it and how long it should take",
+            ],
+            answer_index: 3,
+            explanation: "Clear delivery information before payment prevents disputes.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
     // NEXT
   },
 };
