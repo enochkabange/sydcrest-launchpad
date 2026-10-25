@@ -1516,6 +1516,769 @@ Sumaila makes a weekly price announcement for a cement and building materials sh
         pass_threshold: 75,
       },
     },
+    "client-work": {
+      explanation_md: `Many talented beginners struggle not because their designs are weak, but because the client relationship goes wrong. The client expected three logo ideas and got one. The designer did seven rounds of changes for free. A flyer used a photo that belonged to someone else. The final payment never came. Job adverts for designers in Ghana mention briefs, revisions, deadlines and client communication again and again, because these skills decide whether projects succeed.
+
+## What this section covers
+
+* **Briefs, feedback and revisions.** How to ask the right questions before you start, agree what is included, receive feedback calmly and stop endless changes.
+* **Copyright, fonts, images and AI tools.** What you may use from the internet, how licences for fonts and images work, who owns the finished design and how to use AI image tools honestly.
+* **Pricing, quotes and invoices in cedis.** How to work out a fair price, write a clear quote, take a deposit, send an invoice and keep records of mobile money payments.
+
+## Treat every job as a small project
+
+Even a simple flyer has a start, a middle and an end. At the start you agree what will be made, by when and for how much. In the middle you design, share drafts and collect feedback. At the end you deliver the right files, get final approval and get paid. Writing these steps down, even in a short WhatsApp message, protects both you and the client.
+
+## Communication habits that build trust
+
+* **Reply promptly,** even if only to say "Received, I will send a draft by Thursday."
+* **Confirm decisions in writing.** After a phone call, send a short summary message.
+* **Explain your choices.** "I made the date bigger because people need it first" sounds professional and helps clients accept your ideas.
+* **Warn early about problems.** If a photo is too small to print, say so before the deadline, not after.
+* **Be polite even when you disagree.** You can offer your advice and then respect the client's decision on their own business.
+
+## A small example
+
+Mariama, a freelance designer in Tamale, receives a WhatsApp voice note asking for "a flyer for our programme". Instead of starting immediately, she replies with five short questions: what is the event, who should come, what are the date, time and venue, where will it be shared, and when is it needed. She then sends a short message confirming the price, the deposit, two rounds of changes and delivery as a WhatsApp image and an A4 print PDF.
+
+The client agrees, pays the deposit by mobile money and sends clear details. Mariama delivers on time, the client asks for one small change, and the balance is paid the same day. Nothing about the design was unusual. What made the job smooth was clear communication from the first message, and that is exactly what this section teaches.`,
+      practice_task_md: `**Goal:** Write the messages that start and finish a small design job.
+
+**Steps:**
+1. Imagine a client asks you on WhatsApp for "a poster for our church programme".
+2. Write your first reply with five questions that will give you everything you need.
+3. Write a confirmation message that states what you will deliver, by when, the price in cedis, the deposit and how many rounds of changes are included.
+4. Write a delivery message that lists the files you are sending and asks for final approval and the balance.
+5. Read all three messages aloud and remove anything unclear or rude.
+
+**Done looks like:** Three short, polite, clear messages you can reuse as templates for real clients.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, why do many talented beginners struggle?",
+            options: [
+              "Their designs are always weak",
+              "The client relationship goes wrong, such as unclear expectations or unpaid work",
+              "They use too few colours",
+              "They live too far from Accra",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says problems often come from the client relationship, not the design.",
+          },
+          {
+            prompt: "What should you do after agreeing something with a client on a phone call?",
+            options: [
+              "Forget it until the deadline",
+              "Post it on social media",
+              "Ask the client to call again tomorrow",
+              "Send a short written summary message",
+            ],
+            answer_index: 3,
+            explanation: "Confirming decisions in writing protects both you and the client.",
+          },
+          {
+            prompt: "When should you tell a client that their photo is too small to print?",
+            options: [
+              "Early, before the deadline",
+              "After the job is printed",
+              "Never, the printer will fix it",
+              "Only if they ask",
+            ],
+            answer_index: 0,
+            explanation: "Warning early about problems avoids last minute disappointments.",
+          },
+          {
+            prompt: "What made Mariama's job go smoothly?",
+            options: [
+              "She used a very unusual design",
+              "She did unlimited changes for free",
+              "She asked clear questions and confirmed price, deposit, changes and files in writing",
+              "She started designing before asking anything",
+            ],
+            answer_index: 2,
+            explanation: "Clear communication from the first message made the project smooth.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "briefs-and-feedback": {
+      explanation_md: `A brief is the set of instructions for a design job. Agencies write formal briefs; local clients usually send a voice note or a few lines on WhatsApp. Either way, adverts for designers ask for people who can understand and interpret briefs, because a design that answers the wrong brief is wasted, however beautiful it looks.
+
+## Ask before you design
+
+If the client does not give you a full brief, build one by asking:
+
+* **What is it for?** The goal, such as getting people to an event or selling a product.
+* **Who is it for?** The audience, such as parents, youth or traders.
+* **What must it say?** The exact words, names, dates, prices and contacts. Ask the client to type them, so spelling comes from them.
+* **Where will it be used?** WhatsApp, print, a banner, or all of these, with sizes.
+* **What should it feel like?** Formal, joyful, calm, bold. Ask for examples they like and dislike.
+* **When is it needed?** The real deadline, including printing time.
+* **What is the budget?** So you can suggest what is realistic.
+
+Write the answers back to the client as a short summary and ask them to confirm. That summary is your brief.
+
+## Agree the scope
+
+Scope means exactly what is included. Before you start, agree:
+
+* how many first ideas, or concepts, you will show;
+* how many rounds of changes, or revisions, are included, for example two;
+* which files you will deliver;
+* what counts as extra work, such as a new size or a completely new idea, and that extra work costs extra.
+
+This is not about being difficult. It stops a one day flyer becoming a two week job.
+
+## Receiving feedback well
+
+Feedback is information, not an attack. When a client says "I don't like it", ask calm questions: "Is it the colours, the photo or the layout? What would you like people to notice first?" Vague feelings often hide a simple fix.
+
+Collect all changes in one list before you start editing, and confirm the list back. Making changes one message at a time leads to confusion and endless rounds.
+
+If a requested change will hurt the design, explain why in one or two sentences and offer an alternative. If the client still wants it, respect their choice; it is their business.
+
+## A small example
+
+A pastor in Bolgatanga asks Issahaku for a crusade poster. Issahaku asks the seven questions and sends back a summary, including two concepts and two rounds of changes. The pastor picks a concept, then sends four voice notes with changes over an evening. Issahaku collects them into one numbered list, confirms it and makes all the changes at once. When a third round arrives asking for a completely new background, he politely reminds the pastor that two rounds were included and quotes a small fee for more. The pastor agrees, and the relationship stays friendly.`,
+      practice_task_md: `**Goal:** Turn a vague request into a clear brief and handle feedback.
+
+**Steps:**
+1. Ask a friend or family member to play a client who wants "something for my business". Let them answer naturally.
+2. Ask them the seven brief questions from this lesson and write down their answers.
+3. Write a brief summary with scope: number of concepts, rounds of revisions, files to deliver and deadline.
+4. Make a quick first design. Ask for their feedback and collect all changes into one numbered list.
+5. Make the changes and note anything you would charge extra for.
+
+**Done looks like:** A written brief, a first design, a numbered change list and a revised design. Save the brief template for future clients.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why should you ask the client to type the exact words, names and contacts?",
+            options: [
+              "So the spelling comes from them",
+              "So they do the design for you",
+              "Because typing is faster than designing",
+              "So the file size is smaller",
+            ],
+            answer_index: 0,
+            explanation: "Asking the client to type the text means names and numbers come from them, reducing errors.",
+          },
+          {
+            prompt: "What does scope mean in a design job?",
+            options: [
+              "The colour of the brand",
+              "The printer's machine size",
+              "Exactly what is included, such as concepts, revisions and files",
+              "The client's location",
+            ],
+            answer_index: 2,
+            explanation: "Scope is what is included, agreed before you start.",
+          },
+          {
+            prompt: "What should you do when a client says \"I don't like it\"?",
+            options: [
+              "Start a completely new design immediately",
+              "Stop replying",
+              "Argue that the design is perfect",
+              "Ask calm questions about what exactly they want changed",
+            ],
+            answer_index: 3,
+            explanation: "Calm questions turn vague feelings into specific fixes.",
+          },
+          {
+            prompt: "How did Issahaku handle four voice notes of changes?",
+            options: [
+              "He ignored them",
+              "He collected them into one numbered list, confirmed it and made all the changes at once",
+              "He made each change separately as messages arrived",
+              "He charged a fee for each voice note",
+            ],
+            answer_index: 1,
+            explanation: "Collecting changes into one confirmed list avoids confusion.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "copyright-and-ethics": {
+      explanation_md: `It is easy to find any image, font or logo online in seconds. That does not mean you are allowed to use it. Using other people's work without permission can embarrass your client, get social media posts taken down and damage your reputation. Professional designers know the basic rules, and employers trust them more because of it.
+
+## Copyright in simple terms
+
+Copyright protects creative work such as photos, illustrations, designs and fonts. In Ghana, as in most countries, copyright usually exists as soon as the work is created; it does not need to be registered. So assume an image or design online belongs to someone unless its licence clearly says how you may use it.
+
+## Images
+
+Safer sources are your own photos, photos the client owns, free stock libraries with a clear licence, and Creative Commons images used according to their terms. Creative Commons licences have short codes: BY means you must give credit, NC means non commercial use only, and ND means no changes. An NC image is not suitable for a business advert.
+
+## Fonts
+
+Fonts are software and come with licences too. Fonts from libraries such as Google Fonts are released under open licences, such as the SIL Open Font License, that allow commercial use. Many fonts on free download sites are "personal use only" or demos. Check before using a font for a paying client.
+
+## Logos and brands
+
+Never copy another business's logo or make one that looks confusingly similar. Logos can be protected as trademarks, and in Ghana trademarks are registered through the Registrar General's Department. A logo that copies a famous brand can force your client to rebrand, wasting their money.
+
+## Who owns the final design?
+
+As the designer, you may hold the copyright in what you create unless you agree otherwise. Clients usually expect to own their logo. Agree in writing that the client gets full rights to the final design once paid in full, and say whether editable source files are included. Ask if you may show the work in your portfolio.
+
+## AI image tools
+
+AI tools can generate images and ideas quickly, and some adverts mention them. Use them honestly:
+
+* Read the tool's terms on commercial use.
+* Do not ask a tool to copy a living artist's style or another brand's logo.
+* Do not present AI images as real photos of a client's product, staff or premises.
+* Check AI made logos carefully, because they may resemble existing marks, and the law on owning AI output is still unsettled in many countries.
+
+## Your own work
+
+Studying great designers is good. Copying their portfolio pieces and presenting them as your own is dishonest, and in a small industry it is often discovered.
+
+## A small example
+
+Fatima is asked by a shop owner in Wa to "use the same logo as that big supermarket, just change the name". She explains, politely, that this could break trademark rules and force a costly change later, and offers three original ideas instead. She uses a Google font, the owner's own shop photos and a short written agreement giving the owner full rights once paid. The owner ends up proud of a logo that is truly theirs.`,
+      practice_task_md: `**Goal:** Build a safe resource kit and a simple rights agreement.
+
+**Steps:**
+1. Find three fonts with open licences that allow commercial use. Note each font name and its licence.
+2. Find three images under a clear free licence or Creative Commons licence. Note the licence and whether credit is required.
+3. Write a short rights note you could send to a logo client: who owns the design after full payment, whether source files are included and whether you may show it in your portfolio.
+4. Check one design you made earlier. List every font and image in it and confirm you were allowed to use each.
+
+**Done looks like:** A list of six licensed resources, a three line rights note and a checked design.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "When does copyright usually exist for a creative work in Ghana and most countries?",
+            options: [
+              "As soon as the work is created",
+              "Only after it is registered",
+              "Only if it has a watermark",
+              "Only after it has been sold",
+            ],
+            answer_index: 0,
+            explanation: "Copyright usually exists from creation without registration.",
+          },
+          {
+            prompt: "What does NC mean in a Creative Commons licence?",
+            options: [
+              "No colours allowed",
+              "New copyright",
+              "Non commercial use only",
+              "No credit needed",
+            ],
+            answer_index: 2,
+            explanation: "NC means non commercial, so the image is not suitable for a business advert.",
+          },
+          {
+            prompt: "What should you agree in writing about a client's logo?",
+            options: [
+              "That you can resell it to other clients",
+              "Nothing; agreements are unnecessary",
+              "That the client must never show it",
+              "That the client gets full rights once paid in full, and whether source files are included",
+            ],
+            answer_index: 3,
+            explanation: "A written agreement on rights, source files and portfolio use avoids disputes.",
+          },
+          {
+            prompt: "Which use of AI image tools does the lesson warn against?",
+            options: [
+              "Reading the tool's terms on commercial use",
+              "Presenting AI images as real photos of a client's product",
+              "Checking AI logos for similarity to existing marks",
+              "Using AI to explore early ideas",
+            ],
+            answer_index: 1,
+            explanation: "AI images must not be passed off as real photos of a client's product, staff or premises.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "pricing-and-invoicing": {
+      explanation_md: `Many new designers in Ghana undercharge, forget their costs or start work without any money upfront, then end up working for free. Pricing well, quoting clearly and keeping records are what turn design from a hobby into a living. Freelance and print shop designers handle money daily, and even employed designers benefit from understanding what their time is worth.
+
+## Know your costs
+
+Before you set a price, list what each job costs you: data, electricity or charging, transport to meet clients or printers, any paid tools, and printing samples. Then think about your time. A logo is not ten minutes of clicking; it includes questions, sketching, building, revisions and delivering files.
+
+## Three ways to price
+
+* **By time:** decide what an hour of your work is worth and estimate the hours.
+* **By project:** a fixed price for a defined job, such as one flyer with two rounds of changes. Most local clients prefer this.
+* **Packages:** a bundle, such as a logo plus a one page brand guide plus five social media templates.
+
+To find a fair range, ask designers and print shops near you what they charge for common jobs, and compare. Prices differ a lot between towns, client types and experience, so there is no single right number.
+
+## Example calculation
+
+These numbers are made up for practice only. Say Wumpini estimates a flyer takes 3 hours including changes, and she decides her time is worth GH₵ 30 an hour while she is learning. Her data and transport for the job cost about GH₵ 15. So 3 times 30 is 90, plus 15 is 105. She quotes GH₵ 110 to keep things simple.
+
+## Write a clear quote
+
+A quote, sent before work starts, should state:
+
+* what you will deliver, including sizes and file types;
+* how many concepts and rounds of revisions are included;
+* the deadline;
+* the price in cedis and what extra work costs;
+* the deposit required before you start, such as half.
+
+The deposit protects you if the client disappears, and shows that they are serious.
+
+## Send an invoice
+
+When the work is done, send a simple invoice. Include your name or business name, the client's name, an invoice number such as INV 001, the date, each item with its price, the total, the deposit already paid, the balance due, the due date and how to pay, such as the name on your mobile money account. Send files in full quality after the balance is paid, or send a watermarked preview first if you are unsure about a client.
+
+## Keep records
+
+Write down every payment: the date, client, amount and the mobile money transaction ID. A simple spreadsheet or notebook is enough. Records help you see which work earns most, settle disagreements and, as your business grows, prepare for registering your business and understanding your tax obligations.
+
+## A small example
+
+Salifu designs business cards for a mechanic in Damongo. He sends a quote on WhatsApp: one design, two rounds of changes, a print PDF, delivery in two days, half paid upfront. The mechanic pays the deposit by mobile money, Salifu records the transaction ID, delivers, sends an invoice for the balance and receives it the same day. Clear steps meant no awkward arguments.`,
+      practice_task_md: `**Goal:** Create a reusable quote and invoice for your design work.
+
+**Steps:**
+1. List your real costs for a typical job: data, power, transport and any tools.
+2. Ask two designers or print shops near you what they charge for a flyer and a logo. Note the range.
+3. Using a free document or spreadsheet app, make a quote template with deliverables, revisions, deadline, price in cedis, extra work rates and deposit.
+4. Make an invoice template with your name, client, invoice number, date, items, total, deposit paid, balance and payment details. Use made up example details only.
+5. Start a simple payment record with columns for date, client, amount and transaction ID.
+
+**Done looks like:** A quote template, an invoice template and an empty payment record, ready for your first paying client.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which pricing method does the lesson say most local clients prefer?",
+            options: [
+              "By the minute",
+              "Free work in exchange for exposure",
+              "Paying only after many months",
+              "A fixed price for a defined project",
+            ],
+            answer_index: 3,
+            explanation: "Most local clients prefer a fixed price for a defined job.",
+          },
+          {
+            prompt: "In the example, why does Wumpini's quote include GH₵ 15 on top of her time?",
+            options: [
+              "To cover her data and transport costs for the job",
+              "As a tip for herself",
+              "Because the client asked for it",
+              "To pay the printer for 500 copies",
+            ],
+            answer_index: 0,
+            explanation: "She added her job costs for data and transport to the value of her time.",
+          },
+          {
+            prompt: "Why ask for a deposit before starting work?",
+            options: [
+              "Because it is required by every app",
+              "It protects you if the client disappears and shows they are serious",
+              "So you can skip the invoice",
+              "To make the design faster",
+            ],
+            answer_index: 1,
+            explanation: "A deposit protects your time and confirms the client's commitment.",
+          },
+          {
+            prompt: "Which detail should you record for every mobile money payment?",
+            options: [
+              "The client's favourite colour",
+              "The weather that day",
+              "The transaction ID, with the date, client and amount",
+              "The font used in the design",
+            ],
+            answer_index: 2,
+            explanation: "Records with date, client, amount and transaction ID settle disagreements and show what earns most.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "getting-hired": {
+      explanation_md: `For most design jobs in Ghana, the first thing an employer or client asks for is not a certificate but your portfolio. Adverts from print shops, agencies, NGOs and companies regularly ask candidates to attach or link to samples of their work, and some even say a strong portfolio can make up for missing qualifications. This section helps you turn what you have learned into work that pays.
+
+## Three ways designers earn
+
+* **Employment.** A full time role at a print shop, branding company, agency, NGO or in house marketing team. You get regular pay and learn from colleagues, but many advertised roles are in Accra and Tema.
+* **Freelancing.** Working for your own clients: shops, churches, schools, event planners and, later, clients abroad. You choose your work and can start from anywhere, including the northern regions, but you must find clients and manage money yourself.
+* **A mix.** Many designers work for a print shop or company and take freelance jobs on the side, or freelance while applying for roles.
+
+There is no single right route. Start where you are and use each project to build evidence.
+
+## What this section covers
+
+* **Building a design portfolio.** Choosing your best work, showing your thinking and presenting it in a light format that opens easily on a phone.
+* **Freelancing for local and remote clients.** Finding first clients nearby, growing through referrals, understanding remote work and avoiding scams.
+* **Design jobs and applications.** Where to look, how to apply with a short message that points to your portfolio, and how to handle design tests and interviews.
+
+## Honest evidence beats big claims
+
+Employers and clients can see your work, so let it speak. Real projects for local businesses, churches or NGOs are excellent evidence, even if they were small or paid little. Personal practice projects are fine too, as long as you label them honestly as practice or concept work. Never claim a client you did not work for or present someone else's design as yours.
+
+## Preparing for a programme
+
+Several training programmes in Ghana run graphic design courses, many in classroom cohorts in big cities. If you plan to apply to one, working through this roadmap and arriving with a small portfolio can help you get more from it. If you cannot join one, this roadmap plus steady practice and real projects is a genuine route on its own.
+
+## A small example
+
+Ayishetu in Wa finished the earlier lessons and had ten practice designs. She offered to design a flyer for her church's youth week and a price list for a neighbour's provisions shop at a small fee. She asked both for permission to show the work. With those two real projects and her best practice pieces she built a phone friendly PDF portfolio. She used it to win two more local clients and to apply for a junior role she saw advertised.`,
+      practice_task_md: `**Goal:** Plan your route into paid design work.
+
+**Steps:**
+1. Write down which route fits you best right now: employment, freelancing or a mix, and why.
+2. List every design you have made so far in this roadmap. Mark the three you are most proud of.
+3. Name two real people or organisations near you who could use a design, such as a church, school, shop or association.
+4. Write a short, polite message offering to help one of them with a specific design, and ask whether you may show the result in your portfolio.
+
+**Done looks like:** A chosen route, a shortlist of your three best pieces and a ready to send message to a real potential client.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does the lesson say employers and clients usually ask for first?",
+            options: [
+              "Your phone model",
+              "Your portfolio",
+              "A list of every app you have installed",
+              "Your home address",
+            ],
+            answer_index: 1,
+            explanation: "For most design jobs, the portfolio is the first thing employers and clients ask for.",
+          },
+          {
+            prompt: "What is one advantage of freelancing mentioned in the lesson?",
+            options: [
+              "You never need to find clients",
+              "Money is managed for you",
+              "You can start from anywhere, including the northern regions",
+              "It always pays more than employment",
+            ],
+            answer_index: 2,
+            explanation: "Freelancers can start from anywhere but must find clients and manage money.",
+          },
+          {
+            prompt: "How should you present personal practice projects in a portfolio?",
+            options: [
+              "Label them honestly as practice or concept work",
+              "Claim they were for famous clients",
+              "Hide them completely",
+              "Put another designer's name on them",
+            ],
+            answer_index: 0,
+            explanation: "Practice projects are fine if they are honestly labelled.",
+          },
+          {
+            prompt: "What did Ayishetu do before showing her church and shop designs in her portfolio?",
+            options: [
+              "She changed the clients' names",
+              "She added fake reviews",
+              "She removed her own name",
+              "She asked both clients for permission",
+            ],
+            answer_index: 3,
+            explanation: "Asking permission before showing client work is professional and honest.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    portfolio: {
+      explanation_md: `Your portfolio is your most important job tool as a designer. Almost every design advert asks for one, and clients decide whether to trust you by looking at it. A small, well chosen portfolio beats a big messy one every time.
+
+## Choose carefully
+
+* **Pick eight to twelve pieces.** Fewer strong pieces are better than many average ones. One weak piece makes reviewers doubt the rest.
+* **Show range that matches the jobs you want.** For example, a logo with its brand guide, social media templates, a flyer and banner set, a print piece and a photo edit. If you want print shop work, show print. If you want agency work, show campaigns and social content.
+* **Put your best piece first and a strong piece last.** Many reviewers only look at the first few.
+
+## Show your thinking
+
+Employers want to know how you work, not just what the final image looks like. For your strongest two or three projects, add a short case study:
+
+* **The brief:** who the client was and what they needed, in one or two lines.
+* **Your process:** sketches, early ideas or the brand questions you asked.
+* **The result:** the final design shown in use, such as the banner on a building or the post on a phone screen.
+* **The outcome, honestly:** what the client said or what happened, without invented numbers.
+
+Before and after pairs work well too, such as a crowded flyer you redesigned.
+
+## Be honest
+
+Label practice or concept projects clearly, such as "Concept project: logo for a made up juice brand." Only show client work with permission. Mock ups, which place your design onto a photo of a sign, shirt or phone, are useful to show work in context, but do not use them to suggest a client or a printed job that never existed.
+
+## Make it light and phone friendly
+
+Many clients and employers will open your portfolio on a phone, sometimes on limited data.
+
+* A **PDF portfolio** of around ten pages, with images compressed so the file stays small, is easy to send on WhatsApp or email.
+* A **free online portfolio** on a design sharing site or a simple page gives you one link to share. Check that it loads well on a phone.
+* Keep your name, phone number, email and town on the first and last page.
+
+Update your portfolio every few months, replacing weaker pieces as you improve.
+
+## A small example
+
+Alhassan's first portfolio had thirty designs, including some copied from tutorials. A mentor helped him cut it to ten: two real logo projects with brand guides, a church event set across WhatsApp, A4 and banner, a shop's social media templates, a redesigned chop bar menu shown before and after, and two clearly labelled concept projects. He added short case studies to the logos and compressed the PDF so it sent quickly on WhatsApp. Clients now understand his work in a minute, and he gets more replies.`,
+      practice_task_md: `**Goal:** Build a first phone friendly portfolio.
+
+**Steps:**
+1. Gather every design you made in this roadmap and any real client work you have permission to show.
+2. Choose eight to twelve pieces that match the jobs you want. Put your best first.
+3. Write short case studies for your top two projects: brief, process, result and honest outcome.
+4. Label all practice projects as concepts.
+5. Build a PDF in a free design app with a cover page, your pieces and a contact page. Compress images so the file is small enough to send easily on WhatsApp.
+6. Send it to one person you trust and ask what they remember after one minute.
+
+**Done looks like:** A small PDF portfolio of eight to twelve honest, labelled pieces with two case studies and your contact details.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How many pieces does the lesson recommend for a portfolio?",
+            options: ["Two or three", "Eight to twelve", "At least fifty", "Every design you have ever made"],
+            answer_index: 1,
+            explanation: "Eight to twelve strong pieces are better than many average ones.",
+          },
+          {
+            prompt: "What should a short case study include?",
+            options: [
+              "Only the final image",
+              "A list of every app you know",
+              "Invented sales numbers",
+              "The brief, your process, the result and an honest outcome",
+            ],
+            answer_index: 3,
+            explanation: "Case studies show your thinking through brief, process, result and honest outcome.",
+          },
+          {
+            prompt: "How should you use mock ups in a portfolio?",
+            options: [
+              "To show work in context, without suggesting a client or printed job that never existed",
+              "To pretend you worked for a famous brand",
+              "Instead of any real designs",
+              "Only for photos of yourself",
+            ],
+            answer_index: 0,
+            explanation: "Mock ups show context but must not imply fake clients or jobs.",
+          },
+          {
+            prompt: "Why should a PDF portfolio be compressed to a small file size?",
+            options: [
+              "Small files look sharper",
+              "Printers require small files",
+              "Many people open it on a phone, sometimes on limited data",
+              "WhatsApp only accepts portfolios in black and white",
+            ],
+            answer_index: 2,
+            explanation: "A small file opens quickly on phones and limited data.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    freelancing: {
+      explanation_md: `Freelancing is one of the most realistic ways to start earning from design, especially outside Accra. Shops, churches, mosques, schools, associations, event planners and NGOs in every town need flyers, logos and social media graphics, and many of them prefer to work with someone local they can meet.
+
+## Start close to home
+
+* **People you already know.** Your church or mosque, school, family businesses, a friend's event. Do one or two jobs at a fair price and ask for permission to show them.
+* **Print shops.** Many print shops have more design requests than they can handle. Offering to design for their customers can bring steady work, either at their shop or remotely.
+* **Event planners, photographers and decorators.** They often need flyers, programmes and social graphics for their clients.
+* **Associations and NGOs.** Farmer groups, youth groups and local NGOs need reports, posters and certificates.
+
+Show samples on your phone when you visit. A good printed business card and a WhatsApp Business profile with a catalogue of your work make it easy for people to remember and contact you.
+
+## Grow through referrals
+
+Most local freelance work comes from people recommending you. Deliver on time, communicate clearly, keep your prices and terms consistent and ask happy clients to tell others. A short, honest message from a real client, shared with their permission, is better than any advert.
+
+## Remote work
+
+Remote design work for clients abroad exists, through online freelance marketplaces, remote job boards and direct contacts. Be realistic:
+
+* Many remote roles ask for some experience, a strong portfolio and good written English.
+* Most need a laptop and a stable internet connection, which can be hard on prepaid data alone.
+* Some platforms or employers only accept people from certain countries. Read the eligibility rules carefully.
+* Check how payment will reach you in Ghana before you start.
+
+Many designers build skills and a portfolio with local clients first, then add remote work.
+
+## Avoid scams
+
+* Never pay money to get a job or "unlock" a client.
+* Be careful of strangers who send more money than agreed and ask you to send back the difference.
+* Do not do large amounts of free "test" work. A short test is normal; a full campaign for free is not.
+* Get a deposit before starting work for new clients.
+
+## Look after yourself
+
+Freelancing means irregular income. Keep a simple record of earnings and costs, save something from good months for slow ones and keep learning so you can offer more.
+
+## A small example
+
+Hawa in Tamale started by designing her church's harvest flyer and her aunt's shea butter labels. She asked a print shop near the market if she could design for their walk in customers, and they began sending her jobs by WhatsApp. After a year of local work and a stronger portfolio, she also started taking occasional remote social media design jobs, using a laptop at a community centre on busy weeks.`,
+      practice_task_md: `**Goal:** Prepare to find your first freelance clients.
+
+**Steps:**
+1. List ten possible local clients: churches, mosques, schools, shops, print shops, event planners or associations.
+2. Choose three and write one sentence each on a design they could use, such as a new price list or event flyer.
+3. Set up a simple work profile on WhatsApp Business or a similar app, with a short description and three of your best designs.
+4. Write a short, polite message or visit plan for the print shop nearest to you, offering your design help.
+5. Write down three scam warning signs from this lesson to keep on your phone.
+
+**Done looks like:** A list of ten prospects, three specific ideas, a work profile with samples, an outreach message and your scam checklist.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why might print shops be a good source of freelance work?",
+            options: [
+              "Many have more design requests than they can handle",
+              "They never need designers",
+              "They only print photos",
+              "They pay designers to stay away",
+            ],
+            answer_index: 0,
+            explanation: "Print shops often have more design requests than they can handle.",
+          },
+          {
+            prompt: "Where does the lesson say most local freelance work comes from?",
+            options: [
+              "Paid billboards",
+              "Television adverts",
+              "Referrals from people who recommend you",
+              "Random cold calls abroad",
+            ],
+            answer_index: 2,
+            explanation: "Most local freelance work comes from recommendations by satisfied clients.",
+          },
+          {
+            prompt: "What does the lesson say most remote design roles need?",
+            options: [
+              "Nothing but a phone and no portfolio",
+              "Payment of a joining fee",
+              "A degree from abroad",
+              "A laptop, a stable internet connection, a portfolio and good written English",
+            ],
+            answer_index: 3,
+            explanation: "Remote roles usually need a laptop, stable internet, a strong portfolio and written English.",
+          },
+          {
+            prompt: "Which of these is a scam warning sign?",
+            options: [
+              "A client who pays a deposit",
+              "Someone who sends more money than agreed and asks you to send back the difference",
+              "A client who gives a clear brief",
+              "A short design test for a job",
+            ],
+            answer_index: 1,
+            explanation: "Overpayment with a request to refund the difference is a common scam.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "job-search": {
+      explanation_md: `If you want a design job with regular pay, it helps to know where roles appear and what employers look for. Ghanaian design adverts come from print shops, branding and souvenir companies, advertising agencies, in house marketing teams at companies such as real estate firms, car dealers and media businesses, and NGOs and schools.
+
+## Where to look
+
+* **Job sites.** Ghanaian job sites have Creative and Design categories. Search for titles such as Graphic Designer, Junior Graphic Designer, Visual Designer, Multimedia Designer and Creative Designer.
+* **Company and NGO websites.** Organisations often post roles on their own careers pages.
+* **Print shops and agencies directly.** Many smaller employers never advertise. Visiting with your portfolio on your phone, or sending a short message, can work.
+* **Your network.** Tell teachers, church members, friends and former clients you are looking.
+
+Many advertised design roles are based in Accra and Tema. In the northern regions, design work more often comes through print shops, churches, schools, NGOs and freelance clients, so a mix of local work and remote applications can make sense.
+
+## Read the advert carefully
+
+Note the tools, tasks and experience the advert asks for. Many adverts ask for a degree, diploma or a year or two of experience, but also say a strong portfolio matters. If you meet most requirements and your portfolio matches the work, apply. Adapt your portfolio to show the kind of work the employer does: print pieces for a print shop, social content for an agency.
+
+## A short application
+
+Keep it simple and specific:
+
+* a few lines saying which role you want and why you fit, mentioning one or two relevant projects;
+* a link to your portfolio or a small PDF attached;
+* a one page CV with your skills, tools, projects and contact details.
+
+Check spelling carefully. A designer's application with typos makes employers doubt their attention to detail.
+
+## Design tests and interviews
+
+Many employers give a short design test, such as a flyer or social post from a brief, sometimes with a time limit. Read the brief twice, ask questions if anything is unclear, apply the principles and deliver the correct file on time. In interviews, expect to walk through your portfolio. Explain the brief, your choices and what you would improve. Employers want to see how you think and how you take feedback.
+
+## Stay safe
+
+Genuine employers do not ask you to pay to apply, to attend an interview or to start a job. If anyone asks for money, stop and check with the job site or the organisation directly.
+
+## A small example
+
+Sumaila in Tamale saw a junior designer role at a print and branding company. The advert asked for flyers, banners and print file preparation. He chose six portfolio pieces showing print work, including a flyer with bleed, a banner and a brand guide, and wrote a five line message linking to his PDF. He was asked to do a one hour test: a church anniversary flyer. He asked about the print size first, used a clear hierarchy and delivered a print PDF with bleed. The interviewer said asking about the size showed he understood real print work.`,
+      practice_task_md: `**Goal:** Prepare a complete application for one real or realistic design role.
+
+**Steps:**
+1. Search a Ghanaian job site's Creative and Design category and pick one design role. Note the tasks, tools and experience it lists, without copying the advert.
+2. Choose five or six portfolio pieces that match those tasks.
+3. Write a one page CV listing your design skills, free tools you use, two or three projects and your contact details.
+4. Write an application message of no more than six lines that links to your portfolio.
+5. Give yourself a one hour practice test: design a flyer for a made up event from a short brief, then review it against the principles.
+
+**Done looks like:** A tailored portfolio selection, a one page CV, a short application message and a timed practice test design.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which job titles does the lesson suggest searching for?",
+            options: [
+              "Accountant and Auditor",
+              "Graphic Designer, Junior Graphic Designer, Visual Designer, Multimedia Designer and Creative Designer",
+              "Driver and Dispatch Rider",
+              "Nurse and Pharmacist",
+            ],
+            answer_index: 1,
+            explanation: "These are common titles for design roles on job sites.",
+          },
+          {
+            prompt: "According to the lesson, where does design work in the northern regions more often come from?",
+            options: [
+              "Print shops, churches, schools, NGOs and freelance clients",
+              "Only large Accra agencies",
+              "Government lotteries",
+              "Overseas embassies only",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says northern design work often comes through local organisations and freelance clients.",
+          },
+          {
+            prompt: "Why are typos in a designer's application especially harmful?",
+            options: [
+              "Job sites delete applications with typos",
+              "Typos make files larger",
+              "They make employers doubt your attention to detail",
+              "Employers only read the first word",
+            ],
+            answer_index: 2,
+            explanation: "Designers must catch errors in client work, so typos raise doubts.",
+          },
+          {
+            prompt: "What should you do if someone asks you to pay money to get a design job?",
+            options: [
+              "Pay quickly before someone else does",
+              "Pay half now and half later",
+              "Ask a friend to pay for you",
+              "Stop and check with the job site or organisation directly",
+            ],
+            answer_index: 3,
+            explanation: "Genuine employers do not ask for payment to apply or start a job.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
