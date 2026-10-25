@@ -1340,7 +1340,7 @@ He considered a marketplace too, but after reading the seller terms and working 
       },
     },
     "payments-and-delivery": {
-      explanation_md: `An online sale is only finished when the money is safely in your wallet and the product is safely in your customer's hands. These two moments are where trust is built or broken. A customer who pays and receives the right item on time will come back and tell friends. A seller who loses money to a scam, or a customer whose parcel goes missing, may never trust online buying again. Online merchants and e-commerce staff in Ghana spend much of their time on exactly these tasks: checking payments, processing orders and coordinating deliveries.
+      explanation_md: `An online sale is only finished when the money is safely in your wallet and the product is safely in your customer's hands. These two moments are where trust is built or broken. A customer who pays and receives the right item on time will come back and tell friends. A seller who loses money to a scam, or a customer whose parcel goes missing, may never trust online buying again. Online merchants and ecommerce staff in Ghana spend much of their time on exactly these tasks: checking payments, processing orders and coordinating deliveries.
 
 ## Mobile money is the main way to get paid
 
@@ -1636,7 +1636,7 @@ Wumpini received a message: "You have received GHS 150.00 from Hawa. Your new ba
       },
     },
     "orders-and-delivery": {
-      explanation_md: `Getting the right item to the right person, on time and in good condition, is what turns a one time buyer into a regular customer. E-commerce adverts in Ghana list order processing, order fulfilment and delivery coordination as core duties, so this is directly useful for jobs too.
+      explanation_md: `Getting the right item to the right person, on time and in good condition, is what turns a one time buyer into a regular customer. Ecommerce adverts in Ghana list order processing, order fulfilment and delivery coordination as core duties, so this is directly useful for jobs too.
 
 ## Keep an order list
 
@@ -1939,7 +1939,7 @@ When the replacement arrived, the customer updated her comment to say the proble
 
 ## Free and low cost channels
 
-* **WhatsApp Status:** seen by people who have saved your number. Post regularly: new stock, a product in use, a happy customer (with permission), and prices.
+* **WhatsApp Status:** seen by your contacts who have also saved your number, depending on your privacy settings. Post regularly: new stock, a product in use, a happy customer (with permission), and prices.
 * **Your own groups:** church, school, alumni, association and community groups. Share only where selling is welcome, follow group rules, and do not spam.
 * **Referrals:** ask happy customers to tell friends, and thank them when they do, perhaps with a small discount on their next order.
 * **Social media posts and short videos:** free to post, and a good video can travel far.
@@ -1983,15 +1983,15 @@ During Ramadan she created an iftar pack and announced it a week ahead. She aske
       quiz: {
         questions: [
           {
-            prompt: "Who sees your WhatsApp Status updates?",
+            prompt: "According to the lesson, who sees your WhatsApp Status updates?",
             options: [
               "Everyone in Ghana",
               "Only people in your groups",
-              "People who have saved your number",
+              "Your contacts who have also saved your number, depending on privacy settings",
               "Only people who pay for them",
             ],
             answer_index: 2,
-            explanation: "The lesson says Status is seen by people who have saved your number.",
+            explanation: "The lesson says Status is seen by your contacts who have also saved your number, depending on privacy settings.",
           },
           {
             prompt: "What does the lesson advise when sharing in community or church groups?",
@@ -2131,7 +2131,710 @@ She gives a small discount on the fourth purchase and notes it in the sheet. Man
         pass_threshold: 75,
       },
     },
-    // NEXT
+    "going-official": {
+      explanation_md: `Many small businesses in Ghana start informally, and that is a normal first step. As you grow, making your business official opens doors. Some bigger buyers, such as shops, hotels, schools and companies, prefer to deal with registered businesses. Online payment services and merchant accounts often ask for registration documents. Support programmes, loans and grants usually ask for them too. And staying on the right side of tax and product rules protects you from fines or having goods seized.
+
+## Three areas to understand
+
+* **Business registration** with the Office of the Registrar of Companies (ORC). This gives your business a legal name and identity.
+* **Tax** with the Ghana Revenue Authority (GRA). Every business that earns income has tax duties, and GRA has simplified arrangements for small traders.
+* **Product rules,** especially for food, cosmetics and similar goods, overseen by the Food and Drugs Authority (FDA). These protect customers' health and require proper labels.
+
+## Always check the official source
+
+Fees, forms and rules change. Information shared in WhatsApp groups, on social media or by agents can be out of date or simply wrong. This roadmap explains the ideas and points you to the official websites, but it does not give fees or exact steps, because those can change. Before you act, check:
+
+* The ORC website for registration.
+* The GRA website for tax.
+* The FDA website for food and cosmetics.
+
+You can also visit their offices. Several of these agencies have regional offices, including in the north.
+
+## Watch out for fake helpers
+
+Some people offer to "register your business fast" or "sort your tax" for a fee, then disappear or file wrong information. If you use an agent, choose someone recommended by people you trust, ask for receipts, and check the result yourself on the official website. Never share your Ghana Card details or mobile money PIN with strangers.
+
+## Your records make this easier
+
+Everything you learned about bookkeeping pays off here. Tax arrangements for small traders ask for information about your sales. Support programmes ask about your income and costs. Clean, regular records turn a stressful process into a simple one.
+
+## A small example
+
+Fuseini sells dried okra and dawadawa to buyers in Kumasi. A supermarket in Tamale showed interest in stocking his dawadawa, but asked whether his business was registered and whether his packaging was properly labelled.
+
+Fuseini did not panic. He visited the ORC website to read about business name registration, checked the GRA website to understand his tax position, and read the FDA's information about food products. He also asked the FDA regional office what his labels needed to show. It took some weeks and a little money, but when he returned to the supermarket with his registration certificate and improved labels, he secured a regular order.
+
+Going official is not something to fear. It is a step that helps a growing business reach bigger customers.`,
+      practice_task_md: `**Goal:** Find the official sources for your business.
+
+**Steps:**
+1. Visit the ORC website (orc.gov.gh) and write down the types of registration it offers.
+2. Visit the GRA website (gra.gov.gh) and find the page about Taxpayer Identification Numbers. Write one sentence on what it says about the Ghana Card.
+3. If you sell food, cosmetics or similar goods, visit the FDA website (fdaghana.gov.gh) and note where to find information for small producers.
+4. Find the nearest office of each agency to you, using their websites.
+
+**Done looks like:** A short note with links, one key fact from each site and the nearest offices.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which agency handles business registration in Ghana, according to the lesson?",
+            options: [
+              "The Ghana Revenue Authority",
+              "The Office of the Registrar of Companies",
+              "The Food and Drugs Authority",
+              "The Bank of Ghana",
+            ],
+            answer_index: 1,
+            explanation: "The ORC handles business registration.",
+          },
+          {
+            prompt: "Why does this roadmap not give exact fees and steps?",
+            options: [
+              "Because registration is free and quick",
+              "Because fees and rules change, so you should check the official source",
+              "Because only agents know the steps",
+              "Because the steps are secret",
+            ],
+            answer_index: 1,
+            explanation: "The lesson sends you to official websites because fees and rules change.",
+          },
+          {
+            prompt: "What does the lesson advise if you use an agent to help with registration or tax?",
+            options: [
+              "Give them your mobile money PIN to pay fees",
+              "Pay in cash with no receipt",
+              "Choose someone recommended by people you trust, ask for receipts and check the result yourself",
+              "Let them keep your Ghana Card",
+            ],
+            answer_index: 2,
+            explanation: "Use trusted agents, keep receipts and verify on the official site.",
+          },
+          {
+            prompt: "Why did the supermarket hesitate to stock Fuseini's dawadawa at first?",
+            options: [
+              "It asked whether his business was registered and his packaging properly labelled",
+              "His price was too low",
+              "It only stocks imported food",
+              "He had no WhatsApp account",
+            ],
+            answer_index: 0,
+            explanation: "The supermarket asked about registration and labelling before ordering.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "business-registration": {
+      explanation_md: `Registering your business gives it a legal identity. It can help you open a business bank account, get a merchant mobile money account, sign up for some online payment services, apply for support programmes and sell to larger buyers who need invoices from a registered business. Even if you do not register straight away, understanding the options means you can make the choice with confidence.
+
+## Who registers businesses in Ghana
+
+The **Office of the Registrar of Companies (ORC)** registers businesses in Ghana. Its website, orc.gov.gh, explains the types of registration and links to its online services.
+
+## Common types for small businesses
+
+* **Business name (sole proprietorship).** The ORC describes this as a one person business. It is the most common starting point for a single trader. You own the business personally, and the business is not separate from you in law, which means its debts are your debts.
+* **Partnership.** Two or more people running a business together.
+* **Company.** A separate legal body from its owners, such as a company limited by shares. It involves more paperwork and duties, and suits bigger or growing businesses, especially those with several owners or investors.
+
+Most people starting a small online shop begin with a business name. Whether you must register depends on things like whether you trade under a name other than your own, so check the current rules with the ORC.
+
+## What you usually need
+
+Requirements can change, but you should expect to need:
+
+* Your **Ghana Card**, which also serves as your tax number for individuals.
+* A **business name** that is not already in use. The ORC can check whether a name is available.
+* Your **business address**, including a GhanaPostGPS digital address.
+* A description of what the business does.
+* Payment of the **registration fee**.
+
+Check the ORC website or office for the current list and fees before you start.
+
+## Renewal
+
+Registration is not a one time event. Business names must be renewed, and the ORC offers renewal online and by USSD. Put the renewal date in your phone calendar so you do not forget.
+
+## Choosing a name
+
+Pick a name that is easy to say, spell and remember, fits what you sell, and works on WhatsApp, TikTok and a Google profile. Check that no one else is using it online either.
+
+## A small example
+
+Wumpini has sold beaded bracelets for a year. A boutique in Accra wants to stock them but needs invoices from a registered business. Wumpini reads the ORC website, decides a business name registration suits her as a sole trader, and chooses "Wumpini Beads".
+
+She gathers her Ghana Card, her GhanaPostGPS address and a short description of her business. She checks the current fee and steps on the official website, completes the registration, and saves the certificate safely, both a paper copy and a photo backed up online. She also sets a reminder for her renewal date. Now she can issue invoices with her registered business name, and the boutique places its first order.`,
+      practice_task_md: `**Goal:** Prepare a registration plan for your business.
+
+**Steps:**
+1. Decide which type of registration would suit your business now (business name, partnership or company) and write one sentence explaining why.
+2. Write three possible business names and check each one by searching online and on social apps.
+3. List the documents and details you would need, based on the lesson, and tick the ones you already have.
+4. Visit orc.gov.gh and note the current steps and fee. Do not pay anything unless you are ready and sure you are on the official site.
+
+**Done looks like:** A one page plan with your chosen registration type, three name options, a document checklist and notes from the official ORC site.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How does the ORC describe a business name registration?",
+            options: [
+              "A company with many shareholders",
+              "A one person business, also known as a sole proprietorship",
+              "A partnership of two or more people",
+              "A non profit organisation",
+            ],
+            answer_index: 1,
+            explanation: "The ORC describes a business name as a sole proprietorship, a one person business.",
+          },
+          {
+            prompt: "What is one key difference between a sole proprietorship and a company?",
+            options: [
+              "A sole proprietorship cannot sell online",
+              "A company does not need registration",
+              "In a sole proprietorship the business is not separate from you in law, so its debts are your debts",
+              "A company can only have one owner",
+            ],
+            answer_index: 2,
+            explanation: "A company is a separate legal body; a sole proprietorship is not.",
+          },
+          {
+            prompt: "Which document does the lesson say also serves as your tax number as an individual?",
+            options: [
+              "Your Ghana Card",
+              "Your voter ID",
+              "Your birth certificate",
+              "Your school certificate",
+            ],
+            answer_index: 0,
+            explanation: "For individuals, the Ghana Card PIN serves as the tax number.",
+          },
+          {
+            prompt: "What does the lesson say about renewal?",
+            options: [
+              "Registration lasts forever",
+              "Only companies need to renew",
+              "Renewal can only be done in Accra",
+              "Business names must be renewed, and the ORC offers renewal online and by USSD",
+            ],
+            answer_index: 3,
+            explanation: "Registration must be renewed, so set a reminder.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "tax-basics": {
+      explanation_md: `Tax can feel confusing and frightening, but the basics are straightforward. Understanding them helps you plan your prices, avoid penalties, and be ready when a buyer, a lender or a support programme asks about your tax position. This lesson gives you the general picture. For anything specific to your business, check with the Ghana Revenue Authority (GRA).
+
+## The Ghana Revenue Authority
+
+The **GRA** collects taxes in Ghana. Its website, gra.gov.gh, has information on tax types, registration and payment, and it has offices across the country.
+
+## Your tax number
+
+Every taxpayer has a **Taxpayer Identification Number (TIN)**. The GRA states that for individuals, the PIN on your Ghana Card is now your TIN. So if you have a Ghana Card, you already have your personal tax number. Registered businesses may also have their own TIN.
+
+## Simplified tax for small traders
+
+The GRA runs a **Modified Taxation Scheme** for individuals in the informal sector, such as traders, food vendors, tailors and craftspeople, who earn from skills, crafts or sales. In general:
+
+* It has **categories based on the size of your annual sales**. The smallest businesses pay a fixed amount, while larger ones pay based on their sales or their profit.
+* You register with your Ghana Card, a digital address, a phone number and some basic information about your sales.
+* Registration can be done through a GRA app, at a GRA office, with a GRA field officer, or through a trade association.
+* Payment can be made with mobile money through the GRA's official channels.
+* You file a yearly return reporting your actual sales.
+
+The amounts and sales limits for each category can change, so read the current details on the GRA website rather than relying on what someone tells you.
+
+The GRA also mentions a **tax stamp** given to small informal businesses as proof that they have paid.
+
+## VAT and growing businesses
+
+Value Added Tax (VAT) is a tax on sales that applies to businesses once their sales pass certain levels, and there are special schemes for some retailers. Most very small sellers will not start here, but if your business grows, check the GRA's VAT pages to see whether you need to register.
+
+## Records are your best friend
+
+Tax works on numbers: your sales, and for some schemes your costs. The daily records you learned to keep in the bookkeeping lesson give you those numbers. Keep mobile money confirmations, receipts and your sales record safe for several years.
+
+## Beware of tax scams
+
+Only pay tax through official GRA channels. Be careful with calls or messages claiming to be from the GRA that ask for urgent payment to a personal number. When in doubt, contact the GRA directly using details from its official website.
+
+## A small example
+
+Sumaila's phone accessory business in Damongo is growing. A friend told him tax was "too complicated" and to ignore it. Instead, Sumaila read the GRA's pages on TINs and the Modified Taxation Scheme. He learned that his Ghana Card PIN is his TIN and that small traders can register through the GRA app or a field officer and pay with mobile money.
+
+Because he had kept a year of sales records, he could see which category he probably fell into, and he confirmed it with a GRA officer during a market visit. He now sets aside a little money each week so the payment never comes as a shock.`,
+      practice_task_md: `**Goal:** Understand your own tax starting point.
+
+**Steps:**
+1. Find your Ghana Card PIN and note that it serves as your TIN as an individual. Do not share it publicly.
+2. Visit the GRA website and read the Modified Taxation Scheme page. Write three short points about who it is for and how to register.
+3. Using your sales records (real or practice), estimate your sales for a year.
+4. Write down one question you would want to ask a GRA officer about your situation.
+5. Add a "tax savings" line to your weekly money routine.
+
+**Done looks like:** A short note with three points about the scheme, your estimated annual sales, one question for the GRA and a plan to set money aside.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the GRA, what is the TIN for individuals?",
+            options: [
+              "Your phone number",
+              "Your mobile money wallet number",
+              "The PIN on your Ghana Card",
+              "Your voter ID number",
+            ],
+            answer_index: 2,
+            explanation: "The GRA states that for individuals, the Ghana Card PIN is now the TIN.",
+          },
+          {
+            prompt: "Who is the Modified Taxation Scheme for?",
+            options: [
+              "Large companies with many branches",
+              "Individuals in the informal sector who earn from skills, crafts or sales",
+              "Foreign investors only",
+              "Government workers",
+            ],
+            answer_index: 1,
+            explanation: "The scheme is for informal sector individuals such as traders and craftspeople.",
+          },
+          {
+            prompt: "How are categories in the Modified Taxation Scheme decided?",
+            options: [
+              "By the size of your annual sales",
+              "By your age",
+              "By the region you live in",
+              "By the number of followers you have",
+            ],
+            answer_index: 0,
+            explanation: "The scheme has categories based on annual sales.",
+          },
+          {
+            prompt: "Why does the lesson say records are your best friend for tax?",
+            options: [
+              "Records let you avoid tax completely",
+              "GRA pays you for keeping records",
+              "Records replace the need for a TIN",
+              "Tax works on numbers like your sales, and records give you those numbers",
+            ],
+            answer_index: 3,
+            explanation: "Daily records provide the sales and cost figures tax arrangements ask for.",
+          },
+          {
+            prompt: "What should you do if someone calls claiming to be from the GRA and asks for urgent payment to a personal number?",
+            options: [
+              "Pay quickly to avoid penalties",
+              "Contact the GRA directly using details from its official website",
+              "Send half now and half later",
+              "Share your Ghana Card details to confirm",
+            ],
+            answer_index: 1,
+            explanation: "Only pay through official channels and verify with the GRA directly.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "product-standards": {
+      explanation_md: `This lesson matters most if you sell food, drinks, cosmetics such as shea butter or soap, herbal products or similar goods. These products go into or onto people's bodies, so Ghana has rules to protect customers' health. Following them helps you sell to supermarkets, pharmacies and bigger buyers, and protects you from complaints, fines or having goods taken off the market. If you sell items like clothes, baskets or phone accessories, you can treat this lesson as optional background.
+
+## Who oversees food and cosmetics
+
+The **Food and Drugs Authority (FDA)** regulates food, drugs, cosmetics and related products in Ghana. Depending on the product and where you sell it, you may need FDA approval before selling widely, especially in shops and supermarkets. The FDA has offices in the regions, including the north, and its website, fdaghana.gov.gh, has information and contacts.
+
+News reports from Tamale have described the FDA and partners training shea butter and cosmetic processors, and noted that labelling problems are one of the main reasons products are not approved. The FDA has also said it has taken steps to make registration easier for small producers. So it is worth asking early rather than guessing.
+
+## What a good label usually shows
+
+Exact requirements depend on the product, so confirm them with the FDA. A good label typically includes:
+
+* **Product name** and what it is.
+* **Ingredients**, listed clearly.
+* **Net weight or volume**, such as 250 g or 500 ml.
+* **Producer's name and address**, including a phone number.
+* **Batch or lot number**, so problems can be traced.
+* **Date of manufacture and expiry or best before date.**
+* **How to store and use** the product.
+
+The label must be honest. Do not claim a product cures diseases or has effects you cannot prove.
+
+## Hygiene and safety
+
+Even before formal approval, good habits protect your customers:
+
+* Prepare food and cosmetics in a clean space with clean water and clean containers.
+* Use sealed, food safe packaging.
+* Keep products away from heat and sunlight if needed.
+* Write down each batch: date made, ingredients used and quantity.
+
+## Standards
+
+The Ghana Standards Authority sets national standards for many products. Some buyers, especially exporters and large retailers, may ask whether your product meets a recognised standard. If you plan to grow into those markets, ask about standards early.
+
+## A small example
+
+Mariama's aunt's group in Savelugu makes excellent shea butter, but their tubs had only a handwritten sticker saying "Pure Shea". A pharmacy in Tamale wanted to stock it but asked about FDA approval.
+
+Mariama visited the FDA regional office to ask what was needed. She learned what the label should show and how the approval process works for small producers. The group designed a new printed label with the product name, ingredients, net weight, the group's name and phone number, a batch number and dates. They also started a batch notebook. The process took time, but it opened the door to shops that had previously said no.`,
+      practice_task_md: `**Goal:** Review and improve a product label.
+
+**Steps:**
+1. Choose a food or cosmetic product you or someone you know sells. If you do not sell one, choose a packaged product from a shop.
+2. Check the label against the seven items in the lesson and tick what is present.
+3. Design an improved label on paper or in a free design app such as Canva, including everything that was missing.
+4. Visit fdaghana.gov.gh and find the contact details of the office nearest to you.
+5. Write one question you would ask the FDA about selling this product.
+
+**Done looks like:** A label checklist, an improved label design and the contact details of your nearest FDA office.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which agency regulates food and cosmetics in Ghana?",
+            options: [
+              "The Office of the Registrar of Companies",
+              "The Ghana Revenue Authority",
+              "The Food and Drugs Authority",
+              "The Bank of Ghana",
+            ],
+            answer_index: 2,
+            explanation: "The FDA regulates food, drugs, cosmetics and related products.",
+          },
+          {
+            prompt: "What did news reports from Tamale say is one of the main reasons products are not approved?",
+            options: [
+              "Labelling problems",
+              "Prices that are too high",
+              "Lack of social media accounts",
+              "Selling only in the north",
+            ],
+            answer_index: 0,
+            explanation: "Reports said labelling problems were one of the main hurdles.",
+          },
+          {
+            prompt: "Why should a label include a batch or lot number?",
+            options: [
+              "To make the label look official",
+              "To set the price",
+              "To show how many followers you have",
+              "So problems can be traced",
+            ],
+            answer_index: 3,
+            explanation: "Batch numbers let you and the FDA trace a problem to a specific batch.",
+          },
+          {
+            prompt: "What does the lesson say about health claims on labels?",
+            options: [
+              "Claim cures to sell more",
+              "Do not claim a product cures diseases or has effects you cannot prove",
+              "Only claim cures in local languages",
+              "Health claims are required on all food",
+            ],
+            answer_index: 1,
+            explanation: "Labels must be honest and avoid unproven claims.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    earning: {
+      explanation_md: `The skills in this roadmap can earn you money in two ways. You can grow your own business, or you can be hired by a business that needs someone to sell, serve customers and manage online orders. Many people do both: they work in sales while building a side business, or they run a business and take on freelance work helping others sell online. In Ghana, sales and business development are among the largest categories of job adverts on Jobberman, and many adverts now ask for exactly the skills you have practised here.
+
+## Two paths, one set of skills
+
+**Running your own business** means you choose what to sell, set your prices and keep the profit. It also means you carry the risk and must be disciplined with money and time.
+
+**Working for a business** means a regular income, structure and the chance to learn from others. Roles include shop attendant, sales representative, sales and marketing officer, telesales, field sales, online sales or social media sales officer, and ecommerce officer. Entry level roles often ask for customer service, communication, record keeping, stock management, comfort with WhatsApp and social media, and basic computer skills like email and spreadsheets.
+
+## Your experience counts
+
+If you have run even a small online business while following this roadmap, you have real evidence of skills employers want. You have priced products, served customers, handled payments, kept records and sold through chat and social media. That is far more convincing than saying "I am hardworking".
+
+## What this section covers
+
+* **Sales and online retail jobs.** What these roles involve, how to build a simple portfolio from your own trading, and how to apply safely.
+* **Planning growth and finding support.** How to write a one page plan, and how to find trustworthy training, mentoring and funding programmes.
+
+## Honest expectations
+
+Neither path is instant. Businesses grow step by step, and job searches can take time. Keep learning, keep records of what you do, and keep showing up. Many local support programmes run in cohorts and are based in Accra or other big cities. You can use this roadmap to prepare, so that when an opportunity opens, you already have the skills and the evidence.
+
+## A small example
+
+Abdul-Rahman has been selling second hand clothes through WhatsApp from Tamale for a year. He has records, a customer list, and screenshots of his catalogue and order process.
+
+When a retail company opened an online sales role, he applied. In the interview, instead of general claims, he showed his order list, explained how he checks mobile money payments, and described how he handled a complaint. He got the job, and he keeps his small business running on weekends.
+
+His friend Mariama chose the other path. She used her records to apply to a youth enterprise programme, received training and mentoring, and is now growing her shea butter business to supply shops.`,
+      practice_task_md: `**Goal:** Decide your next path and gather your evidence.
+
+**Steps:**
+1. Write which path interests you most right now: growing your own business, getting a sales or online retail job, or both. Give one reason.
+2. List five pieces of evidence from this roadmap that show your skills, such as your costing sheet, catalogue, order list, stock record or customer list.
+3. Save screenshots or photos of each in one folder on your phone or Google Drive, with any personal customer details hidden.
+4. Write one next step you will take this week.
+
+**Done looks like:** A chosen path, a folder with five pieces of evidence and one clear next step.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What are the two ways this roadmap's skills can earn you money?",
+            options: [
+              "Investing and lending",
+              "Growing your own business or being hired by a business",
+              "Buying ads and reselling them",
+              "Only through government jobs",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes running your own business and working for one.",
+          },
+          {
+            prompt: "Which of these skills does the lesson say entry level sales roles often ask for?",
+            options: [
+              "Advanced programming",
+              "A university degree in economics only",
+              "Customer service, record keeping, stock management and comfort with WhatsApp and social media",
+              "Owning a car",
+            ],
+            answer_index: 2,
+            explanation: "The lesson lists these as common entry level requirements.",
+          },
+          {
+            prompt: "Why is running a small business while following this roadmap useful for job applications?",
+            options: [
+              "It gives you real evidence of skills employers want",
+              "Employers only hire business owners",
+              "It means you do not need an interview",
+              "It guarantees a higher salary",
+            ],
+            answer_index: 0,
+            explanation: "Real records and examples are more convincing than general claims.",
+          },
+          {
+            prompt: "What did Abdul-Rahman show in his interview?",
+            options: [
+              "Only his school certificates",
+              "His social media follower count",
+              "A letter from a friend",
+              "His order list, how he checks payments and how he handled a complaint",
+            ],
+            answer_index: 3,
+            explanation: "He used concrete evidence from his own business.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "sales-jobs": {
+      explanation_md: `Sales and business development roles are among the most advertised jobs on Jobberman Ghana. Many are open to people with little formal experience, as long as they can communicate well, serve customers, keep records and use a phone and basic computer tools confidently. The skills from this roadmap fit these roles closely.
+
+## What these roles involve
+
+Common job titles and what they usually mean:
+
+* **Shop or sales attendant:** serving customers, handling cash and mobile money, managing stock, keeping the shop tidy. Some roles now include managing the shop's social media pages.
+* **Sales representative or sales officer:** finding and serving customers, explaining products, meeting sales targets and reporting results.
+* **Telesales:** selling and following up by phone, often using a list of leads.
+* **Field sales:** visiting customers, shops or communities in person to sell or sign people up.
+* **Social media or live sales officer:** selling through WhatsApp, Instagram and TikTok, including direct messages and live streams.
+* **Ecommerce officer:** uploading products and prices to a website or marketplace, processing orders and coordinating delivery.
+* **Business development officer:** finding new clients and partners, preparing proposals and building relationships.
+
+## Skills that keep appearing
+
+Across Ghanaian adverts, the same skills appear again and again: customer service, communication, selling through WhatsApp and social media, meeting targets and reporting, lead generation and follow up, record keeping, stock management, product knowledge, negotiation, and office tools like email and spreadsheets. Some roles ask for a **CRM**, a customer relationship management tool, which is software for tracking customers, leads and sales. Examples include Zoho and HubSpot. If you have kept a customer list and order list, you already understand the idea.
+
+## Build a simple portfolio
+
+Turn your roadmap work into evidence:
+
+* Your **costing sheet** and **sales record** (with customer details hidden).
+* Your **WhatsApp Business** profile and catalogue screenshots.
+* A **product listing** with your own photos.
+* Your **order list** and **stock record**.
+* A short note on a **complaint you resolved**.
+* Any simple results, such as "sold 40 baskets in three months", stated honestly.
+
+## Applying
+
+* Write a short CV that lists your trading experience as real work, with what you did and what happened.
+* Speaking local languages such as Dagbani, Gonja, Dagaare, Twi or Hausa can be an advantage in sales; list them.
+* Practise answering "Tell me about a time you handled a difficult customer" using a real example.
+
+## Stay safe
+
+Jobberman states that it never asks job seekers for payment. Never pay anyone to get a job, an interview or training that "guarantees" a job. Be careful with "sales jobs" that require you to buy stock first or recruit others before you are paid.
+
+## A small example
+
+Hawa, who sells smocks, applied for a social media sales officer role. Her CV listed "Online smock business, Tamale: managed WhatsApp Business catalogue, sold through TikTok and live sessions, handled mobile money payments and deliveries to several regions." She brought screenshots of her catalogue, order list and a live session plan. The interviewer asked about a difficult customer, and Hawa described how she handled a size complaint. She was offered a trial week, and then the job.`,
+      practice_task_md: `**Goal:** Prepare to apply for a sales or online retail role.
+
+**Steps:**
+1. Visit Jobberman Ghana or another trusted job site and read three sales, online sales or ecommerce adverts. Do not apply yet.
+2. For each, list the skills they ask for and tick the ones you can show evidence for.
+3. Update or create a short CV that includes your trading or roadmap work as real experience.
+4. Prepare a portfolio folder with at least four items from the list in the lesson, with customer details hidden.
+5. Write a short answer to "Tell me about a time you handled a difficult customer".
+
+**Done looks like:** A skills check against three adverts, an updated CV, a portfolio folder and one practised interview answer.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does an ecommerce officer typically do, according to the lesson?",
+            options: [
+              "Repair phones and laptops",
+              "Upload products and prices, process orders and coordinate delivery",
+              "Only post on TikTok",
+              "Audit company accounts",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes ecommerce officers handling listings, orders and delivery.",
+          },
+          {
+            prompt: "What is a CRM?",
+            options: [
+              "A type of mobile money wallet",
+              "A government licence for sales staff",
+              "Software for tracking customers, leads and sales",
+              "A delivery company",
+            ],
+            answer_index: 2,
+            explanation: "CRM stands for customer relationship management software.",
+          },
+          {
+            prompt: "What does Jobberman state about payment from job seekers?",
+            options: [
+              "It never asks job seekers for payment",
+              "Job seekers must pay to apply",
+              "Payment guarantees an interview",
+              "Only sales jobs require payment",
+            ],
+            answer_index: 0,
+            explanation: "Jobberman says it never asks job seekers for payment.",
+          },
+          {
+            prompt: "Which of these does the lesson suggest including in your portfolio?",
+            options: [
+              "Customers' phone numbers and addresses",
+              "Your mobile money PIN",
+              "Copies of other sellers' photos",
+              "Your order list and stock record with customer details hidden",
+            ],
+            answer_index: 3,
+            explanation: "Real work samples with private details hidden make a strong portfolio.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "growth-and-support": {
+      explanation_md: `Once your business is running steadily, the next questions are where to take it and who can help. Growth without a plan can strain your cash and your energy. Support from the right programme can speed things up. Support from the wrong one can cost you money. This lesson helps you plan and choose wisely.
+
+## Write a one page plan
+
+You do not need a thick business plan. One page is enough to guide you and to show a programme or lender. Include:
+
+* **What you sell and to whom**, in two or three sentences.
+* **Where you are now:** your monthly sales, profit and number of regular customers, taken from your records.
+* **Your goal for the next six to twelve months**, such as "sell to two shops in Tamale" or "reach customers in Kumasi every week".
+* **What you need to get there:** more stock, better packaging, registration, a second supplier, a helper.
+* **The steps and timeline**, month by month.
+* **Risks** and what you will do about them, such as a supplier falling ill or prices rising.
+
+Review the plan every month and compare it with your records.
+
+## Ways to grow
+
+* **Sell more to existing customers:** new sizes, gift packs, related products.
+* **Reach new customers:** a new town, a new channel, or shops and institutions.
+* **Improve margins:** buy in larger amounts at better prices, reduce waste, or raise prices where your quality justifies it.
+* **Work with others:** join or form a cooperative or association, which can help with bulk buying, training and access to bigger buyers.
+
+Grow one step at a time, and keep enough cash to keep operating.
+
+## Finding support
+
+Support can include training, mentoring, market access, equipment and sometimes grants or loans. Possible sources include:
+
+* **Government agencies** for small businesses, such as the Ghana Enterprises Agency.
+* **Trade associations and cooperatives**, such as shea, crafts or farmer groups.
+* **NGOs and development programmes** working with women and young people in the north.
+* **Training providers**, including online courses. Google's Digital Marketing and E-commerce certificate is one paid option if you can afford it.
+
+Many programmes run in cohorts with set application dates, and some are based in Accra or other cities. Use this roadmap to prepare, so you can apply with records, a plan and evidence of what you have done.
+
+## Check before you trust
+
+* **Never pay to receive a grant or loan.** Genuine grant programmes do not ask you to pay a fee to receive money.
+* Check that the programme has an official website and real contact details, and ask people who have taken part.
+* Read terms carefully, especially for loans: the total amount you must repay, the schedule and any penalties.
+* Do not share your PIN or passwords with anyone offering help.
+
+## A small example
+
+Mariama wrote a one page plan for her shea butter business: currently selling about 25 tubs a week, with a goal of supplying three pharmacies in Tamale within a year. She listed what she needed: FDA approval, printed labels and a second production day each week.
+
+She found a training programme for women in shea processing through her aunt's cooperative, checked its official contacts and spoke to past participants. It was free and offered help with labelling. She applied with her plan and her records. A few weeks later, a message offered her a "guaranteed grant" for a processing fee. She recognised it as a scam and ignored it. Her growth came through careful steps, not shortcuts.`,
+      practice_task_md: `**Goal:** Write your one page growth plan and a support shortlist.
+
+**Steps:**
+1. Using your records, write a one page plan with the six parts from the lesson.
+2. Choose one way to grow from the list and explain why it suits you.
+3. Research two possible sources of support (a government agency, association, NGO or course). For each, note its official website or office, what it offers and how to apply.
+4. Check each against the "check before you trust" list and note anything that worries you.
+
+**Done looks like:** A one page plan and a shortlist of two checked support options, ready to share with a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these does the lesson say a one page plan should include?",
+            options: [
+              "Your personal PIN for safekeeping",
+              "Where you are now, using figures from your records",
+              "A list of every competitor's customers",
+              "A promise of guaranteed profit",
+            ],
+            answer_index: 1,
+            explanation: "The plan includes your current sales, profit and customers from your records.",
+          },
+          {
+            prompt: "What does the lesson say about paying to receive a grant?",
+            options: [
+              "It is normal to pay a small processing fee",
+              "Pay only if the amount is large",
+              "Never pay to receive a grant or loan",
+              "Pay through mobile money to be safe",
+            ],
+            answer_index: 2,
+            explanation: "Genuine grant programmes do not ask for fees to release money.",
+          },
+          {
+            prompt: "How can a cooperative or association help a small business grow?",
+            options: [
+              "With bulk buying, training and access to bigger buyers",
+              "By paying all your costs",
+              "By removing the need for records",
+              "By guaranteeing loans without terms",
+            ],
+            answer_index: 0,
+            explanation: "The lesson lists bulk buying, training and access to bigger buyers.",
+          },
+          {
+            prompt: "What did Mariama do when she was offered a guaranteed grant for a processing fee?",
+            options: [
+              "She paid the fee quickly",
+              "She shared it with her customers",
+              "She asked for a bigger grant",
+              "She recognised it as a scam and ignored it",
+            ],
+            answer_index: 3,
+            explanation: "Asking for a fee to release a grant is a scam warning sign.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
