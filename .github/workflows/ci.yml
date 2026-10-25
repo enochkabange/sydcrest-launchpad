@@ -8,6 +8,11 @@ concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  # Pull Supabase images from GitHub's registry: public ECR rate limits shared
+  # runners ("toomanyrequests: Data limit exceeded").
+  SUPABASE_INTERNAL_IMAGE_REGISTRY: ghcr.io
+
 jobs:
   checks:
     name: Checks
@@ -46,8 +51,8 @@ jobs:
       - name: Generated types match the migrations
         run: |
           set -euo pipefail
-          # Pulls the postgres-meta image; public ECR sometimes rate limits
-          # shared runners, so retry before calling it a failure.
+          # Pulls the postgres-meta image; retry once or twice before calling
+          # a registry blip a failure.
           for attempt in 1 2 3; do
             supabase gen types typescript --local > /tmp/generated.ts && break
             [ "$attempt" = 3 ] && exit 1
