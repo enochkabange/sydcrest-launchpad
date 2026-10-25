@@ -58,22 +58,22 @@ You can learn all the ideas in this section on a phone. Later sections include l
             prompt: "Which skills does this track assume you have, or are building, before you start?",
             options: [
               "Advanced programming in several languages",
-              "IT support skills such as computers, accounts and networks",
               "A university degree in mathematics",
+              "IT support skills such as computers, accounts and networks",
               "Experience running a hacking team",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Security builds on IT support knowledge of how computers, accounts and networks work.",
           },
           {
             prompt: "Which task is a normal part of a junior analyst's day?",
             options: [
-              "Breaking into competitors' systems to test them",
               "Reviewing alerts and deciding which ones are real",
+              "Breaking into competitors' systems to test them",
               "Writing viruses for practice",
               "Guessing staff passwords to check they are strong",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Junior analysts spend much of their time checking alerts and recording what they find.",
           },
           {
@@ -81,10 +81,10 @@ You can learn all the ideas in this section on a phone. Later sections include l
             options: [
               "It is allowed if you do not steal anything",
               "It is allowed for students",
-              "It is a crime",
               "It is allowed if you report it afterwards",
+              "It is a crime",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "Accessing a computer or data without permission is an offence, so professionals only test with written permission.",
           },
           {
@@ -155,25 +155,45 @@ When you see a security problem, ask: which part of CIA is at risk, what is the 
         questions: [
           {
             prompt: "Someone secretly edits a loan record so a balance looks paid. Which part of the CIA triad has failed?",
-            options: ["Confidentiality", "Integrity", "Availability", "None, because nothing was leaked"],
+            options: [
+              "Confidentiality",
+              "Integrity",
+              "Availability",
+              "None, because nothing was leaked",
+            ],
             answer_index: 1,
             explanation: "Integrity means data has not been changed without permission.",
           },
           {
             prompt: "Ransomware locks a shop's sales files so staff cannot open them. Which part of the triad is hit most directly?",
-            options: ["Availability", "Integrity", "Confidentiality", "Authentication"],
-            answer_index: 0,
+            options: [
+              "Integrity",
+              "Confidentiality",
+              "Authentication",
+              "Availability",
+            ],
+            answer_index: 3,
             explanation: "Availability means systems and data are there when people need them.",
           },
           {
             prompt: "Which of these is a vulnerability rather than a threat?",
-            options: ["A fraudster", "A flood", "A missing software update", "A computer virus"],
-            answer_index: 2,
+            options: [
+              "A missing software update",
+              "A fraudster",
+              "A flood",
+              "A computer virus",
+            ],
+            answer_index: 0,
             explanation: "A vulnerability is a weakness, such as a missing update, that a threat could use.",
           },
           {
             prompt: "Using the lesson's method, what is the risk score for likelihood 3 and impact 3?",
-            options: ["3", "6", "9", "1"],
+            options: [
+              "3",
+              "6",
+              "9",
+              "1",
+            ],
             answer_index: 2,
             explanation: "Likelihood is multiplied by impact, so 3 times 3 gives 9, the most urgent score.",
           },
@@ -181,11 +201,11 @@ When you see a security problem, ask: which part of CIA is at risk, what is the 
             prompt: "Why did Fuseini fix the shared password and missing backup first?",
             options: [
               "They were the cheapest to fix",
-              "They had the highest risk scores",
               "The owner asked for them by name",
               "They only affected confidentiality",
+              "They had the highest risk scores",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Both scored 6, higher than the stolen laptop risk, so they came first.",
           },
         ],
@@ -232,44 +252,44 @@ Protect what you are responsible for, investigate only within your role, and lea
             prompt: "Under Act 772, which of these is an offence?",
             options: [
               "Updating your own laptop",
-              "Intentionally accessing an electronic record without authority or permission",
               "Practising on a training platform built for learners",
+              "Intentionally accessing an electronic record without authority or permission",
               "Reporting a suspicious message to your supervisor",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Section 124 of Act 772 makes access or interception without authority or permission an offence.",
           },
           {
             prompt: "What must you have before testing the security of a real system?",
             options: [
               "A good reason",
-              "A friend who works there",
               "Written permission from someone with authority to give it",
+              "A friend who works there",
               "A certificate from an online course",
             ],
-            answer_index: 2,
+            answer_index: 1,
             explanation: "Professionals test only with written permission stating what may be tested and when.",
           },
           {
             prompt: "Where should you practise security skills?",
             options: [
+              "On training labs and your own learning machines",
               "On a café's public Wi Fi",
               "On your school's network after hours",
-              "On training labs and your own learning machines",
               "On a neighbour's network with their router password",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "Practise only in labs built for learning or on systems you own.",
           },
           {
             prompt: "Why did Sumaila refuse to run the \"free tool\"?",
             options: [
               "It was too slow",
-              "Using it on others would be unauthorised access and it might carry malware",
               "He had already used a better tool",
+              "Using it on others would be unauthorised access and it might carry malware",
               "His phone did not support it",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "He recognised both the legal problem and the malware risk, and reported it instead.",
           },
         ],
@@ -317,23 +337,23 @@ By the end of this section you will be able to read a simple connection record, 
           {
             prompt: "What question does a defender add to the IT support question \"how do I make this work\"?",
             options: [
-              "How do I make it faster?",
               "How could this be misused, and how would I notice?",
+              "How do I make it faster?",
               "How much did this cost?",
               "Who installed this?",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Security adds thinking about misuse and detection to normal IT knowledge.",
           },
           {
             prompt: "Why do defenders need to know Linux?",
             options: [
               "Because most phones in Ghana run desktop Linux",
-              "Because many servers and security tools run on it and its logs are read from the command line",
               "Because Windows has no logs",
               "Because Linux cannot be attacked",
+              "Because many servers and security tools run on it and its logs are read from the command line",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Many servers, cloud systems and tools run Linux, and analysts search its logs at the command line.",
           },
           {
@@ -409,24 +429,34 @@ Issahaku works on a help desk in Tamale. Staff complain the internet is slow. He
         questions: [
           {
             prompt: "Which port is normally used for secure websites (HTTPS)?",
-            options: ["22", "53", "443", "3389"],
-            answer_index: 2,
+            options: [
+              "22",
+              "53",
+              "3389",
+              "443",
+            ],
+            answer_index: 3,
             explanation: "Port 443 carries HTTPS, the secure web traffic most sites use.",
           },
           {
             prompt: "What does DNS do?",
             options: [
-              "Encrypts every file on a computer",
               "Turns names like example.com into IP addresses",
+              "Encrypts every file on a computer",
               "Blocks all traffic from outside",
               "Stores passwords for websites",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "DNS works like a phone book, translating names into addresses.",
           },
           {
             prompt: "Which of these is a private IP address used inside homes and offices?",
-            options: ["8.8.8.8", "41.0.0.9", "192.168.1.20", "203.0.113.50"],
+            options: [
+              "8.8.8.8",
+              "41.0.0.9",
+              "192.168.1.20",
+              "203.0.113.50",
+            ],
             answer_index: 2,
             explanation: "Addresses beginning 192.168 are private, used inside local networks.",
           },
@@ -434,22 +464,22 @@ Issahaku works on a help desk in Tamale. Staff complain the internet is slow. He
             prompt: "Repeated blocked attempts from an outside address to port 3389 at night most likely show what?",
             options: [
               "A staff member printing documents",
-              "Someone probing for Windows Remote Desktop",
               "A normal software update",
               "A DNS lookup",
+              "Someone probing for Windows Remote Desktop",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Port 3389 is Remote Desktop, and repeated outside attempts suggest probing.",
           },
           {
             prompt: "When is it acceptable to capture network traffic with a tool like Wireshark?",
             options: [
               "On any public Wi Fi",
-              "On your own network or a lab you are responsible for",
               "On a neighbour's network if it is unprotected",
+              "On your own network or a lab you are responsible for",
               "On a school network if nobody notices",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Capturing other people's traffic without authority is illegal; use your own network or labs.",
           },
         ],
@@ -510,30 +540,35 @@ Exploring Event Viewer needs a Windows computer. If you do not have one, use a s
         questions: [
           {
             prompt: "Which Windows Event ID records a failed logon?",
-            options: ["4624", "4625", "4720", "1102"],
+            options: [
+              "4624",
+              "4625",
+              "4720",
+              "1102",
+            ],
             answer_index: 1,
             explanation: "Event ID 4625 records a failed logon attempt.",
           },
           {
             prompt: "Why is a cleared security log (Event ID 1102) a red flag?",
             options: [
-              "It means the computer needs more storage",
               "Attackers often clear logs to hide their tracks",
+              "It means the computer needs more storage",
               "It always means Windows Update ran",
               "It shows a successful backup",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Clearing the log removes evidence, which attackers try to do.",
           },
           {
             prompt: "Why should staff use standard accounts for daily work?",
             options: [
               "Standard accounts are faster",
-              "A malicious download cannot easily change the whole system",
               "Administrators cannot use email",
+              "A malicious download cannot easily change the whole system",
               "Standard accounts do not need passwords",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Without administrator rights, malware has less power over the system.",
           },
           {
@@ -551,11 +586,11 @@ Exploring Event Viewer needs a Windows computer. If you do not have one, use a s
             prompt: "In the example, what did the 4720 event show Amina?",
             options: [
               "The manager changed his wallpaper",
-              "A new user account was created that nobody requested",
               "The computer installed an update",
               "The security log was cleared",
+              "A new user account was created that nobody requested",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Event ID 4720 means a user account was created, and this one was unexpected.",
           },
         ],
@@ -614,8 +649,13 @@ The best practice is on a computer, using a free Linux virtual machine or a brow
         questions: [
           {
             prompt: "On Ubuntu and Debian systems, which file records login activity?",
-            options: ["/var/log/auth.log", "/home/music.txt", "/etc/wallpaper", "/bin/games"],
-            answer_index: 0,
+            options: [
+              "/home/music.txt",
+              "/var/log/auth.log",
+              "/etc/wallpaper",
+              "/bin/games",
+            ],
+            answer_index: 1,
             explanation: "Login activity on Ubuntu and Debian is recorded in /var/log/auth.log.",
           },
           {
@@ -631,19 +671,24 @@ The best practice is on a computer, using a free Linux virtual machine or a brow
           },
           {
             prompt: "Which command shows the last 20 lines of a log?",
-            options: ["pwd", "tail -n 20 file", "cd file", "ls -l"],
-            answer_index: 1,
+            options: [
+              "pwd",
+              "cd file",
+              "ls -l",
+              "tail -n 20 file",
+            ],
+            answer_index: 3,
             explanation: "tail with -n 20 shows the last 20 lines of a file.",
           },
           {
             prompt: "Why is a customer records file readable by everyone a problem?",
             options: [
-              "It makes the server slower",
               "It is a confidentiality risk even before anyone opens it",
+              "It makes the server slower",
               "It stops backups from working",
               "It deletes the file after a day",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Loose permissions expose private data, which is a confidentiality issue.",
           },
         ],
@@ -692,39 +737,44 @@ Wumpini's aunt in Savelugu receives a call from "customer care" saying her mobil
             prompt: "According to the Bank of Ghana notice in the lesson, which request should you never receive from a legitimate bank or mobile money operator?",
             options: [
               "A reminder that a branch is closed on a holiday",
-              "A request for your PIN or one time code by phone or text",
               "A transaction alert after you send money",
+              "A request for your PIN or one time code by phone or text",
               "An invitation to visit a branch",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "The notice says no legitimate provider will ask for your PIN, password or one time code by phone, text, email or social media.",
           },
           {
             prompt: "How do most attacks people face in Ghana begin?",
             options: [
               "With advanced code written by experts",
-              "With persuasion through calls, messages or fake links",
               "With physical break ins at telco offices",
               "With satellite interference",
+              "With persuasion through calls, messages or fake links",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Most everyday attacks start by persuading someone to share a code or open something harmful.",
           },
           {
             prompt: "Which is one of the CSA reporting channels listed in the lesson?",
-            options: ["Call or text 292", "Call 911", "Email help@bank.example", "Text STOP to any number"],
-            answer_index: 0,
+            options: [
+              "Call 911",
+              "Email help@bank.example",
+              "Call or text 292",
+              "Text STOP to any number",
+            ],
+            answer_index: 2,
             explanation: "The CSA lists call or text 292, WhatsApp 0501603111 and report@csa.gov.gh.",
           },
           {
             prompt: "What did Wumpini do after telling her aunt to hang up?",
             options: [
               "Called the scammer back to argue",
-              "Shared the code to see what would happen",
               "Checked the balance using the official menu and helped report the number",
+              "Shared the code to see what would happen",
               "Deleted the mobile money app",
             ],
-            answer_index: 2,
+            answer_index: 1,
             explanation: "She checked the real balance through the official menu and reported the number.",
           },
         ],
@@ -773,23 +823,23 @@ Mariama works in a fintech's fraud team in Accra. She notices several customers 
           {
             prompt: "You get an SMS that looks like a deposit alert, then a call asking you to send the money back. What should you do first?",
             options: [
-              "Send the money back quickly to be kind",
               "Check your real balance through the official menu",
+              "Send the money back quickly to be kind",
               "Share your PIN so they can reverse it",
               "Forward the SMS to all your contacts",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "The deposit message may be fake, so check the real balance through the official menu, never the message.",
           },
           {
             prompt: "What happens in a SIM swap?",
             options: [
               "Your phone battery is replaced",
-              "A fraudster gets a new SIM issued for your number and receives your calls, texts and codes",
               "Your network provider upgrades you to faster data",
+              "A fraudster gets a new SIM issued for your number and receives your calls, texts and codes",
               "Your phone's apps are moved to a memory card",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "SIM swap moves your number to a SIM the fraudster controls.",
           },
           {
@@ -807,11 +857,11 @@ Mariama works in a fintech's fraud team in Accra. She notices several customers 
             prompt: "Why is a one time code sent to your phone so valuable to a fraudster?",
             options: [
               "It can be sold as airtime",
-              "It is often the key that confirms access to a wallet or account",
               "It unlocks free data",
               "It changes your phone's language",
+              "It is often the key that confirms access to a wallet or account",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Codes confirm logins and transactions, which is why they must never be shared.",
           },
           {
@@ -874,36 +924,46 @@ Never click suspicious links "to see what happens". On real systems, analysts ex
         questions: [
           {
             prompt: "\"Your account will be blocked in 30 minutes\" is an example of which lever?",
-            options: ["Urgency", "Trust", "Greed", "Encryption"],
-            answer_index: 0,
+            options: [
+              "Trust",
+              "Urgency",
+              "Greed",
+              "Encryption",
+            ],
+            answer_index: 1,
             explanation: "Creating time pressure is the urgency lever.",
           },
           {
             prompt: "How can you check where a link goes on a phone without opening it?",
             options: [
               "Tap it quickly twice",
-              "Press and hold it to preview the address",
               "Forward it to a friend first",
               "Turn off mobile data and tap it",
+              "Press and hold it to preview the address",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "A long press previews the address without opening the page.",
           },
           {
             prompt: "What is the safest way to verify a message claiming to be from your bank?",
             options: [
+              "Call the bank on the number from its official website or your card",
               "Reply to the message and ask",
               "Call the number given in the message",
-              "Call the bank on the number from its official website or your card",
               "Click the link and see if the page looks real",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "Use a contact you already trust, never details from the suspicious message.",
           },
           {
             prompt: "What is smishing?",
-            options: ["Phishing by SMS", "A type of firewall", "A strong password method", "A backup technique"],
-            answer_index: 0,
+            options: [
+              "A type of firewall",
+              "A strong password method",
+              "Phishing by SMS",
+              "A backup technique",
+            ],
+            answer_index: 2,
             explanation: "Smishing is phishing delivered by text message.",
           },
           {
@@ -911,10 +971,10 @@ Never click suspicious links "to see what happens". On real systems, analysts ex
             options: [
               "Clicked the link to test the login page",
               "Ignored it because only one person reported it",
-              "Recorded the details, checked who else received it, had the domain blocked and warned staff",
               "Replied to the sender asking who they were",
+              "Recorded the details, checked who else received it, had the domain blocked and warned staff",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "He gathered evidence, limited the spread and warned staff without clicking anything.",
           },
         ],
@@ -973,50 +1033,55 @@ You can check a file's reputation on VirusTotal, which compares it against many 
             prompt: "What does ransomware do?",
             options: [
               "Speeds up old computers",
-              "Encrypts files and demands payment for a key",
               "Blocks all advertisements",
+              "Encrypts files and demands payment for a key",
               "Backs up files to the cloud",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Ransomware locks files with encryption and demands payment.",
           },
           {
             prompt: "Which malware type pretends to be useful software but hides a harmful part?",
-            options: ["Trojan", "Worm", "Firewall", "Patch"],
-            answer_index: 0,
+            options: [
+              "Worm",
+              "Trojan",
+              "Firewall",
+              "Patch",
+            ],
+            answer_index: 1,
             explanation: "A trojan disguises itself as something useful, like a cracked program.",
           },
           {
             prompt: "Which defence is described as the strongest answer to ransomware?",
             options: [
-              "A faster internet connection",
               "Regular backups with an offline copy that you test",
+              "A faster internet connection",
               "A new screen saver",
               "Paying quickly",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Tested backups, including an offline copy, let you restore without paying.",
           },
           {
             prompt: "What was Issahaku's first action when he found the ransom note?",
             options: [
               "Paid the ransom",
-              "Unplugged the computer from the network",
               "Restarted the computer repeatedly",
+              "Unplugged the computer from the network",
               "Emailed the attackers",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Disconnecting stops the malware from spreading to other machines.",
           },
           {
             prompt: "Why should you avoid uploading confidential work files to VirusTotal?",
             options: [
-              "VirusTotal deletes files",
               "Uploads can be shared with security researchers",
+              "VirusTotal deletes files",
               "It only accepts photos",
               "It costs money per upload",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Uploaded files can be shared with researchers, so confidential files must not be uploaded.",
           },
         ],
@@ -1070,17 +1135,22 @@ The three topics in this section go deeper into each layer: identity and access 
             prompt: "What does defence in depth mean?",
             options: [
               "Buying the most expensive security product",
-              "Using several layers of protection that support each other",
               "Hiding the server room underground",
               "Turning off the internet at night",
+              "Using several layers of protection that support each other",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Defence in depth means layers working together, because no single layer is enough.",
           },
           {
             prompt: "Which layer do strong passwords and multi factor authentication belong to?",
-            options: ["Identity and access", "Data protection", "People", "Backups"],
-            answer_index: 0,
+            options: [
+              "Data protection",
+              "Identity and access",
+              "People",
+              "Backups",
+            ],
+            answer_index: 1,
             explanation: "They control who gets in, which is identity and access.",
           },
           {
@@ -1159,40 +1229,45 @@ Abdul-Rahman is doing national service in a bank's IT security unit in Accra. Hi
           {
             prompt: "What is the difference between authentication and authorisation?",
             options: [
-              "They mean the same thing",
               "Authentication checks who you are; authorisation decides what you may do",
+              "They mean the same thing",
               "Authorisation checks who you are; authentication decides what you may do",
               "Authentication is only for websites",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Authentication proves identity; authorisation sets permissions.",
           },
           {
             prompt: "Why is an authenticator app usually stronger than SMS codes?",
             options: [
               "Apps work without a phone",
-              "SMS codes can be stolen through SIM swap",
               "SMS codes are longer",
+              "SMS codes can be stolen through SIM swap",
               "Apps never need updating",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "SIM swap lets a fraudster receive your texts, including codes.",
           },
           {
             prompt: "A fingerprint is which kind of factor?",
-            options: ["Something you know", "Something you have", "Something you are", "Something you share"],
-            answer_index: 2,
+            options: [
+              "Something you know",
+              "Something you have",
+              "Something you share",
+              "Something you are",
+            ],
+            answer_index: 3,
             explanation: "Biometrics like fingerprints are something you are.",
           },
           {
             prompt: "When a staff member changes role, what should happen under least privilege?",
             options: [
               "Add the new access and keep the old",
-              "Remove access that the new role does not need",
               "Give them administrator rights",
+              "Remove access that the new role does not need",
               "Delete all their files",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Movers should lose old access, not just gain new access.",
           },
           {
@@ -1257,41 +1332,46 @@ Hawa works for an NGO in Bolgatanga that runs a health survey. A field officer's
         questions: [
           {
             prompt: "What does encryption protect most directly?",
-            options: ["Availability", "Confidentiality", "Battery life", "Network speed"],
-            answer_index: 1,
+            options: [
+              "Confidentiality",
+              "Availability",
+              "Battery life",
+              "Network speed",
+            ],
+            answer_index: 0,
             explanation: "Encryption keeps data private so only key holders can read it.",
           },
           {
             prompt: "How is asymmetric encryption different from symmetric encryption?",
             options: [
-              "It uses a public and private key pair instead of one shared key",
               "It uses no keys at all",
               "It only works offline",
+              "It uses a public and private key pair instead of one shared key",
               "It is used only for passwords",
             ],
-            answer_index: 0,
+            answer_index: 2,
             explanation: "Asymmetric encryption uses a key pair; symmetric uses one shared key.",
           },
           {
             prompt: "Which statement about a hash is true?",
             options: [
-              "You can turn a hash back into the original data",
               "Changing one letter of the input changes the hash completely",
+              "You can turn a hash back into the original data",
               "A hash is the same as a password",
               "Hashes are only used for videos",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Small input changes produce completely different hashes, which helps check integrity.",
           },
           {
             prompt: "Under Ghana's Data Protection Act, 2012 (Act 843), what must organisations that process personal data do?",
             options: [
               "Publish all data online",
-              "Register with the Data Protection Commission",
               "Delete data every week",
               "Store data only on paper",
+              "Register with the Data Protection Commission",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Organisations that process personal data must register with the Data Protection Commission.",
           },
           {
@@ -1363,12 +1443,12 @@ An awareness session you have actually delivered, with your slides or notes and 
           {
             prompt: "Why should you never shame someone who fell for a scam?",
             options: [
-              "Shame makes people hide mistakes, which is dangerous",
               "It wastes time in the session",
               "Scams are not important",
               "It is only a problem in large companies",
+              "Shame makes people hide mistakes, which is dangerous",
             ],
-            answer_index: 0,
+            answer_index: 3,
             explanation: "Hidden mistakes stop the security team from acting quickly.",
           },
           {
@@ -1385,12 +1465,12 @@ An awareness session you have actually delivered, with your slides or notes and 
           {
             prompt: "What must always happen before a simulated phishing exercise?",
             options: [
-              "It must be approved by management and planned carefully",
               "Staff must be told the exact date and time",
               "It must use real customer data",
+              "It must be approved by management and planned carefully",
               "It must be run by an outside hacker",
             ],
-            answer_index: 0,
+            answer_index: 2,
             explanation: "Simulations need management approval, careful planning and friendly follow up.",
           },
         ],
@@ -1437,45 +1517,45 @@ You can learn the ideas and practise reading logs and alerts on a phone. Hands o
           {
             prompt: "Why do organisations invest in detection and response as well as prevention?",
             options: [
-              "Because prevention is never perfect",
               "Because detection is cheaper than any protection",
               "Because regulators ban prevention",
               "Because attacks only happen at night",
+              "Because prevention is never perfect",
             ],
-            answer_index: 0,
+            answer_index: 3,
             explanation: "Something will eventually get through, so fast detection limits the damage.",
           },
           {
             prompt: "In a SOC with levels, what do Level 1 analysts mainly do?",
             options: [
               "Approve budgets",
-              "Watch and triage alerts, then escalate",
               "Write the company's laws",
+              "Watch and triage alerts, then escalate",
               "Repair printers",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Level 1 analysts watch alerts and escalate real issues to Level 2.",
           },
           {
             prompt: "What is true about most alerts in a SOC?",
             options: [
-              "Most turn out to be harmless",
               "Every alert is a confirmed attack",
+              "Most turn out to be harmless",
               "Alerts only appear during office hours",
               "Alerts never need writing up",
             ],
-            answer_index: 0,
+            answer_index: 1,
             explanation: "Most alerts are harmless; the skill is spotting the one that is not.",
           },
           {
             prompt: "What made Wumpini's handover smooth?",
             options: [
-              "She solved everything alone without telling anyone",
               "She wrote clear notes in the ticket and escalated through the playbook",
+              "She solved everything alone without telling anyone",
               "She waited until morning to look at the alert",
               "She deleted the alert",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Clear ticket notes and following the playbook let Level 2 act quickly.",
           },
         ],
@@ -1551,34 +1631,34 @@ Mariama is asked why a shared folder at a Tamale NGO went missing. She checks th
           {
             prompt: "Which four pieces of information does a typical log entry contain?",
             options: [
-              "When, where, who and what",
               "Price, colour, size and weight",
               "Name, age, address and phone",
+              "When, where, who and what",
               "Title, author, page and chapter",
             ],
-            answer_index: 0,
+            answer_index: 2,
             explanation: "Log entries usually record a timestamp, the system, the user or address, and the action.",
           },
           {
             prompt: "In the lesson's log example, why do the last three lines deserve escalation?",
             options: [
-              "They show a normal morning login",
               "An outside address failed twice then logged in as admin late at night",
+              "They show a normal morning login",
               "The user changed their password as required",
               "The clock was wrong",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Failures followed by a late night admin success from outside suggest a guessed password.",
           },
           {
             prompt: "Why should logs be sent to a central place?",
             options: [
-              "So one hacked machine cannot erase its own evidence",
               "To make computers run faster",
               "To save printer paper",
               "Because local logs are illegal",
+              "So one hacked machine cannot erase its own evidence",
             ],
-            answer_index: 0,
+            answer_index: 3,
             explanation: "Central storage keeps evidence safe even if one machine is compromised.",
           },
           {
@@ -1667,51 +1747,56 @@ LetsDefend and CyberDefenders offer browser based SOC style practice with free c
           {
             prompt: "What does a SIEM do?",
             options: [
-              "Collects logs from many sources, lets analysts search them and raises alerts using rules",
               "Replaces all antivirus software",
               "Repairs damaged hard drives",
               "Sends marketing emails",
+              "Collects logs from many sources, lets analysts search them and raises alerts using rules",
             ],
-            answer_index: 0,
+            answer_index: 3,
             explanation: "A SIEM centralises logs, supports searching and raises rule based alerts.",
           },
           {
             prompt: "A rule fires because a staff member mistyped a password, and nothing bad happened. What is this?",
-            options: ["True positive", "False positive", "Benign true positive", "Ransomware"],
-            answer_index: 1,
+            options: [
+              "False positive",
+              "True positive",
+              "Benign true positive",
+              "Ransomware",
+            ],
+            answer_index: 0,
             explanation: "The rule fired but there was no malicious activity, so it is a false positive.",
           },
           {
             prompt: "What does enriching an alert mean?",
             options: [
               "Charging money for it",
-              "Adding context such as IP reputation, user travel and asset importance",
               "Deleting old alerts",
+              "Adding context such as IP reputation, user travel and asset importance",
               "Sending it to every staff member",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Enrichment adds context that helps decide whether the alert is real.",
           },
           {
             prompt: "What is MITRE ATT&CK?",
             options: [
               "A paid antivirus product",
-              "A free knowledge base of attacker tactics and techniques",
               "A Ghanaian law",
               "A type of firewall",
+              "A free knowledge base of attacker tactics and techniques",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "SOC teams use ATT&CK to label and understand attacker behaviour consistently.",
           },
           {
             prompt: "Why did Hawa's lead praise her note about the false positive?",
             options: [
               "It was very long",
-              "It showed exactly what she checked and why she decided",
               "It used many technical words",
+              "It showed exactly what she checked and why she decided",
               "It escalated the alert to the CEO",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "A good note records the checks and reasoning so others can trust the decision.",
           },
         ],
@@ -1762,47 +1847,57 @@ At a microfinance company in Wa, Abdul-Rahman notices a staff laptop sending lar
         questions: [
           {
             prompt: "Which stage involves stopping an incident from spreading, such as disconnecting a computer?",
-            options: ["Preparation", "Containment", "Lessons learned", "Recovery"],
+            options: [
+              "Preparation",
+              "Containment",
+              "Lessons learned",
+              "Recovery",
+            ],
             answer_index: 1,
             explanation: "Containment limits the spread before the cause is removed.",
           },
           {
             prompt: "Why should a junior analyst avoid wiping an infected machine straight away?",
             options: [
-              "Wiping takes too long",
               "The machine may hold evidence the team needs",
+              "Wiping takes too long",
               "Wiping is illegal in Ghana",
               "Backups do not work after wiping",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Preserving evidence helps the team understand and fully remove the threat.",
           },
           {
             prompt: "Under section 47 of Act 1038, within what time must a person in charge of an institution report a cybersecurity incident to the relevant CERT?",
-            options: ["One week", "24 hours after detection", "30 days", "There is no time limit"],
-            answer_index: 1,
+            options: [
+              "One week",
+              "30 days",
+              "24 hours after detection",
+              "There is no time limit",
+            ],
+            answer_index: 2,
             explanation: "Section 47(5) sets a maximum of 24 hours after the incident is detected.",
           },
           {
             prompt: "What is the purpose of the lessons learned stage?",
             options: [
-              "To find someone to blame",
               "To calmly review what happened and improve, without blame",
+              "To find someone to blame",
               "To delete all logs",
               "To announce the incident on social media",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Lessons learned improves defences and plans for next time.",
           },
           {
             prompt: "In the example, what did Abdul-Rahman do with the suspicious laptop?",
             options: [
               "Reinstalled Windows immediately",
-              "Disconnected it from the network, left it on, started a timeline and called his lead",
               "Posted about it in the staff WhatsApp group",
               "Gave it back to the staff member",
+              "Disconnected it from the network, left it on, started a timeline and called his lead",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "He contained it, preserved evidence, recorded times and escalated.",
           },
         ],
@@ -1855,55 +1950,743 @@ Running scanners needs a computer and permission. On a phone, you can still prac
           {
             prompt: "What is a CVE?",
             options: [
-              "A public identifier for a known vulnerability",
               "A type of firewall",
+              "A public identifier for a known vulnerability",
               "A Ghanaian regulator",
               "A password manager",
             ],
-            answer_index: 0,
+            answer_index: 1,
             explanation: "A CVE identifier gives each known vulnerability a standard name.",
           },
           {
             prompt: "What is the first step in the vulnerability management cycle?",
-            options: ["Patch everything", "Know your assets", "Write the report", "Buy a new scanner"],
+            options: [
+              "Patch everything",
+              "Know your assets",
+              "Write the report",
+              "Buy a new scanner",
+            ],
             answer_index: 1,
             explanation: "You cannot protect what you do not know you have.",
           },
           {
             prompt: "Why does a listing in CISA's Known Exploited Vulnerabilities catalog raise a vulnerability's priority?",
             options: [
-              "It means attackers are actively using it",
               "It means the vulnerability is harmless",
               "It means the vendor has stopped trading",
               "It means the system is offline",
+              "It means attackers are actively using it",
             ],
-            answer_index: 0,
+            answer_index: 3,
             explanation: "The catalog lists vulnerabilities being actively exploited, so they need urgent fixes.",
           },
           {
             prompt: "When is it acceptable to run a vulnerability scan?",
             options: [
-              "On any website you visit",
               "On systems your organisation owns, with authorisation",
+              "On any website you visit",
               "On a competitor's network to compare",
               "On public Wi Fi to help others",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Scanning without permission is illegal; only scan authorised systems.",
           },
           {
             prompt: "Why did Fuseini fix the booking server finding first?",
             options: [
               "It was the oldest finding",
-              "It was high severity, internet facing and listed in CISA's catalog",
               "It was the easiest to fix",
+              "It was high severity, internet facing and listed in CISA's catalog",
               "The printer team asked him to",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Severity, exposure and active exploitation together made it the top priority.",
           },
         ],
         pass_threshold: 80,
+      },
+    },
+    "rules-frameworks": {
+      explanation_md: `## Why this matters
+
+Security work in Ghana does not happen in a vacuum. Laws set what is a crime and what organisations must do. Regulators such as the Cyber Security Authority and the Bank of Ghana issue directives. International standards give teams a shared checklist. Job adverts in Ghanaian banks and audit firms mention several of these by name, so understanding them helps you read adverts, follow your employer's processes and speak confidently in interviews.
+
+## Three kinds of rules
+
+* **Laws** passed by Parliament, such as the **Cybersecurity Act, 2020 (Act 1038)**, the **Electronic Transactions Act, 2008 (Act 772)** and the **Data Protection Act, 2012 (Act 843)**. Breaking a law can lead to penalties or prosecution.
+* **Regulator directives** for particular sectors. Bank adverts mention the Bank of Ghana's Cyber and Information Security Directive, and audit firm adverts mention the Cyber Security Authority's directive for critical information infrastructure. These tell regulated organisations which controls they must have.
+* **Frameworks and standards** that organisations choose or are required to follow, such as the NIST Cybersecurity Framework, ISO/IEC 27001 and PCI DSS. These describe good practice in an organised way.
+
+## Who is who
+
+* The **Cyber Security Authority (CSA)** regulates cybersecurity in Ghana, runs the National Computer Emergency Response Team (CERT GH), and licenses cybersecurity service providers.
+* The **Bank of Ghana** regulates banks and payment providers, including their cyber and fraud controls.
+* The **Data Protection Commission** oversees how personal data is handled.
+* The **National Communications Authority** regulates telecommunications, including SIM registration.
+
+## Why a junior analyst should care
+
+You will not write laws or directives, but you will see their effects every day: a rule that incidents must be reported quickly, a requirement for multi factor authentication, an audit that checks whether leavers' accounts were disabled. When you understand why a control exists, you apply it more carefully and explain it better.
+
+## A small example
+
+Hawa starts at a payments company in Accra. Her manager asks her to collect evidence for an upcoming audit: screenshots showing that multi factor authentication is enforced, a list of access reviews done this year, and the incident log. Hawa recognises each item as a control from the standards in this section. Because she understands their purpose, she spots that one access review is missing a manager's sign off and gets it fixed before the auditors arrive.
+
+## Checking the current version
+
+Laws are amended and directives are updated. Always check the official source, such as csa.gov.gh, bog.gov.gh or dpc.gov.gh, for the latest version rather than relying on a summary or an old social media post.`,
+      practice_task_md: `**Goal:** build a one page "rules map" for a Ghanaian bank.
+
+1. Draw or type a table with three columns: laws, regulators and directives, frameworks and standards.
+2. Fill it using this lesson: at least three laws, three regulators and three frameworks or standards.
+3. For each item, write one sentence on what it means for a junior analyst's daily work.
+4. Visit csa.gov.gh and note one current announcement or alert.
+
+**Done looks like:** a one page rules map with plain English notes and the date you checked the CSA site.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which body runs Ghana's National Computer Emergency Response Team (CERT GH)?",
+            options: [
+              "The Ghana Revenue Authority",
+              "The Electoral Commission",
+              "The Ghana Tourism Authority",
+              "The Cyber Security Authority",
+            ],
+            answer_index: 3,
+            explanation: "The CSA runs CERT GH and regulates cybersecurity in Ghana.",
+          },
+          {
+            prompt: "Which of these is a framework or standard rather than a law?",
+            options: [
+              "Act 1038",
+              "Act 772",
+              "ISO/IEC 27001",
+              "Act 843",
+            ],
+            answer_index: 2,
+            explanation: "ISO/IEC 27001 is an international standard; the others are Acts of Parliament.",
+          },
+          {
+            prompt: "Which regulator oversees how personal data is handled in Ghana?",
+            options: [
+              "The National Communications Authority",
+              "The Data Protection Commission",
+              "The Bank of Ghana",
+              "The Cyber Security Authority",
+            ],
+            answer_index: 1,
+            explanation: "The Data Protection Commission oversees personal data handling.",
+          },
+          {
+            prompt: "Where should you check for the latest version of a directive or law?",
+            options: [
+              "The official source, such as csa.gov.gh or bog.gov.gh",
+              "An old social media post",
+              "A friend's summary",
+              "Any search result",
+            ],
+            answer_index: 0,
+            explanation: "Laws and directives change, so check the official source.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "cybersecurity-act-csa": {
+      explanation_md: `## Why this matters
+
+The **Cybersecurity Act, 2020 (Act 1038)** shapes how security works in Ghana. It created the regulator, set up incident response teams, protects critical systems and regulates the people and companies who sell security services. Employers expect security staff to know its basics, and it may affect your own career if you later offer services to clients.
+
+## What the Act does
+
+Act 1038 was passed in 2020. Its main parts include:
+
+* **The Cyber Security Authority (CSA):** established to regulate cybersecurity activities in Ghana and promote the development of cybersecurity in the country.
+* **Critical information infrastructure (CII):** computer systems or networks essential for national security or the economic and social well being of citizens. The Act provides for designating, registering and auditing CII. The CSA states that thirteen sectors were designated as CII sectors in 2021.
+* **Computer emergency response teams:** a National CERT and Sectoral CERTs that monitor and respond to incidents.
+* **Incident reporting:** section 47 requires a person in charge of an institution to report a cybersecurity incident to the relevant Sectoral CERT or the National CERT within 24 hours of detecting it.
+* **Licensing and accreditation:** cybersecurity service providers must be licensed (section 49), and the CSA accredits cybersecurity professionals and practitioners (section 57).
+* **Public awareness:** the CSA must run programmes to promote awareness and education.
+* **Protection online:** offences relating to children online, sexual extortion, and sharing intimate images without consent.
+
+## Licensing and accreditation in practice
+
+The CSA began licensing and accreditation in 2023. Its announcement named five service areas: vulnerability assessment and penetration testing, digital forensics, managed cybersecurity services, governance, risk and compliance, and cybersecurity training. If you work as an in house analyst for a bank or telco, your employer handles its own obligations. If you later offer services such as testing, forensics or monitoring to clients, check the CSA's current licensing and accreditation rules first. The CSA publishes guidance on its website.
+
+## Reporting channels
+
+CERT GH lists these channels for reporting incidents: call or text **292**, WhatsApp **0501603111**, email **report@csa.gov.gh**, the CSA Ghana mobile app and an online form. You can share these with friends and family who are victims of cybercrime.
+
+## A small example
+
+Issahaku, a junior analyst at a regional hospital group, helps his manager with a ransomware incident. The manager asks him for an accurate timeline because the hospital, as part of a designated health sector, needs to report promptly to the relevant CERT. Issahaku's notes show when the first alert fired and when the incident was confirmed, so the report is accurate and on time.
+
+## Remember
+
+You do not need to memorise every section. Know what the CSA is, what CII and CERTs are, the 24 hour reporting duty for institutions, that service providers are licensed and professionals can be accredited, and where to report.`,
+      practice_task_md: `**Goal:** explain Act 1038 to someone outside tech.
+
+1. Visit csa.gov.gh and its incident reporting page, and read the CII overview page.
+2. Write a short explainer, no more than one phone screen, answering: What is the CSA? What is CERT GH? What must institutions do when an incident happens? Where can ordinary people report cybercrime?
+3. Explain it in person or by voice note to a friend or relative, in any language, and note one question they asked.
+4. Add your explainer and the question to your journal.
+
+**Done looks like:** a one screen explainer and a note of the conversation. Use only facts from the lesson or the CSA's own site.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which Act established the Cyber Security Authority?",
+            options: [
+              "The Data Protection Act, 2012 (Act 843)",
+              "The Electronic Transactions Act, 2008 (Act 772)",
+              "The Cybersecurity Act, 2020 (Act 1038)",
+              "The Payment Systems and Services Act, 2019 (Act 987)",
+            ],
+            answer_index: 2,
+            explanation: "Act 1038 established the CSA.",
+          },
+          {
+            prompt: "What is critical information infrastructure under Act 1038?",
+            options: [
+              "Computer systems or networks essential for national security or citizens' economic and social well being",
+              "Any personal phone",
+              "Only government websites",
+              "Social media accounts with many followers",
+            ],
+            answer_index: 0,
+            explanation: "CII covers systems essential to national security or economic and social well being.",
+          },
+          {
+            prompt: "Under the Act, who must be licensed by the CSA?",
+            options: [
+              "Every smartphone owner",
+              "All university students",
+              "Anyone who uses mobile money",
+              "Cybersecurity service providers",
+            ],
+            answer_index: 3,
+            explanation: "Section 49 requires cybersecurity service providers to be licensed.",
+          },
+          {
+            prompt: "Which is a CERT GH reporting channel?",
+            options: [
+              "Call 999",
+              "WhatsApp 0501603111",
+              "Email info@example.com",
+              "Text HELP to 1234",
+            ],
+            answer_index: 1,
+            explanation: "CERT GH lists 292 by call or text, WhatsApp 0501603111 and report@csa.gov.gh.",
+          },
+          {
+            prompt: "If you later offer penetration testing or forensics to clients, what should you do first?",
+            options: [
+              "Start immediately and register later",
+              "Check the CSA's current licensing and accreditation rules",
+              "Ask a friend if it is allowed",
+              "Only work for clients outside Ghana",
+            ],
+            answer_index: 1,
+            explanation: "Selling cybersecurity services in Ghana falls under CSA licensing and accreditation.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "frameworks-standards": {
+      explanation_md: `## Why this matters
+
+Adverts from Ghanaian banks and audit firms mention ISO/IEC 27001, PCI DSS, the Bank of Ghana's Cyber and Information Security Directive, the CSA's CII Directive, NIST frameworks and MITRE ATT&CK. Senior roles ask for deep knowledge, but even juniors are expected to know what each one is for. Understanding them helps you see why your team does what it does.
+
+## The NIST Cybersecurity Framework 2.0
+
+Published by the US National Institute of Standards and Technology and used worldwide, the CSF 2.0 organises security into six functions:
+
+* **Govern:** set strategy, roles and policies.
+* **Identify:** know your assets, risks and suppliers.
+* **Protect:** controls such as access management, training and data security.
+* **Detect:** find attacks and unusual activity.
+* **Respond:** act on incidents.
+* **Recover:** restore normal operations.
+
+It is a useful map: every lesson in this track fits under one of these functions.
+
+## ISO/IEC 27001
+
+An international standard for an **information security management system (ISMS)**: a structured way for an organisation to manage security risks, set policies, apply controls and keep improving. Organisations can be audited and certified against it. Bank and fintech adverts in Ghana mention it often, and juniors frequently help collect evidence for audits.
+
+## PCI DSS
+
+The **Payment Card Industry Data Security Standard** applies to organisations that store, process or transmit payment card data. Fintechs and banks handling card payments must follow it. It covers things like protecting card data, restricting access, monitoring and regular testing.
+
+## Sector directives in Ghana
+
+The **Bank of Ghana's Cyber and Information Security Directive**, first issued in 2018, sets cyber requirements for the institutions it regulates. The **CSA's CII Directive** sets requirements for owners of critical information infrastructure. Both appear in Ghanaian job adverts. If you join a bank or a CII sector organisation, ask for the parts that apply to your role.
+
+## MITRE ATT&CK
+
+A free knowledge base describing how attackers behave, organised into tactics (their goals, such as gaining initial access) and techniques (how they do it, such as phishing). SOC teams use it to label alerts and check which attacker behaviours they can detect.
+
+## A small example
+
+Amina is preparing for an interview with a Ghanaian fintech. The advert mentions PCI DSS and ISO 27001. She prepares one plain sentence on each: "PCI DSS protects card payment data; ISO 27001 is a management system for running security across the whole organisation." When the interviewer asks, she adds an example of each from this track. The panel notes that she understands purpose, not just names.
+
+## Keep it practical
+
+You do not need to read every standard in full now. Learn what each is for, and when your employer follows one, read the parts that apply to your job.`,
+      practice_task_md: `**Goal:** map this track to the NIST CSF 2.0 functions.
+
+1. Make a table with six columns: Govern, Identify, Protect, Detect, Respond, Recover.
+2. Place at least twelve lessons or practice tasks from this track under the function they fit best.
+3. Write one plain sentence each for ISO/IEC 27001, PCI DSS and MITRE ATT&CK as you would say it in an interview.
+4. Find one Ghanaian security job advert (on any public job board) and note which standards it mentions. Do not copy the advert text.
+
+**Done looks like:** a filled six column table, three interview sentences and a short note on one advert.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is one of the six functions of NIST CSF 2.0?",
+            options: [
+              "Advertise",
+              "Purchase",
+              "Celebrate",
+              "Govern",
+            ],
+            answer_index: 3,
+            explanation: "The six functions are Govern, Identify, Protect, Detect, Respond and Recover.",
+          },
+          {
+            prompt: "What is ISO/IEC 27001 about?",
+            options: [
+              "An information security management system for the whole organisation",
+              "Payment card data only",
+              "A list of attacker techniques",
+              "Ghana's data protection law",
+            ],
+            answer_index: 0,
+            explanation: "ISO/IEC 27001 is a standard for managing information security across an organisation.",
+          },
+          {
+            prompt: "Which organisations must follow PCI DSS?",
+            options: [
+              "Only schools",
+              "Only government ministries",
+              "Organisations that store, process or transmit payment card data",
+              "Every person with a smartphone",
+            ],
+            answer_index: 2,
+            explanation: "PCI DSS applies wherever payment card data is handled.",
+          },
+          {
+            prompt: "In MITRE ATT&CK, what is a tactic?",
+            options: [
+              "A type of antivirus",
+              "A Ghanaian directive",
+              "A backup method",
+              "An attacker's goal, such as gaining initial access",
+            ],
+            answer_index: 3,
+            explanation: "Tactics are attacker goals; techniques are how they achieve them.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "job-ready": {
+      explanation_md: `## Why this matters
+
+Security employers in Ghana and remote employers abroad want evidence that you can do the work: investigate an alert, write a clear note, explain a risk, behave ethically. Certificates can help, but proof of practice and good communication carry great weight. This section helps you get there on modest hardware and a tight budget.
+
+## An honest picture of entry routes
+
+Look at junior security adverts and you will notice that many "entry level" roles still ask for some IT experience. That is why this track builds on IT support. Common routes in include:
+
+* **IT support or help desk** roles where you take on security tasks, then move into a security team.
+* **National service or internships** in IT, IT audit or technology risk units at banks, telcos, government bodies and audit firms.
+* **Fraud monitoring or operations** roles at telcos and fintechs, where knowledge of MoMo fraud and SIM swap is directly useful.
+* **Level 1 SOC analyst** roles at companies running their own SOC or at managed security providers, sometimes remote.
+
+Some cohort based programmes and microdegree schemes in Ghana include cybersecurity. This roadmap can help you prepare for their applications and get more from them if you are accepted.
+
+## The three topics in this section
+
+* **A low cost practice lab:** where and how to practise legally, what works on a phone and what needs a computer.
+* **Entry certifications:** what the common beginner options cover, so you can choose one that fits, if you want one.
+* **Your portfolio and first security role:** turning your practice into evidence and finding real openings.
+
+## Keep building your journal
+
+If you have followed the practice tasks, you already have: a code of conduct, a risk register, a phishing analysis, a ransomware checklist, triage notes, an incident playbook and an awareness talk. That is the start of a real portfolio.
+
+## A small example
+
+Sumaila finished IT support training and works at a computer shop in Tamale. He does not yet have a laptop powerful enough for virtual machines. He uses his phone for browser based security lessons and spends two evenings a week at a community centre computer for hands on labs. He writes up each lab in his journal. Six months later, he applies for a national service post in a bank's IT unit and brings three short write ups to the interview. The panel asks about one in detail, and he explains it confidently.
+
+## Mind your safety and your money
+
+Be careful of offers that promise a guaranteed security job in exchange for a fee, or "hacking courses" that teach attacking real systems. Genuine employers do not ask you to pay to be hired, and legitimate training stays within the law.`,
+      practice_task_md: `**Goal:** write your personal plan for getting job ready.
+
+1. List the devices you have access to (phone, shared computer, own laptop) and when you can use them.
+2. Choose one entry route from the lesson that fits you best and explain why in two sentences.
+3. Set three goals for the next eight weeks, such as completing two lab write ups, delivering an awareness talk and drafting a CV.
+4. Note one free place near you with computers, such as a school ICT lab, public library or community centre, and when it is open.
+
+**Done looks like:** a one page plan with devices, route, three goals and a practice location, saved in your journal.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does this track build on IT support?",
+            options: [
+              "Because security has nothing to do with computers",
+              "Because IT support pays the same as security",
+              "Because many entry security roles still ask for some IT experience",
+              "Because certificates are not allowed in security",
+            ],
+            answer_index: 2,
+            explanation: "Many junior security adverts expect IT experience, so IT support is a common entry route.",
+          },
+          {
+            prompt: "Which is listed as a common route into security?",
+            options: [
+              "Selling hacking services online",
+              "Fraud monitoring at a telco or fintech",
+              "Testing your neighbour's Wi Fi",
+              "Buying a guaranteed job offer",
+            ],
+            answer_index: 1,
+            explanation: "Fraud monitoring roles use knowledge of MoMo fraud and SIM swap directly.",
+          },
+          {
+            prompt: "How did Sumaila practise without a powerful laptop?",
+            options: [
+              "He used browser lessons on his phone and a community centre computer for labs",
+              "He gave up on labs",
+              "He used his employer's customers' computers",
+              "He bought an expensive course",
+            ],
+            answer_index: 0,
+            explanation: "He combined phone learning with planned sessions on a community computer.",
+          },
+          {
+            prompt: "What should you think about an offer of a guaranteed security job in exchange for a fee?",
+            options: [
+              "It is a normal part of hiring",
+              "Pay quickly before the offer ends",
+              "Be careful: genuine employers do not ask you to pay to be hired",
+              "It is required by the CSA",
+            ],
+            answer_index: 2,
+            explanation: "Paying to be hired is a warning sign of a scam.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "home-lab": {
+      explanation_md: `## Why this matters
+
+Employers want to hear what you have practised. A lab is a safe, legal place to try tools, break things and learn from mistakes without harming anyone. Remember the rule from the ethics lesson: practise only on systems you own or on platforms built for learning.
+
+## Honest talk about hardware
+
+Real security labs work best on a **computer**. Virtual machines (VMs), Wireshark and SIEM practice all need one. A laptop with more memory runs virtual machines more smoothly, but you can start with what you have.
+
+If you only have a phone, you can still make real progress:
+
+* **Browser based learning platforms** such as TryHackMe offer guided rooms, some free, that run in a browser. A tablet or larger phone helps.
+* **Cisco Networking Academy** free courses, including Introduction to Cybersecurity and Linux Unhatched, which has a browser terminal.
+* **OverTheWire Bandit**, a legal text based wargame for learning Linux, played through a free SSH app.
+* **Reading practice:** the log, alert and phishing exercises in this track only need a screen.
+
+For hands on computer work, use a **school ICT lab, public library or community centre**, with permission from whoever runs it, and never change their settings or install tools without approval.
+
+## Saving data
+
+Labs can use a lot of data. To keep costs down:
+
+* Download large files, such as Linux installation images, on free or shared Wi Fi at a library, school or workplace that allows it.
+* Choose lighter Linux versions when your computer is old.
+* Prefer text based exercises like Bandit, which use very little data.
+* Write your notes offline and upload when you have Wi Fi.
+
+## A simple computer lab
+
+If you have a laptop:
+
+1. Install **VirtualBox**, a free program that runs virtual computers inside your computer.
+2. Create a Linux virtual machine. Take a **snapshot** so you can roll back if something breaks.
+3. Practise the Linux commands from this track, read the system's own logs and generate your own failed logins to find them.
+4. Keep the lab isolated: do not point any tools at other people's devices or networks.
+
+## Write up everything
+
+A lab is only half useful if you forget it. For each session, write: the goal, what you did, what you found, what went wrong and what you learned. Screenshots help. These write ups become portfolio pieces.
+
+## A small example
+
+Mariama has an old laptop that struggles with large programs. She installs a light Linux version in VirtualBox using the library's Wi Fi, takes a snapshot, then practises reading auth.log after deliberately mistyping her own password several times. She writes a one page report of how she found the failed attempts. Total data cost from her own bundle: almost nothing.`,
+      practice_task_md: `**Goal:** complete and write up your first lab session.
+
+**Phone path:** complete the first three levels of OverTheWire Bandit using a free SSH app, or the first module of Cisco's free Introduction to Cybersecurity course.
+
+**Computer path:** install VirtualBox, create a Linux virtual machine, take a snapshot, mistype your password three times at the login prompt, then find those failures in the logs.
+
+For either path, write a lab report with: goal, steps, findings, problems and lessons learned, plus one screenshot.
+
+**Done looks like:** a one page lab report you can show a mentor or interviewer. Only practise on your own device or learning platforms.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Where is it legal to practise security tools?",
+            options: [
+              "On systems you own or platforms built for learning",
+              "On any network with weak security",
+              "On a library's computers without asking",
+              "On a friend's phone without telling them",
+            ],
+            answer_index: 0,
+            explanation: "Practise only on your own systems or learning platforms built for it.",
+          },
+          {
+            prompt: "What is a snapshot in VirtualBox useful for?",
+            options: [
+              "Taking photos with your webcam",
+              "Speeding up your internet",
+              "Encrypting your phone",
+              "Rolling back a virtual machine if something breaks",
+            ],
+            answer_index: 3,
+            explanation: "A snapshot saves the VM's state so you can return to it.",
+          },
+          {
+            prompt: "Which is a good way to save mobile data when building a lab?",
+            options: [
+              "Stream videos while downloading",
+              "Download large installation files on free Wi Fi at a library or school that allows it",
+              "Download every tool you can find",
+              "Reinstall the VM every day",
+            ],
+            answer_index: 1,
+            explanation: "Using allowed free Wi Fi for large downloads keeps bundle costs low.",
+          },
+          {
+            prompt: "Which practice option works on a phone through a free SSH app?",
+            options: [
+              "VirtualBox",
+              "OverTheWire Bandit",
+              "Wireshark capture",
+              "A full SIEM install",
+            ],
+            answer_index: 1,
+            explanation: "Bandit is a text based wargame you can play over SSH.",
+          },
+          {
+            prompt: "What should every lab write up include?",
+            options: [
+              "Only the final screenshot",
+              "Your passwords",
+              "A copy of a job advert",
+              "Goal, steps, findings, problems and lessons learned",
+            ],
+            answer_index: 3,
+            explanation: "A full write up shows your thinking and becomes a portfolio piece.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "entry-certifications": {
+      explanation_md: `## Why this matters
+
+Ghanaian and remote security adverts often name certifications. Senior roles ask for certifications such as CISSP, CISM or CISA, which require years of experience. Junior and mid level adverts mention options such as CompTIA Security+ as an advantage, and remote Level 1 SOC adverts sometimes list Security+ or similar as desirable. A beginner certificate will not replace skills, but it can help a CV get noticed. This topic is optional: you can become job ready without one.
+
+## Common entry options
+
+These are listed as examples, not recommendations. Check each provider's official page for current content, cost and any financial aid before deciding.
+
+* **ISC2 Certified in Cybersecurity (CC):** an entry level certification that ISC2 says requires no work experience. Its outline covers security principles, security governance, identity and access management concepts, networking and cloud security concepts, and security operations and incident response.
+* **CompTIA Security+:** a widely recognised, vendor neutral certification aimed at roles such as security analyst. CompTIA updates it periodically, and its site announced a new version for late 2026, so check which version you would study for.
+* **Google Cybersecurity Certificate:** a beginner programme on Coursera covering security foundations, networks, Linux and SQL, SIEM tools, detection and response, and Python. Coursera charges a subscription, though financial aid may be available.
+* **Microsoft Security, Compliance, and Identity Fundamentals (SC 900):** a fundamentals exam focused on Microsoft's security and identity services, useful where employers use Microsoft systems.
+* **Cisco Networking Academy Introduction to Cybersecurity:** a free introductory course with a completion badge, a good first step before any paid exam.
+
+## How to choose
+
+Ask yourself:
+
+* **What do adverts I am interested in mention?** Read several and count.
+* **What can I afford, including retakes?** Do not borrow money for an exam under pressure.
+* **What will I learn?** Choose the one whose content fills your gaps.
+* **Do I have the basics?** Most people do better after IT support and networking basics.
+
+## Avoid traps
+
+* Be wary of "exam dumps" that share real exam questions; they break the providers' rules and can lead to your certificate being withdrawn.
+* Be careful of unofficial sellers offering discounted vouchers.
+* A certificate without practice is weak evidence; pair it with lab write ups.
+
+## A small example
+
+Abdul-Rahman reads ten security adverts and notices that Security+ appears in several junior and mid level ones. He cannot afford the exam yet, so he completes Cisco's free introductory course first, then works through a free study plan while saving. He keeps doing labs throughout. When he finally sits the exam, his lab write ups mean he understands the topics rather than memorising answers.`,
+      practice_task_md: `**Goal:** make an informed certification decision.
+
+1. Find five security job adverts you would apply for (Ghana or remote). Do not copy their text.
+2. Record which certifications each mentions and whether they are required or an advantage.
+3. Visit the official pages of two entry options from the lesson and note what each covers and its current cost in your journal.
+4. Write a short decision: which one (if any) you will pursue, why, and a realistic timeline and savings plan.
+
+**Done looks like:** a small table of adverts and certifications, plus a half page decision. It is fine to decide "not yet".`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to ISC2, what work experience does Certified in Cybersecurity (CC) require?",
+            options: [
+              "None",
+              "Five years",
+              "Two years in a SOC",
+              "A university degree in security",
+            ],
+            answer_index: 0,
+            explanation: "ISC2 describes CC as entry level with no work experience required.",
+          },
+          {
+            prompt: "Which certifications do Ghanaian adverts typically ask for in senior roles?",
+            options: [
+              "A driving licence only",
+              "A typing certificate",
+              "CISSP, CISM or CISA",
+              "No certifications ever",
+            ],
+            answer_index: 2,
+            explanation: "Senior adverts name certifications such as CISSP, CISM and CISA, which need years of experience.",
+          },
+          {
+            prompt: "Why should you avoid exam dumps?",
+            options: [
+              "They are too expensive",
+              "They only work for networking exams",
+              "They require a laptop",
+              "They break the providers' rules and can lead to your certificate being withdrawn",
+            ],
+            answer_index: 3,
+            explanation: "Using real leaked questions breaks the rules and risks your certification.",
+          },
+          {
+            prompt: "Which option in the lesson is a free introductory course with a completion badge?",
+            options: [
+              "CISSP",
+              "CISM",
+              "Cisco Networking Academy Introduction to Cybersecurity",
+              "PCI DSS",
+            ],
+            answer_index: 2,
+            explanation: "Cisco's Introduction to Cybersecurity is free and gives a completion badge.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "portfolio-job-search": {
+      explanation_md: `## Why this matters
+
+Security roles in Ghana are concentrated in banks, telcos, fintechs, audit firms, managed security providers and government bodies, mostly in Accra, with some IT roles in regional offices. Remote roles exist, but many are restricted to certain countries. A clear portfolio and a focused search help you stand out wherever you apply.
+
+## Build a simple portfolio
+
+Choose your best five or six pieces from this track and present them neatly:
+
+* A **phishing analysis** of real or invented messages.
+* **Triage notes** for several alerts.
+* An **incident response playbook** for one scenario.
+* A **vulnerability prioritisation** table.
+* A **lab write up** with screenshots.
+* An **awareness talk** you delivered, with a reflection.
+
+Host them in a free Google Drive folder with view only sharing, or on a free GitHub repository as Markdown files. Remove all real names, numbers, passwords and anything from a real employer. Never publish details of a real organisation's weaknesses.
+
+## Write a security focused CV
+
+* Lead with relevant skills: networking, Windows and Linux, log analysis, phishing analysis, incident documentation, security awareness.
+* Show IT support experience, including any security tasks, such as resetting compromised accounts or removing malware.
+* Link to your portfolio.
+* Keep it to one or two pages and tailor it to each advert.
+
+## Where to look
+
+* Public job boards in Ghana, searching for terms such as "security analyst", "information security", "SOC", "IT risk" and "fraud".
+* Careers pages of banks, telcos, fintechs and audit firms, including national service and internship openings in IT, IT audit and technology risk.
+* Remote job boards, checking carefully that a role accepts applicants based in Ghana before applying.
+
+## Interview preparation
+
+Expect questions like "explain the CIA triad", "what would you do if a staff member clicked a phishing link?", "what is the difference between a vulnerability and a threat?" and "tell me about a lab you did". Practise answering out loud using your portfolio as examples. Be honest about what you do not know yet and explain how you would find out.
+
+## Watch for fake offers
+
+Scammers target job seekers too. Be careful of offers that arrive without an interview, ask for a fee, or ask you to receive and forward money. Check the company's official website and contact details.
+
+## A small example
+
+Wumpini applies for a national service post in a telco's IT security unit. Her CV lists her IT support experience and links to a Drive folder with four write ups. At the interview she is asked how she would handle a suspicious email. She walks through her phishing analysis step by step. She is offered the post, and her supervisor later says the portfolio showed she could already think like an analyst.`,
+      practice_task_md: `**Goal:** assemble your portfolio and a tailored CV.
+
+1. Choose your best five pieces of work from this track and tidy them: clear title, date, goal, method, findings.
+2. Remove any real names, numbers or employer details. Put them in a view only Google Drive folder or a free GitHub repository.
+3. Write or update a one page CV focused on security skills, linking to the portfolio.
+4. Find one real junior role (Ghana or remote) and write three sentences on how your portfolio matches its requirements. Do not copy the advert.
+5. Ask a mentor to review your CV and portfolio and note their feedback.
+
+**Done looks like:** a shareable portfolio link, a tailored CV and mentor feedback recorded in your journal.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What must you remove before publishing your portfolio?",
+            options: [
+              "All screenshots",
+              "Real names, numbers, passwords and details of real organisations' weaknesses",
+              "Your own name",
+              "The dates of your work",
+            ],
+            answer_index: 1,
+            explanation: "Portfolios must not expose real people's data or real organisations' weaknesses.",
+          },
+          {
+            prompt: "What should you check before applying for a remote security role?",
+            options: [
+              "That the role accepts applicants based in Ghana",
+              "That the company has a nice logo",
+              "That the advert is very short",
+              "That no interview is required",
+            ],
+            answer_index: 0,
+            explanation: "Many remote roles are restricted to certain countries.",
+          },
+          {
+            prompt: "Which is a warning sign of a fake job offer?",
+            options: [
+              "It includes an interview",
+              "It lists the company's official website",
+              "It asks you to pay a fee or forward money",
+              "It describes the duties clearly",
+            ],
+            answer_index: 2,
+            explanation: "Fees and forwarding money are common signs of job scams.",
+          },
+          {
+            prompt: "How did Wumpini answer the question about a suspicious email?",
+            options: [
+              "She walked through her phishing analysis step by step",
+              "She said she would forward it to everyone",
+              "She said she had never seen one",
+              "She guessed",
+            ],
+            answer_index: 0,
+            explanation: "Using her portfolio piece showed she could already think like an analyst.",
+          },
+        ],
+        pass_threshold: 75,
       },
     },
   },
