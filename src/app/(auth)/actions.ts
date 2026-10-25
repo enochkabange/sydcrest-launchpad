@@ -44,6 +44,8 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
     },
   });
   if (error) {
+    // Shown to the user only as a generic message; logged so Vercel logs say why.
+    console.error("signUp failed", { code: error.code, status: error.status, message: error.message });
     const message =
       error.code === "weak_password"
         ? "Choose a stronger password."
