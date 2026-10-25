@@ -734,6 +734,1355 @@ Hawa makes a short video about handwashing for a clinic in Tolon. Her first vers
         pass_threshold: 75,
       },
     },
+    shooting: {
+      explanation_md: `When a business owner in Tamale scrolls through your portfolio, they judge it in seconds. Is the picture steady? Can they see faces clearly? Can they hear what people say? Ghanaian adverts for videographers and content creators mention camera operation, lighting, sound and composition again and again, because these basics separate content a brand can use from content it cannot.
+
+## Four things that make footage look professional
+
+1. **Steadiness.** Shaky footage feels amateur and can make viewers feel sick. Holding the phone well, using your body as a tripod, or resting it on something solid fixes most of this.
+2. **Framing.** Where you place people and objects in the picture tells the viewer what matters. A few simple rules, like the rule of thirds and keeping some space above heads, make shots look planned.
+3. **Light.** Cameras need light to see. Most poor phone footage is simply too dark, or lit harshly from above. Learning where to place your subject in relation to the sun or a window improves everything.
+4. **Sound.** People will watch slightly soft video, but they leave quickly when they cannot hear. Getting the phone or a cheap microphone close to the speaker and away from noise is the biggest single upgrade you can make.
+
+## Photos count too
+
+Many content jobs in Ghana combine video and photography: product photos for an online shop, portraits for a staff page, event pictures for a church or school. The same four ideas apply to photos, minus the sound.
+
+## Gear: what you need and what can wait
+
+You can start with only your phone. Helpful cheap additions, when you can afford them, are a small tripod or phone clamp, a wired or clip on microphone, and a piece of white card or cloth to bounce light. Learn to get the most from your phone first; gear helps a good creator, but it does not replace skill.
+
+## What this section covers
+
+* **Framing, angles and steady shots.** Shot sizes, the rule of thirds and holding the phone steady.
+* **Photos for people and products.** Portraits, events and product shots that sell.
+* **Light on a budget.** Using windows, shade and reflectors.
+* **Sound on a budget.** Quiet places, mic distance and cheap microphones.
+
+## A small example
+
+Fuseini films a short interview with a shea butter producer in Savelugu. In his first attempt, she stands in harsh midday sun with a busy road behind her, and he holds the phone at arm's length. Faces are squinting and the traffic drowns her voice. For the second attempt he moves her into open shade, turns her away from the road, rests his elbows on a wall to steady the phone and moves closer. Same phone, same person, and now the clip is usable.`,
+      practice_task_md: `**Goal:** See the four basics for yourself.
+
+**Steps:**
+1. Record a ten second clip of a friend talking, holding the phone at arm's length in a noisy, bright place.
+2. Record the same ten seconds again after fixing all four basics: steady phone, better framing, softer light and a quieter spot closer to them.
+3. Watch both clips with sound on and write down what improved in each of the four areas.
+
+**Done looks like:** Two clips and a short note listing the changes. Keep the pair; a before and after comparison is a useful thing to show a mentor or client.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which four basics does this section focus on?",
+            options: [
+              "Steadiness, framing, light and sound",
+              "Filters, stickers, music and hashtags",
+              "Price, place, product and promotion",
+              "Speed, size, colour and logo",
+            ],
+            answer_index: 0,
+            explanation: "These four make footage look professional.",
+          },
+          {
+            prompt: "According to the lesson, why is sound so important?",
+            options: [
+              "Platforms delete silent videos",
+              "People leave quickly when they cannot hear, even if they accept softer video",
+              "Sound makes files smaller",
+              "Clients never watch the picture",
+            ],
+            answer_index: 1,
+            explanation: "Poor sound loses viewers faster than slightly soft video.",
+          },
+          {
+            prompt: "What is the lesson's view on buying gear?",
+            options: [
+              "You must buy a camera before starting",
+              "Gear replaces skill",
+              "Start with your phone; cheap gear helps later but does not replace skill",
+              "Only expensive lights work",
+            ],
+            answer_index: 2,
+            explanation: "Learn your phone first; gear supports skill.",
+          },
+          {
+            prompt: "What did Fuseini change in his second interview attempt?",
+            options: [
+              "He bought a new phone",
+              "He moved to shade, turned away from the road, steadied the phone and moved closer",
+              "He added more music",
+              "He filmed at night",
+            ],
+            answer_index: 1,
+            explanation: "He fixed light, noise, steadiness and distance with the same phone.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "framing-and-composition": {
+      explanation_md: `Composition is how you arrange what is inside the frame. Good composition makes a viewer look where you want them to look, and makes phone footage feel intentional. Ghanaian adverts for content creators ask for composition and framing skills, and remote editors are often judged on whether they can pick the best framed shots from a pile of footage.
+
+## Shot sizes
+
+Professionals describe shots by how much of the subject you see:
+
+* **Wide shot.** Shows the whole scene: the market stall and the street around it. It tells the viewer where we are.
+* **Medium shot.** Shows a person from about the waist up. Good for someone talking to camera.
+* **Close up.** A face, hands, or a product filling the frame. Shows emotion and detail.
+
+A short video usually mixes all three: a wide to set the scene, mediums for talking, close ups for detail. Changing shot size between cuts keeps viewers interested.
+
+## The rule of thirds
+
+Turn on your camera grid. It divides the screen into three columns and three rows. Placing a person's eyes or an important object near where the lines cross often looks more natural than putting everything dead centre. If someone is looking or walking to one side, leave space on that side so they are not squashed against the edge.
+
+Rules can be broken on purpose. A centred face talking straight to camera works well in vertical videos. The point is to choose, not to place things by accident.
+
+## Headroom and backgrounds
+
+* Leave a little space above heads, but not too much, and do not cut people off at the joints, such as exactly at the knees or neck.
+* Check the background before you record. A tree that seems to grow out of someone's head, a pile of rubbish or a bright window behind a face will distract viewers.
+
+## Angles
+
+Filming at eye level feels honest and equal. A low angle can make someone look strong; a high angle can make them seem small. For products, try a top down angle, for example looking straight down at a plate of waakye.
+
+## Steady shots
+
+* Hold the phone with both hands and tuck your elbows into your body.
+* Lean on a wall, table or pole when you can.
+* For movement, walk slowly with bent knees, or let the subject move while the phone stays still.
+* A cheap tripod or a stack of books works for talking videos.
+
+## A small example
+
+Mariama films a carpenter in Wa. She starts with a wide shot of the workshop, then a medium shot of him explaining his work, then close ups of his hands sanding wood. She keeps him on a third line, with space in the direction he is looking, and checks there is no bright doorway behind him. The result looks planned, even though she used only her phone.`,
+      practice_task_md: `**Goal:** Practise shot sizes, the rule of thirds and steady handling.
+
+**Steps:**
+1. Turn on your camera grid.
+2. Choose a person at work or a product. Film a wide shot, a medium shot and a close up, each for five seconds, holding the phone with both hands and elbows tucked in.
+3. Film one more shot with the subject placed on a third line, with space in the direction they face.
+4. Check your backgrounds. Reshoot any shot with a distraction behind the subject.
+
+**Done looks like:** Four short clips labelled wide, medium, close and thirds. Put them together as a sequence if you like; that is your first mini edit.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which shot shows the whole scene and tells the viewer where we are?",
+            options: ["Close up", "Medium shot", "Wide shot", "Top down shot"],
+            answer_index: 2,
+            explanation: "A wide shot sets the scene.",
+          },
+          {
+            prompt: "What does the rule of thirds suggest?",
+            options: [
+              "Always place the subject dead centre",
+              "Place important things near where the grid lines cross",
+              "Film only three shots",
+              "Cut every video into three parts",
+            ],
+            answer_index: 1,
+            explanation: "Placing subjects near grid intersections often looks natural.",
+          },
+          {
+            prompt: "If someone is looking to the right, where should you leave space?",
+            options: [
+              "On the left",
+              "On the right, in the direction they are looking",
+              "Above their head only",
+              "Nowhere; fill the frame",
+            ],
+            answer_index: 1,
+            explanation: "Space in the direction of the look stops them feeling squashed.",
+          },
+          {
+            prompt: "Which is a good way to keep a handheld shot steady?",
+            options: [
+              "Hold the phone at arm's length with one hand",
+              "Tuck your elbows in and lean on something solid",
+              "Run quickly while filming",
+              "Zoom in as far as possible",
+            ],
+            answer_index: 1,
+            explanation: "Tucked elbows and support reduce shake.",
+          },
+          {
+            prompt: "Why should you check the background before recording?",
+            options: [
+              "Distractions like a bright window or a pole behind someone's head pull attention away",
+              "Backgrounds change the video length",
+              "Platforms require plain walls",
+              "It saves battery",
+            ],
+            answer_index: 0,
+            explanation: "A messy background distracts from the subject.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "phone-photography": {
+      explanation_md: `Every small business that sells online needs photos: the boutique's new dresses, the restaurant's menu, the phone shop's accessories, a church's harvest event. Adverts for content creators and photographer roles in Ghana often combine photography with video, and many clients judge you first by a few strong pictures. Good product and people photos are one of the quickest ways to earn from your phone.
+
+## Product photos that sell
+
+* **Simple background.** A plain wall, a clean cloth or a large sheet of card. The product should be the only thing to look at.
+* **Soft daylight.** Place the product near a window or in open shade, not in direct midday sun, which creates harsh shadows. Turn off the flash.
+* **Several angles.** Front, side, top and a close up of details such as stitching or a label. Online buyers cannot touch the product, so photos do the work.
+* **Show scale and use.** A bag on a shoulder, earrings next to a hand or a bowl of food with a spoon helps buyers understand size.
+* **Keep colours true.** If a dress is wine red, the photo must show wine red. Customers who receive something different stop trusting the shop.
+
+## Portraits and people
+
+* Stand your subject in soft light facing a window or in open shade.
+* Focus on the eyes; tap on them before taking the picture.
+* Talk to people so they relax. Natural smiles come between poses.
+* Use portrait mode if your phone has it, but check the edges of hair and ears, which it sometimes blurs wrongly.
+
+## Events
+
+At events, move around. Take wide shots that show the crowd and setting, medium shots of key moments, and close ups of details like decorations or hands. Get the important moments first, such as a speech or the cutting of a cake, then experiment.
+
+## Light editing
+
+Free apps such as Snapseed or the phone's own editor let you straighten, crop, brighten and adjust contrast. Edit lightly. Heavy filters and skin smoothing can make products look unlike reality and people look unlike themselves. Save the original photo too.
+
+## Ask before you shoot people
+
+Ask permission before photographing people, and especially before posting pictures of them or of children online. You will learn more about consent later in this roadmap.
+
+## A small example
+
+Amina helps a bead seller in Tamale. The seller's old photos show necklaces piled on a table under a fluorescent tube. Amina lays each necklace on a plain cream cloth near a window, takes a straight on shot, a close up of the clasp and one photo of a friend wearing it. She brightens them slightly in a free editor and keeps the colours true. The seller posts the set on WhatsApp Status with prices, and customers can finally see what they are buying.`,
+      practice_task_md: `**Goal:** Produce a small product photo set a seller could use today.
+
+**Steps:**
+1. Choose one product at home or from a friend's business.
+2. Set up a plain background near a window or in open shade. Turn off the flash.
+3. Take five photos: front, side, top, a detail close up and one showing scale or use.
+4. Edit lightly in a free app: straighten, crop and adjust brightness, keeping colours true. Keep the originals.
+5. Write a one line caption with the product name and a price in cedis.
+
+**Done looks like:** Five edited photos and a caption, ready to show the seller or add to your portfolio.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What kind of light does the lesson recommend for product photos?",
+            options: [
+              "Direct midday sun",
+              "Phone flash",
+              "Soft daylight near a window or in open shade",
+              "Coloured party lights",
+            ],
+            answer_index: 2,
+            explanation: "Soft light avoids harsh shadows and shows products clearly.",
+          },
+          {
+            prompt: "Why take several angles of a product?",
+            options: [
+              "Online buyers cannot touch it, so photos must show it fully",
+              "Platforms require exactly five photos",
+              "It uses less storage",
+              "It makes the product cheaper",
+            ],
+            answer_index: 0,
+            explanation: "Multiple angles replace handling the item.",
+          },
+          {
+            prompt: "Why must product colours stay true in editing?",
+            options: [
+              "Bright colours use too much data",
+              "Customers who receive something different stop trusting the shop",
+              "Filters are illegal",
+              "True colours look more blurry",
+            ],
+            answer_index: 1,
+            explanation: "Honest photos protect the seller's reputation.",
+          },
+          {
+            prompt: "Where should you focus in a portrait?",
+            options: ["The background", "The shoes", "The eyes", "The sky"],
+            answer_index: 2,
+            explanation: "Sharp eyes make portraits feel alive.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "light-on-a-budget": {
+      explanation_md: `Phone cameras have small sensors. In good light they look excellent; in poor light the picture becomes grainy, dull and soft. Lighting appears in Ghanaian videographer adverts because it is one of the clearest signs of quality. The good news is that light from the sun is free, and you can control it with simple things.
+
+## Where is the light coming from?
+
+Before you film, look at the light the way the camera does. Ask:
+
+* **Is it hard or soft?** Direct sun at midday is hard: it makes dark shadows under eyes and noses and makes people squint. Light in shade, on a cloudy day, or through a window is soft and flattering.
+* **Which direction?** Light on the face from the front or slightly to the side usually looks best. Light from directly above is unflattering. Light from behind the subject, such as a bright window or sky, turns faces into dark shapes.
+
+## Free and cheap ways to get good light
+
+* **Face a window.** Put your subject facing a window, with you between them and the window or just to the side. This is one of the best lights available anywhere, and it is free.
+* **Use open shade.** Outdoors, move into the shade of a tree or building where the subject still faces bright open sky. Faces become even and soft.
+* **Film at kinder times.** Early morning and late afternoon light is softer and warmer than midday.
+* **Bounce light.** A white sheet, a piece of white card or a foil covered board held opposite the light source reflects light back into the shadow side of a face or product.
+* **Turn off mixed lights.** Indoor bulbs and daylight have different colours. Mixing them can make faces look orange on one side and blue on the other. Where you can, use one type.
+
+## When it gets dark
+
+If you must film at night or in a dim room, bring the subject close to the brightest lamp, and avoid using digital zoom, which makes noise worse. A small rechargeable LED light is a useful later purchase. Avoid the phone's flash for video; it flattens faces and often fails to reach far.
+
+## Exposure
+
+Tap on the face and lock exposure so the brightness does not change during the shot. If the face is too bright or dark, many phones let you slide brightness up or down after tapping.
+
+## A small example
+
+Sumaila records a cooking video for a chop bar in Damongo inside a dark kitchen. The footage is grainy. He moves the table near the kitchen door so daylight falls on the food and the cook from the side, and asks a friend to hold a white flour sack opposite to brighten the shadows. He turns off the single orange bulb. Now the colours of the soup look rich, and the cook's face is clear.`,
+      practice_task_md: `**Goal:** Find and use the best free light around you.
+
+**Steps:**
+1. Film a friend saying one sentence in three positions: with a bright window behind them, under a ceiling bulb, and facing a window or in open shade.
+2. For the best position, repeat the shot while someone holds a white sheet or card opposite the light to bounce light into the shadows.
+3. Watch all four clips and note which looked best and why.
+
+**Done looks like:** Four short clips and a note explaining which light worked best. Add a photo of your setup so a mentor can see how you did it.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What usually happens when a bright window is behind your subject?",
+            options: [
+              "Their face looks bright and clear",
+              "Their face becomes a dark shape",
+              "The sound improves",
+              "The colours become true",
+            ],
+            answer_index: 1,
+            explanation: "Strong light from behind leaves the face in shadow.",
+          },
+          {
+            prompt: "What is open shade?",
+            options: [
+              "A dark room with no windows",
+              "Shade of a tree or building where the subject still faces bright open sky",
+              "Filming at midnight",
+              "Covering the lens with your hand",
+            ],
+            answer_index: 1,
+            explanation: "Open shade gives soft, even light on faces.",
+          },
+          {
+            prompt: "What does a white sheet or card do in lighting?",
+            options: [
+              "Blocks all light",
+              "Bounces light back into shadows",
+              "Records sound",
+              "Makes the video vertical",
+            ],
+            answer_index: 1,
+            explanation: "A reflector fills in the dark side of a face or product.",
+          },
+          {
+            prompt: "Why avoid mixing indoor bulbs and daylight?",
+            options: [
+              "Their different colours can make faces look orange on one side and blue on the other",
+              "It drains the battery",
+              "It is against platform rules",
+              "It makes the file larger",
+            ],
+            answer_index: 0,
+            explanation: "Mixed colour temperatures look unnatural.",
+          },
+          {
+            prompt: "Which times of day give softer outdoor light?",
+            options: [
+              "Midday",
+              "Early morning and late afternoon",
+              "Only midnight",
+              "Any time with flash on",
+            ],
+            answer_index: 1,
+            explanation: "The low sun is softer and warmer than midday sun.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "sound-on-a-budget": {
+      explanation_md: `Viewers forgive a slightly soft picture much sooner than bad sound. If they cannot hear the speaker, they scroll away. Ghanaian videographer adverts list sound alongside lighting, and remote editing roles mention sound design, because clear audio is part of what clients pay for.
+
+## Why phone audio often sounds bad
+
+The microphone on a phone is small and picks up everything around it. When the phone is far from the speaker, it records more of the room, wind, generators, traffic and music than of the voice. The biggest improvements come from two free changes: **get closer** and **get quieter**.
+
+## Choose a quiet place
+
+* Move away from roads, grinding mills, generators and loudspeakers.
+* Indoors, rooms with cloth, curtains, mattresses or many objects echo less than bare concrete rooms.
+* Switch off fans while recording if it is safe and comfortable, and ask people nearby for a few quiet minutes.
+* Listen for a moment with your eyes closed before you record. You will notice sounds you had ignored.
+
+## Get the microphone close
+
+* For a talking video, keep the phone close, around an arm's length or nearer, rather than filming from across the room.
+* Point the phone's microphone towards the speaker. Find where it is on your phone, usually a small hole at the bottom or top, and do not cover it with your fingers.
+* Outdoors, shield the microphone from wind with your body or a small piece of foam or cloth.
+
+## Cheap upgrades
+
+* **Wired earphones with a mic** can be clipped near the speaker's chest as a basic lapel mic, if your phone supports them.
+* **A clip on lapel microphone,** wired or wireless, is one of the most useful first purchases for interviews.
+* **Record audio separately.** Put a second phone close to the speaker recording a voice note, and line it up with the video during editing.
+
+## Test and monitor
+
+Always record a ten second test and listen with earphones before the real take. It is much easier to fix a problem then than to discover it after the speaker has left.
+
+## Music and sound effects
+
+Background music can help, but it should never drown the voice. Only use music and effects you have the right to use, such as free libraries like the YouTube Audio Library or sound effect sites with clear licences. You will cover this fully in the editing and copyright lessons.
+
+## A small example
+
+Issahaku interviews a teacher in Bolgatanga beside a busy road. Playing it back, he hears only lorries. He moves to an empty classroom with curtains, sits close, and clips his wired earphones to the teacher's shirt. He records a ten second test, listens with earphones, and only then records the full interview. The voice is clear, and the school uses the video on its page.`,
+      practice_task_md: `**Goal:** Hear the difference distance and place make.
+
+**Steps:**
+1. Record a friend saying the same sentence three ways: from across a room, from arm's length, and with the phone or wired earphone mic close to them.
+2. Repeat the closest version in a noisy spot and then in a quiet room with soft furnishings.
+3. Listen to all versions with earphones and rank them from worst to best.
+
+**Done looks like:** Five short recordings and your ranking with one sentence explaining what made the best one clearest.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What are the two biggest free improvements for phone audio?",
+            options: [
+              "Add filters and stickers",
+              "Get closer and get quieter",
+              "Film in 4K and use slow motion",
+              "Turn up the music and add effects",
+            ],
+            answer_index: 1,
+            explanation: "Distance and background noise matter most.",
+          },
+          {
+            prompt: "Which room usually echoes less?",
+            options: [
+              "An empty concrete room",
+              "A room with curtains, cloth and many objects",
+              "A tiled bathroom",
+              "A large empty hall",
+            ],
+            answer_index: 1,
+            explanation: "Soft materials absorb sound and reduce echo.",
+          },
+          {
+            prompt: "Why record a ten second test before the real take?",
+            options: [
+              "To find sound problems while you can still fix them",
+              "Platforms require test clips",
+              "To save battery",
+              "To make the video longer",
+            ],
+            answer_index: 0,
+            explanation: "Testing catches problems before the speaker leaves.",
+          },
+          {
+            prompt: "What is one cheap way to record clearer interview audio?",
+            options: [
+              "Film from across the street",
+              "Use a clip on lapel mic or record a voice note on a second phone close to the speaker",
+              "Cover the microphone with your finger",
+              "Play music during the interview",
+            ],
+            answer_index: 1,
+            explanation: "A mic close to the speaker captures the voice clearly.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    editing: {
+      explanation_md: `Editing is where raw clips become a story. It is also one of the most requested skills in the adverts we studied: Ghanaian companies ask for content creators who can edit reels and short videos, and remote agencies hire editors from Ghana to cut TikTok, Reels and Shorts for clients abroad. Many of these adverts name free phone editors such as CapCut or InShot, alongside desktop tools like Premiere Pro.
+
+## You can edit professionally on a phone
+
+Free phone editors can trim clips, arrange them on a timeline, add music, voice over, text, captions and transitions, adjust colour and export in the right shape for each platform. For short vertical videos, many working editors use a phone or a phone style app. For longer YouTube videos with many layers, a laptop becomes more comfortable. If you do not own one, a school lab, library or community centre with computers can help when you need it, and free desktop editors exist for when you get there.
+
+## Choose one editor and learn it deeply
+
+Examples of free editors include CapCut, VN and InShot. They are examples, not endorsements. Some features or exports may need payment or add a watermark, so check the settings before a client job. Whichever you choose, learn these core actions until they feel automatic:
+
+* Import clips and arrange them in order.
+* Split and trim clips.
+* Add and adjust music and voice over.
+* Add text and captions.
+* Adjust brightness, contrast and colour.
+* Export at the right size and quality.
+
+## Non destructive editing
+
+Editing apps do not change your original clips; they keep a project that refers to them. That means you must keep the original files on your phone until the project is finished and exported. If you delete them to free space, the project breaks.
+
+## What this section covers
+
+* **Cutting, pacing and sequence.** Trimming dead moments and ordering shots so the story flows.
+* **Music, voice over and on screen text.** Sound and words that support the story.
+* **Exporting, thumbnails and file habits.** Getting the right file to the right place and staying organised.
+
+## A small example
+
+Wumpini films a ten minute walk through a weekend market in Tamale for a food vendor. Her editor app holds forty clips. In editing she keeps only the best moments: the vendor's welcome, steam rising from a pot, close ups of hands serving, a customer's smile, the price board. She trims each to a few seconds, adds a voice over and price text, and exports a forty second vertical video. The vendor says it is the first time the stall has looked as good online as it does in real life.`,
+      practice_task_md: `**Goal:** Learn the core actions of one free editing app.
+
+**Steps:**
+1. Choose one free editor and open a new project.
+2. Import five clips you have already filmed.
+3. Practise each core action once: reorder, split and trim, add music at low volume, add one line of text, adjust brightness, and export.
+4. Check the export settings for any watermark and note how to remove it, or whether it needs payment.
+
+**Done looks like:** A short exported video of about twenty seconds and a note listing which core actions you found easy and which need more practice.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does the lesson say about editing on a phone?",
+            options: [
+              "Professional editing is impossible on a phone",
+              "Free phone editors can do professional short videos; a laptop helps for longer layered videos",
+              "Only paid apps can export video",
+              "Phones cannot add text",
+            ],
+            answer_index: 1,
+            explanation: "Phones handle short work well; long complex edits are easier on a laptop.",
+          },
+          {
+            prompt: "Why must you keep original clips until a project is exported?",
+            options: [
+              "Editing apps refer to the original files, so deleting them breaks the project",
+              "Platforms ask for the originals",
+              "Originals make the export smaller",
+              "It saves data",
+            ],
+            answer_index: 0,
+            explanation: "Edits are non destructive and depend on the originals.",
+          },
+          {
+            prompt: "What should you check before using a free editor for client work?",
+            options: [
+              "Whether it can play games",
+              "Whether exports add a watermark or some features need payment",
+              "Whether it changes your ringtone",
+              "Whether it deletes your contacts",
+            ],
+            answer_index: 1,
+            explanation: "Watermarks and paid features can affect client deliveries.",
+          },
+          {
+            prompt: "In Wumpini's market video, what did editing mainly involve?",
+            options: [
+              "Keeping all forty clips at full length",
+              "Choosing the best moments, trimming them and adding voice over and price text",
+              "Adding as many effects as possible",
+              "Turning it into a horizontal ten minute film",
+            ],
+            answer_index: 1,
+            explanation: "She selected, trimmed and supported the story with voice and text.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "editing-basics": {
+      explanation_md: `O*NET, a public skills framework, describes the core of a video editor's job as choosing the best shots and arranging them into a smooth, logical story. Ghanaian and remote adverts say the same thing in their own words: cut footage into engaging short videos and keep viewers watching. That is what this lesson is about.
+
+## Step 1: Review and select
+
+Watch all your footage once before cutting. Mark the best takes: steady, well lit, clearly heard and showing what the story needs. It is normal to use only a small part of what you filmed. Good editors are ruthless.
+
+## Step 2: Build the rough cut
+
+Place your chosen clips on the timeline in story order: hook, beginning, middle, end. Do not worry about polish yet. Watch it through. Does it make sense to someone who was not there?
+
+## Step 3: Trim and tighten
+
+* Cut the moments before people start talking and after they finish.
+* Remove "ehh", long pauses and repeated sentences. A **jump cut**, where you cut out a pause and the speaker jumps slightly, is normal and accepted in social videos.
+* In short videos, most shots last only a few seconds. If nothing new is happening, cut.
+
+## Step 4: Pacing
+
+Pacing is the rhythm of your edit. Fast cuts feel energetic and suit product reveals or trends. Slower shots suit emotional stories, such as an interview about a family's farm. Match the pace to the message. Cutting on the beat of music, called beat matching, can make a reel feel smooth.
+
+## Step 5: Continuity and covering cuts
+
+If you cut in the middle of someone speaking, cover the cut with **b roll**: a close up of their hands, the product or the setting, while their voice continues underneath. This hides the join and shows the viewer what the speaker is talking about.
+
+Avoid unnecessary transitions such as spins and wipes. A simple straight cut is what professionals use most. Save effects for when they add meaning.
+
+## Step 6: Watch as a stranger
+
+Watch the finished cut on the phone, at normal speed, as if you have never seen it. Better still, show it to someone else and watch where they look away. That moment is where you need to tighten.
+
+## A small example
+
+Mariama has twelve minutes of footage of a youth football tournament in Wa. Her rough cut is three minutes and feels slow. She trims every shot to the action, removes the warm ups, cuts on the beat of a free music track and covers the coach's interview cuts with goal celebrations. The final edit is forty five seconds, and viewers watch to the end to see the winning goal.`,
+      practice_task_md: `**Goal:** Turn raw footage into a tight thirty to sixty second edit.
+
+**Steps:**
+1. Film about three minutes of something real: a friend cooking, a craftsperson working, or a short interview.
+2. Review all footage and note your best moments.
+3. Build a rough cut in story order, then trim it to between thirty and sixty seconds.
+4. Use at least one jump cut and at least one b roll shot to cover a cut.
+5. Show the edit to someone and note where their attention drops. Tighten that part.
+
+**Done looks like:** Your final exported edit, plus one sentence about what you cut after feedback.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should you do before you start cutting?",
+            options: [
+              "Add music",
+              "Review all footage and mark the best takes",
+              "Export the video",
+              "Post the raw clips",
+            ],
+            answer_index: 1,
+            explanation: "Selecting first makes the rough cut faster and better.",
+          },
+          {
+            prompt: "What is a jump cut?",
+            options: [
+              "A cut that removes a pause so the speaker jumps slightly",
+              "A spinning transition",
+              "A video of someone jumping",
+              "Moving a clip to another project",
+            ],
+            answer_index: 0,
+            explanation: "Jump cuts tighten talking clips and are normal in social video.",
+          },
+          {
+            prompt: "How can you hide a cut in the middle of someone speaking?",
+            options: [
+              "Add a long black screen",
+              "Cover it with b roll while their voice continues",
+              "Increase the volume",
+              "Delete the whole interview",
+            ],
+            answer_index: 1,
+            explanation: "B roll over continuing audio hides the join.",
+          },
+          {
+            prompt: "What does the lesson say about flashy transitions?",
+            options: [
+              "Use one between every clip",
+              "Straight cuts are used most; save effects for when they add meaning",
+              "They are required by platforms",
+              "They always increase views",
+            ],
+            answer_index: 1,
+            explanation: "Simple cuts keep focus on the story.",
+          },
+          {
+            prompt: "Which pace best suits an emotional interview about a family farm?",
+            options: [
+              "Very fast cuts on every beat",
+              "Slower shots",
+              "No cuts at all for ten minutes",
+              "Random order of clips",
+            ],
+            answer_index: 1,
+            explanation: "Slower pacing suits emotional stories.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "music-voice-and-text": {
+      explanation_md: `Sound and words can make an ordinary edit feel finished. Remote editing adverts open to Ghana mention captions, sound design and motion text, and Ghanaian content adverts mention captions and thumbnails. Done badly, though, music drowns voices, text is unreadable and the video gets muted or blocked for copyright.
+
+## Music
+
+* **Use music you have the right to use.** Popular songs from the radio or another creator's video usually belong to someone else. Uploading them can get your video muted, blocked, or your account warned. Free options include the YouTube Audio Library and music offered inside platform apps for use on that platform. Check the licence and any credit the track asks for.
+* **Keep music under the voice.** When someone is speaking, lower the music so the words are clear. Raise it when there is no speech.
+* **Match the mood.** Upbeat music for a product launch, calm music for a health message.
+
+## Voice over
+
+A voice over is narration recorded separately and laid over the pictures. It is useful when the people on screen are not speaking, or to explain clearly.
+
+* Record in a quiet room with soft furnishings, phone close to your mouth but slightly to the side to avoid puffs of air.
+* Read your script a few times first, then speak a little slower than normal and smile; it changes how you sound.
+* Record several takes and pick the best. Many free editors let you record directly onto the timeline.
+
+## On screen text and captions
+
+* **Short and large.** A few words, big enough to read on a small screen, on screen long enough to read twice.
+* **High contrast.** White text with a dark outline or a dark box behind it reads on most backgrounds.
+* **Keep away from the edges.** In vertical videos, platform buttons and captions cover the bottom and right side. Keep important text in the middle area.
+* **Captions for speech.** Many people watch without sound. Burned in captions, which most free editors can generate, help them follow, but always correct the automatic text, especially names and Ghanaian words.
+
+## Sound effects
+
+Small effects such as a whoosh on a transition or a click on a text pop can add energy, but use them lightly. Sites like Freesound offer effects with clear licences; check whether credit is required.
+
+## A small example
+
+Abdul-Rahman edits a promo for a phone repair shop in Tamale. His first version uses a popular Afrobeats hit, has tiny white text over a white wall and music louder than the owner's voice. In the second version he picks a free track from the YouTube Audio Library, lowers it under the speech, records a clear voice over, and uses bold text with a dark box placed in the middle of the frame. He corrects the automatic captions, which had spelled the shop's name wrong. The video plays without copyright problems and is easy to follow on mute.`,
+      practice_task_md: `**Goal:** Add music, voice over and text properly to an edit.
+
+**Steps:**
+1. Take an edit you made earlier or a new short clip sequence.
+2. Choose a free, licensed music track and note where it came from and any credit required.
+3. Record a short voice over in a quiet room and place it on the timeline. Lower the music under the voice.
+4. Add on screen text with high contrast, kept away from the bottom and right edges.
+5. Generate captions if your editor can, and correct every mistake by hand.
+
+**Done looks like:** An exported video that is clear both with sound and on mute, plus a note of the music source and credit.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What can happen if you upload a video using a popular song you do not have rights to?",
+            options: [
+              "It gets more views automatically",
+              "It may be muted, blocked or your account warned",
+              "The artist pays you",
+              "Nothing ever happens",
+            ],
+            answer_index: 1,
+            explanation: "Unlicensed music can trigger copyright action.",
+          },
+          {
+            prompt: "What should you do with music while someone is speaking?",
+            options: [
+              "Raise it",
+              "Lower it so the words are clear",
+              "Remove the voice",
+              "Speed it up",
+            ],
+            answer_index: 1,
+            explanation: "Speech must stay clear above music.",
+          },
+          {
+            prompt: "Where should important text go in a vertical video?",
+            options: [
+              "Along the bottom edge",
+              "On the right edge",
+              "In the middle area, away from platform buttons",
+              "Outside the frame",
+            ],
+            answer_index: 2,
+            explanation: "Platform buttons and captions cover the bottom and right.",
+          },
+          {
+            prompt: "What makes on screen text easy to read?",
+            options: [
+              "Small thin letters",
+              "Large, short text with high contrast, such as white with a dark outline or box",
+              "Long paragraphs",
+              "Text that flashes quickly",
+            ],
+            answer_index: 1,
+            explanation: "Short, large, high contrast text reads on small screens.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "export-and-organise": {
+      explanation_md: `A beautiful edit is useless if it arrives late, in the wrong shape, blurry or lost. Clients and employers in Ghana list file organisation, content libraries and storage among their requirements, and remote clients expect files delivered on time in the format they asked for. Good habits here are what make you dependable.
+
+## Export settings
+
+* **Shape (aspect ratio).** Vertical 9:16 for TikTok, Reels, Shorts and Status. Horizontal 16:9 for normal YouTube videos. Square or 4:5 for some feed posts. Choose this when you start the project, not at the end, so nothing gets cut off.
+* **Resolution.** 1080p is a good standard for most platforms. Export a smaller 720p version for previews on WhatsApp.
+* **Frame rate.** Keep it the same as your footage, often 30 frames per second.
+
+YouTube publishes recommended upload settings in its help centre if you want to check details.
+
+## Thumbnails
+
+On YouTube, the thumbnail and title together decide whether people click. A good thumbnail:
+
+* Shows one clear subject, often a face with a visible expression or the finished result.
+* Uses a few large words at most, readable at a tiny size.
+* Uses strong contrast and colours that stand out.
+* Is honest about what the video contains.
+
+You can design one in a free tool such as Canva, or take a still from your video and add text in your editor. Check how it looks at the size of a fingernail, because that is how people first see it.
+
+## File habits
+
+* **Name files clearly.** For example: client, project, version and date, such as "TamaleTailor_Uniforms_v2_20261012". You will thank yourself when a client asks for "the version from last week".
+* **Use folders.** One folder per client or project, with subfolders for raw footage, music, graphics and exports.
+* **Back up.** Keep important projects in at least two places: phone and a memory card, or phone and a cloud drive uploaded on WiFi.
+* **Clean up after delivery.** Once a project is delivered and backed up, delete raw clips you no longer need from the phone to keep space for the next shoot.
+
+## Delivering to clients
+
+Agree how files will be delivered. For full quality, send as a document on WhatsApp or share a cloud link. Keep a simple record of what you delivered and when.
+
+## A small example
+
+Hawa edits weekly videos for a pharmacy and a fashion shop. Early on she sent the shop the pharmacy's video by mistake because both were called "final.mp4". Now each client has a folder, files are named with client, topic, version and date, and finished projects are copied to a memory card. When the shop asks for a three month old video to repost, she finds it in seconds.`,
+      practice_task_md: `**Goal:** Set up a professional export and file system.
+
+**Steps:**
+1. Create a folder on your phone or memory card called "Clients", with one folder for a real or practice client inside, and subfolders for raw, music, graphics and exports.
+2. Export one of your edits twice: 1080p for the final and 720p for a preview. Name both clearly with client, topic, version and date.
+3. Make a thumbnail for that video with one clear subject and no more than four words. View it at a very small size to check it reads.
+4. Back up the final export in a second place.
+
+**Done looks like:** A screenshot of your folder structure, both named exports and your thumbnail.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which aspect ratio suits TikTok, Reels, Shorts and Status?",
+            options: ["16:9 horizontal", "9:16 vertical", "4:3", "21:9 widescreen"],
+            answer_index: 1,
+            explanation: "These formats are vertical 9:16.",
+          },
+          {
+            prompt: "Why choose the aspect ratio at the start of a project?",
+            options: [
+              "So nothing important gets cut off later",
+              "Because exports fail otherwise",
+              "To save battery",
+              "Because clients ask for it in the title",
+            ],
+            answer_index: 0,
+            explanation: "Changing shape at the end can crop important parts of the frame.",
+          },
+          {
+            prompt: "Which file name is most useful?",
+            options: [
+              "final.mp4",
+              "video1.mp4",
+              "TamaleTailor_Uniforms_v2_20261012.mp4",
+              "new new final.mp4",
+            ],
+            answer_index: 2,
+            explanation: "Client, topic, version and date make files easy to find.",
+          },
+          {
+            prompt: "What makes a good YouTube thumbnail?",
+            options: [
+              "Many small words and several subjects",
+              "One clear subject, few large words, strong contrast and honesty",
+              "A blank background",
+              "A misleading picture to get clicks",
+            ],
+            answer_index: 1,
+            explanation: "Thumbnails must read at a tiny size and reflect the video.",
+          },
+          {
+            prompt: "What does backing up mean in this lesson?",
+            options: [
+              "Keeping important projects in at least two places",
+              "Deleting files after export",
+              "Sending files to strangers",
+              "Renaming every file final",
+            ],
+            answer_index: 0,
+            explanation: "Two copies protect against a lost or broken phone.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    publishing: {
+      explanation_md: `Making a good video is half the job. The other half is putting it in the right place, in the right form, for the right people, and learning from how they respond. Ghanaian adverts for social media content roles ask for platform management, knowledge of trends, community engagement and reporting on results. Remote roles add YouTube uploads, titles and analytics.
+
+## Platforms are different rooms
+
+Think of each platform as a different room with its own crowd and habits:
+
+* **TikTok, Instagram Reels, Facebook Reels and YouTube Shorts** favour short vertical videos that hook fast. Content can reach people who do not follow you yet.
+* **YouTube** favours longer, useful videos that people search for, such as tutorials, reviews and stories. A good video can keep finding viewers for years.
+* **Facebook** remains important for many Ghanaian businesses, churches and community groups, including older audiences.
+* **WhatsApp Status and groups** reach people who already know you. For many local businesses this is where sales actually happen.
+
+You do not need to be everywhere. Choose one or two platforms where your audience already spends time, and do them well.
+
+## Repurposing
+
+One shoot can serve several platforms. A ten minute YouTube tutorial can become three short clips for Reels and TikTok, a few photos for Facebook and a Status update. Editors who can cut long videos into shorts are in demand in remote job adverts. Repurposing saves time and data.
+
+## Consistency beats bursts
+
+Posting ten videos in one week and then nothing for a month confuses your audience. A steady rhythm you can keep, such as two short videos a week, builds trust. Plan a simple content calendar: what you will post, where and when.
+
+## Rules and safety
+
+Each platform has community guidelines on things like hate, harassment, dangerous acts, misleading claims and spam. Breaking them can get videos removed or accounts restricted. Read the guidelines of the platforms you use; clients expect you to keep their accounts safe.
+
+## What this section covers
+
+* **Short vertical video and live.** Formats, trends and live selling.
+* **YouTube basics.** Channel setup, uploading and being found.
+* **Building an audience and community.** Focus, rhythm and conversation.
+* **Reading your numbers.** Using free analytics to improve.
+
+## A small example
+
+Sumaila runs a channel teaching phone repair tips in Hausa and English from Tamale. He films one longer YouTube tutorial a week. From each, he cuts two short clips for TikTok and Shorts, and posts a photo with a short tip on Facebook. He also shares the YouTube link on his WhatsApp Status. One shoot, four places, and each post points people back to his main videos.`,
+      practice_task_md: `**Goal:** Plan where and how often you will publish.
+
+**Steps:**
+1. Write down who your audience is and which one or two platforms they use most. Ask three people from that audience if you are not sure.
+2. Take one video idea and write how you would repurpose it for two other places, such as a short clip and a Status update.
+3. Make a simple two week content calendar in a notes app: date, platform, idea.
+4. Read the main points of the community guidelines for one platform you will use and write down three things you must avoid.
+
+**Done looks like:** Your audience note, a repurposing plan, a two week calendar and three guideline points.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which platform is described as favouring longer, searchable videos that can find viewers for years?",
+            options: ["WhatsApp Status", "YouTube", "Facebook Reels", "TikTok Live"],
+            answer_index: 1,
+            explanation: "YouTube rewards useful videos people search for.",
+          },
+          {
+            prompt: "What is repurposing?",
+            options: [
+              "Deleting old videos",
+              "Turning one shoot into content for several platforms",
+              "Copying another creator's video",
+              "Posting the same file everywhere without changes",
+            ],
+            answer_index: 1,
+            explanation: "One shoot can become shorts, photos and Status updates.",
+          },
+          {
+            prompt: "Why is a steady posting rhythm better than bursts?",
+            options: [
+              "It builds trust and fits what you can keep up",
+              "Platforms ban bursts",
+              "It uses more data",
+              "It guarantees viral videos",
+            ],
+            answer_index: 0,
+            explanation: "Consistency helps audiences know what to expect.",
+          },
+          {
+            prompt: "What can happen if you break a platform's community guidelines?",
+            options: [
+              "You get extra followers",
+              "Videos can be removed or accounts restricted",
+              "Your videos become longer",
+              "Nothing at all",
+            ],
+            answer_index: 1,
+            explanation: "Guideline breaches can lead to removals or restrictions.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "short-video": {
+      explanation_md: `Short vertical video is the format Ghanaian employers mention most in content adverts we studied: TikTok, Instagram Reels, Facebook Reels and YouTube Shorts. Some adverts go further and ask for live streaming, including people who can sell products live. WhatsApp Status videos are the local cousin of this format and often drive real orders.
+
+## What makes short video work
+
+* **Vertical, full screen.** Film and export in 9:16 so the video fills the phone.
+* **Hook in the first second or two.** Start with movement, a question, the result or a surprising image. No slow logos.
+* **One idea per video.** One tip, one product, one moment. If you have three tips, consider three videos.
+* **Fast, clean pacing.** Change shots often, cut pauses, use on screen text.
+* **Loop friendly endings.** If the end flows back into the start, people may watch twice.
+* **Clear call to action.** Follow for more, order on WhatsApp, comment your town.
+
+Maximum lengths and features change, so check each app's current settings.
+
+## Trends, carefully
+
+Trends are popular sounds, dances, formats or jokes that many people copy for a while. Joining a trend can help new people find you. Use trends with care:
+
+* Make sure it fits the brand. A funny dance may suit a fashion shop, not a funeral home.
+* Add your own twist, such as a local setting or language.
+* Check that the sound is available for business accounts. Some music in apps is allowed for personal accounts but not for brand or commercial use.
+* Do not join trends that mock people or involve danger.
+
+## Formats that work for local businesses
+
+* Before and after: hair, tailoring, repairs, cleaning.
+* Behind the scenes: how shea butter, smock or furniture is made.
+* Quick tips: how to store grains, choose a phone charger, tie a headwrap.
+* Customer moments, with permission.
+* Price and product reveals for WhatsApp Status.
+
+## Live streaming and live selling
+
+Going live lets a business show products in real time and answer questions. A good live session is planned: products ready, prices clear, good light, stable connection, a helper reading comments, and a clear way to order and pay, often by mobile money. Live uses a lot of data, so do it on WiFi or with a dedicated bundle. Platforms set rules, such as minimum ages or follower counts, before you can go live; check them in the app.
+
+## A small example
+
+Amina makes Reels for a smock weaver in Bolgatanga. Her best video starts with the finished smock being swung on, then shows ten quick shots of the loom, ending with the weaver smiling and the words "Order via WhatsApp". She posts the same video on Status. Later, the weaver tries a planned live session one evening on WiFi, showing new designs while Amina reads questions aloud.`,
+      practice_task_md: `**Goal:** Make one short vertical video for a real local business or cause.
+
+**Steps:**
+1. Choose a format: before and after, behind the scenes, quick tip or product reveal.
+2. Write a hook, three to six shots and a call to action.
+3. Film vertically, edit to under thirty seconds with on screen text, and export in 9:16.
+4. Check any music you used is allowed for that use.
+5. Share it privately with the business owner for feedback before anything is posted.
+
+**Done looks like:** A finished vertical video under thirty seconds and the owner's feedback in a sentence or two.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What shape should short platform videos be?",
+            options: ["Horizontal 16:9", "Vertical 9:16", "Circle", "Square only"],
+            answer_index: 1,
+            explanation: "Vertical 9:16 fills the phone screen.",
+          },
+          {
+            prompt: "Which is a careful way to use a trend for a business?",
+            options: [
+              "Join every trend, whatever the brand",
+              "Make sure it fits the brand, add your own twist and check the sound is allowed",
+              "Use trends that mock people",
+              "Copy another creator's video exactly",
+            ],
+            answer_index: 1,
+            explanation: "Trends must suit the brand and be legally usable.",
+          },
+          {
+            prompt: "Why might music that works on a personal account be a problem for a business account?",
+            options: [
+              "Some app music is allowed for personal use but not for commercial use",
+              "Business accounts cannot use any sound",
+              "Music makes business videos longer",
+              "It changes the video shape",
+            ],
+            answer_index: 0,
+            explanation: "Licences for app music can differ by account type.",
+          },
+          {
+            prompt: "Which is part of a well planned live selling session?",
+            options: [
+              "No prices so people must guess",
+              "Products ready, clear prices, good light, a helper reading comments and a clear way to pay",
+              "Going live on a weak connection without testing",
+              "Ignoring comments",
+            ],
+            answer_index: 1,
+            explanation: "Planning makes live selling smooth and trustworthy.",
+          },
+          {
+            prompt: "What does one idea per video mean?",
+            options: [
+              "Only post one video ever",
+              "Each short video focuses on one tip, product or moment",
+              "Use one shot only",
+              "Use one word of text",
+            ],
+            answer_index: 1,
+            explanation: "Focused videos are clearer and easier to finish.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "youtube-basics": {
+      explanation_md: `YouTube is different from fast scrolling apps. People often go there to search: how to fix something, learn a skill, compare products or hear a story in depth. A good YouTube video can keep finding viewers for years. Remote adverts open to Ghanaian applicants ask for YouTube uploads, titles, descriptions, thumbnails and channel management, and several Ghanaian NGOs and schools now keep channels too.
+
+## Setting up a channel
+
+You need a Google account to create a channel. Consider a **brand channel** if you are making it for a business or organisation, so others can help manage it without sharing your personal password. Then:
+
+* Choose a clear name that says what the channel is about.
+* Add a profile picture, a banner and a short description of who the channel is for and what they will get.
+* Turn on two step verification to protect the account. YouTube requires it for some features.
+
+The free YouTube Studio app lets you upload, edit details, reply to comments and see analytics from your phone.
+
+## Uploading well
+
+When you upload, YouTube asks for details. Fill them in carefully:
+
+* **Title.** Clear, honest and using words people search for, with the main idea near the start.
+* **Description.** A few sentences on what the video covers, then links, contacts and credits. The first lines matter most.
+* **Thumbnail.** A custom thumbnail with one clear subject and a few large words. Your account may need to be verified to upload custom thumbnails.
+* **Audience setting.** You must say whether the video is made for children. This affects features like comments, so answer truthfully.
+* **Subtitles.** Add or correct subtitles, especially if you speak a mix of languages.
+* **Visibility.** Upload as private or unlisted first, check it, then publish.
+
+## Shorts and long videos together
+
+YouTube Shorts are short vertical videos inside YouTube. Many channels use Shorts to reach new people and point them to longer videos. Both count as part of your channel.
+
+## What grows a channel
+
+Useful topics people search for, clear titles and thumbnails, videos that keep people watching, and a steady upload rhythm. Series help: "Part 1, Part 2" or a weekly show gives people a reason to come back.
+
+## A small example
+
+Fuseini starts a channel teaching smallholder farmers in the Northern Region how to use a phone to check weather and market prices, mostly in Dagbani with English subtitles. He creates a brand channel, writes a clear description and turns on two step verification. Each video has a searchable title like "How to check maize prices on your phone", a simple thumbnail, a correct audience setting and checked subtitles. He uploads as unlisted first, watches it once and then publishes.`,
+      practice_task_md: `**Goal:** Prepare a YouTube channel and one upload, without spending much data.
+
+**Steps:**
+1. Plan a channel on paper: name, who it is for, a two sentence description and three video ideas.
+2. If you are ready, create the channel and turn on two step verification. Do this on WiFi if you can.
+3. Choose one short video you have made. Write its title, the first three lines of its description, and decide its audience setting.
+4. Upload it as unlisted or private, add or correct subtitles, and check how it looks before deciding whether to publish.
+
+**Done looks like:** Your channel plan, and either a live unlisted video link or a full written upload plan if you are waiting for WiFi.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why might you use a brand channel for a business?",
+            options: [
+              "It makes videos longer",
+              "Others can help manage it without sharing your personal password",
+              "It removes the need for titles",
+              "It is the only way to upload Shorts",
+            ],
+            answer_index: 1,
+            explanation: "Brand channels allow shared management safely.",
+          },
+          {
+            prompt: "What must you tell YouTube when uploading?",
+            options: [
+              "Your salary",
+              "Whether the video is made for children",
+              "Your phone model",
+              "How long you spent editing",
+            ],
+            answer_index: 1,
+            explanation: "The audience setting is required and affects features.",
+          },
+          {
+            prompt: "Why upload as private or unlisted first?",
+            options: [
+              "To check everything before the public sees it",
+              "Because public uploads cost money",
+              "To hide it forever",
+              "To make it a Short",
+            ],
+            answer_index: 0,
+            explanation: "A private check catches mistakes before publishing.",
+          },
+          {
+            prompt: "How do many channels use Shorts?",
+            options: [
+              "To replace all long videos",
+              "To reach new people and point them to longer videos",
+              "Only for advertising",
+              "They cannot be on the same channel",
+            ],
+            answer_index: 1,
+            explanation: "Shorts help discovery for the whole channel.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "building-an-audience": {
+      explanation_md: `Followers are not the goal by themselves. What matters is having people who trust you, come back, and act: buy, share, donate or hire you. Ghanaian adverts for social media content roles ask for audience engagement, community management and growth, and clients who hire you to grow their pages expect you to understand how this works.
+
+## Choose a clear focus
+
+People follow a channel because they know what they will get. "Everything about my life" is hard to follow. "Easy northern recipes on a budget", "phone repair tips in Hausa" or "daily life on a farm near Yendi" is clear. A clear focus is often called a **niche**. It can be broad enough to give you many ideas, but narrow enough that the right people say "this is for me".
+
+## Serve before you sell
+
+Most of your content should help, teach, move or entertain your audience. If every post is an advert, people tune out. A simple balance is to make most posts useful and only some promotional.
+
+## Talk with people
+
+* Reply to comments, especially early on. Answer questions and thank people.
+* Ask questions in captions: "Which town should I visit next?"
+* Make videos that answer common questions from comments.
+* Use WhatsApp groups or channels where it fits, for people who want updates.
+
+A community grows when people feel seen. A few hundred engaged people can be worth more to a business than many thousands who never respond.
+
+## Be consistent and patient
+
+Growth is usually slow at first. Post on a rhythm you can keep, improve each video a little, and give it months, not days. Comparing yourself with big creators who have years of practice is discouraging and misleading.
+
+## Collaborate
+
+Working with creators who share your audience but are not direct competitors can introduce you to new people. A food creator in Tamale might collaborate with a fashion creator for a "market day outfit and lunch" video.
+
+## Stay safe and kind
+
+* Keep personal details such as your home address and daily routine private.
+* Moderate comments: delete abuse and scams on pages you manage, and use blocking and filter tools.
+* Do not buy fake followers or engagement. It breaks platform rules, misleads clients and makes your real numbers meaningless.
+
+## A small example
+
+Mariama starts a page sharing northern recipes. At first she posts randomly. Then she focuses on "meals under 30 cedis for students", posts twice a week, replies to every comment and makes a video answering a student's question about cooking beans quickly. Growth is slow, but her viewers start sharing recipes in their hostel groups. A local food vendor notices and asks her to create content for them.`,
+      practice_task_md: `**Goal:** Write a simple audience plan for your own channel or a client's page.
+
+**Steps:**
+1. Write your focus in one sentence: who it is for and what they get.
+2. List ten content ideas that serve that audience, and mark which two are promotional.
+3. Write three questions you could ask in captions to start conversations.
+4. Write your posting rhythm and two safety rules you will follow.
+
+**Done looks like:** A one page audience plan in your notes that a mentor or client could read and understand.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a niche in this lesson?",
+            options: [
+              "A type of microphone",
+              "A clear focus that tells the right people the content is for them",
+              "A paid advert",
+              "A video length",
+            ],
+            answer_index: 1,
+            explanation: "A niche is a clear focus for a channel.",
+          },
+          {
+            prompt: "What does serve before you sell mean?",
+            options: [
+              "Make most content helpful or entertaining and only some promotional",
+              "Only post adverts",
+              "Never mention products",
+              "Charge for every video",
+            ],
+            answer_index: 0,
+            explanation: "Useful content earns attention for occasional promotion.",
+          },
+          {
+            prompt: "Why should you not buy fake followers?",
+            options: [
+              "It is too cheap",
+              "It breaks platform rules, misleads clients and makes your real numbers meaningless",
+              "It makes videos vertical",
+              "It improves engagement",
+            ],
+            answer_index: 1,
+            explanation: "Fake numbers damage trust and break rules.",
+          },
+          {
+            prompt: "Which is a good way to build community?",
+            options: [
+              "Ignore comments",
+              "Reply to comments, ask questions and answer common questions in videos",
+              "Post only once a year",
+              "Turn off all comments always",
+            ],
+            answer_index: 1,
+            explanation: "Conversation makes people feel seen and come back.",
+          },
+          {
+            prompt: "What helped Mariama's recipe page grow?",
+            options: [
+              "Random posts about everything",
+              "A clear focus, a steady rhythm and replying to her audience",
+              "Buying followers",
+              "Copying big creators' videos",
+            ],
+            answer_index: 1,
+            explanation: "Focus, consistency and conversation built her audience.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "reading-your-numbers": {
+      explanation_md: `Clients and employers want to know whether content is working. Ghanaian social media adverts ask for analytics, performance monitoring and reports, and creators use the same numbers to decide what to make next. Every major platform gives free analytics: YouTube Analytics in YouTube Studio, and insights in TikTok, Instagram and Facebook for professional or business accounts.
+
+## The numbers that matter most
+
+Names differ by platform, but these ideas appear everywhere:
+
+* **Views or plays.** How many times the video started. Useful, but it does not tell you if people liked it.
+* **Watch time and average view duration.** How long people actually watched. This is often more important than views.
+* **Audience retention.** A graph showing what share of viewers were still watching at each moment. Drops show where people left.
+* **Click through rate on YouTube.** Of the people who saw your thumbnail, how many clicked. It tells you how well title and thumbnail work together.
+* **Engagement.** Likes, comments, shares and saves. Shares and saves often mean the content was truly useful.
+* **Traffic sources.** Where viewers came from: search, suggestions, the For You feed, shares or external links such as WhatsApp.
+* **Audience.** Age groups, locations and when your followers are online.
+
+## Turning numbers into decisions
+
+Numbers are only useful if they change what you do. Ask questions like:
+
+* Where does the retention graph drop sharply? Watch that moment. Was the hook slow, a pause too long or the sound unclear?
+* Which videos got the most shares or saves? Make more on those topics.
+* Is click through low while retention is good? The video is fine, but the title or thumbnail needs work.
+* When are followers online? Try posting nearer those times.
+
+## Avoid common traps
+
+* **Vanity metrics.** Likes feel good but may not mean sales. For a business, messages, orders or calls may be the real result.
+* **Judging too fast.** Give a video some days before drawing conclusions, especially on YouTube.
+* **Copying without thinking.** One viral video does not mean every similar idea will work.
+
+## Reporting to a client
+
+A simple monthly report helps clients trust you. Include what you posted, the key numbers, the best and weakest post with reasons, and what you will try next. Keep it short and in plain language; many business owners do not want jargon.
+
+## A small example
+
+Abdul-Rahman manages videos for a computer training centre in Tamale. Analytics show most viewers leave in the first three seconds of videos that start with the centre's logo. Videos that start with a student's result, like a certificate in hand, keep viewers much longer and get shared on WhatsApp. He drops the logo openings, and in his monthly report explains the change and the improvement in plain words.`,
+      practice_task_md: `**Goal:** Read real numbers and turn them into one decision.
+
+**Steps:**
+1. Open the free analytics for any account you run, or ask a friend or client to show you theirs. If you have no posts yet, use the practice numbers below.
+2. Pick two videos: one that did well and one that did poorly. Compare views, average watch time, shares and, if available, the retention graph.
+3. Write three sentences: what was different, why you think so, and what you will change next time.
+
+Practice numbers if needed: Video A had 900 views, 4 seconds average watch time and 2 shares. Video B had 400 views, 18 seconds average watch time and 25 shares.
+
+**Done looks like:** A short three sentence analysis you could paste into a client report.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does an audience retention graph show?",
+            options: [
+              "How many followers you have",
+              "What share of viewers were still watching at each moment",
+              "Your income",
+              "How much data you used",
+            ],
+            answer_index: 1,
+            explanation: "Retention shows where viewers leave.",
+          },
+          {
+            prompt: "If click through rate is low but retention is good, what probably needs work?",
+            options: [
+              "The video's middle section",
+              "The title or thumbnail",
+              "The music licence",
+              "The file name",
+            ],
+            answer_index: 1,
+            explanation: "People who click stay, so the packaging is the issue.",
+          },
+          {
+            prompt: "Why can shares and saves be especially meaningful?",
+            options: [
+              "They often mean the content was truly useful",
+              "They are the same as views",
+              "They cost money",
+              "They only count on YouTube",
+            ],
+            answer_index: 0,
+            explanation: "People share and save what they value.",
+          },
+          {
+            prompt: "What is a vanity metric?",
+            options: [
+              "A number that feels good but may not reflect real results like sales",
+              "A required tax form",
+              "The length of a video",
+              "A type of thumbnail",
+            ],
+            answer_index: 0,
+            explanation: "Likes can look good without bringing customers.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
