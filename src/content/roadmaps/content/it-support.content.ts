@@ -1172,6 +1172,487 @@ Amina supports twenty field officers for an NGO in Nalerigu. One officer cannot 
         pass_threshold: 75,
       },
     },
+    networking: {
+      explanation_md: `## Why this matters
+
+"The system is down" is one of the most common calls in any Ghanaian office. A bank teller cannot reach the core banking system, a school cannot open its results portal, a shop's till cannot confirm MoMo payments. Very often the cause is the network: a cable, a router, an expired data bundle, a wrong address or a name that cannot be found. IT support adverts in Ghana ask again and again for network troubleshooting, LAN and Wi-Fi knowledge, router and switch setup and basic networking concepts. Network certifications such as CCNA and Network+ appear as preferred qualifications in several of them.
+
+## The big picture
+
+A network is two or more devices connected so they can share information. A small office network usually looks like this:
+
+* An **internet connection** from a provider: a fibre box, a 4G or 5G router, or a pocket MiFi running on a data bundle.
+* A **router** that connects the office to the internet, hands out addresses and often provides Wi-Fi.
+* A **switch** with many ports, so several wired computers, printers and phones can join.
+* **Access points** that spread Wi-Fi to other rooms.
+* **Cables**, usually Ethernet, linking it together.
+
+A local area network (LAN) is the network inside one building. A wide area network (WAN) links distant sites, such as a bank's branches in Tamale and Accra.
+
+## How devices find each other
+
+Two ideas sit under almost everything:
+
+* **Addresses.** Every device needs an IP address, like a house number, so data reaches the right place. The router normally gives these out automatically.
+* **Names.** People type names like a bank's website; DNS turns those names into addresses.
+
+When you understand addresses and names, most network faults become puzzles you can solve step by step.
+
+## What this section covers
+
+* **IP addresses and DHCP:** private and public addresses, the gateway and how addresses are handed out.
+* **DNS:** how names become addresses and how to spot a DNS problem.
+* **Wireless, routers and cabling:** how a small office network fits together and how to secure and improve it.
+* **Finding network faults:** the simple tools (\`ping\`, \`ipconfig\`, traceroute) and a step by step approach.
+
+## Phone or computer?
+
+Much of this section works on a phone. Android shows the Wi-Fi network's details, including your device's IP address, the gateway and signal strength, under the Wi-Fi settings. The command tools are best practised on a Windows or Linux computer at a lab or library. Free networking courses from Cisco Networking Academy and others can go deeper when you are ready.
+
+## A small example
+
+Sumaila is called to a hardware shop in Wa where "the internet is off". He checks the pocket router first: its data bundle has run out. After a top up, everything works. He shows the owner how to check the balance and sets a reminder. Not every network fault is technical, but you only find that out by checking in order.`,
+      practice_task_md: `**Goal:** draw a real network.
+
+1. Choose a network you can see: your home, a family shop, a church office, a school lab or a cyber cafe (ask permission).
+2. Find the internet connection (fibre box, router, MiFi), any switches or access points, and what connects to what.
+3. Draw a simple diagram on paper or in a free drawing app: internet, router, switch, devices. Label wired and wireless connections.
+4. On your phone, open the Wi-Fi network details and write down your IP address and the gateway address.
+5. Write two lines on what would stop working if the router failed, and if the switch failed.
+
+**Done looks like:** a labelled network diagram with your phone's address and gateway, ready to show a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a LAN?",
+            options: [
+              "A network linking branches in different cities",
+              "The network inside one building",
+              "A type of printer",
+              "A mobile money service",
+            ],
+            answer_index: 1,
+            explanation: "A local area network covers one building or site; a WAN links distant sites.",
+          },
+          {
+            prompt: "Which device connects the office to the internet and usually hands out addresses?",
+            options: ["The router", "The monitor", "The keyboard", "The UPS"],
+            answer_index: 0,
+            explanation: "The router links the LAN to the internet and normally runs DHCP.",
+          },
+          {
+            prompt: "What does a switch do?",
+            options: [
+              "Turns names into addresses",
+              "Stores backups",
+              "Provides many ports so several wired devices can join the network",
+              "Charges laptops",
+            ],
+            answer_index: 2,
+            explanation: "A switch lets many wired devices connect to the same network.",
+          },
+          {
+            prompt: "In the Wa example, why was the internet off?",
+            options: [
+              "The router was stolen",
+              "A virus had spread",
+              "The DNS server was broken",
+              "The pocket router's data bundle had run out",
+            ],
+            answer_index: 3,
+            explanation: "Checking in order found a simple cause: an empty data bundle.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "ip-addresses": {
+      explanation_md: `## Why this matters
+
+When a computer "has internet but cannot see the printer", or two devices keep knocking each other off the network, the cause is often an addressing problem. IT support adverts in Ghana list TCP/IP, LAN setup and network configuration. Understanding IP addresses lets you read what a device is telling you and fix it quickly.
+
+## What an IP address is
+
+An IP address identifies a device on a network, like a house number on a street. The common kind, IPv4, is four numbers from 0 to 255 separated by dots, for example \`192.168.1.25\`. A newer kind, IPv6, uses longer addresses with letters and colons; you will see both in settings.
+
+## Private and public addresses
+
+* **Private addresses** are used inside a building's network. They usually start with \`192.168.\`, \`10.\` or \`172.16.\` to \`172.31.\`. The same private addresses are reused in millions of homes and offices, which is fine because they never appear on the internet directly.
+* **Public addresses** are given by your internet provider and are what the wider internet sees. The router translates between the private addresses inside and the public address outside. This is called NAT (network address translation).
+
+## The settings every device needs
+
+* **IP address:** the device's own address.
+* **Subnet mask:** tells the device which addresses are on its local network. \`255.255.255.0\` is common in small offices, meaning devices from \`192.168.1.1\` to \`192.168.1.254\` are neighbours.
+* **Default gateway:** the router's address, the door to everything outside the local network.
+* **DNS server:** the address that turns names into addresses (next lesson).
+
+## DHCP: addresses handed out automatically
+
+Typing these settings into every device would be slow and error prone. Instead, a DHCP server (usually the router) hands them out when a device joins, for a period called a lease. If a Windows computer shows an address starting \`169.254.\`, it means it asked for an address and nobody answered: check the cable, the Wi-Fi connection or whether DHCP is working.
+
+## Fixed addresses
+
+Printers, servers and cameras should keep the same address so others can always find them. You can set the address on the device itself (static), or better, tell the router to always give that device the same address (a DHCP reservation). If someone types a static address that DHCP also gives out, two devices clash, and both can lose connection. That is an address conflict.
+
+## A small example
+
+Issahaku supports a school in Yendi. The office printer keeps disappearing. He runs \`ipconfig\` on a staff laptop and checks the printer's configuration page: the printer was set by hand to \`192.168.1.20\`, which the router also gives out to laptops. Some mornings a laptop gets that address first and the printer drops off. He creates a DHCP reservation for the printer and removes the manual setting. The conflicts stop.`,
+      practice_task_md: `**Goal:** read and explain real address settings.
+
+1. On your phone, open the details of the Wi-Fi network you are connected to and note the IP address, gateway and (if shown) subnet mask or prefix length and DNS.
+2. If you can use a Windows computer, run \`ipconfig /all\` in Command Prompt and find the same values, plus the DHCP lease times.
+3. Decide for each address: private or public? Explain how you know.
+4. Write a short note explaining to a shop owner, in plain words, why their receipt printer should have a reserved address.
+
+**Done looks like:** a filled in table of your settings with each one explained in your own words, plus the plain language note.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is a private IPv4 address?",
+            options: ["8.8.8.8", "192.168.1.25", "300.1.1.1", "41.66.200.1"],
+            answer_index: 1,
+            explanation: "Addresses starting 192.168. are in a private range used inside networks.",
+          },
+          {
+            prompt: "What is the default gateway?",
+            options: [
+              "The router's address, the way out to other networks",
+              "The fastest website",
+              "The printer's serial number",
+              "The Wi-Fi password",
+            ],
+            answer_index: 0,
+            explanation: "Devices send traffic for outside networks to the gateway, usually the router.",
+          },
+          {
+            prompt: "What does DHCP do?",
+            options: [
+              "Deletes old files",
+              "Speeds up printing",
+              "Hands out IP settings automatically when devices join",
+              "Encrypts email",
+            ],
+            answer_index: 2,
+            explanation: "DHCP gives each device its address, mask, gateway and DNS settings.",
+          },
+          {
+            prompt: "A Windows computer shows an address starting 169.254. What does this suggest?",
+            options: [
+              "The computer is very fast",
+              "It has a public address",
+              "It is connected to a printer",
+              "It asked for an address and no DHCP server answered",
+            ],
+            answer_index: 3,
+            explanation: "A 169.254 address means DHCP failed, so check the connection and router.",
+          },
+          {
+            prompt: "In the Yendi example, what fixed the disappearing printer?",
+            options: [
+              "A DHCP reservation for the printer instead of a clashing manual address",
+              "Buying a new laptop",
+              "Changing the printer's paper",
+              "Turning off the internet",
+            ],
+            answer_index: 0,
+            explanation: "The manual address clashed with DHCP; a reservation removed the conflict.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    dns: {
+      explanation_md: `## Why this matters
+
+Sometimes users say "WhatsApp works but no websites open" or "the internet works but our company portal does not". These half working problems are often DNS problems. IT support adverts in Ghana ask for network troubleshooting and configuration, and DNS is one of the first things an experienced technician checks.
+
+## What DNS does
+
+Computers reach each other using IP addresses, but people remember names. DNS (the Domain Name System) is the internet's directory: it turns a name such as \`example.com\` into the IP address of the server that hosts it.
+
+When you type a website name:
+
+1. Your device checks whether it already knows the answer (it keeps a short memory called a cache).
+2. If not, it asks its DNS server, usually given by the router through DHCP. This may be the internet provider's server or a public one.
+3. That server finds the answer, asking other DNS servers across the internet if needed, and replies with the address.
+4. Your device connects to that address.
+
+All this usually takes a fraction of a second.
+
+## Records you will hear about
+
+* **A record:** links a name to an IPv4 address (AAAA does the same for IPv6).
+* **MX record:** says which server receives email for a domain. When an organisation moves its email to a new provider, MX records change.
+* **CNAME:** an alias pointing one name at another.
+
+As a support technician you will not usually change these, but knowing them helps you understand what the website or email provider is asking for.
+
+## Spotting a DNS problem
+
+The classic sign: you can reach an IP address but not a name. On a computer:
+
+\`\`\`
+ping 8.8.8.8
+ping example.com
+nslookup example.com
+\`\`\`
+
+If the first ping works but the second says it cannot find the host, and \`nslookup\` fails, the connection is fine and DNS is the problem. (\`8.8.8.8\` is a public DNS server run by Google, often used as a test address.)
+
+Fixes to try:
+
+* Restart the router, which often holds the DNS setting.
+* Clear the computer's DNS cache with \`ipconfig /flushdns\` on Windows.
+* Check the DNS server setting on the device or the router. If the provider's DNS is failing, a reliable public DNS server can be set on the router, with the manager's approval.
+* If only one company website fails, the problem may be with that site's own DNS records. Report it to whoever manages the site.
+
+## A small example
+
+Hawa supports an NGO office in Tamale. Staff can use WhatsApp but no websites open. She runs \`ping 8.8.8.8\`, which works, then \`nslookup\` for a news website, which fails. She logs in to the router and sees the DNS server was set by hand to an old address from a previous provider. She sets it back to automatic, restarts the router, and websites load again.`,
+      practice_task_md: `**Goal:** watch DNS working.
+
+1. On your phone, open the Wi-Fi network details and find the DNS server address, if shown.
+2. If you can use a computer, run \`nslookup\` for three websites you use (for example a Ghanaian news site, a university site and a search engine) and write down the addresses returned.
+3. Run \`ping\` to one of those names and check it uses the same address.
+4. Write a short "DNS or not?" decision guide: two tests and what each result means.
+
+**With only a phone:** do step 1, then write the decision guide from this lesson and explain it aloud to a friend.
+
+**Done looks like:** your results or notes, and a decision guide a colleague could follow.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does DNS do?",
+            options: [
+              "Turns names into IP addresses",
+              "Charges laptops",
+              "Prints documents",
+              "Hands out data bundles",
+            ],
+            answer_index: 0,
+            explanation: "DNS is the directory that turns names into addresses.",
+          },
+          {
+            prompt: "`ping 8.8.8.8` works but `ping example.com` cannot find the host. What is the likely problem?",
+            options: ["A broken screen", "DNS", "A paper jam", "Low battery"],
+            answer_index: 1,
+            explanation: "The connection works by address, so name lookup (DNS) is failing.",
+          },
+          {
+            prompt: "Which DNS record says which server receives email for a domain?",
+            options: ["A record", "CNAME", "MX record", "AAAA record"],
+            answer_index: 2,
+            explanation: "MX records point to the mail server for a domain.",
+          },
+          {
+            prompt: "Which Windows command clears the computer's DNS cache?",
+            options: ["`ipconfig /flushdns`", "`ping`", "`mkdir`", "`df -h`"],
+            answer_index: 0,
+            explanation: "`ipconfig /flushdns` clears stored DNS answers.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "wifi-and-routers": {
+      explanation_md: `## Why this matters
+
+Setting up and fixing small office networks is everyday work for IT support in Ghana: a new branch office, a school computer lab, a clinic, a guest house. Adverts mention routers, switches, LAN cabling, Wi-Fi and network security. Getting a small network right the first time prevents months of complaints.
+
+## The pieces
+
+* **Internet connection.** A fibre box from the provider, a 4G or 5G router with a SIM, or a pocket MiFi. Many offices outside big cities rely on mobile data, so watch bundle balances.
+* **Router.** Connects the local network to the internet, hands out addresses (DHCP), translates addresses (NAT), usually runs a basic firewall, and often provides Wi-Fi. Many home and small office units combine all these in one box.
+* **Switch.** Adds wired ports. Wired connections are faster and more reliable than Wi-Fi, so use them for desktops, printers and servers.
+* **Access points.** Extra Wi-Fi radios connected by cable to spread coverage. Better than cheap repeaters, which can halve speed.
+* **Cables.** Ethernet cables (category 5e or 6) with RJ45 plugs. A single run should stay under about 100 metres. Protect cables from feet, chairs, rats and sun.
+
+## Wi-Fi basics
+
+* **Bands.** 2.4 GHz reaches further and passes walls better but is slower and more crowded. 5 GHz is faster but shorter range. Many routers offer both.
+* **Placement.** Put the router or access point high, central and in the open, not on the floor or inside a metal cabinet. Thick block walls and metal roofs weaken signal.
+* **Channels.** If many neighbours use the same channel, try another in the router settings.
+
+## Securing a small network
+
+1. Change the router's default admin password. Many routers ship with a well known one printed on the label.
+2. Use WPA2 or, if all devices support it, WPA3 security with a long Wi-Fi password, not something like \`office123\`.
+3. Create a separate guest network for visitors and customers, so they cannot see staff computers and printers.
+4. Update the router's firmware from the maker's official page.
+5. Turn off WPS and remote management unless you really need them.
+6. Write down settings in a safe, private place and share passwords only with people who need them.
+
+## A small example
+
+Wumpini sets up Wi-Fi for a guest house in Bolgatanga. Guests complain the signal is weak upstairs. Instead of a cheap repeater, she runs a cable up to a second access point, sets the same network name on both, and creates a separate guest network so guests cannot reach the reception computer. She changes the router's admin password and writes the settings in the owner's private notebook.`,
+      practice_task_md: `**Goal:** design and check a small office network.
+
+1. Imagine a two room office in Tamale with four staff laptops, one desktop, one printer and visitors who need Wi-Fi.
+2. Draw the network: internet connection, router, switch, access point(s), and which devices are wired or wireless.
+3. Write a security checklist for it using the six steps in this lesson.
+4. On your own phone or home router (only with the owner's permission), check: which band you are using, the security type (WPA2 or WPA3), and whether a guest network exists. Do not change settings on a router you do not own.
+
+**Done looks like:** a labelled design, a security checklist and notes from the real check.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why should desktops, printers and servers use wired connections where possible?",
+            options: [
+              "Cables look nicer",
+              "Wired connections are faster and more reliable than Wi-Fi",
+              "Wi-Fi cannot reach printers",
+              "Cables never need a switch",
+            ],
+            answer_index: 1,
+            explanation: "Wired links are more reliable and faster, so they suit fixed devices.",
+          },
+          {
+            prompt: "Which Wi-Fi band reaches further and passes walls better?",
+            options: ["5 GHz", "2.4 GHz", "Both are identical", "Neither carries data"],
+            answer_index: 1,
+            explanation: "2.4 GHz has more range; 5 GHz is faster but shorter range.",
+          },
+          {
+            prompt: "What is the first security step on a new router?",
+            options: [
+              "Change the default admin password",
+              "Paint the router",
+              "Share the Wi-Fi password publicly",
+              "Turn on WPS",
+            ],
+            answer_index: 0,
+            explanation: "Default admin passwords are often well known, so change them first.",
+          },
+          {
+            prompt: "Why create a guest network for visitors?",
+            options: [
+              "To make the internet free",
+              "To speed up printing",
+              "To charge guests more",
+              "So visitors cannot see staff computers and printers",
+            ],
+            answer_index: 3,
+            explanation: "A guest network keeps visitors separate from the staff network.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "network-troubleshooting": {
+      explanation_md: `## Why this matters
+
+When a network fault stops a bank branch or a school office, people need it fixed fast, and they need you to stay calm. Adverts for IT support and NOC roles in Ghana ask for network troubleshooting, connectivity support and monitoring. A clear routine with a few free tools lets you find where a connection breaks in minutes.
+
+## Work from near to far
+
+Test in order from the device outwards. Each step that works rules out everything before it.
+
+1. **Physical.** Is the device on? Is the cable plugged in at both ends, with lights on the port? Is Wi-Fi switched on and connected to the right network? Is the router powered, and is the data bundle or fibre service active?
+2. **Address.** Run \`ipconfig\` (Windows) or \`ip a\` (Linux), or look in phone Wi-Fi details. A normal private address and a gateway mean DHCP worked. A \`169.254.\` address means it did not.
+3. **Local network.** Ping the gateway (the router), for example \`ping 192.168.1.1\`. Replies mean the device can reach the router.
+4. **Internet by address.** \`ping 8.8.8.8\`. Replies mean the router reaches the internet.
+5. **Internet by name.** \`ping example.com\` or \`nslookup example.com\`. If step 4 works but this fails, it is DNS.
+6. **The specific service.** If everything above works, the problem may be the website, the application or the user's account, not the network.
+
+## The tools
+
+\`\`\`
+ipconfig          # Windows address settings
+ipconfig /all     # more detail, DNS, DHCP
+ping 192.168.1.1  # can I reach this address?
+tracert 8.8.8.8   # Windows: list each hop on the way
+traceroute 8.8.8.8  # Linux version
+nslookup example.com  # ask DNS for an address
+\`\`\`
+
+Reading \`ping\`: replies with times in milliseconds mean the path works; "request timed out" means no reply (some devices block ping, so confirm with other tests). Very high or jumping times suggest a congested or poor link. \`tracert\` shows where along the path the replies stop, which helps you tell whether the fault is inside the office or with the provider.
+
+## Ask the scope question
+
+Is it one device, one room, or everyone? One device points to that device's cable, Wi-Fi or settings. Everyone points to the router, the switch, the provider or power. Check whether anything changed recently: a new cable, a moved desk, a router restart, a power cut.
+
+## When it is the provider
+
+If the router cannot reach the internet and restarting does not help, contact the provider with facts: what you tested, the results and times. Clear evidence gets faster help.
+
+## A small example
+
+Mariama gets a call from a microfinance branch in Savelugu: no one can reach the core system. She works through the steps remotely with a staff member. Addresses look normal, the gateway replies, but \`ping 8.8.8.8\` times out. The router's internet light is red. She calls the provider with her test results; they confirm a fibre cut nearby and switch the branch to a backup mobile link while they repair it.`,
+      practice_task_md: `**Goal:** run the near to far routine and write it up.
+
+**With a computer (lab, library or your own):**
+1. Run \`ipconfig\` and note your address and gateway.
+2. Ping the gateway, then \`8.8.8.8\`, then a website name. Note the results and times.
+3. Run \`tracert\` (Windows) or \`traceroute\` (Linux) to a website and count the hops.
+4. Run \`nslookup\` for the same website.
+
+**With only a phone:** check Wi-Fi details for your address and gateway, then switch between Wi-Fi and mobile data and note what changes.
+
+5. Either way, write a one page "network fault checklist" with the six steps, in plain words, that a junior colleague could follow.
+
+**Done looks like:** your test results or phone notes, and a checklist you could pin beside an office router.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which step comes first in the near to far routine?",
+            options: [
+              "Call the internet provider",
+              "Check physical things like power, cables and Wi-Fi connection",
+              "Reinstall the operating system",
+              "Run tracert to a website",
+            ],
+            answer_index: 1,
+            explanation: "Start with the physical layer before testing addresses and beyond.",
+          },
+          {
+            prompt: "You can ping the gateway but not 8.8.8.8. Where is the problem most likely?",
+            options: [
+              "Between the router and the internet",
+              "In the user's keyboard",
+              "In the DNS cache only",
+              "In the printer driver",
+            ],
+            answer_index: 0,
+            explanation: "The device reaches the router, so the break is beyond it, towards the provider.",
+          },
+          {
+            prompt: "What does `tracert` show?",
+            options: [
+              "Your Wi-Fi password",
+              "Free disk space",
+              "Each hop along the path and where replies stop",
+              "The printer queue",
+            ],
+            answer_index: 2,
+            explanation: "Traceroute lists each router on the path, helping locate the fault.",
+          },
+          {
+            prompt: "Everyone in the office has lost internet. What does this suggest?",
+            options: [
+              "One user's laptop is broken",
+              "A single faulty mouse",
+              "A wrong password on one account",
+              "A shared device such as the router, switch, provider or power",
+            ],
+            answer_index: 3,
+            explanation: "When everyone is affected, look at shared equipment and services.",
+          },
+          {
+            prompt: "In the Savelugu example, what did Mariama give the provider?",
+            options: [
+              "Her test results and times",
+              "A guess that it might be the weather",
+              "The staff passwords",
+              "Nothing, she just waited",
+            ],
+            answer_index: 0,
+            explanation: "Clear evidence from tests helps the provider act faster.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
   },
 };
 
