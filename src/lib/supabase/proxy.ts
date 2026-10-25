@@ -22,6 +22,11 @@ import {
  */
 const PROTECTED = ["/dashboard", "/profile"];
 const SIGNED_IN_ONLY = [...PROTECTED, "/welcome"];
+/**
+ * The path quiz result: signed out visitors arrive from the quiz, so they go
+ * to sign up (not sign in) and come back here afterwards.
+ */
+const PATH_RESULT = "/path";
 
 function matches(path: string, prefixes: string[]) {
   return prefixes.some((p) => path === p || path.startsWith(`${p}/`));
@@ -55,10 +60,10 @@ export async function updateSession(request: NextRequest) {
   const { data } = await supabase.auth.getClaims();
 
   const path = request.nextUrl.pathname;
-  const redirectTo = (pathname: string) => {
+  const redirectTo = (pathname: string, search = "") => {
     const url = request.nextUrl.clone();
     url.pathname = pathname;
-    url.search = "";
+    url.search = search;
     const redirect = NextResponse.redirect(url);
     // Carry over any cookies getClaims just set or cleared, or the stale session sticks.
     response.cookies.getAll().forEach((cookie) => redirect.cookies.set(cookie));
@@ -66,6 +71,10 @@ export async function updateSession(request: NextRequest) {
   };
 
   const claims = data?.claims;
+  if (path === PATH_RESULT) {
+    if (!claims) return redirectTo("/signup", `?next=${PATH_RESULT}`);
+    if (!hasAgeAndConsent(claims.user_metadata)) return redirectTo("/welcome", `?next=${PATH_RESULT}`);
+  }
   if (!claims && matches(path, SIGNED_IN_ONLY)) return redirectTo("/login");
 
   // Set after getClaims: the setAll above replaces `response`.

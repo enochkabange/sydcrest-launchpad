@@ -92,8 +92,9 @@ jobs:
           echo "SUPABASE_SERVICE_ROLE_KEY=$service" >> "$GITHUB_ENV"
       - run: pnpm build
       - run: pnpm exec playwright install --with-deps chromium
-      # The local stack's secret key, for seeding test data (e2e/supabase-admin.ts).
-      # Given to the test step only, never to the build, so it cannot reach the bundle.
+      # The local stack's secret key: seeds test data (e2e/supabase-admin.ts) and
+      # lets the app's server code (path quiz saves, content writes) run under
+      # `pnpm start`. Given to the test step only, never to the build.
       - name: Local service role key for seeding
         id: local-keys
         run: |

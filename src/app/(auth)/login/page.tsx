@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "@/components/ui/link";
+import { KeepNextLink } from "../next-field";
 import { Suspense } from "react";
 import { LoginForm } from "./login-form";
 import { GoogleButton, OrDivider } from "../google-button";
@@ -35,9 +35,9 @@ export default function LoginPage({ searchParams }: PageProps<"/login">) {
       <LoginForm />
       <p className="text-sm text-content-2">
         New to SydCrest?{" "}
-        <Link href="/signup" className="font-semibold">
+        <KeepNextLink href="/signup" className="font-semibold">
           Create an account
-        </Link>
+        </KeepNextLink>
       </p>
     </div>
   );
