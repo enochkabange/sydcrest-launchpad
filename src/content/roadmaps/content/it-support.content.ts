@@ -350,6 +350,813 @@ Fuseini builds a simple ticket system for a small clinic in Yendi using a free o
         pass_threshold: 75,
       },
     },
+    hardware: {
+      explanation_md: `## Why this matters
+
+Hardware problems are some of the most common calls in Ghanaian offices, schools and shops: a laptop that will not switch on, a desktop that is painfully slow, a printer that jams, a machine damaged when power came back after an outage. Adverts for IT support, desktop support and lab technician roles ask for hardware installation, repair, preventive maintenance and keeping an inventory of equipment. You do not need to be an electronics engineer. You need to know what each part does, how to look after it, and how to tell which part is failing.
+
+## What this section covers
+
+* **Inside a computer.** The main parts (processor, memory, storage, motherboard, power supply, ports) and what each one does. With this you can read a specification sheet, compare two laptops for a client, and make a good guess about which part is causing a fault.
+* **Maintenance, repairs and upgrades.** How to clean a computer safely, why heat and dust shorten its life, and the two upgrades (more memory and a solid state drive) that most often turn a slow machine into a useful one.
+* **Power, surges and protection.** Ghana's mains supply, what outages and surges do to equipment, and the difference between a surge protector, a voltage stabiliser and a UPS. This topic alone can save an office a lot of money.
+* **Printers and peripherals.** How printers, scanners and copiers connect and share, and how to clear the faults staff call about most.
+
+## Safety first
+
+Whenever you open or move equipment, follow three rules. Switch off and unplug the power before touching anything inside. Touch a bare metal part of the case first to release static electricity, which can damage chips you cannot see. Never open a power supply unit or a swollen battery: the power supply holds dangerous charge even when unplugged, and swollen batteries can catch fire.
+
+## Phone or computer?
+
+You can learn the ideas in this section on a phone. Looking inside a real machine is much better, though. If you do not own a computer, ask at a school computer lab, a library, a community centre, a cyber cafe or a phone and computer repair shop whether you can watch or help when they open one. Many repairers are happy to let a polite learner watch. Old, broken machines that people are throwing away make excellent practice: you cannot damage them further.
+
+## A small example
+
+Amina volunteers in the computer lab of a junior high school in Damongo. Three of the twenty desktops keep switching off by themselves during afternoon classes. Using what she learns in this section, she notices the three share a hot corner, opens one (switched off and unplugged), and finds the fan and heat sink thick with dust. She cleans them with a soft brush, moves the desks away from the wall, and the shutdowns stop. Knowing the hardware turned a mystery into a twenty minute fix.`,
+      practice_task_md: `**Goal:** make a hardware inventory, the first thing many IT jobs ask you to keep.
+
+1. Choose a place with several devices: your home, a family shop, a church office or a school lab (ask permission).
+2. In a spreadsheet or notebook, list every device: type (laptop, desktop, printer, router, phone), make and model, where it is, who uses it, and its condition.
+3. For computers, find the processor, memory (RAM) and storage size. On Windows open Settings, then System, then About. On a phone look in Settings, then About phone.
+4. Add a "notes" column for anything worrying: noisy fan, cracked screen, swollen battery, no surge protection.
+
+**Done looks like:** an inventory of at least five devices with specifications and notes. Remove names and serial numbers before sharing it as a portfolio sample.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should you always do before touching anything inside a computer?",
+            options: [
+              "Switch it off and unplug the power",
+              "Turn the screen brightness down",
+              "Connect it to the internet",
+              "Open the power supply unit",
+            ],
+            answer_index: 0,
+            explanation: "Safety starts with removing power before you open or touch internal parts.",
+          },
+          {
+            prompt: "Why should you never open a power supply unit?",
+            options: [
+              "It has no useful parts",
+              "It voids the internet contract",
+              "It holds dangerous charge even when unplugged",
+              "It is glued shut on every computer",
+            ],
+            answer_index: 2,
+            explanation: "Power supplies store charge that can injure you even after unplugging.",
+          },
+          {
+            prompt: "Why do you touch a bare metal part of the case before working inside?",
+            options: [
+              "To check the temperature",
+              "To release static electricity that can damage chips",
+              "To switch the computer on",
+              "To clean the case",
+            ],
+            answer_index: 1,
+            explanation: "Static discharge can damage components, so you release it first.",
+          },
+          {
+            prompt: "In the Damongo example, what was causing the computers to switch off?",
+            options: [
+              "A virus",
+              "A faulty keyboard",
+              "Wrong passwords",
+              "Dust and heat in a hot corner of the lab",
+            ],
+            answer_index: 3,
+            explanation: "Dust on the fans and heat sinks caused overheating, which made the machines shut down.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "computer-components": {
+      explanation_md: `## Why this matters
+
+When a manager in Ghana asks "which laptop should we buy for the new accounts officer?" or a user says "it is too slow", you need to know what each part of a computer does. Adverts ask for hardware installation and repair, and interviewers often ask you to name the parts and explain what they do.
+
+## The main parts
+
+* **Processor (CPU).** The chip that does the calculations. Faster processors with more cores handle more work at once. You will see names like Intel Core i5 or AMD Ryzen 5; the generation (how new it is) matters as much as the number.
+* **Memory (RAM).** Short term working space for programs that are open now. It empties when the computer switches off. Too little RAM makes a computer slow when several programs or browser tabs are open. Office machines today are much more comfortable with 8 GB or more.
+* **Storage.** Where files and programs live permanently. A hard disk drive (HDD) has spinning platters and is slow and fragile. A solid state drive (SSD) has no moving parts and is far faster. Storage is measured in gigabytes (GB) or terabytes (TB).
+* **Motherboard.** The main board that connects everything. Its design decides which processor, memory and storage types fit.
+* **Power supply (PSU).** Converts mains electricity into the low voltages the parts need. Laptops use an external charger plus a battery.
+* **Graphics.** Most office computers use graphics built into the processor. Design and gaming machines may add a separate graphics card.
+* **Ports.** USB (including the small oval USB C), HDMI or DisplayPort for screens, an Ethernet port for a network cable, and an audio jack.
+* **Firmware (BIOS or UEFI).** Small built in software that starts the computer and checks the hardware before the operating system loads. You open its settings with a key such as F2, F10 or Delete at start up; the key depends on the maker.
+
+## Reading a specification
+
+A laptop advert in a Kumasi shop might read: "Core i5 12th gen, 8GB RAM, 256GB SSD, 14 inch". That tells you a reasonably modern processor, enough memory for office work, a fast but small drive, and a portable screen. For an accounts officer that is a sensible choice. For a graphic designer, you might suggest more RAM and storage.
+
+## Matching symptoms to parts
+
+* Slow to start and open files: often an old HDD, or a nearly full drive.
+* Slow when many tabs are open: often too little RAM.
+* Switches off when busy: often overheating or a failing power supply or battery.
+* Clicking noise and missing files: a failing HDD. Back up immediately.
+* No display but lights and fans on: check the screen cable, then memory.
+
+## A small example
+
+Sumaila is asked why a Wa NGO's reception desktop takes five minutes to start. He checks: 4 GB RAM and an old HDD that is almost full. He explains to the manager that the drive is the main problem and recommends an SSD, with a memory upgrade if budget allows.`,
+      practice_task_md: `**Goal:** read specifications and match them to jobs.
+
+1. Find the specifications of any computer you can use (Settings, then System, then About on Windows) and write down processor, RAM, storage type and size.
+2. Find three laptop adverts online from Ghanaian shops or sellers (just browse, do not buy).
+3. Make a small table: processor, RAM, storage type and size, screen size, for each advert.
+4. For each, write one line: which kind of staff member it suits (receptionist, accountant, designer, field officer) and why.
+5. Write one line on which part you would upgrade first on the computer from step 1, and why.
+
+**Done looks like:** a comparison table and short recommendations you could send a manager.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which part is short term working space that empties when the computer switches off?",
+            options: ["The SSD", "The RAM", "The motherboard", "The power supply"],
+            answer_index: 1,
+            explanation: "RAM holds programs that are open now and loses its contents when power is off.",
+          },
+          {
+            prompt: "What is the main advantage of an SSD over an HDD?",
+            options: [
+              "It has spinning platters",
+              "It always stores more data",
+              "It is far faster and has no moving parts",
+              "It does not need a motherboard",
+            ],
+            answer_index: 2,
+            explanation: "SSDs have no moving parts and are much faster than hard disk drives.",
+          },
+          {
+            prompt: "A computer makes clicking noises and files are going missing. What should you do first?",
+            options: [
+              "Back up the files immediately",
+              "Add more RAM",
+              "Change the screen",
+              "Install a new browser",
+            ],
+            answer_index: 0,
+            explanation: "These are signs of a failing hard disk, so protecting the data comes first.",
+          },
+          {
+            prompt: "What does the BIOS or UEFI firmware do?",
+            options: [
+              "Prints documents",
+              "Stores all your photos",
+              "Connects to Wi-Fi only",
+              "Starts the computer and checks hardware before the operating system loads",
+            ],
+            answer_index: 3,
+            explanation: "Firmware runs first at start up and hands over to the operating system.",
+          },
+          {
+            prompt: "In the Wa example, what did Sumaila identify as the main cause of slow start up?",
+            options: [
+              "A virus",
+              "An old, nearly full hard disk drive",
+              "A broken keyboard",
+              "The screen size",
+            ],
+            answer_index: 1,
+            explanation: "The old HDD was the main bottleneck, so he recommended an SSD.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "maintenance-and-upgrades": {
+      explanation_md: `## Why this matters
+
+Many computers in Ghanaian offices, schools and cyber cafes are older machines that have to keep working because budgets are tight. Harmattan dust, heat and unstable power shorten their lives. Adverts for desktop support and lab roles ask for preventive maintenance and repairs, and a technician who can keep old machines running saves an organisation real money.
+
+## Preventive maintenance
+
+Preventive maintenance means looking after equipment before it fails. A simple routine, done every term or every few months:
+
+* **Clean the outside.** Wipe screens with a soft, slightly damp cloth (never spray liquid directly on). Clean keyboards and mouse.
+* **Clear the dust inside.** Switch off, unplug and, on a desktop, open the side panel. Use a soft brush or a can of compressed air to clear fans, vents and heat sinks. Hold fans still while you blow them so they do not spin too fast. Do this outside if you can, especially after harmattan.
+* **Check airflow.** Computers need space around vents. Do not let laptops sit on beds or cloth that block the air.
+* **Check cables and plugs.** Look for burnt or loose plugs, damaged extension boards and cables trapped under desks.
+* **Check health.** Note any strange noises, very hot surfaces or swollen batteries (a laptop whose case is bulging or trackpad is lifting). Stop using a swollen battery and replace it.
+* **Software housekeeping.** Install updates, remove programs nobody uses and free space on nearly full drives.
+
+Keep a maintenance record per machine: date, what you did, what you noticed.
+
+## The two upgrades that matter most
+
+For an old but working computer, two upgrades usually make the biggest difference:
+
+1. **Replace the hard disk with a solid state drive (SSD).** Start up and opening programs often become many times faster. Check what the machine accepts: a 2.5 inch SATA drive, or a small M.2 card (which may be SATA or NVMe; the motherboard decides).
+2. **Add memory (RAM).** Check the type the motherboard supports (for example DDR4 or DDR5) and whether it is laptop size (SO DIMM) or desktop size. Check how many slots are free and the maximum supported.
+
+Before any upgrade, back up the user's files. After swapping a drive you will need to copy the old drive across (cloning) or install the operating system fresh.
+
+## When to repair and when to replace
+
+If a machine needs several expensive parts, cannot run a supported operating system, or keeps failing, it may be cheaper to replace it. Give the manager the facts and costs and let them decide.
+
+## A small example
+
+Wumpini maintains twelve laptops for a microfinance office in Tamale. After harmattan, several are running hot and slow. She cleans each one, replaces two swollen batteries, and recommends SSD upgrades for the four slowest. Staff stop complaining, and the manager asks her to plan the same routine every term.`,
+      practice_task_md: `**Goal:** plan and carry out a safe maintenance check.
+
+1. Write a one page preventive maintenance checklist for a small office, using the routine in this lesson.
+2. With permission, use your checklist on one real device (a family laptop, a church desktop, a school lab machine). Only clean the outside and vents unless someone experienced is with you to open it.
+3. Record what you found: dust level, temperature, battery condition, free storage, pending updates.
+4. Find out (from Settings or the maker's website) what RAM type and drive type the machine supports, and write a short upgrade recommendation.
+
+**Done looks like:** a checklist, a completed maintenance record for one device, and an upgrade recommendation. If you have no device, complete the checklist and the recommendation for a laptop model you find online.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is preventive maintenance?",
+            options: [
+              "Looking after equipment before it fails",
+              "Buying new computers every year",
+              "Only fixing things after they break",
+              "Installing games on staff computers",
+            ],
+            answer_index: 0,
+            explanation: "It means regular care that stops failures before they happen.",
+          },
+          {
+            prompt: "Which upgrade usually makes an old computer start up and open programs much faster?",
+            options: [
+              "A bigger monitor",
+              "A new keyboard",
+              "Replacing the hard disk with an SSD",
+              "A new mouse pad",
+            ],
+            answer_index: 2,
+            explanation: "SSDs are far faster than hard disks, which speeds up start up and loading.",
+          },
+          {
+            prompt: "What should you do with a laptop whose battery has swollen?",
+            options: [
+              "Keep using it but charge it less",
+              "Press the case flat",
+              "Leave it in the sun",
+              "Stop using the battery and replace it",
+            ],
+            answer_index: 3,
+            explanation: "Swollen batteries are a fire risk and must be replaced.",
+          },
+          {
+            prompt: "Before adding RAM, what should you check?",
+            options: [
+              "The supported memory type, size format and free slots",
+              "The colour of the case",
+              "The Wi-Fi password",
+              "The printer driver",
+            ],
+            answer_index: 0,
+            explanation: "RAM must match the motherboard's type and format, and there must be room for it.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "power-protection": {
+      explanation_md: `## Why this matters
+
+Power cuts, low voltage and sudden surges are part of working life in many parts of Ghana. When power drops suddenly, unsaved work is lost and files can be corrupted. When power returns, a spike can destroy power supplies, routers, printers and phone chargers. Lightning storms in the rainy season add more risk. An IT person who sets up good power protection prevents a whole category of expensive problems.
+
+## Ghana's mains supply
+
+Ghana's mains electricity is 230 volts at 50 hertz, and sockets are mostly the three pin types known as D (round pins) and G (rectangular pins). Equipment from abroad must accept 230 V; most modern laptop chargers say "100 to 240V" on the label, which is fine. Always read the label before plugging something in.
+
+## Three kinds of protection
+
+They solve different problems, and people often confuse them.
+
+* **Surge protector.** An extension board or plug with components that absorb short spikes of high voltage and protect what is plugged in. It does nothing during a power cut and does not fix low voltage. Surge protectors wear out after absorbing big surges, so replace old or damaged ones. A cheap extension board is not necessarily a surge protector: check the packaging says surge protection.
+* **Voltage stabiliser (often called an AVR, automatic voltage regulator).** Corrects voltage that is too low or too high and keeps it steady. Useful where supply is weak, for example at the end of a long line or when heavy machines start nearby.
+* **UPS (uninterruptible power supply).** A box with a battery that keeps equipment running for a short time when power fails, so people can save work and shut down properly. Many UPS units also include surge protection and voltage regulation. A small office UPS usually lasts minutes, not hours; it is not a generator.
+
+## Good practice
+
+* Put desktops, screens and network equipment on a UPS or at least a surge protector.
+* Keep the router and modem on a UPS so the internet survives short cuts.
+* Do not plug a laser printer into a small UPS: laser printers draw a lot of power when warming up and can overload it. Use a surge protector instead.
+* Switch off and unplug sensitive equipment during lightning storms if you can.
+* When power returns after an outage, wait a little before switching everything back on.
+* Do not chain extension boards into each other. Look for burnt plugs and loose sockets.
+* Generators and solar inverters can produce rough power. Use a stabiliser or UPS between them and computers.
+* Check UPS batteries yearly; they weaken with age and heat.
+
+## A small example
+
+Abdul-Rahman supports a pharmacy in Bolgatanga. After a storm, the router and the till computer died. He replaces them, then puts the computer, screen and router on a small UPS and plugs the receipt printer into a surge protector. Months later, during another storm, the lights go off but the till stays on long enough to save the sale and shut down cleanly.`,
+      practice_task_md: `**Goal:** do a power safety audit.
+
+1. Choose a workspace: your home, a family shop, a church office or a school lab (with permission).
+2. List every device that uses mains power and how it is plugged in: straight into the wall, an ordinary extension board, a surge protector, a stabiliser or a UPS.
+3. Note risks: chained extension boards, burnt or loose plugs, laser printer on a UPS, router with no protection, cables across walkways.
+4. Write a short recommendation: which devices need a UPS, which need only a surge protector, and what to fix right away. Do not quote prices or brands.
+
+**Done looks like:** a one page power audit with a list of devices, risks and recommendations, which you could hand to the owner.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the mains supply in Ghana?",
+            options: ["110 volts at 60 hertz", "230 volts at 50 hertz", "12 volts at 50 hertz", "400 volts at 60 hertz"],
+            answer_index: 1,
+            explanation: "Ghana uses 230 V at 50 Hz, so equipment must accept 230 V.",
+          },
+          {
+            prompt: "What does a UPS do that a surge protector does not?",
+            options: [
+              "Keeps equipment running for a short time when power fails",
+              "Makes the internet faster",
+              "Prints documents during an outage",
+              "Turns off the lights",
+            ],
+            answer_index: 0,
+            explanation: "A UPS has a battery for short outages; a surge protector only absorbs spikes.",
+          },
+          {
+            prompt: "Which device corrects voltage that is too low or too high?",
+            options: ["A network switch", "A USB hub", "A voltage stabiliser", "A printer"],
+            answer_index: 2,
+            explanation: "Stabilisers, or AVRs, keep the voltage steady.",
+          },
+          {
+            prompt: "Why should a laser printer not be plugged into a small UPS?",
+            options: [
+              "Laser printers cannot use 230 V",
+              "The UPS will change the print colour",
+              "Laser printers do not work during the day",
+              "It draws a lot of power when warming up and can overload the UPS",
+            ],
+            answer_index: 3,
+            explanation: "The warm up draw of a laser printer is too much for a small UPS.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "printers-and-peripherals": {
+      explanation_md: `## Why this matters
+
+In Ghanaian offices, schools and banks, printers, copiers and scanners produce a big share of everyday support calls. Some adverts are entirely about printers: maintaining office printer fleets, servicing multifunction copiers, managing toner and ink. Being the person who can calmly fix the printer before a deadline earns you a lot of goodwill.
+
+## Kinds of printers
+
+* **Inkjet.** Sprays liquid ink. Cheap to buy, good for colour, but ink can dry out if unused. Many small businesses use ink tank models that refill from bottles.
+* **Laser.** Uses toner powder fused onto paper with heat. Fast and cheaper per page for lots of black text; common in offices.
+* **Thermal.** Uses heat sensitive paper; used for receipts at tills and MoMo agents' printers.
+* **Multifunction (MFP).** Prints, copies, scans and sometimes faxes. Larger office copiers are usually multifunction devices.
+
+## How printers connect
+
+* **USB.** One computer, one cable. Simple, but only that computer can print unless it shares the printer.
+* **Network.** Through an Ethernet cable or Wi-Fi to the office network, so everyone can print. Give network printers a fixed (reserved) address on the router so computers can always find them.
+* **Driver.** Software that lets the operating system talk to the printer. Windows often installs one automatically; otherwise download it from the printer maker's official website only, never from random sites.
+
+## The common faults and fixes
+
+* **Nothing prints.** Check power, paper, and that the right printer is selected (the default printer may have changed). Open the print queue: a stuck job can block everything behind it. Cancel it and try again. On Windows, restarting the print spooler service often clears a frozen queue.
+* **Printer offline.** Check its cable or Wi-Fi connection and that its network address has not changed. Print a configuration page from the printer's own menu to see its address.
+* **Paper jams.** Switch off, open the doors the printer shows, and pull paper out gently in the direction it travels. Remove torn pieces. Check paper is dry, not curled, and loaded neatly. Harmattan dryness and rainy season damp both affect paper.
+* **Faded or streaky prints.** Low toner or ink, or dirty print heads. Run the cleaning cycle from the printer menu.
+* **Error codes.** Look up the exact code in the maker's manual or support site.
+
+## Other peripherals
+
+Keyboards, mice, webcams, headsets, projectors and scanners also land on your desk. The same steps apply: check power and cables, try another port, check the driver, test on another computer to see whether the device or the computer is at fault.
+
+## A small example
+
+Hawa, at a Bolgatanga school, gets three calls: nobody can print to the staff room laser printer. She prints a configuration page and sees the printer's address has changed after the router restarted. She reserves a fixed address for it on the router, updates one laptop as a test, then the rest. Printing returns, and it will not break the same way again.`,
+      practice_task_md: `**Goal:** build a printer troubleshooting guide for staff.
+
+1. Using this lesson and the printer support pages linked to this topic, write a one page guide called "Before you call IT about the printer" with five checks a staff member can do themselves.
+2. Write a second, technician page with the steps for: stuck print queue, printer offline, paper jam and faded prints.
+3. If you have access to any printer (home, church, school, cyber cafe), with permission print a configuration or status page from its menu and note how it is connected.
+
+**Done looks like:** a staff guide and a technician checklist, written in plain words, plus notes on one real printer if you could access one.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which type of printer is commonly used for receipts at tills and MoMo agents?",
+            options: ["Laser", "Thermal", "Inkjet", "Plotter"],
+            answer_index: 1,
+            explanation: "Thermal printers use heat sensitive paper and are common for receipts.",
+          },
+          {
+            prompt: "Nothing is printing and the print queue has a stuck job. What should you try?",
+            options: [
+              "Buy a new printer",
+              "Reinstall Windows",
+              "Cancel the stuck job, and restart the print spooler if needed",
+              "Unplug the router",
+            ],
+            answer_index: 2,
+            explanation: "A stuck job blocks the queue; clearing it and restarting the spooler usually helps.",
+          },
+          {
+            prompt: "Why should a network printer have a fixed (reserved) address?",
+            options: [
+              "So computers can always find it",
+              "So it prints in colour",
+              "So it uses less toner",
+              "So it does not need paper",
+            ],
+            answer_index: 0,
+            explanation: "If the address changes, computers lose the printer, as in the Bolgatanga example.",
+          },
+          {
+            prompt: "Where should you download a printer driver from?",
+            options: [
+              "Any site that appears first in search",
+              "A file sent on WhatsApp by a stranger",
+              "A pop up advert",
+              "The printer maker's official website",
+            ],
+            answer_index: 3,
+            explanation: "Only official sources are safe for drivers.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    systems: {
+      explanation_md: `## Why this matters
+
+Security adverts from Ghanaian telcos, banks and IT firms keep naming the same foundations: networking, Windows, Linux, firewalls and logs. An alert that says "unusual connection from 10.0.4.17 on port 3389" means nothing unless you know what an IP address, a port and remote desktop are. Your IT support knowledge is the base; this section turns it towards defence.
+
+## The defender's view of systems
+
+In IT support you ask "how do I make this work?". In security you add "how could this be misused, and how would I notice?". The same knowledge serves both questions.
+
+* **Networks** carry every attack and every alert. You need to read addresses, ports and protocols, and understand what a firewall allows or blocks.
+* **Windows** runs most office computers in Ghana. Defenders need to know accounts, updates, built in protection and, most of all, the event logs that record logins and changes.
+* **Linux** runs many servers, cloud systems and security tools. Defenders need the command line to read and search log files.
+
+## How this section works on modest hardware
+
+This is the first section where a computer really helps. Wireshark, virtual machines and the Linux command line are easier on a laptop. If you only have a phone right now:
+
+* Read the lessons and do the "read the evidence" tasks, which use short logs you can study on a phone screen.
+* Use free browser based courses such as Cisco Networking Academy's Networking Basics and Linux Unhatched, which work in a browser on a larger phone or tablet.
+* Book time on a computer at a school ICT lab, a public library or a community centre for the hands on parts, and plan what you will do before you go so you use the time and data well.
+
+## A small example
+
+Mariama is an IT support assistant at a fintech in Accra, preparing to move into security. Her manager shows her a firewall log line: a computer inside the office tried to connect to an unknown overseas address on port 4444 many times overnight. Because Mariama knows ports, she recognises that 4444 is not used by normal office software. Because she knows Windows, she checks that computer's event log and finds a new program installed the evening before. She reports both facts clearly. Her networking and Windows knowledge turned a confusing line into a useful lead.
+
+## What you will be able to do
+
+By the end of this section you will be able to read a simple connection record, find the login events on a Windows computer, and search a Linux log file for failed logins.`,
+      practice_task_md: `**Goal:** map your own setup as a defender would.
+
+1. On your phone or computer, find your device's IP address (Settings, then Wi Fi or About).
+2. Log in to your home router's page only if it is your own router and you have the password; otherwise skip this step. Note how many devices are connected.
+3. In your security journal, draw a simple map: internet, router, and each device that connects to it.
+4. For each device, write one way it could be misused and one way you would notice.
+
+**Done looks like:** a hand drawn or digital network map with a short "misuse and notice" note per device. Never log in to a router or network that is not yours.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What question does a defender add to the IT support question \"how do I make this work\"?",
+            options: [
+              "How do I make it faster?",
+              "How could this be misused, and how would I notice?",
+              "How much did this cost?",
+              "Who installed this?",
+            ],
+            answer_index: 1,
+            explanation: "Security adds thinking about misuse and detection to normal IT knowledge.",
+          },
+          {
+            prompt: "Why do defenders need to know Linux?",
+            options: [
+              "Because most phones in Ghana run desktop Linux",
+              "Because many servers and security tools run on it and its logs are read from the command line",
+              "Because Windows has no logs",
+              "Because Linux cannot be attacked",
+            ],
+            answer_index: 1,
+            explanation: "Many servers, cloud systems and tools run Linux, and analysts search its logs at the command line.",
+          },
+          {
+            prompt: "What is a sensible plan if you only have a phone for the hands on parts?",
+            options: [
+              "Skip this section entirely",
+              "Use browser based courses and book planned time on a computer at a lab, library or community centre",
+              "Download several large virtual machines on mobile data",
+              "Practise on a friend's office network",
+            ],
+            answer_index: 1,
+            explanation: "Browser courses and planned sessions on a shared computer keep costs low and practice legal.",
+          },
+          {
+            prompt: "In the example, what made Mariama suspicious of the firewall log line?",
+            options: [
+              "The computer was switched off",
+              "Repeated overnight connections to an unknown overseas address on an unusual port",
+              "The connection used port 443",
+              "The computer belonged to her manager",
+            ],
+            answer_index: 1,
+            explanation: "Port 4444 is not used by normal office software, and the repeated overnight attempts were unusual.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "networking-for-security": {
+      explanation_md: `## Why this matters
+
+Telco and bank security adverts in Ghana ask for an understanding of networks, firewalls and network traffic. Almost every alert you handle will mention an IP address, a port or a domain name, so this is everyday vocabulary for an analyst.
+
+## The pieces you must read fluently
+
+* **IP address:** the number that identifies a device on a network. Addresses such as 192.168.x.x and 10.x.x.x are private, used inside homes and offices. Other addresses are public, on the wider internet.
+* **Port:** a numbered door on a device for a particular service. Common ones: 53 for DNS, 80 for web (HTTP), 443 for secure web (HTTPS), 22 for SSH remote login, 3389 for Windows Remote Desktop.
+* **Protocol:** the rules for a type of traffic, such as TCP, UDP, HTTP or DNS.
+* **DNS:** the internet's phone book, turning names like example.com into IP addresses. Attackers register look alike names, so checking domains is a daily task.
+* **Firewall:** a device or program that allows or blocks traffic based on rules, such as "block Remote Desktop from the internet".
+
+## Reading a connection record
+
+Firewalls and other tools write records like this:
+
+\`\`\`
+08:14 ALLOW 192.168.1.20 -> 41.0.0.9:443 TCP
+02:31 BLOCK 203.0.113.50 -> 192.168.1.5:3389 TCP
+02:31 BLOCK 203.0.113.50 -> 192.168.1.5:3389 TCP
+\`\`\`
+
+Read each line as: time, action, source, destination and port, protocol. The first line is an office computer visiting a secure website, which is normal. The next lines show an outside address trying to reach Remote Desktop on an inside machine at 2:31 in the morning. The firewall blocked it, which is good, but a pattern like this tells you someone is probing, so you check that Remote Desktop is not open elsewhere.
+
+## Looking at traffic
+
+Tools like **Wireshark** capture packets so you can see conversations on a network you are responsible for. Wireshark needs a computer. On a phone, you can still practise reading connection records like the ones above. Only capture traffic on your own network or in a lab; capturing other people's traffic without authority is illegal.
+
+## A small example
+
+Issahaku works on a help desk in Tamale. Staff complain the internet is slow. He checks the firewall summary and sees one laptop sending large amounts of data to a single unknown address all night on an unusual port. He disconnects the laptop from the network, tells his supervisor and writes down the times and addresses. Networking knowledge turned "slow internet" into an early warning.`,
+      practice_task_md: `**Goal:** read and explain connection records.
+
+1. Copy these invented records into your journal:
+   * \`09:02 ALLOW 192.168.1.30 -> 8.8.8.8:53 UDP\`
+   * \`09:03 ALLOW 192.168.1.30 -> 41.0.0.9:443 TCP\`
+   * \`23:47 BLOCK 198.51.100.7 -> 192.168.1.10:22 TCP\` (repeated 40 times)
+2. For each line, write the source, destination, port, the service the port usually means, and whether it looks normal.
+3. Write a two sentence note to a supervisor about anything suspicious.
+4. Optional, with a computer: install Cisco Packet Tracer or Wireshark and look at traffic on your own home network only.
+
+**Done looks like:** a short table explaining each record and a clear two sentence note.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which port is normally used for secure websites (HTTPS)?",
+            options: ["22", "53", "443", "3389"],
+            answer_index: 2,
+            explanation: "Port 443 carries HTTPS, the secure web traffic most sites use.",
+          },
+          {
+            prompt: "What does DNS do?",
+            options: [
+              "Encrypts every file on a computer",
+              "Turns names like example.com into IP addresses",
+              "Blocks all traffic from outside",
+              "Stores passwords for websites",
+            ],
+            answer_index: 1,
+            explanation: "DNS works like a phone book, translating names into addresses.",
+          },
+          {
+            prompt: "Which of these is a private IP address used inside homes and offices?",
+            options: ["8.8.8.8", "41.0.0.9", "192.168.1.20", "203.0.113.50"],
+            answer_index: 2,
+            explanation: "Addresses beginning 192.168 are private, used inside local networks.",
+          },
+          {
+            prompt: "Repeated blocked attempts from an outside address to port 3389 at night most likely show what?",
+            options: [
+              "A staff member printing documents",
+              "Someone probing for Windows Remote Desktop",
+              "A normal software update",
+              "A DNS lookup",
+            ],
+            answer_index: 1,
+            explanation: "Port 3389 is Remote Desktop, and repeated outside attempts suggest probing.",
+          },
+          {
+            prompt: "When is it acceptable to capture network traffic with a tool like Wireshark?",
+            options: [
+              "On any public Wi Fi",
+              "On your own network or a lab you are responsible for",
+              "On a neighbour's network if it is unprotected",
+              "On a school network if nobody notices",
+            ],
+            answer_index: 1,
+            explanation: "Capturing other people's traffic without authority is illegal; use your own network or labs.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "windows-security": {
+      explanation_md: `## Why this matters
+
+Most office computers in Ghanaian banks, schools, hospitals and businesses run Windows. When something goes wrong, the analyst is often asked "what happened on this computer?". The answer usually sits in Windows settings and the Windows event logs.
+
+## Accounts and permissions
+
+Windows has **standard** accounts and **administrator** accounts. Administrators can install software and change settings; standard users cannot. A safe office gives staff standard accounts for daily work, so a malicious download cannot easily change the whole system. Shared accounts such as "Accounts1" with one password for five people make it impossible to know who did what.
+
+## Built in protection
+
+* **Windows Update** installs fixes for security weaknesses. Many attacks succeed only because updates were delayed.
+* **Microsoft Defender Antivirus** is built in and scans for malware.
+* **Windows Firewall** filters traffic coming into and out of the computer.
+* **Disk encryption** (BitLocker or device encryption, depending on the edition and hardware) protects data if a laptop is stolen.
+
+## Event logs: the computer's diary
+
+Open **Event Viewer**, then **Windows Logs**, then **Security**. Each entry has an Event ID. A few to know:
+
+| Event ID | Meaning |
+|---|---|
+| 4624 | Successful logon |
+| 4625 | Failed logon |
+| 4720 | A user account was created |
+| 4732 | A member was added to a security enabled local group, such as Administrators |
+| 1102 | The security log was cleared |
+
+A burst of 4625 events followed by a 4624 can mean someone guessed a password. A new account (4720) added to Administrators (4732) at midnight deserves questions. A cleared log (1102) is a red flag, because attackers try to hide their tracks.
+
+## A small example
+
+Amina is an IT officer at a rural bank in the Upper East. A branch manager reports that his computer "feels strange". Amina opens Event Viewer and filters the Security log for 4625. She finds dozens of failed logons around 1 a.m., then a 4624 success, then a 4720 for a new account called "support2" that nobody requested. She disconnects the computer from the network, records the times and event IDs, and escalates to the security team. Her careful notes help them act fast.
+
+## Phone and computer
+
+Exploring Event Viewer needs a Windows computer. If you do not have one, use a school ICT lab, a library or a community centre computer, and only look at the logs with permission from whoever manages it. On a phone, study the event ID table until you know it well.`,
+      practice_task_md: `**Goal:** read the Windows security diary.
+
+**With a Windows computer you own or have permission to use:**
+1. Open Event Viewer, then Windows Logs, then Security.
+2. Use "Filter Current Log" to show Event ID 4624, then 4625.
+3. Write down the time of your own last successful logon and any failed ones.
+4. Check that Windows Update and Microsoft Defender are on.
+
+**Phone only:**
+1. Copy the event ID table from the lesson into your journal from memory, then check it.
+2. Write what you would conclude from this invented sequence: five 4625 events at 01:10, one 4624 at 01:12, one 4720 at 01:15.
+
+**Done looks like:** a short note of what you found and what it means, written so a supervisor can follow it.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which Windows Event ID records a failed logon?",
+            options: ["4624", "4625", "4720", "1102"],
+            answer_index: 1,
+            explanation: "Event ID 4625 records a failed logon attempt.",
+          },
+          {
+            prompt: "Why is a cleared security log (Event ID 1102) a red flag?",
+            options: [
+              "It means the computer needs more storage",
+              "Attackers often clear logs to hide their tracks",
+              "It always means Windows Update ran",
+              "It shows a successful backup",
+            ],
+            answer_index: 1,
+            explanation: "Clearing the log removes evidence, which attackers try to do.",
+          },
+          {
+            prompt: "Why should staff use standard accounts for daily work?",
+            options: [
+              "Standard accounts are faster",
+              "A malicious download cannot easily change the whole system",
+              "Administrators cannot use email",
+              "Standard accounts do not need passwords",
+            ],
+            answer_index: 1,
+            explanation: "Without administrator rights, malware has less power over the system.",
+          },
+          {
+            prompt: "Where do you find the Windows security events in Event Viewer?",
+            options: [
+              "Windows Logs, then Security",
+              "Control Panel, then Sound",
+              "File Explorer, then Downloads",
+              "Settings, then Display",
+            ],
+            answer_index: 0,
+            explanation: "Security events sit under Windows Logs, then Security, in Event Viewer.",
+          },
+          {
+            prompt: "In the example, what did the 4720 event show Amina?",
+            options: [
+              "The manager changed his wallpaper",
+              "A new user account was created that nobody requested",
+              "The computer installed an update",
+              "The security log was cleared",
+            ],
+            answer_index: 1,
+            explanation: "Event ID 4720 means a user account was created, and this one was unexpected.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "linux-for-security": {
+      explanation_md: `## Why this matters
+
+Many servers, cloud systems and security tools run on Linux, and adverts for analyst roles name Linux alongside Windows. When an alert points at a Linux server, you will need to read its logs from the command line, often with no mouse and no pictures.
+
+## Moving around
+
+The command line takes typed commands. A few essentials:
+
+\`\`\`
+pwd              # where am I?
+ls -l            # list files with details
+cd /var/log      # go to the log folder
+less auth.log    # read a file page by page
+\`\`\`
+
+## Reading and searching logs
+
+On Ubuntu and Debian systems, login activity is recorded in **/var/log/auth.log**. Other Linux families use different names, such as /var/log/secure. Logs are long, so you search them:
+
+\`\`\`
+grep "Failed password" /var/log/auth.log
+grep "Failed password" /var/log/auth.log | wc -l
+tail -n 20 /var/log/auth.log
+\`\`\`
+
+The first command shows lines containing "Failed password". The second counts them. The third shows the last 20 lines. Reading logs usually needs administrator rights, so on real systems you may type \`sudo\` first, and only on systems you are allowed to manage.
+
+## Permissions
+
+\`ls -l\` shows permissions such as \`-rw-r-----\`. The letters mean read (r), write (w) and execute (x) for three groups: the owner, the owner's group, and everyone else. A file of customer records readable by everyone is a confidentiality problem, even if nobody has opened it yet.
+
+## A small example
+
+Abdul-Rahman supports a small web server for an NGO in Damongo. The site has been slow. He connects with permission, runs the failed password search and gets thousands of results from a handful of outside addresses, all trying user names like "admin" and "root". He reports it, and the team disables password logins for remote access in favour of keys and turns on a tool that blocks repeat offenders. Three commands gave him the evidence.
+
+## Phone and computer
+
+The best practice is on a computer, using a free Linux virtual machine or a browser lab. With only a phone, try Cisco Networking Academy's free Linux Unhatched course, which has a terminal in the browser, or play the OverTheWire Bandit wargame, which is a legal training game designed for learners, using a free SSH app. Sessions are text only, so they use very little data.`,
+      practice_task_md: `**Goal:** search a log for signs of password guessing.
+
+1. Open Linux Unhatched in a browser, a Linux virtual machine, or the first levels of OverTheWire Bandit (a legal practice game).
+2. Practise \`pwd\`, \`ls -l\`, \`cd\` and \`less\` until they feel natural.
+3. Create a practice file: \`echo "Failed password for admin from 198.51.100.7" > test.log\`, then add two more lines with different words.
+4. Use \`grep\` to find the failed lines and \`wc -l\` to count them.
+5. Run \`ls -l test.log\` and explain each part of the permissions in your journal.
+
+**Done looks like:** a screenshot or copied output of your grep and count, plus a short explanation of the permissions.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "On Ubuntu and Debian systems, which file records login activity?",
+            options: ["/var/log/auth.log", "/home/music.txt", "/etc/wallpaper", "/bin/games"],
+            answer_index: 0,
+            explanation: "Login activity on Ubuntu and Debian is recorded in /var/log/auth.log.",
+          },
+          {
+            prompt: "What does the grep command do?",
+            options: [
+              "Deletes a file",
+              "Searches for lines that contain a pattern",
+              "Changes your password",
+              "Restarts the server",
+            ],
+            answer_index: 1,
+            explanation: "grep searches text and shows matching lines, which is ideal for logs.",
+          },
+          {
+            prompt: "Which command shows the last 20 lines of a log?",
+            options: ["pwd", "tail -n 20 file", "cd file", "ls -l"],
+            answer_index: 1,
+            explanation: "tail with -n 20 shows the last 20 lines of a file.",
+          },
+          {
+            prompt: "Why is a customer records file readable by everyone a problem?",
+            options: [
+              "It makes the server slower",
+              "It is a confidentiality risk even before anyone opens it",
+              "It stops backups from working",
+              "It deletes the file after a day",
+            ],
+            answer_index: 1,
+            explanation: "Loose permissions expose private data, which is a confidentiality issue.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
