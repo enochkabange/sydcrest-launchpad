@@ -35,7 +35,7 @@ Africa based applicants exist but mostly ask for SQL plus a BI tool.
 | S15 | beBee: Standard Bank Group, Officer Data Science, Accra (snippet) | https://bebee.com/gh/jobs/officer-data-science-standard-bank-group-accra--bs-gh-c79ba181-9145-407e-a23c-d8584f5d4d09 | 2026-10-25 | Search result snippet only |
 | S16 | Jobberman: Business Intelligence Analyst (AirtelTigo), snippet | https://jobberman.com.gh/listings/business-intelligence-analyst-vwr4p8 | 2026-10-25 | Search result snippet only |
 | S17 | Jobberman: Mobile Money Operations Specialist at Telecel Ghana, snippet | https://jobberman.com.gh/listings/mobile-money-operations-specialist-at-telecel-ghana-npnv9g | 2026-10-25 | Search result snippet only |
-| S18 | Jobberman search results: data entry roles, Accra (snippet summarised several listings; exact listing URL uncertain, listing pages now redirect) | https://www.jobberman.com.gh/listings/data-entry-operator-mis-84z470 | 2026-10-25 | Search result snippet only |
+| S18 | Jobberman: Data Entry Officer, Accra (snippet; URL re-checked by reviewer, this is the listing whose snippet matches the skills recorded for A18; listing pages now redirect) | https://jobberman.com.gh/listings/data-entry-officer-07vk7m | 2026-10-25 | Search result snippet only |
 | S19 | Jobberman: Data Clerk, Boatpoint Enterprise (snippet) | https://www.jobberman.com.gh/listings/data-clerk-jqk06e | 2026-10-25 | Search result snippet only |
 | S20 | Jobberman: Research Assistant at IITA, Tamale (snippet) | https://www.jobberman.com.gh/listings/research-assistant-at-international-institute-of-tropical-agriculture-iita-tamale-4nkg4e | 2026-10-25 | Search result snippet only |
 | F1 | O*NET OnLine: Business Intelligence Analysts 15-2051.01 | https://www.onetonline.org/link/summary/15-2051.01 | 2026-10-25 | Public skills framework (O*NET, CC BY 4.0) |
@@ -46,10 +46,21 @@ Africa based applicants exist but mostly ask for SQL plus a BI tool.
 | D2 | ODK documentation | https://docs.getodk.org/ | 2026-10-25 | Official docs |
 | D3 | XLSForm reference | https://xlsform.org/en/ | 2026-10-25 | Official spec |
 | D4 | Google Docs Editors Help: pivot tables, VLOOKUP, XLOOKUP, dropdown data validation | https://support.google.com/docs/answer/1272900 | 2026-10-25 | Official docs |
-| D5 | Ghana Data Protection Commission | https://dpc.gov.gh/ | 2026-10-25 | Official regulator site |
+| D5 | Ghana Data Protection Commission (the older domain dataprotection.org.gh now redirects here) | https://dpc.gov.gh/ | 2026-10-25 | Official regulator site; confirms data controllers and processors must register |
+| D6 | Wikipedia: Data Protection Act, 2012 (used because the GhaLII text of Act 843 returned 403 on the day) | https://en.wikipedia.org/wiki/Data_Protection_Act,_2012 | 2026-10-25 | CC BY-SA 4.0; checked definitions of personal data and special personal data, compulsory registration |
+| D7 | Microsoft Learn: Download Power BI Desktop (free; minimum requirement Windows 10) | https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-get-the-desktop | 2026-10-25 | Official docs |
+| D8 | Microsoft Learn: Power BI service features by license type (free licence cannot share with others) | https://learn.microsoft.com/en-us/power-bi/fundamentals/service-features-license-type | 2026-10-25 | Official docs |
+| D9 | KoboToolbox blog: new plan model (free Community Plan with monthly limits). The pricing page returned 403, so the plan was confirmed here and on the community forum | https://www.kobotoolbox.org/blog/supporting-future-growth-and-accessibility-introducing-kobotoolboxs-new-plan-model | 2026-10-25 | Official blog |
 
 Jobberman listing URLs for closed adverts now redirect to category pages, so those rows rely on
 search result snippets, which the content guide allows. Depth is shown in the "seen as" column.
+
+**Evidence depth (reviewer note).** Only 7 of the 20 adverts (A1 to A7) were read as full listings;
+the other 13 (A8 to A20) are search snippets, which show only part of each advert and may miss
+skills. The skills frequency table below therefore has a second column counting full listings only.
+On full listings alone the ordering argument still holds: spreadsheets (6 of 7), data quality (5),
+BI tools and M&E frameworks (4 each) outrank SQL (3) and Python (2). Treat snippet counts as
+supporting signals, not exact frequencies.
 
 ## Adverts analysed (20)
 
@@ -74,37 +85,37 @@ No advert text is copied. "Seen as" says whether the full listing or only a sear
 | A15 | Officer, Data Science | Bank | Accra | May 2026 | Snippet (S15) | Expired | Power BI, Tableau, Azure |
 | A16 | Business Intelligence Analyst | Telco | Accra | Feb 2023 | Snippet (S16) | Expired | Marked entry level; quality checks and validation of BI data, reporting data issues |
 | A17 | Mobile Money Operations Specialist | Telco | Accra | Undated | Snippet (S17) | Unknown | SQL, relational databases, ETL pipelines |
-| A18 | Data Entry Specialist (exact listing URL uncertain) | Not stated | Accra | Undated | Snippet (S18) | Unknown | Strong Excel, weekly and monthly reports |
+| A18 | Data Entry Officer | Not stated | Accra | Undated | Snippet (S18) | Unknown | Excel, weekly, monthly and ad hoc reports; marked entry level |
 | A19 | Data Clerk | Trading enterprise | Accra (Amasaman) | Undated | Snippet (S19) | Unknown | Basic computer skills, Microsoft Office, accuracy |
 | A20 | Research Assistant | International agricultural research | Tamale | Undated | Snippet (S20) | Unknown | Collating and analysing field trial data, progress reports |
 
 Note on level: most M&E officer adverts ask for several years of experience. Explicitly entry
-level signals came from A9, A13, A16 and A19, plus the "junior" and "assistant" titles (A1, A2).
+level signals came from A9, A13, A16, A18 and A19, plus the "junior" and "assistant" titles (A1, A2).
 The track therefore points learners at assistant, data entry, national service, internship and
 field enumerator roles as first steps (job-search node), without promising outcomes.
 
 ## Skills frequency (20 adverts)
 
-| Skill | Adverts | Count |
-|---|---|---|
-| Spreadsheets (Excel or office suite) | A2 A3 A4 A5 A6 A7 A8 A11 A12 A13 A18 A19 | 12 |
-| Reporting, dashboards, presenting results | A1 A2 A3 A4 A5 A6 A7 A16 A18 A20 | 10 |
-| BI tool (Power BI, Tableau, SAP BI) | A1 A2 A3 A7 A12 A13 A14 A15 | 8 |
-| SQL | A1 A2 A7 A12 A13 A14 A17 | 7 |
-| Data quality, cleaning, validation | A1 A2 A3 A4 A5 A10 A16 | 7 |
-| Statistics package (SPSS, Stata, R, Epi Info) | A1 A2 A4 A5 A6 A11 A13 | 7 |
-| Mobile data collection (KoboToolbox, ODK, SurveyCTO, REDCap) | A3 A5 A8 A10 A11 | 5 |
-| M&E frameworks (indicators, logframes, baselines, targets) | A3 A4 A5 A6 A9 | 5 |
-| Advanced spreadsheet features (pivot tables, lookups, data validation, macros) | A3 A8 A11 A12 | 4 |
-| Survey design, sampling, guiding data collection | A2 A4 A6 A10 | 4 |
-| Statistics knowledge | A1 A2 A5 | 3 |
-| Python | A1 A7 A13 | 3 |
-| Accurate data entry | A2 A18 A19 | 3 |
-| GIS | A4 A6 | 2 |
-| Cloud platforms | A1 A15 | 2 |
-| Confidentiality and documentation | A2 | 1 |
-| DHIS2 | A5 | 1 |
-| Machine learning | A1 | 1 |
+| Skill | Adverts | Count | Full listings only (A1 to A7) |
+|---|---|---|---|
+| Spreadsheets (Excel or office suite) | A2 A3 A4 A5 A6 A7 A8 A11 A12 A13 A18 A19 | 12 | 6 |
+| Reporting, dashboards, presenting results | A1 A2 A3 A4 A5 A6 A7 A16 A18 A20 | 10 | 7 |
+| BI tool (Power BI, Tableau, SAP BI) | A1 A2 A3 A7 A12 A13 A14 A15 | 8 | 4 |
+| SQL | A1 A2 A7 A12 A13 A14 A17 | 7 | 3 |
+| Data quality, cleaning, validation | A1 A2 A3 A4 A5 A10 A16 | 7 | 5 |
+| Statistics package (SPSS, Stata, R, Epi Info) | A1 A2 A4 A5 A6 A11 A13 | 7 | 5 |
+| Mobile data collection (KoboToolbox, ODK, SurveyCTO, REDCap) | A3 A5 A8 A10 A11 | 5 | 2 |
+| M&E frameworks (indicators, logframes, baselines, targets) | A3 A4 A5 A6 A9 | 5 | 4 |
+| Advanced spreadsheet features (pivot tables, lookups, data validation, macros) | A3 A8 A11 A12 | 4 | 1 |
+| Survey design, sampling, guiding data collection | A2 A4 A6 A10 | 4 | 3 |
+| Statistics knowledge | A1 A2 A5 | 3 | 3 |
+| Python | A1 A7 A13 | 3 | 2 |
+| Accurate data entry | A2 A18 A19 | 3 | 1 |
+| GIS | A4 A6 | 2 | 2 |
+| Cloud platforms | A1 A15 | 2 | 1 |
+| Confidentiality and documentation | A2 | 1 | 1 |
+| DHIS2 | A5 | 1 | 1 |
+| Machine learning | A1 | 1 | 1 |
 
 ## Frameworks and curricula
 

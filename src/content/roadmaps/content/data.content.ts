@@ -498,7 +498,7 @@ Issahaku receives a monthly sheet of distributions with only community codes. He
 
 1. In Google Sheets, create a sheet called Prices with columns code, item, price_ghs and four invented items.
 2. Create a Sales sheet with columns date, code, quantity and at least 20 invented rows across two months.
-3. In Sales, use XLOOKUP to bring in the item name and price, then calculate total_ghs.
+3. In Sales, use XLOOKUP to bring in the item name and price, then calculate total_ghs. Add a month column too (type Jan or Feb, or use \`=TEXT(A2, "mmm")\` if column A holds the date).
 4. Add a dropdown on the code column that only allows your four codes.
 5. Build a pivot table with item in Rows, month in Columns and the sum of total_ghs in Values.
 
@@ -756,7 +756,7 @@ Paper questionnaires are slow to enter and easy to get wrong. Most NGOs and rese
 
 ## The tools
 
-**ODK** (Open Data Kit) is a free, open source set of tools for phone data collection. **KoboToolbox** is built on ODK technology and adds a friendly website where you can build forms, store submissions and download data. KoboToolbox offers free accounts, which makes it a good place to start. Forms work in the KoboCollect or ODK Collect Android apps and also in a web browser.
+**ODK** (Open Data Kit) is a free, open source set of tools for phone data collection. **KoboToolbox** is built on ODK technology and adds a friendly website where you can build forms, store submissions and download data. KoboToolbox has a free plan for individuals with usage limits you will not reach while learning, which makes it a good place to start. Forms work in the KoboCollect or ODK Collect Android apps and also in a web browser.
 
 Both tools collect data **offline**. Enumerators fill forms in a village with no signal, and the phone sends the submissions when it next connects.
 
@@ -950,11 +950,11 @@ Field surveys collect names, phone numbers, locations, health details and income
 
 ## What counts as personal data
 
-Personal data is any information that identifies a living person, either directly or when combined with other details. Names, phone numbers, Ghana Card numbers and photos identify people directly. A combination such as "female, aged 70, widowed, living in a small community near Nalerigu" can identify someone even without a name. Some data is especially sensitive, such as health conditions, religion or ethnicity, and needs extra care.
+Personal data is any information about a person who can be identified from it, either directly or when combined with other details. Names, phone numbers, Ghana Card numbers and photos identify people directly. A combination such as "female, aged 70, widowed, living in a small community near Nalerigu" can identify someone even without a name. The Act treats some data as special and more sensitive, such as health conditions, religious beliefs, and ethnic or tribal origin, and it needs extra care.
 
 ## Ghana's law
 
-Ghana's Data Protection Act, 2012 (Act 843) sets rules for anyone who collects and uses personal data, and the Data Protection Commission oversees it. In broad terms the Act expects that you collect data for a clear, lawful purpose, collect only what you need, keep it accurate, keep it secure, and respect people's rights over their own information. Organisations that process personal data are expected to register with the Commission. You do not need to be a lawyer, but you should know the law exists, follow your organisation's policy, and ask when unsure. The Commission's website at dpc.gov.gh has more detail.
+Ghana's Data Protection Act, 2012 (Act 843) sets rules for anyone who collects and uses personal data, and the Data Protection Commission oversees it. In broad terms the Act expects that you collect data for a clear, lawful purpose, collect only what you need, keep it accurate, keep it secure, and respect people's rights over their own information. Organisations that collect and use personal data must register with the Commission. You do not need to be a lawyer, but you should know the law exists, follow your organisation's policy, and ask when unsure. The Commission's website at dpc.gov.gh has more detail.
 
 ## Consent
 
@@ -1122,7 +1122,7 @@ Indicators, baselines, targets and logframes appear in almost every M&E advert. 
 
 ## What an indicator is
 
-An indicator is a specific measure that shows whether a result is being achieved. "Better nutrition" is a goal, not an indicator. "Percentage of children aged 6 to 23 months who ate from at least four food groups yesterday" is an indicator: you can measure it.
+An indicator is a specific measure that shows whether a result is being achieved. "Safer drinking water" is a goal, not an indicator. "Percentage of surveyed households in the project communities that treat their drinking water" is an indicator: you can measure it. (This is an invented example; real projects take their indicator definitions from the project's own plan or the donor's guidance.)
 
 Good indicators are often described as SMART:
 
@@ -1173,9 +1173,9 @@ Abdul-Rahman has invented survey data from 150 households. 63 report treating wa
           {
             prompt: "Which of these is an indicator rather than a goal?",
             options: [
-              "Better nutrition",
+              "Safer drinking water",
               "Stronger communities",
-              "Percentage of children aged 6 to 23 months who ate from at least four food groups yesterday",
+              "Percentage of surveyed households in the project communities that treat their drinking water",
               "Improved lives",
             ],
             answer_index: 2,
@@ -1380,7 +1380,7 @@ You do not need a powerful computer. Interactive sites such as SQLBolt let you t
 
 **Querying with SQL:** SELECT, WHERE, ORDER BY and LIMIT to pull and sort exactly the rows you need.
 
-**Joins and aggregation:** combining tables with JOIN and summarising with GROUP BY, COUNT, SUM and AVERAGE.
+**Joins and aggregation:** combining tables with JOIN and summarising with GROUP BY, COUNT, SUM and AVG.
 
 ## A worked example
 
@@ -1601,7 +1601,7 @@ FROM transactions
 GROUP BY agent_id;
 \`\`\`
 
-Rule: every column in SELECT must either be in GROUP BY or inside an aggregate function.
+Safe rule: every column in SELECT must either be in GROUP BY or inside an aggregate function. Some databases, such as SQLite, are less strict, but following the rule keeps your results correct everywhere.
 
 ## HAVING
 
@@ -1914,8 +1914,8 @@ A dashboard is a single page that shows key numbers and charts, connected to a d
 ## Free tools you can use
 
 * **Looker Studio** is a free Google tool that runs in the browser. It connects easily to Google Sheets, so a sheet you already maintain can feed a dashboard. It works on a low spec laptop and you can view dashboards on a phone.
-* **Power BI Desktop** is free from Microsoft but runs only on Windows. Many Ghanaian companies use Power BI, so it is worth learning if you have access to a Windows computer. Sharing dashboards online generally needs a paid licence, so practise locally.
-* **Tableau Public** is a free version of Tableau for public data.
+* **Power BI Desktop** is free from Microsoft but runs only on Windows. Power BI is named in several Ghanaian analyst and M&E adverts, so it is worth learning if you have access to a reasonably recent Windows laptop. Sharing dashboards with other people generally needs a paid licence, so practise on your own computer.
+* **Tableau Public** is a free version of Tableau. Everything you save to it is public, so use only public or invented data.
 
 The ideas transfer between tools, so start with whichever you can run.
 
@@ -2108,7 +2108,7 @@ Before you can analyse tables with pandas, you need a few core Python ideas. The
 
 ## Notebooks
 
-In Google Colab, a notebook is made of cells. **Code cells** run Python and show the result underneath. **Text cells** hold notes and headings. Run a cell with the play button or Shift and Enter. Cells share memory, so a value created in one cell can be used in the next. If things get confusing, use Runtime then Restart and run all, which runs every cell from the top.
+In Google Colab, a notebook is made of cells. **Code cells** run Python and show the result underneath. **Text cells** hold notes and headings. Run a cell with the play button or Shift and Enter. Cells share memory, so a value created in one cell can be used in the next. If things get confusing, open the Runtime menu and choose Restart session and run all, which clears memory and runs every cell from the top.
 
 ## Variables and types
 

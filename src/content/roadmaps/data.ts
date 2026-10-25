@@ -108,7 +108,7 @@ export const data: RoadmapDraft = {
       slug: "mobile-surveys",
       title: "Mobile data collection with KoboToolbox or ODK",
       summary:
-        "Build a phone form with skip logic and checks, collect responses offline and download the results as a spreadsheet. KoboToolbox and ODK are free and widely used by development projects.",
+        "Build a phone form with skip logic and checks, collect responses offline and download the results as a spreadsheet. KoboToolbox and ODK both have free options and are widely used by development projects.",
       parent: "field-data",
       optional: false,
       resources: [koboDocs, odkDocs, xlsform],
