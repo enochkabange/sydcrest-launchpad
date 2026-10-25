@@ -912,6 +912,766 @@ Napari manages the calendar for a programme director at an NGO in Tamale. A dono
         pass_threshold: 75,
       },
     },
+    "documents-and-data": {
+      explanation_md: `Ghanaian office adverts ask for Word, Excel, PowerPoint and Outlook again and again. Remote assistant adverts ask for Google Workspace or Microsoft 365, data entry and online research. Behind those tool names is one skill: producing accurate, tidy information that other people can find and use.
+
+## Why it matters
+
+Clients ask assistants to type letters, prepare reports, keep lists of customers or orders, compare prices and find information. If a document has errors, or a spreadsheet has missing data, or research is wrong, the client may make a bad decision or look careless in front of their own customers. Accuracy is what makes you trustworthy.
+
+## Free tools you can use on a phone
+
+You do not need to buy software to learn this. Google Docs, Google Sheets and Google Drive are free with a Google account and have phone apps. Microsoft also offers free web versions of Word and Excel with a Microsoft account. The skills carry over between them: headings, tables, sorting, filters and sharing work in similar ways.
+
+Long documents and big spreadsheets are easier on a laptop. If you only have a phone, practise on small files, and use a school lab, library or community centre computer when you need a bigger screen for a longer task.
+
+## Three habits that run through this section
+
+* **Use structure.** Headings in documents, one row per item in spreadsheets, clear folder names in Drive. Structure makes information easy to find.
+* **Check twice.** Names, numbers, dates and amounts are where errors hurt most.
+* **Share carefully.** Give each person the access they need and no more.
+
+## What this section covers
+
+* **Documents, templates and shared files.** Formatting clean documents, using templates, exporting PDFs, organising folders and sharing safely.
+* **Spreadsheets and data entry.** Building tidy tables, entering data accurately, sorting, filtering and a few simple formulas.
+* **Online research.** Finding reliable information, checking it and presenting it as a short summary with sources.
+
+## A small example
+
+Dawuda volunteers as secretary for his youth association in Yendi. Before, the minutes were in a notebook, the member list was in WhatsApp messages and nobody could find last year's budget. Over one month he puts the minutes into a Google Docs template, the members into a Google Sheet with one row per person, and everything into a shared Drive folder called "Youth Association" with subfolders by year. When the chairman asks for last March's minutes, Dawuda sends the link in a minute. That organised folder later becomes a portfolio sample.`,
+      practice_task_md: `**Goal:** Set up a tidy workspace for your document and spreadsheet practice.
+
+**Steps:**
+1. Open Google Drive on your phone.
+2. Create a folder called "VA Portfolio" with three subfolders: Documents, Spreadsheets and Research.
+3. Create one blank Google Doc and one blank Google Sheet inside the right subfolders, with clear names such as "2026 Practice Letter" and "2026 Order Tracker".
+4. Turn on offline access for one of the files so you can open it without data.
+
+**Done looks like:** A clearly named folder structure with two files, ready for the next three lessons, and one file available offline.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, what single skill sits behind tool names like Word, Excel and Google Sheets?",
+            options: [
+              "Typing very fast",
+              "Producing accurate, tidy information that others can find and use",
+              "Designing logos",
+              "Writing computer code",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says the skill behind the tool names is producing accurate, tidy, findable information.",
+          },
+          {
+            prompt: "What does the lesson suggest if you only have a phone and need to work on a long document?",
+            options: [
+              "Give up on the task",
+              "Practise on small files and use a school lab, library or community centre computer for longer tasks",
+              "Buy expensive software first",
+              "Ask the client to do it",
+            ],
+            answer_index: 1,
+            explanation: "The lesson suggests small files on a phone and a shared computer for bigger tasks.",
+          },
+          {
+            prompt: "Which is one of the three habits that run through this section?",
+            options: ["Use bright colours", "Check twice", "Work only at night", "Avoid folders"],
+            answer_index: 1,
+            explanation: "The three habits are use structure, check twice and share carefully.",
+          },
+          {
+            prompt: "In the example, what made it easy for Dawuda to find last March's minutes?",
+            options: [
+              "He remembered them by heart",
+              "He kept them in a notebook",
+              "He organised files in a shared Drive folder with subfolders by year",
+              "He asked every member to search WhatsApp",
+            ],
+            answer_index: 2,
+            explanation: "His organised Drive folder with yearly subfolders let him share the link quickly.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    documents: {
+      explanation_md: `Letters, reports, meeting notes, proposals and forms are everyday assistant work. A clean, consistent document makes your client look professional to their own customers and partners. A messy one, with mixed fonts and random spacing, does the opposite.
+
+## Formatting that looks professional
+
+* **Use built in heading styles** (Heading 1, Heading 2) instead of making text bold and big by hand. Headings create an outline you can navigate and make the document easier to read on any screen.
+* **Keep one or two fonts** and a consistent size for body text.
+* **Use lists and tables** for steps, options and comparisons instead of long paragraphs.
+* **Leave white space.** Short paragraphs are easier to read, especially on phones.
+* **Add page numbers and a date** to anything longer than two pages.
+
+## Templates save time
+
+If you write the same kind of document often, such as invoices, meeting minutes or a weekly report, make a template once. Copy it each time and fill in the new details. Google Docs and Word include ready made templates, and you can save your own. Templates also keep your work consistent, which clients notice.
+
+## PDFs
+
+Send a PDF when the reader should not edit the document, such as a final letter, invoice or report. In Google Docs, use File, then Download, then PDF. Name the file clearly before sending.
+
+## Naming and organising files
+
+Good file names make files easy to find: "2026-11-04 Minutes Board Meeting" sorts by date automatically. Avoid names like "final final 2". Keep files in a shared folder structure agreed with the client, for example by year, then by project.
+
+## Sharing safely
+
+In Google Drive you can share a file as **Viewer** (can only read), **Commenter** (can suggest) or **Editor** (can change everything). Give the lowest access that does the job. Be careful with "Anyone with the link": anyone who gets the link can open the file, so do not use it for private documents such as contracts or staff details.
+
+## Track changes and comments
+
+When editing someone else's document, use **Suggesting** mode in Google Docs or **Track Changes** in Word, so the owner can accept or reject each change. Use comments to ask questions instead of guessing.
+
+## A small example
+
+Ayishetu prepares a monthly report for a women's farming cooperative near Walewale. She uses a template with headings for Membership, Sales, Problems and Next Month. She fills it in, adds a small table of sales by crop, downloads it as a PDF named "2026-10 Cooperative Report", and shares the editable version with the chairwoman as a Commenter only.`,
+      practice_task_md: `**Goal:** Create a reusable document template and a finished PDF.
+
+**Steps:**
+1. In Google Docs, create a template for meeting minutes with headings: Date and attendees, Decisions, Actions (who and by when), Next meeting.
+2. Use proper heading styles, one font, and a small table for the actions.
+3. Make a copy and fill it in for a real or imaginary meeting.
+4. Download the filled copy as a PDF with a clear, dated file name.
+5. Share the template with a friend as Viewer and the filled copy as Commenter, and ask them to add one comment.
+
+**Done looks like:** A tidy template, a filled copy, a PDF with a dated name and a comment from a friend. Save all three in your VA Portfolio folder.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why should you use built in heading styles instead of making text bold and big by hand?",
+            options: [
+              "They create an outline you can navigate and make the document easier to read",
+              "They make the file smaller to download",
+              "They are required by law",
+              "They change the font colour automatically",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says heading styles create a navigable outline and improve readability.",
+          },
+          {
+            prompt: "When should you send a document as a PDF?",
+            options: [
+              "When you want the reader to edit it",
+              "When the reader should not edit it, such as a final letter or invoice",
+              "Only when the document has photos",
+              "Never, PDFs are outdated",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says PDFs suit final documents the reader should not edit.",
+          },
+          {
+            prompt: "Which Google Drive access level lets someone read a file but not change or comment on it?",
+            options: ["Editor", "Commenter", "Viewer", "Owner"],
+            answer_index: 2,
+            explanation: "The lesson explains that Viewer can only read.",
+          },
+          {
+            prompt: "Why should you avoid \"Anyone with the link\" for private documents?",
+            options: [
+              "It makes the file load slowly",
+              "Anyone who gets the link can open the file",
+              "It deletes the file after a day",
+              "It only works on laptops",
+            ],
+            answer_index: 1,
+            explanation: "The lesson warns that anyone with the link can open the file.",
+          },
+          {
+            prompt: "What should you use when editing someone else's document so they can accept or reject each change?",
+            options: [
+              "Delete and retype the whole document",
+              "Suggesting mode in Google Docs or Track Changes in Word",
+              "Send a voice note describing changes",
+              "Change the file name",
+            ],
+            answer_index: 1,
+            explanation: "The lesson recommends Suggesting mode or Track Changes.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    spreadsheets: {
+      explanation_md: `Data entry and spreadsheet work appear in many assistant adverts, from remote roles that list Google Sheets to Ghanaian admin roles that ask for Excel. Clients use spreadsheets to track customers, orders, invoices, stock, guests and tasks. An assistant who keeps these accurate becomes hard to replace.
+
+## Build a tidy table
+
+Most problems with spreadsheets come from messy structure. Follow these rules:
+
+* **One row per item:** one customer, one order or one payment per row.
+* **One column per detail:** Date, Name, Phone, Item, Amount, Status.
+* **A header row** at the top with clear column names. Freeze it so it stays visible when you scroll.
+* **One kind of data per column.** Do not mix "GHS 50" and "fifty" in the Amount column. Put numbers only, and write the currency in the header: "Amount (GHS)".
+* **Consistent formats** for dates and phone numbers.
+
+## Accurate data entry
+
+Speed matters less than accuracy. Check each entry against the source before moving on. Use **data validation** (a dropdown list) for columns such as Status, so entries are always "Paid", "Unpaid" or "Part paid" and never a misspelling. If something in the source is unclear, mark the cell and ask; do not guess.
+
+## Sorting and filtering
+
+* **Sort** puts rows in order, such as by date or amount. Always sort the whole table, not one column, or the rows get mixed up.
+* **Filter** shows only the rows you want, such as unpaid orders, while hiding the rest without deleting them.
+
+## A few simple formulas
+
+Formulas start with an equals sign. These cover most assistant work:
+
+* =SUM(E2:E50) adds the amounts in a column.
+* =COUNTIF(F2:F50,"Unpaid") counts how many rows say Unpaid.
+* =SUMIF(F2:F50,"Paid",E2:E50) adds only the paid amounts.
+
+## A small example
+
+Fatima tracks orders for a smock maker in Tamale who sells on WhatsApp. Her sheet has columns for Date, Customer, Phone, Item, Amount (GHS), Paid by MoMo (Yes or No) and Delivered. She uses a dropdown for the Yes or No columns, a filter to show orders not yet delivered, and COUNTIF to tell the owner each Friday how many orders are unpaid. The owner stops losing track of who owes money.
+
+## Phone or laptop
+
+The Google Sheets app works for entering data and simple formulas on a phone. For large sheets, a bigger screen helps, so use a laptop or a shared computer when you can.`,
+      practice_task_md: `**Goal:** Build a working order tracker with validation, a filter and formulas.
+
+**Steps:**
+1. In Google Sheets, create a tracker with columns: Date, Customer, Item, Amount (GHS), Status.
+2. Freeze the header row.
+3. Add a dropdown on the Status column with the options Paid, Unpaid and Part paid.
+4. Enter at least 12 imaginary orders, using made up Northern Ghanaian names and amounts.
+5. Add formulas below the table: total of all amounts (SUM), number of unpaid orders (COUNTIF) and total paid (SUMIF).
+6. Apply a filter to show only Unpaid orders, then clear it.
+
+**Done looks like:** A tidy tracker of 12 or more rows with a dropdown, three correct formulas and a working filter. Save it in your VA Portfolio folder.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the rule for rows in a tidy spreadsheet table?",
+            options: [
+              "Put several items in one row to save space",
+              "One row per item, such as one customer or one order",
+              "Leave every second row empty",
+              "Put all data in a single row",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says one row per item.",
+          },
+          {
+            prompt: "How should you record amounts in the Amount column?",
+            options: [
+              "Mix words and numbers as you like",
+              "Numbers only, with the currency written in the header",
+              "Write the currency before every number in the same cell",
+              "Use different formats for each row",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to keep one kind of data per column and put the currency in the header.",
+          },
+          {
+            prompt: "What does data validation (a dropdown list) help with?",
+            options: [
+              "Making the sheet colourful",
+              "Keeping entries consistent and avoiding misspellings",
+              "Sending the sheet by email",
+              "Deleting old rows",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says dropdowns keep entries like Status consistent.",
+          },
+          {
+            prompt: "Which formula counts how many rows in F2:F50 say Unpaid?",
+            options: ["=SUM(F2:F50)", "=COUNTIF(F2:F50,\"Unpaid\")", "=SUMIF(F2:F50,\"Paid\",E2:E50)", "=SORT(F2:F50)"],
+            answer_index: 1,
+            explanation: "COUNTIF counts the cells that match a condition.",
+          },
+          {
+            prompt: "What is the difference between sorting and filtering?",
+            options: [
+              "Sorting deletes rows, filtering adds rows",
+              "Sorting puts rows in order, filtering shows only the rows you want without deleting the rest",
+              "They do exactly the same thing",
+              "Filtering only works on phones",
+            ],
+            answer_index: 1,
+            explanation: "The lesson explains sort orders rows while filter hides rows you do not need.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "online-research": {
+      explanation_md: `Clients ask assistants to find things out: the best venue for a workshop, three suppliers of printer paper with prices, contact details for schools in a district, flight options, or what a competitor charges. Research appears in remote VA adverts and in executive assistant duties. Done well, it saves the client hours and helps them decide.
+
+## Start with the question
+
+Before searching, make sure you understand what the client needs. Ask: What decision will this help with? How many options do you want? Any budget, location or date limits? When do you need it? A clear question saves wasted data and time.
+
+## Search smarter
+
+* **Use specific words.** "Conference hall Tamale capacity 100" works better than "hall".
+* **Use quotation marks** to search for an exact phrase: "shea butter exporters".
+* **Search within one site** by adding site: and the address, for example site:gov.gh to search Ghanaian government sites.
+* **Exclude words** with a minus sign directly before the word, such as jobs -scam.
+* **Check the date** of what you find. Prices and opening hours change.
+
+## Check that information is reliable
+
+Not everything online is true. Ask:
+
+* **Who published it?** An official site, a known organisation, or an anonymous page?
+* **Is it current?** Look for a date.
+* **Can you confirm it?** Check important facts, such as prices or phone numbers, with a second source, or call to confirm.
+
+Be especially careful with AI chat tools. They can be useful for ideas, but they sometimes give confident answers that are wrong, including fake phone numbers or prices. Always confirm facts from a real source before giving them to a client.
+
+## Present it clearly
+
+Clients do not want a pile of links. Give them a short summary they can act on:
+
+* One line restating the question.
+* A small comparison table: option, price, location, key point, source link.
+* Your recommendation, with one reason, if they asked for one.
+* Anything you could not confirm.
+
+## A small example
+
+Salifu's client, an NGO in Accra, needs a venue in Bolgatanga for 60 people. Salifu searches, finds five places, and calls three to confirm prices and availability. He sends a table with the three confirmed options, the price per day in cedis, capacity, whether they have a generator, and the phone numbers. He adds: "I recommend the second venue: it has backup power and is near the bus station. The fourth venue did not answer, so it is not included." The client books within the hour.`,
+      practice_task_md: `**Goal:** Produce a short research summary a client could act on.
+
+**Steps:**
+1. Choose a realistic request, for example: find three places in your town where a small group can hold a two hour training, or three shops that sell a laptop charger for a common model.
+2. Search using specific words and at least one of the tricks from the lesson (quotation marks, site:, or excluding a word).
+3. Confirm at least one detail for each option by phone or from an official page.
+4. In Google Docs or Sheets, make a comparison table with option, price, location, one key point and source.
+5. Add a one sentence recommendation and note anything you could not confirm.
+
+**Done looks like:** A one page summary with three options, a source for each, a recommendation and an honest note on gaps. Save it in your Research folder.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should you do before starting to search for a client?",
+            options: [
+              "Search as many words as possible",
+              "Understand the decision it supports, how many options, any limits and the deadline",
+              "Ask an AI tool to decide for the client",
+              "Send the client every link you can find",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to start by understanding the question.",
+          },
+          {
+            prompt: "What does adding site:gov.gh to a search do?",
+            options: [
+              "Searches only Ghanaian government sites",
+              "Blocks government sites",
+              "Translates the results",
+              "Makes the search faster on slow data",
+            ],
+            answer_index: 0,
+            explanation: "The lesson explains site: limits the search to one site or domain.",
+          },
+          {
+            prompt: "Why should you be careful with AI chat tools for research?",
+            options: [
+              "They are always out of date by ten years",
+              "They can give confident answers that are wrong, including fake phone numbers or prices",
+              "They only answer in French",
+              "They are illegal in Ghana",
+            ],
+            answer_index: 1,
+            explanation: "The lesson warns that AI tools can be confidently wrong, so facts must be confirmed.",
+          },
+          {
+            prompt: "What is the best way to present research to a client?",
+            options: [
+              "A long list of links",
+              "A short summary with a comparison table, sources, a recommendation and what you could not confirm",
+              "A voice note reading out every web page",
+              "Only your opinion with no sources",
+            ],
+            answer_index: 1,
+            explanation: "The lesson recommends a short, actionable summary with sources.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "client-tasks": {
+      explanation_md: `Inbox, calendar and documents are the core of assistant work, but clients often hand over more. Remote adverts list customer support, social media management, order processing and project coordination alongside admin. Ghanaian adverts ask front desk and office assistants to handle customer enquiries and keep records. This section covers three of the most common extra tasks at a beginner level.
+
+## Why learn these
+
+Each extra task you can do well makes you more useful to a small business owner who cannot afford separate staff for everything. A shop owner in Tamale might want one person who answers WhatsApp enquiries, schedules a few Facebook posts each week and keeps a task list up to date. A remote client might want the same. Being able to say "yes, I can handle that" opens more doors.
+
+At the same time, you do not have to be an expert in everything. Doing these tasks reliably at a basic level is enough to start. If you enjoy one of them, you can go deeper later. SydCrest's digital marketing track goes deeper on social media, for example.
+
+## What this section covers
+
+* **Customer support basics.** Answering customer questions by email, chat and phone, recording every case and knowing when to pass a problem to the client.
+* **Social media scheduling.** Planning a simple content calendar, scheduling posts in advance with free tools and reporting back.
+* **Task lists, tools and written procedures.** Keeping a shared task board so the client sees progress, and writing step by step procedures for repeated tasks.
+
+## The common thread
+
+All three tasks depend on the same habits you have already learned: clear writing, accurate records and keeping the client informed. Customer support is professional writing under time pressure. Social media scheduling is calendar management for posts. Task tools are a shared version of the to do list you already keep.
+
+## Know your limits
+
+Some tasks need permission or expertise. You should not promise refunds, change prices or post on a client's behalf without clear approval. If a client asks for work you cannot yet do, such as designing a logo or running paid adverts, say so honestly and suggest how it could be done. Honesty protects your reputation.
+
+## A small example
+
+Abdul-Rahman starts as a VA for a small online shop run by a Ghanaian woman living in the UK. At first he only manages her email. Within two months he also answers customer WhatsApp messages using approved replies, schedules three Instagram posts a week from photos she sends, and keeps a Trello board of orders to post. Each new task built on skills he already had.`,
+      practice_task_md: `**Goal:** Map which extra tasks a real small business could hand to an assistant.
+
+**Steps:**
+1. Choose a small business you know that uses WhatsApp or social media, such as a provisions shop, tailor, caterer or salon.
+2. List every customer message, social media and task tracking job the owner does in a normal week.
+3. Mark each job as: "I can do this now", "I could do this after this section" or "needs a specialist".
+4. Write a short note on one job you would offer to take over first, and what approval you would need from the owner.
+
+**Done looks like:** A list of at least eight jobs sorted into the three groups, plus one clear offer with the approvals you would ask for.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which three extra tasks does this section cover?",
+            options: [
+              "Coding, accounting and legal advice",
+              "Customer support, social media scheduling and task tools with written procedures",
+              "Driving, cooking and cleaning",
+              "Logo design, video editing and paid adverts",
+            ],
+            answer_index: 1,
+            explanation: "The section covers customer support, social media scheduling and task tools and procedures.",
+          },
+          {
+            prompt: "Why are these extra tasks valuable to a small business owner?",
+            options: [
+              "They cannot afford separate staff for everything, so one person who can do several tasks helps",
+              "They are required by Ghanaian law",
+              "They replace the need for any customers",
+              "They are only useful for large companies",
+            ],
+            answer_index: 0,
+            explanation: "The lesson explains that small businesses often want one person who can handle several tasks.",
+          },
+          {
+            prompt: "What should you do if a client asks for work you cannot yet do?",
+            options: [
+              "Say yes and hope to learn quickly",
+              "Ignore the request",
+              "Say so honestly and suggest how it could be done",
+              "Copy work from someone else",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says honesty protects your reputation.",
+          },
+          {
+            prompt: "Which of these should you not do without clear approval from the client?",
+            options: [
+              "Keep a task list",
+              "Promise refunds or change prices",
+              "Write clear notes",
+              "Check the inbox",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says not to promise refunds, change prices or post without approval.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "customer-support": {
+      explanation_md: `Customer support appears in remote VA adverts, in Ghanaian customer service adverts and in front desk roles. Some remote support adverts say previous experience is not essential, which makes this a realistic first step. It also teaches skills every assistant needs: patience, clear writing and careful records.
+
+## The channels
+
+Support happens by **email**, **chat** (website chat, WhatsApp, Instagram messages), and **phone**. Larger companies use a help desk tool such as Zendesk or Freshdesk, which turns each customer request into a **ticket** that is tracked until it is solved. Small businesses often use WhatsApp Business, with labels and quick replies.
+
+## A good reply in four steps
+
+1. **Greet and acknowledge.** Use the customer's name and show you understand: "Hi Hawa, I am sorry your order has not arrived yet."
+2. **Answer or act.** Give the answer, or say exactly what you are doing: "I have checked with the rider and it will arrive by 4pm today."
+3. **Confirm the next step.** "I will message you if anything changes."
+4. **Close politely.** "Thank you for your patience."
+
+Keep replies short and clear. Use saved replies for common questions, but always adjust them to the customer's situation so they do not sound robotic.
+
+## Handling an upset customer
+
+Stay calm. Do not argue or take it personally. Listen, or read the whole message, then acknowledge the feeling: "I understand this is frustrating." Focus on what you can do. If the customer is rude, remain polite; if they become abusive, follow the client's rules on ending the conversation.
+
+## Know when to pass it on
+
+Agree with the client what you can solve yourself and what you must **escalate**, meaning pass to them or someone senior. Usually you escalate refunds above a limit, legal threats, safety issues and anything you are unsure about. When you escalate, give a short summary so the client does not have to read the whole conversation, and tell the customer when they will hear back.
+
+## Keep a record
+
+Every case should be recorded: who, what the problem was, what you did, and whether it is solved. A help desk does this for you. Otherwise, a simple Google Sheet with Date, Customer, Channel, Issue, Action and Status works. Records help you spot repeated problems, such as many customers asking the same question, which you can report to the client.
+
+## Protect customer information
+
+Only ask for the information you need. Never share one customer's details with another, and never ask for a customer's PIN or password. In Ghana, personal data is protected by the Data Protection Act, so treat it with care.
+
+## A small example
+
+Amina handles WhatsApp support for a solar lamp seller in Bolgatanga. A customer complains his lamp will not charge. Amina apologises, asks for a photo and the purchase date, checks the warranty rules the seller gave her, and arranges a swap at the shop. She logs the case in her sheet and, after the third similar complaint, tells the seller there may be a faulty batch.`,
+      practice_task_md: `**Goal:** Practise replying to customers and keeping a case log.
+
+**Steps:**
+1. Write five realistic customer messages for an imaginary business, such as a late delivery, a wrong size, a price question, a complaint and a thank you.
+2. Reply to each using the four steps: greet and acknowledge, answer or act, confirm the next step, close politely.
+3. Decide which of the five you would escalate to the owner, and write the short summary you would send.
+4. Record all five in a Google Sheet with Date, Customer, Channel, Issue, Action and Status.
+
+**Done looks like:** Five complete replies, one escalation summary and a five row case log. Ask a friend to play the upset customer and see if your reply calms them.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "In a help desk tool, what is a ticket?",
+            options: [
+              "A bus ticket for the customer",
+              "A customer request that is tracked until it is solved",
+              "A discount voucher",
+              "A complaint about the assistant",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says a help desk turns each request into a ticket tracked until solved.",
+          },
+          {
+            prompt: "What is the first step in a good support reply?",
+            options: [
+              "Ask for payment",
+              "Greet the customer and acknowledge the problem",
+              "Close the conversation",
+              "Send the price list",
+            ],
+            answer_index: 1,
+            explanation: "The four steps begin with greet and acknowledge.",
+          },
+          {
+            prompt: "What does it mean to escalate a support case?",
+            options: [
+              "Reply in capital letters",
+              "Pass it to the client or someone senior",
+              "Delete the conversation",
+              "Offer a free product",
+            ],
+            answer_index: 1,
+            explanation: "The lesson defines escalating as passing the case to the client or someone senior.",
+          },
+          {
+            prompt: "Why should you keep a record of every support case?",
+            options: [
+              "To spot repeated problems and report them to the client",
+              "To share customer details with other customers",
+              "Because customers ask to see the log",
+              "So you can avoid replying",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says records help you spot repeated problems, like Amina's faulty batch.",
+          },
+          {
+            prompt: "Which information should you never ask a customer for?",
+            options: ["Their name", "Their order date", "Their PIN or password", "A photo of the faulty item"],
+            answer_index: 2,
+            explanation: "The lesson says never ask for a customer's PIN or password.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "social-media-scheduling": {
+      explanation_md: `Many small businesses know they should post regularly but never find the time. Remote VA adverts often list social media management, and Ghanaian freelance assistants commonly offer content scheduling. Scheduling posts in advance is a practical, phone friendly service you can offer without being a marketing expert.
+
+## What the VA usually does
+
+In most assistant roles, the client or a designer provides the photos and key messages. The VA:
+
+* Keeps a simple **content calendar**: what will be posted, where and when.
+* Writes or tidies short captions using the client's approved style.
+* **Schedules** posts in advance so they go out on time even when nobody is online.
+* Checks comments and messages, replies to simple ones and passes the rest to the client.
+* Sends a short weekly report.
+
+Strategy, paid adverts and big campaigns are usually marketing work, which you can learn later in a marketing track.
+
+## Build a content calendar
+
+A Google Sheet is enough. Columns: Date, Time, Platform, Topic, Caption, Image link, Status (Draft, Approved, Scheduled, Posted). Plan two weeks ahead. Mix the kinds of posts: products or services, useful tips, customer questions answered, and behind the scenes.
+
+Always get **approval** before scheduling. Mark each row Approved only after the client says yes.
+
+## Scheduling tools
+
+Meta Business Suite is free and lets you schedule posts for Facebook Pages and connected Instagram accounts, from a phone or computer. Other platforms have their own scheduling features, and there are other scheduling tools with free plans. WhatsApp Status cannot be scheduled inside WhatsApp, so plan those to post by hand.
+
+Schedule at times when the business's customers are likely to be online. If the client's customers are in another country, use their time zone, not yours.
+
+## Images and data
+
+Large images use more data for you and for customers. Ask the client for images at a sensible size, and keep a shared folder with the approved images for each week.
+
+## Report back
+
+Each week send a short note: posts that went out, the post that got the most reactions or comments, questions customers asked, and anything that needs the client's reply.
+
+## Be careful with access
+
+Ask the client to add you to their business page with your own account and the right role, instead of sharing their personal password. Never post personal opinions on a client's page.
+
+## A small example
+
+Mariama schedules posts for a caterer in Tamale. Every Thursday she drafts next week's posts in a sheet, the caterer approves them on WhatsApp, and Mariama schedules them in Meta Business Suite for 7pm, when customers browse after work. On Monday she reports which dish got the most questions.`,
+      practice_task_md: `**Goal:** Plan and prepare two weeks of posts for a real or imaginary local business.
+
+**Steps:**
+1. In Google Sheets, create a content calendar with columns: Date, Time, Platform, Topic, Caption, Image link, Status.
+2. Plan six posts over two weeks for a local business, mixing products, tips, customer questions and behind the scenes.
+3. Write a short caption for each, with the price in cedis and how to order where it fits.
+4. If you manage a page you are allowed to use, such as a club or your own practice page, schedule two of the posts in Meta Business Suite. If not, mark them Approved and write the times you would schedule them.
+5. Write a sample weekly report of four lines.
+
+**Done looks like:** A two week calendar with six captioned posts, two scheduled or ready to schedule, and a sample report.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does an assistant usually do in social media scheduling work?",
+            options: [
+              "Design the company's brand strategy and run paid adverts",
+              "Keep a content calendar, tidy captions, schedule approved posts and report back",
+              "Post personal opinions on the client's page",
+              "Buy followers",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists calendar, captions, scheduling, checking messages and reporting as typical VA tasks.",
+          },
+          {
+            prompt: "When should a post be marked Approved in the content calendar?",
+            options: [
+              "As soon as you write it",
+              "Only after the client says yes",
+              "After it gets ten likes",
+              "Never, approval is not needed",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to get approval before scheduling.",
+          },
+          {
+            prompt: "Which time zone should you use when scheduling posts for customers in another country?",
+            options: ["Always Ghana time", "The customers' time zone", "Any time zone", "Midnight GMT"],
+            answer_index: 1,
+            explanation: "The lesson says to schedule in the customers' time zone.",
+          },
+          {
+            prompt: "How should a client give you access to their business page?",
+            options: [
+              "Share their personal password",
+              "Add you to the business page with your own account and the right role",
+              "Post the password in a group chat",
+              "Give you their phone",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to be added with your own account rather than sharing a password.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "task-tools-and-sops": {
+      explanation_md: `A remote client cannot look over your shoulder to see what you are working on. A shared task list shows them. And when you do the same task every week, a written procedure makes sure it is done the same way every time, even if you are sick or someone else takes over. Remote VA adverts mention task tools and keeping procedures up to date, and both are signs of a professional assistant.
+
+## Shared task lists and boards
+
+A task board shows work in columns, for example **To do**, **Doing**, **Waiting** and **Done**. Each task is a card with a title, a due date, the person responsible and any notes or files. Free options include Trello, Asana, Google Tasks, Microsoft To Do and Microsoft Planner. Even a shared Google Sheet with columns for Task, Owner, Due date and Status works.
+
+Good habits:
+
+* **One task, one card**, with a clear title that starts with a verb: "Send invoice to Sahel Farms".
+* **Always add a due date.**
+* **Move cards as you work**, so the board always shows the truth.
+* **Use the Waiting column** for tasks blocked by someone else, with a note on who and since when.
+
+## Written procedures (SOPs)
+
+SOP stands for standard operating procedure. It is a short document that explains how to do a repeated task, step by step. Examples: how to process a new order, how to prepare the monthly report, how to onboard a new customer.
+
+A good SOP has:
+
+1. **A title and purpose:** what the task is and why it matters.
+2. **When it happens:** for example every Monday at 10am GMT.
+3. **What you need:** tools, logins (stored safely, never written in the SOP itself) and files.
+4. **Numbered steps**, each a single action.
+5. **What done looks like**, so anyone can check.
+
+Write the SOP the second time you do a task, while it is fresh, and update it when something changes. Screenshots help, but keep them small to save data.
+
+## Why clients love SOPs
+
+SOPs make your work consistent, make it easy to train someone new, and protect the client if you are unavailable. Writing them also shows you understand the business. Some clients will pay more for an assistant who builds their systems.
+
+## A small example
+
+Issahaku's tour company gets bookings through email and WhatsApp. His assistant, Amina, creates a Trello board with columns for New enquiry, Quote sent, Paid, and Trip done. She writes a one page SOP called "Handling a new booking" with seven steps, from replying with the price template to adding the guest to the calendar. When Amina travels for a family funeral, her cousin follows the SOP for a week and nothing is missed.`,
+      practice_task_md: `**Goal:** Set up a task board and write one SOP.
+
+**Steps:**
+1. Create a free task board in Trello, Google Tasks or a Google Sheet with columns To do, Doing, Waiting and Done.
+2. Add at least eight real tasks from your week, each starting with a verb and with a due date.
+3. Move them as you work for three days.
+4. Choose one task you repeat, such as sending a weekly church announcement or updating a shop's price list, and write an SOP with title and purpose, when it happens, what you need, numbered steps and what done looks like.
+5. Ask someone to follow your SOP without your help, and note where they got stuck.
+
+**Done looks like:** A board you have used for three days and an SOP that someone else followed successfully, updated with their feedback.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why is a shared task board useful for a remote client?",
+            options: [
+              "It shows them what you are working on and what is done",
+              "It replaces the need to do the work",
+              "It automatically pays you",
+              "It hides tasks from the client",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says a shared task list shows the client your progress since they cannot see you working.",
+          },
+          {
+            prompt: "What does SOP stand for?",
+            options: [
+              "Social online post",
+              "Standard operating procedure",
+              "Simple office plan",
+              "Secure online password",
+            ],
+            answer_index: 1,
+            explanation: "The lesson defines SOP as standard operating procedure.",
+          },
+          {
+            prompt: "Where should logins for a task be kept?",
+            options: [
+              "Written in the SOP for convenience",
+              "Stored safely, never written in the SOP itself",
+              "Posted on the task board",
+              "Sent to everyone in the team chat",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says logins are stored safely and not written in the SOP.",
+          },
+          {
+            prompt: "In the example, how did the SOP help when Amina travelled?",
+            options: [
+              "Her cousin followed it for a week and nothing was missed",
+              "The business closed for a week",
+              "The client did all the work",
+              "Customers were told to wait",
+            ],
+            answer_index: 0,
+            explanation: "The SOP let someone else do the task consistently while Amina was away.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
