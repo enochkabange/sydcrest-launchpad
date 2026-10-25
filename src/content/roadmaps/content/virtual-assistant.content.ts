@@ -1672,6 +1672,806 @@ Issahaku's tour company gets bookings through email and WhatsApp. His assistant,
         pass_threshold: 75,
       },
     },
+    "working-reliably": {
+      explanation_md: `Remote clients hire assistants they can depend on. They want work delivered on time and their information kept safe. In Ghana, power cuts and patchy data are real challenges, and online accounts are a target for scammers. Clients who have worked with assistants in other countries know these risks exist. What they care about is whether you have a plan.
+
+## What remote adverts ask for
+
+Many remote assistant adverts ask for a reliable laptop and a stable internet connection, and some state a minimum internet speed. Some also expect you to keep their information confidential and follow security rules. These requirements are not there to exclude you. They exist because a VA who disappears for a day without warning, or whose account gets hacked, can cause the client real harm.
+
+Be honest with yourself about your setup. If you only have a phone and prepaid data, you can still learn every skill in this roadmap and do many kinds of work, especially for local clients and for tasks like inbox, scheduling and customer messages. For roles that demand a laptop and fast internet all day, you may need to save towards equipment first, or work some hours from a place with a computer and steady power, such as a school lab, library or community centre.
+
+## Two kinds of reliability
+
+* **Being available when you said you would be.** This means planning for power and data problems before they happen.
+* **Keeping accounts and information safe.** This means strong passwords, two step verification, careful sharing and spotting phishing.
+
+## What this section covers
+
+* **Staying reliable with patchy power and data.** Offline tools, backup power, a second network, saving data, and how to warn a client early when something goes wrong.
+* **Keeping client accounts and data safe.** Passwords, two step verification, safe access, confidentiality and recognising phishing.
+
+## Honesty is part of reliability
+
+Never pretend your setup is better than it is. If a client asks about your internet or power, describe your real situation and your backup plan. Clients forgive a problem you warned them about. They rarely forgive one you hid.
+
+## A small example
+
+When Wumpini applies for a remote VA role, the client asks about power. She replies: "Power cuts happen in my area a few times a month. I keep a charged power bank and laptop, use two mobile networks, and keep files available offline. If a cut lasts long, I go to a nearby centre with a generator, and I will always message you within 30 minutes if a deadline is at risk." The client hires her because the answer is honest and shows a plan.`,
+      practice_task_md: `**Goal:** Write an honest description of your work setup and backup plan.
+
+**Steps:**
+1. List your equipment: phone, laptop if any, chargers, power bank, SIM cards.
+2. Note how often power and data problems happen where you live and work.
+3. List at least two places nearby with a computer or steadier power that you could use if needed.
+4. Write a five sentence paragraph you could send a client, describing your setup and what you do when power or data fails.
+
+**Done looks like:** An honest equipment list, two backup places, and a clear paragraph you would be comfortable sending to a client.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why do remote clients ask about laptops, internet and security?",
+            options: [
+              "To exclude people from Ghana",
+              "Because an assistant who disappears or gets hacked can cause the client real harm",
+              "Because it is required by every government",
+              "To decide what colour laptop to buy you",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says these requirements exist because unreliability or hacked accounts harm the client.",
+          },
+          {
+            prompt: "What does the lesson suggest if a role demands a laptop and fast internet all day and you only have a phone?",
+            options: [
+              "Pretend you have a laptop",
+              "Save towards equipment or work some hours from a place with a computer and steady power",
+              "Never apply for any remote work",
+              "Borrow someone's account",
+            ],
+            answer_index: 1,
+            explanation: "The lesson suggests saving for equipment or using a school lab, library or community centre.",
+          },
+          {
+            prompt: "Which two kinds of reliability does the lesson describe?",
+            options: [
+              "Being cheap and being fast",
+              "Being available when you said and keeping accounts and information safe",
+              "Owning many phones and many laptops",
+              "Working at night and on weekends",
+            ],
+            answer_index: 1,
+            explanation: "The lesson names availability and keeping accounts and information safe.",
+          },
+          {
+            prompt: "Why was Wumpini hired in the example?",
+            options: [
+              "She said power cuts never happen",
+              "She gave an honest answer with a clear backup plan",
+              "She offered to work for free",
+              "She had the fastest internet in Ghana",
+            ],
+            answer_index: 1,
+            explanation: "The client valued her honesty and her plan.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "power-and-data": {
+      explanation_md: `Power cuts, weak signal and running out of data are everyday realities for many people working online in Ghana, especially outside the big cities. They do not have to stop you from being a dependable assistant. The difference between a VA who loses clients and one who keeps them is usually planning.
+
+## Plan for power
+
+* **Charge whenever power is on.** Make it a habit to charge your phone, laptop and power bank fully, not just when they are low.
+* **Keep a power bank** big enough to charge your phone at least once. If you use a laptop, learn how long its battery lasts doing your normal work.
+* **Lower your power use** when on battery: dim the screen, close apps you are not using, and turn off Bluetooth and location if you do not need them.
+* **Know your backup places**, such as a library, school lab, community centre or a shop with a generator, and how long it takes to get there.
+
+## Plan for data and signal
+
+* **Have a second network.** A SIM from a different mobile network helps when one network is down or weak in your area.
+* **Work offline when you can.** Google Docs, Sheets and Slides can be made available offline, and Gmail can save drafts. Edits sync when you reconnect.
+* **Save data.** Turn off automatic video play and app updates on mobile data, download large files on Wi Fi, join video calls with the camera off when you are not speaking, and send compressed images.
+* **Buy data bundles that fit your work**, and keep a small reserve so you are never stuck before an important deadline.
+
+## Plan your work
+
+* **Do important tasks early**, not right before the deadline. Then a power cut becomes a delay instead of a missed deadline.
+* **Save to the cloud often**, so if your device dies your work is not lost.
+* **Keep a short list of offline tasks**, such as drafting emails or editing a document, for times when you have no connection.
+
+## Communicate early
+
+If something goes wrong, tell the client quickly, before they notice. A good message says what happened, where the work stands, and when you expect to finish. A short text message or WhatsApp from your phone is fine. Agree in advance how you will contact each other if your main channel is down.
+
+## A small example
+
+Fuseini works mornings for a client in Germany. One day the power goes off at 8am. His phone is fully charged because he charged it overnight. He switches the client's report to offline mode, keeps writing, and messages: "Power cut here. I am working offline on your report and will upload it when power returns, or from the library by noon GMT at the latest." The report arrives at 11:30.`,
+      practice_task_md: `**Goal:** Build and test your own reliability plan.
+
+**Steps:**
+1. Turn on offline access for one Google Doc and one Google Sheet on your phone.
+2. Switch on airplane mode, edit both files, then switch it off and check that the changes synced.
+3. Check your phone settings and turn off automatic video play and app updates on mobile data.
+4. Write a one page reliability plan: how you charge, your backup power, your second network, your backup places, and the message you will send a client when something goes wrong.
+5. Time how long your phone or laptop lasts on battery doing normal work, and add that to the plan.
+
+**Done looks like:** Offline editing tested and working, data saving settings changed, and a written reliability plan with a ready to send message.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What charging habit does the lesson recommend?",
+            options: [
+              "Only charge when the battery is almost empty",
+              "Charge your phone, laptop and power bank fully whenever power is on",
+              "Never use a power bank",
+              "Charge only at night",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to charge fully whenever power is on.",
+          },
+          {
+            prompt: "Why is a SIM from a second mobile network useful?",
+            options: [
+              "It doubles your phone's battery life",
+              "It helps when one network is down or weak in your area",
+              "It is required for using Gmail",
+              "It makes video calls free",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says a second network helps when one is down or weak.",
+          },
+          {
+            prompt: "What happens to Google Docs edits made offline?",
+            options: [
+              "They are lost",
+              "They sync when you reconnect",
+              "They are emailed to the client automatically",
+              "They can only be read, not edited",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says offline edits sync when you reconnect.",
+          },
+          {
+            prompt: "Why should you do important tasks early?",
+            options: [
+              "So a power cut becomes a delay instead of a missed deadline",
+              "Because clients only read work in the morning",
+              "Because data is free in the morning",
+              "To finish work faster and charge more",
+            ],
+            answer_index: 0,
+            explanation: "The lesson explains that working early gives you room to absorb problems.",
+          },
+          {
+            prompt: "When should you tell a client about a power or data problem?",
+            options: [
+              "Only if they ask",
+              "Quickly, before they notice, with where the work stands and when you expect to finish",
+              "After the deadline has passed",
+              "Never, it looks unprofessional",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to communicate early with progress and a new time.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "account-security": {
+      explanation_md: `As an assistant you may have access to a client's email, calendar, files, social media pages or customer lists. That makes you a target. Scammers know that if they can break into an assistant's account, they can reach the client. Keeping accounts safe is part of the job, and clients notice assistants who take it seriously.
+
+## Strong passwords
+
+* Use a **different password for every account**. If one is stolen, the others stay safe.
+* Make passwords **long**: a phrase of several random words is easier to remember and harder to guess than a short word with symbols.
+* Never use names, birthdays or phone numbers.
+* Consider a **password manager**, an app that stores your passwords securely behind one strong main password. Some are free, and phones have built in ones.
+
+## Two step verification
+
+Two step verification, also called two factor authentication, means that logging in needs your password **and** a second thing, usually a code from an app or a text message, or a prompt on your phone. Even if someone steals your password, they cannot get in without the second step. Turn it on for your email first, because email is used to reset every other account. Keep your backup codes somewhere safe and offline.
+
+## Safe access to client accounts
+
+The safest way to work in a client's accounts is with **your own login** that the client has given access to, such as a delegated inbox, a shared calendar or a role on their business page. Then nobody shares passwords, and the client can remove your access at any time. If you must use a shared password, keep it in a password manager, never in a chat message, notes app or SOP document.
+
+## Confidentiality
+
+Treat everything you see as private: emails, customer details, prices, plans. Do not discuss client work with friends or post about it online without permission. Ghana's Data Protection Act protects people's personal information, and clients abroad may have their own laws. Do not paste private client information into AI tools or other online services unless the client agrees.
+
+## Recognise phishing
+
+Phishing is a fake message designed to trick you into giving away a password, a code or money. Warning signs:
+
+* Urgency: "Your account will be closed in one hour."
+* A link to a login page that looks right but has a strange web address.
+* A request for a verification code. **Never share a code** sent to your phone with anyone, even someone claiming to be the client or a bank.
+* A sudden request to pay a new bank account or send money, even if it seems to come from the client. Confirm through a different channel, such as a phone call.
+
+## A small example
+
+Hawa receives an email that looks like it is from her client: "Urgent, pay this supplier today, new account details attached." The address is slightly different. Hawa does not pay. She calls the client on WhatsApp, who confirms it is a scam. Hawa has just saved her client money.`,
+      practice_task_md: `**Goal:** Secure your own accounts the way you would a client's.
+
+**Steps:**
+1. Turn on two step verification for your main email account, and save the backup codes somewhere safe and offline.
+2. Change any password you use on more than one important account so that each is different and long.
+3. Run the free Google Security Checkup (or the equivalent for your email provider) and fix anything it flags.
+4. Write a short note listing three phishing warning signs from this lesson and what you would do if you saw each.
+
+**Done looks like:** Two step verification on, unique long passwords for your key accounts, a completed security checkup and your phishing response note.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why should you use a different password for every account?",
+            options: [
+              "So you can forget them all",
+              "So that if one is stolen, the others stay safe",
+              "Because websites require ten passwords each",
+              "To make logging in faster",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says unique passwords stop one theft from opening every account.",
+          },
+          {
+            prompt: "What does two step verification add to logging in?",
+            options: [
+              "A second password that is the same as the first",
+              "A second thing such as a code or prompt, so a stolen password alone is not enough",
+              "A longer username",
+              "A photo of your face on every email",
+            ],
+            answer_index: 1,
+            explanation: "The lesson explains that a second step blocks someone who only has your password.",
+          },
+          {
+            prompt: "What is the safest way to work in a client's accounts?",
+            options: [
+              "Use their password sent by chat",
+              "Use your own login that the client has given access to",
+              "Write their password in the SOP",
+              "Share one password among all assistants",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says your own login with delegated access is safest and can be removed by the client.",
+          },
+          {
+            prompt: "Someone claiming to be your client asks you to read out a code sent to your phone. What should you do?",
+            options: [
+              "Send the code quickly",
+              "Never share the code, and check with the client through a different channel",
+              "Post the code in the team chat",
+              "Send half the code",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says never share a verification code with anyone.",
+          },
+          {
+            prompt: "In the example, what did Hawa do with the urgent payment request?",
+            options: [
+              "Paid it immediately",
+              "Ignored all emails from then on",
+              "Did not pay and confirmed with the client by calling them",
+              "Forwarded it to the supplier",
+            ],
+            answer_index: 2,
+            explanation: "She confirmed through a different channel and found it was a scam.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "getting-work": {
+      explanation_md: `Skills only change your life when someone pays you to use them. This final section is about turning what you have learned into income, safely. It covers how to show your skills, where to find work, how to avoid the many fake jobs that target young people looking for remote work, and how to receive payment.
+
+## Two routes, both valid
+
+* **Local work.** Ghanaian companies, NGOs, schools and small businesses hire office assistants, front desk staff, administrative officers and executive assistants, and many small businesses would pay for part time help with messages, records and social media. Most formal admin jobs on Ghanaian job boards are in Accra and Tema, but small businesses everywhere need help, and local work is easier to verify.
+* **Remote work.** Companies and individuals abroad hire virtual assistants. These roles can pay in foreign currency, but competition is strong, many adverts only accept people in certain countries, and scams are common.
+
+Many people start with local or part time work to build experience and samples, then add remote clients. There is no shame in starting small.
+
+## Preparing for a programme
+
+Some training programmes in Ghana and across Africa run virtual assistant or freelancing courses in cohorts, often online or in Accra. If you want to join one, this roadmap is a free way to prepare, so you arrive already confident with the basics. Check any programme carefully on its official website before paying or sharing documents.
+
+## What this section covers
+
+* **Your profile and work samples.** How to show what you can do before you have a client.
+* **Finding clients and jobs.** Where to look, how to check whether an advert is open to you, and how to apply well.
+* **Spotting job and payment scams.** The common tricks and where to report them in Ghana.
+* **Agreements, invoices and getting paid from abroad.** Agreeing terms, invoicing, and understanding the costs of each way to receive money.
+
+## A mindset for this stage
+
+Expect rejections. Every application teaches you something. Keep a simple tracker of where you applied and what happened. Ask for feedback when you can. Keep practising while you search so your samples keep improving.
+
+Above all, protect yourself. A real employer pays you; you do not pay them. If anything about an offer feels wrong, stop and check before you send money, documents or codes.
+
+## A small example
+
+Sumaila finishes this roadmap in Tamale. He offers two local shops a free one week trial managing their WhatsApp orders, and one becomes a paying part time client. With those results and his practice samples, he applies for remote roles that accept applicants from Ghana, checking each one against the scam warning signs. After several rejections he gets a small remote contract and grows from there.`,
+      practice_task_md: `**Goal:** Start a job search tracker and decide your first route.
+
+**Steps:**
+1. In Google Sheets, create a tracker with columns: Date, Organisation, Role, Local or Remote, Where I found it, Open to Ghana (Yes, No, Unclear), Status, Notes.
+2. Write down three local businesses or organisations you could approach for part time assistant work.
+3. Find two real assistant adverts (local or remote) and add them to the tracker, filling in every column honestly.
+4. Write two sentences on which route you will start with and why.
+
+**Done looks like:** A tracker with at least five rows and a short, honest plan for your first route.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, what is one advantage of starting with local work?",
+            options: [
+              "It always pays more than remote work",
+              "It is easier to verify and helps build experience and samples",
+              "It never involves customers",
+              "It requires no skills",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says local work is easier to verify and builds experience.",
+          },
+          {
+            prompt: "What challenge with remote adverts does the lesson mention?",
+            options: [
+              "They never pay",
+              "Many only accept people in certain countries, and scams are common",
+              "They are only for people over 50",
+              "They require living in Accra",
+            ],
+            answer_index: 1,
+            explanation: "The lesson notes country restrictions, strong competition and scams.",
+          },
+          {
+            prompt: "How can this roadmap help if you want to join a cohort training programme?",
+            options: [
+              "It replaces the programme's entry rules",
+              "It is a free way to prepare so you arrive confident with the basics",
+              "It guarantees a place in any programme",
+              "It pays the programme fees",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says the roadmap is a free way to prepare.",
+          },
+          {
+            prompt: "What simple rule does the lesson give about money and employers?",
+            options: [
+              "Always pay a small fee to show you are serious",
+              "A real employer pays you; you do not pay them",
+              "Pay for training before any interview",
+              "Send money to unlock higher pay",
+            ],
+            answer_index: 1,
+            explanation: "The lesson states that a real employer pays you, not the other way round.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "portfolio-and-profile": {
+      explanation_md: `Clients and employers want proof. A certificate says you studied; a work sample shows you can do the job. When you have no paid experience yet, a small, well organised set of samples and a clear profile can be the difference between being ignored and being interviewed.
+
+## What makes a good VA portfolio
+
+You do not need a website. A shared Google Drive folder or a single Google Doc with links works well and costs nothing. Include four to six samples that match the tasks in adverts:
+
+* **Inbox system:** screenshots of your practice labels and filters, with a short explanation.
+* **Calendar week:** a screenshot of a well organised practice calendar.
+* **Document:** a template you made, such as meeting minutes, and a filled example as a PDF.
+* **Spreadsheet:** your order tracker with formulas and a filter.
+* **Research summary:** a one page comparison with sources and a recommendation.
+* **Procedure:** an SOP someone else followed successfully.
+* **Customer replies or a content calendar**, if you want customer support or social media work.
+
+The practice tasks in this roadmap were designed to produce these samples.
+
+## Keep it honest and private
+
+Use imaginary businesses or get permission before showing real work. Remove real names, phone numbers, emails and amounts from anything you share. Never claim experience you do not have or invent reviews. If a sample was practice, say so: "Practice project: order tracker for an imaginary smock seller." Clients respect honesty, and it protects you.
+
+## Your profile
+
+Whether on a job board, a freelance platform, LinkedIn or a one page CV, your profile should answer three questions quickly:
+
+1. **What do you do?** "Virtual assistant for small businesses: inbox, calendar, documents and customer messages."
+2. **What can you prove?** Link to your portfolio and name your tools: Gmail, Google Calendar, Docs, Sheets, Trello.
+3. **How do you work?** Your time zone (GMT), the hours you are available, how you handle power and data cuts, and how to contact you.
+
+Use a clear, friendly photo of yourself if the platform expects one, a professional email address, and correct spelling everywhere. Ask a friend to check it.
+
+## A short introduction
+
+Prepare three or four sentences you can adapt for every application or message: who you are, what you do, one proof, and a clear next step. For example: "I am Napari, a virtual assistant based in Ghana (GMT). I help small businesses keep their inbox, calendar and orders organised. You can see sample work here: [link]. I would be glad to do a short paid test task."
+
+## A small example
+
+Alhassan has no paid clients yet, so he builds a folder with five samples from this roadmap, all for imaginary businesses and clearly labelled as practice. He writes a one page CV and a short profile. In his first interview, the employer opens his spreadsheet sample and asks him to explain the formulas. He explains confidently and is offered a trial.`,
+      practice_task_md: `**Goal:** Assemble a shareable VA portfolio and profile.
+
+**Steps:**
+1. Collect four to six of your best practice tasks from this roadmap into your VA Portfolio folder in Google Drive.
+2. Check every file and remove any real names, numbers or private details. Label each as a practice project.
+3. Create a Google Doc called "Portfolio" with one short paragraph and a link for each sample. Share the folder and the document as Viewer only.
+4. Write a profile answering: what you do, what you can prove, how you work (time zone, hours, backup plan).
+5. Write your three to four sentence introduction and ask a mentor or friend to review everything.
+
+**Done looks like:** A view only portfolio link with four or more labelled samples, a written profile and an introduction, reviewed by someone else.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why do work samples matter when you have no paid experience?",
+            options: [
+              "They show you can actually do the job",
+              "They replace the need to apply",
+              "They are required by law",
+              "They guarantee a job",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says a certificate shows you studied, but a sample shows you can do the job.",
+          },
+          {
+            prompt: "What is the lesson's advice on using real client information in a portfolio?",
+            options: [
+              "Show everything to prove it is real",
+              "Use imaginary businesses or get permission, and remove real names, numbers and amounts",
+              "Only include real customer phone numbers",
+              "Invent reviews to look more experienced",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to protect privacy and be honest about practice work.",
+          },
+          {
+            prompt: "Which three questions should your profile answer quickly?",
+            options: [
+              "Your age, religion and hometown",
+              "What you do, what you can prove and how you work",
+              "Your favourite apps, music and food",
+              "How many followers you have",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists what you do, what you can prove and how you work.",
+          },
+          {
+            prompt: "Why should you label practice samples as practice projects?",
+            options: [
+              "Clients respect honesty, and it protects you",
+              "Because practice work is worthless",
+              "To hide that you made them",
+              "Because platforms delete unlabelled files",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says honesty earns respect and protects you.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "finding-clients": {
+      explanation_md: `Finding your first assistant work takes effort, but there are more places to look than most beginners realise. The key is to search in several places at once, check every advert carefully, and apply in a way that shows you read it.
+
+## Where to look
+
+* **People and businesses you know.** Small businesses, schools, churches, mosques, NGOs and clinics near you often need help with messages, records or social media. Offer a clear service, and consider a short paid trial.
+* **Ghanaian job boards.** Sites such as Jobberman list admin, office assistant, front desk, executive assistant and customer service roles. Most are office based in Accra and Tema, with some elsewhere.
+* **Remote job boards.** Some job boards list only remote roles, and a few let you filter by country. Read each advert's location rules.
+* **Freelance platforms.** Marketplaces where clients post small jobs and freelancers apply. They take a fee from your earnings, competition is strong at the start, and reviews matter, so begin with small jobs you can do very well.
+* **Your network.** Tell friends, former teachers and family abroad what you do. Many first clients come from personal recommendations.
+
+## Check if the advert is really open to you
+
+Remote does not always mean anywhere. Many remote assistant adverts only accept people living in specific countries, and some name South Africa, Kenya or other countries but not Ghana. Before applying, check:
+
+* **Location:** does it say worldwide, Africa, or list Ghana? If it lists other countries only, it is probably not open to you.
+* **Hours:** some roles require you to work during a client's office hours, which may mean late evenings in Ghana.
+* **Equipment:** laptop, internet speed and quiet space requirements.
+* **Payment:** how and when you will be paid, and in what currency.
+* **Who is hiring:** can you find the company's own website, and is the job also listed there?
+
+## Apply well
+
+Read the whole advert. Many adverts include a small instruction, such as a word to put in your subject line, to check whether applicants read carefully. Follow it. Then send a short, tailored message: mention the role, two tasks from the advert you can do, a link to a relevant sample, and your time zone and availability. A short, specific application beats a long generic one.
+
+If the employer offers a paid test task, treat it like real work: meet the deadline and communicate clearly.
+
+## Keep going
+
+Track every application. Follow up once, politely, after about a week if you have heard nothing. Keep improving your samples. Rejection is normal at this stage and says nothing about your worth.
+
+## A small example
+
+Ayishetu checks a remote board and finds three VA adverts. One is only for South Africa residents, so she skips it. One requires working 2pm to 11pm GMT, which she can manage. One has no company website and asks her to chat on Telegram, so she treats it as a warning sign. She applies to the second with a tailored message and her calendar sample.`,
+      practice_task_md: `**Goal:** Find, check and apply for real opportunities.
+
+**Steps:**
+1. Find five assistant adverts from at least two kinds of source: a Ghanaian job board, a remote job board, a freelance platform or a local business.
+2. For each, record in your tracker: location rules, hours, equipment, payment method and whether you found the company's own website.
+3. Mark each as open to you, not open, or suspicious, with a reason.
+4. Write one tailored application for the best match, following any instructions in the advert, and send it if you are ready.
+5. Write a short, polite message offering a paid trial to one local business.
+
+**Done looks like:** Five checked adverts in your tracker, one tailored application, and one local offer written or sent.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does the lesson say about freelance platforms?",
+            options: [
+              "They are free with no fees and little competition",
+              "They take a fee, competition is strong at first and reviews matter, so start with small jobs",
+              "They only accept people with degrees",
+              "They pay before you do any work",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes fees, competition and the importance of reviews on freelance platforms.",
+          },
+          {
+            prompt: "A remote VA advert says it is only open to residents of South Africa. What should a Ghana based applicant do?",
+            options: [
+              "Apply anyway and hide your location",
+              "Skip it, because it is probably not open to you",
+              "Pay a fee to get an exception",
+              "Change your address on your profile",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to check location rules; if only other countries are listed, it is probably not open to you.",
+          },
+          {
+            prompt: "Why do some adverts include a small instruction, such as a word to put in the subject line?",
+            options: [
+              "To check whether applicants read carefully",
+              "To trick applicants into paying",
+              "Because email requires it",
+              "To test typing speed",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says these instructions check whether you read the advert.",
+          },
+          {
+            prompt: "What makes a strong application, according to the lesson?",
+            options: [
+              "A long generic message sent to every advert",
+              "A short, tailored message naming the role, two matching tasks, a sample link and your time zone",
+              "Only a CV with no message",
+              "A voice note explaining your life story",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says a short, specific application beats a long generic one.",
+          },
+          {
+            prompt: "In the example, why did Ayishetu treat one advert as a warning sign?",
+            options: [
+              "It paid in cedis",
+              "It had no company website and asked her to chat on Telegram",
+              "It required a calendar sample",
+              "It was for afternoon hours",
+            ],
+            answer_index: 1,
+            explanation: "No company website and a move to Telegram were warning signs.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "avoiding-scams": {
+      explanation_md: `Young people searching for remote work are a favourite target for scammers. Ghana's Cyber Security Authority (CSA) has repeatedly warned the public about fake job offers spreading by SMS, WhatsApp, Telegram and Facebook, including fake adverts that copy the websites of real organisations. Learning the patterns protects your money, your documents and your accounts.
+
+## The most common tricks
+
+* **Pay to get the job.** You are asked to pay for an application form, training, registration, a uniform, a laptop or a background check. The CSA's advice is clear: do not pay for job applications or interviews. Real employers do not charge you to be hired.
+* **Task scams.** You are offered easy money for simple online tasks such as liking posts or rating products. Early tasks pay a little to build trust. Then you are asked to deposit money to unlock better tasks or withdraw your earnings, and once you pay, you are locked out.
+* **Fake cheques and overpayment.** A "client" sends more money than agreed, or a cheque, and asks you to send the difference back or pay a supplier. The original payment later disappears, and you lose what you sent.
+* **Money mule offers.** You are asked to receive money into your bank or mobile money account and forward it to someone else, for a commission. This can make you part of a crime, even if you did not know.
+* **Account and identity theft.** You are asked for your Ghana Card number, photos of your ID, bank details, a verification code or your login, often "to set up payroll" before any real interview.
+
+## Warning signs
+
+* The pay is very high for very little work or no experience.
+* You were contacted out of nowhere, or the whole process happens on WhatsApp or Telegram.
+* No interview, or an interview only by text chat.
+* The company has no website, or the email address does not match the company's real website.
+* Pressure to decide or pay quickly.
+* Poor spelling and grammar in official looking messages.
+
+## How to check
+
+Search the company name with words like "scam" or "reviews". Find the company's official website yourself, not from the link they sent, and check whether the job is listed there. Contact the company using the details on its official site. Never send money, ID documents or codes until you are sure, and even then, never pay to be hired.
+
+## Report it
+
+If you see or fall for a scam, report it. The CSA runs a reporting point you can call or text on 292, or contact through the details on its official website, csa.gov.gh. You can also report to the Cybercrime Unit of the Ghana Police Service. If you sent money by mobile money or bank, contact your provider immediately. Report scam adverts to the job board too.
+
+## A small example
+
+Mariama gets a WhatsApp message offering a remote VA job with high pay and no interview. They ask for a small "registration fee" to send her laptop. She remembers the rule: a real employer pays you. She checks, finds no website, blocks the number and reports it.`,
+      practice_task_md: `**Goal:** Learn to spot and report job scams.
+
+**Steps:**
+1. Visit the Cyber Security Authority website, csa.gov.gh, and find the reporting contact details. Save them in your phone.
+2. Write down the five common tricks from this lesson in your own words.
+3. Look at three remote job messages or adverts you have seen (in WhatsApp groups, social media or job boards). For each, list any warning signs.
+4. Write a short message you could send to a friend explaining why they should never pay for a job.
+
+**Done looks like:** CSA contacts saved, the five tricks written in your own words, three adverts checked for warning signs, and a message ready to share.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the CSA's advice about paying for job applications or interviews?",
+            options: [
+              "Pay only small amounts",
+              "Do not pay for job applications or interviews",
+              "Pay if the company has a logo",
+              "Pay by mobile money only",
+            ],
+            answer_index: 1,
+            explanation: "The lesson quotes the CSA advice not to pay for applications or interviews.",
+          },
+          {
+            prompt: "How does a task scam usually work?",
+            options: [
+              "You are paid fairly for every task forever",
+              "Early tasks pay a little, then you must deposit money to unlock more or withdraw, and you are locked out",
+              "You are asked to write a CV",
+              "You are sent a free laptop",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes small early payments followed by deposit demands and lockout.",
+          },
+          {
+            prompt: "A new client sends more money than agreed and asks you to send the difference to a supplier. What is this likely to be?",
+            options: [
+              "A generous bonus",
+              "An overpayment scam",
+              "A normal invoice",
+              "A tax refund",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes overpayment as a common scam where the original payment later disappears.",
+          },
+          {
+            prompt: "Why is receiving and forwarding money for a commission dangerous?",
+            options: [
+              "It uses too much data",
+              "It can make you part of a crime, even if you did not know",
+              "It is only allowed on weekends",
+              "Banks charge a small fee",
+            ],
+            answer_index: 1,
+            explanation: "The lesson explains that money mule activity can make you part of a crime.",
+          },
+          {
+            prompt: "Where can you report a job scam in Ghana, according to the lesson?",
+            options: [
+              "Only to the scammer",
+              "The Cyber Security Authority, the Ghana Police Cybercrime Unit, your payment provider and the job board",
+              "Nowhere, scams cannot be reported",
+              "Only on social media",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists the CSA, the police cybercrime unit, your provider and the job board.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "getting-paid": {
+      explanation_md: `Getting paid properly is part of being professional. Clear agreements and invoices prevent arguments, and understanding how international payments work stops fees and scams from eating your income. This lesson describes the options in general terms. It does not recommend any provider, and rules and fees change, so always check the provider's own official pages.
+
+## Agree in writing first
+
+Before starting, agree these points by email or in a simple contract:
+
+* **Scope:** the tasks included, and what counts as extra.
+* **Rate:** per hour, per task or a monthly retainer, and in which currency.
+* **Hours and availability**, including time zones.
+* **Payment terms:** how often you invoice, how many days the client has to pay, and the payment method.
+* **Confidentiality and how either side can end the arrangement.**
+
+For a first client, a short trial or splitting a project into stages with payment after each stage reduces your risk.
+
+## Invoices
+
+An invoice is a document asking for payment. Include: your name and contact details, the client's name, an invoice number, the date, a list of work done with amounts, the total and currency, the due date and how to pay. Keep a copy of every invoice and record payments in a spreadsheet. A Google Docs template works well.
+
+## Ways to receive money from abroad
+
+There are four common routes. Each has different costs, speeds and requirements.
+
+* **Freelance platform payouts.** If you work through a platform, it pays you and you withdraw to a bank, mobile money or another account it supports. Platforms take a service fee from your earnings, and withdrawals can cost extra.
+* **International payment accounts.** Some services give you account details in foreign currencies so clients abroad can pay you as if locally. You then convert and withdraw to Ghana.
+* **Bank transfer to a Ghanaian bank account.** Many Ghanaian banks offer foreign currency accounts, sometimes called domiciliary accounts. International bank transfers can involve fees from the sending bank, any intermediary banks and your own bank.
+* **Remittance to mobile money.** Some money transfer services can send money from abroad to a mobile money wallet in Ghana.
+
+## Where money is lost
+
+Compare these for any route:
+
+* **Sending fees** the client pays.
+* **Receiving fees** taken when money arrives.
+* **Conversion margin:** the difference between the rate you get and the rate shown on a neutral source. A "no fee" service may still give a poor rate.
+* **Withdrawal fees** to move money to your bank or wallet.
+* **Intermediary bank charges** on international transfers.
+
+Read the fee page, do a small test payment first, and work out what actually reaches you.
+
+## Stay safe and legal
+
+Use accounts in your own name, verified with your own documents. Never let anyone else use your account to receive money. Never pay a fee to receive a payment. Banking and foreign exchange in Ghana are regulated by the Bank of Ghana, so use licensed, recognised providers. Income you earn may be taxable, so ask the Ghana Revenue Authority about your situation as your earnings grow.
+
+## A small example
+
+Issahaku agrees a monthly retainer with a client in Canada. They agree the scope, hours and a monthly invoice due within seven days. Before choosing a payment route, he compares two options with a small test payment and records exactly how many cedis arrived. He chooses the one where more money reached him.`,
+      practice_task_md: `**Goal:** Prepare your agreement checklist, invoice template and payment comparison.
+
+**Steps:**
+1. In Google Docs, write a one page agreement checklist covering scope, rate, hours, payment terms, confidentiality and ending the arrangement.
+2. Create an invoice template with all the parts from the lesson. Fill it in for an imaginary client with made up amounts and download it as a PDF.
+3. In Google Sheets, make a comparison table for two possible payment routes with columns for sending fee, receiving fee, conversion margin, withdrawal fee and speed. Fill it in from each provider's official fee page, writing "not stated" where you cannot find a figure.
+4. Write down the three safety rules from the lesson that you will never break.
+
+**Done looks like:** An agreement checklist, an invoice PDF, a fee comparison table with sources, and your three safety rules.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these should be agreed in writing before starting work?",
+            options: [
+              "Only your favourite colour",
+              "Scope, rate, hours, payment terms, confidentiality and how to end the arrangement",
+              "Nothing, agreements slow things down",
+              "Only the client's job title",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists these points to agree first.",
+          },
+          {
+            prompt: "What is a conversion margin?",
+            options: [
+              "The space at the edge of an invoice",
+              "The difference between the rate you get and the rate on a neutral source",
+              "A tax charged by the client",
+              "The number of days to pay",
+            ],
+            answer_index: 1,
+            explanation: "The lesson explains that the conversion margin is the gap between your rate and a neutral rate.",
+          },
+          {
+            prompt: "Why might a \"no fee\" payment service still cost you money?",
+            options: [
+              "It may give you a poor exchange rate",
+              "It charges for reading emails",
+              "It only works on weekends",
+              "It deletes small payments",
+            ],
+            answer_index: 0,
+            explanation: "The lesson warns that a poor rate can cost money even without a fee.",
+          },
+          {
+            prompt: "What does the lesson suggest before choosing a payment route?",
+            options: [
+              "Pick the one with the best advert",
+              "Read the fee page, do a small test payment and work out what actually reaches you",
+              "Ask a stranger online to choose",
+              "Use a friend's account",
+            ],
+            answer_index: 1,
+            explanation: "The lesson recommends checking fees and testing with a small payment.",
+          },
+          {
+            prompt: "Which of these is a safety rule from the lesson?",
+            options: [
+              "Let others receive money through your account for a commission",
+              "Pay a fee to release a payment",
+              "Use accounts in your own name and never pay a fee to receive a payment",
+              "Share your login with the client's accountant",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says to use your own accounts, never lend them, and never pay to receive money.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
   },
 };
 
