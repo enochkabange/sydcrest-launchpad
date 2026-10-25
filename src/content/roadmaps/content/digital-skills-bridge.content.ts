@@ -1433,6 +1433,486 @@ Amina shares a phone with her younger brother. She set a fingerprint lock on Wha
         pass_threshold: 75,
       },
     },
+
+    "files-and-forms": {
+      explanation_md: `Applying for a job usually means attaching a CV and a photo of a certificate. Registering for a course means filling in an online form. Field jobs with NGOs often involve entering survey answers into a form on a phone or tablet all day. Office jobs involve looking things up quickly and correctly. All of these come down to three skills: handling files, filling in forms and finding information.
+
+This section teaches those skills on the phone you already have.
+
+## What this section covers
+
+* **Photos, documents and files on your phone.** Where your downloads go, how to make a clear scan of a paper document, how to give files sensible names and how to send them.
+* **Filling in online forms.** How to read a form, fill it in correctly, check it and submit it, whether it is a job application, a course registration or a field survey.
+* **Searching and judging information.** How to choose good search words and decide whether a website can be trusted.
+
+## Why on a phone first
+
+DMP week 1 teaches files and folders on a computer. The ideas are the same on a phone: a file has a name, it lives in a folder, and you can find, move, rename, share and delete it. If you already understand this on your phone, the computer version will feel familiar instead of strange.
+
+## A picture of the problem
+
+Hawa from Bawku wanted to apply for an NGO field assistant job. The advert asked for a CV and a copy of her SHS certificate by email, and a short online form. She had a photo of her certificate somewhere in her gallery among hundreds of WhatsApp pictures. Her CV was a file her friend sent months ago, and she could not find it. The form had a question she skipped by mistake, so it would not submit.
+
+None of these problems were hard. She just had not learned where files live, how to scan a document properly, or how to check a form before submitting. After this section, a task like that takes her twenty minutes instead of two frustrating days.
+
+## Skills employers mention
+
+Adverts for office assistants, customer service agents and NGO field officers in Ghana mention accurate records, entering data correctly, using forms and data collection apps, and finding information. Careful, accurate work matters more than speed at the beginning. Speed comes with practice.
+
+## How to work through this section
+
+Have a real document nearby, such as a certificate, a receipt or a school report, so you can practise scanning and sending it. If you can, also ask a friend to share a simple online form with you, or use one from a church, school or youth group.`,
+      practice_task_md: `**Goal:** Gather the documents you would need for a job application.
+
+**Steps**
+
+1. Make a list of documents an entry level job might ask for: CV, certificates, Ghana Card, a passport photo.
+2. Next to each one, write whether you have a clear digital copy on your phone today.
+3. For each one you can find, write where it is: Gallery, Downloads, WhatsApp, Google Drive or somewhere else.
+4. Mark the ones you need to scan or create during this section.
+
+**Done looks like:** A checklist of your documents showing which ones are ready and which you will prepare next.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which three skills does this section teach?",
+            options: [
+              "Coding, design and marketing",
+              "Handling files, filling in forms and finding information",
+              "Typing, printing and photocopying",
+              "Selling, driving and cooking",
+            ],
+            answer_index: 1,
+            explanation: "The section covers files, forms and searching.",
+          },
+          {
+            prompt: "Why does the section teach files on a phone before the DMP cohort?",
+            options: [
+              "Computers do not use files",
+              "The ideas are the same, so the computer version will feel familiar",
+              "DMP does not cover files at all",
+              "Phones cannot share files",
+            ],
+            answer_index: 1,
+            explanation: "A file has a name and a folder on both phones and computers.",
+          },
+          {
+            prompt: "Why would Hawa's online form not submit?",
+            options: [
+              "Her phone was too old",
+              "She skipped a question by mistake",
+              "The NGO had closed",
+              "She used WiFi",
+            ],
+            answer_index: 1,
+            explanation: "A skipped question stopped the form from submitting.",
+          },
+          {
+            prompt: "According to the lesson, what matters more than speed at the beginning?",
+            options: [
+              "Careful, accurate work",
+              "Using expensive apps",
+              "Having a laptop",
+              "Sending many messages",
+            ],
+            answer_index: 0,
+            explanation: "Accuracy matters most at first, and speed comes with practice.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "files-on-your-phone": {
+      explanation_md: `Every job application asks you to attach something: a CV, a certificate, an ID. Office and field jobs involve sending receipts, reports and photos of forms. Knowing where your files are, and how to send a clear copy, saves time and makes you look organised.
+
+## Where files live on your phone
+
+Your phone stores files in **folders**, just like a computer.
+
+* **Downloads.** Files you download from a browser or email usually go here.
+* **Pictures or DCIM.** Photos from your camera.
+* **WhatsApp.** Photos and documents people send you on WhatsApp are saved in their own folders.
+
+To see them, open your phone's file manager app. It may be called **Files**, **My Files** or **File Manager**. Tap **Downloads** or browse by category, such as Documents or Images.
+
+## Give files clear names
+
+A file called "IMG_20251003_0912" tells nobody anything. A file called "Hawa Issah CV" or "Hawa Issah SHS Certificate" does. In the file manager, long press a file and choose **Rename**. Employers often receive many applications, and clear names help them find yours.
+
+## Making a clear scan of a paper document
+
+A crooked, dark photo of a certificate looks careless. A scan looks neat.
+
+* The **Google Drive** app has a scan tool. Tap the **plus** or **New** button, then **Scan**. Point the camera at the document, take the photo, and the app crops it and saves it as a PDF. Some phone camera apps also have a document scan mode.
+* Place the paper on a dark, flat surface in good daylight.
+* Make sure all four corners are visible and the text is sharp.
+* Check the result before you save. Retake it if anything is cut off or blurry.
+
+A **PDF** is a file type that looks the same on every phone and computer. It is the usual choice for CVs and certificates.
+
+## Sending a file
+
+* **WhatsApp:** tap the attach icon, choose **Document**, then pick the file.
+* **Email:** in Gmail, tap the paperclip and choose the file. DMP week 1 will practise this in detail.
+* **Share button:** in most apps, the share icon lets you send a file to WhatsApp, email or Drive.
+
+## Keeping a backup
+
+Phones get lost, stolen or broken. Keep copies of important documents in Google Drive, which you get free with a Google account. Upload them on WiFi.
+
+## A worked example
+
+Sumaila needed to send his certificate to an employer in Tamale. He placed it on a dark table near a window, used the Drive scan tool, renamed the file "Sumaila Mahama WASSCE Certificate", and saved it in a Drive folder called "Job documents". When the employer asked for it, he sent it as a Document on WhatsApp in under a minute.`,
+      practice_task_md: `**Goal:** Create a neat set of job documents on your phone.
+
+**Steps**
+
+1. Open your phone's file manager and find the Downloads folder. Note two files you find there.
+2. Use the Google Drive scan tool, or your camera's document mode, to scan one paper document such as a certificate or report.
+3. Rename it clearly with your name and the document type.
+4. Create a folder in Google Drive called Job documents and save the scan there.
+5. Send the PDF to a friend as a Document on WhatsApp and ask if it is clear.
+
+**Done looks like:** A sharp, well named PDF in your Job documents folder, and a friend confirming it looks clear.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Where do files you download from a browser usually go?",
+            options: [
+              "The Downloads folder",
+              "Your contacts",
+              "The phone's battery settings",
+              "Your WhatsApp status",
+            ],
+            answer_index: 0,
+            explanation: "Downloaded files usually go to Downloads.",
+          },
+          {
+            prompt: "Why should you rename a file like IMG_20251003_0912?",
+            options: [
+              "Long names use more data",
+              "A clear name helps the employer find and recognise it",
+              "Phones delete unnamed files",
+              "It makes the photo sharper",
+            ],
+            answer_index: 1,
+            explanation: "Clear names such as your name and document type help people find your file.",
+          },
+          {
+            prompt: "What is a good way to make a clear copy of a paper certificate?",
+            options: [
+              "Take a quick photo in a dark room",
+              "Use a scan tool such as the one in Google Drive",
+              "Draw a copy by hand",
+              "Send a voice note describing it",
+            ],
+            answer_index: 1,
+            explanation: "A scan tool crops the document and saves it as a neat PDF.",
+          },
+          {
+            prompt: "Why keep important documents in Google Drive?",
+            options: [
+              "So you still have them if your phone is lost or broken",
+              "So they become public",
+              "So they cannot be opened",
+              "Because WhatsApp requires it",
+            ],
+            answer_index: 0,
+            explanation: "Drive keeps a backup when phones get lost, stolen or broken.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "online-forms": {
+      explanation_md: `Online forms are everywhere: job applications, course registrations, scholarship applications, NGO surveys and customer orders. Field officer and enumerator jobs with NGOs in northern Ghana often involve collecting survey answers on a phone or tablet using apps such as Google Forms or Kobo Collect. Office and customer service jobs involve entering customer details into systems. In every case, accuracy is the skill employers want.
+
+## Parts of a form
+
+Most forms use the same few types of question:
+
+* **Short answer boxes** for things like your name or phone number.
+* **Long answer boxes** for a few sentences, such as "Why do you want to join?"
+* **Multiple choice**, where you tap one round button.
+* **Checkboxes**, where you can tick more than one square.
+* **Dropdowns**, where you tap and choose from a list.
+* **Date pickers** and **file upload** buttons.
+
+A small red star (an asterisk) next to a question usually means it is **required**. The form will not submit until you answer it.
+
+## Filling in a form well
+
+1. **Read the whole form first.** Scroll to the end so you know what you will need, such as a document to upload.
+2. **Prepare your information.** Have your email address, phone number, Ghana Card number and documents ready.
+3. **Type carefully.** Check spelling of names and every digit of phone numbers. One wrong digit means nobody can call you.
+4. **Answer what is asked.** If a box asks for your district, do not write your full address.
+5. **Review before submitting.** Many forms have more than one page. Use Back to check earlier pages.
+6. **Submit once.** Then look for a confirmation message. Take a screenshot of it as proof.
+
+## Forms in field work
+
+Survey apps like Kobo Collect let field staff fill in forms even without network, then send them later when there is a connection. The rules are the same: ask each question exactly as written, record the answer exactly as given, and check before you finalise. A survey with wrong data can lead an NGO to the wrong decisions about a community.
+
+## A worked example
+
+Alhassan is applying for a youth skills programme through a Google Form. He reads the whole form first and sees it needs a scan of his certificate, so he prepares it. He fills in his details carefully, notices he typed his phone number with a missing digit and fixes it. The form will not submit because he missed a required question marked with a red star. He goes back, answers it, submits, and takes a screenshot of the confirmation page.
+
+Careful form filling is a small skill, but it shows exactly what employers mean by "attention to detail".`,
+      practice_task_md: `**Goal:** Fill in a form accurately, then build one of your own.
+
+**Steps**
+
+1. Ask a friend, teacher or group leader for any online form, or find a real registration form for a free course.
+2. Read the whole form first, then fill it in carefully, checking every name and number.
+3. Take a screenshot of the confirmation message.
+4. If you have a Google account, open Google Forms in your browser and create a three question form, for example a chop bar order form with name, phone number and choice of food. Make the phone number required.
+5. Send it to two friends and ask them to fill it in.
+
+**Done looks like:** A screenshot of a confirmation message, and your own form with at least two responses.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does a small red star next to a form question usually mean?",
+            options: [
+              "The question is optional",
+              "The question is required",
+              "The question is a bonus",
+              "The form is closed",
+            ],
+            answer_index: 1,
+            explanation: "A red asterisk usually marks a required question.",
+          },
+          {
+            prompt: "What should you do before you start typing answers?",
+            options: [
+              "Submit the form to test it",
+              "Read the whole form first so you know what you need",
+              "Fill in only the first page",
+              "Close the form and come back later",
+            ],
+            answer_index: 1,
+            explanation: "Reading the whole form first shows what you need, such as documents to upload.",
+          },
+          {
+            prompt: "Why is checking every digit of your phone number important?",
+            options: [
+              "Forms charge per digit",
+              "One wrong digit means nobody can call you",
+              "Phone numbers are optional",
+              "It makes the form shorter",
+            ],
+            answer_index: 1,
+            explanation: "A single wrong digit makes the number useless.",
+          },
+          {
+            prompt: "What does the lesson say about survey apps like Kobo Collect?",
+            options: [
+              "They only work in Accra",
+              "They let you fill in forms without network and send them later",
+              "They do not need careful answers",
+              "They replace the need to ask questions",
+            ],
+            answer_index: 1,
+            explanation: "Forms can be filled offline and sent when there is a connection.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "searching-well": {
+      explanation_md: `When an office assistant needs a supplier's phone number, when a customer service agent needs to check a policy, or when you are stuck on a lesson, the skill that helps is the same: searching well. Employers value people who can find answers on their own. It is also how you will keep learning long after any course ends.
+
+## Choosing good search words
+
+A search engine like Google looks for pages that contain your words. Better words give better results.
+
+* **Use the key words, not a full story.** Instead of "please how can I make my phone stop finishing my data quickly", try "reduce mobile data use Android".
+* **Add a place when it matters.** "Business registration Ghana" gives more useful results than "business registration".
+* **Use quotation marks for an exact phrase.** Searching "data protection act" with the quotation marks finds pages with those words together.
+* **Search one site.** Typing site:gov.gh before your words shows results only from Ghana government websites.
+* **Try again with different words** if the first results are not helpful. Good searchers often try three or four times.
+
+## Judging whether to trust a page
+
+Anyone can put anything on the internet. Before you trust or share information, ask:
+
+* **Who wrote it?** An official organisation, a known news outlet, or someone unknown?
+* **Is it official?** For government services, look for addresses ending in .gov.gh. For a company, look for its real website.
+* **When was it written?** Prices, rules and app instructions change. Look for a date.
+* **Does another good source agree?** Check one more trustworthy site.
+* **Is it trying to sell or scare you?** Pages full of adverts, shocking headlines or urgent warnings deserve extra care.
+
+Be careful with forwarded WhatsApp messages. If a message says "forward to everyone", check it before you pass it on.
+
+## A worked example
+
+Wumpini's manager asks her to find out how to register a small business name. She first types "how do I register my business I am in Tamale". The results are messy. She tries "register business name Ghana" and then adds site:gov.gh. Now she finds the official government registration page. She checks the page date, then compares with a well known Ghanaian news article. She sends her manager the official link and a two line summary.
+
+## Searching while you learn
+
+When a lesson uses a word you do not know, search "what is" followed by the word. When an error appears on your phone, search the exact error message in quotation marks. These two habits alone will solve many problems.
+
+DMP week 3 goes deeper into judging online sources. This lesson gives you the everyday habits first.`,
+      practice_task_md: `**Goal:** Find a reliable answer to a real question.
+
+**Steps**
+
+1. Pick a real question, such as "How do I apply for a Ghana Card replacement?" or "What are the opening hours of the library in my town?"
+2. Search it once in full sentence form and note the first result.
+3. Search again using short key words and a place name. Then try adding site:gov.gh if the question is about a government service.
+4. Choose the best page and write down who wrote it, when, and one other source that agrees.
+5. Write a two line answer you could send to a manager, with the link.
+
+**Done looks like:** Your two searches, your chosen source with its checks, and a short answer with a link.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which search is likely to give better results?",
+            options: [
+              "please how can I make my phone stop finishing my data quickly",
+              "reduce mobile data use Android",
+              "phone data",
+              "help me",
+            ],
+            answer_index: 1,
+            explanation: "Short key words work better than a long story.",
+          },
+          {
+            prompt: "What does typing site:gov.gh before your search words do?",
+            options: [
+              "Shows results only from Ghana government websites",
+              "Makes the search free",
+              "Translates the page",
+              "Deletes your search history",
+            ],
+            answer_index: 0,
+            explanation: "The site: operator limits results to one website or domain.",
+          },
+          {
+            prompt: "Which question helps you judge whether to trust a page?",
+            options: [
+              "Is the page colourful?",
+              "Who wrote it and when was it written?",
+              "Does it load quickly?",
+              "Does it have many adverts?",
+            ],
+            answer_index: 1,
+            explanation: "Knowing the author and date helps you judge reliability.",
+          },
+          {
+            prompt: "Why do quotation marks help in a search?",
+            options: [
+              "They find pages with those exact words together",
+              "They make the results shorter",
+              "They hide adverts",
+              "They search only videos",
+            ],
+            answer_index: 0,
+            explanation: "Quotation marks search for an exact phrase.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "computer-access": {
+      explanation_md: `Your phone can do a lot, but many jobs and courses eventually need a computer. Job adverts in Ghana for office assistants, front desk staff and customer service agents often ask for basic computer skills. The Delta Mentoring Program starts in week 1 with computer hardware, files and folders, and then moves to Google Docs, Sheets and Slides. Getting a little comfortable with a keyboard and mouse before the cohort starts makes that first week much less stressful.
+
+## What this section covers
+
+* **Finding a computer to practise on.** Places you might get regular access, and how to ask for it.
+* **Mouse and keyboard basics.** Clicking, scrolling, dragging and the keys you will use every day.
+* **Typing practice.** How to start typing with more fingers, a little each day, using free tools.
+
+## You do not need to own a computer
+
+Many people who now work in tech in Ghana learned on shared computers at school, a library, a community centre, a church or a business centre. What matters is regular practice, even if it is only an hour or two a week.
+
+## Be kind to yourself at the start
+
+If you have never used a computer, the first session can feel strange. The mouse moves too fast, the keyboard letters are not in alphabetical order and you are not sure what to click. That is normal for everyone. After a few sessions your hands learn the movements, and you stop thinking about them.
+
+## A worked example
+
+Napari in Gushegu had only ever used a phone. She asked her former school's ICT teacher if she could use the computer lab on Saturday mornings, and offered to help tidy the lab in return. In her first session she practised moving the mouse and opening a browser. By her fourth session she could type a short paragraph about herself, slowly but correctly. When she joined a digital skills cohort later, she was not afraid of the computer, so she could focus on learning Google Docs.
+
+## How the phone skills help
+
+Much of what you have learned already carries over. Sending a document, filling in a form and searching work the same way on a computer. You simply click with a mouse instead of tapping, and type on a bigger keyboard instead of a screen.
+
+## Set a goal for this section
+
+A good goal before joining the DMP cohort is to be able to:
+
+* Turn a computer on and off properly.
+* Open a web browser and visit a website.
+* Click, scroll and drag with a mouse or touchpad.
+* Type a short paragraph without looking for every key.
+
+You do not need to be fast. You need to be comfortable enough that the computer does not stop you from learning.`,
+      practice_task_md: `**Goal:** Plan your computer practice.
+
+**Steps**
+
+1. Write down any computer experience you already have, even if it is very little.
+2. List three places near you where you might be able to use a computer.
+3. Choose a realistic weekly time slot you could use, such as Saturday morning.
+4. Write the four goals from the end of this lesson in your notebook and tick any you can already do.
+
+**Done looks like:** A short plan with your experience, three possible places, a weekly time slot and your four goals with ticks.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does DMP week 1 start with?",
+            options: [
+              "Writing computer programs",
+              "Computer hardware, files and folders",
+              "Running paid adverts",
+              "Building websites",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says week 1 starts with computer hardware, files and folders.",
+          },
+          {
+            prompt: "Do you need to own a computer to start practising?",
+            options: [
+              "Yes, you must buy one first",
+              "No, regular practice on a shared computer is enough",
+              "Yes, a phone cannot help at all",
+              "No, computers are not used in tech",
+            ],
+            answer_index: 1,
+            explanation: "Many people learn on shared computers; regular practice matters most.",
+          },
+          {
+            prompt: "How did Napari get access to a computer?",
+            options: [
+              "She bought a new laptop",
+              "She asked her former school's ICT teacher to use the lab and offered to help in return",
+              "She used her friend's password",
+              "She waited until the cohort started",
+            ],
+            answer_index: 1,
+            explanation: "She asked politely and offered to help tidy the lab.",
+          },
+          {
+            prompt: "Which of these is one of the suggested goals before joining the DMP cohort?",
+            options: [
+              "Type very fast without any mistakes",
+              "Type a short paragraph without looking for every key",
+              "Repair computer hardware",
+              "Write code in three languages",
+            ],
+            answer_index: 1,
+            explanation: "The goal is comfort, not speed: a short paragraph without searching for every key.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
