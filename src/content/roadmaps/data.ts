@@ -1,11 +1,32 @@
 import { RES } from "./resources";
-import type { RoadmapDraft } from "./types";
+import type { ResourceDraft, RoadmapDraft } from "./types";
+
+/** Track specific links not in the shared pool; each checked to resolve (October 2026). */
+const odkDocs: ResourceDraft = { label: "ODK documentation", url: "https://docs.getodk.org/", kind: "article" };
+const koboDocs: ResourceDraft = { label: "KoboToolbox help docs", url: "https://support.kobotoolbox.org/", kind: "article" };
+const xlsform: ResourceDraft = { label: "XLSForm reference", url: "https://xlsform.org/en/", kind: "article" };
+const sheetsPivot: ResourceDraft = {
+  label: "Google Sheets: Create and use pivot tables",
+  url: "https://support.google.com/docs/answer/1272900",
+  kind: "article",
+};
+const sheetsXlookup: ResourceDraft = {
+  label: "Google Sheets: XLOOKUP function",
+  url: "https://support.google.com/docs/answer/12405947",
+  kind: "article",
+};
+const sheetsDropdown: ResourceDraft = {
+  label: "Google Sheets: Create a dropdown list",
+  url: "https://support.google.com/docs/answer/139705",
+  kind: "article",
+};
+const lookerStudio: ResourceDraft = { label: "Looker Studio (free)", url: "https://lookerstudio.google.com/", kind: "practice" };
 
 export const data: RoadmapDraft = {
   slug: "data-analyst",
   title: "Data Analyst",
   description:
-    "Turn messy numbers into clear answers for businesses, NGOs and public bodies. Start in a spreadsheet on any device and build up to SQL, Python and dashboards that decision makers act on.",
+    "Turn messy records into clear answers for NGOs, businesses, banks and public bodies. Start with spreadsheets and field surveys on any device, then build up to monitoring and evaluation, SQL, dashboards and Python.",
   track: "data",
   field_category: "data",
   locale: "en-GH",
@@ -15,43 +36,133 @@ export const data: RoadmapDraft = {
       slug: "foundations",
       title: "Foundations",
       summary:
-        "Good analysis starts with a clear question and comfort with numbers, not with code. You can do everything in this section with free tools and a phone or basic laptop.",
+        "Good analysis starts with a clear question, comfort with numbers and tidy records, not with code. Everything in this section works with free tools on a phone or basic laptop.",
       parent: null,
       optional: false,
-      resources: [],
-    },
-    {
-      slug: "spreadsheets",
-      title: "Spreadsheets first",
-      summary:
-        "Learn sorting, filtering, formulas, lookups and pivot tables in Google Sheets. Many Ghanaian businesses and NGOs run on spreadsheets, so this skill is useful from day one.",
-      parent: "foundations",
-      optional: false,
-      resources: [RES.lfSheets, RES.sheetsHelp],
+      resources: [RES.lfThinking],
     },
     {
       slug: "statistics-basics",
       title: "Everyday statistics",
       summary:
-        "Understand averages, medians, percentages, spread and why a sample can mislead. These ideas stop you from drawing the wrong conclusion from a chart.",
+        "Understand averages, medians, percentages, spread and why a small or biased sample can mislead. These ideas stop you from drawing the wrong conclusion from a table or chart.",
       parent: "foundations",
       optional: false,
       resources: [RES.khanStats],
     },
     {
-      slug: "asking-questions",
-      title: "Asking the right question",
+      slug: "tidy-data",
+      title: "Accurate data entry and tidy tables",
       summary:
-        "Turn a vague request such as why sales are down into a question data can answer. Practise by interviewing a shop owner about what they wish they knew.",
+        "Learn to enter records accurately and lay them out as one row per record and one column per fact. Clean, consistent entry is the first job many data assistants do and it makes every later step easier.",
       parent: "foundations",
       optional: false,
-      resources: [RES.lfThinking],
+      resources: [RES.lfSheets, sheetsDropdown],
+    },
+    {
+      slug: "spreadsheets",
+      title: "Spreadsheets for analysis",
+      summary:
+        "Spreadsheets are the first tool most data and M&E adverts ask for. This section takes you from basic formulas to lookups and pivot tables in Google Sheets.",
+      parent: null,
+      optional: false,
+      resources: [RES.sheetsHelp],
+    },
+    {
+      slug: "spreadsheet-formulas",
+      title: "Formulas, sorting and filtering",
+      summary:
+        "Use SUM, AVERAGE, COUNTIF, SUMIF and IF to answer questions, and sort and filter to explore a table. Practise on a made up record of a market stall's daily sales.",
+      parent: "spreadsheets",
+      optional: false,
+      resources: [RES.lfSheets, RES.sheetsHelp],
+    },
+    {
+      slug: "lookups-pivots",
+      title: "Lookups, validation and pivot tables",
+      summary:
+        "Join information from two sheets with XLOOKUP or VLOOKUP, stop bad entries with dropdown validation, and summarise thousands of rows with a pivot table. Employers often test these three skills directly.",
+      parent: "spreadsheets",
+      optional: false,
+      resources: [sheetsXlookup, sheetsPivot, sheetsDropdown],
+    },
+    {
+      slug: "field-data",
+      title: "Surveys and field data",
+      summary:
+        "NGOs, research groups and public programmes across northern Ghana collect data in communities with phone surveys. This section covers designing the survey, collecting it, cleaning it and protecting the people in it.",
+      parent: null,
+      optional: false,
+      resources: [RES.kobo],
+    },
+    {
+      slug: "survey-design",
+      title: "Designing questionnaires and samples",
+      summary:
+        "Write clear, neutral questions with sensible answer choices, and choose who to ask so the results represent the group you care about. A short, well tested questionnaire beats a long confusing one.",
+      parent: "field-data",
+      optional: false,
+      resources: [RES.khanStats],
+    },
+    {
+      slug: "mobile-surveys",
+      title: "Mobile data collection with KoboToolbox or ODK",
+      summary:
+        "Build a phone form with skip logic and checks, collect responses offline and download the results as a spreadsheet. KoboToolbox and ODK both have free options and are widely used by development projects.",
+      parent: "field-data",
+      optional: false,
+      resources: [koboDocs, odkDocs, xlsform],
+    },
+    {
+      slug: "data-cleaning",
+      title: "Cleaning data",
+      summary:
+        "Fix missing values, duplicates, inconsistent spellings of town names and wrong data types. Keep a log of every change so others can trust your results.",
+      parent: "field-data",
+      optional: false,
+      resources: [RES.kaggleCleaning],
+    },
+    {
+      slug: "data-privacy",
+      title: "Data privacy and ethics",
+      summary:
+        "Learn what personal data is, how to ask for consent, how to anonymise records and what Ghana's Data Protection Act expects. People in small communities are easy to identify, so take extra care.",
+      parent: "field-data",
+      optional: false,
+      resources: [RES.dpc],
+    },
+    {
+      slug: "monitoring-evaluation",
+      title: "Monitoring and evaluation",
+      summary:
+        "M&E officers track whether a project is doing what it promised and whether it is making a difference. Many data jobs in northern Ghana sit inside NGO M&E teams.",
+      parent: null,
+      optional: false,
+      resources: [],
+    },
+    {
+      slug: "indicators-frameworks",
+      title: "Indicators, baselines and logframes",
+      summary:
+        "Learn how a project turns its goals into measurable indicators with baselines and targets, and how a logframe links activities to results. This is the language of every M&E advert.",
+      parent: "monitoring-evaluation",
+      optional: false,
+      resources: [],
+    },
+    {
+      slug: "data-quality-reporting",
+      title: "Data quality checks and progress reports",
+      summary:
+        "Check that reported numbers match the source records, then present progress against targets in a clear monthly or quarterly report. Donors and managers rely on these reports to make decisions.",
+      parent: "monitoring-evaluation",
+      optional: false,
+      resources: [],
     },
     {
       slug: "sql",
       title: "SQL",
       summary:
-        "SQL lets you pull exactly the data you need from a database. It appears in many data analyst job adverts, so give it real practice time.",
+        "SQL lets you pull exactly the rows you need from a database. Banks, telcos, government data teams and remote employers ask for it often, so give it real practice time.",
       parent: null,
       optional: false,
       resources: [],
@@ -60,7 +171,7 @@ export const data: RoadmapDraft = {
       slug: "sql-basics",
       title: "Querying with SQL",
       summary:
-        "Select, filter and sort rows from a table. Interactive lessons let you practise in the browser without installing anything.",
+        "Select, filter and sort rows from a table with SELECT, WHERE and ORDER BY. Interactive lessons let you practise in the browser without installing anything.",
       parent: "sql",
       optional: false,
       resources: [RES.sqlbolt, RES.khanSql],
@@ -69,109 +180,19 @@ export const data: RoadmapDraft = {
       slug: "sql-joins-aggregation",
       title: "Joins and aggregation",
       summary:
-        "Combine tables and summarise data with group by, counts and sums. Answer questions like which district had the most mobile money transactions in a month.",
+        "Combine tables with joins and summarise them with GROUP BY, COUNT and SUM. Answer questions like which district recorded the most mobile money transactions in a month.",
       parent: "sql",
       optional: false,
       resources: [RES.kaggleSql, RES.sqlbolt],
     },
     {
-      slug: "python",
-      title: "Python for analysis",
-      summary:
-        "Python handles data that is too big or too messy for a spreadsheet. Free online notebooks mean you do not need a powerful computer to start.",
-      parent: null,
-      optional: false,
-      resources: [RES.colab],
-    },
-    {
-      slug: "python-basics",
-      title: "Python basics",
-      summary:
-        "Learn variables, lists, loops, functions and reading files. Short daily exercises work better than long sessions.",
-      parent: "python",
-      optional: false,
-      resources: [RES.kagglePython, RES.pythonTutorial],
-    },
-    {
-      slug: "pandas",
-      title: "Working with tables in pandas",
-      summary:
-        "Load, filter, group and reshape tables of data with pandas. Redo one of your spreadsheet analyses in pandas to see the difference.",
-      parent: "python",
-      optional: false,
-      resources: [RES.kagglePandas, RES.pandasStart],
-    },
-    {
-      slug: "notebooks",
-      title: "Notebooks you can share",
-      summary:
-        "Write analysis in a notebook that mixes code, charts and explanation, and share it with a link. Google Colab runs in the browser, which saves you from installing heavy software.",
-      parent: "python",
-      optional: false,
-      resources: [RES.colab],
-    },
-    {
-      slug: "intro-ml",
-      title: "A first look at machine learning",
-      summary:
-        "See how simple models make predictions and how to check if they are any good. This is optional for analyst roles, but it helps you understand where the field is going.",
-      parent: "python",
-      optional: true,
-      resources: [RES.kaggleMl, RES.mlCrash],
-    },
-    {
-      slug: "real-data",
-      title: "Collecting and cleaning real data",
-      summary:
-        "Real data is incomplete and inconsistent, and cleaning it is a large part of the job. This section uses Ghanaian sources and the kind of survey work common in the north.",
-      parent: null,
-      optional: false,
-      resources: [],
-    },
-    {
-      slug: "mobile-surveys",
-      title: "Mobile surveys and field data",
-      summary:
-        "Design short surveys and collect responses on phones, even offline, using free tools. NGOs and development projects in northern Ghana often hire people who can run this monitoring and evaluation work.",
-      parent: "real-data",
-      optional: false,
-      resources: [RES.kobo],
-    },
-    {
-      slug: "data-cleaning",
-      title: "Cleaning data",
-      summary:
-        "Fix missing values, duplicates, inconsistent spellings of town names and wrong data types. Keep a record of every change so others can trust your results.",
-      parent: "real-data",
-      optional: false,
-      resources: [RES.kaggleCleaning],
-    },
-    {
-      slug: "ghana-data-sources",
-      title: "Ghanaian public data",
-      summary:
-        "Find and use published data from the Ghana Statistical Service and the Bank of Ghana. Local datasets make your portfolio far more relevant to Ghanaian employers than generic examples.",
-      parent: "real-data",
-      optional: false,
-      resources: [RES.gss, RES.bog, RES.kaggleDatasets],
-    },
-    {
-      slug: "data-privacy",
-      title: "Data privacy and ethics",
-      summary:
-        "Learn what personal data is, how to anonymise it and what Ghana's Data Protection Act expects. Respondents in small communities can be identified easily, so take extra care.",
-      parent: "real-data",
-      optional: false,
-      resources: [RES.dpc],
-    },
-    {
       slug: "communicating",
       title: "Visualising and communicating",
       summary:
-        "An analysis only matters if someone understands it and acts. This section turns your results into charts, dashboards and short reports.",
+        "An analysis only matters if someone understands it and acts on it. This section turns your results into honest charts, simple dashboards and short summaries that lead with the answer.",
       parent: null,
       optional: false,
-      resources: [],
+      resources: [RES.lfBizWriting],
     },
     {
       slug: "charts",
@@ -184,27 +205,45 @@ export const data: RoadmapDraft = {
     },
     {
       slug: "dashboards",
-      title: "Dashboards",
+      title: "Dashboards in Looker Studio or Power BI",
       summary:
-        "Build a simple dashboard in a free tool such as Looker Studio that updates from a spreadsheet. Keep it to the few numbers a manager checks every week.",
+        "Build a simple dashboard that updates from a spreadsheet and shows the few numbers a manager checks every week. Looker Studio is free in the browser, and Power BI Desktop is free on Windows.",
       parent: "communicating",
       optional: false,
-      resources: [RES.lookerHelp, RES.powerBi],
+      resources: [lookerStudio, RES.lookerHelp, RES.powerBi],
     },
     {
-      slug: "presenting-findings",
-      title: "Presenting findings",
+      slug: "python",
+      title: "Python for analysis",
       summary:
-        "Write a one page summary that leads with the answer, then the evidence, then the recommendation. Practise presenting it in five minutes to someone with no data background.",
-      parent: "communicating",
+        "Python handles data that is too big or too repetitive for a spreadsheet. Free online notebooks mean you do not need a powerful computer to start.",
+      parent: null,
       optional: false,
-      resources: [RES.lfBizWriting],
+      resources: [RES.colab],
+    },
+    {
+      slug: "python-basics",
+      title: "Python basics in a notebook",
+      summary:
+        "Learn variables, lists, loops and functions in a Google Colab notebook that mixes code with notes. Short daily exercises work better than long sessions.",
+      parent: "python",
+      optional: false,
+      resources: [RES.kagglePython, RES.colab, RES.pythonTutorial],
+    },
+    {
+      slug: "pandas",
+      title: "Working with tables in pandas",
+      summary:
+        "Load a CSV file, filter, group and clean it with pandas. Redo one of your spreadsheet analyses in pandas to see the difference.",
+      parent: "python",
+      optional: false,
+      resources: [RES.kagglePandas, RES.pandasStart],
     },
     {
       slug: "getting-hired",
-      title: "Getting hired and getting paid",
+      title: "Getting hired",
       summary:
-        "Employers want proof that you can find a useful answer in real data. This section helps you show that clearly.",
+        "Employers want proof that you can find a useful answer in real data. This section helps you show that clearly and find the right first role.",
       parent: null,
       optional: false,
       resources: [],
@@ -213,25 +252,16 @@ export const data: RoadmapDraft = {
       slug: "portfolio",
       title: "A portfolio of case studies",
       summary:
-        "Publish three analyses with the question, the data, your method and what you found, ideally using Ghanaian data. Share notebooks and dashboards as links so they open on a phone.",
+        "Publish three short analyses that show the question, the data, your method and what you found, ideally using Ghanaian public data. Share them as links that open on a phone.",
       parent: "getting-hired",
       optional: false,
-      resources: [RES.kaggleDatasets, RES.githubDocs],
-    },
-    {
-      slug: "freelancing",
-      title: "Freelancing for SMEs and NGOs",
-      summary:
-        "Offer to clean records, build sales dashboards or analyse survey results for local businesses and organisations. Agree the scope and price in cedis in writing before you start.",
-      parent: "getting-hired",
-      optional: true,
-      resources: [RES.lfFreelancing],
+      resources: [RES.gss, RES.kaggleDatasets, RES.githubDocs],
     },
     {
       slug: "job-search",
-      title: "Job search and interviews",
+      title: "Job search and practical tests",
       summary:
-        "Look beyond the title data analyst to roles in monitoring and evaluation, finance, operations and research. Expect a practical test, so practise SQL and spreadsheet tasks under time pressure.",
+        "Look beyond the title data analyst to data entry, M&E assistant, research assistant and reporting roles. Expect a practical test, so practise spreadsheet and SQL tasks against the clock.",
       parent: "getting-hired",
       optional: false,
       resources: [RES.lfJobsearch, RES.lfInterview],

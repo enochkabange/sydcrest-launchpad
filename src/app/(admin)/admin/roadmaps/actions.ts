@@ -13,6 +13,8 @@ import {
 } from "@/lib/roadmap-admin";
 import { importRoadmapDrafts } from "@/lib/roadmap-import";
 import { ROADMAP_DRAFTS } from "@/content/roadmaps";
+import { TRACK_CONTENT } from "@/content/roadmaps/content";
+import { importTrackContent } from "@/lib/content-import";
 import { revalidateRoadmap } from "@/lib/roadmaps/revalidate";
 
 /**
@@ -85,10 +87,16 @@ export async function importDrafts(): Promise<FormState> {
   const { supabase } = await requireAdmin();
   try {
     const summary = await importRoadmapDrafts(supabase, ROADMAP_DRAFTS);
+    // Lessons and quizzes second, so every node they belong to exists.
+    const lessons = await importTrackContent(supabase, TRACK_CONTENT);
     contentChanged();
+    const missing = [...lessons.missingRoadmaps, ...lessons.missingNodes];
     return {
       saved: Date.now(),
-      message: `Imported ${ROADMAP_DRAFTS.length} drafts: ${summary.created} new, ${summary.updated} updated, ${summary.nodes} nodes, ${summary.resourcesAdded} new links.`,
+      message:
+        `Imported ${ROADMAP_DRAFTS.length} drafts: ${summary.created} new, ${summary.updated} updated, ${summary.nodes} nodes, ${summary.resourcesAdded} new links. ` +
+        `Lessons: ${lessons.written} written, ${lessons.unchanged} already up to date.` +
+        (missing.length ? ` Skipped (no matching node): ${missing.join(", ")}.` : ""),
     };
   } catch (error) {
     console.error("importDrafts failed", error);

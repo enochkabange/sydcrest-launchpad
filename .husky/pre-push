@@ -1,0 +1,9 @@
+# Local guard: main only changes through merged PRs (the pipeline refuses to
+# deploy anything else). Bypass deliberately with: git push --no-verify
+while read -r local_ref local_sha remote_ref remote_sha; do
+  if [ "$remote_ref" = "refs/heads/main" ]; then
+    echo "✗ Direct pushes to main are blocked. Push a branch and open a PR."
+    exit 1
+  fi
+done
+exit 0
