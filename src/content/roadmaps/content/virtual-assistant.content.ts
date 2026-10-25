@@ -646,7 +646,7 @@ The two most common tool sets are Google Workspace (Gmail and Google Calendar) a
 
 ## Access done safely
 
-Clients give assistants access in different ways. The safest is **delegation**, where the client shares their inbox or calendar with your own account, so you never need their password. Gmail and Google Calendar both support this. If a client sends you their password instead, suggest delegation or a password manager, and never share the password with anyone else.
+Clients give assistants access in different ways. The safest is **delegation**, where the client shares their inbox or calendar with your own account, so you never need their password. Gmail and Google Calendar both support this. Delegation is set up in Gmail on a computer, and some delegated features are limited in the phone apps, so plan to do this part on a laptop or a shared computer. If a client sends you their password instead, suggest delegation or a password manager, and never share the password with anyone else.
 
 ## A small example
 
@@ -750,6 +750,8 @@ Alhassan manages the inbox for a guest house owner in Wa. He creates labels for 
       practice_task_md: `**Goal:** Build a simple inbox system in your practice Gmail account.
 
 **Steps:**
+Labels work in the Gmail phone app, but filters and templates are set up in Gmail on the web. Open gmail.com in your phone browser and switch to the desktop version, or use a shared computer for steps 2 and 3.
+
 1. In your practice Gmail account, create four labels: Action, Waiting, Reference and Finance.
 2. Create one filter, for example so that any email containing the word "invoice" gets the Finance label.
 3. Save one template reply for a common question, such as opening hours and prices for an imaginary shop.
@@ -860,7 +862,7 @@ Napari manages the calendar for a programme director at an NGO in Tamale. A dono
       practice_task_md: `**Goal:** Manage a week of calendar events for an imaginary client.
 
 **Steps:**
-1. In your practice Google Calendar, create a new calendar called "Client practice".
+1. Create a new calendar called "Client practice". This is done in Google Calendar on the web (open calendar.google.com in your phone browser in desktop mode, or use a shared computer). If that is difficult, use your main calendar instead.
 2. Add five events for next week for an imaginary client, each with a clear title, time, location or meeting link, and a description with what to prepare.
 3. Add two focus blocks and one 15 minute buffer before an important meeting.
 4. Move one event to a new time by editing it, and check nothing clashes.
