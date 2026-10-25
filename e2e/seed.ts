@@ -6,7 +6,7 @@
 const API = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL ?? "http://127.0.0.1:54321";
 
 function secretKey() {
-  const key = process.env.SUPABASE_SECRET_KEY;
+  const key = process.env.SUPABASE_SECRET_KEY ?? process.env.SUPABASE_SERVICE_ROLE_KEY;
   if (!key) throw new Error("SUPABASE_SECRET_KEY is not set. Export it from `supabase status -o json` (.SECRET_KEY).");
   return key;
 }
