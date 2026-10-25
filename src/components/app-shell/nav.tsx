@@ -2,10 +2,13 @@
 
 import Link from "@/components/ui/link";
 import { usePathname } from "next/navigation";
-import { House, UserRound, type LucideIcon } from "lucide-react";
+import { Compass, House, Map, Trophy, UserRound, type LucideIcon } from "lucide-react";
 
 const DESTINATIONS: { href: string; label: string; icon: LucideIcon }[] = [
   { href: "/dashboard", label: "Home", icon: House },
+  { href: "/roadmaps", label: "Roadmaps", icon: Map },
+  { href: "/path", label: "Your path", icon: Compass },
+  { href: "/leaderboards", label: "Leaders", icon: Trophy },
   { href: "/profile", label: "Profile", icon: UserRound },
 ];
 
