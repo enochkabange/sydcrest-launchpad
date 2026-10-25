@@ -280,7 +280,7 @@ export const digitalMarketing: RoadmapDraft = {
       slug: "dmp-cohort",
       title: "Join a mentored cohort",
       summary:
-        "SydCrest's Delta Mentoring Program covers this field over twelve weeks with mentors and a capstone project in SEO, social media or Google Ads. Apply if you want structure, feedback and a certificate alongside this roadmap.",
+        "SydCrest's Delta Mentoring Program covers this field over twelve weeks with mentors and a capstone project in SEO, social media or Google Ads. Join the waitlist if you want structure, feedback and a certificate alongside this roadmap.",
       parent: "earning",
       optional: true,
       resources: [],

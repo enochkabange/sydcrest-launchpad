@@ -466,7 +466,7 @@ A brand voice is the personality in the words. A youth church event might sound 
 
 ## Honest claims only
 
-Never promise what the product cannot do. Do not call shea butter a cure for a disease, and do not invent customer reviews. In Ghana, the Food and Drugs Authority oversees adverts for products such as cosmetics, food and medicines, and the platforms' own policies also expect claims to be truthful, and one exposed lie can destroy trust that took years to build.
+Never promise what the product cannot do. Do not call shea butter a cure for a disease, and do not invent customer reviews. In Ghana, the Food and Drugs Authority sets rules for adverts for products such as cosmetics, food and medicines. The platforms' own policies also expect claims to be truthful. One exposed lie can destroy trust that took years to build.
 
 ## Using AI writing tools
 
@@ -474,9 +474,9 @@ AI chat tools can suggest captions quickly. Treat them as a first draft only. Ch
 
 ## A worked example
 
-Sumaila writes for a mobile money vendor running a promotion. His first draft: "We are pleased to inform our esteemed customers of our ongoing promotion." Nobody will read that. His rewrite:
+Sumaila runs a mobile money shop and writes his own posts. For a made up promotion, his first draft is: "We are pleased to inform our esteemed customers of our ongoing promotion." Nobody will read that. His rewrite:
 
-"Do any MoMo cash out this week and get a free loyalty stamp. Five stamps earn you GHS 5 airtime. Only at Sumaila Ventures, opposite Aboabo market. Open 7am to 8pm. Bring your Ghana Card."
+"Do any MoMo cash out this week and get a free loyalty stamp. Five stamps earn you GHS 5 airtime. Only at Sumaila Ventures, opposite Aboabo market. Open 7am to 8pm."
 
 Benefit first, clear detail, location and a next step. That is copywriting.`,
       practice_task_md: `**Goal:** Rewrite real posts so they sell more clearly.
@@ -1633,7 +1633,7 @@ Ads must follow Meta's advertising standards. Some topics, such as credit, jobs,
 
 ## A worked example
 
-Hawa wants more orders for her shea butter gift packs before Christmas. Abdul-Rahman sets up a campaign with a messaging objective, an audience of adults within a set distance of Tamale, a small daily budget and two versions of the ad: one photo and one short video. After four days the video brings messages at a lower cost, so he pauses the photo and moves its budget to the video. He records every message and sale in a sheet so Hawa can see what the money achieved.`,
+Hawa wants more orders for her shea butter gift packs before Christmas. Abdul-Rahman sets up a campaign whose goal is WhatsApp messages, with an audience of adults within a set distance of Tamale, a small daily budget and two versions of the ad: one photo and one short video. After four days the video brings messages at a lower cost, so he pauses the photo and moves its budget to the video. He records every message and sale in a sheet so Hawa can see what the money achieved.`,
       practice_task_md: `**Goal:** Build a practice social ad campaign up to the review step without spending money.
 
 **Steps:**
@@ -1898,7 +1898,7 @@ For most small businesses, action and money numbers matter most. A post with few
 
 ## Tracking without a website
 
-Many SydCrest clients will not have a website, and that is fine. You can still track:
+Many of the businesses you work with will not have a website, and that is fine. You can still track:
 
 * Platform insights from WhatsApp Business, Facebook, Instagram and TikTok.
 * A simple Google Sheet where the business records each order and asks "Where did you hear about us?"
@@ -2444,7 +2444,7 @@ Wumpini's portfolio has three case studies: a Bolgatanga basket group's WhatsApp
 
 Free courses from the platforms themselves are respected because they teach the tools employers use:
 
-* **Google Skillshop** offers free courses and free certifications in Google Ads (including Search) and Google Analytics, plus training on Google Business Profile.
+* **Google Skillshop** offers free courses that lead to certifications in Google Ads (including Search) and Google Analytics, plus training on Google Business Profile. Skillshop certifications are free to take at the time of writing, but check the course page before you start.
 * **Meta Blueprint** offers free courses on Facebook, Instagram and Meta ads. Its formal certification exams usually charge a fee, so check before you register and do not feel you must pay to start.
 
 Add completed certifications to your CV with the month you earned them. They show initiative, but they work best alongside real portfolio work.
@@ -2631,7 +2631,7 @@ Fuseini offers three packages to businesses in Tamale. A pharmacy shop takes the
       },
     },
     "dmp-cohort": {
-      explanation_md: `Learning alone on a phone takes real discipline. Some people move faster with a group, a schedule and someone experienced checking their work. SydCrest runs the Delta Mentoring Program, or DMP, a twelve week cohort for digital skills and digital marketing. This roadmap and the DMP are designed to fit together: the roadmap gives you a broad beginner base, and the DMP adds structure, mentors and a specialisation.
+      explanation_md: `Learning alone on a phone takes real discipline. Some people move faster with a group, a schedule and someone experienced checking their work. SydCrest's Delta Mentoring Program, or DMP, is a twelve week cohort for digital skills and digital marketing. This roadmap and the DMP are designed to fit together: the roadmap gives you a broad beginner base, and the DMP adds structure, mentors and a specialisation.
 
 ## How the twelve weeks are organised
 
@@ -2662,11 +2662,11 @@ If you are unsure which specialisation to pick, look back at which roadmap lesso
 
 The DMP suits you if you want deadlines, feedback from mentors, a group to learn with and a structured capstone. If you prefer to learn at your own pace, keep going with this roadmap; it stands on its own. Either way, the portfolio you build is what shows employers and clients what you can do.
 
-Places in each cohort are limited. Check SydCrest's site for when applications open, and mention the roadmap lessons you have completed in your application.
+The first DMP cohort is planned as a free pilot with 25 seats, starting in January 2027. Plans can change, so check the programme page on SydCrest's site for the latest details. You can join the waitlist there; joining the waitlist is not a confirmed place. If you do apply later, mention the roadmap lessons you have completed.
 
 ## A small example
 
-Hawa completed most of this roadmap on her phone and enjoyed the search lessons most. She applies to the DMP and chooses the SEO and Content Marketing specialisation. Because she already understands keywords and Google Business Profile, she uses the specialisation weeks to go deeper and builds a capstone around a real Tamale guest house.`,
+Hawa completed most of this roadmap on her phone and enjoyed the search lessons most. She joins the DMP waitlist and, once she has a place, chooses the SEO and Content Marketing specialisation. Because she already understands keywords and Google Business Profile, she uses the specialisation weeks to go deeper and builds a capstone around a real Tamale guest house.`,
       practice_task_md: `**Goal:** Decide whether the DMP suits you and which specialisation fits you best.
 
 **Steps:**
@@ -2674,7 +2674,7 @@ Hawa completed most of this roadmap on her phone and enjoyed the search lessons 
 2. Match those lessons to the three DMP specialisations: SEO and Content Marketing, Social Media Marketing, or Google Ads.
 3. Write two sentences on why you would choose that specialisation.
 4. Write two sentences on whether you prefer a structured cohort or learning at your own pace, and why.
-5. If you choose the cohort, gather two portfolio pieces to mention when applications open.
+5. If you choose the cohort, gather two portfolio pieces you could mention if you apply.
 
 **Done looks like:** A short note naming your preferred specialisation, your reasons and two pieces of work you could share in an application.`,
       quiz: {
