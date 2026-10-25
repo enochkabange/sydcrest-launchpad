@@ -39,7 +39,8 @@ export type RoadmapTrack =
   | "digital-marketing"
   | "ui-ux"
   | "product"
-  | "digital-skills-bridge";
+  | "digital-skills-bridge"
+  | "it-support";
 
 /** Coarse grouping for browsing; not yet fixed in the schema, founder to confirm. */
 export type FieldCategory =
@@ -48,7 +49,8 @@ export type FieldCategory =
   | "marketing"
   | "design"
   | "product"
-  | "foundations";
+  | "foundations"
+  | "infrastructure";
 
 export type RoadmapDraft = {
   slug: string;
