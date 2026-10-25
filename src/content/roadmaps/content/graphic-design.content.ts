@@ -97,7 +97,7 @@ After learning a few principles, Napari tries again: one bold heading, one clear
 
 * **Print shops and branding companies.** Many towns have shops that print flyers, banners, business cards, calendars, souvenirs and branded items such as mugs and T shirts. Designers here create artwork quickly for walk in customers and prepare files the printing machines can use. Speed and print knowledge matter most.
 * **Advertising and creative agencies.** Mostly in Accra, agencies design campaigns for bigger brands. Work includes social media posts, billboards, adverts and sometimes simple animation. Agencies expect strong ideas, a good portfolio and the ability to follow a brief.
-* **In house teams.** Companies such as real estate firms, car dealers, banks, schools and betting or media companies hire their own designers to make marketing materials. You follow the company's brand guidelines and work closely with the marketing team.
+* **In house teams.** Companies such as real estate firms, car dealers, banks, schools and media companies hire their own designers to make marketing materials. You follow the company's brand guidelines and work closely with the marketing team.
 * **NGOs, churches and schools.** These organisations need reports, posters, certificates, programmes, handbooks and social media graphics. Some hire designers, and many hire freelancers for each project.
 * **Freelance.** Many designers work for themselves, serving shops, events, churches and small businesses, and sometimes clients abroad through remote work.
 
@@ -183,7 +183,7 @@ He decides to start with what is closest: flyers and social media posts for his 
 Every design file is one of two kinds.
 
 * **Raster (pixel) images** are made of tiny coloured squares called pixels. Photos are raster images. If you stretch a small raster image to make it bigger, it goes blurry or blocky. Common raster files are JPG and PNG.
-* **Vector graphics** are made of shapes described by points and curves. You can make a vector logo the size of a stamp or the size of a billboard and it stays sharp. Common vector files are SVG and PDF, and many print shops in Ghana also work with files from paid vector programs.
+* **Vector graphics** are made of shapes described by points and curves. You can make a vector logo the size of a stamp or the size of a billboard and it stays sharp. Common vector files are SVG and PDF. Many print shops in Ghana design in a paid vector program such as CorelDRAW, and most will also accept a PDF with the text converted to outlines.
 
 Simple rule: photos are raster, logos and illustrations should be vector.
 

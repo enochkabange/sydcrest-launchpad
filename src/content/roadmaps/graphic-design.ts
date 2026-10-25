@@ -48,7 +48,6 @@ const wipoTrademarks: ResourceDraft = {
   kind: "article",
 };
 const scribusWiki: ResourceDraft = { label: "Scribus wiki and guides", url: "https://wiki.scribus.net/", kind: "article" };
-const figmaHelp: ResourceDraft = { label: "Figma Learn help centre", url: "https://help.figma.com/hc/en-us", kind: "article" };
 const jobbermanCreative: ResourceDraft = {
   label: "Jobberman Ghana: Creative and Design jobs",
   url: "https://jobberman.com.gh/jobs/creative-design",
@@ -270,7 +269,7 @@ export const graphicDesign: RoadmapDraft = {
         "Choose your best eight to twelve pieces, show the problem and your thinking behind each one and present them in a light, phone friendly format. Real projects for local clients count.",
       parent: "getting-hired",
       optional: false,
-      resources: [figmaHelp, RES.lfDesign],
+      resources: [RES.lfDesign, jobbermanCreative],
     },
     {
       slug: "freelancing",
