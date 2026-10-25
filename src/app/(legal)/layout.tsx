@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import Logo from "@/components/brand/Logo";
 
 /** Plain reading layout for the privacy policy and terms. Fully static: no session reads. */

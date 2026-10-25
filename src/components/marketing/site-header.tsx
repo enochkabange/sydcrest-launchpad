@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import Logo, { LogoMark } from "@/components/brand/Logo";
 import { buttonClasses } from "@/components/ui/button";
 import { MarketingNavLinks } from "./nav-links";

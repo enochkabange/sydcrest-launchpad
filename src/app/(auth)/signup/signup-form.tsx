@@ -50,7 +50,11 @@ export function SignupForm() {
         minLength={MIN_PASSWORD}
         required
       />
-      <AgeConsentFields defaultDateOfBirth={state.values?.date_of_birth} errors={state.errors} />
+      <AgeConsentFields
+        defaultDateOfBirth={state.values?.date_of_birth}
+        defaultTerms={state.values?.terms}
+        errors={state.errors}
+      />
       <Button type="submit" disabled={pending} className="w-full">
         {pending ? "Creating your account…" : "Create account"}
       </Button>

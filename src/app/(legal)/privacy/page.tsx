@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { LegalDocument, PrivacyContact } from "../legal-document";
 
 export const metadata: Metadata = {

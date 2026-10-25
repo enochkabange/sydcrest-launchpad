@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { HeroGraphic, StepGraphic } from "@/components/brand/illustrations";
 import { Card, Section, Stat } from "@/components/marketing/section";
 import { buttonClasses } from "@/components/ui/button";

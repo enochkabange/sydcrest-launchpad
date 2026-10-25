@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import { DataSaverFlag } from "@/components/pwa/data-saver";
 import { ServiceWorker } from "@/components/pwa/service-worker";
 import "./globals.css";
+import { SITE_URL } from "@/lib/site";
 
 const urbanist = localFont({
   src: "./fonts/urbanist-variable.woff2",
@@ -12,7 +13,7 @@ const urbanist = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "SydCrest Launchpad",
     template: "%s · SydCrest Launchpad",

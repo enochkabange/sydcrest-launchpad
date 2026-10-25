@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { Card, PageHeader, Section } from "@/components/marketing/section";
 import { WaitlistForm } from "@/components/marketing/waitlist-form";
 import { CONTACT_EMAIL, PILOT } from "@/content/marketing";
