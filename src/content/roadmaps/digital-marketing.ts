@@ -1,11 +1,15 @@
 import { RES } from "./resources";
 import type { RoadmapDraft } from "./types";
 
+/**
+ * Revised against job advert and skills framework research for issue #84.
+ * Evidence for every node: src/content/research/digital-marketing.md.
+ */
 export const digitalMarketing: RoadmapDraft = {
   slug: "digital-marketer",
   title: "Digital Marketer",
   description:
-    "Help Ghanaian businesses find and keep customers on WhatsApp, social media and search. Learn on your phone with free tools and build a portfolio from real local clients.",
+    "Help Ghanaian businesses, churches and NGOs find and keep customers on WhatsApp, social media, email and search. Learn on your phone with free tools and build a portfolio from real local clients.",
   track: "digital-marketing",
   field_category: "marketing",
   locale: "en-GH",
@@ -31,9 +35,9 @@ export const digitalMarketing: RoadmapDraft = {
     },
     {
       slug: "know-your-audience",
-      title: "Knowing your audience",
+      title: "Knowing your audience and competitors",
       summary:
-        "Describe who the customer is, what they need, which language they prefer and which apps they use. A post in Dagbani, Twi or Pidgin can reach people an English post misses.",
+        "Describe who the customer is, what they need, which language they prefer and which apps they use, then study what similar businesses already do. A post in Dagbani, Twi or Pidgin can reach people an English post misses.",
       parent: "foundations",
       optional: false,
       resources: [RES.lfCommunication],
@@ -54,25 +58,34 @@ export const digitalMarketing: RoadmapDraft = {
         "Content is what people see, read and share. You can produce professional work with only a phone and free apps.",
       parent: null,
       optional: false,
-      resources: [],
+      resources: [RES.lfCanva],
     },
     {
       slug: "copywriting",
       title: "Writing that sells",
       summary:
-        "Write short, clear posts, captions and messages that tell people what to do next. Lead with the benefit and include the price and how to pay when you can.",
+        "Write short, clear posts, captions and messages in a consistent brand voice that tell people what to do next. Lead with the benefit and include the price and how to pay when you can.",
       parent: "content",
       optional: false,
       resources: [RES.lfWriting, RES.lfBizWriting],
     },
     {
-      slug: "phone-photo-video",
-      title: "Photos, graphics and short video on a phone",
+      slug: "graphics-and-photos",
+      title: "Product photos and graphics",
       summary:
-        "Take clean product photos in daylight, design simple graphics in a free tool and edit short vertical videos. Keep files small so customers on limited data can still load them.",
+        "Take clean product photos in daylight and design simple branded graphics in a free tool. Keep files small so customers on limited data can still load them.",
       parent: "content",
       optional: false,
       resources: [RES.lfCanva, RES.lfDesign],
+    },
+    {
+      slug: "short-video",
+      title: "Short video and live selling",
+      summary:
+        "Shoot and edit short vertical videos on a phone for TikTok, Reels and WhatsApp Status, and learn how businesses sell during live streams. Clear sound, a strong first few seconds and captions matter more than expensive gear.",
+      parent: "content",
+      optional: false,
+      resources: [RES.tiktokBusiness, RES.metaLearn],
     },
     {
       slug: "content-calendar",
@@ -85,9 +98,9 @@ export const digitalMarketing: RoadmapDraft = {
     },
     {
       slug: "social-and-messaging",
-      title: "Social media and messaging",
+      title: "Social media, messaging and email",
       summary:
-        "Many Ghanaian businesses sell directly through chat and social apps. This section teaches you to run those channels professionally.",
+        "Many Ghanaian businesses sell directly through chat, social apps and email lists. This section teaches you to run those channels professionally.",
       parent: null,
       optional: false,
       resources: [RES.metaLearn],
@@ -111,22 +124,22 @@ export const digitalMarketing: RoadmapDraft = {
       resources: [RES.metaLearn],
     },
     {
-      slug: "short-video-platforms",
-      title: "TikTok and short video",
-      summary:
-        "Learn how short video platforms decide what to show and how businesses use trends without losing their message. Test it for clients whose customers are young.",
-      parent: "social-and-messaging",
-      optional: true,
-      resources: [RES.tiktokBusiness],
-    },
-    {
       slug: "community-management",
       title: "Community management and customer care",
       summary:
-        "Reply to comments and messages quickly, handle complaints politely in public and move sensitive issues to a private chat. Never ask customers to share PINs or codes in comments.",
+        "Reply to comments and messages quickly, handle complaints politely in public, and work with trusted local voices who can speak for a brand. Never ask customers to share PINs or codes in comments.",
       parent: "social-and-messaging",
       optional: false,
       resources: [RES.lfCommunication],
+    },
+    {
+      slug: "email-marketing",
+      title: "Email newsletters",
+      summary:
+        "Build a list of people who agreed to hear from a business and send them short, useful newsletters. Email reaches people without depending on a social app deciding who sees a post.",
+      parent: "social-and-messaging",
+      optional: false,
+      resources: [RES.lfGmail, RES.lfBizWriting],
     },
     {
       slug: "search-and-local",
@@ -135,7 +148,7 @@ export const digitalMarketing: RoadmapDraft = {
         "People search for businesses near them on Google and maps. This section makes sure your clients show up when they do.",
       parent: null,
       optional: false,
-      resources: [],
+      resources: [RES.lfSearch],
     },
     {
       slug: "google-business-profile",
@@ -148,21 +161,12 @@ export const digitalMarketing: RoadmapDraft = {
     },
     {
       slug: "seo-basics",
-      title: "SEO basics",
+      title: "SEO and keyword basics",
       summary:
-        "Learn how search engines find and rank pages, and how to write titles and content that match what people search for. Focus on local searches such as a service plus a town name.",
+        "Learn how search engines find and rank pages, and how to research the words people actually type. Focus on local searches such as a service plus a town name.",
       parent: "search-and-local",
       optional: false,
       resources: [RES.seoStarter],
-    },
-    {
-      slug: "simple-websites",
-      title: "A simple business website",
-      summary:
-        "Build a fast one page site with a free website builder that shows what the business does and how to reach it. Add a WhatsApp link and payment instructions so visitors can act straight away.",
-      parent: "search-and-local",
-      optional: true,
-      resources: [RES.lfWeb],
     },
     {
       slug: "paid-ads",
@@ -171,7 +175,7 @@ export const digitalMarketing: RoadmapDraft = {
         "Paid ads reach people beyond a page's followers. Learn to spend small amounts carefully and measure the result.",
       parent: null,
       optional: false,
-      resources: [],
+      resources: [RES.skillshop],
     },
     {
       slug: "social-ads",
@@ -188,7 +192,7 @@ export const digitalMarketing: RoadmapDraft = {
       summary:
         "Learn how search ads match keywords to what people type and how bidding works. Google's free Skillshop training includes certifications you can add to your CV.",
       parent: "paid-ads",
-      optional: true,
+      optional: false,
       resources: [RES.skillshop, RES.adsHelp],
     },
     {
@@ -202,12 +206,21 @@ export const digitalMarketing: RoadmapDraft = {
     },
     {
       slug: "measurement",
-      title: "Measuring results",
+      title: "Campaigns and results",
       summary:
-        "Clients keep paying marketers who can show what their money achieved. This section covers tracking and honest reporting.",
+        "Clients keep paying marketers who can plan a campaign and show what their money achieved. This section covers planning, tracking and honest reporting.",
       parent: null,
       optional: false,
-      resources: [],
+      resources: [RES.gaHelp],
+    },
+    {
+      slug: "campaign-plan",
+      title: "Planning a campaign",
+      summary:
+        "Turn a goal into a short plan with an audience, a message, channels, a budget, dates and a number to watch. One clear page keeps you and the client on the same track.",
+      parent: "measurement",
+      optional: false,
+      resources: [RES.lfSheets, RES.skillshop],
     },
     {
       slug: "analytics",
@@ -234,16 +247,25 @@ export const digitalMarketing: RoadmapDraft = {
         "Digital marketing can lead to agency jobs, in house roles or your own freelance business. This section helps you choose and start.",
       parent: null,
       optional: false,
-      resources: [],
+      resources: [RES.lfJobsearch],
     },
     {
       slug: "portfolio",
       title: "A portfolio from real businesses",
       summary:
-        "Offer a short trial to two or three local businesses and document the before, the work and the results. Real accounts with real numbers convince clients more than mock projects.",
+        "Offer a short trial to two or three local businesses and document the before, the work and the results. Real accounts with honest numbers convince employers more than mock projects.",
       parent: "earning",
       optional: false,
       resources: [RES.lfResume],
+    },
+    {
+      slug: "job-applications",
+      title: "Certificates, CVs and applications",
+      summary:
+        "Earn free platform certificates, write a CV that shows real work, and apply to agencies, companies and NGOs. Never pay anyone to get a job interview.",
+      parent: "earning",
+      optional: false,
+      resources: [RES.skillshop, RES.lfJobsearch, RES.lfInterview],
     },
     {
       slug: "freelancing",
@@ -258,7 +280,7 @@ export const digitalMarketing: RoadmapDraft = {
       slug: "dmp-cohort",
       title: "Join a mentored cohort",
       summary:
-        "SydCrest's Delta Mentoring Program covers this field over twelve weeks with mentors and a capstone project. Apply if you want structure, feedback and a certificate alongside this roadmap.",
+        "SydCrest's Delta Mentoring Program covers this field over twelve weeks with mentors and a capstone project in SEO, social media or Google Ads. Apply if you want structure, feedback and a certificate alongside this roadmap.",
       parent: "earning",
       optional: true,
       resources: [],
