@@ -1343,6 +1343,510 @@ She shares it in the team WhatsApp group with one line of reasoning for each ite
         pass_threshold: 75,
       },
     },
+    building: {
+      explanation_md: `Product people do not build alone. Once you know what to build, the work moves to engineers and designers, and your job becomes helping them succeed: answering questions, making decisions quickly, protecting focus and checking that what is built actually meets the need. Adverts for associate product, business analyst and product operations roles in Ghana mention Agile methods, working across teams, technical understanding and testing before release.
+
+## Your role during building
+
+* **Be available.** Engineers will find questions nobody thought of. A quick answer keeps work moving; a slow answer wastes days.
+* **Keep the why visible.** Remind the team of the problem and the user, so small decisions point the same way.
+* **Protect scope.** New requests will arrive mid build. Most should wait for the next cycle.
+* **Check the work.** Before anything reaches users, make sure it meets the acceptance criteria.
+
+## Respect and trust
+
+Good relationships with engineers and designers are built on respect for their expertise. You decide what problem to solve and why; they decide how best to build it. Ask questions instead of giving orders: "What would make this easier to build?" is better than "Just add a button."
+
+## What this section covers
+
+* **Agile ways of working.** Sprints, backlogs, boards, standups and retrospectives, and why teams ship in small pieces.
+* **Technical literacy.** Enough understanding of APIs, databases, mobile money integrations and releases to judge effort and ask good questions, without coding.
+* **Working with designers.** User flows, wireframes and usability tests, and how to give useful feedback.
+* **Acceptance testing and release.** Checking the build against the criteria and planning a safe release to real users.
+
+## Worked example: the NGO beneficiary tracker
+
+Sumaila is the associate product manager for an NGO's beneficiary tracking tool. Mid sprint, the engineer asks: "If a field officer registers a household with no phone number, should the form allow it?" The spec does not say.
+
+Sumaila does not guess. He calls two field officers, who explain that many households in remote communities have no phone. He replies within the hour: "Yes, allow it, but require a community name and a household head name instead." He updates the spec so the answer is recorded.
+
+Later the country director asks to add a donor report screen to the current sprint. Sumaila explains that the team is focused on offline registration, which field officers need first, and adds the report to the next sprint's list. The director agrees because the reasoning is clear.
+
+Neither action involved code. Both kept the team building the right thing.`,
+      practice_task_md: `**Goal:** practise answering builder questions quickly and clearly.
+
+1. Take the spec or user stories you wrote earlier.
+2. Imagine you are the engineer. Write five questions an engineer might ask that your spec does not answer, such as missing data, errors or limits.
+3. Answer each question in one or two sentences, explaining the reason.
+4. Update your spec with the answers and mark what changed.
+
+**Done looks like:** five questions with clear answers, and an updated spec with a short change log.`,
+      quiz: {
+        questions: [
+          q(
+            "Why should a product person answer engineers' questions quickly?",
+            [
+              "Slow answers waste days of building time",
+              "Engineers cannot make any decisions",
+              "It is a legal requirement",
+              "So they can skip testing",
+            ],
+            0,
+            "A quick answer keeps work moving.",
+          ),
+          q(
+            "In the lesson, who decides how best to build something?",
+            ["The product person alone", "The engineers and designers", "The customers", "The finance team"],
+            1,
+            "Product decides what and why; builders decide how.",
+          ),
+          q(
+            "How did Sumaila answer the question about households without phones?",
+            [
+              "He guessed",
+              "He asked the director",
+              "He called field officers, then gave a clear answer and updated the spec",
+              "He told the engineer to decide",
+            ],
+            2,
+            "He checked with users and recorded the decision.",
+          ),
+          q(
+            "What did Sumaila do with the request for a donor report screen mid sprint?",
+            [
+              "Added it immediately",
+              "Explained the current focus and moved it to the next sprint's list",
+              "Refused forever",
+              "Asked the engineer to work overtime",
+            ],
+            1,
+            "He protected the sprint's scope while keeping the request for later.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "agile-basics": {
+      explanation_md: `Most software teams in Ghana, from bank digital teams to startups, use some form of Agile. Adverts for business analysts, product operations staff and associate product managers mention Scrum, Kanban and tools like Jira. You do not need a certificate to start; you need to understand the ideas and why they work.
+
+## The core idea
+
+Instead of planning everything for a year and delivering it all at once, Agile teams build in **small pieces**, show working results often, and adjust based on what they learn. If a decision was wrong, you find out in two weeks, not twelve months.
+
+## Key terms
+
+* **Backlog.** A prioritised list of work waiting to be done: user stories, bugs and tasks. The product person usually keeps it in order.
+* **Sprint.** A fixed period, often one or two weeks, in which the team commits to finishing a set of backlog items. This rhythm comes from Scrum.
+* **Sprint planning.** A meeting at the start of a sprint where the team picks items from the top of the backlog and agrees what they can finish.
+* **Standup.** A short daily check in, often 15 minutes: what I did, what I will do, what is blocking me.
+* **Review or demo.** At the end of the sprint the team shows what it built to stakeholders.
+* **Retrospective.** The team discusses what went well, what did not, and one or two things to improve.
+* **Board.** A visual view of work in columns such as To do, In progress, In review, Done. Kanban teams work from a board without fixed sprints, limiting how much is in progress at once.
+
+## Your part as a product person
+
+* Keep the backlog ordered and the top items ready, with clear stories and acceptance criteria.
+* Join planning to explain the why behind each item.
+* Answer questions during the sprint.
+* Accept or reject finished stories against their criteria.
+* Listen in retrospectives, because process problems often start with unclear requirements.
+
+## Tools
+
+Jira, Trello, Linear and GitHub Projects are common. Trello and GitHub Projects have free plans. A shared Google Sheet with columns works fine for a small team.
+
+## Worked example: the farmers' market app
+
+Mariama's team works in two week sprints. In planning, the top backlog items are "repeat last order" and "SMS confirmation to farmers". The engineers estimate both fit. Midway, a standup reveals that the SMS provider needs a business registration document. Mariama gets the document from operations the same day, unblocking the work.
+
+At the review, the team demos repeat orders to two chop bar owners over a video call. One asks to edit quantities before confirming. Mariama adds that as a new story to the backlog. In the retrospective, engineers say some stories lacked unhappy paths, so Mariama agrees to add them before planning.
+
+Notice how the short cycle caught a new need quickly.`,
+      practice_task_md: `**Goal:** run a mini sprint on your own project.
+
+1. Create a free Trello board or a Google Sheet with columns: Backlog, To do, In progress, Done.
+2. Add at least eight cards for a small project, such as preparing your portfolio or running your manual MVP.
+3. Order the backlog by priority and pick what you can finish in one week.
+4. Each day, spend two minutes on a personal standup: move cards and note any blocker.
+5. At the end of the week, write a short retrospective: one thing that went well, one that did not, one change.
+
+**Done looks like:** a screenshot of your board at the start and end of the week, plus your retrospective notes.`,
+      quiz: {
+        questions: [
+          q(
+            "What is the core idea of Agile?",
+            [
+              "Plan everything for a year and deliver once",
+              "Build in small pieces, show results often and adjust",
+              "Avoid talking to users",
+              "Skip testing to go faster",
+            ],
+            1,
+            "Agile teams deliver small pieces and learn quickly.",
+          ),
+          q(
+            "What is a backlog?",
+            [
+              "A prioritised list of work waiting to be done",
+              "A list of finished features",
+              "The team's holiday calendar",
+              "A bug in the code",
+            ],
+            0,
+            "The backlog holds stories, bugs and tasks in priority order.",
+          ),
+          q(
+            "What happens in a retrospective?",
+            [
+              "The team demos to customers",
+              "The team discusses what went well, what did not and what to improve",
+              "The manager assigns salaries",
+              "Engineers write code",
+            ],
+            1,
+            "Retrospectives improve how the team works.",
+          ),
+          q(
+            "How does Kanban differ from Scrum in the lesson?",
+            [
+              "Kanban has no board",
+              "Kanban works from a board without fixed sprints",
+              "Kanban uses yearly plans",
+              "Kanban has no backlog of any kind",
+            ],
+            1,
+            "Kanban teams pull work through a board and limit work in progress, without fixed sprints.",
+          ),
+          q(
+            "What did Mariama do after a chop bar owner asked to edit quantities?",
+            [
+              "Ignored the request",
+              "Changed the code herself",
+              "Added it as a new story to the backlog",
+              "Cancelled repeat orders",
+            ],
+            2,
+            "New needs found at a review become backlog items.",
+          ),
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "technical-literacy": {
+      explanation_md: `You do not need to code to work in product, but you need to understand how software is put together. Adverts for associate product roles ask for technical fluency, and fintech product roles in Accra mention mobile money and payment integrations. Technical literacy helps you judge effort, spot risks early and earn engineers' respect.
+
+## The main parts of most products
+
+* **Frontend.** What users see and touch: an app screen, a web page or a USSD menu.
+* **Backend.** Servers that apply the business rules, such as "lock savings for 30 days", and talk to other systems.
+* **Database.** Where information is stored: users, orders, balances. Data is kept in tables with rows and columns, a bit like a spreadsheet.
+* **APIs.** An API (application programming interface) is a set of agreed requests one system can make to another. Your app's frontend calls the backend's API; your backend calls a payment provider's API.
+
+## How a mobile money payment usually works
+
+The details vary by provider, but the general flow is:
+
+1. Your app asks your backend to charge a customer 50 cedis.
+2. Your backend sends a request to the payment provider's API.
+3. The provider sends a prompt to the customer's phone asking for their PIN.
+4. The customer approves (or ignores it).
+5. The provider later tells your backend the result, often through a **callback** or **webhook**, a message sent to an address your backend provides.
+6. Your backend updates the order and sends a receipt.
+
+Product questions hide in every step. What if the customer never approves? What if the callback is delayed? How long do you wait before showing "failed"? Engineers will be glad you asked.
+
+## Releases
+
+Mobile apps go through app store review and users must update, so a fix can take days to reach everyone. Web apps and USSD services can usually change faster. This affects how you plan urgent fixes.
+
+## Words to recognise
+
+* **Bug:** something not working as intended.
+* **Environment:** a separate copy of the system for testing (often called staging) versus the real one (production).
+* **Technical debt:** shortcuts taken earlier that make later changes slower.
+* **Integration:** connecting to another company's system, which often depends on their documentation and approval.
+
+## Worked example: the MoMo savings feature
+
+Issahaku asks his engineer how long the daily auto deduction will take. She explains that the payment provider only allows recurring charges after the customer approves each one, so true automatic deduction is not possible with this integration. Because Issahaku understands APIs and approvals, he quickly suggests an alternative: a daily reminder SMS with a one step approval prompt. The engineer estimates it at a third of the original effort.
+
+Technical literacy did not make him an engineer. It made him a better partner to one.`,
+      practice_task_md: `**Goal:** explain a real product's technical parts in plain words.
+
+1. Pick a service you use, such as paying for electricity with MoMo or ordering food in an app.
+2. Draw a simple diagram on paper with boxes for frontend, backend, database and any outside systems, like a payment provider or SMS service.
+3. Draw arrows for what happens when you make one payment or order, numbering each step.
+4. Write three things that could go wrong at different steps and how the product should respond.
+
+**Done looks like:** a photographed diagram with numbered steps and three failure cases with suggested responses.`,
+      quiz: {
+        questions: [
+          q(
+            "What is an API?",
+            [
+              "A type of phone",
+              "A set of agreed requests one system can make to another",
+              "A database table",
+              "A design tool",
+            ],
+            1,
+            "APIs let systems such as your backend and a payment provider talk to each other.",
+          ),
+          q(
+            "In a typical mobile money payment, how does the provider often tell your backend the result?",
+            ["By a phone call to the engineer", "Through a callback or webhook", "By email to the customer", "It never does"],
+            1,
+            "Providers usually send the result to an address your backend provides.",
+          ),
+          q(
+            "Why can a fix to a mobile app take days to reach everyone?",
+            [
+              "Apps go through store review and users must update",
+              "Engineers work slowly",
+              "Databases are offline at night",
+              "USSD menus block updates",
+            ],
+            0,
+            "Store review and user updates slow down app releases.",
+          ),
+          q(
+            "What is a staging environment?",
+            [
+              "The real system customers use",
+              "A separate copy of the system used for testing",
+              "A marketing event",
+              "A kind of bug",
+            ],
+            1,
+            "Staging is for testing before changes reach production.",
+          ),
+          q(
+            "What alternative did Issahaku suggest when true auto deduction was not possible?",
+            [
+              "Cancel the feature",
+              "Use card payments only",
+              "A daily reminder SMS with a one step approval prompt",
+              "Ask customers to visit a branch",
+            ],
+            2,
+            "Understanding the integration's limits helped him find a cheaper solution.",
+          ),
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "working-with-design": {
+      explanation_md: `Designers decide how a product looks and, more importantly, how it works for the person using it. Product people work with them daily. Adverts for associate product roles mention tools like Figma and user experience skills, and in smaller Ghanaian companies the product person may sketch early screens before a designer joins. You need enough design understanding to collaborate well and give useful feedback.
+
+## Key design ideas
+
+* **User flow.** The steps a user takes to complete a task, from start to finish. For example: open app, choose Savings, set amount, confirm with PIN, see receipt.
+* **Wireframe.** A rough sketch of a screen showing layout and content, without colours or polish. Paper is fine.
+* **Prototype.** A clickable mock up that feels like the product, used for testing before engineers build. Figma's free plan can make these.
+* **Usability test.** Watching real users try to complete a task with a prototype or product, without helping them, to see where they struggle.
+
+## Giving useful feedback
+
+Weak feedback is about taste: "I don't like the blue." Useful feedback is about whether users can succeed:
+
+* Tie comments to the goal: "Traders need to see their savings balance first. Right now it is below the fold."
+* Describe problems, not solutions: "Users might not know what 'lock period' means" is better than "Change it to a dropdown." Let the designer solve it.
+* Use evidence from research or tests where you can.
+* Mention what works well, not just what does not.
+
+## Simple usability principles
+
+* Make the current status visible: show that a payment is pending, succeeded or failed.
+* Use words users know.
+* Prevent errors: confirm before taking money.
+* Keep it easy on small, cheap phones and slow connections: fewer steps, light screens, large touch targets.
+
+## Running a quick usability test
+
+1. Pick one task, like "save 5 cedis".
+2. Find three to five people who match your users.
+3. Ask them to think aloud while they try. Do not help or explain.
+4. Note where they hesitate, make mistakes or give up.
+
+Even a few tests reveal the biggest problems.
+
+## Worked example: the farmers' market app
+
+Ayishetu, the designer, shares a prototype of the farmer listing screen. Wumpini, the product analyst, tests it with four farmers in Savelugu. Three of them stop at a field labelled "SKU". None knows the word. Two struggle to type prices with the decimal point.
+
+Wumpini reports back: "Farmers did not understand 'SKU', and decimals caused errors. The goal is to list produce in under a minute." Ayishetu replaces SKU with a picture menu of common crops and changes prices to whole cedis with preset quantities like "one basket". The next test, all four farmers list produce quickly.
+
+Wumpini described problems with evidence. Ayishetu designed the fix. That is good collaboration.`,
+      practice_task_md: `**Goal:** sketch a flow and test it with real people.
+
+1. Choose one task in a product idea from your journal, such as booking a service or saving money.
+2. Draw the user flow as numbered steps, then sketch a paper wireframe for each screen.
+3. Show the paper screens to three people one at a time. Ask them to "tap" with a finger and think aloud. Do not help.
+4. Note every hesitation or mistake.
+5. Write three feedback points about your own design, tied to the user's goal, as if giving them to a designer.
+
+**Done looks like:** photos of your flow and wireframes, test notes from three people, and three goal based feedback points.`,
+      quiz: {
+        questions: [
+          q(
+            "What is a wireframe?",
+            [
+              "The final, polished design",
+              "A rough sketch of a screen showing layout and content",
+              "A type of cable",
+              "A database diagram",
+            ],
+            1,
+            "Wireframes are rough layouts without colour or polish.",
+          ),
+          q(
+            "Which is the most useful design feedback?",
+            [
+              "I don't like the blue",
+              "Make it look modern",
+              "Traders need to see their balance first, but it is below the fold",
+              "Copy a competitor",
+            ],
+            2,
+            "Useful feedback ties the problem to the user's goal.",
+          ),
+          q(
+            "During a usability test, what should you do when a user struggles?",
+            ["Explain how it works", "Take over the phone", "Note it and avoid helping", "End the test immediately"],
+            2,
+            "Not helping lets you see where real users struggle.",
+          ),
+          q(
+            "What problems did Wumpini find in testing the farmer listing screen?",
+            [
+              "Farmers wanted more colours",
+              "Farmers did not understand SKU and struggled with decimal prices",
+              "The app was too fast",
+              "Farmers had no crops",
+            ],
+            1,
+            "The unfamiliar word and decimals caused errors.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "acceptance-testing": {
+      explanation_md: `When engineers say a feature is finished, someone must check it really does what users need before real people depend on it. This is acceptance testing, often called user acceptance testing or UAT. Adverts for business analysts in Ghanaian banks, telecoms and manufacturers, and for associate product roles, list testing before go live and release readiness as duties. Mistakes caught here are far cheaper than mistakes customers find.
+
+## What acceptance testing checks
+
+Engineers test that their code works. Acceptance testing asks a different question: **does this meet the requirements and work for real users in real conditions?** You test against the acceptance criteria you wrote earlier.
+
+## Writing test cases
+
+A test case is a small script:
+
+* **Steps:** exactly what to do.
+* **Test data:** which account, amount or phone to use.
+* **Expected result:** what should happen, taken from the acceptance criteria.
+* **Actual result** and **pass or fail**, filled in while testing.
+
+A Google Sheet with these columns works well. Always include unhappy paths: wrong PIN, empty wallet, no network, very long names.
+
+## Testing in real conditions
+
+Test in the staging environment first, using test accounts. Then think about how users really live:
+
+* Low cost Android phones and basic phones for USSD.
+* Slow or dropping networks.
+* Different languages or reading levels.
+* Shared phones.
+
+## Reporting bugs clearly
+
+A good bug report lets an engineer reproduce the problem quickly:
+
+* A short title: "Savings receipt SMS not sent when balance is exactly equal to amount".
+* Steps to reproduce.
+* Expected result and actual result.
+* Phone model, app version and network, plus a screenshot.
+* How serious it is: does it block users or just look untidy?
+
+## Planning the release
+
+Releasing safely matters as much as testing. Consider:
+
+* **A small first release.** Launch to a pilot group before everyone.
+* **Communication.** Tell support and operations staff what is changing and give them answers to likely questions.
+* **Watching after launch.** Check errors, support messages and key numbers in the first days.
+* **A way back.** Know how to switch the feature off if something goes badly wrong.
+
+## Worked example: the NGO beneficiary tracker
+
+Before the new offline registration goes live, Mariama writes 14 test cases. One says: register a household with no network, then reconnect; expected result, the record appears once on the district dashboard. During testing she finds it appears twice when the phone reconnects slowly. She reports it with clear steps and a screenshot, and the engineer fixes it in a day.
+
+Mariama then recommends a pilot with five field officers in one district for two weeks, briefs the support lead, and sets up a daily check of duplicate records. Only after a clean pilot does the tool go to all districts.`,
+      practice_task_md: `**Goal:** write and run acceptance tests on a real product.
+
+1. Choose a free app or USSD service you can use safely, or a classmate's project.
+2. Write one user story and three acceptance criteria for a feature it already has.
+3. In Google Sheets, write at least six test cases with steps, test data, expected result, actual result and pass or fail. Include at least two unhappy paths.
+4. Run the tests and record results.
+5. Write one clear bug report for anything that failed, or for the most confusing behaviour you found.
+
+**Done looks like:** a test sheet with six or more cases and results, plus one complete bug report.`,
+      quiz: {
+        questions: [
+          q(
+            "What question does acceptance testing answer?",
+            [
+              "Is the code written in the newest language?",
+              "Does this meet the requirements and work for real users in real conditions?",
+              "How much did the feature cost?",
+              "Which engineer wrote it?",
+            ],
+            1,
+            "Acceptance testing checks the build against requirements and real use.",
+          ),
+          q(
+            "Where should the expected result in a test case come from?",
+            ["The engineer's opinion", "The acceptance criteria", "A competitor's app", "The release date"],
+            1,
+            "Test cases check against the acceptance criteria written earlier.",
+          ),
+          q(
+            "Which detail makes a bug report useful to an engineer?",
+            [
+              "Steps to reproduce, expected and actual results",
+              "Only the word broken",
+              "Your opinion of the design",
+              "The tester's job title",
+            ],
+            0,
+            "Clear steps and results let engineers reproduce and fix the problem.",
+          ),
+          q(
+            "Why release to a small pilot group first?",
+            [
+              "To find problems before they affect everyone",
+              "To keep the feature secret",
+              "Because pilots skip testing",
+              "To avoid telling support staff",
+            ],
+            0,
+            "A small first release limits the damage if something goes wrong.",
+          ),
+          q(
+            "What bug did Mariama find in the beneficiary tracker?",
+            [
+              "Records disappeared",
+              "Records appeared twice when the phone reconnected slowly",
+              "The app would not open",
+              "Names were translated wrongly",
+            ],
+            1,
+            "Her unhappy path test revealed duplicate records after slow reconnection.",
+          ),
+        ],
+        pass_threshold: 80,
+      },
+    },
     // NEXT
   },
 };
