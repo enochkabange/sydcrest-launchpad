@@ -100,7 +100,7 @@ export const digitalSkillsBridge: RoadmapDraft = {
       slug: "video-calls",
       title: "Joining a video call",
       summary:
-        "Join a video call from a link, use the mute and camera buttons, and save data while you are on the call. Mentoring sessions and many interviews now happen this way.",
+        "Join a video call from a link, use the mute and camera buttons, and save data while you are on the call. Many online classes, meetings and interviews now happen this way.",
       parent: "communicating-at-work",
       optional: false,
       resources: [],
@@ -289,7 +289,7 @@ export const digitalSkillsBridge: RoadmapDraft = {
       slug: "apply-to-dmp",
       title: "Apply to the DMP cohort",
       summary:
-        "Apply for the next cohort and mention the progress you made on this roadmap in your application. If you do not get a seat this time, keep learning on the free roadmaps and apply again.",
+        "Join the waitlist on SydCrest's Programme page for the free pilot cohort and be ready to show the progress you made on this roadmap. If you do not get a seat this time, keep learning on the free roadmaps and apply again if another cohort is announced.",
       parent: "ready-for-dmp",
       optional: false,
       resources: [],

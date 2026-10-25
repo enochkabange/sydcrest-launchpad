@@ -51,11 +51,11 @@ By the end of this section you will know your own phone better, and you will fee
             prompt: "According to this lesson, what do you need to start learning digital skills?",
             options: [
               "A new laptop",
-              "The phone you already have",
-              "A paid course certificate",
               "A home internet connection",
+              "A paid course certificate",
+              "The phone you already have",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The lesson explains that your phone can already send emails, join classes and fill in applications.",
           },
           {
@@ -73,11 +73,11 @@ By the end of this section you will know your own phone better, and you will fee
             prompt: "What should you do if a menu has a slightly different name on your phone?",
             options: [
               "Stop the lesson and buy a different phone",
-              "Look for the closest match or use the search bar in Settings",
               "Reset the phone to factory settings",
+              "Look for the closest match or use the search bar in Settings",
               "Skip that lesson completely",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Phones differ by brand, so the lesson suggests finding the closest match or searching in Settings.",
           },
           {
@@ -157,12 +157,12 @@ That is four simple movements and two buttons, used together. Practise them ever
           {
             prompt: "You feel lost inside an app. What does the lesson suggest?",
             options: [
-              "Switch the phone off",
               "Press Home and start again",
+              "Switch the phone off",
               "Delete the app",
               "Remove the SIM card",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Home takes you to your main screen from anywhere, and nothing is lost.",
           },
           {
@@ -180,11 +180,11 @@ That is four simple movements and two buttons, used together. Practise them ever
             prompt: "Why did Fuseini check that he was on the shop's WiFi?",
             options: [
               "So customers could see his screen",
-              "So the photos would not use his own data",
-              "So his battery would charge faster",
               "So WhatsApp would delete old messages",
+              "So his battery would charge faster",
+              "So the photos would not use his own data",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "When WiFi is connected the phone uses it first, which saves your bundle.",
           },
         ],
@@ -199,9 +199,9 @@ That is four simple movements and two buttons, used together. Practise them ever
 
 Storage is where your phone keeps apps, photos, videos and messages. When it is almost full, the phone slows down, apps crash and new files will not save.
 
-Open **Settings** and search for **Storage**. You will see what is taking up space. The usual culprits are:
+Open **Settings** and search for **Storage**. You will see what is taking up space. The usual causes are:
 
-* **WhatsApp media.** Every photo, video and voice note from groups is saved on your phone. In WhatsApp, open Settings, then Storage and data, then Manage storage. You can delete large videos you no longer need.
+* **WhatsApp media.** Every photo, video and voice note from groups is saved on your phone. WhatsApp has its own storage tool. Open WhatsApp's Settings and look for **Storage and data**, then **Manage storage**. It shows the biggest files and chats, and you can delete large videos you no longer need.
 * **Videos you recorded.** Move important ones to Google Drive or a computer, then delete them from the phone.
 * **Apps you never use.** Each one takes space and may update in the background.
 
@@ -224,7 +224,7 @@ Phone and app updates fix problems and close security holes. Install them, but d
 
 ## A worked example
 
-Mariama in Bolgatanga could not download a course PDF because her phone was full. She opened WhatsApp storage and found one church group had saved hundreds of forwarded videos. She deleted them, removed two old games and turned off game notifications. The PDF downloaded, and her phone felt faster too.
+Mariama in Bolgatanga could not download a course PDF because her phone was full. She opened WhatsApp's storage tool and found one church group had saved hundreds of forwarded videos. She deleted them, removed two old games and turned off game notifications. The PDF downloaded, and her phone felt faster too.
 
 Check your storage once a week. It takes two minutes and saves a lot of frustration.`,
       practice_task_md: `**Goal:** Free up space and cut distractions on your own phone.
@@ -232,7 +232,7 @@ Check your storage once a week. It takes two minutes and saves a lot of frustrat
 **Steps**
 
 1. Open Settings, then Storage, and write down how much space is free.
-2. In WhatsApp, open Settings, then Storage and data, then Manage storage. Delete at least five large videos you do not need.
+2. In WhatsApp's Settings, find the storage tool (look for Storage and data, then Manage storage). Delete at least five large videos you do not need.
 3. Uninstall one app you have not opened in a month.
 4. Turn off notifications for at least two apps that distract you.
 5. Check Storage again and write down the new free space.
@@ -244,23 +244,23 @@ Check your storage once a week. It takes two minutes and saves a lot of frustrat
             prompt: "What usually happens when a phone's storage is almost full?",
             options: [
               "The battery lasts longer",
-              "The phone slows down and new files may not save",
               "Data bundles become cheaper",
+              "The phone slows down and new files may not save",
               "WhatsApp sends fewer messages",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "A full phone slows down, apps crash and new files will not save.",
           },
           {
             prompt: "Where in WhatsApp can you find and delete large videos?",
             options: [
-              "Settings, then Storage and data, then Manage storage",
               "The Status tab",
               "The camera button",
+              "The storage tool in WhatsApp's own Settings",
               "The group description",
             ],
-            answer_index: 0,
-            explanation: "Manage storage inside WhatsApp's Storage and data settings shows the large files.",
+            answer_index: 2,
+            explanation: "WhatsApp's Settings have a storage tool that shows the biggest files so you can delete them.",
           },
           {
             prompt: "Which is a good way to make your battery last longer?",
@@ -299,8 +299,8 @@ WiFi does not use your bundle. Places that may have WiFi include some schools, l
 ## Stop apps eating data in the background
 
 * **Data saver.** In Settings, search for **Data saver** and turn it on. It stops many apps from using data when you are not looking at them.
-* **App updates.** Open the Play Store, go to its settings and set apps to update over **WiFi only**.
-* **WhatsApp downloads.** In WhatsApp, open Settings, then Storage and data. Under media auto download, set photos, audio, videos and documents to download only on WiFi, or never. You can still tap any file to download it when you need it.
+* **App updates.** Open the Play Store and go to its settings. Find the option for updating apps automatically and choose **WiFi only**.
+* **WhatsApp downloads.** In WhatsApp's Settings, look for **Storage and data**. There you can choose when photos, audio, videos and documents download by themselves: only on WiFi, or never. You can still tap any file to download it when you need it.
 
 ## Watch and download wisely
 
@@ -323,8 +323,8 @@ Compare the bundles your network offers before you buy. A bigger bundle that las
 
 1. Open Settings, search for Data usage and write down the three apps that used the most data.
 2. Turn on Data saver.
-3. Set Play Store updates to WiFi only.
-4. In WhatsApp, set media auto download to WiFi only for videos and documents.
+3. In the Play Store settings, set automatic app updates to WiFi only.
+4. In WhatsApp's Storage and data settings, set videos and documents to download automatically only on WiFi.
 5. Turn off autoplay in one video app you use.
 6. After seven days, check Data usage again.
 
@@ -335,33 +335,33 @@ Compare the bundles your network offers before you buy. A bigger bundle that las
             prompt: "Which of these uses the most data?",
             options: [
               "Reading a short text lesson",
-              "Watching a video lesson",
-              "Writing notes offline",
               "Reading a downloaded PDF",
+              "Writing notes offline",
+              "Watching a video lesson",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The lesson explains that video uses far more data than reading.",
           },
           {
             prompt: "What does the Data saver setting do?",
             options: [
-              "Makes your bundle cheaper to buy",
               "Stops many apps from using data in the background",
+              "Makes your bundle cheaper to buy",
               "Turns off WiFi to protect your phone",
-              "Turns off your WiFi",
+              "Deletes old photos to make space",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Data saver stops many apps from using data when you are not looking at them.",
           },
           {
             prompt: "How can you see which apps used the most data this month?",
             options: [
               "Ask your network by SMS",
-              "Check Settings, then Data usage",
               "Look at your Gallery",
+              "Check Settings, then Data usage",
               "Restart the phone",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "The Data usage page in Settings lists apps by how much data they used.",
           },
           {
@@ -385,7 +385,7 @@ Compare the bundles your network offers before you buy. A bigger bundle that las
 
 ## Get apps from the official store
 
-On Android phones, the official store is the **Google Play Store**. On iPhones it is the **App Store**. Apps there are checked before they are listed. Apps sent to you as files on WhatsApp, or downloaded from random websites, are not checked and can contain harmful software that steals passwords or MoMo details.
+On Android phones, the official store is the **Google Play Store**. On iPhones it is the **App Store**. Apps there are checked before they are listed. The checks are not perfect, so you still need to look carefully, but apps sent to you as files on WhatsApp, or downloaded from random websites, are not checked and can contain harmful software that steals passwords or MoMo details. They are far riskier.
 
 If someone sends you an app file and says "install this to get your prize", do not open it.
 
@@ -404,7 +404,7 @@ When you open a new app, it may ask for permission to use your camera, microphon
 * A survey app asking for your location may be fine, because the NGO needs to know where the survey happened.
 * A torch app asking for your contacts is a warning sign.
 
-You can change permissions later. Open **Settings**, then **Apps**, choose the app and tap **Permissions**. Turn off anything that does not make sense.
+You can change permissions later. In **Settings**, find **Apps**, choose the app and look for **Permissions**. The names can differ a little from phone to phone. Turn off anything that does not make sense.
 
 ## Clean up regularly
 
@@ -432,28 +432,28 @@ Safe habits like these are what employers mean when they ask for someone who is 
             prompt: "Where should you install apps from on an Android phone?",
             options: [
               "Files sent on WhatsApp",
-              "The Google Play Store",
-              "Any website that offers a free download",
               "A link in an SMS about a prize",
+              "Any website that offers a free download",
+              "The Google Play Store",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The Play Store is the official store, and its apps are checked before listing.",
           },
           {
             prompt: "A torch app asks for access to your contacts. What does the lesson say?",
             options: [
               "That is normal for all apps",
-              "It is a warning sign",
               "You must allow it or the phone will break",
+              "It is a warning sign",
               "It will make the torch brighter",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "A torch does not need your contacts, so the request is a warning sign.",
           },
           {
             prompt: "How can you change an app's permissions after installing it?",
             options: [
-              "Settings, then Apps, choose the app, then Permissions",
+              "In Settings, find the app under Apps and open its Permissions",
               "Restart the phone twice",
               "Send the app to a friend",
               "You cannot change them once allowed",
@@ -464,12 +464,12 @@ Safe habits like these are what employers mean when they ask for someone who is 
           {
             prompt: "Why did Hawa ignore the faster version of the app sent as a file?",
             options: [
-              "Files are always too large",
               "Apps sent as files are not checked and can be harmful",
+              "Files are always too large",
               "Her phone cannot open files",
               "Her supervisor banned WhatsApp",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Apps shared as files skip the store's checks and can contain harmful software.",
           },
         ],
@@ -486,7 +486,7 @@ The good news is that you already use most of these tools every day. You call fa
 
 * **Handling work phone calls.** How to answer, take a message that someone else can act on, and follow up.
 * **WhatsApp for work.** How to write clear messages, share photos and documents properly, and behave well in work and class groups.
-* **Joining a video call.** How to join from a link, use the mute and camera buttons, and keep your data use low. Mentoring sessions and some interviews happen this way.
+* **Joining a video call.** How to join from a link, use the mute and camera buttons, and keep your data use low. Many online classes and some interviews happen this way.
 * **Reading and writing clear English.** How to read short lessons with confidence and write short, polite messages that get a reply.
 
 ## Friendly at home, professional at work
@@ -501,7 +501,7 @@ Both are short. Only the second tells Amina exactly what is wrong and what you s
 
 ## Why this matters for the DMP cohort
 
-SydCrest's Delta Mentoring Program runs partly online. Mentors share links on WhatsApp, sessions happen on video calls, and you will write emails and posts in English from the early weeks. If you can already do these basics calmly, you can spend your energy on the new skills the cohort teaches.
+SydCrest's Delta Mentoring Program is a twelve week cohort with a mentor. In week 1 you send emails, and the weekly assignments are written in English. Your mentor will tell you how sessions run. If you can already write a clear message and use your phone calmly, you can spend your energy on the new skills the cohort teaches.
 
 ## How to practise
 
@@ -521,11 +521,11 @@ You do not need a job to practise. Use your church or mosque group, your class g
             prompt: "Which skills does this lesson say keep coming up in entry level job adverts?",
             options: [
               "Coding and web design",
-              "Answering calls, WhatsApp, email and clear English",
-              "Video editing and photography",
               "Driving and cooking",
+              "Video editing and photography",
+              "Answering calls, WhatsApp, email and clear English",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The lesson lists calls, WhatsApp, email and English as the skills that keep coming up.",
           },
           {
@@ -543,23 +543,23 @@ You do not need a job to practise. Use your church or mosque group, your class g
             prompt: "According to the lesson, what is the idea of professional communication?",
             options: [
               "Use as many big words as possible",
-              "Be polite, be clear and make it easy for the other person to act",
               "Always call instead of texting",
+              "Be polite, be clear and make it easy for the other person to act",
               "Never use WhatsApp at work",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "The lesson sums it up as polite, clear and easy to act on.",
           },
           {
             prompt: "Why do these skills matter for the DMP cohort?",
             options: [
               "The cohort does not use phones at all",
-              "Mentors use WhatsApp and video calls, and you write in English early on",
-              "The cohort only teaches phone calls",
               "You must sell products by phone to join",
+              "The cohort only teaches phone calls",
+              "You send emails and write assignments in English from week 1",
             ],
-            answer_index: 1,
-            explanation: "The DMP runs partly online, with links on WhatsApp, video sessions and writing in English.",
+            answer_index: 3,
+            explanation: "Week 1 includes email, and the weekly assignments are written in English.",
           },
         ],
         pass_threshold: 75,
@@ -623,34 +623,34 @@ Making calls to customers, sometimes called outbound calls, uses the same skills
           {
             prompt: "What three things should you say when you answer a work call?",
             options: [
-              "Your age, your town and your school",
               "A greeting, the business name, and your name with an offer to help",
+              "Your age, your town and your school",
               "Only hello",
               "The price list and opening hours",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "The lesson recommends a greeting, where they have reached, and your name with an offer to help.",
           },
           {
             prompt: "Why should you repeat key details back to the caller?",
             options: [
               "To make the call longer",
-              "To check you understood and prevent mistakes",
               "Because the caller cannot hear well",
+              "To check you understood and prevent mistakes",
               "To practise your English",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Repeating details back checks your understanding and prevents many mistakes.",
           },
           {
             prompt: "Which of these is part of a useful phone message?",
             options: [
               "The caller's favourite colour",
-              "The caller's name and phone number",
-              "Your opinion of the caller",
               "The weather that day",
+              "Your opinion of the caller",
+              "The caller's name and phone number",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "A useful message includes the caller's name and number, the time, the request and what you promised.",
           },
           {
@@ -670,7 +670,7 @@ Making calls to customers, sometimes called outbound calls, uses the same skills
     },
 
     "whatsapp-for-work": {
-      explanation_md: `In Ghana, a lot of business happens on WhatsApp. Shops take orders on it, offices share schedules in groups, NGOs send field updates, and job adverts for shop attendants and customer service roles often ask for people who are comfortable using it for work. Mentors in the DMP cohort will also share links and updates this way. Using WhatsApp well at work is different from chatting with friends.
+      explanation_md: `In Ghana, a lot of business happens on WhatsApp. Shops take orders on it, offices share schedules in groups, NGOs send field updates, and job adverts for shop attendants and customer service roles often ask for people who are comfortable using it for work. SydCrest itself runs a WhatsApp community. Using WhatsApp well at work is different from chatting with friends.
 
 ## Writing clear work messages
 
@@ -686,7 +686,7 @@ Voice notes are quick, but the listener must find a quiet place to play them, an
 
 ## Sharing photos and documents
 
-* To share a document such as a CV or a price list as a PDF, tap the attach icon (a paperclip on Android, a plus on iPhone), choose **Document** and pick the file. Sending as a document keeps it sharp and keeps its name.
+* To share a document such as a CV or a price list as a PDF, tap the attach button next to the message box (often a paperclip or a plus sign), choose **Document** and pick the file. Sending as a document keeps it sharp and keeps its name.
 * Sending a picture through the camera or gallery option makes it smaller and less clear. That is fine for a quick look, but not for something someone will print or read closely.
 * Before you send a photo of a receipt or form, check it is in focus and nothing important is cut off.
 
@@ -703,7 +703,7 @@ Some shops use **WhatsApp Business**, a separate free app with a business profil
 
 ## A worked example
 
-Amina runs a small fabric shop in Tamale. Her new attendant, Napari, receives an order on WhatsApp. Napari replies: "Good afternoon. Thank you for your order. We have the blue wax print, 6 yards, for 180 cedis. Delivery to Lamashegu is possible tomorrow. Please confirm and we will send the MoMo details." Clear, polite and complete. The customer confirms in one reply.`,
+Amina runs a small fabric shop in Tamale. Her new attendant, Napari, receives an order on WhatsApp. Napari replies (the price here is only an example): "Good afternoon. Thank you for your order. We have the blue wax print, 6 yards, for 180 cedis. Delivery to Lamashegu is possible tomorrow. Please confirm and we will send the MoMo details." Clear, polite and complete. The customer confirms in one reply.`,
       practice_task_md: `**Goal:** Use WhatsApp the way a professional would.
 
 **Steps**
@@ -721,22 +721,22 @@ Amina runs a small fabric shop in Tamale. Her new attendant, Napari, receives an
             prompt: "What should you avoid when starting a work message on WhatsApp?",
             options: [
               "Greeting the person by name",
-              "Sending only Hello and waiting for a reply",
               "Putting the main point first",
+              "Sending only Hello and waiting for a reply",
               "Using full words",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "The lesson says to send the full message in one go instead of just Hello.",
           },
           {
             prompt: "Why should you send a CV or price list as a Document instead of a photo?",
             options: [
-              "Documents are always free to send",
               "It keeps the file sharp and keeps its name",
+              "Documents are always free to send",
               "Photos cannot be sent in groups",
               "Documents delete themselves after reading",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Sending as a document keeps it sharp and keeps its name, while photos are made smaller.",
           },
           {
@@ -767,7 +767,7 @@ Amina runs a small fabric shop in Tamale. Her new attendant, Napari, receives an
     },
 
     "video-calls": {
-      explanation_md: `Mentoring sessions, online classes, team meetings and some job interviews now happen on video calls. The DMP cohort uses them too. Joining on time, with your microphone and camera under control, shows that you are ready for online work. It is a skill you can learn in one afternoon.
+      explanation_md: `Online classes, team meetings, some mentoring sessions and some job interviews now happen on video calls. Joining on time, with your microphone and camera under control, shows that you are ready for online work. It is a skill you can learn in one afternoon.
 
 ## Joining from a link
 
@@ -807,7 +807,7 @@ Video calls use a lot of data. To use less:
 
 ## A worked example
 
-Rashida in Damongo has her first mentoring session on Google Meet. The day before, on her school's WiFi, she installs the Meet app and signs in with her email. On the day she joins five minutes early, sees the mentor, says hello, then mutes herself. When she has a question she raises her hand. When the mentor shares slides, she turns her camera off to save data. She leaves the call feeling prepared, not stressed.`,
+Rashida in Damongo has been invited to an online interview for an office job. The interviewer sends her a Google Meet link. The day before, on her school's WiFi, she installs the Meet app and signs in with her email. On the day she joins five minutes early, greets the interviewer and keeps her camera on so they can see her. She sits facing the window and uses earphones, so her voice is clear. When the interviewer shares a slide about the job, she asks if she may turn her camera off for a moment to save data, and the interviewer agrees. She leaves the call feeling prepared, not stressed.`,
       practice_task_md: `**Goal:** Join and control a video call confidently before you need to.
 
 **Steps**
@@ -825,11 +825,11 @@ Rashida in Damongo has her first mentoring session on Google Meet. The day befor
             prompt: "When should you install a video call app for an important session?",
             options: [
               "During the session itself",
-              "Before the day, preferably on WiFi",
-              "Only after the host calls you",
               "You never need to install anything",
+              "Only after the host calls you",
+              "Before the day, preferably on WiFi",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Installing early on WiFi avoids delays and saves your bundle.",
           },
           {
@@ -858,11 +858,11 @@ Rashida in Damongo has her first mentoring session on Google Meet. The day befor
             prompt: "Why is it good to stay muted unless you are speaking?",
             options: [
               "It makes the call cheaper for the host",
-              "It stops background noise disturbing everyone",
               "It makes your camera clearer",
+              "It stops background noise disturbing everyone",
               "It makes your own voice louder for others",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Background noise from markets, radios or generators can make it hard for others to hear.",
           },
         ],
@@ -927,33 +927,33 @@ Spend ten minutes a day reading something in English that interests you: a news 
             prompt: "What does the lesson suggest you do first when reading a lesson page?",
             options: [
               "Look up every single word",
-              "Read the headings first",
-              "Skip straight to the quiz",
               "Translate the whole page",
+              "Skip straight to the quiz",
+              "Read the headings first",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Headings tell you what the page is about before you start reading.",
           },
           {
             prompt: "Which of these is part of a good work message or email?",
             options: [
-              "Short forms like pls and u",
               "The main point in the first sentence",
+              "Short forms like pls and u",
               "No greeting at all",
               "Many ideas in one long sentence",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "The lesson says to put the main point in the first sentence.",
           },
           {
             prompt: "Why is Baba's second message better than his first?",
             options: [
               "It is much longer",
-              "It uses full words, full sentences and one idea at a time",
               "It uses difficult vocabulary",
+              "It uses full words, full sentences and one idea at a time",
               "It has no greeting",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "His improved message is still short but uses full words and clear sentences.",
           },
           {
@@ -1013,44 +1013,44 @@ If a message makes you feel rushed, scared or very excited, stop. Scammers want 
             prompt: "Why does the lesson compare your email account to a master key?",
             options: [
               "Because it is made of metal",
-              "Because someone with it can reset your other accounts and pretend to be you",
-              "Because it opens your front door",
               "Because it never needs a password",
+              "Because it opens your front door",
+              "Because someone with it can reset your other accounts and pretend to be you",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Access to your email lets someone reset other passwords and read your messages.",
           },
           {
             prompt: "What went wrong for Abdul-Rahman?",
             options: [
               "He used his own number and a strong password",
-              "He linked his sister's number and used a weak password, then could not recover the account",
               "He never created an email address",
+              "He linked his sister's number and used a weak password, then could not recover the account",
               "His phone was stolen at a business centre",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "A recovery number that was not his and a weak password meant he lost the account.",
           },
           {
             prompt: "A message makes you feel rushed and very excited. What should you do?",
             options: [
-              "Reply immediately before the offer ends",
               "Stop and check before you act",
+              "Reply immediately before the offer ends",
               "Send your PIN to confirm",
               "Forward it to all your groups",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Scammers want you to act before you think, so stop and check first.",
           },
           {
             prompt: "What will DMP week 1 do with email?",
             options: [
               "Nothing, email is not used",
-              "Use Gmail to send emails with attachments and recognise phishing",
-              "Teach you to build an email app",
               "Only teach phone calls",
+              "Teach you to build an email app",
+              "Use Gmail to send emails with attachments and recognise phishing",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The lesson explains that week 1 uses Gmail with attachments and covers phishing.",
           },
         ],
@@ -1082,7 +1082,7 @@ On an Android phone you already have a Google account if you use the Play Store.
 
 ## Making sure you can always get back in
 
-This is the step many people skip. In your Google Account settings, open **Security** and check:
+This is the step many people skip. In your Google Account settings, find the security section (the menu names change from time to time) and check:
 
 * **Recovery phone.** It must be a number you own and will keep. Not a friend's, not a business centre's.
 * **Recovery email.** Optional, but useful if you have a second address.
@@ -1104,7 +1104,7 @@ Once your account is ready, DMP week 1 will teach you to use it fully: writing, 
 
 1. Decide on an address using your real name. Write two backup options in case it is taken.
 2. Create the account, or check an existing one if it already uses your real name.
-3. Open your account's Security settings and confirm the recovery phone is your own current number.
+3. Open your account's security settings and confirm the recovery phone is your own current number.
 4. Send a short test email to a friend with a clear subject line, and ask them to reply.
 5. Sign out, then sign in again to make sure you know your password.
 
@@ -1115,11 +1115,11 @@ Once your account is ready, DMP week 1 will teach you to use it fully: writing, 
             prompt: "Which email address is the most professional?",
             options: [
               "partyboy4real",
-              "wumpini.alhassan",
               "bigmoneyking",
+              "wumpini.alhassan",
               "cutegirl2005",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "First name and surname is clear and professional.",
           },
           {
@@ -1137,11 +1137,11 @@ Once your account is ready, DMP week 1 will teach you to use it fully: writing, 
             prompt: "What should you do when you change your SIM?",
             options: [
               "Delete your email account",
-              "Update the recovery number straight away",
-              "Nothing, it updates itself",
               "Share your password with a friend",
+              "Nothing, it updates itself",
+              "Update the recovery number straight away",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "An old recovery number could stop you getting back into your account.",
           },
           {
@@ -1181,8 +1181,8 @@ Remembering many passwords is hard. Options include a password manager app, or t
 
 Two step verification adds a second lock. After your password, the account asks for something only you have, usually a code sent to your phone or a prompt that appears on your phone. A thief with your password still cannot get in.
 
-* **Google account:** open your Google Account, go to **Security**, then turn on **2 Step Verification**. Google also lets you print backup codes. Keep them somewhere safe.
-* **WhatsApp:** open **Settings**, then **Account**, then **Two step verification**, and create a six digit PIN. This stops someone moving your WhatsApp to their phone.
+* **Google account:** open your Google Account settings and find the security section. Look for **2 Step Verification** and follow the steps to turn it on. Google sometimes renames these menus, so if you cannot see it, use the search box in your Google Account. Google also lets you save backup codes. Keep them somewhere safe.
+* **WhatsApp:** in WhatsApp's Settings, look under **Account** for **Two step verification**, and create a six digit PIN. This stops someone moving your WhatsApp to their phone.
 
 ## The golden rule about codes
 
@@ -1190,13 +1190,13 @@ Two step verification adds a second lock. After your password, the account asks 
 
 ## A worked example
 
-Issahaku received an SMS with a WhatsApp code he had not requested, followed by a message from an unknown number: "Sorry, I sent my code to you by mistake, please send it back." He ignored it. Because he had already set a WhatsApp two step PIN, his account stayed safe. The next day, his friend who had shared the code lost his account for a week.`,
+Issahaku received an SMS with a WhatsApp code he had not requested, followed by a message from an unknown number: "Sorry, I sent my code to you by mistake, please send it back." He ignored it. Because he had already set a WhatsApp two step PIN, his account stayed safe. Later he heard that a friend had sent a code like this to a stranger and lost his WhatsApp account for a week.`,
       practice_task_md: `**Goal:** Protect your two most important accounts.
 
 **Steps**
 
 1. Create a new passphrase for your email using three or four random words and a number. Change your email password to it.
-2. Turn on 2 Step Verification for your Google account in the Security settings.
+2. Turn on 2 Step Verification for your Google account. Look in the security section of your Google Account settings.
 3. If you can print or write them down, save your Google backup codes somewhere private at home.
 4. In WhatsApp, turn on two step verification and set a PIN you will remember.
 5. Write down, without the passwords, which accounts now use different passwords.
@@ -1218,12 +1218,12 @@ Issahaku received an SMS with a WhatsApp code he had not requested, followed by 
           {
             prompt: "Why should important accounts have different passwords?",
             options: [
-              "Websites require it by law",
               "If one site is hacked, criminals try that password on your other accounts",
+              "Websites require it by law",
               "Different passwords make your phone faster",
               "So you can share one of them",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Reusing a password lets one leak open many accounts.",
           },
           {
@@ -1241,11 +1241,11 @@ Issahaku received an SMS with a WhatsApp code he had not requested, followed by 
             prompt: "Someone says they sent their code to you by mistake and asks for it. What should you do?",
             options: [
               "Send it quickly to help them",
-              "Never share it, because it is a scam",
               "Share half of it",
+              "Never share it, because it is a scam",
               "Post it in a group so they can find it",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Never share verification codes. Real companies and friends do not need them.",
           },
         ],
@@ -1275,7 +1275,7 @@ Issahaku received an SMS with a WhatsApp code he had not requested, followed by 
 
 ## A worked example
 
-Mariama, a shop attendant in Tamale, receives an SMS: "You have received GHS 500 from Kwame Mensah." A few minutes later a man calls, crying, asking her to send it back. She checks her MoMo balance through the official menu. No money has arrived. She tells him she will report it to her network, and he hangs up. She warns her colleagues in the shop's WhatsApp group so nobody else falls for it.
+Mariama, a shop attendant in Tamale, receives an SMS: "You have received 500 cedis from Issah Abu." (The name and amount are only an example.) A few minutes later a man calls, crying, asking her to send it back. She checks her MoMo balance through the official menu. No money has arrived. She tells him she will report it to her network, and he hangs up. She warns her colleagues in the shop's WhatsApp group so nobody else falls for it.
 
 If you do lose money, contact your network's official customer care immediately and report it. Acting fast gives the best chance of help.`,
       practice_task_md: `**Goal:** Learn to recognise scams quickly.
@@ -1294,22 +1294,22 @@ If you do lose money, contact your network's official customer care immediately 
             prompt: "You get an SMS saying money was sent to you, then a caller asks you to send it back. What should you do first?",
             options: [
               "Send the money back immediately",
-              "Check your real balance yourself in the MoMo app or official menu",
-              "Give the caller your PIN so they can check",
               "Forward the SMS to friends",
+              "Give the caller your PIN so they can check",
+              "Check your real balance yourself in the MoMo app or official menu",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Often no money arrived, so check your real balance yourself first.",
           },
           {
             prompt: "A job offer asks you to pay a training fee before you start. What does this suggest?",
             options: [
               "It is a normal part of every job",
-              "It is likely a scam, because real employers do not charge you to get a job",
               "You should pay quickly before others do",
+              "It is likely a scam, because real employers do not charge you to get a job",
               "It guarantees a good salary",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "The lesson says never to pay for a job.",
           },
           {
@@ -1327,11 +1327,11 @@ If you do lose money, contact your network's official customer care immediately 
             prompt: "Which of these is a warning sign of a scam?",
             options: [
               "The message gives you plenty of time to check",
-              "The message pressures you to act urgently",
-              "The message comes from a friend you see daily",
               "The message is a class timetable",
+              "The message comes from a friend you see daily",
+              "The message pressures you to act urgently",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Pressure and urgency are common warning signs.",
           },
         ],
@@ -1354,14 +1354,14 @@ Be careful with WhatsApp status and Facebook posts. A photo of a new ID card or 
 
 ## Privacy settings to check
 
-* **WhatsApp:** open **Settings**, then **Privacy**. You can choose who sees your profile photo, last seen, about and status: everyone, your contacts, or nobody. You can also control who can add you to groups.
+* **WhatsApp:** in WhatsApp's Settings, open **Privacy**. You can choose who sees your profile photo, last seen, about and status. Choices include **My contacts** and, for most of these, **Nobody**. You can also control who can add you to groups.
 * **Facebook and other apps:** look for **Privacy** or **Audience** settings and limit who can see your posts and phone number.
 
 ## Using a shared phone safely
 
 * **Screen lock.** Use a PIN, pattern or fingerprint that only you know.
 * **Sign out.** On a shared phone, sign out of email and other accounts when you finish, or use a separate account for yourself if the phone allows it. Many Android phones support more than one user profile.
-* **Private browsing.** In Chrome, an Incognito tab does not save your history or passwords after you close it. It does not hide what you do from your network or employer, but it helps on shared devices.
+* **Private browsing.** In Chrome, an Incognito tab does not keep a record of the sites you visited after you close it. It does not hide what you do from the websites themselves, your network or your employer, but it helps on shared devices.
 * **Do not save passwords** in the browser on a phone that is not yours.
 * **App lock.** Some phones and apps, including WhatsApp, let you lock individual apps with your fingerprint or a PIN.
 
@@ -1411,12 +1411,12 @@ Amina shares a phone with her younger brother. She set a fingerprint lock on Wha
             prompt: "What does an Incognito tab in Chrome do on a shared phone?",
             options: [
               "Hides everything from your network",
-              "Does not save your history or passwords after you close it",
               "Speeds up your downloads",
+              "Does not keep a record of the sites you visited after you close it",
               "Locks the phone",
             ],
-            answer_index: 1,
-            explanation: "Incognito does not save history or passwords, but it does not hide activity from the network.",
+            answer_index: 2,
+            explanation: "Incognito does not keep your browsing history, but it does not hide activity from your network.",
           },
           {
             prompt: "Why do customer service jobs care about privacy habits?",
@@ -1478,11 +1478,11 @@ Have a real document nearby, such as a certificate, a receipt or a school report
             prompt: "Which three skills does this section teach?",
             options: [
               "Coding, design and marketing",
-              "Handling files, filling in forms and finding information",
-              "Typing, printing and photocopying",
               "Selling, driving and cooking",
+              "Typing, printing and photocopying",
+              "Handling files, filling in forms and finding information",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The section covers files, forms and searching.",
           },
           {
@@ -1544,7 +1544,7 @@ A file called "IMG_20251003_0912" tells nobody anything. A file called "Hawa Iss
 
 A crooked, dark photo of a certificate looks careless. A scan looks neat.
 
-* The **Google Drive** app has a scan tool. Tap the **plus** or **New** button, then **Scan**. Point the camera at the document, take the photo, and the app crops it and saves it as a PDF. Some phone camera apps also have a document scan mode.
+* The **Google Drive** app on Android has a scan tool. Look for the **camera** or **Scan** button in the app. Point the camera at the document, take the photo, and the app helps you crop it and save it as a PDF. Some phone camera apps also have a document scan mode.
 * Place the paper on a dark, flat surface in good daylight.
 * Make sure all four corners are visible and the text is sharp.
 * Check the result before you save. Retake it if anything is cut off or blurry.
@@ -1592,11 +1592,11 @@ Sumaila needed to send his certificate to an employer in Tamale. He placed it on
             prompt: "Why should you rename a file like IMG_20251003_0912?",
             options: [
               "Long names use more data",
-              "A clear name helps the employer find and recognise it",
-              "Phones delete unnamed files",
               "It makes the photo sharper",
+              "Phones delete unnamed files",
+              "A clear name helps the employer find and recognise it",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Clear names such as your name and document type help people find your file.",
           },
           {
@@ -1653,7 +1653,7 @@ A small red star (an asterisk) next to a question usually means it is **required
 
 ## Forms in field work
 
-Survey apps like Kobo Collect let field staff fill in forms even without network, then send them later when there is a connection. The rules are the same: ask each question exactly as written, record the answer exactly as given, and check before you finalise. A survey with wrong data can lead an NGO to the wrong decisions about a community.
+Survey apps like Kobo Collect let field staff fill in forms even without network, then send them later when there is a connection. The rules are the same: ask each question exactly as written, record the answer exactly as given, and check before you send it. A survey with wrong data can lead an NGO to the wrong decisions about a community.
 
 ## A worked example
 
@@ -1688,11 +1688,11 @@ Careful form filling is a small skill, but it shows exactly what employers mean 
             prompt: "What should you do before you start typing answers?",
             options: [
               "Submit the form to test it",
-              "Read the whole form first so you know what you need",
-              "Fill in only the first page",
               "Close the form and come back later",
+              "Fill in only the first page",
+              "Read the whole form first so you know what you need",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Reading the whole form first shows what you need, such as documents to upload.",
           },
           {
@@ -1710,11 +1710,11 @@ Careful form filling is a small skill, but it shows exactly what employers mean 
             prompt: "What does the lesson say about survey apps like Kobo Collect?",
             options: [
               "They only work in Accra",
-              "They let you fill in forms without network and send them later",
-              "They do not need careful answers",
               "They replace the need to ask questions",
+              "They do not need careful answers",
+              "They let you fill in forms without network and send them later",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Forms can be filled offline and sent when there is a connection.",
           },
         ],
@@ -1869,11 +1869,11 @@ You do not need to be fast. You need to be comfortable enough that the computer 
             prompt: "What does DMP week 1 start with?",
             options: [
               "Writing computer programs",
-              "Computer hardware, files and folders",
-              "Running paid adverts",
               "Building websites",
+              "Running paid adverts",
+              "Computer hardware, files and folders",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The lesson says week 1 starts with computer hardware, files and folders.",
           },
           {
@@ -1902,11 +1902,11 @@ You do not need to be fast. You need to be comfortable enough that the computer 
             prompt: "Which of these is one of the suggested goals before joining the DMP cohort?",
             options: [
               "Type very fast without any mistakes",
-              "Type a short paragraph without looking for every key",
-              "Repair computer hardware",
               "Set up a computer network",
+              "Repair computer hardware",
+              "Type a short paragraph without looking for every key",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The goal is comfort, not speed: a short paragraph without searching for every key.",
           },
         ],
@@ -1989,11 +1989,11 @@ If you truly cannot find access yet, keep practising the phone skills in this ro
             prompt: "What should you always do when you finish on a shared computer?",
             options: [
               "Leave your email open for next time",
-              "Sign out of your accounts",
-              "Change the computer's settings",
               "Unplug the keyboard",
+              "Change the computer's settings",
+              "Sign out of your accounts",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Never leave accounts open on a shared computer.",
           },
           {
@@ -2188,11 +2188,11 @@ Track your progress in your practice log. Seeing improvement week by week keeps 
             prompt: "What should you focus on first when learning to type?",
             options: [
               "Speed",
-              "Accuracy",
-              "Typing in capital letters",
               "Using only one finger",
+              "Typing in capital letters",
+              "Accuracy",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Accuracy first; speed grows once your fingers know where to go.",
           },
           {
@@ -2239,7 +2239,7 @@ Many people start an online course full of energy and stop after two weeks. That
 
 ## Records are everywhere
 
-Think about the jobs around you. A chop bar owner tracks what she spends on ingredients and what she sells. A market trader in Bolgatanga writes down who owes him money. An NGO field officer records how many households were visited. A shop attendant reconciles MoMo payments at the end of the day. Each one needs accurate, simple records, often on a phone. This habit is useful in any job and in your own business.
+Think about the jobs around you. A chop bar owner tracks what she spends on ingredients and what she sells. A market trader in Bolgatanga writes down who owes him money. An NGO field officer records how many households were visited. A shop attendant checks at the end of the day that the MoMo payments match the sales. Each one needs accurate, simple records, often on a phone. This habit is useful in any job and in your own business.
 
 ## A worked example
 
@@ -2264,23 +2264,23 @@ You do not need to choose a career today. But knowing where these skills can lea
             prompt: "According to the lesson, why do many people stop online courses early?",
             options: [
               "They are not clever enough",
-              "They try to do too much at once or study alone",
-              "Courses are always too short",
               "They finish everything in two weeks",
+              "Courses are always too short",
+              "They try to do too much at once or study alone",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The lesson says it is usually doing too much at once or studying alone.",
           },
           {
             prompt: "Which of these is an example of keeping records from the lesson?",
             options: [
-              "A shop attendant reconciling MoMo payments at the end of the day",
+              "A shop attendant checking that MoMo payments match the sales",
               "Watching a film",
               "Charging a phone",
               "Changing a ringtone",
             ],
             answer_index: 0,
-            explanation: "Reconciling MoMo payments is one of the record keeping examples.",
+            explanation: "Checking MoMo payments against sales is one of the record keeping examples.",
           },
           {
             prompt: "How long does the DMP cohort run?",
@@ -2350,7 +2350,7 @@ Sleep, food and short breaks matter. Studying for twenty five minutes, then rest
 
 ## A worked example
 
-Amina and Mariama are both preparing for the DMP cohort in Tamale. They agreed to study for thirty minutes each evening after supper and send each other one sentence about what they learned. When Mariama missed three days because of a family funeral, Amina sent her the lessons she had missed and a short summary. Mariama caught up in a weekend. Neither of them studied for long hours, but they kept going, and that made the difference.`,
+Amina and Mariama in Tamale are both preparing to apply for the DMP cohort. They agreed to study for thirty minutes each evening after supper and send each other one sentence about what they learned. When Mariama missed three days because of a family funeral, Amina sent her the lessons she had missed and a short summary. Mariama caught up in a weekend. Neither of them studied for long hours, but they kept going, and that made the difference.`,
       practice_task_md: `**Goal:** Build a study routine you can keep for two weeks.
 
 **Steps**
@@ -2368,11 +2368,11 @@ Amina and Mariama are both preparing for the DMP cohort in Tamale. They agreed t
             prompt: "Which of these is a good small daily goal?",
             options: [
               "Learn digital marketing this week",
-              "Do fifteen minutes of typing",
-              "Become an expert by tomorrow",
               "Watch videos for five hours today",
+              "Become an expert by tomorrow",
+              "Do fifteen minutes of typing",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Small, specific goals are easy to start and finish.",
           },
           {
@@ -2443,7 +2443,7 @@ At the end of each day or week, add up money in and money out. The difference sh
 
 ## A worked example
 
-Fuseini sells phone accessories in Tamale. Here is part of his record for Monday:
+Fuseini sells phone accessories in Tamale. Here is part of his record for Monday. The prices are only examples to show how the record works:
 
 * Monday, sold 3 chargers, money in 90 cedis, MoMo, ID noted.
 * Monday, sold 1 earphone, money in 25 cedis, cash.
@@ -2473,11 +2473,11 @@ Accurate records build trust with employers, customers and anyone who might one 
             prompt: "A customer shows you a screenshot saying they have paid. What should you do?",
             options: [
               "Accept it and hand over the goods",
-              "Confirm the money arrived in the business account through the official app or menu",
-              "Ask them to send another screenshot",
               "Refuse to sell anything",
+              "Ask them to send another screenshot",
+              "Confirm the money arrived in the business account through the official app or menu",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Screenshots and SMS messages can be faked, so confirm the payment yourself.",
           },
           {
@@ -2577,11 +2577,11 @@ Every path above starts with the foundations in this roadmap: confident phone us
             prompt: "Which DMP specialisation is mentioned in the lesson?",
             options: [
               "Mobile game design",
-              "Social media marketing",
-              "Cybersecurity",
               "Mobile app development",
+              "Cybersecurity",
+              "Social media marketing",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The specialisations are SEO and content marketing, social media marketing, and Google Ads.",
           },
           {
@@ -2640,11 +2640,11 @@ You are not expected to be an expert. The cohort will teach you. But arriving wi
 ## What this section covers
 
 * **Readiness checklist.** A practical check of the skills week 1 assumes, with a link back to any lesson you should revisit.
-* **Apply to the DMP cohort.** How to apply, what to mention about your progress, and what to do if you do not get a seat this time.
+* **Apply to the DMP cohort.** Where to sign up, what to mention about your progress, and what to do if you do not get a seat this time.
 
 ## A worked example
 
-Hawa finished the bridge over two months. Before applying, she went through the readiness checklist. She could do everything except join a video call confidently, so she spent one more evening practising with a friend. When her first DMP session began, she joined on time, muted herself, and followed along as the mentor explained files and folders. It felt like the next step, not a jump into the unknown.
+Hawa finished the bridge over two months. Before applying, she went through the readiness checklist. She could do everything except join a video call confidently, so she spent one more evening practising with a friend. When the cohort began, she followed along as her mentor explained files and folders, and she already knew where her own files lived. It felt like the next step, not a jump into the unknown.
 
 Whatever happens with your application, the skills you built here are yours. They already make you more ready for many entry level jobs.`,
       practice_task_md: `**Goal:** Map your bridge progress to DMP week 1.
@@ -2674,11 +2674,11 @@ Whatever happens with your application, the skills you built here are yours. The
             prompt: "Which of these is part of DMP week 1?",
             options: [
               "Running Google Ads campaigns",
-              "Using Gmail to send emails with attachments",
-              "Building a portfolio",
               "Writing computer code",
+              "Building a portfolio",
+              "Using Gmail to send emails with attachments",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Week 1 includes Gmail with attachments, files and folders, hardware and safe browsing.",
           },
           {
@@ -2709,7 +2709,7 @@ Whatever happens with your application, the skills you built here are yours. The
     },
 
     "readiness-check": {
-      explanation_md: `Before you apply to the DMP cohort, or to an entry level job that asks for basic digital skills, it helps to check honestly what you can already do. This checklist covers what DMP week 1 assumes. It is not an exam. It is a way to find any small gaps so you can fix them before they slow you down.
+      explanation_md: `Before you apply to the DMP cohort, or to an entry level job that asks for basic digital skills, it helps to check honestly what you can already do. This checklist covers what DMP week 1 assumes, plus the everyday skills from the rest of this roadmap. It is not an exam. It is a way to find any small gaps so you can fix them before they slow you down.
 
 ## How to use the checklist
 
@@ -2792,11 +2792,11 @@ Keep your completed checklist. It is useful evidence of your progress when you a
             prompt: "What should you do if an item is marked Not yet?",
             options: [
               "Give up on applying forever",
-              "Go back to the matching lesson in this roadmap",
-              "Ignore it",
               "Mark it Yes anyway",
+              "Ignore it",
+              "Go back to the matching lesson in this roadmap",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Each item matches a lesson by name, so revisit it.",
           },
           {
@@ -2827,18 +2827,18 @@ Keep your completed checklist. It is useful evidence of your progress when you a
     },
 
     "apply-to-dmp": {
-      explanation_md: `You have built real foundations: confident phone use, professional communication, safe accounts, files and forms, and first steps on a computer. The next step is to apply for a seat in the Delta Mentoring Program. Applying is itself a useful skill, because job applications in Ghana use the same steps: read the instructions, fill in a form, attach documents and write about yourself clearly.
+      explanation_md: `You have built real foundations: confident phone use, professional communication, safe accounts, files and forms, and first steps on a computer. The next step is to try for a seat in the Delta Mentoring Program. The first cohort is a free pilot with 25 seats, starting in January 2027. Applying is itself a useful skill, because job applications in Ghana use the same steps: read the instructions, fill in a form, attach documents and write about yourself clearly.
 
 ## Before you apply
 
-* **Find the official application.** Look for the application link on SydCrest's own website or app, or ask a SydCrest mentor. Be careful of anyone who asks you to pay a fee to "secure" a seat on your behalf. Use your scam spotting skills.
-* **Read all the instructions.** Note any deadline and what you need to prepare.
+* **Use the official page.** On the SydCrest website, open the **Programme** page. It explains the cohort and has a waitlist form. Join the waitlist there. The pilot cohort is free, so be careful of anyone who asks you to pay a fee to "secure" a seat for you. Use your scam spotting skills.
+* **Read all the instructions.** Read the Programme page and any messages SydCrest sends you. Note any deadline and what you need to prepare.
 * **Prepare your details.** Your professional email address, your phone number and any documents asked for, scanned clearly and named properly.
 * **Check your time.** The cohort runs for twelve weeks with weekly assignments. Think honestly about the hours you can give each week, and plan around work, family and farming seasons.
 
 ## Writing about yourself
 
-Many applications ask a few short questions, such as why you want to join. Use clear English and short sentences. A helpful structure:
+Forms like this often ask a few short questions, such as where you are and why you want to join. Use clear English and short sentences. A helpful structure:
 
 1. **Who you are:** your name, where you live and what you do now.
 2. **Why you want to join:** a real reason, such as a job you want or a business you want to grow.
@@ -2849,11 +2849,11 @@ Specific examples are more convincing than big promises. "I practise typing for 
 
 ## Fill in the form carefully
 
-Use everything from the online forms lesson. Read the whole form first, check every name and number, review before submitting, and take a screenshot of the confirmation.
+Use everything from the online forms lesson when you fill in the waitlist form and any form that follows. Read the whole form first, check every name and number, review before submitting, and take a screenshot of the confirmation.
 
 ## If you do not get a seat this time
 
-Seats in a mentored cohort are limited, so not everyone gets in at once. That does not mean you are not good enough. Keep learning on SydCrest's free roadmaps, keep your practice log going, and apply again for the next cohort with even more progress to show. Everything you learn in the meantime makes you more ready for both the cohort and for jobs.
+The pilot cohort has only 25 seats, so not everyone who joins the waitlist will get one. That does not mean you are not good enough. Keep learning on SydCrest's free roadmaps, keep your practice log going, and watch the Programme page. If another cohort is announced, apply again with even more progress to show. Everything you learn in the meantime makes you more ready for both the cohort and for jobs.
 
 ## A worked example
 
@@ -2872,15 +2872,15 @@ Wumpini wrote: "My name is Wumpini Alhassan from Savelugu. I sell provisions and
       quiz: {
         questions: [
           {
-            prompt: "Where should you find the DMP application?",
+            prompt: "Where should you sign up for the DMP?",
             options: [
               "From anyone who asks for a fee to secure a seat",
-              "On SydCrest's own website or app, or by asking a SydCrest mentor",
+              "The waitlist form on the Programme page of the SydCrest website",
               "In a random forwarded WhatsApp message",
               "From an unknown caller",
             ],
             answer_index: 1,
-            explanation: "Use the official source and watch out for anyone asking for a fee.",
+            explanation: "The official waitlist is on SydCrest's Programme page, and the pilot is free, so a fee request is a warning sign.",
           },
           {
             prompt: "Which sentence is more convincing in an application?",
@@ -2908,12 +2908,12 @@ Wumpini wrote: "My name is Wumpini Alhassan from Savelugu. I sell provisions and
             prompt: "What should you do if you do not get a seat this time?",
             options: [
               "Stop learning completely",
-              "Keep learning on the free roadmaps and apply again next time",
+              "Keep learning on the free roadmaps and apply again if another cohort is announced",
               "Pay someone to get you in",
               "Delete your email account",
             ],
             answer_index: 1,
-            explanation: "Seats are limited, so keep learning and apply again with more progress.",
+            explanation: "The pilot has only 25 seats, so keep learning and apply again with more progress if another cohort opens.",
           },
         ],
         pass_threshold: 75,

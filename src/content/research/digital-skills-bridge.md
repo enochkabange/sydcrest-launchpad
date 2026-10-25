@@ -48,6 +48,10 @@ does not re teach them.
 | F4 | GCFGlobal LearnFree home page (topic and series names) | https://www.learnfree.org/ | 2026-10-25 | Copyright Learnfree, Inc.; limited not for profit educational licence, scraping prohibited (terms page). Only series names read |
 | F5 | GCFGlobal LearnFree terms and conditions | https://www.learnfree.org/terms-conditions | 2026-10-25 | Terms page, read for the licence |
 | F6 | SydCrest DMP curriculum (internal) | src/content/dmp/curriculum.ts | 2026-10-25 | Internal, defines where the bridge must end |
+| F7 | SydCrest public Programme page and site facts (internal): free pilot cohort, 25 seats, January 2027, waitlist form; WhatsApp community | src/app/(marketing)/programme/page.tsx, src/content/marketing.ts | 2026-10-25 | Internal, the only published DMP facts the lessons may state |
+| D1 | Google Account Help: Turn on 2-Step Verification (reviewer check; menu now "Security & sign-in", so lessons phrase it generally) | https://support.google.com/accounts/answer/185839 | 2026-10-25 | Official documentation, read for accuracy only |
+| D2 | Google Drive Help: Scan documents on Android (reviewer check; scan starts from a Camera button) | https://support.google.com/drive/answer/3145835 | 2026-10-25 | Official documentation, read for accuracy only |
+| D3 | Google Chrome Help: Browse in Incognito mode (reviewer check; what is and is not kept, network and employer can still see activity) | https://support.google.com/chrome/answer/95464 | 2026-10-25 | Official documentation, read for accuracy only |
 
 Searches that found nothing usable (recorded so the gap is honest): several Jobberman
 listings for northern Ghana enumerator, field officer and programme support roles now
@@ -176,7 +180,7 @@ prerequisite (P) of another node or of DMP week 1.
 | `communicating-at-work` | Section. S1 S2 S4 S5 S6 S7 S9 S10 S12 (calls, email, messaging); F1 communication and collaboration; F3 communicating inside and outside the organisation |
 | `phone-calls-at-work` | S1 S4 S5 S6 S7 S9 S10 S12; F3 communicating with people outside the organisation, active listening |
 | `whatsapp-for-work` | S2 S4 S6 S8 S9 S13; F1 interacting, sharing, digital behaviour |
-| `video-calls` | P: readiness check and DMP mentoring sessions; F1 interacting through digital technologies |
+| `video-calls` | P: readiness check; online classes and interviews (how DMP sessions run is not yet published, so the lesson does not assume it); F1 interacting through digital technologies |
 | `clear-english` | S1 S2 S5 S7 S10 S12 S15 S16 S17; F3 reading and writing basic skills; P for DMP (all materials in English) |
 | `accounts-and-safety` | Section. F1 safety area; S6 S10 S11 (confidential information); P for creating any account |
 | `email-account` | S1 S2 S4 S6 S9 S10 S12 (email); P: DMP week 1 assumes a Gmail account; stays at create and recover, sending with attachments is left to DMP week 1 |
