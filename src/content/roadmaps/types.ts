@@ -39,7 +39,8 @@ export type RoadmapTrack =
   | "digital-marketing"
   | "ui-ux"
   | "product"
-  | "digital-skills-bridge";
+  | "digital-skills-bridge"
+  | "mobile-app-developer";
 
 /** Coarse grouping for browsing; not yet fixed in the schema, founder to confirm. */
 export type FieldCategory =
