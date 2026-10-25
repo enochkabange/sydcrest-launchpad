@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { Suspense } from "react";
 import { LoginForm } from "./login-form";
 import { GoogleButton, OrDivider } from "../google-button";
