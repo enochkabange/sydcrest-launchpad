@@ -125,7 +125,7 @@ Usually you cannot ask everyone, so you ask a sample. A sample only represents t
 
 ## Correlation is not cause
 
-If two things rise together, one did not necessarily cause the other. Ice water sales and malaria cases may both rise in the rainy season, yet neither causes the other. Look for a third factor before claiming a cause.
+If two things rise together, one did not necessarily cause the other. Umbrella sales and malaria cases both rise in the rainy season, yet umbrellas do not cause malaria; the rain drives both. Look for a third factor before claiming a cause.
 
 ## In practice
 
@@ -2002,7 +2002,645 @@ Amina keeps an invented sheet of weekly seed distributions for an NGO in the Nor
       },
     },
 
-    // NEXT
+    python: {
+      explanation_md: `## Why this matters
+
+Spreadsheets slow down or freeze with very large files, and repeating the same twenty cleaning steps every month by hand is tiring and error prone. Python solves both problems. You write the steps once as code, then rerun them on next month's file in seconds. Python appears in a number of analyst adverts, especially at banks and remote employers, and it is a strong addition once your spreadsheet and SQL skills are solid.
+
+## Where Python fits
+
+Think of your tools as a ladder:
+
+* **Spreadsheets** for small and medium data you can see and edit directly.
+* **SQL** for pulling and summarising data that lives in databases.
+* **Python** for large files, repeated tasks, combining many files and more advanced analysis.
+
+You do not replace the earlier tools. Most analysts use all three, picking whichever fits the task.
+
+## What about SPSS, Stata and R?
+
+Many M&E and research adverts mention SPSS or Stata. These are statistics packages that are popular in research and public health, but they are paid software. R is a free language in the same family and is common in research. Python is free, widely used across industries and has excellent beginner resources, which is why this track teaches it. The habits you build in Python, such as writing steps as code, keeping data tidy and checking results, transfer directly if a job later asks you to use R, SPSS or Stata.
+
+## No powerful computer needed
+
+You do not need to install anything. **Google Colab** runs Python notebooks in your browser on Google's computers, for free, with a Google account. A notebook mixes code, results and written notes on one page, so your analysis explains itself. You can share a notebook with a link, which makes it perfect for a portfolio.
+
+A laptop is more comfortable than a phone for writing code, but you can read and run notebooks on a phone in desktop mode. To save data, write and test on small files first.
+
+## What this section covers
+
+**Python basics in a notebook:** variables, lists, loops and functions, written in Colab.
+
+**Working with tables in pandas:** loading a CSV file, filtering, grouping and cleaning, the same tasks you did in spreadsheets.
+
+## How to learn it
+
+Short daily practice works better than long weekend sessions. Aim for twenty to thirty minutes a day. Type the examples yourself rather than copying and pasting, because typing builds memory. When you get an error, read the last line of the message first; it usually tells you what went wrong. Searching the exact error message often finds an answer.
+
+## A worked example
+
+Sumaila prepares a monthly report from twelve invented district spreadsheets for an NGO in the Upper West Region. In a spreadsheet, he copies and pastes all twelve, fixes spellings and builds a pivot table, which takes most of a day. After learning pandas, he writes a short notebook that reads all twelve files, combines them, applies the same cleaning steps and produces the summary table. Next month he uploads the new files and runs the notebook. The report is ready in minutes, and every step is written down for his supervisor to check.`,
+      practice_task_md: `**Goal:** set up your Python workspace and run your first notebook.
+
+1. Open colab.research.google.com and sign in with a Google account.
+2. Create a new notebook and rename it "Python practice".
+3. In the first cell, type \`print("Hello from Tamale")\` (or your own town) and run it.
+4. Add a text cell above it with a heading and one sentence on what this notebook is for.
+5. In a new code cell, calculate the total of three invented daily sales, such as 120 + 95 + 140, and run it.
+6. Share the notebook with a view link.
+
+**Done looks like:** a shared Colab notebook with a text cell and two working code cells, ready for the next lessons.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "When does the lesson say Python is especially useful?",
+            options: [
+              "For typing a single small list",
+              "For large files and repeated tasks you can rerun as code",
+              "For drawing logos",
+              "Only for building websites",
+            ],
+            answer_index: 1,
+            explanation: "Python handles large files and lets you rerun the same steps quickly.",
+          },
+          {
+            prompt: "Which statement about SPSS, Stata and R is correct according to the lesson?",
+            options: [
+              "All three are free",
+              "SPSS and Stata are paid; R is a free language in the same family",
+              "R is paid and SPSS is free",
+              "None of them is used in research",
+            ],
+            answer_index: 1,
+            explanation: "SPSS and Stata are paid software, while R is free.",
+          },
+          {
+            prompt: "What is Google Colab?",
+            options: [
+              "A paid statistics package",
+              "A free tool that runs Python notebooks in the browser",
+              "A database",
+              "A survey app",
+            ],
+            answer_index: 1,
+            explanation: "Colab runs Python notebooks in your browser on Google's computers.",
+          },
+          {
+            prompt: "When you get an error, what should you read first?",
+            options: [
+              "The first line of your code",
+              "The last line of the error message",
+              "The notebook title",
+              "Nothing; restart the computer",
+            ],
+            answer_index: 1,
+            explanation: "The last line usually says what went wrong.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "python-basics": {
+      explanation_md: `## Why this matters
+
+Before you can analyse tables with pandas, you need a few core Python ideas. They are the same ideas you used in spreadsheets, written as code: values, lists of values, repeating a step and reusing a calculation. Employers who test Python usually start here.
+
+## Notebooks
+
+In Google Colab, a notebook is made of cells. **Code cells** run Python and show the result underneath. **Text cells** hold notes and headings. Run a cell with the play button or Shift and Enter. Cells share memory, so a value created in one cell can be used in the next. If things get confusing, use Runtime then Restart and run all, which runs every cell from the top.
+
+## Variables and types
+
+A variable is a name that stores a value:
+
+\`\`\`python
+town = "Bolgatanga"
+pupils = 42
+fee = 12.5
+\`\`\`
+
+Text is a **string** (in quotes), whole numbers are **integers** and decimals are **floats**. \`type(pupils)\` tells you the type. Mixing them causes errors: "42" in quotes is text and cannot be added to a number until you convert it with \`int("42")\`.
+
+## Lists
+
+A list holds several values in order:
+
+\`\`\`python
+sales = [120, 95, 140, 110]
+sum(sales) / len(sales)
+\`\`\`
+
+This gives the average of the four sales. Lists start counting at zero, so \`sales[0]\` is 120.
+
+## Dictionaries
+
+A dictionary stores pairs of keys and values, like a small lookup table:
+
+\`\`\`python
+prices = {"rice": 90, "oil": 95}
+prices["oil"]
+\`\`\`
+
+## Loops and conditions
+
+A for loop repeats a step for each item. An if statement makes a decision:
+
+\`\`\`python
+for s in sales:
+    if s >= 120:
+        print(s, "good day")
+\`\`\`
+
+Indentation (the spaces at the start of a line) matters in Python. It shows which lines belong inside the loop or the if.
+
+## Functions
+
+A function packages a calculation so you can reuse it:
+
+\`\`\`python
+def to_pesewas(cedis):
+    return round(cedis * 100)
+\`\`\`
+
+Now \`to_pesewas(12.5)\` returns 1250. Python also has many built in functions, such as \`len\`, \`sum\`, \`max\` and \`round\`.
+
+## A worked example
+
+Mariama has an invented list of daily attendance counts for a school in Nalerigu over two weeks. She stores them in a list, calculates the average with sum and len, uses a loop to print the days below 30, and writes a small function that turns a count into a percentage of the 40 enrolled pupils. Ten lines of code replace a page of manual sums, and she can reuse them next term.
+
+## Practice habits
+
+Write short code cells and run them often. Add a text cell explaining each step in plain English. When something breaks, check spelling, quotes, brackets and indentation first.`,
+      practice_task_md: `**Goal:** use variables, lists, a loop and a function in a notebook.
+
+1. Open your "Python practice" notebook in Colab.
+2. Create a list of 10 invented daily sales for a stall in your town.
+3. Calculate the total, the average and the largest value using sum, len and max.
+4. Write a loop that prints each day's number and the word "high" if the sale is above the average.
+5. Write a function \`with_levy(amount)\` that adds a 5 percent charge and test it on two values.
+6. Add a text cell above each code cell explaining what it does.
+
+**Done looks like:** a notebook with working, explained code you can share as a link with a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "In sales = [120, 95, 140, 110], what is sales[0]?",
+            options: ["95", "120", "110", "0"],
+            answer_index: 1,
+            explanation: "Python lists start counting at zero, so the first item is sales[0].",
+          },
+          {
+            prompt: "Why does \"42\" + 8 cause an error in Python?",
+            options: [
+              "42 is too big",
+              "\"42\" in quotes is text, not a number",
+              "Python cannot add",
+              "8 must be written as eight",
+            ],
+            answer_index: 1,
+            explanation: "A string must be converted with int() before adding it to a number.",
+          },
+          {
+            prompt: "What does indentation do in a Python loop?",
+            options: [
+              "Nothing; it is only for looks",
+              "Shows which lines belong inside the loop",
+              "Makes the code run faster",
+              "Turns code into a comment",
+            ],
+            answer_index: 1,
+            explanation: "Indentation marks which lines are inside the loop or if.",
+          },
+          {
+            prompt: "What is a function for?",
+            options: [
+              "Packaging a calculation so you can reuse it",
+              "Storing a single number",
+              "Deleting a notebook",
+              "Connecting to the internet",
+            ],
+            answer_index: 0,
+            explanation: "Functions let you reuse a calculation with different inputs.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    pandas: {
+      explanation_md: `## Why this matters
+
+pandas is the Python library analysts use for tables. It does what you already do in spreadsheets, such as filtering, sorting, cleaning, lookups and pivot tables, but on bigger files and as repeatable steps. If an advert mentions Python for data analysis, it almost always means pandas.
+
+## Loading data
+
+In Colab, upload a CSV file using the files panel on the left, then:
+
+\`\`\`python
+import pandas as pd
+df = pd.read_csv("survey.csv")
+df.head()
+\`\`\`
+
+A table in pandas is called a **DataFrame**, usually named df. \`df.head()\` shows the first five rows. \`df.shape\` gives rows and columns, and \`df.info()\` lists each column's type and how many values are missing. Always run these first, just as you would scan a sheet before analysing it.
+
+## Selecting and filtering
+
+\`\`\`python
+df["community"]
+df[df["hh_size"] > 10]
+\`\`\`
+
+The first line selects one column. The second keeps only households with more than ten members. Combine conditions with & (and) and | (or), each condition in brackets.
+
+## Summarising
+
+\`df["community"].value_counts()\` counts records per community. To total a column by group, like a pivot table:
+
+\`\`\`python
+df.groupby("community")["spend_ghs"].mean()
+\`\`\`
+
+This gives the average spend per community. Swap mean for sum, count, min or max as needed.
+
+## Cleaning
+
+The cleaning ideas from earlier carry over:
+
+* \`df.isna().sum()\` counts missing values per column.
+* \`df.drop_duplicates()\` removes repeated rows.
+* \`df["community"].str.strip().str.title()\` removes extra spaces and fixes capitals.
+* \`pd.to_numeric(df["spend_ghs"], errors="coerce")\` turns text into numbers, making unreadable values missing so you can inspect them.
+
+Save the result to a new variable or file, keeping the raw data untouched, just as you kept the raw sheet.
+
+## Joining and saving
+
+\`pd.merge(sales, prices, on="code")\` joins two tables on a shared column, like XLOOKUP or SQL JOIN. When you finish, \`df.to_csv("clean.csv", index=False)\` saves a file you can open in Google Sheets or feed to a dashboard.
+
+## A worked example
+
+Issahaku downloads an invented KoboToolbox export from a water survey in five communities near Savelugu. In a notebook he loads it, checks shape and missing values, strips and fixes community spellings, drops two duplicates, converts minutes to numbers, and groups by community to get average walking time. He adds a text cell above each step. The notebook becomes both his analysis and his cleaning log, and he reruns it unchanged when the next round of data arrives.
+
+## Spreadsheet first, then pandas
+
+If any idea here feels strange, do it in Google Sheets first, then repeat it in pandas. Seeing the same result both ways is the fastest way to understand what the code does.`,
+      practice_task_md: `**Goal:** redo a spreadsheet analysis in pandas.
+
+1. Download your cleaned survey or stall sales sheet from Google Sheets as a CSV file (File, then Download, then CSV).
+2. In Colab, upload it and load it with pd.read_csv.
+3. Run head, shape and info, and write one sentence about what you see.
+4. Count missing values, remove duplicates and fix one text column with str.strip and str.title.
+5. Use groupby to reproduce one summary you previously built with SUMIF or a pivot table, and check the numbers match.
+6. Save the result with to_csv.
+
+**Done looks like:** a shared notebook with text cells explaining each step and a summary that matches your spreadsheet.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a DataFrame in pandas?",
+            options: ["A chart", "A table of data", "A database server", "A survey form"],
+            answer_index: 1,
+            explanation: "pandas calls a table a DataFrame.",
+          },
+          {
+            prompt: "Which code gives the average spend per community?",
+            options: [
+              "df.head()",
+              "df.groupby(\"community\")[\"spend_ghs\"].mean()",
+              "df.shape",
+              "df.drop_duplicates()",
+            ],
+            answer_index: 1,
+            explanation: "groupby with mean summarises by group, like a pivot table.",
+          },
+          {
+            prompt: "What does df.isna().sum() show?",
+            options: [
+              "The total of every column",
+              "The number of missing values in each column",
+              "The first five rows",
+              "Duplicate rows",
+            ],
+            answer_index: 1,
+            explanation: "isna marks missing values and sum counts them per column.",
+          },
+          {
+            prompt: "Which pandas function joins two tables on a shared column?",
+            options: ["pd.merge", "pd.read_csv", "df.head", "df.to_csv"],
+            answer_index: 0,
+            explanation: "pd.merge joins tables, like XLOOKUP or SQL JOIN.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "getting-hired": {
+      explanation_md: `## Why this matters
+
+Skills only turn into income when someone can see them. Employers hiring junior data staff in Ghana, whether an NGO in Tamale, a bank in Accra or a remote company, want evidence that you can take real data and find a useful answer. Certificates help a little; a clear piece of work you can show and explain helps much more. This section helps you build that evidence and find the right first door.
+
+## Many doors into data work
+
+The title "data analyst" is only one way in. Look at adverts and you will see data skills asked for in:
+
+* **Data entry and data clerk roles**, where accuracy and spreadsheets matter most.
+* **Enumerator and field data collector roles** on surveys, often short contracts with NGOs and research organisations.
+* **M&E assistant and M&E officer roles** at NGOs and development projects.
+* **Research assistant roles** at research organisations and universities.
+* **Reporting, MIS and business intelligence roles** at banks, telcos, microfinance companies and distributors.
+* **Remote junior analyst roles**, which usually expect SQL and a BI tool.
+
+Many senior M&E and analyst adverts ask for several years of experience. That is normal. The way in is often through an assistant role, national service posting, internship, volunteer placement or short field contract, which then becomes the experience the next advert asks for.
+
+## What evidence looks like
+
+* **A small portfolio** of two or three case studies that show a question, the data, your method and your answer.
+* **Working links**: a Looker Studio dashboard, a shared Colab notebook, a Google Sheet with clear formulas.
+* **References** from someone who has seen you work with data, such as a supervisor, a mentor or a small business you helped.
+* **A short CV** that lists tools and what you did with them, not just course names.
+
+## Build experience while you learn
+
+You do not have to wait for a job to get real experience. Offer to tidy a church treasurer's records, build a stock sheet for a shop, or help a community group analyse a short survey. Agree what you will deliver, keep personal data safe, and ask permission before using any of it in your portfolio. Short paid projects for local businesses are possible too; agree the scope and price in cedis in writing first.
+
+## Stay safe
+
+Genuine employers do not ask you to pay for an interview, training or a job offer. Check that an organisation is real before sharing personal documents, and be careful with remote offers that seem too good to be true.
+
+## What this section covers
+
+**A portfolio of case studies:** building and sharing two or three strong pieces of work, ideally using Ghanaian public data.
+
+**Job search and practical tests:** finding openings, tailoring applications and preparing for spreadsheet and SQL tests.
+
+## A worked example
+
+Hawa finishes this track while doing national service at a district office near Bolgatanga. She offers to clean the office's attendance records and builds a simple dashboard. With permission she writes it up, with names removed, as a portfolio case study. When an NGO advertises an M&E assistant role, she sends a link to that dashboard along with her CV.`,
+      practice_task_md: `**Goal:** map your route into data work.
+
+1. Search two Ghanaian job boards or NGO career pages for roles that mention Excel, data, M&E or reporting. Note five adverts (title, employer type, location).
+2. For each, list the skills mentioned and mark which you already have evidence for.
+3. Pick the two skills that appear most often where you lack evidence.
+4. Write down one small real project you could do in the next month to build evidence for those skills, such as helping a local group with their records.
+
+**Done looks like:** a short table of five adverts, your skills gaps and a one month evidence plan to discuss with a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, what helps most when applying for a junior data role?",
+            options: [
+              "A long list of course certificates only",
+              "A clear piece of work you can show and explain",
+              "A large social media following",
+              "Paying an agent",
+            ],
+            answer_index: 1,
+            explanation: "Evidence of real work matters more than certificates alone.",
+          },
+          {
+            prompt: "Many M&E adverts ask for several years of experience. What does the lesson suggest?",
+            options: [
+              "Give up on M&E",
+              "Enter through assistant roles, national service, internships or short field contracts",
+              "Invent experience on your CV",
+              "Only apply to senior roles",
+            ],
+            answer_index: 1,
+            explanation: "These routes build the experience later adverts ask for.",
+          },
+          {
+            prompt: "What should you do before using a local project in your portfolio?",
+            options: [
+              "Nothing, it is your work",
+              "Ask permission and remove personal data",
+              "Post the raw data online",
+              "Change the numbers to look better",
+            ],
+            answer_index: 1,
+            explanation: "Ask permission and keep personal data safe.",
+          },
+          {
+            prompt: "An employer asks you to pay before an interview. What does the lesson say?",
+            options: [
+              "That is normal for good jobs",
+              "Genuine employers do not ask you to pay for an interview or job offer",
+              "Pay only half",
+              "Pay if the job is remote",
+            ],
+            answer_index: 1,
+            explanation: "Requests for payment are a warning sign.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    portfolio: {
+      explanation_md: `## Why this matters
+
+A portfolio shows an employer what you can do before they meet you. For data roles, two or three clear case studies are usually more convincing than a long list of courses. Using Ghanaian data makes your work instantly relevant to local employers, and shows you understand the context they work in.
+
+## What a case study contains
+
+Each case study should answer five things, in this order:
+
+1. **The question.** One sentence, such as "Which regions saw the biggest change in school enrolment between two census years?"
+2. **The data.** Where it came from, what it covers and its limits.
+3. **The method.** What you cleaned, which tools you used, and how you calculated your results.
+4. **The findings.** Two or three key results with one or two clear charts.
+5. **What it means.** A short recommendation or next question, plus honest caveats.
+
+Keep each one short enough to read on a phone in a few minutes.
+
+## Finding data
+
+* **Ghana Statistical Service** (statsghana.gov.gh) publishes census and survey reports and tables. Choose a table, copy it into Google Sheets, tidy it and analyse it.
+* **Kaggle Datasets** host many public datasets, some about Ghana and West Africa. Check the source and licence before using one.
+* **Your own survey.** A short KoboToolbox survey of friends or classmates, with consent and no personal data, makes a great case study because you control every step.
+* **Invented data**, clearly labelled as invented, is fine for demonstrating a technique such as a dashboard. Never present invented numbers as real.
+
+Always credit your source and say when you downloaded the data.
+
+## A balanced set of three
+
+Aim for variety so employers see a range of skills:
+
+* **A spreadsheet case study:** cleaning, lookups and a pivot table on public data.
+* **A field data case study:** a small survey you designed, built in KoboToolbox, cleaned and summarised, perhaps with indicators.
+* **A SQL or Python case study:** the same kind of question answered with code, plus a Looker Studio dashboard.
+
+If you are aiming at M&E roles, make one case study look like a short progress report with indicators, baselines and targets.
+
+## Where to put it
+
+You do not need a website. Options that work on a phone:
+
+* A Google Doc or Google Site with links to your sheets, notebooks and dashboards.
+* A GitHub repository with a README for each project, which also shows employers you can use a common tool.
+* Shared Colab notebooks and Looker Studio links set to view only.
+
+Test every link on a phone, logged out, to make sure it opens for a stranger.
+
+## A worked example
+
+Abdul-Rahman builds three case studies. The first uses a Ghana Statistical Service table on household access to drinking water to compare regions, with clear charts. The second is a ten question survey of young people in Tamale about mobile money use, built in KoboToolbox with consent. The third repeats the first analysis in pandas and adds a dashboard. He puts all three in one Google Doc and adds the link to his CV.`,
+      practice_task_md: `**Goal:** publish your first complete case study.
+
+1. Choose a question you can answer with a Ghana Statistical Service table, a Kaggle dataset or your own small survey.
+2. Download or copy the data into Google Sheets and keep a raw copy.
+3. Clean it, analyse it with formulas or a pivot table, and make one or two clear charts.
+4. Write it up in a Google Doc using the five parts: question, data, method, findings, what it means.
+5. Set sharing to "anyone with the link can view" and test the link on a phone while logged out.
+
+**Done looks like:** one shareable case study link you can send to a mentor for feedback and add to your CV.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should come first in a case study?",
+            options: ["The charts", "The question", "Your CV", "The software list"],
+            answer_index: 1,
+            explanation: "A case study starts with a one sentence question.",
+          },
+          {
+            prompt: "When is invented data acceptable in a portfolio?",
+            options: [
+              "Never",
+              "When it is clearly labelled as invented and used to demonstrate a technique",
+              "When it makes the results look better",
+              "When presented as real government figures",
+            ],
+            answer_index: 1,
+            explanation: "Invented data must be labelled and never presented as real.",
+          },
+          {
+            prompt: "Why test portfolio links on a phone while logged out?",
+            options: [
+              "To make sure a stranger can open them",
+              "To save data",
+              "Because logged in links are faster",
+              "To delete old versions",
+            ],
+            answer_index: 0,
+            explanation: "Employers will open your links without your login.",
+          },
+          {
+            prompt: "Which source does the lesson suggest for official Ghanaian census and survey tables?",
+            options: [
+              "Ghana Statistical Service",
+              "A random social media post",
+              "A friend's guess",
+              "An unlabelled spreadsheet",
+            ],
+            answer_index: 0,
+            explanation: "The Ghana Statistical Service publishes census and survey reports and tables.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "job-search": {
+      explanation_md: `## Why this matters
+
+Good skills still need a good search. Data work in Ghana is spread across many job titles and many kinds of employer, and the best openings are not always on the biggest job boards. A focused search, tailored applications and preparation for practical tests make a real difference.
+
+## Where to look
+
+* **Job boards** such as Jobberman and GhanaJob list analyst, data entry, M&E and reporting roles. Set up alerts for words like data, M&E, MEAL, reporting and Excel, not just "data analyst".
+* **NGO and research career pages.** Many international and local NGOs in Tamale, Bolgatanga and Wa post M&E and enumerator roles on their own websites and on NGO job sites.
+* **Government programmes** sometimes recruit data assistants and enumerators for surveys and registries.
+* **Remote job boards** list junior analyst roles open to applicants in Africa. Read the location rules carefully.
+* **Your network.** Mentors, lecturers, former supervisors and WhatsApp groups often hear about short contracts first.
+
+## Read the advert like an analyst
+
+Before applying, list the skills the advert asks for and match each to evidence you have. Lead with the matches. If an advert asks for SPSS or Stata and you know Python or R, say so honestly and show that you can learn new tools. Many adverts list wishes, not strict rules; if you meet most of the core requirements, apply.
+
+## Tailor your application
+
+* **CV:** one or two pages. Put a short skills line near the top (Google Sheets, pivot tables, KoboToolbox, SQL, Looker Studio). Under each experience, write what you did and the result, such as "Cleaned and analysed survey data from 120 households for a community water project".
+* **Cover letter or email:** three short paragraphs. Why this role, what evidence you bring, and a link to your portfolio.
+* **Follow instructions exactly.** If the advert asks for a subject line or a PDF, do it. It is the first test of attention to detail.
+
+## Practical tests
+
+Many employers give a short test: clean a messy sheet, build a pivot table, write a few SQL queries or summarise survey results in a paragraph. Prepare by practising against the clock:
+
+* Take a messy dataset and give yourself 45 minutes to clean it, summarise it and write three findings.
+* Redo the SQLBolt exercises without looking at hints.
+* Practise explaining your steps aloud, because interviewers often ask why you did something.
+
+In the test itself, read all the questions first, check your results, and write down any assumptions you made.
+
+## Interviews
+
+Expect questions like: tell us about a time you found an error in data; how would you check the quality of field data; explain a chart to someone with no data background. Answer with real examples from your portfolio. Prepare one or two questions of your own about how the team uses data.
+
+## A worked example
+
+Fuseini sets alerts for M&E and data roles in the Northern Region. He tailors his CV for an enumerator role on an agricultural survey, highlighting his KoboToolbox case study and Dagbani skills. After the contract he applies for a data assistant role, now able to describe real field experience, and passes the spreadsheet test because he practised against the clock.`,
+      practice_task_md: `**Goal:** prepare a tailored application and a timed test run.
+
+1. Find one current advert for a data entry, M&E assistant, enumerator or junior analyst role.
+2. List its required skills and match each to evidence in your portfolio.
+3. Tailor a one page CV with a skills line and two achievement bullets that match the advert.
+4. Write a three paragraph cover email with your portfolio link.
+5. Do a 45 minute timed test on yourself: clean a messy sheet, build a pivot table and write three findings.
+
+**Done looks like:** a tailored CV, a cover email and your timed test file, ready for a mentor to review.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which job alert keywords does the lesson recommend?",
+            options: [
+              "Only \"data analyst\"",
+              "Words like data, M&E, MEAL, reporting and Excel",
+              "Only \"manager\"",
+              "Only \"remote\"",
+            ],
+            answer_index: 1,
+            explanation: "Data skills are asked for under many job titles.",
+          },
+          {
+            prompt: "An advert asks for SPSS and you know Python. What should you do?",
+            options: [
+              "Claim you know SPSS",
+              "Say honestly what you know and show you can learn new tools",
+              "Never apply",
+              "Leave your skills off the CV",
+            ],
+            answer_index: 1,
+            explanation: "Be honest and show transferable skills.",
+          },
+          {
+            prompt: "How does the lesson suggest preparing for a practical test?",
+            options: [
+              "Practise cleaning and summarising data against the clock",
+              "Memorise the employer's history",
+              "Avoid practising so you stay fresh",
+              "Only read about SQL",
+            ],
+            answer_index: 0,
+            explanation: "Timed practice builds speed and confidence.",
+          },
+          {
+            prompt: "Why follow application instructions exactly, such as the subject line?",
+            options: [
+              "It is the first test of attention to detail",
+              "It makes the email shorter",
+              "Employers never read them",
+              "It is required by law",
+            ],
+            answer_index: 0,
+            explanation: "Following instructions shows the care data work needs.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
