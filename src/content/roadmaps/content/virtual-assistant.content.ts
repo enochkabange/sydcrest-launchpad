@@ -347,6 +347,571 @@ Hawa supports a client in New York. In January the client asks for a call "at 10
         pass_threshold: 80,
       },
     },
+    communication: {
+      explanation_md: `For an assistant, communication is the job. Clients rarely see you, so every email, chat message and call is how they judge your work. Ghanaian admin adverts and remote VA adverts both ask for excellent written and spoken English, and remote adverts often ask for it first.
+
+## Why it matters so much
+
+A client who receives a clear, polite, complete message trusts you with the next task. A client who has to ask three follow up questions starts to wonder whether delegating to you saves time at all. Good communication is not about fancy vocabulary. It is about being clear, correct and considerate of the reader's time.
+
+## English that works
+
+You do not need to sound British or American. You need to be understood quickly. That means short sentences, common words, correct spelling and a polite tone. Many clients read your message on a phone between meetings, so put the important part first.
+
+It also helps to know that some Ghanaian expressions confuse foreign clients. "I am coming" can mean "wait a moment" to us, but a client abroad may expect you to arrive. "Please, I want to find out" can sound unclear. In work messages, say exactly what you mean: "One moment, I am checking the file."
+
+## What this section covers
+
+* **Clear professional writing.** A simple structure for emails and messages, the right tone for different situations, and how to check your work before you send it.
+* **Calls, chat and video meetings.** Chat etiquette, phone calls, joining video meetings on a phone with limited data, taking notes and sending a summary afterwards.
+
+## A small example
+
+Fuseini sends his first update to a new remote client: "hello boss, i have done some of the things u said but the other one is not working, will try again".
+
+His mentor shows him a better version: "Hi Sarah, quick update on today's tasks. Done: the supplier list is in the shared folder. Not done: I could not log in to the booking site because the password was rejected. Could you resend it? I will finish the bookings within an hour of receiving it."
+
+The second message uses the client's name, shows what is finished, explains the problem precisely, asks one clear question and gives a plan. It takes one more minute to write and saves the client a lot of guessing.
+
+Your communication will improve fastest if you read good examples, write every day and ask someone to check your writing. The next two lessons give you a structure to practise with.`,
+      practice_task_md: `**Goal:** Rewrite unclear messages into clear professional ones.
+
+**Steps:**
+1. Find three messages you sent recently in a WhatsApp group or by SMS about something practical, such as a meeting or a payment.
+2. Rewrite each one as if a remote client were reading it: use their name, put the main point first, use full words, and end with a clear next step.
+3. Check for any Ghanaian expressions a foreign reader might misunderstand and replace them with plain words.
+4. Read both versions aloud and note which is quicker to understand.
+
+**Done looks like:** Three before and after pairs saved in a note, with the improved versions ready to show a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson say communication is the job for an assistant?",
+            options: [
+              "Because assistants only answer phones",
+              "Because clients rarely see you, so they judge your work by how you communicate",
+              "Because communication is the only skill in job adverts",
+              "Because assistants must speak with a foreign accent",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says clients judge your work through your messages and calls because they rarely see you.",
+          },
+          {
+            prompt: "What does good work English mean, according to the lesson?",
+            options: [
+              "Using long words to sound educated",
+              "Copying a British or American accent",
+              "Short sentences, common words, correct spelling and a polite tone",
+              "Writing in capital letters so it stands out",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says you need to be understood quickly with short, correct, polite writing.",
+          },
+          {
+            prompt: "Why might \"I am coming\" confuse a client abroad?",
+            options: [
+              "They may think you are about to arrive in person",
+              "It is rude in every country",
+              "It is too long",
+              "It contains a spelling mistake",
+            ],
+            answer_index: 0,
+            explanation: "The lesson notes that a foreign client may expect you to arrive, so it is better to say exactly what you mean.",
+          },
+          {
+            prompt: "What made Fuseini's second message better?",
+            options: [
+              "It was shorter than the first",
+              "It used the client's name, said what was done, explained the problem, asked one question and gave a plan",
+              "It used more emojis",
+              "It asked the client to call him",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists these features as what made the improved message clear.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "professional-writing": {
+      explanation_md: `Writing is how most assistant work gets done. You will draft emails for clients, reply to customers, send updates and sometimes write on someone's behalf. Clear writing saves everyone time and makes you look professional, which helps you keep clients and win new ones.
+
+## A simple structure for any work message
+
+Use four parts, in this order:
+
+1. **Greeting with the name.** "Hi Amina," or "Dear Mr Alhassan," for a more formal reader.
+2. **The main point first.** Say why you are writing in the first sentence.
+3. **The details.** Only what the reader needs, in short paragraphs or a short list.
+4. **The next step.** What you need from them, or what you will do, and by when.
+
+Add a clear subject line to emails, such as "Invoice 014 for October" or "Please confirm: Thursday meeting at 2pm GMT." The reader should know what the email is about before opening it.
+
+## Tone
+
+Match the tone to the reader and situation. A message to a client's colleague you know well can be friendly. A first message to a new customer, a complaint reply or anything on the client's behalf should be polite and more formal. Avoid slang, text speak such as "u" and "pls", all capital letters and too many exclamation marks.
+
+When something has gone wrong, stay calm and factual. Say what happened, what you have done and what happens next. Apologise once and sincerely, without blaming others.
+
+## Check before you send
+
+* Is the main point in the first two lines?
+* Are names, dates, times, amounts and time zones correct?
+* Did you attach the file you mention?
+* Is the spelling right? Turn on the spell checker in your keyboard and in Google Docs.
+* Would you be happy if the client forwarded this to their boss?
+
+Free tools can help. Your phone keyboard and Google Docs underline spelling mistakes. If you use an AI writing tool to improve a draft, read every word yourself, keep private client details out of it unless the client allows it, and make sure the result still sounds like you.
+
+## A small example
+
+Wumpini needs to ask a client to approve a supplier quote. Her draft reads:
+
+"Subject: Approval needed: printing quote for the workshop
+
+Hi David,
+
+Please could you approve the printing quote for the 12 November workshop? It is from a print shop in Tamale and covers 50 programmes and 2 banners. The file is attached.
+
+If I have your approval by Friday, they will deliver on Monday.
+
+Thanks,
+Wumpini"
+
+It is short, the request is in the first line and the deadline is clear.`,
+      practice_task_md: `**Goal:** Write three professional emails using the four part structure.
+
+**Steps:**
+1. Open Gmail or a notes app on your phone.
+2. Write these three emails, each with a clear subject line:
+   * asking a client to confirm a meeting time, with the time zone,
+   * telling a customer their order will be one day late, with an apology and new date,
+   * sending a finished document to a client with a one line summary of what is inside.
+3. Check each one against the list in the lesson: main point first, details correct, attachment mentioned, spelling checked.
+4. Send them to yourself and read them on your phone screen as a client would.
+
+**Done looks like:** Three emails under 120 words each that follow the structure and pass every check.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "In the four part structure, what comes straight after the greeting?",
+            options: ["Your life story", "The main point", "A list of attachments", "A joke to set the tone"],
+            answer_index: 1,
+            explanation: "The lesson says to put the main point first, right after the greeting.",
+          },
+          {
+            prompt: "Which is the best email subject line?",
+            options: ["Hello", "Urgent!!!", "Please confirm: Thursday meeting at 2pm GMT", "Message"],
+            answer_index: 2,
+            explanation: "The lesson says the reader should know what the email is about from the subject line.",
+          },
+          {
+            prompt: "How should you write when something has gone wrong?",
+            options: [
+              "Blame whoever caused it",
+              "Stay calm and factual: what happened, what you have done and what happens next",
+              "Avoid mentioning the problem",
+              "Write in capital letters to show it is serious",
+            ],
+            answer_index: 1,
+            explanation: "The lesson advises a calm, factual message with one sincere apology.",
+          },
+          {
+            prompt: "What does the lesson say about using an AI writing tool on a draft?",
+            options: [
+              "Send whatever it produces without reading it",
+              "Paste in all client details freely",
+              "Read every word yourself and keep private client details out unless the client allows it",
+              "Never write your own drafts again",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says to check every word and protect private client details.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "calls-and-meetings": {
+      explanation_md: `Not everything happens in writing. Clients will call you, add you to work chats and invite you to video meetings. Some adverts ask assistants to join meetings, take notes and follow up on actions. Doing this well, even on a phone, makes you far more useful.
+
+## Work chat etiquette
+
+Work chat on Slack, Microsoft Teams, Google Chat or WhatsApp is quicker than email but still professional.
+
+* Keep each message complete. Do not send "Hi" and wait; write "Hi Abdul-Rahman, can you confirm the venue for Friday?"
+* Reply in the right thread or group so the conversation stays together.
+* Use a separate WhatsApp Business number or profile for work if you can, so work and family messages do not mix.
+* Avoid voice notes unless the client likes them. Many busy people prefer text they can scan quickly.
+* Respect quiet hours. If you must message late, say "No need to reply tonight."
+
+## Phone calls
+
+Answer with your name and, if you answer for a business, its name: "Good morning, Damongo Tours, this is Amina." Keep a notebook or notes app open. Repeat important details back, such as names, numbers and dates. End by saying what will happen next.
+
+## Video meetings on a phone
+
+Free apps such as Google Meet, Zoom and Microsoft Teams work on phones. To save data and avoid problems:
+
+* Test the link and your sound before the meeting starts.
+* Join a few minutes early from a quiet place.
+* Turn your camera off when you are not speaking if data is low, and tell the host why.
+* Mute yourself when not speaking.
+* If the connection drops, rejoin and send a quick chat message so people know.
+
+## Notes and follow up
+
+Many clients value an assistant who turns a meeting into action. During the meeting, note three things: **decisions** made, **actions** with who will do them and by when, and **questions** still open. Within a few hours, send a short summary:
+
+"Summary of today's planning call. Decisions: the workshop moves to 19 November. Actions: Mariama books the hall by Friday; David sends the guest list by Monday. Open question: catering budget, to be confirmed by David."
+
+## A small example
+
+Tahiru joins a weekly video call for an NGO client using his phone. His data is low, so he joins with the camera off and explains in the chat. He mutes himself, takes notes in Google Keep and sends the summary within an hour. The programme manager starts forwarding his summaries to the whole team.`,
+      practice_task_md: `**Goal:** Practise taking meeting notes and sending a clear summary.
+
+**Steps:**
+1. Find a short meeting to observe: a church committee, a school club, a family planning call, or a free recorded meeting or panel video online if you have the data.
+2. While it runs, note decisions, actions (who and by when) and open questions.
+3. Write a summary under 100 words using those three headings.
+4. Ask one person who attended whether your summary is accurate.
+
+**Done looks like:** A summary with decisions, named actions with dates, and open questions, checked by someone who was there.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which work chat message follows the lesson's advice?",
+            options: [
+              "Hi",
+              "Hi Abdul-Rahman, can you confirm the venue for Friday?",
+              "A two minute voice note with no text",
+              "Are you there??",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to keep each chat message complete instead of sending only a greeting.",
+          },
+          {
+            prompt: "What should you do on a video call when your data is low?",
+            options: [
+              "Leave without telling anyone",
+              "Turn your camera off when not speaking and tell the host why",
+              "Keep your microphone on all the time",
+              "Refuse to join",
+            ],
+            answer_index: 1,
+            explanation: "The lesson suggests turning the camera off when not speaking and explaining why.",
+          },
+          {
+            prompt: "Which three things should your meeting notes capture?",
+            options: [
+              "Who was late, who spoke most and who left early",
+              "Decisions, actions with owner and date, and open questions",
+              "The weather, the time and the venue",
+              "Only the jokes that were made",
+            ],
+            answer_index: 1,
+            explanation: "The lesson names decisions, actions and open questions.",
+          },
+          {
+            prompt: "How should you answer a phone call for a client's business?",
+            options: [
+              "Hello, who is this?",
+              "With a greeting, the business name and your name",
+              "Stay silent until the caller speaks",
+              "With your personal nickname",
+            ],
+            answer_index: 1,
+            explanation: "The lesson's example is to give a greeting, the business name and your own name.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "inbox-and-calendar": {
+      explanation_md: `If you read through assistant adverts in Ghana and abroad, two tasks appear more than any others: managing email and managing calendars. Executive assistant adverts talk about diary management. Remote VA adverts talk about inbox management and scheduling. Learn these two well and you can already offer a valuable service.
+
+## Why these two tasks
+
+Busy people lose hours every week to their inbox and their diary. Important emails get buried under newsletters. Meetings clash. Someone forgets to send the documents before a meeting. An assistant who keeps the inbox under control and the calendar accurate saves the client time and embarrassment every day.
+
+These tasks also need trust. You may see private emails and know where your client will be. Discretion, meaning keeping what you see to yourself, is part of the job, and adverts for executive assistants mention it often.
+
+## The tools
+
+The two most common tool sets are Google Workspace (Gmail and Google Calendar) and Microsoft 365 (Outlook for both email and calendar). Both have free versions for personal use and free phone apps. The ideas are the same in each, so if you learn one well you can switch to the other quickly. This roadmap uses Gmail and Google Calendar in examples because they are free and work well on phones.
+
+## What this section covers
+
+* **Managing a client's inbox.** How to sort email into action, waiting and reference, using labels, filters and saved replies, and how to agree what you may answer for the client.
+* **Managing calendars and bookings.** How to schedule meetings without clashes, send clear invitations, protect focus time and handle travel or event arrangements.
+
+## Access done safely
+
+Clients give assistants access in different ways. The safest is **delegation**, where the client shares their inbox or calendar with your own account, so you never need their password. Gmail and Google Calendar both support this. If a client sends you their password instead, suggest delegation or a password manager, and never share the password with anyone else.
+
+## A small example
+
+Zuweira starts working for a business coach in Canada. On day one, the coach shares her calendar and delegates her inbox to Zuweira's work Gmail account. Zuweira asks three questions: Which emails can I answer myself? Which meetings can I accept without checking? What hours should I keep free? Writing down those answers on the first day prevents most problems later.`,
+      practice_task_md: `**Goal:** Prepare a professional account to practise inbox and calendar skills.
+
+**Steps:**
+1. Create a free Gmail account just for work and practice, using a professional name, for example firstname.lastname.va@gmail.com style (do not use a real person's details other than your own).
+2. Install the Gmail and Google Calendar apps if they are not on your phone.
+3. Set your time zone in Google Calendar and add a simple email signature with your name and "Virtual Assistant".
+4. Write down the three questions Zuweira asked a new client, and add two more questions you would ask.
+
+**Done looks like:** A working practice account with signature and time zone set, plus a list of five starting questions for a new client.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, which two tasks appear most often in assistant adverts?",
+            options: [
+              "Video editing and coding",
+              "Managing email and managing calendars",
+              "Driving and deliveries",
+              "Accounting and tax returns",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says email and calendar management appear more than any other tasks.",
+          },
+          {
+            prompt: "What does discretion mean in assistant work?",
+            options: [
+              "Working very fast",
+              "Keeping what you see in the client's emails and diary to yourself",
+              "Choosing your own working hours",
+              "Using many different apps",
+            ],
+            answer_index: 1,
+            explanation: "The lesson defines discretion as keeping what you see to yourself.",
+          },
+          {
+            prompt: "What is the safest way for a client to give you access to their inbox?",
+            options: [
+              "Send their password on WhatsApp",
+              "Write the password on paper",
+              "Delegation, which shares the inbox with your own account so you never need their password",
+              "Post the login in a shared group",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says delegation is the safest method because you do not need the client's password.",
+          },
+          {
+            prompt: "Why does the lesson say you can switch between Google Workspace and Microsoft 365 quickly?",
+            options: [
+              "Because they are made by the same company",
+              "Because the ideas are the same in each",
+              "Because they share one password",
+              "Because neither has a phone app",
+            ],
+            answer_index: 1,
+            explanation: "The lesson explains that the ideas are the same, so skills transfer.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "email-management": {
+      explanation_md: `Many clients hire an assistant because their inbox is out of control. Hundreds of unread emails, missed invoices and forgotten replies cost them money and reputation. If you can bring order to an inbox and keep it there, you are solving a real and painful problem.
+
+## Agree the rules first
+
+Before touching anything, agree with the client:
+
+* Which emails you may answer yourself, such as booking requests or routine questions.
+* Which emails you must flag for them, such as anything about money, contracts or complaints.
+* Whether you write as yourself ("I am Amina, assistant to Mr Issahaku") or in the client's name. Writing as yourself is usually clearer and safer.
+* How often you check: for example at the start, middle and end of your working day.
+
+## Sort into three groups
+
+Each time you check, move every new email into one of three groups:
+
+1. **Action:** needs a reply or a task. Reply now if it takes under two minutes, otherwise add it to your task list.
+2. **Waiting:** you have replied and are waiting for someone else.
+3. **Reference:** no action, but worth keeping, such as receipts and confirmations.
+
+Delete or archive what is left, such as promotions the client does not need. Archiving in Gmail removes the email from the inbox without deleting it, so it can still be found by searching.
+
+## Tools that do the sorting for you
+
+* **Labels** (folders in Outlook) group emails, for example "Action", "Waiting", "Invoices", "Clients".
+* **Filters** (rules in Outlook) apply labels automatically. A filter can label every email from the accountant as "Finance".
+* **Stars or flags** mark the few emails that matter most today.
+* **Saved replies** (called templates in Gmail) store answers you send often, like a price list or directions.
+* **Search** finds anything fast. In Gmail, typing "from:" followed by a name finds emails from that person.
+
+## Daily summary
+
+End each day with a short note to the client: emails you handled, emails that need their decision, and anything waiting. This keeps them in control without reading everything.
+
+## A small example
+
+Alhassan manages the inbox for a guest house owner in Wa. He creates labels for Bookings, Suppliers, Finance and Waiting. He sets a filter so emails from the booking website get the Bookings label, and saves a template with room prices and directions. Each evening he sends: "Handled: 6 booking enquiries. Need you: 1 supplier price increase. Waiting: 2 guests to send arrival times."`,
+      practice_task_md: `**Goal:** Build a simple inbox system in your practice Gmail account.
+
+**Steps:**
+1. In your practice Gmail account, create four labels: Action, Waiting, Reference and Finance.
+2. Create one filter, for example so that any email containing the word "invoice" gets the Finance label.
+3. Save one template reply for a common question, such as opening hours and prices for an imaginary shop.
+4. Ask two friends to send you three emails each about an imaginary business. Sort all six into your labels and reply to at least two using your template.
+5. Write a three line daily summary as you would send to a client.
+
+**Done looks like:** Labels and a working filter, a saved template, six sorted emails and a daily summary you could show a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should you agree with a client before managing their inbox?",
+            options: [
+              "Which emails you may answer, which to flag, how you sign and how often you check",
+              "Only the colour scheme of the inbox",
+              "Nothing, just start deleting old emails",
+              "How many emails you will delete each day",
+            ],
+            answer_index: 0,
+            explanation: "The lesson lists these rules to agree before you start.",
+          },
+          {
+            prompt: "Which three groups does the lesson suggest sorting emails into?",
+            options: [
+              "Red, yellow and green",
+              "Action, waiting and reference",
+              "Morning, afternoon and evening",
+              "Friends, family and others",
+            ],
+            answer_index: 1,
+            explanation: "The lesson uses action, waiting and reference.",
+          },
+          {
+            prompt: "What does a filter do in Gmail?",
+            options: [
+              "Deletes all emails older than a week",
+              "Applies labels or actions to emails automatically",
+              "Translates emails into English",
+              "Blocks the client from reading their own email",
+            ],
+            answer_index: 1,
+            explanation: "The lesson explains that filters apply labels automatically, such as labelling emails from the accountant.",
+          },
+          {
+            prompt: "What happens when you archive an email in Gmail?",
+            options: [
+              "It is deleted forever",
+              "It is sent back to the sender",
+              "It leaves the inbox but can still be found by searching",
+              "It is printed",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says archiving removes the email from the inbox without deleting it.",
+          },
+          {
+            prompt: "Why send the client a daily summary?",
+            options: [
+              "To show how many hours you worked",
+              "To keep them in control without reading everything",
+              "Because Gmail requires it",
+              "To ask for more pay each day",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says the summary keeps the client in control without reading every email.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "calendar-management": {
+      explanation_md: `An executive assistant advert in Accra and a remote VA advert from abroad will both mention the calendar or diary. A well kept calendar means the client is in the right place, at the right time, with the right documents. A badly kept one means double bookings, missed calls and apologies.
+
+## The basics of a good calendar event
+
+Every event you create should include:
+
+* **A clear title:** "Call: Hawa (supplier) about shea prices", not just "Call".
+* **The correct time and time zone.** Your calendar should be set to your own time zone; invitations show in each person's local time.
+* **Where:** an address, or a video meeting link.
+* **What to prepare:** a link to the agenda or document in the description.
+* **Guests**, so everyone receives the invitation and can accept or decline.
+
+## Scheduling without endless messages
+
+Agreeing a time by email can take days. Two ways to speed it up:
+
+* **Offer two or three options** with time zones: "Tuesday 10am or Wednesday 2pm London time. Which suits you?"
+* **Use a booking page.** Google Calendar's appointment schedules, and other free booking tools, let people pick a free slot themselves.
+
+## Protecting the client's time
+
+Good calendar management is also about what is not booked. Agree with the client:
+
+* **Focus blocks:** time with no meetings for deep work.
+* **Buffers:** a short gap between meetings, and travel time if they move between places.
+* **Hard limits:** no meetings before or after certain hours, or on prayer times or family days.
+
+## Handling changes
+
+When a meeting moves, update the event rather than creating a new one, so guests get the change automatically. Check that nothing else now clashes. Send a reminder the day before for important meetings, with the agenda attached.
+
+## Travel and events
+
+Assistants are often asked to arrange travel or small events. The same habits apply: put every booking in the calendar with the confirmation number, keep all documents in one shared folder, and send the client a one page plan with times, addresses and contacts. Always double check dates, names on tickets and time zones before paying for anything.
+
+## A small example
+
+Napari manages the calendar for a programme director at an NGO in Tamale. A donor asks for a call. Napari checks the calendar, sees the director has a field visit until 2pm, and offers: "Thursday 3pm GMT or Friday 10am GMT." The donor picks Friday. Napari sends the invitation with a Google Meet link and the project report attached, and adds a 15 minute preparation block before it.`,
+      practice_task_md: `**Goal:** Manage a week of calendar events for an imaginary client.
+
+**Steps:**
+1. In your practice Google Calendar, create a new calendar called "Client practice".
+2. Add five events for next week for an imaginary client, each with a clear title, time, location or meeting link, and a description with what to prepare.
+3. Add two focus blocks and one 15 minute buffer before an important meeting.
+4. Move one event to a new time by editing it, and check nothing clashes.
+5. Invite a friend to one event and ask them to confirm they received it with the correct time.
+
+**Done looks like:** A tidy week with five complete events, focus blocks, a buffer, one rescheduled event and a confirmed invitation. Take a screenshot for your portfolio.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which is the best calendar event title?",
+            options: ["Call", "Meeting", "Call: Hawa (supplier) about shea prices", "Important!!"],
+            answer_index: 2,
+            explanation: "The lesson says a clear title tells the client who and what at a glance.",
+          },
+          {
+            prompt: "What is a quick way to agree a meeting time without many emails?",
+            options: [
+              "Ask \"When are you free?\" and wait",
+              "Offer two or three options with time zones, or share a booking page",
+              "Book any time and hope it works",
+              "Call the person at night",
+            ],
+            answer_index: 1,
+            explanation: "The lesson suggests offering options with time zones or using a booking page.",
+          },
+          {
+            prompt: "What is a focus block?",
+            options: [
+              "A meeting with many guests",
+              "Time in the calendar with no meetings for deep work",
+              "A block on someone's phone number",
+              "A type of video call",
+            ],
+            answer_index: 1,
+            explanation: "The lesson defines focus blocks as time with no meetings for deep work.",
+          },
+          {
+            prompt: "When a meeting moves, what should you do?",
+            options: [
+              "Create a second event and leave the old one",
+              "Update the existing event so guests get the change automatically",
+              "Delete the event and tell nobody",
+              "Ask the client to fix it",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to update the event rather than create a new one.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
