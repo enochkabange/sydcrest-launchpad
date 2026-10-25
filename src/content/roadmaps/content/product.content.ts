@@ -846,6 +846,503 @@ A manual MVP is a test, not a business plan. When the work becomes too much to d
         pass_threshold: 75,
       },
     },
+    defining: {
+      explanation_md: `Discovery tells you which problem matters. Defining turns that understanding into clear instructions a team can build from. This is the heart of business analyst work and a big part of associate product manager work. In Ghanaian adverts for these roles, the duties named most often include gathering requirements, writing user stories and functional specifications, and mapping business processes.
+
+## Why clear definition matters
+
+Engineers and designers build what is written down and discussed, not what is in your head. Vague instructions lead to rework, arguments and delays. Clear definition means:
+
+* Everyone agrees what problem is being solved and for whom.
+* Everyone knows what "finished" looks like.
+* Everyone knows what is **not** included this time.
+
+On small Ghanaian teams, where one engineer may support several products, a clear definition can save weeks.
+
+## The steps in this section
+
+* **Mapping processes.** Draw how work happens today, step by step, to see where time and errors creep in. You cannot improve a process you do not understand.
+* **Requirements and user stories.** Turn needs into precise statements of what the system must do, with acceptance criteria that say how you will check it.
+* **Writing product specs.** Pull everything into a short document: the problem, users, requirements, success measures and what is out of scope.
+* **Prioritisation and roadmaps.** Decide what comes first, what waits, and how to explain the order to everyone.
+
+## Writing is the main tool
+
+You do not need expensive software. Google Docs, a whiteboard photo, or a notebook can hold excellent definitions. What matters is plain language, short sentences and specific details. "The app should be fast" is vague. "The order list loads within three seconds on a 3G connection" is specific and testable.
+
+## Worked example: the NGO beneficiary tracker
+
+Abdul-Rahman joins an NGO team in Bolgatanga that wants to replace paper registers for a school feeding programme. Instead of jumping into screens, he:
+
+1. Maps how a head teacher records meals today and how the numbers reach the district office.
+2. Notices that totals are copied by hand three times, and errors appear at each copy.
+3. Writes requirements: the head teacher enters daily meal counts once on a phone; the district officer sees totals automatically; entries work offline and sync later.
+4. Writes a short spec with a success measure: district reports ready within one day instead of two weeks.
+5. Agrees with his manager that offline entry and totals come first, and photo uploads wait.
+
+The engineers start building with confidence because they know exactly what is needed and why.
+
+By the end of this section you will be able to produce each of these pieces yourself.`,
+      practice_task_md: `**Goal:** turn a vague request into a clear one.
+
+1. Write down three vague requests you have heard, such as "make the church app better" or "the shop needs a system".
+2. For each, ask yourself who it is for, what problem it solves and what "finished" would look like.
+3. Rewrite each as one specific, testable sentence, like the lesson's example about load time.
+4. For one of them, list two things that are out of scope for a first version.
+
+**Done looks like:** three vague requests and three specific rewrites, plus an out of scope list.`,
+      quiz: {
+        questions: [
+          q(
+            "Why does clear definition matter for a team?",
+            [
+              "Engineers build what is written down and discussed, so vagueness causes rework",
+              "It makes the product look professional",
+              "It removes the need for testing",
+              "It means users never complain",
+            ],
+            0,
+            "Clear definition lets everyone agree on the problem, what finished means and what is excluded.",
+          ),
+          q(
+            "Which statement is specific and testable?",
+            [
+              "The app should be fast",
+              "The order list loads within three seconds on a 3G connection",
+              "Users should love the app",
+              "Make it modern",
+            ],
+            1,
+            "It names a measurable condition you can check.",
+          ),
+          q(
+            "What did Abdul-Rahman notice when mapping the school feeding process?",
+            [
+              "Head teachers had no phones",
+              "Totals were copied by hand three times, adding errors each time",
+              "The district office wanted photos",
+              "Meals were not being served",
+            ],
+            1,
+            "Repeated hand copying introduced errors at each step.",
+          ),
+          q(
+            "What did his team agree to leave for later?",
+            ["Offline entry", "Automatic totals", "Photo uploads", "Daily meal counts"],
+            2,
+            "Offline entry and totals came first; photo uploads waited.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "process-mapping": {
+      explanation_md: `Before you can improve how something works, you need to see how it works now. A process map is a simple drawing of the steps in a task, who does each one, and where things go wrong. Business analyst adverts from banks, telecoms and manufacturers in Ghana ask for business process analysis again and again, and NGOs use the same skill to improve field work.
+
+## What a process map shows
+
+* **Steps.** Each action, in order: "Officer writes name in register", "Officer sends photo of page on WhatsApp".
+* **People or roles.** Who does each step. Drawing a column or lane for each role makes handovers obvious.
+* **Decisions.** Points where the path splits: "Is the household already registered? Yes or no."
+* **Handovers.** Where work passes from one person to another. Delays and errors love handovers.
+* **Pain points.** Mark steps that are slow, repeated, error prone or frustrating.
+
+You can use boxes for steps, diamonds for decisions and arrows for flow. Formal notations such as BPMN exist and some employers mention them, but clear boxes and arrows are enough to start.
+
+## How to map a process
+
+1. **Pick one process with a clear start and end.** For example, "from a customer placing an order to receiving it".
+2. **Watch or ask someone who does it.** Do not rely on how managers think it works. Reality is usually messier.
+3. **Write each step on paper or sticky notes**, then arrange them.
+4. **Mark the pain points** and ask why each happens.
+5. **Check with the people involved.** Show them the map and ask, "Is this right? What did I miss?"
+
+After the current map (often called "as is"), you can sketch an improved version ("to be") that removes or automates the painful steps.
+
+## Worked example: MoMo savings sign up
+
+Hawa is a junior analyst at a fintech. Customers complain that signing up for the new savings feature takes too long. She maps the current process:
+
+1. Customer dials the USSD code and picks Savings.
+2. Customer enters ID number.
+3. System sends ID to a verification partner. **Decision:** verified within one minute?
+4. If not, a support agent checks manually the next working day.
+5. Agent calls the customer to confirm.
+6. Customer dials again to set a daily amount.
+
+The map shows two pain points: manual checks wait a day, and the customer must dial twice. Hawa asks the support team why manual checks are needed and learns that most failures come from customers typing their ID with spaces. Her "to be" map adds a step that removes spaces automatically and lets customers set the amount in the same session.
+
+She did not need to code. She needed to look closely, ask why and draw it clearly.`,
+      practice_task_md: `**Goal:** map a real process and find one improvement.
+
+1. Choose a process you can observe: registering for a school exam, a pharmacy filling a prescription, or a shop restocking.
+2. Watch it or interview someone who does it.
+3. On paper, draw each step as a box, decisions as diamonds, and use one column per role.
+4. Circle at least two pain points and write why each happens.
+5. Draw a second, improved map that fixes one pain point. Photograph both maps.
+
+**Done looks like:** two photographed maps ("as is" and "to be") with pain points labelled and a two sentence explanation.`,
+      quiz: {
+        questions: [
+          q(
+            "Why draw a separate column or lane for each role in a process map?",
+            [
+              "It makes handovers between people obvious",
+              "It looks more colourful",
+              "It removes the need for decisions",
+              "Roles do not matter in processes",
+            ],
+            0,
+            "Lanes show where work passes between people, which is where delays often happen.",
+          ),
+          q(
+            "Where should you get information for an as is map?",
+            [
+              "Only from senior managers",
+              "From people who actually do the process, by watching or asking",
+              "From a competitor's website",
+              "From your imagination",
+            ],
+            1,
+            "Reality is usually messier than how managers think it works.",
+          ),
+          q(
+            "What is a to be map?",
+            [
+              "A map of the current process",
+              "An improved version of the process that removes painful steps",
+              "A list of staff names",
+              "A financial forecast",
+            ],
+            1,
+            "The to be map shows the improved process.",
+          ),
+          q(
+            "What caused most failed ID checks in Hawa's example?",
+            [
+              "Customers had no ID",
+              "The partner was offline",
+              "Customers typed their ID with spaces",
+              "Support agents were absent",
+            ],
+            2,
+            "Asking why revealed spaces in typed IDs as the main cause.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "requirements-and-user-stories": {
+      explanation_md: `If you read adverts for business analyst, associate product manager and product operations roles in Ghana, one duty keeps appearing: turning what users and the business need into clear requirements and user stories. Master this and you can contribute to a product team from your first week.
+
+## Requirements
+
+A requirement is a statement of something the system must do or a quality it must have.
+
+* **Functional requirements** describe behaviour: "The system sends an SMS receipt after every savings deposit."
+* **Non functional requirements** describe qualities: "The USSD menu responds within two seconds", "Data is stored securely and only visible to authorised staff."
+
+Good requirements are specific, testable and free of hidden assumptions. "The system should be user friendly" is not testable. "A first time user can save money in under three USSD screens" is.
+
+## User stories
+
+A user story describes a need from the user's point of view. The common template is:
+
+> As a **[type of user]**, I want **[something]**, so that **[benefit]**.
+
+For example: "As a market trader, I want my savings to be deducted automatically each evening, so that I do not have to remember."
+
+The "so that" part is important. It explains why, which lets engineers and designers suggest better ways to meet the need.
+
+## Acceptance criteria
+
+Acceptance criteria are the conditions that must be true for a story to count as done. A popular format is **Given, When, Then**:
+
+* **Given** a trader has set a daily amount of 10 cedis,
+* **When** the evening deduction runs and her wallet has enough money,
+* **Then** 10 cedis moves to savings and she receives an SMS showing her new balance.
+
+Add criteria for the unhappy paths too: what if the wallet is empty? What if the network fails?
+
+## Gathering requirements
+
+Requirements come from interviews, process maps, support complaints, business rules and regulations. Ask "why?" until you reach the real need, and confirm your written version with the person who asked.
+
+## Worked example: the farmers' market app
+
+Fuseini writes a story for buyers:
+
+> As a chop bar owner, I want to repeat last week's order with one tap, so that I save time every Monday.
+
+Acceptance criteria:
+
+* Given I have at least one past order, when I tap "Repeat order", then the same items and quantities appear in my basket for me to confirm.
+* Given an item is no longer available, when I repeat the order, then I see a clear message and the other items still load.
+
+He also adds a non functional requirement: the order screen must work on low cost Android phones with slow connections. His engineer says this story is the clearest she has received all month.`,
+      practice_task_md: `**Goal:** write user stories with acceptance criteria for a real need.
+
+1. Choose a product idea from your journal or your manual MVP.
+2. Write three user stories using "As a, I want, so that". Use at least two different types of user.
+3. For each story, write two acceptance criteria using Given, When, Then. Include at least one unhappy path.
+4. Write two non functional requirements, such as speed on slow networks or privacy.
+5. Ask a friend to read one story and explain what should be built. Fix anything they misunderstood.
+
+**Done looks like:** three stories, six acceptance criteria and two non functional requirements in a Google Doc.`,
+      quiz: {
+        questions: [
+          q(
+            "Which is a non functional requirement?",
+            [
+              "The system sends an SMS receipt after every deposit",
+              "The USSD menu responds within two seconds",
+              "A trader can set a daily savings amount",
+              "Buyers can repeat an order",
+            ],
+            1,
+            "Non functional requirements describe qualities such as speed or security.",
+          ),
+          q(
+            "Why is the so that part of a user story important?",
+            [
+              "It makes the story longer",
+              "It explains why, so the team can suggest better ways to meet the need",
+              "It names the engineer",
+              "It sets the deadline",
+            ],
+            1,
+            "The benefit explains the purpose behind the request.",
+          ),
+          q(
+            "What do acceptance criteria describe?",
+            [
+              "The conditions that must be true for a story to be done",
+              "The cost of the project",
+              "The team's holiday plans",
+              "The marketing message",
+            ],
+            0,
+            "Acceptance criteria define when a story counts as finished.",
+          ),
+          q(
+            "In Given, When, Then, what goes after Then?",
+            ["The starting situation", "The action taken", "The expected result", "The user's name"],
+            2,
+            "Then states the result that should happen.",
+          ),
+          q(
+            "Why did Fuseini write a criterion for an unavailable item?",
+            [
+              "To cover an unhappy path so the team handles it",
+              "To make the story fail",
+              "Because all items are always unavailable",
+              "To remove the repeat feature",
+            ],
+            0,
+            "Good acceptance criteria include unhappy paths, not only the ideal case.",
+          ),
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "writing-specs": {
+      explanation_md: `User stories describe small pieces of work. A product spec (sometimes called a product requirements document or functional specification) puts the bigger picture in one place: why this feature exists, who it is for, what it must do and how you will know it worked. Adverts for analyst and product roles in Ghana list functional specifications and product documentation as core duties.
+
+A good spec lets designers and engineers work without waiting for you to answer the same questions repeatedly.
+
+## What goes in a short spec
+
+Keep it to one or two pages where possible. A useful structure:
+
+1. **Problem.** What is wrong today, with evidence from interviews, data or support.
+2. **Users.** Who this is for, and who it is not for.
+3. **Goal and success measure.** What will change if this works, stated as something you can measure.
+4. **Requirements.** The user stories and key functional and non functional requirements, with acceptance criteria or links to them.
+5. **Out of scope.** What you are deliberately not doing this time. This section prevents many arguments.
+6. **Risks and open questions.** What you are unsure about and how you plan to find out.
+7. **Rough flow or sketch.** A simple diagram or wireframe photo if it helps.
+
+## Tips for writing well
+
+* Write for a busy reader on a phone: short paragraphs, headings, bullets.
+* Use the words your users use. If traders say "susu", do not write "periodic savings instrument".
+* Be specific about numbers and limits: maximum amounts, time windows, supported languages.
+* Mark the spec as a draft and invite comments. A spec is a conversation, not a command.
+* Keep it updated. An out of date spec causes more harm than no spec.
+
+## Worked example: the MoMo savings feature
+
+Amina writes a one page spec titled "Daily Lock Savings, version 1".
+
+* **Problem:** Traders we interviewed save daily with susu collectors because the money is hard to spend, but they lose part of it when they withdraw early or the collector disappears.
+* **Users:** Traders with daily income who use mobile money. Not for salaried workers in this version.
+* **Goal:** Traders save regularly. Success measure: a set share of new savers make at least 20 deposits in their first month (the team will agree the target).
+* **Requirements:** automatic daily deduction of a fixed amount; SMS after every deposit; savings locked for a chosen period; early withdrawal possible with a clear warning; works on USSD.
+* **Out of scope:** interest, savings goals with pictures, group savings.
+* **Risks:** traders may not keep enough balance in the evening. Open question: what time of day suits most traders?
+
+Her engineer and designer read it in five minutes and start work. When the sales team asks about group savings, Amina points to the out of scope section and adds it to the list for later.`,
+      practice_task_md: `**Goal:** write a one page spec for a small feature.
+
+1. Use the stories you wrote in the previous lesson, or choose a small feature for a product you know.
+2. In Google Docs, write the seven sections from the lesson. Keep it to one page if possible.
+3. Include at least two items in Out of scope and one open question.
+4. Share it with a friend or mentor and ask: "Could you build or design from this? What is unclear?"
+5. Update the spec based on their answer and note what you changed.
+
+**Done looks like:** a one page spec with all seven sections and a short change note. This is a strong portfolio piece.`,
+      quiz: {
+        questions: [
+          q(
+            "What is the main purpose of a product spec?",
+            [
+              "To replace all conversation with the team",
+              "To put the why, who, what and success measure in one place so the team can work without waiting",
+              "To list every engineer's tasks by hour",
+              "To advertise the product",
+            ],
+            1,
+            "A spec gathers the bigger picture so designers and engineers can work independently.",
+          ),
+          q(
+            "Why include an Out of scope section?",
+            [
+              "It prevents many arguments by stating what is deliberately not being done",
+              "It lists features that will never be built",
+              "It is required by law",
+              "It makes the spec longer",
+            ],
+            0,
+            "Stating what is excluded keeps the team focused and handles extra requests.",
+          ),
+          q(
+            "Which writing tip does the lesson give?",
+            [
+              "Use technical terms users never say",
+              "Never update the spec once written",
+              "Use the words your users use",
+              "Avoid numbers and limits",
+            ],
+            2,
+            "Using users' own words, such as susu, keeps the spec clear.",
+          ),
+          q(
+            "What did Amina do when the sales team asked about group savings?",
+            [
+              "Added it immediately",
+              "Pointed to the out of scope section and added it to the list for later",
+              "Cancelled the project",
+              "Ignored them",
+            ],
+            1,
+            "The out of scope section helped her handle the request calmly.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "prioritisation-and-roadmaps": {
+      explanation_md: `Every product team has more ideas than time. Customers ask for features, managers have plans, engineers want to fix old problems, and partners make requests. Choosing what to do first, and explaining why, is a core product skill. On small Ghanaian teams, where a few people support a whole product, focus can decide whether the product survives.
+
+## Value and effort
+
+The simplest prioritisation tool is a two by two grid:
+
+* **High value, low effort:** do these first. They are often called quick wins.
+* **High value, high effort:** plan these carefully as major projects.
+* **Low value, low effort:** fill gaps with these, if at all.
+* **Low value, high effort:** avoid.
+
+"Value" means value to users and the business, backed by evidence where possible. "Effort" should come from engineers and designers, not from your guess.
+
+## Scoring when there are many ideas
+
+When the list is long, score each idea. One popular approach multiplies how many people it reaches, how much it helps each one, and how confident you are, then divides by effort. The exact formula matters less than writing your reasons down so others can question them.
+
+## Saying no politely
+
+Prioritising means saying no, or "not now", to most requests. A respectful no:
+
+* Thanks the person and shows you understood the need.
+* Explains what the team is focused on and why.
+* Says when you will look at the request again.
+
+## From priorities to a roadmap
+
+A roadmap shows what the team plans to work on over time. A helpful format for small teams uses three columns:
+
+* **Now:** what the team is building.
+* **Next:** what comes after, fairly confident.
+* **Later:** ideas you are considering but not committed to.
+
+Write roadmap items as **problems or goals**, not just features. "Help traders save daily" leaves room for the team to find the best solution. Avoid exact dates for things far away; plans change as you learn.
+
+## Worked example: the farmers' market app
+
+Hawa has six requests: repeat orders, delivery tracking, a farmer loans feature, a Dagbani language option, a new logo, and fixing failed payment confirmations.
+
+She asks engineers for effort and looks at evidence. Failed payment confirmations cause many support calls and lost trust: high value, low effort. Repeat orders came up in every chop bar interview: high value, medium effort. Loans are high effort and need a finance partner: later. The logo has little evidence of value: not now.
+
+Her roadmap:
+
+* **Now:** reliable payment confirmations; repeat orders.
+* **Next:** Dagbani option for farmers; delivery status updates.
+* **Later:** explore farmer loans with a partner.
+
+She shares it in the team WhatsApp group with one line of reasoning for each item.`,
+      practice_task_md: `**Goal:** prioritise a list of ideas and build a simple roadmap.
+
+1. List eight ideas or requests for a product you know, such as your school portal, a church app or your manual MVP.
+2. Draw a value and effort grid on paper and place each idea. Write one reason for each placement.
+3. Create a Now, Next, Later roadmap with no more than two items in Now. Write each as a problem or goal.
+4. Write a polite "not now" message for one request you placed in Later.
+
+**Done looks like:** a photo of your grid, a three column roadmap and one polite message.`,
+      quiz: {
+        questions: [
+          q(
+            "On a value and effort grid, which items should usually come first?",
+            ["Low value, high effort", "High value, low effort", "Low value, low effort", "Whatever the manager likes"],
+            1,
+            "High value, low effort items are quick wins.",
+          ),
+          q(
+            "Who should estimate effort?",
+            [
+              "The product person alone",
+              "The engineers and designers doing the work",
+              "The customers",
+              "Nobody, effort does not matter",
+            ],
+            1,
+            "Effort should come from the people who will build it.",
+          ),
+          q(
+            "Why write roadmap items as problems or goals rather than features?",
+            [
+              "It leaves room for the team to find the best solution",
+              "Features are not allowed on roadmaps",
+              "It hides the plan from stakeholders",
+              "Goals never change",
+            ],
+            0,
+            "Problem framing lets the team choose how to solve it.",
+          ),
+          q(
+            "Why did Hawa put payment confirmations in Now?",
+            [
+              "The manager asked for it",
+              "It caused many support calls and lost trust, and was low effort",
+              "It was the newest idea",
+              "It needed a finance partner",
+            ],
+            1,
+            "Evidence of high value and low effort made it a clear first priority.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
     // NEXT
   },
 };
