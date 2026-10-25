@@ -45,7 +45,7 @@ test("a visited page opens offline and an unvisited one shows the offline page",
   await page.evaluate(() => navigator.serviceWorker.ready);
   // The worker saves the page it was registered from in the background.
   await expect
-    .poll(() => page.evaluate(async () => !!(await caches.match("/", { cacheName: "sydcrest-pages-v1" }))))
+    .poll(() => page.evaluate(async () => !!(await caches.match("/", { cacheName: "sydcrest-pages-v2" }))))
     .toBe(true);
 
   await context.setOffline(true);
