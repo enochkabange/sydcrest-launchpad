@@ -25,7 +25,7 @@ jobs:
       SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_STAGING_DB_PASSWORD }}
       STAGING_REF: wyxeerwocbnqmjjzpgun
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       # Same rule as CI and the pipeline: nothing destructive reaches staging either.
