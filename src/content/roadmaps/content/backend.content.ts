@@ -1368,6 +1368,523 @@ Start with one relational database. Add a cache when you can see the same slow q
         pass_threshold: 75,
       },
     },
+    "apis": {
+      explanation_md: `"Design and build RESTful APIs" was one of the most repeated lines across the adverts we read, from junior roles at Accra startups to remote payment teams. An API (application programming interface) is how a mobile app, a website, a partner company or another service talks to your server. If the database is the memory of a business, the API is its front counter.
+
+### What an API looks like
+
+A typical web API is a set of URLs, called **endpoints**, that accept HTTP requests and return data, usually as JSON. For a shop it might include:
+
+* \`GET /products\` to list products
+* \`POST /orders\` to place an order
+* \`GET /orders/42\` to see one order
+
+A phone app, a USSD menu, a WhatsApp bot and an admin dashboard can all use the same API. That is the power of it: build the logic once, and many clients can use it.
+
+### What makes an API good
+
+Developers who use your API, including future you, want it to be:
+
+* **Predictable:** similar things work in similar ways. If one list is at \`/products\`, another should be at \`/customers\`, not \`/getAllCustomersNow\`.
+* **Safe:** it checks every input, only lets people do what they are allowed to, and never leaks private data.
+* **Honest about errors:** it returns the right status code and a clear message instead of crashing or saying "success" when something failed.
+* **Documented:** someone can use it without asking you questions.
+
+### What this section covers
+
+* **REST API design:** routes, methods, status codes, JSON responses and short documentation.
+* **Validation and error handling:** checking inputs such as Ghanaian phone numbers and cedi amounts, and returning helpful errors.
+* **Authentication and authorisation:** knowing who a user is, often through a phone number and one time code, and what they are allowed to do.
+
+### Frameworks
+
+You can build an API with only your language's built in tools, but most teams use a framework. In Node.js, Express is small and popular for learning, and NestJS appeared in a few of the adverts we read. In Python, Django with its REST tools, Flask and FastAPI are common. Java teams often use Spring Boot, and C# teams use ASP.NET. Ideas carry across all of them, so learn the ideas properly with one.
+
+### A small example in Express
+
+\`\`\`js
+const express = require("express");
+const app = express();
+app.use(express.json());
+
+app.get("/products", (req, res) => {
+  res.json([{ id: 1, name: "Shea butter" }]);
+});
+
+app.listen(3000);
+\`\`\`
+
+Run it, open \`http://localhost:3000/products\` in a browser and you will see JSON. That is a working API.
+
+### Thinking about phone users
+
+Many of your users will be on mobile data. Keep responses small: return only the fields a screen needs, and split long lists into pages (for example \`?page=2\`). A lean API is cheaper and faster for people buying data in small bundles, and it works better on weak signals.
+
+Imagine Amina is building an API for a farmers' cooperative in Savelugu. Officers in the field use cheap phones on patchy networks. By keeping responses small and errors clear, her API stays usable even when the signal is weak.`,
+      practice_task_md: `**Goal:** run your first API and call it.
+
+1. Install Node.js (or Python), create a folder and run \`npm init -y\` then \`npm install express\` (or install Flask or FastAPI for Python).
+2. Copy the small example from the lesson and change it to return three products from a Tamale shop, each with \`id\`, \`name\` and \`price_pesewas\`.
+3. Add a second endpoint \`GET /products/:id\` that returns one product.
+4. Call both from your browser or with \`curl http://localhost:3000/products\`.
+
+**Done looks like:** the code on GitHub with a README listing your two endpoints and an example response for each.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is an endpoint in a web API?",
+            options: [
+              "A database table",
+              "A URL that accepts HTTP requests and returns data",
+              "A type of phone",
+              "The last line of a program",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes endpoints as URLs that accept requests and return data.",
+          },
+          {
+            prompt: "Why is it powerful that many clients can use the same API?",
+            options: [
+              "It means you never need a database",
+              "It makes every app free to download",
+              "It removes the need for HTTPS",
+              "You build the logic once and a phone app, USSD menu and dashboard can all use it",
+            ],
+            answer_index: 3,
+            explanation: "One API can serve many different clients.",
+          },
+          {
+            prompt: "Which is a sign of a predictable API?",
+            options: [
+              "Similar things work in similar ways, such as /products and /customers",
+              "Every endpoint uses a different naming style",
+              "Errors always return status 200",
+              "Endpoint names change every week",
+            ],
+            answer_index: 0,
+            explanation: "Predictability means consistent patterns.",
+          },
+          {
+            prompt: "How can an API be kinder to users on small data bundles?",
+            options: [
+              "Send every field for every record",
+              "Use larger images",
+              "Return only the fields a screen needs and split long lists into pages",
+              "Make users download the whole database",
+            ],
+            answer_index: 2,
+            explanation: "Small, paged responses save data and work better on weak signals.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "rest-apis": {
+      explanation_md: `Almost every backend advert we read asked for REST API experience. REST is a style for designing APIs around **resources** (the things your app deals with, like products, orders and payments) and standard HTTP methods. Following it means other developers can guess how your API works before reading a word of documentation.
+
+### Resources and routes
+
+Name routes after things, using plural nouns, and let the HTTP method say what to do:
+
+| Method | Route         | Meaning            |
+|--------|---------------|--------------------|
+| GET    | /orders       | list orders        |
+| POST   | /orders       | create an order    |
+| GET    | /orders/42    | get order 42       |
+| PATCH  | /orders/42    | change part of it  |
+| DELETE | /orders/42    | remove it          |
+
+Avoid verbs in the URL such as \`/createOrder\`. The method already says "create".
+
+### Status codes that mean something
+
+* \`200 OK\` for a successful read or update
+* \`201 Created\` after a successful \`POST\`, ideally returning the new record
+* \`400 Bad Request\` when the input is wrong
+* \`401\` when the user is not logged in, \`403\` when they are logged in but not allowed
+* \`404 Not Found\` when the record does not exist
+* \`500\` only when your server truly failed
+
+### Consistent JSON
+
+Pick a shape and keep it everywhere. For errors, something like:
+
+\`\`\`json
+{
+  "error": "invalid_phone",
+  "message": "Phone must be 10 digits"
+}
+\`\`\`
+
+The \`error\` code is for programs; the \`message\` is for people.
+
+### A worked example
+
+Abdul-Rahman is building the order API for a chop bar in Tamale.
+
+\`\`\`js
+app.post("/orders", async (req, res) => {
+  const order = await saveOrder(req.body);
+  res.status(201).json(order);
+});
+
+app.get("/orders/:id", async (req, res) => {
+  const order = await findOrder(req.params.id);
+  if (!order) {
+    return res.status(404)
+      .json({ error: "not_found" });
+  }
+  res.json(order);
+});
+\`\`\`
+
+Creating returns 201 with the new order. A missing order returns 404 with a clear code, not a crash.
+
+### Lists, filters and pages
+
+Use query strings for filtering and paging: \`GET /orders?status=paid&page=2\`. Always limit how many records one request can return. A request for "all orders ever" could be huge, slow and expensive for a user on mobile data.
+
+### Versioning
+
+When you must change an API in a way that would break existing apps, offer the new behaviour under a new version such as \`/v2/orders\`, and keep the old one working for a while. People do not update apps instantly, especially on older phones.
+
+### Document it
+
+Write a short reference: each endpoint, what it expects, what it returns and an example. A README section is enough to start. Many teams use the **OpenAPI** format, which tools can turn into interactive documentation and test clients. Good docs are one of the fastest ways to look professional in a portfolio.
+
+### Test it as you go
+
+Use \`curl\` or a free API client to send requests while you build. Check each status code, not just the happy path.`,
+      practice_task_md: `**Goal:** build a small REST API for a chop bar menu and orders.
+
+1. Using Express, Flask or FastAPI, store menu items and orders in arrays in memory for now.
+2. Build \`GET /menu\`, \`POST /orders\`, \`GET /orders/:id\` and \`PATCH /orders/:id\` (to change status to \`ready\`).
+3. Return \`201\` on create, \`404\` for a missing order and \`400\` if the order has no items.
+4. Use one consistent error shape everywhere.
+5. Write a README with a table of endpoints and one example \`curl\` command for each.
+
+**Done looks like:** a GitHub repository your mentor can run with two commands, plus a README that lets them test every endpoint without asking you anything.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "In REST, which request would you use to create a new order?",
+            options: [
+              "GET /createOrder",
+              "POST /orders",
+              "DELETE /orders",
+              "GET /orders/new",
+            ],
+            answer_index: 1,
+            explanation: "REST uses a plural noun route and the POST method to create.",
+          },
+          {
+            prompt: "What status code should a successful POST that creates a record usually return?",
+            options: [
+              "200 OK",
+              "404 Not Found",
+              "201 Created",
+              "500 Internal Server Error",
+            ],
+            answer_index: 2,
+            explanation: "The lesson recommends 201 Created after a successful POST.",
+          },
+          {
+            prompt: "A logged in user tries to view another customer's order they are not allowed to see. Which code fits?",
+            options: [
+              "401",
+              "403",
+              "201",
+              "500",
+            ],
+            answer_index: 1,
+            explanation: "403 means logged in but not allowed, while 401 means not logged in.",
+          },
+          {
+            prompt: "Why should list endpoints limit how many records one request returns?",
+            options: [
+              "Because JSON cannot hold more than ten records",
+              "Because REST forbids lists",
+              "Because databases cannot count",
+              "Because huge responses are slow and expensive for users on mobile data",
+            ],
+            answer_index: 3,
+            explanation: "The lesson recommends paging to keep responses small.",
+          },
+          {
+            prompt: "When should you create a new API version such as /v2/orders?",
+            options: [
+              "When a change would break existing apps that use the old behaviour",
+              "Every time you fix a typo",
+              "Whenever you add a new teammate",
+              "Only when the server restarts",
+            ],
+            answer_index: 0,
+            explanation: "Versioning protects apps that cannot update instantly.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "validation-and-errors": {
+      explanation_md: `Every input that reaches your server could be wrong, by accident or on purpose. A missing field, a phone number with a letter in it, a negative amount or a huge block of text can crash your code, corrupt your data or, with payments, cost real money. Adverts mention debugging and security alongside APIs because employers have seen what happens without careful validation.
+
+### Never trust the client
+
+Your app's form might check inputs, but anyone can send requests straight to your API with a tool like \`curl\`, skipping your app entirely. So the **server** must check everything again. Frontend checks are for convenience; backend checks are for safety.
+
+### What to validate
+
+* **Presence:** required fields are there.
+* **Type:** a quantity is a number, not text.
+* **Format:** a phone number or email has the right shape.
+* **Range:** an amount is above zero and below a sensible limit.
+* **Length:** names and notes have a maximum size.
+
+### Ghanaian phone numbers
+
+Local mobile numbers are usually written as 10 digits starting with 0, such as \`024 123 4567\`, or in international form with \`+233\` and the leading 0 dropped. People type them with spaces, dashes or the country code. A good approach is to **normalise** first, then check:
+
+\`\`\`js
+function normalisePhone(input) {
+  let p = String(input).replace(/\\D/g, "");
+  if (p.startsWith("233")) p = "0" + p.slice(3);
+  return /^0\\d{9}$/.test(p) ? p : null;
+}
+\`\`\`
+
+This strips anything that is not a digit, converts the \`233\` form to the local form and accepts only 10 digits starting with 0. Store one consistent format in your database, and check what format your SMS or payment provider expects when you send it on.
+
+### Cedi amounts
+
+Accept amounts in a clear unit, ideally whole pesewas, and reject zero, negative and absurd values. Decide on a maximum per transaction that makes sense for the business.
+
+### Using a validation library
+
+Writing every check by hand gets messy. Libraries let you describe the shape you expect and check it in one step. In JavaScript, libraries such as Zod or Joi do this; in Python, Pydantic does it and FastAPI uses it directly. The idea is the same everywhere:
+
+\`\`\`js
+const Order = z.object({
+  phone: z.string(),
+  amount: z.number().int().positive(),
+});
+\`\`\`
+
+### Returning helpful errors
+
+When validation fails, return \`400\` with a message that helps the person fix it, and do not crash:
+
+\`\`\`json
+{
+  "error": "invalid_amount",
+  "message": "Amount must be more than 0"
+}
+\`\`\`
+
+Return all problems at once if you can, so a user on a slow network does not have to submit the form five times.
+
+### Handling unexpected errors
+
+Some errors you cannot predict: the database goes down or a bug slips through. Catch them in one central error handler that logs the details for you and returns a plain \`500\` message to the user. Never send stack traces or database messages to users, because they can reveal how your system works to attackers.
+
+### A worked scenario
+
+Hawa's school fees API accepts \`{ phone, amount }\`. A parent types \`+233 24 123 4567\` and \`150\`. Your code normalises the phone to \`0241234567\`, converts GHS 150 to 15000 pesewas, checks both, and saves the record. Another request sends \`amount: -5\`. It gets a clear \`400\` and nothing is saved.`,
+      practice_task_md: `**Goal:** protect an endpoint with real validation.
+
+1. Take your orders API from the REST lesson (or start a small one).
+2. Add the \`normalisePhone\` function and use it on every incoming phone number.
+3. Validate that \`amount\` is a whole number of pesewas above 0 and below a limit you choose.
+4. Return \`400\` with a consistent error shape that lists every problem found.
+5. Add a central error handler that returns a plain \`500\` message and logs the real error.
+6. Test with at least six requests using \`curl\`, including \`0241234567\`, \`+233 24 123 4567\`, \`12345\`, an amount of 0 and a missing phone.
+
+**Done looks like:** your code on GitHub and a README table of the six test inputs with the status code and response each one produced.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why must the server validate inputs even if the app's form already checks them?",
+            options: [
+              "Because forms never work on phones",
+              "Because anyone can send requests straight to the API and skip the form",
+              "Because validation makes the server faster",
+              "Because the database cannot store text",
+            ],
+            answer_index: 1,
+            explanation: "The lesson explains that clients can be bypassed, so the server must check again.",
+          },
+          {
+            prompt: "What does the normalisePhone function in the lesson do first?",
+            options: [
+              "Removes everything that is not a digit",
+              "Sends an SMS to the number",
+              "Adds a random country code",
+              "Saves the number to the database",
+            ],
+            answer_index: 0,
+            explanation: "It strips non digits before converting and checking.",
+          },
+          {
+            prompt: "Which status code should a validation failure return?",
+            options: [
+              "201",
+              "302",
+              "400",
+              "500",
+            ],
+            answer_index: 2,
+            explanation: "Bad input from the client is a 400 Bad Request.",
+          },
+          {
+            prompt: "Why should you avoid sending stack traces to users?",
+            options: [
+              "They use too much data",
+              "Users cannot read English",
+              "They can reveal how your system works to attackers",
+              "They make the API return 201 instead of 500",
+            ],
+            answer_index: 2,
+            explanation: "The lesson warns that internal details help attackers.",
+          },
+          {
+            prompt: "Why does the lesson suggest returning all validation problems at once?",
+            options: [
+              "It hides the errors from the user",
+              "It reduces the number of database tables",
+              "It is required by HTTPS",
+              "So a user on a slow network does not have to resubmit many times",
+            ],
+            answer_index: 3,
+            explanation: "Listing every problem saves round trips on slow connections.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "auth": {
+      explanation_md: `Every app that holds personal data or money needs to know **who** is making a request and **what** they are allowed to do. Mistakes here are among the most serious a backend developer can make, which is why adverts list security and data protection, and why broken access control sits at the top of well known security risk lists.
+
+### Two different questions
+
+* **Authentication** asks "who are you?" It is signing in.
+* **Authorisation** asks "are you allowed to do this?" It is checking permissions.
+
+A user can be fully signed in and still not be allowed to see someone else's order. Many real breaches come from checking the first question and forgetting the second.
+
+### Passwords, done properly
+
+If you store passwords, never store them as plain text. Store a **hash** made with a slow, purpose built algorithm such as bcrypt or Argon2, which your language has libraries for. When someone signs in, hash what they typed and compare. If your database ever leaks, attackers get hashes, not passwords.
+
+### Phone number and one time code
+
+Many Ghanaian apps sign people in with a phone number because almost everyone has one and not everyone uses email. The flow:
+
+1. The user enters a phone number.
+2. Your server creates a random six digit code, stores a hash of it with an expiry of a few minutes, and sends it by SMS.
+3. The user types the code. Your server checks it, deletes it so it cannot be reused, and signs them in.
+
+Limit how many codes a number can request and how many guesses are allowed, or attackers can run up your SMS bill or guess codes. Remember that SMS can arrive late on busy networks, so give a fair expiry and a clear "resend" option.
+
+### Sessions and tokens
+
+After sign in, the server needs to recognise the user on later requests without asking again. Two common approaches:
+
+* **Sessions:** the server stores a record and gives the browser a cookie with a random session id.
+* **Tokens:** the server gives the app a signed token, often a JWT, which the app sends in a header:
+
+\`\`\`http
+Authorization: Bearer eyJhbGciOi...
+\`\`\`
+
+Both work. Keep tokens short lived, send them only over HTTPS and never put secrets inside a JWT, because anyone can read its contents.
+
+### Checking permissions on every request
+
+Imagine Wumpini's savings group app in Tamale. Members should see only their own contributions; the treasurer can see everyone's. Check it on the server, every time:
+
+\`\`\`js
+app.get("/contributions/:memberId", (req, res) => {
+  const me = req.user;
+  const own = String(me.id) === req.params.memberId;
+  const allowed = own || me.role === "treasurer";
+  if (!allowed) return res.status(403).end();
+  // ...load and return the data
+});
+\`\`\`
+
+Never rely on the app hiding a button. Attackers can change the id in the URL and see what comes back.
+
+### Use proven tools
+
+Writing your own sign in system from scratch is a good learning exercise, but for real products teams usually use a well tested library or an authentication service. Your job is to understand the flow well enough to configure it correctly and spot mistakes.`,
+      practice_task_md: `**Goal:** build a safe phone and code sign in, with a permission check.
+
+1. In your API, add \`POST /auth/request-code\` that accepts a phone number, creates a six digit code, stores a hash of it with a five minute expiry and prints the code to your terminal instead of sending an SMS.
+2. Add \`POST /auth/verify\` that checks the code, deletes it after use and returns a token or sets a session.
+3. Limit each phone to three code requests per hour and five wrong guesses.
+4. Add \`GET /me/orders\` that only returns orders belonging to the signed in user, and confirm that changing an id in the URL never shows another user's data.
+
+**Done looks like:** code on GitHub with a README that explains the flow in five short steps and lists the limits you added.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the difference between authentication and authorisation?",
+            options: [
+              "Authentication checks who you are; authorisation checks what you are allowed to do",
+              "Authentication is for phones; authorisation is for laptops",
+              "They are two words for the same thing",
+              "Authorisation happens before the user exists",
+            ],
+            answer_index: 0,
+            explanation: "The lesson separates \"who are you\" from \"are you allowed\".",
+          },
+          {
+            prompt: "How should passwords be stored?",
+            options: [
+              "As plain text so support staff can read them",
+              "In the app's frontend code",
+              "In a public spreadsheet",
+              "As hashes made with a slow, purpose built algorithm such as bcrypt",
+            ],
+            answer_index: 3,
+            explanation: "Hashing protects passwords if the database leaks.",
+          },
+          {
+            prompt: "In the one time code flow, what should the server do after a correct code is used?",
+            options: [
+              "Send the same code again",
+              "Delete it so it cannot be reused",
+              "Email it to the admin",
+              "Keep it forever for future logins",
+            ],
+            answer_index: 1,
+            explanation: "Codes must be single use.",
+          },
+          {
+            prompt: "Why should you limit how many codes a phone number can request?",
+            options: [
+              "To make the app look busy",
+              "Because phones cannot receive more than one SMS",
+              "To stop attackers running up your SMS bill or guessing codes",
+              "Because JWTs require it",
+            ],
+            answer_index: 2,
+            explanation: "Limits protect against abuse and guessing.",
+          },
+          {
+            prompt: "Why is hiding a button in the app not enough to protect data?",
+            options: [
+              "Buttons are always visible on small screens",
+              "Attackers can call the API directly or change an id in the URL",
+              "The database ignores buttons",
+              "HTTPS removes all buttons",
+            ],
+            answer_index: 1,
+            explanation: "The server must check permissions on every request.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
   },
 };
 
