@@ -454,6 +454,398 @@ Strong communication is a habit you can practise daily, in any job, starting now
         pass_threshold: 75,
       },
     },
+    discovery: {
+      explanation_md: `Many products fail for a simple reason: nobody needed them. A team spends months building an app, launches it, and finds that people carry on doing things the old way. Discovery is the work you do before building to avoid that waste. Employers value it because it saves money, and job adverts for product and analyst roles mention user research and market research often.
+
+## What discovery means
+
+Discovery is learning, as cheaply as possible, three things:
+
+* **Is the problem real?** Do people actually struggle with this, and how often?
+* **Is it worth solving?** Is it painful enough that people would change their habits or pay?
+* **Will our idea help?** Does a rough version of the solution get used?
+
+You answer these with conversations, observation, simple data and small tests, not with software.
+
+## The mindset
+
+Good discovery starts from humility. Your first idea is a guess. Your job is to find out where the guess is wrong while being wrong is still cheap. That means listening more than pitching, and being glad when evidence surprises you.
+
+It also means separating the **problem** from the **solution**. "Farmers need an app" is a solution. "Farmers sell tomatoes at a loss because they cannot reach buyers before the produce spoils" is a problem. Many solutions could fix that problem, and an app may not be the best one.
+
+## What this section covers
+
+* **Problem interviews.** How to talk with people about their real past behaviour, without leading them.
+* **Choosing which problem to solve.** How to compare problems and check what people and competitors already use.
+* **Testing ideas without code.** How to run a service by hand with WhatsApp, Google Forms and a spreadsheet to see if anyone uses it.
+
+## A short example
+
+Napari wants to build a tool that helps an NGO track which households in Damongo received seed support. Her first idea is a full app with maps and dashboards. In discovery she visits two field officers and watches them work. She learns that they already use paper registers and a shared spreadsheet, and that the real pain is matching names spelled differently in different villages. The biggest win is not maps at all. It is a simple way to give each household a unique code and check for duplicates.
+
+One afternoon of discovery changed what the team should build first. That is the value of this section. Everything here can be done with a phone, a notebook and your own curiosity.`,
+      practice_task_md: `**Goal:** separate a problem from a solution.
+
+1. Write down three product ideas you have heard or had, such as "an app for booking barbers".
+2. For each idea, rewrite it as a problem statement: who struggles, with what, and what it costs them. Avoid naming any technology.
+3. For each problem, list two different possible solutions, at least one with no app at all.
+4. Pick the problem you know least about and write three questions you would need answered before building.
+
+**Done looks like:** three problem statements, six possible solutions and three open questions in your journal.`,
+      quiz: {
+        questions: [
+          q(
+            "What is the main purpose of discovery?",
+            [
+              "To build the full product quickly",
+              "To learn cheaply whether a problem is real and worth solving before building",
+              "To design the company logo",
+              "To hire engineers",
+            ],
+            1,
+            "Discovery is the learning done before building to avoid wasted effort.",
+          ),
+          q(
+            "Which of these is a problem statement rather than a solution?",
+            [
+              "Farmers need an app",
+              "We should build a dashboard",
+              "Farmers sell tomatoes at a loss because they cannot reach buyers before the produce spoils",
+              "Let us add a map feature",
+            ],
+            2,
+            "A problem statement describes who struggles and what it costs them, without naming a solution.",
+          ),
+          q(
+            "What attitude does good discovery start from?",
+            [
+              "Certainty that your first idea is right",
+              "Humility, treating your first idea as a guess",
+              "Avoiding talking to users",
+              "Focusing only on competitors",
+            ],
+            1,
+            "Your first idea is a guess, and discovery finds where it is wrong while that is still cheap.",
+          ),
+          q(
+            "What did Napari learn was the real pain for field officers?",
+            [
+              "They needed maps",
+              "They had no phones",
+              "Matching household names spelled differently across villages",
+              "They wanted dashboards",
+            ],
+            2,
+            "Watching officers showed the real problem was duplicate and mismatched names.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "problem-interviews": {
+      explanation_md: `The fastest way to learn whether a problem is real is to talk to the people who have it. But how you ask matters enormously. Bad questions get polite, misleading answers. Good questions reveal what people actually do. This skill appears in product and analyst job adverts as user research or requirements gathering, and you can practise it anywhere.
+
+## Ask about the past, not the future
+
+People are poor at predicting their own behaviour and kind enough to say what you want to hear. Compare:
+
+* Weak: "Would you use an app to save money every day?" Almost everyone says yes.
+* Strong: "Tell me about the last time you saved money. How did you do it? What went wrong?"
+
+The strong version gives you facts about real events. Past behaviour is the best guide to future behaviour.
+
+## Do not pitch your idea
+
+Once you describe your solution, people start reacting to it instead of telling you about their lives. Keep your idea to yourself until the end, if you share it at all.
+
+## Useful questions
+
+* "Walk me through how you do this today."
+* "When did this last happen? What did you do next?"
+* "What is the hardest part?"
+* "What have you tried to fix it? Why did you stop?"
+* "How much time or money does it cost you?"
+
+Then keep asking "why?" and "can you tell me more?" Silence is fine; people often add the most useful detail after a pause.
+
+## Practical tips for Ghana
+
+* Speak the language your interviewee is most comfortable in, or bring someone who can.
+* Ask permission before taking notes or recording, and explain what the notes are for.
+* Meet people where they are: the market, the farm, the church after service.
+* Respect their time. Twenty minutes is plenty.
+* Do not promise a product or money in return for answers.
+
+## Worked example: the MoMo savings feature
+
+Zuweira interviews six traders in Tamale market about saving. She asks Ayishetu, who sells grains, "Tell me about the last time you needed savings." Ayishetu explains that she withdrew her susu early to pay school fees, and lost part of it as a penalty. Zuweira asks why she uses susu at all. "Because the collector comes to me every day, and I cannot spend money I have already given him."
+
+Zuweira writes down a key insight: the commitment matters. Traders value something that makes the money hard to spend. That is very different from a typical savings app that lets you withdraw anytime.
+
+After six interviews, she looks for patterns that appear again and again, not single dramatic stories. Patterns guide what to build. One person's opinion does not.`,
+      practice_task_md: `**Goal:** run three short problem interviews and find a pattern.
+
+1. Choose a group you can reach: traders, students, farmers, or small shop owners.
+2. Pick one task they do, such as restocking, saving, or paying school fees.
+3. Write five questions about past behaviour using the lesson's examples. Do not mention any solution.
+4. Interview three people for 10 to 20 minutes each, with permission. Take notes on your phone.
+5. Write down every pain point, then mark those that came up more than once.
+
+**Done looks like:** notes from three interviews and a list of repeated pain points with a one line quote or fact for each.`,
+      quiz: {
+        questions: [
+          q(
+            "Why should interview questions focus on the past rather than the future?",
+            [
+              "Past events are easier to forget",
+              "Past behaviour is a better guide than predictions people make to be polite",
+              "Future questions take too long",
+              "People do not like talking about the past",
+            ],
+            1,
+            "People are poor at predicting their behaviour and often say what you want to hear.",
+          ),
+          q(
+            "Which is the stronger interview question?",
+            [
+              "Would you use an app to save daily?",
+              "Do you like my savings idea?",
+              "Tell me about the last time you saved money and what went wrong",
+              "How much would you pay for my app?",
+            ],
+            2,
+            "It asks about a real past event rather than a hypothetical.",
+          ),
+          q(
+            "Why should you avoid pitching your idea during the interview?",
+            [
+              "People start reacting to your idea instead of describing their lives",
+              "It is illegal",
+              "It makes the interview too short",
+              "People always copy ideas",
+            ],
+            0,
+            "Once you describe a solution, the conversation shifts to opinions about it.",
+          ),
+          q(
+            "What insight did Zuweira get from Ayishetu?",
+            [
+              "Traders want charts",
+              "Traders value a commitment that makes money hard to spend",
+              "Traders prefer card payments",
+              "Traders do not save at all",
+            ],
+            1,
+            "The susu collector's daily visit and the inability to spend given money mattered most.",
+          ),
+          q(
+            "After several interviews, what should guide your decisions?",
+            [
+              "The most dramatic single story",
+              "Your original idea",
+              "Patterns that appear again and again",
+              "The opinion of the first person you met",
+            ],
+            2,
+            "Repeated patterns across interviews are more reliable than one person's view.",
+          ),
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "choosing-problems": {
+      explanation_md: `After interviews you usually have more problems than your team can solve. Choosing well is one of the most important product judgements, and adverts for product roles mention market research and competitor analysis as part of it. The goal is not to pick the most exciting problem but the one where solving it creates the most value.
+
+## Four questions to compare problems
+
+For each problem, ask:
+
+* **How painful is it?** Does it cost people money, time, health or dignity, or is it a small annoyance?
+* **How often does it happen?** Daily problems create habits; once a year problems are easy to forget.
+* **How many people have it?** One trader or thousands across the region?
+* **Do people already spend effort or money on it?** If people pay a susu collector, hire a helper or travel to solve something, the problem is real.
+
+A simple table helps. Score each problem from 1 to 3 on each question and add the scores. The total is not the answer, but it forces you to discuss the reasons.
+
+## Check the alternatives
+
+Every problem already has a solution, even if it is a poor one: a notebook, a phone call, a cousin, doing nothing. Before building, list:
+
+* **What people use today**, including informal methods.
+* **Direct competitors**, other products solving the same problem.
+* **Why people would switch.** A new product must be clearly better than the habit, not just a little better.
+
+You can do this research cheaply: try competitor apps and USSD menus yourself, read their app store reviews, and ask interviewees what they have tried.
+
+## Write down your reasoning
+
+Write a short note explaining which problem you chose and why, and what evidence would change your mind. That lets your manager or team challenge your thinking, and it shows interviewers how you decide.
+
+## Worked example: the farmers' market app
+
+Salifu's team found three problems among farmers near Tamale:
+
+1. Produce spoils before it reaches buyers. Very painful, weekly in season, many farmers. Farmers already pay middlemen to collect. Score: 3, 3, 3, 3.
+2. Farmers struggle to keep records of sales. Mildly painful, daily, many farmers, but few spend money on it. Score: 2, 3, 3, 1.
+3. Farmers want weather forecasts. Useful, but free radio and phone services already provide them. Score: 2, 2, 3, 1.
+
+Salifu checks the alternatives for problem 1. Middlemen offer low prices but collect reliably. A new app must match that reliability. His note says: "We focus on spoilage. We will know we are wrong if farmers keep selling to middlemen even when our buyers offer better prices."
+
+He chose a problem with evidence, checked the competition, and stated what would change his mind.`,
+      practice_task_md: `**Goal:** choose one problem to focus on, with reasons.
+
+1. Take the repeated pain points from your interviews (or list three problems you see in your community).
+2. In Google Sheets, score each on pain, frequency, number of people, and existing spending, from 1 to 3.
+3. For your top problem, list what people use today and at least one competitor product. Try the competitor if it is free.
+4. Write a short note: the problem you chose, why, and what evidence would change your mind.
+
+**Done looks like:** a scoring table and a note under 150 words that someone else could challenge.`,
+      quiz: {
+        questions: [
+          q(
+            "Which is one of the four questions for comparing problems?",
+            [
+              "Is it the most exciting problem?",
+              "Do people already spend effort or money on it?",
+              "Can it be solved with AI?",
+              "Will it look good in a pitch deck?",
+            ],
+            1,
+            "Existing effort or spending is strong evidence the problem is real.",
+          ),
+          q(
+            "Why should you list what people use today, including informal methods?",
+            [
+              "Because a new product must be clearly better than the current habit",
+              "To copy it exactly",
+              "Because informal methods do not count",
+              "To avoid talking to users",
+            ],
+            0,
+            "Every problem has an existing solution, and people only switch if the new one is clearly better.",
+          ),
+          q(
+            "What is the purpose of scoring problems in a table?",
+            [
+              "The total gives the final answer automatically",
+              "To impress the manager",
+              "To force a discussion of the reasons behind each choice",
+              "To avoid making a decision",
+            ],
+            2,
+            "The lesson says the total is not the answer but it helps the team discuss reasons.",
+          ),
+          q(
+            "What did Salifu say would show he was wrong?",
+            [
+              "If farmers liked the app's colours",
+              "If farmers kept selling to middlemen even when buyers offered better prices",
+              "If weather forecasts improved",
+              "If record keeping became popular",
+            ],
+            1,
+            "He stated in advance what evidence would change his mind.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "no-code-mvp": {
+      explanation_md: `An MVP, or minimum viable product, is the smallest thing you can offer that tests whether people want your solution. In Ghana, the cheapest MVP is often not software at all. You run the service by hand using tools people already have, and you watch what happens. If people do not use the manual version, building an app will not change that.
+
+This is also one of the best ways to build portfolio evidence when you have no product job yet.
+
+## The concierge approach
+
+In a concierge MVP, you do the work a future app would automate. Customers get the real benefit, but behind the scenes it is you, a phone and a spreadsheet. This lets you learn:
+
+* Do people actually ask for the service?
+* Do they come back a second time?
+* Will they pay, and how much?
+* What goes wrong that you never expected?
+
+## A free toolkit
+
+* **WhatsApp Business** for taking requests, sending updates and quick replies.
+* **Google Forms** for orders or sign ups, which feed straight into a sheet.
+* **Google Sheets** for tracking every request, status and payment.
+* **Mobile money** for collecting payment, with a clear receipt message.
+
+All of these work on a phone with modest data.
+
+## Decide what success looks like first
+
+Before you start, write down what result would mean the idea is worth continuing. For example: "At least 10 orders in two weeks, and at least 4 repeat customers." Deciding in advance stops you from explaining away weak results later.
+
+## Worked example: the farmers' market app
+
+Before building anything, Mohammed tests the farmers' market idea by hand. He creates a WhatsApp Business number and a Google Form for buyers in Tamale to order vegetables from three farmer groups. Each morning he reads new orders in his sheet, calls the farmers, arranges a tricycle for delivery, and collects payment by MoMo.
+
+His success rule was 15 orders and 5 repeat buyers in three weeks. Results:
+
+* 22 orders, mostly from chop bar owners.
+* 9 repeat buyers.
+* Two deliveries failed because farmers had already sold to a middleman.
+
+Mohammed learned three things no app would have told him: chop bars are the best first customers, they order the same items weekly, and farmers need a firm commitment before harvest day. His team now knows what the first app version must do: let regular buyers place repeat orders and confirm them with farmers a day early.
+
+## Know when to stop
+
+A manual MVP is a test, not a business plan. When the work becomes too much to do by hand, that is a good sign: you have demand worth automating.`,
+      practice_task_md: `**Goal:** design and run a tiny manual test of an idea.
+
+1. Pick a simple service idea, such as weekly gas refill pickup, printing for students, or ordering from a local farm.
+2. Write your success rule before you start: how many requests and repeat customers in what time.
+3. Set up a Google Form or WhatsApp Business number and a Google Sheet to track requests.
+4. Share it with a small group you know and run it for one or two weeks, doing the work by hand.
+5. Record what happened against your success rule and list three surprises.
+
+**Done looks like:** your success rule, a sheet of real requests, and a half page summary of what you learned. If you cannot run it, write a full plan instead.`,
+      quiz: {
+        questions: [
+          q(
+            "What is a concierge MVP?",
+            [
+              "A fully built app with every feature",
+              "A service run by hand that delivers the real benefit to test demand",
+              "A hotel booking app",
+              "A marketing campaign",
+            ],
+            1,
+            "In a concierge MVP you do the work a future app would automate.",
+          ),
+          q(
+            "Why should you write your success rule before starting?",
+            [
+              "To stop you explaining away weak results later",
+              "Because the law requires it",
+              "To make the test longer",
+              "So customers can see it",
+            ],
+            0,
+            "Deciding in advance keeps you honest about what the results mean.",
+          ),
+          q(
+            "Which customers turned out best in Mohammed's test?",
+            ["Schools", "Chop bar owners", "Banks", "Tourists"],
+            1,
+            "Most orders, and the regular ones, came from chop bar owners.",
+          ),
+          q(
+            "What does it mean when the manual work becomes too much to handle?",
+            [
+              "The idea has failed",
+              "You should stop immediately",
+              "You may have demand worth automating",
+              "You need a new idea",
+            ],
+            2,
+            "Growing manual workload is a sign of real demand.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
     // NEXT
   },
 };
