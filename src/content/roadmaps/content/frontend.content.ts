@@ -1534,6 +1534,682 @@ Sumaila writes a function that formats amounts as cedis. He adds tests for whole
         pass_threshold: 80,
       },
     },
+    "frameworks": {
+      explanation_md: `Most frontend adverts we studied, from Accra fintechs to remote agencies, name a framework, and React was by far the most common, often paired with TypeScript. Frameworks help teams build large interfaces in an organised way. This section introduces them once plain JavaScript feels comfortable.
+
+## Why frameworks exist
+
+With plain JavaScript, you find elements and update them by hand. That works for a small page. In a big app with many screens, keeping the page in step with changing data becomes messy and bug prone.
+
+Frameworks such as React let you describe what the screen should look like for the current data. When the data changes, the framework updates the page for you. You think in **components**: small, reusable pieces like a \`ProductCard\`, a \`PriceTag\` or a \`MomoCheckout\` button.
+
+## What this section covers
+
+* **React fundamentals:** components, props and state, the core ideas employers test.
+* **TypeScript basics:** adding types to JavaScript so mistakes show up before users see them.
+* **A full stack framework such as Next.js (optional):** routing, server rendering and data loading on top of React.
+* **Turning a design into code:** reading a Figma design and building it as clean, reusable components.
+
+## When to start
+
+Start this section when you can, without looking things up constantly:
+
+* Write functions and use \`map\` and \`filter\` on arrays.
+* Change the page in response to events.
+* Fetch data and handle loading and errors.
+
+If those still feel shaky, spend another week or two on the JavaScript section. Frameworks build on those skills, and skipping them makes React feel like magic you cannot debug.
+
+## A cost to keep in mind
+
+Frameworks add JavaScript that every visitor downloads and runs. On a low cost Android phone and a slow network, a heavy React app can be slow to start. Good teams manage this: they keep bundles small, render on the server where it helps, and avoid unnecessary libraries. Keep the performance lesson in mind as you learn.
+
+## Tooling you will meet
+
+* **npm**, the package manager that installs libraries.
+* **Vite**, a fast tool for starting and building projects, for example \`npm create vite@latest\`.
+* **CSS options** such as Tailwind or a component library, which several adverts mention.
+
+You do not need to master all of them. Learn enough to start a project, install a package and build for production.
+
+## A worked example
+
+Abdul-Rahman rebuilds his market price list in React. His filter, list and save buttons become three components. The search text lives in state, and the list re renders automatically as he types. The code is shorter and easier to extend, and he can now explain in an interview exactly what React changed compared with his plain JavaScript version.`,
+      practice_task_md: `**Goal:** start your first framework project and compare it with plain JavaScript.
+
+1. On a laptop with WiFi, run \`npm create vite@latest\`, choose React, then \`npm install\` and \`npm run dev\`. No laptop? Use a free React template on StackBlitz in the browser.
+2. Open the page and find the starter component.
+3. Change the heading to your project name and save. Watch the page update.
+4. Write a short note comparing this with your plain JavaScript projects: what seems easier, what seems harder.
+5. Commit the project to GitHub.
+
+**Done looks like:** a running React project on GitHub and a short written comparison you can talk through with a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the main idea behind frameworks such as React?",
+            options: ["You describe the screen for the current data and the framework updates the page", "They replace HTML entirely", "They only work on servers", "They make CSS unnecessary"],
+            answer_index: 0,
+            explanation: "React updates the page to match your data, so you do not change it by hand.",
+          },
+          {
+            prompt: "What is a component?",
+            options: ["A small, reusable piece of interface such as a ProductCard", "A type of server", "A Git branch", "An image format"],
+            answer_index: 0,
+            explanation: "Components are reusable building blocks of an interface.",
+          },
+          {
+            prompt: "When does the lesson suggest starting this section?",
+            options: ["Before learning any JavaScript", "When you can write functions, handle events and fetch data comfortably", "Only after getting a job", "After learning backend development"],
+            answer_index: 1,
+            explanation: "Frameworks build on solid JavaScript skills.",
+          },
+          {
+            prompt: "What cost do frameworks add for users on low cost phones?",
+            options: ["More JavaScript to download and run, which can slow start up", "They require a paid browser", "They stop images loading", "They disable accessibility"],
+            answer_index: 0,
+            explanation: "Framework code adds weight that every visitor must download and process.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "react": {
+      explanation_md: `React was the framework named most often in the adverts we studied, for both Ghanaian companies and remote teams. Its core ideas are few: components, props, state and effects. Learn these well and you can work on most React codebases.
+
+## Components and JSX
+
+A component is a function that returns what should appear on screen, written in JSX, which looks like HTML inside JavaScript:
+
+\`\`\`jsx
+function PriceTag({ name, price }) {
+  return (
+    <p>{name}: GH₵ {price}</p>
+  );
+}
+\`\`\`
+
+Curly braces put JavaScript values into the markup. Component names start with a capital letter.
+
+## Props: passing data in
+
+Props are inputs to a component, like function arguments:
+
+\`\`\`jsx
+<PriceTag name="Gari" price={15} />
+\`\`\`
+
+A component should not change its own props. They flow down from parent to child.
+
+## State: data that changes
+
+State is data a component remembers between renders, such as text typed in a search box. Use the \`useState\` hook:
+
+\`\`\`jsx
+function Counter() {
+  const [count, setCount] = useState(0);
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Ordered: {count}
+    </button>
+  );
+}
+\`\`\`
+
+When you call \`setCount\`, React re renders the component with the new value. Never change state directly; always use the setter.
+
+## Lists and keys
+
+Render lists with \`map\`, and give each item a stable, unique \`key\`:
+
+\`\`\`jsx
+<ul>
+  {items.map((i) => <li key={i.id}>{i.name}</li>)}
+</ul>
+\`\`\`
+
+Keys help React update the right items efficiently.
+
+## Lifting state up
+
+When two components need the same data, move the state to their closest common parent and pass it down as props. For example, a search box and a results list both need the search text, so their parent holds it. Larger apps sometimes use shared state tools, but start with this pattern; it covers a lot.
+
+## Effects
+
+\`useEffect\` runs code after rendering, for things outside React such as fetching data. Many teams now load data through a framework or a data library instead, but you should understand effects when you see them. Remember the three states from the fetch lesson: loading, success and error.
+
+## A worked example
+
+Hawa builds a menu app for a chop bar in Tamale. A \`Menu\` component holds the list of dishes and the search text in state. It passes the filtered dishes to a \`DishList\`, which renders a \`DishCard\` for each, with the dish's \`id\` as the key. Each card has an "Add" button that calls a function passed down as a prop. The data flows down, actions flow up, and every piece is small enough to understand.
+
+## Keep it light
+
+Each library you add increases what phones download. Reach for plain React first, and add packages only when they clearly save effort.`,
+      practice_task_md: `**Goal:** a small React app using props, state and lists.
+
+1. In your Vite React project (or a StackBlitz React template), create a \`Menu\` component with an array of at least six dishes, each with \`id\`, \`name\` and \`price\`.
+2. Create a \`DishCard\` component that receives a dish through props and shows its name and price in cedis.
+3. Render the list with \`map\` and a proper \`key\`.
+4. Add a search input whose value lives in \`useState\`, and show only matching dishes.
+5. Add an "Add to order" button on each card that updates an order count held in \`Menu\` (lifting state up).
+
+**Done looks like:** a working menu that filters as you type and counts orders, with at least three components. Deploy or commit it and explain in the README where state lives and why.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What are props in React?",
+            options: ["Data a component remembers between renders", "Inputs passed from a parent to a child component", "CSS files", "Server addresses"],
+            answer_index: 1,
+            explanation: "Props are inputs, like function arguments, flowing from parent to child.",
+          },
+          {
+            prompt: "What happens when you call the setter from `useState`?",
+            options: ["Nothing until the page reloads", "React re renders the component with the new value", "The component is deleted", "The browser downloads React again"],
+            answer_index: 1,
+            explanation: "Calling the setter tells React to re render with new state.",
+          },
+          {
+            prompt: "Why does each item in a rendered list need a stable, unique `key`?",
+            options: ["To help React update the right items efficiently", "To style the item", "To make it a link", "Keys are only for accessibility"],
+            answer_index: 0,
+            explanation: "Keys let React track which items changed.",
+          },
+          {
+            prompt: "Two sibling components need the same search text. What does the lesson suggest?",
+            options: ["Copy the state into both", "Lift the state up to their closest common parent and pass it down", "Store it in a CSS variable", "Reload the page each time"],
+            answer_index: 1,
+            explanation: "Lifting state up gives both siblings one source of truth.",
+          },
+          {
+            prompt: "Which hook runs code after rendering, for things such as fetching data?",
+            options: ["useState", "useEffect", "useKey", "useProps"],
+            answer_index: 1,
+            explanation: "useEffect handles work outside React after render.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "typescript": {
+      explanation_md: `TypeScript appeared in many of the adverts we studied, including entry level roles at an Accra fintech and a National Service placement. It is JavaScript with types added. Types describe what kind of value something is, so your editor can warn you about mistakes before your users find them.
+
+## Why types help
+
+In plain JavaScript, this bug only shows up when someone uses the page:
+
+\`\`\`js
+total("15", 2); // "1515" instead of 30
+\`\`\`
+
+In TypeScript, you say what the function expects:
+
+\`\`\`ts
+function total(price: number, qty: number): number {
+  return price * qty;
+}
+total("15", 2); // error before you even run it
+\`\`\`
+
+Your editor underlines the mistake immediately. On a team, that saves hours.
+
+## The basic types
+
+\`\`\`ts
+let town: string = "Bolgatanga";
+let stock: number = 12;
+let open: boolean = true;
+let items: string[] = ["rice", "beans"];
+\`\`\`
+
+Often you do not need to write the type, because TypeScript infers it: \`let stock = 12\` is already known to be a number.
+
+## Describing objects
+
+Use a \`type\` (or an \`interface\`) to describe the shape of an object:
+
+\`\`\`ts
+type Product = {
+  id: string;
+  name: string;
+  price: number;
+  photo?: string; // optional
+};
+\`\`\`
+
+The \`?\` means the property may be missing. TypeScript will then remind you to handle that case.
+
+## Union types
+
+A value that can be one of a few options:
+
+\`\`\`ts
+type PayStatus = "pending" | "success" | "failed";
+\`\`\`
+
+If you mistype \`"sucess"\`, TypeScript catches it. This is very useful for payment states and loading states.
+
+## TypeScript with React
+
+Props get a type too:
+
+\`\`\`tsx
+type Props = { name: string; price: number };
+
+function PriceTag({ name, price }: Props) {
+  return <p>{name}: GH₵ {price}</p>;
+}
+\`\`\`
+
+Now anyone using \`PriceTag\` without a price gets a clear error.
+
+## Data from APIs
+
+TypeScript cannot check data arriving from a server at runtime. Describe the shape you expect, but still handle missing or wrong data gracefully, especially on unreliable networks.
+
+## Getting started
+
+TypeScript files end in \`.ts\` or \`.tsx\`. Vite and Next.js projects can be created with TypeScript from the start. Types are removed when the project is built, so they add nothing to what phones download.
+
+## A worked example
+
+Issahaku converts his menu app to TypeScript. He defines a \`Dish\` type and types his component props. Straight away the editor shows two places where he passed a price as text. He fixes them, and a bug that would have shown "GH₵ 1515" on a customer's phone never happens.
+
+Start by typing function inputs, props and API data. That covers most of the benefit.`,
+      practice_task_md: `**Goal:** convert a small project to TypeScript.
+
+1. Create a new Vite project choosing React with TypeScript, or a TypeScript template on StackBlitz.
+2. Define a \`Dish\` type with \`id\`, \`name\`, \`price\` and an optional \`photo\`.
+3. Define a union type \`OrderStatus\` with at least three states.
+4. Rebuild your menu components with typed props.
+5. Deliberately pass a wrong type (a price as text) and read the error. Then fix it.
+6. Run \`npm run build\` and confirm there are no type errors.
+
+**Done looks like:** a TypeScript project that builds with no errors, with your types defined clearly at the top of the file. Commit it and note in the README one bug TypeScript caught for you.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does TypeScript add to JavaScript?",
+            options: ["Faster images", "Types that let your editor catch mistakes early", "A new browser", "Automatic hosting"],
+            answer_index: 1,
+            explanation: "TypeScript adds types so errors appear before code runs.",
+          },
+          {
+            prompt: "What does the `?` mean in `photo?: string`?",
+            options: ["The property is required", "The property may be missing", "The property is a number", "The property is private"],
+            answer_index: 1,
+            explanation: "A question mark marks an optional property.",
+          },
+          {
+            prompt: "Why is `type PayStatus = \"pending\" | \"success\" | \"failed\"` useful?",
+            options: ["It makes payments faster", "It limits the value to known options, so typos are caught", "It encrypts the status", "It sends the status to the server"],
+            answer_index: 1,
+            explanation: "Union types restrict values to a set of allowed options.",
+          },
+          {
+            prompt: "Does TypeScript check data arriving from a server while the app runs?",
+            options: ["Yes, always", "No, so you must still handle missing or wrong data", "Only on Android", "Only for numbers"],
+            answer_index: 1,
+            explanation: "Types are removed at build time and cannot check runtime data.",
+          },
+          {
+            prompt: "Do TypeScript types increase what users' phones download?",
+            options: ["Yes, a lot", "No, types are removed when the project is built", "Only on slow networks", "Only in React"],
+            answer_index: 1,
+            explanation: "Types disappear in the built JavaScript.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "nextjs": {
+      explanation_md: `Next.js appeared in several of the adverts we studied, both in Accra and remote roles. It is a framework built on React that adds routing, server rendering and data loading. This topic is optional: you can get a junior role knowing React and TypeScript well, but Next.js knowledge makes you a stronger candidate.
+
+## What it adds to React
+
+Plain React runs in the browser. The phone downloads JavaScript, runs it, and only then shows the page. Next.js can do much of that work on the server, so the phone receives ready HTML.
+
+* **Routing from folders.** In the \`app\` folder, each folder becomes a page address. \`app/menu/page.tsx\` becomes \`/menu\`.
+* **Server components.** By default, components run on the server. Their code is not sent to the phone, only the result.
+* **Client components.** Components that need state or event handlers start with the line \`"use client"\`.
+* **Built in tools** for images, fonts and links that help performance.
+
+## Why this matters for slow networks
+
+When the server sends finished HTML, a user on a weak connection sees content sooner and their phone does less work. Search engines also read the content more easily, which helps local businesses get found.
+
+\`\`\`tsx
+// app/menu/page.tsx (server component)
+export default async function MenuPage() {
+  const dishes = await getDishes();
+  return (
+    <ul>
+      {dishes.map((d) => <li key={d.id}>{d.name}</li>)}
+    </ul>
+  );
+}
+\`\`\`
+
+The data is loaded on the server. The phone receives a finished list.
+
+## Client components for interactivity
+
+\`\`\`tsx
+"use client";
+import { useState } from "react";
+
+export function AddButton() {
+  const [n, setN] = useState(0);
+  return <button onClick={() => setN(n + 1)}>Add ({n})</button>;
+}
+\`\`\`
+
+A good habit: keep most of the page as server components and use small client components only where you need interaction. That keeps the JavaScript sent to phones small.
+
+## Images
+
+The \`Image\` component from \`next/image\` resizes images, serves modern formats and lazy loads by default, which helps on slow networks.
+
+## Keep up with the docs
+
+Next.js changes often between versions. Always check the official documentation at nextjs.org for the version you are using rather than relying on old tutorials.
+
+## A worked example
+
+Amina rebuilds a church events site in Next.js. The events list is a server component that loads data on the server. Only the "Remind me" button is a client component. With the network throttled in DevTools, the events now appear quickly, because the phone receives ready HTML instead of waiting for a large script.`,
+      practice_task_md: `**Goal:** a small Next.js site with server and client components.
+
+1. On WiFi, follow the free Next.js Learn course at nextjs.org/learn far enough to create a project, or start one with \`npx create-next-app@latest\`.
+2. Create two pages: a home page and \`/events\`.
+3. On \`/events\`, render a list of at least five events from an array in a server component.
+4. Add one small client component, such as a "Remind me" button that counts taps.
+5. Use the \`Image\` component for one photo.
+6. Run Lighthouse in mobile mode and note the score.
+
+**Done looks like:** a two page site where only the button is a client component, committed to GitHub with your Lighthouse result in the README.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How does Next.js create page addresses in the `app` folder?",
+            options: ["From a config file listing every URL", "Each folder becomes a route, for example app/menu/page.tsx becomes /menu", "From the page title", "Routes must be added in CSS"],
+            answer_index: 1,
+            explanation: "Next.js uses folder based routing.",
+          },
+          {
+            prompt: "Why can server rendering help users on slow networks?",
+            options: ["The phone receives ready HTML and does less work", "It turns off images", "It makes data free", "It removes the need for HTML"],
+            answer_index: 0,
+            explanation: "Sending finished HTML shows content sooner on weak connections.",
+          },
+          {
+            prompt: "Which line marks a component as a client component?",
+            options: ["\"use server\"", "\"use client\"", "\"use react\"", "\"use phone\""],
+            answer_index: 1,
+            explanation: "Client components that need state or events start with use client.",
+          },
+          {
+            prompt: "What habit keeps the JavaScript sent to phones small?",
+            options: ["Make every component a client component", "Keep most of the page as server components and use small client components for interaction", "Avoid HTML", "Load every library on every page"],
+            answer_index: 1,
+            explanation: "Only client components send their code to the browser.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "design-to-code": {
+      explanation_md: `Many adverts we studied mention Figma, UI implementation or turning designs into working pages. In agencies and product teams, a designer hands you a design and you build it. Doing that accurately, with reusable pieces, is a daily skill.
+
+## Reading a Figma file
+
+Figma is a free design tool that runs in the browser. When a designer shares a file with you, you can usually inspect it even on a free account:
+
+* Select any element to see its size, spacing, colours and font.
+* Look for the **spacing** between elements, not just their sizes.
+* Check for **styles or variables**, the named colours and text styles the designer reused.
+* Look at every **state**: a button normally, when pressed, when disabled, and any error or empty screens.
+
+## Find the system in the design
+
+Good designs repeat a small set of values. Collect them as CSS custom properties, often called design tokens:
+
+\`\`\`css
+:root {
+  --color-primary: #1b5e20;
+  --color-text: #1f1f1f;
+  --space-2: 8px;
+  --space-4: 16px;
+  --radius: 8px;
+}
+\`\`\`
+
+Then use them everywhere: \`padding: var(--space-4);\`. If the brand colour changes, you update one line.
+
+## Build components, not pages
+
+Before coding, look at the design and list the pieces that repeat: a button, a card, an input with a label, a header. Build each as a reusable component, then assemble the screens. This is called component driven development, and adverts mention it directly.
+
+## CSS frameworks and component libraries
+
+Several adverts mention Tailwind CSS or a component library. Tailwind gives you small utility classes you combine in your markup:
+
+\`\`\`html
+<button class="rounded-lg bg-green-800 px-4 py-2 text-white">
+  Order now
+</button>
+\`\`\`
+
+These tools speed teams up and keep spacing consistent. Learn plain CSS first, so you understand what the classes do, then pick one up when a project or team uses it.
+
+## Mobile designs and missing details
+
+Designs often show only a large screen. Ask the designer for the phone version, or make sensible decisions using your mobile first skills and confirm them. Also ask about anything missing: long names, empty lists, slow loading, errors. Asking good questions early is a sign of a strong developer.
+
+## Accessibility checks on the design
+
+Check the colours in the design for contrast and make sure tap targets are big enough before you build. It is easier to fix in the design than after.
+
+## A worked example
+
+Mariama receives a Figma design for a Bolgatanga craft shop. She notes four colours, three text sizes and a spacing scale, and writes them as tokens. She builds a \`Button\`, a \`ProductCard\` and a \`Header\` component, then assembles the home and product pages. The design shows no empty cart screen, so she asks the designer, who adds one. Her finished pages match the design and are easy to change.`,
+      practice_task_md: `**Goal:** turn a free community design into working code.
+
+1. Create a free Figma account and open a free community file of a simple mobile screen, such as a shop or event app (search the Figma Community).
+2. Inspect it and write down the colours, font sizes and spacing values as CSS custom properties.
+3. List the repeating components (for example button, card, input).
+4. Build each component, then assemble one full screen using your tokens.
+5. Compare your build with the design side by side on a phone and fix differences.
+6. Write down two questions you would ask the designer about missing states.
+
+**Done looks like:** one screen that closely matches the design, built from reusable components and tokens, with your designer questions in the README.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should you look for when inspecting a Figma design, besides sizes?",
+            options: ["Only the logo", "Spacing, colour and text styles, and every state of each element", "The designer's name", "The file size"],
+            answer_index: 1,
+            explanation: "Spacing, styles and states are what make a build accurate.",
+          },
+          {
+            prompt: "What are design tokens in CSS?",
+            options: ["Payment codes", "Named custom properties for repeated values such as colours and spacing", "Login passwords", "Image formats"],
+            answer_index: 1,
+            explanation: "Tokens like --color-primary keep values consistent and easy to change.",
+          },
+          {
+            prompt: "What does component driven development mean?",
+            options: ["Building each repeating piece as a reusable component, then assembling screens", "Writing all pages in one file", "Designing without a designer", "Using only images for interfaces"],
+            answer_index: 0,
+            explanation: "You build reusable pieces first and combine them into pages.",
+          },
+          {
+            prompt: "What should you do if a design only shows a large screen?",
+            options: ["Refuse to build it", "Ask for the phone version or make sensible mobile first decisions and confirm them", "Build only the large screen", "Shrink it with CSS zoom"],
+            answer_index: 1,
+            explanation: "Ask or decide using mobile first skills, then confirm with the designer.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "real-products": {
+      explanation_md: `Tutorials teach skills. Real products teach judgement. This section applies everything you have learned to features that Ghanaian products actually need, and the projects you build here can become the strongest pieces in your portfolio.
+
+## What makes a product feel local
+
+Products that work well in Ghana share some traits:
+
+* **Mobile money first.** Many people pay with mobile money rather than cards, so checkout screens must handle that flow clearly.
+* **Patchy networks.** Signal changes as people move between towns and bundles run out. Products must handle waiting, failure and offline moments gracefully.
+* **Low cost phones.** Pages must be light and fast on modest Android devices.
+* **Sharing by link.** People share links on WhatsApp, so pages need to load quickly from a shared link and look right in a preview.
+
+## What this section covers
+
+* **Mobile money checkout screens:** entering a number, waiting for the approval prompt, and clearly showing success, failure or pending.
+* **Offline friendly apps (optional):** progressive web app techniques that keep useful content available without a connection.
+* **Deploying on free hosting:** putting your projects online with a link anyone can open.
+
+## Thinking like a product developer
+
+For every feature, ask:
+
+1. **Who is using this, and on what phone?** A trader in Tamale market, a nurse in Wa, a student in Damongo.
+2. **What happens on a slow or dropped connection?** Design the loading, error and retry states.
+3. **What could go wrong with money or data?** Double payments, lost orders, unclear status.
+4. **How do I know it works?** Test it on a real phone with a throttled network.
+
+## Build for real people
+
+Wherever you can, build for someone real: a relative's shop, a school, a church, a cooperative, an NGO. Ask what problem they have, build a small solution, and let them use it. Even a simple, live page that someone actually uses tells an employer far more than a copied tutorial.
+
+Be honest in how you present these projects. If the payment screens use a test mode with no real money, say so. Employers value honesty, and real feedback from a real user is worth more than invented numbers.
+
+## A worked example
+
+Fuseini's aunt sells shea butter in Tamale and takes orders over WhatsApp. He builds her a one page shop: a product list, an order form, and a checkout screen designed for mobile money, running in a provider's test mode. He makes the page light enough to open quickly from a WhatsApp link and deploys it free. His aunt starts sharing the link with customers. In interviews, Fuseini can explain every decision, and that story stands out.`,
+      practice_task_md: `**Goal:** plan a real product project.
+
+1. Find one real person or organisation near you with a problem a simple website could help with: a shop, school, church, cooperative or NGO.
+2. Talk to them (in person, by call or on WhatsApp). Write down their problem in two sentences.
+3. List the users and the phones they likely use.
+4. Write the main features (no more than four), and for each, what happens on a slow or dropped connection.
+5. Sketch the main screens on paper and take photos.
+
+**Done looks like:** a one page project plan with the problem, users, features, network plan and sketches, ready to share with a mentor before you start building.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why must Ghanaian checkout screens handle mobile money clearly?",
+            options: ["Cards are not allowed in Ghana", "Many people pay with mobile money rather than cards", "Mobile money needs no internet at all", "Mobile money is only used by businesses"],
+            answer_index: 1,
+            explanation: "Mobile money is a common way people pay.",
+          },
+          {
+            prompt: "Why should pages load quickly from a shared link?",
+            options: ["People often share links on WhatsApp", "Links expire after one minute", "Search engines require it by law", "Shared links cannot show images"],
+            answer_index: 0,
+            explanation: "Sharing by link is common, so pages must load well from a shared link.",
+          },
+          {
+            prompt: "Which question should you ask for every feature, according to the lesson?",
+            options: ["What happens on a slow or dropped connection?", "How many animations can I add?", "Which font is most popular?", "How can I hide errors?"],
+            answer_index: 0,
+            explanation: "Planning for weak connections is part of every feature.",
+          },
+          {
+            prompt: "How should you present a payment project that runs in test mode?",
+            options: ["Claim it handles real money", "Say honestly that it uses a test mode", "Invent sales figures", "Hide that it exists"],
+            answer_index: 1,
+            explanation: "Honesty about what your project does builds trust with employers.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "payment-flows": {
+      explanation_md: `Fintech is a big part of Ghana's tech scene, and several adverts we studied came from payments companies. Mobile money checkout is a flow where clear design really matters: people are nervous about their money, networks are unreliable, and confusion leads to lost sales or double payments.
+
+## How a mobile money payment usually works
+
+Details vary by provider, but the common flow is:
+
+1. The customer chooses mobile money and enters their number and network (for example MTN MoMo, Telecel Cash or AT Money).
+2. Your app asks your **server** to start the payment. The server talks to the payment provider using secret keys. Never put those keys in frontend code.
+3. The provider sends an approval prompt to the customer's phone. The customer enters their PIN **on their phone's prompt**, not in your app.
+4. The payment is **pending** until the customer approves or the request times out.
+5. The provider tells your server the result, and your app shows success or failure.
+
+**Never collect a mobile money PIN in your own form.** The provider handles that step. A site asking for a PIN looks like a scam, and it is unsafe.
+
+## Design every state
+
+* **Enter details:** a phone number field with \`type="tel"\`, the network choice, and the amount shown clearly in cedis.
+* **Waiting for approval:** "Check your phone and approve the payment of GH₵ 50". Show a simple progress indicator and keep the screen calm.
+* **Success:** a clear confirmation with a reference number the customer can screenshot.
+* **Failed or declined:** say what happened in plain words and offer to try again.
+* **Timed out or unknown:** this is the tricky one. Say "We have not received confirmation yet" and offer to check the status, not just "Try again", which could charge twice.
+
+## Preventing double payments
+
+* Disable the Pay button as soon as it is tapped.
+* Show the waiting screen immediately.
+* Check the payment status from your server before offering a retry.
+
+\`\`\`ts
+type PayState =
+  | "idle" | "starting" | "awaiting_approval"
+  | "success" | "failed" | "unknown";
+\`\`\`
+
+A union type like this makes sure your interface handles every state.
+
+## Test mode
+
+Payment providers offer test or sandbox modes so you can build the whole flow without real money. Use them for portfolio projects and say so clearly.
+
+## A worked example
+
+Wumpini builds a checkout for a school fees demo. After tapping Pay, the button disables and the screen says "Approve GH₵ 300 on your phone". If her test server reports a timeout, the screen shows "Still waiting for confirmation" with a "Check status" button instead of "Pay again". A reviewer at an Accra fintech can see straight away that she understands real payment risks.`,
+      practice_task_md: `**Goal:** build the screens for a mobile money checkout using fake data.
+
+1. Build a checkout page with a phone number field, a network choice (native \`select\` or radio buttons) and the amount in cedis.
+2. Define a state type like \`idle\`, \`starting\`, \`awaiting_approval\`, \`success\`, \`failed\`, \`unknown\`.
+3. Simulate the server with a function that waits a few seconds (using \`setTimeout\`) and returns a random result.
+4. Build a clear screen for every state, including a "Check status" option for \`unknown\`.
+5. Disable the Pay button after one tap.
+6. Make sure there is no PIN field anywhere.
+
+**Done looks like:** a demo you can click through every state of, with a README explaining how you prevent double payments and why there is no PIN field.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Where does the customer enter their mobile money PIN?",
+            options: ["In a field on your checkout page", "On the approval prompt on their own phone", "In an email", "In the browser console"],
+            answer_index: 1,
+            explanation: "The provider's prompt on the phone collects the PIN, never your form.",
+          },
+          {
+            prompt: "Why must payment secret keys stay off the frontend?",
+            options: ["Anyone can read frontend code, so keys there could be stolen", "Frontend code runs too slowly", "Keys only work in CSS", "Browsers delete keys"],
+            answer_index: 0,
+            explanation: "Frontend code is visible to users; secrets belong on the server.",
+          },
+          {
+            prompt: "What should the screen offer when the payment result is unknown or timed out?",
+            options: ["A Pay again button straight away", "A message that confirmation has not arrived and an option to check the status", "Nothing, just a blank screen", "A request for the PIN"],
+            answer_index: 1,
+            explanation: "Checking status first avoids charging the customer twice.",
+          },
+          {
+            prompt: "Which step helps prevent double payments?",
+            options: ["Disabling the Pay button as soon as it is tapped", "Making the button bigger", "Hiding the amount", "Removing the waiting screen"],
+            answer_index: 0,
+            explanation: "Disabling the button stops repeated taps from sending more requests.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
