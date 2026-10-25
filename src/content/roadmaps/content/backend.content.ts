@@ -732,7 +732,7 @@ Forgetting \`await\` gives you a promise instead of the value. If you print some
 Payments, webhooks, SMS and background jobs all depend on handling slow and failed calls calmly. Imagine Sumaila is building a bus ticket app in Bolgatanga. If his calls hang or fail silently, customers see a spinner forever and he has no idea why. Timeouts and clear error handling turn those mysteries into messages he can act on.`,
       practice_task_md: `**Goal:** see asynchronous code, failures and timeouts in action.
 
-1. In Node.js 18 or newer, create \`fetch-test.js\`.
+1. In Node.js 18 or newer (where \`fetch\` is built in), create \`fetch-test.js\`.
 2. Write an \`async\` function that fetches \`https://httpbin.org/delay/2\` (it replies after two seconds) and prints the status code.
 3. Add a timeout of one second with \`AbortSignal.timeout(1000)\` and catch the error so it prints "Took too long, please try again".
 4. Use \`Promise.all\` to fetch \`https://httpbin.org/get\` twice at the same time and print how long it took using \`Date.now()\`.
@@ -897,11 +897,11 @@ Imagine a table called \`sales\` for Hawa's provisions shop:
 
 | id | item  | qty | price_pesewas | sold_on    |
 |----|-------|-----|---------------|------------|
-| 1  | rice  | 2   | 3000          | 1 Oct      |
-| 2  | oil   | 1   | 4500          | 1 Oct      |
-| 3  | sugar | 3   | 1200          | 2 Oct      |
+| 1  | rice  | 2   | 3000          | 2026-10-01 |
+| 2  | oil   | 1   | 4500          | 2026-10-01 |
+| 3  | sugar | 3   | 1200          | 2026-10-02 |
 
-Each row is one sale. Each column is one detail. Prices are stored in pesewas to avoid rounding errors.
+Each row is one sale. Each column is one detail. Prices are stored in pesewas to avoid rounding errors, and dates are written year first so they sort correctly.
 
 ### Reading data with SELECT
 
@@ -1097,7 +1097,7 @@ Sketch boxes for tables and lines for relationships on paper. This kind of diagr
 
 1. On paper, draw boxes for \`customers\`, \`products\`, \`orders\`, \`order_items\` and \`payments\`, with lines showing which table points to which.
 2. Write the \`CREATE TABLE\` statements with primary keys, foreign keys, \`NOT NULL\` where needed, a \`UNIQUE\` phone number and money in pesewas.
-3. Run them in SQLite or a free online playground and insert sample data for two customers (for example, Fuseini and Amina) with one order each.
+3. Run them in SQLite or a free online playground. \`SERIAL\` is PostgreSQL only, so in SQLite write \`id INTEGER PRIMARY KEY\` instead, and run \`PRAGMA foreign_keys = ON;\` first, because SQLite does not check foreign keys unless you ask. Then insert sample data for two customers (for example, Fuseini and Amina) with one order each.
 4. Write one query that lists every order with the customer's name and total.
 
 **Done looks like:** a photo of your diagram and a \`schema.sql\` file in a GitHub repository, with a README paragraph explaining one design choice you made and why.`,
@@ -1209,7 +1209,7 @@ Imagine Fuseini runs the backend for a cooperative's savings app in Yendi. Membe
       practice_task_md: `**Goal:** evolve a database with migrations instead of manual edits.
 
 1. In a GitHub repository, create a \`migrations\` folder.
-2. Write \`001_create_members.sql\` for a savings group with \`id\`, \`name\` and \`phone\`.
+2. Write \`001_create_members.sql\` for a savings group with \`id\`, \`name\` and \`phone\`. For SQLite, use \`id INTEGER PRIMARY KEY\` so ids are numbered automatically.
 3. Write \`002_create_contributions.sql\` with a foreign key to members and an amount in pesewas.
 4. Write \`003_add_community.sql\` that adds a \`community\` column to members.
 5. Delete your SQLite database file, then run the three files in order (for example, \`sqlite3 group.db < migrations/001_create_members.sql\` and so on) to rebuild it from scratch.
@@ -1776,7 +1776,7 @@ If you store passwords, never store them as plain text. Store a **hash** made wi
 
 ### Phone number and one time code
 
-Many Ghanaian apps sign people in with a phone number because almost everyone has one and not everyone uses email. The flow:
+Many Ghanaian apps sign people in with a phone number, because phone numbers are widely used and not everyone uses email. The flow:
 
 1. The user enters a phone number.
 2. Your server creates a random six digit code, stores a hash of it with an expiry of a few minutes, and sends it by SMS.
@@ -2022,7 +2022,7 @@ const expected = crypto
   .digest("hex");
 \`\`\`
 
-Compare the two with \`crypto.timingSafeEqual\` rather than \`===\`, which leaks timing clues. Follow your provider's documentation exactly, since the algorithm, header name and what counts as the body vary. If they offer an endpoint to look up a transaction's status, calling it to confirm before giving value adds another layer of safety.
+Here \`rawBody\` is the body exactly as it arrived, before any JSON parsing. Compare the two with \`crypto.timingSafeEqual\` rather than \`===\`, which leaks timing clues; it throws if the two values differ in length, so check the lengths first. Follow your provider's documentation exactly, since the algorithm, header name and what counts as the body vary. If they offer an endpoint to look up a transaction's status, calling it to confirm before giving value adds another layer of safety.
 
 ### Recording each payment once
 
@@ -2038,7 +2038,7 @@ At the end of each day, compare your \`paid\` payments with the provider's repor
 
 ### Money handling rules
 
-* Store amounts in pesewas as integers.
+* Store amounts in pesewas as integers. Some providers expect pesewas and others expect cedis, so convert carefully when you call them.
 * Never trust an amount sent by the app; take it from your own order record.
 * Log every status change with a timestamp.
 * Keep secret keys in environment variables, never in Git.`,
@@ -2050,7 +2050,7 @@ At the end of each day, compare your \`paid\` payments with the provider's repor
 4. Write a small script that signs a fake webhook body with the same secret and sends it with \`curl\` or \`fetch\`. Send it twice and confirm the order is only marked paid once.
 5. Send one with a wrong signature and confirm it is rejected with \`401\`.
 
-**Done looks like:** code on GitHub with a README showing the flow as numbered steps and the outputs of your four test webhooks.`,
+**Done looks like:** code on GitHub with a README showing the flow as numbered steps and the outputs of your three test webhooks.`,
       quiz: {
         questions: [
           {
@@ -2139,7 +2139,7 @@ throw new Error("Provider unavailable");
 
 An operation is **idempotent** if doing it twice has the same effect as doing it once. Reading an order is naturally idempotent. Charging a customer is not, unless you make it so.
 
-The common technique is an **idempotency key**: a unique id for each intended action, created once and sent with every attempt. Many payment providers accept one in a header. Your own API can accept one too:
+The common technique is an **idempotency key**: a unique id for each intended action, created once and sent with every attempt. Some providers accept one in a header; others ask for a unique reference per payment. Your own API can accept one too:
 
 \`\`\`http
 POST /payments
@@ -2155,7 +2155,7 @@ A unique constraint on the key column makes this safe even if two identical requ
 
 ### Webhooks repeat too
 
-Providers retry webhooks until you reply with a success code. Treat the provider's transaction id as an idempotency key: if you have already recorded it, reply \`200\` and skip the work. Also ignore updates that would move a payment backwards, such as a late \`pending\` arriving after \`paid\`.
+Providers retry webhooks until you reply with a success code or give up. Treat the provider's transaction id as an idempotency key: if you have already recorded it, reply \`200\` and skip the work. Also ignore updates that would move a payment backwards, such as a late \`pending\` arriving after \`paid\`.
 
 ### On the phone side
 
@@ -2269,7 +2269,7 @@ This is the background job pattern, and it is how teams handle anything slow: me
 
 ### Keep messages short and useful
 
-A standard SMS holds a limited number of characters, and longer texts are split into several parts, each usually billed. Accented letters or emoji can shrink the limit further. Write clearly and briefly: who it is from, what happened, what to do next. Never include passwords or full card or account details.
+A single SMS holds up to 160 basic characters, and longer texts are split into several parts, each usually billed. Emoji or some accented letters cut that limit to 70. Write clearly and briefly: who it is from, what happened, what to do next. Never include passwords or full card or account details.
 
 ### Consent and opt outs
 
@@ -2449,7 +2449,7 @@ Imagine Sumaila has built an API for a farmers' cooperative in Yendi. Before tel
 
 **Injection.** If user input becomes part of a database query or system command, an attacker can run their own code. Always use parameterised queries, as you learned in the SQL lesson. Never build queries by gluing strings together.
 
-**Broken access control.** A user changes \`/orders/41\` to \`/orders/42\` and sees someone else's order. Check permissions on the server for every request, as in the authorisation lesson. It tops the OWASP Top Ten list of web application risks.
+**Broken access control.** A user changes \`/orders/41\` to \`/orders/42\` and sees someone else's order. Check permissions on the server for every request, as in the authorisation lesson. It is the first item (A01) in the OWASP Top Ten 2025 list of web application risks.
 
 **Weak authentication.** Plain text passwords, unlimited login attempts or codes that never expire. Hash passwords, limit attempts and expire codes quickly.
 

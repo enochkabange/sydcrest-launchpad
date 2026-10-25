@@ -40,10 +40,11 @@ opened).
 | D1 | Node.js: Learn | https://nodejs.org/en/learn | 2026-10-25 | Official documentation, used to check accuracy only |
 | D2 | Express docs | https://expressjs.com/ | 2026-10-25 | Official documentation, used to check accuracy only |
 | D3 | PostgreSQL tutorial (official) | https://www.postgresql.org/docs/current/tutorial.html | 2026-10-25 | Official documentation, used to check accuracy only |
-| D4 | OWASP Top Ten | https://owasp.org/www-project-top-ten/ | 2026-10-25 | Official documentation, used to check accuracy only |
+| D4 | OWASP Top Ten | https://owasp.org/www-project-top-ten/ | 2026-10-25 | Official documentation, used to check accuracy only; current edition is 2025, where A01:2025 is Broken Access Control (named in the security lesson) |
 | D5 | The Twelve Factor App | https://12factor.net/ | 2026-10-25 | Official documentation, used to check accuracy only |
 | D6 | Docker: Get started | https://docs.docker.com/get-started/ | 2026-10-25 | Official documentation, used to check accuracy only |
 | D7 | Ghana Data Protection Commission | https://dpc.gov.gh/ | 2026-10-25 | Official body; Act 843 named in the security lesson |
+| D8 | Node.js API docs: Globals (fetch, AbortSignal.timeout) | https://nodejs.org/api/globals.html | 2026-10-25 | Official documentation, used to check accuracy only; fetch unflagged from v18.0.0, AbortSignal.timeout added in v17.3.0 and v16.14.0 |
 
 ## Adverts analysed (20)
 
