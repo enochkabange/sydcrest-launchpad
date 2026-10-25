@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import Link from "@/components/ui/link";
 import { buttonClasses } from "@/components/ui/button";
+import { track } from "@/lib/analytics/track";
 import { getCurrentUser } from "@/lib/auth";
 import { readAnswersCookie } from "@/lib/path/cookie";
 import { answersKey } from "@/lib/path/quiz";
@@ -27,7 +28,10 @@ async function PathContent() {
 
   let body;
   if (hasPendingCookie) body = <SavingPath />;
-  else if (saved) body = <PathResultView result={await resultFor(saved)} />;
+  else if (saved) {
+    body = <PathResultView result={await resultFor(saved)} />;
+    await track("path_viewed", {}, { profileId: user.id });
+  }
   else body = <NoPathYet />;
 
   return (

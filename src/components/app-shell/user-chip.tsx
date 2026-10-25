@@ -1,6 +1,7 @@
 import { getMyProfile } from "@/lib/auth";
 import { signOut } from "@/app/(auth)/actions";
 import { Button } from "@/components/ui/button";
+import Link from "@/components/ui/link";
 
 /** Streams in behind Suspense: it reads the session. Redirects to /login when signed out. */
 export async function UserChip() {
@@ -11,6 +12,11 @@ export async function UserChip() {
         <p className="truncate text-sm font-semibold text-content">{profile.display_name ?? "Your account"}</p>
         {profile.email && <p className="truncate text-xs text-content-3">{profile.email}</p>}
       </div>
+      {profile.role === "admin" && (
+        <Link href="/admin" className="text-sm font-semibold">
+          Admin
+        </Link>
+      )}
       <form action={signOut}>
         <Button type="submit" variant="ghost" className="w-full justify-start px-0">
           Sign out

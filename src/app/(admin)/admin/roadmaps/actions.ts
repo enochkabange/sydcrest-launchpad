@@ -13,6 +13,7 @@ import {
 } from "@/lib/roadmap-admin";
 import { importRoadmapDrafts } from "@/lib/roadmap-import";
 import { ROADMAP_DRAFTS } from "@/content/roadmaps";
+import { revalidateRoadmap } from "@/lib/roadmaps/revalidate";
 
 /**
  * Every action re-checks the admin role (requireAdmin) before touching the
@@ -29,6 +30,16 @@ export type FormState = {
 
 const UNIQUE_VIOLATION = "23505";
 
+/**
+ * After any successful write: re-render the admin page and expire the cached
+ * public roadmap pages, list and sitemap. All roadmaps, because a write rarely
+ * knows its slug and content edits are rare enough that a full refresh is cheap.
+ */
+function contentChanged() {
+  revalidateRoadmap();
+  refresh();
+}
+
 function id(form: FormData, key = "id") {
   const value = form.get(key);
   return typeof value === "string" ? value : "";
@@ -44,6 +55,7 @@ export async function createRoadmap(_prev: FormState, form: FormData): Promise<F
   const { data: row, error } = await supabase.from("roadmaps").insert(data).select("id").single();
   if (error?.code === UNIQUE_VIOLATION) return { errors: { slug: "Another roadmap already uses this slug." } };
   if (error) return { message: "We couldn't create the roadmap. Try again." };
+  revalidateRoadmap();
   redirect(`/admin/roadmaps/${row.id}`);
 }
 
@@ -55,7 +67,7 @@ export async function updateRoadmap(_prev: FormState, form: FormData): Promise<F
   const { error } = await supabase.from("roadmaps").update(data).eq("id", id(form));
   if (error?.code === UNIQUE_VIOLATION) return { errors: { slug: "Another roadmap already uses this slug." } };
   if (error) return { message: "We couldn't save the roadmap. Try again." };
-  refresh();
+  contentChanged();
   return { saved: Date.now() };
 }
 
@@ -66,14 +78,14 @@ export async function setRoadmapPublished(form: FormData) {
     .update({ is_published: form.get("publish") === "true" })
     .eq("id", id(form));
   if (error) throw new Error(`Could not change publish state: ${error.message}`);
-  refresh();
+  contentChanged();
 }
 
 export async function importDrafts(): Promise<FormState> {
   const { supabase } = await requireAdmin();
   try {
     const summary = await importRoadmapDrafts(supabase, ROADMAP_DRAFTS);
-    refresh();
+    contentChanged();
     return {
       saved: Date.now(),
       message: `Imported ${ROADMAP_DRAFTS.length} drafts: ${summary.created} new, ${summary.updated} updated, ${summary.nodes} nodes, ${summary.resourcesAdded} new links.`,
@@ -112,7 +124,7 @@ export async function addNode(_prev: FormState, form: FormData): Promise<FormSta
 
   const { error } = await supabase.from("roadmap_nodes").insert({ ...data, roadmap_id: roadmapId, slug, position });
   if (error) return { message: "We couldn't add the node. Try again." };
-  refresh();
+  contentChanged();
   return { saved: Date.now() };
 }
 
@@ -138,7 +150,7 @@ export async function updateNode(_prev: FormState, form: FormData): Promise<Form
     .eq("roadmap_id", roadmapId);
   if (error?.code === UNIQUE_VIOLATION) return { errors: { slug: "Another node in this roadmap uses this slug." } };
   if (error) return { message: "We couldn't save the node. Try again." };
-  refresh();
+  contentChanged();
   return { saved: Date.now() };
 }
 
@@ -156,7 +168,7 @@ export async function moveNode(form: FormData) {
   );
   const failed = results.find((r) => r.error);
   if (failed?.error) throw new Error(`Could not reorder: ${failed.error.message}`);
-  refresh();
+  contentChanged();
 }
 
 export async function deleteNode(form: FormData) {
@@ -164,6 +176,7 @@ export async function deleteNode(form: FormData) {
   const roadmapId = id(form, "roadmap_id");
   const { error } = await supabase.from("roadmap_nodes").delete().eq("id", id(form)).eq("roadmap_id", roadmapId);
   if (error) throw new Error(`Could not delete node: ${error.message}`);
+  revalidateRoadmap();
   redirect(`/admin/roadmaps/${roadmapId}`);
 }
 
@@ -186,7 +199,7 @@ export async function addResource(_prev: FormState, form: FormData): Promise<For
     .from("node_resources")
     .insert({ ...data, is_active: true, node_id: nodeId, position: (last?.position ?? -1) + 1 });
   if (error) return { message: "We couldn't add the link. Try again." };
-  refresh();
+  contentChanged();
   return { saved: Date.now() };
 }
 
@@ -197,7 +210,7 @@ export async function updateResource(_prev: FormState, form: FormData): Promise<
 
   const { error } = await supabase.from("node_resources").update(data).eq("id", id(form));
   if (error) return { message: "We couldn't save the link. Try again." };
-  refresh();
+  contentChanged();
   return { saved: Date.now() };
 }
 
@@ -208,12 +221,12 @@ export async function setResourceActive(form: FormData) {
     .update({ is_active: form.get("active") === "true" })
     .eq("id", id(form));
   if (error) throw new Error(`Could not change link health: ${error.message}`);
-  refresh();
+  contentChanged();
 }
 
 export async function deleteResource(form: FormData) {
   const { supabase } = await requireAdmin();
   const { error } = await supabase.from("node_resources").delete().eq("id", id(form));
   if (error) throw new Error(`Could not delete link: ${error.message}`);
-  refresh();
+  contentChanged();
 }

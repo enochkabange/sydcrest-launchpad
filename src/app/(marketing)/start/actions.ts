@@ -1,5 +1,6 @@
 "use server";
 
+import { track } from "@/lib/analytics/track";
 import { getCurrentUser } from "@/lib/auth";
 import { setAnswersCookie } from "@/lib/path/cookie";
 import { parseAnswers } from "@/lib/path/quiz";
@@ -14,5 +15,6 @@ export async function stashAnswers(input: unknown): Promise<{ ok: boolean; signe
   if (!answers) return { ok: false, signedIn: false };
   await setAnswersCookie(answers);
   const user = await getCurrentUser();
+  await track("quiz_run", { signed_in: Boolean(user) });
   return { ok: true, signedIn: Boolean(user) };
 }

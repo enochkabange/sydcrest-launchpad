@@ -51,6 +51,8 @@ export const SPONSOR_TIERS = [
 ] as const;
 
 export const MARKETING_NAV = [
+  { href: "/roadmaps", label: "Roadmaps" },
+  { href: "/start", label: "Find your path" },
   { href: "/about", label: "About" },
   { href: "/programme", label: "Programme" },
   { href: "/partners", label: "Partners" },
