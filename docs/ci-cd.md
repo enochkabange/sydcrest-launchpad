@@ -12,7 +12,9 @@ to production, plus a staging database that Vercel previews read from.
 
 1. Open a PR. `ci.yml` runs **Checks** (lint, typecheck, unit tests, build) and
    **Migrations** (every migration applied from scratch on a throwaway local
-   Supabase, database linter, pgTAP security tests, generated types up to date).
+   Supabase, database linter, pgTAP security tests, generated types up to date)
+   and **E2E** (Playwright drives a production build against a local Supabase
+   at phone and desktop widths; confirmation emails are read from Mailpit).
 2. If the PR touches `supabase/migrations`, `staging-db.yml` pushes them to the
    staging project so the PR's Vercel preview works.
 3. Vercel builds a preview for the PR (against staging, behind Vercel login).
@@ -67,7 +69,7 @@ and live in the workflow files.
 
 | File | Trigger | What it does |
 | --- | --- | --- |
-| `ci.yml` | PR to `main` | Checks + Migrations (required to merge) |
+| `ci.yml` | PR to `main` | Checks + Migrations (required to merge), E2E (reporting; required once stable) |
 | `staging-db.yml` | PR touching migrations | `supabase db push` to staging |
 | `pipeline.yml` | push to `main` | verify, migrate prod, deploy Vercel, version check |
 | `uptime.yml` | every 30 minutes | fails (and emails) if the live site is down |
@@ -90,7 +92,9 @@ and live in the workflow files.
    publishable key is public.
 7. **One deploy path.** Only `pipeline.yml` ships to production.
 8. **Use `set -euo pipefail`** in any shell step that pipes.
-9. **A 200 is not proof of a new deploy.** The pipeline compares
+9. **End to end tests only ever run against the local stack.** They create
+   accounts; staging and production must never collect test users.
+10. **A 200 is not proof of a new deploy.** The pipeline compares
    `/api/version` with the merged commit.
 
 ## 5. Rollback
@@ -108,6 +112,7 @@ supabase start                 # local database (Docker)
 supabase migration new thing   # if the schema changes
 supabase db reset              # apply migrations from scratch
 supabase test db               # pgTAP tests
+pnpm build && pnpm e2e         # Playwright, with NEXT_PUBLIC_SUPABASE_* pointed at the local stack
 pnpm dev
 git push -u origin feature/thing
 # open PR: Checks + Migrations + Vercel preview; merge; watch Pipeline in Actions

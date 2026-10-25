@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { Suspense } from "react";
 import Logo from "@/components/brand/Logo";
 import { AppNav } from "@/components/app-shell/nav";

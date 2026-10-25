@@ -3,13 +3,22 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { siteOrigin } from "@/lib/site-url";
-import { parseSignIn, parseSignUp, type FieldErrors } from "@/lib/validation";
+import { parseAgeAndConsent, parseSignIn, parseSignUp, safeNextPath, type FieldErrors } from "@/lib/validation";
+import { UNDER_AGE_MESSAGE } from "@/lib/legal";
+import { track } from "@/lib/analytics/track";
+import { recordLegalConsent } from "@/lib/consent-records";
+
+/** Where to go after auth: the form's `next` field, checked to be a local path. */
+function nextFrom(form: FormData | undefined) {
+  const next = form?.get("next");
+  return safeNextPath(typeof next === "string" ? next : null);
+}
 
 export type AuthState = {
-  errors?: FieldErrors<"full_name" | "email" | "password">;
+  errors?: FieldErrors<"full_name" | "email" | "password" | "date_of_birth" | "terms">;
   message?: string;
   sentTo?: string;
-  values?: { full_name?: string; email?: string };
+  values?: { full_name?: string; email?: string; date_of_birth?: string; terms?: boolean };
 };
 
 export async function signIn(_prev: AuthState, form: FormData): Promise<AuthState> {
@@ -25,12 +34,17 @@ export async function signIn(_prev: AuthState, form: FormData): Promise<AuthStat
         : "That email and password don't match an account.";
     return { message, values: { email: data.email } };
   }
-  redirect("/dashboard");
+  redirect(nextFrom(form));
 }
 
 export async function signUp(_prev: AuthState, form: FormData): Promise<AuthState> {
   const { data, errors } = parseSignUp(form);
-  const values = { full_name: data.fullName, email: data.email };
+  const values = {
+    full_name: data.fullName,
+    email: data.email,
+    date_of_birth: data.dateOfBirth,
+    terms: form.get("terms") === "on",
+  };
   if (Object.keys(errors).length) return { errors, values };
 
   const supabase = await createClient();
@@ -38,12 +52,21 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
     email: data.email,
     password: data.password,
     options: {
-      // Same key Google uses, so the profile trigger reads one field for both.
-      data: { full_name: data.fullName },
-      emailRedirectTo: `${await siteOrigin()}/auth/callback?next=/dashboard`,
+      // full_name: same key Google uses, so the profile trigger reads one field for both.
+      // terms_version waits here until there is a session: it is copied into
+      // the consents table on the first signed in request (lib/consent-records).
+      data: {
+        full_name: data.fullName,
+        date_of_birth: data.dateOfBirth,
+        terms_version: data.termsVersion,
+        terms_accepted_at: new Date().toISOString(),
+      },
+      emailRedirectTo: `${await siteOrigin()}/auth/callback?next=${encodeURIComponent(nextFrom(form))}`,
     },
   });
   if (error) {
+    // Shown to the user only as a generic message; logged so Vercel logs say why.
+    console.error("signUp failed", { code: error.code, status: error.status, message: error.message });
     const message =
       error.code === "weak_password"
         ? "Choose a stronger password."
@@ -52,16 +75,60 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
           : "We couldn't create your account. Try again.";
     return { message, values };
   }
-  // Email confirmation turned off: the user is signed in already.
-  if (result.session) redirect("/dashboard");
+  // Signed in already only when email confirmation is off. Until then the
+  // request is anonymous: the event carries just the visitor cookie, and
+  // the consent rows are written on the first signed in request.
+  const signedIn = Boolean(result.session && result.user);
+  if (signedIn) await recordLegalConsent(supabase, data.termsVersion);
+  await track("signup", { method: "email" }, { profileId: signedIn ? result.user!.id : null });
+  if (signedIn) redirect(nextFrom(form));
   return { sentTo: data.email };
 }
 
-export async function signInWithGoogle() {
+/**
+ * The /welcome step for people who signed up with Google, which shares no date
+ * of birth. Under 18s are signed out without saving anything.
+ */
+export async function completeWelcome(_prev: AuthState, form: FormData): Promise<AuthState> {
+  const supabase = await createClient();
+  const { data: auth } = await supabase.auth.getClaims();
+  if (!auth?.claims?.sub) redirect("/login");
+
+  const { data, errors } = parseAgeAndConsent(form);
+  if (errors.date_of_birth === UNDER_AGE_MESSAGE) {
+    await supabase.auth.signOut();
+    redirect("/login?error=age");
+  }
+  if (Object.keys(errors).length) return { errors, values: { date_of_birth: data.dateOfBirth } };
+
+  const { error } = await supabase.auth.updateUser({
+    data: {
+      date_of_birth: data.dateOfBirth,
+      terms_version: data.termsVersion,
+      terms_accepted_at: new Date().toISOString(),
+    },
+  });
+  if (error) {
+    console.error("completeWelcome failed", { code: error.code, status: error.status, message: error.message });
+    return { message: "We couldn't save that. Try again.", values: { date_of_birth: data.dateOfBirth } };
+  }
+  await recordLegalConsent(supabase, data.termsVersion);
+  // First time here without a date of birth means a new Google sign up
+  // (not someone re-agreeing after revoking), so count it as their signup.
+  const firstVisit = !(auth.claims.user_metadata as Record<string, unknown> | undefined)?.date_of_birth;
+  if (firstVisit) await track("signup", { method: "google" });
+  // updateUser keeps the old access token, whose claims still lack the new
+  // metadata. Refresh so the proxy and getClaims see it, or /dashboard
+  // would bounce straight back here.
+  await supabase.auth.refreshSession();
+  redirect(nextFrom(form));
+}
+
+export async function signInWithGoogle(form?: FormData) {
   const supabase = await createClient();
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
-    options: { redirectTo: `${await siteOrigin()}/auth/callback?next=/dashboard` },
+    options: { redirectTo: `${await siteOrigin()}/auth/callback?next=${encodeURIComponent(nextFrom(form))}` },
   });
   if (error || !data.url) redirect("/login?error=google");
   redirect(data.url);

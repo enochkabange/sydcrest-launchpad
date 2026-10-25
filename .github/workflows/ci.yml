@@ -1,12 +1,17 @@
 name: CI
 
 on:
+  # Every PR, including ones stacked on another feature branch.
   pull_request:
-    branches: [main]
 
 concurrency:
   group: ci-${{ github.ref }}
   cancel-in-progress: true
+
+env:
+  # Pull Supabase images from GitHub's registry: public ECR rate limits shared
+  # runners ("toomanyrequests: Data limit exceeded").
+  SUPABASE_INTERNAL_IMAGE_REGISTRY: ghcr.io
 
 jobs:
   checks:
@@ -46,8 +51,8 @@ jobs:
       - name: Generated types match the migrations
         run: |
           set -euo pipefail
-          # Pulls the postgres-meta image; public ECR sometimes rate limits
-          # shared runners, so retry before calling it a failure.
+          # Pulls the postgres-meta image; retry once or twice before calling
+          # a registry blip a failure.
           for attempt in 1 2 3; do
             supabase gen types typescript --local > /tmp/generated.ts && break
             [ "$attempt" = 3 ] && exit 1
@@ -56,3 +61,56 @@ jobs:
           diff <(grep -v PostgrestVersion src/lib/supabase/database.types.ts) \
                <(grep -v PostgrestVersion /tmp/generated.ts) \
             || { echo "database.types.ts is stale. Regenerate it after changing migrations."; exit 1; }
+
+  e2e:
+    name: E2E
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - uses: supabase/setup-cli@v1
+        with:
+          version: 2.114.0 # keep in step with the local CLI; generated types depend on it
+      # Same local stack as Migrations, but keeping Mailpit: the tests read
+      # confirmation emails from it. Never run these against hosted projects.
+      - run: supabase start -x studio,imgproxy,edge-runtime,logflare,vector,realtime,storage-api,postgres-meta,supavisor
+      - name: Point the build at the local stack
+        run: |
+          set -euo pipefail
+          status=$(supabase status -o json)
+          key=$(jq -r .PUBLISHABLE_KEY <<<"$status")
+          echo "NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321" >> "$GITHUB_ENV"
+          echo "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=$key" >> "$GITHUB_ENV"
+          # For e2e specs only (creating and promoting test users). Not
+          # NEXT_PUBLIC_, so the app bundle never sees it; local stack only.
+          service=$(supabase status -o json | jq -r .SERVICE_ROLE_KEY)
+          echo "::add-mask::$service"
+          echo "SUPABASE_SERVICE_ROLE_KEY=$service" >> "$GITHUB_ENV"
+      - run: pnpm build
+      - run: pnpm exec playwright install --with-deps chromium
+      # The local stack's secret key: seeds test data (e2e/supabase-admin.ts) and
+      # lets the app's server code (path quiz saves, content writes) run under
+      # `pnpm start`. Given to the test step only, never to the build.
+      - name: Local service role key for seeding
+        id: local-keys
+        run: |
+          set -euo pipefail
+          secret=$(supabase status -o json | jq -r .SECRET_KEY)
+          echo "::add-mask::$secret"
+          echo "secret=$secret" >> "$GITHUB_OUTPUT"
+      - run: pnpm e2e
+        env:
+          SUPABASE_SECRET_KEY: ${{ steps.local-keys.outputs.secret }}
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: playwright-report
+          path: |
+            playwright-report/
+            test-results/
+          retention-days: 7

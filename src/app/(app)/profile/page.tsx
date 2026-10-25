@@ -4,6 +4,8 @@ import { getMyProfile } from "@/lib/auth";
 import { signOut } from "@/app/(auth)/actions";
 import { Button } from "@/components/ui/button";
 import { ProfileForm } from "./profile-form";
+import { PublicProfileSection } from "./public-profile-section";
+import { WhatsAppConsent } from "./whatsapp-consent";
 
 export const metadata: Metadata = { title: "Profile" };
 
@@ -23,6 +25,12 @@ export default function ProfilePage() {
       <h1 className="text-3xl text-content">Profile</h1>
       <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>
         <ProfileDetails />
+      </Suspense>
+      <Suspense fallback={<div className="h-32 animate-skeleton rounded-lg bg-surface-sunken" />}>
+        <WhatsAppConsent />
+      </Suspense>
+      <Suspense fallback={<div className="h-96 animate-skeleton rounded-lg bg-surface-sunken" />}>
+        <PublicProfileSection />
       </Suspense>
       {/* Phones have no sidebar, so sign out lives here too. */}
       <form action={signOut} className="border-t border-line pt-6 md:hidden">

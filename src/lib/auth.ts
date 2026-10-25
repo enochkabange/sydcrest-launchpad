@@ -2,6 +2,7 @@ import "server-only";
 import { cache } from "react";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { hasAgeAndRecordedConsent } from "@/lib/consent-records";
 
 /**
  * The one place that decides who is signed in (the Data Access Layer).
@@ -13,12 +14,25 @@ export const getCurrentUser = cache(async () => {
   const { data } = await supabase.auth.getClaims();
   const claims = data?.claims;
   if (!claims?.sub) return null;
-  return { id: claims.sub, email: typeof claims.email === "string" ? claims.email : null };
+  return {
+    id: claims.sub,
+    email: typeof claims.email === "string" ? claims.email : null,
+    // Google sign ups arrive without these until they finish /welcome.
+    // Terms and privacy come from the consents table (backfilled from
+    // metadata on first use); the metadata check is the fallback.
+    hasAgeAndConsent: await hasAgeAndRecordedConsent(supabase, claims.sub, claims.user_metadata),
+  };
 });
 
+/**
+ * A signed in user who has passed the age check and agreed to the terms.
+ * Anyone missing those (Google sign ups on first visit) goes to /welcome.
+ * The proxy does the same redirect earlier; this is the authoritative check.
+ */
 export async function requireUser() {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
+  if (!user.hasAgeAndConsent) redirect("/welcome");
   return user;
 }
 

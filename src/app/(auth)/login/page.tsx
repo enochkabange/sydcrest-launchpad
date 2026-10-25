@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { KeepNextLink } from "../next-field";
 import { Suspense } from "react";
 import { LoginForm } from "./login-form";
 import { GoogleButton, OrDivider } from "../google-button";
 import { Alert } from "@/components/ui/alert";
+import { UNDER_AGE_MESSAGE } from "@/lib/legal";
 
 export const metadata: Metadata = { title: "Sign in" };
 
 const CALLBACK_ERRORS: Record<string, string> = {
   link: "That link has expired or was already used. Sign in, or request a new one by signing up again.",
   google: "Google sign in didn't go through. Try again.",
+  age: `${UNDER_AGE_MESSAGE} We have signed you out and have not saved your date of birth.`,
 };
 
 async function CallbackError({ searchParams }: { searchParams: PageProps<"/login">["searchParams"] }) {
@@ -33,9 +35,9 @@ export default function LoginPage({ searchParams }: PageProps<"/login">) {
       <LoginForm />
       <p className="text-sm text-content-2">
         New to SydCrest?{" "}
-        <Link href="/signup" className="font-semibold">
+        <KeepNextLink href="/signup" className="font-semibold">
           Create an account
-        </Link>
+        </KeepNextLink>
       </p>
     </div>
   );

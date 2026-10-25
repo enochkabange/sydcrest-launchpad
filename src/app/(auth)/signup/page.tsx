@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { KeepNextLink } from "../next-field";
 import { SignupForm } from "./signup-form";
 import { GoogleButton, OrDivider } from "../google-button";
 
@@ -17,9 +17,9 @@ export default function SignupPage() {
       <SignupForm />
       <p className="text-sm text-content-2">
         Already have an account?{" "}
-        <Link href="/login" className="font-semibold">
+        <KeepNextLink href="/login" className="font-semibold">
           Sign in
-        </Link>
+        </KeepNextLink>
       </p>
     </div>
   );

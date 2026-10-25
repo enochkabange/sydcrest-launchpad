@@ -10,7 +10,27 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## Project rules
 
-- Build order and architecture: `~/Documents/Vault 77/Sydcrest/Planning/10_FRESH_START_DECISIONS.md`, then `08_TECHNICAL_BUILD.md`.
-- Hard constraints: roadmap content is original (never copied from roadmap.sh); the platform never holds user funds.
-- UI uses semantic tokens from `src/styles/tokens.css`, never raw colours. Base styles stay inside `@layer base`.
-- No fake photos, ratings or outcomes. Demo and seed content uses Northern Ghanaian names. No dashes in user-facing copy.
+Read these before any change. They apply to every agent and every PR.
+
+**Plan and scope**
+- Work from one GitHub issue. Its acceptance criteria are the scope; anything else becomes a new issue, not part of your PR. PR body starts with `Closes #n`.
+- Architecture and order: `docs/workflow.md`, `docs/ci-cd.md`, and the planning suite (`~/Documents/Vault 77/Sydcrest/Planning/10_FRESH_START_DECISIONS.md`, `08_TECHNICAL_BUILD.md`, `09_BUILD_PROMPT_PHASE1.md` for feature intent).
+
+**Hard constraints (never violate)**
+- Roadmap content is original and localised for Ghana. Never copy, adapt, scrape or host roadmap.sh content; linking out is fine.
+- The platform never holds user funds. Any payment work uses provider split settlement.
+- No fake photos, ratings, testimonials or outcomes. Empty states say honestly that something is coming.
+- Demo, seed and test content uses Northern Ghanaian names (Wumpini, Abdul-Rahman, Mariama, Fuseini).
+- No dashes or em dashes in user facing copy.
+- Under 18s are blocked at sign up.
+
+**Stack conventions**
+- Next.js 16 App Router with Cache Components: request-time reads (cookies, auth) sit inside `<Suspense>`; never await the session at the top of a layout. Read the bundled docs in `node_modules/next/dist/docs/` before using an API.
+- Auth: Supabase Auth via `@supabase/ssr`. Authorize with `src/lib/auth.ts` (`getClaims`), never `getSession`. Server Actions re-check the user.
+- Database: every change is a migration in `supabase/migrations/` (`supabase migration new <name>`), additive only (expand then contract). Every new table: RLS enabled in the same migration, column grants where users must not edit a field, and a pgTAP test in `supabase/tests/database/`. Regenerate `src/lib/supabase/database.types.ts` with the pinned CLI (`supabase gen types typescript --local`).
+- AI: Anthropic SDK in server code only. Models: `claude-haiku-5-5` for routine turns, `claude-sonnet-5-5` for reasoning. Respond 503 when the key is missing. Use prompt caching for stable context.
+- External services (Twilio, email, payments) no-op safely when unkeyed.
+- UI: semantic tokens from `src/styles/tokens.css` (`bg-surface`, `text-content-2`), never raw colours; base styles inside `@layer`. Reuse `src/components/ui`. Phone first: 44px targets, bottom tab bar under md, no hamburger. Native `<select>`.
+- Tests: unit (Vitest) for logic, pgTAP for RLS, Playwright (`e2e/`) for user journeys against the local stack only.
+
+**Before opening a PR:** `pnpm lint`, `pnpm typecheck`, `pnpm test`, `pnpm build`, and with the local stack running `supabase db reset && supabase test db` (plus `pnpm e2e` if you touched a journey).

@@ -382,8 +382,9 @@ An explicit choice is remembered and wins over the OS. `useTheme()` handles it.
 
 Named rather than quietly deferred:
 
-- **Page-level states** — no 404, 500 or offline screens yet. `EmptyState` covers
-  the pattern; these are compositions of it.
+- **Page-level states** — no 404 or 500 screens yet. `EmptyState` covers the
+  pattern; these are compositions of it. The offline screen exists
+  (`src/app/offline`, served by the service worker).
 - **Global toast provider** — toast state is currently local to whichever screen
   raises it. Fine for one screen, needs lifting before several do.
 - **Rich listbox** — `Select` is a styled native control on purpose (§ below). If
