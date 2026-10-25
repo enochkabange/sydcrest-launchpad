@@ -3,6 +3,7 @@ import { data } from "./data";
 import { digitalMarketing } from "./digital-marketing";
 import { digitalSkillsBridge } from "./digital-skills-bridge";
 import { frontend } from "./frontend";
+import { graphicDesign } from "./graphic-design";
 import { product } from "./product";
 import type { RoadmapDraft } from "./types";
 import { uiUx } from "./ui-ux";
@@ -22,4 +23,5 @@ export const ROADMAP_DRAFTS: RoadmapDraft[] = [
   data,
   uiUx,
   product,
+  graphicDesign,
 ];
