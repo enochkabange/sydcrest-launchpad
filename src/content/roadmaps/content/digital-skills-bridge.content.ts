@@ -1829,7 +1829,7 @@ DMP week 3 goes deeper into judging online sources. This lesson gives you the ev
 
 ## You do not need to own a computer
 
-Many people who now work in tech in Ghana learned on shared computers at school, a library, a community centre, a church or a business centre. What matters is regular practice, even if it is only an hour or two a week.
+Plenty of people learn their first computer skills on shared machines at school, a library, a community centre, a church or a business centre. What matters is regular practice, even if it is only an hour or two a week.
 
 ## Be kind to yourself at the start
 
@@ -1908,6 +1908,1012 @@ You do not need to be fast. You need to be comfortable enough that the computer 
             ],
             answer_index: 1,
             explanation: "The goal is comfort, not speed: a short paragraph without searching for every key.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "finding-a-computer": {
+      explanation_md: `Many entry level job adverts in Ghana, from office assistants to customer service agents, ask for basic computer skills. You cannot learn a keyboard only by reading about it. You need regular time in front of a real computer. The good news is that you do not have to own one.
+
+## Places to ask
+
+* **Your current or former school.** Many SHS and JHS schools have an ICT lab. Ask the ICT teacher or head teacher if you can use it after classes, at weekends or during holidays.
+* **Public and community libraries.** Some libraries have computers for the public.
+* **Community centres, youth centres and NGO offices.** Some run digital skills programmes or open computer rooms.
+* **Churches and mosques.** Some have an office computer or run classes for young people.
+* **Business centres and internet cafes.** You usually pay by the hour, so plan exactly what you will practise before you go.
+* **Family, friends and employers.** A relative who owns a laptop, or a shop or office that might let you practise after closing time.
+
+## How to ask
+
+People are more likely to say yes if you are clear and polite, and if you offer something in return. For example:
+
+"Good afternoon Sir. I am preparing for a digital skills programme and I need to practise typing and using a computer. Could I use the lab for one hour on Saturday mornings? I am happy to help keep the lab clean or assist younger students."
+
+If someone says no, thank them and try the next place. One yes is enough.
+
+## Make the most of each session
+
+* **Go with a plan.** Write down what you will practise before you arrive, such as twenty minutes of typing and twenty minutes of mouse practice.
+* **Bring what you need.** Your email address and password, earphones if you will watch a video, and a notebook.
+* **Sign out when you finish.** Never leave your email or other accounts open on a shared computer.
+* **Respect the equipment.** No food or drink near the computer, and shut it down properly if you are asked to.
+
+## Regular beats long
+
+One hour every week for two months builds more skill than one long day. Your hands need repeated practice to remember the keyboard. Put your time slot in your phone calendar as a reminder.
+
+## A worked example
+
+Abdul-Rahman lives in Tolon and has no computer at home. He asked a youth centre in his area and was told the computers were busy on weekdays. He asked again about Saturday afternoons, and they agreed. He now goes every Saturday with a written plan. In his notebook he keeps a short log: date, what he practised, and one thing he found hard. After a month he can see clear progress.
+
+If you truly cannot find access yet, keep practising the phone skills in this roadmap and keep asking. Access often appears once people know you are serious.`,
+      practice_task_md: `**Goal:** Secure a regular time to practise on a computer.
+
+**Steps**
+
+1. Choose two places from the lesson that exist near you.
+2. Write a short, polite request like the example in the lesson, adapted to your situation.
+3. Visit or call at least one place and ask.
+4. If you get a yes, put the time slot in your phone calendar with a reminder.
+5. Start a practice log page in your notebook with columns for date, what you practised and what was hard.
+
+**Done looks like:** A confirmed time slot, or a note of who you asked and what they said, plus your practice log page ready to use.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is a place the lesson suggests asking for computer access?",
+            options: [
+              "Your school's ICT lab",
+              "A bus station",
+              "A football pitch",
+              "A petrol station",
+            ],
+            answer_index: 0,
+            explanation: "Schools with ICT labs are one of the suggested places.",
+          },
+          {
+            prompt: "What makes people more likely to say yes when you ask?",
+            options: [
+              "Demanding access",
+              "Being clear and polite, and offering something in return",
+              "Asking only once and never again",
+              "Asking someone else to go for you",
+            ],
+            answer_index: 1,
+            explanation: "A clear, polite request with an offer to help works best.",
+          },
+          {
+            prompt: "What should you always do when you finish on a shared computer?",
+            options: [
+              "Leave your email open for next time",
+              "Sign out of your accounts",
+              "Change the computer's settings",
+              "Unplug the keyboard",
+            ],
+            answer_index: 1,
+            explanation: "Never leave accounts open on a shared computer.",
+          },
+          {
+            prompt: "According to the lesson, which practice pattern builds more skill?",
+            options: [
+              "One long day once",
+              "One hour every week for two months",
+              "Only practising the night before a course",
+              "Watching others use a computer",
+            ],
+            answer_index: 1,
+            explanation: "Regular, repeated practice helps your hands remember.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "mouse-and-keyboard": {
+      explanation_md: `When a job advert asks for basic computer skills, the very first part is using a mouse and keyboard without struggling. In DMP week 1 you will work with files, folders and a browser on a computer, so being comfortable with these tools lets you follow the mentor instead of hunting for buttons.
+
+## The mouse
+
+A mouse moves a small arrow, called the **pointer** or **cursor**, on the screen.
+
+* **Click:** press the left button once. This selects something or presses a button on screen.
+* **Double click:** press the left button twice quickly. This opens a file or folder.
+* **Right click:** press the right button once. This shows a menu of extra options, like a long press on a phone.
+* **Scroll:** roll the wheel in the middle to move up and down a page.
+* **Drag:** hold the left button down, move the mouse, then let go. This moves a file or selects a block of text.
+
+Hold the mouse lightly. If you run out of space on the table, lift it and put it back in the middle. The pointer will not move while the mouse is in the air.
+
+Laptops often have a **touchpad** instead. Move one finger to move the pointer, tap to click, and slide two fingers to scroll.
+
+## The keyboard
+
+The letters are not in alphabetical order. This layout is called QWERTY, after the first letters on the top row. Everyone finds it strange at first.
+
+Keys you will use every day:
+
+* **Shift:** hold it while pressing a letter to make a capital letter.
+* **Caps Lock:** turns capital letters on until you press it again. If everything you type is in capitals, check this key.
+* **Space bar:** the long key at the bottom that makes a space.
+* **Enter:** starts a new line, or sends and confirms.
+* **Backspace:** deletes the character to the left of the cursor.
+* **Delete:** deletes the character to the right of the cursor.
+* **Arrow keys:** move the cursor without the mouse.
+
+## Three shortcuts worth learning now
+
+On Windows computers, hold **Ctrl** and press a letter:
+
+* **Ctrl and C** copies selected text.
+* **Ctrl and V** pastes it.
+* **Ctrl and Z** undoes your last action. This one saves you whenever you make a mistake.
+
+On a Mac, use the **Command** key instead of Ctrl.
+
+## A worked example
+
+Hawa opens a browser on a library computer. She clicks the address bar, types a website address, and presses Enter. On the page, she scrolls down with the wheel, then drags across a sentence to select it, presses Ctrl and C, opens a blank document and presses Ctrl and V. She accidentally deletes a word, so she presses Ctrl and Z and it comes back. Five basic actions, and she has copied information from one place to another, a task office workers do every day.`,
+      practice_task_md: `**Goal:** Use the mouse and the most common keys without help.
+
+**Steps**
+
+1. On a computer, open the GCFGlobal LearnFree Mouse Tutorial in a browser and complete it.
+2. Open any text editor or a blank Google Doc. Type your full name with capital letters using Shift.
+3. Type a sentence, then use Backspace to delete one word and retype it.
+4. Select the sentence by dragging, copy it with Ctrl and C, and paste it three times with Ctrl and V.
+5. Delete one line, then bring it back with Ctrl and Z.
+
+**Done looks like:** A document with your name and the pasted sentences, and a note in your practice log of which step was hardest.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does a right click usually do?",
+            options: [
+              "Shows a menu of extra options",
+              "Turns the computer off",
+              "Types a capital letter",
+              "Deletes a file immediately",
+            ],
+            answer_index: 0,
+            explanation: "A right click shows a menu of extra options, like a long press on a phone.",
+          },
+          {
+            prompt: "Which key do you hold to type a single capital letter?",
+            options: [
+              "Enter",
+              "Backspace",
+              "Shift",
+              "Space bar",
+            ],
+            answer_index: 2,
+            explanation: "Hold Shift while pressing a letter to make it a capital.",
+          },
+          {
+            prompt: "What does Backspace do?",
+            options: [
+              "Deletes the character to the left of the cursor",
+              "Starts a new line",
+              "Copies text",
+              "Opens a folder",
+            ],
+            answer_index: 0,
+            explanation: "Backspace deletes to the left; Delete removes to the right.",
+          },
+          {
+            prompt: "You deleted something by mistake on a Windows computer. Which shortcut brings it back?",
+            options: [
+              "Ctrl and C",
+              "Ctrl and V",
+              "Ctrl and Z",
+              "Caps Lock",
+            ],
+            answer_index: 2,
+            explanation: "Ctrl and Z undoes your last action.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "typing": {
+      explanation_md: `Office assistants type letters and records, customer service agents type notes while customers talk, and DMP week 1 ends with writing a short tip sheet in Google Docs. If you type with one finger while searching for every key, these tasks take a long time and tire you out. Learning to touch type, using all your fingers without looking at the keys, is a skill that pays back in every course and job that follows.
+
+## Start with the home row
+
+Look at the middle row of letters. Rest your fingers like this:
+
+* Left hand: little finger on **A**, then **S**, **D**, and your first finger on **F**.
+* Right hand: first finger on **J**, then **K**, **L**, and your little finger on the semicolon key.
+* Thumbs rest on the space bar.
+
+Feel the small bumps on **F** and **J**. They let you find the home row without looking. Each finger reaches up and down from its home key to nearby keys, then comes back.
+
+## Accuracy first, speed later
+
+Beginners often rush and make many mistakes. Go slowly and press the right key with the right finger. Speed grows by itself once your fingers know where to go. If you keep making errors, slow down.
+
+## Little and often
+
+Ten to fifteen minutes every day is far better than two hours once a week. Your fingers learn through repetition. Some useful free tools:
+
+* **GCFGlobal LearnFree Typing Tutorial** has short, guided lessons for complete beginners.
+* **Monkeytype** gives simple typing tests and shows your speed and accuracy. Use it once you know the home row.
+
+Both run in a web browser and use very little data once a page has loaded.
+
+## Good posture
+
+* Sit up straight with your feet flat on the floor.
+* Keep your wrists relaxed, not resting hard on the table edge.
+* Look at the screen, not your hands. Covering your hands with a cloth is an old trick that works.
+* Take a short break if your hands or eyes feel tired.
+
+## Typing on a phone helps too
+
+You will still type a lot on your phone. Turn on your keyboard's spell check and suggestions, and learn to long press keys for extra characters. But phone typing does not replace keyboard practice, because the finger movements are different.
+
+## A worked example
+
+Issahaku started typing practice at his community library. In week one he could only type slowly, looking at the keys. He did fifteen minutes of the LearnFree typing lessons at each visit and practised the home row on a printed keyboard picture at home. After a month he could type a short paragraph about himself without looking down most of the time. His speed was still modest, but his accuracy was good, and he no longer felt nervous in front of a keyboard.
+
+Track your progress in your practice log. Seeing improvement week by week keeps you motivated.`,
+      practice_task_md: `**Goal:** Start a daily typing habit and measure your progress.
+
+**Steps**
+
+1. Open the GCFGlobal LearnFree Typing Tutorial and complete the first lessons on the home row.
+2. Place your fingers on the home row and find the bumps on F and J without looking.
+3. Type this sentence five times without looking at the keys: "Wumpini sells fresh tomatoes and pepper at the Tamale market."
+4. When you are comfortable, take a one minute test on Monkeytype and write down your speed and accuracy.
+5. Repeat the test once a week for a month.
+
+**Done looks like:** A practice log showing your weekly speed and accuracy, with accuracy staying high as speed slowly grows.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which keys have small bumps to help you find the home row?",
+            options: [
+              "A and L",
+              "F and J",
+              "Q and P",
+              "Shift and Enter",
+            ],
+            answer_index: 1,
+            explanation: "The bumps on F and J let your first fingers find home without looking.",
+          },
+          {
+            prompt: "What should you focus on first when learning to type?",
+            options: [
+              "Speed",
+              "Accuracy",
+              "Typing in capital letters",
+              "Using only one finger",
+            ],
+            answer_index: 1,
+            explanation: "Accuracy first; speed grows once your fingers know where to go.",
+          },
+          {
+            prompt: "Which practice pattern does the lesson recommend?",
+            options: [
+              "Two hours once a week",
+              "Ten to fifteen minutes every day",
+              "Only before an exam",
+              "Once a month",
+            ],
+            answer_index: 1,
+            explanation: "Little and often builds finger memory through repetition.",
+          },
+          {
+            prompt: "Why does phone typing not replace keyboard practice?",
+            options: [
+              "Phones cannot type letters",
+              "The finger movements are different",
+              "Phone keyboards are illegal at work",
+              "Phone typing uses too much data",
+            ],
+            answer_index: 1,
+            explanation: "Typing on a phone uses different movements from a physical keyboard.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "learning-and-earning": {
+      explanation_md: `Learning digital skills takes time and effort, so it helps to keep the reason in view: these skills can lead to work and income. Job adverts for shop attendants, cashiers, office assistants and field officers in Ghana ask for accurate records and payment handling. Digital careers in marketing, design, data and software start from the same foundations you are building now.
+
+This section connects what you are learning to that bigger picture.
+
+## What this section covers
+
+* **Study habits that last.** How to keep going week after week, with small daily goals, good notes and a study partner. The DMP cohort runs for twelve weeks, so steady habits matter.
+* **Mobile money and simple records.** How to use MoMo confidently, read your transaction history and keep a simple record of money in and out. Employers ask for accurate records again and again.
+* **Exploring digital careers.** What jobs in digital marketing, design, data, product and software involve day to day, and how the DMP specialisations fit in.
+
+## Learning is a skill too
+
+Many people start an online course full of energy and stop after two weeks. That is not because they are not clever. It is usually because they tried to do too much at once, or studied alone with nobody to check in with. Learning how to learn is one of the most valuable things you can take from this roadmap.
+
+## Records are everywhere
+
+Think about the jobs around you. A chop bar owner tracks what she spends on ingredients and what she sells. A market trader in Bolgatanga writes down who owes him money. An NGO field officer records how many households were visited. A shop attendant reconciles MoMo payments at the end of the day. Each one needs accurate, simple records, often on a phone. This habit is useful in any job and in your own business.
+
+## A worked example
+
+Zuweira from Savelugu wanted to work in digital marketing but felt it was far away. She set herself one small goal each day: one lesson, or twenty minutes of typing. She started keeping a simple record of the money she earned plaiting hair, using a notebook and later a simple table on her phone. She then looked at what a social media marketing role involves and realised she already took good photos of her clients' hairstyles and posted them. Her small business suddenly looked like a first portfolio.
+
+## Keep the bigger picture
+
+You do not need to choose a career today. But knowing where these skills can lead makes the daily practice easier. When a lesson feels hard, remember that every skill in this roadmap appears in real job adverts or in the DMP cohort.`,
+      practice_task_md: `**Goal:** Connect your learning to a goal you care about.
+
+**Steps**
+
+1. Write one sentence about why you are learning digital skills. Be specific, for example "to get an office job in Tamale" or "to grow my phone accessories business".
+2. List any money you handle now, such as pocket money, sales or savings contributions.
+3. Write down one digital job you are curious about.
+4. Write one small daily learning goal you can keep for the next two weeks.
+
+**Done looks like:** A short page in your notebook with your reason, the money you handle, one curious job and your daily goal.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, why do many people stop online courses early?",
+            options: [
+              "They are not clever enough",
+              "They try to do too much at once or study alone",
+              "Courses are always too short",
+              "They finish everything in two weeks",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says it is usually doing too much at once or studying alone.",
+          },
+          {
+            prompt: "Which of these is an example of keeping records from the lesson?",
+            options: [
+              "A shop attendant reconciling MoMo payments at the end of the day",
+              "Watching a film",
+              "Charging a phone",
+              "Changing a ringtone",
+            ],
+            answer_index: 0,
+            explanation: "Reconciling MoMo payments is one of the record keeping examples.",
+          },
+          {
+            prompt: "How long does the DMP cohort run?",
+            options: [
+              "Two weeks",
+              "Twelve weeks",
+              "One year",
+              "Four days",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says the DMP cohort runs for twelve weeks.",
+          },
+          {
+            prompt: "What did Zuweira realise about her hair plaiting photos?",
+            options: [
+              "They were a waste of time",
+              "They could be a first portfolio for social media marketing",
+              "They should be deleted",
+              "They were only useful for family",
+            ],
+            answer_index: 1,
+            explanation: "Her client photos showed skills relevant to social media marketing.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "study-habits": {
+      explanation_md: `The Delta Mentoring Program runs for twelve weeks, with assignments every week. Employers also want people who keep learning new systems and tools on the job. The skill underneath both is the same: steady study habits. Talent helps, but habits are what get people to the end of a course.
+
+## Set a small daily goal
+
+Big goals like "learn digital marketing" are hard to start. Small goals are easy to start and easy to finish:
+
+* "Read one lesson today."
+* "Do fifteen minutes of typing."
+* "Finish one practice task."
+
+Finishing a small goal every day builds confidence. If you miss a day, do not give up. Just start again the next day.
+
+## Pick a regular time and place
+
+Your brain likes routine. Choose a time that usually works, such as after morning chores or after evening prayers, and study then. Find the quietest place you can. Put your phone on Do not disturb so notifications do not pull you away.
+
+## Take notes in your own words
+
+Copying a lesson word for word does not help much. After reading a section, close it and write down:
+
+* The main idea in one or two sentences.
+* One example.
+* One question you still have.
+
+A simple notebook works perfectly. Writing in your own words, in English or mixed with your own language, shows you what you have really understood.
+
+## Test yourself
+
+Re-reading feels productive, but testing yourself works better. Take the quiz at the end of each lesson. Cover your notes and try to explain the idea out loud. Come back to a topic a few days later and check you still remember it.
+
+## Learn with others
+
+Find a study partner or a small group. You can meet in person or create a WhatsApp group. Agree to share one thing you learned each day, and to ask questions when stuck. Explaining something to someone else is one of the best ways to learn it yourself.
+
+## Look after yourself
+
+Sleep, food and short breaks matter. Studying for twenty five minutes, then resting for five, is a simple pattern many people find helpful. Long screen sessions tire your eyes, so look away from the screen now and then.
+
+## A worked example
+
+Amina and Mariama are both preparing for the DMP cohort in Tamale. They agreed to study for thirty minutes each evening after supper and send each other one sentence about what they learned. When Mariama missed three days because of a family funeral, Amina sent her the lessons she had missed and a short summary. Mariama caught up in a weekend. Neither of them studied for long hours, but they kept going, and that made the difference.`,
+      practice_task_md: `**Goal:** Build a study routine you can keep for two weeks.
+
+**Steps**
+
+1. Choose your daily study time and place and write them down.
+2. Write a small daily goal for each of the next seven days.
+3. Find one study partner and agree to send each other one thing you learned every day.
+4. After each lesson, write the main idea, one example and one question in your notebook.
+5. At the end of the week, tick the days you met your goal.
+
+**Done looks like:** A one week plan, a study partner, and at least five days ticked off with notes for each lesson.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is a good small daily goal?",
+            options: [
+              "Learn digital marketing this week",
+              "Do fifteen minutes of typing",
+              "Become an expert by tomorrow",
+              "Read the whole internet",
+            ],
+            answer_index: 1,
+            explanation: "Small, specific goals are easy to start and finish.",
+          },
+          {
+            prompt: "What should you write after reading a section?",
+            options: [
+              "A copy of the lesson word for word",
+              "The main idea, one example and one question, in your own words",
+              "Nothing, notes are not useful",
+              "Only the title",
+            ],
+            answer_index: 1,
+            explanation: "Writing in your own words shows what you have understood.",
+          },
+          {
+            prompt: "Which study method does the lesson say works better than re-reading?",
+            options: [
+              "Testing yourself",
+              "Highlighting everything",
+              "Studying all night",
+              "Reading faster",
+            ],
+            answer_index: 0,
+            explanation: "Testing yourself works better than re-reading.",
+          },
+          {
+            prompt: "What helped Mariama catch up after missing three days?",
+            options: [
+              "She quit the course",
+              "Her study partner sent her the missed lessons and a summary",
+              "She studied for twenty hours in one day",
+              "She skipped those lessons",
+            ],
+            answer_index: 1,
+            explanation: "Amina, her study partner, shared the lessons and a summary.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "money-records": {
+      explanation_md: `Cashiers, shop attendants and front desk staff in Ghana are asked to process MoMo and card payments, issue receipts and keep accurate records of every transaction. Office assistants keep purchase records. Field officers record activities. If you freelance or run a small business later, you will need records to know whether you are making money at all. This lesson builds those habits with tools you already have.
+
+## Mobile money confidently
+
+You may already send and receive MoMo. At work, the extra skills are:
+
+* **Check every payment.** When a customer says they have paid, confirm the money arrived in the business account, through the official app or menu, before handing over goods. Do not rely on a screenshot or an SMS the customer shows you, since these can be faked.
+* **Check names and numbers before sending.** The confirmation screen usually shows the receiver's name. Read it before you enter your PIN.
+* **Keep the transaction ID.** Every MoMo transaction has a reference number. It helps solve disputes.
+* **Know the charges.** Sending and withdrawing usually have fees. Check them in your provider's official information so you are not surprised.
+
+## Reading your transaction history
+
+Your MoMo app or menu shows recent transactions: date, amount, who sent or received, and your balance. Look at it once a week. You will spot mistakes, unknown deductions or a payment you forgot.
+
+## A simple record
+
+A record does not need to be complicated. In a notebook, or a simple table on your phone, use these columns:
+
+* **Date**
+* **What happened** (for example, "sold 2 bags of rice" or "bought airtime")
+* **Money in**
+* **Money out**
+* **How** (cash or MoMo, with the transaction ID)
+
+At the end of each day or week, add up money in and money out. The difference shows whether you gained or lost.
+
+## A worked example
+
+Fuseini sells phone accessories in Tamale. Here is part of his record for Monday:
+
+* Monday, sold 3 chargers, money in 90 cedis, MoMo, ID noted.
+* Monday, sold 1 earphone, money in 25 cedis, cash.
+* Monday, bought transport to market, money out 10 cedis, cash.
+
+At the end of the day, money in is 115 cedis and money out is 10 cedis, so he is up 105 cedis before stock costs. When a customer later claimed to have paid twice, Fuseini checked his record and the transaction IDs in his MoMo history and settled it calmly.
+
+## From notebook to spreadsheet
+
+In DMP week 2 you will learn Google Sheets, which can add up these columns for you. If you start a paper or phone record now, you will already understand what a spreadsheet is for when you get there.
+
+Accurate records build trust with employers, customers and anyone who might one day lend to or invest in your business.`,
+      practice_task_md: `**Goal:** Keep a simple money record for one week.
+
+**Steps**
+
+1. In a notebook or a table on your phone, create the five columns from the lesson: date, what happened, money in, money out, how.
+2. Record every amount of money you receive or spend for seven days, including airtime and data.
+3. Open your MoMo transaction history and check it matches your record. Note any differences.
+4. At the end of the week, add up money in and money out.
+5. Write one thing you learned about where your money goes.
+
+**Done looks like:** A complete one week record with totals, matched against your MoMo history, and one sentence about what you learned.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "A customer shows you a screenshot saying they have paid. What should you do?",
+            options: [
+              "Accept it and hand over the goods",
+              "Confirm the money arrived in the business account through the official app or menu",
+              "Ask them to send another screenshot",
+              "Refuse to sell anything",
+            ],
+            answer_index: 1,
+            explanation: "Screenshots and SMS messages can be faked, so confirm the payment yourself.",
+          },
+          {
+            prompt: "Why should you keep the MoMo transaction ID?",
+            options: [
+              "It makes the next payment free",
+              "It helps solve disputes",
+              "It is your PIN",
+              "It increases your balance",
+            ],
+            answer_index: 1,
+            explanation: "The reference number helps prove and solve payment disputes.",
+          },
+          {
+            prompt: "Which columns does the lesson suggest for a simple record?",
+            options: [
+              "Date, what happened, money in, money out, how",
+              "Name, age, height, colour",
+              "Only the total for the year",
+              "Phone model and battery level",
+            ],
+            answer_index: 0,
+            explanation: "These five columns are enough for a simple, useful record.",
+          },
+          {
+            prompt: "In Fuseini's example, what was his money in for Monday?",
+            options: [
+              "10 cedis",
+              "90 cedis",
+              "105 cedis",
+              "115 cedis",
+            ],
+            answer_index: 3,
+            explanation: "90 cedis plus 25 cedis makes 115 cedis in.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "digital-careers": {
+      explanation_md: `It is easier to keep practising when you know where the practice can lead. Digital skills open doors to many kinds of work, from entry level office and customer service roles to careers in marketing, design, data, product and software. Some of these jobs exist in Tamale, Bolgatanga and Wa, some in Accra and Kumasi, and some can be done remotely. You do not need to choose now, but exploring the options helps you stay motivated.
+
+## Some digital career paths
+
+* **Digital marketing.** Helping businesses reach customers online through social media posts, search engines, email and adverts. The DMP cohort focuses on this area, with specialisations in SEO and content marketing, social media marketing, and Google Ads.
+* **UI and UX design.** Designing apps and websites that are easy and pleasant to use, often with tools like Figma.
+* **Data.** Collecting, cleaning and studying information to help organisations make decisions. NGOs, banks and research organisations all need people who handle data carefully.
+* **Product.** Working out what an app or service should do for its users and helping a team build it.
+* **Software.** Writing the code that makes websites, apps and systems work, on the front end that users see or the back end that stores data.
+
+SydCrest has a free roadmap for each of these paths. Open them, read the first few topics and see which ones interest you.
+
+## Questions to ask yourself
+
+* Do I enjoy writing and talking to people? Marketing or customer roles might suit you.
+* Do I like drawing, arranging things neatly or noticing what is confusing? Design might suit you.
+* Do I like numbers, puzzles and finding patterns? Data might suit you.
+* Do I like organising people and solving problems? Product might suit you.
+* Do I like building things and following logic step by step? Software might suit you.
+
+There are no wrong answers. Many people try one path and move to another later.
+
+## Talk to real people
+
+If you know anyone who works with computers, at an NGO, a bank, a telecom shop or a business centre, ask them what they do all day. Most people are happy to talk about their work for ten minutes. Write down what surprised you.
+
+## A worked example
+
+Sumaila thought tech only meant coding, which worried him because he disliked maths. He read the digital marketing and UI design roadmaps on SydCrest and spoke to a cousin who manages social media pages for shops in Tamale. He realised he enjoyed writing short, catchy messages and taking product photos. He decided to aim for the social media specialisation in the DMP cohort. Knowing his direction made his typing and English practice feel worthwhile.
+
+Every path above starts with the foundations in this roadmap: confident phone use, clear communication, safe accounts, files and forms, and basic computer skills.`,
+      practice_task_md: `**Goal:** Explore at least two digital career paths.
+
+**Steps**
+
+1. Open two SydCrest roadmaps that interest you and read the titles and summaries of the first five topics in each.
+2. Answer the five questions in the lesson honestly in your notebook.
+3. Talk to one person who uses computers or a smartphone for work and ask what a normal day looks like.
+4. Write three sentences: which path interests you most right now, why, and one skill from this bridge roadmap it needs.
+
+**Done looks like:** Notes on two roadmaps, your answers to the five questions, notes from one conversation and your three sentences.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which area does the DMP cohort focus on?",
+            options: [
+              "Software engineering",
+              "Digital marketing",
+              "Hardware repair",
+              "Accounting",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says the DMP focuses on digital marketing.",
+          },
+          {
+            prompt: "Which DMP specialisation is mentioned in the lesson?",
+            options: [
+              "Mobile game design",
+              "Social media marketing",
+              "Cybersecurity",
+              "Robotics",
+            ],
+            answer_index: 1,
+            explanation: "The specialisations are SEO and content marketing, social media marketing, and Google Ads.",
+          },
+          {
+            prompt: "Someone enjoys numbers, puzzles and finding patterns. Which path might suit them?",
+            options: [
+              "Data",
+              "Customer service only",
+              "Driving",
+              "Photography only",
+            ],
+            answer_index: 0,
+            explanation: "The lesson links numbers and patterns to data work.",
+          },
+          {
+            prompt: "What did Sumaila learn about tech careers?",
+            options: [
+              "Tech only means coding",
+              "There are paths like marketing that use writing and photos",
+              "He had to be good at maths for every role",
+              "Digital careers only exist abroad",
+            ],
+            answer_index: 1,
+            explanation: "He discovered social media marketing suited his writing and photo skills.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "ready-for-dmp": {
+      explanation_md: `This is the last section of the Digital Skills Bridge. Its job is to check that you are ready for the first week of the Delta Mentoring Program, SydCrest's twelve week mentored cohort in digital skills and digital marketing, and to help you apply.
+
+## What the DMP covers
+
+The cohort starts with the basics and builds up:
+
+* **Week 1:** computer and internet basics. Using computer hardware, managing files and folders, browsing safely and recognising phishing, and using Gmail to send and receive emails with attachments. The first assignment is a short tip sheet about safe internet habits, written in Google Docs.
+* **Week 2:** Google Drive, Docs, Slides and Sheets.
+* **Week 3:** online communication and digital citizenship.
+* **Weeks 4 to 6:** digital marketing ideas, social media and analytics.
+* **Weeks 7 to 9:** a specialisation in SEO and content marketing, social media marketing, or Google Ads.
+* **Weeks 10 to 12:** a full campaign, a portfolio and a final assessment.
+
+## How this bridge prepared you
+
+Look at week 1 again. Each part builds on something you practised here:
+
+* Computer hardware builds on **mouse and keyboard basics** and **finding a computer**.
+* Files and folders builds on **photos, documents and files on your phone**.
+* Safe browsing and phishing builds on **spotting scams**, **passwords and two step verification** and **privacy**.
+* Gmail with attachments builds on **one email address you control** and sending documents on **WhatsApp**.
+* The Google Docs tip sheet builds on **typing** and **clear English**.
+
+You are not expected to be an expert. The cohort will teach you. But arriving with these foundations means you can follow your mentor and focus on the new skills.
+
+## What this section covers
+
+* **Readiness checklist.** A practical check of the skills week 1 assumes, with a link back to any lesson you should revisit.
+* **Apply to the DMP cohort.** How to apply, what to mention about your progress, and what to do if you do not get a seat this time.
+
+## A worked example
+
+Hawa finished the bridge over two months. Before applying, she went through the readiness checklist. She could do everything except join a video call confidently, so she spent one more evening practising with a friend. When her first DMP session began, she joined on time, muted herself, and followed along as the mentor explained files and folders. It felt like the next step, not a jump into the unknown.
+
+Whatever happens with your application, the skills you built here are yours. They already make you more ready for many entry level jobs.`,
+      practice_task_md: `**Goal:** Map your bridge progress to DMP week 1.
+
+**Steps**
+
+1. Write the four parts of DMP week 1 in your notebook: computer hardware, files and folders, safe browsing and phishing, Gmail with attachments.
+2. Next to each one, write the bridge lessons that prepared you for it.
+3. Give yourself a score from 1 to 3 for each part: 1 means not yet, 2 means getting there, 3 means confident.
+4. For any part scored 1, write which lesson you will revisit this week.
+
+**Done looks like:** A short table with the four week 1 topics, the matching bridge lessons, your scores and your revisit plan.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How long is the Delta Mentoring Program?",
+            options: [
+              "Four weeks",
+              "Twelve weeks",
+              "Six months",
+              "One year",
+            ],
+            answer_index: 1,
+            explanation: "The DMP is a twelve week mentored cohort.",
+          },
+          {
+            prompt: "Which of these is part of DMP week 1?",
+            options: [
+              "Running Google Ads campaigns",
+              "Using Gmail to send emails with attachments",
+              "Building a portfolio",
+              "Writing computer code",
+            ],
+            answer_index: 1,
+            explanation: "Week 1 includes Gmail with attachments, files and folders, hardware and safe browsing.",
+          },
+          {
+            prompt: "Which bridge lesson prepares you for files and folders in week 1?",
+            options: [
+              "Photos, documents and files on your phone",
+              "Handling work phone calls",
+              "Exploring digital careers",
+              "Saving data and money",
+            ],
+            answer_index: 0,
+            explanation: "Files on your phone use the same ideas as files and folders on a computer.",
+          },
+          {
+            prompt: "What did Hawa do when the checklist showed a gap?",
+            options: [
+              "She gave up on applying",
+              "She practised video calls with a friend before the cohort",
+              "She ignored it",
+              "She asked someone else to join for her",
+            ],
+            answer_index: 1,
+            explanation: "She spent one more evening practising video calls.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "readiness-check": {
+      explanation_md: `Before you apply to the DMP cohort, or to an entry level job that asks for basic digital skills, it helps to check honestly what you can already do. This checklist covers what DMP week 1 assumes. It is not an exam. It is a way to find any small gaps so you can fix them before they slow you down.
+
+## How to use the checklist
+
+For each item, do it for real, right now if you can, rather than just thinking "I can probably do that". Mark each one:
+
+* **Yes:** I did it without help.
+* **Nearly:** I did it but needed to look something up.
+* **Not yet:** I could not do it.
+
+## Phone and data
+
+* I can connect to WiFi and switch mobile data on and off.
+* I can free up storage and manage which apps use my data.
+* I can install an app from the official store and check its permissions.
+
+## Communication
+
+* I can answer a call professionally and take a complete message.
+* I can send a clear WhatsApp message and share a PDF as a Document.
+* I can join a video call from a link, mute and unmute, and turn my camera on and off.
+* I can write a short, polite message in clear English.
+
+## Accounts and safety
+
+* I can sign in to my own email address, and its recovery number is my own.
+* I have two step verification turned on for my email and WhatsApp.
+* I can name at least three common MoMo or online scams.
+* I have checked my WhatsApp privacy settings.
+
+## Files, forms and searching
+
+* I can find my Downloads folder and rename a file.
+* I can scan a paper document into a clear PDF.
+* I can fill in an online form carefully and keep the confirmation.
+* I can search with key words and judge whether a page is trustworthy.
+
+## Computer and study
+
+* I have regular access to a computer.
+* I can click, double click, right click, scroll and drag.
+* I can type a short paragraph with my fingers on the home row, even if slowly.
+* I have a study routine and a study partner.
+
+## What to do with your results
+
+* **All or mostly Yes:** you are ready. Move on to the next lesson and apply.
+* **Some Nearly:** practise those items once more this week. You can still apply.
+* **Any Not yet:** go back to that lesson in this roadmap. Each item above matches a lesson by name.
+
+## A worked example
+
+Issahaku went through the list. He had Yes for most items, Nearly for scanning a document and Not yet for two step verification. He spent twenty minutes that evening turning on two step verification for Gmail and WhatsApp, and scanned his certificate with Google Drive. The next day every item was Yes or Nearly, and he applied with confidence.
+
+Keep your completed checklist. It is useful evidence of your progress when you apply.`,
+      practice_task_md: `**Goal:** Complete the readiness checklist honestly.
+
+**Steps**
+
+1. Copy the checklist headings and items into your notebook, or take screenshots of this page.
+2. Do each item for real and mark it Yes, Nearly or Not yet.
+3. For each Not yet, write the name of the lesson to revisit and a day this week when you will do it.
+4. Ask a friend or mentor to watch you do three items of your choice, such as joining a video call, sending a PDF and typing a paragraph.
+5. Update your marks once you have fixed the gaps.
+
+**Done looks like:** A completed checklist with every item at Yes or Nearly, and a note of which items a friend or mentor watched you do.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How should you use the readiness checklist?",
+            options: [
+              "Guess your answers quickly",
+              "Do each item for real and mark it honestly",
+              "Skip items that look hard",
+              "Only read the headings",
+            ],
+            answer_index: 1,
+            explanation: "Doing each item for real shows what you can actually do.",
+          },
+          {
+            prompt: "What should you do if an item is marked Not yet?",
+            options: [
+              "Give up on applying forever",
+              "Go back to the matching lesson in this roadmap",
+              "Ignore it",
+              "Mark it Yes anyway",
+            ],
+            answer_index: 1,
+            explanation: "Each item matches a lesson by name, so revisit it.",
+          },
+          {
+            prompt: "Which item appears in the Accounts and safety part of the checklist?",
+            options: [
+              "I can type very fast",
+              "I have two step verification turned on for my email and WhatsApp",
+              "I can build a website",
+              "I own a laptop",
+            ],
+            answer_index: 1,
+            explanation: "Two step verification is one of the accounts and safety items.",
+          },
+          {
+            prompt: "Is the checklist an exam you must pass with full marks?",
+            options: [
+              "Yes, with no mistakes allowed",
+              "No, it is a way to find small gaps to fix",
+              "Yes, and it is timed",
+              "No, it is not related to the DMP",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says it is not an exam but a way to find gaps.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "apply-to-dmp": {
+      explanation_md: `You have built real foundations: confident phone use, professional communication, safe accounts, files and forms, and first steps on a computer. The next step is to apply for a seat in the Delta Mentoring Program. Applying is itself a useful skill, because job applications in Ghana use the same steps: read the instructions, fill in a form, attach documents and write about yourself clearly.
+
+## Before you apply
+
+* **Find the official application.** Look for the application link on SydCrest's own website or app, or ask a SydCrest mentor. Be careful of anyone who asks you to pay a fee to "secure" a seat on your behalf. Use your scam spotting skills.
+* **Read all the instructions.** Note any deadline and what you need to prepare.
+* **Prepare your details.** Your professional email address, your phone number and any documents asked for, scanned clearly and named properly.
+* **Check your time.** The cohort runs for twelve weeks with weekly assignments. Think honestly about the hours you can give each week, and plan around work, family and farming seasons.
+
+## Writing about yourself
+
+Many applications ask a few short questions, such as why you want to join. Use clear English and short sentences. A helpful structure:
+
+1. **Who you are:** your name, where you live and what you do now.
+2. **Why you want to join:** a real reason, such as a job you want or a business you want to grow.
+3. **What you have already done:** mention your progress on this roadmap. For example, that you completed the Digital Skills Bridge, set up a professional email with two step verification, practise typing every week and kept a money record for a month.
+4. **Your commitment:** the time you can give each week.
+
+Specific examples are more convincing than big promises. "I practise typing for fifteen minutes every day at the community library" says more than "I am very hardworking".
+
+## Fill in the form carefully
+
+Use everything from the online forms lesson. Read the whole form first, check every name and number, review before submitting, and take a screenshot of the confirmation.
+
+## If you do not get a seat this time
+
+Seats in a mentored cohort are limited, so not everyone gets in at once. That does not mean you are not good enough. Keep learning on SydCrest's free roadmaps, keep your practice log going, and apply again for the next cohort with even more progress to show. Everything you learn in the meantime makes you more ready for both the cohort and for jobs.
+
+## A worked example
+
+Wumpini wrote: "My name is Wumpini Alhassan from Savelugu. I sell provisions and want to learn social media marketing to grow sales. I completed the Digital Skills Bridge, I now type a paragraph without looking at the keys, and I keep weekly sales records. I can study for six hours each week in the evenings." It is short, clear and specific.`,
+      practice_task_md: `**Goal:** Prepare a strong application.
+
+**Steps**
+
+1. Write a short draft answer to "Why do you want to join the DMP?" using the four part structure from the lesson.
+2. Include at least two specific examples of progress from this roadmap.
+3. Read it aloud, then shorten any long sentences and check spelling and names.
+4. Ask a friend, teacher or mentor to read it and suggest one improvement.
+5. Make sure your email address, phone number and scanned documents are ready in your Job documents folder.
+
+**Done looks like:** A final draft of four to six sentences, ready to paste into the application form, and your documents ready to attach.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Where should you find the DMP application?",
+            options: [
+              "From anyone who asks for a fee to secure a seat",
+              "On SydCrest's own website or app, or by asking a SydCrest mentor",
+              "In a random forwarded WhatsApp message",
+              "From an unknown caller",
+            ],
+            answer_index: 1,
+            explanation: "Use the official source and watch out for anyone asking for a fee.",
+          },
+          {
+            prompt: "Which sentence is more convincing in an application?",
+            options: [
+              "I am very hardworking",
+              "I practise typing for fifteen minutes every day at the community library",
+              "I am the best candidate",
+              "I will learn everything quickly",
+            ],
+            answer_index: 1,
+            explanation: "Specific examples are more convincing than big promises.",
+          },
+          {
+            prompt: "Which of these belongs in the four part structure for writing about yourself?",
+            options: [
+              "Your favourite food",
+              "What you have already done, such as progress on this roadmap",
+              "Your friends' phone numbers",
+              "Your MoMo PIN",
+            ],
+            answer_index: 1,
+            explanation: "The structure includes who you are, why, what you have done and your commitment.",
+          },
+          {
+            prompt: "What should you do if you do not get a seat this time?",
+            options: [
+              "Stop learning completely",
+              "Keep learning on the free roadmaps and apply again next time",
+              "Pay someone to get you in",
+              "Delete your email account",
+            ],
+            answer_index: 1,
+            explanation: "Seats are limited, so keep learning and apply again with more progress.",
           },
         ],
         pass_threshold: 75,
