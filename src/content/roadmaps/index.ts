@@ -6,6 +6,7 @@ import { frontend } from "./frontend";
 import { product } from "./product";
 import type { RoadmapDraft } from "./types";
 import { uiUx } from "./ui-ux";
+import { virtualAssistant } from "./virtual-assistant";
 
 export type { NodeDraft, ResourceDraft, RoadmapDraft } from "./types";
 
@@ -22,4 +23,5 @@ export const ROADMAP_DRAFTS: RoadmapDraft[] = [
   data,
   uiUx,
   product,
+  virtualAssistant,
 ];
