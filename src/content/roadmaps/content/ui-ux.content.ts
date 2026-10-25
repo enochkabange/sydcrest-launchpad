@@ -75,7 +75,7 @@ Work through the sections in order. Each topic has a short lesson, a practice ta
             options: [
               "He learned that most customers never opened the app and paid through USSD on basic phones",
               "The founder had no budget for design",
-              "Pretty apps are not allowed in Ghana",
+              "The founder changed his mind about the design",
               "He did not know how to use a design tool",
             ],
             answer_index: 0,
@@ -257,7 +257,7 @@ The research section covers understanding and defining. Structure and interface 
             prompt: "Why is the design process called a loop?",
             options: [
               "Because you only do each stage once",
-              "Because designs must be round",
+              "Because each stage happens at the same time",
               "Because testing often sends you back to earlier stages to improve the design",
               "Because developers start before designers",
             ],
@@ -289,10 +289,10 @@ The research section covers understanding and defining. Structure and interface 
           {
             prompt: "Why is it cheaper to find problems early in the process?",
             options: [
-              "Developers work for free in the early stages",
+              "Developers prefer to start from sketches",
               "Fixing a paper sketch costs almost nothing compared with changing built software",
-              "Users do not notice early problems",
-              "Early designs never have problems",
+              "Early users are more forgiving",
+              "Managers review sketches for free",
             ],
             answer_index: 1,
             explanation: "Changing a sketch is quick and free, while changing built software takes days of work.",
@@ -361,9 +361,9 @@ Research involves real people giving you their time and trust. Ask permission, e
           {
             prompt: "Why is asking people which features they want not a reliable method?",
             options: [
-              "Users always want the same features",
+              "Users ask for too many features to count",
               "It takes too long to ask",
-              "Features are decided by law",
+              "Feature lists are the developers' job",
               "People are poor at predicting what they will actually use",
             ],
             answer_index: 3,
@@ -462,7 +462,7 @@ You do not need special equipment. A notebook, a pen, a phone for photos with pe
             options: [
               "Nothing, if it is a public market",
               "Ask after you have taken the photo",
-              "Only ask if they are older than you",
+              "Only if you plan to publish it",
               "Ask their permission and explain how you will use it",
             ],
             answer_index: 3,
@@ -471,7 +471,7 @@ You do not need special equipment. A notebook, a pen, a phone for photos with pe
           {
             prompt: "Which Ghanaian law sets rules for handling personal data?",
             options: [
-              "The Road Traffic Act",
+              "The Electronic Transactions Act, 2008 (Act 772)",
               "The Labour Act",
               "The Data Protection Act, 2012 (Act 843)",
               "There is no such law in Ghana",
@@ -495,8 +495,8 @@ You do not need special equipment. A notebook, a pen, a phone for photos with pe
             options: [
               "During the morning rush, so you see the busiest moment and take up their selling time",
               "At a time agreed with them that does not cost them sales",
-              "Only at night",
-              "Without telling them",
+              "Whenever is convenient for you",
+              "Secretly, so they act naturally",
             ],
             answer_index: 1,
             explanation: "Choose a time that respects their business and is agreed with them.",
@@ -694,7 +694,7 @@ Abdul-Rahman interviews eight shop owners in Tamale about restocking. He groups 
             prompt: "On a journey map, where can design usually help most?",
             options: [
               "At the high points",
-              "Nowhere, journey maps are only decoration",
+              "At the steps the team finds easiest to build",
               "At the first step only",
               "At the low points where people struggle",
             ],
@@ -705,9 +705,9 @@ Abdul-Rahman interviews eight shop owners in Tamale about restocking. He groups 
             prompt: "Which is the best problem statement?",
             options: [
               "Build a stock app with charts",
-              "Make the shop look nicer",
+              "Shop owners would like a modern app",
               "Shop owners run out of fast moving items because they only notice when a customer asks",
-              "Use blue buttons",
+              "Add a sales dashboard with charts",
             ],
             answer_index: 2,
             explanation: "It names the person, the need and the obstacle without naming a solution.",
@@ -761,9 +761,9 @@ By the end of this section you will be able to organise a product's content, dra
             prompt: "Why do experienced designers decide structure before colours?",
             options: [
               "Changing structure is cheap early and expensive later",
-              "Colours are not important",
-              "Design tools do not support colour at first",
-              "Clients never ask about colour",
+              "Users notice structure but never colour",
+              "Colour is decided by the marketing team",
+              "Colour must be approved by developers first",
             ],
             answer_index: 0,
             explanation: "Moving boxes on a sketch is quick; changing built structure is slow and costly.",
@@ -900,7 +900,7 @@ Hawa is organising a farm advisory service for an NGO in the Upper East Region. 
               "The NGO asked for longer words",
               "It was too short",
               "Farmers did not use or understand that word",
-              "It was spelled wrongly",
+              "The word did not fit on the button",
             ],
             answer_index: 2,
             explanation: "Farmers used different words, so the new labels matched their language.",
@@ -999,9 +999,9 @@ The same task can have a different flow on a smartphone app, a USSD menu and a p
           {
             prompt: "Why should designers count the steps in a flow?",
             options: [
-              "To make the flow longer",
-              "Because developers are paid per step",
-              "To decide the price",
+              "To show the client how much work was done",
+              "To make every flow exactly ten steps",
+              "To estimate how much data the app uses",
               "To find steps that can be removed or merged, saving time and mistakes",
             ],
             answer_index: 3,
@@ -1025,7 +1025,7 @@ The same task can have a different flow on a smartphone app, a USSD menu and a p
     wireframes: {
       explanation_md: `## Why wireframes matter
 
-Wireframes are simple drawings of screens that show layout and content without colour or decoration. They let you and your team agree on what goes on each screen before anyone spends time on visual polish. Almost every junior design advert asks for wireframing, and your sketches are good material for a case study because they show your thinking.
+Wireframes are simple drawings of screens that show layout and content without colour or decoration. They let you and your team agree on what goes on each screen before anyone spends time on visual polish. Many design adverts ask for wireframing, and your sketches are good material for a case study because they show your thinking.
 
 ## Start on paper
 
@@ -1129,7 +1129,7 @@ When the structure is stable, recreate your best sketches as grey wireframes in 
     "interface-design": {
       explanation_md: `## Why interface design matters
 
-Once the structure works, people still need screens that are clear, comfortable and trustworthy. Interface design is where your wireframes become polished, consistent screens that developers can build. It is the part of the job most visible in a portfolio, and adverts for UI designer and product designer roles always ask for it.
+Once the structure works, people still need screens that are clear, comfortable and trustworthy. Interface design is where your wireframes become polished, consistent screens that developers can build. It is the part of the job most visible in a portfolio, and adverts for UI designer and product designer roles commonly ask for it.
 
 A good interface is not about decoration. It helps people see what matters, understand what to do next and trust that their money, data or time is safe. In fintech especially, a clean and consistent interface signals trust.
 
@@ -1195,7 +1195,7 @@ Learn the tool alongside the principles, not instead of them. A designer who kno
           {
             prompt: "Why should you test designs on a modest phone outdoors?",
             options: [
-              "Because laptops are not allowed",
+              "Because phones show colours more accurately than laptops",
               "Because many users have older phones and use them in strong sun",
               "Because it is faster to design on a phone",
               "Because colours look the same everywhere",
@@ -1221,7 +1221,7 @@ Learn the tool alongside the principles, not instead of them. A designer who kno
     "design-tools": {
       explanation_md: `## Why a design tool matters
 
-Nearly every UI/UX and product design advert, in Ghana and remote, names a design tool, and Figma is the one mentioned most often. Employers expect you to build screens, components and simple prototypes in a tool and share them with developers. The good news: you can learn the core skills for free in a web browser on a modest laptop.
+Most UI/UX and product design adverts, in Ghana and remote, name a design tool, and Figma is the one mentioned most often. Employers expect you to build screens, components and simple prototypes in a tool and share them with developers. The good news: you can learn the core skills for free in a web browser on a modest laptop.
 
 ## Choosing a free tool
 
@@ -1284,7 +1284,7 @@ Issahaku builds a "Send money" flow in Figma. He makes one frame per step, build
           {
             prompt: "What does auto layout do?",
             options: [
-              "Translates text into Dagbani",
+              "Exports screens as images",
               "Chooses colours automatically",
               "Writes the app's code",
               "Arranges elements in a row or column with set spacing and adjusts when content changes",
@@ -1307,9 +1307,9 @@ Issahaku builds a "Send money" flow in Figma. He makes one frame per step, build
             prompt: "Why should you name layers clearly, such as Pay button?",
             options: [
               "It helps you and developers understand the file",
-              "Tools refuse unnamed layers",
+              "It is needed before you can export",
               "It makes the file smaller",
-              "It changes the colour of the layer",
+              "It makes the prototype run faster",
             ],
             answer_index: 0,
             explanation: "Clear names make files easier to work with and hand over.",
@@ -1379,9 +1379,9 @@ Amina designs a receipt screen for a chop bar's ordering app in Tamale. Version 
             prompt: "Why should you not rely on colour alone to show success or error?",
             options: [
               "Some people cannot tell certain colours apart, so words or icons are needed too",
-              "Colours cost more data",
-              "Phones cannot show green",
-              "WCAG bans the colour red",
+              "Brand rules forbid using colour for meaning",
+              "Icons load faster than colours",
+              "Red and green look the same on every phone",
             ],
             answer_index: 0,
             explanation: "Adding words or icons makes meaning clear for colour blind users.",
@@ -1426,11 +1426,11 @@ Amina designs a receipt screen for a chop bar's ordering app in Tamale. Version 
     "mobile-patterns": {
       explanation_md: `## Why this matters
 
-In Ghana, the phone is the main way most people go online. Many design adverts ask for mobile and responsive design for web and apps. Designing well for phones means following familiar patterns so people do not have to learn something new, and making layouts that adapt to every screen size.
+In Ghana, the phone is the main way many people go online. Many design adverts ask for mobile and responsive design for web and apps. Designing well for phones means following familiar patterns so people do not have to learn something new, and making layouts that adapt to every screen size.
 
 ## Follow platform conventions
 
-Android and iOS each publish free design guidelines: Material Design for Android and the Human Interface Guidelines for Apple. Most phones in Ghana run Android, but check your own research. Conventions to know:
+Android and iOS each publish free design guidelines: Material Design for Android and the Human Interface Guidelines for Apple. Android phones are very common in Ghana, but check your own research. Conventions to know:
 
 * **Bottom navigation** with three to five main destinations is common and easy to reach with a thumb.
 * **The back action** is expected to work. On Android many people use the system back gesture or button, so never trap them.
@@ -1488,7 +1488,7 @@ Hawa designs a market price checker for an NGO. Her first version puts the "Chec
               "The top right corner",
               "Hidden in a menu",
               "Near the bottom or middle where the thumb reaches",
-              "Off the screen",
+              "In the middle of a long scroll",
             ],
             answer_index: 2,
             explanation: "The bottom and middle are easiest to reach with a thumb.",
@@ -1509,7 +1509,7 @@ Hawa designs a market price checker for an NGO. Her first version puts the "Chec
             options: [
               "Labels use less data",
               "Placeholder text disappears when people start typing",
-              "Placeholders are not allowed on Android",
+              "Placeholder text cannot be translated",
               "Labels make the field smaller",
             ],
             answer_index: 1,
@@ -1522,7 +1522,7 @@ Hawa designs a market price checker for an NGO. Her first version puts the "Chec
     "design-systems": {
       explanation_md: `## Why design systems matter
 
-Most junior UI/UX and product design adverts mention design systems, component libraries or style guides. Companies want designers who keep a product consistent and make developers' work faster. A design system is how teams do that at scale.
+Many UI/UX and product design adverts mention design systems, component libraries or style guides. Companies want designers who keep a product consistent and make developers' work faster. A design system is how teams do that at scale.
 
 ## What a design system is
 
@@ -1595,10 +1595,10 @@ Build accessibility into your components: good contrast, large touch targets, vi
           {
             prompt: "Which list shows states a button might need?",
             options: [
-              "Red, green and blue",
-              "Small, smaller and smallest",
+              "Primary, secondary and brand colour",
+              "Mobile, tablet and laptop",
               "Default, pressed, disabled and loading",
-              "Monday, Tuesday and Wednesday",
+              "Header, body and footer",
             ],
             answer_index: 2,
             explanation: "Buttons need states that show what is happening.",
@@ -1617,10 +1617,10 @@ Build accessibility into your components: good contrast, large touch targets, vi
           {
             prompt: "What was the problem Sumaila fixed?",
             options: [
-              "The app had no screens",
-              "The developer left the company",
+              "The app loaded too slowly on old phones",
+              "The developer wanted a different design tool",
               "Buttons appeared in three shades of green, different shapes and heights",
-              "The school had no fees",
+              "Parents could not find the fees screen",
             ],
             answer_index: 2,
             explanation: "Inconsistent buttons confused the developer and users.",
@@ -1696,7 +1696,7 @@ Treat these four topics as part of every project, not an extra at the end. Check
             options: [
               "A smartphone app in English only",
               "Voice messages in local languages plus a simple SMS",
-              "A printed newspaper",
+              "Posters at the clinic only",
               "Email newsletters",
             ],
             answer_index: 1,
@@ -1770,10 +1770,10 @@ Checklists catch many problems, but nothing replaces testing with disabled users
           {
             prompt: "What does the P in POUR stand for?",
             options: [
-              "Pretty",
-              "Paid",
+              "Predictable",
+              "Private",
               "Perceivable",
-              "Portable",
+              "Polished",
             ],
             answer_index: 2,
             explanation: "Perceivable means people can see or hear the content.",
@@ -1803,9 +1803,9 @@ Checklists catch many problems, but nothing replaces testing with disabled users
           {
             prompt: "Why could Issahaku not buy a ticket at first?",
             options: [
-              "The app was too fast",
-              "The colours were too bright",
-              "He did not have a phone",
+              "The text was too large for his phone",
+              "The app was only in English",
+              "He preferred to buy tickets at the station",
               "The seat map had no labels and the Pay button was announced only as Button",
             ],
             answer_index: 3,
@@ -1905,7 +1905,7 @@ Wumpini is improving a farm loan app. Her test shows farmers near Savelugu skip 
               "Use word by word translation and skip testing",
               "Work with a fluent community speaker to translate meaning, then test with users",
               "Guess the words yourself",
-              "Translate only the logo",
+              "Use a translation app and publish the result directly",
             ],
             answer_index: 1,
             explanation: "Meaning based translation, checked with real users, avoids confusing wording.",
@@ -1913,10 +1913,10 @@ Wumpini is improving a farm loan app. Her test shows farmers near Savelugu skip 
           {
             prompt: "Why leave extra space in buttons when planning for translation?",
             options: [
-              "Buttons look better empty",
-              "Local languages use fewer letters",
+              "Larger buttons load faster",
+              "Buttons must fit two languages side by side",
               "Translated text can be longer than English",
-              "Space saves data",
+              "Icons will be added later",
             ],
             answer_index: 2,
             explanation: "Text often grows when translated, so tight buttons may break.",
@@ -2026,8 +2026,8 @@ Draw each USSD screen as a small box with numbered options. Test it on paper: yo
             prompt: "What can happen when an SMS uses special characters such as ɛ or ɔ?",
             options: [
               "The message cannot be sent at all",
-              "It turns into a voice call",
-              "It becomes free",
+              "It is delivered faster",
+              "It is shown in bold",
               "Each message holds fewer characters, so it may split into parts",
             ],
             answer_index: 3,
@@ -2105,9 +2105,9 @@ Most phones let you turn on a data saver mode, and browser developer tools can s
             prompt: "Why should designs keep images small and few?",
             options: [
               "Every megabyte costs users money and slows loading",
-              "Images are banned in Ghana",
-              "Images make text larger",
-              "Developers cannot add images",
+              "Small images always look more modern",
+              "Users prefer apps with no pictures at all",
+              "Images make text harder to translate",
             ],
             answer_index: 0,
             explanation: "Heavy images use paid data and slow down screens.",
@@ -2129,7 +2129,7 @@ Most phones let you turn on a data saver mode, and browser developer tools can s
               "Nothing, and let the user try again",
               "Payment failed, even if unsure",
               "That the payment is being checked, not to pay again, and that an SMS will follow",
-              "Restart your phone",
+              "Please try the payment again now",
             ],
             answer_index: 2,
             explanation: "Honest, clear messages prevent double payments and worry.",
@@ -2231,9 +2231,9 @@ Good designers build testing into every project. It turns opinions into evidence
             prompt: "What did Hawa learn after the results checker launched?",
             options: [
               "Parents stopped at the PIN screen because many had lost the PIN slip",
-              "Parents wanted more colours",
-              "The service was too fast",
-              "Nobody used the service",
+              "The results screen had too much text",
+              "The results were published too late",
+              "Parents preferred to visit the school in person",
             ],
             answer_index: 0,
             explanation: "Numbers showed a drop at the PIN screen and calls explained why.",
@@ -2245,7 +2245,7 @@ Good designers build testing into every project. It turns opinions into evidence
     prototyping: {
       explanation_md: `## Why prototypes matter
 
-A prototype is a version of your design that people can try. Adverts for UI/UX and product designers almost always ask for prototyping, because a prototype lets the team and real users experience a flow before any code is written. It is also the clearest way to show your work to a manager, a client or an interviewer.
+A prototype is a version of your design that people can try. Adverts for UI/UX and product designers commonly ask for prototyping, because a prototype lets the team and real users experience a flow before any code is written. It is also the clearest way to show your work to a manager, a client or an interviewer.
 
 ## Kinds of prototype
 
@@ -2299,7 +2299,7 @@ Mariama wants to test a new "Pay school fees" flow with parents in Bolgatanga. S
               "When testing whether people understand a menu, quickly and cheaply",
               "When testing server speed",
               "When the app is already launched",
-              "Never, paper is too old fashioned",
+              "When testing final brand colours",
             ],
             answer_index: 0,
             explanation: "Paper is ideal for fast, cheap tests of structure and understanding.",
@@ -2319,9 +2319,9 @@ Mariama wants to test a new "Pay school fees" flow with parents in Bolgatanga. S
             prompt: "What does it mean if a participant taps something you did not build?",
             options: [
               "The test has failed and must be cancelled",
-              "They are not a real user",
+              "The prototype must be rebuilt before continuing",
               "It shows what they expected, which is useful information",
-              "The phone is broken",
+              "You should stop and explain the screen",
             ],
             answer_index: 2,
             explanation: "Unexpected taps reveal people's expectations.",
@@ -2329,9 +2329,9 @@ Mariama wants to test a new "Pay school fees" flow with parents in Bolgatanga. S
           {
             prompt: "What should you do before testing a prototype in a place with weak signal?",
             options: [
-              "Nothing, it will work anyway",
-              "Delete the prototype",
-              "Make the prototype larger",
+              "Switch the test to a laptop instead",
+              "Cut the prototype down to one screen",
+              "Ask participants to use their own data",
               "Open and check it at home on WiFi, or prepare screenshots as a backup",
             ],
             answer_index: 3,
@@ -2535,7 +2535,7 @@ Keep one source of truth. Mark which screens are final, which are still being ex
               "Refuse to change it",
               "Drop the feature without telling anyone",
               "Ask developers for a simpler option that still solves the user's problem",
-              "Ask the user to wait for years",
+              "Build it anyway and fix it later",
             ],
             answer_index: 2,
             explanation: "Working together on trade offs gets a useful version shipped sooner.",
@@ -2612,9 +2612,9 @@ Write short updates: what you changed, what the numbers showed and what users sa
           {
             prompt: "What does a funnel show?",
             options: [
-              "The colours used in the app",
-              "The company's profit",
-              "The app's source code",
+              "How long each screen takes to load",
+              "The order the screens were designed in",
+              "Which users are most satisfied",
               "How many people reach each step of a task, showing where they drop off",
             ],
             answer_index: 3,
@@ -2660,7 +2660,7 @@ Write short updates: what you changed, what the numbers showed and what users sa
     "getting-hired": {
       explanation_md: `## Why this section matters
 
-Design hiring is about proof. Employers in Ghana and remote teams cannot see your skills on a certificate. They want to see how you think: how you learned about users, what problems you found, what options you tried and why you chose one. A portfolio of honest case studies does that better than anything else. Most junior adverts ask for a portfolio, often alongside a CV and sometimes a cover letter.
+Design hiring is about proof. Employers in Ghana and remote teams cannot see your skills on a certificate. They want to see how you think: how you learned about users, what problems you found, what options you tried and why you chose one. A portfolio of honest case studies does that better than anything else. Many junior adverts ask for a portfolio, often alongside a CV and sometimes a cover letter.
 
 ## What this section covers
 
@@ -2713,7 +2713,7 @@ Job hunting takes time. Set a weekly routine: improve one case study, apply to a
               "Only beautiful final screens",
               "How you think: research, problems, options and reasons for your decisions",
               "A list of certificates",
-              "Your social media followers",
+              "The number of design tools you know",
             ],
             answer_index: 1,
             explanation: "Case studies show your process and reasoning, which employers value.",
@@ -2746,7 +2746,7 @@ Job hunting takes time. Set a weekly routine: improve one case study, apply to a
               "It was the prettiest project",
               "Few candidates have done USSD design",
               "It was the longest case study",
-              "USSD is a new invention",
+              "It used the most advanced design tool features",
             ],
             answer_index: 1,
             explanation: "Rare, relevant experience stands out to employers.",
@@ -2758,7 +2758,7 @@ Job hunting takes time. Set a weekly routine: improve one case study, apply to a
     "case-studies": {
       explanation_md: `## Why case studies matter
 
-Most junior design adverts ask for a portfolio, and many say they want to see your process and design rationale, meaning the reasons behind your choices. A case study tells the story of one project from problem to result. Two or three strong case studies are worth more than twenty pretty screens with no explanation.
+Many design adverts ask for a portfolio, and many say they want to see your process and design rationale, meaning the reasons behind your choices. A case study tells the story of one project from problem to result. Two or three strong case studies are worth more than twenty pretty screens with no explanation.
 
 ## A simple structure
 
@@ -2849,9 +2849,9 @@ Abdul-Rahman writes up his clinic SMS reminder project. His first draft is eight
             prompt: "Why compress images in an online case study?",
             options: [
               "So it loads quickly on mobile data",
-              "To hide the details",
-              "Because large images are illegal",
-              "To make the text smaller",
+              "So the case study looks longer",
+              "So the images look sharper",
+              "Because portfolio sites reject large images",
             ],
             answer_index: 0,
             explanation: "Light pages load fast and cost readers less data.",
@@ -2967,9 +2967,9 @@ Amina offers to redesign the WhatsApp ordering for a chop bar near the Tamale Te
           {
             prompt: "What problem did Amina see when she watched the chop bar take orders?",
             options: [
-              "The menu had no food",
-              "The chop bar had no customers",
-              "Staff could not use phones",
+              "Prices on the menu were out of date",
+              "Customers wanted delivery instead",
+              "Staff wrote orders in a notebook too slowly",
               "Customers sent unclear messages like 1 plate",
             ],
             answer_index: 3,
@@ -3070,9 +3070,9 @@ Issahaku applies to a remote startup building savings products for Africa. In th
             prompt: "What stood out in Issahaku's design exercise?",
             options: [
               "His questions and his thinking about basic phones and USSD",
-              "His use of many colours",
+              "His very detailed final screens",
               "That he finished in five minutes",
-              "That he refused to sketch",
+              "That he skipped questions to save time",
             ],
             answer_index: 0,
             explanation: "Asking about users and designing for basic phones showed real understanding.",

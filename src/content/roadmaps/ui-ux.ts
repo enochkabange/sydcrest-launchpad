@@ -123,7 +123,7 @@ export const uiUx: RoadmapDraft = {
       slug: "design-tools",
       title: "Design tool basics",
       summary:
-        "Learn frames, auto layout, components and prototyping in a browser design tool with a free plan, such as Figma or Penpot. Almost every design advert asks for this, and a modest laptop is enough.",
+        "Learn frames, auto layout, components and prototyping in a browser design tool with a free plan, such as Figma or Penpot. Most design adverts ask for this, and a modest laptop is enough.",
       parent: "interface-design",
       optional: false,
       resources: [RES.figmaHelp, RES.figmaLibrary],
@@ -150,7 +150,7 @@ export const uiUx: RoadmapDraft = {
       slug: "design-systems",
       title: "Components and design systems",
       summary:
-        "Build reusable components and styles so a product looks and behaves consistently. Most junior adverts ask for this, because it makes developers' work easier.",
+        "Build reusable components and styles so a product looks and behaves consistently. Many adverts ask for this, because it makes developers' work easier.",
       parent: "interface-design",
       optional: false,
       resources: [RES.material, RES.figmaHelp],
