@@ -1205,7 +1205,7 @@ ORMs save time on everyday work and reduce some mistakes, and many teams use the
 
 ### A local example
 
-Fuseini runs the backend for a cooperative's savings app in Yendi. Members ask to record their community name. He writes migration \`007_add_community.sql\`, opens a pull request, a teammate reviews it, and it runs automatically when they deploy. No one ever logs into the live database to type commands by hand.`,
+Imagine Fuseini runs the backend for a cooperative's savings app in Yendi. Members ask to record their community name. He writes migration \`007_add_community.sql\`, opens a pull request, a teammate reviews it, and it runs automatically when they deploy. No one ever logs into the live database to type commands by hand.`,
       practice_task_md: `**Goal:** evolve a database with migrations instead of manual edits.
 
 1. In a GitHub repository, create a \`migrations\` folder.
@@ -2338,6 +2338,892 @@ Imagine Hawa's school in Bolgatanga. Parents get a fee reminder by SMS, can chec
             ],
             answer_index: 0,
             explanation: "Each USSD step is a short request and reply.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "production": {
+      explanation_md: `"Production" means the real, live system that real customers use. Code that runs perfectly on your laptop faces new challenges there: many users at once, attackers probing for weaknesses, power cuts at the data centre, a provider going down at month end. The adverts we read asked for testing, deployment, cloud experience, debugging and security awareness, even in junior roles, because these habits are what make a service trustworthy.
+
+### What changes in production
+
+* **Real data and money.** Mistakes now affect real people. A bug that marks an unpaid order as paid costs the business.
+* **Strangers on the internet.** Your API is public. Automated bots scan the internet and may try common passwords and known attacks soon after you go live.
+* **Things fail.** Servers restart, databases fill up, networks drop. You need to notice quickly and recover.
+* **You cannot see the screen.** When a customer in Wa says "it did not work", you rely on logs and monitoring to find out why.
+
+### What this section covers
+
+* **Security basics:** common attacks, keeping secrets safe and handling personal data responsibly under Ghana's data protection law.
+* **Automated testing:** code that checks your code, especially around money and permissions, so you can change things with confidence.
+* **Deploying and monitoring on free tiers:** putting your API online, keeping configuration in environment variables and reading logs when something breaks.
+* **Containers with Docker (optional):** packaging your app so it runs the same everywhere.
+
+### A useful mindset
+
+Experienced teams assume things will go wrong and design for it. They ask questions like:
+
+* If this server restarts in the middle of a payment, what happens?
+* If someone sends a million requests, what breaks first?
+* If a teammate changes this function next month, how will we know it still works?
+* If the database is lost tonight, how do we get it back?
+
+You do not need perfect answers yet. Asking the questions already puts you ahead.
+
+### Good habits that cost nothing
+
+* Keep secrets out of code and Git, in environment variables.
+* Log important events (sign ins, payments, errors) with enough detail to investigate, but never log passwords, codes or full card numbers.
+* Back up your database and practise restoring it once, so you know the backup works.
+* Change one thing at a time, and deploy small changes often rather than huge ones rarely.
+* Write down what you did when something broke and how you fixed it. Teams call this a post incident review, and it stops the same problem happening twice.
+
+### Learning on a budget
+
+You can practise every part of this section for free. Testing tools are free and open source. Several hosting platforms have free tiers suitable for small projects, with limits such as sleeping when idle or a cap on usage. Free monitoring tools can check your site every few minutes and alert you by email when it goes down.
+
+Imagine Sumaila has built an API for a farmers' cooperative in Yendi. Before telling anyone about it, he adds tests for the payment flow, moves his keys into environment variables, deploys it on a free tier and sets up an uptime check. When the database fills up two months later, an alert tells him before the farmers notice.`,
+      practice_task_md: `**Goal:** review one of your own projects with production eyes.
+
+1. Pick an API you built earlier in this roadmap.
+2. Answer in writing, for that project: where are the secrets stored? What gets logged? What happens if the server restarts mid request? What would an attacker try first? How would you restore the data?
+3. For each answer you are unhappy with, write one concrete fix.
+4. Add a \`PRODUCTION.md\` file to the repository with your answers and planned fixes.
+
+**Done looks like:** a \`PRODUCTION.md\` with at least five questions answered honestly and three fixes listed. Talk it through with your mentor; this is exactly the kind of thinking interviewers look for.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does production mean in this lesson?",
+            options: [
+              "The code on your laptop before you test it",
+              "The real, live system that real customers use",
+              "A video about your project",
+              "The company's marketing department",
+            ],
+            answer_index: 1,
+            explanation: "Production is the live system serving real users.",
+          },
+          {
+            prompt: "Why do logs and monitoring matter in production?",
+            options: [
+              "They make the app load faster",
+              "They replace the need for tests",
+              "You cannot see the user's screen, so they tell you what happened",
+              "They are required to write SQL",
+            ],
+            answer_index: 2,
+            explanation: "Logs and monitoring are how you investigate problems you cannot see.",
+          },
+          {
+            prompt: "Which of these should never be written to logs?",
+            options: [
+              "The time a payment was received",
+              "An error message from the database",
+              "The route that was called",
+              "Passwords and one time codes",
+            ],
+            answer_index: 3,
+            explanation: "Logs must not contain secrets such as passwords and codes.",
+          },
+          {
+            prompt: "Why should you practise restoring a backup at least once?",
+            options: [
+              "To be sure the backup actually works before you need it",
+              "Because backups expire after one restore",
+              "To make the database smaller",
+              "Because hosting platforms require it",
+            ],
+            answer_index: 0,
+            explanation: "An untested backup might not restore when you need it.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "security": {
+      explanation_md: `Banks, fintechs and telcos in Ghana handle money and personal data, so security knowledge appears in their adverts even for junior roles. You do not need to be a security specialist, but you must avoid the common mistakes that let attackers in. A short list of well understood problems is behind many real breaches.
+
+### Common attacks and how to stop them
+
+**Injection.** If user input becomes part of a database query or system command, an attacker can run their own code. Always use parameterised queries, as you learned in the SQL lesson. Never build queries by gluing strings together.
+
+**Broken access control.** A user changes \`/orders/41\` to \`/orders/42\` and sees someone else's order. Check permissions on the server for every request, as in the authorisation lesson. It tops the OWASP Top Ten list of web application risks.
+
+**Weak authentication.** Plain text passwords, unlimited login attempts or codes that never expire. Hash passwords, limit attempts and expire codes quickly.
+
+**Exposed secrets.** API keys pushed to GitHub or pasted in chat groups. Bots scan public code for keys constantly. Keep secrets in environment variables and rotate any key that leaks.
+
+**Outdated dependencies.** Old libraries with known security holes. Run your package manager's audit command, such as \`npm audit\`, and update regularly.
+
+### Secrets and configuration
+
+\`\`\`js
+const key = process.env.PAYMENT_SECRET;
+if (!key) throw new Error("Missing secret");
+\`\`\`
+
+Your code reads the key from the environment. Locally it comes from a \`.env\` file listed in \`.gitignore\`; in production it is set in your hosting dashboard. Use different keys for test and live.
+
+### Limit abuse
+
+Add **rate limiting** so one person or bot cannot send thousands of requests a minute, especially to sign in, code request and payment endpoints. Many frameworks have a small library for this.
+
+### HTTPS and headers
+
+Serve everything over HTTPS. Most hosting platforms do this automatically. Security headers, often added with a small library, tell browsers to block some common attacks.
+
+### Personal data and Ghana's law
+
+Ghana's Data Protection Act, 2012 (Act 843) sets rules for how organisations collect and use personal data, and the Data Protection Commission oversees it. As a developer, practical habits that support it include:
+
+* Collect only what you need. If you do not need a date of birth, do not ask.
+* Protect what you keep: access controls, encryption in transit, careful backups.
+* Do not use data for a different purpose than people agreed to.
+* Delete data you no longer need.
+* Never copy real customer data onto your laptop for testing. Use made up data.
+
+Your employer will have its own policies and legal advice; your job is to build systems that make following them easy.
+
+### A worked scenario
+
+Imagine Amina reviewing a teammate's endpoint for a Tamale microfinance app. She would spot three problems: the query is built with string joining, there is no check that the loan belongs to the signed in user, and the error response includes the database message. She would suggest parameters, a permission check and a plain error message. Spotting issues like these in code review is a valued junior skill.
+
+### Keep learning
+
+The OWASP Top Ten is a free, regularly updated list of the most important web application risks. Read one item a week and check your own projects against it.`,
+      practice_task_md: `**Goal:** run a security review on your own API.
+
+1. Pick your most complete project from this roadmap.
+2. Check and fix: every query uses parameters; every endpoint that returns private data checks the user; passwords or codes are hashed and expire; no secrets are in the code or Git history; errors do not reveal internal details.
+3. Run your package manager's audit command and update anything flagged that you can.
+4. Add rate limiting to your sign in or code request endpoint.
+5. Write a \`SECURITY.md\` listing what you checked, what you fixed and what you would still improve.
+
+**Done looks like:** a commit with your fixes and a \`SECURITY.md\` your mentor can read in five minutes.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the main defence against SQL injection?",
+            options: [
+              "Hiding the database password in the frontend",
+              "Using parameterised queries instead of joining strings",
+              "Turning off HTTPS",
+              "Using shorter table names",
+            ],
+            answer_index: 1,
+            explanation: "Parameters make input data, never code.",
+          },
+          {
+            prompt: "A user changes an id in the URL and sees another customer's order. What kind of flaw is this?",
+            options: [
+              "Injection",
+              "Outdated dependencies",
+              "Broken access control",
+              "Weak password hashing",
+            ],
+            answer_index: 2,
+            explanation: "Missing permission checks are broken access control.",
+          },
+          {
+            prompt: "Where should API keys and secrets live?",
+            options: [
+              "In the code, so teammates can find them",
+              "In a WhatsApp group for the team",
+              "In environment variables, kept out of Git",
+              "In the README",
+            ],
+            answer_index: 2,
+            explanation: "Environment variables keep secrets out of code and Git.",
+          },
+          {
+            prompt: "Which practice supports Ghana's Data Protection Act?",
+            options: [
+              "Collecting as much personal data as possible just in case",
+              "Copying real customer data to your laptop for testing",
+              "Keeping data forever even when not needed",
+              "Collecting only what you need and deleting what you no longer need",
+            ],
+            answer_index: 3,
+            explanation: "The lesson lists data minimisation and deletion as good habits.",
+          },
+          {
+            prompt: "What does rate limiting protect against?",
+            options: [
+              "One person or bot sending huge numbers of requests, such as guessing codes",
+              "Users with slow phones",
+              "Database migrations",
+              "Typos in SQL",
+            ],
+            answer_index: 0,
+            explanation: "Rate limiting caps how many requests can be made in a period.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "testing": {
+      explanation_md: `Unit testing, test coverage and quality appeared in several of the backend adverts we read, and graduate programmes value it too. Tests are small programs that check your code does what you expect. They let you change code without fear, and they show an employer that you care whether things actually work, not just whether they ran once on your laptop.
+
+### Why tests matter for backend work
+
+Imagine you change how amounts are rounded. Without tests, you would have to click through every payment screen to check nothing broke. With tests, you run one command and see in seconds whether every money calculation is still correct. On a team, tests also run automatically on every pull request, so nobody merges a change that breaks something.
+
+### Kinds of tests
+
+* **Unit tests** check one small function, such as \`normalisePhone\` or \`dailyTotal\`.
+* **Integration tests** check several parts together, such as calling an API endpoint and checking what it saved in the database.
+* **End to end tests** drive the whole system like a user would. They are slower, so teams have fewer of them.
+
+Most of your tests should be fast unit and integration tests.
+
+### A unit test
+
+With a test runner such as Vitest or Jest in JavaScript (or pytest in Python):
+
+\`\`\`js
+import { test, expect } from "vitest";
+import { normalisePhone } from "./phone.js";
+
+test("accepts the 233 form", () => {
+  expect(normalisePhone("+233 24 123 4567"))
+    .toBe("0241234567");
+});
+
+test("rejects short numbers", () => {
+  expect(normalisePhone("12345")).toBe(null);
+});
+\`\`\`
+
+Each test has a clear name, sets up an input, runs the code and checks the result.
+
+### Testing an API endpoint
+
+Libraries let you send fake HTTP requests to your app without starting a real server:
+
+\`\`\`js
+const res = await request(app)
+  .post("/orders")
+  .send({ items: [] });
+expect(res.status).toBe(400);
+\`\`\`
+
+This checks that an empty order is rejected. You can do the same for the happy path and for permission checks.
+
+### What to test first
+
+You cannot test everything, so focus where mistakes hurt most:
+
+* money calculations and payment status changes
+* permission checks (can user A see user B's data?)
+* validation of important inputs
+* the idempotency logic: the same request twice creates one payment
+* bugs you have fixed, so they never come back
+
+### Testing things you do not control
+
+You should not call a real payment provider in your tests. Replace it with a **fake** (often called a mock) that returns the answers you choose, including failures and timeouts. That way you can test "what if the provider is down?" any time, for free, with no data.
+
+### Make it a habit
+
+Write a test when you write a function, or even before. Run tests before every commit. If a test fails, read the message: it tells you what was expected and what actually happened. Imagine Mariama joins a remote team and her first pull request includes tests for the edge cases she handled. That is often noticed and appreciated more than a clever feature.`,
+      practice_task_md: `**Goal:** add meaningful tests to one of your projects.
+
+1. Install a test runner (Vitest or Jest for Node.js, pytest for Python).
+2. Write at least four unit tests for your validation functions, including tricky inputs like \`+233\` numbers, spaces, zero amounts and empty strings.
+3. Write at least three endpoint tests: a successful order, a rejected invalid order, and a user trying to read someone else's order.
+4. Write one test that sends the same payment request twice with the same idempotency key and checks only one payment exists, using a fake provider.
+5. Add a "How to run tests" section to your README.
+
+**Done looks like:** at least eight passing tests, a screenshot of the test output, and the command to run them in the README.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a unit test?",
+            options: [
+              "A test that checks one small function, such as a phone number checker",
+              "A test that clicks through the whole app in a browser",
+              "A survey sent to users",
+              "A way to measure server speed",
+            ],
+            answer_index: 0,
+            explanation: "Unit tests check one small piece of code.",
+          },
+          {
+            prompt: "Why should you not call a real payment provider in your tests?",
+            options: [
+              "Providers do not allow testing at all",
+              "Real providers make tests too easy",
+              "A fake lets you test failures and timeouts any time, for free, with no data",
+              "Tests cannot use the internet under any circumstances",
+            ],
+            answer_index: 2,
+            explanation: "Fakes give you control over provider behaviour.",
+          },
+          {
+            prompt: "Which area does the lesson say to test first?",
+            options: [
+              "The colour of buttons",
+              "The README formatting",
+              "The length of variable names",
+              "Money calculations, payment status changes and permission checks",
+            ],
+            answer_index: 3,
+            explanation: "Focus tests where mistakes hurt most.",
+          },
+          {
+            prompt: "What is one benefit of tests on a team?",
+            options: [
+              "They remove the need for code review",
+              "They run on every pull request so changes that break things are caught before merging",
+              "They make the server use less memory",
+              "They replace documentation",
+            ],
+            answer_index: 1,
+            explanation: "Automated tests catch breakage before merging.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "deploy-and-monitor": {
+      explanation_md: `A live API with a public link is one of the strongest things you can show an employer. It proves you can take code all the way from your laptop to the internet, which is what adverts mean when they list deployment, cloud platforms and CI/CD. You can do it without paying, using free hosting tiers.
+
+### What deploying means
+
+Deploying is copying your code to a computer that is always on and connected, installing its dependencies, setting its configuration and starting it so anyone can reach it by URL. Modern hosting platforms do most of this for you: you connect your GitHub repository, and every time you push to the main branch, they build and restart your app automatically. That automatic build and release is a simple form of **continuous deployment**.
+
+### Free tiers: what to expect
+
+Several platforms offer free plans for web services and databases. They are great for learning and portfolios, but read the limits before you choose. Common ones include:
+
+* the app **sleeps** after a period with no visitors, so the first request afterwards is slow while it wakes up
+* a monthly cap on hours, requests or bandwidth
+* small databases that may **pause** when idle or be removed after a period on the free plan
+* some platforms ask for a card to verify your identity even on free plans, and others do not
+
+Choose based on what your project needs and what you can access. None is the "right" one. Mention in your README that the first request may be slow if the app has been asleep, so a reviewer is not surprised.
+
+### Configuration with environment variables
+
+Your code should not change between your laptop and production; only the configuration should. Database URLs, API keys and the port all come from environment variables:
+
+\`\`\`js
+const port = process.env.PORT || 3000;
+app.listen(port);
+\`\`\`
+
+Set the real values in your hosting dashboard. Many platforms set \`PORT\` for you, so your app must read it.
+
+### Running migrations
+
+When you deploy a change that needs a database update, run your migrations as part of the release. Many platforms let you add a release command for this.
+
+### Logs
+
+When something breaks, open the platform's log viewer first. Good logs say what happened, when, and with which request:
+
+\`\`\`js
+console.log(JSON.stringify({
+  event: "payment_failed",
+  ref: payment.reference,
+  reason: err.message,
+}));
+\`\`\`
+
+Writing logs as JSON makes them easy to search and filter.
+
+### Health checks and monitoring
+
+Add a simple endpoint that confirms the app and database are working:
+
+\`\`\`js
+app.get("/health", async (req, res) => {
+  await db.query("SELECT 1");
+  res.json({ ok: true });
+});
+\`\`\`
+
+Free uptime services can call it every few minutes and email you when it fails. Watch for slow responses and error rates too, not only whether the app is up.
+
+### A worked scenario
+
+Imagine Fuseini deploying his chop bar orders API. He connects the repository, sets \`DATABASE_URL\` and \`PAYMENT_SECRET\` in the dashboard, adds a release command for migrations and a \`/health\` endpoint, and sets up a free uptime check. A week later, an alert arrives: the free database has hit its size limit. He finds it in the logs, clears out old test data, and adds a note to his README about the limit. That troubleshooting story is great material for an interview.
+
+### Before you share the link
+
+Use test keys only, add sample data with made up names, and make sure there is no way for strangers to see private data.`,
+      practice_task_md: `**Goal:** put one of your APIs online for free and watch it.
+
+1. Choose a hosting platform with a free tier that suits your project. Read its limits and note them in your README.
+2. Connect your GitHub repository and set your environment variables in the dashboard. Use a free hosted database or a file based one if the platform allows it.
+3. Make sure your app reads \`PORT\` from the environment and has a \`/health\` endpoint.
+4. Deploy, then call your endpoints from your phone's browser or with \`curl\`.
+5. Set up a free uptime check on \`/health\`.
+6. Push a small change and confirm it deploys automatically.
+
+**Done looks like:** a public URL in your README, a screenshot of the platform's logs, and a short note on the free tier limits you found.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does continuous deployment mean in this lesson?",
+            options: [
+              "Deploying by copying files by hand once a year",
+              "Running the app only on your laptop",
+              "The platform automatically builds and releases your app when you push to the main branch",
+              "Paying for a server monthly",
+            ],
+            answer_index: 2,
+            explanation: "The lesson describes automatic build and release on push as continuous deployment.",
+          },
+          {
+            prompt: "A free tier app is slow on the first request after a quiet period. What is the likely reason?",
+            options: [
+              "The app was sleeping and had to wake up",
+              "The database was deleted",
+              "The code has a syntax error",
+              "HTTPS is turned off",
+            ],
+            answer_index: 0,
+            explanation: "Many free tiers put idle apps to sleep.",
+          },
+          {
+            prompt: "Why should database URLs and keys come from environment variables?",
+            options: [
+              "So that they appear in the README",
+              "Because code cannot contain text",
+              "So the same code runs everywhere and only configuration changes",
+              "Because hosting platforms cannot read files",
+            ],
+            answer_index: 2,
+            explanation: "Configuration lives outside code, keeping secrets safe.",
+          },
+          {
+            prompt: "What is the purpose of a /health endpoint?",
+            options: [
+              "To show users their medical records",
+              "To list every route in the API",
+              "To reset the database",
+              "To let monitoring tools confirm the app and database are working",
+            ],
+            answer_index: 3,
+            explanation: "Uptime tools call it to check the service is healthy.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "containers": {
+      explanation_md: `Docker appeared in several of the backend and remote adverts we read, often alongside cloud platforms and Kubernetes. It is rarely a hard requirement for a first junior role, which is why this lesson is optional, but understanding containers helps you follow team conversations and makes your projects easier for others to run.
+
+### The problem containers solve
+
+"It works on my machine" is a classic developer complaint. Your app runs on your laptop with a certain version of Node.js or Python, certain libraries and certain settings. A teammate or a server has different versions, and things break. A **container** packages your app together with everything it needs to run, so it behaves the same everywhere.
+
+### Images and containers
+
+* An **image** is the recipe and ingredients: your code, the language runtime, libraries and the command to start.
+* A **container** is a running copy of that image. You can start many containers from one image.
+
+You describe an image in a file called a \`Dockerfile\`:
+
+\`\`\`dockerfile
+FROM node:22-slim
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --omit=dev
+COPY . .
+CMD ["node", "server.js"]
+\`\`\`
+
+Line by line: start from a small official Node.js image, work in \`/app\`, copy the package files and install dependencies, copy the rest of the code, and set the start command.
+
+Then build and run it:
+
+\`\`\`bash
+docker build -t orders-api .
+docker run -p 3000:3000 orders-api
+\`\`\`
+
+### Running a database alongside
+
+A tool called Docker Compose lets you describe several containers in one file, such as your API and a PostgreSQL database, and start them together with one command. New teammates can then run the whole system in minutes instead of spending a day installing things.
+
+### Configuration and secrets
+
+Pass settings into containers as environment variables, never bake secrets into the image. Images are often shared, and anything inside can be read.
+
+### Where containers run
+
+Many hosting platforms can deploy straight from a \`Dockerfile\`. Larger companies run many containers across many servers using orchestration tools such as Kubernetes. As a junior, you mainly need to write a sensible \`Dockerfile\`, run containers locally and read the logs.
+
+### Working with limited data and older laptops
+
+Docker downloads images, and some are large, so it can eat a data bundle quickly. Prefer small "slim" or "alpine" base images, download them once on a good connection and reuse them. Docker Desktop also needs a reasonable amount of memory, which can be hard on older laptops. It is fine to learn the concepts now, write a \`Dockerfile\` for your project, and test it later on a better connection or let a hosting platform build it for you.
+
+### A worked scenario
+
+Imagine Issahaku joining a remote team. Their README says "run \`docker compose up\`". In one command he has the API, database and a cache running locally, exactly like his teammates. Later he adds a \`Dockerfile\` to his own portfolio project so reviewers can run it the same way, and mentions it in interviews.`,
+      practice_task_md: `**Goal:** containerise one of your APIs.
+
+1. Write a \`Dockerfile\` for your orders API using a slim base image, like the lesson's example.
+2. Add a \`.dockerignore\` file that excludes \`node_modules\`, \`.env\` and \`.git\`.
+3. If you have Docker and enough data, build and run it, then call \`/health\` from your browser.
+4. If you cannot run Docker yet, deploy using a hosting platform that builds from a \`Dockerfile\`, or ask your mentor to review the file.
+5. Add a README section explaining how to run the project with Docker.
+
+**Done looks like:** a \`Dockerfile\` and \`.dockerignore\` in your repository, plus either a screenshot of the container running or a successful platform build log.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What problem do containers mainly solve?",
+            options: [
+              "They make code run without electricity",
+              "They package an app with everything it needs so it behaves the same everywhere",
+              "They replace the need for a database",
+              "They make apps free to host",
+            ],
+            answer_index: 1,
+            explanation: "Containers fix the \"works on my machine\" problem.",
+          },
+          {
+            prompt: "What is the difference between an image and a container?",
+            options: [
+              "They are the same thing",
+              "A container is the recipe; an image is a running copy",
+              "An image is a type of database",
+              "An image is the recipe and contents; a container is a running copy of it",
+            ],
+            answer_index: 3,
+            explanation: "You start containers from images.",
+          },
+          {
+            prompt: "Why should secrets not be baked into a Docker image?",
+            options: [
+              "Images cannot contain text files",
+              "Images are often shared, and anything inside them can be read",
+              "Secrets make images run slower",
+              "Docker deletes secrets automatically",
+            ],
+            answer_index: 1,
+            explanation: "Pass secrets as environment variables at run time instead.",
+          },
+          {
+            prompt: "What does the lesson suggest if you are on limited data?",
+            options: [
+              "Never learn Docker",
+              "Download the largest images available",
+              "Use slim base images, download them once on a good connection and reuse them",
+              "Rebuild every image from scratch daily",
+            ],
+            answer_index: 2,
+            explanation: "Small images and reuse save data.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "getting-hired": {
+      explanation_md: `Backend work is mostly invisible. A frontend developer can show a beautiful screen; you are showing data that saves correctly, payments that never double charge and errors that make sense. So you have to work a little harder to make your skills visible. The good news is that at least one junior advert we read said plainly that personal projects, internships and freelance work count as experience, and a national service advert said GitHub projects give candidates an edge. You can build that proof yourself.
+
+### What employers look for in a junior
+
+Across the junior and graduate adverts we studied, a pattern appears:
+
+* one language used well, plus a framework
+* SQL and a relational database
+* building and consuming REST APIs
+* Git and GitHub, with real projects on show
+* testing and debugging
+* some awareness of security, deployment and cloud
+* teamwork, clear communication and willingness to learn
+
+Notice how much of that you can demonstrate with two or three good projects and a tidy GitHub profile.
+
+### Where the jobs are
+
+In Ghana, backend and software roles appear at fintechs and payment companies, telcos, banks and microfinance institutions, software agencies and consultancies, logistics and e commerce startups, NGOs with digital programmes, and graduate or national service programmes run by tech companies. Remote roles come from companies across Africa and beyond; some say clearly that they hire Africa based developers, and others are limited to certain countries, so read each advert carefully.
+
+Freelance and small business work also counts. A shop, school, church or cooperative near you might need a simple system for orders, fees or records. Done well and documented honestly, that is real experience.
+
+### What this section covers
+
+* **A backend portfolio:** two or three deployed projects that show the skills above, with clear READMEs and short demo videos.
+* **Job search, freelancing and interviews:** finding roles, applying well, getting through technical interviews and handling freelance work professionally.
+
+### Showing work that is invisible
+
+Help reviewers see what you built:
+
+* A README that explains the problem, the design and how to run it.
+* A diagram of your tables and the payment flow.
+* A short screen recording from your phone showing requests and responses.
+* Notes on trade offs: "I chose X because Y; next I would add Z."
+
+### Be honest
+
+Never claim experience you do not have, and never present a tutorial project as your own design. Interviewers ask follow up questions, and honesty builds trust. "I built this to learn, and here is what I would do differently" is a strong answer.
+
+### Build your support network
+
+Join developer communities, attend meetups when you can, including online ones, and help others with what you know. Opportunities often come from people who have seen your work or your questions in a community. Ask your SydCrest mentor to review your projects before you send them to employers.
+
+Imagine Abdul-Rahman in Wa with two deployed APIs, a clean GitHub profile and a habit of explaining his design choices. Whether he applies to an Accra fintech, a remote startup or a local agency, he can show rather than tell.`,
+      practice_task_md: `**Goal:** see where you stand and plan your proof.
+
+1. Copy the list of junior skills from this lesson into a notes app.
+2. Next to each skill, write the project or commit that proves it, or "not yet".
+3. For every "not yet", write one small task that would fix it, using lessons from this roadmap.
+4. Look at three real adverts you would apply for and add any skill they mention that is not on your list.
+
+**Done looks like:** a one page skills map with evidence links and a short plan. Share it with your mentor and agree on your next two projects.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson say backend developers must work harder to make skills visible?",
+            options: [
+              "Backend work is not important to employers",
+              "Backend work is mostly invisible, unlike a screen a frontend developer can show",
+              "Backend code cannot be put on GitHub",
+              "Employers do not read READMEs",
+            ],
+            answer_index: 1,
+            explanation: "Backend results such as correct data are hard to see without explanation.",
+          },
+          {
+            prompt: "According to the lesson, what did a junior advert say counts as experience?",
+            options: [
+              "Only paid work at large companies",
+              "Only university grades",
+              "Personal projects, internships and freelance work",
+              "Only certificates",
+            ],
+            answer_index: 2,
+            explanation: "The lesson notes that projects, internships and freelance work were accepted as experience.",
+          },
+          {
+            prompt: "What should you check before applying for a remote role?",
+            options: [
+              "Nothing, because all remote roles hire from anywhere",
+              "Whether it hires Africa based developers or is limited to certain countries",
+              "Whether the company uses dark mode",
+              "Whether the advert is longer than one page",
+            ],
+            answer_index: 1,
+            explanation: "Some remote roles are restricted by country.",
+          },
+          {
+            prompt: "Which is the best way to talk about a tutorial based project?",
+            options: [
+              "Say you designed it entirely yourself",
+              "Hide it from your profile",
+              "Explain honestly that you built it to learn and what you would do differently",
+              "Claim it is used by thousands of customers",
+            ],
+            answer_index: 2,
+            explanation: "Honesty builds trust with interviewers.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "portfolio": {
+      explanation_md: `A strong backend portfolio is not twenty half finished projects. It is two or three deployed, tested, well explained systems that show the skills employers ask for. When a hiring manager at an Accra fintech or a remote startup opens your GitHub, they should understand in two minutes what you built, why, and how well.
+
+### Project ideas that fit Ghana
+
+Pick projects that solve problems you understand. They are more interesting to build and to talk about:
+
+* **Orders and mobile money for a small shop.** Products, orders, a simulated payment flow with signed webhooks and idempotency, and SMS notifications through a background queue. This one project shows almost every skill in this roadmap.
+* **School fees or church dues tracker.** Members, payments, balances, reminders and a treasurer role with permissions. Add a simple USSD style menu endpoint.
+* **Farmers' cooperative records.** Members, deliveries in kilograms, payouts in pesewas, and reports by community. Handle offline field officers who sync later, which raises interesting questions about duplicates.
+* **Bus or event ticket booking.** Seats that must not be sold twice, which teaches transactions and locking.
+
+Use test keys and made up data only. Never put real customer data in a portfolio.
+
+### What every project should include
+
+* **A live link** on a free hosting tier, with a note if it sleeps when idle.
+* **A clear README:** the problem in two sentences, the features, a table of endpoints, how to run it locally and how to run the tests.
+* **A diagram** of the database tables and, for payment projects, the flow from request to webhook.
+* **Tests** for the important parts, and a badge or screenshot showing they pass.
+* **A "decisions" section:** two or three choices you made and why, and what you would improve next.
+* **Clean history:** small commits with clear messages.
+
+### A demo video
+
+Many reviewers will not run your code. Record a two minute video on your phone or with a free screen recorder: show a request, the response, the database row it created, and what happens when you send the same payment twice. Keep the file small and upload it somewhere that streams well on mobile data, then link it from the README.
+
+### Your GitHub profile
+
+* Pin your best two or three repositories.
+* Add a short profile README: who you are, what you build, and how to reach you.
+* Remove or archive abandoned experiments so the good work stands out.
+
+### Quality over quantity
+
+One excellent project beats five rough ones. Imagine Hawa from Bolgatanga with a single shop orders project: deployed, tested, documented, with a payment flow that handles retries correctly and a clear video. In an interview she can talk for twenty minutes about the decisions behind it. That depth is exactly what interviewers test.
+
+### Keep improving
+
+After feedback from your mentor or a reviewer, open issues on your own repository and fix them in small pull requests. That shows you can take feedback and work the way real teams do.`,
+      practice_task_md: `**Goal:** turn your best project into a portfolio piece.
+
+1. Choose the most complete API you have built in this roadmap.
+2. Make sure it is deployed, has tests and uses only test keys and made up data.
+3. Rewrite the README with these sections: Problem, Features, Endpoints, Database diagram, How to run, How to test, Decisions, What next.
+4. Record a demo video of two minutes or less and link it.
+5. Pin the repository on your GitHub profile and add a profile README.
+6. Ask your mentor to review it and open at least two issues from their feedback.
+
+**Done looks like:** a pinned repository with a live link, passing tests, a complete README and a demo video. Share the link with your mentor and your SydCrest community.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does the lesson say a strong backend portfolio looks like?",
+            options: [
+              "Twenty small tutorial projects",
+              "Two or three deployed, tested, well explained systems",
+              "One very long README with no code",
+              "A list of every language you have tried",
+            ],
+            answer_index: 1,
+            explanation: "Quality and completeness beat quantity.",
+          },
+          {
+            prompt: "Why does the lesson recommend a short demo video?",
+            options: [
+              "Videos replace the need for code",
+              "Hosting platforms require videos",
+              "Many reviewers will not run your code, but they will watch a short video",
+              "Videos make the API faster",
+            ],
+            answer_index: 2,
+            explanation: "A video shows your work to people who will not run it.",
+          },
+          {
+            prompt: "Which data should you use in portfolio projects?",
+            options: [
+              "Test keys and made up data only",
+              "Real customer data from a friend's shop",
+              "Live payment keys so it feels real",
+              "Data copied from a company you worked for",
+            ],
+            answer_index: 0,
+            explanation: "Never use real customer data or live keys in a portfolio.",
+          },
+          {
+            prompt: "What is the purpose of a decisions section in a README?",
+            options: [
+              "To list your favourite foods",
+              "To hide mistakes from reviewers",
+              "To show how many lines of code you wrote",
+              "To explain choices you made, why, and what you would improve",
+            ],
+            answer_index: 3,
+            explanation: "It shows your thinking, which interviewers value.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "job-search": {
+      explanation_md: `You have skills and projects. Now you need someone to hire you, or pay you for a job. Searching takes persistence, and rejections are normal for everyone. Treat it like a project: a plan, steady effort and learning from each attempt.
+
+### Where to look
+
+* **Ghanaian job boards** and company career pages for fintechs, telcos, banks, agencies and startups.
+* **Graduate trainee and national service programmes** run by tech companies, which often include training and a path to a full role.
+* **Internships** for students, which can lead to offers.
+* **Remote job boards** that list roles open to Africa based applicants. Check location rules, time zones and how you would be paid before applying.
+* **Communities and meetups**, online and in person, where people share openings before they are advertised.
+* **Local businesses** that could use a system you know how to build.
+
+### Applying well
+
+* Read the advert carefully and apply only if you meet most of it. "Junior" adverts can list more than they truly need, so do not rule yourself out over one missing tool.
+* Write a short message for each application that links one project to their work: "I built a mobile money orders API with idempotent webhooks, which matches your payments work."
+* Keep a one page CV with links to your GitHub, live projects and demo video.
+* Track applications in a simple table: company, role, date, status, follow up date.
+
+### Technical interviews
+
+Backend interviews often include:
+
+* **Coding exercises:** small problems with arrays, strings and objects. Talk through your steps before typing, as you practised in the fundamentals lesson.
+* **Take home tasks:** build a small API in a few hours. Include tests and a short README; that alone sets you apart.
+* **Design questions:** "How would you build a payment system?" Talk about tables, endpoints, webhooks, retries and idempotency. Draw boxes and arrows.
+* **Project questions:** "Tell me about something you built." Explain the problem, your decisions, a bug you fixed and what you would do differently.
+
+If you do not know something, say so and explain how you would find out. That is far better than guessing.
+
+### Freelancing
+
+Small integrations, such as adding mobile money to a shop's website or building a fees tracker for a school, are real work. Do it professionally:
+
+* Agree the scope, price and timeline in writing before starting, even in a WhatsApp message.
+* Ask for part of the payment upfront for larger jobs.
+* Use the client's own payment provider account so their money goes straight to them, never through your personal wallet.
+* Hand over documentation and access when you finish.
+
+### Keep going
+
+Imagine Mariama sends ten tailored applications in a month, gets two interviews and one rejection with feedback. She uses the feedback to improve her take home task approach. Each round makes her stronger. Keep building, keep sharing your work, and lean on your SydCrest mentor and community. Persistence and visible work open doors.`,
+      practice_task_md: `**Goal:** start a focused job search this week.
+
+1. Make a tracking table (a spreadsheet or notes app) with columns: company, role, link, date applied, status, follow up date.
+2. Find five roles you could apply for: at least two in Ghana, one graduate or national service programme and one remote role open to Africa based applicants.
+3. For each, write a three sentence message linking one of your projects to their work.
+4. Practise one design question out loud, such as "How would you build a mobile money payment flow?", and record yourself on your phone in under five minutes.
+5. Identify one local business or organisation that might need a small system, and write a short, honest offer.
+
+**Done looks like:** a tracking table with five entries, five tailored messages and a recorded practice answer. Review the recording with your mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How should you treat a junior advert that lists one tool you have not used?",
+            options: [
+              "Never apply, because you must match every line",
+              "Apply if you meet most of it, since junior adverts can list more than they truly need",
+              "Apply and claim you know the tool",
+              "Wait a year before applying",
+            ],
+            answer_index: 1,
+            explanation: "The lesson advises not ruling yourself out over one missing tool.",
+          },
+          {
+            prompt: "In a design interview question about payments, what should you talk about?",
+            options: [
+              "Only the colour scheme of the app",
+              "Your favourite programming language",
+              "Tables, endpoints, webhooks, retries and idempotency",
+              "How quickly you can type",
+            ],
+            answer_index: 2,
+            explanation: "These are the core parts of a payment design.",
+          },
+          {
+            prompt: "What should you do in an interview if you do not know an answer?",
+            options: [
+              "Guess confidently",
+              "Change the subject",
+              "End the interview",
+              "Say so and explain how you would find out",
+            ],
+            answer_index: 3,
+            explanation: "Honesty and a clear approach beat guessing.",
+          },
+          {
+            prompt: "When freelancing on a payment integration, where should the customer's money go?",
+            options: [
+              "Through your personal mobile money wallet first",
+              "Into a shared account you control",
+              "Straight to the client's own payment provider account",
+              "To whoever finishes the job first",
+            ],
+            answer_index: 2,
+            explanation: "Using the client's own account keeps their money out of your hands.",
           },
         ],
         pass_threshold: 75,
