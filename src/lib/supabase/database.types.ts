@@ -669,6 +669,21 @@ export type Database = {
       }
     }
     Views: {
+      public_profile_stats: {
+        Row: {
+          avatar_url: string | null
+          current_streak: number | null
+          display_name: string | null
+          followers_count: number | null
+          following_count: number | null
+          has_datacamp_license: boolean | null
+          id: string | null
+          nodes_completed: number | null
+          public_slug: string | null
+          region: string | null
+        }
+        Relationships: []
+      }
       public_profiles: {
         Row: {
           avatar_url: string | null
@@ -685,6 +700,26 @@ export type Database = {
       }
     }
     Functions: {
+      admin_reports: {
+        Args: { p_status?: string }
+        Returns: {
+          created_at: string
+          id: string
+          reason: string
+          reporter_name: string
+          status: string
+          target_id: string
+          target_is_public: boolean
+          target_name: string
+          target_slug: string
+          target_type: string
+          updated_at: string
+        }[]
+      }
+      admin_unpublish_profile: {
+        Args: { p_profile_id: string }
+        Returns: undefined
+      }
       mint_achievement: {
         Args: {
           p_metadata?: Json

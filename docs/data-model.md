@@ -21,6 +21,9 @@ Owner reads and edits name, region, avatar, phone, slug, is_public, headline, sk
 **public_profiles** (view). Public columns of profiles where `is_public`: id, slug, name, headline, region, avatar, skills, goals.
 Readable by anyone; the only public path to profile data. Never carries phone, role or email.
 
+**public_profile_stats** (view). For opted in profiles only: id, slug, name, avatar, region, nodes completed, current streak, follower and following counts, and whether a DataCamp licence is assigned (yes or no, never the slot).
+Readable by anyone; feeds public profile pages and the leaderboards. A security_invoker view over `private.public_profile_stats_rows()`.
+
 **roadmaps**. A learning roadmap with an SEO slug, track, locale, display order and publish flag.
 Anyone reads published ones; admins read drafts and do all writes.
 
@@ -75,6 +78,8 @@ Anyone inserts; only admins read. A repeat email returns `23505`; treat it as su
 | `record_ai_usage(input_tokens, output_tokens)` | signed in | Add one Study Buddy message to today's row. |
 | `revoke_consent(kind)` | signed in | Revoke the caller's live consent of that kind. |
 | `mint_achievement(profile_id, type, ref_id, metadata)` | service role only | Server side minting for `track_chosen`, `path_personalized`, `streak`. |
+| `admin_reports(status)` | admins | The report queue with reporter and reported profile names (no phone or email). Others get `42501`. |
+| `admin_unpublish_profile(profile_id)` | admins | Sets a reported profile's `is_public` to false. Others get `42501`. |
 
 ## Anti cheat design
 
@@ -127,9 +132,22 @@ learners must not be able to write those numbers.
 - `datacamp_license_slot` is assigned by staff through the service role; users
   cannot set it.
 
+## Leaderboards
+
+- Three boards read `public_profile_stats`: nodes completed, current streak,
+  and nodes completed within one `profiles.region`.
+- **Only public profiles appear.** A learner with a private profile is absent
+  from every board and every count, however much progress they have; turning
+  `is_public` off (or an admin unpublishing) removes them immediately.
+- Streak: consecutive Africa/Accra calendar days with at least one node
+  reaching done (`roadmap_progress.completed_at`), counted while alive (last
+  day is today or yesterday in Accra). `completed_at` is set once by the
+  database, so days cannot be backfilled.
+- Follower counts are public numbers; who follows whom stays signed in only.
+
 ## Not yet
 
-Leaderboard aggregates (materialized view over `roadmap_progress`) arrive with
-the leaderboard feature. `public_profile_rows()` scans all public profiles
-before the view's filter applies; fine at Phase 1 scale, revisit past a few
-thousand public profiles.
+`public_profile_rows()` and `public_profile_stats_rows()` scan all public
+profiles before the view's filter applies; fine at Phase 1 scale, revisit
+(materialized view refreshed on a schedule) past a few thousand public
+profiles.

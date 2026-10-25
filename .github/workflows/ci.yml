@@ -82,9 +82,14 @@ jobs:
       - name: Point the build at the local stack
         run: |
           set -euo pipefail
-          key=$(supabase status -o json | jq -r .PUBLISHABLE_KEY)
+          status=$(supabase status -o json)
+          key=$(jq -r .PUBLISHABLE_KEY <<<"$status")
           echo "NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321" >> "$GITHUB_ENV"
           echo "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=$key" >> "$GITHUB_ENV"
+          # Local stack only: e2e setup creates confirmed learners and admins with it.
+          secret=$(jq -r .SECRET_KEY <<<"$status")
+          echo "::add-mask::$secret"
+          echo "SUPABASE_SECRET_KEY=$secret" >> "$GITHUB_ENV"
       - run: pnpm build
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm e2e
