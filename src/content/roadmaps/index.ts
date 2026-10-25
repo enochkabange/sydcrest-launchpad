@@ -1,5 +1,6 @@
 import { backend } from "./backend";
 import { data } from "./data";
+import { digitalBusiness } from "./digital-business";
 import { digitalMarketing } from "./digital-marketing";
 import { digitalSkillsBridge } from "./digital-skills-bridge";
 import { frontend } from "./frontend";
@@ -22,4 +23,5 @@ export const ROADMAP_DRAFTS: RoadmapDraft[] = [
   data,
   uiUx,
   product,
+  digitalBusiness,
 ];
