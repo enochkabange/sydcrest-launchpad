@@ -1480,7 +1480,7 @@ An awareness session you have actually delivered, with your slides or notes and 
     "detect-respond": {
       explanation_md: `## Why this matters
 
-Most junior security jobs advertised by Ghanaian telcos and banks centre on the same duties: monitor security events and alerts, analyse incidents, respond and escalate, and run vulnerability assessments. Banks such as those with their own security operations centres organise analysts in levels, with Level 1 analysts watching alerts and Level 2 analysts handling escalations. This section is the heart of the analyst role.
+Most junior security jobs advertised by Ghanaian telcos and banks centre on the same duties: monitor security events and alerts, analyse incidents, respond and escalate, and run vulnerability assessments. Some Ghanaian banks run their own security operations centres and organise analysts in levels, with Level 1 analysts watching alerts and Level 2 analysts handling escalations. This section is the heart of the analyst role.
 
 ## Prevention is never perfect
 
@@ -2120,7 +2120,7 @@ CERT GH lists these channels for reporting incidents: call or text **292**, What
 
 ## A small example
 
-Issahaku, a junior analyst at a regional hospital group, helps his manager with a ransomware incident. The manager asks him for an accurate timeline because the hospital, as part of a designated health sector, needs to report promptly to the relevant CERT. Issahaku's notes show when the first alert fired and when the incident was confirmed, so the report is accurate and on time.
+Issahaku, a junior analyst at a regional hospital group, helps his manager with a ransomware incident. The manager asks him for an accurate timeline because the hospital must report the incident to the relevant CERT within 24 hours of detecting it. Issahaku's notes show when the first alert fired and when the incident was confirmed, so the report is accurate and on time.
 
 ## Remember
 
