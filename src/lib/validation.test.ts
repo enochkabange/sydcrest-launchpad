@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { parseProfile, parseSignIn, parseSignUp, safeNextPath } from "./validation";
+import { formatPhone, normalizePhone, parseProfile, parseSignIn, parseSignUp, safeNextPath } from "./validation";
 
 function form(fields: Record<string, string>) {
   const f = new FormData();
@@ -56,4 +56,38 @@ describe("safeNextPath", () => {
       expect(safeNextPath(next)).toBe("/dashboard");
     },
   );
+});
+
+describe("normalizePhone", () => {
+  it.each([
+    ["024 123 4567", "+233241234567"],
+    ["0241234567", "+233241234567"],
+    ["+233 24 123 4567", "+233241234567"],
+    ["233-55-123-4567", "+233551234567"],
+    ["020 123 4567", "+233201234567"],
+    ["+44 7911 123456", "+447911123456"],
+  ])("normalises %s", (input, expected) => {
+    expect(normalizePhone(input)).toBe(expected);
+  });
+
+  it.each(["12345", "024 123 456", "0841234567", "+233 84 123 4567", "phone", "+0123456789"])(
+    "rejects %s",
+    (input) => {
+      expect(normalizePhone(input)).toBeNull();
+    },
+  );
+
+  it("formats Ghana numbers back for display", () => {
+    expect(formatPhone("+233241234567")).toBe("024 123 4567");
+    expect(formatPhone("+447911123456")).toBe("+447911123456");
+    expect(formatPhone(null)).toBe("");
+  });
+});
+
+describe("parseProfile phone", () => {
+  it("treats an empty phone as no phone and flags a bad one", () => {
+    expect(parseProfile(form({ display_name: "Wumpini", phone: "" })).data.phone).toBeNull();
+    expect(parseProfile(form({ display_name: "Wumpini", phone: "0241234567" })).data.phone).toBe("+233241234567");
+    expect(parseProfile(form({ display_name: "Wumpini", phone: "123" })).errors.phone).toBeDefined();
+  });
 });

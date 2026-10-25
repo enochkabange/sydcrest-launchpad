@@ -35,17 +35,44 @@ export function parseSignIn(form: FormData) {
   return { data: { email, password }, errors };
 }
 
+/**
+ * Accepts how Ghanaians actually write numbers (024 123 4567, 0241234567,
+ * +233 24 123 4567, 233241234567) and returns E.164. Numbers starting with
+ * another country code are kept for diaspora learners. Null means invalid.
+ */
+export function normalizePhone(input: string): string | null {
+  const digits = input.replace(/[\s\-().]/g, "");
+  let e164: string;
+  if (/^0\d{9}$/.test(digits)) e164 = `+233${digits.slice(1)}`;
+  else if (/^233\d{9}$/.test(digits)) e164 = `+${digits}`;
+  else if (/^\+\d+$/.test(digits)) e164 = digits;
+  else return null;
+
+  if (e164.startsWith("+233")) return /^\+233[235]\d{8}$/.test(e164) ? e164 : null;
+  return /^\+[1-9]\d{7,14}$/.test(e164) ? e164 : null;
+}
+
+/** +233241234567 -> 024 123 4567 for display; other countries unchanged. */
+export function formatPhone(e164: string | null) {
+  if (!e164) return "";
+  const m = /^\+233(\d{2})(\d{3})(\d{4})$/.exec(e164);
+  return m ? `0${m[1]} ${m[2]} ${m[3]}` : e164;
+}
+
 export function parseProfile(form: FormData) {
   const displayName = text(form, "display_name");
   const region = text(form, "region");
-  const errors: FieldErrors<"display_name" | "region"> = {};
+  const phoneInput = text(form, "phone");
+  const phone = phoneInput ? normalizePhone(phoneInput) : null;
+  const errors: FieldErrors<"display_name" | "region" | "phone"> = {};
 
   if (!displayName) errors.display_name = "Your name can't be empty.";
   else if (displayName.length > 80) errors.display_name = "Keep your name under 80 characters.";
   if (region && !isRegionSlug(region)) errors.region = "Choose a region from the list.";
+  if (phoneInput && !phone) errors.phone = "Enter a Ghana number like 024 123 4567, or start with + for another country.";
 
   return {
-    data: { display_name: displayName, region: (region || null) as RegionSlug | null },
+    data: { display_name: displayName, region: (region || null) as RegionSlug | null, phone },
     errors,
   };
 }

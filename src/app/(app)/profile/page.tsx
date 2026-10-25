@@ -12,7 +12,7 @@ async function ProfileDetails() {
   return (
     <>
       {profile.email && <p className="text-content-2">Signed in as {profile.email}</p>}
-      <ProfileForm displayName={profile.display_name} region={profile.region} />
+      <ProfileForm displayName={profile.display_name} region={profile.region} phone={profile.phone} />
     </>
   );
 }

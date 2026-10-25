@@ -5,9 +5,9 @@ import { requireUser } from "@/lib/auth";
 import { parseProfile, type FieldErrors } from "@/lib/validation";
 
 export type ProfileState = {
-  errors?: FieldErrors<"display_name" | "region">;
+  errors?: FieldErrors<"display_name" | "region" | "phone">;
   message?: string;
-  saved?: { display_name: string; region: string | null; at: number };
+  saved?: { display_name: string; region: string | null; phone: string | null; at: number };
 };
 
 export async function updateProfile(_prev: ProfileState, form: FormData): Promise<ProfileState> {

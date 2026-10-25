@@ -27,7 +27,7 @@ export const getMyProfile = cache(async () => {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("profiles")
-    .select("display_name, region, avatar_url, role")
+    .select("display_name, region, phone, avatar_url, role")
     .eq("id", user.id)
     .single();
   if (error) throw new Error(`Could not load profile: ${error.message}`);
