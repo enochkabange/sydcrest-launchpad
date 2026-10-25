@@ -1,0 +1,30 @@
+"use client";
+
+import { useActionState } from "react";
+import { setWhatsAppConsent, type WhatsAppState } from "./whatsapp-actions";
+import { Alert } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
+import { CheckboxField } from "@/components/ui/field";
+
+export function WhatsAppToggle({ enabled, hasPhone }: { enabled: boolean; hasPhone: boolean }) {
+  const [state, action, pending] = useActionState<WhatsAppState, FormData>(setWhatsAppConsent, { enabled });
+  const current = state.enabled ?? enabled;
+
+  return (
+    <form key={state.saved ?? 0} action={action} className="flex flex-col gap-3">
+      {state.message && <Alert tone="danger">{state.message}</Alert>}
+      {state.saved && <Alert tone="success">{current ? "WhatsApp updates are on." : "WhatsApp updates are off."}</Alert>}
+      <CheckboxField id="whatsapp" defaultChecked={current}>
+        Send me updates on WhatsApp
+      </CheckboxField>
+      <p className="text-sm text-content-3">
+        {hasPhone
+          ? "Reminders about your learning and cohort news, sent to the phone number above. Reply STOP to any message to turn them off."
+          : "Save a phone number above first. We only message numbers you give us."}
+      </p>
+      <Button type="submit" variant="secondary" disabled={pending} className="self-start">
+        {pending ? "Saving…" : "Save WhatsApp choice"}
+      </Button>
+    </form>
+  );
+}
