@@ -1,11 +1,33 @@
 import { RES } from "./resources";
-import type { RoadmapDraft } from "./types";
+import type { ResourceDraft, RoadmapDraft } from "./types";
+
+/**
+ * Revised against job advert and skills framework research (issue #84); see
+ * src/content/research/product.md for sources and the coverage table.
+ * Resources specific to this track are defined here, not in the shared pool,
+ * so parallel track authors never conflict.
+ */
+const govAgile: ResourceDraft = {
+  label: "GOV.UK Service Manual: Agile delivery",
+  url: "https://www.gov.uk/service-manual/agile-delivery",
+  kind: "article",
+};
+const govMeasuring: ResourceDraft = {
+  label: "GOV.UK Service Manual: Measuring success",
+  url: "https://www.gov.uk/service-manual/measuring-success",
+  kind: "article",
+};
+const govTeam: ResourceDraft = {
+  label: "GOV.UK Service Manual: The team",
+  url: "https://www.gov.uk/service-manual/the-team",
+  kind: "article",
+};
 
 export const product: RoadmapDraft = {
   slug: "product-manager",
   title: "Product Manager",
   description:
-    "Learn to decide what to build and why, for products that work in Ghana's mobile money and messaging era. Practise with real problems, cheap experiments and clear writing, then build a portfolio that shows your judgement.",
+    "Learn to decide what to build and why, for products that work in Ghana's mobile money and messaging era. Practise the skills junior product, business analyst and product operations roles ask for, then build a portfolio that shows your judgement.",
   track: "product",
   field_category: "product",
   locale: "en-GH",
@@ -15,46 +37,55 @@ export const product: RoadmapDraft = {
       slug: "foundations",
       title: "Foundations",
       summary:
-        "Product managers connect users, the business and the team that builds. This section explains the role and the local context products live in.",
+        "Product work connects users, the business and the team that builds. This section explains the roles, the local context and the basic skills every product job relies on.",
       parent: null,
       optional: false,
       resources: [RES.atlassianPm],
     },
     {
-      slug: "what-pms-do",
-      title: "What a product manager does",
+      slug: "what-product-roles-do",
+      title: "Product roles and what they do",
       summary:
-        "Learn how a product manager finds problems worth solving, sets priorities and helps a team ship. The role varies a lot between companies, so read real job adverts to see what each one means.",
+        "Learn what product managers, associate product managers, business analysts, product analysts and product operations staff actually do. Few first jobs carry the product manager title, so knowing the neighbouring roles shows you where to start.",
       parent: "foundations",
       optional: false,
-      resources: [RES.atlassianPm],
+      resources: [RES.atlassianPm, govTeam],
     },
     {
       slug: "ghana-product-context",
       title: "How products work in Ghana",
       summary:
-        "Study how mobile money, USSD, WhatsApp and agent networks shape what people expect from products here. Pick three local apps or services you use and write down why people trust them or not.",
+        "Study how mobile money, USSD, WhatsApp and agent networks shape what people expect from products here. Pick three local services you use and write down why people trust them or not.",
       parent: "foundations",
       optional: false,
       resources: [RES.ycLibrary],
     },
     {
       slug: "business-basics",
-      title: "Business basics",
+      title: "Business basics and pricing",
       summary:
-        "Understand revenue, costs, margins and how a product makes money, using prices in cedis. Every product decision eventually comes back to these numbers.",
+        "Understand revenue, costs, margins and pricing in cedis, and how mobile money payments affect what customers will pay. Every product decision eventually comes back to these numbers.",
       parent: "foundations",
       optional: false,
       resources: [RES.lfMoney, RES.startupSchool],
     },
     {
+      slug: "stakeholder-communication",
+      title: "Communicating with stakeholders",
+      summary:
+        "Learn to listen, write short updates and present a recommendation to managers, engineers and partners. Employers often ask for clear communication, whatever tools the job uses.",
+      parent: "foundations",
+      optional: false,
+      resources: [RES.lfCommunication, RES.lfBizWriting],
+    },
+    {
       slug: "discovery",
       title: "Discovery",
       summary:
-        "Discovery means learning what people really need before building anything. It is the habit that most separates good product managers from feature takers.",
+        "Discovery means learning what people really need before building anything. It is the habit that most separates good product people from order takers.",
       parent: null,
       optional: false,
-      resources: [],
+      resources: [RES.govResearch],
     },
     {
       slug: "problem-interviews",
@@ -69,43 +100,61 @@ export const product: RoadmapDraft = {
       slug: "choosing-problems",
       title: "Choosing which problem to solve",
       summary:
-        "Compare problems by how painful, how frequent and how widespread they are, and whether people already pay to solve them. Write down your reasoning so others can challenge it.",
+        "Compare problems by how painful, frequent and widespread they are, and check what people and competitors already use to solve them. Write down your reasoning so others can challenge it.",
       parent: "discovery",
       optional: false,
       resources: [RES.lfThinking],
     },
     {
+      slug: "no-code-mvp",
+      title: "Testing ideas without code",
+      summary:
+        "Run a service by hand using WhatsApp, Google Forms and a spreadsheet to see if people want it. If nobody uses the manual version, building an app will not fix that.",
+      parent: "discovery",
+      optional: false,
+      resources: [RES.whatsappBusiness, RES.lfSheets],
+    },
+    {
       slug: "defining",
       title: "Defining what to build",
       summary:
-        "Once the problem is clear, you need to describe a solution and decide what comes first. Clear writing matters more here than any tool.",
+        "Once the problem is clear, you describe how work happens today, what the new solution must do and what comes first. Clear writing matters more here than any tool.",
       parent: null,
       optional: false,
       resources: [],
     },
     {
+      slug: "process-mapping",
+      title: "Mapping processes",
+      summary:
+        "Draw how a task flows today, step by step and person by person, to find delays, errors and handovers. Business analyst roles often ask for this skill.",
+      parent: "defining",
+      optional: false,
+      resources: [RES.lfThinking],
+    },
+    {
+      slug: "requirements-and-user-stories",
+      title: "Requirements and user stories",
+      summary:
+        "Turn what users and the business need into clear requirements, user stories and acceptance criteria. Junior product and analyst roles often ask for this skill.",
+      parent: "defining",
+      optional: false,
+      resources: [govAgile, RES.atlassianAgile],
+    },
+    {
       slug: "writing-specs",
       title: "Writing product specs",
       summary:
-        "Write a short document covering the problem, who it is for, what success looks like and what is out of scope. A good spec lets designers and engineers work without waiting for you.",
+        "Write a short document covering the problem, who it is for, the requirements, what success looks like and what is out of scope. A good spec lets designers and engineers work without waiting for you.",
       parent: "defining",
       optional: false,
       resources: [RES.lfBizWriting],
     },
     {
-      slug: "prioritisation",
-      title: "Prioritisation",
+      slug: "prioritisation-and-roadmaps",
+      title: "Prioritisation and roadmaps",
       summary:
-        "Rank ideas by value and effort using simple frameworks, and learn to say no politely. Small teams in Ghana rarely have spare capacity, so focus is essential.",
-      parent: "defining",
-      optional: false,
-      resources: [RES.atlassianPm],
-    },
-    {
-      slug: "goals-and-roadmaps",
-      title: "Goals and product roadmaps",
-      summary:
-        "Set a few measurable goals and turn them into a roadmap of problems to solve, not a list of dates. Share it so the whole team knows why work is ordered the way it is.",
+        "Rank ideas by value and effort, learn to say no politely and turn goals into a roadmap of problems to solve. Small teams rarely have spare capacity, so focus is essential.",
       parent: "defining",
       optional: false,
       resources: [RES.atlassianPm],
@@ -114,7 +163,7 @@ export const product: RoadmapDraft = {
       slug: "building",
       title: "Building with a team",
       summary:
-        "Product managers do not build alone, so working well with others is the core skill. This section covers how teams plan and how to speak their language.",
+        "Product people do not build alone, so working well with engineers and designers is the core skill. This section covers how teams plan, how to speak their language and how to check work before release.",
       parent: null,
       optional: false,
       resources: [],
@@ -123,16 +172,16 @@ export const product: RoadmapDraft = {
       slug: "agile-basics",
       title: "Agile ways of working",
       summary:
-        "Learn sprints, backlogs, standups and retrospectives, and why teams ship in small pieces. Focus on the ideas rather than the ceremony, because every team runs them differently.",
+        "Learn sprints, backlogs, boards, standups and retrospectives, and why teams ship in small pieces. Focus on the ideas rather than the ceremony, because every team runs them differently.",
       parent: "building",
       optional: false,
-      resources: [RES.atlassianAgile],
+      resources: [RES.atlassianAgile, govAgile],
     },
     {
       slug: "technical-literacy",
       title: "Technical literacy",
       summary:
-        "Understand what APIs, databases, payments integrations and app releases involve, without needing to code. This helps you judge effort and ask engineers better questions.",
+        "Understand what APIs, databases, mobile money integrations and app releases involve, without needing to code. This helps you judge effort and ask engineers better questions.",
       parent: "building",
       optional: false,
       resources: [RES.cs50, RES.mdnHttp],
@@ -144,61 +193,70 @@ export const product: RoadmapDraft = {
         "Learn the basics of user flows, wireframes and usability testing so you can give useful feedback. Judge designs by whether users can complete the task, not by personal taste.",
       parent: "building",
       optional: false,
-      resources: [RES.nngHeuristics],
+      resources: [RES.nngHeuristics, RES.nngUsability],
     },
     {
-      slug: "mvp-and-launch",
-      title: "MVPs and launching",
+      slug: "acceptance-testing",
+      title: "Acceptance testing and release",
       summary:
-        "Test ideas as cheaply as possible before investing in software. Then plan how real customers will hear about the product and start paying.",
-      parent: null,
+        "Check that what was built meets the acceptance criteria before real users see it, and plan a safe release. Analyst and associate product roles often include testing before go live.",
+      parent: "building",
       optional: false,
-      resources: [RES.startupSchool],
+      resources: [govAgile],
     },
     {
-      slug: "no-code-mvp",
-      title: "MVPs without code",
+      slug: "live-product",
+      title: "Running a live product",
       summary:
-        "Run a service by hand using WhatsApp, Google Forms and a spreadsheet to see if people want it. If nobody uses the manual version, building an app will not fix that.",
-      parent: "mvp-and-launch",
-      optional: false,
-      resources: [RES.whatsappBusiness, RES.lfSheets],
-    },
-    {
-      slug: "pricing-and-payments",
-      title: "Pricing and payments",
-      summary:
-        "Decide how to charge, test prices in cedis and make paying easy with mobile money. Clear receipts and quick refunds build the trust that Ghanaian customers look for.",
-      parent: "mvp-and-launch",
-      optional: false,
-      resources: [RES.ycLibrary],
-    },
-    {
-      slug: "go-to-market",
-      title: "Launching to real customers",
-      summary:
-        "Plan which customers you will reach first, through which channels, and what message will make them try it. Partnerships with agents, churches, schools or associations can reach people ads cannot.",
-      parent: "mvp-and-launch",
-      optional: false,
-      resources: [RES.skillshop],
-    },
-    {
-      slug: "measuring",
-      title: "Measuring and learning",
-      summary:
-        "After launch, data and feedback tell you what to do next. This section helps you read both honestly.",
+        "Once a product is live, someone must onboard users, answer problems and feed lessons back to the team. This work is a common first job and a strong route into product management.",
       parent: null,
       optional: false,
       resources: [],
     },
     {
+      slug: "product-operations",
+      title: "Product operations",
+      summary:
+        "Learn to onboard and train users, write help guides and standard procedures, and pass issues to engineers clearly. Good operations work keeps a product trusted between releases.",
+      parent: "live-product",
+      optional: false,
+      resources: [RES.whatsappBusiness, RES.lfBizWriting],
+    },
+    {
+      slug: "customer-feedback",
+      title: "Customer feedback loops",
+      summary:
+        "Collect feedback from support chats, calls and reviews, and share patterns with the team every week. Close the loop by telling customers what you changed.",
+      parent: "live-product",
+      optional: false,
+      resources: [RES.lfCommunication],
+    },
+    {
+      slug: "measuring",
+      title: "Measuring and learning",
+      summary:
+        "Data tells you whether a product is working and what to do next. This section covers the spreadsheet and query skills analyst roles ask for, and how to read numbers honestly.",
+      parent: null,
+      optional: false,
+      resources: [govMeasuring],
+    },
+    {
+      slug: "spreadsheets-and-sql",
+      title: "Spreadsheets and SQL basics",
+      summary:
+        "Use spreadsheets to sort, filter, count and chart product data, then learn the basic SQL queries analyst adverts mention. Start with a small, real dataset you understand.",
+      parent: "measuring",
+      optional: false,
+      resources: [RES.lfSheets, RES.sqlbolt],
+    },
+    {
       slug: "metrics",
       title: "Product metrics",
       summary:
-        "Track activation, retention and revenue rather than only downloads. Choose one main metric that shows whether users are getting real value.",
+        "Track activation, retention and revenue rather than only downloads or sign ups. Choose one main metric that shows whether users are getting real value.",
       parent: "measuring",
       optional: false,
-      resources: [RES.gaHelp, RES.ycLibrary],
+      resources: [govMeasuring, RES.gaHelp],
     },
     {
       slug: "experiments",
@@ -210,22 +268,22 @@ export const product: RoadmapDraft = {
       resources: [RES.khanStats],
     },
     {
-      slug: "customer-feedback",
-      title: "Customer feedback loops",
-      summary:
-        "Collect feedback from support chats, calls and reviews, and share patterns with the team every week. Close the loop by telling customers what you changed.",
-      parent: "measuring",
-      optional: false,
-      resources: [RES.lfCommunication],
-    },
-    {
       slug: "getting-hired",
       title: "Getting hired",
       summary:
-        "Product roles rarely go to complete beginners, so plan a route in. This section shows how to build evidence and find a first opening.",
+        "Product manager jobs rarely go to complete beginners, so plan a realistic route in. This section shows which first roles to aim for and how to build evidence.",
       parent: null,
       optional: false,
       resources: [],
+    },
+    {
+      slug: "breaking-in",
+      title: "Realistic routes into product",
+      summary:
+        "Many people reach product management through business analysis, product operations, customer support, data or monitoring and evaluation work. Aim for those roles first and take on product tasks wherever you are.",
+      parent: "getting-hired",
+      optional: false,
+      resources: [RES.lfJobsearch, RES.lfLinkedin],
     },
     {
       slug: "product-portfolio",
@@ -237,19 +295,10 @@ export const product: RoadmapDraft = {
       resources: [RES.lfBizWriting],
     },
     {
-      slug: "breaking-in",
-      title: "Routes into product",
+      slug: "product-interviews",
+      title: "Product and analyst interviews",
       summary:
-        "Many product managers start in customer support, operations, quality assurance, design or engineering, then move across. Look for associate product roles, internships and startup jobs where you can take on product work early.",
-      parent: "getting-hired",
-      optional: false,
-      resources: [RES.lfJobsearch, RES.lfLinkedin],
-    },
-    {
-      slug: "pm-interviews",
-      title: "Product interviews",
-      summary:
-        "Practise questions about improving a product you use, prioritising features and choosing metrics. Use local products in your answers to show you understand the market.",
+        "Practise questions about improving a product, writing a user story, prioritising features and choosing metrics. Use local products in your answers to show you understand the market.",
       parent: "getting-hired",
       optional: false,
       resources: [RES.lfInterview],

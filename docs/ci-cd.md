@@ -32,8 +32,8 @@ between steps 1 and 3 (see Rules).
 ## 2. One-time setup
 
 **GitHub**
-- Branch protection on `main`: require a PR and the checks `Checks` and
-  `Migrations`; no force pushes.
+- The repo is private on the free plan, so GitHub branch protection is not
+  available. The guardrails below replace it (see "Guardrails").
 - Environment: `Production` (created by Vercel's GitHub integration; the
   pipeline's deploy jobs use it).
 - Actions secrets:
@@ -75,7 +75,20 @@ and live in the workflow files.
 | `uptime.yml` | every 30 minutes | fails (and emails) if the live site is down |
 | `dependabot.yml` | weekly / monthly | dependency and Actions update PRs |
 
-## 4. Rules that prevent outages
+## 4. Guardrails (in place of branch protection)
+
+| Guard | Where | What it stops |
+| --- | --- | --- |
+| Merged PR only | `pipeline.yml` gate | Any commit on `main` that did not come from a merged PR is not deployed, and an issue is opened |
+| Full suite before deploy | `pipeline.yml` | Production deploys only after lint, types, unit tests, audit, build, database tests (pgTAP, types in sync) and e2e all pass |
+| Migration guard | CI, staging push, pipeline | Editing or deleting a shipped migration; destructive SQL (drop, rename, type change, truncate, delete) without `-- allow-destructive: <reason>` on that line |
+| Secret scan | CI (gitleaks) | Keys or passwords committed in a PR |
+| Dependency audit | CI, pipeline | High or critical vulnerabilities in production dependencies |
+| Smoke test and rollback | `pipeline.yml` | After a deploy, key pages must load and `/dashboard` must redirect; otherwise Vercel rolls back to the previous production deployment |
+| Least privilege | every workflow | Each workflow gets only `contents: read`, plus what one job needs |
+| Pre-push hook | `.husky/pre-push` | Accidental `git push` to `main` from a laptop |
+
+## 5. Rules that prevent outages
 
 1. **Migrations are expand then contract.** Add columns and tables first; never
    rename or drop in the same release as the code change. Remove old columns in
@@ -97,14 +110,14 @@ and live in the workflow files.
 10. **A 200 is not proof of a new deploy.** The pipeline compares
    `/api/version` with the merged commit.
 
-## 5. Rollback
+## 6. Rollback
 
 | Layer | How |
 | --- | --- |
 | Frontend | Vercel, Deployments, previous deployment, Promote (or `vercel rollback`). |
 | Database | Forward fix with a new migration. For data loss, restore from backup. Avoid destructive migrations (rule 1). |
 
-## 6. Day to day
+## 7. Day to day
 
 ```bash
 git switch -c feature/thing
