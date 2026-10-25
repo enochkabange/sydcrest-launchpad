@@ -1,3 +1,4 @@
+import { aiToolsForWork } from "./ai-tools-for-work";
 import { backend } from "./backend";
 import { data } from "./data";
 import { digitalMarketing } from "./digital-marketing";
@@ -22,4 +23,5 @@ export const ROADMAP_DRAFTS: RoadmapDraft[] = [
   data,
   uiUx,
   product,
+  aiToolsForWork,
 ];
