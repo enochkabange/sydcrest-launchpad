@@ -1354,6 +1354,885 @@ If you speak a northern Ghanaian language fluently and read and write it, you ha
         pass_threshold: 75,
       },
     },
+    automation: {
+      explanation_md: `## Why this matters
+
+Much of office and small business work is repetition: answering the same customer questions, sending the same kind of reminder, copying details from one place to another, writing a similar post every week. Every minute saved on routine work is a minute for work that needs a person: solving problems, talking to customers, checking quality. Remote assistant roles and some junior operations roles now mention automation tools in their adverts, but you can start with tools already on your phone.
+
+## Two kinds of time saving
+
+This section has two topics.
+
+* **Reusable prompts and templates.** When a prompt works well, save it with blanks you can fill in next time. A small library of tested prompts gives you fast, steady results and is something you can share with a team or even sell.
+* **Automating small repetitive tasks.** Using features like quick replies, text shortcuts, email filters and form to sheet workflows, and later simple no code automation tools, to take routine steps off your hands.
+
+## Ground rules for automation
+
+* **Start small.** Pick one task you do often that is boring but low risk, such as answering "What time do you open?".
+* **Keep a person in the loop.** Anything that goes to customers, handles money or affects people should be checked by you, at least at first.
+* **Know how to stop it.** Before you switch on any automatic reply or workflow, know how to switch it off.
+* **Mind privacy.** Automations often move information between apps. Make sure you are allowed to move it and that each app is trustworthy.
+* **Free plans change.** Many automation tools have free plans with limits that change. Build things that still work if you have to do a step by hand.
+
+## A small example
+
+Amina sells fabrics in Tamale through WhatsApp. Every day, customers ask the same five questions: prices, location, opening hours, delivery and payment. She writes clear answers once, with help from an AI assistant to make them friendly and short, and saves them as quick replies in WhatsApp Business. Now a reply takes two taps instead of two minutes of typing. She also saves her best AI prompt for writing her weekly "new arrivals" post, with blanks for fabric names and prices. Her weekly posting time drops, and her messages are more consistent.
+
+Nothing here required code, a laptop or money. It required noticing repetition and deciding to deal with it once.
+
+## Spotting repetition
+
+For one week, keep a note of tasks you do more than three times. Next to each, write how long it takes. The tasks at the top of your list are where templates and automation will help most. This habit alone makes you a more valuable assistant or employee, because you will be the person who finds ways to save time.`,
+      practice_task_md: `**Goal:** find the repetition worth automating.
+
+1. For three to seven days, list every task you or a small business you help does more than three times. Note roughly how many minutes each takes.
+2. Pick the top three by total time.
+3. For each, write: could a saved prompt help, could a quick reply or shortcut help, or could a form or simple workflow help? Note one risk and how a person will check it.
+4. Save this list in your journal; you will build solutions in the next two lessons.
+
+**Done looks like:** a short repetition log and a plan for your top three tasks.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What kind of task should you automate first?",
+            options: [
+              "A task you do often that is boring but low risk",
+              "A task that moves large amounts of money",
+              "A task you do once a year",
+              "A task that needs careful human judgement every time",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says start small with frequent, low risk tasks.",
+          },
+          {
+            prompt: "What does keeping a person in the loop mean?",
+            options: [
+              "Letting automations run with nobody checking",
+              "Having a person check anything that goes to customers or affects people",
+              "Hiring more staff for every task",
+              "Turning off your phone",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says a person should check customer, money or people related outputs.",
+          },
+          {
+            prompt: "What did Amina save as quick replies in WhatsApp Business?",
+            options: [
+              "Her MoMo PIN",
+              "Her customers' phone numbers",
+              "Clear answers to the five questions customers ask every day",
+              "AI generated photos of fabrics",
+            ],
+            answer_index: 2,
+            explanation: "She saved answers to common questions as quick replies.",
+          },
+          {
+            prompt: "Why should you build automations that still work if a step is done by hand?",
+            options: [
+              "Because automation is illegal",
+              "Because phones cannot run apps",
+              "Because customers dislike quick replies",
+              "Because free plans of automation tools can change",
+            ],
+            answer_index: 3,
+            explanation: "The lesson warns that free plans and limits change.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "prompt-templates": {
+      explanation_md: `## Why this matters
+
+If you write a good prompt once and then throw it away, you will spend time rebuilding it next week. Professionals who use AI daily keep a small library of tested prompts, often called prompt templates. A template gives steady, predictable results, makes you faster, and can be shared with a team. A well tested set of templates for a specific job can even become a digital product, which you will explore later in this track.
+
+## What a template looks like
+
+A template is a strong prompt with **blanks** in square brackets that you fill in each time:
+
+> Write a polite WhatsApp reminder to a customer named [first name] who has an unpaid balance of GHS [amount] for [item], due on [date]. Tone: warm and respectful, not threatening. Under 50 words. End with how to pay by MoMo and a thank you. Do not add any discount or penalty.
+
+Each time, you replace only the blanks. The tone, length and rules stay the same, so results are consistent.
+
+## How to build a good template
+
+1. **Start from a real success.** Use a prompt that already gave you a great result after a few rounds of improvement.
+2. **Turn specifics into blanks.** Names, amounts, dates, products and places become [blanks].
+3. **Keep the rules.** Tone, length, format, and what to avoid stay fixed.
+4. **Test it three times** with different details. If any result needs heavy editing, improve the template.
+5. **Name and store it.** Give it a clear name such as "Payment reminder, friendly" and keep it where you can copy it quickly on your phone: a Google Doc, a notes app or a pinned message to yourself.
+
+## Templates worth having
+
+* Customer replies: delays, complaints, thank yous, payment reminders.
+* Social posts: new stock, weekly tips, event announcements.
+* Summaries: "Summarise these meeting notes into decisions, actions, owners and deadlines."
+* Job hunting: cover message from your facts, interview practice questions for a specific role.
+* Checking: "List every factual claim in this text so I can verify it."
+
+## A small example
+
+Mariama does social media for three small businesses in Bolgatanga. She builds one template for weekly posts:
+
+> Write [number] short Facebook post options for [business type] in [town]. This week's focus: [focus]. Key facts: [facts]. Audience: [audience]. Friendly, simple English, under 60 words each, no prices unless listed in key facts, end with how to order or visit.
+
+She fills it in for a pharmacy, a hair salon and a restaurant every Monday, edits the results, and checks every fact with the owners. Her template saves her hours each week, and her clients notice how consistent her posts are.
+
+## Keep templates private where needed
+
+If a template includes a client's details or style rules, treat it as the client's information. Do not share it publicly without permission.`,
+      practice_task_md: `**Goal:** build a personal library of five tested prompt templates.
+
+1. Choose five tasks you do often, using your repetition log from the previous lesson if you made one.
+2. For each, write a template with [blanks] for the details and fixed rules for tone, length, format and what to avoid.
+3. Test each template three times with different made up details in a free AI assistant. Improve any that need heavy editing.
+4. Store all five in one Google Doc or note called "My prompt templates", each with a clear name and one example result.
+
+**Done looks like:** a document with five named, tested templates and example results. This goes straight into your portfolio.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a prompt template?",
+            options: [
+              "A strong prompt with blanks you fill in each time",
+              "A paid feature of AI apps",
+              "A picture made by AI",
+              "A list of passwords",
+            ],
+            answer_index: 0,
+            explanation: "The lesson defines a template as a strong prompt with blanks in square brackets.",
+          },
+          {
+            prompt: "When building a template, what should stay fixed?",
+            options: [
+              "The customer's name",
+              "The amount owed",
+              "The tone, length, format and what to avoid",
+              "The date",
+            ],
+            answer_index: 2,
+            explanation: "Specifics become blanks; the rules stay the same for consistent results.",
+          },
+          {
+            prompt: "How many times does the lesson suggest testing a new template?",
+            options: ["Never", "Once", "Three times with different details", "Only after a client complains"],
+            answer_index: 2,
+            explanation: "The lesson recommends testing three times with different details.",
+          },
+          {
+            prompt: "What should you do if a template includes a client's details or style rules?",
+            options: [
+              "Post it publicly to help others",
+              "Sell it without asking",
+              "Delete the client's account",
+              "Treat it as the client's information and not share it without permission",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says such templates belong to the client's information.",
+          },
+          {
+            prompt: "What was the main benefit Mariama got from her weekly post template?",
+            options: [
+              "It saved hours and made her posts consistent",
+              "It meant she never had to check facts",
+              "It let her stop talking to her clients",
+              "It made her posts longer",
+            ],
+            answer_index: 0,
+            explanation: "Her template saved time and kept posts consistent, while she still checked facts.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "automating-tasks": {
+      explanation_md: `## Why this matters
+
+Some remote assistant and junior operations adverts now ask for experience with automation tools, sometimes called no code tools because you connect apps by choosing options rather than writing code. You do not need those to start. Your phone already has features that automate routine steps, and learning to use them builds the same thinking: notice a repeated task, design a simple flow, and keep a person checking.
+
+## Automations you can set up on a phone
+
+* **Quick replies and away messages.** WhatsApp Business lets you save quick replies, a greeting message for new customers and an away message for when you are closed. Write them once (AI can help with wording) and reuse them.
+* **Text shortcuts.** Most phone keyboards let you set a short code that expands into a longer phrase, such as typing "addr" to insert your shop's full address and directions.
+* **Forms that fill a sheet.** Google Forms sends every response into a Google Sheet automatically. Use it for orders, event sign ups or simple surveys instead of copying details from chats by hand.
+* **Calendar reminders.** Recurring reminders for weekly posts, monthly invoices or stock checks.
+
+## Automations that are easier on a computer
+
+* **Email filters.** Gmail can automatically label, archive or forward emails that match rules, such as everything from a supplier. Filters are created in Gmail on a computer browser, then work on your phone too.
+* **No code automation tools.** Services such as Zapier, Make or n8n connect apps: for example, "when a new form response arrives, add a row to a sheet and send me an email". They often have free plans with limits that change. They are easiest to set up on a computer, so use a school lab, library or community centre computer if you do not have one.
+
+## Designing a safe automation
+
+1. **Write the steps in plain words** first: "When X happens, do Y, then Z."
+2. **Ask an AI assistant to check your plan:** "What could go wrong with this workflow? What should a person check?"
+3. **Test with fake data** before real customers.
+4. **Decide who checks** the results, and how often.
+5. **Write down how to turn it off.**
+
+Never automate anything that sends money, shares personal data or makes decisions about people without a person approving each step.
+
+## A small example
+
+Fuseini organises a coding club in Damongo. Sign ups used to arrive in scattered WhatsApp messages. He creates a Google Form with name, age group and phone number, and responses now flow into a Sheet automatically. He asks an AI assistant to help write a friendly confirmation message, which he saves as a quick reply and sends after checking each new row. Sign ups are tidy, nobody is missed, and he spends his time on teaching, not copying details.`,
+      practice_task_md: `**Goal:** set up one working automation on your phone and document it.
+
+1. Pick one repeated task from your repetition log, or use this one: collecting orders for a small food business.
+2. Write the steps in plain words: "When X happens, do Y, then Z."
+3. Ask a free AI assistant what could go wrong and what a person should check. Adjust your plan.
+4. Build it with phone friendly tools: for example, a Google Form that fills a Sheet, plus a saved quick reply or text shortcut for the confirmation message.
+5. Test it with three fake entries. Write a short note: what it does, who checks it, and how to turn it off.
+
+**Done looks like:** a working form and sheet (or quick replies) plus a one paragraph description. Share it with a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does Google Forms do automatically that saves copying by hand?",
+            options: [
+              "Sends every response into a Google Sheet",
+              "Replies to all WhatsApp messages",
+              "Pays customers by MoMo",
+              "Writes social media posts",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says Forms sends every response into a Sheet automatically.",
+          },
+          {
+            prompt: "Where are Gmail filters created, according to the lesson?",
+            options: [
+              "Only inside WhatsApp",
+              "In Gmail on a computer browser, after which they work on your phone too",
+              "By calling the bank",
+              "They cannot be created at all",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says filters are set up in Gmail on a computer browser.",
+          },
+          {
+            prompt: "What is the first step in designing a safe automation?",
+            options: [
+              "Switch it on for all customers immediately",
+              "Pay for the most expensive tool",
+              "Write the steps in plain words",
+              "Share customer data with the tool",
+            ],
+            answer_index: 2,
+            explanation: "Writing the steps in plain words comes first.",
+          },
+          {
+            prompt: "Which of these should never be automated without a person approving each step?",
+            options: [
+              "A reminder to post every Monday",
+              "A text shortcut for your address",
+              "A greeting message for new customers",
+              "Sending money to someone",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says never automate sending money without a person approving.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    earning: {
+      explanation_md: `## Why this matters
+
+Learning AI tools is good. Earning with them is better, and for many young people in northern Ghana, earning is the reason to learn. There are three main routes, and this section covers each honestly.
+
+* **A job** where AI skills make you a stronger candidate: assistant, content, social media, customer support, admin and research roles.
+* **Freelance and gig work**, locally or remotely: writing, editing, social media management, translation, and remote projects that pay people to transcribe, translate or check AI output in languages like Twi and Dagbani.
+* **Your own digital products**: something you make once and sell many times, such as a template pack or a practical guide, built with AI help.
+
+SydCrest's September 2026 event in Accra, "Monetizing Your Skills With AI: Building Digital Products", focused on that third route. This section brings the same ideas to your phone.
+
+## The four topics in this section
+
+* **Jobs and gigs that use AI skills.** What adverts ask for, where to look, how AI data work works, and how to avoid scams.
+* **Building simple AI powered digital products.** Choosing a real problem, building a product with free tools, and adding your own knowledge so it is worth paying for.
+* **Pricing and selling your product.** Testing demand, setting a fair price, taking payment safely with mobile money and delivering well.
+* **Honesty and ethics with clients.** When to tell people you used AI, avoiding copying, protecting data and keeping your reputation.
+
+## Honest expectations
+
+We will not promise quick money. Nobody can honestly tell you how much you will earn, and anyone who guarantees big earnings from AI, especially if they ask you to pay first, is a warning sign. Earning usually starts small: one client, one sale, one short contract. Each one builds proof and confidence for the next.
+
+What you can control is the quality of your work, how reliable you are, and how honest you are about what you do. Those three things matter more than any tool.
+
+## A small example
+
+Hawa, in Tamale, combines all three routes over time. She applies for a part time admin role and mentions in her interview how she uses AI to draft and summarise, with examples from her portfolio. While she waits to hear back, she offers to manage social media for two local businesses, using her prompt templates and checking every fact with the owners. She also builds a simple budget template for market traders, tests it with three traders she knows, and starts selling it through WhatsApp. None of these is guaranteed to work, but together they give her several chances to earn and a growing record of real work.
+
+## Before you start
+
+Make sure you have finished the earlier sections, especially privacy, fact checking and prompt templates. Clients pay for reliable, safe work, and those lessons are what make your AI skills trustworthy.`,
+      practice_task_md: `**Goal:** choose your earning route and first step.
+
+1. Write a short note on each of the three routes (job, freelance or gig, digital product): what appeals to you, what skills you already have, and what is missing.
+2. Choose one route to focus on for the next month.
+3. Write one small, concrete first step you can take this week, such as "Apply for two admin roles that mention AI tools", "Offer social media help to one local business" or "Ask five traders what problem they would pay to solve".
+4. Share your choice and first step with a mentor or study buddy.
+
+**Done looks like:** a one page note with your chosen route and a dated first step.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which three earning routes does this section cover?",
+            options: [
+              "A job, freelance or gig work, and your own digital products",
+              "Lottery, betting and loans",
+              "Only government jobs",
+              "Only selling phones",
+            ],
+            answer_index: 0,
+            explanation: "The lesson names jobs, freelance or gig work, and digital products.",
+          },
+          {
+            prompt: "Someone promises guaranteed big earnings from AI if you pay them first. What does the lesson say?",
+            options: [
+              "Pay quickly before the offer ends",
+              "It is a warning sign",
+              "It is the normal way to start",
+              "Borrow money to pay them",
+            ],
+            answer_index: 1,
+            explanation: "The lesson calls guaranteed earnings with upfront payment a warning sign.",
+          },
+          {
+            prompt: "According to the lesson, what matters more than any tool when earning?",
+            options: [
+              "Having the newest phone",
+              "Paying for every AI subscription",
+              "The quality of your work, your reliability and your honesty",
+              "Posting as often as possible",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says quality, reliability and honesty matter more than tools.",
+          },
+          {
+            prompt: "What was the focus of SydCrest's September 2026 event in Accra?",
+            options: [
+              "Learning to drive",
+              "Farming techniques",
+              "Football coaching",
+              "Monetizing skills with AI by building digital products",
+            ],
+            answer_index: 3,
+            explanation: "The event was \"Monetizing Your Skills With AI: Building Digital Products\".",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "ai-jobs-gigs": {
+      explanation_md: `## Why this matters
+
+Knowing where AI skills are actually wanted helps you aim your learning and your applications. When we read recent job adverts from Ghana and remote roles open to African applicants, AI skills appeared in a few clear patterns. We share the patterns, not promises.
+
+## What the adverts asked for
+
+* **Assistant and admin roles** asked for experience using AI chat assistants to research, draft and organise work, usually alongside office tools like Google Workspace and strong written English.
+* **Content, communications and marketing roles** asked people to use AI tools to research and draft content **while keeping accuracy and their own voice**, plus editing and fact checking AI drafts.
+* **Social media and creative roles** mentioned design apps, AI writing help, and sometimes AI image and video tools.
+* **Junior automation roles** mentioned no code tools that connect apps, plus familiarity with AI assistants.
+* **AI data work** for remote projects asked for native speakers of languages like Twi, Akan and Dagbani to transcribe audio, write or rate answers, and check other people's work. These asked for fluency, good English, attention to detail and the ability to follow detailed guidelines.
+
+Notice what keeps coming up: accuracy, clear writing, following instructions and judgement. AI skills add to these; they never replace them.
+
+## Where to look
+
+* Ghanaian job sites and company career pages.
+* Remote job boards that state they accept applicants from Africa or worldwide. Always check the location rules in each advert.
+* Careers pages of companies that run language and AI data projects.
+* Freelance platforms, where you create a profile and bid for work. Some platforms have published rules about using AI; read the current rules of any platform you join.
+* Your own network: churches, mosques, associations and local businesses often need writing, social media or translation help.
+
+## Avoiding scams
+
+AI data work and remote jobs attract scammers. Protect yourself:
+
+* **Never pay to apply, train or get "activated".** Real employers pay you, not the other way round.
+* Check the company has a real website and that the job appears on its official careers page.
+* Be wary of offers through random WhatsApp or Telegram messages, or that promise high pay for very little work.
+* Share identity documents only through official, secure onboarding with a verified company, never in a chat.
+* Never share MoMo PINs, bank logins or one time codes.
+
+## A small example
+
+Issahaku reads and writes Dagbani fluently. He finds a transcription project on a company's careers page that asks for native Dagbani speakers. He checks the company's website, applies through the official page, and completes a test that involves carefully following written guidelines. He also gets a WhatsApp message offering "AI jobs, pay GHS 200 registration". He ignores it and reports it. Careful checking kept him safe and pointed him to real work.`,
+      practice_task_md: `**Goal:** research real demand and prepare to apply.
+
+1. Find five current adverts (from Ghanaian job sites, company career pages or remote boards that accept African applicants) that mention AI tools. Do not copy the advert text.
+2. For each, note in your own words: job title, location or remote, and which AI and other skills it asks for.
+3. Circle the skills that appear most often. Mark which ones you already have proof of from this track and which you need to practise.
+4. Check one advert for scam warning signs using the list in the lesson and write what you found.
+
+**Done looks like:** a five row table, a short list of your skill gaps and a scam check note.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What did content and communications adverts commonly ask for, according to the lesson?",
+            options: [
+              "Using AI to research and draft while keeping accuracy and their own voice",
+              "Letting AI publish without any checking",
+              "Building AI models from scratch",
+              "Avoiding all writing",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says these adverts asked for AI use while keeping accuracy and voice.",
+          },
+          {
+            prompt: "What did AI data work adverts for languages like Twi and Dagbani ask for?",
+            options: [
+              "A university degree in computer science only",
+              "Fluency, good English, attention to detail and following detailed guidelines",
+              "A large registration payment",
+              "Owning an expensive laptop with no other skills",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists fluency, English, attention to detail and following guidelines.",
+          },
+          {
+            prompt: "An offer says you must pay to be \"activated\" for an AI job. What should you do?",
+            options: [
+              "Pay, because all AI jobs charge fees",
+              "Send your MoMo PIN instead",
+              "Treat it as a scam, since real employers pay you",
+              "Share your Ghana Card in the chat",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says never pay to apply, train or get activated.",
+          },
+          {
+            prompt: "Which skills kept coming up across the adverts besides AI?",
+            options: [
+              "Dancing and singing",
+              "Driving and cooking",
+              "Football and athletics",
+              "Accuracy, clear writing, following instructions and judgement",
+            ],
+            answer_index: 3,
+            explanation: "The lesson highlights accuracy, writing, following instructions and judgement.",
+          },
+          {
+            prompt: "How did Issahaku apply for the Dagbani transcription project?",
+            options: [
+              "Through the company's official careers page after checking its website",
+              "By paying a registration fee on WhatsApp",
+              "By sending his PIN to a recruiter",
+              "By replying to a random Telegram message",
+            ],
+            answer_index: 0,
+            explanation: "He checked the company and applied through the official page.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "digital-products": {
+      explanation_md: `## Why this matters
+
+A digital product is something you make once and can sell many times without making it again: a spreadsheet template, a short practical guide, a set of prompt templates, a planner, a set of lesson note templates. There is no stock to buy and nothing to transport. AI can help you plan, draft and polish one far faster than before. This was the theme of SydCrest's "Monetizing Your Skills With AI: Building Digital Products" event in Accra, and it is something you can start on a phone.
+
+## Start with a real problem
+
+The most common mistake is starting with "What can AI make?" instead of "What problem do people around me have?" Good digital products solve a specific problem for a specific group of people. For example:
+
+* Market traders who struggle to track daily sales and debts: a simple, ready made record template in Google Sheets with instructions.
+* JHS teachers who spend hours on lesson notes: a set of note templates and tested prompts for planning lessons.
+* Job seekers in the north who are unsure how to write a CV: a short guide with examples and fill in the blank templates.
+* Small business owners new to social media: thirty prompt templates for posts, with tips for checking and editing.
+
+Talk to five people in your target group before you build. Ask what wastes their time and what they have tried. Their words will shape your product.
+
+## How AI helps you build
+
+* **Planning:** "Suggest an outline for a short guide on [topic] for [audience]."
+* **Drafting:** writing first drafts of sections, examples and instructions.
+* **Testing ideas:** "What questions would a [audience] have about this?"
+* **Polishing:** simplifying language, fixing grammar, making instructions clearer.
+
+## What makes it worth paying for
+
+Anyone can ask an AI tool for a generic guide. People pay for what AI alone cannot give them:
+
+* **Your local knowledge and experience:** real Ghanaian examples, local prices and practices, your tested methods.
+* **Checked, correct information.** Every fact verified.
+* **Testing with real users.** A template that three traders have actually used and improved is better than one nobody has tried.
+* **Clear design and instructions** that work on a phone.
+
+## Phone or laptop?
+
+Templates, guides, prompt packs and planners can all be built on a phone with free apps such as Google Docs, Google Sheets and a free design app. Building a coded AI app or website that calls an AI service is a bigger project that needs a laptop and programming skills; if that interests you, look at the developer tracks, and use computers at school labs, libraries or community centres to practise.
+
+## A small example
+
+Wumpini notices that women in her savings group in Savelugu keep contributions in exercise books and argue about records. She asks three members what is hardest, then uses AI to help draft a simple Google Sheets template with clear instructions in plain English, plus a short guide. She tests it with the group for two meetings, fixes confusing parts and adds a Dagbani glossary of key terms checked by a fluent member. Now she has a tested product other savings groups might pay for.`,
+      practice_task_md: `**Goal:** plan and build a first version of a simple digital product.
+
+1. Choose a group of people you know and talk to at least three of them about a problem that wastes their time or money.
+2. Write a one paragraph product idea: who it is for, the problem, and what the product is (template, guide, prompt pack or planner).
+3. Use a free AI assistant to help outline and draft the product, then add your own local examples and check every fact.
+4. Build a first version with free phone apps.
+5. Ask at least one person from the group to try it and give feedback. Note what you will change.
+
+**Done looks like:** your product idea paragraph, the first version and written feedback from one real user.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a digital product, as described in the lesson?",
+            options: [
+              "Something you make once and can sell many times without remaking it",
+              "A phone you buy and resell",
+              "A service you must deliver in person every time",
+              "An AI tool you build from scratch",
+            ],
+            answer_index: 0,
+            explanation: "The lesson defines it as made once and sold many times.",
+          },
+          {
+            prompt: "What should you start with when planning a digital product?",
+            options: [
+              "Whatever the AI suggests first",
+              "A real problem that a specific group of people has",
+              "The highest price you can think of",
+              "A copy of a popular product",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says start with a real problem for a specific group.",
+          },
+          {
+            prompt: "Which of these makes a product worth paying for?",
+            options: [
+              "Generic text anyone could get from an AI in seconds",
+              "Facts nobody has checked",
+              "Local knowledge, checked information and testing with real users",
+              "A long title",
+            ],
+            answer_index: 2,
+            explanation: "The lesson lists local knowledge, verified facts, real testing and clear design.",
+          },
+          {
+            prompt: "Which product idea is the hardest to build on a phone alone?",
+            options: [
+              "A Google Sheets record template",
+              "A short practical guide",
+              "A set of prompt templates",
+              "A coded AI app that calls an AI service",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says a coded AI app needs a laptop and programming skills.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "selling-products": {
+      explanation_md: `## Why this matters
+
+A useful product nobody buys earns nothing. Selling is a skill of its own: finding the people who need your product, showing them its value, setting a fair price, getting paid safely and treating customers well so they recommend you. You can do all of it from a phone.
+
+## Test demand before you spend time
+
+Before polishing for weeks, check that people will actually pay:
+
+* Describe the product on your WhatsApp status or in a relevant group (with permission from the group admin) and see who asks about it.
+* Offer a free sample page or a short trial to a few people and ask for honest feedback.
+* Ask directly: "Would you pay for this? How much would feel fair?"
+
+If nobody is interested, change the product or the audience. That is learning, not failure.
+
+## Setting a price
+
+There is no single right price. Think about:
+
+* **Value to the buyer.** How much time or money does it save them?
+* **Similar products.** What do comparable templates or guides sell for, locally and online?
+* **Your audience's budget.** A trader in Tamale and a company in Accra can pay different amounts. You can offer a basic version and a fuller version.
+
+Avoid competing only by being the cheapest. Compete on being clear, tested, local and reliable.
+
+## Getting paid and delivering
+
+* **Mobile money** is the simplest option for local buyers. Use a number registered in your name and keep a record of every payment.
+* **Payment links** from licensed payment providers (for example Paystack or Hubtel, named only as examples) let buyers pay by MoMo or card through a link.
+* **Delivery:** share a view only or copy link from Google Drive, or send the file by WhatsApp or email after payment. Keep the original safe.
+* **Records:** keep a simple sheet of each sale, date, amount and buyer contact, with their permission. This helps you track progress and handle questions.
+
+## Treat customers well
+
+* Describe the product honestly. Do not promise results you cannot guarantee.
+* Answer questions quickly and kindly. Quick replies help.
+* Have a clear, fair policy if a file does not work or a buyer is unhappy.
+* Ask satisfied buyers if you may share their real feedback. Never invent reviews or testimonials.
+* Improve the product based on feedback and tell earlier buyers about updates.
+
+## A small example
+
+Abdul-Rahman made a CV guide with fill in templates for school leavers in Tamale. He posts a sample page on his WhatsApp status and gets questions from several people. He asks a few of them what price feels fair, and chooses a modest price that fits a student budget. Buyers pay by MoMo, and he sends a Google Drive link with a thank you message saved as a quick reply. When two buyers say one template is confusing, he fixes it and sends everyone the updated version. Real feedback from his buyers, shared with their permission, helps him reach the next customers.`,
+      practice_task_md: `**Goal:** prepare to sell your product honestly and safely.
+
+1. Write a short, honest product description (under 80 words): who it is for, what problem it solves and what is included. Use AI to help, then edit and check it.
+2. Test demand: share a description or sample with at least five people in your target group and record their responses.
+3. Choose a price using the three factors in the lesson, and write one sentence explaining your choice.
+4. Set up your delivery process: payment method, how you will send the file and a saved thank you message.
+5. Create a simple sales record sheet with columns for date, amount, payment reference and notes.
+
+**Done looks like:** your description, demand test notes, price reasoning, delivery steps and an empty sales record sheet ready to use.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why test demand before spending weeks polishing a product?",
+            options: [
+              "To check that people will actually pay for it",
+              "Because testing is required by law",
+              "To make the product longer",
+              "Because AI cannot help with products",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says test demand to check people will pay before investing more time.",
+          },
+          {
+            prompt: "Which factor does the lesson suggest when setting a price?",
+            options: [
+              "Always the lowest price possible",
+              "The value of the product to the buyer",
+              "Whatever a friend guesses",
+              "The price of a new phone",
+            ],
+            answer_index: 1,
+            explanation: "Value to the buyer is one of the three pricing factors in the lesson.",
+          },
+          {
+            prompt: "What does the lesson say about reviews and testimonials?",
+            options: [
+              "Write some yourself to look popular",
+              "Ask AI to invent them",
+              "Share only real feedback, with the buyer's permission",
+              "Copy reviews from other sellers",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says never invent reviews and share real feedback only with permission.",
+          },
+          {
+            prompt: "Why keep a record sheet of every sale?",
+            options: [
+              "To share buyers' details publicly",
+              "Because MoMo requires a spreadsheet",
+              "To make the product look bigger",
+              "To track progress and handle questions",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says records help you track progress and handle questions.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "client-ethics": {
+      explanation_md: `## Why this matters
+
+Your reputation is the most valuable thing you build as a worker or freelancer. In a city like Tamale or Wa, word travels fast, and online one bad review can follow you. Clients and employers increasingly ask how people use AI. Being honest, careful and fair with AI is what separates professionals from people who will not be hired twice.
+
+## Be open about how you work
+
+There is nothing shameful about using AI well, just as there is nothing shameful about using a spell checker or a calculator. The problem is **hiding it when it matters**.
+
+* **Agree at the start.** When you take on work, say briefly how you use AI, for example: "I use AI tools to help draft and edit, and I check every fact and edit everything myself." Many clients appreciate this.
+* **Respect the client's rules.** Some clients or employers do not want AI used on their work, or only approved tools. Follow their rules, and ask if you are unsure.
+* **Answer honestly if asked.** Never claim work is entirely your own if AI wrote much of it and the client expected otherwise.
+* **Platforms have rules too.** Freelance platforms and employers may have written AI policies. Read them.
+* **School and training work.** Follow your school or programme's rules on AI. Handing in AI work as your own where it is not allowed is cheating, and it also robs you of the learning.
+
+## Do not copy or mislead
+
+* Do not use AI to copy another writer's or designer's work, or to imitate a living artist's style to pass off as original.
+* Do not create fake reviews, fake testimonials, fake photos of products or fake "results".
+* Do not use AI to impersonate real people or to make content that could deceive the public.
+
+## Protect people and data
+
+* Keep client and customer information out of public AI tools unless you have permission and an approved tool.
+* Remember that AI can repeat unfair bias about women, ethnic groups, religions or regions. Read output with this in mind, and correct anything unfair before it goes out.
+
+## You are responsible
+
+If AI makes a mistake in your work, it is still your mistake to the client. Good professionals check, take responsibility, fix problems quickly and learn. Put people first: the client, their customers and anyone affected by the work.
+
+## A small example
+
+Mariama is hired to write website text for a guesthouse in Bolgatanga. At the start, she tells the owner she uses AI to help draft and that she checks every detail with him. The AI draft describes a swimming pool the guesthouse does not have. She removes it and checks every room price and service with the owner. Later, the owner asks if AI wrote the text. She explains honestly how she worked. He is pleased with her openness and accuracy, and he recommends her to a friend who runs a restaurant.`,
+      practice_task_md: `**Goal:** write your personal AI ethics statement.
+
+1. Write a short statement (100 to 150 words) you could share with clients or employers explaining how you use AI: what you use it for, what you never use it for, how you protect data and how you check work.
+2. Write a one sentence script for telling a new client at the start of a job how you use AI.
+3. Read this situation and write what you would do: a client asks you to write ten five star reviews for their shop from "customers".
+4. Ask a mentor or study buddy to read your statement and suggest one improvement.
+
+**Done looks like:** your ethics statement, your one sentence script and your answer to the reviews situation. Add the statement to your portfolio.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, when is using AI a problem?",
+            options: [
+              "Whenever you use it at all",
+              "When you hide it where it matters, such as when a client expects otherwise",
+              "Only when using a phone",
+              "Only on weekends",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says the problem is hiding AI use when it matters.",
+          },
+          {
+            prompt: "What should you do if a client does not want AI used on their work?",
+            options: [
+              "Follow their rules",
+              "Use AI anyway and say nothing",
+              "Charge them double",
+              "Refuse to talk to them",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says respect the client's rules.",
+          },
+          {
+            prompt: "A client asks you to write fake five star reviews from \"customers\". What does the lesson say?",
+            options: [
+              "Write them, since AI makes it quick",
+              "Write only three instead of ten",
+              "Do not create fake reviews",
+              "Post them from your own account",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says do not create fake reviews or testimonials.",
+          },
+          {
+            prompt: "If AI makes a mistake in work you hand in, whose mistake is it?",
+            options: ["The AI company's", "Nobody's", "The client's", "Yours"],
+            answer_index: 3,
+            explanation: "The lesson says it is still your mistake to the client.",
+          },
+          {
+            prompt: "Why should you read AI output with bias in mind?",
+            options: [
+              "AI can repeat unfair views about groups, which you should correct",
+              "AI is always perfectly fair",
+              "Bias only affects images",
+              "Bias makes text shorter",
+            ],
+            answer_index: 0,
+            explanation: "The lesson warns that AI can repeat unfair bias, so you must correct it.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "ai-portfolio": {
+      explanation_md: `## Why this matters
+
+Many people now write "skilled in AI tools" on their CV. Few can show it. Employers and clients want **proof**: real examples of how you used AI to do good work, and how you checked it. A small, clear portfolio you can share from your phone puts you ahead of people who only make claims.
+
+Some AI skills programmes in Ghana, free and paid, run in cohorts, often in Accra. If you hope to join one, the work you did in this track and this portfolio are good preparation and good evidence for your application.
+
+## What to include
+
+Choose four to six of your best pieces from this track. For each piece, show:
+
+1. **The task:** what you were trying to do and for whom.
+2. **Your prompt** (or template), with personal details removed.
+3. **The AI draft**, or a short extract of it.
+4. **Your edits and checks:** what you changed, what facts you verified and how.
+5. **The final result.**
+
+Good pieces to choose from:
+
+* A fact check table showing errors you caught.
+* Before and after writing pieces: a bio, a cover message, a customer message.
+* A checked summary of a public document.
+* A tested spreadsheet with AI assisted formulas and your notes.
+* A checked translation with your glossary.
+* Your prompt template library.
+* A working automation with its description.
+* Your digital product, with real user feedback shared with permission.
+* Your AI ethics statement.
+
+## How to present it on a phone
+
+* Create one Google Doc or a simple Google Drive folder named "Your name: AI skills portfolio".
+* Start with a short introduction: who you are, what kind of work you want, and two or three sentences on how you use AI responsibly.
+* Keep each piece short with clear headings, so it reads well on a small screen.
+* Set sharing to "anyone with the link can view" and check it opens on another phone.
+* Never include anyone's personal information or a client's confidential work without permission. Use made up details or permitted examples.
+
+## Talking about it
+
+On your CV, describe skills honestly and specifically: "Use AI assistants to draft, summarise and build spreadsheet formulas, with fact checking and editing" says much more than "AI expert". In interviews, walk through one portfolio piece: the task, how you prompted, what the AI got wrong and how you fixed it. That story shows judgement, which is what employers really want.
+
+## A small example
+
+Sumaila builds his portfolio in a Google Doc: a fact check table, a checked NGO report summary, a sales sheet with tested formulas, his prompt templates and his ethics statement. He shares the link in his application for a remote assistant role. In the interview, he explains how he caught an invented link in an AI draft. The interviewer remembers him because he showed what he can do.
+
+## Keep it growing
+
+Update your portfolio as you do real work. Replace practice pieces with real ones (with permission) and keep your best five. Tools will change; your proof of careful, honest work stays valuable.`,
+      practice_task_md: `**Goal:** build and share your AI skills portfolio.
+
+1. Create a Google Doc or Drive folder called "[Your name]: AI skills portfolio".
+2. Write a short introduction: who you are, the work you want and how you use AI responsibly (you can adapt your ethics statement).
+3. Add four to six pieces from this track. For each, include the task, your prompt, the AI draft or extract, your edits and checks, and the final result.
+4. Remove all personal and confidential details. Set sharing to view only for anyone with the link, and test the link on another phone.
+5. Write one honest CV line describing your AI skills.
+6. Share the link with a mentor and ask for feedback on which piece is strongest.
+
+**Done looks like:** a shareable portfolio link with four to six documented pieces, an introduction and a CV line, reviewed by a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does a portfolio matter more than writing \"skilled in AI tools\" on a CV?",
+            options: [
+              "It shows proof of real work and how you checked it",
+              "Employers never read CVs",
+              "Portfolios are required by law",
+              "It makes the CV longer",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says employers want proof, not claims.",
+          },
+          {
+            prompt: "Which of these should each portfolio piece show?",
+            options: [
+              "Only the final result with no explanation",
+              "The task, your prompt, the AI draft, your edits and checks, and the final result",
+              "Your passwords and phone number",
+              "A client's confidential files without permission",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists these five parts for each piece.",
+          },
+          {
+            prompt: "Which CV line describes AI skills best, according to the lesson?",
+            options: [
+              "\"AI expert\"",
+              "\"I know all AI tools\"",
+              "\"Use AI assistants to draft, summarise and build spreadsheet formulas, with fact checking and editing\"",
+              "\"AI does my work for me\"",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says specific, honest descriptions say much more.",
+          },
+          {
+            prompt: "What does walking through one portfolio piece in an interview show an employer?",
+            options: [
+              "That you memorised the advert",
+              "That you own an expensive phone",
+              "That AI is always right",
+              "Your judgement, including what the AI got wrong and how you fixed it",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says the story of catching and fixing mistakes shows judgement.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
