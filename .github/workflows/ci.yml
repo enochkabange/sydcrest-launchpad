@@ -82,7 +82,8 @@ jobs:
       - name: Point the build at the local stack
         run: |
           set -euo pipefail
-          key=$(supabase status -o json | jq -r .PUBLISHABLE_KEY)
+          status=$(supabase status -o json)
+          key=$(jq -r .PUBLISHABLE_KEY <<<"$status")
           echo "NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321" >> "$GITHUB_ENV"
           echo "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=$key" >> "$GITHUB_ENV"
           # For e2e specs only (creating and promoting test users). Not
