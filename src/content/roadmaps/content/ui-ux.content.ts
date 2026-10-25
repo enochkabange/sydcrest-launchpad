@@ -711,6 +711,987 @@ Abdul-Rahman interviews eight shop owners in Tamale about restocking. He groups 
         pass_threshold: 75,
       },
     },
+    structure: {
+      explanation_md: `## Why structure comes before colour
+
+A common beginner mistake is to open a design tool and start choosing colours and fonts on day one. Experienced designers do the opposite. They first decide what the product contains, how it is organised and which steps people take to finish a task. Only then do they make it look good.
+
+The reason is cost. Moving a box on a paper sketch takes seconds. Changing the structure of a finished, coloured design takes hours. Changing it after developers have built it takes days. Employers notice designers who think about structure first, because those designers save the team time and money.
+
+## What this section covers
+
+* **Information architecture.** How to organise content and features into groups and menus, and how to name them in words your users actually use.
+* **User flows.** How to map every step a person takes to complete a task, including mistakes, errors and the moment the network drops.
+* **Wireframes and sketches.** How to draw simple screens, on paper first, then as plain grey layouts, so you can test ideas cheaply.
+
+These three build on each other. The information architecture decides what exists and where it lives. The flows decide how people move through it. The wireframes show what each step looks like on a screen.
+
+## Structure in the Ghanaian setting
+
+Good structure matters even more when people use small, older phones, pay for data, or are less confident readers. Every extra screen costs time and data. Every confusing label risks someone calling customer care or giving up. A short, clear structure is a kindness to users and a saving for the business.
+
+It also matters for channels that are not apps at all. A USSD menu, an SMS conversation or an interactive voice menu has structure too: options, order and wording. The same thinking applies, and in those channels you have even less room for mistakes because the screen is tiny or there is no screen.
+
+## A small example
+
+Mariama is helping a church in Tamale design a simple website for members. The pastor's first list of pages is long: About, History, Vision, Mission, Leadership, Departments, Youth, Women's Fellowship, Men's Fellowship, Programmes, Calendar, Donations, Tithes, Welfare, Contact, Gallery.
+
+Before designing any page, Mariama asks five members what they come to the website for. Almost all say three things: service times, upcoming events and how to give. So she groups the content into four main sections: **Services and events**, **Give**, **Groups** and **About us**, with the rest placed inside them. Then she sketches the flow for "give towards the building fund by mobile money" in five boxes on paper. Only after members can follow that flow does she start on colours.
+
+## What you will be able to do
+
+By the end of this section you will be able to organise a product's content, draw the steps for its key tasks and sketch screens that you can test with real people in an afternoon, using only paper, a pen and, if you like, a free tool.`,
+      practice_task_md: `**Goal:** separate structure from looks in a real app.
+
+**Steps**
+1. Choose an app or USSD service you use often, for example a mobile money menu or a bank app.
+2. Without worrying about colours, write down its main sections or menu options in a list.
+3. Pick one task, such as buying airtime, and write each step as a numbered line.
+4. Mark any step that felt unnecessary or any label you did not understand at first.
+
+**Done looks like:** a list of the main sections, a numbered list of steps for one task, and at least two marked problems with one sentence each on why they confuse people.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why do experienced designers decide structure before colours?",
+            options: [
+              "Colours are not important",
+              "Changing structure is cheap early and expensive later",
+              "Design tools do not support colour at first",
+              "Clients never ask about colour",
+            ],
+            answer_index: 1,
+            explanation: "Moving boxes on a sketch is quick; changing built structure is slow and costly.",
+          },
+          {
+            prompt: "What does information architecture decide?",
+            options: [
+              "What content exists and how it is grouped and named",
+              "Which font to use",
+              "How fast the server responds",
+              "The price of the product",
+            ],
+            answer_index: 0,
+            explanation: "Information architecture organises and labels content and features.",
+          },
+          {
+            prompt: "Does structure matter for a USSD menu?",
+            options: [
+              "No, only apps have structure",
+              "Only if it has pictures",
+              "Yes, options, order and wording are structure, with even less room for mistakes",
+              "Only on smartphones",
+            ],
+            answer_index: 2,
+            explanation: "USSD, SMS and voice menus all have structure, and small screens make it more critical.",
+          },
+          {
+            prompt: "How did Mariama decide the church website's main sections?",
+            options: [
+              "She used the pastor's full list as it was",
+              "She copied another church's website",
+              "She asked members what they come for and grouped content around that",
+              "She picked the sections with the nicest photos",
+            ],
+            answer_index: 2,
+            explanation: "Members' real needs guided the grouping into four main sections.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "information-architecture": {
+      explanation_md: `## Why this matters
+
+If people cannot find something, it might as well not exist. A mobile money service may offer bill payment, but if it is hidden under a menu called "Financial services" that nobody opens, customers will think it is missing and go elsewhere. Information architecture, often shortened to IA, is the skill of organising and labelling content so people find it without thinking hard. Several design adverts list it directly.
+
+## The main ideas
+
+**Group by how users think, not how the company is organised.** A bank may have separate teams for cards, loans and savings, but a customer thinks "I want to send money" or "I want to see my balance". Organise around the customer's tasks.
+
+**Use the user's words.** Companies love internal terms like "Merchant disbursement" or "Value added services". Users say "pay a shop" or "buy data". Your research notes and interview quotes are full of the right words, so use them. If people mix English and a local language, notice which words they keep in English, such as "MoMo", "credit" or "data".
+
+**Keep the top level short.** On a phone, show the few most common tasks first. Put rarer things one level down. A long list of equal options makes everyone read everything.
+
+**Be consistent.** If you call it "Send money" on one screen, do not call it "Transfer" on the next.
+
+## Card sorting: a simple IA method
+
+Card sorting lets users show you how they group things.
+
+1. Write each feature or piece of content on a small card, such as "Buy airtime", "Pay ECG bill", "Check balance", "Change PIN".
+2. Ask a participant to sort the cards into groups that make sense to them.
+3. Ask them to name each group in their own words.
+4. Repeat with five or more people and look for common patterns.
+
+You can do this with paper cards at a market stall or with a free online whiteboard. Paper often works better in person, because it needs no data and anyone can join in.
+
+## Tree testing: checking your structure
+
+Once you have a structure, test it without any visual design. Write the menu as a simple numbered list, then give people a task: "Where would you go to pay for your child's school fees?" Watch which path they choose. If many people go to the wrong place, rename or regroup.
+
+## A small example
+
+Hawa is organising a farm advisory service for an NGO in the Upper East Region. The original menu was: 1. Agronomy, 2. Market linkages, 3. Inputs, 4. Finance. Farmers in her card sort grouped things differently and used different words. The new menu became: 1. Weather and planting, 2. Pests and diseases, 3. Prices at the market, 4. Buy seeds and fertiliser, 5. Loans and savings. In her tree test, more farmers found the right option on their first try, and nobody needed to ask what "agronomy" meant.`,
+      practice_task_md: `**Goal:** run a paper card sort and improve a menu.
+
+**Steps**
+1. Choose a service, such as a school app for parents or a provisions shop's ordering service.
+2. Write twelve to fifteen features or content items on small pieces of paper.
+3. Ask three people to sort them into groups and name each group. Write down their names exactly.
+4. Design a new top level menu of no more than five items using their words.
+5. Test it: give two other people a task and see if they choose the right menu item.
+
+**Done looks like:** photos of the three card sorts, your new menu, and notes from the two quick tests.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How should you group features in a banking app?",
+            options: [
+              "By the bank's internal departments",
+              "By customer tasks such as sending money or checking a balance",
+              "Alphabetically, always",
+              "By which team built them",
+            ],
+            answer_index: 1,
+            explanation: "Group around how users think and what they want to do.",
+          },
+          {
+            prompt: "Which label is likely to work best for most users?",
+            options: ["Value added services", "Merchant disbursement", "Buy data", "Ancillary products"],
+            answer_index: 2,
+            explanation: "It uses the words users actually say.",
+          },
+          {
+            prompt: "What happens in a card sort?",
+            options: [
+              "Users sort cards of features into groups and name them",
+              "Designers sort users by age",
+              "Developers test the code",
+              "Users rate colours from one to five",
+            ],
+            answer_index: 0,
+            explanation: "Card sorting shows how users group and name content.",
+          },
+          {
+            prompt: "What does a tree test check?",
+            options: [
+              "Whether the app loads quickly",
+              "Whether people can find things in your structure, without any visual design",
+              "Whether the colours look good",
+              "Whether farmers own phones",
+            ],
+            answer_index: 1,
+            explanation: "A tree test checks the menu structure on its own, as a plain list.",
+          },
+          {
+            prompt: "Why did Hawa change the menu item Agronomy?",
+            options: [
+              "Farmers did not use or understand that word",
+              "It was too short",
+              "The NGO asked for longer words",
+              "It was spelled wrongly",
+            ],
+            answer_index: 0,
+            explanation: "Farmers used different words, so the new labels matched their language.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "user-flows": {
+      explanation_md: `## Why flows matter
+
+A single screen can look perfect and still be part of a broken journey. Users do not experience screens one by one; they experience a task from start to finish. User flows show that whole journey, and they are one of the most commonly requested skills in junior design adverts.
+
+## What a user flow is
+
+A user flow is a diagram of the steps a person takes to complete one task. It shows:
+
+* **Where they start**, for example opening the app or dialling a USSD code
+* **Each screen or step** along the way
+* **Decisions**, such as "Is the PIN correct?"
+* **Where it ends**: success, or a clear way out
+
+Use simple shapes. Rectangles for screens or steps, diamonds for decisions, arrows for movement. You can draw it on paper or in a free tool such as Excalidraw or FigJam.
+
+## Do not forget the unhappy paths
+
+The "happy path" is when everything goes right. Real life is different, especially in places where networks drop and phones are shared. A good flow also covers:
+
+* wrong PIN or wrong number entered
+* not enough balance
+* the network drops halfway
+* the session times out on USSD
+* the user presses back or changes their mind
+* the payment is pending and nobody knows if it worked
+
+These moments cause the most fear and the most calls to customer care. Many problems hide here, not on the happy path.
+
+## Count the steps
+
+Once a flow is drawn, count the steps. Ask of each step: is it needed? Can two steps become one? Can the system remember something so the user does not retype it? Every step you remove saves time, data and mistakes.
+
+## A small example
+
+Fuseini maps the flow for paying an electricity bill by mobile money:
+
+1. Dial the short code
+2. Choose Pay bill
+3. Choose Electricity
+4. Enter meter number
+5. Confirm name on the account
+6. Enter amount
+7. Enter PIN
+8. See success message and receive SMS
+
+Then he adds unhappy paths. At step 4, a wrong meter number shows "Account not found" with no hint, and users start again from the beginning. At step 7, if the network drops, users do not know whether they paid, so some pay twice.
+
+His improvements: let users choose from recently used meter numbers, show the account name clearly before payment so mistakes are caught, and after a dropped session send an SMS that says clearly whether the payment went through. None of these needed new screens; they came from seeing the whole journey.
+
+## Flows for different channels
+
+The same task can have a different flow on a smartphone app, a USSD menu and a phone call to an agent. Draw each channel your users really use, since your research may show that many of them never open the app.`,
+      practice_task_md: `**Goal:** draw a complete flow, including what goes wrong.
+
+**Steps**
+1. Pick a real task, such as buying a data bundle or registering for an exam online.
+2. Do the task yourself (or watch someone) and write down every step.
+3. Draw the flow on paper with rectangles, diamonds and arrows.
+4. Add at least three unhappy paths: a mistake, a network drop and a change of mind.
+5. Mark one step you would remove or merge, and explain why.
+
+**Done looks like:** one flow diagram with happy and unhappy paths and a short note suggesting at least one improvement.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does a diamond usually show in a user flow?",
+            options: ["A screen", "A decision, such as whether the PIN is correct", "The end of the flow", "A colour choice"],
+            answer_index: 1,
+            explanation: "Diamonds show decisions; rectangles show screens or steps.",
+          },
+          {
+            prompt: "Which is an unhappy path?",
+            options: [
+              "The user pays successfully",
+              "The user opens the app",
+              "The network drops during payment",
+              "The user sees the home screen",
+            ],
+            answer_index: 2,
+            explanation: "Unhappy paths are where something goes wrong, like a network drop.",
+          },
+          {
+            prompt: "Why should designers count the steps in a flow?",
+            options: [
+              "To make the flow longer",
+              "To find steps that can be removed or merged, saving time and mistakes",
+              "To decide the price",
+              "Because developers are paid per step",
+            ],
+            answer_index: 1,
+            explanation: "Fewer steps mean less time, less data and fewer mistakes.",
+          },
+          {
+            prompt: "What problem did Fuseini find when the network dropped at the PIN step?",
+            options: [
+              "Users could not see the colours",
+              "Users did not know whether they had paid, so some paid twice",
+              "Users forgot the short code",
+              "Users chose the wrong bill type",
+            ],
+            answer_index: 1,
+            explanation: "Without a clear result, users were unsure and sometimes paid again.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    wireframes: {
+      explanation_md: `## Why wireframes matter
+
+Wireframes are simple drawings of screens that show layout and content without colour or decoration. They let you and your team agree on what goes on each screen before anyone spends time on visual polish. Almost every junior design advert asks for wireframing, and your sketches are good material for a case study because they show your thinking.
+
+## Start on paper
+
+Paper is fast, free and needs no data or laptop. You can draw ten versions of a screen in the time it takes to draw one carefully on a computer.
+
+A useful method is the quick sketch round:
+
+1. Fold an A4 sheet into eight boxes.
+2. Set a timer for eight minutes.
+3. Draw a different idea for the same screen in each box, about one minute each.
+4. Pick the strongest one or two, and combine the best parts.
+
+Draw phone shaped boxes, use rough lines for text, boxes with a cross for images and clear rectangles for buttons. Write real labels on buttons, such as "Send money", not "Button".
+
+## Low fidelity and high fidelity
+
+* **Low fidelity** wireframes are rough: paper or plain grey boxes. They are for exploring and testing ideas.
+* **Mid fidelity** wireframes are neat grey layouts in a tool, with real text and spacing but still no colour.
+* **High fidelity** designs look like the finished product, with colour, type and images. You will learn these in the interface design section.
+
+Stay low fidelity for as long as you are still deciding structure. People give more honest feedback on rough sketches, because they do not worry about hurting your feelings.
+
+## What to show in a wireframe
+
+* the most important content and action, placed first
+* real or realistic text, including long names, such as "Abdul-Rahman Iddrisu Mahama", to check they fit
+* the states of a screen: empty (no data yet), loading, error and success
+* where the thumb reaches on a phone, keeping main actions near the bottom or middle
+
+## Testing paper sketches
+
+Paper sketches can be tested in a market or a classroom. Show the first sketch, ask the person "What would you tap to pay for your data?" and when they point, swap to the next sketch. This is called paper prototyping. It works well in places where showing a laptop would draw a crowd or feel intimidating.
+
+## A small example
+
+Amina is designing a stock screen for a provisions shop in Wa. Her first sketch shows a long list of all items. When she tests it with the owner, he scrolls past everything looking for what is about to run out. Her second sketch puts a "Running low" box at the top with three items, then the full list below. The owner points to the box straight away. One minute of drawing saved a week of building the wrong screen.
+
+## Moving to a tool
+
+When the structure is stable, recreate your best sketches as grey wireframes in a free browser tool such as Figma or Penpot. Keep them simple and use them to test flows before adding visual design.`,
+      practice_task_md: `**Goal:** sketch, test and improve one screen.
+
+**Steps**
+1. Choose one screen from your earlier flow, such as "confirm payment".
+2. Fold a sheet into eight boxes and sketch eight different versions in eight minutes.
+3. Choose the best and redraw it neatly, with real labels and an error state.
+4. Show it to two people and ask them to point to what they would tap to complete the task.
+5. Draw an improved version based on what you saw.
+
+**Done looks like:** photos of your eight sketches, your neat version, notes from two tests and your improved sketch.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does a wireframe show?",
+            options: [
+              "Final colours and photos",
+              "Layout and content without colour or decoration",
+              "The app's source code",
+              "The marketing plan",
+            ],
+            answer_index: 1,
+            explanation: "Wireframes focus on layout and content, not visual polish.",
+          },
+          {
+            prompt: "Why do people often give more honest feedback on rough sketches?",
+            options: [
+              "Sketches are harder to understand",
+              "They do not worry about hurting the designer's feelings",
+              "Sketches are always correct",
+              "They cannot see rough sketches clearly",
+            ],
+            answer_index: 1,
+            explanation: "Rough work feels unfinished, so people feel free to criticise it.",
+          },
+          {
+            prompt: "Which of these should a wireframe include?",
+            options: [
+              "Only the success state",
+              "Fake text in Latin",
+              "Empty, loading, error and success states",
+              "Final brand colours",
+            ],
+            answer_index: 2,
+            explanation: "Showing every state avoids surprises when the product is built.",
+          },
+          {
+            prompt: "What did Amina change after testing the stock screen?",
+            options: [
+              "She added a Running low box at the top",
+              "She made the list longer",
+              "She removed all items",
+              "She changed the colours",
+            ],
+            answer_index: 0,
+            explanation: "The owner looked for low stock, so she put it first.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "interface-design": {
+      explanation_md: `## Why interface design matters
+
+Once the structure works, people still need screens that are clear, comfortable and trustworthy. Interface design is where your wireframes become polished, consistent screens that developers can build. It is the part of the job most visible in a portfolio, and adverts for UI designer and product designer roles always ask for it.
+
+A good interface is not about decoration. It helps people see what matters, understand what to do next and trust that their money, data or time is safe. In fintech especially, a clean and consistent interface signals trust.
+
+## What this section covers
+
+* **Design tool basics.** How to use a browser based design tool with a free plan, such as Figma or Penpot: frames, layers, auto layout, components and simple prototypes.
+* **Typography, colour and layout.** How to create clear hierarchy with type sizes, spacing, alignment and colour, with enough contrast to read outdoors in strong sun.
+* **Mobile and responsive layouts.** Platform conventions for Android and iOS, touch targets for thumbs, one handed use, and how a layout adapts from a small phone to a laptop.
+* **Components and design systems.** Reusable buttons, inputs and cards that keep a product consistent and make developers' work easier.
+
+## Principles that run through all of it
+
+* **Hierarchy.** The most important thing on the screen should be the most noticeable. If everything is bold, nothing stands out.
+* **Consistency.** The same action should look and behave the same everywhere. This helps users learn quickly.
+* **Feedback.** Every tap should get a response, such as a button changing, a spinner or a message.
+* **Forgiveness.** Make mistakes easy to undo, and confirm before anything costly, such as sending money.
+* **Restraint.** Fewer colours, fewer fonts and fewer elements usually make a clearer screen.
+
+## Design for the phone in the hand
+
+Many users in Ghana use mid range or older Android phones, often with small screens, cracked glass or low brightness to save battery. They may be outdoors at a market or on a moving trotro. Test your designs on a real, modest phone in daylight, not only on a big laptop screen.
+
+## A small example
+
+Wumpini turns her grey wireframe of a savings screen into a finished design. At first she uses four colours, three fonts and a large photo at the top. On her own phone outside, the photo pushes the balance below the fold and the light grey text disappears in the sun. She removes the photo, uses one font in three sizes, one strong brand colour for the main button and dark text on a light background. The balance is now the first thing anyone sees, the screen loads faster and it reads well outdoors.
+
+## How to approach this section
+
+Learn the tool alongside the principles, not instead of them. A designer who knows every tool shortcut but cannot explain hierarchy is less useful than one who can sketch a clear screen on paper. Practise both, and keep testing on real phones.`,
+      practice_task_md: `**Goal:** critique a real interface using the five principles.
+
+**Steps**
+1. Take a screenshot of one screen from an app you use, such as a mobile money or bank app home screen.
+2. Write one line for each principle: hierarchy, consistency, feedback, forgiveness and restraint. Is it done well or badly here?
+3. Open the screenshot on your phone outdoors in daylight and note what becomes hard to read.
+4. Sketch one improvement on paper.
+
+**Done looks like:** your screenshot with five notes, an outdoor reading note and one improvement sketch.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does hierarchy mean in interface design?",
+            options: [
+              "The most important thing on the screen is the most noticeable",
+              "Every element is bold",
+              "The company's management structure",
+              "The order in which screens were designed",
+            ],
+            answer_index: 0,
+            explanation: "Hierarchy guides the eye to what matters most.",
+          },
+          {
+            prompt: "Which principle is about confirming before costly actions and making mistakes easy to undo?",
+            options: ["Restraint", "Hierarchy", "Forgiveness", "Consistency"],
+            answer_index: 2,
+            explanation: "Forgiveness protects users from costly mistakes.",
+          },
+          {
+            prompt: "Why should you test designs on a modest phone outdoors?",
+            options: [
+              "Because laptops are not allowed",
+              "Because many users have older phones and use them in strong sun",
+              "Because it is faster to design on a phone",
+              "Because colours look the same everywhere",
+            ],
+            answer_index: 1,
+            explanation: "Real conditions reveal problems like low contrast and small text.",
+          },
+          {
+            prompt: "What problem did Wumpini notice when she checked her design outside?",
+            options: [
+              "The button was too large",
+              "Light grey text disappeared in the sun and the photo pushed the balance down",
+              "The app would not open",
+              "The font was too dark",
+            ],
+            answer_index: 1,
+            explanation: "Outdoor testing showed the photo and low contrast text hurt clarity.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "design-tools": {
+      explanation_md: `## Why a design tool matters
+
+Nearly every UI/UX and product design advert, in Ghana and remote, names a design tool, and Figma is the one mentioned most often. Employers expect you to build screens, components and simple prototypes in a tool and share them with developers. The good news: you can learn the core skills for free in a web browser on a modest laptop.
+
+## Choosing a free tool
+
+Two examples that run in the browser and have free plans:
+
+* **Figma** has a free Starter plan with limits on some features, and it is widely used by employers.
+* **Penpot** is open source and free, and also runs in the browser.
+
+The ideas below work in both. Learn one well; the skills transfer. If you only have a phone, you can still view and test prototypes on it, but building screens is much easier on a laptop, even an older one. Some learners use a laptop at a community hub, library or school lab for a few hours a week.
+
+To save data, close other tabs, avoid uploading large photos, and work on one file at a time.
+
+## The core building blocks
+
+**Frames.** A frame is a container, usually the size of a phone screen. Start with a common Android size such as 360 by 800. Everything you design sits inside frames.
+
+**Layers and groups.** Each text, shape and image is a layer. Name your layers clearly ("Pay button", not "Rectangle 12"). It helps you and the developers.
+
+**Auto layout.** Auto layout (called flex layout in Penpot) makes elements arrange themselves in a row or column with set spacing. If a button's label gets longer, the button grows. If you add an item to a list, everything moves down. This is how real apps behave, and adverts often mention it.
+
+**Components.** A component is a reusable master element, such as a button. You place copies, called instances, across your screens. Change the master and every copy updates. Variants let one component have versions, such as primary and secondary, or normal and disabled.
+
+**Styles and variables.** Save your colours, text sizes and spacing as named styles so you reuse them consistently.
+
+**Prototyping.** Link frames together so tapping a button moves to the next screen. You can then open the prototype on a phone to test it.
+
+## A small example
+
+Issahaku builds a "Send money" flow in Figma. He makes one frame per step, builds a button component with primary and disabled variants, and uses auto layout for the list of recent contacts. When his mentor asks him to rename "Continue" to "Next", he changes the master component once and all six screens update. He then links the frames into a prototype and tests it on his phone with two friends.
+
+## Good habits from day one
+
+* Keep pages tidy: one page for wireframes, one for final screens, one for components.
+* Use real Ghanaian content, such as names, cedi amounts and phone number formats, to see how text fits.
+* Learn keyboard shortcuts slowly, a few at a time.
+* Use the official help centre and free tutorials from the tool's makers rather than paid courses.`,
+      practice_task_md: `**Goal:** build a small reusable screen in a free browser design tool.
+
+**Steps**
+1. Create a free account in a browser design tool such as Figma or Penpot.
+2. Make a phone sized frame and build a "Buy data" screen: a title, three bundle options and a button.
+3. Turn the button into a component with two variants: normal and disabled.
+4. Use auto layout (or flex layout) for the list of bundles so it adjusts when you add a fourth.
+5. Make a second frame for "Confirm purchase" and link them as a prototype. Open it on your phone.
+
+**Done looks like:** two linked frames, a button component with two variants and a list that adjusts automatically. Share the view link with a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What happens when you change a master component?",
+            options: [
+              "Nothing happens to the copies",
+              "Only the first copy changes",
+              "The file is deleted",
+              "Every instance of it updates",
+            ],
+            answer_index: 3,
+            explanation: "Instances follow their master component, so changes spread everywhere.",
+          },
+          {
+            prompt: "What does auto layout do?",
+            options: [
+              "Arranges elements in a row or column with set spacing and adjusts when content changes",
+              "Chooses colours automatically",
+              "Writes the app's code",
+              "Translates text into Dagbani",
+            ],
+            answer_index: 0,
+            explanation: "Auto layout makes designs resize and reflow like real apps.",
+          },
+          {
+            prompt: "Which of these is a sensible way to save data while designing?",
+            options: [
+              "Upload many large photos",
+              "Keep twenty tabs open",
+              "Avoid large images and work on one file at a time",
+              "Download every free template",
+            ],
+            answer_index: 2,
+            explanation: "Fewer heavy files and tabs means less data used.",
+          },
+          {
+            prompt: "Why should you name layers clearly, such as Pay button?",
+            options: [
+              "Tools refuse unnamed layers",
+              "It helps you and developers understand the file",
+              "It makes the file smaller",
+              "It changes the colour of the layer",
+            ],
+            answer_index: 1,
+            explanation: "Clear names make files easier to work with and hand over.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "visual-design": {
+      explanation_md: `## Why visual design matters
+
+Visual design is how a screen guides the eye, builds trust and stays readable. Adverts ask for typography, colour, layout and visual hierarchy because a clear screen helps customers finish tasks and makes a business look reliable. In Ghana it also has a practical side: screens must work on modest phones, in bright sun, for people who may not read quickly.
+
+## Typography
+
+* **Pick one font family.** A clear, free font such as Roboto, Inter or Noto Sans works well. The Noto family also covers many African language characters, such as the letters used in Dagbani and Ewe.
+* **Use a small type scale.** Three or four sizes are enough: a large title, a medium heading, body text and small captions. On phones, body text of about 16 pixels is a common comfortable starting point.
+* **Use weight for emphasis.** Regular for body, bold for key numbers and headings. Avoid all capitals for long text; it is harder to read.
+* **Keep lines short and spacing generous.** Line height of around one and a half times the text size helps reading.
+
+## Colour
+
+* **Start with neutrals.** Dark text on a light background, or the reverse, does most of the work.
+* **One main brand colour** for the primary action. If every button is bright, nothing stands out.
+* **Meaning colours** for success, warning and error. Never rely on colour alone; add an icon or words, because some people cannot tell red from green.
+* **Contrast.** The WCAG guidelines ask for a contrast ratio of at least 4.5 to 1 for normal text and 3 to 1 for large text. Free contrast checkers online will measure it for you. Strong sun makes weak contrast even worse, so aim higher where you can.
+
+## Layout and spacing
+
+* **Use a spacing scale.** Many teams use multiples of 4 or 8 pixels (8, 16, 24, 32) for gaps and padding, so screens feel orderly.
+* **Align things.** Text and elements that share a left edge look calm and are easier to scan.
+* **Group related items** with closer spacing and separate unrelated ones with more space. This is the idea of proximity.
+* **Give the main action room.** White space is not wasted; it helps people focus.
+
+## Hierarchy in practice
+
+Ask: what should someone see first, second and third? On a mobile money home screen the answer might be balance first, main actions second, recent transactions third. Use size, weight, colour and position to match that order.
+
+## A small example
+
+Amina designs a receipt screen for a chop bar's ordering app in Tamale. Version one has the restaurant logo huge at the top, the total in small grey text and four colours. Customers in her test struggle to find the total. Version two puts "Paid: GH₵ 45.00" in large bold text near the top with a green tick and the word "Paid", the order list below in regular text, and one brand colour for the "Order again" button. Now people find the total at a glance, and colour blind users still see "Paid".`,
+      practice_task_md: `**Goal:** restyle a screen using a type scale, spacing scale and accessible colours.
+
+**Steps**
+1. Take one of your grey wireframes, such as a receipt or balance screen.
+2. Choose one free font and define four text sizes. Write them down.
+3. Choose one brand colour, one dark text colour, one light background and colours for success and error.
+4. Check each text and background pair with a free online contrast checker. Fix any that fail 4.5 to 1.
+5. Apply an 8 pixel spacing scale and align everything to a common left edge.
+6. View it on your phone outdoors and adjust anything hard to read.
+
+**Done looks like:** a before and after of the same screen, with your type scale, colours and contrast results noted beside it.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What minimum contrast ratio does WCAG ask for normal text?",
+            options: ["2 to 1", "3 to 1", "10 to 1", "4.5 to 1"],
+            answer_index: 3,
+            explanation: "WCAG asks for at least 4.5 to 1 for normal text and 3 to 1 for large text.",
+          },
+          {
+            prompt: "Why should you not rely on colour alone to show success or error?",
+            options: [
+              "Some people cannot tell certain colours apart, so words or icons are needed too",
+              "Colours cost more data",
+              "Phones cannot show green",
+              "WCAG bans the colour red",
+            ],
+            answer_index: 0,
+            explanation: "Adding words or icons makes meaning clear for colour blind users.",
+          },
+          {
+            prompt: "What does proximity mean in layout?",
+            options: [
+              "Putting everything as far apart as possible",
+              "Grouping related items closer and separating unrelated ones",
+              "Making all text bold",
+              "Using only one colour",
+            ],
+            answer_index: 1,
+            explanation: "Spacing shows which items belong together.",
+          },
+          {
+            prompt: "In Amina's improved receipt, what helped colour blind users?",
+            options: [
+              "A bigger logo",
+              "Four extra colours",
+              "The word Paid and a tick next to the green colour",
+              "Smaller text",
+            ],
+            answer_index: 2,
+            explanation: "Words and icons carry the meaning even if the colour is not seen.",
+          },
+          {
+            prompt: "Which spacing approach do many teams use?",
+            options: [
+              "Random gaps chosen by eye each time",
+              "Multiples of 4 or 8 pixels",
+              "No spacing at all",
+              "A different gap for every screen",
+            ],
+            answer_index: 1,
+            explanation: "A spacing scale keeps screens orderly and consistent.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "mobile-patterns": {
+      explanation_md: `## Why this matters
+
+In Ghana, the phone is the main way most people go online. Many design adverts ask for mobile and responsive design for web and apps. Designing well for phones means following familiar patterns so people do not have to learn something new, and making layouts that adapt to every screen size.
+
+## Follow platform conventions
+
+Android and iOS each publish free design guidelines: Material Design for Android and the Human Interface Guidelines for Apple. Most phones in Ghana run Android, but check your own research. Conventions to know:
+
+* **Bottom navigation** with three to five main destinations is common and easy to reach with a thumb.
+* **The back action** is expected to work. On Android many people use the system back gesture or button, so never trap them.
+* **A clear primary button** for the main action on each screen.
+* **Standard icons** for common actions, such as a magnifying glass for search, always with a text label when there is room.
+
+Using familiar patterns is not lazy. It means users can spend their attention on their task, not on learning your app.
+
+## Touch targets and thumbs
+
+Fingers are less precise than a mouse. Material Design recommends touch targets of at least 48 by 48 density independent pixels, and Apple suggests at least 44 by 44 points. WCAG 2.2 sets a minimum of 24 by 24 CSS pixels at its AA level. Leave space between targets so people do not tap the wrong one.
+
+Many people use their phone with one hand while carrying goods, holding a child or serving customers. The bottom and middle of the screen are easiest to reach. Put the main actions there and keep rare or risky actions, such as "Delete account", away from the thumb's natural path.
+
+## Forms on phones
+
+* Use the right keyboard: number pad for amounts and phone numbers.
+* Keep forms short and ask only for what you need.
+* Put labels above fields, not only as placeholder text that disappears.
+* Show errors next to the field, in plain words, such as "Phone number should have 10 digits".
+
+## Responsive layouts
+
+A responsive layout adapts to the screen. Design **mobile first**: start with the smallest screen, then decide how the layout grows. On a phone, cards stack in one column. On a tablet they may sit in two columns. On a laptop, navigation may move from the bottom to the side. The points where the layout changes are called breakpoints. In your design tool, make frames for a small phone, a large phone and a laptop to check each one.
+
+## A small example
+
+Hawa designs a market price checker for an NGO. Her first version puts the "Check price" button at the top right, small, and the price list in three columns. Testing with traders in Bolgatanga, she sees people struggle to tap the button with their thumb while holding produce, and the columns are cramped on small screens. She moves a full width button to the bottom, makes it 48 pixels tall, and stacks prices in one column on phones and two on tablets.`,
+      practice_task_md: `**Goal:** make one screen work for thumbs and for three screen sizes.
+
+**Steps**
+1. Choose a screen you have designed, such as "Buy data" or a price list.
+2. Check every button and link is at least 48 by 48 pixels with space between them.
+3. Move the main action to where a thumb reaches easily in one handed use.
+4. Use the right keyboard type for any input and put labels above fields.
+5. Create three versions: a small phone (360 wide), a large phone and a laptop. Decide what changes at each size.
+
+**Done looks like:** three frames of the same screen showing how the layout adapts, with notes on touch targets and thumb reach.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What minimum touch target size does Material Design recommend?",
+            options: [
+              "48 by 48 density independent pixels",
+              "10 by 10 pixels",
+              "100 by 100 pixels",
+              "There is no recommendation",
+            ],
+            answer_index: 0,
+            explanation: "Material Design recommends at least 48 by 48 dp for touch targets.",
+          },
+          {
+            prompt: "Where should the main action usually go for one handed use?",
+            options: [
+              "The top right corner",
+              "Hidden in a menu",
+              "Near the bottom or middle where the thumb reaches",
+              "Off the screen",
+            ],
+            answer_index: 2,
+            explanation: "The bottom and middle are easiest to reach with a thumb.",
+          },
+          {
+            prompt: "What does designing mobile first mean?",
+            options: [
+              "Only designing for phones and ignoring laptops",
+              "Starting with the smallest screen, then deciding how the layout grows",
+              "Designing on a phone instead of a laptop",
+              "Building the mobile app before research",
+            ],
+            answer_index: 1,
+            explanation: "Mobile first starts small and adapts upward at breakpoints.",
+          },
+          {
+            prompt: "Why put labels above form fields instead of only as placeholder text?",
+            options: [
+              "Placeholder text disappears when people start typing",
+              "Labels use less data",
+              "Placeholders are not allowed on Android",
+              "Labels make the field smaller",
+            ],
+            answer_index: 0,
+            explanation: "Visible labels stay on screen so people remember what the field is for.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "design-systems": {
+      explanation_md: `## Why design systems matter
+
+Most junior UI/UX and product design adverts mention design systems, component libraries or style guides. Companies want designers who keep a product consistent and make developers' work faster. A design system is how teams do that at scale.
+
+## What a design system is
+
+A design system is a shared set of reusable parts and rules for building a product. It usually includes:
+
+* **Foundations**, sometimes called design tokens: colours, type sizes, spacing, corner radius and shadows, each with a name, such as "colour primary" or "space 16".
+* **Components**: buttons, inputs, cards, lists, tabs, alerts and so on, each with its variants and states.
+* **Patterns**: common combinations, such as a login form or an empty state.
+* **Guidelines**: when to use each part, and when not to, with plain explanations.
+
+Large public examples include Material Design from Google and the GOV.UK Design System. Reading them is free and teaches a lot.
+
+## States matter
+
+A component is not finished until all its states are designed. For a button that might be:
+
+* default
+* pressed
+* disabled
+* loading
+
+For a text input: empty, focused, filled, error and disabled. Developers need these to build it properly, and users need them to understand what is happening. Missing states are one of the most common gaps in junior portfolios.
+
+## Why it helps developers
+
+When a designer uses a named token like "space 16" and a developer has the same token in code, there is no guessing. When both sides share a "Button primary" component, a change made once updates everywhere. This saves time, reduces bugs and keeps the product looking right. Many adverts mention working closely with engineers for this reason.
+
+## Start small
+
+You do not need a huge system. For a small project, start with:
+
+1. a colour palette and type scale saved as styles
+2. a spacing scale
+3. five components: button, text input, card, list item and alert
+4. one page explaining when to use each
+
+Grow it as the product grows. Every time you design the same thing twice, consider making it a component.
+
+## A small example
+
+Sumaila is the only designer at a small Tamale startup building a school fees app. Different screens have buttons in three shades of green, four corner shapes and different heights. The developer keeps asking which one is right. Sumaila spends a day building a small library: one green token, one corner radius, a button component with primary, secondary, disabled and loading variants, and an input with error state. He updates all screens to use it. The next new feature takes him half the time to design, and the developer stops asking which green to use.
+
+## Think inclusive from the start
+
+Build accessibility into your components: good contrast, large touch targets, visible focus states and labels on every input. Then every screen built from them inherits those good habits.`,
+      practice_task_md: `**Goal:** build a small design system for one of your projects.
+
+**Steps**
+1. In your free design tool, create a page called "Components".
+2. Save colour styles (primary, text, background, success, error) and four text styles.
+3. Write down a spacing scale, such as 4, 8, 16, 24, 32.
+4. Build five components: button, text input, card, list item and alert, each with its states.
+5. Write one short sentence per component explaining when to use it.
+6. Rebuild one existing screen using only these components.
+
+**Done looks like:** a components page with all states, a short guideline for each, and one screen rebuilt from the system.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What are design tokens?",
+            options: [
+              "Named values for colours, type sizes and spacing shared by design and code",
+              "Payments made to designers",
+              "Passwords for design tools",
+              "Icons for mobile money",
+            ],
+            answer_index: 0,
+            explanation: "Tokens give names to foundation values so design and code match.",
+          },
+          {
+            prompt: "Which list shows states a button might need?",
+            options: [
+              "Red, green and blue",
+              "Default, pressed, disabled and loading",
+              "Small, smaller and smallest",
+              "Monday, Tuesday and Wednesday",
+            ],
+            answer_index: 1,
+            explanation: "Buttons need states that show what is happening.",
+          },
+          {
+            prompt: "How does a design system help developers?",
+            options: [
+              "It removes the need for developers",
+              "It makes apps slower",
+              "Shared names and components remove guessing and keep changes consistent",
+              "It writes all their tests",
+            ],
+            answer_index: 2,
+            explanation: "Shared tokens and components save time and reduce mistakes.",
+          },
+          {
+            prompt: "What was the problem Sumaila fixed?",
+            options: [
+              "The app had no screens",
+              "Buttons appeared in three shades of green, different shapes and heights",
+              "The developer left the company",
+              "The school had no fees",
+            ],
+            answer_index: 1,
+            explanation: "Inconsistent buttons confused the developer and users.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "inclusive-design": {
+      explanation_md: `## Why inclusive design matters in Ghana
+
+A product that only works for young, literate, English speaking people with new smartphones and steady data leaves out a large part of the country. Think of a grandmother in Nalerigu who receives remittances, a farmer near Damongo who reads little English, a student in Wa with a cracked screen and no data until month end, or a trader in Tamale with poor eyesight. They are all customers. Designing for them reaches more people, builds trust and, for many businesses, means more revenue.
+
+Employers building for African markets value this knowledge. Adverts mention accessibility and inclusive design, and companies serving unbanked or rural users need designers who understand real conditions.
+
+## The four themes in this section
+
+* **Accessibility.** Designing for people with low vision, colour blindness, hearing loss, limited hand movement or who use screen readers, following the WCAG guidelines.
+* **Literacy and local languages.** Plain words, clear icons, numbers people recognise, and voice or local language options such as Dagbani, Gurene, Dagaare, Hausa, Twi or Ewe where they help.
+* **Low end phones, USSD and SMS.** Designing for small screens, little storage, older Android versions and phones with no internet at all.
+* **Offline moments and slow data.** Keeping screens light and designing for the moment the network drops halfway through a task.
+
+## A useful mindset: solve for one, extend to many
+
+When you design for someone with a specific difficulty, the solution often helps everyone. Captions on videos help deaf users and also people in a noisy market. Large, clear buttons help people with shaky hands and also people on a moving trotro. A short SMS confirmation helps people on basic phones and also anyone whose app crashed.
+
+## Do not assume, check
+
+Inclusive design depends on research. Do not guess what people can read, which language they prefer or what phone they have. Ask and observe, as you learned in the research section. Also include people who struggle in your tests, not only confident users. If everyone in your test is a university student in Accra, you have tested for a small slice of your users.
+
+## A small example
+
+Mariama is designing a health reminder service for pregnant women in the Upper East Region. Her first idea is a smartphone app with English text. Research shows many women share a basic phone with their husband, some cannot read English well and data is costly. Her final design uses short voice messages in Gurene and Kusaal, plus an SMS with a simple date. Women can call a number to repeat the message. More women can now use it, and the service costs less to run than an app.
+
+## How to use this section
+
+Treat these four topics as part of every project, not an extra at the end. Checking contrast, labels, language, phone types and offline behaviour early is cheap. Fixing them after launch is expensive and leaves people out in the meantime.`,
+      practice_task_md: `**Goal:** check one product against the four inclusive themes.
+
+**Steps**
+1. Choose a service many Ghanaians use, such as a mobile money menu, a bank app or a government website.
+2. For each theme, write one strength and one weakness: accessibility, literacy and language, low end phones, and offline or slow data.
+3. Ask one older relative or neighbour to complete a simple task with it and note where they struggle.
+4. Suggest one change for the biggest weakness.
+
+**Done looks like:** a short table with four themes, a note from your real user test and one suggested improvement.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does solve for one, extend to many mean?",
+            options: [
+              "Design only for one user",
+              "A solution for a specific difficulty often helps everyone",
+              "Build one feature at a time",
+              "Use one colour everywhere",
+            ],
+            answer_index: 1,
+            explanation: "Fixes like captions or large buttons help many people beyond the original group.",
+          },
+          {
+            prompt: "Why should tests include people who struggle, not only confident users?",
+            options: [
+              "Confident users are not allowed in tests",
+              "Testing only confident users covers just a small slice of real users",
+              "People who struggle finish faster",
+              "It makes the test shorter",
+            ],
+            answer_index: 1,
+            explanation: "Including a range of people reveals problems many users face.",
+          },
+          {
+            prompt: "What did Mariama's final health reminder design use?",
+            options: [
+              "A smartphone app in English only",
+              "Voice messages in local languages plus a simple SMS",
+              "A printed newspaper",
+              "Email newsletters",
+            ],
+            answer_index: 1,
+            explanation: "Research showed basic phones, shared use and literacy needs, so voice and SMS fitted better.",
+          },
+          {
+            prompt: "When should inclusive design checks happen?",
+            options: [
+              "Only after launch",
+              "Never, they are optional",
+              "Throughout every project, starting early",
+              "Only if a customer complains",
+            ],
+            answer_index: 2,
+            explanation: "Early checks are cheap; fixing after launch is costly.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
 // END NODES
   },
 };
