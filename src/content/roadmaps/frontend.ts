@@ -13,12 +13,12 @@ export const frontend: RoadmapDraft = {
   nodes: [
     {
       slug: "start-here",
-      title: "Start here: how the web reaches a phone",
+      title: "Start here: your free setup and how the web reaches a phone",
       summary:
-        "Before writing code, understand what happens when someone in Wa opens a website on their phone. This section also sets up the free tools you will use for the whole roadmap.",
+        "Set up a free code editor, a modern browser and a data saving study routine on a modest laptop or phone. Then learn how a web page travels to a phone in Wa and how to track your work with Git.",
       parent: null,
       optional: false,
-      resources: [RES.mdnLearn],
+      resources: [RES.mdnLearn, RES.devtools],
     },
     {
       slug: "how-the-web-works",
@@ -28,15 +28,6 @@ export const frontend: RoadmapDraft = {
       parent: "start-here",
       optional: false,
       resources: [RES.mdnHttp, RES.mdnLearn],
-    },
-    {
-      slug: "setup-on-a-budget",
-      title: "A free setup on a modest laptop",
-      summary:
-        "Install a free code editor and a modern browser, and learn to save data by downloading docs and videos on WiFi. A basic laptop is enough, and you can read lessons on your phone between practice sessions.",
-      parent: "start-here",
-      optional: false,
-      resources: [RES.devtools],
     },
     {
       slug: "git-and-github",
@@ -165,10 +156,19 @@ export const frontend: RoadmapDraft = {
       resources: [RES.devtools],
     },
     {
+      slug: "testing",
+      title: "Testing your code",
+      summary:
+        "Write small automated tests that check your functions and pages still work after every change. Many Accra and remote adverts, even entry level ones, ask for testing habits.",
+      parent: "quality",
+      optional: false,
+      resources: [RES.vitest, RES.playwright],
+    },
+    {
       slug: "frameworks",
       title: "Frameworks and tooling",
       summary:
-        "Many frontend job adverts ask for a framework, and React is a common choice. Learn it only after plain JavaScript feels comfortable.",
+        "Many frontend job adverts ask for a framework, and React with TypeScript is the most common pairing we found. Learn it only after plain JavaScript feels comfortable.",
       parent: null,
       optional: false,
       resources: [],
@@ -186,9 +186,9 @@ export const frontend: RoadmapDraft = {
       slug: "typescript",
       title: "TypeScript basics",
       summary:
-        "Add types to your JavaScript so mistakes show up before users see them. Many teams expect it, so learn enough to read and write typed components.",
+        "Add types to your JavaScript so mistakes show up before users see them. Many Ghanaian and remote teams expect it, so learn enough to read and write typed components.",
       parent: "frameworks",
-      optional: true,
+      optional: false,
       resources: [RES.ts],
     },
     {
@@ -199,6 +199,15 @@ export const frontend: RoadmapDraft = {
       parent: "frameworks",
       optional: true,
       resources: [RES.nextLearn],
+    },
+    {
+      slug: "design-to-code",
+      title: "Turning a design into code",
+      summary:
+        "Read a Figma design, pull out its spacing, colours and type, and build it as reusable components. This is a daily task in agencies and product teams, and many adverts name Figma directly.",
+      parent: "frameworks",
+      optional: false,
+      resources: [RES.figmaHelp, RES.webdevCss],
     },
     {
       slug: "real-products",
