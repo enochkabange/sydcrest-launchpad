@@ -1,6 +1,6 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { startTransition, useActionState, useState } from "react";
 import { Check, X } from "lucide-react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -32,7 +32,8 @@ export function Quiz({
   action: (prev: CompletionState, form: FormData) => Promise<CompletionState>;
 }) {
   const [state, formAction, pending] = useActionState(action, {});
-  // Controlled, so a failed attempt keeps the learner's choices (React resets uncontrolled form fields after an action).
+  // Controlled, and submitted through onSubmit rather than <form action>, so a
+  // failed attempt keeps the learner's choices: React resets a form after its action runs.
   const [choices, setChoices] = useState<Record<string, number>>({});
   const outcome = state.outcome;
 
@@ -50,7 +51,14 @@ export function Quiz({
         </Alert>
       )}
 
-      <form action={formAction} className="flex flex-col gap-5">
+      <form
+        className="flex flex-col gap-5"
+        onSubmit={(event) => {
+          event.preventDefault();
+          const data = new FormData(event.currentTarget);
+          startTransition(() => formAction(data));
+        }}
+      >
         <input type="hidden" name="node_id" value={nodeId} />
         {questions.map((q, qi) => {
           const result = outcome?.results[q.id];
