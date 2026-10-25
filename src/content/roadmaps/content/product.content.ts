@@ -62,30 +62,45 @@ Each lesson has an explanation, a short practice task and a quiz. The tasks buil
         questions: [
           q(
             "Which three things does product work sit between?",
-            ["Users, the business and the builders", "Sales, marketing and finance", "Phones, laptops and servers", "Managers, interns and customers"],
-            0,
+            [
+              "Sales, marketing and finance",
+              "Users, the business and the builders",
+              "Phones, laptops and servers",
+              "Managers, interns and customers",
+            ],
+            1,
             "The lesson describes product work as connecting users, the business and the engineers and designers who build.",
           ),
           q(
             "What does a product person usually focus on?",
             [
-              "Writing most of the code themselves",
               "Making sure the team builds the right thing in a sensible order",
+              "Writing most of the code themselves",
               "Designing every screen alone",
               "Handling the company accounts",
             ],
-            1,
+            0,
             "Product people make sure the right thing is built for the right people, then check it helped.",
           ),
           q(
             "In the example, what did Wumpini learn mattered most to market women saving money?",
-            ["High interest rates", "A modern app design", "Trust and daily habit", "Fast internet"],
-            2,
+            [
+              "High interest rates",
+              "A modern app design",
+              "Fast internet",
+              "Trust and daily habit",
+            ],
+            3,
             "Her conversations showed that trust and the daily susu habit mattered more than interest rates.",
           ),
           q(
             "According to the lesson, which skill do job adverts for product roles ask for more than any tool?",
-            ["Advanced coding", "Graphic design", "Clear communication with stakeholders", "Social media marketing"],
+            [
+              "Advanced coding",
+              "Graphic design",
+              "Clear communication with stakeholders",
+              "Social media marketing",
+            ],
             2,
             "The section notes that adverts ask for communication more than any single tool.",
           ),
@@ -136,30 +151,35 @@ Titles vary a lot between companies. "Product Executive", "Product Officer" or "
         questions: [
           q(
             "Which role mainly studies how a process works today, gathers requirements and often tests systems before go live?",
-            ["Product analyst", "Business analyst", "Graphic designer", "Sales executive"],
+            [
+              "Product analyst",
+              "Business analyst",
+              "Graphic designer",
+              "Sales executive",
+            ],
             1,
             "The lesson describes business analysts as focused on processes, requirements, specifications and testing.",
           ),
           q(
             "What does product operations mainly do?",
             [
+              "Keeps a live product running smoothly, including onboarding, guides and escalations",
               "Sets the company's long term strategy",
               "Writes all the backend code",
-              "Keeps a live product running smoothly, including onboarding, guides and escalations",
               "Designs the company logo",
             ],
-            2,
+            0,
             "Product operations covers onboarding, training, help guides, procedures and escalating issues to engineers.",
           ),
           q(
             "In the farmers' market example, what did Mariama the product analyst discover?",
             [
               "Buyers wanted a delivery feature",
-              "Many farmers registered but never listed produce",
               "Orders moved by phone calls",
               "Farmer leaders needed training",
+              "Many farmers registered but never listed produce",
             ],
-            1,
+            3,
             "Mariama used data to show the drop between registering and listing produce.",
           ),
           q(
@@ -175,8 +195,13 @@ Titles vary a lot between companies. "Product Executive", "Product Officer" or "
           ),
           q(
             "Which skill do all the product roles in the lesson share?",
-            ["Writing clearly and understanding users", "Advanced machine learning", "Video editing", "Accounting certification"],
-            0,
+            [
+              "Advanced machine learning",
+              "Writing clearly and understanding users",
+              "Video editing",
+              "Accounting certification",
+            ],
+            1,
             "Every role needs understanding of users, clear writing, working with engineers and reading basic data.",
           ),
         ],
@@ -227,12 +252,12 @@ The lesson: start from how people live today, then design the smallest change th
           q(
             "Why do many Ghanaian services offer a USSD option as well as an app?",
             [
-              "USSD looks more modern",
               "USSD works on any phone without internet",
+              "USSD looks more modern",
               "USSD has unlimited screen space",
               "USSD is required for card payments",
             ],
-            1,
+            0,
             "USSD works on basic phones without data, so nobody is left out.",
           ),
           q(
@@ -240,32 +265,32 @@ The lesson: start from how people live today, then design the smallest change th
             [
               "Receiving a confirmation SMS",
               "Using a PIN prompt",
-              "No clear confirmation after paying",
               "Paying an agent",
+              "No clear confirmation after paying",
             ],
-            2,
+            3,
             "A product that takes MoMo but gives no clear confirmation makes people nervous.",
           ),
           q(
             "Why can a WhatsApp number plus a spreadsheet be a good first version of a product?",
             [
-              "People already use WhatsApp, and downloading a new app costs data and storage",
               "WhatsApp replaces the need to talk to users",
               "Spreadsheets never make mistakes",
+              "People already use WhatsApp, and downloading a new app costs data and storage",
               "Apps are not allowed in Ghana",
             ],
-            0,
+            2,
             "People already organise on WhatsApp, and new apps are a big ask when data and storage are limited.",
           ),
           q(
             "What did Abdul-Rahman change after talking to traders?",
             [
               "He added more charts",
-              "He removed SMS confirmations",
               "He planned USSD, small daily saving and SMS confirmations",
+              "He removed SMS confirmations",
               "He made the feature card only",
             ],
-            2,
+            1,
             "Traders saved small amounts daily, trusted known people and some used basic phones, so he adjusted the plan.",
           ),
         ],
@@ -321,28 +346,33 @@ You do not need to be an accountant. You need to spot when a feature changes the
           q(
             "What is margin?",
             [
-              "All the money a company has in the bank",
               "What is left from each sale after its direct costs",
+              "All the money a company has in the bank",
               "The number of customers",
               "The price shown on the app",
             ],
-            1,
+            0,
             "Margin is what remains from a sale once the direct costs of that sale are paid.",
           ),
           q(
             "Why do unit economics matter?",
             [
-              "If one order loses money, more orders lose more money",
               "They show how many staff to hire",
               "They decide the app's colour scheme",
               "They only matter for large banks",
+              "If one order loses money, more orders lose more money",
             ],
-            0,
+            3,
             "Unit economics show whether a single customer or transaction makes or loses money.",
           ),
           q(
             "In the worked example, what was the margin on a 200 cedi order?",
-            ["20 cedis", "3 cedis", "17 cedis", "25 cedis"],
+            [
+              "20 cedis",
+              "3 cedis",
+              "17 cedis",
+              "25 cedis",
+            ],
             2,
             "20 cedis commission minus 2 cedis payment fee and 1 cedi SMS leaves 17 cedis.",
           ),
@@ -350,11 +380,11 @@ You do not need to be an accountant. You need to spot when a feature changes the
             "Which pricing advice does the lesson give?",
             [
               "Hide fees until after payment",
-              "Always use one large annual fee",
               "Show fees clearly before payment",
+              "Always use one large annual fee",
               "Ignore mobile money charges",
             ],
-            2,
+            1,
             "Surprise charges break trust, so fees should be clear before people pay.",
           ),
         ],
@@ -414,40 +444,45 @@ Strong communication is a habit you can practise daily, in any job, starting now
           q(
             "Who counts as a stakeholder?",
             [
-              "Only the company's investors",
               "Anyone who cares about or affects the product",
+              "Only the company's investors",
               "Only paying customers",
               "Only the engineering team",
             ],
-            1,
+            0,
             "Stakeholders include managers, engineers, designers, sales, support, partners and users.",
           ),
           q(
             "What should come first in a short update?",
-            ["A long background story", "The most important line", "A list of every meeting", "Your job title"],
-            1,
+            [
+              "A long background story",
+              "A list of every meeting",
+              "Your job title",
+              "The most important line",
+            ],
+            3,
             "Busy people skim, so the most important line goes first.",
           ),
           q(
             "Which is the recommended shape for asking for a decision?",
             [
-              "Problem, options, recommendation and why, decision needed",
               "Facts only, so people decide for themselves",
               "A long report with every detail",
+              "Problem, options, recommendation and why, decision needed",
               "A recommendation with no options",
             ],
-            0,
+            2,
             "The lesson suggests stating the problem, options, your recommendation and what needs deciding.",
           ),
           q(
             "What did Amina ask her manager for?",
             [
               "More field officers",
-              "A new phone for every officer",
               "Approval to pilot a duplicate warning with two officers",
+              "A new phone for every officer",
               "Permission to delete all records",
             ],
-            2,
+            1,
             "Her update asked for one clear decision: approval for a small pilot.",
           ),
         ],
@@ -497,12 +532,12 @@ One afternoon of discovery changed what the team should build first. That is the
           q(
             "What is the main purpose of discovery?",
             [
-              "To build the full product quickly",
               "To learn cheaply whether a problem is real and worth solving before building",
+              "To build the full product quickly",
               "To design the company logo",
               "To hire engineers",
             ],
-            1,
+            0,
             "Discovery is the learning done before building to avoid wasted effort.",
           ),
           q(
@@ -510,32 +545,32 @@ One afternoon of discovery changed what the team should build first. That is the
             [
               "Farmers need an app",
               "We should build a dashboard",
-              "Farmers sell tomatoes at a loss because they cannot reach buyers before the produce spoils",
               "Let us add a map feature",
+              "Farmers sell tomatoes at a loss because they cannot reach buyers before the produce spoils",
             ],
-            2,
+            3,
             "A problem statement describes who struggles and what it costs them, without naming a solution.",
           ),
           q(
             "What attitude does good discovery start from?",
             [
               "Certainty that your first idea is right",
-              "Humility, treating your first idea as a guess",
               "Avoiding talking to users",
+              "Humility, treating your first idea as a guess",
               "Focusing only on competitors",
             ],
-            1,
+            2,
             "Your first idea is a guess, and discovery finds where it is wrong while that is still cheap.",
           ),
           q(
             "What did Napari learn was the real pain for field officers?",
             [
               "They needed maps",
-              "They had no phones",
               "Matching household names spelled differently across villages",
+              "They had no phones",
               "They wanted dashboards",
             ],
-            2,
+            1,
             "Watching officers showed the real problem was duplicate and mismatched names.",
           ),
         ],
@@ -597,12 +632,12 @@ After six interviews, she looks for patterns that appear again and again, not si
           q(
             "Why should interview questions focus on the past rather than the future?",
             [
-              "Past events are easier to forget",
               "Past behaviour is a better guide than predictions people make to be polite",
+              "Past events are easier to forget",
               "Future questions take too long",
               "People do not like talking about the past",
             ],
-            1,
+            0,
             "People are poor at predicting their behaviour and often say what you want to hear.",
           ),
           q(
@@ -610,21 +645,21 @@ After six interviews, she looks for patterns that appear again and again, not si
             [
               "Would you use an app to save daily?",
               "Do you like my savings idea?",
-              "Tell me about the last time you saved money and what went wrong",
               "How much would you pay for my app?",
+              "Tell me about the last time you saved money and what went wrong",
             ],
-            2,
+            3,
             "It asks about a real past event rather than a hypothetical.",
           ),
           q(
             "Why should you avoid pitching your idea during the interview?",
             [
-              "People start reacting to your idea instead of describing their lives",
               "It is illegal",
               "It makes the interview too short",
+              "People start reacting to your idea instead of describing their lives",
               "People always copy ideas",
             ],
-            0,
+            2,
             "Once you describe a solution, the conversation shifts to opinions about it.",
           ),
           q(
@@ -641,12 +676,12 @@ After six interviews, she looks for patterns that appear again and again, not si
           q(
             "After several interviews, what should guide your decisions?",
             [
+              "Patterns that appear again and again",
               "The most dramatic single story",
               "Your original idea",
-              "Patterns that appear again and again",
               "The opinion of the first person you met",
             ],
-            2,
+            0,
             "Repeated patterns across interviews are more reliable than one person's view.",
           ),
         ],
@@ -706,44 +741,44 @@ He chose a problem with evidence, checked the competition, and stated what would
             "Which is one of the four questions for comparing problems?",
             [
               "Is it the most exciting problem?",
-              "Do people already spend effort or money on it?",
               "Can it be solved with AI?",
               "Will it look good in a pitch deck?",
+              "Do people already spend effort or money on it?",
             ],
-            1,
+            3,
             "Existing effort or spending is strong evidence the problem is real.",
           ),
           q(
             "Why should you list what people use today, including informal methods?",
             [
-              "Because a new product must be clearly better than the current habit",
               "To copy it exactly",
               "Because informal methods do not count",
+              "Because a new product must be clearly better than the current habit",
               "To avoid talking to users",
             ],
-            0,
+            2,
             "Every problem has an existing solution, and people only switch if the new one is clearly better.",
           ),
           q(
             "What is the purpose of scoring problems in a table?",
             [
               "The total gives the final answer automatically",
-              "To impress the manager",
               "To force a discussion of the reasons behind each choice",
+              "To impress the manager",
               "To avoid making a decision",
             ],
-            2,
+            1,
             "The lesson says the total is not the answer but it helps the team discuss reasons.",
           ),
           q(
             "What did Salifu say would show he was wrong?",
             [
-              "If farmers liked the app's colours",
               "If farmers kept selling to middlemen even when buyers offered better prices",
+              "If farmers liked the app's colours",
               "If weather forecasts improved",
               "If record keeping became popular",
             ],
-            1,
+            0,
             "He stated in advance what evidence would change his mind.",
           ),
         ],
@@ -807,39 +842,44 @@ A manual MVP is a test, not a business plan. When the work becomes too much to d
             "What is a concierge MVP?",
             [
               "A fully built app with every feature",
-              "A service run by hand that delivers the real benefit to test demand",
               "A hotel booking app",
               "A marketing campaign",
+              "A service run by hand that delivers the real benefit to test demand",
             ],
-            1,
+            3,
             "In a concierge MVP you do the work a future app would automate.",
           ),
           q(
             "Why should you write your success rule before starting?",
             [
-              "To stop you explaining away weak results later",
               "Because the law requires it",
               "To make the test longer",
+              "To stop you explaining away weak results later",
               "So customers can see it",
             ],
-            0,
+            2,
             "Deciding in advance keeps you honest about what the results mean.",
           ),
           q(
             "Which customers turned out best in Mohammed's test?",
-            ["Schools", "Chop bar owners", "Banks", "Tourists"],
+            [
+              "Schools",
+              "Chop bar owners",
+              "Banks",
+              "Tourists",
+            ],
             1,
             "Most orders, and the regular ones, came from chop bar owners.",
           ),
           q(
             "What does it mean when the manual work becomes too much to handle?",
             [
+              "You may have demand worth automating",
               "The idea has failed",
               "You should stop immediately",
-              "You may have demand worth automating",
               "You need a new idea",
             ],
-            2,
+            0,
             "Growing manual workload is a sign of real demand.",
           ),
         ],
@@ -896,23 +936,23 @@ By the end of this section you will be able to produce each of these pieces your
           q(
             "Why does clear definition matter for a team?",
             [
-              "Engineers build what is written down and discussed, so vagueness causes rework",
               "It makes the product look professional",
               "It removes the need for testing",
               "It means users never complain",
+              "Engineers build what is written down and discussed, so vagueness causes rework",
             ],
-            0,
+            3,
             "Clear definition lets everyone agree on the problem, what finished means and what is excluded.",
           ),
           q(
             "Which statement is specific and testable?",
             [
               "The app should be fast",
-              "The order list loads within three seconds on a 3G connection",
               "Users should love the app",
+              "The order list loads within three seconds on a 3G connection",
               "Make it modern",
             ],
-            1,
+            2,
             "It names a measurable condition you can check.",
           ),
           q(
@@ -928,8 +968,13 @@ By the end of this section you will be able to produce each of these pieces your
           ),
           q(
             "What did his team agree to leave for later?",
-            ["Offline entry", "Automatic totals", "Photo uploads", "Daily meal counts"],
-            2,
+            [
+              "Photo uploads",
+              "Offline entry",
+              "Automatic totals",
+              "Daily meal counts",
+            ],
+            0,
             "Offline entry and totals came first; photo uploads waited.",
           ),
         ],
@@ -987,23 +1032,23 @@ She did not need to code. She needed to look closely, ask why and draw it clearl
           q(
             "Why draw a separate column or lane for each role in a process map?",
             [
-              "It makes handovers between people obvious",
               "It looks more colourful",
               "It removes the need for decisions",
               "Roles do not matter in processes",
+              "It makes handovers between people obvious",
             ],
-            0,
+            3,
             "Lanes show where work passes between people, which is where delays often happen.",
           ),
           q(
             "Where should you get information for an as is map?",
             [
               "Only from senior managers",
-              "From people who actually do the process, by watching or asking",
               "From a competitor's website",
+              "From people who actually do the process, by watching or asking",
               "From your imagination",
             ],
-            1,
+            2,
             "Reality is usually messier than how managers think it works.",
           ),
           q(
@@ -1020,12 +1065,12 @@ She did not need to code. She needed to look closely, ask why and draw it clearl
           q(
             "What caused most failed ID checks in Hawa's example?",
             [
+              "Customers typed their ID with spaces",
               "Customers had no ID",
               "The partner was offline",
-              "Customers typed their ID with spaces",
               "Support agents were absent",
             ],
-            2,
+            0,
             "Asking why revealed spaces in typed IDs as the main cause.",
           ),
         ],
@@ -1095,50 +1140,55 @@ He also adds a non functional requirement: the order screen must work on low cos
             "Which is a non functional requirement?",
             [
               "The system sends an SMS receipt after every deposit",
-              "The USSD menu responds within two seconds",
               "A trader can set a daily savings amount",
               "Buyers can repeat an order",
+              "The USSD menu responds within two seconds",
             ],
-            1,
+            3,
             "Non functional requirements describe qualities such as speed or security.",
           ),
           q(
             "Why is the so that part of a user story important?",
             [
               "It makes the story longer",
-              "It explains why, so the team can suggest better ways to meet the need",
               "It names the engineer",
+              "It explains why, so the team can suggest better ways to meet the need",
               "It sets the deadline",
             ],
-            1,
+            2,
             "The benefit explains the purpose behind the request.",
           ),
           q(
             "What do acceptance criteria describe?",
             [
-              "The conditions that must be true for a story to be done",
               "The cost of the project",
+              "The conditions that must be true for a story to be done",
               "The team's holiday plans",
               "The marketing message",
             ],
-            0,
+            1,
             "Acceptance criteria define when a story counts as finished.",
           ),
           q(
             "In Given, When, Then, what goes after Then?",
-            ["The starting situation", "The action taken", "The expected result", "The user's name"],
-            2,
+            [
+              "The expected result",
+              "The starting situation",
+              "The action taken",
+              "The user's name",
+            ],
+            0,
             "Then states the result that should happen.",
           ),
           q(
             "Why did Fuseini write a criterion for an unavailable item?",
             [
-              "To cover an unhappy path so the team handles it",
               "To make the story fail",
               "Because all items are always unavailable",
               "To remove the repeat feature",
+              "To cover an unhappy path so the team handles it",
             ],
-            0,
+            3,
             "Good acceptance criteria include unhappy paths, not only the ideal case.",
           ),
         ],
@@ -1197,44 +1247,44 @@ Her engineer and designer read it in five minutes and start work. When the sales
             "What is the main purpose of a product spec?",
             [
               "To replace all conversation with the team",
-              "To put the why, who, what and success measure in one place so the team can work without waiting",
               "To list every engineer's tasks by hour",
+              "To put the why, who, what and success measure in one place so the team can work without waiting",
               "To advertise the product",
             ],
-            1,
+            2,
             "A spec gathers the bigger picture so designers and engineers can work independently.",
           ),
           q(
             "Why include an Out of scope section?",
             [
-              "It prevents many arguments by stating what is deliberately not being done",
               "It lists features that will never be built",
+              "It prevents many arguments by stating what is deliberately not being done",
               "It is required by law",
               "It makes the spec longer",
             ],
-            0,
+            1,
             "Stating what is excluded keeps the team focused and handles extra requests.",
           ),
           q(
             "Which writing tip does the lesson give?",
             [
+              "Use the words your users use",
               "Use technical terms users never say",
               "Never update the spec once written",
-              "Use the words your users use",
               "Avoid numbers and limits",
             ],
-            2,
+            0,
             "Using users' own words, such as susu, keeps the spec clear.",
           ),
           q(
             "What did Amina do when the sales team asked about group savings?",
             [
               "Added it immediately",
-              "Pointed to the out of scope section and added it to the list for later",
               "Cancelled the project",
               "Ignored them",
+              "Pointed to the out of scope section and added it to the list for later",
             ],
-            1,
+            3,
             "The out of scope section helped her handle the request calmly.",
           ),
         ],
@@ -1302,8 +1352,13 @@ She shares it in the team WhatsApp group with one line of reasoning for each ite
         questions: [
           q(
             "On a value and effort grid, which items should usually come first?",
-            ["Low value, high effort", "High value, low effort", "Low value, low effort", "Whatever the manager likes"],
-            1,
+            [
+              "Low value, high effort",
+              "Low value, low effort",
+              "High value, low effort",
+              "Whatever the manager likes",
+            ],
+            2,
             "High value, low effort items are quick wins.",
           ),
           q(
@@ -1332,11 +1387,11 @@ She shares it in the team WhatsApp group with one line of reasoning for each ite
             "Why did Hawa put payment confirmations in Now?",
             [
               "The manager asked for it",
-              "It caused many support calls and lost trust, and was low effort",
               "It was the newest idea",
               "It needed a finance partner",
+              "It caused many support calls and lost trust, and was low effort",
             ],
-            1,
+            3,
             "Evidence of high value and low effort made it a clear first priority.",
           ),
         ],
@@ -1386,40 +1441,45 @@ Neither action involved code. Both kept the team building the right thing.`,
           q(
             "Why should a product person answer engineers' questions quickly?",
             [
-              "Slow answers waste days of building time",
               "Engineers cannot make any decisions",
               "It is a legal requirement",
+              "Slow answers waste days of building time",
               "So they can skip testing",
             ],
-            0,
+            2,
             "A quick answer keeps work moving.",
           ),
           q(
             "In the lesson, who decides how best to build something?",
-            ["The product person alone", "The engineers and designers", "The customers", "The finance team"],
+            [
+              "The product person alone",
+              "The engineers and designers",
+              "The customers",
+              "The finance team",
+            ],
             1,
             "Product decides what and why; builders decide how.",
           ),
           q(
             "How did Sumaila answer the question about households without phones?",
             [
+              "He called field officers, then gave a clear answer and updated the spec",
               "He guessed",
               "He asked the director",
-              "He called field officers, then gave a clear answer and updated the spec",
               "He told the engineer to decide",
             ],
-            2,
+            0,
             "He checked with users and recorded the decision.",
           ),
           q(
             "What did Sumaila do with the request for a donor report screen mid sprint?",
             [
               "Added it immediately",
-              "Explained the current focus and moved it to the next sprint's list",
               "Refused forever",
               "Asked the engineer to work overtime",
+              "Explained the current focus and moved it to the next sprint's list",
             ],
-            1,
+            3,
             "He protected the sprint's scope while keeping the request for later.",
           ),
         ],
@@ -1477,44 +1537,44 @@ Notice how the short cycle caught a new need quickly.`,
             "What is the core idea of Agile?",
             [
               "Plan everything for a year and deliver once",
-              "Build in small pieces, show results often and adjust",
               "Avoid talking to users",
+              "Build in small pieces, show results often and adjust",
               "Skip testing to go faster",
             ],
-            1,
+            2,
             "Agile teams deliver small pieces and learn quickly.",
           ),
           q(
             "What is a backlog?",
             [
-              "A prioritised list of work waiting to be done",
               "A list of finished features",
+              "A prioritised list of work waiting to be done",
               "The team's holiday calendar",
               "A bug in the code",
             ],
-            0,
+            1,
             "The backlog holds stories, bugs and tasks in priority order.",
           ),
           q(
             "What happens in a retrospective?",
             [
-              "The team demos to customers",
               "The team discusses what went well, what did not and what to improve",
+              "The team demos to customers",
               "The manager assigns salaries",
               "Engineers write code",
             ],
-            1,
+            0,
             "Retrospectives improve how the team works.",
           ),
           q(
             "How does Kanban differ from Scrum in the lesson?",
             [
               "Kanban has no board",
-              "Kanban works from a board without fixed sprints",
               "Kanban uses yearly plans",
               "Kanban has no backlog of any kind",
+              "Kanban works from a board without fixed sprints",
             ],
-            1,
+            3,
             "Kanban teams pull work through a board and limit work in progress, without fixed sprints.",
           ),
           q(
@@ -1594,41 +1654,46 @@ Technical literacy did not make him an engineer. It made him a better partner to
           ),
           q(
             "In a typical mobile money payment, how does the provider often tell your backend the result?",
-            ["By a phone call to the engineer", "Through a callback or webhook", "By email to the customer", "It never does"],
-            1,
+            [
+              "Through a callback or webhook",
+              "By a phone call to the engineer",
+              "By email to the customer",
+              "It never does",
+            ],
+            0,
             "Providers usually send the result to an address your backend provides.",
           ),
           q(
             "Why can a fix to a mobile app take days to reach everyone?",
             [
-              "Apps go through store review and users must update",
               "Engineers work slowly",
               "Databases are offline at night",
               "USSD menus block updates",
+              "Apps go through store review and users must update",
             ],
-            0,
+            3,
             "Store review and user updates slow down app releases.",
           ),
           q(
             "What is a staging environment?",
             [
               "The real system customers use",
-              "A separate copy of the system used for testing",
               "A marketing event",
+              "A separate copy of the system used for testing",
               "A kind of bug",
             ],
-            1,
+            2,
             "Staging is for testing before changes reach production.",
           ),
           q(
             "What alternative did Issahaku suggest when true auto deduction was not possible?",
             [
               "Cancel the feature",
-              "Use card payments only",
               "A daily reminder SMS with a one step approval prompt",
+              "Use card payments only",
               "Ask customers to visit a branch",
             ],
-            2,
+            1,
             "Understanding the integration's limits helped him find a cheaper solution.",
           ),
         ],
@@ -1691,12 +1756,12 @@ Wumpini described problems with evidence. Ayishetu designed the fix. That is goo
           q(
             "What is a wireframe?",
             [
-              "The final, polished design",
               "A rough sketch of a screen showing layout and content",
+              "The final, polished design",
               "A type of cable",
               "A database diagram",
             ],
-            1,
+            0,
             "Wireframes are rough layouts without colour or polish.",
           ),
           q(
@@ -1704,15 +1769,20 @@ Wumpini described problems with evidence. Ayishetu designed the fix. That is goo
             [
               "I don't like the blue",
               "Make it look modern",
-              "Traders need to see their balance first, but it is below the fold",
               "Copy a competitor",
+              "Traders need to see their balance first, but it is below the fold",
             ],
-            2,
+            3,
             "Useful feedback ties the problem to the user's goal.",
           ),
           q(
             "During a usability test, what should you do when a user struggles?",
-            ["Explain how it works", "Take over the phone", "Note it and avoid helping", "End the test immediately"],
+            [
+              "Explain how it works",
+              "Take over the phone",
+              "Note it and avoid helping",
+              "End the test immediately",
+            ],
             2,
             "Not helping lets you see where real users struggle.",
           ),
@@ -1796,51 +1866,56 @@ Mariama then recommends a pilot with five field officers in one district for two
           q(
             "What question does acceptance testing answer?",
             [
-              "Is the code written in the newest language?",
               "Does this meet the requirements and work for real users in real conditions?",
+              "Is the code written in the newest language?",
               "How much did the feature cost?",
               "Which engineer wrote it?",
             ],
-            1,
+            0,
             "Acceptance testing checks the build against requirements and real use.",
           ),
           q(
             "Where should the expected result in a test case come from?",
-            ["The engineer's opinion", "The acceptance criteria", "A competitor's app", "The release date"],
-            1,
+            [
+              "The engineer's opinion",
+              "A competitor's app",
+              "The release date",
+              "The acceptance criteria",
+            ],
+            3,
             "Test cases check against the acceptance criteria written earlier.",
           ),
           q(
             "Which detail makes a bug report useful to an engineer?",
             [
-              "Steps to reproduce, expected and actual results",
               "Only the word broken",
               "Your opinion of the design",
+              "Steps to reproduce, expected and actual results",
               "The tester's job title",
             ],
-            0,
+            2,
             "Clear steps and results let engineers reproduce and fix the problem.",
           ),
           q(
             "Why release to a small pilot group first?",
             [
-              "To find problems before they affect everyone",
               "To keep the feature secret",
+              "To find problems before they affect everyone",
               "Because pilots skip testing",
               "To avoid telling support staff",
             ],
-            0,
+            1,
             "A small first release limits the damage if something goes wrong.",
           ),
           q(
             "What bug did Mariama find in the beneficiary tracker?",
             [
-              "Records disappeared",
               "Records appeared twice when the phone reconnected slowly",
+              "Records disappeared",
               "The app would not open",
               "Names were translated wrongly",
             ],
-            1,
+            0,
             "Her unhappy path test revealed duplicate records after slow reconnection.",
           ),
         ],
@@ -1892,19 +1967,24 @@ Within weeks, payout questions drop and the product manager asks Fuseini to join
         questions: [
           q(
             "Which of these is part of running a live product?",
-            ["Choosing the company name", "Onboarding and training users", "Hiring investors", "Designing the logo"],
-            1,
+            [
+              "Choosing the company name",
+              "Hiring investors",
+              "Designing the logo",
+              "Onboarding and training users",
+            ],
+            3,
             "Onboarding, training, documentation, support and feedback are all part of running a live product.",
           ),
           q(
             "What is an SOP?",
             [
-              "A standard operating procedure that keeps answers and processes consistent",
               "A type of software bug",
               "A sales target",
+              "A standard operating procedure that keeps answers and processes consistent",
               "A database table",
             ],
-            0,
+            2,
             "SOPs are written procedures so tasks are done the same way every time.",
           ),
           q(
@@ -1921,12 +2001,12 @@ Within weeks, payout questions drop and the product manager asks Fuseini to join
           q(
             "What did Fuseini discover about farmers asking where their money was?",
             [
-              "The payment system was broken",
               "Payouts were weekly but nobody had told farmers",
+              "The payment system was broken",
               "Farmers had no phones",
               "Buyers were not paying",
             ],
-            1,
+            0,
             "He traced the repeated question to missing communication about payout timing.",
           ),
         ],
@@ -1991,44 +2071,44 @@ A week later, three officers report the app "losing" records. Hawa reproduces it
             "What is the aim of onboarding?",
             [
               "To collect as much data as possible",
-              "To get a new user from signed up to getting value",
               "To sell more features",
               "To test the code",
+              "To get a new user from signed up to getting value",
             ],
-            1,
+            3,
             "Onboarding helps new users reach their first real benefit.",
           ),
           q(
             "What is the difference between a help guide and an SOP?",
             [
-              "A help guide answers user questions; an SOP tells staff how to handle situations consistently",
               "They are the same thing",
               "An SOP is for customers; a help guide is for engineers",
+              "A help guide answers user questions; an SOP tells staff how to handle situations consistently",
               "Help guides are only videos",
             ],
-            0,
+            2,
             "Help guides are for users; SOPs are for staff.",
           ),
           q(
             "What should you check before escalating an issue to engineers?",
             [
-              "Whether you can reproduce it and how many users it affects",
               "Whether the engineer is busy",
+              "Whether you can reproduce it and how many users it affects",
               "The weather",
               "Whether a competitor has the same bug",
             ],
-            0,
+            1,
             "Reproducing and sizing the issue makes escalation useful.",
           ),
           q(
             "What was really causing the 'lost' records in Hawa's example?",
             [
-              "The server crashed",
               "Officers closed the app before tapping Submit",
+              "The server crashed",
               "The network was down for a week",
               "Records were deleted on purpose",
             ],
-            1,
+            0,
             "It was a training and design gap, not a crash.",
           ),
         ],
@@ -2096,18 +2176,23 @@ She discovers that matured savings return to the wallet, but no SMS says so. Her
           q(
             "Why collect feedback from many channels?",
             [
-              "No single channel tells the full story",
               "It makes the sheet longer",
               "Reviews are always accurate",
               "Only phone calls matter",
+              "No single channel tells the full story",
             ],
-            0,
+            3,
             "Different channels reach different kinds of users.",
           ),
           q(
             "Why use consistent categories when recording feedback?",
-            ["So you can count and compare themes", "To hide complaints", "To impress managers", "Categories are not useful"],
-            0,
+            [
+              "To hide complaints",
+              "To impress managers",
+              "So you can count and compare themes",
+              "Categories are not useful",
+            ],
+            2,
             "Consistent categories make patterns countable.",
           ),
           q(
@@ -2124,12 +2209,12 @@ She discovers that matured savings return to the wallet, but no SMS says so. Her
           q(
             "What does closing the loop mean?",
             [
-              "Deleting old feedback",
               "Telling people who reported a problem what you changed",
+              "Deleting old feedback",
               "Blocking angry users",
               "Ending the support line",
             ],
-            1,
+            0,
             "Closing the loop builds trust and encourages more feedback.",
           ),
         ],
@@ -2181,22 +2266,22 @@ He calls three of them. They explain that the sync often fails, so they go back 
             "What does data tell you, and what do interviews tell you?",
             [
               "Data tells you why; interviews tell you what",
-              "Data tells you what is happening; interviews tell you why",
               "Both tell you only what",
               "Neither is useful",
+              "Data tells you what is happening; interviews tell you why",
             ],
-            1,
+            3,
             "Numbers show what happens; conversations explain why.",
           ),
           q(
             "What is a vanity number?",
             [
-              "A number that looks good but does not show real value",
               "A number about design",
               "A secret number",
+              "A number that looks good but does not show real value",
               "A number that is always accurate",
             ],
-            0,
+            2,
             "Downloads and sign ups can rise while few people use the product.",
           ),
           q(
@@ -2213,12 +2298,12 @@ He calls three of them. They explain that the sync often fails, so they go back 
           q(
             "How did Issahaku define an active officer?",
             [
-              "Anyone who logged in once",
               "Someone who registers at least five households a week",
+              "Anyone who logged in once",
               "Anyone with a smartphone",
               "The director's favourite officers",
             ],
-            1,
+            0,
             "He chose a measure that reflects real use rather than logins.",
           ),
         ],
@@ -2285,13 +2370,23 @@ Start small with data you understand. The habit of asking a clear question first
         questions: [
           q(
             "Which spreadsheet function counts rows that match a condition?",
-            ["SUM", "COUNTIF", "AVERAGE", "TODAY"],
-            1,
+            [
+              "SUM",
+              "AVERAGE",
+              "TODAY",
+              "COUNTIF",
+            ],
+            3,
             "COUNTIF counts rows that meet a condition, such as town equals Tamale.",
           ),
           q(
             "What does the WHERE part of a SQL query do?",
-            ["Sorts the result", "Names the table", "Filters which rows are included", "Makes groups"],
+            [
+              "Sorts the result",
+              "Names the table",
+              "Filters which rows are included",
+              "Makes groups",
+            ],
             2,
             "WHERE filters rows, for example orders since a date.",
           ),
@@ -2321,18 +2416,630 @@ Start small with data you understand. The habit of asking a clear question first
             "According to the lesson, what habit matters more than any one tool?",
             [
               "Using the most expensive software",
-              "Asking a clear question first, then cleaning, then counting",
               "Making charts colourful",
               "Writing very long queries",
+              "Asking a clear question first, then cleaning, then counting",
             ],
-            1,
+            3,
             "Clear questions and clean data lead to useful answers.",
           ),
         ],
         pass_threshold: 80,
       },
     },
-    // NEXT
+    metrics: {
+      explanation_md: `A metric is a number you track over time to see whether your product is doing its job. Adverts for product managers and analysts ask candidates to set product goals, define KPIs (key performance indicators) and track them. Choosing the right metrics keeps a team focused on real value instead of numbers that only look impressive.
+
+## Following the user's journey
+
+A useful way to pick metrics is to follow a user from first contact to lasting value:
+
+* **Acquisition.** How many new people arrive or sign up?
+* **Activation.** How many reach a first moment of real value? For a savings feature, that might be making a first deposit, not just opening the menu.
+* **Retention.** How many come back and keep using it? This is often the most honest sign that a product helps people.
+* **Revenue.** How much money does the product bring in, and from whom?
+* **Referral.** Do users bring others, for example by telling friends in their market or church?
+
+You do not need all of these at once. Early on, activation and retention usually matter most.
+
+## Defining a metric precisely
+
+A good metric has a clear definition that anyone on the team would calculate the same way:
+
+* **Weak:** "Active users".
+* **Strong:** "Number of traders who made at least three savings deposits in the past seven days."
+
+Also decide where the data comes from, how often you check it, and who owns it.
+
+## One main metric
+
+Many teams choose one main metric that best shows users getting value. Some call it a north star metric. For the farmers' market app, it might be "orders delivered successfully per week", because it requires both farmers and buyers to succeed. Other metrics support it and warn of problems, like failed payments or complaints.
+
+## Watch out for side effects
+
+When a team chases a single number, it can cause harm elsewhere. Pushing sign ups with free airtime might bring people who never save. Pair your main metric with a **guardrail metric** you do not want to worsen, such as complaint rate or refund rate.
+
+## Worked example: the MoMo savings feature
+
+Abdul-Rahman sets up metrics for the savings feature:
+
+* **Activation:** share of new sign ups who make a first deposit within three days.
+* **Retention:** share of savers still depositing at least weekly four weeks later.
+* **Main metric:** number of traders with at least 20 deposits in the past 30 days, showing a real daily habit.
+* **Guardrail:** number of failed deductions per 100 attempts.
+
+After two months, activation is strong but retention falls in week three. Interviews reveal that many traders set amounts too high and stopped when deductions failed. The team adds a suggestion of a smaller starting amount. Retention improves, and the guardrail metric of failed deductions falls too.
+
+Clear metrics told the team exactly where to look.`,
+      practice_task_md: `**Goal:** define a small set of metrics for a product.
+
+1. Choose a product from your journal or a local service you know well.
+2. Write one precise definition each for activation and retention, using the strong example as a model.
+3. Choose one main metric and explain in two sentences why it shows real value.
+4. Choose one guardrail metric and explain what harm it protects against.
+5. For each metric, note where the data would come from and how often you would check it.
+
+**Done looks like:** four precisely defined metrics with data sources and reasons, in a short table.`,
+      quiz: {
+        questions: [
+          q(
+            "What does activation measure?",
+            [
+              "How many people download the app",
+              "How much revenue comes in",
+              "How many users reach a first moment of real value",
+              "How many staff are hired",
+            ],
+            2,
+            "Activation is reaching first real value, such as a first deposit.",
+          ),
+          q(
+            "Which is the strongest metric definition?",
+            [
+              "Active users",
+              "Traders who made at least three deposits in the past seven days",
+              "People who like the app",
+              "Engagement",
+            ],
+            1,
+            "It is precise enough for anyone to calculate the same way.",
+          ),
+          q(
+            "What is a guardrail metric?",
+            [
+              "A metric you do not want to worsen while chasing the main one",
+              "The main metric the team chases",
+              "A metric about security guards",
+              "A secret metric",
+            ],
+            0,
+            "Guardrails catch harmful side effects.",
+          ),
+          q(
+            "Why did retention fall in Abdul-Rahman's example?",
+            [
+              "The app was deleted",
+              "Interest rates dropped",
+              "The SMS was too long",
+              "Traders set amounts too high and stopped when deductions failed",
+            ],
+            3,
+            "Interviews explained the drop shown by the retention metric.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    experiments: {
+      explanation_md: `When you change a product, how do you know whether the change caused an improvement? An experiment compares people who got the change with people who did not, so you can see the difference fairly. Product analyst adverts at larger fintechs ask for experiment design and analysis. This lesson is optional, but the thinking behind it will make you a sharper product person even if you never run a formal test.
+
+## The basic idea
+
+In a simple experiment, often called an A/B test:
+
+* **Group A (the control)** sees the current version.
+* **Group B (the variant)** sees the change.
+* People are assigned to groups **randomly**, so the groups are similar.
+* You compare one chosen metric between the groups.
+
+Random assignment matters. If you give the new version only to users in Accra, any difference might be about Accra, not your change.
+
+## Decide before you look
+
+Before starting, write down:
+
+* **The hypothesis.** "Suggesting a smaller starting amount will increase the share of savers still depositing after four weeks."
+* **The metric** you will compare.
+* **The size of difference** that would matter to the business.
+* **How long** the test will run.
+
+Deciding in advance stops you from picking whichever number happens to look good.
+
+## Small numbers need patience
+
+Results with few users are noisy. If 6 of 20 people in group A saved, and 9 of 20 in group B, the difference may be luck. Larger groups and longer tests give more reliable answers. Free online statistics courses explain significance if you want to go deeper. For small Ghanaian products with few users, it is often better to run a test longer, or to use a before and after comparison plus interviews, than to trust a tiny A/B result.
+
+## Tests without software
+
+You can experiment without an A/B tool:
+
+* Send two versions of an SMS reminder to randomly split halves of a customer list and compare responses.
+* Alternate between two prices on different days in a manual MVP.
+* Try two training approaches with two similar farmer groups.
+
+## Change one thing at a time
+
+If group B gets a new price **and** a new message, you will not know which one made the difference.
+
+## Worked example: SMS reminders for the farmers' market app
+
+Wumpini wants more buyers to repeat their orders. She writes a hypothesis: "A Sunday evening SMS reminding chop bar owners to reorder will increase Monday repeat orders." She randomly splits 200 regular buyers into two groups of 100. Group A gets no SMS; group B gets the reminder. She decides to run it for four weeks and compare the share placing a Monday order.
+
+After four weeks, group B places noticeably more Monday orders, and the gap holds every week rather than appearing once. Wumpini recommends sending the reminder to everyone, and notes that the cost of SMS is small compared with the extra orders.`,
+      practice_task_md: `**Goal:** design a fair experiment on paper.
+
+1. Pick a small change you could test, such as two versions of a WhatsApp message for your manual MVP or two ways to announce a church event.
+2. Write the hypothesis, the single metric, the size of difference that would matter, and how long you will run it.
+3. Explain how you will split people randomly, for example alternating names on a sorted list or flipping a coin.
+4. List two things that could make the result misleading and how you would reduce them.
+5. If you can, run it and record results.
+
+**Done looks like:** a half page experiment plan with all parts filled in, and results if you ran it.`,
+      quiz: {
+        questions: [
+          q(
+            "What is the control group in an A/B test?",
+            [
+              "The group that sees the change",
+              "The engineering team",
+              "The group that sees the current version",
+              "Users who left the product",
+            ],
+            2,
+            "The control group sees the current version for comparison.",
+          ),
+          q(
+            "Why should people be assigned to groups randomly?",
+            [
+              "To make the test faster",
+              "So the groups are similar and differences come from the change",
+              "Because managers prefer it",
+              "So only Accra users see the change",
+            ],
+            1,
+            "Random assignment keeps the groups comparable.",
+          ),
+          q(
+            "Why decide the metric and hypothesis before looking at results?",
+            [
+              "To stop you from picking whichever number looks good",
+              "It is a legal rule",
+              "So the test can run forever",
+              "It does not matter when you decide",
+            ],
+            0,
+            "Deciding in advance keeps the analysis honest.",
+          ),
+          q(
+            "Why change only one thing at a time in an experiment?",
+            [
+              "To save money on SMS",
+              "Because users dislike change",
+              "Tools only allow one change",
+              "So you know which change caused the difference",
+            ],
+            3,
+            "Changing several things hides which one mattered.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "getting-hired": {
+      explanation_md: `Be honest with yourself from the start: in Ghana, true entry level product manager jobs are rare. When we researched Ghanaian and remote adverts for this roadmap, almost every role titled product manager asked for several years of experience, and the remote roles open to Ghana based applicants were mostly senior. That is not a reason to give up. It is a reason to plan a realistic route.
+
+## The realistic picture
+
+The roles that appeared most often for people earlier in their careers were next door to product management:
+
+* Business analyst and information systems analyst roles in banks, telecoms and manufacturers.
+* Product operations, product support and implementation roles in fintech and software companies.
+* Product analyst and data or M&E roles, including in NGOs running digital programmes.
+* A smaller number of associate product roles, often at companies selling software to other businesses.
+
+Even "entry" adverts often asked for a degree or about two years of relevant work. Your aim is to show the skills and evidence that make an employer willing to take a chance on you.
+
+## What employers look for
+
+Across the adverts, the same skills kept appearing: gathering requirements, writing user stories and documentation, testing before release, working with data in spreadsheets, and communicating clearly with different people. Every one of those has a lesson in this roadmap, and every practice task you have completed is evidence.
+
+## What this section covers
+
+* **Realistic routes into product.** Which first roles to aim for, and how to grow product responsibility from inside them.
+* **A product portfolio.** Turning your practice work into case studies that show your thinking.
+* **Product and analyst interviews.** How to prepare for the questions you will meet.
+
+## A route in practice
+
+Mohammed finished secondary school in Tamale and completed this roadmap while working in his uncle's phone shop. He could not find a product manager job. Instead he applied for a customer support role at a fintech, using his portfolio: a manual MVP for gas refills, a user story set and a feedback analysis of a local app.
+
+In support, he logged complaints carefully and sent the product team a weekly summary. After some months, the product manager asked him to help write acceptance criteria and test releases. Later, an internal business analyst opening came up, and he was the obvious choice because the team already knew his work.
+
+His path took patience and was not a straight line, but each step built on the last. Yours can too.
+
+## Mindset
+
+Think of your first job as a place to practise product skills, not a final destination. Wherever you start, volunteer for the product shaped tasks: writing requirements, testing, analysing feedback. That is how you become the person the product team trusts.`,
+      practice_task_md: `**Goal:** make a realistic plan for your first product related role.
+
+1. Look up five current adverts on Jobberman Ghana or company career pages for adjacent roles: business analyst, product support, product operations, product analyst or M&E officer.
+2. For each, list the three skills mentioned most clearly, in your own words.
+3. Mark which skills you already have evidence for from this roadmap's practice tasks, and which are gaps.
+4. Write a short plan: which role type you will target first, which two gaps you will close in the next month, and how.
+
+**Done looks like:** a table of five adverts with skills and evidence, and a three line plan.`,
+      quiz: {
+        questions: [
+          q(
+            "What did the research for this roadmap find about entry level product manager jobs in Ghana?",
+            [
+              "They are very common",
+              "They require no skills",
+              "They are rare; most product manager adverts ask for several years of experience",
+              "They only exist abroad",
+            ],
+            2,
+            "Almost every product manager advert asked for experience.",
+          ),
+          q(
+            "Which of these is a realistic first role named in the lesson?",
+            [
+              "Chief product officer",
+              "Business analyst or product support",
+              "Company director",
+              "Head of engineering",
+            ],
+            1,
+            "Adjacent roles such as BA, support and product operations appeared more often for early career people.",
+          ),
+          q(
+            "How did Mohammed move toward product work?",
+            [
+              "He started in customer support, shared weekly feedback summaries and took on product tasks",
+              "He waited for a product manager job",
+              "He paid for a certificate",
+              "He built a large app alone",
+            ],
+            0,
+            "He built trust by doing product shaped tasks from a support role.",
+          ),
+          q(
+            "What mindset does the lesson recommend for your first job?",
+            [
+              "Treat it as a final destination",
+              "Avoid extra tasks",
+              "Only focus on salary",
+              "Treat it as a place to practise product skills and volunteer for product shaped tasks",
+            ],
+            3,
+            "Volunteering for product tasks builds the evidence for a later move.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "breaking-in": {
+      explanation_md: `Product management is usually a second or third job, not a first one. Knowing the doors that actually open, and how to move through them, saves you months of applying for roles you are unlikely to get yet.
+
+## Doors worth knocking on
+
+* **Business analyst.** Banks, telecoms, insurers and manufacturers in Accra, Kumasi and Tema hire BAs to gather requirements, map processes, write specifications and test systems. Some adverts value business analysis certifications, but strong examples of your work matter too.
+* **Product support or customer success.** Fintechs and software firms need people who understand the product and the customer. You learn where users struggle faster than anyone.
+* **Product operations or implementation.** Onboarding clients, training users, writing guides and working with engineers on fixes.
+* **Product or data analyst.** If you enjoy spreadsheets and SQL, analysing usage data is a direct route into product decisions.
+* **M&E or programme roles in NGOs.** Many NGOs run digital tools for field data. Managing those tools is product work under another name.
+* **Quality assurance (testing).** Testers learn requirements deeply and work closely with product managers.
+* **Associate product manager programmes.** Rare in Ghana, but worth watching for at larger tech companies and remote firms that hire across Africa.
+
+## Growing product responsibility from inside
+
+Once you are in, ask to help with product shaped tasks: writing acceptance criteria, testing releases, analysing feedback, joining discovery interviews. Share useful work with the product manager. When a product role opens, internal candidates with a track record have a real advantage.
+
+## Building evidence outside a job
+
+* Run a manual MVP for a real small business or community group.
+* Volunteer to improve a digital process for a church, school, association or NGO.
+* Write a case study analysing a Ghanaian product's onboarding or feedback.
+* Join tech communities and events in your region, and online communities, to meet people and hear about openings.
+
+## Applying well
+
+* Match your CV to each advert's duties, using your own examples.
+* Lead with evidence: "Mapped the registration process for a school and cut steps from seven to four."
+* Write a short cover note showing you understand the company's users.
+* Be careful with any "job" that asks you to pay a fee. Legitimate employers do not charge applicants.
+
+## Worked example
+
+Hawa studied agriculture in Tamale. She completed this roadmap and volunteered with an NGO to improve its farmer registration form. She mapped the process, wrote user stories and tested the new form with field officers. She then applied for an M&E assistant role with that evidence. In the role, she became the person who managed the data tool, gathered officers' feedback and worked with the software vendor. Her next application, for a business analyst role at an agritech company, included three real examples from that work.`,
+      practice_task_md: `**Goal:** prepare a targeted application for one adjacent role.
+
+1. Choose one real advert for a business analyst, product support, product operations, product analyst or M&E role.
+2. List its five main duties in your own words.
+3. For each duty, write one example from your practice tasks or life that shows the skill, using a specific result where possible.
+4. Rewrite your CV's top section to lead with your three strongest examples for this advert.
+5. Write a cover note under 150 words showing you understand the company's users.
+
+**Done looks like:** a duties and evidence table, an updated CV top section and a short cover note. Ask a mentor to review them.`,
+      quiz: {
+        questions: [
+          q(
+            "Which of these is described as a door into product work?",
+            [
+              "Professional football",
+              "Airline pilot",
+              "Quality assurance testing",
+              "Pharmacist",
+            ],
+            2,
+            "Testers learn requirements deeply and work closely with product managers.",
+          ),
+          q(
+            "How can you grow product responsibility once you are in an adjacent role?",
+            [
+              "Wait quietly for a promotion",
+              "Ask to help with product shaped tasks and share useful work with the product manager",
+              "Avoid the product team",
+              "Change jobs every month",
+            ],
+            1,
+            "Taking on product tasks builds a track record for internal moves.",
+          ),
+          q(
+            "What does the lesson say about jobs that ask applicants to pay a fee?",
+            [
+              "Legitimate employers do not charge applicants",
+              "They are the best opportunities",
+              "Always pay quickly",
+              "Fees guarantee a job",
+            ],
+            0,
+            "Requests for payment are a warning sign.",
+          ),
+          q(
+            "How did Hawa build evidence before her M&E role?",
+            [
+              "She paid for a course certificate only",
+              "She built a social media following",
+              "She waited for a product manager job",
+              "She volunteered to improve an NGO's farmer registration form",
+            ],
+            3,
+            "Volunteering gave her real examples to show employers.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "product-portfolio": {
+      explanation_md: `When you do not yet have product job experience, a portfolio is your proof. It shows employers how you think: how you find a problem, gather evidence, decide and learn. Many adverts for product and analyst roles ask for experience you may not have; a strong portfolio is the best substitute you can build with free tools.
+
+## What a product portfolio contains
+
+Two or three case studies are enough. Quality beats quantity. Good sources from this roadmap:
+
+* Your manual MVP test.
+* A process map and improvement for a real organisation.
+* A spec with user stories and acceptance criteria.
+* A feedback analysis or spreadsheet investigation of a real product.
+* A usability test with findings.
+
+Real projects with real people, even small ones, are far more convincing than imagined apps.
+
+## A simple case study structure
+
+Each case study can follow this shape, in about one or two pages:
+
+1. **Context.** Who, where, and your role. "A chop bar in Tamale; I volunteered as the product person."
+2. **Problem.** What was wrong, with evidence from interviews or data.
+3. **What you did.** Research, options considered, what you chose and why.
+4. **What happened.** Results, honestly reported, including numbers if you have them.
+5. **What you learned.** Including mistakes and what you would do differently.
+
+## Show your thinking, including mistakes
+
+Employers do not expect a beginner's project to succeed perfectly. They want to see judgement. Writing "My first idea was a delivery app, but interviews showed the real problem was stock running out, so I changed direction" shows exactly the skill they hire for.
+
+Never invent results, users or quotes. Honest small results are respected; made up ones destroy trust if discovered.
+
+## Where to put it
+
+* A Google Doc or Google Slides deck shared with a link, set to "anyone with the link can view".
+* A free Notion page or a simple free website, if you are comfortable with them.
+* A PDF under 5 MB for email and WhatsApp.
+
+Make sure it reads well on a phone, because many recruiters and mentors will open it there. Remove personal details of the people you interviewed.
+
+## Worked example
+
+Mariama's portfolio has three case studies:
+
+* **Repeat orders for a farm produce WhatsApp line.** She ran a two week manual MVP with chop bars in Tamale, set a success rule beforehand, and reported 14 orders against a target of 15. She explains why it fell short and what she would change.
+* **Beneficiary registration for a youth NGO.** She mapped the paper process, wrote six user stories and tested a Google Form version with three volunteers.
+* **Feedback analysis of a Ghanaian banking app.** She categorised 50 public reviews and recommended one onboarding change.
+
+Each is two pages, with photos of her maps and screenshots of her sheets. In an interview, she walks through the first one and the interviewer spends most of the time asking about the shortfall and what she learned. That conversation, not a perfect result, earns her a second interview.`,
+      practice_task_md: `**Goal:** write your first portfolio case study.
+
+1. Choose your strongest practice task so far, ideally one involving real people.
+2. Write a case study using the five part structure: context, problem, what you did, what happened, what you learned.
+3. Include at least one image, such as a process map photo, a sheet screenshot or a wireframe.
+4. Check it on your phone. Remove any personal details of people you spoke to.
+5. Share it with a mentor or peer and ask, "What does this tell you about how I think?"
+
+**Done looks like:** a one or two page case study shared as a link, readable on a phone, with one round of feedback applied.`,
+      quiz: {
+        questions: [
+          q(
+            "What is the main purpose of a product portfolio for a beginner?",
+            [
+              "To show off design skills only",
+              "To list every course taken",
+              "To prove how you think when you do not yet have product job experience",
+              "To replace a CV entirely",
+            ],
+            2,
+            "A portfolio shows your judgement and process.",
+          ),
+          q(
+            "Which kind of project is most convincing?",
+            [
+              "An imagined app with no users",
+              "A real project with real people, even if small",
+              "A copy of a famous company's case study",
+              "A list of tools you know",
+            ],
+            1,
+            "Real projects with real people are more convincing than imagined apps.",
+          ),
+          q(
+            "What should you do about results that were disappointing?",
+            [
+              "Report them honestly and explain what you learned",
+              "Invent better numbers",
+              "Leave the project out completely",
+              "Blame the users",
+            ],
+            0,
+            "Honest small results are respected; invented ones destroy trust.",
+          ),
+          q(
+            "What did Mariama's interviewer focus on?",
+            [
+              "Her font choice",
+              "Her school grades",
+              "How many apps she had downloaded",
+              "The shortfall in her MVP and what she learned",
+            ],
+            3,
+            "Her honest reflection showed the judgement employers look for.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "product-interviews": {
+      explanation_md: `Interviews for product, business analyst and product operations roles test how you think, not just what you know. You will often be asked to work through a problem out loud. The good news is that the practice tasks in this roadmap are exactly the preparation you need.
+
+## Common question types
+
+* **Product sense.** "How would you improve a mobile money app you use?" or "Design a product to help farmers sell produce."
+* **Requirements.** "Write a user story and acceptance criteria for resetting a PIN."
+* **Prioritisation.** "Here are five feature requests. Which would you build first and why?"
+* **Metrics.** "How would you measure whether our new savings feature is working?" or "Sign ups rose but deposits fell. What would you investigate?"
+* **Process.** For BA roles: "Walk me through how you would gather requirements for a new loan application process."
+* **Behavioural.** "Tell me about a time you disagreed with someone" or "a time you made a mistake."
+
+## A simple structure for product questions
+
+When asked to improve or design something, avoid jumping straight to features. Work through:
+
+1. **Clarify.** Ask a question or two: which users, what goal, any constraints?
+2. **Users.** Pick a specific user group and explain why.
+3. **Problems.** List their main pain points, ideally from real observation.
+4. **Solutions.** Suggest two or three options, then choose one with reasons.
+5. **Measure.** Say how you would know it worked.
+
+Thinking out loud is expected. Interviewers want to follow your reasoning.
+
+## Behavioural questions
+
+Use a short story structure: the **situation**, the **task** you had, the **action** you took, and the **result**, including what you learned. Prepare four or five stories from your practice tasks, volunteering, school or work. Be honest; small, real stories beat impressive invented ones.
+
+## Use local knowledge
+
+You have an advantage: you understand how people in Ghana live and pay. Mention USSD for basic phones, mobile money confirmations, shared phones, data costs and local languages where relevant. It shows you will design for real users.
+
+## Worked example
+
+Fuseini is asked: "How would you improve a ride hailing app in Tamale?"
+
+He clarifies: "Should I focus on riders or drivers?" The interviewer says riders. He picks students who ride motorbike taxis to campus, because he has spoken with many. He lists pain points: price arguments, waiting without knowing where the driver is, and phones running out of data. He offers three ideas: fixed fares shown upfront for common routes, SMS updates for riders without data, and saved favourite routes. He chooses fixed fares because price arguments came up most in his conversations and it builds trust. To measure success, he suggests tracking completed rides per rider per week, with cancelled rides as a guardrail.
+
+He never claims certainty. He shows clear, user centred reasoning, and that is what the interviewer is looking for.
+
+## Prepare practically
+
+Practise aloud with a friend or record yourself on your phone. Research the company's product before the interview by using it if you can.`,
+      practice_task_md: `**Goal:** practise answering product and behavioural questions out loud.
+
+1. Pick one product sense question from the lesson and answer it using the five step structure. Record yourself on your phone for no more than five minutes.
+2. Listen back and note where you jumped to solutions or skipped measurement.
+3. Write four behavioural stories using situation, task, action and result, drawn from your practice tasks or life.
+4. Practise one product question and two stories with a friend or mentor, and ask for one piece of feedback on each.
+
+**Done looks like:** one recording, your self review notes, four written stories and feedback notes from a practice session.`,
+      quiz: {
+        questions: [
+          q(
+            "What should you do first when asked to improve a product in an interview?",
+            [
+              "List as many features as possible",
+              "Criticise the company",
+              "Clarify the users, goal or constraints",
+              "Stay silent until you have a perfect answer",
+            ],
+            2,
+            "Clarifying keeps your answer focused on the right users and goal.",
+          ),
+          q(
+            "Which structure does the lesson suggest for behavioural questions?",
+            [
+              "Problem, price, place, promotion",
+              "Situation, task, action, result",
+              "Plan, build, launch, forget",
+              "Users, features, colours, logo",
+            ],
+            1,
+            "Situation, task, action and result give a clear short story.",
+          ),
+          q(
+            "Why mention local factors such as USSD and data costs in interviews?",
+            [
+              "It shows you will design for real users in Ghana",
+              "To fill time",
+              "Interviewers require it by law",
+              "To avoid answering the question",
+            ],
+            0,
+            "Local knowledge shows you understand the market.",
+          ),
+          q(
+            "Why did Fuseini choose fixed upfront fares?",
+            [
+              "It was the easiest to build",
+              "The interviewer suggested it",
+              "Competitors had it",
+              "Price arguments came up most in his conversations and fixed fares build trust",
+            ],
+            3,
+            "His choice was based on evidence from users.",
+          ),
+          q(
+            "How did Fuseini suggest measuring success?",
+            [
+              "Number of app downloads",
+              "Number of drivers hired",
+              "Completed rides per rider per week, with cancelled rides as a guardrail",
+              "Social media likes",
+            ],
+            2,
+            "He chose a value metric with a guardrail, as in the metrics lesson.",
+          ),
+        ],
+        pass_threshold: 80,
+      },
+    },
   },
 };
 
