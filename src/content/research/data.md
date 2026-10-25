@@ -35,7 +35,7 @@ Africa based applicants exist but mostly ask for SQL plus a BI tool.
 | S15 | beBee: Standard Bank Group, Officer Data Science, Accra (snippet) | https://bebee.com/gh/jobs/officer-data-science-standard-bank-group-accra--bs-gh-c79ba181-9145-407e-a23c-d8584f5d4d09 | 2026-10-25 | Search result snippet only |
 | S16 | Jobberman: Business Intelligence Analyst (AirtelTigo), snippet | https://jobberman.com.gh/listings/business-intelligence-analyst-vwr4p8 | 2026-10-25 | Search result snippet only |
 | S17 | Jobberman: Mobile Money Operations Specialist at Telecel Ghana, snippet | https://jobberman.com.gh/listings/mobile-money-operations-specialist-at-telecel-ghana-npnv9g | 2026-10-25 | Search result snippet only |
-| S18 | Jobberman: Data Entry Specialist, Accra (snippet) | https://www.jobberman.com.gh/listings/data-entry-operator-mis-84z470 | 2026-10-25 | Search result snippet only |
+| S18 | Jobberman search results: data entry roles, Accra (snippet summarised several listings; exact listing URL uncertain, listing pages now redirect) | https://www.jobberman.com.gh/listings/data-entry-operator-mis-84z470 | 2026-10-25 | Search result snippet only |
 | S19 | Jobberman: Data Clerk, Boatpoint Enterprise (snippet) | https://www.jobberman.com.gh/listings/data-clerk-jqk06e | 2026-10-25 | Search result snippet only |
 | S20 | Jobberman: Research Assistant at IITA, Tamale (snippet) | https://www.jobberman.com.gh/listings/research-assistant-at-international-institute-of-tropical-agriculture-iita-tamale-4nkg4e | 2026-10-25 | Search result snippet only |
 | F1 | O*NET OnLine: Business Intelligence Analysts 15-2051.01 | https://www.onetonline.org/link/summary/15-2051.01 | 2026-10-25 | Public skills framework (O*NET, CC BY 4.0) |
@@ -74,7 +74,7 @@ No advert text is copied. "Seen as" says whether the full listing or only a sear
 | A15 | Officer, Data Science | Bank | Accra | May 2026 | Snippet (S15) | Expired | Power BI, Tableau, Azure |
 | A16 | Business Intelligence Analyst | Telco | Accra | Feb 2023 | Snippet (S16) | Expired | Marked entry level; quality checks and validation of BI data, reporting data issues |
 | A17 | Mobile Money Operations Specialist | Telco | Accra | Undated | Snippet (S17) | Unknown | SQL, relational databases, ETL pipelines |
-| A18 | Data Entry Specialist | Not stated | Accra | Undated | Snippet (S18) | Unknown | Strong Excel, weekly and monthly reports |
+| A18 | Data Entry Specialist (exact listing URL uncertain) | Not stated | Accra | Undated | Snippet (S18) | Unknown | Strong Excel, weekly and monthly reports |
 | A19 | Data Clerk | Trading enterprise | Accra (Amasaman) | Undated | Snippet (S19) | Unknown | Basic computer skills, Microsoft Office, accuracy |
 | A20 | Research Assistant | International agricultural research | Tamale | Undated | Snippet (S20) | Unknown | Collating and analysing field trial data, progress reports |
 

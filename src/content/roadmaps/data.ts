@@ -63,7 +63,7 @@ export const data: RoadmapDraft = {
       slug: "spreadsheets",
       title: "Spreadsheets for analysis",
       summary:
-        "Spreadsheets are the tool named most often in Ghanaian data and M&E adverts. This section takes you from basic formulas to lookups and pivot tables in Google Sheets.",
+        "Spreadsheets are the first tool most data and M&E adverts ask for. This section takes you from basic formulas to lookups and pivot tables in Google Sheets.",
       parent: null,
       optional: false,
       resources: [RES.sheetsHelp],
