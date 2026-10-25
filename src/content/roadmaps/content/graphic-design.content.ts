@@ -778,6 +778,744 @@ Zuweira runs a small business selling shea soap in Tamale and sends Wumpini a di
         pass_threshold: 75,
       },
     },
+    branding: {
+      explanation_md: `"I need a logo" is one of the most common requests a designer in Ghana hears. It comes from a new pharmacy in Bolgatanga, a youth fellowship, a rice farmers' association, a fashion designer starting on Instagram. Branding work is valuable because businesses keep using it for years, and adverts for designers regularly mention logos, brand materials and brand guidelines.
+
+## A brand is more than a logo
+
+A brand is the impression people have of a business: what they remember, what they expect and whether they trust it. Design supports that impression through a visual identity, which usually includes:
+
+* **A logo** that people can recognise quickly.
+* **Colours** used the same way every time.
+* **Fonts** for headings and body text.
+* **A photo and graphic style**, such as bright and playful or calm and formal.
+* **A tone of voice**, meaning how the business sounds in its words.
+
+When these are used consistently across a signboard, a WhatsApp Status, a receipt and a delivery bag, customers recognise the business instantly. When every flyer looks different, the business feels unreliable, even if its products are good.
+
+## What this section covers
+
+* **Logo design.** How to go from questions and sketches to a simple vector logo that works at any size, in colour and in black and white. This is where a laptop helps most, and we will show you a phone route too.
+* **Brand identity and guidelines.** How to collect the logo, colours, fonts and style into a short guide, so that you, the client or any future designer can keep the brand consistent.
+
+## Branding is a conversation
+
+A logo designed without understanding the business is decoration. Good branding starts with questions. Who are the customers? What should they feel? Who are the competitors, and how should this business look different? What will the logo appear on: a signboard, a stamp, a sachet, an app icon? The answers shape every design decision, and they also help you explain your choices to the client, which builds trust.
+
+## A small example
+
+Yakubu helps his cousin, who is opening a provisions shop in Savelugu called "Alheri Mart". His cousin first asks for "something with many colours and a shopping trolley". Yakubu asks questions instead. The customers are families nearby. The shop wants to feel friendly, clean and affordable. The name will appear on a signboard, receipts, plastic bags and a WhatsApp profile picture.
+
+Yakubu designs a simple wordmark in a rounded bold font with one warm orange and dark green. He then uses those colours and that font on the price list, the WhatsApp Status template and the bags. Within weeks, neighbours recognise "the orange shop" before they read the name. That is branding working, and it all started with questions.`,
+      practice_task_md: `**Goal:** Study how a real brand stays consistent.
+
+**Steps:**
+1. Choose a well known Ghanaian brand you see often, such as a bank, telecom company, drinks maker or supermarket.
+2. Find three places its brand appears, such as a signboard, a social media post and packaging. Take photos or screenshots.
+3. For each, note the logo version, the colours and the fonts used.
+4. Write down what stays the same in all three and anything that changes.
+5. Now choose a small local business and write the five questions from this lesson you would ask before designing its logo.
+
+**Done looks like:** Three photos with notes on consistency, plus a list of five questions ready for a real client.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, what is a brand?",
+            options: [
+              "Only the logo of a business",
+              "The impression people have of a business: what they remember, expect and trust",
+              "The most expensive product a business sells",
+              "The signboard outside a shop",
+            ],
+            answer_index: 1,
+            explanation: "The lesson defines a brand as the impression people have of a business, supported by its visual identity.",
+          },
+          {
+            prompt: "Which of these is part of a visual identity, as listed in the lesson?",
+            options: [
+              "The owner's home address",
+              "The shop's opening hours",
+              "Colours used the same way every time",
+              "The number of staff",
+            ],
+            answer_index: 2,
+            explanation: "A visual identity includes a logo, colours, fonts, photo style and tone of voice.",
+          },
+          {
+            prompt: "Why does a business feel unreliable when every flyer looks different?",
+            options: [
+              "Because customers cannot recognise it consistently",
+              "Because flyers must always be black and white",
+              "Because printing becomes free",
+              "Because logos are not allowed on flyers",
+            ],
+            answer_index: 0,
+            explanation: "Consistency helps customers recognise a business; inconsistency makes it feel unreliable.",
+          },
+          {
+            prompt: "What did Yakubu do before designing the Alheri Mart logo?",
+            options: [
+              "He copied a supermarket logo from the internet",
+              "He used every colour his cousin suggested",
+              "He designed a shopping trolley straight away",
+              "He asked about customers, feelings and where the logo would appear",
+            ],
+            answer_index: 3,
+            explanation: "He asked questions first, and the answers shaped a simple, consistent identity.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "logo-design": {
+      explanation_md: `A logo is often a designer's most visible work. It may sit on a signboard for ten years, on every receipt and on every social media post. Clients care about logos, and adverts for print shops, agencies and in house teams regularly list logo design among the core tasks.
+
+## Kinds of logo
+
+* **Wordmark:** the name in a carefully chosen font, often adjusted by hand.
+* **Lettermark:** initials, useful for long names.
+* **Symbol:** a simple picture or shape with no words.
+* **Combination:** a symbol with the name beside or below it. This is the most common choice for small businesses.
+* **Emblem:** the name inside a shape, like a badge or seal, common for schools and associations.
+
+## A simple process
+
+1. **Ask questions.** Use the branding questions: customers, feelings, competitors and where the logo will appear.
+2. **Research.** Look at competitors so your design looks different, not similar.
+3. **Sketch on paper.** Draw twenty quick, rough ideas in pencil. Quantity first; most will be bad, and that is normal.
+4. **Choose two or three.** Pick the clearest ideas and refine them.
+5. **Build them as vectors.** Recreate the chosen ideas with shapes and type in a vector editor, so they stay sharp at any size.
+6. **Test.** Shrink the logo to the size of a stamp or a profile picture. Print it in black only. Put it on a dark background. A good logo survives all three.
+7. **Deliver properly.** Give the client a full colour version, a one colour version and a white version, in vector (SVG or PDF) and in PNG with a transparent background.
+
+## Keep it simple
+
+The best small business logos are simple. Thin lines and tiny details disappear on a stamp or a small embroidered shirt. Avoid copying popular symbols, and avoid trendy effects such as heavy shadows and glows that look dated quickly and print badly.
+
+## Phone or laptop?
+
+Building a clean vector logo is much easier on a laptop with a free vector editor such as Inkscape, because you need precise control of points and curves. If you only have a phone, you can still do steps 1 to 4 fully: questions, research, paper sketches and refining. Then build a simple version from basic shapes and text in a phone design app, and finish the vector version on a laptop at a school lab, library or community centre. Be honest with clients: a logo made only in a phone app may not print sharply on a large signboard.
+
+## A small example
+
+Hawa designs a logo for a women's rice processing group in Nyankpala. After asking questions, she sketches twenty ideas, including rice grains, a pot and joined hands. She chooses a single rice grain shaped like a leaf beside the group's name. At a library computer she builds it in Inkscape, tests it at stamp size and in black only, and delivers six files. The group uses it on sacks, a banner and their WhatsApp profile, and it stays clear everywhere.`,
+      practice_task_md: `**Goal:** Design a simple logo through the full process.
+
+**Steps:**
+1. Choose a real or made up local business, such as a tailor in Wa or a borehole drilling service.
+2. Write answers to four questions: customers, feeling, competitors, where the logo will appear.
+3. Sketch at least twenty rough ideas on paper in ten minutes. Take a photo of the page.
+4. Choose your best two and build them in a design app on your phone using simple shapes and text, or in Inkscape on a laptop if you can reach one.
+5. Test each at a very small size, in black only and on a dark background. Pick the winner.
+
+**Done looks like:** A photo of your sketches, two digital versions, the three tests and a final logo with one sentence explaining your choice. This makes a strong portfolio piece.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which kind of logo is a symbol with the business name beside or below it?",
+            options: ["Wordmark", "Lettermark", "Combination", "Emblem"],
+            answer_index: 2,
+            explanation: "A combination logo uses a symbol and the name together.",
+          },
+          {
+            prompt: "Why does the lesson suggest sketching twenty rough ideas on paper?",
+            options: [
+              "Quantity first helps you find the clear ideas, even though most will be bad",
+              "Clients want to see all twenty",
+              "Paper sketches are the final logo",
+              "Printers need sketches before printing",
+            ],
+            answer_index: 0,
+            explanation: "Many quick sketches help you explore, then you choose the clearest few.",
+          },
+          {
+            prompt: "Which three tests does the lesson say a good logo should survive?",
+            options: [
+              "Being posted, liked and shared",
+              "Being printed on gold, silver and bronze",
+              "Being animated, filmed and edited",
+              "Shrunk very small, printed in black only and placed on a dark background",
+            ],
+            answer_index: 3,
+            explanation: "The lesson tests small size, black only and a dark background.",
+          },
+          {
+            prompt: "What should you deliver to the client when the logo is finished?",
+            options: [
+              "One small JPG sent on WhatsApp",
+              "Full colour, one colour and white versions, in vector and in transparent PNG",
+              "A screenshot of your phone screen",
+              "Only your paper sketches",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists colour, one colour and white versions as SVG or PDF and transparent PNG.",
+          },
+          {
+            prompt: "What does the lesson advise if you only have a phone?",
+            options: [
+              "Do not design logos at all",
+              "Tell clients phone logos always print perfectly on big signboards",
+              "Do the questions, research and sketches on the phone or paper, then finish the vector on a shared laptop and be honest with clients",
+              "Copy a logo from the internet",
+            ],
+            answer_index: 2,
+            explanation: "Steps 1 to 4 work without a laptop; the precise vector build is best done on a laptop at a lab, library or community centre.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "brand-identity": {
+      explanation_md: `When a company hires a designer, one of the first things it hands over is its brand guidelines, and adverts often say the designer must keep work consistent with them. Learning to write a simple brand guide, and to follow someone else's, shows employers you can work professionally inside a team.
+
+## What a brand guide contains
+
+A brand guide, also called brand guidelines, is a short document that explains how to use a brand's visual identity. For a small business, one to four pages is enough.
+
+* **Logo versions:** the main logo, a one colour version and a white version, and when to use each.
+* **Logo rules:** clear space, which is the empty area around the logo that nothing should enter, and a minimum size below which the logo should not be used.
+* **Logo don'ts:** examples of what not to do, such as stretching it, changing its colours, adding shadows or placing it on a busy photo.
+* **Colours:** each brand colour with its codes. Include a hex code for screens and, if the client prints often, the CMYK values the printer should use.
+* **Fonts:** the heading font and the body font, with where to get them.
+* **Image style:** what photos should feel like, such as bright, natural daylight with real customers.
+* **Examples:** one or two finished designs, such as a social media post and a flyer, showing the rules in use.
+
+## Why it helps everyone
+
+For the client, a guide means any printer or future designer can produce consistent work. For you, it saves time: you no longer guess colours or hunt for the right logo file. It also makes you look professional and can be offered as an extra paid item when you deliver a logo.
+
+## Following someone else's guide
+
+When you join an agency or in house team, you will often work on an existing brand. Read the guide fully before you start. Use the exact colour codes, the approved fonts and the correct logo files. If something you need is missing, ask rather than invent. Reviewers notice quickly when a designer drifts from the brand.
+
+## Templates
+
+Brands that post often benefit from templates: ready made layouts for a price post, an announcement and a quote, using the brand colours and fonts. You or the client change only the words and photo. Templates keep the brand consistent even on busy days.
+
+## A small example
+
+Issahaku delivered a logo to a computer training centre in Tamale. He adds a two page brand guide: page one shows the logo versions, clear space, minimum size and three logo don'ts; page two shows the blue and yellow with hex and CMYK codes, the two fonts, and an example flyer and Status post. Three months later the centre asks a printer in Accra for banners. The printer follows the guide, and the banners match everything else perfectly. The centre comes back to Issahaku for more work because his files made life easy.`,
+      practice_task_md: `**Goal:** Create a one page brand guide.
+
+**Steps:**
+1. Use the logo you designed in the logo lesson, or design a simple wordmark for a made up business.
+2. In a free design app, create one A4 page.
+3. Add: logo versions, a clear space note, a minimum size, three logo don'ts, your colour palette with hex codes, two fonts, and one sentence about image style.
+4. Add one small example design, such as a social media post, that follows the rules.
+5. Export it as a PDF and check that it is readable on your phone.
+
+**Done looks like:** A one page PDF brand guide that someone else could follow to make a matching design.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is clear space in a brand guide?",
+            options: [
+              "The empty area around a logo that nothing else should enter",
+              "A blank page at the end of the guide",
+              "The white background of every design",
+              "Space left for the printer's name",
+            ],
+            answer_index: 0,
+            explanation: "Clear space is the protected empty area around the logo.",
+          },
+          {
+            prompt: "Which colour information should a guide include if the client prints often?",
+            options: [
+              "Only the colour names, such as \"blue\"",
+              "Nothing; printers choose colours",
+              "Hex codes for screens and CMYK values for the printer",
+              "A photo of the colour on a phone",
+            ],
+            answer_index: 2,
+            explanation: "The lesson recommends hex codes for screens and CMYK values for print.",
+          },
+          {
+            prompt: "What should you do if a company's brand guide is missing something you need?",
+            options: [
+              "Invent your own rule",
+              "Use any colour you like",
+              "Ignore the guide completely",
+              "Ask rather than invent",
+            ],
+            answer_index: 3,
+            explanation: "When working on an existing brand, ask if something is missing.",
+          },
+          {
+            prompt: "Why did the computer training centre's Accra banners match everything else?",
+            options: [
+              "The printer guessed the colours well",
+              "The printer followed Issahaku's brand guide",
+              "The centre used a different logo",
+              "The banners were printed in black only",
+            ],
+            answer_index: 1,
+            explanation: "The guide gave the printer exact logo files, colours and fonts.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "client-designs": {
+      explanation_md: `Ask designers in any Ghanaian town what they spend their days making, and the answers are similar: social media posts and Status graphics, event flyers, church and funeral programmes, posters, banners, business cards and stickers. These everyday jobs are where most designers earn their first money, and they appear again and again in job adverts from print shops, schools, NGOs and companies.
+
+## Two destinations: screen and paper
+
+Every design you make will end up either on a screen or on paper, and sometimes both.
+
+* **Screen designs** are seen on phones: WhatsApp, Facebook, Instagram, TikTok. They need the right size and shape for the platform, small file sizes for people on prepaid data, and text large enough to read on a small screen.
+* **Print designs** go to a printing machine. They need the right physical size, extra space at the edges called bleed, sharp images and colours that print well. Mistakes cost the client money because paper and ink are wasted.
+
+Many jobs need both. A church harvest might want a WhatsApp flyer, a printed A4 poster and a large banner, all matching. Knowing how to adapt one design for different sizes is a skill employers value.
+
+## What this section covers
+
+* **Social media graphics.** Sizes for posts and Status, one clear message per graphic, small files and templates for businesses that post often.
+* **Flyers, posters and banners.** Designing for quick reading, from a phone flyer to a banner read across the road, plus programmes and multi page documents.
+* **Print basics for Ghanaian printers.** How to prepare files that a local print shop can print without surprises, and what to ask the printer.
+* **Simple motion graphics.** An optional lesson on adding movement for Status videos and social posts, which agency and multimedia adverts often request.
+
+## Speed and quality together
+
+Local clients often need designs quickly: a funeral poster by tomorrow, a flyer for Sunday. Templates, a tidy file system and a checklist for spelling, dates and phone numbers let you be fast without making careless mistakes. One wrong phone number on five hundred printed flyers is a costly lesson.
+
+## A small example
+
+Mahama runs a small design table beside a print shop in Wa. On one Friday he designs a funeral poster, a WhatsApp flyer for a youth programme, a banner for a school's anniversary and business cards for a mechanic. For the WhatsApp flyer he exports a small portrait JPG. For the banner he asks the printer for the size and bleed and exports a PDF. Before printing anything he reads every name, date and number aloud with the client. By evening every job is out with no reprints, and two of those clients send friends to him the next week.`,
+      practice_task_md: `**Goal:** Adapt one design for screen and for paper.
+
+**Steps:**
+1. Choose a made up event, such as a community health walk in Yendi.
+2. Design a portrait flyer for WhatsApp in a free design app, keeping text large and the file small.
+3. Resize or rebuild the same design as an A4 poster for print, keeping the same colours and fonts.
+4. Write a short checklist you will use before any print job: spelling, names, dates, times, phone numbers, size, bleed.
+5. Check both designs against your checklist.
+
+**Done looks like:** A matching WhatsApp flyer and A4 poster, plus your own pre print checklist.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why do screen designs for WhatsApp need small file sizes?",
+            options: [
+              "Because printers cannot read large files",
+              "Because many people use prepaid data",
+              "Because WhatsApp only shows black and white",
+              "Because small files have better colours",
+            ],
+            answer_index: 1,
+            explanation: "Small files load quickly and cost less data for people on prepaid bundles.",
+          },
+          {
+            prompt: "What is the extra space at the edges of a print design called?",
+            options: ["Bleed", "Padding", "Kerning", "Hierarchy"],
+            answer_index: 0,
+            explanation: "Print designs need extra space at the edges called bleed.",
+          },
+          {
+            prompt: "According to the lesson, how can you be fast without making careless mistakes?",
+            options: [
+              "Skip checking because clients will notice errors",
+              "Use as many fonts as possible",
+              "Use templates, a tidy file system and a checklist for spelling, dates and phone numbers",
+              "Print first and check afterwards",
+            ],
+            answer_index: 2,
+            explanation: "Templates, tidy files and a checklist make speed possible without careless errors.",
+          },
+          {
+            prompt: "What did Mahama do before printing any job?",
+            options: [
+              "Sent it to the client's competitor",
+              "Changed all the colours",
+              "Made the text smaller",
+              "Read every name, date and number aloud with the client",
+            ],
+            answer_index: 3,
+            explanation: "Checking details with the client prevented costly reprints.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "social-media-graphics": {
+      explanation_md: `Almost every business in Ghana now sells or announces something on WhatsApp, Facebook, Instagram or TikTok, and they need graphics every week. Adverts from companies, NGOs and agencies regularly list social media graphics as a core task, and it is also the easiest design service to offer a local shop as a freelancer.
+
+## Get the size right
+
+Each platform shows images in certain shapes. Common sizes in pixels are:
+
+* **Square post:** 1080 by 1080.
+* **Portrait post:** 1080 by 1350, which takes up more of the screen in a feed.
+* **Status and Stories:** 1080 by 1920, a tall shape that fills a phone screen.
+
+Platforms change their layouts from time to time, so check the current guidance when a client needs something specific. On Status and Stories, keep important text away from the very top and bottom, where names, buttons and reply boxes cover the image.
+
+## One message per graphic
+
+A social graphic is seen for about as long as a thumb takes to scroll past. Give each graphic one job: announce the sale, show the new product, share the event date. Use a short headline, a strong image and a clear next step, such as "Order on WhatsApp" with the number. Put longer details in the caption, not in the graphic.
+
+## Keep files light
+
+Many of your client's customers are on prepaid data and older phones. Export social graphics as JPG for photos or PNG for designs with sharp text, at the size the platform needs, not bigger. A huge file wastes data and may be compressed anyway.
+
+## Carousels and series
+
+A carousel is a set of slides people swipe through, useful for a menu, a list of tips or several products. Keep the same layout, colours and fonts on every slide so it feels like one piece, and make the first slide interesting enough to swipe.
+
+## Templates save time
+
+A business that posts every day needs consistency more than creativity. Build templates for its common posts, such as a product with price, an announcement, a customer review and a holiday greeting, in its brand colours and fonts. Each new post then takes minutes, and the feed looks professional.
+
+## Real content only
+
+Do not invent customer reviews, fake "sold out" claims or prices the client did not approve. Use real photos of the real products. Honest content protects the client's reputation and yours.
+
+## A small example
+
+Amina manages graphics for a fabric shop in Tamale. She sets up four templates in the shop's colours: "New arrival", "Price list", "Customer photo" with permission, and "Closed for holiday". Each morning she drops in a fresh daylight photo of the new fabric, types the price in cedis and exports a small Status image and a portrait post. The shop owner says customers now recognise the shop's posts before reading the name.`,
+      practice_task_md: `**Goal:** Build a small social media template set for a local business.
+
+**Steps:**
+1. Choose a business near you, such as a phone accessories shop or a chop bar.
+2. In a free design app, create three templates in the same colours and fonts: a 1080 by 1350 product post, a 1080 by 1920 Status announcement and a 1080 by 1080 greeting.
+3. Fill each template with real content: a photo you took, a real price you confirmed and a clear next step.
+4. Export each and check the file size. Aim to keep each file small enough to send quickly on WhatsApp.
+5. View the Status design on your phone and check nothing important is hidden at the top or bottom.
+
+**Done looks like:** Three matching templates, filled with real content, with file sizes noted. Offer them to the business owner for feedback.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which size in pixels does the lesson give for Status and Stories?",
+            options: ["1080 by 1080", "500 by 500", "1080 by 1920", "1920 by 1080"],
+            answer_index: 2,
+            explanation: "Status and Stories use a tall 1080 by 1920 shape that fills a phone screen.",
+          },
+          {
+            prompt: "Why keep important text away from the very top and bottom of a Status design?",
+            options: [
+              "Names, buttons and reply boxes can cover those areas",
+              "Text there prints badly",
+              "The colours change at the edges",
+              "WhatsApp deletes text at the edges",
+            ],
+            answer_index: 0,
+            explanation: "Platform interface elements cover the top and bottom of Status and Stories.",
+          },
+          {
+            prompt: "According to the lesson, how many messages should one social graphic carry?",
+            options: [
+              "As many as possible to save money",
+              "Every detail of the business",
+              "At least five",
+              "One clear message, with longer details in the caption",
+            ],
+            answer_index: 3,
+            explanation: "Each graphic should have one job, with details in the caption.",
+          },
+          {
+            prompt: "Why are templates useful for a business that posts every day?",
+            options: [
+              "They make every post look completely different",
+              "They keep posts consistent and make each new post quick",
+              "They remove the need for photos",
+              "They make files larger",
+            ],
+            answer_index: 1,
+            explanation: "Templates in brand colours and fonts make posts fast and consistent.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "flyers-and-posters": {
+      explanation_md: `Flyers and posters are the bread and butter of design work in Ghana. Churches announce crusades and harvests, families announce funerals and weddings, schools announce speech days, politicians and associations announce meetings, and shops announce sales. Print shop and in house adverts regularly name flyers, posters, banners and brochures among the main tasks.
+
+## Know where it will be seen
+
+* **WhatsApp flyer:** seen on a phone, often for a second or two. Portrait shape, large text, small file.
+* **Handbill or A5 flyer:** held in the hand, read up close. Can carry a little more detail.
+* **Poster:** pasted on a wall or noticeboard and seen while walking past. The main message must be readable from a few steps away.
+* **Banner:** hung on a building or across a road and read from far away, often from a moving vehicle. Only a few words, very large, with strong contrast.
+
+The further away people are, the fewer words you can use and the bigger they must be. A banner that copies every line from the flyer will be unreadable.
+
+## A structure that works
+
+Most event flyers follow a reliable order:
+
+1. **The hook:** the event name or the offer, biggest and boldest.
+2. **The key facts:** date, time and venue, grouped together.
+3. **The supporting detail:** speakers, guest of honour, what to bring.
+4. **The action:** a phone number, WhatsApp contact or "All are welcome".
+
+Use the principles you have learned: strong hierarchy, alignment to a grid, related details grouped, and space around the most important parts.
+
+## Programmes and booklets
+
+Funeral, wedding and church programmes are often folded booklets. A sheet of A4 folded in half makes four A5 pages, so folded booklets work in multiples of four pages. Plan the page order with the printer before you design. For long documents such as reports and handbooks on a laptop, a free layout program such as Scribus handles many pages, master pages and consistent margins better than a single page design app.
+
+## Respect and accuracy
+
+Funeral posters and programmes carry deep meaning for families. Spell every name exactly as the family writes it, check dates of birth and death carefully, and use photos and colours the family approves. A respectful, accurate poster builds your name in the community.
+
+## A small example
+
+Abdul-Rahman designs for a youth association's health screening day in Salaga. For WhatsApp, he makes a portrait flyer with "Free Health Screening" in large letters, the date, time and venue grouped together, and the contact at the bottom. For the A3 poster he keeps the same design with slightly more detail. For the roadside banner he uses only "Free Health Screening", the date and the venue, very large. People driving past read the banner in a second, and the WhatsApp flyer is shared widely.`,
+      practice_task_md: `**Goal:** Design one event in three formats.
+
+**Steps:**
+1. Choose a made up event, such as a church harvest in Bolgatanga or a school sports day.
+2. Write the content: hook, key facts, supporting details and action.
+3. Design a portrait WhatsApp flyer using the four part structure.
+4. Adapt it into an A4 poster with the same colours and fonts.
+5. Design a banner version using no more than ten words. View it on your phone at a tiny size to imagine reading it from far away.
+
+**Done looks like:** Three matching designs, with the banner using far fewer words than the flyer.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does the lesson say about banners read from far away?",
+            options: [
+              "They should copy every line from the flyer",
+              "They need small, detailed text",
+              "They should use only a few words, very large, with strong contrast",
+              "They work best in script fonts",
+            ],
+            answer_index: 2,
+            explanation: "The further away people are, the fewer and bigger the words must be.",
+          },
+          {
+            prompt: "In the four part flyer structure, what comes first?",
+            options: [
+              "The phone number",
+              "The hook, such as the event name or offer",
+              "The list of sponsors",
+              "The supporting detail",
+            ],
+            answer_index: 1,
+            explanation: "The hook comes first and is the biggest and boldest item.",
+          },
+          {
+            prompt: "Why do folded booklets usually work in multiples of four pages?",
+            options: [
+              "Because one A4 sheet folded in half makes four A5 pages",
+              "Because printers only print four pages a day",
+              "Because programmes must have four photos",
+              "Because funeral programmes are always four pages long",
+            ],
+            answer_index: 0,
+            explanation: "Folding an A4 sheet in half gives four A5 pages.",
+          },
+          {
+            prompt: "What does the lesson advise for funeral posters and programmes?",
+            options: [
+              "Use bright colours without asking",
+              "Guess the spelling of names to save time",
+              "Use any photo found online",
+              "Spell names exactly as the family writes them and check dates carefully",
+            ],
+            answer_index: 3,
+            explanation: "Accuracy and respect matter greatly for funeral materials.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "print-production": {
+      explanation_md: `A design that looks perfect on your phone can still fail at the print shop: text cut off at the edge, a blurry photo, colours that look muddy, a white line along one side. Print shops and branding companies in Ghana often say in their adverts that they want designers who understand print and can prepare files for production. This lesson teaches the basics so your files print right the first time.
+
+## Talk to the printer first
+
+Before you design anything for print, ask the printer:
+
+* What size is the finished item, and in what units?
+* How much bleed do you need?
+* What file type do you prefer, usually PDF?
+* Do you want colours in CMYK?
+* How should fonts be handled? Many shops ask you to embed fonts in the PDF or convert text to outlines, sometimes called curves, so their computer does not swap your font.
+
+Printers differ, and their answers matter more than any general rule.
+
+## Three areas on every print design
+
+* **Trim line:** where the paper will be cut to the finished size.
+* **Bleed:** extra background that extends past the trim line, commonly about 3 mm on each side. Paper shifts slightly when cut, so bleed prevents thin white edges.
+* **Safe area:** an inner margin, often a few millimetres inside the trim line, where all important text and logos must stay so nothing is cut off.
+
+So an A5 flyer, finished at 148 by 210 mm, would be designed at 154 by 216 mm with 3 mm bleed on every side.
+
+## Sharp images and the right colours
+
+Use photos with about 300 pixels per inch at the printed size, and use vector logos wherever possible. Remember that screens use RGB light while printers use CMYK ink. Some bright screen colours print duller, so ask the printer to convert and show you a proof, and warn the client that colours on paper will not match their phone screen exactly.
+
+## Paper and finishes
+
+Paper is described by weight in grams per square metre, or gsm. Thin paper suits cheap handbills; thicker card suits business cards and certificates. Paper can be glossy or matt. You do not need to choose alone: ask the printer what they stock and show the client samples.
+
+## Proofs and sign off
+
+A proof is a final check copy before the full run. Read every word, name, date, time and phone number aloud with the client. Ask the client to approve the proof in writing, even by WhatsApp message. For large or costly jobs, ask for one printed sample before printing hundreds.
+
+## Laptop or phone?
+
+Setting exact bleed and exporting a print PDF with crop marks is easiest on a laptop with a free tool such as Inkscape or Scribus. Some phone design apps can export print PDFs too, but features change, so check before you promise. If in doubt, design on your phone, then finish and check the print file on a shared computer.
+
+## A small example
+
+Fuseini designs a calendar for a rural bank branch. He asks the printer for size, bleed and file type, adds 3 mm bleed, keeps text inside the safe area, uses a vector logo and exports a PDF with fonts converted to outlines. He sends the branch manager a proof and gets approval by WhatsApp. The printer prints a sample first, the colours look right, and five hundred calendars come out perfect.`,
+      practice_task_md: `**Goal:** Prepare a print ready A5 flyer file.
+
+**Steps:**
+1. Set up a design at 154 by 216 mm (A5 plus 3 mm bleed on each side) in a design tool, on a laptop if possible.
+2. Extend the background colour or photo to the very edge of the bleed.
+3. Keep all text and logos at least 5 mm inside the trim line.
+4. Use one photo that is about 300 pixels per inch at its printed size.
+5. Export as a PDF. If your tool offers it, add crop marks.
+6. Write down the five questions you would ask a printer, then, if you can, ask a print shop near you and record their answers.
+
+**Done looks like:** A PDF flyer with bleed and a safe area, plus a note of a real printer's answers to your five questions.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is bleed in a print design?",
+            options: [
+              "Extra background past the trim line so no white edges appear when paper is cut",
+              "The space between lines of text",
+              "A colour that runs when wet",
+              "The empty area around a logo",
+            ],
+            answer_index: 0,
+            explanation: "Bleed extends the background past the trim line, commonly about 3 mm.",
+          },
+          {
+            prompt: "Where must important text and logos stay?",
+            options: [
+              "In the bleed area",
+              "Exactly on the trim line",
+              "Inside the safe area, a few millimetres inside the trim line",
+              "Outside the page",
+            ],
+            answer_index: 2,
+            explanation: "The safe area keeps important content from being cut off.",
+          },
+          {
+            prompt: "With 3 mm bleed on each side, what size should an A5 flyer (148 by 210 mm) be designed at?",
+            options: ["148 by 210 mm", "151 by 213 mm", "160 by 220 mm", "154 by 216 mm"],
+            answer_index: 3,
+            explanation: "Adding 3 mm on every side adds 6 mm to each dimension: 154 by 216 mm.",
+          },
+          {
+            prompt: "Why do many print shops ask you to embed fonts or convert text to outlines?",
+            options: [
+              "To make the file look brighter",
+              "So their computer does not replace your font with a different one",
+              "To change the colours to RGB",
+              "To make the paper thicker",
+            ],
+            answer_index: 1,
+            explanation: "Embedding or outlining fonts stops the printer's computer swapping them.",
+          },
+          {
+            prompt: "What should you do before printing a large job, according to the lesson?",
+            options: [
+              "Get written approval of a proof and ask for one printed sample",
+              "Print everything first and check later",
+              "Skip the client because they are busy",
+              "Send the file as a small WhatsApp image",
+            ],
+            answer_index: 0,
+            explanation: "Written proof approval and a sample print prevent costly mistakes.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "motion-basics": {
+      explanation_md: `Moving graphics catch the eye on WhatsApp Status, Instagram, TikTok and Facebook far more than still images. Agencies and multimedia roles in Ghana often ask designers to create simple animation alongside static designs, and even local businesses like a short animated price announcement. This lesson is optional, but it is a useful extra skill once your static design is solid.
+
+## What motion graphics are
+
+Motion graphics are designs that move: a headline that slides in, a logo that fades up, a price that pops, icons that appear one by one. They are different from filming video. You are animating the same text, shapes and images you already design with.
+
+## Key ideas
+
+* **Keyframes.** You set how something looks at one moment, such as off screen, and how it looks at a later moment, such as in the centre. The software fills in the movement between them.
+* **Timing.** Fast movement feels energetic; slow movement feels calm. Match the mood of the brand.
+* **Easing.** Real objects speed up and slow down. Movement that eases in and out looks natural; constant speed looks mechanical.
+* **Readability.** Text must stay on screen long enough to read comfortably. A good habit is to leave each line up long enough to read it twice.
+* **Restraint.** Animate a few things with purpose. If everything moves, nothing stands out.
+
+## Tools on a phone
+
+Many free design apps can animate text and elements with one tap, and free video editing apps on phones let you place text and graphics on a timeline and export a short video. On a laptop, more advanced free tools exist, and adverts sometimes name paid motion software. The ideas above carry over to any tool.
+
+## Formats and data
+
+Export short animations as MP4 video, which plays almost everywhere. Keep them short, often under fifteen seconds for Status, and keep file sizes small for people on prepaid data. Many viewers watch with sound off, so the message must work without audio.
+
+## A small example
+
+Sumaila makes a weekly price announcement for a cement and building materials shop in Tamale. Instead of a still image, he creates a ten second Status video: the shop logo fades in, then three items slide in one by one with their prices in cedis, and finally the phone number appears and stays for three seconds. He uses the shop's colours, eases each movement and exports a small MP4. The owner reports that more customers reply to the animated Status than to the still ones he used before.`,
+      practice_task_md: `**Goal:** Turn a static design into a short animated Status video.
+
+**Steps:**
+1. Take one of your earlier designs, such as a social media post or a price list.
+2. In a free design or video editing app on your phone, add simple animations: the headline enters first, then details, then the contact.
+3. Keep the whole video under fifteen seconds. Make sure each line stays up long enough to read twice.
+4. Export as MP4 and check the file size and that it plays well with sound off.
+5. Show it to two people and ask what message they remember.
+
+**Done looks like:** A short MP4 under fifteen seconds with purposeful animation, a readable message without sound and feedback from two viewers.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a keyframe in animation?",
+            options: [
+              "A photo frame for a printed poster",
+              "The first word of a caption",
+              "A setting for how something looks at one moment, with the software filling in movement between keyframes",
+              "The border around a video",
+            ],
+            answer_index: 2,
+            explanation: "You set keyframes at different moments and the software fills in the movement.",
+          },
+          {
+            prompt: "Why does the lesson recommend easing?",
+            options: [
+              "Movement that speeds up and slows down looks natural",
+              "It makes videos longer",
+              "It removes the need for colours",
+              "It makes files larger",
+            ],
+            answer_index: 0,
+            explanation: "Easing in and out mimics how real objects move.",
+          },
+          {
+            prompt: "How long should text stay on screen, according to the lesson's habit?",
+            options: [
+              "Less than half a second",
+              "Only while music plays",
+              "Exactly one minute",
+              "Long enough to read it twice",
+            ],
+            answer_index: 3,
+            explanation: "A good habit is leaving each line up long enough to read it twice.",
+          },
+          {
+            prompt: "Why should a Status animation work without sound?",
+            options: [
+              "Sound files are illegal",
+              "Many viewers watch with sound off",
+              "Phones cannot play sound",
+              "MP4 files have no audio",
+            ],
+            answer_index: 1,
+            explanation: "Many people watch with sound off, so the message must be visual.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
