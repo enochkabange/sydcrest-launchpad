@@ -1,5 +1,6 @@
 "use server";
 
+import { revalidateRoadmap } from "@/lib/roadmaps/revalidate";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { formatUsd } from "@/lib/content-generation/cost";
@@ -103,6 +104,8 @@ export async function collectContent(_prev: ContentActionState, form: FormData):
   if (!db) return NO_DB;
   try {
     const summary = await collectRun(db, client, batchId);
+    // New explanations and quizzes show on the cached public node pages.
+    revalidateRoadmap();
     if (summary.status === "in_progress") {
       return { status: 200, message: `Still processing: ${summary.counts.processing} requests left. Check again later.` };
     }
