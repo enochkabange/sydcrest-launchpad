@@ -42,8 +42,8 @@ money and data, not short on ability.
 - **Quiz:** 4 or 5 questions, 4 options each, exactly one clearly correct,
   every question answerable from the explanation alone. Plausible wrong options,
   no trick wording, no "all of the above". A one sentence explanation per
-  question. `answer_index` is 0 based. `pass_threshold` is the number of
-  correct answers needed (usually 3 of 4, or 4 of 5).
+  question. `answer_index` is 0 based. `pass_threshold` is a percentage from
+  50 to 100: use 75 for 4 questions and 80 for 5.
 - Shape: exactly what `src/lib/content-generation/schema.ts` validates.
 
 ## Local context and voice
