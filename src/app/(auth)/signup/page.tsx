@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import Link from "@/components/ui/link";
 import { SignupForm } from "./signup-form";
 import { GoogleButton, OrDivider } from "../google-button";
 
