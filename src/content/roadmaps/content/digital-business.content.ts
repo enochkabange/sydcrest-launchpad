@@ -884,7 +884,7 @@ Online selling only works if people trust you. Use real photos of your own produ
 
 Issahaku's baskets from Bolgatanga sold slowly when he only told friends. He set up WhatsApp Business with a catalogue, began posting short videos on TikTok showing the weaving process, and added his WhatsApp link to his TikTok profile.
 
-His TikTok videos became the window: people in Accra discovered the baskets there. WhatsApp became the counter: they messaged to ask sizes and prices, and he confirmed orders and payment there. He did not try Facebook, Instagram and a website all at once. Two channels, done well, were enough to double the people asking about his baskets.
+His TikTok videos became the window: people in Accra discovered the baskets there. WhatsApp became the counter: they messaged to ask sizes and prices, and he confirmed orders and payment there. He did not try Facebook, Instagram and a website all at once. Two channels, done well, were enough to bring many more people asking about his baskets.
 
 The lessons in this section show you how to set up each part of your online shop step by step.`,
       practice_task_md: `**Goal:** Plan your online shop.
@@ -1735,6 +1735,397 @@ She folded the smocks into a clean sealed bag with a thank you note, wrote the c
             ],
             answer_index: 3,
             explanation: "Clear delivery information before payment prevents disputes.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "customers-and-growth": {
+      explanation_md: `A small business grows in two ways: by finding new customers and by keeping the ones it already has. Both depend on how people feel after dealing with you. In Ghana, word of mouth is powerful. A satisfied customer tells her church group, her colleagues and her family WhatsApp group. An unhappy one tells them too. Customer service is one of the skills that appears most often in Ghanaian sales and shop adverts, so getting good at this section pays off whether you run your own business or work for someone else.
+
+## Service, marketing and loyalty work together
+
+* **Service** is how you treat people before, during and after a sale: how fast you reply, how polite you are, and how you handle problems.
+* **Marketing** is how new people hear about you and decide to try you.
+* **Loyalty** is what makes customers come back and recommend you.
+
+Good service makes marketing easier, because happy customers become your advertisers. Good marketing brings new people, and good service turns them into loyal customers. It is a cycle.
+
+## What this section covers
+
+* **Customer service and complaints.** Replying well, setting clear return and refund rules, and turning complaints into trust.
+* **Marketing on a small budget.** Using Status, groups, referrals and timing before you spend money on ads.
+* **Repeat customers and loyalty.** Keeping a simple customer list, following up and rewarding people who return.
+
+## Start with how you want customers to feel
+
+Write one sentence describing how you want every customer to feel after buying from you. For example: "I want customers to feel that buying from me is easy, honest and safe." Then check your habits against it. Do slow replies make buying feel easy? Does a vague delivery promise feel honest? This sentence becomes your guide.
+
+## Listen and learn
+
+Customers tell you how to improve, if you listen. Ask a simple question after each delivery: "Was everything fine with your order?" Note the answers. If several people mention the same thing, such as wanting a smaller size or a faster reply, act on it.
+
+## A small example
+
+Abdul-Rahman's second hand clothes business in Tamale had steady sales but few repeat customers. He wrote his sentence: "Buying from me should feel friendly and reliable."
+
+He started replying to messages within an hour during the day, sending a "thank you, did everything arrive well?" message after every delivery, and keeping a list of regular customers and their sizes. When new stock arrived, he messaged regulars first with items in their size.
+
+Within two months, most of his orders came from people who had bought before or who were sent by them. He had not spent anything on advertising. He had simply made people feel looked after.
+
+The next lessons show you how to do the same, step by step.`,
+      practice_task_md: `**Goal:** Define your customer promise and start listening.
+
+**Steps:**
+1. Write one sentence describing how you want every customer to feel after buying from you.
+2. List three of your current habits (or likely habits) and say whether each supports that sentence.
+3. Write a short follow up message to send after each delivery, asking if everything was fine.
+4. If you have customers, send it to at least three and note what they say.
+
+**Done looks like:** A customer promise sentence, a short habit check, a follow up message and, if possible, three pieces of customer feedback.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What are the two ways a small business grows, according to the lesson?",
+            options: [
+              "Raising prices and cutting quality",
+              "Finding new customers and keeping existing ones",
+              "Opening more shops and hiring more staff",
+              "Buying ads and using more apps",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says growth comes from new customers and keeping current ones.",
+          },
+          {
+            prompt: "How does good service make marketing easier?",
+            options: [
+              "It lets you charge more for ads",
+              "It removes the need for any product",
+              "Happy customers become your advertisers",
+              "It makes apps show your posts more",
+            ],
+            answer_index: 2,
+            explanation: "Satisfied customers recommend you, which is free marketing.",
+          },
+          {
+            prompt: "What simple question does the lesson suggest asking after each delivery?",
+            options: [
+              "\"Was everything fine with your order?\"",
+              "\"Can you pay more next time?\"",
+              "\"Can you give me your PIN?\"",
+              "\"Why did you not order more?\"",
+            ],
+            answer_index: 0,
+            explanation: "Asking after delivery helps you learn and shows you care.",
+          },
+          {
+            prompt: "What did Abdul-Rahman do when new stock arrived?",
+            options: [
+              "Posted it on every app at once",
+              "Raised his prices",
+              "Waited for customers to ask",
+              "Messaged regular customers first with items in their size",
+            ],
+            answer_index: 3,
+            explanation: "He used his list of regulars and their sizes to offer them first choice.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "customer-service": {
+      explanation_md: `Customer service is one of the skills Ghanaian sales and shop employers ask for most often. For a small online seller it matters even more, because customers cannot see your face or your shop. Every message you send is your shop counter, your smile and your reputation.
+
+## Reply well
+
+* **Reply quickly.** You do not have to answer instantly, but a long silence makes people buy elsewhere. Use an away message when you are busy.
+* **Greet and use names.** "Good morning, Hawa. Thank you for your message" feels warmer than "Yes?".
+* **Answer the actual question.** If someone asks the price and delivery to Ho, give both.
+* **Be clear and honest.** Do not promise delivery tomorrow if you are not sure.
+* **Use the customer's language** where you can. A reply in Dagbani, Twi or Pidgin can make a customer feel at home.
+
+## Set clear rules before problems happen
+
+Decide and share your rules on:
+
+* **Returns and exchanges:** can a customer return an item? Within how many days? In what condition?
+* **Refunds:** when will you refund, and how quickly?
+* **Damaged or wrong items:** what you will do, and what proof (such as a photo) you need.
+
+Put these rules in your catalogue, profile or a quick reply, and apply them fairly to everyone.
+
+## Handling complaints
+
+Complaints are a chance to show you are trustworthy. A simple approach:
+
+1. **Listen** and let the customer explain fully.
+2. **Acknowledge** the problem: "I am sorry the jar arrived cracked."
+3. **Ask for details** you need, such as a photo.
+4. **Offer a fair solution** based on your rules: replace, repair, refund or discount.
+5. **Follow through** quickly, and **check** the customer is satisfied.
+
+Stay calm, even if the customer is rude. Never argue in public comments. Reply briefly and politely in public, then move the conversation to a private chat.
+
+If the problem was your fault, admit it. If the customer is asking for something unfair, explain your rules politely. Some problems cannot be fixed in a way that pleases everyone, and that is all right. Treat people with respect and keep your word.
+
+## A small example
+
+A customer in Kumasi messaged Mariama angrily: her shea butter tub had arrived cracked and butter had leaked into the bag. She also posted a complaint in the comments on Mariama's TikTok.
+
+Mariama replied in the comments: "I am very sorry about this. I have sent you a message so I can fix it." In the chat, she apologised, asked for a photo, and offered to send a replacement tub at no cost. She sent it the same day, packed in a sealed bag with tape around the lid.
+
+When the replacement arrived, the customer updated her comment to say the problem had been solved quickly. Mariama also changed her packing for every order. A complaint became a public example of good service and a better process.`,
+      practice_task_md: `**Goal:** Write your service rules and practise handling a complaint.
+
+**Steps:**
+1. Write your return, refund and damaged item rules in three short sentences.
+2. Save them as a quick reply or a note you can paste.
+3. Imagine a complaint: a customer says their item arrived late and damaged. Write your public reply (one or two sentences) and your private reply following the five steps.
+4. Ask a friend to role play an angry customer by text and practise staying calm.
+
+**Done looks like:** Written service rules, a sample public and private complaint reply, and one role play completed.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is good reply practice according to the lesson?",
+            options: [
+              "Reply \"Yes?\" to save time",
+              "Answer the actual question, such as giving both the price and the delivery cost",
+              "Promise next day delivery to everyone",
+              "Wait until evening to reply to all messages",
+            ],
+            answer_index: 1,
+            explanation: "Answering exactly what was asked saves time and builds trust.",
+          },
+          {
+            prompt: "What is the first step in handling a complaint?",
+            options: [
+              "Offer a refund straight away",
+              "Explain why the customer is wrong",
+              "Listen and let the customer explain fully",
+              "Block the customer",
+            ],
+            answer_index: 2,
+            explanation: "The five steps start with listening.",
+          },
+          {
+            prompt: "What should you do when a customer complains in public comments?",
+            options: [
+              "Reply briefly and politely in public, then move to a private chat",
+              "Delete the comment and ignore it",
+              "Argue in the comments to defend yourself",
+              "Post the customer's phone number",
+            ],
+            answer_index: 0,
+            explanation: "A calm public reply plus private resolution shows good service.",
+          },
+          {
+            prompt: "Why should you set return and refund rules before problems happen?",
+            options: [
+              "So you can refuse every complaint",
+              "Because apps require written rules",
+              "So you can charge customers for complaining",
+              "So customers know what to expect and you can apply the rules fairly to everyone",
+            ],
+            answer_index: 3,
+            explanation: "Clear rules shared in advance make complaints easier and fairer to handle.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "low-cost-marketing": {
+      explanation_md: `Most small businesses start with almost no money for advertising, and that is fine. Many successful Ghanaian sellers grew through Status updates, groups, referrals and good timing before they ever paid for an ad. Shop and sales adverts often list promotions and social media among the duties, so knowing how to market well on a small budget is useful in a job too.
+
+## Free and low cost channels
+
+* **WhatsApp Status:** seen by people who have saved your number. Post regularly: new stock, a product in use, a happy customer (with permission), and prices.
+* **Your own groups:** church, school, alumni, association and community groups. Share only where selling is welcome, follow group rules, and do not spam.
+* **Referrals:** ask happy customers to tell friends, and thank them when they do, perhaps with a small discount on their next order.
+* **Social media posts and short videos:** free to post, and a good video can travel far.
+* **Your Google Business Profile:** free, and helps nearby people find you.
+* **Offline still works:** a small sign at your stall, a sticker on your parcel with your WhatsApp number, or telling people at the market.
+
+## Timing and offers
+
+People buy more at certain times. Plan around them:
+
+* **Market days** in your town.
+* **Festivals and holidays,** such as Eid, Christmas and local festivals like Damba.
+* **Seasons,** such as the harmattan for shea butter and skin care, or the school reopening period for school items.
+* **Pay days** at the end of the month for workers.
+
+A clear offer at the right time works well: "Christmas gift pack: two tubs and a small soap for 60 cedis, order by 20 December."
+
+## Measure what brings orders
+
+Likes feel nice, but orders pay the bills. When a new customer messages, ask: "How did you hear about us?" Note the answer in your records. After a few weeks you will know which channel actually brings buyers, and you can spend your time there.
+
+## When to consider paid ads
+
+Social media platforms let you pay to show posts to more people. Try a small, carefully tracked budget only after free posts are already bringing orders and you know your profit per item, so you can tell whether the ad paid for itself. If you want to go deeper into ads, the Digital Marketer roadmap covers them.
+
+## A small example
+
+Amina sells sobolo and snacks in Wa. She posts on her Status every morning with that day's menu and prices. She shares in her church WhatsApp group only on Fridays, which the group admin agreed to. She gives regular customers a free snack when they bring a new office colleague.
+
+During Ramadan she created an iftar pack and announced it a week ahead. She asked every new customer how they heard about her and found that most came from referrals and her Status, while her occasional Facebook posts brought almost none. She now spends her time on what works.`,
+      practice_task_md: `**Goal:** Plan two weeks of low cost marketing.
+
+**Steps:**
+1. List the free channels you can use (Status, groups, referrals, posts, Google profile, offline).
+2. Identify any market days, festivals, seasons or pay days in the next month.
+3. Plan one post or action for each day for two weeks in a simple table: date, channel, what you will post or do.
+4. Write one clear offer with a product, a price and a deadline.
+5. Add a "How did you hear about us?" column to your order list.
+
+**Done looks like:** A two week marketing plan, one offer and an updated order list ready to track where customers come from.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Who sees your WhatsApp Status updates?",
+            options: [
+              "Everyone in Ghana",
+              "Only people in your groups",
+              "People who have saved your number",
+              "Only people who pay for them",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says Status is seen by people who have saved your number.",
+          },
+          {
+            prompt: "What does the lesson advise when sharing in community or church groups?",
+            options: [
+              "Share only where selling is welcome, follow group rules and do not spam",
+              "Post in every group many times a day",
+              "Add strangers to new groups without asking",
+              "Ignore group rules if your product is good",
+            ],
+            answer_index: 0,
+            explanation: "Respecting group rules keeps goodwill and avoids being removed.",
+          },
+          {
+            prompt: "Why should you ask new customers \"How did you hear about us?\"",
+            options: [
+              "To collect their personal details for others",
+              "To decide whether to serve them",
+              "Because it is required by law",
+              "To learn which channel actually brings orders",
+            ],
+            answer_index: 3,
+            explanation: "Tracking the answers shows which channels bring buyers, not just likes.",
+          },
+          {
+            prompt: "When does the lesson suggest trying a small paid ad budget?",
+            options: [
+              "Before you have any customers",
+              "After free posts are already bringing orders and you know your profit per item",
+              "Only during festivals",
+              "Never",
+            ],
+            answer_index: 1,
+            explanation: "Knowing your profit lets you judge whether an ad paid for itself.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "repeat-customers": {
+      explanation_md: `Finding a new customer takes effort: posts, replies, building trust from nothing. Selling again to someone who already trusts you is usually much easier. Repeat customers also recommend you to others. That is why online selling courses teach customer loyalty, and why Ghanaian sales adverts ask for customer records, follow up and account management.
+
+## Keep a simple customer list
+
+You cannot look after customers you cannot remember. Keep a list in a notebook, a Google Sheet, or by labelling chats in WhatsApp Business. Useful columns:
+
+* **Name and phone**
+* **Town**
+* **What they bought and when**
+* **Notes,** such as size, favourite product or special dates like a child's birthday
+* **Permission to send updates** (yes or no)
+
+Store this information carefully. Do not share customers' details with anyone else, and only send updates to people who have agreed to receive them. Ghana has a data protection law, so treat personal details with respect.
+
+## Follow up
+
+* **After delivery:** "Did your order arrive well? Thank you for buying."
+* **When they might need more:** if shea butter usually lasts a customer a month, a friendly message after four weeks is helpful, not pushy.
+* **When something new arrives** that matches what they like.
+
+Keep messages short, personal and not too frequent. One useful message beats five generic ones.
+
+## Broadcast lists
+
+WhatsApp Business lets you send one message to many contacts at once using a broadcast list. Each person receives it as a private message. Broadcasts are only delivered to people who have saved your number, which is another reason to ask happy customers to save it. Use broadcasts for real news, such as new stock or a seasonal offer, not daily adverts.
+
+## Reward loyalty
+
+Simple rewards work well:
+
+* A small discount or a free extra item on the fifth order.
+* Early access to new stock for regulars.
+* A thank you gift for customers who refer friends.
+
+Keep track of rewards in your list so you are fair and do not forget.
+
+## A small example
+
+Hawa keeps a Google Sheet of her smock customers with their sizes and favourite colours. When she receives a new batch of indigo smocks, she messages only the customers who like indigo, with a photo and their size already noted: "Good afternoon, Issahaku. New indigo smocks in your size, XL, have arrived. Would you like me to keep one for you?"
+
+She gives a small discount on the fourth purchase and notes it in the sheet. Many of her customers now buy for every festival, and several have ordered for weddings, bringing in whole families. Her customer list has become the most valuable thing in her business.`,
+      practice_task_md: `**Goal:** Start a customer list and a follow up routine.
+
+**Steps:**
+1. Create a customer list in Google Sheets or a notebook with the five columns from the lesson.
+2. Add at least five real or realistic customers.
+3. Write three short follow up messages: after delivery, when they might need more, and when something new arrives.
+4. Choose one simple loyalty reward and write how you will track it.
+
+**Done looks like:** A customer list with five entries, three follow up messages and a written loyalty reward rule.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why are repeat customers valuable according to the lesson?",
+            options: [
+              "They always pay more",
+              "Selling to someone who already trusts you is usually easier, and they recommend you",
+              "They never complain",
+              "They do not need delivery",
+            ],
+            answer_index: 1,
+            explanation: "Existing customers already trust you and bring others.",
+          },
+          {
+            prompt: "Which column does the lesson suggest including in a customer list?",
+            options: [
+              "Their mobile money PIN",
+              "Their salary",
+              "Permission to send updates, yes or no",
+              "Their political views",
+            ],
+            answer_index: 2,
+            explanation: "Recording permission ensures you only message people who agreed.",
+          },
+          {
+            prompt: "Who receives a WhatsApp broadcast message?",
+            options: [
+              "Only contacts on the list who have saved your number",
+              "Everyone on WhatsApp in your town",
+              "All members of your groups",
+              "Anyone who searches your business name",
+            ],
+            answer_index: 0,
+            explanation: "Broadcasts only reach people who have saved your number.",
+          },
+          {
+            prompt: "Why did Hawa message only customers who like indigo about the new smocks?",
+            options: [
+              "Because broadcast lists are limited to five people",
+              "Because other customers had blocked her",
+              "Because WhatsApp charges per message",
+              "Because personal, relevant messages work better than generic ones",
+            ],
+            answer_index: 3,
+            explanation: "She used her list to send short, personal messages to the right people.",
           },
         ],
         pass_threshold: 75,
