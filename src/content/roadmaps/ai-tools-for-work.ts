@@ -250,11 +250,20 @@ export const aiToolsForWork: RoadmapDraft = {
       resources: [RES.whatsappBusiness, RES.lfMoney],
     },
     {
+      slug: "working-professionally",
+      title: "Working professionally with AI",
+      summary:
+        "Clients and employers hire people they can trust and whose skills they can see. This last section covers honesty and ethics with AI and how to prove your skills with a portfolio.",
+      parent: null,
+      optional: false,
+      resources: [unescoAi, RES.lfResume],
+    },
+    {
       slug: "client-ethics",
       title: "Honesty and ethics with clients",
       summary:
         "Clients and employers trust you to be open about how you work and to respect other people's rights. Learn when to tell people you used AI, how to avoid copying and bias, and why your judgement matters most.",
-      parent: "earning",
+      parent: "working-professionally",
       optional: false,
       resources: [aiPrinciples, unescoAi],
     },
@@ -263,7 +272,7 @@ export const aiToolsForWork: RoadmapDraft = {
       title: "Your AI skills portfolio",
       summary:
         "Employers and clients want proof, not claims, that you use AI well. Bring your best work from this track together into a short portfolio you can share from your phone.",
-      parent: null,
+      parent: "working-professionally",
       optional: false,
       resources: [RES.lfResume, RES.lfDrive],
     },

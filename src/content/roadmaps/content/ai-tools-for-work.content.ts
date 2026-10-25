@@ -1645,12 +1645,11 @@ Learning AI tools is good. Earning with them is better, and for many young peopl
 
 SydCrest's September 2026 event in Accra, "Monetizing Your Skills With AI: Building Digital Products", focused on that third route. This section brings the same ideas to your phone.
 
-## The four topics in this section
+## The three topics in this section
 
 * **Jobs and gigs that use AI skills.** What adverts ask for, where to look, how AI data work works, and how to avoid scams.
 * **Building simple AI powered digital products.** Choosing a real problem, building a product with free tools, and adding your own knowledge so it is worth paying for.
 * **Pricing and selling your product.** Testing demand, setting a fair price, taking payment safely with mobile money and delivering well.
-* **Honesty and ethics with clients.** When to tell people you used AI, avoiding copying, protecting data and keeping your reputation.
 
 ## Honest expectations
 
@@ -1664,7 +1663,7 @@ Hawa, in Tamale, combines all three routes over time. She applies for a part tim
 
 ## Before you start
 
-Make sure you have finished the earlier sections, especially privacy, fact checking and prompt templates. Clients pay for reliable, safe work, and those lessons are what make your AI skills trustworthy.`,
+Make sure you have finished the earlier sections, especially privacy, fact checking and prompt templates. Clients pay for reliable, safe work, and those lessons are what make your AI skills trustworthy. The final section, on honesty with clients and building a portfolio, completes the picture.`,
       practice_task_md: `**Goal:** choose your earning route and first step.
 
 1. Write a short note on each of the three routes (job, freelance or gig, digital product): what appeals to you, what skills you already have, and what is missing.
@@ -1954,7 +1953,7 @@ Avoid competing only by being the cheapest. Compete on being clear, tested, loca
 ## Getting paid and delivering
 
 * **Mobile money** is the simplest option for local buyers. Use a number registered in your name and keep a record of every payment.
-* **Payment links** from licensed payment providers (for example Paystack or Hubtel, named only as examples) let buyers pay by MoMo or card through a link.
+* **Payment links** from payment providers that operate in Ghana (for example Paystack or Hubtel, named only as examples) let buyers pay by MoMo or card through a link.
 * **Delivery:** share a view only or copy link from Google Drive, or send the file by WhatsApp or email after payment. Keep the original safe.
 * **Records:** keep a simple sheet of each sale, date, amount and buyer contact, with their permission. This helps you track progress and handle questions.
 
@@ -2023,6 +2022,93 @@ Abdul-Rahman made a CV guide with fill in templates for school leavers in Tamale
             ],
             answer_index: 3,
             explanation: "The lesson says records help you track progress and handle questions.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "working-professionally": {
+      explanation_md: `## Why this matters
+
+By now you can prompt well, check facts, protect privacy, handle everyday tasks, automate small jobs and think about earning. The last step is what turns those skills into trust. Employers and clients in Ghana often hire through recommendations: a pastor tells a shop owner, a manager tells a colleague, a happy customer tells a friend. Those recommendations depend on two things. First, that you are honest about how you work. Second, that people can see proof of what you can do.
+
+Commentary from Ghanaian job sites says the same: AI skills are an advantage, but employers still value human judgement most. This section is about showing that judgement.
+
+## The two topics in this section
+
+* **Honesty and ethics with clients.** When and how to tell people you use AI, respecting a client's rules, never creating fake reviews or fake photos, avoiding copying, watching for bias and taking responsibility for every piece of work you hand in.
+* **Your AI skills portfolio.** Bringing your best work from this track together into a short, shareable document that shows the task, your prompt, the AI draft, your edits and checks, and the final result.
+
+These two belong together. Your ethics statement goes into your portfolio, and every portfolio piece is evidence that you check and own your work.
+
+## What professional looks like
+
+A professional who uses AI:
+
+* Agrees with the client at the start how AI will and will not be used.
+* Keeps personal and confidential information out of public tools.
+* Checks every fact, figure, name and link before delivery.
+* Edits so the work sounds human and fits the reader.
+* Admits mistakes quickly and fixes them.
+* Can explain their process calmly when asked.
+
+None of these depends on a particular tool. Tools will change many times during your working life. These habits will not.
+
+## A small example
+
+Fuseini has been doing small writing and spreadsheet jobs for businesses in Tamale. A new client, a pharmacy owner, asks how he works. Fuseini sends a short message explaining that he uses AI to help draft and build formulas, that he never pastes customer details into AI tools, and that he checks everything. He attaches a link to his portfolio, which shows a fact check where he caught an invented figure, and a tested sales sheet. The owner hires him and later tells another business owner that Fuseini is "careful and honest". That reputation is worth more than any single job.
+
+## Before you begin
+
+Gather your AI learning journal, your prompt templates and any practice pieces you saved during the track. You will use them in both lessons. If you skipped a practice task earlier, this is a good time to go back and complete it, because each one can become a portfolio piece.`,
+      practice_task_md: `**Goal:** collect your evidence before the final two lessons.
+
+1. Open your AI learning journal and list every practice task you completed in this track.
+2. For each, give it a score from one to three for how proud you are of it and whether it shows checking or editing clearly.
+3. Pick your top six candidates for your portfolio.
+4. Write three sentences describing how you want clients or employers to see you, for example "careful, honest and quick".
+
+**Done looks like:** a ranked list of your practice pieces and three sentences about the professional you want to be.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, what do recommendations from clients and employers depend on?",
+            options: [
+              "Honesty about how you work and proof of what you can do",
+              "Having the most expensive AI subscription",
+              "Posting every day on social media",
+              "Never using AI at all",
+            ],
+            answer_index: 0,
+            explanation: "The lesson names honesty about your methods and visible proof of your skills.",
+          },
+          {
+            prompt: "What do Ghanaian job site commentaries say employers still value most?",
+            options: ["The newest phones", "Human judgement", "Long CVs", "Fast typing only"],
+            answer_index: 1,
+            explanation: "The lesson says AI skills are an advantage but employers still value human judgement most.",
+          },
+          {
+            prompt: "Which of these is a professional habit when using AI?",
+            options: [
+              "Pasting customer details into public tools to save time",
+              "Hiding mistakes so the client does not notice",
+              "Agreeing with the client at the start how AI will be used",
+              "Delivering AI drafts without editing",
+            ],
+            answer_index: 2,
+            explanation: "Agreeing on AI use at the start is listed as a professional habit.",
+          },
+          {
+            prompt: "Why did the pharmacy owner hire Fuseini?",
+            options: [
+              "He offered to work for free",
+              "He promised AI would do everything",
+              "He used a famous tool",
+              "He explained his careful process and shared a portfolio as proof",
+            ],
+            answer_index: 3,
+            explanation: "Fuseini explained his honest process and showed evidence in his portfolio.",
           },
         ],
         pass_threshold: 75,

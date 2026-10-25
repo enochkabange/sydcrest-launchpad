@@ -29,9 +29,9 @@ employers still value human judgement most. The track is built around that balan
 | A1 | Jobberman Ghana: Technical Content Marketing Manager (Zof AI, Accra) | https://www.jobberman.com.gh/listings/technical-content-marketing-manager-wpvmk6 | 2026-10-25 | Search result snippet only (listing page now redirects to a category page) |
 | A2 | Zof AI careers: Content and Communications Manager, Accra | https://zof.ai/careers/accra/content-communications-manager | 2026-10-25 | Employer careers page via search snippet, skills only |
 | A3 | Jobberman (Nigeria): AI savvy Virtual Assistant, remote | https://www.jobberman.com/listings/ai-savvy-virtual-assistant-remote-m0gjpr | 2026-10-25 | Search result snippet only (page redirects to category) |
-| A4 | Jobberman (Nigeria): Chariot Messenger, AI video content creators and video editors / content creator and social media manager, Lagos | https://www.jobberman.com/listings/ai-video-content-creators-and-video-editors-6qdm6d | 2026-10-25 | Search result snippet only (page redirects to category) |
-| A5 | Jobberman (Nigeria) creative category: SabiRecruit AI Specialist, remote | https://www.jobberman.com/listings/ai-video-content-creators-and-video-editors-6qdm6d | 2026-10-25 | Category listing read via redirect, skills only |
-| A6 | Jobberman (Nigeria) creative category: SabiRecruit AI Filmmaker, remote | https://www.jobberman.com/listings/ai-video-content-creators-and-video-editors-6qdm6d | 2026-10-25 | Category listing read via redirect, skills only |
+| A4 | Jobberman (Nigeria): content creator and social media manager, Lagos | URL not surfaced by the search; skills taken from the search summary only | 2026-10-25 | Search result summary only; cannot be re-checked by URL |
+| A5 | Jobberman (Nigeria) Creative and Design category: SabiRecruit AI Specialist, remote | https://www.jobberman.com/listings/ai-video-content-creators-and-video-editors-6qdm6d (redirects to the Creative and Design category; roles read there) | 2026-10-25 | Category listing read via redirect, skills only |
+| A6 | Jobberman (Nigeria) Creative and Design category: SabiRecruit AI Filmmaker, remote | Same redirect as A5 (Chariot Messenger "AI video content creators" listing URL, which lands on the category page) | 2026-10-25 | Category listing read via redirect, skills only |
 | A7 | Welo Data: Project Epsilon, Twi Data Trainer (Ghana, remote freelance) | https://jobs.lever.co/weloglobal/76f99320-a2f3-45f9-b433-64e7f0f2a3e8 | 2026-10-25 | Search result snippet only (page now 404) |
 | A8 | Europe Language Jobs: Twi AI Training Quality Specialist | https://www.europelanguagejobs.com/jobs/twi-ai-training-quality-specialist-194268 | 2026-10-25 | Search result snippet only |
 | A9 | Jobgether repost: Sigma AI, Dagbani Transcribers (remote) | https://dynamic.jobgether.com/offer/66bd0d54bc2aea0b5a74af97-dagbani-transcribers-remote | 2026-10-25 | Search result snippet only (undated) |
@@ -67,7 +67,10 @@ employers still value human judgement most. The track is built around that balan
 | D5 | Khaya AI and Ghana NLP | https://www.khaya.ai/ , https://ghananlp.org/ | 2026-10-25 | Ghanaian language translation tool and community, official sites |
 | D6 | GhanaFact and Dubawa | https://ghanafact.com/ , https://dubawa.org/ | 2026-10-25 | Independent fact checking organisations, official sites |
 | D7 | Google DeepMind: SynthID | https://deepmind.google/models/synthid/ | 2026-10-25 | Official page on AI image watermarking |
-| D8 | Gmail Help: Create rules to filter your emails; Google Sheets Help: formulas; Google Docs Help: Gemini in Docs; Google Translate Help | https://support.google.com/mail/answer/6579 | 2026-10-25 | Official help pages |
+| D8 | Gmail Help: Create rules to filter your emails | https://support.google.com/mail/answer/6579 | 2026-10-25 | Official help page |
+| D9 | Google Sheets Help: Add formulas and functions | https://support.google.com/docs/answer/46977 | 2026-10-25 | Official help page |
+| D10 | Google Docs Help: Collaborate with Gemini in Google Docs | https://support.google.com/docs/answer/14206696 | 2026-10-25 | Official help page |
+| D11 | Google Translate Help | https://support.google.com/translate | 2026-10-25 | Official help page |
 | P1 | SydCrest Planning/12_TRACK_CATALOGUE.md and src/content/marketing.ts (ACCRA_EVENT) | local | 2026-10-25 | Internal planning; positioning and the September 2026 "Monetizing Your Skills With AI: Building Digital Products" event |
 
 Every resource link in `src/content/roadmaps/ai-tools-for-work.ts` was checked with an HTTP
@@ -174,6 +177,8 @@ brief's scope before reading adverts, was revised as follows.
   tracks.
 * **Portfolio capstone added** (`ai-portfolio`): adverts ask for "shown" or "demonstrated"
   AI use (A3 A12), which only evidence can satisfy.
+* **Final section `working-professionally` added** to hold `client-ethics` and `ai-portfolio`,
+  so every section has 2 to 4 topics and no top level node is childless.
 
 Skills adverts asked for that this outline only touches: design tools, social media
 scheduling and SEO (A2 A4 A19 A20) are covered in depth by the digital marketing track and
@@ -195,7 +200,7 @@ duplicating them.
 | `everyday-work` | Section. F1 summarisation and content creation; F4 office task themes; A3 A12 AI for productivity |
 | `writing-editing` | Writing in 10 of 20 adverts; A1 A2 A16 A17 AI assisted writing and editing |
 | `summarising-research` | F1 summarisation; A1 A2 A3 research with AI; F4 reports and research |
-| `spreadsheets-data` | A3 A12 office suite; F4 data entry and spreadsheets; D8 Sheets help |
+| `spreadsheets-data` | A3 A12 office suite; F4 data entry and spreadsheets; D9 Sheets help |
 | `images-visuals` | A4 A5 A6 AI image and video tools; A4 A20 design tools; D7 SynthID; optional because only creative roles ask |
 | `translation-local-languages` | A7 A8 A9 A10 A11 Ghanaian and African language AI work; C4 Twi, Ewe, Dagbani and Hausa AI; D5 |
 | `automation` | Section. A13 A14 A15 automation; F4 routine admin tasks |
@@ -205,5 +210,6 @@ duplicating them.
 | `ai-jobs-gigs` | All 20 adverts summarised as patterns; A7 to A11 AI data work; C6 platform AI rules |
 | `digital-products` | P1 "Monetizing Your Skills With AI: Building Digital Products" event; builds on `prompt-templates` |
 | `selling-products` | P1; prerequisite to earning from `digital-products`; no fake reviews rule (project hard constraint) |
+| `working-professionally` | Section. C2 employers value human judgement; A3 A12 demonstrated AI use; groups the ethics and portfolio nodes |
 | `client-ethics` | F5 ethics of AI; C6 platform AI disclosure rules; C2 employers value human judgement; A2 keeping voice and accuracy |
 | `ai-portfolio` | A3 A12 "shown" or "demonstrated" AI use; C3 CV evidence; P1 cohort programme preparation |
