@@ -1337,6 +1337,671 @@ Mariama prepares the invented quarterly report for a girls' education project ne
       },
     },
 
+    sql: {
+      explanation_md: `## Why this matters
+
+Spreadsheets are great until the data grows too big or lives inside a company system. Banks, telcos, mobile money operators, government data units and many remote employers keep their records in databases, and the language for asking those databases questions is SQL (often said "sequel" or "S Q L"). It appears regularly in Ghanaian analyst and BI adverts and in remote junior analyst roles. Learning it opens doors that spreadsheets alone cannot.
+
+## What a database is
+
+A relational database stores data in **tables**, much like sheets in a spreadsheet. Each table has columns with fixed types, such as text, whole numbers or dates, and rows of records. Tables are linked by shared columns called **keys**. For example, an invented mobile money company might have a customers table and a transactions table, linked by customer_id.
+
+The big differences from a spreadsheet:
+
+* Databases can hold millions of rows without slowing down your phone or laptop.
+* Many people can use the same data at once, safely.
+* You do not edit cells by hand. You write a query that describes what you want, and the database returns the answer.
+
+## What SQL looks like
+
+SQL reads almost like an English sentence:
+
+\`\`\`sql
+SELECT district, amount
+FROM transactions
+WHERE amount > 500;
+\`\`\`
+
+This asks for the district and amount of every transaction above 500. You will learn to filter, sort, combine tables and summarise them with counts and totals.
+
+## Analyst SQL is mostly reading
+
+As an analyst you mostly read data with SELECT queries. You rarely create or delete tables; database administrators and engineers handle that. This makes SQL much less frightening: you cannot break anything by asking a question, and most employers give analysts read only access.
+
+## Many databases, one language
+
+PostgreSQL, MySQL, SQL Server, SQLite and BigQuery differ in small details, but the core SQL in this section works on all of them. If an advert names one you have not used, your skills still transfer.
+
+## Practising without installing anything
+
+You do not need a powerful computer. Interactive sites such as SQLBolt let you type queries in the browser and see results instantly, lesson by lesson. Online SQLite playgrounds let you create your own small tables. Both work in a phone browser, though a laptop with a keyboard is more comfortable for long queries.
+
+## What this section covers
+
+**Querying with SQL:** SELECT, WHERE, ORDER BY and LIMIT to pull and sort exactly the rows you need.
+
+**Joins and aggregation:** combining tables with JOIN and summarising with GROUP BY, COUNT, SUM and AVERAGE.
+
+## A worked example
+
+Issahaku joins a microfinance company in Tamale as a reporting assistant. Each morning his manager asks how many loans were repaid yesterday in each branch. In a spreadsheet, that meant downloading a large file and building a pivot table. With a short SQL query, he gets the answer in seconds straight from the database, and can rerun it every day.`,
+      practice_task_md: `**Goal:** run your first SQL queries in the browser.
+
+1. Open sqlbolt.com on your phone or laptop.
+2. Complete lessons 1 to 3, typing each query yourself rather than copying.
+3. For each lesson, write in a notebook what the query asked and what came back, in one plain sentence.
+4. Then write, in plain English, three questions you would like to ask a database about a business you know, such as a pharmacy or a mobile money agent.
+
+**Done looks like:** three completed SQLBolt lessons, your notes, and three plain English questions you will turn into SQL in the next lessons.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "In a relational database, how are tables linked?",
+            options: [
+              "By colour",
+              "By shared columns called keys, such as customer_id",
+              "By file name",
+              "They cannot be linked",
+            ],
+            answer_index: 1,
+            explanation: "Tables are linked by shared key columns.",
+          },
+          {
+            prompt: "What does an analyst mostly do with SQL?",
+            options: [
+              "Delete tables",
+              "Read data with SELECT queries",
+              "Design computer hardware",
+              "Send emails",
+            ],
+            answer_index: 1,
+            explanation: "Analyst SQL is mostly reading data with SELECT queries.",
+          },
+          {
+            prompt: "An advert names a database you have not used. What does the lesson say?",
+            options: [
+              "Your core SQL skills still transfer",
+              "You must not apply",
+              "SQL is different in every database, so start again",
+              "Only spreadsheets matter",
+            ],
+            answer_index: 0,
+            explanation: "The core SQL works across PostgreSQL, MySQL, SQL Server, SQLite and BigQuery.",
+          },
+          {
+            prompt: "Which is an advantage of a database over a spreadsheet?",
+            options: [
+              "You can edit cells by hand more easily",
+              "It can hold millions of rows and be used by many people at once",
+              "It needs no structure",
+              "It only works offline",
+            ],
+            answer_index: 1,
+            explanation: "Databases handle large data and many users safely.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "sql-basics": {
+      explanation_md: `## Why this matters
+
+In SQL interview tests, the first questions are almost always about selecting, filtering and sorting rows. These few keywords do a large share of everyday analyst work, so practise them until they feel natural.
+
+## The example table
+
+Imagine an invented table called sales for a chain of provision shops in the north:
+
+| sale_id | shop | town | item | qty | amount |
+|---|---|---|---|---|---|
+| 1 | Shop A | Tamale | Rice | 2 | 180 |
+| 2 | Shop B | Wa | Oil | 1 | 95 |
+
+## SELECT and FROM
+
+SELECT names the columns you want; FROM names the table.
+
+\`\`\`sql
+SELECT town, item, amount
+FROM sales;
+\`\`\`
+
+SELECT * returns every column. It is handy for a quick look, but naming columns keeps results small and clear.
+
+## WHERE: filtering rows
+
+WHERE keeps only rows that meet a condition.
+
+\`\`\`sql
+SELECT item, amount
+FROM sales
+WHERE town = 'Tamale' AND amount >= 100;
+\`\`\`
+
+Text values go inside single quotes. You can combine conditions with AND and OR, and use comparisons such as =, <>, <, >, <= and >=. Other useful filters:
+
+* \`IN ('Tamale', 'Wa')\` matches any value in a list.
+* \`BETWEEN 50 AND 200\` matches a range, including both ends.
+* \`LIKE 'Ri%'\` matches text that starts with Ri.
+* \`IS NULL\` finds missing values. Note that \`= NULL\` does not work.
+
+## ORDER BY and LIMIT
+
+ORDER BY sorts the results. Add DESC for largest first. LIMIT keeps only the first few rows.
+
+\`\`\`sql
+SELECT shop, amount
+FROM sales
+ORDER BY amount DESC
+LIMIT 5;
+\`\`\`
+
+This returns the five biggest sales.
+
+## DISTINCT and aliases
+
+\`SELECT DISTINCT town FROM sales;\` lists each town once. An alias renames a column in the result: \`SELECT amount AS amount_ghs\`.
+
+## The order of clauses
+
+Clauses must appear in this order: SELECT, FROM, WHERE, ORDER BY, LIMIT. Writing them out of order is the most common beginner error, so check it first when a query fails. A semicolon ends the query.
+
+## A worked example
+
+Hawa's manager asks: "Which five oil sales in Wa were the largest?" Hawa writes a query that selects shop, amount and sale_id, filters where town is Wa and item is Oil, orders by amount descending and limits to five. She checks a couple of results against the raw table to be sure the filter worked, then sends the answer with the query attached so her manager can rerun it.
+
+## Habits of a careful querier
+
+Start small: run SELECT with LIMIT 10 to see the data before filtering. Add one condition at a time and check the row count each time. Format long queries on several lines so they read easily on a small screen.`,
+      practice_task_md: `**Goal:** write filtering and sorting queries on your own table.
+
+1. Open sqliteonline.com or continue on sqlbolt.com.
+2. On SQLite Online, create a small sales table with columns sale_id, town, item, qty and amount, and insert about 12 invented rows using towns such as Tamale, Wa, Bolgatanga and Damongo.
+3. Write queries to answer: all sales in Tamale; sales between 50 and 200 cedis; the three largest sales; each distinct item sold.
+4. Save each query and its result in a document or notebook.
+
+**Done looks like:** four working queries with results, which you can paste into your portfolio as an SQL practice page.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which query returns only sales in Tamale?",
+            options: [
+              "SELECT * FROM sales ORDER BY town;",
+              "SELECT * FROM sales WHERE town = 'Tamale';",
+              "SELECT town FROM sales LIMIT 1;",
+              "SELECT DISTINCT town FROM sales;",
+            ],
+            answer_index: 1,
+            explanation: "WHERE filters rows to those that meet the condition.",
+          },
+          {
+            prompt: "How do you find rows where a value is missing?",
+            options: ["WHERE amount = NULL", "WHERE amount IS NULL", "WHERE amount = ''", "WHERE amount = 0"],
+            answer_index: 1,
+            explanation: "Use IS NULL; = NULL does not work.",
+          },
+          {
+            prompt: "What does ORDER BY amount DESC LIMIT 5 return?",
+            options: [
+              "The five smallest amounts",
+              "The five largest amounts",
+              "Five random rows",
+              "Every row except five",
+            ],
+            answer_index: 1,
+            explanation: "DESC sorts largest first and LIMIT 5 keeps the first five rows.",
+          },
+          {
+            prompt: "Which is the correct order of clauses?",
+            options: [
+              "FROM, SELECT, LIMIT, WHERE",
+              "SELECT, FROM, WHERE, ORDER BY, LIMIT",
+              "SELECT, WHERE, FROM, ORDER BY",
+              "WHERE, SELECT, FROM, LIMIT",
+            ],
+            answer_index: 1,
+            explanation: "Clauses must appear as SELECT, FROM, WHERE, ORDER BY, LIMIT.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "sql-joins-aggregation": {
+      explanation_md: `## Why this matters
+
+Real questions usually need more than one table and a summary rather than a list. "Which district had the most mobile money transactions last month?" needs transactions joined to agents, grouped by district and counted. Joins and GROUP BY are what separate a beginner from someone ready for a junior analyst test.
+
+## The example tables
+
+Imagine two invented tables for a mobile money operator:
+
+* **agents:** agent_id, agent_name, district
+* **transactions:** txn_id, agent_id, txn_date, amount
+
+The tables share agent_id.
+
+## Aggregation
+
+Aggregate functions summarise many rows into one value: COUNT, SUM, AVG, MIN and MAX.
+
+\`\`\`sql
+SELECT COUNT(*) AS txns, SUM(amount) AS total
+FROM transactions;
+\`\`\`
+
+## GROUP BY
+
+GROUP BY gives one summary row per group:
+
+\`\`\`sql
+SELECT agent_id, COUNT(*) AS txns
+FROM transactions
+GROUP BY agent_id;
+\`\`\`
+
+Rule: every column in SELECT must either be in GROUP BY or inside an aggregate function.
+
+## HAVING
+
+WHERE filters rows before grouping. HAVING filters groups after grouping. To list agents with more than 100 transactions, add \`HAVING COUNT(*) > 100\` after GROUP BY.
+
+## JOIN: combining tables
+
+An INNER JOIN keeps rows that match in both tables:
+
+\`\`\`sql
+SELECT a.district, COUNT(*) AS txns
+FROM transactions t
+JOIN agents a ON t.agent_id = a.agent_id
+GROUP BY a.district
+ORDER BY txns DESC;
+\`\`\`
+
+The letters t and a are short aliases for the table names. ON says which columns must match. This query answers the district question in one go.
+
+A LEFT JOIN keeps every row from the first (left) table, even with no match, filling the missing columns with NULL. Use it to find gaps, such as agents with no transactions at all:
+
+\`\`\`sql
+SELECT a.agent_name
+FROM agents a
+LEFT JOIN transactions t ON a.agent_id = t.agent_id
+WHERE t.txn_id IS NULL;
+\`\`\`
+
+## Watch your row counts
+
+Joins can multiply rows if a key appears more than once in both tables, which inflates totals without any error. Before and after a join, check the number of rows and compare a total with what you expect. This simple habit catches many mistakes.
+
+## A worked example
+
+Abdul-Rahman is asked which districts had the highest total value of transactions in March. He filters transactions with WHERE txn_date BETWEEN '2026-03-01' AND '2026-03-31', joins to agents, groups by district and sums amount. He then runs a LEFT JOIN to list agents with no March transactions, so the operations team can follow up. Two short queries answer two business questions.
+
+## In spreadsheets terms
+
+A JOIN does what XLOOKUP does, and GROUP BY does what a pivot table does. If those spreadsheet skills feel familiar, you already understand the ideas.`,
+      practice_task_md: `**Goal:** answer business questions with joins and GROUP BY.
+
+1. Complete the SQLBolt lessons on joins and on queries with aggregates.
+2. On sqliteonline.com, create two invented tables: agents (agent_id, agent_name, district) with 5 agents, and transactions (txn_id, agent_id, amount) with about 20 rows. Leave one agent with no transactions.
+3. Write queries for: total transactions per agent; total amount per district using a JOIN; districts with total above a figure you choose using HAVING; agents with no transactions using a LEFT JOIN.
+4. For each, note the row count you expected and the row count you got.
+
+**Done looks like:** four working queries with results and row count notes, ready for your portfolio.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does GROUP BY do?",
+            options: [
+              "Sorts rows alphabetically",
+              "Gives one summary row per group",
+              "Deletes duplicate rows",
+              "Joins two tables",
+            ],
+            answer_index: 1,
+            explanation: "GROUP BY produces one row per group, used with aggregates such as COUNT.",
+          },
+          {
+            prompt: "What is the difference between WHERE and HAVING?",
+            options: [
+              "There is no difference",
+              "WHERE filters rows before grouping; HAVING filters groups after grouping",
+              "HAVING only works on text",
+              "WHERE only works after JOIN",
+            ],
+            answer_index: 1,
+            explanation: "HAVING is applied to grouped results.",
+          },
+          {
+            prompt: "Which join would you use to find agents with no transactions?",
+            options: [
+              "INNER JOIN",
+              "LEFT JOIN from agents, then WHERE the transaction column IS NULL",
+              "No join is possible",
+              "GROUP BY only",
+            ],
+            answer_index: 1,
+            explanation: "A LEFT JOIN keeps all agents and fills missing matches with NULL.",
+          },
+          {
+            prompt: "Why check row counts before and after a join?",
+            options: [
+              "Joins can multiply rows and inflate totals without an error",
+              "Databases charge per row",
+              "Row counts make queries faster",
+              "It is required by SQL syntax",
+            ],
+            answer_index: 0,
+            explanation: "Duplicate keys can multiply rows silently.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    communicating: {
+      explanation_md: `## Why this matters
+
+An analysis only matters if someone understands it and acts on it. Managers, donors and business owners are busy and often have no data background. Adverts for analyst, M&E and reporting roles regularly ask for reports, dashboards and the ability to present findings to non technical people. The analyst who explains clearly is often trusted more than the one with the cleverest method.
+
+## Know your audience
+
+Before you make a chart or write a word, ask: who will read this, what decision do they face, and how much time do they have? A district officer reading on a phone between meetings needs one clear message. A donor's M&E advisor may want the full table and method. The same analysis can be told in different ways for different readers.
+
+## Lead with the answer
+
+Many beginners tell the story in the order they did the work: how they got the data, how they cleaned it, every chart, and finally the conclusion. Readers want the opposite. Put the answer first, then the evidence, then the recommendation.
+
+A short summary might follow this pattern:
+
+* **The answer:** one or two sentences.
+* **The evidence:** two or three key numbers or one chart.
+* **What it means:** the recommendation or decision.
+* **Caveats:** honest limits, such as a small sample or missing data.
+
+## An example
+
+Here is a weak opening: "This report presents an analysis of sales data collected from January to June using Google Sheets."
+
+Here is a strong one: "Sales of rice fell by about a third between March and June, mainly at the Savelugu branch. We recommend checking that branch's supplier before the harvest season."
+
+The second tells the reader what matters in the first line. (Both are invented examples.)
+
+## Presenting in person
+
+When presenting, prepare a five minute version. Start with the answer, show one or two charts, explain what they mean in plain words, and leave time for questions. Practise with a friend who knows nothing about data. If they can repeat your main point back to you, you are ready. Translate technical words: say "the middle value" as well as "median" the first time.
+
+## Be honest
+
+Never hide inconvenient results or stretch a small finding into a big claim. If the data cannot answer the question, say so and suggest what data would. Honest analysts keep their credibility, and in a small professional community, credibility travels.
+
+## What this section covers
+
+**Charts that tell the truth:** choosing and labelling charts so they are clear on a small screen and do not mislead.
+
+**Dashboards:** building a simple, regularly updated view of the few numbers a manager checks.
+
+## A worked example
+
+Wumpini finishes an invented analysis of school attendance in ten schools near Tamale. She writes a half page summary: attendance drops sharply on market days in three schools, here is the chart, and here is a suggestion to work with head teachers on those days. She presents it in four minutes to the district team and they agree a next step on the spot.`,
+      practice_task_md: `**Goal:** write a one page summary that leads with the answer.
+
+1. Take any analysis you have done in this track, such as the stall sales SUMIF summary or the water survey.
+2. Write a summary with four short parts: the answer, the evidence (two or three numbers), what it means, and caveats.
+3. Keep it under 200 words and readable on a phone.
+4. Read it aloud to a friend or family member with no data background, then ask them to repeat the main point.
+5. Revise anything they misunderstood.
+
+**Done looks like:** a one page summary, plus a note on what changed after your test reader, ready to share with a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should come first in a short summary?",
+            options: [
+              "How you cleaned the data",
+              "The answer",
+              "A list of every chart",
+              "The software you used",
+            ],
+            answer_index: 1,
+            explanation: "Lead with the answer, then the evidence, then the recommendation.",
+          },
+          {
+            prompt: "Why ask a friend with no data background to repeat your main point?",
+            options: [
+              "To check that your message is clear to non technical readers",
+              "To get help with formulas",
+              "To make the presentation longer",
+              "Because they will approve the budget",
+            ],
+            answer_index: 0,
+            explanation: "If they can repeat the point, your message is clear.",
+          },
+          {
+            prompt: "Which belongs in the caveats part of a summary?",
+            options: [
+              "Your favourite chart colour",
+              "Honest limits, such as a small sample or missing data",
+              "The recommendation",
+              "The organisation's history",
+            ],
+            answer_index: 1,
+            explanation: "Caveats state the honest limits of the analysis.",
+          },
+          {
+            prompt: "What should you do if the data cannot answer the question?",
+            options: [
+              "Guess an answer",
+              "Say so and suggest what data would help",
+              "Hide the problem",
+              "Only show charts that look good",
+            ],
+            answer_index: 1,
+            explanation: "Honesty keeps your credibility.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    charts: {
+      explanation_md: `## Why this matters
+
+A good chart lets a busy reader see the answer in seconds. A bad chart confuses them or, worse, misleads them. Visualisation is named in many analyst and M&E adverts, and your charts will often be the only part of a report a manager actually looks at.
+
+## Match the chart to the question
+
+* **Comparing categories** (sales by item, enrolment by school): use a **bar chart**. Horizontal bars work well on phones when category names are long.
+* **Change over time** (monthly attendance, weekly sales): use a **line chart**, with time running left to right.
+* **Part of a whole** (share of households by water source): a **bar chart** usually works better than a pie chart, because people compare lengths more accurately than angles. If you use a pie, keep it to a few slices.
+* **Relationship between two numbers** (farm size and harvest): use a **scatter plot**, one dot per record.
+* **Exact values** that people need to look up: use a **table**, not a chart.
+
+## Make it readable on a small screen
+
+Many of your readers will open your report on a phone.
+
+* Write a title that states the finding, such as "Attendance falls on market days", not just "Attendance".
+* Label axes with units, such as "Sales (GHS)".
+* Use few colours. Highlight the one bar or line that matters and make the rest grey.
+* Sort bars from largest to smallest unless there is a natural order like months.
+* Remove clutter: heavy gridlines, 3D effects, shadows and legends you could replace with direct labels.
+
+## Do not mislead
+
+Charts can deceive even when every number is correct.
+
+* **Cut off axes.** A bar chart whose vertical axis starts at 90 instead of 0 makes a tiny difference look huge. Bar charts should start at zero. Line charts can start elsewhere if you say so clearly.
+* **Uneven time gaps.** Leaving out months makes trends look smoother or steeper than they are.
+* **Cherry picking.** Showing only the weeks that support your point hides the full picture.
+* **Too few cases.** A percentage based on four respondents should say so.
+
+## Charts in Google Sheets
+
+Select your data, then Insert and Chart. Google Sheets suggests a chart type; change it in the chart editor if it is not the right one. Under Customise, edit the title, axis titles and colours. Charts update automatically when the data changes.
+
+## A worked example
+
+Fuseini has invented monthly enrolment figures for a literacy programme in five communities near Wa. His first chart is a 3D pie with five colours and a title of "Enrolment". It is hard to read. He switches to a horizontal bar chart sorted from largest to smallest, colours the one community below target in orange and the rest grey, and titles it "Kpongu is the only community below its enrolment target". His manager understands it at a glance.
+
+## Check before you share
+
+Ask yourself: what is the one thing this chart should say? Would a reader see it in five seconds? Is anything exaggerated? If the answer to any of these worries you, simplify.`,
+      practice_task_md: `**Goal:** turn a poor chart into a clear one.
+
+1. In Google Sheets, create an invented table of monthly attendance (January to June) for three schools.
+2. First, make a deliberately poor chart: a pie chart or a bar chart with the axis starting well above zero.
+3. Then make a good chart: a line chart of attendance over time with a title that states the finding, labelled axes and one highlighted school.
+4. Screenshot both and write two sentences on what you changed and why.
+
+**Done looks like:** a before and after pair with your explanation, which makes a strong portfolio piece.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which chart is best for showing monthly attendance over six months?",
+            options: ["Pie chart", "Line chart", "Scatter plot", "A single number"],
+            answer_index: 1,
+            explanation: "Line charts show change over time.",
+          },
+          {
+            prompt: "Why can a bar chart with an axis starting at 90 mislead?",
+            options: [
+              "It makes small differences look huge",
+              "It hides the title",
+              "It uses too many colours",
+              "Bar charts cannot have axes",
+            ],
+            answer_index: 0,
+            explanation: "Bar charts should start at zero so lengths are honest.",
+          },
+          {
+            prompt: "Which title is best?",
+            options: [
+              "Attendance",
+              "Chart 1",
+              "Attendance falls on market days",
+              "Data from the survey",
+            ],
+            answer_index: 2,
+            explanation: "A good title states the finding.",
+          },
+          {
+            prompt: "Why does the lesson suggest bars rather than a pie for parts of a whole?",
+            options: [
+              "Pies cannot show percentages",
+              "People compare lengths more accurately than angles",
+              "Bars use less data",
+              "Pies only work in Excel",
+            ],
+            answer_index: 1,
+            explanation: "Lengths are easier to compare than angles.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    dashboards: {
+      explanation_md: `## Why this matters
+
+Managers check the same few numbers every week: sales, stock, attendance, households reached. Instead of sending a new report each time, an analyst can build a dashboard that updates from the data automatically. Dashboards and business intelligence (BI) tools such as Power BI, Tableau and Looker Studio appear in many analyst and M&E adverts, especially at banks, telcos and larger NGOs.
+
+## What a dashboard is
+
+A dashboard is a single page that shows key numbers and charts, connected to a data source so it refreshes when the data changes. A good one answers the regular questions of one audience without them needing to ask you.
+
+## Free tools you can use
+
+* **Looker Studio** is a free Google tool that runs in the browser. It connects easily to Google Sheets, so a sheet you already maintain can feed a dashboard. It works on a low spec laptop and you can view dashboards on a phone.
+* **Power BI Desktop** is free from Microsoft but runs only on Windows. Many Ghanaian companies use Power BI, so it is worth learning if you have access to a Windows computer. Sharing dashboards online generally needs a paid licence, so practise locally.
+* **Tableau Public** is a free version of Tableau for public data.
+
+The ideas transfer between tools, so start with whichever you can run.
+
+## Plan before you build
+
+Talk to the person who will use the dashboard. Ask what decisions they make and what they check each week. Then sketch the page on paper:
+
+* **Top row:** three to five headline numbers, called scorecards or KPIs, such as total sales this month or households reached.
+* **Middle:** one or two charts that explain the headline, such as a trend line.
+* **Bottom or side:** filters, such as date range, district or product.
+
+Fewer elements beat more. If something is not used to make a decision, leave it out.
+
+## Building in Looker Studio
+
+1. Keep your data tidy in Google Sheets: one row per record, clear headers, dates as dates.
+2. In Looker Studio, create a blank report and add your sheet as a data source.
+3. Add scorecards for your headline numbers.
+4. Add a time series chart and a bar chart.
+5. Add a date range control and a dropdown filter.
+6. Share it with a view only link.
+
+When the sheet changes, the dashboard updates the next time it refreshes.
+
+## Keep it honest and usable
+
+The chart rules from the previous lesson still apply: clear titles, labelled axes, honest scales. Show the date the data was last updated so nobody mistakes old figures for new ones. Check that the dashboard reads on a phone, since many managers will open it there.
+
+## A worked example
+
+Amina keeps an invented sheet of weekly seed distributions for an NGO in the North East Region. She builds a Looker Studio dashboard with three scorecards (farmers reached, bags distributed, communities covered), a weekly trend chart and a district filter. Her manager stops asking for weekly emails because the answer is always one link away.`,
+      practice_task_md: `**Goal:** build a small dashboard from a Google Sheet.
+
+1. Use a tidy sheet from an earlier lesson, such as your stall sales with lookups, or create about 30 invented rows with date, district, item and amount.
+2. Open lookerstudio.google.com and create a blank report with your sheet as the data source.
+3. Add three scorecards, one time series chart, one bar chart and a date range control.
+4. Give each chart a title that states what it shows, and add a text box with the data's last update date.
+5. Share a view only link and open it on your phone to check it reads well.
+
+**Done looks like:** a working dashboard link you can add to your portfolio and show a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What makes a dashboard different from a one off report?",
+            options: [
+              "It is printed on paper",
+              "It is connected to a data source and refreshes when the data changes",
+              "It has no charts",
+              "It is always longer",
+            ],
+            answer_index: 1,
+            explanation: "Dashboards update from their data source.",
+          },
+          {
+            prompt: "Which free tool connects easily to Google Sheets and runs in the browser?",
+            options: ["Looker Studio", "Power BI Desktop", "Microsoft Access", "Notepad"],
+            answer_index: 0,
+            explanation: "Looker Studio is a free browser tool that connects to Google Sheets.",
+          },
+          {
+            prompt: "What should you do before building a dashboard?",
+            options: [
+              "Add every chart you can think of",
+              "Ask the user what decisions they make and sketch the page",
+              "Buy a paid licence",
+              "Delete the raw data",
+            ],
+            answer_index: 1,
+            explanation: "Planning around the user's decisions keeps the dashboard focused.",
+          },
+          {
+            prompt: "Why show the date the data was last updated?",
+            options: [
+              "So nobody mistakes old figures for new ones",
+              "Because Looker Studio requires it",
+              "To make the dashboard colourful",
+              "To hide missing data",
+            ],
+            answer_index: 0,
+            explanation: "The update date tells readers how current the figures are.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
     // NEXT
   },
 };
