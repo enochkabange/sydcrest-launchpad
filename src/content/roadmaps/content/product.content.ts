@@ -1847,6 +1847,491 @@ Mariama then recommends a pilot with five field officers in one district for two
         pass_threshold: 80,
       },
     },
+    "live-product": {
+      explanation_md: `Launch day is not the end of product work. It is the start of a new kind of work: helping real people use the product, fixing what breaks, and learning what to improve. Someone has to onboard new users, answer their problems, keep help guides current and tell the builders what is going wrong. In many companies this is called product operations, customer success or product support.
+
+This matters for your career. In the adverts researched for this roadmap, product operations, support and implementation roles were among the most realistic doors into product work for people early in their careers. They teach you how users really behave, which is exactly what product managers need to know.
+
+## What running a live product involves
+
+* **Onboarding.** Helping new users or client organisations get set up and successful in their first days.
+* **Training.** Teaching users, agents or field staff how to use the product, often in person or over WhatsApp.
+* **Documentation.** Writing help guides, FAQs and standard operating procedures (SOPs) so answers are consistent.
+* **Support and escalation.** Solving common problems directly, and passing real bugs to engineers with clear reports.
+* **Feedback.** Collecting what users say, spotting patterns and sharing them with the product team.
+
+## Why it builds product skill
+
+When you answer the same question ten times, you learn where the product confuses people. When a client struggles to set up, you learn which requirements were missed. People who do this work well often become the person the product manager trusts most, and later step into product roles themselves.
+
+## What this section covers
+
+* **Product operations.** Onboarding, training, help guides, SOPs and escalating issues to engineers.
+* **Customer feedback loops.** Collecting feedback from many channels, finding patterns, sharing them and telling customers what changed.
+
+## Worked example: the farmers' market app
+
+After launch, Fuseini joins the farmers' market team in operations. In his first month he:
+
+* Trains leaders of six farmer groups in Karaga and Savelugu, using a one page picture guide he wrote.
+* Answers buyer questions on the WhatsApp Business line, saving common replies as quick replies.
+* Notices that many farmers ask the same question: "Why has my money not arrived?" He finds that payouts happen weekly, but nobody told farmers. He suggests an SMS explaining the payout day.
+* Escalates a bug where orders over 1,000 cedis fail, with clear steps for the engineer.
+
+Within weeks, payout questions drop and the product manager asks Fuseini to join planning meetings. His operations work has become product work.`,
+      practice_task_md: `**Goal:** see a live product from the support side.
+
+1. Choose a product or service you use regularly, such as a MoMo wallet, a school portal or a church giving platform.
+2. Find its help channels: FAQ page, WhatsApp line, social media replies or USSD help option.
+3. Write down five questions or complaints users commonly raise. App store reviews and public social media replies are good sources.
+4. For each, note whether the product's help clearly answers it.
+5. Suggest one product change and one help guide change that would reduce the most common question.
+
+**Done looks like:** a list of five common questions, your assessment of the help available, and two concrete suggestions.`,
+      quiz: {
+        questions: [
+          q(
+            "Which of these is part of running a live product?",
+            ["Choosing the company name", "Onboarding and training users", "Hiring investors", "Designing the logo"],
+            1,
+            "Onboarding, training, documentation, support and feedback are all part of running a live product.",
+          ),
+          q(
+            "What is an SOP?",
+            [
+              "A standard operating procedure that keeps answers and processes consistent",
+              "A type of software bug",
+              "A sales target",
+              "A database table",
+            ],
+            0,
+            "SOPs are written procedures so tasks are done the same way every time.",
+          ),
+          q(
+            "Why does operations work build product skill?",
+            [
+              "It avoids contact with users",
+              "It shows where the product confuses people and which requirements were missed",
+              "It replaces the need for engineers",
+              "It only involves paperwork",
+            ],
+            1,
+            "Repeated questions and setup struggles reveal product problems.",
+          ),
+          q(
+            "What did Fuseini discover about farmers asking where their money was?",
+            [
+              "The payment system was broken",
+              "Payouts were weekly but nobody had told farmers",
+              "Farmers had no phones",
+              "Buyers were not paying",
+            ],
+            1,
+            "He traced the repeated question to missing communication about payout timing.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "product-operations": {
+      explanation_md: `Product operations keeps a product working well for the people who rely on it between releases. Adverts in Ghana and across West Africa for product operations associates, product support officers and implementation roles list duties such as onboarding clients, training users, writing documentation and procedures, resolving issues and working with engineers on fixes. These are skills you can start practising now.
+
+## Onboarding
+
+Onboarding is getting a new user or client organisation from "signed up" to "getting value". Good onboarding:
+
+* Has a clear first goal, such as "make your first sale" or "register your first ten households".
+* Removes setup steps that are not needed yet.
+* Checks in after a few days to catch people who got stuck.
+
+For business clients, onboarding may include setting up accounts, importing their data and agreeing who to call for help.
+
+## Training
+
+Training works best when it is practical and short. Show the task, let people try it on their own phones, then let them teach each other. Use the language people are most comfortable in. For field staff or agents, a printed one page guide with pictures and a short voice note on WhatsApp can work better than a long manual.
+
+## Help guides and SOPs
+
+* A **help guide** or FAQ answers user questions: "How do I withdraw my savings?"
+* An **SOP** tells staff how to handle a situation consistently: "What to do when a customer reports a missing payment."
+
+Good guides use numbered steps, screenshots, plain words and one task per page. Date them and update them whenever the product changes.
+
+## Escalating issues
+
+Not every problem is a bug. Before escalating, check:
+
+1. Can you reproduce it?
+2. Is it a known issue or a training gap?
+3. How many users does it affect, and how badly?
+
+Then send engineers a clear report with steps, expected and actual results, screenshots and the number of affected users. Track it until it is fixed, and tell the affected users when it is.
+
+## Worked example: the NGO beneficiary tracker
+
+Hawa is a product operations associate for an NGO's beneficiary tracker used by 40 field officers in the Upper East Region. When a new district joins, she:
+
+* Sets up officer accounts and loads the community list.
+* Runs a two hour training where officers register a practice household on their own phones.
+* Shares a one page guide and a three minute voice note in Gurune and English.
+* Writes an SOP for supervisors: how to correct a wrongly registered household.
+
+A week later, three officers report the app "losing" records. Hawa reproduces it: records are only saved after tapping Submit, and officers were closing the app at the summary screen. It is a training and design gap, not a crash. She updates the guide, tells the officers, and suggests to the product manager that the app should save drafts automatically. That suggestion goes into the next sprint.`,
+      practice_task_md: `**Goal:** write a help guide and an SOP for a real task.
+
+1. Choose a task people around you find confusing, such as resetting a MoMo PIN, registering for an exam portal or joining a church online giving platform.
+2. Write a one page help guide for users with numbered steps and at least two screenshots or drawings.
+3. Write a short SOP for someone helping others with the task: common problems and what to do for each.
+4. Test the guide by asking someone who has never done the task to follow it. Note where they get stuck and improve it.
+
+**Done looks like:** a tested one page help guide and a short SOP, with notes on what you changed after testing.`,
+      quiz: {
+        questions: [
+          q(
+            "What is the aim of onboarding?",
+            [
+              "To collect as much data as possible",
+              "To get a new user from signed up to getting value",
+              "To sell more features",
+              "To test the code",
+            ],
+            1,
+            "Onboarding helps new users reach their first real benefit.",
+          ),
+          q(
+            "What is the difference between a help guide and an SOP?",
+            [
+              "A help guide answers user questions; an SOP tells staff how to handle situations consistently",
+              "They are the same thing",
+              "An SOP is for customers; a help guide is for engineers",
+              "Help guides are only videos",
+            ],
+            0,
+            "Help guides are for users; SOPs are for staff.",
+          ),
+          q(
+            "What should you check before escalating an issue to engineers?",
+            [
+              "Whether you can reproduce it and how many users it affects",
+              "Whether the engineer is busy",
+              "The weather",
+              "Whether a competitor has the same bug",
+            ],
+            0,
+            "Reproducing and sizing the issue makes escalation useful.",
+          ),
+          q(
+            "What was really causing the 'lost' records in Hawa's example?",
+            [
+              "The server crashed",
+              "Officers closed the app before tapping Submit",
+              "The network was down for a week",
+              "Records were deleted on purpose",
+            ],
+            1,
+            "It was a training and design gap, not a crash.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "customer-feedback": {
+      explanation_md: `Customers tell you what is wrong with your product every day, through support chats, calls, app store reviews, social media comments and agents in the field. Product teams that listen systematically improve faster. Adverts for product operations and analyst roles mention feedback loops, first level support and resolving support tickets. Turning scattered complaints into clear evidence is a valuable skill.
+
+## Collect from many channels
+
+Feedback arrives in different places:
+
+* WhatsApp and phone support.
+* App store and Google Play reviews.
+* Social media comments and messages.
+* Agents, field officers or sales staff who hear complaints in person.
+* Short surveys after a key action, such as one question by SMS.
+
+No single channel tells the full story. People who write reviews are often the angriest; people who call may be the least confident with technology.
+
+## Record it consistently
+
+A simple Google Sheet works. For each piece of feedback, record the date, channel, user type, a short summary in your own words, a category (for example payments, sign up, confusing wording), and how serious it is. Consistent categories let you count.
+
+## Find patterns
+
+Once a week, sort and count by category. Ask:
+
+* Which problems come up most often?
+* Which ones block people completely?
+* Is anything new or growing?
+
+A single loud complaint is worth noting. Twenty quiet ones about the same thing are worth acting on.
+
+## Share with the team
+
+Send a short weekly summary to the product team: the top three themes, a count for each, one or two real quotes (with personal details removed) and any suggestion. Quotes make problems feel real to engineers who never meet customers.
+
+## Close the loop
+
+When something is fixed, tell the people who reported it. A simple message such as "You told us payouts were confusing, so we now send an SMS on payout day. Thank you" builds trust and encourages more feedback.
+
+Always handle personal data carefully. Do not share phone numbers or names beyond those who need them.
+
+## Worked example: the MoMo savings feature
+
+Amina reviews a month of feedback for the savings feature. She records 120 items in a sheet. Sorting by category shows:
+
+* 41 about "Where is my money?" after the lock period ends.
+* 18 about the evening deduction failing when balance is low.
+* 9 asking for group savings.
+
+She discovers that matured savings return to the wallet, but no SMS says so. Her weekly summary leads the team to add a maturity SMS. A month later, "Where is my money?" messages fall sharply, and Amina sends a thank you message to the customers who raised it.`,
+      practice_task_md: `**Goal:** turn public feedback into a weekly summary.
+
+1. Pick a Ghanaian app with public reviews on Google Play.
+2. Read 30 recent reviews. In Google Sheets, record date, a short summary in your own words, category and seriousness for each. Do not copy names.
+3. Sort and count by category.
+4. Write a weekly style summary under 150 words: top three themes with counts, one paraphrased example each, and one suggestion.
+
+**Done looks like:** a feedback sheet with 30 rows, category counts, and a short summary ready to share with a team.`,
+      quiz: {
+        questions: [
+          q(
+            "Why collect feedback from many channels?",
+            [
+              "No single channel tells the full story",
+              "It makes the sheet longer",
+              "Reviews are always accurate",
+              "Only phone calls matter",
+            ],
+            0,
+            "Different channels reach different kinds of users.",
+          ),
+          q(
+            "Why use consistent categories when recording feedback?",
+            ["So you can count and compare themes", "To hide complaints", "To impress managers", "Categories are not useful"],
+            0,
+            "Consistent categories make patterns countable.",
+          ),
+          q(
+            "According to the lesson, which deserves action?",
+            [
+              "One loud complaint",
+              "Twenty quiet complaints about the same thing",
+              "Only feedback from managers",
+              "Only positive reviews",
+            ],
+            1,
+            "Repeated issues show a real pattern.",
+          ),
+          q(
+            "What does closing the loop mean?",
+            [
+              "Deleting old feedback",
+              "Telling people who reported a problem what you changed",
+              "Blocking angry users",
+              "Ending the support line",
+            ],
+            1,
+            "Closing the loop builds trust and encourages more feedback.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    measuring: {
+      explanation_md: `After launch, how do you know whether a product is working? Opinions differ, and the loudest voice is not always right. Data gives you a shared, honest view. Adverts for product analysts, business analysts and data roles in Ghana ask for data analysis, KPI tracking, dashboards and reporting, and some ask for spreadsheets at an advanced level and SQL. Even product managers who do not run the numbers themselves must read them confidently.
+
+## Numbers and stories together
+
+Data tells you **what** is happening: how many people signed up, how many saved twice, where they dropped off. Interviews and feedback tell you **why**. Good product people use both. If the numbers say farmers stop after registering, conversations tell you it is because the price field is confusing.
+
+## Honest reading
+
+Numbers can mislead if you are not careful:
+
+* **Vanity numbers** look good but do not show value. Downloads and sign ups can rise while almost nobody uses the product.
+* **Small numbers** jump around. If 4 out of 10 users did something last week and 6 this week, that may be chance.
+* **Correlation is not cause.** Savings rose in December, but so do incomes before Christmas. Your new feature may not be the reason.
+* **Missing data** hides problems. If only smartphone users are tracked, USSD users disappear from your charts.
+
+## What this section covers
+
+* **Spreadsheets and SQL basics.** How to sort, filter, count and chart product data, and the basic queries analyst roles mention.
+* **Product metrics.** Activation, retention and revenue, and choosing one main metric.
+* **Running experiments.** Testing a change against a control and deciding fairly, which is optional but useful.
+
+## Free tools to learn with
+
+Google Sheets is free, works on a phone, and is enough for most beginner analysis. For SQL, free interactive lessons let you practise in a browser without installing anything. Looker Studio, a free Google tool, can turn a sheet into a simple dashboard.
+
+## Worked example: the NGO beneficiary tracker
+
+Issahaku is asked whether the new tracker is working. The district director says, "Officers love it." Issahaku looks at the data. In one month, 38 of 40 officers logged in, which looks great. But only 22 registered more than five households. Looking closer, the 18 who registered few households are mostly in areas with weak network.
+
+He calls three of them. They explain that the sync often fails, so they go back to paper. The number showed **what**; the calls showed **why**. Issahaku recommends improving offline sync before adding new features, and he defines "active officer" as one who registers at least five households a week, a measure that reflects real use rather than logins.`,
+      practice_task_md: `**Goal:** separate vanity numbers from meaningful ones.
+
+1. Pick a product or community activity you know, such as a WhatsApp group, a church event, or your manual MVP.
+2. List five numbers you could track about it.
+3. Mark each as vanity (looks good but shows little value) or meaningful (shows people getting real value). Explain each in one sentence.
+4. For your most meaningful number, write one question you would ask users to understand why it changes.
+
+**Done looks like:** five numbers classified with reasons, and one follow up question for users.`,
+      quiz: {
+        questions: [
+          q(
+            "What does data tell you, and what do interviews tell you?",
+            [
+              "Data tells you why; interviews tell you what",
+              "Data tells you what is happening; interviews tell you why",
+              "Both tell you only what",
+              "Neither is useful",
+            ],
+            1,
+            "Numbers show what happens; conversations explain why.",
+          ),
+          q(
+            "What is a vanity number?",
+            [
+              "A number that looks good but does not show real value",
+              "A number about design",
+              "A secret number",
+              "A number that is always accurate",
+            ],
+            0,
+            "Downloads and sign ups can rise while few people use the product.",
+          ),
+          q(
+            "Why might savings rising in December not prove a new feature worked?",
+            [
+              "Data is always wrong in December",
+              "Incomes also rise before Christmas, so correlation is not cause",
+              "Nobody saves in December",
+              "Features never affect savings",
+            ],
+            1,
+            "Another factor could explain the rise.",
+          ),
+          q(
+            "How did Issahaku define an active officer?",
+            [
+              "Anyone who logged in once",
+              "Someone who registers at least five households a week",
+              "Anyone with a smartphone",
+              "The director's favourite officers",
+            ],
+            1,
+            "He chose a measure that reflects real use rather than logins.",
+          ),
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "spreadsheets-and-sql": {
+      explanation_md: `Product and business analyst adverts in Ghana often ask for strong spreadsheet skills, and analyst roles at fintechs and PAYGO companies add SQL and dashboard tools. Spreadsheets let you answer most beginner product questions. SQL lets you ask the same questions directly of a company's database, which is how analysts work once data grows large.
+
+## Spreadsheet skills that matter
+
+In Google Sheets (free, and it works on a phone), learn to:
+
+* **Sort and filter** rows, for example to see only orders from Tamale.
+* **Count and sum with conditions** using functions like COUNTIF and SUMIF.
+* **Summarise with a pivot table**, such as orders per week per town.
+* **Clean data:** remove duplicates, fix inconsistent spellings ("Tamale", "tamale", "Tamale "), and split or join columns.
+* **Chart** a summary so others understand it at a glance.
+
+Example formulas, if orders are in rows with the town in column B and value in column C:
+
+* Count orders from Tamale: =COUNTIF(B:B, "Tamale")
+* Total value from Tamale: =SUMIF(B:B, "Tamale", C:C)
+
+## SQL basics
+
+SQL (Structured Query Language) asks questions of database tables. Most beginner questions use just a few parts:
+
+\`\`\`sql
+SELECT town, COUNT(*) AS orders, SUM(value) AS total
+FROM orders
+WHERE created_at >= '2026-09-01'
+GROUP BY town
+ORDER BY total DESC;
+\`\`\`
+
+Reading it in plain English: from the orders table, take orders since 1 September, group them by town, count them and add their values, and show the biggest towns first.
+
+* **SELECT** chooses columns or calculations.
+* **FROM** names the table.
+* **WHERE** filters rows.
+* **GROUP BY** makes groups for counting or summing.
+* **ORDER BY** sorts the result.
+
+Later you will learn **JOIN**, which combines tables, such as orders with customers.
+
+## Worked example: the farmers' market app
+
+Mariama is asked: "Which farmer groups bring repeat buyers?" She exports three months of orders to Google Sheets. First she cleans the data: town names have five spellings, and some test orders by staff need removing. Then she builds a pivot table of buyers per farmer group and counts how many bought more than once.
+
+Two groups near Savelugu have far more repeat buyers. She makes a simple bar chart and shares it with one line: "Groups that confirm orders the day before keep more buyers." When the team later moves data into a proper database, she writes the same analysis as a short SQL query, so it can be rerun every week in seconds.
+
+Start small with data you understand. The habit of asking a clear question first, then cleaning, then counting, matters more than any one tool.`,
+      practice_task_md: `**Goal:** answer a real question with a spreadsheet, then try SQL.
+
+1. In Google Sheets, create or collect a small dataset of at least 30 rows, such as your feedback sheet, your manual MVP orders, or a made up shop sales list with date, item, town and amount.
+2. Clean it: fix spellings, remove duplicates.
+3. Use COUNTIF or SUMIF and one pivot table to answer one clear question, such as "Which item sells most per week?"
+4. Make one chart and write a one sentence finding.
+5. Complete the first few free lessons on SQLBolt (sqlbolt.com) in your browser.
+
+**Done looks like:** a cleaned sheet with a pivot table, a chart and a one sentence finding, plus a screenshot showing SQLBolt lessons completed.`,
+      quiz: {
+        questions: [
+          q(
+            "Which spreadsheet function counts rows that match a condition?",
+            ["SUM", "COUNTIF", "AVERAGE", "TODAY"],
+            1,
+            "COUNTIF counts rows that meet a condition, such as town equals Tamale.",
+          ),
+          q(
+            "What does the WHERE part of a SQL query do?",
+            ["Sorts the result", "Names the table", "Filters which rows are included", "Makes groups"],
+            2,
+            "WHERE filters rows, for example orders since a date.",
+          ),
+          q(
+            "What does GROUP BY town do in the example query?",
+            [
+              "Deletes towns",
+              "Makes a group for each town so orders can be counted and summed per town",
+              "Sorts towns alphabetically only",
+              "Joins two tables",
+            ],
+            1,
+            "GROUP BY creates groups for counting or summing.",
+          ),
+          q(
+            "What did Mariama do before analysing the orders?",
+            [
+              "Cleaned the data, fixing town spellings and removing test orders",
+              "Deleted half the data",
+              "Built a new app",
+              "Asked buyers for passwords",
+            ],
+            0,
+            "Cleaning comes before counting.",
+          ),
+          q(
+            "According to the lesson, what habit matters more than any one tool?",
+            [
+              "Using the most expensive software",
+              "Asking a clear question first, then cleaning, then counting",
+              "Making charts colourful",
+              "Writing very long queries",
+            ],
+            1,
+            "Clear questions and clean data lead to useful answers.",
+          ),
+        ],
+        pass_threshold: 80,
+      },
+    },
     // NEXT
   },
 };
