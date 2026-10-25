@@ -446,6 +446,452 @@ Amina manages content for a small cosmetics shop in Tamale. For one week she pla
         pass_threshold: 75,
       },
     },
+    copywriting: {
+      explanation_md: `Words do most of the selling online. A photo catches the eye, but the caption tells people what it is, why they should care and what to do next. Ghanaian job adverts for digital marketers regularly ask for copywriting and for keeping a brand consistent. If you can write short, clear, friendly words, you will always be useful.
+
+## The shape of a selling message
+
+Most good posts follow a simple pattern:
+
+* **Hook.** The first line, which people see before tapping "more". Lead with the benefit or a question. "Dry, cracked heels this harmattan?" beats "Good morning everyone".
+* **Detail.** What it is, the price in cedis, sizes, delivery days. Answer the questions people would otherwise send in a message.
+* **Proof.** A reason to trust: "made by our women's group in Tamale" or a short customer comment shared with permission.
+* **Call to action.** Exactly what to do next. "Send 'BUTTER' on WhatsApp to 024 000 0000 and pay with MoMo."
+
+Keep sentences short. Write for someone reading on a small screen, maybe in their second or third language. Read your post aloud; if you run out of breath, cut it.
+
+## Brand voice
+
+A brand voice is the personality in the words. A youth church event might sound lively and warm. A microfinance company should sound calm and trustworthy. Write down three words for the voice, such as "friendly, honest, local", and check every post against them. Consistency helps people recognise the business, even before they see the logo.
+
+## Honest claims only
+
+Never promise what the product cannot do. Do not call shea butter a cure for a disease, and do not invent customer reviews. In Ghana, the Food and Drugs Authority oversees adverts for products such as cosmetics, food and medicines, and the platforms' own policies also expect claims to be truthful, and one exposed lie can destroy trust that took years to build.
+
+## Using AI writing tools
+
+AI chat tools can suggest captions quickly. Treat them as a first draft only. Check every price, date and fact, remove anything that sounds foreign to your audience, and never trust an AI translation into Dagbani or Twi without a fluent speaker checking it.
+
+## A worked example
+
+Sumaila writes for a mobile money vendor running a promotion. His first draft: "We are pleased to inform our esteemed customers of our ongoing promotion." Nobody will read that. His rewrite:
+
+"Send money this week, pay no charge on your next small transfer. Only at Sumaila Ventures, opposite Aboabo market. Open 7am to 8pm. Bring your Ghana Card."
+
+Benefit first, clear detail, location and a next step. That is copywriting.`,
+      practice_task_md: `**Goal:** Rewrite real posts so they sell more clearly.
+
+**Steps:**
+1. Find two posts or WhatsApp Statuses from local businesses that you think are unclear. Screenshot them.
+2. For each, rewrite the message using hook, detail, proof and call to action.
+3. Choose three words for the business's brand voice and check your rewrite against them.
+4. Read both versions aloud to a friend and ask which one makes them more likely to act.
+
+**Done looks like:** Two before and after pairs saved in a Google Doc, each with a one line note on what you changed and why. This makes a good small portfolio piece.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the job of the hook in a selling message?",
+            options: [
+              "To list every product the shop sells",
+              "To give the phone number",
+              "To catch attention in the first line with a benefit or question",
+              "To thank customers for reading",
+            ],
+            answer_index: 2,
+            explanation: "The hook is the first line people see, so it should lead with a benefit or question.",
+          },
+          {
+            prompt: "Which of these is the clearest call to action?",
+            options: [
+              "Send 'BUTTER' on WhatsApp to our number and pay with MoMo",
+              "We have the best butter in town",
+              "Contact us for more information",
+              "Good morning to all our customers",
+            ],
+            answer_index: 0,
+            explanation: "A call to action tells people exactly what to do next.",
+          },
+          {
+            prompt: "How does the lesson suggest you keep a brand voice consistent?",
+            options: [
+              "Change the tone every week to keep people guessing",
+              "Copy the voice of the biggest competitor",
+              "Only post in capital letters",
+              "Write down three words for the voice and check every post against them",
+            ],
+            answer_index: 3,
+            explanation: "Three agreed words give you a simple test for every post.",
+          },
+          {
+            prompt: "How should you use AI writing tools, according to the lesson?",
+            options: [
+              "Publish whatever they write without checking",
+              "As a first draft, checking facts, prices and any local language translation",
+              "Only for writing customer reviews",
+              "Never, because they are banned for marketing",
+            ],
+            answer_index: 1,
+            explanation: "AI drafts must be checked, and local language translations need a fluent speaker.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "graphics-and-photos": {
+      explanation_md: `On WhatsApp, Instagram and Facebook, people decide in a second whether to stop scrolling. A clear photo or a clean graphic is often what makes them stop. Ghanaian adverts for marketing assistants and interns frequently name Canva and similar tools. You do not need a camera or paid software to meet that bar. You need daylight, a steady hand and a few simple rules.
+
+## Product photos on a phone
+
+* **Use daylight.** Stand near a window or under a shade tree, out of harsh direct sun. Avoid the phone flash, which makes products look flat and shiny.
+* **Clean background.** A plain wall, a cloth or a sheet of paper. Remove clutter so the product is the only thing to look at.
+* **Wipe the lens.** Phones live in pockets. A quick wipe makes photos sharper instantly.
+* **Fill the frame.** Get close so the product takes up most of the picture. Show a hand or a common object for size, such as a basket next to a chair.
+* **Take several.** Shoot from the front, the side and up close on details like weaving or a label. Pick the best.
+
+## Simple graphics
+
+Free design apps such as Canva offer templates for posts, Status images and flyers. Use them, but keep it simple:
+
+* One message per graphic. A church harvest flyer needs the event, date, time, place and a contact. Not five paragraphs.
+* Large, readable text with strong contrast, such as dark text on a light background.
+* Two or three brand colours and one or two fonts, used every time. This is how people start recognising the business at a glance.
+* Use real photos of the business where possible, rather than generic stock images.
+
+## Keep files light
+
+Many customers buy data in small bundles. Large images load slowly or not at all. Export graphics as JPG for photos and keep the size modest; most apps offer a smaller download option. Check how the image looks on a small phone screen before posting.
+
+## A worked example
+
+Wumpini helps a basket weaving group in Bolgatanga. Their old photos were taken indoors at night, with baskets piled together. She moves the shoot outside in the morning, places one basket at a time on a plain cloth, and adds a close up of the weaving. Then she builds one Canva template with the group's colours and logo, so every new basket post looks consistent: photo on top, name, size and price below. The group can now make a new post themselves in a few minutes.`,
+      practice_task_md: `**Goal:** Produce a small set of product photos and one branded graphic for a local seller.
+
+**Steps:**
+1. Choose three products from a seller you know, or from your own home if needed, such as a jar of shea butter, a basket or a pair of slippers.
+2. Photograph each in daylight on a plain background. Take at least three angles per product.
+3. Pick the best photo of each and crop it so the product fills the frame.
+4. In a free design app, create one graphic using one photo, the product name, the price in cedis and how to order. Use no more than three colours.
+5. View the graphic on your phone at normal size and fix anything that is hard to read.
+
+**Done looks like:** Three clean product photos and one readable branded graphic, ready to show a mentor or the seller.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does the lesson recommend instead of using the phone flash?",
+            options: [
+              "Taking photos at night for better colour",
+              "Using daylight near a window or in shade",
+              "Using a paid filter app",
+              "Holding a torch behind the product",
+            ],
+            answer_index: 1,
+            explanation: "Daylight out of harsh sun gives better results than the flash.",
+          },
+          {
+            prompt: "Why should graphics use the same two or three brand colours every time?",
+            options: [
+              "So people start recognising the business at a glance",
+              "Because design apps only allow three colours",
+              "So the file size becomes larger",
+              "Because bright colours are illegal in adverts",
+            ],
+            answer_index: 0,
+            explanation: "Consistent colours and fonts build recognition.",
+          },
+          {
+            prompt: "Why does the lesson say to keep image files light?",
+            options: [
+              "Platforms delete large images",
+              "Light files always look sharper",
+              "Lighter files cost more to post",
+              "Many customers have small data bundles, so large images load slowly",
+            ],
+            answer_index: 3,
+            explanation: "Customers on limited data may not load heavy images.",
+          },
+          {
+            prompt: "What did Wumpini create so the basket group could make consistent posts themselves?",
+            options: [
+              "A paid advert",
+              "A new logo for every post",
+              "One template with the group's colours and logo",
+              "A website with an online shop",
+            ],
+            answer_index: 2,
+            explanation: "A single reusable template made every post look consistent and easy to produce.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "short-video": {
+      explanation_md: `Short vertical video now drives much of what people watch on TikTok, Instagram Reels, Facebook and WhatsApp Status. Ghanaian employers, from car dealers to cosmetics shops, are hiring people who can film and edit short clips, and some retail and health product companies ask for staff who can sell during live streams. You can do all of this with a phone.
+
+## What makes a short video work
+
+* **The first few seconds.** People decide almost instantly whether to keep watching. Start with the most interesting moment: the finished basket, the steaming waakye, the before and after.
+* **Vertical framing.** Hold the phone upright so the video fills the screen.
+* **Clear sound.** Viewers forgive average pictures but not bad sound. Film in a quiet spot, speak close to the phone, or use a cheap clip microphone if you have one.
+* **Captions.** Many people watch with the sound off, especially in public. Add on screen text so the message still lands.
+* **One idea.** One product, one tip or one story per video.
+* **A next step.** End with what to do: "Order on WhatsApp", "Visit us at Tamale Central Market".
+
+## Editing on a phone
+
+Free editing apps such as CapCut, or the editors built into TikTok and Instagram, let you trim clips, add text, music and transitions. Keep edits simple. Cut any pause or shaky moment. When you add music, use the platform's own music library, because songs added from elsewhere can be muted or removed for copyright reasons.
+
+## Trends, carefully
+
+Trends and popular sounds can help a video reach new people. Join a trend only if it fits the brand and you can link it to the product. A funny trend that has nothing to do with the business may get views but no customers.
+
+## Live selling
+
+In a live stream, a seller shows products in real time, answers questions from comments and takes orders. It works well for clothes, cosmetics and accessories. Prepare like a small show: a list of products with prices, good light, a stable phone stand, and a helper who replies to comments and records orders. Platforms set conditions for who can go live, such as age and account requirements, and these change, so check the current rules in the app.
+
+## A worked example
+
+Fuseini films for a Tamale tailor. His first video was a slow, sideways clip of the shop. His new one starts with a customer twirling in a finished kaba, then shows three quick cuts of cutting and sewing, with captions "Made in Tamale" and "Order on WhatsApp", ending on the phone number. Twenty seconds, one idea, clear next step.`,
+      practice_task_md: `**Goal:** Film and edit one short vertical video for a local business.
+
+**Steps:**
+1. Choose a product or process to show, such as weaving a basket, packaging shea butter or serving food.
+2. Plan four or five shots on paper. Start with the most interesting moment.
+3. Film vertically in a quiet place with good light. Keep each shot a few seconds long.
+4. Edit in a free app: trim pauses, add captions and end with a clear next step. Keep the video under 30 seconds.
+5. Watch it with the sound off. If the message is not clear, improve the captions.
+
+**Done looks like:** A finished video saved on your phone that makes sense with the sound off and ends with an action. Ask the business owner before posting it publicly.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why should short videos have captions?",
+            options: [
+              "Platforms refuse videos without text",
+              "Many people watch with the sound off",
+              "Captions make the file smaller",
+              "Captions replace the need for a next step",
+            ],
+            answer_index: 1,
+            explanation: "Captions let the message land even when people watch silently.",
+          },
+          {
+            prompt: "What does the lesson say about the first few seconds of a video?",
+            options: [
+              "They should show the business logo for a long time",
+              "They do not matter because people watch to the end",
+              "They should start with the most interesting moment",
+              "They should always be silent",
+            ],
+            answer_index: 2,
+            explanation: "People decide almost instantly whether to keep watching.",
+          },
+          {
+            prompt: "Why use the platform's own music library when adding songs?",
+            options: [
+              "Songs added from elsewhere can be muted or removed for copyright reasons",
+              "The library songs are always louder",
+              "It makes the video vertical automatically",
+              "Platforms pay you for using their music",
+            ],
+            answer_index: 0,
+            explanation: "Outside music can trigger copyright muting or removal.",
+          },
+          {
+            prompt: "Which of these is part of preparing for a live selling session?",
+            options: [
+              "Going live with no product list so it feels natural",
+              "Turning off comments so nobody can ask questions",
+              "Filming horizontally to fit more products",
+              "Having a helper reply to comments and record orders",
+            ],
+            answer_index: 3,
+            explanation: "The lesson suggests a product list, good light, a stand and a helper for comments and orders.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "content-calendar": {
+      explanation_md: `Businesses that post only when they remember look unreliable. A content calendar fixes that. It is a simple plan of what to post, where and when, made a few weeks ahead. Agencies and in house teams in Ghana use calendars to agree work with clients and managers before anything goes live. If you can build and keep one, you show that you are organised, which employers value as much as creativity.
+
+## What goes in a calendar
+
+A basic calendar is a table with one row per post:
+
+* **Date and time.** When it goes out.
+* **Channel.** WhatsApp Status, Facebook, Instagram, TikTok, email.
+* **Format.** Caption with photo, graphic, video, live.
+* **Topic and job.** What it is about and whether it shows, helps, proves or asks.
+* **Caption draft.** The words, written in advance.
+* **Status.** Idea, drafted, approved, posted.
+
+Google Sheets works well. It is free, opens on a phone, and you can share it with a client so they can approve posts with a comment.
+
+## Plan around real life
+
+The best calendars follow the rhythm of the customers' lives:
+
+* **Market days** in the town, when people have cash and are out buying.
+* **Holidays and festivals** such as Christmas, Eid, Easter, Independence Day, and local festivals like Damba in Dagbon or Bugum.
+* **Seasons.** Harmattan for skin care, rainy season for umbrellas and wellington boots, school reopening for uniforms and stationery.
+* **Paydays** near the end of the month for salaried customers.
+* **Business events** such as a new stock arrival or an anniversary.
+
+Mark these first, then fill in regular posts around them. Leave a little space for things you cannot plan, like a trending moment or a sudden stock problem.
+
+## How often to post
+
+There is no magic number. A schedule the business can keep for months beats an ambitious one abandoned in two weeks. For a small shop, three good posts a week plus regular Status updates may be plenty.
+
+## A worked example
+
+Hawa's shea butter business plans December in a sheet. She marks the start of harmattan, Christmas and the Tamale market days. Her calendar has a skin care tip every Monday, a product photo with price on market days, a customer story mid month, and a Christmas gift pack offer from the second week. Every caption is drafted by the end of November, so in December she only has to post and reply to customers.`,
+      practice_task_md: `**Goal:** Build a two week content calendar for a local business in Google Sheets.
+
+**Steps:**
+1. Create a sheet with columns: Date, Channel, Format, Topic, Job, Caption draft, Status.
+2. Mark any market days, holidays, seasons or events in the next two weeks.
+3. Plan six to ten posts around those dates, using a mix of show, help, prove and ask.
+4. Write full caption drafts for at least three posts.
+5. Share the sheet with a friend or mentor using a view or comment link and ask for one improvement.
+
+**Done looks like:** A shared Google Sheet with two weeks of planned posts, local dates marked and at least three captions ready to use.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a content calendar?",
+            options: [
+              "A list of all the customers a business has",
+              "A plan of what to post, where and when, made ahead of time",
+              "A paid tool that posts automatically",
+              "A record of how much each post earned",
+            ],
+            answer_index: 1,
+            explanation: "The lesson defines it as a plan of posts made a few weeks ahead.",
+          },
+          {
+            prompt: "Why does the lesson suggest Google Sheets for a calendar?",
+            options: [
+              "It writes the captions for you",
+              "It is the only tool that clients accept",
+              "It is free, works on a phone and can be shared for approval",
+              "It publishes posts to every platform",
+            ],
+            answer_index: 2,
+            explanation: "Sheets is free, phone friendly and easy to share with a client.",
+          },
+          {
+            prompt: "What should you mark on the calendar first?",
+            options: [
+              "Market days, holidays, seasons and business events",
+              "Random dates for paid ads",
+              "Only weekends",
+              "The competitor's posting times",
+            ],
+            answer_index: 0,
+            explanation: "Real life dates come first, then regular posts are filled in around them.",
+          },
+          {
+            prompt: "What does the lesson say about how often to post?",
+            options: [
+              "Every business must post five times a day",
+              "Posting once a month is always enough",
+              "Posting frequency does not matter at all",
+              "A schedule the business can keep for months beats an ambitious one that is abandoned",
+            ],
+            answer_index: 3,
+            explanation: "Consistency the owner can sustain matters more than a high number.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "social-and-messaging": {
+      explanation_md: `In Ghana, a lot of buying and selling happens inside chat apps and social media. A customer sees a post, sends "How much?", agrees a price, pays with mobile money and arranges delivery, all without leaving their phone. Organisations like NGOs, schools and think tanks also rely on social pages and email newsletters to keep people informed. Managing these channels well is the most requested skill in junior marketing adverts, so this section is the heart of the roadmap.
+
+## Three kinds of direct channel
+
+* **Messaging apps** such as WhatsApp put you in a private conversation with the customer. They are personal and close to the sale.
+* **Social media pages** on Facebook, Instagram and TikTok help new people discover a business and see its products. The platform decides who sees each post.
+* **Email newsletters** go to people who agreed to hear from you. You own the list, and no app decides who sees your message.
+
+Each channel needs the same core habits: a complete and trustworthy profile, regular useful posts, and fast, polite replies.
+
+## Working professionally
+
+Running channels for someone else is a position of trust. Good practice includes:
+
+* **Get access properly.** Ask to be added as an admin or editor instead of asking for the owner's password. Facebook and Instagram let page owners add people with limited roles.
+* **Keep a record.** Note what you posted and any customer issues, so the owner always knows what is happening.
+* **Protect customers.** Never ask people to share PINs, codes or card numbers. Scammers copy business pages; warn customers that the business will never ask for their PIN.
+* **Respect privacy.** Ask permission before sharing a customer's photo, name or message.
+
+## What this section covers
+
+* **WhatsApp Business:** the profile, catalogue, quick replies, labels and Status.
+* **Facebook and Instagram pages:** running a page and reading insights.
+* **Community management and customer care:** replying, handling complaints and working with trusted local voices.
+* **Email newsletters:** building a list and sending useful updates.
+
+## A small example
+
+Abdul-Rahman is hired part time by a Tamale pharmacy shop. Instead of taking the owner's phone, he asks to be added as an admin on the Facebook page and helps set up WhatsApp Business on the shop's own phone with quick replies. He keeps a simple log in Google Sheets of questions customers ask most. After a month, the owner can see every reply he sent and which questions keep coming up. That is the kind of trust that turns a short job into a long one.`,
+      practice_task_md: `**Goal:** Audit the direct channels of one local business or organisation.
+
+**Steps:**
+1. Choose a business, church, school or NGO you know.
+2. Find its WhatsApp number, social media pages and any email newsletter.
+3. For each channel, check: Is the profile complete? When was the last post? How quickly do they reply? (Send a polite question if appropriate.)
+4. Note one thing each channel does well and one thing to improve.
+5. Write three practical recommendations the owner could act on this week.
+
+**Done looks like:** A one page channel audit with clear, kind recommendations you could share with the owner.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the best way to get access to a client's Facebook page?",
+            options: [
+              "Ask the owner for their personal password",
+              "Create a new page with the same name",
+              "Ask to be added as an admin or editor with a proper role",
+              "Log in on the owner's phone without telling them",
+            ],
+            answer_index: 2,
+            explanation: "Page roles let owners give you access without sharing their password.",
+          },
+          {
+            prompt: "Which channel lets you own the list, so no app decides who sees your message?",
+            options: ["Instagram", "Email newsletters", "TikTok", "Facebook pages"],
+            answer_index: 1,
+            explanation: "Email goes to people who agreed to hear from you, and you own the list.",
+          },
+          {
+            prompt: "What should a business never ask customers to share?",
+            options: [
+              "Their PINs, codes or card numbers",
+              "Their delivery area",
+              "Which product they want",
+              "Feedback about the service",
+            ],
+            answer_index: 0,
+            explanation: "Legitimate businesses never ask for PINs or codes, and customers should be warned about scammers.",
+          },
+          {
+            prompt: "Why did Abdul-Rahman keep a log in Google Sheets?",
+            options: [
+              "To hide his work from the owner",
+              "Because Facebook requires it",
+              "To count his likes",
+              "So the owner could see his replies and the most common customer questions",
+            ],
+            answer_index: 3,
+            explanation: "Keeping a record builds trust and shows patterns in customer questions.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
