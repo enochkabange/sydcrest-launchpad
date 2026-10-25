@@ -15,8 +15,8 @@ const content: TrackContent = {
 
 You do not need an expensive machine. A modest laptop with 4 GB of memory is enough for most of this roadmap. You need three things:
 
-* **A code editor.** Visual Studio Code is free and works on Windows, macOS and Linux. Install it once on WiFi.
-* **A modern browser.** Chrome or Firefox both have built in developer tools, which you will use every day to inspect pages and find bugs.
+* **A code editor.** A free code editor such as Visual Studio Code (VS Code), which works on Windows, macOS and Linux. Install it once on WiFi.
+* **A modern browser.** Browsers such as Chrome or Firefox have built in developer tools, which you will use every day to inspect pages and find bugs.
 * **A folder for projects.** Make one folder called \`projects\` and keep each project in its own subfolder.
 
 No laptop yet? You can still start. Free browser based editors such as CodePen let you write HTML, CSS and JavaScript on a phone, and you can read every lesson here on your phone between practice sessions.
@@ -36,12 +36,12 @@ Data bundles cost money, so plan around them:
 
 ## A worked example
 
-Mariama in Bolgatanga has an old laptop and a phone. On Saturday at the community library she installs VS Code and Chrome, downloads the MDN pages she needs, and creates her \`projects\` folder. During the week she reads lessons on her phone and practises on the laptop at home without using data. By the end of the month she has three small pages saved in Git.
+Mariama in Bolgatanga has an old laptop and a phone. On Saturday at the community library she installs a free code editor and a modern browser, downloads the MDN pages she needs, and creates her \`projects\` folder. During the week she reads lessons on her phone and practises on the laptop at home without using data. By the end of the month she has three small pages saved in Git.
 
 That routine, more than any expensive tool, is what gets people job ready. Set yours up today and keep it simple.`,
       practice_task_md: `**Goal:** a working setup and a study plan that fits your data budget.
 
-1. Install a code editor (VS Code) and a modern browser (Chrome or Firefox) while on WiFi. If you only have a phone, open a free browser editor such as CodePen instead.
+1. Install a free code editor (for example VS Code) and a modern browser (for example Chrome or Firefox) while on WiFi. If you only have a phone, open a free browser editor such as CodePen instead.
 2. Create a folder called \`projects\`, and inside it a folder called \`hello\`.
 3. In \`hello\`, create a file called \`index.html\` containing one line: \`<h1>Hello from Tamale</h1>\` (use your own town).
 4. Open the file in your browser.
@@ -66,7 +66,7 @@ That routine, more than any expensive tool, is what gets people job ready. Set y
             prompt: "What are browser developer tools used for, according to the lesson?",
             options: ["Inspecting pages and finding bugs", "Paying for hosting", "Writing emails", "Installing a code editor"],
             answer_index: 0,
-            explanation: "Chrome and Firefox include developer tools for inspecting pages and finding bugs.",
+            explanation: "Modern browsers such as Chrome and Firefox include developer tools for inspecting pages and finding bugs.",
           },
           {
             prompt: "Which two topics sit inside this Start here section?",
@@ -489,7 +489,7 @@ Avoid fixed pixel widths for big containers. Let flexbox and grid do the work.`,
           },
           {
             prompt: "Which flexbox property sets the space between items?",
-            options: ["border", "font-size", "alt", "gap"],
+            options: ["border", "padding", "flex-wrap", "gap"],
             answer_index: 3,
             explanation: "The gap property controls spacing between flex or grid items.",
           },
@@ -498,7 +498,7 @@ Avoid fixed pixel widths for big containers. Let flexbox and grid do the work.`,
       },
     },
     "mobile-first-design": {
-      explanation_md: `Many people in Ghana browse the web mostly on Android phones, often on small screens and mobile data. Responsive design appears in junior frontend adverts and in skills frameworks, and for SydCrest learners it is the default way to work, not an extra.
+      explanation_md: `Assume your users are on Android phones, often with small screens and mobile data. Responsive design appears in junior frontend adverts and in skills frameworks, and for SydCrest learners it is the default way to work, not an extra.
 
 ## What mobile first means
 
@@ -527,7 +527,7 @@ Always include it.
 ## Phone friendly details
 
 * **Readable text.** Use a base font size of at least 16 pixels and good line spacing.
-* **Tap targets.** Buttons and links need enough size and space to tap with a thumb. WCAG asks for at least 24 by 24 CSS pixels, and many teams aim for around 44.
+* **Tap targets.** Buttons and links need enough size and space to tap with a thumb. WCAG 2.2 asks for at least 24 by 24 CSS pixels in most cases, and its stricter level asks for 44 by 44.
 * **Flexible images.** Add \`img { max-width: 100%; height: auto; }\` so pictures never overflow.
 * **Relative units.** Prefer \`rem\`, \`%\` and \`fr\` over fixed pixel widths for containers.
 * **Sunlight and glare.** Strong contrast between text and background helps people reading outdoors at a market.
@@ -772,6 +772,7 @@ itemsSold = itemsSold + 1;
 ## Conditions
 
 \`\`\`js
+let message;
 if (stock === 0) {
   message = "Sold out";
 } else if (stock < 5) {
@@ -853,8 +854,8 @@ Solve small problems daily and explain each solution out loud. Free sites such a
           },
           {
             prompt: "What does `totalCost(15, 3)` return if the function multiplies price by quantity?",
-            options: ["18", "153", "5", "45"],
-            answer_index: 3,
+            options: ["5", "18", "45", "153"],
+            answer_index: 2,
             explanation: "15 multiplied by 3 is 45.",
           },
           {
@@ -1214,8 +1215,8 @@ Test with a keyboard and a screen reader regularly. It quickly becomes second na
           },
           {
             prompt: "What minimum contrast ratio does WCAG ask for normal text?",
-            options: ["1.5 to 1", "2 to 1", "10 to 1", "4.5 to 1"],
-            answer_index: 3,
+            options: ["1.5 to 1", "2 to 1", "4.5 to 1", "10 to 1"],
+            answer_index: 2,
             explanation: "Normal text needs at least 4.5 to 1 contrast.",
           },
           {
@@ -1266,7 +1267,7 @@ Images are usually the heaviest part of a page.
 \`\`\`
 
 * **Resize** images to the size they are shown. A phone does not need a photo several thousand pixels wide.
-* **Compress** and use modern formats such as WebP or AVIF. Free tools like Squoosh do this in the browser.
+* **Compress** and use modern formats such as WebP or AVIF. Free browser tools such as Squoosh can do this.
 * **\`srcset\` and \`sizes\`** let the phone choose a smaller file.
 * **\`loading="lazy"\`** delays images below the screen until they are needed.
 * **\`width\` and \`height\`** reserve space so the page does not jump as images load.
@@ -1297,7 +1298,7 @@ Make "how much data does this cost my user?" a question you ask about every feat
 
 1. Pick a project with images.
 2. Run Lighthouse in Chrome DevTools in mobile mode. Save a screenshot of the score and the total page weight from the Network tab.
-3. Resize and compress every image (Squoosh at squoosh.app works in the browser). Convert to WebP.
+3. Resize and compress every image (a free browser tool such as Squoosh works without installing anything). Convert to WebP.
 4. Add \`width\`, \`height\` and \`loading="lazy"\` to images below the first screen.
 5. Add \`defer\` to scripts and remove anything you do not use.
 6. Run Lighthouse again and check the page with a slow network preset.
@@ -1383,7 +1384,7 @@ Some adverts mention AI coding tools. They can suggest causes, but they are ofte
 
 ## A worked example
 
-Mariama's order total shows "NaN". She logs the cart and sees prices stored as text such as "15", not numbers. She converts with \`Number(price)\` and the total is correct. Five minutes, because she followed the method.`,
+Mariama's order total shows "NaN". She logs the cart and sees prices stored as text such as "GH₵ 15", not numbers. She strips the symbol, converts with \`Number()\`, and the total is correct. Five minutes, because she followed the method.`,
       practice_task_md: `**Goal:** practise the debugging method on real bugs.
 
 1. Take one of your JavaScript projects and deliberately add three bugs: a misspelled variable, a CSS rule overridden by another, and a fetch to a wrong address.
@@ -1442,7 +1443,7 @@ Start with unit tests. They are the quickest to write and run.
 
 ## A first unit test
 
-Vitest is a free test runner that works with modern JavaScript projects. Suppose you have:
+Free test runners such as Vitest work with modern JavaScript projects. Suppose you have:
 
 \`\`\`js
 // cart.js
@@ -1567,7 +1568,7 @@ Frameworks add JavaScript that every visitor downloads and runs. On a low cost A
 ## Tooling you will meet
 
 * **npm**, the package manager that installs libraries.
-* **Vite**, a fast tool for starting and building projects, for example \`npm create vite@latest\`.
+* **Build tools** such as Vite, for starting and building projects, for example \`npm create vite@latest\`.
 * **CSS options** such as Tailwind or a component library, which several adverts mention.
 
 You do not need to master all of them. Learn enough to start a project, install a package and build for production.
@@ -1577,7 +1578,7 @@ You do not need to master all of them. Learn enough to start a project, install 
 Abdul-Rahman rebuilds his market price list in React. His filter, list and save buttons become three components. The search text lives in state, and the list re renders automatically as he types. The code is shorter and easier to extend, and he can now explain in an interview exactly what React changed compared with his plain JavaScript version.`,
       practice_task_md: `**Goal:** start your first framework project and compare it with plain JavaScript.
 
-1. On a laptop with WiFi, run \`npm create vite@latest\`, choose React, then \`npm install\` and \`npm run dev\`. No laptop? Use a free React template on StackBlitz in the browser.
+1. On a laptop with WiFi, run \`npm create vite@latest\`, choose React, then \`npm install\` and \`npm run dev\`. No laptop? Use a free React template in a browser editor such as StackBlitz.
 2. Open the page and find the starter component.
 3. Change the heading to your project name and save. Watch the page update.
 4. Write a short note comparing this with your plain JavaScript projects: what seems easier, what seems harder.
@@ -1646,6 +1647,8 @@ A component should not change its own props. They flow down from parent to child
 State is data a component remembers between renders, such as text typed in a search box. Use the \`useState\` hook:
 
 \`\`\`jsx
+import { useState } from "react";
+
 function Counter() {
   const [count, setCount] = useState(0);
   return (
@@ -1687,7 +1690,7 @@ Hawa builds a menu app for a chop bar in Tamale. A \`Menu\` component holds the 
 Each library you add increases what phones download. Reach for plain React first, and add packages only when they clearly save effort.`,
       practice_task_md: `**Goal:** a small React app using props, state and lists.
 
-1. In your Vite React project (or a StackBlitz React template), create a \`Menu\` component with an array of at least six dishes, each with \`id\`, \`name\` and \`price\`.
+1. In your Vite React project (or a React template in a browser editor such as StackBlitz), create a \`Menu\` component with an array of at least six dishes, each with \`id\`, \`name\` and \`price\`.
 2. Create a \`DishCard\` component that receives a dish through props and shows its name and price in cedis.
 3. Render the list with \`map\` and a proper \`key\`.
 4. Add a search input whose value lives in \`useState\`, and show only matching dishes.
@@ -1738,16 +1741,16 @@ Each library you add increases what phones download. Reach for plain React first
 In plain JavaScript, this bug only shows up when someone uses the page:
 
 \`\`\`js
-total("15", 2); // "1515" instead of 30
+addFee("15", 5); // "155" instead of 20
 \`\`\`
 
 In TypeScript, you say what the function expects:
 
 \`\`\`ts
-function total(price: number, qty: number): number {
-  return price * qty;
+function addFee(price: number, fee: number): number {
+  return price + fee;
 }
-total("15", 2); // error before you even run it
+addFee("15", 5); // error before you even run it
 \`\`\`
 
 Your editor underlines the mistake immediately. On a team, that saves hours.
@@ -1812,12 +1815,12 @@ TypeScript files end in \`.ts\` or \`.tsx\`. Vite and Next.js projects can be cr
 
 ## A worked example
 
-Issahaku converts his menu app to TypeScript. He defines a \`Dish\` type and types his component props. Straight away the editor shows two places where he passed a price as text. He fixes them, and a bug that would have shown "GH₵ 1515" on a customer's phone never happens.
+Issahaku converts his menu app to TypeScript. He defines a \`Dish\` type and types his component props. Straight away the editor shows two places where he passed a price as text. He fixes them, and a bug that would have shown "GH₵ 155" instead of "GH₵ 20" on a customer's phone never happens.
 
 Start by typing function inputs, props and API data. That covers most of the benefit.`,
       practice_task_md: `**Goal:** convert a small project to TypeScript.
 
-1. Create a new Vite project choosing React with TypeScript, or a TypeScript template on StackBlitz.
+1. Create a new Vite project choosing React with TypeScript, or a TypeScript template in a browser editor such as StackBlitz.
 2. Define a \`Dish\` type with \`id\`, \`name\`, \`price\` and an optional \`photo\`.
 3. Define a union type \`OrderStatus\` with at least three states.
 4. Rebuild your menu components with typed props.
@@ -1868,8 +1871,8 @@ Start by typing function inputs, props and API data. That covers most of the ben
 
 Plain React runs in the browser. The phone downloads JavaScript, runs it, and only then shows the page. Next.js can do much of that work on the server, so the phone receives ready HTML.
 
-* **Routing from folders.** In the \`app\` folder, each folder becomes a page address. \`app/menu/page.tsx\` becomes \`/menu\`.
-* **Server components.** By default, components run on the server. Their code is not sent to the phone, only the result.
+* **Routing from folders.** In the \`app\` folder, each folder is part of an address, and a \`page.tsx\` file inside makes it a page. \`app/menu/page.tsx\` becomes \`/menu\`.
+* **Server components.** By default, pages and layouts run on the server. Their code is not sent to the phone, only the result.
 * **Client components.** Components that need state or event handlers start with the line \`"use client"\`.
 * **Built in tools** for images, fonts and links that help performance.
 
@@ -1930,7 +1933,7 @@ Amina rebuilds a church events site in Next.js. The events list is a server comp
         questions: [
           {
             prompt: "How does Next.js create page addresses in the `app` folder?",
-            options: ["From a config file listing every URL", "From the page title", "Routes must be added in CSS", "Each folder becomes a route, for example app/menu/page.tsx becomes /menu"],
+            options: ["From a config file listing every URL", "From the page title", "Routes must be added in CSS", "Folders form the route, and a page file makes it a page, for example app/menu/page.tsx becomes /menu"],
             answer_index: 3,
             explanation: "Next.js uses folder based routing.",
           },
@@ -1961,7 +1964,7 @@ Amina rebuilds a church events site in Next.js. The events list is a server comp
 
 ## Reading a Figma file
 
-Figma is a free design tool that runs in the browser. When a designer shares a file with you, you can usually inspect it even on a free account:
+Figma, a common example of a design tool, runs in the browser and has a free plan. When a designer shares a file with you, you can usually inspect it even on a free account:
 
 * Select any element to see its size, spacing, colours and font.
 * Look for the **spacing** between elements, not just their sizes.
@@ -2127,7 +2130,7 @@ Fuseini's aunt sells shea butter in Tamale and takes orders over WhatsApp. He bu
       },
     },
     "payment-flows": {
-      explanation_md: `Fintech is a big part of Ghana's tech scene, and several adverts we studied came from payments companies. Mobile money checkout is a flow where clear design really matters: people are nervous about their money, networks are unreliable, and confusion leads to lost sales or double payments.
+      explanation_md: `Several adverts we studied came from payments companies. Mobile money checkout is a flow where clear design really matters: people are nervous about their money, networks are unreliable, and confusion leads to lost sales or double payments.
 
 ## How a mobile money payment usually works
 
@@ -2135,7 +2138,7 @@ Details vary by provider, but the common flow is:
 
 1. The customer chooses mobile money and enters their number and network (for example MTN MoMo, Telecel Cash or AT Money).
 2. Your app asks your **server** to start the payment. The server talks to the payment provider using secret keys. Never put those keys in frontend code.
-3. The provider sends an approval prompt to the customer's phone. The customer enters their PIN **on their phone's prompt**, not in your app.
+3. The provider sends an approval prompt to the customer's phone. Some providers send a one time code first, or ask the customer to approve from their mobile money menu. The customer enters their PIN **on their own phone**, not in your app.
 4. The payment is **pending** until the customer approves or the request times out.
 5. The provider tells your server the result, and your app shows success or failure.
 
@@ -2220,8 +2223,6 @@ A progressive web app is a website that can:
 * Be **installed** to the home screen, opening like an app without an app store.
 * **Work offline or on poor connections**, by saving important files on the phone.
 * Load faster on repeat visits, because files come from the phone instead of the network.
-
-Installing from the browser also saves storage compared with many native apps, which matters on phones with little space.
 
 ## The two pieces
 
