@@ -3,13 +3,14 @@
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { siteOrigin } from "@/lib/site-url";
-import { parseSignIn, parseSignUp, type FieldErrors } from "@/lib/validation";
+import { parseAgeAndConsent, parseSignIn, parseSignUp, type FieldErrors } from "@/lib/validation";
+import { UNDER_AGE_MESSAGE } from "@/lib/legal";
 
 export type AuthState = {
-  errors?: FieldErrors<"full_name" | "email" | "password">;
+  errors?: FieldErrors<"full_name" | "email" | "password" | "date_of_birth" | "terms">;
   message?: string;
   sentTo?: string;
-  values?: { full_name?: string; email?: string };
+  values?: { full_name?: string; email?: string; date_of_birth?: string };
 };
 
 export async function signIn(_prev: AuthState, form: FormData): Promise<AuthState> {
@@ -30,7 +31,7 @@ export async function signIn(_prev: AuthState, form: FormData): Promise<AuthStat
 
 export async function signUp(_prev: AuthState, form: FormData): Promise<AuthState> {
   const { data, errors } = parseSignUp(form);
-  const values = { full_name: data.fullName, email: data.email };
+  const values = { full_name: data.fullName, email: data.email, date_of_birth: data.dateOfBirth };
   if (Object.keys(errors).length) return { errors, values };
 
   const supabase = await createClient();
@@ -38,8 +39,14 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
     email: data.email,
     password: data.password,
     options: {
-      // Same key Google uses, so the profile trigger reads one field for both.
-      data: { full_name: data.fullName },
+      // full_name: same key Google uses, so the profile trigger reads one field for both.
+      // date_of_birth and terms_version move to the consents table in Wave 2.
+      data: {
+        full_name: data.fullName,
+        date_of_birth: data.dateOfBirth,
+        terms_version: data.termsVersion,
+        terms_accepted_at: new Date().toISOString(),
+      },
       emailRedirectTo: `${await siteOrigin()}/auth/callback?next=/dashboard`,
     },
   });
@@ -57,6 +64,40 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
   // Email confirmation turned off: the user is signed in already.
   if (result.session) redirect("/dashboard");
   return { sentTo: data.email };
+}
+
+/**
+ * The /welcome step for people who signed up with Google, which shares no date
+ * of birth. Under 18s are signed out without saving anything.
+ */
+export async function completeWelcome(_prev: AuthState, form: FormData): Promise<AuthState> {
+  const supabase = await createClient();
+  const { data: auth } = await supabase.auth.getClaims();
+  if (!auth?.claims?.sub) redirect("/login");
+
+  const { data, errors } = parseAgeAndConsent(form);
+  if (errors.date_of_birth === UNDER_AGE_MESSAGE) {
+    await supabase.auth.signOut();
+    redirect("/login?error=age");
+  }
+  if (Object.keys(errors).length) return { errors, values: { date_of_birth: data.dateOfBirth } };
+
+  const { error } = await supabase.auth.updateUser({
+    data: {
+      date_of_birth: data.dateOfBirth,
+      terms_version: data.termsVersion,
+      terms_accepted_at: new Date().toISOString(),
+    },
+  });
+  if (error) {
+    console.error("completeWelcome failed", { code: error.code, status: error.status, message: error.message });
+    return { message: "We couldn't save that. Try again.", values: { date_of_birth: data.dateOfBirth } };
+  }
+  // updateUser keeps the old access token, whose claims still lack the new
+  // metadata. Refresh so the proxy and getClaims see it, or /dashboard
+  // would bounce straight back here.
+  await supabase.auth.refreshSession();
+  redirect("/dashboard");
 }
 
 export async function signInWithGoogle() {

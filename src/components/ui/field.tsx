@@ -86,3 +86,36 @@ export function SelectField({
     </FieldShell>
   );
 }
+
+/**
+ * A checkbox with its label beside it. The label wraps the box so the whole
+ * row is a 44px target; children may include links (they still open on tap).
+ */
+export function CheckboxField({
+  id,
+  children,
+  error,
+  ...props
+}: { id: string; children: ReactNode; error?: string } & Omit<ComponentProps<"input">, "type">) {
+  return (
+    <div className="flex flex-col gap-1.5">
+      <label htmlFor={id} className="flex min-h-11 items-start gap-3 py-1 text-sm text-content">
+        <input
+          id={id}
+          name={id}
+          type="checkbox"
+          aria-invalid={error ? true : undefined}
+          aria-describedby={error ? `${id}-error` : undefined}
+          className="mt-0.5 size-5 shrink-0 accent-blue-600"
+          {...props}
+        />
+        <span>{children}</span>
+      </label>
+      {error && (
+        <p id={`${id}-error`} className="text-sm text-danger-fg">
+          {error}
+        </p>
+      )}
+    </div>
+  );
+}

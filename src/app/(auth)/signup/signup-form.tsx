@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { TextField } from "@/components/ui/field";
 import { Alert } from "@/components/ui/alert";
 import { MIN_PASSWORD } from "@/lib/validation";
+import { AgeConsentFields } from "../age-consent-fields";
 
 export function SignupForm() {
   const [state, action, pending] = useActionState<AuthState, FormData>(signUp, {});
@@ -49,6 +50,7 @@ export function SignupForm() {
         minLength={MIN_PASSWORD}
         required
       />
+      <AgeConsentFields defaultDateOfBirth={state.values?.date_of_birth} errors={state.errors} />
       <Button type="submit" disabled={pending} className="w-full">
         {pending ? "Creating your account…" : "Create account"}
       </Button>

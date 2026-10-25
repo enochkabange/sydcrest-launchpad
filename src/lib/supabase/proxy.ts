@@ -1,13 +1,21 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import { hasAgeAndConsent } from "@/lib/legal";
 
 /**
  * Refreshes the Supabase session on every request so Server Components always
  * see a valid token. This is the only place auth cookies get rewritten.
  * The signed-out redirect below is only an early exit so the app shell never
  * flashes for visitors; pages still authorize through lib/auth.ts.
+ * Signed in users without a date of birth and terms consent in their metadata
+ * (Google sign ups, first visit) are sent to /welcome the same way.
  */
 const PROTECTED = ["/dashboard", "/profile"];
+const SIGNED_IN_ONLY = [...PROTECTED, "/welcome"];
+
+function matches(path: string, prefixes: string[]) {
+  return prefixes.some((p) => path === p || path.startsWith(`${p}/`));
+}
 
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });
@@ -37,14 +45,20 @@ export async function updateSession(request: NextRequest) {
   const { data } = await supabase.auth.getClaims();
 
   const path = request.nextUrl.pathname;
-  if (!data?.claims && PROTECTED.some((p) => path === p || path.startsWith(`${p}/`))) {
+  const redirectTo = (pathname: string) => {
     const url = request.nextUrl.clone();
-    url.pathname = "/login";
+    url.pathname = pathname;
     url.search = "";
     const redirect = NextResponse.redirect(url);
-    // Carry over any cookies getClaims just cleared, or the stale session sticks.
+    // Carry over any cookies getClaims just set or cleared, or the stale session sticks.
     response.cookies.getAll().forEach((cookie) => redirect.cookies.set(cookie));
     return redirect;
+  };
+
+  const claims = data?.claims;
+  if (!claims && matches(path, SIGNED_IN_ONLY)) return redirectTo("/login");
+  if (claims && matches(path, PROTECTED) && !hasAgeAndConsent(claims.user_metadata)) {
+    return redirectTo("/welcome");
   }
 
   return response;
