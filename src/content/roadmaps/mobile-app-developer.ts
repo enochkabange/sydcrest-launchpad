@@ -53,6 +53,9 @@ const M = {
   compose: r("Jetpack Compose", "https://developer.android.com/jetpack/compose"),
   kotlinStart: r("Kotlin: Get started", "https://kotlinlang.org/docs/getting-started.html"),
   rnDocs: r("React Native: Get started", "https://reactnative.dev/docs/getting-started"),
+  owaspMobile: r("OWASP Mobile Top 10", "https://owasp.org/www-project-mobile-top-10/"),
+  androidSecurity: r("Android: Security tips", "https://developer.android.com/privacy-and-security/security-tips"),
+  firebaseRules: r("Firebase Security Rules", "https://firebase.google.com/docs/rules"),
 };
 
 export const mobileAppDeveloper: RoadmapDraft = {
@@ -141,7 +144,7 @@ export const mobileAppDeveloper: RoadmapDraft = {
       slug: "git-and-github",
       title: "Git and GitHub",
       summary:
-        "Track every change to your code with Git and share it on GitHub. Almost every mobile advert we read asked for Git, and your GitHub is where employers will look first.",
+        "Track every change to your code with Git and share it on GitHub. Many mobile adverts we read named Git, and your GitHub is where employers will look first.",
       parent: "programming-fundamentals",
       optional: false,
       resources: [RES.githubDocs, RES.gitBook],
@@ -243,7 +246,7 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Use a hosted backend such as Firebase to add sign in and cloud data without running your own server. Learn which secrets must never live inside an app.",
       parent: "services-and-integrations",
       optional: false,
-      resources: [M.firebaseSetup, M.firebaseAuth],
+      resources: [M.firebaseSetup, M.firebaseAuth, M.firebaseRules],
     },
     {
       slug: "mobile-money-payments",
@@ -252,7 +255,7 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Understand how a mobile money payment flows between your app, your server, a payment provider and the customer's phone. Learn why the server, not the app, must confirm every payment.",
       parent: "services-and-integrations",
       optional: false,
-      resources: [RES.hubtelDocs],
+      resources: [M.owaspMobile, M.androidSecurity],
     },
     {
       slug: "push-notifications-and-sms",
@@ -261,7 +264,7 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Reach users with push notifications when they have data and with SMS when they do not. Learn the permissions, costs and good manners of each channel.",
       parent: "services-and-integrations",
       optional: false,
-      resources: [M.fcm, M.notifPermission, RES.twilioSms],
+      resources: [M.fcm, M.notifPermission],
     },
     {
       slug: "quality-and-release",
