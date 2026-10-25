@@ -2661,7 +2661,7 @@ Across the adverts, the same skills kept appearing: gathering requirements, writ
 
 ## A route in practice
 
-Mohammed finished secondary school in Tamale and completed this roadmap while working in his uncle's phone shop. He could not find a product manager job. Instead he applied for a customer support role at a fintech, using his portfolio: a manual MVP for gas refills, a user story set and a feedback analysis of a local app.
+Here is how a route can look. Imagine Mohammed, who finished secondary school in Tamale and completed this roadmap while working in his uncle's phone shop. He could not find a product manager job. Instead he applied for a customer support role at a fintech, using his portfolio: a manual MVP for gas refills, a user story set and a feedback analysis of a local app.
 
 In support, he logged complaints carefully and sent the product team a weekly summary. After some months, the product manager asked him to help write acceptance criteria and test releases. Later, an internal business analyst opening came up, and he was the obvious choice because the team already knew his work.
 
@@ -2761,7 +2761,7 @@ Once you are in, ask to help with product shaped tasks: writing acceptance crite
 
 ## Worked example
 
-Hawa studied agriculture in Tamale. She completed this roadmap and volunteered with an NGO to improve its farmer registration form. She mapped the process, wrote user stories and tested the new form with field officers. She then applied for an M&E assistant role with that evidence. In the role, she became the person who managed the data tool, gathered officers' feedback and worked with the software vendor. Her next application, for a business analyst role at an agritech company, included three real examples from that work.`,
+Here is an illustration. Imagine Hawa, who studied agriculture in Tamale. She completed this roadmap and volunteered with an NGO to improve its farmer registration form. She mapped the process, wrote user stories and tested the new form with field officers. She then applied for an M&E assistant role with that evidence. In the role, she became the person who managed the data tool, gathered officers' feedback and worked with the software vendor. Her next application, for a business analyst role at an agritech company, included three real examples from that work.`,
       practice_task_md: `**Goal:** prepare a targeted application for one adjacent role.
 
 1. Choose one real advert for a business analyst, product support, product operations, product analyst or M&E role.
