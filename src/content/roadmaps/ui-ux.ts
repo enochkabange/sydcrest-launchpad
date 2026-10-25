@@ -48,28 +48,28 @@ export const uiUx: RoadmapDraft = {
       resources: [RES.govResearch],
     },
     {
-      slug: "user-interviews",
-      title: "Interviewing users",
+      slug: "field-research",
+      title: "Research in markets and communities",
       summary:
-        "Plan open questions, listen more than you talk and ask about real past behaviour rather than opinions. Practise with traders, students or drivers who would use the product.",
+        "Plan a small study, find the right people, ask for consent and watch how they really use their phones at the market, the shop or the clinic. Notice shared phones, small data bundles, noise and bright sun, because these shape every design.",
+      parent: "research",
+      optional: false,
+      resources: [RES.govResearch, RES.dpc],
+    },
+    {
+      slug: "user-interviews",
+      title: "Interviews and quick surveys",
+      summary:
+        "Ask open questions about real past behaviour, listen more than you talk and record notes carefully. Use a short survey only when you need to check how common something is.",
       parent: "research",
       optional: false,
       resources: [RES.govResearch, RES.nngArticles],
     },
     {
-      slug: "context-and-constraints",
-      title: "Understanding local context",
-      summary:
-        "Observe the conditions people use technology in, such as shared phones, small data bundles, bright sunlight and noisy markets. These constraints should shape your designs from the start.",
-      parent: "research",
-      optional: false,
-      resources: [RES.govResearch],
-    },
-    {
       slug: "synthesis",
-      title: "Making sense of research",
+      title: "Personas, journeys and problem statements",
       summary:
-        "Group your notes into patterns, pick the most important problems and write them as clear statements. This is what you share with the team before anyone designs screens.",
+        "Group your notes into patterns, then capture them as simple personas, journey maps and problem statements. This is what you share with the team before anyone designs screens.",
       parent: "research",
       optional: false,
       resources: [RES.nngArticles],
@@ -114,16 +114,16 @@ export const uiUx: RoadmapDraft = {
       slug: "interface-design",
       title: "Interface design",
       summary:
-        "This is where designs become polished, consistent screens. You will learn the main tool and the visual principles behind good interfaces.",
+        "This is where designs become polished, consistent screens. You will learn a design tool and the visual principles behind good interfaces.",
       parent: null,
       optional: false,
       resources: [],
     },
     {
-      slug: "figma",
-      title: "Figma basics",
+      slug: "design-tools",
+      title: "Design tool basics",
       summary:
-        "Learn frames, auto layout, components and prototyping in Figma, which has a free plan. It runs in the browser, so a modest laptop is enough.",
+        "Learn frames, auto layout, components and prototyping in a browser design tool with a free plan, such as Figma or Penpot. Almost every design advert asks for this, and a modest laptop is enough.",
       parent: "interface-design",
       optional: false,
       resources: [RES.figmaHelp, RES.figmaLibrary],
@@ -139,9 +139,9 @@ export const uiUx: RoadmapDraft = {
     },
     {
       slug: "mobile-patterns",
-      title: "Mobile interface patterns",
+      title: "Mobile and responsive layouts",
       summary:
-        "Learn platform conventions for navigation, buttons, forms and touch targets on Android and iOS. Design for one handed use on small screens, since many people hold their phone that way while busy.",
+        "Learn platform conventions for navigation, buttons, forms and touch targets, and how one layout adapts from a small phone to a laptop. Design for one handed use, since many people hold their phone that way while busy.",
       parent: "interface-design",
       optional: false,
       resources: [RES.material, RES.hig],
@@ -150,16 +150,16 @@ export const uiUx: RoadmapDraft = {
       slug: "design-systems",
       title: "Components and design systems",
       summary:
-        "Build reusable components and styles so a product looks and behaves consistently. Teams value designers who make developers' work easier.",
+        "Build reusable components and styles so a product looks and behaves consistently. Most junior adverts ask for this, because it makes developers' work easier.",
       parent: "interface-design",
-      optional: true,
+      optional: false,
       resources: [RES.material, RES.figmaHelp],
     },
     {
       slug: "inclusive-design",
-      title: "Inclusive design for Ghana",
+      title: "Designing for real conditions in Ghana",
       summary:
-        "A product that works for everyone reaches more customers. This section covers disability, literacy, language and connectivity.",
+        "A product that works for everyone reaches more customers. This section covers disability, literacy, language, basic phones and patchy connections.",
       parent: null,
       optional: false,
       resources: [],
@@ -171,7 +171,7 @@ export const uiUx: RoadmapDraft = {
         "Design for people with low vision, colour blindness, motor difficulties or screen readers. Follow the WCAG guidelines and test with real users where you can.",
       parent: "inclusive-design",
       optional: false,
-      resources: [RES.waiFundamentals, RES.wcagQuickref],
+      resources: [RES.waiFundamentals, RES.wcagQuickref, RES.waiEasyChecks],
     },
     {
       slug: "literacy-and-language",
@@ -183,19 +183,28 @@ export const uiUx: RoadmapDraft = {
       resources: [RES.govService],
     },
     {
-      slug: "low-bandwidth-design",
-      title: "Designing for slow and costly data",
+      slug: "low-end-phones",
+      title: "Low end phones, USSD and SMS",
       summary:
-        "Keep images light, show progress clearly and design useful offline and error states. Users who pay for every megabyte notice heavy designs quickly.",
+        "Design for small screens, little storage, older Android versions and phones without internet, where USSD menus and SMS do the work. Keep every step short, numbered and forgiving.",
       parent: "inclusive-design",
       optional: false,
-      resources: [RES.webdevPerf],
+      resources: [RES.material],
+    },
+    {
+      slug: "offline-and-slow-data",
+      title: "Offline moments and slow data",
+      summary:
+        "Keep screens light, show progress clearly and design for the moment the network drops halfway through a task. Users who pay for every megabyte notice heavy designs quickly.",
+      parent: "inclusive-design",
+      optional: false,
+      resources: [RES.webdevPerf, RES.webdevImages],
     },
     {
       slug: "testing",
-      title: "Prototyping and testing",
+      title: "Testing and shipping",
       summary:
-        "Testing shows whether a design actually works before it is built. A handful of short sessions can reveal the biggest problems.",
+        "Testing shows whether a design actually works before and after it is built. This section covers prototypes, usability tests, handoff and measuring results.",
       parent: null,
       optional: false,
       resources: [],
@@ -211,9 +220,9 @@ export const uiUx: RoadmapDraft = {
     },
     {
       slug: "usability-testing",
-      title: "Usability testing",
+      title: "Usability testing and expert review",
       summary:
-        "Give users a task, watch quietly and note where they hesitate or fail. Sessions in a market, school or office near you are as valid as formal lab tests.",
+        "Give users a task, watch quietly and note where they hesitate or fail, and review screens against common usability heuristics. Sessions in a market, school or office near you are as valid as formal lab tests.",
       parent: "testing",
       optional: false,
       resources: [RES.nngUsability, RES.nngHeuristics],
@@ -225,7 +234,16 @@ export const uiUx: RoadmapDraft = {
         "Share specs, states and assets clearly and stay involved while the product is built. Learn enough HTML and CSS to understand what is easy and what is costly to build.",
       parent: "testing",
       optional: false,
-      resources: [RES.webdevCss],
+      resources: [RES.webdevCss, RES.mdnHtml],
+    },
+    {
+      slug: "measuring-after-launch",
+      title: "Measuring what happens after launch",
+      summary:
+        "Use simple numbers such as completion and drop off, plus feedback from support and users, to see whether a design works in real life. Compare two versions carefully before deciding which one is better.",
+      parent: "testing",
+      optional: false,
+      resources: [RES.gaHelp],
     },
     {
       slug: "getting-hired",
@@ -240,7 +258,7 @@ export const uiUx: RoadmapDraft = {
       slug: "case-studies",
       title: "Case study portfolio",
       summary:
-        "Write two or three case studies that show the problem, your research, the options you tried, the final design and what changed. Redesigning a real local app or service, with real user feedback, makes a strong case study.",
+        "Write two or three case studies that show the problem, your research, the options you tried, the final design and why you chose it. Redesigning a real local app or service, with real user feedback, makes a strong case study.",
       parent: "getting-hired",
       optional: false,
       resources: [RES.nngArticles],
@@ -249,7 +267,7 @@ export const uiUx: RoadmapDraft = {
       slug: "freelancing",
       title: "Freelancing for local businesses",
       summary:
-        "Offer logo refreshes, menu boards, social graphics and simple app or website designs to nearby businesses. Agree what is included and how many revisions are allowed before you start.",
+        "Offer simple app, website and menu designs to nearby businesses and NGOs. Agree what is included and how many revisions are allowed before you start.",
       parent: "getting-hired",
       optional: true,
       resources: [RES.lfFreelancing, RES.lfCanva],
@@ -258,7 +276,7 @@ export const uiUx: RoadmapDraft = {
       slug: "job-search",
       title: "Job search and design interviews",
       summary:
-        "Apply to agencies, startups, banks and remote teams, and prepare to walk through a case study in fifteen minutes. Expect a design exercise, and practise explaining your decisions aloud.",
+        "Apply to agencies, fintechs, startups, NGOs and remote teams, and prepare to walk through a case study in fifteen minutes. Expect a design exercise, and practise explaining your decisions aloud.",
       parent: "getting-hired",
       optional: false,
       resources: [RES.lfJobsearch, RES.lfInterview, RES.lfLinkedin],
