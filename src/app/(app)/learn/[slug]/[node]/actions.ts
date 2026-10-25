@@ -3,6 +3,7 @@
 import { refresh } from "next/cache";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
+import { track } from "@/lib/analytics/track";
 import {
   parseAnswers,
   parseQuestions,
@@ -28,7 +29,11 @@ function friendly(code: string | undefined, fallback: string) {
 
 /** Reads back what the database minted, rather than assuming it worked. */
 async function readUnlocked(supabase: Awaited<ReturnType<typeof createClient>>, userId: string, nodeId: string) {
-  const { data: node } = await supabase.from("roadmap_nodes").select("roadmap_id").eq("id", nodeId).single();
+  const { data: node } = await supabase
+    .from("roadmap_nodes")
+    .select("roadmap_id, roadmaps(slug)")
+    .eq("id", nodeId)
+    .single();
   const refs = [nodeId, node?.roadmap_id].filter((r): r is string => !!r);
   const { data } = await supabase
     .from("achievements")
@@ -37,9 +42,22 @@ async function readUnlocked(supabase: Awaited<ReturnType<typeof createClient>>, 
     .in("type", ["roadmap_node_completed", "roadmap_completed"])
     .in("ref_id", refs);
   return {
-    node: !!data?.some((a) => a.type === "roadmap_node_completed" && a.ref_id === nodeId),
-    roadmap: !!data?.some((a) => a.type === "roadmap_completed" && a.ref_id === node?.roadmap_id),
+    unlocked: {
+      node: !!data?.some((a) => a.type === "roadmap_node_completed" && a.ref_id === nodeId),
+      roadmap: !!data?.some((a) => a.type === "roadmap_completed" && a.ref_id === node?.roadmap_id),
+    },
+    roadmapSlug: node?.roadmaps?.slug ?? "",
   };
+}
+
+async function wasDone(supabase: Awaited<ReturnType<typeof createClient>>, userId: string, nodeId: string) {
+  const { data } = await supabase
+    .from("roadmap_progress")
+    .select("status")
+    .eq("profile_id", userId)
+    .eq("node_id", nodeId)
+    .maybeSingle();
+  return data?.status === "done";
 }
 
 /** Marks a node in progress when the learner opens it, unless they already started or finished it. */
@@ -55,7 +73,10 @@ export async function startNode(nodeId: string): Promise<void> {
     .maybeSingle();
   // set_node_status overwrites the status, so calling it on a done node would undo the completion.
   if (existing && existing.status !== "not_started") return;
-  await supabase.rpc("set_node_status", { p_node_id: nodeId, p_status: "in_progress" });
+  const { error } = await supabase.rpc("set_node_status", { p_node_id: nodeId, p_status: "in_progress" });
+  if (error) return;
+  const { data: node } = await supabase.from("roadmap_nodes").select("roadmaps(slug)").eq("id", nodeId).single();
+  await track("node_started", { roadmap: node?.roadmaps?.slug ?? "", node_id: nodeId }, { profileId: user.id });
 }
 
 export async function submitQuiz(_prev: CompletionState, form: FormData): Promise<CompletionState> {
@@ -71,6 +92,7 @@ export async function submitQuiz(_prev: CompletionState, form: FormData): Promis
   const answers = parseAnswers(form, questions);
   if (!answers) return { message: "Choose an answer for every question, then check again." };
 
+  const doneBefore = await wasDone(supabase, user.id, nodeId);
   const { data, error } = await supabase
     .rpc("submit_node_quiz", { p_node_id: nodeId, p_answers: answers })
     .single();
@@ -79,7 +101,11 @@ export async function submitQuiz(_prev: CompletionState, form: FormData): Promis
   const outcome: QuizOutcome = { score: data.score, passed: data.passed, results: parseResults(data.results) };
   if (!outcome.passed) return { outcome, at: Date.now() };
 
-  const unlocked = await readUnlocked(supabase, user.id, nodeId);
+  const { unlocked, roadmapSlug } = await readUnlocked(supabase, user.id, nodeId);
+  // Count the first completion only; retaking a passed quiz is not a new one.
+  if (!doneBefore) {
+    await track("node_completed", { roadmap: roadmapSlug, node_id: nodeId, via: "quiz" }, { profileId: user.id });
+  }
   refresh();
   return { outcome, unlocked, at: Date.now() };
 }
@@ -91,6 +117,7 @@ export async function markComplete(_prev: CompletionState, form: FormData): Prom
   if (!UUID.test(nodeId)) return { message: "This topic is not available right now." };
 
   const supabase = await createClient();
+  const doneBefore = await wasDone(supabase, user.id, nodeId);
   const { error } = await supabase.rpc("set_node_status", { p_node_id: nodeId, p_status: "done" });
   if (error) {
     const message =
@@ -100,7 +127,10 @@ export async function markComplete(_prev: CompletionState, form: FormData): Prom
     return { message };
   }
 
-  const unlocked = await readUnlocked(supabase, user.id, nodeId);
+  const { unlocked, roadmapSlug } = await readUnlocked(supabase, user.id, nodeId);
+  if (!doneBefore) {
+    await track("node_completed", { roadmap: roadmapSlug, node_id: nodeId, via: "self" }, { profileId: user.id });
+  }
   refresh();
   return { unlocked, at: Date.now() };
 }

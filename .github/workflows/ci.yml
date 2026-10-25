@@ -86,13 +86,9 @@ jobs:
           key=$(jq -r .PUBLISHABLE_KEY <<<"$status")
           echo "NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321" >> "$GITHUB_ENV"
           echo "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=$key" >> "$GITHUB_ENV"
-          # Test seeding only (e2e/seed.ts). Not NEXT_PUBLIC_, so the build never inlines it.
-          secret=$(jq -r .SECRET_KEY <<<"$status")
-          echo "::add-mask::$secret"
-          echo "SUPABASE_SECRET_KEY=$secret" >> "$GITHUB_ENV"
           # For e2e specs only (creating and promoting test users). Not
           # NEXT_PUBLIC_, so the app bundle never sees it; local stack only.
-          service=$(jq -r .SERVICE_ROLE_KEY <<<"$status")
+          service=$(supabase status -o json | jq -r .SERVICE_ROLE_KEY)
           echo "::add-mask::$service"
           echo "SUPABASE_SERVICE_ROLE_KEY=$service" >> "$GITHUB_ENV"
       - run: pnpm build

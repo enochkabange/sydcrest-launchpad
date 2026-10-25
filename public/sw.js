@@ -22,14 +22,14 @@
  * every cache from older versions.
  */
 
-const VERSION = "v1";
+const VERSION = "v2";
 const STATIC_CACHE = `sydcrest-static-${VERSION}`;
 const PAGES_CACHE = `sydcrest-pages-${VERSION}`;
 const PRIVATE_CACHE = `sydcrest-private-${VERSION}`;
 const CURRENT = [STATIC_CACHE, PAGES_CACHE, PRIVATE_CACHE];
 
 const OFFLINE_URL = "/offline";
-const PRIVATE_PREFIXES = ["/dashboard", "/profile"];
+const PRIVATE_PREFIXES = ["/dashboard", "/profile", "/learn"];
 const NEVER_PREFIXES = ["/auth/", "/api/", "/sw.js"];
 const SIGNED_OUT_PAGES = ["/login", "/signup"];
 const PRECACHE = [OFFLINE_URL, "/manifest.webmanifest", "/icons/icon-192.png"];

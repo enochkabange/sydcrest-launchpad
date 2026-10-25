@@ -1,8 +1,8 @@
 import { expect, type Page, type TestInfo } from "@playwright/test";
 import { confirmationLink } from "./mailpit";
+import { PASSWORD } from "./learners";
 
-export const PASSWORD = "Tamale-2027-pilot";
-export const ADULT_DOB = "2000-03-14";
+const ADULT_DOB = "2000-03-14";
 
 /** Signs up a new adult learner, confirms the email and lands on the dashboard. Returns the email. */
 export async function signUpAndConfirm(page: Page, testInfo: TestInfo, name: string): Promise<string> {
