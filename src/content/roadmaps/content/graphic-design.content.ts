@@ -339,6 +339,445 @@ Nothing new was added; things were only rearranged. Yet customers can now find t
         pass_threshold: 75,
       },
     },
+    "visual-basics": {
+      explanation_md: `Read a few Ghanaian adverts for designers and the same words keep coming back: typography, colour, layout, images. These are the four building blocks of visual design. Every flyer, post, logo and report is made from them, and a weakness in any one of them shows immediately.
+
+## The four building blocks
+
+* **Typography** is how text looks: which fonts you choose, how big they are, and how much space sits between letters and lines. Most of what clients want to say is words, so typography often carries the whole design.
+* **Colour** sets the mood, ties a design to a brand and decides whether text is easy or hard to read. It also behaves differently on a phone screen and on paper, which matters when work goes to a printer.
+* **Layout** is where things sit on the page and how the eye moves from one item to the next. Good layout uses margins, columns and alignment so even a busy programme feels calm.
+* **Images** include photos, illustrations and icons. Designers crop, straighten and adjust photos, make sure they are sharp enough for the job and check that they are allowed to use them.
+
+## How they work together
+
+These building blocks are not separate tricks. A strong heading needs good typography, enough contrast in colour and the right place in the layout. A product photo only works if it is sharp, well cropped and given enough space. As you work through this section, keep applying the principles from the previous one: hierarchy, contrast, alignment, proximity, repetition and space.
+
+## Learn by copying layouts, not designs
+
+A good way to practise is to study a design you admire and ask why it works. What size is the heading compared with the body text? How many colours are there? Where are the margins? Then make your own design using those lessons with your own words and pictures. Studying a layout is learning. Taking someone's finished design and changing the name is copying, and clients and employers can tell.
+
+## A small example
+
+Issahaku designs a poster for a football gala in Nalerigu. He uses a bold sans serif font for the title and a plain font for details (typography). He chooses the two team colours plus white (colour). He places the title at the top, a large photo of a player in the middle and the date and venue together at the bottom, all aligned to the same left edge (layout). He crops the photo so the player fills the frame and checks it is sharp at poster size (images).
+
+None of these choices is advanced, but together they make the poster look professional. In the next four lessons you will learn each building block in more depth, with small tasks you can do on your phone.`,
+      practice_task_md: `**Goal:** Break a good design down into its four building blocks.
+
+**Steps:**
+1. Choose one design you think looks professional, such as a poster, a product label or a brand's social media post.
+2. Write four short notes: what fonts it uses and how many, what colours it uses, how the layout is arranged and how images are used.
+3. Sketch the layout on paper as boxes: one box for the heading, one for the image, one for the details.
+4. Use your sketch to make your own design on a different topic, such as a poster for a school event, with your own words and pictures.
+
+**Done looks like:** Four notes, a box sketch and a new design that uses the same structure without copying the original's content.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which four building blocks does this lesson describe?",
+            options: [
+              "Speed, price, deadlines and printing",
+              "Typography, colour, layout and images",
+              "Logos, banners, flyers and calendars",
+              "Phones, laptops, printers and scanners",
+            ],
+            answer_index: 1,
+            explanation: "The lesson names typography, colour, layout and images as the building blocks of visual design.",
+          },
+          {
+            prompt: "What does layout describe?",
+            options: [
+              "Where things sit on the page and how the eye moves between them",
+              "Which font family you choose",
+              "The colour of the paper",
+              "Whether you are allowed to use a photo",
+            ],
+            answer_index: 0,
+            explanation: "Layout is where things sit and how the eye moves, using margins, columns and alignment.",
+          },
+          {
+            prompt: "According to the lesson, what is the difference between learning from a design and copying it?",
+            options: [
+              "There is no difference",
+              "Learning means using the same words and photos",
+              "Copying is fine if you change the colours",
+              "Learning means studying why a layout works and making your own design; copying means changing the name on someone's finished design",
+            ],
+            answer_index: 3,
+            explanation: "Studying a layout and making your own work is learning; taking a finished design and changing the name is copying.",
+          },
+          {
+            prompt: "What did Issahaku check about the player photo for his gala poster?",
+            options: [
+              "That it was in black and white",
+              "That it used the smallest possible file size",
+              "That it was cropped well and sharp at poster size",
+              "That it came from a competitor's poster",
+            ],
+            answer_index: 2,
+            explanation: "He cropped the photo so the player filled the frame and checked it was sharp at poster size.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    typography: {
+      explanation_md: `Most designs are mostly words. A church programme, a price list, a funeral poster and a bank's social media post all depend on text being easy to read. That is why good typography is one of the clearest signs of a skilled designer, and poor typography is the first thing an experienced reviewer notices.
+
+## Kinds of font
+
+* **Serif** fonts have small strokes at the ends of letters. They can feel traditional and formal, and work well for longer printed text.
+* **Sans serif** fonts have no strokes at the ends. They feel clean and modern and are easy to read on phone screens.
+* **Display** fonts are decorative and bold, made for big headings only.
+* **Script** fonts look like handwriting. They suit a wedding name or a single word, but long text in script is very hard to read.
+
+## Simple rules that work
+
+* **Two fonts are usually enough.** One for headings and one for body text. A bold display or serif heading with a plain sans serif body is a safe pairing. You can also use one font family in different weights, such as bold and regular.
+* **Size creates hierarchy.** Make the heading clearly bigger than the details, often two or three times bigger, not just a little.
+* **Give lines room.** Line spacing that is slightly larger than the text size makes paragraphs easier to read.
+* **Avoid long text in capitals.** All capitals work for a short heading but slow people down in sentences.
+* **Check readability where it will be seen.** A WhatsApp flyer is seen on a small phone, so the smallest text must still be readable there. A banner is read from across the road, so text must be large and simple.
+* **Left align body text.** Centred text is fine for a short heading or an invitation, but long centred paragraphs are hard to follow.
+
+## Where to get fonts
+
+Use fonts that come with your design tool or free libraries such as Google Fonts, whose fonts are released under open licences that allow commercial use. Fonts from random download sites are often marked "personal use only", which means you should not use them for paying clients. You will learn more about licences later in this roadmap.
+
+## A small example
+
+Mariama designs a thanksgiving service flyer for a church in Tamale. Her first draft uses four fonts, including a curly script for the whole paragraph about the programme. Older members say they cannot read it.
+
+She changes to one strong serif for the heading "Annual Thanksgiving Service" and one simple sans serif for everything else. She makes the heading much larger, keeps the date and time bold and sets the rest in regular weight with comfortable line spacing. She saves the script font for just two words, "You are invited". Now the flyer looks elegant and every member can read it on their phone.`,
+      practice_task_md: `**Goal:** Practise choosing, pairing and sizing fonts.
+
+**Steps:**
+1. In a free design app, create a portrait poster for a made up event, such as a community clean up in Wa.
+2. Write a heading, a date and venue line, three lines of details and a contact line.
+3. Make three versions: one with a serif heading and sans serif body, one with a single font family in two weights, and one with a script heading.
+4. View each at actual size on your phone screen. Choose the most readable and write two sentences explaining why.
+
+**Done looks like:** Three versions of the same poster and a short note on which pairing reads best on a phone and why.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which kind of font does the lesson say is very hard to read in long text?",
+            options: ["Sans serif", "Serif", "Script", "A single font family in bold and regular"],
+            answer_index: 2,
+            explanation: "Script fonts look like handwriting and suit a word or name, but long text in script is very hard to read.",
+          },
+          {
+            prompt: "How many fonts does the lesson say are usually enough for one design?",
+            options: ["Two", "Five", "One for every line", "As many as the app offers"],
+            answer_index: 0,
+            explanation: "One font for headings and one for body text is usually enough.",
+          },
+          {
+            prompt: "Why should you check a WhatsApp flyer on a phone before sending it?",
+            options: [
+              "Phones change the fonts automatically",
+              "WhatsApp only accepts script fonts",
+              "To make the file size larger",
+              "Because it will be seen on a small screen, so the smallest text must still be readable there",
+            ],
+            answer_index: 3,
+            explanation: "A WhatsApp flyer is seen on a small phone, so its smallest text must be readable at that size.",
+          },
+          {
+            prompt: "What does \"personal use only\" on a downloaded font mean for a designer?",
+            options: [
+              "You may use it for any client",
+              "You should not use it for paying clients",
+              "It only works on phones",
+              "It can only be used in capitals",
+            ],
+            answer_index: 1,
+            explanation: "Personal use only fonts should not be used for paying clients' work.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    colour: {
+      explanation_md: `Colour is often the first thing a client talks about: "use our blue", "make it bright", "it should feel calm". Choosing colour well makes a design feel professional and on brand. Choosing badly makes text unreadable or makes a printed job look nothing like what the client approved on screen.
+
+## A few words to know
+
+* **Hue** is the colour itself: red, yellow, green.
+* **Value** is how light or dark it is.
+* **Saturation** is how strong or dull it is.
+
+Digital tools describe colours with codes. A hex code such as #1A7F3C names one exact green, so you can repeat it perfectly across every design for a brand.
+
+## Build a small palette
+
+Most good designs use a small palette:
+
+* **One main colour** that carries the brand or the mood.
+* **One accent colour** for buttons, prices or anything you want to stand out.
+* **Neutrals** such as white, black, cream or grey for backgrounds and body text.
+
+A common guide is to let the main or neutral colour cover most of the space, a second colour some of it and the accent only a little. A colour wheel tool helps you find colours that sit well together, either neighbours on the wheel for a calm feel or opposites for a strong contrast.
+
+## Colour carries meaning
+
+Colours suggest feelings, but meanings depend on culture and context. In many Ghanaian communities, red and black are worn for mourning, while white is linked with celebration and thanksgiving. A bright red flyer may feel exciting for a sale but wrong for a naming ceremony. Ask the client, and look at what similar events and businesses in the area use.
+
+## Contrast keeps text readable
+
+Light grey text on a white background, or red text on a green background, is hard to read, especially in bright sunlight on a cheap phone screen. Free contrast checkers compare two colours and tell you if text will be readable. Web accessibility guidelines suggest a contrast ratio of at least 4.5 to 1 for normal text. When in doubt, dark text on a light background is safest.
+
+## Screen colour and print colour
+
+Screens make colour by mixing red, green and blue light, called RGB. Printers make colour by mixing cyan, magenta, yellow and black ink, called CMYK. Some very bright screen colours, such as neon greens and electric blues, cannot be printed exactly and come out duller. That is why you should ask the printer for a printed proof before a large job.
+
+## A small example
+
+Fuseini designs a poster for a shea butter cooperative. He picks a warm brown from the shea nuts as the main colour, cream as the background and a deep green accent for the price and phone number. He checks the green on cream with a contrast checker, and asks the printer for one test print. The colours look natural, match the product and read clearly in the market.`,
+      practice_task_md: `**Goal:** Build and test a small colour palette for a real business.
+
+**Steps:**
+1. Choose a local business, such as a pharmacy, tailor or chop bar.
+2. Use a free colour wheel tool in your browser to build a palette of one main colour, one accent and two neutrals. Write down each hex code.
+3. Make a simple price list or poster for the business using only those four colours.
+4. Check your text and background pair in a free contrast checker. Fix any pair that fails.
+5. View the design outdoors on your phone to see how it looks in sunlight.
+
+**Done looks like:** A palette card with four hex codes, a design using only those colours and a note on what you changed after the contrast check.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a hex code such as #1A7F3C used for?",
+            options: [
+              "Naming one exact colour so it can be repeated perfectly",
+              "Measuring the size of a file",
+              "Choosing a font",
+              "Setting the bleed for a printer",
+            ],
+            answer_index: 0,
+            explanation: "A hex code names one exact colour so you can use it consistently across a brand.",
+          },
+          {
+            prompt: "Which palette structure does the lesson recommend for most designs?",
+            options: [
+              "As many bright colours as possible",
+              "Only black and white, always",
+              "One main colour, one accent colour and some neutrals",
+              "A different colour for every word",
+            ],
+            answer_index: 2,
+            explanation: "The lesson recommends one main colour, one accent and neutrals for backgrounds and body text.",
+          },
+          {
+            prompt: "Why might bright neon colours look duller when printed?",
+            options: [
+              "Printers only use black ink",
+              "Paper absorbs all colour",
+              "Phones hide colours when sending files",
+              "Screens mix light in RGB while printers mix ink in CMYK, which cannot match some bright colours",
+            ],
+            answer_index: 3,
+            explanation: "RGB screen colours such as neon greens cannot always be matched by CMYK ink.",
+          },
+          {
+            prompt: "What contrast ratio do web accessibility guidelines suggest at least for normal text?",
+            options: ["1 to 1", "4.5 to 1", "2 to 1", "100 to 1"],
+            answer_index: 1,
+            explanation: "The lesson says web accessibility guidelines suggest at least 4.5 to 1 for normal text.",
+          },
+          {
+            prompt: "According to the lesson, why should you ask a client about colour meaning?",
+            options: [
+              "Meanings depend on culture and context, for example colours linked with mourning or celebration",
+              "All colours mean the same thing everywhere",
+              "Clients always want red",
+              "Colour has no effect on how people feel",
+            ],
+            answer_index: 0,
+            explanation: "Colour meanings vary; in many Ghanaian communities red and black are linked with mourning and white with celebration.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "layout-and-grids": {
+      explanation_md: `Clients often hand you far too much information: a full programme, ten sponsors' logos, three phone numbers and a Bible verse, all for one A5 flyer. Layout is how you fit it in without chaos. Agencies and in house teams also design many items in a series, and a consistent layout is what makes them look like they belong together.
+
+## Margins first
+
+Start every design by setting margins: an empty border around the edge that nothing important crosses. Margins make a design feel calm, and for print they protect text from being cut off when the paper is trimmed. On a phone graphic, margins stop text from touching the edge of the screen.
+
+## Use a grid
+
+A grid is a set of invisible columns and rows that you line things up with. Most design apps can show guides or a grid. A simple flyer might use two columns: the photo in one, the text in the other. A brochure page might use three columns. You do not need to fill every column; the grid just gives you edges to align to.
+
+When text boxes, photos and logos all start and stop on the same lines, the design looks organised even if it holds a lot of information.
+
+## Guide the eye
+
+People scan designs in predictable ways. In English, eyes usually start top left and move across and down. Put the most important item where the eye lands first, often at the top or in a large focal image, then lead to details and finally to the call to action, such as a phone number or "Order on WhatsApp".
+
+## Group and space
+
+Decide which pieces of information belong together and make clear groups. Use equal space inside each group and more space between groups. Keep your spacing consistent: if the gap between two sections is a certain size, use the same gap between all sections.
+
+## When there is too much
+
+If it still feels crowded, ask the client what can move elsewhere. Sponsors' logos can go in one tidy strip at the bottom. Full details can go in a WhatsApp message under the flyer. A flyer's job is to make people interested, not to hold every fact.
+
+## A small example
+
+Amina is asked to design a flyer for a school's speech and prize giving day in Walewale. The headmaster sends a long list: programme, guest of honour, chairman, venue, time, dress code and five sponsors.
+
+Amina sets margins and a two column grid. She puts the event name and date large across the top, the guest of honour's photo in the left column and the key details in the right, all aligned to the grid. The five sponsors go in a neat row at the bottom, all the same height. The full programme goes in a separate image for the school's WhatsApp group. The headmaster is happy because nothing was lost, and parents can read the flyer at a glance.`,
+      practice_task_md: `**Goal:** Turn a crowded design into a calm, organised layout.
+
+**Steps:**
+1. Write out the content for a busy flyer: a church crusade or a school event with a title, date, time, venue, three speakers, a contact and three sponsor names.
+2. In a free design app, turn on guides or a grid. Set margins on all four sides.
+3. Choose a two column layout. Place the title across the top, then align every other item to your columns.
+4. Group related details and use bigger gaps between groups. Put sponsors in one strip at the bottom.
+5. Compare it with a version made without a grid.
+
+**Done looks like:** Two versions of the flyer, one with a grid and margins, and one sentence on the difference you notice.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why are margins important in a design for print?",
+            options: [
+              "They make the file smaller",
+              "They protect text from being cut off when the paper is trimmed",
+              "They change the colour mode",
+              "They make the paper thicker",
+            ],
+            answer_index: 1,
+            explanation: "Margins keep important content away from the edge, so it is not cut off during trimming.",
+          },
+          {
+            prompt: "What is a grid in layout design?",
+            options: [
+              "A background pattern of squares that must be printed",
+              "A list of fonts",
+              "A set of invisible columns and rows you line things up with",
+              "A type of photo filter",
+            ],
+            answer_index: 2,
+            explanation: "A grid gives you invisible columns and rows to align items to.",
+          },
+          {
+            prompt: "Where do readers of English usually start scanning a design?",
+            options: ["Bottom right", "In the exact centre always", "Bottom left", "Top left"],
+            answer_index: 3,
+            explanation: "Eyes usually start top left and move across and down.",
+          },
+          {
+            prompt: "What did Amina do with the full school programme that would not fit?",
+            options: [
+              "Put it in a separate image for the school's WhatsApp group",
+              "Printed it in tiny text across the flyer",
+              "Deleted it without telling anyone",
+              "Moved it into the margins",
+            ],
+            answer_index: 0,
+            explanation: "She kept the flyer clear and shared the full programme separately.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "images-and-photos": {
+      explanation_md: `Many design jobs depend on photos: a product for an online shop, a pastor for a crusade poster, a deceased elder for a funeral poster, a smiling student for a school advert. Adverts for designers in Ghana often ask for photo editing alongside layout, and print shops expect you to fix a client's phone photo so it prints well.
+
+## Basic edits
+
+Free editors such as Photopea in a browser, GIMP on a laptop and the editing tools inside design apps all offer the same basic edits.
+
+* **Crop** to remove distractions and focus on the subject.
+* **Straighten** so walls, tables and horizons are level.
+* **Brightness and contrast** to rescue dark or dull photos.
+* **White balance** to remove yellow or blue tints from indoor lighting.
+* **Remove background** to cut a person or product out so it can sit on a clean colour.
+
+Edit gently. Skin smoothed until it looks plastic, or colours pushed too far, makes work look cheap. The goal is a natural, clear photo.
+
+## Resolution: will it be sharp?
+
+A raster photo has a fixed number of pixels. That number decides how large it can be used before it looks blurry.
+
+* **For screens**, an image around 1080 pixels wide is enough for most social media posts.
+* **For print**, aim for about 300 pixels per inch at the printed size. An A5 flyer is about 5.8 by 8.3 inches, so a photo filling it should be roughly 1750 by 2480 pixels.
+
+Photos forwarded on WhatsApp are often compressed and lose detail. When a client sends a photo for print, ask them to send it as a document, or by email, so it keeps its original size.
+
+## Can you use this image?
+
+Finding a photo on the internet does not mean you may use it. Most images online are protected by copyright. Safer options are:
+
+* photos you take yourself;
+* photos the client owns and gives you;
+* images from free stock libraries that state their licence clearly;
+* images under Creative Commons licences, following their conditions, such as giving credit.
+
+Also ask permission before using a recognisable person's photo in an advert.
+
+## A small example
+
+Zuweira runs a small business selling shea soap in Tamale and sends Wumpini a dim photo taken at night for her flyer. Wumpini asks her to retake it near a window in daylight, on a plain cloth, and send it as a document. He crops it, straightens it, brightens it slightly and removes the background so the soap sits on a soft cream colour. The new photo is sharp at A5 size and looks like it belongs in a shop.`,
+      practice_task_md: `**Goal:** Edit a product photo so it is ready for a flyer.
+
+**Steps:**
+1. Take a photo of any product at home, such as a soap, a drink or a bag, near a window in daylight on a plain background.
+2. Open it in a free photo editor or your design app's editing tools.
+3. Crop, straighten and adjust brightness and contrast. Remove the background if your tool allows it.
+4. Check the photo's size in pixels. Note whether it is big enough for a social media post and for an A5 print.
+5. Place the edited photo in a simple design with the product name and a price.
+
+**Done looks like:** A before and after pair of the photo, its size in pixels with a note on where it can be used, and a simple product design.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which edit removes yellow or blue tints caused by indoor lighting?",
+            options: ["Crop", "Straighten", "White balance", "Remove background"],
+            answer_index: 2,
+            explanation: "White balance corrects colour tints from lighting.",
+          },
+          {
+            prompt: "What resolution should you aim for when a photo will be printed?",
+            options: [
+              "About 300 pixels per inch at the printed size",
+              "About 30 pixels per inch",
+              "Whatever WhatsApp sends",
+              "Resolution does not matter for print",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says to aim for about 300 pixels per inch at the printed size.",
+          },
+          {
+            prompt: "Why should a client send a photo for print as a document or by email instead of a normal WhatsApp image?",
+            options: [
+              "Documents are always in colour",
+              "WhatsApp images are always vector",
+              "Email makes photos brighter",
+              "Normal WhatsApp images are often compressed and lose detail",
+            ],
+            answer_index: 3,
+            explanation: "Compression reduces detail, so sending as a document or by email keeps the original size.",
+          },
+          {
+            prompt: "Which of these images is safe to use in a client's advert, according to the lesson?",
+            options: [
+              "Any photo that appears in a web search",
+              "A photo the client owns and gives you",
+              "A photo from another company's flyer",
+              "A screenshot of a celebrity's post",
+            ],
+            answer_index: 1,
+            explanation: "Photos the client owns, your own photos and clearly licensed images are safer options.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
