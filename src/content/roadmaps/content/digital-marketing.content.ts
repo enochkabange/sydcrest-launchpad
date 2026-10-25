@@ -1777,6 +1777,481 @@ Sumaila owns an event centre in Tamale. Amina builds a small search campaign wit
         pass_threshold: 75,
       },
     },
+    "budgets-in-cedis": {
+      explanation_md: `Money causes more fights between marketers and clients than anything else. Who paid the platform? Why did the card get charged more than expected? What did the money achieve? If you handle budgets clearly and keep good records, clients trust you with bigger campaigns. Senior adverts in Ghana list budget management as a core duty, and it starts with habits you can build now.
+
+## Two different costs
+
+Always separate:
+
+* **Ad spend.** The money paid to the platform, such as Meta or Google, to show ads.
+* **Your fee.** What the client pays you for planning, creating and managing the work.
+
+Write both down in your agreement. Clients should never be surprised by either.
+
+## Who pays the platform
+
+The safest arrangement is that the client adds their own payment method to their own ad account and gives you access to manage it. That way you never hold the client's money, every charge appears in their records, and if you stop working together they keep the account and its history. If you ever do pay on a client's behalf, get the money first, keep every receipt and agree it in writing.
+
+Platforms bill in different ways, and the accepted payment methods and currencies for Ghana change over time. Some charge a card in another currency, so the cost in cedis depends on the exchange rate and bank charges on the day. Check the platform's billing help and tell the client this in advance.
+
+## Controlling spend
+
+* **Daily or total budgets.** Set them for every campaign. Some platforms may spend a little more on some days and less on others while keeping to the overall budget, so read how each one works.
+* **Spending limits.** Many ad accounts let you set an overall limit as a safety net.
+* **Schedules.** Give campaigns an end date so nothing runs forever by accident.
+
+## Working out cost per result
+
+The key number is what each result cost: total spend divided by the number of results.
+
+If Hawa spends GHS 300 on a campaign and gets 30 WhatsApp messages, each message cost GHS 10. If six of those people bought, each sale cost GHS 50. If a gift pack gives her GHS 80 profit, the campaign made money. If it gives GHS 30 profit, it lost money even though the messages looked good.
+
+This is why you track results that connect to money, not only clicks.
+
+## Keep a simple record
+
+A Google Sheet with columns for date, campaign, platform, amount spent, results and notes is enough. Add screenshots of billing pages each month. When a client asks where the money went, you can show them in a minute.
+
+## A worked example
+
+Mariama's group agrees a monthly fee for Wumpini's work and a separate ad budget. The group adds its own card to its ad account and gives Wumpini access. She sets a monthly spending limit, ends each campaign on a fixed date and sends a short sheet every Friday with spend and messages so far. There are no surprises.`,
+      practice_task_md: `**Goal:** Build a budget tracker and practise cost per result calculations.
+
+**Steps:**
+1. Create a Google Sheet with columns: Date, Campaign, Platform, Spend (GHS), Results, Cost per result, Notes.
+2. Add a formula so Cost per result divides Spend by Results.
+3. Enter three made up campaigns for a local business, such as a church event, a MoMo promotion and a shea butter offer.
+4. Add a row for profit per sale and work out whether each campaign made or lost money.
+5. Write two sentences explaining to the owner which campaign you would keep running and why.
+
+**Done looks like:** A working sheet with formulas and a short recommendation note.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the difference between ad spend and your fee?",
+            options: [
+              "They are the same thing",
+              "Ad spend goes to the platform, your fee pays for your work",
+              "Ad spend is paid only after the campaign ends",
+              "Your fee is always paid by the platform",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to separate money for the platform from payment for your work.",
+          },
+          {
+            prompt: "What is the safest way for a client's ads to be paid for?",
+            options: [
+              "The client adds their own payment method to their own ad account and gives you access",
+              "The client sends you cash and you pay later",
+              "You use your own card and add a secret extra charge",
+              "You share one ad account for all your clients",
+            ],
+            answer_index: 0,
+            explanation: "This keeps the client in control and you never hold their money.",
+          },
+          {
+            prompt: "A campaign spends GHS 200 and gets 20 messages. What was the cost per message?",
+            options: ["GHS 20", "GHS 4", "GHS 200", "GHS 10"],
+            answer_index: 3,
+            explanation: "Total spend divided by results: 200 divided by 20 is 10.",
+          },
+          {
+            prompt: "Why might the cost of ads in cedis differ from what you expected?",
+            options: [
+              "Platforms change prices every hour",
+              "Cedis cannot be used online",
+              "Some platforms charge in another currency, so exchange rates and bank charges affect the cost",
+              "Ads are always cheaper on weekends",
+            ],
+            answer_index: 2,
+            explanation: "Billing in another currency means the cedi cost depends on the rate and charges.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    measurement: {
+      explanation_md: `Many small business owners in Ghana have paid someone for "social media" and never known whether it helped. That is why clients often stop paying marketers after a few months. If you can plan a campaign with a clear goal, track what happens and explain the results honestly, you become someone they keep. Adverts for junior and senior roles alike ask for campaign planning, performance monitoring and reporting.
+
+## The loop
+
+Good marketing runs in a loop:
+
+* **Plan.** Decide the goal, audience, message, channels, budget and the number you will watch.
+* **Do.** Create and publish the content or ads.
+* **Measure.** Collect the numbers and what customers say.
+* **Learn.** Decide what to keep, change or stop.
+* **Report.** Share it with the client or manager, then plan the next round.
+
+Each round should be a little better than the last because you learned something.
+
+## Numbers that matter
+
+Platforms show many numbers. Some feel good but say little about money. Others connect directly to the business goal.
+
+* **Attention numbers:** reach, views, likes, followers. Useful for awareness, but they do not pay bills on their own.
+* **Action numbers:** messages, calls, link clicks, sign ups, direction requests.
+* **Money numbers:** orders, sales, revenue, cost per sale.
+
+For most small businesses, action and money numbers matter most. A post with fewer likes that brings five orders is better than a viral post that brings none.
+
+## Tracking without a website
+
+Many SydCrest clients will not have a website, and that is fine. You can still track:
+
+* Platform insights from WhatsApp Business, Facebook, Instagram and TikTok.
+* A simple Google Sheet where the business records each order and asks "Where did you hear about us?"
+* Special codes or words in posts, such as "Mention TAMALE10 for the offer", so you know which post brought the sale.
+
+## What this section covers
+
+* **Planning a campaign:** turning a goal into a clear one page plan.
+* **Analytics basics:** reading platform insights and website analytics.
+* **Reporting to clients:** short, honest monthly reports.
+
+## A small example
+
+Fuseini runs posts for a Tamale tailor. Last month the page got many likes, but the tailor felt business was slow. Fuseini adds a column to the tailor's order book: "How did you find us?" After four weeks, he sees most new customers came from WhatsApp Status and from one video showing a finished kaba. He reports this honestly, suggests more Status updates and videos, and drops the posts that got likes but no customers.`,
+      practice_task_md: `**Goal:** Set up simple tracking for a business that has no website.
+
+**Steps:**
+1. Choose a business you know, such as a tailor, a chop bar or a phone accessories seller.
+2. In Google Sheets, create an order log with columns: Date, Customer first name, Item, Amount (GHS), How they found us.
+3. List the options for "How they found us", such as WhatsApp Status, Facebook, TikTok, friend, walked past.
+4. Write a short script the owner can use to ask customers this question politely.
+5. Ask the owner to try it for one week, or fill it in yourself from made up orders to practise.
+
+**Done looks like:** A shared order log sheet and a one line script for asking customers. Keep customer details minimal and private.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What are the five steps of the marketing loop in the lesson?",
+            options: [
+              "Post, like, share, comment, repeat",
+              "Plan, do, measure, learn, report",
+              "Design, print, deliver, invoice, rest",
+              "Buy, boost, wait, hope, quit",
+            ],
+            answer_index: 1,
+            explanation: "The loop is plan, do, measure, learn and report.",
+          },
+          {
+            prompt: "Which of these is a money number?",
+            options: ["Followers", "Reach", "Cost per sale", "Likes"],
+            answer_index: 2,
+            explanation: "Orders, sales, revenue and cost per sale connect directly to money.",
+          },
+          {
+            prompt: "How can a business without a website track where sales come from?",
+            options: [
+              "It cannot track anything without a website",
+              "By buying more followers",
+              "By counting likes only",
+              "By asking customers how they found the business and logging it in a sheet",
+            ],
+            answer_index: 3,
+            explanation: "A simple order log with a \"how did you find us\" column works without a website.",
+          },
+          {
+            prompt: "What did Fuseini learn from the tailor's order log?",
+            options: [
+              "Most new customers came from WhatsApp Status and one video",
+              "Likes were bringing most of the customers",
+              "Nobody used WhatsApp",
+              "The tailor needed paid search ads",
+            ],
+            answer_index: 0,
+            explanation: "The log showed WhatsApp Status and a kaba video brought new customers.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "campaign-plan": {
+      explanation_md: `A campaign is a focused push to achieve one goal in a set time, such as filling a church conference, selling Christmas gift packs or getting sign ups for an NGO training. Ghanaian adverts ask marketers to plan and run campaigns, and the DMP cohort's week 10 is built around a full campaign plan. Clients are far more willing to approve spending when they see a clear plan on one page.
+
+## Start with a clear goal
+
+Vague goals like "more awareness" are hard to judge. A better goal is specific, measurable and time bound. For example:
+
+* "Get 60 registrations for the youth conference by 15 December."
+* "Sell 40 shea butter gift packs in the two weeks before Christmas."
+* "Get 100 new sign ups to the NGO newsletter this quarter."
+
+These numbers are targets you agree with the client, not promises. Base them on what the business has achieved before, and be honest if you are unsure.
+
+## The one page plan
+
+A simple plan has these parts:
+
+* **Goal.** The specific result and date.
+* **Audience.** Who you are trying to reach, from your audience description.
+* **Message.** The one main thing you want them to know, and why they should act now.
+* **Offer.** If there is one: a discount, a free gift, early bird pricing.
+* **Channels.** Two or three channels, each with a clear job.
+* **Content.** The main pieces you will create: graphics, videos, captions, emails.
+* **Budget.** Ad spend and any production costs, in cedis.
+* **Timeline.** Key dates: launch, reminders, last day.
+* **Measurement.** The number you will watch and how you will collect it.
+* **Who does what.** You, the owner, and anyone else involved.
+
+## Think about the timeline
+
+Most campaigns have three phases. **Build up:** tell people something is coming. **Launch:** the main push with the offer or registration open. **Last call:** reminders as the deadline nears, which often bring a burst of action. Put these on your content calendar.
+
+## A worked example
+
+Sumaila runs a mobile money vendor shop and wants more customers in December. Abdul-Rahman writes a one page plan. Goal: 150 transactions in the shop in the first two weeks of December, compared with the usual number. Audience: traders and students around Aboabo market. Message: quick, safe service, open late. Offer: a loyalty card where five transactions earn a small airtime gift. Channels: WhatsApp Status, a printed flyer with a QR code, and a Facebook post for the local community group. Budget: printing costs and a small boost. Measurement: a tally in the shop's record book. Sumaila signs off on it in ten minutes because everything is clear.`,
+      practice_task_md: `**Goal:** Write a one page campaign plan for a real or realistic local goal.
+
+**Steps:**
+1. Choose a campaign, such as a church event, a MoMo promotion, a Bolgatanga basket sale or an NGO training.
+2. Write a specific, measurable, time bound goal.
+3. Fill in each part of the plan: audience, message, offer, channels, content, budget, timeline, measurement, who does what.
+4. Mark the build up, launch and last call dates.
+5. Share the plan with a mentor or the business owner and ask what is unclear.
+
+**Done looks like:** A one page plan in Google Docs or Slides that someone else could follow. This is a strong portfolio piece.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is the clearest campaign goal?",
+            options: [
+              "More awareness",
+              "Be popular online",
+              "Sell 40 gift packs in the two weeks before Christmas",
+              "Post every day",
+            ],
+            answer_index: 2,
+            explanation: "A good goal is specific, measurable and time bound.",
+          },
+          {
+            prompt: "How does the lesson describe the numbers in a campaign goal?",
+            options: [
+              "Targets agreed with the client, not promises",
+              "Guarantees the marketer must pay back if missed",
+              "Numbers copied from big companies",
+              "Something to keep secret from the client",
+            ],
+            answer_index: 0,
+            explanation: "Goals are agreed targets based on past results, not promises.",
+          },
+          {
+            prompt: "What are the three phases of a campaign timeline in the lesson?",
+            options: [
+              "Design, print, deliver",
+              "Morning, afternoon, evening",
+              "Plan, pay, pause",
+              "Build up, launch, last call",
+            ],
+            answer_index: 3,
+            explanation: "The lesson names build up, launch and last call.",
+          },
+          {
+            prompt: "Why did Sumaila approve Abdul-Rahman's plan quickly?",
+            options: [
+              "It promised to double his income",
+              "Everything was clear on one page",
+              "It had no budget at all",
+              "It used every social media platform",
+            ],
+            answer_index: 1,
+            explanation: "A clear one page plan makes it easy for a client to say yes.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    analytics: {
+      explanation_md: `Analytics means collecting and reading data about what people do, so you can make better decisions. Ghanaian adverts for digital marketers ask for Google Analytics and for monitoring campaign performance, and the DMP cohort spends a full week on it. You do not need to be good at maths. You need to know which numbers matter, where to find them and how to spot a pattern.
+
+## Platform insights
+
+Every major platform gives free insights for business accounts:
+
+* **WhatsApp Business** shows basic message statistics, such as messages sent and delivered.
+* **Facebook and Instagram** show reach, engagement, followers and actions such as messages and link clicks.
+* **TikTok** business accounts show views, watch time, followers and where viewers came from.
+* **Google Business Profile** shows how people found the profile and whether they called, asked for directions or visited the website.
+
+The names of these numbers change from time to time, so read each platform's own help pages for the current definitions.
+
+## Website analytics
+
+If a business has a website, Google Analytics is a free tool that records visits. The current version is called Google Analytics 4. Some words you will meet:
+
+* **Users.** People who visited.
+* **Sessions.** Visits; one user can have several.
+* **Events.** Things people do, such as viewing a page, clicking a button or sending a form.
+* **Key events.** Events you mark as important for the business, such as a completed enquiry form. Older guides call these conversions.
+* **Traffic sources.** Where visitors came from: search, social media, email or typing the address directly.
+
+## Tracking links
+
+When you share a website link in a post, email or ad, you can add small tags to the end of it, called UTM parameters, that tell Google Analytics where the visit came from. Google offers a free Campaign URL Builder to create them. Then you can see whether the Facebook post or the newsletter brought more visitors.
+
+## Reading the numbers well
+
+* **Compare like with like.** This month against last month, or one post type against another.
+* **Look for patterns, not one off spikes.**
+* **Connect numbers to the goal.** If the goal is orders, focus on messages and sales.
+* **Ask why.** If one video did well, what was different about it?
+
+## A worked example
+
+Mariama's basket group has a small website and a Facebook Page. Wumpini uses tagged links in their Facebook posts and their newsletter. After a month, Google Analytics shows that the newsletter brought fewer visitors than Facebook, but those visitors sent far more wholesale enquiry forms, which are marked as a key event. She recommends keeping both but putting more care into the newsletter, because it brings the buyers who matter most.`,
+      practice_task_md: `**Goal:** Read real insights and turn them into one clear recommendation.
+
+**Steps:**
+1. Open the insights of any business or practice account you manage, such as a Facebook Page, Instagram professional account or TikTok business account.
+2. Record the last ten posts in a Google Sheet with columns: Date, Format, Topic, Reach or Views, Engagement, Messages or Clicks.
+3. Sort by messages or clicks and look at the top three posts. What do they have in common?
+4. Use Google's free Campaign URL Builder to create one tagged link you could use in a future post.
+5. Write a two sentence recommendation based on what you found.
+
+**Done looks like:** A sheet of ten posts, one tagged link and a short, evidence based recommendation.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "In Google Analytics 4, what is a session?",
+            options: [
+              "A visit, and one user can have several",
+              "A paid advert",
+              "A follower on social media",
+              "A customer review",
+            ],
+            answer_index: 0,
+            explanation: "Sessions are visits; one user can make several.",
+          },
+          {
+            prompt: "What are key events in Google Analytics 4?",
+            options: [
+              "Holidays marked on the calendar",
+              "Every page view on the site",
+              "Errors on the website",
+              "Events you mark as important for the business, such as a completed form",
+            ],
+            answer_index: 3,
+            explanation: "Key events are the important actions; older guides call them conversions.",
+          },
+          {
+            prompt: "What are UTM parameters used for?",
+            options: [
+              "Making the website load faster",
+              "Telling Google Analytics where a visit came from",
+              "Hiding a link from customers",
+              "Paying for ads",
+            ],
+            answer_index: 1,
+            explanation: "Tags added to links show which post, email or ad brought the visit.",
+          },
+          {
+            prompt: "What did Wumpini recommend about the newsletter?",
+            options: [
+              "Stop sending it because it brought fewer visitors",
+              "Replace it with paid ads",
+              "Put more care into it because its visitors sent more wholesale enquiries",
+              "Send it every day",
+            ],
+            answer_index: 2,
+            explanation: "Fewer visitors but more valuable actions made the newsletter worth more care.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "client-reporting": {
+      explanation_md: `A short, honest report is often what makes a client renew. It shows that you are paying attention, that you understand their business and that their money is being used carefully. Adverts for marketing and communications roles in Ghana, from agencies to think tanks, ask for performance tracking and reporting. Managers inside a company want the same thing.
+
+## What goes in a monthly report
+
+Keep it to one or two pages, or a short set of slides. Cover:
+
+* **The goal.** Remind the client what you agreed to work toward.
+* **What we did.** Posts, videos, campaigns, emails, profile updates. Keep it brief.
+* **What happened.** The numbers that connect to the goal, compared with last month. Messages, orders, sign ups, calls, cost per result.
+* **What worked and what did not.** One or two examples of each, with a reason if you know it.
+* **What we will try next.** Specific actions for the coming month.
+* **Spend.** Ad spend and any other costs, matching the client's records.
+
+Add a few screenshots so the client can see the evidence for themselves.
+
+## Write for the owner, not for marketers
+
+Many owners are busy and not interested in jargon. Instead of "CTR improved", write "More people who saw the ad tapped it". Instead of a table of twenty numbers, pick the four that matter. Use the language the owner prefers, and offer to explain in person or on a call.
+
+## Be honest
+
+Sometimes a campaign does not work. Say so clearly, explain what you think went wrong, and say what you will change. Never inflate numbers, hide costs or claim credit for sales you did not cause. Owners usually find out, and trust is very hard to win back. An honest report about a weak month often builds more trust than a polished report about a good one.
+
+## Keep it light and easy to share
+
+Send the report as a small PDF or a Google Doc link that opens well on a phone, plus a short WhatsApp summary with the three main points. That way the owner can read it on a busy day.
+
+## A worked example
+
+Issahaku sends his monthly report to the NGO he supports in Tamale. Goal: more parents at community education meetings. He lists what he did: eight Facebook posts, two events and four WhatsApp broadcasts. Results: more parents attended than last month, and most said they heard through the WhatsApp broadcasts. What did not work: a long text flyer got little response. Next month: more short voice notes in Dagbani on WhatsApp, which several parents asked for. The director forwards the report to their funder.`,
+      practice_task_md: `**Goal:** Write a one page monthly report for a business or page you manage, or for a practice scenario.
+
+**Steps:**
+1. Use real insights from a page you manage, or create realistic practice numbers for a local business.
+2. Write the six parts: goal, what we did, what happened, what worked and what did not, what next, spend.
+3. Include at least two screenshots or simple charts.
+4. Replace any jargon with plain words an owner would understand.
+5. Write a three line WhatsApp summary to send with the report.
+
+**Done looks like:** A one page report saved as a small PDF, plus a short WhatsApp summary. Mark practice numbers clearly as practice if you use the report in your portfolio.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these belongs in a monthly client report?",
+            options: [
+              "A list of every number the platform shows",
+              "What worked, what did not, and what you will try next",
+              "Only the best results, with weak ones left out",
+              "Technical words to impress the client",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists what worked and what did not, and next steps, as core parts.",
+          },
+          {
+            prompt: "How should you write \"CTR improved\" for a busy owner?",
+            options: [
+              "More people who saw the ad tapped it",
+              "Click through rate optimisation achieved",
+              "CTR went up, see table",
+              "Leave it out entirely",
+            ],
+            answer_index: 0,
+            explanation: "Plain words help owners understand results.",
+          },
+          {
+            prompt: "What should you do when a campaign did not work?",
+            options: [
+              "Hide it from the report",
+              "Change the numbers to look better",
+              "Blame the client",
+              "Say so clearly, explain what went wrong and what you will change",
+            ],
+            answer_index: 3,
+            explanation: "Honesty about weak results builds long term trust.",
+          },
+          {
+            prompt: "Why does the lesson suggest sending a short WhatsApp summary with the report?",
+            options: [
+              "WhatsApp is the only legal way to send reports",
+              "It replaces the need for a report",
+              "So the owner can get the main points easily on a busy day",
+              "So the report cannot be forwarded",
+            ],
+            answer_index: 2,
+            explanation: "A short summary helps busy owners read the key points.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
