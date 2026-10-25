@@ -51,17 +51,8 @@ export const backend: RoadmapDraft = {
       slug: "a-language",
       title: "One programming language, learned well",
       summary:
-        "Pick one language and stay with it until you can build things without a tutorial. JavaScript with Node.js and Python are both widely used and have strong free learning material.",
+        "Pick one language, such as JavaScript with Node.js or Python, and stay with it until you can build things without a tutorial. Let the local and remote job adverts you would like to apply for guide the choice.",
       parent: null,
-      optional: false,
-      resources: [],
-    },
-    {
-      slug: "choose-a-language",
-      title: "Choosing Node.js or Python",
-      summary:
-        "Node.js lets you use the same language as the frontend, while Python is popular for data and scripting work. Look at local job adverts you would like to apply for and let them guide the choice.",
-      parent: "a-language",
       optional: false,
       resources: [RES.nodeLearn, RES.pythonTutorial],
     },
@@ -73,6 +64,15 @@ export const backend: RoadmapDraft = {
       parent: "a-language",
       optional: false,
       resources: [RES.fccLearn, RES.cs50],
+    },
+    {
+      slug: "async-programming",
+      title: "Asynchronous code and waiting on the network",
+      summary:
+        "A server spends most of its time waiting for databases and other services, so learn how promises, async and await let it serve many people at once. Practise handling slow and failed calls, because networks in Ghana are not always steady.",
+      parent: "a-language",
+      optional: false,
+      resources: [RES.nodeLearn, RES.mdnJs],
     },
     {
       slug: "databases",
@@ -107,8 +107,17 @@ export const backend: RoadmapDraft = {
       summary:
         "Change a database safely over time with versioned migrations, and see how an ORM maps tables to code. Teams rely on migrations so nobody edits production data by hand.",
       parent: "databases",
-      optional: true,
+      optional: false,
       resources: [RES.supabase],
+    },
+    {
+      slug: "caching-and-nosql",
+      title: "Caching and other kinds of databases",
+      summary:
+        "Learn when a fast key value store or a document database helps, and how caching saves your database from repeating the same work. Many adverts mention these tools, but they come after you are comfortable with SQL.",
+      parent: "databases",
+      optional: true,
+      resources: [RES.mdnHttp],
     },
     {
       slug: "apis",
@@ -123,19 +132,10 @@ export const backend: RoadmapDraft = {
       slug: "rest-apis",
       title: "REST API design",
       summary:
-        "Design clear routes, use the right HTTP methods and return consistent JSON with sensible status codes. Build an API for a simple product catalogue as your first project.",
+        "Design clear routes, use the right HTTP methods and return consistent JSON with sensible status codes. Write short documentation so another developer can use your API without asking you.",
       parent: "apis",
       optional: false,
       resources: [RES.express, RES.mdnHttp],
-    },
-    {
-      slug: "auth",
-      title: "Authentication and authorisation",
-      summary:
-        "Learn how users sign in, how sessions and tokens work, and how to check what each user is allowed to do. Many local apps sign users in with a phone number and a one time code, so understand that flow too.",
-      parent: "apis",
-      optional: false,
-      resources: [RES.owasp],
     },
     {
       slug: "validation-and-errors",
@@ -147,19 +147,19 @@ export const backend: RoadmapDraft = {
       resources: [RES.owasp],
     },
     {
-      slug: "api-docs",
-      title: "Documenting an API",
+      slug: "auth",
+      title: "Authentication and authorisation",
       summary:
-        "Describe your endpoints so another developer can use them without asking you. A standard format such as OpenAPI also lets tools generate examples and tests.",
+        "Learn how users sign in, how sessions and tokens work, and how to check what each user is allowed to do. Many local apps sign users in with a phone number and a one time code, so understand that flow too.",
       parent: "apis",
-      optional: true,
-      resources: [RES.openapi],
+      optional: false,
+      resources: [RES.owasp],
     },
     {
       slug: "local-integrations",
-      title: "Integrations Ghanaian products need",
+      title: "Payments, messaging and patchy networks",
       summary:
-        "Local products often depend on mobile money, SMS and WhatsApp. Knowing how to integrate them safely makes you useful to Ghanaian startups and businesses quickly.",
+        "Local products often depend on mobile money, SMS and WhatsApp, over networks that drop and repeat requests. Knowing how to integrate them safely makes you useful to Ghanaian startups, fintechs and telcos quickly.",
       parent: null,
       optional: false,
       resources: [],
@@ -168,28 +168,28 @@ export const backend: RoadmapDraft = {
       slug: "payments-and-webhooks",
       title: "Mobile money payments and webhooks",
       summary:
-        "Learn how a payment provider such as Hubtel or Paystack sends your server a webhook when a payment succeeds or fails, and why the same event can arrive twice. Record every payment once, verify the provider's signature and reconcile against their dashboard.",
+        "Learn how a payment provider sends your server a webhook when a mobile money payment succeeds or fails, and why you must verify it before trusting it. Record every payment once and reconcile your records against the provider's.",
       parent: "local-integrations",
       optional: false,
       resources: [RES.hubtelDocs, RES.mdnHttp],
     },
     {
+      slug: "idempotency-and-retries",
+      title: "Timeouts, retries and idempotency",
+      summary:
+        "Requests time out, phones lose signal and providers send the same webhook twice, so your server must handle repeats without charging anyone twice. Learn timeouts, safe retries and idempotency keys, which fintech adverts ask for by name.",
+      parent: "local-integrations",
+      optional: false,
+      resources: [RES.mdnHttp, RES.twelveFactor],
+    },
+    {
       slug: "sms-and-whatsapp",
       title: "SMS and WhatsApp notifications",
       summary:
-        "Send order updates, reminders and one time codes by SMS or WhatsApp through a provider API. Keep messages short, respect opt outs and make sure your app still works when a message is delayed.",
+        "Send order updates, reminders and one time codes by SMS or WhatsApp through a provider API, and see how USSD menus reach people on basic phones. Keep messages short, respect opt outs and send them in the background so a delay never blocks your app.",
       parent: "local-integrations",
       optional: false,
       resources: [RES.twilioSms],
-    },
-    {
-      slug: "ussd",
-      title: "USSD services",
-      summary:
-        "Understand how USSD menus work as a series of short requests between the network and your server. USSD reaches people on basic phones without data, which matters for many customers outside the cities.",
-      parent: "local-integrations",
-      optional: true,
-      resources: [],
     },
     {
       slug: "production",
