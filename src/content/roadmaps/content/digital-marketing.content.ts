@@ -447,7 +447,7 @@ Amina manages content for a small cosmetics shop in Tamale. For one week she pla
       },
     },
     copywriting: {
-      explanation_md: `Words do most of the selling online. A photo catches the eye, but the caption tells people what it is, why they should care and what to do next. Ghanaian job adverts for digital marketers regularly ask for copywriting and for keeping a brand consistent. If you can write short, clear, friendly words, you will always be useful.
+      explanation_md: `Words do most of the selling online. A photo catches the eye, but the caption tells people what it is, why they should care and what to do next. Some Ghanaian job adverts for digital marketers ask directly for copywriting and for keeping a brand consistent, and almost every marketing role depends on it. If you can write short, clear, friendly words, you will always be useful.
 
 ## The shape of a selling message
 
@@ -476,7 +476,7 @@ AI chat tools can suggest captions quickly. Treat them as a first draft only. Ch
 
 Sumaila writes for a mobile money vendor running a promotion. His first draft: "We are pleased to inform our esteemed customers of our ongoing promotion." Nobody will read that. His rewrite:
 
-"Send money this week, pay no charge on your next small transfer. Only at Sumaila Ventures, opposite Aboabo market. Open 7am to 8pm. Bring your Ghana Card."
+"Do any MoMo cash out this week and get a free loyalty stamp. Five stamps earn you GHS 5 airtime. Only at Sumaila Ventures, opposite Aboabo market. Open 7am to 8pm. Bring your Ghana Card."
 
 Benefit first, clear detail, location and a next step. That is copywriting.`,
       practice_task_md: `**Goal:** Rewrite real posts so they sell more clearly.
@@ -539,7 +539,7 @@ Benefit first, clear detail, location and a next step. That is copywriting.`,
       },
     },
     "graphics-and-photos": {
-      explanation_md: `On WhatsApp, Instagram and Facebook, people decide in a second whether to stop scrolling. A clear photo or a clean graphic is often what makes them stop. Ghanaian adverts for marketing assistants and interns frequently name Canva and similar tools. You do not need a camera or paid software to meet that bar. You need daylight, a steady hand and a few simple rules.
+      explanation_md: `On WhatsApp, Instagram and Facebook, people decide in a second whether to stop scrolling. A clear photo or a clean graphic is often what makes them stop. Some Ghanaian adverts for marketing assistants and interns name Canva and similar design tools. You do not need a camera or paid software to meet that bar. You need daylight, a steady hand and a few simple rules.
 
 ## Product photos on a phone
 
@@ -887,6 +887,437 @@ Abdul-Rahman is hired part time by a Tamale pharmacy shop. Instead of taking the
             ],
             answer_index: 3,
             explanation: "Keeping a record builds trust and shows patterns in customer questions.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "whatsapp-business": {
+      explanation_md: `For many small businesses in Ghana, WhatsApp is the shop counter. Customers ask prices, send photos of what they want, confirm MoMo payments and arrange delivery in chat. Yet many owners still use a personal WhatsApp account, reply late and repeat the same answers all day. Setting up and running WhatsApp Business properly is one of the most practical paid services a beginner marketer can offer, and the app itself is free.
+
+## The WhatsApp Business app
+
+WhatsApp Business is a separate free app made for small businesses. A phone number can only be registered on one WhatsApp account at a time, so many owners move the shop's number over to the business app or use a second SIM. The main tools are:
+
+* **Business profile.** Name, short description, category, address, opening hours and email or website. A complete profile looks trustworthy.
+* **Catalogue.** A list of products or services with photos, prices and descriptions that customers can browse inside the chat.
+* **Quick replies.** Saved answers to common questions, sent with a short shortcut. For example, a saved message with prices, delivery areas and how to pay.
+* **Greeting and away messages.** Automatic replies when someone messages for the first time or outside opening hours, so nobody feels ignored.
+* **Labels.** Tags for chats, such as "new order", "paid" and "delivered", so you can track orders without a notebook.
+* **Status.** Photos, videos or text that your contacts can see for 24 hours. Many local buyers check Status daily, so it works like a shop window.
+* **Short link and QR code.** A link or code that opens a chat with the business, useful on flyers, stickers and social pages.
+
+Broadcast lists let you send one message to many contacts privately, but only people who have saved the business number will receive it. That is a good reason to ask happy customers to save the number.
+
+## Good habits
+
+* Reply quickly during opening hours. A fast answer often decides whether a person buys here or somewhere else.
+* Put the price and payment details in replies. Hiding the price makes people leave.
+* Confirm payments carefully. Check the MoMo message from the network, not a screenshot a customer sends, because fake screenshots are a common scam.
+* Do not spam. Too many broadcasts make people block the number.
+
+## A worked example
+
+Mariama's basket group in Bolgatanga used a personal account, and orders got lost in family chats. You help them install WhatsApp Business on the group's phone. You write a profile, add twelve baskets to the catalogue with sizes and prices, create quick replies for prices, delivery to Accra and MoMo payment, and set an away message for evenings. Labels show which orders are paid and which are packed. Now any member can handle the phone and nothing gets lost.`,
+      practice_task_md: `**Goal:** Set up a complete WhatsApp Business profile for a real or practice business.
+
+**Steps:**
+1. With the owner's permission, install WhatsApp Business on the business phone. If you are practising, use a spare SIM.
+2. Fill in the full profile: name, description, category, address, hours.
+3. Add at least five catalogue items with clear photos, prices in cedis and short descriptions.
+4. Create three quick replies: prices, delivery and how to pay.
+5. Set a greeting message, an away message and four labels for tracking orders.
+6. Post one Status that shows a product and tells people how to order.
+
+**Done looks like:** Screenshots of the profile, catalogue, quick replies and labels, collected in one document you can show a mentor or a future client.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a quick reply in WhatsApp Business?",
+            options: [
+              "A saved answer to a common question that you can send with a shortcut",
+              "A paid advert inside WhatsApp",
+              "A message that disappears after one hour",
+              "A way to call many customers at once",
+            ],
+            answer_index: 0,
+            explanation: "Quick replies are saved messages for questions you answer often.",
+          },
+          {
+            prompt: "Who receives a broadcast list message?",
+            options: [
+              "Every WhatsApp user in the same town",
+              "Anyone who has ever visited the shop",
+              "Only contacts who have saved the business number",
+              "Only people in a WhatsApp group",
+            ],
+            answer_index: 2,
+            explanation: "Broadcast messages only reach people who saved the business number.",
+          },
+          {
+            prompt: "How should a business confirm a mobile money payment?",
+            options: [
+              "Trust any screenshot the customer sends",
+              "Ask the customer to send their PIN",
+              "Wait for the customer to say thank you",
+              "Check the payment message from the network",
+            ],
+            answer_index: 3,
+            explanation: "Fake screenshots are a common scam, so check the network's own message.",
+          },
+          {
+            prompt: "How long can contacts see a WhatsApp Status update?",
+            options: ["One hour", "24 hours", "One week", "Until the business deletes the app"],
+            answer_index: 1,
+            explanation: "Status updates are visible for 24 hours.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "facebook-instagram": {
+      explanation_md: `Facebook is widely used in Ghana by businesses, churches, schools and NGOs, and Instagram matters for fashion, food, beauty, crafts and anything visual. Job adverts for social media roles often expect you to manage pages on both and to use Meta's business tools. The skills are learnable on a phone, and Meta offers free training through Meta Blueprint.
+
+## Pages, profiles and professional accounts
+
+A business should use a Facebook Page, not a personal profile, and an Instagram professional account, not a personal one. Pages and professional accounts give access to insights, scheduling, ads and roles for helpers. Fill in everything: a clear profile picture or logo, a cover image, a short description, location, hours, phone number and a WhatsApp button or link.
+
+Meta Business Suite is a free tool that lets you manage a Facebook Page and a linked Instagram account in one place, schedule posts in advance and see messages from both. Menus and button names change often, so learn what each feature does rather than memorising where it sits.
+
+## Posting well
+
+* **Match the platform.** Facebook suits longer captions, event details, links and community discussion. Instagram is more visual: strong photos, Reels and short captions.
+* **Use Reels and Stories.** Short vertical video often reaches more people who do not yet follow you than still photos do.
+* **Be consistent.** Follow your content calendar. Steady posting builds trust.
+* **Use events and groups.** For a church harvest or an NGO workshop, a Facebook event collects interested people and reminds them.
+
+## Reading insights
+
+Insights tell you how your content performs. The names change from time to time, but they generally show:
+
+* **Reach.** Roughly how many different people saw your content.
+* **Engagement.** Reactions, comments, shares and saves.
+* **Followers.** How many people follow, and how that is changing.
+* **Actions.** Messages started, link clicks, calls or profile visits.
+
+Look for patterns over several weeks, not single posts. Which topics, formats and times lead to messages and sales? Do more of those. A post with many likes but no messages may be entertaining but not selling.
+
+## A worked example
+
+Issahaku manages the Facebook Page of an NGO running a girls' education programme in the Northern Region. He checks insights monthly and notices that photos of classroom activities with short stories get far more shares than flyers with long text. Event posts for community meetings bring messages from parents. He shifts the calendar toward stories and events, schedules them in Business Suite every Friday, and reports the pattern to his manager with screenshots.`,
+      practice_task_md: `**Goal:** Plan and schedule a week of posts for a Facebook Page and read its insights.
+
+**Steps:**
+1. If you manage a page for a business, church, school or club, use it. If not, create a practice Facebook Page for a made up local business.
+2. Complete every profile field, including hours and a WhatsApp link.
+3. Write and schedule three posts for the coming week using Meta Business Suite: one photo, one short video, one event or useful tip.
+4. After a week, open insights and note reach, engagement and any messages for each post.
+5. Write two sentences on what you would do differently next week.
+
+**Done looks like:** Screenshots of the completed page, the scheduled posts and the insights, with your short notes.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why should a business use a Facebook Page instead of a personal profile?",
+            options: [
+              "Personal profiles cannot post photos",
+              "Pages give access to insights, scheduling, ads and roles for helpers",
+              "Pages are the only way to send messages",
+              "Pages never show adverts",
+            ],
+            answer_index: 1,
+            explanation: "Pages and professional accounts unlock business tools.",
+          },
+          {
+            prompt: "What does Meta Business Suite let you do?",
+            options: [
+              "Manage a Facebook Page and linked Instagram account and schedule posts",
+              "Send MoMo payments to customers",
+              "Edit TikTok videos",
+              "Build a full website for free",
+            ],
+            answer_index: 0,
+            explanation: "Business Suite brings both accounts together, with scheduling and messages.",
+          },
+          {
+            prompt: "In insights, what does reach roughly measure?",
+            options: [
+              "How much money a post earned",
+              "How many comments a post received",
+              "How many different people saw your content",
+              "How many people unfollowed the page",
+            ],
+            answer_index: 2,
+            explanation: "Reach is roughly the number of different people who saw the content.",
+          },
+          {
+            prompt: "What does the lesson say about a post with many likes but no messages?",
+            options: [
+              "It is always the best kind of post",
+              "It should be deleted immediately",
+              "It proves the price is too low",
+              "It may be entertaining but not selling",
+            ],
+            answer_index: 3,
+            explanation: "Look for content that leads to messages and sales, not only likes.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "community-management": {
+      explanation_md: `Every comment, message and review is a conversation that other people are watching. A rude or slow reply can lose more than one customer. A calm, helpful reply can win new ones. Ghanaian adverts for community managers and social media executives ask for audience engagement and community growth, and some senior roles ask for influencer partnerships. This lesson covers all three at a beginner level.
+
+## Replying well
+
+* **Be quick.** Reply to comments and messages as soon as you can during working hours. Agree response times with the owner.
+* **Be human.** Use the person's name, keep a friendly tone and match the brand voice.
+* **Answer the actual question.** If someone asks the price, give the price.
+* **Know when to move to private.** Questions about an order, a payment or personal details should go to WhatsApp or direct messages. Say so politely in public so others see you responded.
+
+## Handling complaints
+
+When someone complains in public, try this order:
+
+* **Acknowledge.** "Sorry to hear this, Amina."
+* **Take it private.** "We have sent you a message to sort it out."
+* **Fix it.** Work with the owner to solve the real problem.
+* **Follow up.** If it is resolved, a short public reply shows others you care.
+
+Do not argue, do not delete genuine complaints just because they are negative, and never share a customer's private details in public.
+
+## Spam and scams
+
+Scammers often comment on business posts pretending to be the business, offering fake promotions and asking for MoMo PINs. Hide or delete those comments, report the accounts, and post a pinned reminder that the business will never ask for a PIN or code.
+
+## Working with trusted local voices
+
+Sometimes a business can reach new people through someone their audience already trusts: a respected pastor, a popular campus figure, a local radio presenter or a creator with a loyal following in Tamale. This is often called influencer or creator marketing. For a small budget, a creator with a smaller but engaged local audience can be more useful than a famous one. Agree in writing what they will post, when, and what they receive, and make sure paid posts are clearly marked as paid partnerships so followers are not misled.
+
+## A worked example
+
+A customer posts on a Tamale restaurant's page: "Ordered jollof yesterday and it came cold. Not happy." Hawa, the page manager, replies within the hour: "Sorry, Wumpini, that is not the standard we want. We have messaged you." In private she arranges a replacement meal. The next day Wumpini comments that the new meal was great. Dozens of people saw a complaint handled well, which builds more trust than a perfect post.`,
+      practice_task_md: `**Goal:** Practise replying to real types of comments with a clear, kind process.
+
+**Steps:**
+1. Write down six example comments a local business might receive: two questions, two complaints, one compliment and one scam comment.
+2. Write a reply for each, following the lesson: quick, human, answer the question, move private when needed.
+3. For the scam comment, write the action you would take and a pinned warning post.
+4. Write a short note listing two local creators or trusted voices who could suit the business, and why.
+5. Ask a friend to act as an angry customer by message and practise replying calmly.
+
+**Done looks like:** A document with six comments and replies, a scam warning, and your short creator note.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Someone asks a question about their payment in a public comment. What should you do?",
+            options: [
+              "Ignore it so nobody sees it",
+              "Ask them to post their MoMo PIN so you can check",
+              "Reply publicly that you will message them, then handle it in private",
+              "Delete the comment straight away",
+            ],
+            answer_index: 2,
+            explanation: "Payment and personal matters move to private, with a short public reply.",
+          },
+          {
+            prompt: "What is the first step when handling a public complaint?",
+            options: ["Acknowledge the problem", "Argue with the customer", "Delete the comment", "Block the customer"],
+            answer_index: 0,
+            explanation: "The lesson's order is acknowledge, take it private, fix it, follow up.",
+          },
+          {
+            prompt: "What should you do with a comment pretending to be the business and asking for PINs?",
+            options: [
+              "Reply and thank them",
+              "Leave it because deleting comments is never allowed",
+              "Share it so customers can see it",
+              "Hide or delete it, report the account and remind customers you never ask for PINs",
+            ],
+            answer_index: 3,
+            explanation: "Scam comments should be removed and reported, with a clear warning to customers.",
+          },
+          {
+            prompt: "What does the lesson say about paid posts by creators?",
+            options: [
+              "They should be hidden so they look natural",
+              "They should be clearly marked as paid partnerships",
+              "Only famous creators are worth paying",
+              "No written agreement is needed",
+            ],
+            answer_index: 1,
+            explanation: "Marking paid partnerships clearly means followers are not misled.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "email-marketing": {
+      explanation_md: `Email may feel old fashioned next to TikTok, but several Ghanaian marketing adverts ask for it, from agencies and agritech companies to think tanks and NGOs, and remote marketing assistant roles often do too. The reason is simple: an email list belongs to the business. No algorithm decides whether your subscribers see your message, and if a social account is hacked or blocked, the list is still there.
+
+## Who uses email
+
+* **NGOs and think tanks** send newsletters to donors, partners and journalists.
+* **Schools and churches** send updates to parents and members who prefer something they can keep.
+* **Online shops and B2B companies** send offers, new stock alerts and reminders.
+* **Startups** send welcome messages and tips to new users.
+
+## Building a list the right way
+
+People must agree to receive your emails. Collect addresses through a sign up form, at an event with a clear note of what they are signing up for, or when a customer orders and ticks a box. Never buy lists or add people without asking. Ghana's Data Protection Act, 2012 (Act 843) sets rules for collecting and using personal data, and the Data Protection Commission oversees it. Every marketing email should include a simple way to unsubscribe, and you must honour those requests.
+
+## Writing a good newsletter
+
+* **Subject line.** Short and specific. "Harvest thanksgiving: Sunday 10am" beats "Newsletter".
+* **One main message.** One event, one offer or one story, with a clear button or link.
+* **Mobile first.** Most people will read on a phone. Short paragraphs, large text and small images.
+* **Plain and personal.** Write as one person to another. Use the reader's name if your tool allows it.
+* **Regular but not constant.** A steady monthly or fortnightly newsletter is better than a flood followed by silence.
+
+## Tools
+
+You can start with Gmail and a small list, but email marketing tools such as Mailchimp, Brevo or MailerLite add sign up forms, templates, unsubscribe links and reports. Many have free plans with limits that change, so check the current plan before you promise anything to a client. Useful numbers to watch are clicks, replies and unsubscribes.
+
+## A worked example
+
+Amina volunteers for a youth NGO in Wa that only posted on Facebook. She adds a sign up form to their page and collects emails at a community event, with a clear note that people will get a monthly update. Her first newsletter has one story about a training day, two photos, a link to register for the next session and an unsubscribe link at the bottom. Partners reply to say thank you, and two offer to share it.`,
+      practice_task_md: `**Goal:** Draft a short newsletter and a simple, consent based sign up form.
+
+**Steps:**
+1. Choose an organisation, such as a church, school club, NGO or online shop.
+2. Create a free Google Form that collects name and email, with a clear sentence explaining what people will receive and how often.
+3. Draft one newsletter in Gmail or Google Docs: a specific subject line, one main message, one link, and a line explaining how to unsubscribe.
+4. Send the draft to yourself and read it on your phone. Fix anything hard to read.
+
+**Done looks like:** A working sign up form link and a phone friendly newsletter draft that you can show a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson say an email list is valuable to a business?",
+            options: [
+              "It belongs to the business and no algorithm decides who sees the message",
+              "Emails are always opened by every subscriber",
+              "Email is the only channel allowed for NGOs",
+              "Email lists can be bought cheaply",
+            ],
+            answer_index: 0,
+            explanation: "The list is owned by the business, unlike reach on a social app.",
+          },
+          {
+            prompt: "Which law sets rules for collecting and using personal data in Ghana?",
+            options: [
+              "The Electronic Transactions Act",
+              "The Data Protection Act, 2012 (Act 843)",
+              "The Companies Act",
+              "The Labour Act",
+            ],
+            answer_index: 1,
+            explanation: "The lesson names the Data Protection Act, 2012 (Act 843), overseen by the Data Protection Commission.",
+          },
+          {
+            prompt: "What should every marketing email include?",
+            options: [
+              "A long list of every product",
+              "The sender's MoMo PIN",
+              "A simple way to unsubscribe",
+              "At least five large images",
+            ],
+            answer_index: 2,
+            explanation: "Recipients must be able to unsubscribe, and those requests must be honoured.",
+          },
+          {
+            prompt: "Which subject line follows the lesson's advice?",
+            options: ["Newsletter", "Important!!!", "Update number 12", "Harvest thanksgiving: Sunday 10am"],
+            answer_index: 3,
+            explanation: "Short and specific subject lines tell readers exactly what the email is about.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "search-and-local": {
+      explanation_md: `When someone in Tamale needs a phone repairer, a guest house or a printing shop, many of them open Google or Google Maps and type what they want. Those people are not scrolling for fun. They want something now. Businesses that show up with correct details, good photos and genuine reviews often get the call. Search skills appear in several Ghanaian digital marketing adverts, and they are a full specialisation in SydCrest's Delta Mentoring Program.
+
+## How search differs from social media
+
+On social media, you put content in front of people who were not looking for it. On search, people come looking, and your job is to be found and to look trustworthy when they arrive. That changes how you think:
+
+* You start from the words people type, not from what you want to say.
+* Accuracy matters a lot. A wrong phone number or closed hours lose the customer instantly.
+* Results build slowly. Search work often takes weeks or months to show, but it keeps working once it does.
+
+## Two kinds of search visibility
+
+* **Local search.** Results on Google Maps and the map box that appears for searches like "pharmacy near me" or "hotel in Bolgatanga". These mostly come from Google Business Profile listings.
+* **Organic search.** The ordinary list of web pages that Google ranks for a search. Getting there is the work of search engine optimisation, or SEO.
+
+There are also paid search ads, which appear above or among results. You will meet those in the paid advertising section.
+
+## What this section covers
+
+* **Google Business Profile:** creating and keeping a free listing that shows on Maps and Search.
+* **SEO and keyword basics:** how search engines find and rank pages, and how to research what people actually type.
+
+Even businesses without a website can benefit. A complete Business Profile, an active social page and consistent details everywhere already help people find them.
+
+## A small example
+
+Sumaila runs a guest house in Bolgatanga. Travellers kept saying they could not find it, and some went to a competitor whose listing showed up on Maps with photos and reviews. You search "guest house Bolgatanga" on your phone and confirm his business is missing. You help him create a Business Profile with the right location pin, phone number, photos of the rooms and hours, and complete Google's verification steps. Over the next weeks, he asks happy guests to leave honest reviews. Travellers start calling from the listing, and he tells you which calls came from Maps so you can track it.`,
+      practice_task_md: `**Goal:** Check how visible a few local businesses are in search.
+
+**Steps:**
+1. Pick three types of business in your town, such as a pharmacy, a guest house and a tailor.
+2. On Google and Google Maps, search for each type plus your town name, for example "tailor Tamale".
+3. Note which businesses appear, whether their details look correct, whether they have photos, and whether they have reviews.
+4. Find one real business you know that is missing or has a poor listing.
+5. Write three things that business could do to be found more easily.
+
+**Done looks like:** A short table of search results for three searches and a note of recommendations for one business.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How do people on search differ from people scrolling social media?",
+            options: [
+              "They are looking for something specific, often right now",
+              "They never buy anything",
+              "They only want entertainment",
+              "They cannot see business details",
+            ],
+            answer_index: 0,
+            explanation: "On search, people come looking with a need.",
+          },
+          {
+            prompt: "Where do most local results on Google Maps come from?",
+            options: [
+              "Facebook Pages",
+              "WhatsApp catalogues",
+              "Google Business Profile listings",
+              "Email newsletters",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says local results mostly come from Google Business Profile listings.",
+          },
+          {
+            prompt: "What is SEO?",
+            options: [
+              "Paying for ads above search results",
+              "A type of social media video",
+              "A rule for email newsletters",
+              "The work of getting web pages to rank in ordinary search results",
+            ],
+            answer_index: 3,
+            explanation: "Search engine optimisation aims at organic search results.",
+          },
+          {
+            prompt: "Can a business without a website still improve its search visibility?",
+            options: [
+              "No, search only works for businesses with websites",
+              "Yes, with a complete Business Profile and consistent details",
+              "Only by buying ads",
+              "Only if it has more than one branch",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says a complete Business Profile and consistent details already help.",
           },
         ],
         pass_threshold: 75,
