@@ -1310,7 +1310,7 @@ Issahaku supports a school in Yendi. The office printer keeps disappearing. He r
         questions: [
           {
             prompt: "Which of these is a private IPv4 address?",
-            options: ["8.8.8.8", "192.168.1.25", "300.1.1.1", "41.66.200.1"],
+            options: ["8.8.8.8", "192.168.1.25", "300.1.1.1", "203.0.113.5"],
             answer_index: 1,
             explanation: "Addresses starting 192.168. are in a private range used inside networks.",
           },
@@ -2353,7 +2353,7 @@ What carries over: Windows, Linux, accounts, backups. What you add: Windows Serv
 
 More organisations now run email, files and systems in cloud services such as Microsoft 365, Microsoft Azure, Amazon Web Services and Google Cloud. Entry roles include cloud support associate and junior cloud engineer.
 
-What carries over: networking, Linux, accounts and security. What you add: cloud fundamentals, virtual machines and storage, identity in the cloud, and automation. Fundamentals certifications from the big cloud providers are a common first step, and AWS re/Start is one structured programme that runs in Ghana through local partners. SydCrest plans a cloud roadmap that builds on this one.
+What carries over: networking, Linux, accounts and security. What you add: cloud fundamentals, virtual machines and storage, identity in the cloud, and automation. Fundamentals certifications from the big cloud providers are a common first step, and AWS re/Start is one structured programme that runs in Ghana through local partners. If SydCrest adds a cloud roadmap, it will build on this one.
 
 ## Phone or computer?
 
