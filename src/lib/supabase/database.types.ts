@@ -685,6 +685,15 @@ export type Database = {
       }
     }
     Functions: {
+      funnel_by_week: {
+        Args: { p_weeks?: number }
+        Returns: {
+          activations: number
+          signups: number
+          visits: number
+          week_start: string
+        }[]
+      }
       mint_achievement: {
         Args: {
           p_metadata?: Json

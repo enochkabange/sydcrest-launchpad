@@ -5,6 +5,8 @@ import { createClient } from "@/lib/supabase/server";
 import { siteOrigin } from "@/lib/site-url";
 import { parseAgeAndConsent, parseSignIn, parseSignUp, safeNextPath, type FieldErrors } from "@/lib/validation";
 import { UNDER_AGE_MESSAGE } from "@/lib/legal";
+import { track } from "@/lib/analytics/track";
+import { recordLegalConsent } from "@/lib/consent-records";
 
 /** Where to go after auth: the form's `next` field, checked to be a local path. */
 function nextFrom(form: FormData | undefined) {
@@ -51,7 +53,8 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
     password: data.password,
     options: {
       // full_name: same key Google uses, so the profile trigger reads one field for both.
-      // date_of_birth and terms_version move to the consents table in Wave 2.
+      // terms_version waits here until there is a session: it is copied into
+      // the consents table on the first signed in request (lib/consent-records).
       data: {
         full_name: data.fullName,
         date_of_birth: data.dateOfBirth,
@@ -72,8 +75,13 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
           : "We couldn't create your account. Try again.";
     return { message, values };
   }
-  // Email confirmation turned off: the user is signed in already.
-  if (result.session) redirect(nextFrom(form));
+  // Signed in already only when email confirmation is off. Until then the
+  // request is anonymous: the event carries just the visitor cookie, and
+  // the consent rows are written on the first signed in request.
+  const signedIn = Boolean(result.session && result.user);
+  if (signedIn) await recordLegalConsent(supabase, data.termsVersion);
+  await track("signup", { method: "email" }, { profileId: signedIn ? result.user!.id : null });
+  if (signedIn) redirect(nextFrom(form));
   return { sentTo: data.email };
 }
 
@@ -104,6 +112,11 @@ export async function completeWelcome(_prev: AuthState, form: FormData): Promise
     console.error("completeWelcome failed", { code: error.code, status: error.status, message: error.message });
     return { message: "We couldn't save that. Try again.", values: { date_of_birth: data.dateOfBirth } };
   }
+  await recordLegalConsent(supabase, data.termsVersion);
+  // First time here without a date of birth means a new Google sign up
+  // (not someone re-agreeing after revoking), so count it as their signup.
+  const firstVisit = !(auth.claims.user_metadata as Record<string, unknown> | undefined)?.date_of_birth;
+  if (firstVisit) await track("signup", { method: "google" });
   // updateUser keeps the old access token, whose claims still lack the new
   // metadata. Refresh so the proxy and getClaims see it, or /dashboard
   // would bounce straight back here.

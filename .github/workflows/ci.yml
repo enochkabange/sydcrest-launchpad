@@ -85,14 +85,26 @@ jobs:
           key=$(supabase status -o json | jq -r .PUBLISHABLE_KEY)
           echo "NEXT_PUBLIC_SUPABASE_URL=http://127.0.0.1:54321" >> "$GITHUB_ENV"
           echo "NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=$key" >> "$GITHUB_ENV"
-          # Server only: the path quiz saves personalized_paths and mints
-          # achievements with it. Local stack key, safe to expose in CI logs.
-          secret=$(supabase status -o json | jq -r '.SECRET_KEY // .SERVICE_ROLE_KEY')
-          echo "::add-mask::$secret"
-          echo "SUPABASE_SECRET_KEY=$secret" >> "$GITHUB_ENV"
+          # For e2e specs only (creating and promoting test users). Not
+          # NEXT_PUBLIC_, so the app bundle never sees it; local stack only.
+          service=$(supabase status -o json | jq -r .SERVICE_ROLE_KEY)
+          echo "::add-mask::$service"
+          echo "SUPABASE_SERVICE_ROLE_KEY=$service" >> "$GITHUB_ENV"
       - run: pnpm build
       - run: pnpm exec playwright install --with-deps chromium
+      # The local stack's secret key: seeds test data (e2e/supabase-admin.ts) and
+      # lets the app's server code (path quiz saves, content writes) run under
+      # `pnpm start`. Given to the test step only, never to the build.
+      - name: Local service role key for seeding
+        id: local-keys
+        run: |
+          set -euo pipefail
+          secret=$(supabase status -o json | jq -r .SECRET_KEY)
+          echo "::add-mask::$secret"
+          echo "secret=$secret" >> "$GITHUB_OUTPUT"
       - run: pnpm e2e
+        env:
+          SUPABASE_SECRET_KEY: ${{ steps.local-keys.outputs.secret }}
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
