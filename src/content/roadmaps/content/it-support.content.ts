@@ -1653,6 +1653,390 @@ Mariama gets a call from a microfinance branch in Savelugu: no one can reach the
         pass_threshold: 80,
       },
     },
+    "accounts-and-security": {
+      explanation_md: `## Why this matters
+
+A Ghanaian bank, NGO or school can lose money, data and trust in a single afternoon: a staff member clicks a fake link, a laptop is stolen with unbacked files, a former employee still has access to email months after leaving. IT support staff are the first line of defence. Adverts for IT support and ICT officer roles in Ghana list access control, antivirus, security best practice, Microsoft 365 or Active Directory accounts, and backup and disaster recovery. Ghana also has laws that matter here: the Data Protection Act, 2012 (Act 843) sets rules for handling personal data, and the Cybersecurity Act, 2020 (Act 1038) established the Cyber Security Authority.
+
+## Three habits that protect an organisation
+
+* **The right access for the right people.** Every staff member has their own account, with only the access their job needs. Accounts are created properly when people join, changed when they move role, and closed when they leave.
+* **Everyday security.** Systems are kept updated, antivirus is running, and staff know how to spot phishing and scams. When something goes wrong, people know who to tell, quickly.
+* **Backups that work.** Important data exists in more than one place, including one copy that ransomware or theft cannot reach, and someone has tested restoring it.
+
+## What this section covers
+
+* **User accounts, passwords and access:** central account management with tools such as Active Directory, Microsoft Entra ID and Google Workspace, least privilege, safe password resets and two step verification.
+* **Everyday security for support staff:** malware, phishing, MoMo and impersonation scams, updates, USB risks and what to do when an incident happens.
+* **Backups and recovery:** the three copies rule, backing up computers and phones cheaply, and testing restores.
+
+## Your role, and its limits
+
+IT support is not the same as a full cybersecurity job, but you will be the person staff ask "is this email real?" and the person who notices a strange login first. Your job is to prevent the common problems, spot warning signs, contain damage (for example by disconnecting an infected machine) and report to the right people. In larger organisations that means a security team; for serious cybercrime in Ghana, the Cyber Security Authority runs an incident reporting service on its official website. This section is also the doorway to the cybersecurity track if you want to go further.
+
+## A small example
+
+Fuseini is the only IT person at a rural bank branch in the Upper East. He notices that two staff who left months ago still have active email accounts, everyone shares one administrator password, and backups are copied to a drive that stays plugged in all the time. He writes a short, polite report to the manager with three fixes: close old accounts, give each admin their own login, and keep one backup copy unplugged and stored safely. The manager approves all three. No crisis was needed to make the branch safer.`,
+      practice_task_md: `**Goal:** do a basic security review of your own digital life, the same way you would for an office.
+
+1. List your important accounts: email, social media, MoMo, bank app, any work or school accounts.
+2. For each, note: is the password unique? Is two step verification on? Do you know the recovery phone or email is current?
+3. Check that your phone has a screen lock and that updates are installed.
+4. Check where your most important files and photos are backed up, if anywhere.
+5. Write three things you will fix this week, then fix at least one.
+
+**Done looks like:** a private checklist (never write actual passwords in it) and one improvement made. Then write a version of the checklist for a small office.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which Ghanaian law sets rules for handling personal data?",
+            options: [
+              "The Data Protection Act, 2012 (Act 843)",
+              "The Electricity Act",
+              "The Road Traffic Act",
+              "The Copyright Act only",
+            ],
+            answer_index: 0,
+            explanation: "Act 843 governs how organisations handle personal data in Ghana.",
+          },
+          {
+            prompt: "What does giving staff only the access their job needs help prevent?",
+            options: [
+              "Printer jams",
+              "Misuse and damage if an account is misused or taken over",
+              "Slow Wi-Fi",
+              "Power surges",
+            ],
+            answer_index: 1,
+            explanation: "Limited access limits harm from mistakes, misuse or stolen accounts.",
+          },
+          {
+            prompt: "In the Upper East example, what was risky about the backup drive?",
+            options: [
+              "It was too small",
+              "It was the wrong colour",
+              "It stayed plugged in all the time, so ransomware could reach it",
+              "It was stored in a safe",
+            ],
+            answer_index: 2,
+            explanation: "A permanently connected backup can be encrypted or lost along with the original.",
+          },
+          {
+            prompt: "Which body did the Cybersecurity Act, 2020 (Act 1038) establish?",
+            options: [
+              "The Electricity Company of Ghana",
+              "The Ghana Statistical Service",
+              "The National Communications Authority",
+              "The Cyber Security Authority",
+            ],
+            answer_index: 3,
+            explanation: "Act 1038 established the Cyber Security Authority.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "accounts-and-access": {
+      explanation_md: `## Why this matters
+
+Password resets and account problems are among the most common first line requests in any organisation. Ghanaian IT support adverts regularly name Microsoft 365, Active Directory, user account management and access control. Handled well, accounts keep data safe; handled carelessly, they are the easiest way in for attackers.
+
+## Central accounts
+
+Small shops may use separate accounts on each computer. Larger organisations manage accounts centrally so one sign in works everywhere and IT can control it from one place:
+
+* **Active Directory** runs on Windows servers inside the organisation and manages users, computers and groups.
+* **Microsoft Entra ID** (earlier called Azure AD) is Microsoft's cloud directory behind Microsoft 365 email, Teams and OneDrive.
+* **Google Workspace** has its own admin console for Gmail, Drive and other Google work apps.
+
+In each, you create users, put them in **groups** (such as "Accounts" or "Teachers") and give access to groups rather than to individuals. That makes changes quick and consistent.
+
+## Least privilege and the account lifecycle
+
+* **Least privilege.** Give people only the access their job needs. A receptionist does not need the finance folder. Even IT staff should use an ordinary account for daily work and a separate admin account only when needed.
+* **Joiners.** Create the account before day one with the right groups, and hand over first sign in details safely.
+* **Movers.** When someone changes role, remove old access as well as adding new.
+* **Leavers.** Disable the account on the last day, recover devices, and pass files and email to the manager as agreed.
+* **No shared logins.** Shared passwords mean nobody knows who did what and nobody can be removed cleanly.
+
+## Safe password resets
+
+Attackers often pretend to be a staff member who "forgot my password". Before resetting:
+
+1. Confirm identity using something already on record, such as calling back the phone number in the staff list, or asking the person's manager. A WhatsApp message from an unknown number is not proof.
+2. Set a temporary password and require the user to change it at next sign in.
+3. Never ask users for their passwords, and never send passwords in the same message as the username.
+
+## Strong sign ins
+
+* **Passphrases.** Long passwords made of several unrelated words are easier to remember and harder to guess than short complex ones. Use a different password for each important account.
+* **Password managers** store unique passwords securely.
+* **Two step verification (also called multi factor authentication, MFA)** asks for a second proof, such as a code from an app or a prompt on the phone, so a stolen password alone is not enough. Turn it on for email and admin accounts first.
+
+## A small example
+
+Amina is first line support at a school in Tamale. A message arrives on WhatsApp: "This is the bursar, reset my email password and send it here." The number is not in the staff list. Amina calls the bursar on the number on record. The bursar knows nothing about it. Amina reports the attempt and checks that two step verification is on for the bursar's account.`,
+      practice_task_md: `**Goal:** write the account procedures a small organisation needs.
+
+1. Imagine an NGO office in Bolgatanga with eight staff in three teams: programmes, finance and admin.
+2. Write a joiner, mover and leaver checklist: what IT does on each occasion.
+3. Write a safe password reset procedure in five steps or fewer.
+4. Make a simple table of folders (programmes, finance, HR, shared) and which group can open each, following least privilege.
+5. Turn on two step verification for your own personal email account if it is not already on, using the Google help page linked to this topic or your provider's help.
+
+**Done looks like:** three short procedures and an access table, plus two step verification on your own account. Never include real passwords in any of it.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is Microsoft Entra ID?",
+            options: [
+              "A type of printer",
+              "Microsoft's cloud directory behind Microsoft 365",
+              "A Linux command",
+              "A brand of router",
+            ],
+            answer_index: 1,
+            explanation: "Entra ID, earlier called Azure AD, manages cloud identities for Microsoft 365.",
+          },
+          {
+            prompt: "What does least privilege mean?",
+            options: [
+              "Giving people only the access their job needs",
+              "Giving everyone admin rights to save time",
+              "Using the shortest possible passwords",
+              "Letting only managers use computers",
+            ],
+            answer_index: 0,
+            explanation: "Least privilege limits access to what each role requires.",
+          },
+          {
+            prompt: "What should happen to a staff member's account on their last day?",
+            options: [
+              "Leave it active in case they return",
+              "Share it with their replacement",
+              "Change its name only",
+              "Disable it, and pass files and email to the manager as agreed",
+            ],
+            answer_index: 3,
+            explanation: "Leaver accounts should be disabled promptly to prevent misuse.",
+          },
+          {
+            prompt: "Someone on WhatsApp claims to be a staff member and asks for a password reset. What should you do?",
+            options: [
+              "Reset it immediately and send the password",
+              "Ignore all password requests forever",
+              "Confirm identity using contact details already on record",
+              "Ask them to send their old password",
+            ],
+            answer_index: 2,
+            explanation: "Verify identity through a trusted channel before any reset.",
+          },
+          {
+            prompt: "Why does two step verification help?",
+            options: [
+              "A stolen password alone is not enough to sign in",
+              "It makes passwords shorter",
+              "It speeds up the internet",
+              "It removes the need for any password",
+            ],
+            answer_index: 0,
+            explanation: "A second proof blocks attackers who only have the password.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "security-basics": {
+      explanation_md: `## Why this matters
+
+Most security incidents a support technician sees are not clever hacks. They are malware from a USB stick used in a print shop, a staff member who typed their email password into a fake page, a MoMo scam call, or a computer that missed months of updates. Ghanaian IT support adverts ask for antivirus management, patching, security awareness and protecting systems. Preventing these common problems and responding calmly when they happen is a core part of the job.
+
+## Know the threats
+
+* **Malware** is harmful software. Viruses and worms spread between files and machines. **Ransomware** locks files and demands payment. **Spyware** and keyloggers steal information. A common nuisance in Ghana is the "shortcut" malware on USB sticks that hides files and replaces them with shortcuts.
+* **Phishing** is a fake message that tries to make you click a link, open an attachment or give a password. It may look like it comes from a bank, a courier, Microsoft, or your own boss.
+* **Scams and impersonation** arrive by phone, SMS or WhatsApp: "I sent MoMo to you by mistake, please send it back", fake prize messages, or someone pretending to be IT and asking for a code. Real IT staff never need your password or verification codes.
+
+## Signs of phishing
+
+* Urgent or threatening language: "your account will be closed today".
+* A sender address or link that does not match the real organisation (hover or long press to see the true link before opening).
+* Unexpected attachments, especially compressed files or documents asking you to "enable content".
+* Requests for passwords, PINs or verification codes.
+* Spelling mistakes and greetings like "Dear customer" from a service that knows your name.
+
+## Prevention
+
+* **Updates.** Install operating system, browser and app updates promptly; many attacks use holes that already have fixes.
+* **Antivirus.** Windows includes Microsoft Defender. Keep it on and up to date and run a full scan when something seems wrong. One antivirus program is enough; two can clash.
+* **USB care.** Scan sticks before opening files. Avoid using office sticks in public print shops, or use a separate stick for that.
+* **Licensed software only.** Cracked programs often carry malware.
+* **Training.** Short, friendly reminders to staff work better than long lectures. Praise people who report suspicious messages.
+
+## When something goes wrong
+
+1. **Contain.** Disconnect the affected computer from the network (unplug the cable, turn off Wi-Fi), but do not switch it off if you may need to investigate.
+2. **Report** to your supervisor or security contact straight away. If a password was entered on a fake page, change it from a clean device and check two step verification.
+3. **Do not pay** ransoms or scammers.
+4. **Recover** from clean backups, then work out how it happened so it does not repeat.
+5. **Record** what happened, when and what you did. Serious cybercrime in Ghana can be reported to the Cyber Security Authority through its official website.
+
+## A small example
+
+Issahaku supports a clinic in Damongo. A nurse says all her files now end in a strange extension and a note demands payment. Issahaku unplugs the network cable at once, tells the manager, checks the other computers, and restores the nurse's files from the previous night's offline backup. Then he finds the cause: an attachment in a fake courier email. He runs a short session for staff on spotting fake messages.`,
+      practice_task_md: `**Goal:** build a phishing awareness poster for a Ghanaian office.
+
+1. Collect three examples of suspicious messages from your own SMS, WhatsApp or email (scams are common, so you may already have some). Remove any personal details.
+2. For each, list the warning signs from this lesson that it shows.
+3. Design a one page poster or WhatsApp image called "Stop, check, report" with five warning signs and what staff should do. Use a free design app or paper.
+4. Write a three step "what to do if you clicked" note for staff.
+
+**Done looks like:** an analysis of three real scam messages (with personal details removed) and a poster you could share in an office WhatsApp group.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does ransomware do?",
+            options: [
+              "Speeds up the computer",
+              "Locks files and demands payment",
+              "Cleans dust from fans",
+              "Backs up your phone",
+            ],
+            answer_index: 1,
+            explanation: "Ransomware encrypts files and demands money to unlock them.",
+          },
+          {
+            prompt: "Which is a common sign of phishing?",
+            options: [
+              "Urgent threats and a link that does not match the real organisation",
+              "A message from a colleague about lunch",
+              "A calendar invite you expected",
+              "A system update from Settings",
+            ],
+            answer_index: 0,
+            explanation: "Urgency and mismatched links are classic phishing signs.",
+          },
+          {
+            prompt: "A computer seems infected. What is the first thing to do?",
+            options: [
+              "Pay the ransom quickly",
+              "Email the file to everyone",
+              "Install a second antivirus program",
+              "Disconnect it from the network and report it",
+            ],
+            answer_index: 3,
+            explanation: "Containing the machine stops spread; then report straight away.",
+          },
+          {
+            prompt: "Someone claiming to be IT asks for your verification code. What should you know?",
+            options: [
+              "Real IT staff never need your password or verification codes",
+              "You must always share codes with IT",
+              "Codes are not important",
+              "Only managers have codes",
+            ],
+            answer_index: 0,
+            explanation: "Requests for codes or passwords are a sign of a scam.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    backups: {
+      explanation_md: `## Why this matters
+
+Hard drives fail, laptops are stolen from cars, phones fall into gutters, power surges kill machines and ransomware locks files. Every one of these is a disaster without a backup and an inconvenience with one. Ghanaian IT officer and support adverts list data backup and recovery, disaster recovery and business continuity. For a small business, a school or an NGO with donor reports, a tested backup can be the difference between a bad day and losing years of records.
+
+## The three copies rule
+
+A simple rule used widely in IT is often called 3 2 1:
+
+* **Three copies** of important data: the original and two backups.
+* **Two different kinds of storage**, for example the laptop's drive and an external drive, or an external drive and cloud storage.
+* **One copy kept somewhere else**, away from the office or offline, so fire, theft or ransomware cannot destroy every copy at once.
+
+An external drive that stays plugged in all the time is better than nothing, but ransomware can reach it. Unplug it after each backup, or rotate two drives.
+
+## What to back up
+
+Focus on what cannot be replaced: documents, spreadsheets, accounts records, photos, databases, email if it is stored only on the device, and settings for important systems. Programs and Windows itself can be reinstalled, so they matter less.
+
+## Cheap, practical options
+
+* **Cloud storage** such as Google Drive or Microsoft OneDrive keeps files synced and often keeps earlier versions. Watch data costs: let the first big upload run on Wi-Fi or with an off peak bundle.
+* **Windows backup tools** can copy folders to an external drive or OneDrive. File History keeps earlier versions of files on an external drive.
+* **Phones:** turn on Google backup for contacts, photos and settings, and back up WhatsApp chats from inside WhatsApp.
+* **External drives:** cheap and fast for large amounts. Label them, date them, store one away from the office.
+
+## Syncing is not the same as backup
+
+A synced folder copies changes everywhere, including deletions and ransomware damage. Good cloud services keep version history and a recycle bin, which helps, but you should know how long they keep them. Keep at least one copy that is not live synced.
+
+## Test the restore
+
+A backup you have never restored is a hope, not a plan. Every month or term, pick a few files and restore them to a different folder. Check they open. Write down how long a full restore would take.
+
+## A small example
+
+Wumpini supports a private school in Tamale. The bursar keeps fees records only on one laptop. Wumpini sets up three things: automatic sync of the records folder to the school's cloud storage, a weekly copy to an external drive that the head teacher takes home, and a monthly test where she restores one file. Months later the laptop is stolen. The bursar is working again on a borrowed laptop the same afternoon.`,
+      practice_task_md: `**Goal:** create and test a backup plan.
+
+1. Choose your own phone and, if you have one, a computer. List the data you could not bear to lose.
+2. Turn on Google backup on your phone (Settings, then Google, then Backup) and back up your WhatsApp chats. Use Wi-Fi or an off peak bundle for the first backup.
+3. Pick five important files or photos and restore them from your backup to a new location to prove it works.
+4. Write a one page backup plan for a small business using the three copies rule: what is backed up, where, how often, who is responsible and how restores are tested.
+
+**Done looks like:** backups switched on, a successful test restore, and a written plan you could give a shop or school owner.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does the three copies rule recommend?",
+            options: [
+              "Three copies, on two kinds of storage, with one kept elsewhere or offline",
+              "Three passwords for every account",
+              "Three printers in every office",
+              "Backing up three times a day to the same drive",
+            ],
+            answer_index: 0,
+            explanation: "3 2 1 means three copies, two types of storage, one away from the office.",
+          },
+          {
+            prompt: "Why is a backup drive that stays plugged in all the time risky?",
+            options: [
+              "It uses too much paper",
+              "It slows down Wi-Fi",
+              "Ransomware can reach and lock it too",
+              "It cannot store photos",
+            ],
+            answer_index: 2,
+            explanation: "Unplug or rotate drives so at least one copy is out of reach.",
+          },
+          {
+            prompt: "Why is syncing not the same as a backup?",
+            options: [
+              "Syncing only works at night",
+              "Synced folders also copy deletions and damage everywhere",
+              "Syncing deletes the cloud account",
+              "Syncing is illegal in Ghana",
+            ],
+            answer_index: 1,
+            explanation: "Sync copies every change, good or bad, so you also need a copy that is not live.",
+          },
+          {
+            prompt: "What turns a backup from a hope into a plan?",
+            options: [
+              "Buying a bigger drive",
+              "Never touching it",
+              "Telling staff it exists",
+              "Regularly testing that files can be restored",
+            ],
+            answer_index: 3,
+            explanation: "Only a tested restore proves the backup works.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
