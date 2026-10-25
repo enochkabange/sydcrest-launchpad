@@ -26,12 +26,12 @@ Researched and written on 25 October 2026 for issue #84.
 | S7 | Remote OK: Junior Front End Developer (PULSE, MENA) | https://remoteok.com/l/1135285 | 2026-10-25 | Public remote job board |
 | S8 | Minority Africa: Front End Developer | https://minorityafrica.org/job/front-end-developer/ | 2026-10-25 | NGO jobs page, 2022 advert (older signal) |
 | S9 | Himalayas: front end developer jobs open to Ghana | https://himalayas.app/jobs/countries/ghana/front-end-developer | 2026-10-25 | Public remote job board |
-| S10 | MDN Learn web development (Learning Area) | https://developer.mozilla.org/en-US/docs/Learn_web_development | 2026-10-25 | CC BY-SA 2.5 (MDN prose); topic list only was used |
+| S10 | MDN Learn web development (Learning Area) | https://developer.mozilla.org/en-US/docs/Learn_web_development | 2026-10-25 | CC BY-SA 2.5 or later for MDN prose, confirmed on MDN's attribution and licensing page (https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Attrib_copyright_license); topic list only was used |
 | S11 | O*NET OnLine: Web Developers 15-1254.00 | https://www.onetonline.org/link/summary/15-1254.00 | 2026-10-25 | US Dept of Labor, CC BY 4.0; skill names only |
 | S12 | ESCO occupation: webmaster (PDF export, ETF Open Space) | https://openspace.etf.europa.eu/system/files/2019-06/ESCO%20-%20Webmaster.pdf | 2026-10-25 | European Commission ESCO v1.0.3; skill names only. The live ESCO portal and API were unavailable on the day, so this export of the closest occupation was used as a proxy for "web developer" (ISCO 2513) |
-| S13 | web.dev Learn courses (HTML, CSS, Forms, Accessibility, Performance, Images, PWA) | https://web.dev/learn | 2026-10-25 | Google, CC BY 4.0 text; topic names only |
-| S14 | W3C WAI fundamentals and WCAG 2.2 quick reference | https://www.w3.org/WAI/fundamentals/ | 2026-10-25 | W3C document licence; official standard, used for accuracy checks |
-| S15 | react.dev Learn, typescriptlang.org docs, nextjs.org Learn, vitest.dev, playwright.dev, developer.chrome.com DevTools | (see resources.ts) | 2026-10-25 | Official documentation, used for accuracy checks only |
+| S13 | web.dev Learn course list | https://web.dev/learn | 2026-10-25 | Google; footer showed no content licence, so only course names were noted (HTML, CSS, JavaScript, Performance, Accessibility, Images, Design, Forms, PWA, Testing and others) |
+| S14 | W3C WAI: Accessibility fundamentals | https://www.w3.org/WAI/fundamentals/ | 2026-10-25 | W3C, permissive WAI material licence; used for topic names and as the pointer to WCAG |
+| S15 | Official docs: react.dev Learn, typescriptlang.org, nextjs.org Learn, vitest.dev, playwright.dev, Chrome DevTools docs, WCAG 2.2 quick reference | URLs as listed in src/content/roadmaps/resources.ts | not fetched this session | Known official references taken from resources.ts (checked by the outline author in October 2026); facts in lessons written from general knowledge of these tools, founder or reviewer should spot check |
 
 freeCodeCamp's /learn page did not render text for the fetch tool on the day, so it was not used as a topic signal.
 
@@ -109,8 +109,8 @@ Mix: 12 Ghana based (11 Accra, 1 Bolgatanga), 7 remote. Five are clearly entry o
   knowledge includes style sheet languages, web programming and quality assurance methodologies; optional knowledge
   includes JavaScript, TypeScript, World Wide Web Consortium standards, ICT debugging tools, ICT performance analysis
   methods, web analytics.
-* **web.dev Learn (S13):** separate courses exist for HTML, CSS, forms, accessibility, performance, images and PWA,
-  which supports giving forms, performance and offline their own nodes.
+* **web.dev Learn (S13):** separate courses exist for HTML, CSS, JavaScript, forms, accessibility, performance, images,
+  design, PWA and testing, which supports giving forms, performance, offline, design to code and testing their own nodes.
 
 ## What the adverts demanded that the draft outline lacked, and what changed
 
