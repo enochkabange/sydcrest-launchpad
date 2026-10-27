@@ -64,6 +64,8 @@ test("screenshots of key screens at 390, 1440 and 1920", async ({ page }, testIn
     ["dashboard", "/dashboard"],
     ["leaderboards", "/leaderboards"],
     ["profile", "/profile"],
+    ["experts-apply", "/experts/apply"],
+    ["expert", "/expert"],
     ["learn", `/learn/${roadmap.slug}/${roadmap.quizNode.slug}`],
   ] as [string, string][]) {
     await shoot(page, testInfo, name, path);
