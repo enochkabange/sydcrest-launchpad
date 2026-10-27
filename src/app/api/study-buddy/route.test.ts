@@ -128,6 +128,23 @@ describe("POST /api/study-buddy", () => {
     expect(supabase.rpc).not.toHaveBeenCalledWith("record_ai_tokens", expect.anything());
   });
 
+  it("runs the companion chat without a topic, offering the read only tools", async () => {
+    getCurrentUser.mockResolvedValue(learner);
+    vi.stubEnv("ANTHROPIC_API_KEY", "test-key");
+    const stream = fakeAnthropic();
+    const supabase = supabaseWithUsage(3);
+    createClient.mockResolvedValue(supabase);
+    const res = await POST(post({ messages: [{ role: "user", content: "What should I do next?" }] }));
+    expect(res.status).toBe(200);
+    expect(await res.text()).toBe("Hello");
+    const params = (stream.mock.calls[0] as unknown[])[0] as { tools: { name: string }[]; system: { text: string }[] };
+    expect(params.tools.map((t) => t.name)).toEqual(["my_next_steps", "suggest_mentors", "find_opportunities", "upcoming_events"]);
+    expect(params.system[1].text).toMatch(/companion/);
+    // No topic lookup happened.
+    expect(supabase.from).toHaveBeenCalledWith("ai_usage");
+    expect(supabase.from).not.toHaveBeenCalledWith("roadmap_nodes");
+  });
+
   it("returns 400 for a malformed body", async () => {
     getCurrentUser.mockResolvedValue(learner);
     vi.stubEnv("ANTHROPIC_API_KEY", "test-key");
