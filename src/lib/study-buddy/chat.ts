@@ -18,6 +18,11 @@ export type StudyBuddyClient = {
   messages: { stream(params: Anthropic.MessageStreamParams): ReplyStream };
 };
 
+/** Whether chat can run at all, so pages can show a friendly notice instead of a panel that only 503s. */
+export function isStudyBuddyConfigured(apiKey = process.env.ANTHROPIC_API_KEY): boolean {
+  return Boolean(apiKey);
+}
+
 /** Null when ANTHROPIC_API_KEY is missing; the route answers 503. */
 export function createStudyBuddyClient(apiKey = process.env.ANTHROPIC_API_KEY): StudyBuddyClient | null {
   if (!apiKey) return null;
@@ -58,7 +63,8 @@ export const CUT_OFF_TEXT = "\n\n(I stopped there to keep things short. Ask me t
 /**
  * Streams the reply as plain UTF 8 text. onFinish runs exactly once with
  * whatever usage the API reported, also when the stream fails or the learner
- * closes the panel mid reply, so every billed call is logged against the cap.
+ * closes the panel mid reply, so every billed call's tokens are logged. (The
+ * message itself was already counted against the cap before the call.)
  * It does not run if the API was never reached (no usage at all).
  */
 export function streamReply(

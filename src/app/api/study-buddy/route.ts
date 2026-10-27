@@ -1,8 +1,8 @@
 import { getCurrentUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { capStatus, LIMIT_MESSAGE } from "@/lib/study-buddy/cap";
+import { capStatus, LIMIT_MESSAGE, reservationStatus } from "@/lib/study-buddy/cap";
 import { buildRequestParams, createStudyBuddyClient, streamReply } from "@/lib/study-buddy/chat";
-import { getMessagesUsedToday, loadNodeContext, recordUsage } from "@/lib/study-buddy/data";
+import { getMessagesUsedToday, loadNodeContext, recordTokens, reserveMessage } from "@/lib/study-buddy/data";
 import { buildSystemPrompt } from "@/lib/study-buddy/prompt";
 import { parseStudyBuddyRequest } from "@/lib/study-buddy/request";
 import { routeMessage } from "@/lib/study-buddy/router";
@@ -10,6 +10,11 @@ import { routeMessage } from "@/lib/study-buddy/router";
 /**
  * POST {nodeId, messages} and get the tutor's reply streamed back as plain
  * text. Signed in learners only, within DAILY_MESSAGE_LIMIT a day.
+ *
+ * The cap is exact: the turn is reserved (counted) before the model is called,
+ * and only reservations up to the limit go ahead, so parallel requests cannot
+ * exceed it. Tokens are added to the same row when the reply ends. A turn that
+ * was reserved but failed before any reply still counts; counters only go up.
  *
  * Headers on success: X-Study-Buddy-Remaining (after this message),
  * X-Study-Buddy-Limit, X-Study-Buddy-Model.
@@ -40,22 +45,27 @@ export async function POST(request: Request) {
   const { nodeId, messages, latestUserMessage } = parsed.data;
 
   const supabase = await createClient();
+  // Cheap early refusal for a learner already at the limit; it does not count a message.
   const cap = capStatus(await getMessagesUsedToday(supabase, user.id));
   if (!cap.allowed) return fail(429, "limit_reached", LIMIT_MESSAGE, { remaining: 0, limit: cap.limit });
 
   const node = await loadNodeContext(supabase, nodeId);
   if (!node) return fail(404, "not_found", "We could not find that topic.");
 
+  // The authoritative check: reserve this turn, then decide from the count it returns.
+  const reserved = reservationStatus(await reserveMessage(supabase));
+  if (!reserved.allowed) return fail(429, "limit_reached", LIMIT_MESSAGE, { remaining: 0, limit: reserved.limit });
+
   const route = routeMessage(latestUserMessage);
   const params = buildRequestParams(route, buildSystemPrompt(node), messages);
-  const reply = streamReply(client, params, (usage) => recordUsage(supabase, usage));
+  const reply = streamReply(client, params, (usage) => recordTokens(supabase, usage));
 
   return new Response(reply, {
     headers: {
       "Content-Type": "text/plain; charset=utf-8",
       "Cache-Control": "no-store",
-      "X-Study-Buddy-Remaining": String(cap.remaining - 1),
-      "X-Study-Buddy-Limit": String(cap.limit),
+      "X-Study-Buddy-Remaining": String(reserved.remaining),
+      "X-Study-Buddy-Limit": String(reserved.limit),
       "X-Study-Buddy-Model": route.model,
     },
   });

@@ -738,6 +738,23 @@ export type Database = {
         }
         Returns: boolean
       }
+      record_ai_tokens: {
+        Args: { p_input_tokens?: number; p_output_tokens?: number }
+        Returns: {
+          day: string
+          input_tokens: number
+          messages: number
+          output_tokens: number
+          profile_id: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "ai_usage"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
       record_ai_usage: {
         Args: { p_input_tokens?: number; p_output_tokens?: number }
         Returns: {

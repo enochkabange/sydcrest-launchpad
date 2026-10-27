@@ -60,11 +60,22 @@ export async function loadNodeContext(supabase: Db, nodeId: string): Promise<Nod
   };
 }
 
-/** One message plus its tokens onto today's row, via the only writer allowed. */
-export async function recordUsage(supabase: Db, usage: TokenUsage) {
-  const { error } = await supabase.rpc("record_ai_usage", {
+/**
+ * Counts one message on today's row before the model is called, and returns
+ * the count after it. Run this before streaming so parallel requests cannot
+ * slip past the cap (see reservationStatus).
+ */
+export async function reserveMessage(supabase: Db): Promise<number> {
+  const { data, error } = await supabase.rpc("record_ai_usage", { p_input_tokens: 0, p_output_tokens: 0 });
+  if (error) throw new Error(`Could not reserve a Study Buddy message: ${error.message}`);
+  return data?.messages ?? 0;
+}
+
+/** Adds a finished reply's tokens to today's row without counting another message. */
+export async function recordTokens(supabase: Db, usage: TokenUsage) {
+  const { error } = await supabase.rpc("record_ai_tokens", {
     p_input_tokens: usage.inputTokens,
     p_output_tokens: usage.outputTokens,
   });
-  if (error) throw new Error(`Could not record Study Buddy usage: ${error.message}`);
+  if (error) throw new Error(`Could not record Study Buddy tokens: ${error.message}`);
 }
