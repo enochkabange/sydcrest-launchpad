@@ -6,6 +6,7 @@ import {
   featuredExperts,
   filtersHref,
   isFiltered,
+  matches,
   parseFilters,
   rankExperts,
   ratingLabel,
@@ -66,6 +67,26 @@ describe("toDirectoryExpert", () => {
     expect(e.offerTitles).toHaveLength(3);
     expect(e.averageRating).toBe(4.5);
     expect(e.verifiedSkills).toEqual([]);
+  });
+
+  it("fills verified skills from the view's verified_skills column (#165)", () => {
+    const e = toDirectoryExpert(
+      row({
+        verified_skills: [
+          { slug: "spreadsheets", name: "Spreadsheets", source: "assessment", issued_at: "2026-10-01T09:00:00Z" },
+          { slug: "sql", name: "SQL", source: "path_completion", issued_at: "2026-09-01T09:00:00Z" },
+          { slug: "bad", name: "Bad", source: "bought", issued_at: "2026-09-01T09:00:00Z" },
+        ],
+      }),
+    )!;
+    expect(e.verifiedSkills).toEqual(["Spreadsheets", "SQL"]);
+    expect(e.verifiedSkillBadges.map((b) => b.source)).toEqual(["assessment", "path_completion"]);
+  });
+
+  it("matches a skill filter and search on verified skills too", () => {
+    const e = expert({ skills: [] }, { verifiedSkills: ["SQL"] });
+    expect(matches(e, { ...NO_FILTERS, skill: "sql" })).toBe(true);
+    expect(matches(e, { ...NO_FILTERS, q: "sql" })).toBe(true);
   });
 
   it("drops a row without a slug", () => {
@@ -176,7 +197,7 @@ describe("ranking", () => {
     expect(rankExperts([x, y], { ...NO_FILTERS, sort: "newest" }).map((e) => e.slug)).toEqual(["y", "x"]);
   });
 
-  it("has a verified skill signal that boosts a match once #165 fills verifiedSkills", () => {
+  it("has a verified skill signal that boosts a match", () => {
     expect(RANK_SIGNALS.map((s) => s.id)).toContain("verifiedSkill");
     const plain = expert({ slug: "plain" });
     const verified = expert({ slug: "verified" }, { verifiedSkills: ["SQL"] });
