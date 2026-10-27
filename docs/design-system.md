@@ -215,27 +215,101 @@ reads the same and costs almost nothing.
 
 ## 8. Layout and navigation
 
-`AppShell` is the frame every signed-in screen sits inside. The responsive
-decision is made **once**, here, so no screen re-litigates it:
+### Navigation
+
+`src/app/(app)/layout.tsx` is the frame every signed-in screen sits inside. The
+responsive decision is made **once**, here, so no screen re-litigates it:
 
 | Breakpoint | Navigation |
 |---|---|
-| `< md` (768px) | **Bottom tab bar.** The majority device is a phone held one-handed. Primary navigation belongs under the thumb — not behind a hamburger in the top-left corner, the hardest pixel on a phone to reach. |
+| `< md` (768px) | **Bottom tab bar.** The majority device is a phone held one-handed. Primary navigation belongs under the thumb, not behind a hamburger in the top-left corner, the hardest pixel on a phone to reach. |
 | `≥ md` | **Persistent sidebar.** Space exists, so spend it on orientation rather than hiding navigation behind a click. |
 
 **There is no hamburger menu at any breakpoint.** Every primary destination is
 always one tap away. The tab bar carries `env(safe-area-inset-bottom)` so it
 clears the iOS home indicator, and `<main>` carries matching bottom padding so
-content is never trapped underneath it.
+content is never trapped underneath it. Accessibility built into the shell: a
+skip link as the first tab stop, proper `header` / `nav` / `main` landmarks,
+and `aria-current="page"` on the active destination.
 
-`Page` holds the one-per-screen `h1`, an optional eyebrow for context (which
-week, which cohort) and a slot for page actions. `width="reading"` narrows the
-column for lesson screens. `PageSection` groups runs of cards under a
-subheading.
+### Desktop composition (issue #154)
 
-Accessibility built into the shell: a skip link as the first tab stop, proper
-`header` / `nav` / `main` landmarks, and `aria-current="page"` on the active
-destination.
+A laptop is not a big phone. **Every screen defines its lg (1024px) and xl
+(1280px) composition**, while the phone layout under md keeps one column, 44px
+targets and the same reading order. Three rules:
+
+1. **Containers.** Content sits in `page` width. Narrower only for reading text.
+2. **Type scale.** Headings and leads use the scale below, never a raw
+   `text-3xl` plus breakpoint overrides.
+3. **Compose, do not stretch.** Use the primitives below so side by side
+   content, rails and grids appear at lg and xl.
+
+#### Containers
+
+Tokens in `tokens.css` (`--container-*`), utilities `max-w-page`,
+`max-w-wide`, `max-w-reading`.
+
+| Width | Max | Use |
+|---|---|---|
+| `page` | 1280px | Default for every screen, marketing and app. |
+| `wide` | 1440px | A full width band that holds a large grid or a map. |
+| `reading` | 70ch | Only long running text: a lesson, a topic explanation, legal pages, an intro paragraph. Never a whole screen. |
+
+#### Type scale
+
+Utilities in `tokens.css` (`@utility text-*`). The first value is the phone
+size and equals what each role used before the scale existed, so phones did
+not change.
+
+| Utility | Phone | md | lg | xl | Use |
+|---|---|---|---|---|---|
+| `text-display` | 48 | 60 | 64 | 76 | The one home hero headline |
+| `text-h1` | 48 | 48 | 56 | 60 | Marketing page titles (`PageHeader`) |
+| `text-h2` | 28 | 36 | 40 | 44 | Marketing section headings |
+| `text-h3` | 18 | 18 | 20 | 22 | Card titles, form legends |
+| `text-title` | 36 | 40 | 40 | 48 | Signed in page titles; roadmap and topic titles |
+| `text-subtitle` | 22 | 22 | 24 | 28 | Signed in section headings |
+| `text-lead` | 18 | 18 | 20 | 22 | The paragraph under a title |
+| `text-body` | 16 | 16 | 16 | 17 | Body copy in marketing cards |
+
+Signed in screens sit beside navigation, so their headings are one rung
+quieter (`title`, `subtitle`) than marketing (`h1`, `h2`). Variants work
+(`lg:text-h3`) for a heading that moves into a narrow rail. Small UI text
+(`text-sm`, `text-xs`) is unchanged at every width.
+
+#### Primitives (`src/components/ui/layout.tsx`)
+
+Server safe, no client code. Keep this API small; extend it here before
+inventing a one off grid in a screen.
+
+| Primitive | Props | Behaviour |
+|---|---|---|
+| `Container` | `width?: "page" \| "wide" \| "reading"` (default `page`), `as?`, `className?` | Centres with the standard gutters (16px phone, 32px from md). Emits `data-container`, which the e2e width check uses. |
+| `SplitHero` | `children` (words), `visual`, `className?` | Stacked, words first, below lg. From lg a 7:5 grid with the visual on the right. Use for heroes and page headers with facts. |
+| `SectionGrid` | `cols: 2 \| 3 \| 4`, `as?`, `className?` | A known number of peers. One column on phones. `2` and `3` take their columns from md; `4` is 2 columns from sm and 4 from lg. |
+| `AutoGrid` | `min?: "sm" \| "md" \| "lg"` (14, 18, 22rem), `as?`, `className?` | Cards of unknown count: as many columns as fit at the minimum width. One column on phones. |
+| `MainWithRail` | `rail`, `railLabel`, `railFirst?`, `sticky?`, `spaced?` | Main column plus a right `<aside>` rail, 320px at lg and 360px at xl. Below lg they stack in DOM order (`railFirst` puts the rail on top on phones, for filters). `spaced={false}` when children carry their own margins. |
+| `DataTable<T>` | `caption`, `columns: Column<T>[]`, `rows`, `rowKey`, `rowClassName?` | A real `<table>` from md; one compact line per row on phones, where columns with `phone: "hide"` drop out. One element tree for both. Give one cell's link `rowLinkClass` to make the whole row the target. |
+
+`Column<T>` is `{ header, cell: (row) => ReactNode, align?: "start" | "end", phone?: "show" | "hide", className? }`.
+Use `align: "end"` for numbers.
+
+#### Patterns
+
+- **Marketing.** `PageHeader` (with `aside` it becomes a split hero) and
+  `Section` (`layout="split"` puts the heading and intro in a left column
+  beside the content from lg) from `src/components/marketing/section.tsx`
+  already use `Container` and the type scale.
+- **Dashboard and other app home screens.** `MainWithRail`: the thing to do
+  next in the main column, context (path, plan, leaderboard, community) in the
+  rail. Each rail card is its own `<Suspense>` island.
+- **Lists of people or records.** `DataTable` plus a rail for filters.
+- **Forms.** A form never spans 1280px. Admin editors put the form in one
+  column and the record (nodes, links) in another from lg; auth screens split
+  form and brand panel from lg.
+- **Empty states** stay honest and still fill their slot: a bordered or sunken
+  card the width of its column with what is coming and one action, never a
+  short line stranded in a wide space.
 
 ---
 
