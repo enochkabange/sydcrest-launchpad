@@ -291,11 +291,13 @@ inventing a one off grid in a screen.
 | `SplitHero` | `children` (words), `visual`, `className?` | Stacked, words first, below lg. From lg a 7:5 grid with the visual on the right. Use for heroes and page headers with facts. |
 | `SectionGrid` | `cols: 2 \| 3 \| 4`, `as?`, `className?` | A known number of peers. One column on phones. `2` and `3` take their columns from md; `4` is 2 columns from sm and 4 from lg. |
 | `AutoGrid` | `min?: "sm" \| "md" \| "lg"` (14, 18, 22rem), `as?`, `className?` | Cards of unknown count: as many columns as fit at the minimum width. One column on phones. |
-| `MainWithRail` | `rail`, `railLabel`, `railFirst?`, `sticky?`, `spaced?` | Main column plus a right `<aside>` rail, 320px at lg and 360px at xl. Below lg they stack in DOM order (`railFirst` puts the rail on top on phones, for filters). `spaced={false}` when children carry their own margins. |
+| `MainWithRail` | `rail`, `railLabel`, `railFirst?`, `sticky?`, `spaced?`, `railFrom?: "always" \| "lg"` | Main column plus a right `<aside>` rail, 320px at lg and 360px at xl. Below lg they stack in DOM order (`railFirst` puts the rail on top on phones, for filters). `spaced={false}` when children carry their own margins. `railFrom="lg"` hides the rail below lg, for a rail that only summarises what the phone tab bar already reaches. |
 | `DataTable<T>` | `caption`, `columns: Column<T>[]`, `rows`, `rowKey`, `rowClassName?` | A real `<table>` from md; one compact line per row on phones, where columns with `phone: "hide"` drop out. One element tree for both. Give one cell's link `rowLinkClass` to make the whole row the target. |
 
-`Column<T>` is `{ header, cell: (row) => ReactNode, align?: "start" | "end", phone?: "show" | "hide", className? }`.
-Use `align: "end"` for numbers.
+`Column<T>` is `{ header, cell: (row) => ReactNode, align?: "start" | "end", phone?: "show" | "hide" | "only", className? }`.
+Use `align: "end"` for numbers. `phone: "only"` is a combined cell for the
+phone line (a score with its unit) that the table drops from md, where its
+parts have their own columns. `rowLinkClass` goes on the one link in a row.
 
 #### Patterns
 

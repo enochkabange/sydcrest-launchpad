@@ -85,16 +85,16 @@ export function StartQuiz() {
       <Question legend={legend}>
         {/* One column on phones; side by side from lg so a laptop shows every option at a glance. */}
         <div className="grid gap-3 lg:grid-cols-2">
-        {options.map((o) => (
-          <OptionCard
-            key={o.value}
-            type="radio"
-            name={key}
-            option={o}
-            checked={draft[key] === o.value}
-            onChange={() => setDraft((d) => ({ ...d, [key]: o.value }))}
-          />
-        ))}
+          {options.map((o) => (
+            <OptionCard
+              key={o.value}
+              type="radio"
+              name={key}
+              option={o}
+              checked={draft[key] === o.value}
+              onChange={() => setDraft((d) => ({ ...d, [key]: o.value }))}
+            />
+          ))}
         </div>
       </Question>
     );
@@ -203,53 +203,53 @@ export function StartQuiz() {
 
       <div className="flex min-w-0 flex-col gap-6">
 
-      {step === 0 && (
-        <Question legend="What sounds interesting to you?" hint="Pick as many as you like.">
-          {[...INTEREST_GROUPS, undefined].map((group) => (
-            <div key={group ?? "other"} className="flex flex-col gap-2">
-              {group && <h3 className="mt-2 text-sm font-semibold text-content-2">{group}</h3>}
-              <div className={group ? "grid gap-3 md:grid-cols-2 xl:grid-cols-3" : "flex flex-col gap-3"}>
-                {INTERESTS.filter((o: InterestOption) => o.group === group).map((o) => (
-                  <OptionCard
-                    key={o.value}
-                    type="checkbox"
-                    name="interests"
-                    option={o}
-                    checked={draft.interests.includes(o.value)}
-                    onChange={() => toggleInterest(o.value)}
-                  />
-                ))}
+        {step === 0 && (
+          <Question legend="What sounds interesting to you?" hint="Pick as many as you like.">
+            {[...INTEREST_GROUPS, undefined].map((group) => (
+              <div key={group ?? "other"} className="flex flex-col gap-2">
+                {group && <h3 className="mt-2 text-sm font-semibold text-content-2">{group}</h3>}
+                <div className={group ? "grid gap-3 md:grid-cols-2 xl:grid-cols-3" : "flex flex-col gap-3"}>
+                  {INTERESTS.filter((o: InterestOption) => o.group === group).map((o) => (
+                    <OptionCard
+                      key={o.value}
+                      type="checkbox"
+                      name="interests"
+                      option={o}
+                      checked={draft.interests.includes(o.value)}
+                      onChange={() => toggleInterest(o.value)}
+                    />
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
-        </Question>
-      )}
-      {step === 1 && (
-        <>
-          {radios("confidence", "How comfortable are you with a phone or computer for learning?", CONFIDENCE)}
-          {radios("experience", "Have you learned any tech skills before?", EXPERIENCE)}
-        </>
-      )}
-      {step === 2 && radios("goal", "What do you want most from learning?", GOALS)}
-      {step === 3 && radios("hours", "How much time can you give each week?", HOURS)}
-      {step === 4 && (
-        <>
-          {radios("device", "What will you learn on?", DEVICES)}
-          {radios("data", "How is your internet?", DATA)}
-        </>
-      )}
-
-      {error && <Alert tone="danger">{error}</Alert>}
-
-      <div className="flex gap-3">
-        {step > 0 && (
-          <Button variant="secondary" onClick={() => { setError(null); setStep(step - 1); }}>
-            Back
-          </Button>
+            ))}
+          </Question>
         )}
-        <Button type="submit" className="flex-1 lg:max-w-xs" disabled={pending}>
-          {step < STEPS.length - 1 ? "Next" : pending ? "Building your path…" : "See my path"}
-        </Button>
+        {step === 1 && (
+          <>
+            {radios("confidence", "How comfortable are you with a phone or computer for learning?", CONFIDENCE)}
+            {radios("experience", "Have you learned any tech skills before?", EXPERIENCE)}
+          </>
+        )}
+        {step === 2 && radios("goal", "What do you want most from learning?", GOALS)}
+        {step === 3 && radios("hours", "How much time can you give each week?", HOURS)}
+        {step === 4 && (
+          <>
+            {radios("device", "What will you learn on?", DEVICES)}
+            {radios("data", "How is your internet?", DATA)}
+          </>
+        )}
+
+        {error && <Alert tone="danger">{error}</Alert>}
+
+        <div className="flex gap-3">
+          {step > 0 && (
+            <Button variant="secondary" onClick={() => { setError(null); setStep(step - 1); }}>
+              Back
+            </Button>
+          )}
+          <Button type="submit" className="flex-1 lg:max-w-xs" disabled={pending}>
+            {step < STEPS.length - 1 ? "Next" : pending ? "Building your path…" : "See my path"}
+          </Button>
       </div>
       </div>
     </form>

@@ -180,8 +180,8 @@ export type Column<T> = {
 
 /**
  * Tabular content as a real table from md, and as one compact line per row
- * on phones (columns marked `phone: "hide"` drop out; the header row is kept
- * for screen readers only). One element tree for both, so long lists are not
+ * on phones (columns marked `phone: "hide"` drop out, and so does the header
+ * row, as in a plain list). One element tree for both, so long lists are not
  * rendered twice. Make a row clickable by giving one cell a link with
  * `rowLinkClass`: its hit area stretches over the whole row.
  */
@@ -202,7 +202,7 @@ export function DataTable<T>({
     <div className="overflow-hidden rounded-lg border border-line">
       <table className="block w-full text-left md:table">
         <caption className="sr-only">{caption}</caption>
-        <thead className="sr-only bg-surface-sunken text-sm text-content-2 md:not-sr-only md:table-header-group">
+        <thead className="hidden bg-surface-sunken text-sm text-content-2 md:table-header-group">
           <tr>
             {columns.map((c) => (
               <th

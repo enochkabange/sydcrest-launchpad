@@ -38,33 +38,33 @@ async function NodeEditor({ params }: { params: Promise<{ id: string; nodeId: st
       <h1 className="text-title text-content">{node.title}</h1>
       {/* One column on phones. From lg the node's fields sit beside its links. */}
       <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:items-start lg:gap-10 xl:gap-12">
-      <div className="flex flex-col gap-6">
-      <NodeForm roadmapId={roadmap.id} parents={parents} node={node} />
-      </div>
+        <div className="flex flex-col gap-6">
+          <NodeForm roadmapId={roadmap.id} parents={parents} node={node} />
+        </div>
 
-      <section className="flex flex-col gap-4 border-t border-line pt-6 lg:border-t-0 lg:pt-0">
-        <h2 className="text-subtitle text-content">Links</h2>
-        {resources.length === 0 && <p className="text-content-2">No links on this node yet.</p>}
-        <ul className="flex flex-col gap-4">
-          {sortSiblings(resources).map((r) => (
-            <li key={r.id} className="flex flex-col gap-3 rounded-lg border border-line p-4">
-              <div className="flex flex-wrap items-center gap-2">
-                <span className="font-semibold text-content">{r.label}</span>
-                <Badge tone={r.is_active ? "success" : "danger"}>{r.is_active ? "Working" : "Broken"}</Badge>
-              </div>
-              <ResourceForm nodeId={node.id} resource={r} />
-              <form action={deleteResource}>
-                <input type="hidden" name="id" value={r.id} />
-                <Button type="submit" variant="ghost" className="text-danger-fg">
-                  Delete link
-                </Button>
-              </form>
-            </li>
-          ))}
-        </ul>
-        <div className="flex flex-col gap-3 rounded-lg border border-line p-4">
-          <h3 className="text-h3 text-content">Add a link</h3>
-          <ResourceForm nodeId={node.id} />
+        <section className="flex flex-col gap-4 border-t border-line pt-6 lg:border-t-0 lg:pt-0">
+          <h2 className="text-subtitle text-content">Links</h2>
+          {resources.length === 0 && <p className="text-content-2">No links on this node yet.</p>}
+          <ul className="flex flex-col gap-4">
+            {sortSiblings(resources).map((r) => (
+              <li key={r.id} className="flex flex-col gap-3 rounded-lg border border-line p-4">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="font-semibold text-content">{r.label}</span>
+                  <Badge tone={r.is_active ? "success" : "danger"}>{r.is_active ? "Working" : "Broken"}</Badge>
+                </div>
+                <ResourceForm nodeId={node.id} resource={r} />
+                <form action={deleteResource}>
+                  <input type="hidden" name="id" value={r.id} />
+                  <Button type="submit" variant="ghost" className="text-danger-fg">
+                    Delete link
+                  </Button>
+                </form>
+              </li>
+            ))}
+          </ul>
+          <div className="flex flex-col gap-3 rounded-lg border border-line p-4">
+            <h3 className="text-h3 text-content">Add a link</h3>
+            <ResourceForm nodeId={node.id} />
         </div>
       </section>
       </div>

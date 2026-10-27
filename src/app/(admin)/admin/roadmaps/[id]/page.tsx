@@ -99,23 +99,23 @@ async function RoadmapEditor({ params }: { params: Promise<{ id: string }> }) {
 
       {/* One column on phones. From lg the node tree and the roadmap details sit side by side. */}
       <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-start lg:gap-10 xl:gap-12">
-      <section className="flex flex-col gap-4 border-t border-line pt-6">
-        <h2 className="text-subtitle text-content">Nodes</h2>
-        {nodes.length ? (
-          <NodeTree roadmapId={roadmap.id} nodes={childrenByParent(nodes)} parent="" />
-        ) : (
-          <p className="text-content-2">No nodes yet. Add the first section below.</p>
-        )}
-        <div className="flex flex-col gap-4 rounded-lg border border-line p-4">
-          <h3 className="text-h3 text-content">Add a node</h3>
-          <NodeForm roadmapId={roadmap.id} parents={parents} />
-        </div>
-      </section>
+        <section className="flex flex-col gap-4 border-t border-line pt-6">
+          <h2 className="text-subtitle text-content">Nodes</h2>
+          {nodes.length ? (
+            <NodeTree roadmapId={roadmap.id} nodes={childrenByParent(nodes)} parent="" />
+          ) : (
+            <p className="text-content-2">No nodes yet. Add the first section below.</p>
+          )}
+          <div className="flex flex-col gap-4 rounded-lg border border-line p-4">
+            <h3 className="text-h3 text-content">Add a node</h3>
+            <NodeForm roadmapId={roadmap.id} parents={parents} />
+          </div>
+        </section>
 
-      <section className="flex flex-col gap-4 border-t border-line pt-6">
-        <h2 className="text-subtitle text-content">Details</h2>
-        <RoadmapForm roadmap={roadmap} />
-      </section>
+        <section className="flex flex-col gap-4 border-t border-line pt-6">
+          <h2 className="text-subtitle text-content">Details</h2>
+          <RoadmapForm roadmap={roadmap} />
+        </section>
       </div>
     </>
   );

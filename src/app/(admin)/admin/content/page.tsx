@@ -48,20 +48,20 @@ async function ContentAdmin() {
       {!hasDb && <Alert tone="info">Content writes are off: SUPABASE_SECRET_KEY is not set.</Alert>}
       {/* Stacked on phones; Generate and Collect side by side from lg. */}
       <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:items-start">
-      <section className="flex flex-col gap-4 rounded-lg border border-line bg-surface p-4 md:p-6">
-        <h2 className="text-subtitle text-content">Generate</h2>
-        <p className="text-content-2">
-          Sends each node to the Batch API with {contentModel()} for an explanation, a practice task and a quiz of three
-          to five questions. Results are checked before anything is saved. Review the content before publishing a
-          roadmap.
-        </p>
-        <GenerateForm roadmaps={roadmaps ?? []} />
-      </section>
-      <section className="flex flex-col gap-4 rounded-lg border border-line bg-surface p-4 md:p-6">
-        <h2 className="text-subtitle text-content">Collect</h2>
-        <p className="text-content-2">Saves the results of a finished batch. Collecting the same batch twice is safe.</p>
-        <CollectForm batches={batches} />
-      </section>
+        <section className="flex flex-col gap-4 rounded-lg border border-line bg-surface p-4 md:p-6">
+          <h2 className="text-subtitle text-content">Generate</h2>
+          <p className="text-content-2">
+            Sends each node to the Batch API with {contentModel()} for an explanation, a practice task and a quiz of three
+            to five questions. Results are checked before anything is saved. Review the content before publishing a
+            roadmap.
+          </p>
+          <GenerateForm roadmaps={roadmaps ?? []} />
+        </section>
+        <section className="flex flex-col gap-4 rounded-lg border border-line bg-surface p-4 md:p-6">
+          <h2 className="text-subtitle text-content">Collect</h2>
+          <p className="text-content-2">Saves the results of a finished batch. Collecting the same batch twice is safe.</p>
+          <CollectForm batches={batches} />
+        </section>
       </div>
     </>
   );
