@@ -1503,7 +1503,7 @@ Many problems can be fixed with a few basic checks. These are often called first
 
 * **Network:** Is mobile data or wifi on? Does a web page load? Is the signal weak in their area?
 * **App version:** Is the app updated? Old versions sometimes stop working.
-* **Account status:** Is the account active, blocked, unverified, or waiting for KYC documents?
+* **Account status:** Is the account active, blocked, or still waiting for the customer's ID checks (often called KYC, short for "know your customer")?
 * **Recent changes:** New phone, new SIM, changed password, low storage, phone date and time wrong.
 * **Restart:** Close and reopen the app, or restart the device. Simple, but it often works.
 
@@ -1818,7 +1818,7 @@ Fraudsters often pretend to be customer service. Learn the common patterns so yo
 
 * **The fake reversal.** Someone sends a message that looks like a payment confirmation, then calls saying they sent money by mistake and asks for it back. The "payment" never arrived. Always tell customers to check their actual balance, not a message.
 * **The fake agent.** A caller claims to be from the provider, says the account will be blocked and asks for a PIN or code.
-* **The SIM or account takeover.** A fraudster tries to change the phone number or email on someone's account. That is why changes to contact details need extra checks.
+* **The SIM or account takeover.** A fraudster tries to get a replacement SIM for the customer's number, or to change the phone number or email on their account, so that codes and alerts go to the fraudster. That is why SIM replacements and changes to contact details need extra checks.
 * **Fake support pages** on social media asking customers to message a private number.
 
 Agents can be targeted too, with requests to look up someone's details "as a favour" or pressure to skip checks. Never do this, and report it. The Bank of Ghana regulates payment services and Ghana's Cyber Security Authority gives public advice on scams; your employer's process comes first, but both are official places to learn more.
@@ -2087,7 +2087,7 @@ Issahaku works on phone support for an invented internet provider. His handling 
 
 ## The law in simple words
 
-Ghana's Data Protection Act, 2012 (Act 843) sets rules for how organisations collect, use and store personal data. The Data Protection Commission oversees it. In simple words, the law expects organisations to collect only what they need for a clear purpose, keep it accurate, keep it secure, and use it only for that purpose. Customers also have rights, such as asking what information a company holds about them. Your employer will have policies that put the law into practice. Follow them, and ask when unsure.
+Ghana's Data Protection Act, 2012 (Act 843) sets rules for how organisations collect, use and store personal data. The Data Protection Commission oversees it. In simple words, the law expects organisations to collect only what they need for a clear purpose, keep it accurate, keep it secure, and use it only for that purpose. Customers also have rights, such as asking what information a company holds about them. A new data protection bill has been proposed to replace Act 843, so check the Commission's website for the current law. Your employer will have policies that put the law into practice. Follow them, and ask when unsure.
 
 ## Safe habits for agents
 
@@ -2203,7 +2203,7 @@ Speak from a relaxed throat rather than shouting. Use a headset at a comfortable
 
 ## Ask for help early
 
-Signs you may be under too much stress include trouble sleeping, feeling tense all the time, losing interest in things you enjoy, headaches, or dreading every shift. If you notice these, talk to someone you trust: your team leader, a colleague, family, a religious leader or a health worker. Many employers have support for staff wellbeing. Asking early is a strength, not a weakness. If you ever feel unsafe or overwhelmed, seek help from a health professional straight away.
+Signs you may be under too much stress include trouble sleeping, feeling tense all the time, losing interest in things you enjoy, headaches, or dreading every shift. If you notice these, talk to someone you trust: your team leader, a colleague, family, a religious leader or a health worker. Many employers have support for staff wellbeing. Asking early is a strength, not a weakness. If you ever feel overwhelmed or have thoughts of harming yourself, speak to a health worker straight away or go to the nearest clinic or hospital.
 
 ## A worked example
 
@@ -2477,7 +2477,7 @@ Abdul-Rahman from Damongo spends two weekends building his portfolio. He invents
 * **National service placements.** Some service personnel are posted to customer service, front desk or call roles, which can become a first reference.
 * **Part time and shift chat roles**, sometimes remote, for companies that need cover in the evenings or at weekends.
 * **Remote support teams** serving customers in other countries, which usually need a reliable computer, headset and stable internet.
-* **Free training programmes.** Some organisations run free customer service training, sometimes with job placement support. Generation Ghana's Digital Customer Service programme is one example. Always check current eligibility and dates on the programme's official page.
+* **Free training programmes.** Some organisations run free customer service training, sometimes with job placement support. Generation Ghana's Digital Customer Service programme is one example. Programmes often accept people from certain regions or age groups only, so always check current eligibility, location and dates on the programme's official page.
 
 Look on Ghanaian job boards in the customer service category, on company careers pages, and through your hub, school or church networks.
 
@@ -2539,13 +2539,13 @@ Mariama in Tamale sees a WhatsApp message offering a "remote customer care job" 
           {
             prompt: "What should you check about a free training programme before applying?",
             options: [
-              "Current eligibility and dates on the programme's official page",
+              "Current eligibility, location and dates on the programme's official page",
               "Whether a friend has heard of it",
               "Only the programme's social media comments",
               "Nothing; all programmes accept everyone",
             ],
             answer_index: 0,
-            explanation: "The lesson says always check current eligibility and dates on the official page.",
+            explanation: "The lesson says always check current eligibility, location and dates on the official page, because some programmes only accept people from certain regions.",
           },
           {
             prompt: "What should you do if you meet most but not all requirements in an advert?",

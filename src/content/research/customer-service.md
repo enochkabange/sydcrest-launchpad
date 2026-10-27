@@ -21,7 +21,7 @@ company, retail and hospitality, and remote support firms serving overseas clien
 catalogue (`Planning/12_TRACK_CATALOGUE.md`) lists Generation Ghana's free 8 week online
 Digital Customer Service programme as the main local training route and Customer Service and
 Support as a live Jobberman category. The outline is designed so a learner can prepare for
-programmes like that and for entry roles directly, mostly on a phone.
+programmes like that and for entry roles directly, on a phone or a computer.
 
 Field category `business` (best registered fit: support work sits in operations and customer
 experience teams rather than software, marketing or data).
@@ -44,6 +44,9 @@ experience teams rather than software, marketing or data).
 | C1 | Generation Ghana: Digital Customer Service programme page | https://ghana.generation.org/digital-customer-service/ | 2026-10-27 | Programme page; topic keywords only, not openly licensed |
 | C2 | HubSpot Academy: Customer Service course page | https://academy.hubspot.com/courses/customer-service | 2026-10-27 | Free course catalogue page (existence checked; course needs a free account) |
 | D1 | Data Protection Commission, Ghana | https://dpc.gov.gh/ | 2026-10-27 | Official regulator site |
+| D2 | Business and Financial Times: Understanding the Data Protection Bill, 2025 (bill proposing to repeal Act 843; not yet law when reviewed) | https://thebftonline.com/2025/11/21/understanding-the-data-protection-bill-2025-key-highlights-for-businesses-and-individuals/ | 2026-10-27 | News article, fact check only |
+| W1 | WhatsApp Business app product page (business profile, greeting and away messages) | https://whatsappbusiness.com/products/business-app/ | 2026-10-27 | Official product page, fact check only |
+| W2 | WhatsApp blog: WhatsApp Business web and desktop features (labels, quick replies) | https://blog.whatsapp.com/celebrating-one-year-of-whats-app-business-with-new-web-and-desktop-features | 2026-10-27 | Official blog, fact check only |
 | S10 | GhanaCareers: Customer Service Representative at an air conditioning service firm, Adenta, snippet | https://ghanacareers.com/job/customer-service-representative-at-cool-guy-air-conditioning-service | 2026-10-27 | Search result snippet only |
 | S11 | GhanaCareers: Call Centre Agent at a recruitment consultancy, Accra, snippet | https://ghanacareers.com/?p=62244 | 2026-10-27 | Search result snippet only |
 | S12 | Jobberman: Customer Service and App Support Agent, Lashibi, snippet; URL now lands on the category page | https://www.jobberman.com.gh/listings/customer-service-app-support-agent-q20p9v | 2026-10-27 | Search result snippet only (salary ignored) |
@@ -191,3 +194,12 @@ does not promise outcomes.
   time (such as "by 4pm"), it is a promise made inside an invented scenario.
 * Practice tasks use invented customer data only and need just a notes app, a free
   spreadsheet, a voice recorder and a browser.
+
+## Review notes (independent content review, 27 October 2026)
+
+* Act 843 is still the law in force; a Data Protection Bill, 2025 proposing to repeal it had not
+  passed when checked (D2), so the data lesson now tells learners to check the Commission's site.
+* Generation Ghana's programme page (C1) still lists eligibility limited to Greater Accra and
+  partly dated intake text, so the lesson now tells learners to check location as well.
+* WhatsApp Business features named in the lessons (business profile, greeting and away
+  messages, quick replies, labels) were checked against W1 and W2.
