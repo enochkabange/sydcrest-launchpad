@@ -1,4 +1,17 @@
+import { loadEnvConfig } from "@next/env";
 import { defineConfig, devices } from "@playwright/test";
+
+// The app under test reads the same env files, so check them before any test
+// can create accounts or rows somewhere real.
+loadEnvConfig(process.cwd());
+const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
+const supabaseHost = URL.canParse(supabaseUrl) ? new URL(supabaseUrl).hostname : "";
+if (!["127.0.0.1", "localhost", "[::1]"].includes(supabaseHost)) {
+  throw new Error(
+    `E2E must run against the local Supabase stack, but NEXT_PUBLIC_SUPABASE_URL points at "${supabaseHost || "nothing"}". ` +
+      "Run `supabase start` and use its URL and keys (for example in .env.test.local).",
+  );
+}
 
 /**
  * End to end tests against a production build of the app and the LOCAL
