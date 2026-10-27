@@ -84,7 +84,7 @@ async function FunnelTable() {
  */
 export default function FunnelPage() {
   return (
-    <div className="mx-auto flex w-full max-w-5xl flex-col gap-6 px-4 py-8">
+    <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-2">
         <h1 className="text-3xl text-content">Funnel</h1>
         <p className="text-content-2">
