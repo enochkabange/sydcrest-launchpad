@@ -1,7 +1,8 @@
 # Research: Social Media Management track (`social-media-management`)
 
-Tier B outline (issue #96). Researched and written 27 October 2026. Outline only: lessons
-show as coming soon. Everything in `src/content/roadmaps/social-media-management.ts` is
+Tier B outline (issue #96), researched 27 October 2026. Lessons written 27 October 2026
+(issue #198) in `src/content/roadmaps/content/social-media-management.content.ts`; see
+"Lesson wave" at the end for the platform facts checked on official pages. Everything in `src/content/roadmaps/social-media-management.ts` is
 original. roadmap.sh was not opened, searched or used, and no "<field> roadmap" style searches
 were run. No logins; LinkedIn was not opened or scraped. Job adverts were read for which
 skills appear; no advert text is reproduced here or in the outline. Salary figures that
@@ -189,10 +190,69 @@ or family business pages first, without promising outcomes.
 | applying-for-roles | Degree, HND and experience asks across A1 A5 A7 A8 A9; test tasks common in recruitment |
 | several-clients | A4 (several brands), remote contracts A11; Freelancing track cross reference |
 
+## Lesson wave (issue #198, 27 October 2026)
+
+All 29 nodes now have original lessons, practice tasks and quizzes. No slugs were renamed and
+no nodes were added or dropped: the outline already matched the adverts, and the roadmap is
+published. Resources were adjusted (at most three per node, each URL returned HTTP 200 on 27
+October 2026): `page-access` now links TikTok Business Center roles and LinkedIn Page admin
+roles; `account-security` links Meta's Account Recovery Hub and the CSA; `moderation` adds
+CISA phishing guidance; `honest-promotion` links TikTok's content disclosure article and the
+Ghana FDA advertising guidelines; `platform-insights` adds TikTok's analytics introduction.
+The unused TikTok Help Center and Google 2 Step Verification links were removed.
+
+### How the lessons avoid duplicating neighbouring content
+
+* Digital Marketer already teaches reply etiquette, the basic complaint order, the MoMo PIN
+  scam warning, calendar columns, boost versus Ads Manager, live selling as video craft and
+  report structure. The lessons here cross reference those and teach the hired manager's
+  operating layer instead: agreed reply times and routes, label schemes and an inbox log,
+  platform moderation tools and impostor reporting, a three level escalation ladder with a
+  first hour checklist, a live selling run sheet with a moderator and order sheet, boosting
+  only from the client's own ad account with written spend approval and a spend log, and a
+  monthly review that changes next month's pillars.
+* The Digital Marketing Specialisations roadmap (social section, separate branch) covers
+  campaigns, audiences, budgets, storytelling, video, community building and influencer
+  research and collaboration. `honest-promotion` covers only the page manager's side: label
+  tools, approving partner requests, checking claims and FDA approval, and a written brief.
+
+### Platform and legal facts checked (official pages or official search summaries)
+
+Meta help centre pages render without content to scripted fetches, so their wording was read
+through search results restricted to facebook.com, meta.com and help.instagram.com. Menu names
+are taught as changeable in every lesson.
+
+| # | Fact used in lessons | Source | Date read | Type |
+|---|---|---|---|---|
+| V1 | Page access: full control (settings, give or remove access), partial access (content, messages as the Page), task access through business tools only; a Page must keep at least one person with full control | https://www.facebook.com/help/289207354498410 ; https://www.facebook.com/business/help/152071822895768 ; https://www.facebook.com/business/help/1717412048538897 (partner access) | 2026-10-27 | Official help (via search summary) |
+| V2 | Scheduling in Meta Business Suite exists on web and app; maximum days not stated in lessons because sources conflict | https://www.facebook.com/business/help/1252240869631062 | 2026-10-27 | Official help (via search summary) |
+| V3 | TikTok web scheduler: 15 minutes to 10 days ahead; desktop scheduling needs a Business Account | https://ads.tiktok.com/business/en/blog/introducing-video-scheduler-now-you-can-plan-tiktoks-in-advance | 2026-10-27 | Official TikTok blog (fetched) |
+| V4 | TikTok commercial content disclosure setting; Paid partnership label; notice with time to fix or appeal | https://ads.tiktok.com/help/article/about-the-content-disclosure-setting-for-creators | 2026-10-27 | Official help (fetched) |
+| V5 | TikTok Business Center: Admin and Standard members; ad account Admin, Operator, Analyst | https://ads.tiktok.com/help/article/about-business-center-roles-and-permissions | 2026-10-27 | Official help (via search summary) |
+| V6 | Meta paid partnership label, up to two brand partners, label added in the Instagram app, gifted products count | https://creators.facebook.com/tools/branded-content/ ; https://en-gb.facebook.com/business/help/2359901354225584 ; https://en-gb.facebook.com/business/help/221149188908254 | 2026-10-27 | Official help (via search summary) |
+| V7 | Page moderation: hide (visible to writer and friends), profanity filter, blocked keywords on the Page's own content including ads | https://www.facebook.com/help/1017549069082358 ; https://www.facebook.com/help/131671940241729 ; https://www.facebook.com/business/help/845417592621623 | 2026-10-27 | Official help (via search summary) |
+| V8 | Inbox: instant reply, away message, saved replies, labels, FAQ and keyword automations | https://www.facebook.com/business/help/395965998733706 ; https://www.facebook.com/business/help/294426838452244 | 2026-10-27 | Official help (via search summary) |
+| V9 | Impostor reporting; business impostor form asks for ID; fan and opinion pages generally allowed | https://www.facebook.com/help/174210519303259 ; https://www.facebook.com/business/help/173435393294159 | 2026-10-27 | Official help (via search summary) |
+| V10 | Hacked accounts: facebook.com/hacked from a known device; Page recovery form; Account Recovery Hub; Instagram never DMs about accounts and emails come from mail.instagram.com; backup codes | https://www.facebook.com/help/hacked ; https://www.facebook.com/help/738660629556925 ; https://www.meta.com/account-recovery-support/ ; https://help.instagram.com/670309656726033/ | 2026-10-27 | Official help (via search summary; Hub loaded) |
+| V11 | Restrictions and appeals: request review; Oversight Board after Meta review | https://www.facebook.com/business/ads/review-policy-guidelines ; https://transparency.meta.com/oversight/appealing-to-oversight-board/ | 2026-10-27 | Official help (via search summary) |
+| V12 | Meta "Views" replacing impressions; reach moving toward a viewers measure | https://creators.facebook.com/introducing-views-to-simplify-content | 2026-10-27 | Official Meta page (loaded) |
+| V13 | TikTok analytics sections and 7, 28, 60 day ranges | https://www.tiktok.com/creator-academy/en/article/tool-analytics-intro | 2026-10-27 | Official (via search summary; loaded) |
+| V14 | TikTok LIVE: 18 or over; other requirements vary by region (no follower number stated) | https://www.tiktok.com/live/creator-networks/en/blog/how-to-go-live-on-tiktok | 2026-10-27 | Official TikTok page (via search summary) |
+| V15 | LinkedIn Page roles: super admin, content admin, analyst; at least one super admin | https://www.linkedin.com/help/linkedin/answer/a541981 | 2026-10-27 | Official help (search summary; status check only, no login) |
+| V16 | Cyber Security Authority reporting: call or SMS 292, WhatsApp 0501603111 | https://www.csa.gov.gh/ | 2026-10-27 | Official regulator site (read) |
+| V17 | Ghana FDA requires approval of adverts for food, drugs, cosmetics and household chemicals, including social media | https://fdaghana.gov.gh/guidelines-for-advertisement-of-regulated-products | 2026-10-27 | Official regulator page (loaded) and news coverage |
+| V18 | Data Protection Act, 2012 (Act 843) principles; Cybersecurity Act, 2020 (Act 1038) defines unauthorised access (not cited in lessons) | https://dpc.gov.gh/ ; Act 1038 text | 2026-10-27 | Official regulator site; statute |
+
+Deliberately not stated: a maximum Meta scheduling window (sources say 29, 30 or 75 days), a
+TikTok LIVE follower threshold, any loss figures or counts from CSA reports.
+
 ## Founder spot checks
 
-1. `live-selling`: confirm live selling is common enough in the north to keep, or keep optional.
-2. `page-access`: Meta renames its business tools often (Business Manager, Business Suite,
-   business portfolio); check wording before lessons are written.
-3. `honest-promotion` links the UK ASA as an example; confirm whether a Ghanaian advertising
-   standards page should replace it.
+1. `live-selling`: confirm live selling is common enough in the north to keep; it stays optional.
+2. `page-access`: wording verified against Meta help on 27 October 2026 (full control, partial
+   access, task access, partner access). Meta renames tools often; recheck before major updates.
+3. `honest-promotion` now links the Ghana FDA advertising guidelines and keeps the UK ASA page
+   only as an example of ad labelling.
+4. `account-security` and `moderation` quote the CSA reporting numbers (292, WhatsApp
+   0501603111); confirm they are still current before release.
+5. `content-pillars` lists Northern festivals (Damba, Bugum, Kakube, Kobine) as examples.
