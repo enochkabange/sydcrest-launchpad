@@ -17,7 +17,7 @@ export default function PublicLayout({ children }: LayoutProps<"/">) {
           Leaderboards
         </Link>
       </header>
-      <main id="main" className="mx-auto w-full max-w-2xl flex-1 px-4 pt-8 pb-16 md:px-8">
+      <main id="main" className="mx-auto w-full max-w-5xl flex-1 px-4 pt-8 pb-16 md:px-8">
         {children}
       </main>
     </div>

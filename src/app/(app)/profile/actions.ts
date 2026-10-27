@@ -1,5 +1,6 @@
 "use server";
 
+import { refresh } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { parseProfile, type FieldErrors } from "@/lib/validation";
@@ -19,5 +20,7 @@ export async function updateProfile(_prev: ProfileState, form: FormData): Promis
   const supabase = await createClient();
   const { error } = await supabase.from("profiles").update(data).eq("id", user.id);
   if (error) return { message: "We couldn't save your changes. Try again." };
+  // Re-render the page so the public profile preview shows the new name and region.
+  refresh();
   return { saved: { ...data, at: Date.now() } };
 }
