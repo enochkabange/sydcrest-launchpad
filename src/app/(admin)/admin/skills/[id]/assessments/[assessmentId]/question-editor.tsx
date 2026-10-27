@@ -78,13 +78,13 @@ export function QuestionEditor({
                   <textarea
                     id={promptId}
                     name={authoringField.prompt(i)}
-                    rows={2}
+                    rows={3}
                     maxLength={500}
                     value={d.prompt}
                     onChange={(ev) => update(i, { prompt: ev.target.value })}
                     aria-invalid={promptError ? true : undefined}
                     aria-describedby={promptError ? `${promptId}-error` : undefined}
-                    className="min-h-16 w-full rounded-md border border-line-strong bg-surface px-3 py-2 text-base text-content aria-invalid:border-danger-fg"
+                    className="min-h-20 w-full rounded-md border border-line-strong bg-surface px-3 py-2 text-base text-content aria-invalid:border-danger-fg"
                   />
                   {promptError && (
                     <p id={`${promptId}-error`} className="text-sm text-danger-fg">
