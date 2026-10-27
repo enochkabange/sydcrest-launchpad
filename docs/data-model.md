@@ -268,7 +268,9 @@ Reviewed against the production advisor run on 27 Oct.
   `withdraw_application`, `choose_specialization`, `defer_learner`,
   `save_submission`, `grade_submission`, `assign_peer_review`,
   `submit_peer_review`, `certification_status`, `issue_certificate`,
-  `revoke_certificate`. Accepted: each pins `search_path = ''` and checks the
+  `revoke_certificate`, and from #192 `community_post` (same caller checks as
+  `community_thread`). `admin_find_profile_by_email` is security invoker over
+  a definer in `private` that checks `private.is_admin()`. Accepted: each pins `search_path = ''` and checks the
   caller inside (`private.is_admin()` for the admin three, `auth.uid()` for
   the rest, which use it as the identity rather than a parameter). None is
   executable by `anon` (lint 0028), asserted in `schema_security.test.sql`.
