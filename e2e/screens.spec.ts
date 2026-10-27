@@ -5,6 +5,7 @@ import { deleteDmpCohort, seedDmpCohort, type SeededDmpCohort } from "./cohort-s
 import { createLearner, PASSWORD } from "./learners";
 import { deleteExperts, seedExperts, type SeededExperts } from "./experts-seed";
 import { deleteRoadmap, seedRoadmap, type SeededRoadmap } from "./seed";
+import { insertFixtureCertificate, seedEligibleCohort, signIn } from "./certificates-fixtures";
 
 /**
  * Full page screenshots of key screens at a phone (390), a laptop (1440) and
@@ -88,4 +89,19 @@ test("screenshots of key screens at 390, 1440 and 1920", async ({ page }, testIn
   await expect(page).toHaveURL(/\/dashboard$/);
   await shoot(page, testInfo, "cohort", "/cohort");
   await shoot(page, testInfo, "cohort-week", "/cohort/week/7");
+});
+
+test("certificate screens at 390, 1440 and 1920", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop", "Takes every width itself, once.");
+  test.setTimeout(240_000);
+  mkdirSync(DIR, { recursive: true });
+  const seeded = await seedEligibleCohort(`screens-${crypto.randomUUID().slice(0, 6)}`);
+  const verificationId = await insertFixtureCertificate(seeded);
+
+  await shoot(page, testInfo, "verify", `/verify/${verificationId}`);
+  await shoot(page, testInfo, "verify-unknown", `/verify/${"0".repeat(32)}`);
+  await signIn(page, seeded.learner.email);
+  await shoot(page, testInfo, "certificates", "/certificates");
+  await signIn(page, seeded.mentor.email);
+  await shoot(page, testInfo, "certificates-issue", `/certificates/issue?cohort=${seeded.cohortId}`);
 });
