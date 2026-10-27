@@ -14,7 +14,6 @@ const expect = baseExpect.configure({ timeout: 15_000 });
 const cleanup: string[] = [];
 
 test.afterEach(async () => {
-  if (process.env.E2E_KEEP) return;
   while (cleanup.length) await deleteChapter(cleanup.pop()!);
 });
 

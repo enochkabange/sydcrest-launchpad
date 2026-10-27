@@ -69,7 +69,8 @@ async function Chapter({ params }: Pick<PageProps<"/chapters/[slug]">, "params">
       </header>
 
       <MainWithRail
-        railLabel="Leads and WhatsApp group"
+        railLabel="Membership, leads and WhatsApp group"
+        railFirst
         rail={
           <>
             <Suspense fallback={islandFallback}>
