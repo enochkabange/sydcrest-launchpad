@@ -3,7 +3,7 @@
 -- executable by default, and anon cannot reach the minting path.
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(11);
+select plan(13);
 
 select is(
   (select array_agg(tablename::text order by tablename) from pg_tables
@@ -98,6 +98,29 @@ select ok(
   has_function_privilege('anon', 'public.verify_certificate(text)', 'execute')
   and not (select prosecdef from pg_proc where oid = 'public.verify_certificate(text)'::regprocedure),
   'anyone can verify a certificate through a security invoker function'
+);
+
+-- Schema B (issue #158): verified skills, notifications, RSVPs and check ins
+-- are written only by database functions; no API role can insert them or
+-- call the private writers.
+select ok(
+  not has_function_privilege('authenticated', 'private.issue_verified_skill(uuid, uuid, text, text, uuid)', 'execute')
+  and not has_function_privilege('anon', 'private.issue_verified_skill(uuid, uuid, text, text, uuid)', 'execute')
+  and not has_function_privilege('authenticated', 'private.notify(uuid, text, jsonb)', 'execute')
+  and not has_function_privilege('authenticated', 'public.notify_user(uuid, text, jsonb)', 'execute')
+  and has_function_privilege('service_role', 'public.notify_user(uuid, text, jsonb)', 'execute'),
+  'only the database issues verified skills and notifications'
+);
+
+select ok(
+  not has_table_privilege('authenticated', 'public.verified_skills', 'insert')
+  and not has_table_privilege('authenticated', 'public.verified_skills', 'update')
+  and not has_table_privilege('authenticated', 'public.skill_assessment_attempts', 'insert')
+  and not has_table_privilege('authenticated', 'public.notifications', 'insert')
+  and not has_table_privilege('authenticated', 'public.event_rsvps', 'insert')
+  and not has_table_privilege('authenticated', 'public.event_checkins', 'insert')
+  and not has_table_privilege('authenticated', 'public.event_access', 'insert'),
+  'signed in users cannot write badges, attempts, notifications, RSVPs or check ins directly'
 );
 
 select * from finish();

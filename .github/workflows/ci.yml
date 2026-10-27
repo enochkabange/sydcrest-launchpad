@@ -61,6 +61,11 @@ jobs:
         with:
           version: 2.114.0 # keep in step with the local CLI; generated types depend on it
       # Local Supabase in Docker, trimmed to what migrations and tests need.
+      - name: Cache Supabase images
+        uses: actions/cache@v4
+        with:
+          path: /tmp/supabase-image-cache
+          key: supabase-images-db-${{ hashFiles('supabase/config.toml') }}
       - run: scripts/ci/supabase-start.sh -x studio,mailpit,imgproxy,edge-runtime,logflare,vector,realtime,storage-api,postgres-meta,supavisor
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -98,6 +103,11 @@ jobs:
           version: 2.114.0 # keep in step with the local CLI; generated types depend on it
       # Same local stack as Migrations, but keeping Mailpit: the tests read
       # confirmation emails from it. Never run these against hosted projects.
+      - name: Cache Supabase images
+        uses: actions/cache@v4
+        with:
+          path: /tmp/supabase-image-cache
+          key: supabase-images-e2e-${{ hashFiles('supabase/config.toml') }}
       - run: scripts/ci/supabase-start.sh -x studio,imgproxy,edge-runtime,logflare,vector,realtime,storage-api,postgres-meta,supavisor
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -128,7 +138,7 @@ jobs:
       - run: pnpm e2e
         env:
           SUPABASE_SECRET_KEY: ${{ steps.local-keys.outputs.secret }}
-      # Key screens at 390, 1440 and 1920 (e2e/screens.spec.ts), on every run, for review.
+      # Key screens at 390, 1440 and 1920 (e2e/screens/), on every run, for review.
       - uses: actions/upload-artifact@v7
         if: always()
         with:
