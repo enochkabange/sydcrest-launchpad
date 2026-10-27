@@ -984,6 +984,918 @@ Mariama manages the Facebook page for an invented school uniform tailor in Bolga
         pass_threshold: 75,
       },
     },
+    "tickets-and-tools": {
+      explanation_md: `Imagine a support team of twenty agents receiving hundreds of calls, chats and emails every day. Without a system, requests would be forgotten, two agents would answer the same customer differently, and nobody would know which problems were still open. Support tools solve this. Help desk and CRM skills are named again and again in Ghanaian and remote support adverts, so this section matters for getting hired.
+
+## The three tools you will meet
+
+* **A help desk or ticketing system.** Every request becomes a ticket with a number, a status and a history. Agents work through queues of tickets. Examples of such tools include Zendesk, Freshdesk and Zoho Desk; they are named here only as examples, and your employer may use a different one or its own system.
+* **A CRM (customer relationship management) system.** It stores each customer's details and their full history with the company: purchases, accounts, past contacts and notes.
+* **A knowledge base.** A library of help articles and saved replies, some for customers to read themselves and some only for agents.
+
+In many companies these are joined together, so you see the ticket, the customer record and suggested articles on one screen. In smaller businesses they might be a shared spreadsheet, a WhatsApp Business label system and a document of common answers. The ideas are the same.
+
+## Why the tools matter to you
+
+Tools are not just for managers. They protect you as an agent. If a customer says "Nobody ever called me back", a good ticket history shows exactly what was done and when. If you go on leave, your colleague can continue your open tickets without calling you. And when your work is reviewed, clear notes show the care you took.
+
+## The words you will hear
+
+* **Queue:** a list of tickets waiting for an agent.
+* **Status:** where a ticket is, such as new, open, pending (waiting for the customer or another team) or solved.
+* **Priority:** how urgent a ticket is.
+* **Tags:** short labels that group tickets by topic, such as "refund" or "login".
+* **Internal note:** a comment only the team can see.
+* **Macro or canned response:** a saved reply or set of actions.
+
+## You can practise for free
+
+Many help desk and CRM products offer free plans or free trials you can open in a browser. You do not need a company to practise. Use invented customers and invented problems, never real people's data. Even practising in a simple spreadsheet teaches you the habits that matter: one row per request, a clear status, and a note of every action.
+
+## A small example
+
+Wumpini starts at an invented solar company that sells lamps on credit across the north. On her first day, her team leader shows her the queue, explains that "pending" means waiting for the customer, and asks her to read ten old tickets before answering any. By the end of the day she understands the common problems and how the team writes notes. That is exactly the kind of start this section prepares you for.`,
+      practice_task_md: `**Goal:** Build a simple ticket tracker you can practise with.
+
+**Steps:**
+1. Open a free spreadsheet app on your phone or computer.
+2. Create these columns: Ticket number, Date, Customer name, Channel, Problem, Priority, Status, Tags, Notes.
+3. Invent five customer requests for a small business, for example a phone repair shop in Wa. Fill in one row for each. Use invented names only.
+4. Change two tickets to "pending" and one to "solved", and write a short note explaining each change.
+
+**Done looks like:** A spreadsheet with five tickets, every column filled, and notes that someone else could understand without asking you.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does a help desk or ticketing system do?",
+            options: [
+              "Turns every request into a ticket with a number, status and history",
+              "Makes phone calls automatically",
+              "Designs the company website",
+              "Pays agents' salaries",
+            ],
+            answer_index: 0,
+            explanation: "The lesson describes the help desk as turning each request into a tracked ticket.",
+          },
+          {
+            prompt: "What does a 'pending' status usually mean?",
+            options: [
+              "The ticket has been deleted",
+              "The ticket is waiting for the customer or another team",
+              "The ticket is solved",
+              "The ticket is the most urgent in the queue",
+            ],
+            answer_index: 1,
+            explanation: "Pending means waiting for the customer or another team.",
+          },
+          {
+            prompt: "How do good ticket notes protect you as an agent?",
+            options: [
+              "They let you skip talking to customers",
+              "They show exactly what was done and when if a customer says nobody helped",
+              "They hide your mistakes from your team leader",
+              "They make tickets close automatically",
+            ],
+            answer_index: 1,
+            explanation: "A clear history proves the actions taken and lets colleagues continue your work.",
+          },
+          {
+            prompt: "What should you use when practising in a free help desk trial?",
+            options: [
+              "Real customers' data from a friend's business",
+              "Your family's phone numbers",
+              "Invented customers and invented problems",
+              "Data copied from social media",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says practise with invented data, never real people's data.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "helpdesk-tickets": {
+      explanation_md: `A ticket is the written story of one customer request from start to finish. If you can create, update and close tickets well, you can slot into almost any support team, whatever tool they use. Interviewers sometimes give candidates a few sample tickets and ask how they would handle them, so this is worth practising.
+
+## What a good ticket contains
+
+* **Who:** the customer's name and how to reach them, taken from the verified record.
+* **What:** a clear one line summary, then the details. "Customer cannot log in after changing phone" is better than "App problem".
+* **When:** dates and times of the issue and of each contact.
+* **Channel:** phone, chat, WhatsApp, email or social media.
+* **Priority, status and tags.**
+* **Actions and notes:** what you checked, what you told the customer and what happens next.
+
+## Setting priority
+
+Teams usually have levels such as low, normal, high and urgent. Your company will have its own rules, but these questions help:
+
+* Is money missing or at risk? That is usually high or urgent.
+* Is the customer completely blocked, such as unable to log in or receive a service?
+* Are many customers affected at once? That may be an outage, which needs to go to a team leader quickly.
+* Is it a question that can wait, such as a request for information? That is usually low or normal.
+
+Priority is about the problem, not about how loud the customer is. A calm customer with missing money is more urgent than an angry customer asking about opening hours.
+
+## Statuses and the life of a ticket
+
+A typical ticket moves like this: **new** when it arrives, **open** when an agent is working on it, **pending** when waiting for the customer or another team, and **solved** when the problem is fixed and the customer has been told. Some teams **close** tickets automatically a few days after they are solved if the customer does not reply.
+
+Never mark a ticket solved just to empty your queue. If the customer writes back because the problem is not fixed, the ticket reopens and it looks worse than if you had left it open.
+
+## Tags
+
+Tags group similar tickets so the team can spot patterns, such as many "failed payment" tickets in one morning. Use the team's agreed tags exactly. Inventing your own tags makes reports useless.
+
+## A worked example
+
+Here is a ticket written by Issahaku for an invented bus booking app:
+
+> **Summary:** Booked seat Tamale to Kumasi, payment taken, no ticket received.
+>
+> **Priority:** High (money taken, travel tomorrow).
+>
+> **Tags:** payment, booking.
+>
+> **Note:** Customer Mariama called 10:15. Verified name and phone. Payment of 180 cedis shows on our side as successful at 09:40 but booking failed. Sent to payments team with transaction reference. Told customer she will get an SMS with her ticket or a refund update by 2pm today. Status: pending (payments team).
+
+Anyone on the team can read that note and know exactly where things stand.`,
+      practice_task_md: `**Goal:** Prioritise and write tickets like a professional.
+
+**Steps:**
+1. Read these four invented requests: (a) a customer asking for the office address, (b) a customer whose wallet was debited for airtime that never arrived, (c) twenty customers in one hour saying the app will not open, (d) a customer wanting to change their delivery day next week.
+2. Give each a priority (low, normal, high or urgent) and write one sentence explaining why.
+3. Write a full ticket for request (b), using the structure from the lesson: summary, priority, tags, note and status.
+4. Swap tickets with a friend or mentor if you can and ask if they could continue the case from your note alone.
+
+**Done looks like:** Four priorities with reasons and one complete ticket that someone else could pick up.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which ticket summary is best?",
+            options: [
+              "App problem",
+              "Help needed urgently!!",
+              "Customer cannot log in after changing phone",
+              "See below",
+            ],
+            answer_index: 2,
+            explanation: "A good summary states the problem clearly in one line.",
+          },
+          {
+            prompt: "What should decide a ticket's priority?",
+            options: [
+              "How loud or angry the customer is",
+              "The problem itself, such as money at risk or a customer completely blocked",
+              "Which agent received the ticket",
+              "The time of day the ticket arrived",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says priority is about the problem, not how loud the customer is.",
+          },
+          {
+            prompt: "Why should you never mark a ticket solved just to empty your queue?",
+            options: [
+              "Solved tickets cannot be read again",
+              "If the problem is not fixed the customer writes back, the ticket reopens and it looks worse",
+              "Solved tickets cost the company money",
+              "Only team leaders can solve tickets",
+            ],
+            answer_index: 1,
+            explanation: "A falsely solved ticket reopens when the customer returns, which is worse for everyone.",
+          },
+          {
+            prompt: "Why should you use the team's agreed tags exactly?",
+            options: [
+              "So reports and patterns across tickets stay accurate",
+              "Because tags are visible to customers",
+              "Because inventing tags deletes the ticket",
+              "So tickets close faster",
+            ],
+            answer_index: 0,
+            explanation: "Tags group similar tickets; invented tags make reports useless.",
+          },
+          {
+            prompt: "In Issahaku's example, why was the ticket set to high priority?",
+            options: [
+              "The customer was shouting",
+              "Money had been taken and the customer was travelling the next day",
+              "It was the first ticket of the day",
+              "The customer asked for a discount",
+            ],
+            answer_index: 1,
+            explanation: "The note explains high priority because money was taken and travel was the next day.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "crm-records": {
+      explanation_md: `A ticket tells the story of one request. A CRM record tells the story of one customer across all their requests, purchases and conversations. When a returning customer calls, the CRM is what lets you say "I can see you contacted us last week about your refund" instead of "Please explain from the beginning." Customers notice that difference, and so do employers. CRM experience is named in many support adverts in Ghana and abroad.
+
+## What a customer record holds
+
+Details vary by company, but a record often includes:
+
+* **Contact details:** name, phone number, email, location.
+* **Account details:** account or customer number, products or services they use, plan or package.
+* **History:** past tickets, calls, chats, orders, payments and refunds.
+* **Notes:** short comments from agents about preferences or important context.
+* **Consent and preferences:** for example whether they agreed to receive marketing messages and which language they prefer.
+
+## Searching well
+
+Customers often have similar names, so search carefully. Search by a unique detail first, such as a phone number, customer number or email, and then confirm the name and one more detail with the customer. Opening the wrong record and discussing someone else's account is a serious data protection mistake.
+
+## Updating records
+
+Customers change phone numbers, move towns and change names. Updating a record is simple, but follow your company's verification steps first, because changing a phone number or email can give someone control of an account. Fraudsters sometimes call pretending to be a customer just to change these details. If anything feels wrong, pause and check with a supervisor.
+
+## Writing useful notes
+
+A good CRM note is short, factual and useful to the next person. It answers: what happened, what was done, what is next.
+
+Compare these two notes:
+
+> "Customer was very annoying and kept complaining."
+
+> "Customer called about second late delivery this month. Apologised, gave new date of Friday. Prefers calls after 5pm. Prefers Dagbani."
+
+The first note is unprofessional and useless; customers can sometimes request copies of what a company holds about them. The second helps every future agent.
+
+Rules for notes:
+
+* Write facts, not opinions about the customer's character.
+* Never record PINs, passwords or full card numbers.
+* Use the agreed format and abbreviations of your team, and nothing else.
+* Write the note straight after the contact, while it is fresh.
+
+## A worked example
+
+Hawa works for an invented internet provider. A customer, Abdul-Rahman, calls from a new number. Hawa searches by his customer number, verifies his name and his registered address, and sees three earlier tickets about slow speeds in Nalerigu. Instead of starting basic checks again, she reads the last engineer's note, sees a mast repair was planned, and gives him an honest update. She then updates his phone number after the extra verification steps her company requires, and adds a note: "Customer changed number, verified by address and last payment. Updated on speed issue, mast repair scheduled."`,
+      practice_task_md: `**Goal:** Practise keeping customer records clean and useful.
+
+**Steps:**
+1. In a free spreadsheet app, create a customer list with columns: Customer number, Name, Phone, Town, Preferred language, Contact history, Notes. Add four invented customers.
+2. For two of them, add three past contacts each in the history column, with dates.
+3. Rewrite these weak notes into useful factual ones: "rude man", "she called again", "problem solved I think".
+4. Write two sentences describing what extra checks you would do before changing a customer's phone number.
+
+**Done looks like:** A small customer list with history, three rewritten notes and your two sentences on safe updates. Use invented data only.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the main difference between a ticket and a CRM record?",
+            options: [
+              "A ticket covers one request; a CRM record covers one customer across all their contacts",
+              "A ticket is for phone calls; a CRM is for emails",
+              "There is no difference",
+              "A CRM record is only for sales staff",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says a ticket is one request and a CRM record is one customer's whole history.",
+          },
+          {
+            prompt: "What is the safest way to search for a customer record?",
+            options: [
+              "Search by first name only",
+              "Open the first record that appears",
+              "Search by a unique detail such as phone or customer number, then confirm the name and another detail",
+              "Ask a colleague which record it might be",
+            ],
+            answer_index: 2,
+            explanation: "Unique details plus confirmation avoid opening and discussing the wrong customer's account.",
+          },
+          {
+            prompt: "Why should you follow verification steps before changing a phone number or email?",
+            options: [
+              "Because it takes longer and improves your call time",
+              "Because changing them can give someone control of an account, and fraudsters try this",
+              "Because customers are not allowed to change numbers",
+              "Because the CRM will crash otherwise",
+            ],
+            answer_index: 1,
+            explanation: "Changing contact details can hand over an account, so fraudsters target this step.",
+          },
+          {
+            prompt: "Which of these is a good CRM note?",
+            options: [
+              "Customer was very annoying",
+              "Called again, same thing",
+              "Second late delivery this month. Apologised, new date Friday. Prefers calls after 5pm.",
+              "PIN is 4321, customer forgot it",
+            ],
+            answer_index: 2,
+            explanation: "Good notes are factual and useful, and never contain opinions about character or PINs.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "knowledge-base": {
+      explanation_md: `No support agent remembers every policy, price and process. The good ones know where to find answers quickly. A knowledge base is a library of help articles: some are public, for customers to read themselves, and some are internal, only for agents. Saved replies, sometimes called canned responses or macros, are ready made answers to common questions. Using both well makes you faster, more accurate and more consistent with the rest of your team.
+
+## Finding answers fast
+
+When a customer asks something you are unsure about, do not guess. Guessing wrong about a refund rule or a fee can cause real trouble. Instead:
+
+* Search the knowledge base using the customer's own words, then try other words. Customers say "money not reached"; the article may be called "pending transfers".
+* Check the article's date. Policies change, and old articles sometimes stay online.
+* If two articles disagree, ask your team leader and report the problem.
+* Tell the customer you are checking, so the silence does not worry them.
+
+## Making saved replies sound human
+
+Saved replies save time, but a reply that clearly ignores what the customer wrote is worse than no reply. Every time you use one:
+
+1. Read the customer's message again.
+2. Insert the saved reply.
+3. Replace the placeholders, such as name, order number and date.
+4. Add or change one sentence so it refers to their exact situation.
+5. Remove any part that does not apply.
+
+Example of a saved reply before personalising:
+
+> "Hello [name], thank you for contacting us. Refunds take [number] working days to appear in your account."
+
+After personalising for Fuseini, who has already waited a week:
+
+> "Hello Fuseini, thank you for your patience, and I am sorry this has taken a week. Refunds normally take up to five working days, so yours is overdue. I have sent it to our payments team as urgent and will update you by tomorrow afternoon."
+
+The facts came from the saved reply. The care came from the agent.
+
+## Improving the knowledge base
+
+Agents see the same questions every day, so you are in the best position to spot gaps. If you answer the same question three times in a shift and there is no article, suggest one to your team leader. If an article is confusing, suggest a clearer version. Many teams welcome this, and it shows you think beyond your own queue.
+
+## Writing a simple help article
+
+A good help article has:
+
+* A title that matches how customers ask: "How do I reset my PIN?" rather than "Credential recovery".
+* A one sentence answer at the top.
+* Numbered steps, one action per step.
+* What to do if the steps do not work.
+
+## A worked example
+
+Amina, working chat support for an invented school fees platform, notices that many parents ask how to download a payment receipt. There is no article. She writes a short draft with a clear title, four steps and a note on what to do if the receipt does not appear, and sends it to her team leader. Once approved, it becomes a public article, and she creates a saved reply that links to it.`,
+      practice_task_md: `**Goal:** Write a help article and a saved reply.
+
+**Steps:**
+1. Choose a common question for an invented business, for example "How do I track my parcel?" or "How do I change my delivery address?"
+2. Write a help article with a customer friendly title, a one sentence answer, numbered steps and a "still stuck?" line.
+3. Write a saved reply for the same question with placeholders in square brackets.
+4. Personalise the saved reply for a customer called Wumpini who says she has already tried tracking twice and it shows nothing.
+
+**Done looks like:** One short help article, one saved reply and one personalised version, ready for your portfolio.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should you do if you are unsure of the answer to a customer's question?",
+            options: [
+              "Give your best guess quickly",
+              "Search the knowledge base and tell the customer you are checking",
+              "End the conversation",
+              "Tell the customer to search online",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says do not guess; search and keep the customer informed.",
+          },
+          {
+            prompt: "Why should you check the date on a knowledge base article?",
+            options: [
+              "Older articles are always more accurate",
+              "Policies change and old articles sometimes stay online",
+              "Customers only trust new articles",
+              "Articles are deleted after a month",
+            ],
+            answer_index: 1,
+            explanation: "An outdated article can give wrong information about current policies.",
+          },
+          {
+            prompt: "In the example, what made the reply to Fuseini better than the plain saved reply?",
+            options: [
+              "It was shorter",
+              "It apologised for the week's wait, said the refund was overdue and gave a next step and time",
+              "It removed the refund timeline",
+              "It asked him to contact the bank",
+            ],
+            answer_index: 1,
+            explanation: "The agent personalised the reply to his actual situation and gave a clear next step.",
+          },
+          {
+            prompt: "Which is the best title for a help article?",
+            options: ["Credential recovery", "Article 17", "How do I reset my PIN?", "PIN"],
+            answer_index: 2,
+            explanation: "Titles should match how customers ask the question.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "solving-problems": {
+      explanation_md: `Answering questions is part of the job. Solving problems is the part that customers remember. A customer who arrives worried and leaves with their problem fixed, or at least with a clear plan, will trust the business again. A customer who is passed around, asked the same questions three times and left without an answer will often leave for good and tell others why.
+
+## What problem solving means in support
+
+In support, solving a problem usually follows the same path:
+
+1. **Understand what the customer is experiencing.** What do they see, and what did they expect?
+2. **Find the real cause.** The first thing a customer says is often a symptom, not the cause.
+3. **Fix it, or find who can.** Some problems you can solve yourself in a minute. Others need a supervisor, a technical team or the payments team.
+4. **Tell the customer clearly** what you did or what happens next, and when.
+5. **Record it** so the team learns and the next agent knows the story.
+
+## The four lessons in this section
+
+* **Asking questions to find the real problem.** A simple order of questions, plus first level troubleshooting: checking the app version, the network, the account status and what changed recently.
+* **Handling complaints and upset customers.** Staying calm, apologising for the experience and agreeing a clear next step, and setting a polite limit if a customer becomes abusive.
+* **Escalation and handover.** When to pass a case on, what to write so the customer does not have to repeat everything, and how to explain the next step.
+* **Payments, refunds and account security.** Many support roles in Ghana deal with mobile money, card and bank payments. Mistakes here cost real cedis, and fraudsters target both customers and agents.
+
+## Ownership
+
+One idea runs through every lesson in this section: **ownership**. Even if you cannot fix a problem yourself, you can own the customer's experience until it is handed over properly. That means not saying "That is not my department" and leaving it there. It means saying "That is handled by our payments team. I will send it to them now with all the details, and you will hear from us by tomorrow afternoon."
+
+## A worked example
+
+Sumaila contacts an invented electricity token app. He says, "Your app is useless, I paid and got nothing." A weak agent argues about the word "useless". A strong agent ignores the insult, asks when he paid, how much, and from which wallet or card, and checks the transaction. It turns out the payment went through but the token was sent to an old meter number saved in his profile. The agent explains this, sends the payment details to the team that can move the token, updates his profile with the correct meter number, and tells him when to expect the token. Sumaila still had a bad morning, but he ends the chat knowing exactly what will happen.
+
+That is the skill this section builds: calm, careful thinking that turns a vague complaint into a clear fix.`,
+      practice_task_md: `**Goal:** Practise the five step problem solving path.
+
+**Steps:**
+1. Think of a real problem you or someone you know had with a service: a failed payment, a late delivery or an app that would not open.
+2. Write it out using the five steps from the lesson: what the customer experienced, the likely real cause, who could fix it, what the customer should be told, and what record should be kept.
+3. Rewrite the sentence "That is not my department" into an ownership sentence for your example.
+
+**Done looks like:** A short five step write up of one real problem and one ownership sentence you could use with a customer.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, what is often true about the first thing a customer says?",
+            options: [
+              "It is always the exact cause of the problem",
+              "It is often a symptom, not the cause",
+              "It should be ignored",
+              "It is usually untrue",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says the first thing a customer describes is often a symptom, so you must find the real cause.",
+          },
+          {
+            prompt: "What does 'ownership' mean in this section?",
+            options: [
+              "Fixing every problem yourself without help",
+              "Owning shares in the company",
+              "Taking care of the customer's experience until the case is properly handed over",
+              "Telling the customer which department to call",
+            ],
+            answer_index: 2,
+            explanation: "Ownership means you stay responsible for the customer's experience even when someone else fixes it.",
+          },
+          {
+            prompt: "In the example, what was the real cause of Sumaila's problem?",
+            options: [
+              "The app was broken for everyone",
+              "His payment failed",
+              "The token went to an old meter number saved in his profile",
+              "He typed the wrong amount",
+            ],
+            answer_index: 2,
+            explanation: "Careful questions showed the payment worked but the token went to an old meter number.",
+          },
+          {
+            prompt: "Which step comes last in the problem solving path?",
+            options: [
+              "Arguing with the customer",
+              "Recording it so the team learns and the next agent knows the story",
+              "Asking the customer to call again tomorrow",
+              "Offering a discount",
+            ],
+            answer_index: 1,
+            explanation: "The fifth step is to record the case.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "finding-the-real-problem": {
+      explanation_md: `"My app is not working." "My money has not reached." "The internet is bad." These are the kinds of messages support agents receive all day. None of them tells you what is actually wrong. Your job is to ask the right questions, in the right order, until you know. Employers and training programmes often call this issue identification, and it is tested in interviews with role plays.
+
+## Start broad, then narrow down
+
+A simple order of questions works for most problems:
+
+1. **What exactly happens?** "When you open the app, what do you see on the screen?" Ask them to read out any error message word for word.
+2. **What did you expect to happen?**
+3. **When did it start?** Today, after an update, after changing phone?
+4. **Has it ever worked?** If yes, what changed since then?
+5. **Is it only you?** Can a family member log in? Does it happen on another network or device?
+6. **What have you already tried?** This saves you asking them to repeat steps.
+
+Use **open questions** (starting with what, when, how) to get the story, and **closed questions** (with yes or no answers) to confirm details: "So it worked yesterday, and today you see 'session expired'. Is that right?"
+
+## First level troubleshooting
+
+Many problems can be fixed with a few basic checks. These are often called first level or tier one troubleshooting:
+
+* **Network:** Is mobile data or wifi on? Does a web page load? Is the signal weak in their area?
+* **App version:** Is the app updated? Old versions sometimes stop working.
+* **Account status:** Is the account active, blocked, unverified, or waiting for KYC documents?
+* **Recent changes:** New phone, new SIM, changed password, low storage, phone date and time wrong.
+* **Restart:** Close and reopen the app, or restart the device. Simple, but it often works.
+
+Go through checks one at a time and note the result of each. If the basic checks do not fix it, you have still narrowed the problem, and your notes make escalation much faster.
+
+## Keep it simple for the customer
+
+Many customers are not technical. Instead of "Clear your app cache", say "Let us go into your phone settings together. I will tell you each step." Wait for them to finish each step before giving the next. Never make a customer feel foolish for not knowing.
+
+## A worked example
+
+Hawa takes a chat for an invented savings app. The customer, Issahaku, writes: "App not working since morning."
+
+Hawa asks what he sees. He sends a screenshot showing "Unable to connect". She asks if other apps work; WhatsApp is fine. She asks if anything changed; he says the app asked for an update yesterday and he skipped it. She asks him to update it from his app store. After the update, the app opens normally.
+
+In her note she writes: "Unable to connect error. Other apps fine. Old app version. Updated, resolved." If many customers report the same error, her team leader will see the pattern quickly.`,
+      practice_task_md: `**Goal:** Build and test your own question list.
+
+**Steps:**
+1. Write your own question list for this message: "I cannot log in to the app." Use the six question order from the lesson and at least three first level checks.
+2. Mark each question as open or closed.
+3. Role play with a friend. Secretly give them one of these causes: an old app version, a new SIM card, or no data on their bundle. Use your questions to find the cause.
+4. Write a one line ticket note for each round.
+
+**Done looks like:** A question list labelled open or closed, and three short ticket notes showing the cause you found each time.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should you ask a customer to do with an error message?",
+            options: [
+              "Ignore it and restart the device",
+              "Read it out or share it word for word",
+              "Describe it roughly in their own words",
+              "Send it to a friend first",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says ask them to read out any error message word for word.",
+          },
+          {
+            prompt: "Which of these is a closed question?",
+            options: [
+              "What do you see on your screen?",
+              "How did the problem start?",
+              "So it worked yesterday and today it shows 'session expired'. Is that right?",
+              "What have you already tried?",
+            ],
+            answer_index: 2,
+            explanation: "Closed questions have yes or no answers and are used to confirm details.",
+          },
+          {
+            prompt: "Which is a first level troubleshooting check from the lesson?",
+            options: [
+              "Rewriting the app's code",
+              "Checking whether the app is updated",
+              "Replacing the customer's phone",
+              "Changing the company's prices",
+            ],
+            answer_index: 1,
+            explanation: "Checking the app version is one of the basic checks listed.",
+          },
+          {
+            prompt: "Why should you note the result of each check, even if the problem is not fixed?",
+            options: [
+              "To make the ticket longer",
+              "Because it narrows the problem and makes escalation faster",
+              "So the customer can be blamed later",
+              "Because notes are only needed when problems are solved",
+            ],
+            answer_index: 1,
+            explanation: "Notes show what has been ruled out, which helps the next team.",
+          },
+          {
+            prompt: "In the example, what fixed Issahaku's problem?",
+            options: [
+              "Restarting his network",
+              "Resetting his password",
+              "Updating the app he had not updated",
+              "Escalating to the technical team",
+            ],
+            answer_index: 2,
+            explanation: "He had skipped an update; updating the app fixed the connection error.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "complaints-and-upset-customers": {
+      explanation_md: `Every support agent meets upset customers, sometimes several in one shift. It helps to remember that an angry customer is usually a worried or disappointed one. Their money is stuck, their order is late or they feel ignored. They are angry at the situation, not at you personally, even when it sounds personal. Handling complaints well is one of the most valued skills in support, and it can be learned.
+
+## A calm method: LISTEN
+
+Use this simple sequence:
+
+* **Let them talk.** Do not interrupt. Many customers calm down once they have said everything.
+* **Identify the real issue.** Underneath the anger, what went wrong and what do they want?
+* **Say sorry for the experience.** "I am sorry this has happened" is honest even when the company followed the rules.
+* **Take ownership.** "Let me look into this for you."
+* **Explain what you can do.** Be specific and honest about what is possible.
+* **Nail down the next step.** Agree what happens next and when, then do it.
+
+## Apologise without blaming anyone
+
+A good apology does not blame the customer, a colleague or another department. "I am sorry your refund has taken longer than we said" is better than "Sorry, the payments team is very slow." Do not admit fault for things you have not checked, but always acknowledge the customer's experience.
+
+## Do not take the bait
+
+When a customer insults the company, do not defend it with an argument. Arguments make calls longer and angrier. Stay with the facts and the next step. Keep your voice low and slow; people often match the tone they hear.
+
+## When a customer becomes abusive
+
+Being upset is normal. Abuse is different: insults aimed at you, threats, or sexist, ethnic or religious slurs. Your company should have a policy, and you should follow it. A common approach is to give a clear, polite warning:
+
+> "I want to help you with this, but I need us to keep the conversation respectful. If the insults continue, I will have to end the call."
+
+If it continues, end the contact politely, write a factual note and tell your team leader. Protecting yourself is part of doing the job well, not a failure.
+
+## Know what you can offer
+
+Find out early what you are allowed to offer: a refund, a replacement, a fee waiver, a callback from a supervisor. Never promise something you are not allowed to give. A broken promise turns one complaint into two.
+
+## A worked example
+
+Mariama works for an invented betting and payments company. A customer calls shouting that his withdrawal has been "stolen". Mariama lets him finish, then says: "I am sorry, I can hear how worrying this is. Let me check it right now." She verifies him and sees the withdrawal is pending because the wallet number he entered does not match his registered number. She explains this calmly, tells him which number is registered, and takes him through the correct steps under her company's process. His voice drops halfway through. At the end he apologises for shouting. Mariama thanks him for his patience and writes a clear note.`,
+      practice_task_md: `**Goal:** Practise staying calm under pressure.
+
+**Steps:**
+1. Write down the six LISTEN steps on a card or in your notes.
+2. Ask a friend to play an angry customer whose order arrived damaged. Ask them to be loud and repeat themselves, but not abusive.
+3. Handle the complaint using LISTEN. Afterwards, ask your friend at which point they felt calmer.
+4. Write your own polite warning sentence for an abusive customer, in your own words.
+5. Write a factual ticket note for the role play, with no opinions about the customer's character.
+
+**Done looks like:** Your LISTEN card, a short note on what calmed your friend, your warning sentence and one factual ticket note.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, what is an angry customer usually feeling underneath?",
+            options: [
+              "Boredom",
+              "Worry or disappointment about the situation",
+              "Dislike of the agent personally",
+              "A wish to waste time",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says angry customers are usually worried or disappointed about the situation.",
+          },
+          {
+            prompt: "Which is the best apology?",
+            options: [
+              "Sorry, the payments team is very slow.",
+              "Sorry, but you should have read the terms.",
+              "I am sorry your refund has taken longer than we said.",
+              "Sorry, that is just how it is.",
+            ],
+            answer_index: 2,
+            explanation: "A good apology acknowledges the experience without blaming anyone.",
+          },
+          {
+            prompt: "What should you do if a customer becomes abusive?",
+            options: [
+              "Shout back so they stop",
+              "Give a polite warning, then end the contact if it continues, note it and tell your team leader",
+              "Hang up immediately without saying anything",
+              "Accept the abuse because the customer is always right",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes a clear warning, then ending politely, a factual note and telling the team leader.",
+          },
+          {
+            prompt: "Why should you never promise something you are not allowed to give?",
+            options: [
+              "Because promises are against the law",
+              "Because a broken promise turns one complaint into two",
+              "Because customers never believe promises",
+              "Because only managers can speak to customers",
+            ],
+            answer_index: 1,
+            explanation: "The lesson warns that broken promises create a second complaint.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "escalation-and-handover": {
+      explanation_md: `No agent can fix everything. Some problems need a supervisor's approval, a technical team's access or another department's knowledge. Passing a case to someone with more authority or skill is called escalation. Escalating at the right time, with the right information, is a mark of a strong agent. Escalating too late leaves customers waiting; escalating badly makes them repeat their whole story.
+
+## When to escalate
+
+Every company has its own rules, so learn them early. Common reasons include:
+
+* **It is outside your access or authority.** For example a refund above your limit, or a system you cannot see.
+* **You have done the first level checks and it is still not fixed.**
+* **Many customers report the same problem at once.** This may be an outage, and team leaders need to know fast.
+* **There is risk:** suspected fraud, a threat to someone's safety, a legal complaint or a request from the media.
+* **The customer asks for a supervisor** and your policy allows it. Try to help first, but do not block a reasonable request.
+
+## What to write in the handover note
+
+A good escalation note means the next person can act without contacting the customer again. Include:
+
+1. **Customer details** (as recorded in the system, already verified).
+2. **The problem in one line.**
+3. **What you checked and the results.**
+4. **What the customer wants.**
+5. **Any deadline or urgency**, such as travel tomorrow or a school fees deadline.
+6. **What you told the customer** about next steps and timing.
+
+Example:
+
+> "Customer Fuseini, verified. Bought 50 cedis of airtime from wallet at 08:12, wallet debited, airtime not received. Checked: transaction shows success on our side, his number is correct, no reversal yet. Wants airtime or refund. Told him payments team will reply by 4pm today."
+
+## Telling the customer
+
+Be honest and specific. Avoid "Someone will call you." Say who, roughly when and what they should do in the meantime:
+
+> "I have sent this to our payments team with all the details, so you will not need to explain it again. They usually reply within the day, and I have asked them to contact you by 4pm. If you have not heard by then, reply to this message with your reference number, 7731."
+
+Only give timings your team can actually meet.
+
+## Warm and cold handovers
+
+A **warm handover** is when you speak to the next person before passing the customer, on a call transfer or in a team chat, so they are ready. A **cold handover** is when the case is simply moved to another queue. Warm handovers feel better to customers, so use them when your system and time allow, especially for upset or vulnerable customers.
+
+## Follow up
+
+Escalated does not mean forgotten. If you promised to check back, set a reminder. If the other team has not acted by the time you promised, chase them and update the customer. Your name is on the promise.`,
+      practice_task_md: `**Goal:** Write escalation notes that need no follow up questions.
+
+**Steps:**
+1. Choose two invented cases: a customer charged twice for a bus ticket, and a customer whose account is blocked after entering a wrong PIN several times.
+2. For each, write an escalation note with all six parts from the lesson.
+3. Write what you would tell each customer, including who will act, roughly when, and what to do if they hear nothing.
+4. Ask a friend or mentor to read one note and tell you if they would need to ask the customer anything else. Improve it if so.
+
+**Done looks like:** Two complete escalation notes and two customer messages, checked by someone else if possible.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is a good reason to escalate?",
+            options: [
+              "The customer has a long name",
+              "You want to finish your shift early",
+              "Many customers report the same problem at once",
+              "The customer asked a simple question about opening hours",
+            ],
+            answer_index: 2,
+            explanation: "Many reports at once may mean an outage, which team leaders need to know about fast.",
+          },
+          {
+            prompt: "What is the main purpose of a handover note?",
+            options: [
+              "To prove the customer was difficult",
+              "To let the next person act without contacting the customer again",
+              "To make the ticket longer",
+              "To close the ticket automatically",
+            ],
+            answer_index: 1,
+            explanation: "A complete note means the customer does not have to repeat their story.",
+          },
+          {
+            prompt: "Which message to the customer is best after escalating?",
+            options: [
+              "Someone will call you.",
+              "It is not my department any more.",
+              "I have sent this to our payments team with all the details. They will contact you by 4pm. If you hear nothing, reply with reference 7731.",
+              "Please wait and do not contact us again.",
+            ],
+            answer_index: 2,
+            explanation: "Good messages say who, when and what to do if nothing happens.",
+          },
+          {
+            prompt: "What is a warm handover?",
+            options: [
+              "Passing a case after speaking to the next person so they are ready",
+              "Moving a case to another queue without telling anyone",
+              "Giving the customer a discount before transferring",
+              "Ending the call and asking the customer to call another number",
+            ],
+            answer_index: 0,
+            explanation: "A warm handover means briefing the next person before passing the customer.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "payments-and-account-security": {
+      explanation_md: `Many support jobs in Ghana involve money: mobile money wallets, bank apps, card payments, school fees platforms, betting accounts and online shops. Customers contact support about failed transfers, money sent to the wrong number, double charges, reversals and refunds. These conversations matter more than most because real cedis are involved, and because fraudsters target exactly these situations.
+
+## Common payment problems
+
+* **Debited but not received.** The customer's wallet or account shows a deduction, but the receiver or service did not get it. Often the transaction is pending or failed on one side and needs checking by transaction ID.
+* **Sent to the wrong number.** The customer typed a wrong digit. Your company's process will say what can be done; often it involves the provider contacting the receiver, and the outcome is not guaranteed.
+* **Double charge.** The customer paid twice, often after a slow network made them try again.
+* **Refunds and reversals.** A refund returns money for a product or service. A reversal undoes a transaction. Each has its own process and timeline at your company.
+
+For every payment problem, collect the facts calmly: date, time, amount, the number or account it came from, the receiver, and the **transaction ID** from the confirmation message. Never promise money back until your process confirms it can be done.
+
+## Verify, never ask for secrets
+
+Before discussing any account, verify the customer using your company's approved checks. But some information must **never** be requested by anyone, ever:
+
+* PINs
+* Passwords
+* One time codes sent by SMS
+* Full card numbers with the security code
+
+If a customer starts to share one of these, stop them: "Please do not share your PIN with me or anyone. We will never ask for it." If they already shared it, follow your process, which usually means advising them to change it straight away.
+
+## Fraud and impersonation tricks
+
+Fraudsters often pretend to be customer service. Learn the common patterns so you can warn customers and spot them yourself:
+
+* **The fake reversal.** Someone sends a message that looks like a payment confirmation, then calls saying they sent money by mistake and asks for it back. The "payment" never arrived. Always tell customers to check their actual balance, not a message.
+* **The fake agent.** A caller claims to be from the provider, says the account will be blocked and asks for a PIN or code.
+* **The SIM or account takeover.** A fraudster tries to change the phone number or email on someone's account. That is why changes to contact details need extra checks.
+* **Fake support pages** on social media asking customers to message a private number.
+
+Agents can be targeted too, with requests to look up someone's details "as a favour" or pressure to skip checks. Never do this, and report it. The Bank of Ghana regulates payment services and Ghana's Cyber Security Authority gives public advice on scams; your employer's process comes first, but both are official places to learn more.
+
+## A worked example
+
+Wumpini works for an invented school fees platform. A parent, Amina, calls: she paid 450 cedis twice because the network was slow. Wumpini verifies her, asks for both transaction IDs, sees two successful payments, and logs a refund request for the duplicate under company process. She tells Amina when to expect it, and reminds her never to share her PIN with anyone who calls claiming to help.`,
+      practice_task_md: `**Goal:** Handle a payment complaint safely and warn against fraud.
+
+**Steps:**
+1. Write a list of the facts you need for any payment complaint, using the lesson as a guide.
+2. Write what you would say if a customer begins to read out their PIN to you.
+3. Write a short WhatsApp style message, under 60 words, warning customers about the fake reversal trick.
+4. Role play with a friend: they are a customer who sent 200 cedis to a wrong number. Collect the facts, explain honestly that recovery is not guaranteed and describe the next step.
+
+**Done looks like:** A fact checklist, a PIN stop sentence, a fraud warning message and notes from your role play.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these should a support agent never ask a customer for?",
+            options: [
+              "The transaction ID",
+              "The date and amount of the payment",
+              "The customer's PIN",
+              "The receiver's number",
+            ],
+            answer_index: 2,
+            explanation: "PINs, passwords, one time codes and full card details must never be requested.",
+          },
+          {
+            prompt: "What is the fake reversal trick?",
+            options: [
+              "A real refund that arrives late",
+              "A fraudster sends a fake payment message and then asks the person to send the money back",
+              "A double charge caused by a slow network",
+              "A company policy for wrong transfers",
+            ],
+            answer_index: 1,
+            explanation: "The fraudster fakes a confirmation message; the money never arrived, so customers must check their real balance.",
+          },
+          {
+            prompt: "What should you tell a customer who sent money to a wrong number?",
+            options: [
+              "That the money will definitely be returned today",
+              "That nothing can ever be done",
+              "The honest next step under your company's process, without promising the outcome",
+              "To call the receiver and threaten them",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says follow the process and never promise money back until it is confirmed.",
+          },
+          {
+            prompt: "Why do changes to a customer's phone number or email need extra checks?",
+            options: [
+              "Because fraudsters try to take over accounts by changing contact details",
+              "Because customers are not allowed to change numbers",
+              "Because it costs the company money",
+              "Because the CRM cannot store new numbers",
+            ],
+            answer_index: 0,
+            explanation: "The account takeover trick relies on changing contact details.",
+          },
+          {
+            prompt: "What should you collect for every payment complaint?",
+            options: [
+              "The customer's PIN and password",
+              "Date, time, amount, sender, receiver and transaction ID",
+              "Only the customer's name",
+              "A photo of the customer",
+            ],
+            answer_index: 1,
+            explanation: "These facts let you or the payments team find and check the transaction.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
   },
 };
 
