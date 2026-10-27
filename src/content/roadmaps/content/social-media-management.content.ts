@@ -1684,6 +1684,403 @@ Wumpini hosts a Friday evening Facebook live for Mariama's fabric shop, with her
         pass_threshold: 75,
       },
     },
+    "rules-and-ethics": {
+      explanation_md: `A page can be growing nicely and then, overnight, a post is removed, the page is restricted from going live, or a customer complains that their photo was posted without permission. Most of these problems come from not knowing the rules. When you run a client's pages, you are responsible for keeping them inside three sets of rules: the platforms' own rules, the law on personal data, and basic honesty in promotion.
+
+## Three kinds of rules
+
+* **Platform rules.** Every platform publishes community standards or guidelines covering hate, violence, harassment, spam, fake accounts, nudity, and the sale or promotion of regulated goods such as medicines, alcohol, weapons and betting. Breaking them can get posts removed, features limited or a page taken down. You will learn where to read them, why posts get removed and how to appeal.
+* **Privacy and consent.** Customers' names, phone numbers, messages and photos are personal data. Ghana's Data Protection Act, 2012 (Act 843) sets rules for how organisations collect and use personal data, and the Data Protection Commission oversees it. You will learn to ask before posting people, protect inbox details and clean up client data when the work ends.
+* **Honest promotion.** When a post is paid for, or an influencer is paid to promote, followers should be able to tell. Claims about products must be true and, for some products, approved before they are advertised. In Ghana, the Food and Drugs Authority (FDA) requires approval of adverts for regulated products such as food, medicines, cosmetics and household chemicals, including adverts on social media.
+
+## Why this matters for you personally
+
+When something goes wrong, the client will ask who posted it. "I did not know" is a weak answer for a professional. Knowing the rules protects the client's page, their customers and your own reputation. It also makes you more valuable: many owners do not know these rules, and a manager who does can keep them out of trouble.
+
+## The manager's habits
+
+* **Read the rules once properly,** then check them again when you work in a new area, such as a health product client or a betting company.
+* **Ask before you post people.** Especially children, patients and anyone in a sensitive situation.
+* **Keep proof.** Approvals, permissions and FDA approval numbers, saved in the client's folder.
+* **Label paid content** with the platform's own tools.
+* **When unsure, pause and ask.** A delayed post costs little; a removed page costs a lot.
+
+## Worked example
+
+Issahaku takes on a new client: a herbal clinic in Tamale. The owner wants a post saying their mixture "cures malaria and typhoid in three days". Issahaku explains that health claims like this break platform rules, that the FDA must approve adverts for such products, and that the clinic could face trouble if the claim cannot be proved. He suggests instead a post about the clinic's opening hours, its trained staff and a reminder to test for malaria at a health facility. He asks whether the product has FDA approval and, if so, for the approval details to keep on file. The owner is disappointed at first, but later thanks him when another clinic's page is reported.
+
+## What this section covers
+
+* **Community standards and why posts get removed.**
+* **Customer privacy and consent.**
+* **Paid partnerships and honest promotion.**`,
+      practice_task_md: `**Goal:** Build a quick rules checklist you can use before posting.
+
+**Steps:**
+1. Write five yes or no questions you will ask before any client post. For example: "Does this show a person who has not agreed?", "Is this a paid post that needs a label?", "Does this make a health claim?"
+2. Next to each question, write what you will do if the answer is yes.
+3. Test your checklist on three posts from any local business page and note what you would change.
+
+**Done looks like:** a five question checklist tested on three real posts, with notes.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which three kinds of rules does this section say a page manager must follow?",
+            options: [
+              "Tax rules, labour rules and traffic rules",
+              "Platform rules, privacy and consent, and honest promotion",
+              "School rules, church rules and family rules",
+              "Design rules, font rules and colour rules",
+            ],
+            answer_index: 1,
+            explanation: "The section covers platform rules, personal data law and honest promotion.",
+          },
+          {
+            prompt: "Which Ghanaian law sets rules for how organisations use personal data?",
+            options: [
+              "The Data Protection Act, 2012 (Act 843)",
+              "The Labour Act",
+              "The Road Traffic Act",
+              "The Copyright Act only",
+            ],
+            answer_index: 0,
+            explanation: "Ghana's Data Protection Act, 2012 (Act 843) covers personal data, overseen by the Data Protection Commission.",
+          },
+          {
+            prompt: "Which body in Ghana requires approval of adverts for medicines, food and cosmetics, including on social media?",
+            options: [
+              "The Electoral Commission",
+              "The Food and Drugs Authority",
+              "The Ghana Education Service",
+              "The National Sports Authority",
+            ],
+            answer_index: 1,
+            explanation: "The FDA requires approval of adverts for regulated products, including on social media.",
+          },
+          {
+            prompt: "In the example, what did Issahaku suggest instead of the 'cures malaria' post?",
+            options: [
+              "Posting it as a paid advert",
+              "Posting it without the clinic's name",
+              "A post about opening hours, trained staff and testing for malaria at a health facility",
+              "Asking an influencer to make the claim instead",
+            ],
+            answer_index: 2,
+            explanation: "He replaced an unprovable health claim with honest, useful information.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "platform-rules": {
+      explanation_md: `Every platform has rules about what can be posted. Meta calls them Community Standards, TikTok calls them Community Guidelines, and YouTube has Community Guidelines with a strike system. They are public, and they change. A page manager who has never read them is guessing with the client's page.
+
+## What the rules cover
+
+The details differ, but most platforms cover similar areas:
+
+* **Safety.** Violence, threats, dangerous acts and content that could harm children.
+* **Respect.** Hate speech, bullying and harassment.
+* **Honesty.** Spam, fake accounts, impersonation, scams and misleading claims.
+* **Adult content.** Nudity and sexual content.
+* **Regulated goods.** Selling or promoting medicines and drugs, alcohol, tobacco, weapons, betting and similar products often has extra rules or is not allowed at all, especially in ads.
+* **Intellectual property.** Using music, videos, photos or logos you do not have the right to use.
+
+## Common ways business pages break rules by accident
+
+* **Music.** Adding a popular song to a business video. Business accounts on TikTok are expected to use the Commercial Music Library, and Meta has its own sound collection for business use. Songs from elsewhere can be muted or removed.
+* **Copied photos.** Using another seller's product photos or a picture found online.
+* **Health and weight claims.** "Cures", "guaranteed results", before and after photos for slimming products.
+* **Engagement bait.** "Comment YES to win" or "tag ten friends" posts, which platforms may show less.
+* **Giveaways without clear rules.** Follow the platform's promotion rules and state who can enter and how winners are chosen.
+
+## What happens when rules are broken
+
+Platforms usually act in steps. A post may be removed or shown to fewer people. Repeated problems can lead to limits on features such as going live, advertising or monetisation, and eventually the page or account can be disabled. YouTube, for example, usually gives a warning first, then strikes; several strikes within a set period can end the channel.
+
+Meta shows problems in an account status area in its professional tools, and TikTok shows violations in the app's notifications and account status. Check these regularly for client pages, not only when something goes wrong.
+
+## Appealing a decision
+
+Platforms make mistakes, especially automated systems. If you believe a post or restriction was wrong:
+
+* Read the notice carefully: which rule does it say was broken?
+* Reread that rule honestly. If the post did break it, accept and learn.
+* If not, use the platform's request review or appeal option, from the notice or the account status area. Explain briefly and politely.
+* Keep a record of the decision, your appeal and the result in the client's folder.
+
+Never create a new page to escape a restriction; platforms treat that as avoiding enforcement.
+
+## Worked example
+
+Sumaila's client, a Bolgatanga gym, has a Reel removed. The notice says it broke rules on the promotion of weight loss products. The video showed a "fat burning tea" with dramatic before and after photos. Sumaila reads the policy, agrees the post broke it, tells the gym owner why, and replaces it with a video about a free beginners' workout class. He adds a line to the style guide: no before and after weight loss photos, no slimming products.`,
+      practice_task_md: `**Goal:** Read the rules for one platform you use.
+
+**Steps:**
+1. Open the Meta Community Standards on the Meta Transparency Center or the TikTok Community Guidelines in your browser.
+2. Read the sections on spam, regulated goods and intellectual property.
+3. Write five rules, in your own words, that matter most for a small business page.
+4. On a practice page you own, find where the account status or violations area is and note how to reach it.
+
+**Done looks like:** a list of five rules in your own words and the steps to reach account status on one platform.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does Meta call its public rules about what can be posted?",
+            options: ["Community Standards", "Terms of Delivery", "Ad Recipes", "Page Codes"],
+            answer_index: 0,
+            explanation: "Meta's rules are called Community Standards; TikTok calls its rules Community Guidelines.",
+          },
+          {
+            prompt: "Why should a business account on TikTok use the Commercial Music Library?",
+            options: [
+              "It makes videos longer",
+              "Songs from elsewhere can be muted or removed for business use",
+              "It is the only way to add captions",
+              "It removes the need for approval",
+            ],
+            answer_index: 1,
+            explanation: "Business accounts are expected to use music cleared for commercial use.",
+          },
+          {
+            prompt: "What usually happens when a page breaks rules repeatedly?",
+            options: [
+              "Nothing; rules are only advice",
+              "The page gets more reach",
+              "Features can be limited and eventually the page can be disabled",
+              "The page is automatically verified",
+            ],
+            answer_index: 2,
+            explanation: "Platforms act in steps, from removing posts to limiting features and disabling pages.",
+          },
+          {
+            prompt: "You believe a post was removed by mistake. What is the right first step?",
+            options: [
+              "Create a new page",
+              "Read the notice and the rule it names, then appeal politely if you still think it is wrong",
+              "Repost the same video several times",
+              "Complain in the comments of other pages",
+            ],
+            answer_index: 1,
+            explanation: "Check which rule was cited, reread it honestly, then use the appeal option if appropriate.",
+          },
+          {
+            prompt: "Why should you never create a new page to escape a restriction?",
+            options: [
+              "New pages cost money",
+              "Platforms treat it as avoiding enforcement",
+              "New pages cannot post photos",
+              "It is slower than appealing",
+            ],
+            answer_index: 1,
+            explanation: "Making a new page to get around a restriction is treated as avoiding enforcement.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "privacy-and-consent": {
+      explanation_md: `When you manage a client's pages, you see a lot of personal information: customers' names, phone numbers, delivery addresses, payment confirmations, photos and private messages about health, money or family. Customers shared that with the business, not with the whole world, and not with you personally. Handling it carefully is a legal duty and a matter of trust.
+
+## The law in Ghana
+
+Ghana's Data Protection Act, 2012 (Act 843) sets out how organisations should treat personal data, and the Data Protection Commission oversees it. In simple terms, the Act expects organisations to:
+
+* collect personal data for a clear and lawful purpose,
+* collect only what they need,
+* use it only for that purpose, not for something unexpected,
+* keep it accurate and secure,
+* not keep it longer than needed, and
+* respect people's rights, such as asking what is held about them.
+
+As the page manager, you act on the client's behalf, so these expectations apply to how you handle their customers' data too. The Commission's website explains the Act and registration for organisations.
+
+## Consent before posting people
+
+A photo of a happy customer, a pupil receiving a prize or a patient at a health event can make a powerful post. Ask first:
+
+* **Adults.** Ask clearly whether you may post their photo, name or words, and where. A simple written yes in WhatsApp is a good record.
+* **Children.** Ask a parent or guardian. Schools should have a permission process; follow it every time.
+* **Sensitive situations.** Patients, people receiving aid from an NGO or anyone who could be put at risk deserve extra care. Often, the right answer is not to show faces at all.
+* **Reviews and screenshots.** Before posting a customer's message as a testimonial, ask, and hide their phone number and profile picture unless they agree.
+* **Taking it down.** If someone asks for their photo to be removed, remove it promptly.
+
+## Protecting inbox details
+
+* **Never share** customers' numbers, addresses or messages publicly or with people who do not need them.
+* **Pass on only what is needed.** When forwarding an order, send name, item and location, not a screenshot of the whole conversation.
+* **Never use** client customer lists to promote your own services or another client.
+* **Lock your devices** with a PIN or password, and do not let others browse them.
+
+## When the work ends
+
+Client material often ends up in your gallery and downloads. When a contract ends:
+
+* Hand over the shared folder to the client.
+* Delete client photos, screenshots and customer details from your devices and personal cloud storage.
+* Confirm in writing that you have done so.
+
+## Worked example
+
+Hawa wants to post a thank you from a customer in Navrongo who loved her shea butter. Fuseini asks the customer on WhatsApp: "May we share your kind message on our Facebook page? We can use your first name only, or no name." She agrees to first name only. Fuseini crops out her number and profile picture, posts the quote and saves her "yes" in the client's folder. Months later, when Fuseini stops working with Hawa, he hands over the folder and deletes the screenshots from his phone and computer.`,
+      practice_task_md: `**Goal:** Create a consent and data routine.
+
+**Steps:**
+1. Write a short, friendly consent request message in the brand voice for a customer photo or testimonial, offering name, first name only or no name.
+2. Write a parent permission sentence a school could use for pupils' photos.
+3. Make a checklist of five things you will do with client data when a contract ends.
+4. Look at your own device's gallery and downloads. Make a folder plan that keeps any client material separate and easy to delete.
+
+**Done looks like:** a consent message, a parent permission sentence, an end of contract checklist and a folder plan.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these does the Data Protection Act expect organisations to do?",
+            options: [
+              "Collect as much data as possible in case it is useful",
+              "Collect only what they need, for a clear purpose, and keep it secure",
+              "Share customer lists with partner businesses",
+              "Keep data forever",
+            ],
+            answer_index: 1,
+            explanation: "The Act expects a clear purpose, minimal collection, security and no longer than needed.",
+          },
+          {
+            prompt: "A school wants to post photos of pupils at sports day. Whose permission do you need?",
+            options: [
+              "The pupils' classmates",
+              "Parents or guardians, following the school's permission process",
+              "Only the head teacher",
+              "Nobody, because it is a public event",
+            ],
+            answer_index: 1,
+            explanation: "For children, ask a parent or guardian and follow the school's process every time.",
+          },
+          {
+            prompt: "When forwarding an order to the client's staff, what should you send?",
+            options: [
+              "A screenshot of the whole conversation",
+              "The customer's full contact list",
+              "Only what is needed, such as name, item and location",
+              "Nothing; orders should be ignored",
+            ],
+            answer_index: 2,
+            explanation: "Pass on only the details needed to complete the order.",
+          },
+          {
+            prompt: "What should you do with client photos and customer details on your devices when a contract ends?",
+            options: [
+              "Keep them for your portfolio without asking",
+              "Hand over the shared folder, delete the material and confirm in writing",
+              "Post them on your own page",
+              "Sell them to another business",
+            ],
+            answer_index: 1,
+            explanation: "Client material belongs to the client and should be removed from your devices when work ends.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "honest-promotion": {
+      explanation_md: `When a brand pays someone to praise it, followers have a right to know. When a business claims its product works, the claim should be true. Hidden adverts and exaggerated claims can get posts removed, damage trust and, for some products in Ghana, break the law. As a page manager you are often the person who sets up partnerships and posts the claims, so honesty is part of your job.
+
+The Digital Marketing Specialisations roadmap teaches how to find and work with influencers. This lesson covers the page manager's side: labelling paid content correctly with the platforms' tools, checking claims before they go out and briefing partners in writing.
+
+## What counts as paid
+
+A post is promotional if the person posting gets something for it: money, free products, discounts, travel or any other benefit. Meta's branded content policies count gifted products too. If your client sends a free outfit to a Tamale fashion creator who then posts about it, that is a paid partnership and should be labelled.
+
+## Using the platforms' labelling tools
+
+* **Facebook and Instagram.** The creator adds a "Paid partnership" label and tags the brand as a partner. On Instagram, the label is added in the Instagram app. Up to two brand partners can be tagged. As the brand's page manager, you can approve the creator's partnership requests and check that the label appears.
+* **TikTok.** Creators turn on the content disclosure setting before posting when content promotes a brand, product or service. For work with another brand, the video shows a "Paid partnership" label. TikTok may notify an account if it thinks commercial content was not disclosed, and gives a short window to fix it or appeal.
+* **Other platforms.** Look for "paid promotion", "branded content" or similar settings. If none exists, a clear word at the start of the caption, such as "Ad" or "Paid partnership with", is better than hiding it among hashtags.
+
+## Claims that need care
+
+* **Health, beauty and food.** Do not claim a product cures, prevents or treats diseases unless it is approved to say so. The Ghana Food and Drugs Authority (FDA) requires approval of adverts for regulated products such as food, medicines, cosmetics and household chemicals, including on social media, and it publishes guidelines with banned claims. Ask the client for the FDA approval details and keep them on file.
+* **Prices and offers.** "Lowest price in Tamale" or "half price" must be true and match what customers pay.
+* **Results.** Do not promise outcomes you cannot prove, such as guaranteed exam results or guaranteed loans.
+* **Reviews.** Never write fake reviews, buy followers or ask staff to pose as customers.
+
+## Briefing a partner in writing
+
+When your client works with a creator, send a short written brief: what to show, key facts and prices, words to avoid, the disclosure requirement and how to label, the posting date, and who approves the draft. Keeping it in writing protects everyone.
+
+## Worked example
+
+Mariama's fabric shop agrees to give two outfits to Amina, a Tamale lifestyle creator, for a Damba post. Wumpini writes a brief: show the fabric clearly, mention the shop's location and WhatsApp number, no price claims, turn on the paid partnership label and tag the shop, post on the first day of Damba. He accepts Amina's partnership request on the shop's page and checks that the label is visible when the post goes live.`,
+      practice_task_md: `**Goal:** Prepare an honest promotion kit.
+
+**Steps:**
+1. Write a one page creator brief template with sections for what to show, key facts, words to avoid, disclosure and label, date and approver.
+2. Rewrite three exaggerated claims you have seen online into honest versions, for example "cures all skin problems" into a factual description.
+3. Find the paid partnership or content disclosure setting on one platform you use and note where it is.
+4. Write two sentences you would say to a client who wants to make an unproven health claim.
+
+**Done looks like:** a brief template, three rewritten claims, the location of one disclosure setting and your client explanation.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "A client sends a free outfit to a creator who then posts about it. Is this paid content?",
+            options: [
+              "No, because no money changed hands",
+              "Yes, because gifted products count, so it should be labelled",
+              "Only if the post gets many likes",
+              "Only if it is posted on TikTok",
+            ],
+            answer_index: 1,
+            explanation: "Free products are a benefit, and Meta's branded content policies count gifts.",
+          },
+          {
+            prompt: "What does a creator use on Facebook and Instagram to show a post is paid?",
+            options: [
+              "A hidden hashtag at the end",
+              "A 'Paid partnership' label with the brand tagged as a partner",
+              "A private message to followers",
+              "Nothing; it is not needed",
+            ],
+            answer_index: 1,
+            explanation: "Meta's branded content tools add a Paid partnership label and tag the brand.",
+          },
+          {
+            prompt: "What should a TikTok creator do before posting content that promotes a brand?",
+            options: [
+              "Turn on the content disclosure setting",
+              "Make the video private",
+              "Remove all captions",
+              "Post it at midnight",
+            ],
+            answer_index: 0,
+            explanation: "TikTok asks creators to turn on the content disclosure setting for commercial content.",
+          },
+          {
+            prompt: "A client selling a herbal cream wants to say it cures eczema. What should you check?",
+            options: [
+              "Whether the post will get many shares",
+              "Whether the claim is approved, including the FDA approval details for the advert",
+              "Whether a competitor makes the same claim",
+              "Whether the caption has enough emojis",
+            ],
+            answer_index: 1,
+            explanation: "Health claims need approval, and the FDA requires approval of adverts for regulated products.",
+          },
+          {
+            prompt: "Why should a creator brief be written down?",
+            options: [
+              "Because platforms ask to see it",
+              "Because it protects everyone by making facts, labels and approvals clear",
+              "So the creator can copy it as the caption",
+              "To avoid paying the creator",
+            ],
+            answer_index: 1,
+            explanation: "A written brief makes expectations clear and gives a record if questions arise.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
   },
 };
 
