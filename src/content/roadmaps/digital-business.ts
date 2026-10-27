@@ -29,7 +29,7 @@ export const digitalBusiness: RoadmapDraft = {
   description:
     "Run a small business online in Ghana: choose what to sell, price it in cedis, sell on WhatsApp and social media, take mobile money safely, deliver, keep records and register properly. Built for traders, makers and farmers who learn on a phone.",
   track: "digital-business",
-  field_category: "marketing",
+  field_category: "business",
   locale: "en-GH",
   status: "draft",
   nodes: [
@@ -253,7 +253,7 @@ export const digitalBusiness: RoadmapDraft = {
       slug: "tax-basics",
       title: "Tax basics for small traders",
       summary:
-        "Understand that your Ghana Card number works as your tax number and that GRA runs simplified arrangements for small businesses. Keep records and confirm what applies to you with GRA.",
+        "Understand that the PIN on your Ghana Card is your personal tax number and that GRA runs simplified arrangements for small businesses. Keep records and confirm what applies to you with GRA.",
       parent: "going-official",
       optional: false,
       resources: [LINKS.graTin, LINKS.graMts],

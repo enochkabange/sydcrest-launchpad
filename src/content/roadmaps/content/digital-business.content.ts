@@ -978,7 +978,7 @@ WhatsApp Status shows photos and short videos to your contacts for a day. Post r
 
 Hawa sells smocks. She set up WhatsApp Business with a profile, a catalogue showing each smock with sizes and prices, and three quick replies: "/delivery" for delivery fees by region, "/pay" for her business MoMo name and number, and "/size" for her size chart.
 
-When a customer in Takoradi asks about a smock, Hawa shares the catalogue item, sends "/size", confirms the order with a full summary, and labels the chat "New order". When payment arrives she checks her own wallet, then changes the label to "Paid". At the end of the day she can see every order's stage at a glance. She handles twice as many chats as before, with fewer mistakes.`,
+When a customer in Takoradi asks about a smock, Hawa shares the catalogue item, sends "/size", confirms the order with a full summary, and labels the chat "New order". When payment arrives she checks her own wallet, then changes the label to "Paid". At the end of the day she can see every order's stage at a glance. She now handles many more chats than before, with fewer mistakes.`,
       practice_task_md: `**Goal:** Set up a WhatsApp Business profile ready for customers.
 
 **Steps:**
@@ -1559,8 +1559,9 @@ The Bank of Ghana has warned the public to protect mobile money PINs, passwords 
 * Check your own wallet before releasing goods. Every time.
 * Use a strong PIN that is not your birthday or phone number.
 * Lock your phone, and do not let others use your mobile money menu.
+* Do not give your Ghana Card details or any verification code to people you do not know.
 * Slow down when someone rushes you. Pressure is a warning sign.
-* If you are scammed, contact your provider's official customer service quickly and report to the police. Act fast, because quick reports give the best chance of help.
+* If you are scammed, or your SIM suddenly stops working, contact your provider's official customer service quickly and report to the police. Act fast, because quick reports give the best chance of help.
 
 ## A small example
 
@@ -1939,7 +1940,7 @@ When the replacement arrived, the customer updated her comment to say the proble
 
 ## Free and low cost channels
 
-* **WhatsApp Status:** seen by your contacts who have also saved your number, depending on your privacy settings. Post regularly: new stock, a product in use, a happy customer (with permission), and prices.
+* **WhatsApp Status:** shown to people in your contacts, depending on the Status privacy settings you choose. Ask happy customers to save your number so they can see it. Post regularly: new stock, a product in use, a happy customer (with permission), and prices.
 * **Your own groups:** church, school, alumni, association and community groups. Share only where selling is welcome, follow group rules, and do not spam.
 * **Referrals:** ask happy customers to tell friends, and thank them when they do, perhaps with a small discount on their next order.
 * **Social media posts and short videos:** free to post, and a good video can travel far.
@@ -1987,11 +1988,11 @@ During Ramadan she created an iftar pack and announced it a week ahead. She aske
             options: [
               "Everyone in Ghana",
               "Only people in your groups",
-              "Your contacts who have also saved your number, depending on privacy settings",
+              "People in your contacts, depending on your Status privacy settings",
               "Only people who pay for them",
             ],
             answer_index: 2,
-            explanation: "The lesson says Status is seen by your contacts who have also saved your number, depending on privacy settings.",
+            explanation: "The lesson says Status is shown to people in your contacts, depending on the privacy settings you choose.",
           },
           {
             prompt: "What does the lesson advise when sharing in community or church groups?",
@@ -2237,7 +2238,7 @@ The **Office of the Registrar of Companies (ORC)** registers businesses in Ghana
 * **Partnership.** Two or more people running a business together.
 * **Company.** A separate legal body from its owners, such as a company limited by shares. It involves more paperwork and duties, and suits bigger or growing businesses, especially those with several owners or investors.
 
-Most people starting a small online shop begin with a business name. Whether you must register depends on things like whether you trade under a name other than your own, so check the current rules with the ORC.
+Most people starting a small online shop begin with a business name. Check with the ORC whether and when you must register in your situation.
 
 ## What you usually need
 
@@ -2253,7 +2254,7 @@ Check the ORC website or office for the current list and fees before you start.
 
 ## Renewal
 
-Registration is not a one time event. Business names must be renewed, and the ORC offers renewal online and by USSD. Put the renewal date in your phone calendar so you do not forget.
+Registration is not a one time event. Business names must be renewed every year, and the ORC offers renewal online and by USSD. A name that is not renewed on time can lapse. Put the renewal date in your phone calendar so you do not forget.
 
 ## Choosing a name
 
@@ -2314,7 +2315,7 @@ She gathers her Ghana Card, her GhanaPostGPS address and a short description of 
               "Registration lasts forever",
               "Only companies need to renew",
               "Renewal can only be done in Accra",
-              "Business names must be renewed, and the ORC offers renewal online and by USSD",
+              "Business names must be renewed every year, and the ORC offers renewal online and by USSD",
             ],
             answer_index: 3,
             explanation: "Registration must be renewed, so set a reminder.",
@@ -2324,15 +2325,15 @@ She gathers her Ghana Card, her GhanaPostGPS address and a short description of 
       },
     },
     "tax-basics": {
-      explanation_md: `Tax can feel confusing and frightening, but the basics are straightforward. Understanding them helps you plan your prices, avoid penalties, and be ready when a buyer, a lender or a support programme asks about your tax position. This lesson gives you the general picture. For anything specific to your business, check with the Ghana Revenue Authority (GRA).
+      explanation_md: `Tax can feel frightening, but the basics are straightforward. Understanding them helps you plan prices, avoid penalties, and answer when a buyer, lender or support programme asks about your tax position. This lesson gives the general picture. For anything specific, check with the Ghana Revenue Authority (GRA).
 
 ## The Ghana Revenue Authority
 
-The **GRA** collects taxes in Ghana. Its website, gra.gov.gh, has information on tax types, registration and payment, and it has offices across the country.
+The **GRA** collects taxes in Ghana. Its website, gra.gov.gh, explains tax types, registration and payment, and it has offices across the country.
 
 ## Your tax number
 
-Every taxpayer has a **Taxpayer Identification Number (TIN)**. The GRA states that for individuals, the PIN on your Ghana Card is now your TIN. So if you have a Ghana Card, you already have your personal tax number. Registered businesses may also have their own TIN.
+Every taxpayer has a **Taxpayer Identification Number (TIN)**. The GRA states that for individuals, the PIN on your Ghana Card is now your TIN. This PIN is the personal ID number printed on the card, not a secret code like your mobile money PIN. So if you have a Ghana Card, you already have your personal tax number, and a sole trader uses it too. Companies and other organisations get their own TIN from the GRA.
 
 ## Simplified tax for small traders
 
@@ -2341,28 +2342,28 @@ The GRA runs a **Modified Taxation Scheme** for individuals in the informal sect
 * It has **categories based on the size of your annual sales**. The smallest businesses pay a fixed amount, while larger ones pay based on their sales or their profit.
 * You register with your Ghana Card, a digital address, a phone number and some basic information about your sales.
 * Registration can be done through a GRA app, at a GRA office, with a GRA field officer, or through a trade association.
-* Payment can be made with mobile money through the GRA's official channels.
+* Payment can be made with mobile money through the GRA's official channels, such as its USSD code or app.
 * You file a yearly return reporting your actual sales.
 
 The amounts and sales limits for each category can change, so read the current details on the GRA website rather than relying on what someone tells you.
 
-The GRA also mentions a **tax stamp** given to small informal businesses as proof that they have paid.
+You may also hear people talk about an older **tax stamp** for small informal businesses. Ask the GRA which arrangement applies to you today.
 
 ## VAT and growing businesses
 
-Value Added Tax (VAT) is a tax on sales that applies to businesses once their sales pass certain levels, and there are special schemes for some retailers. Most very small sellers will not start here, but if your business grows, check the GRA's VAT pages to see whether you need to register.
+Value Added Tax (VAT) is a tax added to the price of goods and services. Businesses that sell goods must register once their yearly sales pass a level set by law, and businesses that sell services face different rules. These rules changed recently. Most very small sellers will not start here, but if your business grows, check the GRA's VAT pages to see whether you need to register.
 
 ## Records are your best friend
 
-Tax works on numbers: your sales, and for some schemes your costs. The daily records you learned to keep in the bookkeeping lesson give you those numbers. Keep mobile money confirmations, receipts and your sales record safe for several years.
+Tax works on numbers like your sales, and for some schemes your costs. Your daily records give you those numbers. Keep mobile money confirmations, receipts and your sales record safe for several years.
 
 ## Beware of tax scams
 
-Only pay tax through official GRA channels. Be careful with calls or messages claiming to be from the GRA that ask for urgent payment to a personal number. When in doubt, contact the GRA directly using details from its official website.
+Only pay tax through official GRA channels. If a call or message claiming to be the GRA demands urgent payment to a personal number, contact the GRA directly using details from its official website.
 
 ## A small example
 
-Sumaila's phone accessory business in Damongo is growing. A friend told him tax was "too complicated" and to ignore it. Instead, Sumaila read the GRA's pages on TINs and the Modified Taxation Scheme. He learned that his Ghana Card PIN is his TIN and that small traders can register through the GRA app or a field officer and pay with mobile money.
+Sumaila's phone accessory business in Damongo is growing. A friend told him to ignore tax. Instead, Sumaila read the GRA's pages and learned that his Ghana Card PIN is his TIN and that small traders can register through the GRA app or a field officer and pay with mobile money.
 
 Because he had kept a year of sales records, he could see which category he probably fell into, and he confirmed it with a GRA officer during a market visit. He now sets aside a little money each week so the payment never comes as a shock.`,
       practice_task_md: `**Goal:** Understand your own tax starting point.
@@ -2443,7 +2444,7 @@ Because he had kept a year of sales records, he could see which category he prob
 
 The **Food and Drugs Authority (FDA)** regulates food, drugs, cosmetics and related products in Ghana. Depending on the product and where you sell it, you may need FDA approval before selling widely, especially in shops and supermarkets. The FDA has offices in the regions, including the north, and its website, fdaghana.gov.gh, has information and contacts.
 
-News reports from Tamale have described the FDA and partners training shea butter and cosmetic processors, and noted that labelling problems are one of the main reasons products are not approved. The FDA has also said it has taken steps to make registration easier for small producers. So it is worth asking early rather than guessing.
+News reports from Tamale have described the FDA and partners training shea butter and cosmetic processors, and noted that labelling problems are one of the main reasons products are not approved. The FDA has also said it has taken steps to make registration easier for small producers. So it is worth asking early rather than guessing. FDA product registration usually asks for your business registration documents too, so registering your business first often makes this step easier.
 
 ## What a good label usually shows
 
@@ -2538,7 +2539,7 @@ Mariama visited the FDA regional office to ask what was needed. She learned what
       },
     },
     earning: {
-      explanation_md: `The skills in this roadmap can earn you money in two ways. You can grow your own business, or you can be hired by a business that needs someone to sell, serve customers and manage online orders. Many people do both: they work in sales while building a side business, or they run a business and take on freelance work helping others sell online. In Ghana, sales and business development are among the largest categories of job adverts on Jobberman, and many adverts now ask for exactly the skills you have practised here.
+      explanation_md: `The skills in this roadmap can earn you money in two ways. You can grow your own business, or you can be hired by a business that needs someone to sell, serve customers and manage online orders. Many people do both: they work in sales while building a side business, or they run a business and take on freelance work helping others sell online. Sales and business development adverts are a common sight on Ghanaian job sites such as Jobberman, and many now ask for exactly the skills you have practised here.
 
 ## Two paths, one set of skills
 
@@ -2626,7 +2627,7 @@ His friend Mariama chose the other path. She used her records to apply to a yout
       },
     },
     "sales-jobs": {
-      explanation_md: `Sales and business development roles are among the most advertised jobs on Jobberman Ghana. Many are open to people with little formal experience, as long as they can communicate well, serve customers, keep records and use a phone and basic computer tools confidently. The skills from this roadmap fit these roles closely.
+      explanation_md: `When you browse Ghanaian job sites such as Jobberman, you will usually find plenty of sales and business development roles. Many are open to people with little formal experience, as long as they can communicate well, serve customers, keep records and use a phone and basic computer tools confidently. The skills from this roadmap fit these roles closely.
 
 ## What these roles involve
 
@@ -2642,7 +2643,7 @@ Common job titles and what they usually mean:
 
 ## Skills that keep appearing
 
-Across Ghanaian adverts, the same skills appear again and again: customer service, communication, selling through WhatsApp and social media, meeting targets and reporting, lead generation and follow up, record keeping, stock management, product knowledge, negotiation, and office tools like email and spreadsheets. Some roles ask for a **CRM**, a customer relationship management tool, which is software for tracking customers, leads and sales. Examples include Zoho and HubSpot. If you have kept a customer list and order list, you already understand the idea.
+Across Ghanaian adverts, the same skills appear again and again: customer service, communication, selling through WhatsApp and social media, meeting targets and reporting, lead generation and follow up, record keeping, stock management, product knowledge, negotiation, and office tools like email and spreadsheets. Some roles ask for a **CRM**, a customer relationship management tool, which is software for tracking customers, leads and sales. Zoho and HubSpot are two examples, named here only as examples. If you have kept a customer list and order list, you already understand the idea.
 
 ## Build a simple portfolio
 
@@ -2760,7 +2761,7 @@ Support can include training, mentoring, market access, equipment and sometimes 
 * **Government agencies** for small businesses, such as the Ghana Enterprises Agency.
 * **Trade associations and cooperatives**, such as shea, crafts or farmer groups.
 * **NGOs and development programmes** working with women and young people in the north.
-* **Training providers**, including online courses. Google's Digital Marketing and E-commerce certificate is one paid option if you can afford it.
+* **Training providers**, including online courses. Google's Digital Marketing and Ecommerce certificate is one paid option, named here only as an example.
 
 Many programmes run in cohorts with set application dates, and some are based in Accra or other cities. Use this roadmap to prepare, so you can apply with records, a plan and evidence of what you have done.
 

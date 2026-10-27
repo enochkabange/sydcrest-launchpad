@@ -49,9 +49,12 @@ Project refs, the Vercel org and project IDs, and the production URL are public
 and live in the workflow files.
 
 **Vercel**
-- Git integration stays on for preview deployments.
-- `vercel.json` turns off Git-triggered production deploys, so the pipeline is
-  the only path to production.
+- `vercel.json` turns off all Git-triggered deployments (previews included).
+  Vercel's free plan allows 100 deployments a day, and automatic previews on
+  every PR push used them up on 25 Oct, blocking a production deploy. CI (with
+  e2e against a local stack) replaces previews; production deploys only through
+  the pipeline. Re-enable previews (`"deploymentEnabled": {"main": false}`) on a
+  paid plan.
 - Env vars are public values only: `NEXT_PUBLIC_SUPABASE_URL` and
   `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (Preview and Development point at
   staging, Production at production). Never put a `service_role` or secret key
