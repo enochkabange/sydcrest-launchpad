@@ -314,12 +314,215 @@ Reviewed against the production advisor run on 27 Oct.
   days cannot be backfilled.
 - Follower counts are public numbers; who follows whom stays signed in only.
 
+## Community, chapters, events, skills and notifications (issue #158)
+
+Schema B. Migrations `notifications`, `chapters_community`,
+`community_events`, `skills_verified` (and `talent_verified_skills`, which
+extends the talent directory). Tests: `notifications`, `community`,
+`community_events`, `skills_verified` (`*.test.sql`).
+
+Roles used below. **Chapter lead**: `chapter_members.role = 'lead'`,
+appointed by admins. **Cohort staff**: a mentor or coordinator in
+`cohort_members`. **Host** of an event: admins, or a lead of the event's
+chapter. **Moderator** of a feed scope: admins everywhere, chapter leads in
+their chapter, cohort staff in their cohort. **Reviewer**: `profiles.role`
+mentor or admin. Errors as in Phase 2: `42501` not allowed, `22023` bad input
+or wrong state, `P0002` not found, `23505` duplicate, `54000` rate limited
+(`Slow down`).
+
+**chapters**. slug, name, `region` (the profiles.region list), city, status
+`draft|launching|active|paused|closed`, summary, `whatsapp_url` (chat.whatsapp.com,
+wa.me or a WhatsApp channel).
+Anyone reads non draft chapters, WhatsApp link included. Admins write; leads
+change summary and link through `set_chapter_details`.
+
+**chapter_members**. `(chapter_id, profile_id)`, role `member|lead`, joined_at.
+Members of the chapter and admins read. Learners join (as member) launching
+or active chapters and leave; leads remove members (not leads); admins add
+anyone and change roles. Learners may be in several chapters; the UI defaults
+the choice from `profiles.region`.
+
+**chapter_roster** (view). chapter_id, profile_id, name, avatar, public slug
+(public profiles only), role, joined_at. Leads of non draft chapters for
+everyone; every member for members of that chapter and admins.
+
+**cohort_channels**. `cohort_id` and its WhatsApp `whatsapp_url`, kept off the
+public cohorts table. Cohort members read; cohort staff and admins write.
+
+**community_posts**. author_id (defaults to caller), `scope`
+`everyone|chapter|cohort` with exactly the matching `chapter_id` or
+`cohort_id`, body (4000), link_url, pinned_at, hidden_at, hidden_by,
+hidden_reason, edited_at.
+Everyone posts: any signed in user. Chapter and cohort posts: members of that
+chapter or cohort only (admins read all). Authors insert as themselves where
+they belong and edit body and link; authors and moderators delete. Hidden
+posts are visible only to their author and moderators. Ten posts an hour per
+person.
+
+**community_replies**. post_id, author_id, body (2000), hidden fields,
+edited_at. Readable wherever the post is; insert only on a post the caller
+can read and that is not hidden. Sixty replies an hour per person. A reply
+notifies the post author.
+
+**community_reactions**. One `kind` (`like|celebrate|helpful|support`) per
+person per post or reply. Readable with the target; added only to open
+targets; owner removes.
+
+**reports** (extended). `target_type` also takes `community_post`,
+`community_reply`, `chapter`, `community_event`, `event_recording`. Admins
+still triage everything through `admin_reports`; leads and cohort staff use
+`community_report_queue` and `set_community_report_status` for their scope.
+
+**community_events**. Named so because `public.events` is the Phase 1
+analytics table. slug, `kind` `skillshop|webinar|flagship|activation`, title,
+summary, description, `format` `online|in_person|hybrid`, starts_at, ends_at,
+venue_name, venue_address, city, region, optional chapter_id, `capacity`
+(null is unlimited), status `draft|published|cancelled|completed`, created_by.
+Anyone reads non draft events (public pages, Event structured data); hosts
+read drafts and write. A lead cannot create or move an event outside their
+chapter; only admins create events without a chapter. Publishing an in
+person event needs a venue.
+
+**event_access**. Per event `join_url` and the eight character `checkin_code`
+(no 0, O, 1, I), created with the event. Hosts only. Attendees get the link
+from `event_join_link`; nobody else ever reads the code.
+
+**event_rsvps**. `(event_id, profile_id)`, status `going|waitlisted|cancelled`,
+responded_at (waitlist order). Own rows and hosts read. Written only by
+`rsvp_event`, `cancel_rsvp`, check in, and the waitlist filler (a freed seat
+or a higher capacity moves the oldest waitlisted person up and notifies
+them). Cancelling or moving a published event notifies everyone going or
+waitlisted.
+
+**event_attendance** (view). event_id, going_count, waitlist_count,
+seats_left (null when unlimited). Anyone, for visible events. Real counts.
+
+**event_checkins**. `(event_id, profile_id)`, method `code|host`,
+checked_in_by, checked_in_at. Own rows and hosts read. Written only by
+`check_in_event` (code verified server side) or `host_check_in`.
+
+**event_attendees** (view). Hosts only: RSVPs of their events with name,
+avatar, public slug, status and check in time.
+
+**event_feedback**. `(event_id, profile_id)`, the events playbook impact
+snapshot: confidence, usefulness, clarity, logistics (1 to 5), recommend (0 to
+10), attend_again, comment, `quote_consent`. Only people who checked in, once
+the event has started; owner edits; owner and hosts read. A comment is
+quotable only with `quote_consent`.
+
+**event_recordings**. event_id, title, summary, video_url (https),
+duration_minutes, is_published. Published recordings of public events are
+public; hosts write.
+
+**skills**. slug, name, summary, is_published. Anyone reads published;
+admins write.
+
+**skill_roadmaps**. `(skill_id, roadmap_slug)`: roadmaps whose completion
+verifies the skill, by `roadmaps.slug` like `program_week_nodes`. Public for
+published skills; admins write.
+
+**skill_assessments**. skill_id, `kind` `quiz|portfolio`, title, instructions,
+`questions` (quiz, same shape as node_quiz, no answers), `pass_threshold`
+(80), `retry_after_hours` (24), is_published. Public when it and its skill
+are published; admins write.
+
+**skill_assessment_answers**. Quiz answer keys `{"q1": 2}`. Admins only.
+
+**skill_assessment_attempts**. assessment_id, skill_id, profile_id, kind,
+status (`passed|failed` for quizzes, `pending_review|approved|rejected` for
+portfolios), answers, score, portfolio_url (https), portfolio_note,
+reviewer_id, review_note, reviewed_at, submitted_at. Owner reads; reviewers
+read portfolio attempts; admins all. Written only by functions.
+
+**portfolio_review_queue** (view). Portfolio attempts with skill name and
+the person's name, avatar and public slug. Reviewers only.
+
+**verified_skills**. profile_id, skill_id, `source`
+`path_completion|assessment|portfolio_review`, `source_ref` (roadmap slug or
+attempt id), issued_by (the reviewer; null when the database issued it),
+issued_at, revoked_at, revoked_by, revocation_reason. One live row per
+person per skill. Owner and admins read; anyone reads live rows of public
+profiles. **No signed in role can insert, update or delete**: every row
+comes from `private.issue_verified_skill`.
+
+**notifications**. recipient_id, `kind`
+(`community_reply|chapter_post|event_update|event_waitlist_promoted|verified_skill|skill_review|booking|review|cohort|opportunity|system`),
+`payload` object (4 KB; ids and names the UI needs, an optional
+`title`, `body` and `href` from server code; never phone or email), read_at.
+Recipient reads, sets `read_at` and deletes. Inserted only by
+`private.notify` (database triggers and functions) and `notify_user`
+(service role). The UI writes the copy from `kind` and `payload`, so stored
+rows carry no user facing text from the database.
+
+### Functions (Schema B)
+
+| Function | Who | What |
+| --- | --- | --- |
+| `set_chapter_details(chapter_id, summary, whatsapp_url)` | chapter leads, admins | Edits the lead owned part of the chapter page. |
+| `community_feed(scope, scope_id, before, limit)` | signed in members of the scope, admins | A page of posts (pinned first on the first page) with author name, avatar, public slug, `author_is_lead`, `reply_count`, `reaction_counts` `{kind: n}`, `my_reactions`. Page with `before` = last `created_at`. Not a member: `42501`. |
+| `community_thread(post_id)` | whoever can read the post | Replies oldest first with author fields, reaction counts and the caller's reactions. Otherwise `P0002`. |
+| `moderate_community_content(target_type, target_id, hide, reason)` | moderators of the scope | Hides (reason required) or unhides a `community_post` or `community_reply`. |
+| `pin_community_post(post_id, pinned)` | moderators of the scope | Pins or unpins an announcement. |
+| `community_report_queue(status)` | moderators | Reports on posts and replies the caller moderates, with content, scope and names. Others get zero rows. |
+| `set_community_report_status(report_id, status)` | moderators of that content, admins | Triage a community report. |
+| `rsvp_event(event_id)` | signed in | `going` while seats last, else `waitlisted`. Idempotent. Published events that have not ended only. |
+| `cancel_rsvp(event_id)` | signed in | Cancels; the first waitlisted person moves up and is notified. |
+| `event_join_link(event_id)` | people going, hosts | The online join link (null if none). Others `42501`. |
+| `check_in_event(event_id, code)` | signed in | From two hours before the start to two hours after the end; case, spaces and hyphens ignored; makes the RSVP `going` (walk ins count). Wrong or missing code: `22023 Wrong code`. |
+| `host_check_in(event_id, profile_id)` | hosts | Checks in someone with an RSVP. |
+| `rotate_event_checkin_code(event_id)` | hosts | New code, returned. |
+| `event_feedback_summary(event_id)` | hosts | going, checked in, responses, averages and attend again rate (null when nobody answered). |
+| `submit_skill_quiz(assessment_id, answers)` | signed in | `score`, `passed`, `verified_skill_id`. Does not reveal which answers were right. After a fail, `22023 Try again later` until `retry_after_hours` pass. |
+| `submit_skill_portfolio(assessment_id, portfolio_url, note)` | signed in | Sends work for review; one pending at a time, retry wait after a rejection. |
+| `review_skill_portfolio(attempt_id, approve, note)` | reviewers (never their own) | Approve issues the verified skill; reject needs a note. Notifies either way. |
+| `claim_path_skills()` | signed in | Issues skills mapped after the caller completed a roadmap. Completion itself issues them automatically. |
+| `revoke_verified_skill(id, reason)` | admins | Revokes with a reason; the badge leaves public profiles and the talent directory. |
+| `mark_notifications_read(ids)` | signed in | Marks the given (or, with null, all) of the caller's notifications read; returns the count. |
+| `notify_user(recipient_id, kind, payload)` | service role only | Server code notifies for bookings, reviews, cohorts and opportunities. |
+
+### Verified skills: earned, never bought
+
+Product Enrichment §7.5. A verified skill is issued only by
+`private.issue_verified_skill` (not executable by any API role), from:
+
+- **path_completion**: a trigger on `achievements` for `roadmap_completed`,
+  which is minted only when every required topic of the roadmap is quiz
+  verified. Every published skill mapped to that roadmap's slug is issued.
+  `claim_path_skills` covers mappings added later.
+- **assessment**: `submit_skill_quiz` grades against a key no learner can
+  read. Unlimited instant retries would let someone find the answers by
+  elimination, so a fail waits `retry_after_hours` and the result does not
+  say which answers were right. Attempts are serialised per person.
+- **portfolio_review**: a mentor or admin approves submitted work; nobody
+  reviews their own.
+
+Issuing is idempotent (one live badge per person per skill) and notifies the
+holder. Admins revoke with a reason; a revoked skill can be earned again by
+one of the three routes. Nothing about a verified skill involves payment.
+`private.has_verified_skill(profile_id)` is the one line check the talent
+directory and expert ranking use.
+
+### Events: check in and capacity
+
+- RSVPs lock the event row, so two people cannot take the last seat.
+- The check in code is never readable by attendees; the function compares it
+  server side, inside a window around the event. Eight characters from 32
+  give about 10^12 codes; hosts rotate it if it leaks.
+- A walk in who checks in becomes `going` even past capacity: attendance is
+  what happened, not what was booked.
+- Feedback is only from people who checked in, so the impact snapshot counts
+  real attendees.
+
 ## Not yet
 
 `public_profile_rows()` and `public_profile_stats_rows()` scan all public
 profiles before the view's filter applies; fine at Phase 1 scale, revisit
 (materialized view refreshed on a schedule) past a few thousand public
 profiles.
+
+`community_feed` counts replies and reactions per post on read; fine for
+chapter scale, revisit with counters past tens of thousands of posts.
+Chapter post notifications fan out one row per member on insert.
 
 ## Market and Earn (issue #148)
 
