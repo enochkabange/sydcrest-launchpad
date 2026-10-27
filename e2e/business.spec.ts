@@ -42,8 +42,9 @@ test("an organisation signs up, asks for review, is verified and goes public", a
 
   // Not public until verified.
   const visitor = await browser.newPage();
-  const hidden = await visitor.goto(`/org/${slug}`);
-  expect(hidden?.status()).toBe(404);
+  await visitor.goto(`/org/${slug}`);
+  await expect(visitor.getByText("This page could not be found.")).toBeVisible();
+  await expect(visitor.getByRole("heading", { level: 1, name })).toHaveCount(0);
 
   await page.getByRole("button", { name: "Ask to be verified" }).click();
   await expect(page.getByText("Waiting for review", { exact: true }).first()).toBeVisible();
@@ -65,6 +66,7 @@ test("an organisation signs up, asks for review, is verified and goes public", a
   // The owner sees verified, and the placeholder for posting.
   await page.goto(`/org/${slug}/opportunities`);
   await page.getByRole("link", { name: "Post an opportunity" }).click();
+  await expect(page).toHaveURL(new RegExp(`/org/${slug}/opportunities/new$`), { timeout: 15_000 });
   await expect(page.getByRole("heading", { name: "Posting is nearly here" })).toBeVisible();
 });
 
@@ -102,9 +104,13 @@ test("a certified learner opts in, an organisation asks to talk, and the learner
   await ownerPage.getByLabel("Region").selectOption("northern");
   await ownerPage.getByRole("button", { name: "Show talent" }).click();
   await expect(ownerPage).toHaveURL(/skill=excel/);
-  await ownerPage.getByRole("link", { name: "Fuseini Alhassan" }).click();
-  await expect(ownerPage.getByText("Junior data analyst")).toBeVisible();
-  await expect(ownerPage.getByText(/@example\.test/)).toHaveCount(0);
+  // Other runs list learners with the same name, so pick this one by their link.
+  await ownerPage.locator(`a[href="/talent/${learner.id}"]`).click();
+  await expect(ownerPage).toHaveURL(new RegExp(`/talent/${learner.id}$`), { timeout: 15_000 });
+  await expect(ownerPage.getByRole("heading", { name: "Ask Fuseini to talk" })).toBeVisible({ timeout: 15_000 });
+  // The list page stays in the DOM, hidden, after a client navigation; count what is shown.
+  await expect(ownerPage.getByText("Junior data analyst").locator("visible=true")).toHaveCount(1);
+  await expect(ownerPage.getByText(learner.email)).toHaveCount(0);
   await ownerPage.getByLabel("Message to Fuseini").fill("We are hiring a data intern in Tamale. Could we talk?");
   await ownerPage.getByRole("button", { name: "Ask to talk" }).click();
   await expect(ownerPage.getByText(/Request sent/)).toBeVisible();

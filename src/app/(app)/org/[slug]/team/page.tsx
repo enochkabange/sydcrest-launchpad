@@ -47,10 +47,7 @@ async function Team({ params }: { params: Promise<{ slug: string }> }) {
               {r.display_name}
               {r.profile_id === userId && <span className="font-normal text-content-3"> (you)</span>}
             </span>
-            <span className="text-sm text-content-3 md:hidden">
-              {orgRoleLabel(r.role)}
-              {r.status === "invited" ? " · invited" : ""}
-            </span>
+            {r.status === "invited" && <span className="text-sm text-content-3 md:hidden">Invited</span>}
           </span>
         </span>
       ),
@@ -58,7 +55,6 @@ async function Team({ params }: { params: Promise<{ slug: string }> }) {
     },
     {
       header: "Role",
-      phone: "hide",
       cell: (r) =>
         r.profile_id !== userId && canManageMember(mine, r.role) ? (
           <RoleForm organisationId={org.id} profileId={r.profile_id} current={r.role} roles={roles} name={r.display_name} />
@@ -108,7 +104,13 @@ async function Team({ params }: { params: Promise<{ slug: string }> }) {
         <h2 id="team-heading" className="text-subtitle text-content">
           Team
         </h2>
-        <DataTable caption={`People in ${org.name}`} columns={columns} rows={rows} rowKey={(r) => r.profile_id} />
+        <DataTable
+          caption={`People in ${org.name}`}
+          columns={columns}
+          rows={rows}
+          rowKey={(r) => r.profile_id}
+          rowClassName={() => "flex-wrap py-3"}
+        />
         <p className="text-sm text-content-3">
           Owners do everything. Admins edit the profile and manage admins and recruiters. Recruiters post opportunities and
           contact talent. Every organisation keeps at least one owner.

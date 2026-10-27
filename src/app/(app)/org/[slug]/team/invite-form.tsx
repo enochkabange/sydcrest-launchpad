@@ -22,10 +22,16 @@ export function InviteForm({ organisationId, roles }: { organisationId: string; 
         spellCheck={false}
         required
       />
-      <SelectField id="role" label="Role" defaultValue={roles.includes("recruiter") ? "recruiter" : roles[0]} error={state.errors?.role}>
+      <SelectField
+        id="role"
+        label="Role"
+        hint="Admins edit the profile and manage the team. Recruiters post and contact talent."
+        defaultValue={roles.includes("recruiter") ? "recruiter" : roles[0]}
+        error={state.errors?.role}
+      >
         {ORG_ROLES.filter((r) => roles.includes(r.value)).map((r) => (
           <option key={r.value} value={r.value}>
-            {r.label}: {r.help}
+            {r.label}
           </option>
         ))}
       </SelectField>

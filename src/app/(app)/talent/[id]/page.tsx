@@ -50,7 +50,9 @@ async function Person({ params }: { params: Promise<{ id: string }> }) {
           {orgs.length === 0 ? (
             <p className="text-sm text-content-2">Only members of verified organisations can ask to talk.</p>
           ) : askable.length === 0 ? (
-            <p className="text-sm text-content-2">Your request is waiting for {firstName}&apos;s reply.</p>
+            <p role="status" className="text-sm text-content-2">
+              Request sent. It is waiting for {firstName}&apos;s reply, which shows on your organisation&apos;s Talent requests page.
+            </p>
           ) : (
             <ContactForm profileId={id} firstName={firstName} organisations={askable.map((o) => ({ id: o.id, name: o.name }))} />
           )}
