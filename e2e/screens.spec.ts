@@ -1,5 +1,5 @@
 import { mkdirSync } from "node:fs";
-import { test, type Page, type TestInfo } from "@playwright/test";
+import { expect, test, type Page, type TestInfo } from "@playwright/test";
 import { signUpAndConfirm } from "./auth";
 import { deleteRoadmap, seedRoadmap, type SeededRoadmap } from "./seed";
 
@@ -28,7 +28,9 @@ async function shoot(page: Page, testInfo: TestInfo, name: string, path: string)
   for (const w of WIDTHS) {
     await page.setViewportSize({ width: w.width, height: w.height });
     await page.goto(path);
-    await page.waitForLoadState("networkidle");
+    // Not networkidle: signed in screens keep a request open. Wait for streamed Suspense islands instead.
+    await page.waitForLoadState("load");
+    await expect(page.locator("[aria-busy='true'], .animate-skeleton")).toHaveCount(0, { timeout: 15_000 });
     const file = `${DIR}/${name}-${w.name}.png`;
     await page.screenshot({ path: file, fullPage: true });
     await testInfo.attach(`${name}-${w.name}`, { path: file, contentType: "image/png" });
