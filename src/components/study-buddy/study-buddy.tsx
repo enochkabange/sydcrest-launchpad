@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import { DAILY_MESSAGE_LIMIT, MAX_MESSAGE_CHARS } from "@/lib/study-buddy/config";
 import type { ChatMessage } from "@/lib/study-buddy/request";
 import { PanelShell } from "./panel-shell";
+import { ReplyMarkdown } from "./reply-markdown";
 import { StudyBuddyPrompt } from "./study-buddy-prompt";
 
 type Status = "idle" | "streaming" | "limit" | "error";
@@ -222,9 +223,14 @@ function ChatPanel({
               }
             >
               <span className="sr-only">{m.role === "user" ? "You said:" : "Study Buddy said:"}</span>
-              <p className="whitespace-pre-wrap break-words">
-                {m.content || (busy && i === messages.length - 1 ? <span className="text-content-3">Thinking…</span> : null)}
-              </p>
+              {m.role === "assistant" && m.content ? (
+                <ReplyMarkdown source={m.content} />
+              ) : (
+                <p className="whitespace-pre-wrap break-words">
+                  {m.content ||
+                    (busy && i === messages.length - 1 ? <span className="text-content-3">Thinking…</span> : null)}
+                </p>
+              )}
             </div>
           ))
         )}

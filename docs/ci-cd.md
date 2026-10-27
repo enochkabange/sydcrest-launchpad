@@ -59,6 +59,17 @@ and live in the workflow files.
   `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (Preview and Development point at
   staging, Production at production). Never put a `service_role` or secret key
   in a frontend variable.
+- Variable types: every public `NEXT_PUBLIC_*` value is type **plain**. The
+  pipeline runs `vercel pull` and builds outside Vercel, and `vercel pull`
+  returns **sensitive** variables as empty strings there, so a sensitive
+  `NEXT_PUBLIC_*` value builds as `""` (the first production build failed on
+  `new URL('')` this way). `src/lib/site.ts` treats empty strings as missing so
+  that one cannot break a build again, but other public values still would.
+- Server secrets (`ANTHROPIC_API_KEY`, `SUPABASE_SECRET_KEY`, the Twilio keys,
+  `CRON_SECRET`) stay **sensitive** and are only read at runtime on Vercel,
+  never at build time.
+- Remove variables left over from the old app (for example `VITE_API_URL`);
+  nothing reads them.
 
 **Supabase**
 - Edge function secrets (Hubtel keys and similar), when they exist:

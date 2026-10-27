@@ -27,8 +27,8 @@ const SHARED_WEEKS_1_TO_6: DmpWeek[] = [
       'Navigate the internet safely and recognize phishing attempts',
       'Set up and use a Gmail account to send and receive email with attachments',
     ],
-    resource_name: 'GCFGlobal: Digital Skills Tutorials',
-    resource_url: 'https://edu.gcfglobal.org/en/topics/digitalskills/',
+    resource_name: 'GCFGlobal LearnFree: Computer Basics',
+    resource_url: 'https://www.learnfree.org/series/computer-basics',
     assignment: "Write a 1-paragraph \"tip sheet\" summarizing safe internet practices in Google Docs and submit it.",
   },
   {
@@ -40,8 +40,8 @@ const SHARED_WEEKS_1_TO_6: DmpWeek[] = [
       'Build a short presentation in Google Slides',
       'Enter data and use simple formulas in Google Sheets',
     ],
-    resource_name: 'GCFGlobal: Google Drive & Docs Tutorials',
-    resource_url: 'https://edu.gcfglobal.org/en/topics/digitalskills/',
+    resource_name: 'GCFGlobal LearnFree: Google Drive',
+    resource_url: 'https://www.learnfree.org/series/google-drive',
     assignment: 'Finalize a 3-slide presentation about yourself or a mock business, export it as a PDF, and submit it.',
   },
   {
@@ -67,7 +67,7 @@ const SHARED_WEEKS_1_TO_6: DmpWeek[] = [
       'Create a Google My Business profile for a sample shop',
     ],
     resource_name: 'Google Skillshop: Fundamentals of Digital Marketing',
-    resource_url: 'https://skillshop.exceedlms.com/student/collection/1384851-fundamentals-of-digital-marketing',
+    resource_url: 'https://skillshop.exceedlms.com/student/collection/1830706',
     assignment: 'Draft a basic homepage layout for a small business using Google Slides (image and text placeholders).',
   },
   {
@@ -93,7 +93,7 @@ const SHARED_WEEKS_1_TO_6: DmpWeek[] = [
       'Understand A/B testing basics for ads and posts',
     ],
     resource_name: 'Google Analytics Academy',
-    resource_url: 'https://analytics.google.com/analytics/academy/',
+    resource_url: 'https://support.google.com/analytics/answer/15068052',
     assignment: "Submit a one-page \"Analytics Report\" summarizing a mock business's key metrics and proposed next steps.",
   },
 ];
@@ -105,15 +105,15 @@ const SPECIALIZATION_WEEKS_7_TO_9: Record<DmpTrack, DmpWeek[]> = {
       theme: 'SEO Basics — Keyword Research & On-Page SEO',
       objectives: ['Conduct keyword research for a business', 'Apply on-page SEO techniques to existing content'],
       resource_name: 'Google Skillshop: Search',
-      resource_url: 'https://skillshop.exceedlms.com/student/collection/1384851-fundamentals-of-digital-marketing',
+      resource_url: 'https://skillshop.exceedlms.com/student/collection/1830706',
       assignment: "Optimize the mock business's homepage and blog post from Week 4 using keyword research.",
     },
     {
       week_number: 8,
       theme: 'Off-Page SEO — Backlinks & Local SEO',
       objectives: ['Understand backlinks and local SEO fundamentals', 'Identify local listing opportunities'],
-      resource_name: 'GCFGlobal: SEO Basics',
-      resource_url: 'https://edu.gcfglobal.org/en/topics/digitalskills/',
+      resource_name: 'GCFGlobal LearnFree: SEO Basics for Beginners',
+      resource_url: 'https://www.learnfree.org/series/seo-basics-for-beginners',
       assignment: 'Identify 3 local directories or blogs where the business could be listed and draft outreach emails.',
     },
     {
@@ -157,7 +157,7 @@ const SPECIALIZATION_WEEKS_7_TO_9: Record<DmpTrack, DmpWeek[]> = {
       theme: 'Google Ads Fundamentals',
       objectives: ['Complete the Google Skillshop Search Ads readiness unit'],
       resource_name: 'Google Skillshop: Get Search Ad Campaign Ready',
-      resource_url: 'https://skillshop.exceedlms.com/student/collection/1384851-fundamentals-of-digital-marketing',
+      resource_url: 'https://skillshop.exceedlms.com/student/collection/1830706',
       assignment: "Complete Google Skillshop's \"Get Search Ad Campaign Ready\" module.",
     },
     {
