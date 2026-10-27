@@ -12,6 +12,10 @@ import { contentCreation } from "./content-creation";
 import { cybersecurity } from "./cybersecurity";
 import { virtualAssistant } from "./virtual-assistant";
 import { mobileAppDeveloper } from "./mobile-app-developer";
+import { cloudDevops } from "./cloud-devops";
+import { softwareTesting } from "./software-testing";
+import { aiMl } from "./ai-ml";
+import { dataScience } from "./data-science";
 import type { RoadmapDraft } from "./types";
 import { uiUx } from "./ui-ux";
 import { socialMediaManagement } from "./social-media-management";
@@ -41,6 +45,10 @@ export const ROADMAP_DRAFTS: RoadmapDraft[] = [
   cybersecurity,
   virtualAssistant,
   mobileAppDeveloper,
+  cloudDevops,
+  softwareTesting,
+  aiMl,
+  dataScience,
   socialMediaManagement,
   noCode,
   freelancing,
