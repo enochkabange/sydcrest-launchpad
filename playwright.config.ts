@@ -18,7 +18,7 @@ export default defineConfig({
   projects: [
     // The design system splits navigation at md (768px): bottom tabs below, sidebar above.
     { name: "phone", use: { ...devices["Desktop Chrome"], viewport: { width: 390, height: 844 } } },
-    { name: "desktop", use: { ...devices["Desktop Chrome"], viewport: { width: 1280, height: 800 } } },
+    { name: "desktop", use: { ...devices["Desktop Chrome"], viewport: { width: 1440, height: 900 } } },
   ],
   webServer: {
     command: "pnpm start",

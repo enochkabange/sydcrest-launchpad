@@ -9,10 +9,10 @@ export default function AdminHome() {
   return (
     <div className="flex flex-col gap-6">
       <h1 className="text-3xl text-content">Admin</h1>
-      <ul className="grid gap-3 sm:grid-cols-2">
+      <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {ADMIN_SECTIONS.map(({ href, label, description }) => (
           <li key={href}>
-            <Link href={href} className="flex min-h-11 flex-col gap-1 rounded-lg border border-line bg-surface p-4 hover:border-line-strong">
+            <Link href={href} className="flex min-h-11 flex-col gap-1 rounded-lg border border-line bg-surface p-4 transition-colors hover:border-line-strong hover:bg-surface-sunken">
               <span className="text-lg font-semibold text-content">{label}</span>
               <span className="text-sm text-content-2">{description}</span>
             </Link>
