@@ -15,7 +15,7 @@ export type SeededRoadmap = {
 /**
  * A published roadmap with two topics: the first has content, a resource and
  * a two question quiz (0 based answer key: q1 is option 1, q2 is option 0;
- * pass mark 100), the second has no quiz and is completed with "Mark complete".
+ * pass mark 100), the second has no quiz and is marked done with "Mark as done".
  */
 export async function seedRoadmap(): Promise<SeededRoadmap> {
   const suffix = crypto.randomUUID().slice(0, 8);

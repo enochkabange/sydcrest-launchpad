@@ -77,7 +77,7 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
     supabase.from("node_quiz").select("questions, pass_threshold").eq("node_id", node.id).maybeSingle(),
     supabase
       .from("roadmap_progress")
-      .select("status, quiz_score")
+      .select("status, quiz_score, verified_at")
       .eq("profile_id", user.id)
       .eq("node_id", node.id)
       .maybeSingle(),
@@ -175,7 +175,7 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
                 nodeId={node.id}
                 questions={questions}
                 passThreshold={quiz.pass_threshold}
-                passedBefore={done}
+                passedBefore={!!progress?.verified_at}
                 bestScore={progress?.quiz_score ?? null}
                 roadmapTitle={roadmap.title}
                 next={next}

@@ -1,7 +1,7 @@
 import { isRegionSlug, type RegionSlug } from "@/lib/regions";
 
 export const BOARDS = [
-  { slug: "nodes", label: "Topics completed" },
+  { slug: "nodes", label: "Topics passed" },
   { slug: "streak", label: "Streaks" },
   { slug: "region", label: "By region" },
 ] as const;

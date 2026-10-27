@@ -66,7 +66,7 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
               Progress
             </h2>
             <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-              <StatTile label="Topics completed" value={stats.nodes_completed} />
+              <StatTile label="Topics passed" value={stats.nodes_completed} />
               <StatTile label="Day streak" value={stats.current_streak} />
               <StatTile label="Followers" value={stats.followers_count} />
               <StatTile label="Following" value={stats.following_count} />
@@ -103,7 +103,7 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
             Achievements
           </h2>
           {achievements.length === 0 ? (
-            <p className="text-content-2">No achievements yet. They appear here as {name.split(" ")[0]} completes topics.</p>
+            <p className="text-content-2">No achievements yet. They appear here as {name.split(" ")[0]} passes topic quizzes.</p>
           ) : (
             <ul className="flex flex-col divide-y divide-line rounded-lg border border-line">
               {achievements.map((a) => (

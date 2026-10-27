@@ -20,8 +20,9 @@ export default function LeaderboardsPage({ searchParams }: PageProps<"/leaderboa
       <div className="flex flex-col gap-2">
         <h1 className="text-3xl text-content">Leaderboards</h1>
         <p className="max-w-3xl text-content-2">
-          Ranked from real progress on Launchpad roadmaps. Only learners with a public profile appear, and only once
-          they have completed a topic.
+          Ranked from topics passed with a checkpoint quiz on Launchpad roadmaps. Topics marked done without a quiz are
+          personal tracking and are not counted. Only learners with a public profile appear, and only once they have
+          passed a topic.
         </p>
       </div>
       <Suspense fallback={<div className="h-96 animate-skeleton rounded-lg bg-surface-sunken" />}>
@@ -126,10 +127,10 @@ async function BoardTable({ board, region, viewerId }: { board: Board; region: s
     return (
       <p className="rounded-lg border border-line p-5 text-content-2">
         {board === "region"
-          ? `No public learners from ${regionLabel(region)} have completed a topic yet. Be the first.`
+          ? `No public learners from ${regionLabel(region)} have passed a topic yet. Be the first.`
           : board === "streak"
-            ? "Nobody has a live streak right now. Complete a topic today to start one."
-            : "Nobody is on the board yet. Complete a topic and make your profile public to be the first."}
+            ? "Nobody has a live streak right now. Pass a checkpoint quiz today to start one."
+            : "Nobody is on the board yet. Pass a checkpoint quiz and make your profile public to be the first."}
       </p>
     );
   }
