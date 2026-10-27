@@ -138,7 +138,7 @@ create policy "Admins delete events; leads delete drafts"
 revoke all on public.community_events from anon, authenticated;
 grant select on public.community_events to anon, authenticated;
 grant insert (slug, kind, title, summary, description, format, starts_at, ends_at, venue_name,
-              venue_address, city, region, chapter_id, capacity, status, created_by)
+              venue_address, city, region, chapter_id, capacity, status)
   on public.community_events to authenticated;
 grant update (slug, kind, title, summary, description, format, starts_at, ends_at, venue_name,
               venue_address, city, region, chapter_id, capacity, status)
