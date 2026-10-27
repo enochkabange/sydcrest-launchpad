@@ -475,7 +475,7 @@ Google also states that there is no way to request or pay for a better local ran
 
 ## Name, address and phone, everywhere the same
 
-Customers and search engines check that a business's details match across the web. Pick one exact way to write the business name, address and phone number, often shortened to NAP, and use it everywhere: the website, the Google Business Profile, Facebook, WhatsApp Business, directories and association lists. If one site says "Hawa Shea Ltd" with an old phone number and another says "Hawa's Women's Group" with a new one, people and search engines get confused. Many Ghanaian addresses are informal, so add a landmark ("opposite the Central Mosque") and use the GhanaPost digital address if the business has one.
+Customers and search engines check that a business's details match across the web. Pick one exact way to write the business name, address and phone number, often shortened to NAP, and use it everywhere: the website, the Google Business Profile, Facebook, WhatsApp Business, directories and association lists. If one site says "Hawa Shea Ltd" with an old phone number and another says "Hawa's Women's Group" with a new one, people and search engines get confused. Many Ghanaian addresses are informal, so add a landmark ("opposite the Central Mosque") and use the GhanaPostGPS digital address if the business has one.
 
 ## Reviews and activity
 
@@ -1147,7 +1147,7 @@ Ad platforms such as Meta and TikTok offer similar building blocks.
 
 ## Broad or narrow?
 
-Modern ad systems are good at finding likely buyers when you give them room. Meta, for example, offers an automated option it calls Advantage+ audience, where your choices act as suggestions and the system can look beyond them. Very narrow audiences can make ads expensive and slow to learn.
+Modern ad systems are good at finding likely buyers when you give them room. Meta, for example, offers an automated audience option where your choices act as suggestions and the system can look beyond them. Its name has changed over time, so check the current screen. Very narrow audiences can make ads expensive and slow to learn.
 
 A sensible approach for small budgets:
 
@@ -1165,7 +1165,7 @@ Platforms restrict targeting for sensitive areas such as housing, jobs and credi
 
 ## A worked example
 
-Mariama runs ads for a guesthouse in Tamale. Her first ad set targets people in Accra and Kumasi, broad interests, with Advantage+ audience turned on, showing a video of a room. Her second ad set is a custom audience of people who watched most of that video in the last month, shown a photo with the price and a Send message button. The first finds new interest; the second turns interest into bookings.`,
+Mariama runs ads for a guesthouse in Tamale. Her first ad set targets people in Accra and Kumasi, broad interests, with the automated audience option turned on, showing a video of a room. Her second ad set is a custom audience of people who watched most of that video in the last month, shown a photo with the price and a Send message button. The first finds new interest; the second turns interest into bookings.`,
       practice_task_md: `**Goal:** Define the audiences for your mock campaign.
 
 **Steps:**
@@ -1933,7 +1933,7 @@ Rahinatu writes to the Tamale beauty creator: "Hello Ayishetu, your harmattan sk
     // GOOGLE ADS AND SEARCH MARKETING
 
     "google-ads": {
-      explanation_md: `Search marketing puts a business in front of people at the exact moment they look for what it sells. Someone typing "car rental Tamale airport" is not idly scrolling; they need a car. That is what makes search ads powerful, and why businesses look for people who can run them carefully. This specialisation teaches Google Ads, the most widely used search ads platform, as an example. Microsoft Advertising and others work on similar ideas.
+      explanation_md: `Search marketing puts a business in front of people at the exact moment they look for what it sells. Someone typing "car rental Tamale airport" is not idly scrolling; they need a car. That is what makes search ads powerful, and why businesses look for people who can run them carefully. This specialisation uses Google Ads, a widely used search ads platform, as the example. Microsoft Advertising and others work on similar ideas.
 
 ## What this specialisation covers
 
@@ -1954,7 +1954,7 @@ Many businesses use both: ads for quick results and to test which keywords bring
 
 ## Free training and certification
 
-Google offers free online training on Skillshop, including the "Get Search Ad Campaign Ready" material mentioned in the DMP curriculum, and Google Ads certifications. These are respected by many employers, but they are not a substitute for being able to explain your decisions. This specialisation gives you that understanding in plain language.
+Google offers free online training on Skillshop, including the "Get Search Ad Campaign Ready" material mentioned in the DMP curriculum, and Google Ads certifications. Some employers ask for them, but they are not a substitute for being able to explain your decisions. This specialisation gives you that understanding in plain language.
 
 ## Handling money responsibly
 
