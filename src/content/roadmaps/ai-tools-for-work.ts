@@ -54,9 +54,9 @@ export const aiToolsForWork: RoadmapDraft = {
   slug: "ai-tools-for-work",
   title: "AI Tools for Work",
   description:
-    "Use AI assistants safely and well for real work and earning, all from your phone. Learn to prompt, check facts, protect privacy, write, handle data, translate, automate small tasks and build simple digital products you can sell honestly.",
+    "Use AI assistants safely and well for real work and earning, mostly from your phone. Learn to prompt, check facts, protect privacy, write, handle data, translate, automate small tasks and build simple digital products you can sell honestly.",
   track: "ai-tools-for-work",
-  field_category: "foundations",
+  field_category: "ai",
   locale: "en-GH",
   status: "draft",
   nodes: [

@@ -13,13 +13,13 @@ const content: TrackContent = {
     "ai-basics": {
       explanation_md: `## Why this matters
 
-Job adverts in Ghana and remote roles open to Ghanaians now ask for things like "comfortable using AI tools", "uses AI to research and draft while keeping accuracy" or "experience using ChatGPT or similar". Employers are not asking you to build AI. They want people who can use an AI assistant to get ordinary work done faster and still hand in work that is correct, honest and safe.
+Job adverts in Ghana, and some remote adverts that accept applicants from Ghana, now ask for people who are comfortable with AI tools: people who can use an AI assistant to research and draft while keeping their work accurate, or who have experience with a chat assistant. Employers are not asking you to build AI. They want people who can use an AI assistant to get ordinary work done faster and still hand in work that is correct, honest and safe.
 
 That is what this track teaches. Everything in it works on a phone with a data bundle, using free tools.
 
 ## What an AI assistant is
 
-An AI assistant is an app or website where you type (or speak) a request in plain language and get a written answer back. Examples include ChatGPT, Gemini, Copilot and Claude, and some messaging and office apps now have one built in. We name these only as examples. They change often, and none of them is the "right" one.
+An AI assistant is an app or website where you type (or speak) a request in plain language and get a written answer back. Examples include ChatGPT, Gemini, Copilot and Claude, made by different companies, and some messaging and office apps now have one built in. We name these only as examples, not as recommendations. They change often, and none of them is the "right" one.
 
 You can ask an assistant to draft a message, explain a hard idea in simple words, suggest a spreadsheet formula, summarise a long document, translate a paragraph or brainstorm ideas for a business. It answers in seconds. That speed is useful, but it comes with real limits, and the people who earn with AI are the ones who understand those limits.
 
@@ -105,7 +105,7 @@ This explains both its power and its weakness. Because it has seen so much writi
 A few other limits follow:
 
 * **Knowledge can be out of date.** A model learns from text up to a certain date. Some tools can also search the web, but not all do, and not always.
-* **Local knowledge is thin.** It may know a lot about big cities and famous topics and much less about a market in Bolgatanga or a district office in Damongo.
+* **Local knowledge is thin.** Far less has been written online about small places, so it may know a lot about big cities and famous topics and much less about a market in Bolgatanga or a district office in Damongo.
 * **It does not know you.** It cannot see your shop, your client or your community unless you describe them.
 * **It can repeat bias.** If its training text contained unfair views about a group of people, its answers can reflect them.
 * **It has no judgement or responsibility.** It cannot be accountable for a decision. You are.
@@ -232,7 +232,7 @@ Mariama, in Bolgatanga, tests three free assistants with the same request: "Writ
               "Because employers ban AI tools",
             ],
             answer_index: 0,
-            explanation: "The lesson stresses that free plans change, so comparing skills keep you ready.",
+            explanation: "The lesson stresses that free plans change, so knowing how to compare keeps you ready.",
           },
           {
             prompt: "Why is a web search feature with sources useful?",
@@ -301,7 +301,7 @@ Settings names differ between tools and change over time, so read the current pr
 
 ## Ghana's data protection law
 
-Ghana has a **Data Protection Act, 2012 (Act 843)**, overseen by the Data Protection Commission. In simple terms, it expects anyone handling other people's personal data to collect it fairly, use it only for the purpose it was collected for, and keep it secure. If you handle customer or survey data for a business or NGO, pasting it into a public AI tool can break that trust and possibly the rules. When unsure, ask your employer, and read the Commission's guidance.
+Ghana has a **Data Protection Act, 2012 (Act 843)**, overseen by the Data Protection Commission. In simple terms, it expects organisations that handle other people's personal data to collect it fairly and openly, use it for the purpose they explained, keep it accurate and keep it secure. It also gives people rights over their own data, and organisations that handle personal data are expected to register with the Commission. If you handle customer or survey data for a business or NGO, pasting it into a public AI tool can break that trust and possibly the rules. This is a plain summary, not legal advice: when unsure, ask your employer and read the Commission's own guidance.
 
 ## Staying safe from AI powered scams
 
@@ -314,7 +314,7 @@ Sumaila does admin work for a clinic in Yendi and wants help writing a reminder 
 
 1. Open the settings and privacy page of the AI assistant you chose. Find and note: whether chats are used to improve the tool, whether you can turn that off, whether there is a temporary chat option, and how to delete history. Change the settings you are comfortable changing.
 2. Take this made up message and rewrite it with all personal details removed or replaced, so it would be safe to paste into an AI tool:
-   "Please help me write a payment reminder to Fuseini Alhassan, 055 000 1111, House 12 Kalpohin, Tamale, who owes GHS 450 for a school uniform order."
+   "Please help me write a payment reminder to Fuseini Alhassan, 055 000 1111, House 12 Kalpohin, Tamale, who owes GH₵ 450 for a school uniform order."
 3. Write a short personal rule list in your journal: five things you will never paste into an AI tool.
 
 **Done looks like:** notes on your settings, the safe rewritten message, and your five rules.`,
@@ -494,8 +494,11 @@ Vague prompt:
 Strong prompt:
 
 > **Task:** Write three short Facebook post options.
-> **Context:** I sell handmade shea butter soap in Bolgatanga. It is gentle on skin and made with local shea butter. A bar costs GHS 15 and customers can pay by MoMo.
+>
+> **Context:** I sell handmade shea butter soap in Bolgatanga. It is gentle on skin and made with local shea butter. A bar costs GH₵ 15 and customers can pay by MoMo.
+>
 > **Audience:** Young working women in Bolgatanga and Tamale.
+>
 > **Format:** Each post under 50 words, friendly tone, one emoji at most, ending with how to order.
 
 The second prompt gives Napari, the soap maker, three usable options to choose from and edit. The first would have given her a generic paragraph that sounds like every other business.
@@ -674,7 +677,7 @@ When a conversation finally gives you what you want, ask: "Write one prompt I co
     "checking-facts": {
       explanation_md: `## Why this matters
 
-When your work goes to a client, an employer or the public, your name is on it, not the AI's. A wrong price, a made up statistic, a fake quote or a link that leads nowhere can embarrass you, mislead people and cost you the job. Content roles that welcome AI use still expect accuracy; that is why adverts say things like "use AI tools while maintaining quality and accuracy". Checking is the skill that makes AI safe to use at work.
+When your work goes to a client, an employer or the public, your name is on it, not the AI's. A wrong price, a made up statistic, a fake quote or a link that leads nowhere can embarrass you, mislead people and cost you the job. Content roles that welcome AI use still expect accuracy; adverts for these roles often ask for AI use and accuracy in the same breath. Checking is the skill that makes AI safe to use at work.
 
 ## What to check every time
 
@@ -906,7 +909,7 @@ Fuseini is applying for a data entry clerk job in Tamale. He writes rough notes:
 
 The draft is good but says he "managed a team". He did not, so he removes it. He replaces "I am thrilled" with "I am glad", which sounds more like him, and adds the name of the company. The final message is clear, true and his.
 
-## Editing someone else's draft
+## Using AI as a second reader
 
 AI is also a good second reader. Paste your own writing and ask: "Point out unclear sentences and grammar mistakes, but do not rewrite the whole thing." You learn from the suggestions instead of handing over your voice entirely. Over time your own writing improves, which matters in interviews and timed tests where AI is not available.`,
       practice_task_md: `**Goal:** produce three pieces of real, AI assisted writing you would happily sign.
@@ -1115,8 +1118,8 @@ It explains: look down column B, and wherever it says Waakye, add up the matchin
 Do not paste real customer names, phone numbers or financial records into public AI tools. Describe the columns instead, or make up a few sample rows with fake values that have the same shape as the real data.`,
       practice_task_md: `**Goal:** use AI to build and test a formula on a small sheet.
 
-1. In Google Sheets on your phone, create a made up sales record for a small shop: 15 rows with columns Date, Item (use three items, such as rice, oil and sugar) and Amount (GHS).
-2. Ask a free AI assistant for formulas to: total sales for one item, count how many sales were above GHS 50, and find the average sale. Describe your columns and rows clearly.
+1. In Google Sheets on your phone, create a made up sales record for a small shop: 15 rows with columns Date, Item (use three items, such as rice, oil and sugar) and Amount (GH₵).
+2. Ask a free AI assistant for formulas to: total sales for one item, count how many sales were above GH₵ 50, and find the average sale. Describe your columns and rows clearly.
 3. Test each formula against your own hand calculation for a few rows. Note any problem and how you fixed it.
 4. Ask the AI to explain one formula in simple words, and write that explanation in a note beside it in the sheet.
 
@@ -1269,9 +1272,11 @@ Generate on Wi Fi when you can, make one image at a time, and download only the 
     "translation-local-languages": {
       explanation_md: `## Why this matters
 
-Most people in northern Ghana speak at least one local language, and many businesses, NGOs and health programmes need messages in Dagbani, Gonja, Dagaare, Gurune, Mampruli, Twi, Hausa and more. Being able to produce a good translation quickly is valuable, and it is also a source of remote work: some AI companies pay native speakers to transcribe, translate and check AI output in Ghanaian languages such as Twi and Dagbani.
+Many people in northern Ghana speak one or more local languages, and many businesses, NGOs and health programmes need messages in Dagbani, Gonja, Dagaare, Gurune, Mampruli, Twi, Hausa and more. Being able to produce a good translation quickly is valuable, and it can sometimes lead to remote work: some AI companies hire native speakers to transcribe, translate and check AI output in Ghanaian languages such as Twi and Dagbani.
 
-AI translation is improving fast. Several general assistants translate, and there are tools built in Ghana, such as Khaya from the Ghana NLP community, that focus on Ghanaian languages. Big technology companies are also working with Ghanaian universities on local language AI. Which languages each tool supports, and how well, differs and changes, so test the language you need.
+AI translation is improving fast. Several general assistants translate, and there are tools built in Ghana, such as Khaya, listed among the projects of the Ghana NLP open source community, that focus on Ghanaian languages. Big technology companies are also working with Ghanaian universities on local language AI. Which languages each tool supports, and how well, differs and changes, so test the language you need.
+
+As an example of how uneven support is: when we checked in October 2026, Khaya's website listed Twi, Ga, Ewe, Fante, Dagbani and Gurene among its languages, but not Mampruli. Google Translate's language list included Twi, Ewe, Ga and Hausa, but not Dagbani, Mampruli, Dagaare or Gurune. These lists change, so check the current list before you rely on a tool. Being listed also does not mean a translation is good.
 
 ## What to expect
 
@@ -1290,11 +1295,11 @@ AI translation is improving fast. Several general assistants translate, and ther
 
 ## A small example
 
-An NGO in Nalerigu asks Abdul-Rahman to prepare a short SMS reminding mothers about a child vaccination day. He writes it in simple English: date, place, what to bring. He tries an AI translation into Mampruli, but the result is mixed with other languages, so he asks a respected community health volunteer to translate and check it instead. For the Twi version for traders who travel to Kumasi, an AI draft is close, and a fluent colleague fixes two words and the greeting. Both messages go out correct and respectful.
+An NGO in Nalerigu asks Abdul-Rahman to prepare a short SMS reminding mothers about a child vaccination day. He writes it in simple English: date, place, what to bring. The tools he tries either do not offer Mampruli or give a result mixed with other languages, so he asks a respected community health volunteer to translate and check it instead. For the Twi version for traders who travel to Kumasi, an AI draft is close, and a fluent colleague fixes two words and the greeting. Both messages go out correct and respectful.
 
 ## Your languages are a strength
 
-If you speak a northern Ghanaian language fluently and read and write it, you have a skill many AI projects are looking for. Practising careful translation and checking is good preparation for that kind of work.`,
+If you speak a northern Ghanaian language fluently and read and write it, you have a skill some AI projects look for. Practising careful translation and checking is good preparation if such work comes up, though it is never guaranteed.`,
       practice_task_md: `**Goal:** produce a checked translation of a useful message.
 
 1. Write a short, useful message in simple English (40 to 60 words), such as a shop's opening hours, a meeting reminder or a health tip.
@@ -1318,7 +1323,7 @@ If you speak a northern Ghanaian language fluently and read and write it, you ha
             explanation: "The lesson says languages with less written text online may come out weaker.",
           },
           {
-            prompt: "Which step is not optional for a public health message?",
+            prompt: "Which step must you never skip for a public health message?",
             options: [
               "Using fancy English first",
               "Using only one tool",
@@ -1340,7 +1345,7 @@ If you speak a northern Ghanaian language fluently and read and write it, you ha
             explanation: "Back translation checks whether the meaning survived, but does not replace a fluent speaker.",
           },
           {
-            prompt: "What did Abdul-Rahman do when the AI Mampruli translation came out mixed with other languages?",
+            prompt: "What did Abdul-Rahman do when AI tools could not give him a good Mampruli translation?",
             options: [
               "Sent it anyway",
               "Cancelled the vaccination day",
@@ -1450,7 +1455,7 @@ If you write a good prompt once and then throw it away, you will spend time rebu
 
 A template is a strong prompt with **blanks** in square brackets that you fill in each time:
 
-> Write a polite WhatsApp reminder to a customer named [first name] who has an unpaid balance of GHS [amount] for [item], due on [date]. Tone: warm and respectful, not threatening. Under 50 words. End with how to pay by MoMo and a thank you. Do not add any discount or penalty.
+> Write a polite WhatsApp reminder to a customer named [first name] who has an unpaid balance of GH₵ [amount] for [item], due on [date]. Tone: warm and respectful, not threatening. Under 50 words. End with how to pay by MoMo and a thank you. Do not add any discount or penalty.
 
 Each time, you replace only the blanks. The tone, length and rules stay the same, so results are consistent.
 
@@ -1560,7 +1565,7 @@ Some remote assistant and junior operations adverts now ask for experience with 
 ## Automations that are easier on a computer
 
 * **Email filters.** Gmail can automatically label, archive or forward emails that match rules, such as everything from a supplier. Filters are created in Gmail on a computer browser, then work on your phone too.
-* **No code automation tools.** Services such as Zapier, Make or n8n connect apps: for example, "when a new form response arrives, add a row to a sheet and send me an email". They often have free plans with limits that change. They are easiest to set up on a computer, so use a school lab, library or community centre computer if you do not have one.
+* **No code automation tools.** Services such as Zapier, Make or n8n connect apps: for example, "when a new form response arrives, add a row to a sheet and send me an email". Some have free plans or free trials, and their limits change. They are easiest to set up on a computer, so use a school lab, library or community centre computer if you do not have one.
 
 ## Designing a safe automation
 
@@ -1708,15 +1713,15 @@ Make sure you have finished the earlier sections, especially privacy, fact check
             explanation: "The lesson says quality, reliability and honesty matter more than tools.",
           },
           {
-            prompt: "What was the focus of SydCrest's September 2026 event in Accra?",
+            prompt: "According to the lesson, how does earning with AI skills usually start?",
             options: [
-              "Learning to drive",
-              "Farming techniques",
-              "Football coaching",
-              "Monetizing skills with AI by building digital products",
+              "With a guaranteed monthly income from day one",
+              "With a large payment to a training agent",
+              "With one big contract that pays for a year",
+              "Small: one client, one sale or one short contract",
             ],
             answer_index: 3,
-            explanation: "The event was \"Monetizing Your Skills With AI: Building Digital Products\".",
+            explanation: "The lesson says earning usually starts small, and each piece of work builds proof for the next.",
           },
         ],
         pass_threshold: 75,
@@ -1725,7 +1730,7 @@ Make sure you have finished the earlier sections, especially privacy, fact check
     "ai-jobs-gigs": {
       explanation_md: `## Why this matters
 
-Knowing where AI skills are actually wanted helps you aim your learning and your applications. When we read recent job adverts from Ghana and remote roles open to African applicants, AI skills appeared in a few clear patterns. We share the patterns, not promises.
+Knowing where AI skills are actually wanted helps you aim your learning and your applications. When we read recent job adverts from Ghana, along with remote adverts (some open to applicants in Africa, some with unclear location rules), AI skills appeared in a few clear patterns. We share the patterns, not promises.
 
 ## What the adverts asked for
 
@@ -1733,9 +1738,11 @@ Knowing where AI skills are actually wanted helps you aim your learning and your
 * **Content, communications and marketing roles** asked people to use AI tools to research and draft content **while keeping accuracy and their own voice**, plus editing and fact checking AI drafts.
 * **Social media and creative roles** mentioned design apps, AI writing help, and sometimes AI image and video tools.
 * **Junior automation roles** mentioned no code tools that connect apps, plus familiarity with AI assistants.
-* **AI data work** for remote projects asked for native speakers of languages like Twi, Akan and Dagbani to transcribe audio, write or rate answers, and check other people's work. These asked for fluency, good English, attention to detail and the ability to follow detailed guidelines.
+* **AI data work** for remote projects asked for native speakers of languages like Akan (including Twi) and Dagbani to transcribe audio, write or rate answers, and check other people's work. These asked for fluency, good English, attention to detail and the ability to follow detailed guidelines.
 
 Notice what keeps coming up: accuracy, clear writing, following instructions and judgement. AI skills add to these; they never replace them.
+
+Be realistic about AI data work. Projects are often short term and task based, they open and close without warning, and passing a test does not guarantee you will get tasks. Treat it as one possible opportunity, not a steady wage.
 
 ## Where to look
 
@@ -1757,7 +1764,7 @@ AI data work and remote jobs attract scammers. Protect yourself:
 
 ## A small example
 
-Issahaku reads and writes Dagbani fluently. He finds a transcription project on a company's careers page that asks for native Dagbani speakers. He checks the company's website, applies through the official page, and completes a test that involves carefully following written guidelines. He also gets a WhatsApp message offering "AI jobs, pay GHS 200 registration". He ignores it and reports it. Careful checking kept him safe and pointed him to real work.`,
+Issahaku reads and writes Dagbani fluently. He finds a transcription project on a company's careers page that asks for native Dagbani speakers. He checks the company's website, applies through the official page, and completes a test that involves carefully following written guidelines. He also gets a WhatsApp message offering "AI jobs, pay GH₵ 200 registration". He ignores it and reports the number to WhatsApp. Whether or not the project gives him tasks, careful checking kept him safe and his money in his pocket.`,
       practice_task_md: `**Goal:** research real demand and prepare to apply.
 
 1. Find five current adverts (from Ghanaian job sites, company career pages or remote boards that accept African applicants) that mention AI tools. Do not copy the advert text.
@@ -1952,8 +1959,8 @@ Avoid competing only by being the cheapest. Compete on being clear, tested, loca
 
 ## Getting paid and delivering
 
-* **Mobile money** is the simplest option for local buyers. Use a number registered in your name and keep a record of every payment.
-* **Payment links** from payment providers that operate in Ghana (for example Paystack or Hubtel, named only as examples) let buyers pay by MoMo or card through a link.
+* **Mobile money**, such as MTN MoMo, Telecel Cash or AT Money, is the simplest option for local buyers. Use a number registered in your name and keep a record of every payment.
+* **Payment links** from payment providers that operate in Ghana (for example Paystack or Hubtel, named only as examples) let buyers pay by mobile money or card through a link. Check each provider's current fees and sign up requirements first.
 * **Delivery:** share a view only or copy link from Google Drive, or send the file by WhatsApp or email after payment. Keep the original safe.
 * **Records:** keep a simple sheet of each sale, date, amount and buyer contact, with their permission. This helps you track progress and handle questions.
 
@@ -2030,7 +2037,7 @@ Abdul-Rahman made a CV guide with fill in templates for school leavers in Tamale
     "working-professionally": {
       explanation_md: `## Why this matters
 
-By now you can prompt well, check facts, protect privacy, handle everyday tasks, automate small jobs and think about earning. The last step is what turns those skills into trust. Employers and clients in Ghana often hire through recommendations: a pastor tells a shop owner, a manager tells a colleague, a happy customer tells a friend. Those recommendations depend on two things. First, that you are honest about how you work. Second, that people can see proof of what you can do.
+By now you can prompt well, check facts, protect privacy, handle everyday tasks, automate small jobs and think about earning. The last step is what turns those skills into trust. Employers and clients in Ghana often hire through recommendations: an imam or pastor tells a shop owner, a manager tells a colleague, a happy customer tells a friend. Those recommendations depend on two things. First, that you are honest about how you work. Second, that people can see proof of what you can do.
 
 Commentary from Ghanaian job sites says the same: AI skills are an advantage, but employers still value human judgement most. This section is about showing that judgement.
 

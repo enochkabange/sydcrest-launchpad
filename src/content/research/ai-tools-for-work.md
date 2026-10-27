@@ -29,7 +29,7 @@ employers still value human judgement most. The track is built around that balan
 | A1 | Jobberman Ghana: Technical Content Marketing Manager (Zof AI, Accra) | https://www.jobberman.com.gh/listings/technical-content-marketing-manager-wpvmk6 | 2026-10-25 | Search result snippet only (listing page now redirects to a category page) |
 | A2 | Zof AI careers: Content and Communications Manager, Accra | https://zof.ai/careers/accra/content-communications-manager | 2026-10-25 | Employer careers page via search snippet, skills only |
 | A3 | Jobberman (Nigeria): AI savvy Virtual Assistant, remote | https://www.jobberman.com/listings/ai-savvy-virtual-assistant-remote-m0gjpr | 2026-10-25 | Search result snippet only (page redirects to category) |
-| A4 | Jobberman (Nigeria): content creator and social media manager, Lagos | URL not surfaced by the search; skills taken from the search summary only | 2026-10-25 | Search result summary only; cannot be re-checked by URL |
+| A4 | Jobberman (Nigeria): content creator and social media manager, Lagos | URL not surfaced by the search; skills taken from the search summary only | 2026-10-25 | **Unverified.** Search result summary only; no URL, so it cannot be re-checked. Kept in the tables below for transparency, but no node depends on it alone (every signal it adds is also given by A5, A6, A19 or A20) |
 | A5 | Jobberman (Nigeria) Creative and Design category: SabiRecruit AI Specialist, remote | https://www.jobberman.com/listings/ai-video-content-creators-and-video-editors-6qdm6d (redirects to the Creative and Design category; roles read there) | 2026-10-25 | Category listing read via redirect, skills only |
 | A6 | Jobberman (Nigeria) Creative and Design category: SabiRecruit AI Filmmaker, remote | Same redirect as A5 (Chariot Messenger "AI video content creators" listing URL, which lands on the category page) | 2026-10-25 | Category listing read via redirect, skills only |
 | A7 | Welo Data: Project Epsilon, Twi Data Trainer (Ghana, remote freelance) | https://jobs.lever.co/weloglobal/76f99320-a2f3-45f9-b433-64e7f0f2a3e8 | 2026-10-25 | Search result snippet only (page now 404) |
@@ -49,7 +49,7 @@ employers still value human judgement most. The track is built around that balan
 | C1 | Jobberman Ghana: Top 5 AI skills professionals will need in 2026 | https://www.jobberman.com.gh/discover/ai-skills-you-need-in-2026 | 2026-10-25 | Ghanaian job board article via search snippet (skills named, no statistics used) |
 | C2 | 3Music TV: AI skills becoming a key advantage in Ghana's job market, Jobberman (July 2026) | https://www.3music.tv/section/news/article/ai-skills-becoming-a-key-advantage-in-ghanas-job-market-jobberman-2026-07-23 | 2026-10-25 | News report via search snippet |
 | C3 | Graphic Online: Is AI replacing your skills? | https://www.graphic.com.gh/business/business-news/is-ai-replacing-your-skills.html | 2026-10-25 | Ghanaian newspaper opinion via search snippet |
-| C4 | GBC: Ghana to integrate Twi, Ewe, Dagbani and Hausa into AI tools | https://www.gbcghanaonline.com/news/education/ghana-to-integrate-twi-ewe-dagbani-and-hausa-into-ai-tools/2026/ | 2026-10-25 | News report via search snippet |
+| C4 | GBC: Ghana to integrate Twi, Ewe, Dagbani and Hausa into AI tools | https://www.gbcghanaonline.com/news/education/ghana-to-integrate-twi-ewe-dagbani-and-hausa-into-ai-tools/2026/ | 2026-10-25; re-read 2026-10-27 | News report (January 2026): Google working with the University of Ghana and the GDI Hub on speech and AI tools for Ghanaian languages. Supports the lesson's general "big technology companies are working with Ghanaian universities" line |
 | C5 | Luma: AI Skills Fest 2026 (Google, Accra) | https://luma.com/a09qzfoi | 2026-10-25 | Event page via search snippet (tools listed: Gemini, NotebookLM, AI Studio) |
 | C6 | Fiverr Help Center: Using AI on Fiverr, guidelines for freelancers and clients | https://help.fiverr.com/hc/en-us/articles/37333301560593 | 2026-10-25 | Platform policy via search snippet (direct fetch returned 403); used only for "platforms have AI rules, read them" |
 | F1 | ESCO: The impact of ChatGPT on human skills, a quantitative study of Twitter data | https://esco.ec.europa.eu/en/about-esco/publications/publication/impact-chatgpt-human-skills-quantitative-study-twitter-data | 2026-10-25 | ESCO publication via search snippet; tasks cluster around summarisation, content creation and problem solving |
@@ -63,8 +63,9 @@ employers still value human judgement most. The track is built around that balan
 | D1 | Gemini Apps Privacy Hub | https://support.google.com/gemini/answer/13594961 | 2026-10-25 | Official help page (confirms chats may be reviewed and settings exist) |
 | D2 | Microsoft Support: Get started writing prompts in Copilot | https://support.microsoft.com/en-us/microsoft-365-copilot/get-started-writing-prompts-in-microsoft-365-copilot | 2026-10-25 | Official help page |
 | D3 | Claude docs: Prompt engineering overview | https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview | 2026-10-25 | Official docs |
-| D4 | Ghana Data Protection Commission (Data Protection Act, 2012, Act 843) | https://dpc.gov.gh/ | 2026-10-25 | Official regulator site |
-| D5 | Khaya AI and Ghana NLP | https://www.khaya.ai/ , https://ghananlp.org/ | 2026-10-25 | Ghanaian language translation tool and community, official sites |
+| D4 | Ghana Data Protection Commission (Data Protection Act, 2012, Act 843) | https://dpc.gov.gh/ | 2026-10-25; re-read 2026-10-27 by reviewer | Official regulator site. Lists eight principles (accountability, lawfulness of processing, specification of purpose, quality of information, purpose of collection, openness, data security safeguards, data subject participation) and says controllers and processors must register. The privacy lesson's plain summary is drawn from these |
+| D5 | Khaya AI and Ghana NLP | https://www.khaya.ai/ , https://ghananlp.org/ | 2026-10-25; re-read 2026-10-27 by reviewer | Official sites. On 2026-10-27 Khaya's home page listed English, Twi, Ga, Ewe, Fante, Dagbani, Gurene, Yoruba, Kikuyu, Luo and Kimeru (plus "+32 more" not named) and said Dagbani was added after feedback from northern users; Mampruli was not listed. Khaya's page does not name Ghana NLP; ghananlp.org lists the Khaya Translator apps among its projects, so the lesson says "listed among the projects of" |
+| D12 | Google Cloud Translation: language support | https://docs.cloud.google.com/translate/docs/languages | 2026-10-27 (reviewer) | Official docs. Listed Twi (Akan), Ewe, Ga and Hausa; did not list Dagbani, Mampruli, Dagaare, Gurune/Frafra or Fante. Used, dated, in the translation lesson |
 | D6 | GhanaFact and Dubawa | https://ghanafact.com/ , https://dubawa.org/ | 2026-10-25 | Independent fact checking organisations, official sites |
 | D7 | Google DeepMind: SynthID | https://deepmind.google/models/synthid/ | 2026-10-25 | Official page on AI image watermarking |
 | D8 | Gmail Help: Create rules to filter your emails | https://support.google.com/mail/answer/6579 | 2026-10-25 | Official help page |
@@ -79,7 +80,9 @@ series (soft 404: an invented series slug also returns 200), OpenAI help and Fiv
 (403 to automated checks), grow.google/ai-essentials (redirects to a general page),
 Coursera Google intro to AI (lands on a paid Coursera Plus page).
 
-## Adverts analysed (20)
+## Adverts analysed (20, one unverified)
+
+Eligibility note: A12 and A14 are on a board aimed at Philippine workers and A13 does not state a location, so it is unclear whether Ghanaians can apply. They are used only as skill signals, never as places to send learners, and the jobs lesson tells learners to check location rules in every advert.
 
 Role, employer type, location and date. Skills recorded in my own words; no advert text
 copied. "Snippet" means the skill signal came from a search result summary because the
@@ -108,7 +111,7 @@ listing page redirected, closed or blocked automated reading.
 | A19 | Social media manager (entry) | Youth programme company | Accra | Oct 2026 | None named | Graphic design, scheduling tools |
 | A20 | Product marketing and social media expert | Company | Ghana (location not in snippet) | Oct 2026 | None named | Canva, Adobe tools, Figma |
 
-## Skills frequency (20 adverts)
+## Skills frequency (20 adverts; A4 is unverified, so subtract one from any row that cites it)
 
 | Skill | Adverts | Count |
 |---|---|---|
