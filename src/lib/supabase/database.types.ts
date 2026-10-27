@@ -104,6 +104,224 @@ export type Database = {
           },
         ]
       }
+      booking_messages: {
+        Row: {
+          body: string
+          booking_id: string
+          created_at: string
+          id: string
+          sender_id: string
+        }
+        Insert: {
+          body: string
+          booking_id: string
+          created_at?: string
+          id?: string
+          sender_id?: string
+        }
+        Update: {
+          body?: string
+          booking_id?: string
+          created_at?: string
+          id?: string
+          sender_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "booking_messages_booking_id_fkey"
+            columns: ["booking_id"]
+            isOneToOne: false
+            referencedRelation: "booking_requests"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "booking_messages_sender_id_fkey"
+            columns: ["sender_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      booking_requests: {
+        Row: {
+          brief_id: string | null
+          cancelled_by: string | null
+          completed_at: string | null
+          created_at: string
+          expert_id: string
+          id: string
+          message: string
+          offer_id: string | null
+          organisation_id: string | null
+          pitch_id: string | null
+          preferred_times: string | null
+          requester_id: string
+          responded_at: string | null
+          status: string
+          status_reason: string | null
+          updated_at: string
+        }
+        Insert: {
+          brief_id?: string | null
+          cancelled_by?: string | null
+          completed_at?: string | null
+          created_at?: string
+          expert_id: string
+          id?: string
+          message: string
+          offer_id?: string | null
+          organisation_id?: string | null
+          pitch_id?: string | null
+          preferred_times?: string | null
+          requester_id?: string
+          responded_at?: string | null
+          status?: string
+          status_reason?: string | null
+          updated_at?: string
+        }
+        Update: {
+          brief_id?: string | null
+          cancelled_by?: string | null
+          completed_at?: string | null
+          created_at?: string
+          expert_id?: string
+          id?: string
+          message?: string
+          offer_id?: string | null
+          organisation_id?: string | null
+          pitch_id?: string | null
+          preferred_times?: string | null
+          requester_id?: string
+          responded_at?: string | null
+          status?: string
+          status_reason?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "booking_requests_brief_id_fkey"
+            columns: ["brief_id"]
+            isOneToOne: false
+            referencedRelation: "briefs"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "booking_requests_cancelled_by_fkey"
+            columns: ["cancelled_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "booking_requests_expert_id_fkey"
+            columns: ["expert_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "booking_requests_offer_id_fkey"
+            columns: ["offer_id"]
+            isOneToOne: false
+            referencedRelation: "offers"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "booking_requests_organisation_id_fkey"
+            columns: ["organisation_id"]
+            isOneToOne: false
+            referencedRelation: "organisations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "booking_requests_pitch_id_fkey"
+            columns: ["pitch_id"]
+            isOneToOne: false
+            referencedRelation: "pitches"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "booking_requests_requester_id_fkey"
+            columns: ["requester_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      briefs: {
+        Row: {
+          awarded_at: string | null
+          categories: string[]
+          created_at: string
+          deadline: string | null
+          description: string
+          id: string
+          indicative_budget_ghs: number | null
+          is_remote: boolean
+          kind: string
+          location: string | null
+          organisation_id: string | null
+          poster_id: string
+          skills: string[]
+          status: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          awarded_at?: string | null
+          categories?: string[]
+          created_at?: string
+          deadline?: string | null
+          description: string
+          id?: string
+          indicative_budget_ghs?: number | null
+          is_remote?: boolean
+          kind?: string
+          location?: string | null
+          organisation_id?: string | null
+          poster_id?: string
+          skills?: string[]
+          status?: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          awarded_at?: string | null
+          categories?: string[]
+          created_at?: string
+          deadline?: string | null
+          description?: string
+          id?: string
+          indicative_budget_ghs?: number | null
+          is_remote?: boolean
+          kind?: string
+          location?: string | null
+          organisation_id?: string | null
+          poster_id?: string
+          skills?: string[]
+          status?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "briefs_organisation_id_fkey"
+            columns: ["organisation_id"]
+            isOneToOne: false
+            referencedRelation: "organisations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "briefs_poster_id_fkey"
+            columns: ["poster_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       certificates: {
         Row: {
           badge_json: Json | null
@@ -507,6 +725,201 @@ export type Database = {
           },
         ]
       }
+      expert_applications: {
+        Row: {
+          created_at: string
+          decided_at: string | null
+          decided_by: string | null
+          decision_note: string | null
+          evidence_links: string[]
+          experience: string | null
+          fast_track: boolean
+          id: string
+          motivation: string
+          profile_id: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          decided_at?: string | null
+          decided_by?: string | null
+          decision_note?: string | null
+          evidence_links?: string[]
+          experience?: string | null
+          fast_track?: boolean
+          id?: string
+          motivation: string
+          profile_id?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          decided_at?: string | null
+          decided_by?: string | null
+          decision_note?: string | null
+          evidence_links?: string[]
+          experience?: string | null
+          fast_track?: boolean
+          id?: string
+          motivation?: string
+          profile_id?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "expert_applications_decided_by_fkey"
+            columns: ["decided_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "expert_applications_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "expert_profiles"
+            referencedColumns: ["profile_id"]
+          },
+        ]
+      }
+      expert_profiles: {
+        Row: {
+          accepting_requests: boolean
+          approved_at: string | null
+          availability_note: string | null
+          bio: string | null
+          categories: string[]
+          created_at: string
+          headline: string
+          is_featured: boolean
+          is_verified: boolean
+          languages: string[]
+          links: string[]
+          offers_free_intro: boolean
+          profile_id: string
+          region: string | null
+          skills: string[]
+          slug: string
+          status: string
+          status_reason: string | null
+          updated_at: string
+          verified_at: string | null
+        }
+        Insert: {
+          accepting_requests?: boolean
+          approved_at?: string | null
+          availability_note?: string | null
+          bio?: string | null
+          categories?: string[]
+          created_at?: string
+          headline: string
+          is_featured?: boolean
+          is_verified?: boolean
+          languages?: string[]
+          links?: string[]
+          offers_free_intro?: boolean
+          profile_id?: string
+          region?: string | null
+          skills?: string[]
+          slug: string
+          status?: string
+          status_reason?: string | null
+          updated_at?: string
+          verified_at?: string | null
+        }
+        Update: {
+          accepting_requests?: boolean
+          approved_at?: string | null
+          availability_note?: string | null
+          bio?: string | null
+          categories?: string[]
+          created_at?: string
+          headline?: string
+          is_featured?: boolean
+          is_verified?: boolean
+          languages?: string[]
+          links?: string[]
+          offers_free_intro?: boolean
+          profile_id?: string
+          region?: string | null
+          skills?: string[]
+          slug?: string
+          status?: string
+          status_reason?: string | null
+          updated_at?: string
+          verified_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "expert_profiles_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      expert_reviews: {
+        Row: {
+          body: string | null
+          booking_id: string
+          created_at: string
+          expert_id: string
+          id: string
+          is_hidden: boolean
+          rating: number
+          reviewer_id: string
+          updated_at: string
+        }
+        Insert: {
+          body?: string | null
+          booking_id: string
+          created_at?: string
+          expert_id: string
+          id?: string
+          is_hidden?: boolean
+          rating: number
+          reviewer_id?: string
+          updated_at?: string
+        }
+        Update: {
+          body?: string | null
+          booking_id?: string
+          created_at?: string
+          expert_id?: string
+          id?: string
+          is_hidden?: boolean
+          rating?: number
+          reviewer_id?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "expert_reviews_booking_id_fkey"
+            columns: ["booking_id"]
+            isOneToOne: true
+            referencedRelation: "booking_requests"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "expert_reviews_expert_id_fkey"
+            columns: ["expert_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "expert_reviews_reviewer_id_fkey"
+            columns: ["reviewer_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       follows: {
         Row: {
           created_at: string
@@ -689,6 +1102,431 @@ export type Database = {
           },
         ]
       }
+      offers: {
+        Row: {
+          cadence: string | null
+          created_at: string
+          delivery_days: number | null
+          description: string
+          duration_minutes: number | null
+          expert_id: string
+          id: string
+          indicative_price_ghs: number | null
+          is_active: boolean
+          kind: string
+          max_participants: number | null
+          position: number
+          revisions_included: number | null
+          scope: string | null
+          skills: string[]
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          cadence?: string | null
+          created_at?: string
+          delivery_days?: number | null
+          description: string
+          duration_minutes?: number | null
+          expert_id?: string
+          id?: string
+          indicative_price_ghs?: number | null
+          is_active?: boolean
+          kind: string
+          max_participants?: number | null
+          position?: number
+          revisions_included?: number | null
+          scope?: string | null
+          skills?: string[]
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          cadence?: string | null
+          created_at?: string
+          delivery_days?: number | null
+          description?: string
+          duration_minutes?: number | null
+          expert_id?: string
+          id?: string
+          indicative_price_ghs?: number | null
+          is_active?: boolean
+          kind?: string
+          max_participants?: number | null
+          position?: number
+          revisions_included?: number | null
+          scope?: string | null
+          skills?: string[]
+          title?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "offers_expert_id_fkey"
+            columns: ["expert_id"]
+            isOneToOne: false
+            referencedRelation: "expert_profiles"
+            referencedColumns: ["profile_id"]
+          },
+        ]
+      }
+      opportunities: {
+        Row: {
+          apply_instructions: string | null
+          apply_url: string | null
+          compensation_note: string | null
+          created_at: string
+          deadline: string | null
+          description: string
+          eligibility: string | null
+          fields: string[]
+          id: string
+          is_remote: boolean
+          kind: string
+          location: string | null
+          organisation_id: string | null
+          organisation_name: string
+          posted_by: string | null
+          published_at: string | null
+          region: string | null
+          skills: string[]
+          slug: string
+          source_url: string | null
+          status: string
+          summary: string | null
+          title: string
+          tracks: string[]
+          updated_at: string
+        }
+        Insert: {
+          apply_instructions?: string | null
+          apply_url?: string | null
+          compensation_note?: string | null
+          created_at?: string
+          deadline?: string | null
+          description: string
+          eligibility?: string | null
+          fields?: string[]
+          id?: string
+          is_remote?: boolean
+          kind: string
+          location?: string | null
+          organisation_id?: string | null
+          organisation_name: string
+          posted_by?: string | null
+          published_at?: string | null
+          region?: string | null
+          skills?: string[]
+          slug: string
+          source_url?: string | null
+          status?: string
+          summary?: string | null
+          title: string
+          tracks?: string[]
+          updated_at?: string
+        }
+        Update: {
+          apply_instructions?: string | null
+          apply_url?: string | null
+          compensation_note?: string | null
+          created_at?: string
+          deadline?: string | null
+          description?: string
+          eligibility?: string | null
+          fields?: string[]
+          id?: string
+          is_remote?: boolean
+          kind?: string
+          location?: string | null
+          organisation_id?: string | null
+          organisation_name?: string
+          posted_by?: string | null
+          published_at?: string | null
+          region?: string | null
+          skills?: string[]
+          slug?: string
+          source_url?: string | null
+          status?: string
+          summary?: string | null
+          title?: string
+          tracks?: string[]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "opportunities_organisation_id_fkey"
+            columns: ["organisation_id"]
+            isOneToOne: false
+            referencedRelation: "organisations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "opportunities_posted_by_fkey"
+            columns: ["posted_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      opportunity_saves: {
+        Row: {
+          applied_at: string | null
+          created_at: string
+          opportunity_id: string
+          profile_id: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          applied_at?: string | null
+          created_at?: string
+          opportunity_id: string
+          profile_id?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          applied_at?: string | null
+          created_at?: string
+          opportunity_id?: string
+          profile_id?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "opportunity_saves_opportunity_id_fkey"
+            columns: ["opportunity_id"]
+            isOneToOne: false
+            referencedRelation: "opportunities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "opportunity_saves_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      organisation_members: {
+        Row: {
+          created_at: string
+          invited_by: string | null
+          joined_at: string | null
+          organisation_id: string
+          profile_id: string
+          role: string
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          invited_by?: string | null
+          joined_at?: string | null
+          organisation_id: string
+          profile_id: string
+          role?: string
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          invited_by?: string | null
+          joined_at?: string | null
+          organisation_id?: string
+          profile_id?: string
+          role?: string
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "organisation_members_invited_by_fkey"
+            columns: ["invited_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "organisation_members_organisation_id_fkey"
+            columns: ["organisation_id"]
+            isOneToOne: false
+            referencedRelation: "organisations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "organisation_members_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      organisations: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          description: string | null
+          id: string
+          kind: string
+          logo_url: string | null
+          name: string
+          region: string | null
+          registration_number: string | null
+          slug: string
+          updated_at: string
+          verification_note: string | null
+          verification_status: string
+          verified_at: string | null
+          verified_by: string | null
+          website: string | null
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          id?: string
+          kind?: string
+          logo_url?: string | null
+          name: string
+          region?: string | null
+          registration_number?: string | null
+          slug: string
+          updated_at?: string
+          verification_note?: string | null
+          verification_status?: string
+          verified_at?: string | null
+          verified_by?: string | null
+          website?: string | null
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          description?: string | null
+          id?: string
+          kind?: string
+          logo_url?: string | null
+          name?: string
+          region?: string | null
+          registration_number?: string | null
+          slug?: string
+          updated_at?: string
+          verification_note?: string | null
+          verification_status?: string
+          verified_at?: string | null
+          verified_by?: string | null
+          website?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "organisations_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "organisations_verified_by_fkey"
+            columns: ["verified_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      outcomes: {
+        Row: {
+          created_at: string
+          evidence_note: string | null
+          evidence_url: string | null
+          id: string
+          opportunity_id: string | null
+          organisation_id: string | null
+          organisation_name: string
+          profile_id: string
+          show_on_profile: boolean
+          started_on: string
+          title: string | null
+          type: string
+          updated_at: string
+          verification_note: string | null
+          verification_status: string
+          verified_at: string | null
+          verified_by: string | null
+        }
+        Insert: {
+          created_at?: string
+          evidence_note?: string | null
+          evidence_url?: string | null
+          id?: string
+          opportunity_id?: string | null
+          organisation_id?: string | null
+          organisation_name: string
+          profile_id?: string
+          show_on_profile?: boolean
+          started_on: string
+          title?: string | null
+          type: string
+          updated_at?: string
+          verification_note?: string | null
+          verification_status?: string
+          verified_at?: string | null
+          verified_by?: string | null
+        }
+        Update: {
+          created_at?: string
+          evidence_note?: string | null
+          evidence_url?: string | null
+          id?: string
+          opportunity_id?: string | null
+          organisation_id?: string | null
+          organisation_name?: string
+          profile_id?: string
+          show_on_profile?: boolean
+          started_on?: string
+          title?: string | null
+          type?: string
+          updated_at?: string
+          verification_note?: string | null
+          verification_status?: string
+          verified_at?: string | null
+          verified_by?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "outcomes_opportunity_id_fkey"
+            columns: ["opportunity_id"]
+            isOneToOne: false
+            referencedRelation: "opportunities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "outcomes_organisation_id_fkey"
+            columns: ["organisation_id"]
+            isOneToOne: false
+            referencedRelation: "organisations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "outcomes_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "outcomes_verified_by_fkey"
+            columns: ["verified_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       peer_reviews: {
         Row: {
           assigned_at: string
@@ -794,6 +1632,70 @@ export type Database = {
             columns: ["recommended_roadmap_id"]
             isOneToOne: false
             referencedRelation: "roadmaps"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      pitches: {
+        Row: {
+          brief_id: string
+          created_at: string
+          decided_at: string | null
+          expert_id: string
+          id: string
+          indicative_price_ghs: number | null
+          message: string
+          offer_id: string | null
+          proposed_timeline: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          brief_id: string
+          created_at?: string
+          decided_at?: string | null
+          expert_id?: string
+          id?: string
+          indicative_price_ghs?: number | null
+          message: string
+          offer_id?: string | null
+          proposed_timeline?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          brief_id?: string
+          created_at?: string
+          decided_at?: string | null
+          expert_id?: string
+          id?: string
+          indicative_price_ghs?: number | null
+          message?: string
+          offer_id?: string | null
+          proposed_timeline?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "pitches_brief_id_fkey"
+            columns: ["brief_id"]
+            isOneToOne: false
+            referencedRelation: "briefs"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "pitches_expert_id_fkey"
+            columns: ["expert_id"]
+            isOneToOne: false
+            referencedRelation: "expert_profiles"
+            referencedColumns: ["profile_id"]
+          },
+          {
+            foreignKeyName: "pitches_offer_id_fkey"
+            columns: ["offer_id"]
+            isOneToOne: false
+            referencedRelation: "offers"
             referencedColumns: ["id"]
           },
         ]
@@ -1350,6 +2252,130 @@ export type Database = {
           },
         ]
       }
+      talent_contact_requests: {
+        Row: {
+          created_at: string
+          id: string
+          message: string
+          opportunity_id: string | null
+          organisation_id: string
+          profile_id: string
+          requested_by: string | null
+          responded_at: string | null
+          shared_contact: string | null
+          status: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          message: string
+          opportunity_id?: string | null
+          organisation_id: string
+          profile_id: string
+          requested_by?: string | null
+          responded_at?: string | null
+          shared_contact?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          message?: string
+          opportunity_id?: string | null
+          organisation_id?: string
+          profile_id?: string
+          requested_by?: string | null
+          responded_at?: string | null
+          shared_contact?: string | null
+          status?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "talent_contact_requests_opportunity_id_fkey"
+            columns: ["opportunity_id"]
+            isOneToOne: false
+            referencedRelation: "opportunities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "talent_contact_requests_organisation_id_fkey"
+            columns: ["organisation_id"]
+            isOneToOne: false
+            referencedRelation: "organisations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "talent_contact_requests_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "talent_contact_requests_requested_by_fkey"
+            columns: ["requested_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      talent_listings: {
+        Row: {
+          availability: string
+          created_at: string
+          headline: string
+          is_active: boolean
+          open_to_remote: boolean
+          portfolio_url: string | null
+          profile_id: string
+          region: string | null
+          skills: string[]
+          summary: string | null
+          tracks: string[]
+          updated_at: string
+        }
+        Insert: {
+          availability?: string
+          created_at?: string
+          headline: string
+          is_active?: boolean
+          open_to_remote?: boolean
+          portfolio_url?: string | null
+          profile_id?: string
+          region?: string | null
+          skills?: string[]
+          summary?: string | null
+          tracks?: string[]
+          updated_at?: string
+        }
+        Update: {
+          availability?: string
+          created_at?: string
+          headline?: string
+          is_active?: boolean
+          open_to_remote?: boolean
+          portfolio_url?: string | null
+          profile_id?: string
+          region?: string | null
+          skills?: string[]
+          summary?: string | null
+          tracks?: string[]
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "talent_listings_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       waitlist: {
         Row: {
           created_at: string
@@ -1399,6 +2425,63 @@ export type Database = {
         }
         Relationships: []
       }
+      booking_threads: {
+        Row: {
+          brief_id: string | null
+          completed_at: string | null
+          created_at: string | null
+          expert_avatar: string | null
+          expert_id: string | null
+          expert_name: string | null
+          expert_slug: string | null
+          has_review: boolean | null
+          id: string | null
+          last_message_at: string | null
+          message: string | null
+          offer_id: string | null
+          offer_kind: string | null
+          offer_title: string | null
+          organisation_id: string | null
+          organisation_name: string | null
+          pitch_id: string | null
+          preferred_times: string | null
+          requester_avatar: string | null
+          requester_id: string | null
+          requester_name: string | null
+          responded_at: string | null
+          status: string | null
+          status_reason: string | null
+        }
+        Relationships: []
+      }
+      brief_board: {
+        Row: {
+          can_manage: boolean | null
+          categories: string[] | null
+          created_at: string | null
+          deadline: string | null
+          description: string | null
+          id: string | null
+          indicative_budget_ghs: number | null
+          is_remote: boolean | null
+          kind: string | null
+          location: string | null
+          my_pitch_status: string | null
+          organisation_id: string | null
+          organisation_logo: string | null
+          organisation_name: string | null
+          organisation_slug: string | null
+          organisation_verified: boolean | null
+          pitch_count: number | null
+          poster_avatar: string | null
+          poster_id: string | null
+          poster_name: string | null
+          skills: string[] | null
+          status: string | null
+          title: string | null
+        }
+        Relationships: []
+      }
       cohort_roster: {
         Row: {
           avatar_url: string | null
@@ -1411,6 +2494,63 @@ export type Database = {
           role: string | null
           specialization: string | null
           status: string | null
+        }
+        Relationships: []
+      }
+      expert_application_queue: {
+        Row: {
+          application_id: string | null
+          avatar_url: string | null
+          created_at: string | null
+          decided_at: string | null
+          decision_note: string | null
+          display_name: string | null
+          evidence_links: string[] | null
+          experience: string | null
+          expert_status: string | null
+          fast_track: boolean | null
+          headline: string | null
+          links: string[] | null
+          motivation: string | null
+          profile_id: string | null
+          skills: string[] | null
+          slug: string | null
+          status: string | null
+        }
+        Relationships: []
+      }
+      organisation_roster: {
+        Row: {
+          avatar_url: string | null
+          created_at: string | null
+          display_name: string | null
+          joined_at: string | null
+          organisation_id: string | null
+          profile_id: string | null
+          role: string | null
+          status: string | null
+        }
+        Relationships: []
+      }
+      outcome_queue: {
+        Row: {
+          avatar_url: string | null
+          created_at: string | null
+          display_name: string | null
+          evidence_note: string | null
+          evidence_url: string | null
+          id: string | null
+          opportunity_id: string | null
+          organisation_id: string | null
+          organisation_name: string | null
+          profile_id: string | null
+          region: string | null
+          started_on: string | null
+          title: string | null
+          type: string | null
+          verification_note: string | null
+          verification_status: string | null
+          verified_at: string | null
         }
         Relationships: []
       }
@@ -1443,6 +2583,66 @@ export type Database = {
         }
         Relationships: []
       }
+      public_expert_reviews: {
+        Row: {
+          body: string | null
+          created_at: string | null
+          expert_id: string | null
+          id: string | null
+          offer_kind: string | null
+          rating: number | null
+          reviewer_name: string | null
+        }
+        Relationships: []
+      }
+      public_experts: {
+        Row: {
+          accepting_requests: boolean | null
+          approved_at: string | null
+          availability_note: string | null
+          avatar_url: string | null
+          average_rating: number | null
+          bio: string | null
+          categories: string[] | null
+          completed_bookings: number | null
+          display_name: string | null
+          headline: string | null
+          is_featured: boolean | null
+          is_verified: boolean | null
+          languages: string[] | null
+          links: string[] | null
+          median_response_hours: number | null
+          offers_free_intro: boolean | null
+          profile_id: string | null
+          region: string | null
+          review_count: number | null
+          skills: string[] | null
+          slug: string | null
+        }
+        Relationships: []
+      }
+      public_organisations: {
+        Row: {
+          description: string | null
+          id: string | null
+          kind: string | null
+          logo_url: string | null
+          name: string | null
+          region: string | null
+          slug: string | null
+          verified_at: string | null
+          website: string | null
+        }
+        Relationships: []
+      }
+      public_outcome_stats: {
+        Row: {
+          type: string | null
+          verified_count: number | null
+          verified_people: number | null
+        }
+        Relationships: []
+      }
       public_profile_stats: {
         Row: {
           avatar_url: string | null
@@ -1472,8 +2672,90 @@ export type Database = {
         }
         Relationships: []
       }
+      talent_directory: {
+        Row: {
+          availability: string | null
+          avatar_url: string | null
+          certificates: Json | null
+          display_name: string | null
+          headline: string | null
+          open_to_remote: boolean | null
+          portfolio_url: string | null
+          profile_id: string | null
+          public_slug: string | null
+          region: string | null
+          skills: string[] | null
+          summary: string | null
+          tracks: string[] | null
+          updated_at: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
+      accept_organisation_invite: {
+        Args: { p_organisation_id: string }
+        Returns: {
+          created_at: string
+          invited_by: string | null
+          joined_at: string | null
+          organisation_id: string
+          profile_id: string
+          role: string
+          status: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "organisation_members"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      accept_pitch: {
+        Args: { p_pitch_id: string }
+        Returns: {
+          brief_id: string | null
+          cancelled_by: string | null
+          completed_at: string | null
+          created_at: string
+          expert_id: string
+          id: string
+          message: string
+          offer_id: string | null
+          organisation_id: string | null
+          pitch_id: string | null
+          preferred_times: string | null
+          requester_id: string
+          responded_at: string | null
+          status: string
+          status_reason: string | null
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "booking_requests"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      admin_cohort_outcomes: {
+        Args: { p_months?: number }
+        Returns: {
+          certified: number
+          cohort_id: string
+          cohort_name: string
+          cohort_status: string
+          completed: number
+          ends_on: string
+          learners: number
+          placed: number
+          program_id: string
+          program_title: string
+          starts_on: string
+          window_ends_on: string
+        }[]
+      }
       admin_reports: {
         Args: { p_status?: string }
         Returns: {
@@ -1490,9 +2772,130 @@ export type Database = {
           updated_at: string
         }[]
       }
+      admin_set_expert_flags: {
+        Args: {
+          p_is_featured?: boolean
+          p_is_verified?: boolean
+          p_profile_id: string
+        }
+        Returns: {
+          accepting_requests: boolean
+          approved_at: string | null
+          availability_note: string | null
+          bio: string | null
+          categories: string[]
+          created_at: string
+          headline: string
+          is_featured: boolean
+          is_verified: boolean
+          languages: string[]
+          links: string[]
+          offers_free_intro: boolean
+          profile_id: string
+          region: string | null
+          skills: string[]
+          slug: string
+          status: string
+          status_reason: string | null
+          updated_at: string
+          verified_at: string | null
+        }
+        SetofOptions: {
+          from: "*"
+          to: "expert_profiles"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      admin_set_expert_status: {
+        Args: { p_profile_id: string; p_reason?: string; p_status: string }
+        Returns: {
+          accepting_requests: boolean
+          approved_at: string | null
+          availability_note: string | null
+          bio: string | null
+          categories: string[]
+          created_at: string
+          headline: string
+          is_featured: boolean
+          is_verified: boolean
+          languages: string[]
+          links: string[]
+          offers_free_intro: boolean
+          profile_id: string
+          region: string | null
+          skills: string[]
+          slug: string
+          status: string
+          status_reason: string | null
+          updated_at: string
+          verified_at: string | null
+        }
+        SetofOptions: {
+          from: "*"
+          to: "expert_profiles"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      admin_set_organisation_verification: {
+        Args: { p_note?: string; p_organisation_id: string; p_status: string }
+        Returns: {
+          created_at: string
+          created_by: string | null
+          description: string | null
+          id: string
+          kind: string
+          logo_url: string | null
+          name: string
+          region: string | null
+          registration_number: string | null
+          slug: string
+          updated_at: string
+          verification_note: string | null
+          verification_status: string
+          verified_at: string | null
+          verified_by: string | null
+          website: string | null
+        }
+        SetofOptions: {
+          from: "*"
+          to: "organisations"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
       admin_unpublish_profile: {
         Args: { p_profile_id: string }
         Returns: undefined
+      }
+      admin_verify_outcome: {
+        Args: { p_note?: string; p_outcome_id: string; p_status: string }
+        Returns: {
+          created_at: string
+          evidence_note: string | null
+          evidence_url: string | null
+          id: string
+          opportunity_id: string | null
+          organisation_id: string | null
+          organisation_name: string
+          profile_id: string
+          show_on_profile: boolean
+          started_on: string
+          title: string | null
+          type: string
+          updated_at: string
+          verification_note: string | null
+          verification_status: string
+          verified_at: string | null
+          verified_by: string | null
+        }
+        SetofOptions: {
+          from: "*"
+          to: "outcomes"
+          isOneToOne: true
+          isSetofReturn: false
+        }
       }
       assign_peer_review: {
         Args: { p_reviewer_id: string; p_submission_id: string }
@@ -1567,6 +2970,51 @@ export type Database = {
         SetofOptions: {
           from: "*"
           to: "cohort_applications"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      decide_expert_application: {
+        Args: { p_application_id: string; p_decision: string; p_note?: string }
+        Returns: {
+          created_at: string
+          decided_at: string | null
+          decided_by: string | null
+          decision_note: string | null
+          evidence_links: string[]
+          experience: string | null
+          fast_track: boolean
+          id: string
+          motivation: string
+          profile_id: string
+          status: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "expert_applications"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      decline_pitch: {
+        Args: { p_pitch_id: string }
+        Returns: {
+          brief_id: string
+          created_at: string
+          decided_at: string | null
+          expert_id: string
+          id: string
+          indicative_price_ghs: number | null
+          message: string
+          offer_id: string | null
+          proposed_timeline: string | null
+          status: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "pitches"
           isOneToOne: true
           isSetofReturn: false
         }
@@ -1721,6 +3169,59 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      request_organisation_verification: {
+        Args: { p_organisation_id: string }
+        Returns: {
+          created_at: string
+          created_by: string | null
+          description: string | null
+          id: string
+          kind: string
+          logo_url: string | null
+          name: string
+          region: string | null
+          registration_number: string | null
+          slug: string
+          updated_at: string
+          verification_note: string | null
+          verification_status: string
+          verified_at: string | null
+          verified_by: string | null
+          website: string | null
+        }
+        SetofOptions: {
+          from: "*"
+          to: "organisations"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      respond_talent_contact: {
+        Args: {
+          p_accept: boolean
+          p_request_id: string
+          p_shared_contact?: string
+        }
+        Returns: {
+          created_at: string
+          id: string
+          message: string
+          opportunity_id: string | null
+          organisation_id: string
+          profile_id: string
+          requested_by: string | null
+          responded_at: string | null
+          shared_contact: string | null
+          status: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "talent_contact_requests"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
       revoke_certificate: {
         Args: { p_certificate_id: string; p_reason: string }
         Returns: {
@@ -1789,6 +3290,33 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      set_booking_status: {
+        Args: { p_booking_id: string; p_reason?: string; p_status: string }
+        Returns: {
+          brief_id: string | null
+          cancelled_by: string | null
+          completed_at: string | null
+          created_at: string
+          expert_id: string
+          id: string
+          message: string
+          offer_id: string | null
+          organisation_id: string | null
+          pitch_id: string | null
+          preferred_times: string | null
+          requester_id: string
+          responded_at: string | null
+          status: string
+          status_reason: string | null
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "booking_requests"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
       set_certificate_badge: {
         Args: { p_badge_json: Json; p_certificate_id: string }
         Returns: undefined
@@ -1843,6 +3371,7 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      talent_eligibility: { Args: never; Returns: Json }
       verify_certificate: {
         Args: { p_verification_id: string }
         Returns: {
@@ -1877,6 +3406,28 @@ export type Database = {
         SetofOptions: {
           from: "*"
           to: "cohort_applications"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      withdraw_talent_contact: {
+        Args: { p_request_id: string }
+        Returns: {
+          created_at: string
+          id: string
+          message: string
+          opportunity_id: string | null
+          organisation_id: string
+          profile_id: string
+          requested_by: string | null
+          responded_at: string | null
+          shared_contact: string | null
+          status: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "talent_contact_requests"
           isOneToOne: true
           isSetofReturn: false
         }
