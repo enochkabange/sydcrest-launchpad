@@ -55,7 +55,10 @@ schools, NGOs, events and freelance work rather than board postings, and the `fr
 | D3 | W3C: Understanding WCAG contrast (minimum), 4.5 to 1 for normal text | https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html | 2026-10-25 | W3C standard (official) |
 | D4 | Creative Commons: About the licences (BY, NC, ND codes) | https://creativecommons.org/about/cclicenses/ | 2026-10-25 | Official, CC BY 4.0 |
 | D5 | SIL Open Font License | https://openfontlicense.org/ | 2026-10-25 | Official licence site (allows commercial use of fonts) |
-| D6 | Wikipedia: Registration of Intellectual Property in Ghana (copyright protection not dependent on registration; Registrar General responsible for trademark registration) | https://en.wikipedia.org/wiki/Registration_of_Intellectual_Property_in_Ghana | 2026-10-25 | CC BY-SA 4.0 |
+| D6 | Ghana Copyright Act, 2005 (Act 690), official text (ARIPO member state laws copy): s.1 eligibility (original and fixed; no registration condition), s.6 moral rights, s.7 employed and commissioned works (economic rights vest in the employer or commissioner absent a contract to the contrary), s.39 registration purposes | https://aripo.org/storage/resources-member-state-laws/1674643138_phpg6pgca.pdf | 2026-10-25 | Statute (official text). Replaces an earlier Wikipedia citation |
+| D6b | Copyright Office, Ghana: answers to the WIPO copyright registration questionnaire ("In all cases, registration / recordation is voluntary") | https://www.wipo.int/documents/d/copyright/docs-en-registration-replies-ghana.pdf | 2026-10-25 | Official reply by the Copyright Office, hosted by WIPO |
+| D6c | Registrar General's Department (Ministry of Justice): services list includes Trademarks, Patent and Industrial Property | https://rgd.gov.gh/ | 2026-10-25 | Official government site. Companies now register with the Office of the Registrar of Companies under the Companies Act, 2019 (Act 992), https://orc.gov.gh/, not the RGD |
+| D9 | Colour meanings at funerals: Cooper Hewitt on adinkra funerary cloth (red, brown and blue black for mourning; white for funerals of the very elderly) and Bristol Museums catalogue note | https://www.cooperhewitt.org/2018/09/07/adinkra-message-and-medium/ ; https://museums.bristol.gov.uk/narratives.php?irn=13454 | 2026-10-25 | Museum pages (search snippets). Evidence is Akan/Asante only; **no source found for northern Ghanaian practice**, so the `colour` lesson attributes the red and black pattern to some southern (Akan) communities and says customs differ, including across the north |
 | D7 | WIPO: Copyright; Trademarks | https://www.wipo.int/copyright/en/ | 2026-10-25 | Official (linked as resources) |
 | D8 | Printer guides on Canva print export (paperlust, smartpress, a university guide) seen as search snippets | (search results only) | 2026-10-25 | Used only to learn that sources **conflict** on what Canva's free plan does with bleed and CMYK; Canva's own help page returned 403. The lessons therefore make no tool tier claims and teach the printer conversation generically |
 | P1 | SydCrest Planning/12_TRACK_CATALOGUE.md (platform survey) | local file | 2026-10-25 | Internal; positioning and which Ghanaian programmes offer graphic design |
@@ -130,7 +133,7 @@ leans on portfolio evidence from real local projects.
 * **O*NET Graphic Designers (F1, CC BY 4.0):** tasks include creating and revising layouts, choosing type and images, designing logos and illustrations, preparing digital files for print, marking up layouts for printers, consulting clients, researching audiences and creating animated graphics. Technology list includes Adobe tools, Canva and Figma. Skills include active listening, critical thinking, time management, negotiation and persuasion; knowledge areas include design, communications and media, sales and marketing, customer service and production. Used to justify the client work and pricing nodes (client consultation, negotiation, sales, customer service), which adverts imply but rarely list.
 * **ESCO (F2):** unavailable on the day; not used.
 * **GCFGlobal Beginning Graphic Design (C1):** topic names confirm that typography, colour, layout and composition, images, design fundamentals and branding are the standard beginner topics. No text or ordering taken; SydCrest's order follows the adverts (print and social work first, then client and career skills).
-* **Official docs (D1 to D7):** confirmed Inkscape is desktop only and open source; the WCAG 4.5 to 1 contrast guidance; Creative Commons licence codes; that the Open Font License allows commercial use; that Ghanaian copyright does not depend on registration and that the Registrar General registers trademarks.
+* **Official docs (D1 to D7):** confirmed Inkscape is desktop only and open source; the WCAG 4.5 to 1 contrast guidance; Creative Commons licence codes; that the Open Font License allows commercial use; that Ghanaian copyright does not depend on registration (D6, D6b: Act 690 and the Copyright Office), that commissioned work belongs by default to the commissioner unless a contract says otherwise (D6, s.7, reflected in the `copyright-and-ethics` lesson) and that the Registrar General's Department registers trademarks while the ORC registers companies (D6c).
 
 ## Outline design and why
 
@@ -155,7 +158,7 @@ New track, 25 nodes in six sections (19 topics plus 6 section nodes), one option
 | `design-principles` | C1 fundamentals of design; F1 layout revision and design review; prerequisite of all visual nodes |
 | `visual-basics` | Section. C1 topics; layout and typography in 6 adverts |
 | `typography` | A5 A6 A8 typography and fonts; F1 selecting type; C1 |
-| `colour` | A8 colour; A1 colour separation; D3 contrast; C1 |
+| `colour` | A8 colour; A1 colour separation; D3 contrast; D9 colour meaning; C1 |
 | `layout-and-grids` | A4 A5 A11 A18 layouts; A6 composition; F1 creating layouts |
 | `images-and-photos` | A2 A5 A12 photo and image editing; F1 selecting images; D4 licences |
 | `branding` | Section. Logos and branding in 5 adverts; brand guidelines in 7 |
@@ -168,7 +171,7 @@ New track, 25 nodes in six sections (19 topics plus 6 section nodes), one option
 | `motion-basics` (optional) | A5 A6 A7 A12 A13 animation and motion; F1 animated graphics |
 | `client-work` | Section. Briefs, revisions and client communication in 5 adverts; F1 client consultation |
 | `briefs-and-feedback` | A2 interpreting briefs and revisions; A8 client feedback; A13 creative briefs; A1 A6 client communication |
-| `copyright-and-ethics` | A2 A5 use of images and fonts in client work; A7 AI image tools; D4 D5 D6; prerequisite of `portfolio` (permission to show work) |
+| `copyright-and-ethics` | A2 A5 use of images and fonts in client work; A7 AI image tools; D4 D5 D6 D6b D6c; prerequisite of `portfolio` (permission to show work) |
 | `pricing-and-invoicing` | Founder scope (cedis, invoicing); F1 negotiation, sales and customer service; prerequisite of `freelancing` |
 | `getting-hired` | Section. Portfolio decisive in 7 adverts; P1 Creative and Design category on Jobberman |
 | `portfolio` | A2 A3 A4 A5 A6 A19 A20 portfolio required or decisive |

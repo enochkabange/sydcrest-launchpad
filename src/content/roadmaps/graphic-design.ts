@@ -37,20 +37,20 @@ const contrastChecker: ResourceDraft = {
 };
 const ccLicences: ResourceDraft = {
   label: "Creative Commons: About the licences",
-  url: "https://creativecommons.org/about/cclicenses/",
+  url: "https://creativecommons.org/cc-licenses/",
   kind: "article",
 };
 const ofl: ResourceDraft = { label: "SIL Open Font License", url: "https://openfontlicense.org/", kind: "article" };
-const wipoCopyright: ResourceDraft = { label: "WIPO: Copyright", url: "https://www.wipo.int/copyright/en/", kind: "article" };
+const wipoCopyright: ResourceDraft = { label: "WIPO: Copyright", url: "https://www.wipo.int/en/web/copyright/", kind: "article" };
 const wipoTrademarks: ResourceDraft = {
   label: "WIPO: Trademarks",
-  url: "https://www.wipo.int/trademarks/en/",
+  url: "https://www.wipo.int/en/web/trademarks/",
   kind: "article",
 };
 const scribusWiki: ResourceDraft = { label: "Scribus wiki and guides", url: "https://wiki.scribus.net/", kind: "article" };
 const jobbermanCreative: ResourceDraft = {
   label: "Jobberman Ghana: Creative and Design jobs",
-  url: "https://jobberman.com.gh/jobs/creative-design",
+  url: "https://www.jobberman.com.gh/jobs/creative-design",
   kind: "practice",
 };
 

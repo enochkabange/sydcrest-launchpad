@@ -191,7 +191,7 @@ Simple rule: photos are raster, logos and illustrations should be vector.
 
 * **Template based design apps.** Apps such as Canva run on Android phones and in a browser. You start from a size or template and add text, shapes and photos. They are quick for social media posts and flyers. Their free plans change over time, so check what is included before promising a client a feature.
 * **Photo editors.** Free editors such as Photopea (in a browser) and GIMP (on a laptop) let you crop, retouch, adjust colour and cut people out of backgrounds. Photopea works on a phone but is much easier on a bigger screen.
-* **Vector editors.** Inkscape is a free, open source vector editor for Windows, Mac and Linux laptops. It is the right tool for logos and for print files that need sharp edges. It does not run on phones.
+* **Vector editors.** Inkscape is a free, open source vector editor for Windows, Mac and Linux laptops. It suits logos and print files that need sharp edges. It does not run on phones.
 
 Job adverts often name paid programs. You will learn the same ideas, such as layers, alignment, colour modes and exporting, in free tools, and those ideas carry over if an employer gives you a paid one.
 
@@ -280,7 +280,7 @@ Sumaila designs a logo for a barbering shop in Wa by placing text and a photo of
 * **Hierarchy.** Decide what people should see first, second and third, then make the most important thing biggest or boldest. On an event flyer, the event name usually comes first, then date and place, then details.
 * **Contrast.** Things that are different should look clearly different: big against small, dark against light, bold against thin. Contrast creates hierarchy and keeps text readable.
 * **Alignment.** Every item should line up with something else. Text that lines up along a clear edge looks organised. Items scattered at random look careless.
-* **Proximity.** Put related things close together and unrelated things apart. The date, time and venue belong in one group; the phone number and WhatsApp handle in another.
+* **Proximity.** Put related things close together and unrelated things apart. The date, time and venue belong in one group; the phone number and WhatsApp number in another.
 * **Repetition.** Repeat colours, fonts and shapes so a design, or a series of designs, feels like one family. This is the start of branding.
 * **Space.** Empty space, often called white space even when it is not white, gives the eye room to rest. Crowded designs feel cheap and are hard to read on a small phone screen.
 
@@ -521,7 +521,7 @@ A common guide is to let the main or neutral colour cover most of the space, a s
 
 ## Colour carries meaning
 
-Colours suggest feelings, but meanings depend on culture and context. In many Ghanaian communities, red and black are worn for mourning, while white is linked with celebration and thanksgiving. A bright red flyer may feel exciting for a sale but wrong for a naming ceremony. Ask the client, and look at what similar events and businesses in the area use.
+Colours suggest feelings, but meanings depend on culture and context. In some Ghanaian communities, especially Akan communities in the south, red and black are worn for mourning, while white is linked with celebration and can even mark the funeral of someone who lived a long life. Customs differ between regions, ethnic groups and religions, including across the north, so never assume. A bright red flyer may feel exciting for a sale but wrong for a naming ceremony. Ask the client, and look at what similar events and businesses in the area use.
 
 ## Contrast keeps text readable
 
@@ -594,7 +594,7 @@ Fuseini designs a poster for a shea butter cooperative. He picks a warm brown fr
               "Colour has no effect on how people feel",
             ],
             answer_index: 0,
-            explanation: "Colour meanings vary; in many Ghanaian communities red and black are linked with mourning and white with celebration.",
+            explanation: "Colour meanings vary between communities, regions and religions, so ask the client rather than assume.",
           },
         ],
         pass_threshold: 80,
@@ -1252,7 +1252,7 @@ Use the principles you have learned: strong hierarchy, alignment to a grid, rela
 
 ## Programmes and booklets
 
-Funeral, wedding and church programmes are often folded booklets. A sheet of A4 folded in half makes four A5 pages, so folded booklets work in multiples of four pages. Plan the page order with the printer before you design. For long documents such as reports and handbooks on a laptop, a free layout program such as Scribus handles many pages, master pages and consistent margins better than a single page design app.
+Funeral, wedding and church programmes are often folded booklets. A sheet of A4 folded in half makes four A5 pages, so folded booklets work in multiples of four pages. Plan the page order with the printer before you design. For long documents such as reports and handbooks on a laptop, a free layout program such as Scribus is built for many pages, master pages and consistent margins, which single page design apps handle less easily.
 
 ## Respect and accuracy
 
@@ -1702,11 +1702,11 @@ A pastor in Bolgatanga asks Issahaku for a crusade poster. Issahaku asks the sev
       },
     },
     "copyright-and-ethics": {
-      explanation_md: `It is easy to find any image, font or logo online in seconds. That does not mean you are allowed to use it. Using other people's work without permission can embarrass your client, get social media posts taken down and damage your reputation. Professional designers know the basic rules, and employers trust them more because of it.
+      explanation_md: `It is easy to find any image, font or logo online in seconds. That does not mean you are allowed to use it. Using other people's work without permission can embarrass your client and damage your reputation. Employers trust designers who know the basic rules.
 
 ## Copyright in simple terms
 
-Copyright protects creative work such as photos, illustrations, designs and fonts. In Ghana, as in most countries, copyright usually exists as soon as the work is created; it does not need to be registered. So assume an image or design online belongs to someone unless its licence clearly says how you may use it.
+Copyright protects creative work such as photos, illustrations, designs and fonts. In Ghana, as in most countries, copyright usually exists as soon as an original work is created in a form people can see; it does not need to be registered. Registering with the Copyright Office is voluntary and gives you a record that can help prove ownership. So assume an image or design online belongs to someone unless its licence clearly says how you may use it.
 
 ## Images
 
@@ -1718,11 +1718,11 @@ Fonts are software and come with licences too. Fonts from libraries such as Goog
 
 ## Logos and brands
 
-Never copy another business's logo or make one that looks confusingly similar. Logos can be protected as trademarks, and in Ghana trademarks are registered through the Registrar General's Department. A logo that copies a famous brand can force your client to rebrand, wasting their money.
+Never copy another business's logo or make one that looks confusingly similar. Logos can be protected as trademarks, and in Ghana trademarks are registered with the Registrar General's Department. Companies register with a different office, the Office of the Registrar of Companies. A logo that copies a famous brand can force your client to rebrand, wasting their money.
 
 ## Who owns the final design?
 
-As the designer, you may hold the copyright in what you create unless you agree otherwise. Clients usually expect to own their logo. Agree in writing that the client gets full rights to the final design once paid in full, and say whether editable source files are included. Ask if you may show the work in your portfolio.
+Under Ghana's Copyright Act, when a client commissions a design, or an employer asks you to make it as part of your job, the right to copy and use it usually belongs to the client or employer, unless a written agreement says otherwise. You keep the right to be named as the designer. So agree in writing that the client gets full rights to the final design once paid in full, say whether editable source files are included, and ask if you may show the work in your portfolio.
 
 ## AI image tools
 
@@ -1735,7 +1735,7 @@ AI tools can generate images and ideas quickly, and some adverts mention them. U
 
 ## Your own work
 
-Studying great designers is good. Copying their portfolio pieces and presenting them as your own is dishonest, and in a small industry it is often discovered.
+Studying great designers is good. Presenting their work as your own is dishonest, and it is often discovered.
 
 ## A small example
 
@@ -1816,7 +1816,7 @@ To find a fair range, ask designers and print shops near you what they charge fo
 
 ## Example calculation
 
-These numbers are made up for practice only. Say Wumpini estimates a flyer takes 3 hours including changes, and she decides her time is worth GH₵ 30 an hour while she is learning. Her data and transport for the job cost about GH₵ 15. So 3 times 30 is 90, plus 15 is 105. She quotes GH₵ 110 to keep things simple.
+These numbers are made up for practice only and are not a guide to real prices. Say Wumpini estimates a flyer takes 3 hours including changes, and she decides her time is worth GH₵ 30 an hour while she is learning. Her data and transport for the job cost about GH₵ 15. So 3 times 30 is 90, plus 15 is 105. She quotes GH₵ 110 to keep things simple.
 
 ## Write a clear quote
 
@@ -1902,7 +1902,7 @@ Salifu designs business cards for a mechanic in Damongo. He sends a quote on Wha
       },
     },
     "getting-hired": {
-      explanation_md: `For most design jobs in Ghana, the first thing an employer or client asks for is not a certificate but your portfolio. Adverts from print shops, agencies, NGOs and companies regularly ask candidates to attach or link to samples of their work, and some even say a strong portfolio can make up for missing qualifications. This section helps you turn what you have learned into work that pays.
+      explanation_md: `For most design jobs in Ghana, the first thing an employer or client asks for is not a certificate but your portfolio. Adverts from print shops, agencies, NGOs and companies regularly ask candidates to attach or link to samples of their work, and some say the portfolio is what decides who they hire. This section helps you turn what you have learned into work that pays.
 
 ## Three ways designers earn
 
