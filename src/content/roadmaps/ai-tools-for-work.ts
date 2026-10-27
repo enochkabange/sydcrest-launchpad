@@ -54,7 +54,7 @@ export const aiToolsForWork: RoadmapDraft = {
   slug: "ai-tools-for-work",
   title: "AI Tools for Work",
   description:
-    "Use AI assistants safely and well for real work and earning, mostly from your phone. Learn to prompt, check facts, protect privacy, write, handle data, translate, automate small tasks and build simple digital products you can sell honestly.",
+    "Use AI assistants safely and well for real work and earning, on a phone or a computer. Learn to prompt, check facts, protect privacy, write, handle data, translate, automate small tasks and build simple digital products you can sell honestly.",
   track: "ai-tools-for-work",
   field_category: "ai",
   locale: "en-GH",
@@ -82,7 +82,7 @@ export const aiToolsForWork: RoadmapDraft = {
       slug: "choosing-tools",
       title: "Choosing and setting up a free assistant",
       summary:
-        "Several companies offer free AI assistants that work in a phone browser or app, and their free plans change often. Learn how to compare them on what matters to you, such as data use, languages and limits.",
+        "Several companies offer free AI assistants that work in a web browser or an app, and their free plans change often. Learn how to compare them on what matters to you, such as data use, languages and limits.",
       parent: "ai-basics",
       optional: false,
       resources: [geminiHelp, copilotPrompts],
@@ -271,7 +271,7 @@ export const aiToolsForWork: RoadmapDraft = {
       slug: "ai-portfolio",
       title: "Your AI skills portfolio",
       summary:
-        "Employers and clients want proof, not claims, that you use AI well. Bring your best work from this track together into a short portfolio you can share from your phone.",
+        "Employers and clients want proof, not claims, that you use AI well. Bring your best work from this track together into a short portfolio you can share from any device.",
       parent: "working-professionally",
       optional: false,
       resources: [RES.lfResume, RES.lfDrive],

@@ -18,7 +18,7 @@ export const digitalSkillsBridge: RoadmapDraft = {
   slug: "digital-skills-bridge",
   title: "Digital Skills Bridge",
   description:
-    "Start from your phone and build the everyday digital skills that entry level jobs and tech courses expect. It ends with you ready to apply for SydCrest's Delta Mentoring Program.",
+    "Start from the phone or computer you already have and build the everyday digital skills that entry level jobs and tech courses expect. It ends with you ready to apply for SydCrest's Delta Mentoring Program.",
   track: "digital-skills-bridge",
   field_category: "foundations",
   locale: "en-GH",
@@ -26,18 +26,18 @@ export const digitalSkillsBridge: RoadmapDraft = {
   nodes: [
     {
       slug: "phone-as-a-tool",
-      title: "Your phone as a learning tool",
+      title: "Your phone or computer as a learning tool",
       summary:
-        "The phone you already have can take you a long way. This section helps you get comfortable with it and set it up for learning without wasting data or money.",
+        "The phone or computer you already have can take you a long way. This section helps you get comfortable with it and set it up for learning without wasting data or money.",
       parent: null,
       optional: false,
       resources: [],
     },
     {
       slug: "phone-first-steps",
-      title: "First steps on a smartphone",
+      title: "First steps on a phone or computer",
       summary:
-        "Learn the taps, swipes and buttons that every app uses, and how to switch WiFi and mobile data on and off. Once these feel natural, every other skill gets easier.",
+        "Learn the taps, swipes and buttons that every phone app uses, the clicks and keys that do the same jobs on a computer, and how to switch WiFi and mobile data on and off. Once these feel natural, every other skill gets easier.",
       parent: "phone-as-a-tool",
       optional: false,
       resources: [RES.lfComputer],
@@ -46,7 +46,7 @@ export const digitalSkillsBridge: RoadmapDraft = {
       slug: "phone-settings-and-storage",
       title: "Settings, storage and battery",
       summary:
-        "Learn to free up storage, manage notifications and keep your battery going through a study session. A tidy phone runs faster and crashes less.",
+        "Learn to free up storage, manage notifications and keep your battery going through a study session. A tidy phone or computer runs faster and crashes less.",
       parent: "phone-as-a-tool",
       optional: false,
       resources: [RES.lfComputer],
@@ -64,7 +64,7 @@ export const digitalSkillsBridge: RoadmapDraft = {
       slug: "apps-safely",
       title: "Installing apps safely",
       summary:
-        "Install apps only from the official app store and check what permissions they ask for. Delete apps you do not use, since they take space and data.",
+        "Install apps only from the official app store or the maker's own website, and check what permissions they ask for. Delete apps you do not use, since they take space and data.",
       parent: "phone-as-a-tool",
       optional: false,
       resources: [RES.lfSafety],
@@ -152,9 +152,9 @@ export const digitalSkillsBridge: RoadmapDraft = {
     },
     {
       slug: "privacy-and-shared-phones",
-      title: "Privacy and shared phones",
+      title: "Privacy on shared phones and computers",
       summary:
-        "Decide what you share about yourself online and keep your accounts private on a phone that others use. Employers trust people who protect their own information and other people's too.",
+        "Decide what you share about yourself online and keep your accounts private on a phone or computer that others use. Employers trust people who protect their own information and other people's too.",
       parent: "accounts-and-safety",
       optional: false,
       resources: [RES.lfSafety],
@@ -163,14 +163,14 @@ export const digitalSkillsBridge: RoadmapDraft = {
       slug: "files-and-forms",
       title: "Files, forms and finding things",
       summary:
-        "Jobs and courses ask you to send documents, fill in forms and look things up. This section teaches those skills on your phone, ready for the computer work in the DMP cohort.",
+        "Jobs and courses ask you to send documents, fill in forms and look things up. This section teaches those skills on a phone or a computer, ready for the computer work in the DMP cohort.",
       parent: null,
       optional: false,
       resources: [RES.lfWeb],
     },
     {
       slug: "files-on-your-phone",
-      title: "Photos, documents and files on your phone",
+      title: "Photos, documents and files",
       summary:
         "Find what you downloaded, take a clear photo or scan of a document, and send it as a file. Job applications and course registrations usually ask you to attach something.",
       parent: "files-and-forms",

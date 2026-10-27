@@ -249,7 +249,7 @@ export const backend: RoadmapDraft = {
       slug: "portfolio",
       title: "A backend portfolio",
       summary:
-        "Build two or three deployed APIs with tests and a README that explains the design, such as an ordering system with mobile money webhooks. Include a short demo video recorded on your phone for people who cannot run the code.",
+        "Build two or three deployed APIs with tests and a README that explains the design, such as an ordering system with mobile money webhooks. Include a short demo video, recorded with a screen recorder or a phone, for people who cannot run the code.",
       parent: "getting-hired",
       optional: false,
       resources: [RES.githubDocs, RES.markdown],

@@ -15,7 +15,7 @@ const content: TrackContent = {
 
 Look at Ghanaian job boards and you will see office assistant, front desk, administrative officer and executive assistant roles posted every week. Look at remote job boards and you will see virtual assistant roles where a company abroad hires someone in another country. Both kinds of job ask for the same core skills: clear communication, calendar and email management, documents and spreadsheets, research, and being reliable. That is what this roadmap teaches.
 
-Many of these skills can be practised on a phone with free apps such as Gmail, Google Calendar, Google Docs and Google Sheets. Some remote clients do expect a laptop and steady internet, and we will be honest about that when it matters.
+Many of these skills can be practised on a phone or a computer with free apps such as Gmail, Google Calendar, Google Docs and Google Sheets. Some remote clients do expect a laptop and steady internet, and we will be honest about that when it matters.
 
 ## What this section covers
 
@@ -33,7 +33,7 @@ Nobody starts as an expert. The aim of this section is to give you a clear pictu
       practice_task_md: `**Goal:** List the assistant tasks you already do or have seen others do.
 
 **Steps:**
-1. Open a notes app or Google Docs on your phone.
+1. Open a notes app or Google Docs on your phone or computer.
 2. Write down every organising or communication task you have done for your family, church, school, shop or club in the last month. Examples: collecting contributions, reminding people about a meeting, keeping a list of orders.
 3. Next to each task, write which professional skill it matches: communication, calendar, documents, spreadsheets, research or customer support.
 4. Circle the two skills you feel least confident about. These are the lessons to give extra time.
@@ -281,7 +281,7 @@ Because the gap can change twice a year, never memorise one number. Check the cu
 ## Habits that prevent mistakes
 
 * **Always write the time zone.** "Tuesday 3pm GMT" or "Tuesday 10am New York time". Never just "3pm".
-* **Let the calendar do the maths.** Google Calendar and Outlook can show a second time zone (in Google Calendar this is set on the web version) and will show invitations in your local time. Set your own time zone correctly on your phone.
+* **Let the calendar do the maths.** Google Calendar and Outlook can show a second time zone (in Google Calendar this is set on the web version) and will show invitations in your local time. Set your own time zone correctly on your phone and computer.
 * **Use a 24 hour clock when unsure.** 15:00 cannot be confused with 3am.
 * **Check the day as well as the hour.** A Monday morning meeting in Sydney can be Sunday evening in Ghana.
 
@@ -295,8 +295,8 @@ Hawa supports a client in New York. In January the client asks for a call "at 10
       practice_task_md: `**Goal:** Convert times correctly and practise writing time zones in messages.
 
 **Steps:**
-1. Open the Clock app on your phone and add world clocks for London, New York and Dubai.
-2. Open calendar.google.com in your phone browser in desktop mode, or on a shared computer, and turn on a secondary time zone for one client city in Settings. This setting is on the web version, not the phone app.
+1. Open the Clock app on your phone or computer and add world clocks for London, New York and Dubai.
+2. Open calendar.google.com on a computer, or in your phone browser in desktop mode, and turn on a secondary time zone for one client city in Settings. This setting is on the web version, not the phone app.
 3. Write down today's time difference between Ghana and each of the three cities.
 4. Write three practice messages confirming a meeting, each stating both times, for example: "Confirmed: Wednesday 2pm Dubai time, which is 10am GMT." Dubai is always four hours ahead of Ghana, so this works all year; for London and New York, use today's difference.
 
@@ -363,7 +363,7 @@ It also helps to know that some Ghanaian expressions confuse foreign clients. "I
 ## What this section covers
 
 * **Clear professional writing.** A simple structure for emails and messages, the right tone for different situations, and how to check your work before you send it.
-* **Calls, chat and video meetings.** Chat etiquette, phone calls, joining video meetings on a phone with limited data, taking notes and sending a summary afterwards.
+* **Calls, chat and video meetings.** Chat etiquette, phone calls, joining video meetings with limited data, taking notes and sending a summary afterwards.
 
 ## A small example
 
@@ -482,7 +482,7 @@ It is short, the request is in the first line and the deadline is clear.`,
       practice_task_md: `**Goal:** Write three professional emails using the four part structure.
 
 **Steps:**
-1. Open Gmail or a notes app on your phone.
+1. Open Gmail or a notes app on your phone or computer.
 2. Write these three emails, each with a clear subject line:
    * asking a client to confirm a meeting time, with the time zone,
    * telling a customer their order will be one day late, with an apology and new date,
@@ -532,7 +532,7 @@ It is short, the request is in the first line and the deadline is clear.`,
       },
     },
     "calls-and-meetings": {
-      explanation_md: `Not everything happens in writing. Clients will call you, add you to work chats and invite you to video meetings. Assistants are often asked to join meetings, take notes and follow up on actions. Doing this well, even on a phone, makes you far more useful.
+      explanation_md: `Not everything happens in writing. Clients will call you, add you to work chats and invite you to video meetings. Assistants are often asked to join meetings, take notes and follow up on actions. Doing this well, on a phone or a laptop, makes you far more useful.
 
 ## Work chat etiquette
 
@@ -548,9 +548,9 @@ Work chat on Slack, Microsoft Teams, Google Chat or WhatsApp is quicker than ema
 
 Answer with your name and, if you answer for a business, its name: "Good morning, Damongo Tours, this is Amina." Keep a notebook or notes app open. Repeat important details back, such as names, numbers and dates. End by saying what will happen next.
 
-## Video meetings on a phone
+## Video meetings on any device
 
-Free apps such as Google Meet, Zoom and Microsoft Teams work on phones. To save data and avoid problems:
+Free apps such as Google Meet, Zoom and Microsoft Teams work on phones and on computers. To save data and avoid problems:
 
 * Test the link and your sound before the meeting starts.
 * Join a few minutes early from a quiet place.
@@ -637,7 +637,7 @@ These tasks also need trust. You may see private emails and know where your clie
 
 ## The tools
 
-The two most common tool sets are Google Workspace (Gmail and Google Calendar) and Microsoft 365 (Outlook for both email and calendar). Both have free versions for personal use and free phone apps. The ideas are the same in each, so if you learn one well you can switch to the other quickly. This roadmap uses Gmail and Google Calendar in examples because they are free and work well on phones.
+The two most common tool sets are Google Workspace (Gmail and Google Calendar) and Microsoft 365 (Outlook for both email and calendar). Both have free versions for personal use and free phone apps. The ideas are the same in each, so if you learn one well you can switch to the other quickly. This roadmap uses Gmail and Google Calendar in examples because they are free and work well on phones and computers.
 
 ## What this section covers
 
@@ -655,7 +655,7 @@ Zuweira starts working for a business coach in Canada. On day one, the coach sha
 
 **Steps:**
 1. Create a free Gmail account just for work and practice, using a professional name, for example firstname.lastname.va@gmail.com style (do not use a real person's details other than your own).
-2. Install the Gmail and Google Calendar apps if they are not on your phone.
+2. On a phone, install the Gmail and Google Calendar apps if you do not have them; on a computer, open them in your browser.
 3. Set your time zone in Google Calendar and add a simple email signature with your name and "Virtual Assistant".
 4. Write down the three questions Zuweira asked a new client, and add two more questions you would ask.
 
@@ -750,7 +750,7 @@ Alhassan manages the inbox for a guest house owner in Wa. He creates labels for 
       practice_task_md: `**Goal:** Build a simple inbox system in your practice Gmail account.
 
 **Steps:**
-Labels work in the Gmail phone app, but filters and templates are set up in Gmail on the web. Open gmail.com in your phone browser and switch to the desktop version, or use a shared computer for steps 2 and 3.
+Labels work in the Gmail phone app, but filters and templates are set up in Gmail on the web. Open gmail.com on a computer, or in your phone browser switched to the desktop version, for steps 2 and 3.
 
 1. In your practice Gmail account, create four labels: Action, Waiting, Reference and Finance.
 2. Create one filter, for example so that any email containing the word "invoice" gets the Finance label.
@@ -862,7 +862,7 @@ Napari manages the calendar for a programme director at an NGO in Tamale. A dono
       practice_task_md: `**Goal:** Manage a week of calendar events for an imaginary client.
 
 **Steps:**
-1. Create a new calendar called "Client practice". This is done in Google Calendar on the web (open calendar.google.com in your phone browser in desktop mode, or use a shared computer). If that is difficult, use your main calendar instead.
+1. Create a new calendar called "Client practice". This is done in Google Calendar on the web (open calendar.google.com on a computer, or in your phone browser in desktop mode). If that is difficult, use your main calendar instead.
 2. Add five events for next week for an imaginary client, each with a clear title, time, location or meeting link, and a description with what to prepare.
 3. Add two focus blocks and one 15 minute buffer before an important meeting.
 4. Move one event to a new time by editing it, and check nothing clashes.
@@ -921,7 +921,7 @@ Napari manages the calendar for a programme director at an NGO in Tamale. A dono
 
 Clients ask assistants to type letters, prepare reports, keep lists of customers or orders, compare prices and find information. If a document has errors, or a spreadsheet has missing data, or research is wrong, the client may make a bad decision or look careless in front of their own customers. Accuracy is what makes you trustworthy.
 
-## Free tools you can use on a phone
+## Free tools for a phone or computer
 
 You do not need to buy software to learn this. Google Docs, Google Sheets and Google Drive are free with a Google account and have phone apps. Microsoft also offers free web versions of Word and Excel with a Microsoft account. The skills carry over between them: headings, tables, sorting, filters and sharing work in similar ways.
 
@@ -945,7 +945,7 @@ Dawuda volunteers as secretary for his youth association in Yendi. Before, the m
       practice_task_md: `**Goal:** Set up a tidy workspace for your document and spreadsheet practice.
 
 **Steps:**
-1. Open Google Drive on your phone.
+1. Open Google Drive on your phone or computer.
 2. Create a folder called "VA Portfolio" with three subfolders: Documents, Spreadsheets and Research.
 3. Create one blank Google Doc and one blank Google Sheet inside the right subfolders, with clear names such as "2026 Practice Letter" and "2026 Order Tracker".
 4. Turn on offline access for one of the files so you can open it without data.
@@ -1483,7 +1483,7 @@ Amina handles WhatsApp support for a solar lamp seller in Bolgatanga. A customer
       },
     },
     "social-media-scheduling": {
-      explanation_md: `Many small businesses know they should post regularly but never find the time. Remote VA adverts often list social media management, and Ghanaian freelance assistants commonly offer content scheduling. Scheduling posts in advance is a practical, phone friendly service you can offer without being a marketing expert.
+      explanation_md: `Many small businesses know they should post regularly but never find the time. Remote VA adverts often list social media management, and Ghanaian freelance assistants commonly offer content scheduling. Scheduling posts in advance is a practical service you can offer from a phone or a computer, without being a marketing expert.
 
 ## What the VA usually does
 
@@ -1792,9 +1792,9 @@ Fuseini works mornings for a client in Germany. One day the power goes off at 8a
       practice_task_md: `**Goal:** Build and test your own reliability plan.
 
 **Steps:**
-1. Turn on offline access for one Google Doc and one Google Sheet on your phone.
-2. Switch on airplane mode, edit both files, then switch it off and check that the changes synced.
-3. Check your phone settings and turn off automatic video play and app updates on mobile data.
+1. Turn on offline access for one Google Doc and one Google Sheet on your phone or computer.
+2. Switch on airplane mode (or turn off Wi Fi on a computer), edit both files, then switch it off and check that the changes synced.
+3. Check your device settings and turn off automatic video play and app updates on mobile data.
 4. Write a one page reliability plan: how you charge, your backup power, your second network, your backup places, and the message you will send a client when something goes wrong.
 5. Time how long your phone or laptop lasts on battery doing normal work, and add that to the plan.
 
