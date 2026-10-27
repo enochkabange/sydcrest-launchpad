@@ -11,6 +11,7 @@ const PAGES: { path: string; priority: number }[] = [
   { path: "/start", priority: 0.8 },
   { path: "/roadmaps", priority: 0.8 },
   { path: "/about", priority: 0.7 },
+  { path: "/impact", priority: 0.6 },
   { path: "/partners", priority: 0.7 },
   { path: "/business", priority: 0.6 },
   { path: "/privacy", priority: 0.3 },

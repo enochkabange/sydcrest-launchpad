@@ -55,6 +55,7 @@ test("screenshots of key screens at 390, 1440 and 1920", async ({ page }, testIn
     ["roadmap", `/roadmaps/${roadmap.slug}`],
     ["topic", `/roadmaps/${roadmap.slug}/${roadmap.quizNode.slug}`],
     ["start", "/start"],
+    ["impact", "/impact"],
     ["signin", "/login"],
   ];
   for (const [name, path] of pages) await shoot(page, testInfo, name, path);
@@ -64,6 +65,8 @@ test("screenshots of key screens at 390, 1440 and 1920", async ({ page }, testIn
     ["dashboard", "/dashboard"],
     ["leaderboards", "/leaderboards"],
     ["profile", "/profile"],
+    ["outcomes", "/outcomes"],
+    ["outcomes-new", "/outcomes/new"],
     ["learn", `/learn/${roadmap.slug}/${roadmap.quizNode.slug}`],
   ] as [string, string][]) {
     await shoot(page, testInfo, name, path);
