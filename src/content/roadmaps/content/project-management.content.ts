@@ -1192,6 +1192,617 @@ Once a donor approves a budget, spending usually has to match the approved lines
         pass_threshold: 80,
       },
     },
+    "risks-and-issues": {
+      explanation_md: `Things will go wrong on every project. Funds arrive late, roads flood, a supplier raises prices, a key person falls ill. Good project staff are not people who avoid every problem; they are people who saw it coming and had a plan. Managing risk is listed in coordinator adverts and is part of every serious project plan.
+
+## Risk or issue?
+
+* A **risk** is something that **might** happen and would affect the project. "Heavy rains might make the road to the site impassable in August."
+* An **issue** is something that **has already** happened and needs action now. "The road is flooded and the drilling rig cannot reach the site."
+
+You manage risks by preparing. You manage issues by acting. A risk that happens becomes an issue.
+
+## The risk register
+
+A **risk register** is a table, usually a tab in your project spreadsheet, with these columns:
+
+* **Risk:** written as a clear cause and effect. "If funds arrive late, then cooks will not be paid on time."
+* **Likelihood:** how likely it is: low, medium or high (or 1 to 3).
+* **Impact:** how badly it would hurt the project if it happened: low, medium or high (or 1 to 3).
+* **Score:** likelihood times impact, so you know which risks to watch most.
+* **Response:** what you will do about it.
+* **Owner:** the one person who keeps an eye on it.
+* **Status:** open, happening or closed.
+
+## Four ways to respond
+
+1. **Avoid:** change the plan so the risk cannot happen. Schedule drilling before the rains.
+2. **Reduce:** make it less likely or less harmful. Get three supplier quotes so one price rise does not stop you.
+3. **Transfer:** pass some of it to someone better placed, for example a contract that makes the contractor responsible for delays they cause.
+4. **Accept:** for small risks, note it and deal with it if it happens.
+
+## A worked example
+
+Here is part of the register for the school feeding programme, kept by Wumpini:
+
+| Risk | L | I | Score | Response | Owner |
+|---|---|---|---|---|---|
+| If donor funds arrive late, then food cannot be bought | 2 | 3 | 6 | Agree a two week food reserve; alert donor early | Issahaku |
+| If maize prices rise before harvest, then the budget runs short | 3 | 2 | 6 | Buy in bulk after harvest; agree prices with farmer groups | Wumpini |
+| If a cook falls ill, then meals stop at one school | 2 | 2 | 4 | Train one backup cook per school | Head teachers |
+| If pupils' parents are not informed, then attendance is low | 1 | 2 | 2 | Accept; announce at PTA meetings | Wumpini |
+
+## Logging issues
+
+Keep a short **issue log** too: what happened, date, effect, action taken, who is handling it and when it was resolved. When the donor asks why meals stopped for three days in November, the log answers the question with facts.
+
+## Make it a habit
+
+Review the register at every team meeting. Ask: has anything changed? Are there new risks? Has any risk become an issue? Raising a risk early is never a sign of weakness. Managers would far rather hear "this might go wrong" in good time than "this went wrong" when it is too late to act.`,
+      practice_task_md: `**Goal:** Create a risk register for a small project.
+
+**Steps:**
+1. Use the Risks tab of your planning spreadsheet, or start a new sheet on your phone or computer.
+2. Add the columns from the lesson: risk, likelihood, impact, score, response, owner, status.
+3. Write five risks for your project as "If... then..." sentences. Score each from 1 to 3 for likelihood and impact, and use a formula to multiply them.
+4. Choose a response type (avoid, reduce, transfer or accept) for each and describe the action.
+5. Sort by score so the biggest risks are at the top.
+
+**Done looks like:** A register with five scored risks, sorted from highest to lowest, each with a response and an owner.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the difference between a risk and an issue?",
+            options: [
+              "A risk might happen; an issue has already happened",
+              "A risk is small; an issue is large",
+              "A risk is about money; an issue is about people",
+              "There is no difference",
+            ],
+            answer_index: 0,
+            explanation: "The lesson defines a risk as something that might happen and an issue as something that already has.",
+          },
+          {
+            prompt: "How is the risk score calculated in the lesson?",
+            options: [
+              "Likelihood plus owner",
+              "Impact minus likelihood",
+              "Likelihood times impact",
+              "The number of people affected",
+            ],
+            answer_index: 2,
+            explanation: "The score is likelihood multiplied by impact.",
+          },
+          {
+            prompt: "Scheduling drilling before the rains is an example of which response?",
+            options: ["Accept", "Transfer", "Reduce", "Avoid"],
+            answer_index: 3,
+            explanation: "Changing the plan so the risk cannot happen is avoiding it.",
+          },
+          {
+            prompt: "Why does the lesson suggest keeping an issue log?",
+            options: [
+              "To blame the person responsible",
+              "To answer questions later with facts about what happened and what was done",
+              "Because donors ban risk registers",
+              "To replace the budget",
+            ],
+            answer_index: 1,
+            explanation: "The issue log records events and actions so questions can be answered with facts.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "running-the-work": {
+      explanation_md: `Once a plan is agreed, the real work begins: getting people, tasks, supplies and money to meet in the right place at the right time. This is where project assistants and officers spend most of their days, and where employers see whether someone is reliable.
+
+## What running the work involves
+
+Adverts for project assistants and officers in Tamale and across Ghana list duties like coordinating trainings and events, following up on tasks, organising meetings, arranging logistics, processing payment requests and keeping records. None of these is glamorous, but together they decide whether a project delivers.
+
+The job at this stage is mostly **follow through**:
+
+* Checking that each task in the plan is moving.
+* Reminding people politely before deadlines, not after.
+* Spotting problems early and raising them.
+* Making sure the money, materials and transport are ready when activities happen.
+* Recording what was done so it can be reported.
+
+## What this section covers
+
+* **Task boards.** A simple visual board, in a free tool or a spreadsheet, that shows what is to do, in progress and done.
+* **Meetings, minutes and action points.** How to run short, useful meetings and record decisions so people act on them.
+* **Logistics, vendors and procurement.** Arranging venues, transport and materials, getting quotes, and following the rules that keep spending honest.
+
+## A day in the life
+
+Here is an invented but typical day for Mariama, assistant on the community water project:
+
+* **8:00** Checks the team task board. Two tasks are due this week: confirming the drilling date and printing materials for the water committee training.
+* **8:30** Calls the contractor to confirm the rig will arrive on Thursday. Updates the board.
+* **10:00** Joins the weekly team meeting and takes minutes. Coordinator Fuseini agrees to move the training by one week because of a funeral in the community.
+* **11:30** Sends the minutes to the team WhatsApp group with action points, names and dates.
+* **13:00** Collects three quotes for printing and prepares a payment request for the finance officer, Abdul-Rahman.
+* **15:00** Calls the assembly member to tell him about the new training date.
+* **16:30** Files today's receipts and updates the tracking sheet.
+
+Notice how much of the day is communication and follow up. Each small action keeps the plan true to reality.
+
+## Habits that build trust
+
+* **Close the loop.** When you finish a task, tell the person who needs to know.
+* **Write things down.** Decisions made in a corridor are forgotten by Friday.
+* **Raise problems early.** A late warning is much less useful than an early one.
+* **Be consistent.** Update the board and the trackers at the same time each day or week.
+
+These habits matter more than any tool, and they are what managers remember when they write your reference letter.`,
+      practice_task_md: `**Goal:** Plan a realistic working day for a project assistant.
+
+**Steps:**
+1. Pick one of the three example projects: the water project, the school feeding programme or Hawa's shop launch.
+2. On your phone or computer, write a schedule for one working day with at least six time slots, like the example in the lesson.
+3. For each slot, write the task and who you would need to contact.
+4. Mark which slots involve follow up or communication, and count them.
+
+**Done looks like:** A one day schedule with six or more entries, each with a contact, and a count of how many involve communication. Write one sentence on what that tells you about the job.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does the lesson say the job is mostly about at this stage?",
+            options: ["Designing the logframe", "Follow through", "Raising funds", "Hiring a new director"],
+            answer_index: 1,
+            explanation: "Running the work is mostly follow through: checking, reminding, spotting problems and recording.",
+          },
+          {
+            prompt: "When should you remind people about deadlines?",
+            options: ["After the deadline has passed", "Never; it is rude", "Before the deadline, politely", "Only at the end of the project"],
+            answer_index: 2,
+            explanation: "The lesson says to remind people politely before deadlines, not after.",
+          },
+          {
+            prompt: "What did Mariama do after taking minutes in the team meeting?",
+            options: [
+              "Kept them private",
+              "Deleted them",
+              "Waited a week before sharing",
+              "Sent them to the team WhatsApp group with action points, names and dates",
+            ],
+            answer_index: 3,
+            explanation: "She shared the minutes with action points, names and dates the same day.",
+          },
+          {
+            prompt: "What does 'close the loop' mean in the lesson?",
+            options: [
+              "When you finish a task, tell the person who needs to know",
+              "Lock the office at night",
+              "End the project early",
+              "Stop answering messages",
+            ],
+            answer_index: 0,
+            explanation: "Closing the loop means letting the relevant person know a task is done.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "task-boards": {
+      explanation_md: `When a team has dozens of tasks, the questions "Who is doing that?" and "Is it finished?" can eat up hours. A task board answers them at a glance. Coordinator adverts ask for experience with project management tools, and a simple board is the easiest place to start.
+
+## The idea
+
+A **task board** has columns for the stages of work and a **card** for each task. The simplest board has three columns:
+
+* **To do:** tasks not yet started.
+* **Doing:** tasks someone is working on now.
+* **Done:** finished tasks.
+
+As work moves, you move the card from left to right. Anyone who looks at the board sees where things stand. This style of working is often called **Kanban**, from a Japanese word for a visual card or signboard.
+
+Each card should say:
+
+* What the task is, starting with a verb.
+* Who owns it.
+* When it is due.
+* Any notes, files or checklists needed.
+
+## A useful rule: limit work in progress
+
+If the Doing column fills up with fifteen cards, people are juggling too much and little actually finishes. Many teams agree a limit, such as no more than three cards per person in Doing. Finishing one thing before starting another moves the project faster.
+
+## Tools
+
+You can make a task board in several ways:
+
+* **A free task board app.** Trello, named here only as an example, offers a free plan with boards, lists and cards, and works in a browser and as an app on phones. Other tools like it exist; check each one's current free limits.
+* **A shared spreadsheet.** Columns for task, owner, due date and status, with status as a dropdown (To do, Doing, Done). Filter by status or owner to see each list.
+* **Paper or a wall.** Sticky notes on a wall in the office still work well for a team in one room.
+
+Choose what your team will actually use. A simple board updated daily beats a clever one nobody opens.
+
+## A worked example
+
+Hawa is launching her shea butter soap shop in Bolgatanga. She sets up a board with her cousin Amina and her friend Napari:
+
+**To do**
+* Print 200 labels (Amina, due 12 May)
+* Post opening day flyer on WhatsApp status (Napari, due 18 May)
+
+**Doing**
+* Paint shop interior (Hawa, due 10 May)
+* Make first batch of 300 soaps (Hawa and women's group, due 14 May)
+
+**Done**
+* Register business name
+* Buy shelves
+
+Each evening Hawa moves cards and adds new ones. When Amina's card for labels stays in To do for four days, Hawa notices and calls to ask what is holding it up. The printer needs payment first, so Hawa pays by MoMo and the card moves the next morning.
+
+## Make it part of the routine
+
+Look at the board at the start of each team meeting and walk through Doing first: what is stuck, and who can help? Board updates should take minutes, not hours. The point is to see problems early, not to produce a pretty display.`,
+      practice_task_md: `**Goal:** Set up a working task board for a small project.
+
+**Steps:**
+1. Choose a free board app or a shared spreadsheet on your phone or computer.
+2. Create three columns or statuses: To do, Doing, Done.
+3. Add at least eight cards from your work breakdown, each with a verb, an owner and a due date.
+4. Move at least two cards to Doing and one to Done.
+5. Agree a work in progress limit for your imaginary team and write it at the top of the board.
+
+**Done looks like:** A board with eight or more complete cards spread across three columns and a written work in progress limit. Take a screenshot for your portfolio.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What are the three columns of the simplest task board?",
+            options: ["Plan, budget, report", "Morning, afternoon, evening", "To do, Doing, Done", "Donor, staff, community"],
+            answer_index: 2,
+            explanation: "The simplest board has To do, Doing and Done columns.",
+          },
+          {
+            prompt: "Why do many teams limit the number of cards in Doing?",
+            options: [
+              "So that people finish tasks before starting new ones",
+              "Because apps only allow three cards",
+              "To hide work from managers",
+              "Because donors require it",
+            ],
+            answer_index: 0,
+            explanation: "Limiting work in progress helps tasks actually finish and moves the project faster.",
+          },
+          {
+            prompt: "How does the lesson present Trello?",
+            options: [
+              "As the only tool that works",
+              "As a tool you must pay for",
+              "As a paper method",
+              "As one example of a free task board app",
+            ],
+            answer_index: 3,
+            explanation: "Trello is named only as an example; spreadsheets and paper also work.",
+          },
+          {
+            prompt: "In Hawa's example, how did the board help?",
+            options: [
+              "It printed the labels automatically",
+              "It showed the label card stuck in To do, so she called Amina and fixed the problem",
+              "It sent money to the printer",
+              "It replaced the need to talk to her team",
+            ],
+            answer_index: 1,
+            explanation: "Seeing the stuck card prompted Hawa to find out why and solve it.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "meetings-and-minutes": {
+      explanation_md: `Projects run on meetings: team check ins, partner meetings, community durbars, donor visits. Badly run meetings waste everyone's time and end with nobody sure what was decided. Assistants are very often the person asked to arrange meetings and take minutes, so doing it well is a quick way to stand out.
+
+## Before the meeting
+
+* **Purpose.** Know why the meeting is happening. If an update could be shared in a message, it may not need a meeting.
+* **Agenda.** A short list of topics, with a rough time for each and who leads it. Share it a day or two ahead so people come prepared.
+* **People.** Invite those who need to decide or contribute, not everyone.
+* **Logistics.** Venue or call link, time, refreshments if needed, and any documents people should read.
+
+## During the meeting
+
+* Start on time, and end on time.
+* Follow the agenda; park off topic points for later.
+* For each topic, make sure the meeting ends with a **decision** or an **action**.
+* An **action point** always has three parts: **what** will be done, **who** will do it, and **by when**.
+
+## Minutes
+
+**Minutes** are the written record of a meeting. They do not need to record every word. Good minutes are short and include:
+
+* Meeting name, date, place and who attended.
+* Key points discussed, in one or two lines each.
+* Decisions made.
+* Action points, each with a name and a date.
+* Date of the next meeting.
+
+Send them the same day, while memories are fresh. Start the next meeting by reviewing the previous action points.
+
+## A worked example
+
+Here are Mariama's minutes from a water project team meeting, shared on WhatsApp and email:
+
+**Water project team meeting, Tuesday 14 May, NGO office, Tamale**
+**Present:** Fuseini (chair), Mariama (minutes), Abdul-Rahman, Salifu (field officer)
+
+**1. Drilling date.** Contractor confirmed rig arrives Thursday 16 May.
+**2. Committee training.** A funeral in the community clashes with 21 May. **Decision:** move training to 28 May.
+**3. Budget.** Spending on track. Fuel costs higher than planned; Abdul-Rahman to review.
+
+**Action points**
+* Salifu to inform the chief and assembly member of the new training date, by 16 May.
+* Mariama to rebook the venue for 28 May and confirm in writing, by 17 May.
+* Abdul-Rahman to share a fuel cost update, by 21 May.
+
+**Next meeting:** Tuesday 21 May, 10:00.
+
+## Community meetings
+
+For community meetings, follow local protocol, use the language people are comfortable in, and record attendance on a signed sheet, which may also be evidence for the donor. Read the key decisions back at the end so everyone hears the same thing. If you take photos, ask permission first.
+
+## The habit that makes you valuable
+
+Following up on action points is where minutes become useful. A day before each deadline, send a short friendly reminder. Over time, people will notice that meetings you support actually lead to action.`,
+      practice_task_md: `**Goal:** Write an agenda and minutes for a short meeting.
+
+**Steps:**
+1. Hold or join a short meeting: a family planning talk, a youth group meeting or a study group session. Ask the group's permission to take notes.
+2. Before it starts, write a three item agenda on your phone or computer.
+3. During the meeting, note decisions and action points with what, who and by when.
+4. Afterwards, write minutes using the headings in the lesson and share them with the group the same day.
+
+**Done looks like:** An agenda and one page of minutes with attendance, decisions, at least three complete action points and a next meeting date.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What three parts should every action point have?",
+            options: [
+              "What, who and by when",
+              "Why, where and how much",
+              "Title, photo and signature",
+              "Agenda, venue and snacks",
+            ],
+            answer_index: 0,
+            explanation: "An action point says what will be done, who will do it and by when.",
+          },
+          {
+            prompt: "When does the lesson say minutes should be sent?",
+            options: ["At the end of the month", "Only if someone asks", "Before the meeting", "The same day"],
+            answer_index: 3,
+            explanation: "Minutes should go out the same day while memories are fresh.",
+          },
+          {
+            prompt: "Which of these do good minutes NOT need?",
+            options: [
+              "Decisions made",
+              "Every word everyone said",
+              "Who attended",
+              "Action points with names and dates",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says minutes do not need to record every word; they should be short.",
+          },
+          {
+            prompt: "What should you do at the end of a community meeting, according to the lesson?",
+            options: [
+              "Leave quickly without summarising",
+              "Take photos without asking",
+              "Read the key decisions back so everyone hears the same thing",
+              "Collect money from participants",
+            ],
+            answer_index: 2,
+            explanation: "Reading decisions back helps everyone share the same understanding.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "logistics-and-procurement": {
+      explanation_md: `A training with no lunch, a field visit with no vehicle or a workshop where the projector never arrived can undo weeks of planning. Assistants and officers in Ghana spend a large part of their time on logistics and procurement, and adverts ask for it directly: procurement requests, vendors, travel and event arrangements.
+
+## Logistics
+
+**Logistics** means getting people, materials and equipment to the right place at the right time. For any activity, ask:
+
+* **Venue:** booked, confirmed in writing, with enough seats, shade, toilets and power?
+* **Transport:** vehicles booked, fuel approved, drivers informed, or transport refunds prepared?
+* **Materials:** printed, packed and counted?
+* **Food:** caterer confirmed with numbers and timing, including any dietary needs?
+* **People:** facilitators, participants and partners reminded?
+* **Documents:** attendance sheets, consent forms, receipts book?
+
+A **checklist** for each type of activity saves you from forgetting the same thing twice. Keep it in your project spreadsheet and copy it for each event.
+
+## Procurement
+
+**Procurement** is the process of buying goods and services for the project. Organisations have rules to make sure money is spent fairly and honestly, and donors check that the rules were followed. While each organisation's policy differs, common steps are:
+
+1. **Request.** Fill a purchase request saying what is needed, why, and which budget line it comes from.
+2. **Quotes.** For many purchases, collect written quotes from several suppliers. Larger purchases may need a formal tender.
+3. **Approval.** The right person approves the chosen supplier, usually on value for money, not just the lowest price.
+4. **Purchase.** Issue a purchase order or contract.
+5. **Receive.** Check that what arrived matches what was ordered, and sign a delivery note.
+6. **Pay.** Finance pays against the invoice, ideally by bank transfer or mobile money so there is a record.
+7. **File.** Keep request, quotes, approval, delivery note, invoice and receipt together.
+
+## A worked example
+
+Abdul-Rahman needs 30 sets of training handouts for the Damongo farmer training. He fills a purchase request against the "Handouts and stationery" budget line, gets written quotes from three printers in town, and records them in a comparison table with price, delivery time and quality notes. The second cheapest printer can deliver two days earlier, which matters for the schedule, so he recommends it and explains why. The coordinator approves. When the handouts arrive, he counts them, signs the delivery note and attaches the full set of documents to the payment request.
+
+## Integrity
+
+Procurement rules protect you as well as the project. Never split a purchase into smaller ones to avoid the quote rule, never accept gifts from suppliers, and declare it if a supplier is a relative or friend. If something feels wrong, ask your supervisor or finance. Clean records are what let auditors and donors trust the project, and they build your reputation as someone who can be trusted with money.`,
+      practice_task_md: `**Goal:** Create an event checklist and a quote comparison.
+
+**Steps:**
+1. On your phone or computer, write a logistics checklist for a one day workshop using the six areas in the lesson. Add at least three checks under each area.
+2. Pick one item to buy, such as printing or lunch for 25 people. Get three prices from local suppliers by phone or from recent receipts.
+3. Make a comparison table: supplier, price, delivery time, quality notes.
+4. Write two sentences recommending a supplier and explaining why.
+
+**Done looks like:** A checklist with eighteen or more checks, a three supplier comparison and a short written recommendation.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is procurement?",
+            options: [
+              "Writing the donor report",
+              "The process of buying goods and services for the project",
+              "Taking minutes at a meeting",
+              "Drawing a Gantt chart",
+            ],
+            answer_index: 1,
+            explanation: "Procurement is the process of buying goods and services following the organisation's rules.",
+          },
+          {
+            prompt: "On what basis is a supplier usually approved?",
+            options: [
+              "Value for money, not just the lowest price",
+              "Whoever is a friend of the coordinator",
+              "Always the most expensive",
+              "Whoever replies first",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says approval is usually on value for money, not only price.",
+          },
+          {
+            prompt: "Why did Abdul-Rahman recommend the second cheapest printer?",
+            options: [
+              "It was owned by his cousin",
+              "It gave him a gift",
+              "It could deliver two days earlier, which mattered for the schedule",
+              "It had the nicest shop",
+            ],
+            answer_index: 2,
+            explanation: "Faster delivery made it better value for the schedule.",
+          },
+          {
+            prompt: "Which of these breaks good procurement practice?",
+            options: [
+              "Collecting written quotes",
+              "Signing a delivery note",
+              "Declaring that a supplier is a relative",
+              "Splitting a purchase into smaller ones to avoid the quote rule",
+            ],
+            answer_index: 3,
+            explanation: "The lesson warns never to split purchases to get around the rules.",
+          },
+          {
+            prompt: "Why does the lesson suggest keeping a checklist for each type of activity?",
+            options: [
+              "So you do not forget the same thing twice",
+              "Because donors pay for checklists",
+              "To avoid talking to suppliers",
+              "To replace the budget",
+            ],
+            answer_index: 0,
+            explanation: "A reusable checklist stops repeat mistakes.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+
+    "monitoring-and-reporting": {
+      explanation_md: `Donors, managers, district officials and communities all want to know the same things: what has been done, what it cost, and what changed. Monitoring and reporting answer those questions. In Ghanaian NGO adverts, reporting, monitoring and evaluation, and financial tracking are among the most requested skills, from assistant level upwards.
+
+## Monitoring and evaluation
+
+**Monitoring** is the regular, ongoing checking of a project: are activities happening as planned, are outputs being delivered, is spending on track? It happens weekly or monthly, throughout the project.
+
+**Evaluation** is a deeper look, usually at the middle or end, asking whether the project achieved its outcomes and why. It is often led by M&E staff or an outside evaluator.
+
+Together they are called **M&E**. Some organisations add learning and call it MEL or MEAL (with accountability). As an assistant or officer, you will mostly do monitoring: collecting data, updating trackers and helping with reports.
+
+## Where monitoring data comes from
+
+* Attendance sheets from trainings and meetings.
+* Activity reports from field staff.
+* Receipts and payment records.
+* Surveys and field forms, often filled on a phone with free data collection tools such as KoboToolbox or ODK, named here as examples.
+* Observation and photos, taken with consent.
+* Records kept by partners, such as a water committee log book or a school's meal register.
+
+## What this section covers
+
+* **Tracking progress and spending.** Comparing planned and actual dates, outputs and money in a spreadsheet, and flagging problems early.
+* **Status and donor reports.** Writing clear updates, and following the logframe in donor reports.
+* **Records and documentation.** Filing evidence so it can be found, and protecting people's personal data.
+
+## A worked example
+
+On the school feeding programme, the logframe has an output indicator: "number of hot meals served". Each school's head teacher records meals in a register. Every Friday, Wumpini collects a photo of each register page through WhatsApp and enters the numbers in the tracking sheet. At the end of each month, she compares meals served with the plan. In October, one school served far fewer meals than expected. She checks with the head teacher and learns the cook was ill for a week. She logs it as an issue, and coordinator Issahaku arranges a backup cook. At the end of the quarter, the donor report shows the numbers, explains the drop and describes the fix.
+
+Notice the cycle: collect, compare, ask why, act, report. That cycle is monitoring.
+
+## Honest reporting
+
+Report what really happened, including problems. Donors understand that projects face challenges; what damages trust is discovering problems that were hidden. A report that says "this went wrong, here is why, and here is what we did" shows a team that is in control.`,
+      practice_task_md: `**Goal:** Design a simple monitoring plan for one indicator.
+
+**Steps:**
+1. Choose one output from a project you know, such as "number of people trained" or "number of meals served".
+2. On your phone or computer, write: where the data comes from, who collects it, how often, and where it is recorded.
+3. Create a small table with columns for week, planned and actual, and fill four weeks of invented numbers, including one bad week.
+4. Write three sentences explaining what you would do about the bad week, following the collect, compare, ask why, act, report cycle.
+
+**Done looks like:** A one page monitoring plan, a four week table and a short action note.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the main difference between monitoring and evaluation?",
+            options: [
+              "Monitoring is regular ongoing checking; evaluation is a deeper look, often in the middle or at the end",
+              "Monitoring is about money; evaluation is about people",
+              "They are the same thing",
+              "Evaluation happens every day; monitoring once a year",
+            ],
+            answer_index: 0,
+            explanation: "The lesson describes monitoring as ongoing and evaluation as a deeper periodic review.",
+          },
+          {
+            prompt: "Which of these is a source of monitoring data mentioned in the lesson?",
+            options: ["Rumours in the market", "Attendance sheets from trainings", "A newspaper horoscope", "The project logo"],
+            answer_index: 1,
+            explanation: "Attendance sheets are one of the listed data sources.",
+          },
+          {
+            prompt: "What did Wumpini do when one school served far fewer meals?",
+            options: [
+              "Deleted the numbers",
+              "Waited until the end of the year",
+              "Asked the head teacher why, logged the issue, and a backup cook was arranged",
+              "Reported a higher number to the donor",
+            ],
+            answer_index: 2,
+            explanation: "She followed the cycle: compared, asked why, logged it and the team acted.",
+          },
+          {
+            prompt: "According to the lesson, what damages a donor's trust most?",
+            options: [
+              "Reporting a challenge with an explanation",
+              "Using a spreadsheet",
+              "Sending reports on time",
+              "Discovering problems that were hidden",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says hidden problems damage trust, while honest reporting builds it.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
     // NEXT_NODES
   },
 };
