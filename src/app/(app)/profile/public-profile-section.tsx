@@ -42,7 +42,7 @@ export async function PublicProfileSection() {
         <p className="text-sm text-content-2">
           Share this link with someone who wants to learn tech skills too. Launchpad is free.
         </p>
-        <CopyLink url={inviteLink(origin, data.public_slug)} label="Invite link" />
+        <CopyLink url={inviteLink(origin, data.public_slug)} label="Invite link" trackInvite />
       </section>
     </>
   );

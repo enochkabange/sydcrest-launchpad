@@ -79,3 +79,31 @@ test("home links to sign up and every marketing page", async ({ page }) => {
     await expect(nav.getByRole("link", { name })).toBeVisible();
   }
 });
+
+for (const { path, title } of [
+  { path: "/start", title: "Where do I start?" },
+  { path: "/privacy", title: "Privacy Policy" },
+  { path: "/terms", title: "Terms" },
+]) {
+  test(`${path} has its own canonical and share card`, async ({ page }) => {
+    await page.goto(path);
+    await expect(page).toHaveTitle(new RegExp(`^${title.replace("?", "\\?")}`));
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", new RegExp(`${path}$`));
+    await expect(page.locator('meta[property="og:url"]')).toHaveAttribute("content", new RegExp(`${path}$`));
+    await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", new RegExp(`/og/${path.slice(1)}`));
+  });
+}
+
+test("the sitemap lists the start quiz", async ({ request }) => {
+  const body = await (await request.get("/sitemap.xml")).text();
+  expect(body).toMatch(/<loc>[^<]*\/start<\/loc>/);
+});
+
+test("sign in and legal pages link to Privacy and Terms", async ({ page }) => {
+  for (const path of ["/login", "/privacy"]) {
+    await page.goto(path);
+    const legal = page.getByRole("navigation", { name: "Legal" });
+    await expect(legal.getByRole("link", { name: "Privacy" })).toBeVisible();
+    await expect(legal.getByRole("link", { name: "Terms" })).toBeVisible();
+  }
+});

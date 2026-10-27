@@ -18,4 +18,12 @@ test("phones keep the bottom tab bar on signed in screens", async ({ page }, tes
   const tabs = page.getByRole("navigation", { name: "Primary" });
   await expect(tabs).toBeVisible();
   await expect(tabs.getByRole("link", { name: "Home" })).toBeVisible();
+
+  // Privacy and Terms sit at the end of the content, clear of the fixed tab bar.
+  const privacy = page.getByRole("navigation", { name: "Legal" }).getByRole("link", { name: "Privacy" });
+  await page.evaluate(() => window.scrollTo(0, document.documentElement.scrollHeight));
+  await expect(privacy).toBeVisible();
+  const link = await privacy.boundingBox();
+  const bar = await tabs.boundingBox();
+  expect(link!.y + link!.height).toBeLessThanOrEqual(bar!.y);
 });

@@ -62,13 +62,16 @@ export function ogImage(headline: string, subline: string) {
   );
 }
 
-/** Headline and subline per marketing page. Visible copy: no dashes. */
+/** Headline and subline per public page. Visible copy: no dashes. */
 export const OG_CARDS = {
   home: { headline: "Find your path into tech.", subline: "Learn. Get mentored. Earn. Built in Northern Ghana." },
   about: { headline: "Why SydCrest exists", subline: "From “where do I start” to employable and earning." },
   programme: { headline: "The Delta Mentoring Program", subline: "12 weeks. 25 free seats. Starting January 2027." },
   business: { headline: "Hire vetted Ghanaian talent", subline: "Coming soon. Register your interest today." },
   partners: { headline: "Partner with SydCrest", subline: "Help turn northern talent into earning talent." },
+  start: { headline: "Where do I start?", subline: "Five quick questions. A starting point and a weekly plan." },
+  privacy: { headline: "Privacy Policy", subline: "What we collect, why, and the rights you have." },
+  terms: { headline: "Terms", subline: "The agreement for using SydCrest Launchpad." },
 } as const;
 
 export type OgCard = keyof typeof OG_CARDS;

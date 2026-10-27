@@ -2,11 +2,16 @@
 
 import { useState, useSyncExternalStore } from "react";
 import { Button } from "@/components/ui/button";
+import { optedOut } from "@/lib/analytics/opt-out";
+import { recordInviteSent, type InviteMethod } from "./invite-actions";
 
 const noop = () => () => {};
 
-/** Shows a link with a copy button (and the phone share sheet where there is one). */
-export function CopyLink({ url, label }: { url: string; label: string }) {
+/**
+ * Shows a link with a copy button (and the share sheet where the browser has one).
+ * With `trackInvite`, a successful copy or share records invite_sent.
+ */
+export function CopyLink({ url, label, trackInvite = false }: { url: string; label: string; trackInvite?: boolean }) {
   const [status, setStatus] = useState<"idle" | "copied" | "failed">("idle");
   // False on the server and during hydration, so the markup matches.
   const canShare = useSyncExternalStore(
@@ -15,10 +20,17 @@ export function CopyLink({ url, label }: { url: string; label: string }) {
     () => false,
   );
 
+  function sent(method: InviteMethod) {
+    if (!trackInvite || optedOut()) return;
+    // Analytics must never break the button.
+    recordInviteSent(method).catch(() => {});
+  }
+
   async function copy() {
     try {
       await navigator.clipboard.writeText(url);
       setStatus("copied");
+      sent("copy");
     } catch {
       setStatus("failed");
     }
@@ -27,6 +39,7 @@ export function CopyLink({ url, label }: { url: string; label: string }) {
   async function share() {
     try {
       await navigator.share({ url, title: "Join me on SydCrest Launchpad" });
+      sent("share");
     } catch {
       // Dismissed share sheets reject; nothing to do.
     }

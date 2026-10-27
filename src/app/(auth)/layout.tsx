@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Link from "@/components/ui/link";
 import Logo from "@/components/brand/Logo";
+import { LegalLinks } from "@/components/app-shell/legal-links";
 import { PageViewTracker } from "@/lib/analytics/page-view-tracker";
 
 export default function AuthLayout({ children }: LayoutProps<"/">) {
@@ -10,6 +11,7 @@ export default function AuthLayout({ children }: LayoutProps<"/">) {
         <Logo size={36} />
       </Link>
       {children}
+      <LegalLinks />
       {/* Shared sign up links skip the marketing pages; count the visit here too. */}
       <Suspense fallback={null}>
         <PageViewTracker />
