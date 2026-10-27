@@ -13,7 +13,7 @@ function Person({ m }: { m: RosterMember }) {
           {m.name}
           {m.isMe ? " (you)" : ""}
         </span>
-        {m.role !== "learner" && <span className="text-xs text-content-3">{ROLE_LABEL[m.role] ?? m.role}</span>}
+        {m.role === "coordinator" && <span className="text-xs text-content-3">{ROLE_LABEL[m.role] ?? m.role}</span>}
       </span>
     </>
   );
@@ -36,11 +36,11 @@ export function CohortPeople({ roster }: { roster: RosterMember[] }) {
       <h2 id="people-heading" className="text-subtitle text-content">
         Your cohort
       </h2>
-      <div className="flex flex-col gap-4 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:gap-6">
+      <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2 rounded-lg border border-line p-4">
           <h3 className="text-sm font-semibold text-content-3">{staff.length === 1 ? "Mentor" : "Mentors"}</h3>
           {staff.length ? (
-            <ul className="flex flex-col">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3">
               {staff.map((m) => (
                 <li key={m.memberId}>
                   <Person m={m} />

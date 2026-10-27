@@ -40,10 +40,15 @@ export function CohortProgress({ home }: { home: CohortHome }) {
         Your progress
       </h2>
       <div className="flex flex-col gap-4 md:grid md:grid-cols-3 md:gap-6">
-        <Bar label="Lessons done" value={p.lessonsDone} max={p.lessonsTotal} />
+        {p.lessonsTotal > 0 ? (
+          <Bar label="Lessons done" value={p.lessonsDone} max={p.lessonsTotal} />
+        ) : (
+          <p className="text-sm text-content-2">Lessons done will count here as this programme&apos;s lessons go live.</p>
+        )}
         <Bar label="Assignments sent" value={p.sent} max={p.weeksTotal} />
-        <Bar label={`Weeks passed (${home.program.passScore} or more)`} value={p.passed} max={p.weeksTotal} />
+        <Bar label="Weeks passed" value={p.passed} max={p.weeksTotal} />
       </div>
+      <p className="text-sm text-content-3">A week passes when your mentor grades it {home.program.passScore} or more out of 100.</p>
     </section>
   );
 }
