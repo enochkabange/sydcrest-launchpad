@@ -1,4 +1,4 @@
-# Data model (Phase 1)
+# Data model (Phases 1 and 2)
 
 Every table lives in `public`, has row level security enabled in the migration
 that creates it, and starts from `revoke all from anon, authenticated` with
@@ -71,6 +71,60 @@ Signed in users file as themselves; admins read and change status only.
 **waitlist**. Marketing site sign ups: email (format checked, unique ignoring case), name, region, interest.
 Anyone inserts; only admins read. A repeat email returns `23505`; treat it as success.
 
+## Phase 2 tables (issue #142)
+
+Cohort roles live on `cohort_members.role` (learner, mentor, coordinator);
+"staff" below means a mentor or coordinator of a cohort the learner is (or
+was, before a deferral) in. Admin is still `profiles.role = 'admin'`.
+
+**programs**. A mentored programme (DMP first): slug, title, duration, `min_age` (18 or more), eligibility, default cohort size (20), `grace_days` (7), `pass_score`, `min_peer_reviews` (at least 1, no waiver), `specializations` `[{slug,label}]`, `screening_questions`, publish flag.
+Anyone reads published ones; admins read drafts and do all writes.
+
+**cohorts**. One run of a programme: name, `starts_on`, `max_size` (20 default, 25 for the pilot), status planned, enrolling, running, completed or cancelled.
+Anyone reads cohorts of published programmes; admins write.
+
+**cohort_members**. `(cohort, profile)` with role, learner `specialization`, status active, deferred (with `deferred_to`) or completed.
+Members read their cohort's rows; admins read all and add, change or remove staff directly. Learners join only through `decide_application` or `defer_learner` (size cap); status, deferral and specialization are never written directly.
+
+**cohort_roster** (view). Members of the caller's cohorts with display name, avatar, public slug (if public), role, specialization and status; admins see every cohort.
+Signed in only. Never carries phone or email. A security_invoker view over `private.cohort_roster_rows()`.
+
+**cohort_applications**. An application to a programme: preferred cohort, preferred specialization, `screening_answers` (object keyed by question id), status submitted, waitlisted, accepted, declined or withdrawn, and the decision.
+Applicants insert as themselves (published programmes, one live application each) and edit answers while open; admins read all. Status changes only through `decide_application` and `withdraw_application`.
+
+**application_queue** (view). Applications with the applicant's display name, avatar, region and public slug (if public), for the admin review queue.
+Admins only; everyone else gets zero rows. A security_invoker view over `private.application_queue_rows()`. Never carries phone or email.
+
+**cohort_notes**. Private notes by staff about a cohort member.
+Staff of that cohort and admins read; staff write as themselves, authors edit their own. The member never sees them.
+
+**program_weeks**. A programme week: theme, objectives, free resource, assignment, `is_capstone`; `specialization` null means shared, otherwise it replaces the shared week for learners with that specialization (DMP weeks 7 to 9).
+Anyone reads weeks of published programmes; admins write. Themes are verbatim from the curriculum: render them through `displayTheme` (no dashes in copy).
+
+**program_week_nodes**. A week's links to roadmap topics by `roadmap_slug` and `node_slug` (not ids, so they survive re imports).
+Same visibility as the week; admins write. Join to `roadmaps.slug` and `roadmap_nodes.slug`; skip links whose roadmap is unpublished or missing.
+
+**rubrics**. Scoring criteria `[{id,label,description,max_points}]` for a week (`program_week_id`) or the programme default (`program_week_id` null).
+Same visibility as the programme; admins write. A week's rubric is its own, else the default.
+
+**submissions**. One learner's work per programme week: text, link or `file_path` in the `submissions` bucket, status draft, submitted, ai_reviewed, returned or graded, `attempt`, AI feedback and score, mentor feedback, `final_score`, `in_portfolio`.
+Owner reads all of theirs; staff and admins read sent work (not drafts). Learners update only `in_portfolio` (graded work); everything else goes through the functions below.
+
+**peer_reviews**. A reviewer assigned to a submission, and once submitted their `rubric_scores` `{criterion_id: points}` and comment.
+Reviewer, staff and admins read; the author reads it once submitted. Written only by `assign_peer_review` and `submit_peer_review`.
+
+**peer_review_submissions** (view). The caller's review assignments with the work to review (text, link, file path) and nothing else: no author, AI feedback or scores.
+Signed in only. Peers never read `submissions` rows directly.
+
+**certificates**. A programme certificate: `verification_id` (32 hex characters, unguessable), recipient name, programme title and specialization snapshots, `badge_json` (Open Badges 3.0), issued by and at, revoked by, at and why.
+Holder, their staff and admins read. Nobody signed in writes it directly; one live certificate per learner per programme.
+
+**public_certificates** (view). Live certificates of opted in profiles: slug, verification id, programme, specialization, issued date.
+Readable by anyone, for public profile pages. A security_invoker view over `private.public_certificate_rows()`.
+
+**Storage: `submissions` bucket** (private, 50 MB, documents, images and short video). Object names start with the owner's id: `<profile_id>/...`.
+Owners upload, read and replace in their own folder; staff, admins and assigned peers read a file only when it is the `file_path` of a sent submission they may read. Files attached to sent work cannot be replaced or deleted. Serve with signed URLs.
+
 ## Functions callable from the app
 
 | Function | Who | What |
@@ -84,8 +138,24 @@ Anyone inserts; only admins read. A repeat email returns `23505`; treat it as su
 | `admin_reports(status)` | admins | The report queue with reporter and reported profile names (no phone or email). Others get `42501`. |
 | `admin_unpublish_profile(profile_id)` | admins | Sets a reported profile's `is_public` to false. Others get `42501`. |
 
-None of these is executable by `anon`; `schema_security.test.sql` fails if any
-security definer function in `public` is.
+| `decide_application(application_id, decision, cohort_id, note)` | admins | `accepted` (into a cohort of the programme, within `max_size`; creates the learner membership), `waitlisted` or `declined`. Full cohort: `53400`. |
+| `withdraw_application(application_id)` | the applicant | Withdraws a submitted or waitlisted application. |
+| `choose_specialization(cohort_member_id, specialization)` | the learner, cohort staff, admins | Sets a learner's specialization. Learners are locked once they submit specialization work. |
+| `defer_learner(cohort_member_id, to_cohort_id)` | cohort staff, admins | Marks the learner deferred and, with a target (same programme, later start, within size), creates the new active membership. Progress is kept (submissions key on learner and week). Null target: deferred and waiting; call again to place. |
+| `save_submission(week_id, body_text, link_url, file_path, submit)` | active learners | Upserts the caller's work for a week of their path. `submit` false keeps a draft; true sends it, clears the old AI review and counts an attempt. Graded work is final unless returned. |
+| `record_ai_review(submission_id, attempt, feedback, score, model)` | service role only | Stores the AI rubric review; returns false (ignored) for another attempt or work already graded or returned. |
+| `grade_submission(submission_id, final_score, mentor_feedback, return)` | cohort staff, admins | Sets the final score (0 to 100), or with `return` asks for changes. |
+| `assign_peer_review(submission_id, reviewer_id)` | cohort staff, admins | Assigns another active learner in the programme; idempotent. |
+| `submit_peer_review(review_id, rubric_scores, comment)` | the assigned reviewer | Scores every rubric criterion (whole points up to its maximum) with a comment. |
+| `certification_status(program_id, profile_id)` | the learner (default), staff, admins | `{eligible, specialization, weeks_required, weeks_passed, missing_weeks, capstone_passed, peer_reviews_given, peer_reviews_required, pass_score}`. |
+| `issue_certificate(cohort_member_id)` | the cohort's mentor, a coordinator, admins | Issues once `eligible`; marks the membership completed. |
+| `set_certificate_badge(certificate_id, badge_json)` | service role only | Stores the Open Badges 3.0 JSON server code built. |
+| `revoke_certificate(certificate_id, reason)` | admins | Revokes; verification then shows it as revoked. |
+| `verify_certificate(verification_id)` | anyone | Zero or one row: name, programme, specialization, cohort, issued and revoked dates, badge JSON. Security invoker over `private.verify_certificate_row`. |
+
+None of these is executable by `anon` except `verify_certificate`, which is
+security invoker; `schema_security.test.sql` fails if any security definer
+function in `public` is.
 
 ## Anti cheat design
 
@@ -145,6 +215,41 @@ certification.
 - Not changed: `funnel_by_week` activations still count any first completion,
   since activation measures engagement, not certification.
 
+## Learning rules (Phase 2)
+
+- **Due dates.** Week n of a cohort is due on `starts_on + 7 * n` days; work
+  is late after that plus `programs.grace_days` (7). Falling behind past grace
+  is a staff decision through `defer_learner`, never automatic.
+- **A learner's path** is, for each week number, their specialization's row
+  when there is one, else the shared row. `save_submission` refuses another
+  specialization's week; `choose_specialization` before week 7.
+- **Deferral keeps progress.** Submissions are unique per learner and
+  programme week; `cohort_id` only records where they were sent. The new
+  cohort's staff see earlier work because staff access is "a learner of a
+  cohort I staff in this programme". Deferred memberships stay for history
+  and do not count toward a cohort's completion.
+- **Scores are server only.** No signed in role has an insert or update grant
+  on `submissions` beyond `in_portfolio`. AI feedback comes from server code
+  with the secret key (`record_ai_review`, attempt checked so a slow review
+  of old work is dropped); the final score only from `grade_submission`.
+- **Certification** (`certification_status`): every week of the path graded
+  at or above `pass_score` (capstone included) and at least
+  `min_peer_reviews` submitted capstone peer reviews. Peer review cannot be
+  waived (`min_peer_reviews >= 1`). The mentor issues; a coordinator of the
+  cohort or an admin is the backup issuer; only admins revoke.
+- **Open Badges.** `issue_certificate` creates the row; server code then builds
+  the OpenBadgeCredential (it needs the site origin) and stores it with
+  `set_certificate_badge`. `/verify/[id]` calls `verify_certificate`.
+- **Verification ids are never listed.** Public reads go through a lookup by
+  id or through `public_certificates` (opted in profiles only), so ids cannot
+  be enumerated.
+- **The DMP is seeded by migration** `phase2_dmp_seed` from a JSON literal
+  derived from `src/content/dmp/curriculum.ts`; `src/content/dmp/seed.test.ts`
+  fails if they drift or a week links a topic the roadmap outlines lack. To
+  change the curriculum in a database, write a new `_dmp_` migration with a
+  `$json$` literal of `{"weeks": [{week_number, specialization, ...fields}]}`
+  (see `phase2_dmp_resources`); the test applies it over the seed.
+
 ## Security advisor (issue #82)
 
 Reviewed against the production advisor run on 27 Oct.
@@ -152,7 +257,11 @@ Reviewed against the production advisor run on 27 Oct.
 - **Security definer RPCs** (lint 0029, signed in users can execute):
   `admin_reports`, `admin_unpublish_profile`, `funnel_by_week`,
   `record_ai_usage`, `record_ai_tokens`, `revoke_consent`, `set_node_status`,
-  `submit_node_quiz`. Accepted: each pins `search_path = ''` and checks the
+  `submit_node_quiz`, and from Phase 2 `decide_application`,
+  `withdraw_application`, `choose_specialization`, `defer_learner`,
+  `save_submission`, `grade_submission`, `assign_peer_review`,
+  `submit_peer_review`, `certification_status`, `issue_certificate`,
+  `revoke_certificate`. Accepted: each pins `search_path = ''` and checks the
   caller inside (`private.is_admin()` for the admin three, `auth.uid()` for
   the rest, which use it as the identity rather than a parameter). None is
   executable by `anon` (lint 0028), asserted in `schema_security.test.sql`.
