@@ -9,6 +9,7 @@ import { CohortPeople } from "@/components/cohort/people";
 import { CohortProgress } from "@/components/cohort/progress";
 import { WeekAssignment, WeekHeader, WeekLessons, WeekObjectives } from "@/components/cohort/week-sections";
 import { stateFor } from "@/components/cohort/week-plan";
+import { CertificationChecklist, CertificationChecklistSkeleton } from "@/components/certificates/certification-checklist";
 
 export const metadata: Metadata = { title: "Cohort" };
 
@@ -65,6 +66,9 @@ async function ThisWeek() {
       )}
       <SpecializationCard home={home} />
       <CohortProgress home={home} />
+      <Suspense fallback={<CertificationChecklistSkeleton />}>
+        <CertificationChecklist programId={home.program.id} />
+      </Suspense>
       {home.membership.status !== "deferred" && <CohortPeople roster={home.roster} />}
     </div>
   );
