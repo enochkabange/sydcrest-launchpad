@@ -45,7 +45,7 @@ A product person does not usually write the code or draw the screens. Their job 
 
 Wumpini works for a company in Tamale that wants to add a savings feature to its mobile money app. Before anyone builds, she asks market women how they save today. Many use a susu collector who visits daily. Wumpini learns that trust and daily habit matter more than interest rates. That insight, not a clever screen, decides what the team builds first.
 
-Notice what she used: curiosity, a few conversations, and clear notes she could share with her manager. You can practise all of those today with a phone and no special software.
+Notice what she used: curiosity, a few conversations, and clear notes she could share with her manager. You can practise all of those today with a phone or a computer and no special software.
 
 ## How to use this roadmap
 
@@ -518,7 +518,7 @@ It also means separating the **problem** from the **solution**. "Farmers need an
 
 Napari wants to build a tool that helps an NGO track which households in Damongo received seed support. Her first idea is a full app with maps and dashboards. In discovery she visits two field officers and watches them work. She learns that they already use paper registers and a shared spreadsheet, and that the real pain is matching names spelled differently in different villages. The biggest win is not maps at all. It is a simple way to give each household a unique code and check for duplicates.
 
-One afternoon of discovery changed what the team should build first. That is the value of this section. Everything here can be done with a phone, a notebook and your own curiosity.`,
+One afternoon of discovery changed what the team should build first. That is the value of this section. Everything here can be done with a phone or a computer, a notebook and your own curiosity.`,
       practice_task_md: `**Goal:** separate a problem from a solution.
 
 1. Write down three product ideas you have heard or had, such as "an app for booking barbers".
@@ -623,7 +623,7 @@ After six interviews, she looks for patterns that appear again and again, not si
 1. Choose a group you can reach: traders, students, farmers, or small shop owners.
 2. Pick one task they do, such as restocking, saving, or paying school fees.
 3. Write five questions about past behaviour using the lesson's examples. Do not mention any solution.
-4. Interview three people for 10 to 20 minutes each, with permission. Take notes on your phone.
+4. Interview three people for 10 to 20 minutes each, with permission. Take notes as you listen.
 5. Write down every pain point, then mark those that came up more than once.
 
 **Done looks like:** notes from three interviews and a list of repeated pain points with a one line quote or fact for each.`,
@@ -2245,7 +2245,7 @@ Numbers can mislead if you are not careful:
 
 ## Free tools to learn with
 
-Google Sheets is free, works on a phone, and is enough for most beginner analysis. For SQL, free interactive lessons let you practise in a browser without installing anything. Google's Looker Studio, which is free to use at the time of writing, can turn a sheet into a simple dashboard.
+Google Sheets is free, works on a phone or a computer, and is enough for most beginner analysis. For SQL, free interactive lessons let you practise in a browser without installing anything. Google's Looker Studio, which is free to use at the time of writing, can turn a sheet into a simple dashboard.
 
 ## Worked example: the NGO beneficiary tracker
 
@@ -2315,7 +2315,7 @@ He calls three of them. They explain that the sync often fails, so they go back 
 
 ## Spreadsheet skills that matter
 
-In Google Sheets (free, and it works on a phone), learn to:
+In Google Sheets (free, and it works on a phone or a computer), learn to:
 
 * **Sort and filter** rows, for example to see only orders from Tamale.
 * **Count and sum with conditions** using functions like COUNTIF and SUMIF.
@@ -2970,10 +2970,10 @@ He never claims certainty. He shows clear, user centred reasoning, and that is w
 
 ## Prepare practically
 
-Practise aloud with a friend or record yourself on your phone. Research the company's product before the interview by using it if you can.`,
+Practise aloud with a friend or record yourself on your phone or computer. Research the company's product before the interview by using it if you can.`,
       practice_task_md: `**Goal:** practise answering product and behavioural questions out loud.
 
-1. Pick one product sense question from the lesson and answer it using the five step structure. Record yourself on your phone for no more than five minutes.
+1. Pick one product sense question from the lesson and answer it using the five step structure. Record yourself on your phone or computer for no more than five minutes.
 2. Listen back and note where you jumped to solutions or skipped measurement.
 3. Write four behavioural stories using situation, task, action and result, drawn from your practice tasks or life.
 4. Practise one product question and two stories with a friend or mentor, and ask for one piece of feedback on each.

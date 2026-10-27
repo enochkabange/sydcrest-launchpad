@@ -27,7 +27,7 @@ export const digitalBusiness: RoadmapDraft = {
   slug: "digital-business",
   title: "Digital Business and Ecommerce",
   description:
-    "Run a small business online in Ghana: choose what to sell, price it in cedis, sell on WhatsApp and social media, take mobile money safely, deliver, keep records and register properly. Built for traders, makers and farmers who learn on a phone.",
+    "Run a small business online in Ghana: choose what to sell, price it in cedis, sell on WhatsApp and social media, take mobile money safely, deliver, keep records and register properly. Built for traders, makers and farmers, whether they learn on a phone or a computer.",
   track: "digital-business",
   field_category: "business",
   locale: "en-GH",
@@ -118,7 +118,7 @@ export const digitalBusiness: RoadmapDraft = {
       slug: "selling-online",
       title: "Selling online",
       summary:
-        "Many Ghanaian customers find, ask about and order products in chat and social apps. This section turns your phone into a shop window.",
+        "Many Ghanaian customers find, ask about and order products in chat and social apps. This section turns your chats and social pages into a shop window.",
       parent: null,
       optional: false,
       resources: [RES.whatsappBusiness],
