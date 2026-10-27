@@ -6,6 +6,8 @@ import { regionLabel } from "@/lib/regions";
 import { describeAchievement } from "@/lib/social/public-profile";
 import { getPublicAchievements, getPublicProfileBySlug, getPublicStats } from "@/lib/social/queries";
 import { Initials, StatTile } from "@/components/social/profile-bits";
+import { CertificateList } from "@/components/certificates/certificate-list";
+import { getPublicCertificates } from "@/lib/certificates/server";
 import { ViewerActions } from "./viewer-actions";
 
 export async function generateMetadata({ params }: PageProps<"/u/[slug]">): Promise<Metadata> {
@@ -32,7 +34,11 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
   const { slug } = await params;
   const profile = await getPublicProfileBySlug(slug);
   if (!profile?.id || !profile.public_slug) notFound();
-  const [stats, achievements] = await Promise.all([getPublicStats(profile.id), getPublicAchievements(profile.id)]);
+  const [stats, achievements, certificates] = await Promise.all([
+    getPublicStats(profile.id),
+    getPublicAchievements(profile.id),
+    getPublicCertificates(profile.id),
+  ]);
   const name = profile.display_name ?? "Launchpad learner";
   const region = regionLabel(profile.region);
   const skills = profile.skills ?? [];
@@ -61,6 +67,15 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
       {/* One column on phones; from lg the achievements list sits beside progress, goals and skills. */}
       <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:items-start lg:gap-12">
         <div className="flex flex-col gap-8">
+          {certificates.length > 0 && (
+            <section aria-labelledby="certificates-heading" className="flex flex-col gap-3">
+              <h2 id="certificates-heading" className="text-subtitle text-content">
+                Certificates
+              </h2>
+              <CertificateList certificates={certificates} />
+            </section>
+          )}
+
           <section aria-labelledby="progress-heading" className="flex flex-col gap-3">
             <h2 id="progress-heading" className="text-subtitle text-content">
               Progress

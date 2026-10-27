@@ -6,7 +6,7 @@ import { ImageResponse } from "next/og";
  * in its onDark treatment rather than reusing <LogoMark>.
  */
 
-function Mark({ width }: { width: number }) {
+export function Mark({ width }: { width: number }) {
   return (
     <svg viewBox="0 0 1186 1069" width={width} height={(width * 1069) / 1186}>
       <defs>
