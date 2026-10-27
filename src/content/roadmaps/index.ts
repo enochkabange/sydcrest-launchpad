@@ -14,6 +14,9 @@ import { virtualAssistant } from "./virtual-assistant";
 import { mobileAppDeveloper } from "./mobile-app-developer";
 import type { RoadmapDraft } from "./types";
 import { uiUx } from "./ui-ux";
+import { socialMediaManagement } from "./social-media-management";
+import { noCode } from "./no-code";
+import { freelancing } from "./freelancing";
 
 export type { NodeDraft, ResourceDraft, RoadmapDraft } from "./types";
 
@@ -38,4 +41,7 @@ export const ROADMAP_DRAFTS: RoadmapDraft[] = [
   cybersecurity,
   virtualAssistant,
   mobileAppDeveloper,
+  socialMediaManagement,
+  noCode,
+  freelancing,
 ];
