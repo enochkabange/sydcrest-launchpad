@@ -3,7 +3,7 @@
 -- executable by default, and anon cannot reach the minting path.
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(9);
+select plan(11);
 
 select is(
   (select array_agg(tablename::text order by tablename) from pg_tables
@@ -81,6 +81,23 @@ select ok(
   or not (has_function_privilege('anon', 'public.rls_auto_enable()', 'execute')
           or has_function_privilege('authenticated', 'public.rls_auto_enable()', 'execute')),
   'the dashboard rls_auto_enable helper, where it exists, is not callable over the API'
+);
+
+-- Phase 2 (issue #142): AI feedback and badge JSON are written by server
+-- code with the secret key only, and the public certificate lookup is a
+-- security invoker function (the definer part stays in private).
+select ok(
+  not has_function_privilege('authenticated', 'public.record_ai_review(uuid, smallint, jsonb, smallint, text)', 'execute')
+  and not has_function_privilege('authenticated', 'public.set_certificate_badge(uuid, jsonb)', 'execute')
+  and not has_function_privilege('authenticated', 'private.certification_status(uuid, uuid)', 'execute')
+  and has_function_privilege('service_role', 'public.record_ai_review(uuid, smallint, jsonb, smallint, text)', 'execute'),
+  'only the service role records AI reviews and badge JSON'
+);
+
+select ok(
+  has_function_privilege('anon', 'public.verify_certificate(text)', 'execute')
+  and not (select prosecdef from pg_proc where oid = 'public.verify_certificate(text)'::regprocedure),
+  'anyone can verify a certificate through a security invoker function'
 );
 
 select * from finish();
