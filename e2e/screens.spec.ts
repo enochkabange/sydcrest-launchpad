@@ -3,6 +3,7 @@ import { expect, test, type Page, type TestInfo } from "@playwright/test";
 import { signUpAndConfirm } from "./auth";
 import { deleteDmpCohort, seedDmpCohort, type SeededDmpCohort } from "./cohort-seed";
 import { createLearner, PASSWORD } from "./learners";
+import { deleteExperts, seedExperts, type SeededExperts } from "./experts-seed";
 import { deleteRoadmap, seedRoadmap, type SeededRoadmap } from "./seed";
 
 /**
@@ -21,12 +22,15 @@ const DIR = "e2e-screenshots";
 
 let roadmap: SeededRoadmap | undefined;
 let cohort: SeededDmpCohort | undefined;
+let experts: SeededExperts | undefined;
 
 test.afterEach(async () => {
   if (roadmap) await deleteRoadmap(roadmap.id);
   roadmap = undefined;
   if (cohort) await deleteDmpCohort(cohort);
   cohort = undefined;
+  await deleteExperts(experts);
+  experts = undefined;
 });
 
 async function shoot(page: Page, testInfo: TestInfo, name: string, path: string) {
@@ -47,6 +51,7 @@ test("screenshots of key screens at 390, 1440 and 1920", async ({ page }, testIn
   test.setTimeout(240_000);
   mkdirSync(DIR, { recursive: true });
   roadmap = await seedRoadmap();
+  experts = await seedExperts();
 
   const pages: [string, string][] = [
     ["home", "/"],
@@ -54,6 +59,9 @@ test("screenshots of key screens at 390, 1440 and 1920", async ({ page }, testIn
     ["roadmaps", "/roadmaps"],
     ["roadmap", `/roadmaps/${roadmap.slug}`],
     ["topic", `/roadmaps/${roadmap.slug}/${roadmap.quizNode.slug}`],
+    ["experts", "/experts"],
+    ["expert", `/experts/${experts.verified.slug}`],
+    ["offer", `/experts/${experts.verified.slug}/offers/${experts.verified.gigId}`],
     ["start", "/start"],
     ["signin", "/login"],
   ];
