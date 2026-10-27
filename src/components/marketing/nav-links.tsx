@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useRef, useState } from "react";
 import Link from "@/components/ui/link";
 import { usePathname } from "next/navigation";
 import { MARKETING_NAV } from "@/content/marketing";
@@ -18,9 +19,23 @@ export function MarketingNavLinksFallback() {
   return <NavList pathname={null} />;
 }
 
+/** Width of the fade that hints more links sit past the edge of the row. */
+const FADE = "1.5rem";
+
 function NavList({ pathname }: { pathname: string | null }) {
+  const { ref, more } = useScrollHint<HTMLUListElement>();
+  const mask =
+    more.start || more.end
+      ? `linear-gradient(to right, ${more.start ? `transparent, black ${FADE}` : "black"}, ${
+          more.end ? `black calc(100% - ${FADE}), transparent` : "black"
+        })`
+      : undefined;
   return (
-    <ul className="-mx-4 flex gap-1 overflow-x-auto px-4 md:mx-0 md:px-0">
+    <ul
+      ref={ref}
+      style={{ maskImage: mask, WebkitMaskImage: mask }}
+      className="-mx-4 flex gap-1 overflow-x-auto overscroll-x-contain px-4 md:-mx-8 md:px-8 lg:mx-0 lg:px-0"
+    >
       {MARKETING_NAV.map(({ href, label }) => {
         const active = pathname === href;
         return (
@@ -39,4 +54,31 @@ function NavList({ pathname }: { pathname: string | null }) {
       })}
     </ul>
   );
+}
+
+/**
+ * Which ends of a horizontal scroll box have more content past them. Off until
+ * mounted, so the server render and a row that fits show no fade.
+ */
+function useScrollHint<T extends HTMLElement>() {
+  const ref = useRef<T>(null);
+  const [more, setMore] = useState({ start: false, end: false });
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const update = () => {
+      const start = el.scrollLeft > 1;
+      const end = el.scrollLeft + el.clientWidth < el.scrollWidth - 1;
+      setMore((prev) => (prev.start === start && prev.end === end ? prev : { start, end }));
+    };
+    update();
+    el.addEventListener("scroll", update, { passive: true });
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    return () => {
+      el.removeEventListener("scroll", update);
+      observer.disconnect();
+    };
+  }, []);
+  return { ref, more };
 }

@@ -189,6 +189,29 @@ test("share copies the link when the native share sheet is not available", async
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(new URL(path, baseURL).toString());
 });
 
+// Issue #136: the marketing header pushed the page sideways at 768. Phone
+// covers the narrow widths, desktop the wide ones.
+const WIDTHS = { phone: [360, 390, 768], desktop: [1024, 1440] } as Record<string, number[]>;
+
+test("the page never scrolls sideways, header included", async ({ page }, testInfo) => {
+  for (const width of WIDTHS[testInfo.project.name] ?? []) {
+    await page.setViewportSize({ width, height: 900 });
+    for (const path of ["/", `/roadmaps/${seed.slug}`]) {
+      await page.goto(path);
+      const nav = page.getByRole("navigation", { name: "Site" });
+      await expect(nav.getByRole("link", { name: "Roadmaps" })).toBeVisible();
+      const sizes = await page.evaluate(() => ({
+        scroll: document.scrollingElement!.scrollWidth,
+        viewport: window.innerWidth,
+      }));
+      expect(sizes.scroll, `${path} at ${width}px`).toBeLessThanOrEqual(sizes.viewport);
+      // Links that do not fit scroll inside the nav row and stay reachable.
+      await nav.getByRole("link", { name: "For business" }).scrollIntoViewIfNeeded();
+      await expect(nav.getByRole("link", { name: "For business" })).toBeInViewport();
+    }
+  }
+});
+
 test("drafts and unknown slugs are not found", async ({ page }) => {
   for (const path of [`/roadmaps/${seed.slug}-draft`, `/roadmaps/${seed.slug}-draft/hidden`, `/roadmaps/${seed.slug}/nope`]) {
     await page.goto(path);

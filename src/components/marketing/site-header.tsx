@@ -7,8 +7,8 @@ import { MarketingNavLinks, MarketingNavLinksFallback } from "./nav-links";
 export function SiteHeader() {
   return (
     <header className="border-b border-line bg-surface">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-1 px-4 pt-3 md:flex-row md:items-center md:gap-6 md:px-8 md:py-3">
-        <div className="flex items-center justify-between gap-3 md:contents">
+      <div className="mx-auto flex w-full max-w-6xl flex-col gap-1 px-4 pt-3 md:px-8 lg:flex-row lg:items-center lg:gap-6 lg:py-3">
+        <div className="flex items-center justify-between gap-3 lg:contents">
           <Link href="/" aria-label="SydCrest Launchpad home" className="flex min-h-11 shrink-0 items-center no-underline">
             <span className="sm:hidden">
               <LogoMark size={36} variant="auto" />
@@ -17,7 +17,7 @@ export function SiteHeader() {
               <Logo size={34} />
             </span>
           </Link>
-          <div className="flex items-center gap-2 md:order-last md:ml-auto">
+          <div className="flex items-center gap-2 lg:order-last lg:ml-auto">
             <Link href="/login" className={buttonClasses("ghost", "whitespace-nowrap")}>
               Sign in
             </Link>
@@ -26,7 +26,8 @@ export function SiteHeader() {
             </Link>
           </div>
         </div>
-        <nav aria-label="Site" className="pb-2 md:pb-0">
+        {/* Stacked below lg: at 768 the logo, links and buttons do not fit one row. */}
+        <nav aria-label="Site" className="min-w-0 pb-2 lg:flex-1 lg:pb-0">
           {/* usePathname is unknown while prerendering a dynamic route's App Shell. */}
           <Suspense fallback={<MarketingNavLinksFallback />}>
             <MarketingNavLinks />

@@ -6,11 +6,17 @@
  * What it does
  *   /_next/static/*, fonts      cache first (file names are content hashed)
  *   icons, manifest             stale while revalidate
- *   public pages                stale while revalidate, offline page if neither
+ *   public pages                network first (3 s timeout), then the saved
+ *                               copy, then the offline page
  *   signed in pages             network first, saved copy only when offline
  *   /auth/*, /api/*, POSTs,     never cached, never touched
  *   cross origin (Supabase),
  *   RSC and prefetch requests
+ *
+ * Public pages are network first so the first visit after a deploy shows the
+ * new page, not the previous build (an old page can also post to a Server
+ * Action that no longer exists). On a slow connection the saved copy is shown
+ * after NAV_TIMEOUT_MS and the network response still refreshes the cache.
  *
  * Signed in pages are network first, not stale while revalidate, because
  * phones here are often shared: a second learner signing in must never be
@@ -22,13 +28,15 @@
  * every cache from older versions.
  */
 
-const VERSION = "v2";
+const VERSION = "v3";
 const STATIC_CACHE = `sydcrest-static-${VERSION}`;
 const PAGES_CACHE = `sydcrest-pages-${VERSION}`;
 const PRIVATE_CACHE = `sydcrest-private-${VERSION}`;
 const CURRENT = [STATIC_CACHE, PAGES_CACHE, PRIVATE_CACHE];
 
 const OFFLINE_URL = "/offline";
+// How long a public page waits for the network before using its saved copy.
+const NAV_TIMEOUT_MS = 3000;
 const PRIVATE_PREFIXES = ["/dashboard", "/profile", "/learn"];
 const NEVER_PREFIXES = ["/auth/", "/api/", "/sw.js"];
 const SIGNED_OUT_PAGES = ["/login", "/signup"];
@@ -220,8 +228,40 @@ async function publicPage(request, url, event) {
     // Reaching sign in or sign up means nobody is signed in on this phone.
     event.waitUntil(caches.delete(PRIVATE_CACHE));
   }
+  return networkFirstPage(request, event);
+}
+
+/**
+ * Network first with a timeout. The cache write is registered with waitUntil
+ * before the race, so it clones the body before anyone reads it and still
+ * finishes when the timeout wins: the next visit is then current.
+ */
+async function networkFirstPage(request, event) {
+  const network = fetch(request);
+  event.waitUntil(
+    network
+      .then((response) => (cacheable(response) ? put(PAGES_CACHE, request, response.clone()) : undefined))
+      .catch(() => {}),
+  );
+
+  let timer;
+  const timeout = new Promise((resolve) => {
+    timer = setTimeout(resolve, NAV_TIMEOUT_MS, null);
+  });
   try {
-    return await staleWhileRevalidate(request, PAGES_CACHE, event);
+    const response = await Promise.race([network, timeout]);
+    if (response) return response;
+  } catch {
+    // Offline: fall through to the saved copy.
+  } finally {
+    clearTimeout(timer);
+  }
+
+  const cached = await caches.match(request, { cacheName: PAGES_CACHE });
+  if (cached) return cached;
+  try {
+    // Slow but not offline, and nothing saved: keep waiting for the network.
+    return await network;
   } catch {
     return offlineFallback();
   }
