@@ -20,11 +20,11 @@ export default function PublicLayout({ children }: LayoutProps<"/">) {
           Leaderboards
         </Link>
       </header>
-      <main id="main" className="mx-auto w-full max-w-5xl flex-1 px-4 pt-8 pb-16 md:px-8">
+      <main id="main" className="mx-auto w-full max-w-page flex-1 px-4 pt-8 pb-16 md:px-8">
         {children}
       </main>
       <footer className="border-t border-line px-4 py-2 md:px-8">
-        <LegalLinks className="mx-auto w-full max-w-5xl" />
+        <LegalLinks className="mx-auto w-full max-w-page" />
       </footer>
       {/* First party page views for the funnel; renders nothing. */}
       <Suspense fallback={null}>

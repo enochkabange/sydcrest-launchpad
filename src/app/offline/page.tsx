@@ -18,7 +18,7 @@ export default function OfflinePage() {
     <main className="mx-auto flex w-full max-w-md flex-1 flex-col justify-center gap-6 px-4 py-12">
       <Logo size={36} />
       <div className="flex flex-col gap-3">
-        <h1 className="text-3xl text-content">You are offline</h1>
+        <h1 className="text-title text-content">You are offline</h1>
         <p className="text-content-2">
           This page needs a connection to open, and it has not been saved on this device yet.
         </p>

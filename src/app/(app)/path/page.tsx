@@ -43,13 +43,15 @@ async function PathContent() {
 
 function NoPathYet() {
   return (
-    <section className="flex max-w-3xl flex-col items-start gap-3 rounded-lg border border-line bg-surface-sunken p-5">
-      <h1 className="text-3xl text-content">Find your starting point</h1>
-      <p className="text-content-2">
-        Answer five quick questions and we will match you to a track, a starting point and a weekly
-        plan that fits your time and data.
-      </p>
-      <Link href="/start" className={buttonClasses("primary")}>
+    <section className="flex flex-col items-start gap-3 rounded-lg border border-line bg-surface-sunken p-5 lg:flex-row lg:items-center lg:justify-between lg:gap-12 lg:p-8">
+      <div className="flex max-w-reading flex-col gap-3">
+        <h1 className="text-title text-content">Find your starting point</h1>
+        <p className="text-content-2">
+          Answer five quick questions and we will match you to a track, a starting point and a weekly
+          plan that fits your time and data.
+        </p>
+      </div>
+      <Link href="/start" className={buttonClasses("primary", "shrink-0")}>
         Take the quiz
       </Link>
     </section>

@@ -41,7 +41,7 @@ async function SharedAchievement({ params }: Pick<PageProps<"/a/[id]">, "params"
     <article className="flex max-w-2xl flex-col items-start gap-6">
       <div className="flex w-full flex-col gap-4 rounded-lg border border-line bg-surface-sunken p-6">
         <p className="text-sm font-semibold text-content-accent">Achievement</p>
-        <h1 className="text-3xl text-content">
+        <h1 className="text-title text-content">
           {describeAchievement(achievement.type, achievement.ref_id, achievement.title)}
         </h1>
         <div className="flex items-center gap-3">

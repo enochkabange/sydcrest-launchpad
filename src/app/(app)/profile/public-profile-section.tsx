@@ -25,7 +25,7 @@ export async function PublicProfileSection() {
     <>
       <section aria-labelledby="public-profile-heading" className="flex flex-col gap-4 border-t border-line pt-6">
         <div className="flex flex-col gap-1">
-          <h2 id="public-profile-heading" className="text-xl text-content">
+          <h2 id="public-profile-heading" className="text-subtitle text-content">
             Public profile
           </h2>
           <p className="text-sm text-content-2">
@@ -36,7 +36,7 @@ export async function PublicProfileSection() {
         <PublicProfileForm initial={data} origin={origin} />
       </section>
       <section aria-labelledby="invite-heading" className="flex flex-col gap-3 border-t border-line pt-6">
-        <h2 id="invite-heading" className="text-xl text-content">
+        <h2 id="invite-heading" className="text-subtitle text-content">
           Invite a friend
         </h2>
         <p className="text-sm text-content-2">

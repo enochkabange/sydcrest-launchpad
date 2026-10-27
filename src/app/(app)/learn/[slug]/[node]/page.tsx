@@ -40,7 +40,7 @@ const STATUS_LABEL = {
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section className="flex flex-col gap-3">
-      <h2 className="text-xl text-content">{title}</h2>
+      <h2 className="text-subtitle text-content">{title}</h2>
       {children}
     </section>
   );
@@ -95,7 +95,7 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
 
   // One column on phones. From xl the lesson keeps a readable measure and the topic outline sits beside it.
   return (
-    <div className="xl:grid xl:grid-cols-[minmax(0,1fr)_18rem] xl:items-start xl:gap-10">
+    <div className="xl:grid xl:grid-cols-[minmax(0,1fr)_22.5rem] xl:items-start xl:gap-12">
       <article className="flex max-w-3xl flex-col gap-8">
         {status === "not_started" && <StartNode nodeId={node.id} action={startNode} />}
 
@@ -111,8 +111,8 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
             Topic {stepNumber} of {ordered.length}
             {node.is_optional ? " · Optional" : ""}
           </p>
-          <h1 className="text-3xl text-content">{node.title}</h1>
-          {node.summary && <p className="text-lg text-content-2">{node.summary}</p>}
+          <h1 className="text-title text-content">{node.title}</h1>
+          {node.summary && <p className="text-lead text-content-2">{node.summary}</p>}
           <p
             className={`self-start rounded-full px-3 py-1 text-sm font-semibold ${
               done ? "bg-success-bg text-success-fg" : "bg-surface-sunken text-content-2"

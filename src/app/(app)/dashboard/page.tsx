@@ -5,6 +5,15 @@ import { getMyProfile, requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { nextUnfinished, requiredProgress } from "@/components/learn/next-node";
 import { buttonClasses } from "@/components/ui/button";
+import { AutoGrid, MainWithRail } from "@/components/ui/layout";
+import { getPublishedRoadmaps } from "@/lib/roadmaps/public";
+import { roadmapPath } from "@/lib/roadmaps/seo";
+import {
+  CommunityCard,
+  LeaderboardSnapshot,
+  PathAndPlan,
+  RailCardSkeleton,
+} from "./rail";
 
 export const metadata: Metadata = { title: "Home" };
 
@@ -13,10 +22,10 @@ async function Greeting() {
   const firstName = profile.display_name?.split(" ")[0];
   return (
     <>
-      <h1 className="text-3xl text-content">{firstName ? `Welcome, ${firstName}` : "Welcome"}</h1>
+      <h1 className="text-title text-content">{firstName ? `Welcome, ${firstName}` : "Welcome"}</h1>
       {!profile.region && (
         <div className="flex flex-col items-start gap-3 rounded-lg border border-line p-5 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
-          <p className="max-w-2xl text-content-2">
+          <p className="max-w-reading text-content-2">
             Add your region so we can connect you with your local chapter and events near you.
           </p>
           <Link href="/profile" className={buttonClasses("secondary")}>
@@ -49,8 +58,8 @@ async function Learning() {
   if (!roadmapIds.length) {
     return (
       <section className="flex flex-col items-start gap-3 rounded-lg border border-line bg-surface-sunken p-5 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
-        <div className="flex max-w-2xl flex-col gap-3">
-          <h2 className="text-lg text-content">Start a roadmap</h2>
+        <div className="flex max-w-reading flex-col gap-3">
+          <h2 className="text-h3 text-content">Start a roadmap</h2>
           <p className="text-content-2">
             Pick a free roadmap written for the Ghanaian job market. Your progress and your next topic will show up here.
           </p>
@@ -77,16 +86,16 @@ async function Learning() {
 
   return (
     <section className="flex flex-col gap-3">
-      <h2 className="text-xl text-content">Your roadmaps</h2>
+      <h2 className="text-subtitle text-content">Your roadmaps</h2>
       {/* One column on phones; two side by side from lg, a lone roadmap spans both. */}
       <ul className="flex flex-col gap-3 lg:grid lg:grid-cols-2 lg:gap-4">
         {cards.map(({ roadmap, next, done, total, complete }) => (
           <li
             key={roadmap.id}
-            className="flex flex-col gap-3 rounded-lg border border-line p-5 lg:only:col-span-2"
+            className="flex flex-col gap-3 rounded-lg border border-line p-5 lg:only:col-span-2 xl:p-6"
           >
             <div className="flex flex-col gap-1">
-              <h3 className="text-lg font-semibold text-content">{roadmap.title}</h3>
+              <h3 className="text-h3 font-semibold text-content">{roadmap.title}</h3>
               <p className="text-sm text-content-2">
                 {complete ? "Roadmap complete. " : ""}
                 {done} of {total} required topics done
@@ -124,15 +133,84 @@ async function Learning() {
   );
 }
 
+/**
+ * Published roadmaps the learner has not started, as a grid beside their own.
+ * Desktop only: on phones "Browse more roadmaps" and the Roadmaps tab do this.
+ */
+async function Explore() {
+  const user = await requireUser();
+  const supabase = await createClient();
+  const [roadmaps, { data: progress }] = await Promise.all([
+    getPublishedRoadmaps(),
+    supabase
+      .from("roadmap_progress")
+      .select("roadmap_nodes(roadmap_id)")
+      .eq("profile_id", user.id)
+      .neq("status", "not_started"),
+  ]);
+  const started = new Set((progress ?? []).flatMap((p) => (p.roadmap_nodes ? [p.roadmap_nodes.roadmap_id] : [])));
+  const others = roadmaps.filter((r) => !started.has(r.id)).slice(0, 6);
+  if (!others.length) return null;
+  return (
+    <section aria-labelledby="explore-heading" className="hidden flex-col gap-3 lg:flex">
+      <h2 id="explore-heading" className="text-subtitle text-content">
+        Explore roadmaps
+      </h2>
+      <AutoGrid as="ul" min="sm">
+        {others.map((r) => (
+          <li key={r.id}>
+            <Link
+              href={roadmapPath(r.slug)}
+              className="flex h-full flex-col gap-1 rounded-lg border border-line p-4 no-underline transition-colors hover:border-line-strong hover:bg-surface-sunken"
+            >
+              <span className="font-semibold text-content">{r.title}</span>
+              <span className="text-sm text-content-3">
+                {r.node_count} {r.node_count === 1 ? "topic" : "topics"}
+              </span>
+            </Link>
+          </li>
+        ))}
+      </AutoGrid>
+    </section>
+  );
+}
+
+/**
+ * Main column: greeting, the roadmaps in progress and others to explore.
+ * Right rail from lg: path and weekly plan, a leaderboard snapshot and the
+ * community. Phones keep the greeting and roadmaps; the tab bar reaches the rest.
+ * Every block reads the session, so each is its own Suspense island.
+ */
 export default function DashboardPage() {
   return (
-    <div className="flex flex-col gap-6">
-      <Suspense fallback={<div className="h-9 w-48 animate-skeleton rounded-md bg-surface-sunken" />}>
-        <Greeting />
+    <MainWithRail
+      railLabel="Your path and community"
+      railFrom="lg"
+      rail={
+        <>
+          <Suspense fallback={<RailCardSkeleton tall />}>
+            <PathAndPlan />
+          </Suspense>
+          <Suspense fallback={<RailCardSkeleton />}>
+            <LeaderboardSnapshot />
+          </Suspense>
+          <Suspense fallback={<RailCardSkeleton />}>
+            <CommunityCard />
+          </Suspense>
+        </>
+      }
+    >
+      <div className="flex flex-col gap-6">
+        <Suspense fallback={<div className="h-9 w-48 animate-skeleton rounded-md bg-surface-sunken" />}>
+          <Greeting />
+        </Suspense>
+        <Suspense fallback={<div className="h-32 animate-skeleton rounded-lg bg-surface-sunken" />}>
+          <Learning />
+        </Suspense>
+      </div>
+      <Suspense fallback={null}>
+        <Explore />
       </Suspense>
-      <Suspense fallback={<div className="h-32 animate-skeleton rounded-lg bg-surface-sunken" />}>
-        <Learning />
-      </Suspense>
-    </div>
+    </MainWithRail>
   );
 }

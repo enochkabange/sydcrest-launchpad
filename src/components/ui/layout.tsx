@@ -116,7 +116,8 @@ export function AutoGrid({
  * on the right. `sticky` keeps the rail in view while the main column scrolls.
  * `spaced={false}` drops the built in gaps (8 between blocks, 6 in the rail)
  * when the children already carry their own margins and the phone spacing
- * must not change.
+ * must not change. `railFrom="lg"` shows the rail only from lg, for rails that
+ * summarise what phones already reach from the tab bar.
  */
 export function MainWithRail({
   children,
@@ -125,6 +126,7 @@ export function MainWithRail({
   railFirst = false,
   sticky = false,
   spaced = true,
+  railFrom = "always",
   className = "",
 }: {
   children: ReactNode;
@@ -133,6 +135,7 @@ export function MainWithRail({
   railFirst?: boolean;
   sticky?: boolean;
   spaced?: boolean;
+  railFrom?: "always" | "lg";
   className?: string;
 }) {
   const main = (
@@ -144,7 +147,7 @@ export function MainWithRail({
     <aside
       key="rail"
       aria-label={railLabel}
-      className={`flex min-w-0 flex-col lg:col-start-2 lg:row-start-1 ${spaced ? "gap-6" : ""} ${sticky ? "lg:sticky lg:top-8" : ""}`}
+      className={`${railFrom === "lg" ? "hidden lg:flex" : "flex"} min-w-0 flex-col lg:col-start-2 lg:row-start-1 ${spaced ? "gap-6" : ""} ${sticky ? "lg:sticky lg:top-8" : ""}`}
     >
       {rail}
     </aside>
@@ -158,13 +161,19 @@ export function MainWithRail({
   );
 }
 
+const CELL_DISPLAY = {
+  show: "block md:table-cell",
+  hide: "hidden md:table-cell",
+  only: "block md:hidden",
+} as const;
+
 export type Column<T> = {
   header: string;
   cell: (row: T) => ReactNode;
   /** Numbers align to the end so they compare down the column. */
   align?: "start" | "end";
-  /** Hidden on phones, where the row is a compact line rather than a table. */
-  phone?: "show" | "hide";
+  /** `hide`: not on phones, where the row is a compact line. `only`: phones only (a combined cell). */
+  phone?: "show" | "hide" | "only";
   /** Extra classes for this column's cells (width, emphasis). */
   className?: string;
 };
@@ -199,7 +208,7 @@ export function DataTable<T>({
               <th
                 key={c.header}
                 scope="col"
-                className={`px-4 py-3 font-semibold whitespace-nowrap ${c.align === "end" ? "text-right" : ""}`}
+                className={`px-4 py-3 font-semibold whitespace-nowrap ${c.align === "end" ? "text-right" : ""} ${c.phone === "only" ? "md:hidden" : ""}`}
               >
                 {c.header}
               </th>
@@ -215,7 +224,7 @@ export function DataTable<T>({
               {columns.map((c) => (
                 <td
                   key={c.header}
-                  className={`md:table-cell md:px-4 md:py-3 md:align-middle ${c.phone === "hide" ? "hidden" : "block"} ${
+                  className={`md:px-4 md:py-3 md:align-middle ${CELL_DISPLAY[c.phone ?? "show"]} ${
                     c.align === "end" ? "text-right" : ""
                   } ${c.className ?? ""}`}
                 >

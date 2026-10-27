@@ -5,7 +5,7 @@ import { LEGAL_IS_DRAFT, LEGAL_UPDATED, LEGAL_VERSION, PRIVACY_CONTACT_EMAIL } f
 /** Headings, paragraphs and lists styled for long reading, without a typography plugin. */
 const PROSE = [
   "flex flex-col gap-4 text-base leading-relaxed text-content-2",
-  "[&_h2]:mt-6 [&_h2]:text-xl [&_h2]:text-content",
+  "[&_h2]:mt-6 [&_h2]:text-subtitle [&_h2]:text-content",
   "[&_h3]:mt-2 [&_h3]:text-base [&_h3]:font-semibold [&_h3]:text-content",
   "[&_ul]:flex [&_ul]:list-disc [&_ul]:flex-col [&_ul]:gap-2 [&_ul]:pl-6",
   "[&_strong]:font-semibold [&_strong]:text-content",
@@ -16,7 +16,7 @@ export function LegalDocument({ title, children }: { title: string; children: Re
   return (
     <article className="flex flex-col gap-6">
       <div className="flex flex-col gap-2">
-        <h1 className="text-3xl text-content md:text-4xl">{title}</h1>
+        <h1 className="text-title text-content">{title}</h1>
         <p className="text-sm text-content-3">
           Version {LEGAL_VERSION}. Last updated {LEGAL_UPDATED}.
         </p>
