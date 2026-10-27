@@ -1896,6 +1896,694 @@ Wumpini works for an invented school fees platform. A parent, Amina, calls: she 
         pass_threshold: 80,
       },
     },
+    "quality-and-wellbeing": {
+      explanation_md: `Doing support well for one day is not hard. Doing it well every day, for months, across hundreds of customers, takes three more things: knowing how your work is measured, protecting the personal data you see, and looking after yourself through long shifts. This section covers all three. Employers ask about them in interviews, and they decide whether a new agent thrives or burns out.
+
+## Quality: how your work is measured
+
+Support teams track numbers so they can see how well customers are being served. You will hear terms such as first response time, handling time, first contact resolution and customer satisfaction score. Your targets will usually be built from these. The next lesson explains each one in plain words and, more importantly, how to improve your results without rushing customers or cutting corners.
+
+Many teams also have **quality reviews**, where a team leader or quality analyst listens to some of your calls or reads some of your chats and scores them against a checklist: did you greet properly, verify, understand the issue, give correct information, close well and write a good note? These reviews are not a punishment. They are one of the fastest ways to improve, especially in your first months.
+
+## Data protection: the trust you are given
+
+As an agent you can see names, phone numbers, addresses, account balances and sometimes ID numbers. Customers trust the company with this information, and the company trusts you. Ghana has a data protection law, the Data Protection Act, 2012 (Act 843), overseen by the Data Protection Commission. You do not need to be a lawyer, but you do need safe daily habits. The data protection lesson covers them.
+
+## Wellbeing: lasting in the job
+
+Back to back calls, night shifts, upset customers and targets can wear anyone down. Looking after your body and mind is not a luxury; it is how you stay good at the job. The stress and shifts lesson gives you practical habits for recovery between contacts, sleep and meals around shifts, and asking for help early.
+
+## How the three connect
+
+These topics support each other. A tired agent makes more mistakes, which hurts quality scores and can lead to data mistakes such as discussing the wrong customer's account. A careful agent who follows good habits scores better and feels less stress, because fewer things go wrong.
+
+## A small example
+
+Amina has been on a chat team in Accra for three months, after growing up in Bolgatanga. Her first quality review shows good empathy but weak notes, and her handling time is higher than the team target. Her team leader suggests saved replies for common questions and a simple note format. Amina also notices she skips lunch on busy days and feels foggy by evening, so she starts taking her break on time. A month later her notes are clearer, her handling time is closer to target, and she feels better at the end of each shift. Nothing dramatic changed; small habits did the work.`,
+      practice_task_md: `**Goal:** Reflect on quality, privacy and wellbeing in your own routines.
+
+**Steps:**
+1. Write a short quality checklist for one customer conversation, with at least six items (for example: greeted by name, verified, repeated the problem back).
+2. Use it to score one of your earlier practice role plays or written replies from this track. Note one thing to improve.
+3. List three pieces of personal information you have seen in a group chat, school or shop that should have been kept private.
+4. Write down your current sleep and meal times for a normal day. Circle one habit you could improve.
+
+**Done looks like:** A six item checklist with one scored example, a list of three privacy observations, and one wellbeing habit to work on.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a quality review in a support team?",
+            options: [
+              "A punishment for agents who make mistakes",
+              "A team leader or analyst scoring some of your calls or chats against a checklist to help you improve",
+              "A customer survey sent after every call",
+              "A review of the company's prices",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes quality reviews as checklist scoring of your work, meant to help you improve.",
+          },
+          {
+            prompt: "Which law does the lesson name for personal data in Ghana?",
+            options: [
+              "The Data Protection Act, 2012 (Act 843)",
+              "The Electronic Payments Act",
+              "The Customer Service Act",
+              "The Telecommunications Charter",
+            ],
+            answer_index: 0,
+            explanation: "The lesson names the Data Protection Act, 2012 (Act 843), overseen by the Data Protection Commission.",
+          },
+          {
+            prompt: "How can tiredness affect an agent's work, according to the lesson?",
+            options: [
+              "It has no effect if the agent is experienced",
+              "It leads to more mistakes, hurting quality and risking data errors",
+              "It makes calls shorter and better",
+              "It only matters on night shifts",
+            ],
+            answer_index: 1,
+            explanation: "The lesson links tiredness to more mistakes, including data mistakes.",
+          },
+          {
+            prompt: "In the example, what helped Amina improve?",
+            options: [
+              "Working longer hours without breaks",
+              "Small habits: saved replies, a note format and taking breaks on time",
+              "Changing to a different company",
+              "Ignoring her quality review",
+            ],
+            answer_index: 1,
+            explanation: "Small habits in work and rest improved her notes, handling time and energy.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "service-metrics": {
+      explanation_md: `Support teams cannot see every conversation, so they use measurements to understand how customers are being served. Adverts in Ghana often mention KPIs (key performance indicators) and targets, and interviewers may ask what you know about them. Understanding the common measures helps you meet your targets and, just as important, helps you see when chasing a number would hurt a customer.
+
+## The common measures
+
+* **First response time.** How long a customer waits before getting a first reply. Important in chat, WhatsApp, email and social media.
+* **Average handling time.** How long a contact takes from start to finish, including after call work such as notes.
+* **First contact resolution.** Whether the problem was solved in the first contact, without the customer having to come back.
+* **Customer satisfaction score (CSAT).** Customers answer a short question after the contact, such as "How satisfied were you?" on a simple scale.
+* **Service level.** Whether contacts are answered within an agreed time. A service level agreement, or SLA, is a promise about response or resolution times, either to customers or between teams.
+* **Quality score.** The score from a quality review of your calls or chats.
+* **Adherence.** Whether you are logged in and available when your schedule says you should be.
+
+Your company will set its own targets for these. Learn them in your first week.
+
+## Measures can pull against each other
+
+Handling time and first contact resolution often pull in opposite directions. If you rush a call to keep handling time low, the customer may call back because the problem was not really fixed. That lowers first contact resolution and satisfaction, and the second call takes more time overall. Good agents aim for the customer's problem to be properly solved, as efficiently as possible.
+
+## Improving your numbers the right way
+
+* **Use the knowledge base and saved replies** so you are not searching from scratch.
+* **Ask good questions early** to find the real problem faster.
+* **Write notes during the contact**, not long after.
+* **Set clear expectations.** Customers who know what happens next are less likely to call back.
+* **Check the solution worked** before closing.
+* **Learn from your quality reviews.** Ask your team leader for one thing to focus on each week.
+
+What not to do: close tickets before they are solved, transfer customers to avoid hard problems, or rush people off the phone. These may improve one number briefly, but quality reviews and repeat contacts reveal them.
+
+## A worked example
+
+Issahaku works on phone support for an invented internet provider. His handling time is above target. He listens to two of his own recorded calls with his team leader and notices he spends a long time searching for the steps to reset a router. He creates a simple checklist for that problem and practises it. His handling time comes down, but his first contact resolution stays strong because he still checks that the internet works before ending each call.`,
+      practice_task_md: `**Goal:** Understand how measures connect and improve your own.
+
+**Steps:**
+1. Write each of the seven measures from the lesson in your own words, one sentence each.
+2. For first contact resolution and average handling time, write one example of how rushing a contact could improve one and hurt the other.
+3. Time yourself writing a full reply to an invented customer email, then use a saved reply you write yourself and time it again. Note the difference and check both answers are complete.
+4. Write three things you would ask your team leader in your first week about targets.
+
+**Done looks like:** Seven definitions, one trade off example, two timings with a note, and three questions for a team leader.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does first contact resolution measure?",
+            options: [
+              "How fast the phone was answered",
+              "Whether the problem was solved in the first contact without the customer coming back",
+              "How many customers contacted support in a day",
+              "The first agent who replied",
+            ],
+            answer_index: 1,
+            explanation: "First contact resolution checks whether the issue was solved the first time.",
+          },
+          {
+            prompt: "What is an SLA?",
+            options: [
+              "A type of help desk software",
+              "A promise about response or resolution times",
+              "A customer's complaint letter",
+              "A training certificate for agents",
+            ],
+            answer_index: 1,
+            explanation: "A service level agreement is a promise about response or resolution times.",
+          },
+          {
+            prompt: "Why can rushing a call to lower handling time backfire?",
+            options: [
+              "Because short calls are not allowed",
+              "Because the customer may call back, lowering first contact resolution and satisfaction",
+              "Because handling time is not measured",
+              "Because customers prefer long calls",
+            ],
+            answer_index: 1,
+            explanation: "The lesson explains that unsolved problems lead to repeat contacts.",
+          },
+          {
+            prompt: "Which is a good way to improve your numbers?",
+            options: [
+              "Close tickets before they are solved",
+              "Transfer difficult customers to others",
+              "Use the knowledge base and write notes during the contact",
+              "Skip verification to save time",
+            ],
+            answer_index: 2,
+            explanation: "Using the knowledge base and writing notes during the contact are listed as good habits.",
+          },
+          {
+            prompt: "What does adherence measure?",
+            options: [
+              "Whether you are logged in and available when your schedule says",
+              "How polite you are",
+              "How many products you sell",
+              "How many languages you speak",
+            ],
+            answer_index: 0,
+            explanation: "Adherence measures whether you are available when scheduled.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "protecting-customer-data": {
+      explanation_md: `Every day, support agents see personal information that customers would never share with a stranger: phone numbers, home areas, account balances, payment history and sometimes ID card numbers. Customers trust the company to keep it safe, and the company trusts you. A single careless moment, such as a screenshot shared in a group chat, can harm a customer and cost you your job. This lesson gives you the safe habits employers expect.
+
+## The law in simple words
+
+Ghana's Data Protection Act, 2012 (Act 843) sets rules for how organisations collect, use and store personal data. The Data Protection Commission oversees it. In simple words, the law expects organisations to collect only what they need for a clear purpose, keep it accurate, keep it secure, and use it only for that purpose. Customers also have rights, such as asking what information a company holds about them. Your employer will have policies that put the law into practice. Follow them, and ask when unsure.
+
+## Safe habits for agents
+
+**Verify before you share.** Only discuss an account after the person passes your company's verification checks. A caller who knows the customer's name is not necessarily the customer. Family members, even close ones, usually cannot access someone else's account without proper authority.
+
+**Share the minimum.** Give the customer what they need, nothing more. If someone asks for "all the details" on an account, think about whether they really need each part.
+
+**Never take data outside work systems.**
+
+* Do not take photos or screenshots of customer records.
+* Do not copy customer details into your personal WhatsApp, notes app or email.
+* Do not discuss customers by name with friends or family, even as a funny story.
+
+**Lock your screen** every time you step away, even for a minute. Use strong passwords for work systems and never share your login with a colleague.
+
+**Watch your surroundings.** In an office, at home or in a shared space, make sure others cannot see your screen or hear sensitive details. Remote agents should work somewhere private and use headphones.
+
+**Be careful with links and attachments.** Fraudsters send fake emails to agents too. If a message asks you to log in through a link or open an unexpected file, check with your team first.
+
+**Report mistakes quickly.** If you send something to the wrong person or open the wrong account, tell your team leader straight away. Fast reporting limits the damage. Hiding it makes it worse.
+
+## A worked example
+
+Fuseini works remotely for an invented health insurance helpline, from his family home in Tamale. His younger brother asks to use the laptop to watch a video while Fuseini is on a break. Fuseini says no, because the laptop has the work system open and is for work only. He locks the screen before leaving his desk. Later a caller says, "I am calling for my uncle, please read me his last claim." Fuseini explains politely that he can only discuss the account with the member or someone formally authorised, and tells the caller how the uncle can add him as an authorised contact.
+
+Fuseini was not unhelpful. He protected his customer, his employer and himself.`,
+      practice_task_md: `**Goal:** Build your personal data protection checklist.
+
+**Steps:**
+1. Write a checklist of at least eight safe habits from this lesson that you will follow in any support job.
+2. Look at the space where you usually use your phone or computer. Write down two things someone nearby could see or hear, and how you would fix them for remote work.
+3. Write what you would say politely to a caller who asks for information about a relative's account.
+4. Check that your own phone or computer locks automatically after a short time. If it does not, turn that setting on.
+
+**Done looks like:** An eight item checklist, two workspace fixes, one polite script for a relative's request, and your device's automatic lock turned on.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does Ghana's Data Protection Act expect organisations to do with personal data, in simple terms?",
+            options: [
+              "Collect as much as possible in case it is useful later",
+              "Collect only what they need for a clear purpose, keep it accurate and secure, and use it for that purpose",
+              "Share it freely with partner companies",
+              "Delete all data every day",
+            ],
+            answer_index: 1,
+            explanation: "The lesson summarises the law as collecting only what is needed, keeping it accurate and secure, and using it for that purpose.",
+          },
+          {
+            prompt: "Which action breaks safe data habits?",
+            options: [
+              "Locking your screen when you step away",
+              "Verifying a caller before discussing the account",
+              "Taking a screenshot of a customer record to ask a friend for advice",
+              "Reporting a mistake to your team leader quickly",
+            ],
+            answer_index: 2,
+            explanation: "Customer data must never be taken outside work systems, including in screenshots.",
+          },
+          {
+            prompt: "A caller knows the customer's full name. What should you do?",
+            options: [
+              "Share the account details, because knowing the name is enough",
+              "Still complete your company's verification checks before discussing the account",
+              "End the call immediately",
+              "Ask for the customer's PIN to be sure",
+            ],
+            answer_index: 1,
+            explanation: "Knowing a name is not verification; follow the company's checks, and never ask for a PIN.",
+          },
+          {
+            prompt: "What should you do if you open the wrong customer's account by mistake?",
+            options: [
+              "Close it and say nothing",
+              "Tell your team leader straight away",
+              "Delete the record",
+              "Ask the customer to keep it secret",
+            ],
+            answer_index: 1,
+            explanation: "Fast reporting limits the damage; hiding mistakes makes them worse.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "stress-and-shifts": {
+      explanation_md: `Support work can be demanding. You may take one call after another, handle upset customers, chase targets and work early mornings, late evenings or nights, especially in call centres and remote teams serving other time zones. Stress is a normal response to pressure, but too much of it for too long wears down your health, your mood and your work. Training programmes for support roles teach stress management for good reason. This lesson gives you practical habits that work.
+
+## Recover between contacts
+
+Even short pauses help. After a hard call or chat:
+
+* **Breathe slowly.** Breathe in through your nose for a count of four, out through your mouth for a count of six. Repeat three times.
+* **Let it go.** The customer was angry at the situation, not at you. Write your note, then mentally close the case.
+* **Move a little.** Stretch your shoulders and neck, or stand up for a moment if your team allows.
+* **Drink water.** Talking all day dries your throat and tires you faster.
+
+Use your scheduled breaks fully. Skipping lunch to clear a queue feels helpful but usually makes the afternoon worse.
+
+## Sleep and meals around shifts
+
+Shift work disturbs your body clock, so plan around it:
+
+* Try to sleep at similar times on work days, even if they are unusual times.
+* After a night shift, make your sleeping space dark and quiet. Tell family your sleeping hours so they can help.
+* Eat proper meals at regular points in your shift. Heavy meals right before a shift can make you sleepy; very sugary snacks give quick energy and then a drop.
+* Be careful with too much caffeine late in a shift, as it can stop you sleeping afterwards.
+* Plan safe transport if your shift ends late at night.
+
+## Protect your voice and eyes
+
+Speak from a relaxed throat rather than shouting. Use a headset at a comfortable volume. Look away from the screen at something far away every so often to rest your eyes.
+
+## Ask for help early
+
+Signs you may be under too much stress include trouble sleeping, feeling tense all the time, losing interest in things you enjoy, headaches, or dreading every shift. If you notice these, talk to someone you trust: your team leader, a colleague, family, a religious leader or a health worker. Many employers have support for staff wellbeing. Asking early is a strength, not a weakness. If you ever feel unsafe or overwhelmed, seek help from a health professional straight away.
+
+## A worked example
+
+Sumaila starts night shifts on a remote chat team serving customers in another time zone. In his first week he sleeps whenever he can, drinks a lot of coffee and feels terrible. He then makes a plan: he sleeps from 8am to 3pm with a cloth over the window, eats a proper meal before each shift, stops coffee after midnight and does the breathing exercise after difficult chats. He also tells his team leader he is struggling, who pairs him with an experienced colleague for a week. By the end of the month he feels much steadier.`,
+      practice_task_md: `**Goal:** Make a personal plan for coping with stress and shifts.
+
+**Steps:**
+1. Practise the breathing exercise from the lesson three times today and note how you feel afterwards.
+2. Imagine you have been given a shift from 10pm to 6am. Write a daily plan showing sleep, meals, travel and rest.
+3. Write a list of three people you could talk to if work stress builds up.
+4. Write two short sentences you could say to a team leader to ask for help, in your own words.
+
+**Done looks like:** A note on the breathing exercise, a written shift day plan, a list of three support people, and two sentences for asking for help.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a good thing to do straight after a difficult call?",
+            options: [
+              "Take the next call immediately without pausing",
+              "Breathe slowly, write your note and mentally close the case",
+              "Call the customer back to argue",
+              "Skip your next break to make up time",
+            ],
+            answer_index: 1,
+            explanation: "The lesson suggests slow breathing, finishing the note and letting the call go.",
+          },
+          {
+            prompt: "Which habit helps after a night shift?",
+            options: [
+              "Drinking strong coffee just before sleeping",
+              "Making your sleeping space dark and quiet and telling family your sleep hours",
+              "Sleeping at a different time every day",
+              "Skipping meals to sleep longer",
+            ],
+            answer_index: 1,
+            explanation: "A dark, quiet space and family support help daytime sleep.",
+          },
+          {
+            prompt: "Why does the lesson advise using scheduled breaks fully?",
+            options: [
+              "Because breaks are the only time to check social media",
+              "Because skipping them usually makes the rest of the shift worse",
+              "Because team leaders measure breaks only",
+              "Because customers prefer agents who take breaks",
+            ],
+            answer_index: 1,
+            explanation: "Skipping breaks feels helpful but usually leaves you more tired later.",
+          },
+          {
+            prompt: "Which is a sign you may be under too much stress?",
+            options: [
+              "Enjoying a good conversation with a customer",
+              "Trouble sleeping and dreading every shift",
+              "Feeling hungry at lunchtime",
+              "Wanting to learn a new skill",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists trouble sleeping and dreading shifts among the warning signs.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "getting-hired-support": {
+      explanation_md: `Customer service is one of the more open doors into work for young people in Ghana, but it is still competitive. Many applicants say they are "good with people". Employers want to see it. They test how you write, how you speak and how you solve problems, often before they look closely at certificates. The good news is that all three can be shown with practice you do yourself.
+
+## How support employers usually hire
+
+Hiring steps vary, but these are common:
+
+* **An application or CV**, sometimes with a short written question about why you want the role.
+* **A typing test**, measuring speed and accuracy, especially for chat and email roles.
+* **A written test**, such as replying to a sample customer email or chat.
+* **A voice or phone screening**, where someone checks your spoken English and how clearly you speak.
+* **A role play**, where an interviewer plays a customer with a problem.
+* **An interview** about your experience, your availability for shifts and how you handle pressure.
+
+Remote roles may also check your internet connection, your computer and your workspace.
+
+## What employers look for
+
+Across adverts and training programmes, the same qualities appear:
+
+* Clear written and spoken English, and sometimes a local language.
+* Patience and calm with difficult people.
+* Accuracy with details such as numbers and names.
+* Comfort using a computer and new software.
+* Reliability: arriving on time, available for agreed shifts.
+* Willingness to learn from feedback.
+
+Experience helps, but it does not have to be a formal job. Helping at a family shop, running a church or school WhatsApp group, volunteering at an event or serving customers during national service all count, as long as you can describe what you did.
+
+## Show, do not just tell
+
+Your practice tasks from this track become evidence. A sample email reply, a recorded practice call, a few mock tickets and a help article show an employer what you can do far better than a list of adjectives. The next lesson shows you how to put these together into a simple portfolio.
+
+## Where this section goes
+
+* **A practice portfolio for support roles:** collecting and polishing your best work.
+* **Finding support roles and programmes:** where to look, how to read adverts, how to prepare for tests and how to spot fake job offers.
+
+## A small example
+
+Hawa from Wa applies for a chat support role. Her CV is short because she has only worked in her mother's provisions shop. But in the written test, she replies to an angry customer with a calm, clear, well structured message, and in the role play she repeats the problem back, checks the facts and agrees a next step. Afterwards she shares a link to her practice portfolio. The interviewer can see what she will be like on the job, and that matters more than a long CV.`,
+      practice_task_md: `**Goal:** Prepare your story for support interviews.
+
+**Steps:**
+1. Write down three experiences where you helped people, solved a problem or handled a difficult person: at home, in a shop, in school, in church or in a group.
+2. For each, write four short lines: the situation, what you did, how you did it, and the result.
+3. Practise saying one of them aloud in under one minute. Record it on your phone or computer and listen back.
+4. Look back at your earlier practice tasks in this track and list which ones could go in a portfolio.
+
+**Done looks like:** Three written experience stories, one recorded answer under a minute, and a list of practice tasks to include in your portfolio.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is a common step in hiring for support roles?",
+            options: [
+              "A coding test",
+              "A typing test and a role play with a pretend customer",
+              "A driving test",
+              "A drawing test",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists typing tests and role plays among common hiring steps.",
+          },
+          {
+            prompt: "What kinds of experience does the lesson say can count, even if not a formal job?",
+            options: [
+              "Only paid work at a large company",
+              "Helping at a family shop, running a group, volunteering or national service, if you can describe what you did",
+              "Only experience abroad",
+              "None; only certificates count",
+            ],
+            answer_index: 1,
+            explanation: "Informal experience counts when you can describe it clearly.",
+          },
+          {
+            prompt: "Why does the lesson say to 'show, not just tell'?",
+            options: [
+              "Because employers do not read CVs at all",
+              "Because work samples show what you can do better than a list of adjectives",
+              "Because portfolios are required by law",
+              "Because telling is rude in interviews",
+            ],
+            answer_index: 1,
+            explanation: "Samples such as emails, recorded calls and tickets prove your skills.",
+          },
+          {
+            prompt: "In the example, what helped Hawa stand out despite a short CV?",
+            options: [
+              "She had a degree",
+              "Her calm written test, strong role play and practice portfolio",
+              "She knew the interviewer",
+              "She offered to work without pay",
+            ],
+            answer_index: 1,
+            explanation: "Her test, role play and portfolio showed how she would perform on the job.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "support-practice-portfolio": {
+      explanation_md: `When you have no formal support experience, a small practice portfolio is one of the strongest things you can show. It proves you can write a clear reply, handle a call and keep proper records before anyone has to take a chance on you. Training programmes and employers both respond well to concrete samples, and putting one together also prepares you for written tests and role plays.
+
+## What to include
+
+Aim for a small, polished collection rather than a big messy one:
+
+* **Two or three email replies:** for example a refund request, a delayed order and a complaint. Show the customer's message and your reply.
+* **Two chat conversations:** using the acknowledge, check, update pattern, including one where the customer is upset.
+* **One recorded practice call**, two to four minutes long, following the five stage call structure. Record it with a friend playing the customer, with their permission.
+* **Three to five mock tickets**, from a free help desk trial or a spreadsheet, each with a clear summary, priority, tags, notes and final status.
+* **One help article** with a clear title and numbered steps.
+* **One short reflection**, a paragraph on what you learned and what you would do differently.
+
+Optional extras: a public social media reply and its private follow up, an escalation note, or your typing test results.
+
+## Rules for every sample
+
+* **Use invented customers and businesses only.** Never include real people's names, numbers or account details, even friends who agreed. This shows employers you understand data protection.
+* **Label it as practice.** Write "practice sample" at the top so no one thinks you are claiming real work you did not do.
+* **Check every detail.** Spelling, names, numbers and dates. A portfolio with errors works against you.
+* **Keep it short.** An employer should be able to look through it in a few minutes.
+
+## How to put it together
+
+You do not need a website. Simple options include:
+
+* A shared folder in a free cloud storage service with clear file names, such as "01 Refund email reply".
+* One free online document with headings for each sample and a link to your recorded call.
+* A short PDF made from that document, small enough to send on a low data connection.
+
+Check the sharing settings so anyone with the link can view but not edit. Test the link from another account or device before you send it.
+
+## Talking about it
+
+In an interview, be ready to explain one sample in a minute: what the customer needed, what you did and why. For example: "In this chat, the customer was upset about a double charge. I acknowledged it, collected the transaction IDs, explained the refund process honestly and gave a time for the next update."
+
+## A worked example
+
+Abdul-Rahman from Damongo spends two weekends building his portfolio. He invents a phone accessories shop, writes three emails, two chats and four tickets in a spreadsheet, records a call with his cousin and writes one help article about tracking orders. He saves it all in a shared folder with numbered files and a one page summary at the front. When he applies for a call centre role, he includes the link in his CV.`,
+      practice_task_md: `**Goal:** Build your first support practice portfolio.
+
+**Steps:**
+1. Gather the best practice tasks you completed in this track: emails, chats, scripts, tickets and help articles.
+2. Improve each one: check spelling, numbers, names and structure. Make sure every customer and business is invented.
+3. Record one practice call of two to four minutes if you have not already.
+4. Put everything in one shared folder or document with numbered, clear titles and a short summary page at the front. Label it as practice samples.
+5. Test the link from another device or account, then ask a mentor or friend to look through it and give one piece of feedback.
+
+**Done looks like:** A shared portfolio link with at least six labelled samples, a summary page, and one piece of feedback recorded.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why should portfolio samples use invented customers and businesses?",
+            options: [
+              "Because real examples are boring",
+              "To protect real people's data and show you understand data protection",
+              "Because employers only accept fiction",
+              "To make the portfolio longer",
+            ],
+            answer_index: 1,
+            explanation: "Using invented data protects people and shows good data habits.",
+          },
+          {
+            prompt: "Why should you label samples as 'practice'?",
+            options: [
+              "So no one thinks you are claiming real work you did not do",
+              "Because practice samples are worth more",
+              "Because it is required by help desk tools",
+              "So you can charge for them",
+            ],
+            answer_index: 0,
+            explanation: "Honest labelling avoids misleading an employer.",
+          },
+          {
+            prompt: "Which is a good way to share your portfolio on a low data connection?",
+            options: [
+              "Send a large video of every sample",
+              "A shared folder or one online document, or a small PDF",
+              "Print it and post it by mail only",
+              "Paste everything into one long WhatsApp message",
+            ],
+            answer_index: 1,
+            explanation: "The lesson suggests a shared folder, an online document or a small PDF.",
+          },
+          {
+            prompt: "What should you check before sending your portfolio link?",
+            options: [
+              "That anyone can edit it",
+              "That the sharing settings allow viewing and the link works from another account or device",
+              "That it includes real customer numbers",
+              "That it is longer than twenty pages",
+            ],
+            answer_index: 1,
+            explanation: "Set view only sharing and test the link before sending.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "finding-support-roles": {
+      explanation_md: `You have the skills; now you need the opening. Support roles in Ghana come through several routes, and knowing them helps you apply widely and safely. This lesson covers where to look, how to read an advert, how to prepare for typing and voice tests, and how to spot an offer that is not genuine.
+
+## Where support roles come from
+
+* **Call centres and BPOs.** Contact centres for banks, telecoms, fintechs and outsourcing companies hire agents, often in groups, especially in Accra and other cities.
+* **Company support teams.** Delivery firms, online shops, schools, hospitals, insurance and solar companies often have small support teams of their own.
+* **National service placements.** Some service personnel are posted to customer service, front desk or call roles, which can become a first reference.
+* **Part time and shift chat roles**, sometimes remote, for companies that need cover in the evenings or at weekends.
+* **Remote support teams** serving customers in other countries, which usually need a reliable computer, headset and stable internet.
+* **Free training programmes.** Some organisations run free customer service training, sometimes with job placement support. Generation Ghana's Digital Customer Service programme is one example. Always check current eligibility and dates on the programme's official page.
+
+Look on Ghanaian job boards in the customer service category, on company careers pages, and through your hub, school or church networks.
+
+## Reading an advert
+
+For each advert, note:
+
+* **The channel:** calls, chat, email, WhatsApp or a mix.
+* **Shifts and location:** office, remote, day or night.
+* **Requirements:** education, languages, typing speed, experience.
+* **How to apply** and the closing date.
+
+Do not be put off if you meet most but not all requirements. Apply, and use your portfolio to show what you can do.
+
+## Preparing for tests
+
+* **Typing:** keep practising with a free typing test in your browser. Practise on a full keyboard if you can reach one, because many tests use one.
+* **Voice:** record yourself answering "Tell me about yourself" and a role play. Check clarity, pace and warmth.
+* **Writing:** practise replying to sample complaints within a time limit.
+* **Role plays:** use the five call stages and the LISTEN method.
+
+## Spotting fake offers
+
+Fraudsters target job seekers with fake support jobs. Warning signs include:
+
+* Being asked to **pay** for training, registration, a uniform or a "processing fee" before you start.
+* An offer with no interview, or an interview only by text message.
+* Pressure to decide immediately.
+* Requests for your mobile money PIN, bank login or one time codes.
+* A company you cannot find on an official website, or a free email address claiming to be a large company.
+
+Before sharing your ID or any documents, check the company's official website and contact details. Genuine employers do not ask you to pay to get a job.
+
+## A worked example
+
+Mariama in Tamale sees a WhatsApp message offering a "remote customer care job" if she pays a small registration fee. She cannot find the company's website, so she does not pay. Instead she applies to a call centre role she finds on a Ghanaian job board, prepares with typing practice and a recorded role play, and includes her portfolio link.`,
+      practice_task_md: `**Goal:** Build a short list of real opportunities and prepare for tests.
+
+**Steps:**
+1. Find three current support adverts or training programmes on a Ghanaian job board, a company careers page or an official programme page.
+2. For each, note the channel, shift pattern, location or remote, key requirements and closing date, in your own words.
+3. Check each one for the fake offer warning signs from the lesson and write "passed" or the sign you found.
+4. Do one timed typing test and record one practice answer to "Tell me about yourself" in under one minute.
+
+**Done looks like:** A list of three checked opportunities with notes, your typing result and one recorded answer, ready for your first applications.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is a warning sign of a fake job offer?",
+            options: [
+              "An interview with a role play",
+              "Being asked to pay a registration or processing fee before you start",
+              "A closing date in the advert",
+              "A typing test",
+            ],
+            answer_index: 1,
+            explanation: "Genuine employers do not ask you to pay to get a job.",
+          },
+          {
+            prompt: "What should you check about a free training programme before applying?",
+            options: [
+              "Current eligibility and dates on the programme's official page",
+              "Whether a friend has heard of it",
+              "Only the programme's social media comments",
+              "Nothing; all programmes accept everyone",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says always check current eligibility and dates on the official page.",
+          },
+          {
+            prompt: "What should you do if you meet most but not all requirements in an advert?",
+            options: [
+              "Never apply",
+              "Apply and use your portfolio to show what you can do",
+              "Pretend you meet every requirement",
+              "Wait a year before applying",
+            ],
+            answer_index: 1,
+            explanation: "The lesson encourages applying and showing your skills through your portfolio.",
+          },
+          {
+            prompt: "What do remote support teams usually need from you?",
+            options: [
+              "A reliable computer, headset and stable internet",
+              "A car and a driving licence",
+              "An office in Accra",
+              "A university degree in technology",
+            ],
+            answer_index: 0,
+            explanation: "The lesson notes remote teams usually need a reliable computer, headset and stable internet.",
+          },
+          {
+            prompt: "In the example, why did Mariama refuse the WhatsApp job offer?",
+            options: [
+              "The pay was too low",
+              "It asked for a fee and she could not find the company's website",
+              "It was a night shift",
+              "It required a local language",
+            ],
+            answer_index: 1,
+            explanation: "A fee and no official website are both warning signs of a fake offer.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
   },
 };
 
