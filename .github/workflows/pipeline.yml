@@ -56,7 +56,7 @@ jobs:
     needs: gate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0
       - uses: pnpm/action-setup@v4
@@ -82,7 +82,7 @@ jobs:
     needs: gate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: supabase/setup-cli@v1
         with:
           version: 2.114.0 # keep in step with the local CLI; generated types depend on it
@@ -102,7 +102,7 @@ jobs:
     needs: gate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v7
         with:
@@ -144,7 +144,7 @@ jobs:
       SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
       SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: supabase/setup-cli@v1
         with:
           version: 2.114.0
@@ -166,7 +166,7 @@ jobs:
       VERCEL_ORG_ID: team_c3xMCYVFW4OzMKzayGvmP1qO
       VERCEL_PROJECT_ID: prj_QHcxXMnP5UcABWQLryi8T0aS56co
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v7
         with:

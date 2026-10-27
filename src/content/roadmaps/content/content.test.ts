@@ -22,6 +22,11 @@ describe("roadmap lesson content", () => {
         expect(draft, `no roadmap draft with slug ${content.roadmap}`).toBeDefined();
       });
 
+      it("has a lesson for every node in the roadmap", () => {
+        const missing = (draft?.nodes ?? []).map((n) => n.slug).filter((slug) => !(slug in content.nodes));
+        expect(missing, "nodes without content").toEqual([]);
+      });
+
       it("only covers nodes that exist in that roadmap", () => {
         const slugs = new Set(draft?.nodes.map((n) => n.slug));
         for (const slug of Object.keys(content.nodes)) expect(slugs.has(slug), `unknown node ${slug}`).toBe(true);

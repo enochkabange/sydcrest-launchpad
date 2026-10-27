@@ -25,7 +25,7 @@ jobs:
       contents: read
       pull-requests: read # the secret scan lists this PR's commits
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # the migration guard and secret scan compare with the base branch
       - uses: pnpm/action-setup@v4
@@ -55,7 +55,7 @@ jobs:
     name: Migrations
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: supabase/setup-cli@v1
         with:
           version: 2.114.0 # keep in step with the local CLI; generated types depend on it
@@ -83,7 +83,7 @@ jobs:
     name: E2E
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v7
         with:
