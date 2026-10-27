@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "@/components/ui/link";
 import { usePathname } from "next/navigation";
-import { MARKETING_NAV } from "@/content/marketing";
+import { PUBLIC_NAV, matchesPath } from "@/lib/nav/config";
 
 /** Always visible, never behind a hamburger: one scrollable row on phones, inline on desktop. */
 export function MarketingNavLinks() {
@@ -36,8 +36,8 @@ function NavList({ pathname }: { pathname: string | null }) {
       style={{ maskImage: mask, WebkitMaskImage: mask }}
       className="-mx-4 flex gap-1 overflow-x-auto overscroll-x-contain px-4 md:-mx-8 md:px-8 lg:mx-0 lg:px-0"
     >
-      {MARKETING_NAV.map(({ href, label }) => {
-        const active = pathname === href;
+      {PUBLIC_NAV.map(({ href, label }) => {
+        const active = pathname !== null && matchesPath(pathname, href);
         return (
           <li key={href} className="shrink-0">
             <Link
