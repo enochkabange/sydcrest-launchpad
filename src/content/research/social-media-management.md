@@ -4,7 +4,7 @@ Tier B outline (issue #96), researched 27 October 2026. Lessons written 27 Octob
 (issue #198) in `src/content/roadmaps/content/social-media-management.content.ts`; see
 "Lesson wave" at the end for the platform facts checked on official pages. Everything in `src/content/roadmaps/social-media-management.ts` is
 original. roadmap.sh was not opened, searched or used, and no "<field> roadmap" style searches
-were run. No logins; LinkedIn was not opened or scraped. Job adverts were read for which
+were run. No logins; LinkedIn profiles were not opened or scraped (one public help article was status checked only). Job adverts were read for which
 skills appear; no advert text is reproduced here or in the outline. Salary figures that
 appeared on some pages and in search summaries were ignored and are not recorded. One listing
 seen in a search summary stated a gender preference; it was not counted.

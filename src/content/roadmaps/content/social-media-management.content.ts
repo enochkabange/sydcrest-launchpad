@@ -1009,7 +1009,7 @@ Material gets lost in long WhatsApp chats. Create one folder per client in a fre
 
 ## Worked example
 
-Amina, who runs the catering service in Wa, is busy with orders all week. Her page manager, Mariama, sends her a voice note every Monday asking for photos of two dishes being prepared and a ten second video of food being served. Amina records them during work. Mariama saves them into a Google Drive folder named "Amina Catering / 2026 / October", writes captions, and once a month visits for a short shoot to refresh product photos. The page now has steady material without Amina ever writing a caption.`,
+Amina, who runs the catering service in Wa, is busy with orders all week. Her page manager, Rashida, sends her a voice note every Monday asking for photos of two dishes being prepared and a ten second video of food being served. Amina records them during work. Rashida saves them into a Google Drive folder named "Amina Catering / 2026 / October", writes captions, and once a month visits for a short shoot to refresh product photos. The page now has steady material without Amina ever writing a caption.`,
       practice_task_md: `**Goal:** Set up a content request routine for one client.
 
 **Steps:**
@@ -1074,7 +1074,7 @@ Amina, who runs the catering service in Wa, is busy with orders all week. Her pa
 * **LinkedIn.** Page admins can schedule posts when creating them.
 * **Third party schedulers.** Tools such as Buffer offer free plans with limits, covering several platforms in one place. They are examples, not requirements.
 
-WhatsApp status cannot be scheduled in the app, so plan to post those by hand.
+WhatsApp status updates are usually posted by hand from the app, so plan time for them in your routine.
 
 ## The approval step
 
@@ -2010,7 +2010,7 @@ When your client works with a creator, send a short written brief: what to show,
 
 ## Worked example
 
-Mariama's fabric shop agrees to give two outfits to Amina, a Tamale lifestyle creator, for a Damba post. Wumpini writes a brief: show the fabric clearly, mention the shop's location and WhatsApp number, no price claims, turn on the paid partnership label and tag the shop, post on the first day of Damba. He accepts Amina's partnership request on the shop's page and checks that the label is visible when the post goes live.`,
+Mariama's fabric shop agrees to give two outfits to Adiza, a Tamale lifestyle creator, for a Damba post. Wumpini writes a brief: show the fabric clearly, mention the shop's location and WhatsApp number, no price claims, turn on the paid partnership label and tag the shop, post on the first day of Damba. He accepts Adiza's partnership request on the shop's page and checks that the label is visible when the post goes live.`,
       practice_task_md: `**Goal:** Prepare an honest promotion kit.
 
 **Steps:**
@@ -2508,7 +2508,7 @@ You do not need a big client first. A real page with an honest result is worth m
 
 ## Worked example
 
-Amina from Wa finished this track while working at her aunt's catering business. She had run the catering page for six months, the youth group page at her church for three months and a short practice page for a friend's phone accessories stall. She wrote a one page case study for each, collected a reference from her aunt and applied for a social media assistant role at a Wa radio station. In the interview, she showed her monthly reviews and explained how she handled an impostor page. She got the role, and kept the church page as a volunteer.
+Zainab finished this track while working at her aunt Amina's catering business in Wa. She had run the catering page for six months, the youth group page at her church for three months and a short practice page for a friend's phone accessories stall. She wrote a one page case study for each, collected a reference from her aunt and applied for a social media assistant role at a Wa radio station. In the interview, she showed her monthly reviews and explained how she handled an impostor page. She got the role, and kept the church page as a volunteer.
 
 ## A note on honesty
 
@@ -2553,7 +2553,7 @@ Never claim results you did not achieve, use other people's work as yours or exa
             explanation: "Running real pages, even unpaid, is evidence you can show.",
           },
           {
-            prompt: "What did Amina show in her interview?",
+            prompt: "What did Zainab show in her interview?",
             options: [
               "Her personal follower count",
               "Monthly reviews and how she handled an impostor page",
@@ -2846,7 +2846,7 @@ Track how many hours each client really takes for a month. If you are always rus
 
 ## Worked example
 
-Mariama manages three pages: a pharmacy, a school and a catering service. She works on each in fixed blocks: the pharmacy Monday morning, the school Monday afternoon, catering Tuesday morning, then inbox checks for all three at set times each day. Each client has an identical folder layout and an access record. Before scheduling, she checks the page name at the top of Meta Business Suite. Her phone has a lock screen and her accounts use an authenticator app. When the catering client asks for daily live streams, she explains that this is outside the agreed package and offers a price for extra sessions.`,
+Rashida manages three pages: a pharmacy, a school and a catering service. She works on each in fixed blocks: the pharmacy Monday morning, the school Monday afternoon, catering Tuesday morning, then inbox checks for all three at set times each day. Each client has an identical folder layout and an access record. Before scheduling, she checks the page name at the top of Meta Business Suite. Her phone has a lock screen and her accounts use an authenticator app. When the catering client asks for daily live streams, she explains that this is outside the agreed package and offers a price for extra sessions.`,
       practice_task_md: `**Goal:** Build a multi client system.
 
 **Steps:**
@@ -2893,7 +2893,7 @@ Mariama manages three pages: a pharmacy, a school and a catering service. She wo
             explanation: "You hold access to several businesses, so one breach can affect all of them.",
           },
           {
-            prompt: "A client asks for daily live streams that were not in the agreed package. What did Mariama do?",
+            prompt: "A client asks for daily live streams that were not in the agreed package. What did Rashida do?",
             options: [
               "Agreed for free to keep them happy",
               "Ignored the request",
