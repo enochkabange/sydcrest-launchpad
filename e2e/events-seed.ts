@@ -105,8 +105,8 @@ export async function seedEvents(): Promise<SeededEvents> {
 }
 
 export async function deleteEvents(seeded: SeededEvents) {
-  const ids = [seeded.skillshop.id, seeded.live.id, seeded.past.id, seeded.cancelled.id].join(",");
-  await admin(`/rest/v1/community_events?id=in.(${ids})`, { method: "DELETE" });
+  // Every event whose slug carries the suffix: the seeded ones and any a spec created through the admin editor.
+  await admin(`/rest/v1/community_events?slug=like.*${seeded.suffix}*`, { method: "DELETE" });
   await admin(`/rest/v1/chapters?id=eq.${seeded.chapter.id}`, { method: "DELETE" });
 }
 

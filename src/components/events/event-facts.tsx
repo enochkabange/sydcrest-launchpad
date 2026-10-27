@@ -59,7 +59,7 @@ export function EventFacts({ event, calendar = true }: { event: FactsEvent; cale
           </Fact>
         )}
         <Fact icon={<Users aria-hidden className={icon} />} label="Seats">
-          {event.capacity ? `${event.capacity} seats` : "No seat limit"}
+          {event.capacity ? `${event.capacity} ${event.capacity === 1 ? "seat" : "seats"}` : "No seat limit"}
           {event.chapter && <span className="block text-content-2">Hosted by the {event.chapter.name} chapter</span>}
         </Fact>
       </dl>

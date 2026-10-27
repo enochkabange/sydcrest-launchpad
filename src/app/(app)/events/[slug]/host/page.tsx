@@ -127,7 +127,7 @@ async function Host({ params }: Pick<PageProps<"/events/[slug]/host">, "params">
               <h2 id="code-heading" className="text-h3 text-content">
                 Check in code
               </h2>
-              <p className="rounded-md bg-surface-sunken py-4 text-center font-mono text-4xl font-bold tracking-[0.15em] text-content" data-testid="checkin-code">
+              <p className="rounded-md bg-surface-sunken py-4 text-center font-mono text-3xl font-bold tracking-[0.1em] whitespace-nowrap text-content" data-testid="checkin-code">
                 {displayCode(access.checkin_code)}
               </p>
               <p className="text-sm text-content-2">

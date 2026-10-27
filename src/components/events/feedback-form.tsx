@@ -29,26 +29,37 @@ function Scale({
 }) {
   const values = Array.from({ length: max - min + 1 }, (_, i) => min + i);
   return (
-    <fieldset className="flex flex-col gap-2" aria-describedby={error ? `${name}-error` : undefined}>
+    <fieldset
+      className="flex flex-col gap-2"
+      aria-describedby={error ? `${name}-error` : undefined}
+    >
       <legend className="text-sm font-semibold text-content">{legend}</legend>
-      <div className="flex flex-wrap gap-1.5">
-        {values.map((v) => (
-          <label key={v} className="relative">
-            <input type="radio" name={name} value={v} defaultChecked={defaultValue === v} className="peer sr-only" />
-            <span className="flex size-11 cursor-pointer items-center justify-center rounded-md border border-line-strong bg-surface text-sm font-semibold text-content transition-colors peer-checked:border-blue-600 peer-checked:bg-blue-600 peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue-600 hover:bg-surface-sunken peer-checked:hover:bg-blue-700">
-              {v}
-            </span>
-          </label>
-        ))}
+      <div className="flex w-fit max-w-full flex-col gap-1">
+        <div className="flex flex-wrap gap-1.5">
+          {values.map((v) => (
+            <label key={v} className="relative">
+              <input
+                type="radio"
+                name={name}
+                value={v}
+                defaultChecked={defaultValue === v}
+                className="peer sr-only"
+              />
+              <span className="flex size-11 cursor-pointer items-center justify-center rounded-md border border-line-strong bg-surface text-sm font-semibold text-content transition-colors peer-checked:border-blue-600 peer-checked:bg-blue-600 peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue-600 hover:bg-surface-sunken peer-checked:hover:bg-blue-700">
+                {v}
+              </span>
+            </label>
+          ))}
+        </div>
+        <p className="flex justify-between text-xs text-content-3" aria-hidden>
+          <span>
+            {min} {low}
+          </span>
+          <span>
+            {max} {high}
+          </span>
+        </p>
       </div>
-      <p className="flex justify-between text-xs text-content-3" aria-hidden>
-        <span>
-          {min} {low}
-        </span>
-        <span>
-          {max} {high}
-        </span>
-      </p>
       {error && (
         <p id={`${name}-error`} className="text-sm text-danger-fg">
           {error}
@@ -58,8 +69,17 @@ function Scale({
   );
 }
 
-export function FeedbackForm({ eventId, saved }: { eventId: string; saved: FeedbackInput | null }) {
-  const [state, action, pending] = useActionState<ActionState, FormData>(feedbackAction, {});
+export function FeedbackForm({
+  eventId,
+  saved,
+}: {
+  eventId: string;
+  saved: FeedbackInput | null;
+}) {
+  const [state, action, pending] = useActionState<ActionState, FormData>(
+    feedbackAction,
+    {},
+  );
   const e = state.errors ?? {};
   return (
     <form
@@ -73,7 +93,9 @@ export function FeedbackForm({ eventId, saved }: { eventId: string; saved: Feedb
       noValidate
     >
       {state.message && <Alert tone="danger">{state.message}</Alert>}
-      {state.ok && <Alert tone="success">Thank you. Your feedback is saved.</Alert>}
+      {state.ok && (
+        <Alert tone="success">Thank you. Your feedback is saved.</Alert>
+      )}
       <input type="hidden" name="event_id" value={eventId} />
       {FEEDBACK_SCALES.map((s) => (
         <Scale
@@ -99,13 +121,18 @@ export function FeedbackForm({ eventId, saved }: { eventId: string; saved: Feedb
         error={e.recommend}
       />
       <fieldset className="flex flex-col gap-2">
-        <legend className="text-sm font-semibold text-content">Would you come to another SydCrest event?</legend>
+        <legend className="text-sm font-semibold text-content">
+          Would you come to another SydCrest event?
+        </legend>
         <div className="flex flex-wrap gap-2">
           {[
             ["yes", "Yes"],
             ["no", "No"],
           ].map(([value, label]) => (
-            <label key={value} className="flex min-h-11 cursor-pointer items-center gap-2 rounded-md border border-line-strong px-4 text-sm font-semibold text-content has-checked:border-blue-600 has-checked:bg-info-bg">
+            <label
+              key={value}
+              className="flex min-h-11 cursor-pointer items-center gap-2 rounded-md border border-line-strong px-4 text-sm font-semibold text-content has-checked:border-blue-600 has-checked:bg-info-bg"
+            >
               <input
                 type="radio"
                 name="attend_again"
@@ -138,9 +165,13 @@ export function FeedbackForm({ eventId, saved }: { eventId: string; saved: Feedb
           </p>
         )}
       </div>
-      <CheckboxField id="quote_consent" defaultChecked={saved?.quote_consent ?? false}>
-        SydCrest may quote my comment, with my first name, in event reports and on the website. Leave this unticked and your comment
-        stays with the organisers.
+      <CheckboxField
+        id="quote_consent"
+        defaultChecked={saved?.quote_consent ?? false}
+      >
+        SydCrest may quote my comment, with my first name, in event reports and
+        on the website. Leave this unticked and your comment stays with the
+        organisers.
       </CheckboxField>
       <Button type="submit" disabled={pending} className="self-start">
         {pending ? "Sending…" : saved ? "Update feedback" : "Send feedback"}

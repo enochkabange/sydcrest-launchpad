@@ -23,8 +23,8 @@ function SeatsLine({ attendance, capacity }: { attendance: Attendance; capacity:
       <Users aria-hidden className="mt-0.5 size-4 shrink-0 text-content-3" />
       <span>
         {attendance.going} going
-        {capacity !== null && !full && `, ${attendance.seatsLeft} of ${capacity} seats left`}
-        {full && `. All ${capacity} seats are taken, so new RSVPs join the waitlist`}
+        {capacity !== null && !full && `, ${attendance.seatsLeft} of ${capacity} ${capacity === 1 ? "seat" : "seats"} left`}
+        {full && `. ${capacity === 1 ? "The only seat is" : `All ${capacity} seats are`} taken, so new RSVPs join the waitlist`}
         {attendance.waitlisted > 0 && ` (${attendance.waitlisted} waiting)`}.
       </span>
     </p>

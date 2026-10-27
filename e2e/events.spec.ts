@@ -55,7 +55,7 @@ test("visitors see an event; RSVPs fill the seats, then the waitlist, and a canc
     await page.goto(path);
     await expect(page.getByRole("heading", { level: 1, name: event.title })).toBeVisible();
     await expect(page.getByText("Tamale Tech Hub")).toBeVisible();
-    await expect(page.getByTestId("seats")).toContainText("0 going, 1 of 1 seats left");
+    await expect(page.getByTestId("seats")).toContainText("0 going, 1 of 1 seat left");
     await expect(page.getByRole("link", { name: "Sign in to RSVP" })).toBeVisible();
     const jsonLd = JSON.parse((await page.locator('script[type="application/ld+json"]').textContent()) ?? "{}");
     expect(jsonLd).toMatchObject({ "@type": "Event", name: event.title, eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode" });
@@ -76,7 +76,7 @@ test("visitors see an event; RSVPs fill the seats, then the waitlist, and a canc
     await signIn(page, wumpini, path);
     await page.getByRole("button", { name: "RSVP" }).click();
     await expect(page.getByText("You are going.")).toBeVisible();
-    await expect(page.getByTestId("seats")).toContainText("All 1 seats are taken");
+    await expect(page.getByTestId("seats")).toContainText("The only seat is taken");
   });
 
   const second = await signedInPage(browser, abdul, path);
