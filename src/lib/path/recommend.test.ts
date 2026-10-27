@@ -1,6 +1,17 @@
 import { describe, expect, it } from "vitest";
-import { answersKey, parseAnswers, type PathAnswers } from "./quiz";
-import { buildPath, chooseTrack, startingIndex, weeklyPlan, type PublishedRoadmap } from "./recommend";
+import { ROADMAP_DRAFTS } from "@/content/roadmaps";
+import { TRACK_CONTENT } from "@/content/roadmaps/content";
+import type { RoadmapTrack } from "@/content/roadmaps/types";
+import { answersKey, CONFIDENCE, DATA, DEVICES, EXPERIENCE, GOALS, HOURS, INTERESTS, parseAnswers, type PathAnswers } from "./quiz";
+import {
+  buildPath,
+  chooseTrack,
+  FULL_LESSON_TRACKS,
+  startingIndex,
+  starterFor,
+  weeklyPlan,
+  type PublishedRoadmap,
+} from "./recommend";
 import { signValue, verifyValue } from "./signing";
 
 const DASHES = /[‐‑‒–—―−]|\s-\s/;
@@ -193,6 +204,119 @@ describe("buildPath", () => {
                   expect(copy).not.toMatch(DASHES);
                 }
     expect(tracks.size).toBe(7);
+  });
+});
+
+describe("every track", () => {
+  const ALL_TRACKS = ROADMAP_DRAFTS.map((r) => r.track);
+
+  it("keeps the full lesson list in step with the lesson content", () => {
+    const fromContent = TRACK_CONTENT.map((c) => ROADMAP_DRAFTS.find((r) => r.slug === c.roadmap)?.track);
+    expect(new Set(fromContent)).toEqual(new Set(FULL_LESSON_TRACKS));
+  });
+
+  // One intended route to each track. Defaults: some confidence, tried, own computer.
+  it.each<[RoadmapTrack, Partial<PathAnswers>]>([
+    ["digital-skills-bridge", { interests: ["web"], confidence: "low", experience: "none" }],
+    ["frontend", { interests: ["web"] }],
+    ["backend", { interests: ["apps"] }],
+    ["mobile-app-developer", { interests: ["mobile"] }],
+    ["it-support", { interests: ["it"], goal: "first-job" }],
+    ["cloud-devops", { interests: ["it"], goal: "switch" }],
+    ["cybersecurity", { interests: ["security"], goal: "first-job" }],
+    ["software-testing", { interests: ["security"], goal: "freelance" }],
+    ["data", { interests: ["data"] }],
+    ["ai-tools-for-work", { interests: ["ai-work"], goal: "first-job" }],
+    ["no-code", { interests: ["ai-work"], goal: "business" }],
+    ["ai-ml", { interests: ["ai-build"], goal: "freelance" }],
+    ["data-science", { interests: ["ai-build"], goal: "first-job" }],
+    ["digital-marketing", { interests: ["marketing"] }],
+    ["digital-business", { interests: ["business"], goal: "business" }],
+    ["freelancing", { interests: ["business"], goal: "freelance" }],
+    ["customer-service", { interests: ["customers"], goal: "first-job" }],
+    ["digital-sales", { interests: ["customers"], goal: "business" }],
+    ["virtual-assistant", { interests: ["office"], goal: "freelance" }],
+    ["excel-power-bi", { interests: ["office"], goal: "first-job" }],
+    ["project-management", { interests: ["office"], goal: "switch" }],
+    ["ui-ux", { interests: ["design"] }],
+    ["graphic-design", { interests: ["creative"], goal: "freelance" }],
+    ["content-creation", { interests: ["creative"], goal: "business" }],
+    ["social-media-management", { interests: ["creative"], goal: "first-job" }],
+    ["product", { interests: ["product"] }],
+  ])("reaches %s", (track, over) => {
+    const result = buildPath(answers({ experience: "tried", ...over }), null);
+    expect(result.track).toBe(track);
+    expect(result.lessonsReady).toBe(FULL_LESSON_TRACKS.has(track));
+  });
+
+  it("is reachable for all tracks from single interests, deterministic and dash free", () => {
+    const reached = new Set<string>();
+    for (const { value: interest } of INTERESTS)
+      for (const { value: confidence } of CONFIDENCE)
+        for (const { value: experience } of EXPERIENCE)
+          for (const { value: goal } of GOALS)
+            for (const { value: hours } of HOURS)
+              for (const { value: device } of DEVICES)
+                for (const { value: data } of DATA) {
+                  const a = answers({ interests: [interest], confidence, experience, goal, hours, device, data });
+                  const result = buildPath(a, null);
+                  expect(buildPath(a, null)).toEqual(result);
+                  reached.add(result.track);
+                  expect(result.lessonsReady).toBe(FULL_LESSON_TRACKS.has(result.track));
+                  if (result.lessonsReady) expect(result.alsoStart).toBeNull();
+                  else expect(FULL_LESSON_TRACKS.has(result.alsoStart!.track)).toBe(true);
+                  const copy = [...result.reasons, result.alsoStart?.why ?? "", result.nextAction.detail].join(" ");
+                  expect(copy).not.toMatch(DASHES);
+                }
+    expect([...reached].sort()).toEqual([...ALL_TRACKS].sort());
+  });
+
+  it("has dash free interest options", () => {
+    for (const o of INTERESTS) expect(`${o.label} ${"hint" in o ? o.hint : ""}`).not.toMatch(DASHES);
+  });
+});
+
+describe("grouped interests", () => {
+  it("prefers a track with lessons ready when scores tie", () => {
+    // Explore has no goal fit, so the full lesson track wins over the outline only one.
+    expect(chooseTrack(answers({ interests: ["customers", "office"], goal: "explore" })).track).toBe(
+      "virtual-assistant",
+    );
+    expect(chooseTrack(answers({ interests: ["business"], goal: "first-job" })).track).toBe("digital-business");
+    expect(chooseTrack(answers({ interests: ["security"], goal: "business" })).track).toBe("cybersecurity");
+  });
+
+  it("prefers a phone friendly track for phone only learners when goal fit is equal", () => {
+    expect(chooseTrack(answers({ interests: ["mobile", "creative"], goal: "explore", device: "phone" })).track).toBe(
+      "graphic-design",
+    );
+  });
+
+  it("starts beginners on the track an advanced one builds on", () => {
+    const ml = chooseTrack(answers({ interests: ["ai-build"], goal: "freelance", experience: "none" }));
+    expect(ml.track).toBe("data");
+    expect(ml.reasons.join(" ")).toMatch(/AI and Machine Learning/);
+    expect(chooseTrack(answers({ interests: ["it"], goal: "switch", experience: "none" })).track).toBe("it-support");
+    expect(chooseTrack(answers({ interests: ["it"], goal: "switch", experience: "built" })).track).toBe(
+      "cloud-devops",
+    );
+  });
+
+  it("suggests a full lesson track alongside an outline only one, or the bridge for low confidence", () => {
+    expect(starterFor(answers(), "frontend")).toBeNull();
+    expect(starterFor(answers(), "excel-power-bi")?.track).toBe("data");
+    expect(starterFor(answers({ confidence: "low", experience: "tried" }), "excel-power-bi")?.track).toBe(
+      "digital-skills-bridge",
+    );
+  });
+
+  it("says plainly when lessons are coming and links the starter when it is published", () => {
+    const a = answers({ interests: ["office"], goal: "first-job" });
+    const result = buildPath(a, null, { slug: "data-analyst", title: "Data Analyst" });
+    expect(result.track).toBe("excel-power-bi");
+    expect(result.lessonsReady).toBe(false);
+    expect(result.alsoStart).toMatchObject({ track: "data", title: "Data Analyst", href: "/roadmaps/data-analyst" });
+    expect(buildPath(a, null).alsoStart?.href).toBeNull();
   });
 });
 

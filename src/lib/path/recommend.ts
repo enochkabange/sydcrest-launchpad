@@ -9,25 +9,131 @@ import type { Goal, Hours, Interest, PathAnswers } from "./quiz";
 
 export type Track = RoadmapTrack;
 
-/** Question order, which is also the tiebreak order between tracks. */
-const INTEREST_TRACK: Record<Exclude<Interest, "unsure">, Track> = {
-  web: "frontend",
-  apps: "backend",
-  data: "data",
-  marketing: "digital-marketing",
-  design: "ui-ux",
-  product: "product",
+/**
+ * The tracks each interest can lead to, best default first. The six original
+ * interests lead to one track each, as before. The grouped interests pick
+ * between their tracks by goal, device and whether lessons are ready.
+ */
+const INTEREST_TRACKS: Record<Exclude<Interest, "unsure">, readonly Track[]> = {
+  web: ["frontend"],
+  apps: ["backend"],
+  mobile: ["mobile-app-developer"],
+  it: ["it-support", "cloud-devops"],
+  security: ["cybersecurity", "software-testing"],
+  data: ["data"],
+  "ai-work": ["ai-tools-for-work", "no-code"],
+  "ai-build": ["ai-ml", "data-science"],
+  marketing: ["digital-marketing"],
+  business: ["digital-business", "freelancing"],
+  customers: ["customer-service", "digital-sales"],
+  office: ["virtual-assistant", "excel-power-bi", "project-management"],
+  design: ["ui-ux"],
+  creative: ["graphic-design", "content-creation", "social-media-management"],
+  product: ["product"],
 };
 
+/**
+ * Tracks with full lessons, matching src/content/roadmaps/content/index.ts
+ * (a test keeps the two in step). Kept as a list here so the path page does
+ * not load every lesson just to know which tracks have them.
+ */
+export const FULL_LESSON_TRACKS: ReadonlySet<Track> = new Set<Track>([
+  "frontend",
+  "digital-marketing",
+  "product",
+  "data",
+  "ui-ux",
+  "digital-skills-bridge",
+  "backend",
+  "ai-tools-for-work",
+  "graphic-design",
+  "digital-business",
+  "it-support",
+  "content-creation",
+  "cybersecurity",
+  "virtual-assistant",
+  "mobile-app-developer",
+]);
+
 /** Tracks whose early sections work on a phone. The others need a computer for practice. */
-const PHONE_FRIENDLY: ReadonlySet<Track> = new Set(["digital-marketing", "ui-ux", "product", "digital-skills-bridge"]);
+const PHONE_FRIENDLY: ReadonlySet<Track> = new Set<Track>([
+  "digital-marketing",
+  "ui-ux",
+  "product",
+  "digital-skills-bridge",
+  "ai-tools-for-work",
+  "graphic-design",
+  "virtual-assistant",
+  "digital-business",
+  "content-creation",
+  "social-media-management",
+  "customer-service",
+  "digital-sales",
+  "project-management",
+  "freelancing",
+  "software-testing",
+]);
 
 const GOAL_AFFINITY: Record<Goal, Track[]> = {
-  "first-job": ["data", "frontend", "digital-marketing"],
-  freelance: ["frontend", "ui-ux", "digital-marketing"],
-  switch: ["product", "data", "ui-ux"],
-  business: ["digital-marketing", "product"],
+  "first-job": [
+    "data",
+    "frontend",
+    "digital-marketing",
+    "it-support",
+    "cybersecurity",
+    "ai-tools-for-work",
+    "data-science",
+    "excel-power-bi",
+    "customer-service",
+    "social-media-management",
+  ],
+  freelance: [
+    "frontend",
+    "ui-ux",
+    "digital-marketing",
+    "it-support",
+    "software-testing",
+    "no-code",
+    "ai-ml",
+    "virtual-assistant",
+    "customer-service",
+    "freelancing",
+    "graphic-design",
+  ],
+  switch: [
+    "product",
+    "data",
+    "ui-ux",
+    "cloud-devops",
+    "cybersecurity",
+    "ai-tools-for-work",
+    "data-science",
+    "project-management",
+    "digital-sales",
+    "content-creation",
+  ],
+  business: [
+    "digital-marketing",
+    "product",
+    "it-support",
+    "no-code",
+    "ai-ml",
+    "excel-power-bi",
+    "digital-sales",
+    "digital-business",
+    "content-creation",
+  ],
   explore: [],
+};
+
+/**
+ * Advanced outline tracks that build on another track. Learners who have not
+ * tried a tech skill yet start on the track underneath instead.
+ */
+const BUILDS_ON: Partial<Record<Track, Track>> = {
+  "ai-ml": "data",
+  "data-science": "data",
+  "cloud-devops": "it-support",
 };
 
 export type TrackChoice = { track: Track; reasons: string[] };
@@ -43,7 +149,8 @@ export function chooseTrack(a: PathAnswers): TrackChoice {
     };
   }
 
-  const candidates = a.interests.filter((i) => i !== "unsure").map((i) => INTEREST_TRACK[i]);
+  const picked = a.interests.filter((i) => i !== "unsure");
+  const candidates = [...new Set(picked.flatMap((i) => INTEREST_TRACKS[i]))];
 
   if (candidates.length === 0) {
     const track = fallbackForGoal(a);
@@ -57,19 +164,103 @@ export function chooseTrack(a: PathAnswers): TrackChoice {
   }
 
   if (candidates.length === 1) {
-    return { track: candidates[0], reasons: ["It is the area you said interests you most."] };
+    return withPrerequisite(a, { track: candidates[0], reasons: ["It is the area you said interests you most."] });
   }
 
-  // Several interests: goal fit counts double, then phone fit, then question order.
-  const score = (t: Track) =>
-    (GOAL_AFFINITY[a.goal].includes(t) ? 2 : 0) + (a.device === "phone" && PHONE_FRIENDLY.has(t) ? 1 : 0);
+  // Several tracks: goal fit counts double, then phone fit. Ties go to a
+  // track with lessons ready, then to question order.
+  const goalFit = (t: Track) => GOAL_AFFINITY[a.goal].includes(t);
+  const phoneFit = (t: Track) => a.device === "phone" && PHONE_FRIENDLY.has(t);
+  const score = (t: Track) => (goalFit(t) ? 2 : 0) + (phoneFit(t) ? 1 : 0);
   let best = candidates[0];
-  for (const t of candidates) if (score(t) > score(best)) best = t;
+  for (const t of candidates) {
+    const better = score(t) > score(best) || (score(t) === score(best) && FULL_LESSON_TRACKS.has(t) && !FULL_LESSON_TRACKS.has(best));
+    if (better) best = t;
+  }
 
-  const reasons = ["It is one of the areas you picked."];
-  if (GOAL_AFFINITY[a.goal].includes(best)) reasons.push("It fits the goal you chose best.");
-  if (a.device === "phone" && PHONE_FRIENDLY.has(best)) reasons.push("You can make real progress on it with just a phone.");
-  return { track: best, reasons };
+  const reasons = [picked.length === 1 ? "It is the area you said interests you most." : "It is one of the areas you picked."];
+  if (goalFit(best)) reasons.push("It fits the goal you chose best.");
+  if (phoneFit(best)) reasons.push("You can make real progress on it with just a phone.");
+  return withPrerequisite(a, { track: best, reasons });
+}
+
+function withPrerequisite(a: PathAnswers, choice: TrackChoice): TrackChoice {
+  const base = BUILDS_ON[choice.track];
+  if (!base || a.experience !== "none") return choice;
+  const advanced = draftFor(choice.track).title;
+  return {
+    track: base,
+    reasons: [
+      `You are interested in ${advanced}, which builds on ${draftFor(base).title}.`,
+      `You told us you are new to tech skills, so we start you on ${draftFor(base).title} and you can move on to ${advanced} after it.`,
+    ],
+  };
+}
+
+/**
+ * A track with full lessons to start alongside an outline only track, so the
+ * learner has lessons to work through while the rest are written.
+ */
+const STARTER: Partial<Record<Track, { track: Track; why: string }>> = {
+  "cloud-devops": {
+    track: "it-support",
+    why: "Cloud work builds on the computers, networks and Linux skills it teaches.",
+  },
+  "software-testing": {
+    track: "frontend",
+    why: "Knowing how websites are built helps you find and explain bugs.",
+  },
+  "ai-ml": {
+    track: "data",
+    why: "Machine learning builds on the statistics, SQL and Python it teaches.",
+  },
+  "data-science": {
+    track: "data",
+    why: "Data science builds on the statistics, SQL and Python it teaches.",
+  },
+  "no-code": {
+    track: "ai-tools-for-work",
+    why: "It covers automating small repetitive tasks, a natural first step into no code tools.",
+  },
+  "customer-service": {
+    track: "virtual-assistant",
+    why: "It covers customer support basics, clear writing, calls and chat.",
+  },
+  "digital-sales": {
+    track: "digital-business",
+    why: "It covers selling on WhatsApp and social media and taking mobile money safely.",
+  },
+  "excel-power-bi": {
+    track: "data",
+    why: "It teaches spreadsheets, pivot tables and Power BI dashboards.",
+  },
+  "social-media-management": {
+    track: "digital-marketing",
+    why: "It covers growing a business on social media and WhatsApp.",
+  },
+  freelancing: {
+    track: "virtual-assistant",
+    why: "It gives you a service clients pay for and covers finding clients and getting paid safely.",
+  },
+  "project-management": {
+    track: "virtual-assistant",
+    why: "It covers the documents, calendars, task lists and reporting that project work runs on.",
+  },
+};
+
+/**
+ * What to start alongside an outline only track, or null when the track has
+ * lessons ready. Learners still getting comfortable with digital tools start
+ * with the bridge.
+ */
+export function starterFor(a: PathAnswers, track: Track): { track: Track; why: string } | null {
+  if (FULL_LESSON_TRACKS.has(track)) return null;
+  if (a.confidence === "low") {
+    return { track: "digital-skills-bridge", why: "It builds the everyday digital skills every track assumes." };
+  }
+  const starter = STARTER[track];
+  if (!starter) throw new Error(`No starter track for ${track}`);
+  return starter;
 }
 
 function fallbackForGoal(a: PathAnswers): Track {
@@ -200,11 +391,24 @@ export type PathResult = {
   skillGap: { slug: string; title: string; status: GapStatus }[];
   plan: WeeklyPlan;
   nextAction: { label: string; detail: string; href: string | null };
+  /** False while the track has an outline but its lessons are still being written. */
+  lessonsReady: boolean;
+  /** A track with lessons ready to start alongside an outline only track. */
+  alsoStart: { track: Track; title: string; why: string; href: string | null } | null;
 };
 
-export function buildPath(a: PathAnswers, published: PublishedRoadmap | null): PathResult {
+/**
+ * @param starterPublished the published roadmap of the starter track (see
+ * starterFor), used only to link to it.
+ */
+export function buildPath(
+  a: PathAnswers,
+  published: PublishedRoadmap | null,
+  starterPublished: Pick<PublishedRoadmap, "slug" | "title"> | null = null,
+): PathResult {
   const { track, reasons } = chooseTrack(a);
   const draft = draftFor(track);
+  const starter = starterFor(a, track);
   const sections = published?.sections.length ? published.sections : draftSections(track);
   const index = startingIndex(a, track, sections.length);
   const start = sections[index];
@@ -247,5 +451,12 @@ export function buildPath(a: PathAnswers, published: PublishedRoadmap | null): P
     })),
     plan,
     nextAction,
+    lessonsReady: FULL_LESSON_TRACKS.has(track),
+    alsoStart: starter && {
+      track: starter.track,
+      title: starterPublished?.title ?? draftFor(starter.track).title,
+      why: starter.why,
+      href: starterPublished ? `/roadmaps/${starterPublished.slug}` : null,
+    },
   };
 }

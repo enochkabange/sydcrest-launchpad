@@ -12,9 +12,11 @@ import {
   EXPERIENCE,
   GOALS,
   HOURS,
+  INTEREST_GROUPS,
   INTERESTS,
   QUIZ_VERSION,
   parseAnswers,
+  type InterestOption,
   type Option,
   type PathAnswers,
 } from "@/lib/path/quiz";
@@ -181,15 +183,22 @@ export function StartQuiz() {
 
       {step === 0 && (
         <Question legend="What sounds interesting to you?" hint="Pick as many as you like.">
-          {INTERESTS.map((o) => (
-            <OptionCard
-              key={o.value}
-              type="checkbox"
-              name="interests"
-              option={o}
-              checked={draft.interests.includes(o.value)}
-              onChange={() => toggleInterest(o.value)}
-            />
+          {[...INTEREST_GROUPS, undefined].map((group) => (
+            <div key={group ?? "other"} className="flex flex-col gap-2">
+              {group && <h3 className="mt-2 text-sm font-semibold text-content-2">{group}</h3>}
+              <div className={group ? "grid gap-3 md:grid-cols-2" : "flex flex-col gap-3"}>
+                {INTERESTS.filter((o: InterestOption) => o.group === group).map((o) => (
+                  <OptionCard
+                    key={o.value}
+                    type="checkbox"
+                    name="interests"
+                    option={o}
+                    checked={draft.interests.includes(o.value)}
+                    onChange={() => toggleInterest(o.value)}
+                  />
+                ))}
+              </div>
+            </div>
           ))}
         </Question>
       )}

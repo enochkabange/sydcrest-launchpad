@@ -42,6 +42,33 @@ export function PathResultView({ result }: { result: PathResult }) {
         </p>
       )}
 
+      {!result.lessonsReady && (
+        <section
+          aria-labelledby="lessons-heading"
+          className="flex flex-col items-start gap-3 rounded-lg border border-line bg-surface-sunken p-5"
+        >
+          <h2 id="lessons-heading" className="text-lg text-content">
+            Lessons for this track are coming
+          </h2>
+          <p className="text-content-2">
+            The {result.trackTitle} outline shows what to learn and in what order, but its lessons are
+            still being written.
+            {result.alsoStart && (
+              <>
+                {" "}
+                While you wait, start with <strong className="text-content">{result.alsoStart.title}</strong>,
+                which has lessons ready now. {result.alsoStart.why}
+              </>
+            )}
+          </p>
+          {result.alsoStart?.href && (
+            <Link href={result.alsoStart.href} className={buttonClasses("secondary")}>
+              Open {result.alsoStart.title}
+            </Link>
+          )}
+        </section>
+      )}
+
       <section aria-labelledby="next-heading" className="flex flex-col items-start gap-3 rounded-lg border border-line p-5">
         <h2 id="next-heading" className="text-lg text-content">
           Your next step
