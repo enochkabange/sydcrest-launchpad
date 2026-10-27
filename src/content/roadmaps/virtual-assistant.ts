@@ -37,7 +37,7 @@ export const virtualAssistant: RoadmapDraft = {
   slug: "virtual-assistant",
   title: "Virtual Assistant and Remote Work",
   description:
-    "Support busy people and businesses with email, calendars, documents, research and customer messages, for local employers or remote clients abroad. Learn the tools on your phone, work reliably through power and data cuts, find honest clients and get paid safely.",
+    "Support busy people and businesses with email, calendars, documents, research and customer messages, for local employers or remote clients abroad. Learn the tools on your phone or computer, work reliably through power and data cuts, find honest clients and get paid safely.",
   track: "virtual-assistant",
   field_category: "business",
   locale: "en-GH",
@@ -101,7 +101,7 @@ export const virtualAssistant: RoadmapDraft = {
       slug: "calls-and-meetings",
       title: "Calls, chat and video meetings",
       summary:
-        "Handle work chat, phone calls and video meetings professionally, even on a phone with limited data. Take clear notes and send a short summary with the actions afterwards.",
+        "Handle work chat, phone calls and video meetings professionally on a phone or a laptop, even with limited data. Take clear notes and send a short summary with the actions afterwards.",
       parent: "communication",
       optional: false,
       resources: [VA.meetSchedule, VA.lfTeams],

@@ -58,7 +58,7 @@ export const graphicDesign: RoadmapDraft = {
   slug: "graphic-designer",
   title: "Graphic Designer",
   description:
-    "Design flyers, social media graphics, logos and brand materials that shops, churches, schools, NGOs and agencies pay for. Start with free design apps on your phone, then learn the principles, print know how, client skills and portfolio that turn design into paid work.",
+    "Design flyers, social media graphics, logos and brand materials that shops, churches, schools, NGOs and agencies pay for. Start with free design apps on your phone or computer, then learn the principles, print know how, client skills and portfolio that turn design into paid work.",
   track: "graphic-design",
   field_category: "design",
   locale: "en-GH",
@@ -68,7 +68,7 @@ export const graphicDesign: RoadmapDraft = {
       slug: "foundations",
       title: "Foundations",
       summary:
-        "Find out what graphic designers in Ghana actually do, which free tools you can start with today and the few principles behind every good design. Everything in this section works on a phone.",
+        "Find out what graphic designers in Ghana actually do, which free tools you can start with today and the few principles behind every good design. You can do everything in this section on a phone or a computer.",
       parent: null,
       optional: false,
       resources: [RES.lfDesign],
