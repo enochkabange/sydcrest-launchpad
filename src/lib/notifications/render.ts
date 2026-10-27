@@ -168,6 +168,61 @@ export function renderGeneric(kind: string, payload: Payload): RenderedNotificat
   };
 }
 
+/**
+ * Kinds sent by server code that already writes its own title, body and
+ * href (bookings #186, briefs and pitches #187, event reminders #183). The
+ * sender's copy wins; these fill in a title and a link from the ids when a
+ * payload arrives without them.
+ */
+function senderCopy(p: Payload, fallback: RenderedNotification): RenderedNotification {
+  return {
+    title: str(p, "title") ?? fallback.title,
+    body: str(p, "body", MAX_BODY) ?? fallback.body,
+    href: safeHref(p.href) ?? fallback.href,
+    icon: fallback.icon,
+  };
+}
+
+const BOOKING_TITLES: Record<string, (actor: string) => string> = {
+  requested: (a) => `${a} asked to book a session with you`,
+  accepted: (a) => `${a} accepted your booking`,
+  declined: (a) => `${a} declined your booking request`,
+  cancelled: (a) => `${a} cancelled the booking`,
+  completed: (a) => `${a} marked the booking complete`,
+  message: (a) => `New message from ${a}`,
+  review: (a) => `${a} left you a review`,
+};
+
+function bookingFallback(p: Payload, kind: "booking" | "review"): RenderedNotification {
+  const bookingId = uuid(p, "booking_id");
+  const briefId = uuid(p, "brief_id");
+  const event = typeof p.event === "string" && Object.hasOwn(BOOKING_TITLES, p.event) ? p.event : kind === "review" ? "review" : null;
+  const actor = str(p, "actor_name", 60);
+  const offer = str(p, "offer_title");
+  return {
+    title: event && actor ? BOOKING_TITLES[event](actor) : kind === "review" ? "You have a new review" : "Update on a booking",
+    body: offer ? `About ${offer}.` : null,
+    href: bookingId ? `/bookings/${bookingId}` : briefId ? `/briefs/${briefId}` : "/bookings",
+    icon: "booking",
+  };
+}
+
+Object.assign(RENDERERS, {
+  booking: (p: Payload) => senderCopy(p, bookingFallback(p, "booking")),
+  review: (p: Payload) => senderCopy(p, bookingFallback(p, "review")),
+  opportunity: (p: Payload) => {
+    const briefId = uuid(p, "brief_id");
+    const opportunitySlug = slug(p, "opportunity_slug");
+    return senderCopy(p, {
+      title: briefId ? "A new brief matches your skills" : "A new opportunity for you",
+      body: null,
+      href: briefId ? `/briefs/${briefId}` : opportunitySlug ? `/opportunities/${opportunitySlug}` : "/opportunities",
+      icon: "opportunity",
+    });
+  },
+  system: (p: Payload) => renderGeneric("system", p),
+} satisfies Record<string, Renderer>);
+
 export function renderNotification(kind: string, payload: unknown): RenderedNotification {
   const p: Payload = payload && typeof payload === "object" && !Array.isArray(payload) ? (payload as Payload) : {};
   const renderer = Object.hasOwn(RENDERERS, kind) ? RENDERERS[kind] : null;

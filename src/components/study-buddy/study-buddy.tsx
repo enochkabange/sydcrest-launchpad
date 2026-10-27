@@ -54,7 +54,7 @@ function Unavailable({ companion }: { companion: boolean }) {
     <PanelShell>
       <Alert tone="info">
         {companion
-          ? "Study Buddy is resting right now, so chat is switched off for the moment. Your path, mentors, opportunities and events are all still open from the menu. Please check back later."
+          ? "Study Buddy is resting right now, so chat is switched off for the moment. Your path, lessons and the rest of SydCrest work as usual. Please check back later."
           : "Study Buddy is resting right now, so chat is switched off for the moment. The lesson, practice task and checkpoint all work as usual. Please check back later."}
       </Alert>
     </PanelShell>

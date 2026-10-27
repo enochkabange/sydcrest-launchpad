@@ -71,8 +71,37 @@ describe("renderNotification: server sent and unknown kinds", () => {
   });
 
   it("gives booking, review, cohort and opportunity a sensible title when the payload has none", () => {
-    expect(renderNotification("booking", { booking_id: POST })).toMatchObject({ title: "Update on a booking", href: null, icon: "booking" });
-    expect(renderNotification("opportunity", {}).title).toBe("A new opportunity for you");
+    expect(renderNotification("booking", { booking_id: POST })).toMatchObject({ title: "Update on a booking", href: `/bookings/${POST}`, icon: "booking" });
+    expect(renderNotification("opportunity", {})).toMatchObject({ title: "A new opportunity for you", href: "/opportunities" });
+  });
+
+  it("keeps the copy bookings send (#186) and fills gaps from the ids", () => {
+    const sent = {
+      event: "accepted",
+      booking_id: POST,
+      actor_name: "Fuseini Alhassan",
+      offer_title: "CV review",
+      title: "Fuseini Alhassan accepted your request",
+      body: "About CV review.",
+      href: `/bookings/${POST}`,
+    };
+    expect(renderNotification("booking", sent)).toEqual({ title: sent.title, body: sent.body, href: sent.href, icon: "booking" });
+    expect(renderNotification("booking", { event: "message", booking_id: POST, actor_name: "Mariama Seidu" })).toMatchObject({
+      title: "New message from Mariama Seidu",
+      href: `/bookings/${POST}`,
+    });
+    expect(renderNotification("review", { event: "review", booking_id: POST, actor_name: "Wumpini Abukari", offer_title: "Portfolio review" })).toMatchObject({
+      title: "Wumpini Abukari left you a review",
+      body: "About Portfolio review.",
+    });
+  });
+
+  it("links brief and pitch notices (#187) to the brief", () => {
+    expect(renderNotification("opportunity", { brief_id: POST })).toMatchObject({ title: "A new brief matches your skills", href: `/briefs/${POST}` });
+    expect(renderNotification("booking", { brief_id: POST, title: "Abdul-Rahman pitched on your brief", href: `/briefs/${POST}#pitches` })).toMatchObject({
+      href: `/briefs/${POST}#pitches`,
+    });
+    expect(renderNotification("booking", { brief_id: POST, title: "x", href: "https://evil.example" }).href).toBe(`/briefs/${POST}`);
   });
 
   it("falls back safely for a kind it has never seen", () => {
