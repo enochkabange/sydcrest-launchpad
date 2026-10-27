@@ -7,8 +7,8 @@ import { MainWithRail } from "@/components/ui/layout";
 import { getCohortHome } from "@/lib/cohort/data";
 import { CohortRail, NoCohort, PlanSkeleton, SpecializationCard } from "@/components/cohort/home-bits";
 import { stateFor } from "@/components/cohort/week-plan";
+import { SubmissionSkeleton, WeekSubmission } from "@/components/cohort/submission";
 import {
-  SubmissionSlot,
   WeekAssignment,
   WeekHeader,
   WeekLessons,
@@ -56,7 +56,11 @@ async function Week({ params }: { params: Promise<{ n: string }> }) {
             startsOn={home.cohort.startsOn}
             graceDays={home.program.graceDays}
           >
-            <SubmissionSlot submission={home.submissions.get(entry.week.id)} passScore={home.program.passScore} />
+            <div className="border-t border-line pt-5">
+              <Suspense fallback={<SubmissionSkeleton />}>
+                <WeekSubmission weekId={entry.week.id} layout="stacked" headingLevel={4} />
+              </Suspense>
+            </div>
           </WeekAssignment>
         </>
       ) : (

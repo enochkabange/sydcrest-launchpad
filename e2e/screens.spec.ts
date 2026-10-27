@@ -4,7 +4,6 @@ import { signUpAndConfirm } from "./auth";
 import { deleteDmpCohort, seedDmpCohort, type SeededDmpCohort } from "./cohort-seed";
 import { createLearner, PASSWORD } from "./learners";
 import { deleteRoadmap, seedRoadmap, type SeededRoadmap } from "./seed";
-import { PASSWORD } from "./learners";
 import {
   createLearnerRetrying,
   deleteSeededCohort,

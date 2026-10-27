@@ -20,12 +20,29 @@ import { RubricSummary, SubmittedWork } from "./submitted-work";
  * weekId is the learner's own program_weeks row for that week number (their
  * specialization's row where one exists, else the shared row).
  */
-export async function WeekSubmission({ weekId, headingId = "your-work-heading" }: { weekId: string; headingId?: string }) {
+export async function WeekSubmission({
+  weekId,
+  headingId = "your-work-heading",
+  layout = "split",
+  headingLevel = 2,
+}: {
+  weekId: string;
+  headingId?: string;
+  /**
+   * "split": work beside a feedback rail from lg, for a full width page.
+   * "stacked": one column at every width, for a slot inside a narrower main
+   * column (the cohort week page, which already has a rail).
+   */
+  layout?: "split" | "stacked";
+  headingLevel?: 2 | 3 | 4;
+}) {
+  const Heading = (`h${headingLevel}` as "h2" | "h3" | "h4");
+  const stacked = layout === "stacked";
   const user = await requireUser();
   const week = await getWeek(weekId);
   if (!week) {
     return (
-      <EmptyCard title="This week is not open">
+      <EmptyCard title="This week is not open" as={Heading}>
         We couldn&apos;t find this week&apos;s assignment. Go back to your cohort and choose the week again.
       </EmptyCard>
     );
@@ -38,7 +55,7 @@ export async function WeekSubmission({ weekId, headingId = "your-work-heading" }
 
   if (!membership && !submission) {
     return (
-      <EmptyCard title="Submissions open when you join a cohort">
+      <EmptyCard title="Submissions open when you join a cohort" as={Heading}>
         Once you are an active learner in {week.programTitle || "this programme"}, you can send your work for this week here
         and get feedback from AI and your mentor.
       </EmptyCard>
@@ -55,13 +72,14 @@ export async function WeekSubmission({ weekId, headingId = "your-work-heading" }
   });
   const graded = status === "graded";
   const canEdit = !graded && Boolean(membership);
+  const hasFeedback = state !== "none" || status === "graded" || status === "returned";
 
   return (
     <div className="flex flex-col gap-6">
       <header className="flex flex-wrap items-center gap-x-3 gap-y-2">
-        <h2 id={headingId} className="text-subtitle text-content">
+        <Heading id={headingId} className={headingLevel === 2 ? "text-subtitle text-content" : "text-h3 text-content"}>
           Your work
-        </h2>
+        </Heading>
         <SubmissionStatusBadge status={status} />
         {submission && submission.attempt > 1 && (
           <span className="text-sm text-content-3">Attempt {submission.attempt}</span>
@@ -73,10 +91,16 @@ export async function WeekSubmission({ weekId, headingId = "your-work-heading" }
         )}
       </header>
 
-      <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start lg:gap-10 xl:grid-cols-[minmax(0,1fr)_22.5rem] xl:gap-12">
+      <div
+        className={
+          stacked
+            ? "flex flex-col gap-6"
+            : "flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:items-start lg:gap-10 xl:grid-cols-[minmax(0,1fr)_22.5rem] xl:gap-12"
+        }
+      >
         <div className="flex min-w-0 flex-col gap-6">
-          {/* Feedback first on phones, where it is what the learner came back for. */}
-          <div className="flex flex-col gap-4 lg:hidden">
+          {/* Feedback first on phones (and in a stacked slot), where it is what the learner came back for. */}
+          <div className={hasFeedback ? `flex flex-col gap-4 ${stacked ? "" : "lg:hidden"}` : "hidden"}>
             <MentorFeedbackPanel
               status={status}
               finalScore={submission?.finalScore ?? null}
@@ -115,7 +139,7 @@ export async function WeekSubmission({ weekId, headingId = "your-work-heading" }
         </div>
 
         <aside aria-label="Feedback and marking" className="flex min-w-0 flex-col gap-4">
-          <div className="hidden flex-col gap-4 lg:flex">
+          <div className={stacked ? "hidden" : "hidden flex-col gap-4 lg:flex"}>
             <MentorFeedbackPanel
               status={status}
               finalScore={submission?.finalScore ?? null}
@@ -146,10 +170,10 @@ export function SubmissionSkeleton() {
   );
 }
 
-function EmptyCard({ title, children }: { title: string; children: ReactNode }) {
+function EmptyCard({ title, children, as: Heading = "h2" }: { title: string; children: ReactNode; as?: "h2" | "h3" | "h4" }) {
   return (
     <div className="flex flex-col gap-2 rounded-lg border border-dashed border-line-strong bg-surface-sunken p-6 lg:p-8">
-      <h2 className="text-subtitle text-content">{title}</h2>
+      <Heading className={Heading === "h2" ? "text-subtitle text-content" : "text-h3 text-content"}>{title}</Heading>
       <p className="max-w-reading text-content-2">{children}</p>
     </div>
   );
