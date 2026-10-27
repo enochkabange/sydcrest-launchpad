@@ -1,6 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 import { PASSWORD, type Learner } from "./learners";
 import { createLearnerRetrying, deleteSeededCohort, findSubmission, gradeAsMentor, seedCohortWithLearner, type SeededCohort } from "./submissions-seed";
+import { admin } from "./supabase-admin";
 
 /**
  * Assignment submissions (#145). The local stack and CI run without
@@ -77,6 +78,19 @@ test("a learner drafts, submits, resubmits, sees the grade and adds the work to 
   await page.goto("/cohort/work");
   await expect(page.getByRole("heading", { name: "Your work", level: 1 })).toBeVisible();
   await expect(page.getByText("1 of 1 graded piece is in your portfolio.")).toBeVisible();
+
+  // With a public profile, the portfolio shows on /u/[slug] to anyone:
+  // the work and its link, never the score or the feedback.
+  const slug = `abdul-${learner.id.slice(0, 8)}`;
+  await admin(`/rest/v1/profiles?id=eq.${learner.id}`, { method: "PATCH", body: { public_slug: slug, is_public: true } });
+  await page.context().clearCookies();
+  await page.goto(`/u/${slug}`);
+  const portfolio = page.locator("section", { has: page.getByRole("heading", { name: "Portfolio", level: 2 }) });
+  await expect(portfolio.getByText(seed.weekTheme.replace(/\s*[—–]\s*/g, ": "))).toBeVisible();
+  await expect(portfolio.getByText("Here is my weekly plan.")).toBeVisible();
+  await expect(portfolio.getByRole("link", { name: "Open the work" })).toHaveAttribute("href", "https://example.com/my-plan");
+  await expect(portfolio.getByText(/78/)).toHaveCount(0);
+  await expect(page.getByText("Clear plan. Next, add one real post with a photo.")).toHaveCount(0);
 });
 
 test("someone outside a cohort sees an honest notice instead of the form", async ({ page }) => {
