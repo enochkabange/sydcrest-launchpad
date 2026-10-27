@@ -20,7 +20,7 @@ import {
  * Signed out visitors get a random first party anonymous id cookie for the
  * analytics funnel (lib/analytics); nothing personal, no third parties.
  */
-const PROTECTED = ["/dashboard", "/profile", "/learn", "/leaderboards", "/admin"];
+const PROTECTED = ["/dashboard", "/profile", "/learn", "/leaderboards", "/cohort", "/admin"];
 const SIGNED_IN_ONLY = [...PROTECTED, "/welcome"];
 /**
  * The path quiz result: signed out visitors arrive from the quiz, so they go
