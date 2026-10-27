@@ -16,6 +16,10 @@ import { cloudDevops } from "./cloud-devops";
 import { softwareTesting } from "./software-testing";
 import { aiMl } from "./ai-ml";
 import { dataScience } from "./data-science";
+import { customerService } from "./customer-service";
+import { digitalSales } from "./digital-sales";
+import { excelPowerBi } from "./excel-power-bi";
+import { projectManagement } from "./project-management";
 import type { RoadmapDraft } from "./types";
 import { uiUx } from "./ui-ux";
 import { socialMediaManagement } from "./social-media-management";
@@ -52,4 +56,8 @@ export const ROADMAP_DRAFTS: RoadmapDraft[] = [
   socialMediaManagement,
   noCode,
   freelancing,
+  customerService,
+  digitalSales,
+  excelPowerBi,
+  projectManagement,
 ];
