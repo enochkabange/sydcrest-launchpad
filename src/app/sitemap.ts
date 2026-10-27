@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+import { getExpertSitemapEntries } from "@/lib/experts/sitemap";
+import { expertPath } from "@/lib/experts/offers";
 import { opportunityPath } from "@/components/opportunities/paths";
 import { getOpenOpportunities } from "@/lib/opportunities/public";
 import { getPublishedPaths } from "@/lib/roadmaps/public";
@@ -13,6 +15,7 @@ const PAGES: { path: string; priority: number }[] = [
   { path: "/start", priority: 0.8 },
   { path: "/roadmaps", priority: 0.8 },
   { path: "/opportunities", priority: 0.8 },
+  { path: "/experts", priority: 0.8 },
   { path: "/about", priority: 0.7 },
   { path: "/partners", priority: 0.7 },
   { path: "/business", priority: 0.6 },
@@ -24,7 +27,11 @@ const url = (path: string) => new URL(path, BASE).toString();
 
 /** Published roadmaps and open opportunities come from cached reads, refreshed by revalidateRoadmap and revalidateOpportunities. */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const [roadmaps, opportunities] = await Promise.all([getPublishedPaths(), getOpenOpportunities()]);
+  const [roadmaps, opportunities, experts] = await Promise.all([
+    getPublishedPaths(),
+    getOpenOpportunities(),
+    getExpertSitemapEntries(),
+  ]);
   return [
     ...PAGES.map(({ path, priority }) => ({ url: url(path), changeFrequency: "monthly" as const, priority })),
     ...roadmaps.flatMap(({ slug, updated_at, nodes }) => [
@@ -40,6 +47,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: url(opportunityPath(o.slug)),
       lastModified: o.updated_at,
       changeFrequency: "daily" as const,
+      priority: 0.6,
+    })),
+    ...experts.map(({ slug, approvedAt }) => ({
+      url: url(expertPath(slug)),
+      ...(approvedAt ? { lastModified: approvedAt } : {}),
+      changeFrequency: "weekly" as const,
       priority: 0.6,
     })),
   ];
