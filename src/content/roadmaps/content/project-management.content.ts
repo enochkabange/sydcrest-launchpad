@@ -1803,6 +1803,529 @@ Report what really happened, including problems. Donors understand that projects
         pass_threshold: 75,
       },
     },
+    "tracking-progress-and-spending": {
+      explanation_md: `Catching a problem in week three, when there is still time to fix it, is most of what good project management looks like. That is why adverts ask for budget tracking, monitoring progress and keeping records. The tool is usually a spreadsheet, and the skill is comparing **planned** with **actual**.
+
+## Tracking progress
+
+Add three columns to the tasks tab of your project spreadsheet:
+
+* **Planned end date:** from your schedule.
+* **Actual end date:** filled in when the task finishes.
+* **Status:** not started, on track, late or done.
+
+For outputs, keep a separate table with the indicator, the target, the actual figure so far, and the percentage achieved. For example: "Committee members trained, target 10, actual 8, 80 percent." The percentage formula is simply actual divided by target.
+
+## Tracking spending
+
+On the budget tab, add columns next to each approved line:
+
+* **Budget:** the approved amount.
+* **Spent to date:** the total of receipts and payments on that line so far.
+* **Remaining:** budget minus spent, using a formula such as =B2-C2.
+* **Percent spent:** spent divided by budget.
+
+The difference between budget and actual is called the **variance**. A small variance is normal. A large one needs an explanation and often a decision.
+
+## Flagging problems with colour
+
+Conditional formatting in a spreadsheet changes a cell's colour automatically based on a rule. For example:
+
+* Turn a task row red if the planned end date has passed and the status is not done.
+* Turn a budget line orange if more than 90 percent is spent while the activity is not finished.
+
+This turns a long table into something you can scan in seconds on any screen.
+
+## A worked example
+
+Halfway through the water project, Mariama's tracking sheet shows:
+
+| Line | Budget (GHS) | Spent (GHS) | Remaining | % spent |
+|---|---|---|---|---|
+| Drilling contract | 40,000 | 40,000 | 0 | 100 |
+| Committee training | 4,140 | 0 | 4,140 | 0 |
+| Fuel and travel | 3,000 | 2,700 | 300 | 90 |
+| Water testing | 1,500 | 0 | 1,500 | 0 |
+
+All figures are invented for practice. The fuel line turns orange: 90 percent spent with several field trips still planned. Mariama checks the receipts and finds that two extra trips were needed when the drilling date moved. She tells coordinator Fuseini, who asks the finance officer whether money can be moved from another line within the donor's rules, and plans the remaining trips to share vehicles. The problem is solved months before it could have become an overspend.
+
+## Field data
+
+Many projects collect data in the field with forms on a phone, using free tools such as KoboToolbox or ODK, named here as examples. The forms export to a spreadsheet, so the same planned versus actual comparison works for survey data too.
+
+## A rhythm that works
+
+* **Daily or weekly:** update task status and enter receipts.
+* **Monthly:** compare budget with actual spending, and output targets with results.
+* **Every report:** use the same sheet as the source of your numbers.
+
+If the tracking sheet is current, writing the report becomes much easier, because the facts are already in one place.`,
+      practice_task_md: `**Goal:** Build a planned versus actual tracker with automatic warnings.
+
+**Steps:**
+1. Open the budget you made earlier, or create one with five lines, in a spreadsheet on your phone or computer.
+2. Add columns: spent to date, remaining (with a formula) and percent spent (with a formula).
+3. Enter invented spending figures, making one line close to its limit.
+4. Add a conditional formatting rule that colours any line above 90 percent spent. In Google Sheets in a browser it is under Format, then Conditional formatting; menus differ in phone apps and other spreadsheet tools, so search the app's help for "conditional formatting" if you cannot find it.
+5. Write two sentences explaining what you would do about the coloured line.
+
+**Done looks like:** A tracker with working formulas, one automatically coloured warning and a short action note.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is variance in budget tracking?",
+            options: [
+              "The difference between the budget and actual spending",
+              "The name of the donor",
+              "A type of chart",
+              "The total project budget",
+            ],
+            answer_index: 0,
+            explanation: "The lesson defines variance as the difference between budget and actual.",
+          },
+          {
+            prompt: "How do you calculate the percentage of a target achieved?",
+            options: ["Target minus actual", "Actual divided by target", "Actual plus target", "Target divided by budget"],
+            answer_index: 1,
+            explanation: "The lesson says the percentage achieved is actual divided by target.",
+          },
+          {
+            prompt: "What does conditional formatting do?",
+            options: [
+              "Deletes old rows",
+              "Sends the report to the donor",
+              "Changes a cell's colour automatically based on a rule",
+              "Locks the spreadsheet",
+            ],
+            answer_index: 2,
+            explanation: "Conditional formatting colours cells automatically when a rule is met.",
+          },
+          {
+            prompt: "Why did the fuel line in Mariama's tracker need attention?",
+            options: [
+              "It had not been used at all",
+              "The donor cancelled it",
+              "It was the largest line",
+              "It was 90 percent spent with several field trips still planned",
+            ],
+            answer_index: 3,
+            explanation: "Most of the fuel money was spent while trips remained, so it risked an overspend.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "status-and-donor-reports": {
+      explanation_md: `Reports are how managers, donors and partners see your work. In NGO adverts in northern Ghana, report writing, narrative and financial reporting, and success stories come up again and again. A clear, honest report makes a project look well run; a confusing one raises questions even when the work was good.
+
+## Two kinds of report
+
+* **Status updates** are short and frequent, often weekly or monthly, for your manager or team. They answer: where are we, what is next, and what needs attention?
+* **Donor reports** are longer and follow the donor's template, often quarterly and at the end of the project. They follow the logframe and include financial information.
+
+## A one page status update
+
+A simple structure works for almost any update:
+
+1. **Overall status:** on track, at risk or off track, in one line.
+2. **Done since last update:** three to five bullets.
+3. **Next period:** the main planned tasks.
+4. **Issues and risks:** what needs attention, and what you need from the reader.
+5. **Spending:** a line or two on budget versus actual.
+
+Write for a busy reader: put the most important point first, use short sentences, and give numbers rather than adjectives. "Eight of ten members trained" is better than "training went very well".
+
+## Donor reports follow the logframe
+
+A typical narrative donor report includes:
+
+* **Summary** of the period.
+* **Progress against the logframe:** activities done, outputs delivered with indicator figures, and early signs of outcomes.
+* **Challenges** and how they were handled.
+* **Lessons learned.**
+* **Success story:** a short, true account of change for one person or group, with their consent.
+* **Plans** for the next period.
+* **Financial report:** spending by budget line, usually prepared with finance.
+
+Every number should match the tracking sheet and the evidence on file.
+
+## A worked example
+
+Wumpini drafts the quarterly progress section for the school feeding programme:
+
+"**Output 1: Daily hot meals served.** Target for the quarter: 52,000 meals. Achieved: 49,800 meals (96 percent). Meals were lower at one school in October when the cook was ill for a week; a backup cook has since been trained at each school."
+
+All figures are invented. Notice: indicator, target, actual, percentage, an honest explanation of the gap, and the action taken.
+
+Her success story is short: a head teacher in one school describes how pupils who used to leave at break to look for food now stay for afternoon lessons. Wumpini asked the head teacher's permission to use the quote and checked the wording with her.
+
+## Concept notes and proposals
+
+Officers are often asked to help draft **concept notes**, short documents of two or three pages that describe a problem, the proposed project, expected results and a rough budget, to interest a donor. A full **proposal** adds a detailed logframe, work plan and budget. Everything in this roadmap, from charters to logframes and budgets, feeds into these documents.
+
+## Final checks
+
+Before you send any report, check that numbers match, names are spelled correctly, photos have consent, and the reader knows exactly what you need from them.`,
+      practice_task_md: `**Goal:** Write a one page status update.
+
+**Steps:**
+1. Choose a project you have worked on in this roadmap, or invent one.
+2. On your phone or computer, write a status update using the five part structure in the lesson.
+3. Include at least two numbers in the done section, one honest issue, and one clear request to the reader.
+4. Add a three or four sentence success story about an imaginary participant, written in a respectful way.
+5. Read it aloud and cut any sentence that does not help the reader.
+
+**Done looks like:** A one page update with all five parts, numbers, an issue with a request, and a short success story. Add it to your portfolio.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the first part of the one page status update structure?",
+            options: ["Success story", "Overall status: on track, at risk or off track", "Financial report", "Lessons learned"],
+            answer_index: 1,
+            explanation: "The structure starts with a one line overall status.",
+          },
+          {
+            prompt: "Which sentence follows the lesson's advice to use numbers rather than adjectives?",
+            options: [
+              "Training went very well",
+              "Many people came",
+              "Eight of ten members trained",
+              "The workshop was excellent",
+            ],
+            answer_index: 2,
+            explanation: "The lesson gives 'eight of ten members trained' as the better example.",
+          },
+          {
+            prompt: "What structure does a narrative donor report usually follow for progress?",
+            options: ["The logframe", "The staff list", "The order of receipts", "Alphabetical order"],
+            answer_index: 0,
+            explanation: "Progress is reported against the logframe's activities, outputs and outcomes.",
+          },
+          {
+            prompt: "What did Wumpini do before using the head teacher's quote?",
+            options: [
+              "Changed it to sound better",
+              "Used it without asking",
+              "Paid for it",
+              "Asked permission and checked the wording with her",
+            ],
+            answer_index: 3,
+            explanation: "Success stories need consent, so she asked and checked the wording.",
+          },
+          {
+            prompt: "What is a concept note?",
+            options: [
+              "A short document describing a problem, proposed project, expected results and rough budget",
+              "The minutes of a team meeting",
+              "A receipt for a purchase",
+              "A daily task board",
+            ],
+            answer_index: 0,
+            explanation: "The lesson describes a concept note as a short document to interest a donor.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+
+    "records-and-documentation": {
+      explanation_md: `When an auditor, donor or manager asks, "Can you show me the evidence?", a well kept project can answer in minutes. A badly kept one cannot, and that can mean costs being refused or a project's reputation being damaged. Filing and documentation appear in assistant and officer adverts because they protect the organisation, and they protect you.
+
+## What counts as evidence
+
+Projects keep many kinds of records:
+
+* **Attendance sheets,** signed by participants, for trainings and meetings.
+* **Financial records:** purchase requests, quotes, approvals, invoices, receipts, payment confirmations and delivery notes.
+* **Agreements:** contracts, memoranda of understanding, consent forms.
+* **Reports and minutes.**
+* **Photos and videos,** taken with permission.
+* **Data:** survey forms, registers, tracking sheets.
+
+## A simple folder system
+
+Use the same structure for every project so anyone can find things. In Google Drive or any shared storage, a project folder might look like this:
+
+* **01 Planning:** charter, logframe, work plan, budget.
+* **02 Activities:** one subfolder per activity, named with the date first, for example "2026 05 28 Committee training", holding the attendance sheet, photos and activity report.
+* **03 Finance:** one subfolder per month with requests, quotes, invoices and receipts.
+* **04 Reports:** status and donor reports.
+* **05 Agreements:** contracts and consent forms.
+* **06 Closing:** handover documents and the final report.
+
+Numbering the folders keeps them in order. Putting dates at the start of names, year first, makes files sort by date automatically.
+
+## Paper to digital
+
+Many records start on paper. Scan or photograph them soon after the activity, using a scanning feature in a free app such as the Google Drive app, and file the digital copy in the right folder. Keep the paper originals too, in labelled envelopes or box files, because many donors and auditors need to see originals.
+
+## Protecting personal data
+
+Project records often contain names, phone numbers, ages, health or financial details. In Ghana, the Data Protection Act, 2012 (Act 843) sets rules for how personal data is handled, and the Data Protection Commission oversees it. In practice this means:
+
+* Collect only the personal data the project needs.
+* Tell people why you collect it and get consent, especially for photos.
+* Share files only with people who need them, and remove access when they leave.
+* Do not post participants' details or photos in public WhatsApp groups or social media.
+* Lock or protect devices that hold project data.
+
+## A worked example
+
+After the committee training, Mariama photographs the signed attendance sheet with the Google Drive app, saves it as "2026 05 28 Committee training attendance" in the right activity folder, and adds the photos taken with consent. She puts the paper original in the training envelope. Six months later the donor's auditor asks for proof of the training. Fuseini shares the folder link in two minutes.
+
+Good records are not extra work added at the end. They are a habit built into every activity.`,
+      practice_task_md: `**Goal:** Set up a project folder system.
+
+**Steps:**
+1. In Google Drive or another free storage service on your phone or computer, create a folder for a practice project.
+2. Create the six numbered subfolders from the lesson.
+3. Create one activity subfolder with a date first name, and add at least three files to it: a scanned or photographed document, a short report and a photo you have permission to use.
+4. Write a one paragraph note on how you would protect personal data in this project, and save it in the Planning folder.
+
+**Done looks like:** A tidy folder structure with six numbered folders, one dated activity folder with three files, and a data protection note.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson suggest numbering folders, such as 01 Planning and 02 Activities?",
+            options: [
+              "To keep them in a consistent order",
+              "Because Google Drive requires it",
+              "To hide them from auditors",
+              "To make them load faster",
+            ],
+            answer_index: 0,
+            explanation: "Numbering keeps folders in the same order for every project.",
+          },
+          {
+            prompt: "Why should file names start with the date, year first?",
+            options: [
+              "Donors only read dates",
+              "So files sort by date automatically",
+              "It makes files smaller",
+              "It is required by law",
+            ],
+            answer_index: 1,
+            explanation: "Putting the date first, year first, sorts files by date automatically.",
+          },
+          {
+            prompt: "Which law sets rules for handling personal data in Ghana?",
+            options: [
+              "The Road Traffic Act",
+              "The Labour Act",
+              "The Data Protection Act, 2012 (Act 843)",
+              "The Companies Act",
+            ],
+            answer_index: 2,
+            explanation: "The lesson names the Data Protection Act, 2012 (Act 843), overseen by the Data Protection Commission.",
+          },
+          {
+            prompt: "Which action goes against the data protection practices in the lesson?",
+            options: [
+              "Collecting only the data the project needs",
+              "Getting consent for photos",
+              "Removing file access when someone leaves",
+              "Posting participants' phone numbers in a public WhatsApp group",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says not to post participants' details in public groups or social media.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "closing-and-other-ways": {
+      explanation_md: `Many projects end in a rush: the money is spent, staff move on, and nobody quite finishes the paperwork or tells the community what happens next. Months later, a donor asks for a final report or an auditor asks for receipts, and nobody can find them. Finishing well is a skill, and employers value people who see work through to the very end.
+
+## Why closing matters
+
+Closing a project properly:
+
+* **Hands over** the results to the people who will keep them going, such as a water committee or a school's parent teacher association.
+* **Settles accounts,** so every cedi is explained and suppliers are paid.
+* **Archives records,** so evidence can be found for audits years later.
+* **Captures lessons,** so the next project does better.
+* **Thanks people,** which keeps relationships strong for future work.
+
+## Other ways of working
+
+Most NGO and donor projects plan the whole project at the start and then follow that plan, adjusting through monitoring. This is sometimes called a **plan driven** or **waterfall** approach. It suits work where the goal is clear and changes are costly, like drilling a borehole or building a classroom.
+
+Some teams, especially in software and some businesses, use **agile** approaches instead. They plan in short cycles, deliver something small, get feedback and adjust. This suits work where the right answer is not clear at the start, such as designing a mobile app for farmers. Many real projects mix the two: a fixed overall plan and budget, with short cycles inside.
+
+## What this section covers
+
+* **Closing a project and lessons learned.** Handover, final accounts, archiving, and running a short lessons learned session.
+* **Agile and Scrum basics (optional).** The main ideas and words, so you can follow along if you join a team that uses them.
+
+## A worked example
+
+At the end of the school feeding year, coordinator Issahaku makes a closing checklist with Wumpini:
+
+* Hand over kitchen equipment to each school's parent teacher association, with a signed list of items.
+* Pay final cooks' allowances and supplier invoices.
+* Prepare the final financial report with the finance officer.
+* Write the final narrative report against the logframe.
+* Archive all folders and label the paper files.
+* Hold a lessons learned session with head teachers, cooks and staff.
+* Send thank you letters to the district education office and partners.
+
+Because they worked through it together, nothing is left hanging. When the donor considers funding a second year, the team's tidy close is part of the reason it says yes.
+
+## The mindset
+
+Think of closing as the last activity in your work plan, with its own tasks, owners and dates, not something that happens on its own. Put it in the schedule from the start, and the end of the project becomes calm instead of chaotic.`,
+      practice_task_md: `**Goal:** Draft a closing checklist and compare two ways of working.
+
+**Steps:**
+1. Pick a project you have used in this roadmap.
+2. On your phone or computer, write a closing checklist with at least seven items, each with an owner and a date.
+3. Then write two short paragraphs: one describing a project that suits a plan driven approach, and one that suits an agile approach, with a reason for each.
+
+**Done looks like:** A seven item closing checklist with owners and dates, plus two paragraphs comparing approaches.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is part of closing a project well?",
+            options: [
+              "Leaving receipts with whoever has them",
+              "Handing over results to the people who will keep them going",
+              "Starting a new project without finishing reports",
+              "Deleting the project folders",
+            ],
+            answer_index: 1,
+            explanation: "Handover is one of the main closing activities in the lesson.",
+          },
+          {
+            prompt: "What kind of work suits a plan driven, or waterfall, approach?",
+            options: [
+              "Work where the goal is clear and changes are costly, like drilling a borehole",
+              "Work where nobody knows what the result should be",
+              "Only software projects",
+              "Work with no budget",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says plan driven work suits clear goals where changes cost a lot.",
+          },
+          {
+            prompt: "How do agile teams work, according to the lesson?",
+            options: [
+              "They never plan anything",
+              "They plan everything once and never change",
+              "They plan in short cycles, deliver something small, get feedback and adjust",
+              "They only work at night",
+            ],
+            answer_index: 2,
+            explanation: "Agile teams use short cycles with feedback and adjustment.",
+          },
+          {
+            prompt: "How does the lesson suggest you treat closing?",
+            options: [
+              "As something that happens on its own",
+              "As the donor's job only",
+              "As optional if the money is spent",
+              "As the last activity in the work plan, with tasks, owners and dates",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says to put closing in the schedule like any other activity.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "closing-and-lessons-learned": {
+      explanation_md: `Adverts for project assistants and officers mention documenting lessons learned, and donors often ask for them in final reports. The reason is simple: organisations that learn from each project avoid paying for the same mistake twice. Knowing how to close a project and run a lessons learned session makes you useful at the moment many teams struggle.
+
+## Closing step by step
+
+1. **Confirm the work is complete.** Check each deliverable against the charter and logframe. Get written acceptance from whoever receives it, such as a signed handover form from the water committee.
+2. **Hand over.** Give the people who will maintain the results what they need: training, spare parts, contact numbers for repairs, records. For the water project, that includes the committee's log book, a list of trained pump repairers and the contractor's warranty.
+3. **Close the finances.** Pay outstanding invoices, collect missing receipts, return any unused advances, and help finance prepare the final financial report.
+4. **Close contracts.** Confirm suppliers and consultants have delivered and been paid, and that nothing is still open.
+5. **Write the final report.** Results against the logframe, challenges, lessons and recommendations.
+6. **Archive.** Make sure digital folders are complete and paper files are labelled and stored where the organisation keeps them.
+7. **Thank and inform.** Tell the community, partners and district what happens next, and thank them for their work.
+
+## Lessons learned sessions
+
+A **lessons learned session**, sometimes called a retrospective or after action review, is a short, honest discussion with the people involved. Four simple questions work well:
+
+* What did we plan to happen?
+* What actually happened?
+* Why was there a difference?
+* What will we do the same or differently next time?
+
+Invite a mix of people: staff, partners and, where possible, community members. Create a safe atmosphere: the aim is learning, not blaming. Write each lesson as a clear recommendation someone can act on.
+
+## A worked example
+
+Fuseini runs a one hour session at the end of the water project with Mariama, Abdul-Rahman, field officer Salifu and two water committee members, Rahinatu and Alhassan. Mariama takes notes. Some lessons:
+
+* **Went well:** Meeting the women's group before choosing the site avoided a flood prone spot. **Next time:** always hold a separate meeting with women water users before siting.
+* **Went badly:** Drilling slipped two weeks when the rains came early, which pushed up fuel costs. **Next time:** schedule drilling at least a month before the usual start of the rains, and keep a fuel contingency.
+* **Went badly:** The committee did not know how to reach a pump repairer. **Next time:** include a repairer's contact list and a short repair fund plan in the handover.
+
+Mariama types the lessons into a one page document, saves it in the Closing folder, and shares it with the coordinator of the organisation's next water project.
+
+## Make lessons travel
+
+Lessons only help if the next team reads them. Keep a shared lessons file for the organisation, tag lessons by topic, and read the relevant ones at the start of every new project.`,
+      practice_task_md: `**Goal:** Run a short lessons learned session.
+
+**Steps:**
+1. Choose a recent activity you took part in: a school event, a church programme, a family gathering or a group assignment.
+2. Ask two or three people who were involved to spend fifteen minutes with you, in person or on a call.
+3. Ask the four questions from the lesson and take notes on your phone or computer.
+4. Write at least three lessons as "Went well or went badly" plus "Next time" recommendations.
+
+**Done looks like:** A one page lessons learned note with the names of who took part, the date and at least three clear "Next time" recommendations.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should you get from whoever receives the project's results?",
+            options: ["A gift", "Written acceptance, such as a signed handover form", "A new budget", "A job offer"],
+            answer_index: 1,
+            explanation: "The first closing step is confirming completion with written acceptance.",
+          },
+          {
+            prompt: "Which question is one of the four lessons learned questions?",
+            options: [
+              "Who should we blame?",
+              "How much were the staff paid?",
+              "Why was there a difference between what we planned and what happened?",
+              "Which donor is the richest?",
+            ],
+            answer_index: 2,
+            explanation: "The lesson's questions include why there was a difference between plan and reality.",
+          },
+          {
+            prompt: "What atmosphere should a lessons learned session have?",
+            options: [
+              "A safe one focused on learning, not blaming",
+              "A formal hearing to punish mistakes",
+              "A secret meeting for managers only",
+              "A celebration with no discussion of problems",
+            ],
+            answer_index: 0,
+            explanation: "The aim is learning, not blaming.",
+          },
+          {
+            prompt: "What did the team learn about pump repairs?",
+            options: [
+              "Pumps never break",
+              "The donor should fix all pumps",
+              "Repairs should be done by the chief",
+              "Include a repairer's contact list and a repair fund plan in the handover",
+            ],
+            answer_index: 3,
+            explanation: "The committee did not know how to reach a repairer, so the handover should include this next time.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
     // NEXT_NODES
   },
 };
