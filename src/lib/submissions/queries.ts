@@ -133,7 +133,7 @@ export const getMyLearnerMembership = cache(async (profileId: string, programId:
   const db = await createClient();
   const { data, error } = await db
     .from("cohort_members")
-    .select("id, cohort_id, specialization, status, cohorts!inner(program_id)")
+    .select("id, cohort_id, specialization, status, cohorts!cohort_members_cohort_id_fkey!inner(program_id)")
     .eq("profile_id", profileId)
     .eq("role", "learner")
     .eq("status", "active")

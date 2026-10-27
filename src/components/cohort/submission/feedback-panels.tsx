@@ -109,7 +109,9 @@ export function AiFeedbackPanel({
           })}
         </ul>
       )}
-      <p className="text-xs text-content-3">Written by AI against the week&apos;s rubric. It can be wrong; your mentor checks it.</p>
+      <p className="text-xs text-content-3">
+        Written by AI against the week&apos;s rubric. It can be wrong; {yours ? "your mentor checks it." : "check it against the work."}
+      </p>
     </Card>
   );
 }

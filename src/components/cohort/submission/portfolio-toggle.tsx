@@ -29,7 +29,7 @@ export function PortfolioToggle({
       {!compact && (
         <p className="text-sm text-content-2" role="status">
           {current
-            ? "This work is in your portfolio. People who view your public profile will be able to see it."
+            ? "This work is in your portfolio. Showing your portfolio on your public profile is coming soon."
             : "Add this work to your portfolio to show what you can do."}
         </p>
       )}

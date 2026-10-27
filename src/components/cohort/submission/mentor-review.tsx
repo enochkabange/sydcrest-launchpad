@@ -72,7 +72,6 @@ export async function MentorSubmissionReview({ submissionId }: { submissionId: s
             <section className="flex flex-col gap-3 rounded-lg border border-line bg-surface p-4 lg:p-5">
               <h3 className="text-h3 text-content">Grade</h3>
               <GradeSubmissionForm
-                key={`${submission.attempt}-${submission.updatedAt}`}
                 submissionId={submission.id}
                 suggestedScore={submission.finalScore ?? submission.aiScore}
                 mentorFeedback={submission.mentorFeedback}

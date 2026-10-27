@@ -66,7 +66,7 @@ async function WorkList() {
               : `${inPortfolio} of ${graded.length} graded ${graded.length === 1 ? "piece is" : "pieces are"} in your portfolio.`}
           </p>
           <p className="text-sm text-content-3">
-            Your portfolio is the work you choose to show. People who view your public profile will be able to see it.
+            Your portfolio is the work you choose to show. Showing it on your public profile is coming soon.
           </p>
         </section>
       }

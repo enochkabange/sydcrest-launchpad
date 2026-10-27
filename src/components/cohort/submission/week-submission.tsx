@@ -88,7 +88,6 @@ export async function WeekSubmission({ weekId, headingId = "your-work-heading" }
 
           {canEdit ? (
             <SubmissionForm
-              key={`${submission?.attempt ?? 0}-${submission?.updatedAt ?? ""}`}
               weekId={week.id}
               profileId={user.id}
               status={status}
