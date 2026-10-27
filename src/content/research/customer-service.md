@@ -179,7 +179,7 @@ does not promise outcomes.
 ## Lesson writing notes (issue #198)
 
 * Every explanation, practice task, script, scenario and quiz is original. Businesses in
-  examples (QuickParcel and the unnamed delivery, savings, school fees, internet and insurance
+  examples (Kpalang Parcels and the unnamed delivery, savings, school fees, internet and insurance
   firms) are invented. Names follow the content guide's Northern Ghanaian list.
 * Mobile money is described without naming any provider. The Bank of Ghana, the Cyber
   Security Authority and the Data Protection Commission are named as official bodies, not

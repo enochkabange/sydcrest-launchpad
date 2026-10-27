@@ -577,7 +577,7 @@ The next lessons teach phone calls and scripts, live chat and WhatsApp, email re
 
 Here is an original script for an invented delivery company. Treat it as a guide, not something to read like a robot.
 
-> **Greet:** "Good morning, thank you for calling QuickParcel. My name is Wumpini. How can I help you today?"
+> **Greet:** "Good morning, thank you for calling Kpalang Parcels. My name is Wumpini. How can I help you today?"
 >
 > **Verify:** "I can check that for you. Please may I have the full name and phone number on the order?"
 >
@@ -587,7 +587,7 @@ Here is an original script for an invented delivery company. Treat it as a guide
 >
 > **Solve:** "The van was delayed at Kintampo. Your parcel will reach Wa tomorrow before 2pm. I have added a note and you will get an SMS when it leaves the depot."
 >
-> **Close:** "Is there anything else I can help with today? Thank you for calling QuickParcel, and have a good day."
+> **Close:** "Is there anything else I can help with today? Thank you for calling Kpalang Parcels, and have a good day."
 
 ## Using a script without sounding like a robot
 
