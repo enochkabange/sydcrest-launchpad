@@ -7,6 +7,7 @@ export const ADMIN_SECTIONS: { href: string; label: string; description: string 
   { href: "/admin/roadmaps", label: "Roadmaps", description: "Create and edit roadmaps, their nodes and links, and publish them." },
   { href: "/admin/content", label: "Content", description: "Review explanations and practice tasks for roadmap nodes." },
   { href: "/admin/applications", label: "Applications", description: "Review programme applications and accept, waitlist or decline them." },
+  { href: "/admin/opportunities", label: "Opportunities", description: "Post and edit jobs, internships, scholarships, grants and gigs for the public board." },
   { href: "/admin/reports", label: "Reports", description: "Triage safety reports from learners." },
   { href: "/admin/certificates", label: "Certificates", description: "See issued certificates and revoke one with a reason." },
   { href: "/admin/cohorts", label: "Cohorts", description: "Create programme cohorts and assign their mentors and coordinators." },
