@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { accraDay, capStatus, LIMIT_MESSAGE } from "./cap";
+import { accraDay, capStatus, LIMIT_MESSAGE, reservationStatus } from "./cap";
 import { DAILY_MESSAGE_LIMIT } from "./config";
 
 describe("capStatus", () => {
@@ -33,5 +33,35 @@ describe("accraDay", () => {
   it("uses the UTC calendar day, which is Accra time", () => {
     expect(accraDay(new Date("2026-10-25T23:59:59Z"))).toBe("2026-10-25");
     expect(accraDay(new Date("2026-10-26T00:00:01Z"))).toBe("2026-10-26");
+  });
+});
+
+describe("reservationStatus", () => {
+  it("allows reservations up to and including the limit", () => {
+    expect(reservationStatus(1)).toEqual({ used: 1, limit: 30, remaining: 29, allowed: true });
+    expect(reservationStatus(30)).toEqual({ used: 30, limit: 30, remaining: 0, allowed: true });
+  });
+
+  it("refuses a reservation past the limit", () => {
+    expect(reservationStatus(31)).toMatchObject({ remaining: 0, allowed: false });
+    expect(reservationStatus(4, 3)).toMatchObject({ allowed: false });
+  });
+
+  it("refuses when nothing was reserved", () => {
+    expect(reservationStatus(null).allowed).toBe(false);
+    expect(reservationStatus(0).allowed).toBe(false);
+  });
+
+  it("lets exactly the remaining allowance through when requests race", async () => {
+    // Stand in for record_ai_usage: the row lock means each caller gets a distinct count.
+    let messages = 27;
+    const reserve = async () => {
+      await Promise.resolve();
+      messages += 1;
+      return messages;
+    };
+    const results = await Promise.all(Array.from({ length: 10 }, async () => reservationStatus(await reserve())));
+    expect(results.filter((r) => r.allowed)).toHaveLength(3);
+    expect(results.filter((r) => r.allowed).map((r) => r.remaining).sort()).toEqual([0, 1, 2]);
   });
 });

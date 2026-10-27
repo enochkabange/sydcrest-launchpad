@@ -12,6 +12,9 @@ import { Quiz } from "@/components/learn/quiz";
 import { MarkComplete } from "@/components/learn/mark-complete";
 import { StartNode } from "@/components/learn/start-node";
 import { getMyProgress } from "@/lib/roadmaps/progress";
+import { StudyBuddy } from "@/components/study-buddy/study-buddy";
+import { isStudyBuddyConfigured } from "@/lib/study-buddy/chat";
+import { getStudyBuddyAllowance } from "@/lib/study-buddy/data";
 import { markComplete, startNode, submitQuiz } from "./actions";
 import { TopicOutline } from "./topic-outline";
 
@@ -192,17 +195,36 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
           )}
         </Section>
 
-        {/*
-          INTEGRATION SLOT: Study Buddy.
-          The Study Buddy chat component mounts here, below the checkpoint.
-          It has node.id, node.title and roadmap.slug available in this scope.
-        */}
+        {/* Own boundary, so the lesson never waits on today's usage read. In the lesson column at every width. */}
+        <Suspense fallback={<StudyBuddySkeleton />}>
+          <StudyBuddySlot nodeId={node.id} nodeTitle={node.title} />
+        </Suspense>
       </article>
       <aside className="hidden xl:sticky xl:top-8 xl:block">
         <TopicOutline roadmap={roadmap} nodes={nodes} currentId={node.id} progress={allProgress ?? new Map()} />
       </aside>
     </div>
   );
+}
+
+async function StudyBuddySlot({ nodeId, nodeTitle }: { nodeId: string; nodeTitle: string }) {
+  const available = isStudyBuddyConfigured();
+  // A failed usage read only hides the counter; the route still enforces the cap.
+  const allowance = available ? await getStudyBuddyAllowance().catch(() => null) : null;
+  return (
+    <StudyBuddy
+      nodeId={nodeId}
+      nodeTitle={nodeTitle}
+      signedIn
+      available={available}
+      remainingToday={allowance?.remaining ?? null}
+      limit={allowance?.limit}
+    />
+  );
+}
+
+function StudyBuddySkeleton() {
+  return <div className="h-48 animate-skeleton rounded-lg bg-surface-sunken" aria-hidden="true" />;
 }
 
 function StudySkeleton() {

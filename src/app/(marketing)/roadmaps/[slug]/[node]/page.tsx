@@ -5,6 +5,7 @@ import { Suspense, type ReactNode } from "react";
 import { Markdown } from "@/components/roadmaps/markdown";
 import { NodeStatus } from "@/components/roadmaps/progress";
 import { ShareButton } from "@/components/roadmaps/share-button";
+import { StudyBuddyPrompt } from "@/components/study-buddy/study-buddy-prompt";
 import { buttonClasses } from "@/components/ui/button";
 import Link from "@/components/ui/link";
 import { markdownToText } from "@/lib/roadmaps/markdown";
@@ -124,6 +125,10 @@ async function Node({ params }: Pick<Props, "params">) {
           <ComingSoon>Resources for this topic are coming soon.</ComingSoon>
         )}
       </Block>
+
+      <div className="mt-10">
+        <StudyBuddyPrompt nodeTitle={node.title} next={learnPath(slug, node.slug)} />
+      </div>
 
       {node.children.length > 0 && (
         <Block title="Topics in this section" id="topics">
