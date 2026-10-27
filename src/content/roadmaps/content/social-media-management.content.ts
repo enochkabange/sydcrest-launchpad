@@ -2081,6 +2081,843 @@ Mariama's fabric shop agrees to give two outfits to Amina, a Tamale lifestyle cr
         pass_threshold: 80,
       },
     },
+    results: {
+      explanation_md: `Owners keep paying for page management when they can see what it achieved. "I posted twenty times" tells them about your effort. "The page brought thirty four WhatsApp enquiries and twelve orders this month" tells them about their business. This section is about measuring the right things, spending small amounts wisely and turning numbers into better plans.
+
+## What this section covers
+
+* **Reading platform insights.** Every platform has a free insights or analytics screen. You will learn what the main numbers mean, which ones matter for the client's goal and how to record them each week.
+* **Boosting posts.** Clients often ask you to "boost" a post. You will learn the safe, honest way to do it with the client's own ad account and when to hand over to proper ad campaigns, which the Digital Marketer track teaches.
+* **The monthly review.** A short, plain report that says what you did, what worked, what did not and what you will change, linked back to the goal in your onboarding brief.
+
+## Measure what the goal needs
+
+The goal you agreed at onboarding decides which numbers matter. If the goal is more WhatsApp orders, the most important numbers are messages and orders, not likes. If the goal is reputation, you might watch reviews, the tone of comments and how fast complaints were resolved. If the goal is attendance at an event, count registrations and people who came.
+
+Platforms show many numbers, and they rename them from time to time. Do not try to report everything. Choose three to five numbers linked to the goal, record them the same way every week and explain them in plain words.
+
+## Numbers you collect yourself
+
+Some of the most useful results are not on any insights screen:
+
+* Orders and enquiries in your inbox log.
+* What customers say when the shop asks, "How did you hear about us?"
+* Sales the owner notices after a particular post or live session.
+
+Ask the client to share simple sales notes, even a weekly voice note, so you can connect posts to real business.
+
+## Honesty with numbers
+
+Never inflate results, buy followers or likes to look good, or claim credit for sales you did not cause. If a month was weak, say so, explain what you think happened and what you will try. Clients usually find out the truth, and an honest weak month builds more trust than a polished false one.
+
+## Worked example
+
+Wumpini's monthly summary for Mariama's fabric shop begins with the goal: more WhatsApp orders for uniform fabric before the new term. He records four numbers each week: reach of posts, messages started from Facebook, orders recorded in his inbox log and new followers. In October, messages and orders rose after the uniform posts and a live session, while a fashion trend video got many views but no orders. His recommendation: more product and live posts, fewer trend videos. Mariama understands it in two minutes and agrees.
+
+## Why this matters for your career
+
+Being able to show results turns you from "someone who posts for us" into a professional the client relies on. The same summaries, with the client's permission, become case studies in your portfolio.`,
+      practice_task_md: `**Goal:** Choose the right numbers for a goal.
+
+**Steps:**
+1. Write down the goal from your practice client's brief.
+2. List three to five numbers that show progress toward that goal. At least one should be something you collect yourself, such as orders in your inbox log.
+3. For each number, write where you will find it and how often you will record it.
+4. Make a simple Google Sheet with one column per number and one row per week.
+
+**Done looks like:** a goal, a short list of linked numbers with sources and a weekly tracking sheet.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "If the client's goal is more WhatsApp orders, which numbers matter most?",
+            options: [
+              "Likes on every post",
+              "Messages and orders",
+              "How many hashtags were used",
+              "The number of posts published",
+            ],
+            answer_index: 1,
+            explanation: "The goal decides which numbers matter, and orders and messages show progress toward this one.",
+          },
+          {
+            prompt: "Why does the lesson suggest choosing only three to five numbers?",
+            options: [
+              "Platforms only show five numbers",
+              "Reporting everything confuses owners; a few numbers linked to the goal are clearer",
+              "More numbers cost more data",
+              "It is a legal requirement",
+            ],
+            answer_index: 1,
+            explanation: "A few goal linked numbers, recorded consistently and explained plainly, are most useful.",
+          },
+          {
+            prompt: "Which result is not found on a platform insights screen?",
+            options: [
+              "Reach of a post",
+              "New followers",
+              "What customers say when asked how they heard about the business",
+              "Views of a video",
+            ],
+            answer_index: 2,
+            explanation: "Some useful results come from the business itself, such as asking customers how they heard about it.",
+          },
+          {
+            prompt: "What should you do after a weak month?",
+            options: [
+              "Buy likes so the report looks better",
+              "Say so honestly, explain what you think happened and what you will try next",
+              "Skip the report",
+              "Blame the platform without checking",
+            ],
+            answer_index: 1,
+            explanation: "Honest reporting builds trust, even when results are weak.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "platform-insights": {
+      explanation_md: `Every major platform gives business accounts free insights: numbers showing who saw the content, what they did and how the audience is changing. You can read them on a phone or a computer. The skill is knowing what each number means, choosing the ones that fit the client's goal and recording them consistently.
+
+## Where to find them
+
+* **Facebook and Instagram.** Meta Business Suite has an Insights area on the web and in the app, covering the Page and the linked Instagram account. Individual posts also show their own results.
+* **TikTok.** Business and creator accounts have analytics in TikTok Studio or the account tools, with sections for overview, content, followers and LIVE, and date ranges such as the last seven, twenty eight or sixty days.
+* **LinkedIn.** Page admins can see analytics for visitors, followers and content.
+* **WhatsApp Business.** Shows basic message statistics, but most of the useful data is in your own inbox log.
+
+Platforms rename and redesign these screens often. Learn what each number means, then find its current name.
+
+## What the main numbers mean
+
+* **Views.** How many times content was shown or played. One person can count several times. Meta now uses views as its main measure of how often content was seen, in place of the older impressions.
+* **Reach or viewers.** Roughly how many different people or accounts saw the content. Meta has been moving this toward a measure of viewers, so the label may change.
+* **Interactions or engagement.** Reactions, comments, shares and saves. Comments and shares usually show more interest than a quick reaction.
+* **Followers.** New follows and unfollows over a period.
+* **Link clicks and messages.** People who tapped through to a website, called, or started a conversation. These are often closest to sales.
+* **Watch time.** For video, how long people kept watching. If most leave in the first seconds, the opening needs work.
+* **Audience.** Age groups, locations and when followers are most active.
+
+## Reading numbers sensibly
+
+* **Compare like with like.** This week against last week, or this month against last month, not a festival week against a quiet one without comment.
+* **Look for patterns, not single posts.** One post can do well by luck. Three similar posts doing well is a signal.
+* **Link to action.** Every number you report should lead to a decision: do more of this, less of that, post at a different time.
+
+## Record weekly
+
+Make a sheet with one row per week and columns for the numbers you chose. Add a notes column for anything unusual, such as a holiday, a live session or a complaint. Fill it in on the same day each week. By the end of a month, the monthly review almost writes itself.
+
+## Worked example
+
+Hawa's goal is more WhatsApp orders. Each Monday, Fuseini opens Meta Business Suite Insights and records: views, reach, messages started and new followers, plus orders from his inbox log. He notices that posts about how to use shea butter for babies get far more messages than product photos, and that most followers are active in the evening. He moves posts to the evening and adds a weekly "how to use" post. Two weeks later, messages rise. He notes the change and the result in his sheet.`,
+      practice_task_md: `**Goal:** Read and record real insights.
+
+**Steps:**
+1. Open the insights or analytics for any page or account you manage, or a professional account you create for practice.
+2. Find, for the last seven or twenty eight days: views, reach or viewers, interactions, new followers and any messages or link clicks.
+3. Write one sentence explaining each number in plain words.
+4. Record them in a weekly sheet with a notes column, then repeat next week and write one pattern you notice.
+
+**Done looks like:** two weeks of recorded numbers, plain explanations and one observed pattern.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the difference between views and reach?",
+            options: [
+              "They are the same number",
+              "Views count how many times content was shown; reach counts roughly how many different people saw it",
+              "Views count comments; reach counts shares",
+              "Reach counts paid posts only",
+            ],
+            answer_index: 1,
+            explanation: "One person can create several views, while reach counts different people or accounts.",
+          },
+          {
+            prompt: "Which numbers are often closest to sales?",
+            options: [
+              "Link clicks and messages started",
+              "Profile photo changes",
+              "The number of hashtags",
+              "The length of captions",
+            ],
+            answer_index: 0,
+            explanation: "People who tap through or start a conversation are showing buying interest.",
+          },
+          {
+            prompt: "Why should you look for patterns rather than single posts?",
+            options: [
+              "Single posts are never counted",
+              "One post can do well by luck, but several similar posts doing well is a signal",
+              "Platforms hide single post data",
+              "Patterns are required by law",
+            ],
+            answer_index: 1,
+            explanation: "Patterns across several posts are more reliable than one result.",
+          },
+          {
+            prompt: "Platforms keep renaming their insights screens. What does the lesson advise?",
+            options: [
+              "Stop using insights",
+              "Learn what each number means, then find its current name",
+              "Only use third party tools",
+              "Report every number the platform shows",
+            ],
+            answer_index: 1,
+            explanation: "Understanding the meaning lets you find the number whatever it is currently called.",
+          },
+          {
+            prompt: "In the worked example, what did Fuseini change after reading the insights?",
+            options: [
+              "He stopped posting on Facebook",
+              "He moved posts to the evening and added a weekly 'how to use' post",
+              "He bought followers",
+              "He deleted the product photos",
+            ],
+            answer_index: 1,
+            explanation: "He linked the numbers to action: posting when followers were active and more of what brought messages.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "boosting-posts": {
+      explanation_md: `Sooner or later a client will say, "Boost this post for me." Boosting means paying the platform to show an existing post to more people. It is quick and can help a post that is already working, such as a strong product post or an event announcement. But it involves the client's money, so it needs the same care as any payment.
+
+This lesson covers the page manager's side of boosting: whose account, whose money, approvals and records. Proper ad campaigns, audiences, budgets and testing are taught in the Digital Marketer track's social ads lesson and in the Digital Marketing Specialisations roadmap.
+
+## What boosting is good for
+
+* Giving a little extra reach to a post that is already getting good comments or messages.
+* Making sure people in a nearby area see an event or an offer.
+* Testing interest in a new product with a small amount.
+
+It is not a fix for a weak post. If a post gets no reaction from followers, paying to show it to strangers rarely helps.
+
+## Whose account and whose money
+
+* **Use the client's own ad account.** On Meta, the ad account should belong to the client's business portfolio, with you given access. Then the client owns the history, the receipts and the account if you leave.
+* **Use the client's payment method.** The client adds their own card or approved payment method. Avoid paying with your own card and charging them back. If that is unavoidable, agree it in writing beforehand and share the platform's receipt for every charge.
+* **Never share card details by message.** The client should enter payment details themselves.
+
+## Approval before spending
+
+Before any boost, get written approval of:
+
+* Which post.
+* The total amount in cedis and the number of days.
+* The area and basic audience, such as people in Tamale Metro aged over eighteen.
+* The aim: messages, profile visits, more people seeing an event.
+
+A simple message works: "Boost the uniform fabric post, GH¢100 total over five days, Tamale area, aim WhatsApp messages. Approve?" Wait for a clear yes.
+
+## Basic settings, kept simple
+
+When boosting on Facebook, Instagram or TikTok, you usually choose a goal, an audience, a budget and a duration. Choose a goal that matches what the client wants; for many Ghanaian shops, that is messages to WhatsApp or Messenger. Keep the area realistic: a chop bar does not need customers in another region. Check that the post follows advertising rules, because paid posts are reviewed and can be rejected.
+
+## Record and report
+
+Keep a spend log: date, post, amount approved, amount spent, result (such as messages started) and a link to the receipt. Include it in the monthly review so the client sees exactly where the money went and what it brought.
+
+## When to hand over
+
+If the client wants regular ads, multiple audiences, testing or bigger budgets, that is ad management, not boosting. Recommend the client either learns it with you through the Digital Marketer track or hires someone experienced. Do not experiment with large amounts of a client's money.
+
+## Worked example
+
+Sumaila's cold store client in Damongo wants more restaurant orders. A post about frozen chicken in bulk gets several messages from followers. Sumaila suggests a boost and sends: "GH¢80 over four days, Damongo and nearby towns, aim WhatsApp messages." The owner approves and uses his own card in the ad account. Sumaila logs the spend, and the monthly review shows the messages the boost brought.`,
+      practice_task_md: `**Goal:** Prepare a safe boosting routine, without spending money.
+
+**Steps:**
+1. Write an approval message template that includes post, total amount in cedis, days, area, audience and aim.
+2. Create a spend log in Google Sheets with columns for date, post, approved amount, spent amount, result and receipt link.
+3. On a practice Page, open the boost option and look through the choices up to the payment step, then stop without paying. Note the goal and audience options you saw.
+4. Write three sentences explaining to a client why their own ad account and payment method should be used.
+
+**Done looks like:** an approval template, a spend log, notes on the boost options and a short client explanation.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which ad account should be used to boost a client's post?",
+            options: [
+              "The page manager's personal ad account",
+              "The client's own ad account, with the manager given access",
+              "A friend's ad account",
+              "Any account that has money in it",
+            ],
+            answer_index: 1,
+            explanation: "The client should own the ad account, history and receipts.",
+          },
+          {
+            prompt: "What should be agreed in writing before boosting?",
+            options: [
+              "Only the colour of the post",
+              "The post, total amount, days, area and aim",
+              "The manager's personal fee for the year",
+              "Nothing; boosting is free",
+            ],
+            answer_index: 1,
+            explanation: "Clear written approval covers which post, how much, how long, where and why.",
+          },
+          {
+            prompt: "When is boosting least likely to help?",
+            options: [
+              "When a post already gets good comments and messages",
+              "When an event needs to reach people nearby",
+              "When a post gets no reaction from followers",
+              "When testing interest in a new product with a small amount",
+            ],
+            answer_index: 2,
+            explanation: "Boosting is not a fix for a weak post that followers ignore.",
+          },
+          {
+            prompt: "A client wants regular ads, several audiences and testing. What does the lesson advise?",
+            options: [
+              "Keep boosting posts with larger amounts",
+              "Recommend learning proper ad management or hiring someone experienced",
+              "Stop all paid promotion forever",
+              "Use your own card to save time",
+            ],
+            answer_index: 1,
+            explanation: "That is ad management, taught in the Digital Marketer track, not simple boosting.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "monthly-review": {
+      explanation_md: `At the end of each month, a client deserves to know what their page achieved and what happens next. A short monthly review does this. It also forces you to step back from daily posting and ask whether the plan is working. Done well, it is the single best tool for keeping clients and improving results.
+
+The Digital Marketer track's lesson on reporting to clients covers report structure in general. This lesson focuses on the page manager's version: linking back to the onboarding goal and using the review to change next month's pillars and routine.
+
+## Keep it to one page
+
+Owners are busy. One page, or a short WhatsApp message with a few screenshots, is better than a long document. Use the same layout every month so the client knows where to look:
+
+* **Goal.** One line reminding the client what you are working toward, copied from the brief.
+* **What we did.** Number of posts by pillar, live sessions, any boosts and their cost.
+* **What happened.** The three to five numbers you track, compared with last month. Include results you collect yourself, such as orders from the inbox log.
+* **What worked.** One or two posts or actions that did well, with a reason if you know it.
+* **What did not.** One or two that did poorly, with your honest view.
+* **Community and issues.** Complaints, scams, impostor pages or restrictions, and how they were handled.
+* **Next month.** Two or three specific changes.
+
+## Write for the owner
+
+Use plain words. Instead of "engagement rate improved", write "more people commented and shared". Instead of a table of twenty numbers, pick the few that matter. If the owner prefers a call or a voice note in Dagbani or Twi, offer that alongside the written page.
+
+## Use it to change the plan
+
+The review is not just a report; it is a decision meeting. Look at results by pillar:
+
+* Which pillar brought the most messages or orders? Give it more space.
+* Which pillar got attention but no action? Keep it lighter or change the format.
+* Which times and formats worked best? Adjust the schedule.
+* Did any problems keep coming up in the inbox? Answer them in a post.
+
+Write the changes into next month's plan and mention them in the review, so the client sees the link between results and action.
+
+## Honest and consistent
+
+Report every month, including weak months. Never change how a number is counted just to make a month look better. If a platform renames or changes a measure, note it so the client understands why a number jumped or fell.
+
+## Worked example
+
+Issahaku sends the Tamale school's head teacher a one page review for October. Goal: more admission enquiries. Done: sixteen posts across four pillars, one open day live stream. Results: enquiries in the inbox log rose from nine to twenty one; reach rose slightly. Worked: the open day live and a post answering fees questions. Did not: a long post about the school's history got little response. Issues: one impostor account reported. Next month: two posts answering common parent questions, a short teacher introduction video each week, and history moved to a short Story series. The head teacher approves it in a two line reply.`,
+      practice_task_md: `**Goal:** Write a one page monthly review.
+
+**Steps:**
+1. Use your practice client's brief and your weekly tracking sheet, or invent realistic numbers clearly marked as practice.
+2. Write a one page review with the seven parts from this lesson: goal, what we did, what happened, what worked, what did not, community and issues, next month.
+3. Look at results by pillar and write two or three specific changes for next month's plan.
+4. Read it aloud. If any sentence uses jargon, rewrite it in plain words.
+
+**Done looks like:** a one page review, clearly marked as practice if the numbers are invented, that links results to next month's changes.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should the first line of a monthly review remind the client of?",
+            options: [
+              "Your fee",
+              "The goal from the onboarding brief",
+              "The number of followers you personally have",
+              "The platform's latest features",
+            ],
+            answer_index: 1,
+            explanation: "Starting with the goal links everything in the review to what the client wants.",
+          },
+          {
+            prompt: "Why use the same layout every month?",
+            options: [
+              "Platforms require it",
+              "So the client knows where to look and can compare months easily",
+              "To avoid writing anything new",
+              "Because changing layouts costs data",
+            ],
+            answer_index: 1,
+            explanation: "A consistent layout makes the review quick to read and compare.",
+          },
+          {
+            prompt: "A pillar gets lots of attention but no messages or orders. What does the lesson suggest?",
+            options: [
+              "Double it immediately",
+              "Keep it lighter or change its format",
+              "Hide it from the report",
+              "Delete all its past posts",
+            ],
+            answer_index: 1,
+            explanation: "The review is used to adjust pillars based on what drives action.",
+          },
+          {
+            prompt: "Which practice is honest reporting?",
+            options: [
+              "Changing how numbers are counted to make a month look better",
+              "Skipping weak months",
+              "Reporting every month and noting when a platform changes a measure",
+              "Reporting only likes",
+            ],
+            answer_index: 2,
+            explanation: "Consistent counting and explaining platform changes keep reports trustworthy.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "working-and-earning": {
+      explanation_md: `You can learn every lesson in this track and still struggle to find work if you cannot show what you have done. Employers and clients hiring a page manager want evidence: pages you have run, problems you have solved and results you can explain. This section turns your practice into proof, helps you apply for roles and shows how to handle several clients without losing control.
+
+## Three routes into paid work
+
+* **Employment.** Social media assistant, officer or executive roles at shops, agencies, media houses, NGOs, schools and companies. These offer a regular salary and a team to learn from, but often ask for qualifications and some experience.
+* **Freelancing.** Managing pages for several small businesses, each paying a monthly fee. You can start sooner and choose clients, but you must find work, organise yourself and handle payment. The Freelancing track covers pricing, contracts and getting paid.
+* **Inside your own work.** Many people use these skills in a job that is not called social media: an office assistant who runs the company page, a teacher who manages the school's accounts, a shop worker who handles the WhatsApp orders. This is real experience; count it.
+
+## Evidence beats certificates alone
+
+Courses and certificates can help, but adverts for page managers often ask for links to pages you have managed. A page you ran for a church, a school club, a family business or a community project is evidence. So are your briefs, style guides, content plans and monthly reviews, shared with the owner's permission.
+
+## What this section covers
+
+* **A portfolio of pages you have run.** Short case studies that show the goal, what you did and what changed.
+* **Applying for social media roles.** Tailoring applications, preparing a sample plan and handling interview questions.
+* **Managing several clients at once.** Separate plans, folders and access records for each client, protecting your devices, and setting clear limits.
+
+## Start small and real
+
+You do not need a big client first. A real page with an honest result is worth more than an imaginary campaign. Offer to run a page for three months for an organisation you care about, with a clear brief and monthly reviews, and agree that you may use it in your portfolio. Do it well, and ask the owner for a short written reference at the end.
+
+## Worked example
+
+Amina from Wa finished this track while working at her aunt's catering business. She had run the catering page for six months, the youth group page at her church for three months and a short practice page for a friend's phone accessories stall. She wrote a one page case study for each, collected a reference from her aunt and applied for a social media assistant role at a Wa radio station. In the interview, she showed her monthly reviews and explained how she handled an impostor page. She got the role, and kept the church page as a volunteer.
+
+## A note on honesty
+
+Never claim results you did not achieve, use other people's work as yours or exaggerate your experience. Hiring managers often check, and the social media world in a town is small. Your reputation is your most valuable asset.`,
+      practice_task_md: `**Goal:** Plan your route to paid work.
+
+**Steps:**
+1. Write which route you will aim for first: employment, freelancing or using the skills in your current work, and why.
+2. List every page you have helped with, even informally, and what you did on each.
+3. Choose one organisation you could offer to manage a page for, for three months, with a brief and monthly reviews.
+4. Write a short message offering this, including that you would like to use the work in your portfolio.
+
+**Done looks like:** a chosen route, a list of your experience and a ready to send offer message.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What do adverts for page managers often ask for, according to this lesson?",
+            options: [
+              "Links to pages you have managed",
+              "A paid ads certificate only",
+              "A list of celebrities you follow",
+              "Your personal follower count",
+            ],
+            answer_index: 0,
+            explanation: "Evidence of pages you have run is often requested.",
+          },
+          {
+            prompt: "Which track covers pricing, contracts and getting paid as a freelancer?",
+            options: ["Digital Marketer", "Video and Content Creation", "Freelancing", "Cybersecurity"],
+            answer_index: 2,
+            explanation: "The lesson points to the Freelancing track for pricing, contracts and payment.",
+          },
+          {
+            prompt: "Which of these counts as real experience?",
+            options: [
+              "Only paid jobs with the title 'social media manager'",
+              "Running a church, school club or family business page well",
+              "Following many business pages",
+              "Watching videos about social media",
+            ],
+            answer_index: 1,
+            explanation: "Running real pages, even unpaid, is evidence you can show.",
+          },
+          {
+            prompt: "What did Amina show in her interview?",
+            options: [
+              "Her personal follower count",
+              "Monthly reviews and how she handled an impostor page",
+              "A certificate only",
+              "Screenshots of other people's pages",
+            ],
+            answer_index: 1,
+            explanation: "She showed real evidence of her work and problem solving.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    portfolio: {
+      explanation_md: `A portfolio is a small collection of your best work that a hiring manager or client can look through quickly. For a page manager, it is not a gallery of pretty graphics. It is proof that you can run pages: set goals, plan, handle the community and get results. A short, honest portfolio with two or three real case studies beats a long one full of practice designs.
+
+## What to include
+
+For each page you have managed, write a one page case study:
+
+* **The client.** Who they are, in a sentence. Use their name only with permission; otherwise describe them, such as "a fabric shop in Tamale".
+* **The goal.** What you agreed at the start.
+* **What you did.** Pillars, posting routine, inbox setup, moderation, live sessions, boosts. Keep it short.
+* **A challenge.** A problem you faced and how you solved it: an impostor page, a complaint, a client who never sent photos.
+* **Results.** A few honest numbers or changes compared with the start, with screenshots of insights where the client agrees. If results were modest, say so and explain what you learned.
+* **Link.** The page itself, if public and the client agrees.
+
+Add supporting documents if you have them: a brief, a style guide, a month of content pillars, a monthly review. Remove customers' personal details from any screenshot.
+
+## Where to keep it
+
+* **A shared folder or document.** A Google Doc or Slides file with a link anyone can view works well and is easy to update on any device.
+* **A simple free website or link page,** if you want one.
+* **Your own professional profile** on a platform such as LinkedIn, with links to the case studies.
+
+Name files clearly, such as "Case study, fabric shop page, 2026". Keep the link short and test it while logged out.
+
+## Getting permission
+
+Your client owns their page and data. Before using their work, ask: "May I include our work on your page in my portfolio, with your business name or without?" Keep their reply. Many owners are happy to help, especially if your work went well.
+
+## When you have no clients yet
+
+Start with a page you can run for real:
+
+* A church, mosque or youth group page.
+* A school club, alumni or sports team page.
+* A family business or a friend's small shop.
+* A community project, such as a clean up campaign or a reading club.
+* Your own project page about something you know, run like a client page with a brief and reviews.
+
+Treat it as a real client. Write the brief, follow the routine and record results for at least two or three months. That gives you a genuine case study.
+
+## Never fake it
+
+Do not use other people's pages as your work, invent results, buy followers to make a page look successful or present mock ups as real clients. If something is a practice project, label it as practice. Employers respect honest beginners and avoid people who exaggerate.
+
+## Worked example
+
+Abdul-Rahman's portfolio has three case studies. The mosque events page: goal, more people at Ramadan lectures; challenge, keeping posts respectful and accurate; result, more event responses and a steady posting routine. His aunt's provisions shop: goal, more WhatsApp orders; challenge, an impostor account; result, orders recorded rising over three months. A practice page clearly labelled as practice, showing a brief, style guide and content plan. Each case study fits on one page.`,
+      practice_task_md: `**Goal:** Write your first case study.
+
+**Steps:**
+1. Choose one page you have managed or are managing, even for a few weeks.
+2. Ask the owner for permission to include it, with or without the business name, and save their reply.
+3. Write a one page case study with: client, goal, what you did, a challenge, results and a link.
+4. Add one supporting document, such as your brief or style guide, with personal details removed.
+5. Put it in a shared folder or document and test the link while logged out.
+
+**Done looks like:** one honest case study with permission, a supporting document and a working link.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should a page manager's portfolio mainly prove?",
+            options: [
+              "That you can design pretty graphics",
+              "That you can run pages: set goals, plan, handle community and get results",
+              "That you have many personal followers",
+              "That you know many celebrities",
+            ],
+            answer_index: 1,
+            explanation: "The portfolio shows the operating skills employers hire page managers for.",
+          },
+          {
+            prompt: "Why include a challenge in each case study?",
+            options: [
+              "To show how you solved a real problem",
+              "To blame the client",
+              "Because it makes the page longer",
+              "To hide weak results",
+            ],
+            answer_index: 0,
+            explanation: "Problems you solved show judgement and experience.",
+          },
+          {
+            prompt: "What should you do before including a client's page in your portfolio?",
+            options: [
+              "Nothing; it is your work",
+              "Ask permission, with or without the business name, and keep their reply",
+              "Remove the client's name and post it anyway",
+              "Pay the client",
+            ],
+            answer_index: 1,
+            explanation: "The client owns their page and data, so ask and keep a record.",
+          },
+          {
+            prompt: "How should you present a practice project?",
+            options: [
+              "As a real paid client",
+              "Clearly labelled as practice",
+              "With invented results to look stronger",
+              "Only in your CV, not your portfolio",
+            ],
+            answer_index: 1,
+            explanation: "Labelling practice honestly protects your reputation.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "applying-for-roles": {
+      explanation_md: `Applications for social media roles usually ask for a CV, a short cover letter or message, links to pages you have managed and sometimes a test task, such as a one week content plan for the company or replies to sample customer messages. Each part is a chance to show that you understand their business, not just social media in general.
+
+## Read the advert closely
+
+Before writing anything, list:
+
+* **The tasks.** Posting, inbox, moderation, reporting, live streaming, influencer work, ads support.
+* **The platforms and tools named.** For example Meta Business Suite, TikTok, Canva, CapCut.
+* **The requirements.** Qualifications, experience, location, languages.
+* **The organisation.** What it sells or does, and who its audience is.
+
+Then look at the organisation's current pages. What is good? What is missing? This research shapes your whole application.
+
+## Tailor your CV
+
+Keep it to one or two pages. Near the top, list the pages you have managed with one line each on what you achieved. Match the advert's words honestly: if it asks for "community management" and you handled the church group's comments and members, use that phrase. Include your tools, languages such as Dagbani, Hausa, Twi or Ewe if relevant, and any certificates, but lead with evidence.
+
+## A short cover message
+
+Three short paragraphs are enough:
+
+* Why this organisation and role interest you, showing you looked at their pages.
+* Two pieces of evidence that you can do the main tasks, with portfolio links.
+* One idea you would bring, stated modestly.
+
+## The sample plan or test task
+
+Many employers ask for, or are impressed by, a sample. A one week plan for their page is ideal:
+
+* Their goal as you understand it.
+* Three or four pillars that fit their business.
+* Five posts with platform, format, caption draft and timing.
+* One note on inbox or community, such as a saved reply for a common question you noticed in their comments.
+
+Keep it simple and specific to them. If they set a test, follow the instructions exactly and submit on time. Do not post anything on their pages without permission.
+
+## Interview questions to prepare
+
+* "Tell us about a page you managed." Use a case study: goal, actions, challenge, result.
+* "What would you do if a customer posted an angry complaint?" Use your crisis levels and first hour checklist.
+* "How would you get access to our pages?" Explain business tools, roles and two step verification. This answer impresses because many applicants say "send me the password".
+* "How do you measure success?" Link numbers to goals.
+* "Tell us about a post that went wrong." Be honest, and say what you learned and changed.
+
+## Practical points
+
+Check spelling everywhere; you are applying to write for a brand. Make your own social profiles respectable, because employers look. Follow up politely once if you have not heard back after the stated time.
+
+## Worked example
+
+Hawa's former page manager, Fuseini, applies for a social media officer role at a Bolgatanga agro processing company. He studies their Facebook page and notices unanswered questions about wholesale prices. His sample plan includes a pillar on wholesale buying, a saved reply for wholesale enquiries and five posts for one week. In the interview, he explains how he set up access for Hawa without passwords and how he reported an impostor page. The panel remembers him as the applicant who already understood their customers.`,
+      practice_task_md: `**Goal:** Prepare a tailored application for a real advert.
+
+**Steps:**
+1. Find one social media advert on a Ghanaian job board or a company careers page.
+2. List its tasks, tools, requirements and organisation details in your own words.
+3. Look at the organisation's pages and note two strengths and two gaps.
+4. Write a three paragraph cover message and a one week sample plan for their page.
+5. Write short answers to the five interview questions in this lesson.
+
+**Done looks like:** a tailored cover message, a one week sample plan and prepared interview answers. You do not have to send the application.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should you do before writing your application?",
+            options: [
+              "Send the same CV to every employer",
+              "Read the advert closely and look at the organisation's current pages",
+              "Post on their page to get noticed",
+              "Ask for their page password",
+            ],
+            answer_index: 1,
+            explanation: "Researching the advert and the pages shapes a tailored application.",
+          },
+          {
+            prompt: "What should lead your CV for a page manager role?",
+            options: [
+              "Your hobbies",
+              "Evidence: pages you have managed and what you achieved",
+              "A list of every app on your phone",
+              "Your primary school results",
+            ],
+            answer_index: 1,
+            explanation: "Lead with evidence, then tools, languages and certificates.",
+          },
+          {
+            prompt: "Which is a good sample to include with an application?",
+            options: [
+              "A one week content plan for their page with pillars and post drafts",
+              "Copies of another company's posts",
+              "A list of passwords you have used",
+              "A long essay on the history of social media",
+            ],
+            answer_index: 0,
+            explanation: "A specific one week plan shows you understand their business.",
+          },
+          {
+            prompt: "How should you answer 'How would you get access to our pages?'",
+            options: [
+              "Ask them to send the password by WhatsApp",
+              "Explain business tools, roles and two step verification",
+              "Say you will create a new page",
+              "Say access does not matter",
+            ],
+            answer_index: 1,
+            explanation: "Safe access through roles shows professionalism many applicants lack.",
+          },
+          {
+            prompt: "If you are asked about a post that went wrong, what should you do?",
+            options: [
+              "Say it never happens to you",
+              "Blame the client",
+              "Be honest and say what you learned and changed",
+              "Change the subject",
+            ],
+            answer_index: 2,
+            explanation: "Honesty and learning from mistakes are what interviewers look for.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "several-clients": {
+      explanation_md: `Once you can run one page well, you may take on two, three or four small clients on monthly fees. This is a common way to earn as a freelance page manager. It is also where people get into trouble: posting the wrong client's content, missing messages, mixing up logins or burning out. Good systems prevent all of these.
+
+## One system per client, the same shape every time
+
+For each client, keep the same set of things in the same place:
+
+* **A folder** in your cloud drive with the brief, style guide, content plan, approvals, insights sheet, inbox log and monthly reviews.
+* **A plan** for the month, with pillars and scheduled dates.
+* **An access record:** which platforms, what level of access, granted on what date, and by whom.
+* **A contact sheet:** who approves posts, who handles orders and complaints, and the backup contact.
+
+Use the same folder names and file layout for every client. When you open any client's folder, you know where everything is.
+
+## Avoid posting to the wrong page
+
+Posting one client's offer on another client's page is a common, embarrassing mistake. Reduce the risk:
+
+* Before you publish or schedule, check the page name and profile picture shown in the tool.
+* Work on one client at a time, in a block of time, then close everything before switching.
+* In Meta Business Suite, check which business portfolio and page are selected at the top before you start.
+
+## Protect your devices and accounts
+
+You now hold access to several businesses. If your device or account is compromised, all of them are at risk.
+
+* **Lock your devices** with a strong PIN or password, and keep them updated.
+* **Use two step verification** on every account, ideally with an authenticator app, and store backup codes safely.
+* **Use a password manager** or a strong, unique password for each account. Never reuse one password.
+* **Do not let others use** your work device or accounts, even family members.
+* **Avoid installing unknown apps** that ask for access to your social accounts.
+
+## Set clear limits
+
+Clients may message at night or expect instant replies all weekend. Agree in writing:
+
+* **Your working hours** and reply times, and what happens outside them, such as away messages.
+* **What is included** in the monthly fee: number of posts, inbox hours, live sessions, reports.
+* **What costs extra,** such as photo shoots, extra live sessions or ad management.
+* **How changes are requested,** and how much notice you need.
+
+The Freelancing track covers pricing, contracts and getting paid in detail.
+
+## Know your capacity
+
+Track how many hours each client really takes for a month. If you are always rushing, missing messages or working late, you have too many clients or too little in your fee. Taking on fewer clients and serving them well is better than losing all of them through mistakes.
+
+## Worked example
+
+Mariama manages three pages: a pharmacy, a school and a catering service. She works on each in fixed blocks: the pharmacy Monday morning, the school Monday afternoon, catering Tuesday morning, then inbox checks for all three at set times each day. Each client has an identical folder layout and an access record. Before scheduling, she checks the page name at the top of Meta Business Suite. Her phone has a lock screen and her accounts use an authenticator app. When the catering client asks for daily live streams, she explains that this is outside the agreed package and offers a price for extra sessions.`,
+      practice_task_md: `**Goal:** Build a multi client system.
+
+**Steps:**
+1. Create a folder template in a free cloud drive with subfolders and files for brief, style guide, plan, approvals, insights, inbox log and reviews.
+2. Create an access record sheet with columns for client, platform, access level, date granted, granted by and date removed.
+3. Write a weekly time plan showing blocks for three imaginary clients and daily inbox checks.
+4. Write a short service agreement outline: working hours, what is included, what costs extra and how changes are requested.
+5. Check that your own device has a screen lock and that your main account uses two step verification.
+
+**Done looks like:** a reusable folder template, an access record, a weekly time plan, a service outline and secured devices.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why use the same folder layout for every client?",
+            options: [
+              "Platforms require it",
+              "So you always know where everything is when you open any client's folder",
+              "So clients can see each other's files",
+              "To save data",
+            ],
+            answer_index: 1,
+            explanation: "A consistent layout makes switching between clients fast and less error prone.",
+          },
+          {
+            prompt: "What helps prevent posting to the wrong client's page?",
+            options: [
+              "Working on all clients at once",
+              "Checking the page name and picture in the tool before publishing",
+              "Using one shared caption for every client",
+              "Posting only at night",
+            ],
+            answer_index: 1,
+            explanation: "Checking which page is selected, and working in blocks, reduces mix ups.",
+          },
+          {
+            prompt: "Why is device security even more important when you manage several clients?",
+            options: [
+              "Because a compromised device or account puts all of their pages at risk",
+              "Because clients check your phone",
+              "Because it makes posts load faster",
+              "Because platforms charge for insecure devices",
+            ],
+            answer_index: 0,
+            explanation: "You hold access to several businesses, so one breach can affect all of them.",
+          },
+          {
+            prompt: "A client asks for daily live streams that were not in the agreed package. What did Mariama do?",
+            options: [
+              "Agreed for free to keep them happy",
+              "Ignored the request",
+              "Explained it was outside the package and offered a price for extra sessions",
+              "Dropped the client immediately",
+            ],
+            answer_index: 2,
+            explanation: "Clear written limits let you handle extra requests fairly.",
+          },
+          {
+            prompt: "What does an access record contain?",
+            options: [
+              "Client passwords",
+              "Platforms, access levels, dates granted and removed, and who granted them",
+              "Customers' phone numbers",
+              "Your personal social media posts",
+            ],
+            answer_index: 1,
+            explanation: "An access record tracks roles, not passwords, so access can be reviewed and removed cleanly.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
   },
 };
 

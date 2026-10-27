@@ -16,7 +16,6 @@ const metaStandards = r("Meta Transparency Center: Community Standards", "https:
 const tiktokGuidelines = r("TikTok Community Guidelines", "https://www.tiktok.com/community-guidelines/en");
 const tiktokSafety = r("TikTok Safety Center: account security", "https://www.tiktok.com/safety/en/account-security");
 const tiktokAcademy = r("TikTok Creator Academy", "https://www.tiktok.com/creator-academy/en", "video");
-const tiktokSupport = r("TikTok Help Center", "https://support.tiktok.com/en");
 const youtubeStrikes = r("YouTube Help: Community Guidelines strike basics", "https://support.google.com/youtube/answer/2802032");
 const metaCert = r(
   "Meta Social Media Marketing Professional Certificate (Coursera)",
@@ -30,12 +29,23 @@ const govukTone = r(
 const bufferCalendar = r("Buffer: How to create a social media content calendar", "https://buffer.com/library/social-media-content-calendar/");
 const bufferLibrary = r("Buffer library: social media guides", "https://buffer.com/library/");
 const sheetsHowTo = r("Google Sheets help: How to use Google Sheets", "https://support.google.com/docs/answer/6000292", "practice");
-const google2sv = r("Google Account Help: Turn on 2 Step Verification", "https://support.google.com/accounts/answer/185839");
 const cisaMfa = r("CISA: Turn on multifactor authentication", "https://www.cisa.gov/secure-our-world/turn-mfa");
 const cisaPasswords = r("CISA: Use strong passwords", "https://www.cisa.gov/secure-our-world/use-strong-passwords");
 const cisaPhishing = r("CISA: Recognise and report phishing", "https://www.cisa.gov/secure-our-world/recognize-and-report-phishing");
 const ncscSocial = r("NCSC: Social media, how to use it safely", "https://www.ncsc.gov.uk/guidance/social-media-how-to-use-it-safely");
 const ghanaCsa = r("Cyber Security Authority, Ghana", "https://www.csa.gov.gh/");
+const tiktokDisclosure = r(
+  "TikTok Business Help: content disclosure setting for creators",
+  "https://ads.tiktok.com/help/article/about-the-content-disclosure-setting-for-creators",
+);
+const tiktokBcRoles = r(
+  "TikTok Business Help: Business Center roles and permissions",
+  "https://ads.tiktok.com/help/article/about-business-center-roles-and-permissions",
+);
+const tiktokAnalytics = r("TikTok Creator Academy: introduction to analytics", "https://www.tiktok.com/creator-academy/en/article/tool-analytics-intro");
+const linkedinRoles = r("LinkedIn Help: Page admin roles", "https://www.linkedin.com/help/linkedin/answer/a541981");
+const metaRecovery = r("Meta Account Recovery Hub", "https://www.meta.com/account-recovery-support/");
+const fdaAds = r("Ghana FDA: guidelines for advertisement of regulated products", "https://fdaghana.gov.gh/guidelines-for-advertisement-of-regulated-products");
 const asaAds = r("ASA: Recognising ads on social media and influencer marketing", "https://www.asa.org.uk/advice-online/recognising-ads-social-media.html");
 
 export const socialMediaManagement: RoadmapDraft = {
@@ -109,7 +119,7 @@ export const socialMediaManagement: RoadmapDraft = {
         "Business tools like Meta Business Suite let an owner give you a role on their page so nobody has to hand over a password. Learn the difference between full control and partial access, and how the owner removes you cleanly when the work ends.",
       parent: "taking-on-a-client",
       optional: false,
-      resources: [RES.metaLearn, tiktokSupport],
+      resources: [RES.metaLearn, tiktokBcRoles, linkedinRoles],
     },
     {
       slug: "account-security",
@@ -118,7 +128,7 @@ export const socialMediaManagement: RoadmapDraft = {
         "A hacked business page can lose years of followers and be used to scam customers. Learn to turn on two step verification, keep recovery details current, spot phishing messages that pretend to be from Meta or TikTok and know what to do if a page is taken over.",
       parent: "taking-on-a-client",
       optional: false,
-      resources: [google2sv, cisaPhishing, tiktokSafety],
+      resources: [metaRecovery, tiktokSafety, ghanaCsa],
     },
     {
       slug: "planning",
@@ -181,7 +191,7 @@ export const socialMediaManagement: RoadmapDraft = {
         "Busy pages attract spam, insults and fake accounts that copy the brand and ask followers for MoMo payments. Learn to hide, delete and report harmful comments, warn followers about impostors and write simple house rules for a community.",
       parent: "community",
       optional: false,
-      resources: [metaStandards, ghanaCsa],
+      resources: [metaStandards, cisaPhishing, ghanaCsa],
     },
     {
       slug: "complaints-and-crises",
@@ -235,7 +245,7 @@ export const socialMediaManagement: RoadmapDraft = {
         "When a brand pays an influencer, or a post is an advert, followers should be able to tell. Learn to label sponsored posts with the platform's branded content tools, avoid claims a client cannot back up and brief influencers clearly.",
       parent: "rules-and-ethics",
       optional: false,
-      resources: [asaAds, tiktokSupport],
+      resources: [tiktokDisclosure, fdaAds, asaAds],
     },
     {
       slug: "results",
@@ -253,7 +263,7 @@ export const socialMediaManagement: RoadmapDraft = {
         "Each platform shows reach, engagement, followers and messages in its own insights screen, all readable on a phone or a computer. Learn which numbers matter for the client's goal and how to record them in a simple sheet every week.",
       parent: "results",
       optional: false,
-      resources: [RES.metaLearn, sheetsHowTo],
+      resources: [RES.metaLearn, tiktokAnalytics, sheetsHowTo],
     },
     {
       slug: "boosting-posts",
