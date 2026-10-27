@@ -122,7 +122,9 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
               <h2 id="skills-heading" className="text-subtitle text-content">
                 {verifiedSkills.length > 0 ? "Other skills" : "Skills"}
               </h2>
-              <p className="-mt-1 text-sm text-content-3">Listed by {name.split(" ")[0]}, not verified.</p>
+              {verifiedSkills.length > 0 && (
+                <p className="-mt-1 text-sm text-content-3">Listed by {name.split(" ")[0]}, not verified.</p>
+              )}
               <ul className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
                   <li key={skill} className="rounded-full border border-line bg-surface-sunken px-3 py-1 text-sm text-content">

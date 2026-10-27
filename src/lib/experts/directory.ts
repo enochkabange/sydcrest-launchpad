@@ -318,7 +318,7 @@ export function featuredExperts(experts: DirectoryExpert[], limit = 3): Director
 /** Options for the filter selects, from the experts actually listed. */
 export function facets(experts: DirectoryExpert[]) {
   const skills = new Map<string, string>();
-  for (const e of experts) for (const s of e.skills) if (!skills.has(fold(s))) skills.set(fold(s), s);
+  for (const e of experts) for (const s of [...e.skills, ...e.verifiedSkills]) if (!skills.has(fold(s))) skills.set(fold(s), s);
   const categoryCounts = new Map<string, number>();
   for (const e of experts)
     for (const c of e.categories) if (isExpertCategory(c)) categoryCounts.set(c, (categoryCounts.get(c) ?? 0) + 1);
