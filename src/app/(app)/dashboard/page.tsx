@@ -15,8 +15,8 @@ async function Greeting() {
     <>
       <h1 className="text-3xl text-content">{firstName ? `Welcome, ${firstName}` : "Welcome"}</h1>
       {!profile.region && (
-        <div className="flex flex-col items-start gap-3 rounded-lg border border-line p-5">
-          <p className="text-content-2">
+        <div className="flex flex-col items-start gap-3 rounded-lg border border-line p-5 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+          <p className="max-w-2xl text-content-2">
             Add your region so we can connect you with your local chapter and events near you.
           </p>
           <Link href="/profile" className={buttonClasses("secondary")}>
@@ -48,12 +48,14 @@ async function Learning() {
 
   if (!roadmapIds.length) {
     return (
-      <section className="flex flex-col items-start gap-3 rounded-lg border border-line bg-surface-sunken p-5">
-        <h2 className="text-lg text-content">Start a roadmap</h2>
-        <p className="text-content-2">
-          Pick a free roadmap written for the Ghanaian job market. Your progress and your next topic will show up here.
-        </p>
-        <Link href="/roadmaps" className={buttonClasses("primary")}>
+      <section className="flex flex-col items-start gap-3 rounded-lg border border-line bg-surface-sunken p-5 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+        <div className="flex max-w-2xl flex-col gap-3">
+          <h2 className="text-lg text-content">Start a roadmap</h2>
+          <p className="text-content-2">
+            Pick a free roadmap written for the Ghanaian job market. Your progress and your next topic will show up here.
+          </p>
+        </div>
+        <Link href="/roadmaps" className={buttonClasses("primary", "shrink-0")}>
           Browse roadmaps
         </Link>
       </section>
@@ -76,9 +78,13 @@ async function Learning() {
   return (
     <section className="flex flex-col gap-3">
       <h2 className="text-xl text-content">Your roadmaps</h2>
-      <ul className="flex flex-col gap-3">
+      {/* One column on phones; two side by side from lg, a lone roadmap spans both. */}
+      <ul className="flex flex-col gap-3 lg:grid lg:grid-cols-2 lg:gap-4">
         {cards.map(({ roadmap, next, done, total, complete }) => (
-          <li key={roadmap.id} className="flex flex-col gap-3 rounded-lg border border-line p-5">
+          <li
+            key={roadmap.id}
+            className="flex flex-col gap-3 rounded-lg border border-line p-5 lg:only:col-span-2"
+          >
             <div className="flex flex-col gap-1">
               <h3 className="text-lg font-semibold text-content">{roadmap.title}</h3>
               <p className="text-sm text-content-2">
@@ -111,7 +117,7 @@ async function Learning() {
           </li>
         ))}
       </ul>
-      <Link href="/roadmaps" className="inline-flex min-h-11 items-center self-start text-sm font-semibold text-content-link">
+      <Link href="/roadmaps" className="inline-flex min-h-11 items-center self-start text-sm font-semibold text-content-link hover:underline">
         Browse more roadmaps
       </Link>
     </section>

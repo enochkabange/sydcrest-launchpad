@@ -15,7 +15,7 @@ const content: TrackContent = {
 
 Job adverts in Ghana, and some remote adverts that accept applicants from Ghana, now ask for people who are comfortable with AI tools: people who can use an AI assistant to research and draft while keeping their work accurate, or who have experience with a chat assistant. Employers are not asking you to build AI. They want people who can use an AI assistant to get ordinary work done faster and still hand in work that is correct, honest and safe.
 
-That is what this track teaches. Everything in it works on a phone with a data bundle, using free tools.
+That is what this track teaches. You can do all of it on a phone or a computer with a data bundle, using free tools.
 
 ## What an AI assistant is
 
@@ -26,7 +26,7 @@ You can ask an assistant to draft a message, explain a hard idea in simple words
 ## The three topics in this section
 
 * **What AI can and cannot do.** How these tools work in simple terms, why they sometimes state wrong things with confidence, and which tasks suit them.
-* **Choosing and setting up a free assistant.** How to compare free tools on things that matter to you, and how to set one up on your phone.
+* **Choosing and setting up a free assistant.** How to compare free tools on things that matter to you, and how to set one up on your phone or computer.
 * **Privacy and safe use.** What you must never paste into an AI tool, how to change your settings, and how Ghana's data protection law affects you when you handle other people's information.
 
 ## A small example
@@ -37,11 +37,11 @@ That pattern, **AI drafts, you decide**, runs through every lesson in this track
 
 ## How to use this track
 
-Work through the sections in order. Each lesson has a short practice task you can do on your phone and save as proof of your skills. By the end you will have a small portfolio showing an employer or client exactly how you use AI well.`,
+Work through the sections in order. Each lesson has a short practice task you can do on a phone or a computer and save as proof of your skills. By the end you will have a small portfolio showing an employer or client exactly how you use AI well.`,
       practice_task_md: `**Goal:** start your AI learning journal and try an assistant for the first time.
 
 1. Create a new note or Google Doc called "AI learning journal".
-2. Open any free AI assistant in your phone browser or app. If you have not signed up for one yet, you can do this task after the next lesson.
+2. Open any free AI assistant in your browser or app. If you have not signed up for one yet, you can do this task after the next lesson.
 3. Ask it: "Explain in five simple sentences what you are and what you are not good at."
 4. Copy the answer into your journal. Underneath, write two things in your own words: one thing you think it explained well, and one claim you are not sure is true.
 
@@ -186,13 +186,13 @@ Issahaku, a teacher in Wa, asks an assistant for a short history of his district
     "choosing-tools": {
       explanation_md: `## Why this matters
 
-You do not need to pay for anything to learn this track or to start earning with AI skills. Several companies offer free AI assistants that run in a phone browser or app. But they are not all the same, and the free plans change often: a feature that is free this month may move to a paid plan next month, and limits on how many messages you can send can go up or down. Knowing how to compare tools, rather than memorising one, keeps you ready for those changes.
+You do not need to pay for anything to learn this track or to start earning with AI skills. Several companies offer free AI assistants that run in a web browser or an app. But they are not all the same, and the free plans change often: a feature that is free this month may move to a paid plan next month, and limits on how many messages you can send can go up or down. Knowing how to compare tools, rather than memorising one, keeps you ready for those changes.
 
 ## What to compare
 
 When you try a free assistant, look at these things:
 
-* **Works on your phone and data.** Does it have a light app or work well in a mobile browser? Some apps are large downloads; a browser may save space.
+* **Works on your device and data.** Does it have a light app, or work well in a browser on a phone or computer? Some apps are large downloads; a browser may save space.
 * **Sign up needs.** Most ask for an email or a phone number. Use an account you control, not a shared one.
 * **Limits.** How many messages or files can you use per day on the free plan? What happens when you hit the limit?
 * **Web search.** Can it look things up and show where information came from? Sources make checking easier.
@@ -203,7 +203,7 @@ When you try a free assistant, look at these things:
 
 ## Setting up well
 
-Pick one main assistant and learn it properly, then try a second for comparison. On your phone, add it to your home screen if you use it in a browser. Turn on two step verification for the account it uses. Check the settings page for data and history controls before you start real work.
+Pick one main assistant and learn it properly, then try a second for comparison. If you use it in a browser, add it to your phone's home screen or bookmark it on a computer. Turn on two step verification for the account it uses. Check the settings page for data and history controls before you start real work.
 
 Save data by keeping prompts focused, avoiding long image or video generation on mobile data, and doing heavy tasks on free school, library or community centre Wi Fi when you can.
 
@@ -212,12 +212,12 @@ Save data by keeping prompts focused, avoiding long image or video generation on
 Mariama, in Bolgatanga, tests three free assistants with the same request: "Write a short thank you message in simple English and Twi for customers of a provisions shop." She notes which answer was clearest, which Twi a fluent friend said was most natural, and which app used the least data on her phone. She picks one as her main tool and keeps notes so she can switch quickly if its free plan changes.`,
       practice_task_md: `**Goal:** choose your main free assistant using evidence, not adverts.
 
-1. Try two free AI assistants on your phone (any two you can access).
+1. Try two free AI assistants on your phone or computer (any two you can access).
 2. Give both the same three requests:
    * "Explain what a budget is in five simple sentences."
    * "Write a polite WhatsApp message to a customer whose order will be one day late."
    * "Translate 'Thank you for buying from us' into a Ghanaian language you speak."
-3. Make a small table in your journal comparing them on: clarity, accuracy of the translation (judged by you or a fluent speaker), daily limits you noticed, data settings available, and how easy it was on your phone.
+3. Make a small table in your journal comparing them on: clarity, accuracy of the translation (judged by you or a fluent speaker), daily limits you noticed, data settings available, and how easy it was on your device.
 4. Write one sentence on which you will use as your main tool and why.
 
 **Done looks like:** a comparison table and your choice, ready to show a mentor.`,
@@ -466,7 +466,7 @@ Keep a "prompt notebook" section in your AI learning journal. Every time a promp
     "prompt-basics": {
       explanation_md: `## Why this matters
 
-Clear prompts save you time, data and frustration. On a phone with a limited bundle, getting a useful answer on the first or second try instead of the fifth matters. It also shows employers that you can communicate clearly, which is a skill in its own right.
+Clear prompts save you time, data and frustration. On a limited data bundle, getting a useful answer on the first or second try instead of the fifth matters. It also shows employers that you can communicate clearly, which is a skill in its own right.
 
 ## The four parts of a strong prompt
 
@@ -786,7 +786,7 @@ Wumpini is writing a short article for a farmers' cooperative in Savelugu using 
 
 When Ghanaian and remote adverts mention AI, the jobs themselves are usually familiar: virtual assistant, content writer, social media officer, admin assistant, customer support, research assistant. What has changed is that employers expect these people to use AI to work faster. A virtual assistant who can turn a messy voice note into a clean email, summarise a long report into five points and fix a broken spreadsheet formula in minutes is worth more than one who cannot.
 
-This section is about those everyday tasks. Each one is a skill you can practise on your phone and show to an employer or client.
+This section is about those everyday tasks. Each one is a skill you can practise on a phone or a computer and show to an employer or client.
 
 ## The five topics in this section
 
@@ -818,9 +818,9 @@ Mariama works part time as a remote assistant for a small travel business. In on
 
 None of this replaced her judgement. All of it saved her time.
 
-## Doing this on a phone
+## Phone or computer
 
-Every task here works on a phone. Google Docs and Sheets, a notes app and a free AI assistant are enough. Use voice typing to speed up long prompts, and copy text between apps with a long press. When you have access to a computer at school, a library or a community centre, try the same tasks there too; employers like to see that you can work on both.`,
+Every task here works on a phone or a computer. Google Docs and Sheets, a notes app and a free AI assistant are enough. On a phone, use voice typing to speed up long prompts and copy text between apps with a long press. On a computer, Ctrl+C and Ctrl+V (Command on a Mac) copy and paste faster. If you usually work on a phone, try the same tasks on a computer at school, a library or a community centre when you can; employers like to see that you can work on both.`,
       practice_task_md: `**Goal:** map AI onto real work you could do.
 
 1. Choose one job title you are interested in, such as virtual assistant, social media officer or admin assistant.
@@ -1118,7 +1118,7 @@ It explains: look down column B, and wherever it says Waakye, add up the matchin
 Do not paste real customer names, phone numbers or financial records into public AI tools. Describe the columns instead, or make up a few sample rows with fake values that have the same shape as the real data.`,
       practice_task_md: `**Goal:** use AI to build and test a formula on a small sheet.
 
-1. In Google Sheets on your phone, create a made up sales record for a small shop: 15 rows with columns Date, Item (use three items, such as rice, oil and sugar) and Amount (GH₵).
+1. In Google Sheets, create a made up sales record for a small shop: 15 rows with columns Date, Item (use three items, such as rice, oil and sugar) and Amount (GH₵).
 2. Ask a free AI assistant for formulas to: total sales for one item, count how many sales were above GH₵ 50, and find the average sale. Describe your columns and rows clearly.
 3. Test each formula against your own hand calculation for a few rows. Note any problem and how you fixed it.
 4. Ask the AI to explain one formula in simple words, and write that explanation in a note beside it in the sheet.
@@ -1362,7 +1362,7 @@ If you speak a northern Ghanaian language fluently and read and write it, you ha
     automation: {
       explanation_md: `## Why this matters
 
-Much of office and small business work is repetition: answering the same customer questions, sending the same kind of reminder, copying details from one place to another, writing a similar post every week. Every minute saved on routine work is a minute for work that needs a person: solving problems, talking to customers, checking quality. Remote assistant roles and some junior operations roles now mention automation tools in their adverts, but you can start with tools already on your phone.
+Much of office and small business work is repetition: answering the same customer questions, sending the same kind of reminder, copying details from one place to another, writing a similar post every week. Every minute saved on routine work is a minute for work that needs a person: solving problems, talking to customers, checking quality. Remote assistant roles and some junior operations roles now mention automation tools in their adverts, but you can start with free tools already on your phone or computer.
 
 ## Two kinds of time saving
 
@@ -1465,7 +1465,7 @@ Each time, you replace only the blanks. The tone, length and rules stay the same
 2. **Turn specifics into blanks.** Names, amounts, dates, products and places become [blanks].
 3. **Keep the rules.** Tone, length, format, and what to avoid stay fixed.
 4. **Test it three times** with different details. If any result needs heavy editing, improve the template.
-5. **Name and store it.** Give it a clear name such as "Payment reminder, friendly" and keep it where you can copy it quickly on your phone: a Google Doc, a notes app or a pinned message to yourself.
+5. **Name and store it.** Give it a clear name such as "Payment reminder, friendly" and keep it where you can copy it quickly on your phone or computer: a Google Doc, a notes app or a pinned message to yourself.
 
 ## Templates worth having
 
@@ -1553,9 +1553,9 @@ If a template includes a client's details or style rules, treat it as the client
     "automating-tasks": {
       explanation_md: `## Why this matters
 
-Some remote assistant and junior operations adverts now ask for experience with automation tools, sometimes called no code tools because you connect apps by choosing options rather than writing code. You do not need those to start. Your phone already has features that automate routine steps, and learning to use them builds the same thinking: notice a repeated task, design a simple flow, and keep a person checking.
+Some remote assistant and junior operations adverts now ask for experience with automation tools, sometimes called no code tools because you connect apps by choosing options rather than writing code. You do not need those to start. The phone or computer you already use has features that automate routine steps, and learning to use them builds the same thinking: notice a repeated task, design a simple flow, and keep a person checking.
 
-## Automations you can set up on a phone
+## Automations you can set up anywhere, even on a phone
 
 * **Quick replies and away messages.** WhatsApp Business lets you save quick replies, a greeting message for new customers and an away message for when you are closed. Write them once (AI can help with wording) and reuse them.
 * **Text shortcuts.** Most phone keyboards let you set a short code that expands into a longer phrase, such as typing "addr" to insert your shop's full address and directions.
@@ -1580,12 +1580,12 @@ Never automate anything that sends money, shares personal data or makes decision
 ## A small example
 
 Fuseini organises a coding club in Damongo. Sign ups used to arrive in scattered WhatsApp messages. He creates a Google Form with name, age group and phone number, and responses now flow into a Sheet automatically. He asks an AI assistant to help write a friendly confirmation message, which he saves as a quick reply and sends after checking each new row. Sign ups are tidy, nobody is missed, and he spends his time on teaching, not copying details.`,
-      practice_task_md: `**Goal:** set up one working automation on your phone and document it.
+      practice_task_md: `**Goal:** set up one working automation and document it.
 
 1. Pick one repeated task from your repetition log, or use this one: collecting orders for a small food business.
 2. Write the steps in plain words: "When X happens, do Y, then Z."
 3. Ask a free AI assistant what could go wrong and what a person should check. Adjust your plan.
-4. Build it with phone friendly tools: for example, a Google Form that fills a Sheet, plus a saved quick reply or text shortcut for the confirmation message.
+4. Build it with free tools that work on a phone or a computer: for example, a Google Form that fills a Sheet, plus a saved quick reply or text shortcut for the confirmation message.
 5. Test it with three fake entries. Write a short note: what it does, who checks it, and how to turn it off.
 
 **Done looks like:** a working form and sheet (or quick replies) plus a one paragraph description. Share it with a mentor.`,
@@ -1648,7 +1648,7 @@ Learning AI tools is good. Earning with them is better, and for many young peopl
 * **Freelance and gig work**, locally or remotely: writing, editing, social media management, translation, and remote projects that pay people to transcribe, translate or check AI output in languages like Twi and Dagbani.
 * **Your own digital products**: something you make once and sell many times, such as a template pack or a practical guide, built with AI help.
 
-SydCrest's September 2026 event in Accra, "Monetizing Your Skills With AI: Building Digital Products", focused on that third route. This section brings the same ideas to your phone.
+SydCrest's September 2026 event in Accra, "Monetizing Your Skills With AI: Building Digital Products", focused on that third route. This section brings the same ideas to you, using free tools on a phone or a computer.
 
 ## The three topics in this section
 
@@ -1837,7 +1837,7 @@ Issahaku reads and writes Dagbani fluently. He finds a transcription project on 
     "digital-products": {
       explanation_md: `## Why this matters
 
-A digital product is something you make once and can sell many times without making it again: a spreadsheet template, a short practical guide, a set of prompt templates, a planner, a set of lesson note templates. There is no stock to buy and nothing to transport. AI can help you plan, draft and polish one far faster than before. This was the theme of SydCrest's "Monetizing Your Skills With AI: Building Digital Products" event in Accra, and it is something you can start on a phone.
+A digital product is something you make once and can sell many times without making it again: a spreadsheet template, a short practical guide, a set of prompt templates, a planner, a set of lesson note templates. There is no stock to buy and nothing to transport. AI can help you plan, draft and polish one far faster than before. This was the theme of SydCrest's "Monetizing Your Skills With AI: Building Digital Products" event in Accra, and it is something you can start on a phone or a computer.
 
 ## Start with a real problem
 
@@ -1864,7 +1864,7 @@ Anyone can ask an AI tool for a generic guide. People pay for what AI alone cann
 * **Your local knowledge and experience:** real Ghanaian examples, local prices and practices, your tested methods.
 * **Checked, correct information.** Every fact verified.
 * **Testing with real users.** A template that three traders have actually used and improved is better than one nobody has tried.
-* **Clear design and instructions** that work on a phone.
+* **Clear design and instructions** that work on a phone or a computer screen.
 
 ## Phone or laptop?
 
@@ -1878,7 +1878,7 @@ Wumpini notices that women in her savings group in Savelugu keep contributions i
 1. Choose a group of people you know and talk to at least three of them about a problem that wastes their time or money.
 2. Write a one paragraph product idea: who it is for, the problem, and what the product is (template, guide, prompt pack or planner).
 3. Use a free AI assistant to help outline and draft the product, then add your own local examples and check every fact.
-4. Build a first version with free phone apps.
+4. Build a first version with free apps on your phone or computer.
 5. Ask at least one person from the group to try it and give feedback. Note what you will change.
 
 **Done looks like:** your product idea paragraph, the first version and written feedback from one real user.`,
@@ -1935,7 +1935,7 @@ Wumpini notices that women in her savings group in Savelugu keep contributions i
     "selling-products": {
       explanation_md: `## Why this matters
 
-A useful product nobody buys earns nothing. Selling is a skill of its own: finding the people who need your product, showing them its value, setting a fair price, getting paid safely and treating customers well so they recommend you. You can do all of it from a phone.
+A useful product nobody buys earns nothing. Selling is a skill of its own: finding the people who need your product, showing them its value, setting a fair price, getting paid safely and treating customers well so they recommend you. You can do all of it from a phone or a computer.
 
 ## Test demand before you spend time
 
@@ -2221,7 +2221,7 @@ Mariama is hired to write website text for a guesthouse in Bolgatanga. At the st
     "ai-portfolio": {
       explanation_md: `## Why this matters
 
-Many people now write "skilled in AI tools" on their CV. Few can show it. Employers and clients want **proof**: real examples of how you used AI to do good work, and how you checked it. A small, clear portfolio you can share from your phone puts you ahead of people who only make claims.
+Many people now write "skilled in AI tools" on their CV. Few can show it. Employers and clients want **proof**: real examples of how you used AI to do good work, and how you checked it. A small, clear portfolio you can share from any device puts you ahead of people who only make claims.
 
 Some AI skills programmes in Ghana, free and paid, run in cohorts, often in Accra. If you hope to join one, the work you did in this track and this portfolio are good preparation and good evidence for your application.
 
@@ -2247,12 +2247,12 @@ Good pieces to choose from:
 * Your digital product, with real user feedback shared with permission.
 * Your AI ethics statement.
 
-## How to present it on a phone
+## How to present it
 
 * Create one Google Doc or a simple Google Drive folder named "Your name: AI skills portfolio".
 * Start with a short introduction: who you are, what kind of work you want, and two or three sentences on how you use AI responsibly.
 * Keep each piece short with clear headings, so it reads well on a small screen.
-* Set sharing to "anyone with the link can view" and check it opens on another phone.
+* Set sharing to "anyone with the link can view" and check it opens on another device, such as a friend's phone.
 * Never include anyone's personal information or a client's confidential work without permission. Use made up details or permitted examples.
 
 ## Talking about it
@@ -2271,7 +2271,7 @@ Update your portfolio as you do real work. Replace practice pieces with real one
 1. Create a Google Doc or Drive folder called "[Your name]: AI skills portfolio".
 2. Write a short introduction: who you are, the work you want and how you use AI responsibly (you can adapt your ethics statement).
 3. Add four to six pieces from this track. For each, include the task, your prompt, the AI draft or extract, your edits and checks, and the final result.
-4. Remove all personal and confidential details. Set sharing to view only for anyone with the link, and test the link on another phone.
+4. Remove all personal and confidential details. Set sharing to view only for anyone with the link, and test the link on another device.
 5. Write one honest CV line describing your AI skills.
 6. Share the link with a mentor and ask for feedback on which piece is strongest.
 

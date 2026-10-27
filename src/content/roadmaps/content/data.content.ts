@@ -34,11 +34,11 @@ Two more foundations sit under every task in this track. The first is everyday s
 
 ## A small example
 
-Mariama runs a provisions shop in Savelugu and keeps a notebook of daily sales. She asks you to "look at the numbers". You ask what worries her. She says she thinks she is running out of rice too often. Now the question is clear: "On how many days last month did the shop run out of rice, and on which days of the week?" You copy one month of notebook entries into a spreadsheet, count the stock out days and find most fall on Mondays, after the weekend rush. Mariama decides to restock on Saturdays. That is real analysis, done with a notebook, a phone and a clear question.
+Mariama runs a provisions shop in Savelugu and keeps a notebook of daily sales. She asks you to "look at the numbers". You ask what worries her. She says she thinks she is running out of rice too often. Now the question is clear: "On how many days last month did the shop run out of rice, and on which days of the week?" You copy one month of notebook entries into a spreadsheet, count the stock out days and find most fall on Mondays, after the weekend rush. Mariama decides to restock on Saturdays. That is real analysis, done with a notebook, a spreadsheet and a clear question.
 
 ## What you need
 
-You can do everything in this section with free tools: a notebook, Google Sheets in a phone browser or app, and curiosity. Keep a learning journal of the questions you practise. It becomes the start of your portfolio.`,
+You can do everything in this section with free tools: a notebook, Google Sheets on a phone or computer, and curiosity. Keep a learning journal of the questions you practise. It becomes the start of your portfolio.`,
       practice_task_md: `**Goal:** turn a vague request into a clear analysis question.
 
 1. Find someone who keeps records: a trader, a church treasurer, a school teacher or a family member running a small business. If nobody is available, imagine Fuseini, who sells phone credit and accessories in Wa.
@@ -297,9 +297,9 @@ The section has two topics.
 
 **Lookups, validation and pivot tables.** You will join two tables with XLOOKUP or VLOOKUP, use dropdown validation to stop bad entries, and build pivot tables that summarise thousands of rows in seconds. Employers often test these three skills in a practical interview task.
 
-## Working on a phone
+## Phone and computer tips
 
-The Google Sheets app works well for entering data and checking results. For longer formula work, the browser version in desktop mode gives you more room. Turn your phone sideways, freeze the first row, and zoom in when typing formulas. Sheets saves as you go, so a dropped connection rarely loses work, and you can turn on offline mode for files you use often.
+On a computer, Google Sheets in a browser gives you the most room for long formulas. On a phone, the Sheets app works well for entering data and checking results; turn the phone sideways and zoom in when typing formulas. On any screen, freeze the first row so headers stay visible. Sheets saves as you go, so a dropped connection rarely loses work, and you can turn on offline mode for files you use often.
 
 ## A worked example
 
@@ -344,7 +344,7 @@ Abdul-Rahman sells phone accessories in Tamale and records each sale: date, item
             explanation: "Pivot tables summarise large tables quickly.",
           },
           {
-            prompt: "Which tip helps when working on a phone?",
+            prompt: "Which tip helps on any screen, especially a small one?",
             options: [
               "Merge all header cells",
               "Freeze the first row so headers stay visible",
@@ -589,7 +589,7 @@ A small invented project in the Savannah Region wants to know whether families h
 
 ## What you need
 
-A smartphone, a free KoboToolbox or ODK account, Google Sheets and a little data for uploading forms. You can practise every step with a friend or family member as a test respondent.`,
+A smartphone to test your forms the way enumerators will, a free KoboToolbox or ODK account, Google Sheets and a little data for uploading forms. You can practise every step with a friend or family member as a test respondent.`,
       practice_task_md: `**Goal:** map out a field survey before you build one.
 
 1. Pick a simple question a community group might care about, such as how far households walk to collect water, or which days a market is busiest.
@@ -1374,7 +1374,7 @@ PostgreSQL, MySQL, SQL Server, SQLite and BigQuery differ in small details, but 
 
 ## Practising without installing anything
 
-You do not need a powerful computer. Interactive sites such as SQLBolt let you type queries in the browser and see results instantly, lesson by lesson. Online SQLite playgrounds let you create your own small tables. Both work in a phone browser, though a laptop with a keyboard is more comfortable for long queries.
+You do not need a powerful computer. Interactive sites such as SQLBolt let you type queries in the browser and see results instantly, lesson by lesson. Online SQLite playgrounds let you create your own small tables. Both work in any browser, even on a phone, though a laptop with a keyboard is more comfortable for long queries.
 
 ## What this section covers
 
@@ -2476,7 +2476,7 @@ If you are aiming at M&E roles, make one case study look like a short progress r
 
 ## Where to put it
 
-You do not need a website. Options that work on a phone:
+You do not need a website. Options you can set up from a phone or a computer:
 
 * A Google Doc or Google Site with links to your sheets, notebooks and dashboards.
 * A GitHub repository with a README for each project, which also shows employers you can use a common tool.

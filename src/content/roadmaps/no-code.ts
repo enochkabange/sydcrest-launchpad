@@ -154,7 +154,7 @@ export const noCode: RoadmapDraft = {
       slug: "online-forms",
       title: "Online forms for orders and bookings",
       summary:
-        "An online form can take orders for a chop bar, register members of a church youth group or book appointments, with every answer landing in a spreadsheet. Learn to write clear questions, choose the right question types and connect responses to a sheet, all of which works on a phone.",
+        "An online form can take orders for a chop bar, register members of a church youth group or book appointments, with every answer landing in a spreadsheet. Learn to write clear questions, choose the right question types and connect responses to a sheet, all of which works on a phone or a computer.",
       parent: "forms",
       optional: false,
       resources: [formsFirst, formsResponses],

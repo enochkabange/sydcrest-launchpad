@@ -1,6 +1,6 @@
 "use server";
 
-import { revalidatePath } from "next/cache";
+import { refresh, revalidatePath } from "next/cache";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import type { FieldErrors } from "@/lib/validation";
@@ -32,5 +32,7 @@ export async function updatePublicProfile(_prev: PublicProfileState, form: FormD
   }
   if (before?.public_slug) revalidatePath(`/u/${before.public_slug}`);
   if (data.public_slug) revalidatePath(`/u/${data.public_slug}`);
+  // Re-render this page so the preview beside the form follows the save.
+  refresh();
   return { saved: { ...data, at: Date.now() } };
 }

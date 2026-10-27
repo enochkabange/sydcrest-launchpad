@@ -22,19 +22,19 @@ This first section gives you the base that every later lesson builds on.
 * **Free design tools.** Which free tools you can use on a phone today, which ones need a laptop, and the difference between pixel images and vector shapes.
 * **Design principles.** A handful of ideas, such as hierarchy, contrast and alignment, that explain why one flyer is clear and another is a mess.
 
-## You can start on a phone
+## Start on a phone or a computer
 
-You do not need an expensive computer to begin. Free design apps run on Android phones, and you can learn the principles by studying the posters and flyers around you. Later lessons, such as logo design and print preparation, are easier on a laptop. When that happens we will say so plainly and give you a phone alternative, and you can also use computers at a school lab, a library or a community centre.
+You do not need an expensive computer to begin. Free design apps run on Android phones and in a browser, and you can learn the principles by studying the posters and flyers around you. Later lessons, such as logo design and print preparation, are easier on a laptop. When that happens we will say so plainly and give you a phone alternative, and you can also use computers at a school lab, a library or a community centre.
 
 ## A small example
 
 Napari is a student in Bolgatanga. Her aunt sells smock fabric and asks her to make a flyer. Napari's first attempt uses five fonts, a busy background photo and every colour she can find. Her aunt says it looks "colourful" but customers keep asking for the price, which is hidden in small text at the bottom.
 
-After learning a few principles, Napari tries again: one bold heading, one clear photo of the fabric, the price large and easy to see, and the phone number at the bottom. It looks simpler, yet more people call. That is the heart of graphic design. It is not decoration. It is clear communication, and it is a skill you can practise every day with the phone in your pocket.`,
+After learning a few principles, Napari tries again: one bold heading, one clear photo of the fabric, the price large and easy to see, and the phone number at the bottom. It looks simpler, yet more people call. That is the heart of graphic design. It is not decoration. It is clear communication, and it is a skill you can practise every day with the phone or computer you already have.`,
       practice_task_md: `**Goal:** Start training your designer's eye using real designs around you.
 
 **Steps:**
-1. Take photos of five designs near you: flyers, posters, shop signs, product labels or WhatsApp graphics. Saved images on your phone are fine too.
+1. Take photos of five designs near you: flyers, posters, shop signs, product labels or WhatsApp graphics. Saved images on your phone or computer are fine too.
 2. For each one, write two lines in a notes app: what is the main message, and could you find it in three seconds?
 3. Pick the clearest design and the most confusing one. Write one sentence on what makes each work or fail.
 4. Keep these photos in a folder called "Design eye". You will come back to them in later lessons.
@@ -109,7 +109,7 @@ Adverts often name design software. Some ask for one tool, some accept several, 
 
 ## Learning routes
 
-Several training programmes in Ghana run graphic design courses, many of them in classroom cohorts in Accra and other big cities. This roadmap is free and works on a phone, so you can use it on its own or to prepare before joining a programme.
+Several training programmes in Ghana run graphic design courses, many of them in classroom cohorts in Accra and other big cities. This roadmap is free and works on a phone or a computer, so you can use it on its own or to prepare before joining a programme.
 
 ## A small example
 
@@ -300,7 +300,7 @@ Nothing new was added; things were only rearranged. Yet customers can now find t
 **Steps:**
 1. Choose the most confusing design from your "Design eye" folder, or any crowded flyer you can find.
 2. Write down which principles it breaks, such as no clear hierarchy, poor alignment or no space.
-3. Recreate it in a free design app on your phone with the same words, applying the principles. Use no more than two fonts and three colours.
+3. Recreate it in a free design app on your phone or computer with the same words, applying the principles. Use no more than two fonts and three colours.
 4. Do the three second test with two people on both versions. Note what they remember from each.
 
 **Done looks like:** A before and after pair, a short list of principles you applied and the results of your three second test. This is a good first portfolio piece.`,
@@ -361,7 +361,7 @@ A good way to practise is to study a design you admire and ask why it works. Wha
 
 Issahaku designs a poster for a football gala in Nalerigu. He uses a bold sans serif font for the title and a plain font for details (typography). He chooses the two team colours plus white (colour). He places the title at the top, a large photo of a player in the middle and the date and venue together at the bottom, all aligned to the same left edge (layout). He crops the photo so the player fills the frame and checks it is sharp at poster size (images).
 
-None of these choices is advanced, but together they make the poster look professional. In the next four lessons you will learn each building block in more depth, with small tasks you can do on your phone.`,
+None of these choices is advanced, but together they make the poster look professional. In the next four lessons you will learn each building block in more depth, with small tasks you can do on a phone or a computer.`,
       practice_task_md: `**Goal:** Break a good design down into its four building blocks.
 
 **Steps:**
@@ -1002,7 +1002,7 @@ Issahaku delivered a logo to a computer training centre in Tamale. He adds a two
 2. In a free design app, create one A4 page.
 3. Add: logo versions, a clear space note, a minimum size, three logo don'ts, your colour palette with hex codes, two fonts, and one sentence about image style.
 4. Add one small example design, such as a social media post, that follows the rules.
-5. Export it as a PDF and check that it is readable on your phone.
+5. Export it as a PDF and check that it is readable on a phone and on a computer.
 
 **Done looks like:** A one page PDF brand guide that someone else could follow to make a matching design.`,
       quiz: {
@@ -1268,7 +1268,7 @@ Abdulai designs for a youth association's health screening day in Salaga. For Wh
 2. Write the content: hook, key facts, supporting details and action.
 3. Design a portrait WhatsApp flyer using the four part structure.
 4. Adapt it into an A4 poster with the same colours and fonts.
-5. Design a banner version using no more than ten words. View it on your phone at a tiny size to imagine reading it from far away.
+5. Design a banner version using no more than ten words. View it at a tiny size on your screen to imagine reading it from far away.
 
 **Done looks like:** Three matching designs, with the banner using far fewer words than the flyer.`,
       quiz: {
@@ -1322,7 +1322,7 @@ Abdulai designs for a youth association's health screening day in Salaga. For Wh
       },
     },
     "print-production": {
-      explanation_md: `A design that looks perfect on your phone can still fail at the print shop: text cut off at the edge, a blurry photo, colours that look muddy, a white line along one side. Print shops and branding companies in Ghana often say in their adverts that they want designers who understand print and can prepare files for production. This lesson teaches the basics so your files print right the first time.
+      explanation_md: `A design that looks perfect on your screen can still fail at the print shop: text cut off at the edge, a blurry photo, colours that look muddy, a white line along one side. Print shops and branding companies in Ghana often say in their adverts that they want designers who understand print and can prepare files for production. This lesson teaches the basics so your files print right the first time.
 
 ## Talk to the printer first
 
@@ -1445,7 +1445,7 @@ Motion graphics are designs that move: a headline that slides in, a logo that fa
 * **Readability.** Text must stay on screen long enough to read comfortably. A good habit is to leave each line up long enough to read it twice.
 * **Restraint.** Animate a few things with purpose. If everything moves, nothing stands out.
 
-## Tools on a phone
+## Tools on a phone or laptop
 
 Many free design apps can animate text and elements with one tap, and free video editing apps on phones let you place text and graphics on a timeline and export a short video. On a laptop, more advanced free tools exist, and adverts sometimes name paid motion software. The ideas above carry over to any tool.
 
@@ -1460,7 +1460,7 @@ Sumaila makes a weekly price announcement for a cement and building materials sh
 
 **Steps:**
 1. Take one of your earlier designs, such as a social media post or a price list.
-2. In a free design or video editing app on your phone, add simple animations: the headline enters first, then details, then the contact.
+2. In a free design or video editing app on your phone or computer, add simple animations: the headline enters first, then details, then the contact.
 3. Keep the whole video under fifteen seconds. Make sure each line stays up long enough to read twice.
 4. Export as MP4 and check the file size and that it plays well with sound off.
 5. Show it to two people and ask what message they remember.
@@ -2129,7 +2129,7 @@ Hawa in Tamale started by designing her church's harvest flyer and her aunt's sh
 2. Choose three and write one sentence each on a design they could use, such as a new price list or event flyer.
 3. Set up a simple work profile on WhatsApp Business or a similar app, with a short description and three of your best designs.
 4. Write a short, polite message or visit plan for the print shop nearest to you, offering your design help.
-5. Write down three scam warning signs from this lesson to keep on your phone.
+5. Write down three scam warning signs from this lesson and keep them where you will see them.
 
 **Done looks like:** A list of ten prospects, three specific ideas, a work profile with samples, an outreach message and your scam checklist.`,
       quiz: {
