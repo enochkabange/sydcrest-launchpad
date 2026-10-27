@@ -56,7 +56,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: supabase/setup-cli@v1
+      - uses: supabase/setup-cli@v3
         with:
           version: 2.114.0 # keep in step with the local CLI; generated types depend on it
       # Local Supabase in Docker, trimmed to what migrations and tests need.
@@ -90,7 +90,7 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - uses: supabase/setup-cli@v1
+      - uses: supabase/setup-cli@v3
         with:
           version: 2.114.0 # keep in step with the local CLI; generated types depend on it
       # Same local stack as Migrations, but keeping Mailpit: the tests read
