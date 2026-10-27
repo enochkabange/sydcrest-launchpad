@@ -42,7 +42,7 @@ export const socialMediaManagement: RoadmapDraft = {
   slug: "social-media-manager",
   title: "Social Media Management",
   description:
-    "Run Facebook, Instagram, TikTok and WhatsApp pages for shops, brands, churches, schools and NGOs. Learn to onboard a client, keep their accounts safe, plan and schedule posts, run the inbox and community, host live selling, follow platform rules and report results, all from a phone, then build a portfolio and manage several clients.",
+    "Run Facebook, Instagram, TikTok and WhatsApp pages for shops, brands, churches, schools and NGOs. Learn to onboard a client, keep their accounts safe, plan and schedule posts, run the inbox and community, host live selling, follow platform rules and report results, all from a phone or a computer, then build a portfolio and manage several clients.",
   track: "social-media-management",
   field_category: "marketing",
   locale: "en-GH",
@@ -151,7 +151,7 @@ export const socialMediaManagement: RoadmapDraft = {
       slug: "scheduling-and-approvals",
       title: "Scheduling posts and getting approval",
       summary:
-        "Scheduling tools, including the free planners built into Meta Business Suite and TikTok, let you prepare a week of posts in one sitting. Learn to share drafts for approval, schedule them on a phone and check that each post went out correctly.",
+        "Scheduling tools, including the free planners built into Meta Business Suite and TikTok, let you prepare a week of posts in one sitting. Learn to share drafts for approval, schedule them from a phone or a computer and check that each post went out correctly.",
       parent: "planning",
       optional: false,
       resources: [RES.metaLearn, bufferLibrary],
@@ -250,7 +250,7 @@ export const socialMediaManagement: RoadmapDraft = {
       slug: "platform-insights",
       title: "Reading platform insights",
       summary:
-        "Each platform shows reach, engagement, followers and messages in its own insights screen, all readable on a phone. Learn which numbers matter for the client's goal and how to record them in a simple sheet every week.",
+        "Each platform shows reach, engagement, followers and messages in its own insights screen, all readable on a phone or a computer. Learn which numbers matter for the client's goal and how to record them in a simple sheet every week.",
       parent: "results",
       optional: false,
       resources: [RES.metaLearn, sheetsHowTo],
@@ -304,7 +304,7 @@ export const socialMediaManagement: RoadmapDraft = {
       slug: "several-clients",
       title: "Managing several clients at once",
       summary:
-        "Freelance page managers often look after a few small businesses on monthly retainers, which needs good organisation and clear limits. Learn to keep a separate plan, folder and login record for each client, protect your phone and use the Freelancing track for pricing, contracts and getting paid.",
+        "Freelance page managers often look after a few small businesses on monthly retainers, which needs good organisation and clear limits. Learn to keep a separate plan, folder and login record for each client, protect the phone and computer you work on, and use the Freelancing track for pricing, contracts and getting paid.",
       parent: "working-and-earning",
       optional: false,
       resources: [cisaPasswords, cisaMfa, sheetsHowTo],

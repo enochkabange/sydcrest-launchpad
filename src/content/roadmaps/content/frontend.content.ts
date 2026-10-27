@@ -9,7 +9,7 @@ const content: TrackContent = {
   roadmap: "frontend-developer",
   nodes: {
     "start-here": {
-      explanation_md: `Every frontend job, whether at a fintech in Accra or a remote startup abroad, starts with the same things: a working setup, a clear picture of how the web reaches a phone, and the habit of saving your work properly. This section gives you all three, using only free tools.
+      explanation_md: `Every frontend job, whether at a fintech in Accra or a remote startup abroad, starts with the same things: a working setup, a clear picture of how the web reaches your users' phones and laptops, and the habit of saving your work properly. This section gives you all three, using only free tools.
 
 ## Your free setup
 
@@ -19,7 +19,7 @@ You do not need an expensive machine. A modest laptop with 4 GB of memory is eno
 * **A modern browser.** Browsers such as Chrome or Firefox have built in developer tools, which you will use every day to inspect pages and find bugs.
 * **A folder for projects.** Make one folder called \`projects\` and keep each project in its own subfolder.
 
-No laptop yet? You can still start. Free browser based editors such as CodePen let you write HTML, CSS and JavaScript on a phone, and you can read every lesson here on your phone between practice sessions.
+No laptop yet? You can still start. Free browser based editors such as CodePen let you write HTML, CSS and JavaScript on a phone, and you can read every lesson here on any device between practice sessions.
 
 ## Saving data while you learn
 
@@ -263,28 +263,28 @@ The HTML says "heading" and "paragraph". The CSS says "make the price green and 
 * **Semantic HTML:** choosing the right element for each job, so your pages are accessible and easy to maintain.
 * **CSS layout:** placing things on the page with flexbox and grid, the two modern layout tools.
 * **Mobile first, responsive pages:** designing for a small Android screen first and then adapting for bigger ones.
-* **Forms and input:** building sign up, order and payment forms that people can actually complete on a phone.
+* **Forms and input:** building sign up, order and payment forms that people can actually complete on a phone or a computer.
 
 ## How to learn this section well
 
 Build real things. Pick businesses you know: a chop bar menu, a tailor's price list, a church events page, a phone repair shop in Damongo. Rebuilding something real teaches you more than following a tutorial, and it gives you portfolio pieces.
 
-Check your work on a phone often. Many of your users will only ever see your pages on a small screen, sometimes in bright sunlight, on a slow connection.
+Check your work on a phone and on a laptop often. Many of your users will only ever see your pages on a small screen, sometimes in bright sunlight, on a slow connection.
 
 ## A worked example
 
-Abdul-Rahman wants to practise. He photographs the price board at his uncle's provisions shop, then builds a page with a heading, a short description and a list of items with prices. First he writes only HTML and checks it makes sense with no styling at all. Then he adds CSS for colours and spacing. Finally he opens it on his phone and fixes anything that looks cramped.
+Abdul-Rahman wants to practise. He photographs the price board at his uncle's provisions shop, then builds a page with a heading, a short description and a list of items with prices. First he writes only HTML and checks it makes sense with no styling at all. Then he adds CSS for colours and spacing. Finally he opens it on his phone and on a laptop and fixes anything that looks cramped or stretched.
 
-Structure first, then style, then test on a phone. Follow that order for every page you build.`,
+Structure first, then style, then test on a phone and a computer. Follow that order for every page you build.`,
       practice_task_md: `**Goal:** a simple, real business page using only HTML and CSS.
 
 1. Choose a business you know, such as a chop bar, tailor or provisions shop.
 2. Write the HTML first: a heading, a short paragraph about the business, and a list of at least five items with prices in cedis.
 3. Open it in the browser with no CSS. It should still make sense.
 4. Add a CSS file to set a font, colours and spacing.
-5. Open the page on a phone (send the file to yourself or use CodePen) and fix anything hard to read.
+5. Open the page on a phone (send the file to yourself or use CodePen) and in a wide browser window on a computer, and fix anything hard to read.
 
-**Done looks like:** a page that reads clearly without CSS, looks tidy with CSS, and is easy to read on a phone. Commit it to GitHub.`,
+**Done looks like:** a page that reads clearly without CSS, looks tidy with CSS, and is easy to read on a phone and a computer. Commit it to GitHub.`,
       quiz: {
         questions: [
           {
@@ -301,9 +301,9 @@ Structure first, then style, then test on a phone. Follow that order for every p
           },
           {
             prompt: "Which order does the lesson recommend for building a page?",
-            options: ["Style first, then structure, then test", "Test first, then style", "Framework first, then HTML", "Structure first, then style, then test on a phone"],
+            options: ["Style first, then structure, then test", "Test first, then style", "Framework first, then HTML", "Structure first, then style, then test on a phone and a computer"],
             answer_index: 3,
-            explanation: "Write HTML first, add CSS, then check on a phone.",
+            explanation: "Write HTML first, add CSS, then check on a phone and a computer.",
           },
           {
             prompt: "Why do frameworks such as React not replace learning HTML and CSS?",
@@ -498,7 +498,7 @@ Avoid fixed pixel widths for big containers. Let flexbox and grid do the work.`,
       },
     },
     "mobile-first-design": {
-      explanation_md: `Assume your users are on Android phones, often with small screens and mobile data. Responsive design appears in junior frontend adverts and in skills frameworks, and for SydCrest learners it is the default way to work, not an extra.
+      explanation_md: `Many of your users are on Android phones, often with small screens and mobile data, and many others are on laptops and desktops. Responsive design appears in junior frontend adverts and in skills frameworks, and for SydCrest learners it is the default way to work, not an extra.
 
 ## What mobile first means
 
@@ -534,11 +534,11 @@ Always include it.
 
 ## A worked example
 
-Sumaila is building a page listing bus times from Tamale to Kumasi. He starts with a narrow browser window. Each departure is a card stacked vertically with large, clear times. He adds the viewport tag and checks it on his own phone. Only then does he add a media query so that on a laptop the cards sit in a table like layout with three columns. The phone version stays the priority because that is where his users are.
+Sumaila is building a page listing bus times from Tamale to Kumasi. He starts with a narrow browser window. Each departure is a card stacked vertically with large, clear times. He adds the viewport tag and checks it on his own phone. Only then does he add a media query so that on a laptop the cards sit in a table like layout with three columns. The phone version stays the priority because that is where most of his users are, but he still checks that the laptop layout uses the extra space well.
 
 ## Test on real devices
 
-Browser developer tools have a device mode for simulating phone sizes, which is useful. But nothing beats opening the page on an actual low cost Android phone. Borrow one if you can, and test with the screen brightness turned up outside.`,
+Browser developer tools have a device mode for simulating phone sizes, which is useful. But nothing beats opening the page on an actual low cost Android phone. Borrow one if you can, and test with the screen brightness turned up outside. Then check a full width window on a laptop or desktop too, because a page that only looks right on phones is not finished.`,
       practice_task_md: `**Goal:** a page that is designed for phones first.
 
 1. Make a page listing at least six items, for example bus departures, church events or market prices.
@@ -546,7 +546,7 @@ Browser developer tools have a device mode for simulating phone sizes, which is 
 3. Write CSS for a narrow screen first: one column, 16 pixel text, large tap targets.
 4. Add one media query at a width where the layout starts to look stretched, and change to two or three columns.
 5. Add \`img { max-width: 100%; height: auto; }\` and include at least one image.
-6. Test in device mode and on a real phone.
+6. Test in device mode, on a real phone and in a full width window on a computer.
 
 **Done looks like:** no horizontal scrolling on a phone, comfortable tap targets, and a layout that improves on wider screens. Commit and note in your README which breakpoint you chose and why.`,
       quiz: {
@@ -931,7 +931,7 @@ Use real \`button\` elements for things people tap, so keyboard and screen reade
 3. Add a search input with a visible label. On every \`input\` event, hide items whose names do not include the typed text.
 4. Add a "Save" button to each item and handle all of them with one listener on the \`ul\` (event delegation). Saved items get a CSS class that highlights them.
 5. Use \`textContent\`, not \`innerHTML\`, for any text.
-6. Test on a phone.
+6. Test on a phone and a computer.
 
 **Done looks like:** typing filters the list instantly, saved items stay highlighted, and the code uses a single delegated listener. Commit it and add a short screen recording or screenshot to your README.`,
       quiz: {
@@ -1074,7 +1074,7 @@ Test every feature with a slow network setting. It is the quickest way to see yo
       },
     },
     "quality": {
-      explanation_md: `Plenty of people can make a page that looks fine on their own laptop. Professional frontend work is measured differently: can everyone use it, on any phone, on any connection, and does it keep working after the next change? This section covers the habits that separate a hobby page from work a team can rely on.
+      explanation_md: `Plenty of people can make a page that looks fine on their own laptop. Professional frontend work is measured differently: can everyone use it, on any phone or computer, on any connection, and does it keep working after the next change? This section covers the habits that separate a hobby page from work a team can rely on.
 
 ## The four habits
 
@@ -2076,7 +2076,7 @@ Products that work well in Ghana share some traits:
 
 For every feature, ask:
 
-1. **Who is using this, and on what phone?** A trader in Tamale market, a nurse in Wa, a student in Damongo.
+1. **Who is using this, and on what device?** A trader in Tamale market, a nurse in Wa, a student in Damongo.
 2. **What happens on a slow or dropped connection?** Design the loading, error and retry states.
 3. **What could go wrong with money or data?** Double payments, lost orders, unclear status.
 4. **How do I know it works?** Test it on a real phone with a throttled network.
@@ -2094,7 +2094,7 @@ Fuseini's aunt sells shea butter in Tamale and takes orders over WhatsApp. He bu
 
 1. Find one real person or organisation near you with a problem a simple website could help with: a shop, school, church, cooperative or NGO.
 2. Talk to them (in person, by call or on WhatsApp). Write down their problem in two sentences.
-3. List the users and the phones they likely use.
+3. List the users and the devices they likely use.
 4. Write the main features (no more than four), and for each, what happens on a slow or dropped connection.
 5. Sketch the main screens on paper and take photos.
 
@@ -2351,9 +2351,9 @@ Many platforms create a separate preview link for every pull request. Teams use 
 
 Never commit API keys. Hosts let you set environment variables in their dashboard. Remember that anything used in frontend code is visible to users, so truly secret keys belong only on a server.
 
-## Check it on a phone
+## Check it on a phone and a computer
 
-After deploying, open the live link on a phone using mobile data. Run Lighthouse or PageSpeed Insights on the live address. Check the link preview by sending it to yourself on WhatsApp.
+After deploying, open the live link on a phone using mobile data, and on a laptop or desktop browser. Run Lighthouse or PageSpeed Insights on the live address. Check the link preview by sending it to yourself on WhatsApp.
 
 ## A worked example
 
@@ -2363,11 +2363,11 @@ Sumaila finishes his bus times page. He pushes it to GitHub and turns on GitHub 
 1. Deploy a plain HTML project with GitHub Pages using the steps in the lesson.
 2. Deploy a React or Vite project by connecting its GitHub repository to a free platform. Set the build command and output folder.
 3. Make a small change, push it, and check that the live site updates.
-4. Open both live links on a phone with mobile data. Run PageSpeed Insights on each.
+4. Open both live links on a phone with mobile data and on a computer. Run PageSpeed Insights on each.
 5. Send one link to yourself on WhatsApp and check the preview.
 6. Add the live link to the top of each README.
 
-**Done looks like:** two working live links, each in its README, that load well on a phone.`,
+**Done looks like:** two working live links, each in its README, that load well on a phone and a computer.`,
       quiz: {
         questions: [
           {
@@ -2475,7 +2475,7 @@ Amina from Nalerigu finishes this roadmap with four solid projects. She builds a
       },
     },
     "portfolio": {
-      explanation_md: `Hiring managers in Accra and remote teams often look at your projects before they read your CV. A strong portfolio is your best evidence. It does not need to be fancy; it needs to be clear, honest and easy to check on a phone.
+      explanation_md: `Hiring managers in Accra and remote teams often look at your projects before they read your CV. A strong portfolio is your best evidence. It does not need to be fancy; it needs to be clear, honest and easy to check on a phone or a laptop.
 
 ## Quality over quantity
 
@@ -2492,7 +2492,7 @@ Projects built for real users count for more than copies of tutorials. If you fo
 
 For every project, provide:
 
-1. **A live link** that works on a phone.
+1. **A live link** that works on a phone and a computer.
 2. **A GitHub repository** with a clean commit history.
 3. **A clear README** answering:
    * What problem does this solve, and for whom?
@@ -2528,7 +2528,7 @@ Issahaku's portfolio shows four projects. The first is a live site for a tailori
 5. Run Lighthouse on your portfolio and fix any accessibility or performance issues.
 6. Deploy it and pin your best repositories on GitHub.
 
-**Done looks like:** a live portfolio link that loads quickly on a phone, with three to five projects that each have a live link and a clear README. Share it with your mentor for feedback.`,
+**Done looks like:** a live portfolio link that loads quickly on a phone and a computer, with three to five projects that each have a live link and a clear README. Share it with your mentor for feedback.`,
       quiz: {
         questions: [
           {
@@ -2650,7 +2650,7 @@ Mariama builds a site for a pharmacy in Bolgatanga. She writes a scope on WhatsA
 Keep it to one page:
 
 * **Top:** name, town, phone, email, portfolio link, GitHub link.
-* **Summary:** two lines, such as "Frontend developer building fast, accessible sites for phones. React, TypeScript, testing."
+* **Summary:** two lines, such as "Frontend developer building fast, accessible sites for phones and laptops. React, TypeScript, testing."
 * **Projects:** your best two or three, each with one line on the problem and one on what you built, plus a link.
 * **Skills:** only what you can discuss in an interview.
 * **Experience and education:** include freelance work, National Service, volunteering and SydCrest.

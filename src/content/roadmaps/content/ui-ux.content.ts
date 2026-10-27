@@ -136,7 +136,7 @@ You do not need to master everything at once. This roadmap gives you a solid bas
       practice_task_md: `**Goal:** read real adverts and see which skills come up most.
 
 **Steps**
-1. On your phone, open a public job board such as Jobberman Ghana or a company careers page, and search for "UI/UX designer" or "product designer". Read five adverts. You do not need to log in.
+1. Open a public job board such as Jobberman Ghana or a company careers page, and search for "UI/UX designer" or "product designer". Read five adverts. You do not need to log in.
 2. In your design notebook, make a simple table with the skills down the side (for example Figma, research, prototyping, design systems, accessibility, HTML and CSS) and the adverts across the top.
 3. Tick each skill an advert mentions. Write your own words, not the advert's text.
 4. Circle the three skills with the most ticks.
@@ -530,7 +530,7 @@ Useful follow ups: "Why was that?", "What happened next?", "Can you show me?" Th
 * Start with easy questions about their day or work to build trust.
 * Have five to eight main questions written down, but follow interesting answers.
 * Listen more than you talk. Do not explain your idea or defend it.
-* Take notes of exact words where you can. If they agree, a voice recording on your phone helps, kept private and deleted when no longer needed.
+* Take notes of exact words where you can. If they agree, a voice recording helps, kept private and deleted when no longer needed.
 * End with "Is there anything I should have asked but didn't?"
 
 Speak in the language the person is most comfortable in. If you use an interpreter, ask them to translate exactly, not to summarise.
@@ -1038,7 +1038,7 @@ A useful method is the quick sketch round:
 3. Draw a different idea for the same screen in each box, about one minute each.
 4. Pick the strongest one or two, and combine the best parts.
 
-Draw phone shaped boxes, use rough lines for text, boxes with a cross for images and clear rectangles for buttons. Write real labels on buttons, such as "Send money", not "Button".
+Draw phone or browser shaped boxes to match what you are designing, use rough lines for text, boxes with a cross for images and clear rectangles for buttons. Write real labels on buttons, such as "Send money", not "Button".
 
 ## Low fidelity and high fidelity
 
@@ -1158,7 +1158,7 @@ Wumpini turns her grey wireframe of a savings screen into a finished design. At 
 
 ## How to approach this section
 
-Learn the tool alongside the principles, not instead of them. A designer who knows every tool shortcut but cannot explain hierarchy is less useful than one who can sketch a clear screen on paper. Practise both, and keep testing on real phones.`,
+Learn the tool alongside the principles, not instead of them. A designer who knows every tool shortcut but cannot explain hierarchy is less useful than one who can sketch a clear screen on paper. Practise both, and keep testing on the real phones and computers your users have.`,
       practice_task_md: `**Goal:** critique a real interface using the five principles.
 
 **Steps**
@@ -1236,7 +1236,7 @@ To save data, close other tabs, avoid uploading large photos, and work on one fi
 
 ## The core building blocks
 
-**Frames.** A frame is a container, usually the size of a phone screen. Start with a common Android size such as 360 by 800. Everything you design sits inside frames.
+**Frames.** A frame is a container, usually the size of a phone screen or a laptop window. For phone designs, start with a common Android size such as 360 by 800, and for websites add a laptop sized frame as well. Everything you design sits inside frames.
 
 **Layers and groups.** Each text, shape and image is a layer. Name your layers clearly ("Pay button", not "Rectangle 12"). It helps you and the developers.
 
@@ -1761,7 +1761,7 @@ Checklists catch many problems, but nothing replaces testing with disabled users
 1. Check every text and background colour pair with a free online contrast checker.
 2. Make sure every input has a visible label and every icon button has a written name in your design notes.
 3. Turn on TalkBack (Android) or VoiceOver (iPhone) and try to complete one task in any real app for five minutes. Write down three problems you hear.
-4. Increase your phone's font size to the largest setting and look at a real app. Note what breaks.
+4. Increase your phone's font size to the largest setting and look at a real app, or zoom a website to its largest setting in a computer browser. Note what breaks.
 5. Fix at least three issues in your own design.
 
 **Done looks like:** a short checklist with your contrast results, three screen reader findings and a before and after of your fixes.`,
@@ -2165,7 +2165,7 @@ You are not your user. However carefully you research and design, people will su
 
 ## Testing is cheap
 
-You do not need a lab, special software or a big budget. A prototype on your phone, a quiet corner in a market, a school or an office, and a notebook are enough. Paper prototypes work too. A few short sessions with the right people usually reveal the biggest problems, and you can fix them the same day.
+You do not need a lab, special software or a big budget. A prototype on a phone or laptop, a quiet corner in a market, a school or an office, and a notebook are enough. Paper prototypes work too. A few short sessions with the right people usually reveal the biggest problems, and you can fix them the same day.
 
 ## Test with the right people
 
@@ -2483,7 +2483,7 @@ Handoff is not the end. Good designers:
 
 * walk developers through the design in a short call or meeting before building starts
 * answer questions quickly, often on a shared chat
-* review the built screens on a real phone and list differences clearly and politely
+* review the built screens on the real phones and computers your users have, and list differences clearly and politely
 * accept trade offs when something is too costly to build, and suggest simpler options
 
 ## Talk about trade offs
@@ -2764,7 +2764,7 @@ Many design adverts ask for a portfolio, and many say they want to see your proc
 
 ## A simple structure
 
-Keep each case study short enough to read on a phone in a few minutes. A clear structure:
+Keep each case study short enough to read on a phone or a laptop in a few minutes. A clear structure:
 
 1. **Summary.** One or two sentences: the problem, who it was for, your role and the outcome.
 2. **The problem.** What was wrong and why it mattered to users and the business.
@@ -2796,7 +2796,7 @@ Never invent numbers, quotes, users or clients. If you worked in a team, say cle
 
 ## Where to publish
 
-Choose something light and free that opens well on a phone: a simple page made with a free website builder, a public design file, or a PDF of a few pages. Keep images compressed so the case study loads quickly on mobile data. Include your name, a short introduction, how to contact you, and links to two or three case studies.
+Choose something light and free that opens well on a phone or a laptop: a simple page made with a free website builder, a public design file, or a PDF of a few pages. Keep images compressed so the case study loads quickly on mobile data. Include your name, a short introduction, how to contact you, and links to two or three case studies.
 
 ## A small example
 
@@ -2809,9 +2809,9 @@ Abdul-Rahman writes up his clinic SMS reminder project. His first draft is eight
 3. Add images: one research photo (with permission and no faces or numbers), sketches, final screens and a before and after.
 4. For each key decision, add one sentence explaining why.
 5. Compress images and put it on a light, free page or a short PDF.
-6. Ask a mentor or friend to read it on their phone and tell you the problem and your main decision in their own words.
+6. Ask a mentor or friend to read it on their phone or computer and tell you the problem and your main decision in their own words.
 
-**Done looks like:** a published case study link or PDF that a reader can understand on a phone in a few minutes.`,
+**Done looks like:** a published case study link or PDF that a reader can understand on any screen in a few minutes.`,
       quiz: {
         questions: [
           {
@@ -3029,7 +3029,7 @@ Issahaku applies to a remote startup building savings products for Africa. In th
 1. Find five real junior design adverts on public job boards or career pages. Note which skills match yours.
 2. Update your CV to one or two pages with your portfolio link near the top.
 3. Write a tailored cover note for one of the adverts.
-4. Practise presenting one case study aloud in fifteen minutes. Record yourself on your phone and listen back.
+4. Practise presenting one case study aloud in fifteen minutes. Record yourself on your phone or laptop and listen back.
 5. Do a practice design exercise: "Design a way for a Tamale shop owner to record credit sales." Write your questions first, then sketch and explain.
 
 **Done looks like:** an updated CV, one tailored cover note, a recording of your case study talk and your practice exercise sketches with questions.`,
