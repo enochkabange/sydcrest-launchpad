@@ -46,9 +46,13 @@ async function Editor({ params, searchParams }: PageProps<"/admin/opportunities/
         <div className="flex flex-col gap-2">
           <h1 className="text-title text-content">{o.title}</h1>
           <p className="text-content-2">
-            {o.organisation_name}
-            {o.organisation_id ? ". Posted by the organisation; edits show under their name." : ""}
-            {o.published_at ? ` First opened ${formatDate(o.published_at)}.` : ""}
+            {[
+              `Offered by ${o.organisation_name}.`,
+              o.organisation_id ? "Posted by the organisation; edits show under their name." : "",
+              o.published_at ? `First opened ${formatDate(o.published_at)}.` : "",
+            ]
+              .filter(Boolean)
+              .join(" ")}
           </p>
         </div>
         <div className="flex flex-wrap gap-2">

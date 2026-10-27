@@ -1,4 +1,4 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test, type Browser, type Page } from "@playwright/test";
 import { chooseTrack } from "../src/lib/path/recommend";
 import type { PathAnswers } from "../src/lib/path/quiz";
 import { accraToday, addDays } from "../src/lib/opportunities/model";
@@ -27,7 +27,24 @@ const TRACK = chooseTrack(ANSWERS).track;
 type Seeded = { id: string; slug: string; title: string };
 let seeded: Seeded[] = [];
 
-async function seed(project: string) {
+/**
+ * Rows inserted with the secret key skip the app, so the cached board does
+ * not know about them. Saving one through the admin editor refreshes it, as
+ * a real post would.
+ */
+async function refreshBoard(browser: Browser, id: string) {
+  const owner = await createLearner("Fuseini Alhassan");
+  await promoteToAdmin(owner.id);
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  await signIn(page, owner);
+  await page.goto(`/admin/opportunities/${id}`);
+  await page.getByRole("button", { name: "Save changes" }).click();
+  await expect(page.getByText("Saved.")).toBeVisible({ timeout: 15_000 });
+  await context.close();
+}
+
+async function seed(project: string, browser: Browser) {
   const tag = `${project}-${crypto.randomUUID().slice(0, 6)}`;
   const today = accraToday();
   seeded = await insert<Seeded>("opportunities", [
@@ -69,6 +86,7 @@ async function seed(project: string) {
       status: "open",
     },
   ]);
+  await refreshBoard(browser, seeded[0].id);
   return { tag, intern: seeded[0], grant: seeded[1], expired: seeded[2] };
 }
 
@@ -81,12 +99,14 @@ async function signIn(page: Page, learner: Learner, next = "") {
   await page.goto(`/login${next ? `?next=${encodeURIComponent(next)}` : ""}`);
   await page.getByLabel("Email").fill(learner.email);
   await page.getByLabel("Password").fill(PASSWORD);
+  // The return path is a hidden field filled in on the client; wait for it.
+  if (next) await expect(page.locator('form:has(#password) input[name="next"]')).toHaveCount(1);
   await page.getByRole("button", { name: "Sign in" }).click();
-  await expect(page).toHaveURL(next ? new RegExp(`${next}$`) : /\/dashboard$/);
+  await expect(page).toHaveURL(next ? new RegExp(`${next}$`) : /\/dashboard$/, { timeout: 20_000 });
 }
 
-test("the public board filters, shows details with JobPosting data and hides expired posts", async ({ page }, testInfo) => {
-  const { intern, grant, expired } = await seed(testInfo.project.name);
+test("the public board filters, shows details with JobPosting data and hides expired posts", async ({ page, browser }, testInfo) => {
+  const { intern, grant, expired } = await seed(testInfo.project.name, browser);
 
   await page.goto("/opportunities");
   await expect(page.getByRole("heading", { level: 1, name: "Opportunities" })).toBeVisible();
@@ -117,12 +137,14 @@ test("the public board filters, shows details with JobPosting data and hides exp
   await expect(page.getByText("Email a short portfolio to Mariama.")).toBeVisible();
   await expect(page.locator('script[type="application/ld+json"]')).toHaveCount(0);
 
-  const gone = await page.goto(`/opportunities/${expired.slug}`);
-  expect(gone?.status()).toBe(404);
+  // Streamed, so the status is already sent; the not found page renders instead (as for draft roadmaps).
+  await page.goto(`/opportunities/${expired.slug}`);
+  await expect(page.getByText("This page could not be found.")).toBeVisible();
+  await expect(page.locator("h1", { hasText: expired.title })).toHaveCount(0);
 });
 
-test("a learner saves, marks applied and sees a suggestion from their path", async ({ page }, testInfo) => {
-  const { intern, grant } = await seed(testInfo.project.name);
+test("a learner saves, marks applied and sees a suggestion from their path", async ({ page, browser }, testInfo) => {
+  const { intern, grant } = await seed(testInfo.project.name, browser);
   const learner = await createLearner("Hawa Issahaku");
   await insert("personalized_paths", [{ profile_id: learner.id, quiz_answers: ANSWERS }]);
 
