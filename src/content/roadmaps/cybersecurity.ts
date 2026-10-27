@@ -17,11 +17,11 @@ const bogFraudNotice = r(
   "https://www.bog.gov.gh/wp-content/uploads/2026/10/PRESS-RELEASE-DIGITAL-FRAUD-AND-THE-COST-OF-IGNORANCE-071026.pdf",
 );
 const act772 = r(
-  "Electronic Transactions Act, 2008 (Act 772), CSA copy",
+  "Electronic Transactions Act, 2008 (Act 772), CSA copy (PDF, about 4 MB)",
   "https://csa.gov.gh/resources/Electronic%20Transactions%20Act.pdf",
 );
 const act1038 = r(
-  "Cybersecurity Act, 2020 (Act 1038), CSA copy",
+  "Cybersecurity Act, 2020 (Act 1038), CSA copy (PDF)",
   "https://www.csa.gov.gh/resources/cybersecurity_Act_2020(Act_1038).pdf",
 );
 const netacadIntro = r("Cisco Networking Academy: Introduction to Cybersecurity (free)", "https://www.netacad.com/courses/introduction-to-cybersecurity", "practice");

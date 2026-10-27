@@ -2510,7 +2510,7 @@ These are listed as examples, not recommendations. Check each provider's officia
 * **CompTIA Security+:** a widely recognised, vendor neutral certification aimed at roles such as security analyst. CompTIA updates it periodically, and its site announced a new version for late 2026, so check which version you would study for.
 * **Google Cybersecurity Certificate:** a beginner programme on Coursera covering security foundations, networks, Linux and SQL, SIEM tools, detection and response, and Python. Coursera charges a subscription, though financial aid may be available.
 * **Microsoft Security, Compliance, and Identity Fundamentals (SC 900):** a fundamentals exam focused on Microsoft's security and identity services, useful where employers use Microsoft systems.
-* **Cisco Networking Academy Introduction to Cybersecurity:** a free introductory course with a completion badge, a good first step before any paid exam.
+* **Cisco Networking Academy Introduction to Cybersecurity:** a free introductory course, a good first step before any paid exam.
 
 ## How to choose
 
@@ -2574,7 +2574,7 @@ Abdul-Rahman reads ten security adverts and notices that Security+ appears in se
             explanation: "Using real leaked questions breaks the rules and risks your certification.",
           },
           {
-            prompt: "Which option in the lesson is a free introductory course with a completion badge?",
+            prompt: "Which option in the lesson is a free introductory course?",
             options: [
               "CISSP",
               "CISM",
@@ -2582,7 +2582,7 @@ Abdul-Rahman reads ten security adverts and notices that Security+ appears in se
               "PCI DSS",
             ],
             answer_index: 2,
-            explanation: "Cisco's Introduction to Cybersecurity is free and gives a completion badge.",
+            explanation: "Cisco's Introduction to Cybersecurity is a free introductory course, a good first step before any paid exam.",
           },
         ],
         pass_threshold: 75,
