@@ -1,3 +1,9 @@
+import aiToolsForWork from "./ai-tools-for-work.content";
+import graphicDesign from "./graphic-design.content";
+import digitalBusiness from "./digital-business.content";
+import itSupport from "./it-support.content";
+import contentCreation from "./content-creation.content";
+import cybersecurity from "./cybersecurity.content";
 import type { TrackContent } from "./types";
 import frontend from "./frontend.content";
 import digitalMarketing from "./digital-marketing.content";
@@ -12,4 +18,18 @@ import backend from "./backend.content";
  * track's *.content.ts here when its PR merges (the Vitest in this folder
  * validates every file whether or not it is listed).
  */
-export const TRACK_CONTENT: TrackContent[] = [frontend, digitalMarketing, product, data, uiUx, digitalSkillsBridge, backend];
+export const TRACK_CONTENT: TrackContent[] = [
+  frontend,
+  digitalMarketing,
+  product,
+  data,
+  uiUx,
+  digitalSkillsBridge,
+  backend,
+  aiToolsForWork,
+  graphicDesign,
+  digitalBusiness,
+  itSupport,
+  contentCreation,
+  cybersecurity,
+];

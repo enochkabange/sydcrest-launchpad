@@ -5,12 +5,12 @@ const DASHES = /[-‐‑‒–—―−]/;
 const SENTENCE_END = /[.!?](?=\s|$)/g;
 
 describe("roadmap drafts", () => {
-  it("covers the original seven tracks, each track once, with unique slugs", () => {
+  it("covers every track once, including the original seven, with unique slugs", () => {
     const tracks = ROADMAP_DRAFTS.map((r) => r.track);
     expect(new Set(tracks).size).toBe(tracks.length);
-    expect(tracks).toEqual(
-      expect.arrayContaining(["backend", "data", "digital-marketing", "digital-skills-bridge", "frontend", "product", "ui-ux"]),
-    );
+    for (const original of ["backend", "data", "digital-marketing", "digital-skills-bridge", "frontend", "product", "ui-ux"]) {
+      expect(tracks).toContain(original);
+    }
     const slugs = ROADMAP_DRAFTS.map((r) => r.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
   });
