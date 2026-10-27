@@ -320,3 +320,144 @@ Reviewed against the production advisor run on 27 Oct.
 profiles before the view's filter applies; fine at Phase 1 scale, revisit
 (materialized view refreshed on a schedule) past a few thousand public
 profiles.
+
+## Market and Earn (issue #148)
+
+Five migrations, `earn_organisations`, `earn_experts`, `earn_bookings_briefs`,
+`earn_opportunities_outcomes` and `earn_talent`. Tests:
+`supabase/tests/database/earn_*.test.sql`.
+
+**No money.** SydCrest never custodies funds (PRODUCT_ENRICHMENT §5.3 and §8),
+and nothing is charged in this window. No table has a balance, payout detail,
+payment status or payment state machine. `offers.indicative_price_ghs`,
+`pitches.indicative_price_ghs` and `briefs.indicative_budget_ghs` are whole
+cedis for display only; offers show as free during the soft launch.
+
+**One account, several modes.** No new role on `profiles`. A person is in
+seller mode while they hold an approved `expert_profiles` row, and acts for a
+business through an active `organisation_members` row. Learner and mentor
+modes stay as they were (`profiles.role`, cohorts).
+
+**Adults only.** `private.is_adult(profile_id)` reads the `date_of_birth`
+(YYYY-MM-DD) that sign up (`options.data`) or `/welcome` (`updateUser`)
+stores in the auth user's metadata; missing or unreadable means not an adult.
+It is checked on insert (never in select policies) for: expert profiles and
+applications, offers, booking requests (buyers too, §5.8), briefs, pitches,
+accepting a pitch, organisations, accepting an organisation invite,
+opportunities posted by organisations, talent listings and contact requests.
+The metadata is user writable through `updateUser`, so this keeps the
+database consistent with the sign up gate rather than proving age. There is
+no `is_minor` column anywhere in the schema.
+
+### Tables
+
+**organisations**. Business accounts (also school, nonprofit, government): slug, name, kind, description, website, region, logo, `registration_number` (private), `verification_status` unverified, pending, verified, rejected or suspended, admin note, created_by.
+Members, invitees, the creator and admins read it; owners and admins edit it. Status changes only through the functions below. Renaming a verified organisation (or changing its registration number) sends it back to pending.
+
+**public_organisations** (view). Verified organisations, public columns only. Anyone reads it.
+
+**organisation_members**. `(organisation, profile)` with role owner, admin or recruiter and status invited or active. The creator becomes the active owner.
+Owners invite at any role, admins invite admins and recruiters; the invitee accepts with `accept_organisation_invite` and declines (or leaves) by deleting their row. The last active owner cannot leave or step down, except by deleting their account.
+
+**organisation_roster** (view). Members with name and avatar, for active members of that organisation and admins.
+
+**expert_profiles**. Seller mode, one per account: slug, headline, bio, skills, categories, links (http only), languages, region, availability note, `accepting_requests`, `offers_free_intro`, status pending, approved or delisted, `is_verified`, `is_featured`.
+Anyone reads approved ones; owners and admins read all. The owner edits the content columns; status, verified and featured change only through admin functions. `is_verified` is the admin identity check badge (§5.5), not the verified SydCrest skill badge, which is `verified_skills` (#158).
+
+**expert_applications**. The review record for becoming an expert: motivation, experience, evidence links, `fast_track` (set by the database for mentors and cohort mentors or coordinators), status submitted, approved, rejected or withdrawn, decision. One open application per person. Create the expert profile first, then apply.
+The applicant and admins read it; the applicant can only withdraw it.
+
+**expert_application_queue** (view). Applications with the applicant's name and expert profile, admins only.
+
+**offers**. What an expert sells: kind `one_to_one`, `group`, `async_review`, `project`, `recurring` or `gig` (fixed scope, Phase 4), title, description, scope, duration, delivery days, group size, cadence, revisions, skills, indicative price, active flag, position. Checks: a gig needs scope and delivery days, a group needs a size, recurring needs a cadence, sessions need a duration.
+Anyone reads active offers of approved experts. Experts with a profile that is not delisted create and edit their own (pending experts can draft); admins can edit any.
+
+**briefs**. A request for pitches: kind `advice` (any adult, Phase 3) or `job` (needs `organisation_id`, posted for a verified organisation by its owner, admin or recruiter, Phase 4), title, description, skills, categories, indicative budget, location, remote, deadline, status open, closed, awarded or cancelled.
+Read by the poster, any active member of its organisation, approved experts while open, experts who pitched, and admins. Managers edit while open or closed and can close, reopen or cancel; awarding happens only through `accept_pitch`.
+
+**brief_board** (view). Briefs the caller may read with the poster's name, organisation, pitch count, the caller's own pitch status and whether the caller manages it.
+
+**pitches**. An approved expert's answer to an open brief they do not own: message, timeline, optional own offer, indicative price, status submitted, accepted, declined or withdrawn. One per expert per brief.
+The expert, the brief's managers and admins read it. The expert edits or withdraws while submitted.
+
+**booking_requests**. A request for a session or service: requester, expert, optional offer (which decides the expert), brief and pitch when it came from a brief, message, preferred times, status requested, accepted, declined, completed or cancelled, `responded_at`, `completed_at`. One open request per person per expert. The expert must be approved and accepting requests.
+The two parties and admins read it. A booking from an organisation's job brief carries `organisation_id`, and that organisation's active members share the requester side (read and message; owners, admins and recruiters also cancel or complete). Nobody updates it directly: status moves only through `set_booking_status`.
+
+**booking_messages**. The thread on a booking, append only. The parties write while it is requested, accepted or completed; the parties and admins read (admins for disputes and reports).
+
+**booking_threads** (view). The caller's bookings (including their organisations' bookings) with both names, the offer, the organisation, whether it has a review and the last message time.
+
+**expert_reviews**. One per completed booking, by the requester: rating 1 to 5, body. `expert_id` is copied from the booking. Admins can hide one (`is_hidden` is the only editable column, admins only).
+The reviewer, the expert and admins read the table; the public reads `public_expert_reviews`.
+
+**public_experts** (view). Approved experts with name, avatar and trust signals counted from real rows: `completed_bookings`, `review_count`, `average_rating` (null until a review), `median_response_hours` (null until three requests were answered in the last 180 days; bookings from pitches do not count). Anyone reads it.
+
+**public_expert_reviews** (view). Visible reviews of approved experts with the offer kind; the reviewer is named only when their own profile is public.
+
+**opportunities**. Jobs, internships, scholarships, grants and gigs: slug, title, summary, description, organisation (or a typed `organisation_name` for external posts), apply link or instructions, location, region, remote, deadline, eligibility, fields, skills, tracks, compensation note (display text), source link, status draft, open or closed.
+Anyone reads open ones whose deadline (Africa/Accra date) has not passed, so they expire on their own. Admins post anything; active owners, admins and recruiters of a verified organisation post for it, always under the organisation's own name. Organisations delete drafts; admins delete anything.
+
+**opportunity_saves**. A learner's private saved or applied marker; `applied_at` is stamped by the database. Only the learner and admins read it, never the poster.
+
+**outcomes**. A learner reported result: type job, internship, freelance contract, scholarship or grant, title, organisation (name, optional link), optional opportunity, `started_on`, evidence link and note, `show_on_profile`, verification pending, verified or rejected.
+The learner and admins read it. The learner edits pending or rejected outcomes (an edit to a rejected one sends it back to pending); once verified only `show_on_profile` changes. The learner can delete their own.
+
+**outcome_queue** (view). Outcomes with the learner's name, admins only.
+
+**public_outcome_stats** (view). Verified outcomes by type: count and distinct people. No rows until something is verified.
+
+**talent_listings**. Opt in directory entry: headline, summary, skills, tracks, region, availability (open to work, internships or gigs), remote, portfolio link, active flag.
+Writable only while the learner is an adult and `private.talent_eligible`; switching a listing off is always allowed. Read by the learner, admins, and active members of verified organisations (active and eligible listings only).
+
+**talent_directory** (view). Listed, eligible learners with name, avatar, public slug (if public) and live certificates, for verified organisation members and admins; learners see their own row as a preview.
+
+**talent_contact_requests**. A verified organisation (owner, admin or recruiter) asks to contact a listed learner: message, optional opportunity, status pending, accepted, declined or withdrawn, `shared_contact`. One pending request per organisation per learner. Nothing beyond the directory is shared until the learner accepts, and then only what they type into `shared_contact`; SydCrest never hands over account email or phone.
+
+**reports** (changed). `target_type` also accepts `expert_profile`, `offer`, `expert_review`, `booking_message`, `brief`, `pitch`, `organisation`, `opportunity` and `talent_listing`. The constraint is `reports_target_type_check`; #158 swaps it again for community targets and must keep every value above.
+
+### Functions
+
+| Function | Who | What |
+| --- | --- | --- |
+| `accept_organisation_invite(organisation_id)` | the invitee (adult) | Activates the caller's invitation. |
+| `request_organisation_verification(organisation_id)` | owners and admins of it | unverified or rejected to pending. |
+| `admin_set_organisation_verification(organisation_id, status, note)` | admins | Any status; `verified` stamps who and when. |
+| `decide_expert_application(application_id, decision, note)` | admins | `approved` (lists the expert) or `rejected`, for an open application. |
+| `admin_set_expert_status(profile_id, status, reason)` | admins | `pending`, `approved` (list again) or `delisted`. |
+| `admin_set_expert_flags(profile_id, is_verified, is_featured)` | admins | Null leaves a flag as it is. |
+| `set_booking_status(booking_id, status, reason)` | the parties, admins | requested to accepted or declined (the expert); requested or accepted to cancelled (either party or an admin); accepted to completed (either party). Anything else `22023`. |
+| `accept_pitch(pitch_id)` | the brief's managers (adult) | Accepts the pitch, declines the brief's other pitches, awards the brief, and returns a new accepted booking between the caller and the expert. |
+| `decline_pitch(pitch_id)` | the brief's managers | Declines a submitted pitch. |
+| `admin_verify_outcome(outcome_id, status, note)` | admins | `pending`, `verified` or `rejected`. |
+| `admin_cohort_outcomes(months)` | admins | North Star per cohort: learners, completed, certified (live certificates), and `placed` (learners with a verified outcome starting between the cohort start and `months`, default 6, after its end). A cohort ends `starts_on + 7 x` its programme's highest week number. |
+| `talent_eligibility()` | signed in | `{eligible, is_adult, certificates}` for the caller. |
+| `respond_talent_contact(request_id, accept, shared_contact)` | the learner | Accepts (sharing what they type, or nothing) or declines a pending request. |
+| `withdraw_talent_contact(request_id)` | the organisation's owner, admin or recruiter | Withdraws a pending request. |
+
+None is executable by `anon`. Each pins `search_path = ''` and checks the
+caller inside.
+
+### Extension points for #158 (verified skills)
+
+- `private.talent_eligible(p_profile_id uuid) returns boolean` is the single
+  rule for the talent directory, used by the listing policies, contact
+  requests and `talent_directory`. Today it is "has a live certificate".
+  Extend it with `create or replace` (same signature, `language sql stable
+  security definer set search_path = ''`) adding "or has a verified skill".
+- `talent_directory` can gain a `verified_skills` column with
+  `create or replace view` (new columns go last).
+- `public_experts` likewise for skill badges on expert pages.
+
+### Privacy decisions
+
+- Approving an expert makes their name, avatar and expert profile public on
+  `/experts` whatever `profiles.is_public` says: being listed is the expert's
+  choice to be found. Delisting removes them at once.
+- Verified organisations are public through `public_organisations`; the
+  registration number and admin notes never are.
+- Booking details, threads, briefs, pitches, saves, outcomes and contact
+  requests are never public. Earning reaches the public only as aggregates
+  (completed bookings, review counts and ratings, verified outcome counts),
+  in line with PRODUCT_ENRICHMENT §7.4.
+- The talent directory is not public: only members of verified
+  organisations (and admins) browse it.
