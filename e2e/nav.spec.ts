@@ -113,7 +113,7 @@ test("signed in users keep the app navigation on public pages", async ({ page },
     await page.context().clearCookies();
     await page.goto(path);
     await expect(page.getByRole("navigation", { name: "Site" })).toBeVisible();
-    await expect(page.getByRole("link", { name: "Sign in" })).toBeVisible();
+    await expect(page.getByRole("banner").getByRole("link", { name: "Sign in" })).toBeVisible();
     await expect(page.getByTestId("notification-bell")).toHaveCount(0);
   }
   await signInAs(page, people!.learner);

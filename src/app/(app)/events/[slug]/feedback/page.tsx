@@ -13,10 +13,6 @@ import { createClient } from "@/lib/supabase/server";
 
 export const metadata: Metadata = { title: "Event feedback", robots: { index: false } };
 
-// The app shell's nav reads usePathname() outside a Suspense boundary, which
-// a dynamic segment cannot prerender (same as /learn/[slug]/[node]).
-export const instant = false;
-
 export default function FeedbackPage({ params }: PageProps<"/events/[slug]/feedback">) {
   return (
     <Suspense fallback={<div className="h-96 animate-skeleton rounded-lg bg-surface-sunken" aria-busy="true" />}>

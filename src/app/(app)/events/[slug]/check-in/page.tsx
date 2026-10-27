@@ -13,10 +13,6 @@ import { getEventViewer } from "@/lib/events/viewer";
 
 export const metadata: Metadata = { title: "Check in", robots: { index: false } };
 
-// The app shell's nav reads usePathname() outside a Suspense boundary, which
-// a dynamic segment cannot prerender (same as /learn/[slug]/[node]).
-export const instant = false;
-
 export default function CheckInPage({ params }: PageProps<"/events/[slug]/check-in">) {
   return (
     <Suspense fallback={<PageSkeleton />}>

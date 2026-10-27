@@ -40,8 +40,11 @@ function NavList({ pathname }: { pathname: string | null }) {
         const active = pathname !== null && matchesPath(pathname, href);
         return (
           <li key={href} className="shrink-0">
+            {/* Nine links on every visitor page: prefetching them all would spend a visitor's
+                prepaid data on pages they may never open, so these fetch on tap. */}
             <Link
               href={href}
+              prefetch={false}
               aria-current={active ? "page" : undefined}
               className={`flex min-h-11 items-center rounded-md px-3 text-sm font-semibold no-underline ${
                 active ? "bg-info-bg text-info-fg" : "text-content-2 hover:bg-surface-sunken hover:text-content"
