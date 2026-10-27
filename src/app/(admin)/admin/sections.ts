@@ -9,6 +9,7 @@ export const ADMIN_SECTIONS: { href: string; label: string; description: string 
   { href: "/admin/applications", label: "Applications", description: "Review programme applications and accept, waitlist or decline them." },
   { href: "/admin/opportunities", label: "Opportunities", description: "Post and edit jobs, internships, scholarships, grants and gigs for the public board." },
   { href: "/admin/reports", label: "Reports", description: "Triage safety reports from learners." },
+  { href: "/admin/experts", label: "Experts", description: "Review expert applications, approve, delist, verify and feature experts." },
   { href: "/admin/certificates", label: "Certificates", description: "See issued certificates and revoke one with a reason." },
   { href: "/admin/cohorts", label: "Cohorts", description: "Create programme cohorts and assign their mentors and coordinators." },
   { href: "/admin/outcomes", label: "Outcomes", description: "Verify the jobs, internships, contracts and awards learners report." },
