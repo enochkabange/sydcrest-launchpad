@@ -775,6 +775,399 @@ Abdul-Rahman manages pages for a Wa pharmacy. One morning a message from "Meta P
         pass_threshold: 80,
       },
     },
+    planning: {
+      explanation_md: `Pages that post only when someone remembers look abandoned between bursts. Followers forget them, and the owner feels social media "does not work". Planning fixes that. It does not mean posting every day; it means knowing in advance what will go out, why, and who has approved it.
+
+## Planning as a page manager
+
+The Digital Marketer track teaches how to build a content calendar: the columns, the dates and how often to post. This section is about the part that belongs to running pages for a client:
+
+* **Content pillars.** Choosing three to five themes the brand returns to, so ideas never run dry and every post has a purpose linked to the goal.
+* **Getting content from busy clients.** Owners rarely write captions, but they can send photos and voice notes if you ask in a simple, regular way.
+* **Scheduling and approvals.** Preparing posts in batches, getting the client's approval before anything goes live and checking that each post went out correctly.
+
+## Why approvals belong in the plan
+
+When you post for yourself, a mistake is your problem. When you post for a client, a wrong price, a misspelled product name or a badly timed joke becomes their problem, and possibly a complaint. An agreed approval step protects both of you. It also makes the client feel involved without needing to do the work.
+
+## A weekly rhythm
+
+Many page managers work in a simple cycle:
+
+* **Early in the week.** Check last week's results and messages. Note questions customers kept asking; they are post ideas.
+* **Midweek.** Draft next week's posts from the pillars and the material the client sent.
+* **Approval.** Send the drafts to the approver in one message, with a clear deadline.
+* **Scheduling.** Load the approved posts into a scheduler.
+* **Daily.** Check that scheduled posts went out, and leave space for something unplanned, such as new stock arriving or a community event.
+
+The rhythm matters more than the exact days. Clients learn when to expect drafts, and you never scramble on a Friday night.
+
+## Plans should flex
+
+A plan is a guide, not a cage. If there is sad news in the community, pause cheerful scheduled posts. If a product sells out, swap its post for something else. A good manager checks the plan against real life every day.
+
+## Worked example
+
+Hawa's shea butter business has a goal of more WhatsApp orders from Facebook. Fuseini picks four pillars: products, how to use shea butter, the women who process it, and customer stories. Every Wednesday he sends Hawa a short WhatsApp message asking for three photos and one voice note about anything new. On Thursday he drafts five posts, sends them for approval in one message, and once Hawa replies "OK", he schedules them in Meta Business Suite. Each day he checks they went out and answers the messages they bring in.
+
+When a sudden dust storm hits Bolgatanga, he moves a cheerful post back a day and replaces it with a gentle tip on caring for dry skin, then tells Hawa what he changed and why.
+
+## What you will be able to do
+
+By the end of this section you will be able to plan a month of purposeful posts for a client, collect material without nagging, and run a reliable approval and scheduling routine.`,
+      practice_task_md: `**Goal:** Design your weekly page management rhythm.
+
+**Steps:**
+1. Using a notes app or a sheet, write the five steps of the weekly rhythm from this lesson.
+2. Assign each step to a real day and time that fits your own week, school or work.
+3. For each step, write what you need from the client and how long it should take you.
+4. Add one rule for pausing or changing posts when something unexpected happens.
+
+**Done looks like:** a one week routine with days, times and a pause rule, ready to share with a client.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which part of planning does this section focus on, rather than calendar mechanics?",
+            options: [
+              "Choosing fonts for every post",
+              "Pillars, getting content from clients, and scheduling with approvals",
+              "Running paid ads",
+              "Building a website",
+            ],
+            answer_index: 1,
+            explanation: "Calendar mechanics are in the Digital Marketer track; this section covers the client side of planning.",
+          },
+          {
+            prompt: "Why is an approval step important when posting for a client?",
+            options: [
+              "Platforms block posts without approval",
+              "It protects both you and the client from mistakes like wrong prices",
+              "It makes posts reach more people",
+              "It replaces the need for a plan",
+            ],
+            answer_index: 1,
+            explanation: "A mistake on a client page becomes their problem, so approval protects both sides.",
+          },
+          {
+            prompt: "What should you do with questions customers kept asking last week?",
+            options: [
+              "Ignore them",
+              "Delete them",
+              "Use them as post ideas",
+              "Forward them to the platform",
+            ],
+            answer_index: 2,
+            explanation: "Repeated questions show what customers want to know, which makes good posts.",
+          },
+          {
+            prompt: "In the example, what did Fuseini do when a dust storm hit?",
+            options: [
+              "Posted the cheerful post anyway",
+              "Stopped posting for a month",
+              "Moved the cheerful post and replaced it with a skin care tip, then told Hawa",
+              "Deleted the page",
+            ],
+            answer_index: 2,
+            explanation: "Plans should flex with real life, and the client should be told about changes.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "content-pillars": {
+      explanation_md: `"What should I post today?" is the question that kills most business pages. Content pillars answer it in advance. A pillar is a theme the brand returns to again and again, chosen because it supports the goal and suits the audience. With three to five pillars, you never start from a blank page, and every post has a reason to exist.
+
+## Choosing pillars
+
+Start from the onboarding brief. Ask: what do customers need to know, believe or feel before they buy? Typical pillars for a small business include:
+
+* **Products and offers.** What you sell, prices, new stock, bundles.
+* **How to use it.** Tips, demonstrations, care instructions, recipes.
+* **Proof.** Customer stories, reviews (with permission), before and after.
+* **Behind the scenes.** The people, the process, the shop, the farm.
+* **Community.** Local events, holidays, the town, causes the business supports.
+
+Pick three to five that fit the client. A school might choose admissions, pupils' achievements (with parents' permission), teaching and learning, and school events. An NGO might choose impact stories, how to get help, volunteer calls and partner news.
+
+## Balance the pillars
+
+If every post sells, followers tune out. If no post sells, the page entertains but does not earn. A simple balance is to make roughly a quarter of posts directly about buying, and the rest helpful, human or community posts that earn attention for those sales posts. Adjust the balance after you see results.
+
+## From pillars to a month of ideas
+
+Make a grid. Pillars go across the top; weeks go down the side. Fill each square with an idea. Then mark the moments that matter to your client's customers:
+
+* Religious and national days: Eid al Fitr, Eid al Adha, Christmas, Easter, Independence Day, Farmers' Day.
+* Local festivals: Damba in Dagbon, Fire Festival (Bugum), Kakube in Nandom, Kobine in Lawra and others near you.
+* School calendar: reopening, exams, vacation.
+* Seasons and life: harmattan, rainy season, market days, month end when salaries arrive.
+
+A month for a Tamale fabric shop could include a back to school uniform fabric post in the products pillar, a "how to wash and keep colours bright" tip, a customer story from a tailor, and a Damba post showing outfits sewn from the shop's fabric.
+
+## Respect the occasion
+
+Not every holiday is a sales opportunity. A short, sincere greeting is often better than a discount attached to a religious festival. Check with the client what fits their values, and write it into the style guide.
+
+## Worked example
+
+Sumaila manages the page of a cold store in Damongo. The goal is more orders from restaurants and households. He chooses four pillars: today's stock and prices; storage and cooking tips; customers and suppliers; and community. Before Eid al Adha he plans a stock post a week ahead, a food safety tip on storing meat in the heat, and a simple Eid greeting on the day itself. Each idea fits a pillar and the goal, and the month's plan fits in a single sheet.`,
+      practice_task_md: `**Goal:** Turn pillars into one month of post ideas.
+
+**Steps:**
+1. Use the business from your brief. Choose three to five pillars and write one line on why each supports the goal.
+2. In Google Sheets or on paper, make a grid with pillars across the top and four weeks down the side.
+3. Fill every square with a short post idea.
+4. Mark at least two local moments in that month, such as a festival, market day or school reopening, and adjust ideas around them.
+5. Check the balance: about a quarter of ideas should be direct sales posts.
+
+**Done looks like:** a filled one month grid with pillars, ideas and marked local moments.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a content pillar?",
+            options: [
+              "A paid advert that runs all month",
+              "A theme the brand returns to again and again, chosen to support the goal",
+              "The first post on a new page",
+              "A tool for scheduling posts",
+            ],
+            answer_index: 1,
+            explanation: "Pillars are recurring themes that support the goal and suit the audience.",
+          },
+          {
+            prompt: "What problem do content pillars solve?",
+            options: [
+              "Slow internet",
+              "Starting from a blank page with no idea what to post",
+              "Hacked accounts",
+              "Ad payments",
+            ],
+            answer_index: 1,
+            explanation: "Pillars answer 'what should I post today?' in advance.",
+          },
+          {
+            prompt: "What does the lesson suggest about balancing pillars?",
+            options: [
+              "Every post should sell",
+              "No post should ever mention prices",
+              "Roughly a quarter of posts directly about buying, the rest helpful, human or community posts",
+              "Only post on holidays",
+            ],
+            answer_index: 2,
+            explanation: "A mix keeps followers interested while still supporting sales; adjust after results.",
+          },
+          {
+            prompt: "What does the lesson advise for religious festivals?",
+            options: [
+              "Always attach a discount",
+              "Never mention them",
+              "A short sincere greeting is often better than a discount; check the client's values",
+              "Post only in English",
+            ],
+            answer_index: 2,
+            explanation: "Not every holiday is a sales opportunity, and the client's values should guide the choice.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "getting-content": {
+      explanation_md: `The biggest practical problem in page management is not ideas. It is material. You plan a post about new stock, but the owner never sends the photo. You plan a customer story, but nobody asks the customer. Most small business owners will not write captions, yet almost all of them can send photos and voice notes on WhatsApp. Your job is to make that easy, regular and organised.
+
+## Ask small, ask regularly
+
+A vague request like "send me content" gets nothing. A specific, regular request works:
+
+* **Same day each week.** For example, every Monday morning.
+* **Specific items.** "Please send three photos of the new arrivals, one short video of the shop, and a voice note telling me anything new this week."
+* **Easy format.** Photos and voice notes on WhatsApp, which the owner already uses.
+* **A friendly reminder.** If nothing arrives by Tuesday, send one short follow up. Do not nag more than that; adjust the plan instead.
+
+## Help the owner take usable photos
+
+Send a short guide once, maybe as an image or voice note:
+
+* Clean the lens with a soft cloth.
+* Use daylight near a door or window. Avoid harsh midday sun.
+* Hold the device still and fill the frame with the product.
+* Take a few shots, both upright and sideways.
+* Plain backgrounds work best: a wall, a cloth, a table.
+
+For filming and editing in more depth, the Video and Content Creation track is the place to go.
+
+## Turn one shoot into many posts
+
+When you visit the business, plan a short shoot of thirty minutes and capture everything you might need: each product, close ups, the owner at work, the shopfront, a customer (with permission). One shoot can feed a month of posts: single product posts, a carousel, a short behind the scenes video, a Story and a profile photo update.
+
+## Collect stories, not just pictures
+
+Customer stories and follower comments are powerful material. Ask the owner to forward kind messages from customers, then ask the customer whether you may share their words, with or without their name. Watch your comment sections too; a follower's photo of the product in use can become a post if they agree.
+
+## Keep a shared folder
+
+Material gets lost in long WhatsApp chats. Create one folder per client in a free cloud drive such as Google Drive, with simple subfolders: products, people, place, events, approved posts. Name files with the date and a short description. When the work ends, the client keeps the folder; it is their material, not yours.
+
+## Worked example
+
+Amina, who runs the catering service in Wa, is busy with orders all week. Her page manager, Mariama, sends her a voice note every Monday asking for photos of two dishes being prepared and a ten second video of food being served. Amina records them during work. Mariama saves them into a Google Drive folder named "Amina Catering / 2026 / October", writes captions, and once a month visits for a short shoot to refresh product photos. The page now has steady material without Amina ever writing a caption.`,
+      practice_task_md: `**Goal:** Set up a content request routine for one client.
+
+**Steps:**
+1. Write a weekly WhatsApp request message for your practice client, naming the day, the exact items and the format.
+2. Write a five point photo guide for the owner in simple words.
+3. Create a free cloud folder for the client with subfolders for products, people, place, events and approved posts.
+4. Plan a thirty minute shoot list of at least ten shots you would capture on one visit.
+
+**Done looks like:** a request message, a photo guide, an organised folder and a shoot list.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which request is most likely to get material from a busy owner?",
+            options: [
+              "Please send me content when you can",
+              "Every Monday: three photos of new arrivals, one short shop video and a voice note about anything new",
+              "Write five captions for me this week",
+              "Send me everything on your phone",
+            ],
+            answer_index: 1,
+            explanation: "Specific, regular, easy requests work better than vague ones.",
+          },
+          {
+            prompt: "What is the advantage of a planned shoot when you visit a business?",
+            options: [
+              "It replaces the need for approvals",
+              "One shoot can feed a month of posts",
+              "It is required by the platforms",
+              "It makes the page verified",
+            ],
+            answer_index: 1,
+            explanation: "Capturing many shots at once gives material for many different posts.",
+          },
+          {
+            prompt: "Before sharing a customer's kind message as a post, what should you do?",
+            options: [
+              "Post it immediately with their name",
+              "Change their words to sound better",
+              "Ask the customer whether you may share it, with or without their name",
+              "Only share it on your personal page",
+            ],
+            answer_index: 2,
+            explanation: "Customer stories should only be shared with the customer's permission.",
+          },
+          {
+            prompt: "Who should keep the shared content folder when the work ends?",
+            options: ["The page manager", "The client", "The platform", "Nobody; it should be deleted"],
+            answer_index: 1,
+            explanation: "The material belongs to the client, so they keep the folder.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "scheduling-and-approvals": {
+      explanation_md: `Posting live, one post at a time, every day, is tiring and leads to mistakes. Scheduling lets you prepare a week of posts in one sitting and have them go out on time, even when you are busy or offline. Combined with a clear approval step, it is the routine that makes a page manager reliable.
+
+## Free scheduling tools
+
+* **Meta Business Suite.** Free, on the web and in its mobile app. You can create a post for a Facebook Page and a linked Instagram account, choose a date and time, and see scheduled posts in a planner view. Scheduling limits and menu names change, so check what the tool offers when you use it.
+* **TikTok.** Business accounts can schedule videos from the TikTok website on a computer, from at least fifteen minutes up to ten days ahead.
+* **LinkedIn.** Page admins can schedule posts when creating them.
+* **Third party schedulers.** Tools such as Buffer offer free plans with limits, covering several platforms in one place. They are examples, not requirements.
+
+WhatsApp status cannot be scheduled in the app, so plan to post those by hand.
+
+## The approval step
+
+Agree with the client, during onboarding, exactly how approval works:
+
+* **Who approves.** One named person, with a backup when they travel.
+* **How.** One message with all drafts, or a shared document or sheet with a status column.
+* **When.** A fixed day, with a deadline. For example, drafts on Thursday, approval by Friday noon.
+* **What counts as approval.** A clear "approved" or "OK" in writing. Silence is not approval.
+* **What happens if there is no reply.** Agree in advance: either the posts wait, or pre agreed safe posts (tips, greetings) can go out.
+
+Keep a simple record of approvals. A screenshot or a status column saying "approved by Hawa, 14 Nov" is enough. If a post later causes a problem, you can show it was agreed.
+
+## A draft the client can approve quickly
+
+Make it easy to say yes:
+
+* Show the image or video exactly as it will appear, with the caption below it.
+* State the platform, date and time.
+* Highlight anything the client must check, such as a price, a date or a person's name.
+
+## Check after it goes out
+
+Scheduled does not always mean posted correctly. Videos can fail to process, links can break and a price can change after approval. Check each post shortly after it goes live, read the first comments and fix problems fast.
+
+## Worked example
+
+Issahaku manages the Tamale school's pages. On Thursday he sends the head teacher a single message with five drafts: an admissions reminder, a science fair photo (parents had given permission), a Friday prayer greeting, a parents' meeting notice and a short TikTok of the school choir. He highlights the meeting date. She replies "Approved, but change the meeting to 4pm." He corrects it, schedules the Facebook and Instagram posts in Meta Business Suite and the TikTok from the website, and notes "approved 6 Nov" in his sheet. Each day he checks the posts went out.`,
+      practice_task_md: `**Goal:** Run a full draft, approval and schedule cycle on a practice page.
+
+**Steps:**
+1. Prepare three posts for your practice page or a page you manage, using your pillars.
+2. Send them to a friend or mentor acting as the client, in one message, with the platform, date, time and items to check highlighted.
+3. Record their approval in a sheet with a status column.
+4. Schedule the posts with a free tool such as Meta Business Suite, then check each one after it goes live.
+
+**Done looks like:** three scheduled posts, an approval record and a note on anything you had to fix after posting.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the main benefit of scheduling posts?",
+            options: [
+              "Scheduled posts always get more reach",
+              "You can prepare a week of posts in one sitting and they go out on time",
+              "It removes the need for approval",
+              "It makes the page verified",
+            ],
+            answer_index: 1,
+            explanation: "Scheduling lets you batch your work and keeps posting reliable.",
+          },
+          {
+            prompt: "According to this lesson, how far ahead can a TikTok business account schedule a video from the website?",
+            options: ["Up to one hour", "Up to ten days", "Up to one year", "TikTok does not allow scheduling"],
+            answer_index: 1,
+            explanation: "TikTok's web scheduler allows from fifteen minutes up to ten days ahead.",
+          },
+          {
+            prompt: "Which of these counts as approval?",
+            options: [
+              "The client did not reply",
+              "The client viewed the message",
+              "A clear 'approved' or 'OK' in writing",
+              "A friend liked the draft",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says silence is not approval; it should be clear and written.",
+          },
+          {
+            prompt: "Why should you check a post after it goes live?",
+            options: [
+              "Videos can fail, links can break and details can change after approval",
+              "Platforms delete unchecked posts",
+              "To count likes every minute",
+              "To remove all comments",
+            ],
+            answer_index: 0,
+            explanation: "Scheduled does not always mean posted correctly, so check and fix fast.",
+          },
+          {
+            prompt: "Which feature makes a draft easy for a client to approve?",
+            options: [
+              "Sending each post in a separate message over several days",
+              "Hiding the date and time",
+              "Showing the post as it will appear and highlighting items to check",
+              "Writing the caption after approval",
+            ],
+            answer_index: 2,
+            explanation: "Clear previews and highlighted details make a quick, accurate yes possible.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
   },
 };
 
