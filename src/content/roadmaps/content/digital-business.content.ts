@@ -43,7 +43,7 @@ You do not need a big budget to start. You need a clear promise, a phone, and th
 
 **Steps:**
 1. Think of one product you or your family already make, grow or can buy easily.
-2. In your phone's notes app, write one or two sentences for each question: What do I sell? Who buys it? Can I deliver it?
+2. In a notebook or a notes app, write one or two sentences for each question: What do I sell? Who buys it? Can I deliver it?
 3. Under "Can I deliver it?", write how many you could supply in one week and how you would get the product to a buyer.
 4. Read it to a family member or friend and ask: "Would you buy this, and why or why not?" Write down their answer.
 
@@ -383,7 +383,7 @@ When one supplier travelled for a funeral, the other covered his order. His cust
 
 ## You do not need to be a maths expert
 
-Business sums use simple addition, subtraction, multiplication and division. What matters is doing them honestly and regularly. A notebook and a calculator work. A free spreadsheet app such as Google Sheets on your phone makes it easier, because it adds up for you.
+Business sums use simple addition, subtraction, multiplication and division. What matters is doing them honestly and regularly. A notebook and a calculator work. A free spreadsheet app such as Google Sheets on your phone or computer makes it easier, because it adds up for you.
 
 ## The four money habits
 
@@ -673,7 +673,7 @@ At the end of each week, add up money in and money out. The difference shows how
 
 ## Notebook or spreadsheet?
 
-Both work. A notebook is cheap and needs no battery. A free spreadsheet app like Google Sheets on your phone adds up columns for you, can be backed up to your Google account, and is easy to share with a mentor or a programme officer. The **SUM** function totals a column for you; for example, typing \`=SUM(C2:C50)\` adds every number from row 2 to row 50 in column C.
+Both work. A notebook is cheap and needs no battery. A free spreadsheet app like Google Sheets on your phone or computer adds up columns for you, can be backed up to your Google account, and is easy to share with a mentor or a programme officer. The **SUM** function totals a column for you; for example, typing \`=SUM(C2:C50)\` adds every number from row 2 to row 50 in column C.
 
 Whatever you choose, use the same format every day.
 
@@ -856,7 +856,7 @@ Since she sells about 25 small tubs a week and her aunt needs four days to make 
     "selling-online": {
       explanation_md: `In Ghana a great deal of buying now starts in a chat. A customer sees a Status update or a TikTok video, sends a message asking "How much?", agrees a price, pays with mobile money and waits for delivery. Businesses that do this well can sell far beyond their town. Employers have noticed too: Ghanaian adverts for shop staff, sales officers and online sales roles regularly ask for experience selling through WhatsApp, Instagram and TikTok, and some ask for live selling.
 
-## Your phone as a shop window
+## Your online shop
 
 Think of selling online as running a shop with four parts:
 
@@ -1266,7 +1266,7 @@ His new description read: "Dawadawa from Savelugu. 250 g sealed pack. 25 cedis. 
 Ask three questions:
 
 * **Where do my customers already look?** If they live on WhatsApp, start there.
-* **What can I keep up to date?** An out of date store with wrong prices or sold out items hurts trust. Choose something you can maintain on your phone.
+* **What can I keep up to date?** An out of date store with wrong prices or sold out items hurts trust. Choose something you can keep up to date easily.
 * **What does it cost?** Count listing fees, commissions, data and time.
 
 Start with the simplest option that works, and add another only when you have a clear reason.
@@ -2254,7 +2254,7 @@ Check the ORC website or office for the current list and fees before you start.
 
 ## Renewal
 
-Registration is not a one time event. Business names must be renewed every year, and the ORC offers renewal online and by USSD. A name that is not renewed on time can lapse. Put the renewal date in your phone calendar so you do not forget.
+Registration is not a one time event. Business names must be renewed every year, and the ORC offers renewal online and by USSD. A name that is not renewed on time can lapse. Put the renewal date in your calendar so you do not forget.
 
 ## Choosing a name
 
