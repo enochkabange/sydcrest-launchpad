@@ -2,14 +2,23 @@ import { expect, test } from "@playwright/test";
 import { signUpAndConfirm } from "./auth";
 
 /**
- * Phone first, desktop equal: signed in screens use the width of a laptop
- * rather than a phone column stranded in the middle of it (issue #115).
+ * Phone first, desktop equal: screens use the width of a laptop rather than a
+ * phone column stranded in the middle of it (issues #115 and #154). At 1440
+ * the main content of the home page, the programme and the dashboard is wider
+ * than 1000px.
  */
-test("the dashboard uses the width of a desktop screen", async ({ page }, testInfo) => {
+test("main content uses the width of a desktop screen", async ({ page }, testInfo) => {
   test.skip(testInfo.project.name !== "desktop", "Checks the desktop width only.");
+  for (const path of ["/", "/programme"]) {
+    await page.goto(path);
+    const content = await page.locator("main [data-container]").first().boundingBox();
+    expect(content?.width ?? 0, `${path} main content width`).toBeGreaterThan(1000);
+  }
   await signUpAndConfirm(page, testInfo, "Mariama Seidu");
   const content = await page.locator("#main > *").first().boundingBox();
-  expect(content?.width ?? 0).toBeGreaterThan(900);
+  expect(content?.width ?? 0, "dashboard main content width").toBeGreaterThan(1000);
+  // The dashboard's right rail appears beside the main column on a laptop.
+  await expect(page.getByRole("complementary", { name: "Your path and community" })).toBeVisible();
 });
 
 test("phones keep the bottom tab bar on signed in screens", async ({ page }, testInfo) => {
