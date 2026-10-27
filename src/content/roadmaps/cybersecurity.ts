@@ -20,6 +20,10 @@ const act772 = r(
   "Electronic Transactions Act, 2008 (Act 772), CSA copy",
   "https://csa.gov.gh/resources/Electronic%20Transactions%20Act.pdf",
 );
+const act1038 = r(
+  "Cybersecurity Act, 2020 (Act 1038), CSA copy",
+  "https://www.csa.gov.gh/resources/cybersecurity_Act_2020(Act_1038).pdf",
+);
 const netacadIntro = r("Cisco Networking Academy: Introduction to Cybersecurity (free)", "https://www.netacad.com/courses/introduction-to-cybersecurity", "practice");
 const netacadNetworking = r("Cisco Networking Academy: Networking Basics (free)", "https://www.netacad.com/courses/networking-basics", "practice");
 const netacadLinux = r("Cisco Networking Academy: Linux Unhatched (free)", "https://www.netacad.com/courses/linux-unhatched", "practice");
@@ -257,7 +261,7 @@ export const cybersecurity: RoadmapDraft = {
         "Act 1038 created the Cyber Security Authority, national and sectoral incident response teams and protections for critical systems. Learn what it means for organisations and for your own career.",
       parent: "rules-frameworks",
       optional: false,
-      resources: [csaHome, csaCii, csaReport],
+      resources: [act1038, csaCii, csaReport],
     },
     {
       slug: "frameworks-standards",

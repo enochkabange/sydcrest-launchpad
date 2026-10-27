@@ -53,7 +53,7 @@ honestly that labs need a computer and offers phone alternatives.
 | C2 | Cisco Networking Academy: Introduction to Cybersecurity, Networking Basics, Linux Unhatched, Packet Tracer (page titles confirm free courses) | https://www.netacad.com/courses/introduction-to-cybersecurity | 2026-10-25 | Free course catalogue; titles only |
 | C3 | ISC2: Certified in Cybersecurity (domains, no experience requirement) | https://www.isc2.org/certifications/cc | 2026-10-25 | Official certification page; facts only, no free offer confirmed so none claimed |
 | C4 | CompTIA Security+ page (V7 current, V8 expected around 17 November 2026) | https://www.comptia.org/en-us/certifications/security/ | 2026-10-25 | Official certification page; facts only |
-| D1 | Cybersecurity Act, 2020 (Act 1038), full text PDF (arrangement of sections; s.2, 35 to 48, 49, 57, 60, 62 to 68, 94, 98 checked) | https://openresearch-repository.anu.edu.au/bitstream/1885/278573/1/GhaCyber_3.pdf | 2026-10-25 | Copy of the Act hosted by ANU; text read with pdftotext. Primary legal text |
+| D1 | Cybersecurity Act, 2020 (Act 1038), full text PDF (arrangement of sections; s.2, 35 to 48, 49, 57, 60, 62 to 68, 94, 98 checked) | https://openresearch-repository.anu.edu.au/bitstream/1885/278573/1/GhaCyber_3.pdf | 2026-10-25 | Copy of the Act hosted by ANU; text read with pdftotext. Primary legal text. Reviewer rechecked s.39, 47(5), 49, 57 and 94 against the CSA hosted copy (https://www.csa.gov.gh/resources/cybersecurity_Act_2020(Act_1038).pdf) on 2026-10-27 |
 | D2 | Cyber Security Authority home page (established by Act 1038; functions) | https://www.csa.gov.gh/ | 2026-10-25 | Official regulator site |
 | D3 | CSA: Report an incident (call or SMS 292, WhatsApp 0501603111, report@csa.gov.gh, CSA GHANA app, online form) | https://www.csa.gov.gh/report | 2026-10-25 | Official regulator page. The home page footer shows inconsistent numbers, so only this page's channels are used |
 | D4 | CSA: Overview of critical information infrastructure (13 sectors designated by Gazette Notice No. 132, 23 September 2021) | https://www.csa.gov.gh/cii | 2026-10-25 | Official regulator page |
@@ -162,9 +162,11 @@ recorded or used.
   cited. No penalty figures are used.
 * CSA licensing began 1 March 2023 in five areas (VAPT, digital forensics, managed
   cybersecurity services, GRC, training). The lesson tells learners to check current rules
-  before offering services to clients, and does not say accreditation is needed for an in
-  house job.
-* Reporting channels from csa.gov.gh/report only.
+  before offering services to clients. The press release says qualified professionals
+  "shall also be accredited" in those areas, so the lesson does not claim either way whether
+  an in house job needs accreditation; it tells learners to check the CSA's current rules.
+* Reporting channels: confirmed on csa.gov.gh/report (27 October 2026), but the lessons link to
+  that page and name the channel types instead of hard coding numbers that may change.
 * BoG October 2026 notice: no legitimate provider asks for PINs, passwords or OTPs; avoid
   double your money schemes; report SIM swap incidents to providers.
 * CERT GH May 2024 alert: WhatsApp takeovers via fake admin or trusted contact pretexts, with

@@ -400,7 +400,7 @@ Telco and bank security adverts in Ghana ask for an understanding of networks, f
 Firewalls and other tools write records like this:
 
 \`\`\`
-08:14 ALLOW 192.168.1.20 -> 41.0.0.9:443 TCP
+08:14 ALLOW 192.168.1.20 -> 192.0.2.80:443 TCP
 02:31 BLOCK 203.0.113.50 -> 192.168.1.5:3389 TCP
 02:31 BLOCK 203.0.113.50 -> 192.168.1.5:3389 TCP
 \`\`\`
@@ -418,7 +418,7 @@ Issahaku works on a help desk in Tamale. Staff complain the internet is slow. He
 
 1. Copy these invented records into your journal:
    * \`09:02 ALLOW 192.168.1.30 -> 8.8.8.8:53 UDP\`
-   * \`09:03 ALLOW 192.168.1.30 -> 41.0.0.9:443 TCP\`
+   * \`09:03 ALLOW 192.168.1.30 -> 192.0.2.80:443 TCP\`
    * \`23:47 BLOCK 198.51.100.7 -> 192.168.1.10:22 TCP\` (repeated 40 times)
 2. For each line, write the source, destination, port, the service the port usually means, and whether it looks normal.
 3. Write a two sentence note to a supervisor about anything suspicious.
@@ -453,7 +453,7 @@ Issahaku works on a help desk in Tamale. Staff complain the internet is slow. He
             prompt: "Which of these is a private IP address used inside homes and offices?",
             options: [
               "8.8.8.8",
-              "41.0.0.9",
+              "192.0.2.80",
               "192.168.1.20",
               "203.0.113.50",
             ],
@@ -615,7 +615,7 @@ less auth.log    # read a file page by page
 
 ## Reading and searching logs
 
-On Ubuntu and Debian systems, login activity is recorded in **/var/log/auth.log**. Other Linux families use different names, such as /var/log/secure. Logs are long, so you search them:
+On Ubuntu, login activity is usually recorded in **/var/log/auth.log**. Other Linux families use different names, such as /var/log/secure, and some newer systems keep logs only in the system journal, read with the \`journalctl\` command. Logs are long, so you search them:
 
 \`\`\`
 grep "Failed password" /var/log/auth.log
@@ -648,7 +648,7 @@ The best practice is on a computer, using a free Linux virtual machine or a brow
       quiz: {
         questions: [
           {
-            prompt: "On Ubuntu and Debian systems, which file records login activity?",
+            prompt: "On Ubuntu, which file usually records login activity?",
             options: [
               "/home/music.txt",
               "/var/log/auth.log",
@@ -656,7 +656,7 @@ The best practice is on a computer, using a free Linux virtual machine or a brow
               "/bin/games",
             ],
             answer_index: 1,
-            explanation: "Login activity on Ubuntu and Debian is recorded in /var/log/auth.log.",
+            explanation: "On Ubuntu, login activity is usually recorded in /var/log/auth.log.",
           },
           {
             prompt: "What does the grep command do?",
@@ -718,7 +718,7 @@ At work you will see these threats from the other side. A fintech analyst might 
 
 ## Where to report
 
-Ghana's Cyber Security Authority runs incident reporting channels listed on its website: call or text 292, WhatsApp 0501603111, or email report@csa.gov.gh. For a wallet or bank account, the victim should also contact their mobile money provider or bank immediately using the official numbers.
+Ghana's Cyber Security Authority (CSA) lists its current reporting channels, such as a short code for calls and texts, WhatsApp, email, an app and an online form, on its official report page at csa.gov.gh/report. Save the details from that page rather than from a forwarded message, because numbers can change and scammers share fake ones. For a wallet or bank account, the victim should also contact their mobile money provider or bank immediately using the official numbers.
 
 ## A small example
 
@@ -756,15 +756,15 @@ Wumpini's aunt in Savelugu receives a call from "customer care" saying her mobil
             explanation: "Most everyday attacks start by persuading someone to share a code or open something harmful.",
           },
           {
-            prompt: "Which is one of the CSA reporting channels listed in the lesson?",
+            prompt: "Where should you get the CSA's current incident reporting channels?",
             options: [
-              "Call 911",
-              "Email help@bank.example",
-              "Call or text 292",
-              "Text STOP to any number",
+              "From a number forwarded in a WhatsApp group",
+              "From the caller who contacted the victim",
+              "From the CSA's official report page at csa.gov.gh/report",
+              "From any website that appears in a search",
             ],
             answer_index: 2,
-            explanation: "The CSA lists call or text 292, WhatsApp 0501603111 and report@csa.gov.gh.",
+            explanation: "The CSA lists its current channels on its official report page, and numbers from other places may be out of date or fake.",
           },
           {
             prompt: "What did Wumpini do after telling her aunt to hang up?",
@@ -784,7 +784,7 @@ Wumpini's aunt in Savelugu receives a call from "customer care" saying her mobil
     "momo-fraud-sim-swap": {
       explanation_md: `## Why this matters
 
-Mobile money is how millions of Ghanaians save, trade and send money home. That makes wallets and phone numbers prime targets. Telcos, banks and fintechs hire analysts and fraud monitoring staff who understand these schemes, and customer facing staff need to explain them clearly.
+Mobile money is how many Ghanaians save, trade and send money home. That makes wallets and phone numbers prime targets. Telcos, banks and fintechs hire analysts and fraud monitoring staff who understand these schemes, and customer facing staff need to explain them clearly.
 
 ## Common mobile money tricks
 
@@ -814,7 +814,7 @@ Mariama works in a fintech's fraud team in Accra. She notices several customers 
 
 1. Using only this lesson, write a short guide titled "Keep your MoMo safe" in plain English, or in Dagbani, Twi, Gonja or another language you speak.
 2. Include four common tricks, the SIM swap warning signs and five defences.
-3. Add what to do if something goes wrong: contact your provider or bank through official numbers, and report to the CSA (call or text 292, WhatsApp 0501603111).
+3. Add what to do if something goes wrong: contact your provider or bank through official numbers, and report to the CSA using the channels on its official report page (csa.gov.gh/report).
 4. Keep it short enough to read on one phone screen, and do not include any real phone numbers other than official ones.
 
 **Done looks like:** a one page guide you can share in a family or church WhatsApp group, saved in your portfolio.`,
@@ -1288,7 +1288,7 @@ Abdul-Rahman is doing national service in a bank's IT security unit in Accra. Hi
     "encryption-data-protection": {
       explanation_md: `## Why this matters
 
-Banks, hospitals, telcos and NGOs in Ghana hold personal data about millions of people. Laws and regulators expect it to be protected, and adverts for security roles mention data protection controls and encryption. You need to know what encryption does, what it does not do and how to handle personal data responsibly.
+Banks, hospitals, telcos and NGOs in Ghana hold personal data about many people. Laws and regulators expect it to be protected, and adverts for security roles mention data protection controls and encryption. You need to know what encryption does, what it does not do and how to handle personal data responsibly.
 
 ## Encryption in plain words
 
@@ -1414,7 +1414,7 @@ Count behaviours, not attendance. Useful signs include more staff reporting susp
 
 ## A small example
 
-Sumaila volunteers to help his church in Wa after several members lost money to fake "pastor needs urgent help" messages from hacked WhatsApp accounts. He prepares a ten minute talk in Dagbani and English with three points: never send money because of a message alone, call the person on their usual number to confirm, and turn on two step verification. He demonstrates the setting on his own phone, then helps people turn it on after the service. A month later, a member calls the pastor to check a suspicious request and saves the money. That is awareness working.
+Sumaila volunteers to help his church in Wa after several members lost money to fake "pastor needs urgent help" messages from hacked WhatsApp accounts. He prepares a ten minute talk in Waale and English with three points: never send money because of a message alone, call the person on their usual number to confirm, and turn on two step verification. He demonstrates the setting on his own phone, then helps people turn it on after the service. A month later, a member calls the pastor to check a suspicious request and saves the money. That is awareness working.
 
 ## Your portfolio
 
@@ -1810,7 +1810,7 @@ When an attack is confirmed, panic causes more damage than the attacker. Ghanaia
 
 ## The incident response stages
 
-Many teams follow a lifecycle based on guidance from the US National Institute of Standards and Technology (NIST). Its latest incident response guidance, SP 800 61 Revision 3, links incident response to the six functions of the NIST Cybersecurity Framework 2.0. A simple version to remember:
+Many teams still use the incident response lifecycle from earlier guidance by the US National Institute of Standards and Technology (NIST). NIST's latest version, SP 800 61 Revision 3, now links incident response to the six functions of the NIST Cybersecurity Framework 2.0, but the stages below remain a common, simple way to remember the work:
 
 1. **Preparation:** plans, contact lists, playbooks, backups and training, done before anything happens.
 2. **Detection and analysis:** spotting the incident, confirming it is real, and working out scope: which systems, which accounts, which data.
@@ -1830,7 +1830,7 @@ As a junior you are unlikely to lead an incident, but you will:
 
 ## Ghana's reporting duty
 
-Under section 47 of the **Cybersecurity Act, 2020 (Act 1038)**, a person in charge of an institution must report a cybersecurity incident to the relevant Sectoral Computer Emergency Response Team or the National Computer Emergency Response Team within 24 hours of detecting it. The Cyber Security Authority's National CERT (CERT GH) accepts reports through its listed channels, including call or text 292, WhatsApp 0501603111 and report@csa.gov.gh. Your organisation's managers decide and make the report; your clear timeline helps them do it accurately.
+Under section 47 of the **Cybersecurity Act, 2020 (Act 1038)**, a person in charge of an institution must report a cybersecurity incident to the relevant Sectoral Computer Emergency Response Team or the National Computer Emergency Response Team within 24 hours of detecting it. The Cyber Security Authority's National CERT (CERT GH) accepts reports through the channels listed on csa.gov.gh/report. Your organisation's managers decide and make the report; your clear timeline helps them do it accurately.
 
 ## A small example
 
@@ -1912,7 +1912,7 @@ Ghanaian telco and bank adverts list vulnerability scanning, vulnerability asses
 ## Key words
 
 * **Vulnerability:** a weakness in software, hardware or configuration.
-* **CVE:** a public identifier for a known vulnerability, written like \`CVE-2026-0001\` (an invented example).
+* **CVE:** a public identifier for a known vulnerability, written as CVE, then the year, then a number, in the pattern \`CVE-YYYY-NNNNN\`.
 * **CVSS:** a common scoring system from 0 to 10 describing severity. Scores are grouped as low, medium, high and critical.
 * **Patch:** an update that fixes a vulnerability.
 * **Exploit:** a method of taking advantage of a vulnerability.
@@ -2112,11 +2112,11 @@ Act 1038 was passed in 2020. Its main parts include:
 
 ## Licensing and accreditation in practice
 
-The CSA began licensing and accreditation in 2023. Its announcement named five service areas: vulnerability assessment and penetration testing, digital forensics, managed cybersecurity services, governance, risk and compliance, and cybersecurity training. If you work as an in house analyst for a bank or telco, your employer handles its own obligations. If you later offer services such as testing, forensics or monitoring to clients, check the CSA's current licensing and accreditation rules first. The CSA publishes guidance on its website.
+The CSA began licensing and accreditation in 2023. Its announcement named five service areas: vulnerability assessment and penetration testing, digital forensics, managed cybersecurity services, governance, risk and compliance, and cybersecurity training. The announcement also said that cybersecurity professionals with the right qualifications and experience would be accredited in those areas. Whether a particular job or person needs a licence or accreditation depends on the CSA's current rules, so check them on the CSA website, and always check before you offer services such as testing, forensics or monitoring to clients.
 
 ## Reporting channels
 
-CERT GH lists these channels for reporting incidents: call or text **292**, WhatsApp **0501603111**, email **report@csa.gov.gh**, the CSA Ghana mobile app and an online form. You can share these with friends and family who are victims of cybercrime.
+CERT GH lists its reporting channels on the CSA's official report page at **csa.gov.gh/report**. They include a short code you can call or text, WhatsApp, email, the CSA Ghana mobile app and an online form. Share the page with friends and family who are victims of cybercrime, so they always get the current details.
 
 ## A small example
 
@@ -2169,15 +2169,15 @@ You do not need to memorise every section. Know what the CSA is, what CII and CE
             explanation: "Section 49 requires cybersecurity service providers to be licensed.",
           },
           {
-            prompt: "Which is a CERT GH reporting channel?",
+            prompt: "Where does CERT GH list its current reporting channels?",
             options: [
-              "Call 999",
-              "WhatsApp 0501603111",
-              "Email info@example.com",
-              "Text HELP to 1234",
+              "In a chain message shared on social media",
+              "On the CSA's official report page at csa.gov.gh/report",
+              "On the back of mobile money receipts",
+              "Only in printed newspapers",
             ],
             answer_index: 1,
-            explanation: "CERT GH lists 292 by call or text, WhatsApp 0501603111 and report@csa.gov.gh.",
+            explanation: "The CSA's official report page lists the current channels, including a short code, WhatsApp, email, an app and an online form.",
           },
           {
             prompt: "If you later offer penetration testing or forensics to clients, what should you do first?",
@@ -2426,7 +2426,7 @@ A lab is only half useful if you forget it. For each session, write: the goal, w
 
 ## A small example
 
-Mariama has an old laptop that struggles with large programs. She installs a light Linux version in VirtualBox using the library's Wi Fi, takes a snapshot, then practises reading auth.log after deliberately mistyping her own password several times. She writes a one page report of how she found the failed attempts. Total data cost from her own bundle: almost nothing.`,
+Mariama has an old laptop that struggles with large programs. She installs a light Linux version in VirtualBox using the library's Wi Fi, takes a snapshot, then practises reading the login log after deliberately mistyping her own password several times. She writes a one page report of how she found the failed attempts. Total data cost from her own bundle: almost nothing.`,
       practice_task_md: `**Goal:** complete and write up your first lab session.
 
 **Phone path:** complete the first three levels of OverTheWire Bandit using a free SSH app, or the first module of Cisco's free Introduction to Cybersecurity course.
