@@ -78,14 +78,16 @@ and live in the workflow files.
 | `uptime.yml` | every 30 minutes | fails (and emails) if the live site is down |
 | `dependabot.yml` | weekly / monthly | dependency and Actions update PRs |
 
-## 4. Guardrails (in place of branch protection)
+## 4. Guardrails (on top of branch protection)
 
 | Guard | Where | What it stops |
 | --- | --- | --- |
 | Merged PR only | `pipeline.yml` gate | Any commit on `main` that did not come from a merged PR is not deployed, and an issue is opened |
 | Full suite before deploy | `pipeline.yml` | Production deploys only after lint, types, unit tests, audit, build, database tests (pgTAP, types in sync) and e2e all pass |
 | Migration guard | CI, staging push, pipeline | Editing or deleting a shipped migration; destructive SQL (drop, rename, type change, truncate, delete) without `-- allow-destructive: <reason>` on that line |
+| Secret scan before commit | `.husky/pre-commit` (secretlint via lint-staged) | Keys or passwords reaching a commit at all; the repo is public, so CI scanning alone is too late |
 | Secret scan | CI (gitleaks) | Keys or passwords committed in a PR |
+| GitHub secret scanning and push protection | repo settings (founder) | Known provider keys pushed from anywhere, including the web editor |
 | Dependency audit | CI, pipeline | High or critical vulnerabilities in production dependencies |
 | Smoke test and rollback | `pipeline.yml` | After a deploy, key pages must load and `/dashboard` must redirect; otherwise Vercel rolls back to the previous production deployment |
 | Least privilege | every workflow | Each workflow gets only `contents: read`, plus what one job needs |
