@@ -1391,6 +1391,342 @@ She also adds a Status column with an IF formula that says "Reorder" or "OK", so
         pass_threshold: 75,
       },
     },
+    "excel-reports": {
+      explanation_md: `## Why this matters
+
+In most offices, Excel work comes back every week or every month. The district office sends a new attendance file each Monday. The bank exports a new statement every month. The donor wants the same activity report every quarter. The person who can produce that report quickly, correctly and in the same clear format each time becomes very valuable to a team. Job adverts for MIS officers and Excel specialists mention reporting automation and dashboards for this reason.
+
+This section brings everything together into reports that are repeatable and readable.
+
+## What this section covers
+
+* **Power Query for repeat cleaning:** a tool that records your cleaning steps once and replays them on next month's file with one click. The editor is in desktop Excel, and the same tool is free inside Power BI Desktop.
+* **A one page Excel report:** combining a few key numbers, a PivotTable, a chart and highlights into a single page that a manager can read on a phone or print.
+
+## Repeatable beats heroic
+
+Many people produce monthly reports by hand: copy the new data in, fix the spellings again, retype the totals, recolour the cells, and hope nothing was missed. It works, but it takes hours and the mistakes are different every month.
+
+A repeatable report is built differently:
+
+1. **Raw data goes in one place,** always in the same layout, never edited by hand.
+2. **Cleaning happens by rules,** in Power Query or in helper columns with formulas, so it is the same every time.
+3. **Summaries are calculated,** with PivotTables or SUMIFS pointing at the clean table.
+4. **The report page only displays** results: key numbers, a chart, highlights.
+
+Next month you replace the raw data, refresh, check, and send. What took a day now takes minutes, and the method is the same each time, so errors are easier to spot.
+
+## Separate sheets for separate jobs
+
+A simple structure that works for most small reports:
+
+* **Raw:** the data exactly as received.
+* **Clean:** the cleaned table (from Power Query or formulas).
+* **Lists:** dropdown values and lookup tables, such as branch names and targets.
+* **Calc:** PivotTables and summary formulas.
+* **Report:** the one page that people read.
+
+Name the sheets clearly and put them in that order. Someone else can then pick up your file and understand it, which matters when you are on leave or move to a new role.
+
+## A small example
+
+Amina compiles a monthly activity report for a girls' education project in the Northern Region. Each month, five field officers send her attendance sheets. Before, she spent two days merging and fixing them. Now she pastes the five sheets into the Raw area, refreshes a cleaning query, refreshes the PivotTables, and checks the Report sheet. The report is ready the same morning, and her manager notices that the numbers are consistent every month.
+
+## Check before you send
+
+Even a repeatable report needs a human check. Compare this month's totals with last month's: does any number look strange? Spot check one figure by filtering the raw data. A minute of checking protects your reputation.`,
+      practice_task_md: `**Goal:** design the structure of a repeatable monthly report.
+
+1. Pick a report that recurs: monthly shop sales, weekly church attendance or a quarterly savings group summary.
+2. Create a workbook with five sheets named Raw, Clean, Lists, Calc and Report.
+3. On the Report sheet, write the three to five numbers or charts the reader needs each month.
+4. On a fourth sheet or in a note, list every cleaning step you currently do by hand, in order.
+5. Mark which steps can be done with formulas you already know.
+
+**Done looks like:** a workbook skeleton with five named sheets and a written list of cleaning steps. Share it with a mentor and ask which steps they would automate first.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the main advantage of a repeatable report?",
+            options: [
+              "It uses more colours",
+              "Next month you replace the data and refresh instead of rebuilding by hand",
+              "It never needs checking",
+              "It only works in Google Sheets",
+            ],
+            answer_index: 1,
+            explanation: "A repeatable report reuses the same rules, so producing the next one is quick and consistent.",
+          },
+          {
+            prompt: "In the suggested structure, which sheet holds the data exactly as received?",
+            options: [
+              "Raw",
+              "Clean",
+              "Calc",
+              "Report",
+            ],
+            answer_index: 0,
+            explanation: "The Raw sheet keeps the original data untouched.",
+          },
+          {
+            prompt: "What should the Report sheet do?",
+            options: [
+              "Hold the raw data",
+              "Store the dropdown lists",
+              "Only display results such as key numbers, charts and highlights",
+              "Hold the cleaning formulas",
+            ],
+            answer_index: 2,
+            explanation: "The Report sheet is for reading; data, cleaning and calculations live on other sheets.",
+          },
+          {
+            prompt: "Why should you still check a repeatable report before sending it?",
+            options: [
+              "Refreshing deletes the data",
+              "New data can contain surprises, so comparing with last month and spot checking catches errors",
+              "Repeatable reports are always wrong",
+              "Excel requires a manual check",
+            ],
+            answer_index: 1,
+            explanation: "A quick comparison and spot check protects against unexpected problems in new data.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "power-query-in-excel": {
+      explanation_md: `## Why this matters
+
+If you clean the same kind of file every month, Power Query can do it for you. You show it the cleaning steps once; it records them; next month you click Refresh and every step runs again on the new data. Adverts for MIS officers and Excel specialists name Power Query and reporting automation. Learning it now also prepares you for Power BI, which uses the same engine.
+
+## Which version you need
+
+Be clear about this before you start:
+
+* **Desktop Excel for Windows** has the full Power Query editor (Data tab, **Get Data**, or **From Table/Range**).
+* **Excel for Microsoft 365 on Mac** has the editor too in recent versions (Data tab, **Get Data (Power Query)**).
+* **Excel for the web** only lets you create and edit queries with a Microsoft 365 business or enterprise plan. With a free personal account you cannot open the editor there.
+* **Power BI Desktop** is free and contains the same Power Query editor, but it runs only on Windows.
+
+So you need a Windows or Mac computer with desktop Excel (at work, school or a hub), or any Windows computer where you can install Power BI Desktop. If you have neither yet, read on: the ideas still apply, and the practice task has a version you can do in any spreadsheet.
+
+## How it works
+
+1. Load your data: **Get Data** from a workbook, a CSV file or a table in the current file.
+2. The **Power Query Editor** opens with a preview. Every change you make is recorded as a step in the **Applied Steps** list on the right.
+3. Common steps:
+   * **Use first row as headers.**
+   * **Remove columns** you do not need.
+   * **Transform, then Format, then Trim** and **Capitalize Each Word** for names.
+   * **Replace values**, such as "Tml" with "Tamale".
+   * **Filter rows** to remove blanks or test entries.
+   * **Change type** to Date, Whole number or Text. For dates written day first, use **Change type, then Using Locale**, and choose English (Ghana) or English (United Kingdom), so 05/03/2026 is read as 5 March.
+   * **Remove duplicates.**
+4. Choose **Close and Load**. The clean data lands in a new sheet as a table.
+
+Next month, save the new file over the old one in the same place, with the same name and layout, then use **Data, then Refresh All**. Every step replays. You can click any step to see the data at that point, and delete or edit steps if something changes.
+
+Excel for Windows and Power BI Desktop can also combine every file in a folder into one table, which is perfect for five field officers each sending a sheet.
+
+## A worked example
+
+Abdul-Rahman receives a CSV of mobile money transactions from his employer's system every month. He uses Get Data, From Text/CSV, then records: remove four unused columns, trim the Customer column, replace "N/A" with blank, change Amount to Decimal number, change Date using the English (Ghana) locale, and filter out rows where Status is "Failed". Six steps, built once. Each month he replaces the CSV and refreshes, and his PivotTable of daily totals updates in seconds.
+
+## Without the editor
+
+If you only have free Excel for the web, a phone or Google Sheets, write your steps down as a recipe and apply them with the TRIM, PROPER, TEXT and DATE formulas from the cleaning lesson. It is slower, but the habit of writing repeatable steps is exactly what Power Query rewards later.`,
+      practice_task_md: `**Goal:** record a cleaning process you can replay.
+
+**If you have desktop Excel or Power BI Desktop:**
+
+1. Make a messy CSV or sheet of 20 rows: extra spaces, mixed capitals, day first dates as text, a blank row and a duplicate.
+2. Load it into Power Query and record steps to fix each problem, including Change type Using Locale for the dates.
+3. Close and Load, then add five new messy rows to the source, save, and Refresh.
+
+**If you only have Excel for the web, the Excel app or Google Sheets:**
+
+1. Use the same messy data.
+2. Write a numbered cleaning recipe, then apply it with helper column formulas.
+3. Add five new rows and fill your formulas down to show the recipe works again.
+
+**Done looks like:** either a refreshed query whose Applied Steps you can explain, or a written recipe plus a clean sheet. Show a mentor how the new rows were cleaned without extra manual work.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does Power Query record as you clean data?",
+            options: [
+              "A video of your screen",
+              "A list of applied steps that can be replayed",
+              "A backup copy of every cell",
+              "A macro written in VBA",
+            ],
+            answer_index: 1,
+            explanation: "Each change is saved as a step in the Applied Steps list and replays on refresh.",
+          },
+          {
+            prompt: "Which free option gives you the Power Query editor on a Windows computer even without paid Excel?",
+            options: [
+              "Google Sheets",
+              "The Excel phone app",
+              "Power BI Desktop",
+              "Excel for the web with a personal account",
+            ],
+            answer_index: 2,
+            explanation: "Power BI Desktop is free on Windows and includes the same Power Query editor.",
+          },
+          {
+            prompt: "Dates in your file are written day first, like 05/03/2026. How should you set the type in Power Query?",
+            options: [
+              "Change type to Text",
+              "Change type Using Locale, choosing English (Ghana) or English (United Kingdom)",
+              "Remove the column",
+              "Change type to Whole number",
+            ],
+            answer_index: 1,
+            explanation: "Using Locale tells Power Query to read the date in day first order.",
+          },
+          {
+            prompt: "Next month's file arrives with the same layout. What do you do?",
+            options: [
+              "Rebuild every step from scratch",
+              "Save it in place of the old file and use Refresh All",
+              "Copy the old results into the new file",
+              "Email it to Microsoft",
+            ],
+            answer_index: 1,
+            explanation: "Refreshing replays the recorded steps on the new data.",
+          },
+          {
+            prompt: "With a free personal Microsoft account, what can you do with Power Query in Excel for the web?",
+            options: [
+              "Use the full editor with no limits",
+              "You cannot open the editor; creating and editing queries there needs a business or enterprise plan",
+              "Use it only on weekends",
+              "Edit queries but not load them",
+            ],
+            answer_index: 1,
+            explanation: "Microsoft limits query editing in Excel for the web to business and enterprise plans.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "one-page-excel-report": {
+      explanation_md: `## Why this matters
+
+A one page report is where your Excel skills become something an employer can see and use. Managers, donors and boards rarely have time for long sheets. They want one page that answers: how did we do, compared with what, and what needs attention? Being able to build that page, and to show examples of it, is a strong signal in applications for reporting, admin and M&E roles.
+
+## What goes on the page
+
+Work from top to bottom, most important first:
+
+1. **Title, period and source.** For example: "Monthly activity report, September 2026. Source: field registers."
+2. **Three to five key numbers**, large and labelled, each with a comparison: against target, or against last month. "Farmers trained: 412 (target 400)" means more than "412" alone.
+3. **One chart** that shows the main story, with a message title.
+4. **One small table**, such as results by district from a PivotTable, sorted.
+5. **Highlights:** two or three short sentences in plain words. What went well, what is behind, what action is suggested.
+
+Everything else stays on the Calc and Clean sheets.
+
+## Building it in Excel
+
+* Keep the report on its own sheet called Report. Link every number to your calculations with formulas such as \`=Calc!B4\`, so nothing is typed by hand.
+* For a change against last month, use \`=(B4-C4)/C4\` and format it as a percentage. Show the direction in words too: "up" or "down".
+* Use larger font and bold for the key numbers, with the label underneath in normal text.
+* Use conditional formatting for one thing only, such as a number below target turning orange, with a word like "Behind" beside it.
+* Keep the layout narrow, roughly columns A to H, so it reads on a phone without much side scrolling.
+* Turn off gridlines on the report sheet (View tab in Excel) for a cleaner look.
+
+## Sharing it
+
+Many readers will open a PDF on a phone. Set the print area to your report, choose **fit to one page wide** in page setup, and check the preview. Excel for the web, desktop Excel and Google Sheets can all save or download the page as a PDF. Also share the workbook with view access for anyone who wants to look at the detail.
+
+## A worked example
+
+Hawa prepares a monthly report for a women's savings association with groups in Tolon, Kumbungu and Savelugu. Her page shows:
+
+* **Title:** "Savings report, September 2026".
+* **Key numbers:** total savings (GHS), new members, loans repaid on time, each with last month beside it.
+* **Chart:** savings by month, titled "Savings rose for the fourth month in a row".
+* **Table:** savings by group, sorted, with Kumbungu marked "Behind" because it missed its target.
+* **Highlights:** "Savings are up in all three groups. Kumbungu is behind target because two meetings were cancelled. Suggest a catch up meeting in October."
+
+The executive reads it in a minute and acts on the last line. Next month Hawa replaces the raw data, refreshes, rewrites the highlights, and sends it again.
+
+## Use only real or clearly invented data
+
+For portfolio pieces, use open data or data you invent and label as invented. Never share real customer, member or beneficiary records without permission.`,
+      practice_task_md: `**Goal:** build a one page report from your practice data.
+
+1. Use your practice workbook with a Clean table and a Calc sheet holding a PivotTable or SUMIFS summary.
+2. Add a Report sheet with a title, period and source line.
+3. Add three key numbers linked by formula to Calc, each with a comparison such as a target you set.
+4. Add one sorted summary table and one chart with a message title.
+5. Write two or three highlight sentences, including one suggested action.
+6. Set the print area, fit it to one page wide, and save or download a PDF. Open the PDF on a phone to check it.
+
+**Done looks like:** a PDF and a workbook of one clear page that a manager could read in a minute, clearly labelled as invented data. This is your first portfolio piece; share it with a mentor for feedback.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which key number is most useful on a one page report?",
+            options: [
+              "412",
+              "Farmers trained: 412 (target 400)",
+              "A list of all 412 farmer names",
+              "Row 412",
+            ],
+            answer_index: 1,
+            explanation: "A labelled number with a comparison tells the reader whether the result is good or bad.",
+          },
+          {
+            prompt: "How should numbers on the Report sheet be filled in?",
+            options: [
+              "Typed by hand each month",
+              "Linked by formula to the calculation sheet, such as =Calc!B4",
+              "Copied from last month's PDF",
+              "Left blank for the reader to calculate",
+            ],
+            answer_index: 1,
+            explanation: "Linking by formula keeps the report accurate and makes it refreshable.",
+          },
+          {
+            prompt: "Which formula gives the change from last month when this month is in B4 and last month in C4?",
+            options: [
+              "=B4+C4",
+              "=C4/B4",
+              "=(B4-C4)/C4",
+              "=B4*C4",
+            ],
+            answer_index: 2,
+            explanation: "Subtract last month from this month, then divide by last month, and format as a percentage.",
+          },
+          {
+            prompt: "Why keep the report layout narrow, around columns A to H?",
+            options: [
+              "Excel only prints eight columns",
+              "So it reads on a phone and fits one page wide without much side scrolling",
+              "Wide reports cannot hold charts",
+              "Narrow sheets calculate faster",
+            ],
+            answer_index: 1,
+            explanation: "Many readers open reports on phones, so a narrow page is easier to read.",
+          },
+          {
+            prompt: "What belongs in the highlights section?",
+            options: [
+              "Every number from the raw data",
+              "The formulas used",
+              "Two or three plain sentences on what went well, what is behind and a suggested action",
+              "The names of everyone in the dataset",
+            ],
+            answer_index: 2,
+            explanation: "Highlights explain the result in words and suggest what to do next.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
   },
 };
 
