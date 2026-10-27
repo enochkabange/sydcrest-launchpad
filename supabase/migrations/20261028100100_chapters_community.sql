@@ -947,10 +947,13 @@ grant execute on function public.pin_community_post(uuid, boolean) to authentica
 
 -- Reports: new target types ---------------------------------------------------
 
--- Widening the list is additive: every existing row still passes.
+-- Widening the list is additive: every existing row still passes. Keeps
+-- every value Phase 1 and the Market and Earn schema (#148) allow.
 alter table public.reports drop constraint reports_target_type_check;
 alter table public.reports add constraint reports_target_type_check check (target_type in (
   'profile', 'achievement', 'roadmap_node', 'node_resource', 'other',
+  'expert_profile', 'offer', 'expert_review', 'booking_message', 'brief', 'pitch',
+  'organisation', 'opportunity', 'talent_listing',
   'community_post', 'community_reply', 'chapter', 'community_event', 'event_recording'
 ));
 
