@@ -24,7 +24,7 @@ export default function WelcomePage() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-2">
-        <h1 className="text-3xl text-content">One more step</h1>
+        <h1 className="text-title text-content">One more step</h1>
         <p className="text-content-2">
           Before you start, tell us your date of birth and agree to our terms. SydCrest accounts are
           for people aged 18 and over.

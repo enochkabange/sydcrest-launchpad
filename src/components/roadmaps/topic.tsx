@@ -48,7 +48,7 @@ export function TopicSummary({
   return (
     <div>
       <p className="text-sm text-content-3">{topicEyebrow(node, section, sectionCount)}</p>
-      <Heading id={headingId} className={headingLevel === 1 ? "mt-1 text-3xl text-content md:text-4xl" : "mt-2 text-2xl text-content md:text-3xl"}>
+      <Heading id={headingId} className={headingLevel === 1 ? "mt-1 text-title text-content" : "mt-2 text-h2 text-content lg:text-subtitle"}>
         {node.title}
       </Heading>
       <div className="mt-3 min-h-0">
@@ -56,7 +56,7 @@ export function TopicSummary({
           <NodeStatus nodeId={node.id} />
         </Suspense>
       </div>
-      {node.summary && <p className={`mt-3 text-content-2 ${headingLevel === 1 ? "text-lg" : ""}`}>{node.summary}</p>}
+      {node.summary && <p className={`mt-3 text-content-2 ${headingLevel === 1 ? "max-w-reading text-lead" : ""}`}>{node.summary}</p>}
     </div>
   );
 }

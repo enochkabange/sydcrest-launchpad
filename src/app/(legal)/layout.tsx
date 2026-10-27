@@ -13,11 +13,11 @@ export default function LegalLayout({ children }: LayoutProps<"/">) {
           <Logo size={28} />
         </Link>
       </header>
-      <main id="main" className="mx-auto w-full max-w-2xl flex-1 px-4 pt-10 pb-16 md:px-8">
+      <main id="main" className="mx-auto w-full max-w-reading flex-1 px-4 pt-10 pb-16 md:px-8">
         {children}
       </main>
       <footer className="border-t border-line px-4 py-2 md:px-8">
-        <LegalLinks className="mx-auto w-full max-w-2xl" />
+        <LegalLinks className="mx-auto w-full max-w-reading" />
       </footer>
       {/* First party page views for the funnel; renders nothing. */}
       <Suspense fallback={null}>

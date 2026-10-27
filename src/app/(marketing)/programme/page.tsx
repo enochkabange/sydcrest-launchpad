@@ -1,6 +1,7 @@
 import { CurriculumWeeks } from "@/components/marketing/curriculum-weeks";
 import { Card, PageHeader, Section } from "@/components/marketing/section";
 import { WaitlistForm } from "@/components/marketing/waitlist-form";
+import { SectionGrid } from "@/components/ui/layout";
 import { PILOT } from "@/content/marketing";
 import { TRACK_LABELS, TRACKS } from "@/content/dmp/curriculum";
 import { pageMetadata } from "@/lib/page-metadata";
@@ -32,19 +33,20 @@ export default function ProgrammePage() {
             {PILOT.starts}.
           </p>
         }
+        aside={
+          <dl className="grid grid-cols-2 gap-3 xl:gap-4">
+            {FACTS.map((f) => (
+              <div key={f.label} className="flex flex-col-reverse gap-1 rounded-lg border border-line bg-surface p-4 xl:p-6">
+                <dt className="text-sm text-content-2">{f.label}</dt>
+                <dd className="text-xl font-bold text-content xl:text-2xl">{f.value}</dd>
+              </div>
+            ))}
+          </dl>
+        }
       />
 
-      <div className="mx-auto grid w-full max-w-6xl grid-cols-2 gap-3 px-4 pb-12 md:grid-cols-4 md:px-8">
-        {FACTS.map((f) => (
-          <div key={f.label} className="flex flex-col gap-1 rounded-lg border border-line bg-surface p-4">
-            <span className="text-xl font-bold text-content">{f.value}</span>
-            <span className="text-sm text-content-2">{f.label}</span>
-          </div>
-        ))}
-      </div>
-
       <Section tone="sunken" title="Who it is for">
-        <div className="grid gap-4 md:grid-cols-3">
+        <SectionGrid cols={3}>
           <Card title="Beginners welcome">
             <p>Week 1 starts with computer and internet basics. You do not need any tech background to join.</p>
           </Card>
@@ -54,7 +56,7 @@ export default function ProgrammePage() {
           <Card title="Work you can show">
             <p>Every week ends with an assignment, and by week 11 you have a portfolio with at least three pieces of work.</p>
           </Card>
-        </div>
+        </SectionGrid>
       </Section>
 
       <Section
@@ -67,10 +69,11 @@ export default function ProgrammePage() {
       <Section
         id="waitlist"
         tone="sunken"
+        layout="split"
         title={`Join the waitlist for ${PILOT.starts}`}
         intro={`There are ${PILOT.seats} free seats in the pilot cohort. Join the waitlist and tell us where you are and what you want.`}
       >
-        <div className="max-w-lg rounded-lg border border-line bg-surface p-5">
+        <div className="max-w-lg rounded-lg border border-line bg-surface p-5 lg:max-w-xl xl:p-8">
           <WaitlistForm />
         </div>
       </Section>

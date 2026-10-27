@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Admin" };
 export default function AdminHome() {
   return (
     <div className="flex flex-col gap-6">
-      <h1 className="text-3xl text-content">Admin</h1>
+      <h1 className="text-title text-content">Admin</h1>
       <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
         {ADMIN_SECTIONS.map(({ href, label, description }) => (
           <li key={href}>

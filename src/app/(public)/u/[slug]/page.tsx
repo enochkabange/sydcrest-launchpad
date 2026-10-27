@@ -43,7 +43,7 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
         <div className="flex items-center gap-4">
           <Initials name={name} size="lg" />
           <div className="flex min-w-0 flex-col gap-1">
-            <h1 className="text-3xl text-content">{name}</h1>
+            <h1 className="text-title text-content">{name}</h1>
             {profile.headline && <p className="text-content-2">{profile.headline}</p>}
             {region && <p className="text-sm text-content-3">{region} Region</p>}
           </div>
@@ -62,7 +62,7 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
       <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_minmax(0,24rem)] lg:items-start lg:gap-12">
         <div className="flex flex-col gap-8">
           <section aria-labelledby="progress-heading" className="flex flex-col gap-3">
-            <h2 id="progress-heading" className="text-xl text-content">
+            <h2 id="progress-heading" className="text-subtitle text-content">
               Progress
             </h2>
             <dl className="grid grid-cols-2 gap-3 sm:grid-cols-4">
@@ -75,7 +75,7 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
 
           {profile.goals && (
             <section aria-labelledby="goals-heading" className="flex flex-col gap-2">
-              <h2 id="goals-heading" className="text-xl text-content">
+              <h2 id="goals-heading" className="text-subtitle text-content">
                 Goals
               </h2>
               <p className="whitespace-pre-line text-content-2">{profile.goals}</p>
@@ -84,7 +84,7 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
 
           {skills.length > 0 && (
             <section aria-labelledby="skills-heading" className="flex flex-col gap-3">
-              <h2 id="skills-heading" className="text-xl text-content">
+              <h2 id="skills-heading" className="text-subtitle text-content">
                 Skills
               </h2>
               <ul className="flex flex-wrap gap-2">
@@ -99,7 +99,7 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
         </div>
 
         <section aria-labelledby="achievements-heading" className="flex flex-col gap-3">
-          <h2 id="achievements-heading" className="text-xl text-content">
+          <h2 id="achievements-heading" className="text-subtitle text-content">
             Achievements
           </h2>
           {achievements.length === 0 ? (
