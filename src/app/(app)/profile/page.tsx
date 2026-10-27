@@ -4,6 +4,7 @@ import { getMyProfile } from "@/lib/auth";
 import { signOut } from "@/app/(auth)/actions";
 import { Button } from "@/components/ui/button";
 import { ProfileForm } from "./profile-form";
+import { PublicProfilePreview } from "./public-profile-preview";
 import { PublicProfileSection } from "./public-profile-section";
 import { WhatsAppConsent } from "./whatsapp-consent";
 
@@ -21,23 +22,31 @@ async function ProfileDetails() {
 
 export default function ProfilePage() {
   return (
-    <div className="flex max-w-md flex-col gap-6">
-      <h1 className="text-3xl text-content">Profile</h1>
-      <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>
-        <ProfileDetails />
-      </Suspense>
-      <Suspense fallback={<div className="h-32 animate-skeleton rounded-lg bg-surface-sunken" />}>
-        <WhatsAppConsent />
-      </Suspense>
-      <Suspense fallback={<div className="h-96 animate-skeleton rounded-lg bg-surface-sunken" />}>
-        <PublicProfileSection />
-      </Suspense>
-      {/* Phones have no sidebar, so sign out lives here too. */}
-      <form action={signOut} className="border-t border-line pt-6 md:hidden">
-        <Button type="submit" variant="secondary">
-          Sign out
-        </Button>
-      </form>
+    // Phones and tablets get the single settings column. From xl a preview of the public profile sits beside it.
+    <div className="xl:grid xl:grid-cols-[minmax(0,30rem)_minmax(0,24rem)] xl:items-start xl:gap-12">
+      <div className="flex max-w-md flex-col gap-6 xl:max-w-none">
+        <h1 className="text-3xl text-content">Profile</h1>
+        <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>
+          <ProfileDetails />
+        </Suspense>
+        <Suspense fallback={<div className="h-32 animate-skeleton rounded-lg bg-surface-sunken" />}>
+          <WhatsAppConsent />
+        </Suspense>
+        <Suspense fallback={<div className="h-96 animate-skeleton rounded-lg bg-surface-sunken" />}>
+          <PublicProfileSection />
+        </Suspense>
+        {/* Phones have no sidebar, so sign out lives here too. */}
+        <form action={signOut} className="border-t border-line pt-6 md:hidden">
+          <Button type="submit" variant="secondary">
+            Sign out
+          </Button>
+        </form>
+      </div>
+      <aside className="hidden xl:sticky xl:top-8 xl:block">
+        <Suspense fallback={<div className="h-72 animate-skeleton rounded-lg bg-surface-sunken" />}>
+          <PublicProfilePreview />
+        </Suspense>
+      </aside>
     </div>
   );
 }

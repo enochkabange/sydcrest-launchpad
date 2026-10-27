@@ -391,7 +391,7 @@ Pin your best projects, give each a clear README that says what it does and how 
 2. Run \`git init\`, then add and commit the file with a clear message.
 3. Make a branch called \`add-drinks\`, add two drinks to the menu, commit, switch back to \`main\` and merge.
 4. Add a \`README.md\` explaining what the project is. Commit it.
-5. Create an empty repository on GitHub and follow its instructions to push your project. You can use the GitHub website on your phone to check it arrived.
+5. Create an empty repository on GitHub and follow its instructions to push your project. Open your repository on the GitHub website to check it arrived.
 
 **Done looks like:** a public GitHub link with at least three commits and a README. Send the link to your mentor.`,
       quiz: {
@@ -2759,7 +2759,7 @@ Use test keys only, add sample data with made up names, and make sure there is n
 1. Choose a hosting platform with a free tier that suits your project. Read its limits and note them in your README.
 2. Connect your GitHub repository and set your environment variables in the dashboard. Use a free hosted database or a file based one if the platform allows it.
 3. Make sure your app reads \`PORT\` from the environment and has a \`/health\` endpoint.
-4. Deploy, then call your endpoints from your phone's browser or with \`curl\`.
+4. Deploy, then call your endpoints from a browser, on a phone or a computer, or with \`curl\`.
 5. Set up a free uptime check on \`/health\`.
 6. Push a small change and confirm it deploys automatically.
 
@@ -2958,7 +2958,7 @@ Help reviewers see what you built:
 
 * A README that explains the problem, the design and how to run it.
 * A diagram of your tables and the payment flow.
-* A short screen recording from your phone showing requests and responses.
+* A short screen recording, from your computer or phone, showing requests and responses.
 * Notes on trade offs: "I chose X because Y; next I would add Z."
 
 ### Be honest
@@ -3175,7 +3175,7 @@ Imagine Mariama sends ten tailored applications in a month, gets two interviews 
 1. Make a tracking table (a spreadsheet or notes app) with columns: company, role, link, date applied, status, follow up date.
 2. Find five roles you could apply for: at least two in Ghana, one graduate or national service programme and one remote role open to Africa based applicants.
 3. For each, write a three sentence message linking one of your projects to their work.
-4. Practise one design question out loud, such as "How would you build a mobile money payment flow?", and record yourself on your phone in under five minutes.
+4. Practise one design question out loud, such as "How would you build a mobile money payment flow?", and record yourself on your phone or computer in under five minutes.
 5. Identify one local business or organisation that might need a small system, and write a short, honest offer.
 
 **Done looks like:** a tracking table with five entries, five tailored messages and a recorded practice answer. Review the recording with your mentor.`,

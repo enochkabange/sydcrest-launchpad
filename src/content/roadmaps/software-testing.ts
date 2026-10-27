@@ -39,7 +39,7 @@ export const softwareTesting: RoadmapDraft = {
   slug: "software-tester",
   title: "Software Testing",
   description:
-    "Find the bugs before customers do by testing websites and mobile apps, starting with manual testing you can practise on a phone. We found only a handful of testing openings in Ghana, mostly in Accra, so this track also prepares you for remote work and for moving into automation or development.",
+    "Find the bugs before customers do by testing websites and mobile apps, starting with manual testing you can practise on a phone or a computer. We found only a handful of testing openings in Ghana, mostly in Accra, so this track also prepares you for remote work and for moving into automation or development.",
   track: "software-testing",
   field_category: "software",
   locale: "en-GH",
@@ -76,7 +76,7 @@ export const softwareTesting: RoadmapDraft = {
       slug: "manual-testing",
       title: "Manual testing",
       summary:
-        "Manual testing is where most testers start, and you can practise much of it on a phone. This section covers the core craft of designing tests and reporting what you find.",
+        "Manual testing is where most testers start, and you can practise much of it on a phone or a computer. This section covers the core craft of designing tests and reporting what you find.",
       parent: null,
       optional: false,
       resources: [],
