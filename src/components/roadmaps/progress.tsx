@@ -46,7 +46,7 @@ export async function ViewNodeMark({ view, nodeId }: { view: RoadmapView; nodeId
   return status ? <ProgressMark status={status} /> : null;
 }
 
-/** "3 of 12 topics done" and a progress bar for learners; a sign in prompt for visitors. */
+/** "3 of 12 required topics done" and a progress bar for learners; a sign in prompt for visitors. */
 export async function RoadmapProgress({ view }: { view: RoadmapView }) {
   const live = await liveView(view);
   if (!live.hasProgress) {
@@ -64,7 +64,7 @@ export async function RoadmapProgress({ view }: { view: RoadmapView }) {
     <div className="flex flex-col gap-2">
       <div className="flex items-baseline justify-between gap-3 text-sm">
         <p className="font-semibold text-content" data-testid="roadmap-progress">
-          {started ? `${done} of ${total} topics done.` : `You have not started yet. ${total} topics to go.`}
+          {started ? `${done} of ${total} required topics done.` : `You have not started yet. ${total} required topics to go.`}
         </p>
         <span className="text-content-2 tabular-nums">{percent}%</span>
       </div>

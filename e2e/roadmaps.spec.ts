@@ -224,13 +224,13 @@ test("a signed in learner sees their progress marks", async ({ page }, testInfo)
     await expect(page).toHaveURL(/\/dashboard$/);
 
     await page.goto(`/roadmaps/${seed.slug}`);
-    await expect(page.getByTestId("roadmap-progress")).toHaveText("1 of 3 topics done.");
+    await expect(page.getByTestId("roadmap-progress")).toHaveText("1 of 3 required topics done.");
     await expect(page.getByRole("progressbar", { name: "Roadmap progress" })).toHaveAttribute("aria-valuenow", "33");
     // The map colours topics by status: one done, one in progress, and its section count.
     const map = page.getByRole("list", { name: "Roadmap map" });
     await expect(map.locator('[data-progress="done"]')).toHaveCount(1);
     await expect(map.locator('[data-progress="in_progress"]')).toHaveCount(1);
-    await expect(map.getByText("1 of 3 done")).toBeVisible();
+    await expect(map.getByText("1 of 3 required done")).toBeVisible();
     await page.getByRole("button", { name: "List" }).click();
     await expect(page.locator('[data-progress="done"]')).toHaveCount(1);
     await expect(page.locator('[data-progress="in_progress"]')).toHaveCount(1);

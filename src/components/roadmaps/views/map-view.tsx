@@ -232,7 +232,7 @@ function SectionCount({ section, status }: { section: ViewSection; status: "know
   const { done, total, complete } = section.counts;
   return (
     <span className={cls} data-complete={complete || undefined}>
-      {complete ? "Complete" : `${done} of ${total} done`}
+      {complete ? "Complete" : `${done} of ${total} required done`}
     </span>
   );
 }
