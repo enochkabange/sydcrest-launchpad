@@ -1,6 +1,6 @@
 import { connection } from "next/server";
 import { createAdminClient } from "@/lib/messaging/admin";
-import { isStopKeyword, phoneFromTwilioAddress, WHATSAPP_CONSENT_KIND } from "@/lib/messaging/consent";
+import { isStopKeyword, phoneFromTwilioAddress, WHATSAPP_CONSENT_KIND, type RevokedReason } from "@/lib/messaging/consent";
 import { logOnce } from "@/lib/messaging/config";
 import { isValidTwilioSignature } from "@/lib/messaging/signature";
 
@@ -30,8 +30,9 @@ function signedUrl(request: Request) {
 }
 
 /**
- * Inbound WhatsApp and SMS replies. A STOP keyword revokes WhatsApp consent
- * for every profile with that phone number. Other replies are ignored.
+ * Inbound WhatsApp and SMS replies. A STOP keyword revokes every live WhatsApp
+ * consent given for that number, and any held by a profile that now has that
+ * number. Other replies are ignored.
  */
 export async function POST(request: Request) {
   await connection();
@@ -57,17 +58,33 @@ export async function POST(request: Request) {
     return new Response("Database access is not configured", { status: 503 });
   }
 
+  // revoke_consent reads auth.uid(), which is empty for the service role, so
+  // stamp revoked_at directly (the service role has the update grant).
+  const revoke = { revoked_at: new Date().toISOString(), revoked_reason: "stop" satisfies RevokedReason };
+
+  // The number the consent was given for is the one that matters: the
+  // learner may have changed their profile number since.
+  const { error: byPhoneError } = await admin
+    .from("consents")
+    .update(revoke)
+    .eq("kind", WHATSAPP_CONSENT_KIND)
+    .eq("phone", phone)
+    .is("revoked_at", null);
+  if (byPhoneError) {
+    console.error(`[messaging] STOP revoke failed: ${byPhoneError.message}`);
+    return new Response("Revoke failed", { status: 500 });
+  }
+
+  // Belt and braces: also any profile that has this number now.
   const { data: profiles, error } = await admin.from("profiles").select("id").eq("phone", phone);
   if (error) {
     console.error(`[messaging] STOP lookup failed: ${error.message}`);
     return new Response("Lookup failed", { status: 500 });
   }
   if (profiles.length) {
-    // revoke_consent reads auth.uid(), which is empty for the service role, so
-    // stamp revoked_at directly (the service role has the update grant).
     const { error: revokeError } = await admin
       .from("consents")
-      .update({ revoked_at: new Date().toISOString() })
+      .update(revoke)
       .in("profile_id", profiles.map((p) => p.id))
       .eq("kind", WHATSAPP_CONSENT_KIND)
       .is("revoked_at", null);

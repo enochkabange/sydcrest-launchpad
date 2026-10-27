@@ -109,24 +109,30 @@ export type Database = {
           granted_at: string
           id: string
           kind: string
+          phone: string | null
           profile_id: string
           revoked_at: string | null
+          revoked_reason: string | null
           version: string
         }
         Insert: {
           granted_at?: string
           id?: string
           kind: string
+          phone?: string | null
           profile_id?: string
           revoked_at?: string | null
+          revoked_reason?: string | null
           version: string
         }
         Update: {
           granted_at?: string
           id?: string
           kind?: string
+          phone?: string | null
           profile_id?: string
           revoked_at?: string | null
+          revoked_reason?: string | null
           version?: string
         }
         Relationships: [

@@ -26,6 +26,9 @@ export function ProfileForm({
     <form key={state.saved?.at ?? 0} action={action} className="flex flex-col gap-4" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       {state.saved && <Alert tone="success">Saved.</Alert>}
+      {state.whatsappOff && (
+        <Alert tone="info">Your number changed, so WhatsApp updates are off. Turn them on again below for the new number.</Alert>
+      )}
       <TextField
         id="display_name"
         label="Your name"

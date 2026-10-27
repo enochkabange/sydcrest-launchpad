@@ -1,7 +1,7 @@
 import "server-only";
 import type { AdminClient } from "./admin";
 import { WHATSAPP_CONSENT_KIND } from "./consent";
-import { LAST_NUDGE_KEY, type ReengageStore } from "./reengage";
+import { consentedCandidates, LAST_NUDGE_KEY, type ReengageStore } from "./reengage";
 
 /**
  * ReengageStore backed by Supabase with the service role. Nudge history lives
@@ -13,10 +13,11 @@ export function supabaseReengageStore(admin: AdminClient): ReengageStore {
     async consentingLearners(version) {
       const { data: consents, error } = await admin
         .from("consents")
-        .select("profile_id")
+        .select("profile_id, phone")
         .eq("kind", WHATSAPP_CONSENT_KIND)
         .eq("version", version)
-        .is("revoked_at", null);
+        .is("revoked_at", null)
+        .not("phone", "is", null);
       if (error) throw new Error(`consents: ${error.message}`);
       const ids = Array.from(new Set(consents.map((c) => c.profile_id)));
       if (!ids.length) return [];
@@ -27,7 +28,7 @@ export function supabaseReengageStore(admin: AdminClient): ReengageStore {
         .in("id", ids)
         .not("phone", "is", null);
       if (profileError) throw new Error(`profiles: ${profileError.message}`);
-      return profiles.map((p) => ({ profileId: p.id, phone: p.phone!, displayName: p.display_name }));
+      return consentedCandidates(consents, profiles);
     },
 
     async lastProgressAt(profileIds) {

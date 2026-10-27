@@ -7,20 +7,30 @@ import { WhatsAppToggle } from "./whatsapp-toggle";
 export async function WhatsAppConsent() {
   const profile = await getMyProfile();
   const supabase = await createClient();
+  // Latest WhatsApp consent: live means on; revoked for a number change
+  // means we ask them to opt in again for the new number.
   const { data } = await supabase
     .from("consents")
-    .select("id")
+    .select("version, revoked_at, revoked_reason")
     .eq("kind", WHATSAPP_CONSENT_KIND)
-    .eq("version", WHATSAPP_CONSENT_VERSION)
-    .is("revoked_at", null)
+    .order("granted_at", { ascending: false })
     .limit(1);
+  const latest = data?.[0];
+  const enabled = Boolean(latest && latest.revoked_at === null && latest.version === WHATSAPP_CONSENT_VERSION);
+  const numberChanged = latest?.revoked_reason === "phone_changed" && Boolean(profile.phone);
 
   return (
     <section aria-labelledby="whatsapp-heading" className="flex flex-col gap-3 border-t border-line pt-6">
       <h2 id="whatsapp-heading" className="text-xl text-content">
         WhatsApp updates
       </h2>
-      <WhatsAppToggle enabled={(data?.length ?? 0) > 0} hasPhone={Boolean(profile.phone)} />
+      {/* Keyed on the stored state so a number change elsewhere on the page resets the toggle. */}
+      <WhatsAppToggle
+        key={`${enabled}-${numberChanged}`}
+        enabled={enabled}
+        hasPhone={Boolean(profile.phone)}
+        numberChanged={numberChanged}
+      />
     </section>
   );
 }

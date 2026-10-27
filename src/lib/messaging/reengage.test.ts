@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from "vitest";
 import { createFakeClient } from "./client";
-import { runReengage, shouldNudge, type AuthInfo, type Candidate, type ReengageStore } from "./reengage";
+import { consentedCandidates, runReengage, shouldNudge, type AuthInfo, type Candidate, type ReengageStore } from "./reengage";
 import { sendWhatsApp } from "./send";
 
 const NOW = new Date("2026-11-10T09:00:00Z");
@@ -17,6 +17,28 @@ describe("shouldNudge", () => {
   it("sends at most once a week", () => {
     expect(shouldNudge({ ...base, lastNudgeAt: daysAgo(6) }, NOW)).toBe(false);
     expect(shouldNudge({ ...base, lastNudgeAt: daysAgo(7) }, NOW)).toBe(true);
+  });
+});
+
+describe("consentedCandidates", () => {
+  const FUSEINI = "+233241234567";
+  const profile = (id: string, phone: string | null) => ({ id, phone, display_name: "Fuseini Abukari" });
+
+  it("messages the number the learner consented with", () => {
+    expect(consentedCandidates([{ profile_id: "u1", phone: FUSEINI }], [profile("u1", FUSEINI)])).toEqual([
+      { profileId: "u1", phone: FUSEINI, displayName: "Fuseini Abukari" },
+    ]);
+  });
+
+  it("skips a consent for a number the profile no longer has", () => {
+    expect(consentedCandidates([{ profile_id: "u1", phone: FUSEINI }], [profile("u1", "+233501234567")])).toEqual([]);
+    expect(consentedCandidates([{ profile_id: "u1", phone: FUSEINI }], [profile("u1", null)])).toEqual([]);
+  });
+
+  it("skips consents without a recorded number, and counts each learner once", () => {
+    expect(consentedCandidates([{ profile_id: "u1", phone: null }], [profile("u1", FUSEINI)])).toEqual([]);
+    const twice = [{ profile_id: "u1", phone: FUSEINI }, { profile_id: "u1", phone: FUSEINI }];
+    expect(consentedCandidates(twice, [profile("u1", FUSEINI)])).toHaveLength(1);
   });
 });
 

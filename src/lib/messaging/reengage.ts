@@ -15,8 +15,29 @@ export const LAST_NUDGE_KEY = "last_reengage_nudge_at";
 export type Candidate = { profileId: string; phone: string; displayName: string | null };
 export type AuthInfo = { lastSignInAt: string | null; createdAt: string | null; lastNudgeAt: string | null };
 
+/**
+ * Who may get a nudge, and on which number: a live consent's recorded phone,
+ * only while it is still the profile's number. Consents without a recorded
+ * number are skipped, since nobody can say which number they cover.
+ */
+export function consentedCandidates(
+  consents: { profile_id: string; phone: string | null }[],
+  profiles: { id: string; phone: string | null; display_name: string | null }[],
+): Candidate[] {
+  const byId = new Map(profiles.map((p) => [p.id, p]));
+  const seen = new Set<string>();
+  const out: Candidate[] = [];
+  for (const consent of consents) {
+    const profile = byId.get(consent.profile_id);
+    if (!consent.phone || !profile || profile.phone !== consent.phone || seen.has(profile.id)) continue;
+    seen.add(profile.id);
+    out.push({ profileId: profile.id, phone: consent.phone, displayName: profile.display_name });
+  }
+  return out;
+}
+
 export interface ReengageStore {
-  /** Learners with a live WhatsApp consent of `version` and a saved phone. */
+  /** Learners with a live WhatsApp consent of `version`, on the number they consented with. */
   consentingLearners(version: string): Promise<Candidate[]>;
   /** Latest roadmap_progress.updated_at per learner. */
   lastProgressAt(profileIds: string[]): Promise<Map<string, string>>;
