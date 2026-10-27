@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 /**
  * Served by public/sw.js when a page is requested without a connection and
- * this phone has no saved copy of it. Fully static and precached on install,
+ * this device has no saved copy of it. Fully static and precached on install,
  * along with its CSS, so it renders with no network at all. Plain anchors
  * (not next/link) so both actions are full loads the service worker answers.
  */
@@ -20,7 +20,7 @@ export default function OfflinePage() {
       <div className="flex flex-col gap-3">
         <h1 className="text-3xl text-content">You are offline</h1>
         <p className="text-content-2">
-          This page needs a connection to open, and it has not been saved on this phone yet.
+          This page needs a connection to open, and it has not been saved on this device yet.
         </p>
         <p className="text-content-2">
           Pages you have opened before still work without data. When your data or WiFi is back,
