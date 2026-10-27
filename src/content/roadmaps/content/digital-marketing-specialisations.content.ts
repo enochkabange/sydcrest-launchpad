@@ -1657,7 +1657,7 @@ Choose one main home first. Running five half empty spaces is worse than one liv
 
 ## Moderation and privacy
 
-Remove spam and scams fast, especially fake investment and "send money to win" messages. Handle complaints calmly and move personal details to a private chat. In WhatsApp groups every member can see each other's phone numbers, so tell people that before they join, and consider a Channel or Facebook Group where this matters.
+Remove spam and scams fast, especially fake investment and "send money to win" messages. Handle complaints calmly and move personal details to a private chat. In WhatsApp groups, members can usually see each other's phone numbers, so tell people that before they join, and consider a Channel or Facebook Group where this matters.
 
 ## Measuring a community
 
@@ -1705,7 +1705,7 @@ Wumpini manages a Facebook Group for a farm inputs shop in Damongo. Its purpose 
             prompt: "What privacy point does the lesson make about WhatsApp groups?",
             options: [
               "Nobody can see anyone's number",
-              "Every member can see each other's phone numbers, so tell people before they join",
+              "Members can usually see each other's phone numbers, so tell people before they join",
               "Groups are always anonymous",
               "Only admins can post",
             ],
