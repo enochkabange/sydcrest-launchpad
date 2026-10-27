@@ -4,6 +4,14 @@ import { signUpAndConfirm } from "./auth";
 import { deleteDmpCohort, seedDmpCohort, type SeededDmpCohort } from "./cohort-seed";
 import { createLearner, PASSWORD } from "./learners";
 import { deleteRoadmap, seedRoadmap, type SeededRoadmap } from "./seed";
+import { PASSWORD } from "./learners";
+import {
+  createLearnerRetrying,
+  deleteSeededCohort,
+  gradeAsMentor,
+  seedCohortWithLearner,
+  seedReviewedSubmission,
+} from "./submissions-seed";
 
 /**
  * Full page screenshots of key screens at a phone (390), a laptop (1440) and
@@ -80,4 +88,29 @@ test("screenshots of key screens at 390, 1440 and 1920", async ({ page }, testIn
   await expect(page).toHaveURL(/\/dashboard$/);
   await shoot(page, testInfo, "cohort", "/cohort");
   await shoot(page, testInfo, "cohort-week", "/cohort/week/7");
+});
+
+test("screenshots of the assignment submission screens (#145)", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop", "Takes every width itself, once.");
+  test.setTimeout(240_000);
+  mkdirSync(DIR, { recursive: true });
+  const learner = await createLearnerRetrying("Mariama Seidu");
+  const cohort = await seedCohortWithLearner(learner.id);
+  try {
+    await page.goto("/login");
+    await page.getByLabel("Email").fill(learner.email);
+    await page.getByLabel("Password").fill(PASSWORD);
+    await page.getByRole("button", { name: "Sign in" }).click();
+    await expect(page).toHaveURL(/\/dashboard$/, { timeout: 20_000 });
+
+    await shoot(page, testInfo, "work-empty", "/cohort/work");
+    await shoot(page, testInfo, "submission-new", `/cohort/work/${cohort.weekId}`);
+    const id = await seedReviewedSubmission(cohort, learner.id);
+    await shoot(page, testInfo, "submission-reviewed", `/cohort/work/${cohort.weekId}`);
+    await gradeAsMentor(id, 80, "Well organised. Next week, try a short video version for your WhatsApp group.");
+    await shoot(page, testInfo, "submission-graded", `/cohort/work/${cohort.weekId}`);
+    await shoot(page, testInfo, "work", "/cohort/work");
+  } finally {
+    await deleteSeededCohort(cohort, learner.id);
+  }
 });
