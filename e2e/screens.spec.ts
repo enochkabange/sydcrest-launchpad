@@ -4,6 +4,9 @@ import { signUpAndConfirm } from "./auth";
 import { deleteDmpCohort, seedDmpCohort, type SeededDmpCohort } from "./cohort-seed";
 import { createLearner, PASSWORD } from "./learners";
 import { deleteRoadmap, seedRoadmap, type SeededRoadmap } from "./seed";
+import { PASSWORD } from "./learners";
+import { deleteMentorCohort, seedMentorCohort } from "./mentor-seed";
+import { insert } from "./supabase-admin";
 
 /**
  * Full page screenshots of key screens at a phone (390), a laptop (1440) and
@@ -80,4 +83,33 @@ test("screenshots of key screens at 390, 1440 and 1920", async ({ page }, testIn
   await expect(page).toHaveURL(/\/dashboard$/);
   await shoot(page, testInfo, "cohort", "/cohort");
   await shoot(page, testInfo, "cohort-week", "/cohort/week/7");
+});
+
+test("screenshots of the mentor console and peer review at 390, 1440 and 1920", async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== "desktop", "Takes every width itself, once.");
+  test.setTimeout(240_000);
+  mkdirSync(DIR, { recursive: true });
+  const seed = await seedMentorCohort();
+  try {
+    const [review] = await insert("peer_reviews", [
+      { submission_id: seed.capstoneSubmissionId, reviewer_id: seed.learners.wumpini.id, assigned_by: seed.mentor.id },
+    ]);
+    const signIn = async (email: string) => {
+      await page.context().clearCookies();
+      await page.goto("/login");
+      await page.getByLabel("Email").fill(email);
+      await page.getByLabel("Password").fill(PASSWORD);
+      await page.getByRole("button", { name: "Sign in" }).click();
+      await expect(page).toHaveURL(/\/dashboard$/);
+    };
+    await signIn(seed.mentor.email);
+    await shoot(page, testInfo, "mentor", `/mentor?cohort=${seed.cohort.id}`);
+    await shoot(page, testInfo, "mentor-submission", `/mentor/submissions/${seed.capstoneSubmissionId}`);
+    await shoot(page, testInfo, "mentor-learner", `/mentor/learners/${seed.learners.wumpini.memberId}`);
+    await signIn(seed.learners.wumpini.email);
+    await shoot(page, testInfo, "peer-reviews", "/cohort/reviews");
+    await shoot(page, testInfo, "peer-review", `/cohort/reviews/${review.id}`);
+  } finally {
+    await deleteMentorCohort(seed);
+  }
 });
