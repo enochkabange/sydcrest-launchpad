@@ -1,12 +1,13 @@
 "use client";
 
 import { useRef, useState, type FormEvent, type KeyboardEvent } from "react";
-import { MessageCircle, Send } from "lucide-react";
-import Link from "@/components/ui/link";
+import { Send } from "lucide-react";
 import { Alert } from "@/components/ui/alert";
-import { Button, buttonClasses } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { DAILY_MESSAGE_LIMIT, MAX_MESSAGE_CHARS } from "@/lib/study-buddy/config";
 import type { ChatMessage } from "@/lib/study-buddy/request";
+import { PanelShell } from "./panel-shell";
+import { StudyBuddyPrompt } from "./study-buddy-prompt";
 
 type Status = "idle" | "streaming" | "limit" | "error";
 
@@ -16,6 +17,8 @@ type Props = {
   nodeTitle: string;
   /** False shows the sign up prompt instead of the chat. */
   signedIn: boolean;
+  /** False when the server has no model key: a friendly notice instead of the chat. */
+  available?: boolean;
   /** Messages left today, from getStudyBuddyAllowance(). Unknown until the first reply if omitted. */
   remainingToday?: number | null;
   limit?: number;
@@ -23,46 +26,26 @@ type Props = {
 
 const STARTERS = ["Can you explain this topic simply?", "Give me a question to check my understanding"];
 
-export function StudyBuddy({ nodeId, nodeTitle, signedIn, remainingToday = null, limit = DAILY_MESSAGE_LIMIT }: Props) {
-  if (!signedIn) return <SignedOutPrompt nodeTitle={nodeTitle} />;
+export function StudyBuddy({
+  nodeId,
+  nodeTitle,
+  signedIn,
+  available = true,
+  remainingToday = null,
+  limit = DAILY_MESSAGE_LIMIT,
+}: Props) {
+  if (!signedIn) return <StudyBuddyPrompt nodeTitle={nodeTitle} />;
+  if (!available) return <Unavailable />;
   return <ChatPanel nodeId={nodeId} nodeTitle={nodeTitle} initialRemaining={remainingToday} limit={limit} />;
 }
 
-function PanelShell({ children, footer }: { children: React.ReactNode; footer?: React.ReactNode }) {
-  return (
-    <section
-      aria-labelledby="study-buddy-heading"
-      className="flex flex-col gap-4 rounded-lg border border-line bg-surface p-4 sm:p-5"
-    >
-      <header className="flex items-start justify-between gap-3">
-        <div className="flex items-center gap-2">
-          <MessageCircle aria-hidden className="size-5 text-content-accent" />
-          <h2 id="study-buddy-heading" className="text-lg font-bold text-content">
-            Study Buddy
-          </h2>
-        </div>
-        {footer}
-      </header>
-      {children}
-    </section>
-  );
-}
-
-function SignedOutPrompt({ nodeTitle }: { nodeTitle: string }) {
+function Unavailable() {
   return (
     <PanelShell>
-      <p className="text-content-2">
-        Stuck on {nodeTitle}? Study Buddy is an AI tutor that helps you think it through, one question at a time. It
-        is free for signed in learners.
-      </p>
-      <div className="flex flex-col gap-2 sm:flex-row">
-        <Link href="/signup" className={buttonClasses("primary")}>
-          Create a free account
-        </Link>
-        <Link href="/login" className={buttonClasses("secondary")}>
-          Sign in
-        </Link>
-      </div>
+      <Alert tone="info">
+        Study Buddy is resting right now, so chat is switched off for the moment. The lesson, practice task and
+        checkpoint all work as usual. Please check back later.
+      </Alert>
     </PanelShell>
   );
 }
@@ -204,7 +187,7 @@ function ChatPanel({
     );
 
   return (
-    <PanelShell footer={counter}>
+    <PanelShell aside={counter}>
       <div
         ref={logRef}
         role="log"

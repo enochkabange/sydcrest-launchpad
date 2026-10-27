@@ -23,14 +23,37 @@ function post(body: unknown = { nodeId, messages: [{ role: "user", content: "Wha
   });
 }
 
-/** A Supabase stand in whose ai_usage read returns `messages`. */
-function supabaseWithUsage(messages: number) {
+/**
+ * A Supabase stand in. The ai_usage read returns `messages`; the reservation
+ * (record_ai_usage) returns `reservedAs`, the count after this turn.
+ */
+function supabaseWithUsage(messages: number, reservedAs = messages + 1) {
   const query = {
     select: () => query,
     eq: () => query,
-    maybeSingle: async () => ({ data: { messages }, error: null }),
+    maybeSingle: async () => ({ data: { messages, title: "Variables", summary: null, roadmaps: null }, error: null }),
   };
-  return { from: vi.fn(() => query), rpc: vi.fn() };
+  const rpc = vi.fn(async (name: string) =>
+    name === "record_ai_usage" ? { data: { messages: reservedAs }, error: null } : { data: null, error: null },
+  );
+  return { from: vi.fn(() => query), rpc };
+}
+
+/** A model client whose stream says one thing and reports usage. */
+function fakeAnthropic() {
+  const final = { stop_reason: "end_turn", usage: { input_tokens: 10, output_tokens: 4 } };
+  const stream = vi.fn(() => ({
+    currentMessage: final,
+    abort: vi.fn(),
+    finalMessage: async () => final,
+    async *[Symbol.asyncIterator]() {
+      yield { type: "content_block_delta", index: 0, delta: { type: "text_delta", text: "Hello" } };
+    },
+  }));
+  anthropicCtor.mockImplementation(function () {
+    return { messages: { stream } };
+  });
+  return stream;
 }
 
 const learner = { id: "1b4e28ba-2fa1-41d2-883f-0016d3cca427", email: "mariama@example.com", hasAgeAndConsent: true };
@@ -71,6 +94,38 @@ describe("POST /api/study-buddy", () => {
     expect(body).toMatchObject({ error: "limit_reached", remaining: 0 });
     expect(body.message).toMatch(/midnight/);
     expect(supabase.rpc).not.toHaveBeenCalled();
+  });
+
+  it("reserves the turn before calling the model and adds tokens after", async () => {
+    getCurrentUser.mockResolvedValue(learner);
+    vi.stubEnv("ANTHROPIC_API_KEY", "test-key");
+    const stream = fakeAnthropic();
+    const supabase = supabaseWithUsage(29, 30);
+    createClient.mockResolvedValue(supabase);
+    const res = await POST(post());
+    expect(res.status).toBe(200);
+    expect(res.headers.get("X-Study-Buddy-Remaining")).toBe("0");
+    expect(supabase.rpc).toHaveBeenNthCalledWith(1, "record_ai_usage", { p_input_tokens: 0, p_output_tokens: 0 });
+    expect(supabase.rpc.mock.invocationCallOrder[0]).toBeLessThan(stream.mock.invocationCallOrder[0] ?? Infinity);
+    expect(await res.text()).toBe("Hello");
+    expect(stream).toHaveBeenCalledTimes(1);
+    expect(supabase.rpc).toHaveBeenLastCalledWith("record_ai_tokens", { p_input_tokens: 10, p_output_tokens: 4 });
+    // The message is counted once, by the reservation only.
+    expect(supabase.rpc.mock.calls.filter(([name]) => name === "record_ai_usage")).toHaveLength(1);
+  });
+
+  it("returns 429 without calling the model when a parallel request took the last message", async () => {
+    getCurrentUser.mockResolvedValue(learner);
+    vi.stubEnv("ANTHROPIC_API_KEY", "test-key");
+    const stream = fakeAnthropic();
+    // The read saw 29 used, but another request reserved first, so this one is the 31st.
+    const supabase = supabaseWithUsage(29, 31);
+    createClient.mockResolvedValue(supabase);
+    const res = await POST(post());
+    expect(res.status).toBe(429);
+    expect(await res.json()).toMatchObject({ error: "limit_reached", remaining: 0 });
+    expect(stream).not.toHaveBeenCalled();
+    expect(supabase.rpc).not.toHaveBeenCalledWith("record_ai_tokens", expect.anything());
   });
 
   it("returns 400 for a malformed body", async () => {
