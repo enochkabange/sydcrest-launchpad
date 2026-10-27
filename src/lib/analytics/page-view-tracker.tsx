@@ -3,12 +3,7 @@
 import { useEffect, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { recordPageView } from "./actions";
-
-/** Honour Do Not Track and Global Privacy Control. */
-function optedOut() {
-  const nav = navigator as Navigator & { globalPrivacyControl?: boolean };
-  return nav.globalPrivacyControl === true || nav.doNotTrack === "1";
-}
+import { optedOut } from "./opt-out";
 
 /**
  * Records a first party page_view for each path the visitor lands on.

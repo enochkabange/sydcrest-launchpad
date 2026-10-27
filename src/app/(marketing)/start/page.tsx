@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/page-metadata";
 import { StartQuiz } from "./start-quiz";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  og: "start",
   title: "Where do I start?",
   description:
     "Answer five quick questions about your interests, level, goal, time and data. Get a starting point, a skill gap readout and a weekly plan that fits your week.",
-};
+  path: "/start",
+});
 
 export default function StartPage() {
   return (

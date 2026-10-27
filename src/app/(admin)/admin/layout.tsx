@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Suspense } from "react";
 import Link from "@/components/ui/link";
 import Logo from "@/components/brand/Logo";
+import { LegalLinks } from "@/components/app-shell/legal-links";
 import { requireAdmin } from "@/lib/admin";
 import { AdminNav, AdminNavLinks } from "./admin-nav";
 
@@ -49,6 +50,9 @@ export default function AdminLayout({ children }: LayoutProps<"/admin">) {
           <AdminGate>{children}</AdminGate>
         </Suspense>
       </main>
+      <footer className="border-t border-line px-4 py-2 md:px-8">
+        <LegalLinks className="mx-auto w-full max-w-6xl" />
+      </footer>
     </div>
   );
 }

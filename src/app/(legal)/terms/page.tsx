@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
 import Link from "@/components/ui/link";
+import { pageMetadata } from "@/lib/page-metadata";
 import { LegalDocument, PrivacyContact } from "../legal-document";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  og: "terms",
   title: "Terms",
   description: "The terms for using SydCrest Launchpad.",
-};
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (

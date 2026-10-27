@@ -1,11 +1,13 @@
-import type { Metadata } from "next";
 import Link from "@/components/ui/link";
+import { pageMetadata } from "@/lib/page-metadata";
 import { LegalDocument, PrivacyContact } from "../legal-document";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
+  og: "privacy",
   title: "Privacy Policy",
   description: "How SydCrest Launchpad collects, uses and protects your personal data under Ghana's Data Protection Act, 2012 (Act 843).",
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

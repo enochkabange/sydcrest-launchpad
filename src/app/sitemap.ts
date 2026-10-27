@@ -8,6 +8,7 @@ import { SITE_URL as BASE } from "@/lib/site";
 const PAGES: { path: string; priority: number }[] = [
   { path: "/", priority: 1 },
   { path: "/programme", priority: 0.9 },
+  { path: "/start", priority: 0.8 },
   { path: "/roadmaps", priority: 0.8 },
   { path: "/about", priority: 0.7 },
   { path: "/partners", priority: 0.7 },
