@@ -8,5 +8,6 @@ export const ADMIN_SECTIONS: { href: string; label: string; description: string 
   { href: "/admin/content", label: "Content", description: "Review explanations and practice tasks for roadmap nodes." },
   { href: "/admin/reports", label: "Reports", description: "Triage safety reports from learners." },
   { href: "/admin/experts", label: "Experts", description: "Review expert applications, approve, delist, verify and feature experts." },
+  { href: "/admin/certificates", label: "Certificates", description: "See issued certificates and revoke one with a reason." },
   { href: "/admin/funnel", label: "Funnel", description: "See how visitors move from sign up to their first completed node." },
 ];
