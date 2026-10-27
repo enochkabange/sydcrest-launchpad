@@ -21,14 +21,35 @@ type Seed = {
 };
 
 const migrations = path.resolve(__dirname, "../../../supabase/migrations");
-const file = readdirSync(migrations).find((f) => f.endsWith("_phase2_dmp_seed.sql"));
+const files = readdirSync(migrations).sort();
+const seedFile = files.find((f) => f.endsWith("_phase2_dmp_seed.sql"));
 
-function loadSeed(): Seed {
-  if (!file) throw new Error("phase2_dmp_seed migration not found");
+function jsonLiteral(file: string): unknown {
   const sql = readFileSync(path.join(migrations, file), "utf8");
   const match = sql.match(/\$json\$([\s\S]*?)\$json\$/);
-  if (!match) throw new Error("no $json$ literal in the DMP seed migration");
-  return JSON.parse(match[1]) as Seed;
+  if (!match) throw new Error(`no $json$ literal in ${file}`);
+  return JSON.parse(match[1]);
+}
+
+/**
+ * The seed, then every later `_dmp_` migration in order. A follow up carries
+ * {"weeks": [{week_number, specialization, ...fields}]} and overwrites those
+ * fields on the matching week, as its SQL does.
+ */
+function loadSeed(): Seed {
+  if (!seedFile) throw new Error("phase2_dmp_seed migration not found");
+  const seed = jsonLiteral(seedFile) as Seed;
+  for (const file of files.filter((f) => f > seedFile && f.includes("_dmp_"))) {
+    const patch = jsonLiteral(file) as { weeks: Partial<SeedWeek>[] };
+    for (const update of patch.weeks) {
+      const week = seed.weeks.find(
+        (w) => w.week_number === update.week_number && w.specialization === update.specialization,
+      );
+      if (!week) throw new Error(`${file} updates a week the seed does not have`);
+      Object.assign(week, update);
+    }
+  }
+  return seed;
 }
 
 const seed = loadSeed();

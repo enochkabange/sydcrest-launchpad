@@ -2,7 +2,7 @@
 -- the seeded Delta Mentoring Program.
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(24);
+select plan(25);
 
 insert into auth.users (id, instance_id, aud, role, email, raw_user_meta_data, created_at, updated_at) values
   ('11111111-1111-1111-1111-111111111111', '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated',
@@ -56,6 +56,11 @@ select results_eq(
      where p.slug = 'dmp' order by r.title $$,
   $$ values ('Capstone', false), ('Weekly assignment', true) $$,
   'the DMP has a default rubric and a capstone rubric');
+
+select is(
+  (select resource_url from public.program_weeks w join public.programs p on p.id = w.program_id
+   where p.slug = 'dmp' and w.week_number = 1),
+  'https://www.learnfree.org/series/computer-basics', 'the resource follow up migration updates the seeded links');
 
 -- Visibility ------------------------------------------------------------------------
 set local role anon;

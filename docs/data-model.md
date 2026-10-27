@@ -246,7 +246,9 @@ certification.
 - **The DMP is seeded by migration** `phase2_dmp_seed` from a JSON literal
   derived from `src/content/dmp/curriculum.ts`; `src/content/dmp/seed.test.ts`
   fails if they drift or a week links a topic the roadmap outlines lack. To
-  change the curriculum in a database, write a new upsert migration.
+  change the curriculum in a database, write a new `_dmp_` migration with a
+  `$json$` literal of `{"weeks": [{week_number, specialization, ...fields}]}`
+  (see `phase2_dmp_resources`); the test applies it over the seed.
 
 ## Security advisor (issue #82)
 
