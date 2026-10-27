@@ -10,5 +10,6 @@ export const ADMIN_SECTIONS: { href: string; label: string; description: string 
   { href: "/admin/skills", label: "Skills", description: "Build the verified skill catalogue: map skills to roadmaps and write assessments." },
   { href: "/admin/reports", label: "Reports", description: "Triage safety reports from learners." },
   { href: "/admin/certificates", label: "Certificates", description: "See issued certificates and revoke one with a reason." },
+  { href: "/admin/cohorts", label: "Cohorts", description: "Create programme cohorts and assign their mentors and coordinators." },
   { href: "/admin/funnel", label: "Funnel", description: "See how visitors move from sign up to their first completed node." },
 ];
