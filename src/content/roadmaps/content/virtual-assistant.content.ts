@@ -109,7 +109,7 @@ In Ghana, admin roles are often office based, with front desk, filing and visito
 
 ## What clients value most
 
-Adverts mention tools, but the qualities that come up most are reliability, discretion with private information, clear English and following through without being chased. An assistant who says "Done, here is the link" before the deadline is worth more than one who knows ten apps.
+Adverts list tools, but what clients value most is reliability, discretion with private information, clear English and following through without being chased. An assistant who says "Done, here is the link" before the deadline is worth more than one who knows ten apps.
 
 ## A small example
 
@@ -149,7 +149,7 @@ Issahaku runs a small tour company in Damongo that takes visitors to Mole Nation
             explanation: "The lesson lists time zones, written communication and arranging power and internet as extra demands of remote work.",
           },
           {
-            prompt: "Which qualities does the lesson say come up most in what clients value?",
+            prompt: "Which qualities does the lesson say clients value most?",
             options: [
               "Knowing as many apps as possible",
               "Reliability, discretion, clear English and follow through",
@@ -281,7 +281,7 @@ Because the gap can change twice a year, never memorise one number. Check the cu
 ## Habits that prevent mistakes
 
 * **Always write the time zone.** "Tuesday 3pm GMT" or "Tuesday 10am New York time". Never just "3pm".
-* **Let the calendar do the maths.** Google Calendar and Outlook can show a second time zone and will show invitations in your local time. Set your own time zone correctly on your phone.
+* **Let the calendar do the maths.** Google Calendar and Outlook can show a second time zone (in Google Calendar this is set on the web version) and will show invitations in your local time. Set your own time zone correctly on your phone.
 * **Use a 24 hour clock when unsure.** 15:00 cannot be confused with 3am.
 * **Check the day as well as the hour.** A Monday morning meeting in Sydney can be Sunday evening in Ghana.
 
@@ -296,9 +296,9 @@ Hawa supports a client in New York. In January the client asks for a call "at 10
 
 **Steps:**
 1. Open the Clock app on your phone and add world clocks for London, New York and Dubai.
-2. In Google Calendar settings, look for the option to show a secondary time zone, and turn it on for one client city.
+2. Open calendar.google.com in your phone browser in desktop mode, or on a shared computer, and turn on a secondary time zone for one client city in Settings. This setting is on the web version, not the phone app.
 3. Write down today's time difference between Ghana and each of the three cities.
-4. Write three practice messages confirming a meeting, each stating both times, for example: "Confirmed: Wednesday 9am London time, which is 8am GMT."
+4. Write three practice messages confirming a meeting, each stating both times, for example: "Confirmed: Wednesday 2pm Dubai time, which is 10am GMT." Dubai is always four hours ahead of Ghana, so this works all year; for London and New York, use today's difference.
 
 **Done looks like:** Three correct time differences for today, and three confirmation messages that state both time zones and the day.`,
       quiz: {
@@ -348,7 +348,7 @@ Hawa supports a client in New York. In January the client asks for a call "at 10
       },
     },
     communication: {
-      explanation_md: `For an assistant, communication is the job. Clients rarely see you, so every email, chat message and call is how they judge your work. Ghanaian admin adverts and remote VA adverts both ask for excellent written and spoken English, and remote adverts often ask for it first.
+      explanation_md: `For an assistant, communication is the job. Clients rarely see you, so every email, chat message and call is how they judge your work. Ghanaian admin adverts and remote VA adverts both ask for good written and spoken English.
 
 ## Why it matters so much
 
@@ -532,7 +532,7 @@ It is short, the request is in the first line and the deadline is clear.`,
       },
     },
     "calls-and-meetings": {
-      explanation_md: `Not everything happens in writing. Clients will call you, add you to work chats and invite you to video meetings. Some adverts ask assistants to join meetings, take notes and follow up on actions. Doing this well, even on a phone, makes you far more useful.
+      explanation_md: `Not everything happens in writing. Clients will call you, add you to work chats and invite you to video meetings. Assistants are often asked to join meetings, take notes and follow up on actions. Doing this well, even on a phone, makes you far more useful.
 
 ## Work chat etiquette
 
@@ -627,13 +627,13 @@ Tahiru joins a weekly video call for an NGO client using his phone. His data is 
       },
     },
     "inbox-and-calendar": {
-      explanation_md: `If you read through assistant adverts in Ghana and abroad, two tasks appear more than any others: managing email and managing calendars. Executive assistant adverts talk about diary management. Remote VA adverts talk about inbox management and scheduling. Learn these two well and you can already offer a valuable service.
+      explanation_md: `If you read through assistant adverts in Ghana and abroad, two tasks appear again and again: managing email and managing calendars. Executive assistant adverts talk about diary management. Remote VA adverts talk about inbox management and scheduling. Learn these two well and you can already offer a valuable service.
 
 ## Why these two tasks
 
 Busy people lose hours every week to their inbox and their diary. Important emails get buried under newsletters. Meetings clash. Someone forgets to send the documents before a meeting. An assistant who keeps the inbox under control and the calendar accurate saves the client time and embarrassment every day.
 
-These tasks also need trust. You may see private emails and know where your client will be. Discretion, meaning keeping what you see to yourself, is part of the job, and adverts for executive assistants mention it often.
+These tasks also need trust. You may see private emails and know where your client will be. Discretion, meaning keeping what you see to yourself, is part of the job, and executive assistant adverts ask for it.
 
 ## The tools
 
@@ -646,7 +646,7 @@ The two most common tool sets are Google Workspace (Gmail and Google Calendar) a
 
 ## Access done safely
 
-Clients give assistants access in different ways. The safest is **delegation**, where the client shares their inbox or calendar with your own account, so you never need their password. Gmail and Google Calendar both support this. Delegation is set up in Gmail on a computer, and some delegated features are limited in the phone apps, so plan to do this part on a laptop or a shared computer. If a client sends you their password instead, suggest delegation or a password manager, and never share the password with anyone else.
+Clients give assistants access in different ways. The safest is **delegation**, where the client shares their inbox or calendar with your own account, so you never need their password. In Gmail the client adds you as a delegate, and in Google Calendar they share their calendar with you. Gmail delegates cannot be added from the phone app, only from Gmail on a computer, so plan to do this part on a laptop or a shared computer. If a client sends you their password instead, suggest delegation or a password manager, and never share the password with anyone else.
 
 ## A small example
 
@@ -663,7 +663,7 @@ Zuweira starts working for a business coach in Canada. On day one, the coach sha
       quiz: {
         questions: [
           {
-            prompt: "According to the lesson, which two tasks appear most often in assistant adverts?",
+            prompt: "According to the lesson, which two tasks appear again and again in assistant adverts?",
             options: [
               "Video editing and coding",
               "Managing email and managing calendars",
@@ -671,7 +671,7 @@ Zuweira starts working for a business coach in Canada. On day one, the coach sha
               "Accounting and tax returns",
             ],
             answer_index: 1,
-            explanation: "The lesson says email and calendar management appear more than any other tasks.",
+            explanation: "The lesson says managing email and managing calendars appear again and again in adverts.",
           },
           {
             prompt: "What does discretion mean in assistant work?",
@@ -1383,7 +1383,7 @@ Abdul-Rahman starts as a VA for a small online shop run by a Ghanaian woman livi
       },
     },
     "customer-support": {
-      explanation_md: `Customer support appears in remote VA adverts, in Ghanaian customer service adverts and in front desk roles. Some remote support adverts say previous experience is not essential, which makes this a realistic first step. It also teaches skills every assistant needs: patience, clear writing and careful records.
+      explanation_md: `Customer support appears in remote VA adverts, in Ghanaian customer service adverts and in front desk roles. Many of these roles are advertised at entry level, which can make this a realistic first step. It also teaches skills every assistant needs: patience, clear writing and careful records.
 
 ## The channels
 
@@ -1505,7 +1505,7 @@ Always get **approval** before scheduling. Mark each row Approved only after the
 
 ## Scheduling tools
 
-Meta Business Suite is free and lets you schedule posts for Facebook Pages and connected Instagram accounts, from a phone or computer. Other platforms have their own scheduling features, and there are other scheduling tools with free plans. WhatsApp Status cannot be scheduled inside WhatsApp, so plan those to post by hand.
+Meta Business Suite is free and lets you schedule posts for Facebook Pages and connected Instagram accounts, from a phone or computer. Other platforms have their own scheduling features, and there are other scheduling tools with free plans. If the client also uses WhatsApp Status, plan those updates in the same calendar and post them by hand at the right time.
 
 Schedule at times when the business's customers are likely to be online. If the client's customers are in another country, use their time zone, not yours.
 
@@ -1609,7 +1609,7 @@ Write the SOP the second time you do a task, while it is fresh, and update it wh
 
 ## Why clients love SOPs
 
-SOPs make your work consistent, make it easy to train someone new, and protect the client if you are unavailable. Writing them also shows you understand the business. Some clients will pay more for an assistant who builds their systems.
+SOPs make your work consistent, make it easy to train someone new, and protect the client if you are unavailable. Writing them also shows you understand the business, and clients value an assistant who builds systems as well as doing tasks.
 
 ## A small example
 
@@ -1969,7 +1969,7 @@ Hawa receives an email that looks like it is from her client: "Urgent, pay this 
 
 ## Two routes, both valid
 
-* **Local work.** Ghanaian companies, NGOs, schools and small businesses hire office assistants, front desk staff, administrative officers and executive assistants, and many small businesses would pay for part time help with messages, records and social media. Most formal admin jobs on Ghanaian job boards are in Accra and Tema, but small businesses everywhere need help, and local work is easier to verify.
+* **Local work.** Ghanaian companies, NGOs, schools and small businesses hire office assistants, front desk staff, administrative officers and executive assistants, and many small businesses would pay for part time help with messages, records and social media. Many formal admin jobs on Ghanaian job boards are in Accra and Tema, but small businesses everywhere need help, and local work is easier to verify.
 * **Remote work.** Companies and individuals abroad hire virtual assistants. These roles can pay in foreign currency, but competition is strong, many adverts only accept people in certain countries, and scams are common.
 
 Many people start with local or part time work to build experience and samples, then add remote clients. There is no shame in starting small.
@@ -2157,14 +2157,14 @@ Alhassan has no paid clients yet, so he builds a folder with five samples from t
 ## Where to look
 
 * **People and businesses you know.** Small businesses, schools, churches, mosques, NGOs and clinics near you often need help with messages, records or social media. Offer a clear service, and consider a short paid trial.
-* **Ghanaian job boards.** Sites such as Jobberman list admin, office assistant, front desk, executive assistant and customer service roles. Most are office based in Accra and Tema, with some elsewhere.
+* **Ghanaian job boards.** Sites such as Jobberman list admin, office assistant, front desk, executive assistant and customer service roles. Many are office based in Accra and Tema, with some elsewhere.
 * **Remote job boards.** Some job boards list only remote roles, and a few let you filter by country. Read each advert's location rules.
 * **Freelance platforms.** Marketplaces where clients post small jobs and freelancers apply. They take a fee from your earnings, competition is strong at the start, and reviews matter, so begin with small jobs you can do very well.
 * **Your network.** Tell friends, former teachers and family abroad what you do. Many first clients come from personal recommendations.
 
 ## Check if the advert is really open to you
 
-Remote does not always mean anywhere. Many remote assistant adverts only accept people living in specific countries, and some name South Africa, Kenya or other countries but not Ghana. Before applying, check:
+Remote does not always mean anywhere. Many remote assistant adverts only accept people living in specific countries, and some name countries such as South Africa or India but not Ghana. Before applying, check:
 
 * **Location:** does it say worldwide, Africa, or list Ghana? If it lists other countries only, it is probably not open to you.
 * **Hours:** some roles require you to work during a client's office hours, which may mean late evenings in Ghana.
@@ -2261,7 +2261,7 @@ Ayishetu checks a remote board and finds three VA adverts. One is only for South
 
 ## The most common tricks
 
-* **Pay to get the job.** You are asked to pay for an application form, training, registration, a uniform, a laptop or a background check. The CSA's advice is clear: do not pay for job applications or interviews. Real employers do not charge you to be hired.
+* **Pay to get the job.** You are asked to pay for an application form, training, registration, a uniform, a laptop or a background check. The CSA's advice is clear: genuine employers do not charge any fees for applications, tests or training, and any payment request is a sign of fraud.
 * **Task scams.** You are offered easy money for simple online tasks such as liking posts or rating products. Early tasks pay a little to build trust. Then you are asked to deposit money to unlock better tasks or withdraw your earnings, and once you pay, you are locked out.
 * **Fake cheques and overpayment.** A "client" sends more money than agreed, or a cheque, and asks you to send the difference back or pay a supplier. The original payment later disappears, and you lose what you sent.
 * **Money mule offers.** You are asked to receive money into your bank or mobile money account and forward it to someone else, for a commission. This can make you part of a crime, even if you did not know.
@@ -2282,7 +2282,7 @@ Search the company name with words like "scam" or "reviews". Find the company's 
 
 ## Report it
 
-If you see or fall for a scam, report it. The CSA runs a reporting point you can call or text on 292, or contact through the details on its official website, csa.gov.gh. You can also report to the Cybercrime Unit of the Ghana Police Service. If you sent money by mobile money or bank, contact your provider immediately. Report scam adverts to the job board too.
+If you see or fall for a scam, report it. The CSA has a reporting page at csa.gov.gh/report with its current phone, SMS, WhatsApp and email contacts and an online form. Always take the contacts from that official page, not from a message someone forwards you. You can also report to the Cybercrime Unit of the Ghana Police Service. If you sent money by mobile money or bank, contact your provider immediately. Report scam adverts to the job board too.
 
 ## A small example
 
@@ -2290,7 +2290,7 @@ Mariama gets a WhatsApp message offering a remote VA job with high pay and no in
       practice_task_md: `**Goal:** Learn to spot and report job scams.
 
 **Steps:**
-1. Visit the Cyber Security Authority website, csa.gov.gh, and find the reporting contact details. Save them in your phone.
+1. Visit the Cyber Security Authority reporting page, csa.gov.gh/report, and save its reporting contacts in your phone.
 2. Write down the five common tricks from this lesson in your own words.
 3. Look at three remote job messages or adverts you have seen (in WhatsApp groups, social media or job boards). For each, list any warning signs.
 4. Write a short message you could send to a friend explaining why they should never pay for a job.
@@ -2299,15 +2299,15 @@ Mariama gets a WhatsApp message offering a remote VA job with high pay and no in
       quiz: {
         questions: [
           {
-            prompt: "What is the CSA's advice about paying for job applications or interviews?",
+            prompt: "What does the CSA say about employers charging fees?",
             options: [
-              "Pay only small amounts",
-              "Do not pay for job applications or interviews",
-              "Pay if the company has a logo",
-              "Pay by mobile money only",
+              "Small fees are normal for remote jobs",
+              "Genuine employers do not charge fees for applications, tests or training",
+              "Fees are fine if the company has a logo",
+              "Fees are fine if paid by mobile money",
             ],
             answer_index: 1,
-            explanation: "The lesson quotes the CSA advice not to pay for applications or interviews.",
+            explanation: "The lesson quotes the CSA: genuine employers do not charge any fees, so a payment request is a sign of fraud.",
           },
           {
             prompt: "How does a task scam usually work?",
@@ -2380,7 +2380,7 @@ An invoice is a document asking for payment. Include: your name and contact deta
 
 There are four common routes. Each has different costs, speeds and requirements.
 
-* **Freelance platform payouts.** If you work through a platform, it pays you and you withdraw to a bank, mobile money or another account it supports. Platforms take a service fee from your earnings, and withdrawals can cost extra.
+* **Freelance platform payouts.** If you work through a platform, it pays you and you withdraw using one of the methods it supports in Ghana, such as a bank account. Platforms take a service fee from your earnings, and withdrawals can cost extra.
 * **International payment accounts.** Some services give you account details in foreign currencies so clients abroad can pay you as if locally. You then convert and withdraw to Ghana.
 * **Bank transfer to a Ghanaian bank account.** Many Ghanaian banks offer foreign currency accounts, sometimes called domiciliary accounts. International bank transfers can involve fees from the sending bank, any intermediary banks and your own bank.
 * **Remittance to mobile money.** Some money transfer services can send money from abroad to a mobile money wallet in Ghana.

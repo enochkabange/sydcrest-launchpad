@@ -30,6 +30,7 @@ const VA = {
   strongPassword: r("Google Account Help: Create a strong password", "https://support.google.com/accounts/answer/32040"),
   metaBusinessSuite: r("Meta Business Suite", "https://www.facebook.com/business/tools/meta-business-suite"),
   csa: r("Cyber Security Authority Ghana", "https://www.csa.gov.gh/"),
+  csaReport: r("Cyber Security Authority: Report a cyber incident", "https://www.csa.gov.gh/report"),
 };
 
 export const virtualAssistant: RoadmapDraft = {
@@ -109,7 +110,7 @@ export const virtualAssistant: RoadmapDraft = {
       slug: "inbox-and-calendar",
       title: "Email and calendar management",
       summary:
-        "Looking after someone's inbox and diary is the most requested assistant task in both local and remote adverts. This section teaches a system for each.",
+        "Looking after someone's inbox and diary comes up again and again in both local and remote adverts. This section teaches a system for each.",
       parent: null,
       optional: false,
       resources: [RES.lfGmail, VA.lfOutlook],
@@ -265,7 +266,7 @@ export const virtualAssistant: RoadmapDraft = {
         "Fake remote jobs often ask for fees, promise easy money or try to use your accounts. Learn the warning signs and where to report a scam in Ghana.",
       parent: "getting-work",
       optional: false,
-      resources: [VA.csa, RES.lfSafety],
+      resources: [VA.csaReport, VA.csa, RES.lfSafety],
     },
     {
       slug: "getting-paid",
