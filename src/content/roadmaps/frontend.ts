@@ -5,7 +5,7 @@ export const frontend: RoadmapDraft = {
   slug: "frontend-developer",
   title: "Frontend Developer",
   description:
-    "Build fast, usable websites and web apps that work well on the phones Ghanaians actually use. Go from your first HTML page to a portfolio that local businesses and remote teams can trust.",
+    "Build fast, usable websites and web apps that work well on the phones and laptops Ghanaians actually use. Go from your first HTML page to a portfolio that local businesses and remote teams can trust.",
   track: "frontend",
   field_category: "software",
   locale: "en-GH",
@@ -13,7 +13,7 @@ export const frontend: RoadmapDraft = {
   nodes: [
     {
       slug: "start-here",
-      title: "Start here: your free setup and how the web reaches a phone",
+      title: "Start here: your free setup and how the web reaches your users",
       summary:
         "Set up a free code editor, a modern browser and a data saving study routine on a modest laptop or phone. Then learn how a web page travels to a phone in Wa and how to track your work with Git.",
       parent: null,
