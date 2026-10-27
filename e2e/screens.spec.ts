@@ -2,9 +2,8 @@ import { mkdirSync } from "node:fs";
 import { expect, test, type Page, type TestInfo } from "@playwright/test";
 import { signUpAndConfirm } from "./auth";
 import { deleteDmpCohort, seedDmpCohort, type SeededDmpCohort } from "./cohort-seed";
-import { createLearner, PASSWORD } from "./learners";
+import { createLearner, PASSWORD, promoteToAdmin } from "./learners";
 import { deleteRoadmap, seedRoadmap, type SeededRoadmap } from "./seed";
-import { createLearner, promoteToAdmin } from "./learners";
 import { insert } from "./supabase-admin";
 import { certify, deleteOrganisation, signIn, verifiedOrganisation } from "./earn-business";
 
