@@ -25,11 +25,11 @@ jobs:
       contents: read
       pull-requests: read # the secret scan lists this PR's commits
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0 # the migration guard and secret scan compare with the base branch
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: pnpm
@@ -55,8 +55,8 @@ jobs:
     name: Migrations
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: supabase/setup-cli@v1
+      - uses: actions/checkout@v7
+      - uses: supabase/setup-cli@v3
         with:
           version: 2.114.0 # keep in step with the local CLI; generated types depend on it
       # Local Supabase in Docker, trimmed to what migrations and tests need.
@@ -83,14 +83,14 @@ jobs:
     name: E2E
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - uses: supabase/setup-cli@v1
+      - uses: supabase/setup-cli@v3
         with:
           version: 2.114.0 # keep in step with the local CLI; generated types depend on it
       # Same local stack as Migrations, but keeping Mailpit: the tests read
@@ -123,7 +123,7 @@ jobs:
       - run: pnpm e2e
         env:
           SUPABASE_SECRET_KEY: ${{ steps.local-keys.outputs.secret }}
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         if: failure()
         with:
           name: playwright-report

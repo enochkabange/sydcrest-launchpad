@@ -62,7 +62,7 @@ export const excelPowerBi: RoadmapDraft = {
   slug: "excel-power-bi",
   title: "Excel and Power BI",
   description:
-    "The office data skills employers everywhere ask for: clean tables, formulas, lookups, PivotTables and charts in Excel, then dashboards in Power BI. Excel works on a phone; Power BI needs a Windows laptop.",
+    "The office data skills employers everywhere ask for: clean tables, formulas, lookups, PivotTables and charts in Excel, then dashboards in Power BI. Excel works on a phone or a computer; Power BI needs a Windows laptop.",
   track: "excel-power-bi",
   field_category: "data",
   locale: "en-GH",

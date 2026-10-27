@@ -19,7 +19,7 @@ const FILTERS = [
 
 export default function ReportsPage({ searchParams }: PageProps<"/admin/reports">) {
   return (
-    <div className="mx-auto flex w-full max-w-3xl flex-col gap-6 px-4 py-8 md:px-8">
+    <div className="flex max-w-3xl flex-col gap-6">
       <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>
         <Queue searchParams={searchParams} />
       </Suspense>

@@ -62,7 +62,7 @@ export const mobileAppDeveloper: RoadmapDraft = {
   slug: "mobile-app-developer",
   title: "Mobile App Developer",
   description:
-    "Build Android apps that work on the low cost phones and patchy networks people in Ghana really use, starting with Flutter and Dart. Go from your first lines of code on a phone to a published app and a portfolio that Ghanaian and remote employers can test.",
+    "Build Android apps that work on the low cost phones and patchy networks people in Ghana really use, starting with Flutter and Dart. Go from your first lines of code, even on a phone, to a published app and a portfolio that Ghanaian and remote employers can test.",
   track: "mobile-app-developer",
   field_category: "software",
   locale: "en-GH",
@@ -79,9 +79,9 @@ export const mobileAppDeveloper: RoadmapDraft = {
     },
     {
       slug: "your-setup",
-      title: "Your setup: phone first, then a laptop",
+      title: "Your setup: start in a browser, build on a laptop",
       summary:
-        "Start writing real code in a phone browser with free tools, then move to a laptop when you can reach one. Learn what a laptop needs for mobile work and how to test on your own Android phone instead of a heavy emulator.",
+        "Start writing real code in a browser with free tools, even on a phone, then move to a laptop when you can reach one. Learn what a laptop needs for mobile work and how to test on your own Android phone instead of a heavy emulator.",
       parent: "start-here",
       optional: false,
       resources: [M.dartpad, M.kotlinPlay, M.deployAndroid],
