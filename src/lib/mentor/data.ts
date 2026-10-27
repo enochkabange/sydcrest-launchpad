@@ -139,7 +139,7 @@ export async function loadCohort(cohort: ConsoleCohort) {
   if (roster.error) throw new Error(`Could not load the roster: ${roster.error.message}`);
   if (weeks.error) throw new Error(`Could not load the weeks: ${weeks.error.message}`);
 
-  const members = (roster.data ?? []) as RosterRow[];
+  const members = ((roster.data ?? []) as RosterRow[]).sort((a, b) => (a.display_name ?? "").localeCompare(b.display_name ?? ""));
   const learners = members.filter((m) => m.role === "learner");
   const learnerIds = learners.map((m) => m.profile_id);
 

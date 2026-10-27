@@ -92,14 +92,13 @@ async function Console({ searchParams }: Pick<PageProps<"/mentor">, "searchParam
         <p className="text-lead text-content-2">
           {cohort.program.title}. Starts {shortDate(cohort.starts_on)}.
         </p>
+        <CohortSwitcher cohorts={cohorts} current={cohort} />
       </header>
 
       <MainWithRail
         railLabel="Cohort"
-        railFirst
         rail={
           <>
-            <CohortSwitcher cohorts={cohorts} current={cohort} />
             <Card title="This cohort">
               <dl className="grid grid-cols-2 gap-x-4 gap-y-3 text-sm">
                 <Fact label="Status" value={COHORT_STATUS_LABEL[cohort.status as CohortStatus] ?? cohort.status} />
@@ -131,18 +130,6 @@ async function Console({ searchParams }: Pick<PageProps<"/mentor">, "searchParam
                   Assign a reviewer
                 </Link>
               )}
-            </Card>
-            <Card title="Grid key">
-              <ul className="grid grid-cols-1 gap-2 text-sm">
-                {(Object.keys(CELL_LABEL) as CellState[]).map((s) => (
-                  <li key={s} className="flex items-center gap-2">
-                    <span className={`inline-flex h-6 min-w-10 items-center justify-center rounded px-1 text-xs font-semibold ${CELL_STYLE[s].className} ${s === "upcoming" ? "border border-line" : ""}`}>
-                      {s === "passed" || s === "below" ? "72" : CELL_STYLE[s].mark || "·"}
-                    </span>
-                    <span className="text-content-2">{CELL_LABEL[s]}</span>
-                  </li>
-                ))}
-              </ul>
             </Card>
           </>
         }
@@ -195,142 +182,157 @@ async function Console({ searchParams }: Pick<PageProps<"/mentor">, "searchParam
           )}
         </section>
 
-        <section aria-labelledby="roster-heading" className="flex flex-col gap-3">
-          <h2 id="roster-heading" className="text-subtitle text-content">
-            Roster
-          </h2>
-          {data.members.length === 0 ? (
-            <EmptyState title="No one in this cohort yet">Learners join when their application is accepted into this cohort.</EmptyState>
-          ) : (
-            <DataTable<RosterRow>
-              caption={`Members of ${cohort.name}`}
-              rowKey={(m) => m.member_id}
-              rows={[...data.learners, ...data.staff]}
-              columns={[
-                {
-                  header: "Name",
-                  cell: (m) =>
-                    m.role === "learner" ? (
-                      <Link href={`/mentor/learners/${m.member_id}`} className={`font-semibold text-content ${rowLinkClass}`}>
-                        {nameOf(m)}
-                      </Link>
-                    ) : (
-                      <span className="font-semibold text-content">{nameOf(m)}</span>
-                    ),
-                },
-                { header: "Role", cell: (m) => <span className="text-sm text-content-2">{ROLE_LABEL[m.role] ?? m.role}</span> },
-                {
-                  header: "Specialization",
-                  phone: "hide",
-                  cell: (m) => (
-                    <span className="text-sm text-content-2">{m.specialization ? (specLabel.get(m.specialization) ?? m.specialization) : m.role === "learner" ? "Not chosen" : ""}</span>
-                  ),
-                },
-                {
-                  header: "Status",
-                  cell: (m) => (
-                    <Pill tone={m.status === "deferred" ? "warning" : m.status === "completed" ? "success" : "neutral"}>
-                      {MEMBER_STATUS_LABEL[m.status] ?? m.status}
-                    </Pill>
-                  ),
-                },
-                {
-                  header: "Weeks passed",
-                  phone: "hide",
-                  align: "end",
-                  cell: (m) => {
-                    const g = gridByMember.get(m.member_id);
-                    return g ? <span className="text-sm text-content">{g.passed} of {g.cells.filter((c) => c.week).length}</span> : null;
-                  },
-                },
-                {
-                  header: "Late",
-                  phone: "hide",
-                  align: "end",
-                  cell: (m) => {
-                    const g = gridByMember.get(m.member_id);
-                    return g ? <span className={`text-sm ${g.late ? "font-semibold text-danger-fg" : "text-content-2"}`}>{g.late}</span> : null;
-                  },
-                },
-                {
-                  header: "Reviews given",
-                  phone: "hide",
-                  align: "end",
-                  cell: (m) => (m.role === "learner" ? <span className="text-sm text-content-2">{reviewsGiven.get(m.profile_id) ?? 0}</span> : null),
-                },
-              ]}
-            />
-          )}
-        </section>
+      </MainWithRail>
 
-        <section aria-labelledby="grid-heading" className="flex flex-col gap-3">
-          <h2 id="grid-heading" className="text-subtitle text-content">
-            Progress
-          </h2>
-          {grid.length === 0 ? (
-            <EmptyState title="No learners to track yet">Each learner gets a row of twelve weeks here once they join.</EmptyState>
-          ) : (
-            <div className="overflow-x-auto rounded-lg border border-line" tabIndex={0} role="region" aria-label="Progress grid, scrolls sideways">
-              <table className="w-full border-collapse text-sm">
-                <caption className="sr-only">Each learner&apos;s weeks: score when graded, otherwise the state of the week</caption>
-                <thead className="bg-surface-sunken text-content-2">
-                  <tr>
-                    <th scope="col" className="sticky left-0 z-10 bg-surface-sunken px-3 py-2 text-left font-semibold">
-                      Learner
+      <section aria-labelledby="roster-heading" className="flex flex-col gap-3">
+        <h2 id="roster-heading" className="text-subtitle text-content">
+          Roster
+        </h2>
+        {data.members.length === 0 ? (
+          <EmptyState title="No one in this cohort yet">Learners join when their application is accepted into this cohort.</EmptyState>
+        ) : (
+          <DataTable<RosterRow>
+            caption={`Members of ${cohort.name}`}
+            rowKey={(m) => m.member_id}
+            rows={[...data.learners, ...data.staff]}
+            columns={[
+              {
+                header: "Name",
+                className: "md:whitespace-nowrap",
+                cell: (m) =>
+                  m.role === "learner" ? (
+                    <Link href={`/mentor/learners/${m.member_id}`} className={`font-semibold text-content ${rowLinkClass}`}>
+                      {nameOf(m)}
+                    </Link>
+                  ) : (
+                    <span className="font-semibold text-content">{nameOf(m)}</span>
+                  ),
+              },
+              { header: "Role", cell: (m) => <span className="text-sm text-content-2">{ROLE_LABEL[m.role] ?? m.role}</span> },
+              {
+                header: "Specialization",
+                phone: "hide",
+                cell: (m) => (
+                  <span className="text-sm text-content-2">{m.specialization ? (specLabel.get(m.specialization) ?? m.specialization) : m.role === "learner" ? "Not chosen" : ""}</span>
+                ),
+              },
+              {
+                header: "Status",
+                cell: (m) => (
+                  <Pill tone={m.status === "deferred" ? "warning" : m.status === "completed" ? "success" : "neutral"}>
+                    {MEMBER_STATUS_LABEL[m.status] ?? m.status}
+                  </Pill>
+                ),
+              },
+              {
+                header: "Weeks passed",
+                phone: "hide",
+                align: "end",
+                cell: (m) => {
+                  const g = gridByMember.get(m.member_id);
+                  return g ? <span className="text-sm text-content">{g.passed} of {g.cells.filter((c) => c.week).length}</span> : null;
+                },
+              },
+              {
+                header: "Late",
+                phone: "hide",
+                align: "end",
+                cell: (m) => {
+                  const g = gridByMember.get(m.member_id);
+                  return g ? <span className={`text-sm ${g.late ? "font-semibold text-danger-fg" : "text-content-2"}`}>{g.late}</span> : null;
+                },
+              },
+              {
+                header: "Reviews given",
+                phone: "hide",
+                align: "end",
+                cell: (m) => (m.role === "learner" ? <span className="text-sm text-content-2">{reviewsGiven.get(m.profile_id) ?? 0}</span> : null),
+              },
+            ]}
+          />
+        )}
+      </section>
+
+      <section aria-labelledby="grid-heading" className="flex flex-col gap-3">
+        <h2 id="grid-heading" className="text-subtitle text-content">
+          Progress
+        </h2>
+        <ul aria-label="Grid key" className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
+          {(Object.keys(CELL_LABEL) as CellState[]).map((s) => (
+            <li key={s} className="flex items-center gap-2">
+              <span
+                aria-hidden="true"
+                className={`inline-flex h-6 min-w-10 items-center justify-center rounded px-1 text-xs font-semibold ${CELL_STYLE[s].className} ${s === "upcoming" ? "border border-line" : ""}`}
+              >
+                {s === "passed" ? cohort.program.pass_score : s === "below" ? cohort.program.pass_score - 1 : CELL_STYLE[s].mark || "·"}
+              </span>
+              <span className="text-content-2">{CELL_LABEL[s]}</span>
+            </li>
+          ))}
+        </ul>
+        {grid.length === 0 ? (
+          <EmptyState title="No learners to track yet">Each learner gets a row of twelve weeks here once they join.</EmptyState>
+        ) : (
+          <div className="overflow-x-auto rounded-lg border border-line" tabIndex={0} role="region" aria-label="Progress grid, scrolls sideways">
+            <table className="w-full border-collapse text-sm">
+              <caption className="sr-only">Each learner&apos;s weeks: score when graded, otherwise the state of the week</caption>
+              <thead className="bg-surface-sunken text-content-2">
+                <tr>
+                  <th scope="col" className="sticky left-0 z-10 bg-surface-sunken px-3 py-2 text-left font-semibold">
+                    Learner
+                  </th>
+                  {numbers.map((n) => (
+                    <th key={n} scope="col" className="px-1 py-2 text-center font-semibold">
+                      <abbr title={`Week ${n}`} className="no-underline">
+                        W{n}
+                      </abbr>
                     </th>
-                    {numbers.map((n) => (
-                      <th key={n} scope="col" className="px-1 py-2 text-center font-semibold">
-                        <abbr title={`Week ${n}`} className="no-underline">
-                          W{n}
-                        </abbr>
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-line">
-                  {grid.map(({ learner, cells }) => (
-                    <tr key={learner.member_id}>
-                      <th scope="row" className="sticky left-0 z-10 max-w-40 truncate bg-surface px-3 py-1.5 text-left font-semibold text-content">
-                        <Link href={`/mentor/learners/${learner.member_id}`} className="inline-flex min-h-11 items-center hover:underline">
-                          {nameOf(learner)}
-                        </Link>
-                      </th>
-                      {cells.map((c) => {
-                        if (!c.week || !c.state) {
-                          return (
-                            <td key={c.n} className="px-1 py-1.5 text-center text-content-3">
-                              <span className="sr-only">No week chosen yet</span>
-                              <span aria-hidden="true">·</span>
-                            </td>
-                          );
-                        }
-                        const style = CELL_STYLE[c.state];
-                        const text = c.state === "passed" || c.state === "below" ? String(c.sub?.final_score) : style.mark;
-                        const label = `Week ${c.n}: ${CELL_LABEL[c.state]}${c.sub?.final_score != null ? `, ${c.sub.final_score}` : ""}`;
-                        const box = `inline-flex min-h-11 min-w-11 items-center justify-center rounded px-1 text-xs font-semibold ${style.className}`;
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-line">
+                {grid.map(({ learner, cells }) => (
+                  <tr key={learner.member_id}>
+                    <th scope="row" className="sticky left-0 z-10 max-w-40 truncate bg-surface px-3 py-1.5 text-left font-semibold text-content">
+                      <Link href={`/mentor/learners/${learner.member_id}`} className="inline-flex min-h-11 items-center hover:underline">
+                        {nameOf(learner)}
+                      </Link>
+                    </th>
+                    {cells.map((c) => {
+                      if (!c.week || !c.state) {
                         return (
-                          <td key={c.n} className="px-1 py-1 text-center">
-                            {c.sub ? (
-                              <Link href={`/mentor/submissions/${c.sub.id}`} aria-label={label} title={label} className={`${box} hover:ring-2 hover:ring-line-strong`}>
-                                {text || "·"}
-                              </Link>
-                            ) : (
-                              <span title={label} className={box}>
-                                <span className="sr-only">{label}</span>
-                                <span aria-hidden="true">{text || "·"}</span>
-                              </span>
-                            )}
+                          <td key={c.n} className="px-1 py-1.5 text-center text-content-3">
+                            <span className="sr-only">No week chosen yet</span>
+                            <span aria-hidden="true">·</span>
                           </td>
                         );
-                      })}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          )}
-        </section>
-      </MainWithRail>
+                      }
+                      const style = CELL_STYLE[c.state];
+                      const text = c.state === "passed" || c.state === "below" ? String(c.sub?.final_score) : style.mark;
+                      const label = `Week ${c.n}: ${CELL_LABEL[c.state]}${c.sub?.final_score != null ? `, ${c.sub.final_score}` : ""}`;
+                      const box = `inline-flex min-h-11 min-w-11 items-center justify-center rounded px-1 text-xs font-semibold ${style.className}`;
+                      return (
+                        <td key={c.n} className="px-1 py-1 text-center">
+                          {c.sub ? (
+                            <Link href={`/mentor/submissions/${c.sub.id}`} aria-label={label} title={label} className={`${box} hover:ring-2 hover:ring-line-strong`}>
+                              {text || "·"}
+                            </Link>
+                          ) : (
+                            <span title={label} className={box}>
+                              <span className="sr-only">{label}</span>
+                              <span aria-hidden="true">{text || "·"}</span>
+                            </span>
+                          )}
+                        </td>
+                      );
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </section>
     </div>
   );
 }
@@ -348,7 +350,7 @@ function Fact({ label, value }: { label: string; value: string }) {
 function CohortSwitcher({ cohorts, current }: { cohorts: ConsoleCohort[]; current: ConsoleCohort }) {
   if (cohorts.length < 2) return null;
   return (
-    <form action="/mentor" method="get" className="flex flex-col gap-2 rounded-lg border border-line bg-surface p-4">
+    <form action="/mentor" method="get" className="mt-2 flex max-w-xl flex-col gap-2">
       <label htmlFor="cohort" className="text-sm font-semibold text-content">
         Cohort
       </label>

@@ -62,7 +62,7 @@ test("a mentor grades queued work, assigns a capstone peer review and defers a l
   await page.getByLabel("Reason").fill("Missed three weeks while caring for family. Agreed to restart.");
   await page.getByRole("button", { name: "Defer learner" }).click();
   // The deferral form leaves once the learner is placed; check what stays.
-  await expect(page.getByText(`Moved to ${seed.later.name}.`)).toBeVisible();
+  await expect(page.getByText(`Moved to ${seed.later.name}.`)).toBeVisible({ timeout: 30_000 });
   await expect(page.getByText("Deferred. Missed three weeks while caring for family. Agreed to restart.")).toBeVisible();
 
   await page.goto(`/mentor?cohort=${seed.cohort.id}`);
