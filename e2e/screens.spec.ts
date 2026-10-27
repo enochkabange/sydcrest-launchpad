@@ -4,6 +4,7 @@ import { signUpAndConfirm } from "./auth";
 import { deleteDmpCohort, seedDmpCohort, type SeededDmpCohort } from "./cohort-seed";
 import { createLearner, PASSWORD } from "./learners";
 import { deleteRoadmap, seedRoadmap, type SeededRoadmap } from "./seed";
+import { admin, insert } from "./supabase-admin";
 
 /**
  * Full page screenshots of key screens at a phone (390), a laptop (1440) and
@@ -21,12 +22,15 @@ const DIR = "e2e-screenshots";
 
 let roadmap: SeededRoadmap | undefined;
 let cohort: SeededDmpCohort | undefined;
+let opportunity: { id: string; slug: string } | undefined;
 
 test.afterEach(async () => {
   if (roadmap) await deleteRoadmap(roadmap.id);
   roadmap = undefined;
   if (cohort) await deleteDmpCohort(cohort);
   cohort = undefined;
+  if (opportunity) await admin(`/rest/v1/opportunities?id=eq.${opportunity.id}`, { method: "DELETE" });
+  opportunity = undefined;
 });
 
 async function shoot(page: Page, testInfo: TestInfo, name: string, path: string) {
@@ -47,11 +51,30 @@ test("screenshots of key screens at 390, 1440 and 1920", async ({ page }, testIn
   test.setTimeout(240_000);
   mkdirSync(DIR, { recursive: true });
   roadmap = await seedRoadmap();
+  [opportunity] = await insert<{ id: string; slug: string }>("opportunities", [
+    {
+      slug: `screens-intern-${crypto.randomUUID().slice(0, 6)}`,
+      kind: "internship",
+      title: "Data and reporting intern",
+      summary: "Six months with a farmers' cooperative, cleaning survey data and building simple reports.",
+      description: "Help the team in Tamale keep survey records tidy and turn them into weekly reports.\n\nYou will work with Google Sheets and learn to build simple dashboards.",
+      organisation_name: "Savannah Data Hub (screenshot sample)",
+      apply_url: "https://example.org/apply",
+      location: "Tamale",
+      region: "northern",
+      is_remote: true,
+      fields: ["data"],
+      skills: ["Google Sheets", "Data cleaning"],
+      status: "open",
+    },
+  ]);
 
   const pages: [string, string][] = [
     ["home", "/"],
     ["programme", "/programme"],
     ["roadmaps", "/roadmaps"],
+    ["opportunities", "/opportunities"],
+    ["opportunity", `/opportunities/${opportunity!.slug}`],
     ["roadmap", `/roadmaps/${roadmap.slug}`],
     ["topic", `/roadmaps/${roadmap.slug}/${roadmap.quizNode.slug}`],
     ["start", "/start"],
@@ -64,6 +87,7 @@ test("screenshots of key screens at 390, 1440 and 1920", async ({ page }, testIn
     ["dashboard", "/dashboard"],
     ["leaderboards", "/leaderboards"],
     ["profile", "/profile"],
+    ["opportunities-saved", "/opportunities/saved"],
     ["learn", `/learn/${roadmap.slug}/${roadmap.quizNode.slug}`],
   ] as [string, string][]) {
     await shoot(page, testInfo, name, path);

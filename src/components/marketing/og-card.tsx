@@ -69,6 +69,7 @@ export const OG_CARDS = {
   programme: { headline: "The Delta Mentoring Program", subline: "12 weeks. 25 free seats. Starting January 2027." },
   business: { headline: "Hire vetted Ghanaian talent", subline: "Coming soon. Register your interest today." },
   partners: { headline: "Partner with SydCrest", subline: "Help turn northern talent into earning talent." },
+  opportunities: { headline: "Opportunities", subline: "Jobs, internships, scholarships, grants and gigs, checked before they are listed." },
   start: { headline: "Where do I start?", subline: "Five quick questions. A starting point and a weekly plan." },
   privacy: { headline: "Privacy Policy", subline: "What we collect, why, and the rights you have." },
   terms: { headline: "Terms", subline: "The agreement for using SydCrest Launchpad." },

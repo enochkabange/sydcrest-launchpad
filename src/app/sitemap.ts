@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 
+import { opportunityPath } from "@/components/opportunities/paths";
+import { getOpenOpportunities } from "@/lib/opportunities/public";
 import { getPublishedPaths } from "@/lib/roadmaps/public";
 import { nodePath, roadmapPath } from "@/lib/roadmaps/seo";
 import { SITE_URL as BASE } from "@/lib/site";
@@ -10,6 +12,7 @@ const PAGES: { path: string; priority: number }[] = [
   { path: "/programme", priority: 0.9 },
   { path: "/start", priority: 0.8 },
   { path: "/roadmaps", priority: 0.8 },
+  { path: "/opportunities", priority: 0.8 },
   { path: "/about", priority: 0.7 },
   { path: "/partners", priority: 0.7 },
   { path: "/business", priority: 0.6 },
@@ -19,9 +22,9 @@ const PAGES: { path: string; priority: number }[] = [
 
 const url = (path: string) => new URL(path, BASE).toString();
 
-/** Published roadmaps come from the cached content reads, refreshed by revalidateRoadmap. */
+/** Published roadmaps and open opportunities come from cached reads, refreshed by revalidateRoadmap and revalidateOpportunities. */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const roadmaps = await getPublishedPaths();
+  const [roadmaps, opportunities] = await Promise.all([getPublishedPaths(), getOpenOpportunities()]);
   return [
     ...PAGES.map(({ path, priority }) => ({ url: url(path), changeFrequency: "monthly" as const, priority })),
     ...roadmaps.flatMap(({ slug, updated_at, nodes }) => [
@@ -33,5 +36,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         priority: 0.6,
       })),
     ]),
+    ...opportunities.map((o) => ({
+      url: url(opportunityPath(o.slug)),
+      lastModified: o.updated_at,
+      changeFrequency: "daily" as const,
+      priority: 0.6,
+    })),
   ];
 }
