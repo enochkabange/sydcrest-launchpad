@@ -77,9 +77,10 @@ test("a learner follows this week, the plan, lessons and specialization", async 
   await page.reload();
   await expect(page.getByRole("heading", { name: "Short video for a shop", level: 1 })).toBeVisible();
 
-  // The submission slot is anchored for the form that sends work.
+  // The submission slot holds the form that sends work (#145).
   await expect(page.locator("#submit")).toContainText("Script a short video for a phone repair shop.");
-  await expect(page.locator("#submit")).toContainText("Nothing sent for this week yet.");
+  await expect(page.locator("#submit")).toContainText("Not started");
+  await expect(page.locator("#submit").getByLabel("Your answer")).toBeVisible();
 
   // Not a week of this programme (streamed, so the not found page arrives with a 200).
   await page.goto("/cohort/week/9");

@@ -65,7 +65,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: /tmp/supabase-image-cache
-          key: supabase-images-db-${{ hashFiles('supabase/config.toml') }}
+          key: supabase-images-v2-db-${{ hashFiles('supabase/config.toml') }}
       - run: scripts/ci/supabase-start.sh -x studio,mailpit,imgproxy,edge-runtime,logflare,vector,realtime,storage-api,postgres-meta,supavisor
         env:
           GITHUB_TOKEN: ${{ github.token }}
@@ -107,7 +107,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: /tmp/supabase-image-cache
-          key: supabase-images-e2e-${{ hashFiles('supabase/config.toml') }}
+          key: supabase-images-v2-e2e-${{ hashFiles('supabase/config.toml') }}
       - run: scripts/ci/supabase-start.sh -x studio,imgproxy,edge-runtime,logflare,vector,realtime,storage-api,postgres-meta,supavisor
         env:
           GITHUB_TOKEN: ${{ github.token }}
