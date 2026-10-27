@@ -17,6 +17,25 @@ export const TRACKS = [
   { value: "ui-ux", label: "UI and UX design" },
   { value: "product", label: "Product" },
   { value: "digital-skills-bridge", label: "Digital skills bridge" },
+  { value: "ai-tools-for-work", label: "AI tools for work" },
+  { value: "graphic-design", label: "Graphic design" },
+  { value: "virtual-assistant", label: "Virtual assistant and remote work" },
+  { value: "digital-business", label: "Digital business and ecommerce" },
+  { value: "it-support", label: "IT support and networking" },
+  { value: "content-creation", label: "Video and content creation" },
+  { value: "cybersecurity", label: "Cybersecurity" },
+  { value: "mobile-app-developer", label: "Mobile app development" },
+  { value: "cloud-devops", label: "Cloud and DevOps" },
+  { value: "software-testing", label: "Software testing" },
+  { value: "ai-ml", label: "AI and machine learning" },
+  { value: "no-code", label: "No code and automation" },
+  { value: "customer-service", label: "Digital customer service" },
+  { value: "digital-sales", label: "Digital sales" },
+  { value: "excel-power-bi", label: "Excel and Power BI" },
+  { value: "social-media-management", label: "Social media management" },
+  { value: "freelancing", label: "Freelancing" },
+  { value: "project-management", label: "Project management" },
+  { value: "data-science", label: "Data science" },
 ] as const;
 
 export const FIELD_CATEGORIES = [
@@ -26,6 +45,11 @@ export const FIELD_CATEGORIES = [
   { value: "design", label: "Design" },
   { value: "product", label: "Product" },
   { value: "foundations", label: "Foundations" },
+  { value: "business", label: "Business" },
+  { value: "creative", label: "Creative" },
+  { value: "infrastructure", label: "IT and infrastructure" },
+  { value: "security", label: "Security" },
+  { value: "ai", label: "AI" },
 ] as const;
 
 export const LOCALES = [{ value: "en-GH", label: "English (Ghana)" }] as const;
