@@ -18,6 +18,9 @@ import { aiMl } from "./ai-ml";
 import { dataScience } from "./data-science";
 import type { RoadmapDraft } from "./types";
 import { uiUx } from "./ui-ux";
+import { socialMediaManagement } from "./social-media-management";
+import { noCode } from "./no-code";
+import { freelancing } from "./freelancing";
 
 export type { NodeDraft, ResourceDraft, RoadmapDraft } from "./types";
 
@@ -46,4 +49,7 @@ export const ROADMAP_DRAFTS: RoadmapDraft[] = [
   softwareTesting,
   aiMl,
   dataScience,
+  socialMediaManagement,
+  noCode,
+  freelancing,
 ];
