@@ -1727,6 +1727,584 @@ For portfolio pieces, use open data or data you invent and label as invented. Ne
         pass_threshold: 80,
       },
     },
+    "power-bi": {
+      explanation_md: `## Why this matters
+
+Power BI appears in many Ghanaian adverts for MIS officers, M&E officers, data analysts and business intelligence roles, usually alongside Excel. Where Excel reports are pages, Power BI reports are interactive: a manager clicks "Wa" and every chart on the page shows Wa only. Organisations use it to bring data from several sources into one place and keep dashboards up to date.
+
+## The three parts of Power BI
+
+* **Power BI Desktop** is where reports are built. It is a free download and you can build and save reports without any account or licence. It runs **only on Windows** (Windows 10 or later).
+* **The Power BI service** is the website where organisations publish, share and refresh reports. Signing up needs a **work or school email**; personal addresses such as Gmail cannot sign up directly. Sharing with colleagues usually needs a paid licence, which an employer would normally provide.
+* **The Power BI mobile apps** let people view and interact with published reports on phones and tablets. They are for reading, not building.
+
+## Do you need a Windows computer?
+
+For this section, yes, to do the practice yourself. Some honest options:
+
+* A computer lab at school, a university, a library, a tech hub or your workplace. Ask whether you can install Power BI Desktop; the Microsoft Store version does not need administrator rights.
+* An internet café, if it allows installs. Save your files to a USB stick or OneDrive every session.
+* A friend or relative's Windows laptop for a few hours each week.
+
+Before you rely on a machine, check its screen. Microsoft says Power BI Desktop needs a display of at least 1440 by 900; some common laptops at 1366 by 768 are below that, and some dialogs fall off the screen. The setup lesson explains what to check.
+
+**If you have only a phone or a Mac for now:** read these lessons fully, because the ideas are what interviewers ask about. Then practise the same skills with a free browser tool such as Google's Data Studio (called Looker Studio until 2026), which connects to Google Sheets and builds interactive dashboards with filters. It does not teach Power Query or DAX, but it does teach connecting data, calculated fields, filters and dashboard design. Your Excel skills from earlier sections carry straight over.
+
+## The Power BI workflow
+
+Every Power BI report follows the same path, and this section teaches it in order:
+
+1. **Get data:** load Excel or CSV files and clean them in Power Query, the same tool you met in Excel.
+2. **Model:** connect tables, such as sales to products and branches, with relationships.
+3. **Measure:** write DAX formulas for totals and averages that respond to filters.
+4. **Visualise:** build report pages (covered in the next section).
+5. **Share:** publish to the service inside an organisation (also next section).
+
+## A small example
+
+Fuseini works for a solar lamp distributor with agents across the Upper East Region. Every Monday he used to email a 20 tab Excel file. Now he builds one Power BI report: a sales table linked to agent and product tables, a few measures, and a page with a map, a trend and a slicer for district. Managers open it on their phones and click their own district. Fuseini spends Monday mornings looking for problems in the numbers instead of copying them.`,
+      practice_task_md: `**Goal:** plan your Power BI practice access.
+
+1. List every Windows computer you could use for a few hours a week: school, library, hub, workplace, café, family.
+2. For one of them, find out: Windows version, whether you may install software, and the screen resolution (Settings, then System, then Display).
+3. If you have no Windows option yet, open Google's free Data Studio in a browser with a Google account, connect it to your practice Google Sheet, and add one chart and one filter control.
+4. Write a short plan: where and when you will practise the next four lessons.
+
+**Done looks like:** a written access plan naming a computer, or a first Data Studio chart linked to your sheet. Share the plan with a mentor so they can help you find a computer if needed.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which part of Power BI is used to build reports?",
+            options: [
+              "Power BI Desktop",
+              "The Power BI mobile app",
+              "Excel for the web",
+              "Google Sheets",
+            ],
+            answer_index: 0,
+            explanation: "Reports are built in Power BI Desktop; the service shares them and the mobile apps view them.",
+          },
+          {
+            prompt: "What do you need to sign up for the Power BI service?",
+            options: [
+              "Any Gmail address",
+              "A work or school email account",
+              "A Windows laptop only",
+              "Nothing, it needs no sign up",
+            ],
+            answer_index: 1,
+            explanation: "Microsoft requires a work or school email; personal addresses cannot sign up directly.",
+          },
+          {
+            prompt: "Which operating system does Power BI Desktop run on?",
+            options: [
+              "Android",
+              "macOS",
+              "Windows",
+              "Any system with a browser",
+            ],
+            answer_index: 2,
+            explanation: "Power BI Desktop runs only on Windows 10 or later.",
+          },
+          {
+            prompt: "You only have a phone and a Mac for now. What does the lesson suggest?",
+            options: [
+              "Skip the Power BI section completely",
+              "Read the lessons and practise dashboards with a free browser tool such as Google's Data Studio",
+              "Buy a new Windows laptop before continuing",
+              "Build reports in the Power BI mobile app",
+            ],
+            answer_index: 1,
+            explanation: "The ideas still matter, and a free browser tool lets you practise dashboards until you can use a Windows computer.",
+          },
+          {
+            prompt: "What is the correct order of the Power BI workflow?",
+            options: [
+              "Share, model, get data, measure, visualise",
+              "Get data, model, measure, visualise, share",
+              "Visualise, get data, share, model, measure",
+              "Measure, share, model, visualise, get data",
+            ],
+            answer_index: 1,
+            explanation: "Reports start with getting and cleaning data, then modelling, measures, visuals and finally sharing.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "power-bi-desktop-setup": {
+      explanation_md: `## Why this matters
+
+Your first hour with Power BI Desktop should be spent learning, not fighting the installation. A little preparation saves wasted trips to a lab or café, and knowing your way around the three main views makes every later lesson easier. Employers expect you to be comfortable in Desktop from day one.
+
+## Check the computer first
+
+Power BI Desktop needs:
+
+* **Windows 10 or later.** It does not run on macOS, ChromeOS, Android or iOS.
+* **At least 2 GB of free memory (RAM),** with 4 GB or more recommended. More is better for large files.
+* **A screen of at least 1440 by 900 pixels.** Microsoft says lower resolutions such as 1366 by 768 or 1280 by 800 are not supported, because some dialogs extend beyond the screen. Check in **Settings, then System, then Display**.
+* **Display scaling at 100%.** If "Scale" is set higher, some dialogs may not show. Set it to 100% in the same Display settings.
+
+## Two ways to install
+
+* **Microsoft Store (recommended for shared computers):** search for Power BI Desktop in the Store and choose Install. It does not need administrator rights, updates itself automatically and downloads smaller updates.
+* **Direct download** from Microsoft's Power BI Desktop page: a single 64 bit installer. You need administrator rights to install it.
+
+Do not install both on the same computer. The download is large, so use Wi Fi rather than mobile data. Microsoft releases a new version every month, and only the latest version is supported, so update when asked.
+
+## Do you need to sign in?
+
+No. When Desktop opens it may invite you to sign in. You can close that and still build, save and reopen reports. Your work is saved as a **.pbix** file. Signing in is only needed to publish to the Power BI service, which needs a work or school account.
+
+## A tour of the views
+
+The icons down the left side switch between views:
+
+* **Report view:** the canvas where you build pages of visuals. The **Visualizations** pane offers chart types, and the **Data** pane lists your tables and columns.
+* **Table view:** shows the rows of each loaded table, so you can check the data and its types.
+* **Model view:** shows your tables as boxes and the relationships between them as lines.
+
+Along the top is a ribbon similar to Excel's, with **Get data**, **Transform data** (which opens Power Query) and **Refresh** on the Home tab.
+
+## Open sample data
+
+The start screen offers ways to begin. If it shows an option to use sample data, load it. If not, search Microsoft Learn for the free Financial Sample Excel workbook, download it once, and load it with **Get data, then Excel workbook**. Drag a field such as Country onto the canvas and a number such as Sales next to it, and Power BI draws a visual for you. Click a bar and see the rest of the page respond.
+
+## A worked example
+
+Mariama books two hours at her university's computer lab. Before going, she asks the lab assistant whether students can install from the Microsoft Store and what the screen resolution is. In the lab she installs Desktop, sets scaling to 100%, loads the sample data, builds two visuals and saves the .pbix file to OneDrive and a USB stick. Next week she opens it on a different lab computer and continues where she stopped.`,
+      practice_task_md: `**Goal:** install Power BI Desktop and build your first visual.
+
+You need a Windows computer for this task. If you do not have access yet, complete the Data Studio alternative from the section lesson and return here later.
+
+1. Check the computer: Windows version, free memory, screen resolution and scaling at 100%.
+2. Install Power BI Desktop from the Microsoft Store, or by direct download if you have administrator rights.
+3. Load sample data, or download the Financial Sample workbook and load it with Get data.
+4. Visit Report, Table and Model view and write one sentence about what each shows.
+5. Build one bar chart and one card showing a total, then save the file as a .pbix to OneDrive or a USB stick.
+
+**Done looks like:** a saved .pbix file with two visuals, plus your three sentences about the views. Show a mentor how clicking the chart changes the card.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the minimum screen resolution Microsoft states for Power BI Desktop?",
+            options: [
+              "1024 by 768",
+              "1280 by 800",
+              "1440 by 900",
+              "800 by 600",
+            ],
+            answer_index: 2,
+            explanation: "Microsoft says at least 1440 by 900 is required because some dialogs do not fit on smaller screens.",
+          },
+          {
+            prompt: "Why is the Microsoft Store version good for shared computers?",
+            options: [
+              "It runs on a Mac",
+              "It does not need administrator rights and updates automatically",
+              "It includes a free Pro licence",
+              "It works without Windows",
+            ],
+            answer_index: 1,
+            explanation: "The Store version installs without administrator rights and keeps itself up to date.",
+          },
+          {
+            prompt: "Do you need to sign in to build and save reports in Power BI Desktop?",
+            options: [
+              "Yes, with a Gmail account",
+              "Yes, with a paid licence",
+              "No, signing in is only needed to publish to the Power BI service",
+              "No, but you cannot save files",
+            ],
+            answer_index: 2,
+            explanation: "Desktop builds and saves .pbix files without signing in; publishing needs an account.",
+          },
+          {
+            prompt: "Which view shows tables as boxes with relationship lines between them?",
+            options: [
+              "Report view",
+              "Table view",
+              "Model view",
+              "Print preview",
+            ],
+            answer_index: 2,
+            explanation: "Model view displays the tables and their relationships.",
+          },
+          {
+            prompt: "Some dialogs are missing on screen. What setting should you check?",
+            options: [
+              "The keyboard language",
+              "Display scaling, which should be set to 100%",
+              "The Wi Fi connection",
+              "The printer settings",
+            ],
+            answer_index: 1,
+            explanation: "Scaling above 100% can hide dialogs that Power BI Desktop needs you to use.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "getting-data-into-power-bi": {
+      explanation_md: `## Why this matters
+
+Microsoft's Power BI Data Analyst certification lists preparing data as its first skill area, and in real jobs it takes much of the time. If the data comes in clean, with clear names and correct types, the model, measures and visuals that follow are simple. If it comes in messy, every later step fights you. The good news: you already know the tool, because Power BI uses the same Power Query you met in Excel.
+
+## Loading a file
+
+On the Home tab choose **Get data**, then the source:
+
+* **Excel workbook:** pick the file, and the **Navigator** window lists every sheet and table inside. Tick the ones you want. Excel tables (with names like \`Sales\`) load more reliably than plain sheets.
+* **Text/CSV:** for exports from mobile money systems, survey tools such as KoboToolbox or ODK, and accounting software.
+* **Folder:** combines many files with the same layout, such as one file per field officer.
+
+At the bottom of the Navigator you have two buttons. **Load** brings the data in as it is. **Transform Data** opens Power Query first. Choose Transform Data almost every time; a minute of checking now saves an hour later.
+
+## Shaping in Power Query
+
+The editor looks and works like the one in Excel. Each change is recorded in **Applied Steps**. The steps that matter most:
+
+* **Remove columns** you will not use. Smaller models are faster and easier to understand.
+* **Rename columns** in plain words: "Amount (GHS)" rather than "amt_ghs_v2". These names appear on your visuals.
+* **Set data types.** Every column needs the right type: Whole number, Decimal number, Date or Text. A column of numbers stored as text cannot be summed. For day first dates, use **Change Type, then Using Locale**, and choose English (Ghana) or English (United Kingdom).
+* **Trim and clean text** so "Tamale" and "Tamale " become one value.
+* **Filter out** blank rows, totals rows and test entries.
+* **Rename the query** itself, for example to \`Sales\`, because that becomes the table name in your model.
+
+When you are done, choose **Close and Apply**. The data loads into the model and you can see it in Table view.
+
+## Refreshing
+
+The .pbix file remembers where the data came from. When the source file changes, click **Refresh** on the Home tab and every step runs again. Keep source files in the same folder with the same names and layout. If you move a file, update the path in **Transform data, then Data source settings**.
+
+## Column quality and profile
+
+In Power Query, the **View** tab has **Column quality** and **Column distribution**. They show, for each column, how many values are valid, empty or errors, and how many are distinct. It is a fast health check before you load.
+
+## A worked example
+
+Sumaila receives a KoboToolbox export of a household survey from Nanton. He uses Get data, Text/CSV, then Transform Data. He removes metadata columns he does not need, renames "q3_hh_size" to "Household size", sets it to Whole number, changes the interview date using the English (Ghana) locale, trims community names and filters out three test interviews. Column quality shows two errors in Household size, where someone typed "five"; he notes them for the field team. Then Close and Apply.`,
+      practice_task_md: `**Goal:** load and shape a file in Power BI Desktop.
+
+You need a Windows computer with Power BI Desktop. Without one, do the same shaping steps on your practice data with helper columns in a spreadsheet, and list each step.
+
+1. Save your practice sales table as an Excel workbook with a named table, plus the price list on another sheet.
+2. In Power BI Desktop, use Get data, Excel workbook, tick both tables and choose Transform Data.
+3. Rename columns in plain words, set correct types, trim text, and remove any column you do not need.
+4. Turn on Column quality and fix or note any errors.
+5. Close and Apply, then change one value in the Excel file, save it and Refresh in Power BI.
+
+**Done looks like:** a .pbix file with two clean, well named tables and a list of your Applied Steps. Explain to a mentor why you chose each step.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "In the Navigator window, why choose Transform Data instead of Load?",
+            options: [
+              "Load deletes the source file",
+              "Transform Data opens Power Query so you can check and clean the data first",
+              "Transform Data makes the file smaller",
+              "Load only works for CSV files",
+            ],
+            answer_index: 1,
+            explanation: "Transform Data lets you shape and check the data before it enters the model.",
+          },
+          {
+            prompt: "Why is setting the correct data type important?",
+            options: [
+              "It changes the colour of the column",
+              "A column of numbers stored as text cannot be summed",
+              "Power BI deletes columns without types",
+              "It is only needed for dates",
+            ],
+            answer_index: 1,
+            explanation: "Calculations need numeric types, so numbers stored as text will not total.",
+          },
+          {
+            prompt: "Why rename columns in plain words such as \"Amount (GHS)\"?",
+            options: [
+              "Power BI requires short names",
+              "Column names appear on visuals, so readers need to understand them",
+              "Renaming speeds up refresh",
+              "It is required before saving",
+            ],
+            answer_index: 1,
+            explanation: "Clear names make the model and the visuals easier for everyone to read.",
+          },
+          {
+            prompt: "The source Excel file has been updated. What do you do in Power BI Desktop?",
+            options: [
+              "Delete the table and load it again",
+              "Click Refresh so the applied steps run on the new data",
+              "Retype the new values in Table view",
+              "Nothing, it updates every second",
+            ],
+            answer_index: 1,
+            explanation: "Refresh reloads the source and replays every recorded step.",
+          },
+          {
+            prompt: "Which Power Query feature gives a quick health check of valid, empty and error values?",
+            options: [
+              "Close and Apply",
+              "Data source settings",
+              "Column quality",
+              "Rename query",
+            ],
+            answer_index: 2,
+            explanation: "Column quality shows the share of valid, empty and error values in each column.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "relationships-and-models": {
+      explanation_md: `## Why this matters
+
+In Excel, you used XLOOKUP to bring a product name into every sales row. In Power BI you rarely do that. Instead you keep tables separate and connect them with **relationships**. That connected set of tables is called a **model**. A good model makes reports fast, measures simple and filters work everywhere. Modelling is the second skill area of Microsoft's Power BI Data Analyst certification, and interviewers often ask about it.
+
+## Facts and dimensions
+
+Most business data splits into two kinds of tables:
+
+* **Fact tables** record events: each sale, each payment, each training attendance. They have many rows, with numbers (amounts, quantities) and codes that point to other tables.
+* **Dimension tables** describe things: products, branches, staff, dates. They have one row per thing and the details you filter and group by, such as Product name, Category, Region.
+
+For a shop network:
+
+* \`Sales\` (fact): Date, Branch code, Product code, Quantity, Amount
+* \`Products\` (dimension): Product code, Product name, Category
+* \`Branches\` (dimension): Branch code, Branch name, Region
+* \`Calendar\` (dimension): Date, Month, Year
+
+## The star schema
+
+Put the fact table in the middle and connect each dimension to it. Drawn out, it looks like a star, which is why it is called a **star schema**. Microsoft's own guidance recommends this shape for Power BI.
+
+## Creating relationships
+
+Open **Model view**. Power BI may detect some relationships automatically. To create one yourself, drag the key column from the dimension (Product code in Products) onto the matching column in the fact table (Product code in Sales). Check the line:
+
+* **Cardinality:** one to many. Each product appears **once** in Products and **many** times in Sales. The "1" end must be the dimension, so its key column must have no duplicates.
+* **Cross filter direction:** single, flowing from the dimension to the fact. This is the safe default.
+
+If Power BI refuses or makes a many to many relationship, your dimension key probably has duplicates or blanks. Go back to Power Query and fix them.
+
+## Why this works
+
+Once Products is related to Sales, put Category on a chart with a sales total, and Power BI filters Sales through the relationship. Add a slicer for Region from Branches, and every visual based on Sales responds. One filter, many tables, no lookups.
+
+## A date table
+
+Reports almost always group by month or year, so add a Calendar table with one row per date, covering every date in your data, and columns for Month and Year. You can build it in Excel and load it. Relate Calendar[Date] to Sales[Date], then right click Calendar and choose **Mark as date table**.
+
+## A worked example
+
+Issahaku builds a model for a farm input supplier. His first try loaded one huge flat sheet with product and branch details repeated on every row. He rebuilds it as a star: Sales in the middle, Products, Branches and Calendar around it, each joined one to many. The file is smaller, and when his manager asks for "fertiliser sales in the Upper East, by month", it is one slicer and one chart.`,
+      practice_task_md: `**Goal:** build a small star schema in Power BI Desktop.
+
+You need a Windows computer with Power BI Desktop. Without one, sketch the star on paper, listing each table's columns and marking every key, then build the same tables as sheets in a spreadsheet.
+
+1. Prepare four tables in Excel: Sales (at least 30 rows), Products, Branches and a Calendar with Date, Month and Year.
+2. Make sure each dimension key (Product code, Branch code, Date) has no duplicates or blanks.
+3. Load all four into Power BI Desktop and open Model view.
+4. Create one to many relationships from each dimension to Sales, with single cross filter direction.
+5. Mark Calendar as a date table.
+6. In Report view, build a chart of Amount by Category and a slicer for Region, and check the slicer filters the chart.
+
+**Done looks like:** a Model view screenshot showing a star with three relationships, and a working slicer. Explain to a mentor which tables are facts and which are dimensions.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which table is a fact table?",
+            options: [
+              "Products, with one row per product",
+              "Branches, with one row per branch",
+              "Sales, with one row per sale",
+              "Calendar, with one row per date",
+            ],
+            answer_index: 2,
+            explanation: "Fact tables record events such as individual sales.",
+          },
+          {
+            prompt: "What is a star schema?",
+            options: [
+              "A table with a star rating column",
+              "A fact table in the middle connected to dimension tables around it",
+              "One large flat table with every detail repeated",
+              "A chart type in Power BI",
+            ],
+            answer_index: 1,
+            explanation: "The star schema puts the fact table at the centre with dimensions around it.",
+          },
+          {
+            prompt: "In a one to many relationship between Products and Sales, which side is \"one\"?",
+            options: [
+              "Products, because each product appears once there",
+              "Sales, because it has more rows",
+              "Either side, it does not matter",
+              "Neither, Power BI decides at random",
+            ],
+            answer_index: 0,
+            explanation: "The dimension holds each key once, so it is the \"one\" side.",
+          },
+          {
+            prompt: "Power BI will not create a one to many relationship. What is a likely cause?",
+            options: [
+              "The fact table has too many rows",
+              "The dimension key column has duplicates or blanks",
+              "The file is not saved",
+              "The report has no visuals",
+            ],
+            answer_index: 1,
+            explanation: "The \"one\" side must have unique, non blank keys.",
+          },
+          {
+            prompt: "Why add a Calendar table?",
+            options: [
+              "Power BI cannot show dates without one",
+              "So reports can group and filter by month and year consistently across the model",
+              "To store public holidays only",
+              "To replace the Sales table",
+            ],
+            answer_index: 1,
+            explanation: "A date table with one row per date gives reliable grouping by month and year.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "first-dax-measures": {
+      explanation_md: `## Why this matters
+
+DAX (Data Analysis Expressions) is Power BI's formula language, and Power BI adverts and the Data Analyst certification expect you to know the basics. You do not need advanced DAX for a first job. You need a few clear measures, named well, that give the right answer whatever the user clicks.
+
+## What a measure is
+
+A **measure** is a formula that calculates a single answer, such as total sales, based on whatever is currently filtered. Put Total Sales on a card and it shows the grand total. Put it in a chart by branch and it shows each branch's total. Click "Wa" in a slicer and it shows Wa's total. The same formula gives the right answer in every place, because it is calculated at the moment it is shown, using the current filters. Those filters are called the **filter context**.
+
+## Writing your first measures
+
+Select your Sales table, choose **New measure** on the Home tab, and type in the formula bar:
+
+\`\`\`
+Total Sales = SUM(Sales[Amount])
+\`\`\`
+
+The name comes first, then \`=\`, then the formula. \`Sales[Amount]\` means the Amount column in the Sales table. A few more:
+
+\`\`\`
+Number of Sales = COUNTROWS(Sales)
+\`\`\`
+
+\`\`\`
+Average Sale = DIVIDE([Total Sales], [Number of Sales])
+\`\`\`
+
+Notice that the third measure reuses the first two by name in square brackets. Building small measures and combining them keeps things readable. \`DIVIDE\` is safer than the \`/\` sign because it returns a blank instead of an error when dividing by zero.
+
+\`\`\`
+Tamale Sales = CALCULATE([Total Sales], Branches[Branch name] = "Tamale")
+\`\`\`
+
+\`CALCULATE\` changes the filter context: here it always shows Tamale's total, whatever else is selected. It is the most important DAX function to learn next.
+
+After creating a measure, set its format on the **Measure tools** tab, such as a currency or whole number with a thousands separator.
+
+## Measures or calculated columns?
+
+DAX can also add a **calculated column**, which works out a value for every row and stores it, such as a Size label for each sale. Use calculated columns for values you want to filter or group by. Use **measures** for totals, averages and ratios. If you create a total as a column, it is stored on every row, makes the file bigger and is easy to add up wrongly.
+
+Power BI also sums a numeric column automatically when you drag it into a visual. That is fine for exploring, but writing explicit measures gives you clear names, one definition everyone uses, and the ability to reuse them in other measures.
+
+## A worked example
+
+Hawa's NGO report needs: total participants, women participants, and the share of women. She writes:
+
+\`\`\`
+Participants = COUNTROWS(Attendance)
+\`\`\`
+
+\`\`\`
+Women = CALCULATE([Participants], Attendance[Gender] = "Female")
+\`\`\`
+
+\`\`\`
+Women share = DIVIDE([Women], [Participants])
+\`\`\`
+
+She formats Women share as a percentage. On a page with a district slicer, all three update together. When the director asks "what is the share in Gushegu?", Hawa clicks Gushegu.`,
+      practice_task_md: `**Goal:** write and use your first measures.
+
+You need a Windows computer with Power BI Desktop and the model from the last lesson. Without one, write the measures on paper and calculate by hand what each would show for one branch of your practice data, using SUMIFS and COUNTIF in a spreadsheet to check.
+
+1. Create Total Sales, Number of Sales and Average Sale measures, using DIVIDE for the average.
+2. Create one CALCULATE measure for a single branch or category.
+3. Format each measure (currency or whole number).
+4. Add a card for each measure and a table of Total Sales by branch.
+5. Add a slicer for Region and check how each measure changes when you click.
+
+**Done looks like:** a report page with four measures on cards and a table, all responding to a slicer. Explain filter context to a mentor using your own page.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a DAX measure?",
+            options: [
+              "A column stored on every row",
+              "A formula that calculates an answer using the current filters",
+              "A type of chart",
+              "A Power Query step",
+            ],
+            answer_index: 1,
+            explanation: "Measures are calculated when shown, using the current filter context.",
+          },
+          {
+            prompt: "Which measure correctly totals the Amount column in the Sales table?",
+            options: [
+              "Total Sales = Sales + Amount",
+              "Total Sales = SUM(Sales[Amount])",
+              "Total Sales = SUM(Amount, Sales)",
+              "Total Sales = COUNTROWS(Amount)",
+            ],
+            answer_index: 1,
+            explanation: "SUM takes a column, written as Table[Column].",
+          },
+          {
+            prompt: "Why use DIVIDE instead of the / sign?",
+            options: [
+              "DIVIDE is faster to type",
+              "DIVIDE returns a blank instead of an error when dividing by zero",
+              "The / sign does not work in DAX",
+              "DIVIDE rounds the answer",
+            ],
+            answer_index: 1,
+            explanation: "DIVIDE handles division by zero safely.",
+          },
+          {
+            prompt: "What does CALCULATE do in Tamale Sales = CALCULATE([Total Sales], Branches[Branch name] = \"Tamale\")?",
+            options: [
+              "Deletes all branches except Tamale",
+              "Changes the filter context so the measure always shows Tamale's total",
+              "Creates a new table called Tamale",
+              "Sorts the branches",
+            ],
+            answer_index: 1,
+            explanation: "CALCULATE evaluates the measure with a changed filter, here Branch name equal to Tamale.",
+          },
+          {
+            prompt: "When should you use a measure rather than a calculated column?",
+            options: [
+              "For a label you want to group by",
+              "For totals, averages and ratios",
+              "For storing phone numbers",
+              "For renaming tables",
+            ],
+            answer_index: 1,
+            explanation: "Measures suit totals and ratios; calculated columns suit row values used for grouping or filtering.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
   },
 };
 
