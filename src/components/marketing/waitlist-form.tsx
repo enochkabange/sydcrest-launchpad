@@ -22,7 +22,7 @@ export function WaitlistForm({
   if (state.done) {
     return (
       <Alert tone="success">
-        <strong>Thanks, you are on the waitlist.</strong> We will email you when there is news. If
+        <strong>Thanks, you are on the waitlist.</strong> We will be in touch before the January cohort. If
         something cannot wait, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </Alert>
     );
