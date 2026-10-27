@@ -1168,6 +1168,522 @@ Issahaku manages the Tamale school's pages. On Thursday he sends the head teache
         pass_threshold: 80,
       },
     },
+    community: {
+      explanation_md: `Posts start conversations, but conversations make sales. A question about price in the comments, a message asking whether delivery reaches Savelugu, a review on a post: each one is a customer deciding whether to trust the business. For many small businesses in Ghana, the inbox is the shop counter. Whoever runs the page is standing behind it.
+
+## What this section covers
+
+The Digital Marketer track introduces community management: replying well, handling a complaint in public and building trust. This section goes further into the daily operating work of a hired page manager:
+
+* **The inbox.** Agreed reply times, saved replies, labels, passing orders and complaints to the right person, and keeping a simple log.
+* **Moderation.** Platform tools for hiding and filtering comments, removing spam, reporting impostor pages that copy the brand to scam followers, and writing house rules.
+* **Complaints and bad days.** Who may speak for the brand, a holding reply, when to pause scheduled posts and when to stop and call the client before saying anything.
+* **Live selling.** Running a live stream for a brand as a service: the run sheet, taking orders during the stream and following up every order afterwards.
+
+## You speak for someone else
+
+When you reply as the page, the customer hears the business, not you. That changes how you work:
+
+* **Use the brand voice,** not your own mood. Tired, irritated or joking replies all land on the client.
+* **Never promise what you cannot deliver.** Prices, delivery times, refunds and discounts must come from the client's rules, not your guess.
+* **Pass on what you cannot decide.** Know who handles orders, payments and complaints, and how to reach them quickly.
+* **Never argue from your personal account.** If someone attacks the business, do not jump in as yourself to defend it.
+
+## Daily routine
+
+A simple routine keeps a busy page under control:
+
+* **Morning.** Read all new comments and messages. Reply to questions you can answer. Hide or remove obvious spam. Pass orders and complaints on.
+* **Midday and evening.** Repeat, more quickly.
+* **End of day.** Note anything unresolved and anything unusual, such as several people asking about the same problem.
+
+The reply times you agree with the client at onboarding decide how often you check. A shop that sells mostly through Facebook messages may need checks every couple of hours during opening times.
+
+## Worked example
+
+Wumpini manages Mariama's fabric shop page. Each morning he opens Meta Business Suite and sees eleven new messages and twenty comments. He answers price and stock questions using the price list Mariama sends every Monday. Three people want to order; he labels those conversations "order" and forwards their details to Mariama's shop assistant on WhatsApp. One customer says the fabric faded; he replies politely, asks for a photo by private message and alerts Mariama. Two comments from a fake account offering "promo prices, pay by MoMo to this number" are hidden and reported. By ten o'clock the inbox is clear, and he notes the fading complaint in his log in case others report the same batch.
+
+## The goal
+
+When this section is done well, customers feel answered, scammers find no space, problems get to the right person and the client trusts you with their counter.`,
+      practice_task_md: `**Goal:** Write the daily community routine for a client.
+
+**Steps:**
+1. Use your practice client or a business you know.
+2. Write the agreed reply time for messages and comments during opening hours.
+3. List who handles orders, payments and complaints, and how you will reach each person.
+4. Write your morning, midday, evening and end of day checks in a few lines each.
+
+**Done looks like:** a one page community routine that a client could read and approve.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson call the inbox 'the shop counter'?",
+            options: [
+              "Because messages cost money to send",
+              "Because for many small businesses, customers decide whether to buy through these conversations",
+              "Because the inbox shows the shop's stock automatically",
+              "Because only staff can see it",
+            ],
+            answer_index: 1,
+            explanation: "Comments and messages are where customers ask questions and decide to trust the business.",
+          },
+          {
+            prompt: "A customer asks for a discount the client has never offered. What should you do?",
+            options: [
+              "Promise a small discount to keep them happy",
+              "Ignore the message",
+              "Pass the question to the person who decides, without promising anything",
+              "Reply from your personal account",
+            ],
+            answer_index: 2,
+            explanation: "Prices and discounts come from the client's rules, so pass on what you cannot decide.",
+          },
+          {
+            prompt: "What decides how often you check the inbox?",
+            options: [
+              "How many followers you have personally",
+              "The reply times agreed with the client at onboarding",
+              "The platform's default setting",
+              "Whenever you have free data",
+            ],
+            answer_index: 1,
+            explanation: "Agreed reply times set the checking routine.",
+          },
+          {
+            prompt: "In the worked example, why did Wumpini note the fading complaint in his log?",
+            options: [
+              "To use it in an advert",
+              "In case others reported the same batch",
+              "To delete it later",
+              "Because the platform asked him to",
+            ],
+            answer_index: 1,
+            explanation: "Logging unusual issues helps spot patterns, such as a faulty batch.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "inbox-and-messages": {
+      explanation_md: `A quick, accurate reply can turn "how much?" into a sale. A slow or wrong reply sends the customer to the next shop. When you manage a client's inbox, you need a system: tools that save time, labels that keep track, and clear routes for orders and complaints.
+
+## One place for messages
+
+Meta Business Suite brings Facebook Page messages, Instagram direct messages and comments into one inbox, on the web and in its mobile app. If the business uses WhatsApp Business connected to its Page, those chats can appear there too. TikTok and LinkedIn messages are handled in their own apps. Know where every kind of message arrives, so nothing waits unseen.
+
+## Tools that save time
+
+* **Saved replies.** Prepared answers for common questions: price list, delivery areas, opening hours, how to pay. You select one and adjust it before sending. Write them in the brand voice and ask the client to approve them.
+* **Instant reply.** An automatic first response to someone who messages for the first time, for example: "Thank you for contacting Hawa Shea. We reply between 8am and 6pm. Please tell us what you would like to order."
+* **Away message.** Sent automatically when nobody is available, so customers know when to expect a reply.
+* **Frequently asked questions and keyword replies.** Meta's tools can send set answers to common questions or messages containing chosen words. Keep them short and honest, and check them whenever prices change.
+* **Labels.** Tags you add to conversations, such as "new order", "paid", "delivered", "complaint" or "follow up". You can search the inbox by label later.
+
+On WhatsApp Business, the same ideas exist as quick replies, greeting messages, away messages and labels.
+
+## Agree the routes
+
+During onboarding, agree:
+
+* **Reply times.** For example, within two hours during opening times, by the next morning outside them.
+* **Orders.** Who confirms stock, price and delivery? How do you pass the order on? A forwarded WhatsApp message with the customer's name, item and location is often enough.
+* **Payments.** You should not collect money into your own MoMo. Payment details come only from the client's official number.
+* **Complaints.** Who decides refunds or replacements, and how fast must you tell them?
+
+## Keep a simple log
+
+A shared sheet with columns for date, platform, customer first name, type (question, order, complaint), action taken and status helps you and the client. It shows how many enquiries the page brings, which matters for the monthly review. Keep only what you need; you do not need phone numbers in the log if the conversation is already in the inbox.
+
+## Worked example
+
+Fuseini sets up Hawa's inbox. He writes six saved replies (price list, delivery areas, payment, how to use, wholesale, opening hours) and Hawa approves them. An instant reply tells new customers when to expect an answer. Labels mark each conversation as "order", "paid" or "complaint". When a customer in Navrongo orders two tubs, Fuseini labels it "order" and forwards the details to Hawa's sales line. When Hawa confirms payment, he changes the label to "paid". At month end, his log shows how many orders came from the page, which goes straight into the report.`,
+      practice_task_md: `**Goal:** Build an inbox kit for a client.
+
+**Steps:**
+1. Write five saved replies for your practice client: price list, delivery or location, payment method, opening hours and one product question. Use the brand voice.
+2. Write an instant reply and an away message.
+3. Choose four or five labels you would use.
+4. Create a simple log in Google Sheets with columns for date, platform, first name, type, action and status, and add three made up rows.
+5. If you have WhatsApp Business, set up one quick reply and one label to see how they work.
+
+**Done looks like:** saved replies, automatic messages, labels and a log template ready for a client.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a saved reply?",
+            options: [
+              "A message that deletes itself",
+              "A prepared answer to a common question that you select and adjust before sending",
+              "A paid advert in the inbox",
+              "A backup of the client's password",
+            ],
+            answer_index: 1,
+            explanation: "Saved replies speed up answers to common questions while letting you adjust each one.",
+          },
+          {
+            prompt: "When does an instant reply go out?",
+            options: [
+              "When someone messages the business for the first time",
+              "Only when the owner presses send",
+              "At midnight every day",
+              "When a post is scheduled",
+            ],
+            answer_index: 0,
+            explanation: "An instant reply is an automatic first response to a new message.",
+          },
+          {
+            prompt: "What are labels used for in the inbox?",
+            options: [
+              "Changing the page name",
+              "Tagging conversations, such as 'new order' or 'complaint', so you can track and search them",
+              "Hiding comments from everyone",
+              "Paying for boosts",
+            ],
+            answer_index: 1,
+            explanation: "Labels keep track of conversation types and status and can be searched later.",
+          },
+          {
+            prompt: "Where should customer payments go?",
+            options: [
+              "To the page manager's personal MoMo for safekeeping",
+              "To whoever replies first",
+              "Only to the client's official payment number",
+              "To any number the customer prefers",
+            ],
+            answer_index: 2,
+            explanation: "Payment details come only from the client's official number, never your own.",
+          },
+          {
+            prompt: "Why keep a simple inbox log?",
+            options: [
+              "To store every customer's phone number",
+              "To show how many enquiries and orders the page brings, which feeds the monthly review",
+              "Because the platform requires it",
+              "To share customers' messages publicly",
+            ],
+            answer_index: 1,
+            explanation: "The log shows the page's real results and only needs the details you actually use.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    moderation: {
+      explanation_md: `Busy business pages attract trouble: spam links, insults, fake giveaways and, most dangerous of all, impostors. An impostor copies the brand's name and photos, comments under real posts or messages followers, and asks for MoMo payments for goods that will never arrive. Customers who lose money often blame the real business. Moderation protects them and the brand.
+
+## Tools on Facebook and Instagram
+
+Meta gives Page managers several moderation tools. Names and menus shift, but the ideas stay:
+
+* **Hide a comment.** The comment disappears from everyone except the person who wrote it and their friends. Useful for spam and scams, because the scammer does not realise and does not repost elsewhere.
+* **Delete a comment.** Removes it completely. Use for clearly harmful content.
+* **Ban or block a person.** Stops a person or account from commenting or messaging the Page.
+* **Profanity filter.** Hides comments with commonly reported offensive words.
+* **Blocked keywords.** You add your own list of words, phrases or emojis, and comments containing them are hidden automatically. Add words scammers use, such as "promo agent" or a known scam phone number. These filters apply to comments on the Page's own posts, including its ads.
+* **Report.** Sends the comment or account to the platform for review against its rules.
+
+TikTok and Instagram have similar comment filters and keyword lists in their settings.
+
+## Hide, delete or leave?
+
+* **Spam and scam comments:** hide or delete, and report the account.
+* **Insults, hate and threats:** delete, report, and ban if repeated.
+* **Genuine complaints, even angry ones:** leave them up and respond. Deleting honest criticism looks like hiding something and often makes people angrier.
+
+## Impostor pages
+
+When you find a page or profile pretending to be the business:
+
+* **Collect evidence.** Take screenshots and copy the link.
+* **Report it** through the platform's report option on that page, choosing the option for pretending to be a business.
+* **Use the impostor form if needed.** Meta has a form for reporting an account pretending to be your business. It asks for identity documents, so the owner should file it, not you.
+* **Warn followers.** Pin a short post: "Our only Facebook page is this one, and our only payment number is 024 XXX XXXX. We never ask for payment from other accounts. Report anyone who does."
+* **Report crime.** If customers lost money, the owner can report to the Cyber Security Authority by calling or texting 292, or the police.
+
+Note that fan pages and opinion pages about a business are generally allowed; only accounts falsely claiming to be the business are impostors.
+
+## House rules
+
+A short pinned post or group description sets expectations: be respectful, no hate or threats, no selling in comments, no sharing other people's personal details. When you remove something, you can point to the rules.
+
+## Worked example
+
+Amina's catering page posts a Christmas menu. Within an hour, an account called "Amina Catering Promo" comments: "Order at half price, pay MoMo to 05X XXX XXXX." Her manager Sumaila hides the comment, reports the account as impersonation and adds that phone number to the blocked keywords. He tells Amina, who files Meta's impostor form, and he pins a warning post with the business's real number. A customer later writes that they almost paid the fake account; Sumaila thanks them publicly for checking.`,
+      practice_task_md: `**Goal:** Prepare a moderation kit for a client page.
+
+**Steps:**
+1. On a practice Page you own, find the moderation settings. Turn on the profanity filter and add five blocked keywords that scammers might use.
+2. Write a three line decision guide: what you hide, what you delete and ban, and what you leave up and answer.
+3. Write a pinned impostor warning post for your practice client, with placeholders for the real page name and payment number.
+4. Write five short house rules for the page or group.
+
+**Done looks like:** working filters on a practice Page, plus a decision guide, a warning post and house rules.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What happens when you hide a comment on a Facebook Page?",
+            options: [
+              "It is deleted for everyone, including the writer",
+              "It disappears from everyone except the writer and their friends",
+              "It is sent to the police",
+              "It becomes a pinned post",
+            ],
+            answer_index: 1,
+            explanation: "Hidden comments stay visible to the writer and their friends, but not to others.",
+          },
+          {
+            prompt: "How should you treat a genuine but angry complaint in the comments?",
+            options: [
+              "Delete it quickly",
+              "Ban the customer",
+              "Leave it up and respond",
+              "Hide it with a keyword filter",
+            ],
+            answer_index: 2,
+            explanation: "Deleting honest criticism looks like hiding something and often makes things worse.",
+          },
+          {
+            prompt: "Why should the business owner, not the page manager, file Meta's impostor report form?",
+            options: [
+              "Because the form asks for identity documents",
+              "Because managers are not allowed to see impostor pages",
+              "Because it costs money",
+              "Because it must be filed in Accra",
+            ],
+            answer_index: 0,
+            explanation: "The impostor form asks for identity documents, so the owner should file it.",
+          },
+          {
+            prompt: "What do blocked keywords do on a Page?",
+            options: [
+              "Stop the Page from posting those words",
+              "Automatically hide comments containing words you choose, on the Page's own posts",
+              "Delete the accounts of people who use them",
+              "Block those words across all of Facebook",
+            ],
+            answer_index: 1,
+            explanation: "Blocked keywords hide matching comments on content the Page created, including its ads.",
+          },
+          {
+            prompt: "Which account is an impostor?",
+            options: [
+              "A fan page that praises the business",
+              "An opinion page reviewing local food",
+              "An account using the business name and photos to ask for MoMo payments",
+              "A customer sharing a photo of their order",
+            ],
+            answer_index: 2,
+            explanation: "Impostors falsely claim to be the business; fan and opinion pages generally are not.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "complaints-and-crises": {
+      explanation_md: `Every business has bad days online. A customer posts that their order never arrived. A staff member is filmed being rude. A post with a wrong price spreads. Sometimes the problem is small and the reply decides everything; sometimes it is serious and the wrong reply makes it far worse. As a hired page manager, your job is to know which is which and to act in the right order.
+
+The Digital Marketer track covers how to reply to an ordinary complaint: acknowledge, take it private, fix it and follow up. This lesson is about the operating side: how bad it is, who decides, and what you do in the first hour.
+
+## Three levels
+
+Agree these levels with the client at onboarding, so nobody argues in the moment:
+
+* **Level 1: an ordinary complaint.** A late delivery, a wrong size, a rude reply. You respond using the agreed approach and pass it to the person who fixes it.
+* **Level 2: a growing problem.** Several people complain about the same thing, a post is being shared widely, or a local influencer or journalist picks it up. You stop and alert the client before saying more than a short holding reply.
+* **Level 3: serious.** Safety, health, a legal threat, an accusation against a staff member, a death or injury, or anything involving the police. You say nothing beyond what the client approves, and the client may need advice from a lawyer or senior person.
+
+## Who speaks for the brand
+
+Write down who can approve public statements at each level. At level 1, it may be you, using approved replies. At levels 2 and 3, it should be the owner or a named senior person. Have a backup contact in case the owner is travelling.
+
+## The first hour checklist
+
+* **Screenshot everything.** Posts and comments can be deleted later.
+* **Pause scheduled posts.** A cheerful promotion going out during an angry storm looks careless. Check the scheduler.
+* **Post a holding reply if agreed.** Short, calm and true: "We have seen this and we are looking into it now. We will update you here by 3pm." Then keep that promise.
+* **Alert the client** by call, not just a message.
+* **Do not argue, delete genuine criticism or reply from your personal account.**
+* **Collect the facts.** What happened, when, to whom, and what is the business doing about it?
+
+## After the storm
+
+Once the client agrees what to say, post one clear update: what happened, what the business is doing, and how affected customers can get help. Do not blame the customer, and do not make promises the business cannot keep. Afterwards, write a short note with the client: what happened, what worked, what you will change. Add any new rule to the style guide.
+
+## When the mistake is yours
+
+If you post a wrong price or the wrong client's post, tell the client immediately, correct it, and, if customers saw it, post an honest correction. Owning a mistake quickly protects your reputation more than hiding it.
+
+## Worked example
+
+A customer posts on the Wa pharmacy's page that a medicine she bought was expired, with a photo. Comments pile up. Abdul-Rahman recognises a level 3 issue: health. He screenshots the post, pauses that week's promotion, posts the agreed holding reply and calls the pharmacist. The pharmacist checks stock, contacts the customer privately and later approves a statement explaining the steps taken. Abdul-Rahman posts it and answers follow up questions only with approved wording.`,
+      practice_task_md: `**Goal:** Write a simple crisis plan for a client.
+
+**Steps:**
+1. For your practice client, write one example situation for each of the three levels.
+2. Next to each level, write who approves public replies and how you contact them, including a backup person.
+3. Write a holding reply in the brand voice.
+4. Write your first hour checklist in your own words and save it where you can find it quickly on any device.
+
+**Done looks like:** a one page crisis plan with three levels, contacts, a holding reply and a checklist.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which situation is a level 3 issue in this lesson?",
+            options: [
+              "A customer says delivery was a day late",
+              "A customer says a medicine bought from the business was expired",
+              "Someone asks for the price list",
+              "A follower dislikes a post's colours",
+            ],
+            answer_index: 1,
+            explanation: "Health and safety issues are serious and need the client's approval for every word.",
+          },
+          {
+            prompt: "Why should you pause scheduled posts during a crisis?",
+            options: [
+              "Scheduled posts are deleted automatically otherwise",
+              "A cheerful promotion during an angry storm looks careless",
+              "Platforms charge extra during a crisis",
+              "To make the page private",
+            ],
+            answer_index: 1,
+            explanation: "Posting promotions in the middle of a crisis makes the business look like it does not care.",
+          },
+          {
+            prompt: "What makes a good holding reply?",
+            options: [
+              "A long explanation blaming the customer",
+              "Short, calm and true, with a time for the next update that you keep",
+              "A joke to lighten the mood",
+              "A promise of a full refund to everyone",
+            ],
+            answer_index: 1,
+            explanation: "A holding reply acknowledges the issue without guessing, and promises an update you can keep.",
+          },
+          {
+            prompt: "Why take screenshots in the first hour?",
+            options: [
+              "To post them on your personal page",
+              "Because posts and comments can be deleted later",
+              "To report the customer to the police",
+              "Because the platform requires it",
+            ],
+            answer_index: 1,
+            explanation: "Screenshots keep a record even if posts are deleted.",
+          },
+          {
+            prompt: "You post the wrong price on a client's page. What should you do?",
+            options: [
+              "Delete it quietly and say nothing",
+              "Blame the client",
+              "Tell the client immediately, correct it, and post an honest correction if customers saw it",
+              "Leave it and hope nobody noticed",
+            ],
+            answer_index: 2,
+            explanation: "Owning a mistake quickly protects your reputation more than hiding it.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "live-selling": {
+      explanation_md: `Some shops and brands in Ghana sell through live streams on Facebook and TikTok. A host shows products one by one, answers questions as they come in and takes orders in real time. Some companies now advertise for live selling hosts or officers. For a page manager, running a live session is a service you can offer, but it only works with careful planning and, above all, careful follow up.
+
+This lesson covers running the live session for a client. For camera, sound and framing skills, see the Video and Content Creation track.
+
+## Before you go live
+
+* **Check eligibility.** Facebook Pages can go live from the app or from a computer. TikTok LIVE requires the account holder to be at least eighteen, and other requirements, such as followers, vary by region and change, so check the account in the app well before the date.
+* **Announce it.** Post a day or two ahead and again an hour before: date, time, what will be shown and how to order.
+* **Prepare a run sheet.** A simple list of products in order, with price, sizes or colours, stock count and one thing to say about each.
+* **Set the payment and order rules.** Orders are confirmed only through the client's official number or inbox. Payment goes only to the client's official MoMo or account. Say this on screen and in the comments.
+* **Test.** Check the connection, light and sound with a short private test if the platform allows, or a test call. A charged device and stable data or Wi Fi are essential.
+
+## Roles during the stream
+
+Live selling works best with two people:
+
+* **The host** presents products and talks to viewers.
+* **The moderator** reads comments, answers simple questions in writing, hides spam and scam comments, and records every order in a sheet: name, product, size, quantity and how to contact them.
+
+If you only have one person, slow down and read orders aloud so you can note them.
+
+## During the stream
+
+* Greet people by name as they join.
+* Show each product clearly, say the price and stock left, and repeat how to order.
+* Pin a comment with the ordering and payment rules.
+* Watch for fake accounts commenting payment numbers, and hide them fast.
+* Do not promise stock you do not have. Check the run sheet.
+
+## After the stream
+
+The follow up is where sales are won or lost:
+
+* Message every person who ordered within a few hours, confirming item, price and delivery.
+* Update stock and mark orders as paid, delivered or cancelled in the sheet.
+* Thank viewers in a post and share a short clip or the replay if the platform allows.
+* Write down what sold, what questions came up and what to change next time.
+
+## Worked example
+
+Wumpini hosts a Friday evening Facebook live for Mariama's fabric shop, with her assistant as moderator. The run sheet lists twelve fabrics. During forty minutes, the moderator records twenty three orders, hides two fake payment comments and pins the shop's real number. By the next morning, every customer has a confirmation message, and Mariama has a clear list of what to deliver.`,
+      practice_task_md: `**Goal:** Plan a live selling session.
+
+**Steps:**
+1. Choose a real or practice business and five products.
+2. Write a run sheet with each product's price, options, stock and one talking point.
+3. Write the announcement post and the pinned comment with ordering and payment rules.
+4. Create an order sheet in Google Sheets with columns for name, product, option, quantity, contact route and status.
+5. If you can, practise a ten minute session with a friend as moderator on a practice account, then fill in the sheet.
+
+**Done looks like:** a run sheet, announcement, pinned comment and order sheet, plus notes from a practice run if you did one.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does the moderator do during a live selling stream?",
+            options: [
+              "Presents every product on camera",
+              "Reads comments, answers simple questions, hides scams and records orders",
+              "Edits the video afterwards",
+              "Collects payments into their own MoMo",
+            ],
+            answer_index: 1,
+            explanation: "The moderator manages comments and records orders while the host presents.",
+          },
+          {
+            prompt: "What is the age requirement for hosting a TikTok LIVE mentioned in the lesson?",
+            options: ["At least thirteen", "At least sixteen", "At least eighteen", "There is no age requirement"],
+            answer_index: 2,
+            explanation: "TikTok LIVE requires the account holder to be at least eighteen; other requirements vary by region.",
+          },
+          {
+            prompt: "Why pin a comment with the ordering and payment rules?",
+            options: [
+              "So viewers know orders and payments go only through the client's official channels",
+              "To make the stream longer",
+              "Because pinned comments increase reach",
+              "To hide other comments",
+            ],
+            answer_index: 0,
+            explanation: "Clear rules protect customers from fake accounts posting payment numbers.",
+          },
+          {
+            prompt: "According to the lesson, where are sales won or lost?",
+            options: [
+              "In the announcement post",
+              "In the follow up after the stream",
+              "In the choice of background music",
+              "In the number of likes",
+            ],
+            answer_index: 1,
+            explanation: "Confirming every order quickly after the stream turns interest into sales.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
