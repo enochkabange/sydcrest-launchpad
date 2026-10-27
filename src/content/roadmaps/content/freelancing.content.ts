@@ -477,6 +477,501 @@ Not long. Getting ready is not an excuse to wait months until everything is perf
         pass_threshold: 75,
       },
     },
+    portfolio: {
+      explanation_md: `A portfolio is a small collection of your best work that proves you can deliver the service you offer. For a freelancer it often matters more than a CV. Many clients, especially online, look at samples first and only read your message if the samples are good.
+
+## How many pieces?
+
+Three to five strong pieces are enough to start. A few excellent samples that match your service beat twenty mixed ones. If you offer menu and flyer design for restaurants, show menus and flyers, not your old school drawings.
+
+## Where samples come from
+
+You do not need paid clients to build a first portfolio. Honest ways to get samples:
+
+* **Practice briefs.** Invent a realistic job, such as "a price list for a provisions shop in Wa", and complete it to a professional standard. Label it as a practice project.
+* **Redesigns.** Take something that exists, such as a faded church notice, and show how you would improve it. Present it as a concept, not as work the church paid for, and do not publish it in a way that looks official.
+* **Small real jobs.** Do a real job for a local business or community group, even for a small fee. Ask permission before you show it.
+* **Course projects.** Strong projects from your SydCrest track can count, especially if you add your own improvements.
+
+Never include work you did not do, and never show a client's private information. Blur or replace names, phone numbers, prices and figures that belong to a real client.
+
+## Present each piece as a short story
+
+A client wants to know you understand problems, not only tools. For each sample, write three short parts:
+
+* **The problem.** What did the client need? "A restaurant's menu was handwritten and hard to read on WhatsApp."
+* **What you did.** "I designed a one page menu with clear prices and sections, sized to share as an image."
+* **The result.** Describe what was delivered and any feedback you really received. Only claim results that truly happened.
+
+## Where to put it
+
+Choose a place that is free and easy to open on any device:
+
+* A simple free website builder, which gives you one link to share.
+* A shared cloud folder with clearly named files, set so anyone with the link can view.
+* For developers, a code hosting site that can publish a live page.
+* The catalogue on your messaging app's business profile, for local clients.
+
+Keep file sizes small so a client on a data bundle can open your work quickly. Test the link from a friend's device to make sure it opens without asking for a login.
+
+## A small example
+
+Abdul-Rahman offers simple websites for small businesses. He has no paying clients yet. He builds a practice site for an imaginary shea butter cooperative in Damongo, a redesign concept for his old school's events page, and a real one page site for his cousin's tailoring shop, done with permission. Each has a live link and three lines: problem, what he did, result. When a hotel owner asks for proof, he sends one link.`,
+      practice_task_md: `**Goal:** Build a starter portfolio with three pieces.
+
+**Steps:**
+1. Choose three pieces that match your service sentence. If you have fewer than three, write one practice brief and complete it.
+2. For each piece, write the problem, what you did and the result in three short lines. Label practice work clearly.
+3. Remove any real client's private details.
+4. Put the pieces in one free place: a simple site, a shared folder or your business profile catalogue.
+5. Open the link on someone else's device to check it loads without a login.
+
+**Done looks like:** One shareable link or catalogue with three labelled samples, each with a three line story. Send the link to a mentor or study partner for feedback.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How many pieces does the lesson suggest for a starter portfolio?",
+            options: ["One", "Three to five strong pieces", "At least twenty", "Every piece of work you have ever done"],
+            answer_index: 1,
+            explanation: "The lesson says three to five strong, matching samples are enough to start.",
+          },
+          {
+            prompt: "How should you present a redesign of something that already exists, such as a church notice?",
+            options: [
+              "As work the church paid you for",
+              "As a concept showing how you would improve it",
+              "Without any explanation",
+              "As your employer's official work",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to present a redesign as a concept, not as paid work.",
+          },
+          {
+            prompt: "What are the three parts of each sample's short story?",
+            options: [
+              "The price, the deadline and the tool used",
+              "The problem, what you did and the result",
+              "Your name, your age and your school",
+              "The client's phone number, address and budget",
+            ],
+            answer_index: 1,
+            explanation: "Each sample should explain the problem, what you did and the real result.",
+          },
+          {
+            prompt: "What should you do with a real client's private information in your portfolio?",
+            options: [
+              "Show it to prove the work is real",
+              "Blur or replace names, numbers and figures that belong to the client",
+              "Only show it to foreign clients",
+              "Put it in the file name",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says never to show a client's private information.",
+          },
+          {
+            prompt: "Why test your portfolio link on another device?",
+            options: [
+              "To make sure it opens without asking for a login",
+              "To increase the number of views",
+              "Because links only work on computers",
+              "To change the file sizes automatically",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says to check the link opens for someone else without a login.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "profiles-and-presence": {
+      explanation_md: `When a possible client hears your name, they will look you up. What they find in the first few seconds decides whether they contact you. A clear, honest profile answers three questions at once: what do you do, who do you do it for, and how can they reach you?
+
+## Be found where your clients look
+
+Different clients look in different places:
+
+* **Local businesses and groups** often find people through WhatsApp, Facebook and word of mouth. A messaging business profile with a catalogue, and a simple page on a social network, can be enough.
+* **Clients abroad** often look at professional networking profiles, marketplace profiles and portfolio links.
+* **A business listing on a map service** helps if you have a fixed place where clients can visit, such as a print and design shop.
+
+You do not need to be everywhere. Choose one or two places your niche really uses and do them well.
+
+## What a strong profile contains
+
+* **Your real name and a clear, recent photo of you.** Not a logo, a cartoon or someone else's photo. Clients want to know they are dealing with a real person.
+* **A headline that states your service.** For example, "Menu and flyer design for restaurants in Tamale" is better than "Creative. Dreamer. Hustler."
+* **A short description.** Two or three sentences: who you help, what result you give, and how you work. Write it in plain English and check spelling.
+* **Proof.** A link to your portfolio or a few samples in your catalogue.
+* **Contact details and working hours.** Say when you reply, for example "Monday to Saturday, 8am to 6pm".
+
+## Keep it honest
+
+Use only your own name, work and photo. Do not claim degrees, certificates or clients you do not have. Do not create profiles in someone else's name or use another person's account, even if they offer it. Marketplaces close accounts for this, and in a close community people will find out.
+
+Keep personal posts and business posts apart where you can. A client checking your page should not land on arguments or jokes you would not want them to see.
+
+## Keep it current
+
+Update your profile when you finish a strong new piece of work, change your service or change your hours. A profile that still shows last year's samples suggests you are not active.
+
+## A small example
+
+Wumpini offers social media management for salons and boutiques in Tamale. Her business profile on her messaging app says: "Social media for salons and boutiques. I plan, design and post your content each week. Replies within the same day, Monday to Saturday." Her catalogue shows three sample post designs and a sample monthly plan, labelled as samples. Her social page has the same name and photo, so clients who search for her find a matching, professional picture everywhere.`,
+      practice_task_md: `**Goal:** Set up or improve one profile that your niche actually uses.
+
+**Steps:**
+1. Decide where your clients most likely look: a messaging business profile, a social page, a professional networking site or a marketplace.
+2. Add a clear, recent photo of yourself and your real name.
+3. Write a headline that states your service and a two or three sentence description.
+4. Add your portfolio link or three samples, and your contact hours.
+5. Ask someone outside your field to look for ten seconds and tell you what you do. If they cannot, simplify the headline.
+
+**Done looks like:** One complete, honest profile with a photo, headline, description, samples and hours, plus a note of the ten second test result.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What three questions should a clear profile answer?",
+            options: [
+              "Your age, your school and your hometown",
+              "What you do, who you do it for and how to reach you",
+              "Your price, your bank and your password",
+              "Your favourite tools, apps and music",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says a profile should quickly show your service, your clients and your contact details.",
+          },
+          {
+            prompt: "Which headline follows the lesson's advice?",
+            options: [
+              "Creative. Dreamer. Hustler.",
+              "Menu and flyer design for restaurants in Tamale",
+              "Available for anything",
+              "Best designer in Ghana",
+            ],
+            answer_index: 1,
+            explanation: "A good headline states your service and who it is for.",
+          },
+          {
+            prompt: "Someone offers you their older marketplace account to save time. What does the lesson advise?",
+            options: [
+              "Accept it, because the account already has reviews",
+              "Accept it but change the photo",
+              "Do not use another person's account; use only your own name and work",
+              "Buy it if the price is fair",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says never to use another person's account, as marketplaces close accounts for this.",
+          },
+          {
+            prompt: "How many places should a beginner set up profiles on?",
+            options: [
+              "Every social network and marketplace that exists",
+              "One or two places your niche really uses, done well",
+              "None; profiles are not needed",
+              "Only places for clients abroad",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says you do not need to be everywhere; pick the places your clients use.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "client-communication": {
+      explanation_md: `Clients judge you by your messages long before they see your work, especially clients abroad who only know you through text. Clear, polite, prompt writing builds trust. Careless or slow writing makes clients nervous, even if your skill is excellent.
+
+## Five habits of professional client messages
+
+* **Greet properly and use their name.** "Good morning, Madam Hawa" or "Hello Daniel" is better than starting with "pls" or no greeting.
+* **Answer the question they asked.** If a client asks for a price and a delivery date, give both in your first reply. Do not make them ask twice.
+* **Be short and clear.** Use short sentences. Put one topic in each paragraph. Avoid slang, heavy abbreviations and long voice notes for important details.
+* **Confirm important details in writing.** After a call or voice note, send a short written summary: what will be done, by when and for how much. This protects both of you later.
+* **Reply within an agreed time.** Tell clients when you usually reply, for example within the same working day. If you need more time, say so: "Thank you, I have received the files. I will send the first draft by Thursday evening."
+
+## Tone with different clients
+
+Local clients may prefer a warmer, more personal tone, voice notes and phone calls. Clients abroad often prefer written messages, email for formal matters, and a more direct style. In both cases, stay respectful and calm. Never argue in anger by message. If a conversation becomes tense, pause, then reply politely with facts.
+
+Pay attention to time zones with clients abroad. Write your working hours in their time as well as yours when it helps, and do not expect instant replies in the middle of their night.
+
+## A message worth copying
+
+Here is a reply to a new enquiry:
+
+> Good afternoon Mr Fuseini,
+>
+> Thank you for contacting me about a logo for your pharmacy. To give you an accurate price, could you tell me:
+> 1. The pharmacy's full name as it should appear
+> 2. Any colours you would like or want to avoid
+> 3. When you need the final logo
+>
+> Once I have these, I will send a price and timeline today.
+>
+> Kind regards,
+> Mariama
+
+It greets, thanks, asks only what is needed, and promises a clear next step.
+
+## When things go wrong
+
+If you will miss a deadline, tell the client before the deadline, not after. Explain briefly, apologise once, and give a new date you can keep. Clients forgive delays they hear about early far more readily than silence.
+
+## Check before you send
+
+Read every important message once before sending. Check names, dates, prices and attachments. A wrong price in writing can be hard to take back, and a misspelled client name looks careless.`,
+      practice_task_md: `**Goal:** Practise three common client messages.
+
+**Steps:**
+1. Write a reply to a new enquiry for your service that greets, thanks and asks two or three useful questions.
+2. Write a short written summary you would send after a phone call agreeing a job: what, by when and for how much.
+3. Write a message telling a client, before the deadline, that you need one more day, with a reason and a new date.
+4. Read each message aloud. Remove slang and shorten long sentences.
+
+**Done looks like:** Three short, polite messages saved in a note, ready to adapt for real clients. Ask a mentor or study partner to review them.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "A client asks for your price and delivery date. What should your first reply include?",
+            options: [
+              "Only a greeting, so they ask again",
+              "Both the price and the delivery date, or the questions you need answered to give them",
+              "A long voice note about your experience",
+              "Your full CV",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to answer the question asked so the client does not have to ask twice.",
+          },
+          {
+            prompt: "Why should you send a written summary after a call or voice note?",
+            options: [
+              "To make the conversation longer",
+              "To record what was agreed so both sides are protected later",
+              "Because calls are not allowed with clients",
+              "To ask for a higher price",
+            ],
+            answer_index: 1,
+            explanation: "A written summary of what, when and how much protects both you and the client.",
+          },
+          {
+            prompt: "You realise you will miss a deadline. When should you tell the client?",
+            options: [
+              "After the deadline has passed",
+              "Only if the client asks",
+              "Before the deadline, with a brief reason and a new date you can keep",
+              "Never; just deliver when you can",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says clients forgive delays they hear about early far more than silence.",
+          },
+          {
+            prompt: "What does the lesson say about writing to clients in other time zones?",
+            options: [
+              "Expect instant replies at any hour",
+              "Avoid email completely",
+              "Be aware of their working hours and do not expect replies in the middle of their night",
+              "Only write to them at weekends",
+            ],
+            answer_index: 2,
+            explanation: "The lesson advises paying attention to time zones and stating working hours clearly.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "finding-clients": {
+      explanation_md: `Finding clients is the part of freelancing that worries most beginners. The skill is learnable, and it gets easier with every client you serve well. Clients usually come from three places, and it makes sense to start with the closest.
+
+## Three sources of clients
+
+* **People who already know you.** Family, friends, former teachers, church members, your old school, shops you buy from. They already trust you, which is the hardest thing to earn.
+* **Businesses and organisations you approach.** Shops, schools, NGOs, clinics, hotels and small firms that could use your service. You contact them directly with a specific idea.
+* **Online marketplaces and job boards.** Websites where clients, often abroad, post projects and freelancers apply. They offer reach but also heavy competition and their own rules.
+
+Most freelancers use a mix. Local and personal connections often bring the first jobs and the first reviews. Online platforms can add more clients later, once you have samples and some experience.
+
+## Why start close to home
+
+A first client nearby can meet you, see your work and pay through familiar methods such as mobile money. You can learn to scope, price and deliver with lower risk. You also get a real sample and a reference, which make online applications far stronger.
+
+Starting close to home does not mean you must stay local. It means your first wins come where trust already exists.
+
+## Think in a simple pipeline
+
+A pipeline is the path from "possible client" to "paying client":
+
+1. **Contact.** You reach out or they hear about you.
+2. **Conversation.** You learn what they need.
+3. **Proposal.** You offer a solution, price and timeline.
+4. **Agreement.** They accept and you agree terms.
+5. **Delivery and payment.** You do the work and get paid.
+6. **Follow up.** You ask for feedback, a review and referrals.
+
+Not everyone moves through all steps. Many conversations do not become jobs, and that is normal. What matters is keeping a steady number of contacts at the start of the pipeline, so you are not starting from zero when a project ends.
+
+## Keep a simple list
+
+Use a spreadsheet or notebook with columns for name, business, how you know them, date contacted, what was said and next step. It stops you forgetting promising leads and stops you messaging the same person five times.
+
+## A small example
+
+Amina offers typing and document formatting. In her first month she lists twenty people: five she knows personally, ten local organisations near her in Bolgatanga and five postings online. She contacts them over two weeks. Two personal contacts give her small jobs, one school asks her to format exam papers next term, and the online postings bring no reply yet. She now has samples, a reference from the school and a clearer idea of where her clients are.
+
+## What this section covers
+
+The next lessons go deeper into finding clients close to home, using marketplaces and remote boards, and outreach, referrals and repeat work.`,
+      practice_task_md: `**Goal:** Start your client list.
+
+**Steps:**
+1. Create a spreadsheet or notebook page with columns: name, business or group, how you know them, date contacted, notes, next step.
+2. Add at least five people you know personally who might need your service or know someone who does.
+3. Add at least five local businesses or organisations that could use your service.
+4. Add two or three online places where your kind of work is posted.
+5. Mark the three most promising contacts to reach first.
+
+**Done looks like:** A list of at least twelve possible clients across the three sources, with three marked to contact this week.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What are the three sources of clients named in the lesson?",
+            options: [
+              "Banks, government offices and radio stations",
+              "People who know you, businesses you approach, and online marketplaces and job boards",
+              "Only foreign companies",
+              "Family, friends and classmates only",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists personal connections, direct approaches and online platforms.",
+          },
+          {
+            prompt: "Why does the lesson suggest starting close to home?",
+            options: [
+              "Because online work is illegal for beginners",
+              "Because trust already exists, payment is familiar and you gain samples and references",
+              "Because local clients always pay more",
+              "Because you can never work for clients abroad",
+            ],
+            answer_index: 1,
+            explanation: "Local first clients lower your risk and give you samples and references.",
+          },
+          {
+            prompt: "What is a pipeline in this lesson?",
+            options: [
+              "A water project for a client",
+              "The path from possible client to paying client and follow up",
+              "A type of payment app",
+              "A tax form",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes the pipeline as contact, conversation, proposal, agreement, delivery and payment, and follow up.",
+          },
+          {
+            prompt: "Why keep a simple list of contacts?",
+            options: [
+              "So you can forget about leads once you have one job",
+              "So you do not lose promising leads or message the same person too often",
+              "Because clients ask to see it",
+              "Because it is required for tax registration",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says the list stops you forgetting leads and over messaging people.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "local-clients": {
+      explanation_md: `Shops, schools, churches, mosques, NGOs, clinics, hotels and small firms in towns such as Tamale, Bolgatanga, Wa and Damongo all need work that freelancers can do: flyers and banners, price lists, social media pages, typed reports, spreadsheets, simple websites, photos and short videos. Many prefer someone they can meet and call.
+
+## Start with people who already trust you
+
+Tell people you know, clearly and briefly, what you now offer. A message such as "I now design menus and flyers for restaurants and events. Here are two samples. If you or anyone you know needs one, please tell me" works better than a vague "I do graphics". Post it on your status once, not every hour.
+
+## Walk in, with one example
+
+Many small businesses in the north are not active online but respond well to a polite visit. Before you go:
+
+* Look at the business and notice one specific improvement you could make. A handwritten price board, an outdated banner or a page with no posts for months.
+* Prepare one example on your device that matches their type of business.
+* Choose a quiet time of day, not when the shop is full of customers.
+
+When you visit, greet properly, introduce yourself in one sentence, show the example and make one specific suggestion. "I noticed your price list is handwritten. I make clear printed lists that you can also share on WhatsApp. Here is one I did for a provisions shop." Then ask if they would like a price. If they say no, thank them and leave your contact.
+
+## Local organisations
+
+Schools, churches, mosques, associations and NGOs often need regular help: programmes for events, newsletters, data from surveys, minutes of meetings, social media during big events. Find out who makes decisions, often a secretary, programme officer or head teacher, and approach them respectfully. Be ready to work with their procedures, such as written quotes and receipts.
+
+## Pricing and payment locally
+
+Local clients may compare your price with someone they know. Be clear about what your price includes, take a deposit before starting larger jobs and confirm mobile money payments have arrived before you hand over final files. These are covered in later lessons.
+
+## Turn one client into more
+
+Every happy client knows other people in the same line of business. After finishing a job, ask: "Do you know anyone else who might need something similar?" A caterer knows event planners; a head teacher knows other head teachers.
+
+## A small example
+
+Issahaku notices that several chop bars near the Tamale central market have no printed menus. He designs one practice menu, visits three chop bars at mid afternoon and shows it on his device. One owner agrees to a menu at a small price with half paid upfront. Issahaku delivers in two days, sends the image for WhatsApp and a print ready file, and asks for a referral. The owner introduces him to her sister, who runs a pastry business.`,
+      practice_task_md: `**Goal:** Prepare and make one local approach.
+
+**Steps:**
+1. Pick one local business or organisation that fits your niche.
+2. Write down one specific improvement your service could make for them.
+3. Prepare one matching example on your device.
+4. Write a one sentence introduction and a one sentence suggestion.
+5. Visit or message them at a quiet time, greet properly, show the example and ask if they would like a price.
+6. Record the result in your client list, with the next step.
+
+**Done looks like:** One real approach made, with notes on what you said, how they responded and what you will do next. If they said no, note what you would change next time.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should you prepare before visiting a local business?",
+            options: [
+              "A long speech about all your skills",
+              "One specific improvement you could make and a matching example",
+              "A signed contract for them to sign immediately",
+              "Nothing; just ask if they have any work",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to notice one improvement and bring one example that matches their business.",
+          },
+          {
+            prompt: "When is a good time to visit a shop to offer your service?",
+            options: [
+              "When it is busiest so you meet many customers",
+              "At a quiet time of day",
+              "Late at night after closing",
+              "On a public holiday",
+            ],
+            answer_index: 1,
+            explanation: "The lesson advises choosing a quiet time, not when the shop is full.",
+          },
+          {
+            prompt: "Which message to people you know matches the lesson's advice?",
+            options: [
+              "I do graphics",
+              "I now design menus and flyers for restaurants and events. Here are two samples. Please tell anyone who needs one.",
+              "Help me, I need money",
+              "Send me any work you have",
+            ],
+            answer_index: 1,
+            explanation: "The lesson recommends a clear, brief message naming the service and showing samples.",
+          },
+          {
+            prompt: "What should you ask a happy client after finishing the job?",
+            options: [
+              "Whether they can lend you money",
+              "Whether they know anyone else who might need something similar",
+              "Whether they will pay double next time",
+              "Whether they want to stop working with you",
+            ],
+            answer_index: 1,
+            explanation: "Asking for referrals turns one client into more, as in Issahaku's example.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
     // @@NEXT@@
   },
 };
