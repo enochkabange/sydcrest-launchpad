@@ -1,6 +1,7 @@
 import Link from "@/components/ui/link";
 import { HeroGraphic, StepGraphic } from "@/components/brand/illustrations";
 import { Card, Section, Stat } from "@/components/marketing/section";
+import { Container, SectionGrid, SplitHero } from "@/components/ui/layout";
 import { buttonClasses } from "@/components/ui/button";
 import { BOLGATANGA, COMMUNITY_SIZE, PILOT } from "@/content/marketing";
 import { pageMetadata } from "@/lib/page-metadata";
@@ -35,11 +36,11 @@ const LANES = [
 export default function Home() {
   return (
     <>
-      <section className="mx-auto flex w-full max-w-6xl flex-col gap-10 px-4 py-12 md:flex-row md:items-center md:px-8 md:py-20">
-        <div className="flex flex-col gap-6">
+      <Container as="section" className="py-12 md:py-20 xl:py-28">
+        <SplitHero visual={<HeroGraphic className="mx-auto w-56 md:w-96 lg:w-full lg:max-w-md xl:max-w-lg" />}>
           <p className="text-xs font-bold tracking-widest text-content-accent uppercase">Built in Northern Ghana</p>
-          <h1 className="text-4xl text-content md:text-6xl">Find your path into tech.</h1>
-          <p className="max-w-prose text-lg text-content-2">
+          <h1 className="text-display text-content">Find your path into tech.</h1>
+          <p className="max-w-reading text-lead text-content-2">
             Start from zero, learn with people beside you, and earn from your skills, all in one
             place. SydCrest takes young Ghanaians from &ldquo;where do I start&rdquo; to employable
             and earning, beginning in the regions everyone else skips.
@@ -55,16 +56,15 @@ export default function Home() {
           <Link href="/programme" className="flex min-h-11 items-center self-start font-semibold">
             {PILOT.seats} free seats in the January cohort. See the programme
           </Link>
-        </div>
-        <HeroGraphic className="mx-auto w-56 shrink-0 md:w-96" />
-      </section>
+        </SplitHero>
+      </Container>
 
       <Section
         tone="sunken"
         title="One path, three stages"
         intro="Most programmes own one slice. We are building the whole journey, so you are never left at a handoff wondering what comes next."
       >
-        <ol className="grid gap-4 md:grid-cols-3">
+        <SectionGrid as="ol" cols={3}>
           {LANES.map((lane, i) => (
             <li key={lane.title} className="flex">
               <Card
@@ -82,14 +82,15 @@ export default function Home() {
               </Card>
             </li>
           ))}
-        </ol>
+        </SectionGrid>
       </Section>
 
       <Section
+        layout="split"
         title="We start where others skip"
         intro="Most tech programmes in Ghana begin in Accra. We begin in the northern regional capitals, with a volunteer led chapter in each one, starting in Tamale. Digital skills are a national conversation, and the north belongs in it."
       >
-        <div className="grid gap-3 sm:grid-cols-3">
+        <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
           <Stat value={String(BOLGATANGA.participants)} label="people at our Bolgatanga Skillshop, December 2025" />
           <Stat value={BOLGATANGA.wouldRecommend} label="of them said they would recommend it" />
           <Stat value={COMMUNITY_SIZE} label="members in our WhatsApp community" />
@@ -100,13 +101,13 @@ export default function Home() {
       </Section>
 
       <Section tone="sunken">
-        <div className="flex flex-col gap-6 rounded-xl border border-line bg-surface p-6 md:flex-row md:items-center md:justify-between md:p-10">
-          <div className="flex max-w-2xl flex-col gap-3">
+        <div className="flex flex-col gap-6 rounded-xl border border-line bg-surface p-6 md:flex-row md:items-center md:justify-between md:p-10 xl:p-14">
+          <div className="flex max-w-reading flex-col gap-3">
             <p className="text-xs font-bold tracking-widest text-content-accent uppercase">Delta Mentoring Program</p>
-            <h2 className="text-2xl text-content md:text-3xl">
+            <h2 className="text-h2 text-content">
               {PILOT.seats} free seats. Starting {PILOT.starts}.
             </h2>
-            <p className="text-content-2">
+            <p className="text-content-2 xl:text-lead">
               {PILOT.weeks} weeks from computer basics to a portfolio of real digital marketing work, with a
               mentor and a cohort beside you. The pilot cohort is free.
             </p>
@@ -118,7 +119,7 @@ export default function Home() {
       </Section>
 
       <Section title="Hiring, funding or partnering?">
-        <div className="grid gap-4 md:grid-cols-2">
+        <SectionGrid cols={2}>
           <Card title="For business">
             <p>Hiring vetted Ghanaian talent is coming. Register your interest and meet our first graduates early.</p>
             <Link href="/business" className="mt-2 flex min-h-11 items-center font-semibold">
@@ -131,7 +132,7 @@ export default function Home() {
               Partner with us
             </Link>
           </Card>
-        </div>
+        </SectionGrid>
       </Section>
     </>
   );

@@ -40,9 +40,10 @@ function Week({ week }: { week: DmpWeek }) {
 function Block({ title, intro, weeks }: { title: string; intro: string; weeks: DmpWeek[] }) {
   return (
     <div className="flex flex-col gap-3">
-      <h3 className="text-xl text-content">{title}</h3>
+      <h3 className="text-subtitle text-content">{title}</h3>
       <p className="text-content-2">{intro}</p>
-      <ol className="flex flex-col gap-3">
+      {/* One week per row on phones; weeks side by side from lg so twelve weeks are not one long column. */}
+      <ol className="flex flex-col gap-3 lg:grid lg:grid-cols-2 xl:grid-cols-3 xl:gap-4">
         {weeks.map((w) => (
           <Week key={`${w.week_number}-${w.theme}`} week={w} />
         ))}
@@ -60,7 +61,7 @@ export function CurriculumWeeks() {
         weeks={FOUNDATION}
       />
       <div className="flex flex-col gap-3">
-        <h3 className="text-xl text-content">Weeks 7 to 9: choose a specialisation</h3>
+        <h3 className="text-subtitle text-content">Weeks 7 to 9: choose a specialisation</h3>
         <p className="text-content-2">Pick one of three tracks and go deeper.</p>
         <div className="flex flex-col gap-3">
           {TRACKS.map((track) => (
@@ -68,7 +69,7 @@ export function CurriculumWeeks() {
               <summary className="flex min-h-11 cursor-pointer items-center px-4 font-semibold text-content">
                 {TRACK_LABELS[track]}
               </summary>
-              <ol className="flex flex-col gap-3 px-3 pb-3">
+              <ol className="flex flex-col gap-3 px-3 pb-3 lg:grid lg:grid-cols-2 xl:grid-cols-3">
                 {buildWeeks(track)
                   .filter((w) => w.week_number >= 7 && w.week_number <= 9)
                   .map((w) => (

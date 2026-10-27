@@ -9,7 +9,7 @@ export default function SignupPage() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-2">
-        <h1 className="text-3xl text-content">Start your path into tech</h1>
+        <h1 className="text-title text-content">Start your path into tech</h1>
         <p className="text-content-2">Free to join. One account for roadmaps, cohorts and mentors as each one opens.</p>
       </div>
       <GoogleButton />

@@ -86,7 +86,7 @@ export default function FunnelPage() {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-2">
-        <h1 className="text-3xl text-content">Funnel</h1>
+        <h1 className="text-title text-content">Funnel</h1>
         <p className="text-content-2">
           Visitors are distinct browsers that viewed a page. Sign ups count new accounts. Activated
           counts learners whose first completed node fell in that week. Weeks start on Monday.

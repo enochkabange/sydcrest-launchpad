@@ -7,7 +7,7 @@ import { MarketingNavLinks, MarketingNavLinksFallback } from "./nav-links";
 export function SiteHeader() {
   return (
     <header className="border-b border-line bg-surface">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-1 px-4 pt-3 md:px-8 lg:flex-row lg:items-center lg:gap-6 lg:py-3">
+      <div className="mx-auto flex w-full max-w-page flex-col gap-1 px-4 pt-3 md:px-8 lg:flex-row lg:items-center lg:gap-6 lg:py-3">
         <div className="flex items-center justify-between gap-3 lg:contents">
           <Link href="/" aria-label="SydCrest Launchpad home" className="flex min-h-11 shrink-0 items-center no-underline">
             <span className="sm:hidden">

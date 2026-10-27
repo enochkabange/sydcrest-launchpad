@@ -34,7 +34,7 @@ export default function AppLayout({ children }: LayoutProps<"/">) {
             <Logo size={28} />
           </Link>
         </header>
-        <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-4 pt-8 pb-24 md:px-8 md:pb-12">
+        <main id="main" className="mx-auto w-full max-w-page flex-1 px-4 pt-8 pb-24 md:px-8 md:pb-12">
           {children}
           {/* Phones: inside main, so its bottom padding keeps the links clear of the tab bar. */}
           <LegalLinks className="mt-12 border-t border-line pt-4 md:hidden" />

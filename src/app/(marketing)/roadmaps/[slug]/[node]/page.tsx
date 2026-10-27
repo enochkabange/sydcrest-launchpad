@@ -8,6 +8,7 @@ import { StudyBuddyPrompt } from "@/components/study-buddy/study-buddy-prompt";
 import { ResourceCards, TopicNeighbours, TopicSummary } from "@/components/roadmaps/topic";
 import { buttonClasses } from "@/components/ui/button";
 import Link from "@/components/ui/link";
+import { Container, MainWithRail } from "@/components/ui/layout";
 import { markdownToText } from "@/lib/roadmaps/markdown";
 import { getNodeDetail, getPublishedNode, getPublishedPaths } from "@/lib/roadmaps/public";
 import {
@@ -71,7 +72,7 @@ async function Node({ params }: Pick<Props, "params">) {
   const path = nodePath(slug, node.slug);
 
   return (
-    <article className="mx-auto w-full max-w-3xl px-4 pt-6 pb-16 md:px-8 md:pt-10">
+    <Container as="article" className="pt-6 pb-16 md:pt-10 xl:pt-14 xl:pb-24">
       <nav aria-label="Breadcrumb">
         <ol className="flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-content-2">
           <Crumb href="/roadmaps">Roadmaps</Crumb>
@@ -84,54 +85,88 @@ async function Node({ params }: Pick<Props, "params">) {
         </ol>
       </nav>
 
-      <header className="mt-5">
-        <TopicSummary node={inView.node} section={inView.section} sectionCount={view.sections.length} headingLevel={1} />
+      {/* Phones keep one column in the same order. From lg the lesson text holds a reading measure and
+          Study Buddy, the section's topics and previous and next sit in a rail beside it. */}
+      <MainWithRail
+        spaced={false}
+        railLabel="About this topic"
+        rail={
+          <>
+            <nav aria-label="On this page" className="hidden rounded-lg border border-line p-4 lg:mt-5 lg:block">
+              <p className="text-sm font-semibold text-content-3">On this page</p>
+              <ul className="mt-2 flex flex-col">
+                {[
+                  ["#explanation-heading", "What you will learn"],
+                  ["#practice-heading", "Practice task"],
+                  ["#resources-heading", "Free resources"],
+                  ...(node.children.length ? [["#topics-heading", "Topics in this section"]] : []),
+                ].map(([href, label]) => (
+                  <li key={href}>
+                    <a href={href} className="flex min-h-11 items-center text-content-2 no-underline hover:text-content">
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <div className="mt-10 lg:mt-6">
+              <StudyBuddyPrompt nodeTitle={node.title} next={learnPath(slug, node.slug)} />
+            </div>
 
-        <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-start">
-          <Link href={learnPath(slug, node.slug)} className={buttonClasses("primary", "w-full sm:w-auto")}>
-            Start learning
-            <ArrowRight aria-hidden className="size-4" />
-          </Link>
-          <ShareButton path={path} title={`${node.title} · ${roadmap.title}`} text={`Learn ${node.title} on SydCrest Launchpad.`} />
+            {node.children.length > 0 && (
+              <Block title="Topics in this section" id="topics" inRail>
+                <Subtopics slug={slug} nodes={node.children} />
+              </Block>
+            )}
+
+            <TopicNeighbours
+              slug={slug}
+              previous={inView.previous}
+              next={inView.next}
+              className="mt-10 border-t border-line pt-6 lg:mt-6 lg:grid-cols-1"
+            />
+          </>
+        }
+      >
+        <header className="mt-5">
+          <TopicSummary node={inView.node} section={inView.section} sectionCount={view.sections.length} headingLevel={1} />
+
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-start">
+            <Link href={learnPath(slug, node.slug)} className={buttonClasses("primary", "w-full sm:w-auto")}>
+              Start learning
+              <ArrowRight aria-hidden className="size-4" />
+            </Link>
+            <ShareButton path={path} title={`${node.title} · ${roadmap.title}`} text={`Learn ${node.title} on SydCrest Launchpad.`} />
+          </div>
+        </header>
+
+        <div className="max-w-reading">
+          <Block title="What you will learn" id="explanation">
+            {detail.content ? (
+              <Markdown source={detail.content.explanation_md} />
+            ) : (
+              <ComingSoon>The written explanation for this topic is being prepared and reviewed. It is coming soon.</ComingSoon>
+            )}
+          </Block>
+
+          <Block title="Practice task" id="practice">
+            {detail.content?.practice_task_md ? (
+              <Markdown source={detail.content.practice_task_md} />
+            ) : (
+              <ComingSoon>A practice task for this topic is coming soon.</ComingSoon>
+            )}
+          </Block>
+
+          <Block title="Free resources" id="resources">
+            {detail.resources.length ? (
+              <ResourceCards resources={detail.resources} />
+            ) : (
+              <ComingSoon>Resources for this topic are coming soon.</ComingSoon>
+            )}
+          </Block>
         </div>
-      </header>
-
-      <Block title="What you will learn" id="explanation">
-        {detail.content ? (
-          <Markdown source={detail.content.explanation_md} />
-        ) : (
-          <ComingSoon>The written explanation for this topic is being prepared and reviewed. It is coming soon.</ComingSoon>
-        )}
-      </Block>
-
-      <Block title="Practice task" id="practice">
-        {detail.content?.practice_task_md ? (
-          <Markdown source={detail.content.practice_task_md} />
-        ) : (
-          <ComingSoon>A practice task for this topic is coming soon.</ComingSoon>
-        )}
-      </Block>
-
-      <Block title="Free resources" id="resources">
-        {detail.resources.length ? (
-          <ResourceCards resources={detail.resources} />
-        ) : (
-          <ComingSoon>Resources for this topic are coming soon.</ComingSoon>
-        )}
-      </Block>
-
-      <div className="mt-10">
-        <StudyBuddyPrompt nodeTitle={node.title} next={learnPath(slug, node.slug)} />
-      </div>
-
-      {node.children.length > 0 && (
-        <Block title="Topics in this section" id="topics">
-          <Subtopics slug={slug} nodes={node.children} />
-        </Block>
-      )}
-
-      <TopicNeighbours slug={slug} previous={inView.previous} next={inView.next} className="mt-10 border-t border-line pt-6" />
-    </article>
+      </MainWithRail>
+    </Container>
   );
 }
 
@@ -151,10 +186,11 @@ function Crumb({ href, plain = false, children }: { href: string; plain?: boolea
   );
 }
 
-function Block({ title, id, children }: { title: string; id: string; children: ReactNode }) {
+/** `inRail` sets the heading one size down from lg, where the block sits in the narrow rail. */
+function Block({ title, id, inRail = false, children }: { title: string; id: string; inRail?: boolean; children: ReactNode }) {
   return (
-    <section className="mt-10" aria-labelledby={`${id}-heading`}>
-      <h2 id={`${id}-heading`} className="text-2xl text-content">
+    <section className={`mt-10 ${inRail ? "lg:mt-6" : ""}`} aria-labelledby={`${id}-heading`}>
+      <h2 id={`${id}-heading`} className={`text-h2 text-content ${inRail ? "lg:text-h3" : "lg:text-subtitle"}`}>
         {title}
       </h2>
       <div className="mt-4">{children}</div>
@@ -184,7 +220,7 @@ function Subtopics({ slug, nodes }: { slug: string; nodes: TreeNode[] }) {
 
 function NodeSkeleton() {
   return (
-    <div className="mx-auto w-full max-w-3xl animate-pulse px-4 pt-6 pb-16 md:px-8 md:pt-10" aria-busy="true">
+    <div className="mx-auto w-full max-w-page animate-pulse px-4 pt-6 pb-16 md:px-8 md:pt-10" aria-busy="true">
       <div className="h-4 w-48 rounded bg-surface-sunken" />
       <div className="mt-8 h-10 w-3/4 rounded bg-surface-sunken" />
       <div className="mt-4 h-5 w-full rounded bg-surface-sunken" />

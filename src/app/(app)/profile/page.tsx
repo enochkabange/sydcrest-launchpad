@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { getMyProfile } from "@/lib/auth";
 import { signOut } from "@/app/(auth)/actions";
 import { Button } from "@/components/ui/button";
+import { MainWithRail } from "@/components/ui/layout";
 import { ProfileForm } from "./profile-form";
 import { PublicProfilePreview } from "./public-profile-preview";
 import { PublicProfileSection } from "./public-profile-section";
@@ -22,10 +23,20 @@ async function ProfileDetails() {
 
 export default function ProfilePage() {
   return (
-    // Phones and tablets get the single settings column. From xl a preview of the public profile sits beside it.
-    <div className="xl:grid xl:grid-cols-[minmax(0,30rem)_minmax(0,24rem)] xl:items-start xl:gap-12">
-      <div className="flex max-w-md flex-col gap-6 xl:max-w-none">
-        <h1 className="text-3xl text-content">Profile</h1>
+    // Phones and tablets get the single settings column. From lg a preview of the public profile sits in a
+    // sticky rail beside the settings, so a change can be checked against what others will see.
+    <MainWithRail
+      railFrom="lg"
+      sticky
+      railLabel="Public profile preview"
+      rail={
+        <Suspense fallback={<div className="h-72 animate-skeleton rounded-lg bg-surface-sunken" />}>
+          <PublicProfilePreview />
+        </Suspense>
+      }
+    >
+      <div className="flex max-w-md flex-col gap-6 lg:max-w-2xl">
+        <h1 className="text-title text-content">Profile</h1>
         <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>
           <ProfileDetails />
         </Suspense>
@@ -42,11 +53,6 @@ export default function ProfilePage() {
           </Button>
         </form>
       </div>
-      <aside className="hidden xl:sticky xl:top-8 xl:block">
-        <Suspense fallback={<div className="h-72 animate-skeleton rounded-lg bg-surface-sunken" />}>
-          <PublicProfilePreview />
-        </Suspense>
-      </aside>
-    </div>
+    </MainWithRail>
   );
 }

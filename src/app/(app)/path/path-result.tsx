@@ -25,9 +25,9 @@ export function PathResultView({ result }: { result: PathResult }) {
   const { nextAction, plan } = result;
   return (
     <article className="flex flex-col gap-8">
-      <header className="flex max-w-3xl flex-col gap-3">
+      <header className="flex max-w-reading flex-col gap-3">
         <p className="text-sm font-semibold text-content-2">Your recommended track</p>
-        <h1 className="text-3xl text-content">{result.trackTitle}</h1>
+        <h1 className="text-title text-content">{result.trackTitle}</h1>
         <ul className="flex list-disc flex-col gap-1 pl-5 text-content-2">
           {result.reasons.map((r) => (
             <li key={r}>{r}</li>
@@ -36,7 +36,7 @@ export function PathResultView({ result }: { result: PathResult }) {
       </header>
 
       {!result.roadmap && (
-        <p className="max-w-3xl rounded-lg border border-line bg-surface-sunken p-4 text-content-2">
+        <p className="rounded-lg border border-line bg-surface-sunken p-4 text-content-2">
           The {result.trackTitle} roadmap opens soon. Your weekly plan works from today, and your
           starting point will link straight into the roadmap when it opens.
         </p>
@@ -45,9 +45,9 @@ export function PathResultView({ result }: { result: PathResult }) {
       {!result.lessonsReady && (
         <section
           aria-labelledby="lessons-heading"
-          className="flex max-w-3xl flex-col items-start gap-3 rounded-lg border border-line bg-surface-sunken p-5"
+          className="flex flex-col items-start gap-3 rounded-lg border border-line bg-surface-sunken p-5 xl:p-6"
         >
-          <h2 id="lessons-heading" className="text-lg text-content">
+          <h2 id="lessons-heading" className="text-h3 text-content">
             Lessons for this track are coming
           </h2>
           <p className="text-content-2">
@@ -70,10 +70,10 @@ export function PathResultView({ result }: { result: PathResult }) {
       )}
 
       {/* Stacked on phones; from lg the next step and skill gap sit beside the weekly plan. */}
-      <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-start lg:gap-10">
+      <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-start lg:gap-10 xl:gap-16">
         <div className="flex flex-col gap-8">
           <section aria-labelledby="next-heading" className="flex flex-col items-start gap-3 rounded-lg border border-line p-5">
-            <h2 id="next-heading" className="text-lg text-content">
+            <h2 id="next-heading" className="text-h3 text-content">
               Your next step
             </h2>
             <p className="font-semibold text-content">{nextAction.label}</p>
@@ -86,7 +86,7 @@ export function PathResultView({ result }: { result: PathResult }) {
           </section>
 
           <section aria-labelledby="gap-heading" className="flex flex-col gap-3">
-            <h2 id="gap-heading" className="text-xl text-content">
+            <h2 id="gap-heading" className="text-subtitle text-content">
               Your skill gap
             </h2>
             <p className="text-content-2">
@@ -118,7 +118,7 @@ export function PathResultView({ result }: { result: PathResult }) {
 
         <div className="flex flex-col gap-8">
           <section aria-labelledby="plan-heading" className="flex flex-col gap-3">
-            <h2 id="plan-heading" className="text-xl text-content">
+            <h2 id="plan-heading" className="text-subtitle text-content">
               Your weekly plan
             </h2>
             <p className="text-content-2">{plan.summary}</p>

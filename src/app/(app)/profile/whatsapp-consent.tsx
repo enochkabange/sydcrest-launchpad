@@ -21,7 +21,7 @@ export async function WhatsAppConsent() {
 
   return (
     <section aria-labelledby="whatsapp-heading" className="flex flex-col gap-3 border-t border-line pt-6">
-      <h2 id="whatsapp-heading" className="text-xl text-content">
+      <h2 id="whatsapp-heading" className="text-subtitle text-content">
         WhatsApp updates
       </h2>
       {/* Keyed on the stored state so a number change elsewhere on the page resets the toggle. */}

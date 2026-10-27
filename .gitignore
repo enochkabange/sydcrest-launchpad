@@ -48,3 +48,6 @@ next-env.d.ts
 
 # vitest
 /.vitest/
+
+# Playwright screenshots (e2e/screens.spec.ts); CI uploads them as an artifact
+/e2e-screenshots/

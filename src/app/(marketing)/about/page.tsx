@@ -1,4 +1,5 @@
 import { Card, PageHeader, Section, Stat } from "@/components/marketing/section";
+import { SectionGrid } from "@/components/ui/layout";
 import {
   ACCRA_EVENT,
   BOLGATANGA,
@@ -39,7 +40,7 @@ export default function AboutPage() {
       />
 
       <Section tone="sunken" title="Our mission">
-        <div className="grid gap-4 md:grid-cols-2">
+        <SectionGrid cols={2}>
           <Card title="What we do">
             <p>{MISSION}</p>
           </Card>
@@ -50,10 +51,11 @@ export default function AboutPage() {
               certificate that leads nowhere is not success by our own definition.
             </p>
           </Card>
-        </div>
+        </SectionGrid>
       </Section>
 
       <Section
+        layout="split"
         title="Our story so far"
         intro={
           <div className="flex flex-col gap-4">
@@ -74,7 +76,7 @@ export default function AboutPage() {
           </div>
         }
       >
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-2">
           <Stat value={String(BOLGATANGA.participants)} label="Bolgatanga Skillshop participants" />
           <Stat value={BOLGATANGA.moreConfident} label="felt more confident afterwards" />
           <Stat value={BOLGATANGA.wouldRecommend} label="would recommend it" />

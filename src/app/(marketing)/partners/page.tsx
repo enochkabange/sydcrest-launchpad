@@ -1,6 +1,7 @@
 import { Card, PageHeader, Section, Stat } from "@/components/marketing/section";
 import { WaitlistForm } from "@/components/marketing/waitlist-form";
 import { buttonClasses } from "@/components/ui/button";
+import { SectionGrid } from "@/components/ui/layout";
 import { ACCRA_EVENT, BOLGATANGA, COMMUNITY_SIZE, CONTACT_EMAIL, PILOT, SPONSOR_TIERS } from "@/content/marketing";
 import { pageMetadata } from "@/lib/page-metadata";
 
@@ -38,6 +39,7 @@ export default function PartnersPage() {
 
       <Section
         tone="sunken"
+        layout="split"
         title="What we have delivered"
         intro={
           <p>
@@ -47,7 +49,7 @@ export default function PartnersPage() {
           </p>
         }
       >
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-4 lg:grid-cols-2">
           <Stat value={String(BOLGATANGA.participants)} label="Bolgatanga Skillshop participants" />
           <Stat value={BOLGATANGA.wouldRecommend} label="would recommend it" />
           <Stat value={BOLGATANGA.wouldReturn} label="would attend again" />
@@ -60,7 +62,7 @@ export default function PartnersPage() {
         title="Donor programmes"
         intro="SydCrest is a social enterprise that reinvests everything it earns. In kind support from technology donors goes straight to learners."
       >
-        <div className="grid gap-4 md:grid-cols-2">
+        <SectionGrid cols={2}>
           <Card title="DataCamp Donates">
             <p>
               We are preparing an application to DataCamp Donates so learners in our cohorts can study data
@@ -74,7 +76,7 @@ export default function PartnersPage() {
               others, so every donated cedi goes to learners rather than software bills.
             </p>
           </Card>
-        </div>
+        </SectionGrid>
       </Section>
 
       <Section
@@ -82,18 +84,18 @@ export default function PartnersPage() {
         title="Sponsorship tiers"
         intro="Sponsorship funds Skillshops, flagship events and free cohort seats. We shape each package with you."
       >
-        <ul className="grid gap-4 md:grid-cols-3">
+        <SectionGrid as="ul" cols={3}>
           {SPONSOR_TIERS.map((tier) => (
             <li key={tier.name} className="flex flex-col gap-1 rounded-lg border border-line bg-surface p-5">
               <span className="text-sm font-semibold text-content-2">{tier.name}</span>
               <span className="text-3xl font-bold text-content">{tier.amount}</span>
             </li>
           ))}
-        </ul>
+        </SectionGrid>
         <div className="mt-6 rounded-lg border border-line bg-surface p-5">
-          <h3 className="text-lg text-content">What sponsors receive</h3>
+          <h3 className="text-h3 text-content">What sponsors receive</h3>
           <p className="mt-1 text-sm text-content-2">Packages draw on these, weighted by tier:</p>
-          <ul className="mt-3 grid list-disc gap-1 pl-5 text-content-2 sm:grid-cols-2">
+          <ul className="mt-3 grid list-disc gap-1 pl-5 text-content-2 sm:grid-cols-2 xl:grid-cols-4 xl:gap-x-10">
             {VALUE_ADDS.map((v) => (
               <li key={v}>{v}</li>
             ))}
@@ -102,17 +104,18 @@ export default function PartnersPage() {
       </Section>
 
       <Section
+        layout="split"
         title="Talk to us"
         intro="Email is the fastest way to reach us about sponsorship, donations or a delivery partnership."
       >
-        <div className="flex flex-col gap-8 md:flex-row md:items-start">
-          <div className="flex flex-col gap-3 md:w-1/2">
+        <div className="flex flex-col gap-8 md:flex-row md:items-start lg:flex-col">
+          <div className="flex flex-col gap-3 md:w-1/2 lg:w-auto">
             <a href={SPONSOR_MAILTO} className={buttonClasses("primary", "self-start")}>
               Email {CONTACT_EMAIL}
             </a>
           </div>
-          <div className="max-w-lg rounded-lg border border-line bg-surface p-5 md:w-1/2">
-            <h3 className="mb-4 text-lg text-content">Or register your interest</h3>
+          <div className="max-w-lg rounded-lg border border-line bg-surface p-5 md:w-1/2 lg:w-full lg:max-w-xl xl:p-8">
+            <h3 className="mb-4 text-h3 text-content">Or register your interest</h3>
             <WaitlistForm defaultInterest="sponsor" submitLabel="Register interest" />
           </div>
         </div>

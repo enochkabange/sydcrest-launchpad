@@ -10,7 +10,7 @@ const LEGAL = [
 export function SiteFooter() {
   return (
     <footer className="border-t border-line bg-surface-sunken">
-      <div className="mx-auto flex w-full max-w-6xl flex-col gap-8 px-4 py-10 md:flex-row md:justify-between md:px-8">
+      <div className="mx-auto flex w-full max-w-page flex-col gap-8 px-4 py-10 md:flex-row md:justify-between md:px-8">
         <div className="flex max-w-sm flex-col gap-3">
           <LogoMark size={32} variant="auto" />
           <p className="text-sm text-content-2">
@@ -22,7 +22,8 @@ export function SiteFooter() {
           </a>
         </div>
         <nav aria-label="Footer" className="grid grid-cols-2 gap-x-10 gap-y-1 text-sm sm:flex sm:gap-x-12">
-          <ul className="flex flex-col">
+          {/* Two short columns from lg instead of one tall one. */}
+          <ul className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-x-12">
             {MARKETING_NAV.map(({ href, label }) => (
               <li key={href}>
                 <Link href={href} className="flex min-h-11 items-center text-content-2 no-underline hover:text-content">
