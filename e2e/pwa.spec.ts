@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
 
+const PAGES_CACHE = "sydcrest-pages-v3";
+
 /**
  * PWA basics (issue #40). Needs only the production build, not Supabase: the
  * home page, manifest and offline page are all static.
@@ -45,7 +47,7 @@ test("a visited page opens offline and an unvisited one shows the offline page",
   await page.evaluate(() => navigator.serviceWorker.ready);
   // The worker saves the page it was registered from in the background.
   await expect
-    .poll(() => page.evaluate(async () => !!(await caches.match("/", { cacheName: "sydcrest-pages-v2" }))))
+    .poll(() => page.evaluate(async (cacheName) => !!(await caches.match("/", { cacheName })), PAGES_CACHE))
     .toBe(true);
 
   await context.setOffline(true);
@@ -54,5 +56,42 @@ test("a visited page opens offline and an unvisited one shows the offline page",
 
   await page.goto("/signup");
   await expect(page.getByRole("heading", { name: "You are offline" })).toBeVisible();
+  await context.setOffline(false);
+});
+
+test("online a public page comes from the network, offline from the saved copy", async ({ page, context }) => {
+  await page.goto("/");
+  const heading = (await page.locator("h1").first().textContent()) ?? "";
+  await page.evaluate(() => navigator.serviceWorker.ready);
+  // Wait for the worker's own save of "/" so it cannot overwrite the copy below.
+  await expect
+    .poll(() => page.evaluate(async (cacheName) => !!(await caches.match("/", { cacheName })), PAGES_CACHE))
+    .toBe(true);
+
+  // Stand in for the copy saved before a deploy.
+  await page.evaluate(async (cacheName) => {
+    const cache = await caches.open(cacheName);
+    await cache.put("/", new Response("<h1>Saved before the deploy</h1>", { headers: { "Content-Type": "text/html" } }));
+  }, PAGES_CACHE);
+
+  // Offline the saved copy is what opens.
+  await context.setOffline(true);
+  await page.reload();
+  await expect(page.locator("h1").first()).toHaveText("Saved before the deploy");
+
+  // Online the current page wins over the saved copy, on the first visit.
+  await context.setOffline(false);
+  await page.reload();
+  await expect(page.locator("h1").first()).toHaveText(heading);
+
+  // And the saved copy is refreshed, so offline now shows the current page too.
+  await expect
+    .poll(() =>
+      page.evaluate(async (cacheName) => (await (await caches.match("/", { cacheName }))?.text()) ?? "", PAGES_CACHE),
+    )
+    .not.toContain("Saved before the deploy");
+  await context.setOffline(true);
+  await page.reload();
+  await expect(page.locator("h1").first()).toHaveText(heading);
   await context.setOffline(false);
 });
