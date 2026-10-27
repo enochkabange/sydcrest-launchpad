@@ -1,6 +1,8 @@
 import { mkdirSync } from "node:fs";
 import { expect, test, type Page, type TestInfo } from "@playwright/test";
 import { signUpAndConfirm } from "./auth";
+import { deleteDmpCohort, seedDmpCohort, type SeededDmpCohort } from "./cohort-seed";
+import { createLearner, PASSWORD } from "./learners";
 import { deleteRoadmap, seedRoadmap, type SeededRoadmap } from "./seed";
 
 /**
@@ -18,10 +20,13 @@ const WIDTHS = [
 const DIR = "e2e-screenshots";
 
 let roadmap: SeededRoadmap | undefined;
+let cohort: SeededDmpCohort | undefined;
 
 test.afterEach(async () => {
   if (roadmap) await deleteRoadmap(roadmap.id);
   roadmap = undefined;
+  if (cohort) await deleteDmpCohort(cohort);
+  cohort = undefined;
 });
 
 async function shoot(page: Page, testInfo: TestInfo, name: string, path: string) {
@@ -63,4 +68,16 @@ test("screenshots of key screens at 390, 1440 and 1920", async ({ page }, testIn
   ] as [string, string][]) {
     await shoot(page, testInfo, name, path);
   }
+
+  // Cohort screens (#144): a learner in a DMP cohort in its second week.
+  const learner = await createLearner("Wumpini Abukari");
+  cohort = await seedDmpCohort(learner.id);
+  await page.context().clearCookies();
+  await page.goto("/login");
+  await page.getByLabel("Email").fill(learner.email);
+  await page.getByLabel("Password").fill(PASSWORD);
+  await page.getByRole("button", { name: "Sign in" }).click();
+  await expect(page).toHaveURL(/\/dashboard$/);
+  await shoot(page, testInfo, "cohort", "/cohort");
+  await shoot(page, testInfo, "cohort-week", "/cohort/week/7");
 });
