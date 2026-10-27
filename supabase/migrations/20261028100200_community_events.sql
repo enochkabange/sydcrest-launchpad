@@ -161,6 +161,7 @@ as $$
 $$;
 
 revoke execute on function private.new_checkin_code() from public;
+grant execute on function private.new_checkin_code() to service_role;
 
 create table public.event_access (
   event_id     uuid primary key references public.community_events (id) on delete cascade,
