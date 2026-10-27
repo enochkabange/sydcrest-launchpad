@@ -77,9 +77,8 @@ async function Offer({ params }: Pick<PageProps<"/experts/[slug]/offers/[id]">, 
           <p className="text-sm font-semibold text-success-fg">{SOFT_LAUNCH_PRICE}</p>
           {/* Phones reach the request card only after the details; give them the action up front too. */}
           {expert.acceptingRequests && (
-            <Link href={requestPath(expert.slug, offer.id)} className={buttonClasses("primary", "self-start lg:hidden")}>
+            <Link href={requestPath(expert.slug, offer.id)} aria-label={`Request ${offer.title}`} className={buttonClasses("primary", "self-start lg:hidden")}>
               Request
-              <span className="sr-only">: {offer.title}</span>
             </Link>
           )}
         </header>
@@ -160,9 +159,8 @@ function RequestCard({ expert, offer }: { expert: DirectoryExpert; offer: Public
       </div>
       {expert.acceptingRequests ? (
         <div className="flex flex-col gap-2">
-          <Link href={requestPath(expert.slug, offer.id)} className={buttonClasses("primary", "w-full")}>
+          <Link href={requestPath(expert.slug, offer.id)} aria-label={`Request ${offer.title}`} className={buttonClasses("primary", "w-full")}>
             Request
-            <span className="sr-only">: {offer.title}</span>
           </Link>
           <p className="text-sm text-content-3">You will need an account. {expert.name.split(" ")[0]} accepts or declines.</p>
         </div>

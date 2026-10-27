@@ -154,15 +154,13 @@ function OfferCard({ expert, offer }: { expert: DirectoryExpert; offer: PublicOf
       </div>
       <div className="flex shrink-0 flex-wrap gap-2 md:flex-col md:items-stretch">
         {expert.acceptingRequests && (
-          <Link href={requestPath(expert.slug, offer.id)} className={buttonClasses("primary")}>
+          <Link href={requestPath(expert.slug, offer.id)} aria-label={`Request ${offer.title}`} className={buttonClasses("primary")}>
             Request
-            <span className="sr-only">: {offer.title}</span>
           </Link>
         )}
-        <Link href={offerPath(expert.slug, offer.id)} className={buttonClasses("secondary")}>
+        <Link href={offerPath(expert.slug, offer.id)} aria-label={`Details of ${offer.title}`} className={buttonClasses("secondary")}>
           Details
           <ArrowRight aria-hidden className="size-4" />
-          <span className="sr-only">: {offer.title}</span>
         </Link>
       </div>
     </div>

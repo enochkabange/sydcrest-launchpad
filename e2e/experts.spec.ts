@@ -58,12 +58,12 @@ test("find an expert, read their page and open an offer", async ({ page }) => {
   await expect(page.locator('meta[property="og:image"]')).toHaveAttribute("content", new RegExp(`/og/experts/${verified.slug}`));
 
   // An offer page, with the Request link the booking flow (#151) picks up.
-  await page.getByRole("link", { name: "Details: Clean one survey sheet for your report" }).click();
+  await page.getByRole("link", { name: "Details of Clean one survey sheet for your report" }).click();
   await expect(page).toHaveURL(new RegExp(`/experts/${verified.slug}/offers/${verified.gigId}$`));
   await expect(page.getByRole("heading", { level: 1, name: "Clean one survey sheet for your report" })).toBeVisible();
-  await expect(page.getByText("5 days")).toBeVisible();
+  await expect(page.locator("dd", { hasText: "5 days" })).toBeVisible();
   await expect(page.getByText("Free during the soft launch").first()).toBeVisible();
-  const request = page.getByRole("link", { name: "Request: Clean one survey sheet for your report" }).filter({ visible: true });
+  const request = page.getByRole("link", { name: "Request Clean one survey sheet for your report" }).filter({ visible: true });
   await expect(request.first()).toHaveAttribute("href", `/experts/${verified.slug}/offers/${verified.gigId}/request`);
 });
 
