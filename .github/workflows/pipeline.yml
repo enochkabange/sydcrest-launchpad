@@ -19,6 +19,7 @@ concurrency:
 
 permissions:
   contents: read
+  packages: read
 
 env:
   PROD_REF: vgdnuztoemexrtooofme
@@ -86,7 +87,9 @@ jobs:
       - uses: supabase/setup-cli@v3
         with:
           version: 2.114.0 # keep in step with the local CLI; generated types depend on it
-      - run: supabase start -x studio,mailpit,imgproxy,edge-runtime,logflare,vector,realtime,storage-api,supavisor
+      - run: scripts/ci/supabase-start.sh -x studio,mailpit,imgproxy,edge-runtime,logflare,vector,realtime,storage-api,supavisor
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - run: supabase db reset
       - run: supabase db lint --level error
       - run: supabase test db
@@ -112,7 +115,9 @@ jobs:
       - uses: supabase/setup-cli@v3
         with:
           version: 2.114.0
-      - run: supabase start -x studio,imgproxy,edge-runtime,logflare,vector,realtime,storage-api,postgres-meta,supavisor
+      - run: scripts/ci/supabase-start.sh -x studio,imgproxy,edge-runtime,logflare,vector,realtime,storage-api,postgres-meta,supavisor
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
       - name: Point the build at the local stack
         run: |
           set -euo pipefail
