@@ -10,7 +10,7 @@ const PAGES = [
   { path: "/", h1: "Find your path into tech." },
   { path: "/about", h1: "Why SydCrest exists" },
   { path: "/programme", h1: "The Delta Mentoring Program" },
-  { path: "/business", h1: "Hire vetted, verified Ghanaian talent" },
+  { path: "/business", h1: "Hire verified Ghanaian talent" },
   { path: "/partners", h1: "Help turn northern talent into earning talent" },
 ];
 
@@ -57,7 +57,7 @@ test("waitlist validates, saves the sign up, and answers a repeat the same way",
     expect(rows).toEqual([{ name: "Wumpini Alhassan", region: "northern", interest: "dmp_cohort" }]);
 
     // The same address again, in different case: same thanks, still one row, nothing revealed.
-    await page.goto("/business");
+    await page.goto("/partners");
     const again = page.locator("form").filter({ has: page.getByLabel("Email") });
     await again.getByLabel("Your name").fill("Wumpini Alhassan");
     await again.getByLabel("Email").fill(email.toUpperCase());

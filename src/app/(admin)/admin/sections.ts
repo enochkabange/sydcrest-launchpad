@@ -14,5 +14,6 @@ export const ADMIN_SECTIONS: { href: string; label: string; description: string 
   { href: "/admin/cohorts", label: "Cohorts", description: "Create programme cohorts and assign their mentors and coordinators." },
   { href: "/admin/outcomes", label: "Outcomes", description: "Verify the jobs, internships, contracts and awards learners report." },
   { href: "/admin/impact", label: "North Star", description: "Completion and verified placements by cohort, within six months of the end." },
+  { href: "/admin/organisations", label: "Organisations", description: "Verify business accounts before they post or browse talent." },
   { href: "/admin/funnel", label: "Funnel", description: "See how visitors move from sign up to their first completed node." },
 ];

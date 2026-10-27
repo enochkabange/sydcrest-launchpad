@@ -67,7 +67,7 @@ export const OG_CARDS = {
   home: { headline: "Find your path into tech.", subline: "Learn. Get mentored. Earn. Built in Northern Ghana." },
   about: { headline: "Why SydCrest exists", subline: "From “where do I start” to employable and earning." },
   programme: { headline: "The Delta Mentoring Program", subline: "12 weeks. 25 free seats. Starting January 2027." },
-  business: { headline: "Hire vetted Ghanaian talent", subline: "Coming soon. Register your interest today." },
+  business: { headline: "Hire verified Ghanaian talent", subline: "Create a business account and get verified." },
   partners: { headline: "Partner with SydCrest", subline: "Help turn northern talent into earning talent." },
   impact: { headline: "Our impact, counted honestly", subline: "Only verified outcomes. Every number defined." },
   opportunities: { headline: "Opportunities", subline: "Jobs, internships, scholarships, grants and gigs, checked before they are listed." },
