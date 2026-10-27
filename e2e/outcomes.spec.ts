@@ -98,7 +98,7 @@ test("a learner reports an outcome, an admin asks for more, then verifies it", a
     await queueItem.getByRole("button", { name: "Verify" }).click();
     await expect(queueItem).toHaveCount(0);
     await adminPage.goto("/admin/outcomes?status=verified");
-    await expect(queueItem.getByText("Verified")).toBeVisible();
+    await expect(queueItem.getByText("Verified", { exact: true })).toBeVisible();
 
     await adminPage.goto("/admin/impact");
     await expect(adminPage.getByRole("heading", { level: 1, name: "North Star" })).toBeVisible();

@@ -1,7 +1,7 @@
 import { Card, PageHeader, Section } from "@/components/marketing/section";
 import Link from "@/components/ui/link";
 import { buttonClasses } from "@/components/ui/button";
-import { AutoGrid, SectionGrid } from "@/components/ui/layout";
+import { SectionGrid } from "@/components/ui/layout";
 import { PILOT } from "@/content/marketing";
 import { getImpactSummary } from "@/lib/outcomes/public";
 import { getPublishedRoadmaps } from "@/lib/roadmaps/public";
@@ -80,7 +80,8 @@ export default async function ImpactPage() {
         }
       >
         {hasOutcomes ? (
-          <AutoGrid as="ul" min="sm">
+          // auto-fit: one or two types stretch across the band instead of sitting in a corner.
+          <ul className="grid grid-cols-[repeat(auto-fit,minmax(min(100%,14rem),1fr))] gap-4 xl:gap-6">
             {impact.byType.map((t) => (
               <li key={t.value}>
                 <Figure
@@ -90,7 +91,7 @@ export default async function ImpactPage() {
                 />
               </li>
             ))}
-          </AutoGrid>
+          </ul>
         ) : (
           <div className="flex flex-col items-start gap-4 rounded-lg border border-line bg-surface p-5 lg:flex-row lg:items-center lg:justify-between lg:gap-8 xl:p-6">
             <div className="flex max-w-reading flex-col gap-2">
@@ -107,6 +108,7 @@ export default async function ImpactPage() {
         )}
       </Section>
 
+      {roadmaps.length > 0 && (
       <Section
         title="What is live today"
         intro={<p>Counted from what is published on the platform right now. Anyone can open and follow these for free.</p>}
@@ -124,6 +126,7 @@ export default async function ImpactPage() {
           />
         </SectionGrid>
       </Section>
+      )}
 
       <Section tone="sunken" title="How we count">
         <SectionGrid cols={3}>

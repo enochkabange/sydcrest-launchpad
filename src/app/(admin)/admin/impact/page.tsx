@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import Link from "@/components/ui/link";
-import { DataTable, SectionGrid, type Column } from "@/components/ui/layout";
+import { DataTable, type Column } from "@/components/ui/layout";
 import { requireAdmin } from "@/lib/admin";
 import { formatDay } from "@/lib/outcomes/labels";
 import {
@@ -26,6 +26,11 @@ function Tile({ value, label, detail }: { value: string; label: string; detail?:
       {detail && <span className="text-sm text-content-2">{detail}</span>}
     </div>
   );
+}
+
+/** "6 (67%)", or just the count when the cohort has no learners to divide by. */
+function withRate(part: number, whole: number) {
+  return whole ? `${part} (${formatRate(part, whole)})` : String(part);
 }
 
 function definitions(months: number) {
@@ -83,9 +88,9 @@ async function NorthStar({ searchParams }: Pick<PageProps<"/admin/impact">, "sea
       phone: "hide",
     },
     { header: "Learners", cell: (r) => r.learners, align: "end", phone: "hide" },
-    { header: "Completed", cell: (r) => `${r.completed} (${formatRate(r.completed, r.learners)})`, align: "end", phone: "hide" },
+    { header: "Completed", cell: (r) => withRate(r.completed, r.learners), align: "end", phone: "hide" },
     { header: "Certified", cell: (r) => r.certified, align: "end", phone: "hide" },
-    { header: "Placed", cell: (r) => `${r.placed} (${formatRate(r.placed, r.learners)})`, align: "end", phone: "hide" },
+    { header: "Placed", cell: (r) => withRate(r.placed, r.learners), align: "end", phone: "hide" },
     {
       header: "Summary",
       cell: (r) => (
@@ -130,7 +135,7 @@ async function NorthStar({ searchParams }: Pick<PageProps<"/admin/impact">, "sea
             <h2 id="totals-heading" className="text-subtitle text-content">
               All cohorts
             </h2>
-            <SectionGrid cols={4}>
+            <div className="grid grid-cols-2 gap-3 lg:grid-cols-4 xl:gap-6">
               <Tile value={String(total.learners)} label="Learners" detail={`${rows.length} ${rows.length === 1 ? "cohort" : "cohorts"}`} />
               <Tile value={String(total.completed)} label="Completed" detail={`${formatRate(total.completed, total.learners)} of learners`} />
               <Tile value={String(total.certified)} label="Certified" />
@@ -139,7 +144,7 @@ async function NorthStar({ searchParams }: Pick<PageProps<"/admin/impact">, "sea
                 label={`Placed within ${months} months`}
                 detail={`${formatRate(total.placed, total.learners)} of learners`}
               />
-            </SectionGrid>
+            </div>
             <p className="max-w-reading text-sm text-content-2">
               {final.learners > 0
                 ? `Final cohorts only (window closed): ${final.placed} of ${final.learners} learners placed, ${formatRate(final.placed, final.learners)}.`

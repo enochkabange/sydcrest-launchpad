@@ -10,9 +10,9 @@ import type { OutcomeInput } from "@/lib/outcomes/validation";
 import type { OutcomeFormState } from "./actions";
 
 /**
- * The report and edit form. Keeps what was typed after a failed check by
- * using the submitted values as defaults (React resets a form after its
- * action runs).
+ * The report and edit form. Keeps what was typed after a failed check: the
+ * action returns the submitted values and the fields remount with them
+ * (React resets a form after its action runs).
  */
 export function OutcomeForm({
   action,
@@ -26,13 +26,7 @@ export function OutcomeForm({
   /** Today in Ghana (YYYY-MM-DD), the latest date the field allows. */
   today: string;
 }) {
-  const [state, formAction, pending] = useActionState<OutcomeFormState & { values?: Record<string, string> }, FormData>(
-    async (prev, form) => {
-      const result = await action(prev, form);
-      return { ...result, values: Object.fromEntries([...form.entries()].map(([k, v]) => [k, String(v)])) };
-    },
-    {},
-  );
+  const [state, formAction, pending] = useActionState<OutcomeFormState, FormData>(action, {});
   const v = (key: keyof OutcomeInput) => state.values?.[key] ?? initial?.[key] ?? "";
   const errors = state.errors ?? {};
 
