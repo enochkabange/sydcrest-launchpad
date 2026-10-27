@@ -10,16 +10,16 @@ const content: TrackContent = {
   roadmap: "digital-skills-bridge",
   nodes: {
     "phone-as-a-tool": {
-      explanation_md: `Many people think you need a laptop to start learning digital skills. You do not. The phone in your hand can already send emails, join a class, fill in a job application and keep records for a small business. Shops, offices and NGOs in Ghana look for people who are comfortable with a smartphone, because so much daily work now happens on one.
+      explanation_md: `Many people think you need a laptop to start learning digital skills. You do not. The phone in your hand can already send emails, join a class, fill in a job application and keep records for a small business. If you have a laptop or desktop computer at home, at school or at work, that works too, and the lessons in this section give the computer version wherever it is different. Shops, offices and NGOs in Ghana look for people who are comfortable with smartphones and computers, because so much daily work now happens on them.
 
-This first section is about turning your phone from something you use to chat into a tool you use to learn and work.
+This first section is about turning the device you already have from something you use to chat into a tool you use to learn and work.
 
 ## What this section covers
 
-* **First steps on a smartphone.** The taps, swipes and buttons every app uses, and how to turn WiFi and mobile data on and off.
-* **Settings, storage and battery.** How to keep your phone fast, with enough space and enough charge to finish a lesson.
+* **First steps on a phone or computer.** The taps, swipes and buttons every phone app uses, the clicks and keys that do the same jobs on a computer, and how to turn WiFi and mobile data on and off.
+* **Settings, storage and battery.** How to keep your phone or computer fast, with enough space and enough charge to finish a lesson.
 * **Saving data and money.** How to make a data bundle last longer, so learning does not become expensive.
-* **Installing apps safely.** How to get apps from the right place and check what they are allowed to do.
+* **Installing apps safely.** How to get apps and programs from the right place and check what they are allowed to do.
 
 ## Why start here
 
@@ -29,22 +29,22 @@ You might already know some of this. That is good. Go through each lesson anyway
 
 ## How to learn in this section
 
-* Keep your phone in your hand while you read. When a lesson says "open Settings", do it right away.
+* Keep your phone or computer in front of you while you read. When a lesson says "open Settings", do it right away.
 * Do not worry about breaking anything. The settings in this section are safe, and you can always change them back.
-* Phones look a little different from brand to brand. If a menu has a slightly different name on your phone, look for the closest match, or use the search bar at the top of the Settings app.
+* Phones and computers look a little different from brand to brand. If a menu has a slightly different name on your device, look for the closest match, or type what you want into the search box in Settings. Phones and computers both have one.
 
-By the end of this section you will know your own phone better, and you will feel more in control of it. That confidence matters, because every other part of this roadmap builds on it.`,
-      practice_task_md: `**Goal:** Take a snapshot of your phone today, so you can see your progress later.
+By the end of this section you will know your own phone or computer better, and you will feel more in control of it. That confidence matters, because every other part of this roadmap builds on it.`,
+      practice_task_md: `**Goal:** Take a snapshot of your phone or computer today, so you can see your progress later.
 
 **Steps**
 
-1. Open your phone's Settings app. Find the "About phone" page and write down your phone's model name.
-2. Find the Storage page and write down how much space is used and how much is free.
-3. Check your battery level now and write down the time.
-4. Write down how many days your last data bundle lasted.
-5. Write one sentence about what annoys you most about your phone right now.
+1. Open Settings. On a phone, find the "About phone" page. On a computer, search Settings for "About". Write down the model or device name.
+2. Search Settings for Storage and write down how much space is used and how much is free.
+3. Check your battery level now and write down the time. On a desktop computer with no battery, skip this step.
+4. Write down how many days your last data bundle lasted, or write "WiFi only" if you do not use bundles.
+5. Write one sentence about what annoys you most about your device right now.
 
-**Done looks like:** A short note in your notebook or Notes app with these five answers. Keep it. At the end of this section, check the same things again and see what has improved.`,
+**Done looks like:** A short note in your notebook or a notes app with these five answers. Keep it. At the end of this section, check the same things again and see what has improved.`,
       quiz: {
         questions: [
           {
@@ -53,10 +53,10 @@ By the end of this section you will know your own phone better, and you will fee
               "A new laptop",
               "A home internet connection",
               "A paid course certificate",
-              "The phone you already have",
+              "The phone or computer you already have",
             ],
             answer_index: 3,
-            explanation: "The lesson explains that your phone can already send emails, join classes and fill in applications.",
+            explanation: "The lesson explains that the phone you already have can send emails, join classes and fill in applications, and a computer works too.",
           },
           {
             prompt: "Why was Wumpini struggling to learn on her phone?",
@@ -70,15 +70,15 @@ By the end of this section you will know your own phone better, and you will fee
             explanation: "Her full storage, short battery life and fast bundle use were setup problems, not a lack of ability.",
           },
           {
-            prompt: "What should you do if a menu has a slightly different name on your phone?",
+            prompt: "What should you do if a menu has a slightly different name on your device?",
             options: [
-              "Stop the lesson and buy a different phone",
-              "Reset the phone to factory settings",
-              "Look for the closest match or use the search bar in Settings",
+              "Stop the lesson and buy a different device",
+              "Reset the device to factory settings",
+              "Look for the closest match or use the search box in Settings",
               "Skip that lesson completely",
             ],
             answer_index: 2,
-            explanation: "Phones differ by brand, so the lesson suggests finding the closest match or searching in Settings.",
+            explanation: "Phones and computers differ by brand, so the lesson suggests finding the closest match or searching in Settings.",
           },
           {
             prompt: "Which of these is one of the four topics in this section?",
@@ -97,9 +97,9 @@ By the end of this section you will know your own phone better, and you will fee
     },
 
     "phone-first-steps": {
-      explanation_md: `Every app on a smartphone is controlled with the same few movements. Once these feel natural, you can learn any new app quickly, whether it is a work WhatsApp group, a sales app at a shop or a survey app an NGO gives you in the field. Employers notice when someone handles a phone calmly and confidently.
+      explanation_md: `Every app on a smartphone is controlled with the same few movements, and a computer has its own matching set. Once these feel natural, you can learn any new app quickly, whether it is a work WhatsApp group, a sales app at a shop or a survey app an NGO gives you in the field. Employers notice when someone handles a phone or a computer calmly and confidently.
 
-## The basic movements
+## The basic movements on a phone
 
 * **Tap.** Touch the screen once, lightly, to open an app or press a button.
 * **Long press.** Hold your finger on something for about a second. This often shows extra options, such as delete or share.
@@ -125,6 +125,18 @@ Swipe down from the very top of the screen. You will see a panel of quick settin
 
 When WiFi is connected, your phone uses it first, which saves your bundle.
 
+## On a computer
+
+The same jobs have computer versions:
+
+* **Click** does what a tap does. **Right click** shows extra options, like a long press.
+* **Scroll** with the wheel on the mouse, or slide two fingers on a laptop touchpad.
+* **Zoom** in a web browser by holding Ctrl and pressing the plus key, or Ctrl and minus to zoom out. On a Mac, use Command instead of Ctrl.
+* **Switch apps** by clicking them on the taskbar at the bottom of the screen, called the Dock on a Mac.
+* **WiFi** has the same fan shaped icon, near the clock at the bottom right on Windows or at the top right on a Mac. Click it and choose a network.
+
+If you have never used a mouse, the lesson on mouse and keyboard basics later in this roadmap goes step by step.
+
 ## A worked example
 
 Fuseini works at a provisions shop in Tamale. His manager sends the price list as a photo on WhatsApp. The numbers are small, so Fuseini taps the photo to open it, then pinches outward to zoom in on the price of rice. He swipes down from the top to check he is on the shop's WiFi, so the photos do not use his own data. When a customer calls, he presses Home, answers, then uses Recent apps to jump straight back to the price list.
@@ -140,11 +152,13 @@ That is four simple movements and two buttons, used together. Practise them ever
 4. Swipe down from the top of the screen and find the WiFi and Mobile data icons. Turn mobile data off, then back on.
 5. Press Home from inside any app.
 
-**Done looks like:** You can do all five steps without looking at the instructions. Show a friend or family member how to zoom into a photo and switch apps.`,
+On a computer, practise the computer versions instead: zoom a web page in and out, right click an empty part of the screen, switch between two open apps using the taskbar or Dock, and click the WiFi icon to see which network you are on.
+
+**Done looks like:** You can do all five steps, or their computer versions, without looking at the instructions. Show a friend or family member how to zoom in and switch apps.`,
       quiz: {
         questions: [
           {
-            prompt: "Which movement do you use to zoom in on a small price list photo?",
+            prompt: "On a phone, which movement do you use to zoom in on a small price list photo?",
             options: [
               "Tap once",
               "Long press",
@@ -166,15 +180,15 @@ That is four simple movements and two buttons, used together. Practise them ever
             explanation: "Home takes you to your main screen from anywhere, and nothing is lost.",
           },
           {
-            prompt: "Where do you usually find the WiFi and Mobile data icons quickly?",
+            prompt: "On a computer, what does the same job as a long press on a phone?",
             options: [
-              "By swiping down from the top of the screen",
-              "Inside the Gallery app",
-              "By long pressing the Home button",
-              "In your WhatsApp chats",
+              "A right click",
+              "Pressing the plus key",
+              "Sliding two fingers on the touchpad",
+              "Clicking the WiFi icon",
             ],
             answer_index: 0,
-            explanation: "Swiping down from the top opens the quick settings panel.",
+            explanation: "A right click shows extra options, like a long press on a phone.",
           },
           {
             prompt: "Why did Fuseini check that he was on the shop's WiFi?",
@@ -193,46 +207,47 @@ That is four simple movements and two buttons, used together. Practise them ever
     },
 
     "phone-settings-and-storage": {
-      explanation_md: `A phone that is full, slow or always out of battery makes learning and working hard. A front desk assistant who cannot take a photo of a receipt because "storage is full" looks unprepared. Keeping your phone tidy is a small, real work skill.
+      explanation_md: `A phone or computer that is full, slow or always out of battery makes learning and working hard. A front desk assistant who cannot take a photo of a receipt because "storage is full" looks unprepared. Keeping your device tidy is a small, real work skill.
 
 ## Storage: making space
 
-Storage is where your phone keeps apps, photos, videos and messages. When it is almost full, the phone slows down, apps crash and new files will not save.
+Storage is where your phone or computer keeps apps, photos, videos and messages. When it is almost full, the device slows down, apps crash and new files will not save.
 
-Open **Settings** and search for **Storage**. You will see what is taking up space. The usual causes are:
+Open **Settings** and search for **Storage**. This works on phones and computers. You will see what is taking up space. The usual causes are:
 
 * **WhatsApp media.** Every photo, video and voice note from groups is saved on your phone. WhatsApp has its own storage tool. Open WhatsApp's Settings and look for **Storage and data**, then **Manage storage**. It shows the biggest files and chats, and you can delete large videos you no longer need.
 * **Videos you recorded.** Move important ones to Google Drive or a computer, then delete them from the phone.
 * **Apps you never use.** Each one takes space and may update in the background.
+* **The Downloads folder on a computer.** Old installers, videos and copies of the same file pile up there. Open it and delete what you no longer need.
 
-A simple target is to keep a good amount of space free at all times, so the phone has room to work.
+A simple target is to keep a good amount of space free at all times, so the device has room to work.
 
 ## Notifications: fewer distractions
 
-Every buzz pulls you away from your lesson. In **Settings**, find **Notifications**. Turn off notifications for games and apps that do not matter, and keep them on for calls, messages and your learning apps. Many phones also have a **Do not disturb** or **Focus** mode you can switch on during a study session.
+Every buzz pulls you away from your lesson. In **Settings**, find **Notifications**. Turn off notifications for games and apps that do not matter, and keep them on for calls, messages and your learning apps. Many phones and computers also have a **Do not disturb** or **Focus** mode you can switch on during a study session.
 
 ## Battery: lasting the day
 
 * Lower the screen brightness. The screen uses a lot of power.
-* Turn on **Battery saver** when you are below about a third.
-* Close apps you are not using from Recent apps.
+* Turn on **Battery saver** when you are below about a third. Laptops have a similar setting, often called battery saver, energy saver or Low Power Mode.
+* Close apps and browser tabs you are not using.
 * Carry your charger, or charge before a long session if power is unreliable.
 
 ## Updates
 
-Phone and app updates fix problems and close security holes. Install them, but do it on WiFi so they do not finish your bundle.
+Phone, computer and app updates fix problems and close security holes. Install them, but do it on WiFi so they do not finish your bundle.
 
 ## A worked example
 
 Mariama in Bolgatanga could not download a course PDF because her phone was full. She opened WhatsApp's storage tool and found one church group had saved hundreds of forwarded videos. She deleted them, removed two old games and turned off game notifications. The PDF downloaded, and her phone felt faster too.
 
 Check your storage once a week. It takes two minutes and saves a lot of frustration.`,
-      practice_task_md: `**Goal:** Free up space and cut distractions on your own phone.
+      practice_task_md: `**Goal:** Free up space and cut distractions on your own phone or computer.
 
 **Steps**
 
-1. Open Settings, then Storage, and write down how much space is free.
-2. In WhatsApp's Settings, find the storage tool (look for Storage and data, then Manage storage). Delete at least five large videos you do not need.
+1. Open Settings, search for Storage, and write down how much space is free.
+2. On a phone, find the storage tool in WhatsApp's Settings (look for Storage and data, then Manage storage) and delete at least five large videos you do not need. On a computer, open your Downloads folder and delete at least five large files you do not need.
 3. Uninstall one app you have not opened in a month.
 4. Turn off notifications for at least two apps that distract you.
 5. Check Storage again and write down the new free space.
@@ -241,15 +256,15 @@ Check your storage once a week. It takes two minutes and saves a lot of frustrat
       quiz: {
         questions: [
           {
-            prompt: "What usually happens when a phone's storage is almost full?",
+            prompt: "What usually happens when a device's storage is almost full?",
             options: [
               "The battery lasts longer",
               "Data bundles become cheaper",
-              "The phone slows down and new files may not save",
+              "The device slows down and new files may not save",
               "WhatsApp sends fewer messages",
             ],
             answer_index: 2,
-            explanation: "A full phone slows down, apps crash and new files will not save.",
+            explanation: "A full device slows down, apps crash and new files will not save.",
           },
           {
             prompt: "Where in WhatsApp can you find and delete large videos?",
@@ -274,7 +289,7 @@ Check your storage once a week. It takes two minutes and saves a lot of frustrat
             explanation: "The screen uses a lot of power, so lower brightness saves battery.",
           },
           {
-            prompt: "When should you install phone and app updates?",
+            prompt: "When should you install phone, computer and app updates?",
             options: [
               "Never, because they are risky",
               "Only when the phone stops working",
@@ -299,8 +314,9 @@ WiFi does not use your bundle. Places that may have WiFi include some schools, l
 ## Stop apps eating data in the background
 
 * **Data saver.** In Settings, search for **Data saver** and turn it on. It stops many apps from using data when you are not looking at them.
-* **App updates.** Open the Play Store and go to its settings. Find the option for updating apps automatically and choose **WiFi only**.
+* **App updates.** On an Android phone, open the Play Store and go to its settings. Find the option for updating apps automatically and choose **WiFi only**.
 * **WhatsApp downloads.** In WhatsApp's Settings, look for **Storage and data**. There you can choose when photos, audio, videos and documents download by themselves: only on WiFi, or never. You can still tap any file to download it when you need it.
+* **Computers on a hotspot.** A laptop connected to your phone's hotspot can finish a bundle fast, because computers download large updates. On Windows, open the settings for that WiFi network and turn on **Metered connection**, which holds back many updates and background downloads. On a Mac, look in the WiFi settings for a similar low data option.
 
 ## Watch and download wisely
 
@@ -310,7 +326,7 @@ WiFi does not use your bundle. Places that may have WiFi include some schools, l
 
 ## Know where your data goes
 
-In **Settings**, search for **Data usage**. You will see which apps used the most data this month. If something surprises you, restrict it or delete it.
+In **Settings**, search for **Data usage**. This works on most phones and on Windows computers. You will see which apps used the most data this month. If something surprises you, restrict it or delete it.
 
 ## A worked example
 
@@ -323,7 +339,7 @@ Compare the bundles your network offers before you buy. A bigger bundle that las
 
 1. Open Settings, search for Data usage and write down the three apps that used the most data.
 2. Turn on Data saver.
-3. In the Play Store settings, set automatic app updates to WiFi only.
+3. In the Play Store settings, set automatic app updates to WiFi only. If you use a laptop on your phone's hotspot, set that connection as metered instead.
 4. In WhatsApp's Storage and data settings, set videos and documents to download automatically only on WiFi.
 5. Turn off autoplay in one video app you use.
 6. After seven days, check Data usage again.
@@ -381,13 +397,15 @@ Compare the bundles your network offers before you buy. A bigger bundle that las
     },
 
     "apps-safely": {
-      explanation_md: `At work you may be asked to install an app: a sales app, a delivery tracking app, or a survey app such as Kobo Collect for an NGO field job. Knowing how to install apps safely, and how to spot a bad one, protects your phone, your money and your employer's information.
+      explanation_md: `At work you may be asked to install an app: a sales app, a delivery tracking app, or a survey app such as Kobo Collect for an NGO field job. Knowing how to install apps safely, and how to spot a bad one, protects your phone or computer, your money and your employer's information.
 
 ## Get apps from the official store
 
 On Android phones, the official store is the **Google Play Store**. On iPhones it is the **App Store**. Apps there are checked before they are listed. The checks are not perfect, so you still need to look carefully, but apps sent to you as files on WhatsApp, or downloaded from random websites, are not checked and can contain harmful software that steals passwords or MoMo details. They are far riskier.
 
-If someone sends you an app file and says "install this to get your prize", do not open it.
+On a computer, get programs from the **Microsoft Store** on Windows, the **App Store** on a Mac, or the official website of the company that makes them. Avoid "free" copies of paid software from random websites, because they often hide harmful software.
+
+If someone sends you an app or program file and says "install this to get your prize", do not open it.
 
 ## Check before you install
 
@@ -404,26 +422,26 @@ When you open a new app, it may ask for permission to use your camera, microphon
 * A survey app asking for your location may be fine, because the NGO needs to know where the survey happened.
 * A torch app asking for your contacts is a warning sign.
 
-You can change permissions later. In **Settings**, find **Apps**, choose the app and look for **Permissions**. The names can differ a little from phone to phone. Turn off anything that does not make sense.
+You can change permissions later. On a phone, open **Settings**, find **Apps**, choose the app and look for **Permissions**. On a computer, look in Settings (System Settings on a Mac) for **Privacy and security**, which shows the apps that can use your camera, microphone and location. The names can differ a little from device to device. Turn off anything that does not make sense.
 
 ## Clean up regularly
 
-Apps you do not use still take space, may use data and may keep permissions they no longer need. Delete them. You can always install them again from the store.
+Apps you do not use still take space, may use data and may keep permissions they no longer need. Delete them. On a Windows computer, uninstall programs from Settings, under Apps. On a Mac, drag them from Applications to the Bin. You can always install them again from the store.
 
 ## A worked example
 
 Hawa got a job as a temporary enumerator for a household survey near Wa. Her supervisor told her to install the survey app from the Play Store. She searched for it, checked that the developer name matched what her supervisor wrote in the WhatsApp group, and installed it. The app asked for camera and location access, which made sense for photos and survey locations, so she allowed them. When a stranger later sent her a "faster version" of the app as a file, she ignored it and told her supervisor.
 
 Safe habits like these are what employers mean when they ask for someone who is "comfortable with smartphones".`,
-      practice_task_md: `**Goal:** Check the apps and permissions on your own phone.
+      practice_task_md: `**Goal:** Check the apps and permissions on your own phone or computer.
 
 **Steps**
 
 1. Open Settings, then Apps, and count how many apps you have installed.
-2. Pick three apps. For each one, open Permissions and write down what it can access.
+2. Pick three apps. For each one, open Permissions and write down what it can access. On a computer, use Privacy and security in Settings instead.
 3. Turn off any permission that does not make sense for that app.
 4. Uninstall at least one app you no longer use.
-5. In the Play Store, open the page of any learning app and write down its developer name and one thing from its data safety section.
+5. In your app store, open the page of any learning app and write down its developer name and one thing from its data safety or privacy section.
 
 **Done looks like:** A short table with three apps, their permissions and any change you made.`,
       quiz: {
@@ -451,7 +469,7 @@ Safe habits like these are what employers mean when they ask for someone who is 
             explanation: "A torch does not need your contacts, so the request is a warning sign.",
           },
           {
-            prompt: "How can you change an app's permissions after installing it?",
+            prompt: "On a phone, how can you change an app's permissions after installing it?",
             options: [
               "In Settings, find the app under Apps and open its Permissions",
               "Restart the phone twice",
@@ -501,7 +519,7 @@ Both are short. Only the second tells Amina exactly what is wrong and what you s
 
 ## Why this matters for the DMP cohort
 
-SydCrest's Delta Mentoring Program is a twelve week cohort with a mentor. In week 1 you send emails, and the weekly assignments are written in English. Your mentor will tell you how sessions run. If you can already write a clear message and use your phone calmly, you can spend your energy on the new skills the cohort teaches.
+SydCrest's Delta Mentoring Program is a twelve week cohort with a mentor. In week 1 you send emails, and the weekly assignments are written in English. Your mentor will tell you how sessions run. If you can already write a clear message and use your phone or computer calmly, you can spend your energy on the new skills the cohort teaches.
 
 ## How to practise
 
@@ -596,7 +614,7 @@ If the person they want is not available, take a message. A useful message has:
 * What they want, in one or two sentences.
 * What you promised, for example "Manager will call back today".
 
-Write it down straight away in a notebook or your phone's Notes app, then pass it on. Some offices log calls in a computer system. The idea is the same: accurate, complete records.
+Write it down straight away in a notebook or a notes app, then pass it on. Some offices log calls in a computer system. The idea is the same: accurate, complete records.
 
 ## Ending the call and following up
 
@@ -686,7 +704,7 @@ Voice notes are quick, but the listener must find a quiet place to play them, an
 
 ## Sharing photos and documents
 
-* To share a document such as a CV or a price list as a PDF, tap the attach button next to the message box (often a paperclip or a plus sign), choose **Document** and pick the file. Sending as a document keeps it sharp and keeps its name.
+* To share a document such as a CV or a price list as a PDF, tap or click the attach button next to the message box (often a paperclip or a plus sign), choose **Document** and pick the file. Sending as a document keeps it sharp and keeps its name.
 * Sending a picture through the camera or gallery option makes it smaller and less clear. That is fine for a quick look, but not for something someone will print or read closely.
 * Before you send a photo of a receipt or form, check it is in focus and nothing important is cut off.
 
@@ -782,8 +800,8 @@ Most video calls start with a link that someone sends you on WhatsApp or by emai
 
 Every video call app has the same few controls, usually at the bottom of the screen:
 
-* **Microphone.** Tap to mute or unmute. When it has a line through it, nobody can hear you.
-* **Camera.** Tap to turn your video on or off.
+* **Microphone.** Tap or click to mute or unmute. When it has a line through it, nobody can hear you.
+* **Camera.** Tap or click to turn your video on or off.
 * **Chat.** A place to type questions or share a link.
 * **Raise hand.** A polite way to ask to speak in a large group.
 * **Leave.** Often a red button. It ends the call for you only.
@@ -801,7 +819,7 @@ Video calls use a lot of data. To use less:
 ## Looking and sounding ready
 
 * Sit facing a window or light, not with the light behind you.
-* Hold the phone steady, or prop it up at eye level.
+* Prop your phone or laptop up so the camera is steady and at eye level.
 * Use earphones if you have them. They cut echo and noise.
 * Use your real name as your display name, so the host knows who you are.
 
@@ -812,7 +830,7 @@ Rashida in Damongo has been invited to an online interview for an office job. Th
 
 **Steps**
 
-1. Agree a time with a friend who has a smartphone.
+1. Agree a time with a friend who has a smartphone or a computer.
 2. One of you starts a WhatsApp video call, or a Google Meet call if you can, and sends the link or calls the other.
 3. Practise muting and unmuting, turning the camera on and off, and typing in the chat if the app has one.
 4. Try sitting facing the light, then with the light behind you, and ask your friend which looks better.
@@ -879,7 +897,7 @@ Many people stop a course because the reading feels hard. Try these habits:
 
 * **Read the headings first.** They tell you what the page is about before you start.
 * **Read slowly and more than once.** Going over a paragraph twice is normal, not a weakness.
-* **Look up words you need.** Long press a word on your phone to see options such as search or translate. Write new words in a notebook with a short meaning in your own words.
+* **Look up words you need.** On a phone, long press a word to see options such as search or translate. On a computer, select the word and right click it. Write new words in a notebook with a short meaning in your own words.
 * **Do not stop for every word.** If you understand the sentence without it, keep going.
 * **Explain it to someone.** If you can explain a lesson in Dagbani, Gurene, Waali, Twi or any language you speak, you have understood it.
 
@@ -893,7 +911,7 @@ Short and simple is professional. A good work message or email has:
 * A **clear request** or next step.
 * A **polite close** and your name: "Thank you. Hawa Issah."
 
-Before you send anything important, read it once more. Check names, dates and numbers. Your phone's keyboard may underline spelling mistakes in red. Tap the word to see suggestions.
+Before you send anything important, read it once more. Check names, dates and numbers. Your phone keyboard, and most browsers and writing apps on a computer, underline spelling mistakes in red. Tap or right click the word to see suggestions.
 
 ## A worked example
 
@@ -980,7 +998,7 @@ Spend ten minutes a day reading something in English that interests you: a news 
 * **One email address you control.** How to create a personal email address with a sensible name, and make sure you can always get back into it.
 * **Strong passwords and two step verification.** How to make passwords that are hard to guess, and add a second lock so a stolen password is not enough.
 * **Spotting mobile money and online scams.** The tricks people in Ghana use most often, and simple rules that protect you.
-* **Privacy and shared phones.** What to share and not share about yourself, and how to keep your accounts private when other people use your phone.
+* **Privacy on shared phones and computers.** What to share and not share about yourself, and how to keep your accounts private when other people use your phone or computer.
 
 ## Think of accounts like keys
 
@@ -1175,7 +1193,7 @@ A good method is a **passphrase**: three or four random words joined together, p
 
 If you use the same password everywhere and one website is hacked, criminals try it on your email and other accounts. Use a different password at least for your email, your MoMo or bank app, and your main social media.
 
-Remembering many passwords is hard. Options include a password manager app, or the password saving built into your Google account on your own phone. If you write passwords down, keep the paper at home in a private place, never in your phone case or wallet.
+Remembering many passwords is hard. Options include a password manager app, or the password saving built into your Google account on your own phone or computer. If you write passwords down, keep the paper at home in a private place, never in your phone case or wallet.
 
 ## Two step verification
 
@@ -1340,7 +1358,7 @@ If you do lose money, contact your network's official customer care immediately 
     },
 
     "privacy-and-shared-phones": {
-      explanation_md: `Customer service and front desk jobs often involve customer names, phone numbers and payment details. Adverts for these roles ask for people who keep records confidential and check a caller's identity before sharing information. The habits start with your own information. Many people in Ghana also share a phone with family, which makes privacy a practical daily skill.
+      explanation_md: `Customer service and front desk jobs often involve customer names, phone numbers and payment details. Adverts for these roles ask for people who keep records confidential and check a caller's identity before sharing information. The habits start with your own information. Many people in Ghana also share a phone with family, or use a shared computer at school, a library or a business centre, which makes privacy a practical daily skill.
 
 ## What to share, and what to keep private
 
@@ -1357,12 +1375,12 @@ Be careful with WhatsApp status and Facebook posts. A photo of a new ID card or 
 * **WhatsApp:** in WhatsApp's Settings, open **Privacy**. You can choose who sees your profile photo, last seen, about and status. Choices include **My contacts** and, for most of these, **Nobody**. You can also control who can add you to groups.
 * **Facebook and other apps:** look for **Privacy** or **Audience** settings and limit who can see your posts and phone number.
 
-## Using a shared phone safely
+## Using a shared phone or computer safely
 
-* **Screen lock.** Use a PIN, pattern or fingerprint that only you know.
-* **Sign out.** On a shared phone, sign out of email and other accounts when you finish, or use a separate account for yourself if the phone allows it. Many Android phones support more than one user profile.
+* **Screen lock.** Use a PIN, pattern, password or fingerprint that only you know, on your phone and on your own computer.
+* **Sign out.** On a shared phone or computer, sign out of email and other accounts when you finish, or use a separate account for yourself if the device allows it. Many Android phones support more than one user profile, and Windows and Mac computers let each person have their own user account.
 * **Private browsing.** In Chrome, an Incognito tab does not keep a record of the sites you visited after you close it. It does not hide what you do from the websites themselves, your network or your employer, but it helps on shared devices.
-* **Do not save passwords** in the browser on a phone that is not yours.
+* **Do not save passwords** in the browser on a phone or computer that is not yours.
 * **App lock.** Some phones and apps, including WhatsApp, let you lock individual apps with your fingerprint or a PIN.
 
 ## Respecting other people's information
@@ -1377,9 +1395,9 @@ Amina shares a phone with her younger brother. She set a fingerprint lock on Wha
 **Steps**
 
 1. In WhatsApp, open Settings, then Privacy. Set profile photo, last seen and status to My contacts, and choose who can add you to groups.
-2. Check your phone has a screen lock that only you know.
+2. Check your phone, and your computer if you have one, has a screen lock that only you know.
 3. Look at your last ten WhatsApp statuses or social media posts. Delete any that show an ID card, bank card, PIN or your exact home location.
-4. If you share a phone, sign out of your email now and practise signing back in.
+4. If you share a phone or computer, sign out of your email now and practise signing back in.
 5. Write down three things you will never post or send.
 
 **Done looks like:** Updated WhatsApp privacy settings, a working screen lock, and your list of three things you keep private.`,
@@ -1408,12 +1426,12 @@ Amina shares a phone with her younger brother. She set a fingerprint lock on Wha
             explanation: "WhatsApp's Privacy settings control who sees these details.",
           },
           {
-            prompt: "What does an Incognito tab in Chrome do on a shared phone?",
+            prompt: "What does an Incognito tab in Chrome do on a shared phone or computer?",
             options: [
               "Hides everything from your network",
               "Speeds up your downloads",
               "Does not keep a record of the sites you visited after you close it",
-              "Locks the phone",
+              "Locks the device",
             ],
             answer_index: 2,
             explanation: "Incognito does not keep your browsing history, but it does not hide activity from your network.",
@@ -1437,17 +1455,17 @@ Amina shares a phone with her younger brother. She set a fingerprint lock on Wha
     "files-and-forms": {
       explanation_md: `Applying for a job usually means attaching a CV and a photo of a certificate. Registering for a course means filling in an online form. Field jobs with NGOs often involve entering survey answers into a form on a phone or tablet all day. Office jobs involve looking things up quickly and correctly. All of these come down to three skills: handling files, filling in forms and finding information.
 
-This section teaches those skills on the phone you already have.
+This section teaches those skills on the phone or computer you already have, with tips for both.
 
 ## What this section covers
 
-* **Photos, documents and files on your phone.** Where your downloads go, how to make a clear scan of a paper document, how to give files sensible names and how to send them.
+* **Photos, documents and files.** Where your downloads go, how to make a clear scan of a paper document, how to give files sensible names and how to send them.
 * **Filling in online forms.** How to read a form, fill it in correctly, check it and submit it, whether it is a job application, a course registration or a field survey.
 * **Searching and judging information.** How to choose good search words and decide whether a website can be trusted.
 
-## Why on a phone first
+## Phone or computer, the same ideas
 
-DMP week 1 teaches files and folders on a computer. The ideas are the same on a phone: a file has a name, it lives in a folder, and you can find, move, rename, share and delete it. If you already understand this on your phone, the computer version will feel familiar instead of strange.
+DMP week 1 teaches files and folders on a computer. The ideas are the same on a phone: a file has a name, it lives in a folder, and you can find, move, rename, share and delete it. If you learn this on your phone first, the computer version will feel familiar instead of strange. If you already use a computer, practise there and you will arrive a step ahead.
 
 ## A picture of the problem
 
@@ -1467,8 +1485,8 @@ Have a real document nearby, such as a certificate, a receipt or a school report
 **Steps**
 
 1. Make a list of documents an entry level job might ask for: CV, certificates, Ghana Card, a passport photo.
-2. Next to each one, write whether you have a clear digital copy on your phone today.
-3. For each one you can find, write where it is: Gallery, Downloads, WhatsApp, Google Drive or somewhere else.
+2. Next to each one, write whether you have a clear digital copy on your phone or computer today.
+3. For each one you can find, write where it is: Gallery, Downloads, Documents, WhatsApp, Google Drive or somewhere else.
 4. Mark the ones you need to scan or create during this section.
 
 **Done looks like:** A checklist of your documents showing which ones are ready and which you will prepare next.`,
@@ -1486,7 +1504,7 @@ Have a real document nearby, such as a certificate, a receipt or a school report
             explanation: "The section covers files, forms and searching.",
           },
           {
-            prompt: "Why does the section teach files on a phone before the DMP cohort?",
+            prompt: "Why does learning files on a phone help before the DMP cohort's computer lessons?",
             options: [
               "Computers do not use files",
               "The ideas are the same, so the computer version will feel familiar",
@@ -1526,25 +1544,25 @@ Have a real document nearby, such as a certificate, a receipt or a school report
     "files-on-your-phone": {
       explanation_md: `Every job application asks you to attach something: a CV, a certificate, an ID. Office and field jobs involve sending receipts, reports and photos of forms. Knowing where your files are, and how to send a clear copy, saves time and makes you look organised.
 
-## Where files live on your phone
+## Where files live
 
-Your phone stores files in **folders**, just like a computer.
+Phones and computers both store files in **folders**.
 
 * **Downloads.** Files you download from a browser or email usually go here.
 * **Pictures or DCIM.** Photos from your camera.
 * **WhatsApp.** Photos and documents people send you on WhatsApp are saved in their own folders.
 
-To see them, open your phone's file manager app. It may be called **Files**, **My Files** or **File Manager**. Tap **Downloads** or browse by category, such as Documents or Images.
+To see them, open your phone's file manager app. It may be called **Files**, **My Files** or **File Manager**. Tap **Downloads** or browse by category, such as Documents or Images. On a computer, open **File Explorer** on Windows or **Finder** on a Mac and click **Downloads** in the side panel.
 
 ## Give files clear names
 
-A file called "IMG_20251003_0912" tells nobody anything. A file called "Hawa Issah CV" or "Hawa Issah SHS Certificate" does. In the file manager, long press a file and choose **Rename**. Employers often receive many applications, and clear names help them find yours.
+A file called "IMG_20251003_0912" tells nobody anything. A file called "Hawa Issah CV" or "Hawa Issah SHS Certificate" does. In a phone's file manager, long press a file and choose **Rename**. On a computer, right click the file and choose **Rename**. Employers often receive many applications, and clear names help them find yours.
 
 ## Making a clear scan of a paper document
 
 A crooked, dark photo of a certificate looks careless. A scan looks neat.
 
-* The **Google Drive** app on Android has a scan tool. Look for the **camera** or **Scan** button in the app. Point the camera at the document, take the photo, and the app helps you crop it and save it as a PDF. Some phone camera apps also have a document scan mode.
+* The **Google Drive** app on Android has a scan tool. Look for the **camera** or **Scan** button in the app. Point the camera at the document, take the photo, and the app helps you crop it and save it as a PDF. Some phone camera apps also have a document scan mode. If you only have a computer, the scanner on a printer at a business centre or office does the same job.
 * Place the paper on a dark, flat surface in good daylight.
 * Make sure all four corners are visible and the text is sharp.
 * Check the result before you save. Retake it if anything is cut off or blurry.
@@ -1553,23 +1571,23 @@ A **PDF** is a file type that looks the same on every phone and computer. It is 
 
 ## Sending a file
 
-* **WhatsApp:** tap the attach icon, choose **Document**, then pick the file.
-* **Email:** in Gmail, tap the paperclip and choose the file. DMP week 1 will practise this in detail.
+* **WhatsApp:** tap or click the attach icon, choose **Document**, then pick the file.
+* **Email:** in Gmail, tap or click the paperclip and choose the file. DMP week 1 will practise this in detail.
 * **Share button:** in most apps, the share icon lets you send a file to WhatsApp, email or Drive.
 
 ## Keeping a backup
 
-Phones get lost, stolen or broken. Keep copies of important documents in Google Drive, which you get free with a Google account. Upload them on WiFi.
+Phones and computers get lost, stolen or broken. Keep copies of important documents in Google Drive, which you get free with a Google account. Upload them on WiFi.
 
 ## A worked example
 
 Sumaila needed to send his certificate to an employer in Tamale. He placed it on a dark table near a window, used the Drive scan tool, renamed the file "Sumaila Mahama WASSCE Certificate", and saved it in a Drive folder called "Job documents". When the employer asked for it, he sent it as a Document on WhatsApp in under a minute.`,
-      practice_task_md: `**Goal:** Create a neat set of job documents on your phone.
+      practice_task_md: `**Goal:** Create a neat set of job documents.
 
 **Steps**
 
-1. Open your phone's file manager and find the Downloads folder. Note two files you find there.
-2. Use the Google Drive scan tool, or your camera's document mode, to scan one paper document such as a certificate or report.
+1. Open your phone's file manager, or File Explorer or Finder on a computer, and find the Downloads folder. Note two files you find there.
+2. Use the Google Drive scan tool, your camera's document mode or a scanner at a business centre to scan one paper document such as a certificate or report.
 3. Rename it clearly with your name and the document type.
 4. Create a folder in Google Drive called Job documents and save the scan there.
 5. Send the PDF to a friend as a Document on WhatsApp and ask if it is clear.
@@ -1613,13 +1631,13 @@ Sumaila needed to send his certificate to an employer in Tamale. He placed it on
           {
             prompt: "Why keep important documents in Google Drive?",
             options: [
-              "So you still have them if your phone is lost or broken",
+              "So you still have them if your phone or computer is lost or broken",
               "So they become public",
               "So they cannot be opened",
               "Because WhatsApp requires it",
             ],
             answer_index: 0,
-            explanation: "Drive keeps a backup when phones get lost, stolen or broken.",
+            explanation: "Drive keeps a backup when phones and computers get lost, stolen or broken.",
           },
         ],
         pass_threshold: 75,
@@ -1635,9 +1653,9 @@ Most forms use the same few types of question:
 
 * **Short answer boxes** for things like your name or phone number.
 * **Long answer boxes** for a few sentences, such as "Why do you want to join?"
-* **Multiple choice**, where you tap one round button.
+* **Multiple choice**, where you tap or click one round button.
 * **Checkboxes**, where you can tick more than one square.
-* **Dropdowns**, where you tap and choose from a list.
+* **Dropdowns**, where you tap or click and choose from a list.
 * **Date pickers** and **file upload** buttons.
 
 A small red star (an asterisk) next to a question usually means it is **required**. The form will not submit until you answer it.
@@ -1753,7 +1771,7 @@ Wumpini's manager asks her to find out how to register a small business name. Sh
 
 ## Searching while you learn
 
-When a lesson uses a word you do not know, search "what is" followed by the word. When an error appears on your phone, search the exact error message in quotation marks. These two habits alone will solve many problems.
+When a lesson uses a word you do not know, search "what is" followed by the word. When an error appears on your phone or computer, search the exact error message in quotation marks. These two habits alone will solve many problems.
 
 DMP week 3 goes deeper into judging online sources. This lesson gives you the everyday habits first.`,
       practice_task_md: `**Goal:** Find a reliable answer to a real question.
@@ -1819,7 +1837,7 @@ DMP week 3 goes deeper into judging online sources. This lesson gives you the ev
     },
 
     "computer-access": {
-      explanation_md: `Your phone can do a lot, but many jobs and courses eventually need a computer. Job adverts in Ghana for office assistants, front desk staff and customer service agents often ask for basic computer skills. The Delta Mentoring Program starts in week 1 with computer hardware, files and folders, and then moves to Google Docs, Sheets and Slides. Getting a little comfortable with a keyboard and mouse before the cohort starts makes that first week much less stressful.
+      explanation_md: `Your phone can do a lot, but many jobs and courses eventually need a computer. Job adverts in Ghana for office assistants, front desk staff and customer service agents often ask for basic computer skills. The Delta Mentoring Program starts in week 1 with computer hardware, files and folders, and then moves to Google Docs, Sheets and Slides. Getting a little comfortable with a keyboard and mouse before the cohort starts makes that first week much less stressful. If you already have a computer at home or at work, use this section to check your basics and build your typing speed.
 
 ## What this section covers
 
@@ -1839,9 +1857,9 @@ If you have never used a computer, the first session can feel strange. The mouse
 
 Napari in Gushegu had only ever used a phone. She asked her former school's ICT teacher if she could use the computer lab on Saturday mornings, and offered to help tidy the lab in return. In her first session she practised moving the mouse and opening a browser. By her fourth session she could type a short paragraph about herself, slowly but correctly. When she joined a digital skills cohort later, she was not afraid of the computer, so she could focus on learning Google Docs.
 
-## How the phone skills help
+## Skills that carry over
 
-Much of what you have learned already carries over. Sending a document, filling in a form and searching work the same way on a computer. You simply click with a mouse instead of tapping, and type on a bigger keyboard instead of a screen.
+If you did the earlier lessons on a phone, much of what you learned carries over. Sending a document, filling in a form and searching work the same way on a computer. You simply click with a mouse instead of tapping, and type on a bigger keyboard instead of a screen.
 
 ## Set a goal for this section
 
@@ -1943,13 +1961,13 @@ If someone says no, thank them and try the next place. One yes is enough.
 
 ## Regular beats long
 
-One hour every week for two months builds more skill than one long day. Your hands need repeated practice to remember the keyboard. Put your time slot in your phone calendar as a reminder.
+One hour every week for two months builds more skill than one long day. Your hands need repeated practice to remember the keyboard. Put your time slot in your calendar as a reminder.
 
 ## A worked example
 
 Abdul-Rahman lives in Tolon and has no computer at home. He asked a youth centre in his area and was told the computers were busy on weekdays. He asked again about Saturday afternoons, and they agreed. He now goes every Saturday with a written plan. In his notebook he keeps a short log: date, what he practised, and one thing he found hard. After a month he can see clear progress.
 
-If you truly cannot find access yet, keep practising the phone skills in this roadmap and keep asking. Access often appears once people know you are serious.`,
+If you truly cannot find access yet, keep practising the rest of this roadmap on your phone and keep asking. Access often appears once people know you are serious.`,
       practice_task_md: `**Goal:** Secure a regular time to practise on a computer.
 
 **Steps**
@@ -1957,7 +1975,7 @@ If you truly cannot find access yet, keep practising the phone skills in this ro
 1. Choose two places from the lesson that exist near you.
 2. Write a short, polite request like the example in the lesson, adapted to your situation.
 3. Visit or call at least one place and ask.
-4. If you get a yes, put the time slot in your phone calendar with a reminder.
+4. If you get a yes, put the time slot in your calendar with a reminder.
 5. Start a practice log page in your notebook with columns for date, what you practised and what was hard.
 
 **Done looks like:** A confirmed time slot, or a note of who you asked and what they said, plus your practice log page ready to use.`,
@@ -2431,7 +2449,7 @@ Your MoMo app or menu shows recent transactions: date, amount, who sent or recei
 
 ## A simple record
 
-A record does not need to be complicated. In a notebook, or a simple table on your phone, use these columns:
+A record does not need to be complicated. In a notebook, or a simple table on your phone or computer, use these columns:
 
 * **Date**
 * **What happened** (for example, "sold 2 bags of rice" or "bought airtime")
@@ -2453,14 +2471,14 @@ At the end of the day, money in is 115 cedis and money out is 10 cedis, so he is
 
 ## From notebook to spreadsheet
 
-In DMP week 2 you will learn Google Sheets, which can add up these columns for you. If you start a paper or phone record now, you will already understand what a spreadsheet is for when you get there.
+In DMP week 2 you will learn Google Sheets, which can add up these columns for you. If you start a record on paper, a phone or a computer now, you will already understand what a spreadsheet is for when you get there.
 
 Accurate records build trust with employers, customers and anyone who might one day lend to or invest in your business.`,
       practice_task_md: `**Goal:** Keep a simple money record for one week.
 
 **Steps**
 
-1. In a notebook or a table on your phone, create the five columns from the lesson: date, what happened, money in, money out, how.
+1. In a notebook or a table on your phone or computer, create the five columns from the lesson: date, what happened, money in, money out, how.
 2. Record every amount of money you receive or spend for seven days, including airtime and data.
 3. Open your MoMo transaction history and check it matches your record. Note any differences.
 4. At the end of the week, add up money in and money out.
@@ -2549,7 +2567,7 @@ If you know anyone who works with computers, at an NGO, a bank, a telecom shop o
 
 Sumaila thought tech only meant coding, which worried him because he disliked maths. He read the digital marketing and UI design roadmaps on SydCrest and spoke to a cousin who manages social media pages for shops in Tamale. He realised he enjoyed writing short, catchy messages and taking product photos. He decided to aim for the social media specialisation in the DMP cohort. Knowing his direction made his typing and English practice feel worthwhile.
 
-Every path above starts with the foundations in this roadmap: confident phone use, clear communication, safe accounts, files and forms, and basic computer skills.`,
+Every path above starts with the foundations in this roadmap: confident use of your phone or computer, clear communication, safe accounts, files and forms, and basic computer skills.`,
       practice_task_md: `**Goal:** Explore at least two digital career paths.
 
 **Steps**
@@ -2630,7 +2648,7 @@ The cohort starts with the basics and builds up:
 Look at week 1 again. Each part builds on something you practised here:
 
 * Computer hardware builds on **mouse and keyboard basics** and **finding a computer**.
-* Files and folders builds on **photos, documents and files on your phone**.
+* Files and folders builds on **photos, documents and files**.
 * Safe browsing and phishing builds on **spotting scams**, **passwords and two step verification** and **privacy**.
 * Gmail with attachments builds on **one email address you control** and sending documents on **WhatsApp**.
 * The Google Docs tip sheet builds on **typing** and **clear English**.
@@ -2684,13 +2702,13 @@ Whatever happens with your application, the skills you built here are yours. The
           {
             prompt: "Which bridge lesson prepares you for files and folders in week 1?",
             options: [
-              "Photos, documents and files on your phone",
+              "Photos, documents and files",
               "Handling work phone calls",
               "Exploring digital careers",
               "Saving data and money",
             ],
             answer_index: 0,
-            explanation: "Files on your phone use the same ideas as files and folders on a computer.",
+            explanation: "Files on a phone use the same ideas as files and folders on a computer.",
           },
           {
             prompt: "What did Hawa do when the checklist showed a gap?",
@@ -2719,9 +2737,9 @@ For each item, do it for real, right now if you can, rather than just thinking "
 * **Nearly:** I did it but needed to look something up.
 * **Not yet:** I could not do it.
 
-## Phone and data
+## Device and data
 
-* I can connect to WiFi and switch mobile data on and off.
+* I can connect to WiFi, and on a phone I can switch mobile data on and off.
 * I can free up storage and manage which apps use my data.
 * I can install an app from the official store and check its permissions.
 
@@ -2827,7 +2845,7 @@ Keep your completed checklist. It is useful evidence of your progress when you a
     },
 
     "apply-to-dmp": {
-      explanation_md: `You have built real foundations: confident phone use, professional communication, safe accounts, files and forms, and first steps on a computer. The next step is to try for a seat in the Delta Mentoring Program. The first cohort is a free pilot with 25 seats, starting in January 2027. Applying is itself a useful skill, because job applications in Ghana use the same steps: read the instructions, fill in a form, attach documents and write about yourself clearly.
+      explanation_md: `You have built real foundations: confident use of your phone or computer, professional communication, safe accounts, files and forms, and first steps on a computer. The next step is to try for a seat in the Delta Mentoring Program. The first cohort is a free pilot with 25 seats, starting in January 2027. Applying is itself a useful skill, because job applications in Ghana use the same steps: read the instructions, fill in a form, attach documents and write about yourself clearly.
 
 ## Before you apply
 

@@ -30,7 +30,7 @@ export default function AdminLayout({ children }: LayoutProps<"/admin">) {
         Skip to content
       </a>
       <header className="border-b border-line bg-surface-sunken">
-        <div className="mx-auto flex w-full max-w-4xl flex-col gap-2 px-4 py-3 md:px-8">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-4 py-3 md:px-8">
           <div className="flex items-center gap-3">
             <Link href="/dashboard" aria-label="SydCrest Launchpad home">
               <Logo size={28} />
@@ -44,7 +44,7 @@ export default function AdminLayout({ children }: LayoutProps<"/admin">) {
           </Suspense>
         </div>
       </header>
-      <main id="main" className="mx-auto w-full max-w-4xl flex-1 px-4 pt-8 pb-16 md:px-8">
+      <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-4 pt-8 pb-16 md:px-8">
         <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>
           <AdminGate>{children}</AdminGate>
         </Suspense>

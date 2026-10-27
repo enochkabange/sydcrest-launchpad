@@ -41,7 +41,7 @@ export const customerService: RoadmapDraft = {
   slug: "customer-service",
   title: "Digital Customer Service",
   description:
-    "Help customers by phone, chat, WhatsApp and email for banks, fintechs, delivery firms and remote support teams. Learn tickets, CRM records, calm problem solving and service quality, almost all of it on a phone.",
+    "Help customers by phone, chat, WhatsApp and email for banks, fintechs, delivery firms and remote support teams. Learn tickets, CRM records, calm problem solving and service quality, and do almost all of it on a phone or a computer.",
   track: "customer-service",
   field_category: "business",
   locale: "en-GH",
@@ -51,7 +51,7 @@ export const customerService: RoadmapDraft = {
       slug: "service-foundations",
       title: "Service foundations",
       summary:
-        "Good support starts with listening, clear writing and knowing what the job involves day to day. Everything in this section works on a phone with a small data bundle.",
+        "Good support starts with listening, clear writing and knowing what the job involves day to day. You can do everything in this section on a phone or a computer with a small data bundle.",
       parent: null,
       optional: false,
       resources: [RES.lfCommunication, hubspotServiceSkills],

@@ -43,10 +43,10 @@ Hawa works on the help desk at a microfinance company in Tamale. One morning a s
 
 ## Phones and computers
 
-You can learn all the ideas in this section on a phone. Later sections include labs that need a computer; when they do, the lesson will say so and offer the best phone alternative.`,
+You can learn all the ideas in this section on a phone or a computer. Later sections include labs that need a computer; when they do, the lesson will say so and offer the best phone alternative.`,
       practice_task_md: `**Goal:** start your security learning journal.
 
-1. Create a free Google Doc or a notes file on your phone called "Security journal".
+1. Create a free Google Doc or a notes file on your phone or computer called "Security journal".
 2. Write one paragraph on why you want to work in cybersecurity and which kind of employer interests you (bank, telco, fintech, NGO, government or remote).
 3. Write the five daily tasks of a junior analyst from this lesson in your own words.
 4. Add one recent scam or security story you heard about in Ghana (from news or friends). Describe what happened in three sentences, without naming the victim.
@@ -1120,7 +1120,7 @@ Amina joins the IT team of a savings and loans company in Tamale. In her first m
 
 ## What comes next
 
-The three topics in this section go deeper into each layer: identity and access management, encryption and protecting data, and security awareness for staff and communities. All three can be learned on a phone, and most practice tasks use free tools you already have.`,
+The three topics in this section go deeper into each layer: identity and access management, encryption and protecting data, and security awareness for staff and communities. All three can be learned on a phone or a computer, and most practice tasks use free tools you already have.`,
       practice_task_md: `**Goal:** audit your own digital protection in three layers.
 
 1. **Identity:** list your five most important accounts (email, mobile money, WhatsApp, social media, banking). Note which have a strong unique password and which have a second factor turned on.
@@ -1297,7 +1297,7 @@ Banks, hospitals, telcos and NGOs in Ghana hold personal data about many people.
 * **Symmetric encryption** uses one shared key to lock and unlock. It is fast and used for files and disks.
 * **Asymmetric encryption** uses a key pair: a public key anyone can use to lock, and a private key only the owner holds to unlock. It helps strangers set up secure connections.
 
-You already use both every day. The padlock in your browser means **HTTPS**, which uses these methods to protect data travelling between your phone and a website. WhatsApp uses end to end encryption for messages. Phone and laptop **disk encryption** protects stored data if the device is lost.
+You already use both every day. The padlock in your browser means **HTTPS**, which uses these methods to protect data travelling between your device and a website. WhatsApp uses end to end encryption for messages. Phone and laptop **disk encryption** protects stored data if the device is lost.
 
 Encryption protects **confidentiality**. It does not stop someone who already has the password, and it does not help if the key is written on a sticky note.
 
@@ -1322,7 +1322,7 @@ Ghana's **Data Protection Act, 2012 (Act 843)** sets rules for processing person
 Hawa works for an NGO in Bolgatanga that runs a health survey. A field officer's tablet with survey responses is stolen at a lorry station. Because Hawa had turned on device encryption and a screen lock on every tablet, the thief cannot read the data. She still reports the loss to her manager, records which data was on the device, and confirms the latest responses were already synced to the NGO's secure server. Encryption turned a potential data breach into the loss of a device.`,
       practice_task_md: `**Goal:** see encryption and hashing in action and check your own devices.
 
-1. On your phone, open a website and tap the padlock to view its certificate details. Note who issued it.
+1. On your phone or computer, open a website and tap or click the padlock (or site information icon) to view its certificate details. Note who issued it.
 2. Use a free online SHA 256 text hashing tool (with harmless text only). Hash the word \`Tamale\`, then \`tamale\`. Note how different the results are.
 3. Check that your phone has a screen lock, and on a laptop check whether BitLocker, device encryption or FileVault is on.
 4. Write five personal data handling rules for a small NGO in your journal.
@@ -1503,7 +1503,7 @@ Wumpini is a Level 1 analyst on the night shift at a payments company. At 2 a.m.
 
 ## Phone and computer
 
-You can learn the ideas and practise reading logs and alerts on a phone. Hands on SIEM and lab practice works best on a computer; the later lessons point to free browser based options and community computers you can use.`,
+You can learn the ideas and practise reading logs and alerts on a phone or a computer. Hands on SIEM and lab practice works best on a computer; the later lessons point to free browser based options and community computers you can use.`,
       practice_task_md: `**Goal:** understand the detect and respond cycle with a real story.
 
 1. Find a news report about a cyber incident affecting an organisation in Ghana or elsewhere in Africa, from a reputable news site.

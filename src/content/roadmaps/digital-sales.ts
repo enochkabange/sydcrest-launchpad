@@ -39,7 +39,7 @@ export const digitalSales: RoadmapDraft = {
   slug: "digital-sales",
   title: "Digital Sales",
   description:
-    "Sell for businesses using the phone, WhatsApp, email and a simple CRM. Learn to find and qualify leads, hold good sales conversations, keep a pipeline and close honestly, all from a phone.",
+    "Sell for businesses using the phone, WhatsApp, email and a simple CRM. Learn to find and qualify leads, hold good sales conversations, keep a pipeline and close honestly, all from a phone or a computer.",
   track: "digital-sales",
   field_category: "business",
   locale: "en-GH",
@@ -202,7 +202,7 @@ export const digitalSales: RoadmapDraft = {
       slug: "pipeline-and-crm",
       title: "Pipeline and CRM",
       summary:
-        "A pipeline shows every deal and what stage it is at, so nothing slips through the cracks. You can run one in a free CRM or a spreadsheet on your phone.",
+        "A pipeline shows every deal and what stage it is at, so nothing slips through the cracks. You can run one in a free CRM or a spreadsheet on your phone or computer.",
       parent: null,
       optional: false,
       resources: [hubspotPipeline, salesforceCrm],

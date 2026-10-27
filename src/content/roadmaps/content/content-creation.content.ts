@@ -43,7 +43,7 @@ Mariama lives in Damongo and loves filming her friends. She notices that a local
 3. Pick the three that would gain most from better photos or video, and write one content idea for each.
 4. Write two sentences on whether you want to start with your own channel, client work, or both, and why.
 
-**Done looks like:** A note on your phone with the ten names, three ideas and your two sentences. Keep it; you will use these names again in later lessons.`,
+**Done looks like:** A note with the ten names, three ideas and your two sentences. Keep it; you will use these names again in later lessons.`,
       quiz: {
         questions: [
           {
@@ -205,7 +205,7 @@ Almost every step of content creation can happen without data. Planning, writing
 * **Back up on WiFi only.** Photo backup apps can be set to upload only on WiFi.
 * **Update apps on WiFi only** in your app store settings.
 * **Lower streaming quality** when watching tutorials. On YouTube you can choose a lower quality for each video or a data saving option in the settings.
-* **Use your phone's data saver** mode, which limits background data for many apps.
+* **Turn on data saver** mode on your phone, which limits background data for many apps, or set your WiFi or hotspot as a metered connection on a computer.
 
 ## Send small, deliver big
 
@@ -1554,7 +1554,7 @@ Hawa edits weekly videos for a pharmacy and a fashion shop. Early on she sent th
       practice_task_md: `**Goal:** Set up a professional export and file system.
 
 **Steps:**
-1. Create a folder on your phone or memory card called "Clients", with one folder for a real or practice client inside, and subfolders for raw, music, graphics and exports.
+1. Create a folder on your phone, computer or memory card called "Clients", with one folder for a real or practice client inside, and subfolders for raw, music, graphics and exports.
 2. Export one of your edits twice: 1080p for the final and 720p for a preview. Name both clearly with client, topic, version and date.
 3. Make a thumbnail for that video with one clear subject and no more than four words. View it at a very small size to check it reads.
 4. Back up the final export in a second place.
@@ -2549,7 +2549,7 @@ Only include client work if the client agreed, and only include people who gave 
 * An **Instagram or TikTok profile** used as a public showcase, with highlights grouped by type.
 * A simple **one page document** with links and short descriptions that you can send as a PDF.
 
-Keep links working and check them on a phone before sending.
+Keep links working and check them on a phone and a computer before sending.
 
 ## Getting the first pieces
 

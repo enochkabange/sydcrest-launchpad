@@ -31,7 +31,7 @@ export default function AppLayout({ children }: LayoutProps<"/">) {
             <Logo size={28} />
           </Link>
         </header>
-        <main id="main" className="mx-auto w-full max-w-3xl flex-1 px-4 pt-8 pb-24 md:px-8 md:pb-12">
+        <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-4 pt-8 pb-24 md:px-8 md:pb-12">
           {children}
         </main>
       </div>

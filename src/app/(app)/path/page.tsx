@@ -43,7 +43,7 @@ async function PathContent() {
 
 function NoPathYet() {
   return (
-    <section className="flex flex-col items-start gap-3 rounded-lg border border-line bg-surface-sunken p-5">
+    <section className="flex max-w-3xl flex-col items-start gap-3 rounded-lg border border-line bg-surface-sunken p-5">
       <h1 className="text-3xl text-content">Find your starting point</h1>
       <p className="text-content-2">
         Answer five quick questions and we will match you to a track, a starting point and a weekly

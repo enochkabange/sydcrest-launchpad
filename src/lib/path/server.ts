@@ -1,7 +1,7 @@
 import "server-only";
 import { createClient } from "@/lib/supabase/server";
 import { answersKey, parseAnswers, type PathAnswers } from "./quiz";
-import { buildPath, chooseTrack, type PathResult, type PublishedRoadmap, type Track } from "./recommend";
+import { buildPath, chooseTrack, starterFor, type PathResult, type PublishedRoadmap, type Track } from "./recommend";
 import { createServiceClient } from "./service-client";
 
 /**
@@ -32,7 +32,13 @@ export async function publishedRoadmapFor(track: Track): Promise<PublishedRoadma
 }
 
 export async function resultFor(answers: PathAnswers): Promise<PathResult> {
-  return buildPath(answers, await publishedRoadmapFor(chooseTrack(answers).track));
+  const { track } = chooseTrack(answers);
+  const starter = starterFor(answers, track);
+  const [published, starterPublished] = await Promise.all([
+    publishedRoadmapFor(track),
+    starter ? publishedRoadmapFor(starter.track) : null,
+  ]);
+  return buildPath(answers, published, starterPublished);
 }
 
 /** The learner's most recent saved answers (owner read under RLS). */

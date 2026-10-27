@@ -6,15 +6,74 @@
 
 export type Option<V extends string> = { value: V; label: string; hint?: string };
 
+/** Headings that break the interest list into short groups. */
+export const INTEREST_GROUPS = ["Building software", "Data and AI", "Business and people", "Design, content and product"] as const;
+
+export type InterestOption = Option<string> & { group?: (typeof INTEREST_GROUPS)[number] };
+
+/**
+ * Array order is the question order, which is also the tiebreak order in
+ * recommend.ts. The six original interests keep their relative order so
+ * answers given before the new options existed still get the same track.
+ */
 export const INTERESTS = [
-  { value: "web", label: "Building websites people use on their phones" },
-  { value: "apps", label: "Making the systems behind apps work: logins, payments, data" },
-  { value: "data", label: "Finding answers in numbers and spreadsheets" },
-  { value: "marketing", label: "Helping businesses sell online and on social media" },
-  { value: "design", label: "Designing screens that are easy to use" },
-  { value: "product", label: "Deciding what a team should build next" },
+  { value: "web", label: "Building websites and web apps people use every day", group: "Building software" },
+  { value: "apps", label: "Making the systems behind apps work: logins, payments, data", group: "Building software" },
+  { value: "mobile", label: "Building mobile apps people install and use", group: "Building software" },
+  {
+    value: "it",
+    label: "Fixing computers and networks and keeping systems online",
+    hint: "IT support, then cloud and servers.",
+    group: "Building software",
+  },
+  {
+    value: "security",
+    label: "Finding weak spots and bugs before hackers or customers do",
+    hint: "Cybersecurity and software testing.",
+    group: "Building software",
+  },
+  { value: "data", label: "Finding answers in numbers and spreadsheets", group: "Data and AI" },
+  {
+    value: "ai-work",
+    label: "Using AI and no code tools to get work done faster",
+    hint: "Prompting, automations and simple apps without code.",
+    group: "Data and AI",
+  },
+  {
+    value: "ai-build",
+    label: "Building AI models and making predictions from data",
+    hint: "Machine learning and data science, for learners ready for maths and code.",
+    group: "Data and AI",
+  },
+  { value: "marketing", label: "Helping businesses sell online and on social media", group: "Business and people" },
+  {
+    value: "business",
+    label: "Running an online business or working for myself",
+    hint: "Selling online, taking mobile money, freelancing.",
+    group: "Business and people",
+  },
+  {
+    value: "customers",
+    label: "Helping customers and closing sales by chat, email and calls",
+    hint: "Customer service and sales.",
+    group: "Business and people",
+  },
+  {
+    value: "office",
+    label: "Organising work: admin, spreadsheets and projects",
+    hint: "Virtual assistant, Excel and Power BI, project management.",
+    group: "Business and people",
+  },
+  { value: "design", label: "Designing screens that are easy to use", group: "Design, content and product" },
+  {
+    value: "creative",
+    label: "Making graphics, videos and posts for social media",
+    hint: "Graphic design, content creation, social media management.",
+    group: "Design, content and product",
+  },
+  { value: "product", label: "Deciding what a team should build next", group: "Design, content and product" },
   { value: "unsure", label: "I am not sure yet" },
-] as const satisfies readonly Option<string>[];
+] as const satisfies readonly InterestOption[];
 
 export const CONFIDENCE = [
   { value: "low", label: "I am still getting comfortable", hint: "Typing, email and apps beyond WhatsApp are new to me." },
@@ -65,7 +124,10 @@ export type Hours = Values<typeof HOURS>;
 export type Device = Values<typeof DEVICES>;
 export type DataPlan = Values<typeof DATA>;
 
-/** Bump when a question or option changes meaning; old answers are then retaken. */
+/**
+ * Bump when a question or option changes meaning; old answers are then retaken.
+ * Adding options or rewording a label without changing its meaning is not a bump.
+ */
 export const QUIZ_VERSION = 1;
 
 export type PathAnswers = {
