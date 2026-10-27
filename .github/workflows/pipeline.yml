@@ -179,7 +179,9 @@ jobs:
           NEXT_PUBLIC_BUILD_SHA: ${{ github.sha }}
       - name: Deploy
         id: deploy
-        run: vercel deploy --prebuilt --prod --token="$VERCEL_TOKEN"
+        # One archive instead of thousands of files: the free plan allows 5,000
+        # file uploads a day, which a dozen deploys used up on 27 Oct.
+        run: vercel deploy --prebuilt --prod --archive=tgz --token="$VERCEL_TOKEN"
       - name: Verify production serves this commit
         run: |
           set -euo pipefail
