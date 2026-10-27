@@ -1,6 +1,7 @@
 import { mkdirSync } from "node:fs";
 import { expect, test, type Page, type TestInfo } from "@playwright/test";
 import { signUpAndConfirm } from "./auth";
+import { deleteDmpCohort, seedDmpCohort, type SeededDmpCohort } from "./cohort-seed";
 import { createLearner, PASSWORD, promoteToAdmin } from "./learners";
 import { admin, insert } from "./supabase-admin";
 import { deleteRoadmap, seedRoadmap, type SeededRoadmap } from "./seed";
@@ -20,10 +21,13 @@ const WIDTHS = [
 const DIR = "e2e-screenshots";
 
 let roadmap: SeededRoadmap | undefined;
+let cohort: SeededDmpCohort | undefined;
 
 test.afterEach(async () => {
   if (roadmap) await deleteRoadmap(roadmap.id);
   roadmap = undefined;
+  if (cohort) await deleteDmpCohort(cohort);
+  cohort = undefined;
 });
 
 async function shoot(page: Page, testInfo: TestInfo, name: string, path: string) {
@@ -67,9 +71,21 @@ test("screenshots of key screens at 390, 1440 and 1920", async ({ page }, testIn
     await shoot(page, testInfo, name, path);
   }
 
+  // Cohort screens (#144): a learner in a DMP cohort in its second week.
+  const learner = await createLearner("Wumpini Abukari");
+  cohort = await seedDmpCohort(learner.id);
+  await page.context().clearCookies();
+  await page.goto("/login");
+  await page.getByLabel("Email").fill(learner.email);
+  await page.getByLabel("Password").fill(PASSWORD);
+  await page.getByRole("button", { name: "Sign in" }).click();
+  await expect(page).toHaveURL(/\/dashboard$/);
+  await shoot(page, testInfo, "cohort", "/cohort");
+  await shoot(page, testInfo, "cohort-week", "/cohort/week/7");
+
   // The admin review queue, with one real (test) application and an open cohort.
   const [dmp] = await admin<{ id: string }[]>("/rest/v1/programs?slug=eq.dmp&select=id");
-  const [cohort] = await insert("cohorts", [
+  const [openCohort] = await insert("cohorts", [
     { program_id: dmp.id, name: `Screens cohort ${crypto.randomUUID().slice(0, 6)}`, starts_on: "2027-01-11", max_size: 25, status: "enrolling" },
   ]);
   const [applicant, reviewer] = await Promise.all([createLearner("Mariama Iddrisu"), createLearner("Abdul-Rahman Yakubu")]);
@@ -78,7 +94,7 @@ test("screenshots of key screens at 390, 1440 and 1920", async ({ page }, testIn
     {
       program_id: dmp.id,
       profile_id: applicant.id,
-      preferred_cohort_id: cohort.id,
+      preferred_cohort_id: openCohort.id,
       specialization: "social_media",
       screening_answers: { motivation: "I sell shea butter in Tamale and want to reach customers online.", device: "Phone only", hours: "5 to 10" },
     },
@@ -93,6 +109,6 @@ test("screenshots of key screens at 390, 1440 and 1920", async ({ page }, testIn
     await shoot(page, testInfo, "admin-applications", "/admin/applications");
   } finally {
     await admin(`/rest/v1/cohort_applications?profile_id=eq.${applicant.id}`, { method: "DELETE" });
-    await admin(`/rest/v1/cohorts?id=eq.${cohort.id}`, { method: "DELETE" });
+    await admin(`/rest/v1/cohorts?id=eq.${openCohort.id}`, { method: "DELETE" });
   }
 });
