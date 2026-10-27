@@ -569,6 +569,7 @@ export type Database = {
           quiz_score: number | null
           status: string
           updated_at: string
+          verified_at: string | null
         }
         Insert: {
           completed_at?: string | null
@@ -579,6 +580,7 @@ export type Database = {
           quiz_score?: number | null
           status?: string
           updated_at?: string
+          verified_at?: string | null
         }
         Update: {
           completed_at?: string | null
@@ -589,6 +591,7 @@ export type Database = {
           quiz_score?: number | null
           status?: string
           updated_at?: string
+          verified_at?: string | null
         }
         Relationships: [
           {
@@ -796,6 +799,7 @@ export type Database = {
           quiz_score: number | null
           status: string
           updated_at: string
+          verified_at: string | null
         }
         SetofOptions: {
           from: "*"

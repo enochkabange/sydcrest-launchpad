@@ -105,17 +105,17 @@ select results_eq(
   $$ values ('roadmap_node_completed', 'bbbbbbbb-0000-0000-0000-000000000001') $$,
   'passing mints the node achievement');
 
--- Completing the last required node completes the roadmap (optional nodes do not count)
+-- A node without a quiz can be marked done for personal tracking, but it is
+-- not verified, so it mints nothing and the roadmap is not certified complete
+-- (issue #128; verified_completions.test.sql covers boards and streaks).
 select lives_ok($$ select public.set_node_status('bbbbbbbb-0000-0000-0000-000000000002', 'done') $$,
   'a node without a quiz can be marked done');
 select lives_ok($$ select public.set_node_status('bbbbbbbb-0000-0000-0000-000000000002', 'done') $$,
   'marking done twice is harmless');
 select results_eq(
   $$ select type, ref_id from public.achievements order by type, ref_id $$,
-  $$ values ('roadmap_completed', 'aaaaaaaa-0000-0000-0000-000000000001'),
-            ('roadmap_node_completed', 'bbbbbbbb-0000-0000-0000-000000000001'),
-            ('roadmap_node_completed', 'bbbbbbbb-0000-0000-0000-000000000002') $$,
-  'finishing every required node mints the roadmap achievement, once each');
+  $$ values ('roadmap_node_completed', 'bbbbbbbb-0000-0000-0000-000000000001') $$,
+  'a self marked node mints no achievement and does not complete the roadmap');
 select throws_ok(
   $$ insert into public.achievements (profile_id, type) values ('11111111-1111-1111-1111-111111111111', 'streak') $$,
   '42501', null, 'a learner cannot insert achievements');

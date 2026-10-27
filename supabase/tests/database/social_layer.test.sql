@@ -35,19 +35,20 @@ insert into public.roadmap_nodes (id, roadmap_id, slug, title, position) values
 
 -- Wumpini: done today, yesterday and two days ago (Accra), plus one a week
 -- ago, so 4 nodes and a live 3 day streak. Two on the same day count once.
-insert into public.roadmap_progress (profile_id, node_id, status, completed_at) values
-  ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-0000-0000-0000-000000000001', 'done', now()),
-  ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-0000-0000-0000-000000000002', 'done', now() - interval '1 day'),
-  ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-0000-0000-0000-000000000003', 'done', now() - interval '2 days'),
-  ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-0000-0000-0000-000000000004', 'done', now() - interval '7 days'),
-  ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-0000-0000-0000-000000000005', 'in_progress', null);
+-- These are quiz verified completions (verified_at set); boards count only those.
+insert into public.roadmap_progress (profile_id, node_id, status, completed_at, verified_at) values
+  ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-0000-0000-0000-000000000001', 'done', now(), now()),
+  ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-0000-0000-0000-000000000002', 'done', now() - interval '1 day', now() - interval '1 day'),
+  ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-0000-0000-0000-000000000003', 'done', now() - interval '2 days', now() - interval '2 days'),
+  ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-0000-0000-0000-000000000004', 'done', now() - interval '7 days', now() - interval '7 days'),
+  ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-0000-0000-0000-000000000005', 'in_progress', null, null);
 -- Abdul-Rahman: two nodes three and four days ago, so the streak has lapsed.
-insert into public.roadmap_progress (profile_id, node_id, status, completed_at) values
-  ('33333333-3333-3333-3333-333333333333', 'bbbbbbbb-0000-0000-0000-000000000001', 'done', now() - interval '3 days'),
-  ('33333333-3333-3333-3333-333333333333', 'bbbbbbbb-0000-0000-0000-000000000002', 'done', now() - interval '4 days');
+insert into public.roadmap_progress (profile_id, node_id, status, completed_at, verified_at) values
+  ('33333333-3333-3333-3333-333333333333', 'bbbbbbbb-0000-0000-0000-000000000001', 'done', now() - interval '3 days', now() - interval '3 days'),
+  ('33333333-3333-3333-3333-333333333333', 'bbbbbbbb-0000-0000-0000-000000000002', 'done', now() - interval '4 days', now() - interval '4 days');
 -- Mariama (private): everything, today.
-insert into public.roadmap_progress (profile_id, node_id, status, completed_at)
-select '22222222-2222-2222-2222-222222222222', id, 'done', now() from public.roadmap_nodes;
+insert into public.roadmap_progress (profile_id, node_id, status, completed_at, verified_at)
+select '22222222-2222-2222-2222-222222222222', id, 'done', now(), now() from public.roadmap_nodes;
 
 insert into public.follows (follower_id, following_id) values
   ('22222222-2222-2222-2222-222222222222', '11111111-1111-1111-1111-111111111111'),

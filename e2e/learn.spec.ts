@@ -73,11 +73,13 @@ test("a learner studies a node, fails the quiz, passes it and sees progress", as
     await expect(page).toHaveURL(new RegExp(`/learn/${slug}/${plainNode.slug}$`));
   });
 
-  await test.step("finish the roadmap with the node that has no quiz", async () => {
+  await test.step("mark the node that has no quiz as done, for personal tracking only", async () => {
     await expect(page.getByRole("heading", { name: plainNode.title, level: 1 })).toBeVisible();
-    await page.getByRole("button", { name: "Mark complete" }).click();
-    await expect(page.getByText("Topic complete")).toBeVisible();
-    await expect(page.getByText(`You have completed every required topic in ${title}.`)).toBeVisible();
+    await page.getByRole("button", { name: "Mark as done" }).click();
+    await expect(page.getByText("Marked as done")).toBeVisible();
+    // Self marked topics are not certified (issue #128): no achievement, no roadmap milestone.
+    await expect(page.getByText(/count topics you pass with a checkpoint quiz/)).toBeVisible();
+    await expect(page.getByText(`You have completed every required topic in ${title}.`)).toHaveCount(0);
     await page.getByRole("link", { name: "Back to your dashboard" }).click();
     const card = page.getByRole("listitem").filter({ hasText: title });
     await expect(card.getByText("Roadmap complete. 2 of 2 required topics done")).toBeVisible();

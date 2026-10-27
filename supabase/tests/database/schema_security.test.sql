@@ -3,7 +3,7 @@
 -- executable by default, and anon cannot reach the minting path.
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(6);
+select plan(9);
 
 select is(
   (select array_agg(tablename::text order by tablename) from pg_tables
@@ -50,6 +50,37 @@ select ok(
   and not has_function_privilege('anon', 'public.set_node_status(uuid, text)', 'execute')
   and not has_function_privilege('anon', 'public.record_ai_usage(bigint, bigint)', 'execute'),
   'signed out visitors cannot call the learner functions'
+);
+
+-- Security advisor (issue #82): signed out visitors cannot execute any
+-- security definer function in the exposed schema. Generic, so it also
+-- covers functions added later (and public.rls_auto_enable on hosted stacks).
+select is(
+  (select array_agg(p.oid::regprocedure::text order by p.proname) from pg_proc p
+    join pg_namespace n on n.oid = p.pronamespace
+    where n.nspname = 'public' and p.prosecdef
+      and has_function_privilege('anon', p.oid, 'execute')),
+  null,
+  'anon cannot execute any security definer function in public'
+);
+
+select ok(
+  not has_function_privilege('anon', 'public.admin_reports(text)', 'execute')
+  and not has_function_privilege('anon', 'public.admin_unpublish_profile(uuid)', 'execute')
+  and not has_function_privilege('anon', 'public.funnel_by_week(integer)', 'execute')
+  and not has_function_privilege('anon', 'public.record_ai_usage(bigint, bigint)', 'execute')
+  and not has_function_privilege('anon', 'public.record_ai_tokens(bigint, bigint)', 'execute')
+  and not has_function_privilege('anon', 'public.revoke_consent(text)', 'execute')
+  and not has_function_privilege('anon', 'public.set_node_status(uuid, text)', 'execute')
+  and not has_function_privilege('anon', 'public.submit_node_quiz(uuid, jsonb)', 'execute'),
+  'anon cannot execute any of the RPCs the advisor lists'
+);
+
+select ok(
+  to_regprocedure('public.rls_auto_enable()') is null
+  or not (has_function_privilege('anon', 'public.rls_auto_enable()', 'execute')
+          or has_function_privilege('authenticated', 'public.rls_auto_enable()', 'execute')),
+  'the dashboard rls_auto_enable helper, where it exists, is not callable over the API'
 );
 
 select * from finish();

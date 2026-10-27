@@ -9,11 +9,14 @@ export function Celebration({
   heading,
   roadmapTitle,
   unlocked,
+  note,
   next,
 }: {
   heading: string;
   roadmapTitle: string;
   unlocked?: { node: boolean; roadmap: boolean };
+  /** Shown when nothing was unlocked, for example after a topic is marked done by hand. */
+  note?: string;
   next: NextNode;
 }) {
   return (
@@ -31,6 +34,8 @@ export function Celebration({
         </p>
       ) : unlocked?.node ? (
         <p className="text-content">This topic is now in your achievements.</p>
+      ) : note ? (
+        <p className="text-content">{note}</p>
       ) : null}
       {next ? (
         <Link href={next.href} className={buttonClasses("primary", "self-start")}>
