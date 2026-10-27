@@ -963,6 +963,434 @@ Mariama receives a survey export of 400 rows. She adds helper columns: \`=PROPER
         pass_threshold: 80,
       },
     },
+    "summaries-and-charts": {
+      explanation_md: `## Why this matters
+
+A manager at a microfinance office in Tamale does not want to scroll through 3,000 loan records. She wants to know: how much was repaid this month, which branch is behind, and is it getting better or worse? Your job is to turn the raw rows into that answer, quickly and in a form she can read at a glance. Job adverts for MIS, M&E and reporting roles keep asking for exactly this: summaries, charts, dashboards and KPI tracking.
+
+This section teaches the three tools that do most of that work in Excel and Google Sheets.
+
+## What this section covers
+
+* **PivotTables:** summarise thousands of rows by any category in seconds, such as total sales by branch and month, without writing a single formula.
+* **Charts that make a point:** choose the right chart for the question, then title and label it so nobody misreads it.
+* **Conditional formatting:** colour rules that flag what needs attention, such as overdue payments or low stock, automatically.
+
+## From rows to answers
+
+Think of reporting as three steps:
+
+1. **Summarise.** Reduce many rows to a few numbers that answer the question. A PivotTable or a set of SUMIFS formulas does this.
+2. **Show.** Turn the summary into a picture when a picture is clearer than numbers, for example a trend over twelve months.
+3. **Highlight.** Draw the eye to the few things that need action, such as the branch below target.
+
+Every step depends on the tidy, clean table you built in the earlier sections. A PivotTable cannot group "Tamale" and "Tamale " together, and a chart of messy dates will be in the wrong order.
+
+## Start from the question
+
+Before you build anything, write the question in one sentence. "Which branch had the highest repayments in September?" leads to a sorted PivotTable or a bar chart. "Are repayments improving month by month?" leads to a line chart. "Which loans are overdue today?" leads to a highlighted list. If you cannot write the question, ask the person who requested the report. A beautiful chart that answers the wrong question wastes everyone's time.
+
+## A small example
+
+Issahaku volunteers with a savings group in Damongo. The treasurer keeps a sheet of every member's weekly contribution. Issahaku builds:
+
+* a PivotTable of total contributions per member per month,
+* a line chart of the group's total savings by month, titled "Group savings grew every month since June",
+* a conditional formatting rule that turns a member's row light red if they missed two weeks in a row.
+
+At the next meeting, the treasurer reads out three clear points instead of a page of numbers.
+
+## Screens and devices
+
+Charts and conditional formatting are fine on any device. Building PivotTables on large tables is easier on a bigger screen, in Excel for the web, desktop Excel or Google Sheets in a browser. Reading finished summaries works well on a phone, which is how many managers will see your work, so always check how it looks on a small screen.`,
+      practice_task_md: `**Goal:** plan a report before you build it.
+
+1. Choose a dataset: your practice sales table, or a register from a group you know.
+2. Write three questions a manager might ask about it, each in one sentence.
+3. For each question, decide whether the answer is best shown as a summary table, a chart or a highlight, and write why.
+4. Sketch on paper what each part would look like, including a title that states the main message.
+
+**Done looks like:** one page (photo of paper is fine) with three questions, the chosen format for each, and a sketch with message titles. Share it with a mentor before you build it in the next lessons.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What are the three steps of reporting described in this lesson?",
+            options: [
+              "Type, save, print",
+              "Summarise, show, highlight",
+              "Sort, filter, delete",
+              "Collect, clean, store",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes reporting as summarising the data, showing it visually and highlighting what needs action.",
+          },
+          {
+            prompt: "What should you do before building any summary or chart?",
+            options: [
+              "Choose a colour scheme",
+              "Download a template",
+              "Write the question you are answering in one sentence",
+              "Make a PivotTable of every column",
+            ],
+            answer_index: 2,
+            explanation: "Starting from a clear question decides which summary or chart you need.",
+          },
+          {
+            prompt: "Which question is best answered with a line chart?",
+            options: [
+              "Which loans are overdue today?",
+              "Are repayments improving month by month?",
+              "What is the phone number of each member?",
+              "Which branch has the most staff?",
+            ],
+            answer_index: 1,
+            explanation: "Line charts show change over time, such as month by month trends.",
+          },
+          {
+            prompt: "Why does this section depend on clean data from earlier lessons?",
+            options: [
+              "Charts only work on sheets named Clean",
+              "Summaries treat messy spellings as different values, giving wrong totals",
+              "PivotTables delete messy rows automatically",
+              "Conditional formatting cleans data first",
+            ],
+            answer_index: 1,
+            explanation: "Values like \"Tamale\" and \"Tamale \" are grouped separately, so dirty data gives wrong summaries.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "pivottables": {
+      explanation_md: `## Why this matters
+
+PivotTables are named in Excel job adverts for roles from accounts officers to Excel specialists. They are the fastest way to answer "how much, by what?" questions. A table of 5,000 sales becomes "total sales by region and month" in under a minute, with no formulas, and you can rearrange it to answer the next question just as fast.
+
+## What a PivotTable does
+
+A PivotTable groups your rows by the values in one or more columns and then calculates something for each group: a sum, a count or an average. You decide the layout by placing fields (your column headers) into four areas:
+
+* **Rows:** the categories down the left, such as Branch.
+* **Columns:** categories across the top, such as Month.
+* **Values:** what to calculate, such as Sum of Amount.
+* **Filters:** narrow the whole PivotTable, such as only one product category.
+
+## Building one
+
+1. Click any cell in your tidy table (an Excel table is best, because new rows will be included).
+2. Choose **Insert, then PivotTable**, and place it on a new sheet.
+3. In the field list, drag or tick Branch into Rows and Amount into Values.
+
+Excel shows each branch once with its total. Now drag Month into Columns and you have a grid of branch by month. Drag Branch out and Item in, and you have totals by item instead. That rearranging is the "pivot".
+
+## Changing the calculation
+
+Numbers placed in Values are summed by default. Open **Value Field Settings** (Excel) or the "Summarise by" option (Google Sheets) to switch to Count, Average, Max or Min. Count is useful for "how many": put Gender in Rows and Name in Values to count participants by gender. You can also show values as a percentage of the total.
+
+## Keeping it up to date
+
+In Excel, a PivotTable does **not** update by itself when the data changes. After adding or correcting rows, right click the PivotTable and choose **Refresh**, or use Refresh on the PivotTable tab. Forgetting this is a common reason reports show old numbers. Google Sheets pivot tables update automatically.
+
+## Where to build them
+
+Excel for the web, desktop Excel and Google Sheets in a browser can all create PivotTables. Dragging fields around a large table is much easier on a computer screen. On a phone you can open, read and refresh finished PivotTables in a shared file.
+
+## A worked example
+
+Hawa is a reporting assistant for an agro dealer with shops in Tamale, Yendi and Savelugu. Her sales table has Date, Shop, Product, Quantity and Amount (GHS). Her manager asks which shop sold the most fertiliser last quarter.
+
+She inserts a PivotTable, puts Shop in Rows, Amount in Values and Product in Filters, then filters to fertiliser only. She sorts the totals largest to smallest. Answer: Yendi, then Tamale, then Savelugu. When her manager then asks "and by month?", Hawa drags Month into Columns (a column she added to the table with \`=TEXT(A2,"yyyy mm")\`, which works in every version), and has the next answer ready before the meeting ends.`,
+      practice_task_md: `**Goal:** build and rearrange a PivotTable.
+
+1. Open your practice sales table. Make sure it has at least 30 rows and clean branch names.
+2. Insert a PivotTable on a new sheet with Branch in Rows and Amount in Values.
+3. Add Customer gender to Columns to see totals by branch and gender.
+4. Change the Values calculation from Sum to Count, then back to Sum.
+5. Add one new sale to the original table, then refresh the PivotTable and check the total changes.
+6. Sort the branches from largest to smallest total.
+
+**Done looks like:** a PivotTable showing totals by branch and gender, sorted, and refreshed after a change. Write two sentences on what it shows and share a screenshot with a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which PivotTable area holds the numbers you want calculated, such as Sum of Amount?",
+            options: [
+              "Rows",
+              "Columns",
+              "Values",
+              "Filters",
+            ],
+            answer_index: 2,
+            explanation: "The Values area holds the field that is summed, counted or averaged.",
+          },
+          {
+            prompt: "You correct some rows in your data. What must you do in Excel so the PivotTable shows the new numbers?",
+            options: [
+              "Delete and rebuild the PivotTable",
+              "Refresh the PivotTable",
+              "Save and close the file",
+              "Nothing, it always updates by itself",
+            ],
+            answer_index: 1,
+            explanation: "Excel PivotTables do not update automatically; you must refresh them.",
+          },
+          {
+            prompt: "How do you count participants by gender with a PivotTable?",
+            options: [
+              "Put Gender in Values and sum it",
+              "Put Gender in Rows and set a name field in Values to Count",
+              "Put Gender in Filters only",
+              "You cannot count text in a PivotTable",
+            ],
+            answer_index: 1,
+            explanation: "Grouping by gender in Rows and counting a field in Values gives the number of participants per gender.",
+          },
+          {
+            prompt: "What does \"pivoting\" a PivotTable mean?",
+            options: [
+              "Printing it sideways",
+              "Converting it to a chart",
+              "Rearranging fields to look at the data a different way",
+              "Deleting the original data",
+            ],
+            answer_index: 2,
+            explanation: "Moving fields between areas lets you answer a new question from the same data.",
+          },
+          {
+            prompt: "Why is an Excel table a good source for a PivotTable?",
+            options: [
+              "PivotTables only work with tables",
+              "Tables make PivotTables update without refreshing",
+              "The table grows to include new rows, so a refresh picks them up",
+              "Tables remove duplicates automatically",
+            ],
+            answer_index: 2,
+            explanation: "A table expands with new rows, so the PivotTable's source stays complete after a refresh.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "charts": {
+      explanation_md: `## Why this matters
+
+Many managers and donors read your report on a phone between meetings. A clear chart tells them the main point in seconds; a cluttered one confuses them or, worse, misleads them. Employers in monitoring, reporting and business roles ask for data visualisation because a good chart helps people make the right decision.
+
+## Choose the chart from the question
+
+* **Comparing categories** (which branch sold most?): a **bar or column chart**. Sort the bars from largest to smallest so the ranking is obvious. Use horizontal bars when the labels are long, such as community names.
+* **Change over time** (are sales rising?): a **line chart**, with time running left to right in order.
+* **Parts of a whole** (what share of participants are women?): a single bar split into parts, or a pie chart only when there are two or three parts. Pies with many slices are hard to read.
+* **Exact values that people need to look up:** a **simple table**, not a chart.
+
+If a chart does not make the answer clearer than the numbers, use the numbers.
+
+## Make it honest and readable
+
+* **Title with the message.** Instead of "Sales by branch", write "Wa sold the most in September". The reader knows what to look for.
+* **Label axes and units**, such as "Amount (GHS)" or "Number of farmers".
+* **Start bar and column charts at zero.** A bar axis that starts at 900 makes a small difference look huge.
+* **Avoid 3D effects, shadows and heavy gridlines.** They make values harder to compare.
+* **Use colour on purpose.** One neutral colour for everything, and one strong colour to highlight the bar that matters.
+* **Keep it short.** Five to ten bars or one or two lines is easy to read on a small screen.
+
+## Making a chart in Excel
+
+1. Select a small summary, such as the branch totals from your PivotTable or SUMIFS table, including headers.
+2. Choose **Insert**, then the chart type. Excel for the web, desktop Excel, the Excel app and Google Sheets all have this.
+3. Click the chart title and type your message.
+4. Add axis titles from the chart elements options, and remove anything that does not help, such as the legend when there is only one series.
+
+Charts made from a PivotTable (called PivotCharts in Excel) update when you refresh the PivotTable.
+
+## A worked example
+
+Sumaila, a data assistant at an NGO, must show how many farmers attended training in each of six communities. His first attempt is a 3D pie with six slices in six bright colours, titled "Chart 1". Nobody can tell which community is largest.
+
+He replaces it with a horizontal bar chart, sorted from most to fewest attendees. All bars are grey except Kpandai, the community that missed its target, which is orange. The title reads "Kpandai is the only community below target". The axis says "Farmers trained" and starts at zero. His manager understands it before Sumaila says a word.`,
+      practice_task_md: `**Goal:** turn a summary into one clear, honest chart.
+
+1. Use a summary you already built: branch totals from your PivotTable or SUMIFS table.
+2. Insert a bar or column chart, sorted largest to smallest.
+3. Write a title that states the main message in a short sentence.
+4. Add axis titles with units, check the value axis starts at zero, and remove any 3D effect or unneeded legend.
+5. Colour every bar the same, then highlight the one bar your message is about.
+6. Open the file on a phone or in a narrow window and check the chart is still readable.
+
+**Done looks like:** one chart with a message title, labelled axes, a zero baseline and one highlighted bar, plus a one line note on why you chose that chart type. Share it with a mentor and ask what they understood in five seconds.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which chart best shows how monthly sales changed over a year?",
+            options: [
+              "A pie chart",
+              "A line chart",
+              "A 3D column chart",
+              "A table of phone numbers",
+            ],
+            answer_index: 1,
+            explanation: "Line charts show change over time, with months running left to right.",
+          },
+          {
+            prompt: "Why should bar and column charts start at zero?",
+            options: [
+              "Excel requires it",
+              "Starting higher makes small differences look much bigger than they are",
+              "It makes the chart load faster",
+              "It removes the need for a title",
+            ],
+            answer_index: 1,
+            explanation: "Cutting the axis exaggerates differences, which misleads the reader.",
+          },
+          {
+            prompt: "Which title is most helpful?",
+            options: [
+              "Chart 1",
+              "Sales by branch",
+              "Wa sold the most in September",
+              "Data",
+            ],
+            answer_index: 2,
+            explanation: "A message title tells the reader the main point before they study the chart.",
+          },
+          {
+            prompt: "When is a pie chart a reasonable choice?",
+            options: [
+              "For comparing twelve communities",
+              "For showing a trend over time",
+              "For showing two or three parts of a whole",
+              "For exact values people must look up",
+            ],
+            answer_index: 2,
+            explanation: "The lesson advises pies only for a few parts of a whole, because many slices are hard to compare.",
+          },
+          {
+            prompt: "How should you use colour in a chart?",
+            options: [
+              "A different bright colour for every bar",
+              "One neutral colour, with one strong colour to highlight what matters",
+              "Only red and green",
+              "As many colours as the theme allows",
+            ],
+            answer_index: 1,
+            explanation: "A single highlight colour draws attention to the point of the chart.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "conditional-formatting": {
+      explanation_md: `## Why this matters
+
+A credit officer in Bolgatanga opens the repayment sheet each morning. If overdue loans are already coloured, she sees them instantly instead of checking 400 dates by eye. Conditional formatting does that: it changes how a cell looks based on its value, and it keeps working as the data changes. It supports the KPI monitoring and data quality checks that MIS and reporting roles ask for.
+
+## Where to find it
+
+* **Excel** (web, desktop and app): **Home, then Conditional Formatting**.
+* **Google Sheets:** **Format, then Conditional formatting**.
+
+Select the cells first, then choose a rule.
+
+## Built in rules
+
+* **Highlight cell rules:** greater than, less than, between, equal to, text that contains, a date occurring (such as "last week"), and **duplicate values**, which is a fast way to spot a phone number entered twice.
+* **Top and bottom rules:** top 10 items, bottom 10%, above average.
+* **Data bars:** a small bar inside each cell, longer for bigger numbers. Good for a quick sense of size in a table.
+* **Colour scales:** shades from low to high. Useful on a grid, such as sales by branch and month.
+* **Icon sets:** arrows or symbols for up, level and down.
+
+## Formula rules for whole rows
+
+Sometimes you want the whole row coloured, not one cell. Choose **New Rule, then "Use a formula to determine which cells to format"** in Excel, or **Custom formula is** in Google Sheets. Select the whole table area (for example A2:F300) and write a formula for the first row:
+
+\`\`\`
+=$E2<TODAY()
+\`\`\`
+
+Column E holds the due date. The \`$\` locks the column so every cell in a row checks column E, while the row number stays relative so each row checks its own date. Add a second condition with AND:
+
+\`\`\`
+=AND($E2<TODAY(), $F2="Not paid")
+\`\`\`
+
+Now only unpaid loans past their due date are highlighted.
+
+## Use it with restraint
+
+A sheet where every cell is a different colour hides the message instead of showing it. Good practice:
+
+* Highlight **only what needs action**, usually one or two rules per sheet.
+* Pick soft fill colours so the text stays readable.
+* **Do not rely on colour alone.** Some people cannot tell red from green, and colours may not survive printing in black and white. Add a Status column with words such as "Overdue", or use icons.
+* Check your rules with **Manage Rules** in Excel or the rules panel in Sheets, and remove old ones you no longer need.
+
+## A worked example
+
+Wumpini manages stock for a pharmacy in Tamale. Her stock table has Item, Quantity, Reorder level and Expiry date. She adds two rules:
+
+* the row turns light orange when \`=$B2<=$C2\`, meaning quantity has reached the reorder level;
+* the Expiry cell turns light red when the date is within the next 60 days, using \`=$D2<=TODAY()+60\`.
+
+She also adds a Status column with an IF formula that says "Reorder" or "OK", so the meaning is clear without colour. Every morning, the coloured rows are her to do list.`,
+      practice_task_md: `**Goal:** highlight what needs attention, and nothing else.
+
+1. Create a small stock or repayment table with at least 15 rows: Item or Borrower, Quantity or Amount, Reorder level or Due date, Status.
+2. Add one built in rule, such as highlighting duplicate names or values below a number.
+3. Add one formula rule that colours the whole row when action is needed, such as quantity at or below reorder level, or due date before today.
+4. Add a Status column with an IF formula so the meaning does not depend on colour.
+5. Change a few values and watch the formatting update.
+
+**Done looks like:** a table with exactly two rules, a Status column in words, and a screenshot. Explain to a mentor what each colour means and why you chose only two.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does conditional formatting do?",
+            options: [
+              "Sorts data by colour",
+              "Changes how cells look based on their values, updating as data changes",
+              "Converts numbers to text",
+              "Deletes rows that break a rule",
+            ],
+            answer_index: 1,
+            explanation: "Conditional formatting applies formats automatically according to rules about cell values.",
+          },
+          {
+            prompt: "In the rule =$E2<TODAY() applied to A2:F300, why is there a $ before E?",
+            options: [
+              "To make the formula absolute in every direction",
+              "So every cell in a row checks column E while each row checks its own date",
+              "Because dates always need a dollar sign",
+              "To format the cell as currency",
+            ],
+            answer_index: 1,
+            explanation: "Locking the column but not the row makes every cell in a row test that row's due date.",
+          },
+          {
+            prompt: "Which built in rule quickly finds a phone number entered twice?",
+            options: [
+              "Data bars",
+              "Colour scales",
+              "Duplicate values",
+              "Top 10 items",
+            ],
+            answer_index: 2,
+            explanation: "The duplicate values highlight rule colours any value that appears more than once.",
+          },
+          {
+            prompt: "Why should you not rely on colour alone to show status?",
+            options: [
+              "Colours slow down Excel",
+              "Some people cannot tell certain colours apart, and colour may be lost in printing",
+              "Colours are not allowed in reports",
+              "Conditional formatting only works in Google Sheets",
+            ],
+            answer_index: 1,
+            explanation: "Adding words or icons keeps the meaning clear for everyone and in every format.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
