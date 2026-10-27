@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { createFakeClient, createTwilioClient } from "./client";
 import { resetLogOnce } from "./config";
-import { isStopKeyword, phoneFromTwilioAddress } from "./consent";
+import { isStopKeyword, phoneChangeRevokes, phoneFromTwilioAddress, shouldSendWelcome } from "./consent";
 import { isAuthorizedCron } from "./cron-auth";
 import { sendSms, sendWhatsApp } from "./send";
 import { expectedSignature, isValidTwilioSignature } from "./signature";
@@ -147,6 +147,27 @@ describe("opt out parsing", () => {
     expect(phoneFromTwilioAddress(`whatsapp:${FUSEINI}`)).toBe(FUSEINI);
     expect(phoneFromTwilioAddress(FUSEINI)).toBe(FUSEINI);
     expect(phoneFromTwilioAddress("whatsapp:0241234567")).toBeNull();
+  });
+});
+
+describe("consented number", () => {
+  const OTHER = "+233501234567";
+
+  it("welcomes a number once", () => {
+    expect(shouldSendWelcome([], FUSEINI)).toBe(true);
+    expect(shouldSendWelcome([{ phone: FUSEINI }], FUSEINI)).toBe(false);
+    expect(shouldSendWelcome([{ phone: OTHER }], FUSEINI)).toBe(true);
+  });
+
+  it("treats consents from before numbers were recorded as welcomed", () => {
+    expect(shouldSendWelcome([{ phone: null }], FUSEINI)).toBe(false);
+  });
+
+  it("knows when a new profile number turns WhatsApp off", () => {
+    expect(phoneChangeRevokes([], OTHER)).toBe(false);
+    expect(phoneChangeRevokes([{ phone: FUSEINI }], FUSEINI)).toBe(false);
+    expect(phoneChangeRevokes([{ phone: FUSEINI }], OTHER)).toBe(true);
+    expect(phoneChangeRevokes([{ phone: FUSEINI }], null)).toBe(true);
   });
 });
 

@@ -40,6 +40,25 @@ test("a learner turns WhatsApp updates on and off from their profile", async ({ 
     await expect(toggle).toBeChecked();
   });
 
+  await test.step("a new phone number turns updates off and asks again", async () => {
+    await page.getByLabel("Phone number (optional)").fill("050 123 4567");
+    await page.getByRole("button", { name: "Save changes" }).click();
+    await expect(page.getByText("Your number changed, so WhatsApp updates are off.")).toBeVisible();
+    await expect(toggle).not.toBeChecked();
+    await page.reload();
+    await expect(toggle).not.toBeChecked();
+    await expect(page.getByText("Updates stopped when your number changed.")).toBeVisible();
+  });
+
+  await test.step("opts in again for the new number", async () => {
+    await toggle.check();
+    await save.click();
+    await expect(page.getByText("WhatsApp updates are on.")).toBeVisible();
+    await page.reload();
+    await expect(toggle).toBeChecked();
+    await expect(page.getByText("Updates stopped when your number changed.")).toBeHidden();
+  });
+
   await test.step("opts out", async () => {
     await toggle.uncheck();
     await save.click();

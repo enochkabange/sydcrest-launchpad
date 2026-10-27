@@ -67,18 +67,33 @@ describe("Twilio webhook", () => {
     expect(res.status).toBe(403);
   });
 
-  it("revokes WhatsApp consent for that phone on STOP and confirms", async () => {
+  it("revokes WhatsApp consent given for that phone on STOP, records why, and confirms", async () => {
     const fake = fakeAdmin(["u1"]);
     admin.current = fake;
     const res = await POST(inbound({ Body: "stop", From: `whatsapp:${FUSEINI}` }));
     expect(res.status).toBe(200);
     expect(await res.text()).toContain("You will not get any more WhatsApp messages");
-    expect(fake.updates).toHaveLength(1);
+    expect(fake.updates).toHaveLength(2);
+    expect(fake.updates[0].values).toMatchObject({ revoked_reason: "stop", revoked_at: expect.any(String) });
     expect(fake.updates[0].filters).toEqual([
+      ["eq", "kind", "whatsapp"],
+      ["eq", "phone", FUSEINI],
+      ["is", "revoked_at", null],
+    ]);
+    expect(fake.updates[1].filters).toEqual([
       ["in", "profile_id", ["u1"]],
       ["eq", "kind", "whatsapp"],
       ["is", "revoked_at", null],
     ]);
+  });
+
+  it("matches the consented number even when no profile has it any more", async () => {
+    const fake = fakeAdmin([]);
+    admin.current = fake;
+    const res = await POST(inbound({ Body: "STOP", From: `whatsapp:${FUSEINI}` }));
+    expect(res.status).toBe(200);
+    expect(fake.updates).toHaveLength(1);
+    expect(fake.updates[0].filters).toContainEqual(["eq", "phone", FUSEINI]);
   });
 
   it("ignores other replies", async () => {

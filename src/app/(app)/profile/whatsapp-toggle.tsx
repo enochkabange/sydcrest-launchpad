@@ -6,7 +6,16 @@ import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { CheckboxField } from "@/components/ui/field";
 
-export function WhatsAppToggle({ enabled, hasPhone }: { enabled: boolean; hasPhone: boolean }) {
+export function WhatsAppToggle({
+  enabled,
+  hasPhone,
+  numberChanged = false,
+}: {
+  enabled: boolean;
+  hasPhone: boolean;
+  /** Consent was turned off because the profile number changed. */
+  numberChanged?: boolean;
+}) {
   const [state, action, pending] = useActionState<WhatsAppState, FormData>(setWhatsAppConsent, { enabled });
   const current = state.enabled ?? enabled;
 
@@ -14,6 +23,9 @@ export function WhatsAppToggle({ enabled, hasPhone }: { enabled: boolean; hasPho
     <form key={state.saved ?? 0} action={action} className="flex flex-col gap-3">
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       {state.saved && <Alert tone="success">{current ? "WhatsApp updates are on." : "WhatsApp updates are off."}</Alert>}
+      {!state.saved && !current && numberChanged && (
+        <Alert tone="info">Updates stopped when your number changed. Tick the box and save to get them on your new number.</Alert>
+      )}
       <CheckboxField id="whatsapp" defaultChecked={current}>
         Send me updates on WhatsApp
       </CheckboxField>

@@ -2,7 +2,7 @@
 
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
-import { WHATSAPP_CONSENT_KIND, WHATSAPP_CONSENT_VERSION } from "@/lib/messaging/consent";
+import { shouldSendWelcome, WHATSAPP_CONSENT_KIND, WHATSAPP_CONSENT_VERSION } from "@/lib/messaging/consent";
 import { sendWhatsApp } from "@/lib/messaging/send";
 import { firstName } from "@/lib/messaging/templates";
 
@@ -27,20 +27,23 @@ export async function setWhatsAppConsent(_prev: WhatsAppState, form: FormData): 
 
   const { data: existing, error: readError } = await supabase
     .from("consents")
-    .select("version, revoked_at")
+    .select("version, revoked_at, phone")
     .eq("profile_id", user.id)
     .eq("kind", WHATSAPP_CONSENT_KIND);
   if (readError) return { enabled: false, message: "We couldn't save your choice. Try again." };
 
+  // A live consent always covers the current number: changing the number
+  // revokes it in the database.
   const live = existing.some((c) => c.version === WHATSAPP_CONSENT_VERSION && c.revoked_at === null);
   if (!live) {
-    // No .select() after insert: the insert grant is column restricted.
+    // No .select() after insert: the insert grant is column restricted. The
+    // database records the profile's number on the row; we never send one.
     const { error } = await supabase.from("consents").insert({ kind: WHATSAPP_CONSENT_KIND, version: WHATSAPP_CONSENT_VERSION });
     if (error) return { enabled: false, message: "We couldn't save your choice. Try again." };
   }
 
-  // Welcome only on the very first opt in, never when someone turns it back on.
-  if (existing.length === 0) {
+  // Welcome a number on its first opt in, never when someone turns it back on.
+  if (shouldSendWelcome(existing, profile.phone)) {
     await sendWhatsApp(profile.phone, "welcome", { name: firstName(profile.display_name) });
   }
   return { enabled: true, saved: Date.now() };
