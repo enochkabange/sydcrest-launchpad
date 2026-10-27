@@ -37,8 +37,15 @@ async function memberRedirect(slug: string) {
   const user = await getCurrentUser();
   if (!user) return;
   const supabase = await createClient();
-  const { data } = await supabase.from("organisations").select("slug").eq("slug", slug.toLowerCase()).maybeSingle();
-  if (data?.slug) redirect(`/org/${data.slug}/manage`);
+  // Only active members: admins and invitees can read the row too, but have no member area.
+  const { data } = await supabase
+    .from("organisation_members")
+    .select("status, organisations!inner(slug)")
+    .eq("profile_id", user.id)
+    .eq("status", "active")
+    .eq("organisations.slug", slug.toLowerCase())
+    .maybeSingle();
+  if (data?.organisations?.slug) redirect(`/org/${data.organisations.slug}/manage`);
 }
 
 async function OrganisationProfile({ params }: Pick<PageProps<"/org/[slug]">, "params">) {

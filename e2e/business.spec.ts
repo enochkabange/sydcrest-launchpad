@@ -46,6 +46,10 @@ test("an organisation signs up, asks for review, is verified and goes public", a
   await expect(visitor.getByText("This page could not be found.")).toBeVisible();
   await expect(visitor.getByRole("heading", { level: 1, name })).toHaveCount(0);
 
+  // Its own members are sent to the member area instead.
+  await page.goto(`/org/${slug}`);
+  await expect(page).toHaveURL(new RegExp(`/org/${slug}/manage$`), { timeout: 15_000 });
+
   await page.getByRole("button", { name: "Ask to be verified" }).click();
   await expect(page.getByText("Waiting for review", { exact: true }).first()).toBeVisible();
 
@@ -102,6 +106,7 @@ test("a certified learner opts in, an organisation asks to talk, and the learner
   await ownerPage.goto("/talent");
   await ownerPage.getByLabel("Skill").fill("excel");
   await ownerPage.getByLabel("Region").selectOption("northern");
+  await ownerPage.getByLabel("Track").selectOption("data");
   await ownerPage.getByRole("button", { name: "Show talent" }).click();
   await expect(ownerPage).toHaveURL(/skill=excel/);
   // Other runs list learners with the same name, so pick this one by their link.
