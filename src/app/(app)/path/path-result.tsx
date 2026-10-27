@@ -42,6 +42,33 @@ export function PathResultView({ result }: { result: PathResult }) {
         </p>
       )}
 
+      {!result.lessonsReady && (
+        <section
+          aria-labelledby="lessons-heading"
+          className="flex max-w-3xl flex-col items-start gap-3 rounded-lg border border-line bg-surface-sunken p-5"
+        >
+          <h2 id="lessons-heading" className="text-lg text-content">
+            Lessons for this track are coming
+          </h2>
+          <p className="text-content-2">
+            The {result.trackTitle} outline shows what to learn and in what order, but its lessons are
+            still being written.
+            {result.alsoStart && (
+              <>
+                {" "}
+                While you wait, start with <strong className="text-content">{result.alsoStart.title}</strong>,
+                which has lessons ready now. {result.alsoStart.why}
+              </>
+            )}
+          </p>
+          {result.alsoStart?.href && (
+            <Link href={result.alsoStart.href} className={buttonClasses("secondary")}>
+              Open {result.alsoStart.title}
+            </Link>
+          )}
+        </section>
+      )}
+
       {/* Stacked on phones; from lg the next step and skill gap sit beside the weekly plan. */}
       <div className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] lg:items-start lg:gap-10">
         <div className="flex flex-col gap-8">
