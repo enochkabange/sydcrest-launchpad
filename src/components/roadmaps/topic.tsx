@@ -48,7 +48,7 @@ export function TopicSummary({
   return (
     <div>
       <p className="text-sm text-content-3">{topicEyebrow(node, section, sectionCount)}</p>
-      <Heading id={headingId} className={headingLevel === 1 ? "mt-1 text-title text-content" : "mt-2 text-2xl text-content md:text-3xl"}>
+      <Heading id={headingId} className={headingLevel === 1 ? "mt-1 text-title text-content" : "mt-2 text-h2 text-content lg:text-subtitle"}>
         {node.title}
       </Heading>
       <div className="mt-3 min-h-0">
