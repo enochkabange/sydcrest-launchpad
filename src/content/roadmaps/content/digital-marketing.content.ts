@@ -8,7 +8,7 @@ const content: TrackContent = {
   roadmap: "digital-marketer",
   nodes: {
     foundations: {
-      explanation_md: `Every business in Ghana, from a shea butter seller in Tamale to a fintech in Accra, needs people to know it exists, trust it and pay for what it offers. Digital marketing is the work of making that happen using phones and the internet. Employers who hire junior marketers rarely ask first which apps you know. They ask whether you understand customers and can get results for the business.
+      explanation_md: `Every business in Ghana, from a shea butter seller in Tamale to a fintech in Accra, needs people to know it exists, trust it and pay for what it offers. Digital marketing is the work of making that happen using phones, computers and the internet. Employers who hire junior marketers rarely ask first which apps you know. They ask whether you understand customers and can get results for the business.
 
 ## Marketing starts with people
 
@@ -397,10 +397,10 @@ Amina manages content for a small cosmetics shop in Tamale. For one week she pla
 1. Choose a business you know, such as a shea butter seller, a tailor or a church event.
 2. Plan four pieces, one for each job: show, help, prove and ask.
 3. For each piece, write the format (caption, photo, graphic or video) and one sentence describing it.
-4. Make at least one of the four on your phone using free tools.
+4. Make at least one of the four on your phone or computer using free tools.
 5. Ask someone who could be a customer which piece they would most likely respond to, and why.
 
-**Done looks like:** A short plan of four pieces with their jobs, one finished piece saved to your phone, and a note of the feedback you got.`,
+**Done looks like:** A short plan of four pieces with their jobs, one finished piece saved to your phone or computer, and a note of the feedback you got.`,
       quiz: {
         questions: [
           {
@@ -726,7 +726,7 @@ A basic calendar is a table with one row per post:
 * **Caption draft.** The words, written in advance.
 * **Status.** Idea, drafted, approved, posted.
 
-Google Sheets works well. It is free, opens on a phone, and you can share it with a client so they can approve posts with a comment.
+Google Sheets works well. It is free, opens on a phone or a computer, and you can share it with a client so they can approve posts with a comment.
 
 ## Plan around real life
 
@@ -775,11 +775,11 @@ Hawa's shea butter business plans December in a sheet. She marks the start of ha
             options: [
               "It writes the captions for you",
               "It is the only tool that clients accept",
-              "It is free, works on a phone and can be shared for approval",
+              "It is free, works on a phone or a computer and can be shared for approval",
               "It publishes posts to every platform",
             ],
             answer_index: 2,
-            explanation: "Sheets is free, phone friendly and easy to share with a client.",
+            explanation: "Sheets is free, works on any device and is easy to share with a client.",
           },
           {
             prompt: "What should you mark on the calendar first?",
@@ -976,7 +976,7 @@ Mariama's basket group in Bolgatanga used a personal account, and orders got los
       },
     },
     "facebook-instagram": {
-      explanation_md: `Facebook is widely used in Ghana by businesses, churches, schools and NGOs, and Instagram matters for fashion, food, beauty, crafts and anything visual. Job adverts for social media roles often expect you to manage pages on both and to use Meta's business tools. The skills are learnable on a phone, and Meta offers free training through Meta Blueprint.
+      explanation_md: `Facebook is widely used in Ghana by businesses, churches, schools and NGOs, and Instagram matters for fashion, food, beauty, crafts and anything visual. Job adverts for social media roles often expect you to manage pages on both and to use Meta's business tools. The skills are learnable on a phone or a computer, and Meta offers free training through Meta Blueprint.
 
 ## Pages, profiles and professional accounts
 
@@ -1187,7 +1187,7 @@ Amina volunteers for a youth NGO in Wa that only posted on Facebook. She adds a 
 1. Choose an organisation, such as a church, school club, NGO or online shop.
 2. Create a free Google Form that collects name and email, with a clear sentence explaining what people will receive and how often.
 3. Draft one newsletter in Gmail or Google Docs: a specific subject line, one main message, one link, and a line explaining how to unsubscribe.
-4. Send the draft to yourself and read it on your phone. Fix anything hard to read.
+4. Send the draft to yourself and read it on a phone and on a computer. Fix anything hard to read.
 
 **Done looks like:** A working sign up form link and a phone friendly newsletter draft that you can show a mentor.`,
       quiz: {
@@ -1262,7 +1262,7 @@ Even businesses without a website can benefit. A complete Business Profile, an a
 
 ## A small example
 
-Sumaila runs a guest house in Bolgatanga. Travellers kept saying they could not find it, and some went to a competitor whose listing showed up on Maps with photos and reviews. You search "guest house Bolgatanga" on your phone and confirm his business is missing. You help him create a Business Profile with the right location pin, phone number, photos of the rooms and hours, and complete Google's verification steps. Over the next weeks, he asks happy guests to leave honest reviews. Travellers start calling from the listing, and he tells you which calls came from Maps so you can track it.`,
+Sumaila runs a guest house in Bolgatanga. Travellers kept saying they could not find it, and some went to a competitor whose listing showed up on Maps with photos and reviews. You search "guest house Bolgatanga" and confirm his business is missing. You help him create a Business Profile with the right location pin, phone number, photos of the rooms and hours, and complete Google's verification steps. Over the next weeks, he asks happy guests to leave honest reviews. Travellers start calling from the listing, and he tells you which calls came from Maps so you can track it.`,
       practice_task_md: `**Goal:** Check how visible a few local businesses are in search.
 
 **Steps:**
@@ -2348,7 +2348,7 @@ Your first paid work rarely arrives by waiting. It comes from doing real work, s
       },
     },
     portfolio: {
-      explanation_md: `When an agency, company or client in Ghana decides whether to hire you, a portfolio does the talking. One Ghanaian digital marketer advert we studied asked directly for a portfolio of past campaigns, and many others ask for experience. A portfolio is how a beginner shows experience. It does not need to be fancy. It needs to be real, honest and easy to open on a phone.
+      explanation_md: `When an agency, company or client in Ghana decides whether to hire you, a portfolio does the talking. One Ghanaian digital marketer advert we studied asked directly for a portfolio of past campaigns, and many others ask for experience. A portfolio is how a beginner shows experience. It does not need to be fancy. It needs to be real, honest and easy to open on a phone or a laptop.
 
 ## Real beats mock
 
@@ -2367,7 +2367,7 @@ For each project, tell a short story:
 
 ## Where to put it
 
-Choose something free that opens well on a phone with little data:
+Choose something free that opens well on a phone or a laptop with little data:
 
 * A **Google Sites** page, which is also what the DMP cohort uses.
 * A **Google Drive folder** with one PDF per case study.
@@ -2631,7 +2631,7 @@ Fuseini offers three packages to businesses in Tamale. A pharmacy shop takes the
       },
     },
     "dmp-cohort": {
-      explanation_md: `Learning alone on a phone takes real discipline. Some people move faster with a group, a schedule and someone experienced checking their work. SydCrest's Delta Mentoring Program, or DMP, is a twelve week cohort for digital skills and digital marketing. This roadmap and the DMP are designed to fit together: the roadmap gives you a broad beginner base, and the DMP adds structure, mentors and a specialisation.
+      explanation_md: `Learning alone takes real discipline. Some people move faster with a group, a schedule and someone experienced checking their work. SydCrest's Delta Mentoring Program, or DMP, is a twelve week cohort for digital skills and digital marketing. This roadmap and the DMP are designed to fit together: the roadmap gives you a broad beginner base, and the DMP adds structure, mentors and a specialisation.
 
 ## How the twelve weeks are organised
 
