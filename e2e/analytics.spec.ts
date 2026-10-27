@@ -40,3 +40,9 @@ test("the funnel is for admins only", async ({ page }, testInfo) => {
   await expect(page.getByText("This page could not be found.")).toBeVisible();
   await expect(page.getByText("Visit to sign up")).toHaveCount(0);
 });
+
+test("the privacy policy counts a page view too", async ({ page }) => {
+  const pageView = page.waitForRequest((r) => r.method() === "POST" && new URL(r.url()).pathname === "/privacy");
+  await page.goto("/privacy");
+  await pageView;
+});

@@ -3,6 +3,8 @@ import { Suspense } from "react";
 import Logo from "@/components/brand/Logo";
 import { AppNav } from "@/components/app-shell/nav";
 import { UserChip } from "@/components/app-shell/user-chip";
+import { LegalLinks } from "@/components/app-shell/legal-links";
+import { PageViewTracker } from "@/lib/analytics/page-view-tracker";
 
 /**
  * Frame for every signed-in screen. The session is read inside Suspense
@@ -24,6 +26,7 @@ export default function AppLayout({ children }: LayoutProps<"/">) {
         <Suspense>
           <UserChip />
         </Suspense>
+        <LegalLinks />
       </aside>
       <div className="flex min-w-0 flex-1 flex-col">
         <header className="flex items-center border-b border-line px-4 py-3 md:hidden">
@@ -33,9 +36,15 @@ export default function AppLayout({ children }: LayoutProps<"/">) {
         </header>
         <main id="main" className="mx-auto w-full max-w-6xl flex-1 px-4 pt-8 pb-24 md:px-8 md:pb-12">
           {children}
+          {/* Phones: inside main, so its bottom padding keeps the links clear of the tab bar. */}
+          <LegalLinks className="mt-12 border-t border-line pt-4 md:hidden" />
         </main>
       </div>
       <AppNav variant="tabs" />
+      {/* First party page views for the funnel; renders nothing. */}
+      <Suspense fallback={null}>
+        <PageViewTracker />
+      </Suspense>
     </div>
   );
 }
