@@ -1,7 +1,10 @@
+import { Suspense } from "react";
 import { CurriculumWeeks } from "@/components/marketing/curriculum-weeks";
 import { Card, PageHeader, Section } from "@/components/marketing/section";
 import { WaitlistForm } from "@/components/marketing/waitlist-form";
+import { buttonClasses } from "@/components/ui/button";
 import { SectionGrid } from "@/components/ui/layout";
+import { ApplyCta, ApplySignedOut } from "./apply-cta";
 import { PILOT } from "@/content/marketing";
 import { TRACK_LABELS, TRACKS } from "@/content/dmp/curriculum";
 import { pageMetadata } from "@/lib/page-metadata";
@@ -9,7 +12,7 @@ import { pageMetadata } from "@/lib/page-metadata";
 export const metadata = pageMetadata({
   og: "programme",
   title: "The Delta Mentoring Program",
-  description: `A free ${PILOT.weeks} week cohort in digital skills and digital marketing, with a mentor and a cohort beside you. ${PILOT.seats} pilot seats, starting ${PILOT.starts}. Join the waitlist.`,
+  description: `A free ${PILOT.weeks} week cohort in digital skills and digital marketing, with a mentor and a cohort beside you. ${PILOT.seats} pilot seats, starting ${PILOT.starts}. Apply now or join the waitlist.`,
   path: "/programme",
 });
 
@@ -27,11 +30,21 @@ export default function ProgrammePage() {
         eyebrow="Programme"
         title="The Delta Mentoring Program"
         lead={
-          <p>
-            {PILOT.weeks} weeks from computer basics to a portfolio of real digital marketing work, with a
-            mentor and a cohort beside you. The pilot cohort is free: {PILOT.seats} seats, starting{" "}
-            {PILOT.starts}.
-          </p>
+          <>
+            <p>
+              {PILOT.weeks} weeks from computer basics to a portfolio of real digital marketing work, with a
+              mentor and a cohort beside you. The pilot cohort is free: {PILOT.seats} seats, starting{" "}
+              {PILOT.starts}.
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
+              <a href="#apply" className={buttonClasses("primary")}>
+                Apply for a seat
+              </a>
+              <a href="#waitlist" className={buttonClasses("secondary")}>
+                Join the waitlist
+              </a>
+            </div>
+          </>
         }
         aside={
           <dl className="grid grid-cols-2 gap-3 xl:gap-4">
@@ -67,11 +80,24 @@ export default function ProgrammePage() {
       </Section>
 
       <Section
+        id="apply"
+        layout="split"
+        title="Apply for a seat"
+        intro="Applications are open for the pilot cohort. The team reads every application and offers seats in a cohort; you can follow your application from your account."
+      >
+        <div className="max-w-lg lg:max-w-xl">
+          <Suspense fallback={<ApplySignedOut />}>
+            <ApplyCta />
+          </Suspense>
+        </div>
+      </Section>
+
+      <Section
         id="waitlist"
         tone="sunken"
         layout="split"
         title={`Join the waitlist for ${PILOT.starts}`}
-        intro={`There are ${PILOT.seats} free seats in the pilot cohort. Join the waitlist and tell us where you are and what you want.`}
+        intro={`There are ${PILOT.seats} free seats in the pilot cohort. Not ready to apply yet? Join the waitlist and tell us where you are and what you want.`}
       >
         <div className="max-w-lg rounded-lg border border-line bg-surface p-5 lg:max-w-xl xl:p-8">
           <WaitlistForm />
