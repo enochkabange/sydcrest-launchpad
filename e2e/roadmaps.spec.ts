@@ -206,8 +206,12 @@ test("the page never scrolls sideways, header included", async ({ page }, testIn
       }));
       expect(sizes.scroll, `${path} at ${width}px`).toBeLessThanOrEqual(sizes.viewport);
       // Links that do not fit scroll inside the nav row and stay reachable.
-      await nav.getByRole("link", { name: "For business" }).scrollIntoViewIfNeeded();
-      await expect(nav.getByRole("link", { name: "For business" })).toBeInViewport();
+      // Retried because the header re-renders once after hydration.
+      const last = nav.getByRole("link", { name: "For business" });
+      await expect(async () => {
+        await last.scrollIntoViewIfNeeded();
+        await expect(last).toBeInViewport();
+      }).toPass();
     }
   }
 });
