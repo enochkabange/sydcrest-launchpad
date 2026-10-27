@@ -556,6 +556,642 @@ A charter is not filed and forgotten. If the budget, dates or scope change in a 
         pass_threshold: 75,
       },
     },
+    "stakeholders-and-communities": {
+      explanation_md: `In northern Ghana, a project can have the right budget and the right plan and still fail because the wrong people were left out. A chief who was not greeted properly, a women's group that was not asked, or a district officer who heard about the project from the radio can each slow or stop the work. Adverts for project officers and assistants regularly ask for stakeholder engagement and community mobilisation for this reason.
+
+## Who are stakeholders?
+
+A **stakeholder** is anyone who affects the project or is affected by it. On a community project this often includes:
+
+* The **donor** or funder.
+* The **district assembly** and its departments, such as education, health or water.
+* **Traditional authorities**: the chief, elders and the chief's linguist.
+* **Assembly members** and unit committee members.
+* **Community groups**: women's groups, youth groups, farmer groups, water committees, parent teacher associations.
+* The **people the project serves**, including those who are often missed: people with disabilities, older people, women who cannot attend evening meetings.
+* **Suppliers and contractors.**
+* Your own **organisation's staff**.
+
+## Mapping influence and interest
+
+A simple tool is a two by two grid. Score each stakeholder as high or low on two questions: how much **influence** do they have over the project, and how much **interest** do they have in it?
+
+* **High influence, high interest: work closely.** Involve them in decisions and meet them regularly. Example: the chief and the district water officer.
+* **High influence, low interest: keep satisfied.** Brief them at key moments, keep it short. Example: the district chief executive.
+* **Low influence, high interest: keep informed.** Share regular updates. Example: households that will use the borehole.
+* **Low influence, lower interest: monitor.** Check in from time to time. Example: a nearby community that may want a borehole later.
+
+The grid is a guide, not a ranking of who matters. People with little formal influence are often the ones the project exists to serve, so their voices need extra care.
+
+## A worked example
+
+On the water project, assistant Mariama builds a stakeholder list in a spreadsheet with columns for name or group, role, influence, interest, what they need, and how to engage them. For the women's group she notes: "Meet in the afternoon after market, in Dagbani, with a female staff member present." For the chief she notes: "Courtesy call with kola before any community meeting; update before drilling starts."
+
+Coordinator Fuseini uses her list to plan an engagement calendar: an entry meeting with the chief, a community durbar, monthly water committee meetings, and a short update to the district assembly each quarter.
+
+## Respectful engagement
+
+* Follow local protocol: greet traditional authorities first and through the right channels.
+* Speak the language people are comfortable in, and use interpreters when needed.
+* Choose times and places that suit the people you want to hear from.
+* Record what people say and show later how their views shaped decisions.
+* Never promise what the project cannot deliver.
+
+Good engagement builds trust that lasts beyond the project, and that trust is often what keeps a borehole working years later.`,
+      practice_task_md: `**Goal:** Make a stakeholder map for a local project.
+
+**Steps:**
+1. Choose a project, such as a new borehole, a market toilet block or a school feeding programme in your area.
+2. In a spreadsheet on your phone or computer, list at least eight stakeholders with columns: name or group, role, influence (high or low), interest (high or low), what they need, how to engage them.
+3. Sort them into the four groups from the lesson.
+4. For two stakeholders who are easy to miss, write one sentence on how you would make sure they are heard.
+
+**Done looks like:** A sheet with eight or more stakeholders sorted into four groups and two notes on reaching people who are often left out.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which definition of a stakeholder matches the lesson?",
+            options: [
+              "Only the people who pay for the project",
+              "Anyone who affects the project or is affected by it",
+              "Only staff of the organisation",
+              "People who own shares in a company",
+            ],
+            answer_index: 1,
+            explanation: "The lesson defines a stakeholder as anyone who affects or is affected by the project.",
+          },
+          {
+            prompt: "How should you engage a stakeholder with high influence and high interest?",
+            options: ["Monitor them occasionally", "Keep them informed only", "Work closely with them", "Ignore them"],
+            answer_index: 2,
+            explanation: "High influence and high interest stakeholders should be involved closely in decisions.",
+          },
+          {
+            prompt: "Why does the lesson warn that the grid is not a ranking of who matters?",
+            options: [
+              "Because people with little formal influence are often the ones the project serves",
+              "Because donors do not like grids",
+              "Because influence never changes",
+              "Because only the chief matters",
+            ],
+            answer_index: 0,
+            explanation: "The people the project exists to serve may have little formal influence but need extra care.",
+          },
+          {
+            prompt: "Which is an example of respectful engagement from the lesson?",
+            options: [
+              "Holding all meetings in English at night",
+              "Promising every community a borehole",
+              "Skipping the chief to save time",
+              "Greeting traditional authorities first through the right channels",
+            ],
+            answer_index: 3,
+            explanation: "The lesson lists following local protocol and greeting traditional authorities first.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    logframes: {
+      explanation_md: `Many donor funded projects in Ghana are designed and reported using a **logical framework**, usually called a **logframe**. Officer and coordinator adverts mention donor reporting, indicators and results again and again, and nearly all of that rests on the logframe. You may not write one in your first job, but you will need to read one and collect the information it asks for.
+
+## The idea: a chain of results
+
+A logframe links what the project does to the change it hopes to cause, in a chain of levels:
+
+* **Activities:** the things the team does. Drill a borehole, train a committee.
+* **Outputs:** what those activities directly produce. One working borehole; ten committee members trained.
+* **Outcome:** the change the outputs should lead to. Households use safe water all year.
+* **Goal (or impact):** the bigger, longer term change the project contributes to. Fewer cases of waterborne illness in the community.
+
+Read it as a chain of "if... then": **if** we do these activities, **then** we get these outputs; **if** we have these outputs, **then** the outcome follows, and so on.
+
+## The columns
+
+For each level, a logframe usually has:
+
+* **Indicators:** how you will measure it. Use numbers or clear yes or no checks.
+* **Means of verification:** where the evidence comes from, such as attendance sheets, survey results or water quality tests.
+* **Assumptions:** things outside the project's control that must hold true for the chain to work.
+
+## A worked example
+
+Here is a short logframe for the community water project:
+
+| Level | Statement | Indicator | Evidence | Assumption |
+|---|---|---|---|---|
+| Goal | Better health in the community | Fewer reported cases of diarrhoea at the clinic | Clinic records | Other water sources do not get worse |
+| Outcome | Households use safe water all year | Number of households collecting from the borehole each month | Water committee log book | The borehole is repaired quickly when it breaks |
+| Output | Borehole working and committee trained | Borehole passes water test; ten members trained | Test certificate; attendance sheet | Contractor delivers on time |
+| Activity | Drill borehole; train committee; hold durbar | Activities done by planned dates | Work plan; receipts | Roads passable before rains |
+
+## How it shapes your daily work
+
+The logframe tells you what evidence to collect. If an indicator says "ten members trained", then the signed attendance sheet from the training is not just paperwork; it is proof for the donor report. If an assumption says "roads passable before rains", then watching the weather and the roads is part of managing risk.
+
+When you write reports, you follow the logframe level by level: what activities happened, what outputs they produced, and what early signs of the outcome you see.
+
+## Words to watch
+
+Different donors use slightly different terms: results framework, theory of change, intermediate results. The logic is the same chain from activities to long term change. Ask your coordinator which format your donor uses, and keep a copy of the logframe close when you plan, collect data and report.`,
+      practice_task_md: `**Goal:** Build a four level logframe for a small project.
+
+**Steps:**
+1. Choose a project, such as a school feeding programme, a reading club or a tree planting campaign.
+2. In a spreadsheet or document on your phone or computer, make a table with five columns: level, statement, indicator, evidence, assumption.
+3. Fill one row each for goal, outcome, output and activity.
+4. Check the chain by reading it upwards as "if... then" sentences. If a step does not follow, rewrite it.
+
+**Done looks like:** A four row logframe where every level has an indicator, a source of evidence and an assumption, and the "if... then" chain makes sense.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "In a logframe, what is an output?",
+            options: [
+              "The long term change in the region",
+              "What the activities directly produce, such as a working borehole",
+              "The money the donor gives",
+              "A meeting with the chief",
+            ],
+            answer_index: 1,
+            explanation: "Outputs are the direct products of activities, like one working borehole and a trained committee.",
+          },
+          {
+            prompt: "Which order runs from the most immediate to the longest term?",
+            options: [
+              "Goal, outcome, output, activity",
+              "Outcome, activity, goal, output",
+              "Activity, output, outcome, goal",
+              "Output, goal, activity, outcome",
+            ],
+            answer_index: 2,
+            explanation: "The chain runs from activities to outputs to outcome to goal.",
+          },
+          {
+            prompt: "What is the means of verification column for?",
+            options: [
+              "Where the evidence for each indicator comes from",
+              "The names of the donors",
+              "The budget for each activity",
+              "The risks the team controls",
+            ],
+            answer_index: 0,
+            explanation: "Means of verification records the source of evidence, such as attendance sheets or clinic records.",
+          },
+          {
+            prompt: "What is an assumption in a logframe?",
+            options: [
+              "A guess about the budget",
+              "An activity the team will do",
+              "A type of indicator",
+              "Something outside the project's control that must hold true",
+            ],
+            answer_index: 3,
+            explanation: "Assumptions are external conditions the chain depends on, such as roads being passable.",
+          },
+          {
+            prompt: "Why does the lesson say a signed attendance sheet matters?",
+            options: [
+              "It is evidence for an indicator in the donor report",
+              "It replaces the budget",
+              "Donors collect autographs",
+              "It is needed to drill the borehole",
+            ],
+            answer_index: 0,
+            explanation: "The attendance sheet proves the 'ten members trained' indicator.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+
+    planning: {
+      explanation_md: `A plan is what turns a good idea into work that people can actually do on Monday morning. Project adverts in Ghana ask for work plans, activity plans and budgets more than almost anything else, and assistants spend much of their time updating them. This section teaches you to build those plans yourself.
+
+## What a plan answers
+
+A useful project plan answers five questions:
+
+1. **What needs to be done?** A list of deliverables and the tasks under them.
+2. **In what order, and by when?** A schedule showing which tasks depend on others.
+3. **Who will do it?** A name against every task.
+4. **What will it cost?** A budget with every cost line.
+5. **What might go wrong?** A list of risks and what you will do about them.
+
+## What this section covers
+
+* **Breaking work into tasks.** Splitting a big goal into pieces small enough to assign and track.
+* **Schedules and Gantt charts.** Putting tasks in order, around holidays, market days and the rainy season, and drawing a timeline.
+* **Simple project budgets.** Listing costs with quantities and unit prices in cedis, the way donors expect.
+* **Risks and issues.** Keeping a register of what might go wrong and what already has.
+
+## One spreadsheet, several tabs
+
+You do not need expensive software. Every plan in this section can be built in a free spreadsheet such as Google Sheets, which works in a browser and as an app on phones. A practical habit is to keep one spreadsheet per project with several tabs:
+
+* **Tasks:** task, owner, start date, end date, status.
+* **Budget:** cost line, quantity, unit cost, total.
+* **Risks:** risk, likelihood, impact, owner, response.
+* **Contacts:** names, roles and phone numbers.
+
+Share it with the team so everyone sees the same, current version. That one shared file stops the confusion of five different plans on five different phones.
+
+## A worked example
+
+Issahaku coordinates the school feeding programme. Before the first term, he and his assistant Wumpini build the plan together in one shared spreadsheet:
+
+* On the tasks tab they list hiring cooks, buying pots, building storage shelves and agreeing menus with head teachers, each with a name and a date.
+* On the budget tab they cost food per pupil per day, cooks' allowances, fuel and transport.
+* On the risks tab they note that maize prices often rise before harvest and that funds from the donor might arrive late.
+
+When the district director asks, "Are we ready to start in September?", Issahaku opens the sheet and answers with facts rather than guesses.
+
+## Plans change, and that is fine
+
+A plan is a best guess made with the information you have today. When things change, update the plan and tell the people affected. A plan that matches reality is worth far more than a beautiful plan nobody follows.`,
+      practice_task_md: `**Goal:** Set up a project planning spreadsheet you can reuse.
+
+**Steps:**
+1. Open Google Sheets or another free spreadsheet app on your phone or computer and create a new file named after a small project of your choice.
+2. Add four tabs: Tasks, Budget, Risks, Contacts.
+3. Add the column headings from the lesson to each tab.
+4. Fill in at least three rows on the Tasks tab and two on the Risks tab.
+
+**Done looks like:** A spreadsheet with four labelled tabs, correct headings, and a few real rows. You will keep adding to it in the next lessons.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is NOT one of the five questions a plan answers?",
+            options: ["What needs to be done?", "Who will do it?", "What might go wrong?", "Which staff member is the most popular?"],
+            answer_index: 3,
+            explanation: "The five questions cover tasks, order and dates, owners, cost and risks.",
+          },
+          {
+            prompt: "Why does the lesson recommend one shared spreadsheet per project?",
+            options: [
+              "So everyone sees the same, current version of the plan",
+              "Because spreadsheets cannot be printed",
+              "So nobody needs to update it",
+              "Because donors require a specific app",
+            ],
+            answer_index: 0,
+            explanation: "One shared file avoids confusion from several different versions on different devices.",
+          },
+          {
+            prompt: "Which columns does the lesson suggest for the Risks tab?",
+            options: [
+              "Cost line, quantity, unit cost, total",
+              "Name, role, phone number",
+              "Risk, likelihood, impact, owner, response",
+              "Task, owner, start date, end date, status",
+            ],
+            answer_index: 2,
+            explanation: "The lesson lists risk, likelihood, impact, owner and response for the Risks tab.",
+          },
+          {
+            prompt: "What should you do when circumstances change during a project?",
+            options: [
+              "Keep the original plan and ignore the change",
+              "Update the plan and tell the people affected",
+              "Delete the plan and start over",
+              "Wait until the end of the project to mention it",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says a plan that matches reality is more valuable, so update it and inform people.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "breaking-down-work": {
+      explanation_md: `"Organise a three day farmer training" is too big to act on. Nobody can wake up and do it. "Call three venues in Damongo for prices" is a task someone can finish this afternoon. The skill of turning big goals into small, clear tasks is at the heart of the work plans that project jobs ask for.
+
+## The work breakdown structure
+
+A **work breakdown structure**, or **WBS**, splits a project into layers:
+
+1. **The project** at the top.
+2. **Deliverables**: the main things the project must produce.
+3. **Work packages or tasks**: the pieces of work under each deliverable.
+
+You keep breaking down until each task is small enough that one person can own it, you can estimate how long it takes and what it costs, and everyone will agree when it is done.
+
+A common guide is that most tasks should take no more than a week or two. If a task is longer, it probably hides several smaller tasks.
+
+## Deliverables, not just activities
+
+Start with the things the project must produce, written as nouns: "venue booked", "training materials printed", "participants registered". Then list the actions needed for each. This keeps you focused on results, not just busy work.
+
+## A worked example
+
+Abdul-Rahman works for a farmer support NGO and must organise a three day training for 30 farmers in Damongo. His breakdown:
+
+**1. Venue ready**
+* 1.1 Get prices from three venues
+* 1.2 Visit and choose venue
+* 1.3 Pay deposit and get receipt
+
+**2. Participants confirmed**
+* 2.1 Agree selection criteria with the field officer
+* 2.2 Call farmer group leaders for names
+* 2.3 Send reminders two days before
+
+**3. Facilitation ready**
+* 3.1 Confirm facilitator and dates
+* 3.2 Review training content
+* 3.3 Print handouts and attendance sheets
+
+**4. Logistics arranged**
+* 4.1 Book lunch and snacks for three days
+* 4.2 Arrange transport refunds
+* 4.3 Prepare payment request for finance
+
+**5. Training reported**
+* 5.1 Collect signed attendance sheets
+* 5.2 Take photos with consent
+* 5.3 Write a two page activity report
+
+Each task has a number, which makes it easy to refer to in meetings ("Where are we on 2.2?") and to copy into a schedule and a budget later.
+
+## How to check your breakdown
+
+* **Is anything missing?** Walk through the event in your mind from start to finish. Reports and payments are often forgotten.
+* **Is each task clear?** Start with a verb: call, book, print, send.
+* **Is anything too big?** Break it down again.
+* **Does every task have one owner?** Add a name.
+
+## Tips for doing it with others
+
+Breaking down work is best done as a group. In a short meeting, write the deliverables, then let each person suggest tasks. People closest to the work, like field officers and cooks, often remember steps that managers forget. You can do this on a shared spreadsheet or on paper and type it up afterwards.`,
+      practice_task_md: `**Goal:** Create a numbered work breakdown for a small event.
+
+**Steps:**
+1. Choose an event, such as a one day youth workshop, a community clean up or a school open day.
+2. On your phone or computer, write four or five deliverables as nouns, such as "venue ready".
+3. Under each, list two to four tasks starting with a verb, numbered 1.1, 1.2 and so on.
+4. Add an owner name to every task and check the list against the four questions in the lesson.
+
+**Done looks like:** A numbered breakdown with four or five deliverables, at least twelve tasks, every task starting with a verb and assigned to one person.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does WBS stand for?",
+            options: ["Weekly budget summary", "Work breakdown structure", "Written briefing sheet", "Workplace benefit scheme"],
+            answer_index: 1,
+            explanation: "WBS stands for work breakdown structure.",
+          },
+          {
+            prompt: "When should you stop breaking work down?",
+            options: [
+              "When the list reaches exactly ten items",
+              "When the manager is tired",
+              "When each task can be owned by one person, estimated and clearly finished",
+              "Never; keep breaking it down forever",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says to stop when a task has one owner, can be estimated and has a clear finish.",
+          },
+          {
+            prompt: "Which of these is written as a deliverable rather than a task?",
+            options: ["Call three venues", "Venue ready", "Print handouts", "Send reminders"],
+            answer_index: 1,
+            explanation: "Deliverables are written as nouns describing a result, like 'venue ready'.",
+          },
+          {
+            prompt: "Which items does the lesson say are often forgotten in a breakdown?",
+            options: ["Reports and payments", "The project name", "The venue", "Lunch"],
+            answer_index: 0,
+            explanation: "The lesson notes that reports and payments are often forgotten.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "schedules-and-gantt-charts": {
+      explanation_md: `Knowing what to do is half the plan. Knowing when to do it, and in what order, is the other half. Coordinator and assistant adverts ask for scheduling, timelines and activity plans, and many donors want a timeline with every proposal and report.
+
+## Dependencies
+
+Some tasks cannot start until another finishes. You cannot print handouts before the content is agreed. You cannot pay a deposit before you have chosen a venue. These links are called **dependencies**. Mark them clearly, because a delay in one task pushes back every task that depends on it.
+
+A **milestone** is an important point with no length of its own, such as "venue booked" or "first meal served". Milestones help everyone see progress at a glance.
+
+## Estimating time honestly
+
+For each task, estimate how long it will really take, not how long it would take if everything went perfectly. Then think about the local calendar:
+
+* **Public and religious holidays**, when offices close and people travel.
+* **Market days**, when traders and many community members are busy.
+* **The rainy season**, when some roads become hard to use.
+* **Farming seasons**, when farmers have little time for meetings.
+* **School terms and exams**, for anything involving schools.
+
+Add some buffer time before important milestones. Things will slip; buffer protects the final date.
+
+## The Gantt chart
+
+A **Gantt chart** is a timeline that lists tasks down the left and dates across the top, with a bar for each task showing when it starts and ends. In one picture you see what happens when, what overlaps, and where the busy weeks are.
+
+You can make a simple Gantt chart in any spreadsheet: put tasks in column A, weeks across row 1, and colour the cells for the weeks each task runs. Some organisations' paid Google Workspace accounts also offer a timeline view that turns rows with start and end dates into bars, but coloured cells work in any free spreadsheet.
+
+## A worked example
+
+Wumpini plans the start of the school feeding programme over six weeks before term begins:
+
+| Task | Wk 1 | Wk 2 | Wk 3 | Wk 4 | Wk 5 | Wk 6 |
+|---|---|---|---|---|---|---|
+| Hire and train cooks | ■ | ■ | ■ | | | |
+| Agree menus with heads | ■ | ■ | | | | |
+| Buy pots and utensils | | ■ | ■ | | | |
+| Build store shelves | | | ■ | ■ | | |
+| Buy first food stock | | | | ■ | ■ | |
+| Trial meal day | | | | | | ■ |
+
+Menus must be agreed before food is bought, and shelves must be ready before stock arrives. She notices week 4 includes a public holiday and moves the shelf building to start a few days earlier. Week 6 is buffer plus a trial meal day before the first real school day, which is the milestone.
+
+## Keep it current
+
+Update the schedule each week: mark tasks done, move bars that slipped, and check whether any milestone is now at risk. Share a screenshot in the team WhatsApp group or post the link so nobody works from an old version.`,
+      practice_task_md: `**Goal:** Draw a simple Gantt chart in a spreadsheet.
+
+**Steps:**
+1. Take the breakdown from the last lesson, or list eight tasks for a small project.
+2. In Google Sheets or another free spreadsheet app on your phone or computer, put tasks in column A and weeks 1 to 6 across row 1.
+3. Fill the cells with a colour or a symbol for the weeks each task runs.
+4. Mark at least two dependencies by writing "after task X" in a notes column, and add one milestone.
+5. Check the local calendar and move any task that clashes with a holiday, market day or season.
+
+**Done looks like:** A six week chart with eight tasks, two noted dependencies, one milestone and one change you made for the local calendar.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a dependency in a schedule?",
+            options: [
+              "A task that cannot start until another one finishes",
+              "A staff member who depends on their salary",
+              "A spare amount of money",
+              "A type of chart colour",
+            ],
+            answer_index: 0,
+            explanation: "A dependency links tasks so that one must finish before another starts.",
+          },
+          {
+            prompt: "What is a milestone?",
+            options: [
+              "The longest task in the project",
+              "An important point in the schedule with no length of its own",
+              "A distance marker on the road to the site",
+              "The final budget total",
+            ],
+            answer_index: 1,
+            explanation: "The lesson defines a milestone as an important point, such as 'venue booked', with no duration.",
+          },
+          {
+            prompt: "Why should you add buffer time before important milestones?",
+            options: [
+              "To make the chart look longer",
+              "Because donors pay more for longer projects",
+              "Because things will slip, and buffer protects the final date",
+              "So staff can take holidays",
+            ],
+            answer_index: 2,
+            explanation: "Buffer absorbs delays so the key date is still met.",
+          },
+          {
+            prompt: "In Wumpini's plan, why must menus be agreed before food is bought?",
+            options: [
+              "Because it is the shortest task",
+              "Because cooks need to be paid first",
+              "Because the donor said so",
+              "Because what food to buy depends on the agreed menus",
+            ],
+            answer_index: 3,
+            explanation: "Buying food depends on knowing the menus, so it is a dependency.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "simple-budgets": {
+      explanation_md: `Budget and financial tracking skills appear in nearly every project advert, from assistant to coordinator. Donors and managers trust people who can show exactly where money is planned to go and where it went. You do not need to be an accountant, but you do need to build a clear budget and follow it.
+
+## How a project budget is built
+
+A project budget is a table of **cost lines**. Each line has:
+
+* **Description:** what the money is for, such as "Lunch for participants".
+* **Unit:** what you are counting, such as person per day, trip or piece.
+* **Quantity:** how many units.
+* **Unit cost:** price of one unit in cedis.
+* **Total:** quantity times unit cost.
+
+Building costs from units makes your budget easy to check and easy to adjust. If the number of participants changes, you change one quantity and the totals update.
+
+Group lines into categories, such as personnel, travel, meetings and training, equipment and supplies, and administration. Many donors give you their own categories; use them exactly.
+
+## A worked example
+
+Fuseini asks Mariama to budget a two day training for ten water committee members. All prices here are invented for practice. She uses a spreadsheet with a formula in the total column, such as =C2*D2 to multiply quantity by unit cost.
+
+| Cost line | Unit | Qty | Unit cost (GHS) | Total (GHS) |
+|---|---|---|---|---|
+| Lunch and snacks | person per day | 24 | 60 | 1,440 |
+| Transport refund | person per day | 20 | 30 | 600 |
+| Facilitator fee | day | 2 | 500 | 1,000 |
+| Venue hire | day | 2 | 300 | 600 |
+| Handouts and stationery | set | 12 | 25 | 300 |
+| **Subtotal** | | | | **3,940** |
+| Contingency | | | | 200 |
+| **Total** | | | | **4,140** |
+
+Notice the quantities. Lunch covers twelve people per day (ten members plus facilitator and Mariama) for two days. Transport covers the ten members for two days.
+
+## Contingency
+
+**Contingency** is a small amount kept aside for unexpected costs, such as a price rise. Some donors allow it as a line; others do not, and expect you to build realistic unit costs instead. Ask before you add it.
+
+## Getting unit costs right
+
+Base prices on real quotes or recent receipts, not guesses. For an NGO, the finance team usually has standard rates for allowances, fuel and meals. Note your sources in a comment or a notes column so anyone checking the budget can see where each figure came from.
+
+## Following donor rules
+
+Once a donor approves a budget, spending usually has to match the approved lines. You may not be able to move money from venue hire to lunch without permission, and some costs may not be allowed at all. Keep a copy of the approved budget and the donor's rules close, and ask finance before spending on anything you are unsure about. In the monitoring section you will learn to track actual spending against this plan.`,
+      practice_task_md: `**Goal:** Build a costed budget in a spreadsheet.
+
+**Steps:**
+1. Choose a small activity, such as a one day workshop for 20 people.
+2. In a spreadsheet on your phone or computer, create the columns: cost line, unit, quantity, unit cost, total.
+3. Add at least six cost lines. Use a formula to multiply quantity by unit cost, and another to add up the totals.
+4. Ask a trader, a friend or check recent receipts to get realistic prices for two lines, and note the source.
+5. Change the number of participants and check the totals update.
+
+**Done looks like:** A working budget with six or more lines, formulas for totals, and two prices with noted sources.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How is the total for a cost line calculated?",
+            options: [
+              "Quantity times unit cost",
+              "Unit cost minus quantity",
+              "Whatever the donor suggests",
+              "Quantity plus unit cost",
+            ],
+            answer_index: 0,
+            explanation: "The lesson's formula multiplies quantity by unit cost.",
+          },
+          {
+            prompt: "Why is building costs from units and quantities helpful?",
+            options: [
+              "It makes the budget longer",
+              "It hides costs from the donor",
+              "It makes the budget easy to check and adjust when numbers change",
+              "It removes the need for receipts",
+            ],
+            answer_index: 2,
+            explanation: "Change one quantity and the totals update, and each figure can be checked.",
+          },
+          {
+            prompt: "What is contingency?",
+            options: [
+              "A fee paid to the facilitator",
+              "A small amount set aside for unexpected costs",
+              "The donor's profit",
+              "The cost of transport",
+            ],
+            answer_index: 1,
+            explanation: "Contingency covers unexpected costs, and some donors do not allow it, so ask first.",
+          },
+          {
+            prompt: "Where should unit costs come from?",
+            options: [
+              "A random guess",
+              "The highest price you can imagine",
+              "Last year's budget from a different country",
+              "Real quotes, recent receipts or the organisation's standard rates",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says to base prices on quotes, receipts or finance's standard rates.",
+          },
+          {
+            prompt: "After a donor approves a budget, what usually applies?",
+            options: [
+              "Spending should match the approved lines unless permission is given",
+              "You can move money freely between lines",
+              "The budget no longer matters",
+              "Only the total needs to be correct",
+            ],
+            answer_index: 0,
+            explanation: "Donors usually expect spending to follow approved lines, so ask before moving money.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
     // NEXT_NODES
   },
 };
