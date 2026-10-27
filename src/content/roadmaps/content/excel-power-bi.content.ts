@@ -1440,7 +1440,7 @@ Even a repeatable report needs a human check. Compare this month's totals with l
 1. Pick a report that recurs: monthly shop sales, weekly church attendance or a quarterly savings group summary.
 2. Create a workbook with five sheets named Raw, Clean, Lists, Calc and Report.
 3. On the Report sheet, write the three to five numbers or charts the reader needs each month.
-4. On a fourth sheet or in a note, list every cleaning step you currently do by hand, in order.
+4. In a note on the Lists sheet, list every cleaning step you currently do by hand, in order.
 5. Mark which steps can be done with formulas you already know.
 
 **Done looks like:** a workbook skeleton with five named sheets and a written list of cleaning steps. Share it with a mentor and ask which steps they would automate first.`,
@@ -1501,14 +1501,12 @@ If you clean the same kind of file every month, Power Query can do it for you. Y
 
 ## Which version you need
 
-Be clear about this before you start:
-
 * **Desktop Excel for Windows** has the full Power Query editor (Data tab, **Get Data**, or **From Table/Range**).
-* **Excel for Microsoft 365 on Mac** has the editor too in recent versions (Data tab, **Get Data (Power Query)**).
-* **Excel for the web** only lets you create and edit queries with a Microsoft 365 business or enterprise plan. With a free personal account you cannot open the editor there.
+* **Excel for Microsoft 365 on Mac** has the editor too in recent versions (Data tab, **Get Data (Power Query)**), with fewer data sources than Windows.
+* **Excel for the web:** Microsoft lets Microsoft 365 subscribers view and refresh queries, and keeps the rest, such as building queries, for business and enterprise plans. A free account does not include it.
 * **Power BI Desktop** is free and contains the same Power Query editor, but it runs only on Windows.
 
-So you need a Windows or Mac computer with desktop Excel (at work, school or a hub), or any Windows computer where you can install Power BI Desktop. If you have neither yet, read on: the ideas still apply, and the practice task has a version you can do in any spreadsheet.
+So you need a Windows computer with desktop Excel, or a Mac with Excel for Microsoft 365 (at work, school or a hub), or any Windows computer where you can install Power BI Desktop. If you have neither yet, read on: the ideas still apply, and the practice task has a version you can do in any spreadsheet.
 
 ## How it works
 
@@ -1520,7 +1518,7 @@ So you need a Windows or Mac computer with desktop Excel (at work, school or a h
    * **Transform, then Format, then Trim** and **Capitalize Each Word** for names.
    * **Replace values**, such as "Tml" with "Tamale".
    * **Filter rows** to remove blanks or test entries.
-   * **Change type** to Date, Whole number or Text. For dates written day first, use **Change type, then Using Locale**, and choose English (Ghana) or English (United Kingdom), so 05/03/2026 is read as 5 March.
+   * **Change type** to Date, Whole number or Text. For dates written day first, use **Change type, then Using Locale**, and choose a day first locale such as English (United Kingdom), so 05/03/2026 is read as 5 March.
    * **Remove duplicates.**
 4. Choose **Close and Load**. The clean data lands in a new sheet as a table.
 
@@ -1530,7 +1528,7 @@ Excel for Windows and Power BI Desktop can also combine every file in a folder i
 
 ## A worked example
 
-Abdul-Rahman receives a CSV of mobile money transactions from his employer's system every month. He uses Get Data, From Text/CSV, then records: remove four unused columns, trim the Customer column, replace "N/A" with blank, change Amount to Decimal number, change Date using the English (Ghana) locale, and filter out rows where Status is "Failed". Six steps, built once. Each month he replaces the CSV and refreshes, and his PivotTable of daily totals updates in seconds.
+Abdul-Rahman receives a CSV of mobile money transactions from his employer's system every month. He uses Get Data, From Text/CSV, then records: remove four unused columns, trim the Customer column, replace "N/A" with blank, change Amount to Decimal number, change Date using the English (United Kingdom) locale, and filter out rows where Status is "Failed". Each month he replaces the CSV and refreshes, and his PivotTable of daily totals updates in seconds.
 
 ## Without the editor
 
@@ -1578,7 +1576,7 @@ If you only have free Excel for the web, a phone or Google Sheets, write your st
             prompt: "Dates in your file are written day first, like 05/03/2026. How should you set the type in Power Query?",
             options: [
               "Change type to Text",
-              "Change type Using Locale, choosing English (Ghana) or English (United Kingdom)",
+              "Change type Using Locale, choosing a day first locale such as English (United Kingdom)",
               "Remove the column",
               "Change type to Whole number",
             ],
@@ -1600,12 +1598,12 @@ If you only have free Excel for the web, a phone or Google Sheets, write your st
             prompt: "With a free personal Microsoft account, what can you do with Power Query in Excel for the web?",
             options: [
               "Use the full editor with no limits",
-              "You cannot open the editor; creating and editing queries there needs a business or enterprise plan",
+              "You cannot build queries there; that needs a Microsoft 365 business or enterprise plan",
               "Use it only on weekends",
               "Edit queries but not load them",
             ],
             answer_index: 1,
-            explanation: "Microsoft limits query editing in Excel for the web to business and enterprise plans.",
+            explanation: "Microsoft keeps Power Query features beyond viewing and refreshing for business and enterprise plans.",
           },
         ],
         pass_threshold: 80,
@@ -1746,7 +1744,7 @@ For this section, yes, to do the practice yourself. Some honest options:
 * An internet café, if it allows installs. Save your files to a USB stick or OneDrive every session.
 * A friend or relative's Windows laptop for a few hours each week.
 
-Before you rely on a machine, check its screen. Microsoft says Power BI Desktop needs a display of at least 1440 by 900; some common laptops at 1366 by 768 are below that, and some dialogs fall off the screen. The setup lesson explains what to check.
+Before you rely on a machine, check its screen. Microsoft says Power BI Desktop needs a display of at least 1440 by 900; some common laptops at 1366 by 768 are below that, and some controls can fall off the screen. The setup lesson explains what to check.
 
 **If you have only a phone or a Mac for now:** read these lessons fully, because the ideas are what interviewers ask about. Then practise the same skills with a free browser tool such as Google's Data Studio (called Looker Studio until 2026), which connects to Google Sheets and builds interactive dashboards with filters. It does not teach Power Query or DAX, but it does teach connecting data, calculated fields, filters and dashboard design. Your Excel skills from earlier sections carry straight over.
 
@@ -1843,7 +1841,7 @@ Power BI Desktop needs:
 
 * **Windows 10 or later.** It does not run on macOS, ChromeOS, Android or iOS.
 * **At least 2 GB of free memory (RAM),** with 4 GB or more recommended. More is better for large files.
-* **A screen of at least 1440 by 900 pixels.** Microsoft says lower resolutions such as 1366 by 768 or 1280 by 800 are not supported, because some dialogs extend beyond the screen. Check in **Settings, then System, then Display**.
+* **A screen of at least 1440 by 900 pixels.** Microsoft says lower resolutions such as 1024 by 768 or 1280 by 800 are not supported, because some controls appear beyond the edge of the screen. Many laptops run at 1366 by 768, which is also below the minimum. Check in **Settings, then System, then Display**.
 * **Display scaling at 100%.** If "Scale" is set higher, some dialogs may not show. Set it to 100% in the same Display settings.
 
 ## Two ways to install
@@ -1967,7 +1965,7 @@ The editor looks and works like the one in Excel. Each change is recorded in **A
 
 * **Remove columns** you will not use. Smaller models are faster and easier to understand.
 * **Rename columns** in plain words: "Amount (GHS)" rather than "amt_ghs_v2". These names appear on your visuals.
-* **Set data types.** Every column needs the right type: Whole number, Decimal number, Date or Text. A column of numbers stored as text cannot be summed. For day first dates, use **Change Type, then Using Locale**, and choose English (Ghana) or English (United Kingdom).
+* **Set data types.** Every column needs the right type: Whole number, Decimal number, Date or Text. A column of numbers stored as text cannot be summed. For day first dates, use **Change Type, then Using Locale**, and choose a day first locale such as English (United Kingdom).
 * **Trim and clean text** so "Tamale" and "Tamale " become one value.
 * **Filter out** blank rows, totals rows and test entries.
 * **Rename the query** itself, for example to \`Sales\`, because that becomes the table name in your model.
@@ -1984,7 +1982,7 @@ In Power Query, the **View** tab has **Column quality** and **Column distributio
 
 ## A worked example
 
-Sumaila receives a KoboToolbox export of a household survey from Nanton. He uses Get data, Text/CSV, then Transform Data. He removes metadata columns he does not need, renames "q3_hh_size" to "Household size", sets it to Whole number, changes the interview date using the English (Ghana) locale, trims community names and filters out three test interviews. Column quality shows two errors in Household size, where someone typed "five"; he notes them for the field team. Then Close and Apply.`,
+Sumaila receives a KoboToolbox export of a household survey from Nanton. He uses Get data, Text/CSV, then Transform Data. He removes metadata columns he does not need, renames "q3_hh_size" to "Household size", sets it to Whole number, changes the interview date using the English (United Kingdom) locale, trims community names and filters out three test interviews. Column quality shows two errors in Household size, where someone typed "five"; he notes them for the field team. Then Close and Apply.`,
       practice_task_md: `**Goal:** load and shape a file in Power BI Desktop.
 
 You need a Windows computer with Power BI Desktop. Without one, do the same shaping steps on your practice data with helper columns in a spreadsheet, and list each step.
@@ -2555,7 +2553,7 @@ If a refresh fails, the owner is notified, and a "last refreshed" date on the pa
 
 The service has an option called **Publish to web**. It creates a link and embed code that **anyone on the internet can view without signing in**. Microsoft warns that people may reach the underlying data in the model even if the report does not display it.
 
-Use it only for data that is already public, such as an open dataset you analysed for your portfolio. **Never** use it for bank, payroll, health, beneficiary or customer data. Ghana's Data Protection Act protects personal data, and many organisations switch the feature off entirely. For private reports, use the normal sharing and app features, which check who is signed in.
+Use it only for data that is already public, such as an open dataset you analysed for your portfolio. **Never** use it for bank, payroll, health, beneficiary or customer data. Ghana's Data Protection Act protects personal data, and the feature stays off until an administrator turns it on. For private reports, use the normal sharing and app features, which check who is signed in.
 
 ## Controlling who sees what
 
@@ -2644,7 +2642,7 @@ Fuseini publishes his distributor report to a team workspace, sets refresh for 6
     "getting-hired-excel": {
       explanation_md: `## Why this matters
 
-Almost every CV in Ghana says "proficient in Microsoft Office". Employers know that line means very little. What makes you stand out is evidence: a clean report they can open, a dashboard they can click, a short explanation of how you turned messy data into a decision. This final section helps you turn the work you have done in this track into that evidence, and choose where to go next.
+Many CVs say "proficient in Microsoft Office". Employers know that line means very little. What makes you stand out is evidence: a clean report they can open, a dashboard they can click, a short explanation of how you turned messy data into a decision. This final section helps you turn the work you have done in this track into that evidence, and choose where to go next.
 
 ## What this section covers
 
@@ -2905,10 +2903,10 @@ Issahaku finished this track, built a portfolio and applied for an M&E assistant
           {
             prompt: "Which role mainly works with survey data from tools such as KoboToolbox and prepares donor reports?",
             options: [
-              "Front desk receptionist",
+              "Administrative assistant",
               "Monitoring and evaluation officer",
-              "Driver",
-              "Security officer",
+              "Accounts assistant",
+              "Front desk receptionist",
             ],
             answer_index: 1,
             explanation: "M&E roles collect and analyse programme data and prepare donor reports.",

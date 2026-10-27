@@ -24,7 +24,7 @@ the first three sections. The Power Query editor is in desktop Excel for Windows
 (Microsoft 365); in Excel for the web, authoring queries needs a Microsoft 365 business or
 enterprise plan, so free users cannot use it there. Power BI Desktop runs only on Windows 10 or
 later, is free and needs no account to build and save reports, and contains the same Power Query
-editor. Its display requirement is at least 1440x900 (1366x768 and 1280x800 are not supported) with
+editor. Its display requirement is at least 1440x900 (Microsoft names 1024x768 and 1280x800 as unsupported; 1366x768 is also below the minimum) with
 scaling at 100%. The Power BI service needs a work or school email; consumer addresses such as Gmail
 cannot sign up directly. The mobile apps view and interact only. The best free non Windows
 alternative found for dashboard practice is Google's Data Studio (renamed from Looker Studio in
@@ -188,7 +188,11 @@ say, all checked on official pages on 27 October 2026 (O1 to O10, C5):
   works once you join an organisation"; its practice task (export to PDF, write a sharing plan)
   needs no service account.
 * **Power BI Desktop display and scaling (O1).** The setup lesson teaches a "check the computer
-  first" step, because many café and lab laptops are 1366x768, which Microsoft lists as unsupported.
+  first" step, because many café and lab laptops are 1366x768, which is below Microsoft's 1440x900 minimum
+  (Microsoft's own examples of unsupported resolutions are 1024x768 and 1280x800).
+* **Day first dates in Power Query (review, 27 Oct 2026).** Lessons name English (United Kingdom) as the
+  example locale. English (Ghana) was removed because no Microsoft page lists the locale dropdown, so it
+  could not be confirmed.
 * **Power Query in Excel for the web is not free to author (O3).** The Power Query lesson names the
   real routes (desktop Excel on Windows or Mac, or free Power BI Desktop on Windows) and gives a
   written recipe fallback with formulas.
