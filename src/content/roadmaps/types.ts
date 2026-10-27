@@ -39,7 +39,26 @@ export type RoadmapTrack =
   | "digital-marketing"
   | "ui-ux"
   | "product"
-  | "digital-skills-bridge";
+  | "digital-skills-bridge"
+  | "ai-tools-for-work"
+  | "graphic-design"
+  | "virtual-assistant"
+  | "digital-business"
+  | "it-support"
+  | "content-creation"
+  | "cybersecurity"
+  | "mobile-app-developer"
+  | "cloud-devops"
+  | "software-testing"
+  | "ai-ml"
+  | "no-code"
+  | "customer-service"
+  | "digital-sales"
+  | "excel-power-bi"
+  | "social-media-management"
+  | "freelancing"
+  | "project-management"
+  | "data-science";
 
 /** Coarse grouping for browsing; not yet fixed in the schema, founder to confirm. */
 export type FieldCategory =
@@ -48,7 +67,12 @@ export type FieldCategory =
   | "marketing"
   | "design"
   | "product"
-  | "foundations";
+  | "foundations"
+  | "business"
+  | "creative"
+  | "infrastructure"
+  | "security"
+  | "ai";
 
 export type RoadmapDraft = {
   slug: string;
