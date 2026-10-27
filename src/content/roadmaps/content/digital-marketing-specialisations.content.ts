@@ -469,7 +469,7 @@ Google's Business Profile help explains that local results are based mainly on t
 
 * **Relevance.** How well the business profile matches what someone searched. A complete profile with the right category and a clear description helps.
 * **Distance.** How far the business is from the searcher, or from the place named in the search. You cannot change this, but an accurate map pin matters.
-* **Prominence.** How well known the business is. This includes links from other sites, mentions across the web, and the number of reviews and ratings.
+* **Prominence.** How well known the business is, which the same help page also calls popularity. This includes links from other sites, mentions across the web, and the number of reviews and ratings.
 
 Google also states that there is no way to request or pay for a better local ranking. Good local SEO is about being accurate, complete and genuinely well regarded.
 
