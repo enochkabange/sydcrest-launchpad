@@ -38,6 +38,7 @@ Researched and written on 25 October 2026 for issue #96 (wave 3). New track: the
 | S18 | DartPad docs | https://dart.dev/tools/dartpad | 2026-10-25 | Dart docs (CC BY 4.0); fact checked: runs Dart and Flutter, most pub.dev packages unsupported |
 | S19 | Expo Snack; React Native docs | https://snack.expo.dev/ ; https://reactnative.dev/docs/getting-started | 2026-10-25 | Checked that the tools exist and run in a browser; no text used |
 | S20 | Planning/12_TRACK_CATALOGUE.md (SydCrest internal) | local file | 2026-10-25 | Internal platform survey: mobile is offered by Ghana Tech Lab (press), Meta, IBM, Codecademy, Udemy; flagged as needing a laptop |
+| S21 | Android: Make apps more accessible; Firebase: Cloud Functions overview | https://developer.android.com/guide/topics/ui/accessibility/apps ; https://firebase.google.com/docs/functions | 2026-10-27 | Android docs Apache 2.0 / CC BY 2.5; Firebase docs CC BY 4.0. Facts checked by the reviewer: touch targets at least 48 by 48 dp (Material components enforce it); deploying Cloud Functions needs the pay as you go Blaze plan |
 
 All learner resource links in the outline were checked to return HTTP 200 on 2026-10-25.
 
@@ -51,13 +52,13 @@ Dates are as shown on each page relative to 25 October 2026. Many Ghanaian mobil
 | A2 | Mobile App Developer (Flutter), NSS | Not stated (via Vacancies Global) | Haatso, Accra | about 1 year ago, expired | Fresher, National Service |
 | A3 | Mobile Developer, Flutter | Start up community (SHACK15) | Accra | about 2 years ago, expired | 3+ years |
 | A4 | Mobile App Developers | Software company (AppWorks) | Accra or Cape Coast, hybrid | deadline Jan 2025 | Not stated |
-| A5 | Android App Developer (React Native / Flutter) | Software company (Crescita Solutions) | Accra, hybrid | about 14 months ago (search summary) | 2 to 5 years |
+| A5 | Android App Developer (React Native / Flutter) | Software company (Crescita Solutions) | Accra, hybrid | about 14 months ago | 2 to 5 years. **Lower confidence:** page returned 403, every detail from the search engine summary only (S7) |
 | A6 | Advanced Mobile App Developer | Mid stage start up (DesignJenius) | Accra | closed Oct 2022 (older) | Experienced |
 | A7 | Software Engineer (Mobile Apps Developer) | Agritech (Farmerline) | Accra | 6+ months ago, closed | Not stated |
 | A8 | Senior Mobile Software Engineer (iOS, Android) | Agritech (Farmerline) | Accra | June 2025, closed | Senior, 5+ years |
 | A9 | Full Stack Engineer (React Native) | Outsourced talent provider (2AM Tech) | Accra | about 1 month ago | Experienced, contract |
 | A10 | React Native Engineer | Development agency (fjorge) | Kumasi | about 1 month ago | Senior, 5 years |
-| A11 | React Native Developer | Anonymous employer | Kumasi | about 6 days ago per search summary | Entry, under 1 year (page redirected; search summary only) |
+| A11 | React Native Developer | Anonymous employer | Kumasi | about 6 days ago | Entry, under 1 year. **Lower confidence:** the listing page redirected and no URL was kept, so every detail is from a Jobberman search summary only (S1) |
 | A12 | Frontend Engineer (Mobile and Web) | AI and infrastructure company (BLVCK SAPPHIRE) | Remote within Ghana | about 2 weeks ago | Not stated |
 | R1 | Android Developer | Outsourcing company (KDCI, Philippines) | Remote, worldwide | 21 Oct 2026 | Mid, 3 years |
 | R2 | Mobile App Developer | Outsourcing company (KDCI) | Remote, worldwide | 22 Oct 2026 | Mid, 3 years |
@@ -97,6 +98,8 @@ Also read but not counted: SAI Technology Full Stack Engineer (NSS), Accra (S2),
 | Offline storage | 1 | A8 |
 | Accessibility | 1 | R5 (pref) |
 | SMS, USSD, mobile money by name | 0 | none |
+
+**Confidence note (reviewer, 27 Oct 2026):** A5 and A11 rest only on search engine summaries, and the A9 fintech point also comes from a search summary. They are kept as weak signals. Without A5 and A11 the counts become Flutter 8, React Native 10, native Android 12, and cross platform 14 of 18 adverts, so no lesson claim or the approach decision depends on them.
 
 ### Approach decision
 
@@ -153,3 +156,8 @@ Cross platform frameworks (Flutter or React Native) appear in 16 of 20 adverts; 
 * **Offline first, mobile money, SMS and USSD, low end Android** have weak or no advert signal but are kept for SydCrest's learners and context; the coverage table says so explicitly.
 * **Ghanaian advert dates:** most Ghanaian mobile adverts found were older or closed; current local demand appears thin and Accra or Kumasi based. Remote roles open to Ghana were current but mostly mid or senior. The lessons avoid claiming that jobs are plentiful.
 * **ESCO** was down; O*NET has no mobile specific occupation, so WorldSkills headings and official course outlines were used as framework signals.
+
+## Review (27 October 2026)
+
+Independent review for PR #102. Re-checked on official pages: the Play closed testing rule (S16: personal accounts created after 13 Nov 2023, at least 12 testers opted in continuously for 14 days), the Android 13 (API 33) notification permission (S17), the 48 by 48 dp touch target (S21) and the Blaze plan requirement for Cloud Functions (S21). Flutter app size commands and `--split-debug-info` checked against S14. Lower confidence advert rows are marked above.
+
