@@ -47,9 +47,10 @@ end;
 $$;
 
 -- Live verified skills of one person as [{slug, name, source, issued_at}].
--- Definer, because organisations browsing the directory cannot read the
--- verified skills of private profiles through RLS. Called only by the
--- talent_directory view, which shows rows the definer rows function allowed.
+-- Definer, because organisations browsing the directory (and visitors on an
+-- expert page) cannot read the verified skills of private profiles through
+-- RLS. Called only by the talent_directory and public_experts views, which
+-- show only rows their definer rows functions allowed.
 create function private.verified_skills_json(p_profile_id uuid)
 returns jsonb
 language sql
@@ -66,7 +67,7 @@ as $$
 $$;
 
 revoke execute on function private.verified_skills_json(uuid) from public;
-grant execute on function private.verified_skills_json(uuid) to authenticated, service_role;
+grant execute on function private.verified_skills_json(uuid) to anon, authenticated, service_role;
 
 -- New column last, so the view keeps every column #148 defined.
 create or replace view public.talent_directory
@@ -77,3 +78,14 @@ as
 
 comment on view public.talent_directory is
   'Listed, eligible learners (a live certificate or a verified skill) with name, avatar, live certificates and verified skills, for verified organisations and admins (and the learner''s own preview). Never add phone or email.';
+
+-- Expert pages show the badges too (#165), and discovery can rank experts
+-- holding one first. New column last.
+create or replace view public.public_experts
+  with (security_invoker = true)
+as
+  select e.*, private.verified_skills_json(e.profile_id) as verified_skills
+  from private.public_expert_rows() e;
+
+comment on view public.public_experts is
+  'Approved experts with name, avatar, real trust signals and live verified skills, for /experts. Readable by anyone. Never add phone, email or role.';

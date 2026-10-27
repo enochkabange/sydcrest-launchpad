@@ -2,7 +2,7 @@
 -- talent directory (#148), and revoking it removes them.
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(7);
+select plan(8);
 
 -- Abdul-Rahman (adult) holds a verified skill and no certificate; Fuseini is
 -- an admin; Wumpini (adult) has neither.
@@ -19,6 +19,14 @@ update public.profiles set role = 'admin' where id = '44444444-4444-4444-4444-44
 insert into public.skills (id, slug, name, is_published) values
   ('5c000000-0000-0000-0000-000000000002', 'sql', 'SQL', true);
 select private.issue_verified_skill('22222222-2222-2222-2222-222222222222', '5c000000-0000-0000-0000-000000000002', 'assessment', 'test');
+
+insert into public.expert_profiles (profile_id, slug, headline, status, approved_at) values
+  ('22222222-2222-2222-2222-222222222222', 'abdul-rahman', 'SQL for small businesses', 'approved', now());
+
+set local role anon;
+select results_eq(
+  $$ select slug, verified_skills -> 0 ->> 'name' from public.public_experts $$,
+  $$ values ('abdul-rahman', 'SQL') $$, 'expert pages show verified skills');
 
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"22222222-2222-2222-2222-222222222222","role":"authenticated"}', true);

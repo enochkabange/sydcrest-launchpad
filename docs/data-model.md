@@ -502,6 +502,14 @@ one of the three routes. Nothing about a verified skill involves payment.
 `private.has_verified_skill(profile_id)` is the one line check the talent
 directory and expert ranking use.
 
+Talent and experts (migration `talent_verified_skills`, on top of #148):
+`private.talent_eligible` is now "a live certificate **or** a live verified
+skill", so verified learners can list in the talent directory and drop out
+the moment the skill is revoked. `talent_eligibility()` adds a
+`verified_skills` count. `talent_directory` and `public_experts` gain a last
+column `verified_skills`, `[{slug, name, source, issued_at}]`, so expert
+pages show badges and discovery can rank verified experts first.
+
 ### Events: check in and capacity
 
 - RSVPs lock the event row, so two people cannot take the last seat.
