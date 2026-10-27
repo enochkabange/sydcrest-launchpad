@@ -1,7 +1,8 @@
 # Research: Excel and Power BI track (`excel-power-bi`)
 
-Tier B outline (issue #96). Researched and written 27 October 2026. Outline only: lessons are
-marked "coming soon" by the site. Everything in `src/content/roadmaps/excel-power-bi.ts` is
+Tier B outline (issue #96). Researched and written 27 October 2026. Lessons added in content wave C
+(issue #198), also 27 October 2026, in `src/content/roadmaps/content/excel-power-bi.content.ts`;
+see "Lesson wave (issue #198)" below for the facts verified and the outline changes made. Everything in `src/content/roadmaps/excel-power-bi.ts` is
 original. roadmap.sh was not opened, searched or used, and no "<field> roadmap" style searches
 were run. No logins; LinkedIn was not opened. Job adverts were read for which skills appear; no
 advert text is reproduced. Salary figures were ignored.
@@ -16,10 +17,18 @@ full `data` (Data Analyst) track, which goes on to SQL and Python. Field categor
 chosen because the work is reporting and analysis, even though many of the jobs sit in finance
 and admin.
 
-Phone first: Excel for the web and the Excel mobile app (free with a Microsoft account, with
-some limits) and Google Sheets cover the first four sections. Power BI Desktop runs only on
-Windows, so the Power BI section needs a Windows laptop, for example at a library, school lab
-or internet café; the outline says so at that node. The Power BI mobile app can view reports.
+Device reality (verified on official pages, see O1 to O8): Excel for the web is free with a
+Microsoft account (files saved in OneDrive); the Excel mobile app allows create, view and basic
+editing with a free account on screens of 10.1 inches or smaller; Google Sheets is free. These cover
+the first three sections. The Power Query editor is in desktop Excel for Windows and for Mac
+(Microsoft 365); in Excel for the web, authoring queries needs a Microsoft 365 business or
+enterprise plan, so free users cannot use it there. Power BI Desktop runs only on Windows 10 or
+later, is free and needs no account to build and save reports, and contains the same Power Query
+editor. Its display requirement is at least 1440x900 (1366x768 and 1280x800 are not supported) with
+scaling at 100%. The Power BI service needs a work or school email; consumer addresses such as Gmail
+cannot sign up directly. The mobile apps view and interact only. The best free non Windows
+alternative found for dashboard practice is Google's Data Studio (renamed from Looker Studio in
+2026, "no-cost" per Google's docs), which connects to Google Sheets and runs in a browser.
 
 ## Sources
 
@@ -43,13 +52,30 @@ or internet café; the outline says so at that node. The Power BI mobile app can
 | C3 | Coursera: Microsoft Power BI Data Analyst Professional Certificate | https://www.coursera.org/professional-certificates/microsoft-power-bi-data-analyst | 2026-10-27 | Public course catalogue page (existence checked); topic names only |
 | C4 | Microsoft Support and Microsoft Learn Excel and Power BI documentation | https://support.microsoft.com/en-us/excel | 2026-10-27 | Official docs, linked as resources |
 | P1 | SydCrest Planning/12_TRACK_CATALOGUE.md | (internal) | 2026-10-27 | Internal planning document |
+| S13 | jobs.com.gh: HR Data Analytics Officer, Advans Ghana Savings and Loans, Accra (deadline 30 May 2026) | https://jobs.com.gh/?p=40632 | 2026-10-27 | Job board, full listing, skills only |
+| S14 | jobs.com.gh: Senior Specialist, Digital Analytics and Reporting, MTN Ghana, Accra (deadline 12 June 2026) | https://jobs.com.gh/?p=53989 | 2026-10-27 | Job board, full listing, skills only (senior) |
+| S15 | Africarrieres: Data Officer, pharmaceutical company, Accra (2026, expired) | https://africarrieres.com/ghana/fr/jobs/data-officer-at-reform-pharmaceuticals-limited-2 | 2026-10-27 | Job board, full listing, skills only |
+| S16 | JobSearchGH: Data Capturer, mothers2mothers, Accra (2023) | https://jobsearchgh.com/jobs/20248/data-capturer-mothers2mothers | 2026-10-27 | Job board, full listing, skills only (older) |
+| S17 | JobSearchGH: Junior Business Analyst, World Vision Ghana (2019) | https://www.jobsearchgh.com/jobs/6008/world-vision-job-vacancy-for-junior-business-analyst/ | 2026-10-27 | Job board, full listing, old; context only |
+| S18 | Jobberman: Data Entry Specialist, Accra, snippet (undated) | https://jobberman.com.gh/listings/data-entry-officer-07vk7m | 2026-10-27 | Search result snippet only; URL now lands on a category page |
+| O1 | Microsoft Learn: Download Power BI Desktop (minimum requirements) | https://learn.microsoft.com/en-us/power-bi/fundamentals/desktop-get-the-desktop | 2026-10-27 | Official docs: Windows 10+, 2 GB RAM (4 GB recommended), display at least 1440x900, scaling 100%, Store install needs no admin rights, 64 bit only, monthly releases |
+| O2 | Microsoft Learn: Sign up or purchase Power BI as an individual | https://learn.microsoft.com/en-us/power-bi/fundamentals/service-self-service-signup-for-power-bi | 2026-10-27 | Official docs: work or school email required; free licence works in My workspace |
+| O3 | Microsoft Support: Use Power Query in Excel for the web | https://support.microsoft.com/en-us/excel/use-power-query-in-excel-for-the-web | 2026-10-27 | Official docs: authoring needs Business or Enterprise (E3+) plan |
+| O4 | Microsoft Learn: Publish to web from Power BI | https://learn.microsoft.com/en-us/power-bi/collaborate-share/service-publish-to-web | 2026-10-27 | Official docs: anyone on the internet can view; underlying data reachable |
+| O5 | Microsoft Learn: What are the Power BI mobile apps | https://learn.microsoft.com/en-us/power-bi/consumer/mobile/mobile-apps-for-mobile-devices | 2026-10-27 | Official docs: create in Desktop, view and interact in apps |
+| O6 | Microsoft Support: What you can do in the Microsoft 365 apps on mobile devices with a Microsoft 365 subscription | https://support.microsoft.com/en-us/topic/9ef8b63a-05fd-4f9c-bac5-29da046833ea | 2026-10-27 | Official docs: without a qualifying plan, create, view and basic editing on screens up to 10.1 inches |
+| O7 | Microsoft: Free Microsoft 365 for the web | https://www.microsoft.com/en-us/microsoft-365/free-office-online-for-the-web | 2026-10-27 | Official product page: free web and mobile apps, files saved in OneDrive |
+| O8 | Microsoft Support: XLOOKUP function | https://support.microsoft.com/en-us/office/xlookup-function-b7fd680e-6d10-43e6-84f9-88eae8bf5929 | 2026-10-27 | Official docs: not available in Excel 2016 or 2019 |
+| O9 | Microsoft Tech Community: Power Query Editor in Excel for Mac (generally available, version 16.69+) | https://techcommunity.microsoft.com/blog/excelblog/shape-data-with-power-query-editor-in-excel-for-mac/3359795 | 2026-10-27 | Official product blog (search snippet) |
+| O10 | Google Cloud docs: Data Studio (formerly Looker Studio) | https://docs.cloud.google.com/data-studio | 2026-10-27 | Official docs: "Looker Studio is now called Data Studio"; described as no-cost |
+| C5 | Microsoft Learn: MOS Excel Associate (Microsoft 365 Apps), exam MO-210 | https://learn.microsoft.com/en-us/credentials/certifications/mos-excel-associate-m365-apps/ | 2026-10-27 | Official certification page: current MOS Excel exam; replaces the Office 2019 link |
 
 All resource links in the outline returned 200 to an HTTP request on 27 October 2026. The old
 `edu.gcfglobal.org/en/excel/` address redirects to the LearnFree "Excel: Foundations" series,
 which is the LearnFree link used. Other LearnFree `/series/<slug>` guesses were not used because
 that site returns 200 even for slugs that do not exist.
 
-## Adverts analysed (11)
+## Adverts analysed (16)
 
 | # | Role | Employer type | Location | Date | Seen as | Skills signalled (keywords) |
 |---|---|---|---|---|---|---|
@@ -64,24 +90,32 @@ that site returns 200 even for slugs that do not exist.
 | A9 | IT Business Analyst | Energy company | Takoradi | 2026 | Snippet (S9) | Power BI, Power Automate, Power Apps, reporting automation |
 | A10 | Accounts Officer | Financial services | Accra | 2026 | Snippet (S10) | Advanced Excel; degree, two years |
 | A11 | Excel and Power BI Reporting Specialist | Freelance client | Remote | 2026 | Title only (S11) | Excel and Power BI reporting |
+| A12 | HR Data Analytics Officer | Savings and loans | Accra | May 2026 | Full (S13) | Excel, PowerPoint, dashboards, reporting tools, HR databases |
+| A13 | Senior Specialist, Digital Analytics and Reporting | Telco | Accra | Jun 2026 | Full (S14) | Power BI, Excel, SQL, Python, PowerPoint; senior |
+| A14 | Data Officer | Pharmaceutical company | Accra | 2026 | Full (S15) | Spreadsheets, databases, data entry, extraction, reporting, backup |
+| A15 | Data Capturer | Health NGO | Accra | 2023 | Full (S16) | Excel, Google Sheets, pivot tables, Access |
+| A16 | Data Entry Specialist | Not stated | Accra | Undated | Snippet (S18) | Advanced Excel, VLOOKUP, INDEX MATCH, pivot tables |
 
-Context only: Plan International MIS Officer (S12, 2019) used Excel, Access and SAP BI.
+Context only: Plan International MIS Officer (S12, 2019) used Excel, Access and SAP BI. World Vision
+Junior Business Analyst (S17, 2019) named Power BI, advanced Excel, Access, SQL, data modelling and
+KPI development.
 
-## Skills frequency (11 adverts)
+## Skills frequency (16 adverts)
 
-| Skill | Adverts | Count | Full listings only (A1 to A4) |
+| Skill | Adverts | Count | Full listings only (A1 to A4, A12 to A15) |
 |---|---|---|---|
-| Excel (advanced or named) | A1 A2 A3 A4 A6 A8 A10 A11 | 8 | 4 |
-| Power BI | A1 A2 A5 A6 A7 A8 A9 A11 | 8 | 2 |
-| Dashboards and reports | A1 A2 A3 A5 A8 A9 A11 | 7 | 3 |
-| Lookups (VLOOKUP, XLOOKUP, INDEX MATCH) | A3 A4 | 2 | 2 |
-| PivotTables | A3 A4 | 2 | 2 |
-| Data validation, cleaning, quality | A1 A2 A3 | 3 | 3 |
+| Excel or spreadsheets (advanced or named) | A1 A2 A3 A4 A6 A8 A10 A11 A12 A13 A14 A15 A16 | 13 | 8 |
+| Power BI | A1 A2 A5 A6 A7 A8 A9 A11 A13 | 9 | 3 |
+| Dashboards and reports | A1 A2 A3 A5 A8 A9 A11 A12 A13 A14 | 10 | 6 |
+| Lookups (VLOOKUP, XLOOKUP, INDEX MATCH) | A3 A4 A16 | 3 | 2 |
+| PivotTables | A3 A4 A15 A16 | 4 | 3 |
+| Data validation, cleaning, quality | A1 A2 A3 A14 | 4 | 4 |
 | Power Query and automation | A1 A3 A9 | 3 | 2 |
 | Charts and visualisation | A2 A3 A6 | 3 | 2 |
 | KPIs and scorecards | A1 | 1 | 1 |
-| SQL (beyond this track) | A5 A7 A8 | 3 | 0 |
+| SQL (beyond this track) | A5 A7 A8 A13 | 4 | 1 |
 | Macros (beyond this track) | A3 A4 | 2 | 2 |
+| Access or databases (beyond this track) | A12 A14 A15 | 3 | 3 |
 
 SQL, Python and macros are left to the Data Analyst track or as later extras; they are mentioned
 in the final node as next steps.
@@ -123,16 +157,16 @@ in the final node as next steps.
 | formulas-and-references | C2 formulas and functions |
 | working-with-data (section) | Groups data handling |
 | everyday-functions | C2; A1 A4 reporting |
-| lookups | A3 A4 |
-| sort-filter-validate | A1 A3 data validation |
+| lookups | A3 A4 A16; O8 version gap |
+| sort-filter-validate | A1 A3 data validation; A14 data entry |
 | cleaning-text-and-dates | A2 data cleaning; A1 data integrity |
 | summaries-and-charts (section) | Groups summarising |
-| pivottables | A3 A4 |
+| pivottables | A3 A4 A15 A16 |
 | charts | A2 A3 A6; C2 charts |
 | conditional-formatting | A1 KPI monitoring; prerequisite of report highlights |
 | excel-reports (section) | Groups Excel reporting |
 | power-query-in-excel | A1 A3 automation; A9 |
-| one-page-excel-report | A1 scorecards; A3 dashboards |
+| one-page-excel-report | A1 scorecards; A3 A12 dashboards and reporting |
 | power-bi (section) | Eight adverts name Power BI; C1 |
 | power-bi-desktop-setup | C1; laptop requirement |
 | getting-data-into-power-bi | C1 prepare the data |
@@ -144,3 +178,38 @@ in the final node as next steps.
 | getting-hired-excel (section) | Groups job readiness |
 | office-report-portfolio | Prerequisite for applications; A11 freelance |
 | jobs-and-next-steps | C1 C2; links to Data Analyst track; A5 A7 A8 SQL signal |
+
+## Lesson wave (issue #198)
+
+Every node now has an original lesson, practice task and quiz. Facts that changed what the lessons
+say, all checked on official pages on 27 October 2026 (O1 to O10, C5):
+
+* **Power BI service needs a work or school account (O2).** The sharing lesson is framed as "how it
+  works once you join an organisation"; its practice task (export to PDF, write a sharing plan)
+  needs no service account.
+* **Power BI Desktop display and scaling (O1).** The setup lesson teaches a "check the computer
+  first" step, because many café and lab laptops are 1366x768, which Microsoft lists as unsupported.
+* **Power Query in Excel for the web is not free to author (O3).** The Power Query lesson names the
+  real routes (desktop Excel on Windows or Mac, or free Power BI Desktop on Windows) and gives a
+  written recipe fallback with formulas.
+* **XLOOKUP is not in Excel 2016 or 2019 (O8),** so the lookups lesson teaches reading VLOOKUP too.
+* **Excel mobile free editing limit (O6):** stated as 10.1 inches, from Microsoft's own page.
+* **Excel ignores letter case when counting and grouping,** so the tidy tables lesson teaches
+  spaces and typos, not capitals, as the cause of split values.
+* **Free alternative for Power BI concepts:** Google's Data Studio (O10), named once as an example,
+  for learners with no Windows access yet. Every Power BI practice task has a no Windows fallback.
+
+Outline changes (no slugs renamed; the roadmap is published):
+
+* `excel-on-a-phone` title changed to "Getting Excel for free" (device neutral; slug kept).
+* Summaries corrected for `power-query-in-excel` (editor availability), `power-bi` (Windows
+  computer, free browser alternative), `power-bi-desktop-setup` (no account needed, check the
+  computer), `sharing-and-refresh` (work or school account), the roadmap description, the
+  `spreadsheet-basics` summary and the `pivottables` summary (device neutral wording).
+* Added a Data Studio help link to the `power-bi` section resources.
+* MOS Excel resource now points to the current Microsoft 365 Apps certification (C5, exam MO-210)
+  instead of the Office 2019 page; `jobs-and-next-steps` summary says the exams are paid.
+
+The extra adverts (A12 to A16) confirmed the existing nodes and added no new ones: they reinforce
+dashboards and reporting, PivotTables, lookups and data quality. Access and databases appear in
+three and SQL in four; both are left to the Data Analyst track and named as next steps.

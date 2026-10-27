@@ -76,7 +76,7 @@ export const excelPowerBi: RoadmapDraft = {
       slug: "spreadsheet-basics",
       title: "Spreadsheet basics",
       summary:
-        "Banks, NGOs, shops and offices keep their records in spreadsheets, and almost every office job expects you to use one. This section gets you working in Excel on a phone or in a browser.",
+        "Banks, NGOs, shops and offices keep their records in spreadsheets, and almost every office job expects you to use one. This section gets you working in a free spreadsheet on whatever device you have.",
       parent: null,
       optional: false,
       resources: [excelHelp, lfExcel],
@@ -166,7 +166,7 @@ export const excelPowerBi: RoadmapDraft = {
       slug: "pivottables",
       title: "PivotTables",
       summary:
-        "A PivotTable summarises thousands of rows in seconds, for example total sales by month and region. You will build and rearrange PivotTables, which is easier on a laptop but possible in Excel for the web.",
+        "A PivotTable summarises thousands of rows in seconds, for example total sales by month and region. You will build and rearrange PivotTables, which is easier on a computer screen but possible in Excel for the web.",
       parent: "summaries-and-charts",
       optional: false,
       resources: [excelPivot, sheetsPivot],
