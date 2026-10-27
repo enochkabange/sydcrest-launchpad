@@ -10,6 +10,8 @@ import { digitalBusiness } from "./digital-business";
 import { itSupport } from "./it-support";
 import { contentCreation } from "./content-creation";
 import { cybersecurity } from "./cybersecurity";
+import { virtualAssistant } from "./virtual-assistant";
+import { mobileAppDeveloper } from "./mobile-app-developer";
 import type { RoadmapDraft } from "./types";
 import { uiUx } from "./ui-ux";
 
@@ -34,4 +36,6 @@ export const ROADMAP_DRAFTS: RoadmapDraft[] = [
   itSupport,
   contentCreation,
   cybersecurity,
+  virtualAssistant,
+  mobileAppDeveloper,
 ];

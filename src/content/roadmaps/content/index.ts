@@ -4,6 +4,8 @@ import digitalBusiness from "./digital-business.content";
 import itSupport from "./it-support.content";
 import contentCreation from "./content-creation.content";
 import cybersecurity from "./cybersecurity.content";
+import virtualAssistant from "./virtual-assistant.content";
+import mobileAppDeveloper from "./mobile-app-developer.content";
 import type { TrackContent } from "./types";
 import frontend from "./frontend.content";
 import digitalMarketing from "./digital-marketing.content";
@@ -32,4 +34,6 @@ export const TRACK_CONTENT: TrackContent[] = [
   itSupport,
   contentCreation,
   cybersecurity,
+  virtualAssistant,
+  mobileAppDeveloper,
 ];
