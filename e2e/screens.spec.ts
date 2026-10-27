@@ -1,6 +1,8 @@
 import { mkdirSync } from "node:fs";
 import { expect, test, type Page, type TestInfo } from "@playwright/test";
 import { signUpAndConfirm } from "./auth";
+import { createLearner, PASSWORD, promoteToAdmin } from "./learners";
+import { admin, insert } from "./supabase-admin";
 import { deleteRoadmap, seedRoadmap, type SeededRoadmap } from "./seed";
 
 /**
@@ -60,7 +62,37 @@ test("screenshots of key screens at 390, 1440 and 1920", async ({ page }, testIn
     ["leaderboards", "/leaderboards"],
     ["profile", "/profile"],
     ["learn", `/learn/${roadmap.slug}/${roadmap.quizNode.slug}`],
+    ["apply", "/programme/apply"],
   ] as [string, string][]) {
     await shoot(page, testInfo, name, path);
+  }
+
+  // The admin review queue, with one real (test) application and an open cohort.
+  const [dmp] = await admin<{ id: string }[]>("/rest/v1/programs?slug=eq.dmp&select=id");
+  const [cohort] = await insert("cohorts", [
+    { program_id: dmp.id, name: `Screens cohort ${crypto.randomUUID().slice(0, 6)}`, starts_on: "2027-01-11", max_size: 25, status: "enrolling" },
+  ]);
+  const [applicant, reviewer] = await Promise.all([createLearner("Mariama Iddrisu"), createLearner("Abdul-Rahman Yakubu")]);
+  await promoteToAdmin(reviewer.id);
+  await insert("cohort_applications", [
+    {
+      program_id: dmp.id,
+      profile_id: applicant.id,
+      preferred_cohort_id: cohort.id,
+      specialization: "social_media",
+      screening_answers: { motivation: "I sell shea butter in Tamale and want to reach customers online.", device: "Phone only", hours: "5 to 10" },
+    },
+  ]);
+  try {
+    await page.context().clearCookies();
+    await page.goto("/login");
+    await page.getByLabel("Email").fill(reviewer.email);
+    await page.getByLabel("Password").fill(PASSWORD);
+    await page.getByRole("button", { name: "Sign in" }).click();
+    await expect(page).toHaveURL(/\/dashboard$/);
+    await shoot(page, testInfo, "admin-applications", "/admin/applications");
+  } finally {
+    await admin(`/rest/v1/cohort_applications?profile_id=eq.${applicant.id}`, { method: "DELETE" });
+    await admin(`/rest/v1/cohorts?id=eq.${cohort.id}`, { method: "DELETE" });
   }
 });
