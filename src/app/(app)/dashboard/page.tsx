@@ -5,6 +5,7 @@ import { getMyProfile, requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { nextUnfinished, requiredProgress } from "@/components/learn/next-node";
 import { buttonClasses } from "@/components/ui/button";
+import { ReportOutcomeCard } from "@/components/outcomes/report-outcome-card";
 import { AutoGrid, MainWithRail } from "@/components/ui/layout";
 import { getPublishedRoadmaps } from "@/lib/roadmaps/public";
 import { roadmapPath } from "@/lib/roadmaps/seo";
@@ -211,6 +212,7 @@ export default function DashboardPage() {
       <Suspense fallback={null}>
         <Explore />
       </Suspense>
+      <ReportOutcomeCard />
     </MainWithRail>
   );
 }

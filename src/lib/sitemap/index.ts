@@ -1,5 +1,7 @@
 import { eventEntries } from "./events";
 import { expertEntries } from "./experts";
+import { outcomePages } from "./outcomes";
+import { opportunityEntries, opportunityPages } from "./opportunities";
 import { corePages } from "./pages";
 import { roadmapEntries } from "./roadmaps";
 import type { SitemapSource } from "./url";
@@ -13,5 +15,8 @@ export const SITEMAP_SOURCES: SitemapSource[] = [
   corePages,
   roadmapEntries,
   expertEntries,
+  outcomePages,
+  opportunityPages,
+  opportunityEntries,
   eventEntries,
 ];
