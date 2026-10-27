@@ -284,7 +284,7 @@ His map gives the home page the main keyword "tailor in Wa" with "kaba and slit 
 * **Subheadings.** Break long text into sections with honest subheadings. This helps readers on small screens and helps search engines see the structure.
 * **Images.** Use descriptive file names and alt text that says what the image shows. Compress images so the page loads quickly on mobile data.
 * **Internal links.** Link to related pages on the same site with clear words, such as "see our school uniform prices", not "click here".
-* **Address in the page name.** A short, readable web address such as /school-uniforms is easier to understand than a string of numbers.
+* **Web address.** A short, readable web address such as /school-uniforms is easier to understand than a string of numbers.
 
 ## Write for people first
 
@@ -461,7 +461,7 @@ Sumaila manages marketing for an agro input shop in Damongo. He lists every orga
     },
 
     "local-seo": {
-      explanation_md: `When someone searches "pharmacy near me" or "chop bar in Bolgatanga", search engines show a map with a few local businesses before the normal results. Local SEO is the work of earning a place there. For most small businesses in northern Ghana, local search brings more customers than any blog post, so it is a skill clients will pay for.
+      explanation_md: `When someone searches "pharmacy near me" or "chop bar in Bolgatanga", search engines show a map with a few local businesses before the normal results. Local SEO is the work of earning a place there. For a pharmacy, chop bar or shop that serves people nearby, appearing there can matter more than any blog post, which makes local SEO a practical skill to offer clients.
 
 ## How local ranking works
 
@@ -1046,16 +1046,16 @@ By the end you will have a mock campaign plan with a defined audience and budget
 A campaign is organised in three layers, from the big decision down to the detail.
 
 * **Campaign.** You choose the objective, the one result you want. Everything else is optimised for it.
-* **Ad set.** You choose the audience, the placements where ads appear, the budget and the schedule. One campaign can have several ad sets, for example one for Tamale and one for Accra.
+* **Ad set.** You choose the audience, the placements where ads appear, the budget and the schedule. Meta also lets you set one budget for the whole campaign instead, which it shares across the ad sets. One campaign can have several ad sets, for example one for Tamale and one for Accra.
 * **Ad.** The creative people actually see: the image or video, the text, the headline and the button, such as Send message or Learn more. One ad set can have several ads to compare.
 
 ## Choosing an objective
 
-At the time of writing, Meta's Ads Manager offers six objectives. Platforms change their labels from time to time, so always check the current list on screen.
+At the time of writing, Meta's Business Help Centre lists six objectives. Platforms change their labels from time to time, so always check the current list on screen.
 
 * **Awareness:** show the ad to as many relevant people as possible and help them remember it.
-* **Traffic:** send people to a website, an app, or a chat such as WhatsApp or Messenger.
-* **Engagement:** get more messages, video views, post reactions or page likes.
+* **Traffic:** send people to a destination such as a website, an app or a Facebook Page.
+* **Engagement:** get more messages, video views, post reactions or page likes. This is the objective Meta suggests when you want people to start a conversation with the business.
 * **Leads:** collect details from people interested in the business, such as with an instant form or through messages.
 * **App promotion:** get people to install or use an app.
 * **Sales:** find people likely to buy, usually measured on a website or in a catalogue.
@@ -1095,7 +1095,7 @@ Salifu runs ads for a phone accessories shop in Bolgatanga. The owner wants more
             explanation: "The objective is chosen at the campaign layer.",
           },
           {
-            prompt: "Where do you set the audience, placements, budget and schedule?",
+            prompt: "Where do you choose the audience, placements and schedule?",
             options: [
               "Ad set",
               "Campaign",
@@ -1103,7 +1103,7 @@ Salifu runs ads for a phone accessories shop in Bolgatanga. The owner wants more
               "Profile settings",
             ],
             answer_index: 0,
-            explanation: "The ad set layer holds audience, placements, budget and schedule.",
+            explanation: "The ad set layer holds the audience, placements and schedule, and usually the budget too.",
           },
           {
             prompt: "A business wants WhatsApp orders but chooses an objective to get post reactions. What is the likely result?",
@@ -1152,7 +1152,7 @@ Modern ad systems are good at finding likely buyers when you give them room. Met
 A sensible approach for small budgets:
 
 * Start with the right location and broad settings, and let a clear creative and objective do the work.
-* Use custom audiences to re-engage people who already showed interest, because they are often the most likely to buy.
+* Use custom audiences to reach people again who already showed interest, because they are often the most likely to buy.
 * Narrow only when there is a real reason, such as the product only being sold in one town.
 
 ## Exclusions
@@ -1235,7 +1235,7 @@ Mariama runs ads for a guesthouse in Tamale. Her first ad set targets people in 
 * **Daily budget:** an average amount to spend each day. Platforms may spend a little more on some days and less on others while keeping close to the average over time. Check the platform's current rules in its help pages.
 * **Lifetime budget:** a total for the whole campaign, spread across set dates. Useful for a short promotion with a clear end, such as a Ramadan or Christmas offer.
 
-Ads are paid to the platform by card, and many Ghanaian businesses use a virtual card linked to mobile money or a bank. Agree the maximum spend in writing with the owner before anything runs. You are spending someone else's money, so treat it with care.
+Ads are usually paid to the platform by card. Some businesses use a virtual card linked to mobile money or a bank account. Agree the maximum spend in writing with the owner before anything runs. You are spending someone else's money, so treat it with care.
 
 ## How much is enough?
 
@@ -1860,7 +1860,7 @@ Before anything is made, agree in writing, even a clear WhatsApp message or emai
 
 ## Honest disclosure
 
-Followers deserve to know when a post is paid or sponsored. Platforms provide tools for this. Instagram's help pages say its branded content policies require creators to use the paid partnership label to tag the business they work with. TikTok has a content disclosure setting that marks posts as a paid partnership. Use these tools, and also say it plainly in the caption. Hidden adverts damage trust and can break platform rules.
+Followers deserve to know when a post is paid or sponsored. Platforms provide tools for this. At the time of writing, Instagram's Help Centre says its Branded Content Policies require creators to use the paid partnership label to tag the brand they work with. TikTok's help says that when you promote a brand, product or service you must turn on the content disclosure setting, and a post made on behalf of another business is then labelled Paid partnership. Labels can change, so check the current screen. Use these tools, and also say it plainly in the caption. Hidden adverts damage trust and can break platform rules.
 
 ## Measuring results
 
@@ -2154,7 +2154,7 @@ Google Ads Help describes these main types. Names and options change over time, 
 * **Display:** image ads on websites, apps and Google properties. Good for awareness and reminding past visitors.
 * **Video:** video ads on YouTube and other sites.
 * **Demand Gen:** visual ads in places such as YouTube and Gmail, aimed at creating interest.
-* **Shopping:** product listings with images and prices, which need a product feed and an online shop.
+* **Shopping:** product listings with images and prices. You need an online shop and a product feed in Google Merchant Center.
 * **App:** promotes an app across Google's services.
 
 ## Why beginners start with Search
@@ -2556,11 +2556,11 @@ Assets, once called extensions, add extra information to search ads. Common ones
 * **Sitelinks:** extra links to specific pages, such as Prices, Delivery and Contact.
 * **Callouts:** short phrases such as "Open 7 Days" or "Mobile Money Accepted".
 * **Structured snippets:** a list under a heading, such as Services: Phone Repair, Laptop Repair, TV Repair.
-* **Call asset:** a phone number people can tap to call.
+* **Call asset:** a phone number people can use to call straight from the ad.
 * **Location asset:** the address from a linked Business Profile.
 * **Image asset:** a picture shown with the ad in some placements.
 
-Google decides when to show assets, and adding them does not cost extra in itself; you pay for clicks as usual. Add the ones that genuinely help customers. A call asset is often valuable in Ghana, where many customers prefer to call or message.
+Google decides when to show assets, and adding them does not cost extra in itself; you pay for clicks as usual. Add the ones that genuinely help customers. A call asset is often valuable for local businesses, because many customers prefer to call or message.
 
 ## What a good landing page does
 
@@ -2575,11 +2575,11 @@ The landing page is where people arrive after clicking. It should:
 
 ## When there is no website
 
-Many small businesses in northern Ghana do not have a website. Options include a simple free site builder page, a Google Business Profile, or a one page site built with a free tool. Some campaigns can use call assets so people can call straight from the ad. Whatever you use, follow Google's policies: the destination must work, be relevant to the ad and be useful.
+Many small businesses do not have a website yet. Options include a simple free site builder page, a Google Business Profile, or a one page site built with a free tool. Some campaigns can use call assets so people can call straight from the ad. Whatever you use, follow Google's policies: the destination must work, be relevant to the ad and be useful.
 
 ## Tracking the action
 
-Link the landing page actions to conversions: a call from the ad, a form, or a tap on the WhatsApp button. This lets you see which keywords and ads bring real enquiries, which you need for week 9.
+Link the landing page actions to conversions: a call from the ad, a form, or a click on the WhatsApp button. This lets you see which keywords and ads bring real enquiries, which you need for week 9.
 
 ## A worked example
 
@@ -2630,7 +2630,7 @@ Wumpini's laptop repair ad in Tamale used to send people to the shop's home page
             explanation: "It is one of the three parts of Quality Score.",
           },
           {
-            prompt: "Why does the lesson suggest a call asset is often valuable in Ghana?",
+            prompt: "Why does the lesson suggest a call asset is often valuable for local businesses?",
             options: [
               "Because many customers prefer to call or message",
               "Because calls are free",
@@ -2638,7 +2638,7 @@ Wumpini's laptop repair ad in Tamale used to send people to the shop's home page
               "Because it replaces keywords",
             ],
             answer_index: 0,
-            explanation: "Many customers prefer calling or messaging, so a tap to call option helps.",
+            explanation: "Many customers prefer calling or messaging, so a way to call straight from the ad helps.",
           },
         ],
         pass_threshold: 75,
