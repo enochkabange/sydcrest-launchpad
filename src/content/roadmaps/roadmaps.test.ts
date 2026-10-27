@@ -68,6 +68,22 @@ describe("roadmap drafts", () => {
         }
       });
 
+      it("uses valid kinds and choice groups shared by at least two siblings", () => {
+        const groups = new Map<string, Set<string | null>>();
+        const sizes = new Map<string, number>();
+        for (const node of roadmap.nodes) {
+          if (node.kind !== undefined) expect(["section", "topic", "checkpoint"], node.slug).toContain(node.kind);
+          if (node.choice_group === undefined) continue;
+          expect(node.choice_group, node.slug).toMatch(/^[a-z0-9][a-z0-9-]{0,38}[a-z0-9]$/);
+          groups.set(node.choice_group, (groups.get(node.choice_group) ?? new Set()).add(node.parent));
+          sizes.set(node.choice_group, (sizes.get(node.choice_group) ?? 0) + 1);
+        }
+        for (const [group, parents] of groups) {
+          expect(parents.size, `${group} spans parents`).toBe(1);
+          expect(sizes.get(group), `${group} needs two options`).toBeGreaterThanOrEqual(2);
+        }
+      });
+
       it("has at most three https resources per node with dash free labels", () => {
         for (const node of roadmap.nodes) {
           expect(node.resources.length, node.slug).toBeLessThanOrEqual(3);

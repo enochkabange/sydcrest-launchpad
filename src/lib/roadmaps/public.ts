@@ -54,6 +54,12 @@ function check(error: { message: string } | null) {
   if (error) throw new Error(error.message);
 }
 
+const NODE_KINDS = ["section", "topic", "checkpoint"] as const;
+/** The column is checked in the database; anything else reads as "derive from depth". */
+function asNodeKind(kind: string | null): FlatNode["kind"] {
+  return NODE_KINDS.find((k) => k === kind) ?? null;
+}
+
 export type RoadmapSummary = {
   id: string;
   slug: string;
@@ -101,7 +107,7 @@ export async function getPublishedRoadmap(slug: string): Promise<PublishedRoadma
     const { data, error } = await anonClient()
       .from("roadmaps")
       .select(
-        "id, slug, title, description, track, updated_at, roadmap_nodes(id, parent_id, slug, title, summary, position, is_optional)",
+        "id, slug, title, description, track, updated_at, roadmap_nodes(id, parent_id, slug, title, summary, position, is_optional, kind, choice_group)",
       )
       .eq("slug", slug)
       .eq("is_published", true)
@@ -109,13 +115,15 @@ export async function getPublishedRoadmap(slug: string): Promise<PublishedRoadma
     check(error);
     if (!data) return null;
     const { roadmap_nodes, ...roadmap } = data;
-    return { ...roadmap, nodes: roadmap_nodes };
+    return { ...roadmap, nodes: roadmap_nodes.map((n) => ({ ...n, kind: asNodeKind(n.kind) })) };
   });
 }
 
 export type NodeDetail = {
   content: { explanation_md: string; practice_task_md: string | null; content_version: number } | null;
   resources: { id: string; label: string; url: string; kind: "article" | "video" | "practice"; source: string | null }[];
+  /** A quiz exists; passing it is how a topic becomes done. */
+  hasQuiz: boolean;
 };
 
 /** Pre generated content and active resources for one node of a published roadmap. */
@@ -124,10 +132,10 @@ export async function getNodeDetail(roadmapSlug: string, nodeId: string): Promis
   cacheLife("hours");
   cacheTag(roadmapTag(roadmapSlug), ALL_ROADMAPS_TAG);
 
-  const empty: NodeDetail = { content: null, resources: [] };
+  const empty: NodeDetail = { content: null, resources: [], hasQuiz: false };
   return guarded("node content", empty, async () => {
     const supabase = anonClient();
-    const [content, resources] = await Promise.all([
+    const [content, resources, quiz] = await Promise.all([
       supabase
         .from("node_content")
         .select("explanation_md, practice_task_md, content_version")
@@ -140,12 +148,15 @@ export async function getNodeDetail(roadmapSlug: string, nodeId: string): Promis
         .eq("is_active", true)
         .order("position")
         .order("label"),
+      supabase.from("node_quiz").select("id").eq("node_id", nodeId).maybeSingle(),
     ]);
     check(content.error);
     check(resources.error);
+    check(quiz.error);
     return {
       content: content.data,
       resources: (resources.data ?? []).map((r) => ({ ...r, kind: r.kind as NodeDetail["resources"][number]["kind"] })),
+      hasQuiz: !!quiz.data,
     };
   });
 }

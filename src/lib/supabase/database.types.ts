@@ -495,9 +495,11 @@ export type Database = {
       }
       roadmap_nodes: {
         Row: {
+          choice_group: string | null
           created_at: string
           id: string
           is_optional: boolean
+          kind: string | null
           parent_id: string | null
           position: number
           roadmap_id: string
@@ -507,9 +509,11 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          choice_group?: string | null
           created_at?: string
           id?: string
           is_optional?: boolean
+          kind?: string | null
           parent_id?: string | null
           position?: number
           roadmap_id: string
@@ -519,9 +523,11 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          choice_group?: string | null
           created_at?: string
           id?: string
           is_optional?: boolean
+          kind?: string | null
           parent_id?: string | null
           position?: number
           roadmap_id?: string

@@ -8,7 +8,8 @@
  * The shape mirrors the planned `roadmaps`, `roadmap_nodes` and
  * `node_resources` tables (08_TECHNICAL_BUILD.md §3) so the admin editor can
  * import these later: `parent` becomes `parent_id`, array order becomes
- * `position`, `optional` becomes `is_optional`.
+ * `position`, `optional` becomes `is_optional`, and the optional `kind` and
+ * `choice_group` carry over as they are.
  */
 
 export type ResourceKind = "article" | "video" | "practice";
@@ -20,6 +21,12 @@ export type ResourceDraft = {
   kind: ResourceKind;
 };
 
+/**
+ * What a node means on the roadmap. Leave it out to derive it from the tree:
+ * a top level node is a section, anything below it is a topic.
+ */
+export type NodeKind = "section" | "topic" | "checkpoint";
+
 export type NodeDraft = {
   /** Unique within its roadmap; kebab case. */
   slug: string;
@@ -29,6 +36,13 @@ export type NodeDraft = {
   /** Slug of the parent section, or null for a top level section. Parents come before children. */
   parent: string | null;
   optional: boolean;
+  /** Optional; derived from the tree when left out (see NodeKind). */
+  kind?: NodeKind;
+  /**
+   * Optional slug style key. Siblings sharing it are "pick one of these"
+   * alternatives (for example "spreadsheet-tool" on Excel and Google Sheets).
+   */
+  choice_group?: string;
   resources: ResourceDraft[];
 };
 
