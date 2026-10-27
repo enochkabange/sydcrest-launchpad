@@ -8,6 +8,8 @@ import { getPublicAchievements, getPublicProfileBySlug, getPublicStats } from "@
 import { Initials, StatTile } from "@/components/social/profile-bits";
 import { CertificateList } from "@/components/certificates/certificate-list";
 import { getPublicCertificates } from "@/lib/certificates/server";
+import { PublicPortfolio } from "@/components/portfolio/public-portfolio";
+import { getPublicPortfolio } from "@/lib/submissions/public-portfolio";
 import { ViewerActions } from "./viewer-actions";
 
 export async function generateMetadata({ params }: PageProps<"/u/[slug]">): Promise<Metadata> {
@@ -34,10 +36,11 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
   const { slug } = await params;
   const profile = await getPublicProfileBySlug(slug);
   if (!profile?.id || !profile.public_slug) notFound();
-  const [stats, achievements, certificates] = await Promise.all([
+  const [stats, achievements, certificates, portfolio] = await Promise.all([
     getPublicStats(profile.id),
     getPublicAchievements(profile.id),
     getPublicCertificates(profile.id),
+    getPublicPortfolio(profile.id),
   ]);
   const name = profile.display_name ?? "Launchpad learner";
   const region = regionLabel(profile.region);
@@ -73,6 +76,15 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
                 Certificates
               </h2>
               <CertificateList certificates={certificates} />
+            </section>
+          )}
+
+          {portfolio.length > 0 && (
+            <section aria-labelledby="portfolio-heading" className="flex flex-col gap-3">
+              <h2 id="portfolio-heading" className="text-subtitle text-content">
+                Portfolio
+              </h2>
+              <PublicPortfolio items={portfolio} />
             </section>
           )}
 

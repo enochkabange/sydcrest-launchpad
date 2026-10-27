@@ -108,7 +108,7 @@ Same visibility as the week; admins write. Join to `roadmaps.slug` and `roadmap_
 Same visibility as the programme; admins write. A week's rubric is its own, else the default.
 
 **submissions**. One learner's work per programme week: text, link or `file_path` in the `submissions` bucket, status draft, submitted, ai_reviewed, returned or graded, `attempt`, AI feedback and score, mentor feedback, `final_score`, `in_portfolio`.
-Owner reads all of theirs; staff and admins read sent work (not drafts). Learners update only `in_portfolio` (graded work); everything else goes through the functions below.
+Owner reads all of theirs; staff and admins read sent work (not drafts), in one SELECT policy. Learners update only `in_portfolio` (graded work); everything else goes through the functions below. Portfolio work of public profiles is public through `public_portfolio`.
 
 **peer_reviews**. A reviewer assigned to a submission, and once submitted their `rubric_scores` `{criterion_id: points}` and comment.
 Reviewer, staff and admins read; the author reads it once submitted. Written only by `assign_peer_review` and `submit_peer_review`.
@@ -121,6 +121,12 @@ Holder, their staff and admins read. Nobody signed in writes it directly; one li
 
 **public_certificates** (view). Live certificates of opted in profiles: slug, verification id, programme, specialization, issued date.
 Readable by anyone, for public profile pages. A security_invoker view over `private.public_certificate_rows()`.
+
+**public_portfolio** (view, issue #192). Graded submissions the learner put in their portfolio (`in_portfolio`), for learners whose profile is public, in published programmes: profile id and slug, programme slug and title, week number, theme, `is_capstone`, the learner's link, the first 600 characters of the text (`body_excerpt`, with `body_is_excerpt` when cut), `has_file` and `graded_at`.
+Readable by anyone, for `/u/[slug]`. A security_invoker view over `private.public_portfolio_rows()`. Never carries scores, mentor or AI feedback, or the file path: attached files stay in the private bucket and are not served publicly (the page says a file is attached but not shown).
+
+**ai_review_usage** (issue #192). One row per AI rubric review model call (also refused, cut off or invalid answers): submission, attempt, model, outcome (`recorded`, `stale`, `failed`), input, output, cache write and cache read tokens, estimated USD.
+Written only by server code with the service role (`src/lib/submissions/review.ts`); admins read; nobody signed in writes or edits it.
 
 **Storage: `submissions` bucket** (private, 50 MB, documents, images and short video). Object names start with the owner's id: `<profile_id>/...`.
 Owners upload, read and replace in their own folder; staff, admins and assigned peers read a file only when it is the `file_path` of a sent submission they may read. Files attached to sent work cannot be replaced or deleted. Serve with signed URLs.
@@ -151,6 +157,7 @@ Owners upload, read and replace in their own folder; staff, admins and assigned 
 | `issue_certificate(cohort_member_id)` | the cohort's mentor, a coordinator, admins | Issues once `eligible`; marks the membership completed. |
 | `set_certificate_badge(certificate_id, badge_json)` | service role only | Stores the Open Badges 3.0 JSON server code built. |
 | `revoke_certificate(certificate_id, reason)` | admins | Revokes; verification then shows it as revoked. |
+| `admin_find_profile_by_email(email)` | admins | Zero or one row: profile id and display name of the account with that sign in email (any case, trimmed). Reads `auth.users` in a definer (`private.admin_find_profile_by_email`); the public function is security invoker. Never returns the email. Others `42501`, empty email `22023`. |
 | `verify_certificate(verification_id)` | anyone | Zero or one row: name, programme, specialization, cohort, issued and revoked dates, badge JSON. Security invoker over `private.verify_certificate_row`. |
 
 None of these is executable by `anon` except `verify_certificate`, which is
@@ -460,6 +467,7 @@ rows carry no user facing text from the database.
 | --- | --- | --- |
 | `set_chapter_details(chapter_id, summary, whatsapp_url)` | chapter leads, admins | Edits the lead owned part of the chapter page. |
 | `community_feed(scope, scope_id, before, limit)` | signed in members of the scope, admins | A page of posts (pinned first on the first page) with author name, avatar, public slug, `author_is_lead`, `reply_count`, `reaction_counts` `{kind: n}`, `my_reactions`. Page with `before` = last `created_at`. Not a member: `42501`. |
+| `community_post(post_id)` | whoever can read the post | One row in the `community_feed` shape (author fields, `author_is_lead`, `reply_count`, `reaction_counts`, `my_reactions`), for thread headers. Hidden posts only for their author and moderators. Otherwise `P0002`. |
 | `community_thread(post_id)` | whoever can read the post | Replies oldest first with author fields, reaction counts and the caller's reactions. Otherwise `P0002`. |
 | `moderate_community_content(target_type, target_id, hide, reason)` | moderators of the scope | Hides (reason required) or unhides a `community_post` or `community_reply`. |
 | `pin_community_post(post_id, pinned)` | moderators of the scope | Pins or unpins an announcement. |
