@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { ArrowRight, ExternalLink, Star } from "lucide-react";
 import { ExpertAvatar, JsonLd, SkillChips, TrustFacts, VerifiedBadge } from "@/components/experts/expert-bits";
+import { VerifiedSkillBadges } from "@/components/skills/verified-skill-badges";
 import { buttonClasses } from "@/components/ui/button";
 import Link from "@/components/ui/link";
 import { Container, MainWithRail } from "@/components/ui/layout";
@@ -178,9 +179,18 @@ function DetailsCard({ expert }: { expert: DirectoryExpert }) {
           <p className="text-sm text-content-2">{expert.availabilityNote}</p>
         </div>
       )}
+      {expert.verifiedSkillBadges.length > 0 && (
+        <div className="flex flex-col gap-2">
+          <h2 className="text-sm font-semibold text-content">Verified by SydCrest</h2>
+          <VerifiedSkillBadges skills={expert.verifiedSkillBadges} variant="compact" />
+          <Link href="/skills" className="inline-flex min-h-11 items-center self-start text-sm text-content-link underline">
+            How skills are verified
+          </Link>
+        </div>
+      )}
       {expert.skills.length > 0 && (
         <div className="flex flex-col gap-2">
-          <h2 className="text-sm font-semibold text-content">Skills</h2>
+          <h2 className="text-sm font-semibold text-content">{expert.verifiedSkillBadges.length > 0 ? "Other skills" : "Skills"}</h2>
           <SkillChips skills={expert.skills} />
         </div>
       )}

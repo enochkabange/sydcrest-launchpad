@@ -6,6 +6,8 @@ import { regionLabel } from "@/lib/regions";
 import { describeAchievement } from "@/lib/social/public-profile";
 import { getPublicAchievements, getPublicProfileBySlug, getPublicStats } from "@/lib/social/queries";
 import { Initials, StatTile } from "@/components/social/profile-bits";
+import { VerifiedSkillBadges } from "@/components/skills/verified-skill-badges";
+import { getPublicVerifiedSkills } from "@/lib/skills/queries";
 import { CertificateList } from "@/components/certificates/certificate-list";
 import { getPublicCertificates } from "@/lib/certificates/server";
 import { ViewerActions } from "./viewer-actions";
@@ -34,10 +36,11 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
   const { slug } = await params;
   const profile = await getPublicProfileBySlug(slug);
   if (!profile?.id || !profile.public_slug) notFound();
-  const [stats, achievements, certificates] = await Promise.all([
+  const [stats, achievements, certificates, verifiedSkills] = await Promise.all([
     getPublicStats(profile.id),
     getPublicAchievements(profile.id),
     getPublicCertificates(profile.id),
+    getPublicVerifiedSkills(profile.id),
   ]);
   const name = profile.display_name ?? "Launchpad learner";
   const region = regionLabel(profile.region);
@@ -76,6 +79,23 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
             </section>
           )}
 
+          {verifiedSkills.length > 0 && (
+            <section aria-labelledby="verified-skills-heading" className="flex flex-col gap-3">
+              <div className="flex flex-col gap-1">
+                <h2 id="verified-skills-heading" className="text-subtitle text-content">
+                  Verified skills
+                </h2>
+                <p className="text-sm text-content-2">
+                  Checked by SydCrest through a completed path, an assessment or a reviewed portfolio.{" "}
+                  <Link href="/skills" className="text-content-link underline">
+                    How verification works
+                  </Link>
+                </p>
+              </div>
+              <VerifiedSkillBadges skills={verifiedSkills} />
+            </section>
+          )}
+
           <section aria-labelledby="progress-heading" className="flex flex-col gap-3">
             <h2 id="progress-heading" className="text-subtitle text-content">
               Progress
@@ -100,8 +120,11 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
           {skills.length > 0 && (
             <section aria-labelledby="skills-heading" className="flex flex-col gap-3">
               <h2 id="skills-heading" className="text-subtitle text-content">
-                Skills
+                {verifiedSkills.length > 0 ? "Other skills" : "Skills"}
               </h2>
+              {verifiedSkills.length > 0 && (
+                <p className="-mt-1 text-sm text-content-3">Listed by {name.split(" ")[0]}, not verified.</p>
+              )}
               <ul className="flex flex-wrap gap-2">
                 {skills.map((skill) => (
                   <li key={skill} className="rounded-full border border-line bg-surface-sunken px-3 py-1 text-sm text-content">
