@@ -46,7 +46,7 @@ export const projectManagement: RoadmapDraft = {
   slug: "project-management",
   title: "Project Management",
   description:
-    "Plan, run and report on projects for NGOs, donors and businesses, the kind of coordination work common across northern Ghana. Learn scope, work plans, budgets, risks, logframes and reports with free tools on a phone.",
+    "Plan, run and report on projects for NGOs, donors and businesses, the kind of coordination work common across northern Ghana. Learn scope, work plans, budgets, risks, logframes and reports with free tools on a phone or a computer.",
   track: "project-management",
   field_category: "business",
   locale: "en-GH",
@@ -128,7 +128,7 @@ export const projectManagement: RoadmapDraft = {
       slug: "planning",
       title: "Planning",
       summary:
-        "A plan turns goals into tasks, dates, money and responsibilities. You can build every plan in this section in Google Sheets on a phone.",
+        "A plan turns goals into tasks, dates, money and responsibilities. You can build every plan in this section in Google Sheets on a phone or a computer.",
       parent: null,
       optional: false,
       resources: [RES.lfSheets],

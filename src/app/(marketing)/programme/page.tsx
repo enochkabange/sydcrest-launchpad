@@ -68,7 +68,7 @@ export default function ProgrammePage() {
         id="waitlist"
         tone="sunken"
         title={`Join the waitlist for ${PILOT.starts}`}
-        intro={`There are ${PILOT.seats} free seats in the pilot cohort, and the waitlist opens soon. Tell us where you are and what you want.`}
+        intro={`There are ${PILOT.seats} free seats in the pilot cohort. Join the waitlist and tell us where you are and what you want.`}
       >
         <div className="max-w-lg rounded-lg border border-line bg-surface p-5">
           <WaitlistForm />

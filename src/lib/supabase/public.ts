@@ -5,8 +5,9 @@ import type { Database } from "./database.types";
 
 /**
  * A cookie free client for public reads (public profiles, achievements,
- * leaderboards). It acts as the anon role whoever is viewing, so a page can
- * never show a signed in viewer more than a stranger would see.
+ * leaderboards) and anonymous writes (waitlist sign ups). It acts as the anon
+ * role whoever is viewing, so a page can never show a signed in viewer more
+ * than a stranger would see.
  */
 export async function createPublicClient() {
   await connection();

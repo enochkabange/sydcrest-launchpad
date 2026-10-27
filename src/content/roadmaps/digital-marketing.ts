@@ -9,7 +9,7 @@ export const digitalMarketing: RoadmapDraft = {
   slug: "digital-marketer",
   title: "Digital Marketer",
   description:
-    "Help Ghanaian businesses, churches and NGOs find and keep customers on WhatsApp, social media, email and search. Learn on your phone with free tools and build a portfolio from real local clients.",
+    "Help Ghanaian businesses, churches and NGOs find and keep customers on WhatsApp, social media, email and search. Learn on your phone or computer with free tools and build a portfolio from real local clients.",
   track: "digital-marketing",
   field_category: "marketing",
   locale: "en-GH",

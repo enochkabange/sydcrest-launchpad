@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { SelectField, TextField } from "@/components/ui/field";
 import { CONTACT_EMAIL } from "@/content/marketing";
 import { REGIONS } from "@/lib/regions";
-import { WAITLIST_INTERESTS, type WaitlistInterest } from "@/lib/waitlist";
+import { WAITLIST_HONEYPOT, WAITLIST_INTERESTS, type WaitlistInterest } from "@/lib/waitlist";
 
 /** One form for every audience; each page picks the interest it most likely wants. */
 export function WaitlistForm({
@@ -22,15 +22,20 @@ export function WaitlistForm({
   if (state.done) {
     return (
       <Alert tone="success">
-        <strong>Thanks, the waitlist opens soon.</strong> We are not saving sign ups just yet, so
-        nothing was stored. Please come back in a few weeks, or email{" "}
-        <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a> if it cannot wait.
+        <strong>Thanks, you are on the waitlist.</strong> We will email you when there is news. If
+        something cannot wait, email <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.
       </Alert>
     );
   }
 
   return (
-    <form action={action} className="flex flex-col gap-4" noValidate>
+    <form action={action} className="relative flex flex-col gap-4" noValidate>
+      {state.message && <Alert tone="danger">{state.message}</Alert>}
+      {/* Honeypot: hidden from people and screen readers, filled only by bots. */}
+      <div aria-hidden="true" className="absolute -left-[10000px] h-px w-px overflow-hidden">
+        <label htmlFor={WAITLIST_HONEYPOT}>Leave this empty</label>
+        <input id={WAITLIST_HONEYPOT} name={WAITLIST_HONEYPOT} type="text" tabIndex={-1} autoComplete="off" />
+      </div>
       <TextField
         id="name"
         label="Your name"

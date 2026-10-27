@@ -1,8 +1,10 @@
 import { expect, test } from "@playwright/test";
+import { admin } from "./supabase-admin";
 
 /**
- * The public site. Static pages, no Supabase needed. Runs under both the
- * phone (390px) and desktop projects, so the overflow check is the 390px check.
+ * The public site. The pages are static; the waitlist test saves to the local
+ * Supabase stack. Runs under both the phone (390px) and desktop projects, so
+ * the overflow check is the 390px check.
  */
 const PAGES = [
   { path: "/", h1: "Find your path into tech." },
@@ -31,18 +33,42 @@ for (const { path, h1 } of PAGES) {
   });
 }
 
-test("waitlist validates, then says honestly that it opens soon", async ({ page }) => {
-  await page.goto("/programme");
-  const form = page.locator("#waitlist form");
-  await form.getByRole("button", { name: "Join the waitlist" }).click();
-  await expect(form.getByText("Tell us your name.")).toBeVisible();
-  await expect(form.getByText("Choose your region.")).toBeVisible();
+test("waitlist validates, saves the sign up, and answers a repeat the same way", async ({ page }, testInfo) => {
+  // Unique per run and per project, so parallel phone and desktop runs never collide.
+  const email = `wumpini.${testInfo.project.name}.${Date.now()}@example.com`;
+  const thanks = "Thanks, you are on the waitlist.";
 
-  await form.getByLabel("Your name").fill("Wumpini Alhassan");
-  await form.getByLabel("Email").fill("wumpini@example.com");
-  await form.getByLabel("Region").selectOption("northern");
-  await form.getByRole("button", { name: "Join the waitlist" }).click();
-  await expect(page.getByRole("status")).toContainText("Thanks, the waitlist opens soon.");
+  try {
+    await page.goto("/programme");
+    const form = page.locator("#waitlist form");
+    await form.getByRole("button", { name: "Join the waitlist" }).click();
+    await expect(form.getByText("Tell us your name.")).toBeVisible();
+    await expect(form.getByText("Choose your region.")).toBeVisible();
+
+    await form.getByLabel("Your name").fill("Wumpini Alhassan");
+    await form.getByLabel("Email").fill(email);
+    await form.getByLabel("Region").selectOption("northern");
+    await form.getByRole("button", { name: "Join the waitlist" }).click();
+    await expect(page.getByRole("status")).toContainText(thanks);
+
+    const rows = await admin<{ name: string; region: string; interest: string }[]>(
+      `/rest/v1/waitlist?select=name,region,interest&email=eq.${encodeURIComponent(email)}`,
+    );
+    expect(rows).toEqual([{ name: "Wumpini Alhassan", region: "northern", interest: "dmp_cohort" }]);
+
+    // The same address again, in different case: same thanks, still one row, nothing revealed.
+    await page.goto("/business");
+    const again = page.locator("form").filter({ has: page.getByLabel("Email") });
+    await again.getByLabel("Your name").fill("Wumpini Alhassan");
+    await again.getByLabel("Email").fill(email.toUpperCase());
+    await again.getByLabel("Region").selectOption("northern");
+    await again.getByRole("button", { name: "Register interest" }).click();
+    await expect(page.getByRole("status")).toContainText(thanks);
+    const after = await admin<unknown[]>(`/rest/v1/waitlist?select=id&email=eq.${encodeURIComponent(email)}`);
+    expect(after).toHaveLength(1);
+  } finally {
+    await admin(`/rest/v1/waitlist?email=eq.${encodeURIComponent(email)}`, { method: "DELETE" });
+  }
 });
 
 test("home links to sign up and every marketing page", async ({ page }) => {

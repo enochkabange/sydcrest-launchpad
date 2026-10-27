@@ -64,7 +64,7 @@ export const freelancing: RoadmapDraft = {
       slug: "freelancing-basics",
       title: "How freelancing works",
       summary:
-        "Freelancing means selling a skill you already have to clients, one project or one month at a time, instead of working for a single employer. This section explains what that involves, how to choose what to offer and what you can do on a phone.",
+        "Freelancing means selling a skill you already have to clients, one project or one month at a time, instead of working for a single employer. This section explains what that involves, how to choose what to offer, and what you can do on a phone and what needs a laptop.",
       parent: null,
       optional: false,
       resources: [RES.lfFreelancing, wikiFreelancer],
@@ -89,9 +89,9 @@ export const freelancing: RoadmapDraft = {
     },
     {
       slug: "freelance-toolkit",
-      title: "Your freelance toolkit on a phone",
+      title: "Your freelance toolkit on a phone or laptop",
       summary:
-        "Email, a calendar, cloud storage, document and spreadsheet apps and a messaging app cover most of the admin side of freelancing, and all run on a phone. Some services, such as video editing for clients or web development, are much easier on a laptop, so check what your service needs before you promise deadlines.",
+        "Email, a calendar, cloud storage, document and spreadsheet apps and a messaging app cover most of the admin side of freelancing, and all run on a phone as well as a computer. Some services, such as video editing for clients or web development, are much easier on a laptop, so check what your service needs before you promise deadlines.",
       parent: "freelancing-basics",
       optional: false,
       resources: [RES.lfDrive, googleCalendar, googleMeet],
