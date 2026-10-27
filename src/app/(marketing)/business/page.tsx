@@ -1,6 +1,7 @@
 import Link from "@/components/ui/link";
 import { Card, PageHeader, Section } from "@/components/marketing/section";
 import { WaitlistForm } from "@/components/marketing/waitlist-form";
+import { SectionGrid } from "@/components/ui/layout";
 import { CONTACT_EMAIL, PILOT } from "@/content/marketing";
 import { pageMetadata } from "@/lib/page-metadata";
 
@@ -43,13 +44,13 @@ export default function BusinessPage() {
       />
 
       <Section tone="sunken" title="What we are building for you">
-        <div className="grid gap-4 md:grid-cols-3">
+        <SectionGrid cols={3}>
           {COMING.map((c) => (
             <Card key={c.title} title={c.title}>
               <p>{c.body}</p>
             </Card>
           ))}
-        </div>
+        </SectionGrid>
       </Section>
 
       <Section
@@ -64,6 +65,7 @@ export default function BusinessPage() {
 
       <Section
         tone="sunken"
+        layout="split"
         title="Register your interest"
         intro={
           <p>
@@ -72,7 +74,7 @@ export default function BusinessPage() {
           </p>
         }
       >
-        <div className="max-w-lg rounded-lg border border-line bg-surface p-5">
+        <div className="max-w-lg rounded-lg border border-line bg-surface p-5 lg:max-w-xl xl:p-8">
           <WaitlistForm defaultInterest="hire" submitLabel="Register interest" />
         </div>
       </Section>

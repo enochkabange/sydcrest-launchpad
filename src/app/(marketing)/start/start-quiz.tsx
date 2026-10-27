@@ -65,7 +65,7 @@ function OptionCard({
 function Question({ legend, hint, children }: { legend: string; hint?: string; children: ReactNode }) {
   return (
     <fieldset className="flex flex-col gap-3">
-      <legend className="mb-1 text-lg font-semibold text-content">{legend}</legend>
+      <legend className="mb-1 text-h3 font-semibold text-content">{legend}</legend>
       {hint && <p className="-mt-1 text-sm text-content-2">{hint}</p>}
       {children}
     </fieldset>
@@ -83,6 +83,8 @@ export function StartQuiz() {
   function radios<K extends keyof Omit<Draft, "interests">>(key: K, legend: string, options: readonly Option<string>[]) {
     return (
       <Question legend={legend}>
+        {/* One column on phones; side by side from lg so a laptop shows every option at a glance. */}
+        <div className="grid gap-3 lg:grid-cols-2">
         {options.map((o) => (
           <OptionCard
             key={o.value}
@@ -93,6 +95,7 @@ export function StartQuiz() {
             onChange={() => setDraft((d) => ({ ...d, [key]: o.value }))}
           />
         ))}
+        </div>
       </Question>
     );
   }
@@ -138,8 +141,8 @@ export function StartQuiz() {
 
   if (ready) {
     return (
-      <section aria-labelledby="ready-heading" className="flex flex-col gap-4 rounded-lg border border-line bg-surface-sunken p-5">
-        <h2 id="ready-heading" className="text-2xl text-content">
+      <section aria-labelledby="ready-heading" className="flex max-w-3xl flex-col gap-4 rounded-lg border border-line bg-surface-sunken p-5 xl:p-8">
+        <h2 id="ready-heading" className="text-h2 text-content">
           Your path is ready
         </h2>
         <p className="text-content-2">
@@ -162,31 +165,50 @@ export function StartQuiz() {
   }
 
   return (
+    // Phones: progress bar, then the question. From lg the steps sit in a column beside the question.
     <form
-      className="flex flex-col gap-6"
+      className="flex flex-col gap-6 lg:grid lg:grid-cols-[14rem_minmax(0,1fr)] lg:items-start lg:gap-12 xl:grid-cols-[16rem_minmax(0,1fr)] xl:gap-16"
       onSubmit={(e) => {
         e.preventDefault();
         next();
       }}
       noValidate
     >
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 lg:sticky lg:top-8">
         <p className="text-sm font-semibold text-content-2" aria-live="polite">
           Step {step + 1} of {STEPS.length}: {STEPS[step]}
         </p>
-        <div className="flex gap-1.5" aria-hidden="true">
+        <div className="flex gap-1.5 lg:hidden" aria-hidden="true">
           {STEPS.map((s, i) => (
             <span key={s} className={`h-1.5 flex-1 rounded-full ${i <= step ? "bg-blue-600" : "bg-line"}`} />
           ))}
         </div>
+        <ol className="mt-2 hidden flex-col gap-1 border-l-2 border-line lg:flex" aria-hidden="true">
+          {STEPS.map((s, i) => (
+            <li
+              key={s}
+              className={`-ml-0.5 border-l-2 py-2 pl-4 text-sm ${
+                i === step
+                  ? "border-blue-600 font-semibold text-content"
+                  : i < step
+                    ? "border-blue-600 text-content-2"
+                    : "border-transparent text-content-3"
+              }`}
+            >
+              {s}
+            </li>
+          ))}
+        </ol>
       </div>
+
+      <div className="flex min-w-0 flex-col gap-6">
 
       {step === 0 && (
         <Question legend="What sounds interesting to you?" hint="Pick as many as you like.">
           {[...INTEREST_GROUPS, undefined].map((group) => (
             <div key={group ?? "other"} className="flex flex-col gap-2">
               {group && <h3 className="mt-2 text-sm font-semibold text-content-2">{group}</h3>}
-              <div className={group ? "grid gap-3 md:grid-cols-2" : "flex flex-col gap-3"}>
+              <div className={group ? "grid gap-3 md:grid-cols-2 xl:grid-cols-3" : "flex flex-col gap-3"}>
                 {INTERESTS.filter((o: InterestOption) => o.group === group).map((o) => (
                   <OptionCard
                     key={o.value}
@@ -225,9 +247,10 @@ export function StartQuiz() {
             Back
           </Button>
         )}
-        <Button type="submit" className="flex-1" disabled={pending}>
+        <Button type="submit" className="flex-1 lg:max-w-xs" disabled={pending}>
           {step < STEPS.length - 1 ? "Next" : pending ? "Building your path…" : "See my path"}
         </Button>
+      </div>
       </div>
     </form>
   );

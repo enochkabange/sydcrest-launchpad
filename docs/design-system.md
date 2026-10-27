@@ -273,7 +273,10 @@ not change.
 | `text-body` | 16 | 16 | 16 | 17 | Body copy in marketing cards |
 
 Signed in screens sit beside navigation, so their headings are one rung
-quieter (`title`, `subtitle`) than marketing (`h1`, `h2`). Variants work
+quieter (`title`, `subtitle`) than marketing (`h1`, `h2`). A screen titled
+with `text-title` that needs `text-h2` section headings on phones (roadmap
+and topic pages) writes `text-h2 lg:text-subtitle`, so a section heading is
+never as large as the title on a laptop. Variants work
 (`lg:text-h3`) for a heading that moves into a narrow rail. Small UI text
 (`text-sm`, `text-xs`) is unchanged at every width.
 
