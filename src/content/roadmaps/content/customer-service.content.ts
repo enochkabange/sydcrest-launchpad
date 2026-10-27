@@ -2477,7 +2477,7 @@ Abdul-Rahman from Damongo spends two weekends building his portfolio. He invents
 * **National service placements.** Some service personnel are posted to customer service, front desk or call roles, which can become a first reference.
 * **Part time and shift chat roles**, sometimes remote, for companies that need cover in the evenings or at weekends.
 * **Remote support teams** serving customers in other countries, which usually need a reliable computer, headset and stable internet.
-* **Free training programmes.** Some organisations run free customer service training, sometimes with job placement support. Generation Ghana's Digital Customer Service programme is one example. Programmes often accept people from certain regions or age groups only, so always check current eligibility, location and dates on the programme's official page.
+* **Free training programmes.** Some employers and nonprofit organisations run free customer service training, sometimes with job placement support. Programmes often accept people from certain regions or age groups only, so always check current eligibility, location and dates on the programme's official page before applying.
 
 Look on Ghanaian job boards in the customer service category, on company careers pages, and through your hub, school or church networks.
 

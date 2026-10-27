@@ -188,8 +188,9 @@ does not promise outcomes.
   Security Authority and the Data Protection Commission are named as official bodies, not
   endorsed products. The only law cited is the Data Protection Act, 2012 (Act 843).
 * Zendesk, Freshdesk, Zoho Desk and WhatsApp Business appear only as examples of tool types.
-  Generation Ghana's programme is named once as an example of free training, with a prompt to
-  check eligibility on the official page.
+  Learner copy names no training programme: after review, the founder chose a generic mention
+  of free programmes run by employers and nonprofits, with a prompt to check location and
+  eligibility, because Generation Ghana (C1) only accepts Greater Accra residents.
 * No statistics, salary figures or response time targets are given; where an example uses a
   time (such as "by 4pm"), it is a promise made inside an invented scenario.
 * Practice tasks use invented customer data only and need just a notes app, a free
