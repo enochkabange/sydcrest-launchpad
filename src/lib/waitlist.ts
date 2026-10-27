@@ -16,7 +16,13 @@ export function isWaitlistInterest(value: string): value is WaitlistInterest {
   return WAITLIST_INTERESTS.some((i) => i.value === value);
 }
 
-const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+/**
+ * A hidden form field people never see or fill. Simple bots fill every input,
+ * so a value here marks the submission as automated and it is dropped.
+ */
+export const WAITLIST_HONEYPOT = "website";
+
+const EMAIL =/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function text(form: FormData, key: string) {
   const value = form.get(key);
