@@ -57,7 +57,10 @@ const pbiPublishWeb = learn("Publish to web and its risks", "power-bi/collaborat
 const pbiMobile = learn("Power BI mobile apps", "power-bi/consumer/mobile/mobile-apps-for-mobile-devices");
 const dataStudio = r("Google Data Studio help (free, formerly Looker Studio)", "https://docs.cloud.google.com/data-studio");
 const pl300 = learn("Power BI Data Analyst Associate certification", "credentials/certifications/data-analyst-associate/");
-const mosExcel = learn("Microsoft Office Specialist: Excel Associate", "credentials/certifications/mos-excel-2019/");
+const mosExcel = learn(
+  "Microsoft Office Specialist: Excel Associate (Microsoft 365 Apps)",
+  "credentials/certifications/mos-excel-associate-m365-apps/",
+);
 
 export const excelPowerBi: RoadmapDraft = {
   slug: "excel-power-bi",
@@ -307,7 +310,7 @@ export const excelPowerBi: RoadmapDraft = {
       slug: "jobs-and-next-steps",
       title: "Jobs, certifications and next steps",
       summary:
-        "These skills fit admin, accounts, MIS, monitoring and evaluation, and reporting roles, and optional exams such as Microsoft Office Specialist Excel and Power BI Data Analyst (PL 300) exist if an employer asks for them. To go further into SQL and Python, continue with the Data Analyst track.",
+        "These skills fit admin, accounts, MIS, monitoring and evaluation, and reporting roles, and optional paid exams such as Microsoft Office Specialist Excel Associate and Power BI Data Analyst (PL 300) exist if an employer asks for them. To go further into SQL and Python, continue with the Data Analyst track.",
       parent: "getting-hired-excel",
       optional: false,
       resources: [mosExcel, pl300],

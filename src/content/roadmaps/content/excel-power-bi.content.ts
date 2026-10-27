@@ -2305,6 +2305,651 @@ You need a Windows computer with Power BI Desktop and the model from the last le
         pass_threshold: 80,
       },
     },
+    "reports-people-use": {
+      explanation_md: `## Why this matters
+
+A dashboard can be technically perfect and still fail. If the regional manager cannot find the number she needs, does not trust it, or opens it to find last month's data, she goes back to asking for an Excel file by email. Your work only creates value when the right people read it, understand it and act on it. That is why job adverts for MIS and reporting roles talk about supporting report users, presenting findings and maintaining dashboards, not only building them.
+
+## What this section covers
+
+* **Designing a clear report page:** where to put the most important numbers, how many visuals to use, how to use colour, and how to make the page work on a phone and for people with colour blindness or who use screen readers.
+* **Sharing reports and keeping them fresh:** how organisations publish and share Power BI reports, how scheduled refresh keeps data current, and why "publish to web" must never be used for private data.
+
+## Three questions for every report
+
+Before you design anything, find out:
+
+1. **Who will read it?** A director wants three numbers and a trend. A field supervisor wants a list of communities to visit this week. They need different pages.
+2. **What decision does it support?** If you cannot name a decision, the page is probably decoration.
+3. **Where and how often will they read it?** On a phone in a vehicle on the Tamale to Bolgatanga road, or on a big screen in a monthly meeting? Daily, weekly or monthly?
+
+The answers shape everything that follows: which visuals, how much detail, how often the data must refresh and who should have access.
+
+## Trust is the real product
+
+People act on reports they trust. You build trust by:
+
+* showing **when the data was last updated** on the page,
+* using the **same definitions** everywhere (if "active member" means "paid in the last 30 days", write that in a note and use one measure for it),
+* **checking numbers** against a source the reader already knows, such as last month's Excel report,
+* fixing errors openly and quickly when someone finds one.
+
+One wrong number that nobody explains can make a team stop using a dashboard for months.
+
+## A small example
+
+Amina built a 12 page Power BI report for a health NGO, with every chart she could think of. Usage dropped after two weeks. She interviewed three users. The district nurses wanted one thing: which facilities had not reported this month. The programme manager wanted coverage against target by district.
+
+She rebuilt it as two pages. Page one: three key numbers, coverage by district against target, and a "last refreshed" date. Page two: a table of facilities that have not reported, with phone numbers, filtered by district. Each nurse now opens it on a phone each Monday and makes the calls. Fewer visuals, more use.
+
+## Privacy is part of design
+
+Reports often contain personal data: names, phone numbers, health or financial details. Ghana's Data Protection Act protects personal data, and your employer will have its own rules. Show only what each reader needs, and share only with people who should see it. The sharing lesson explains how.`,
+      practice_task_md: `**Goal:** design a report around its readers before building it.
+
+1. Pick a report you have built in this track, in Excel or Power BI.
+2. Name two different readers, real or realistic, such as a manager and a field officer.
+3. For each, write: the decision they make, where they read it, how often, and the three things they most need to see.
+4. List any personal data in the report and decide who should and should not see it.
+5. Sketch the page or pages you would give each reader.
+
+**Done looks like:** a one page reader plan with two readers, their needs, a privacy note and a sketch. Discuss it with a mentor, ideally someone who reads reports at work.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which three questions should you answer before designing a report?",
+            options: [
+              "Which colours, which fonts, which logo",
+              "Who will read it, what decision it supports, and where and how often they will read it",
+              "How many pages, how many charts, how many tables",
+              "Which software, which version, which computer",
+            ],
+            answer_index: 1,
+            explanation: "Knowing the readers, the decision and the reading situation shapes every design choice.",
+          },
+          {
+            prompt: "Which practice builds trust in a dashboard?",
+            options: [
+              "Adding as many charts as possible",
+              "Showing when the data was last updated",
+              "Changing definitions each month",
+              "Hiding errors until someone asks",
+            ],
+            answer_index: 1,
+            explanation: "A visible refresh date tells readers how current the numbers are.",
+          },
+          {
+            prompt: "Why did Amina's 12 page report lose users?",
+            options: [
+              "The data was always wrong",
+              "It was built in Excel",
+              "It was not designed around what users actually needed",
+              "Power BI stopped working",
+            ],
+            answer_index: 2,
+            explanation: "When she asked users what they needed, two focused pages served them better than twelve.",
+          },
+          {
+            prompt: "A report contains names and phone numbers of clients. What should you do?",
+            options: [
+              "Share it publicly so everyone can help",
+              "Show only what each reader needs and share only with people who should see it",
+              "Remove all numbers from the report",
+              "Print it and leave copies in the office",
+            ],
+            answer_index: 1,
+            explanation: "Personal data must be limited to those who need it, in line with data protection rules.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "report-design": {
+      explanation_md: `## Why this matters
+
+When a manager opens your report, you have a few seconds before they decide whether it is useful. A clear page guides their eyes to the answer. A crowded one makes them hunt, and they give up. Good design is not decoration; it is what turns your analysis into a decision. Microsoft's Data Analyst certification includes visualising data, and employers judge your portfolio on it.
+
+## Layout: most important first
+
+Most readers scan a page from the top left, across, then down. So:
+
+* Put the **key numbers** (on cards) along the top, most important on the left.
+* Put the **main chart** that explains those numbers below them.
+* Put **detail**, such as a table, lower down or on a second page.
+* Put **slicers** (filters) in one consistent place, such as a strip along the top or the left, on every page.
+
+Give the page a **title** that says what it is for, and show the **last refreshed date** in a small text box or card.
+
+## Fewer visuals, each with a job
+
+Keep each page to a handful of visuals. For every visual, ask: "What question does this answer?" If you cannot say, remove it. Use the chart rules from the Excel section: bars for comparing, lines for trends, tables for exact lookups, message titles, zero baselines and no 3D.
+
+Align visuals to a grid and leave space between them. Use the same size and style for cards across pages.
+
+## Colour with purpose
+
+* Choose one theme for the whole report (**View, then Themes**). Power BI includes themes designed to be accessible.
+* Use a neutral colour for most data and **one accent colour** for what needs attention.
+* Use the same colour for the same thing everywhere. If Tamale is blue on page one, it is blue on page three.
+* **Never rely on colour alone.** Some readers cannot tell red from green. Add a label, an icon or a word such as "Below target".
+
+## Accessible reports
+
+Microsoft's guidance on accessible Power BI reports covers features you should use:
+
+* **Alt text** on each visual (in the visual's format options) describing what it shows, for people using screen readers.
+* **Good contrast** between text and background, and readable font sizes.
+* A sensible **tab order** so people using a keyboard move through visuals in a logical order.
+
+## Phone layout
+
+Many people will view your report in the Power BI mobile app. In Power BI Desktop, **View, then Mobile layout** lets you arrange visuals specifically for a phone screen: usually cards at the top, then one or two visuals stacked, then slicers. If you do not create one, the app shows the full page, which is hard to read on a small screen.
+
+## A worked example
+
+Wumpini's first sales page for a distributor in Tamale had 14 visuals, five colours and slicers scattered around. She redesigned it:
+
+* Top row: four cards (Total Sales, vs Target, Number of Agents, Average Sale), with "Last refreshed" beside them.
+* Middle: a line chart, "Sales rose in the last three months", and a bar chart of sales by district, sorted, with districts below target in orange and labelled.
+* Left strip: slicers for Month and Product.
+* Alt text on each visual and a mobile layout with the cards and line chart.
+
+Her manager now opens it in the mobile app each morning.`,
+      practice_task_md: `**Goal:** redesign a report page for clarity and access.
+
+You need Power BI Desktop for the full task. Without it, apply the same rules to your one page Excel report, or to a dashboard in Google's free Data Studio.
+
+1. Open the report from your DAX lesson, or your Excel report.
+2. Move key numbers to cards along the top, most important on the left, with a "last refreshed" note.
+3. Remove any visual that does not answer a clear question, and give each remaining visual a message title.
+4. Apply one theme, use one accent colour, and add a word or icon wherever colour carries meaning.
+5. Add alt text to each visual.
+6. In Power BI, create a mobile layout with the cards and one main chart.
+
+**Done looks like:** before and after screenshots of your page, plus a short list of the changes you made and why. Ask a mentor to find the main message in five seconds.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Where should the most important numbers go on a report page?",
+            options: [
+              "Bottom right",
+              "Top left, on cards",
+              "On a hidden page",
+              "In the middle of a large table",
+            ],
+            answer_index: 1,
+            explanation: "Readers usually scan from the top left, so key numbers belong there.",
+          },
+          {
+            prompt: "Why add alt text to visuals?",
+            options: [
+              "It makes visuals load faster",
+              "So people using screen readers can understand what each visual shows",
+              "It is required to publish",
+              "It changes the chart colours",
+            ],
+            answer_index: 1,
+            explanation: "Alt text describes a visual for people who cannot see it.",
+          },
+          {
+            prompt: "What does Mobile layout in Power BI Desktop let you do?",
+            options: [
+              "Build reports on a phone",
+              "Arrange visuals specifically for viewing in the mobile app on a phone",
+              "Share reports by SMS",
+              "Turn off the report on phones",
+            ],
+            answer_index: 1,
+            explanation: "Mobile layout creates a phone friendly arrangement of the page's visuals.",
+          },
+          {
+            prompt: "Which colour practice does the lesson recommend?",
+            options: [
+              "A different colour for every visual",
+              "A neutral colour for most data and one accent colour for what needs attention",
+              "Red and green only, with no labels",
+              "Changing colours on each page to keep it interesting",
+            ],
+            answer_index: 1,
+            explanation: "One accent colour draws attention, and consistency avoids confusion.",
+          },
+          {
+            prompt: "How should you decide whether to keep a visual?",
+            options: [
+              "Keep it if it looks impressive",
+              "Keep every visual Power BI suggests",
+              "Keep it only if you can say what question it answers",
+              "Keep it if it uses many colours",
+            ],
+            answer_index: 2,
+            explanation: "Every visual should answer a clear question; otherwise it adds clutter.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "sharing-and-refresh": {
+      explanation_md: `## Why this matters
+
+A report on your computer helps nobody else. In organisations, Power BI reports are published to the Power BI service, shared with the right people, and refreshed automatically so nobody has to rebuild them. You may not do this yourself until you join an organisation, because the service needs a work or school account. But interviewers ask how sharing and refresh work, and knowing the risks, especially of "publish to web", protects you and your employer.
+
+## Publishing
+
+In Power BI Desktop, **Home, then Publish** sends the report and its data (called a **semantic model**) to the Power BI service. You must sign in with a work or school account. You choose a **workspace**:
+
+* **My workspace** is your personal area. A free licence lets you publish here for yourself.
+* **Shared workspaces** are for teams. Sharing reports with colleagues usually needs a paid licence for the people involved, which the organisation manages.
+
+Finished reports are often bundled into an **app**, which users open on the web or in the Power BI mobile apps.
+
+## Keeping data fresh
+
+When you publish, the data is a snapshot from your last refresh. To keep it current, the organisation sets a **scheduled refresh** in the semantic model's settings, such as every morning at six. How it reaches the data depends on where the data lives:
+
+* **Files in OneDrive or SharePoint** can usually be refreshed directly from the cloud.
+* **Files or databases on an office computer or server** need an **on premises data gateway**, a small program that lets the service reach them securely.
+
+If a refresh fails, the owner is notified, and a "last refreshed" date on the page lets readers notice too.
+
+## Publish to web: public to everyone
+
+The service has an option called **Publish to web**. It creates a link and embed code that **anyone on the internet can view without signing in**. Microsoft warns that people may reach the underlying data in the model even if the report does not display it.
+
+Use it only for data that is already public, such as an open dataset you analysed for your portfolio. **Never** use it for bank, payroll, health, beneficiary or customer data. Ghana's Data Protection Act protects personal data, and many organisations switch the feature off entirely. For private reports, use the normal sharing and app features, which check who is signed in.
+
+## Controlling who sees what
+
+Inside an organisation:
+
+* Give access to the **people who need it**, preferably through groups so access is easy to remove later.
+* Give **view** access unless someone truly needs to edit.
+* **Row level security** can show each user only their own rows, such as each district manager seeing only their district. You will meet it as you go further.
+
+## Sharing without the service
+
+Before you have a work account, you can still share your work safely: in Power BI Desktop, **File, then Export, then Export to PDF** creates a PDF of your pages, and screenshots work for a portfolio. Sharing the .pbix file itself shares all its data, so only do that with invented or public data.
+
+## A worked example
+
+Fuseini publishes his distributor report to a team workspace, sets refresh for 6 am daily from a SharePoint folder, and shares it as an app with the sales managers' group. A new staff member asks him to "just publish it to web so I can see it at home". Fuseini explains why not, and asks IT to add her to the group instead.`,
+      practice_task_md: `**Goal:** write a sharing plan and share your work safely.
+
+1. Take a report you built, in Power BI Desktop or Excel, using invented or public data only.
+2. Export it to PDF (Power BI Desktop: File, then Export; Excel or Google Sheets: save or download as PDF).
+3. Write a short sharing plan for a real organisation using it: who gets access, view or edit, how often data refreshes and from where, and whether any personal data needs row level security.
+4. Add one sentence explaining why Publish to web would or would not be acceptable for this report.
+
+**Done looks like:** a PDF of your report and a half page sharing plan. Review the plan with a mentor, ideally someone who manages data at work.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What do you need to publish a report to the Power BI service?",
+            options: [
+              "A Gmail account",
+              "A work or school account",
+              "Only Power BI Desktop, no account",
+              "A Mac computer",
+            ],
+            answer_index: 1,
+            explanation: "Publishing requires signing in to the service with a work or school account.",
+          },
+          {
+            prompt: "Who can view a report shared with Publish to web?",
+            options: [
+              "Only people in your organisation",
+              "Only people you email the link to, after they sign in",
+              "Anyone on the internet, without signing in",
+              "Only Power BI administrators",
+            ],
+            answer_index: 2,
+            explanation: "Publish to web makes the report public, with no sign in needed.",
+          },
+          {
+            prompt: "Data lives in an Excel file on an office server. What is needed for scheduled refresh?",
+            options: [
+              "Nothing, the service reads office computers directly",
+              "An on premises data gateway",
+              "Publish to web",
+              "A Power BI mobile app",
+            ],
+            answer_index: 1,
+            explanation: "A gateway lets the service reach data stored on local computers or servers securely.",
+          },
+          {
+            prompt: "Which report is acceptable for Publish to web?",
+            options: [
+              "Monthly payroll by staff member",
+              "Health records of clinic patients",
+              "An analysis of an already public open dataset",
+              "A bank's customer loan balances",
+            ],
+            answer_index: 2,
+            explanation: "Only data that is already public should ever be published to the web.",
+          },
+          {
+            prompt: "How can you share your Power BI work safely before you have a work account?",
+            options: [
+              "Publish it to web",
+              "Export it to PDF or take screenshots, using invented or public data",
+              "Email the .pbix file with real client data",
+              "Post your login details so others can see it",
+            ],
+            answer_index: 1,
+            explanation: "PDFs and screenshots of reports built on invented or public data are safe portfolio material.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "getting-hired-excel": {
+      explanation_md: `## Why this matters
+
+Almost every CV in Ghana says "proficient in Microsoft Office". Employers know that line means very little. What makes you stand out is evidence: a clean report they can open, a dashboard they can click, a short explanation of how you turned messy data into a decision. This final section helps you turn the work you have done in this track into that evidence, and choose where to go next.
+
+## What this section covers
+
+* **A portfolio of office reports:** two or three finished pieces, built on open or invented data, presented with screenshots and a short write up, so an employer can see your skills in a few minutes.
+* **Jobs, certifications and next steps:** the kinds of roles these skills fit, optional certifications and when they are worth it, and how to grow into SQL and Python through the Data Analyst track.
+
+## Show, do not just tell
+
+Compare two applications for an M&E assistant post:
+
+* One says: "Advanced Excel, Power BI, data analysis."
+* The other says: "Built a monthly activity report for a youth programme (sample data): cleaned 400 survey rows with Power Query, summarised by district with PivotTables, and presented a one page report with key numbers against target. Link to PDF and screenshots."
+
+The second gives the employer something to check and something to ask about in an interview. That is what this section aims for.
+
+## Where your evidence can live
+
+You do not need a website. Simple, free options:
+
+* A **folder in OneDrive or Google Drive** shared as "view only", with clearly named files and a short read me document.
+* **PDFs and screenshots** that open quickly on a phone, since many recruiters will look on one.
+* A short **post on a professional network** describing one project, with a screenshot.
+* A **SydCrest mentor**, who can review your folder before you share it widely.
+
+Whatever you choose, check the link works when you are signed out, and that it is set to view only.
+
+## Honesty matters
+
+Use open data or data you invented and label it clearly as sample data. Never use real customer, member, patient or beneficiary records from a job or volunteer role without written permission, even if you remove the names. Employers in banking, health and development take data protection seriously, and showing that you do too is part of being hired. Describe your role accurately: if a mentor helped, say so.
+
+## A small example
+
+Mariama finished this track with three pieces: a cleaned and validated registration sheet with dropdowns, a one page Excel report for an invented savings group, and a two page Power BI report she built in her university lab. She put them in a shared Drive folder with a one paragraph explanation for each. At an interview for a data officer role, the panel asked her to walk them through the Power BI report on the interview room computer. She spent ten minutes showing what she had done and why, which was far more convincing than any CV line.
+
+## Keep practising
+
+Skills fade if you stop. Offer to help a church, a school or a small business with a spreadsheet problem, with their permission and with any personal data kept private. Real requests teach you things no course can, and they often lead to references and opportunities.`,
+      practice_task_md: `**Goal:** plan your portfolio.
+
+1. List every file you built in this track and pick the two or three strongest.
+2. For each, write one sentence: the problem, what you did, and the result.
+3. Check each file uses only invented or open data, and label it "sample data" on the first sheet or page.
+4. Create a folder in OneDrive or Google Drive called "Excel and Power BI portfolio YourName" and set sharing to view only.
+5. Open the link in a private browser window to check it works without signing in.
+
+**Done looks like:** a shared, view only folder with two or three labelled pieces and a one sentence summary for each. Send the link to a mentor and ask which piece is strongest.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why is a CV line such as \"proficient in Microsoft Office\" not enough?",
+            options: [
+              "Employers do not use Microsoft Office",
+              "It gives no evidence the employer can check",
+              "It is too long",
+              "It should be written in capitals",
+            ],
+            answer_index: 1,
+            explanation: "Employers trust what they can see, such as a finished report.",
+          },
+          {
+            prompt: "Which data is safe to use in a public portfolio?",
+            options: [
+              "Real beneficiary records with names removed, without permission",
+              "Your employer's customer list",
+              "Open data or invented data labelled as sample data",
+              "Bank statements from friends",
+            ],
+            answer_index: 2,
+            explanation: "Only open or invented data, clearly labelled, is safe without written permission.",
+          },
+          {
+            prompt: "What should you check before sending a portfolio link?",
+            options: [
+              "That it allows anyone to edit",
+              "That it opens when signed out and is set to view only",
+              "That it contains every file you ever made",
+              "That it requires a password nobody has",
+            ],
+            answer_index: 1,
+            explanation: "A view only link that works without signing in lets employers see your work safely.",
+          },
+          {
+            prompt: "Why do PDFs and screenshots work well in a portfolio?",
+            options: [
+              "They cannot be read on phones",
+              "They hide your work",
+              "They open quickly, including on a phone, which many recruiters use",
+              "They are required by law",
+            ],
+            answer_index: 2,
+            explanation: "Quick to open files suit recruiters who often look on a phone.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "office-report-portfolio": {
+      explanation_md: `## Why this matters
+
+A small set of finished, well explained reports does more for your job search than a long list of skills. Employers hiring for admin, accounts, MIS and M&E roles want to know three things: can you handle messy data, can you get the numbers right, and can you present them clearly? A good portfolio answers all three before the interview starts. Freelance clients looking for Excel and Power BI help also hire from portfolios.
+
+## What to include
+
+Aim for two or three pieces that show different skills:
+
+1. **A data entry and cleaning piece.** A validated entry sheet with dropdowns and rules, plus a messy file you cleaned with formulas or Power Query, showing before and after.
+2. **A one page Excel report.** Key numbers against target, a PivotTable summary, one clear chart and written highlights.
+3. **A Power BI report**, if you have had access to a Windows computer: a small star schema, a few DAX measures and one or two well designed pages. If you have not yet, a Data Studio dashboard shows the same thinking, and you can add Power BI later.
+
+## Choosing data
+
+Use data that is **open** or **invented**, and say which on the first page.
+
+* **Invented data:** make it realistic. A market trader's daily sales in cedis across a month, a youth programme's attendance across districts, a savings group's contributions. Include the problems real data has (spelling variations, missing values, text dates) so you can show your cleaning.
+* **Open data:** the Ghana Statistical Service and international open data sites publish tables you can download, and Kaggle hosts many public datasets. Read the licence and credit the source.
+
+Never use real customer, member or beneficiary data from work or volunteering without written permission. The rules on personal data apply to portfolios too.
+
+## Writing it up
+
+For each piece, write a short case study of four parts:
+
+* **Problem:** who needed what. "A savings group treasurer needed to see monthly contributions and who was behind."
+* **Data:** where it came from and what was wrong with it. "Invented data, 300 rows, with inconsistent names and text dates."
+* **What you did:** the main steps and tools. "Cleaned with Power Query, summarised with PivotTables, built a one page report."
+* **Result:** what the reader can now see or decide. "Treasurer can spot members two weeks behind at a glance."
+
+Keep each write up short enough to read on a phone. Add two or three screenshots: the finished report, and one "behind the scenes" view such as Applied Steps or the model.
+
+## A worked example
+
+Sumaila builds his portfolio around a fictional agro dealer, "Northern Inputs", with shops in Tamale, Yendi and Walewale. Piece one: a sales entry sheet with dropdowns and a cleaned month of messy sales. Piece two: a one page Excel report of the month. Piece three: a Power BI report with sales, products, shops and calendar tables and a mobile layout. Every page says "Sample data, invented for practice". In interviews he opens the PDF on his phone and talks through each decision.
+
+## Get feedback
+
+Before you share widely, ask a mentor or someone who reads reports at work to review one piece. Ask them: "What is the main message? What would you change?" Then improve it.`,
+      practice_task_md: `**Goal:** finish two or three portfolio pieces with write ups.
+
+1. Choose the pieces from your track work, or build new ones on a realistic invented or open dataset.
+2. Label every file "Sample data" with the source or "invented for practice".
+3. Write a four part case study for each: problem, data, what you did, result.
+4. Export each report as a PDF and take two or three screenshots.
+5. Put everything in your view only portfolio folder with a short read me listing the pieces.
+6. Ask a mentor to review one piece and make at least one improvement from their feedback.
+
+**Done looks like:** a shared folder with two or three labelled pieces, each with a PDF, screenshots and a short case study, plus a note of the change you made after feedback.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which set of pieces gives the best mix for an office data portfolio?",
+            options: [
+              "Three copies of the same chart in different colours",
+              "A cleaning and validation piece, a one page Excel report and a Power BI or dashboard report",
+              "A list of every Excel function you know",
+              "Screenshots of certificates only",
+            ],
+            answer_index: 1,
+            explanation: "Different pieces show handling messy data, getting numbers right and presenting clearly.",
+          },
+          {
+            prompt: "What are the four parts of the case study write up?",
+            options: [
+              "Title, colours, fonts, logo",
+              "Problem, data, what you did, result",
+              "Introduction, theory, conclusion, references",
+              "Name, age, school, hobbies",
+            ],
+            answer_index: 1,
+            explanation: "The lesson recommends describing the problem, the data, your steps and the result.",
+          },
+          {
+            prompt: "Why include problems like spelling variations in invented data?",
+            options: [
+              "To make the report look worse",
+              "So you can show how you cleaned them",
+              "Because invented data must contain errors by law",
+              "To make files bigger",
+            ],
+            answer_index: 1,
+            explanation: "Realistic problems let you demonstrate your cleaning skills.",
+          },
+          {
+            prompt: "What must you do when using open data from a site such as the Ghana Statistical Service?",
+            options: [
+              "Remove the source so it looks original",
+              "Read the licence and credit the source",
+              "Pay a fee before downloading",
+              "Change the numbers",
+            ],
+            answer_index: 1,
+            explanation: "Open data comes with a licence, and you should credit where it came from.",
+          },
+          {
+            prompt: "You have not had access to a Windows computer yet. What can stand in for the Power BI piece?",
+            options: [
+              "Nothing, the portfolio is incomplete without Power BI",
+              "A Data Studio dashboard showing the same thinking, with Power BI added later",
+              "A screenshot of someone else's Power BI report",
+              "A description of Power BI copied from a website",
+            ],
+            answer_index: 1,
+            explanation: "A free browser dashboard shows the same skills until you can build in Power BI.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "jobs-and-next-steps": {
+      explanation_md: `## Why this matters
+
+Excel and Power BI skills are not a single job title. They are useful across many roles, which gives you options. Knowing where these skills fit, what employers expect alongside them, and what to learn next helps you aim your applications and keep growing.
+
+## Roles that use these skills
+
+When you read Ghanaian and remote job adverts, look for titles such as:
+
+* **Data entry officer, data clerk or data capturer:** accurate entry, validation, basic summaries.
+* **Administrative or office assistant:** registers, schedules, simple reports.
+* **Accounts assistant or accounts officer:** reconciliations, budgets, PivotTables and lookups, alongside accounting knowledge.
+* **MIS officer or assistant:** collecting data from branches or programmes, dashboards, KPI tracking.
+* **Monitoring and evaluation (M&E or MEL) assistant or officer:** survey data from tools such as KoboToolbox or ODK, cleaning, indicators, donor reports.
+* **Reporting analyst or junior business intelligence analyst:** Power BI dashboards, often with SQL.
+* **Freelance reporting support** for small businesses and remote clients.
+
+Read each advert for the tools it names and the sector knowledge it expects. Many ask for a degree or diploma and some experience; volunteering and portfolio projects are how you start building that experience.
+
+## Optional certifications
+
+Certifications are not required for most of these roles, and a strong portfolio often matters more. But if an employer asks for one, or you want a structured goal, two are relevant:
+
+* **Microsoft Office Specialist: Excel Associate (Microsoft 365 Apps)** covers worksheets, ranges, tables, formulas and functions, and charts. It is a proctored, hands on exam, usually booked through Certiport.
+* **Microsoft Certified: Power BI Data Analyst Associate (exam PL-300)** covers preparing data, modelling, visualising and analysing, and managing and securing Power BI. It expects you to be comfortable with Power Query and DAX. It must be renewed every year with a free online assessment.
+
+Both exams are paid, and prices vary by country, so check the official Microsoft Learn page before planning. Microsoft Learn's training paths for Power BI are free to study.
+
+## Next steps
+
+* **Deepen Excel:** dynamic array functions such as \`FILTER\` and \`UNIQUE\`, and more Power Query.
+* **Deepen Power BI:** \`CALCULATE\` and time intelligence measures (this month against last month), and row level security.
+* **Learn SQL:** many MIS, BI and data analyst adverts ask for SQL alongside Power BI, because organisational data often lives in databases.
+* **Consider Python** later for larger or automated analysis.
+
+SydCrest's **Data Analyst track** continues from here into SQL, statistics and Python, building on everything you learned about clean tables, summaries and charts.
+
+## A small example
+
+Issahaku finished this track, built a portfolio and applied for an M&E assistant role with an NGO in Tamale. He did not get the first one, but the panel asked about his Power BI report. He kept volunteering on a cooperative's records, started the Data Analyst track to learn SQL, and applied again three months later, this time with a SQL query in his portfolio as well. Progress is usually step by step.`,
+      practice_task_md: `**Goal:** match your skills to real adverts and plan your next step.
+
+1. Find three current job adverts from Ghanaian job boards or employer career pages for roles listed in this lesson. Do not pay anyone for job access.
+2. For each, list the tools and skills named, and mark the ones you can already show in your portfolio.
+3. Pick one gap that appears more than once, such as SQL or a specific function.
+4. Write a four week plan to close it: what you will learn, with which free resource, and what you will build to show it.
+
+**Done looks like:** a table of three adverts with skills marked, and a four week plan. Share it with a mentor and agree a date to review your progress.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which role mainly works with survey data from tools such as KoboToolbox and prepares donor reports?",
+            options: [
+              "Front desk receptionist",
+              "Monitoring and evaluation officer",
+              "Driver",
+              "Security officer",
+            ],
+            answer_index: 1,
+            explanation: "M&E roles collect and analyse programme data and prepare donor reports.",
+          },
+          {
+            prompt: "What does the PL-300 exam lead to?",
+            options: [
+              "Microsoft Office Specialist: Word Associate",
+              "Microsoft Certified: Power BI Data Analyst Associate",
+              "A Google Sheets certificate",
+              "A degree in accounting",
+            ],
+            answer_index: 1,
+            explanation: "PL-300 is the exam for the Power BI Data Analyst Associate certification.",
+          },
+          {
+            prompt: "Which skill is often requested alongside Power BI in MIS and BI adverts, and is a good next step?",
+            options: [
+              "Video editing",
+              "SQL",
+              "Typing speed only",
+              "Graphic design",
+            ],
+            answer_index: 1,
+            explanation: "Organisational data often lives in databases, so SQL commonly appears with Power BI.",
+          },
+          {
+            prompt: "According to the lesson, which is true about certifications for these roles?",
+            options: [
+              "They are required for every job",
+              "They are free to take",
+              "They are optional, and a strong portfolio often matters more",
+              "They replace the need for any practice",
+            ],
+            answer_index: 2,
+            explanation: "Certifications can help but are optional and paid; evidence of real work often counts more.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
