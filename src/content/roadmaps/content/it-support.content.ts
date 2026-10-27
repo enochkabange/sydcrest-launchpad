@@ -30,10 +30,10 @@ Hawa works as the IT assistant at a senior high school in Bolgatanga. On Monday 
 
 ## What you need
 
-You can learn most of this track on a phone. Some practice, such as opening a computer or trying Linux, needs a real computer. When you reach those lessons, look for one you can use at a school lab, a library, a community centre, a church office or a relative's shop, and always ask the owner first.`,
+You can learn most of this track on a phone or a computer. Some practice, such as opening a computer or trying Linux, needs a real computer. When you reach those lessons, look for one you can use at a school lab, a library, a community centre, a church office or a relative's shop, and always ask the owner first.`,
       practice_task_md: `**Goal:** start your IT support learning log and see the job through someone else's eyes.
 
-1. Create a note on your phone or in a notebook called "Fix log". Make columns: date, device, problem, cause, fix, time taken.
+1. Create a note on your phone or computer, or in a notebook, called "Fix log". Make columns: date, device, problem, cause, fix, time taken.
 2. Talk to someone who looks after computers anywhere near you: a school ICT teacher, a church secretary, a shop owner, a cyber cafe attendant. Ask them the three most common problems they deal with and how they fix them.
 3. Write those three problems into your log as your first entries, marking them "heard from someone".
 4. Over the next week, write down any tech problem you see around you (a phone that will not charge, Wi-Fi that drops) even if you cannot fix it yet.
@@ -293,7 +293,7 @@ Many organisations agree a service level agreement (SLA): for example, urgent ti
 Fuseini builds a simple ticket system for a small clinic in Yendi using a free online form. Staff fill in name, department, problem and urgency. Each entry lands in a spreadsheet where Fuseini adds actions, status and the fix. After a month he sorts the sheet and sees that most tickets are about one old printer. He shows the manager the list, and the clinic budgets for a replacement. The tickets did more than track work: they gave evidence for a decision.`,
       practice_task_md: `**Goal:** build a working ticket system with free tools.
 
-1. Using a free form tool such as Google Forms (works in a phone browser), create a form called "IT Help Request" with fields: name, department, device, description of the problem, urgency (low, medium, high).
+1. Using a free form tool such as Google Forms (works in any browser, on a phone or a computer), create a form called "IT Help Request" with fields: name, department, device, description of the problem, urgency (low, medium, high).
 2. Link it to a Google Sheet. Add columns for status, actions taken, cause, resolution and date closed.
 3. Submit five pretend tickets for an invented office, such as "printer jams", "forgot email password", "internet off in whole office".
 4. For each ticket, fill in the actions and resolution as if you fixed it, and set a priority.
@@ -368,7 +368,7 @@ Whenever you open or move equipment, follow three rules. Switch off and unplug t
 
 ## Phone or computer?
 
-You can learn the ideas in this section on a phone. Looking inside a real machine is much better, though. If you do not own a computer, ask at a school computer lab, a library, a community centre, a cyber cafe or a phone and computer repair shop whether you can watch or help when they open one. Many repairers are happy to let a polite learner watch. Old, broken machines that people are throwing away make excellent practice: you cannot damage them further.
+You can learn the ideas in this section on a phone or a computer. Looking inside a real machine is much better, though. If you do not own a computer, ask at a school computer lab, a library, a community centre, a cyber cafe or a phone and computer repair shop whether you can watch or help when they open one. Many repairers are happy to let a polite learner watch. Old, broken machines that people are throwing away make excellent practice: you cannot damage them further.
 
 ## A small example
 
@@ -1217,10 +1217,10 @@ Sumaila is called to a hardware shop in Wa where "the internet is off". He check
 1. Choose a network you can see: your home, a family shop, a church office, a school lab or a cyber cafe (ask permission).
 2. Find the internet connection (fibre box, router, MiFi), any switches or access points, and what connects to what.
 3. Draw a simple diagram on paper or in a free drawing app: internet, router, switch, devices. Label wired and wireless connections.
-4. On your phone, open the Wi-Fi network details and write down your IP address and the gateway address.
+4. On your phone or computer, open the Wi-Fi network details and write down your IP address and the gateway address.
 5. Write two lines on what would stop working if the router failed, and if the switch failed.
 
-**Done looks like:** a labelled network diagram with your phone's address and gateway, ready to show a mentor.`,
+**Done looks like:** a labelled network diagram with your device's address and gateway, ready to show a mentor.`,
       quiz: {
         questions: [
           {
@@ -1681,7 +1681,7 @@ Fuseini is the only IT person at a rural bank branch in the Upper East. He notic
 
 1. List your important accounts: email, social media, MoMo, bank app, any work or school accounts.
 2. For each, note: is the password unique? Is two step verification on? Do you know the recovery phone or email is current?
-3. Check that your phone has a screen lock and that updates are installed.
+3. Check that your phone, and your computer if you have one, has a screen lock and that updates are installed.
 4. Check where your most important files and photos are backed up, if anywhere.
 5. Write three things you will fix this week, then fix at least one.
 
@@ -2273,7 +2273,7 @@ Abdul-Rahman did national service in a district assembly IT unit in the Northern
 1. Choose your three best fix log entries (from practice tasks or real help you have given) and turn each into a short write up using the four headings in this lesson.
 2. Collect your best guides, checklists and diagrams from this roadmap into one folder. Remove private details.
 3. Write a one page CV for an entry level IT support role, using skill words from adverts.
-4. Practise answering three interview scenarios aloud: a user cannot print, the whole office has no internet, and an angry manager whose laptop died before a meeting. Record yourself on your phone and listen back.
+4. Practise answering three interview scenarios aloud: a user cannot print, the whole office has no internet, and an angry manager whose laptop died before a meeting. Record yourself on your phone or computer and listen back.
 
 **Done looks like:** three write ups, a portfolio folder link, a one page CV and recorded interview practice.`,
       quiz: {
