@@ -5,6 +5,7 @@ import { addNode, updateNode, type FormState } from "./actions";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { CheckboxField, SelectField, TextField } from "@/components/ui/field";
+import { NODE_KINDS } from "@/lib/roadmap-admin";
 import { TextAreaField } from "./fields";
 
 export type ParentOption = { id: string; title: string; depth: number };
@@ -17,6 +18,8 @@ type Node = {
   parent_id: string | null;
   position: number;
   is_optional: boolean;
+  kind: string | null;
+  choice_group: string | null;
 };
 
 /** Add a node to a roadmap (no `node`) or edit one, including its parent and position. */
@@ -65,6 +68,33 @@ export function NodeForm({ roadmapId, parents, node }: { roadmapId: string; pare
           error={e.position}
         />
       )}
+      <SelectField
+        id={f("kind")}
+        name="kind"
+        label="Kind"
+        hint="Automatic makes a top level node a section and anything under it a topic. A checkpoint marks a point to check your progress."
+        defaultValue={node?.kind ?? ""}
+        error={e.kind}
+      >
+        <option value="">Automatic</option>
+        {NODE_KINDS.map((k) => (
+          <option key={k.value} value={k.value}>
+            {k.label}
+          </option>
+        ))}
+      </SelectField>
+      <TextField
+        id={f("choice_group")}
+        name="choice_group"
+        label="Choice group"
+        hint="Optional. Give alternatives under the same parent the same key, such as spreadsheet-tool, and learners pick one of them."
+        defaultValue={node?.choice_group ?? ""}
+        error={e.choice_group}
+        autoCapitalize="none"
+        autoCorrect="off"
+        spellCheck={false}
+        maxLength={40}
+      />
       <CheckboxField id={f("is_optional")} name="is_optional" defaultChecked={node?.is_optional}>
         Optional (not needed to complete the roadmap)
       </CheckboxField>

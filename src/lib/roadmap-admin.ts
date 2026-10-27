@@ -4,7 +4,7 @@
  * unit tested; the Server Actions in src/app/(admin)/admin/roadmaps call it.
  */
 import type { FieldErrors } from "./validation";
-import type { NodeDraft, ResourceDraft } from "@/content/roadmaps/types";
+import type { NodeDraft, NodeKind, ResourceDraft } from "@/content/roadmaps/types";
 
 /** Same rule as the slug check constraints on roadmaps and roadmap_nodes. */
 export const SLUG_PATTERN = /^[a-z0-9][a-z0-9-]{0,78}[a-z0-9]$/;
@@ -61,6 +61,16 @@ export const RESOURCE_KINDS = [
 ] as const;
 
 export type ResourceKind = (typeof RESOURCE_KINDS)[number]["value"];
+
+/** Node kinds for the admin picker. "Automatic" (empty) stores null: derived from the tree. */
+export const NODE_KINDS = [
+  { value: "section", label: "Section" },
+  { value: "topic", label: "Topic" },
+  { value: "checkpoint", label: "Checkpoint" },
+] as const satisfies readonly { value: NodeKind; label: string }[];
+
+/** Same rule as the roadmap_nodes.choice_group check constraint. */
+export const CHOICE_GROUP_PATTERN = /^[a-z0-9][a-z0-9-]{0,38}[a-z0-9]$/;
 
 function text(form: FormData, key: string) {
   const value = form.get(key);
@@ -150,16 +160,21 @@ export type NodeFields = {
   summary: string | null;
   parent_id: string | null;
   is_optional: boolean;
+  kind: NodeKind | null;
+  choice_group: string | null;
 };
 
 /** Fields shared by the add and edit node forms. `slug` and `position` are edit only. */
 export function parseNodeForm(form: FormData) {
-  const errors: FieldErrors<"title" | "summary" | "slug" | "position" | "parent_id"> = {};
+  const errors: FieldErrors<"title" | "summary" | "slug" | "position" | "parent_id" | "kind" | "choice_group"> = {};
   const title = text(form, "title");
   const summary = text(form, "summary");
   const parent = text(form, "parent_id");
   const slug = text(form, "slug");
   const position = text(form, "position");
+  const kindText = text(form, "kind");
+  const kind = kindText ? oneOf(kindText, NODE_KINDS) : null;
+  const choiceGroup = text(form, "choice_group");
 
   if (!title) errors.title = "Enter a title.";
   else if (title.length > 120) errors.title = "Keep the title to 120 characters.";
@@ -169,12 +184,18 @@ export function parseNodeForm(form: FormData) {
   }
   const positionValue = position ? parseInteger(position) : null;
   if (position && positionValue === null) errors.position = "Enter a whole number.";
+  if (kindText && !kind) errors.kind = "Choose a kind.";
+  if (choiceGroup && !CHOICE_GROUP_PATTERN.test(choiceGroup)) {
+    errors.choice_group = "Use lowercase letters, numbers and hyphens, 2 to 40 characters.";
+  }
 
   const data: NodeFields = {
     title,
     summary: summary || null,
     parent_id: parent || null,
     is_optional: form.get("is_optional") === "on",
+    kind,
+    choice_group: choiceGroup || null,
   };
   return { data, slug: slug || null, position: positionValue, errors };
 }
@@ -280,7 +301,12 @@ export function moveAmongSiblings<T extends TreeNode>(siblings: T[], id: string,
 
 // Draft import plan ----------------------------------------------------------
 
-/** Node rows for one draft roadmap; array order becomes position. Parents are linked in a second pass. */
+/**
+ * Node rows for one draft roadmap; array order becomes position. Parents are
+ * linked in a second pass. A draft without `kind` or `choice_group` writes
+ * null, so the kind stays derived from the tree (and a rerun clears a value
+ * removed from the file).
+ */
 export function draftNodeRows(roadmapId: string, nodes: NodeDraft[]) {
   return nodes.map((node, position) => ({
     roadmap_id: roadmapId,
@@ -289,6 +315,8 @@ export function draftNodeRows(roadmapId: string, nodes: NodeDraft[]) {
     summary: node.summary,
     position,
     is_optional: node.optional,
+    kind: node.kind ?? null,
+    choice_group: node.choice_group ?? null,
   }));
 }
 

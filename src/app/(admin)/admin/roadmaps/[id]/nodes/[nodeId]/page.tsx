@@ -17,7 +17,7 @@ async function NodeEditor({ params }: { params: Promise<{ id: string; nodeId: st
   const { supabase } = await requireAdmin();
   const [{ data: roadmap }, { data: nodes, error }, { data: resources, error: resError }] = await Promise.all([
     supabase.from("roadmaps").select("id, title").eq("id", roadmapId).maybeSingle(),
-    supabase.from("roadmap_nodes").select("id, slug, title, summary, parent_id, position, is_optional, created_at").eq("roadmap_id", roadmapId),
+    supabase.from("roadmap_nodes").select("id, slug, title, summary, parent_id, position, is_optional, kind, choice_group, created_at").eq("roadmap_id", roadmapId),
     supabase.from("node_resources").select("id, label, url, kind, is_active, position, created_at, parent_id:node_id").eq("node_id", nodeId),
   ]);
   if (error || resError) throw new Error("Could not load the node.");

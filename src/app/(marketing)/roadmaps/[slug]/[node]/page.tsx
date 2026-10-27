@@ -1,15 +1,15 @@
-import { ArrowLeft, ArrowRight, BookOpen, ExternalLink, Video, Wrench } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense, type ReactNode } from "react";
 import { Markdown } from "@/components/roadmaps/markdown";
-import { NodeStatus } from "@/components/roadmaps/progress";
 import { ShareButton } from "@/components/roadmaps/share-button";
 import { StudyBuddyPrompt } from "@/components/study-buddy/study-buddy-prompt";
+import { ResourceCards, TopicNeighbours, TopicSummary } from "@/components/roadmaps/topic";
 import { buttonClasses } from "@/components/ui/button";
 import Link from "@/components/ui/link";
 import { markdownToText } from "@/lib/roadmaps/markdown";
-import { getNodeDetail, getPublishedNode, getPublishedPaths, type NodeDetail } from "@/lib/roadmaps/public";
+import { getNodeDetail, getPublishedNode, getPublishedPaths } from "@/lib/roadmaps/public";
 import {
   learnPath,
   nodePath,
@@ -19,6 +19,7 @@ import {
   roadmapPath,
 } from "@/lib/roadmaps/seo";
 import { locateNode, type TreeNode } from "@/lib/roadmaps/tree";
+import { buildRoadmapView, locateInView } from "@/lib/roadmaps/view-model";
 
 type Props = PageProps<"/roadmaps/[slug]/[node]">;
 
@@ -62,7 +63,10 @@ async function Node({ params }: Pick<Props, "params">) {
   const { roadmap, tree } = found;
   const located = locateNode(tree, nodeSlug);
   if (!located) notFound();
-  const { node, ancestors, previous, next } = located;
+  const { node, ancestors } = located;
+  const view = buildRoadmapView(tree);
+  const inView = locateInView(view, nodeSlug);
+  if (!inView) notFound();
   const detail = await getNodeDetail(slug, node.id);
   const path = nodePath(slug, node.slug);
 
@@ -73,7 +77,7 @@ async function Node({ params }: Pick<Props, "params">) {
           <Crumb href="/roadmaps">Roadmaps</Crumb>
           <Crumb href={roadmapPath(slug)}>{roadmap.title}</Crumb>
           {ancestors.map((a) => (
-            <Crumb key={a.id} href={nodePath(slug, a.slug)}>
+            <Crumb key={a.id} href={nodePath(slug, a.slug)} plain>
               {a.title}
             </Crumb>
           ))}
@@ -81,17 +85,7 @@ async function Node({ params }: Pick<Props, "params">) {
       </nav>
 
       <header className="mt-5">
-        <p className="text-sm text-content-3">
-          Topic {node.number} of the {roadmap.title} roadmap
-          {node.is_optional && " · Optional"}
-        </p>
-        <h1 className="mt-1 text-3xl text-content md:text-4xl">{node.title}</h1>
-        <div className="mt-3 min-h-0">
-          <Suspense fallback={null}>
-            <NodeStatus nodeId={node.id} />
-          </Suspense>
-        </div>
-        {node.summary && <p className="mt-3 text-lg text-content-2">{node.summary}</p>}
+        <TopicSummary node={inView.node} section={inView.section} sectionCount={view.sections.length} headingLevel={1} />
 
         <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-start">
           <Link href={learnPath(slug, node.slug)} className={buttonClasses("primary", "w-full sm:w-auto")}>
@@ -120,7 +114,7 @@ async function Node({ params }: Pick<Props, "params">) {
 
       <Block title="Free resources" id="resources">
         {detail.resources.length ? (
-          <Resources resources={detail.resources} />
+          <ResourceCards resources={detail.resources} />
         ) : (
           <ComingSoon>Resources for this topic are coming soon.</ComingSoon>
         )}
@@ -136,41 +130,23 @@ async function Node({ params }: Pick<Props, "params">) {
         </Block>
       )}
 
-      <nav aria-label="Roadmap" className="mt-10 grid gap-3 border-t border-line pt-6 sm:grid-cols-2">
-        {previous ? (
-          <Link href={nodePath(slug, previous.slug)} className="flex min-h-11 flex-col rounded-lg border border-line p-4 hover:bg-surface-sunken">
-            <span className="flex items-center gap-1 text-sm text-content-3">
-              <ArrowLeft aria-hidden className="size-4" /> Previous
-            </span>
-            <span className="text-content">{previous.title}</span>
-          </Link>
-        ) : (
-          <span className="hidden sm:block" />
-        )}
-        {next ? (
-          <Link href={nodePath(slug, next.slug)} className="flex min-h-11 flex-col rounded-lg border border-line p-4 text-right hover:bg-surface-sunken">
-            <span className="flex items-center justify-end gap-1 text-sm text-content-3">
-              Next <ArrowRight aria-hidden className="size-4" />
-            </span>
-            <span className="text-content">{next.title}</span>
-          </Link>
-        ) : (
-          <Link href={roadmapPath(slug)} className="flex min-h-11 flex-col rounded-lg border border-line p-4 text-right hover:bg-surface-sunken">
-            <span className="text-sm text-content-3">End of the roadmap</span>
-            <span className="text-content">Back to the outline</span>
-          </Link>
-        )}
-      </nav>
+      <TopicNeighbours slug={slug} previous={inView.previous} next={inView.next} className="mt-10 border-t border-line pt-6" />
     </article>
   );
 }
 
-function Crumb({ href, children }: { href: string; children: ReactNode }) {
+/**
+ * Links from this page to another topic are plain (document) links: a client
+ * navigation to a topic under /roadmaps/[slug] is intercepted into the topic
+ * panel, which belongs over the roadmap, not over this page.
+ */
+function Crumb({ href, plain = false, children }: { href: string; plain?: boolean; children: ReactNode }) {
+  const Anchor = plain ? "a" : Link;
   return (
     <li className="flex items-center gap-2 after:text-content-3 after:content-['/'] last:after:content-none">
-      <Link href={href} className="underline underline-offset-2 hover:text-content">
+      <Anchor href={href} className="underline underline-offset-2 hover:text-content">
         {children}
-      </Link>
+      </Anchor>
     </li>
   );
 }
@@ -190,53 +166,16 @@ function ComingSoon({ children }: { children: ReactNode }) {
   return <p className="rounded-lg border border-dashed border-line-strong bg-surface-sunken p-4 text-content-2">{children}</p>;
 }
 
-const KIND = {
-  article: { label: "Article", Icon: BookOpen },
-  video: { label: "Video", Icon: Video },
-  practice: { label: "Practice", Icon: Wrench },
-} as const;
-
-function Resources({ resources }: { resources: NodeDetail["resources"] }) {
-  return (
-    <ul className="flex flex-col gap-3">
-      {resources.map((r) => {
-        const { label, Icon } = KIND[r.kind];
-        return (
-          <li key={r.id}>
-            <a
-              href={r.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex min-h-11 items-center gap-3 rounded-lg border border-line bg-surface p-4 hover:bg-surface-sunken"
-            >
-              <Icon aria-hidden className="size-5 shrink-0 text-content-3" />
-              <span className="flex flex-1 flex-col">
-                <span className="font-semibold text-content">{r.label}</span>
-                <span className="text-sm text-content-2">
-                  {label}
-                  {r.source && ` · ${r.source}`}
-                </span>
-              </span>
-              <ExternalLink aria-hidden className="size-4 shrink-0 text-content-3" />
-              <span className="sr-only">(opens in a new tab)</span>
-            </a>
-          </li>
-        );
-      })}
-    </ul>
-  );
-}
-
 function Subtopics({ slug, nodes }: { slug: string; nodes: TreeNode[] }) {
   return (
     <ol className="flex flex-col divide-y divide-line rounded-lg border border-line bg-surface">
       {nodes.map((n) => (
         <li key={n.id}>
-          <Link href={nodePath(slug, n.slug)} className="flex min-h-11 items-center gap-3 px-4 py-2 hover:bg-surface-sunken">
+          <a href={nodePath(slug, n.slug)} className="flex min-h-11 items-center gap-3 px-4 py-2 hover:bg-surface-sunken">
             <span className="w-10 shrink-0 text-sm text-content-3 tabular-nums">{n.number}</span>
             <span className="flex-1 text-content">{n.title}</span>
             <ArrowRight aria-hidden className="size-4 text-content-3" />
-          </Link>
+          </a>
         </li>
       ))}
     </ol>

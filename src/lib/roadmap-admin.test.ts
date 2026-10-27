@@ -5,6 +5,7 @@ import {
   draftNodeRowsWithParents,
   flattenTree,
   moveAmongSiblings,
+  parseNodeForm,
   parseResourceForm,
   parseRoadmapForm,
   planResources,
@@ -44,6 +45,25 @@ describe("parseRoadmapForm", () => {
   it("rejects bad slugs, unknown tracks and non numbers", () => {
     const { errors } = parseRoadmapForm(form({ title: "", slug: "Bad Slug", track: "astrology", display_order: "1.5" }));
     expect(Object.keys(errors).sort()).toEqual(["display_order", "slug", "title", "track"]);
+  });
+});
+
+describe("parseNodeForm", () => {
+  it("stores an empty kind and choice group as null, so the kind is derived from the tree", () => {
+    const { data, errors } = parseNodeForm(form({ title: "Git and GitHub", kind: "", choice_group: "" }));
+    expect(errors).toEqual({});
+    expect(data).toMatchObject({ kind: null, choice_group: null });
+  });
+
+  it("keeps a valid kind and choice group", () => {
+    const { data, errors } = parseNodeForm(form({ title: "Excel", kind: "checkpoint", choice_group: "spreadsheet-tool" }));
+    expect(errors).toEqual({});
+    expect(data).toMatchObject({ kind: "checkpoint", choice_group: "spreadsheet-tool" });
+  });
+
+  it("rejects an unknown kind and a choice group the database would refuse", () => {
+    const { errors } = parseNodeForm(form({ title: "Excel", kind: "quiz", choice_group: "Pick One" }));
+    expect(Object.keys(errors).sort()).toEqual(["choice_group", "kind"]);
   });
 });
 
@@ -109,6 +129,33 @@ describe("draft import plan", () => {
     const rows = draftNodeRowsWithParents("r1", nodes, new Map([["foundations", "f"], ["git", "g"]]));
     expect(rows[1]).toMatchObject({ id: "g", parent_id: "f", position: 1, is_optional: true, roadmap_id: "r1" });
     expect(rows[0].parent_id).toBeNull();
+  });
+
+  it("round trips kind and choice_group, and writes null when a draft leaves them out", () => {
+    const nodes = [
+      { slug: "tools", title: "Tools", summary: "s", parent: null, optional: false, resources: [] },
+      { slug: "excel", title: "Excel", summary: "s", parent: "tools", optional: false, choice_group: "sheet-tool", resources: [] },
+      { slug: "sheets", title: "Sheets", summary: "s", parent: "tools", optional: false, choice_group: "sheet-tool", resources: [] },
+      { slug: "check", title: "Check", summary: "s", parent: "tools", optional: false, kind: "checkpoint" as const, resources: [] },
+    ];
+    const ids = new Map(nodes.map((n) => [n.slug, n.slug]));
+    const rows = draftNodeRowsWithParents("r1", nodes, ids);
+    expect(rows.map((r) => [r.slug, r.kind, r.choice_group])).toEqual([
+      ["tools", null, null],
+      ["excel", null, "sheet-tool"],
+      ["sheets", null, "sheet-tool"],
+      ["check", "checkpoint", null],
+    ]);
+  });
+
+  it("the existing drafts import unchanged: no kinds or choice groups yet", () => {
+    for (const draft of ROADMAP_DRAFTS) {
+      const ids = new Map(draft.nodes.map((n) => [n.slug, `id-${n.slug}`]));
+      for (const row of draftNodeRowsWithParents("r1", draft.nodes, ids)) {
+        expect(row.kind).toBeNull();
+        expect(row.choice_group).toBeNull();
+      }
+    }
   });
 
   it("inserts new links once and updates existing ones by URL, so a rerun never duplicates", () => {

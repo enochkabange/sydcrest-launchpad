@@ -113,6 +113,9 @@ test("a published roadmap shows its outline, metadata and share card", async ({ 
   await expect(meta(page, "og:title")).toHaveAttribute("content", `${seed.title} roadmap · SydCrest Launchpad`);
   await expect(meta(page, "og:image")).toHaveAttribute("content", new RegExp(`/og/roadmaps/${seed.slug}$`));
 
+  // The map is the default view; List shows the outline.
+  await expect(page.getByRole("list", { name: "Roadmap map" })).toBeVisible();
+  await page.getByRole("button", { name: "List" }).click();
   const outline = page.getByRole("list", { name: "Roadmap outline" });
   await expect(outline.getByRole("link", { name: /Foundations/ })).toHaveAttribute("href", `${path}/foundations`);
   await expect(outline.getByRole("link", { name: /1\.1\s*Spreadsheets first/ })).toBeVisible();
@@ -221,7 +224,14 @@ test("a signed in learner sees their progress marks", async ({ page }, testInfo)
     await expect(page).toHaveURL(/\/dashboard$/);
 
     await page.goto(`/roadmaps/${seed.slug}`);
-    await expect(page.getByTestId("roadmap-progress")).toHaveText("1 of 3 topics done.");
+    await expect(page.getByTestId("roadmap-progress")).toHaveText("1 of 3 required topics done.");
+    await expect(page.getByRole("progressbar", { name: "Roadmap progress" })).toHaveAttribute("aria-valuenow", "33");
+    // The map colours topics by status: one done, one in progress, and its section count.
+    const map = page.getByRole("list", { name: "Roadmap map" });
+    await expect(map.locator('[data-progress="done"]')).toHaveCount(1);
+    await expect(map.locator('[data-progress="in_progress"]')).toHaveCount(1);
+    await expect(map.getByText("1 of 3 required done")).toBeVisible();
+    await page.getByRole("button", { name: "List" }).click();
     await expect(page.locator('[data-progress="done"]')).toHaveCount(1);
     await expect(page.locator('[data-progress="in_progress"]')).toHaveCount(1);
     await expect(page.locator('[data-progress="not_started"]')).toHaveCount(2);

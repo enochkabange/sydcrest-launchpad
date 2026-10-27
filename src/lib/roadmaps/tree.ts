@@ -11,6 +11,10 @@ export type FlatNode = {
   summary: string | null;
   position: number;
   is_optional: boolean;
+  /** Null or missing: derived from depth (see view-model.ts). */
+  kind?: "section" | "topic" | "checkpoint" | null;
+  /** Siblings sharing a value are "pick one of these" alternatives. */
+  choice_group?: string | null;
 };
 
 export type TreeNode = FlatNode & {
