@@ -293,7 +293,7 @@ Many organisations agree a service level agreement (SLA): for example, urgent ti
 Fuseini builds a simple ticket system for a small clinic in Yendi using a free online form. Staff fill in name, department, problem and urgency. Each entry lands in a spreadsheet where Fuseini adds actions, status and the fix. After a month he sorts the sheet and sees that most tickets are about one old printer. He shows the manager the list, and the clinic budgets for a replacement. The tickets did more than track work: they gave evidence for a decision.`,
       practice_task_md: `**Goal:** build a working ticket system with free tools.
 
-1. Using Google Forms (works in a phone browser), create a form called "IT Help Request" with fields: name, department, device, description of the problem, urgency (low, medium, high).
+1. Using a free form tool such as Google Forms (works in a phone browser), create a form called "IT Help Request" with fields: name, department, device, description of the problem, urgency (low, medium, high).
 2. Link it to a Google Sheet. Add columns for status, actions taken, cause, resolution and date closed.
 3. Submit five pretend tickets for an invented office, such as "printer jams", "forgot email password", "internet off in whole office".
 4. For each ticket, fill in the actions and resolution as if you fixed it, and set a priority.
@@ -701,13 +701,13 @@ Abdul-Rahman supports a pharmacy in Bolgatanga. After a storm, the router and th
     "printers-and-peripherals": {
       explanation_md: `## Why this matters
 
-In Ghanaian offices, schools and banks, printers, copiers and scanners produce a big share of everyday support calls. Some adverts are entirely about printers: maintaining office printer fleets, servicing multifunction copiers, managing toner and ink. Being the person who can calmly fix the printer before a deadline earns you a lot of goodwill.
+In Ghanaian offices, schools and banks, printers, copiers and scanners are behind many everyday support calls. Some adverts are entirely about printers: maintaining office printer fleets, servicing multifunction copiers, managing toner and ink. Being the person who can calmly fix the printer before a deadline earns you a lot of goodwill.
 
 ## Kinds of printers
 
 * **Inkjet.** Sprays liquid ink. Cheap to buy, good for colour, but ink can dry out if unused. Many small businesses use ink tank models that refill from bottles.
 * **Laser.** Uses toner powder fused onto paper with heat. Fast and cheaper per page for lots of black text; common in offices.
-* **Thermal.** Uses heat sensitive paper; used for receipts at tills and MoMo agents' printers.
+* **Thermal.** Uses heat sensitive paper; used for receipts at shop tills and on point of sale machines.
 * **Multifunction (MFP).** Prints, copies, scans and sometimes faxes. Larger office copiers are usually multifunction devices.
 
 ## How printers connect
@@ -741,7 +741,7 @@ Hawa, at a Bolgatanga school, gets three calls: nobody can print to the staff ro
       quiz: {
         questions: [
           {
-            prompt: "Which type of printer is commonly used for receipts at tills and MoMo agents?",
+            prompt: "Which type of printer is commonly used for receipts at shop tills and on point of sale machines?",
             options: ["Laser", "Thermal", "Inkjet", "Plotter"],
             answer_index: 1,
             explanation: "Thermal printers use heat sensitive paper and are common for receipts.",
@@ -888,7 +888,7 @@ Install only from official sources: the Microsoft Store, the software maker's ow
 
 ## Supported versions
 
-Microsoft stopped regular support for Windows 10 in October 2025, which means no more free security updates for most users. Organisations still on Windows 10 should plan to move to Windows 11 where the hardware allows, or replace machines. Knowing this helps you give managers sound advice.
+Microsoft ended support for Windows 10 on 14 October 2025. Eligible Windows 10 computers can join Microsoft's Extended Security Updates programme to keep getting security fixes for a limited time, but that is a short bridge, not a long term plan. Organisations still on Windows 10 should plan to move to Windows 11 where the hardware allows, or replace machines. Knowing this helps you give managers sound advice.
 
 ## Repair or reinstall
 
@@ -1017,7 +1017,7 @@ Linux practice needs a computer. You can make a "live USB" from the official Ubu
 
 ## A small example
 
-Abdul-Rahman starts as a junior technician at an internet provider in Kumasi. His supervisor asks him to check why a small Linux server is misbehaving. He signs in, runs \`df -h\` and sees the disk is full. Using \`ls -l\` in \`/var/log\` he finds an enormous log file. He reports it, and the supervisor sets up automatic log clean up. Three commands found the problem.`,
+Abdul-Rahman starts as a junior technician at an internet provider in Kumasi. His supervisor asks him to check why a small Linux server is misbehaving. He signs in, runs \`df -h\` and sees the disk is full. Using \`ls -l\` in \`/var/log\` he finds an enormous log file. He reports it, and the supervisor sets up automatic log clean up. Two simple commands found the problem.`,
       practice_task_md: `**Goal:** learn the first Linux commands. This needs a computer for full practice.
 
 **With a computer:** follow the free Ubuntu tutorial "The Linux command line for beginners" linked to this topic, using a live USB or an installed Ubuntu. Then:
@@ -1106,7 +1106,7 @@ A full phone is slow, crashes apps and cannot update. Check Settings, then Stora
 
 ## Backup and lost phones
 
-* Turn on Google backup (Settings, then Google, then Backup) so contacts, photos and settings can be restored on a new phone. Back up WhatsApp chats from inside WhatsApp.
+* Turn on Google backup (often Settings, then Google, then Backup; the path varies by phone maker) so contacts, photos and settings can be restored on a new phone. Back up WhatsApp chats from inside WhatsApp.
 * If a phone is lost or stolen, use Google's find, lock and erase feature from another device, signed in with the same Google account. Then contact the network to block the SIM and change important passwords.
 * Before a factory reset, back up and know the Google account password: after a reset, the phone asks for the previous account to stop thieves using it.
 
@@ -1672,7 +1672,7 @@ A Ghanaian bank, NGO or school can lose money, data and trust in a single aftern
 
 ## Your role, and its limits
 
-IT support is not the same as a full cybersecurity job, but you will be the person staff ask "is this email real?" and the person who notices a strange login first. Your job is to prevent the common problems, spot warning signs, contain damage (for example by disconnecting an infected machine) and report to the right people. In larger organisations that means a security team; for serious cybercrime in Ghana, the Cyber Security Authority runs an incident reporting service on its official website. This section is also the doorway to the cybersecurity track if you want to go further.
+IT support is not the same as a full cybersecurity job, but you will be the person staff ask "is this email real?" and the person who notices a strange login first. Your job is to prevent the common problems, spot warning signs, contain damage (for example by disconnecting an infected machine) and report to the right people. In larger organisations that means a security team; for serious cybercrime in Ghana, the Cyber Security Authority runs an incident reporting service on its official website. This section is also the doorway to SydCrest's Cybersecurity Analyst roadmap if you want to go further.
 
 ## A small example
 
@@ -1982,7 +1982,7 @@ Wumpini supports a private school in Tamale. The bursar keeps fees records only 
       practice_task_md: `**Goal:** create and test a backup plan.
 
 1. Choose your own phone and, if you have one, a computer. List the data you could not bear to lose.
-2. Turn on Google backup on your phone (Settings, then Google, then Backup) and back up your WhatsApp chats. Use Wi-Fi or an off peak bundle for the first backup.
+2. Turn on Google backup on your phone (often Settings, then Google, then Backup; the path varies by phone maker) and back up your WhatsApp chats. Use Wi-Fi or an off peak bundle for the first backup.
 3. Pick five important files or photos and restore them from your backup to a new location to prove it works.
 4. Write a one page backup plan for a small business using the three copies rule: what is backed up, where, how often, who is responsible and how restores are tested.
 
@@ -2139,7 +2139,7 @@ Ghanaian IT support adverts most often ask for a degree in IT, computer science 
 * **Technical universities** offer HND and degree programmes in computing and ICT. An HND is accepted by some employers, including some rural and community banks.
 * **Private training institutes** in Ghana offer diplomas and certificates in subjects such as hardware and networking, network engineering and preparation for international certifications. Check whether a course is accredited and what employers in your area think of it.
 * **TVET routes.** Ghana's technical and vocational system uses competency based training with national certificates, and some private centres have had computer hardware and networking courses accredited for NVTI certification. Ask the centre exactly which body certifies the course.
-* **Free and low cost programmes.** Some organisations run sponsored cohorts linked to cloud and IT support careers, such as AWS re/Start, which is offered through local partners. Entry rules and locations vary, so check each one.
+* **Free and low cost programmes.** Some organisations run sponsored cohorts linked to cloud and IT support careers, such as AWS re/Start, which Amazon runs with partner organisations in selected countries. Entry rules, locations and whether a cohort is open near you vary, so check the official page for each one.
 
 For any local programme, ask: Who accredits it? Is there hands on practice with real equipment? What did past students go on to do?
 
@@ -2335,7 +2335,7 @@ IT support is a respected job in its own right, and many people build long caree
 
 Security teams protect organisations from attacks. Entry roles include security operations (SOC) analyst, who watches alerts and investigates suspicious activity, and IT security officer in banks and larger organisations.
 
-What carries over from this roadmap: accounts and access, phishing awareness, updates, backups, Linux and network troubleshooting. What you add: how attacks work, reading logs, security tools, incident response and security frameworks. SydCrest's cybersecurity roadmap builds directly on this one. Certifications often seen at this stage include CompTIA Security+ and the Google Cybersecurity Professional Certificate, named here as examples.
+What carries over from this roadmap: accounts and access, phishing awareness, updates, backups, Linux and network troubleshooting. What you add: how attacks work, reading logs, security tools, incident response and security frameworks. SydCrest's Cybersecurity Analyst roadmap builds directly on this one. Certifications often seen at this stage include CompTIA Security+ and the Google Cybersecurity Professional Certificate, named here as examples.
 
 ## Path 2: Network engineering
 
@@ -2353,7 +2353,7 @@ What carries over: Windows, Linux, accounts, backups. What you add: Windows Serv
 
 More organisations now run email, files and systems in cloud services such as Microsoft 365, Microsoft Azure, Amazon Web Services and Google Cloud. Entry roles include cloud support associate and junior cloud engineer.
 
-What carries over: networking, Linux, accounts and security. What you add: cloud fundamentals, virtual machines and storage, identity in the cloud, and automation. Fundamentals certifications from the big cloud providers are a common first step, and AWS re/Start is one structured programme that runs in Ghana through local partners. If SydCrest adds a cloud roadmap, it will build on this one.
+What carries over: networking, Linux, accounts and security. What you add: cloud fundamentals, virtual machines and storage, identity in the cloud, and automation. Fundamentals certifications from the big cloud providers are a common first step. Structured programmes such as AWS re/Start, which runs with partner organisations in selected countries, are another; check the official page to see whether a cohort is open to you. SydCrest's Cloud and DevOps roadmap builds on this one.
 
 ## Phone or computer?
 

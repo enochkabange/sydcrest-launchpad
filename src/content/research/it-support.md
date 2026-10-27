@@ -18,7 +18,7 @@ universities; a telco; manufacturers; print service companies; and IT service fi
 supply desktop support to other businesses. Most listings are in Accra and Tema, with Kumasi,
 Takoradi, Obuasi and Tamale also appearing. The catalogue (`Planning/12_TRACK_CATALOGUE.md`)
 already flagged this track as the natural gateway into cybersecurity and cloud, and found
-IT support programmes at OpenLabs, IPMC (CompTIA N+ short course), AmaliTech (AWS re/Start),
+IT support programmes at OpenLabs, IPMC (CompTIA N+ short course), AmaliTech (AWS re/Start, a planning note only, not verified on an official page, so not stated in content),
 Google and AWS. Many of those are cohort or campus based, so the track tells learners
 honestly that they can use it to prepare.
 
@@ -61,7 +61,11 @@ honestly that they can use it to prepare.
 | D6 | World Standards: plug and voltage by country (Ghana 230 V, 50 Hz, types D and G) | https://worldstandards.eu/electricity/plug-voltage-by-country/ | 2026-10-25 | Reference table (search result, cross checked with other tables) |
 | D7 | Wikipedia: Surge protector; Uninterruptible power supply | https://en.wikipedia.org/wiki/Surge_protector | 2026-10-25 | CC BY-SA 4.0; concepts only, linked as resources |
 | D8 | Microsoft Learn post: MCSA, MCSD, MCSE retire, move to role based certifications (retired 31 January 2021) | https://docs.microsoft.com/en-us/learn/certifications/posts/mcsa-mcsd-mcse-certifications-retire-with-continued-investment-to-role-based-certifications | 2026-10-25 | Official post (seen via search; date confirmed by Global Knowledge coverage) |
-| D9 | AWS re/Start programme page | https://aws.amazon.com/training/restart/ | 2026-10-25 | Official programme page |
+| D9 | AWS re/Start programme page | https://aws.amazon.com/training/restart/ | 2026-10-25, rechecked 2026-10-27 | Official programme page. Says the programme runs through collaborating organisations and that availability varies by location; it does not list Ghana. Content therefore says only that it runs with partners in selected countries and tells learners to check the official page; no claim that it runs in Ghana |
+| D13 | Microsoft: Windows 10 end of support | https://www.microsoft.com/en-us/windows/end-of-support | 2026-10-27 | Official page: support ended 14 October 2025; Extended Security Updates available for eligible PCs for a limited time |
+| D14 | APC by Schneider Electric FAQ FA158812: laser printers and UPS | https://www.apc.com/fi/en/faqs/FA158812 | 2026-10-27 | Official vendor FAQ: laser printers not recommended on a UPS because of high power draw; a surge protector is usually adequate |
+| D15 | Data Protection Commission, Ghana | https://dpc.gov.gh/ | 2026-10-27 | Official regulator site: established under the Data Protection Act, 2012 (Act 843) |
+| D16 | Wikipedia: Mains electricity by country (Ghana row: types D and G, 230 V, 50 Hz) | https://en.wikipedia.org/wiki/Mains_electricity_by_country | 2026-10-27 | CC BY-SA 4.0; cross check of D6, facts only |
 | D10 | Peace FM Online (2015): NVTI provisional accreditation of RIT centres for computer hardware and networking, mobile hardware servicing | https://www.peacefmonline.com/pages/local/news/201509/255289.php | 2026-10-25 | News report (snippet); used only to say that some private centres have had courses accredited for NVTI certification |
 | D11 | CTVET presentation to BILT (2023): national TVET qualifications framework, competency based training | https://connect.unevoc.unesco.org/up/CTVET_PRESENTATION_to_BILT_03_2023.pdf | 2026-10-25 | Public presentation (snippet) |
 | D12 | Microsoft Support: Windows help, printers, Wi-Fi, backup pages | https://support.microsoft.com/en-us/windows | 2026-10-25 | Official docs |

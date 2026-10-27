@@ -183,7 +183,7 @@ export const itSupport: RoadmapDraft = {
       slug: "printers-and-peripherals",
       title: "Printers and peripherals",
       summary:
-        "Printers, scanners and copiers cause a large share of office support calls. Learn how they connect, how to install and share them, and how to clear the most common faults.",
+        "Printers, scanners and copiers are behind many everyday office support calls. Learn how they connect, how to install and share them, and how to clear the most common faults.",
       parent: "hardware",
       optional: false,
       resources: [msPrinter],
