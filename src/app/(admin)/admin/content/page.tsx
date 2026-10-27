@@ -41,13 +41,15 @@ async function ContentAdmin() {
 
   return (
     <>
-      <h1 className="text-3xl text-content">Node content</h1>
+      <h1 className="text-title text-content">Node content</h1>
       {!hasKey && (
         <Alert tone="info">AI generation is off: ANTHROPIC_API_KEY is not set. You can still estimate costs.</Alert>
       )}
       {!hasDb && <Alert tone="info">Content writes are off: SUPABASE_SECRET_KEY is not set.</Alert>}
+      {/* Stacked on phones; Generate and Collect side by side from lg. */}
+      <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:items-start">
       <section className="flex flex-col gap-4 rounded-lg border border-line bg-surface p-4 md:p-6">
-        <h2 className="text-xl text-content">Generate</h2>
+        <h2 className="text-subtitle text-content">Generate</h2>
         <p className="text-content-2">
           Sends each node to the Batch API with {contentModel()} for an explanation, a practice task and a quiz of three
           to five questions. Results are checked before anything is saved. Review the content before publishing a
@@ -56,17 +58,18 @@ async function ContentAdmin() {
         <GenerateForm roadmaps={roadmaps ?? []} />
       </section>
       <section className="flex flex-col gap-4 rounded-lg border border-line bg-surface p-4 md:p-6">
-        <h2 className="text-xl text-content">Collect</h2>
+        <h2 className="text-subtitle text-content">Collect</h2>
         <p className="text-content-2">Saves the results of a finished batch. Collecting the same batch twice is safe.</p>
         <CollectForm batches={batches} />
       </section>
+      </div>
     </>
   );
 }
 
 export default function ContentAdminPage() {
   return (
-    <div className="flex max-w-2xl flex-col gap-6">
+    <div className="flex max-w-2xl flex-col gap-6 lg:max-w-none">
       {/* The heading renders after the admin check so others see only the 404. */}
       <Suspense fallback={<div className="h-96 animate-skeleton rounded-lg bg-surface-sunken" />}>
         <ContentAdmin />

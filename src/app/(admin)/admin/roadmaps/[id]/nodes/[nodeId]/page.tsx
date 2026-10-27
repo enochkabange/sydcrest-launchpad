@@ -35,11 +35,15 @@ async function NodeEditor({ params }: { params: Promise<{ id: string; nodeId: st
       <Link href={`/admin/roadmaps/${roadmap.id}`} className="inline-flex min-h-11 items-center self-start text-sm text-content-link">
         Back to {roadmap.title}
       </Link>
-      <h1 className="text-3xl text-content">{node.title}</h1>
+      <h1 className="text-title text-content">{node.title}</h1>
+      {/* One column on phones. From lg the node's fields sit beside its links. */}
+      <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2 lg:items-start lg:gap-10 xl:gap-12">
+      <div className="flex flex-col gap-6">
       <NodeForm roadmapId={roadmap.id} parents={parents} node={node} />
+      </div>
 
-      <section className="flex flex-col gap-4 border-t border-line pt-6">
-        <h2 className="text-xl text-content">Links</h2>
+      <section className="flex flex-col gap-4 border-t border-line pt-6 lg:border-t-0 lg:pt-0">
+        <h2 className="text-subtitle text-content">Links</h2>
         {resources.length === 0 && <p className="text-content-2">No links on this node yet.</p>}
         <ul className="flex flex-col gap-4">
           {sortSiblings(resources).map((r) => (
@@ -59,13 +63,14 @@ async function NodeEditor({ params }: { params: Promise<{ id: string; nodeId: st
           ))}
         </ul>
         <div className="flex flex-col gap-3 rounded-lg border border-line p-4">
-          <h3 className="text-lg text-content">Add a link</h3>
+          <h3 className="text-h3 text-content">Add a link</h3>
           <ResourceForm nodeId={node.id} />
         </div>
       </section>
+      </div>
 
       <section className="flex flex-col gap-3 border-t border-line pt-6">
-        <h2 className="text-xl text-content">Delete node</h2>
+        <h2 className="text-subtitle text-content">Delete node</h2>
         <p className="text-content-2">Deleting removes this node, every node under it, their links and learner progress on them.</p>
         <form action={deleteNode}>
           <input type="hidden" name="id" value={node.id} />
@@ -81,7 +86,7 @@ async function NodeEditor({ params }: { params: Promise<{ id: string; nodeId: st
 
 export default function NodePage({ params }: PageProps<"/admin/roadmaps/[id]/nodes/[nodeId]">) {
   return (
-    <div className="flex max-w-xl flex-col gap-6">
+    <div className="flex max-w-xl flex-col gap-6 lg:max-w-none">
       <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>
         <NodeEditor params={params} />
       </Suspense>

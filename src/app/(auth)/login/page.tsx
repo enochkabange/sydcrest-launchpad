@@ -24,7 +24,7 @@ export default function LoginPage({ searchParams }: PageProps<"/login">) {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-2">
-        <h1 className="text-3xl text-content">Welcome back</h1>
+        <h1 className="text-title text-content">Welcome back</h1>
         <p className="text-content-2">Pick up where you left off.</p>
       </div>
       <Suspense>

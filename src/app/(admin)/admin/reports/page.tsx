@@ -19,7 +19,7 @@ const FILTERS = [
 
 export default function ReportsPage({ searchParams }: PageProps<"/admin/reports">) {
   return (
-    <div className="flex max-w-3xl flex-col gap-6">
+    <div className="flex flex-col gap-6">
       <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>
         <Queue searchParams={searchParams} />
       </Suspense>
@@ -43,7 +43,7 @@ async function Queue({ searchParams }: Pick<PageProps<"/admin/reports">, "search
 
   return (
     <div className="flex flex-col gap-4">
-      <h1 className="text-3xl text-content">Reports</h1>
+      <h1 className="text-title text-content">Reports</h1>
       <nav aria-label="Report status" className="flex flex-wrap gap-1">
         {FILTERS.map((f) => (
           <Link
@@ -62,7 +62,7 @@ async function Queue({ searchParams }: Pick<PageProps<"/admin/reports">, "search
       {reports.length === 0 ? (
         <p className="rounded-lg border border-line p-5 text-content-2">No reports here.</p>
       ) : (
-        <ul className="flex flex-col gap-3">
+        <ul className="flex flex-col gap-3 lg:grid lg:grid-cols-2 lg:items-start lg:gap-4">
           {reports.map((r) => (
             <li key={r.id} className="flex flex-col gap-3 rounded-lg border border-line p-4">
               <div className="flex flex-wrap items-baseline justify-between gap-2">
