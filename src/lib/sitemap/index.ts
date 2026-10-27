@@ -1,3 +1,4 @@
+import { chapterEntries } from "./chapters";
 import { expertEntries } from "./experts";
 import { corePages } from "./pages";
 import { roadmapEntries } from "./roadmaps";
@@ -12,4 +13,5 @@ export const SITEMAP_SOURCES: SitemapSource[] = [
   corePages,
   roadmapEntries,
   expertEntries,
+  chapterEntries,
 ];
