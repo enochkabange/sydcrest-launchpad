@@ -185,7 +185,7 @@ No code tools are not right for everything. Very large systems, unusual features
             prompt: "Why did Abdul-Rahman start the football club project with a form and a sheet instead of an app?",
             options: [
               "Apps cannot store phone numbers",
-              "The club committee had asked him never to build an app because apps are too expensive to run",
+              "No code app builders are not able to store the names and ages of children in a football club",
               "A form and sheet solved most of it quickly",
               "Forms are the only no code tool that works in Wa",
             ],
@@ -384,7 +384,7 @@ Fuseini is asked to build a booking form and reminder automation for a barbering
             options: [
               "Tools set up under a personal account cannot store any data",
               "So the client is not stuck when you move on",
-              "Because vendors only allow registered businesses to sign up, and personal accounts are blocked",
+              "Because the tools will not let a personal account create a form or app that strangers can use",
               "So that you never need to test the build",
             ],
             answer_index: 1,
@@ -808,6 +808,422 @@ Remember: a report is only as good as the data under it, so clean first, summari
           },
         ],
         pass_threshold: 80,
+      },
+    },
+    forms: {
+      explanation_md: `Think of a form as the front door of a system. Orders, bookings, registrations, complaints and survey answers all come in through it, and they arrive in the same shape every time, ready to land in a table. If the door is well built, everything behind it works better.
+
+Forms are also where Ghanaian job adverts for no code skills are strongest. Data collection officer, enumerator and monitoring and evaluation roles at NGOs and research firms, including roles based in Tamale, name mobile survey tools such as KoboToolbox, ODK, SurveyCTO and CommCare. Being comfortable with these tools can be the difference between applying and being shortlisted.
+
+## Two kinds of form
+
+**Everyday online forms.** Tools such as Google Forms and Microsoft Forms let anyone with a link fill in a form in a browser. They are great for shop orders, event registrations, feedback and short surveys where respondents have some internet access. Responses can flow straight into a spreadsheet.
+
+**Field survey tools.** KoboToolbox, ODK and similar tools are built for research and humanitarian work. Trained data collectors, often called enumerators, visit households or farms and fill in long questionnaires on Android phones or tablets, often far from network. The apps save everything on the device and upload later. They also handle GPS locations, photos, skip logic and careful checks on answers.
+
+Both kinds share the same skills: asking clear questions, choosing the right question type, checking answers as they come in and connecting responses to a table.
+
+## What this section covers
+
+* **Online forms for orders and bookings:** question types, clear wording, required questions and sending responses to a sheet.
+* **Field surveys with KoboToolbox and ODK:** how these tools work from design to upload, and what an enumerator actually does.
+* **Skip logic, checks and XLSForm (optional):** making surveys smarter, so they skip questions that do not apply and reject impossible answers, using the XLSForm spreadsheet format.
+
+## Personal data comes in through forms
+
+Most forms collect personal data: names, phone numbers, locations, sometimes health or income details. In Ghana, the Data Protection Act, 2012 (Act 843) sets rules for collecting and using personal data. As a form builder you should only ask what the project truly needs, tell people why you are asking, and keep the responses where only the right people can see them. The privacy lesson later in the track covers this properly; keep it in mind from your very first form.
+
+## A worked example
+
+Amina helps a women's group in Walewale. They want to know which members are interested in a shea butter processing training. Before building anything, she writes down the purpose ("plan the training"), the five things the group truly needs to know, and who will see the answers (only the group leader and herself). Only then does she open a form builder.
+
+Because most members have phones but patchy data, she keeps the form short and asks the leader to also share a printed copy for members without phones, which Amina later types in.
+
+## Device notes
+
+Filling in forms works on any device. Building a short online form works in a phone browser too. Designing long field surveys is much easier on a computer, which the survey logic lesson explains.`,
+      practice_task_md: `**Goal:** Plan a form properly before you build it.
+
+**Steps:**
+1. Choose a real need: a club registration, a small shop's order list or a feedback form for a training.
+2. Write the purpose of the form in one sentence.
+3. List every question you might ask, then cross out any you do not truly need for that purpose.
+4. Next to each remaining question, note whether it collects personal data.
+5. Write who will be allowed to see the responses.
+6. Decide whether respondents will use an online form or need a field survey tool that works offline, and write why.
+
+**Done looks like:** A one page plan with a purpose, a short question list with personal data marked, who sees the answers, and your choice of form type with a reason.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What makes field survey tools such as KoboToolbox and ODK different from everyday online forms?",
+            options: [
+              "They only work on desktop computers in an office",
+              "They can only collect yes or no answers",
+              "They save data on the device far from network and upload later",
+              "They cannot store GPS locations or photos, so teams have to collect those separately on paper",
+            ],
+            answer_index: 2,
+            explanation: "The lesson explains field apps save everything on the device and upload later, and handle GPS and photos.",
+          },
+          {
+            prompt: "Which Ghanaian law sets rules for collecting personal data through forms?",
+            options: [
+              "The Data Protection Act, 2012 (Act 843)",
+              "The Companies Act, which covers how businesses are registered and named",
+              "The Road Traffic Act",
+              "The Copyright Act",
+            ],
+            answer_index: 0,
+            explanation: "The lesson names the Data Protection Act, 2012 (Act 843) as setting rules for personal data.",
+          },
+          {
+            prompt: "What did Amina do before opening a form builder?",
+            options: [
+              "Chose a colourful theme for the form",
+              "Wrote the purpose, the five things truly needed and who would see the answers",
+              "Sent the link to every WhatsApp group she could find so that more people would answer it",
+              "Bought a tablet for each member",
+            ],
+            answer_index: 1,
+            explanation: "The example shows Amina planning purpose, questions and access before building.",
+          },
+          {
+            prompt: "What is an enumerator, as described in the lesson?",
+            options: [
+              "A program that counts form responses",
+              "A manager who designs the dashboard after a survey has been completed and uploaded",
+              "A type of question in an online form",
+              "A trained data collector who visits households or farms to fill in questionnaires",
+            ],
+            answer_index: 3,
+            explanation: "The lesson describes enumerators as trained data collectors who fill in questionnaires in the field.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "online-forms": {
+      explanation_md: `An online form is often the first build a small business or group asks for. A chop bar in Tamale wants lunch orders before noon. A church youth group wants members registered for a retreat. A tailor wants customers to book fittings. With a form builder such as Google Forms or Microsoft Forms, you can set any of these up in an afternoon, on a phone or a computer.
+
+## Choose the right question type
+
+Form builders offer several question types. Picking well makes answers easier to give and easier to use.
+
+* **Short answer:** a name, a phone number, a single number.
+* **Paragraph:** longer comments or complaints. Use sparingly; free text is hard to summarise.
+* **Multiple choice:** pick one, such as "Jollof, waakye or banku".
+* **Checkboxes:** pick any number, such as extra toppings.
+* **Dropdown:** pick one from a longer list, such as a district.
+* **Date and time:** bookings and deadlines.
+* **Linear scale:** ratings from 1 to 5.
+
+Prefer choices over typing whenever the answers are known in advance. They are faster on a small screen and keep your data clean.
+
+## Write clear questions
+
+* Ask one thing per question. "Name and phone number" should be two questions.
+* Use the words your respondents use.
+* Add a short description where a format matters, such as "10 digit phone number".
+* Put easy questions first and sensitive ones near the end.
+* Keep it short. Every extra question loses some people.
+
+## Required questions and validation
+
+Mark essential questions as **required** so they cannot be skipped. Short answer questions can also have **response validation**, such as accepting only numbers or a certain length, which catches a nine digit phone number before it reaches your sheet.
+
+## Sections and branching
+
+Long forms can be split into **sections**. In Google Forms, multiple choice and dropdown questions can send people to different sections depending on their answer, using "Go to section based on answer". For example, people who answer "Delivery" go to a section asking for their address, while people who answer "Pick up" skip it.
+
+## Send responses to a sheet
+
+Each form keeps its own responses, but the real power comes from linking it to a spreadsheet. In Google Forms you do this from the Responses tab. Every new submission then appears as a new row, one column per question, ready for reports, apps and automations.
+
+## A worked example
+
+Wumpini sets up lunch orders for her aunt's chop bar in Tamale. Her form asks for the customer's name, phone number, the dish (multiple choice), quantity (short answer, numbers only, required), and "Delivery or pick up" with branching to an address section. She links it to a sheet, tests it three times from her phone, deletes the test rows, and shares the link in the chop bar's WhatsApp group. Her aunt now reads a tidy list instead of thirty chat messages.
+
+Because the form collects names and phone numbers, Wumpini adds a line saying why: "so we can call you when your order is ready". That is a good habit, and the privacy lesson explains why it matters under Ghana's Data Protection Act.`,
+      practice_task_md: `**Goal:** Build and test a real order or registration form.
+
+**Steps:**
+1. Open a form builder such as Google Forms or Microsoft Forms in your browser on your phone or computer.
+2. Build a form for a chop bar order, a club registration or a training sign up, with at least five questions using three different question types.
+3. Make the key questions required and add validation to a phone or quantity question.
+4. Add one branch: an answer that sends people to a different section.
+5. Add a sentence at the top saying why you collect any personal data.
+6. Link responses to a spreadsheet, submit three test responses, check the rows, then delete the test rows.
+
+**Done looks like:** A working form link, a linked sheet with clean columns, and a screenshot of the branching setting. Ask a friend to fill it in and tell you anything confusing.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which question type suits choosing one district from a long list?",
+            options: [
+              "Paragraph",
+              "Linear scale",
+              "Checkboxes, so people can pick several districts at once if they are not sure",
+              "Dropdown",
+            ],
+            answer_index: 3,
+            explanation: "The lesson suggests a dropdown for picking one option from a longer list, such as a district.",
+          },
+          {
+            prompt: "What does response validation on a short answer question do?",
+            options: [
+              "It checks answers against a rule, such as numbers only or a certain length",
+              "It translates the answer into English",
+              "It emails each answer to the respondent's family",
+              "It hides the question from people who have filled the form before on the same phone",
+            ],
+            answer_index: 0,
+            explanation: "The lesson explains validation can accept only numbers or a certain length, catching wrong phone numbers.",
+          },
+          {
+            prompt: "In Google Forms, which question types can send people to a different section based on their answer?",
+            options: [
+              "Paragraph and short answer",
+              "Date and time",
+              "Multiple choice and dropdown",
+              "Linear scale and checkbox grid questions, which are the only types with branching",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says multiple choice and dropdown questions can use Go to section based on answer.",
+          },
+          {
+            prompt: "Why did Wumpini add a line explaining why the form asks for a phone number?",
+            options: [
+              "Because forms will not publish without a description",
+              "Telling people why personal data is collected is a good habit under Ghana's data protection rules",
+              "To make the form longer so it looks more serious",
+              "Because phone numbers cannot be collected at all, so she needed a special exception",
+            ],
+            answer_index: 1,
+            explanation: "The lesson links explaining the purpose of personal data to good practice under Ghana's Data Protection Act.",
+          },
+          {
+            prompt: "What happens once a Google Form is linked to a spreadsheet?",
+            options: [
+              "The form stops accepting new answers",
+              "Responses are deleted from the form after a day, and only the sheet keeps them",
+              "Only the first ten responses are copied across",
+              "Every new submission appears as a new row, one column per question",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says each submission becomes a row with a column per question.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "field-surveys": {
+      explanation_md: `If you want a job in data collection or monitoring and evaluation in northern Ghana, this lesson matters. Enumerator and data officer adverts from NGOs, research firms and donor projects name tools such as KoboToolbox, ODK, SurveyCTO and CommCare again and again. KoboToolbox and ODK are the examples here; the workflow is similar across all of them.
+
+## Why special survey tools?
+
+A baseline survey might send twenty enumerators to villages across the Savannah Region for two weeks. Many communities have weak or no network. Questionnaires are long, answers must be accurate, and the project needs GPS points or photos as evidence. Paper forms are slow to type up and add errors. Mobile survey tools solve this: data is checked as it is entered, saved on the device and sent to a server when there is a connection.
+
+## The workflow, step by step
+
+1. **Design the form.** The survey is built on a computer, either in a visual form builder (KoboToolbox has one in the browser) or as an XLSForm spreadsheet. ODK forms are usually written as XLSForms.
+2. **Deploy it to a server.** The form is uploaded to the project's server account: a KoboToolbox server, or ODK Central, a server an organisation runs or rents. Deploying makes it available to data collectors.
+3. **Set up devices.** Enumerators install the collection app on Android phones or tablets: **KoboCollect** for KoboToolbox, **ODK Collect** for ODK. They connect it to the project and download the blank form while they have network.
+4. **Collect offline.** In the field, the enumerator opens a new blank form for each household, asks the questions, and saves. Nothing needs network at this stage.
+5. **Send finalised forms.** Back in network, they send completed forms to the server.
+6. **Download and check.** The data team downloads the data, often as a spreadsheet file, checks it and builds reports.
+
+KoboToolbox also offers **web forms** that open in a browser. Its documentation says these work on Android phones, iPhones, laptops and desktops, and can work offline once the form has been opened and cached while connected. ODK also offers web forms through Central. These help when someone does not have an Android device.
+
+## What a good enumerator does
+
+* Charges the device and power bank and downloads the latest form before leaving.
+* Explains the purpose of the survey and asks for consent before starting.
+* Checks the GPS has a good fix before recording a location.
+* Sends forms at the end of each day when network allows, rather than keeping a week of data on one phone that could be lost.
+* Reports problems with questions to the supervisor instead of quietly working around them.
+
+## A worked example
+
+Issahaku is hired as an enumerator for a farm survey in Tolon. On day one, the supervisor shows the team how to connect KoboCollect, download the form and fill in two practice households. Issahaku notices that a question about farm size gives no unit and tells the supervisor, who adds "in acres" and redeploys. Each evening Issahaku sends his finalised forms from the district capital. The data officer, Mariama, sees new submissions arrive and checks them for gaps.
+
+## Data protection in the field
+
+Survey data is personal data, sometimes sensitive. Under Ghana's Data Protection Act, 2012 (Act 843), people should know why their data is collected and it must be kept safe. Lock devices with a PIN, never share submissions on WhatsApp, and follow the project's data rules.`,
+      practice_task_md: `**Goal:** Experience a field survey from both sides.
+
+**Steps:**
+1. On a computer if possible, create an account on a KoboToolbox server and read its current terms.
+2. Build a five question household survey: household head's first name only, community (select one), number of people (integer), whether they farm (yes or no), and a GPS point.
+3. Deploy the form.
+4. Collect three test submissions: either install KoboCollect on an Android device, or open the web form in any browser. If you can, switch off data for one submission and send it later.
+5. View the submissions on the server and download them as a spreadsheet.
+
+**Done looks like:** A deployed form, three test submissions including one collected offline, and a downloaded data file. Write three lines on what you would tell a new enumerator.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "In the workflow, what must enumerators do before going to a place with no network?",
+            options: [
+              "Delete the collection app to save space",
+              "Download the blank form while they still have network",
+              "Print every question on paper and leave the phone at the office to keep it safe",
+              "Create a new server account for each household",
+            ],
+            answer_index: 1,
+            explanation: "Step three says enumerators download the blank form while they have network.",
+          },
+          {
+            prompt: "Which app do enumerators use to collect data for an ODK project?",
+            options: [
+              "ODK Collect on an Android device",
+              "A spreadsheet app with a household tab",
+              "Any messaging app that can send photos to the supervisor's group chat",
+              "A website builder",
+            ],
+            answer_index: 0,
+            explanation: "The lesson names ODK Collect for ODK and KoboCollect for KoboToolbox, installed on Android phones or tablets.",
+          },
+          {
+            prompt: "According to the KoboToolbox documentation described in the lesson, what can its web forms do?",
+            options: [
+              "They only work on Android phones",
+              "They need a constant connection for every question",
+              "They work on many devices, including iPhones and laptops, and can work offline once cached",
+              "They replace the server, so no data is ever uploaded and the team has to copy it by hand",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says Kobo web forms work on Android phones, iPhones, laptops and desktops, and offline once cached.",
+          },
+          {
+            prompt: "Why should enumerators send finalised forms each day when network allows?",
+            options: [
+              "Because servers delete forms older than a day",
+              "Because supervisors are paid by the number of forms received",
+              "Because the app stops working after one day offline and has to be reinstalled",
+              "So a week of data is not kept on one phone that could be lost",
+            ],
+            answer_index: 3,
+            explanation: "The lesson advises sending daily rather than risking a week of data on one device.",
+          },
+          {
+            prompt: "What did Issahaku do when he found a question with no unit?",
+            options: [
+              "He told the supervisor, who fixed the form and redeployed it",
+              "He guessed a unit and wrote it in each answer",
+              "He skipped the question for every household",
+              "He changed the form himself on his phone without telling anyone on the team",
+            ],
+            answer_index: 0,
+            explanation: "Good enumerators report problems to the supervisor instead of working around them.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "survey-logic": {
+      explanation_md: `A survey that asks a non farmer how many acres of maize they planted wastes time and annoys people. A survey that accepts a household size of 250 produces nonsense reports. Smart surveys avoid both, and adverts for data collection roles ask for exactly this kind of quality checking. This lesson is optional, but it is the step that turns a form filler into someone who can design surveys.
+
+## Three tools for smarter surveys
+
+* **Skip logic** (also called relevance or branching) shows a question only when an earlier answer makes it relevant.
+* **Constraints** reject answers that break a rule, with a message explaining why.
+* **Required questions** cannot be left blank.
+
+Visual form builders such as KoboToolbox's offer these through menus. Behind the scenes, many survey tools, including KoboToolbox and ODK, use a format called **XLSForm**, and learning it gives you full control.
+
+## What XLSForm is
+
+XLSForm is a way of writing a survey as a spreadsheet. You fill in rows and columns, upload the file, and the tool turns it into a form. A workbook has a **survey** sheet and a **choices** sheet, plus an optional **settings** sheet.
+
+On the **survey** sheet, each row is one question. Three columns are required:
+
+* **type:** the kind of question, such as integer, text, date or select_one with a list name.
+* **name:** a short unique name with no spaces, used in data and logic.
+* **label:** the question text people see.
+
+On the **choices** sheet, each row is one answer option, with **list_name**, **name** and **label** columns. The list name ties the options to a select_one question.
+
+## A small example
+
+| type | name | label | relevant | constraint | constraint_message |
+|---|---|---|---|---|---|
+| select_one yes_no | farms | Does the household farm? | | | |
+| integer | acres | How many acres were planted? | \${farms} = 'yes' | . > 0 and . <= 100 | Enter between 1 and 100 |
+| integer | hh_size | How many people live here? | | . >= 1 and . <= 30 | Check household size |
+
+The choices sheet holds a yes_no list with yes and no.
+
+* The **relevant** column on the acres row means the question only appears when the farms answer is yes. The \${farms} syntax points to the earlier question by its name.
+* In the **constraint** column, the dot means "this answer". The acres answer must be above 0 and at most 100.
+* The **constraint_message** tells the enumerator what went wrong.
+* Adding a **required** column with "yes" stops a question being skipped.
+
+## Why this is computer work
+
+XLSForm sheets grow wide, with many columns and long expressions. Editing them is far easier on a computer with a full spreadsheet program. You can still preview and test the resulting form on a phone, which you should always do.
+
+## Pilot before you deploy
+
+Always pilot test: fill in the form yourself with normal answers, odd answers and impossible answers, then with two or three real people. Hawa, a data officer in Wa, pilots every survey with colleagues in Dagbani and English before deployment, and nearly always finds a confusing question or a constraint that is too strict. Fixing it then is far cheaper than cleaning bad data later.`,
+      practice_task_md: `**Goal:** Write a small XLSForm with logic and test it.
+
+**Steps:**
+1. On a computer, open a spreadsheet program and create a workbook with sheets named survey and choices.
+2. Add at least five questions, including one select_one question, one integer question with a constraint and constraint_message, and one question with a relevant condition based on an earlier answer.
+3. Fill in the choices sheet for your select_one list.
+4. Save as an Excel file and upload it to a KoboToolbox account or another tool that accepts XLSForm.
+5. Preview the form on your phone or computer. Try an impossible number and check the message appears; answer no to your skip question and check the follow up disappears.
+
+**Done looks like:** An uploaded XLSForm with working skip logic and a working constraint, plus screenshots of both. Write one change you made after testing.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which three columns are required on the XLSForm survey sheet?",
+            options: [
+              "type, name and label",
+              "relevant, constraint and required",
+              "list_name, name and label, the same three columns used on the choices sheet",
+              "question, answer and score",
+            ],
+            answer_index: 0,
+            explanation: "The lesson lists type, name and label as the required survey sheet columns.",
+          },
+          {
+            prompt: "What does the relevant column control?",
+            options: [
+              "The order in which choices appear",
+              "Whether a question is shown, based on an earlier answer",
+              "The colour of the question on screen",
+              "How many enumerators can open the form at the same time on different phones",
+            ],
+            answer_index: 1,
+            explanation: "The lesson explains relevant shows a question only when an earlier answer makes it relevant.",
+          },
+          {
+            prompt: "In the constraint . >= 1 and . <= 30, what does the dot mean?",
+            options: [
+              "The end of the sentence",
+              "The household's GPS point",
+              "The answer to the very first question in the survey, whatever that question is",
+              "The answer to the current question",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says in a constraint the dot means this answer.",
+          },
+          {
+            prompt: "Why does the lesson say editing XLSForms is computer work?",
+            options: [
+              "Phones cannot open any spreadsheet files",
+              "XLSForm files are illegal to edit on phones",
+              "The sheets grow wide with many columns and long expressions",
+              "Survey servers block uploads from phones, so XLSForms must be sent from a laptop",
+            ],
+            answer_index: 2,
+            explanation: "The lesson explains wide sheets and long expressions are far easier to edit on a computer.",
+          },
+        ],
+        pass_threshold: 75,
       },
     },
   },
