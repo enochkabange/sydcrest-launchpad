@@ -60,17 +60,36 @@ export async function importTrackContent(supabase: Client, tracks: TrackContent[
     if (nodesError) throw new Error(`Could not read nodes of ${track.roadmap}: ${nodesError.message}`);
     const nodeIds = new Map(nodes.map((n) => [n.slug, n.id]));
 
+    const work: [string, GeneratedContent][] = [];
     for (const [slug, content] of Object.entries(track.nodes)) {
       const nodeId = nodeIds.get(slug);
-      if (!nodeId) {
-        summary.missingNodes.push(`${track.roadmap}/${slug}`);
-        continue;
-      }
-      if (await writeNode(supabase, nodeId, content)) summary.written++;
+      if (nodeId) work.push([nodeId, content]);
+      else summary.missingNodes.push(`${track.roadmap}/${slug}`);
+    }
+    // A few nodes at a time: one by one, 27 tracks outlast the function's time limit.
+    const results = await mapLimit(work, NODE_CONCURRENCY, ([nodeId, content]) => writeNode(supabase, nodeId, content));
+    for (const written of results) {
+      if (written) summary.written++;
       else summary.unchanged++;
     }
   }
   return summary;
+}
+
+const NODE_CONCURRENCY = 6;
+
+/** Runs fn over items with at most `limit` in flight, keeping results in input order. */
+export async function mapLimit<T, R>(items: T[], limit: number, fn: (item: T) => Promise<R>): Promise<R[]> {
+  const results = new Array<R>(items.length);
+  let next = 0;
+  async function worker() {
+    while (next < items.length) {
+      const i = next++;
+      results[i] = await fn(items[i]);
+    }
+  }
+  await Promise.all(Array.from({ length: Math.min(limit, items.length) }, worker));
+  return results;
 }
 
 /** Returns true when something was written, false when the node was already up to date. */
