@@ -3,7 +3,7 @@
 -- inside a transaction, so every hit here lands in the same window.
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(25);
+select plan(27);
 
 insert into auth.users (id, instance_id, aud, role, email, raw_user_meta_data, created_at, updated_at)
 select id::uuid, '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated', email,
@@ -103,6 +103,11 @@ select ok(
   'thirty sign ups an hour from one address are fine');
 select ok(not public.take_form_rate_limit('sign_up', repeat('a', 64)),
   'the thirty first sign up from that address is refused');
+select ok(
+  (select bool_and(public.take_form_rate_limit('password_reset', repeat('a', 64))) from generate_series(1, 10)),
+  'ten reset requests an hour from one address are fine, counted apart from sign ups');
+select ok(not public.take_form_rate_limit('password_reset', repeat('a', 64)),
+  'the eleventh reset request from that address is refused');
 select throws_ok($$ select public.take_form_rate_limit('anything', repeat('a', 64)) $$, '22023', null,
   'only the named forms have limits');
 reset role;

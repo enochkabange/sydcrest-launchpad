@@ -8,6 +8,11 @@
  * /mentor/learners/1 but not /mentors). Public and signed in pages share some
  * prefixes (/skills/[slug] is public, /skills/[slug]/quiz is not), so those
  * are patterns.
+ *
+ * /forgot-password and /reset-password stay public on purpose: someone who
+ * has lost their password is signed out, and /reset-password checks for the
+ * session a reset link signs in itself, explaining an expired link instead
+ * of bouncing to /login.
  */
 export const SIGNED_IN_PREFIXES = [
   "/dashboard",

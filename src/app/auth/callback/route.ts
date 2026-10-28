@@ -1,8 +1,13 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { safeNextPath } from "@/lib/validation";
+import { RESET_PASSWORD_PATH } from "@/lib/password-reset";
 
-/** Lands Google sign in and email confirmation links (PKCE code exchange). */
+/**
+ * Lands Google sign in, email confirmation and password reset links (PKCE
+ * code exchange). `next` is only ever a local path (safeNextPath). A reset
+ * link that no longer works goes back to the forgot password form.
+ */
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = request.nextUrl;
   const code = searchParams.get("code");
@@ -13,5 +18,6 @@ export async function GET(request: NextRequest) {
     const { error } = await supabase.auth.exchangeCodeForSession(code);
     if (!error) return NextResponse.redirect(`${origin}${next}`);
   }
-  return NextResponse.redirect(`${origin}/login?error=link`);
+  const retry = next === RESET_PASSWORD_PATH ? "/forgot-password" : "/login";
+  return NextResponse.redirect(`${origin}${retry}?error=link`);
 }

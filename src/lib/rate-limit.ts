@@ -5,7 +5,7 @@
  * - Signed in writes (reports, briefs, pitches, bookings and their messages,
  *   talent contact requests, organisations, outcomes, RSVPs) are counted per
  *   person by a trigger, which refuses the write with RATE_LIMITED_CODE.
- * - Signed out forms (waitlist, sign up) are counted per visitor address
+ * - Signed out forms (waitlist, sign up, password reset) are counted per visitor address
  *   through take_form_rate_limit. The address is hashed here first, so the
  *   database never stores it.
  *
@@ -23,7 +23,7 @@ export const RATE_LIMIT_MESSAGE = "You have done that a lot in a short time. Wai
 export const FORM_RATE_LIMIT_MESSAGE =
   "This form has been sent many times from your connection just now. Wait a while and try again.";
 
-export type FormBucket = "waitlist" | "sign_up";
+export type FormBucket = "waitlist" | "sign_up" | "password_reset";
 
 /** True when a Supabase error is the rate limiter refusing the write. */
 export function isRateLimited(error: { code?: string | null } | null | undefined): boolean {
