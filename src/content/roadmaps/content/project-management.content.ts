@@ -2326,7 +2326,408 @@ Lessons only help if the next team reads them. Keep a shared lessons file for th
         pass_threshold: 75,
       },
     },
-    // NEXT_NODES
+    "agile-basics": {
+      explanation_md: `This topic is optional. Most NGO project roles in northern Ghana use plan driven methods, but if you work with a tech company, a software team or a hub, you will hear words like sprint, backlog and standup. Knowing what they mean helps you join in from day one, and the habits behind them are useful on any project.
+
+## The agile idea
+
+**Agile** is a family of ways of working built on a few beliefs: deliver something useful early, get feedback often, and change the plan as you learn. Instead of planning everything for a year, an agile team plans a short cycle in detail, does the work, shows the result to the people who will use it, and decides what to do next.
+
+This works well when the right answer is not clear at the start. Building a farmer advice app is a good example: you cannot know which features farmers will actually use until they try an early version.
+
+## Scrum in plain words
+
+**Scrum** is one popular agile framework, described in a free document called the Scrum Guide. Its main parts are:
+
+**Three accountabilities**
+* **Product Owner:** decides what is most valuable to work on next and keeps the list of work in order.
+* **Scrum Master:** helps the team work well and removes obstacles.
+* **Developers:** the people who do the work. In Scrum this means anyone building the product, not only programmers.
+
+**Events**
+* **Sprint:** a fixed cycle of one month or less, often two weeks.
+* **Sprint Planning:** at the start, the team chooses what to deliver in this sprint.
+* **Daily Scrum:** a short daily check in, kept to fifteen minutes, on progress towards the sprint's goal.
+* **Sprint Review:** at the end, the team shows what was built and gets feedback.
+* **Sprint Retrospective:** the team discusses how to work better next time.
+
+**Artifacts**
+* **Product Backlog:** the ordered list of everything that might be built.
+* **Sprint Backlog:** the items chosen for this sprint, plus the plan to deliver them.
+* **Increment:** the usable piece of work produced.
+
+## Kanban
+
+You met **Kanban** in the task boards lesson: a visual board with columns and a limit on work in progress. Some agile teams use Kanban instead of sprints, pulling new work whenever they finish something.
+
+## A worked example
+
+Nashiru joins a small tech hub in Tamale building a market price app for farmers. The team works in two week sprints. In Sprint Planning, the Product Owner, Ayishetu, picks the three most important items from the backlog: show maize prices for three markets, let users pick their market, and send a weekly SMS summary. Each morning, the team holds a quick Daily Scrum. At the Sprint Review, they show the app to five farmers, who say the SMS is the most useful part and the app screens are too busy. That feedback goes straight into the backlog for the next sprint. At the Retrospective, the team agrees to test with farmers earlier in the sprint next time.
+
+## Borrowing agile habits
+
+Even on a plan driven NGO project, you can borrow agile habits: short regular check ins, showing early drafts to users, and a retrospective at the end of each phase.`,
+      practice_task_md: `**Goal:** Plan a two week sprint for a small project.
+
+**Steps:**
+1. Imagine a small product, such as a WhatsApp ordering service for Hawa's shop or a simple website for your youth group.
+2. On your phone or computer, write a product backlog of at least eight items, ordered from most to least valuable.
+3. Choose the items you think can be finished in a two week sprint and write a one sentence sprint goal.
+4. Write three questions you would ask users at the Sprint Review.
+
+**Done looks like:** An ordered backlog of eight or more items, a sprint backlog with a goal, and three review questions.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the main idea behind agile ways of working?",
+            options: [
+              "Plan everything in detail for a year and never change",
+              "Deliver something useful early, get feedback often and change the plan as you learn",
+              "Avoid talking to users until the end",
+              "Work without any plan at all",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes agile as delivering early, getting feedback and adapting.",
+          },
+          {
+            prompt: "In Scrum, who decides what is most valuable to work on next?",
+            options: ["The Scrum Master", "The donor", "The Product Owner", "The newest team member"],
+            answer_index: 2,
+            explanation: "The Product Owner orders the work by value.",
+          },
+          {
+            prompt: "How long is a sprint, according to the lesson?",
+            options: [
+              "A fixed cycle of one month or less, often two weeks",
+              "Exactly one day",
+              "One full year",
+              "As long as the team likes, with no limit",
+            ],
+            answer_index: 0,
+            explanation: "A sprint is a fixed cycle of one month or less.",
+          },
+          {
+            prompt: "What happens at the Sprint Review?",
+            options: [
+              "The team chooses what to build",
+              "Developers are paid",
+              "The budget is approved",
+              "The team shows what was built and gets feedback",
+            ],
+            answer_index: 3,
+            explanation: "The review is where the work is shown and feedback is gathered.",
+          },
+          {
+            prompt: "What did Nashiru's team learn at the Sprint Review?",
+            options: [
+              "Farmers found the SMS most useful and the app screens too busy",
+              "Farmers did not want any market prices",
+              "The app was perfect and needed no changes",
+              "The team should stop holding Daily Scrums",
+            ],
+            answer_index: 0,
+            explanation: "The farmers' feedback about the SMS and busy screens went into the next backlog.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+
+    "getting-hired-pm": {
+      explanation_md: `You now know how projects start, how they are planned, run, monitored and closed. The last step is turning that knowledge into a first job. This section is about showing employers you can do the work, and choosing whether a certificate is worth your time and money.
+
+## How people usually start
+
+Very few people are hired straight into a project manager role. Common first steps in Ghana include:
+
+* **National service** postings with NGOs, district assemblies or businesses.
+* **Internships,** paid or unpaid, often with NGOs and development organisations in Tamale, Bolgatanga and Wa.
+* **Project assistant, programme assistant or office support roles,** which handle the administration you have learned about.
+* **Field roles,** such as enumerator, field facilitator or community mobiliser on a specific project, which teach you how projects work on the ground.
+* **Volunteering** with community groups, churches, mosques, youth associations or student societies, where you can lead real projects.
+
+From these, people grow into officer, coordinator and then manager roles as they build experience.
+
+## What employers look for
+
+Across assistant and officer adverts, the same things appear again and again:
+
+* Organisation and reliability.
+* Clear writing, especially reports.
+* Spreadsheet and office software skills.
+* Experience working with communities and partners.
+* Budget and record keeping.
+* Local languages such as Dagbani, Gurune, Dagaare or Mampruli, which are often listed as an advantage in the north.
+* For many officer roles, a degree or diploma and some years of experience.
+
+You can show most of these with a portfolio, even before your first job.
+
+## What this section covers
+
+* **Entry certifications explained.** What the recognised options are, what they involve, and how to decide whether you need one.
+* **Your portfolio and first coordination roles.** How to run a small real project, keep its documents as proof, and apply for first roles.
+
+## A worked example
+
+Azara finished a diploma in Bolgatanga and wanted to work in development. She had no project job, so she volunteered to coordinate her youth association's tree planting day. She wrote a charter, a budget, a task board and a short report with photos taken with consent, using the tools in this roadmap. When she applied for an internship with an NGO, she attached a link to a folder with those four documents. The interviewer asked her to talk through her budget, and she could explain every line. She got the internship, and a year later was hired as a project assistant.
+
+## A realistic mindset
+
+Jobs in this field are competitive and applications often have strict deadlines. Expect to apply many times and to keep improving. Every small project you run adds to your experience, and every application teaches you something. Stay patient, keep building proof, and ask people already in the field for advice.`,
+      practice_task_md: `**Goal:** Map your route into project work.
+
+**Steps:**
+1. On your phone or computer, list the five common first steps from the lesson.
+2. For each one, write whether it is open to you now and one organisation or group in your area where you could try it.
+3. Check yourself against the "what employers look for" list and mark each item as strong, developing or missing.
+4. Choose one missing item and write a plan to improve it in the next month.
+
+**Done looks like:** A route map with five entry options and named organisations, a self check of seven items, and a one month plan for one gap.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is a common first step into project work in Ghana, according to the lesson?",
+            options: [
+              "Being hired straight in as country director",
+              "National service with an NGO or district assembly",
+              "Buying a project management company",
+              "Waiting for a manager to call you",
+            ],
+            answer_index: 1,
+            explanation: "National service is listed as a common first step.",
+          },
+          {
+            prompt: "Which skill does the lesson list as often an advantage for roles in the north?",
+            options: ["Speaking local languages such as Dagbani or Gurune", "Playing football", "Owning a car", "Having a large social media following"],
+            answer_index: 0,
+            explanation: "Local languages are often listed as an advantage in northern adverts.",
+          },
+          {
+            prompt: "How did Azara show her skills without a project job?",
+            options: [
+              "She paid for a certificate only",
+              "She copied someone else's documents",
+              "She ran a small real project and shared its charter, budget, task board and report",
+              "She waited until she was offered a job",
+            ],
+            answer_index: 2,
+            explanation: "Azara coordinated a tree planting day and used its documents as proof.",
+          },
+          {
+            prompt: "What mindset does the lesson recommend for job hunting?",
+            options: [
+              "Apply once and stop if you are not selected",
+              "Only apply for manager roles",
+              "Avoid asking people in the field for advice",
+              "Expect to apply many times, keep improving and keep building proof",
+            ],
+            answer_index: 3,
+            explanation: "The lesson recommends patience, repeated applications and building proof.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "entry-certifications": {
+      explanation_md: `Certificates can help you learn in a structured way and show commitment on your CV. They can also cost money and time you might spend better elsewhere. The project assistant adverts studied for this roadmap did not ask for a project management certificate; they asked for skills, experience and often a degree or diploma. So treat a certificate as a possible extra, not a requirement, and decide carefully.
+
+## The recognised entry options
+
+These are named as examples, not recommendations. Rules, prices and formats change, so always check the official page before you decide.
+
+* **Project DPro.** A guide to project management written for the development sector, published by the organisation PM4NGOs. The guide itself can be downloaded at no cost under a Creative Commons licence, and PM4NGOs offers a certification exam based on it, available in several languages. Because it is written for NGO and development work, its topics match much of this roadmap.
+* **CAPM (Certified Associate in Project Management).** An entry level certification from the Project Management Institute (PMI), a large international professional body. It has eligibility rules, an exam and a fee. Check PMI's official website for the current requirements.
+* **Google Project Management Certificate.** An online programme from Google offered on Coursera. Its page describes it as beginner level, needing no degree or experience, and says completing it counts as project management education towards PMI credentials such as CAPM. Coursera courses usually charge a subscription, and Coursera has a financial aid process you can apply to; check the current terms.
+* **PRINCE2 Foundation.** An entry level exam in the PRINCE2 method, which is widely used in the United Kingdom and some other countries. Exams are offered through PeopleCert. Check its official site for details.
+
+## How to decide
+
+Ask yourself these questions:
+
+1. **What do the adverts I want actually ask for?** Read ten adverts for roles you would apply for. If none mention a certificate, your money may be better spent on data and transport for volunteering.
+2. **Can I learn the content for free?** Free guides, like the Project DPro guide, and this roadmap teach the main ideas without cost. You can learn first and decide about an exam later.
+3. **Can I afford it without hardship?** Never borrow or cut essential spending for a certificate.
+4. **Is the certificate recognised by the employers I want?** Development organisations, businesses and tech companies may value different ones.
+5. **Is it genuine?** Only use the official provider's website. Be wary of anyone selling guaranteed passes or certificates without an exam.
+
+## A worked example
+
+Kassim, a recent graduate, wants an NGO project officer role in Tamale. He reads the Project DPro guide for free, uses this roadmap to build a portfolio, and volunteers on a community project. After a year as a project assistant, he decides an exam would help him move up, and his employer agrees to support part of the cost. Kassim learned first, built experience, and took an exam only when it clearly helped his next step.
+
+## The bottom line
+
+A certificate does not replace experience, and experience can be built without one. Learn the skills, show them in a portfolio, and add a certificate when it serves a clear goal.`,
+      practice_task_md: `**Goal:** Decide whether a certificate fits your plans right now.
+
+**Steps:**
+1. Find five to ten current adverts for project assistant, programme assistant or project officer roles on Ghanaian job boards or NGO career pages.
+2. In a notes app or spreadsheet on your phone or computer, record for each: the role, the employer type, and whether it mentions any certificate.
+3. Visit the official pages of two certification options from the lesson and note the current requirements and costs you find, with the date you checked.
+4. Answer the five decision questions from the lesson in writing.
+
+**Done looks like:** A small table of adverts, notes on two official pages with dates, and a written decision: certificate now, later, or not needed yet, with your reasons.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What did the project assistant adverts studied for this roadmap ask for?",
+            options: [
+              "Always a CAPM certificate",
+              "Skills, experience and often a degree or diploma, not a certificate",
+              "Only a PRINCE2 certificate",
+              "No qualifications of any kind",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says these adverts did not ask for a project management certificate.",
+          },
+          {
+            prompt: "Which option is written specifically for the development sector?",
+            options: ["PRINCE2 Foundation", "Project DPro", "A typing certificate", "A driving licence"],
+            answer_index: 1,
+            explanation: "Project DPro is a guide written for development sector project management.",
+          },
+          {
+            prompt: "Who offers the CAPM certification?",
+            options: ["Google", "PM4NGOs", "The Project Management Institute (PMI)", "The Data Protection Commission"],
+            answer_index: 2,
+            explanation: "CAPM is an entry level certification from PMI.",
+          },
+          {
+            prompt: "Where should you check current rules and costs for any certificate?",
+            options: [
+              "On the official provider's website",
+              "From someone selling guaranteed passes",
+              "In an old WhatsApp forward",
+              "Nowhere; they never change",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says to always check the official page because rules and prices change.",
+          },
+          {
+            prompt: "What did Kassim do before taking an exam?",
+            options: [
+              "Borrowed money to pay for three exams at once",
+              "Bought a certificate online without an exam",
+              "Skipped all work experience",
+              "Learned from free materials, built a portfolio and gained experience first",
+            ],
+            answer_index: 3,
+            explanation: "He learned first, built experience, and took an exam only when it clearly helped.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+
+    "first-coordination-roles": {
+      explanation_md: `Employers hiring for project roles want proof you can plan, organise, track money and report. A portfolio of real project documents gives that proof, even if you have never held a project job. Combined with a clear CV and good interview answers, it can set you apart from applicants who only list qualifications.
+
+## Run a small real project
+
+Pick something small enough to finish in four to eight weeks, but real:
+
+* A reading club for pupils during the long vacation.
+* A clean up day in your area, agreed with the assembly member.
+* A fundraiser for a church, mosque or school need.
+* A savings group launch for your youth association.
+* Helping a local shop or trader plan a product launch.
+
+Use the tools from this roadmap as you go. Do not wait until the end to write things up.
+
+## What goes in your portfolio
+
+Keep one shared folder with:
+
+1. **Charter:** goal, scope, budget, dates and people.
+2. **Plan:** work breakdown and a simple Gantt chart.
+3. **Budget and tracker:** planned versus actual, with receipts summarised.
+4. **Risk register:** with at least one risk you managed.
+5. **Task board screenshot** or status sheet.
+6. **Minutes** from one meeting.
+7. **Final report:** results, a short success story with consent, and lessons learned.
+
+Remove other people's personal details before you share it. A short cover note explaining the project in three sentences helps busy readers.
+
+## Where to look for roles
+
+* Ghanaian job boards and their NGO and project categories.
+* Career pages of NGOs and development organisations working in the north.
+* District assemblies and national service placements.
+* Notice boards at hubs, universities and NGO offices in Tamale, Bolgatanga and Wa.
+* People: tell mentors, lecturers and people in the field what you are looking for.
+
+Read each advert carefully, note the deadline and exactly what documents it asks for, and tailor your CV to its duties. Never pay anyone to get you a job; genuine employers do not charge applicants.
+
+## Preparing for interviews
+
+Project interviews often ask you to describe a time you organised something, handled a problem or worked with a difficult person. A simple way to answer is: the **situation**, the **task** you had, the **action** you took, and the **result**. Use your portfolio project for examples.
+
+## A worked example
+
+Zakaria ran a two month reading club for 25 pupils in his community in Savelugu with two friends. His folder held a charter, a budget of GHS 800 from local donations, a task board, attendance records with parents' permission, and a two page report. All figures here are invented. When he applied for a project assistant role, the interviewer asked about a problem he faced. He explained that attendance dropped in week three because of the farming season, so they moved sessions to late afternoons and attendance recovered. The answer showed monitoring, problem solving and reporting in one story.
+
+## Keep growing
+
+Once you are in, ask to help with tasks just above your level: drafting a section of a report, updating the budget tracker, or supporting a community meeting. That is how assistants become officers and officers become coordinators.`,
+      practice_task_md: `**Goal:** Plan your portfolio project and prepare one interview answer.
+
+**Steps:**
+1. Choose a small real project you can run in four to eight weeks, and write a one page charter for it on your phone or computer.
+2. Create a portfolio folder in Google Drive or another free storage service with a subfolder for each of the seven documents in the lesson.
+3. Find two current project assistant or internship adverts and list the duties each asks for.
+4. Write one interview answer using situation, task, action and result, based on any activity you have organised.
+
+**Done looks like:** A charter, an empty but organised portfolio folder ready to fill, notes on two adverts, and one practised interview answer you could say in two minutes.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson recommend running a small real project?",
+            options: [
+              "To show employers proof that you can plan, organise, track money and report",
+              "Because employers only hire event planners",
+              "To avoid applying for jobs",
+              "Because certificates are banned",
+            ],
+            answer_index: 0,
+            explanation: "A real project produces documents that prove your skills.",
+          },
+          {
+            prompt: "What should you do before sharing your portfolio?",
+            options: [
+              "Add as many photos of participants as possible",
+              "Remove other people's personal details",
+              "Delete the budget",
+              "Make it private so no one can see it",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to remove other people's personal details before sharing.",
+          },
+          {
+            prompt: "What does the lesson say about paying someone to get you a job?",
+            options: [
+              "It is normal for NGO roles",
+              "It is the fastest route",
+              "Never do it; genuine employers do not charge applicants",
+              "Only pay if they promise a contract",
+            ],
+            answer_index: 2,
+            explanation: "Genuine employers do not charge applicants.",
+          },
+          {
+            prompt: "What four parts make up the suggested interview answer structure?",
+            options: [
+              "Name, age, school, hometown",
+              "Plan, budget, risk, report",
+              "Question, guess, apology, thanks",
+              "Situation, task, action, result",
+            ],
+            answer_index: 3,
+            explanation: "The lesson recommends situation, task, action and result.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
