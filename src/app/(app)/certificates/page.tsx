@@ -6,12 +6,15 @@ import { MainWithRail } from "@/components/ui/layout";
 import { CertificationCard } from "@/components/certificates/certification-card";
 import { getMyProfile, requireUser } from "@/lib/auth";
 import { getMyCertification, getStaffCohorts } from "@/lib/certificates/server";
+import { splitCertificates } from "@/lib/certificates/mine";
 
 export const metadata: Metadata = { title: "Certificates", robots: { index: false } };
 
 /**
- * The learner's certificates and the checklist towards each one. Staff of a
- * cohort also get a link to the issuing screen.
+ * The learner's certificates and the checklist towards each one. Every
+ * certificate they hold is listed, in a cohort or not; the checklist shows
+ * where they are in a cohort. Staff of a cohort also get a link to the
+ * issuing screen.
  */
 export default function CertificatesPage() {
   return (
@@ -54,35 +57,55 @@ export default function CertificatesPage() {
 async function MyCertificates() {
   const user = await requireUser();
   const { programmes, certificates } = await getMyCertification(user.id);
-  const revoked = certificates.filter((c) => c.revoked_at);
-
-  if (programmes.length === 0 && certificates.length === 0) {
-    return (
-      <section className="flex flex-col items-start gap-4 rounded-lg border border-line bg-surface-sunken p-6 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
-        <div className="flex max-w-reading flex-col gap-1">
-          <h2 className="text-h3 text-content">No certificates yet</h2>
-          <p className="text-content-2">
-            Certificates come from finishing a mentored programme. When you join a cohort, your progress towards the certificate shows here.
-          </p>
-        </div>
-        <Link href="/programme" className={buttonClasses("secondary", "shrink-0")}>
-          See the programme
-        </Link>
-      </section>
-    );
-  }
+  // Certificates belong to the learner, not the cohort: one a learner holds
+  // shows here even when they are no longer in any cohort (issue #238).
+  const { standalone, revoked } = splitCertificates(
+    certificates,
+    programmes.map((p) => p.programId),
+  );
+  const nothingYet = programmes.length === 0 && standalone.length === 0;
 
   return (
     <div className="flex flex-col gap-4">
-      {programmes.map((p) => (
-        <CertificationCard
-          key={p.programId}
-          programTitle={p.programTitle}
-          programSlug={p.programSlug}
-          status={p.status}
-          certificate={p.certificate}
-        />
-      ))}
+      {nothingYet ? (
+        <section
+          aria-labelledby="none-heading"
+          className="flex flex-col items-start gap-4 rounded-lg border border-line bg-surface-sunken p-6 lg:flex-row lg:items-center lg:justify-between lg:gap-8"
+        >
+          <div className="flex max-w-reading flex-col gap-1">
+            <h2 id="none-heading" className="text-h3 text-content">
+              No certificates yet
+            </h2>
+            <p className="text-content-2">
+              Certificates come from finishing a mentored programme. When you join a cohort, your progress towards the certificate shows here.
+            </p>
+          </div>
+          <Link href="/programme" className={buttonClasses("secondary", "shrink-0")}>
+            See the programme
+          </Link>
+        </section>
+      ) : (
+        <>
+          {standalone.map((c) => (
+            <CertificationCard
+              key={c.id}
+              programTitle={c.program_title}
+              programSlug={c.program_slug}
+              status={null}
+              certificate={c}
+            />
+          ))}
+          {programmes.map((p) => (
+            <CertificationCard
+              key={p.programId}
+              programTitle={p.programTitle}
+              programSlug={p.programSlug}
+              status={p.status}
+              certificate={p.certificate}
+            />
+          ))}
+        </>
+      )}
       {revoked.length > 0 && (
         <section aria-labelledby="revoked-heading" className="flex flex-col gap-2 rounded-lg border border-line p-5">
           <h2 id="revoked-heading" className="text-h3 text-content">

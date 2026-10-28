@@ -21,7 +21,8 @@ export function CertificationCard({
   headingLevel = 2,
 }: {
   programTitle: string;
-  programSlug: string;
+  /** Null when the programme is no longer published: the badge image is left out. */
+  programSlug: string | null;
   status: CertificationStatus | null;
   certificate: OwnCertificate | null;
   headingLevel?: 2 | 3;
@@ -36,14 +37,16 @@ export function CertificationCard({
     return (
       <section aria-label={`${programTitle} certificate`} className="flex flex-col gap-5 rounded-lg border border-line bg-surface p-5 md:p-6">
         <div className="flex flex-col gap-5 sm:flex-row sm:items-center">
-          <Image
-            src={`/badges/${programSlug}/image.png`}
-            alt=""
-            width={112}
-            height={112}
-            unoptimized
-            className="size-24 shrink-0 rounded-full md:size-28"
-          />
+          {programSlug && (
+            <Image
+              src={`/badges/${programSlug}/image.png`}
+              alt=""
+              width={112}
+              height={112}
+              unoptimized
+              className="size-24 shrink-0 rounded-full md:size-28"
+            />
+          )}
           <div className="flex min-w-0 flex-col gap-1">
             <p className="text-sm font-semibold text-success-fg">Certificate issued</p>
             <H className="text-h3 text-content">{title}</H>
