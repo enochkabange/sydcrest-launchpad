@@ -1,4 +1,5 @@
 import "server-only";
+import { after } from "next/server";
 import { createAdminClient } from "@/lib/messaging/admin";
 import { sendAlerts } from "@/lib/messaging/alerts";
 import { logOnce } from "@/lib/messaging/config";
@@ -43,8 +44,9 @@ export async function notifyBookingEvent(
     }
     const { error } = await admin.rpc("notify_user", { p_recipient_id: recipientId, p_kind: kind, p_payload: payload });
     if (error) console.error(`[bookings] notify ${event} failed: ${error.message}`);
-    const external = await sendAlerts(admin, [recipientId], { title: payload.title, href: payload.href }, SITE_URL.replace(/^https?:\/\//, ""));
-    return { inApp: error ? ("failed" as const) : ("sent" as const), external };
+    // After the response, so a Twilio round trip never slows Accept, Send or Request.
+    after(() => sendAlerts(admin, [recipientId], { title: payload.title, href: payload.href }, SITE_URL.replace(/^https?:\/\//, "")));
+    return { inApp: error ? ("failed" as const) : ("sent" as const) };
   } catch (e) {
     console.error(`[bookings] notify ${event} failed: ${e instanceof Error ? e.message : String(e)}`);
     return { inApp: "failed" as const };
