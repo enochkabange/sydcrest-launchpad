@@ -21,15 +21,15 @@ const WEEKS = Array.from({ length: RETENTION_WEEKS }, (_, i) => i + 1);
 /** Shade from the surface towards the action colour by the share retained. */
 function shade(rate: number | null) {
   if (rate === null) return undefined;
-  const pct = Math.round(Math.min(1, rate) * 70);
+  const pct = Math.round(Math.min(1, rate) * 40);
   return { backgroundColor: `color-mix(in oklab, var(--color-action) ${pct}%, var(--color-surface))` };
 }
 
 function Cell({ cell }: { cell: RetentionCell }) {
   if (cell === null) return <td className="px-3 py-2 text-center text-xs text-content-3">Not yet</td>;
-  const dark = cell.rate !== null && cell.rate >= 0.5;
+  // Ink stays text-content: the shade is capped light enough to keep AA contrast in both themes.
   return (
-    <td className={`px-3 py-2 text-center tabular-nums ${dark ? "text-action-fg" : "text-content"}`} style={shade(cell.rate)}>
+    <td className="px-3 py-2 text-center text-content tabular-nums" style={shade(cell.rate)}>
       {cell.rate === null ? (
         <span className="text-content">{formatCount(cell.active)}</span>
       ) : (

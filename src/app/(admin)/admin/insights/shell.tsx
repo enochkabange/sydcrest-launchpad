@@ -4,7 +4,7 @@ import type { SupabaseClient } from "@supabase/supabase-js";
 import Link from "@/components/ui/link";
 import { FilterBar } from "@/components/insights/filter-bar";
 import { requireAdmin } from "@/lib/admin";
-import { DASHBOARDS, dashboard, type DashboardSlug, type TableKey } from "@/lib/insights/dashboards";
+import { DASHBOARDS, TABLES, dashboard, type DashboardSlug, type TableKey } from "@/lib/insights/dashboards";
 import { loadFilterOptions, loadRollupsTo } from "@/lib/insights/data";
 import { describeRange, filterQuery, formatDay, parseFilters, type InsightFilters, type SearchParams } from "@/lib/insights/filters";
 import { todayInAccra } from "@/lib/mentor/progress";
@@ -42,6 +42,7 @@ export function ExportLink({ table, filters, label = "Download CSV" }: { table: 
   return (
     <a href={href} download className="inline-flex min-h-11 items-center text-sm font-semibold text-content-link underline">
       {label}
+      <span className="sr-only">: {TABLES[table].title}</span>
     </a>
   );
 }
