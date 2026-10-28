@@ -72,7 +72,7 @@ Take the lessons in order the first time. Later you can come back to any lesson 
             prompt: "How does this track relate to your main skill track?",
             options: [
               "It replaces your main track once you start freelancing",
-              "It teaches the skill you will sell, so you do not need another track",
+              "It teaches the skill you will sell, so you do not need to follow any other track at all",
               "It sits beside your main track and helps you sell the skill you are building",
               "It should only be started after you have finished every other track",
             ],
@@ -94,7 +94,7 @@ Take the lessons in order the first time. Later you can come back to any lesson 
             prompt: "Which of these is listed as something you will be able to do by the end of the roadmap?",
             options: [
               "Get paid from abroad through legal routes and keep records for tax",
-              "Guarantee a fixed monthly income from freelancing",
+              "Guarantee a fixed monthly income from freelancing, even in quiet seasons",
               "Skip contracts because clients always pay",
               "Avoid learning any new tools",
             ],
@@ -151,7 +151,7 @@ Amina offers to run the Instagram page of a hair salon near her house in Tamale 
           {
             prompt: "Which statement best describes a freelancer?",
             options: [
-              "Someone employed full time by one company who works from home",
+              "Someone employed full time by one company who is allowed to work from home most days",
               "Someone who must work only for clients in other countries",
               "Someone who earns money by liking posts on social media apps",
               "Someone who sells a specific service to clients, often one project at a time",
@@ -164,7 +164,7 @@ Amina offers to run the Instagram page of a hair salon near her house in Tamale 
             options: [
               "Freelance income can be uneven from month to month",
               "Freelancers never need to deal with tax",
-              "Salaried workers choose all their own clients",
+              "Salaried workers choose all their own clients and set their own prices",
               "Freelancers are always paid more",
             ],
             answer_index: 0,
@@ -176,7 +176,7 @@ Amina offers to run the Instagram page of a hair salon near her house in Tamale 
               "A normal freelance marketplace",
               "A training programme",
               "A pattern the Cyber Security Authority has warned about as a scam",
-              "A salaried job with a probation period",
+              "A salaried job with a probation period, after which the deposit is returned",
             ],
             answer_index: 2,
             explanation: "The lesson explains that real clients never ask you to pay to work and that the CSA has warned about this pattern.",
@@ -259,7 +259,7 @@ Your service can change later as your skill grows. For now, one clear offer beat
               "A group of clients with similar needs that you aim your offer at",
               "A tool you must pay for before you can freelance",
               "A type of contract used only abroad",
-              "A list of every service you could possibly offer",
+              "A list of every service you could possibly offer, so no client is turned away",
             ],
             answer_index: 0,
             explanation: "The lesson defines a niche as a group of clients with similar needs, such as schools or NGOs.",
@@ -267,7 +267,7 @@ Your service can change later as your skill grows. For now, one clear offer beat
           {
             prompt: "Why did Fuseini start getting responses?",
             options: [
-              "He listed more software names in his profile",
+              "He listed more software names in his profile so clients could find him in searches",
               "He lowered his price to zero",
               "He made a clear offer for one type of client and showed a matching sample",
               "He claimed years of experience he did not have",
@@ -347,7 +347,7 @@ Mariama manages social media for two shops in Bolgatanga. Every Sunday she check
           {
             prompt: "Why does the lesson suggest keeping client files in cloud storage?",
             options: [
-              "Because cloud storage makes files load faster on a slow network",
+              "Because cloud storage makes files load faster on a slow network and saves your phone's battery",
               "So you never need a calendar",
               "Because clients refuse to accept attachments",
               "So files are safe if your device is lost and easy to share with a link",
@@ -436,7 +436,7 @@ Not long. Getting ready is not an excuse to wait months until everything is perf
               "Because it reduces the risk the client feels in trusting someone new",
               "Because it lets you charge any price you want",
               "Because clients only hire people with long CVs",
-              "Because it removes the need for a contract",
+              "Because it removes the need for a contract, since a prepared freelancer is trusted straight away",
             ],
             answer_index: 0,
             explanation: "Samples, a clear profile and clear messages each reduce a part of the client's risk.",
@@ -466,7 +466,7 @@ Not long. Getting ready is not an excuse to wait months until everything is perf
           {
             prompt: "What does the lesson say about how long getting ready should take?",
             options: [
-              "Months, until everything is perfect",
+              "Months, until every part of your portfolio and profile is perfect and nothing could be improved",
               "At least one year of study",
               "Not long; get a small honest portfolio and profile, then start talking to clients",
               "No time at all; skip preparation completely",
@@ -539,7 +539,7 @@ Abdul-Rahman offers simple websites for small businesses. He has no paying clien
           {
             prompt: "How should you present a redesign of something that already exists, such as a church notice?",
             options: [
-              "As work the church paid you for",
+              "As work the church paid you for, so it looks like real experience",
               "Without any explanation",
               "As a concept showing how you would improve it",
               "As your employer's official work",
@@ -563,7 +563,7 @@ Abdul-Rahman offers simple websites for small businesses. He has no paying clien
             options: [
               "Show it to prove the work is real",
               "Put it in the file name",
-              "Only show it to foreign clients",
+              "Only show it to foreign clients, since local clients may know the business and its owner",
               "Blur or replace names, numbers and figures that belong to the client",
             ],
             answer_index: 3,
@@ -575,7 +575,7 @@ Abdul-Rahman offers simple websites for small businesses. He has no paying clien
               "To make sure it opens without asking for a login",
               "To increase the number of views",
               "Because links only work on computers",
-              "To change the file sizes automatically",
+              "To change the file sizes automatically for each kind of device",
             ],
             answer_index: 0,
             explanation: "The lesson says to check the link opens for someone else without a login.",
@@ -635,7 +635,7 @@ Wumpini offers social media management for salons and boutiques in Tamale. Her b
             options: [
               "Your age, your school and your hometown",
               "Your favourite tools, apps and music",
-              "Your price, your bank and your password",
+              "Your price, your bank details and your mobile money number for payments",
               "What you do, who you do it for and how to reach you",
             ],
             answer_index: 3,
@@ -655,7 +655,7 @@ Wumpini offers social media management for salons and boutiques in Tamale. Her b
           {
             prompt: "Someone offers you their older marketplace account to save time. What does the lesson advise?",
             options: [
-              "Accept it, because the account already has reviews",
+              "Accept it, because the account already has reviews that will help you win clients quickly",
               "Accept it but change the photo",
               "Do not use another person's account; use only your own name and work",
               "Buy it if the price is fair",
@@ -667,7 +667,7 @@ Wumpini offers social media management for salons and boutiques in Tamale. Her b
             prompt: "How many places should a beginner set up profiles on?",
             options: [
               "One or two places your niche really uses, done well",
-              "Every social network and marketplace that exists",
+              "Every social network and marketplace that exists, so clients can find you",
               "None; profiles are not needed",
               "Only places for clients abroad",
             ],
@@ -747,7 +747,7 @@ Read every important message once before sending. Check names, dates, prices and
             options: [
               "To make the conversation longer",
               "To record what was agreed so both sides are protected later",
-              "Because calls are not allowed with clients",
+              "Because calls are not allowed with clients on most freelance platforms or apps",
               "To ask for a higher price",
             ],
             answer_index: 1,
@@ -759,7 +759,7 @@ Read every important message once before sending. Check names, dates, prices and
               "After the deadline has passed",
               "Only if the client asks",
               "Before the deadline, with a brief reason and a new date you can keep",
-              "Never; just deliver when you can",
+              "Never; just deliver when you can and apologise once the client has received the work",
             ],
             answer_index: 2,
             explanation: "The lesson says clients forgive delays they hear about early far more than silence.",
@@ -767,7 +767,7 @@ Read every important message once before sending. Check names, dates, prices and
           {
             prompt: "What does the lesson say about writing to clients in other time zones?",
             options: [
-              "Expect instant replies at any hour",
+              "Expect instant replies at any hour, since clients abroad check their messages all day and night",
               "Avoid email completely",
               "Be aware of their working hours and do not expect replies in the middle of their night",
               "Only write to them at weekends",
@@ -835,7 +835,7 @@ The next lessons go deeper into finding clients close to home, using marketplace
           {
             prompt: "What are the three sources of clients named in the lesson?",
             options: [
-              "Banks, government offices and radio stations",
+              "Banks, government offices and radio stations that advertise freelance work every week",
               "Only foreign companies",
               "People who know you, businesses you approach, and online marketplaces and job boards",
               "Family, friends and classmates only",
@@ -849,7 +849,7 @@ The next lessons go deeper into finding clients close to home, using marketplace
               "Because online work is illegal for beginners",
               "Because trust already exists, payment is familiar and you gain samples and references",
               "Because local clients always pay more",
-              "Because you can never work for clients abroad",
+              "Because Ghanaian freelancers are never allowed to work for clients abroad until they have local references",
             ],
             answer_index: 1,
             explanation: "Local first clients lower your risk and give you samples and references.",
@@ -859,7 +859,7 @@ The next lessons go deeper into finding clients close to home, using marketplace
             options: [
               "A water project for a client",
               "A tax form",
-              "A type of payment app",
+              "A type of payment app that moves money from clients abroad to your account",
               "The path from possible client to paying client and follow up",
             ],
             answer_index: 3,
@@ -868,7 +868,7 @@ The next lessons go deeper into finding clients close to home, using marketplace
           {
             prompt: "Why keep a simple list of contacts?",
             options: [
-              "So you can forget about leads once you have one job",
+              "So you can forget about the other leads once you have one paying job, since one is enough",
               "Because it is required for tax registration",
               "Because clients ask to see it",
               "So you do not lose promising leads or message the same person too often",
@@ -930,7 +930,7 @@ Issahaku notices that several chop bars near the Tamale central market have no p
             options: [
               "A long speech about all your skills",
               "Nothing; just ask if they have any work",
-              "A signed contract for them to sign immediately",
+              "A signed contract that they can sign immediately so you can start work the same day",
               "One specific improvement you could make and a matching example",
             ],
             answer_index: 3,
@@ -964,7 +964,7 @@ Issahaku notices that several chop bars near the Tamale central market have no p
               "Whether they know anyone else who might need something similar",
               "Whether they can lend you money",
               "Whether they will pay double next time",
-              "Whether they want to stop working with you",
+              "Whether they want to stop working with you, so you can find a better paying client",
             ],
             answer_index: 0,
             explanation: "Asking for referrals turns one client into more, as in Issahaku's example.",
@@ -1025,7 +1025,7 @@ Mariama wants to offer short video captioning to creators abroad. Before signing
               "Who can join, the fees, how to withdraw money to Ghana and identity checks",
               "Only how many users it has",
               "Whether it has a nice logo",
-              "Whether your friends use it",
+              "Whether your friends use it and how many followers its social media pages have",
             ],
             answer_index: 0,
             explanation: "The lesson lists joining rules, fees, withdrawals and identity checks as things to read first.",
@@ -1033,7 +1033,7 @@ Mariama wants to offer short video captioning to creators abroad. Before signing
           {
             prompt: "A remote role says it is open only to applicants in certain countries, and Ghana is not one. What should you do?",
             options: [
-              "Use a tool to hide your location and apply",
+              "Use a tool to hide your location and apply, since many people do it",
               "Say you live in one of those countries",
               "Respect the limit and look for roles open to you",
               "Apply with a friend's details",
@@ -1055,7 +1055,7 @@ Mariama wants to offer short video captioning to creators abroad. Before signing
           {
             prompt: "Which approach helps a beginner against strong competition?",
             options: [
-              "Sending the same long general proposal to every posting",
+              "Sending the same long general proposal to every posting so you can apply to many jobs quickly",
               "Leaving the profile empty to save time",
               "Applying only to the biggest, most complex projects",
               "A focused profile, matching samples and short tailored proposals to small clear jobs",
@@ -1129,7 +1129,7 @@ Abdul-Rahman designs simple websites. He finds five guesthouses in Tamale with o
           {
             prompt: "There is no reply to your outreach after about a week. What should you do?",
             options: [
-              "Send a message every day until they reply",
+              "Send a message every day until they reply, since persistence always wins clients in the end",
               "Send one short polite follow up, then move on if there is still no reply",
               "Post about them on social media",
               "Call them late at night",
@@ -1142,7 +1142,7 @@ Abdul-Rahman designs simple websites. He finds five guesthouses in Tamale with o
             options: [
               "They always pay more",
               "They are always from abroad",
-              "They never need contracts",
+              "They never need contracts or deposits, because the person who referred them guarantees payment",
               "They already trust you a little because someone they know recommended you",
             ],
             answer_index: 3,
@@ -1154,7 +1154,7 @@ Abdul-Rahman designs simple websites. He finds five guesthouses in Tamale with o
               "Share a useful idea before a busy season or offer a regular arrangement",
               "Message the client every day",
               "Raise your price without telling them",
-              "Refuse new requests so they value you more",
+              "Refuse some of their new requests so they value your time more and pay you more next time",
             ],
             answer_index: 0,
             explanation: "The lesson suggests timely ideas before busy seasons and regular arrangements where they make sense.",
@@ -1209,7 +1209,7 @@ Safety is not only about avoiding loss. Clients trust freelancers who handle the
           {
             prompt: "What is the one rule the lesson asks you to remember?",
             options: [
-              "Always pay a small fee to show you are serious",
+              "Always pay a small registration fee to show the client you are serious about getting the work",
               "Never use mobile money",
               "Only accept work from people abroad",
               "Real clients pay you to work; they never ask you to pay them to get work",
@@ -1233,7 +1233,7 @@ Safety is not only about avoiding loss. Clients trust freelancers who handle the
             options: [
               "Freelancers never use passwords",
               "Freelancers always carry cash",
-              "Freelancers are not allowed to report crimes",
+              "Freelancers are not allowed to report crimes to the police in Ghana, so scammers feel safe",
               "Their accounts with good reviews are valuable and can be stolen",
             ],
             answer_index: 3,
@@ -1245,7 +1245,7 @@ Safety is not only about avoiding loss. Clients trust freelancers who handle the
               "Deposited a small amount to test it",
               "Asked a friend to deposit for her",
               "Stopped, blocked the number and reported it",
-              "Recruited friends to reach the gold level",
+              "Recruited two friends to reach the gold level faster",
             ],
             answer_index: 2,
             explanation: "She recognised she was being asked to pay to work and reported it to the Cyber Security Authority.",
@@ -1308,7 +1308,7 @@ Sumaila is offered a data entry job by a "client" who sends a payment alert for 
             options: [
               "You are offered a permanent contract",
               "You are asked to deposit money to unlock better tasks or release earnings",
-              "You are invited to an office interview",
+              "You are invited to an office interview in Accra for a permanent role with the company",
               "You receive a certificate",
             ],
             answer_index: 1,
@@ -1347,7 +1347,7 @@ Sumaila is offered a data entry job by a "client" who sends a payment alert for 
             options: [
               "Because the payment will be too small",
               "Because criminals use such accounts for fraud and you can be held responsible",
-              "Because accounts can only be used on weekends",
+              "Because marketplace accounts can only be used on weekends by anyone other than the owner",
               "Because it uses too much data",
             ],
             answer_index: 1,
@@ -1409,7 +1409,7 @@ Fuseini gets a call from someone who says they are from his mobile money provide
           {
             prompt: "Why is your email account especially important to protect?",
             options: [
-              "Because it is the only account with your photo",
+              "Because it is the only account that holds your profile photo and your full name, so it identifies you",
               "Because whoever controls it can reset your other passwords and message clients in your name",
               "Because email is free",
               "Because email cannot be used on a phone",
@@ -1420,7 +1420,7 @@ Fuseini gets a call from someone who says they are from his mobile money provide
           {
             prompt: "What does 2 Step Verification add?",
             options: [
-              "A second password that is the same as the first",
+              "A second password that is the same as the first one, so it is easy to remember on any device",
               "A way to share accounts safely",
               "Faster sign in without a password",
               "A second step, such as a code, so a stolen password alone is not enough",
@@ -1431,7 +1431,7 @@ Fuseini gets a call from someone who says they are from his mobile money provide
           {
             prompt: "Someone calls saying they are from your mobile money provider and asks for the code just sent to you. What should you do?",
             options: [
-              "Give them the code so they can fix the account",
+              "Give them the code so they can fix the account before it is blocked",
               "Give them half the code",
               "Refuse and hang up; genuine providers never ask for codes",
               "Send the code by SMS instead",
@@ -1443,7 +1443,7 @@ Fuseini gets a call from someone who says they are from his mobile money provide
             prompt: "What does the lesson advise about renting or buying accounts with reviews?",
             options: [
               "It is a good shortcut for beginners",
-              "It is fine if the price is low",
+              "It is fine if the price is low and the account has a long history of good reviews from clients",
               "Say no; platforms close such accounts and they are used for fraud",
               "Only rent accounts from friends",
             ],
@@ -1504,7 +1504,7 @@ You will not win every proposal. Clients choose someone else for many reasons, i
               "At the payment stage",
               "At the beginning, when expectations were not clear or written down",
               "When the client posts a review",
-              "When the freelancer buys new software",
+              "When the freelancer buys new software halfway through the job without telling the client",
             ],
             answer_index: 1,
             explanation: "The lesson says most end of project problems start with unclear expectations at the beginning.",
@@ -1515,7 +1515,7 @@ You will not win every proposal. Clients choose someone else for many reasons, i
               "She cut her rate by half",
               "She refused the job",
               "She suggested dropping the banner design so the scope fitted the budget",
-              "She agreed to do everything for the lower price",
+              "She agreed to do everything for the lower price to keep the client happy",
             ],
             answer_index: 2,
             explanation: "She adjusted the scope instead of simply cutting her rate.",
@@ -1525,7 +1525,7 @@ You will not win every proposal. Clients choose someone else for many reasons, i
             options: [
               "Always accepting the client's first offer",
               "Refusing to discuss price",
-              "Arguing until the client gives up",
+              "Arguing politely until the client gives up and pays the full price you first asked for",
               "Finding an arrangement both sides accept, such as adjusting scope to fit a budget",
             ],
             answer_index: 3,
@@ -1536,7 +1536,7 @@ You will not win every proposal. Clients choose someone else for many reasons, i
             options: [
               "It means you should stop freelancing",
               "It is normal; treat each one as practice and keep going",
-              "It means your price is always too high",
+              "It means your price is always too high and should be cut in half",
               "It only happens to beginners abroad",
             ],
             answer_index: 1,
@@ -1597,7 +1597,7 @@ A clinic manager in Nalerigu messages Wumpini: "We need something for our Facebo
           {
             prompt: "Why does the lesson suggest asking only five to seven questions?",
             options: [
-              "Because clients are not allowed to answer more",
+              "Because clients are not allowed to answer more than seven questions on most platforms",
               "Because the law limits questions",
               "Because questions cost money",
               "Because twenty questions can overwhelm the client",
@@ -1622,7 +1622,7 @@ A clinic manager in Nalerigu messages Wumpini: "We need something for our Facebo
               "To make the job seem bigger",
               "To catch misunderstandings early and form the basis of your proposal",
               "To avoid sending a proposal",
-              "Because clients like long messages",
+              "Because clients like long messages that show how much work you will be doing for them",
             ],
             answer_index: 1,
             explanation: "A written summary confirmed by the client catches misunderstandings and supports the agreement.",
@@ -1691,7 +1691,7 @@ If there is no reply, follow up once after a few days. If the client chooses som
           {
             prompt: "What should the first part of a good proposal do?",
             options: [
-              "List all your qualifications",
+              "List all your qualifications and every course you have taken",
               "Restate the client's problem in their words",
               "Ask for payment immediately",
               "Describe your hobbies",
@@ -1716,7 +1716,7 @@ If there is no reply, follow up once after a few days. If the client chooses som
               "I guarantee 1,000 new followers in a month",
               "I will double your sales",
               "You will see a first draft in two days and can request two rounds of changes",
-              "Your business will never have problems again",
+              "Your business will never have problems again once my new design is live on your page",
             ],
             answer_index: 2,
             explanation: "The lesson says to promise what you control: quality, timing and communication.",
@@ -1787,7 +1787,7 @@ State your price clearly, without apologising. If a client says it is too high, 
           {
             prompt: "What is the floor price in this lesson?",
             options: [
-              "The average price other freelancers charge",
+              "The average price other freelancers charge for the same job on the same platform this year",
               "The lowest price at which the job is worth doing, based on your time and costs",
               "The price a client first offers",
               "The highest price you can ask for",
@@ -1805,7 +1805,7 @@ State your price clearly, without apologising. If a client says it is too high, 
             prompt: "What is a monthly retainer?",
             options: [
               "A fine paid for late delivery",
-              "A deposit that is never returned",
+              "A deposit that is never returned, even if the work is cancelled",
               "A tax paid each month",
               "A fixed monthly fee for a defined amount of ongoing work",
             ],
@@ -1818,7 +1818,7 @@ State your price clearly, without apologising. If a client says it is too high, 
               "Only the price you agreed",
               "The exchange rate on the day and fees charged by the platform and payment route",
               "Nothing; it is always the same",
-              "The client's time zone",
+              "The client's time zone and the day of the week the money is sent from abroad",
             ],
             answer_index: 1,
             explanation: "The lesson says exchange rates and fees change what reaches you, so work it out before agreeing.",
@@ -1826,7 +1826,7 @@ State your price clearly, without apologising. If a client says it is too high, 
           {
             prompt: "A client says your price is too high. What does the lesson suggest first?",
             options: [
-              "Cut your rate in half straight away",
+              "Cut your rate in half straight away so the client does not leave you",
               "Offer a smaller scope rather than cutting your rate immediately",
               "Stop replying",
               "Add extra work for free",
@@ -1882,7 +1882,7 @@ A small job for a neighbour may need only a clear message confirming the work, p
           {
             prompt: "Why does the lesson say a WhatsApp chat alone is weak protection?",
             options: [
-              "Because WhatsApp messages are illegal as evidence",
+              "Because WhatsApp messages are not accepted as evidence anywhere and can never be used in a dispute",
               "Because chats are automatically deleted every day",
               "Because clients cannot read WhatsApp",
               "Because a chat scattered over weeks is hard to search and easy to argue about",
@@ -1905,7 +1905,7 @@ A small job for a neighbour may need only a clear message confirming the work, p
             prompt: "How did Abdul-Rahman respond when the owner asked for a booking form?",
             options: [
               "He added it for free",
-              "He refused and stopped the project",
+              "He refused and stopped the project until the owner paid for the whole job again",
               "He pointed to the agreement and offered a separate price",
               "He ignored the request",
             ],
@@ -1916,7 +1916,7 @@ A small job for a neighbour may need only a clear message confirming the work, p
             prompt: "According to the lesson, when do you need more detail in a written agreement?",
             options: [
               "When the job is bigger and you know the client less",
-              "Only when the client is a family member",
+              "Only when the client is a family member, since family are most likely to argue",
               "Never; one line is always enough",
               "Only for clients abroad",
             ],
@@ -1992,7 +1992,7 @@ Hawa agrees to write five blog articles for a tour company in Mole. Her email li
             options: [
               "Nothing; small jobs need no agreement",
               "A clear message or email listing the six parts, with the client replying that they agree",
-              "A stamped legal document from a court",
+              "A stamped legal document from a court, signed by both of you in front of a lawyer",
               "A voice note only",
             ],
             answer_index: 1,
@@ -2001,7 +2001,7 @@ Hawa agrees to write five blog articles for a tour company in Mole. Her email li
           {
             prompt: "Why should you not start serious work before terms are agreed and any deposit is paid?",
             options: [
-              "Because tools do not work without a contract",
+              "Because design and writing tools do not work properly until a contract has been signed by the client",
               "Because starting early often leads to unpaid work if the client changes their mind",
               "Because clients prefer slow freelancers",
               "Because it is illegal to start early",
@@ -2078,7 +2078,7 @@ Sumaila agrees to build a stock spreadsheet for a pharmacy in Bolgatanga in two 
             options: [
               "To make the job finish faster",
               "So you never need an invoice",
-              "Because deposits are a tax requirement",
+              "Because deposits are a tax requirement for every self employed person in Ghana",
               "To show the client is serious and cover your early time if they disappear",
             ],
             answer_index: 3,
@@ -2087,7 +2087,7 @@ Sumaila agrees to build a stock spreadsheet for a pharmacy in Bolgatanga in two 
           {
             prompt: "What is the benefit of milestones for a large job?",
             options: [
-              "The client never has to pay until the very end",
+              "The client never has to pay anything until the very end, when every milestone is finished",
               "They make the work free",
               "They remove the need for written terms",
               "If the client stops paying, you have lost at most one stage of work",
@@ -2118,7 +2118,7 @@ Sumaila agrees to build a stock spreadsheet for a pharmacy in Bolgatanga in two 
               "Post about the client on social media",
               "Send threatening messages",
               "Pause further work for that client until the balance is settled, and say so calmly",
-              "Do more work for free to keep them happy",
+              "Do more work for free to keep them happy, since unpaid invoices are usually paid in the end",
             ],
             answer_index: 2,
             explanation: "The lesson advises pausing work calmly and keeping every message, without threats.",
@@ -2179,7 +2179,7 @@ Mariama has three clients in one week. On Monday she lists all deadlines in her 
             options: [
               "Your draft must be ready by about Wednesday, so start earlier",
               "Start on Friday morning",
-              "Ask the client to review faster",
+              "Ask the client to review faster so you can start on Thursday",
               "Deadlines do not need planning",
             ],
             answer_index: 0,
@@ -2210,7 +2210,7 @@ Mariama has three clients in one week. On Monday she lists all deadlines in her 
           {
             prompt: "A client asks for more revision rounds than agreed. What does the lesson suggest?",
             options: [
-              "Do them free to avoid conflict",
+              "Do them free to avoid conflict, since extra rounds are part of good service for every client you have",
               "Refuse rudely",
               "Politely say they are beyond what was included and offer a price for the extra work",
               "Stop replying",
@@ -2271,7 +2271,7 @@ Nobody legitimate will ask for your mobile money PIN, a verification code or you
               "Because it is faster for the client",
               "Because friends charge high fees",
               "It avoids problems when you withdraw money or when a provider checks your identity",
-              "Because banks do not allow more than one account",
+              "Because banks and mobile money providers do not allow anyone to have more than one account in Ghana",
             ],
             answer_index: 2,
             explanation: "The lesson says accounts in your own name, matching your Ghana Card, avoid withdrawal and identity problems.",
@@ -2279,7 +2279,7 @@ Nobody legitimate will ask for your mobile money PIN, a verification code or you
           {
             prompt: "What mistake did Issahaku make with his first client?",
             options: [
-              "He charged too much",
+              "He charged too much for a first job with a new client",
               "He sent the final files before confirming the payment had arrived",
               "He used a spreadsheet",
               "He sent a receipt",
@@ -2303,7 +2303,7 @@ Nobody legitimate will ask for your mobile money PIN, a verification code or you
             options: [
               "It names no companies, because rules and providers change, and teaches you how to check instead",
               "It recommends the cheapest one",
-              "It lists every company in Ghana",
+              "It lists every company in Ghana with its fees, so you can pick the cheapest one quickly",
               "It says all companies are licensed",
             ],
             answer_index: 0,
@@ -2367,7 +2367,7 @@ Hawa finishes flyers for a youth programme in Damongo. The organiser messages a 
           {
             prompt: "How should you confirm a mobile money payment before releasing final files?",
             options: [
-              "Trust the client's screenshot",
+              "Trust the client's screenshot of the payment",
               "Trust any SMS alert",
               "Check your actual balance or transaction history",
               "Ask a friend if they think it arrived",
@@ -2402,7 +2402,7 @@ Hawa finishes flyers for a youth programme in Damongo. The organiser messages a 
             options: [
               "They are always zero",
               "They are set by your client",
-              "Only clients abroad pay them",
+              "Only clients abroad pay them, since local transfers between mobile money accounts are always free to send",
               "They apply and change, so check your provider's current charges and include them in your pricing",
             ],
             answer_index: 3,
@@ -2501,7 +2501,7 @@ Abdul-Rahman agrees to build a website for a small shop abroad. Before quoting, 
             options: [
               "Only the colour of the app",
               "Nothing; all routes are the same",
-              "Which service your friends like best",
+              "Which service your friends like best and which one has the most downloads in the app store",
               "Total cost including fees and exchange rate, speed, limits and name matching",
             ],
             answer_index: 3,
@@ -2584,7 +2584,7 @@ Mariama keeps a "Freelance 2026" spreadsheet with an income sheet and a costs sh
             prompt: "What are the two ways to register that the GRA describes?",
             options: [
               "By SMS or by letter",
-              "Through a friend or an agent you pay",
+              "Through a friend or an agent you pay to register you, since individuals cannot register themselves",
               "Through a marketplace or a bank",
               "Online through the taxpayers portal, or in person at a Taxpayer Service Centre",
             ],
@@ -2597,7 +2597,7 @@ Mariama keeps a "Freelance 2026" spreadsheet with an income sheet and a costs sh
               "Because they change, so you should read the current GRA page or ask at a GRA office",
               "Because freelancers never pay tax",
               "Because they are secret",
-              "Because they are the same for everyone forever",
+              "Because they are the same for everyone forever, so the lesson expects you to know them already",
             ],
             answer_index: 0,
             explanation: "The lesson says rates and thresholds change and to confirm them with the GRA.",
@@ -2682,7 +2682,7 @@ Wumpini has managed social media for a salon in Tamale for four months. She deli
           {
             prompt: "What does the lesson say about promises of fast, guaranteed freelance income?",
             options: [
-              "They are reliable if many people share them",
+              "They are reliable if many people share them in WhatsApp groups and post screenshots of their earnings",
               "They only apply to clients abroad",
               "Ignore them; they are a common hook for scams and courses that do not deliver",
               "They are guaranteed by the government",
@@ -2696,7 +2696,7 @@ Wumpini has managed social media for a salon in Tamale for four months. She deli
               "A paid advert",
               "Fake reviews",
               "Reliable work, quickly admitting and fixing a mistake, and an honest recommendation",
-              "Lowering her price to zero",
+              "Lowering her price to zero for the first job so the client would recommend her to friends",
             ],
             answer_index: 2,
             explanation: "Her reliability and honesty earned a recommendation and an introduction.",
@@ -2770,7 +2770,7 @@ Fuseini cleans survey data for an NGO in Tamale. He keeps the files in a protect
           {
             prompt: "What does the lesson say about fake or paid reviews?",
             options: [
-              "They are fine if the work is good",
+              "They are fine if the work is good, since they only speed up what real clients would say anyway",
               "Use them only for clients abroad",
               "Only use them on new accounts",
               "Never buy or fake them; platforms remove them and they destroy trust",
@@ -2804,7 +2804,7 @@ Fuseini cleans survey data for an NGO in Tamale. He keeps the files in a protect
             prompt: "What should you do with client data when a job ends?",
             options: [
               "Keep it forever in case it is useful",
-              "Share it with other clients as an example",
+              "Share it with other clients as an example of the work you did",
               "Delete or return it, unless the client asks you to keep it",
               "Post it in your portfolio",
             ],
@@ -2867,7 +2867,7 @@ After a year, Amina, who started with typing jobs, has learned spreadsheet repor
               "Be able to do more valuable work by deepening your main skill",
               "Copy other freelancers' prices",
               "Promise clients guaranteed results",
-              "Work longer hours for the same price",
+              "Work longer hours for the same price so clients see how hard you work",
             ],
             answer_index: 0,
             explanation: "The lesson says deeper, more valuable skills are what let you charge more.",
@@ -2889,7 +2889,7 @@ After a year, Amina, who started with typing jobs, has learned spreadsheet repor
               "Without telling them",
               "Give advance notice in writing and explain what they continue to receive",
               "Double them overnight",
-              "Only raise prices for family",
+              "Only raise prices for family and friends, who are less likely to leave you over it",
             ],
             answer_index: 1,
             explanation: "The lesson advises written advance notice for existing clients.",
