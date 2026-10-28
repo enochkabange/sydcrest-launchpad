@@ -53,11 +53,11 @@ You can do everything in this section with free tools: a notebook, Google Sheets
             prompt: "A shop owner says \"sales are bad\". What should you do first?",
             options: [
               "Build a dashboard of every product",
-              "Ask questions until you can turn the concern into a specific, measurable question",
+              "Calculate the average sale for the whole year and compare it with last year",
               "Start learning Python so you can analyse the sales",
-              "Calculate the average sale for the whole year",
+              "Ask questions until the concern becomes a specific, measurable question",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The lesson says your first job is to turn a vague request into a question data can answer.",
           },
           {
@@ -76,7 +76,7 @@ You can do everything in this section with free tools: a notebook, Google Sheets
             options: [
               "One row per record and one column per fact",
               "All the data typed into a single cell",
-              "A different sheet for every day",
+              "A different sheet for every day, with totals at the bottom",
               "Colour coding every row by hand",
             ],
             answer_index: 0,
@@ -143,8 +143,8 @@ When you see a number, ask four questions. Mean or median? Percentage or percent
         questions: [
           {
             prompt: "Five traders report daily sales of 80, 90, 100, 110 and 900 cedis. Which number best describes a typical trader?",
-            options: ["The mean, 256", "The median, 100", "The largest value, 900", "The total, 1,280"],
-            answer_index: 1,
+            options: ["The mean, 256", "The largest value, 900", "The median, 100", "The total, 1,280"],
+            answer_index: 2,
             explanation: "One extreme value pulls the mean up, so the median describes the typical case better.",
           },
           {
@@ -157,8 +157,8 @@ When you see a number, ask four questions. Mean or median? Percentage or percent
             prompt: "Why might a survey of farmers only in villages beside the main road mislead you?",
             options: [
               "Roadside villages have no farmers",
-              "The sample is too large",
-              "It leaves out remote communities that may face different conditions",
+              "The sample is too large, so the average comes out too high",
+              "It misses remote communities whose conditions may differ",
               "Surveys can never be trusted",
             ],
             answer_index: 2,
@@ -259,12 +259,12 @@ Before you analyse anything, scan the sheet. Are there merged cells, totals insi
           {
             prompt: "What does a dropdown list (data validation) help prevent?",
             options: [
-              "Running out of storage",
-              "Spelling drift such as P, present and Present meaning the same thing",
-              "Other people seeing the sheet",
+              "Formulas breaking whenever someone adds a new row at the bottom",
               "Slow internet",
+              "Other people opening the sheet without permission",
+              "Mixed spellings like P, present and Present for one value",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Choosing from a list keeps entries consistent.",
           },
         ],
@@ -319,22 +319,22 @@ Abdul-Rahman sells phone accessories in Tamale and records each sale: date, item
             prompt: "An advert asks for Excel, but you practise in Google Sheets. What does the lesson say?",
             options: [
               "Google Sheets practice does not count",
-              "The skills in this section work the same way, so your practice transfers",
-              "You must buy Excel before applying",
-              "Only databases matter for that job",
+              "You must buy Excel and redo the practice before you apply",
+              "These skills work the same way in Excel, so your practice transfers",
+              "Sheets practice only counts if you also hold a paid Excel certificate",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "The lesson says Excel works the same way for these skills, so Google Sheets practice counts.",
           },
           {
             prompt: "What makes formulas useful in a spreadsheet?",
             options: [
               "They make the text bold",
-              "They update automatically when the numbers they use change",
-              "They stop other people editing",
               "They only work on phones",
+              "They lock the numbers so other people cannot change them by mistake",
+              "They update automatically when the numbers they use change",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Formulas recalculate when their inputs change, so totals stay correct.",
           },
           {
@@ -422,22 +422,22 @@ Formulas can be wrong without any error message. Check a result by hand on a few
             prompt: "What does COUNTIF do?",
             options: [
               "Adds numbers in a range",
-              "Counts rows that meet a condition",
               "Finds the middle value",
-              "Joins two tables",
+              "Counts rows that meet a condition",
+              "Adds the numbers that meet a condition",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "COUNTIF counts the cells in a range that meet a condition.",
           },
           {
             prompt: "Why would you write $G$1 instead of G1 in a formula you copy down?",
             options: [
-              "To make the number a currency",
-              "To keep the reference fixed on G1 in every row",
-              "To hide the cell",
+              "To format the result as dollars in every row",
               "To round the result",
+              "To hide the cell",
+              "To keep the reference on G1 in every row",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Dollar signs lock a reference so it does not move when copied.",
           },
           {
@@ -509,9 +509,9 @@ Issahaku receives a monthly sheet of distributions with only community codes. He
             prompt: "What does =XLOOKUP(B2, Prices!A:A, Prices!C:C) do?",
             options: [
               "Adds column C of Prices",
-              "Finds B2 in column A of Prices and returns the matching value from column C",
+              "Finds B2 in column A of Prices and returns the value from column C",
               "Sorts the Prices sheet",
-              "Counts how many codes match B2",
+              "Finds B2 in column C of Prices and returns the value from column A",
             ],
             answer_index: 1,
             explanation: "XLOOKUP searches one range and returns the matching value from another.",
@@ -520,11 +520,11 @@ Issahaku receives a monthly sheet of distributions with only community codes. He
             prompt: "Why should you include FALSE at the end of a VLOOKUP?",
             options: [
               "It makes the formula run faster",
-              "It forces an exact match so you do not get wrong values silently",
+              "It tells VLOOKUP to find the closest match in a sorted list",
               "It hides errors",
-              "It turns the result into text",
+              "It forces an exact match, so wrong values do not slip in",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Without FALSE, VLOOKUP can return a near match without warning.",
           },
           {
@@ -614,12 +614,12 @@ A smartphone to test your forms the way enumerators will, a free KoboToolbox or 
           {
             prompt: "Why do enumerators often collect data offline?",
             options: [
-              "Offline data is more accurate by law",
-              "Communities may have weak network, so forms upload later when there is signal",
-              "Phones cannot run forms online",
+              "The law requires survey answers to stay off the internet until checked",
               "It hides data from managers",
+              "Phones cannot run forms online",
+              "Networks may be weak, so forms upload later when there is signal",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "In the example, enumerators collected offline and uploaded in the evening when they reached network.",
           },
           {
@@ -636,12 +636,12 @@ A smartphone to test your forms the way enumerators will, a free KoboToolbox or 
           {
             prompt: "In the example, what did Fuseini do to protect respondents?",
             options: [
-              "Shared the file on social media",
-              "Replaced names with household IDs",
+              "Asked respondents to sign their full names",
               "Deleted all the data",
+              "Replaced names with household IDs",
               "Asked for phone numbers twice",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Replacing names with IDs reduces the risk of identifying people.",
           },
         ],
@@ -726,11 +726,11 @@ Always pilot the questionnaire with a few people similar to your respondents. In
             prompt: "What does stratified sampling make sure of?",
             options: [
               "Only the easiest people to reach are included",
-              "Each subgroup, such as each community, is included",
-              "Everyone in the country is surveyed",
               "No questions are translated",
+              "Everyone in every community is surveyed, so no one is missed",
+              "Each subgroup, such as each community, is included",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Stratified sampling includes a set number from each subgroup.",
           },
           {
@@ -810,11 +810,11 @@ Wumpini builds an invented water access form for five communities near Savelugu:
             prompt: "How do KoboToolbox and ODK handle villages with no network?",
             options: [
               "They cannot be used without network",
-              "Forms are filled offline and submissions are sent when the phone next connects",
               "Answers are sent by SMS only",
-              "Enumerators must write on paper first",
+              "Forms are filled offline and sent when the phone next connects",
+              "Enumerators fill paper forms first, then type them into the app later",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Both tools collect data offline and upload later.",
           },
           {
@@ -826,12 +826,12 @@ Wumpini builds an invented water access form for five communities near Savelugu:
           {
             prompt: "What does a constraint do?",
             options: [
-              "Shows a question only when it applies",
-              "Rejects impossible answers, such as a household size of 300",
-              "Translates the form",
+              "Shows a question only when an earlier answer makes it apply",
               "Records a GPS point",
+              "Translates the form",
+              "Rejects impossible answers, such as a household of 300",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Constraints stop answers outside the allowed range.",
           },
           {
@@ -903,11 +903,11 @@ The same ideas apply in SQL and in Python's pandas library, which you will meet 
             prompt: "What should you do before you start cleaning?",
             options: [
               "Delete the raw download",
-              "Make a copy and keep the original untouched",
               "Fill all blanks with zero",
-              "Send the file to the donor",
+              "Make a copy and keep the original untouched",
+              "Sort every column so the errors are easy to see",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Working on a copy lets you start again if you make a mistake.",
           },
           {
@@ -916,7 +916,7 @@ The same ideas apply in SQL and in Python's pandas library, which you will meet 
               "Delete the whole survey",
               "Leave it, because all data is correct",
               "Flag it and check with the field team before changing it",
-              "Replace it with the average",
+              "Replace it with the class average so the totals still work",
             ],
             answer_index: 2,
             explanation: "Some extremes are real, so check with the field team before changing anything.",
@@ -984,12 +984,12 @@ Sumaila receives an invented health survey from Walewale with names, phone numbe
           {
             prompt: "Which of these can identify someone even without a name?",
             options: [
-              "The total number of surveys collected",
-              "A combination like female, aged 70, widowed, in a small community",
-              "The name of the survey tool",
+              "The total number of surveys collected in each region per month",
               "The date the form was designed",
+              "The name of the survey tool",
+              "A mix like female, aged 70, widowed, in a small community",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Combined details can identify a person in a small community.",
           },
           {
@@ -1006,12 +1006,12 @@ Sumaila receives an invented health survey from Walewale with names, phone numbe
           {
             prompt: "What is pseudonymisation?",
             options: [
-              "Publishing names in reports",
-              "Storing names separately and linking answers only by an ID",
+              "Publishing names in reports while hiding phone numbers",
               "Deleting all data after collection",
+              "Keeping names apart and linking answers only by an ID",
               "Translating forms into local languages",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Identities and answers are kept apart, linked only by an ID.",
           },
           {
@@ -1019,8 +1019,8 @@ Sumaila receives an invented health survey from Walewale with names, phone numbe
             options: [
               "Nothing, to save time",
               "Only the enumerator's name",
-              "Who you are, why the data is collected, how it is used and that they can refuse or stop",
-              "That they must answer every question",
+              "Who you are, how the data will be used, and that they can refuse",
+              "That once they agree, they must answer every question to the end",
             ],
             answer_index: 2,
             explanation: "Informed consent means people know the purpose and can choose to refuse.",
@@ -1095,8 +1095,8 @@ An invented project near Wa trains women's groups in shea butter processing. Mon
           },
           {
             prompt: "What does the A in MEAL stand for?",
-            options: ["Analysis", "Accountability", "Attendance", "Audit"],
-            answer_index: 1,
+            options: ["Analysis", "Administration", "Attendance", "Accountability"],
+            answer_index: 3,
             explanation: "MEAL is monitoring, evaluation, accountability and learning.",
           },
           {
@@ -1175,8 +1175,8 @@ Abdul-Rahman has invented survey data from 150 households. 63 report treating wa
             options: [
               "Safer drinking water",
               "Stronger communities",
-              "Percentage of surveyed households in the project communities that treat their drinking water",
-              "Improved lives",
+              "Percentage of households in project communities that treat their water",
+              "Better health and safer water for every family living in the project area",
             ],
             answer_index: 2,
             explanation: "An indicator is specific and measurable.",
@@ -1207,11 +1207,11 @@ Abdul-Rahman has invented survey data from 150 households. 63 report treating wa
             prompt: "Why must you plan disaggregation when designing a survey?",
             options: [
               "Disaggregation makes the survey shorter",
-              "You cannot break results down by something you did not collect",
+              "It removes the need for a baseline, since groups are compared instead",
               "Donors never ask for it",
-              "It removes the need for a baseline",
+              "You cannot split results by a detail you did not collect",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "If sex or age was not collected, you cannot split results by it later.",
           },
           {
@@ -1296,12 +1296,12 @@ Mariama prepares the invented quarterly report for a girls' education project ne
           {
             prompt: "What is a recount from the source?",
             options: [
-              "Asking the donor to count again",
-              "Going back to original records, such as attendance sheets, to check a reported number",
+              "Asking field staff to add up the monthly summary sheet once more",
               "Copying last month's figures",
+              "Checking a reported number against the original records",
               "Rounding all numbers",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "A recount checks a reported figure against the original records.",
           },
           {
@@ -1313,9 +1313,9 @@ Mariama prepares the invented quarterly report for a girls' education project ne
           {
             prompt: "Which routine check does the lesson suggest?",
             options: [
-              "Check that subgroups, such as men plus women, add up to the total",
+              "Check that men plus women add up to the total",
               "Delete any month with low numbers",
-              "Only check data from your own community",
+              "Only check months where the numbers look unusually high",
               "Change figures so they reach the target",
             ],
             answer_index: 0,
@@ -1399,11 +1399,11 @@ Issahaku joins a microfinance company in Tamale as a reporting assistant. Each m
             prompt: "In a relational database, how are tables linked?",
             options: [
               "By colour",
-              "By shared columns called keys, such as customer_id",
+              "By copying the same table into every database file",
               "By file name",
-              "They cannot be linked",
+              "By shared columns called keys, such as customer_id",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Tables are linked by shared key columns.",
           },
           {
@@ -1431,12 +1431,12 @@ Issahaku joins a microfinance company in Tamale as a reporting assistant. Each m
           {
             prompt: "Which is an advantage of a database over a spreadsheet?",
             options: [
-              "You can edit cells by hand more easily",
-              "It can hold millions of rows and be used by many people at once",
+              "You can scroll and edit every cell by hand, just like a sheet",
               "It needs no structure",
+              "It can hold millions of rows and serve many users at once",
               "It only works offline",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Databases handle large data and many users safely.",
           },
         ],
@@ -1527,12 +1527,12 @@ Start small: run SELECT with LIMIT 10 to see the data before filtering. Add one 
           {
             prompt: "Which query returns only sales in Tamale?",
             options: [
-              "SELECT * FROM sales ORDER BY town;",
-              "SELECT * FROM sales WHERE town = 'Tamale';",
-              "SELECT town FROM sales LIMIT 1;",
+              "SELECT * FROM sales ORDER BY town = 'Tamale';",
               "SELECT DISTINCT town FROM sales;",
+              "SELECT town FROM sales LIMIT 1;",
+              "SELECT * FROM sales WHERE town = 'Tamale';",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "WHERE filters rows to those that meet the condition.",
           },
           {
@@ -1556,11 +1556,11 @@ Start small: run SELECT with LIMIT 10 to see the data before filtering. Add one 
             prompt: "Which is the correct order of clauses?",
             options: [
               "FROM, SELECT, LIMIT, WHERE",
+              "SELECT, FROM, ORDER BY, WHERE, LIMIT",
               "SELECT, FROM, WHERE, ORDER BY, LIMIT",
-              "SELECT, WHERE, FROM, ORDER BY",
               "WHERE, SELECT, FROM, LIMIT",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Clauses must appear as SELECT, FROM, WHERE, ORDER BY, LIMIT.",
           },
         ],
@@ -1666,18 +1666,18 @@ A JOIN does what XLOOKUP does, and GROUP BY does what a pivot table does. If tho
             prompt: "What is the difference between WHERE and HAVING?",
             options: [
               "There is no difference",
-              "WHERE filters rows before grouping; HAVING filters groups after grouping",
+              "HAVING filters rows before grouping; WHERE filters groups after",
               "HAVING only works on text",
-              "WHERE only works after JOIN",
+              "WHERE filters rows before grouping; HAVING filters groups after",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "HAVING is applied to grouped results.",
           },
           {
             prompt: "Which join would you use to find agents with no transactions?",
             options: [
-              "INNER JOIN",
-              "LEFT JOIN from agents, then WHERE the transaction column IS NULL",
+              "INNER JOIN, then keep agents whose transaction count is zero",
+              "LEFT JOIN from agents, keeping rows with a NULL transaction",
               "No join is possible",
               "GROUP BY only",
             ],
@@ -1689,7 +1689,7 @@ A JOIN does what XLOOKUP does, and GROUP BY does what a pivot table does. If tho
             options: [
               "Joins can multiply rows and inflate totals without an error",
               "Databases charge per row",
-              "Row counts make queries faster",
+              "Checking row counts makes the join run faster on large tables",
               "It is required by SQL syntax",
             ],
             answer_index: 0,
@@ -1772,7 +1772,7 @@ Wumpini finishes an invented analysis of school attendance in ten schools near T
             options: [
               "To check that your message is clear to non technical readers",
               "To get help with formulas",
-              "To make the presentation longer",
+              "So they can check your formulas and catch calculation mistakes",
               "Because they will approve the budget",
             ],
             answer_index: 0,
@@ -1781,12 +1781,12 @@ Wumpini finishes an invented analysis of school attendance in ten schools near T
           {
             prompt: "Which belongs in the caveats part of a summary?",
             options: [
-              "Your favourite chart colour",
-              "Honest limits, such as a small sample or missing data",
-              "The recommendation",
+              "Extra charts that make your main finding look stronger",
               "The organisation's history",
+              "The recommendation",
+              "Honest limits, such as a small sample or missing data",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Caveats state the honest limits of the analysis.",
           },
           {
@@ -1795,7 +1795,7 @@ Wumpini finishes an invented analysis of school attendance in ten schools near T
               "Guess an answer",
               "Say so and suggest what data would help",
               "Hide the problem",
-              "Only show charts that look good",
+              "Quietly answer an easier question the data can answer",
             ],
             answer_index: 1,
             explanation: "Honesty keeps your credibility.",
@@ -1889,12 +1889,12 @@ Ask yourself: what is the one thing this chart should say? Would a reader see it
           {
             prompt: "Why does the lesson suggest bars rather than a pie for parts of a whole?",
             options: [
-              "Pies cannot show percentages",
-              "People compare lengths more accurately than angles",
+              "Pies cannot show more than three parts on a small screen",
               "Bars use less data",
+              "People compare lengths more accurately than angles",
               "Pies only work in Excel",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Lengths are easier to compare than angles.",
           },
         ],
@@ -1961,12 +1961,12 @@ Amina keeps an invented sheet of weekly seed distributions for an NGO in the Nor
           {
             prompt: "What makes a dashboard different from a one off report?",
             options: [
-              "It is printed on paper",
-              "It is connected to a data source and refreshes when the data changes",
-              "It has no charts",
+              "It is a fixed report emailed to managers at the end of every month",
               "It is always longer",
+              "It has no charts",
+              "It is connected to a data source and refreshes when the data changes",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Dashboards update from their data source.",
           },
           {
@@ -1978,7 +1978,7 @@ Amina keeps an invented sheet of weekly seed distributions for an NGO in the Nor
           {
             prompt: "What should you do before building a dashboard?",
             options: [
-              "Add every chart you can think of",
+              "Add every chart you can think of, then remove the unused ones",
               "Ask the user what decisions they make and sketch the page",
               "Buy a paid licence",
               "Delete the raw data",
@@ -2055,8 +2055,8 @@ Sumaila prepares a monthly report from twelve invented district spreadsheets for
           {
             prompt: "When does the lesson say Python is especially useful?",
             options: [
-              "For typing a single small list",
-              "For large files and repeated tasks you can rerun as code",
+              "For typing a single small list faster than a spreadsheet",
+              "For large files and repeated tasks you can rerun",
               "For drawing logos",
               "Only for building websites",
             ],
@@ -2067,18 +2067,18 @@ Sumaila prepares a monthly report from twelve invented district spreadsheets for
             prompt: "Which statement about SPSS, Stata and R is correct according to the lesson?",
             options: [
               "All three are free",
-              "SPSS and Stata are paid; R is a free language in the same family",
+              "Stata is free, while SPSS and R are paid",
               "R is paid and SPSS is free",
-              "None of them is used in research",
+              "SPSS and Stata are paid, while R is free",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "SPSS and Stata are paid software, while R is free.",
           },
           {
             prompt: "What is Google Colab?",
             options: [
-              "A paid statistics package",
-              "A free tool that runs Python notebooks in the browser",
+              "A paid statistics package you install on your laptop",
+              "A free browser tool for Python notebooks",
               "A database",
               "A survey app",
             ],
@@ -2088,12 +2088,12 @@ Sumaila prepares a monthly report from twelve invented district spreadsheets for
           {
             prompt: "When you get an error, what should you read first?",
             options: [
-              "The first line of your code",
-              "The last line of the error message",
+              "The first line of the error message",
               "The notebook title",
+              "The last line of the error message",
               "Nothing; restart the computer",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "The last line usually says what went wrong.",
           },
         ],
@@ -2194,11 +2194,11 @@ Write short code cells and run them often. Add a text cell explaining each step 
             prompt: "Why does \"42\" + 8 cause an error in Python?",
             options: [
               "42 is too big",
-              "\"42\" in quotes is text, not a number",
+              "Python needs a space between the plus sign and the numbers",
               "Python cannot add",
-              "8 must be written as eight",
+              "\"42\" in quotes is text, not a number",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "A string must be converted with int() before adding it to a number.",
           },
           {
@@ -2308,22 +2308,22 @@ If any idea here feels strange, do it in Google Sheets first, then repeat it in 
             prompt: "Which code gives the average spend per community?",
             options: [
               "df.head()",
-              "df.groupby(\"community\")[\"spend_ghs\"].mean()",
+              "df.groupby(\"spend_ghs\")[\"community\"].mean()",
               "df.shape",
-              "df.drop_duplicates()",
+              "df.groupby(\"community\")[\"spend_ghs\"].mean()",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "groupby with mean summarises by group, like a pivot table.",
           },
           {
             prompt: "What does df.isna().sum() show?",
             options: [
-              "The total of every column",
-              "The number of missing values in each column",
+              "The number of rows that have no missing values",
               "The first five rows",
+              "The number of missing values in each column",
               "Duplicate rows",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "isna marks missing values and sum counts them per column.",
           },
           {
@@ -2392,7 +2392,7 @@ Hawa finishes this track while doing national service at a district office near 
           {
             prompt: "According to the lesson, what helps most when applying for a junior data role?",
             options: [
-              "A long list of course certificates only",
+              "A long list of online course certificates, even without projects",
               "A clear piece of work you can show and explain",
               "A large social media following",
               "Paying an agent",
@@ -2404,11 +2404,11 @@ Hawa finishes this track while doing national service at a district office near 
             prompt: "Many M&E adverts ask for several years of experience. What does the lesson suggest?",
             options: [
               "Give up on M&E",
-              "Enter through assistant roles, national service, internships or short field contracts",
+              "Wait until you have several years of experience before applying",
               "Invent experience on your CV",
-              "Only apply to senior roles",
+              "Enter through assistant roles, national service or internships",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "These routes build the experience later adverts ask for.",
           },
           {
@@ -2425,8 +2425,8 @@ Hawa finishes this track while doing national service at a district office near 
           {
             prompt: "An employer asks you to pay before an interview. What does the lesson say?",
             options: [
-              "That is normal for good jobs",
-              "Genuine employers do not ask you to pay for an interview or job offer",
+              "That is normal for jobs with NGOs and international donors",
+              "Genuine employers do not ask you to pay for an interview",
               "Pay only half",
               "Pay if the job is remote",
             ],
@@ -2508,11 +2508,11 @@ Abdul-Rahman builds three case studies. The first uses a Ghana Statistical Servi
             prompt: "When is invented data acceptable in a portfolio?",
             options: [
               "Never",
-              "When it is clearly labelled as invented and used to demonstrate a technique",
+              "When presented as real figures from the Ghana Statistical Service",
               "When it makes the results look better",
-              "When presented as real government figures",
+              "When labelled as invented and used to show a technique",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Invented data must be labelled and never presented as real.",
           },
           {
@@ -2608,18 +2608,18 @@ Fuseini sets alerts for M&E and data roles in the Northern Region. He tailors hi
             prompt: "An advert asks for SPSS and you know Python. What should you do?",
             options: [
               "Claim you know SPSS",
-              "Say honestly what you know and show you can learn new tools",
+              "Say Python and SPSS are the same, so you already know it",
               "Never apply",
-              "Leave your skills off the CV",
+              "Be honest about what you know and show you can learn",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Be honest and show transferable skills.",
           },
           {
             prompt: "How does the lesson suggest preparing for a practical test?",
             options: [
               "Practise cleaning and summarising data against the clock",
-              "Memorise the employer's history",
+              "Memorise the employer's history and its latest annual report",
               "Avoid practising so you stay fresh",
               "Only read about SQL",
             ],
@@ -2630,7 +2630,7 @@ Fuseini sets alerts for M&E and data roles in the Northern Region. He tailors hi
             prompt: "Why follow application instructions exactly, such as the subject line?",
             options: [
               "It is the first test of attention to detail",
-              "It makes the email shorter",
+              "It helps the email get past spam filters automatically",
               "Employers never read them",
               "It is required by law",
             ],
