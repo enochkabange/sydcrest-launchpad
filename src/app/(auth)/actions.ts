@@ -8,7 +8,7 @@ import { parseAgeAndConsent, parseSignIn, parseSignUp, safeNextPath, type FieldE
 import { UNDER_AGE_MESSAGE } from "@/lib/legal";
 import { track } from "@/lib/analytics/track";
 import { recordLegalConsent } from "@/lib/consent-records";
-import { allowFormSubmission, FORM_RATE_LIMIT_MESSAGE } from "@/lib/rate-limit";
+import { allowFormSubmission, allowSignIn, FORM_RATE_LIMIT_MESSAGE, recordSignInFailure, SIGN_IN_LIMIT_MESSAGE } from "@/lib/rate-limit";
 
 /** Where to go after auth: the form's `next` field, checked to be a local path. */
 function nextFrom(form: FormData | undefined) {
@@ -28,8 +28,18 @@ export async function signIn(_prev: AuthState, form: FormData): Promise<AuthStat
   if (Object.keys(errors).length) return { errors, values: { email: data.email } };
 
   const supabase = await createClient();
+  // Supabase Auth sees this server's address for every visitor, so its per
+  // address limit cannot slow one visitor down: failed sign ins are counted
+  // here, per visitor and per visitor with this email (issue #225).
+  const requestHeaders = await headers();
+  if (!(await allowSignIn(supabase, requestHeaders, data.email))) {
+    return { message: SIGN_IN_LIMIT_MESSAGE, values: { email: data.email } };
+  }
   const { error } = await supabase.auth.signInWithPassword(data);
   if (error) {
+    // Every refusal counts, an unknown email included, so the limit itself
+    // never tells whether an account exists.
+    await recordSignInFailure(supabase, requestHeaders, data.email);
     const message =
       error.code === "email_not_confirmed"
         ? "Confirm your email first. Check your inbox for the link we sent."

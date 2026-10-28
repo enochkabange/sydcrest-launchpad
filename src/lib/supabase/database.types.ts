@@ -4339,6 +4339,10 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      record_sign_in_failure: {
+        Args: { p_address_key: string; p_pair_key: string }
+        Returns: undefined
+      }
       request_organisation_verification: {
         Args: { p_organisation_id: string }
         Returns: {
@@ -4535,6 +4539,10 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      sign_in_allowed: {
+        Args: { p_address_key: string; p_pair_key: string }
+        Returns: boolean
       }
       submit_node_quiz: {
         Args: { p_answers: Json; p_node_id: string }

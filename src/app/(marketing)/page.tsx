@@ -1,5 +1,6 @@
 import Link from "@/components/ui/link";
 import { HeroGraphic, StepGraphic } from "@/components/brand/illustrations";
+import { AccountCta } from "@/components/marketing/account-cta";
 import { Card, Section, Stat } from "@/components/marketing/section";
 import { Container, SectionGrid, SplitHero } from "@/components/ui/layout";
 import { buttonClasses } from "@/components/ui/button";
@@ -45,14 +46,19 @@ export default function Home() {
             place. SydCrest takes young Ghanaians from &ldquo;where do I start&rdquo; to employable
             and earning, beginning in the regions everyone else skips.
           </p>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/signup" className={buttonClasses("primary")}>
-              Create a free account
-            </Link>
-            <Link href="/login" className={buttonClasses("secondary")}>
-              Sign in
-            </Link>
-          </div>
+          <AccountCta
+            signedInLabel="Go to your dashboard"
+            signedOut={
+              <div className="flex flex-wrap gap-3">
+                <Link href="/signup" className={buttonClasses("primary")}>
+                  Create a free account
+                </Link>
+                <Link href="/login" className={buttonClasses("secondary")}>
+                  Sign in
+                </Link>
+              </div>
+            }
+          />
           <Link href="/programme" className="flex min-h-11 items-center self-start font-semibold">
             {PILOT.seats} free seats in the January cohort. See the programme
           </Link>
