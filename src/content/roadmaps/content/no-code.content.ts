@@ -2481,6 +2481,415 @@ AI saves her hours, and people still make every decision.`,
         pass_threshold: 75,
       },
     },
+    "clients-and-earning": {
+      explanation_md: `Building something for yourself is practice. Building something another person relies on is work, and it brings responsibilities. A shop owner trusts you with her customers' phone numbers. An NGO trusts you with survey answers about households. A school trusts that the fees app will still work when you have moved on. This final section is about earning that trust, and then turning your skills into paid work.
+
+## What changes when you build for others
+
+* **Their data is not yours.** You handle it carefully, collect only what is needed, and protect it.
+* **Their build must keep working without you.** That means testing properly and handing over accounts, documents and know how.
+* **Their money matters.** You choose tools they can afford to keep, and you are honest about limits.
+* **Your reputation travels.** In Tamale, Wa or Bolgatanga, one happy client often leads to the next by word of mouth, and one abandoned project can close doors.
+
+## What this section covers
+
+* **Privacy, consent and sharing:** what Ghana's Data Protection Act, 2012 (Act 843) means for forms, sheets and apps, and how to set sharing permissions so only the right people see data.
+* **Testing and handing over:** testing with real users and odd inputs, writing a short guide, handing over accounts safely and agreeing support.
+* **Portfolio, jobs and gigs:** where these skills appear in jobs, how to show your work, and how to offer small projects to local businesses and remote clients.
+
+## There is no single job title
+
+Earlier lessons said it, and it matters here: you will rarely see an advert in Ghana titled "no code developer". Instead, these skills help you into or forward in other roles:
+
+* data collection, enumerator and monitoring and evaluation roles at NGOs and research firms;
+* communications, social media and IT officer roles that look after a website;
+* administration and operations roles that keep shared records and workflows running;
+* freelance projects for shops, churches, schools, cooperatives and small offices.
+
+Some remote operations roles do name automation and table tools directly, but check that they accept applicants based in Ghana before applying.
+
+## A worked example
+
+Abdul-Rahman has built a registration form, a member sheet and a small dashboard for his youth football club in Wa. A neighbouring club asks him to build the same thing. Before he agrees, he thinks through this section:
+
+1. **Privacy:** the form collects children's names and parents' phone numbers, so he will collect only what is needed, explain why on the form, and share the sheet with only the coach and treasurer.
+2. **Testing and handover:** he will test with two parents, then give the club its own account, a one page guide and a month of free fixes.
+3. **Earning:** he will ask for a fair fee agreed in writing, and ask the club to recommend him if they are happy.
+
+Having done the same work once, he already has a portfolio piece, and with the first club's permission he can show it.
+
+## Encouragement
+
+You do not need to be an expert to start earning trust. You need to be careful, honest and reliable. Many clients would rather work with someone who builds something simple and explains it clearly than with someone who builds something clever they cannot use.`,
+      practice_task_md: `**Goal:** Review one of your builds as if a client depended on it.
+
+**Steps:**
+1. Choose something you built in this track: a form, a sheet, a site, an app or an automation.
+2. Write the personal data it collects, if any, and who can currently see it.
+3. Write what would happen if you disappeared tomorrow: could someone else run it, and do they have the accounts?
+4. List three things you would need to fix before handing it to a real client.
+
+**Done looks like:** A short review with a personal data list, an honest answer about what happens without you, and three fixes. Keep it; the next lessons show how to make those fixes.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What changes when you build something another person relies on?",
+            options: [
+              "Nothing, because the build is the same either way",
+              "You can use their data for your own projects",
+              "You must use the most expensive tools available so the client knows you are serious",
+              "Their data, money and continuity become your responsibility to handle carefully",
+            ],
+            answer_index: 3,
+            explanation: "The lesson lists their data, their build working without you, their money and your reputation.",
+          },
+          {
+            prompt: "What should you check before applying to a remote operations role that names automation tools?",
+            options: [
+              "That it accepts applicants based in Ghana",
+              "That it pays in cedis",
+              "That it is advertised on social media",
+              "That it requires no experience at all and promises a permanent contract from the very first day",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says to check that remote roles accept applicants based in Ghana.",
+          },
+          {
+            prompt: "In Abdul-Rahman's plan, who would the registration sheet be shared with?",
+            options: [
+              "Every parent in the club",
+              "Anyone with the link",
+              "Only the coach and the treasurer",
+              "All the players, so they can check that their own details were entered correctly",
+            ],
+            answer_index: 2,
+            explanation: "His privacy step shares the sheet with only the coach and treasurer.",
+          },
+          {
+            prompt: "What does the lesson say many clients prefer?",
+            options: [
+              "Someone who builds something clever, even if they cannot use it",
+              "Someone who builds something simple and explains it clearly",
+              "Someone who never writes anything down",
+              "Someone who promises every feature in the first week, even if some of it never arrives",
+            ],
+            answer_index: 1,
+            explanation: "The lesson ends by saying clients often prefer a simple, clearly explained build.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "privacy-and-permissions": {
+      explanation_md: `Almost every form, sheet and app you build will hold personal data: names, phone numbers, locations, ages, sometimes health or income details. Mishandling it can embarrass a client, hurt the people whose data it is, and break the law. Being known as someone who handles data carefully is a real advantage, especially for NGO and research work.
+
+## Ghana's law in plain terms
+
+Ghana's **Data Protection Act, 2012 (Act 843)** sets rules for collecting and using personal data, and the **Data Protection Commission** oversees it. The Commission's website lists principles that include:
+
+* **Accountability:** the organisation can show it follows the law.
+* **Lawful processing:** there are proper grounds for using the data, and it is done fairly and openly.
+* **Purpose:** data is collected for a clear, stated purpose and used for that purpose.
+* **Quality:** data is kept accurate and up to date.
+* **Openness:** people are told what happens to their data.
+* **Security safeguards:** suitable technical and organisational protection.
+* **Data subject participation:** people can exercise their rights over their own data.
+
+The Commission also says organisations that collect and use personal data must register with it. You do not need to be a lawyer. Know the law exists, follow your client's or employer's policy, and ask when unsure. This lesson is general guidance, not legal advice.
+
+## Collect only what you need
+
+For every question on a form, ask: what will we do with this answer? If there is no clear use, remove it. Do you need a full date of birth, or just an age group? A home address, or just the community? Less data means less to protect and less to lose. Some data, such as health information, needs extra care; avoid collecting it unless the purpose truly requires it.
+
+## Tell people why
+
+At the top of a form, write in plain words who is collecting the data, why, and who will see it. For example: "Our youth football club collects these details to register players and contact parents. Only the coach and treasurer can see them." Where consent is needed, such as for photos, ask with a clear question, not a hidden box.
+
+## Set sharing permissions carefully
+
+* **Restricted sharing.** Share sheets and response files with named people only. Avoid "anyone with the link" for anything containing personal data, because links get forwarded.
+* **The lowest role that works.** Give viewer access to people who only read, and editor access only to those who must change data.
+* **Separate public and private.** A dashboard showing totals can be shared widely; the raw sheet with names should not be.
+* **Review regularly.** Remove people who have left the project.
+* **Protect accounts and devices.** Two step verification on accounts, a lock on every phone used for collection.
+
+## Keep and delete
+
+Decide how long data is needed and delete or anonymise it when the purpose is finished. Do not keep old registration sheets forever "just in case". Never copy client data into your personal accounts or chats.
+
+## A worked example
+
+Fuseini reviews a training registration form for an NGO in Damongo. He removes "religion" and "full home address", which the project does not use, replaces date of birth with age group, and adds a short notice explaining the purpose. He changes the responses sheet from "anyone with the link" to three named staff members, gives two of them view only access, and creates a separate summary tab for the funder report with totals and no names.`,
+      practice_task_md: `**Goal:** Make one of your forms and sheets privacy friendly.
+
+**Steps:**
+1. Open a form you built in this track, or build a short registration form now.
+2. For each question, write what the answer will be used for. Remove or simplify any question without a clear use.
+3. Add a short notice at the top: who collects the data, why, and who will see it.
+4. Open the linked sheet's sharing settings. Make sure it is restricted to named people and that each person has the lowest role that works.
+5. Create a separate summary with totals only, suitable for sharing more widely.
+
+**Done looks like:** A before and after list of questions, a notice on the form, a screenshot of restricted sharing settings, and a summary with no personal data.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which body oversees Ghana's Data Protection Act, 2012 (Act 843)?",
+            options: [
+              "The Ghana Revenue Authority, which also handles tax registration for businesses",
+              "The Data Protection Commission",
+              "The Ghana Statistical Service",
+              "The National Communications Authority",
+            ],
+            answer_index: 1,
+            explanation: "The lesson names the Data Protection Commission as overseeing the Act.",
+          },
+          {
+            prompt: "What does the purpose principle mean, as the lesson explains it?",
+            options: [
+              "Data is collected for a clear, stated purpose and used for that purpose",
+              "Data can be used for any purpose once it is collected",
+              "Every form must have a purpose written in English and Dagbani",
+              "Data must be shared with the public so that people can check the purpose for themselves",
+            ],
+            answer_index: 0,
+            explanation: "The lesson describes the purpose principle as collecting for a stated purpose and using it for that purpose.",
+          },
+          {
+            prompt: "Why should you avoid anyone with the link sharing for a sheet containing personal data?",
+            options: [
+              "Links stop working after a week",
+              "It makes the sheet load slowly",
+              "Shared links hide the data from the owner, who then cannot see or change any of the responses",
+              "Links get forwarded, so people you never chose could open it",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says links get forwarded, so share personal data with named people only.",
+          },
+          {
+            prompt: "What did Fuseini replace date of birth with?",
+            options: [
+              "Full home address",
+              "Religion",
+              "Age group",
+              "A photo of each person's birth certificate, which he stored in the same sheet as the responses",
+            ],
+            answer_index: 2,
+            explanation: "He replaced date of birth with age group to collect less data.",
+          },
+          {
+            prompt: "Which data can usually be shared more widely, according to the lesson?",
+            options: [
+              "The raw sheet with names and phone numbers",
+              "Photos of participants taken without consent",
+              "Passwords for the form account, so that funders can log in and check the work",
+              "A dashboard or summary showing totals with no names",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says a dashboard of totals can be shared widely, unlike the raw sheet.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "testing-and-handover": {
+      explanation_md: `A build that works for you is not finished. It is finished when real people can use it, it survives odd inputs, and the client can keep it running without you. Adverts for data collection roles mention pilot testing; operations roles mention written procedures; app roles mention end user support. This lesson covers all three.
+
+## Test in three rounds
+
+**1. Your own checks.** Go through every path: each form branch, each app screen, each automation route. Try normal answers, empty answers, very long answers, wrong formats (a nine digit phone number, letters in a number field) and duplicates. Check that data lands where it should.
+
+**2. Real users.** Watch two or three people from the actual audience use it, on their own devices. Give them a task, such as "register a new member", and stay quiet. Note where they hesitate, tap the wrong thing or ask a question. Five minutes of watching teaches more than an hour of guessing.
+
+**3. A short pilot.** Run it for real with a small group for a few days, such as one class or one market day, before switching everyone over. Keep the old way available until you trust the new one.
+
+Fix what you find, and test the fix.
+
+## Write a short guide
+
+Most clients will not read a long manual. Aim for one or two pages, with screenshots, written for the person who will use it:
+
+* **What it does,** in one paragraph.
+* **How to do the common tasks,** step by step: add a record, find a record, read the dashboard.
+* **What not to do,** such as renaming sheet columns used by an app or automation.
+* **What to do when something goes wrong,** including how to switch an automation off.
+* **Accounts and renewals:** which tools are used, under whose account, and any dates to remember.
+
+Writing it in plain English, with a Dagbani or Twi explanation in person if that helps, makes it more likely to be used.
+
+## Hand over accounts safely
+
+* Ideally the client owned every account from the start, with you added as an editor.
+* If you created anything under your own account, transfer ownership or rebuild it under theirs.
+* Never send passwords in group chats or plain messages. Help the client set their own password in person, and turn on two step verification on their phone.
+* After handover, agree whether you keep editor access for support, or remove yourself.
+
+## Agree support
+
+Say clearly what happens after you finish: a period of free fixes, how to contact you, what counts as a fix versus new work, and when paid support would apply. Put it in writing, even a short message the client confirms.
+
+## A worked example
+
+Amina finishes an attendance app for a literacy programme in Savelugu. She tests every screen herself, then watches two facilitators mark a class. One cannot find the save button below the list, so she moves it to the top. A one week pilot at one centre reveals that a learner joined late and is missing from the list, so she adds a simple "add learner" form for facilitators. She hands the coordinator a two page guide, helps her set a new password with two step verification, and agrees one month of free fixes by WhatsApp message, confirmed in writing.`,
+      practice_task_md: `**Goal:** Test one of your builds properly and prepare it for handover.
+
+**Steps:**
+1. Choose a form, app, site or automation you built in this track.
+2. Write a test list of at least eight checks, including empty, wrong format and duplicate inputs. Run them and note results.
+3. Watch one person use it to complete a real task, without helping. Write down where they hesitated.
+4. Fix at least one problem and test again.
+5. Write a one page guide with: what it does, two common tasks step by step, one thing not to do, and what to do when something goes wrong.
+
+**Done looks like:** A completed test list, notes from watching a user, one fix, and a one page guide. Together these make a strong portfolio piece.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "During real user testing, what does the lesson say you should do?",
+            options: [
+              "Give them a task, stay quiet, and note where they hesitate",
+              "Explain every screen before they start",
+              "Do the task for them so it goes quickly",
+              "Test only with friends who already know exactly how the build works and what to tap",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says to give a task, stay quiet and note hesitations and wrong taps.",
+          },
+          {
+            prompt: "Why run a short pilot before switching everyone over?",
+            options: [
+              "Pilots are required before any tool can be published",
+              "To find real world problems with a small group while the old way is still available",
+              "To make the project last longer so the client pays more",
+              "So the builder can stop testing completely after the first day and move on to the next project",
+            ],
+            answer_index: 1,
+            explanation: "The lesson advises a small real pilot, keeping the old way until the new one is trusted.",
+          },
+          {
+            prompt: "How should passwords be handed over?",
+            options: [
+              "Posted in the client's staff WhatsApp group",
+              "Written on the back of the guide",
+              "Sent in a plain text message so the client can copy and paste it easily from their phone",
+              "By helping the client set their own password in person, with two step verification",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says never send passwords in chats; help the client set their own with two step verification.",
+          },
+          {
+            prompt: "What did the pilot at one centre reveal in Amina's example?",
+            options: [
+              "The save button was too large",
+              "Facilitators preferred paper",
+              "A learner who joined late was missing, so she added a form to add learners",
+              "The app did not work on any phone that the facilitators owned",
+            ],
+            answer_index: 2,
+            explanation: "The pilot showed a late joiner missing from the list, so Amina added an add learner form.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "portfolio-and-work": {
+      explanation_md: `Certificates show you studied. A portfolio shows you can build. For no code skills, which rarely have their own job title in Ghana, a small set of real projects is often what convinces an NGO, a business or a client to give you a chance.
+
+## Where these skills show up in jobs
+
+When you read adverts, look past the title to the skills listed:
+
+* **Data collection, enumerator, data officer and M&E roles** at NGOs, research firms and donor projects mention mobile survey tools such as KoboToolbox, ODK, SurveyCTO and CommCare, data quality checks and Excel or Power BI dashboards.
+* **Communications, social media and IT officer roles** mention maintaining a WordPress website alongside design and social media work.
+* **Administration and operations roles** value people who keep shared records clean and set up reminders and workflows.
+* **Remote operations and automation roles** name tools such as Airtable, Zapier and Make. Many are limited to certain countries, so check that applicants based in Ghana are accepted.
+
+Job boards such as Jobberman Ghana are one place to look, alongside NGO websites and notice boards, university and hub networks, and people you know.
+
+## What makes a strong portfolio
+
+Three to five small, real projects beat twenty tutorials. For each, show:
+
+* **The problem,** in the client's words.
+* **What you built,** with screenshots or a short screen recording.
+* **Your decisions:** why that tool, what you left with a person, how you protected data.
+* **The result,** described honestly, such as "the treasurer no longer copies names by hand". Do not invent numbers or outcomes.
+* **Permission.** Only show client work with permission, and blur or replace personal data with made up examples.
+
+Good starting projects: a youth group registration form with a clean sheet and dashboard, a shop stock app, a one page site for a craftsperson, a booking automation, or a field survey with skip logic. A simple online page, a shared folder or a document with links is enough to present them.
+
+## Finding small paid projects
+
+* **Start close.** Your church, mosque, school, family business or a local NGO may need a form, a sheet or a site. A first project for a reduced fee or as a volunteer can become a reference.
+* **Offer a clear package,** such as "registration form, response sheet and simple dashboard, set up and explained", rather than "I can build anything".
+* **Price fairly.** Think about the hours involved, the value to the client and what similar local services cost. Agree the price, what is included and the support period in writing before you start. The Freelancing track covers pricing and agreements in depth.
+* **Be reliable.** Reply on time, meet deadlines and hand over properly. Word of mouth travels fast.
+
+## A worked example
+
+Hawa, in Tamale, has a portfolio of four projects: a choir feedback form, a stock app for her aunt's shop, a one page site for a tailor and a field survey she designed in a training. In her applications for data assistant roles, she links two of them and explains her data cleaning steps. Meanwhile she offers a "form, sheet and dashboard" package to small groups and gets her first paid project through a church member.
+
+## Keep learning
+
+Tools change quickly. Keep the principles from this track, stay curious about new features, and read official help pages when something changes.`,
+      practice_task_md: `**Goal:** Assemble your portfolio and one clear offer.
+
+**Steps:**
+1. Choose three projects from this track. For each, write the problem, what you built, two key decisions and the honest result.
+2. Add screenshots, replacing any real personal data with made up examples.
+3. Put everything in one shareable place, such as a one page site, a document or a folder with a link.
+4. Write one package you could offer a local business or group, in two sentences: what is included and what support follows.
+5. Find two adverts that mention any skill from this track and note which skills they ask for. Do not copy the advert text.
+
+**Done looks like:** A shareable portfolio link with three projects, a two sentence offer and notes on two adverts. Send the link to a mentor for feedback.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which job adverts commonly mention mobile survey tools such as KoboToolbox and ODK?",
+            options: [
+              "Data collection, enumerator and M&E roles",
+              "Bank teller roles in shopping malls",
+              "Graphic design roles that focus on printing banners",
+              "Driving and dispatch roles for delivery companies that serve the main cities",
+            ],
+            answer_index: 0,
+            explanation: "The lesson links mobile survey tools to data collection, enumerator and M&E roles.",
+          },
+          {
+            prompt: "How should you describe the result of a portfolio project?",
+            options: [
+              "With impressive numbers, even if you have to estimate them",
+              "By copying the result section of a similar project online",
+              "Leave the result out, because clients never read it",
+              "Honestly, without inventing numbers or outcomes",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says to describe results honestly and never invent numbers or outcomes.",
+          },
+          {
+            prompt: "Why offer a clear package rather than saying you can build anything?",
+            options: [
+              "Packages are required by law for freelancers",
+              "Packages mean you never have to talk to the client",
+              "A clear package tells a client exactly what they get",
+              "Saying you can build anything is the best way to win large contracts from big companies quickly",
+            ],
+            answer_index: 2,
+            explanation: "The lesson recommends a clear package, such as form, sheet and dashboard, set up and explained.",
+          },
+          {
+            prompt: "What must you do before showing client work in your portfolio?",
+            options: [
+              "Pay the client a fee",
+              "Get permission and replace personal data with made up examples",
+              "Remove your own name from it",
+              "Wait at least five years so that the client has forgotten about the project",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says show client work only with permission, blurring or replacing personal data.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
