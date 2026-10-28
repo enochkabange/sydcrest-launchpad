@@ -2411,7 +2411,505 @@ Hawa finishes flyers for a youth programme in Damongo. The organiser messages a 
         pass_threshold: 75,
       },
     },
-    // @@NEXT@@
+    "paid-from-abroad": {
+      explanation_md: `Clients abroad usually cannot pay you by Ghanaian mobile money directly, so the money has to travel through an international route. Each route has different fees, speeds and rules, and the rules are set by the Bank of Ghana and can change. This lesson names no companies; it explains the kinds of route and how to check that a service is legal.
+
+## The main kinds of route
+
+* **Withdrawing from a freelance marketplace.** If you work through a marketplace, the client pays the platform, and you withdraw your earnings using the withdrawal methods the platform offers for accounts in Ghana. Read the platform's help pages for which methods are available, how long they take and what they cost.
+* **An international money transfer service.** Companies that send money from abroad pay it out in Ghana through local partners such as banks and licensed payment companies, into a bank account, a mobile money or other payment wallet, or as cash at a counter. Ask the service, before your client sends anything, whether it accepts payments for work as well as personal transfers.
+* **A bank transfer to your bank account.** A client can send an international bank transfer to a Ghanaian bank account. Some banks offer accounts that can hold foreign currency. Ask your own bank what you need to receive international transfers, what documents it will ask for and what it charges.
+
+## What the Bank of Ghana rules say
+
+The Bank of Ghana published guidelines in December 2025 for international money transfer operators sending money into Ghana. They say, among other things, that:
+
+* A foreign money transfer operator must be **registered with the Bank of Ghana** to provide inward remittance services, and Ghanaian banks and payment companies may only act as agents for registered operators.
+* Settlement of these transfers is **done in cedis**, and funds reach people through authorised channels such as bank accounts, payment wallets or cash payouts.
+* The person receiving the money should not be charged fees beyond those agreed with the sender when the transfer was started.
+
+So expect such transfers to reach you in cedis.
+
+## How to check a service is legal
+
+* **The Ghanaian side.** The Bank of Ghana publishes a list of approved payment and fintech institutions on its website. Check that the Ghanaian bank or payment company that will pay you appears there, or is a licensed bank.
+* **The foreign side.** The Bank of Ghana has published notices warning the public about money transfer operators that were not approved. Search the Bank of Ghana website for its latest notices on money transfer operators, and ask your bank or wallet provider whether a service is allowed to pay into their accounts.
+* **Use official sources only.** Go to the Bank of Ghana website yourself; do not trust a list someone forwards you.
+
+## What to compare before agreeing terms
+
+* The **total cost**: sending fees, receiving fees, platform fees and the exchange rate used.
+* The **speed**: how many days until money is in your account.
+* The **limits** and identity checks.
+* Whether the account name must **match your Ghana Card**, which it should.
+
+## A small example
+
+Abdul-Rahman agrees to build a website for a small shop abroad. Before quoting, he asks his bank what an international transfer would cost him and checks that the transfer service the client suggests pays out through a Ghanaian partner on the Bank of Ghana approved list. He prices the job knowing roughly what will reach him in cedis.`,
+      practice_task_md: `**Goal:** Prepare to receive one payment from abroad, safely.
+
+**Steps:**
+1. Open the Bank of Ghana website yourself and find the list of approved payment and fintech institutions. Note what categories it shows.
+2. Search the Bank of Ghana website for its latest notice about money transfer operators.
+3. Ask your bank, by its official app, website or branch, what you need to receive an international transfer and what it charges.
+4. If you use a marketplace, write down its withdrawal methods for Ghana, their fees and how long they take, from its help pages.
+5. Write the questions you would ask any transfer service before a client sends money.
+
+**Done looks like:** A short note with what you found on the Bank of Ghana pages, your bank's answer, any marketplace withdrawal details and your list of questions. Do not name or share any account numbers in the task.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is one of the main kinds of route for money from abroad described in the lesson?",
+            options: [
+              "Asking the client to post cash in an envelope",
+              "Withdrawing earnings from a freelance marketplace",
+              "Asking a stranger to receive the money for you",
+              "Paying a fee to a recruiter to release the money",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists marketplace withdrawals, international money transfer services and bank transfers.",
+          },
+          {
+            prompt: "According to the Bank of Ghana guidelines described in the lesson, what must a foreign money transfer operator do to provide inward remittance services?",
+            options: [
+              "Nothing; any company may operate",
+              "Be registered with the Bank of Ghana",
+              "Open an office in every region",
+              "Charge receivers a fixed fee",
+            ],
+            answer_index: 1,
+            explanation: "The guidelines say operators must be registered with the Bank of Ghana.",
+          },
+          {
+            prompt: "In what currency is settlement of these inward transfers done, according to the guidelines?",
+            options: ["Cedis", "US dollars only", "Euros only", "Whatever the receiver chooses"],
+            answer_index: 0,
+            explanation: "The lesson says settlement is done in cedis, so expect to receive cedis.",
+          },
+          {
+            prompt: "How should you check that the Ghanaian company paying you out is legal?",
+            options: [
+              "Trust a list forwarded on WhatsApp",
+              "Check the Bank of Ghana's published list of approved payment and fintech institutions yourself",
+              "Ask the client to confirm",
+              "Assume all apps in the app store are approved",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to use the Bank of Ghana's own website and list, not forwarded lists.",
+          },
+          {
+            prompt: "What should you compare before agreeing terms with a client abroad?",
+            options: [
+              "Only the colour of the app",
+              "Total cost including fees and exchange rate, speed, limits and name matching",
+              "Which service your friends like best",
+              "Nothing; all routes are the same",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists total cost, speed, limits and identity checks, and name matching.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "records-and-tax": {
+      explanation_md: `Freelancing becomes a real business when you know your numbers and deal with tax properly. Good records help you price, settle disputes, apply for loans or contracts, and file tax returns. This lesson explains simple record keeping and what the Ghana Revenue Authority (GRA) says on its website. Tax rules and thresholds change, so always confirm current details on the GRA website or at a GRA office.
+
+## Keep simple records
+
+You do not need accounting software. A spreadsheet or notebook is enough if you update it every time money moves. Record:
+
+* **Income:** date, client, job, invoice number, amount, payment method and transaction reference.
+* **Costs:** date, what it was for (data, power, transport, printing, software, equipment), amount and a receipt or reference if you have one.
+* **Invoices sent** and whether they are paid.
+
+Keep copies of invoices, receipts and agreements in a folder for each year, in cloud storage so they are not lost with your device. At the end of each month, total your income and costs. You will quickly see which services and clients are worth your time.
+
+## What the GRA says about registering
+
+According to the GRA's tax registration page, individuals with taxable income, including employees, self employed individuals and professionals, must register. For individuals, **your Ghana Card Personal Identification Number is your Taxpayer Identification Number (TIN)**. ECOWAS Card holders use that card's number.
+
+The GRA describes two ways to register:
+
+* **Online,** through the GRA's taxpayers portal, by registering with your Ghana Card number and then applying for the type of tax that applies to you.
+* **In person,** at a GRA Taxpayer Service Centre, where staff help with registration.
+
+## Personal income tax
+
+The GRA's personal income tax page says the tax applies to employees, sole proprietors and partners, and covers income from employment, business and investments, which are put together and taxed as one at the end of the year. It says you file a return at the end of the year, and it lists forms including a personal income tax return and a self assessment estimate.
+
+The GRA page sets out the income level at which tax starts and the rates. These change, so read the current page rather than relying on numbers you hear from friends. If you are unsure whether or how much you need to pay, ask at a GRA office or call the GRA's toll free line shown on its website.
+
+## Registering a business name
+
+You can freelance under your own name. Some freelancers choose to register a business name, also called a sole proprietorship, with the Office of the Registrar of Companies, which can help when organisations want an invoice from a registered business. Check the Registrar's official website for the current process and requirements.
+
+## A small example
+
+Mariama keeps a "Freelance 2026" spreadsheet with an income sheet and a costs sheet, and saves every invoice and receipt in a matching cloud folder. When she visits a GRA office to ask about registering, she can show what she earned and spent each month, and the officer can explain clearly what applies to her.`,
+      practice_task_md: `**Goal:** Set up yearly records and find the official tax information.
+
+**Steps:**
+1. Create a spreadsheet with two sheets: Income (date, client, job, invoice number, amount, method, reference) and Costs (date, item, amount, reference).
+2. Add one realistic sample entry to each.
+3. Create a cloud folder for this year's invoices, receipts and agreements.
+4. Visit the GRA website yourself and find the tax registration page and the personal income tax page. Note how to register and the current information on who must pay.
+5. Visit the Registrar of Companies website and note how business name registration currently works.
+
+**Done looks like:** A records spreadsheet with sample entries, a yearly folder, and short notes from the GRA and Registrar websites in your own words.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the GRA, what is your Taxpayer Identification Number as an individual?",
+            options: [
+              "Your phone number",
+              "Your Ghana Card Personal Identification Number",
+              "Your mobile money PIN",
+              "Your school index number",
+            ],
+            answer_index: 1,
+            explanation: "The GRA says your Ghana Card Personal Identification Number is your TIN.",
+          },
+          {
+            prompt: "Which group does the GRA's registration page include among those who must register?",
+            options: [
+              "Only large companies",
+              "Self employed individuals and professionals with taxable income",
+              "Only people who work for the government",
+              "Only people over 60",
+            ],
+            answer_index: 1,
+            explanation: "The GRA page lists employees, self employed individuals and professionals with taxable income.",
+          },
+          {
+            prompt: "What are the two ways to register that the GRA describes?",
+            options: [
+              "By SMS or by letter",
+              "Online through the taxpayers portal, or in person at a Taxpayer Service Centre",
+              "Through a marketplace or a bank",
+              "Through a friend or an agent you pay",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes online registration with your Ghana Card number and in person at a service centre.",
+          },
+          {
+            prompt: "Why does the lesson not give tax rates or thresholds?",
+            options: [
+              "Because freelancers never pay tax",
+              "Because they change, so you should read the current GRA page or ask at a GRA office",
+              "Because they are secret",
+              "Because they are the same for everyone forever",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says rates and thresholds change and to confirm them with the GRA.",
+          },
+          {
+            prompt: "What should your income records include?",
+            options: [
+              "Date, client, job, invoice number, amount, method and transaction reference",
+              "Only the total for the year",
+              "Your passwords",
+              "Nothing; records are not needed",
+            ],
+            answer_index: 0,
+            explanation: "The lesson lists these fields for income records.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "reputation-and-growth": {
+      explanation_md: `Every freelancer's reputation is built one job at a time. Each finished project, each honest review and each recommendation adds to it, and one broken promise or dishonest act can damage it badly, especially in a close community where people talk. Once you have a few happy clients, the focus shifts from finding any work to keeping good clients and growing steadily.
+
+## Why reputation matters so much
+
+New clients cannot test your work before hiring you. They rely on signals: your portfolio, your reviews, what other people say about you, and how you behave in the first conversation. A good reputation means clients come to you, accept your prices more easily and forgive the occasional problem. A poor one means every job is a struggle.
+
+In towns such as Tamale, Bolgatanga and Wa, word of mouth travels fast. A head teacher who is happy with your newsletter will mention you to other schools. A trader who feels cheated will tell everyone at the market. Online, reviews stay visible on your profile for a long time.
+
+## What this section covers
+
+* **Reviews, reputation and repeat clients.** How to ask for honest reviews and recommendations, why you must never buy or fake them, how to handle mistakes, and why looking after client data matters, including under Ghana's data protection law.
+* **Growing your freelance income.** How freelancers with steady clients grow over time: deeper skills, clearer packages, focusing on a type of client, raising prices for new work, working with other freelancers, and saving for slow months. This lesson is optional and makes the most sense once you have regular work.
+
+## What builds reputation
+
+* **Reliability.** Delivering what you promised, when you promised.
+* **Honesty.** Telling the truth about what you can do, what went wrong and what things cost.
+* **Communication.** Replying on time and keeping clients informed.
+* **Quality.** Work that does what the client needed.
+* **Care.** Protecting clients' files, passwords and information.
+
+## Growth is gradual
+
+Freelance growth usually happens step by step, not overnight. Ignore anyone who promises fast, guaranteed income from freelancing; that promise is a common hook for scams and paid courses that do not deliver. Real growth comes from serving clients well, learning more in your main skill and making steady, sensible business decisions.
+
+## A small example
+
+Wumpini has managed social media for a salon in Tamale for four months. She delivers every week on time and once admitted quickly when she posted the wrong price, fixing it within the hour. The owner writes her an honest recommendation and introduces her to a boutique owner. Wumpini now has two monthly clients from one good relationship. She is not famous, but she is trusted, and that is what keeps work coming.`,
+      practice_task_md: `**Goal:** Reflect on the reputation you want and how you will build it.
+
+**Steps:**
+1. Write three words you would like clients to use when describing you to others, such as reliable, clear, creative.
+2. For each word, write one specific habit that would earn it. For example, "reliable: I put every deadline in my calendar on the day I agree it".
+3. Write one thing you will do if you make a mistake on a client's work.
+4. Write one sentence explaining why you will ignore promises of fast, guaranteed freelance income.
+
+**Done looks like:** Three words, three habits, your plan for handling mistakes and your one sentence, saved where you can review them every few months.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why do new clients rely on signals such as reviews and portfolios?",
+            options: [
+              "Because they cannot test your work before hiring you",
+              "Because the law requires reviews",
+              "Because portfolios are always free",
+              "Because reviews replace contracts",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says clients cannot test your work in advance, so they rely on signals.",
+          },
+          {
+            prompt: "Which of these does the lesson list as building reputation?",
+            options: [
+              "Promising more than you can deliver",
+              "Reliability, honesty, communication, quality and care",
+              "Buying positive reviews",
+              "Replying only when it suits you",
+            ],
+            answer_index: 1,
+            explanation: "These five qualities are listed in the lesson.",
+          },
+          {
+            prompt: "What does the lesson say about promises of fast, guaranteed freelance income?",
+            options: [
+              "They are reliable if many people share them",
+              "Ignore them; they are a common hook for scams and courses that do not deliver",
+              "They only apply to clients abroad",
+              "They are guaranteed by the government",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says real growth is gradual and such promises are a common hook.",
+          },
+          {
+            prompt: "In the example, what helped Wumpini gain a second client?",
+            options: [
+              "A paid advert",
+              "Fake reviews",
+              "Reliable work, quickly admitting and fixing a mistake, and an honest recommendation",
+              "Lowering her price to zero",
+            ],
+            answer_index: 2,
+            explanation: "Her reliability and honesty earned a recommendation and an introduction.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "reviews-and-reputation": {
+      explanation_md: `Honest reviews and recommendations from real clients are one of the strongest things a freelancer can have. They tell a stranger, in someone else's words, that you deliver. This lesson covers how to earn and ask for them, how to handle mistakes, and how to look after client information.
+
+## Ask for reviews and recommendations
+
+Clients who are happy often do not think to leave a review, so ask, at the right moment: just after you deliver work the client is pleased with. Make it easy:
+
+* On a marketplace, politely remind the client that a review on the platform helps you.
+* For local clients, ask if they would write two or three sentences you can share, or record a short voice note, and whether you may use their name and business name.
+* Suggest what might help, such as what you did and how it was to work with you, but let them use their own words.
+
+Always ask permission before you show a client's name or words publicly.
+
+## Never buy or fake reviews
+
+Do not pay for reviews, write reviews for yourself, swap fake reviews with friends or ask family to pose as clients. Marketplaces detect and remove fake reviews and can close accounts for it. In a small community it is easily discovered, and once people know one review is fake, they doubt all of them. A small number of real reviews is worth far more.
+
+## Handle mistakes and complaints well
+
+Everyone makes mistakes. What clients remember is how you handle them.
+
+* **Own it quickly.** "You are right, I used the old price. I am sorry."
+* **Fix it.** Correct the problem as fast as you can, without extra charge if it was your error.
+* **Learn.** Change your process so it does not happen again, such as adding a final check of prices before delivery.
+
+If a client is unhappy for reasons outside the agreement, stay calm and polite, refer to what was agreed and look for a fair solution. Never argue publicly or reply to a bad review in anger. A calm, professional reply to criticism can actually improve how others see you.
+
+## Look after client data
+
+Clients often share personal and business information with you: customer lists, phone numbers, survey answers, passwords to social media pages, financial figures. Ghana's Data Protection Act, 2012 (Act 843), overseen by the Data Protection Commission, sets rules for how personal data is handled. As a freelancer, good practice includes:
+
+* Use client data only for the job you were hired for.
+* Store it securely, with strong passwords, and not on shared computers.
+* Do not share it with anyone else without the client's permission.
+* Delete or return it when the job ends, unless the client asks you to keep it.
+* Never post client data, even blurred badly, in your portfolio.
+
+## A small example
+
+Fuseini cleans survey data for an NGO in Tamale. He keeps the files in a protected cloud folder, uses them only for the job and deletes his copies when the NGO confirms it has the final version. The programme officer writes him a recommendation mentioning both the quality of the work and how carefully he handled the data.`,
+      practice_task_md: `**Goal:** Prepare your review and data care routines.
+
+**Steps:**
+1. Write a short, polite message asking a happy client for a review or recommendation, including a request for permission to share their name.
+2. Write the three steps you would follow if you made a mistake on a client's work.
+3. Write a five point data care checklist for your service, based on the lesson.
+4. If you have a past client who was happy, send them your review request.
+
+**Done looks like:** A review request message, your three step mistake plan and a data care checklist. If you sent a real request, note the reply.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "When is a good moment to ask a client for a review?",
+            options: [
+              "Before you start the work",
+              "Just after you deliver work the client is pleased with",
+              "During an argument about payment",
+              "A year after the job ends",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to ask just after delivering work the client is happy with.",
+          },
+          {
+            prompt: "What does the lesson say about fake or paid reviews?",
+            options: [
+              "They are fine if the work is good",
+              "Never buy or fake them; platforms remove them and they destroy trust",
+              "Only use them on new accounts",
+              "Use them only for clients abroad",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says fake reviews are detected and make people doubt all your reviews.",
+          },
+          {
+            prompt: "You used an old price in a client's flyer. What is the first step the lesson recommends?",
+            options: [
+              "Blame the client",
+              "Own the mistake quickly",
+              "Ignore it and hope they do not notice",
+              "Charge extra to fix it",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says own it quickly, fix it and learn from it.",
+          },
+          {
+            prompt: "Which law sets rules for handling personal data in Ghana, according to the lesson?",
+            options: [
+              "The Data Protection Act, 2012 (Act 843)",
+              "The Road Traffic Act",
+              "The Companies Act only",
+              "There is no such law",
+            ],
+            answer_index: 0,
+            explanation: "The lesson names the Data Protection Act, 2012 (Act 843), overseen by the Data Protection Commission.",
+          },
+          {
+            prompt: "What should you do with client data when a job ends?",
+            options: [
+              "Keep it forever in case it is useful",
+              "Share it with other clients as an example",
+              "Delete or return it, unless the client asks you to keep it",
+              "Post it in your portfolio",
+            ],
+            answer_index: 2,
+            explanation: "The lesson's good practice list says to delete or return data when the job ends.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "growing-income": {
+      explanation_md: `Once you have a few steady clients and reliable habits, you can think about growing. Growth in freelancing is usually gradual and comes from becoming more valuable to clients, not from tricks. This lesson describes common ways freelancers grow. It makes no promises about income; what is possible depends on your skill, your market and your effort.
+
+## Deepen your main skill
+
+The most reliable way to charge more is to be able to do more valuable work. A designer who can create a full brand identity can charge more than one who only makes flyers. A data freelancer who can build dashboards offers more than one who only types data in. Keep learning in your main SydCrest track and add skills your clients ask for.
+
+## Package your services
+
+Instead of quoting every small task separately, offer clear packages. For example, a "monthly social media package" of twelve designed posts, scheduling and a short monthly summary. Packages are easier for clients to understand and buy, and they give you more predictable work. Monthly arrangements, called retainers, are especially useful for steady planning.
+
+## Focus on a type of client
+
+Becoming known for one kind of client, such as schools, NGOs, hotels or online shops, lets you understand their needs deeply, reuse what you learn and speak their language. Clients often prefer someone who already understands their field.
+
+## Raise prices for new work
+
+As your portfolio and reviews grow, it is fair to raise your prices for new clients. For existing clients, give advance notice in writing and explain what they continue to receive. Some clients will leave; others will value your work more. Keep your pricing method from the pricing lesson, and raise your hourly value as your skill grows.
+
+## Work with others
+
+When a job is too big or needs skills you do not have, you can team up with other freelancers: a designer with a writer, a web developer with a photographer. Agree clearly in writing who does what, who deals with the client, and how payment is shared. Never take money on behalf of others unless that arrangement is written and agreed.
+
+## Plan for slow months
+
+Freelance income goes up and down. When a good month comes, set aside a part of your income for quiet months, for tax and for replacing equipment. Keep personal and business money separate where you can, so you know what the business really earns.
+
+## Stay in touch with past clients
+
+Regular, light contact keeps you in mind: a seasonal idea before school resumption or Ramadan, a note when you add a new service. Repeat clients are often the steadiest base for growth.
+
+## A small example
+
+After a year, Amina, who started with typing jobs, has learned spreadsheet reporting in her data track. She now offers a monthly reporting package for small NGOs in the Upper East Region, raised her price for new clients with notice to old ones, and works with a designer friend when reports need graphics. She sets aside part of each payment for slow months and for tax.`,
+      practice_task_md: `**Goal:** Draft a simple growth plan for the next six months.
+
+**Steps:**
+1. Write one skill from your main track you will deepen, and why clients would value it.
+2. Design one package for your service: name, what is included, how often, and how you would price it using the pricing method.
+3. Choose one type of client to focus on.
+4. Decide what portion of each payment you will set aside for slow months, tax and equipment, and where you will keep it.
+5. Write one way you could work with another freelancer, and what you would agree in writing.
+
+**Done looks like:** A one page plan covering skill, package, client focus, savings and collaboration. Review it with a mentor if you have one.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, what is the most reliable way to charge more?",
+            options: [
+              "Copy other freelancers' prices",
+              "Be able to do more valuable work by deepening your main skill",
+              "Promise clients guaranteed results",
+              "Work longer hours for the same price",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says deeper, more valuable skills are what let you charge more.",
+          },
+          {
+            prompt: "Why are packages useful?",
+            options: [
+              "They are easier for clients to understand and buy, and give more predictable work",
+              "They remove the need for agreements",
+              "They mean you never need to deliver on time",
+              "They let you avoid tax",
+            ],
+            answer_index: 0,
+            explanation: "The lesson explains that clear packages simplify buying and steady your work.",
+          },
+          {
+            prompt: "How should you raise prices for existing clients?",
+            options: [
+              "Without telling them",
+              "Give advance notice in writing and explain what they continue to receive",
+              "Double them overnight",
+              "Only raise prices for family",
+            ],
+            answer_index: 1,
+            explanation: "The lesson advises written advance notice for existing clients.",
+          },
+          {
+            prompt: "What does the lesson advise you to do in a good month?",
+            options: [
+              "Spend it all immediately",
+              "Set aside part of your income for quiet months, tax and equipment",
+              "Stop taking new clients",
+              "Lend it all to friends",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says freelance income varies, so save part of good months.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
