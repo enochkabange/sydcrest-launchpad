@@ -3,8 +3,7 @@
 import { startTransition, useActionState } from "react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { CheckboxField, TextField } from "@/components/ui/field";
-import { TextAreaField } from "../roadmaps/fields";
+import { CheckboxField, TextAreaField, TextField } from "@/components/ui/field";
 import { addRecording, setJoinLink, type FormState } from "./actions";
 
 /** The online joining link. Only people going (and hosts) ever see it. */

@@ -81,7 +81,7 @@ Go slowly. Run every code example yourself in a notebook. When a topic feels lik
             prompt: "Why does this track say you need a laptop or desktop computer?",
             options: [
               "The lessons cannot be opened on a phone at all",
-              "Models only run on very expensive, powerful computers",
+              "Models only run on very expensive, powerful computers with big graphics cards",
               "Writing and running model code needs a keyboard and bigger screen",
               "Free online notebooks are blocked on other devices",
             ],
@@ -154,7 +154,7 @@ Hawa thinks she is ready. She loads a CSV of a shop's sales, removes rows with m
             prompt: "Why does the lesson say pandas skills matter so much for machine learning?",
             options: [
               "Almost every model starts as a table that must be cleaned",
-              "pandas is the library that trains neural networks",
+              "pandas is the library that builds and trains most neural networks",
               "pandas removes the need to learn any statistics",
               "Models refuse to read data in any other format",
             ],
@@ -166,7 +166,7 @@ Hawa thinks she is ready. She loads a CSV of a shop's sales, removes rows with m
             options: [
               "Draw charts of a model's accuracy",
               "Speed up neural network training",
-              "Replace Python for writing models",
+              "Replace Python completely when writing and training models",
               "Fetch your own training data from a database",
             ],
             answer_index: 3,
@@ -250,7 +250,7 @@ Treat machine learning as a skill you grow inside a job, not a ticket to your fi
               "No experience and no qualifications",
               "A large social media following",
               "A degree and several years of experience",
-              "One certificate from an online course",
+              "One certificate from a short online course and nothing else",
             ],
             answer_index: 2,
             explanation: "Almost every machine learning advert asked for a degree and experience, and none was entry level.",
@@ -270,7 +270,7 @@ Treat machine learning as a skill you grow inside a job, not a ticket to your fi
             prompt: "What advice does the lesson give about remote and contract offers?",
             options: [
               "Read every offer carefully and never pay to apply",
-              "Accept any offer that mentions AI in the title",
+              "Accept any offer that mentions AI in the job title straight away",
               "Pay a small fee to secure your place early",
               "Apply only to roles based outside Africa",
             ],
@@ -333,7 +333,7 @@ Free video courses on linear algebra, calculus and probability are linked as fur
             options: [
               "A chart that shows how data changes",
               "A Python library for loading files",
-              "The probability that a model is right",
+              "The probability that a model's prediction is right",
               "A list of numbers describing one record",
             ],
             answer_index: 3,
@@ -342,7 +342,7 @@ Free video courses on linear algebra, calculus and probability are linked as fur
           {
             prompt: "What does gradient descent do during training?",
             options: [
-              "Deletes the rows the model gets most wrong",
+              "Deletes the rows the model gets most wrong so its score improves",
               "Draws a chart of the training results",
               "Nudges settings to make the model less wrong",
               "Chooses which Python library to use next",
@@ -365,7 +365,7 @@ Free video courses on linear algebra, calculus and probability are linked as fur
             prompt: "What does a model output such as \"0.8 chance of being repaid\" describe?",
             options: [
               "A probability that can still turn out wrong",
-              "A guaranteed result for that loan",
+              "A guaranteed result for that particular loan applicant",
               "The number of loans in the dataset",
               "How long the model took to train",
             ],
@@ -488,7 +488,7 @@ In neural networks, each layer holds a matrix of weights, and data flows through
           {
             prompt: "Why is matrix multiplication so important in machine learning?",
             options: [
-              "It makes datasets smaller before training",
+              "It makes datasets much smaller before training starts",
               "It removes missing values from the data",
               "It is mainly used for drawing charts",
               "It computes predictions for many rows at once",
@@ -598,7 +598,7 @@ Libraries such as scikit learn and PyTorch compute gradients for you, so you wil
             options: [
               "They are reset to new random values",
               "They are doubled to speed up learning",
-              "They stay fixed while the data changes",
+              "They stay fixed while the data is shuffled and changed",
               "They take a small step against the slope",
             ],
             answer_index: 3,
@@ -658,7 +658,7 @@ A model gives 0.7 for a loan. Approve or not? You choose a **threshold**. At 0.5
           {
             prompt: "In the fraud example, why are most flagged transfers honest?",
             options: [
-              "The model was trained on the wrong country's data",
+              "The model was trained on data from the wrong country entirely",
               "Honest customers send more money than fraudsters",
               "Fraud is rare, so false alarms outnumber real cases",
               "The threshold was set to zero by mistake",
@@ -759,7 +759,7 @@ The two topics in this section cover NumPy with pandas, and how to use free note
           {
             prompt: "What does scikit learn provide, according to the lesson?",
             options: [
-              "Charts and dashboards for reports",
+              "Charts and dashboards for writing monthly reports",
               "Classic models and tools to test them",
               "A web server for hosting apps",
               "A faster replacement for Python",
@@ -869,7 +869,7 @@ NumPy also lets you do maths on whole columns at once, which is called **vectori
             prompt: "Why are rows with a blank yield dropped in the example?",
             options: [
               "A row with no answer cannot teach the model",
-              "They make the CSV file too large to load",
+              "They make the CSV file too large to load into memory",
               "pandas is unable to read blank values",
               "Yield is the least important column",
             ],
@@ -1077,7 +1077,7 @@ Mariama works for a savings group network in the Upper East Region. Leaders want
             prompt: "Why does the workflow start with a baseline?",
             options: [
               "It is the most accurate model you can build",
-              "It replaces the need for a held out test set",
+              "It replaces the need for a separate held out test set",
               "It sets a simple standard any model must beat",
               "It makes every later model train faster",
             ],
@@ -1200,7 +1200,7 @@ All of them use the same create, fit, predict pattern.`,
             options: [
               "The average size of the model's mistakes",
               "How many rows were used for testing",
-              "The probability of each possible class",
+              "The probability of each possible class for every row",
               "How long the model took to train",
             ],
             answer_index: 0,
@@ -1318,7 +1318,7 @@ Issahaku's model predicts which motorbike loans will default. Training accuracy 
             options: [
               "It scores 98 percent yet catches no sick patients",
               "Accuracy cannot be calculated for health data",
-              "The model is overfitting to the training data",
+              "The model is overfitting to the training data it was given",
               "Accuracy is a measure used only for regression",
             ],
             answer_index: 0,
@@ -1339,7 +1339,7 @@ Issahaku's model predicts which motorbike loans will default. Training accuracy 
             prompt: "What does cross validation do?",
             options: [
               "Removes duplicate rows from the dataset before training",
-              "Converts the data into a format the model can read",
+              "Converts the data into a special format the model is able to read",
               "Trains and tests on several splits and averages the scores",
               "Doubles the size of the dataset by copying rows",
             ],
@@ -1432,7 +1432,7 @@ Wumpini's first model to predict clinic no shows looks almost perfect. She check
           {
             prompt: "What is data leakage?",
             options: [
-              "Losing your files when a notebook session times out",
+              "Losing your files and outputs when a free notebook session times out",
               "Sharing a dataset with a colleague by email",
               "Having too few rows to train a reliable model",
               "Features that use information unknown at prediction time",
@@ -1543,7 +1543,7 @@ Clustering always produces groups, even in random data. So treat its output as a
               "It needs many more labelled examples",
               "It only works on photos and audio",
               "It finds structure without labelled answers",
-              "It always gives perfectly stable results",
+              "It always gives perfectly stable results on every run",
             ],
             answer_index: 2,
             explanation: "There is no target column; the method looks for patterns on its own.",
@@ -1575,7 +1575,7 @@ Clustering always produces groups, even in random data. So treat its output as a
             options: [
               "Clustering is not allowed on Ghanaian data",
               "The groups it finds are always wrong",
-              "Questions are easier to put into code",
+              "Questions are easier to turn into code than group labels",
               "It always makes groups, even in random data",
             ],
             answer_index: 3,
@@ -1758,7 +1758,7 @@ Reading it: the first layer takes 2 inputs to 16 units, ReLU adds the bend, and 
             options: [
               "Without them, the layers add up to one straight line",
               "They make each training step run faster",
-              "They store the training data inside the network",
+              "They store a copy of the training data inside the network",
               "They choose the learning rate automatically",
             ],
             answer_index: 0,
@@ -1781,7 +1781,7 @@ Reading it: the first layer takes 2 inputs to 16 units, ReLU adds the bend, and 
               "Deletes the loss value",
               "Prints the loss on screen",
               "Computes every weight's gradient",
-              "Saves the model to a file",
+              "Saves the trained model to a file on disk",
             ],
             answer_index: 2,
             explanation: "This is backpropagation, after which the optimiser updates the weights.",
@@ -1969,7 +1969,7 @@ This is **semantic search**. It finds relevant sheets even when the question use
           {
             prompt: "Why can an LLM state false things confidently?",
             options: [
-              "It is deliberately designed to mislead people",
+              "It is deliberately designed by its makers to mislead people",
               "It only works without an internet connection",
               "It predicts likely text and cannot check facts",
               "It always copies its answers from one website",
@@ -2063,7 +2063,7 @@ The final lesson in this section is not an extra. In Ghana and everywhere else, 
               "Training a model on your own laptop each time",
               "Printing model results on paper for users",
               "Your app calls a model on a provider's servers",
-              "Copying the model's code into your own app",
+              "Copying the model's full code into your own app's files",
             ],
             answer_index: 2,
             explanation: "Hosted models run elsewhere and are called over the internet, usually at a cost per use.",
@@ -2295,7 +2295,7 @@ Fuseini serves a yield model for a cooperative's field officers. After one seaso
             prompt: "Why save a trained model with joblib?",
             options: [
               "To make its predictions more accurate",
-              "To share it publicly on social media",
+              "To share it publicly on social media and code sites",
               "To delete the training data safely",
               "To reuse it without retraining each time",
             ],
@@ -2424,7 +2424,7 @@ Hawa builds a model to predict which pregnant women may miss antenatal visits at
             options: [
               "As public data that anyone may use freely",
               "It says nothing at all about health data",
-              "As data that only doctors may ever see",
+              "As data that only doctors and nurses may ever see or use",
               "As special personal data needing extra care",
             ],
             answer_index: 3,
@@ -2530,7 +2530,7 @@ Abdul-Rahman finishes this track while working as a research assistant on a farm
               "That you have never made a single mistake",
               "That you can explain your work in plain words",
               "That you have memorised every algorithm",
-              "That you have used the costliest cloud tools",
+              "That you have used the costliest cloud tools on real projects",
             ],
             answer_index: 1,
             explanation: "Clear explanation, in writing and conversation, appears repeatedly in what employers want.",

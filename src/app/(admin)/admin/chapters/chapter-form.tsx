@@ -3,10 +3,9 @@
 import { useActionState } from "react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { SelectField, TextField } from "@/components/ui/field";
+import { SelectField, TextAreaField, TextField } from "@/components/ui/field";
 import { CHAPTER_STATUSES, STATUS_COPY, SUMMARY_MAX } from "@/lib/chapters/model";
 import { REGIONS } from "@/lib/regions";
-import { TextAreaField } from "../roadmaps/fields";
 import { appointLeadBySlug, createChapter, updateChapter, type FormState } from "./actions";
 
 export type ChapterFields = {

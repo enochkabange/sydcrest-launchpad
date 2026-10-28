@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { TextAreaField } from "@/components/business/bits";
+import { TextAreaField } from "@/components/ui/field";
 import { decideOrganisation, type DecisionState } from "./actions";
 
 /** The admin's decision on one organisation: a note and one button per outcome. */

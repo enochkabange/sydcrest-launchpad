@@ -52,9 +52,9 @@ Work through the sections in order. Each lesson has a short practice task you ca
             prompt: "What do most employers mean when an advert asks for AI tool skills?",
             options: [
               "You can build your own AI model from scratch",
-              "You can use AI assistants to work faster while keeping your work correct and honest",
+              "You can use AI to work faster and keep your work correct",
               "You have paid for the most expensive AI subscription",
-              "You can let AI do the whole job without checking",
+              "You can let AI do the whole job quickly so you never need to check",
             ],
             answer_index: 1,
             explanation: "The lesson explains that employers want people who use AI to get ordinary work done faster while keeping it correct, honest and safe.",
@@ -64,7 +64,7 @@ Work through the sections in order. Each lesson has a short practice task you ca
             options: [
               "Because SydCrest recommends one of them above the others",
               "Because only these tools are allowed in Ghana",
-              "Only as examples, since tools change often and none is the single right one",
+              "Only as examples, because tools change often",
               "Because they are the only tools that work on a phone",
             ],
             answer_index: 2,
@@ -75,8 +75,8 @@ Work through the sections in order. Each lesson has a short practice task you ca
             options: [
               "Sent it straight away because AI is always right",
               "Deleted it and wrote nothing",
-              "Asked the AI to promise even more",
-              "Removed a promise she never made and added her real prices before sending",
+              "Asked the AI to add more promises so customers would trust her",
+              "Removed a false promise and added her real prices",
             ],
             answer_index: 3,
             explanation: "Hawa checked the draft, removed the false free delivery line and added her real details.",
@@ -132,8 +132,8 @@ Issahaku, a teacher in Wa, asks an assistant for a short history of his district
           {
             prompt: "How does an AI chat assistant mainly produce its answers?",
             options: [
-              "By looking every fact up in a trusted encyclopedia",
-              "By predicting likely next words from patterns it learned in training",
+              "By looking up every fact in a trusted online encyclopedia",
+              "By predicting likely next words from learned patterns",
               "By asking a human expert each time",
               "By copying one website word for word",
             ],
@@ -144,8 +144,8 @@ Issahaku, a teacher in Wa, asks an assistant for a short history of his district
             prompt: "What is a hallucination in AI?",
             options: [
               "When the app crashes on a slow network",
-              "When the assistant refuses to answer",
-              "An invented fact, name, figure, quote or link stated confidently",
+              "When the assistant refuses to answer a question it finds unsafe",
+              "An invented fact or link stated confidently",
               "A picture made by an image tool",
             ],
             answer_index: 2,
@@ -165,7 +165,7 @@ Issahaku, a teacher in Wa, asks an assistant for a short history of his district
           {
             prompt: "Why might an AI assistant know little about a district office in Damongo?",
             options: [
-              "Its local knowledge is often thin compared with big, well known topics",
+              "Its local knowledge is often thin",
               "AI is not allowed to discuss Ghana",
               "It only knows about science",
               "It deliberately hides local information",
@@ -238,9 +238,9 @@ Mariama, in Bolgatanga, tests three free assistants with the same request: "Writ
             prompt: "Why is a web search feature with sources useful?",
             options: [
               "It makes the assistant never wrong",
-              "It shows where information came from, which makes checking easier",
+              "It shows where information came from, so you can check it",
               "It removes daily limits",
-              "It translates everything perfectly",
+              "It makes the assistant never wrong, because it reads the internet",
             ],
             answer_index: 1,
             explanation: "The lesson says sources make checking easier, not that the tool becomes perfect.",
@@ -249,8 +249,8 @@ Mariama, in Bolgatanga, tests three free assistants with the same request: "Writ
             prompt: "Which account should you use to sign up for an AI assistant?",
             options: [
               "A friend's account to save time",
-              "A shared office account",
-              "An account you control, with two step verification turned on",
+              "A shared office account that your whole team logs in to",
+              "An account you control, with two step verification on",
               "No account; always use someone else's phone",
             ],
             answer_index: 2,
@@ -259,10 +259,10 @@ Mariama, in Bolgatanga, tests three free assistants with the same request: "Writ
           {
             prompt: "What is one way the lesson suggests to save mobile data?",
             options: [
-              "Generate long videos on mobile data",
+              "Generate long videos on mobile data at night when it is quiet",
               "Upload every file you have",
               "Keep the app open all day",
-              "Do heavy tasks on free Wi Fi at a school, library or community centre",
+              "Do heavy tasks on free Wi Fi at a school or library",
             ],
             answer_index: 3,
             explanation: "The lesson suggests doing heavy tasks on free Wi Fi when you can.",
@@ -324,7 +324,7 @@ Sumaila does admin work for a clinic in Yendi and wants help writing a reminder 
             prompt: "What can happen to what you type into an AI assistant?",
             options: [
               "It is always deleted the moment you close the app",
-              "Depending on settings, it may be stored, used to improve the tool or read by reviewers",
+              "It may be stored, used for training or read by reviewers",
               "Only you can ever see it, no matter the settings",
               "It is printed and posted to you",
             ],
@@ -345,10 +345,10 @@ Sumaila does admin work for a clinic in Yendi and wants help writing a reminder 
           {
             prompt: "You need AI help with a letter that contains a customer's details. What should you do?",
             options: [
-              "Replace the personal details with placeholders before pasting",
+              "Replace personal details with placeholders first",
               "Paste it as it is; AI tools are private",
               "Post it in a public WhatsApp group first",
-              "Add more details so the AI understands better",
+              "Add more customer details so the AI understands the letter better",
             ],
             answer_index: 0,
             explanation: "The lesson says to remove or replace personal details first.",
@@ -357,9 +357,9 @@ Sumaila does admin work for a clinic in Yendi and wants help writing a reminder 
             prompt: "What does Ghana's Data Protection Act expect, in simple terms?",
             options: [
               "That personal data can be shared with anyone online",
-              "That only government offices handle personal data",
+              "That only government offices and banks must protect personal data",
               "That AI tools are banned in Ghana",
-              "That personal data is collected fairly, used for its purpose and kept secure",
+              "That personal data is used fairly and kept secure",
             ],
             answer_index: 3,
             explanation: "The lesson summarises Act 843 as fair collection, use for the stated purpose and keeping data secure.",
@@ -421,7 +421,7 @@ Keep a "prompt notebook" section in your AI learning journal. Every time a promp
               "The request you give an AI assistant",
               "A paid upgrade for an AI tool",
               "A type of computer virus",
-              "The answer the AI gives back",
+              "The settings page where you choose an AI model",
             ],
             answer_index: 0,
             explanation: "The lesson defines the prompt as the request you give the assistant.",
@@ -430,8 +430,8 @@ Keep a "prompt notebook" section in your AI learning journal. Every time a promp
             prompt: "According to the lesson, what does prompting mostly require?",
             options: [
               "A paid certificate",
-              "Knowing how to write computer code",
-              "Clear thinking, plain language and the habit of checking results",
+              "Knowing how to write computer code and special commands",
+              "Clear thinking, plain language and checking results",
               "A secret formula that only experts know",
             ],
             answer_index: 2,
@@ -441,9 +441,9 @@ Keep a "prompt notebook" section in your AI learning journal. Every time a promp
             prompt: "The lesson compares an AI assistant to which of these?",
             options: [
               "A strict examiner",
-              "A very fast new helper who knows nothing about your situation",
+              "A fast new helper who knows nothing about your situation",
               "A trusted lawyer",
-              "A search engine that is never wrong",
+              "A search engine that already knows your business and customers",
             ],
             answer_index: 1,
             explanation: "The lesson compares it to a fast new helper who needs a clear brief.",
@@ -542,7 +542,7 @@ Even with a strong prompt, read the answer as the customer would. Are the facts 
             prompt: "What is a good way to find out what context you forgot to give?",
             options: [
               "Ask the AI to guess everything",
-              "Make the prompt as short as possible",
+              "Make the prompt as short as possible so the AI fills the gaps",
               "Ask the AI to ask you questions before it writes",
               "Write the prompt in capital letters",
             ],
@@ -552,7 +552,7 @@ Even with a strong prompt, read the answer as the customer would. Are the facts 
           {
             prompt: "In the soap example, which detail belongs to the format part?",
             options: [
-              "Handmade shea butter soap from Bolgatanga",
+              "Handmade shea butter soap from Bolgatanga, paid for by MoMo",
               "Young working women in Bolgatanga and Tamale",
               "Write three Facebook post options",
               "Each post under 50 words, ending with how to order",
@@ -564,7 +564,7 @@ Even with a strong prompt, read the answer as the customer would. Are the facts 
             prompt: "After writing a strong prompt and getting an answer, what should you still do?",
             options: [
               "Read it as the reader would and check the facts and tone",
-              "Send it immediately without reading",
+              "Send it immediately, since a strong prompt gives a correct answer",
               "Delete it and start over",
               "Ask the AI to sign your name",
             ],
@@ -629,7 +629,7 @@ When a conversation finally gives you what you want, ask: "Write one prompt I co
           {
             prompt: "Which feedback is the most useful to give an AI assistant?",
             options: [
-              "\"Make it better.\"",
+              "\"Make it more professional, more exciting and much better.\"",
               "\"Try again.\"",
               "\"The tone is too formal; make it warm and under 40 words.\"",
               "\"Wrong.\"",
@@ -641,7 +641,7 @@ When a conversation finally gives you what you want, ask: "Write one prompt I co
             prompt: "What does showing the assistant one or two examples of what you want help with?",
             options: [
               "It makes the assistant work offline",
-              "It shows the style you want more clearly than describing it",
+              "It shows the style you want more clearly",
               "It removes the need to check facts",
               "It increases your daily message limit",
             ],
@@ -651,8 +651,8 @@ When a conversation finally gives you what you want, ask: "Write one prompt I co
           {
             prompt: "Why break a big job like a business plan into steps?",
             options: [
-              "Smaller steps give better quality and make mistakes easier to spot",
-              "The AI cannot read long prompts at all",
+              "Smaller steps give better quality and easier checking",
+              "The AI cannot read long prompts, so it ignores most of them",
               "It uses more data, which is better",
               "So you never have to read the results",
             ],
@@ -725,10 +725,10 @@ Wumpini is writing a short article for a farmers' cooperative in Savelugu using 
           {
             prompt: "Which part of an AI answer most needs checking against evidence?",
             options: [
-              "Whether you like the tone",
-              "Factual claims such as names, dates, prices, quotes and links",
+              "Whether the tone and wording suit your reader",
+              "Facts such as names, dates, prices and links",
               "The font it appears in",
-              "How long it took to appear",
+              "How long the answer is compared with your request",
             ],
             answer_index: 1,
             explanation: "The lesson says wording is your call but factual claims need evidence.",
@@ -736,7 +736,7 @@ Wumpini is writing a short article for a farmers' cooperative in Savelugu using 
           {
             prompt: "An AI answer includes a link as its source. What should you do?",
             options: [
-              "Trust it because AI provided it",
+              "Trust it, because AI links always come from real search results",
               "Delete the whole answer",
               "Open it and confirm it loads and says what the AI claims",
               "Share it without opening it",
@@ -747,10 +747,10 @@ Wumpini is writing a short article for a farmers' cooperative in Savelugu using 
           {
             prompt: "If you cannot confirm a claim after checking, what should you do?",
             options: [
-              "Remove it or rewrite it so it no longer states something you cannot back up",
+              "Remove it, or rewrite it so it claims nothing unproven",
               "Keep it because it sounds right",
               "Add more detail to make it convincing",
-              "Ask the AI to say it more confidently",
+              "Ask the AI whether it is sure, and keep it if it says yes",
             ],
             answer_index: 0,
             explanation: "Step four of the routine is to fix or remove unconfirmed claims.",
@@ -758,7 +758,7 @@ Wumpini is writing a short article for a farmers' cooperative in Savelugu using 
           {
             prompt: "Which of these is a reliable source for checking a fact?",
             options: [
-              "A second AI tool's answer with no sources",
+              "A second AI tool's answer that agrees but gives no sources",
               "A forwarded WhatsApp message",
               "A comment on social media",
               "An official website of the organisation involved",
@@ -769,8 +769,8 @@ Wumpini is writing a short article for a farmers' cooperative in Savelugu using 
           {
             prompt: "What did Wumpini find when she opened the link in her AI draft?",
             options: [
-              "It was correct and needed no changes",
-              "It did not exist, so she checked official sources and an extension officer",
+              "It was correct, so she sent the draft without other checks",
+              "It did not exist, so she checked official sources",
               "It was a video",
               "It asked her to pay",
             ],
@@ -834,8 +834,8 @@ Every task here works on a phone or a computer. Google Docs and Sheets, a notes 
           {
             prompt: "What kind of jobs usually mention AI tool skills in adverts, according to the lesson?",
             options: [
-              "Only jobs building AI systems",
-              "Familiar jobs like virtual assistant, content writer and admin assistant",
+              "Only technical jobs building and training AI systems",
+              "Familiar jobs like virtual assistant or admin",
               "Only government jobs",
               "Jobs that do not involve computers",
             ],
@@ -847,7 +847,7 @@ Every task here works on a phone or a computer. Google Docs and Sheets, a notes 
             options: [
               "Prepare, prompt, improve, check and own it",
               "Copy, paste, send, forget",
-              "Search, download, print, file",
+              "Prompt, copy, send, then wait for the client's reply",
               "Guess, post, wait, delete",
             ],
             answer_index: 0,
@@ -858,7 +858,7 @@ Every task here works on a phone or a computer. Google Docs and Sheets, a notes 
             options: [
               "You send the final result to the client",
               "You choose a font",
-              "You gather the material and remove personal or confidential details",
+              "You gather material and remove private details",
               "You pay for a subscription",
             ],
             answer_index: 2,
@@ -867,7 +867,7 @@ Every task here works on a phone or a computer. Google Docs and Sheets, a notes 
           {
             prompt: "How did Mariama check the formula she got help with?",
             options: [
-              "She trusted it because AI wrote it",
+              "She asked the AI to confirm the formula was correct before use",
               "She asked the hotel",
               "She deleted the spreadsheet",
               "She tested it on a few rows she could add up by hand",
@@ -937,7 +937,7 @@ AI is also a good second reader. Paste your own writing and ask: "Point out uncl
             prompt: "Why must every line on an AI assisted CV be true?",
             options: [
               "Employers check, and false claims can end a job",
-              "AI tools refuse to write CVs",
+              "AI tools refuse to write CVs that contain false claims",
               "CVs are never read",
               "Only handwritten CVs are accepted",
             ],
@@ -958,10 +958,10 @@ AI is also a good second reader. Paste your own writing and ask: "Point out uncl
           {
             prompt: "What is a good way to use AI as a second reader of your own writing?",
             options: [
-              "Ask it to rewrite everything in a new style",
+              "Ask it to rewrite everything so it sounds more impressive",
               "Ask it to add impressive words",
               "Ask it to make the text longer",
-              "Ask it to point out unclear sentences and mistakes without rewriting everything",
+              "Ask it to point out unclear sentences and mistakes",
             ],
             answer_index: 3,
             explanation: "The lesson suggests asking for pointers so you learn and keep your voice.",
@@ -1020,8 +1020,8 @@ Some assistants can transcribe and summarise audio. This is handy for meetings a
             prompt: "Why is \"Summarise this\" a weak prompt?",
             options: [
               "It is too long",
-              "It does not say what kind of summary or which reader it is for",
-              "AI cannot summarise anything",
+              "It does not say what kind of summary or for whom",
+              "AI cannot summarise a text unless you paste it twice",
               "It uses difficult words",
             ],
             answer_index: 1,
@@ -1030,7 +1030,7 @@ Some assistants can transcribe and summarise audio. This is handy for meetings a
           {
             prompt: "What are the two main dangers to check for in an AI summary?",
             options: [
-              "Spelling and font size",
+              "Spelling mistakes and sentences that are too long",
               "Colour and layout",
               "What is missing and what was added",
               "Length and speed",
@@ -1129,10 +1129,10 @@ Do not paste real customer names, phone numbers or financial records into public
           {
             prompt: "Why must you describe your columns and rows to an AI assistant?",
             options: [
-              "It cannot see your sheet, so it needs to know where the data is",
+              "It cannot see your sheet unless you describe it",
               "It is required to log in",
               "It makes the formula longer",
-              "Spreadsheets do not have columns",
+              "It makes the AI open your sheet and fix it directly",
             ],
             answer_index: 0,
             explanation: "The lesson says AI cannot see your sheet, so you must describe it.",
@@ -1140,9 +1140,9 @@ Do not paste real customer names, phone numbers or financial records into public
           {
             prompt: "What does the formula =SUMIF(B2:B31,\"Waakye\",C2:C31) do in the example?",
             options: [
-              "Counts how many dishes there are",
+              "Counts how many times Waakye appears in column B",
               "Finds the most popular dish",
-              "Adds the amounts in column C wherever column B says Waakye",
+              "Adds the amounts in column C where column B says Waakye",
               "Deletes rows that mention Waakye",
             ],
             answer_index: 2,
@@ -1163,7 +1163,7 @@ Do not paste real customer names, phone numbers or financial records into public
             prompt: "Why did Sumaila's first total miss some sales?",
             options: [
               "The AI tool was offline",
-              "The sheet was too long",
+              "The formula only counted the first ten rows of the sheet",
               "He used the wrong app",
               "Some rows had an extra space after the dish name",
             ],
@@ -1226,7 +1226,7 @@ Generate on Wi Fi when you can, make one image at a time, and download only the 
             options: [
               "AI image tools often misspell or garble text",
               "Text is not allowed on social media",
-              "Text makes images use less data",
+              "Text added by the AI makes the image file much larger",
               "AI tools refuse to make text",
             ],
             answer_index: 0,
@@ -1236,7 +1236,7 @@ Generate on Wi Fi when you can, make one image at a time, and download only the 
             prompt: "A shea butter seller wants to show her product online. What does the lesson say?",
             options: [
               "Use AI images of shea butter that look better than the real thing",
-              "Use real photos of her real product, not AI images presented as real",
+              "Use real photos of her real product",
               "Copy photos from another seller",
               "Use a famous company's logo",
             ],
@@ -1249,7 +1249,7 @@ Generate on Wi Fi when you can, make one image at a time, and download only the 
               "Making a fake picture of happy customers",
               "Creating an image of a real person without permission",
               "Copying a living artist's style to sell as your own",
-              "A simple illustration for a tips post, labelled as made with AI",
+              "A simple tips illustration, labelled as made with AI",
             ],
             answer_index: 3,
             explanation: "A labelled illustration is honest; the others mislead or copy.",
@@ -1258,7 +1258,7 @@ Generate on Wi Fi when you can, make one image at a time, and download only the 
             prompt: "What is SynthID, as mentioned in the lesson?",
             options: [
               "A type of phone screen",
-              "A free photo editing app",
+              "A free photo editing app that makes images look real",
               "An invisible watermark that helps detect AI images",
               "A Ghanaian design school",
             ],
@@ -1315,7 +1315,7 @@ If you speak a northern Ghanaian language fluently and read and write it, you ha
             prompt: "Why might AI translation into some northern Ghanaian languages be weaker?",
             options: [
               "These languages are not real languages",
-              "There is less written text in them online for AI to learn from",
+              "There is less written text in them online",
               "AI tools are banned from translating them",
               "Translation only works for European languages",
             ],
@@ -1336,9 +1336,9 @@ If you speak a northern Ghanaian language fluently and read and write it, you ha
           {
             prompt: "What is back translation used for?",
             options: [
-              "Translating the result back into English to see if the meaning survived",
+              "Translating it back into English to check the meaning",
               "Deleting a translation",
-              "Translating a message into two languages at once",
+              "Translating a message into two local languages at the same time",
               "Replacing the need for a fluent speaker",
             ],
             answer_index: 0,
@@ -1349,8 +1349,8 @@ If you speak a northern Ghanaian language fluently and read and write it, you ha
             options: [
               "Sent it anyway",
               "Cancelled the vaccination day",
-              "Sent the message only in French",
-              "Asked a respected community health volunteer to translate and check it",
+              "Sent the AI version anyway with a note asking for corrections",
+              "Asked a community health volunteer to translate and check it",
             ],
             answer_index: 3,
             explanation: "He turned to a fluent, trusted person when the AI result was not good enough.",
@@ -1412,8 +1412,8 @@ For one week, keep a note of tasks you do more than three times. Next to each, w
           {
             prompt: "What does keeping a person in the loop mean?",
             options: [
-              "Letting automations run with nobody checking",
-              "Having a person check anything that goes to customers or affects people",
+              "Letting automations run, and checking the logs once a month",
+              "Having a person check anything that reaches customers",
               "Hiring more staff for every task",
               "Turning off your phone",
             ],
@@ -1424,8 +1424,8 @@ For one week, keep a note of tasks you do more than three times. Next to each, w
             prompt: "What did Amina save as quick replies in WhatsApp Business?",
             options: [
               "Her MoMo PIN",
-              "Her customers' phone numbers",
-              "Clear answers to the five questions customers ask every day",
+              "Her customers' phone numbers and their usual orders",
+              "Clear answers to the questions customers ask daily",
               "AI generated photos of fabrics",
             ],
             answer_index: 2,
@@ -1510,7 +1510,7 @@ If a template includes a client's details or style rules, treat it as the client
           {
             prompt: "When building a template, what should stay fixed?",
             options: [
-              "The customer's name",
+              "The customer's name and the amount they owe",
               "The amount owed",
               "The tone, length, format and what to avoid",
               "The date",
@@ -1530,7 +1530,7 @@ If a template includes a client's details or style rules, treat it as the client
               "Post it publicly to help others",
               "Sell it without asking",
               "Delete the client's account",
-              "Treat it as the client's information and not share it without permission",
+              "Keep it private unless the client gives permission",
             ],
             answer_index: 3,
             explanation: "The lesson says such templates belong to the client's information.",
@@ -1595,7 +1595,7 @@ Fuseini organises a coding club in Damongo. Sign ups used to arrive in scattered
             prompt: "What does Google Forms do automatically that saves copying by hand?",
             options: [
               "Sends every response into a linked Google Sheet",
-              "Replies to all WhatsApp messages",
+              "Replies to every person who fills in the form by WhatsApp",
               "Pays customers by MoMo",
               "Writes social media posts",
             ],
@@ -1606,9 +1606,9 @@ Fuseini organises a coding club in Damongo. Sign ups used to arrive in scattered
             prompt: "Where are Gmail filters created, according to the lesson?",
             options: [
               "Only inside WhatsApp",
-              "In Gmail on a computer browser, after which they work on your phone too",
+              "In Gmail in a browser on a computer",
               "By calling the bank",
-              "They cannot be created at all",
+              "Inside the Gmail phone app, under each email's menu",
             ],
             answer_index: 1,
             explanation: "The lesson says filters are set up in Gmail on a computer browser.",
@@ -1618,7 +1618,7 @@ Fuseini organises a coding club in Damongo. Sign ups used to arrive in scattered
             options: [
               "Switch it on for all customers immediately",
               "Pay for the most expensive tool",
-              "Write the steps in plain words",
+              "Write the steps out in plain words",
               "Share customer data with the tool",
             ],
             answer_index: 2,
@@ -1630,7 +1630,7 @@ Fuseini organises a coding club in Damongo. Sign ups used to arrive in scattered
               "A reminder to post every Monday",
               "A text shortcut for your address",
               "A greeting message for new customers",
-              "Sending money to someone",
+              "Sending money from your account",
             ],
             answer_index: 3,
             explanation: "The lesson says never automate sending money without a person approving.",
@@ -1682,9 +1682,9 @@ Make sure you have finished the earlier sections, especially privacy, fact check
           {
             prompt: "Which three earning routes does this section cover?",
             options: [
-              "A job, freelance or gig work, and your own digital products",
+              "A job, freelancing and your own digital products",
               "Lottery, betting and loans",
-              "Only government jobs",
+              "Only government jobs and paid internships abroad",
               "Only selling phones",
             ],
             answer_index: 0,
@@ -1694,7 +1694,7 @@ Make sure you have finished the earlier sections, especially privacy, fact check
             prompt: "Someone promises guaranteed big earnings from AI if you pay them first. What does the lesson say?",
             options: [
               "Pay quickly before the offer ends",
-              "It is a warning sign",
+              "It is a warning sign of a scam",
               "It is the normal way to start",
               "Borrow money to pay them",
             ],
@@ -1705,8 +1705,8 @@ Make sure you have finished the earlier sections, especially privacy, fact check
             prompt: "According to the lesson, what matters more than any tool when earning?",
             options: [
               "Having the newest phone",
-              "Paying for every AI subscription",
-              "The quality of your work, your reliability and your honesty",
+              "Paying for every AI subscription so you have the best tools",
+              "Your quality, reliability and honesty",
               "Posting as often as possible",
             ],
             answer_index: 2,
@@ -1778,8 +1778,8 @@ Issahaku reads and writes Dagbani fluently. He finds a transcription project on 
           {
             prompt: "What did content and communications adverts commonly ask for, according to the lesson?",
             options: [
-              "Using AI to research and draft while keeping accuracy and their own voice",
-              "Letting AI publish without any checking",
+              "Using AI to research and draft while staying accurate",
+              "Letting AI write and publish posts without anyone checking",
               "Building AI models from scratch",
               "Avoiding all writing",
             ],
@@ -1789,8 +1789,8 @@ Issahaku reads and writes Dagbani fluently. He finds a transcription project on 
           {
             prompt: "What did AI data work adverts for languages like Twi and Dagbani ask for?",
             options: [
-              "A university degree in computer science only",
-              "Fluency, good English, attention to detail and following detailed guidelines",
+              "A university degree in computer science and coding experience",
+              "Fluency, good English and careful attention to guidelines",
               "A large registration payment",
               "Owning an expensive laptop with no other skills",
             ],
@@ -1800,7 +1800,7 @@ Issahaku reads and writes Dagbani fluently. He finds a transcription project on 
           {
             prompt: "An offer says you must pay to be \"activated\" for an AI job. What should you do?",
             options: [
-              "Pay, because all AI jobs charge fees",
+              "Pay, because activation fees are normal for remote AI jobs",
               "Send your MoMo PIN instead",
               "Treat it as a scam, since real employers pay you",
               "Share your Ghana Card in the chat",
@@ -1813,8 +1813,8 @@ Issahaku reads and writes Dagbani fluently. He finds a transcription project on 
             options: [
               "Dancing and singing",
               "Driving and cooking",
-              "Football and athletics",
-              "Accuracy, clear writing, following instructions and judgement",
+              "Advanced coding and building machine learning models",
+              "Accuracy, clear writing and following instructions",
             ],
             answer_index: 3,
             explanation: "The lesson highlights accuracy, writing, following instructions and judgement.",
@@ -1822,10 +1822,10 @@ Issahaku reads and writes Dagbani fluently. He finds a transcription project on 
           {
             prompt: "How did Issahaku apply for the Dagbani transcription project?",
             options: [
-              "Through the company's official careers page after checking its website",
+              "Through the company's official careers page",
               "By paying a registration fee on WhatsApp",
               "By sending his PIN to a recruiter",
-              "By replying to a random Telegram message",
+              "By replying to a Telegram message that promised quick work",
             ],
             answer_index: 0,
             explanation: "He checked the company and applied through the official page.",
@@ -1887,7 +1887,7 @@ Wumpini notices that women in her savings group in Savelugu keep contributions i
           {
             prompt: "What is a digital product, as described in the lesson?",
             options: [
-              "Something you make once and can sell many times without remaking it",
+              "Something you make once and sell many times",
               "A phone you buy and resell",
               "A service you must deliver in person every time",
               "An AI tool you build from scratch",
@@ -1910,8 +1910,8 @@ Wumpini notices that women in her savings group in Savelugu keep contributions i
             prompt: "Which of these makes a product worth paying for?",
             options: [
               "Generic text anyone could get from an AI in seconds",
-              "Facts nobody has checked",
-              "Local knowledge, checked information and testing with real users",
+              "Facts nobody has checked, written in very polished English",
+              "Local knowledge, checked facts and testing with users",
               "A long title",
             ],
             answer_index: 2,
@@ -1992,7 +1992,7 @@ Abdul-Rahman made a CV guide with fill in templates for school leavers in Tamale
               "To check that people will actually pay for it",
               "Because testing is required by law",
               "To make the product longer",
-              "Because AI cannot help with products",
+              "Because AI cannot help you polish a product after launch",
             ],
             answer_index: 0,
             explanation: "The lesson says test demand to check people will pay before investing more time.",
@@ -2011,7 +2011,7 @@ Abdul-Rahman made a CV guide with fill in templates for school leavers in Tamale
           {
             prompt: "What does the lesson say about reviews and testimonials?",
             options: [
-              "Write some yourself to look popular",
+              "Write some yourself under different names to look popular",
               "Ask AI to invent them",
               "Share only real feedback, with the buyer's permission",
               "Copy reviews from other sellers",
@@ -2100,7 +2100,7 @@ Gather your AI learning journal, your prompt templates and any practice pieces y
             options: [
               "Pasting customer details into public tools to save time",
               "Hiding mistakes so the client does not notice",
-              "Agreeing with the client at the start how AI will be used",
+              "Agreeing with the client how AI will be used",
               "Delivering AI drafts without editing",
             ],
             answer_index: 2,
@@ -2110,9 +2110,9 @@ Gather your AI learning journal, your prompt templates and any practice pieces y
             prompt: "Why did the pharmacy owner hire Fuseini?",
             options: [
               "He offered to work for free",
-              "He promised AI would do everything",
+              "He promised AI would do everything faster and at a lower price",
               "He used a famous tool",
-              "He explained his careful process and shared a portfolio as proof",
+              "He explained his careful process and showed a portfolio",
             ],
             answer_index: 3,
             explanation: "Fuseini explained his honest process and showed evidence in his portfolio.",
@@ -2167,8 +2167,8 @@ Mariama is hired to write website text for a guesthouse in Bolgatanga. At the st
           {
             prompt: "According to the lesson, when is using AI a problem?",
             options: [
-              "Whenever you use it at all",
-              "When you hide it where it matters, such as when a client expects otherwise",
+              "Whenever you use it at all, even for checking spelling",
+              "When you hide it where it matters to the client",
               "Only when using a phone",
               "Only on weekends",
             ],
@@ -2191,7 +2191,7 @@ Mariama is hired to write website text for a guesthouse in Bolgatanga. At the st
             options: [
               "Write them, since AI makes it quick",
               "Write only three instead of ten",
-              "Do not create fake reviews",
+              "Do not create fake reviews at all",
               "Post them from your own account",
             ],
             answer_index: 2,
@@ -2199,15 +2199,15 @@ Mariama is hired to write website text for a guesthouse in Bolgatanga. At the st
           },
           {
             prompt: "If AI makes a mistake in work you hand in, whose mistake is it?",
-            options: ["The AI company's", "Nobody's", "The client's", "Yours"],
+            options: ["The AI company's", "Nobody's", "The client's", "Your own"],
             answer_index: 3,
             explanation: "The lesson says it is still your mistake to the client.",
           },
           {
             prompt: "Why should you read AI output with bias in mind?",
             options: [
-              "AI can repeat unfair views about groups, which you should correct",
-              "AI is always perfectly fair",
+              "AI can repeat unfair views about groups",
+              "AI is always perfectly fair because it has no feelings",
               "Bias only affects images",
               "Bias makes text shorter",
             ],
@@ -2292,8 +2292,8 @@ Update your portfolio as you do real work. Replace practice pieces with real one
           {
             prompt: "Which of these should each portfolio piece show?",
             options: [
-              "Only the final result with no explanation",
-              "The task, your prompt, the AI draft, your edits and checks, and the final result",
+              "Only the final result, polished so nobody sees the AI draft",
+              "The task, prompt, AI draft, your edits and checks, and result",
               "Your passwords and phone number",
               "A client's confidential files without permission",
             ],
@@ -2314,10 +2314,10 @@ Update your portfolio as you do real work. Replace practice pieces with real one
           {
             prompt: "What does walking through one portfolio piece in an interview show an employer?",
             options: [
-              "That you memorised the advert",
+              "That you memorised the advert and the company's history",
               "That you own an expensive phone",
               "That AI is always right",
-              "Your judgement, including what the AI got wrong and how you fixed it",
+              "Your judgement, including what the AI got wrong",
             ],
             answer_index: 3,
             explanation: "The lesson says the story of catching and fixing mistakes shows judgement.",

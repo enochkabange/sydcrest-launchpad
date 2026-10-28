@@ -3,8 +3,7 @@
 import { useActionState } from "react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { SelectField } from "@/components/ui/field";
-import { TextAreaField } from "@/components/business/bits";
+import { SelectField, TextAreaField } from "@/components/ui/field";
 import { CONTACT_MESSAGE_MAX } from "@/lib/talent/forms";
 import { requestContact, type ContactState } from "../actions";
 

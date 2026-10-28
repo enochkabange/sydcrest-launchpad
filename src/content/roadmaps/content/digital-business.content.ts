@@ -53,7 +53,7 @@ You do not need a big budget to start. You need a clear promise, a phone, and th
           {
             prompt: "According to this lesson, what does a business start with?",
             options: [
-              "Opening accounts on every social media app",
+              "Opening accounts on every social media app and posting new photos on each one daily",
               "Three questions: what you sell, who buys it, and whether you can deliver it",
               "A large loan to rent a shop",
               "Posting every day until someone buys",
@@ -88,8 +88,8 @@ You do not need a big budget to start. You need a clear promise, a phone, and th
             options: [
               "Owning a large shop and a car",
               "Coding websites from scratch",
-              "Having many followers on social media",
-              "Serving customers, keeping records, managing stock and selling through chat and social media",
+              "Having many followers on social media and a famous name that brings in buyers",
+              "Customer care, records, stock and selling through chat and social media",
             ],
             answer_index: 3,
             explanation: "The lesson lists customer service, records, stock and selling through chat and social media.",
@@ -141,7 +141,7 @@ He spent little money, and he learned what his customers actually want. That is 
           {
             prompt: "Which of these is one of the four tests for a product in this lesson?",
             options: [
-              "Is it popular with celebrities?",
+              "Is it already popular with celebrities and influencers on TikTok and Instagram?",
               "Can you deliver it without it breaking or spoiling, at a sensible cost?",
               "Is it sold only in big cities?",
               "Does it need a shop to sell it?",
@@ -153,7 +153,7 @@ He spent little money, and he learned what his customers actually want. That is 
             prompt: "Why does the lesson suggest testing with a small batch first?",
             options: [
               "Because suppliers will not sell large amounts",
-              "Because small batches always make more profit",
+              "Because small batches always make more profit per item than buying in bulk",
               "Because real orders show whether people will buy, without risking much money",
               "Because apps only allow a few products",
             ],
@@ -175,9 +175,9 @@ He spent little money, and he learned what his customers actually want. That is 
             prompt: "If nobody buys during your test, what does the lesson suggest?",
             options: [
               "Give up on selling online completely",
-              "Buy a much larger batch so you have more choice",
+              "Buy a much larger batch in more colours and sizes so customers have more choice",
               "Keep everything the same and wait longer",
-              "Change one thing, such as the price, size, photos or customers, and test again",
+              "Change one thing, such as the price, size or photos, and test again",
             ],
             answer_index: 3,
             explanation: "The lesson says to change one thing and test again.",
@@ -240,7 +240,7 @@ You can do the same for any product, whether you sell to neighbours in Nalerigu 
               "Because apps block sellers who post too much",
               "Because only rich people buy online",
               "Because a message meant for everyone speaks to no one",
-              "Because competitors will copy you",
+              "Because competitors will copy your products and prices if your posts reach too many people",
             ],
             answer_index: 2,
             explanation: "The lesson opens by saying that selling to everyone means your message speaks to no one.",
@@ -347,7 +347,7 @@ When one supplier travelled for a funeral, the other covered his order. His cust
               "Colour, logo, packaging and advertising",
               "Followers, likes, shares and comments",
               "Quality, quantity, price, timing and payment",
-              "Rent, electricity, water and security",
+              "Rent, electricity, water, security and the cost of a market stall",
             ],
             answer_index: 2,
             explanation: "The lesson lists quality, quantity, price, timing and payment.",
@@ -356,7 +356,7 @@ When one supplier travelled for a funeral, the other covered his order. His cust
             prompt: "What simple way of recording an agreement does the lesson suggest?",
             options: [
               "A short WhatsApp message that both of you reply to",
-              "A lawyer's contract signed at court",
+              "A formal contract drawn up by a lawyer and signed at the court registry",
               "A verbal promise with no record",
               "A public post on social media",
             ],
@@ -421,10 +421,10 @@ Amina raised her snack price slightly, opened a second wallet for the business a
           {
             prompt: "According to the lesson, what kind of maths do business sums mostly need?",
             options: [
-              "Advanced algebra and statistics",
-              "Simple addition, subtraction, multiplication and division done honestly and regularly",
+              "Advanced algebra and statistics like those taught at university",
+              "Simple arithmetic done honestly and regularly",
               "Only percentages",
-              "Accounting software that costs money",
+              "Paid accounting software that does all the sums for you automatically",
             ],
             answer_index: 1,
             explanation: "The lesson says business sums use simple arithmetic; what matters is doing them honestly and regularly.",
@@ -456,7 +456,7 @@ Amina raised her snack price slightly, opened a second wallet for the business a
             options: [
               "Posting on social media every day",
               "Borrowing to buy stock",
-              "Hiring an accountant",
+              "Hiring an accountant to keep your books from the first day you start trading",
               "Stock control: knowing what you have, what has sold and when to reorder",
             ],
             answer_index: 3,
@@ -523,7 +523,7 @@ Before, Wumpini sold bracelets for 10 cedis because "that sounded right". She wa
               "Copy the price of the most popular seller",
               "Find the full cost of getting one item into a customer's hands",
               "Choose a round number that sounds right",
-              "Ask customers what they want to pay",
+              "Ask a few customers what they would like to pay and set your price there",
             ],
             answer_index: 1,
             explanation: "Step 1 is to find the full cost per item, including transport, packaging and selling costs.",
@@ -554,7 +554,7 @@ Before, Wumpini sold bracelets for 10 cedis because "that sounded right". She wa
           {
             prompt: "If your price is much higher than similar sellers, what does the lesson suggest?",
             options: [
-              "Lower it to the cheapest price immediately",
+              "Lower it to match the cheapest seller immediately, even if you make a loss",
               "Stop selling the product",
               "Show clearly why it is worth more, or look for ways to reduce your cost",
               "Hide the price from customers",
@@ -636,7 +636,7 @@ So his profit was 600 cedis, but his cash was almost nothing. Sumaila now limits
               "Selling on credit to customers who pay late",
               "Collecting payment before delivery",
               "Keeping an emergency reserve",
-              "Buying stock in small amounts",
+              "Buying stock in small amounts as you need it instead of in bulk",
             ],
             answer_index: 0,
             explanation: "Money owed by customers is profit on paper but not cash you can use.",
@@ -644,10 +644,10 @@ So his profit was 600 cedis, but his cash was almost nothing. Sumaila now limits
           {
             prompt: "Why could Sumaila not buy new stock in January?",
             options: [
-              "His December sales were very low",
+              "His December sales were very low because shoppers bought chargers elsewhere",
               "His supplier refused to sell to him",
               "He had made a loss on every item",
-              "His profit was modest, customers owed him money and cash was tied up in unsold chargers",
+              "Customers owed him money and his cash was tied up in unsold chargers",
             ],
             answer_index: 3,
             explanation: "Profit of 600 cedis, 500 cedis owed on credit and cash spent on stock left him with almost no cash.",
@@ -714,7 +714,7 @@ Five minutes a day gave Abdul-Rahman better decisions and an opportunity he woul
               "Writing a business plan for a bank",
               "Writing down the money that comes in and goes out of your business",
               "Reading books about business",
-              "Paying an accountant every month",
+              "Paying an accountant every month to prepare a full set of company accounts",
             ],
             answer_index: 1,
             explanation: "The lesson defines bookkeeping as recording money in and out.",
@@ -723,7 +723,7 @@ Five minutes a day gave Abdul-Rahman better decisions and an opportunity he woul
             prompt: "Which of these is one of the five columns in the basic record?",
             options: [
               "Customer's favourite colour",
-              "Number of likes on the post",
+              "Number of likes and comments on the post that brought the sale",
               "How paid, with the transaction ID for mobile money",
               "Weather that day",
             ],
@@ -746,7 +746,7 @@ Five minutes a day gave Abdul-Rahman better decisions and an opportunity he woul
             options: [
               "That WhatsApp selling does not work",
               "That he should stop selling clothes",
-              "That his prices were too low on everything",
+              "That his prices were too low on everything, so he was losing money on each sale",
               "That children's clothes sold out weekly while men's shirts sat for weeks",
             ],
             answer_index: 3,
@@ -819,7 +819,7 @@ Since she sells about 25 small tubs a week and her aunt needs four days to make 
           {
             prompt: "What is reconciliation?",
             options: [
-              "Making peace with an angry customer",
+              "Making peace with an angry customer after an order arrives late or damaged",
               "Ordering new stock from a supplier",
               "Comparing what your record says with what a physical count shows",
               "Giving discounts on slow items",
@@ -833,7 +833,7 @@ Since she sells about 25 small tubs a week and her aunt needs four days to make 
               "How fast the item sells and how long your supplier takes",
               "The number of followers you have",
               "Your competitor's stock",
-              "A fixed number used for every product",
+              "The same fixed number for every product, set once when you open",
             ],
             answer_index: 0,
             explanation: "The lesson bases the reorder level on sales speed and supplier delivery time.",
@@ -902,7 +902,7 @@ The lessons in this section show you how to set up each part of your online shop
             prompt: "In this lesson's shop comparison, what is \"the counter\" for most small sellers?",
             options: [
               "A physical table in the market",
-              "TikTok videos",
+              "TikTok videos, where new customers first discover the products",
               "WhatsApp, where customers ask questions and order",
               "A printed flyer",
             ],
@@ -924,7 +924,7 @@ The lessons in this section show you how to set up each part of your online shop
             prompt: "In Issahaku's example, what role did TikTok play?",
             options: [
               "It was where he took payments",
-              "It replaced WhatsApp completely",
+              "It replaced WhatsApp completely for taking orders and confirming payments",
               "It was where he kept his stock records",
               "It was the window where people discovered his baskets",
             ],
@@ -937,7 +937,7 @@ The lessons in this section show you how to set up each part of your online shop
               "Using photos copied from bigger sellers",
               "Using real photos of your own products and stating prices clearly",
               "Hiding prices until the customer pays",
-              "Promising very fast delivery to everyone",
+              "Promising very fast delivery to everyone, even to towns your rider does not reach",
             ],
             answer_index: 1,
             explanation: "Real photos, clear prices and honest answers build trust.",
@@ -1016,7 +1016,7 @@ When a customer in Takoradi asks about a smock, Hawa shares the catalogue item, 
           {
             prompt: "What are labels used for?",
             options: [
-              "Printing stickers for your products",
+              "Printing price stickers to put on your products and parcels before delivery",
               "Blocking difficult customers",
               "Tagging chats to show where each customer is, such as New order or Paid",
               "Setting your prices",
@@ -1028,7 +1028,7 @@ When a customer in Takoradi asks about a smock, Hawa shares the catalogue item, 
             prompt: "What should an order confirmation include, according to the lesson?",
             options: [
               "Only the item name",
-              "The customer's PIN for payment",
+              "The customer's mobile money PIN so you can collect the payment for them",
               "A list of your other customers",
               "Item, quantity, price, delivery fee, total and delivery date",
             ],
@@ -1039,7 +1039,7 @@ When a customer in Takoradi asks about a smock, Hawa shares the catalogue item, 
             prompt: "What did Hawa do before changing a chat's label to Paid?",
             options: [
               "She checked her own wallet to confirm the payment arrived",
-              "She trusted the customer's screenshot",
+              "She trusted the screenshot the customer sent showing the payment had gone through",
               "She waited for the customer to call",
               "She asked the customer for their PIN",
             ],
@@ -1107,8 +1107,8 @@ She then held a 20 minute live session each Friday evening, showing each tub siz
             prompt: "Why does the lesson suggest videos that show a product in use?",
             options: [
               "Because apps ban photos of products",
-              "Because people scroll quickly and such videos work better than a plain price list",
-              "Because videos are always free to boost",
+              "Because people scroll quickly and such videos beat a plain price list",
+              "Because videos are always free to boost, while photos need a paid advert",
               "Because customers prefer long videos",
             ],
             answer_index: 1,
@@ -1117,9 +1117,9 @@ She then held a 20 minute live session each Friday evening, showing each tub siz
           {
             prompt: "When someone in your comments is ready to buy, what does the lesson advise?",
             options: [
-              "Ask them to post their payment details in the comments",
+              "Ask them to post their phone number and payment details in the comments below",
               "Ignore them until they message again",
-              "Move them to WhatsApp or your usual order channel to confirm order and payment",
+              "Move them to WhatsApp or your usual order channel to confirm the order",
               "Send them a different, lower price in public",
             ],
             answer_index: 2,
@@ -1141,7 +1141,7 @@ She then held a 20 minute live session each Friday evening, showing each tub siz
             options: [
               "Start every business with a large ad budget",
               "Ads are banned for small sellers in Ghana",
-              "Ads replace the need for good photos",
+              "Ads replace the need for good photos because they reach so many more people",
               "Learn to sell with free posts first, then try a small tracked budget",
             ],
             answer_index: 3,
@@ -1215,7 +1215,7 @@ His new description read: "Dawadawa from Savelugu. 250 g sealed pack. 25 cedis. 
             prompt: "Why does the lesson warn against filters that change colour?",
             options: [
               "Customers will complain when the real item looks different",
-              "Filters are illegal on business pages",
+              "Filters are illegal on business pages and can get your account blocked",
               "Filters use too much battery",
               "Filters make photos too small",
             ],
@@ -1238,7 +1238,7 @@ His new description read: "Dawadawa from Savelugu. 250 g sealed pack. 25 cedis. 
             options: [
               "Write \"big\" on the photo",
               "Use a zoom filter",
-              "Take the photo from far away",
+              "Take the photo from far away so the whole product fits in the frame",
               "Place it next to something familiar, such as a hand or a phone",
             ],
             answer_index: 3,
@@ -1294,7 +1294,7 @@ He considered a marketplace too, but after reading the seller terms and working 
           {
             prompt: "What is an online store in its simplest form, according to the lesson?",
             options: [
-              "A website built by a professional developer",
+              "A full website built by a professional developer with its own payment system",
               "One place where customers can see your products, prices and how to buy",
               "A shop in a shopping mall",
               "A paid advert on social media",
@@ -1305,9 +1305,9 @@ He considered a marketplace too, but after reading the seller terms and working 
           {
             prompt: "What does a Google Business Profile help with?",
             options: [
-              "Taking mobile money payments automatically",
+              "Taking mobile money payments automatically and sending a receipt to each customer",
               "Writing your product descriptions",
-              "Showing your business on Google Search and Maps so nearby people can find you",
+              "Showing your business on Google Search and Maps for nearby buyers",
               "Delivering parcels",
             ],
             answer_index: 2,
@@ -1327,7 +1327,7 @@ He considered a marketplace too, but after reading the seller terms and working 
           {
             prompt: "Why did Abdul-Rahman decide to wait before joining a marketplace?",
             options: [
-              "Marketplaces do not allow clothes",
+              "Marketplaces do not allow clothes from small sellers who are not yet registered",
               "His customers asked him not to",
               "He did not have a phone",
               "After reading the terms, the fees did not suit his small margins",
@@ -1388,8 +1388,8 @@ The next three lessons go through each part of this flow in detail.`,
           {
             prompt: "According to the lesson, when is an online sale finished?",
             options: [
-              "When the customer says they will pay",
-              "When the money is safely in your wallet and the product is safely with the customer",
+              "When the customer says they will pay and sends you their delivery address",
+              "When the money is in your wallet and the product is with the customer",
               "When you post the product online",
               "When the customer likes your post",
             ],
@@ -1421,10 +1421,10 @@ The next three lessons go through each part of this flow in detail.`,
           {
             prompt: "What changes did Sumaila make after losing money twice?",
             options: [
-              "He stopped selling outside Damongo",
+              "He stopped selling outside Damongo and served only customers who came to collect in person",
               "He only accepted cash",
               "He raised all his prices",
-              "He checked his own wallet before sending, packed fragile items carefully and followed up deliveries",
+              "He checked his wallet before sending, packed fragile items well and followed up",
             ],
             answer_index: 3,
             explanation: "He adopted the order flow: wallet checks, better packing, waybill numbers and follow up calls.",
@@ -1487,8 +1487,8 @@ When a customer pays, she checks her own wallet for the provider's confirmation,
             prompt: "Why should you tell customers the exact wallet name they will see when paying?",
             options: [
               "So they can follow you on social media",
-              "So they know something is wrong if the name does not match, which protects them from scammers",
-              "Because providers charge less for named wallets",
+              "So they notice if the name does not match, which protects them from scammers",
+              "Because providers charge lower fees when customers type the wallet name correctly",
               "So they can share it in public groups",
             ],
             answer_index: 1,
@@ -1508,9 +1508,9 @@ When a customer pays, she checks her own wallet for the provider's confirmation,
           {
             prompt: "Why should you record the transaction ID?",
             options: [
-              "Your provider will ask for it if there is a dispute or a question about a payment",
+              "Your provider will ask for it if a payment is disputed or questioned",
               "It is your customer's password",
-              "It increases your wallet limit",
+              "It increases your daily wallet limit once you have recorded enough transactions",
               "It is needed to post on TikTok",
             ],
             answer_index: 0,
@@ -1521,8 +1521,8 @@ When a customer pays, she checks her own wallet for the provider's confirmation,
             options: [
               "Customers always pay twice",
               "It is not allowed in Ghana",
-              "It makes customers trust you less",
-              "You may pay for delivery and get nothing if the customer refuses or disappears",
+              "It makes customers trust you less because they think you cannot afford stock",
+              "You may pay for delivery and get nothing if the buyer refuses or vanishes",
             ],
             answer_index: 3,
             explanation: "If a customer refuses, you lose the delivery cost and time.",
@@ -1580,8 +1580,8 @@ Wumpini received a message: "You have received GHS 150.00 from Hawa. Your new ba
           {
             prompt: "What has the Bank of Ghana said about PINs and codes?",
             options: [
-              "Customers should share them only with their mobile money agent",
-              "No legitimate bank, mobile money operator or payment provider will ask for them by phone, text, email or social media",
+              "Customers should share them only with their mobile money agent when cashing out",
+              "No legitimate bank or mobile money operator will ever ask for them",
               "PINs should be changed every day",
               "Providers will call you to confirm your PIN once a year",
             ],
@@ -1592,8 +1592,8 @@ Wumpini received a message: "You have received GHS 150.00 from Hawa. Your new ba
             prompt: "Someone says they sent you money by mistake and asks you to send it back. What does the lesson advise?",
             options: [
               "Send it back immediately to be polite",
-              "Send back half to be safe",
-              "Check your balance yourself and ask them to contact their provider's official customer service",
+              "Send back half now and the rest after they send you a screenshot of the transfer",
+              "Check your own balance and refer them to their provider's customer service",
               "Give them your PIN so they can reverse it",
             ],
             answer_index: 2,
@@ -1626,7 +1626,7 @@ Wumpini received a message: "You have received GHS 150.00 from Hawa. Your new ba
             options: [
               "The customer asks about delivery",
               "Someone rushes you and puts you under pressure",
-              "The customer asks for a size chart",
+              "The customer asks for a size chart and photos of the item from other angles",
               "The customer pays in full before delivery",
             ],
             answer_index: 1,
@@ -1708,7 +1708,7 @@ She folded the smocks into a clean sealed bag with a thank you note, wrote the c
             prompt: "How should you pack creams or liquids?",
             options: [
               "In an open container so they can breathe",
-              "Wrapped only in newspaper",
+              "Wrapped only in newspaper so the parcel stays light and costs less to send",
               "With sealed lids, tape around the lid and a plastic bag in case of leaks",
               "Loose inside a cardboard box",
             ],
@@ -1718,10 +1718,10 @@ She folded the smocks into a clean sealed bag with a thank you note, wrote the c
           {
             prompt: "What is GhanaPostGPS?",
             options: [
-              "Ghana's national digital address system that gives each location a short code",
+              "Ghana's digital address system, giving each location a short code",
               "A courier company",
-              "A mobile money service",
-              "A bus parcel service",
+              "A mobile money service for paying delivery riders at the door",
+              "A bus parcel service that carries goods between northern and southern cities",
             ],
             answer_index: 0,
             explanation: "GhanaPostGPS gives locations a digital address code that helps delivery.",
@@ -1731,7 +1731,7 @@ She folded the smocks into a clean sealed bag with a thank you note, wrote the c
             options: [
               "Nothing; explain after payment",
               "Only the name of the rider",
-              "Only that delivery is fast",
+              "Only that delivery is fast, since the details can be agreed after payment",
               "The method, the fee, who pays it and how long it should take",
             ],
             answer_index: 3,
@@ -1791,7 +1791,7 @@ The next lessons show you how to do the same, step by step.`,
             options: [
               "Raising prices and cutting quality",
               "Finding new customers and keeping existing ones",
-              "Opening more shops and hiring more staff",
+              "Opening more shops in new towns and hiring more staff to run them",
               "Buying ads and using more apps",
             ],
             answer_index: 1,
@@ -1803,7 +1803,7 @@ The next lessons show you how to do the same, step by step.`,
               "It lets you charge more for ads",
               "It removes the need for any product",
               "Happy customers become your advertisers",
-              "It makes apps show your posts more",
+              "It makes apps show your posts to more people without paying for ads",
             ],
             answer_index: 2,
             explanation: "Satisfied customers recommend you, which is free marketing.",
@@ -1814,7 +1814,7 @@ The next lessons show you how to do the same, step by step.`,
               "\"Was everything fine with your order?\"",
               "\"Can you pay more next time?\"",
               "\"Can you give me your PIN?\"",
-              "\"Why did you not order more?\"",
+              "\"Why did you not order more, since the price was so good?\"",
             ],
             answer_index: 0,
             explanation: "Asking after delivery helps you learn and shows you care.",
@@ -1822,7 +1822,7 @@ The next lessons show you how to do the same, step by step.`,
           {
             prompt: "What did Abdul-Rahman do when new stock arrived?",
             options: [
-              "Posted it on every app at once",
+              "Posted it on every app at once with a discount for the first buyers",
               "Raised his prices",
               "Waited for customers to ask",
               "Messaged regular customers first with items in their size",
@@ -1891,9 +1891,9 @@ When the replacement arrived, the customer updated her comment to say the proble
             prompt: "Which of these is good reply practice according to the lesson?",
             options: [
               "Reply \"Yes?\" to save time",
-              "Answer the actual question, such as giving both the price and the delivery cost",
+              "Answer the actual question, such as giving the price and the delivery cost",
               "Promise next day delivery to everyone",
-              "Wait until evening to reply to all messages",
+              "Wait until evening and answer all the day's messages in one go to save time",
             ],
             answer_index: 1,
             explanation: "Answering exactly what was asked saves time and builds trust.",
@@ -1914,7 +1914,7 @@ When the replacement arrived, the customer updated her comment to say the proble
             options: [
               "Reply briefly and politely in public, then move to a private chat",
               "Delete the comment and ignore it",
-              "Argue in the comments to defend yourself",
+              "Argue in the comments so other followers can see your side of the story",
               "Post the customer's phone number",
             ],
             answer_index: 0,
@@ -1923,10 +1923,10 @@ When the replacement arrived, the customer updated her comment to say the proble
           {
             prompt: "Why should you set return and refund rules before problems happen?",
             options: [
-              "So you can refuse every complaint",
+              "So you can refuse every complaint by pointing customers to the written rules",
               "Because apps require written rules",
               "So you can charge customers for complaining",
-              "So customers know what to expect and you can apply the rules fairly to everyone",
+              "So customers know what to expect and you treat everyone fairly",
             ],
             answer_index: 3,
             explanation: "Clear rules shared in advance make complaints easier and fairer to handle.",
@@ -1987,7 +1987,7 @@ During Ramadan she created an iftar pack and announced it a week ahead. She aske
             prompt: "According to the lesson, who sees your WhatsApp Status updates?",
             options: [
               "Everyone in Ghana",
-              "Only people in your groups",
+              "Only people in your WhatsApp groups, whether or not they have saved your number",
               "People in your contacts, depending on your Status privacy settings",
               "Only people who pay for them",
             ],
@@ -1998,7 +1998,7 @@ During Ramadan she created an iftar pack and announced it a week ahead. She aske
             prompt: "What does the lesson advise when sharing in community or church groups?",
             options: [
               "Share only where selling is welcome, follow group rules and do not spam",
-              "Post in every group many times a day",
+              "Post in every group many times a day so your product stays at the top of the chat",
               "Add strangers to new groups without asking",
               "Ignore group rules if your product is good",
             ],
@@ -2019,8 +2019,8 @@ During Ramadan she created an iftar pack and announced it a week ahead. She aske
           {
             prompt: "When does the lesson suggest trying a small paid ad budget?",
             options: [
-              "Before you have any customers",
-              "After free posts are already bringing orders and you know your profit per item",
+              "Before you have any customers, so the ads can bring in your very first orders",
+              "After free posts bring orders and you know your profit per item",
               "Only during festivals",
               "Never",
             ],
@@ -2087,8 +2087,8 @@ She gives a small discount on the fourth purchase and notes it in the sheet. Man
           {
             prompt: "Why are repeat customers valuable according to the lesson?",
             options: [
-              "They always pay more",
-              "Selling to someone who already trusts you is usually easier, and they recommend you",
+              "They always pay more than new customers because they already know the quality",
+              "Someone who already trusts you is easier to sell to, and they recommend you",
               "They never complain",
               "They do not need delivery",
             ],
@@ -2099,7 +2099,7 @@ She gives a small discount on the fourth purchase and notes it in the sheet. Man
             prompt: "Which column does the lesson suggest including in a customer list?",
             options: [
               "Their mobile money PIN",
-              "Their salary",
+              "Their salary and where they work, so you know what they can afford",
               "Permission to send updates, yes or no",
               "Their political views",
             ],
@@ -2120,7 +2120,7 @@ She gives a small discount on the fourth purchase and notes it in the sheet. Man
           {
             prompt: "Why did Hawa message only customers who like indigo about the new smocks?",
             options: [
-              "Because broadcast lists are limited to five people",
+              "Because WhatsApp broadcast lists are limited to five people at a time",
               "Because other customers had blocked her",
               "Because WhatsApp charges per message",
               "Because personal, relevant messages work better than generic ones",
@@ -2193,7 +2193,7 @@ Going official is not something to fear. It is a step that helps a growing busin
             options: [
               "Because registration is free and quick",
               "Because fees and rules change, so you should check the official source",
-              "Because only agents know the steps",
+              "Because only licensed agents are allowed to see the official registration steps",
               "Because the steps are secret",
             ],
             answer_index: 1,
@@ -2204,8 +2204,8 @@ Going official is not something to fear. It is a step that helps a growing busin
             options: [
               "Give them your mobile money PIN to pay fees",
               "Pay in cash with no receipt",
-              "Choose someone recommended by people you trust, ask for receipts and check the result yourself",
-              "Let them keep your Ghana Card",
+              "Use someone trusted people recommend, get receipts and check the result yourself",
+              "Let them keep your Ghana Card and certificates until the whole process is finished",
             ],
             answer_index: 2,
             explanation: "Use trusted agents, keep receipts and verify on the official site.",
@@ -2213,9 +2213,9 @@ Going official is not something to fear. It is a step that helps a growing busin
           {
             prompt: "Why did the supermarket hesitate to stock Fuseini's dawadawa at first?",
             options: [
-              "It asked whether his business was registered and his packaging properly labelled",
+              "It asked whether his business was registered and his packaging labelled",
               "His price was too low",
-              "It only stocks imported food",
+              "It only stocks imported food brands that already sell in other supermarkets",
               "He had no WhatsApp account",
             ],
             answer_index: 0,
@@ -2292,8 +2292,8 @@ She gathers her Ghana Card, her GhanaPostGPS address and a short description of 
             options: [
               "A sole proprietorship cannot sell online",
               "A company does not need registration",
-              "In a sole proprietorship the business is not separate from you in law, so its debts are your debts",
-              "A company can only have one owner",
+              "In a sole proprietorship the business's debts are your own debts",
+              "A company can only have one owner, while a sole proprietorship can have many",
             ],
             answer_index: 2,
             explanation: "A company is a separate legal body; a sole proprietorship is not.",
@@ -2314,8 +2314,8 @@ She gathers her Ghana Card, her GhanaPostGPS address and a short description of 
             options: [
               "Registration lasts forever",
               "Only companies need to renew",
-              "Renewal can only be done in Accra",
-              "Business names must be renewed every year, and the ORC offers renewal online and by USSD",
+              "Renewal can only be done in person at the ORC head office in Accra",
+              "Business names are renewed every year, online or by USSD",
             ],
             answer_index: 3,
             explanation: "Registration must be renewed, so set a reminder.",
@@ -2392,7 +2392,7 @@ Because he had kept a year of sales records, he could see which category he prob
           {
             prompt: "Who is the Modified Taxation Scheme for?",
             options: [
-              "Large companies with many branches",
+              "Large registered companies with many branches and full time accountants",
               "Individuals in the informal sector who earn from skills, crafts or sales",
               "Foreign investors only",
               "Government workers",
@@ -2416,7 +2416,7 @@ Because he had kept a year of sales records, he could see which category he prob
             options: [
               "Records let you avoid tax completely",
               "GRA pays you for keeping records",
-              "Records replace the need for a TIN",
+              "Records replace the need for a TIN, so you do not have to register with GRA",
               "Tax works on numbers like your sales, and records give you those numbers",
             ],
             answer_index: 3,
@@ -2528,7 +2528,7 @@ Mariama visited the FDA regional office to ask what was needed. She learned what
             options: [
               "Claim cures to sell more",
               "Do not claim a product cures diseases or has effects you cannot prove",
-              "Only claim cures in local languages",
+              "Only claim cures in local languages so the FDA rules on English labels do not apply",
               "Health claims are required on all food",
             ],
             answer_index: 1,
@@ -2583,7 +2583,7 @@ His friend Mariama chose the other path. She used her records to apply to a yout
             options: [
               "Investing and lending",
               "Growing your own business or being hired by a business",
-              "Buying ads and reselling them",
+              "Buying adverts in bulk and reselling them to other small businesses",
               "Only through government jobs",
             ],
             answer_index: 1,
@@ -2593,8 +2593,8 @@ His friend Mariama chose the other path. She used her records to apply to a yout
             prompt: "Which of these skills does the lesson say entry level sales roles often ask for?",
             options: [
               "Advanced programming",
-              "A university degree in economics only",
-              "Customer service, record keeping, stock management and comfort with WhatsApp and social media",
+              "A university degree in economics and several years in a bank",
+              "Customer service, record keeping, stock management and social media",
               "Owning a car",
             ],
             answer_index: 2,
@@ -2615,7 +2615,7 @@ His friend Mariama chose the other path. She used her records to apply to a yout
             prompt: "What did Abdul-Rahman show in his interview?",
             options: [
               "Only his school certificates",
-              "His social media follower count",
+              "His social media follower count and screenshots of his most liked posts",
               "A letter from a friend",
               "His order list, how he checks payments and how he handled a complaint",
             ],
@@ -2687,7 +2687,7 @@ Hawa, who sells smocks, applied for a social media sales officer role. Her CV li
               "Repair phones and laptops",
               "Upload products and prices, process orders and coordinate delivery",
               "Only post on TikTok",
-              "Audit company accounts",
+              "Audit company accounts and prepare the yearly tax returns for the GRA",
             ],
             answer_index: 1,
             explanation: "The lesson describes ecommerce officers handling listings, orders and delivery.",
@@ -2708,7 +2708,7 @@ Hawa, who sells smocks, applied for a social media sales officer role. Her CV li
             options: [
               "It never asks job seekers for payment",
               "Job seekers must pay to apply",
-              "Payment guarantees an interview",
+              "A small payment guarantees you an interview with the employer",
               "Only sales jobs require payment",
             ],
             answer_index: 0,
@@ -2719,7 +2719,7 @@ Hawa, who sells smocks, applied for a social media sales officer role. Her CV li
             options: [
               "Customers' phone numbers and addresses",
               "Your mobile money PIN",
-              "Copies of other sellers' photos",
+              "Copies of other sellers' best product photos to show your taste",
               "Your order list and stock record with customer details hidden",
             ],
             answer_index: 3,
@@ -2794,7 +2794,7 @@ She found a training programme for women in shea processing through her aunt's c
               "Your personal PIN for safekeeping",
               "Where you are now, using figures from your records",
               "A list of every competitor's customers",
-              "A promise of guaranteed profit",
+              "A promise of guaranteed profit to show lenders the business is safe",
             ],
             answer_index: 1,
             explanation: "The plan includes your current sales, profit and customers from your records.",

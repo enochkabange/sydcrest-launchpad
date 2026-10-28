@@ -5,12 +5,13 @@ import { ChevronLeft } from "lucide-react";
 import Link from "@/components/ui/link";
 import { MainWithRail } from "@/components/ui/layout";
 import { Card, Pill } from "@/components/mentor/fields";
-import { AssignReviewForm, GradeForm } from "@/components/mentor/forms";
+import { AssignReviewForm } from "@/components/mentor/forms";
+import { GradeSubmissionForm } from "@/components/cohort/submission";
 import { RubricScores, Work } from "@/components/mentor/work";
 import { displayTheme } from "@/components/marketing/curriculum-weeks";
 import { nameOf, requireStaff, shortDate, type RosterRow } from "@/lib/mentor/data";
 import { parseCriteria, rubricForWeek } from "@/lib/mentor/progress";
-import { assignPeerReview, gradeSubmission } from "../../actions";
+import { assignPeerReview } from "../../actions";
 
 export const metadata: Metadata = { title: "Review work", robots: { index: false } };
 
@@ -30,6 +31,13 @@ export default function SubmissionPage({ params }: PageProps<"/mentor/submission
 }
 
 type AiFeedback = { summary?: unknown; criteria?: unknown };
+
+type GradableStatus = "submitted" | "ai_reviewed" | "returned" | "graded";
+
+/** Sent work can be graded (or re graded); a draft never reaches a mentor. */
+function isGradable(status: string): status is GradableStatus {
+  return status === "submitted" || status === "ai_reviewed" || status === "returned" || status === "graded";
+}
 
 async function Review({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
@@ -103,14 +111,17 @@ async function Review({ params }: { params: Promise<{ id: string }> }) {
         sticky
         rail={
           <>
-            <Card title={sub.status === "graded" ? "Change the grade" : "Grade"}>
-              <GradeForm
-                action={gradeSubmission.bind(null, sub.id)}
-                defaultScore={sub.final_score}
-                defaultFeedback={sub.mentor_feedback}
-                passScore={program?.pass_score ?? 60}
-              />
-            </Card>
+            {isGradable(sub.status) && (
+              <Card title={sub.status === "graded" ? "Change the grade" : "Grade"}>
+                <GradeSubmissionForm
+                  submissionId={sub.id}
+                  suggestedScore={sub.final_score ?? sub.ai_score}
+                  mentorFeedback={sub.mentor_feedback}
+                  passScore={program?.pass_score ?? 60}
+                  status={sub.status}
+                />
+              </Card>
+            )}
             {week?.is_capstone && (
               <Card title="Peer review">
                 <p className="text-sm text-content-2">

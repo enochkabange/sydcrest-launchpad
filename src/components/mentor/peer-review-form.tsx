@@ -4,7 +4,7 @@ import { useActionState } from "react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import type { Criterion } from "@/lib/mentor/progress";
-import { TextAreaField } from "./fields";
+import { TextAreaField } from "@/components/ui/field";
 import type { FormState } from "./forms";
 
 /**
