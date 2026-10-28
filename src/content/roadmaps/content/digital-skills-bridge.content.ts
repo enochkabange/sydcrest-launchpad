@@ -3000,6 +3000,7 @@ Her manager has a reliable answer in fifteen minutes, from the right source.`,
         "Know you do not need to own a computer",
         "Name the skills that carry over from a phone",
         "Set a goal for computer practice",
+        "Start and shut down a shared computer properly",
       ],
       explanation_md: `Your phone can do a lot, but many jobs and courses eventually need a computer. Job adverts in Ghana for office assistants, front desk staff and customer service agents often ask for basic computer skills. The Delta Mentoring Program starts in week 1 with computer hardware, files and folders, and then moves to Google Docs, Sheets and Slides. Getting a little comfortable with a keyboard and mouse before the cohort starts makes that first week much less stressful. If you already have a computer at home or at work, use this section to check your basics and build your typing speed.
 
@@ -3017,13 +3018,28 @@ Plenty of people learn their first computer skills on shared machines at school,
 
 If you have never used a computer, the first session can feel strange. The mouse moves too fast, the keyboard letters are not in alphabetical order and you are not sure what to click. That is normal for everyone. After a few sessions your hands learn the movements, and you stop thinking about them.
 
-## A worked example
-
-Napari in Gushegu had only ever used a phone. She asked her former school's ICT teacher if she could use the computer lab on Saturday mornings, and offered to help tidy the lab in return. In her first session she practised moving the mouse and opening a browser. By her fourth session she could type a short paragraph about herself, slowly but correctly. When she joined a digital skills cohort later, she was not afraid of the computer, so she could focus on learning Google Docs.
-
 ## Skills that carry over
 
 If you did the earlier lessons on a phone, much of what you learned carries over. Sending a document, filling in a form and searching work the same way on a computer. You simply click with a mouse instead of tapping, and type on a bigger keyboard instead of a screen.
+
+## The parts you will see
+
+A **desktop** computer has separate parts: a screen, called a monitor, a keyboard, a mouse and a box or tower that holds the computer itself. A **laptop** has all of these joined together, with a touchpad instead of a mouse, and a battery. DMP week 1 explains the parts in more detail. For now, it is enough to know which is which, and where the power button is.
+
+## Starting and finishing a session
+
+Most shared computers follow the same pattern:
+
+1. **Turn it on.** Press the power button once and wait. Starting up can take a minute.
+2. **Sign in.** Choose the user account you were given and type its password. On a library or school computer, ask the person in charge which account to use.
+3. **Open what you need.** Click the browser or app on the taskbar, or search for it from the Start menu on Windows.
+4. **Save your work.** If you type a document, save it to your Google Drive or email it to yourself, because a shared computer may be cleaned.
+5. **Sign out of your accounts** in the browser, then close it.
+6. **Shut down properly** if you are asked to. On Windows, open the Start menu, click the power icon and choose Shut down. On a Mac, open the Apple menu and choose Shut Down. Do not just switch it off at the wall, because that can damage files.
+
+## A tablet or phone with a keyboard
+
+Some people practise with a cheap keyboard plugged into a phone or tablet. That is good for typing practice, but it is not quite the same as a computer, because files, windows and menus work differently. Use it if it is all you have, and look for time on a real computer too.
 
 ## Set a goal for this section
 
@@ -3035,6 +3051,37 @@ A good goal before joining the DMP cohort is to be able to:
 * Type a short paragraph without looking for every key.
 
 You do not need to be fast. You need to be comfortable enough that the computer does not stop you from learning.`,
+      workedExample_md: `**Napari takes her first steps on a computer**
+
+Napari in Gushegu had only ever used a phone. She wanted to join a digital skills cohort, so she made a plan.
+
+1. She asked her former school's ICT teacher if she could use the computer lab on Saturday mornings, and offered to help tidy the lab in return. He agreed.
+2. **Session 1.** The teacher showed her the power button and the user account to sign in with. She practised moving the mouse until she could point at an icon without overshooting it, then opened a browser.
+3. **Session 2.** She visited a website by typing its address and pressing Enter, then practised scrolling and clicking links.
+4. **Session 3.** She did fifteen minutes of a free typing lesson, then typed her name and town in a blank document and saved it to her Google Drive.
+5. **Session 4.** She typed a short paragraph about herself, slowly but correctly, without looking for every key.
+6. At the end of each session she signed out of her email and shut the computer down from the Start menu.
+
+When she joined the cohort later, she was not afraid of the computer, so she could focus on learning Google Docs.`,
+      keyTerms: [
+        { term: "Desktop computer", definition: "A computer with a separate screen, keyboard, mouse and tower, used at a desk." },
+        { term: "Laptop", definition: "A portable computer with the screen, keyboard, touchpad and battery joined together." },
+        { term: "Touchpad", definition: "The flat area on a laptop you slide a finger across to move the pointer." },
+        { term: "User account", definition: "Your own sign in on a computer, with its own files and settings." },
+        { term: "Shut down", definition: "Turning a computer off properly from its menu so files are not damaged." },
+      ],
+      commonMistakes: [
+        "Waiting until you can buy a computer before you start practising",
+        "Giving up after the first session because the mouse and keyboard feel strange",
+        "Saving your work only on a shared computer, where it may be deleted",
+        "Switching a computer off at the wall instead of shutting it down",
+      ],
+      selfCheck: [
+        "Which of the four goals for this section can you already do?",
+        "Can you point to the monitor, keyboard, mouse and tower on a desktop computer?",
+        "Where will you save your work when you use a shared computer?",
+        "What steps do you take before you leave a shared computer?",
+      ],
       practice_task_md: `**Goal:** Plan your computer practice.
 
 **Steps**
@@ -3101,6 +3148,7 @@ You do not need to be fast. You need to be comfortable enough that the computer 
         "Find places to ask for computer access",
         "Ask politely for regular time",
         "Make the most of each session",
+        "Plan your first five sessions and keep a practice log",
       ],
       explanation_md: `Many entry level job adverts in Ghana, from office assistants to customer service agents, ask for basic computer skills. You cannot learn a keyboard only by reading about it. You need regular time in front of a real computer. The good news is that you do not have to own one.
 
@@ -3132,11 +3180,58 @@ If someone says no, thank them and try the next place. One yes is enough.
 
 One hour every week for two months builds more skill than one long day. Your hands need repeated practice to remember the keyboard. Put your time slot in your calendar as a reminder.
 
-## A worked example
+## A plan for your first five sessions
 
-Abdul-Rahman lives in Tolon and has no computer at home. He asked a youth centre in his area and was told the computers were busy on weekdays. He asked again about Saturday afternoons, and they agreed. He now goes every Saturday with a written plan. In his notebook he keeps a short log: date, what he practised, and one thing he found hard. After a month he can see clear progress.
+If you are not sure what to practise, follow this order. Spend about an hour on each:
+
+1. **Session 1.** Turn the computer on, sign in, and practise the mouse: pointing, clicking, double clicking and scrolling. Open a browser and visit one website.
+2. **Session 2.** Practise dragging and right clicking. Make a folder and move a file into it.
+3. **Session 3.** Start typing lessons on the home row. Then type your name, town and phone number in a blank document.
+4. **Session 4.** Sign in to your email in the browser, read a message, write a short reply, then sign out.
+5. **Session 5.** Fill in a simple online form, and use copy and paste to move text from one place to another.
+
+After that, keep going with typing practice every time, plus one new task each session.
+
+## Keep a practice log
+
+A practice log is a page in your notebook with three columns: the date, what you practised, and one thing you found hard. It takes one minute at the end of each session. It shows you what to work on next time, and after a few weeks it shows how far you have come. A mentor can also look at it and give advice.
+
+## When you pay for time
+
+At a business centre or internet cafe, every minute costs money. Arrive with your plan written down, your email password remembered, and any files already saved in Google Drive so you can open them quickly. Ask the attendant whether there is a cheaper rate at quieter times of day. Rates and opening hours vary from place to place, so ask before you start.
 
 If you truly cannot find access yet, keep practising the rest of this roadmap on your phone and keep asking. Access often appears once people know you are serious.`,
+      workedExample_md: `**Abdul-Rahman finds a Saturday slot**
+
+Abdul-Rahman lives in Tolon and has no computer at home. He wants regular practice before the next cohort starts.
+
+1. He lists places nearby: his old JHS, a youth centre and a business centre in town.
+2. He writes a short request in his notebook: "Good afternoon. I am preparing for a digital skills programme and need to practise using a computer. Could I use one for an hour each week? I am happy to help in return."
+3. He visits the youth centre first. The staff say the computers are busy on weekdays.
+4. He does not give up. He asks politely: "Would Saturday afternoon be possible?" They agree, as long as he helps arrange the chairs afterwards.
+5. He puts "Saturday 2pm: youth centre" in his phone calendar with a reminder.
+6. Each Saturday he arrives with a written plan, using the five session order from the lesson.
+7. At the end of every session he signs out of his accounts and fills in his practice log: date, what he practised, one thing he found hard.
+
+After a month he can see clear progress in his log. Dragging was hard in week one; by week four he does it without thinking.`,
+      keyTerms: [
+        { term: "ICT lab", definition: "A room of computers at a school or centre, used for information and communication technology lessons." },
+        { term: "Business centre", definition: "A shop that offers computers, printing and internet, usually paid by the hour or page." },
+        { term: "Time slot", definition: "A regular, agreed time when you can use a computer, such as Saturday at 2pm." },
+        { term: "Practice log", definition: "A simple record of each session: date, what you practised and what was hard." },
+      ],
+      commonMistakes: [
+        "Asking once, hearing no, and giving up instead of trying another place or time",
+        "Arriving at a paid computer without a plan and wasting the time",
+        "Leaving your email signed in on a shared computer",
+        "Practising for one long day instead of a little every week",
+      ],
+      selfCheck: [
+        "Which two places near you could you ask for computer time this week?",
+        "What would you offer in return for regular access?",
+        "What will you practise in your first session?",
+        "Where will you keep your practice log?",
+      ],
       practice_task_md: `**Goal:** Secure a regular time to practise on a computer.
 
 **Steps**
@@ -3201,9 +3296,10 @@ If you truly cannot find access yet, keep practising the rest of this roadmap on
 
     "mouse-and-keyboard": {
       outcomes: [
-        "Use a mouse",
-        "Use the most common keys",
-        "Use three shortcuts",
+        "Use a mouse or touchpad confidently",
+        "Use the most common keys and shortcuts",
+        "Select text quickly",
+        "Minimise, maximise, close and switch windows",
       ],
       explanation_md: `When a job advert asks for basic computer skills, the very first part is using a mouse and keyboard without struggling. In DMP week 1 you will work with files, folders and a browser on a computer, so being comfortable with these tools lets you follow the mentor instead of hunting for buttons.
 
@@ -3245,9 +3341,73 @@ On Windows computers, hold **Ctrl** and press a letter:
 
 On a Mac, use the **Command** key instead of Ctrl.
 
-## A worked example
+A few more are worth knowing once those three feel easy: **Ctrl and A** selects everything, **Ctrl and S** saves, and **Ctrl and F** finds a word on the page.
 
-Hawa opens a browser on a library computer. She clicks the address bar, types a website address, and presses Enter. On the page, she scrolls down with the wheel, then drags across a sentence to select it, presses Ctrl and C, opens a blank document and presses Ctrl and V. She accidentally deletes a word, so she presses Ctrl and Z and it comes back. Five basic actions, and she has copied information from one place to another, a task office workers do every day.`,
+## Selecting text quickly
+
+Dragging works, but there are faster ways:
+
+* **Double click** a word to select just that word.
+* **Triple click**, three quick clicks, to select a whole paragraph in most programs.
+* Click at the start, then hold **Shift** and click at the end, to select everything in between.
+* Hold **Shift** and press the arrow keys to select a letter or line at a time.
+
+Once text is selected, typing replaces it, and Backspace deletes it all.
+
+## Working with windows
+
+Every program opens in a **window**. On Windows, three small buttons sit at the top right of each window:
+
+* **Minimise**, a short line, hides the window to the taskbar without closing it.
+* **Maximise**, a square, makes it fill the screen.
+* **Close**, an X, closes it.
+
+On a Mac, the same three buttons are coloured circles at the top left, and the close button is red. To switch between open windows, click them on the taskbar or Dock, or hold **Alt** and press **Tab** on Windows, or **Command** and **Tab** on a Mac.
+
+## Two other useful keys
+
+* **Tab** moves to the next box in a form, or makes an indent in a document.
+* **Esc**, short for escape, closes a menu or cancels what you just started.
+
+## Practise in short bursts
+
+Your hand and eyes need time to work together. Twenty minutes of mouse practice and twenty minutes of keys is better than an hour of one. Free online tutorials, such as the GCFGlobal LearnFree mouse lesson, give you targets to click and drag.`,
+      workedExample_md: `**Hawa copies information on a library computer**
+
+Hawa is at the community library in Wa. Her mentor has asked her to copy the opening hours of a free course centre into a document, so she can print them.
+
+1. She clicks the browser on the taskbar to open it.
+2. She clicks once in the address bar at the top, types the website address and presses **Enter**.
+3. She rolls the mouse wheel to scroll down until she sees the opening hours.
+4. She clicks at the start of the first line, holds **Shift** and clicks at the end of the last line. The text turns blue.
+5. She presses **Ctrl and C** to copy.
+6. She opens a blank document, clicks inside it and presses **Ctrl and V**. The hours appear.
+7. She means to delete one extra word but deletes a whole line by mistake. She presses **Ctrl and Z** and the line comes back.
+8. She types a heading at the top, using **Shift** for the capital letters, and presses **Ctrl and S** to save.
+9. She uses **Alt and Tab** to switch back to the browser and check her copy is complete.
+
+A few basic actions, and she has moved information from one place to another, a task office workers do every day.`,
+      keyTerms: [
+        { term: "Pointer or cursor", definition: "The small arrow you move with the mouse. In text, the cursor is also the flashing line where your typing appears." },
+        { term: "Double click", definition: "Two quick presses of the left mouse button, used to open files or select a word." },
+        { term: "Drag", definition: "Holding the left button down while moving the mouse, to move something or select text." },
+        { term: "Shortcut", definition: "A key combination that does a job quickly, such as Ctrl and C to copy." },
+        { term: "Window", definition: "The box a program opens in, with buttons to minimise, maximise and close it." },
+        { term: "QWERTY", definition: "The usual keyboard layout, named after the first six letters on the top row." },
+      ],
+      commonMistakes: [
+        "Gripping the mouse tightly, which makes the pointer jump",
+        "Leaving Caps Lock on and typing everything in capitals",
+        "Clicking Close when you only meant to hide a window with Minimise",
+        "Panicking after deleting something, instead of pressing Ctrl and Z",
+        "Mixing up Backspace, which deletes to the left, and Delete, which deletes to the right",
+      ],
+      selfCheck: [
+        "Can you double click, right click, scroll and drag without thinking about it?",
+        "Which shortcut would you use straight away after deleting a paragraph by mistake?",
+        "How do you switch between two open windows on the computer you use?",
+        "Which key or shortcut from this lesson do you still need to practise?",
+      ],
       practice_task_md: `**Goal:** Use the mouse and the most common keys without help.
 
 **Steps**
@@ -3315,6 +3475,7 @@ Hawa opens a browser on a library computer. She clicks the address bar, types a 
         "Start typing from the home row",
         "Put accuracy before speed",
         "Build a little and often typing habit",
+        "Measure your speed and accuracy",
       ],
       explanation_md: `Office assistants type letters and records, customer service agents type notes while customers talk, and DMP week 1 ends with writing a short tip sheet in Google Docs. If you type with one finger while searching for every key, these tasks take a long time and tire you out. Learning to touch type, using all your fingers without looking at the keys, is a skill that pays back in every course and job that follows.
 
@@ -3352,11 +3513,68 @@ Both run in a web browser and use very little data once a page has loaded.
 
 You will still type a lot on your phone. Turn on your keyboard's spell check and suggestions, and learn to long press keys for extra characters. But phone typing does not replace keyboard practice, because the finger movements are different.
 
-## A worked example
+## Which finger presses which key
 
-Issahaku started typing practice at his community library. In week one he could only type slowly, looking at the keys. He did fifteen minutes of the LearnFree typing lessons at each visit and practised the home row on a printed keyboard picture at home. After a month he could type a short paragraph about himself without looking down most of the time. His speed was still modest, but his accuracy was good, and he no longer felt nervous in front of a keyboard.
+Each finger looks after a column of keys, going up and down from its home key:
+
+* Your left first finger covers **F** and its neighbours **G**, **R**, **T**, **V** and **B**.
+* Your right first finger covers **J** and its neighbours **H**, **U**, **Y**, **N** and **M**.
+* Each other finger covers the keys straight above and below its home key.
+* Either thumb presses the space bar.
+
+At first, reaching for the right key with the right finger feels slower than using one finger. Keep going. Within a couple of weeks it becomes faster, and much less tiring.
+
+## Measuring your progress
+
+Typing tests give you two numbers:
+
+* **Speed**, in **words per minute**, often written WPM. It counts how many words you typed in one minute.
+* **Accuracy**, as a percentage. It shows how many of your key presses were correct.
+
+Watch accuracy first. If it drops, slow down. A slower typist who makes few mistakes is more useful at work than a fast one who has to fix every line.
+
+## A two week starter plan
+
+1. **Days 1 to 3.** Home row only: A, S, D, F, J, K, L. Ten minutes a day.
+2. **Days 4 to 7.** Add the top row, one finger at a time, with a free online lesson.
+3. **Days 8 to 10.** Add the bottom row and capital letters with Shift.
+4. **Days 11 to 14.** Type real sentences: your name, your town, a short message. Take your first one minute test and write down both numbers.
+
+If you can only reach a computer once a week, practise the finger positions on a printed or drawn keyboard at home in between. It helps your fingers remember.
 
 Track your progress in your practice log. Seeing improvement week by week keeps you motivated.`,
+      workedExample_md: `**Issahaku's first month of typing**
+
+Issahaku can use the computers at his community library in Yendi twice a week. In his first session he typed slowly with one finger, looking down at every key.
+
+1. **Week 1.** He placed his fingers on the home row and found the bumps on F and J with his eyes closed. He did fifteen minutes of the LearnFree typing lessons at each visit.
+2. At home he drew a keyboard on a sheet of paper and practised the finger positions for five minutes each evening.
+3. **Week 2.** He added the top and bottom rows. When he kept hitting the wrong keys, he slowed down instead of rushing.
+4. **Week 3.** He typed real sentences, such as his name and town, and short messages to his study group, without looking at his hands.
+5. **Week 4.** He took his first one minute test on Monkeytype. He wrote both numbers in his practice log, and paid most attention to accuracy.
+6. He took the same test each week after that and wrote down the results.
+
+After a month he could type a short paragraph about himself without looking down most of the time. His speed was still modest, but his accuracy was good, and he no longer felt nervous in front of a keyboard.`,
+      keyTerms: [
+        { term: "Touch typing", definition: "Typing with all your fingers without looking at the keys." },
+        { term: "Home row", definition: "The middle row of letter keys where your fingers rest: A, S, D, F and J, K, L." },
+        { term: "Words per minute", definition: "A measure of typing speed, often written WPM." },
+        { term: "Accuracy", definition: "The share of your key presses that were correct, shown as a percentage." },
+        { term: "Posture", definition: "How you sit: back straight, feet flat, wrists relaxed." },
+      ],
+      commonMistakes: [
+        "Rushing for speed and making so many mistakes that you have to retype",
+        "Looking down at the keys instead of at the screen",
+        "Practising for two hours once a week instead of a little every day",
+        "Resting your wrists hard on the table edge",
+        "Thinking phone typing practice is enough for a keyboard",
+      ],
+      selfCheck: [
+        "Can you place your fingers on the home row without looking?",
+        "What was your speed and accuracy on your last typing test?",
+        "When in your day can you fit ten to fifteen minutes of typing?",
+        "Which keys do you still look for most often?",
+      ],
       practice_task_md: `**Goal:** Start a daily typing habit and measure your progress.
 
 **Steps**
