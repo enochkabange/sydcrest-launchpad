@@ -19,10 +19,10 @@ vi.mock("@/lib/messaging/send", async (importOriginal) => {
 });
 
 type Row = { version: string; revoked_at: string | null; phone: string | null };
-const db = vi.hoisted(() => ({ phone: null as string | null, consents: [] as unknown[], inserts: [] as unknown[] }));
+const db = vi.hoisted(() => ({ phone: null as string | null, consents: [] as unknown[], inserts: [] as unknown[], rpcs: [] as string[] }));
 vi.mock("@/lib/supabase/server", () => ({
   createClient: async () => ({
-    rpc: async () => ({ error: null }),
+    rpc: async (name: string) => (db.rpcs.push(name), { error: null }),
     from(table: string) {
       if (table === "profiles") {
         return { select: () => ({ eq: () => ({ single: async () => ({ data: { phone: db.phone, display_name: "Fuseini Abukari" } }) }) }) };
@@ -36,6 +36,7 @@ vi.mock("@/lib/supabase/server", () => ({
 }));
 
 const { setWhatsAppConsent } = await import("./whatsapp-actions");
+const { WHATSAPP_CONSENT_VERSION } = await import("@/lib/messaging/consent");
 
 const FUSEINI = "+233241234567";
 const NEW_NUMBER = "+233501234567";
@@ -53,12 +54,14 @@ beforeEach(() => {
   db.phone = FUSEINI;
   db.consents = [];
   db.inserts = [];
+  db.rpcs = [];
 });
 
 describe("setWhatsAppConsent", () => {
   it("records consent without naming a number and welcomes a first opt in", async () => {
     expect(await setWhatsAppConsent({}, on())).toMatchObject({ enabled: true });
-    expect(db.inserts).toEqual([{ kind: "whatsapp", version: "2026-10" }]);
+    expect(db.inserts).toEqual([{ kind: "whatsapp", version: WHATSAPP_CONSENT_VERSION }]);
+    expect(db.rpcs).toEqual([]);
     expect(client.sent).toHaveLength(1);
     expect(client.sent[0]).toMatchObject({ to: `whatsapp:${FUSEINI}`, body: expect.stringMatching(/^Hi Fuseini,/) });
   });
@@ -75,6 +78,14 @@ describe("setWhatsAppConsent", () => {
     db.consents = [revoked(FUSEINI)];
     await setWhatsAppConsent({}, on());
     expect(client.sent.map((m) => m.to)).toEqual([`whatsapp:${NEW_NUMBER}`]);
+  });
+
+  it("replaces a live consent for older wording with the current one, without a second welcome", async () => {
+    db.consents = [{ version: "2026-10", revoked_at: null, phone: FUSEINI }];
+    expect(await setWhatsAppConsent({}, on())).toMatchObject({ enabled: true });
+    expect(db.rpcs).toEqual(["revoke_consent"]);
+    expect(db.inserts).toEqual([{ kind: "whatsapp", version: WHATSAPP_CONSENT_VERSION }]);
+    expect(client.sent).toHaveLength(0);
   });
 
   it("needs a saved phone number", async () => {

@@ -4,9 +4,8 @@ import { useActionState } from "react";
 import { createRoadmap, updateRoadmap, type FormState } from "./actions";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { SelectField, TextField } from "@/components/ui/field";
+import { SelectField, TextAreaField, TextField } from "@/components/ui/field";
 import { FIELD_CATEGORIES, LOCALES, TRACKS } from "@/lib/roadmap-admin";
-import { TextAreaField } from "./fields";
 
 type Roadmap = {
   id: string;

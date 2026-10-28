@@ -199,11 +199,15 @@ function bookingFallback(p: Payload, kind: "booking" | "review"): RenderedNotifi
   const event = typeof p.event === "string" && Object.hasOwn(BOOKING_TITLES, p.event) ? p.event : kind === "review" ? "review" : null;
   const actor = str(p, "actor_name", 60);
   const offer = str(p, "offer_title");
+  // Pitch news on a brief (#187) arrives as kind "booking" (the fixed kind
+  // list has no brief kind). Until a pitch becomes a booking it reads as brief
+  // news, with the brief icon, so it is not mistaken for a booking.
+  const briefOnly = kind === "booking" && !bookingId && !!briefId;
   return {
-    title: event && actor ? BOOKING_TITLES[event](actor) : kind === "review" ? "You have a new review" : "Update on a booking",
+    title: event && actor ? BOOKING_TITLES[event](actor) : kind === "review" ? "You have a new review" : briefOnly ? "News about a brief" : "Update on a booking",
     body: offer ? `About ${offer}.` : null,
     href: bookingId ? `/bookings/${bookingId}` : briefId ? `/briefs/${briefId}` : "/bookings",
-    icon: "booking",
+    icon: briefOnly ? "opportunity" : "booking",
   };
 }
 

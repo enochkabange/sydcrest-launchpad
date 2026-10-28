@@ -1,10 +1,9 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { useActionState } from "react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { SelectField, TextField } from "@/components/ui/field";
-import { TextAreaField } from "./fields";
+import { SelectField, TextAreaField } from "@/components/ui/field";
 
 /** Same shape as FormState in app/(app)/mentor/actions.ts. */
 export type FormState = {
@@ -22,80 +21,6 @@ function Status({ state }: { state: FormState }) {
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       {state.ok && <Alert tone="success">{state.ok}</Alert>}
     </>
-  );
-}
-
-/**
- * Minimal grading form calling grade_submission (through the bound Server
- * Action). Built here because #145's grading component was not on main yet;
- * consolidate with src/components/cohort/submission/ once it lands.
- */
-export function GradeForm({
-  action,
-  defaultScore,
-  defaultFeedback,
-  passScore,
-}: {
-  action: Action;
-  defaultScore: number | null;
-  defaultFeedback: string | null;
-  passScore: number;
-}) {
-  const [state, formAction, pending] = useActionState<FormState, FormData>(action, {});
-  const [decision, setDecision] = useState<"grade" | "return">("grade");
-  return (
-    <form action={formAction} className="flex flex-col gap-4" noValidate>
-      <Status state={state} />
-      <fieldset className="flex flex-col gap-2">
-        <legend className="mb-1 text-sm font-semibold text-content">Decision</legend>
-        <label className="flex min-h-11 items-center gap-3 text-sm text-content">
-          <input
-            type="radio"
-            name="decision"
-            value="grade"
-            checked={decision === "grade"}
-            onChange={() => setDecision("grade")}
-            className="size-5 accent-line-selected"
-          />
-          Grade this work
-        </label>
-        <label className="flex min-h-11 items-center gap-3 text-sm text-content">
-          <input
-            type="radio"
-            name="decision"
-            value="return"
-            checked={decision === "return"}
-            onChange={() => setDecision("return")}
-            className="size-5 accent-line-selected"
-          />
-          Return it for changes
-        </label>
-      </fieldset>
-      {decision === "grade" && (
-        <TextField
-          id="score"
-          label="Final score (0 to 100)"
-          type="number"
-          inputMode="numeric"
-          min={0}
-          max={100}
-          step={1}
-          defaultValue={defaultScore ?? ""}
-          hint={`A week passes at ${passScore}.`}
-          error={state.errors?.score}
-        />
-      )}
-      <TextAreaField
-        id="feedback"
-        label={decision === "return" ? "What to change" : "Feedback for the learner (optional)"}
-        defaultValue={defaultFeedback ?? ""}
-        maxLength={8000}
-        error={state.errors?.feedback}
-      />
-      <Button type="submit" disabled={pending} className="self-start">
-        {pending ? "Saving" : decision === "return" ? "Return to learner" : "Save grade"}
-      </Button>
-    </form>
   );
 }
 
