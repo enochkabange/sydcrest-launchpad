@@ -9,6 +9,9 @@ import { ImportForm } from "./import-form";
 
 export const metadata: Metadata = { title: "Roadmaps" };
 
+/** The import action runs from this page; importing every track takes a few minutes. */
+export const maxDuration = 300;
+
 async function RoadmapList() {
   const { supabase } = await requireAdmin();
   const { data, error } = await supabase
