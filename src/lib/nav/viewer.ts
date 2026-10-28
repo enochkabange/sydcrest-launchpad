@@ -8,6 +8,8 @@ export type NavViewer = {
   name: string | null;
   email: string | null;
   roles: NavRoles;
+  /** profiles.display_prefs, unparsed (DisplayPrefsSync validates it). */
+  displayPrefs: unknown;
 };
 
 /**
@@ -23,7 +25,7 @@ export const getNavViewer = cache(async (): Promise<NavViewer | null> => {
   if (!user) return null;
   const supabase = await createClient();
   const [profile, staff, expert, business] = await Promise.all([
-    supabase.from("profiles").select("display_name, role").eq("id", user.id).maybeSingle(),
+    supabase.from("profiles").select("display_name, role, display_prefs").eq("id", user.id).maybeSingle(),
     supabase
       .from("cohort_members")
       .select("cohort_id", { count: "exact", head: true })
@@ -42,5 +44,6 @@ export const getNavViewer = cache(async (): Promise<NavViewer | null> => {
     name: profile.data?.display_name ?? null,
     email: user.email,
     roles: { admin, staff: admin || has(staff), expert: has(expert), business: has(business) },
+    displayPrefs: profile.data?.display_prefs ?? null,
   };
 });

@@ -34,7 +34,8 @@ export function AvatarMenu({ viewer }: { viewer: AvatarViewer | null }) {
       <button
         type="button"
         popoverTarget={id}
-        aria-label="You: profile, notifications and settings"
+        // The initials are visible text, so they end the name too (WCAG 2.5.3, label in name).
+        aria-label={`You: profile, notifications and settings${letters ? `, ${letters}` : ""}`}
         className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full hover:bg-surface-sunken"
       >
         <span className="inline-flex size-8 items-center justify-center rounded-full bg-info-bg text-xs font-bold text-info-fg">
