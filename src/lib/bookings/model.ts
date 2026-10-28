@@ -7,6 +7,8 @@
  * decide what to offer on screen and how to word what comes back.
  */
 
+import { RATE_LIMIT_MESSAGE, RATE_LIMITED_CODE } from "@/lib/rate-limit";
+
 export const BOOKING_STATUSES = ["requested", "accepted", "declined", "completed", "cancelled"] as const;
 export type BookingStatus = (typeof BOOKING_STATUSES)[number];
 
@@ -269,6 +271,8 @@ type DbError = { code?: string; message?: string } | null | undefined;
 /** Words for what the database refused when sending a request. */
 export function requestErrorMessage(error: DbError): string {
   switch (error?.code) {
+    case RATE_LIMITED_CODE:
+      return RATE_LIMIT_MESSAGE;
     case "23505":
       return "You already have a request waiting with this expert. Open it from your bookings.";
     case "23514":
@@ -297,6 +301,7 @@ export function statusErrorMessage(error: DbError): string {
 }
 
 export function messageErrorMessage(error: DbError): string {
+  if (error?.code === RATE_LIMITED_CODE) return RATE_LIMIT_MESSAGE;
   return error?.code === "42501"
     ? "This thread is closed because the booking was declined or cancelled."
     : "Your message did not send. Try again.";

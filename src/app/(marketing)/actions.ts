@@ -1,6 +1,8 @@
 "use server";
 
+import { headers } from "next/headers";
 import { createPublicClient } from "@/lib/supabase/public";
+import { allowFormSubmission, FORM_RATE_LIMIT_MESSAGE, isRateLimited } from "@/lib/rate-limit";
 import { parseWaitlist, WAITLIST_HONEYPOT, type WaitlistField } from "@/lib/waitlist";
 import type { FieldErrors } from "@/lib/validation";
 
@@ -26,7 +28,11 @@ export async function joinWaitlist(_prev: WaitlistState, form: FormData): Promis
     // The anon client: anyone may join, only an admin may read the list back,
     // so the insert asks for no rows in return.
     const supabase = await createPublicClient();
+    if (!(await allowFormSubmission(supabase, "waitlist", await headers()))) {
+      return { message: FORM_RATE_LIMIT_MESSAGE, values: data };
+    }
     const { error } = await supabase.from("waitlist").insert(data);
+    if (isRateLimited(error)) return { message: FORM_RATE_LIMIT_MESSAGE, values: data };
     // 23505 means the address is already on the list. Answer exactly as for a new
     // sign up so the form never reveals whether an email is already there.
     if (error && error.code !== "23505") {

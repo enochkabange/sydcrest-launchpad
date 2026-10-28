@@ -8,6 +8,7 @@ import { createClient } from "@/lib/supabase/server";
 import { parseBrief, parsePitch } from "@/lib/briefs/briefs";
 import { notifyMatchingExperts, notifyNewPitch, notifyPitchDecision } from "@/lib/briefs/notify";
 import { getMyActiveOffers, getViewer, isUuid } from "@/lib/briefs/queries";
+import { isRateLimited, RATE_LIMIT_MESSAGE } from "@/lib/rate-limit";
 
 export type FormState = {
   errors?: Partial<Record<string, string>>;
@@ -51,8 +52,9 @@ export async function createBrief(_prev: FormState, form: FormData): Promise<For
         .limit(1)
         .maybeSingle();
   if (error || !brief) {
-    const message =
-      error?.code === "42501"
+    const message = isRateLimited(error)
+      ? RATE_LIMIT_MESSAGE
+      : error?.code === "42501"
         ? data.kind === "job"
           ? "You can post job briefs only for a verified organisation you recruit for."
           : "Briefs are for adults only. Check the date of birth on your account."
@@ -87,6 +89,7 @@ export async function submitPitch(briefId: string, _prev: FormState, form: FormD
   if (error) {
     refresh();
     if (error.code === "23505") return { message: "You have already pitched on this brief." };
+    if (isRateLimited(error)) return { message: RATE_LIMIT_MESSAGE, values: formValues(form) };
     if (error.code === "42501") return { message: "This brief is no longer taking pitches, or you cannot pitch on it." };
     return { message: "We could not send your pitch. Try again.", values: formValues(form) };
   }

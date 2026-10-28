@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { REPORT_REASONS } from "@/lib/social/public-profile";
+import { isRateLimited, RATE_LIMIT_MESSAGE } from "@/lib/rate-limit";
 
 export async function follow(profileId: string, slug: string) {
   const user = await requireUser();
@@ -41,6 +42,6 @@ export async function reportProfile(profileId: string, _prev: ReportState, form:
     target_id: profileId,
     reason: details ? `${reason}: ${details}` : reason,
   });
-  if (error) return { error: "We couldn't send your report. Try again." };
+  if (error) return { error: isRateLimited(error) ? RATE_LIMIT_MESSAGE : "We couldn't send your report. Try again." };
   return { done: true };
 }

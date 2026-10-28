@@ -1,5 +1,6 @@
 "use server";
 
+import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { siteOrigin } from "@/lib/site-url";
@@ -7,6 +8,7 @@ import { parseAgeAndConsent, parseSignIn, parseSignUp, safeNextPath, type FieldE
 import { UNDER_AGE_MESSAGE } from "@/lib/legal";
 import { track } from "@/lib/analytics/track";
 import { recordLegalConsent } from "@/lib/consent-records";
+import { allowFormSubmission, FORM_RATE_LIMIT_MESSAGE } from "@/lib/rate-limit";
 
 /** Where to go after auth: the form's `next` field, checked to be a local path. */
 function nextFrom(form: FormData | undefined) {
@@ -48,6 +50,11 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
   if (Object.keys(errors).length) return { errors, values };
 
   const supabase = await createClient();
+  // Supabase Auth limits sign ups per address too, but it sees this server's
+  // address for every visitor, so the per visitor limit is ours.
+  if (!(await allowFormSubmission(supabase, "sign_up", await headers()))) {
+    return { message: FORM_RATE_LIMIT_MESSAGE, values };
+  }
   const { data: result, error } = await supabase.auth.signUp({
     email: data.email,
     password: data.password,

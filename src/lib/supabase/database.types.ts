@@ -4582,6 +4582,10 @@ export type Database = {
           verified_skill_id: string
         }[]
       }
+      take_form_rate_limit: {
+        Args: { p_bucket: string; p_key: string }
+        Returns: boolean
+      }
       talent_eligibility: { Args: never; Returns: Json }
       verify_certificate: {
         Args: { p_verification_id: string }

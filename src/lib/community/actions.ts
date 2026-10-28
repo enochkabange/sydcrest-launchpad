@@ -19,6 +19,7 @@ import {
   type FeedPage,
   type FeedRef,
 } from "./model";
+import { isRateLimited, RATE_LIMIT_MESSAGE } from "@/lib/rate-limit";
 
 /**
  * Mutations for the community feed (#162). Every one re-checks the user;
@@ -147,7 +148,7 @@ export async function reportContent(
     target_id: id,
     reason: details ? `${reason}: ${details}` : reason,
   });
-  if (error) return { error: "We couldn't send your report. Try again." };
+  if (error) return { error: isRateLimited(error) ? RATE_LIMIT_MESSAGE : "We couldn't send your report. Try again." };
   return { ok: true };
 }
 
