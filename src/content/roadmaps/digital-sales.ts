@@ -25,7 +25,6 @@ const tedConversation = r(
   "video",
 );
 const tedListen = r("TED: Five ways to listen better", "https://www.ted.com/talks/julian_treasure_5_ways_to_listen_better", "video");
-const blossomSales = r("Blossom Academy: AI Powered Sales programme", "https://blossom.africa/courses/ai-powered-sales/");
 const linkedinHelp = r("LinkedIn Help", "https://www.linkedin.com/help/linkedin");
 const gmailHelp = r("Gmail Help", "https://support.google.com/mail");
 const sheetsConditional = r(
@@ -61,7 +60,7 @@ export const digitalSales: RoadmapDraft = {
         "You will see the difference between selling to individuals and selling to businesses, and roles such as telesales, field sales, sales executive and business development representative. You will also learn how a lead becomes a customer through a series of steps.",
       parent: "sales-foundations",
       optional: false,
-      resources: [hubspotPipeline, blossomSales],
+      resources: [hubspotPipeline, hubspotInboundSales],
     },
     {
       slug: "knowing-your-product",
@@ -259,7 +258,7 @@ export const digitalSales: RoadmapDraft = {
         "AI assistants can draft messages, summarise calls and research a company, but you must check every fact and never paste private customer data into them. This topic is optional and builds on the AI Tools for Work track.",
       parent: "working-well-in-sales",
       optional: true,
-      resources: [blossomSales],
+      resources: [RES.lfThinking],
     },
     {
       slug: "resilience-and-planning",
@@ -295,7 +294,7 @@ export const digitalSales: RoadmapDraft = {
         "Entry routes include graduate trainee schemes, telesales teams, field sales for telcos, fintechs and agri input firms, and remote roles for software companies. You will learn to read adverts and offers carefully, and to walk away from any job that asks you to pay to start.",
       parent: "getting-hired-sales",
       optional: false,
-      resources: [RES.lfJobsearch, blossomSales],
+      resources: [RES.lfJobsearch, RES.lfInterview],
     },
   ],
 };
