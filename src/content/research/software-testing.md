@@ -43,12 +43,21 @@ points toward automation, remote work and adjacent roles so the skills stay usef
 | S14 | Remote Rocketship: remote junior QA engineer jobs in Africa (aggregator listing page) | https://www.remoterocketship.com/country/africa/jobs/junior-qa-engineer/ | 2026-10-28 | Job aggregator, listing titles and skill tags only |
 | F1 | O*NET 15-1253.00 Software Quality Assurance Analysts and Testers | https://www.onetonline.org/link/summary/15-1253.00 | 2026-10-27 | Public domain (US DOL), read for tasks and tools |
 | C1 | ISTQB Certified Tester Foundation Level syllabus v4.0.1 | https://www.istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf | 2026-10-27 | Copyright ISTQB; free to read; chapter and section titles read for topic coverage only, no text reused or adapted |
+| D1 | Playwright docs: Installation (install and run commands, system requirements) | https://playwright.dev/docs/intro | 2026-10-28 | Official documentation (Apache 2.0 project); facts checked, no text reused |
+| D2 | Playwright docs: Setting up CI (GitHub Actions workflow) | https://playwright.dev/docs/ci-intro | 2026-10-28 | Official documentation; workflow steps checked, lesson YAML is our own minimal version |
+| D3 | Postman Learning Center: Write test scripts | https://learning.postman.com/docs/tests-and-scripts/write-scripts/test-scripts/ | 2026-10-28 | Official documentation; pm.test syntax and Scripts tab location checked |
+| D4 | Cypress docs: type command | https://docs.cypress.io/api/commands/type | 2026-10-28 | Official documentation; {enter} sequence checked |
+| D5 | ISTQB CTFL v4.0 certification page | https://istqb.org/certifications/certified-tester-foundation-level-ctfl-v4-0/ | 2026-10-28 | Copyright ISTQB; current version and download checked |
 | P1 | SydCrest track catalogue, row 23 and Tier B notes | Planning/12_TRACK_CATALOGUE.md | 2026-10-27 | Internal |
 
 All resource links in the outline were checked to return HTTP 200 on 2026-10-27.
 Lesson links (practice sites used in the content file) checked to return HTTP 200 on 2026-10-28:
 `https://demo.playwright.dev/todomvc/` (Playwright's public demo app) and
 `https://jsonplaceholder.typicode.com/` (free fake REST API for learning).
+Review on 2026-10-28: the Playwright test in `ui-automation` was run against the demo app and
+passed; JSONPlaceholder `/users/9999` returned 404 and `POST /posts` returned 201; the JS loop,
+condition and function snippets were run in Node; the SQL query was run in SQLite; the CTFL
+v4.0.1 chapter titles were matched to the syllabus PDF's contents page (titles only).
 
 ## Adverts analysed (20)
 
@@ -119,10 +128,10 @@ Nigeria, and the lessons say so plainly.
 
 * **Manual first, phone friendly**: test cases, design techniques, exploratory testing and bug
   reports are the most common signals (8 and 6 adverts) and can be practised on a phone.
-* **Mobile testing on real phones** is its own node because four adverts name mobile or Android
+* **Mobile testing on real phones** is its own node because six adverts name mobile or Android
   testing and local users meet apps on low cost phones with patchy data.
-* **API testing** is a full node (four adverts) and is flagged as needing a laptop.
-* **Automation is a full section** because seven adverts name it, flagged as laptop only.
+* **API testing** is a full node (five adverts) and is flagged as needing a laptop.
+* **Automation is a full section** because twelve adverts name it, flagged as laptop only.
   `tests-in-ci` is optional (one advert plus O*NET).
 * **Accessibility and usability** is optional: no Ghana advert names accessibility, but O*NET
   lists usability testing and it is a cheap, phone friendly skill.
@@ -152,7 +161,7 @@ Nigeria, and the lessons say so plainly.
 | `working-in-a-team` | Section. A1 A2 A4 A5 Agile; A1 A5 A7 A11 Jira |
 | `agile-and-issue-trackers` | A1 A2 A4 A5 Agile; A1 A5 A7 A11 Jira; F1 Jira |
 | `test-plans-and-regression` | A3 A4 A8 test plans; A3 test reporting; F1 regression testing; C1 chapter 5 |
-| `test-automation` | Section. Automation in 7 adverts; C1 chapter 6 |
+| `test-automation` | Section. Automation in 12 adverts; C1 chapter 6 |
 | `programming-for-testers` | A1 Java or Python; A5 Java; A2 A13 A14 A15 A18 SQL; prerequisite of `ui-automation` |
 | `ui-automation` | A1 A2 A7 A14 A18 A20 Selenium; A14 A15 A18 Cypress; A1 A5 Appium; A5 Playwright; A4 A10 automation frameworks |
 | `tests-in-ci` | A2 CI/CD and Jenkins; F1 Jenkins and Git (optional) |

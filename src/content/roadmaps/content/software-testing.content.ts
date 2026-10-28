@@ -755,7 +755,7 @@ Wumpini tests a school fees payment website and writes:
 
 **Expected:** Confirmation shows Nasir's name and 100 cedis.
 **Actual:** Confirmation shows Abiba's name and 100 cedis.
-**Environment:** Tecno Spark phone, Android 12, Chrome 129; also seen on Windows 11, Firefox 131.
+**Environment:** a low cost Android phone running Android 13, Chrome 129; also seen on a Windows 11 laptop, Firefox 131.
 **Evidence:** 20 second screen recording attached.
 **Severity:** Major, as parents may think they paid for the wrong child.
 **Frequency:** 3 out of 3 tries.
@@ -942,7 +942,7 @@ Many Ghanaian businesses, schools and NGOs run websites that customers open on e
 
 ## What to check on a website
 
-* **Different browsers:** Chrome, Firefox, Edge and Safari can show the same page differently. Opera Mini and other data saving browsers are also used locally.
+* **Different browsers:** Chrome, Firefox, Edge and Safari can show the same page differently. Data saving browsers such as Opera Mini can show pages differently again.
 * **Different screen sizes:** a small phone, a large phone, a tablet and a computer. Look for text that overflows, buttons hidden off screen and menus that cannot be opened.
 * **Forms:** required fields, error messages, what happens on refresh, and whether your typed data is lost when you press back.
 * **Links and images:** broken links, missing images, pages that never finish loading.
@@ -968,7 +968,7 @@ Mariama tests a Tamale guesthouse's booking website. On her phone, the Book now 
 
 * Clear the browser cache or use a private window when retesting, so you are not seeing an old copy of the page.
 * Note the browser name and version in every bug report; you can find it in the browser's About page.
-* Test with images slow to load, because many users have them turned off or on slow data.`,
+* Check that the page still makes sense while images are slow to load or blocked, as happens on slow data or in data saving browsers.`,
       practice_task_md: `**Goal:** use browser tools to inspect a real website.
 
 You need a laptop or desktop computer with Chrome, Edge or Firefox for steps 2 to 5. If you only have a phone today, do step 1 and come back to the rest when you can use a computer at school, a hub or a library.
@@ -1066,13 +1066,13 @@ Testing on a new, fast phone over office Wi-Fi hides most real problems. Think a
 Android has a hidden Developer options menu. On most phones you open Settings, then About phone, and tap Build number seven times. Exact steps vary by brand. Two settings are useful for testers:
 
 * **Show taps:** draws a dot where you touch, which makes screen recordings much clearer.
-* **Don't keep activities:** closes each screen as soon as you leave it, which reveals apps that lose your data when you switch away and come back.
+* **Don't keep activities:** closes each screen as soon as you leave it. Phones short on memory do the same to apps in the background, so this setting reveals apps that lose your data when you switch away and come back.
 
 Change only settings you understand, and turn them back off when you finish.
 
 ## A small example
 
-Fuseini tests a farm inputs ordering app on an older Android phone with little free storage. He fills a long order, switches to WhatsApp to check a price, and returns. With Don't keep activities switched on, the order form is empty. He records the screen with Show taps on, notes the phone model, Android version and app version, and reports it. On the developer's new phone with lots of memory, the bug had never appeared.
+Fuseini tests a farm inputs ordering app on an older, low memory Android phone. He fills a long order, switches to WhatsApp to check a price, and returns. With Don't keep activities switched on, the order form is empty. He records the screen with Show taps on, notes the phone model, Android version and app version, and reports it. On the developer's new phone, with plenty of memory, the screen was never closed in the background, so the bug had never appeared.
 
 ## Testing safely
 
@@ -1182,7 +1182,7 @@ To practise safely, use a free public practice API such as JSONPlaceholder, whic
 * GET \`https://jsonplaceholder.typicode.com/users/9999\` and check you receive 404.
 * POST to \`https://jsonplaceholder.typicode.com/posts\` with a small JSON body and check for 201.
 
-Postman lets you save these in a **collection** and add small automatic checks, written in JavaScript, in each request's tests or scripts area. For example:
+Postman lets you save these in a **collection** and add small automatic checks, written in JavaScript, in each request's Scripts tab under Post-response. For example:
 
 \`\`\`js
 pm.test("status is 200", () => {
@@ -1930,7 +1930,7 @@ On a computer with Node.js installed, open a terminal in an empty folder and run
 npm init playwright@latest
 \`\`\`
 
-This installs Playwright, its browsers and an example test. The download is a few hundred megabytes, so use Wi-Fi if you can. Run tests with \`npx playwright test\`.
+This installs Playwright, its browsers and an example test. Playwright needs a recent operating system, such as Windows 11, a recent macOS or Ubuntu, and a current Node.js release, so check the system requirements on its Getting started page first. The download is a few hundred megabytes, so use Wi-Fi if you can. Run tests with \`npx playwright test\`.
 
 ## A first test
 
@@ -2077,16 +2077,21 @@ jobs:
   e2e:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: 22
+          node-version: lts/*
       - run: npm ci
       - run: npx playwright install --with-deps
       - run: npx playwright test
+      - uses: actions/upload-artifact@v4
+        if: \${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
 \`\`\`
 
-Each time you push, GitHub starts a fresh Linux machine, installs your project and browsers, and runs your Playwright tests. A green tick means they passed; a red cross means something failed, and you can open the log to see which test and why. The heavy downloads happen on GitHub's servers, not on your data bundle.
+Each time you push, GitHub starts a fresh Linux machine, installs your project and browsers, and runs your Playwright tests. The last step saves Playwright's report, with screenshots of failures, so you can download it from the run page. A green tick means they passed; a red cross means something failed, and you can open the log to see which test and why. The heavy downloads happen on GitHub's servers, not on your data bundle.
 
 ## Reading a failed run
 
@@ -2094,7 +2099,7 @@ When a pipeline fails, do not panic. Open the log and look for:
 
 * **Which step failed:** installing, or the tests themselves?
 * **Which test failed** and the error message.
-* **Screenshots or traces:** Playwright can save these as artifacts you download from the run page.
+* **The report:** the upload step in the workflow saves Playwright's report as an artifact you can download from the run page.
 
 Then decide: is the app broken (a real bug), is the test wrong (update it), or is the test flaky (fix its reliability)? Never just rerun until it passes and move on.
 
@@ -2172,7 +2177,7 @@ Skills only turn into work when an employer can see them. Testing employers look
 SydCrest's research found only a handful of testing openings in Ghana, mostly in Accra, and several wanted some experience. Remote roles exist, but many are limited to particular countries. That is the honest picture. It means you should:
 
 * **Build strong public evidence** so you stand out when an opening does appear.
-* **Apply widely,** including to remote roles whose location rules include Ghana or Africa.
+* **Apply widely,** including to remote roles whose location rules include Ghana.
 * **Consider nearby roles,** where testing skills give you an edge: junior developer, IT support, customer support for software products, product operations.
 * **Keep learning automation,** which widens the roles open to you.
 
@@ -2207,7 +2212,7 @@ You have practised every one of these in this track. Your job now is to show it.
 Amina finished this track with a GitHub portfolio. She applied to two Accra roles and five remote ones over two months, tailoring each note. One remote company invited her to a practical test: write test cases for a sign up page in thirty minutes. Because she had done exactly this in her practice tasks, she finished early and added three boundary tests nobody asked for. She did not get every role, but each application taught her something, and she kept going.`,
       practice_task_md: `**Goal:** map your evidence against real adverts.
 
-1. Find two current testing adverts, one in Ghana and one remote that accepts applicants from Ghana or Africa.
+1. Find two current testing adverts, one in Ghana and one remote role whose location rules include Ghana.
 2. List each skill they ask for in your own words.
 3. Next to each skill, write which piece of your own work proves it, or "gap" if none does yet.
 4. Pick the biggest gap and plan one practice task to close it this month.
@@ -2384,7 +2389,7 @@ ISTQB, the International Software Testing Qualifications Board, runs a widely kn
 * **The exam costs money** and is taken through approved exam providers, sometimes online. Check current prices and options on official sites only.
 * **It is not required** for most junior roles we saw. A strong portfolio usually says more about you.
 
-The syllabus chapters line up with lessons in this track:
+The chapters of the current syllabus (version 4.0.1) line up with lessons in this track:
 
 * **Fundamentals of Testing:** the testing basics and principles lessons.
 * **Testing Throughout the Software Development Lifecycle:** test levels and working in Agile teams.
@@ -2399,7 +2404,7 @@ Use the syllabus to spot topics you want to study more deeply. Its text is copyr
 
 * **Junior tester and QA roles** on Ghanaian job boards and company career pages, especially fintech, agritech and software companies.
 * **Fellowships and internships:** some companies run early career QA programmes. Watch their career pages and social channels.
-* **Remote roles:** remote job boards list QA work. Read location rules carefully; many roles are tied to specific countries. Apply to those that include Ghana or Africa.
+* **Remote roles:** remote job boards list QA work. Read location rules carefully; many roles are tied to specific countries. Apply to those that include Ghana; a role open to "Africa" may still list only some countries.
 * **Crowdtesting platforms:** some websites pay testers per accepted bug on real products. Availability by country varies, work is irregular, and you should never pay to join.
 * **Nearby roles:** support, junior developer or product operations roles at software companies, where testing is part of the job and can lead to a QA role inside the company.
 * **Local communities:** tech hubs, meetups and online testing communities share openings and advice.
@@ -2413,7 +2418,7 @@ Real employers do not ask you to pay for a job, a test or "training" before hiri
 Hawa studies the free CTFL syllabus alongside this track, using it as a checklist. She decides not to sit the exam yet and instead adds two accepted open source bug reports to her portfolio. She applies to a QA fellowship in Accra and three remote roles. The fellowship interviewer asks about boundary value analysis; she explains it with her airtime top up example and points to her test cases.`,
       practice_task_md: `**Goal:** build your study map and your job search list.
 
-1. Download the free CTFL syllabus from the official ISTQB website (it is a PDF of a few megabytes).
+1. Download the free CTFL syllabus from the official ISTQB website (it is a PDF of about one megabyte).
 2. Read only the chapter and section titles. Next to each, write which lesson in this track covers it and rate your confidence from 1 to 3.
 3. Pick the two weakest areas and plan one practice session for each.
 4. Make a list of ten places to look for work: Ghanaian job boards, company career pages, remote boards and communities.
@@ -2423,11 +2428,11 @@ Hawa studies the free CTFL syllabus alongside this track, using it as a checklis
       quiz: {
         questions: [
           {
-            prompt: "How did most testing adverts we read treat the ISTQB Foundation certificate?",
+            prompt: "When the testing adverts we read mentioned the ISTQB Foundation certificate, how did they usually treat it?",
             options: [
               "As a strict requirement for every role",
               "As a reason to reject applicants",
-              "They never mentioned testing at all",
+              "As a replacement for work experience",
               "As a plus rather than a requirement",
             ],
             answer_index: 3,
@@ -2454,7 +2459,7 @@ Hawa studies the free CTFL syllabus alongside this track, using it as a checklis
               "Nothing, all remote roles accept anyone",
             ],
             answer_index: 1,
-            explanation: "Remote does not always mean anywhere, so check that Ghana or Africa is included.",
+            explanation: "Remote does not always mean anywhere, so check that Ghana is included.",
           },
           {
             prompt: "What is true of crowdtesting platforms?",
