@@ -161,15 +161,15 @@ select throws_ok($$ select public.take_credential_import_limit() $$, '42501', nu
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"11111111-1111-1111-1111-111111111111","role":"authenticated"}', true);
 select throws_ok(
-  $$ insert into storage.objects (bucket_id, name, owner_id) values ('credentials', '22222222-2222-2222-2222-222222222222/x.pdf', '11111111-1111-1111-1111-111111111111') $$,
+  $$ insert into storage.objects (bucket_id, name) values ('credentials', '22222222-2222-2222-2222-222222222222/x.pdf') $$,
   '42501', null, 'nobody uploads into another learner''s folder');
 select lives_ok(
-  $$ insert into storage.objects (bucket_id, name, owner_id)
-     select 'credentials', '11111111-1111-1111-1111-111111111111/' || gen_random_uuid() || '.pdf', '11111111-1111-1111-1111-111111111111'
+  $$ insert into storage.objects (bucket_id, name)
+     select 'credentials', '11111111-1111-1111-1111-111111111111/' || gen_random_uuid() || '.pdf'
      from generate_series(1, 30) $$,
   'thirty uploads a day are fine');
 select throws_ok(
-  $$ insert into storage.objects (bucket_id, name, owner_id) values ('credentials', '11111111-1111-1111-1111-111111111111/late.pdf', '11111111-1111-1111-1111-111111111111') $$,
+  $$ insert into storage.objects (bucket_id, name) values ('credentials', '11111111-1111-1111-1111-111111111111/late.pdf') $$,
   '42501', null, 'the thirty first upload in a day is refused');
 
 -- Talent directory --------------------------------------------------------------

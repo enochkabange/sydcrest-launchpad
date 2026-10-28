@@ -479,6 +479,7 @@ Orphan; fold into `/opportunities` as a "Saved" filter (section 1).
 |---|---|---|---|
 | `/u/[slug]` | everyone | A learner's public page: progress, skills, certificates, follow, report | Only for public profiles; the share card is the growth loop. |
 | `/a/[id]` | everyone | One achievement to share | OG card first; one CTA to start the same roadmap. |
+| `/u/[slug]/credentials` | everyone | A learner's credentials wallet: SydCrest certificates and verified skills (Verified by SydCrest) and external ones (Verified by the issuer, or Added by the learner) | Only for public profiles; managed under `/profile#credentials`. |
 | `/verify/[id]` | employers | Check a certificate is real | Valid / revoked / not found states; machine readable links. |
 | JSON routes | machines | Open Badges 3.0 documents | No UI. |
 
@@ -690,6 +691,7 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/org/[slug]` | page | 6 Earn |
 | `/settings` | page | 7 Account |
 | `/u/[slug]` | page | 7 Account |
+| `/u/[slug]/credentials` | page | 7 Account (credentials wallet, #253) |
 | `/verify/[id]/credential.json` | handler | 7 Account (Open Badges JSON) |
 | `/verify/[id]/credential.jwt` | handler | 7 Account (Open Badges JSON) |
 | `/verify/[id]` | page | 7 Account |
@@ -706,6 +708,7 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/og/[page]` | handler (image) | Share images: Open Graph cards and the badge image |
 | `/og/achievements/[id]/[format]` | handler (image) | Share images: Open Graph cards and the badge image |
 | `/og/certificates/[id]/[format]` | handler (image) | Share images: Open Graph cards and the badge image |
+| `/og/credentials/[id]/[format]` | handler (image) | Share images: Open Graph cards and the badge image |
 | `/og/events/[slug]` | handler (image) | Share images: Open Graph cards and the badge image |
 | `/og/events` | handler (image) | Share images: Open Graph cards and the badge image |
 | `/og/experts/[slug]` | handler (image) | Share images: Open Graph cards and the badge image |
