@@ -1648,6 +1648,415 @@ Hawa launches a site for a shea butter group in Nalerigu. She registers the doma
         pass_threshold: 75,
       },
     },
+    apps: {
+      explanation_md: `A spreadsheet is great for the person who built it. For a shop assistant recording sales on a busy afternoon, or a field officer checking which farmers received seed, scrolling through rows and columns on a small screen is slow and easy to get wrong. A simple app solves this. It sits on top of the same table and shows each person clear screens: a list to search, a form to add a record, a button to mark something done.
+
+No code app builders make this possible without programming. Remote and freelance adverts name tools such as Softr, Glide and Power Apps, and university and corporate roles ask for Power Apps alongside Power Automate. In Ghana, the demand is more often a small client project: a stock app for a shop, a member list for a cooperative, an attendance tracker for a school club.
+
+## How sheet based apps work
+
+1. **Data.** Your table, such as a Google Sheet, an Excel file or an Airtable base, holds the records. Each tab becomes a table in the app.
+2. **Screens.** The builder reads your columns and suggests screens: a list of records, a detail view for one record, and a form to add or edit.
+3. **Actions.** Buttons do things: add a row, update a status, call a phone number, open a map.
+4. **Users.** You decide who can sign in and what each person can see or change.
+
+When someone adds a record in the app, it appears in the table. When you fix a row in the table, the app shows the change. The data lives in one place.
+
+## What this section covers
+
+* **Apps from a spreadsheet:** connecting a table, shaping the screens and testing the app.
+* **Planning screens, users and permissions:** sketching first, deciding who sees what, and designing for small screens.
+
+## Your data skills matter here
+
+Everything from the data section pays off now. App builders depend on one row per record, clear headings, unique IDs and consistent data types. A date column becomes a date picker; a column of choices becomes a dropdown; an ID lets one table link to another. A messy sheet produces a confusing app, and no builder can fix that for you.
+
+## Phone and computer
+
+Apps built this way are meant to be used on phones, and many can be added to a phone's home screen. Building them is a different matter: app editors show your data, screens and settings side by side and are designed for a computer browser. Plan to build on a computer and test on the phones your users actually carry.
+
+## Know when not to build an app
+
+An app adds something to maintain. If only one person uses the data, a well organised sheet may be enough. If people only need to submit information, a form may be enough. Build an app when several people need to view and update the same records in a structured way, often on the move.
+
+## A worked example
+
+Abdul-Rahman manages a small agro input shop in Yendi. His two assistants record sales in an exercise book, and stock runs out without warning. He already has a clean sheet with tabs for products, sales and restocks. An app gives the assistants a sales form with a product dropdown and a quantity field, and gives him a list of products with stock below a set level. The exercise book retires, and he spots low stock days before it runs out.
+
+Notice the order: the clean sheet came first, then the app.`,
+      practice_task_md: `**Goal:** Decide whether a real situation needs an app.
+
+**Steps:**
+1. Choose a situation you know: a shop's stock, a club's attendance, a savings group's contributions or a church's equipment list.
+2. Write who uses the information and what each person needs to do with it: view, add, update or only submit.
+3. Decide whether a sheet alone, a form, or an app is the right answer, and write two sentences explaining why.
+4. If an app is right, list the tables (tabs) it needs and the columns in each, with one ID column per table.
+
+**Done looks like:** A short written decision with reasons and, if needed, a list of tables and columns ready for the next lesson.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Where does the data of a sheet based app live?",
+            options: [
+              "In a separate copy on each user's phone that never syncs with anything else",
+              "In the table the app is built on, so changes appear in both",
+              "Inside the app builder only, with no table at all",
+              "In an email inbox",
+            ],
+            answer_index: 1,
+            explanation: "The lesson explains records added in the app appear in the table and table changes appear in the app.",
+          },
+          {
+            prompt: "When does the lesson say an app is worth building?",
+            options: [
+              "When only one person uses the data",
+              "Whenever a client has a spreadsheet of any size",
+              "When people only need to submit information once",
+              "When several people need to view and update the same records, often on the move",
+            ],
+            answer_index: 3,
+            explanation: "The lesson suggests a sheet or form may be enough otherwise, and an app fits shared viewing and updating.",
+          },
+          {
+            prompt: "What happens to a date column when an app builder reads a clean sheet?",
+            options: [
+              "It can become a date picker on the form",
+              "It is deleted because apps cannot show dates",
+              "It turns into free text that users type however they like, which keeps things flexible",
+              "It becomes a phone number field",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says builders use column types, so a date column becomes a date picker.",
+          },
+          {
+            prompt: "What device advice does the lesson give for app building?",
+            options: [
+              "Build and test only on the newest phone you can find",
+              "Never test on phones, because the apps are only for desktop users",
+              "Build on a computer and test on the phones your users actually carry",
+              "Build on a phone, because app editors are designed for small screens",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says editors are designed for a computer browser, while testing should use real users' phones.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "apps-from-sheets": {
+      explanation_md: `Building your first app from a spreadsheet is one of the most satisfying moments in no code work. Within an hour you can turn a tidy sheet into something that looks and feels like a real phone app. This lesson walks through the general steps using tools such as Glide, AppSheet and Power Apps as examples. Their menus differ, but the ideas are the same.
+
+## The tools, briefly
+
+* **AppSheet** (from Google) builds apps from Google Sheets, Excel or Smartsheet. Its documentation describes tables, views such as table, gallery, form, map and dashboard, and security filters that limit which rows each user can see.
+* **Glide** builds apps from sheets and its own tables, and apps can be shared by link and added to a phone's home screen.
+* **Power Apps** (from Microsoft) is common in organisations that use Microsoft 365, often with SharePoint lists or Excel.
+* **Softr** builds apps and portals on top of Airtable and other sources.
+
+Check each tool's current plans page before choosing, because who can use an app and how you share it can depend on the plan.
+
+## Step by step
+
+**1. Prepare the sheet.** One tab per kind of record, headings in row one, an ID column, consistent types. Add five to ten realistic rows so the builder can guess column types and you can see what screens look like.
+
+**2. Connect it.** In the builder, create a new app and choose your sheet. The builder reads each tab as a table and suggests screens.
+
+**3. Check the column types.** Make sure dates are dates, amounts are numbers, phone numbers are phone types and choice columns are lists. This controls the keyboard and inputs users see.
+
+**4. Shape the screens.**
+* A **list** or **gallery** screen shows records, often with a search box.
+* A **detail** screen shows one record.
+* A **form** screen adds or edits records.
+
+Hide columns users do not need, such as internal IDs, and put the most important field first.
+
+**5. Add filters and actions.** A filter can show only items with low stock, or only today's orders. An action can mark an order as delivered, or call a customer's number with one tap.
+
+**6. Link tables.** If your orders tab stores a customer ID, set up a relation so an order screen shows the customer's name and phone.
+
+**7. Test and share.** Use the builder's preview, then open the app on a real phone. Add a record, edit it, and check the sheet updates. Then invite a few real users.
+
+## A worked example
+
+Hawa builds a stock app for a provisions shop in Bolgatanga. Her sheet has a products tab (product_id, name, price, stock, reorder_level) and a sales tab (sale_id, date, product_id, qty, recorded_by). In the builder she sets up a product list with a search box, a sales form with a product dropdown linked to the products tab, and a filtered list called "Reorder" showing products where stock is at or below the reorder level.
+
+Testing on the shop owner's phone, she notices the price field opens a text keyboard. She changes the column type to a number, and the number pad appears. Small fixes like this make an app pleasant to use.
+
+## Keep the sheet healthy
+
+Once an app is live, avoid renaming or deleting columns in the sheet, which can break screens. Make structural changes in a copy, test, then switch.`,
+      practice_task_md: `**Goal:** Build a working app from a sheet.
+
+**Steps:**
+1. On a computer, prepare a sheet with two tabs, such as products and sales, each with an ID column and five to ten made up rows.
+2. Open an app builder such as AppSheet or Glide and create an app from the sheet.
+3. Check and fix column types, especially dates, numbers and choice lists.
+4. Build a list screen with search, a form to add records, and one filtered list such as low stock items.
+5. Link the sales tab to products using the ID.
+6. Preview on a phone: add a record and confirm it appears in the sheet.
+
+**Done looks like:** A working app preview, a sheet that updates when you add a record, and three screenshots: the list, the form and the filtered view. Note one fix you made after testing on a phone.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to its documentation as described in the lesson, which data sources does AppSheet support?",
+            options: [
+              "Only paper forms that are scanned and uploaded by hand",
+              "WhatsApp chats",
+              "Google Sheets, Excel and Smartsheet",
+              "Only Airtable",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says AppSheet builds apps from Google Sheets, Excel or Smartsheet.",
+          },
+          {
+            prompt: "Why should you check column types after connecting a sheet?",
+            options: [
+              "They control the keyboard and inputs users see, such as a date picker or number pad",
+              "Column types decide the app's colour scheme",
+              "Builders refuse to open sheets with more than five columns",
+              "Changing column types deletes every row in the sheet, so it must be done before adding any data",
+            ],
+            answer_index: 0,
+            explanation: "The lesson explains column types control inputs, like Hawa's number pad fix.",
+          },
+          {
+            prompt: "What did Hawa's Reorder list show?",
+            options: [
+              "Every sale ever recorded",
+              "All customers who owe money, sorted by the date they last visited the shop",
+              "Products with stock at or below the reorder level",
+              "Staff who recorded the most sales",
+            ],
+            answer_index: 2,
+            explanation: "The example describes a filtered list of products at or below their reorder level.",
+          },
+          {
+            prompt: "What does linking the sales tab to products by ID allow?",
+            options: [
+              "Sales and products to be stored in one cell together",
+              "A sales screen to show product details using the stored ID",
+              "Each sale to be deleted automatically after a week",
+              "Users to skip the product field entirely, because the app will guess which product was sold",
+            ],
+            answer_index: 1,
+            explanation: "The lesson's relation step lets one table show details from another through the ID.",
+          },
+          {
+            prompt: "Once an app is live, what does the lesson warn against doing directly in the sheet?",
+            options: [
+              "Adding new rows of data",
+              "Viewing the sheet on a phone",
+              "Sorting a copy of the data",
+              "Renaming or deleting columns, which can break screens",
+            ],
+            answer_index: 3,
+            explanation: "The lesson advises making structural changes in a copy first, because renaming or deleting columns can break the app.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "planning-app-screens": {
+      explanation_md: `The fastest way to build a bad app is to open the builder first. The best no code builders spend their first hour with paper and the people who will use the app. Corporate roles that ask for Power Apps also ask for end user support, and good planning is what keeps support calls few.
+
+## Start with people, not screens
+
+List every type of user and what each needs to do. For a cooperative's input loan app:
+
+* **Field officer:** register a farmer, record inputs given, check a farmer's balance.
+* **Cashier:** record repayments.
+* **Manager:** see totals, overdue loans and each officer's activity.
+* **Farmer:** probably does not use the app at all, but may receive a message.
+
+Each user's tasks become screens. A task done ten times a day deserves a big, obvious button. A task done once a month can sit in a menu.
+
+## Sketch on paper first
+
+Draw each screen as a phone sized rectangle. Write what appears at the top, the main content, and the buttons. Draw arrows between screens to show how a person moves. Then walk through a real task with your finger: "A farmer arrives. I search her name, tap her, tap Record inputs, choose fertiliser, enter two bags, save." If you get stuck on paper, you will get stuck in the app.
+
+Paper sketches cost nothing, need no data, and are easy to change. Show them to a real user and ask, "What would you tap next?"
+
+## Who sees and changes what
+
+Permissions protect data and keep apps simple.
+
+* **Show only what each person needs.** A cashier does not need farmers' full loan history.
+* **Limit editing.** Field officers add records but cannot delete them; only the manager can.
+* **Filter rows by user.** Many builders can show each person only their own records, using their sign in email. AppSheet calls these security filters.
+* **Keep sensitive columns out of sight.** If a column is not needed on a screen, hide it, and consider whether it needs to be collected at all.
+
+Write these rules in a simple table before building: user type down the side, screens across the top, and view, add, edit or none in each cell.
+
+## Designing for small screens
+
+* One main task per screen.
+* Big tap targets and short labels.
+* Put the most important information first; avoid wide tables.
+* Use dropdowns, toggles and number fields instead of typing.
+* Show clear confirmation after saving, so people do not save twice.
+* Test outdoors in sunlight, and on a basic phone, not just a new one.
+
+## A worked example
+
+Amina plans an attendance app for an adult literacy programme in Savelugu. Facilitators need to mark attendance quickly at the start of each class; the coordinator needs weekly totals per centre. Her paper sketch has three screens for facilitators: choose today's class, tick learners present, save. The coordinator gets a summary screen. In her permissions table, facilitators can only see their own centre's learners and cannot delete records.
+
+When she shows the sketch to a facilitator, he points out that some learners share names, so Amina adds each learner's photo with consent, or a short ID, to the list. That one change, found on paper, saved a confusing first week.`,
+      practice_task_md: `**Goal:** Plan an app on paper before building it.
+
+**Steps:**
+1. Use the situation you chose in the apps section lesson, or a new one.
+2. List each type of user and the tasks they need to do.
+3. On paper, sketch every screen as a phone sized box with arrows between screens.
+4. Make a permissions table: user types down the side, screens across the top, and view, add, edit or none in each cell.
+5. Walk one real person through the sketch and ask what they would tap next. Change anything that confused them.
+
+**Done looks like:** A photo of your sketched screens, a permissions table and one change you made after the walk through.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson recommend sketching screens on paper first?",
+            options: [
+              "App builders cannot be opened until a sketch is uploaded",
+              "Paper sketches are free, need no data, are easy to change and reveal problems early",
+              "Clients expect a printed design document before any work can legally begin",
+              "Paper sketches automatically become working apps",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says paper costs nothing, needs no data, is easy to change, and getting stuck on paper predicts getting stuck in the app.",
+          },
+          {
+            prompt: "What does AppSheet call filters that show each user only certain rows?",
+            options: [
+              "Security filters",
+              "Sort orders",
+              "Column types",
+              "Reorder levels, which are set on each product in the stock tab",
+            ],
+            answer_index: 0,
+            explanation: "The lesson names AppSheet's security filters as a way to show each person only their records.",
+          },
+          {
+            prompt: "Which design choice suits small screens, according to the lesson?",
+            options: [
+              "Wide tables showing every column at once",
+              "Several main tasks on each screen",
+              "Long typed answers instead of dropdowns, because they collect more detail",
+              "One main task per screen with big tap targets",
+            ],
+            answer_index: 3,
+            explanation: "The lesson lists one main task per screen and big tap targets for small screens.",
+          },
+          {
+            prompt: "What problem did the facilitator spot in Amina's sketch?",
+            options: [
+              "The coordinator could not see weekly totals",
+              "The app needed a payment screen",
+              "Some learners share names, so the list needed a photo or short ID",
+              "Facilitators wanted to delete attendance records that they had entered by mistake",
+            ],
+            answer_index: 2,
+            explanation: "The facilitator noticed shared names, so Amina added a photo with consent or a short ID.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    automation: {
+      explanation_md: `Every office has jobs that eat time without needing much thought: copying form answers into another sheet, emailing a confirmation, reminding people about a deadline, telling a manager when stock is low. Automation tools do these jobs by themselves, every time, without forgetting. Remote operations and systems roles name tools such as Zapier, Make and Power Automate, and ask people to build, monitor and fix workflows. Even where no advert mentions automation, a person who can save a team hours each week stands out.
+
+## What an automation is
+
+An automation, sometimes called a workflow, is a set of steps that runs by itself when something happens. It always has:
+
+* a **trigger**: the event that starts it, such as a new form response, a new row, a new email or a set time each Monday;
+* one or more **actions**: the things it then does, such as adding a row, sending an email, creating a calendar event or posting a message.
+
+Some workflows add **conditions** (only continue if the amount is over a limit), **formatting** steps (tidy a phone number) or **branches** (do one thing for new customers and another for returning ones).
+
+## Three ways to automate
+
+* **Built in features.** Many tools automate themselves. A form can email you each response; a spreadsheet can highlight overdue rows; a messaging app can send an away message. Always check these first.
+* **Connector tools.** Zapier, Make, Power Automate and n8n connect many apps through a visual editor. Zapier calls a workflow a Zap; Make calls it a scenario; Power Automate calls it a flow.
+* **Light scripting.** Google Apps Script and similar tools go further with a little code. This is low code territory and optional for this track.
+
+## What this section covers
+
+* **Triggers, actions and workflows:** how to map a manual process before building.
+* **Automation tools and their limits:** what each type suits, plan limits, and checking and fixing failed runs.
+* **Automatic emails and messages:** helpful confirmations and replies without spamming people.
+* **AI steps and agents, used carefully (optional):** where AI helps and where a person must stay in charge.
+
+## Phone and computer
+
+Mapping a process works on paper. Building multi step workflows needs room to see both apps' fields side by side, so use a computer. Checking whether today's runs worked, and switching a workflow off in an emergency, are easy from a phone.
+
+## Automate carefully
+
+An automation does exactly what you tell it, very fast, many times. A mistake can send fifty wrong messages before anyone notices. So start small, test with your own details, watch the first real runs, and make sure someone knows how to switch it off.
+
+## A worked example
+
+Issahaku helps a computer training centre in Tamale. Every registration arrives by form, and the administrator copies each one into a class list, then sends a welcome message by hand. Issahaku maps it: trigger, new form response; action one, add the student to the class list tab; action two, send a welcome email with the start date. He tests with his own email, checks the class list, then switches it on. The administrator now spends her time answering real questions instead of copying.`,
+      practice_task_md: `**Goal:** Find and describe automations you already meet.
+
+**Steps:**
+1. Think of three automatic messages or actions you have received: a payment confirmation, a delivery update, a reminder or an auto reply.
+2. For each, write the likely trigger and the action.
+3. Think of one repeated task in a group or business you know that could be automated, and write its trigger and actions in plain words.
+4. Write one thing that could go wrong if that automation made a mistake, and who should be able to switch it off.
+
+**Done looks like:** Three trigger and action pairs from real life, one proposed automation in plain words, and one risk with a named person who can stop it.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a trigger in an automation?",
+            options: [
+              "The final message the automation sends",
+              "The event that starts the automation, such as a new form response",
+              "The password used to connect two apps",
+              "A report showing how much time the automation has saved the team since it was switched on",
+            ],
+            answer_index: 1,
+            explanation: "The lesson defines a trigger as the event that starts it.",
+          },
+          {
+            prompt: "What does Make call a workflow?",
+            options: [
+              "A scenario",
+              "A Zap",
+              "A flow",
+              "A plugin that is installed on a website to send emails",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says Zapier calls it a Zap, Make a scenario and Power Automate a flow.",
+          },
+          {
+            prompt: "What should you check before reaching for a connector tool?",
+            options: [
+              "Whether a paid plan is available",
+              "Whether the client has a website",
+              "Whether a script could do it in fewer steps",
+              "Whether the tools already have a built in feature that does the job",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says to always check built in features first.",
+          },
+          {
+            prompt: "Why does the lesson say to start small and watch the first real runs?",
+            options: [
+              "Automations only work during office hours",
+              "Automations slow down your phone",
+              "A mistake can repeat many times very fast before anyone notices",
+              "Watching runs is required before a tool lets you save the workflow or give it a name",
+            ],
+            answer_index: 2,
+            explanation: "The lesson warns that a mistake can send many wrong messages quickly.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
