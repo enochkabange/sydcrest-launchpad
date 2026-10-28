@@ -279,10 +279,10 @@ describe("every track", () => {
 });
 
 describe("grouped interests", () => {
-  it("prefers a track with lessons ready when scores tie", () => {
-    // Explore has no goal fit, so the full lesson track wins over the outline only one.
+  it("breaks ties by the interest's default order now every track has lessons", () => {
+    // Explore has no goal fit; with lessons ready everywhere the first listed track wins.
     expect(chooseTrack(answers({ interests: ["customers", "office"], goal: "explore" })).track).toBe(
-      "virtual-assistant",
+      "customer-service",
     );
     expect(chooseTrack(answers({ interests: ["business"], goal: "first-job" })).track).toBe("digital-business");
     expect(chooseTrack(answers({ interests: ["security"], goal: "business" })).track).toBe("cybersecurity");
@@ -304,21 +304,22 @@ describe("grouped interests", () => {
     );
   });
 
-  it("suggests a full lesson track alongside an outline only one, or the bridge for low confidence", () => {
-    expect(starterFor(answers(), "frontend")).toBeNull();
-    expect(starterFor(answers(), "excel-power-bi")?.track).toBe("data");
-    expect(starterFor(answers({ confidence: "low", experience: "tried" }), "excel-power-bi")?.track).toBe(
-      "digital-skills-bridge",
-    );
+  it("needs no starter track once a track has full lessons", () => {
+    // Every track has lessons now; the starter logic stays for future outline only tracks.
+    for (const track of FULL_LESSON_TRACKS) {
+      expect(starterFor(answers(), track), track).toBeNull();
+      expect(starterFor(answers({ confidence: "low", experience: "tried" }), track), track).toBeNull();
+    }
   });
 
-  it("says plainly when lessons are coming and links the starter when it is published", () => {
-    const a = answers({ interests: ["office"], goal: "first-job" });
-    const result = buildPath(a, null, { slug: "data-analyst", title: "Data Analyst" });
+  it("marks lessons as ready and suggests no extra starter for a track with lessons", () => {
+    const result = buildPath(answers({ interests: ["office"], goal: "first-job" }), null, {
+      slug: "data-analyst",
+      title: "Data Analyst",
+    });
     expect(result.track).toBe("excel-power-bi");
-    expect(result.lessonsReady).toBe(false);
-    expect(result.alsoStart).toMatchObject({ track: "data", title: "Data Analyst", href: "/roadmaps/data-analyst" });
-    expect(buildPath(a, null).alsoStart?.href).toBeNull();
+    expect(result.lessonsReady).toBe(true);
+    expect(result.alsoStart).toBeNull();
   });
 });
 

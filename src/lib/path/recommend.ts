@@ -59,6 +59,18 @@ export const FULL_LESSON_TRACKS: ReadonlySet<Track> = new Set<Track>([
   "cybersecurity",
   "virtual-assistant",
   "mobile-app-developer",
+  "customer-service",
+  "excel-power-bi",
+  "digital-marketing-specialisations",
+  "social-media-management",
+  "project-management",
+  "freelancing",
+  "cloud-devops",
+  "software-testing",
+  "ai-ml",
+  "data-science",
+  "digital-sales",
+  "no-code",
 ]);
 
 /** Tracks whose early sections work on a phone. The others need a computer for practice. */
