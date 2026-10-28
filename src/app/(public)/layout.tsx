@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { SiteFooter } from "@/components/marketing/site-footer";
+import { SkipLink } from "@/components/app-shell/skip-link";
 import { ViewerHeader, ViewerTabBar } from "@/components/app-shell/viewer-frame";
 import { PageViewTracker } from "@/lib/analytics/page-view-tracker";
 
@@ -12,6 +13,7 @@ import { PageViewTracker } from "@/lib/analytics/page-view-tracker";
 export default function PublicLayout({ children }: LayoutProps<"/">) {
   return (
     <div className="flex flex-1 flex-col">
+      <SkipLink />
       <ViewerHeader />
       <main id="main" className="mx-auto w-full max-w-page flex-1 px-4 pt-8 pb-16 md:px-8">
         {children}

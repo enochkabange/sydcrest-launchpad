@@ -34,7 +34,7 @@ function renderBlock(block: Block, key: number): ReactNode {
     }
     case "code":
       return (
-        <pre key={key} className="overflow-x-auto rounded-md border border-line bg-surface-sunken p-3 text-sm text-content">
+        <pre key={key} tabIndex={0} className="overflow-x-auto rounded-md border border-line bg-surface-sunken p-3 text-sm text-content">
           <code>{block.text}</code>
         </pre>
       );

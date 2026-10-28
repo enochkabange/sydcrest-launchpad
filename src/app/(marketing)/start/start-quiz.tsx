@@ -207,7 +207,7 @@ export function StartQuiz() {
           <Question legend="What sounds interesting to you?" hint="Pick as many as you like.">
             {[...INTEREST_GROUPS, undefined].map((group) => (
               <div key={group ?? "other"} className="flex flex-col gap-2">
-                {group && <h3 className="mt-2 text-sm font-semibold text-content-2">{group}</h3>}
+                {group && <h2 className="mt-2 text-sm font-semibold text-content-2">{group}</h2>}
                 <div className={group ? "grid gap-3 md:grid-cols-2 xl:grid-cols-3" : "flex flex-col gap-3"}>
                   {INTERESTS.filter((o: InterestOption) => o.group === group).map((o) => (
                     <OptionCard

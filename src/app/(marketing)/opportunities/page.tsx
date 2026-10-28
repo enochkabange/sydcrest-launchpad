@@ -200,7 +200,7 @@ async function SavedLink() {
 
 function BoardSkeleton() {
   return (
-    <div aria-busy="true" className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_22.5rem] xl:gap-12">
+    <div aria-busy="true" className="flex min-h-dvh flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_22.5rem] xl:gap-12">
       <div className="grid gap-4 sm:grid-cols-2 lg:col-start-1 lg:row-start-1">
         {[0, 1, 2, 3].map((i) => (
           <div key={i} className="h-48 animate-skeleton rounded-lg bg-surface-sunken" />
