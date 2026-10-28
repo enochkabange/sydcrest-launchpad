@@ -5,6 +5,7 @@ import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { OPPORTUNITY_REPORT_REASONS } from "./model";
+import { isRateLimited, RATE_LIMIT_MESSAGE } from "@/lib/rate-limit";
 
 /**
  * A learner's private saved and applied markers. Each action re-checks the
@@ -82,7 +83,7 @@ export async function reportOpportunity(_prev: ReportState, form: FormData): Pro
   });
   if (error) {
     console.error("reportOpportunity failed", { code: error.code, message: error.message });
-    return { error: "We couldn't send your report. Try again." };
+    return { error: isRateLimited(error) ? RATE_LIMIT_MESSAGE : "We couldn't send your report. Try again." };
   }
   return { done: true };
 }

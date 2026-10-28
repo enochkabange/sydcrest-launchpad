@@ -7,6 +7,7 @@
  */
 import { isRegionSlug, type RegionSlug } from "@/lib/regions";
 import type { FieldErrors } from "@/lib/validation";
+import { RATE_LIMIT_MESSAGE, RATE_LIMITED_CODE } from "@/lib/rate-limit";
 
 /** Same rule as the organisations.slug check constraint. */
 export const ORG_SLUG_PATTERN = /^[a-z0-9][a-z0-9-]{1,58}[a-z0-9]$/;
@@ -195,6 +196,8 @@ export function parseProfileSlug(input: string): string | null {
 /** Ask the database's error code what went wrong, in words people can act on. */
 export function organisationErrorMessage(code: string | undefined, fallback: string) {
   switch (code) {
+    case RATE_LIMITED_CODE:
+      return RATE_LIMIT_MESSAGE;
     case "23505":
       return "That web address is taken. Try another.";
     case "42501":

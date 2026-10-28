@@ -12,6 +12,7 @@ import {
   type ListingFields,
 } from "@/lib/talent/forms";
 import type { FieldErrors } from "@/lib/validation";
+import { isRateLimited, RATE_LIMIT_MESSAGE } from "@/lib/rate-limit";
 
 /**
  * Server Actions for the talent directory. Eligibility (adult, live
@@ -106,6 +107,7 @@ export async function requestContact(profileId: string, _prev: ContactState, for
   });
   if (error) {
     if (error.code === "23505") return { message: "Your organisation already has a request waiting for their reply." };
+    if (isRateLimited(error)) return { message: RATE_LIMIT_MESSAGE };
     return { message: "We couldn't send the request. They may have left the directory." };
   }
   refresh();

@@ -7,6 +7,7 @@ import { createClient } from "@/lib/supabase/server";
 import type { FieldErrors } from "@/lib/validation";
 import { parseOutcome, type OutcomeField } from "@/lib/outcomes/validation";
 import { revalidateOutcomeStats } from "@/lib/outcomes/revalidate";
+import { isRateLimited, RATE_LIMIT_MESSAGE } from "@/lib/rate-limit";
 
 export type OutcomeFormState = {
   errors?: FieldErrors<OutcomeField>;
@@ -28,7 +29,10 @@ export async function reportOutcome(_prev: OutcomeFormState, form: FormData): Pr
 
   const supabase = await createClient();
   const { error } = await supabase.from("outcomes").insert({ ...parsed.data, profile_id: user.id });
-  if (error) return { message: "We couldn't save your outcome. Try again.", values: submitted(form) };
+  if (error) {
+    const message = isRateLimited(error) ? RATE_LIMIT_MESSAGE : "We couldn't save your outcome. Try again.";
+    return { message, values: submitted(form) };
+  }
   revalidatePath("/outcomes");
   redirect("/outcomes?reported=1");
 }
