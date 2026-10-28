@@ -56,7 +56,7 @@ By the end of the track you should be able to run a real page for a real organis
             options: [
               "Designing graphics for every post",
               "Filming professional videos",
-              "Running large paid advertising campaigns",
+              "Running large paid advertising campaigns across several platforms",
               "Operating someone else's accounts carefully and reliably",
             ],
             answer_index: 3,
@@ -79,7 +79,7 @@ By the end of the track you should be able to run a real page for a real organis
               "Because clients are handing you their reputation and customers' private messages",
               "Because platforms require a certificate first",
               "Because posting is no longer important",
-              "Because security makes posts reach more people",
+              "Because good security settings make a page's posts reach more people in the feed each day",
             ],
             answer_index: 0,
             explanation: "A careless post, a hacked account or a rude reply can cost the business, so trust is central.",
@@ -90,7 +90,7 @@ By the end of the track you should be able to run a real page for a real organis
               "He asked for her Facebook password",
               "He created a new page with the same name",
               "He used Meta's business tools instead of her password",
-              "He used her phone whenever he needed to post",
+              "He used her phone whenever he needed to post, so nothing was shared",
             ],
             answer_index: 2,
             explanation: "Fuseini got access through Meta's business tools so Hawa never had to share her password.",
@@ -144,7 +144,7 @@ Abdul-Rahman started by running his mosque's events page and his aunt's provisio
           {
             prompt: "What does a freelance page manager usually do?",
             options: [
-              "Works only on one large company's paid ads",
+              "Works only on one large company's paid ads, usually from the company's head office",
               "Writes the platform's community standards",
               "Films adverts for television",
               "Looks after the pages of several small businesses for monthly fees",
@@ -158,7 +158,7 @@ Abdul-Rahman started by running his mosque's events page and his aunt's provisio
               "Wait until you have a degree before doing any page work",
               "Only apply to senior manager roles",
               "Run real pages now for a church, school, family business or project",
-              "Buy followers to make your own page look experienced",
+              "Buy followers for your own page so it looks experienced to anyone checking your work",
             ],
             answer_index: 2,
             explanation: "Running real pages builds the evidence employers ask for.",
@@ -224,7 +224,7 @@ Amina runs a catering service in Wa. Her Facebook page gets orders from office w
             options: [
               "Platforms charge for each extra account",
               "Customers only use one app each",
-              "Ghanaian law limits businesses to two platforms",
+              "Ghanaian law limits each registered business to two social media platforms",
               "Posting on six platforms badly is worse than posting on two well",
             ],
             answer_index: 3,
@@ -234,7 +234,7 @@ Amina runs a catering service in Wa. Her Facebook page gets orders from office w
             prompt: "What is a feature of a WhatsApp channel described in the lesson?",
             options: [
               "It lets a business broadcast updates, but followers cannot reply in the channel",
-              "Followers can reply to every update inside the channel",
+              "Followers can reply to every update inside the channel, like in a WhatsApp group chat",
               "It is only available on LinkedIn",
               "It replaces the need for a business phone number",
             ],
@@ -245,7 +245,7 @@ Amina runs a catering service in Wa. Her Facebook page gets orders from office w
             prompt: "Which question helps you choose platforms at onboarding?",
             options: [
               "Which platform has the newest features?",
-              "Which platform has the most celebrities?",
+              "Which platform has the most celebrities and trending videos this month?",
               "Which platform do you personally enjoy?",
               "Where did the last ten customers hear about the business?",
             ],
@@ -258,7 +258,7 @@ Amina runs a catering service in Wa. Her Facebook page gets orders from office w
               "It was deleted immediately",
               "It was used for daily posting",
               "It was left quiet with a pinned post pointing to WhatsApp",
-              "It was sold to another business",
+              "It was sold to another business that wanted its followers",
             ],
             answer_index: 2,
             explanation: "A pinned post pointing to WhatsApp shows the business is still open without spending effort there.",
@@ -321,7 +321,7 @@ Treat every client account as if it holds money, because in a sense it does. Be 
             prompt: "Which three things is a client trusting you with, according to this section?",
             options: [
               "Its stock, its staff and its building",
-              "Its logo, its prices and its opening hours only",
+              "Its logo, its prices and its opening hours, but nothing else",
               "Its bank account, its tax records and its rent",
               "Its reputation, its customers' messages and its accounts",
             ],
@@ -332,7 +332,7 @@ Treat every client account as if it holds money, because in a sense it does. Be 
             prompt: "Why should page access go through the platforms' business tools?",
             options: [
               "It makes posts reach more people",
-              "It removes the need for a style guide",
+              "It removes the need for a style guide, because the tools hold the brand colours and fonts",
               "It is the only way to post photos",
               "Nobody shares a password and the owner can remove you cleanly later",
             ],
@@ -344,7 +344,7 @@ Treat every client account as if it holds money, because in a sense it does. Be 
             options: [
               "For confirmation, so decisions were agreed in writing",
               "To ask for payment",
-              "Because the platform required it",
+              "Because the platform required a signed copy before he could post",
               "To share it with parents",
             ],
             answer_index: 0,
@@ -423,7 +423,7 @@ Mariama owns a fabric shop in Tamale. In onboarding, she says most buyers are wo
               "Grow the page",
               "Be more popular online",
               "Get more WhatsApp orders from the Facebook page by the end of March",
-              "Post as much as possible",
+              "Post as much as possible on every platform, every single day, until the page starts to grow",
             ],
             answer_index: 2,
             explanation: "A useful goal is specific, linked to the business and something you can check.",
@@ -434,7 +434,7 @@ Mariama owns a fabric shop in Tamale. In onboarding, she says most buyers are wo
               "Because simple fixes like a wrong phone number may matter more than new posts",
               "To delete all old content",
               "To copy competitors' posts",
-              "Because the platform will not let you post otherwise",
+              "Because the platform will not let you post anything new until old posts are reviewed by you",
             ],
             answer_index: 0,
             explanation: "The audit finds broken basics, such as wrong contact details, that may cost orders.",
@@ -453,7 +453,7 @@ Mariama owns a fabric shop in Tamale. In onboarding, she says most buyers are wo
           {
             prompt: "What should you do with the written brief once it is ready?",
             options: [
-              "Keep it private so the client cannot change it",
+              "Keep it private so the client cannot change it after you agree the price",
               "Post it on the page",
               "Send it to the client and ask them to confirm it",
               "Throw it away after the first month",
@@ -464,7 +464,7 @@ Mariama owns a fabric shop in Tamale. In onboarding, she says most buyers are wo
           {
             prompt: "In the worked example, what was one of Wumpini's first fixes?",
             options: [
-              "Starting a paid ad campaign",
+              "Starting a paid ad campaign to reach new buyers",
               "Deleting the Facebook page",
               "Changing the shop's name",
               "Updating the old WhatsApp number in the bio",
@@ -528,7 +528,7 @@ Share the guide with the client for approval and update it when something new co
             options: [
               "They mean exactly the same thing",
               "Voice is only about colours and logos",
-              "Tone stays the same; voice changes every post",
+              "Tone stays the same in every post; voice changes with each post",
               "Voice stays the same; tone adjusts to the moment",
             ],
             answer_index: 3,
@@ -537,7 +537,7 @@ Share the guide with the client for approval and update it when something new co
           {
             prompt: "Why does a written voice help when you manage several clients?",
             options: [
-              "It lets you post the same caption for every client",
+              "It lets you post the same caption for every client, which saves hours of writing every week",
               "It replaces the need for approvals",
               "Platforms require a style guide before posting",
               "It keeps each client's posts and replies consistent, even when someone covers for you",
@@ -550,7 +550,7 @@ Share the guide with the client for approval and update it when something new co
             options: [
               "In a competitor's posts",
               "In how the owner already talks to customers and the posts that got warm responses",
-              "In random trending videos",
+              "In random trending videos, since copying what is popular shows customers you are current",
               "In a dictionary",
             ],
             answer_index: 1,
@@ -620,7 +620,7 @@ Hawa owns the shea butter business and has full control of her Facebook Page. Fu
             options: [
               "The owner cannot tell what was done or remove the manager without changing the password",
               "Passwords are too long to type",
-              "Platforms delete pages that share passwords immediately",
+              "Platforms delete pages that share passwords immediately, along with all of their posts and messages",
               "It makes posts load more slowly",
             ],
             answer_index: 0,
@@ -635,7 +635,7 @@ Hawa owns the shea butter business and has full control of her Facebook Page. Fu
           {
             prompt: "What can someone with full control of a Facebook Page do that partial control cannot?",
             options: [
-              "Reply to messages",
+              "Reply to messages and comments",
               "Create posts",
               "Give or remove other people's access and change settings",
               "See insights",
@@ -657,7 +657,7 @@ Hawa owns the shea butter business and has full control of her Facebook Page. Fu
           {
             prompt: "What should happen when your contract with a client ends?",
             options: [
-              "Keep your access in case they need you again",
+              "Keep your access in case they need you again, since removing it takes time for both of you",
               "Delete the posts you made",
               "Change the page password",
               "Ask the owner to remove you and confirm it in writing",
@@ -722,7 +722,7 @@ Abdul-Rahman manages pages for a Wa pharmacy. One morning a message from "Meta P
               "A second password that is shorter",
               "A second proof, usually a code, as well as the password",
               "A fee paid by MoMo",
-              "A photo of your face on every post",
+              "A photo of your face that is checked on every post",
             ],
             answer_index: 1,
             explanation: "Two step verification needs a second proof so a stolen password alone is not enough.",
@@ -732,7 +732,7 @@ Abdul-Rahman manages pages for a Wa pharmacy. One morning a message from "Meta P
             options: [
               "SMS codes are always wrong",
               "SMS codes can be intercepted if someone takes over your SIM",
-              "Authenticator apps post for you",
+              "Authenticator apps post for you when you are not online, so codes are never needed",
               "SMS codes cost data",
             ],
             answer_index: 1,
@@ -742,7 +742,7 @@ Abdul-Rahman manages pages for a Wa pharmacy. One morning a message from "Meta P
             prompt: "You receive a DM saying your client's page will be deleted in 24 hours unless you log in through a link. What should you do?",
             options: [
               "Click quickly so the page is not deleted",
-              "Send the login code to the sender to prove ownership",
+              "Send the login code to the sender to prove ownership, then ask them to cancel the deletion",
               "Ignore the link and check the account status by opening the app or website yourself",
               "Forward the link to the owner so they can log in",
             ],
@@ -753,7 +753,7 @@ Abdul-Rahman manages pages for a Wa pharmacy. One morning a message from "Meta P
             prompt: "Which route does Meta give for recovering a hacked Facebook account?",
             options: [
               "facebook.com/hacked from a device you have used before",
-              "Messaging any Page that says it is Meta Support",
+              "Messaging any Page that says it is Meta Support and asking them to unlock the account",
               "Creating a new account with the same name",
               "Waiting for the hacker to return it",
             ],
@@ -766,7 +766,7 @@ Abdul-Rahman manages pages for a Wa pharmacy. One morning a message from "Meta P
               "Only by visiting Accra in person",
               "By calling or texting 292, or on WhatsApp at 0501603111",
               "By posting on the hacked page",
-              "By emailing the platform's advertising team",
+              "By emailing the platform's advertising team, who pass the case on to the Authority",
             ],
             answer_index: 1,
             explanation: "The CSA takes reports by call or SMS to 292 and on WhatsApp at 0501603111.",
@@ -829,7 +829,7 @@ By the end of this section you will be able to plan a month of purposeful posts 
           {
             prompt: "Which part of planning does this section focus on, rather than calendar mechanics?",
             options: [
-              "Choosing fonts for every post",
+              "Choosing fonts and colours for every post so the page looks the same each week",
               "Pillars, getting content from clients, and scheduling with approvals",
               "Running paid ads",
               "Building a website",
@@ -840,7 +840,7 @@ By the end of this section you will be able to plan a month of purposeful posts 
           {
             prompt: "Why is an approval step important when posting for a client?",
             options: [
-              "Platforms block posts without approval",
+              "Platforms block any post that has not been approved by the page owner in the app first",
               "It replaces the need for a plan",
               "It makes posts reach more people",
               "It protects both you and the client from mistakes like wrong prices",
@@ -863,7 +863,7 @@ By the end of this section you will be able to plan a month of purposeful posts 
             prompt: "In the example, what did Fuseini do when a dust storm hit?",
             options: [
               "Posted the cheerful post anyway",
-              "Stopped posting for a month",
+              "Stopped posting for a month until the weather cleared up and customers came back",
               "Moved the cheerful post and replaced it with a skin care tip, then told Hawa",
               "Deleted the page",
             ],
@@ -926,7 +926,7 @@ Sumaila manages the page of a cold store in Damongo. The goal is more orders fro
           {
             prompt: "What is a content pillar?",
             options: [
-              "A paid advert that runs all month",
+              "A paid advert that runs all month and appears at the top of every follower's feed",
               "A theme the brand returns to again and again, chosen to support the goal",
               "The first post on a new page",
               "A tool for scheduling posts",
@@ -949,7 +949,7 @@ Sumaila manages the page of a cold store in Damongo. The goal is more orders fro
             prompt: "What does the lesson suggest about balancing pillars?",
             options: [
               "Every post should sell",
-              "No post should ever mention prices",
+              "No post should ever mention prices, since followers unfollow pages that try to sell to them",
               "Roughly a quarter of posts directly about buying, the rest helpful, human or community posts",
               "Only post on holidays",
             ],
@@ -959,7 +959,7 @@ Sumaila manages the page of a cold store in Damongo. The goal is more orders fro
           {
             prompt: "What does the lesson advise for religious festivals?",
             options: [
-              "Always attach a discount",
+              "Always attach a discount, since customers expect a festival offer from every shop they follow",
               "Never mention them",
               "A short sincere greeting is often better than a discount; check the client's values",
               "Post only in English",
@@ -1027,7 +1027,7 @@ Amina, who runs the catering service in Wa, is busy with orders all week. Her pa
               "Please send me content when you can",
               "Every Monday: three photos of new arrivals, one short shop video and a voice note about anything new",
               "Write five captions for me this week",
-              "Send me everything on your phone",
+              "Send me everything on your phone so I can choose the best photos and videos myself each week",
             ],
             answer_index: 1,
             explanation: "Specific, regular, easy requests work better than vague ones.",
@@ -1047,7 +1047,7 @@ Amina, who runs the catering service in Wa, is busy with orders all week. Her pa
             prompt: "Before sharing a customer's kind message as a post, what should you do?",
             options: [
               "Post it immediately with their name",
-              "Change their words to sound better",
+              "Change their words to sound better, then post it with their name so it looks real",
               "Ask the customer whether you may share it, with or without their name",
               "Only share it on your personal page",
             ],
@@ -1117,7 +1117,7 @@ Issahaku manages the Tamale school's pages. On Thursday he sends the head teache
           {
             prompt: "What is the main benefit of scheduling posts?",
             options: [
-              "Scheduled posts always get more reach",
+              "Scheduled posts always get more reach than posts you publish by hand, so pages grow faster",
               "You can prepare a week of posts in one sitting and they go out on time",
               "It removes the need for approval",
               "It makes the page verified",
@@ -1135,7 +1135,7 @@ Issahaku manages the Tamale school's pages. On Thursday he sends the head teache
             prompt: "Which of these counts as approval?",
             options: [
               "The client did not reply",
-              "The client viewed the message",
+              "The client viewed the message and the ticks turned blue",
               "A clear 'approved' or 'OK' in writing",
               "A friend liked the draft",
             ],
@@ -1146,7 +1146,7 @@ Issahaku manages the Tamale school's pages. On Thursday he sends the head teache
             prompt: "Why should you check a post after it goes live?",
             options: [
               "Videos can fail, links can break and details can change after approval",
-              "Platforms delete unchecked posts",
+              "Platforms delete any post that the manager has not opened within an hour of it going live",
               "To count likes every minute",
               "To remove all comments",
             ],
@@ -1156,7 +1156,7 @@ Issahaku manages the Tamale school's pages. On Thursday he sends the head teache
           {
             prompt: "Which feature makes a draft easy for a client to approve?",
             options: [
-              "Sending each post in a separate message over several days",
+              "Sending each post in a separate message over several days so the client is not overwhelmed",
               "Hiding the date and time",
               "Showing the post as it will appear and highlighting items to check",
               "Writing the caption after approval",
@@ -1222,7 +1222,7 @@ When this section is done well, customers feel answered, scammers find no space,
             options: [
               "Because messages cost money to send",
               "Because only staff can see it",
-              "Because the inbox shows the shop's stock automatically",
+              "Because the inbox shows the shop's stock automatically and customers can order without staff",
               "Because for many small businesses, customers decide whether to buy through these conversations",
             ],
             answer_index: 3,
@@ -1231,7 +1231,7 @@ When this section is done well, customers feel answered, scammers find no space,
           {
             prompt: "A customer asks for a discount the client has never offered. What should you do?",
             options: [
-              "Promise a small discount to keep them happy",
+              "Promise a small discount to keep them happy, then tell the client about it afterwards",
               "Ignore the message",
               "Pass the question to the person who decides, without promising anything",
               "Reply from your personal account",
@@ -1242,7 +1242,7 @@ When this section is done well, customers feel answered, scammers find no space,
           {
             prompt: "What decides how often you check the inbox?",
             options: [
-              "How many followers you have personally",
+              "How many followers you have on your own personal page",
               "The reply times agreed with the client at onboarding",
               "The platform's default setting",
               "Whenever you have free data",
@@ -1256,7 +1256,7 @@ When this section is done well, customers feel answered, scammers find no space,
               "To use it in an advert",
               "In case others reported the same batch",
               "To delete it later",
-              "Because the platform asked him to",
+              "Because the platform asked him to log every complaint",
             ],
             answer_index: 1,
             explanation: "Logging unusual issues helps spot patterns, such as a faulty batch.",
@@ -1314,7 +1314,7 @@ Fuseini sets up Hawa's inbox. He writes six saved replies (price list, delivery 
             prompt: "What is a saved reply?",
             options: [
               "A message that deletes itself",
-              "A backup of the client's password",
+              "A backup copy of the client's password that you keep in the inbox in case you are locked out",
               "A paid advert in the inbox",
               "A prepared answer to a common question that you select and adjust before sending",
             ],
@@ -1337,7 +1337,7 @@ Fuseini sets up Hawa's inbox. He writes six saved replies (price list, delivery 
             options: [
               "Changing the page name",
               "Tagging conversations, such as 'new order' or 'complaint', so you can track and search them",
-              "Hiding comments from everyone",
+              "Hiding comments from everyone except the page owner, so complaints do not spread further online",
               "Paying for boosts",
             ],
             answer_index: 1,
@@ -1357,7 +1357,7 @@ Fuseini sets up Hawa's inbox. He writes six saved replies (price list, delivery 
           {
             prompt: "Why keep a simple inbox log?",
             options: [
-              "To store every customer's phone number",
+              "To store every customer's phone number so you can send them adverts later from your own phone",
               "To share customers' messages publicly",
               "Because the platform requires it",
               "To show how many enquiries and orders the page brings, which feeds the monthly review",
@@ -1425,7 +1425,7 @@ Amina's catering page posts a Christmas menu. Within an hour, an account called 
             prompt: "What happens when you hide a comment on a Facebook Page?",
             options: [
               "It disappears from everyone except the writer and their friends",
-              "It is deleted for everyone, including the writer",
+              "It is deleted for everyone, including the person who wrote it and their friends",
               "It is sent to the police",
               "It becomes a pinned post",
             ],
@@ -1459,7 +1459,7 @@ Amina's catering page posts a Christmas menu. Within an hour, an account called 
             options: [
               "Stop the Page from posting those words",
               "Block those words across all of Facebook",
-              "Delete the accounts of people who use them",
+              "Delete the accounts of people who use those words anywhere on Facebook, not only on the Page",
               "Automatically hide comments containing words you choose, on the Page's own posts",
             ],
             answer_index: 3,
@@ -1471,7 +1471,7 @@ Amina's catering page posts a Christmas menu. Within an hour, an account called 
               "A fan page that praises the business",
               "An opinion page reviewing local food",
               "An account using the business name and photos to ask for MoMo payments",
-              "A customer sharing a photo of their order",
+              "A customer sharing a photo of their order and tagging the business name in the caption",
             ],
             answer_index: 2,
             explanation: "Impostors falsely claim to be the business; fan and opinion pages generally are not.",
@@ -1531,7 +1531,7 @@ A customer posts on the Wa pharmacy's page that a medicine she bought was expire
           {
             prompt: "Which situation is a level 3 issue in this lesson?",
             options: [
-              "A customer says delivery was a day late",
+              "A customer says their delivery arrived a day later than promised",
               "A customer says a medicine bought from the business was expired",
               "Someone asks for the price list",
               "A follower dislikes a post's colours",
@@ -1542,7 +1542,7 @@ A customer posts on the Wa pharmacy's page that a medicine she bought was expire
           {
             prompt: "Why should you pause scheduled posts during a crisis?",
             options: [
-              "Scheduled posts are deleted automatically otherwise",
+              "Scheduled posts are deleted automatically otherwise, along with comments",
               "A cheerful promotion during an angry storm looks careless",
               "Platforms charge extra during a crisis",
               "To make the page private",
@@ -1556,7 +1556,7 @@ A customer posts on the Wa pharmacy's page that a medicine she bought was expire
               "Short, calm and true, with a time for the next update that you keep",
               "A long explanation blaming the customer",
               "A joke to lighten the mood",
-              "A promise of a full refund to everyone",
+              "A promise of a full refund to everyone who comments, so the anger dies down quickly",
             ],
             answer_index: 0,
             explanation: "A holding reply acknowledges the issue without guessing, and promises an update you can keep.",
@@ -1566,7 +1566,7 @@ A customer posts on the Wa pharmacy's page that a medicine she bought was expire
             options: [
               "To post them on your personal page",
               "Because the platform requires it",
-              "To report the customer to the police",
+              "To report the customer to the police as soon as possible",
               "Because posts and comments can be deleted later",
             ],
             answer_index: 3,
@@ -1575,7 +1575,7 @@ A customer posts on the Wa pharmacy's page that a medicine she bought was expire
           {
             prompt: "You post the wrong price on a client's page. What should you do?",
             options: [
-              "Delete it quietly and say nothing",
+              "Delete it quietly and say nothing, since correcting it in public only draws more attention to the mistake",
               "Blame the client",
               "Tell the client immediately, correct it, and post an honest correction if customers saw it",
               "Leave it and hope nobody noticed",
@@ -1647,7 +1647,7 @@ Wumpini hosts a Friday evening Facebook live for Mariama's fabric shop, with her
               "Presents every product on camera",
               "Reads comments, answers simple questions, hides scams and records orders",
               "Edits the video afterwards",
-              "Collects payments into their own MoMo",
+              "Collects payments into their own MoMo number and sends them on to the client after the stream",
             ],
             answer_index: 1,
             explanation: "The moderator manages comments and records orders while the host presents.",
@@ -1663,7 +1663,7 @@ Wumpini hosts a Friday evening Facebook live for Mariama's fabric shop, with her
             options: [
               "So viewers know orders and payments go only through the client's official channels",
               "To make the stream longer",
-              "Because pinned comments increase reach",
+              "Because pinned comments increase the stream's reach, so the platform shows it to many more viewers",
               "To hide other comments",
             ],
             answer_index: 0,
@@ -1729,7 +1729,7 @@ Issahaku takes on a new client: a herbal clinic in Tamale. The owner wants a pos
             options: [
               "Tax rules, labour rules and traffic rules",
               "Platform rules, privacy and consent, and honest promotion",
-              "School rules, church rules and family rules",
+              "School rules, church rules and family rules for posting",
               "Design rules, font rules and colour rules",
             ],
             answer_index: 1,
@@ -1763,7 +1763,7 @@ Issahaku takes on a new client: a herbal clinic in Tamale. The owner wants a pos
               "Posting it as a paid advert",
               "Posting it without the clinic's name",
               "A post about opening hours, trained staff and testing for malaria at a health facility",
-              "Asking an influencer to make the claim instead",
+              "Asking an influencer with many followers to make the same claim instead, so the clinic is not blamed",
             ],
             answer_index: 2,
             explanation: "He replaced an unprovable health claim with honest, useful information.",
@@ -1836,7 +1836,7 @@ Sumaila's client, a Bolgatanga gym, has a Reel removed. The notice says it broke
             options: [
               "It makes videos longer",
               "It removes the need for approval",
-              "It is the only way to add captions",
+              "It is the only way to add captions and stickers to a video that will be used for business promotion",
               "Its licences for other music do not cover commercial use, so other songs can be muted or removed",
             ],
             answer_index: 3,
@@ -1845,7 +1845,7 @@ Sumaila's client, a Bolgatanga gym, has a Reel removed. The notice says it broke
           {
             prompt: "What usually happens when a page breaks rules repeatedly?",
             options: [
-              "Nothing; rules are only advice",
+              "Nothing happens, because the rules are only advice for new pages",
               "The page gets more reach",
               "Features can be limited and eventually the page can be disabled",
               "The page is automatically verified",
@@ -1859,7 +1859,7 @@ Sumaila's client, a Bolgatanga gym, has a Reel removed. The notice says it broke
               "Create a new page",
               "Read the notice and the rule it names, then appeal politely if you still think it is wrong",
               "Repost the same video several times",
-              "Complain in the comments of other pages",
+              "Complain in the comments of other pages so the platform notices and restores the post quickly",
             ],
             answer_index: 1,
             explanation: "Check which rule was cited, reread it honestly, then use the appeal option if appropriate.",
@@ -1938,7 +1938,7 @@ Hawa wants to post a thank you from a customer in Navrongo who loved her shea bu
             prompt: "Which of these does the Data Protection Act expect organisations to do?",
             options: [
               "Collect only what they need, for a clear purpose, and keep it secure",
-              "Collect as much data as possible in case it is useful",
+              "Collect as much data as possible in case it is useful for future marketing",
               "Share customer lists with partner businesses",
               "Keep data forever",
             ],
@@ -1949,7 +1949,7 @@ Hawa wants to post a thank you from a customer in Navrongo who loved her shea bu
             prompt: "A school wants to post photos of pupils at sports day. Whose permission do you need?",
             options: [
               "The pupils' classmates",
-              "Nobody, because it is a public event",
+              "Nobody, because sports day is a public event that anyone can attend and film",
               "Only the head teacher",
               "Parents or guardians, following the school's permission process",
             ],
@@ -1970,7 +1970,7 @@ Hawa wants to post a thank you from a customer in Navrongo who loved her shea bu
           {
             prompt: "What should you do with client photos and customer details on your devices when a contract ends?",
             options: [
-              "Keep them for your portfolio without asking",
+              "Keep them for your portfolio without asking, since you created most of the material yourself",
               "Hand over the shared folder, delete the material and confirm in writing",
               "Post them on your own page",
               "Sell them to another business",
@@ -2026,7 +2026,7 @@ Mariama's fabric shop agrees to give two outfits to Adiza, a Tamale lifestyle cr
             prompt: "A client sends a free outfit to a creator who then posts about it. Is this paid content?",
             options: [
               "No, because no money changed hands",
-              "Only if it is posted on TikTok",
+              "Only if it is posted on TikTok, where every brand mention must be labelled",
               "Only if the post gets many likes",
               "Yes, because gifted products count, so it should be labelled",
             ],
@@ -2038,7 +2038,7 @@ Mariama's fabric shop agrees to give two outfits to Adiza, a Tamale lifestyle cr
             options: [
               "A 'Paid partnership' label with the brand tagged as a partner",
               "A hidden hashtag at the end",
-              "A private message to followers",
+              "A private message to followers explaining the deal",
               "Nothing; it is not needed",
             ],
             answer_index: 0,
@@ -2060,7 +2060,7 @@ Mariama's fabric shop agrees to give two outfits to Adiza, a Tamale lifestyle cr
             options: [
               "Whether the post will get many shares",
               "Whether the claim is approved, including the FDA approval details for the advert",
-              "Whether a competitor makes the same claim",
+              "Whether a competitor makes the same claim, since that shows the claim is already accepted in Ghana",
               "Whether the caption has enough emojis",
             ],
             answer_index: 1,
@@ -2071,7 +2071,7 @@ Mariama's fabric shop agrees to give two outfits to Adiza, a Tamale lifestyle cr
             options: [
               "Because it protects everyone by making facts, labels and approvals clear",
               "Because platforms ask to see it",
-              "So the creator can copy it as the caption",
+              "So the creator can copy it word for word as the caption of the post, without adding anything",
               "To avoid paying the creator",
             ],
             answer_index: 0,
@@ -2142,7 +2142,7 @@ Being able to show results turns you from "someone who posts for us" into a prof
           {
             prompt: "Why does the lesson suggest choosing only three to five numbers?",
             options: [
-              "Platforms only show five numbers",
+              "Platforms only show five numbers on their insights screens, so there are no others to report",
               "Reporting everything confuses owners; a few numbers linked to the goal are clearer",
               "More numbers cost more data",
               "It is a legal requirement",
@@ -2164,7 +2164,7 @@ Being able to show results turns you from "someone who posts for us" into a prof
           {
             prompt: "What should you do after a weak month?",
             options: [
-              "Buy likes so the report looks better",
+              "Buy a few likes so the report looks better, then explain the real numbers next month",
               "Blame the platform without checking",
               "Skip the report",
               "Say so honestly, explain what you think happened and what you will try next",
@@ -2249,7 +2249,7 @@ Hawa's goal is more WhatsApp orders. Each Monday, Fuseini opens Meta Business Su
             options: [
               "Single posts are never counted",
               "One post can do well by luck, but several similar posts doing well is a signal",
-              "Platforms hide single post data",
+              "Platforms hide the data for single posts, so only patterns across many posts can be seen at all",
               "Patterns are required by law",
             ],
             answer_index: 1,
@@ -2269,7 +2269,7 @@ Hawa's goal is more WhatsApp orders. Each Monday, Fuseini opens Meta Business Su
           {
             prompt: "In the worked example, what did Fuseini change after reading the insights?",
             options: [
-              "He stopped posting on Facebook",
+              "He stopped posting on Facebook and moved everything to TikTok",
               "He deleted the product photos",
               "He bought followers",
               "He moved posts to the evening and added a weekly 'how to use' post",
@@ -2340,7 +2340,7 @@ Sumaila's cold store client in Damongo wants more restaurant orders. A post abou
           {
             prompt: "Which ad account should be used to boost a client's post?",
             options: [
-              "The page manager's personal ad account",
+              "The page manager's personal ad account, then send the client the bill",
               "The client's own ad account, with the manager given access",
               "A friend's ad account",
               "Any account that has money in it",
@@ -2373,7 +2373,7 @@ Sumaila's cold store client in Damongo wants more restaurant orders. A post abou
           {
             prompt: "A client wants regular ads, several audiences and testing. What does the lesson advise?",
             options: [
-              "Recommend learning proper ad management or hiring someone experienced",
+              "Keep boosting posts with larger amounts each week until the results improve on their own",
               "Keep boosting posts with larger amounts",
               "Stop all paid promotion forever",
               "Use your own card to save time",
@@ -2452,7 +2452,7 @@ Issahaku sends the Tamale school's head teacher a one page review for October. G
               "Platforms require it",
               "So the client knows where to look and can compare months easily",
               "To avoid writing anything new",
-              "Because changing layouts costs data",
+              "Because changing the layout each month costs the client extra data to download",
             ],
             answer_index: 1,
             explanation: "A consistent layout makes the review quick to read and compare.",
@@ -2545,7 +2545,7 @@ Never claim results you did not achieve, use other people's work as yours or exa
             prompt: "Which of these counts as real experience?",
             options: [
               "Running a church, school club or family business page well",
-              "Only paid jobs with the title 'social media manager'",
+              "Only paid jobs with the official title 'social media manager' at a company",
               "Following many business pages",
               "Watching videos about social media",
             ],
@@ -2631,7 +2631,7 @@ Abdul-Rahman's portfolio has three case studies. The mosque events page: goal, m
             options: [
               "That you can design pretty graphics",
               "That you can run pages: set goals, plan, handle community and get results",
-              "That you have many personal followers",
+              "That you have many personal followers, since employers judge you by your own page's size",
               "That you know many celebrities",
             ],
             answer_index: 1,
@@ -2653,7 +2653,7 @@ Abdul-Rahman's portfolio has three case studies. The mosque events page: goal, m
             options: [
               "Nothing; it is your work",
               "Pay the client",
-              "Remove the client's name and post it anyway",
+              "Remove the client's name and post it anyway, since that protects their privacy without asking them",
               "Ask permission, with or without the business name, and keep their reply",
             ],
             answer_index: 3,
@@ -2741,7 +2741,7 @@ Hawa's former page manager, Fuseini, applies for a social media officer role at 
           {
             prompt: "What should you do before writing your application?",
             options: [
-              "Send the same CV to every employer",
+              "Send the same CV and cover letter to every employer so you can apply to more roles in a day",
               "Read the advert closely and look at the organisation's current pages",
               "Post on their page to get noticed",
               "Ask for their page password",
@@ -2766,7 +2766,7 @@ Hawa's former page manager, Fuseini, applies for a social media officer role at 
               "A one week content plan for their page with pillars and post drafts",
               "Copies of another company's posts",
               "A list of passwords you have used",
-              "A long essay on the history of social media",
+              "A long essay on the history of social media and how it reached Ghana",
             ],
             answer_index: 0,
             explanation: "A specific one week plan shows you understand their business.",
@@ -2864,7 +2864,7 @@ Rashida manages three pages: a pharmacy, a school and a catering service. She wo
             options: [
               "Platforms require it",
               "So you always know where everything is when you open any client's folder",
-              "So clients can see each other's files",
+              "So clients can see each other's files and learn from what works for other businesses you manage",
               "To save data",
             ],
             answer_index: 1,
@@ -2887,7 +2887,7 @@ Rashida manages three pages: a pharmacy, a school and a catering service. She wo
               "Because a compromised device or account puts all of their pages at risk",
               "Because clients check your phone",
               "Because it makes posts load faster",
-              "Because platforms charge for insecure devices",
+              "Because platforms charge page managers extra for every insecure device they log in from",
             ],
             answer_index: 0,
             explanation: "You hold access to several businesses, so one breach can affect all of them.",
@@ -2895,7 +2895,7 @@ Rashida manages three pages: a pharmacy, a school and a catering service. She wo
           {
             prompt: "A client asks for daily live streams that were not in the agreed package. What did Rashida do?",
             options: [
-              "Agreed for free to keep them happy",
+              "Agreed to do it for free to keep them happy, then added it to the bill at the end of the month",
               "Ignored the request",
               "Explained it was outside the package and offered a price for extra sessions",
               "Dropped the client immediately",
@@ -2909,7 +2909,7 @@ Rashida manages three pages: a pharmacy, a school and a catering service. She wo
               "Client passwords",
               "Platforms, access levels, dates granted and removed, and who granted them",
               "Customers' phone numbers",
-              "Your personal social media posts",
+              "Your personal social media posts and the passwords for each client's account",
             ],
             answer_index: 1,
             explanation: "An access record tracks roles, not passwords, so access can be reviewed and removed cleanly.",
