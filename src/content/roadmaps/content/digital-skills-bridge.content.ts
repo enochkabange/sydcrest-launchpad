@@ -2384,6 +2384,7 @@ When she starts work as a customer service agent, checking a caller's order numb
         "Use the same file ideas on a phone or a computer",
         "Name the skills employers mention",
         "Gather the documents for a job application",
+        "Set up one folder for your job documents",
       ],
       explanation_md: `Applying for a job usually means attaching a CV and a photo of a certificate. Registering for a course means filling in an online form. Field jobs with NGOs often involve entering survey answers into a form on a phone or tablet all day. Office jobs involve looking things up quickly and correctly. All of these come down to three skills: handling files, filling in forms and finding information.
 
@@ -2411,7 +2412,62 @@ Adverts for office assistants, customer service agents and NGO field officers in
 
 ## How to work through this section
 
-Have a real document nearby, such as a certificate, a receipt or a school report, so you can practise scanning and sending it. If you can, also ask a friend to share a simple online form with you, or use one from a church, school or youth group.`,
+Have a real document nearby, such as a certificate, a receipt or a school report, so you can practise scanning and sending it. If you can, also ask a friend to share a simple online form with you, or use one from a church, school or youth group.
+
+## A simple system for your documents
+
+By the end of this section you will have one place for every document a job or course might ask for. The system is simple:
+
+1. **One folder.** Make a folder called "Job documents", in Google Drive or on your device, or both.
+2. **One clear name for each file.** Your name and the document type, such as "Hawa Issah CV".
+3. **One format.** Save documents as PDF where you can, because a PDF looks the same on every phone and computer.
+4. **One checklist.** Keep a short list of what is in the folder and what is still missing.
+
+When an advert arrives with a deadline, you open the folder, pick the files and send them. No searching through hundreds of WhatsApp pictures.
+
+## Three accuracy habits
+
+Files, forms and searches all reward the same careful habits:
+
+* **Check before you send.** Open the file you are about to attach and make sure it is the right one, and that it is clear.
+* **Copy exactly.** When you enter a name, number or date, copy it exactly as it is on the document. Do not guess or shorten.
+* **Keep proof.** Take a screenshot of a form's confirmation message or keep the email you sent. If something goes wrong, you can show what you did.
+
+## What you need for this section
+
+You do not need special software. A phone or computer with a web browser, a free Google account and a little data or WiFi are enough. Every tool used in these lessons is free.`,
+      workedExample_md: `**Hawa applies again, in twenty minutes**
+
+After the section, Hawa from Bawku sees a new advert for an NGO field assistant. It asks for a CV and a copy of her SHS certificate by email, and a short online form. This time she is ready.
+
+1. She opens her "Job documents" folder in Google Drive. Inside are "Hawa Issah CV" and "Hawa Issah SHS Certificate", both PDFs.
+2. She reads the advert twice and writes a small checklist: CV, certificate, form, deadline Friday.
+3. She opens the online form and scrolls to the end before typing anything. It needs her Ghana Card number, so she gets the card out.
+4. She fills in every question, checking her phone number digit by digit. A question marked with a red star is near the bottom, and this time she answers it.
+5. She submits the form and takes a screenshot of the confirmation message.
+6. She writes the email with a clear subject, attaches both PDFs, opens each attachment once to check it is the right file, and sends it.
+7. She ticks off her checklist.
+
+The task that once took two frustrating days now takes twenty minutes.`,
+      keyTerms: [
+        { term: "File", definition: "A single saved item on a device, such as a photo, a document or a PDF, with its own name." },
+        { term: "Folder", definition: "A container that holds files so you can keep related things together." },
+        { term: "PDF", definition: "A file type that looks the same on every phone and computer. Common for CVs and certificates." },
+        { term: "Online form", definition: "A web page with questions you answer and submit, such as a job application or survey." },
+        { term: "Attachment", definition: "A file sent along with an email or message." },
+      ],
+      commonMistakes: [
+        "Keeping important documents scattered among hundreds of WhatsApp photos",
+        "Attaching the wrong file because you did not open it to check",
+        "Starting a form without reading to the end, then missing a required question",
+        "Rushing for speed and making mistakes in names and numbers",
+      ],
+      selfCheck: [
+        "Which documents for a job application do you already have as clear digital copies?",
+        "Where will your Job documents folder live?",
+        "What do you check before you attach a file to an email?",
+        "Which of the three accuracy habits do you find hardest?",
+      ],
       practice_task_md: `**Goal:** Gather the documents you would need for a job application.
 
 **Steps**
@@ -2478,6 +2534,7 @@ Have a real document nearby, such as a certificate, a receipt or a school report
         "Find where files live and give them clear names",
         "Make a clear scan of a paper document",
         "Send files and keep a backup",
+        "Find a lost file and handle large files sensibly",
       ],
       explanation_md: `Every job application asks you to attach something: a CV, a certificate, an ID. Office and field jobs involve sending receipts, reports and photos of forms. Knowing where your files are, and how to send a clear copy, saves time and makes you look organised.
 
@@ -2516,9 +2573,64 @@ A **PDF** is a file type that looks the same on every phone and computer. It is 
 
 Phones and computers get lost, stolen or broken. Keep copies of important documents in Google Drive, which you get free with a Google account. Upload them on WiFi.
 
-## A worked example
+## Finding a file you lost
 
-Sumaila needed to send his certificate to an employer in Tamale. He placed it on a dark table near a window, used the Drive scan tool, renamed the file "Sumaila Mahama WASSCE Certificate", and saved it in a Drive folder called "Job documents". When the employer asked for it, he sent it as a Document on WhatsApp in under a minute.`,
+Everyone loses a file sometimes. Try these steps:
+
+1. Open the file manager, or File Explorer or Finder on a computer, and look at **Recent**. Files you opened lately appear there.
+2. Use the **search** box and type part of the name, or the type of file, such as "pdf" or "cv".
+3. Check **Downloads** and the **WhatsApp** documents folder.
+4. If someone sent it to you, search the chat or email for it and download it again.
+
+## Making folders and moving files
+
+Folders keep things tidy. In a phone's file manager, open the place you want the folder, look for a **New folder** or plus option, and name it. To move a file, long press it and choose **Move**, then pick the folder. On a computer, right click an empty space and choose **New folder**, then drag files into it.
+
+## When a file is too big to send
+
+Videos and high quality photos can be large. Email services and some forms limit how big an attachment can be, and big files also use a lot of data.
+
+* A scanned PDF is usually much smaller than a photo of the same page.
+* If you scanned several pages, check the file size in the file manager's details before you send it.
+* For very large files, upload them to Google Drive and share a link instead of the file itself.
+
+## Delete with care
+
+Delete only what you are sure you do not need. On many phones and computers, deleted files go to a **Bin** or **Trash** first, where you can restore them for a short time. Check there before you panic about a missing file.`,
+      workedExample_md: `**Sumaila scans and sends his certificate**
+
+Sumaila lives in Tamale. An employer calls him for an interview and asks him to send a copy of his WASSCE certificate on WhatsApp before the day.
+
+1. He places the certificate on a dark, flat table near a window, in morning daylight.
+2. He opens the Google Drive app and taps the **Scan** button. He holds his phone straight above the paper so all four corners show.
+3. He takes the picture. The app finds the edges and crops it. The text is sharp, so he keeps it. (If it were blurry, he would retake it.)
+4. He saves it as a PDF and names it "Sumaila Mahama WASSCE Certificate".
+5. In Drive he makes a folder called "Job documents" and moves the file into it.
+6. He checks the file size in the details. It is small, so it will send quickly.
+7. In WhatsApp he opens the employer's chat, taps the attach button, chooses **Document**, finds the file and sends it with the message: "Good morning. Please find my WASSCE certificate attached. Sumaila Mahama."
+
+The employer replies that the copy is very clear. Because it is in Drive, Sumaila can send it again from any phone or computer.`,
+      keyTerms: [
+        { term: "File manager", definition: "The app on a phone for browsing files and folders. It may be called Files, My Files or File Manager." },
+        { term: "File Explorer and Finder", definition: "The programs for browsing files on a Windows computer and a Mac." },
+        { term: "Downloads folder", definition: "The folder where files you download from a browser or email usually go." },
+        { term: "Scan", definition: "A flat, cropped, clear copy of a paper document, often saved as a PDF." },
+        { term: "Backup", definition: "A copy of your files kept somewhere else, such as Google Drive, in case your device is lost." },
+        { term: "Bin or Trash", definition: "Where deleted files often go first, so you can restore them for a short time." },
+      ],
+      commonMistakes: [
+        "Sending a dark, crooked photo of a certificate instead of a clear scan",
+        "Leaving files with camera names like IMG_2025 that tell nobody anything",
+        "Sending a document through the gallery so it arrives blurry, instead of as a Document",
+        "Keeping the only copy of important documents on one phone",
+        "Attaching a huge video or photo when a link or a PDF would do",
+      ],
+      selfCheck: [
+        "Can you find your Downloads folder on each device you use?",
+        "What would you name the scan of your highest certificate?",
+        "Where is your backup of important documents kept today?",
+        "How would you send a file that is too large to attach?",
+      ],
       practice_task_md: `**Goal:** Create a neat set of job documents.
 
 **Steps**
@@ -2586,6 +2698,7 @@ Sumaila needed to send his certificate to an employer in Tamale. He placed it on
         "Name the parts of a form",
         "Fill in a form accurately",
         "Explain how forms are used in field work",
+        "Write long answers safely and fix a mistake after submitting",
       ],
       explanation_md: `Online forms are everywhere: job applications, course registrations, scholarship applications, NGO surveys and customer orders. Field officer and enumerator jobs with NGOs in northern Ghana often involve collecting survey answers on a phone or tablet using apps such as Google Forms or Kobo Collect. Office and customer service jobs involve entering customer details into systems. In every case, accuracy is the skill employers want.
 
@@ -2615,11 +2728,60 @@ A small red star (an asterisk) next to a question usually means it is **required
 
 Survey apps like Kobo Collect let field staff fill in forms even without network, then send them later when there is a connection. The rules are the same: ask each question exactly as written, record the answer exactly as given, and check before you send it. A survey with wrong data can lead an NGO to the wrong decisions about a community.
 
-## A worked example
+## Long answers: write them first
 
-Alhassan is applying for a youth skills programme through a Google Form. He reads the whole form first and sees it needs a scan of his certificate, so he prepares it. He fills in his details carefully, notices he typed his phone number with a missing digit and fixes it. The form will not submit because he missed a required question marked with a red star. He goes back, answers it, submits, and takes a screenshot of the confirmation page.
+Some forms ask for a paragraph, such as "Why do you want to join this programme?" Many forms do not save your answers if the page closes or the network drops. Write long answers first in a notes app or a document, check them, then copy and paste them into the form. If anything goes wrong, your writing is safe.
+
+## Phone or computer
+
+Forms work on both. On a phone, the keyboard changes for different boxes: a number pad for phone numbers, an @ key for email. Turn your phone sideways if the boxes are small. On a computer, press the **Tab** key to jump to the next box, which is faster than clicking each one.
+
+Browsers on both can **autofill** your name, email and phone number. That saves time, but check what it fills in. It may use an old number or the wrong email.
+
+## If you notice a mistake after submitting
+
+Do not submit the whole form again, because that can create a confusing second entry. Some forms show a link such as **Edit your response** on the confirmation page or in a confirmation email. If not, contact the organiser by email or phone, say exactly what was wrong and give the correct detail.
+
+## Making your own form
+
+Building a simple form is a useful skill for any small business or group. In Google Forms, which is free with a Google account, you add a question, choose its type, and switch on **Required** for answers you must have. The answers collect in one place, and can be shown as a spreadsheet. A chop bar could use one for orders, and a youth group for registrations.
 
 Careful form filling is a small skill, but it shows exactly what employers mean by "attention to detail".`,
+      workedExample_md: `**Alhassan applies to a youth skills programme**
+
+Alhassan lives in Savelugu. A youth skills programme opens applications through a Google Form, and the deadline is in three days.
+
+1. He opens the form and scrolls all the way to the end before typing. He sees it needs a scan of his certificate and a short paragraph about his goals.
+2. He finds his certificate scan in his Job documents folder, so it is ready.
+3. In his notes app he writes the paragraph about his goals, reads it twice and fixes two spelling mistakes.
+4. He goes back to the form and fills in his name, email and phone number. Reading them back, he notices he typed his phone number with a missing digit and fixes it.
+5. He pastes his paragraph into the long answer box and uploads the certificate.
+6. He taps **Submit**. The form will not go through. A required question, marked with a red star, is still empty. He answers it.
+7. He reviews each page using Back, then submits.
+8. A confirmation message appears. He takes a screenshot and saves it in his Job documents folder.
+
+The next week the programme calls him on the number he checked so carefully.`,
+      keyTerms: [
+        { term: "Required question", definition: "A question you must answer before a form will submit, often marked with a red star." },
+        { term: "Dropdown", definition: "A box you tap or click to choose one answer from a list." },
+        { term: "Checkbox", definition: "A small square you tick. You can usually tick more than one." },
+        { term: "Confirmation message", definition: "The message a form shows after it is submitted. A screenshot of it is your proof." },
+        { term: "Autofill", definition: "A browser feature that fills in saved details such as your name and phone number." },
+        { term: "Survey app", definition: "An app such as Kobo Collect used to fill in survey forms in the field, even offline." },
+      ],
+      commonMistakes: [
+        "Starting to type before reading the whole form",
+        "Mistyping one digit of a phone number, so nobody can reach you",
+        "Writing a long answer straight into the form and losing it when the network drops",
+        "Submitting a second time to fix a mistake, instead of editing or contacting the organiser",
+        "Trusting autofill without checking it",
+      ],
+      selfCheck: [
+        "What do you check before you press Submit on any form?",
+        "Where would you write a long answer before pasting it into a form?",
+        "What would you do if you spotted a wrong phone number after submitting?",
+        "How could a small business you know use a simple form?",
+      ],
       practice_task_md: `**Goal:** Fill in a form accurately, then build one of your own.
 
 **Steps**
@@ -2687,6 +2849,7 @@ Careful form filling is a small skill, but it shows exactly what employers mean 
         "Choose good search words",
         "Judge whether to trust a page",
         "Find a reliable answer to a real question",
+        "Find words on a long page and check AI answers",
       ],
       explanation_md: `When an office assistant needs a supplier's phone number, when a customer service agent needs to check a policy, or when you are stuck on a lesson, the skill that helps is the same: searching well. Employers value people who can find answers on their own. It is also how you will keep learning long after any course ends.
 
@@ -2712,15 +2875,64 @@ Anyone can put anything on the internet. Before you trust or share information, 
 
 Be careful with forwarded WhatsApp messages. If a message says "forward to everyone", check it before you pass it on.
 
-## A worked example
+## Finding words on a long page
 
-Wumpini's manager asks her to find out how to register a small business name. She first types "how do I register my business I am in Tamale". The results are messy. She tries "register business name Ghana" and then adds site:gov.gh. Now she finds the official government registration page. She checks the page date, then compares with a well known Ghanaian news article. She sends her manager the official link and a two line summary.
+Sometimes the right page is very long. Instead of scrolling, search inside it.
+
+* **On a computer:** press **Ctrl and F**, or Command and F on a Mac, and type the word. The browser jumps to each place it appears.
+* **On a phone:** open the browser's menu, often three dots, and choose **Find in page**.
+
+## Answers from AI chat tools
+
+Search engines and apps now often show answers written by AI, and many people ask AI chat tools directly. These can be helpful for explaining an idea in simple words. But they can also be wrong while sounding very sure, and they may not know about recent changes. For anything that matters, such as fees, deadlines, rules or health, find the official page and check the answer there.
+
+## Saving and sharing what you find
+
+When you find a good page, save it so you do not have to search again. In a browser, tap or click the star or **Bookmark** option. To share it, copy the address from the top of the browser, or use the share button, and send it with a short summary. A link plus two lines is more helpful to a manager than a long forwarded message.
+
+## Searching for jobs and courses
+
+The same skills help you find opportunities. Combine a job title, a place and a type: "office assistant Tamale", "free digital skills course Ghana" or "NGO field assistant northern region". Then judge each result with the five questions above. Look for the employer's own website or a known job site, and remember the rule from the scams lesson: a real job never asks you to pay a fee. When you find a good job site, bookmark it and check it once or twice a week.
 
 ## Searching while you learn
 
 When a lesson uses a word you do not know, search "what is" followed by the word. When an error appears on your phone or computer, search the exact error message in quotation marks. These two habits alone will solve many problems.
 
 DMP week 3 goes deeper into judging online sources. This lesson gives you the everyday habits first.`,
+      workedExample_md: `**Wumpini finds out how to register a business name**
+
+Wumpini works as an office assistant in Tamale. Her manager asks her to find out how to register a small business name.
+
+1. Her first search is a full sentence: "how do I register my business I am in Tamale". The results are a mix of adverts, old forum posts and agents offering to do it for a fee.
+2. She cuts it to key words: "register business name Ghana". The results are better.
+3. She adds site:gov.gh before the words. Now the results come only from Ghana government websites, and she finds the official registration page.
+4. The page is long, so she presses Ctrl and F on the office computer and types "fee" to jump to the part about costs.
+5. She checks when the page was last updated, then opens a well known Ghanaian news article on the same topic to see whether it agrees.
+6. She notices an AI summary at the top of her first search gave a different step. She trusts the official page instead.
+7. She bookmarks the official page and sends her manager the link with two lines: what the process is, and where to start.
+
+Her manager has a reliable answer in fifteen minutes, from the right source.`,
+      keyTerms: [
+        { term: "Search engine", definition: "A website such as Google that finds pages matching the words you type." },
+        { term: "Key words", definition: "The few most important words in your question, used instead of a full sentence." },
+        { term: "Quotation marks", definition: "Putting words inside quotation marks to search for that exact phrase." },
+        { term: "site:", definition: "Typed before your words to search only one website or type of site, such as site:gov.gh." },
+        { term: "Source", definition: "Where a piece of information comes from, such as an official website or a news outlet." },
+        { term: "Bookmark", definition: "A saved link in your browser so you can open a page again quickly." },
+      ],
+      commonMistakes: [
+        "Typing a long story instead of a few key words",
+        "Trusting the first result just because it appears at the top",
+        "Believing an AI answer about fees or deadlines without checking the official page",
+        "Forwarding a WhatsApp message that says forward to everyone without checking it",
+        "Using an old page when prices, rules or app menus may have changed",
+      ],
+      selfCheck: [
+        "What key words would you use to search for your nearest public library's opening hours?",
+        "Which five questions help you decide whether to trust a page?",
+        "When would you add site:gov.gh to a search?",
+        "How do you find one word on a long page on the device you use most?",
+      ],
       practice_task_md: `**Goal:** Find a reliable answer to a real question.
 
 **Steps**
