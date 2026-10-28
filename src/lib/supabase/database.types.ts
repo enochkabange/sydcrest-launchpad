@@ -1560,6 +1560,93 @@ export type Database = {
           },
         ]
       }
+      external_credentials: {
+        Row: {
+          created_at: string
+          credential_id: string | null
+          expires_on: string | null
+          file_path: string | null
+          hidden_at: string | null
+          hidden_by: string | null
+          id: string
+          issued_on: string | null
+          issuer_name: string
+          ob_document: Json | null
+          ob_version: string | null
+          profile_id: string
+          source: string
+          title: string
+          updated_at: string
+          verification: string
+          verification_method: string | null
+          verification_note: string | null
+          verification_url: string | null
+          verified_at: string | null
+          visibility: string
+        }
+        Insert: {
+          created_at?: string
+          credential_id?: string | null
+          expires_on?: string | null
+          file_path?: string | null
+          hidden_at?: string | null
+          hidden_by?: string | null
+          id?: string
+          issued_on?: string | null
+          issuer_name: string
+          ob_document?: Json | null
+          ob_version?: string | null
+          profile_id?: string
+          source?: string
+          title: string
+          updated_at?: string
+          verification?: string
+          verification_method?: string | null
+          verification_note?: string | null
+          verification_url?: string | null
+          verified_at?: string | null
+          visibility?: string
+        }
+        Update: {
+          created_at?: string
+          credential_id?: string | null
+          expires_on?: string | null
+          file_path?: string | null
+          hidden_at?: string | null
+          hidden_by?: string | null
+          id?: string
+          issued_on?: string | null
+          issuer_name?: string
+          ob_document?: Json | null
+          ob_version?: string | null
+          profile_id?: string
+          source?: string
+          title?: string
+          updated_at?: string
+          verification?: string
+          verification_method?: string | null
+          verification_note?: string | null
+          verification_url?: string | null
+          verified_at?: string | null
+          visibility?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "external_credentials_hidden_by_fkey"
+            columns: ["hidden_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "external_credentials_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       follows: {
         Row: {
           created_at: string
@@ -3858,6 +3945,7 @@ export type Database = {
           avatar_url: string | null
           certificates: Json | null
           display_name: string | null
+          external_credentials: Json | null
           headline: string | null
           open_to_remote: boolean | null
           portfolio_url: string | null
@@ -3959,6 +4047,10 @@ export type Database = {
           target_type: string
           updated_at: string
         }[]
+      }
+      admin_set_credential_hidden: {
+        Args: { p_credential_id: string; p_hidden: boolean }
+        Returns: undefined
       }
       admin_set_expert_flags: {
         Args: {
@@ -4488,6 +4580,17 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      record_credential_import: {
+        Args: {
+          p_credential_id: string
+          p_document: Json
+          p_method: string
+          p_note: string
+          p_ob_version: string
+          p_verified: boolean
+        }
+        Returns: undefined
+      }
       record_sign_in_failure: {
         Args: { p_address_key: string; p_pair_key: string }
         Returns: undefined
@@ -4748,6 +4851,7 @@ export type Database = {
           verified_skill_id: string
         }[]
       }
+      take_credential_import_limit: { Args: never; Returns: boolean }
       take_form_rate_limit: {
         Args: { p_bucket: string; p_key: string }
         Returns: boolean
