@@ -192,13 +192,11 @@ Many Ghanaian journeys mix both worlds. A customer in Accra might see a salon on
 When you take on any marketing job, sketch the journey first. It tells you where to spend your effort and stops you wasting the client's money on the wrong stage.`,
       workedExample_md: `Abdul-Rahman runs a phone accessories kiosk in Tamale and asks why sales are slow. You map his journey with him in a shared Google Sheet.
 
-| Stage | What happens today | Rough count this week |
-| --- | --- | --- |
-| Aware | Posts on WhatsApp Status, kiosk on a busy road | About 120 Status views |
-| Interested | People send "How much?" | 35 questions |
-| Decide | He replies hours later, sometimes the next day | 6 reply back |
-| Buy | Customers pay by MoMo without trouble | 5 sales |
-| Return | No follow up after a sale | Unknown |
+* **Aware:** posts on WhatsApp Status and a kiosk on a busy road. About 120 Status views this week.
+* **Interested:** people send "How much?". 35 questions.
+* **Decide:** he replies hours later, sometimes the next day. 6 reply back.
+* **Buy:** customers pay by MoMo without trouble. 5 sales.
+* **Return:** no follow up after a sale. Unknown.
 
 The biggest drop is clear: 35 people asked, but only 6 came back after his slow replies. You call two of the people who never replied. Both say they bought elsewhere because another seller answered first.
 
@@ -476,11 +474,14 @@ The later lessons go deeper into each channel. For now, the skill is choosing: f
 2. **Where are they?** Members are in the church WhatsApp group. Young people from other churches use TikTok and Facebook. Few check email.
 3. **What can be kept up?** Issahaku and one friend, about three hours a week each.
 4. **Budget:** small, and word of mouth is strong.
-5. **Jobs for each channel:**
-   * WhatsApp group and Status (owned): reminders and the registration link for members.
-   * Facebook event (owned): date, venue, map and speakers, easy to share.
-   * TikTok clips from last year's conference (owned, hoping for earned shares): discovery by young people from other churches.
-6. **Not doing:** email, because members do not read it; paid ads, because the budget is small and sharing is strong. If registrations are low two weeks before, they will review this choice.
+
+Jobs for each channel:
+
+* WhatsApp group and Status (owned): reminders and the registration link for members.
+* Facebook event (owned): date, venue, map and speakers, easy to share.
+* TikTok clips from last year's conference (owned, hoping for earned shares): discovery by young people from other churches.
+
+**Not doing:** email, because members do not read it; paid ads, because the budget is small and sharing is strong. If registrations are low two weeks before, they will review this choice.
 
 Every channel now points to the same registration link and the same date, venue and contact number. Three channels, each with a clear job, kept up by two people.`,
       keyTerms: [
@@ -611,13 +612,11 @@ Never use a customer's photo, name or words without asking. Never invent reviews
 By the end of this section you will be able to produce a week of useful, honest content for a small business and explain why each piece exists.`,
       workedExample_md: `Amina manages content for a small cosmetics shop in Tamale. On Sunday evening she plans the week in a notes app.
 
-| Day | Piece | Job |
-| --- | --- | --- |
-| Monday | Photo of the new shea body cream with price | Show |
-| Tuesday | Three line tip on caring for skin in the harmattan | Help |
-| Wednesday | Short clip of a regular customer, Hawa, who agreed to be filmed saying why she buys | Prove |
-| Thursday | Graphic with delivery days and areas | Show |
-| Friday | Weekend offer with a clear "Send ORDER on WhatsApp" line | Ask |
+* **Monday (show):** photo of the new shea body cream with price.
+* **Tuesday (help):** three line tip on caring for skin in the harmattan.
+* **Wednesday (prove):** short clip of a regular customer, Hawa, who agreed to be filmed saying why she buys.
+* **Thursday (show):** graphic with delivery days and areas.
+* **Friday (ask):** weekend offer with a clear "Send ORDER on WhatsApp" line.
 
 For each piece she follows the workflow. For Wednesday, she plans the message ("real customers trust us"), gathers the clip in daylight outside the shop, trims it to 15 seconds, checks Hawa is happy with it, posts at lunchtime when customers are on their phones, and later notes that it got the most replies of the week.
 
@@ -1196,15 +1195,13 @@ When you pitch a plan to a client or a mentor, three short slides are often enou
 Keep text short on the slides and talk through the reasons. The campaign planning lesson shows how to grow this into a full campaign plan.`,
       workedExample_md: `Wumpini helps an Accra salon, Grace Beauty Lounge, get more weekday bookings. The goal: fill Tuesday to Thursday slots. The salon can manage four posts a week on Instagram and daily WhatsApp Status.
 
-She builds a two week sheet. Week one looks like this:
+She builds a two week sheet with columns for date, channel, job, idea, format and status. Week one looks like this:
 
-| Date | Channel | Job | Idea | Format | Status |
-| --- | --- | --- | --- | --- | --- |
-| Mon | Instagram | Show | Knotless braids finished look | Photo | Approved |
-| Tue | Status | Ask | "Weekday slots open, book on WhatsApp" | Graphic | Drafted |
-| Wed | Instagram | Help | How to sleep without ruining braids | Short video | Idea |
-| Thu | Status | Prove | Client quote, shared with permission | Graphic | Drafted |
-| Fri | Instagram | Show | Behind the scenes, Saturday prep | Short video | Idea |
+* **Monday, Instagram, show:** knotless braids finished look. Photo. Approved.
+* **Tuesday, Status, ask:** "Weekday slots open, book on WhatsApp". Graphic. Drafted.
+* **Wednesday, Instagram, help:** how to sleep without ruining braids. Short video. Idea.
+* **Thursday, Status, prove:** client quote, shared with permission. Graphic. Drafted.
+* **Friday, Instagram, show:** behind the scenes, Saturday prep. Short video. Idea.
 
 Week two adds month end, so she plans a payday reminder on the Friday and avoids a big offer just before it.
 
@@ -2341,16 +2338,18 @@ You can sketch this on paper or as boxes on a slide before anyone builds it.
 
 1. **Keywords.** Customers say they search "Bolga baskets" and "baskets Bolgatanga". Autocomplete also suggests "Bolga basket wholesale". You choose "Bolgatanga baskets" as the main phrase for the homepage, and note "wholesale" for a later page.
 2. **Intent.** Most homepage visitors want to see and buy, so the page focuses on products and ordering.
-3. **Layout on the slide:**
-   * Header: group name and menu.
-   * Heading: "Handwoven Bolgatanga baskets from Mariama Weavers".
-   * Line and button: "Strong, colourful, made by our women's group. Order on WhatsApp."
-   * Image box: weavers at work.
-   * Product grid: market basket, shopping basket, decorative bowl, each with a price range.
-   * Proof: two customer comments shared with permission.
-   * About: three sentences on the group.
-   * Contact: WhatsApp, location near the market, hours.
-4. **Title and description** written for the page: "Handwoven Bolgatanga Baskets | Mariama Weavers" and a one sentence summary.
+3. **Layout on the slide,** from top to bottom:
+
+* Header: group name and menu.
+* Heading: "Handwoven Bolgatanga baskets from Mariama Weavers".
+* Line and button: "Strong, colourful, made by our women's group. Order on WhatsApp."
+* Image box: weavers at work.
+* Product grid: market basket, shopping basket, decorative bowl, each with a price range.
+* Proof: two customer comments shared with permission.
+* About: three sentences on the group.
+* Contact: WhatsApp, location near the market, hours.
+
+**Title and description** written for the page: "Handwoven Bolgatanga Baskets | Mariama Weavers" and a one sentence summary.
 
 The group can now hand this slide to whoever builds the site.`,
       keyTerms: [
@@ -2647,10 +2646,8 @@ Ads must follow Meta's advertising standards. Some topics, such as credit, jobs,
 
 After four days:
 
-| Version | Messages | Cost per message |
-| --- | --- | --- |
-| Photo | 9 | higher |
-| Video | 21 | about half the photo's |
+* **Photo:** 9 messages, at a higher cost per message.
+* **Video:** 21 messages, at about half the photo's cost per message.
 
 The numbers are small, so he waits two more days. The pattern holds. He pauses the photo and moves its budget to the video. At the end he shows Hawa the spend, the messages and the sales from her sheet, so she can see what the money achieved.`,
       keyTerms: [
@@ -2781,13 +2778,17 @@ You can check campaigns in the Google Ads app on a phone, but building and editi
 
 1. **Searches customers type:** "event centre Tamale", "wedding venue Tamale", "conference hall Tamale".
 2. **Keywords:** she groups wedding phrases together, and notes that "free" and "jobs" should be blocked so the ad does not show for people looking for free halls or work.
-3. **Headlines:**
-   * "Wedding Venue in Tamale"
-   * "Seats 300, Parking on Site"
-   * "Book a Viewing Today"
-4. **Description:** "Air conditioned hall near the city centre. See photos and prices, then book a viewing on WhatsApp."
-5. **Landing page check:** the existing page only had one dark photo and no prices. Before launching, Sumaila adds bright photos, capacity, a price range and a WhatsApp button.
-6. **Budget:** a small average daily budget agreed in writing, with an end date.
+3. **Headlines:** three short ones.
+
+* "Wedding Venue in Tamale"
+* "Seats 300, Parking on Site"
+* "Book a Viewing Today"
+
+**Description:** "Air conditioned hall near the city centre. See photos and prices, then book a viewing on WhatsApp."
+
+**Landing page check:** the existing page only had one dark photo and no prices. Before launching, Sumaila adds bright photos, capacity, a price range and a WhatsApp button.
+
+**Budget:** a small average daily budget agreed in writing, with an end date.
 
 After two weeks, Amina looks at which searches triggered the ad and which led to WhatsApp chats. Wedding searches bring real bookings; "conference" searches bring few. She suggests putting more of the budget behind wedding phrases next month.`,
       keyTerms: [
