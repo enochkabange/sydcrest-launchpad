@@ -615,7 +615,7 @@ Many models used by Ghanaian companies output a probability rather than a plain 
 
 ## Probability in one line
 
-A probability is a number from 0 to 1 that says how likely something is. 0 means it never happens, 1 means it always happens, and 0.25 means it happens about one time in four over many similar cases. A single prediction of 0.9 can still turn out wrong. It only promises that, across many cases given 0.9, about nine in ten should happen.
+A probability is a number from 0 to 1 that says how likely something is. 0 means it never happens, 1 means it always happens, and 0.25 means it happens about one time in four over many similar cases. A single prediction of 0.9 can still turn out wrong. It only promises that, across many cases given 0.9, about nine in ten should happen, and only if the model is well **calibrated**, meaning its numbers have been checked against real outcomes.
 
 ## Conditional probability
 
@@ -922,7 +922,7 @@ You do not need an expensive computer to learn machine learning. Free hosted not
 
 A hosted notebook runs on a computer in a data centre. Your browser shows the cells and sends your code there; the results come back to your screen. Well known free examples are **Google Colab** and **Kaggle Notebooks**. Both use the same notebook format as Jupyter, so a notebook from one usually opens in the others.
 
-These are named as examples, not recommendations. Free tiers and their limits change over time, so always read the current terms on each service's official pages, such as the Colab FAQ and Kaggle's notebook documentation.
+These are named as examples, not recommendations. Free tiers and their limits change over time, so always read the current terms on each service's official pages, such as the [Colab FAQ](https://research.google.com/colaboratory/faq.html) and [Kaggle's notebook documentation](https://www.kaggle.com/docs/notebooks).
 
 ## The limits you must plan for
 
@@ -1034,7 +1034,7 @@ Every project in this section follows the same steps:
 
 ## A worked example in words
 
-Mariama works for a savings group network in the Upper East Region. Leaders want to know which members might fall behind on loan repayments, so they can offer support early. She frames it as classification: will this member miss two or more repayments in the next three months? She prepares features such as savings history and past repayment record, holds back a portion of the records, and compares a simple model with a baseline that predicts nobody will fall behind. Her model catches more members who need help than the baseline does, so she writes up its accuracy and its limits, including that new members with short histories get less reliable predictions.
+Mariama works for a savings group network in the Upper East Region. Leaders want to know which members might fall behind on loan repayments, so they can offer support early. She frames it as classification: will this member miss two or more repayments in the next three months? She prepares features such as savings history and past repayment record, holds back a portion of the records, and compares a simple model with a baseline that predicts nobody will fall behind. Her model catches more members who need help than the baseline does, so she writes up how many it catches, how many it wrongly flags, and its limits, including that new members with short histories get less reliable predictions.
 
 ## What this section covers
 
@@ -1239,7 +1239,7 @@ Anyone can train a model that looks brilliant on the data it learned from. The r
 
 ## Overfitting
 
-**Overfitting** is when a model memorises its training data, including its noise and accidents, instead of learning the general pattern. Think of a student who memorises last year's exam answers word for word. They score full marks on that paper and fail a new one. An overfit model does the same. The opposite problem, **underfitting**, is a model too simple to capture the pattern at all.
+**Overfitting** is when a model memorises its training data, including its noise and accidents, instead of learning the general pattern. Think of a student who memorises last year's exam answers word for word. They score full marks on that paper and fail a new one. An overfit model does the same. The opposite problem, **underfitting**, is a model too simple to capture the pattern at all. In books and interviews you will also hear these called high **variance** (overfitting) and high **bias** (underfitting). This bias is a different idea from the bias number inside a model and from unfair bias.
 
 The signal of overfitting is a big gap: excellent scores on training data, much worse scores on test data.
 
@@ -1253,7 +1253,7 @@ If you keep checking the test set and adjusting, you slowly tune the model to it
 
 ## Cross validation
 
-With small datasets, one split can be lucky or unlucky. **Cross validation** splits the data into, say, five parts, trains five times with a different part held out each time, and averages the scores:
+With small datasets, one split can be lucky or unlucky. **Cross validation** splits the data into, say, five parts, trains five times with a different part held out each time, and averages the scores. Here \`y\` is a yes or no label:
 
 \`\`\`python
 from sklearn.model_selection import cross_val_score
@@ -2146,7 +2146,7 @@ Simple checks like this catch many problems. For subtler qualities, such as tone
 
 * **Never put an API key in your code** or in a public repository. Load it from an environment variable or a secrets manager. If a key leaks, revoke it at once.
 * **Set spending limits** in the provider's dashboard and log how many requests you make.
-* **Send the least personal data possible.** Remove names, phone numbers and Ghana Card numbers before text leaves your system. Sending personal data to a service abroad needs care under the Data Protection Act, 2012 (Act 843), so check your organisation's data protection rules first.
+* **Send the least personal data possible.** Remove names, phone numbers and Ghana Card numbers before text leaves your system. Under the Data Protection Act, 2012 (Act 843) your organisation stays responsible for personal data that a provider processes for it, including keeping it secure, so check your organisation's data protection rules first.
 * **Read the provider's data terms** to know whether your inputs are stored or used for training.
 
 ## A worked example
@@ -2353,7 +2353,7 @@ Fuseini serves a yield model for a cooperative's field officers. After one seaso
     "responsible-ai": {
       explanation_md: `## Why this matters
 
-Models make or shape decisions about people: who gets a loan, which patients get a follow up call, which job applications a recruiter reads first. A model can be accurate on average and still fail one group badly. Ghanaian AI adverts name fairness, explainability and bias mitigation as skills, and every model that touches personal data in Ghana falls under the Data Protection Act, 2012 (Act 843). Responsible AI is part of the job, not an extra.
+Models make or shape decisions about people: who gets a loan, which patients get a follow up call, which job applications a recruiter reads first. A model can be accurate on average and still fail one group badly. Ghanaian AI adverts name fairness, explainability and bias mitigation as skills, and every model that touches personal data in Ghana falls under the Data Protection Act, 2012 (Act 843).
 
 ## Where unfairness comes from
 
@@ -2364,7 +2364,7 @@ Models make or shape decisions about people: who gets a loan, which patients get
 
 ## Check results across groups
 
-Never report one overall score and stop. Split your test results by group (region, gender, age band, language) and compare the error rates. Suppose an invented example loan model has good overall accuracy, but when Sumaila breaks it down, it wrongly rejects good borrowers in the Upper West Region far more often than in Greater Accra. The average hid the problem. Fixes might include collecting more representative data, removing proxy features, choosing different thresholds, or deciding the model should not be used for that group at all.
+Never report one overall score and stop. Split your test results by group (region, gender, age band, language) and compare the error rates. Suppose an invented example loan model has good overall accuracy, but when Sumaila breaks it down, it wrongly rejects good borrowers in the Upper West Region far more often than in Greater Accra. Fixes might include collecting more representative data, removing proxy features, choosing different thresholds, or deciding the model should not be used for that group at all.
 
 ## Explain your model's limits
 
@@ -2375,16 +2375,17 @@ People affected by a decision deserve a clear explanation. Prefer simpler models
 Act 843 governs how personal data is collected, used and kept, and the Data Protection Commission enforces it. In practice for machine learning work:
 
 * **Collect only what you need** for a stated purpose, and do not reuse data for an unrelated purpose without a lawful basis.
-* **Treat health data with extra care.** The Act classes health information as special personal data, which needs explicit consent or another narrow legal basis. Use aggregated or anonymised data wherever possible.
+* **Treat health data with extra care.** The Act classes health information as special personal data, which may only be processed with the person's consent or under a few narrow conditions the Act sets out. Use aggregated or anonymised data wherever possible.
 * **Keep data accurate and secure.** Limit who can access it, never share raw files on WhatsApp or personal drives, and delete what you no longer need.
 * **Respect people's rights**, such as asking what data you hold about them and correcting it.
-* **Organisations that process personal data must register** with the Data Protection Commission.
+* **Plan for automated decisions.** People have rights when a decision that significantly affects them is made only by automatic processing, such as being told and asking for it to be reconsidered, with some exceptions. Keeping a person in the loop is good practice anyway.
+* **Data controllers must register** with the Data Protection Commission.
 
-Check the Commission's official website for current guidance; this lesson is an introduction, not legal advice.
+The law is under review, so check the Commission's official website for current guidance; this lesson is an introduction, not legal advice.
 
 ## A worked example
 
-Hawa builds a model to predict which pregnant women may miss antenatal visits at clinics in Northern Region. She works only with anonymised records the health service approved, checks error rates by district and age group, finds younger women are missed more often, adds features that help, and writes a model card stating the model supports nurses' judgement and never replaces it.`,
+Hawa builds a model to predict which pregnant women may miss antenatal visits at clinics in Northern Region. She works only with anonymised records the health service approved, checks error rates by district and age group, finds younger women are missed more often, and writes a model card stating the model supports nurses' judgement and never replaces it.`,
       practice_task_md: `**Goal:** run a simple fairness and privacy check.
 
 1. In a free notebook, create an invented example loan dataset of 400 rows with a \`region\` column (four regions), a few features and a \`repaid\` label. Make one region smaller than the others. Label it as example data.
@@ -2427,7 +2428,7 @@ Hawa builds a model to predict which pregnant women may miss antenatal visits at
               "As special personal data needing extra care",
             ],
             answer_index: 3,
-            explanation: "Health data needs explicit consent or another narrow legal basis, and anonymised or aggregated data should be used where possible.",
+            explanation: "Health data may only be processed with consent or under a few narrow conditions, and anonymised or aggregated data should be used where possible.",
           },
           {
             prompt: "Which body enforces Act 843 in Ghana?",

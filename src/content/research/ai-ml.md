@@ -48,6 +48,7 @@ Analyst track first.
 | D2 | Kaggle: Efficient GPU usage tips and notebooks docs (weekly accelerator quota; page is script rendered, so no numbers are stated in lessons) | https://www.kaggle.com/docs/efficient-gpu-usage | 2026-10-28 | Official documentation and forum search results, read for facts only |
 | D3 | Ghana Data Protection Commission | https://dpc.gov.gh/ | 2026-10-28 | Regulator site, linked as further reading |
 | D4 | Act 843 secondary summaries (Wikipedia "Data Protection Act, 2012"; DLA Piper Data Protection in Ghana) used to confirm: the Act's name and year, the Commission as enforcer, registration of processors, health data as special personal data | https://en.wikipedia.org/wiki/Data_Protection_Act,_2012 and https://www.dlapiperdataprotection.com/?t=law&c=GH | 2026-10-28 | Secondary sources; section numbers conflict between sources, so lessons cite none |
+| D6 | Data Protection Act, 2012 (Act 843), official text hosted by the Data Protection Commission (reviewer check) | https://dpc.gov.gh/wp-content/uploads/2025/05/data-protection-act-2012-act-843.pdf | 2026-10-28 | Statute, read for facts only; confirms the Commission's compliance role, registration of data controllers, special personal data (health) processed only with consent or narrow necessity conditions, access and correction rights, processor contracts and security, and rights on solely automated decisions. The same documents page also hosts a draft Data Protection Bill, so lessons say the law is under review |
 | D5 | scikit learn, pandas, NumPy, PyTorch, FastAPI official docs (API names only) | https://scikit-learn.org/stable/ , https://pandas.pydata.org/docs/ , https://pytorch.org/docs/stable/ , https://fastapi.tiangolo.com/ | 2026-10-28 | Official documentation (BSD, BSD, BSD, BSD style and MIT licensed projects); no text reused |
 
 All resource links in the outline were checked to return HTTP 200 on 2026-10-27.
@@ -174,9 +175,10 @@ no renames.
 * Free notebooks (Google Colab, Kaggle Notebooks) are named as examples only. Following D1 and
   D2, no hour counts or quotas are stated; lessons say limits change and point to the official
   pages.
-* Act 843: lessons state only facts confirmed by D3 and D4 (Act name, the Commission as
-  enforcer, registration, health data as special personal data needing explicit consent or a
-  narrow legal basis). No section numbers and no principle count, because sources disagree.
+* Act 843: lessons state only facts confirmed by D3, D4 and the Act's official text (D6): Act
+  name, the Commission's compliance role, registration of data controllers, health data as
+  special personal data processed only with consent or under narrow conditions, access and
+  correction rights, processor security, and rights on solely automated decisions. No section numbers and no principle count, because sources disagree.
   `responsible-ai` says it is an introduction, not legal advice.
 * Google ML Crash Course (C1, CC BY 4.0) was used as a topic checklist only; no text, examples
   or ordering were copied.
@@ -205,3 +207,18 @@ client library, because model names and client APIs change often.
   design) before publishing.
 * `language-and-speech`: contains no sentences in Ghanaian languages by design; a Dagbani, Twi
   or Ewe speaker could add one checked example later.
+
+## Reviewer pass (28 October 2026, PR #211)
+
+* Snippets rerun in a fresh Python 3.14 environment with scikit learn 1.9.1, pandas 3.1.0, NumPy
+  2.5.4, FastAPI 0.162.0 and pydantic 2.14.1, with warnings treated as errors: vectors, gradient
+  descent (1.7 and minus 0.8, loss about 94 to 0.06), pandas cleaning, baseline and linear
+  regression, cross validation, pipeline with one hot encoding, k means, character TF IDF
+  language model, joblib and the FastAPI endpoint (valid request returns a yield, missing field
+  returns 422, docs page loads). PyTorch was not installed locally, so the `neural-networks`
+  snippet was checked by reading only; it uses long stable APIs.
+* Act 843 wording checked against D6; the earlier "explicit consent" and "sending data abroad"
+  phrasing was corrected because the Act says neither.
+* Colab limits checked against D1 (resources not guaranteed, limits vary and are unpublished, idle
+  VMs deleted, free GPU access restricted). No numbers are stated in lessons.
+
