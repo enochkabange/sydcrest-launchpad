@@ -1,14 +1,15 @@
 /**
  * Report how guessable each track's quizzes are (issue #214).
  *
- *   pnpm tsx scripts/content/quiz-balance.ts [track ...] [--detail]
+ *   pnpm tsx scripts/content/quiz-balance.ts [track ...] [--detail] [--strict]
  *
  * For every src/content/roadmaps/content/*.content.ts (or only the named
  * tracks) prints: question count, share where the correct option is strictly
  * the longest, share where it is strictly the shortest, and how correct
  * answers spread over positions A to D. --detail also lists each question
- * whose correct option is strictly the longest. Exits 1 if any reported track
- * is above QUIZ_BALANCE_MAX on longest share or on a single position.
+ * whose correct option is strictly the longest. With --strict, exits 1 if any
+ * reported track is above QUIZ_BALANCE_MAX on longest share or on a single
+ * position. CI is gated by the content test, which allow-lists new tracks.
  */
 import { readdirSync } from "node:fs";
 import path from "node:path";
@@ -20,6 +21,7 @@ import type { TrackContent } from "../../src/content/roadmaps/content/types";
 const dir = path.resolve(__dirname, "../../src/content/roadmaps/content");
 const args = process.argv.slice(2);
 const detail = args.includes("--detail");
+const strict = args.includes("--strict");
 const only = args.filter((a) => !a.startsWith("--"));
 
 const pct = (x: number) => `${Math.round(x * 100)}%`.padStart(5);
@@ -51,7 +53,7 @@ async function main() {
       }
     }
   }
-  process.exit(failed ? 1 : 0);
+  process.exit(strict && failed ? 1 : 0);
 }
 
 void main();
