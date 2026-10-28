@@ -1,6 +1,4 @@
 -- Age gate at the Auth layer (issue #240, access matrix finding S1).
--- Re-runnable (create or replace, drop trigger if exists): an earlier copy ran
--- on staging as version 20261029170000 before #239 took that version.
 --
 -- Under 18s are blocked at sign up (AGENTS.md hard constraint), and every
 -- adult only rule in RLS (private.is_adult: organisations, expert profiles,
@@ -25,7 +23,7 @@
 -- birth, and /welcome sets it once (under 18s are signed out before any
 -- write, so this never fires for them through the app).
 
-create or replace function private.check_date_of_birth(p_old jsonb, p_new jsonb)
+create function private.check_date_of_birth(p_old jsonb, p_new jsonb)
 returns void
 language plpgsql
 stable
@@ -58,7 +56,7 @@ $$;
 
 revoke execute on function private.check_date_of_birth(jsonb, jsonb) from public, anon, authenticated;
 
-create or replace function private.guard_auth_date_of_birth()
+create function private.guard_auth_date_of_birth()
 returns trigger
 language plpgsql
 security definer
@@ -80,7 +78,6 @@ $$;
 
 revoke execute on function private.guard_auth_date_of_birth() from public, anon, authenticated;
 
-drop trigger if exists guard_date_of_birth on auth.users; -- allow-destructive: replaces this PR's own trigger if the earlier copy ran on staging (version 20261029170000)
 create trigger guard_date_of_birth
   before insert or update of raw_user_meta_data on auth.users
   for each row execute function private.guard_auth_date_of_birth();
