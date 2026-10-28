@@ -1,6 +1,6 @@
 "use server";
 
-import { headers } from "next/headers";
+import { cookies, headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { siteOrigin } from "@/lib/site-url";
@@ -10,6 +10,7 @@ import { track, trackRefusal } from "@/lib/analytics/track";
 import {
   isRecoverySession,
   PASSWORD_CHANGED_NOTICE,
+  RECOVERY_COOKIE,
   RESET_PASSWORD_PATH,
   RESET_SENT_MESSAGE,
 } from "@/lib/password-reset";
@@ -62,8 +63,10 @@ export type NewPasswordState = {
 /** Saves the new password for the session a reset link signed in, then goes to the dashboard. */
 export async function updatePassword(_prev: NewPasswordState, form: FormData): Promise<NewPasswordState> {
   const supabase = await createClient();
-  const { data: auth } = await supabase.auth.getClaims();
-  if (!auth?.claims?.sub || !isRecoverySession(auth.claims)) return { expired: true };
+  const [{ data: auth }, cookieStore] = await Promise.all([supabase.auth.getClaims(), cookies()]);
+  if (!auth?.claims?.sub || !isRecoverySession(auth.claims, cookieStore.get(RECOVERY_COOKIE)?.value)) {
+    return { expired: true };
+  }
 
   const { data, errors } = parseNewPassword(form);
   if (Object.keys(errors).length) return { errors };
@@ -80,5 +83,7 @@ export async function updatePassword(_prev: NewPasswordState, form: FormData): P
     return { message: "We couldn't save your new password. Try again." };
   }
   await track("password_updated");
+  // One new password per link: the session stays signed in, but no longer counts as a reset.
+  cookieStore.delete(RECOVERY_COOKIE);
   redirect(`/dashboard?notice=${PASSWORD_CHANGED_NOTICE}`);
 }

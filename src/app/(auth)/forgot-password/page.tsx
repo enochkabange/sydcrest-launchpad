@@ -6,7 +6,7 @@ import { ForgotPasswordForm } from "./forgot-password-form";
 
 export const metadata: Metadata = { title: "Reset your password" };
 
-/** /auth/callback sends a reset link that no longer works back here. */
+/** /auth/confirm (and /auth/callback, for old emails) sends a reset link that no longer works back here. */
 async function LinkError({ searchParams }: { searchParams: PageProps<"/forgot-password">["searchParams"] }) {
   const { error } = await searchParams;
   return error === "link" ? (

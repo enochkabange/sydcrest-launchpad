@@ -294,6 +294,7 @@ Nav: Footer only, correct.
 | `/welcome` | Google sign ups, re-consent | Give date of birth and agree | Continue | Hide the date of birth when it is already on file (#251). |
 | `/forgot-password`, `/reset-password` | V | Reset a password | Send link / Save | Public on purpose (see `protected-paths.ts`). |
 | `/auth/callback` (route) | | OAuth return | | No UI. |
+| `/auth/confirm` (route) | | Land auth email links (sign up, reset, email change) | | No UI. Checks the token hash with `verifyOtp`; templates in `supabase/templates/` (`docs/email-templates.md`). |
 | `/offline` | anyone | Say we are offline and what still works | Try again | Served by the service worker. |
 
 ---
@@ -701,6 +702,7 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/api/version` | handler | Server only (cron, Study Buddy API, Twilio webhook, version) |
 | `/api/webhooks/twilio` | handler | Server only (cron, Study Buddy API, Twilio webhook, version) |
 | `/auth/callback` | handler | 2 Auth |
+| `/auth/confirm` | handler | 2 Auth |
 | `/badges/[program]/achievement.json` | handler | 7 Account (Open Badges JSON) |
 | `/badges/issuer.json` | handler | 7 Account (Open Badges JSON) |
 | `/offline` | page | 2 Auth |
