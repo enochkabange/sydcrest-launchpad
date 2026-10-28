@@ -125,7 +125,7 @@ test("a certified learner opts in, an organisation asks to talk, and the learner
   // The organisation filters, finds and asks.
   const ownerPage = await signedInPage(browser, owner, viewport);
   await ownerPage.goto("/talent");
-  await ownerPage.getByLabel("Skill").fill("excel");
+  await ownerPage.getByLabel("Skill", { exact: true }).fill("excel");
   await ownerPage.getByLabel("Region").selectOption("northern");
   await ownerPage.getByLabel("Track").selectOption("data");
   await ownerPage.getByRole("button", { name: "Show talent" }).click();
