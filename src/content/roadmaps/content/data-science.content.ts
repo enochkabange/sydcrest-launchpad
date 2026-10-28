@@ -1388,7 +1388,7 @@ Ayishetu works for a solar home system company that sells on credit in the Upper
     "machine-learning-basics": {
       explanation_md: `## Why this matters
 
-scikit learn is the standard free Python library for classic machine learning, and adverts that name a library name it often. Its consistent pattern means once you can train one model, you can train dozens. More important than any single model is the habit of comparing against a baseline and measuring what matters for the decision.
+scikit learn is a widely used free Python library for classic machine learning, and adverts that name a library often name it. Its consistent pattern means once you can train one model, you can train dozens. More important than any single model is the habit of comparing against a baseline and measuring what matters for the decision.
 
 ## Regression and classification
 
