@@ -13,7 +13,8 @@ export type BriefsSeed = {
    * A second unique skill for this run. Briefs posted in a test name only
    * this run's skills, never a common one like "Excel": a new brief notifies
    * every approved expert sharing a skill, and other specs seed experts in
-   * parallel on the same database.
+   * parallel on the same database. For the same reason test briefs tick no
+   * categories: with no shared skill, a shared category notifies an expert.
    */
   sheetsTag: string;
   poster: Learner;
