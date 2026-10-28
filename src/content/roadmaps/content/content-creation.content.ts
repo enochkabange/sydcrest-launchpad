@@ -9,6 +9,11 @@ const content: TrackContent = {
   roadmap: "content-creator",
   nodes: {
     "getting-started": {
+      outcomes: [
+        "Describe what content creators and videographers actually do",
+        "Compare running your own channel with making content for brands",
+        "Map the content work around you and choose a starting path",
+      ],
       explanation_md: `Look at the businesses around you in Tamale, Wa or Bolgatanga. The phone shop, the hair salon, the church, the NGO running a farming project and the restaurant near the lorry station all want people to see them online. Many of them post blurry photos or nothing at all. Someone who can plan, film, edit and publish good content on a phone is useful to every one of them.
 
 ## What creators actually do
@@ -95,6 +100,11 @@ Mariama lives in Damongo and loves filming her friends. She notices that a local
       },
     },
     "phone-studio": {
+      outcomes: [
+        "Check the camera settings that matter",
+        "Build habits such as a clean lens and free storage space",
+        "Set up a starter kit of free apps",
+      ],
       explanation_md: `Clients do not ask what phone you used. They ask whether the video is sharp, well lit and easy to hear. Most of that comes from how you set up and handle the phone, not from its price. Getting your phone ready before a shoot is the first sign that you take the work seriously.
 
 ## Settings worth checking
@@ -193,6 +203,11 @@ Fuseini is asked to film a pastor's short message for a church page in Tamale. B
       },
     },
     "data-saving-workflow": {
+      outcomes: [
+        "Plan so shooting and editing happen offline",
+        "Change settings that protect your data bundle",
+        "Send small previews and deliver the final file on WiFi",
+      ],
       explanation_md: `Video is heavy. One careless upload or an app updating itself in the background can finish a data bundle you bought for the whole week. Creators who work on prepaid data have to plan where every megabyte goes. Doing this well is not only about saving money: it also means you can still deliver to a client when the network is slow.
 
 ## The main idea: offline first
@@ -278,6 +293,11 @@ Hawa in Bolgatanga edits a two minute video for a tailor. She edits fully offlin
       },
     },
     storytelling: {
+      outcomes: [
+        "Explain why writing comes before filming",
+        "Use the one sentence test on an idea",
+        "Name the parts of this section",
+      ],
       explanation_md: `Think about the stories grandparents tell in the evening. Even the youngest children sit still until the end, because they want to know what happens. The best videos and posts work the same way. A client in Ghana does not pay you to press record. They pay you to make people stop scrolling, understand the message and do something: visit the shop, call the number, donate or share.
 
 ## Why writing comes before filming
@@ -358,6 +378,11 @@ Issahaku is asked to make a video for a borehole project run by an NGO near Nale
       },
     },
     "hooks-and-story": {
+      outcomes: [
+        "Write a hook that gives a reason to keep watching",
+        "Give a short video a clear beginning, middle and end",
+        "Show rather than tell to keep people watching",
+      ],
       explanation_md: `On TikTok, Reels or Shorts, people decide in the first second or two whether to keep watching. On YouTube the opening seconds matter too. Adverts for short form editors, including a remote role open to applicants in Ghana, mention hooks and keeping viewers watching, because a video nobody finishes does nothing for the brand paying for it.
 
 ## The hook
@@ -463,6 +488,11 @@ Sumaila makes a video for a barber in Wa. Version one starts with the shop sign 
       },
     },
     "scripts-and-shot-lists": {
+      outcomes: [
+        "Write a short script",
+        "Sketch a simple storyboard",
+        "List every shot before you press record",
+      ],
       explanation_md: `Shoots in Ghana often happen in tight windows: a shop owner who can give you thirty minutes before customers arrive, a programme that happens once, light that disappears at six. If you arrive without a plan, you forget shots and have to come back, spending more transport money, battery and goodwill. Some content adverts ask for planning and scripted video, and skills frameworks for content creators list scriptwriting and storyboarding, because planning is what makes a creator reliable.
 
 ## The script
@@ -561,6 +591,11 @@ Her shot list adds b roll of shelves and the street outside. She finishes in twe
       },
     },
     "captions-and-titles": {
+      outcomes: [
+        "Write short, honest captions for social posts",
+        "Write YouTube titles and descriptions that help people find you",
+        "Write in your audience's voice",
+      ],
       explanation_md: `A great video with a weak caption or title can still be ignored. The words around your content tell people what it is, why they should care and what to do next. Several of the content adverts we read list captions, copywriting or thumbnails alongside video skills, because the same person often writes them.
 
 ## Captions for social posts
@@ -662,6 +697,11 @@ Abdul-Rahman posts a video for a tailor in Tamale with the caption "Nice work!!"
       },
     },
     "local-languages": {
+      outcomes: [
+        "Decide when a local language will reach people best",
+        "Add subtitles so more people can follow",
+        "Use languages respectfully and accurately",
+      ],
       explanation_md: `Many people in Northern Ghana think, joke and decide in Dagbani, Gonja, Dagaare, Frafra, Hausa, Mampruli or another home language, not in English. A video in the language your audience loves can feel like a friend talking, not an advert. Some NGO communications adverts in Ghana ask for English plus Ghanaian languages, because messages land better when people hear them in their own words.
 
 ## When to use a local language
@@ -750,6 +790,11 @@ Hawa makes a short video about handwashing for a clinic in Tolon. Her first vers
       },
     },
     shooting: {
+      outcomes: [
+        "Name the four things that make footage look professional",
+        "Decide what gear you need now and what can wait",
+        "Test the four basics for yourself",
+      ],
       explanation_md: `When a business owner in Tamale scrolls through your portfolio, they judge it in seconds. Is the picture steady? Can they see faces clearly? Can they hear what people say? Many Ghanaian adverts for videographers and content creators ask for shooting and camera skills, and some name lighting, sound and composition directly, because these basics separate content a brand can use from content it cannot.
 
 ## Four things that make footage look professional
@@ -836,6 +881,11 @@ Fuseini films a short interview with a shea butter producer in Savelugu. In his 
       },
     },
     "framing-and-composition": {
+      outcomes: [
+        "Choose the right shot size",
+        "Use the rule of thirds, headroom and clean backgrounds",
+        "Keep the phone steady and pick angles with intention",
+      ],
       explanation_md: `Composition is how you arrange what is inside the frame. Good composition makes a viewer look where you want them to look, and makes phone footage feel intentional. Content adverts ask for composition, and public skills frameworks rate composing and framing shots as a core task for camera work. Editors also need a good eye to pick the best framed shots from a pile of footage.
 
 ## Shot sizes
@@ -944,6 +994,11 @@ Mariama films a carpenter in Wa. She starts with a wide shot of the workshop, th
       },
     },
     "phone-photography": {
+      outcomes: [
+        "Take product photos that help a business sell",
+        "Photograph people and events with consent",
+        "Edit lightly so colours stay true",
+      ],
       explanation_md: `Every small business that sells online needs photos: the boutique's new dresses, the restaurant's menu, the phone shop's accessories, a church's harvest event. Adverts for content creators and photographer roles in Ghana often combine photography with video, and many clients judge you first by a few strong pictures. Good product and people photos are one of the quickest ways to earn from your phone.
 
 ## Product photos that sell
@@ -1037,6 +1092,11 @@ Amina helps a bead seller in Tamale. The seller's old photos show necklaces pile
       },
     },
     "light-on-a-budget": {
+      outcomes: [
+        "Find where the light comes from",
+        "Use window light, shade and cheap reflectors",
+        "Manage exposure and shoot when it gets dark",
+      ],
       explanation_md: `Phone cameras have small sensors. In good light they look excellent; in poor light the picture becomes grainy, dull and soft. Lighting appears in some Ghanaian content adverts because it is one of the clearest signs of quality. The good news is that light from the sun is free, and you can control it with simple things.
 
 ## Where is the light coming from?
@@ -1135,6 +1195,11 @@ Sumaila records a cooking video for a chop bar in Damongo inside a dark kitchen.
       },
     },
     "sound-on-a-budget": {
+      outcomes: [
+        "Explain why phone audio often sounds bad",
+        "Get clear voices with a quiet place and a close microphone",
+        "Test and monitor sound before you film",
+      ],
       explanation_md: `Viewers forgive a slightly soft picture much sooner than bad sound. If they cannot hear the speaker, they scroll away. Some videographer adverts list sound alongside lighting, and remote editing roles mention sound design, because clear audio is part of what clients pay for.
 
 ## Why phone audio often sounds bad
@@ -1230,6 +1295,11 @@ Issahaku interviews a teacher in Bolgatanga beside a busy road. Playing it back,
       },
     },
     editing: {
+      outcomes: [
+        "Explain how professional editing works on a phone",
+        "Choose one free editor and learn it deeply",
+        "Use non destructive editing",
+      ],
       explanation_md: `Editing is where raw clips become a story. It is also one of the most requested skills in the adverts we studied: Ghanaian companies ask for content creators who can edit reels and short videos, and some remote agencies hire editors in Ghana to cut TikTok, Reels and Shorts for clients abroad. Some of these adverts name free phone editors such as CapCut or InShot, alongside desktop tools like Premiere Pro.
 
 ## You can edit professionally on a phone
@@ -1320,6 +1390,11 @@ Wumpini films a ten minute walk through a weekend market in Tamale for a food ve
       },
     },
     "editing-basics": {
+      outcomes: [
+        "Review and select the clips worth using",
+        "Build a rough cut, then trim and tighten it",
+        "Set pacing so viewers stay to the end",
+      ],
       explanation_md: `O*NET, a public skills framework, describes the core of a video editor's job as choosing the best shots and arranging them into a smooth, logical story. Ghanaian and remote adverts say the same thing in their own words: cut footage into engaging short videos and keep viewers watching. That is what this lesson is about.
 
 ## Step 1: Review and select
@@ -1425,6 +1500,11 @@ Mariama has twelve minutes of footage of a youth football tournament in Wa. Her 
       },
     },
     "music-voice-and-text": {
+      outcomes: [
+        "Use music you have the right to use",
+        "Record a clean voice over",
+        "Add readable on screen text and captions",
+      ],
       explanation_md: `Sound and words can make an ordinary edit feel finished. Remote editing adverts open to Ghana mention captions, sound design and motion text, and Ghanaian content adverts mention captions and thumbnails. Done badly, though, music drowns voices, text is unreadable and the video gets muted or blocked for copyright.
 
 ## Music
@@ -1516,6 +1596,11 @@ Abdul-Rahman edits a promo for a phone repair shop in Tamale. His first version 
       },
     },
     "export-and-organise": {
+      outcomes: [
+        "Export at the right size for each platform",
+        "Design a clear thumbnail",
+        "Name, back up and deliver files professionally",
+      ],
       explanation_md: `A beautiful edit is useless if it arrives late, in the wrong shape, blurry or lost. Some employers in Ghana list keeping a content library and storing files among their requirements, and remote clients expect files delivered on time in the format they asked for. Good habits here are what make you dependable.
 
 ## Export settings
@@ -1622,6 +1707,11 @@ Hawa edits weekly videos for a pharmacy and a fashion shop. Early on she sent th
       },
     },
     publishing: {
+      outcomes: [
+        "Explain how platforms reward different content",
+        "Repurpose content across platforms",
+        "Plan where and how often you will publish",
+      ],
       explanation_md: `Making a good video is half the job. The other half is putting it in the right place, in the right form, for the right people, and learning from how they respond. Ghanaian adverts for social media content roles ask for platform management, live streaming and audience engagement. Remote roles add YouTube uploads and search friendly titles.
 
 ## Platforms are different rooms
@@ -1717,6 +1807,11 @@ Sumaila runs a channel teaching phone repair tips in Hausa and English from Tama
       },
     },
     "short-video": {
+      outcomes: [
+        "Make short vertical videos that grab attention fast",
+        "Use trends with care",
+        "Explain how live selling works",
+      ],
       explanation_md: `Short vertical video is one of the most common demands in the content adverts we studied, both Ghanaian and remote: TikTok, Instagram Reels, Facebook Reels and YouTube Shorts. Some adverts go further and ask for live streaming, including people who can sell products live. WhatsApp Status videos are the local cousin of this format and often drive real orders.
 
 ## What makes short video work
@@ -1826,6 +1921,11 @@ Amina makes Reels for a smock weaver in Bolgatanga. Her best video starts with t
       },
     },
     "youtube-basics": {
+      outcomes: [
+        "Set up a YouTube channel and upload properly",
+        "Write titles, descriptions and thumbnails that help search",
+        "Use Shorts and long videos together",
+      ],
       explanation_md: `YouTube is different from fast scrolling apps. People often go there to search: how to fix something, learn a skill, compare products or hear a story in depth. A good YouTube video can keep finding viewers for years. Some remote editing adverts ask for YouTube uploads, search friendly titles and thumbnails, so these skills can lead to paid work.
 
 ## Setting up a channel
@@ -1920,6 +2020,11 @@ Fuseini starts a channel teaching smallholder farmers in the Northern Region how
       },
     },
     "building-an-audience": {
+      outcomes: [
+        "Choose a clear focus for your content",
+        "Serve your audience before you sell to them",
+        "Talk with viewers and post on a rhythm you can keep",
+      ],
       explanation_md: `Followers are not the goal by themselves. What matters is having people who trust you, come back, and act: buy, share, donate or hire you. Some Ghanaian adverts for social media content roles ask for audience engagement, and clients who hire you to grow their pages expect you to understand how this works.
 
 ## Choose a clear focus
@@ -2027,6 +2132,11 @@ Mariama starts a page sharing northern recipes. At first she posts randomly. The
       },
     },
     "reading-your-numbers": {
+      outcomes: [
+        "Name the numbers that matter most",
+        "Turn numbers into a decision for your next video",
+        "Avoid common traps and report to a client",
+      ],
       explanation_md: `Clients and employers want to know whether content is working. Skills frameworks for content creators list evaluating how content performs, and creators use the same numbers to decide what to make next. Every major platform gives free analytics: YouTube Analytics in YouTube Studio, and insights in TikTok, Instagram and Facebook for professional or business accounts.
 
 ## The numbers that matter most
@@ -2124,6 +2234,11 @@ Practice numbers if needed: Video A had 900 views, 4 seconds average watch time 
       },
     },
     "working-and-earning": {
+      outcomes: [
+        "Explain what employers and clients want to see",
+        "Compare the ways people earn from content",
+        "Protect yourself and respect other people's rights",
+      ],
       explanation_md: `Many young people in Ghana see creators online and imagine instant money. The truth is more ordinary and more hopeful: content skills can earn real income, but usually step by step, through clients and jobs, long before any platform pays you. This section is about earning honestly, protecting yourself and respecting other people's rights.
 
 ## What employers and clients want to see
@@ -2227,6 +2342,11 @@ Issahaku has made a few videos for friends in Wa. Then someone on social media o
       },
     },
     "copyright-and-permission": {
+      outcomes: [
+        "Explain copyright in plain words",
+        "Find safe sources for music, footage and images",
+        "Get consent from people you film",
+      ],
       explanation_md: `Clients trust you with their brand. If you use a song, clip or photo you do not have rights to, their video can be muted or removed, their account can receive a strike, and in serious cases there can be legal claims. Content adverts and skills frameworks list copyright, media asset rules and data protection, because creators handle all three every day.
 
 ## Copyright in plain words
@@ -2331,6 +2451,11 @@ Hawa edits an advert for a hotel in Tamale using a popular song. Before deliveri
       },
     },
     "working-with-brands": {
+      outcomes: [
+        "Read a client brief",
+        "Quote and agree deliverables in writing",
+        "Disclose paid content and deliver professionally",
+      ],
       explanation_md: `Brands and businesses are where most creators earn first. Content adverts and skills frameworks ask creators to match a brand's voice, follow brand guidelines, interpret briefs and meet deadlines. One remote advert we read added meeting deadlines in the client's time zone. Clients rehire people who are easy to work with.
 
 ## Understand the brief
@@ -2433,6 +2558,11 @@ Wumpini is asked by a cosmetics seller in Tamale to make three videos. She write
       },
     },
     "earning-routes": {
+      outcomes: [
+        "Compare client work, jobs and platform payouts",
+        "Explain what each earning route really takes",
+        "Choose your first earning route honestly",
+      ],
       explanation_md: `"How much do creators make?" is one of the most common questions young people ask. The honest answer is that it varies hugely, many people earn little at first, and nobody can promise you an income. What we can do is explain the main routes, what each one takes and what to watch out for, so you can choose well.
 
 ## Route 1: Local client work
@@ -2526,6 +2656,11 @@ Sumaila in Tamale starts by filming events for churches and two shops. He keeps 
       },
     },
     "portfolio-and-first-jobs": {
+      outcomes: [
+        "Choose what to include in a portfolio",
+        "Host a portfolio cheaply",
+        "Apply for content roles with proof of your work",
+      ],
       explanation_md: `Content adverts, in Ghana and remote, ask for proof that you can shoot and edit, and some ask for a portfolio with the application. Your portfolio is your proof: it shows what you can do far better than a list of apps on a CV.
 
 ## What to include

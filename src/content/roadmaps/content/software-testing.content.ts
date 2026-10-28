@@ -11,6 +11,11 @@ const content: TrackContent = {
   roadmap: "software-tester",
   nodes: {
     "testing-basics": {
+      outcomes: [
+        "Explain what testing really is",
+        "Name what you need for this track",
+        "Start a tester's notebook",
+      ],
       explanation_md: `## Why this matters
 
 Every app you use, from a mobile money wallet to a school results portal, was checked by someone before it reached you. When that checking is weak, people lose money, miss exam results or give up on a product. Software testing is the work of finding those problems before customers do. It is one of the more accessible ways into a technology company, because the core skills are careful thinking and clear writing, and you can begin practising them on any phone or computer you already use.
@@ -94,6 +99,11 @@ Read each lesson, do the practice task, and keep everything you produce in one f
     },
 
     "what-testers-do": {
+      outcomes: [
+        "Describe a tester's working week",
+        "Give an honest picture of where testing jobs are",
+        "Name the qualities that matter in testing",
+      ],
       explanation_md: `## Why this matters
 
 Before you invest months in a career, you should know what the work looks like day to day and where the jobs actually are. Testing suits careful, curious people who like asking "what if?", and it is a real way into software teams. It also helps to be honest about the market from the start.
@@ -195,6 +205,11 @@ Employers look for attention to detail, clear writing, curiosity, patience and g
       },
     },
     "testing-principles": {
+      outcomes: [
+        "Use the ideas every tester relies on",
+        "Explain how testing fits into building software",
+        "Name the levels of testing and think about risk",
+      ],
       explanation_md: `## Why this matters
 
 In interviews and team meetings you will hear words like "unit tests", "UAT" and "shift left". Knowing the ideas behind them lets you follow the conversation, make sensible choices about what to test, and explain your choices to others.
@@ -301,6 +316,11 @@ The ISTQB Foundation syllabus, in its chapters on fundamentals and on testing th
     },
 
     "manual-testing": {
+      outcomes: [
+        "Describe what manual testing involves",
+        "Explain why people still test by hand",
+        "Bring a tester's mindset to a product",
+      ],
       explanation_md: `## Why this matters
 
 Manual testing is where most testers begin, and many adverts for testing roles ask for it directly. It means a person uses the software the way a customer would, thinks about what could go wrong, and records what happens. No code is needed, and you can practise most of it on the phone or computer you already have, using apps and websites that are free to open.
@@ -394,6 +414,11 @@ A phone or computer, a free notes app or spreadsheet, and any public app or webs
     },
 
     "test-cases": {
+      outcomes: [
+        "Write a test case with all its parts",
+        "Write positive and negative cases",
+        "Avoid common test case mistakes",
+      ],
       explanation_md: `## Why this matters
 
 Writing test cases is the skill that appears most often in testing adverts we read. A good test case lets anyone on the team repeat a check and get the same answer, which matters when a release is due tomorrow and you are not the one running the tests.
@@ -505,6 +530,11 @@ Write the expected result first. It is your promise of what correct looks like.`
       },
     },
     "test-design-techniques": {
+      outcomes: [
+        "Use equivalence partitioning and boundary values",
+        "Use decision tables and state transitions",
+        "Choose tests from experience and risk",
+      ],
       explanation_md: `## Why this matters
 
 You can never test every possible input, so the question is which few tests will find the most bugs. Testers who choose well finish faster and catch more, and employers notice. A few simple techniques do most of the work, and you can apply all of them with a pen and paper.
@@ -618,6 +648,11 @@ Abdul-Rahman tests an airtime top up screen with a range of 1 to 500 cedis. Usin
     },
 
     "exploratory-testing": {
+      outcomes: [
+        "Explore with a plan, not at random",
+        "Use ideas to guide exploring",
+        "Take good session notes",
+      ],
       explanation_md: `## Why this matters
 
 Scripted test cases check what the team expected. Real users do things nobody expected. Exploratory testing is how testers find those surprises: you learn the product, design tests and run them all at the same time, using your judgement as you go. It is a skill employers value and one you can practise on any device with any app.
@@ -722,6 +757,11 @@ A screen recording, which most phones and computers can make for free, is the be
     },
 
     "bug-reports": {
+      outcomes: [
+        "Write every part of a good bug report",
+        "Set severity and priority",
+        "Keep habits that get bugs fixed",
+      ],
       explanation_md: `## Why this matters
 
 A bug that nobody can reproduce rarely gets fixed. Your bug report is often the only thing a developer sees of your work, so it is where you show your value. Clear bug reporting appears again and again in testing adverts, and it is the skill a new tester can demonstrate most easily in a portfolio.
@@ -841,6 +881,11 @@ Most teams log bugs in an issue tracker such as Jira, GitHub Issues or a shared 
     },
 
     "testing-web-and-mobile": {
+      outcomes: [
+        "See one product through its web, mobile and API surfaces",
+        "Keep local conditions in mind",
+        "Name the devices used in this section",
+      ],
       explanation_md: `## Why this matters
 
 Most products you will test are websites, Android apps, or the services behind them that both talk to. Each has its own tools and its own typical bugs. In Ghana, many users meet these products on budget phones, on prepaid data that comes and goes, and sometimes on shared devices, so a tester who understands those conditions catches problems that others miss.
@@ -936,6 +981,11 @@ Hawa tests a savings app. On her laptop browser the website looks perfect. On a 
       },
     },
     "web-testing": {
+      outcomes: [
+        "Check what matters on a website",
+        "Use browser developer tools",
+        "Keep good web testing habits",
+      ],
       explanation_md: `## Why this matters
 
 Many Ghanaian businesses, schools and NGOs run websites that customers open on every kind of device. A page that works on the developer's large screen can break on a small phone or an older browser. Web testing adverts ask for cross browser checks and comfort with browser tools, and these are skills you can show quickly in a portfolio.
@@ -1038,6 +1088,11 @@ You need a laptop or desktop computer with Chrome, Edge or Firefox for steps 2 t
     },
 
     "mobile-testing": {
+      outcomes: [
+        "Test how mobile users really meet an app",
+        "Capture evidence on a phone",
+        "Use developer options safely",
+      ],
       explanation_md: `## Why this matters
 
 For many people in Ghana, an Android phone is their main way to use the internet, and many of those phones are budget models with limited storage and older software. Testing adverts in Ghana and on remote boards name Android and mobile testing often. If you own an Android phone, you already have a test lab.
@@ -1151,6 +1206,11 @@ You need an Android phone for the developer options steps. If you use an iPhone,
     },
 
     "api-testing": {
+      outcomes: [
+        "Explain how an API request works",
+        "Send and check requests in Postman",
+        "Decide what to test in an API",
+      ],
       explanation_md: `## Why this matters
 
 Apps and websites get their data from servers through APIs. Testing the API directly finds bugs the screen hides, such as a server that accepts a negative amount or confirms the same payment twice. API testing appears in several adverts for testing roles, including remote ones, and Postman is a common tool for it.
@@ -1267,6 +1327,11 @@ A laptop or desktop computer is strongly recommended for this task. The requests
     },
 
     "accessibility-and-usability": {
+      outcomes: [
+        "Check whether everyone can use a product",
+        "Check whether a product makes sense to users",
+        "Report accessibility and usability findings",
+      ],
       explanation_md: `## Why this matters
 
 Some people who use the products you test have low vision, shaky hands, colour blindness or little experience with apps. Others are reading in bright sunlight on a cracked screen. If a product only works for confident users with perfect eyesight, it fails many real customers. Accessibility and usability checks are quick, need no special equipment, and catch problems that functional tests miss.
@@ -1360,6 +1425,11 @@ Write accessibility and usability findings as bug reports with steps, device set
       },
     },
     "working-in-a-team": {
+      outcomes: [
+        "Explain how software teams organise work",
+        "Treat communication as part of the job",
+        "Track your own testing work",
+      ],
       explanation_md: `## Why this matters
 
 Testers rarely work alone. You will sit inside a product team with developers, a product manager and perhaps a designer, all working towards a release date. Knowing how teams organise their work, where bugs and tasks are tracked, and how to report on testing is what turns a careful individual into a useful team member. Several testing adverts we read named Agile ways of working and tools like Jira directly.
@@ -1453,6 +1523,11 @@ Remote testing roles work the same way, but almost everything happens in writing
     },
 
     "agile-and-issue-trackers": {
+      outcomes: [
+        "Explain agile and Scrum in plain words",
+        "Turn user stories into acceptance criteria and tests",
+        "Work in an issue tracker",
+      ],
       explanation_md: `## Why this matters
 
 When you join a team, you will hear words like sprint, story, acceptance criteria and stand up from the first day. Adverts for testing roles in Ghana and on remote boards often mention Agile and Jira. Knowing the vocabulary means you can start contributing quickly instead of spending weeks working out what people mean.
@@ -1566,6 +1641,11 @@ Hawa's sprint includes the trader sales story above. Reading the criteria in pla
     },
 
     "test-plans-and-regression": {
+      outcomes: [
+        "Write a one page test plan",
+        "Build a small regression suite",
+        "Report test results",
+      ],
       explanation_md: `## Why this matters
 
 Before any release, someone has to answer: what will we test, how, and are we ready? Adverts for testing roles ask for test plans and test reporting, and regression testing is a core part of every tester's routine. This is also where you show the judgement that makes teams trust you.
@@ -1683,6 +1763,11 @@ Sumaila writes a one page plan for a new version of a bus ticket booking app: bo
     },
 
     "test-automation": {
+      outcomes: [
+        "Explain what test automation is",
+        "Keep your manual skills as you automate",
+        "Choose what to automate first",
+      ],
       explanation_md: `## Why this matters
 
 Many testing adverts in Ghana and on remote boards ask for automation alongside manual skills, and testers who can automate have more options, including roles as automation or QA engineers. Automation does not replace manual testing; it takes over the repetitive checks so people can spend their time on thinking and exploring.
@@ -1786,6 +1871,11 @@ Start small. Automate one test case you already wrote by hand, make it pass reli
       },
     },
     "programming-for-testers": {
+      outcomes: [
+        "Use the four building blocks of programming",
+        "Handle async code and a little SQL",
+        "Write a tiny program that tests a rule",
+      ],
       explanation_md: `## Why this matters
 
 Automation adverts ask for a programming language, often Java, Python or JavaScript, and several also list SQL. You do not need to become a full developer first. You need to read code confidently, write small programs, and change a test when the app changes. This lesson shows the building blocks; practise them in short daily sessions.
@@ -1918,6 +2008,11 @@ You need a computer with Node.js and a code editor, or a free browser based Java
     },
 
     "ui-automation": {
+      outcomes: [
+        "Write a first browser test with Playwright",
+        "Find elements well and keep tests reliable",
+        "Recognise how mobile apps are automated",
+      ],
       explanation_md: `## Why this matters
 
 Browser automation tools appear across testing adverts: Selenium most often in the ones we read, with Cypress, Playwright and Appium (for mobile apps) also named. They drive a real browser like a person would. Learn one tool well; the ideas transfer between them.
@@ -2051,6 +2146,11 @@ You need a computer with Node.js and Wi-Fi or enough data for a one time install
     },
 
     "tests-in-ci": {
+      outcomes: [
+        "Explain what CI means",
+        "Run tests in a GitHub Actions pipeline",
+        "Read a failed run",
+      ],
       explanation_md: `## Why this matters
 
 Automated tests are most valuable when they run without anyone remembering to start them. Teams connect tests to a pipeline, a process that runs on a server every time someone pushes code. A few adverts and the occupation frameworks we read mention CI/CD and tools such as Jenkins or GitHub Actions. This lesson is optional, but setting it up for your own project is a strong portfolio signal.
@@ -2168,6 +2268,11 @@ You need a computer, a free GitHub account and the test project from the previou
     },
 
     "getting-hired": {
+      outcomes: [
+        "Be clear eyed about the testing job market",
+        "Explain what employers want in a junior tester",
+        "Map your evidence against real adverts",
+      ],
       explanation_md: `## Why this matters
 
 Skills only turn into work when an employer can see them. Testing employers look for careful thinking and clear writing more than certificates, and the good news is that both can be shown in documents you produce yourself. This section helps you package your work, understand where certificates fit, and look widely for a first role.
@@ -2271,6 +2376,11 @@ Amina finished this track with a GitHub portfolio. She applied to two Accra role
     },
 
     "testing-portfolio": {
+      outcomes: [
+        "Choose what to include in a testing portfolio",
+        "Choose a product to test",
+        "Publish your portfolio on GitHub",
+      ],
       explanation_md: `## Why this matters
 
 A new tester's biggest problem is proving they can do the job without having had the job. A portfolio solves that. When an employer can open a link and read your test plan, your test cases and a bug report that would let any developer reproduce a problem, they can judge your work directly. Entry level testing adverts ask exactly for these skills.
@@ -2377,6 +2487,11 @@ Fuseini's portfolio README says: "I tested the sign up and donation flows of a p
     },
 
     "certificates-and-first-role": {
+      outcomes: [
+        "Weigh the ISTQB Foundation certificate",
+        "Find where to look for a first role",
+        "Stay safe while job hunting",
+      ],
       explanation_md: `## Why this matters
 
 You will see the ISTQB Foundation certificate mentioned in some testing adverts, usually as a plus rather than a requirement. You will also need to know where to look for a first role when local openings are few. This lesson covers both honestly.
@@ -2478,6 +2593,11 @@ Hawa studies the free CTFL syllabus alongside this track, using it as a checklis
     },
 
     "where-testing-leads": {
+      outcomes: [
+        "Name the paths testers commonly take",
+        "Name skills that carry into every path",
+        "Choose your next direction",
+      ],
       explanation_md: `## Why this matters
 
 Testing is a career in itself and also a doorway. Because testers learn a product deeply, see every part of it and work with every role in a team, they often grow into other jobs. Knowing the paths helps you choose what to learn next and keeps your options open in a small local market.

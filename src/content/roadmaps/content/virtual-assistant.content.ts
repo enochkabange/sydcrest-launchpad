@@ -9,6 +9,11 @@ const content: TrackContent = {
   roadmap: "virtual-assistant",
   nodes: {
     "getting-started": {
+      outcomes: [
+        "Explain why assistant work is a real route to work",
+        "List the assistant tasks you already do",
+        "Name the topics in this section",
+      ],
       explanation_md: `Busy people everywhere need help keeping their work organised. A shop owner in Tamale, a director at an NGO in Accra and a small business owner in London all have emails piling up, meetings to arrange, documents to prepare and customers waiting for replies. An assistant takes that load off them. When the assistant works from a distance, using a phone or laptop and the internet, we call them a virtual assistant, or VA.
 
 ## Why this is a real route to work
@@ -85,6 +90,11 @@ Nobody starts as an expert. The aim of this section is to give you a clear pictu
       },
     },
     "what-a-va-does": {
+      outcomes: [
+        "Describe the common tasks of a virtual assistant",
+        "Tell apart kinds of assistant, local and remote",
+        "Explain what clients value most",
+      ],
       explanation_md: `When a client hires an assistant, they are buying back their own time. Every hour you save them on email, scheduling or paperwork is an hour they can spend on the work only they can do. Understanding this helps you in interviews: clients want to hear how you will save them time, not just which apps you know.
 
 ## The common tasks
@@ -164,6 +174,11 @@ Issahaku runs a small tour company in Damongo that takes visitors to Mole Nation
       },
     },
     "how-remote-work-works": {
+      outcomes: [
+        "Work in writing first",
+        "Agree hours and availability and use shared tools",
+        "Build habits that earn trust",
+      ],
       explanation_md: `In an office, your manager can see you working. In remote work, nobody can. Your client only knows what you show them: messages, finished tasks and updates. That is why remote workers who communicate well get trusted with more work, and those who go quiet lose clients even when they are working hard.
 
 ## Written first
@@ -262,6 +277,11 @@ Sumaila works as a VA for a consultant in the UK. One evening the power goes off
       },
     },
     "time-zones": {
+      outcomes: [
+        "Convert between Ghana time and a client's time",
+        "Handle clocks that change through the year",
+        "Write time zones clearly in messages",
+      ],
       explanation_md: `Many remote clients are in Europe, North America or the Middle East. A meeting booked for "9am" means nothing until you know whose 9am. Getting this wrong means missed calls and an unhappy client, and it is one of the easiest mistakes to avoid.
 
 ## Ghana's clock
@@ -348,6 +368,11 @@ Hawa supports a client in New York. In January the client asks for a call "at 10
       },
     },
     communication: {
+      outcomes: [
+        "Explain why communication matters so much for assistants",
+        "Write English that works for clients",
+        "Rewrite unclear messages into clear ones",
+      ],
       explanation_md: `For an assistant, communication is the job. Clients rarely see you, so every email, chat message and call is how they judge your work. Ghanaian admin adverts and remote VA adverts both ask for good written and spoken English.
 
 ## Why it matters so much
@@ -434,6 +459,11 @@ Your communication will improve fastest if you read good examples, write every d
       },
     },
     "professional-writing": {
+      outcomes: [
+        "Use a four part structure for work messages",
+        "Set the right tone",
+        "Check a message before you send it",
+      ],
       explanation_md: `Writing is how most assistant work gets done. You will draft emails for clients, reply to customers, send updates and sometimes write on someone's behalf. Clear writing saves everyone time and makes you look professional, which helps you keep clients and win new ones.
 
 ## A simple structure for any work message
@@ -532,6 +562,11 @@ It is short, the request is in the first line and the deadline is clear.`,
       },
     },
     "calls-and-meetings": {
+      outcomes: [
+        "Follow work chat etiquette",
+        "Handle calls and video meetings on any device",
+        "Take notes and send a clear summary",
+      ],
       explanation_md: `Not everything happens in writing. Clients will call you, add you to work chats and invite you to video meetings. Assistants are often asked to join meetings, take notes and follow up on actions. Doing this well, on a phone or a laptop, makes you far more useful.
 
 ## Work chat etiquette
@@ -627,6 +662,11 @@ Tahiru joins a weekly video call for an NGO client using his phone. His data is 
       },
     },
     "inbox-and-calendar": {
+      outcomes: [
+        "Name the inbox and calendar tools",
+        "Get access to client accounts safely",
+        "Set up a practice account",
+      ],
       explanation_md: `If you read through assistant adverts in Ghana and abroad, two tasks appear again and again: managing email and managing calendars. Executive assistant adverts talk about diary management. Remote VA adverts talk about inbox management and scheduling. Learn these two well and you can already offer a valuable service.
 
 ## Why these two tasks
@@ -711,6 +751,11 @@ Zuweira starts working for a business coach in Canada. On day one, the coach sha
       },
     },
     "email-management": {
+      outcomes: [
+        "Agree inbox rules with a client",
+        "Sort email into three groups with filters and labels",
+        "Send a daily inbox summary",
+      ],
       explanation_md: `Many clients hire an assistant because their inbox is out of control. Hundreds of unread emails, missed invoices and forgotten replies cost them money and reputation. If you can bring order to an inbox and keep it there, you are solving a real and painful problem.
 
 ## Agree the rules first
@@ -821,6 +866,11 @@ Labels work in the Gmail phone app, but filters and templates are set up in Gmai
       },
     },
     "calendar-management": {
+      outcomes: [
+        "Create good calendar events",
+        "Schedule without endless messages and protect a client's time",
+        "Handle changes, travel and events",
+      ],
       explanation_md: `An executive assistant advert in Accra and a remote VA advert from abroad will both mention the calendar or diary. A well kept calendar means the client is in the right place, at the right time, with the right documents. A badly kept one means double bookings, missed calls and apologies.
 
 ## The basics of a good calendar event
@@ -915,6 +965,11 @@ Napari manages the calendar for a programme director at an NGO in Tamale. A dono
       },
     },
     "documents-and-data": {
+      outcomes: [
+        "Use free document and spreadsheet tools on any device",
+        "Keep three habits for tidy work",
+        "Set up a tidy workspace",
+      ],
       explanation_md: `Ghanaian office adverts ask for Word, Excel, PowerPoint and Outlook again and again. Remote assistant adverts ask for Google Workspace or Microsoft 365, data entry and online research. Behind those tool names is one skill: producing accurate, tidy information that other people can find and use.
 
 ## Why it matters
@@ -997,6 +1052,11 @@ Dawuda volunteers as secretary for his youth association in Yendi. Before, the m
       },
     },
     documents: {
+      outcomes: [
+        "Format documents professionally and use templates",
+        "Make PDFs and name files well",
+        "Share files safely and use comments",
+      ],
       explanation_md: `Letters, reports, meeting notes, proposals and forms are everyday assistant work. A clean, consistent document makes your client look professional to their own customers and partners. A messy one, with mixed fonts and random spacing, does the opposite.
 
 ## Formatting that looks professional
@@ -1097,6 +1157,11 @@ Ayishetu prepares a monthly report for a women's farming cooperative near Walewa
       },
     },
     spreadsheets: {
+      outcomes: [
+        "Build a tidy table and enter data accurately",
+        "Sort, filter and use simple formulas",
+        "Build an order tracker",
+      ],
       explanation_md: `Data entry and spreadsheet work appear in many assistant adverts, from remote roles that list Google Sheets to Ghanaian admin roles that ask for Excel. Clients use spreadsheets to track customers, orders, invoices, stock, guests and tasks. An assistant who keeps these accurate becomes hard to replace.
 
 ## Build a tidy table
@@ -1201,6 +1266,11 @@ The Google Sheets app works for entering data and simple formulas on a phone. Fo
       },
     },
     "online-research": {
+      outcomes: [
+        "Start research from the question",
+        "Search smarter and check reliability",
+        "Present research clearly",
+      ],
       explanation_md: `Clients ask assistants to find things out: the best venue for a workshop, three suppliers of printer paper with prices, contact details for schools in a district, flight options, or what a competitor charges. Research appears in remote VA adverts and in executive assistant duties. Done well, it saves the client hours and helps them decide.
 
 ## Start with the question
@@ -1298,6 +1368,11 @@ Salifu's client, an NGO in Accra, needs a venue in Bolgatanga for 60 people. Sal
       },
     },
     "client-tasks": {
+      outcomes: [
+        "Name the extra tasks clients hand to assistants",
+        "Know the limits of your role",
+        "Map tasks a small business could hand over",
+      ],
       explanation_md: `Inbox, calendar and documents are the core of assistant work, but clients often hand over more. Remote adverts list customer support, social media management, order processing and project coordination alongside admin. Ghanaian adverts ask front desk and office assistants to handle customer enquiries and keep records. This section covers three of the most common extra tasks at a beginner level.
 
 ## Why learn these
@@ -1383,6 +1458,11 @@ Abdul-Rahman starts as a VA for a small online shop run by a Ghanaian woman livi
       },
     },
     "customer-support": {
+      outcomes: [
+        "Reply to customers in four steps",
+        "Handle upset customers and pass cases on",
+        "Keep a case log and protect customer information",
+      ],
       explanation_md: `Customer support appears in remote VA adverts, in Ghanaian customer service adverts and in front desk roles. Many of these roles are advertised at entry level, which can make this a realistic first step. It also teaches skills every assistant needs: patience, clear writing and careful records.
 
 ## The channels
@@ -1483,6 +1563,11 @@ Amina handles WhatsApp support for a solar lamp seller in Bolgatanga. A customer
       },
     },
     "social-media-scheduling": {
+      outcomes: [
+        "Build a content calendar",
+        "Schedule posts with free tools",
+        "Report back and be careful with page access",
+      ],
       explanation_md: `Many small businesses know they should post regularly but never find the time. Remote VA adverts often list social media management, and Ghanaian freelance assistants commonly offer content scheduling. Scheduling posts in advance is a practical service you can offer from a phone or a computer, without being a marketing expert.
 
 ## What the VA usually does
@@ -1580,6 +1665,11 @@ Mariama schedules posts for a caterer in Tamale. Every Thursday she drafts next 
       },
     },
     "task-tools-and-sops": {
+      outcomes: [
+        "Use shared task lists and boards",
+        "Write a standard operating procedure",
+        "Explain why clients value SOPs",
+      ],
       explanation_md: `A remote client cannot look over your shoulder to see what you are working on. A shared task list shows them. And when you do the same task every week, a written procedure makes sure it is done the same way every time, even if you are sick or someone else takes over. Remote VA adverts mention task tools and keeping procedures up to date, and both are signs of a professional assistant.
 
 ## Shared task lists and boards
@@ -1675,6 +1765,11 @@ Issahaku's tour company gets bookings through email and WhatsApp. His assistant,
       },
     },
     "working-reliably": {
+      outcomes: [
+        "Explain what remote adverts ask for about reliability",
+        "Be honest about your setup",
+        "Write a backup plan",
+      ],
       explanation_md: `Remote clients hire assistants they can depend on. They want work delivered on time and their information kept safe. In Ghana, power cuts and patchy data are real challenges, and online accounts are a target for scammers. Clients who have worked with assistants in other countries know these risks exist. What they care about is whether you have a plan.
 
 ## What remote adverts ask for
@@ -1760,6 +1855,11 @@ When Wumpini applies for a remote VA role, the client asks about power. She repl
       },
     },
     "power-and-data": {
+      outcomes: [
+        "Plan for power cuts",
+        "Plan for data and signal problems",
+        "Tell clients early when something goes wrong",
+      ],
       explanation_md: `Power cuts, weak signal and running out of data are everyday realities for many people working online in Ghana, especially outside the big cities. They do not have to stop you from being a dependable assistant. The difference between a VA who loses clients and one who keeps them is usually planning.
 
 ## Plan for power
@@ -1861,6 +1961,11 @@ Fuseini works mornings for a client in Germany. One day the power goes off at 8a
       },
     },
     "account-security": {
+      outcomes: [
+        "Use strong passwords and two step verification",
+        "Access client accounts safely and keep things confidential",
+        "Recognise phishing",
+      ],
       explanation_md: `As an assistant you may have access to a client's email, calendar, files, social media pages or customer lists. That makes you a target. Scammers know that if they can break into an assistant's account, they can reach the client. Keeping accounts safe is part of the job, and clients notice assistants who take it seriously.
 
 ## Strong passwords
@@ -1965,6 +2070,11 @@ Hawa receives an email that looks like it is from her client: "Urgent, pay this 
       },
     },
     "getting-work": {
+      outcomes: [
+        "Compare two routes into assistant work",
+        "Prepare for a programme",
+        "Start a job search tracker",
+      ],
       explanation_md: `Skills only change your life when someone pays you to use them. This final section is about turning what you have learned into income, safely. It covers how to show your skills, where to find work, how to avoid the many fake jobs that target young people looking for remote work, and how to receive payment.
 
 ## Two routes, both valid
@@ -2054,6 +2164,11 @@ Sumaila finishes this roadmap in Tamale. He offers two local shops a free one we
       },
     },
     "portfolio-and-profile": {
+      outcomes: [
+        "Describe a good VA portfolio",
+        "Keep samples honest and private",
+        "Write a profile and a short introduction",
+      ],
       explanation_md: `Clients and employers want proof. A certificate says you studied; a work sample shows you can do the job. When you have no paid experience yet, a small, well organised set of samples and a clear profile can be the difference between being ignored and being interviewed.
 
 ## What makes a good VA portfolio
@@ -2152,6 +2267,11 @@ Alhassan has no paid clients yet, so he builds a folder with five samples from t
       },
     },
     "finding-clients": {
+      outcomes: [
+        "Find where to look for VA work",
+        "Check whether an advert is open to you",
+        "Apply well and keep going",
+      ],
       explanation_md: `Finding your first assistant work takes effort, but there are more places to look than most beginners realise. The key is to search in several places at once, check every advert carefully, and apply in a way that shows you read it.
 
 ## Where to look
@@ -2257,6 +2377,11 @@ Ayishetu checks a remote board and finds three VA adverts. One is only for South
       },
     },
     "avoiding-scams": {
+      outcomes: [
+        "Recognise the most common job and payment tricks",
+        "Check an offer",
+        "Report a scam",
+      ],
       explanation_md: `Young people searching for remote work are a favourite target for scammers. Ghana's Cyber Security Authority (CSA) has repeatedly warned the public about fake job offers spreading by SMS, WhatsApp, Telegram and Facebook, including fake adverts that copy the websites of real organisations. Learning the patterns protects your money, your documents and your accounts.
 
 ## The most common tricks
@@ -2358,6 +2483,11 @@ Mariama gets a WhatsApp message offering a remote VA job with high pay and no in
       },
     },
     "getting-paid": {
+      outcomes: [
+        "Agree terms in writing first",
+        "Send invoices",
+        "Compare safe, legal ways to get paid from abroad",
+      ],
       explanation_md: `Getting paid properly is part of being professional. Clear agreements and invoices prevent arguments, and understanding how international payments work stops fees and scams from eating your income. This lesson describes the options in general terms. It does not recommend any provider, and rules and fees change, so always check the provider's own official pages.
 
 ## Agree in writing first

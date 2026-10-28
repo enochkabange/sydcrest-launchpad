@@ -10,6 +10,11 @@ const content: TrackContent = {
   roadmap: "digital-business",
   nodes: {
     foundations: {
+      outcomes: [
+        "Explain a business as a promise you can keep",
+        "Answer three questions about a product you could sell",
+        "Name the topics in this section",
+      ],
       explanation_md: `Across the north, people already run businesses. Women's groups process shea butter in Savelugu, weavers in Bolgatanga make baskets, families in Wa sell groundnuts and guinea fowl, and young people resell phones and clothes. What has changed is that customers now find sellers on their phones. A trader who can sell well through WhatsApp, social media and mobile money can reach buyers in Accra, Kumasi and beyond without renting a shop.
 
 This roadmap teaches you to run a small business online, or to do that work for an employer. Shops and companies in Ghana hire people for sales, online selling and customer care, and they look for the same skills you will practise here: serving customers, keeping records, managing stock and selling through chat and social media.
@@ -99,6 +104,11 @@ You do not need a big budget to start. You need a clear promise, a phone, and th
       },
     },
     "what-to-sell": {
+      outcomes: [
+        "Test a product idea against four tests",
+        "Test small before you spend big",
+        "Compare two product ideas",
+      ],
       explanation_md: `Many small businesses fail not because the owner is lazy but because they chose a product that was hard to get, hard to deliver or that few people wanted at that price. Choosing well at the start saves you money and stress. It is also the first question any employer or support programme will ask about your business: why this product?
 
 ## Four tests for a product
@@ -187,6 +197,11 @@ He spent little money, and he learned what his customers actually want. That is 
       },
     },
     "customers-and-competitors": {
+      outcomes: [
+        "Describe your main customer",
+        "Study what competitors offer",
+        "Find your own place in the market",
+      ],
       explanation_md: `If you try to sell to everyone, your message speaks to no one. Knowing exactly who buys from you tells you where to post, what to say, which language to use, how to price and how to deliver. Employers in sales also value this: adverts for sales and business development roles often ask for an understanding of customers and of what competitors are doing.
 
 ## Describe your customer
@@ -283,6 +298,11 @@ You can do the same for any product, whether you sell to neighbours in Nalerigu 
       },
     },
     "sourcing-and-suppliers": {
+      outcomes: [
+        "Find where products come from",
+        "Agree clear terms with a supplier",
+        "Keep a backup supplier",
+      ],
       explanation_md: `A customer who pays you is trusting that the product will arrive as promised. If your supplier lets you down, you let your customer down. Reliable supply is what allows a small business to keep its promises and grow. Online merchants and shop staff alike spend real time on sourcing, ordering and checking goods, so these habits matter for jobs too.
 
 ## Where products come from
@@ -379,6 +399,11 @@ When one supplier travelled for a funeral, the other covered his order. His cust
       },
     },
     money: {
+      outcomes: [
+        "Name the four money habits of a small business",
+        "Keep business money separate from personal money",
+        "Start tracking business money",
+      ],
       explanation_md: `Plenty of sellers in Ghana are busy all day and still wonder where the money went. They sell a lot, but they never worked out what each item really cost, they mixed business money with family money, or they ran out of stock just when buyers were ready. Being good with business numbers is what turns hard work into real income. It is also a skill employers check for: shop and sales adverts regularly ask for pricing, cash handling, record keeping and stock management.
 
 ## You do not need to be a maths expert
@@ -467,6 +492,11 @@ Amina raised her snack price slightly, opened a second wallet for the business a
       },
     },
     "costing-and-pricing": {
+      outcomes: [
+        "Find the full cost of one item",
+        "Add profit and check the price against the market",
+        "Decide who pays for delivery",
+      ],
       explanation_md: `Pricing is where many small sellers lose money without noticing. They copy a competitor's price or guess a round number, then find that after transport, packaging and data there is little left. Knowing how to cost and price an item is a basic skill for any trader, and shop and sales roles in Ghana often list pricing and basic maths as requirements.
 
 ## Step 1: find the full cost of one item
@@ -567,6 +597,11 @@ Before, Wumpini sold bracelets for 10 cedis because "that sounded right". She wa
       },
     },
     "profit-and-cash-flow": {
+      outcomes: [
+        "Tell sales, profit and cash apart",
+        "Calculate a margin",
+        "Explain why the timing of cash matters",
+      ],
       explanation_md: `"I sold 2,000 cedis this month!" sounds great, but it does not tell you whether the business made money. Understanding the difference between sales, profit and cash is one of the most useful things a trader can learn. Support programmes, lenders and employers who hire people to run shops all expect you to talk about these clearly.
 
 ## Three different numbers
@@ -657,6 +692,11 @@ So his profit was 600 cedis, but his cash was almost nothing. Sumaila now limits
       },
     },
     "simple-bookkeeping": {
+      outcomes: [
+        "Keep a basic sales and expense record",
+        "Choose between a notebook and a spreadsheet",
+        "Explain why good records pay off",
+      ],
       explanation_md: `Bookkeeping simply means writing down the money that comes in and goes out of your business. It sounds dull, but it is the habit that makes everything else possible: pricing, knowing your profit, applying for support, dealing with tax, and showing an employer that you can be trusted with money. Shop and sales adverts in Ghana regularly ask for record keeping and customer records.
 
 ## The basic record
@@ -757,6 +797,11 @@ Five minutes a day gave Abdul-Rahman better decisions and an opportunity he woul
       },
     },
     "stock-control": {
+      outcomes: [
+        "Keep a stock record and count against it",
+        "Know when to reorder and spot slow movers",
+        "Keep online stock honest",
+      ],
       explanation_md: `Few things lose a customer faster than taking their money and then saying the item is finished. On the other side, stock that sits unsold for months is cash you cannot use. Stock control, also called inventory management, keeps you in the middle: enough of what sells, not too much of what does not. It is one of the most common requirements in Ghanaian shop and sales adverts, often alongside cash handling and stock reconciliation.
 
 ## The stock record
@@ -854,6 +899,11 @@ Since she sells about 25 small tubs a week and her aunt needs four days to make 
       },
     },
     "selling-online": {
+      outcomes: [
+        "Plan an online shop",
+        "Choose a few channels to start with",
+        "Sell safely and honestly from the start",
+      ],
       explanation_md: `In Ghana a great deal of buying now starts in a chat. A customer sees a Status update or a TikTok video, sends a message asking "How much?", agrees a price, pays with mobile money and waits for delivery. Businesses that do this well can sell far beyond their town. Employers have noticed too: Ghanaian adverts for shop staff, sales officers and online sales roles regularly ask for experience selling through WhatsApp, Instagram and TikTok, and some ask for live selling.
 
 ## Your online shop
@@ -947,6 +997,11 @@ The lessons in this section show you how to set up each part of your online shop
       },
     },
     "whatsapp-business": {
+      outcomes: [
+        "Set up a WhatsApp Business profile",
+        "Use Status as a daily display",
+        "Keep good chat habits with customers",
+      ],
       explanation_md: `For many Ghanaian businesses, WhatsApp is the shop counter. Customers ask questions, place orders and send payment confirmations there. Sellers who manage WhatsApp well reply faster, lose fewer orders and look more professional. Ghanaian adverts for shop and sales staff mention WhatsApp and WhatsApp Business by name, so this is a job skill as well as a business skill.
 
 ## WhatsApp Business is a separate free app
@@ -1051,6 +1106,11 @@ When a customer in Takoradi asks about a smock, Hawa shares the catalogue item, 
       },
     },
     "social-and-live-selling": {
+      outcomes: [
+        "Show products in use in short videos",
+        "Move interested people to the order stage",
+        "Plan a live selling session",
+      ],
       explanation_md: `Instagram, TikTok and Facebook are where many customers, especially younger ones in cities, discover products. Ghanaian companies now hire people specifically to sell through these apps: adverts ask for selling in direct messages, creating short videos and hosting live sales sessions. Even if you only run your own small business, these skills bring buyers who would never pass your stall.
 
 ## Show the product in use
@@ -1152,6 +1212,11 @@ She then held a 20 minute live session each Friday evening, showing each tub siz
       },
     },
     "product-photos": {
+      outcomes: [
+        "Take clear product photos with a phone",
+        "Write descriptions that answer buyers' questions",
+        "Produce a full product listing",
+      ],
       explanation_md: `Online, customers cannot touch your product. Your photos and descriptions do the job your hands would do at a market stall. Clear photos make people trust you, reduce questions and cut down on complaints. Shop and sales adverts in Ghana increasingly ask for photo and video skills, and online merchants list product photography and descriptions among their core tasks.
 
 ## Taking good photos with a phone
@@ -1249,6 +1314,11 @@ His new description read: "Dawadawa from Savelugu. 250 g sealed pack. 25 cedis. 
       },
     },
     "online-store": {
+      outcomes: [
+        "Compare four simple online store options",
+        "Choose the right option for your business",
+        "Keep your store consistent with your other channels",
+      ],
       explanation_md: `As your business grows, sharing photos one chat at a time becomes slow. An online store, in its simplest form, is one place where customers can see all your products, prices and how to buy. Ghanaian employers hiring online sales staff mention running a company website, uploading products and prices, and managing stores on online marketplaces, so understanding the options is useful for jobs as well as for your own business.
 
 ## Four simple options
@@ -1340,6 +1410,11 @@ He considered a marketplace too, but after reading the seller terms and working 
       },
     },
     "payments-and-delivery": {
+      outcomes: [
+        "Explain why mobile money is the main way to get paid",
+        "Treat delivery as part of the product",
+        "Write your own order flow",
+      ],
       explanation_md: `An online sale is only finished when the money is safely in your wallet and the product is safely in your customer's hands. These two moments are where trust is built or broken. A customer who pays and receives the right item on time will come back and tell friends. A seller who loses money to a scam, or a customer whose parcel goes missing, may never trust online buying again. Online merchants and ecommerce staff in Ghana spend much of their time on exactly these tasks: checking payments, processing orders and coordinating deliveries.
 
 ## Mobile money is the main way to get paid
@@ -1434,6 +1509,11 @@ The next three lessons go through each part of this flow in detail.`,
       },
     },
     "mobile-money-payments": {
+      outcomes: [
+        "Use a business wallet",
+        "Confirm every payment yourself and record its transaction ID",
+        "Decide when customers pay and account for charges",
+      ],
       explanation_md: `Mobile money is how most Ghanaian customers pay small online sellers. Handling it well means more than sharing a number. It means getting paid into the right place, confirming every payment properly, keeping a record and agreeing clearly when the customer pays. Shop and sales adverts often mention cash handling and electronic payments, and online merchants list payment processing among their core tasks.
 
 ## Use a business wallet
@@ -1532,6 +1612,11 @@ When a customer pays, she checks her own wallet for the provider's confirmation,
       },
     },
     "payment-scams": {
+      outcomes: [
+        "Follow the golden rule against payment scams",
+        "Recognise common tricks",
+        "Build habits that protect your money",
+      ],
       explanation_md: `Busy sellers are a favourite target for fraudsters, because they receive many payments and want to serve customers quickly. A single scam can wipe out a week's profit. The good news is that most scams follow a few patterns, and simple habits stop nearly all of them. Being careful with money is also something employers value in anyone who handles sales or payments.
 
 ## The golden rule
@@ -1637,6 +1722,11 @@ Wumpini received a message: "You have received GHS 150.00 from Hawa. Your new ba
       },
     },
     "orders-and-delivery": {
+      outcomes: [
+        "Keep an order list",
+        "Pack items to protect them",
+        "Choose delivery options and get clear addresses",
+      ],
       explanation_md: `Getting the right item to the right person, on time and in good condition, is what turns a one time buyer into a regular customer. Ecommerce adverts in Ghana list order processing, order fulfilment and delivery coordination as core duties, so this is directly useful for jobs too.
 
 ## Keep an order list
@@ -1742,6 +1832,11 @@ She folded the smocks into a clean sealed bag with a thank you note, wrote the c
       },
     },
     "customers-and-growth": {
+      outcomes: [
+        "See how service, marketing and loyalty work together",
+        "Define how you want customers to feel",
+        "Listen to customers and learn",
+      ],
       explanation_md: `A small business grows in two ways: by finding new customers and by keeping the ones it already has. Both depend on how people feel after dealing with you. In Ghana, word of mouth is powerful. A satisfied customer tells her church group, her colleagues and her family WhatsApp group. An unhappy one tells them too. Customer service is one of the skills that appears most often in Ghanaian sales and shop adverts, so getting good at this section pays off whether you run your own business or work for someone else.
 
 ## Service, marketing and loyalty work together
@@ -1835,6 +1930,11 @@ The next lessons show you how to do the same, step by step.`,
       },
     },
     "customer-service": {
+      outcomes: [
+        "Reply to customers well",
+        "Set clear service rules before problems happen",
+        "Handle complaints calmly",
+      ],
       explanation_md: `Customer service is one of the skills Ghanaian sales and shop employers ask for most often. For a small online seller it matters even more, because customers cannot see your face or your shop. Every message you send is your shop counter, your smile and your reputation.
 
 ## Reply well
@@ -1936,6 +2036,11 @@ When the replacement arrived, the customer updated her comment to say the proble
       },
     },
     "low-cost-marketing": {
+      outcomes: [
+        "Use free and low cost marketing channels",
+        "Time offers well",
+        "Measure what brings orders before trying paid ads",
+      ],
       explanation_md: `Most small businesses start with almost no money for advertising, and that is fine. Many successful Ghanaian sellers grew through Status updates, groups, referrals and good timing before they ever paid for an ad. Shop and sales adverts often list promotions and social media among the duties, so knowing how to market well on a small budget is useful in a job too.
 
 ## Free and low cost channels
@@ -2032,6 +2137,11 @@ During Ramadan she created an iftar pack and announced it a week ahead. She aske
       },
     },
     "repeat-customers": {
+      outcomes: [
+        "Keep a simple customer list",
+        "Follow up and use broadcast lists",
+        "Reward loyal customers",
+      ],
       explanation_md: `Finding a new customer takes effort: posts, replies, building trust from nothing. Selling again to someone who already trusts you is usually much easier. Repeat customers also recommend you to others. That is why online selling courses teach customer loyalty, and why Ghanaian sales adverts ask for customer records, follow up and account management.
 
 ## Keep a simple customer list
@@ -2133,6 +2243,11 @@ She gives a small discount on the fourth purchase and notes it in the sheet. Man
       },
     },
     "going-official": {
+      outcomes: [
+        "Name three areas of making a business official",
+        "Check official sources and avoid fake helpers",
+        "Use your records to make it easier",
+      ],
       explanation_md: `Many small businesses in Ghana start informally, and that is a normal first step. As you grow, making your business official opens doors. Some bigger buyers, such as shops, hotels, schools and companies, prefer to deal with registered businesses. Online payment services and merchant accounts often ask for registration documents. Support programmes, loans and grants usually ask for them too. And staying on the right side of tax and product rules protects you from fines or having goods seized.
 
 ## Three areas to understand
@@ -2226,6 +2341,11 @@ Going official is not something to fear. It is a step that helps a growing busin
       },
     },
     "business-registration": {
+      outcomes: [
+        "Explain who registers businesses in Ghana",
+        "Compare common business types",
+        "Plan registration, a name and renewal",
+      ],
       explanation_md: `Registering your business gives it a legal identity. It can help you open a business bank account, get a merchant mobile money account, sign up for some online payment services, apply for support programmes and sell to larger buyers who need invoices from a registered business. Even if you do not register straight away, understanding the options means you can make the choice with confidence.
 
 ## Who registers businesses in Ghana
@@ -2325,6 +2445,11 @@ She gathers her Ghana Card, her GhanaPostGPS address and a short description of 
       },
     },
     "tax-basics": {
+      outcomes: [
+        "Explain the role of the Ghana Revenue Authority",
+        "Get a tax number and understand simplified tax for small traders",
+        "Know when VAT applies and avoid tax scams",
+      ],
       explanation_md: `Tax can feel frightening, but the basics are straightforward. Understanding them helps you plan prices, avoid penalties, and answer when a buyer, lender or support programme asks about your tax position. This lesson gives the general picture. For anything specific, check with the Ghana Revenue Authority (GRA).
 
 ## The Ghana Revenue Authority
@@ -2438,6 +2563,11 @@ Because he had kept a year of sales records, he could see which category he prob
       },
     },
     "product-standards": {
+      outcomes: [
+        "Know who oversees food and cosmetics",
+        "Check what a good label shows",
+        "Follow hygiene, safety and standards",
+      ],
       explanation_md: `This lesson matters most if you sell food, drinks, cosmetics such as shea butter or soap, herbal products or similar goods. These products go into or onto people's bodies, so Ghana has rules to protect customers' health. Following them helps you sell to supermarkets, pharmacies and bigger buyers, and protects you from complaints, fines or having goods taken off the market. If you sell items like clothes, baskets or phone accessories, you can treat this lesson as optional background.
 
 ## Who oversees food and cosmetics
@@ -2539,6 +2669,11 @@ Mariama visited the FDA regional office to ask what was needed. She learned what
       },
     },
     earning: {
+      outcomes: [
+        "Compare running a business with getting a job",
+        "Count your business experience as evidence",
+        "Set honest expectations for your next step",
+      ],
       explanation_md: `The skills in this roadmap can earn you money in two ways. You can grow your own business, or you can be hired by a business that needs someone to sell, serve customers and manage online orders. Many people do both: they work in sales while building a side business, or they run a business and take on freelance work helping others sell online. Sales and business development adverts are a common sight on Ghanaian job sites such as Jobberman, and many now ask for exactly the skills you have practised here.
 
 ## Two paths, one set of skills
@@ -2627,6 +2762,11 @@ His friend Mariama chose the other path. She used her records to apply to a yout
       },
     },
     "sales-jobs": {
+      outcomes: [
+        "Describe what sales and online retail roles involve",
+        "Build a simple portfolio",
+        "Apply safely for sales roles",
+      ],
       explanation_md: `When you browse Ghanaian job sites such as Jobberman, you will usually find plenty of sales and business development roles. Many are open to people with little formal experience, as long as they can communicate well, serve customers, keep records and use a phone and basic computer tools confidently. The skills from this roadmap fit these roles closely.
 
 ## What these roles involve
@@ -2730,6 +2870,11 @@ Hawa, who sells smocks, applied for a social media sales officer role. Her CV li
       },
     },
     "growth-and-support": {
+      outcomes: [
+        "Write a one page growth plan",
+        "Compare ways to grow",
+        "Find support and check it before you trust it",
+      ],
       explanation_md: `Once your business is running steadily, the next questions are where to take it and who can help. Growth without a plan can strain your cash and your energy. Support from the right programme can speed things up. Support from the wrong one can cost you money. This lesson helps you plan and choose wisely.
 
 ## Write a one page plan

@@ -67,6 +67,10 @@ export const aiToolsForWork: RoadmapDraft = {
         "Before you rely on an AI assistant for work, learn what it really is, where it shines and where it fails. This section also covers picking a free tool and keeping your data and your clients safe.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [elementsOfAi, unescoAi],
     },
     {
@@ -76,6 +80,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "AI chat assistants predict likely words, which makes them fast at drafting but able to state wrong things with confidence. Knowing this one fact shapes how you use them for every task in this track.",
       parent: "ai-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [elementsOfAi],
     },
     {
@@ -85,6 +91,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "Several companies offer free AI assistants that work in a web browser or an app, and their free plans change often. Learn how to compare them on what matters to you, such as data use, languages and limits.",
       parent: "ai-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [geminiHelp, copilotPrompts],
     },
     {
@@ -94,6 +102,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "Whatever you type into an AI tool may be stored or reviewed, so some information must never go in. Learn what to keep out, how to change your settings and how Ghana's data protection law applies to you.",
       parent: "ai-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [geminiPrivacy, RES.dpc, RES.lfSafety],
     },
     {
@@ -103,6 +113,10 @@ export const aiToolsForWork: RoadmapDraft = {
         "The quality of what you get back depends heavily on what you ask. This section teaches you to write clear prompts, improve answers step by step and check everything before you use it.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [claudePrompting],
     },
     {
@@ -112,6 +126,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "A strong prompt gives the assistant a task, the context, who it is for and the format you want. Practise turning vague requests into prompts that get useful answers the first time.",
       parent: "prompting",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [copilotPrompts, claudePrompting],
     },
     {
@@ -121,6 +137,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "Good results usually come from a short conversation, not one perfect prompt. Learn to give feedback, show examples and break big jobs into small steps.",
       parent: "prompting",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [claudePrompting, geminiHelp],
     },
     {
@@ -130,6 +148,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "AI assistants sometimes invent facts, quotes, figures and links that look real. Learn a simple routine to verify claims before your name goes on the work.",
       parent: "prompting",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [ghanaFact, dubawa, RES.lfSearch],
     },
     {
@@ -139,6 +159,10 @@ export const aiToolsForWork: RoadmapDraft = {
         "Most paid work that uses AI is ordinary work done faster: writing, summarising, handling data, making visuals and translating. Each topic here is a skill you can show an employer or client.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Virtual Assistant", "Entry level AI and automation assistant"],
       resources: [RES.lfBizWriting],
     },
     {
@@ -148,6 +172,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "Use AI to draft and polish emails, messages, CVs, reports and social posts while keeping your own voice. You stay the editor who decides what is true, kind and right for the reader.",
       parent: "everyday-work",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfBizWriting, RES.lfWriting, docsGemini],
     },
     {
@@ -157,6 +183,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "AI can shrink long documents, meeting notes and reports into clear summaries and help you plan research. Learn to ask for the right kind of summary and to check it against the source.",
       parent: "everyday-work",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfSearch, RES.lfThinking],
     },
     {
@@ -166,6 +194,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "AI can explain formulas, suggest how to clean messy lists and help you read a table. You still test every formula on real rows before you trust it.",
       parent: "everyday-work",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfSheets, sheetsFormulas],
     },
     {
@@ -175,6 +205,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "AI image tools can produce illustrations, backgrounds and design ideas from a text description. Learn where they help, where they go wrong and how to use them honestly.",
       parent: "everyday-work",
       optional: true,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfCanva, synthId],
     },
     {
@@ -184,6 +216,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "AI translation between English and Ghanaian languages such as Dagbani, Twi and Ewe is improving but still makes mistakes. Learn to use it as a first draft and always check with a fluent speaker.",
       parent: "everyday-work",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [khaya, ghanaNlp, translateHelp],
     },
     {
@@ -193,6 +227,10 @@ export const aiToolsForWork: RoadmapDraft = {
         "Repeated tasks like answering the same questions or sorting emails can be partly handed to tools. This section shows how to save prompts you reuse and automate small jobs without writing code.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["No code automation specialist", "Virtual executive assistant and business development associate"],
       resources: [gmailFilters],
     },
     {
@@ -202,6 +240,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "A tested prompt with blanks to fill in saves time and gives steady results. Build a small personal library of templates for tasks you do often.",
       parent: "automation",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [copilotPrompts, RES.lfDrive],
     },
     {
@@ -211,6 +251,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "Quick replies, email filters, form and sheet workflows and simple no code tools can take routine work off your hands. Start with one small, safe task and keep a person checking the results.",
       parent: "automation",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [gmailFilters, RES.whatsappBusiness, RES.lfSheets],
     },
     {
@@ -220,6 +262,10 @@ export const aiToolsForWork: RoadmapDraft = {
         "AI skills can help you land a job, take on freelance work or sell a simple digital product. This section covers where the opportunities are and how to earn honestly.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["AI specialist", "Twi AI training quality specialist", "Hausa AI training writer"],
       resources: [RES.lfFreelancing],
     },
     {
@@ -229,6 +275,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "Adverts for assistants, content and social media roles now ask for AI tool skills, and some remote projects pay people to train and check AI. Learn how to find real openings and avoid scams.",
       parent: "earning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfJobsearch, RES.lfFreelancing],
     },
     {
@@ -238,6 +286,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "A digital product is something you make once and sell many times, such as a template pack, a guide or a planner. Learn how AI can help you plan and build one that solves a real problem for real buyers.",
       parent: "earning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfCanva, RES.lfDrive],
     },
     {
@@ -247,6 +297,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "A good product still needs buyers, a fair price and a safe way to get paid. Learn to test demand cheaply, take payment with mobile money and treat customers well.",
       parent: "earning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.whatsappBusiness, RES.lfMoney],
     },
     {
@@ -256,6 +308,10 @@ export const aiToolsForWork: RoadmapDraft = {
         "Clients and employers hire people they can trust and whose skills they can see. This last section covers honesty and ethics with AI and how to prove your skills with a portfolio.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Content editor", "Content creator and social media manager"],
       resources: [unescoAi, RES.lfResume],
     },
     {
@@ -265,6 +321,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "Clients and employers trust you to be open about how you work and to respect other people's rights. Learn when to tell people you used AI, how to avoid copying and bias, and why your judgement matters most.",
       parent: "working-professionally",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [aiPrinciples, unescoAi],
     },
     {
@@ -274,6 +332,8 @@ export const aiToolsForWork: RoadmapDraft = {
         "Employers and clients want proof, not claims, that you use AI well. Bring your best work from this track together into a short portfolio you can share from any device.",
       parent: "working-professionally",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfResume, RES.lfDrive],
     },
   ],

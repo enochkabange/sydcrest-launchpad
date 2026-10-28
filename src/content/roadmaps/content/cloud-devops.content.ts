@@ -10,6 +10,11 @@ const content: TrackContent = {
   roadmap: "cloud-devops-engineer",
   nodes: {
     "before-you-start": {
+      outcomes: [
+        "Explain what cloud and DevOps actually mean",
+        "Describe what this track covers",
+        "Plan around money and devices before you begin",
+      ],
       explanation_md: `## Why this section comes first
 
 When you send money with MoMo, check a bank balance or stream a match, the app on your phone talks to computers that someone has to keep running day and night. In Ghana, banks, fintechs, telcos, logistics firms and software companies all need people who can run those computers, set up the pipelines that deliver new versions of their apps, and keep the monthly cloud bill under control. Those people are called cloud engineers, DevOps engineers, site reliability engineers or infrastructure engineers. The titles differ, but the work overlaps a lot.
@@ -75,6 +80,11 @@ Issahaku finished the IT support track and now looks after computers at a microf
       },
     },
     "what-you-need-first": {
+      outcomes: [
+        "Check your readiness from IT support or backend work",
+        "Answer the device question plainly",
+        "Fill one gap before you start",
+      ],
       explanation_md: `## Why prerequisites matter
 
 Cloud adverts in Ghana rarely ask for cloud skills alone. They ask for Linux, networking, scripting and Git as well, because the cloud is built out of those things. If you skip them, cloud consoles feel like magic buttons and interviews expose the gaps quickly. If you have them, the cloud becomes a set of familiar ideas with a new interface.
@@ -161,6 +171,11 @@ Mariama finished the backend track and built an API for a Bolgatanga shea butter
       },
     },
     "cloud-devops-jobs": {
+      outcomes: [
+        "Recognise the job titles in cloud and DevOps adverts",
+        "Explain what the adverts ask for, including experience",
+        "Map realistic routes into the work",
+      ],
       explanation_md: `## Why look at jobs before learning
 
 It is easier to stay motivated when you know what employers actually ask for. We read cloud and DevOps adverts from Ghanaian banks, telcos, fintechs and software firms, plus remote roles open to Africa based applicants, and noted which skills appeared. This lesson shares what we found, honestly.
@@ -231,6 +246,11 @@ Fuseini works on a help desk at a telco in Accra. He finished the IT support tra
       },
     },
     "linux-and-networking": {
+      outcomes: [
+        "Explain how this section builds on what you know",
+        "Set up a free Linux practice space",
+        "Practise without wasting data",
+      ],
       explanation_md: `## Why this section matters
 
 Almost every server you will touch in the cloud runs Linux, and almost none of them has a screen or mouse. You connect over the network and type commands. When a bank's payment API stops responding at night, the engineer on call opens a terminal, reads logs and checks network settings. Adverts for cloud and infrastructure roles in Ghana list Linux, scripting and networking because this is the daily work.
@@ -299,6 +319,11 @@ Amina runs the IT side of a small courier business in Wa. The company's tracking
       },
     },
     "linux-command-line": {
+      outcomes: [
+        "Manage files, users, permissions and sudo",
+        "Install packages and manage services",
+        "Read logs and connect to remote servers",
+      ],
       explanation_md: `## Why it matters
 
 When a cloud server misbehaves, there is no desktop to click. You connect, look around and fix things with commands. Interviewers for cloud support and DevOps roles often ask you to talk through a few commands, and the first weeks of most infrastructure jobs are spent in a terminal. If [Linux basics](/roadmaps/it-support/linux-basics) or [the command line](/roadmaps/backend-developer/command-line) are new to you, finish those lessons first.
@@ -394,6 +419,11 @@ Sumaila looks after the server for a school results portal in Damongo. Parents r
       },
     },
     "scripting-and-automation": {
+      outcomes: [
+        "Write a first Bash script that checks results",
+        "Run a script on a schedule",
+        "Choose between Bash and Python",
+      ],
       explanation_md: `## Why it matters
 
 Doing a task once by hand is fine. Doing it every day on ten servers is how mistakes happen. Cloud and DevOps adverts in Ghana regularly ask for Bash or Python scripting because automation is the heart of the job: backups, health checks, user setup and deployments should run the same way every time, without someone remembering each step.
@@ -491,6 +521,11 @@ Hawa supports an NGO in Nalerigu that collects field surveys on tablets. Every e
       },
     },
     "networking-for-cloud": {
+      outcomes: [
+        "Plan IP ranges and subnets",
+        "Use ports, firewalls, DNS and load balancers",
+        "Follow one request through a cloud network",
+      ],
       explanation_md: `## Why it matters
 
 A server that works but cannot be reached is useless. Many cloud problems are network problems: a firewall rule blocking a port, a DNS record pointing to the wrong address, a database placed where the app cannot see it. An infrastructure advert we read from a Ghanaian company named DNS, VPNs, load balancing and virtual networks. If [IP addresses](/roadmaps/it-support/ip-addresses) and [DNS](/roadmaps/it-support/dns) are new, read those IT support lessons first.
@@ -574,6 +609,11 @@ When something breaks, check each hop in order: DNS, firewall, load balancer hea
       },
     },
     "cloud-fundamentals": {
+      outcomes: [
+        "Name what this section covers",
+        "Match the same service across three providers",
+        "Practise in the cloud safely",
+      ],
       explanation_md: `## Why this section matters
 
 Every cloud advert names at least one provider: Amazon Web Services (AWS), Microsoft Azure or Google Cloud. They look different, with different names for everything, but underneath they sell the same building blocks and follow the same ideas. If you learn the ideas first, switching between providers is mostly learning new names. Entry level cloud exams such as Microsoft's Azure Fundamentals and the AWS Certified Cloud Practitioner test exactly these ideas.
@@ -641,6 +681,11 @@ Zenabu works at a fintech in Accra that runs on AWS. Her friend Alhassan works a
       },
     },
     "cloud-concepts": {
+      outcomes: [
+        "Explain why companies use the cloud",
+        "Tell apart service and deployment models",
+        "Explain regions, availability zones and shared responsibility",
+      ],
       explanation_md: `## Why it matters
 
 Interviewers for cloud support and junior DevOps roles almost always start with concepts: what is the difference between IaaS and SaaS, what is a region, who is responsible for patching. These ideas also shape real decisions, such as where to put a Ghanaian bank's data and how much work the team takes on. They are the core of entry exams like AZ-900.
@@ -721,6 +766,11 @@ Rashida's team builds a market price app for traders in Bolgatanga. They choose 
       },
     },
     "core-cloud-services": {
+      outcomes: [
+        "Compare virtual machines, managed databases and serverless functions",
+        "Choose between object, block and file storage",
+        "Host a static site for free",
+      ],
       explanation_md: `## Why it matters
 
 Ghanaian infrastructure adverts name compute, storage and database services directly. Almost every cloud app, from a hospital booking system to a MoMo merchant dashboard, is built from four building blocks. Knowing what each is for, and when to choose it, is the bulk of entry level cloud work.
@@ -806,6 +856,11 @@ The practice below needs no cloud account. If you choose to use a real account, 
       },
     },
     "identity-and-access": {
+      outcomes: [
+        "Protect the root account",
+        "Use users, groups, roles and policies for least privilege",
+        "Handle keys and secrets and review access regularly",
+      ],
       explanation_md: `## Why it matters
 
 Many serious cloud incidents start with access, not clever hacking: a leaked key in a public code repository, a shared admin password, a contractor who still has access months after leaving. Banks and telcos in Ghana list identity and access management (IAM) and security controls in their cloud adverts because a single careless permission can expose customer data. This builds on [accounts and access](/roadmaps/it-support/accounts-and-access) in the IT support track.
@@ -900,6 +955,11 @@ Mahama joins a logistics startup in Kumasi and finds that every developer signs 
       },
     },
     "cloud-costs": {
+      outcomes: [
+        "Explain how free offers work and which need a card",
+        "Know what costs money on a paid account",
+        "Build habits and designs that protect a budget",
+      ],
       explanation_md: `## Why it matters
 
 On a paid cloud account you pay for what you use, often in US dollars. A server left running, a forgotten database or a large download can keep billing day and night, and when the cedi moves the bill in cedis moves with it. Ghanaian adverts ask for cost efficient design because cloud bills are a real business cost. For you as a learner, the first rule is simpler: **practise in ways that cannot bill you.**
@@ -981,6 +1041,11 @@ Iddrisu, a developer in Tamale, practised on a paid account years ago, launched 
       },
     },
     "shipping-software": {
+      outcomes: [
+        "Explain how code, pipelines and containers fit together",
+        "Shift your mindset to automated shipping",
+        "Map how software ships where you work or study",
+      ],
       explanation_md: `## Why this section matters
 
 A developer finishing a feature is only half the job. The change still has to be tested, packaged, delivered to servers and released to users without breaking anything. In many small companies this is done by hand: someone copies files to a server late at night and hopes. DevOps replaces that with automation, so releasing a fix to a MoMo merchant app can happen many times a day, safely. Ghanaian DevOps adverts name continuous integration and delivery (CI/CD) and Docker more than almost anything else after the cloud itself.
@@ -1053,6 +1118,11 @@ A small Accra agency released its clients' websites by copying files over FTP. O
       },
     },
     "git-for-teams": {
+      outcomes: [
+        "Work with branches, pull requests and code review",
+        "Protect the main branch and resolve merge conflicts",
+        "Tag versions and keep secrets out",
+      ],
       explanation_md: `## Why it matters
 
 In a DevOps team, Git is not just where code is saved. It is the starting switch for everything: a push starts the tests, a merge starts a deployment, a tag starts a release. Adverts name Git, GitHub and GitLab because a team's Git habits decide whether its pipelines are calm or chaotic. If Git is new, finish [Git and GitHub](/roadmaps/backend-developer/git-and-github) in the backend track first.
@@ -1145,6 +1215,11 @@ Napari and Sumaila share a repository for a clinic appointment app in Wa. Before
       },
     },
     "ci-cd-pipelines": {
+      outcomes: [
+        "Explain continuous integration and delivery",
+        "Build a first GitHub Actions workflow",
+        "Keep good pipeline habits",
+      ],
       explanation_md: `## Why it matters
 
 Continuous integration and delivery (CI/CD) appears in more Ghanaian DevOps adverts than any skill except the cloud itself, under tool names such as GitHub Actions, GitLab CI, Jenkins and Azure DevOps. A pipeline is a robot teammate that checks every change the same way, every time, and never gets tired at 11 at night.
@@ -1245,6 +1320,11 @@ Wumpini maintains a stock app for a pharmacy chain with branches in Tamale and Y
       },
     },
     "containers": {
+      outcomes: [
+        "Explain images and containers",
+        "Write a first Dockerfile",
+        "Build, run, check and clean up containers",
+      ],
       explanation_md: `## Why it matters
 
 "It works on my machine" is one of the oldest problems in software. A container solves it by packaging an app with everything it needs: the runtime, libraries and settings. The same container runs on a developer's laptop, in the pipeline and on a cloud server. Docker appears in most Ghanaian DevOps adverts we read, and containers are the input to Kubernetes later in this track.
@@ -1346,6 +1426,11 @@ Fuseini's team builds a delivery tracking API in Kumasi. One developer used one 
       },
     },
     "running-at-scale": {
+      outcomes: [
+        "Explain why systems must be repeatable and observable",
+        "Practise without spending money",
+        "Check how repeatable a system is",
+      ],
       explanation_md: `## Why this section matters
 
 Getting an app online once is a good start. Keeping it online for thousands of customers, rebuilding it after a disaster and knowing it is broken before customers call is the harder part, and it is where DevOps and cloud engineers earn trust. Ghanaian adverts for DevOps roles list Terraform, Kubernetes, Prometheus, Grafana and disaster recovery alongside the cloud and containers.
@@ -1418,6 +1503,11 @@ A fintech in Accra had one engineer who knew how the servers were set up, all fr
       },
     },
     "infrastructure-as-code": {
+      outcomes: [
+        "Explain how infrastructure as code works",
+        "Run the Terraform cycle with no cloud account",
+        "Explain state and why IaC saves money",
+      ],
       explanation_md: `## Why it matters
 
 Clicking through a cloud console is fine for learning, but at work it causes problems: nobody remembers exactly what was clicked, test and production drift apart, and rebuilding after a disaster is guesswork. **Infrastructure as code** (IaC) means describing servers, networks and databases in text files kept in Git. Ghanaian DevOps adverts name Terraform and AWS CloudFormation often, and telco and bank cloud roles list IaC directly.
@@ -1523,6 +1613,11 @@ Azara's team runs a payroll app for schools across the Northern Region. Test and
       },
     },
     "kubernetes-basics": {
+      outcomes: [
+        "Explain desired state",
+        "Name the main Kubernetes pieces and read a manifest",
+        "Know when not to use Kubernetes",
+      ],
       explanation_md: `## Why it matters
 
 When a company runs dozens of containers across many servers, someone has to decide where each runs, restart them when they crash and add more when traffic spikes on salary day. Kubernetes does that. It appears in many Ghanaian DevOps adverts, mostly at mid and senior level, which is why this lesson is optional. Knowing the main ideas still helps you in interviews and in reading a team's setup on day one.
@@ -1635,6 +1730,11 @@ Alhassan's team at a ride hailing startup in Accra runs its booking service on K
       },
     },
     "monitoring-and-logging": {
+      outcomes: [
+        "Tell apart metrics, logs and traces",
+        "Watch the four key signals",
+        "Design alerts people trust and set reliability targets",
+      ],
       explanation_md: `## Why it matters
 
 The worst way to learn your service is down is from an angry customer on social media. Good teams know first, and know why. Monitoring and logging appear across Ghanaian cloud and DevOps adverts, with tools such as Prometheus, Grafana, the ELK stack, Amazon CloudWatch and Azure Monitor. If you deployed an API in the backend track's [deploy and monitor](/roadmaps/backend-developer/deploy-and-monitor) lesson, this goes deeper.
@@ -1737,6 +1837,11 @@ Hawa looks after a hospital appointment system in Tamale. She set up an uptime c
       },
     },
     "reliability-and-security": {
+      outcomes: [
+        "Test backups by restoring them",
+        "Design for failure, patch and harden servers",
+        "Manage secrets and respond to incidents",
+      ],
       explanation_md: `## Why it matters
 
 Things will break: disks fail, someone deletes the wrong folder, a dependency has a security hole, a region has an outage. Employers trust engineers who plan for failure and stay calm when it comes. Ghanaian infrastructure adverts name disaster recovery, backups and security standards, and banks and telcos treat them as essential. This builds on [backups](/roadmaps/it-support/backups) and [security basics](/roadmaps/it-support/security-basics) from IT support and [security](/roadmaps/backend-developer/security) from backend.
@@ -1821,6 +1926,11 @@ Issahaku's team ran a microfinance loan app. A developer ran a cleanup script ag
       },
     },
     "getting-hired": {
+      outcomes: [
+        "Explain what cloud employers look for",
+        "Gather your evidence in one place",
+        "Stay patient through a long search",
+      ],
       explanation_md: `## Why this section matters
 
 Cloud and DevOps employers are trusting you with the systems that hold their customers' money and data. They want evidence that you can build something, run it and fix it, not just a list of courses watched. This section turns everything you have practised into that evidence and points you towards realistic first steps.
@@ -1897,6 +2007,11 @@ Mariama had finished several free courses but got no interviews. A mentor asked 
       },
     },
     "cloud-certifications": {
+      outcomes: [
+        "Compare the entry level cloud exams",
+        "Prepare for an exam for free",
+        "Choose which certification to take first",
+      ],
       explanation_md: `## Why it matters
 
 Some Ghanaian cloud adverts ask for a cloud certification, and recruiters use them to filter applications. A fundamentals certification also gives your learning a clear structure and a deadline. But a certificate without hands on practice is easy to spot in an interview. Treat the exam as a milestone on top of real work, never a replacement for it.
@@ -1980,6 +2095,11 @@ Sumaila noticed that the bank adverts he read in Accra mentioned Azure. He used 
       },
     },
     "cloud-portfolio": {
+      outcomes: [
+        "Build a cloud portfolio project on a free tier",
+        "Write a README that explains the project",
+        "Tear down resources when you finish",
+      ],
       explanation_md: `## Why it matters
 
 A single well documented project that you built, ran and tore down says more to an employer than a list of certificates. It gives interviewers something real to ask about, and it gives you real stories to tell. This lesson brings every part of the track together into one portfolio project.
@@ -2062,6 +2182,11 @@ Abdul-Rahman built a page for his aunt's shea butter business in Bolgatanga. His
       },
     },
     "first-cloud-role": {
+      outcomes: [
+        "Search for the right job titles",
+        "Prepare your CV, profile and interviews",
+        "Keep going with a focused search",
+      ],
       explanation_md: `## Why it matters
 
 Knowing the skills is one thing; getting the first job is another. Cloud and DevOps titles often ask for experience, so your first role may have a different name. This lesson helps you search smartly, present your work well and use the role you have now as a route in.

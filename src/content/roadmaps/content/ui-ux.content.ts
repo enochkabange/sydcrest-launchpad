@@ -9,6 +9,11 @@ const content: TrackContent = {
   roadmap: "ui-ux-designer",
   nodes: {
     foundations: {
+      outcomes: [
+        "Explain UX and UI in plain words",
+        "Explain why design matters for jobs in Ghana",
+        "Spot good and bad UX around you",
+      ],
       explanation_md: `## Why design matters for jobs in Ghana
 
 More and more Ghanaian businesses now serve customers through phones. Banks, mobile money services, hospitals, schools, farm advisory services and online shops all need apps and websites that people can actually use. When a screen is confusing, customers give up, call the support line or walk to the branch instead. Companies hire designers to stop that from happening.
@@ -97,6 +102,11 @@ Work through the sections in order. Each topic has a short lesson, a practice ta
       },
     },
     "what-ux-and-ui-mean": {
+      outcomes: [
+        "Name the main kinds of design work",
+        "Read what junior design adverts ask for",
+        "See where you fit",
+      ],
       explanation_md: `## Why this matters for your job search
 
 When you read design job adverts from Accra agencies, fintech companies, NGOs and remote teams, you will see many titles: UI/UX Designer, Product Designer, UX Designer, UX Researcher, Visual Designer. They overlap a lot. Knowing what sits behind each title helps you choose what to learn first and how to describe yourself.
@@ -193,6 +203,11 @@ You do not need to master everything at once. This roadmap gives you a solid bas
       },
     },
     "design-process": {
+      outcomes: [
+        "Describe the design loop",
+        "Diverge, then converge on ideas",
+        "Take a small problem round the loop on paper",
+      ],
       explanation_md: `## Why a process matters
 
 Design is not guessing. Employers in Ghana and abroad want designers who can explain how they reached a decision, not only show a nice screen. A clear process also saves money: fixing a problem on paper costs almost nothing, while fixing it after developers have built it costs days of work.
@@ -302,6 +317,11 @@ The research section covers understanding and defining. Structure and interface 
       },
     },
     research: {
+      outcomes: [
+        "Explain why research comes first",
+        "Describe user research in the Ghanaian setting",
+        "Plan how to check your assumptions",
+      ],
       explanation_md: `## Why research comes first
 
 Imagine a team in Accra designs a farm advisory app for maize farmers in the Northern Region without ever leaving the office. They assume farmers have smartphones with data, read English comfortably and have time to browse. Then the app launches and almost nobody uses it. Many farmers share one phone in the household, buy small data bundles only when needed, and prefer to listen rather than read. A few days of research would have shown all of this.
@@ -396,6 +416,11 @@ Research involves real people giving you their time and trust. Ask permission, e
       },
     },
     "field-research": {
+      outcomes: [
+        "Plan observation and find the right people",
+        "Get consent and protect privacy",
+        "Observe people in context",
+      ],
       explanation_md: `## Why this matters
 
 Many products in Ghana are used in busy, noisy, sunny places on shared or basic phones. You will only understand that by going there. Employers building for African markets value designers who can plan and run research respectfully in markets, communities, clinics and schools. Some adverts ask for experience of field research, and for languages spoken by the users.
@@ -506,6 +531,11 @@ You do not need special equipment. A notebook, a pen, a phone for photos with pe
       },
     },
     "user-interviews": {
+      outcomes: [
+        "Ask about the past, not the future",
+        "Ask open, not leading, questions",
+        "Run a session and know when a quick survey helps",
+      ],
       explanation_md: `## Why interviews matter
 
 Interviews are the most common research method named in design adverts, from fintech companies in Accra to remote startups. A good interview tells you what people actually do, why they do it and what frustrates them. A bad interview just tells you what people think you want to hear.
@@ -618,6 +648,11 @@ That one sentence teaches Wumpini more than any yes or no answer could: for Mari
       },
     },
     synthesis: {
+      outcomes: [
+        "Find patterns in research notes",
+        "Write personas and journey maps",
+        "Write a clear problem statement",
+      ],
       explanation_md: `## Why this matters
 
 After research you will have pages of notes, quotes and photos. On their own they help nobody. Synthesis turns them into a few clear findings the team can act on. Personas, journey maps and problem statements appear in many design adverts because they are how designers share research with product managers, developers and clients.
@@ -717,6 +752,11 @@ Abdul-Rahman interviews eight shop owners in Tamale about restocking. He groups 
       },
     },
     structure: {
+      outcomes: [
+        "Explain why structure comes before colour",
+        "Separate structure from looks in a real app",
+        "Name the topics in this section",
+      ],
       explanation_md: `## Why structure comes before colour
 
 A common beginner mistake is to open a design tool and start choosing colours and fonts on day one. Experienced designers do the opposite. They first decide what the product contains, how it is organised and which steps people take to finish a task. Only then do they make it look good.
@@ -806,6 +846,11 @@ By the end of this section you will be able to organise a product's content, dra
       },
     },
     "information-architecture": {
+      outcomes: [
+        "Explain the main ideas of information architecture",
+        "Run a card sort",
+        "Check a structure with tree testing",
+      ],
       explanation_md: `## Why this matters
 
 If people cannot find something, it might as well not exist. A mobile money service may offer bill payment, but if it is hidden under a menu called "Financial services" that nobody opens, customers will think it is missing and go elsewhere. Information architecture, often shortened to IA, is the skill of organising and labelling content so people find it without thinking hard. Several design adverts list it directly.
@@ -910,6 +955,11 @@ Hawa is organising a farm advisory service for an NGO in the Upper East Region. 
       },
     },
     "user-flows": {
+      outcomes: [
+        "Explain what a user flow is",
+        "Include unhappy paths and count the steps",
+        "Draw flows for different channels",
+      ],
       explanation_md: `## Why flows matter
 
 A single screen can look perfect and still be part of a broken journey. Users do not experience screens one by one; they experience a task from start to finish. User flows show that whole journey, and they are one of the most commonly requested skills in junior design adverts.
@@ -1023,6 +1073,11 @@ The same task can have a different flow on a smartphone app, a USSD menu and a p
       },
     },
     wireframes: {
+      outcomes: [
+        "Start wireframes on paper",
+        "Tell low fidelity from high fidelity",
+        "Test paper sketches and move to a tool",
+      ],
       explanation_md: `## Why wireframes matter
 
 Wireframes are simple drawings of screens that show layout and content without colour or decoration. They let you and your team agree on what goes on each screen before anyone spends time on visual polish. Many design adverts ask for wireframing, and your sketches are good material for a case study because they show your thinking.
@@ -1127,6 +1182,11 @@ When the structure is stable, recreate your best sketches as grey wireframes in 
       },
     },
     "interface-design": {
+      outcomes: [
+        "Apply principles that run through interface design",
+        "Design for the phone in the hand",
+        "Critique a real interface",
+      ],
       explanation_md: `## Why interface design matters
 
 Once the structure works, people still need screens that are clear, comfortable and trustworthy. Interface design is where your wireframes become polished, consistent screens that developers can build. It is the part of the job most visible in a portfolio, and adverts for UI designer and product designer roles commonly ask for it.
@@ -1219,6 +1279,11 @@ Learn the tool alongside the principles, not instead of them. A designer who kno
       },
     },
     "design-tools": {
+      outcomes: [
+        "Choose a free design tool",
+        "Use the core building blocks of a design tool",
+        "Keep good file habits from day one",
+      ],
       explanation_md: `## Why a design tool matters
 
 Most UI/UX and product design adverts, in Ghana and remote, name a design tool, and Figma is the one mentioned most often. Employers expect you to build screens, components and simple prototypes in a tool and share them with developers. The good news: you can learn the core skills for free in a web browser on a modest laptop.
@@ -1319,6 +1384,11 @@ Issahaku builds a "Send money" flow in Figma. He makes one frame per step, build
       },
     },
     "visual-design": {
+      outcomes: [
+        "Use typography and a type scale",
+        "Choose accessible colours",
+        "Set layout, spacing and hierarchy",
+      ],
       explanation_md: `## Why visual design matters
 
 Visual design is how a screen guides the eye, builds trust and stays readable. Adverts ask for typography, colour, layout and visual hierarchy because a clear screen helps customers finish tasks and makes a business look reliable. In Ghana it also has a practical side: screens must work on modest phones, in bright sun, for people who may not read quickly.
@@ -1424,6 +1494,11 @@ Amina designs a receipt screen for a chop bar's ordering app in Tamale. Version 
       },
     },
     "mobile-patterns": {
+      outcomes: [
+        "Follow platform conventions",
+        "Size touch targets for thumbs and design phone forms",
+        "Make layouts responsive",
+      ],
       explanation_md: `## Why this matters
 
 In Ghana, the phone is the main way many people go online. Many design adverts ask for mobile and responsive design for web and apps. Designing well for phones means following familiar patterns so people do not have to learn something new, and making layouts that adapt to every screen size.
@@ -1520,6 +1595,11 @@ Hawa designs a market price checker for an NGO. Her first version puts the "Chec
       },
     },
     "design-systems": {
+      outcomes: [
+        "Explain what a design system is",
+        "Design component states",
+        "Start a small design system that helps developers",
+      ],
       explanation_md: `## Why design systems matter
 
 Many UI/UX and product design adverts mention design systems, component libraries or style guides. Companies want designers who keep a product consistent and make developers' work faster. A design system is how teams do that at scale.
@@ -1630,6 +1710,11 @@ Build accessibility into your components: good contrast, large touch targets, vi
       },
     },
     "inclusive-design": {
+      outcomes: [
+        "Explain why inclusive design matters in Ghana",
+        "Solve for one person and extend to many",
+        "Check a product against four inclusive themes",
+      ],
       explanation_md: `## Why inclusive design matters in Ghana
 
 A product that only works for young, literate, English speaking people with new smartphones and steady data leaves out a large part of the country. Think of a grandmother in Nalerigu who receives remittances, a farmer near Damongo who reads little English, a student in Wa with a cracked screen and no data until month end, or a trader in Tamale with poor eyesight. They are all customers. Designing for them reaches more people, builds trust and, for many businesses, means more revenue.
@@ -1718,6 +1803,11 @@ Treat these four topics as part of every project, not an extra at the end. Check
       },
     },
     accessibility: {
+      outcomes: [
+        "Explain WCAG in plain words",
+        "Run practical accessibility checks",
+        "Design with screen readers in mind",
+      ],
       explanation_md: `## Why accessibility matters
 
 Accessibility means people with disabilities can use what you design. That includes people who are blind or have low vision, are colour blind, are deaf or hard of hearing, have limited hand movement, or have conditions that affect memory and attention. Many older people have some of these difficulties too. Ghana's Persons with Disability Act, 2006 (Act 715) recognises the rights of persons with disability, and accessibility is named in many design adverts, often with WCAG.
@@ -1827,6 +1917,11 @@ Checklists catch many problems, but nothing replaces testing with disabled users
       },
     },
     "literacy-and-language": {
+      outcomes: [
+        "Write in plain language",
+        "Use icons, images and voice to support reading",
+        "Use local languages well",
+      ],
       explanation_md: `## Why this matters
 
 Ghana is a country of many languages. In the north alone you will hear Dagbani, Gurene, Dagaare, Gonja, Mampruli, Kusaal, Hausa and more, alongside English and Twi. Many people speak several languages fluently but read none of them comfortably, or read English slowly. A product that assumes fast English reading leaves out many potential customers. Designers who can make products clear for people with different reading levels and languages are valuable to fintechs, agritech companies, health services and NGOs.
@@ -1937,6 +2032,11 @@ Wumpini is improving a farm loan app. Her test shows farmers near Savelugu skip 
       },
     },
     "low-end-phones": {
+      outcomes: [
+        "Design for low end smartphones",
+        "Design and sketch a USSD flow",
+        "Design clear SMS messages",
+      ],
       explanation_md: `## Why this matters
 
 Many people in Ghana use older or low cost Android phones with small screens, little storage and limited memory, and many still use basic phones with no internet at all. Mobile money, airtime and many banking and farm services reach them through USSD codes and SMS. Product designers at fintech and telecom companies may design these channels too, and some mobile money product roles include USSD work. If you only design for new smartphones, you design for only part of the market.
@@ -2051,6 +2151,11 @@ Draw each USSD screen as a small box with numbered options. Test it on paper: re
       },
     },
     "offline-and-slow-data": {
+      outcomes: [
+        "Keep screens light",
+        "Show what is happening on slow networks",
+        "Design for the moment the network drops",
+      ],
       explanation_md: `## Why this matters
 
 Many people buy small data bundles and switch data off to save it. Networks can be weak in rural areas, inside market buildings and on the road between towns, and power cuts can take masts down. If your design assumes a fast, constant connection, people will see blank screens, lose their work or pay twice by accident. Designing for slow data and offline moments is a real skill that companies serving African markets look for.
@@ -2152,6 +2257,11 @@ Most phones let you turn on a data saver mode, and browser developer tools can s
       },
     },
     testing: {
+      outcomes: [
+        "Explain why testing is cheap and worth it",
+        "Test early and often with the right people",
+        "Plan a small test",
+      ],
       explanation_md: `## Why testing matters
 
 You are not your user. However carefully you research and design, people will surprise you. Testing shows whether a design actually works before developers spend weeks building it, and after launch it shows whether it keeps working in real life. Usability testing and prototyping appear in most design adverts, and many also mention working with developers and using data to improve designs.
@@ -2245,6 +2355,11 @@ Good designers build testing into every project. It turns opinions into evidence
       },
     },
     prototyping: {
+      outcomes: [
+        "Compare kinds of prototype",
+        "Build a realistic prototype for one task",
+        "Save data when testing",
+      ],
       explanation_md: `## Why prototypes matter
 
 A prototype is a version of your design that people can try. Adverts for UI/UX and product designers commonly ask for prototyping, because a prototype lets the team and real users experience a flow before any code is written. It is also the clearest way to show your work to a manager, a client or an interviewer.
@@ -2344,6 +2459,11 @@ Mariama wants to test a new "Pay school fees" flow with parents in Bolgatanga. S
       },
     },
     "usability-testing": {
+      outcomes: [
+        "Run a simple usability test",
+        "Make sense of the results",
+        "Run an expert review with heuristics",
+      ],
       explanation_md: `## Why usability testing matters
 
 Usability testing means watching real people try to complete tasks with your design. It is named in most design adverts because it is the clearest way to find problems before they reach customers. Expert review, using a list of well known usability rules, is a quick extra check that many teams also ask for.
@@ -2457,6 +2577,11 @@ Issahaku tests a bus ticket app with four travellers at the Tamale station. Thre
       },
     },
     "developer-handoff": {
+      outcomes: [
+        "Describe what a good handoff includes",
+        "Learn a little HTML and CSS",
+        "Stay involved and talk about trade offs",
+      ],
       explanation_md: `## Why this matters
 
 A design only helps people once it is built. Adverts for UI/UX and product designers mention working with engineers, developer handoff and supporting implementation, and some list basic HTML and CSS as a plus. Designers who make developers' lives easier are valued in every team, from a small Tamale startup to a remote company.
@@ -2558,6 +2683,11 @@ Keep one source of truth. Mark which screens are final, which are still being ex
       },
     },
     "measuring-after-launch": {
+      outcomes: [
+        "Choose simple numbers that matter after launch",
+        "Combine numbers with what people tell you",
+        "Compare two versions fairly and handle data carefully",
+      ],
       explanation_md: `## Why this matters
 
 Launching a design is not the end. Real users in real conditions will use it in ways no test predicted. Several design adverts mention analytics, conversion, data informed design or A/B testing, especially at fintech and product companies. You do not need to be a data analyst, but you should know which simple numbers tell you whether a design works and how to read them carefully.
@@ -2660,6 +2790,11 @@ Write short updates: what you changed, what the numbers showed and what users sa
       },
     },
     "getting-hired": {
+      outcomes: [
+        "Find where design jobs are",
+        "Use your local knowledge as an advantage",
+        "Plan your portfolio honestly",
+      ],
       explanation_md: `## Why this section matters
 
 Design hiring is about proof. Employers in Ghana and remote teams cannot see your skills on a certificate. They want to see how you think: how you learned about users, what problems you found, what options you tried and why you chose one. A portfolio of honest case studies does that better than anything else. Many junior adverts ask for a portfolio, often alongside a CV and sometimes a cover letter.
@@ -2758,6 +2893,11 @@ Job hunting takes time. Set a weekly routine: improve one case study, apply to a
       },
     },
     "case-studies": {
+      outcomes: [
+        "Structure a case study simply",
+        "Show your reasons and honest outcomes",
+        "Choose good projects to write up",
+      ],
       explanation_md: `## Why case studies matter
 
 Many design adverts ask for a portfolio, and many say they want to see your process and design rationale, meaning the reasons behind your choices. A case study tells the story of one project from problem to result. Two or three strong case studies are worth more than twenty pretty screens with no explanation.
@@ -2874,6 +3014,11 @@ Abdul-Rahman writes up his clinic SMS reminder project. His first draft is eight
       },
     },
     freelancing: {
+      outcomes: [
+        "Describe what you can offer local businesses",
+        "Agree the scope and price without guessing",
+        "Protect yourself and your clients",
+      ],
       explanation_md: `## Why freelancing can help
 
 Before or alongside a full time job, small freelance projects give you real clients, real problems and real case studies. Many shops, schools, churches, NGOs and small businesses around Tamale, Bolgatanga and Wa need simple digital help: a clear website, a menu for WhatsApp ordering, a booking form or a USSD flow for a cooperative. Doing this work well builds your portfolio, your reputation and some income.
@@ -2982,6 +3127,11 @@ Amina offers to redesign the WhatsApp ordering for a chop bar near the Tamale Te
       },
     },
     "job-search": {
+      outcomes: [
+        "Find where to look and avoid scams",
+        "Apply well, including for remote roles",
+        "Prepare for design interviews",
+      ],
       explanation_md: `## Why a smart job search matters
 
 Design roles attract many applicants, and junior roles can be hard to find. A focused, honest search, with a strong portfolio and good interview practice, makes a big difference. This lesson covers where to look, how to apply and what to expect in design interviews.

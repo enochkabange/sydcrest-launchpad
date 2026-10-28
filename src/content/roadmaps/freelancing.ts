@@ -74,6 +74,10 @@ export const freelancing: RoadmapDraft = {
         "Freelancing means selling a skill you already have to clients, one project or one month at a time, instead of working for a single employer. This section explains what that involves, how to choose what to offer, and what you can do on a phone and what needs a laptop.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [RES.lfFreelancing, wikiFreelancer],
     },
     {
@@ -83,6 +87,8 @@ export const freelancing: RoadmapDraft = {
         "A freelancer runs a very small business: finding clients, agreeing the work, delivering it and chasing payment all fall on you. Learn how this differs from a salaried job and from tap to earn task apps, and why a real skill from another track comes first.",
       parent: "freelancing-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [RES.lfFreelancing, khanEntrepreneurship],
     },
     {
@@ -92,6 +98,8 @@ export const freelancing: RoadmapDraft = {
         "Clients hire someone for a clear result, such as a logo, a month of Facebook posts or a cleaned spreadsheet, not for general computer skills. Pick one service you can already deliver well and a type of client to aim at, such as schools, NGOs or market traders.",
       parent: "freelancing-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfThinking, khanEntrepreneurship],
     },
     {
@@ -101,6 +109,8 @@ export const freelancing: RoadmapDraft = {
         "Email, a calendar, cloud storage, document and spreadsheet apps and a messaging app cover most of the admin side of freelancing, and all run on a phone as well as a computer. Some services, such as video editing for clients or web development, are much easier on a laptop, so check what your service needs before you promise deadlines.",
       parent: "freelancing-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfDrive, googleCalendar, googleMeet],
     },
     {
@@ -110,6 +120,10 @@ export const freelancing: RoadmapDraft = {
         "Before you look for clients you need proof of your skill, a way to be found and the habit of writing clearly. This section covers your portfolio, your profiles and professional messages.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Virtual Assistant", "SEO Blog Writer", "Reels Editor"],
       resources: [RES.lfFreelancing],
     },
     {
@@ -119,6 +133,8 @@ export const freelancing: RoadmapDraft = {
         "Many clients ask for samples or live links before they will even read a proposal, so three to five strong pieces matter more than a long CV. Build samples from practice briefs or real work for a local business, always with permission, and present each one with the problem, what you did and the result.",
       parent: "getting-ready",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [googleSites, RES.githubPages, googleDocs],
     },
     {
@@ -128,6 +144,8 @@ export const freelancing: RoadmapDraft = {
         "A clear profile tells a stranger in seconds what you do, who you do it for and how to reach you. Set up honest profiles on the places your clients look, a WhatsApp Business catalogue for local clients and a professional profile for remote ones, using your real name and real work.",
       parent: "getting-ready",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfLinkedin, RES.whatsappBusiness, RES.googleBusiness],
     },
     {
@@ -137,6 +155,8 @@ export const freelancing: RoadmapDraft = {
         "Short, polite, clear messages win trust, especially with remote clients who only know you through text. Learn to greet properly, answer the question asked, confirm details in writing and reply within an agreed time, even when the reply is only that you need another day.",
       parent: "getting-ready",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfBizWriting, RES.lfCommunication],
     },
     {
@@ -146,6 +166,10 @@ export const freelancing: RoadmapDraft = {
         "Clients come from people who already know you, from businesses you approach and from online marketplaces and job boards. This section covers all three, starting close to home.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Social Media Manager", "Graphic Designer", "WordPress Developer"],
       resources: [RES.lfFreelancing, RES.lfJobsearch],
     },
     {
@@ -155,6 +179,8 @@ export const freelancing: RoadmapDraft = {
         "Shops, schools, churches, NGOs and small firms in Tamale, Bolgatanga or Wa often need design, social media, data or admin help and prefer someone they can meet. Start with people who already trust you, show one finished example, and ask every happy client who else might need the same service.",
       parent: "finding-clients",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.whatsappBusiness, RES.googleBusiness],
     },
     {
@@ -164,6 +190,8 @@ export const freelancing: RoadmapDraft = {
         "Global marketplaces and remote job boards let clients abroad post projects, but beginners face heavy competition, platform fees and some listings closed to applicants in Ghana. Read each platform's rules on who can join, how fees work and how you withdraw money before you spend data building a profile.",
       parent: "finding-clients",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfFreelancing, RES.lfJobsearch],
     },
     {
@@ -173,6 +201,8 @@ export const freelancing: RoadmapDraft = {
         "Writing directly to a business with one specific idea for them often works better than waiting for adverts. Keep a simple list of everyone you contact and follow up once politely, because past clients and their referrals usually become your steadiest source of work.",
       parent: "finding-clients",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfBizWriting, googleSheets],
     },
     {
@@ -182,6 +212,10 @@ export const freelancing: RoadmapDraft = {
         "Freelancers are a favourite target for fake jobs, fake clients and account theft. This section helps you recognise scams early and protect your accounts and identity.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: [],
       resources: [csaJobScams, RES.lfSafety],
     },
     {
@@ -191,6 +225,8 @@ export const freelancing: RoadmapDraft = {
         "Warning signs include being asked to pay to get work, tasks that pay you small amounts before demanding a deposit, overpayments you are asked to refund and clients who push you off a platform at once. Ghana's Cyber Security Authority warns about these patterns and takes reports, so check its advice and report scams rather than staying quiet.",
       parent: "staying-safe",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [csaJobScams, csa, cisaPhishing],
     },
     {
@@ -200,6 +236,8 @@ export const freelancing: RoadmapDraft = {
         "Your email, payment and marketplace accounts are your business, so use strong passwords and 2 Step Verification on each. Never rent out, buy or share an account, and send copies of your Ghana Card or bank details only to clients and services you have verified.",
       parent: "staying-safe",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [google2sv, googlePassword, RES.lfSafety],
     },
     {
@@ -209,6 +247,10 @@ export const freelancing: RoadmapDraft = {
         "Turning an enquiry into a paid project depends on understanding the need, answering it clearly and setting a fair price. This section covers briefs, proposals and pricing in cedis.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Short Form Video Editor", "Social Media Manager"],
       resources: [fccProposal],
     },
     {
@@ -218,6 +260,8 @@ export const freelancing: RoadmapDraft = {
         "Most freelance problems start with a vague brief, so learn to find out the goal, the audience, the deadline, the budget and what finished looks like. A short call or voice note with five good questions saves days of rework and shows the client you are serious.",
       parent: "winning-work",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfCommunication, googleMeet],
     },
     {
@@ -227,6 +271,8 @@ export const freelancing: RoadmapDraft = {
         "A good proposal restates the client's problem in their words, explains how you will solve it, points to one relevant sample and gives a clear price and timeline. Answer every screening question the client asked and keep it short enough to read on a phone, because copied general proposals are easy to spot.",
       parent: "winning-work",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [fccProposal, RES.lfBizWriting],
     },
     {
@@ -236,6 +282,8 @@ export const freelancing: RoadmapDraft = {
         "Work out your price from the hours a job really takes, your costs such as data, power and software, and what similar local work charges, then decide between a project price, an hourly rate or a monthly retainer. For foreign clients, agree which currency you are paid in and remember that fees and exchange rates change what reaches you in cedis.",
       parent: "winning-work",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfMoney, bogFx, onetSkills],
     },
     {
@@ -245,6 +293,10 @@ export const freelancing: RoadmapDraft = {
         "Clear written terms and steady delivery protect both you and the client. This section covers simple agreements, deposits and invoices, and managing deadlines and revisions.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Multimedia Designer", "Social media lead"],
       resources: [contractCreator, wikiSow],
     },
     {
@@ -254,6 +306,8 @@ export const freelancing: RoadmapDraft = {
         "Even a short agreement in an email or a shared document should state the work, the deadline, the number of revisions, the price, the payment dates and who owns the finished files. Learn what each part means and why a WhatsApp chat alone is weak protection when a client disagrees later.",
       parent: "contracts-and-delivery",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [contractCreator, wikiSow, wipoCopyright],
     },
     {
@@ -263,6 +317,8 @@ export const freelancing: RoadmapDraft = {
         "Asking for part of the fee before you start, or splitting big jobs into paid milestones, limits how much you can lose to a client who disappears. Send a clear invoice for every payment due and follow up late payments politely, firmly and in writing.",
       parent: "contracts-and-delivery",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [wikiInvoice, wikiEscrow, googleDocs],
     },
     {
@@ -272,6 +328,8 @@ export const freelancing: RoadmapDraft = {
         "Clients judge you as much on reliability as on quality, so track every deadline and give updates before anyone has to ask. Handle revision requests calmly, and when a client asks for more than was agreed, offer to quote for the extra work instead of doing it free.",
       parent: "contracts-and-delivery",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [googleCalendar, googleSheets],
     },
     {
@@ -281,6 +339,10 @@ export const freelancing: RoadmapDraft = {
         "Being paid on time and keeping records is what turns freelancing into real income. This section covers local payments, receiving money from abroad, records and tax.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: [],
       resources: [RES.lfMoney],
     },
     {
@@ -290,6 +352,8 @@ export const freelancing: RoadmapDraft = {
         "Most local clients pay by mobile money or bank transfer, so confirm the money has actually arrived in your account before you release final files. Send a receipt for every payment and keep the transaction references, which protects you if a client later says they paid.",
       parent: "getting-paid",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfMoney, googleSheets],
     },
     {
@@ -299,6 +363,8 @@ export const freelancing: RoadmapDraft = {
         "Foreign clients can pay through a marketplace's own withdrawal options, a licensed international payment or remittance service, or a bank account able to receive foreign transfers, and each has different fees, limits and speeds. Compare the total cost before you agree terms, keep account names matching your Ghana Card, and check that any payment company is approved by the Bank of Ghana.",
       parent: "getting-paid",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [bogApproved, bogImto, bogFx],
     },
     {
@@ -308,6 +374,8 @@ export const freelancing: RoadmapDraft = {
         "Keep a simple record of every job, invoice, payment and cost, because you will need it for pricing, disputes and tax. Self employed people with taxable income should register with the Ghana Revenue Authority using their Ghana Card number, and registering a business name with the Registrar of Companies can help when clients want an official invoice.",
       parent: "getting-paid",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [graRegistration, graIncomeTax, orc],
     },
     {
@@ -317,6 +385,10 @@ export const freelancing: RoadmapDraft = {
         "A freelancer's reputation is built one finished job at a time and is easy to damage. This section covers earning good reviews, keeping clients and growing your income steadily.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "specialist",
+      jobs: ["Individual Consultant"],
       resources: [RES.lfFreelancing],
     },
     {
@@ -326,6 +398,8 @@ export const freelancing: RoadmapDraft = {
         "Honest reviews and recommendations from real clients are what make new clients trust you, so ask for them after good work and never buy or fake them. Keep your promises, own your mistakes quickly and look after client data, which also matters under Ghana's data protection law.",
       parent: "reputation-and-growth",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.dpc, RES.lfCommunication],
     },
     {
@@ -335,6 +409,8 @@ export const freelancing: RoadmapDraft = {
         "Once you have steady clients you can raise your prices for new work, offer monthly packages, specialise in one industry or team up with other freelancers. Set aside money for slow months and keep learning in your main track, because a deeper skill is what lets you charge more.",
       parent: "reputation-and-growth",
       optional: true,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [khanFinance, khanEntrepreneurship],
     },
   ],

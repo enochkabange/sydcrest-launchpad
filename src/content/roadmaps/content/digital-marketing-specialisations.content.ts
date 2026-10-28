@@ -11,6 +11,11 @@ const content: TrackContent = {
     // SEO AND CONTENT MARKETING
 
     "seo-content": {
+      outcomes: [
+        "Describe what the SEO and content specialisation covers",
+        "Explain how search engines decide what to show",
+        "Choose the business you will work on",
+      ],
       explanation_md: `Search engine optimisation, or SEO, is the work of helping a business appear when people search for what it sells. A paid ad stops the moment the money stops. A well made page can keep bringing visitors for months or years. That is why small businesses, schools, hotels and NGOs in Ghana value someone who can make their website easier to find, and why SEO and content skills appear in many junior marketing job descriptions.
 
 ## What this specialisation covers
@@ -97,6 +102,11 @@ By the end you will have a keyword map, an improved page, a short list of local 
     },
 
     "keyword-research": {
+      outcomes: [
+        "Explain what a keyword is",
+        "Find keywords with free tools",
+        "Record a keyword shortlist",
+      ],
       explanation_md: `Every search starts with words. If a business describes itself one way and customers search another way, the business stays invisible. A junior SEO or content marketer is often asked first to find out which words real customers use. You can do this well with free tools and a little patience.
 
 ## What a keyword is
@@ -184,6 +194,11 @@ His shortlist has eight phrases. Three show buying intent, such as "school unifo
     },
 
     "search-intent": {
+      outcomes: [
+        "Recognise four common kinds of search intent",
+        "Learn from the search results",
+        "Turn a shortlist into a keyword map",
+      ],
       explanation_md: `Two people can type almost the same words and want very different things. Search engines try hard to work out what each searcher wants, and they show the kind of page that fits. If your page does not match that want, it will struggle no matter how many times it uses the keyword. Matching intent is a core skill employers look for in content and SEO roles.
 
 ## Four common kinds of intent
@@ -273,6 +288,11 @@ His map gives the home page the main keyword "tailor in Wa" with "kaba and slit 
     },
 
     "on-page-seo": {
+      outcomes: [
+        "Name the main parts of a page that affect search",
+        "Write for people first",
+        "Optimise one page from a keyword map",
+      ],
       explanation_md: `On page SEO means improving the page itself so that people and search engines understand it quickly. It is the part of SEO you control completely, and it is the task in the week 7 assignment: optimising the homepage and blog post you drafted in week 4. Employers often test it by asking a candidate to review a page and suggest changes.
 
 ## The main parts of a page
@@ -373,6 +393,11 @@ He adds a link to the new "How to store shea butter" guide and shrinks the photo
     },
 
     backlinks: {
+      outcomes: [
+        "Explain what a backlink is and why quality beats quantity",
+        "Recognise links that break the rules",
+        "Find honest ways to earn links",
+      ],
       explanation_md: `When another website links to a page, it is a little like a person vouching for it. Search engines use links to discover pages and as one signal of how trusted a page is. Off page SEO, the work that happens away from your own site, is mostly about earning these mentions honestly. It is week 8 of the SEO specialisation and a common topic in SEO job interviews.
 
 ## What a backlink is
@@ -461,6 +486,11 @@ Sumaila manages marketing for an agro input shop in Damongo. He lists every orga
     },
 
     "local-seo": {
+      outcomes: [
+        "Explain how local ranking works",
+        "Keep name, address and phone the same everywhere",
+        "Use reviews, activity and the website for local search",
+      ],
       explanation_md: `When someone searches "pharmacy near me" or "chop bar in Bolgatanga", search engines show a map with a few local businesses before the normal results. Local SEO is the work of earning a place there. For a pharmacy, chop bar or shop that serves people nearby, appearing there can matter more than any blog post, which makes local SEO a practical skill to offer clients.
 
 ## How local ranking works
@@ -552,6 +582,11 @@ Wumpini helps a pharmacy in Bolgatanga. She finds four versions of its name onli
     },
 
     "listings-and-outreach": {
+      outcomes: [
+        "Find local listing opportunities",
+        "Write a good outreach email",
+        "Complete three listings and three outreach emails",
+      ],
       explanation_md: `Knowing where a business should be mentioned is only half the job. Someone still has to ask. The week 8 assignment asks you to find three local directories or blogs where your business could be listed and to draft outreach emails. This lesson teaches both parts, and the outreach skill transfers to influencer work, partnerships and sales.
 
 ## Where to look for listings
@@ -651,6 +686,11 @@ It is short, specific and easy to say yes to.`,
     },
 
     "content-pillars": {
+      outcomes: [
+        "Explain pillars and topic clusters",
+        "Choose content pillars and show experience and trust",
+        "Refresh old content as well as create new",
+      ],
       explanation_md: `Publishing random posts whenever there is time rarely builds search traffic. Strong sites organise content around a few big topics they know deeply. This is week 9 of the SEO specialisation, advanced content strategy, and it is the thinking content marketers use to plan months of work.
 
 ## Pillars and clusters
@@ -749,6 +789,11 @@ Zakaria plans content for the Tamale solar installer. His keyword map shows many
     },
 
     "faqs-and-multimedia": {
+      outcomes: [
+        "Write FAQ pages that work",
+        "Prepare images and video for search",
+        "Use multimedia without heavy data",
+      ],
       explanation_md: `Customers ask the same questions again and again: How much? Do you deliver? Can I pay with mobile money? Is it open on Sunday? Each repeated question is a ready made piece of content. Turning those questions into clear answers, supported by images and short videos, is one of the most useful things a content marketer can do for a small business.
 
 ## FAQ pages that work
@@ -847,6 +892,11 @@ Ayishetu runs a small catering business in Wa. She collects ten questions from h
     },
 
     "seo-strategy-plan": {
+      outcomes: [
+        "Build an SEO content calendar",
+        "Measure SEO progress",
+        "Write a one page SEO strategy",
+      ],
       explanation_md: `A strategy turns a pile of good ideas into a plan someone can approve and follow. The week 9 assignment asks for a one page SEO strategy presented in Google Slides, built on a content calendar that covers blogs, FAQs and multimedia. This is the kind of document a junior SEO or content marketer hands to a manager or client.
 
 ## The content calendar
@@ -950,6 +1000,11 @@ Issahaku's strategy for Mariama's Tamale guesthouse reads, in short: Goal, more 
     // SOCIAL MEDIA MARKETING
 
     "social-media-marketing": {
+      outcomes: [
+        "Describe what the social media specialisation covers",
+        "Explain how organic and paid work together",
+        "Audit a business's social presence",
+      ],
       explanation_md: `Many Ghanaian businesses already post on Facebook, Instagram, TikTok and WhatsApp. Far fewer know how to run a paid campaign that reaches the right people, make a video that people watch to the end, or turn followers into a community that buys again and tells friends. Those three skills are what this specialisation teaches, and they appear again and again in social media and digital marketing job descriptions.
 
 ## What this specialisation covers
@@ -1039,6 +1094,11 @@ By the end you will have a mock campaign plan with a defined audience and budget
     },
 
     "social-campaign-structure": {
+      outcomes: [
+        "Explain campaigns, ad sets and ads",
+        "Choose a campaign objective",
+        "Name and organise a campaign",
+      ],
       explanation_md: `Pressing "Boost" on a post is the quickest way to advertise, but it hides most of the choices that make ads work. Employers want marketers who can build a full campaign in an ads manager, because that is where you control the goal, audience, budget and creative. This lesson explains the structure that Meta's Ads Manager uses for Facebook and Instagram. Other platforms such as TikTok use a very similar shape.
 
 ## Three layers
@@ -1133,6 +1193,11 @@ Salifu runs ads for a phone accessories shop in Bolgatanga. The owner wants more
     },
 
     "audience-targeting": {
+      outcomes: [
+        "Compare kinds of audience",
+        "Decide between broad and narrow targeting and use exclusions",
+        "Target fairly",
+      ],
       explanation_md: `The same advert can succeed or fail depending on who sees it. A good social media marketer knows how to describe the right people to the platform, and when to let the platform's system find them instead. This is the heart of the week 7 theme, advanced ad targeting.
 
 ## Kinds of audience
@@ -1228,6 +1293,11 @@ Mariama runs ads for a guesthouse in Tamale. Her first ad set targets people in 
     },
 
     "social-budgets-and-testing": {
+      outcomes: [
+        "Choose between daily and lifetime budgets",
+        "Schedule ads and test one thing at a time",
+        "Read test results and write a mock campaign plan",
+      ],
       explanation_md: `The week 7 assignment asks you to set up a mock campaign with a defined audience and budget. This lesson completes that picture: how to set a budget and schedule in cedis, and how to test ads so each cedi teaches you something.
 
 ## Daily or lifetime budget
@@ -1325,6 +1395,11 @@ Issahaku plans a mock campaign for a tailor in Wa ahead of the new school term. 
     },
 
     "social-storytelling": {
+      outcomes: [
+        "Use a simple story shape",
+        "Choose the hero of a story",
+        "Tell true stories with care for language and culture",
+      ],
       explanation_md: `People scroll past adverts but stop for stories. A story gives them someone to care about, a problem they recognise and a moment of change. Week 8 of the social media specialisation is about content creation through video and storytelling, and this lesson gives you the story shape that every good short video uses.
 
 ## A simple story shape
@@ -1427,6 +1502,11 @@ Salifu agreed to appear. The story is true, short and focused on him.`,
     },
 
     "video-scripting-and-shooting": {
+      outcomes: [
+        "Turn a story into a script and shot list",
+        "Shoot well with simple gear",
+        "Get permission and stay safe when filming",
+      ],
       explanation_md: `The week 8 assignment asks for a 30 second promo video for a small business. Good short videos are planned before anyone presses record. This lesson shows you how to script and shoot one with the camera you already have, whether on a phone, a tablet or a simple camera.
 
 ## From story to script
@@ -1533,6 +1613,11 @@ He films in the morning light outside the workshop, two takes of each shot.`,
     },
 
     "video-editing-and-captions": {
+      outcomes: [
+        "Edit a promo with free tools",
+        "Explain why captions matter",
+        "Publish a finished promo well",
+      ],
       explanation_md: `Raw clips become a promo in the edit. Editing is where you cut out everything slow, put the best moments in order, and add the text and captions that make the video work for people scrolling with the sound off. This lesson finishes the week 8 assignment.
 
 ## Free editing tools
@@ -1627,6 +1712,11 @@ Fuseini edits his smock promo in a free phone editor. His first cut is 48 second
     },
 
     "community-building": {
+      outcomes: [
+        "Tell an audience from a community",
+        "Set purpose, rules and rituals and get people talking",
+        "Moderate, protect privacy and measure a community",
+      ],
       explanation_md: `Followers watch. A community talks, helps each other and comes back. Businesses with real communities rely less on paid ads because their customers bring friends and stay loyal. Week 9 of the social media specialisation is community building and influencer outreach, and this lesson covers the first half.
 
 ## Audience versus community
@@ -1729,6 +1819,11 @@ Wumpini manages a Facebook Group for a farm inputs shop in Damongo. Its purpose 
     },
 
     "micro-influencers": {
+      outcomes: [
+        "Describe what makes a good influencer partner",
+        "Spot fake followers",
+        "Find and assess local micro influencers",
+      ],
       explanation_md: `An influencer is a person whose recommendations their followers trust. Big celebrities are expensive and their audiences are spread across the country. **Micro influencers** have smaller, closer audiences, often in one town, language or interest, and their followers tend to listen to them more personally. For a small business in northern Ghana, a well known local creator in Tamale or Wa can be a better partner than a national star. The week 9 assignment asks you to identify two of them.
 
 ## What makes a good partner
@@ -1828,6 +1923,11 @@ Rahinatu is searching for partners for Hawa's shea butter. She finds three creat
     },
 
     "influencer-collaborations": {
+      outcomes: [
+        "Compare kinds of collaboration",
+        "Write a collaboration proposal and agree the details",
+        "Disclose honestly and measure results",
+      ],
       explanation_md: `Finding the right creator is only the start. Next you have to pitch a collaboration they want to accept, agree clearly what happens, make sure the audience knows it is paid, and measure what it brought in. This lesson completes the week 9 assignment.
 
 ## Kinds of collaboration
@@ -1933,6 +2033,11 @@ Rahinatu writes to the Tamale beauty creator: "Hello Ayishetu, your harmattan sk
     // GOOGLE ADS AND SEARCH MARKETING
 
     "google-ads": {
+      outcomes: [
+        "Describe what the Google Ads specialisation covers",
+        "Explain how search ads and SEO work together",
+        "Use free training and handle money responsibly",
+      ],
       explanation_md: `Search marketing puts a business in front of people at the exact moment they look for what it sells. Someone typing "car rental Tamale airport" is not idly scrolling; they need a car. That is what makes search ads powerful, and why businesses look for people who can run them carefully. This specialisation uses Google Ads, a widely used search ads platform, as the example. Microsoft Advertising and others work on similar ideas.
 
 ## What this specialisation covers
@@ -2032,6 +2137,11 @@ Abdul-Rahman manages a car rental business in Tamale. Most customers arrive by a
     },
 
     "google-ads-auction": {
+      outcomes: [
+        "Describe what happens in a search auction",
+        "Explain Ad Rank and Quality Score",
+        "Explain how paying per click works",
+      ],
       explanation_md: `Every time someone searches, Google Ads runs an auction in a fraction of a second to decide which ads appear, in what order, and whether any appear at all. Understanding this auction is the foundation of week 7 and the reason a well run small campaign can beat a bigger budget.
 
 ## What happens in a search
@@ -2133,6 +2243,11 @@ Two shops in Tamale advertise for "laptop repair Tamale". Shop A bids more but i
     },
 
     "campaign-types-and-goals": {
+      outcomes: [
+        "Start a campaign from its goal",
+        "Compare the main campaign types",
+        "Choose a type and define success",
+      ],
       explanation_md: `Google Ads offers several kinds of campaign, each built for a different goal and showing ads in different places. Choosing the right type is one of the first questions in the "Get Search Ad Campaign Ready" training and in junior job interviews.
 
 ## Start with the goal
@@ -2236,6 +2351,11 @@ Mariama's guesthouse in Tamale wants direct bookings. She has a simple website w
     },
 
     "account-structure": {
+      outcomes: [
+        "Explain the layers of an ads account",
+        "Organise campaigns into tight ad groups",
+        "Check campaign settings and name things clearly",
+      ],
       explanation_md: `A messy Google Ads account wastes money and makes reports confusing. A tidy one makes every decision easier. Employers often hand a junior an existing account and ask, "What would you change?" Understanding structure is how you answer.
 
 ## The layers
@@ -2332,6 +2452,11 @@ Sumaila inherits an account for an electronics shop in Wa. It has one campaign c
     },
 
     "keywords-and-match-types": {
+      outcomes: [
+        "Choose keywords with buying intent",
+        "Use match types",
+        "Add negative keywords",
+      ],
       explanation_md: `Keywords decide which searches can trigger your ads. Choose them well and your budget reaches people ready to buy. Choose badly and you pay for clicks from people who will never become customers. This is the first half of week 8, campaign setup with keywords and ad copy.
 
 ## Choosing keywords with buying intent
@@ -2440,6 +2565,11 @@ Abdul-Rahman builds keywords for the car rental business. In the "Airport Car Hi
     },
 
     "responsive-search-ads": {
+      outcomes: [
+        "Explain the responsive search ad format",
+        "Write headlines and descriptions that follow the rules",
+        "Use pinning carefully",
+      ],
       explanation_md: `The ad text is what persuades someone to click. On Google search, the standard format is the **responsive search ad**. You write several headlines and descriptions, and Google combines them into different versions, learning which work best. The week 8 assignment asks for a sample search campaign with three ad copies, and this lesson shows you how to write them.
 
 ## The format
@@ -2547,6 +2677,11 @@ Each headline is under 30 characters and makes sense in any combination.`,
     },
 
     "assets-and-landing-pages": {
+      outcomes: [
+        "Add useful ad assets",
+        "Describe what a good landing page does",
+        "Track the action when there is no website",
+      ],
       explanation_md: `An ad is only the first step. Assets make the ad bigger and more useful, and the landing page decides whether a click becomes a customer. Landing page experience is also one of the three parts of Quality Score, so this lesson directly affects how well your campaign performs.
 
 ## Assets
@@ -2646,6 +2781,11 @@ Wumpini's laptop repair ad in Tamale used to send people to the shop's home page
     },
 
     "budgets-and-bidding": {
+      outcomes: [
+        "Set an average daily budget",
+        "Compare bid strategies",
+        "Plan budget and bidding for a campaign",
+      ],
       explanation_md: `Week 9 of the Google Ads specialisation is optimisation and budgeting. Before you can optimise, you need to understand how money moves through a campaign: the budget limits spending, and the bid strategy decides how each auction is approached.
 
 ## Average daily budget
@@ -2752,6 +2892,11 @@ The car rental business in Tamale can afford a certain amount per month for ads.
     },
 
     "reading-campaign-data": {
+      outcomes: [
+        "Name and calculate the key campaign numbers",
+        "Read the search terms report",
+        "Read results by segment and avoid mistakes",
+      ],
       explanation_md: `The week 9 objective is to analyse campaign data and suggest bid adjustments. Before you can suggest anything, you need to read a report confidently and know what each number tells you.
 
 ## The key numbers
@@ -2860,6 +3005,11 @@ Fuseini reviews a month of a mock campaign for a solar shop in Bolgatanga. "Sola
     },
 
     "optimising-campaigns": {
+      outcomes: [
+        "Follow the optimisation loop",
+        "Make common improvements and bid adjustments",
+        "Write clear recommendations",
+      ],
       explanation_md: `Optimisation is the steady work of using data to spend money better. It is what clients pay for month after month, and it completes the week 9 assignment: analysing campaign data, suggesting bid adjustments, and setting up a demo campaign to show your settings.
 
 ## The optimisation loop

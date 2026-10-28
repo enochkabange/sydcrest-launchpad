@@ -10,6 +10,11 @@ const content: TrackContent = {
   roadmap: "it-support",
   nodes: {
     "it-support-job": {
+      outcomes: [
+        "Describe what IT support work looks like",
+        "Name the three skills this section builds",
+        "Start an IT support learning log",
+      ],
       explanation_md: `## Why this matters
 
 Every bank branch, school, hospital, NGO office, telco shop and growing business in Ghana now depends on computers, phones, printers and an internet connection. When any of them stops working, people cannot serve customers, pay staff or send reports. The person they call is IT support. Job adverts in Ghana use many titles for this work: IT support officer, help desk analyst, desktop support technician, ICT officer, IT assistant. Underneath the titles, the job is the same: keep things working and help people when they do not.
@@ -90,6 +95,11 @@ You can learn most of this track on a phone or a computer. Some practice, such a
       },
     },
     "it-support-roles": {
+      outcomes: [
+        "Explain support levels",
+        "Recognise common IT support roles in Ghana",
+        "Read adverts like an IT professional",
+      ],
       explanation_md: `## Why this matters
 
 When you read IT job adverts in Ghana, the titles can be confusing. A bank wants an "ICT officer", a telco wants an "office IT support analyst", a school wants a "lab technician", a manufacturer wants a "NOC and IT support engineer". If you understand what these roles share and how they differ, you can apply with confidence and describe your skills in the employer's language.
@@ -174,6 +184,11 @@ Issahaku reads two adverts. One, at a community bank, asks for a degree, five ye
       },
     },
     "troubleshooting-method": {
+      outcomes: [
+        "Follow the six troubleshooting steps",
+        "Keep useful troubleshooting habits",
+        "Practise the method on a real problem",
+      ],
       explanation_md: `## Why this matters
 
 Employers in Ghana list "troubleshooting" in almost every IT support advert, and interviewers often test it by describing a problem and asking what you would do. They are not looking for a lucky guess. They want to hear a calm, logical method. Learn it once and you can use it on a laptop, a printer, a router or a phone.
@@ -262,6 +277,11 @@ Mariama, a help desk officer at an NGO office in Tamale, gets a call: "I cannot 
       },
     },
     "tickets-and-customer-care": {
+      outcomes: [
+        "Explain what a ticket is and what service levels mean",
+        "Talk to users clearly and kindly",
+        "Build a simple ticket system with free tools",
+      ],
       explanation_md: `## Why this matters
 
 Ghanaian IT support adverts regularly mention customer service, ticketing systems, documentation and resolving incidents within agreed service levels. A technician who fixes problems but forgets requests, or speaks rudely to a stressed bank teller, will not last. A technician who is calm, keeps records and explains clearly gets trusted with more.
@@ -351,6 +371,11 @@ Fuseini builds a simple ticket system for a small clinic in Yendi using a free o
       },
     },
     hardware: {
+      outcomes: [
+        "Put safety first around hardware",
+        "Name the topics in this section",
+        "Make a hardware inventory",
+      ],
       explanation_md: `## Why this matters
 
 Hardware problems are some of the most common calls in Ghanaian offices, schools and shops: a laptop that will not switch on, a desktop that is painfully slow, a printer that jams, a machine damaged when power came back after an outage. Adverts for IT support, desktop support and lab technician roles ask for hardware installation, repair, preventive maintenance and keeping an inventory of equipment. You do not need to be an electronics engineer. You need to know what each part does, how to look after it, and how to tell which part is failing.
@@ -432,6 +457,11 @@ Amina volunteers in the computer lab of a junior high school in Damongo. Three o
       },
     },
     "computer-components": {
+      outcomes: [
+        "Name the main parts of a computer",
+        "Read a specification",
+        "Match symptoms to parts",
+      ],
       explanation_md: `## Why this matters
 
 When a manager in Ghana asks "which laptop should we buy for the new accounts officer?" or a user says "it is too slow", you need to know what each part of a computer does. Adverts ask for hardware installation and repair, and interviewers often ask you to name the parts and explain what they do.
@@ -528,6 +558,11 @@ Sumaila is asked why a Wa NGO's reception desktop takes five minutes to start. H
       },
     },
     "maintenance-and-upgrades": {
+      outcomes: [
+        "Carry out preventive maintenance safely",
+        "Choose the two upgrades that matter most",
+        "Decide when to repair and when to replace",
+      ],
       explanation_md: `## Why this matters
 
 Many computers in Ghanaian offices, schools and cyber cafes are older machines that have to keep working because budgets are tight. Harmattan dust, heat and unstable power shorten their lives. Adverts for desktop support and lab roles ask for preventive maintenance and repairs, and a technician who can keep old machines running saves an organisation real money.
@@ -620,6 +655,11 @@ Wumpini maintains twelve laptops for a microfinance office in Tamale. After harm
       },
     },
     "power-protection": {
+      outcomes: [
+        "Explain Ghana's mains supply and its risks",
+        "Compare three kinds of power protection",
+        "Do a power safety audit",
+      ],
       explanation_md: `## Why this matters
 
 Power cuts, low voltage and sudden surges are part of working life in many parts of Ghana. When power drops suddenly, unsaved work is lost and files can be corrupted. When power returns, a spike can destroy power supplies, routers, printers and phone chargers. Lightning storms in the rainy season add more risk. An IT person who sets up good power protection prevents a whole category of expensive problems.
@@ -699,6 +739,11 @@ Abdul-Rahman supports a pharmacy in Bolgatanga. After a storm, the router and th
       },
     },
     "printers-and-peripherals": {
+      outcomes: [
+        "Compare kinds of printer and how they connect",
+        "Fix common printer faults",
+        "Support other peripherals",
+      ],
       explanation_md: `## Why this matters
 
 In Ghanaian offices, schools and banks, printers, copiers and scanners are behind many everyday support calls. Some adverts are entirely about printers: maintaining office printer fleets, servicing multifunction copiers, managing toner and ink. Being the person who can calmly fix the printer before a deadline earns you a lot of goodwill.
@@ -784,6 +829,11 @@ Hawa, at a Bolgatanga school, gets three calls: nobody can print to the staff ro
       },
     },
     "operating-systems": {
+      outcomes: [
+        "Explain what every operating system does",
+        "Compare operating systems by the jobs they do",
+        "Name the topics in this section",
+      ],
       explanation_md: `## Why this matters
 
 An operating system (OS) is the main software that runs a device: it manages the hardware, runs apps and gives people a way to use the machine. In Ghanaian workplaces you will meet three again and again. Most office desktops and laptops run Microsoft Windows. Many servers, routers, internet systems and cloud services run Linux. Almost every staff phone runs Android. Job adverts for IT support in Ghana ask for Windows support most often, with Linux appearing for server and network work and mobile device support appearing for staff phones and tablets.
@@ -869,6 +919,11 @@ Mariama joins a district health office in Savelugu as an IT assistant. On day on
       },
     },
     "windows-support": {
+      outcomes: [
+        "Use the core Windows support tools",
+        "Install software safely and check supported versions",
+        "Decide between repair and reinstall and help users remotely",
+      ],
       explanation_md: `## Why this matters
 
 Windows support is the skill Ghanaian IT support adverts mention most: installing and configuring Windows, troubleshooting software, managing updates, supporting Microsoft Office and Microsoft 365, and helping users remotely. If you know your way around Windows calmly and quickly, you can handle a large share of first line calls.
@@ -970,6 +1025,11 @@ Fuseini supports an accounts office in Tamale. A user says her laptop "freezes e
       },
     },
     "linux-basics": {
+      outcomes: [
+        "Explain what Linux is",
+        "Work with files, folders and users",
+        "Use the first commands to learn",
+      ],
       explanation_md: `## Why this matters
 
 You may not see many Linux desktops in Ghanaian offices, but Linux is everywhere behind the scenes. It runs many web and email servers, the software inside routers and network equipment, cloud systems and security tools. Ghanaian support adverts mention Windows and Linux server administration for second line and NOC roles, and both cybersecurity and cloud careers expect Linux. Learning the basics now opens those doors.
@@ -1085,6 +1145,11 @@ Abdul-Rahman starts as a junior technician at an internet provider in Kumasi. Hi
       },
     },
     "android-and-mobile": {
+      outcomes: [
+        "Support phone accounts, storage and performance",
+        "Keep phones updated, backed up and safe",
+        "Explain work phone device management",
+      ],
       explanation_md: `## Why this matters
 
 In Ghana the phone is often the main work device. Field officers collect survey data on Android tablets, sales staff take orders on WhatsApp, managers read email on their phones, and MoMo runs on everyone's handset. Adverts for IT support mention supporting mobile devices, and some name mobile device management tools. Phone support is also something you can practise fully on the device in your hand.
@@ -1173,6 +1238,11 @@ Amina supports twenty field officers for an NGO in Nalerigu. One officer cannot 
       },
     },
     networking: {
+      outcomes: [
+        "Picture how a network fits together",
+        "Explain how devices find each other",
+        "Draw a real network",
+      ],
       explanation_md: `## Why this matters
 
 "The system is down" is one of the most common calls in any Ghanaian office. A bank teller cannot reach the core banking system, a school cannot open its results portal, a shop's till cannot confirm MoMo payments. Very often the cause is the network: a cable, a router, an expired data bundle, a wrong address or a name that cannot be found. IT support adverts in Ghana ask again and again for network troubleshooting, LAN and Wi-Fi knowledge, router and switch setup and basic networking concepts. Network certifications such as CCNA and Network+ appear as preferred qualifications in several of them.
@@ -1267,6 +1337,11 @@ Sumaila is called to a hardware shop in Wa where "the internet is off". He check
       },
     },
     "ip-addresses": {
+      outcomes: [
+        "Explain IP addresses, private and public",
+        "Read the settings every device needs",
+        "Explain DHCP and fixed addresses",
+      ],
       explanation_md: `## Why this matters
 
 When a computer "has internet but cannot see the printer", or two devices keep knocking each other off the network, the cause is often an addressing problem. IT support adverts in Ghana list TCP/IP, LAN setup and network configuration. Understanding IP addresses lets you read what a device is telling you and fix it quickly.
@@ -1363,6 +1438,11 @@ Issahaku supports a school in Yendi. The office printer keeps disappearing. He r
       },
     },
     dns: {
+      outcomes: [
+        "Explain what DNS does",
+        "Recognise common DNS records",
+        "Spot a DNS problem",
+      ],
       explanation_md: `## Why this matters
 
 Sometimes users say "WhatsApp works but no websites open" or "the internet works but our company portal does not". These half working problems are often DNS problems. IT support adverts in Ghana ask for network troubleshooting and configuration, and DNS is one of the first things an experienced technician checks.
@@ -1456,6 +1536,11 @@ Hawa supports an NGO office in Tamale. Staff can use WhatsApp but no websites op
       },
     },
     "wifi-and-routers": {
+      outcomes: [
+        "Name the pieces of a small network",
+        "Explain Wi-Fi basics",
+        "Secure a small office network",
+      ],
       explanation_md: `## Why this matters
 
 Setting up and fixing small office networks is everyday work for IT support in Ghana: a new branch office, a school computer lab, a clinic, a guest house. Adverts mention routers, switches, LAN cabling, Wi-Fi and network security. Getting a small network right the first time prevents months of complaints.
@@ -1540,6 +1625,11 @@ Wumpini sets up Wi-Fi for a guest house in Bolgatanga. Guests complain the signa
       },
     },
     "network-troubleshooting": {
+      outcomes: [
+        "Work from near to far on a network fault",
+        "Use the network troubleshooting tools",
+        "Tell when the problem is the provider",
+      ],
       explanation_md: `## Why this matters
 
 When a network fault stops a bank branch or a school office, people need it fixed fast, and they need you to stay calm. Adverts for IT support and NOC roles in Ghana ask for network troubleshooting, connectivity support and monitoring. A clear routine with a few free tools lets you find where a connection breaks in minutes.
@@ -1654,6 +1744,11 @@ Mariama gets a call from a microfinance branch in Savelugu: no one can reach the
       },
     },
     "accounts-and-security": {
+      outcomes: [
+        "Name three habits that protect an organisation",
+        "Know the limits of your role in security",
+        "Do a basic security review",
+      ],
       explanation_md: `## Why this matters
 
 A Ghanaian bank, NGO or school can lose money, data and trust in a single afternoon: a staff member clicks a fake link, a laptop is stolen with unbacked files, a former employee still has access to email months after leaving. IT support staff are the first line of defence. Adverts for IT support and ICT officer roles in Ghana list access control, antivirus, security best practice, Microsoft 365 or Active Directory accounts, and backup and disaster recovery. Ghana also has laws that matter here: the Data Protection Act, 2012 (Act 843) sets rules for handling personal data, and the Cybersecurity Act, 2020 (Act 1038) established the Cyber Security Authority.
@@ -1737,6 +1832,11 @@ Fuseini is the only IT person at a rural bank branch in the Upper East. He notic
       },
     },
     "accounts-and-access": {
+      outcomes: [
+        "Manage central accounts with least privilege",
+        "Follow the account lifecycle",
+        "Reset passwords safely and set strong sign ins",
+      ],
       explanation_md: `## Why this matters
 
 Password resets and account problems are among the most common first line requests in any organisation. Ghanaian IT support adverts regularly name Microsoft 365, Active Directory, user account management and access control. Handled well, accounts keep data safe; handled carelessly, they are the easiest way in for attackers.
@@ -1847,6 +1947,11 @@ Amina is first line support at a school in Tamale. A message arrives on WhatsApp
       },
     },
     "security-basics": {
+      outcomes: [
+        "Recognise everyday threats and phishing signs",
+        "Prevent common problems",
+        "Respond when something goes wrong",
+      ],
       explanation_md: `## Why this matters
 
 Most security incidents a support technician sees are not clever hacks. They are malware from a USB stick used in a print shop, a staff member who typed their email password into a fake page, a MoMo scam call, or a computer that missed months of updates. Ghanaian IT support adverts ask for antivirus management, patching, security awareness and protecting systems. Preventing these common problems and responding calmly when they happen is a core part of the job.
@@ -1943,6 +2048,11 @@ Issahaku supports a clinic in Damongo. A nurse says all her files now end in a s
       },
     },
     backups: {
+      outcomes: [
+        "Follow the three copies rule",
+        "Choose what to back up and cheap ways to do it",
+        "Explain why syncing is not backup and test a restore",
+      ],
       explanation_md: `## Why this matters
 
 Hard drives fail, laptops are stolen from cars, phones fall into gutters, power surges kill machines and ransomware locks files. Every one of these is a disaster without a backup and an inconvenience with one. Ghanaian IT officer and support adverts list data backup and recovery, disaster recovery and business continuity. For a small business, a school or an NGO with donor reports, a tested backup can be the difference between a bad day and losing years of records.
@@ -2038,6 +2148,11 @@ Wumpini supports a private school in Tamale. The bursar keeps fees records only 
       },
     },
     "career-routes": {
+      outcomes: [
+        "Explain what IT employers look for",
+        "Learn honestly about costs",
+        "Make a personal career plan",
+      ],
       explanation_md: `## Why this matters
 
 Learning the skills is half the journey. The other half is convincing an employer in Ghana to give you your first chance. IT support adverts usually ask for three things: a qualification (most often a degree, though some accept an HND, a diploma or a certificate), relevant experience, and evidence of practical skill. Some also list certifications as preferred. This section shows you how to build each of these, honestly and affordably, starting from wherever you are.
@@ -2129,6 +2244,11 @@ Sumaila, in Wa, has finished senior high school and cannot yet afford a diploma.
       },
     },
     qualifications: {
+      outcomes: [
+        "Compare local routes and entry certifications",
+        "Choose a qualification for your situation",
+        "Weigh cost against value",
+      ],
       explanation_md: `## Why this matters
 
 Ghanaian IT support adverts most often ask for a degree in IT, computer science or a related field, but some accept an HND, a diploma or a certificate, especially for assistant and technician roles. Several list certifications such as CompTIA A+ and Network+, CCNA, ITIL or Microsoft certifications as preferred. Knowing what each option is, and what it proves, helps you spend scarce money and time wisely.
@@ -2225,6 +2345,11 @@ Hawa, in Tamale, compares options. She already has an HND in another subject. Ad
       },
     },
     "first-job": {
+      outcomes: [
+        "Find ways to get experience",
+        "Turn experience into a portfolio and CV",
+        "Prepare for a technical interview and stay safe",
+      ],
       explanation_md: `## Why this matters
 
 Many Ghanaian adverts ask for experience, which feels unfair when you are looking for your first job. But experience does not have to come from a paid IT job. Employers want proof that you have solved real problems for real people, behaved professionally and kept good records. You can start building that proof now.
@@ -2327,6 +2452,11 @@ Abdul-Rahman did national service in a district assembly IT unit in the Northern
       },
     },
     "next-steps": {
+      outcomes: [
+        "Compare cybersecurity, networking, systems and cloud paths",
+        "Plan how to move while working",
+        "Choose your next path",
+      ],
       explanation_md: `## Why this matters
 
 IT support is a respected job in its own right, and many people build long careers in it, becoming senior engineers and IT managers. It is also one of the most common doorways into cybersecurity, network engineering, systems administration and cloud work. Employers in those fields like people who have done support, because they understand how real users, devices and networks behave.

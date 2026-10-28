@@ -75,6 +75,10 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "See what mobile developers in Ghana and on remote teams actually do, and what employers ask for. Be honest with yourself about equipment: you can start on a phone, but you will need a laptop to go far.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [M.flutterDocs, M.dartpad],
     },
     {
@@ -84,6 +88,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Start writing real code in a browser with free tools, even on a phone, then move to a laptop when you can reach one. Learn what a laptop needs for mobile work and how to test on your own Android phone instead of a heavy emulator.",
       parent: "start-here",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [M.dartpad, M.kotlinPlay, M.deployAndroid],
     },
     {
@@ -93,6 +99,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Compare native Android with Kotlin against cross platform tools such as Flutter and React Native. See why this roadmap starts with Flutter and when another choice makes more sense for you.",
       parent: "start-here",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [M.flutterFundamentals, M.androidBasics, M.rnDocs],
     },
     {
@@ -102,6 +110,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Track every change to your code with Git and share it on GitHub. Many mobile adverts we read named Git, and your GitHub is where employers will look first.",
       parent: "start-here",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.githubDocs, RES.gitBook],
     },
     {
@@ -111,6 +121,10 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Learn to think like a programmer using Dart, the language behind Flutter. Every later topic depends on these basics, so take your time here.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [M.dartLanguage, M.dartpad],
     },
     {
@@ -120,6 +134,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Store values in variables, choose the right type and make decisions with if statements and loops. You will practise by working out a chop bar bill in DartPad.",
       parent: "programming-fundamentals",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [M.dartLanguage, M.dartpad],
     },
     {
@@ -129,6 +145,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Package repeated work into functions and hold many values in lists and maps. These are the tools you will use to handle a shop's stock list or a list of messages.",
       parent: "programming-fundamentals",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [M.dartCollections, M.dartpad],
     },
     {
@@ -138,6 +156,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Model real things such as a product or a customer with classes. Learn how Dart's null safety stops a whole family of crashes before your app ever runs.",
       parent: "programming-fundamentals",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [M.dartClasses, M.dartNullSafety],
     },
     {
@@ -147,6 +167,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Learn how an app waits for slow work, such as a network request, without freezing the screen. This is the foundation for talking to servers and databases.",
       parent: "programming-fundamentals",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [M.dartAsync],
     },
     {
@@ -156,6 +178,10 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Turn your Dart skills into real screens with Flutter widgets. Design for small, low cost Android phones first, because that is what most of your users hold.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Mobile App Developer (Flutter), NSS", "Junior Developer (Flutter/Dart)", "React Native Developer"],
       resources: [M.widgetsIntro, M.flutterFundamentals],
     },
     {
@@ -165,6 +191,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Build screens from small widgets arranged in rows, columns and stacks. Practise by laying out a product card for a Tamale shop.",
       parent: "ui-for-small-screens",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [M.widgetsIntro, M.layout, M.dartpad],
     },
     {
@@ -174,6 +202,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Show long lists efficiently, collect input with validated forms and move between screens. Together these make up most of the screens in real business apps.",
       parent: "ui-for-small-screens",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [M.forms, M.navigation],
     },
     {
@@ -183,6 +213,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Make apps that stay usable on small screens, slow processors and large text settings. Good touch targets, contrast and screen reader labels help everyone, not only users with disabilities.",
       parent: "ui-for-small-screens",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [M.accessibility, M.m3Accessible],
     },
     {
@@ -192,6 +224,10 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Learn how an app remembers things, fetches data from servers and keeps working when the network drops. This is where most real world mobile bugs live.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
+      careerLevel: "junior",
+      jobs: ["Mobile App Developer", "Software Engineer (Mobile Apps Developer)"],
       resources: [M.stateIntro, M.offlineFlutter],
     },
     {
@@ -201,6 +237,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Understand state, the data that decides what a screen shows right now. Start with setState and learn when a shared approach such as Provider, Riverpod or Bloc is worth it.",
       parent: "state-and-data",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [M.stateIntro],
     },
     {
@@ -210,6 +248,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Fetch and send data over HTTP and turn JSON into Dart objects. Handle slow networks, timeouts and errors so users always know what is happening.",
       parent: "state-and-data",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [M.fetchData, M.json],
     },
     {
@@ -219,6 +259,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Save settings, records and cached data on the device with simple key value storage or a SQLite database. Choose the right tool for each kind of data.",
       parent: "state-and-data",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [M.persistence, M.sqlite],
     },
     {
@@ -228,6 +270,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Design apps that read and write locally first, then sync with the server when a connection returns. This matters for field workers, traders and anyone on prepaid data.",
       parent: "state-and-data",
       optional: false,
+      difficulty: "advanced",
+      complexity: 5,
       resources: [M.offlineFlutter, M.offlineAndroid],
     },
     {
@@ -237,6 +281,10 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Connect your app to the services that make it useful in Ghana: sign in, cloud data, mobile money, notifications and SMS. Learn the safe patterns that employers expect.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
+      careerLevel: "mid",
+      jobs: ["Mobile Application Developer (Flutter)", "Android Developer", "Mobile Developer, Flutter"],
       resources: [M.firebaseSetup],
     },
     {
@@ -246,6 +294,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Use a hosted backend such as Firebase to add sign in and cloud data without running your own server. Learn which secrets must never live inside an app.",
       parent: "services-and-integrations",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [M.firebaseSetup, M.firebaseAuth, M.firebaseRules],
     },
     {
@@ -255,6 +305,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Understand how a mobile money payment flows between your app, your server, a payment provider and the customer's phone. Learn why the server, not the app, must confirm every payment.",
       parent: "services-and-integrations",
       optional: false,
+      difficulty: "advanced",
+      complexity: 5,
       resources: [M.owaspMobile, M.androidSecurity],
     },
     {
@@ -264,6 +316,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Reach users with push notifications when they have data and with SMS when they do not. Learn the permissions, costs and good manners of each channel.",
       parent: "services-and-integrations",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [M.fcm, M.notifPermission],
     },
     {
@@ -273,6 +327,10 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Make your app reliable, small and fast, then put it in front of real users. This section takes you from code on your laptop to an app on the Play Store.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
+      careerLevel: "mid",
+      jobs: ["Mobile App Developer", "React Native Developer"],
       resources: [M.testing, M.deployAndroid],
     },
     {
@@ -282,6 +340,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Write unit and widget tests that catch mistakes before users do, and use the debugger instead of guessing. Employers ask for testing even in junior roles.",
       parent: "quality-and-release",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [M.testing, M.debugging, M.devtools],
     },
     {
@@ -291,6 +351,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Keep downloads small and screens smooth on modest phones and slow connections. Measure release builds, shrink images and load data in small pages.",
       parent: "quality-and-release",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [M.appSize, M.perf],
     },
     {
@@ -300,6 +362,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Prepare a signed release, a store listing, a privacy policy and the Data safety form. Plan for the closed testing that new personal developer accounts must complete first.",
       parent: "quality-and-release",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [M.deployAndroid, M.playTesting, M.dataSafety],
     },
     {
@@ -309,6 +373,10 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Show employers apps they can install and code they can read. Then decide how to grow, whether into native Android or a cohort programme.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Junior Developer (Flutter/Dart)", "Mobile App Developer (Flutter), NSS"],
       resources: [RES.githubDocs],
     },
     {
@@ -318,6 +386,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Build two or three focused apps that solve Ghanaian problems and present them well on GitHub. Learn where mobile roles appear, from National Service posts to remote teams.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.githubDocs, M.deployAndroid],
     },
     {
@@ -327,6 +397,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
         "Learn the basics of Kotlin and Jetpack Compose, the native way to build Android apps. Some employers ask for Kotlin alongside Flutter, so this widens the jobs you can apply for.",
       parent: "getting-hired",
       optional: true,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [M.kotlinStart, M.androidBasics, M.kotlinPlay],
     },
   ],

@@ -8,6 +8,11 @@ const content: TrackContent = {
   roadmap: "graphic-designer",
   nodes: {
     foundations: {
+      outcomes: [
+        "Start design on a phone or a computer",
+        "Train your eye on real designs around you",
+        "Name the topics in this section",
+      ],
       explanation_md: `Look around any town in Ghana and you will see graphic design everywhere: the funeral poster on a wall in Tamale, the church harvest flyer shared on WhatsApp, the price list taped to a provisions shop window, the logo on a sachet water bag. Someone designed every one of them. Some were designed well and some badly, and the difference matters to the people paying for them.
 
 Graphic design is the work of arranging words, pictures, shapes and colour so that a message is clear and people act on it. A good flyer gets people to the event. A good logo helps a shop look trustworthy. A good social media post makes someone stop scrolling and send a message to order.
@@ -91,6 +96,11 @@ After learning a few principles, Napari tries again: one bold heading, one clear
       },
     },
     "what-designers-do": {
+      outcomes: [
+        "Describe where graphic designers work and what they do",
+        "Compare routes into design",
+        "Map the design work around you",
+      ],
       explanation_md: `Before you spend months learning, it helps to know what the job really looks like. In Ghana, graphic designers work in several different places, and each one asks for slightly different strengths.
 
 ## Where designers work
@@ -176,6 +186,11 @@ He decides to start with what is closest: flyers and social media posts for his 
       },
     },
     "design-tools": {
+      outcomes: [
+        "Tell pixels from vectors",
+        "Choose from three kinds of free design tool",
+        "Recognise the file types you will use",
+      ],
       explanation_md: `Clients do not pay for the app you use; they pay for the result. Still, you need tools, and the good news is that free ones are enough to start and even to earn. This lesson explains the main kinds of tool so you can choose wisely and switch later without fear.
 
 ## Pixels and vectors
@@ -273,6 +288,11 @@ Sumaila designs a logo for a barbering shop in Wa by placing text and a photo of
       },
     },
     "design-principles": {
+      outcomes: [
+        "Apply six design principles",
+        "Run the three second test on a design",
+        "Fix a real design with the principles",
+      ],
       explanation_md: `When a client says "make it look nice", what they really want is a design that people understand quickly. A small set of principles explains how to get there. Employers rarely list these by name in adverts, but every portfolio review and design test checks them.
 
 ## Six principles
@@ -340,6 +360,11 @@ Nothing new was added; things were only rearranged. Yet customers can now find t
       },
     },
     "visual-basics": {
+      outcomes: [
+        "Name the four building blocks of a design",
+        "See how they work together",
+        "Learn by copying layouts, not designs",
+      ],
       explanation_md: `Read a few Ghanaian adverts for designers and the same words keep coming back: typography, colour, layout, images. These are the four building blocks of visual design. Every flyer, post, logo and report is made from them, and a weakness in any one of them shows immediately.
 
 ## The four building blocks
@@ -422,6 +447,11 @@ None of these choices is advanced, but together they make the poster look profes
       },
     },
     typography: {
+      outcomes: [
+        "Recognise kinds of font",
+        "Choose, pair and size fonts with simple rules",
+        "Find fonts you are allowed to use",
+      ],
       explanation_md: `Most designs are mostly words. A church programme, a price list, a funeral poster and a bank's social media post all depend on text being easy to read. That is why good typography is one of the clearest signs of a skilled designer, and poor typography is the first thing an experienced reviewer notices.
 
 ## Kinds of font
@@ -499,6 +529,11 @@ She changes to one strong serif for the heading "Annual Thanksgiving Service" an
       },
     },
     colour: {
+      outcomes: [
+        "Build a small colour palette",
+        "Use colour meaning and contrast well",
+        "Tell screen colour from print colour",
+      ],
       explanation_md: `Colour is often the first thing a client talks about: "use our blue", "make it bright", "it should feel calm". Choosing colour well makes a design feel professional and on brand. Choosing badly makes text unreadable or makes a printed job look nothing like what the client approved on screen.
 
 ## A few words to know
@@ -601,6 +636,11 @@ Fuseini designs a poster for a shea butter cooperative. He picks a warm brown fr
       },
     },
     "layout-and-grids": {
+      outcomes: [
+        "Set margins and use a grid",
+        "Guide the eye and group with space",
+        "Calm a crowded design",
+      ],
       explanation_md: `Clients often hand you far too much information: a full programme, ten sponsors' logos, three phone numbers and a Bible verse, all for one A5 flyer. Layout is how you fit it in without chaos. Agencies and in house teams also design many items in a series, and a consistent layout is what makes them look like they belong together.
 
 ## Margins first
@@ -686,6 +726,11 @@ Amina sets margins and a two column grid. She puts the event name and date large
       },
     },
     "images-and-photos": {
+      outcomes: [
+        "Make basic photo edits",
+        "Check whether an image is sharp enough",
+        "Check whether you may use an image",
+      ],
       explanation_md: `Many design jobs depend on photos: a product for an online shop, a pastor for a crusade poster, a deceased elder for a funeral poster, a smiling student for a school advert. Adverts for designers in Ghana often ask for photo editing alongside layout, and print shops expect you to fix a client's phone photo so it prints well.
 
 ## Basic edits
@@ -779,6 +824,11 @@ Zuweira runs a small business selling shea soap in Tamale and sends Wumpini a di
       },
     },
     branding: {
+      outcomes: [
+        "Explain why a brand is more than a logo",
+        "Treat branding as a conversation with a client",
+        "Study how a real brand stays consistent",
+      ],
       explanation_md: `"I need a logo" is one of the most common requests a designer in Ghana hears. It comes from a new pharmacy in Bolgatanga, a youth fellowship, a rice farmers' association, a fashion designer starting on Instagram. Branding work is valuable because businesses keep using it for years, and adverts for designers regularly mention logos, brand materials and brand guidelines.
 
 ## A brand is more than a logo
@@ -868,6 +918,11 @@ Yakubu designs a simple wordmark in a rounded bold font with one warm orange and
       },
     },
     "logo-design": {
+      outcomes: [
+        "Compare kinds of logo",
+        "Follow a simple logo design process",
+        "Keep a logo simple",
+      ],
       explanation_md: `A logo is often a designer's most visible work. It may sit on a signboard for ten years, on every receipt and on every social media post. Clients care about logos, and adverts for print shops, agencies and in house teams regularly list logo design among the core tasks.
 
 ## Kinds of logo
@@ -966,6 +1021,11 @@ Hawa designs a logo for a women's rice processing group in Nyankpala. After aski
       },
     },
     "brand-identity": {
+      outcomes: [
+        "Describe what a brand guide contains",
+        "Follow someone else's brand guide",
+        "Create a one page brand guide and templates",
+      ],
       explanation_md: `When a company hires a designer, one of the first things it hands over is its brand guidelines, and adverts often say the designer must keep work consistent with them. Learning to write a simple brand guide, and to follow someone else's, shows employers you can work professionally inside a team.
 
 ## What a brand guide contains
@@ -1056,6 +1116,11 @@ Issahaku delivered a logo to a computer training centre in Tamale. He adds a two
       },
     },
     "client-designs": {
+      outcomes: [
+        "Design for screen and for paper",
+        "Work fast without losing quality",
+        "Adapt one design for both",
+      ],
       explanation_md: `Ask designers in any Ghanaian town what they spend their days making, and the answers are similar: social media posts and Status graphics, event flyers, church and funeral programmes, posters, banners, business cards and stickers. These everyday jobs are where most designers earn their first money, and they appear again and again in job adverts from print shops, schools, NGOs and companies.
 
 ## Two destinations: screen and paper
@@ -1137,6 +1202,11 @@ Mahama runs a small design table beside a print shop in Wa. On one Friday he des
       },
     },
     "social-media-graphics": {
+      outcomes: [
+        "Use the right size for each platform",
+        "Give each graphic one message and keep files light",
+        "Build a template set with real content",
+      ],
       explanation_md: `Almost every business in Ghana now sells or announces something on WhatsApp, Facebook, Instagram or TikTok, and they need graphics every week. Adverts from companies, NGOs and agencies regularly list social media graphics as a core task, and it is also the easiest design service to offer a local shop as a freelancer.
 
 ## Get the size right
@@ -1228,6 +1298,11 @@ Amina manages graphics for a fabric shop in Tamale. She sets up four templates i
       },
     },
     "flyers-and-posters": {
+      outcomes: [
+        "Design for where a piece will be seen",
+        "Use a structure that works for flyers and posters",
+        "Get names, dates and details right",
+      ],
       explanation_md: `Flyers and posters are the bread and butter of design work in Ghana. Churches announce crusades and harvests, families announce funerals and weddings, schools announce speech days, politicians and associations announce meetings, and shops announce sales. Print shop and in house adverts regularly name flyers, posters, banners and brochures among the main tasks.
 
 ## Know where it will be seen
@@ -1322,6 +1397,11 @@ Abdulai designs for a youth association's health screening day in Salaga. For Wh
       },
     },
     "print-production": {
+      outcomes: [
+        "Talk to the printer first",
+        "Set trim, bleed and safe areas",
+        "Prepare sharp, print ready files and approve proofs",
+      ],
       explanation_md: `A design that looks perfect on your screen can still fail at the print shop: text cut off at the edge, a blurry photo, colours that look muddy, a white line along one side. Print shops and branding companies in Ghana often say in their adverts that they want designers who understand print and can prepare files for production. This lesson teaches the basics so your files print right the first time.
 
 ## Talk to the printer first
@@ -1431,6 +1511,11 @@ Fuseini designs a calendar for a rural bank branch. He asks the printer for size
       },
     },
     "motion-basics": {
+      outcomes: [
+        "Explain what motion graphics are",
+        "Use key motion ideas with free tools",
+        "Turn a static design into a short animation",
+      ],
       explanation_md: `Moving graphics catch the eye on WhatsApp Status, Instagram, TikTok and Facebook far more than still images. Agencies and multimedia roles in Ghana often ask designers to create simple animation alongside static designs, and even local businesses like a short animated price announcement. This lesson is optional, but it is a useful extra skill once your static design is solid.
 
 ## What motion graphics are
@@ -1517,6 +1602,11 @@ Sumaila makes a weekly price announcement for a cement and building materials sh
       },
     },
     "client-work": {
+      outcomes: [
+        "Treat every job as a small project",
+        "Build trust with good communication habits",
+        "Write the messages that start and finish a job",
+      ],
       explanation_md: `Many talented beginners struggle not because their designs are weak, but because the client relationship goes wrong. The client expected three logo ideas and got one. The designer did seven rounds of changes for free. A flyer used a photo that belonged to someone else. The final payment never came. Job adverts for designers in Ghana mention briefs, revisions, deadlines and client communication again and again, because these skills decide whether projects succeed.
 
 ## What this section covers
@@ -1603,6 +1693,11 @@ The client agrees, pays the deposit by mobile money and sends clear details. Mar
       },
     },
     "briefs-and-feedback": {
+      outcomes: [
+        "Ask questions before you design",
+        "Agree the scope of a job",
+        "Receive feedback and handle revisions well",
+      ],
       explanation_md: `A brief is the set of instructions for a design job. Agencies write formal briefs; local clients usually send a voice note or a few lines on WhatsApp. Either way, adverts for designers ask for people who can understand and interpret briefs, because a design that answers the wrong brief is wasted, however beautiful it looks.
 
 ## Ask before you design
@@ -1702,6 +1797,11 @@ A pastor in Bolgatanga asks Issahaku for a crusade poster. Issahaku asks the sev
       },
     },
     "copyright-and-ethics": {
+      outcomes: [
+        "Explain copyright for images, fonts and logos",
+        "Agree who owns the final design",
+        "Use AI image tools responsibly",
+      ],
       explanation_md: `It is easy to find any image, font or logo online in seconds. That does not mean you are allowed to use it. Using other people's work without permission can embarrass your client and damage your reputation. Employers trust designers who know the basic rules.
 
 ## Copyright in simple terms
@@ -1800,6 +1900,11 @@ Fatima is asked by a shop owner in Wa to "use the same logo as that big supermar
       },
     },
     "pricing-and-invoicing": {
+      outcomes: [
+        "Know your costs and compare three ways to price",
+        "Write a clear quote and invoice in cedis",
+        "Keep records",
+      ],
       explanation_md: `Many new designers in Ghana undercharge, forget their costs or start work without any money upfront, then end up working for free. Pricing well, quoting clearly and keeping records are what turn design from a hobby into a living. Freelance and print shop designers handle money daily, and even employed designers benefit from understanding what their time is worth.
 
 ## Know your costs
@@ -1902,6 +2007,11 @@ Salifu designs business cards for a mechanic in Damongo. He sends a quote on Wha
       },
     },
     "getting-hired": {
+      outcomes: [
+        "Compare three ways designers earn",
+        "Use honest evidence instead of big claims",
+        "Plan your route into paid design work",
+      ],
       explanation_md: `For most design jobs in Ghana, the first thing an employer or client asks for is not a certificate but your portfolio. Adverts from print shops, agencies, NGOs and companies regularly ask candidates to attach or link to samples of their work, and some say the portfolio is what decides who they hire. This section helps you turn what you have learned into work that pays.
 
 ## Three ways designers earn
@@ -1989,6 +2099,11 @@ Ayishetu in Wa finished the earlier lessons and had ten practice designs. She of
       },
     },
     portfolio: {
+      outcomes: [
+        "Choose portfolio pieces carefully",
+        "Show your thinking honestly",
+        "Keep a portfolio light and phone friendly",
+      ],
       explanation_md: `Your portfolio is your most important job tool as a designer. Almost every design advert asks for one, and clients decide whether to trust you by looking at it. A small, well chosen portfolio beats a big messy one every time.
 
 ## Choose carefully
@@ -2082,6 +2197,11 @@ Alhassan's first portfolio had thirty designs, including some copied from tutori
       },
     },
     freelancing: {
+      outcomes: [
+        "Find first clients close to home",
+        "Grow through referrals and remote work",
+        "Avoid scams and look after yourself",
+      ],
       explanation_md: `Freelancing is one of the most realistic ways to start earning from design, especially outside Accra. Shops, churches, mosques, schools, associations, event planners and NGOs in every town need flyers, logos and social media graphics, and many of them prefer to work with someone local they can meet.
 
 ## Start close to home
@@ -2183,6 +2303,11 @@ Hawa in Tamale started by designing her church's harvest flyer and her aunt's sh
       },
     },
     "job-search": {
+      outcomes: [
+        "Find where design jobs are advertised",
+        "Write a short application",
+        "Prepare for design tests and interviews",
+      ],
       explanation_md: `If you want a design job with regular pay, it helps to know where roles appear and what employers look for. Ghanaian design adverts come from print shops, branding and souvenir companies, advertising agencies, in house marketing teams at companies such as real estate firms, car dealers and media businesses, and NGOs and schools.
 
 ## Where to look

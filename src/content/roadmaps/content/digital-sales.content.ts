@@ -10,6 +10,11 @@ const content: TrackContent = {
   roadmap: "digital-sales",
   nodes: {
     "sales-foundations": {
+      outcomes: [
+        "Explain what digital sales means",
+        "Notice the selling that already happens around you",
+        "Plan how to use this track",
+      ],
       explanation_md: `Almost every business in Ghana needs someone who can sell. An internet provider needs people to sign up shops and homes. A seed and fertiliser company needs people to reach farmers and agro dealers. A software company needs people to book demos with schools and clinics. A food manufacturer needs people to get its products onto supermarket shelves. Sales is one of the biggest categories on Ghanaian job boards, and many of the roles accept school leavers and graduates who can show the right habits.
 
 ## What digital sales means
@@ -93,6 +98,11 @@ Work through the sections in order: foundations, finding prospects, reaching out
       },
     },
     "how-selling-works": {
+      outcomes: [
+        "Tell selling to people from selling to businesses",
+        "Name common sales roles",
+        "Describe the path a lead travels to become a customer",
+      ],
       explanation_md: `When you read sales adverts in Ghana you will see many job titles: sales representative, sales executive, telesales consultant, field sales officer, business development representative, graduate trainee in sales. They sound different, but they all sit somewhere on the same path from a stranger to a paying customer. Knowing that path helps you understand any sales job you are offered.
 
 ## Selling to people and selling to businesses
@@ -184,6 +194,11 @@ Fuseini works in telesales for an internet provider. He receives a list of shops
       },
     },
     "knowing-your-product": {
+      outcomes: [
+        "Turn features into benefits backed by proof",
+        "Know honestly who a product is for",
+        "Write a one sentence value statement",
+      ],
       explanation_md: `A customer in Bolgatanga does not wake up wanting "a 20 Mbps fibre plan". She wants her shop's card machine to stop failing, her children to finish online homework, and her evening films to stop buffering. People buy solutions to problems. Employers in Ghana regularly ask for product knowledge and a consultative approach, which simply means understanding the customer's problem first and then showing how your product helps.
 
 ## Features, benefits and proof
@@ -282,6 +297,11 @@ Hawa sells agro inputs. A farmer asks about a new maize seed. Hawa does not star
       },
     },
     "targets-and-numbers": {
+      outcomes: [
+        "Explain what sales teams measure",
+        "Work out conversion rates and plan activity from a target",
+        "Read how sales pay is usually structured",
+      ],
       explanation_md: `Sales is one of the most measured jobs there is. Many sales adverts in Ghana mention targets, and interviewers often ask how you handle them. Understanding the numbers early means they help you instead of frightening you.
 
 ## What sales teams measure
@@ -406,6 +426,11 @@ Ask questions politely in writing if something is unclear. A good employer will 
       },
     },
     "finding-prospects": {
+      outcomes: [
+        "Tell outbound from inbound leads",
+        "Name the topics in this section",
+        "Describe the leads you would look for",
+      ],
       explanation_md: `No one can buy from you if you never meet them. Prospecting, which means finding people and businesses who might need what you sell, is one of the most common skills in Ghanaian sales adverts. It is also where many new sellers struggle, because they wait for customers to appear. This section teaches you to fill your own list.
 
 ## Three ideas to hold on to
@@ -496,6 +521,11 @@ The lessons that follow show you how to do what Amina learned: find the right le
       },
     },
     "finding-leads": {
+      outcomes: [
+        "Find where leads come from",
+        "Explain why public does not mean permission",
+        "Build a simple lead list",
+      ],
       explanation_md: `Most entry level sales roles in Ghana ask you to generate leads, not just call the ones you are given. Being able to build a clean lead list quickly, with free tools, is a skill you can show in an interview.
 
 ## Where leads come from
@@ -591,6 +621,11 @@ Sumaila sells point of sale software to pharmacies. On Monday he searches a maps
       },
     },
     "qualifying-leads": {
+      outcomes: [
+        "Qualify leads with four quick checks",
+        "Ask questions without interrogating",
+        "Decide one of three outcomes for a lead",
+      ],
       explanation_md: `Every hour you spend on someone who cannot buy is an hour you did not spend on someone who can. Qualifying means checking, early and politely, whether a lead is a real fit. Employers ask for it because unqualified leads clog the pipeline and make forecasts wrong.
 
 ## BANT: four quick checks
@@ -689,6 +724,11 @@ Mariama sells a bulk SMS service to businesses. A caller from a hair salon in Wa
       },
     },
     "inbound-enquiries": {
+      outcomes: [
+        "Reply to enquiries fast",
+        "Ask before you recommend instead of just sending a price",
+        "Record every enquiry and follow up politely",
+      ],
       explanation_md: `When someone messages a business to ask about a product, they are already interested. That is the warmest kind of lead. Yet many Ghanaian businesses lose these sales by replying hours later, answering only the price, or forgetting the conversation entirely. Employers hiring telesales and sales executives want people who turn enquiries into sales.
 
 ## Speed matters
@@ -780,6 +820,11 @@ Issahaku sells laptops for a shop in Tamale. At 7pm a student messages: "Price o
       },
     },
     "reaching-out": {
+      outcomes: [
+        "Choose the right outreach channel",
+        "Be polite and persistent, never spam",
+        "Respect consent in outreach",
+      ],
       explanation_md: `Once you have a list of leads, someone has to contact them. In Ghana that usually means a phone call or a WhatsApp message, and for businesses often an email or a LinkedIn message too. Adverts for telesales, business development and sales executive roles nearly always ask for confident outreach across several channels.
 
 ## Choosing the right channel
@@ -877,6 +922,11 @@ Napari contacts a guest house in Bolgatanga about a booking app. She emails the 
       },
     },
     "calls-and-telesales": {
+      outcomes: [
+        "Prepare before you dial",
+        "Follow a simple call structure and use scripts as guides",
+        "Handle a quick no and log the call",
+      ],
       explanation_md: `Telesales and outbound calling are among the most common skills in Ghanaian sales adverts. A sales call is short. You have a few seconds to earn the right to a minute, and a minute to earn a next step. The good news is that a simple structure, practised aloud, makes calls much easier.
 
 ## Before you dial
@@ -986,6 +1036,11 @@ Speak clearly and a little slower than normal. If the customer is more comfortab
       },
     },
     "selling-on-whatsapp": {
+      outcomes: [
+        "Set up WhatsApp Business for selling",
+        "Use broadcast lists with consent",
+        "Sell in the chat and follow up without spamming",
+      ],
       explanation_md: `For many Ghanaian customers, WhatsApp is the natural place to talk to a business. They ask questions, see photos, agree a price and send mobile money without leaving the chat. Many sales roles expect you to follow up leads on WhatsApp. Doing it well means being organised, quick and respectful.
 
 ## Use WhatsApp Business
@@ -1081,6 +1136,11 @@ Mahama sells school uniforms. A parent asks about sizes. Mahama shares the catal
       },
     },
     "email-and-linkedin-outreach": {
+      outcomes: [
+        "Write outreach emails that work",
+        "Follow up with a simple structure",
+        "Use LinkedIn basics for outreach",
+      ],
       explanation_md: `When you sell to businesses, schools, NGOs or larger companies, the person you need often sits behind a reception desk and a busy phone. A short, personal email or LinkedIn message lets them read your offer when they have time, check who you are, and forward it to colleagues. Adverts for business development and sales executive roles often ask for email and digital outreach.
 
 ## What makes outreach work
@@ -1172,6 +1232,11 @@ Zuwera sells a staff training app. She finds the HR manager of a microfinance co
       },
     },
     "sales-conversations": {
+      outcomes: [
+        "Describe the shape of a sales conversation",
+        "Explain why listening wins",
+        "Observe the four parts of a sales conversation",
+      ],
       explanation_md: `You have found a lead, qualified them and got their attention. Now comes the conversation that decides whether they buy. Many people imagine a great salesperson as someone who talks smoothly and never stops. In practice, the best sellers talk less and listen more. They find out what the customer really needs, show how their product fits, deal honestly with doubts, and ask clearly for a decision.
 
 ## The shape of a sales conversation
@@ -1263,6 +1328,11 @@ Honest conversations like this build the repeat customers and referrals that kee
       },
     },
     "discovery-questions": {
+      outcomes: [
+        "Ask open and closed questions",
+        "Listen actively",
+        "Summarise before you suggest",
+      ],
       explanation_md: `Discovery is the part of a sales conversation where you find out what the customer actually needs. Adverts for business development and sales executive roles often mention discovery calls, and interviewers sometimes test it by asking you to "sell me this pen". The strongest answer starts with questions, not a speech.
 
 ## Open and closed questions
@@ -1365,6 +1435,11 @@ Alhassan sells solar systems. A chop bar owner in Tamale says she wants "solar".
       },
     },
     "presenting-offers": {
+      outcomes: [
+        "Present an offer around the customer's needs",
+        "Write a clear quote and a short proposal",
+        "End with a clear next step",
+      ],
       explanation_md: `After discovery, the customer wants to know what you recommend and what it costs. Sales adverts in Ghana often ask for people who can prepare quotes and proposals, and O*NET lists preparing presentations and proposals among the tasks of sales representatives. A clear, honest offer makes saying yes easy.
 
 ## Present around their needs
@@ -1473,6 +1548,11 @@ Ayishetu sells printers to schools. After discovery with a head teacher in Naler
       },
     },
     "handling-objections": {
+      outcomes: [
+        "Handle objections with a simple method",
+        "Prepare answers to common objections",
+        "Avoid what not to do",
+      ],
       explanation_md: `"It is too expensive." "Let me think about it." "I need to ask my husband." "I have been cheated before." Every seller hears these every day. Employers in Ghana list objection handling as a key telesales and sales skill. An objection is not the end of a sale. It often means the customer is interested but has a concern you have not yet answered.
 
 ## A simple method: LAER
@@ -1569,6 +1649,11 @@ Salifu sells a mobile accounting app. A trader in Wa says, "It is too costly." S
       },
     },
     "negotiating-and-closing": {
+      outcomes: [
+        "Spot signs a customer is ready",
+        "Close honestly and negotiate fairly",
+        "Agree payment and act after the yes",
+      ],
       explanation_md: `Many sales are lost not because the customer said no, but because nobody asked them clearly to say yes. Closing means asking for the decision and agreeing the details. Negotiating means finding terms both sides accept. Adverts for sales executives and business development roles in Ghana list both, and they matter just as much on a WhatsApp chat as in an office.
 
 ## Signs a customer is ready
@@ -1690,6 +1775,11 @@ Tahiru sells office chairs to a new NGO in Tamale. The manager asks about delive
       },
     },
     "pipeline-and-crm": {
+      outcomes: [
+        "Explain what a pipeline and a CRM are",
+        "Explain why employers care about them",
+        "Give every deal a next step",
+      ],
       explanation_md: `Imagine you are talking to forty possible customers at once. Some want a call on Thursday, some are waiting for a quote, some said "after harvest", and one is ready to pay today. Without a system, you will forget someone, and that someone might have bought. A pipeline and a CRM are the system. Sales adverts regularly ask for CRM experience or pipeline management.
 
 ## What a pipeline is
@@ -1793,6 +1883,11 @@ Memunatu sells internet plans in Tamale. She used to keep leads in her head and 
       },
     },
     "using-a-crm": {
+      outcomes: [
+        "Set up a free CRM",
+        "Keep daily CRM habits and good notes",
+        "Keep CRM data clean and safe",
+      ],
       explanation_md: `Employers often write "CRM experience" in sales adverts, and some name specific tools. You do not need paid software to gain that experience. Free CRM plans let you practise the same daily habits that sales teams use. This lesson walks through them using general steps that apply to most CRMs. HubSpot's free CRM and Zoho Bigin are named only as examples; the habits transfer to whichever CRM an employer uses.
 
 ## Getting started
@@ -1894,6 +1989,11 @@ Kassim's clinic, from the note above, becomes a deal in Hawa's practice CRM. Aft
       },
     },
     "pipeline-and-follow-up": {
+      outcomes: [
+        "Define clear pipeline stages",
+        "Set a follow up rhythm with messages worth reading",
+        "Keep a pipeline healthy",
+      ],
       explanation_md: `Most deals do not close on the first contact. A business may need several conversations before deciding, and a family may need to wait for money to come in. Follow up is where many sales are won, and where many are quietly lost because the seller stopped. Employers ask for pipeline management and follow up because these habits turn interest into revenue.
 
 ## Defining clear stages
@@ -2003,6 +2103,11 @@ Azara sells software to private schools. Before the term starts she has fifteen 
       },
     },
     "sales-reports": {
+      outcomes: [
+        "Describe what a weekly sales report shows",
+        "Build one in a spreadsheet",
+        "Write report notes honestly and consistently",
+      ],
       explanation_md: `At the end of each week, most sales managers ask the same questions: What did you sell? What is coming? Where are deals stuck? A clear weekly report answers them in a minute. Sales adverts often mention reporting and targets, and being able to build a tidy report in a spreadsheet makes you stand out.
 
 ## What a weekly sales report shows
@@ -2111,6 +2216,11 @@ Mohammed works in field sales for an agro input company. Every Friday he updates
       },
     },
     "working-well-in-sales": {
+      outcomes: [
+        "Treat trust as your main asset",
+        "Handle data and consent properly",
+        "Look after yourself in a sales role",
+      ],
       explanation_md: `Anyone can make one sale. A sales career is built over years, on trust, good habits and the ability to keep going on difficult days. This section is about the things that decide whether you last in sales and whether customers, employers and colleagues want to work with you again.
 
 ## Trust is your main asset
@@ -2199,6 +2309,11 @@ The rest of this section helps you be the second kind of seller, and stay well w
       },
     },
     "honest-selling-and-data": {
+      outcomes: [
+        "Sell honestly",
+        "Apply data protection to sales",
+        "Avoid contact lists you should not use",
+      ],
       explanation_md: `Every sales job in Ghana comes with two kinds of responsibility: telling customers the truth, and treating their personal information with care. Employers expect new sellers to understand both from day one, because mistakes damage customers and the company's name.
 
 ## Honest selling
@@ -2303,6 +2418,11 @@ Rashida starts a telesales job. A colleague offers her a list of numbers "from a
       },
     },
     "ai-for-sales": {
+      outcomes: [
+        "Find where AI can help in sales",
+        "Follow the rules for using AI safely",
+        "Write a good prompt for sales preparation",
+      ],
       explanation_md: `This lesson is optional. Sales training programmes and some employers now talk about AI assistants, such as ChatGPT, Gemini, Claude or Copilot (named only as examples), as tools for sellers. Used well, they save time on writing and research. Used badly, they produce wrong facts and put customer privacy at risk. If you have done the AI Tools for Work track, this lesson applies those skills to selling.
 
 ## Where AI can help
@@ -2395,6 +2515,11 @@ Nashiru has a call tomorrow with a hotel manager in Damongo about a booking app.
       },
     },
     "resilience-and-planning": {
+      outcomes: [
+        "Treat rejection as information",
+        "Plan your day in blocks",
+        "Break big targets into small goals",
+      ],
       explanation_md: `In sales you will hear "no" far more often than "yes". Some people will hang up, ignore your messages or speak rudely. Targets will feel heavy some weeks. Employers know this, which is why interviewers often ask, "How do you handle rejection?" The sellers who do well are not the ones who never feel discouraged. They are the ones with habits that help them recover and keep going.
 
 ## Rejection is information
@@ -2494,6 +2619,11 @@ Fuseini's first week in telesales was hard: forty calls a day and only two meeti
       },
     },
     "getting-hired-sales": {
+      outcomes: [
+        "Explain what sales employers look for",
+        "Use proof instead of claims",
+        "Compare common entry routes and stay safe",
+      ],
       explanation_md: `Sales is one of the most open doors into work in Ghana. Many employers hire school leavers, diploma holders and graduates from any subject into sales, telesales and business development roles, and train them on the product. What they need to see is evidence that you can talk to people, stay organised and keep going when it is hard. This section helps you show that evidence and find your first role.
 
 ## What employers look for
@@ -2599,6 +2729,11 @@ Amina had no work experience when she applied for a telesales role with an inter
       },
     },
     "showing-sales-skills": {
+      outcomes: [
+        "Build a one page sales portfolio",
+        "Write your real selling story",
+        "Present your skills in a CV and interview",
+      ],
       explanation_md: `When a sales manager reads fifty CVs for one telesales post, most say the same things. A short, real portfolio of sales work makes you memorable and gives the interviewer something specific to ask about. You have already built most of it in this track.
 
 ## A one page sales portfolio
@@ -2703,6 +2838,11 @@ Issahaku interviews for a field sales role with an agro input company. When aske
       },
     },
     "finding-sales-roles": {
+      outcomes: [
+        "Find where sales roles are advertised",
+        "Read a sales advert and spot warning signs",
+        "Check an offer before you accept",
+      ],
       explanation_md: `Sales roles are advertised constantly in Ghana, so the challenge is less finding adverts and more choosing well: roles that train you, pay fairly and treat customers honestly. This lesson helps you search, read adverts and offers carefully, and avoid traps.
 
 ## Where to look
