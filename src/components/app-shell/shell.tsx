@@ -8,6 +8,8 @@ import { AvatarMenu } from "./avatar-menu";
 import { ShellBell } from "./bell";
 import { UserChip } from "./user-chip";
 import { LegalLinks } from "./legal-links";
+import { ThemeSwitch } from "@/components/display/theme-switch";
+import { DisplayPrefsSync } from "@/components/display/display-sync";
 
 /**
  * The pieces of the signed in frame (issue #190), shared by the app layout
@@ -30,7 +32,10 @@ export function AppSidebar() {
         <Link href="/dashboard" aria-label="SydCrest Launchpad home" className="inline-flex min-h-11 items-center">
           <Logo size={32} />
         </Link>
-        <ShellBell />
+        <div className="flex items-center">
+          <ThemeSwitch />
+          <ShellBell />
+        </div>
       </div>
       <div className="flex-1">
         <Suspense fallback={<SidebarList roles={NO_ROLES} pathname={null} />}>
@@ -47,7 +52,13 @@ export function AppSidebar() {
 
 async function AvatarForViewer() {
   const viewer = await getNavViewer();
-  return <AvatarMenu viewer={viewer} />;
+  return (
+    <>
+      <AvatarMenu viewer={viewer} />
+      {/* Profile copy of the display settings: load on sign in, save on change (#204). */}
+      {viewer && <DisplayPrefsSync remote={viewer.displayPrefs} />}
+    </>
+  );
 }
 
 /**
@@ -77,6 +88,7 @@ export function AppTopBar({ links = false }: { links?: boolean }) {
           </div>
         )}
         <div className="flex items-center gap-1">
+          <ThemeSwitch />
           <ShellBell />
           <Suspense fallback={<AvatarMenu viewer={null} />}>
             <AvatarForViewer />

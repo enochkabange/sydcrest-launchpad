@@ -13,7 +13,7 @@ export function DateTile({ iso, muted = false }: { iso: string; muted?: boolean 
   return (
     <div
       aria-hidden
-      className={`flex w-16 shrink-0 flex-col items-center overflow-hidden rounded-md border text-center ${muted ? "border-line text-content-2" : "border-blue-200 text-content"}`}
+      className={`flex w-16 shrink-0 flex-col items-center overflow-hidden rounded-md border text-center ${muted ? "border-line text-content-2" : "border-info-line text-content"}`}
     >
       <span className={`w-full py-0.5 text-xs font-bold tracking-wider uppercase ${muted ? "bg-surface-sunken" : "bg-info-bg text-info-fg"}`}>
         {monthFormat.format(date)}

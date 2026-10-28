@@ -2,6 +2,8 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import { DataSaverFlag } from "@/components/pwa/data-saver";
 import { ServiceWorker } from "@/components/pwa/service-worker";
+import { DisplayPrefsRoot } from "@/components/display/display-sync";
+import { DISPLAY_SCRIPT } from "@/lib/display/script";
 import "./globals.css";
 import { SITE_URL } from "@/lib/site";
 
@@ -35,11 +37,18 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className={urbanist.variable}>
+    // The inline script sets data-theme and the other display attributes on
+    // <html> before the first paint (issue #204); suppressHydrationWarning
+    // lets React keep them. No cookie read, so every page stays prerendered.
+    <html lang="en" className={urbanist.variable} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: DISPLAY_SCRIPT }} />
+      </head>
       <body className="flex min-h-dvh flex-col">
         {children}
         <ServiceWorker />
         <DataSaverFlag />
+        <DisplayPrefsRoot />
       </body>
     </html>
   );

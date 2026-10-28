@@ -43,7 +43,7 @@ function OptionCard({
   return (
     <label
       className={`flex min-h-11 cursor-pointer items-start gap-3 rounded-md border px-4 py-3 transition-colors ${
-        checked ? "border-blue-600 bg-info-bg" : "border-line-strong bg-surface hover:bg-surface-sunken"
+        checked ? "border-line-selected bg-info-bg" : "border-line-strong bg-surface hover:bg-surface-sunken"
       }`}
     >
       <input
@@ -52,7 +52,7 @@ function OptionCard({
         value={option.value}
         checked={checked}
         onChange={onChange}
-        className="mt-0.5 size-5 shrink-0 accent-blue-600"
+        className="mt-0.5 size-5 shrink-0 accent-line-selected"
       />
       <span className="flex flex-col gap-0.5">
         <span className="font-semibold text-content">{option.label}</span>
@@ -180,7 +180,7 @@ export function StartQuiz() {
         </p>
         <div className="flex gap-1.5 lg:hidden" aria-hidden="true">
           {STEPS.map((s, i) => (
-            <span key={s} className={`h-1.5 flex-1 rounded-full ${i <= step ? "bg-blue-600" : "bg-line"}`} />
+            <span key={s} className={`h-1.5 flex-1 rounded-full ${i <= step ? "bg-action" : "bg-line"}`} />
           ))}
         </div>
         <ol className="mt-2 hidden flex-col gap-1 border-l-2 border-line lg:flex" aria-hidden="true">
@@ -189,9 +189,9 @@ export function StartQuiz() {
               key={s}
               className={`-ml-0.5 border-l-2 py-2 pl-4 text-sm ${
                 i === step
-                  ? "border-blue-600 font-semibold text-content"
+                  ? "border-line-selected font-semibold text-content"
                   : i < step
-                    ? "border-blue-600 text-content-2"
+                    ? "border-line-selected text-content-2"
                     : "border-transparent text-content-3"
               }`}
             >
