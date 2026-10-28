@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import Link from "@/components/ui/link";
 import Logo from "@/components/brand/Logo";
 import { LegalLinks } from "@/components/app-shell/legal-links";
+import { SkipLink } from "@/components/app-shell/skip-link";
 import { requireAdmin } from "@/lib/admin";
 import { AdminNav, AdminNavLinks } from "./admin-nav";
 
@@ -27,9 +28,7 @@ async function AdminGate({ children }: { children: ReactNode }) {
 export default function AdminLayout({ children }: LayoutProps<"/admin">) {
   return (
     <div className="flex flex-1 flex-col">
-      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-20 focus:rounded-md focus:bg-surface focus:px-3 focus:py-2">
-        Skip to content
-      </a>
+      <SkipLink />
       <header className="border-b border-line bg-surface-sunken">
         <div className="mx-auto flex w-full max-w-page flex-col gap-2 px-4 py-3 md:px-8">
           <div className="flex items-center gap-3">

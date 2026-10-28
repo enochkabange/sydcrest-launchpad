@@ -42,6 +42,7 @@ function renderBlock(block: Block, key: number): ReactNode {
       return (
         <pre
           key={key}
+          tabIndex={0}
           className="max-w-full overflow-x-auto rounded-md border border-line bg-surface-sunken p-3 text-sm text-content"
         >
           <code>{block.text}</code>

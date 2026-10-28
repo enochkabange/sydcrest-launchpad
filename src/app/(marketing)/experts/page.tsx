@@ -186,7 +186,7 @@ function NoExpertsYet() {
 
 function DirectorySkeleton() {
   return (
-    <div aria-busy="true" className="flex animate-pulse flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-10">
+    <div aria-busy="true" className="flex min-h-dvh animate-pulse flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-10">
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {[0, 1, 2, 3, 4, 5].map((i) => (
           <div key={i} className="h-56 rounded-lg bg-surface-sunken" />

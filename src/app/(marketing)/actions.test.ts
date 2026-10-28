@@ -4,8 +4,11 @@ vi.mock("server-only", () => ({}));
 
 const insert = vi.fn();
 const from = vi.fn(() => ({ insert }));
-const createPublicClient = vi.fn(async () => ({ from }));
+const rpc = vi.fn();
+const createPublicClient = vi.fn(async () => ({ from, rpc }));
 vi.mock("@/lib/supabase/public", () => ({ createPublicClient: () => createPublicClient() }));
+let requestHeaders = new Headers();
+vi.mock("next/headers", () => ({ headers: async () => requestHeaders }));
 
 const { joinWaitlist } = await import("./actions");
 
@@ -26,6 +29,8 @@ describe("joinWaitlist", () => {
   beforeEach(() => {
     vi.clearAllMocks();
     vi.spyOn(console, "error").mockImplementation(() => {});
+    requestHeaders = new Headers();
+    rpc.mockResolvedValue({ data: true, error: null });
   });
 
   it("saves a valid sign up, with the email lower cased", async () => {
@@ -68,6 +73,23 @@ describe("joinWaitlist", () => {
     const state = await joinWaitlist({}, form());
     expect(state.done).toBeUndefined();
     expect(state.message).toMatch(/Try again/);
+  });
+
+  it("counts each visitor address and refuses one over the limit, saving nothing", async () => {
+    requestHeaders = new Headers({ "x-forwarded-for": "41.66.200.10" });
+    rpc.mockResolvedValue({ data: false, error: null });
+    const state = await joinWaitlist({}, form());
+    expect(rpc).toHaveBeenCalledWith("take_form_rate_limit", expect.objectContaining({ p_bucket: "waitlist" }));
+    expect(state.done).toBeUndefined();
+    expect(state.message).toMatch(/many times from your connection/);
+    expect(insert).not.toHaveBeenCalled();
+  });
+
+  it("says so plainly when the waitlist as a whole is taking too many sign ups", async () => {
+    insert.mockResolvedValue({ error: { code: "54000", message: "Slow down" } });
+    const state = await joinWaitlist({}, form());
+    expect(state.done).toBeUndefined();
+    expect(state.message).toMatch(/Wait a while/);
   });
 
   it("drops a submission that fills the honeypot, with the same thanks", async () => {
