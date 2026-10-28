@@ -101,14 +101,15 @@ jobs:
       - uses: supabase/setup-cli@v3
         with:
           version: 2.114.0 # keep in step with the local CLI; generated types depend on it
-      # Same local stack as Migrations, but keeping Mailpit: the tests read
-      # confirmation emails from it. Never run these against hosted projects.
+      # Same local stack as Migrations, but keeping Mailpit (the tests read
+      # confirmation emails from it) and Storage (credential uploads, #253).
+      # Never run these against hosted projects.
       - name: Cache Supabase images
         uses: actions/cache@v4
         with:
           path: /tmp/supabase-image-cache
-          key: supabase-images-v2-e2e-${{ hashFiles('supabase/config.toml') }}
-      - run: scripts/ci/supabase-start.sh -x studio,imgproxy,edge-runtime,logflare,vector,realtime,storage-api,postgres-meta,supavisor
+          key: supabase-images-v3-e2e-${{ hashFiles('supabase/config.toml') }}
+      - run: scripts/ci/supabase-start.sh -x studio,imgproxy,edge-runtime,logflare,vector,realtime,postgres-meta,supavisor
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Point the build at the local stack

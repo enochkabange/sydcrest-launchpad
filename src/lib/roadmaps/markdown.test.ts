@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { markdownToText, parseInline, parseMarkdown, safeHref } from "./markdown";
+import { markdownToText, parseInline, parseMarkdown, practiceOutcome, safeHref } from "./markdown";
 
 describe("parseMarkdown", () => {
   it("parses headings one level below the page title", () => {
@@ -87,5 +87,16 @@ describe("safeHref", () => {
 describe("markdownToText", () => {
   it("strips formatting for descriptions", () => {
     expect(markdownToText("# Title\n\nUse **pivot** tables.\n\n- one\n- two")).toBe("Title Use pivot tables. one two");
+  });
+});
+
+describe("practiceOutcome", () => {
+  it("returns the Done looks like line as plain text", () => {
+    expect(practiceOutcome("1. Do it.\n\n**Done looks like:** your page opens in the browser, and you have a **plan**.")).toBe(
+      "Your page opens in the browser, and you have a plan.",
+    );
+    expect(practiceOutcome("**Done looks like:** a sheet.\n\nMore text.")).toBe("A sheet.");
+    expect(practiceOutcome("No outcome here.")).toBeNull();
+    expect(practiceOutcome(null)).toBeNull();
   });
 });

@@ -30,6 +30,8 @@ export const product: RoadmapDraft = {
     "Learn to decide what to build and why, for products that work in Ghana's mobile money and messaging era. Practise the skills junior product, business analyst and product operations roles ask for, then build a portfolio that shows your judgement.",
   track: "product",
   field_category: "product",
+  level: "beginner",
+  leads_to: ["project-management"],
   locale: "en-GH",
   status: "draft",
   nodes: [

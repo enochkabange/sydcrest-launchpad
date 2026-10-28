@@ -114,8 +114,9 @@ test("visitors see jobs at each level on the roadmap and the rating on a topic",
   await expect(junior.getByText("Inventory Clerk")).toBeVisible();
   const foundation = levels.getByRole("listitem").filter({ has: page.getByRole("heading", { name: "Foundation" }) });
   await expect(foundation.getByText("This level prepares you for the roles in the next one.")).toBeVisible();
-  // The map's section header carries the level (visually from md, always for screen readers).
-  await expect(page.getByRole("link", { name: /Section 2 · Junior/ })).toHaveCount(1);
+  // The section header carries the level: the map's tree item from md, the journey's header on a phone.
+  if (test.info().project.name === "phone") await expect(page.getByText(/Section 2 of \d+ · Junior/)).toBeVisible();
+  else await expect(page.getByRole("treeitem", { name: /Section 2 · Junior/ })).toHaveCount(1);
   expect(await axe(page)).toEqual([]);
 
   await page.goto(`/roadmaps/${roadmap.slug}/${roadmap.lesson.slug}`);

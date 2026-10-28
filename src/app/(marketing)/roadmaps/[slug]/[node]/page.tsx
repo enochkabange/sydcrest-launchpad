@@ -5,7 +5,6 @@ import { Suspense, type ReactNode } from "react";
 import { Markdown } from "@/components/roadmaps/markdown";
 import { ShareButton } from "@/components/roadmaps/share-button";
 import { LessonMetaStrip, LessonOutcomes } from "@/components/learn/lesson-meta";
-import { estimateLessonMinutes } from "@/lib/roadmaps/estimate";
 import { TopicStudyBuddy } from "@/components/study-buddy/topic-study-buddy";
 import { ResourceCards, TopicNeighbours, TopicSummary } from "@/components/roadmaps/topic";
 import { buttonClasses } from "@/components/ui/button";
@@ -22,7 +21,7 @@ import {
   roadmapPath,
 } from "@/lib/roadmaps/seo";
 import { locateNode, type TreeNode } from "@/lib/roadmaps/tree";
-import { buildRoadmapView, locateInView } from "@/lib/roadmaps/view-model";
+import { locateInView, roadmapViewOf } from "@/lib/roadmaps/view-model";
 
 type Props = PageProps<"/roadmaps/[slug]/[node]">;
 
@@ -67,7 +66,7 @@ async function Node({ params }: Pick<Props, "params">) {
   const located = locateNode(tree, nodeSlug);
   if (!located) notFound();
   const { node, ancestors } = located;
-  const view = buildRoadmapView(tree);
+  const view = roadmapViewOf(roadmap);
   const inView = locateInView(view, nodeSlug);
   if (!inView) notFound();
   const detail = await getNodeDetail(slug, node.id);
@@ -137,11 +136,7 @@ async function Node({ params }: Pick<Props, "params">) {
             <LessonMetaStrip
               difficulty={node.difficulty ?? null}
               complexity={node.complexity ?? null}
-              minutes={estimateLessonMinutes({
-                explanation_md: detail.content?.explanation_md,
-                practice_task_md: detail.content?.practice_task_md,
-                quizQuestions: detail.quizQuestions,
-              })}
+              minutes={inView.node.minutes}
             />
           </div>
 

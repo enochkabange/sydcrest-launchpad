@@ -6,6 +6,7 @@ import { createLearner, promoteToAdmin, type Learner } from "./learners";
 import { deleteMentorCohort, seedMentorCohort, type MentorSeed } from "./mentor-seed";
 import { seedNotifications } from "./notifications-seed";
 import { deleteRoadmap, seedRoadmap, type SeededRoadmap } from "./seed";
+import { deleteModernRoadmap, seedModernRoadmap } from "./roadmap-modern-seed";
 import { seedSharer } from "./sharing-seed";
 import { admin } from "./supabase-admin";
 
@@ -50,6 +51,17 @@ async function sweep(page: Page, paths: string[], failures: string[], label: str
   }
 }
 
+async function axeHere(page: Page, failures: string[], label: string) {
+  // Let colour transitions and the panel's entrance finish, so axe reads final colours.
+  await page.waitForTimeout(500);
+  const { violations } = await new AxeBuilder({ page }).withTags(TAGS).analyze();
+  for (const v of violations) {
+    if (v.impact !== "serious" && v.impact !== "critical" && !STRUCTURAL.has(v.id)) continue;
+    const where = v.nodes.map((n) => n.target.join(" ")).slice(0, 4).join(", ");
+    failures.push(`${label}: ${v.id} (${v.impact}) ${where}`);
+  }
+}
+
 test.describe("axe sweep", () => {
   test.describe.configure({ timeout: 300_000 });
   const cleanup: (() => Promise<unknown>)[] = [];
@@ -89,6 +101,41 @@ test.describe("axe sweep", () => {
     const failures: string[] = [];
     await page.goto("/");
     await sweep(page, paths, failures, "visitor");
+    expect(failures, failures.join("\n")).toEqual([]);
+  });
+
+  test("roadmap views, search and the topic panel (issue #244)", async ({ page }) => {
+    const roadmap = await seedModernRoadmap();
+    cleanup.push(() => deleteModernRoadmap(roadmap.id));
+    const learner = await createLearner("Mariama Seidu");
+    removeUser(learner);
+    await admin("/rest/v1/roadmap_progress", {
+      method: "POST",
+      body: [{ profile_id: learner.id, node_id: roadmap.nodes.counting, status: "in_progress" }],
+    });
+    const failures: string[] = [];
+    const path = `/roadmaps/${roadmap.slug}`;
+    const run = async (who: string) => {
+      for (const theme of ["light", "dark"] as const) {
+        await page.evaluate(([k, t]) => localStorage.setItem(k, JSON.stringify({ theme: t, updatedAt: Date.now() })), [KEY, theme]);
+        for (const view of ["Map", "List", "Journey"]) {
+          await page.goto(path);
+          await expect(page.locator("[aria-busy='true'], .animate-skeleton")).toHaveCount(0, { timeout: 15_000 });
+          await page.getByRole("button", { name: view, exact: true }).click();
+          await axeHere(page, failures, `${who} ${theme} ${view}`);
+        }
+        await page.getByRole("combobox", { name: "Search this roadmap" }).fill("sheet");
+        await axeHere(page, failures, `${who} ${theme} search`);
+        await page.getByRole("combobox", { name: "Search this roadmap" }).press("Enter");
+        await expect(page.getByRole("dialog")).toBeVisible();
+        await expect(page.locator("[aria-busy='true'], .animate-skeleton")).toHaveCount(0, { timeout: 15_000 });
+        await axeHere(page, failures, `${who} ${theme} panel`);
+      }
+    };
+    await page.goto("/");
+    await run("visitor");
+    await signIn(page, learner);
+    await run("learner");
     expect(failures, failures.join("\n")).toEqual([]);
   });
 
@@ -160,6 +207,23 @@ test.describe("axe sweep", () => {
       if (v.impact !== "serious" && v.impact !== "critical" && !STRUCTURAL.has(v.id)) continue;
       failures.push(`sharer share panel: ${v.id} (${v.impact}) ${v.nodes.map((n) => n.target.join(" ")).slice(0, 4).join(", ")}`);
     }
+    expect(failures, failures.join("\n")).toEqual([]);
+  });
+
+  test("credentials wallet: public wallet and the profile section", async ({ page }) => {
+    const sharer = await seedSharer("Amina Iddrisu");
+    removeUser(sharer.learner);
+    cleanup.push(() => deleteRoadmap(sharer.roadmap.id));
+    await admin("/rest/v1/external_credentials", {
+      method: "POST",
+      body: { profile_id: sharer.learner.id, title: "CCNA: Introduction to Networks", issuer_name: "Cisco", issued_on: "2026-01-10", verification_url: "https://www.credly.com/badges/example", visibility: "public" },
+    });
+    const [{ public_slug: slug }] = await admin<{ public_slug: string }[]>(`/rest/v1/profiles?select=public_slug&id=eq.${sharer.learner.id}`);
+    const failures: string[] = [];
+    await page.goto("/");
+    await sweep(page, [`/u/${slug}/credentials`, `/u/${slug}`], failures, "visitor");
+    await signIn(page, sharer.learner);
+    await sweep(page, ["/profile"], failures, "wallet owner");
     expect(failures, failures.join("\n")).toEqual([]);
   });
 

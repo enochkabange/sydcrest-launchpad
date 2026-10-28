@@ -1751,6 +1751,93 @@ export type Database = {
           },
         ]
       }
+      external_credentials: {
+        Row: {
+          created_at: string
+          credential_id: string | null
+          expires_on: string | null
+          file_path: string | null
+          hidden_at: string | null
+          hidden_by: string | null
+          id: string
+          issued_on: string | null
+          issuer_name: string
+          ob_document: Json | null
+          ob_version: string | null
+          profile_id: string
+          source: string
+          title: string
+          updated_at: string
+          verification: string
+          verification_method: string | null
+          verification_note: string | null
+          verification_url: string | null
+          verified_at: string | null
+          visibility: string
+        }
+        Insert: {
+          created_at?: string
+          credential_id?: string | null
+          expires_on?: string | null
+          file_path?: string | null
+          hidden_at?: string | null
+          hidden_by?: string | null
+          id?: string
+          issued_on?: string | null
+          issuer_name: string
+          ob_document?: Json | null
+          ob_version?: string | null
+          profile_id?: string
+          source?: string
+          title: string
+          updated_at?: string
+          verification?: string
+          verification_method?: string | null
+          verification_note?: string | null
+          verification_url?: string | null
+          verified_at?: string | null
+          visibility?: string
+        }
+        Update: {
+          created_at?: string
+          credential_id?: string | null
+          expires_on?: string | null
+          file_path?: string | null
+          hidden_at?: string | null
+          hidden_by?: string | null
+          id?: string
+          issued_on?: string | null
+          issuer_name?: string
+          ob_document?: Json | null
+          ob_version?: string | null
+          profile_id?: string
+          source?: string
+          title?: string
+          updated_at?: string
+          verification?: string
+          verification_method?: string | null
+          verification_note?: string | null
+          verification_url?: string | null
+          verified_at?: string | null
+          visibility?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "external_credentials_hidden_by_fkey"
+            columns: ["hidden_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "external_credentials_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       follows: {
         Row: {
           created_at: string
@@ -1835,6 +1922,13 @@ export type Database = {
             foreignKeyName: "node_content_node_id_fkey"
             columns: ["node_id"]
             isOneToOne: true
+            referencedRelation: "node_estimate_inputs"
+            referencedColumns: ["node_id"]
+          },
+          {
+            foreignKeyName: "node_content_node_id_fkey"
+            columns: ["node_id"]
+            isOneToOne: true
             referencedRelation: "roadmap_nodes"
             referencedColumns: ["id"]
           },
@@ -1866,6 +1960,13 @@ export type Database = {
           updated_at?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "node_quiz_node_id_fkey"
+            columns: ["node_id"]
+            isOneToOne: true
+            referencedRelation: "node_estimate_inputs"
+            referencedColumns: ["node_id"]
+          },
           {
             foreignKeyName: "node_quiz_node_id_fkey"
             columns: ["node_id"]
@@ -1939,6 +2040,13 @@ export type Database = {
           url?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "node_resources_node_id_fkey"
+            columns: ["node_id"]
+            isOneToOne: false
+            referencedRelation: "node_estimate_inputs"
+            referencedColumns: ["node_id"]
+          },
           {
             foreignKeyName: "node_resources_node_id_fkey"
             columns: ["node_id"]
@@ -2863,6 +2971,13 @@ export type Database = {
             foreignKeyName: "review_answers_node_id_fkey"
             columns: ["node_id"]
             isOneToOne: false
+            referencedRelation: "node_estimate_inputs"
+            referencedColumns: ["node_id"]
+          },
+          {
+            foreignKeyName: "review_answers_node_id_fkey"
+            columns: ["node_id"]
+            isOneToOne: false
             referencedRelation: "roadmap_nodes"
             referencedColumns: ["id"]
           },
@@ -2981,6 +3096,13 @@ export type Database = {
             foreignKeyName: "roadmap_nodes_roadmap_id_parent_id_fkey"
             columns: ["roadmap_id", "parent_id"]
             isOneToOne: false
+            referencedRelation: "node_estimate_inputs"
+            referencedColumns: ["roadmap_id", "node_id"]
+          },
+          {
+            foreignKeyName: "roadmap_nodes_roadmap_id_parent_id_fkey"
+            columns: ["roadmap_id", "parent_id"]
+            isOneToOne: false
             referencedRelation: "roadmap_nodes"
             referencedColumns: ["roadmap_id", "id"]
           },
@@ -3025,6 +3147,13 @@ export type Database = {
             foreignKeyName: "roadmap_progress_node_id_fkey"
             columns: ["node_id"]
             isOneToOne: false
+            referencedRelation: "node_estimate_inputs"
+            referencedColumns: ["node_id"]
+          },
+          {
+            foreignKeyName: "roadmap_progress_node_id_fkey"
+            columns: ["node_id"]
+            isOneToOne: false
             referencedRelation: "roadmap_nodes"
             referencedColumns: ["id"]
           },
@@ -3045,6 +3174,8 @@ export type Database = {
           field_category: string | null
           id: string
           is_published: boolean
+          leads_to: string[]
+          level: string | null
           locale: string
           og_image_url: string | null
           slug: string
@@ -3059,6 +3190,8 @@ export type Database = {
           field_category?: string | null
           id?: string
           is_published?: boolean
+          leads_to?: string[]
+          level?: string | null
           locale?: string
           og_image_url?: string | null
           slug: string
@@ -3073,6 +3206,8 @@ export type Database = {
           field_category?: string | null
           id?: string
           is_published?: boolean
+          leads_to?: string[]
+          level?: string | null
           locale?: string
           og_image_url?: string | null
           slug?: string
@@ -3896,6 +4031,25 @@ export type Database = {
         }
         Relationships: []
       }
+      node_estimate_inputs: {
+        Row: {
+          has_lesson: boolean | null
+          lesson_words: number | null
+          node_id: string | null
+          practice_words: number | null
+          quiz_questions: number | null
+          roadmap_id: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "roadmap_nodes_roadmap_id_fkey"
+            columns: ["roadmap_id"]
+            isOneToOne: false
+            referencedRelation: "roadmaps"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       organisation_roster: {
         Row: {
           avatar_url: string | null
@@ -4094,6 +4248,7 @@ export type Database = {
           avatar_url: string | null
           certificates: Json | null
           display_name: string | null
+          external_credentials: Json | null
           headline: string | null
           open_to_remote: boolean | null
           portfolio_url: string | null
@@ -4195,6 +4350,10 @@ export type Database = {
           target_type: string
           updated_at: string
         }[]
+      }
+      admin_set_credential_hidden: {
+        Args: { p_credential_id: string; p_hidden: boolean }
+        Returns: undefined
       }
       admin_set_expert_flags: {
         Args: {
@@ -4724,6 +4883,17 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      record_credential_import: {
+        Args: {
+          p_credential_id: string
+          p_document: Json
+          p_method: string
+          p_note: string
+          p_ob_version: string
+          p_verified: boolean
+        }
+        Returns: undefined
+      }
       record_events: {
         Args: { p_context?: Json; p_events: Json }
         Returns: number
@@ -4989,6 +5159,7 @@ export type Database = {
           verified_skill_id: string
         }[]
       }
+      take_credential_import_limit: { Args: never; Returns: boolean }
       take_form_rate_limit: {
         Args: { p_bucket: string; p_key: string }
         Returns: boolean

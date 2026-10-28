@@ -21,7 +21,7 @@ export function isCardFormat(value: string): value is CardFormat {
   return Object.hasOwn(CARD_FORMATS, value);
 }
 
-export type CardKind = "topic" | "section" | "roadmap" | "certificate" | "streak";
+export type CardKind = "topic" | "section" | "roadmap" | "certificate" | "streak" | "credential";
 
 export type ShareCard = {
   kind: CardKind;
@@ -126,6 +126,33 @@ export function certificateCard(c: CardCertificate): ShareCard {
   };
 }
 
+export type CardCredential = {
+  title: string;
+  issuer_name: string;
+  issued_on: string | null;
+  created_at: string;
+  verification: string;
+};
+
+/**
+ * The card for a certificate from another issuer (issue #253). Says plainly
+ * who issued it and how far it was checked: "Verified by the issuer" only
+ * when the server confirmed the Open Badge, otherwise "Added by the
+ * learner". Never "verified certificate": SydCrest did not award it.
+ */
+export function credentialCard(c: CardCredential, ownerName: string | null): ShareCard {
+  const verified = c.verification === "issuer";
+  return {
+    kind: "credential",
+    label: verified ? "Verified by the issuer" : "Added by the learner",
+    headline: c.title,
+    context: `Issued by ${c.issuer_name}`,
+    proof: verified ? "Checked against the issuer's own record" : "Not checked by SydCrest. Ask the issuer to confirm it.",
+    name: clean(ownerName),
+    date: formatCardDate(c.issued_on ? `${c.issued_on}T12:00:00Z` : c.created_at),
+  };
+}
+
 /** Shortens text for a card, on a word boundary where one is near. */
 export function fitText(text: string, max: number) {
   if (text.length <= max) return text;
@@ -149,6 +176,8 @@ export function shareText(card: Pick<ShareCard, "kind" | "headline" | "context">
       return `I earned my ${card.headline} certificate on SydCrest Launchpad.`;
     case "streak":
       return `${card.headline} of learning on SydCrest Launchpad.`;
+    case "credential":
+      return `${card.headline}${card.context ? `, ${card.context.charAt(0).toLowerCase()}${card.context.slice(1)}` : ""}. In my wallet on SydCrest Launchpad.`;
   }
 }
 
@@ -190,6 +219,17 @@ export function achievementShareTarget(id: string, a: CardAchievement, siteUrl: 
   const card = achievementCard(a, null);
   if (!card) return null;
   return { imageBase: `/og/achievements/${id}`, pageUrl: `${siteUrl}/a/${id}`, headline: card.headline, text: shareText(card) };
+}
+
+/** Share target for a public external credential on its owner's wallet page. */
+export function credentialShareTarget(id: string, c: CardCredential, slug: string, siteUrl: string): ShareTarget {
+  const card = credentialCard(c, null);
+  return {
+    imageBase: `/og/credentials/${id}`,
+    pageUrl: `${siteUrl}/u/${slug}/credentials#c-${id}`,
+    headline: card.headline,
+    text: shareText(card),
+  };
 }
 
 /** Share target for a live certificate, by its verification id. */

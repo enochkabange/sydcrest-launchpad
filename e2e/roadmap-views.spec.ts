@@ -55,24 +55,30 @@ async function shot(page: Page, name: string, fullPage = false) {
   if (dir) await page.screenshot({ path: `${dir}/${name}-${test.info().project.name}.png`, fullPage });
 }
 
+/** The map is the default from md; on a phone the journey is, so pick the map. */
+async function showMap(page: Page) {
+  if (test.info().project.name === "phone") await page.getByRole("button", { name: "Map" }).click();
+}
+
 async function noSidewaysScroll(page: Page) {
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
 }
 
-test("the map is the default view and shows sections, topics, choices and checkpoints", async ({ page }) => {
+test("the map shows sections, topics, choices and checkpoints", async ({ page }) => {
   const errors: string[] = [];
   page.on("console", (m) => m.type() === "error" && errors.push(m.text()));
   page.on("pageerror", (e) => errors.push(String(e)));
 
   await page.goto(`/roadmaps/${slug}`);
-  const map = page.getByRole("list", { name: "Roadmap map" });
+  await showMap(page);
+  const map = page.getByRole("tree", { name: "Roadmap map" });
   await expect(map).toBeVisible();
   await expect(page.getByRole("button", { name: "Map" })).toHaveAttribute("aria-pressed", "true");
-  await expect(map.getByRole("link", { name: /Section 1\s*Keeping records/ })).toHaveAttribute("href", `/roadmaps/${slug}/records`);
-  await expect(map.getByRole("link", { name: /From notebook to sheet/ })).toHaveAttribute("href", `/roadmaps/${slug}/notebook`);
-  await expect(map.getByRole("link", { name: /Excel\s*Choose one/ })).toBeVisible();
-  await expect(map.getByRole("link", { name: /Sharing on WhatsApp\s*Optional/ })).toBeVisible();
-  await expect(map.getByRole("link", { name: /Checkpoint · A clean price sheet/ })).toBeVisible();
+  await expect(map.getByRole("treeitem", { name: /Section 1\s*Keeping records/ })).toHaveAttribute("href", `/roadmaps/${slug}/records`);
+  await expect(map.getByRole("treeitem", { name: /From notebook to sheet/ })).toHaveAttribute("href", `/roadmaps/${slug}/notebook`);
+  await expect(map.getByRole("treeitem", { name: /Excel\s*Choose 1 of 2/ })).toBeVisible();
+  await expect(map.getByRole("treeitem", { name: /Sharing on WhatsApp\s*Optional/ })).toBeVisible();
+  await expect(map.getByRole("treeitem", { name: /Checkpoint · A clean price sheet/ })).toBeVisible();
   await expect(page.getByText("Checkpoint", { exact: true }).first()).toBeVisible();
   await noSidewaysScroll(page);
   await shot(page, "map", true);
@@ -82,20 +88,21 @@ test("the map is the default view and shows sections, topics, choices and checkp
 test("List shows the outline and is remembered on this device", async ({ page }) => {
   await page.goto(`/roadmaps/${slug}`);
   await page.getByRole("button", { name: "List" }).click();
-  await expect(page.getByRole("list", { name: "Roadmap outline" })).toBeVisible();
-  await expect(page.getByRole("list", { name: "Roadmap map" })).toHaveCount(0);
+  await expect(page.getByRole("tree", { name: "Roadmap outline" })).toBeVisible();
+  await expect(page.getByRole("tree", { name: "Roadmap map" })).toHaveCount(0);
   await shot(page, "list", true);
 
   await page.reload();
-  await expect(page.getByRole("list", { name: "Roadmap outline" })).toBeVisible();
+  await expect(page.getByRole("tree", { name: "Roadmap outline" })).toBeVisible();
   await expect(page.getByRole("button", { name: "List" })).toHaveAttribute("aria-pressed", "true");
   await page.getByRole("button", { name: "Map" }).click();
-  await expect(page.getByRole("list", { name: "Roadmap map" })).toBeVisible();
+  await expect(page.getByRole("tree", { name: "Roadmap map" })).toBeVisible();
 });
 
 test("a topic opens in a panel over the roadmap, and Escape closes it and returns focus", async ({ page }) => {
   await page.goto(`/roadmaps/${slug}`);
-  const topic = page.getByRole("list", { name: "Roadmap map" }).getByRole("link", { name: /From notebook to sheet/ });
+  await showMap(page);
+  const topic = page.getByRole("tree", { name: "Roadmap map" }).getByRole("treeitem", { name: /From notebook to sheet/ });
   await topic.click();
 
   const panel = page.getByRole("dialog", { name: "From notebook to sheet" });
@@ -119,7 +126,8 @@ test("a topic opens in a panel over the roadmap, and Escape closes it and return
 
 test("stepping through topics in the panel, then closing, returns to the roadmap", async ({ page }) => {
   await page.goto(`/roadmaps/${slug}`);
-  await page.getByRole("list", { name: "Roadmap map" }).getByRole("link", { name: /From notebook to sheet/ }).click();
+  await showMap(page);
+  await page.getByRole("tree", { name: "Roadmap map" }).getByRole("treeitem", { name: /From notebook to sheet/ }).click();
   const dialog = page.getByRole("dialog");
   await dialog.getByRole("link", { name: /Next\s*Excel/ }).click();
   await expect(page.getByRole("dialog", { name: "Excel" })).toBeVisible();
@@ -132,7 +140,8 @@ test("stepping through topics in the panel, then closing, returns to the roadmap
 
 test("browser back closes the panel", async ({ page }) => {
   await page.goto(`/roadmaps/${slug}`);
-  await page.getByRole("list", { name: "Roadmap map" }).getByRole("link", { name: /Sharing on WhatsApp/ }).click();
+  await showMap(page);
+  await page.getByRole("tree", { name: "Roadmap map" }).getByRole("treeitem", { name: /Sharing on WhatsApp/ }).click();
   await expect(page.getByRole("dialog", { name: "Sharing on WhatsApp" })).toBeVisible();
   await page.goBack();
   await expect(page.getByRole("dialog")).toHaveCount(0);
@@ -141,7 +150,8 @@ test("browser back closes the panel", async ({ page }) => {
 
 test("reloading a topic URL shows the full topic page, whose links stay full pages", async ({ page }) => {
   await page.goto(`/roadmaps/${slug}`);
-  await page.getByRole("list", { name: "Roadmap map" }).getByRole("link", { name: /From notebook to sheet/ }).click();
+  await showMap(page);
+  await page.getByRole("tree", { name: "Roadmap map" }).getByRole("treeitem", { name: /From notebook to sheet/ }).click();
   await expect(page.getByRole("dialog")).toBeVisible();
 
   await page.reload();

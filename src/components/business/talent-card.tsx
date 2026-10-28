@@ -5,6 +5,9 @@ import { VerifiedSkillBadges } from "@/components/skills/verified-skill-badges";
 import { regionLabel } from "@/lib/regions";
 import { parseVerifiedSkills } from "@/lib/skills/verified";
 import { availabilityLabel, trackLabel } from "@/lib/talent/forms";
+import { VerificationLabel } from "@/components/credentials/verification-label";
+import { parseTalentCredentials } from "@/lib/credentials/model";
+import { formatMonthYear } from "@/lib/credentials/share";
 import { Badge, Chip, formatDate } from "./bits";
 
 export type TalentRow = {
@@ -22,6 +25,8 @@ export type TalentRow = {
   certificates: unknown;
   /** `[{slug, name, source, issued_at}]` from the view (#165); earned, never typed in. */
   verified_skills?: unknown;
+  /** `[{id, title, issuer_name, issued_on, verification, ...}]` (#253): certificates from other issuers the learner made public. */
+  external_credentials?: unknown;
 };
 
 type Certificate = { program_title?: string; specialization_label?: string | null; issued_at?: string };
@@ -51,6 +56,7 @@ export function TalentCard({
   const region = regionLabel(row.region);
   const certs = certificatesOf(row);
   const verified = parseVerifiedSkills(row.verified_skills);
+  const external = parseTalentCredentials(row.external_credentials);
   return (
     <article className={`relative flex h-full flex-col gap-4 rounded-lg border border-line bg-surface p-5 ${href ? "transition-colors hover:bg-surface-sunken" : ""}`}>
       <header className="flex items-start gap-3">
@@ -79,6 +85,7 @@ export function TalentCard({
               <span className="font-semibold">Certified:</span> {c.program_title}
               {c.specialization_label ? `, ${c.specialization_label}` : ""}
               {c.issued_at ? <span className="text-content-3"> ({formatDate(c.issued_at)})</span> : null}
+              <span className="sr-only"> (Verified by SydCrest)</span>
             </li>
           ))}
         </ul>
@@ -98,6 +105,30 @@ export function TalentCard({
         <div className="flex flex-col gap-2">
           <h4 className="text-sm font-semibold text-content-2">Verified skills</h4>
           <VerifiedSkillBadges skills={verified} variant="compact" label={`Verified skills of ${name}`} />
+        </div>
+      )}
+      {external.length > 0 && (
+        <div className="flex flex-col gap-2">
+          <h4 className="text-sm font-semibold text-content-2">Certificates from other issuers</h4>
+          <ul className="flex flex-col gap-2">
+            {(full ? external : external.slice(0, 3)).map((c) => (
+              <li key={c.id} className="flex flex-col gap-1 text-sm">
+                <span className="text-content">
+                  <span className="font-semibold">{c.title}</span>, {c.issuer_name}
+                  {c.issued_on ? <span className="text-content-3"> ({formatMonthYear(c.issued_on)})</span> : null}
+                </span>
+                <span className="flex flex-wrap items-center gap-2">
+                  <VerificationLabel kind={c.verification} size="sm" />
+                  {full && c.verification_url && (
+                    <a href={c.verification_url} target="_blank" rel="noopener noreferrer nofollow" className="relative inline-flex min-h-11 items-center font-semibold text-content-link underline">
+                      Check with the issuer<span className="sr-only">: {c.title} (opens in a new tab)</span>
+                    </a>
+                  )}
+                </span>
+              </li>
+            ))}
+            {!full && external.length > 3 && <li className="text-sm text-content-3">and {external.length - 3} more</li>}
+          </ul>
         </div>
       )}
       {(row.skills?.length ?? 0) > 0 && (

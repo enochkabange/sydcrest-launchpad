@@ -74,7 +74,7 @@ export const FULL_LESSON_TRACKS: ReadonlySet<Track> = new Set<Track>([
 ]);
 
 /** Tracks whose early sections work on a phone. The others need a computer for practice. */
-const PHONE_FRIENDLY: ReadonlySet<Track> = new Set<Track>([
+export const PHONE_FRIENDLY: ReadonlySet<Track> = new Set<Track>([
   "digital-marketing",
   "ui-ux",
   "product",
@@ -334,6 +334,16 @@ const SESSIONS: Record<Hours, { count: number; minutes: number; label: string }>
   "7-12": { count: 5, minutes: 110, label: "about 9 hours a week" },
   "over-12": { count: 6, minutes: 140, label: "about 14 hours a week" },
 };
+
+/**
+ * The learner's weekly study time from the quiz, in minutes, with its label
+ * ("about 5 hours a week"). The same sessions as the weekly plan, so the
+ * roadmap's time left agrees with the plan the learner was given.
+ */
+export function weeklyPace(hours: Hours): { minutes: number; label: string } {
+  const { count, minutes, label } = SESSIONS[hours];
+  return { minutes: count * minutes, label };
+}
 
 type Focus = "learn" | "practice" | "build" | "review";
 

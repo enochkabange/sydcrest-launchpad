@@ -48,6 +48,8 @@ export const projectManagement: RoadmapDraft = {
     "Plan, run and report on projects for NGOs, donors and businesses, the kind of coordination work common across northern Ghana. Learn scope, work plans, budgets, risks, logframes and reports with free tools on a phone or a computer.",
   track: "project-management",
   field_category: "business",
+  level: "beginner",
+  leads_to: ["product"],
   locale: "en-GH",
   status: "draft",
   nodes: [

@@ -8,6 +8,8 @@ export const frontend: RoadmapDraft = {
     "Build fast, usable websites and web apps that work well on the phones and laptops Ghanaians actually use. Go from your first HTML page to a portfolio that local businesses and remote teams can trust.",
   track: "frontend",
   field_category: "software",
+  level: "beginner",
+  leads_to: ["backend", "mobile-app-developer", "software-testing", "ui-ux"],
   locale: "en-GH",
   status: "draft",
   nodes: [
