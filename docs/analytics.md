@@ -25,7 +25,7 @@ public description of all of this; keep it in step.
 | Error boundaries | `src/app/global-error.tsx`, `src/app/(app)/error.tsx`, `src/lib/analytics/error-fallback.tsx` | Friendly fallback plus a `client_error` report. |
 | Opt out switch | `src/lib/analytics/analytics-choice.tsx` on `/privacy` | Sets the `sc_analytics=off` cookie. |
 | Database | `supabase/migrations/20261029230000_analytics_collection.sql` | Attribute columns, `record_events`, rollup tables, refresh and purge. pgTAP: `supabase/tests/database/analytics_collection.test.sql`. |
-| Cron | `src/app/api/cron/analytics/route.ts`, `vercel.json` (02:30 UTC daily) | Calls `run_analytics_maintenance` with the service role. |
+| Maintenance | `src/lib/analytics/maintenance.ts`, run daily by `/api/cron/reengage` (09:00 UTC, `vercel.json`); `/api/cron/analytics` for manual runs | Calls `run_analytics_maintenance` with the service role. Not its own cron: the Vercel plan allows two. |
 
 ## 2. Rules for call sites
 
@@ -197,8 +197,8 @@ timestamps, not client timers:
 people who first opened a lesson that day (`subject` = roadmap slug) and how
 many have finished that topic since (`roadmap_progress.status = 'done'`). Recent
 days look more abandoned than they are; the cron rebuilds the last 3 days, so
-use `?days=N` on the cron route (or call the function) to refresh further back
-before reporting on lesson completion.
+call `GET /api/cron/analytics?days=N` (with the `CRON_SECRET` bearer) to
+refresh further back before reporting on lesson completion.
 
 ### Functions
 
@@ -213,10 +213,15 @@ before reporting on lesson completion.
 
 ## 6. Retention
 
-Raw events: 13 months, purged daily by the cron (`purge_old_events`, batches
-of 50,000). Rollups: kept; they hold no person ids, only counts by attribute.
-The cron needs `CRON_SECRET` and `SUPABASE_SECRET_KEY`; without the key it
-answers 503 and does nothing.
+Raw events: 13 months, purged daily (`purge_old_events`, batches of 50,000).
+Rollups: kept; they hold no person ids, only counts by attribute.
+
+Schedule: the daily `/api/cron/reengage` job runs the WhatsApp nudge, then
+`runAnalyticsMaintenance` (last 3 days). Each step is isolated: a failure in
+one is logged and the other still runs; the response carries both results and
+is a 500 if either failed. `/api/cron/analytics` is the same maintenance on
+demand (`?days=N`, 1 to 400), unscheduled. Both need `CRON_SECRET` and
+`SUPABASE_SECRET_KEY`; without the key they answer 503 and do nothing.
 
 ## 7. Testing
 

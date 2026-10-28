@@ -1,9 +1,11 @@
 import { connection } from "next/server";
 import { createAdminClient } from "@/lib/messaging/admin";
 import { isAuthorizedCron } from "@/lib/messaging/cron-auth";
+import { runAnalyticsMaintenance } from "@/lib/analytics/maintenance";
 
 /**
- * Daily analytics maintenance (scheduled in vercel.json, issue #242): rebuilds
+ * Analytics maintenance on demand (issue #242). Not scheduled: the daily run
+ * happens inside /api/cron/reengage (the plan allows two crons). Rebuilds
  * the daily rollups (events_daily, web_vitals_daily, errors_daily,
  * durations_daily, abandonment_daily) for the last three UTC days, so late
  * beacons and later successes are counted, and deletes raw events older than
@@ -22,13 +24,6 @@ export async function GET(request: Request) {
   }
 
   const days = Number(new URL(request.url).searchParams.get("days") ?? "3");
-  const { data, error } = await admin.rpc("run_analytics_maintenance", {
-    p_days: Number.isInteger(days) && days >= 1 && days <= 400 ? days : 3,
-  });
-  if (error) {
-    console.error("[analytics] maintenance failed", { code: error.code, message: error.message });
-    return Response.json({ error: "maintenance failed" }, { status: 500 });
-  }
-  console.info(`[analytics] maintenance ${JSON.stringify(data)}`);
-  return Response.json(data);
+  const outcome = await runAnalyticsMaintenance(admin, Number.isInteger(days) && days >= 1 && days <= 400 ? days : 3);
+  return outcome.ok ? Response.json(outcome.result) : Response.json({ error: "maintenance failed" }, { status: 500 });
 }
