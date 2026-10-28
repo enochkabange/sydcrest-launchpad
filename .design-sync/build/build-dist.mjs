@@ -92,7 +92,7 @@ const res = await build({
   tsconfig: path.join(REPO, "tsconfig.json"), absWorkingDir: REPO,
   // Env reads resolve at build time. Share and certificate links show this origin
   // (the domain the repo tests use); see NOTES.md.
-  define: { "process.env.NODE_ENV": '"production"', "process.env.NEXT_PUBLIC_SITE_URL": JSON.stringify("https://launchpad.sydcrest.com"), "process.env.VERCEL_PROJECT_PRODUCTION_URL": "undefined" },
+  define: { "process.env.NODE_ENV": '"production"', "process.env.NEXT_PUBLIC_SITE_URL": JSON.stringify("https://sydcrest.com"), "process.env.VERCEL_PROJECT_PRODUCTION_URL": "undefined" },
   plugins: [plugin], metafile: true, logLevel: "warning", legalComments: "none",
 });
 console.log(`index.js: ${Object.keys(res.metafile.inputs).length} inputs; stubbed: ${[...stubbed].sort().join(", ")}`);
