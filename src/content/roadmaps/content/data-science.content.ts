@@ -133,7 +133,7 @@ If any of these feel shaky, spend a week on free school level maths revision bef
 ## The tools you need
 
 * **A laptop or desktop for coding.** Any machine that runs a modern browser is enough if you use a free online notebook.
-* **A free notebook service.** Google Colab and Kaggle Notebooks are two examples that run Python in your browser with pandas, statsmodels and scikit learn already installed. Both are free with limits. Colab's FAQ says resources are not guaranteed, idle sessions time out and sessions have a maximum length. Kaggle asks you to verify a phone number before you can turn on internet access or accelerators in a notebook. Terms change, so read each service's current help pages before you rely on it.
+* **A free notebook service.** Google Colab and Kaggle Notebooks are two examples that run Python in your browser, usually with pandas, statsmodels and scikit learn already installed. Both are free with limits. Colab's FAQ says resources are not guaranteed, idle sessions time out and sessions have a maximum length. Kaggle may ask you to verify a phone number before you can turn on extra features such as internet access in a notebook. Terms change, so read each service's current help pages before you rely on it.
 * **A local option.** If you have a decent laptop, installing Python with pandas, statsmodels and scikit learn lets you work offline once set up, which saves data.
 
 ## A quick self check
@@ -182,15 +182,15 @@ If you can predict the output (Tamale 865, Yendi 640) and explain each line, you
             explanation: "Colab's FAQ says free resources are not guaranteed and idle sessions time out.",
           },
           {
-            prompt: "What does Kaggle ask before you can turn on internet access or accelerators in a notebook?",
+            prompt: "What is one advantage of installing Python with pandas, statsmodels and scikit learn on your own laptop?",
             options: [
-              "A paid subscription",
-              "A university email address",
-              "A letter from an employer",
-              "Verification of a phone number",
+              "It removes the need to learn statistics",
+              "It makes every model more accurate",
+              "It is the only way to run scikit learn",
+              "Once set up, you can work offline, which saves data",
             ],
             answer_index: 3,
-            explanation: "The lesson notes Kaggle asks you to verify a phone number before enabling internet access or accelerators.",
+            explanation: "The lesson says a local install lets you work offline once set up, which saves data.",
           },
           {
             prompt: "Why does the lesson mention square roots in the maths check?",
@@ -1399,7 +1399,7 @@ scikit learn is the standard free Python library for classic machine learning, a
 
 Every model follows the same steps: create it, \`fit\` on training data, then \`predict\` or \`predict_proba\` on new data. Keep some data aside that the model never sees during training, so you can test it fairly.
 
-Here is a made up dataset of 2,000 borrowers with loan size, past late payments and months of membership, where about 17 percent paid late:
+Here is a made up dataset of 2,000 borrowers with loan size, past late payments and months of membership, where about 17 percent paid late. \`X\` holds the three feature columns and \`y\` holds the late flag (1 for late, 0 for on time):
 
 \`\`\`python
 from sklearn.model_selection import train_test_split
@@ -1524,7 +1524,7 @@ Good features come from understanding the situation. Ask what a sensible field o
 * **Place:** district, distance to the nearest market or clinic, rainfall zone.
 * **Season:** month, or whether a date falls in the lean season before harvest.
 
-Here is a made up example for farmers on an input credit scheme:
+Here is a made up example for farmers on an input credit scheme, where \`farmers\` is a pandas table (imported as \`pd\`) with one row per farmer:
 
 \`\`\`python
 as_of = pd.Timestamp("2026-04-01")
@@ -1649,7 +1649,7 @@ If you keep checking the test set while tuning, it stops being a fair test.
 
 ## Cross validation
 
-With modest data, one split can be lucky or unlucky. **Cross validation** splits the data into, say, five folds, trains on four and tests on the fifth, rotating through all five:
+With modest data, one split can be lucky or unlucky. **Cross validation** splits the data into, say, five folds, trains on four and tests on the fifth, rotating through all five. Here \`model\` is the scaling and logistic regression pipeline from the previous lesson:
 
 \`\`\`python
 from sklearn.model_selection import cross_val_score, StratifiedKFold
@@ -1677,7 +1677,7 @@ If officers can make only 40 visits, measure how many struggling customers the t
 
 ## Check every group
 
-A model can work well on average and badly for one region, gender or age group. Score it separately for each:
+A model can work well on average and badly for one region, gender or age group. Score it separately for each. Here \`test\` holds the test rows with a \`region\` column, the true \`late\` flag and the predicted \`risk\`, and \`roc_auc_score\` comes from \`sklearn.metrics\`:
 
 \`\`\`python
 test.groupby("region")[["late", "risk"]].apply(
@@ -1887,7 +1887,7 @@ Latitude and longitude are angles on a curved Earth, so you cannot measure dista
 
 ## Nearest clinic, in code
 
-geopandas extends pandas with a geometry column. Here are made up homes and clinics near Tamale:
+geopandas extends pandas with a geometry column. Here \`homes\` and \`clinics\` are pandas tables of made up places near Tamale, each with \`lat\` and \`lon\` columns:
 
 \`\`\`python
 import geopandas as gpd

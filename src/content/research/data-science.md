@@ -177,7 +177,10 @@ wave).
   The `predictive-modelling` summary now mentions features.
 * **Code:** every Python snippet was run on 2026-10-28 with Python 3.14, pandas 3.1.0, NumPy
   2.5.4, statsmodels 0.15.0, scikit learn 1.9.1, SciPy 1.18.1 and geopandas 1.2.0, and every
-  output quoted in a lesson is the printed result of that run on invented data. SQL window
+  output quoted in a lesson is the printed result of that run on invented data. Snippets that use
+  variables from an earlier step say where those come from. The Streamlit app in `sharing-results`
+  was run headless with Streamlit 1.66.1's `AppTest` on an invented CSV (no exceptions; title and
+  selector rendered); it was not served in a browser. SQL window
   queries were run in SQLite 3.53; the `advanced-sql` lesson shows the PostgreSQL date
   subtraction form and the practice task gives the SQLite `julianday` form.
 * **Free notebooks:** Colab and Kaggle Notebooks are named only as examples. Colab terms come from
