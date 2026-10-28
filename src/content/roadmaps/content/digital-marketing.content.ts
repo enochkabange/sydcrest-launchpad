@@ -733,7 +733,7 @@ Google Sheets works well. It is free, opens on a phone or a computer, and you ca
 The best calendars follow the rhythm of the customers' lives:
 
 * **Market days** in the town, when people have cash and are out buying.
-* **Holidays and festivals** such as Christmas, Eid, Easter, Independence Day, and local festivals like Damba in Dagbon or Bugum.
+* **Holidays and festivals** such as Christmas, Eid, Easter, Independence Day, and local festivals like Damba in Dagbon or the Kakube harvest festival in Nandom.
 * **Seasons.** Harmattan for skin care, rainy season for umbrellas and wellington boots, school reopening for uniforms and stationery.
 * **Paydays** near the end of the month for salaried customers.
 * **Business events** such as a new stock arrival or an anniversary.
