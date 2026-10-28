@@ -352,7 +352,7 @@ Sumaila looks after the server for a school results portal in Damongo. Parents r
 1. Open the Killercoda Ubuntu playground (free account, no card) or a GitHub codespace.
 2. Run \`sudo apt update\` then \`sudo apt install -y nginx\`. (In Killercoda you are already root, so \`sudo\` is optional.)
 3. Start it with \`sudo systemctl start nginx\` if needed, then run \`curl -I localhost\` and note the status line. If \`systemctl\` is not available in your codespace, run \`sudo service nginx start\` instead.
-4. Create a user called \`wumpini\` with \`sudo adduser wumpini\`, make a file, and use \`ls -l\` and \`chmod\` so only its owner can read it.
+4. Create a user called \`wumpini\` with \`sudo adduser wumpini\` (answer the prompts, or press Enter to skip the optional details), make a file, and use \`ls -l\` and \`chmod\` so only its owner can read it.
 5. Find the last 20 lines of the nginx access log in \`/var/log/nginx\`.
 6. Close the lab or stop the codespace.
 
@@ -1293,14 +1293,14 @@ For apps with several parts, Docker Compose describes them in one file so \`dock
 
 ## Where to practise
 
-Docker needs a Linux machine with enough memory. Use a laptop or desktop with Docker installed, or a free browser lab such as the Killercoda Ubuntu playground or a GitHub codespace. In a browser lab, image downloads happen on the lab's connection, not your data bundle. If \`docker --version\` fails in your lab, install it first (on Ubuntu, \`apt install -y docker.io\`).
+Docker needs a Linux machine with enough memory. Use a laptop or desktop with Docker installed, or a free browser lab such as the Killercoda Ubuntu playground or a GitHub codespace. In a browser lab, image downloads happen on the lab's connection, not your data bundle. If \`docker --version\` fails in your lab, install it first (on Ubuntu, \`sudo apt install -y docker.io\`).
 
 ## A small example
 
 Fuseini's team builds a delivery tracking API in Kumasi. One developer used one version of Node.js, another used a different one, and the server had a third. Bugs appeared only in production. They wrote a Dockerfile, built one image in the pipeline and ran that exact image everywhere. The "only in production" bugs stopped.`,
       practice_task_md: `**Goal:** containerise your shop page in a free lab.
 
-1. Open the Killercoda Ubuntu playground or a GitHub codespace. Run \`docker --version\`; if it fails on Ubuntu, run \`apt install -y docker.io\`.
+1. Open the Killercoda Ubuntu playground or a GitHub codespace. Run \`docker --version\`; if it fails on Ubuntu, run \`sudo apt install -y docker.io\`.
 2. Create a folder with your \`index.html\` from earlier (paste it in with \`nano\`) and the Dockerfile from the lesson.
 3. Build the image, run it on port 8080 and use \`curl localhost:8080\` to see your page.
 4. Change the page, rebuild as \`shop-site:1.1\`, run it and confirm the change.
@@ -1907,7 +1907,7 @@ Each major provider has one. These names were checked on the official pages in O
 
 * **Microsoft Certified: Azure Fundamentals** (exam **AZ-900**). Tests cloud concepts, Azure architecture and services, and Azure management and governance. Microsoft Learn offers free learning paths and a free practice assessment for it.
 * **AWS Certified Cloud Practitioner** (exam CLF-C02). Aimed at people new to the cloud; AWS says some exposure to AWS helps but is not required. AWS Skill Builder has free preparation courses. The certification is valid for three years.
-* **Google Cloud Cloud Digital Leader.** No prerequisites; focuses on cloud basics and how Google Cloud services help organisations. Valid for three years.
+* **Cloud Digital Leader** (Google Cloud). No prerequisites; focuses on cloud basics and how Google Cloud services help organisations. Valid for three years.
 
 All three overlap heavily with what you learned in the cloud fundamentals section of this track.
 
