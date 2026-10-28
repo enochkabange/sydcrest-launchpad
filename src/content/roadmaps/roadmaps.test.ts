@@ -1,5 +1,10 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { ROADMAP_DRAFTS } from "./index";
+
+/** Lowercase, hyphens and slashes as spaces, single spaced: how a job title is matched against its research file. */
+const normalise = (text: string) => text.toLowerCase().replace(/[-‐‑/]/g, " ").replace(/\s+/g, " ");
 
 const DASHES = /[-‐‑‒–—―−]/;
 const SENTENCE_END = /[.!?](?=\s|$)/g;
@@ -81,6 +86,40 @@ describe("roadmap drafts", () => {
         for (const [group, parents] of groups) {
           expect(parents.size, `${group} spans parents`).toBe(1);
           expect(sizes.get(group), `${group} needs two options`).toBeGreaterThanOrEqual(2);
+        }
+      });
+
+      // Lesson structure (issue #255): every track is rated, so these are required.
+      it("rates every node's difficulty and complexity", () => {
+        for (const node of roadmap.nodes) {
+          expect(["beginner", "intermediate", "advanced"], node.slug).toContain(node.difficulty);
+          expect([1, 2, 3, 4, 5], node.slug).toContain(node.complexity);
+        }
+      });
+
+      it("gives every section a career level, and only sections a level or jobs", () => {
+        for (const node of roadmap.nodes) {
+          if (node.parent === null) {
+            expect(["foundation", "junior", "mid", "specialist"], node.slug).toContain(node.careerLevel);
+            expect(Array.isArray(node.jobs), `${node.slug} jobs (empty when none fit)`).toBe(true);
+          } else {
+            expect(node.careerLevel, node.slug).toBeUndefined();
+            expect(node.jobs, node.slug).toBeUndefined();
+          }
+        }
+      });
+
+      it("only lists job titles that appear in the track's research adverts, without dashes or pay", () => {
+        const research = normalise(readFileSync(join(__dirname, "../research", `${roadmap.track}.md`), "utf8"));
+        for (const node of roadmap.nodes) {
+          const jobs = node.jobs ?? [];
+          expect(new Set(jobs).size, `${node.slug} repeats a job`).toBe(jobs.length);
+          for (const job of jobs) {
+            expect(job.trim(), node.slug).toBe(job);
+            expect(job, node.slug).not.toMatch(DASHES);
+            expect(job, node.slug).not.toMatch(/GH₵|GHS|cedi|salary|\bpay\b|per (month|year)/i);
+            expect(research, `${node.slug}: "${job}" is not in research/${roadmap.track}.md`).toContain(normalise(job));
+          }
         }
       });
 

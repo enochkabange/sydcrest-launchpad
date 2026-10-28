@@ -8,6 +8,11 @@ const content: TrackContent = {
   roadmap: "digital-marketer",
   nodes: {
     foundations: {
+      outcomes: [
+        "Explain why marketing starts with people",
+        "Ask the four marketing questions about a real business",
+        "Name the topics in this section",
+      ],
       explanation_md: `Every business in Ghana, from a shea butter seller in Tamale to a fintech in Accra, needs people to know it exists, trust it and pay for what it offers. Digital marketing is the work of making that happen using phones, computers and the internet. Employers who hire junior marketers rarely ask first which apps you know. They ask whether you understand customers and can get results for the business.
 
 ## Marketing starts with people
@@ -96,6 +101,11 @@ Nothing about the tools changed. What changed was the thinking. That is what thi
       },
     },
     "customer-journey": {
+      outcomes: [
+        "Describe the five stages of the customer journey",
+        "Find where a business loses customers",
+        "Map the journey for one real business",
+      ],
       explanation_md: `When a business owner says "I need more customers", they usually have a specific problem hiding inside that sentence. Maybe nobody has heard of them. Maybe people hear about them but do not trust them. Maybe people want to buy but the payment is confusing. A marketer who can find where customers are dropping off is far more useful than one who just posts more. Junior job adverts in Ghana often mention lead generation and conversion; both are parts of this journey.
 
 ## The five stages
@@ -183,6 +193,11 @@ When you take on any marketing job, sketch the journey first. It tells you where
       },
     },
     "know-your-audience": {
+      outcomes: [
+        "Describe an audience clearly",
+        "Learn from competitors",
+        "Write an audience description for a local business",
+      ],
       explanation_md: `A message that works for students at a Tamale university will not land the same way with market women in Bolgatanga or civil servants in Wa. Job adverts for junior marketers in Ghana regularly ask for market research and competitor monitoring. Both come down to the same skill: finding out who you are talking to and what else they are seeing.
 
 ## Describe the audience
@@ -277,6 +292,11 @@ Writing this down takes an hour. It saves weeks of posting the wrong thing to th
       },
     },
     "channels-overview": {
+      outcomes: [
+        "Name the main marketing channels",
+        "Choose channels for a campaign and justify each one",
+        "Match channels to a local audience",
+      ],
       explanation_md: `A small business in Ghana cannot be everywhere. It may have a few hundred cedis a month for marketing, one phone and one person who also serves customers. Part of your value as a marketer is choosing the right two or three channels and doing them well, rather than spreading thin across every app.
 
 ## The main channels
@@ -358,6 +378,11 @@ Three channels, each with a clear job: WhatsApp for members, Facebook for event 
       },
     },
     content: {
+      outcomes: [
+        "Explain what counts as content",
+        "Describe what good content does",
+        "Give each content piece a clear job",
+      ],
       explanation_md: `When Ghanaian companies hire junior marketers, the most common ask after social media management is content creation: posts, graphics, photos and short videos. Agencies, retailers, NGOs and startups all need a steady supply of it. The good news is that you can produce professional content with only a phone, daylight and free apps. What makes content good is clear thinking and care, not expensive equipment.
 
 ## What counts as content
@@ -447,6 +472,11 @@ Amina manages content for a small cosmetics shop in Tamale. For one week she pla
       },
     },
     copywriting: {
+      outcomes: [
+        "Shape a selling message",
+        "Write in a brand's voice",
+        "Make only honest claims and use AI writing tools with care",
+      ],
       explanation_md: `Words do most of the selling online. A photo catches the eye, but the caption tells people what it is, why they should care and what to do next. Some Ghanaian job adverts for digital marketers ask directly for copywriting and for keeping a brand consistent, and almost every marketing role depends on it. If you can write short, clear, friendly words, you will always be useful.
 
 ## The shape of a selling message
@@ -539,6 +569,11 @@ Benefit first, clear detail, location and a next step. That is copywriting.`,
       },
     },
     "graphics-and-photos": {
+      outcomes: [
+        "Take product photos on a phone",
+        "Make simple branded graphics",
+        "Keep image files light",
+      ],
       explanation_md: `On WhatsApp, Instagram and Facebook, people decide in a second whether to stop scrolling. A clear photo or a clean graphic is often what makes them stop. Some Ghanaian adverts for marketing assistants and interns name Canva and similar design tools. You do not need a camera or paid software to meet that bar. You need daylight, a steady hand and a few simple rules.
 
 ## Product photos on a phone
@@ -626,6 +661,11 @@ Wumpini helps a basket weaving group in Bolgatanga. Their old photos were taken 
       },
     },
     "short-video": {
+      outcomes: [
+        "Make a short video that works",
+        "Edit on a phone",
+        "Use trends carefully and plan live selling",
+      ],
       explanation_md: `Short vertical video now drives much of what people watch on TikTok, Instagram Reels, Facebook and WhatsApp Status. Ghanaian employers, from car dealers to cosmetics shops, are hiring people who can film and edit short clips, and some retail and health product companies ask for staff who can sell during live streams. You can do all of this with a phone.
 
 ## What makes a short video work
@@ -713,6 +753,11 @@ Fuseini films for a Tamale tailor. His first video was a slow, sideways clip of 
       },
     },
     "content-calendar": {
+      outcomes: [
+        "Decide what goes in a content calendar",
+        "Plan posts around real life and choose how often to post",
+        "Build a two week calendar in a spreadsheet",
+      ],
       explanation_md: `Businesses that post only when they remember look unreliable. A content calendar fixes that. It is a simple plan of what to post, where and when, made a few weeks ahead. Agencies and in house teams in Ghana use calendars to agree work with clients and managers before anything goes live. If you can build and keep one, you show that you are organised, which employers value as much as creativity.
 
 ## What goes in a calendar
@@ -808,6 +853,11 @@ Hawa's shea butter business plans December in a sheet. She marks the start of ha
       },
     },
     "social-and-messaging": {
+      outcomes: [
+        "Tell apart three kinds of direct channel",
+        "Work professionally on social media, messaging and email",
+        "Audit the direct channels of a local business",
+      ],
       explanation_md: `In Ghana, a lot of buying and selling happens inside chat apps and social media. A customer sees a post, sends "How much?", agrees a price, pays with mobile money and arranges delivery, all without leaving their phone. Organisations like NGOs, schools and think tanks also rely on social pages and email newsletters to keep people informed. Managing these channels well is the most requested skill in junior marketing adverts, so this section is the heart of the roadmap.
 
 ## Three kinds of direct channel
@@ -893,6 +943,11 @@ Abdul-Rahman is hired part time by a Tamale pharmacy shop. Instead of taking the
       },
     },
     "whatsapp-business": {
+      outcomes: [
+        "Set up a complete WhatsApp Business profile",
+        "Keep good messaging habits",
+        "Use WhatsApp Business for marketing",
+      ],
       explanation_md: `For many small businesses in Ghana, WhatsApp is the shop counter. Customers ask prices, send photos of what they want, confirm MoMo payments and arrange delivery in chat. Yet many owners still use a personal WhatsApp account, reply late and repeat the same answers all day. Setting up and running WhatsApp Business properly is one of the most practical paid services a beginner marketer can offer, and the app itself is free.
 
 ## The WhatsApp Business app
@@ -976,6 +1031,11 @@ Mariama's basket group in Bolgatanga used a personal account, and orders got los
       },
     },
     "facebook-instagram": {
+      outcomes: [
+        "Tell pages, profiles and professional accounts apart",
+        "Post well and schedule a week of posts",
+        "Read page insights",
+      ],
       explanation_md: `Facebook is widely used in Ghana by businesses, churches, schools and NGOs, and Instagram matters for fashion, food, beauty, crafts and anything visual. Job adverts for social media roles often expect you to manage pages on both and to use Meta's business tools. The skills are learnable on a phone or a computer, and Meta offers free training through Meta Blueprint.
 
 ## Pages, profiles and professional accounts
@@ -1066,6 +1126,11 @@ Issahaku manages the Facebook Page of an NGO running a girls' education programm
       },
     },
     "community-management": {
+      outcomes: [
+        "Reply to comments well",
+        "Handle complaints, spam and scams",
+        "Work with trusted local voices",
+      ],
       explanation_md: `Every comment, message and review is a conversation that other people are watching. A rude or slow reply can lose more than one customer. A calm, helpful reply can win new ones. Ghanaian adverts for community managers and social media executives ask for audience engagement and community growth, and some senior roles ask for influencer partnerships. This lesson covers all three at a beginner level.
 
 ## Replying well
@@ -1153,6 +1218,11 @@ A customer posts on a Tamale restaurant's page: "Ordered jollof yesterday and it
       },
     },
     "email-marketing": {
+      outcomes: [
+        "Explain who uses email marketing",
+        "Build a list with consent",
+        "Write a good newsletter",
+      ],
       explanation_md: `Email may feel old fashioned next to TikTok, but several Ghanaian marketing adverts ask for it, from agencies and agritech companies to think tanks and NGOs, and remote marketing assistant roles often do too. The reason is simple: an email list belongs to the business. No algorithm decides whether your subscribers see your message, and if a social account is hacked or blocked, the list is still there.
 
 ## Who uses email
@@ -1236,6 +1306,11 @@ Amina volunteers for a youth NGO in Wa that only posted on Facebook. She adds a 
       },
     },
     "search-and-local": {
+      outcomes: [
+        "Explain how search differs from social media",
+        "Tell apart two kinds of search visibility",
+        "Check how visible local businesses are in search",
+      ],
       explanation_md: `When someone in Tamale needs a phone repairer, a guest house or a printing shop, many of them open Google or Google Maps and type what they want. Those people are not scrolling for fun. They want something now. Businesses that show up with correct details, good photos and genuine reviews often get the call. Search skills appear in several Ghanaian digital marketing adverts, and they are a full specialisation in SydCrest's Delta Mentoring Program.
 
 ## How search differs from social media
@@ -1324,6 +1399,11 @@ Sumaila runs a guest house in Bolgatanga. Travellers kept saying they could not 
       },
     },
     "google-business-profile": {
+      outcomes: [
+        "Set up a Google Business Profile",
+        "Manage reviews",
+        "Keep a profile fresh",
+      ],
       explanation_md: `A Google Business Profile is the box with a business's name, map pin, photos, hours, phone number and reviews that appears on Google Maps and in Google Search. It is free, it works even without a website, and for a nearby customer it is often the first thing they see. Setting up and maintaining profiles is a simple, valuable service for shops, guest houses, clinics, schools and churches, and it appears in both Google's free Skillshop training and the DMP cohort.
 
 ## Setting up a profile
@@ -1415,6 +1495,11 @@ Fuseini helps a clinic in Tamale whose Maps pin pointed to the wrong street. Pat
       },
     },
     "seo-basics": {
+      outcomes: [
+        "Explain how search engines work",
+        "Do free keyword research",
+        "Apply on page and off page basics",
+      ],
       explanation_md: `Search engine optimisation, or SEO, is the work of helping web pages appear when people search for what a business offers. Several Ghanaian marketing adverts ask for SEO and keyword research, an agritech company wanted content writers who understand it, and it is one of the three DMP specialisations. You can learn the basics without paying for any tools.
 
 ## How search engines work
@@ -1513,6 +1598,11 @@ Mariama's basket group has a simple website. Wumpini checks autocomplete and fin
       },
     },
     "paid-ads": {
+      outcomes: [
+        "Explain how online ads work and their building blocks",
+        "Follow advertising rules responsibly",
+        "Write a simple ad brief",
+      ],
       explanation_md: `Free posting only reaches some of the people who follow a page, and growing an audience from nothing takes time. Paid advertising lets a business pay a platform such as Meta, TikTok or Google to show its message to chosen people beyond its followers. Ghanaian adverts for digital marketers often mention Meta Ads and Google Ads, and Google Ads is one of the DMP specialisations. Handling a client's ad money carefully is a big responsibility, so this section starts with the basics.
 
 ## How online ads work
@@ -1598,6 +1688,11 @@ A church in Tamale wants more young people at a youth conference. Issahaku sets 
       },
     },
     "social-ads": {
+      outcomes: [
+        "Tell boosting from a full campaign",
+        "Organise a Meta campaign and choose an audience",
+        "Start small, test and follow the rules",
+      ],
       explanation_md: `Many small businesses in Ghana have tapped the "Boost" button on a Facebook or Instagram post and wondered where their money went. A marketer who can set up a proper campaign with a clear goal, the right audience and honest tracking is worth paying. Meta Ads appear in Ghanaian digital marketer adverts, and the DMP social media specialisation builds directly on this lesson.
 
 ## Boosting versus a full campaign
@@ -1690,6 +1785,11 @@ Hawa wants more orders for her shea butter gift packs before Christmas. Abdul-Ra
       },
     },
     "search-ads": {
+      outcomes: [
+        "Choose keywords for search ads",
+        "Write a search ad",
+        "Explain how the ad auction works",
+      ],
       explanation_md: `Search ads appear when someone types a search on Google, often marked as sponsored, above or among the normal results. Because the person is already looking, these ads can bring customers who are ready to act. Some Ghanaian digital marketer adverts list Google Ads as a must have, and Google Ads (search marketing) is one of the three DMP specialisations. Google's free Skillshop training includes a Google Ads Search certification you can add to your CV.
 
 ## Keywords are the heart of it
@@ -1778,6 +1878,11 @@ Sumaila owns an event centre in Tamale. Amina builds a small search campaign wit
       },
     },
     "budgets-in-cedis": {
+      outcomes: [
+        "Tell apart the two costs of advertising",
+        "Control spend and pay the platform safely",
+        "Work out cost per result and keep a record",
+      ],
       explanation_md: `Money causes more fights between marketers and clients than anything else. Who paid the platform? Why did the card get charged more than expected? What did the money achieve? If you handle budgets clearly and keep good records, clients trust you with bigger campaigns. Senior adverts in Ghana list budget management as a core duty, and it starts with habits you can build now.
 
 ## Two different costs
@@ -1872,6 +1977,11 @@ Mariama's group agrees a monthly fee for Wumpini's work and a separate ad budget
       },
     },
     measurement: {
+      outcomes: [
+        "Follow the measure and improve loop",
+        "Choose the numbers that matter",
+        "Track results without a website",
+      ],
       explanation_md: `Many small business owners in Ghana have paid someone for "social media" and never known whether it helped. That is why clients often stop paying marketers after a few months. If you can plan a campaign with a clear goal, track what happens and explain the results honestly, you become someone they keep. Adverts for junior and senior roles alike ask for campaign planning, performance monitoring and reporting.
 
 ## The loop
@@ -1969,6 +2079,11 @@ Fuseini runs posts for a Tamale tailor. Last month the page got many likes, but 
       },
     },
     "campaign-plan": {
+      outcomes: [
+        "Start a campaign with a clear goal",
+        "Write a one page campaign plan",
+        "Plan a campaign timeline",
+      ],
       explanation_md: `A campaign is a focused push to achieve one goal in a set time, such as filling a church conference, selling Christmas gift packs or getting sign ups for an NGO training. Ghanaian adverts ask marketers to plan and run campaigns, and the DMP cohort's week 10 is built around a full campaign plan. Clients are far more willing to approve spending when they see a clear plan on one page.
 
 ## Start with a clear goal
@@ -2064,6 +2179,11 @@ Sumaila runs a mobile money vendor shop and wants more customers in December. Ab
       },
     },
     analytics: {
+      outcomes: [
+        "Read platform insights and website analytics",
+        "Use tracking links",
+        "Turn numbers into a clear recommendation",
+      ],
       explanation_md: `Analytics means collecting and reading data about what people do, so you can make better decisions. Ghanaian adverts for digital marketers ask for Google Analytics and for monitoring campaign performance, and the DMP cohort spends a full week on it. You do not need to be good at maths. You need to know which numbers matter, where to find them and how to spot a pattern.
 
 ## Platform insights
@@ -2162,6 +2282,11 @@ Mariama's basket group has a small website and a Facebook Page. Wumpini uses tag
       },
     },
     "client-reporting": {
+      outcomes: [
+        "Decide what goes in a monthly report",
+        "Write for the owner, not for marketers",
+        "Report honestly in a light, easy format",
+      ],
       explanation_md: `A short, honest report is often what makes a client renew. It shows that you are paying attention, that you understand their business and that their money is being used carefully. Adverts for marketing and communications roles in Ghana, from agencies to think tanks, ask for performance tracking and reporting. Managers inside a company want the same thing.
 
 ## What goes in a monthly report
@@ -2253,6 +2378,11 @@ Issahaku sends his monthly report to the NGO he supports in Tamale. Goal: more p
       },
     },
     earning: {
+      outcomes: [
+        "Compare three paths to paid marketing work",
+        "Explain what employers and clients look for",
+        "Make a 30 day plan toward paid work",
+      ],
       explanation_md: `Skills only change your life when someone pays you for them. Digital marketing has several doors into paid work, and you can start knocking on some of them before you feel "ready". This section helps you choose a path, collect proof of your skills and get your first paying work in Ghana or remotely.
 
 ## Three main paths
@@ -2348,6 +2478,11 @@ Your first paid work rarely arrives by waiting. It comes from doing real work, s
       },
     },
     portfolio: {
+      outcomes: [
+        "Explain why real work beats mock work",
+        "Write a case study in a clear format",
+        "Protect your clients' information",
+      ],
       explanation_md: `When an agency, company or client in Ghana decides whether to hire you, a portfolio does the talking. One Ghanaian digital marketer advert we studied asked directly for a portfolio of past campaigns, and many others ask for experience. A portfolio is how a beginner shows experience. It does not need to be fancy. It needs to be real, honest and easy to open on a phone or a laptop.
 
 ## Real beats mock
@@ -2438,6 +2573,11 @@ Wumpini's portfolio has three case studies: a Bolgatanga basket group's WhatsApp
       },
     },
     "job-applications": {
+      outcomes: [
+        "Choose certificates worth your time",
+        "Write a CV that shows real work",
+        "Apply well and stay safe",
+      ],
       explanation_md: `Once you have some real work to show, it is time to apply. Ghanaian employers advertise marketing roles on job boards such as Jobberman, on their own career pages, through recruiters and through word of mouth. Some ask for Google or Meta certifications. This lesson covers certificates, CVs, applications and staying safe from job scams.
 
 ## Certificates worth your time
@@ -2532,6 +2672,11 @@ Mariama finds an advert for a marketing assistant at a Tamale hotel asking for C
       },
     },
     freelancing: {
+      outcomes: [
+        "Package your services",
+        "Write a simple agreement and invoice",
+        "Set up retainers and find clients",
+      ],
       explanation_md: `Many small businesses in Ghana need marketing help but cannot afford a full time employee. That is a real opportunity for freelancers. A shea butter seller, a pharmacy shop, a guest house and a church can each pay for a few hours of your time a week. Freelancing well means treating it as a small business: clear services, clear agreements and getting paid on time.
 
 ## Package your services
@@ -2631,6 +2776,11 @@ Fuseini offers three packages to businesses in Tamale. A pharmacy shop takes the
       },
     },
     "dmp-cohort": {
+      outcomes: [
+        "Describe how the twelve week cohort is organised",
+        "Explain how this roadmap connects to it",
+        "Decide whether it is right for you",
+      ],
       explanation_md: `Learning alone takes real discipline. Some people move faster with a group, a schedule and someone experienced checking their work. SydCrest's Delta Mentoring Program, or DMP, is a twelve week cohort for digital skills and digital marketing. This roadmap and the DMP are designed to fit together: the roadmap gives you a broad beginner base, and the DMP adds structure, mentors and a specialisation.
 
 ## How the twelve weeks are organised

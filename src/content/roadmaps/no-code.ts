@@ -76,6 +76,10 @@ export const noCode: RoadmapDraft = {
         "No code tools let you build useful things by clicking, dragging and filling in settings instead of writing programs. This section explains what you can build, which device you need, and how free plans work.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [zapierLearn],
     },
     {
@@ -85,6 +89,8 @@ export const noCode: RoadmapDraft = {
         "A Tamale shop can take orders through a form, an NGO can run a field survey, and a school can track fees in a small app, all without a programmer. Learn to spot the repeated, manual tasks in a business that a form, app, website or automation could take over.",
       parent: "no-code-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [powerPlatformPath],
     },
     {
@@ -94,6 +100,8 @@ export const noCode: RoadmapDraft = {
         "Filling in forms, collecting survey data and checking automations work well on a phone, but building apps, websites and multi step workflows is far easier on a computer, whether your own or one at a school, hub or cafe. Learn which tasks to do where, and how to plan your building time around data bundles and power.",
       parent: "no-code-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [sheetsTraining],
     },
     {
@@ -103,6 +111,8 @@ export const noCode: RoadmapDraft = {
         "Most no code tools offer a free plan with limits on users, records or how many automated tasks run each month, and those limits can change. Learn to read a plan page, keep your logins safe with two step verification, and choose tools a client can afford to keep.",
       parent: "no-code-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [google2sv],
     },
     {
@@ -112,6 +122,10 @@ export const noCode: RoadmapDraft = {
         "Almost every no code build stores its information in a table, so spreadsheet skills come before anything else. This section covers setting up tables, keeping data clean and turning it into simple reports.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "junior",
+      jobs: ["Operations Assistant"],
       resources: [RES.sheetsHelp],
     },
     {
@@ -121,6 +135,8 @@ export const noCode: RoadmapDraft = {
         "A spreadsheet works like a database when each row is one record, each column holds one kind of information and every row has a unique ID. Learn to design tables for customers, orders or stock that apps and automations can read without breaking.",
       parent: "data-first",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [sheetsTraining, airtableHelp],
     },
     {
@@ -130,6 +146,8 @@ export const noCode: RoadmapDraft = {
         "Messy data, like phone numbers typed five different ways or blank required fields, breaks reports and automations. Learn to use dropdowns, validation rules, sorting and filtering to stop mistakes at the start and fix the ones that slip through.",
       parent: "data-first",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [sheetsDropdown, sheetsSortFilter],
     },
     {
@@ -139,6 +157,8 @@ export const noCode: RoadmapDraft = {
         "Clients want answers, like which product sold most this week or how many households a survey reached. Learn to build summaries with pivot tables and simple charts, and to share a dashboard that updates as new data arrives.",
       parent: "data-first",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [sheetsPivot, RES.lookerHelp],
     },
     {
@@ -148,6 +168,10 @@ export const noCode: RoadmapDraft = {
         "Forms are the front door for most no code systems, collecting orders, bookings, registrations and survey answers. This section covers everyday online forms and offline field surveys used by NGOs.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "junior",
+      jobs: ["Enumerator", "Field/Data Collection Officer"],
       resources: [formsHowTo],
     },
     {
@@ -157,6 +181,8 @@ export const noCode: RoadmapDraft = {
         "An online form can take orders for a chop bar, register members of a church youth group or book appointments, with every answer landing in a spreadsheet. Learn to write clear questions, choose the right question types and connect responses to a sheet, all of which works on a phone or a computer.",
       parent: "forms",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [formsFirst, formsResponses],
     },
     {
@@ -166,6 +192,8 @@ export const noCode: RoadmapDraft = {
         "NGOs and research teams in the north collect household and farm data with mobile survey tools that keep working offline and upload later. Learn how these tools work, how enumerators use them on Android phones, and why this skill appears in data collection adverts.",
       parent: "forms",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [koboDocs, odkCollect],
     },
     {
@@ -175,6 +203,8 @@ export const noCode: RoadmapDraft = {
         "Good surveys skip questions that do not apply, check answers as they are entered and only ask what the project needs. Learn skip logic, constraints and the XLSForm spreadsheet format, which is easiest to edit on a computer.",
       parent: "forms",
       optional: true,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [xlsform, odkDocs],
     },
     {
@@ -184,6 +214,10 @@ export const noCode: RoadmapDraft = {
         "Many small businesses and organisations need a simple website they can show customers and funders. This section covers choosing a builder, WordPress basics and putting a site live on its own address.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Web Developer", "Social Media Officer"],
       resources: [mdnServer],
     },
     {
@@ -193,6 +227,8 @@ export const noCode: RoadmapDraft = {
         "Website builders range from very simple page tools to full systems that grow with a business, and each one trades ease against control and cost. Learn to match the builder to the client, and start with a free one page site you can partly edit from a phone.",
       parent: "websites",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [sitesHelp],
     },
     {
@@ -202,6 +238,8 @@ export const noCode: RoadmapDraft = {
         "WordPress runs many business and NGO websites and appears in Ghanaian job adverts for web and communications roles. Learn pages, posts, themes, plugins and user roles, ideally on a computer, and how to keep a site updated and backed up.",
       parent: "websites",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [learnWp, wpDocs],
     },
     {
@@ -211,6 +249,8 @@ export const noCode: RoadmapDraft = {
         "A real business site needs a domain name, hosting and basic care so customers can find it on Google and it loads quickly on slow mobile data. Learn how domains and hosting fit together, who should own the accounts, and the simple checks for speed, search and accessibility.",
       parent: "websites",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [mdnDomain, RES.seoStarter, RES.pagespeed],
     },
     {
@@ -220,6 +260,10 @@ export const noCode: RoadmapDraft = {
         "App builders turn a spreadsheet into a phone app that staff or customers can use. This section covers building from a sheet and planning screens around real users.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Airtable and Softr Assistant Developer", "No Code Platform Specialist"],
       resources: [glideStart],
     },
     {
@@ -229,6 +273,8 @@ export const noCode: RoadmapDraft = {
         "Tools such as Glide, AppSheet and Power Apps read your table and build screens for listing, adding and editing records, like a stock app for a Bolgatanga provisions shop. Learn to connect a sheet, add forms and filters, and share the app, building on a computer and testing on the phones your users carry.",
       parent: "apps",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [glideStart, powerApps],
     },
     {
@@ -238,6 +284,8 @@ export const noCode: RoadmapDraft = {
         "A useful app shows each person only what they need, so a shop assistant records sales while the owner sees the totals. Learn to sketch screens on paper first, decide who can see and change what, and keep the design simple for small phone screens.",
       parent: "apps",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [appsheetDesign],
     },
     {
@@ -247,6 +295,10 @@ export const noCode: RoadmapDraft = {
         "Automations move information between tools by themselves, saving hours of copying, pasting and reminding. This section covers how workflows are built, common tools, automatic messages and careful use of AI steps.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Automation and Systems Operator", "No Code Platform Specialist"],
       resources: [zapierLearn],
     },
     {
@@ -256,6 +308,8 @@ export const noCode: RoadmapDraft = {
         "Every automation starts with a trigger, like a new form response, and then runs one or more actions, like adding a row or sending an email. Learn to map a manual process step by step on paper before you build it, so you automate the right thing.",
       parent: "automation",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [zapierZap],
     },
     {
@@ -265,6 +319,8 @@ export const noCode: RoadmapDraft = {
         "Tools such as Zapier, Make and Power Automate connect hundreds of apps, while built in options like Google Apps Script go further with a little code. Learn what each type is good for, how free plan limits affect a client, and how to check runs and fix a failed step.",
       parent: "automation",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [makeAcademy, powerAutomate, appsScript],
     },
     {
@@ -274,6 +330,8 @@ export const noCode: RoadmapDraft = {
         "Many automations end by telling someone something, like a booking confirmation email or a WhatsApp Business greeting and quick reply. Learn to send helpful automatic messages without spamming people, and to respect what each messaging platform allows.",
       parent: "automation",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.whatsappBusiness, formsResponses],
     },
     {
@@ -283,6 +341,8 @@ export const noCode: RoadmapDraft = {
         "Newer tools can add an AI step that sorts messages or drafts replies, and some can run small agents that take several steps on their own. Learn where AI helps, why a person should check its output, and why you should never feed it private customer data without permission.",
       parent: "automation",
       optional: true,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [copilotStudio, n8nDocs],
     },
     {
@@ -292,6 +352,10 @@ export const noCode: RoadmapDraft = {
         "Building for other people means protecting their data, testing carefully and leaving them able to run what you built. This section also covers building a portfolio and finding paid work.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "specialist",
+      jobs: ["Low Code AI Implementation Consultant", "No Code Platform Specialist"],
       resources: [jobberman],
     },
     {
@@ -301,6 +365,8 @@ export const noCode: RoadmapDraft = {
         "Forms and apps often collect names, phone numbers and locations, and Ghana's Data Protection Act sets rules on how personal data is collected and kept. Learn to ask only for what you need, explain why you collect it, and set sharing permissions so the wrong people cannot see it.",
       parent: "clients-and-earning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.dpc, driveSharing],
     },
     {
@@ -310,6 +376,8 @@ export const noCode: RoadmapDraft = {
         "Before a client relies on your build, test it with real users and odd inputs, and fix what breaks. Learn to write a short guide, hand over every account and password safely, and agree how support will work after you finish.",
       parent: "clients-and-earning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [nngTesting, writeTheDocs],
     },
     {
@@ -319,6 +387,8 @@ export const noCode: RoadmapDraft = {
         "Small real builds, like a youth group registration form or a shop stock app, make a stronger portfolio than certificates alone. Learn where no code skills show up in jobs, such as data collection, operations and website roles, and how to price and offer small projects to local businesses and remote clients.",
       parent: "clients-and-earning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [jobberman],
     },
   ],

@@ -10,6 +10,11 @@ const content: TrackContent = {
   roadmap: "data-analyst",
   nodes: {
     foundations: {
+      outcomes: [
+        "Turn a vague request into a clear analysis question",
+        "Explain why tidy records matter",
+        "Name what you need to start",
+      ],
       explanation_md: `## Why this matters
 
 Data jobs in Ghana come with many titles: data entry clerk, M&E assistant, research assistant, reporting officer, business intelligence analyst. They all share one core skill. Someone brings you a messy pile of records and a worried question, and you return a clear, honest answer they can act on. That skill starts long before any code.
@@ -99,6 +104,11 @@ You can do everything in this section with free tools: a notebook, Google Sheets
     },
 
     "statistics-basics": {
+      outcomes: [
+        "Calculate and explain the mean and the median",
+        "Tell percentages from percentage points",
+        "Explain why samples can mislead and correlation is not cause",
+      ],
       explanation_md: `## Why this matters
 
 Every report you write as an analyst or M&E officer will contain averages, percentages and comparisons. If you misread them, you can send a manager or donor in the wrong direction. A few simple ideas protect you from the most common mistakes.
@@ -181,6 +191,11 @@ When you see a number, ask four questions. Mean or median? Percentage or percent
     },
 
     "tidy-data": {
+      outcomes: [
+        "Explain what a tidy table is",
+        "Avoid common data entry mistakes",
+        "Turn a messy register into a tidy table",
+      ],
       explanation_md: `## Why this matters
 
 Many first data jobs in Ghana involve entering records: registers, survey forms, stock sheets, patient cards. Employers want people who type accurately and lay data out so it can be checked and analysed. Every later skill in this track, from pivot tables to SQL, works far better on tidy data.
@@ -273,6 +288,11 @@ Before you analyse anything, scan the sheet. Are there merged cells, totals insi
     },
 
     spreadsheets: {
+      outcomes: [
+        "Explain what a spreadsheet does well",
+        "Set up a spreadsheet you will reuse",
+        "Name the topics in this section",
+      ],
       explanation_md: `## Why this matters
 
 If you read data job adverts in Ghana, one tool appears again and again: the spreadsheet. NGO M&E teams track indicators in Excel. Banks and telcos send daily reports as spreadsheets. Data entry and reporting roles ask for strong Excel before anything else. A small business in Bolgatanga may never use a database, but it will happily pay someone who can turn its sales notebook into a sheet that answers questions.
@@ -360,6 +380,11 @@ Abdul-Rahman sells phone accessories in Tamale and records each sale: date, item
     },
 
     "spreadsheet-formulas": {
+      outcomes: [
+        "Write formulas with the functions that do most of the work",
+        "Use relative and fixed references",
+        "Sort and filter data and check your work",
+      ],
       explanation_md: `## Why this matters
 
 A reporting officer is often asked quick questions: how much did we sell last month, how many households received inputs, which community has the most absences? With a few core formulas you can answer these in minutes and show your working, which is exactly what employers check in a practical test.
@@ -457,6 +482,11 @@ Formulas can be wrong without any error message. Check a result by hand on a few
     },
 
     "lookups-pivots": {
+      outcomes: [
+        "Join two tables with a lookup",
+        "Stop bad entries with validation",
+        "Summarise data fast with a pivot table",
+      ],
       explanation_md: `## Why this matters
 
 Three spreadsheet skills come up again and again in Ghanaian data and M&E adverts and in interview tests: looking up values from another table, stopping bad entries with validation, and summarising with pivot tables. Master these and you can handle most reporting tasks a junior role will give you.
@@ -561,6 +591,11 @@ Issahaku receives a monthly sheet of distributions with only community codes. He
     },
 
     "field-data": {
+      outcomes: [
+        "Describe the life of a field survey",
+        "Explain why the north is a good place to learn field data",
+        "Map out a survey before you build it",
+      ],
       explanation_md: `## Why this matters
 
 Across the Northern, Savannah, North East, Upper East and Upper West regions, a great deal of data work happens in communities, not offices. NGOs, research organisations, health programmes and government schemes send teams to villages to ask households about farming, water, health, schooling and income. Someone has to design those surveys, run them on phones, clean the results and keep respondents' information safe. Those tasks appear in many M&E, research assistant and data officer adverts, and they are a realistic first door into data work for someone in the north.
@@ -650,6 +685,11 @@ A smartphone to test your forms the way enumerators will, a free KoboToolbox or 
     },
 
     "survey-design": {
+      outcomes: [
+        "Write clear questions and answer choices",
+        "Keep a questionnaire short and choose who to ask",
+        "Pilot a questionnaire before fieldwork",
+      ],
       explanation_md: `## Why this matters
 
 Bad questions produce bad data, and no amount of cleaning can fix it later. M&E and research adverts ask for survey design, sampling and baseline studies because a well designed questionnaire is the foundation of every report that follows. Even as a junior, you will often be asked to review or test a questionnaire before it goes to the field.
@@ -750,6 +790,11 @@ Always pilot the questionnaire with a few people similar to your respondents. In
     },
 
     "mobile-surveys": {
+      outcomes: [
+        "Build a phone survey in KoboToolbox or ODK",
+        "Add checks and skip logic",
+        "Collect and download survey data",
+      ],
       explanation_md: `## Why this matters
 
 Paper questionnaires are slow to enter and easy to get wrong. Most NGOs and research teams now collect field data on phones with free tools such as KoboToolbox and ODK, and several M&E and research adverts name them directly. If you can build a working form, test it and download clean results, you have a practical skill that projects across northern Ghana need.
@@ -851,6 +896,11 @@ Wumpini builds an invented water access form for five communities near Savelugu:
     },
 
     "data-cleaning": {
+      outcomes: [
+        "Clean data on a copy, never the original",
+        "Fix common data problems",
+        "Keep a cleaning log of every change",
+      ],
       explanation_md: `## Why this matters
 
 Real data is messy. Field forms have duplicates, registers have spelling differences, and exported files mix numbers with text. Several adverts list data cleaning and validation as core duties, and analysts often say cleaning takes more time than analysis itself. If your data is wrong, every chart and report built on it is wrong too.
@@ -944,6 +994,11 @@ The same ideas apply in SQL and in Python's pandas library, which you will meet 
     },
 
     "data-privacy": {
+      outcomes: [
+        "Explain what counts as personal data",
+        "Follow Ghana's data protection law and get consent",
+        "Make a survey file safe to share",
+      ],
       explanation_md: `## Why this matters
 
 Field surveys collect names, phone numbers, locations, health details and income. That information belongs to the people who shared it. If it leaks, they can be embarrassed, cheated or put at risk. Employers, especially NGOs and government programmes, expect data staff to handle personal data carefully and to follow their confidentiality rules. Handling it well also protects the trust that lets field teams keep working in communities.
@@ -1031,6 +1086,11 @@ Sumaila receives an invented health survey from Walewale with names, phone numbe
     },
 
     "monitoring-evaluation": {
+      outcomes: [
+        "Tell monitoring from evaluation",
+        "Describe a project's results chain",
+        "Explain where data skills fit in MEAL",
+      ],
       explanation_md: `## Why this matters
 
 Many data jobs in northern Ghana sit inside monitoring and evaluation teams. NGOs, development programmes and government projects working on farming, water, health, education and livelihoods all need to show what they are doing and whether it is working. M&E officers and assistants collect that evidence, check it and report it to managers and donors. If you understand the ideas in this section, M&E adverts will start to read like a description of skills you already have.
@@ -1116,6 +1176,11 @@ An invented project near Wa trains women's groups in shea butter processing. Mon
     },
 
     "indicators-frameworks": {
+      outcomes: [
+        "Write an indicator with a baseline and a target",
+        "Disaggregate results",
+        "Build a mini logframe and a theory of change",
+      ],
       explanation_md: `## Why this matters
 
 Indicators, baselines, targets and logframes appear in almost every M&E advert. They are the language projects use to agree, with donors and communities, what success looks like. If you can read and help build a logframe and calculate indicators from data, you can contribute to an M&E team from your first week.
@@ -1231,6 +1296,11 @@ Abdul-Rahman has invented survey data from 150 households. 63 report treating wa
     },
 
     "data-quality-reporting": {
+      outcomes: [
+        "Check data quality",
+        "Explain routine reporting systems",
+        "Draft a progress report",
+      ],
       explanation_md: `## Why this matters
 
 Donors and managers make decisions, and sometimes release funding, based on the numbers M&E teams report. If those numbers are wrong, the project loses credibility. That is why adverts ask for data quality assurance and donor reporting. As a junior, you may be the person who checks the numbers and drafts the monthly table.
@@ -1338,6 +1408,11 @@ Mariama prepares the invented quarterly report for a girls' education project ne
     },
 
     sql: {
+      outcomes: [
+        "Explain what a database is and what SQL looks like",
+        "Practise SQL in the browser without installing anything",
+        "Run your first queries",
+      ],
       explanation_md: `## Why this matters
 
 Spreadsheets are great until the data grows too big or lives inside a company system. Banks, telcos, mobile money operators, government data units and many remote employers keep their records in databases, and the language for asking those databases questions is SQL (often said "sequel" or "S Q L"). It appears regularly in Ghanaian analyst and BI adverts and in remote junior analyst roles. Learning it opens doors that spreadsheets alone cannot.
@@ -1445,6 +1520,11 @@ Issahaku joins a microfinance company in Tamale as a reporting assistant. Each m
     },
 
     "sql-basics": {
+      outcomes: [
+        "Select columns and filter rows with WHERE",
+        "Sort and limit results",
+        "Write clauses in the right order",
+      ],
       explanation_md: `## Why this matters
 
 In SQL interview tests, the first questions are almost always about selecting, filtering and sorting rows. These few keywords do a large share of everyday analyst work, so practise them until they feel natural.
@@ -1569,6 +1649,11 @@ Start small: run SELECT with LIMIT 10 to see the data before filtering. Add one 
     },
 
     "sql-joins-aggregation": {
+      outcomes: [
+        "Summarise data with aggregation and GROUP BY",
+        "Filter groups with HAVING",
+        "Combine tables with JOIN and watch your row counts",
+      ],
       explanation_md: `## Why this matters
 
 Real questions usually need more than one table and a summary rather than a list. "Which district had the most mobile money transactions last month?" needs transactions joined to agents, grouped by district and counted. Joins and GROUP BY are what separate a beginner from someone ready for a junior analyst test.
@@ -1701,6 +1786,11 @@ A JOIN does what XLOOKUP does, and GROUP BY does what a pivot table does. If tho
     },
 
     communicating: {
+      outcomes: [
+        "Know your audience and lead with the answer",
+        "Present findings honestly in person",
+        "Write a one page summary",
+      ],
       explanation_md: `## Why this matters
 
 An analysis only matters if someone understands it and acts on it. Managers, donors and business owners are busy and often have no data background. Adverts for analyst, M&E and reporting roles regularly ask for reports, dashboards and the ability to present findings to non technical people. The analyst who explains clearly is often trusted more than the one with the cleverest method.
@@ -1806,6 +1896,11 @@ Wumpini finishes an invented analysis of school attendance in ten schools near T
     },
 
     charts: {
+      outcomes: [
+        "Match the chart to the question",
+        "Make charts readable on a small screen",
+        "Avoid charts that mislead",
+      ],
       explanation_md: `## Why this matters
 
 A good chart lets a busy reader see the answer in seconds. A bad chart confuses them or, worse, misleads them. Visualisation is named in many analyst and M&E adverts, and your charts will often be the only part of a report a manager actually looks at.
@@ -1903,6 +1998,11 @@ Ask yourself: what is the one thing this chart should say? Would a reader see it
     },
 
     dashboards: {
+      outcomes: [
+        "Explain what a dashboard is for",
+        "Plan a dashboard before you build it",
+        "Build a small dashboard in Looker Studio",
+      ],
       explanation_md: `## Why this matters
 
 Managers check the same few numbers every week: sales, stock, attendance, households reached. Instead of sending a new report each time, an analyst can build a dashboard that updates from the data automatically. Dashboards and business intelligence (BI) tools such as Power BI, Tableau and Looker Studio appear in many analyst and M&E adverts, especially at banks, telcos and larger NGOs.
@@ -2003,6 +2103,11 @@ Amina keeps an invented sheet of weekly seed distributions for an NGO in the Nor
     },
 
     python: {
+      outcomes: [
+        "Explain where Python fits in data work",
+        "Compare Python with SPSS, Stata and R",
+        "Set up a Python notebook without a powerful computer",
+      ],
       explanation_md: `## Why this matters
 
 Spreadsheets slow down or freeze with very large files, and repeating the same twenty cleaning steps every month by hand is tiring and error prone. Python solves both problems. You write the steps once as code, then rerun them on next month's file in seconds. Python appears in a number of analyst adverts, especially at banks and remote employers, and it is a strong addition once your spreadsheet and SQL skills are solid.
@@ -2102,6 +2207,11 @@ Sumaila prepares a monthly report from twelve invented district spreadsheets for
     },
 
     "python-basics": {
+      outcomes: [
+        "Use variables, lists and dictionaries in a notebook",
+        "Write loops, conditions and functions",
+        "Build a daily practice habit",
+      ],
       explanation_md: `## Why this matters
 
 Before you can analyse tables with pandas, you need a few core Python ideas. They are the same ideas you used in spreadsheets, written as code: values, lists of values, repeating a step and reusing a calculation. Employers who test Python usually start here.
@@ -2229,6 +2339,11 @@ Write short code cells and run them often. Add a text cell explaining each step 
     },
 
     pandas: {
+      outcomes: [
+        "Load, select and filter tables in pandas",
+        "Summarise and clean data",
+        "Join tables and save results",
+      ],
       explanation_md: `## Why this matters
 
 pandas is the Python library analysts use for tables. It does what you already do in spreadsheets, such as filtering, sorting, cleaning, lookups and pivot tables, but on bigger files and as repeatable steps. If an advert mentions Python for data analysis, it almost always means pandas.
@@ -2338,6 +2453,11 @@ If any idea here feels strange, do it in Google Sheets first, then repeat it in 
     },
 
     "getting-hired": {
+      outcomes: [
+        "Name the many doors into data work",
+        "Build evidence and experience while you learn",
+        "Map your route into data work",
+      ],
       explanation_md: `## Why this matters
 
 Skills only turn into income when someone can see them. Employers hiring junior data staff in Ghana, whether an NGO in Tamale, a bank in Accra or a remote company, want evidence that you can take real data and find a useful answer. Certificates help a little; a clear piece of work you can show and explain helps much more. This section helps you build that evidence and find the right first door.
@@ -2439,6 +2559,11 @@ Hawa finishes this track while doing national service at a district office near 
     },
 
     portfolio: {
+      outcomes: [
+        "Explain what a case study contains",
+        "Find data for your projects",
+        "Publish a balanced set of case studies",
+      ],
       explanation_md: `## Why this matters
 
 A portfolio shows an employer what you can do before they meet you. For data roles, two or three clear case studies are usually more convincing than a long list of courses. Using Ghanaian data makes your work instantly relevant to local employers, and shows you understand the context they work in.
@@ -2543,6 +2668,11 @@ Abdul-Rahman builds three case studies. The first uses a Ghana Statistical Servi
     },
 
     "job-search": {
+      outcomes: [
+        "Read an advert like an analyst",
+        "Tailor your application",
+        "Prepare for practical tests and interviews",
+      ],
       explanation_md: `## Why this matters
 
 Good skills still need a good search. Data work in Ghana is spread across many job titles and many kinds of employer, and the best openings are not always on the biggest job boards. A focused search, tailored applications and preparation for practical tests make a real difference.

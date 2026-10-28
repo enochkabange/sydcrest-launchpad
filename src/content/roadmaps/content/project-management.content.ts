@@ -10,6 +10,11 @@ const content: TrackContent = {
   roadmap: "project-management",
   nodes: {
     "project-basics": {
+      outcomes: [
+        "Explain why project skills matter for work in Ghana",
+        "Recognise projects you have already been part of",
+        "Name the three example projects you will follow",
+      ],
       explanation_md: `Every week, NGOs, district assemblies, schools and businesses across northern Ghana start new pieces of work: a borehole for a farming community, a feeding programme for a basic school, a training for women's savings groups, a new shop opening in town. Someone has to keep each of these moving, on time, within the money available and focused on what it was meant to achieve. That someone is doing project management, whatever their job title says.
 
 ## Why this matters for work in Ghana
@@ -96,6 +101,11 @@ Many people already manage projects without calling it that. If you have helped 
     },
 
     "what-is-a-project": {
+      outcomes: [
+        "Tell a project from routine work",
+        "Balance scope, time and cost",
+        "Explain why this helps you at work",
+      ],
       explanation_md: `Employers want people who can tell the difference between running a project and doing routine work, because the two are managed differently. A project needs a plan with an end date; routine work needs a steady system.
 
 ## The idea
@@ -199,6 +209,11 @@ When a manager or donor asks for "just one more thing", you can say: "We can do 
     },
 
     "project-roles": {
+      outcomes: [
+        "Name the common roles on a project",
+        "Build a RACI chart",
+        "Explain why clear roles help",
+      ],
       explanation_md: `Projects fail quietly when everybody assumes somebody else is doing a task. Knowing the roles on a project, and writing down who does what, prevents that. It is also how you understand where an entry level job fits.
 
 ## Common roles
@@ -285,6 +300,11 @@ A RACI chart takes ten minutes to make in a spreadsheet and saves hours of confu
     },
 
     "project-life-cycle": {
+      outcomes: [
+        "Name the five stages of a project",
+        "Match documents to each stage",
+        "Map a project onto the stages",
+      ],
       explanation_md: `If you know which stage a project is in, you know what work matters right now and which documents people will ask you for. That makes you useful from your first week on a new team.
 
 ## The five stages
@@ -373,6 +393,11 @@ Real projects are messy. A long programme may plan the second year while still d
     },
 
     "starting-a-project": {
+      outcomes: [
+        "Answer the three questions every project start must answer",
+        "Name the topics in this section",
+        "Build the habit of a clear start",
+      ],
       explanation_md: `Many projects that go wrong were in trouble from the first week, because nobody wrote down what success meant, who the project was for, or how anyone would know it had worked. Starting well is cheap. Fixing a badly started project later is expensive and tiring.
 
 ## Why this matters for your job
@@ -460,6 +485,11 @@ At the start of anything, from a church harvest to a donor programme, pause and 
     },
 
     "goals-scope-charter": {
+      outcomes: [
+        "Explain what a project charter is and what goes in it",
+        "Write a good project goal",
+        "Write a one page charter",
+      ],
       explanation_md: `A project charter is often the first document a new team member reads, and drafting one is a task assistants and officers are regularly given. It is short, but it settles the arguments that would otherwise come up again and again.
 
 ## What a charter is
@@ -557,6 +587,11 @@ A charter is not filed and forgotten. If the budget, dates or scope change in a 
       },
     },
     "stakeholders-and-communities": {
+      outcomes: [
+        "Identify stakeholders",
+        "Map their influence and interest",
+        "Engage communities respectfully",
+      ],
       explanation_md: `In northern Ghana, a project can have the right budget and the right plan and still fail because the wrong people were left out. A chief who was not greeted properly, a women's group that was not asked, or a district officer who heard about the project from the radio can each slow or stop the work. Adverts for project officers and assistants regularly ask for stakeholder engagement and community mobilisation for this reason.
 
 ## Who are stakeholders?
@@ -654,6 +689,11 @@ Good engagement builds trust that lasts beyond the project, and that trust is of
     },
 
     logframes: {
+      outcomes: [
+        "Explain the chain of results",
+        "Fill in the columns of a logframe",
+        "Build a four level logframe",
+      ],
       explanation_md: `Many donor funded projects in Ghana are designed and reported using a **logical framework**, usually called a **logframe**. Officer and coordinator adverts mention donor reporting, indicators and results again and again, and nearly all of that rests on the logframe. You may not write one in your first job, but you will need to read one and collect the information it asks for.
 
 ## The idea: a chain of results
@@ -767,6 +807,11 @@ Different donors use slightly different terms: results framework, theory of chan
     },
 
     planning: {
+      outcomes: [
+        "Say what a plan must answer",
+        "Set up a reusable planning spreadsheet",
+        "Accept that plans change",
+      ],
       explanation_md: `A plan is what turns a good idea into work that people can actually do on Monday morning. Project adverts in Ghana ask for work plans, activity plans and budgets more than almost anything else, and assistants spend much of their time updating them. This section teaches you to build those plans yourself.
 
 ## What a plan answers
@@ -866,6 +911,11 @@ A plan is a best guess made with the information you have today. When things cha
     },
 
     "breaking-down-work": {
+      outcomes: [
+        "Build a work breakdown structure",
+        "Break work into deliverables, not just activities",
+        "Check a breakdown with others",
+      ],
       explanation_md: `"Organise a three day farmer training" is too big to act on. Nobody can wake up and do it. "Call three venues in Damongo for prices" is a task someone can finish this afternoon. The skill of turning big goals into small, clear tasks is at the heart of the work plans that project jobs ask for.
 
 ## The work breakdown structure
@@ -971,6 +1021,11 @@ Breaking down work is best done as a group. In a short meeting, write the delive
     },
 
     "schedules-and-gantt-charts": {
+      outcomes: [
+        "Find dependencies between tasks",
+        "Estimate time honestly",
+        "Draw and update a Gantt chart",
+      ],
       explanation_md: `Knowing what to do is half the plan. Knowing when to do it, and in what order, is the other half. Coordinator and assistant adverts ask for scheduling, timelines and activity plans, and many donors want a timeline with every proposal and report.
 
 ## Dependencies
@@ -1077,6 +1132,11 @@ Update the schedule each week: mark tasks done, move bars that slipped, and chec
     },
 
     "simple-budgets": {
+      outcomes: [
+        "Build a project budget from unit costs",
+        "Add contingency",
+        "Follow donor rules",
+      ],
       explanation_md: `Budget and financial tracking skills appear in nearly every project advert, from assistant to coordinator. Donors and managers trust people who can show exactly where money is planned to go and where it went. You do not need to be an accountant, but you do need to build a clear budget and follow it.
 
 ## How a project budget is built
@@ -1193,6 +1253,11 @@ Once a donor approves a budget, spending usually has to match the approved lines
       },
     },
     "risks-and-issues": {
+      outcomes: [
+        "Tell a risk from an issue",
+        "Keep a risk register",
+        "Choose from four ways to respond to a risk",
+      ],
       explanation_md: `Things will go wrong on every project. Funds arrive late, roads flood, a supplier raises prices, a key person falls ill. Good project staff are not people who avoid every problem; they are people who saw it coming and had a plan. Managing risk is listed in coordinator adverts and is part of every serious project plan.
 
 ## Risk or issue?
@@ -1296,6 +1361,11 @@ Review the register at every team meeting. Ask: has anything changed? Are there 
     },
 
     "running-the-work": {
+      outcomes: [
+        "Describe what running the work involves",
+        "Picture a day in the life of a project assistant",
+        "Build habits that earn trust",
+      ],
       explanation_md: `Once a plan is agreed, the real work begins: getting people, tasks, supplies and money to meet in the right place at the right time. This is where project assistants and officers spend most of their days, and where employers see whether someone is reliable.
 
 ## What running the work involves
@@ -1389,6 +1459,11 @@ These habits matter more than any tool, and they are what managers remember when
     },
 
     "task-boards": {
+      outcomes: [
+        "Explain how a task board works",
+        "Limit work in progress",
+        "Set up a task board in Trello or a spreadsheet",
+      ],
       explanation_md: `When a team has dozens of tasks, the questions "Who is doing that?" and "Is it finished?" can eat up hours. A task board answers them at a glance. Coordinator adverts ask for experience with project management tools, and a simple board is the easiest place to start.
 
 ## The idea
@@ -1500,6 +1575,11 @@ Look at the board at the start of each team meeting and walk through Doing first
     },
 
     "meetings-and-minutes": {
+      outcomes: [
+        "Prepare an agenda before a meeting",
+        "Run a meeting and take minutes with action points",
+        "Run community meetings well",
+      ],
       explanation_md: `Projects run on meetings: team check ins, partner meetings, community durbars, donor visits. Badly run meetings waste everyone's time and end with nobody sure what was decided. Assistants are very often the person asked to arrange meetings and take minutes, so doing it well is a quick way to stand out.
 
 ## Before the meeting
@@ -1609,6 +1689,11 @@ Following up on action points is where minutes become useful. A day before each 
     },
 
     "logistics-and-procurement": {
+      outcomes: [
+        "Plan event logistics with a checklist",
+        "Follow a procurement process and compare quotes",
+        "Act with integrity in procurement",
+      ],
       explanation_md: `A training with no lunch, a field visit with no vehicle or a workshop where the projector never arrived can undo weeks of planning. Assistants and officers in Ghana spend a large part of their time on logistics and procurement, and adverts ask for it directly: procurement requests, vendors, travel and event arrangements.
 
 ## Logistics
@@ -1715,6 +1800,11 @@ Procurement rules protect you as well as the project. Never split a purchase int
     },
 
     "monitoring-and-reporting": {
+      outcomes: [
+        "Tell monitoring from evaluation",
+        "Find where monitoring data comes from",
+        "Report honestly",
+      ],
       explanation_md: `Donors, managers, district officials and communities all want to know the same things: what has been done, what it cost, and what changed. Monitoring and reporting answer those questions. In Ghanaian NGO adverts, reporting, monitoring and evaluation, and financial tracking are among the most requested skills, from assistant level upwards.
 
 ## Monitoring and evaluation
@@ -1804,6 +1894,11 @@ Report what really happened, including problems. Donors understand that projects
       },
     },
     "tracking-progress-and-spending": {
+      outcomes: [
+        "Track progress and spending against the plan",
+        "Flag problems with colour",
+        "Keep a regular tracking rhythm",
+      ],
       explanation_md: `Catching a problem in week three, when there is still time to fix it, is most of what good project management looks like. That is why adverts ask for budget tracking, monitoring progress and keeping records. The tool is usually a spreadsheet, and the skill is comparing **planned** with **actual**.
 
 ## Tracking progress
@@ -1917,6 +2012,11 @@ If the tracking sheet is current, writing the report becomes much easier, becaus
     },
 
     "status-and-donor-reports": {
+      outcomes: [
+        "Write a one page status update",
+        "Write a donor report that follows the logframe",
+        "Explain concept notes and proposals",
+      ],
       explanation_md: `Reports are how managers, donors and partners see your work. In NGO adverts in northern Ghana, report writing, narrative and financial reporting, and success stories come up again and again. A clear, honest report makes a project look well run; a confusing one raises questions even when the work was good.
 
 ## Two kinds of report
@@ -2030,6 +2130,11 @@ Before you send any report, check that numbers match, names are spelled correctl
     },
 
     "records-and-documentation": {
+      outcomes: [
+        "Decide what counts as evidence",
+        "Set up a simple folder system",
+        "Protect personal data in records",
+      ],
       explanation_md: `When an auditor, donor or manager asks, "Can you show me the evidence?", a well kept project can answer in minutes. A badly kept one cannot, and that can mean costs being refused or a project's reputation being damaged. Filing and documentation appear in assistant and officer adverts because they protect the organisation, and they protect you.
 
 ## What counts as evidence
@@ -2136,6 +2241,11 @@ Good records are not extra work added at the end. They are a habit built into ev
     },
 
     "closing-and-other-ways": {
+      outcomes: [
+        "Explain why closing a project matters",
+        "Compare other ways of working",
+        "Draft a closing checklist",
+      ],
       explanation_md: `Many projects end in a rush: the money is spent, staff move on, and nobody quite finishes the paperwork or tells the community what happens next. Months later, a donor asks for a final report or an auditor asks for receipts, and nobody can find them. Finishing well is a skill, and employers value people who see work through to the very end.
 
 ## Why closing matters
@@ -2236,6 +2346,11 @@ Think of closing as the last activity in your work plan, with its own tasks, own
     },
 
     "closing-and-lessons-learned": {
+      outcomes: [
+        "Close a project step by step",
+        "Run a lessons learned session",
+        "Make lessons travel to the next project",
+      ],
       explanation_md: `Adverts for project assistants and officers mention documenting lessons learned, and donors often ask for them in final reports. The reason is simple: organisations that learn from each project avoid paying for the same mistake twice. Knowing how to close a project and run a lessons learned session makes you useful at the moment many teams struggle.
 
 ## Closing step by step
@@ -2327,6 +2442,11 @@ Lessons only help if the next team reads them. Keep a shared lessons file for th
       },
     },
     "agile-basics": {
+      outcomes: [
+        "Explain the agile idea",
+        "Describe Scrum and Kanban in plain words",
+        "Plan a two week sprint",
+      ],
       explanation_md: `This topic is optional. Most NGO project roles in northern Ghana use plan driven methods, but if you work with a tech company, a software team or a hub, you will hear words like sprint, backlog and standup. Knowing what they mean helps you join in from day one, and the habits behind them are useful on any project.
 
 ## The agile idea
@@ -2434,6 +2554,11 @@ Even on a plan driven NGO project, you can borrow agile habits: short regular ch
     },
 
     "getting-hired-pm": {
+      outcomes: [
+        "Explain how people usually start in project work",
+        "Describe what employers look for",
+        "Map your route into project work",
+      ],
       explanation_md: `You now know how projects start, how they are planned, run, monitored and closed. The last step is turning that knowledge into a first job. This section is about showing employers you can do the work, and choosing whether a certificate is worth your time and money.
 
 ## How people usually start
@@ -2530,6 +2655,11 @@ Jobs in this field are competitive and applications often have strict deadlines.
     },
 
     "entry-certifications": {
+      outcomes: [
+        "Compare recognised entry certifications",
+        "Decide whether a certificate fits your plans",
+        "Weigh the cost and value",
+      ],
       explanation_md: `Certificates can help you learn in a structured way and show commitment on your CV. They can also cost money and time you might spend better elsewhere. The project assistant adverts studied for this roadmap did not ask for a project management certificate; they asked for skills, experience and often a degree or diploma. So treat a certificate as a possible extra, not a requirement, and decide carefully.
 
 ## The recognised entry options
@@ -2620,6 +2750,11 @@ A certificate does not replace experience, and experience can be built without o
     },
 
     "first-coordination-roles": {
+      outcomes: [
+        "Run a small real project for your portfolio",
+        "Find where coordination roles are advertised",
+        "Prepare interview answers",
+      ],
       explanation_md: `Employers hiring for project roles want proof you can plan, organise, track money and report. A portfolio of real project documents gives that proof, even if you have never held a project job. Combined with a clear CV and good interview answers, it can set you apart from applicants who only list qualifications.
 
 ## Run a small real project

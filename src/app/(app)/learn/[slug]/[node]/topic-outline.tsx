@@ -13,18 +13,24 @@ export function TopicOutline({
   nodes,
   currentId,
   progress,
+  compact = false,
 }: {
   roadmap: { slug: string; title: string };
   nodes: FlatNode[];
   currentId: string;
   progress: ReadonlyMap<string, ProgressStatus>;
+  /** Share a sticky rail with the lesson contents: fill the space left and scroll inside it. */
+  compact?: boolean;
 }) {
   const flat = flattenTree(buildNodeTree(nodes));
   const { done, total } = progressSummary(nodes, progress);
   const complete = total > 0 && done === total;
 
   return (
-    <nav aria-label={`Topics in ${roadmap.title}`} className="flex flex-col gap-4 rounded-lg border border-line p-4">
+    <nav
+      aria-label={`Topics in ${roadmap.title}`}
+      className={`flex flex-col gap-4 rounded-lg border border-line p-4 ${compact ? "max-h-full min-h-48" : ""}`}
+    >
       <div className="flex flex-col gap-2">
         <p className="font-semibold text-content">{roadmap.title}</p>
         <p className="text-sm text-content-2">
@@ -48,7 +54,11 @@ export function TopicOutline({
           />
         </div>
       </div>
-      <ol className="-mx-2 flex max-h-[calc(100dvh-16rem)] flex-col overflow-y-auto border-t border-line pt-2">
+      <ol
+        className={`-mx-2 flex flex-col overflow-y-auto border-t border-line pt-2 ${
+          compact ? "min-h-0 flex-1" : "max-h-[calc(100dvh-16rem)]"
+        }`}
+      >
         {flat.map((n) => {
           const current = n.id === currentId;
           return (

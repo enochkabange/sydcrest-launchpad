@@ -10,6 +10,11 @@ const content: TrackContent = {
   roadmap: "no-code-automation",
   nodes: {
     "no-code-basics": {
+      outcomes: [
+        "Explain what no code means",
+        "See no code skills inside other jobs",
+        "Find tasks in your community a no code tool could take over",
+      ],
       explanation_md: `Mariama runs a small provisions shop in Tamale. Every evening she copies the day's sales from a notebook into a spreadsheet, then sends her supplier a WhatsApp message listing what is running low. It takes her an hour. A person with no code skills could set up a simple order form, a stock sheet that flags low items, and an automatic summary, and give Mariama that hour back every day.
 
 That is what this track is about: building useful tools for real people by clicking, dragging and filling in settings, instead of writing programs.
@@ -106,6 +111,11 @@ Always start with the problem, not the tool. Ask what the person does by hand to
       },
     },
     "what-no-code-builds": {
+      outcomes: [
+        "Name five kinds of no code build",
+        "Spot a task that suits no code",
+        "Know the limits of no code tools",
+      ],
       explanation_md: `Before you learn any tool, learn to see the opportunities. Employers and clients rarely ask for "a no code app". They describe a problem: "we lose track of who has paid", "the survey forms take weeks to type up", "customers keep calling to ask our opening hours". Your value is spotting which kind of build fixes which problem.
 
 ## Five kinds of build
@@ -208,6 +218,11 @@ No code tools are not right for everything. Very large systems, unusual features
       },
     },
     "phone-or-laptop": {
+      outcomes: [
+        "Say honestly what works on a phone and where a computer helps",
+        "Save data and power",
+        "Make a realistic weekly plan for your devices",
+      ],
       explanation_md: `You can learn a lot of no code work on a phone. You can also hit walls where a bigger screen saves hours. Knowing which is which helps you plan your time, your data bundle and your trips to a computer, and it helps you give clients honest advice about the devices their staff will use.
 
 ## What works well on a phone
@@ -302,6 +317,11 @@ The same thinking applies to the people you build for. If an NGO's enumerators c
       },
     },
     "free-plans-and-limits": {
+      outcomes: [
+        "Explain how free plans usually work",
+        "Read a plan page and choose tools a client can keep",
+        "Keep accounts safe",
+      ],
       explanation_md: `Most no code tools let you start without paying. That is great for learning, but it brings two responsibilities: understanding what the free plan allows, and keeping the accounts safe. When you build for a client, both matter even more, because the client has to live with your choices after you leave.
 
 ## How free plans usually work
@@ -406,6 +426,11 @@ Fuseini is asked to build a booking form and reminder automation for a barbering
       },
     },
     "data-first": {
+      outcomes: [
+        "Choose a spreadsheet tool",
+        "Tell a good table from a bad one",
+        "Pick a dataset to improve through this section",
+      ],
       explanation_md: `Every form answer, app record and automation step has to be stored somewhere, and in no code work that somewhere is almost always a table. A form saves each response as a new row. An app reads rows to show a list. An automation watches for a new row and acts on it. If the table is badly designed, every build on top of it inherits the mess.
 
 That is why this section comes before forms, apps and automations. It is also a skill employers ask for directly. NGO monitoring and evaluation roles mention spreadsheets and dashboards, and remote operations roles name table based tools such as Airtable, Notion, Monday.com or SharePoint lists. Each of those works on the same ideas you will learn here.
@@ -493,6 +518,11 @@ Build alongside the lessons. Pick one small real dataset you care about, such as
       },
     },
     "spreadsheets-as-databases": {
+      outcomes: [
+        "Follow four rules for a table that works like a database",
+        "Split data into several tables",
+        "Use the right data types",
+      ],
       explanation_md: `A database is an organised store of records that a computer can search, sort and update reliably. Big companies use database software for this. For a shop, a club or a small NGO project, a well designed spreadsheet can do the same job, and it is exactly what app builders and automation tools expect to connect to.
 
 Remote operations roles that name tools such as Airtable or Notion are really asking whether you can design tables well. Learn the rules here and they carry over to any table tool.
@@ -609,6 +639,11 @@ Ask yourself: if I sorted this sheet by any column, would anything break? If hea
       },
     },
     "clean-data": {
+      outcomes: [
+        "Prevent data mistakes at the start",
+        "Find and fix mistakes that slip through",
+        "Protect a list from new mistakes",
+      ],
       explanation_md: `Data collection roles at NGOs and research firms ask for data quality checks again and again, and for good reason. If one enumerator types "Tamale", another "tamale" and a third "Tml", a report will count three towns instead of one. If a phone number is missing, an automation cannot send the reminder. Clean data is what makes everything you build trustworthy.
 
 There are two jobs: **prevent** mistakes when data goes in, and **find and fix** the ones that still get through.
@@ -698,6 +733,11 @@ Developers say "garbage in, garbage out": a system can only be as good as the da
       },
     },
     "reports-and-dashboards": {
+      outcomes: [
+        "Start a report from its question",
+        "Use summary formulas and pivot tables",
+        "Build an honest chart and a small dashboard",
+      ],
       explanation_md: `A manager does not want to scroll through 400 rows. She wants answers: how many households did the survey reach in each district, which product sold most this month, how many members still owe dues. NGO monitoring and evaluation roles in Ghana regularly ask for dashboards in Excel or Power BI, and operations roles ask for the same thing in other tools. Turning clean data into clear answers is one of the most valued no code skills.
 
 ## Start from the question
@@ -811,6 +851,11 @@ Remember: a report is only as good as the data under it, so clean first, summari
       },
     },
     forms: {
+      outcomes: [
+        "Tell apart two kinds of form",
+        "Handle personal data that comes in through forms",
+        "Plan a form before you build it",
+      ],
       explanation_md: `Think of a form as the front door of a system. Orders, bookings, registrations, complaints and survey answers all come in through it, and they arrive in the same shape every time, ready to land in a table. If the door is well built, everything behind it works better.
 
 Forms are also where Ghanaian job adverts for no code skills are strongest. Data collection officer, enumerator and monitoring and evaluation roles at NGOs and research firms, including roles based in Tamale, name mobile survey tools such as KoboToolbox, ODK, SurveyCTO and CommCare. Being comfortable with these tools can be the difference between applying and being shortlisted.
@@ -904,6 +949,11 @@ Filling in forms works on any device. Building a short online form works in a ph
       },
     },
     "online-forms": {
+      outcomes: [
+        "Choose the right question types and write clear questions",
+        "Add required questions, validation and branching",
+        "Send responses to a sheet",
+      ],
       explanation_md: `An online form is often the first build a small business or group asks for. A chop bar in Tamale wants lunch orders before noon. A church youth group wants members registered for a retreat. A tailor wants customers to book fittings. With a form builder such as Google Forms or Microsoft Forms, you can set any of these up in an afternoon, on a phone or a computer.
 
 ## Choose the right question type
@@ -1018,6 +1068,11 @@ Because the form collects names and phone numbers, Wumpini adds a line saying wh
       },
     },
     "field-surveys": {
+      outcomes: [
+        "Explain why field surveys use special tools",
+        "Follow the survey workflow step by step",
+        "Work as a good enumerator and protect data",
+      ],
       explanation_md: `If you want a job in data collection or monitoring and evaluation in northern Ghana, this lesson matters. Enumerator and data officer adverts from NGOs, research firms and donor projects name tools such as KoboToolbox, ODK, SurveyCTO and CommCare again and again. KoboToolbox and ODK are the examples here; the workflow is similar across all of them.
 
 ## Why special survey tools?
@@ -1122,6 +1177,11 @@ Survey data is personal data, sometimes sensitive. Under Ghana's Data Protection
       },
     },
     "survey-logic": {
+      outcomes: [
+        "Use skip logic, constraints and calculations",
+        "Write a small XLSForm",
+        "Pilot a survey before deployment",
+      ],
       explanation_md: `A survey that asks a non farmer how many acres of maize they planted wastes time and annoys people. A survey that accepts a household size of 250 produces nonsense reports. Smart surveys avoid both, and adverts for data collection roles ask for exactly this kind of quality checking. This lesson is optional, but it is the step that turns a form filler into someone who can design surveys.
 
 ## Three tools for smarter surveys
@@ -1227,6 +1287,11 @@ Always pilot test: fill in the form yourself with normal answers, odd answers an
       },
     },
     websites: {
+      outcomes: [
+        "Decide whether a business needs a website",
+        "Name the parts of any website",
+        "Plan content first",
+      ],
       explanation_md: `When a funder hears about a small NGO in Bolgatanga, the first thing they do is search for it online. When someone in Accra wants to order smocks from a weaver in Daboya, they want to see her work and a way to contact her. A simple, honest website helps people trust and find an organisation. Building and looking after these sites is a skill that appears in Ghanaian adverts for communications officers, social media officers, IT officers and web roles, often naming WordPress.
 
 ## Do they even need a website?
@@ -1325,6 +1390,11 @@ Collect the content before building: a short description, a few good photos take
       },
     },
     "site-builders": {
+      outcomes: [
+        "Compare website builders",
+        "Choose a builder",
+        "Build and publish a one page site",
+      ],
       explanation_md: `No website builder is best for everyone. A good builder for a youth club is a poor one for a growing online shop. Knowing the trade offs lets you advise clients honestly and avoid sites that get abandoned after a month.
 
 ## The range of builders
@@ -1429,6 +1499,11 @@ The most common failure is not a bad builder. It is a site nobody updates. Pick 
       },
     },
     "wordpress-basics": {
+      outcomes: [
+        "Compare two ways to get WordPress",
+        "Practise without hosting",
+        "Keep a WordPress site healthy",
+      ],
       explanation_md: `WordPress appears in Ghanaian adverts for communications officers, social media officers, IT officers and web developers. Often the job is not building a site from nothing but looking after one: adding news, updating pages, installing a plugin, keeping things updated. Those are learnable without code, and they make you useful to many organisations.
 
 ## Two ways to get WordPress
@@ -1540,6 +1615,11 @@ The dashboard opens in a phone browser, and posting a short update from a phone 
       },
     },
     "going-live": {
+      outcomes: [
+        "Explain domains and hosting and who owns the accounts",
+        "Make a site secure and fast on mobile data",
+        "Make a site findable and accessible",
+      ],
       explanation_md: `A site that sits on a builder's own address can be enough for practice or a club. A real business or NGO usually wants its own address, a site that loads fast on mobile data, and a way for people to find it. Web roles in Ghana mention hosting control panels, accessibility and keeping sites maintained. This lesson explains the pieces in plain terms so you can set them up, or at least advise clients well.
 
 ## Domains and hosting
@@ -1649,6 +1729,11 @@ Hawa launches a site for a shea butter group in Nalerigu. She registers the doma
       },
     },
     apps: {
+      outcomes: [
+        "Explain how sheet based apps work",
+        "Know when not to build an app",
+        "Decide whether a situation needs an app",
+      ],
       explanation_md: `A spreadsheet is great for the person who built it. For a shop assistant recording sales on a busy afternoon, or a field officer checking which farmers received seed, scrolling through rows and columns on a small screen is slow and easy to get wrong. A simple app solves this. It sits on top of the same table and shows each person clear screens: a list to search, a form to add a record, a button to mark something done.
 
 No code app builders make this possible without programming. Remote and freelance adverts name tools such as Softr, Glide and Power Apps, and university and corporate roles ask for Power Apps alongside Power Automate. In Ghana, the demand is more often a small client project: a stock app for a shop, a member list for a cooperative, an attendance tracker for a school club.
@@ -1744,6 +1829,11 @@ Notice the order: the clean sheet came first, then the app.`,
       },
     },
     "apps-from-sheets": {
+      outcomes: [
+        "Build a working app from a sheet step by step",
+        "Keep the sheet behind an app healthy",
+        "Name the main sheet based app tools",
+      ],
       explanation_md: `Building your first app from a spreadsheet is one of the most satisfying moments in no code work. Within an hour you can turn a tidy sheet into something that looks and feels like a real phone app. This lesson walks through the general steps using tools such as Glide, AppSheet and Power Apps as examples. Their menus differ, but the ideas are the same.
 
 ## The tools, briefly
@@ -1858,6 +1948,11 @@ Once an app is live, avoid renaming or deleting columns in the sheet, which can 
       },
     },
     "planning-app-screens": {
+      outcomes: [
+        "Start an app plan with people, not screens",
+        "Sketch screens on paper first",
+        "Decide who sees and changes what",
+      ],
       explanation_md: `The fastest way to build a bad app is to open the builder first. The best no code builders spend their first hour with paper and the people who will use the app. Corporate roles that ask for Power Apps also ask for end user support, and good planning is what keeps support calls few.
 
 ## Start with people, not screens
@@ -1963,6 +2058,11 @@ When she shows the sketch to a facilitator, he points out that some learners sha
       },
     },
     automation: {
+      outcomes: [
+        "Explain what an automation is",
+        "Compare three ways to automate",
+        "Automate carefully",
+      ],
       explanation_md: `Every office has jobs that eat time without needing much thought: copying form answers into another sheet, emailing a confirmation, reminding people about a deadline, telling a manager when stock is low. Automation tools do these jobs by themselves, every time, without forgetting. Remote operations and systems roles name tools such as Zapier, Make and Power Automate, and ask people to build, monitor and fix workflows. Even where no advert mentions automation, a person who can save a team hours each week stands out.
 
 ## What an automation is
@@ -2058,6 +2158,11 @@ Issahaku helps a computer training centre in Tamale. Every registration arrives 
       },
     },
     "triggers-and-actions": {
+      outcomes: [
+        "Watch and map a manual process",
+        "Mark its triggers, actions and data",
+        "Think through what can go wrong",
+      ],
       explanation_md: `Most failed automations fail before anyone opens a tool. Someone automates a process they have not fully understood, the workflow does something slightly wrong, and people stop trusting it. The fix is simple and costs nothing: map the process on paper first. Operations roles that ask for automation skills also ask for written procedures, and mapping is where both start.
 
 ## Step 1: watch the manual process
@@ -2168,6 +2273,11 @@ Anyone can click buttons in an automation tool. People who can explain a process
       },
     },
     "automation-tools": {
+      outcomes: [
+        "Compare the main types of automation tool",
+        "Watch runs and explain why they fail",
+        "Build, break and fix a simple automation",
+      ],
       explanation_md: `Once a process is mapped, you choose how to build it. No single tool is best. Remote operations adverts name Zapier, Make and Power Automate, and some ask candidates to monitor workflows and troubleshoot failures. This lesson compares the main types and shows how to keep automations healthy.
 
 ## The main types
@@ -2282,6 +2392,11 @@ Prefer built in features when they do the job. Choose a tool the client can unde
       },
     },
     "message-automation": {
+      outcomes: [
+        "Keep automatic messages helpful, not spammy",
+        "Automate emails, WhatsApp Business replies and SMS",
+        "Test messages like a customer",
+      ],
       explanation_md: `Many automations end with a message: a booking confirmation, a receipt, a reminder, a reply outside working hours. Done well, automatic messages make a small business feel organised and caring. Done badly, they annoy people, break trust and can break rules. Digital and communications roles in Ghana ask for email marketing tools, and many small business clients will ask you about WhatsApp.
 
 ## Helpful, not spammy
@@ -2383,6 +2498,11 @@ Before switching anything on, send yourself a message as if you were a customer,
       },
     },
     "ai-steps": {
+      outcomes: [
+        "Know where AI steps help and where they go wrong",
+        "Take extra care with agents",
+        "Put privacy first when testing an AI step",
+      ],
       explanation_md: `Automation tools increasingly include AI steps: a step that reads a message and sorts it, summarises a long form answer, drafts a reply, or pulls details such as a name and amount out of free text. Some tools also offer agents, which can decide on several steps by themselves to reach a goal. One remote advert in our research asked for AI implementation alongside table and automation tools, so it is worth understanding. This lesson is optional, and the AI Tools for Work track goes deeper.
 
 ## Where AI steps help
@@ -2482,6 +2602,11 @@ AI saves her hours, and people still make every decision.`,
       },
     },
     "clients-and-earning": {
+      outcomes: [
+        "Explain what changes when you build for others",
+        "Know there is no single job title for this work",
+        "Review a build as if a client depended on it",
+      ],
       explanation_md: `Building something for yourself is practice. Building something another person relies on is work, and it brings responsibilities. A shop owner trusts you with her customers' phone numbers. An NGO trusts you with survey answers about households. A school trusts that the fees app will still work when you have moved on. This final section is about earning that trust, and then turning your skills into paid work.
 
 ## What changes when you build for others
@@ -2581,6 +2706,11 @@ You do not need to be an expert to start earning trust. You need to be careful, 
       },
     },
     "privacy-and-permissions": {
+      outcomes: [
+        "Explain Ghana's data law in plain terms",
+        "Collect only what you need and tell people why",
+        "Set sharing permissions and plan to delete data",
+      ],
       explanation_md: `Almost every form, sheet and app you build will hold personal data: names, phone numbers, locations, ages, sometimes health or income details. Mishandling it can embarrass a client, hurt the people whose data it is, and break the law. Being known as someone who handles data carefully is a real advantage, especially for NGO and research work.
 
 ## Ghana's law in plain terms
@@ -2693,6 +2823,11 @@ Fuseini reviews a training registration form for an NGO in Damongo. He removes "
       },
     },
     "testing-and-handover": {
+      outcomes: [
+        "Test a build in three rounds",
+        "Write a short guide for users",
+        "Hand over accounts safely and agree support",
+      ],
       explanation_md: `A build that works for you is not finished. It is finished when real people can use it, it survives odd inputs, and the client can keep it running without you. Adverts for data collection roles mention pilot testing; operations roles mention written procedures; app roles mention end user support. This lesson covers all three.
 
 ## Test in three rounds
@@ -2792,6 +2927,11 @@ Amina finishes an attendance app for a literacy programme in Savelugu. She tests
       },
     },
     "portfolio-and-work": {
+      outcomes: [
+        "Find where these skills show up in jobs",
+        "Build a strong portfolio",
+        "Find small paid projects",
+      ],
       explanation_md: `Certificates show you studied. A portfolio shows you can build. For no code skills, which rarely have their own job title in Ghana, a small set of real projects is often what convinces an NGO, a business or a client to give you a chance.
 
 ## Where these skills show up in jobs

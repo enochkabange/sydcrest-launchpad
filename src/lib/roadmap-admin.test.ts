@@ -131,6 +131,18 @@ describe("draft import plan", () => {
     expect(rows[0].parent_id).toBeNull();
   });
 
+  it("writes difficulty, complexity, career level and jobs, and null when a draft leaves them out (#255)", () => {
+    const nodes = [
+      { slug: "tools", title: "Tools", summary: "s", parent: null, optional: false, resources: [], difficulty: "beginner" as const, complexity: 1 as const, careerLevel: "foundation" as const, jobs: ["Data Analyst"] },
+      { slug: "excel", title: "Excel", summary: "s", parent: "tools", optional: false, resources: [], difficulty: "intermediate" as const, complexity: 3 as const },
+      { slug: "old", title: "Old", summary: "s", parent: "tools", optional: false, resources: [] },
+    ];
+    const rows = draftNodeRowsWithParents("r1", nodes, new Map([["tools", "t"], ["excel", "e"], ["old", "o"]]));
+    expect(rows[0]).toMatchObject({ difficulty: "beginner", complexity: 1, career_level: "foundation", jobs: ["Data Analyst"] });
+    expect(rows[1]).toMatchObject({ difficulty: "intermediate", complexity: 3, career_level: null, jobs: null });
+    expect(rows[2]).toMatchObject({ difficulty: null, complexity: null, career_level: null, jobs: null });
+  });
+
   it("round trips kind and choice_group, and writes null when a draft leaves them out", () => {
     const nodes = [
       { slug: "tools", title: "Tools", summary: "s", parent: null, optional: false, resources: [] },

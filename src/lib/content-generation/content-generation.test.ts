@@ -394,3 +394,57 @@ describe("collecting a batch", () => {
     expect(writes.filter((w) => w.table === "node_content")).toHaveLength(1);
   });
 });
+
+describe("parseGeneratedContent: lesson anatomy (#255)", () => {
+  const base = {
+    explanation_md: "Why it matters. ".repeat(40),
+    practice_task_md: "**Goal:** a stock list for a Tamale shop. ".repeat(4),
+    quiz: {
+      pass_threshold: 75,
+      questions: Array.from({ length: 4 }, (_, i) => ({
+        prompt: `Question ${i + 1}?`,
+        options: ["One", "Two", "Three", "Four"],
+        answer_index: i % 4,
+        explanation: "Because the lesson says so.",
+      })),
+    },
+  };
+
+  it("accepts a lesson without any anatomy (the 742 existing lessons)", () => {
+    const result = parseGeneratedContent(base);
+    expect(result.ok).toBe(true);
+    if (result.ok) expect(result.content.outcomes).toBeUndefined();
+  });
+
+  it("accepts and keeps every anatomy field", () => {
+    const result = parseGeneratedContent({
+      ...base,
+      outcomes: ["Sort a stock list", "Total a column", "Share a sheet"],
+      workedExample_md: "Hawa lists her stock.",
+      keyTerms: [{ term: "Cell", definition: "One box in a sheet." }],
+      commonMistakes: ["Typing totals by hand"],
+      selfCheck: ["Can you total a column?"],
+    });
+    expect(result.ok ? [] : result.errors).toEqual([]);
+    if (result.ok) {
+      expect(result.content.outcomes).toHaveLength(3);
+      expect(result.content.keyTerms).toEqual([{ term: "Cell", definition: "One box in a sheet." }]);
+    }
+  });
+
+  it("rejects outcomes of the wrong size, length or shape, and dashes", () => {
+    const errors = (extra: object) => {
+      const r = parseGeneratedContent({ ...base, ...extra });
+      return r.ok ? [] : r.errors;
+    };
+    expect(errors({ outcomes: ["One", "Two"] }).join()).toMatch(/3 to 4 items/);
+    expect(errors({ outcomes: ["a", "b", "c", "d", "e"] }).join()).toMatch(/3 to 4 items/);
+    expect(errors({ outcomes: ["a", "b", "x".repeat(121)] }).join()).toMatch(/longer than 120/);
+    expect(errors({ outcomes: "Sort a list" }).join()).toMatch(/list of non empty strings/);
+    expect(errors({ outcomes: ["Sort a list — fast", "b", "c"] }).join()).toMatch(/em or en dash/);
+    expect(errors({ keyTerms: [{ term: "Cell" }] }).join()).toMatch(/term and definition/);
+    expect(errors({ keyTerms: [] }).join()).toMatch(/non empty list/);
+    expect(errors({ workedExample_md: "" }).join()).toMatch(/workedExample_md/);
+    expect(errors({ commonMistakes: [""] }).join()).toMatch(/commonMistakes/);
+  });
+});

@@ -13,9 +13,30 @@ export type ContentImportSummary = {
   missingRoadmaps: string[];
 };
 
+type ContentRow = {
+  explanation_md: string;
+  practice_task_md: string | null;
+  outcomes?: string[] | null;
+  worked_example_md?: string | null;
+  key_terms?: unknown;
+  common_mistakes?: string[] | null;
+  self_check?: string[] | null;
+};
+
+/** The optional lesson anatomy (issue #255) as node_content columns; null when a lesson leaves a part out. */
+export function anatomyColumns(content: GeneratedContent) {
+  return {
+    outcomes: content.outcomes ?? null,
+    worked_example_md: content.workedExample_md ?? null,
+    key_terms: content.keyTerms ?? null,
+    common_mistakes: content.commonMistakes ?? null,
+    self_check: content.selfCheck ?? null,
+  };
+}
+
 /** Same comparison the import uses, exported for tests. */
 export function sameContent(
-  existing: { explanation_md: string; practice_task_md: string | null } | null,
+  existing: ContentRow | null,
   existingQuiz: { questions: unknown; pass_threshold: number } | null,
   existingKey: unknown,
   content: GeneratedContent,
@@ -25,6 +46,7 @@ export function sameContent(
   return (
     existing.explanation_md === content.explanation_md &&
     existing.practice_task_md === content.practice_task_md &&
+    JSON.stringify(pickAnatomy(existing)) === JSON.stringify(anatomyColumns(content)) &&
     existingQuiz.pass_threshold === passThreshold &&
     JSON.stringify(existingQuiz.questions) === JSON.stringify(questions) &&
     JSON.stringify(existingKey) === JSON.stringify(answerKey)
@@ -76,6 +98,20 @@ export async function importTrackContent(supabase: Client, tracks: TrackContent[
   return summary;
 }
 
+/** Stored anatomy in the same shape as anatomyColumns; key terms rebuilt so jsonb key order never matters. */
+function pickAnatomy(row: ContentRow) {
+  const terms = Array.isArray(row.key_terms)
+    ? (row.key_terms as { term?: unknown; definition?: unknown }[]).map((t) => ({ term: t.term, definition: t.definition }))
+    : null;
+  return {
+    outcomes: row.outcomes ?? null,
+    worked_example_md: row.worked_example_md ?? null,
+    key_terms: terms,
+    common_mistakes: row.common_mistakes ?? null,
+    self_check: row.self_check ?? null,
+  };
+}
+
 const NODE_CONCURRENCY = 6;
 
 /** Runs fn over items with at most `limit` in flight, keeping results in input order. */
@@ -95,7 +131,7 @@ export async function mapLimit<T, R>(items: T[], limit: number, fn: (item: T) =>
 /** Returns true when something was written, false when the node was already up to date. */
 async function writeNode(supabase: Client, nodeId: string, content: GeneratedContent): Promise<boolean> {
   const [{ data: existing, error: contentError }, { data: quiz, error: quizError }] = await Promise.all([
-    supabase.from("node_content").select("id, explanation_md, practice_task_md, content_version").eq("node_id", nodeId).maybeSingle(),
+    supabase.from("node_content").select("id, explanation_md, practice_task_md, content_version, outcomes, worked_example_md, key_terms, common_mistakes, self_check").eq("node_id", nodeId).maybeSingle(),
     supabase.from("node_quiz").select("id, questions, pass_threshold").eq("node_id", nodeId).maybeSingle(),
   ]);
   if (contentError) throw new Error(`Could not read node_content: ${contentError.message}`);
@@ -129,6 +165,7 @@ async function writeNode(supabase: Client, nodeId: string, content: GeneratedCon
   const fields = {
     explanation_md: content.explanation_md,
     practice_task_md: content.practice_task_md,
+    ...anatomyColumns(content),
     generated_at: new Date().toISOString(),
   };
   const { error: saveContentError } = existing

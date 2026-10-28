@@ -45,6 +45,14 @@ describe("roadmap lesson content", () => {
           expect(result.ok ? [] : result.errors).toEqual([]);
         });
 
+        it(`${slug} has 3 or 4 "You will be able to" outcomes (#255)`, () => {
+          expect(node.outcomes?.length ?? 0).toBeGreaterThanOrEqual(3);
+          expect(node.outcomes?.length ?? 0).toBeLessThanOrEqual(4);
+          for (const outcome of node.outcomes ?? []) {
+            expect(outcome, "starts with a capital, no full stop").toMatch(/^[A-Z].*[^.]$/);
+          }
+        });
+
         it(`${slug} explanation is 300 to 600 words`, () => {
           const words = node.explanation_md.split(/\s+/).filter(Boolean).length;
           expect(words).toBeGreaterThanOrEqual(300);

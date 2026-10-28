@@ -79,6 +79,10 @@ export const excelPowerBi: RoadmapDraft = {
         "Banks, NGOs, shops and offices keep their records in spreadsheets, and almost every office job expects you to use one. This section gets you working in a free spreadsheet on whatever device you have.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [excelHelp, lfExcel],
     },
     {
@@ -88,6 +92,8 @@ export const excelPowerBi: RoadmapDraft = {
         "Excel for the web and the Excel mobile app are free with a Microsoft account, with some features missing, and Google Sheets works much the same way. You will set one up, save files to OneDrive and learn which tasks are easier on a bigger screen.",
       parent: "spreadsheet-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [officeWeb, excelAndroid, RES.lfSheets],
     },
     {
@@ -97,6 +103,8 @@ export const excelPowerBi: RoadmapDraft = {
         "Good reports start with one row per record, one column per detail and no merged cells. You will turn a messy list, such as a Tamale shop's stock sheet, into a proper Excel table.",
       parent: "spreadsheet-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [excelTables, lfExcel],
     },
     {
@@ -106,6 +114,8 @@ export const excelPowerBi: RoadmapDraft = {
         "Formulas let Excel do the arithmetic, and references decide what happens when you copy a formula to other cells. You will learn relative and absolute references so your totals stay correct.",
       parent: "spreadsheet-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [excelFormulas, excelVideos],
     },
     {
@@ -115,6 +125,10 @@ export const excelPowerBi: RoadmapDraft = {
         "Most office reporting is a handful of functions used well on clean data. This section covers those functions, lookups and cleaning.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "junior",
+      jobs: ["Data Capturer", "Data Entry Specialist", "Data Officer"],
       resources: [excelVideos],
     },
     {
@@ -124,6 +138,8 @@ export const excelPowerBi: RoadmapDraft = {
         "SUM, AVERAGE, COUNTIF, SUMIFS and IF answer most questions a manager asks, such as sales by branch or how many beneficiaries are female. You will practise them on a small cedis sales or survey dataset.",
       parent: "working-with-data",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [excelFormulas, excelVideos],
     },
     {
@@ -133,6 +149,8 @@ export const excelPowerBi: RoadmapDraft = {
         "Lookups pull matching details from another table, such as a price from a product list or a district from a staff ID. You will learn XLOOKUP and recognise the older VLOOKUP that many offices still use.",
       parent: "working-with-data",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [excelXlookup, sheetsXlookup],
     },
     {
@@ -142,6 +160,8 @@ export const excelPowerBi: RoadmapDraft = {
         "Sorting and filtering help you find what matters, while dropdown lists and validation rules stop bad data being typed in at all. You will build an entry sheet that only accepts sensible values.",
       parent: "working-with-data",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [excelValidation],
     },
     {
@@ -151,6 +171,8 @@ export const excelPowerBi: RoadmapDraft = {
         "Real data arrives with extra spaces, mixed capitals, phone numbers stored as numbers and dates Excel cannot read. You will learn TRIM, text functions, Text to Columns and how to fix dates so calculations work.",
       parent: "working-with-data",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [excelFormulas, RES.kaggleCleaning],
     },
     {
@@ -160,6 +182,10 @@ export const excelPowerBi: RoadmapDraft = {
         "Managers want the answer, not the raw rows. This section turns data into summaries, charts and highlights.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Excel Specialist", "Accounts Officer", "MIS Officer"],
       resources: [excelPivot],
     },
     {
@@ -169,6 +195,8 @@ export const excelPowerBi: RoadmapDraft = {
         "A PivotTable summarises thousands of rows in seconds, for example total sales by month and region. You will build and rearrange PivotTables, which is easier on a computer screen but possible in Excel for the web.",
       parent: "summaries-and-charts",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [excelPivot, sheetsPivot],
     },
     {
@@ -178,6 +206,8 @@ export const excelPowerBi: RoadmapDraft = {
         "A good chart answers one question at a glance, so you will learn when to use bars, lines or a simple table instead. You will also learn to title and label charts so nobody misreads them.",
       parent: "summaries-and-charts",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [excelChart, RES.kaggleViz],
     },
     {
@@ -187,6 +217,8 @@ export const excelPowerBi: RoadmapDraft = {
         "Colour rules can flag overdue payments, low stock or targets missed without anyone searching for them. You will add rules that highlight what needs attention and avoid rainbow sheets that hide the message.",
       parent: "summaries-and-charts",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [excelConditional, sheetsConditional],
     },
     {
@@ -196,6 +228,10 @@ export const excelPowerBi: RoadmapDraft = {
         "Weekly and monthly reports are where Excel skills turn into value for an employer. This section makes them repeatable and readable.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
+      careerLevel: "mid",
+      jobs: ["Excel and Power BI Reporting Specialist", "MEL Officer / Data Analyst"],
       resources: [excelPowerQuery],
     },
     {
@@ -205,6 +241,8 @@ export const excelPowerBi: RoadmapDraft = {
         "Power Query records your cleaning steps so next month's file can be cleaned with one click. The editor is in desktop Excel for Windows and Mac, not in free Excel for the web, and the same engine is free inside Power BI Desktop.",
       parent: "excel-reports",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [excelPowerQuery, powerQueryWhat],
     },
     {
@@ -214,6 +252,8 @@ export const excelPowerBi: RoadmapDraft = {
         "You will combine a PivotTable, a few key numbers, a chart and highlights into one clean page a manager can read on a phone. Building one for a real or realistic case, such as an NGO's monthly activity summary, gives you a strong portfolio piece.",
       parent: "excel-reports",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [excelPivot, excelChart],
     },
     {
@@ -223,6 +263,10 @@ export const excelPowerBi: RoadmapDraft = {
         "Power BI builds interactive dashboards from one or many data sources and appears in many Ghanaian reporting, MIS and monitoring adverts. Power BI Desktop runs only on Windows, so for this section you need a Windows computer, for example at a school lab, library or internet café; without one, a free browser tool such as Google's Data Studio teaches the same ideas.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["BI Analyst", "Data Analyst"],
       resources: [RES.powerBi, pbiDesktopStart, dataStudio],
     },
     {
@@ -232,6 +276,8 @@ export const excelPowerBi: RoadmapDraft = {
         "Power BI Desktop is a free download for Windows, and you can build and save reports in it without any account or licence. You will check the computer can run it, install it, tour the report, table and model views, and open a sample file.",
       parent: "power-bi",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [pbiDesktopDownload, pbiDesktopStart],
     },
     {
@@ -241,6 +287,8 @@ export const excelPowerBi: RoadmapDraft = {
         "You will load Excel and CSV files and shape them in Power Query, using the same cleaning ideas you learned in Excel. Clean, well named columns now save hours later.",
       parent: "power-bi",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [pbiPrepare, powerQueryWhat],
     },
     {
@@ -250,6 +298,8 @@ export const excelPowerBi: RoadmapDraft = {
         "A model links tables, such as sales to products and branches, so one filter works across them all. You will build a small star shaped model with one fact table and a few lookup tables.",
       parent: "power-bi",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [pbiModelPath, pbiRelationships, pbiStarSchema],
     },
     {
@@ -259,6 +309,8 @@ export const excelPowerBi: RoadmapDraft = {
         "DAX is Power BI's formula language, and measures such as total sales or average score update as users click filters. You will write a few simple measures and learn why measures beat calculated columns for totals.",
       parent: "power-bi",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [daxModule, daxReference],
     },
     {
@@ -268,6 +320,10 @@ export const excelPowerBi: RoadmapDraft = {
         "A dashboard is only useful if the right people read it and trust it. This section covers design, sharing and keeping data fresh.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "specialist",
+      jobs: ["HR Data Analytics Officer"],
       resources: [pbiVisualsPath],
     },
     {
@@ -277,6 +333,8 @@ export const excelPowerBi: RoadmapDraft = {
         "Put the most important numbers top left, keep to a few visuals per page and use colour only to draw attention. You will also check your report reads well on a phone screen and for people with colour blindness.",
       parent: "reports-people-use",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [pbiVisualsPath, pbiAccessibility],
     },
     {
@@ -286,6 +344,8 @@ export const excelPowerBi: RoadmapDraft = {
         "Organisations share reports through the Power BI service and mobile app, which need a work or school account, and set data to refresh on a schedule. You will learn how sharing works once you join an organisation, and why publish to web makes a report public to anyone, which must never be used for bank, health or beneficiary data.",
       parent: "reports-people-use",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [pbiService, pbiRefresh, pbiPublishWeb],
     },
     {
@@ -295,6 +355,10 @@ export const excelPowerBi: RoadmapDraft = {
         "Employers trust what they can see, so a few clear sample reports matter more than a list of skills. This section helps you show your work and choose what to learn next.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Data Officer", "Excel Specialist"],
       resources: [RES.lfJobsearch],
     },
     {
@@ -304,6 +368,8 @@ export const excelPowerBi: RoadmapDraft = {
         "Build two or three reports on open or made up data, such as a market trader's sales or an NGO field survey, and share screenshots and a short write up. Never use real customer or beneficiary data without permission.",
       parent: "getting-hired-excel",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.kaggleDatasets, RES.gss, pbiMobile],
     },
     {
@@ -313,6 +379,8 @@ export const excelPowerBi: RoadmapDraft = {
         "These skills fit admin, accounts, MIS, monitoring and evaluation, and reporting roles, and optional paid exams such as Microsoft Office Specialist Excel Associate and Power BI Data Analyst (PL 300) exist if an employer asks for them. To go further into SQL and Python, continue with the Data Analyst track.",
       parent: "getting-hired-excel",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [mosExcel, pl300],
     },
   ],

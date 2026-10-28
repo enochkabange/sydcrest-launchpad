@@ -45,6 +45,14 @@ money and data, not short on ability.
   no trick wording, no "all of the above". A one sentence explanation per
   question. `answer_index` is 0 based. `pass_threshold` is a percentage from
   50 to 100: use 75 for 4 questions and 80 for 5.
+- **Outcomes:** 3 or 4 short "You will be able to" items per lesson, each
+  starting with a verb, no full stop, drawn only from what the lesson teaches.
+- **Optional anatomy:** `workedExample_md`, `keyTerms`, `commonMistakes`,
+  `selfCheck`; the lesson page shows each one when present.
+- **Ratings (issue #255):** every node in `src/content/roadmaps/<track>.ts`
+  has `difficulty` and `complexity` (1 to 5); every section has `careerLevel`
+  and `jobs`, using only job titles found in `research/<track>.md` (leave it
+  empty rather than invent one; never salaries).
 - Shape: exactly what `src/lib/content-generation/schema.ts` validates.
 
 ## Local context and voice

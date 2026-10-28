@@ -12,6 +12,11 @@ const content: TrackContent = {
   roadmap: "data-scientist",
   nodes: {
     "before-you-start": {
+      outcomes: [
+        "Sort real questions into four kinds",
+        "Describe what the track covers",
+        "Plan how to work through it",
+      ],
       explanation_md: `## Why this matters
 
 Banks, savings and loans companies, mobile money providers, agritech firms, NGOs and research projects in Ghana all collect more data than they can read. An analyst tells them what happened last month. A data scientist goes further: how sure are we that this change is real, what caused it, what is likely to happen next, and what should we do about it? Those questions decide where money, seed, medicine and staff time go, so the people who can answer them carefully are valuable.
@@ -103,6 +108,11 @@ Amina works for an NGO in Bolgatanga that runs a nutrition programme. Her manage
       },
     },
     "what-you-need-first": {
+      outcomes: [
+        "Explain why the Data Analyst track is the base",
+        "Name the maths and tools you need first",
+        "Run a self check and find what to revise",
+      ],
       explanation_md: `## Why this matters
 
 Data science adverts in Ghana almost always ask for Python, SQL and statistics together, and most ask for a degree with a strong maths or numbers component. This track builds on that base rather than repeating it. Starting without the base is the most common reason people stall, so check yourself honestly now.
@@ -208,6 +218,11 @@ If you can predict the output (Tamale 865, Yendi 640) and explain each line, you
       },
     },
     "data-science-in-ghana": {
+      outcomes: [
+        "Describe who hires data scientists in Ghana",
+        "Explain what adverts ask for",
+        "Map the realistic route into the work",
+      ],
       explanation_md: `## Why this matters
 
 Knowing where data scientists work, and what those employers actually ask for, stops you from studying in a vacuum. It also helps you see a realistic route in, rather than waiting for a perfect job title to appear.
@@ -307,6 +322,11 @@ Issahaku is an M&E assistant for an agriculture NGO in Damongo. He already clean
       },
     },
     "statistics-for-decisions": {
+      outcomes: [
+        "Explain why you almost never see all the data",
+        "Report uncertainty in plain words",
+        "Name the topics in this section",
+      ],
       explanation_md: `## Why this matters
 
 Anyone can run a model in a few lines of code. What employers pay a data scientist for is judgement: knowing how sure you are, knowing when a difference is real, and knowing when a pattern is only a coincidence. That judgement comes from statistics. It is also the skill that protects people. When an NGO decides which communities get a health programme, or a lender decides who gets credit, a careless statistical claim has real consequences.
@@ -397,6 +417,11 @@ These figures are invented for teaching. Real survey reports from bodies such as
       },
     },
     "probability-and-distributions": {
+      outcomes: [
+        "Explain probability and the shape of a distribution",
+        "Use standard deviation to describe spread",
+        "Show the central limit theorem with a simulation",
+      ],
       explanation_md: `## Why this matters
 
 Every survey, experiment and model you build rests on probability. If you understand how random variation behaves, you can tell a lender whether a jump in defaults is alarming or normal, and tell an NGO why 400 households can say something useful about a district of thousands.
@@ -511,6 +536,11 @@ Fuseini checks a savings group's records. Weekly deposits are skewed: most membe
       },
     },
     "inference-and-hypothesis-tests": {
+      outcomes: [
+        "Compute and explain a confidence interval",
+        "Run a hypothesis test and read a p value",
+        "Explain why effect size matters more than significance",
+      ],
       explanation_md: `## Why this matters
 
 Managers constantly ask "is this difference real?" Did the northern branch really have more late repayments, or is it noise? Did the new seed variety really yield more? Inference gives you an honest answer, and just as important, it stops you from announcing discoveries that vanish next month.
@@ -623,6 +653,11 @@ Mariama compares two maize varieties on demonstration plots near Savelugu. Varie
       },
     },
     "experiments": {
+      outcomes: [
+        "Explain why random assignment works",
+        "Design an experiment and decide how many people you need",
+        "Read the result and consider the ethics",
+      ],
       explanation_md: `## Why this matters
 
 Organisations in Ghana constantly try changes: a new SMS reminder for loan repayments, a different fee message in a mobile money app, a radio programme for farmers, a home visit schedule for community health volunteers. The question is always whether the change caused the improvement. A fair experiment is the most reliable way to know, and adverts for stronger roles name experiment design and A/B testing directly.
@@ -734,6 +769,11 @@ Abdul-Rahman at a savings and loans company in Tamale proposed testing two remin
       },
     },
     "regression-analysis": {
+      outcomes: [
+        "Fit a regression in Python",
+        "Read the output carefully",
+        "Explain why association is not causation",
+      ],
       explanation_md: `## Why this matters
 
 Many questions involve several factors at once. Does fertiliser raise maize yield once you allow for rainfall? Do borrowers with longer histories repay better once you allow for loan size? Regression estimates how an outcome changes with one factor while holding others steady. It is the workhorse of research, evaluation and credit analysis, and the starting point for predictive models.
@@ -836,6 +876,11 @@ Wumpini studies a microfinance dataset and finds that borrowers who received fin
       },
     },
     "programming-for-data-science": {
+      outcomes: [
+        "Explain what changes from analyst code to data science code",
+        "Know where to practise",
+        "Plan how to make a notebook reproducible",
+      ],
       explanation_md: `## Why this matters
 
 An analyst can often get away with a one off spreadsheet or a notebook full of copied cells. A data scientist's work is reused: the same model is retrained next quarter, the same survey analysis runs on the next round, a colleague picks up your project when you go on leave. Adverts reflect this. Python appears in nearly all of them, SQL in most, and the stronger ones mention clean code, Git or software design. Code that others can read, rerun and trust is part of the job, not a bonus.
@@ -922,6 +967,11 @@ Salifu joined an agritech company in Tamale and inherited a notebook that produc
       },
     },
     "python-data-stack": {
+      outcomes: [
+        "Use NumPy, dates and reshaping in pandas",
+        "Join tables with checks and write reusable functions",
+        "Work with large files on a modest machine",
+      ],
       explanation_md: `## Why this matters
 
 Most of a data scientist's time goes on preparing data, not modelling. Transactions arrive with text dates, survey rounds need reshaping, and tables need joining. Doing this cleanly in pandas, with checks, is what makes later models trustworthy. Adverts that name Python often name pandas and NumPy alongside it.
@@ -1037,6 +1087,11 @@ Napari has three rounds of a household survey from the Northern Region, each in 
       },
     },
     "advanced-sql": {
+      outcomes: [
+        "Write subqueries and common table expressions",
+        "Use window functions",
+        "Follow good SQL habits",
+      ],
       explanation_md: `## Why this matters
 
 Most company data lives in databases, and most data science adverts ask for SQL alongside Python. Analysts write queries that filter, join and group. Data scientists go further: they compute features such as running totals and gaps between events inside the database, so only a tidy, manageable table travels to the notebook. This saves time, memory and mobile data.
@@ -1176,6 +1231,11 @@ Alhassan works with a large table of transactions at a payments company. Instead
       },
     },
     "reproducible-work": {
+      outcomes: [
+        "Use Git in a data project",
+        "Lay out a project others can follow and record its environment",
+        "Control randomness and keep secrets and personal data out",
+      ],
       explanation_md: `## Why this matters
 
 A result nobody can repeat is a result nobody should trust. If your manager asks in three months why the forecast changed, you need to show exactly which data and code produced each version. Adverts name Git, clean code and maintainable software, and teams that share work depend on it. Reproducible habits also protect you: when something breaks, you can go back to the version that worked.
@@ -1295,6 +1355,11 @@ Zenabu builds a rainfall and yield analysis for a farmer group in Wa. Her reposi
       },
     },
     "predictive-modelling": {
+      outcomes: [
+        "Tell prediction from explanation",
+        "Frame a model around the decision it serves",
+        "Name the topics in this section",
+      ],
       explanation_md: `## Why this matters
 
 Organisations need to plan before things happen. A lender wants to know which borrowers may struggle so a field officer can call early. An agritech company wants yield estimates before harvest to arrange storage and buyers. A health programme wants to know which months will be busiest at clinics. Predictive models turn past records into these estimates, and most data science adverts name machine learning or predictive modelling.
@@ -1386,6 +1451,11 @@ Ayishetu works for a solar home system company that sells on credit in the Upper
       },
     },
     "machine-learning-basics": {
+      outcomes: [
+        "Tell regression from classification",
+        "Follow the scikit learn pattern and beat a baseline",
+        "Avoid the accuracy trap and explain a model",
+      ],
       explanation_md: `## Why this matters
 
 scikit learn is a widely used free Python library for classic machine learning, and adverts that name a library often name it. Its consistent pattern means once you can train one model, you can train dozens. More important than any single model is the habit of comparing against a baseline and measuring what matters for the decision.
@@ -1510,6 +1580,11 @@ Sumaila builds a model to predict which villages will need extra seed stock. A r
       },
     },
     "features-for-decisions": {
+      outcomes: [
+        "Build features that mean something",
+        "Encode and scale features",
+        "Prevent leakage and treat missing values with care",
+      ],
       explanation_md: `## Why this matters
 
 Raw records rarely arrive in a form a model can use well. A list of repayment dates says little until you turn it into "days since last payment" or "number of late payments this year". The columns you build, called **features**, usually matter more than which algorithm you pick. Adverts for modelling roles name feature engineering directly, and it is where your knowledge of the people and places behind the data pays off.
@@ -1631,6 +1706,11 @@ Mahama builds features for a pharmacy chain forecasting which branches will run 
       },
     },
     "model-validation": {
+      outcomes: [
+        "Recognise overfitting",
+        "Split data and use cross validation, respecting time",
+        "Choose a measure that fits the decision and check every group",
+      ],
       explanation_md: `## Why this matters
 
 A model that looks excellent on the data it learned from can fail badly on new cases. When that model decides who gets a loan offer or which villages get extra seed, the failure lands on real people. Testing models honestly is a core part of the job, named directly in skills frameworks for data scientists.
@@ -1760,6 +1840,11 @@ Hawa's yield model scored brilliantly until she noticed the training data includ
       },
     },
     "time-series-forecasting": {
+      outcomes: [
+        "Name the parts of a time series",
+        "Start with simple forecasts, then exponential smoothing",
+        "Show uncertainty and test forecasts the way you will use them",
+      ],
       explanation_md: `## Why this matters
 
 Much of the data organisations hold is recorded over time: monthly sales at a provisions shop, weekly maize prices at a market, daily mobile money transaction counts across an agent network, clinic attendance, rainfall. Planning stock, staff and cash depends on forecasting it. Adverts mention forecasting, and sensor and transaction data that arrive over time.
@@ -1872,6 +1957,11 @@ Fuseini helps a grain trader in Tamale plan storage. He gathers three years of w
       },
     },
     "geospatial-data": {
+      outcomes: [
+        "Tell apart the two kinds of spatial data",
+        "Compute distances and join data to places",
+        "Treat location as personal data",
+      ],
       explanation_md: `## Why this matters
 
 Where something happens often explains why. Yields depend on rainfall zones and soils, clinic use depends on distance, solar demand depends on grid coverage, and carbon projects depend on land cover from satellite images. Agriculture, health, energy and climate employers in Ghana use location data, and some adverts name geospatial or remote sensing skills. This lesson is optional, but valuable if you want to work in those sectors.
@@ -1982,6 +2072,11 @@ Amina maps a health survey in the Northern Region to see whether distance affect
       },
     },
     "communicating-results": {
+      outcomes: [
+        "Explain why communication is part of the method",
+        "Write for a busy, non technical audience",
+        "Lead with the decision",
+      ],
       explanation_md: `## Why this matters
 
 A model nobody understands changes nothing. Data science creates value only when someone makes a better decision because of it: a credit manager adjusts a policy, an NGO director moves field staff, a cooperative board changes when it buys inputs. Adverts repeatedly ask for communication with non technical people and stakeholder management, and skills frameworks list presenting results and recommending solutions as core tasks. Many strong analyses fail at this last step.
@@ -2080,6 +2175,11 @@ The board approved early distribution and the test in one meeting. The eight pag
       },
     },
     "data-storytelling": {
+      outcomes: [
+        "Put the answer first",
+        "Translate numbers into consequences",
+        "State uncertainty clearly and make each chart show one point",
+      ],
       explanation_md: `## Why this matters
 
 Your analysis competes for attention with phone calls, meetings and emergencies. A manager in Accra or a programme lead in Tamale may give your report two minutes. If the answer is not clear in those two minutes, the work is wasted, however good the statistics. Writing a clear decision summary is one of the most valuable skills a data scientist has.
@@ -2178,6 +2278,11 @@ Mariama analysed whether a radio programme in Dagbani changed how farmers in the
       },
     },
     "sharing-results": {
+      outcomes: [
+        "Choose the lightest tool that works",
+        "Design dashboards for their users and for mobile data",
+        "Keep a data app trustworthy",
+      ],
       explanation_md: `## Why this matters
 
 Once your analysis is useful, people will ask the same question again with a different district, month or product. Rather than rerunning code for every request, you can give them a dashboard or a small data app to explore on their own. Adverts name dashboards often, with Power BI and Tableau common and Shiny or similar app tools for some roles. In Ghana there is an extra test: will it load on a phone over mobile data in Bolgatanga?
@@ -2289,6 +2394,11 @@ Hawa built a dashboard for a maternal health project with clinics across the Upp
       },
     },
     "ethics-and-privacy": {
+      outcomes: [
+        "Apply Ghana's data protection law to a project",
+        "Explain why anonymisation is harder than it looks",
+        "Check a model for bias and fairness",
+      ],
       explanation_md: `## Why this matters
 
 Data science in Ghana often handles some of the most personal data there is: mobile money histories, health survey answers, phone numbers, locations, Ghana Card numbers, credit records. Misuse can expose people to fraud, shame or unfair refusal of services. Ghana has a law on it, and employers expect you to know it. Doing this well is also about trust: communities who feel respected keep answering surveys.
@@ -2389,6 +2499,11 @@ Wumpini was offered phone metadata to improve a credit model. Before using it, s
       },
     },
     "getting-hired": {
+      outcomes: [
+        "Explain what employers check",
+        "Show evidence instead of claims",
+        "Compare degrees and other routes in",
+      ],
       explanation_md: `## Why this matters
 
 Data science adverts in Ghana usually ask for a quantitative degree and some experience. That can feel like a locked door if you are just starting. The good news is that employers are really asking for evidence that you can think clearly about real problems with data. You can build that evidence on your own, with free tools and public data, before anyone gives you the title.
@@ -2486,6 +2601,11 @@ Sumaila has a diploma, not a degree, and works as a data clerk for an NGO in Yen
       },
     },
     "data-science-portfolio": {
+      outcomes: [
+        "Find data for a project",
+        "Describe what a strong project contains",
+        "Plan and present your first portfolio project",
+      ],
       explanation_md: `## Why this matters
 
 A portfolio is how you show employers that you can do the work, especially when you do not yet have the job title. Two or three complete, honest projects on real data tell an employer more than any list of courses. Projects on Ghanaian or African data also show you understand the context employers here work in.
@@ -2586,6 +2706,11 @@ Hawa built a project asking whether distance to a health facility is associated 
       },
     },
     "first-data-science-role": {
+      outcomes: [
+        "Describe the routes into a data science role",
+        "Prepare for the hiring process and practical tests",
+        "Talk through your choices and be careful with offers",
+      ],
       explanation_md: `## Why this matters
 
 Few people are hired straight into a data scientist post. Knowing the realistic routes, what the hiring process looks like and how to grow on the job helps you aim well and avoid discouragement when the first applications do not work out.

@@ -40,6 +40,10 @@ export const product: RoadmapDraft = {
         "Product work connects users, the business and the team that builds. This section explains the roles, the local context and the basic skills every product job relies on.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [RES.atlassianPm],
     },
     {
@@ -49,6 +53,8 @@ export const product: RoadmapDraft = {
         "Learn what product managers, associate product managers, business analysts, product analysts and product operations staff actually do. Few first jobs carry the product manager title, so knowing the neighbouring roles shows you where to start.",
       parent: "foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [RES.atlassianPm, govTeam],
     },
     {
@@ -58,6 +64,8 @@ export const product: RoadmapDraft = {
         "Study how mobile money, USSD, WhatsApp and agent networks shape what people expect from products here. Pick three local services you use and write down why people trust them or not.",
       parent: "foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.ycLibrary],
     },
     {
@@ -67,6 +75,8 @@ export const product: RoadmapDraft = {
         "Understand revenue, costs, margins and pricing in cedis, and how mobile money payments affect what customers will pay. Every product decision eventually comes back to these numbers.",
       parent: "foundations",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfMoney, RES.startupSchool],
     },
     {
@@ -76,6 +86,8 @@ export const product: RoadmapDraft = {
         "Learn to listen, write short updates and present a recommendation to managers, engineers and partners. Employers often ask for clear communication, whatever tools the job uses.",
       parent: "foundations",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfCommunication, RES.lfBizWriting],
     },
     {
@@ -85,6 +97,10 @@ export const product: RoadmapDraft = {
         "Discovery means learning what people really need before building anything. It is the habit that most separates good product people from order takers.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Product Analyst", "Product Associate", "Associate Product Manager"],
       resources: [RES.govResearch],
     },
     {
@@ -94,6 +110,8 @@ export const product: RoadmapDraft = {
         "Talk to traders, students, farmers or small business owners about how they handle a task today and what it costs them. Ask about real past events, not what they think they would do.",
       parent: "discovery",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.govResearch, RES.ycLibrary],
     },
     {
@@ -103,6 +121,8 @@ export const product: RoadmapDraft = {
         "Compare problems by how painful, frequent and widespread they are, and check what people and competitors already use to solve them. Write down your reasoning so others can challenge it.",
       parent: "discovery",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfThinking],
     },
     {
@@ -112,6 +132,8 @@ export const product: RoadmapDraft = {
         "Run a service by hand using WhatsApp, Google Forms and a spreadsheet to see if people want it. If nobody uses the manual version, building an app will not fix that.",
       parent: "discovery",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.whatsappBusiness, RES.lfSheets],
     },
     {
@@ -121,6 +143,10 @@ export const product: RoadmapDraft = {
         "Once the problem is clear, you describe how work happens today, what the new solution must do and what comes first. Clear writing matters more here than any tool.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Business Analyst", "Project Business Analyst", "Information Systems Business Analyst"],
       resources: [],
     },
     {
@@ -130,6 +156,8 @@ export const product: RoadmapDraft = {
         "Draw how a task flows today, step by step and person by person, to find delays, errors and handovers. Business analyst roles often ask for this skill.",
       parent: "defining",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfThinking],
     },
     {
@@ -139,6 +167,8 @@ export const product: RoadmapDraft = {
         "Turn what users and the business need into clear requirements, user stories and acceptance criteria. Junior product and analyst roles often ask for this skill.",
       parent: "defining",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [govAgile, RES.atlassianAgile],
     },
     {
@@ -148,6 +178,8 @@ export const product: RoadmapDraft = {
         "Write a short document covering the problem, who it is for, the requirements, what success looks like and what is out of scope. A good spec lets designers and engineers work without waiting for you.",
       parent: "defining",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfBizWriting],
     },
     {
@@ -157,6 +189,8 @@ export const product: RoadmapDraft = {
         "Rank ideas by value and effort, learn to say no politely and turn goals into a roadmap of problems to solve. Small teams rarely have spare capacity, so focus is essential.",
       parent: "defining",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.atlassianPm],
     },
     {
@@ -166,6 +200,10 @@ export const product: RoadmapDraft = {
         "Product people do not build alone, so working well with engineers and designers is the core skill. This section covers how teams plan, how to speak their language and how to check work before release.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Product Manager", "Product Executive"],
       resources: [],
     },
     {
@@ -175,6 +213,8 @@ export const product: RoadmapDraft = {
         "Learn sprints, backlogs, boards, standups and retrospectives, and why teams ship in small pieces. Focus on the ideas rather than the ceremony, because every team runs them differently.",
       parent: "building",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.atlassianAgile, govAgile],
     },
     {
@@ -184,6 +224,8 @@ export const product: RoadmapDraft = {
         "Understand what APIs, databases, mobile money integrations and app releases involve, without needing to code. This helps you judge effort and ask engineers better questions.",
       parent: "building",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.cs50, RES.mdnHttp],
     },
     {
@@ -193,6 +235,8 @@ export const product: RoadmapDraft = {
         "Learn the basics of user flows, wireframes and usability testing so you can give useful feedback. Judge designs by whether users can complete the task, not by personal taste.",
       parent: "building",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.nngHeuristics, RES.nngUsability],
     },
     {
@@ -202,6 +246,8 @@ export const product: RoadmapDraft = {
         "Check that what was built meets the acceptance criteria before real users see it, and plan a safe release. Analyst and associate product roles often include testing before go live.",
       parent: "building",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [govAgile],
     },
     {
@@ -211,6 +257,10 @@ export const product: RoadmapDraft = {
         "Once a product is live, someone must onboard users, answer problems and feed lessons back to the team. This work is a common first job and a strong route into product management.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Product Operations Officer"],
       resources: [],
     },
     {
@@ -220,6 +270,8 @@ export const product: RoadmapDraft = {
         "Learn to onboard and train users, write help guides and standard procedures, and pass issues to engineers clearly. Good operations work keeps a product trusted between releases.",
       parent: "live-product",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.whatsappBusiness, RES.lfBizWriting],
     },
     {
@@ -229,6 +281,8 @@ export const product: RoadmapDraft = {
         "Collect feedback from support chats, calls and reviews, and share patterns with the team every week. Close the loop by telling customers what you changed.",
       parent: "live-product",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfCommunication],
     },
     {
@@ -238,6 +292,10 @@ export const product: RoadmapDraft = {
         "Data tells you whether a product is working and what to do next. This section covers the spreadsheet and query skills analyst roles ask for, and how to read numbers honestly.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
+      careerLevel: "mid",
+      jobs: ["Business Intelligence Analyst", "MERL Associate & Data Analyst"],
       resources: [govMeasuring],
     },
     {
@@ -247,6 +305,8 @@ export const product: RoadmapDraft = {
         "Use spreadsheets to sort, filter, count and chart product data, then learn the basic SQL queries analyst adverts mention. Start with a small, real dataset you understand.",
       parent: "measuring",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfSheets, RES.sqlbolt],
     },
     {
@@ -256,6 +316,8 @@ export const product: RoadmapDraft = {
         "Track activation, retention and revenue rather than only downloads or sign ups. Choose one main metric that shows whether users are getting real value.",
       parent: "measuring",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [govMeasuring, RES.gaHelp],
     },
     {
@@ -265,6 +327,8 @@ export const product: RoadmapDraft = {
         "Change one thing, compare results against a control and decide in advance what result would change your mind. Small user bases need patience and simple tests.",
       parent: "measuring",
       optional: true,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.khanStats],
     },
     {
@@ -274,6 +338,10 @@ export const product: RoadmapDraft = {
         "Product manager jobs rarely go to complete beginners, so plan a realistic route in. This section shows which first roles to aim for and how to build evidence.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "specialist",
+      jobs: ["Senior Technical Product Manager", "Product Manager", "Senior Product Analyst"],
       resources: [],
     },
     {
@@ -283,6 +351,8 @@ export const product: RoadmapDraft = {
         "Many people reach product management through business analysis, product operations, customer support, data or monitoring and evaluation work. Aim for those roles first and take on product tasks wherever you are.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfJobsearch, RES.lfLinkedin],
     },
     {
@@ -292,6 +362,8 @@ export const product: RoadmapDraft = {
         "Write two or three case studies covering a problem you researched, what you tested and what you learned, ideally from a real small business or community project. Show your reasoning and your mistakes, not only the outcome.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfBizWriting],
     },
     {
@@ -301,6 +373,8 @@ export const product: RoadmapDraft = {
         "Practise questions about improving a product, writing a user story, prioritising features and choosing metrics. Use local products in your answers to show you understand the market.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfInterview],
     },
   ],

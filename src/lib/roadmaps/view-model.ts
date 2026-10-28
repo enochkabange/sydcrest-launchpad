@@ -6,6 +6,7 @@
  * at prerender time (without progress) and again in a request time island
  * (with the learner's progress). See docs/roadmap-views.md for the contract.
  */
+import type { CareerLevel, Complexity, Difficulty } from "./levels";
 import { flattenTree, type ProgressStatus, type TreeNode } from "./tree";
 
 export type NodeKind = "section" | "topic" | "checkpoint";
@@ -36,6 +37,13 @@ export type ViewNode = {
   place: { n: number; of: number } | null;
   /** Nodes nested under a topic (deeper than the shallow section and topic tree). Empty on sections. */
   children: ViewNode[];
+  /** Lesson structure (issue #255), present once a roadmap is rated. */
+  difficulty?: Difficulty;
+  complexity?: Complexity;
+  /** Sections only. */
+  careerLevel?: CareerLevel;
+  /** Sections only: job titles from the track research. */
+  jobs?: string[];
 };
 
 export type Counts = {
@@ -126,6 +134,10 @@ export function buildRoadmapView(tree: readonly TreeNode[], progress?: ReadonlyM
       nextId: index < flat.length - 1 ? flat[index + 1].id : null,
       place: null,
       children: nest ? node.children.map((child) => toView(child, child.kind === "checkpoint" ? "checkpoint" : "topic", sectionId)) : [],
+      ...(node.difficulty ? { difficulty: node.difficulty } : {}),
+      ...(node.complexity ? { complexity: node.complexity } : {}),
+      ...(node.career_level ? { careerLevel: node.career_level } : {}),
+      ...(node.jobs?.length ? { jobs: node.jobs } : {}),
     };
     byId[view.id] = view;
     return view;

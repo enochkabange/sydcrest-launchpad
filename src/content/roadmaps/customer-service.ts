@@ -54,6 +54,10 @@ export const customerService: RoadmapDraft = {
         "Good support starts with listening, clear writing and knowing what the job involves day to day. You can do everything in this section on a phone or a computer with a small data bundle.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [RES.lfCommunication, hubspotServiceSkills],
     },
     {
@@ -63,6 +67,8 @@ export const customerService: RoadmapDraft = {
         "Support agents answer questions, fix problems and keep records for banks, fintechs, delivery firms, online businesses and remote companies, often in shifts. You will see the common job titles and how call centre, live chat and remote roles differ.",
       parent: "service-foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [zendeskSkills, generationDcs],
     },
     {
@@ -72,6 +78,8 @@ export const customerService: RoadmapDraft = {
         "Customers calm down when they feel heard, so you will practise listening fully, repeating the problem back and choosing warm, respectful words. Tone matters on the phone and in text, where a short reply can sound rude without meaning to.",
       parent: "service-foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [tedListen, tedConversation],
     },
     {
@@ -81,6 +89,8 @@ export const customerService: RoadmapDraft = {
         "Chat and email agents type all day, so speed and accuracy are often tested at interview. You will build typing speed on a phone or laptop and learn to write short, correct, friendly sentences.",
       parent: "service-foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfTyping, RES.monkeytype, RES.lfWriting],
     },
     {
@@ -90,6 +100,8 @@ export const customerService: RoadmapDraft = {
         "Most support in Ghana runs in English, but speaking Dagbani, Hausa, Twi or another language can win trust and is sometimes asked for in adverts. You will practise clear spoken English and learn when and how to switch language politely.",
       parent: "service-foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.bbcEnglish],
     },
     {
@@ -99,6 +111,10 @@ export const customerService: RoadmapDraft = {
         "Customers reach companies by phone, live chat, WhatsApp, email and social media, and each channel has its own habits. This section covers how to handle each one well.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "junior",
+      jobs: ["Customer Service Representative", "Customer Service Agent", "Call Centre Agent"],
       resources: [hubspotServiceCourse],
     },
     {
@@ -108,6 +124,8 @@ export const customerService: RoadmapDraft = {
         "Phone work means greeting, verifying the caller, solving or logging the issue and closing the call politely, often while following a script. You will learn to use a script without sounding like a robot and to handle both inbound and outbound calls.",
       parent: "support-channels",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [hubspotFirstCall, tedConversation],
     },
     {
@@ -117,6 +135,8 @@ export const customerService: RoadmapDraft = {
         "Chat agents often handle several conversations at once, so short clear messages and saved replies matter. You will learn chat manners, how to keep customers updated while you check something, and how businesses use WhatsApp Business for support.",
       parent: "support-channels",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.whatsappBusiness, RES.whatsappFaq],
     },
     {
@@ -126,6 +146,8 @@ export const customerService: RoadmapDraft = {
         "A good support email answers the question fully, in plain words, with clear next steps so the customer does not have to write again. You will practise structure, subject lines and templates you can adapt.",
       parent: "support-channels",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [hubspotEmailTemplates, RES.lfBizWriting],
     },
     {
@@ -135,6 +157,8 @@ export const customerService: RoadmapDraft = {
         "Complaints on Facebook, X or Instagram are seen by everyone, so replies must be calm, quick and move private details into a direct message. This is optional but useful for roles at brands and small businesses.",
       parent: "support-channels",
       optional: true,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.metaLearn],
     },
     {
@@ -144,6 +168,10 @@ export const customerService: RoadmapDraft = {
         "Support teams track every request in a help desk or CRM so nothing gets lost. Many of these tools have free plans or trials you can explore in a browser.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Live Chat Support Agent", "Customer Service Associate", "Customer Support"],
       resources: [zendeskTickets, freshdesk],
     },
     {
@@ -153,6 +181,8 @@ export const customerService: RoadmapDraft = {
         "A ticket records who asked, what the problem is, how urgent it is and what has been done so far. You will learn how queues, priorities, statuses and tags work in tools like Zendesk, Freshdesk or Zoho Desk, which are named here only as examples.",
       parent: "tickets-and-tools",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [zendeskTickets, freshdesk, zohoDesk],
     },
     {
@@ -162,6 +192,8 @@ export const customerService: RoadmapDraft = {
         "A CRM keeps each customer's details and history so any agent can pick up where the last one stopped. You will learn to search, update and write useful notes on a customer record, and why accurate records matter for the whole team.",
       parent: "tickets-and-tools",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [salesforceCrm, hubspotCrm],
     },
     {
@@ -171,6 +203,8 @@ export const customerService: RoadmapDraft = {
         "Help articles and saved replies let you answer common questions quickly and consistently. You will learn to find answers fast, adapt saved replies so they sound human, and suggest new articles when the same question keeps coming up.",
       parent: "tickets-and-tools",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [zendeskKnowledgeBase],
     },
     {
@@ -180,6 +214,10 @@ export const customerService: RoadmapDraft = {
         "The heart of the job is finding out what is really wrong and fixing it or passing it to the right person. This section covers questioning, complaints, escalation and payment issues.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Customer Experience Associate", "Customer Service and App Support Agent"],
       resources: [RES.lfThinking],
     },
     {
@@ -189,6 +227,8 @@ export const customerService: RoadmapDraft = {
         "Customers describe symptoms, not causes, so you will learn a simple order of questions to narrow a problem down. This includes first level troubleshooting such as checking the app version, network, account status and recent changes.",
       parent: "solving-problems",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfThinking, hubspotFirstCall],
     },
     {
@@ -198,6 +238,8 @@ export const customerService: RoadmapDraft = {
         "An angry customer is usually a worried one, so you will practise staying calm, apologising for the experience and agreeing a clear next step. You will also learn when to set a polite limit if a customer becomes abusive.",
       parent: "solving-problems",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 4,
       resources: [RES.lfCommunication, zendeskSkills],
     },
     {
@@ -207,6 +249,8 @@ export const customerService: RoadmapDraft = {
         "Some problems need a supervisor, a technical team or another department, and a good handover saves the customer from repeating everything. You will learn when to escalate, what to write in the note and how to tell the customer what happens next.",
       parent: "solving-problems",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [hubspotEscalation],
     },
     {
@@ -216,6 +260,8 @@ export const customerService: RoadmapDraft = {
         "Many support roles deal with mobile money transfers, failed payments, reversals and refunds, where mistakes cost real cedis. You will learn to verify customers safely, never ask for a PIN or password, and spot common fraud and impersonation tricks.",
       parent: "solving-problems",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [bog, csa],
     },
     {
@@ -225,6 +271,10 @@ export const customerService: RoadmapDraft = {
         "Support teams measure quality, protect customer data and work long shifts. This section helps you do well on all three without burning out.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Customer Success Lead", "Call Center Specialist"],
       resources: [zendeskCsat],
     },
     {
@@ -234,6 +284,8 @@ export const customerService: RoadmapDraft = {
         "Teams track measures such as response time, first contact resolution and customer satisfaction scores, and your targets will be built on them. You will learn what each measure means and how to improve yours without rushing customers.",
       parent: "quality-and-wellbeing",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [zendeskCsat, hubspotFirstCall],
     },
     {
@@ -243,6 +295,8 @@ export const customerService: RoadmapDraft = {
         "Agents see phone numbers, account details and sometimes ID numbers, and Ghana's Data Protection Act sets rules for handling them. You will learn safe habits such as verifying identity, not sharing screens or photos of records, and locking your device.",
       parent: "quality-and-wellbeing",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.dpc],
     },
     {
@@ -252,6 +306,8 @@ export const customerService: RoadmapDraft = {
         "Back to back calls, night shifts and difficult customers can wear you down. You will learn practical ways to recover between contacts, plan sleep and meals around shifts, and ask for help early.",
       parent: "quality-and-wellbeing",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [zendeskBurnout, whoStress],
     },
     {
@@ -261,6 +317,10 @@ export const customerService: RoadmapDraft = {
         "Support employers test how you write, speak and solve problems, so practice matters more than certificates. This section helps you show those skills and find your first role.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Customer Service Representative", "Lead Caller", "Customer Service Agent"],
       resources: [RES.lfJobsearch],
     },
     {
@@ -270,6 +330,8 @@ export const customerService: RoadmapDraft = {
         "Collect sample email and chat replies, a recorded practice call and a few mock tickets you have handled from start to finish. These show an employer or a training programme what you can already do.",
       parent: "getting-hired-support",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [hubspotServiceResume, RES.lfResume],
     },
     {
@@ -279,6 +341,8 @@ export const customerService: RoadmapDraft = {
         "Entry routes include call centres, national service placements, part time chat roles, remote support teams and free training programmes such as Generation Ghana's Digital Customer Service. You will learn to read adverts, prepare for typing and voice tests, and check that an offer is genuine before you share documents or pay anything.",
       parent: "getting-hired-support",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [generationDcs, RES.lfInterview, RES.lfJobsearch],
     },
   ],

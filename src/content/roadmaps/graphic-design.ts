@@ -71,6 +71,10 @@ export const graphicDesign: RoadmapDraft = {
         "Find out what graphic designers in Ghana actually do, which free tools you can start with today and the few principles behind every good design. You can do everything in this section on a phone or a computer.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [RES.lfDesign],
     },
     {
@@ -80,6 +84,8 @@ export const graphicDesign: RoadmapDraft = {
         "See where designers work, from print shops and agencies to in house teams, NGOs and freelance clients. Learn the kinds of jobs they are given and what employers look for first.",
       parent: "foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [jobbermanCreative, RES.lfDesign],
     },
     {
@@ -89,6 +95,8 @@ export const graphicDesign: RoadmapDraft = {
         "Meet the main kinds of design tool and the difference between pixel images and vector shapes. Choose free tools that run on your phone or a basic laptop and learn which file types to save.",
       parent: "foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfCanva, photopeaLearn, inkscapeLearn],
     },
     {
@@ -98,6 +106,8 @@ export const graphicDesign: RoadmapDraft = {
         "Hierarchy, contrast, alignment, proximity, repetition and space decide whether a design is clear or confusing. Learn to see them in the flyers around you and use them on purpose.",
       parent: "foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfDesign],
     },
     {
@@ -107,6 +117,10 @@ export const graphicDesign: RoadmapDraft = {
         "These four building blocks appear in every advert for a designer. This section teaches each one with examples from Ghanaian shops, churches and events.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [RES.lfDesign, googleFontsKnowledge],
     },
     {
@@ -116,6 +130,8 @@ export const graphicDesign: RoadmapDraft = {
         "Choose and pair fonts, set sizes and spacing, and make text easy to read on a small screen or a poster across the road. Learn why two fonts are usually enough.",
       parent: "visual-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [choosingType, googleFontsKnowledge],
     },
     {
@@ -125,6 +141,8 @@ export const graphicDesign: RoadmapDraft = {
         "Build small colour palettes, use contrast so text stays readable and understand what colours suggest to people. Learn why colours on screen can look different once printed.",
       parent: "visual-basics",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [colorWheel, contrastChecker],
     },
     {
@@ -134,6 +152,8 @@ export const graphicDesign: RoadmapDraft = {
         "Arrange text and images on a page using margins, columns and alignment so the eye knows where to go. Practise turning a crowded flyer into a calm, clear one.",
       parent: "visual-basics",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfDesign],
     },
     {
@@ -143,6 +163,8 @@ export const graphicDesign: RoadmapDraft = {
         "Crop, straighten, brighten and cut out photos, and understand resolution so pictures stay sharp. Learn where to find images you are allowed to use.",
       parent: "visual-basics",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [photopeaLearn, gimpTutorials, ccLicences],
     },
     {
@@ -152,6 +174,10 @@ export const graphicDesign: RoadmapDraft = {
         "A brand is how people recognise and remember a business, and the logo is only one part of it. This section covers designing logos and keeping a brand consistent.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Junior Graphic Designer", "Graphic Designer"],
       resources: [RES.lfDesign],
     },
     {
@@ -161,6 +187,8 @@ export const graphicDesign: RoadmapDraft = {
         "Go from questions and sketches to a simple vector logo that works small, large, in colour and in black. Learn why a laptop helps here and what to do if you only have a phone.",
       parent: "branding",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [inkscapeTutorials, inkscapeGuide],
     },
     {
@@ -170,6 +198,8 @@ export const graphicDesign: RoadmapDraft = {
         "Put a logo, colours, fonts and photo style together into a short brand guide that anyone can follow. Employers often ask designers to work within brand guidelines like these.",
       parent: "branding",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfDesign],
     },
     {
@@ -179,6 +209,10 @@ export const graphicDesign: RoadmapDraft = {
         "Most paid design work in Ghana is social media graphics, flyers, banners and other printed materials. This section teaches how to make each one well and get it printed properly.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Junior Graphic Designer", "Graphic Designer and Print Production Assistant"],
       resources: [RES.lfCanva],
     },
     {
@@ -188,6 +222,8 @@ export const graphicDesign: RoadmapDraft = {
         "Design posts, Status images and simple carousels in the right sizes, with one clear message and small file sizes. Learn to build reusable templates for a business that posts often.",
       parent: "client-designs",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfCanva],
     },
     {
@@ -197,6 +233,8 @@ export const graphicDesign: RoadmapDraft = {
         "Design event flyers, church programmes, posters and banners that people can read quickly from a distance. Learn how a flyer for WhatsApp differs from one for print.",
       parent: "client-designs",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfDesign, scribusWiki],
     },
     {
@@ -206,6 +244,8 @@ export const graphicDesign: RoadmapDraft = {
         "Prepare files that a local print shop can print without surprises, with the right size, bleed, resolution and colour mode. Learn what to ask the printer and why you always check a proof.",
       parent: "client-designs",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [inkscapeGuide, scribusWiki],
     },
     {
@@ -215,6 +255,8 @@ export const graphicDesign: RoadmapDraft = {
         "Add simple movement to a design, such as text that appears or a logo that slides in, for Status and social video. This is optional but agency and multimedia adverts often ask for it.",
       parent: "client-designs",
       optional: true,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfCanva],
     },
     {
@@ -224,6 +266,10 @@ export const graphicDesign: RoadmapDraft = {
         "Good design is wasted if the brief is unclear, the files break the rules or the price is wrong. This section covers briefs and feedback, using other people's work fairly and getting paid.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Graphic and Motion Designer", "In House Graphic Designer", "Multimedia Designer"],
       resources: [RES.lfBizWriting],
     },
     {
@@ -233,6 +279,8 @@ export const graphicDesign: RoadmapDraft = {
         "Ask the right questions before you start, agree what is included and handle feedback calmly. Learn to limit revisions so one flyer does not take a whole week.",
       parent: "client-work",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfCommunication, RES.lfBizWriting],
     },
     {
@@ -242,6 +290,8 @@ export const graphicDesign: RoadmapDraft = {
         "Learn what you may and may not use from the internet, how font and image licences work and why copying another designer's work hurts you. Use AI image tools honestly and check their terms.",
       parent: "client-work",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [wipoCopyright, ofl, wipoTrademarks],
     },
     {
@@ -251,6 +301,8 @@ export const graphicDesign: RoadmapDraft = {
         "Work out a fair price from your time and costs, write a clear quote and ask for a deposit before you start. Send simple invoices and keep records of every mobile money payment.",
       parent: "client-work",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfMoney, RES.lfFreelancing],
     },
     {
@@ -260,6 +312,10 @@ export const graphicDesign: RoadmapDraft = {
         "A strong portfolio matters more than a certificate for most design jobs. This section covers building one, finding freelance clients and applying for design roles.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Junior Graphic Designer", "Graphic Designer"],
       resources: [RES.lfJobsearch],
     },
     {
@@ -269,6 +325,8 @@ export const graphicDesign: RoadmapDraft = {
         "Choose your best eight to twelve pieces, show the problem and your thinking behind each one and present them in a light, phone friendly format. Real projects for local clients count.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfDesign, jobbermanCreative],
     },
     {
@@ -278,6 +336,8 @@ export const graphicDesign: RoadmapDraft = {
         "Find first clients among shops, churches, schools and events near you, then grow through referrals. Learn how remote design work and online platforms fit in and how to avoid scams.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfFreelancing],
     },
     {
@@ -287,6 +347,8 @@ export const graphicDesign: RoadmapDraft = {
         "Look for roles at print shops, agencies, in house marketing teams and NGOs, and prepare for design tests. Write a short application that points straight to your portfolio.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [jobbermanCreative, RES.lfResume, RES.lfInterview],
     },
   ],

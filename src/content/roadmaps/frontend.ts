@@ -18,6 +18,10 @@ export const frontend: RoadmapDraft = {
         "Set up a free code editor, a modern browser and a data saving study routine on a modest laptop or phone. Then learn how a web page travels to a phone in Wa and how to track your work with Git.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [RES.mdnLearn, RES.devtools],
     },
     {
@@ -27,6 +31,8 @@ export const frontend: RoadmapDraft = {
         "Learn how a browser asks a server for a page and how HTML, CSS and JavaScript work together to show it. Knowing this makes every later topic easier to debug.",
       parent: "start-here",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.mdnHttp, RES.mdnLearn],
     },
     {
@@ -36,6 +42,8 @@ export const frontend: RoadmapDraft = {
         "Track every change to your code with Git and publish it on GitHub. Employers in Accra and abroad often look at your GitHub before they read your CV.",
       parent: "start-here",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.githubDocs, RES.gitBook],
     },
     {
@@ -45,6 +53,10 @@ export const frontend: RoadmapDraft = {
         "HTML gives a page its structure and CSS gives it its look. This section takes you from a plain page to a layout that adapts to any screen.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [RES.fccLearn],
     },
     {
@@ -54,6 +66,8 @@ export const frontend: RoadmapDraft = {
         "Use the right element for each job, such as headings, lists, buttons and links. Good structure helps screen readers, search engines and the next developer who reads your code.",
       parent: "html-and-css",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.webdevHtml, RES.mdnHtml],
     },
     {
@@ -63,6 +77,8 @@ export const frontend: RoadmapDraft = {
         "Control spacing, alignment and layout with flexbox and grid. Practise by rebuilding the layout of a simple local business page from a screenshot.",
       parent: "html-and-css",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.webdevCss, RES.mdnCss],
     },
     {
@@ -72,6 +88,8 @@ export const frontend: RoadmapDraft = {
         "Design for a small Android screen first, then add rules for larger screens. Many of your users will only ever see your work on a phone, so this is the default, not an extra.",
       parent: "html-and-css",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.webdevCss, RES.webdevLearn],
     },
     {
@@ -81,6 +99,8 @@ export const frontend: RoadmapDraft = {
         "Build sign up, order and contact forms with clear labels, the right keyboard for phone numbers and helpful error messages. Forms are where users give up, so getting them right is a valued skill.",
       parent: "html-and-css",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.webdevForms],
     },
     {
@@ -90,6 +110,10 @@ export const frontend: RoadmapDraft = {
         "JavaScript makes pages interactive and talks to servers. Take this section slowly and practise a little every day.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Junior Front End Developer", "Web Developer"],
       resources: [RES.mdnJs, RES.fccLearn],
     },
     {
@@ -99,6 +123,8 @@ export const frontend: RoadmapDraft = {
         "Learn variables, functions, arrays, objects, loops and conditions by solving small problems. Aim to explain your code out loud, because interviewers will ask you to.",
       parent: "javascript",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.fccLearn, RES.mdnJs],
     },
     {
@@ -108,6 +134,8 @@ export const frontend: RoadmapDraft = {
         "Change what is on the page when a user taps, types or scrolls. Build a small tool like a market price list that filters as you type.",
       parent: "javascript",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.mdnLearn, RES.odin],
     },
     {
@@ -117,6 +145,8 @@ export const frontend: RoadmapDraft = {
         "Load data from an API with fetch, show loading and error states, and handle slow or dropped connections gracefully. On Ghanaian mobile networks, a clear retry button is part of good design.",
       parent: "javascript",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.mdnFetch],
     },
     {
@@ -126,6 +156,10 @@ export const frontend: RoadmapDraft = {
         "Good frontend work is measured by whether everyone can use it on any connection. This section covers the habits that separate a hobby page from professional work.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Junior Frontend Developer", "Software Quality Assurance Engineer"],
       resources: [],
     },
     {
@@ -135,6 +169,8 @@ export const frontend: RoadmapDraft = {
         "Make pages usable with a keyboard, a screen reader, large text and strong sunlight glare. Accessible pages are also clearer for everyone else.",
       parent: "quality",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.webdevA11y, RES.waiFundamentals, RES.waiEasyChecks],
     },
     {
@@ -144,6 +180,8 @@ export const frontend: RoadmapDraft = {
         "Shrink images, load less JavaScript and measure with free tools so pages open quickly on 3G and cheap phones. Every megabyte you save is data your users do not have to buy.",
       parent: "quality",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.webdevPerf, RES.webdevImages, RES.pagespeed],
     },
     {
@@ -153,6 +191,8 @@ export const frontend: RoadmapDraft = {
         "Use DevTools to inspect elements, read console errors and simulate a slow phone connection. Learning to find your own bugs is what makes you independent on a team.",
       parent: "quality",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.devtools],
     },
     {
@@ -162,6 +202,8 @@ export const frontend: RoadmapDraft = {
         "Write small automated tests that check your functions and pages still work after every change. Many Accra and remote adverts, even entry level ones, ask for testing habits.",
       parent: "quality",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.vitest, RES.playwright],
     },
     {
@@ -171,6 +213,10 @@ export const frontend: RoadmapDraft = {
         "Many frontend job adverts ask for a framework, and React with TypeScript is the most common pairing we found. Learn it only after plain JavaScript feels comfortable.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Frontend Engineer", "Front End Developer", "Frontend Developer"],
       resources: [],
     },
     {
@@ -180,6 +226,8 @@ export const frontend: RoadmapDraft = {
         "Build interfaces from components, manage state and pass data with props. Rebuild one of your earlier projects in React so you can see what it changes.",
       parent: "frameworks",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.react],
     },
     {
@@ -189,6 +237,8 @@ export const frontend: RoadmapDraft = {
         "Add types to your JavaScript so mistakes show up before users see them. Many Ghanaian and remote teams expect it, so learn enough to read and write typed components.",
       parent: "frameworks",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.ts],
     },
     {
@@ -198,6 +248,8 @@ export const frontend: RoadmapDraft = {
         "Learn how a framework handles routing, server rendering and data loading. This is useful for faster first loads on slow networks and for SEO.",
       parent: "frameworks",
       optional: true,
+      difficulty: "advanced",
+      complexity: 5,
       resources: [RES.nextLearn],
     },
     {
@@ -207,6 +259,8 @@ export const frontend: RoadmapDraft = {
         "Read a Figma design, pull out its spacing, colours and type, and build it as reusable components. This is a daily task in agencies and product teams, and many adverts name Figma directly.",
       parent: "frameworks",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.figmaHelp, RES.webdevCss],
     },
     {
@@ -216,6 +270,10 @@ export const frontend: RoadmapDraft = {
         "Apply your skills to the kinds of features local products need. These projects become the strongest pieces in your portfolio.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "specialist",
+      jobs: ["Full Stack Developer", "Full Stack Engineer"],
       resources: [],
     },
     {
@@ -225,6 +283,8 @@ export const frontend: RoadmapDraft = {
         "Design and build the screens around a mobile money payment: entering a number, waiting for the prompt, and showing success, failure or pending clearly. Never collect a PIN in your own form, because the payment provider handles that step.",
       parent: "real-products",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.webdevForms],
     },
     {
@@ -234,6 +294,8 @@ export const frontend: RoadmapDraft = {
         "Turn a site into an installable app that still shows useful content when the network drops. This suits users who buy small data bundles or travel between towns.",
       parent: "real-products",
       optional: true,
+      difficulty: "advanced",
+      complexity: 5,
       resources: [RES.webdevPwa, RES.mdnPwa],
     },
     {
@@ -243,6 +305,8 @@ export const frontend: RoadmapDraft = {
         "Put your projects online with a free tier host so anyone can open them from a link. A live link on WhatsApp or LinkedIn is far more convincing than screenshots.",
       parent: "real-products",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.githubPages, RES.vercel],
     },
     {
@@ -252,6 +316,10 @@ export const frontend: RoadmapDraft = {
         "Turn your skills into income through a job, remote work or freelancing. This section is about showing proof of what you can do.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Junior Front End Developer", "Frontend Developer", "Web Developer"],
       resources: [],
     },
     {
@@ -261,6 +329,8 @@ export const frontend: RoadmapDraft = {
         "Show three to five real projects with live links, clean code on GitHub and a short note on the problem each one solves. Projects built for a real shop, school or NGO count for more than tutorial clones.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.githubPages, RES.lfResume],
     },
     {
@@ -270,6 +340,8 @@ export const frontend: RoadmapDraft = {
         "Offer simple websites and landing pages to shops, schools and churches near you, with a clear written scope and price in cedis. Start small, deliver on time and ask for a referral when you finish.",
       parent: "getting-hired",
       optional: true,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfFreelancing],
     },
     {
@@ -279,6 +351,8 @@ export const frontend: RoadmapDraft = {
         "Write a one page CV, keep your LinkedIn and GitHub current, and practise explaining your projects and solving small coding tasks aloud. Apply widely to local companies and remote roles, and treat every rejection as practice.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfJobsearch, RES.lfInterview, RES.lfLinkedin],
     },
   ],

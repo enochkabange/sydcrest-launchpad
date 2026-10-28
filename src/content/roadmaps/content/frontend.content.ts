@@ -9,6 +9,11 @@ const content: TrackContent = {
   roadmap: "frontend-developer",
   nodes: {
     "start-here": {
+      outcomes: [
+        "Set up a free code editor and browser, or a browser editor on a phone",
+        "Plan your study around WiFi so your data bundle lasts",
+        "Name the two topics this section covers",
+      ],
       explanation_md: `Every frontend job, whether at a fintech in Accra or a remote startup abroad, starts with the same things: a working setup, a clear picture of how the web reaches your users' phones and laptops, and the habit of saving your work properly. This section gives you all three, using only free tools.
 
 ## Your free setup
@@ -79,6 +84,12 @@ That routine, more than any expensive tool, is what gets people job ready. Set y
       },
     },
     "how-the-web-works": {
+      outcomes: [
+        "Describe how a browser asks a server for a page",
+        "Explain the separate jobs of HTML, CSS and JavaScript",
+        "Read common status codes such as 404",
+        "Explain why each extra file slows a page on a mobile network",
+      ],
       explanation_md: `When an interviewer in Accra asks "what happens when you open a website?", they are checking whether you understand the system you will work in. Knowing this also makes debugging much easier, because you can tell whether a problem is in your code, the network or the server.
 
 ## The journey of a page
@@ -154,6 +165,12 @@ No laptop? Write the five sentences from the lesson and draw the journey on pape
       },
     },
     "git-and-github": {
+      outcomes: [
+        "Explain what a commit is and why it matters",
+        "Use the everyday Git steps to save and push your work",
+        "Create a branch for a feature and open a pull request",
+        "Keep secrets and junk files out of your repository",
+      ],
       explanation_md: `Many job adverts we studied, from Accra fintechs to remote startups, list Git. Teams use it every day, and hiring managers often open your GitHub profile before your CV. Learning Git early means every project you build from now on becomes visible proof of your skills.
 
 ## What Git is
@@ -239,6 +256,11 @@ Git can feel strange for a week. Keep using it and it becomes automatic.`,
       },
     },
     "html-and-css": {
+      outcomes: [
+        "Explain the different jobs of HTML and CSS",
+        "Build a page in a sensible order: structure first, then style",
+        "Explain why frameworks do not replace HTML and CSS",
+      ],
       explanation_md: `Frontend job adverts expect you to be comfortable with HTML and CSS, even when they only name a framework such as React. Frameworks still produce HTML and CSS in the end, so this is the foundation everything else stands on.
 
 ## Two jobs, two languages
@@ -316,6 +338,11 @@ Structure first, then style, then test on a phone and a computer. Follow that or
       },
     },
     "semantic-html": {
+      outcomes: [
+        "Choose the right element for headings, lists, links and buttons",
+        "Use heading levels as a map of the page",
+        "Write useful alt text, and empty alt text for decoration",
+      ],
       explanation_md: `Semantic HTML means using the element that matches the meaning of the content. It sounds small, but it decides whether a blind user can navigate your page, whether search engines understand it, and whether the next developer can read your code. Interviewers notice it quickly.
 
 ## Meaningful elements
@@ -405,6 +432,12 @@ When in doubt, ask: "what is this content?" Then pick the element that says so.`
       },
     },
     "css-layout": {
+      outcomes: [
+        "Explain the box model and how spacing works",
+        "Lay out a row of items with flexbox",
+        "Build a two direction layout with grid",
+        "Choose between flexbox and grid for a layout",
+      ],
       explanation_md: `Rebuilding a layout from a design or screenshot is one of the most common tasks a junior frontend developer gets. Modern CSS gives you two tools that handle almost every layout: **flexbox** and **grid**. Learn them well and you will rarely fight the page again.
 
 ## The box model first
@@ -498,6 +531,12 @@ Avoid fixed pixel widths for big containers. Let flexbox and grid do the work.`,
       },
     },
     "mobile-first-design": {
+      outcomes: [
+        "Explain what mobile first means and why it is the default",
+        "Add the viewport tag and media queries for larger screens",
+        "Make tap targets and text comfortable on a small screen",
+        "Test a page on real devices",
+      ],
       explanation_md: `Many of your users are on Android phones, often with small screens and mobile data, and many others are on laptops and desktops. Responsive design appears in junior frontend adverts and in skills frameworks, and for SydCrest learners it is the default way to work, not an extra.
 
 ## What mobile first means
@@ -580,6 +619,12 @@ Browser developer tools have a device mode for simulating phone sizes, which is 
       },
     },
     "forms": {
+      outcomes: [
+        "Label every field in a form",
+        "Bring up the right keyboard for numbers and email",
+        "Use built in validation and write helpful error messages",
+        "Keep a form short and grouped so users finish it",
+      ],
       explanation_md: `Forms are where users sign up, place orders and pay. They are also where users give up. A form that is easy to complete on a cheap phone, with a weak connection, is valuable work, and fintech and ecommerce teams in Ghana build them constantly.
 
 ## The basics: label every field
@@ -669,6 +714,11 @@ Hawa builds an order form for a shea butter cooperative. It asks for name, phone
       },
     },
     "javascript": {
+      outcomes: [
+        "Explain what JavaScript does on a page",
+        "Name the topics this section covers",
+        "Build a daily practice habit that does not leave you stuck",
+      ],
       explanation_md: `JavaScript is the language that makes web pages interactive. It is named in many of the frontend adverts we studied, and the frameworks employers ask for, such as React and Next.js, are all JavaScript underneath. This section is the longest climb in the roadmap, so take it steadily.
 
 ## What JavaScript does on a page
@@ -749,6 +799,11 @@ JavaScript files are downloaded to every visitor's phone and must be processed b
       },
     },
     "js-fundamentals": {
+      outcomes: [
+        "Use variables, conditions and functions to solve small problems",
+        "Work with arrays and objects",
+        "Explain your code out loud, as you would in an interview",
+      ],
       explanation_md: `Interviews for junior roles in Accra and remote teams often include small coding tasks. They test exactly these fundamentals: storing values, making decisions, repeating work and organising code into functions. Master these and frameworks become much easier.
 
 ## Variables
@@ -869,6 +924,12 @@ Solve small problems daily and explain each solution out loud. Free sites such a
       },
     },
     "dom-and-events": {
+      outcomes: [
+        "Explain what the DOM is",
+        "Change the page in response to taps and typing",
+        "Use event delegation for long lists",
+        "Keep interactive parts usable with a keyboard",
+      ],
       explanation_md: `The DOM is how JavaScript sees and changes a web page. Every interactive feature you build, from a menu that opens to a search box that filters results, uses the DOM and events. React and other frameworks are built on top of these same ideas.
 
 ## What the DOM is
@@ -971,6 +1032,12 @@ Use real \`button\` elements for things people tap, so keyboard and screen reade
       },
     },
     "fetch-and-async": {
+      outcomes: [
+        "Explain what an API is",
+        "Load data with fetch and async code",
+        "Show loading, success and error states for every request",
+        "Design for slow networks with a clear retry",
+      ],
       explanation_md: `Almost every real product loads data from a server: account balances, order history, product lists. Working with REST APIs is one of the skills that appears most often in the adverts we studied. On Ghanaian mobile networks, handling slow and dropped connections well is just as important as getting the data.
 
 ## What an API is
@@ -1074,6 +1141,11 @@ Test every feature with a slow network setting. It is the quickest way to see yo
       },
     },
     "quality": {
+      outcomes: [
+        "Name the four habits of professional frontend work",
+        "Explain why speed and access matter for users in Ghana",
+        "Audit a project with a simple quality checklist",
+      ],
       explanation_md: `Plenty of people can make a page that looks fine on their own laptop. Professional frontend work is measured differently: can everyone use it, on any phone or computer, on any connection, and does it keep working after the next change? This section covers the habits that separate a hobby page from work a team can rely on.
 
 ## The four habits
@@ -1147,6 +1219,12 @@ Make this checklist a habit for every project in your portfolio. Reviewers notic
       },
     },
     "accessibility": {
+      outcomes: [
+        "Explain what WCAG is for",
+        "Run five checks that catch most accessibility problems",
+        "Announce changes on the page to screen reader users",
+        "Use ARIA only when plain HTML cannot do the job",
+      ],
       explanation_md: `Accessibility means building pages that people with disabilities can use: people who are blind or have low vision, people who cannot use a mouse, people who are deaf, and people with cognitive differences. Employers in Ghana and abroad list it in adverts, and good accessibility also helps everyone reading on a small screen in bright sun.
 
 ## The standard: WCAG
@@ -1242,6 +1320,11 @@ Test with a keyboard and a screen reader regularly. It quickly becomes second na
       },
     },
     "performance-low-bandwidth": {
+      outcomes: [
+        "Measure a page before you try to speed it up",
+        "Shrink images, the biggest win on most pages",
+        "Load less JavaScript, lighter fonts and cached files",
+      ],
       explanation_md: `A page that opens in a moment on office WiFi can take a long time on a busy mobile network, and every megabyte comes out of someone's prepaid bundle. Performance appears in Accra and remote adverts, and for products serving northern Ghana it often decides whether people use your site at all.
 
 ## Measure first
@@ -1341,6 +1424,12 @@ Make "how much data does this cost my user?" a question you ask about every feat
       },
     },
     "debugging": {
+      outcomes: [
+        "Open DevTools and read console errors",
+        "Follow a step by step method to find any bug",
+        "Simulate a slow phone connection while you debug",
+        "Use AI assistants without handing over your thinking",
+      ],
       explanation_md: `Every developer writes bugs. What makes you valuable on a team is finding and fixing them without needing someone to hold your hand. Adverts ask for debugging and DevTools skills, and skills frameworks list troubleshooting websites as essential. Browser DevTools are your main instrument.
 
 ## Open DevTools
@@ -1431,6 +1520,12 @@ Mariama's order total shows "NaN". She logs the cart and sees prices stored as t
       },
     },
     "testing": {
+      outcomes: [
+        "Explain the kinds of automated tests",
+        "Write a first unit test for a function",
+        "Decide what is worth testing",
+        "Explain how tests help a team change code safely",
+      ],
       explanation_md: `Many of the adverts we studied ask for testing, including entry level roles at a fintech and a National Service placement in Accra. Tests are small programs that check your code does what you expect. They let you change code later without fear, and they show employers you think like a professional.
 
 ## Kinds of tests
@@ -1536,6 +1631,11 @@ Sumaila writes a function that formats amounts as cedis. He adds tests for whole
       },
     },
     "frameworks": {
+      outcomes: [
+        "Explain why frameworks such as React exist",
+        "Know when you are ready to start a framework",
+        "Recognise the tooling you will meet in a framework project",
+      ],
       explanation_md: `Most frontend adverts we studied, from Accra fintechs to remote agencies, name a framework, and React was by far the most common, often paired with TypeScript. Frameworks help teams build large interfaces in an organised way. This section introduces them once plain JavaScript feels comfortable.
 
 ## Why frameworks exist
@@ -1616,6 +1716,12 @@ Abdul-Rahman rebuilds his market price list in React. His filter, list and save 
       },
     },
     "react": {
+      outcomes: [
+        "Build an interface from components and JSX",
+        "Pass data with props and manage changing data with state",
+        "Render lists with keys and lift state up when it is shared",
+        "Use effects only where they are needed",
+      ],
       explanation_md: `React was the framework named most often in the adverts we studied, for both Ghanaian companies and remote teams. Its core ideas are few: components, props, state and effects. Learn these well and you can work on most React codebases.
 
 ## Components and JSX
@@ -1734,6 +1840,11 @@ Each library you add increases what phones download. Reach for plain React first
       },
     },
     "typescript": {
+      outcomes: [
+        "Explain how types catch mistakes before users see them",
+        "Describe objects and use union types",
+        "Type React components and data from an API",
+      ],
       explanation_md: `TypeScript appeared in many of the adverts we studied, including entry level roles at an Accra fintech and a National Service placement. It is JavaScript with types added. Types describe what kind of value something is, so your editor can warn you about mistakes before your users find them.
 
 ## Why types help
@@ -1865,6 +1976,12 @@ Start by typing function inputs, props and API data. That covers most of the ben
       },
     },
     "nextjs": {
+      outcomes: [
+        "Explain what a framework such as Next.js adds to React",
+        "Explain why server rendering helps on slow networks",
+        "Choose between server and client components",
+        "Optimise images in a framework project",
+      ],
       explanation_md: `Next.js appeared in several of the adverts we studied, both in Accra and remote roles. It is a framework built on React that adds routing, server rendering and data loading. This topic is optional: you can get a junior role knowing React and TypeScript well, but Next.js knowledge makes you a stronger candidate.
 
 ## What it adds to React
@@ -1960,6 +2077,12 @@ Amina rebuilds a church events site in Next.js. The events list is a server comp
       },
     },
     "design-to-code": {
+      outcomes: [
+        "Read spacing, colours and type from a Figma design",
+        "Find the repeated system in a design",
+        "Build reusable components instead of whole pages",
+        "Fill in missing mobile details and check accessibility",
+      ],
       explanation_md: `Many adverts we studied mention Figma, UI implementation or turning designs into working pages. In agencies and product teams, a designer hands you a design and you build it. Doing that accurately, with reusable pieces, is a daily skill.
 
 ## Reading a Figma file
@@ -2055,6 +2178,11 @@ Mariama receives a Figma design for a Bolgatanga craft shop. She notes four colo
       },
     },
     "real-products": {
+      outcomes: [
+        "Explain what makes a product feel local",
+        "Think about real users before you build",
+        "Plan a real product project for your portfolio",
+      ],
       explanation_md: `Tutorials teach skills. Real products teach judgement. This section applies everything you have learned to features that Ghanaian products actually need, and the projects you build here can become the strongest pieces in your portfolio.
 
 ## What makes a product feel local
@@ -2130,6 +2258,12 @@ Fuseini's aunt sells shea butter in Tamale and takes orders over WhatsApp. He bu
       },
     },
     "payment-flows": {
+      outcomes: [
+        "Describe how a mobile money payment usually works",
+        "Design every state: waiting, success, failure and pending",
+        "Prevent double payments",
+        "Build checkout screens in test mode, never collecting a PIN",
+      ],
       explanation_md: `Several adverts we studied came from payments companies. Mobile money checkout is a flow where clear design really matters: people are nervous about their money, networks are unreliable, and confusion leads to lost sales or double payments.
 
 ## How a mobile money payment usually works
@@ -2214,6 +2348,11 @@ Wumpini builds a checkout for a school fees demo. After tapping Pay, the button 
       },
     },
     "offline-and-pwa": {
+      outcomes: [
+        "Explain what a progressive web app is",
+        "Name the two pieces that make a site installable and offline",
+        "Tell users honestly when they are offline",
+      ],
       explanation_md: `Many users in Ghana buy small data bundles, travel between towns with patchy signal, or lose connection when a bundle runs out mid task. An app that still shows useful content offline feels far more reliable. Progressive web app (PWA) techniques make this possible with web technology alone. This topic is optional but valuable for products serving northern Ghana.
 
 ## What a PWA is
@@ -2311,6 +2450,12 @@ Hawa builds a price list app for traders. She adds a manifest so it can be insta
       },
     },
     "deploy-free": {
+      outcomes: [
+        "Put a plain HTML site online with GitHub Pages",
+        "Deploy a React or Vite project on a free host",
+        "Keep secrets out of your code with environment variables",
+        "Check a live site on a phone and a computer",
+      ],
       explanation_md: `A live link you can share on WhatsApp or put on your CV is far more convincing than screenshots. Several adverts mention deployment and CI tools, and putting projects online is a skill in itself. The good news: you can host frontend projects for free.
 
 ## Static sites and free hosts
@@ -2399,6 +2544,11 @@ Sumaila finishes his bus times page. He pushes it to GitHub and turns on GitHub 
       },
     },
     "getting-hired": {
+      outcomes: [
+        "Compare three routes to income: a job, remote work and freelancing",
+        "Explain what employers look for",
+        "Make a written plan for your first paid work",
+      ],
       explanation_md: `Skills alone do not get you hired. You also need proof of what you can do, and a way of showing it to the right people. This section is about turning your learning into income, whether through a job at a Ghanaian company, a remote role, or freelancing for local businesses.
 
 ## Three routes to income
@@ -2475,6 +2625,11 @@ Amina from Nalerigu finishes this roadmap with four solid projects. She builds a
       },
     },
     "portfolio": {
+      outcomes: [
+        "Choose three to five real projects that show your skills",
+        "Give each project a live link, clean code and a short problem note",
+        "Keep your portfolio honest and current",
+      ],
       explanation_md: `Hiring managers in Accra and remote teams often look at your projects before they read your CV. A strong portfolio is your best evidence. It does not need to be fancy; it needs to be clear, honest and easy to check on a phone or a laptop.
 
 ## Quality over quantity
@@ -2560,6 +2715,11 @@ Issahaku's portfolio shows four projects. The first is a live site for a tailori
       },
     },
     "freelancing-for-smes": {
+      outcomes: [
+        "Name what small businesses often need from a website",
+        "Agree a scope in writing before you start",
+        "Price your work in cedis and hand it over properly",
+      ],
       explanation_md: `Small businesses across Ghana, from shops in Tamale to schools in Bolgatanga, need simple websites and landing pages. Freelancing for them can bring income while you look for a job, and it gives you real projects for your portfolio. One Accra retail company in our research advertised for a web developer who also knew Shopify and WordPress, which shows these skills have local demand.
 
 ## What small businesses often need
@@ -2643,6 +2803,11 @@ Mariama builds a site for a pharmacy in Bolgatanga. She writes a scope on WhatsA
       },
     },
     "job-search": {
+      outcomes: [
+        "Write a one page CV and keep your profiles current",
+        "Find local and remote roles to apply for",
+        "Practise the stages of a technical interview out loud",
+      ],
       explanation_md: `Finding your first frontend role takes a clear CV, honest profiles, steady applications and interview practice. Remote adverts we studied often stressed written English and communication, and Ghanaian roles included internships and National Service placements. This lesson brings it together.
 
 ## Your CV

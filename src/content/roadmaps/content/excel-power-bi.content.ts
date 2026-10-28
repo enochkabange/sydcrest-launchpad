@@ -10,6 +10,11 @@ const content: TrackContent = {
   roadmap: "excel-power-bi",
   nodes: {
     "spreadsheet-basics": {
+      outcomes: [
+        "Explain why spreadsheets matter for work in Ghana",
+        "Describe what a spreadsheet is",
+        "Move around a spreadsheet comfortably",
+      ],
       explanation_md: `## Why spreadsheets matter for work in Ghana
 
 Walk into almost any office in Tamale, Wa or Accra and you will find a spreadsheet doing important work. A rural bank tracks loan repayments in one. An NGO in Bolgatanga counts how many farmers attended each training. A pharmacy keeps its stock list in one, and the accounts officer builds the monthly report from it. Job adverts for accounts officers, MIS officers, monitoring and evaluation (M&E) staff and administrators keep asking for the same thing: confident Excel skills.
@@ -104,6 +109,11 @@ Work with real or realistic records from people around you: a trader, a church t
       },
     },
     "excel-on-a-phone": {
+      outcomes: [
+        "Compare three free ways to use Excel",
+        "Save and share a file in the cloud",
+        "Know when a bigger screen helps",
+      ],
       explanation_md: `## Why this matters
 
 Employers ask for Excel by name, so it pays to practise in Excel itself. You do not need to buy it to learn. Microsoft offers free versions, and Google Sheets is a free spreadsheet that works in almost the same way. Knowing your options means you can practise today on whatever device you have.
@@ -192,6 +202,11 @@ Issahaku has an Android phone and no laptop. He signs in to the Excel app with a
       },
     },
     "tidy-tables": {
+      outcomes: [
+        "Follow the rules of a tidy table",
+        "Turn a range into an Excel table",
+        "Keep tidy entry as a habit",
+      ],
       explanation_md: `## Why this matters
 
 Most spreadsheet problems in offices are not formula problems. They are layout problems. A manager asks "how many bags of rice did we sell in March?" and nobody can answer quickly because the sheet has merged cells, totals typed in the middle and three different spellings of "rice". If you enter data tidily from the start, every later skill in this track (functions, PivotTables, charts, Power BI) becomes easy.
@@ -287,6 +302,11 @@ Before you type a single row, write your column headers and ask: "Could I sort, 
       },
     },
     "formulas-and-references": {
+      outcomes: [
+        "Write a formula",
+        "Copy formulas with relative references",
+        "Fix a cell with an absolute reference and read common errors",
+      ],
       explanation_md: `## Why this matters
 
 An accounts assistant who types totals by hand will eventually make a mistake, and nobody will know where. A formula shows its working: anyone can click the cell and see how the answer was calculated. Employers want reports they can trust, and formulas are how you earn that trust.
@@ -397,6 +417,11 @@ Reading these messages calmly, and clicking the cell to check its references, so
       },
     },
     "working-with-data": {
+      outcomes: [
+        "Explain how functions work",
+        "Clean data before you calculate",
+        "Prepare one practice dataset",
+      ],
       explanation_md: `## Why this matters
 
 Once records are in a tidy table, the next question from any manager is a question about them. How much did each branch sell? How many beneficiaries are women? What is the price of item code R25? Which phone numbers in the survey are missing a digit? Answering those questions quickly and correctly is the daily work of accounts officers, MIS officers and M&E assistants across Ghana.
@@ -490,6 +515,11 @@ Use one dataset through the whole section so you can see how the skills connect.
       },
     },
     "everyday-functions": {
+      outcomes: [
+        "Use six everyday functions",
+        "Build a small summary from a sales table",
+        "Apply tips that prevent mistakes",
+      ],
       explanation_md: `## Why this matters
 
 When a programme manager at an NGO in Tamale asks "how many women did we train this quarter, and in which districts?", they want an answer in minutes, not a day. The six functions in this lesson answer most questions like that. Functions of this kind are listed in Microsoft's Office Specialist Excel exam objectives and used in everyday reporting work, and they work the same in Excel and Google Sheets.
@@ -615,6 +645,11 @@ Her manager gets four clear numbers, each one checkable by clicking the cell.
       },
     },
     "lookups": {
+      outcomes: [
+        "Look up values with XLOOKUP",
+        "Know where XLOOKUP works",
+        "Use VLOOKUP, the older way",
+      ],
       explanation_md: `## Why this matters
 
 Lookups such as VLOOKUP and XLOOKUP are named in accounts and reporting job adverts in Ghana and across the region. Offices keep information in separate lists: a price list, a staff list, a list of districts and regions. A lookup joins them. Type a product code and the price appears; type a staff ID and the name and district appear. Without lookups, people copy and paste by hand, and mistakes creep in.
@@ -736,6 +771,11 @@ Then Amount is \`=C2*E2\`. When the supplier changes a price, Fuseini updates th
       },
     },
     "sort-filter-validate": {
+      outcomes: [
+        "Sort and filter data",
+        "Add data validation",
+        "Build an entry sheet that only accepts sensible values",
+      ],
       explanation_md: `## Why this matters
 
 A list of 2,000 loan repayments is useless until you can find the late ones. And a beneficiary register is only as good as what people typed into it. Sorting and filtering help you find what matters; data validation stops bad data at the door. MIS and data officer adverts often ask for data quality and validation skills, because cleaning mistakes later costs far more time than preventing them.
@@ -846,6 +886,11 @@ When volunteers fill the sheet, typing errors are blocked as they happen. At the
       },
     },
     "cleaning-text-and-dates": {
+      outcomes: [
+        "Clean data in helper columns with text functions",
+        "Fix phone numbers that lost their zero and unreadable dates",
+        "Remove duplicates",
+      ],
       explanation_md: `## Why this matters
 
 Data rarely arrives clean. A survey export from a phone form, a list copied from WhatsApp, a bank statement downloaded as CSV: each brings extra spaces, mixed capitals, phone numbers missing their first zero and dates Excel cannot read. Data cleaning appears in MEL and MIS job adverts because reports built on dirty data are wrong. This lesson gives you a small toolkit that fixes the most common problems.
@@ -964,6 +1009,11 @@ Mariama receives a survey export of 400 rows. She adds helper columns: \`=PROPER
       },
     },
     "summaries-and-charts": {
+      outcomes: [
+        "Turn rows of data into answers",
+        "Start a report from its question",
+        "Plan a report before you build it",
+      ],
       explanation_md: `## Why this matters
 
 A manager at a microfinance office in Tamale does not want to scroll through 3,000 loan records. She wants to know: how much was repaid this month, which branch is behind, and is it getting better or worse? Your job is to turn the raw rows into that answer, quickly and in a form she can read at a glance. Job adverts for MIS, M&E and reporting roles keep asking for exactly this: summaries, charts, dashboards and KPI tracking.
@@ -1062,6 +1112,11 @@ Charts and conditional formatting are fine on any device. Building PivotTables o
       },
     },
     "pivottables": {
+      outcomes: [
+        "Explain what a PivotTable does",
+        "Build and rearrange a PivotTable",
+        "Change its calculation and keep it up to date",
+      ],
       explanation_md: `## Why this matters
 
 PivotTables are named in Excel job adverts for roles from accounts officers to Excel specialists. They are the fastest way to answer "how much, by what?" questions. A table of 5,000 sales becomes "total sales by region and month" in under a minute, with no formulas, and you can rearrange it to answer the next question just as fast.
@@ -1172,6 +1227,11 @@ She inserts a PivotTable, puts Shop in Rows, Amount in Values and Product in Fil
       },
     },
     "charts": {
+      outcomes: [
+        "Choose a chart from the question",
+        "Make a chart honest and readable",
+        "Make a chart in Excel",
+      ],
       explanation_md: `## Why this matters
 
 Many managers and donors read your report on a phone between meetings. A clear chart tells them the main point in seconds; a cluttered one confuses them or, worse, misleads them. Employers in monitoring, reporting and business roles ask for data visualisation because a good chart helps people make the right decision.
@@ -1280,6 +1340,11 @@ He replaces it with a horizontal bar chart, sorted from most to fewest attendees
       },
     },
     "conditional-formatting": {
+      outcomes: [
+        "Use built in conditional formatting rules",
+        "Write formula rules for whole rows",
+        "Highlight only what needs attention",
+      ],
       explanation_md: `## Why this matters
 
 A credit officer in Bolgatanga opens the repayment sheet each morning. If overdue loans are already coloured, she sees them instantly instead of checking 400 dates by eye. Conditional formatting does that: it changes how a cell looks based on its value, and it keeps working as the data changes. It supports the KPI monitoring and data quality checks that MIS and reporting roles ask for.
@@ -1392,6 +1457,11 @@ She also adds a Status column with an IF formula that says "Reorder" or "OK", so
       },
     },
     "excel-reports": {
+      outcomes: [
+        "Make reports repeatable",
+        "Use separate sheets for separate jobs",
+        "Check a report before you send it",
+      ],
       explanation_md: `## Why this matters
 
 In most offices, Excel work comes back every week or every month. The district office sends a new attendance file each Monday. The bank exports a new statement every month. The donor wants the same activity report every quarter. The person who can produce that report quickly, correctly and in the same clear format each time becomes very valuable to a team. Job adverts for MIS officers and Excel specialists mention reporting automation and dashboards for this reason.
@@ -1495,6 +1565,11 @@ Even a repeatable report needs a human check. Compare this month's totals with l
       },
     },
     "power-query-in-excel": {
+      outcomes: [
+        "Explain how Power Query works",
+        "Record a cleaning process you can replay",
+        "Know which Excel version you need",
+      ],
       explanation_md: `## Why this matters
 
 If you clean the same kind of file every month, Power Query can do it for you. You show it the cleaning steps once; it records them; next month you click Refresh and every step runs again on the new data. Adverts for MIS officers and Excel specialists name Power Query and reporting automation. Learning it now also prepares you for Power BI, which uses the same engine.
@@ -1610,6 +1685,11 @@ If you only have free Excel for the web, a phone or Google Sheets, write your st
       },
     },
     "one-page-excel-report": {
+      outcomes: [
+        "Decide what goes on a one page report",
+        "Build it in Excel and share it",
+        "Use only real or clearly invented data",
+      ],
       explanation_md: `## Why this matters
 
 A one page report is where your Excel skills become something an employer can see and use. Managers, donors and boards rarely have time for long sheets. They want one page that answers: how did we do, compared with what, and what needs attention? Being able to build that page, and to show examples of it, is a strong signal in applications for reporting, admin and M&E roles.
@@ -1726,6 +1806,11 @@ For portfolio pieces, use open data or data you invent and label as invented. Ne
       },
     },
     "power-bi": {
+      outcomes: [
+        "Name the three parts of Power BI",
+        "Find out whether you need a Windows computer",
+        "Plan your Power BI practice access",
+      ],
       explanation_md: `## Why this matters
 
 Power BI appears in many Ghanaian adverts for MIS officers, M&E officers, data analysts and business intelligence roles, usually alongside Excel. Where Excel reports are pages, Power BI reports are interactive: a manager clicks "Wa" and every chart on the page shows Wa only. Organisations use it to bring data from several sources into one place and keep dashboards up to date.
@@ -1831,6 +1916,11 @@ Fuseini works for a solar lamp distributor with agents across the Upper East Reg
       },
     },
     "power-bi-desktop-setup": {
+      outcomes: [
+        "Check a computer and install Power BI Desktop",
+        "Tour its views",
+        "Build a first visual from sample data",
+      ],
       explanation_md: `## Why this matters
 
 Your first hour with Power BI Desktop should be spent learning, not fighting the installation. A little preparation saves wasted trips to a lab or café, and knowing your way around the three main views makes every later lesson easier. Employers expect you to be comfortable in Desktop from day one.
@@ -1945,6 +2035,11 @@ You need a Windows computer for this task. If you do not have access yet, comple
       },
     },
     "getting-data-into-power-bi": {
+      outcomes: [
+        "Load a file into Power BI",
+        "Shape data in Power Query",
+        "Refresh data and check column quality",
+      ],
       explanation_md: `## Why this matters
 
 Microsoft's Power BI Data Analyst certification lists preparing data as its first skill area, and in real jobs it takes much of the time. If the data comes in clean, with clear names and correct types, the model, measures and visuals that follow are simple. If it comes in messy, every later step fights you. The good news: you already know the tool, because Power BI uses the same Power Query you met in Excel.
@@ -2056,6 +2151,11 @@ You need a Windows computer with Power BI Desktop. Without one, do the same shap
       },
     },
     "relationships-and-models": {
+      outcomes: [
+        "Tell facts from dimensions",
+        "Build a star schema with relationships",
+        "Add a date table",
+      ],
       explanation_md: `## Why this matters
 
 In Excel, you used XLOOKUP to bring a product name into every sales row. In Power BI you rarely do that. Instead you keep tables separate and connect them with **relationships**. That connected set of tables is called a **model**. A good model makes reports fast, measures simple and filters work everywhere. Modelling is the second skill area of Microsoft's Power BI Data Analyst certification, and interviewers often ask about it.
@@ -2172,6 +2272,11 @@ You need a Windows computer with Power BI Desktop. Without one, sketch the star 
       },
     },
     "first-dax-measures": {
+      outcomes: [
+        "Explain what a measure is",
+        "Write your first DAX measures",
+        "Choose between measures and calculated columns",
+      ],
       explanation_md: `## Why this matters
 
 DAX (Data Analysis Expressions) is Power BI's formula language, and Power BI adverts and the Data Analyst certification expect you to know the basics. You do not need advanced DAX for a first job. You need a few clear measures, named well, that give the right answer whatever the user clicks.
@@ -2304,6 +2409,11 @@ You need a Windows computer with Power BI Desktop and the model from the last le
       },
     },
     "reports-people-use": {
+      outcomes: [
+        "Ask three questions before every report",
+        "Treat trust as the real product",
+        "Design for privacy",
+      ],
       explanation_md: `## Why this matters
 
 A dashboard can be technically perfect and still fail. If the regional manager cannot find the number she needs, does not trust it, or opens it to find last month's data, she goes back to asking for an Excel file by email. Your work only creates value when the right people read it, understand it and act on it. That is why job adverts for MIS and reporting roles talk about supporting report users, presenting findings and maintaining dashboards, not only building them.
@@ -2403,6 +2513,11 @@ Reports often contain personal data: names, phone numbers, health or financial d
       },
     },
     "report-design": {
+      outcomes: [
+        "Lay out a report page with the most important first",
+        "Use fewer visuals with colour that has a purpose",
+        "Make reports accessible and phone friendly",
+      ],
       explanation_md: `## Why this matters
 
 When a manager opens your report, you have a few seconds before they decide whether it is useful. A clear page guides their eyes to the answer. A crowded one makes them hunt, and they give up. Good design is not decoration; it is what turns your analysis into a decision. Microsoft's Data Analyst certification includes visualising data, and employers judge your portfolio on it.
@@ -2527,6 +2642,11 @@ You need Power BI Desktop for the full task. Without it, apply the same rules to
       },
     },
     "sharing-and-refresh": {
+      outcomes: [
+        "Publish a report and keep its data fresh",
+        "Explain the risk of publish to web",
+        "Control who sees what",
+      ],
       explanation_md: `## Why this matters
 
 A report on your computer helps nobody else. In organisations, Power BI reports are published to the Power BI service, shared with the right people, and refreshed automatically so nobody has to rebuild them. You may not do this yourself until you join an organisation, because the service needs a work or school account. But interviewers ask how sharing and refresh work, and knowing the risks, especially of "publish to web", protects you and your employer.
@@ -2640,6 +2760,11 @@ Fuseini publishes his distributor report to a team workspace, sets refresh for 6
       },
     },
     "getting-hired-excel": {
+      outcomes: [
+        "Show your skills instead of just listing them",
+        "Choose where your evidence can live",
+        "Plan an honest portfolio",
+      ],
       explanation_md: `## Why this matters
 
 Many CVs say "proficient in Microsoft Office". Employers know that line means very little. What makes you stand out is evidence: a clean report they can open, a dashboard they can click, a short explanation of how you turned messy data into a decision. This final section helps you turn the work you have done in this track into that evidence, and choose where to go next.
@@ -2740,6 +2865,11 @@ Skills fade if you stop. Offer to help a church, a school or a small business wi
       },
     },
     "office-report-portfolio": {
+      outcomes: [
+        "Choose what to include in a report portfolio",
+        "Choose data and write up each piece",
+        "Get feedback",
+      ],
       explanation_md: `## Why this matters
 
 A small set of finished, well explained reports does more for your job search than a long list of skills. Employers hiring for admin, accounts, MIS and M&E roles want to know three things: can you handle messy data, can you get the numbers right, and can you present them clearly? A good portfolio answers all three before the interview starts. Freelance clients looking for Excel and Power BI help also hire from portfolios.
@@ -2851,6 +2981,11 @@ Before you share widely, ask a mentor or someone who reads reports at work to re
       },
     },
     "jobs-and-next-steps": {
+      outcomes: [
+        "Name roles that use these skills",
+        "Weigh optional certifications",
+        "Plan your next step",
+      ],
       explanation_md: `## Why this matters
 
 Excel and Power BI skills are not a single job title. They are useful across many roles, which gives you options. Knowing where these skills fit, what employers expect alongside them, and what to learn next helps you aim your applications and keep growing.

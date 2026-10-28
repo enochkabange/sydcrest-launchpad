@@ -20,6 +20,11 @@ const content: TrackContent = {
   roadmap: "product-manager",
   nodes: {
     foundations: {
+      outcomes: [
+        "Explain what product work is",
+        "Look at one product with fresh eyes",
+        "Start a product journal",
+      ],
       explanation_md: `Every app, USSD menu or WhatsApp service you use was shaped by someone who asked: who is this for, what problem does it solve, and is it worth building? In a company that person often works in a product role. In Ghana you will find product teams in banks, telecoms, fintechs, agritech startups, logistics companies and NGOs that build digital tools for their field work.
 
 This first section gives you the ground to stand on before you learn the methods.
@@ -109,6 +114,11 @@ Each lesson has an explanation, a short practice task and a quiz. The people, bu
       },
     },
     "what-product-roles-do": {
+      outcomes: [
+        "Compare the main product roles and what they share",
+        "See how four roles work on the same product",
+        "Read product adverts like a detective",
+      ],
       explanation_md: `If you search Ghanaian job boards for "product manager", you will find that most product manager roles ask for several years of experience. That can feel discouraging until you notice the other titles that do product work and accept people earlier in their careers. Knowing these roles tells you where to aim first.
 
 ## The main roles
@@ -209,6 +219,11 @@ Titles vary a lot between companies. "Product Executive", "Product Officer" or "
       },
     },
     "ghana-product-context": {
+      outcomes: [
+        "Explain why mobile money, USSD and WhatsApp shape products in Ghana",
+        "Recognise the role of agents and trusted people",
+        "Name constraints to design for",
+      ],
       explanation_md: `A product that works well in London or Lagos can fail in Bolgatanga. The reason is rarely the technology. It is the habits, trust and constraints of the people using it. Employers want product people who understand the local market, so this context is a real job skill.
 
 ## Mobile money is the default wallet
@@ -298,6 +313,11 @@ The lesson: start from how people live today, then design the smallest change th
       },
     },
     "business-basics": {
+      outcomes: [
+        "Use four business words correctly",
+        "Explain how products make money",
+        "Work out pricing and unit economics in cedis",
+      ],
       explanation_md: `Every product decision eventually meets a money question. Will this feature bring in revenue? Does it cost more to run than it earns? Can customers afford it? Even NGOs ask whether a tool serves people well within its budget. Interviewers for product and analyst roles expect you to talk about these basics with confidence.
 
 ## Four words to know
@@ -392,6 +412,11 @@ You do not need to be an accountant. You need to spot when a feature changes the
       },
     },
     "stakeholder-communication": {
+      outcomes: [
+        "Listen first to stakeholders",
+        "Write short, clear updates",
+        "Present a recommendation adjusted to the audience",
+      ],
       explanation_md: `A stakeholder is anyone who cares about or affects your product: your manager, engineers, designers, sales staff, customer support, partners, and of course users. Employers hiring for business analyst, product operations and associate product roles often ask for good communication, whatever tools the job uses. A good idea that nobody understands goes nowhere.
 
 ## Listen first
@@ -490,6 +515,11 @@ Strong communication is a habit you can practise daily, in any job, starting now
       },
     },
     discovery: {
+      outcomes: [
+        "Explain what discovery means",
+        "Keep a discovery mindset",
+        "Separate a problem from a solution",
+      ],
       explanation_md: `Many products fail for a simple reason: nobody needed them. A team spends months building an app, launches it, and finds that people carry on doing things the old way. Discovery is the work you do before building to avoid that waste. Employers value it because it saves money, and product and analyst roles often ask for user research and market research skills.
 
 ## What discovery means
@@ -578,6 +608,11 @@ One afternoon of discovery changed what the team should build first. That is the
       },
     },
     "problem-interviews": {
+      outcomes: [
+        "Ask about the past, not the future",
+        "Interview without pitching your idea",
+        "Find a pattern across interviews",
+      ],
       explanation_md: `The fastest way to learn whether a problem is real is to talk to the people who have it. But how you ask matters enormously. Bad questions get polite, misleading answers. Good questions reveal what people actually do. This skill appears in product and analyst job adverts as user research or requirements gathering, and you can practise it anywhere.
 
 ## Ask about the past, not the future
@@ -689,6 +724,11 @@ After six interviews, she looks for patterns that appear again and again, not si
       },
     },
     "choosing-problems": {
+      outcomes: [
+        "Compare problems with four questions",
+        "Check the alternatives people use now",
+        "Write down your reasoning",
+      ],
       explanation_md: `After interviews you usually have more problems than your team can solve. Choosing well is one of the most important product judgements, and adverts for product roles mention market research and competitor analysis as part of it. The goal is not to pick the most exciting problem but the one where solving it creates the most value.
 
 ## Four questions to compare problems
@@ -786,6 +826,11 @@ He chose a problem with evidence, checked the competition, and stated what would
       },
     },
     "no-code-mvp": {
+      outcomes: [
+        "Test an idea by hand with the concierge approach",
+        "Use a free toolkit for tests",
+        "Decide what success looks like before you start",
+      ],
       explanation_md: `An MVP, or minimum viable product, is the smallest thing you can offer that tests whether people want your solution. In Ghana, the cheapest MVP is often not software at all. You run the service by hand using tools people already have, and you watch what happens. If people do not use the manual version, building an app will not change that.
 
 This is also one of the best ways to build portfolio evidence when you have no product job yet.
@@ -887,6 +932,11 @@ A manual MVP is a test, not a business plan. When the work becomes too much to d
       },
     },
     defining: {
+      outcomes: [
+        "Explain why clear definition matters",
+        "Use writing as the main tool",
+        "Turn a vague request into a clear one",
+      ],
       explanation_md: `Discovery tells you which problem matters. Defining turns that understanding into clear instructions a team can build from. This is the heart of business analyst work and a big part of associate product manager work. Employers hiring for these roles often ask for gathering requirements, writing user stories and functional specifications, and mapping business processes.
 
 ## Why clear definition matters
@@ -982,6 +1032,11 @@ By the end of this section you will be able to produce each of these pieces your
       },
     },
     "process-mapping": {
+      outcomes: [
+        "Explain what a process map shows",
+        "Map a real process",
+        "Find one improvement in a process",
+      ],
       explanation_md: `Before you can improve how something works, you need to see how it works now. A process map is a simple drawing of the steps in a task, who does each one, and where things go wrong. Business analyst roles at banks, telecoms and manufacturers in Ghana often ask for business process analysis, and NGOs use the same skill to improve field work.
 
 ## What a process map shows
@@ -1078,6 +1133,11 @@ She did not need to code. She needed to look closely, ask why and draw it clearl
       },
     },
     "requirements-and-user-stories": {
+      outcomes: [
+        "Gather requirements",
+        "Write user stories",
+        "Add acceptance criteria",
+      ],
       explanation_md: `Adverts for business analyst, associate product manager and product operations roles in Ghana often include one duty in particular: turning what users and the business need into clear requirements and user stories. Master this and you can contribute to a product team from your first week.
 
 ## Requirements
@@ -1196,6 +1256,11 @@ He also adds a non functional requirement: the order screen must work on low cos
       },
     },
     "writing-specs": {
+      outcomes: [
+        "Describe what goes in a short spec",
+        "Write a spec clearly",
+        "Write a one page spec for a small feature",
+      ],
       explanation_md: `User stories describe small pieces of work. A product spec (sometimes called a product requirements document or functional specification) puts the bigger picture in one place: why this feature exists, who it is for, what it must do and how you will know it worked. Analyst and product roles in Ghana often list functional specifications and product documentation as core duties.
 
 A good spec lets designers and engineers work without waiting for you to answer the same questions repeatedly.
@@ -1292,6 +1357,11 @@ Her engineer and designer read it in five minutes and start work. When the sales
       },
     },
     "prioritisation-and-roadmaps": {
+      outcomes: [
+        "Weigh value against effort and score ideas",
+        "Say no politely",
+        "Turn priorities into a simple roadmap",
+      ],
       explanation_md: `Every product team has more ideas than time. Customers ask for features, managers have plans, engineers want to fix old problems, and partners make requests. Choosing what to do first, and explaining why, is a core product skill. On small Ghanaian teams, where a few people support a whole product, focus can decide whether the product survives.
 
 ## Value and effort
@@ -1399,6 +1469,11 @@ She shares it in the team WhatsApp group with one line of reasoning for each ite
       },
     },
     building: {
+      outcomes: [
+        "Describe your role while a team builds",
+        "Build respect and trust with builders",
+        "Answer builder questions quickly and clearly",
+      ],
       explanation_md: `Product people do not build alone. Once you know what to build, the work moves to engineers and designers, and your job becomes helping them succeed: answering questions, making decisions quickly, protecting focus and checking that what is built actually meets the need. Adverts for associate product, business analyst and product operations roles in Ghana mention Agile methods, working across teams, technical understanding and testing before release.
 
 ## Your role during building
@@ -1487,6 +1562,11 @@ Neither action involved code. Both kept the team building the right thing.`,
       },
     },
     "agile-basics": {
+      outcomes: [
+        "Explain the core idea of agile",
+        "Use the key agile terms",
+        "Play your part in a sprint",
+      ],
       explanation_md: `Many software teams in Ghana, from bank digital teams to startups, use some form of Agile. Adverts for business analysts, product operations staff and associate product managers often mention Scrum, Kanban and tools such as Jira. You do not need a certificate to start; you need to understand the ideas and why they work.
 
 ## The core idea
@@ -1593,6 +1673,11 @@ Notice how the short cycle caught a new need quickly.`,
       },
     },
     "technical-literacy": {
+      outcomes: [
+        "Name the main parts of most products",
+        "Explain how a mobile money payment usually works",
+        "Follow how releases happen",
+      ],
       explanation_md: `You do not need to code to work in product, but you need to understand how software is put together. Adverts for associate product roles ask for technical fluency, and fintech product roles in Accra mention mobile money and payment integrations. Technical literacy helps you judge effort, spot risks early and earn engineers' respect.
 
 ## The main parts of most products
@@ -1701,6 +1786,11 @@ Technical literacy did not make him an engineer. It made him a better partner to
       },
     },
     "working-with-design": {
+      outcomes: [
+        "Use key design ideas and give useful feedback",
+        "Apply simple usability principles",
+        "Run a quick usability test",
+      ],
       explanation_md: `Designers decide how a product looks and, more importantly, how it works for the person using it. Product people work with them daily. Adverts for associate product roles often mention user experience skills and design tools such as Figma, and in smaller Ghanaian companies the product person may sketch early screens before a designer joins. You need enough design understanding to collaborate well and give useful feedback.
 
 ## Key design ideas
@@ -1802,6 +1892,11 @@ Wumpini described problems with evidence. Ayishetu designed the fix. That is goo
       },
     },
     "acceptance-testing": {
+      outcomes: [
+        "Write test cases for acceptance testing",
+        "Test in real conditions and report bugs clearly",
+        "Plan a release",
+      ],
       explanation_md: `When engineers say a feature is finished, someone must check it really does what users need before real people depend on it. This is acceptance testing, often called user acceptance testing or UAT. Adverts for business analysts in Ghanaian banks, telecoms and manufacturers, and for associate product roles, often list testing before go live and release readiness as duties. Mistakes caught here are far cheaper than mistakes customers find.
 
 ## What acceptance testing checks
@@ -1923,6 +2018,11 @@ Mariama then recommends a pilot with five field officers in one district for two
       },
     },
     "live-product": {
+      outcomes: [
+        "Describe what running a live product involves",
+        "Explain why support work builds product skill",
+        "See a live product from the support side",
+      ],
       explanation_md: `Launch day is not the end of product work. It is the start of a new kind of work: helping real people use the product, fixing what breaks, and learning what to improve. Someone has to onboard new users, answer their problems, keep help guides current and tell the builders what is going wrong. In many companies this is called product operations, customer success or product support.
 
 This matters for your career. Product operations, support and implementation roles are often more open to people early in their careers than product manager roles, which makes them realistic doors into product work. They teach you how users really behave, which is exactly what product managers need to know.
@@ -2014,6 +2114,11 @@ Within weeks, payout questions drop and the product manager asks Fuseini to join
       },
     },
     "product-operations": {
+      outcomes: [
+        "Plan onboarding and training",
+        "Write help guides and SOPs",
+        "Escalate issues",
+      ],
       explanation_md: `Product operations keeps a product working well for the people who rely on it between releases. Adverts in Ghana and across West Africa for product operations associates, product support officers and implementation roles list duties such as onboarding clients, training users, writing documentation and procedures, resolving issues and working with engineers on fixes. These are skills you can start practising now.
 
 ## Onboarding
@@ -2116,6 +2221,11 @@ A week later, three officers report the app "losing" records. Hawa reproduces it
       },
     },
     "customer-feedback": {
+      outcomes: [
+        "Collect and record feedback from many channels",
+        "Find patterns and share them",
+        "Close the loop with customers",
+      ],
       explanation_md: `Customers tell you what is wrong with your product every day, through support chats, calls, app store reviews, social media comments and agents in the field. Product teams that listen systematically improve faster. Adverts for product operations and analyst roles mention feedback loops, first level support and resolving support tickets. Turning scattered complaints into clear evidence is a valuable skill.
 
 ## Collect from many channels
@@ -2222,6 +2332,11 @@ She discovers that matured savings return to the wallet, but no SMS says so. Her
       },
     },
     measuring: {
+      outcomes: [
+        "Use numbers and stories together",
+        "Read numbers honestly",
+        "Separate vanity numbers from meaningful ones",
+      ],
       explanation_md: `After launch, how do you know whether a product is working? Opinions differ, and the loudest voice is not always right. Data gives you a shared, honest view. Adverts for product analysts, business analysts and data roles in Ghana ask for data analysis, KPI tracking, dashboards and reporting, and some ask for spreadsheets at an advanced level and SQL. Even product managers who do not run the numbers themselves must read them confidently.
 
 ## Numbers and stories together
@@ -2311,6 +2426,11 @@ He calls three of them. They explain that the sync often fails, so they go back 
       },
     },
     "spreadsheets-and-sql": {
+      outcomes: [
+        "Use the spreadsheet skills that matter for product work",
+        "Write basic SQL",
+        "Answer a real question with data",
+      ],
       explanation_md: `Product and business analyst adverts in Ghana often ask for strong spreadsheet skills, and analyst roles at fintechs and PAYGO companies add SQL and dashboard tools. Spreadsheets let you answer most beginner product questions. SQL lets you ask the same questions directly of a company's database, which is how analysts work once data grows large.
 
 ## Spreadsheet skills that matter
@@ -2428,6 +2548,11 @@ Start small with data you understand. The habit of asking a clear question first
       },
     },
     metrics: {
+      outcomes: [
+        "Follow the user's journey with metrics",
+        "Define a metric precisely and choose one main metric",
+        "Watch for side effects",
+      ],
       explanation_md: `A metric is a number you track over time to see whether your product is doing its job. Adverts for product managers and analysts ask candidates to set product goals, define KPIs (key performance indicators) and track them. Choosing the right metrics keeps a team focused on real value instead of numbers that only look impressive.
 
 ## Following the user's journey
@@ -2531,6 +2656,11 @@ Clear metrics told the team exactly where to look.`,
       },
     },
     experiments: {
+      outcomes: [
+        "Explain the basic idea of an experiment",
+        "Decide what counts as success before you look",
+        "Change one thing at a time and be patient with small numbers",
+      ],
       explanation_md: `When you change a product, how do you know whether the change caused an improvement? An experiment compares people who got the change with people who did not, so you can see the difference fairly. Some product analyst roles, especially at larger fintechs, ask for experiment design and analysis. This lesson is optional, but the thinking behind it will make you a sharper product person even if you never run a formal test.
 
 ## The basic idea
@@ -2636,6 +2766,11 @@ After four weeks, group B places noticeably more Monday orders, and the gap hold
       },
     },
     "getting-hired": {
+      outcomes: [
+        "Give a realistic picture of product hiring",
+        "Explain what employers look for",
+        "Plan your first product related role",
+      ],
       explanation_md: `Be honest with yourself from the start: in Ghana, true entry level product manager jobs are rare. Most product manager roles ask for several years of experience, and remote roles open to Ghana based applicants tend to be senior. That is not a reason to give up. It is a reason to plan a realistic route.
 
 ## The realistic picture
@@ -2729,6 +2864,11 @@ Think of your first job as a place to practise product skills, not a final desti
       },
     },
     "breaking-in": {
+      outcomes: [
+        "Find doors worth knocking on",
+        "Grow product responsibility from inside a job",
+        "Build evidence and apply well",
+      ],
       explanation_md: `Product management is usually a second or third job, not a first one. Knowing the doors that actually open, and how to move through them, saves you months of applying for roles you are unlikely to get yet.
 
 ## Doors worth knocking on
@@ -2822,6 +2962,11 @@ Here is an illustration. Imagine Hawa, who studied agriculture in Tamale. She co
       },
     },
     "product-portfolio": {
+      outcomes: [
+        "Describe what a product portfolio contains",
+        "Write a case study with a simple structure",
+        "Show your thinking, including mistakes",
+      ],
       explanation_md: `When you do not yet have product job experience, a portfolio is your proof. It shows employers how you think: how you find a problem, gather evidence, decide and learn. Many adverts for product and analyst roles ask for experience you may not have; a strong portfolio is the best substitute you can build with free tools.
 
 ## What a product portfolio contains
@@ -2929,6 +3074,11 @@ Each is two pages, with photos of her maps and screenshots of her sheets. In an 
       },
     },
     "product-interviews": {
+      outcomes: [
+        "Recognise common product interview questions",
+        "Use a simple structure for product questions",
+        "Answer behavioural questions with local knowledge",
+      ],
       explanation_md: `Interviews for product, business analyst and product operations roles test how you think, not just what you know. You will often be asked to work through a problem out loud. The good news is that the practice tasks in this roadmap are exactly the preparation you need.
 
 ## Common question types

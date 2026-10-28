@@ -27,6 +27,18 @@ export type ResourceDraft = {
  */
 export type NodeKind = "section" | "topic" | "checkpoint";
 
+/** How hard a topic is for someone who has done the topics before it (issue #255). */
+export type Difficulty = "beginner" | "intermediate" | "advanced";
+
+/** How much there is to hold in your head at once, 1 (one simple idea) to 5 (many moving parts). */
+export type Complexity = 1 | 2 | 3 | 4 | 5;
+
+/**
+ * Where a section sits on the way to work: foundation (before any job),
+ * junior (first job), mid (a few years in) or specialist (a focus you grow into).
+ */
+export type CareerLevel = "foundation" | "junior" | "mid" | "specialist";
+
 export type NodeDraft = {
   /** Unique within its roadmap; kebab case. */
   slug: string;
@@ -44,6 +56,16 @@ export type NodeDraft = {
    */
   choice_group?: string;
   resources: ResourceDraft[];
+  /** Every node (sections have lessons too). Judged from the lesson and its place in the track. */
+  difficulty?: Difficulty;
+  complexity?: Complexity;
+  /** Sections only (parent null). */
+  careerLevel?: CareerLevel;
+  /**
+   * Sections only. Job titles (no salaries) that appear in this track's
+   * src/content/research/<track>.md adverts and fit this level. Empty when none fit.
+   */
+  jobs?: string[];
 };
 
 export type RoadmapTrack =
