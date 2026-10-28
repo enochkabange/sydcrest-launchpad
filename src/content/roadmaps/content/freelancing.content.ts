@@ -1926,6 +1926,491 @@ A small job for a neighbour may need only a clear message confirming the work, p
         pass_threshold: 75,
       },
     },
+    "simple-contracts": {
+      explanation_md: `A contract is simply an agreement between you and a client about what each side will do. It does not need legal language or a lawyer for everyday freelance jobs. What it needs is to be clear, written down and agreed by both sides before work starts. This lesson is general guidance, not legal advice; for a large or unusual contract, ask someone qualified to check it.
+
+## The six parts every agreement should cover
+
+* **The work.** Exactly what you will deliver. "One logo in three file formats" or "twelve Instagram posts in March, designed and scheduled". Also say what is not included if there could be confusion, such as printing or photography.
+* **The deadline.** When you will deliver, and any dates for drafts. Note what the client must provide and by when, such as photos or text, because your deadline depends on theirs.
+* **Revisions.** How many rounds of changes are included, and how extra changes will be charged.
+* **The price.** The total, the currency, and what it covers.
+* **Payment dates.** How much is paid before you start, at any milestones and on delivery, and by which method.
+* **Ownership and use of the work.** Who owns the finished files and when. A common arrangement is that the client owns the final work once it is fully paid, and you may show it in your portfolio unless the client asks you not to.
+
+## Ownership deserves a sentence
+
+Designs, writing, photos, videos and code are creative work, and the rules about who owns them can surprise both sides. Rather than assuming, write it down. Mention whether you will hand over editable source files, such as the original design file, or only the finished images. If the client wants exclusive rights or to keep the work private, agree that clearly.
+
+Also respect other people's ownership. Only use fonts, images and music you have the right to use, and tell the client if they need to buy a licence.
+
+## Where to write it
+
+* **For small jobs:** a clear message or email that lists the six parts, with the client replying "I agree". Keep that message.
+* **For bigger jobs:** a short document of one or two pages, shared as a file both sides keep. A free document app is enough. Some freelancers use free online contract templates as a starting point, but many are written for other countries, so adapt them to your situation.
+* **On marketplaces:** the platform's own contract and terms apply. Keep all agreement inside the platform.
+
+## Confirm before you start
+
+Never start serious work until the client has agreed the terms in writing and paid any agreed deposit. Starting early "to show goodwill" often leads to unpaid work when the client changes their mind.
+
+## A small example
+
+Hawa agrees to write five blog articles for a tour company in Mole. Her email lists the five topics, the word length, a draft date and a final date, one round of edits, the price in cedis, half before starting and half on delivery, and that the company owns the articles once paid while Hawa may show them as samples. The manager replies "Agreed". When the manager later asks for a sixth article, both sides can see it was not in the original agreement, and Hawa sends a separate price.`,
+      practice_task_md: `**Goal:** Write a one page agreement template for your service.
+
+**Steps:**
+1. Open a free document app on your phone or computer.
+2. Create six headings: work, deadline, revisions, price, payment dates, ownership and use.
+3. Under each, write a sentence for a realistic job, using placeholders like [client name] and [date] where details will change.
+4. Add a line for what the client must provide and by when.
+5. Add a final line for both names and the date of agreement.
+
+**Done looks like:** A reusable one page template with all six parts, ready to fill in for your next client. Ask a mentor to check that it is clear.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is one of the six parts every agreement should cover?",
+            options: ["The client's home address", "The number of revisions included", "Your favourite tools", "Your school results"],
+            answer_index: 1,
+            explanation: "The six parts are the work, deadline, revisions, price, payment dates and ownership and use.",
+          },
+          {
+            prompt: "What is a common arrangement for ownership of finished work, according to the lesson?",
+            options: [
+              "The freelancer always keeps all rights forever",
+              "The client owns the final work once fully paid, and the freelancer may show it in a portfolio unless asked not to",
+              "Nobody owns the work",
+              "The marketplace owns all work",
+            ],
+            answer_index: 1,
+            explanation: "The lesson gives this as a common arrangement and says to write it down rather than assume.",
+          },
+          {
+            prompt: "For a small job, what is enough as a written agreement?",
+            options: [
+              "Nothing; small jobs need no agreement",
+              "A clear message or email listing the six parts, with the client replying that they agree",
+              "A stamped legal document from a court",
+              "A voice note only",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says a clear message with the client's written agreement is enough for small jobs.",
+          },
+          {
+            prompt: "Why should you not start serious work before terms are agreed and any deposit is paid?",
+            options: [
+              "Because tools do not work without a contract",
+              "Because starting early often leads to unpaid work if the client changes their mind",
+              "Because clients prefer slow freelancers",
+              "Because it is illegal to start early",
+            ],
+            answer_index: 1,
+            explanation: "The lesson warns that starting early to show goodwill often leads to unpaid work.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "deposits-and-invoices": {
+      explanation_md: `The biggest money risk for a freelancer is doing all the work and then not being paid. Deposits, milestones and clear invoices reduce that risk and make payment a normal, professional part of the job rather than an awkward favour.
+
+## Deposits
+
+A deposit is part of the price paid before you start. Many freelancers ask for a portion upfront, such as half, for new clients and larger jobs. A deposit:
+
+* Shows the client is serious.
+* Covers your early time and costs if the client disappears.
+* Makes it less likely you will be left with nothing.
+
+Agree the deposit in writing as part of your terms, and start work only once it has actually arrived in your account.
+
+## Milestones
+
+For bigger or longer jobs, split the work into stages, called milestones, each with its own payment. For a website: a deposit to start, a payment when the design is approved, and a final payment at launch. If the client stops paying at any point, you have lost at most one stage of work.
+
+## Marketplace payment protection
+
+Many freelance marketplaces use a form of escrow: the client pays the platform for a project or milestone before work begins, the platform holds that money, and releases it to you when the work is approved, with a dispute process if there is disagreement. This protection only works if the work is agreed and paid on the platform. Read each platform's own rules on how it holds and releases payments.
+
+## Invoices
+
+An invoice is a document that asks a client to pay for work. Even local clients increasingly expect one, and organisations such as NGOs and schools usually need one for their records. A clear invoice includes:
+
+* The word "Invoice", an invoice number and the date.
+* Your name, contact details and, if you have one, your business name.
+* The client's name.
+* A description of the work, with quantities and prices.
+* The total amount due and the currency.
+* The payment due date.
+* How to pay: your mobile money number and registered name, or bank details.
+
+Number your invoices in order, such as 001, 002, 003, and keep a copy of each. A free document or spreadsheet template is enough.
+
+## Following up late payment
+
+Clients pay late for many reasons, often simply forgetting. Follow up politely, firmly and in writing:
+
+* **On the due date or a day after:** "Good morning, a reminder that invoice 004 for the menu design was due yesterday. Please let me know once it is sent."
+* **About a week later:** restate the amount and due date, and ask when you can expect payment.
+* **If still unpaid:** pause any further work for that client until the balance is settled, and say so calmly.
+
+Keep every message. Do not post about the client publicly or send threats; it damages your reputation and rarely helps.
+
+## A small example
+
+Sumaila agrees to build a stock spreadsheet for a pharmacy in Bolgatanga in two stages. He asks for a deposit, delivers the first stage, invoices for the second payment and only sends the final file once that payment shows in his mobile money balance. When the second invoice is a week late, his polite reminder is enough.`,
+      practice_task_md: `**Goal:** Create a reusable invoice template.
+
+**Steps:**
+1. Open a free document or spreadsheet app.
+2. Add these parts: the word Invoice, invoice number, date, your name and contacts, client name, description of work with quantity and price, total and currency, due date, and payment details.
+3. Fill it in for a realistic made up job, numbered 001.
+4. Write the polite reminder message you would send on the due date if it were unpaid.
+5. Save the template in your Clients folder.
+
+**Done looks like:** A complete sample invoice and a ready reminder message. Do not put a real PIN or password anywhere in it.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why ask a new client for a deposit before starting?",
+            options: [
+              "To make the job finish faster",
+              "To show the client is serious and cover your early time if they disappear",
+              "Because deposits are a tax requirement",
+              "So you never need an invoice",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says deposits show commitment and protect your early time and costs.",
+          },
+          {
+            prompt: "What is the benefit of milestones for a large job?",
+            options: [
+              "The client never has to pay until the very end",
+              "If the client stops paying, you have lost at most one stage of work",
+              "They remove the need for written terms",
+              "They make the work free",
+            ],
+            answer_index: 1,
+            explanation: "Each stage has its own payment, which limits how much you can lose.",
+          },
+          {
+            prompt: "When does a marketplace's payment protection apply?",
+            options: [
+              "Whenever you work with someone you met on the platform",
+              "Only when the work is agreed and paid on the platform",
+              "Only for local clients",
+              "Never",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says protection only works if the work is agreed and paid on the platform.",
+          },
+          {
+            prompt: "Which item should a clear invoice include?",
+            options: ["Your mobile money PIN", "An invoice number, date, description of work, total and how to pay", "The client's password", "Your school certificate"],
+            answer_index: 1,
+            explanation: "The lesson lists these items; you never share a PIN.",
+          },
+          {
+            prompt: "An invoice is still unpaid after two polite reminders. What does the lesson suggest?",
+            options: [
+              "Post about the client on social media",
+              "Send threatening messages",
+              "Pause further work for that client until the balance is settled, and say so calmly",
+              "Do more work for free to keep them happy",
+            ],
+            answer_index: 2,
+            explanation: "The lesson advises pausing work calmly and keeping every message, without threats.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "managing-projects": {
+      explanation_md: `Clients judge you on reliability as much as on quality. A freelancer who always delivers on time, keeps the client informed and handles changes calmly becomes the person clients call first. You do not need special software for this, just a few steady habits.
+
+## Track every deadline
+
+Put every deadline into your calendar as soon as it is agreed, with a reminder a day or two before. For each job, work backwards: if the final is due Friday and the client needs a day to review, your draft is due Wednesday, so you must start by Monday. Add those inner dates too.
+
+Keep a simple job list, in a spreadsheet or notebook, with each client, the task, the next deadline and the status: not started, in progress, waiting for client, delivered, paid. Look at it every morning.
+
+## Do not overcommit
+
+Saying yes to every job feels good until three deadlines land on the same day. Before accepting new work, check your calendar and be honest about how many hours you have, including time lost to power cuts, network problems, school or family duties. It is better to offer a later date than to promise one you cannot meet.
+
+## Update before anyone asks
+
+Send short updates at natural points: when you start, when a draft is ready, and if anything changes. "Good afternoon, the first draft of your newsletter is attached. Please send any changes by Thursday so I can deliver the final on Friday." Clients relax when they do not have to chase you.
+
+If something will delay you, such as a long power outage, tell the client as soon as you know, with a new date.
+
+## Handle revisions calmly
+
+Revisions are normal. Treat feedback as information, not criticism. To make revisions smooth:
+
+* Ask the client to send all changes together in one message, not one at a time.
+* Repeat back what you will change, if anything is unclear.
+* Count rounds against what your agreement includes.
+
+If a client asks for more rounds than agreed, or for new work, respond politely: "I am happy to make these changes. They are beyond the two rounds included, so they would cost an extra amount. Shall I go ahead?" Doing endless extra work for free teaches clients that your time has no value.
+
+## Deliver professionally
+
+When you deliver, send the files in the agreed formats, named clearly, such as "Hawa Catering menu final.pdf". Include a short note of what you are sending and how to use it. Check everything opens before you press send. Keep your own backup copy.
+
+## A small example
+
+Mariama has three clients in one week. On Monday she lists all deadlines in her calendar, sees that two finals land on Friday and asks one client if Saturday morning is acceptable. They agree. When the second client sends changes one at a time, she asks kindly for a single list. Everything is delivered on time, and she ends the week with no late nights and two happy clients asking about next month.`,
+      practice_task_md: `**Goal:** Set up a simple project tracker.
+
+**Steps:**
+1. In your "Jobs and payments" spreadsheet, add columns: next deadline, status (not started, in progress, waiting for client, delivered, paid).
+2. Add two realistic sample jobs with final deadlines.
+3. For each, work backwards and add the draft date and start date to your calendar with reminders.
+4. Write a short update message for when a draft is ready, and a polite message for when a client asks for changes beyond the agreed rounds.
+
+**Done looks like:** A tracker with two sample jobs, calendar entries for their inner dates, and two ready messages.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "The final is due Friday and the client needs a day to review. What does working backwards tell you?",
+            options: [
+              "Start on Friday morning",
+              "Your draft must be ready by about Wednesday, so start earlier",
+              "Ask the client to review faster",
+              "Deadlines do not need planning",
+            ],
+            answer_index: 1,
+            explanation: "The lesson shows working back from the final date to set draft and start dates.",
+          },
+          {
+            prompt: "What should you do before accepting new work?",
+            options: [
+              "Accept everything and work out the details later",
+              "Check your calendar and be honest about your available hours",
+              "Ask for double payment",
+              "Cancel an existing client",
+            ],
+            answer_index: 1,
+            explanation: "The lesson warns against overcommitting and says to check your real capacity.",
+          },
+          {
+            prompt: "How should you ask clients to send revision requests?",
+            options: [
+              "One at a time, as they think of them",
+              "All together in one message",
+              "Only by phone call",
+              "Never; refuse all changes",
+            ],
+            answer_index: 1,
+            explanation: "The lesson suggests asking for all changes together to keep revisions smooth.",
+          },
+          {
+            prompt: "A client asks for more revision rounds than agreed. What does the lesson suggest?",
+            options: [
+              "Do them free to avoid conflict",
+              "Refuse rudely",
+              "Politely say they are beyond what was included and offer a price for the extra work",
+              "Stop replying",
+            ],
+            answer_index: 2,
+            explanation: "The lesson recommends offering to quote for extra work instead of doing it free.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "getting-paid": {
+      explanation_md: `Doing good work is only half of freelancing. The other half is making sure the money actually reaches you, safely and legally, and keeping records so you know where you stand. This section covers getting paid by local clients, receiving money from clients abroad, and keeping records and dealing with tax.
+
+## Why this matters
+
+Freelancers lose money in avoidable ways: releasing final files before checking a payment arrived, trusting a fake alert, using an unlicensed money transfer service, paying unexpected fees, or not knowing at the end of the year how much they earned and spent. Each lesson in this section closes one of those gaps.
+
+Getting paid properly also protects your reputation. Clients trust a freelancer who sends clear invoices and receipts, uses accounts in their own real name and keeps tidy records.
+
+## Your money, your accounts
+
+Always receive payment into accounts in your own name: your own mobile money wallet, your own bank account, your own marketplace account. Never ask a client to pay into a friend's account, and never let someone else receive or hold your earnings for you. Accounts in your own name, matching your Ghana Card, avoid problems when you withdraw money or when a provider checks your identity.
+
+## What this section covers
+
+* **Getting paid by local clients.** Mobile money and bank transfers, confirming money has really arrived, receipts and transaction references.
+* **Receiving money from abroad.** The main kinds of route, what to compare, and how to check that a payment or money transfer company is licensed or registered with the Bank of Ghana. This lesson names no companies, because rules and providers change; you will learn how to check instead.
+* **Records, tax and registration.** A simple record of jobs, invoices, payments and costs; what the Ghana Revenue Authority says about registering as a self employed person; and registering a business name.
+
+## A habit to start now
+
+Open your "Jobs and payments" spreadsheet whenever money comes in or goes out for your freelance work. Write the date, the client or cost, the amount and a transaction reference. It takes a minute and saves hours later.
+
+## A small example
+
+Issahaku is pleased when a client says, "I have sent the money," and he immediately sends the final logo files. Later he finds the payment never arrived. He learns the hard way.
+
+For his next job he changes his habits. He confirms each payment in his real mobile money balance before releasing files. He sends a short receipt with the transaction reference. He records each payment and each cost, such as data and printing, in his spreadsheet. At the end of the year, he can see exactly what he earned and spent, which he needs for pricing and for tax.
+
+## A note on safety
+
+Nobody legitimate will ask for your mobile money PIN, a verification code or your bank password in order to pay you. To receive money, a client needs only your number or account details and your registered name.`,
+      practice_task_md: `**Goal:** Check that your payment setup is in your own name and ready.
+
+**Steps:**
+1. List the accounts you could receive payment into: mobile money, bank, any marketplace.
+2. For each, confirm it is in your own name and that the name matches your Ghana Card.
+3. Write the exact details a client would need to pay you locally, without any PIN or password.
+4. Add a "transaction reference" column to your jobs spreadsheet if it does not have one.
+
+**Done looks like:** A short list of your payment accounts, each confirmed in your own name, your payment details written out for clients, and an updated spreadsheet.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why should you receive payment only into accounts in your own name?",
+            options: [
+              "Because it is faster for the client",
+              "It avoids problems when you withdraw money or when a provider checks your identity",
+              "Because friends charge high fees",
+              "Because banks do not allow more than one account",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says accounts in your own name, matching your Ghana Card, avoid withdrawal and identity problems.",
+          },
+          {
+            prompt: "What mistake did Issahaku make with his first client?",
+            options: [
+              "He charged too much",
+              "He sent the final files before confirming the payment had arrived",
+              "He used a spreadsheet",
+              "He sent a receipt",
+            ],
+            answer_index: 1,
+            explanation: "He trusted the client's word and later found the payment never arrived.",
+          },
+          {
+            prompt: "What does a client need from you in order to pay you?",
+            options: [
+              "Your mobile money PIN",
+              "A verification code",
+              "Your number or account details and your registered name",
+              "Your bank password",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says nobody legitimate needs your PIN, code or password to pay you.",
+          },
+          {
+            prompt: "What does the lesson say about naming money transfer companies?",
+            options: [
+              "It recommends the cheapest one",
+              "It names no companies, because rules and providers change, and teaches you how to check instead",
+              "It lists every company in Ghana",
+              "It says all companies are licensed",
+            ],
+            answer_index: 1,
+            explanation: "The lesson explains that you will learn how to check licensing with the Bank of Ghana instead.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "local-payments": {
+      explanation_md: `Most local clients will pay you by mobile money or bank transfer, and some by cash. Each is fine, as long as you confirm the money has really arrived, give a receipt and keep a record.
+
+## Mobile money
+
+Mobile money is the most common way local clients pay freelancers. To receive it, a client needs your mobile money number and your registered name. Before you release final files:
+
+* **Check your actual balance** or transaction history in your mobile money app or by dialling your provider's official menu. Do not rely on a screenshot, a forwarded message or an SMS that could be faked. Fake payment alerts are a known trick.
+* **Check the amount and the sender's name** match what you expect.
+* **Note the transaction reference** shown in your history.
+
+Fees and limits apply to mobile money, and they change. Check your provider's current charges, and if a fee applies to receiving or withdrawing, include it in your pricing rather than being surprised.
+
+## Bank transfers
+
+Organisations such as NGOs, schools and companies often pay by bank transfer, sometimes only after receiving a proper invoice. Bank transfers can take longer to arrive. Give your account name exactly as the bank has it, your account number and your branch, and confirm the credit in your own banking app or statement before treating the job as paid. Some organisations follow their own payment schedule, so ask early how and when they pay.
+
+## Cash
+
+If a client pays in cash, count it in front of them, and give a written receipt on the spot. Record it in your spreadsheet the same day; cash is the easiest money to forget.
+
+## Receipts
+
+A receipt confirms that you received payment. Send one for every payment, even a small one. It can be a simple message or document that includes:
+
+* The word "Receipt" and the date.
+* Your name and the client's name.
+* What the payment was for, with the invoice number if there was one.
+* The amount received and the method, such as mobile money.
+* The transaction reference.
+
+Receipts protect both sides. If a client later says they paid twice, or that they paid when they did not, your records and references show what really happened.
+
+## Wrong transfers and refund requests
+
+Sometimes a person says they sent money to you by mistake and asks you to send it back. Check your real balance first. If money really did arrive by mistake, contact your provider's official customer service to handle the reversal, rather than sending money to a number given by a stranger. This protects you from a common trick.
+
+## A small example
+
+Hawa finishes flyers for a youth programme in Damongo. The organiser messages a screenshot: "Sent!" Hawa checks her real mobile money history, sees the payment with the correct name and amount, notes the reference, sends the print files and a short receipt, and records it in her spreadsheet. The whole process takes three minutes.`,
+      practice_task_md: `**Goal:** Practise the local payment routine.
+
+**Steps:**
+1. Find where your mobile money app or menu shows your transaction history, and where it shows a transaction reference. Do not share your PIN with anyone.
+2. Look up your provider's current fees for receiving and withdrawing, from the provider's official website or app.
+3. Create a receipt template with: Receipt, date, your name, client name, what it was for, invoice number, amount, method and transaction reference.
+4. Fill it in for a realistic made up payment.
+
+**Done looks like:** A note of where to check your transaction history and references, your provider's current fees, and a filled in sample receipt.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How should you confirm a mobile money payment before releasing final files?",
+            options: [
+              "Trust the client's screenshot",
+              "Trust any SMS alert",
+              "Check your actual balance or transaction history",
+              "Ask a friend if they think it arrived",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says screenshots and SMS can be faked, so check your real balance or history.",
+          },
+          {
+            prompt: "What should a receipt include?",
+            options: [
+              "Your PIN and password",
+              "The date, names, what it was for, amount, method and transaction reference",
+              "Only the amount",
+              "The client's home address and age",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists these items for a clear receipt.",
+          },
+          {
+            prompt: "Someone says they sent money to you by mistake and asks you to return it to another number. What should you do?",
+            options: [
+              "Send it back immediately to the number they give",
+              "Check your real balance and, if money did arrive by mistake, use the provider's official customer service for the reversal",
+              "Ignore your balance and send double",
+              "Block them without checking",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to check your balance and handle genuine reversals through official customer service.",
+          },
+          {
+            prompt: "What does the lesson say about mobile money fees?",
+            options: [
+              "They are always zero",
+              "They apply and change, so check your provider's current charges and include them in your pricing",
+              "Only clients abroad pay them",
+              "They are set by your client",
+            ],
+            answer_index: 1,
+            explanation: "The lesson tells you to check current charges with your provider and plan for them.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
     // @@NEXT@@
   },
 };
