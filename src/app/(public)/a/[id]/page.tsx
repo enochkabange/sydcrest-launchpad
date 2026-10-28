@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import Link from "@/components/ui/link";
 import { buttonClasses } from "@/components/ui/button";
+import { AccountCta } from "@/components/marketing/account-cta";
 import { Initials } from "@/components/social/profile-bits";
 import { describeAchievement } from "@/lib/social/public-profile";
 import { getSharedAchievement } from "@/lib/social/queries";
@@ -59,9 +60,16 @@ async function SharedAchievement({ params }: Pick<PageProps<"/a/[id]">, "params"
         </div>
       </div>
       <p className="text-content-2">SydCrest Launchpad has free roadmaps for tech careers in Ghana.</p>
-      <Link href="/signup" className={buttonClasses("primary")}>
-        Start learning free
-      </Link>
+      <AccountCta
+        signedInLabel="Continue learning"
+        signedOut={
+          <div className="flex flex-wrap gap-3">
+            <Link href="/signup" className={buttonClasses("primary")}>
+              Start learning free
+            </Link>
+          </div>
+        }
+      />
     </article>
   );
 }
