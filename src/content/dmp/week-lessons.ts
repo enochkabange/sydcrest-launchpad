@@ -65,3 +65,36 @@ export function weekNodeLinks(track: DmpTrack, week: SpecialisationWeek): { road
     ...refreshers.map((node_slug) => ({ roadmap_slug: DIGITAL_MARKETER_ROADMAP, node_slug })),
   ];
 }
+
+export const BRIDGE_ROADMAP = "digital-skills-bridge";
+
+export type SharedWeek = 1 | 2 | 3 | 4 | 5 | 6 | 10 | 11 | 12;
+export const SHARED_WEEKS: readonly SharedWeek[] = [1, 2, 3, 4, 5, 6, 10, 11, 12];
+
+type Link = { roadmap_slug: string; node_slug: string };
+const bridge = (node_slug: string): Link => ({ roadmap_slug: BRIDGE_ROADMAP, node_slug });
+const marketer = (node_slug: string): Link => ({ roadmap_slug: DIGITAL_MARKETER_ROADMAP, node_slug });
+
+/**
+ * SydCrest lessons for the shared weeks (issue #239), 2 to 5 per week in
+ * teaching order. Weeks 1 to 3 draw on the Digital Skills Bridge, weeks 3
+ * onwards on the Digital Marketer roadmap; both now have full lessons. A data
+ * migration links them into program_week_nodes.
+ */
+export const SHARED_WEEK_LINKS: Record<SharedWeek, Link[]> = {
+  1: [bridge("computer-access"), bridge("mouse-and-keyboard"), bridge("files-on-your-phone"), bridge("email-account"), bridge("spotting-scams")],
+  2: [bridge("typing"), bridge("clear-english"), bridge("money-records")],
+  3: [
+    bridge("passwords-and-two-step"),
+    bridge("privacy-and-shared-phones"),
+    bridge("searching-well"),
+    marketer("facebook-instagram"),
+    marketer("email-marketing"),
+  ],
+  4: [marketer("customer-journey"), marketer("channels-overview"), marketer("seo-basics"), marketer("copywriting"), marketer("google-business-profile")],
+  5: [marketer("know-your-audience"), marketer("content-calendar"), marketer("graphics-and-photos"), marketer("community-management")],
+  6: [marketer("measurement"), marketer("analytics"), marketer("social-ads"), marketer("client-reporting")],
+  10: [marketer("campaign-plan"), marketer("channels-overview"), marketer("content-calendar"), marketer("budgets-in-cedis")],
+  11: [marketer("portfolio"), marketer("job-applications"), marketer("freelancing")],
+  12: [marketer("campaign-plan"), marketer("client-reporting"), marketer("portfolio")],
+};

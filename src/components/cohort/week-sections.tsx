@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
-import { CheckCircle2, Circle, ExternalLink } from "lucide-react";
+import { CheckCircle2, Circle } from "lucide-react";
 import Link from "@/components/ui/link";
 import { displayTheme } from "@/components/marketing/curriculum-weeks";
+import { ExtraPracticeLinks } from "@/components/dmp/extra-practice";
 import type { CohortWeek } from "@/lib/cohort/data";
 import { dueDate, formatDay, lateAfter, type WeekState } from "@/lib/cohort/schedule";
 import { StateBadge } from "./week-plan";
@@ -75,7 +76,7 @@ export function WeekObjectives({ week, level }: { week: CohortWeek; level?: Leve
 export function WeekLessons({ week, level }: { week: CohortWeek; level?: Level }) {
   const done = week.lessons.filter((l) => l.done).length;
   return (
-    <Block title="Lessons" level={level}>
+    <Block title="SydCrest lessons" id="lessons" level={level}>
       {week.lessons.length > 0 ? (
         <>
           <p className="text-sm text-content-3">
@@ -115,20 +116,18 @@ export function WeekLessons({ week, level }: { week: CohortWeek; level?: Level }
   );
 }
 
+/**
+ * "Extra practice": the week's one to three free official resources, after
+ * the SydCrest lessons (issue #239).
+ */
 export function WeekResource({ week, level }: { week: CohortWeek; level?: Level }) {
-  if (!week.resource_name || !week.resource_url) return null;
+  if (!week.resources.length) return null;
   return (
-    <Block title="Free resource" level={level}>
-      <a
-        href={week.resource_url}
-        target="_blank"
-        rel="noreferrer"
-        className="inline-flex min-h-11 items-center gap-2 self-start text-sm font-semibold"
-      >
-        {week.resource_name}
-        <ExternalLink aria-hidden="true" className="size-4" />
-        <span className="sr-only">(opens in a new tab)</span>
-      </a>
+    <Block title="Extra practice" id="extra-practice" level={level}>
+      <p className="max-w-reading text-sm text-content-2">
+        Free pages from the official providers, for more practice once you have done this week&apos;s lessons.
+      </p>
+      <ExtraPracticeLinks resources={week.resources} />
     </Block>
   );
 }

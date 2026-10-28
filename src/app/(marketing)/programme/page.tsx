@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import { CurriculumWeeks } from "@/components/marketing/curriculum-weeks";
+import { ProgrammePhases } from "@/components/marketing/programme-phases";
 import { Card, PageHeader, Section } from "@/components/marketing/section";
 import { WaitlistForm } from "@/components/marketing/waitlist-form";
 import { buttonClasses } from "@/components/ui/button";
@@ -73,10 +73,11 @@ export default function ProgrammePage() {
       </Section>
 
       <Section
-        title="The curriculum, week by week"
-        intro="Built on free, trusted resources like Google Skillshop, Meta Blueprint and GCFGlobal, so nothing stops when the cohort ends."
+        id="curriculum"
+        title="Twelve weeks in three phases"
+        intro="You learn with SydCrest's own lessons, written for Ghana, and your mentor reviews your work every week. Free courses from Google, Meta and GCFGlobal give you extra practice, and they stay open after the cohort ends."
       >
-        <CurriculumWeeks />
+        <ProgrammePhases />
       </Section>
 
       <Section
