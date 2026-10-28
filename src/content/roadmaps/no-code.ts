@@ -63,7 +63,7 @@ export const noCode: RoadmapDraft = {
   slug: "no-code-automation",
   title: "No Code and Automation",
   description:
-    "Build forms, field surveys, simple apps, websites and time saving automations for shops, NGOs, schools and small offices without writing code. Learn to keep data clean and private, test your builds, hand them over to clients, and turn small projects into paid work, with honest notes on what you can do on a phone and when a laptop really helps.",
+    "Build forms, field surveys, simple apps, websites and time saving automations for shops, NGOs, schools and small offices without writing code. Learn to keep data clean and private, test your builds, hand them over to clients, and turn small projects into paid work, with honest notes on what you can do on a phone and when a computer really helps.",
   track: "no-code",
   field_category: "software",
   locale: "en-GH",
@@ -89,9 +89,9 @@ export const noCode: RoadmapDraft = {
     },
     {
       slug: "phone-or-laptop",
-      title: "Phone, laptop and data honestly",
+      title: "Phone, computer and data honestly",
       summary:
-        "Filling in forms, collecting survey data and checking automations work well on a phone, but building apps, websites and multi step workflows is far easier on a laptop or a cafe computer. Learn which tasks to do where, and how to plan your building time around data bundles and power.",
+        "Filling in forms, collecting survey data and checking automations work well on a phone, but building apps, websites and multi step workflows is far easier on a computer, whether your own or one at a school, hub or cafe. Learn which tasks to do where, and how to plan your building time around data bundles and power.",
       parent: "no-code-basics",
       optional: false,
       resources: [sheetsTraining],
@@ -172,7 +172,7 @@ export const noCode: RoadmapDraft = {
       slug: "survey-logic",
       title: "Skip logic, checks and XLSForm",
       summary:
-        "Good surveys skip questions that do not apply, check answers as they are entered and only ask what the project needs. Learn skip logic, constraints and the XLSForm spreadsheet format, which is easiest to edit on a laptop.",
+        "Good surveys skip questions that do not apply, check answers as they are entered and only ask what the project needs. Learn skip logic, constraints and the XLSForm spreadsheet format, which is easiest to edit on a computer.",
       parent: "forms",
       optional: true,
       resources: [xlsform, odkDocs],
@@ -199,7 +199,7 @@ export const noCode: RoadmapDraft = {
       slug: "wordpress-basics",
       title: "WordPress basics",
       summary:
-        "WordPress runs many business and NGO websites and appears in Ghanaian job adverts for web and communications roles. Learn pages, posts, themes, plugins and user roles, ideally on a laptop, and how to keep a site updated and backed up.",
+        "WordPress runs many business and NGO websites and appears in Ghanaian job adverts for web and communications roles. Learn pages, posts, themes, plugins and user roles, ideally on a computer, and how to keep a site updated and backed up.",
       parent: "websites",
       optional: false,
       resources: [learnWp, wpDocs],
@@ -226,7 +226,7 @@ export const noCode: RoadmapDraft = {
       slug: "apps-from-sheets",
       title: "Apps from a spreadsheet",
       summary:
-        "Tools such as Glide, AppSheet and Power Apps read your table and build screens for listing, adding and editing records, like a stock app for a Bolgatanga provisions shop. Learn to connect a sheet, add forms and filters, and share the app, building on a laptop and testing on a phone.",
+        "Tools such as Glide, AppSheet and Power Apps read your table and build screens for listing, adding and editing records, like a stock app for a Bolgatanga provisions shop. Learn to connect a sheet, add forms and filters, and share the app, building on a computer and testing on the phones your users carry.",
       parent: "apps",
       optional: false,
       resources: [glideStart, powerApps],

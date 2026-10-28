@@ -1,8 +1,9 @@
 # Research: No Code and Automation track (`no-code`)
 
-Tier B outline (issue #96). Researched and written 27 October 2026. This is an outline only:
-`src/content/roadmaps/no-code.ts` holds the nodes, summaries and resources; lessons are not
-written yet and show as coming soon. Everything is original. roadmap.sh was not opened,
+Tier B outline (issue #96), researched and written 27 October 2026. Original lessons and quizzes
+for every node were added on 28 October 2026 (issue #198) in
+`src/content/roadmaps/content/no-code.content.ts`; the outline lives in
+`src/content/roadmaps/no-code.ts`. Everything is original. roadmap.sh was not opened,
 searched or used, and no "<field> roadmap" style searches were run. No logins; LinkedIn was
 not opened. Job adverts were read only for which skills and tools appear; no advert text is
 reproduced. Salary and price figures that appeared in some results were ignored and are not
@@ -55,6 +56,26 @@ developer" job.
 | D7 | Microsoft Learn: Power Automate and Copilot Studio docs; Google Apps Script overview; n8n docs | https://learn.microsoft.com/en-us/power-automate/ | 2026-10-27 | Official docs |
 | D8 | Data Protection Commission, Ghana (Data Protection Act, 2012, Act 843) | https://dpc.gov.gh/ | 2026-10-27 | Official regulator site |
 | D9 | MDN: What is a domain name; What is a web server | https://developer.mozilla.org/en-US/docs/Learn_web_development/Howto/Web_mechanics/What_is_a_domain_name | 2026-10-27 | CC BY-SA 2.5 (MDN prose); linked as resources |
+| D10 | ODK documentation: ODK Collect (Android app, Android 5 or above, Android 10 or higher recommended, designed to work offline) | https://docs.getodk.org/collect-intro/ | 2026-10-28 | Official docs; fact check for `phone-or-laptop`, `field-surveys` |
+| D11 | KoboToolbox documentation: KoboCollect on Android (Android only; offline storage of submissions) | https://support.kobotoolbox.org/kobocollect_on_android_latest.html | 2026-10-28 | Official docs; fact check for `field-surveys` |
+| D12 | KoboToolbox documentation: collecting data through web forms (work on Android, iPhone, iPad, laptops and desktops; offline once cached) | https://support.kobotoolbox.org/data_through_webforms.html | 2026-10-28 | Official docs; fact check for `field-surveys` |
+| D13 | XLSForm reference (survey, choices, settings sheets; type, name, label; relevant, constraint, constraint_message, required; `${}` and `.` syntax) | https://xlsform.org/en/ | 2026-10-28 | Public format reference; re-read for `survey-logic` |
+| D14 | Google Forms Help: add logic and sections (Go to section based on answer; multiple choice and dropdown only) | https://support.google.com/docs/answer/141062 | 2026-10-28 | Official docs; fact check for `online-forms` |
+| D15 | Google Sites Help: how to use Google Sites (setup steps start "on your computer") | https://support.google.com/sites/answer/6372878 | 2026-10-28 | Official docs; fact check for `phone-or-laptop`, `site-builders` |
+| D16 | WordPress documentation: Roles and Capabilities (Administrator, Editor, Author, Contributor, Subscriber) | https://wordpress.org/documentation/article/roles-and-capabilities/ | 2026-10-28 | Official docs; fact check for `wordpress-basics` |
+| D17 | WordPress Playground (runs WordPress in the browser with no host; page does not say whether work persists, so the lesson tells learners to check) | https://wordpress.org/playground/ | 2026-10-28 | Official project page |
+| D18 | AppSheet Help: App design 101 (Google Sheets, Excel and Smartsheet; tables, views, security filters) | https://support.google.com/appsheet/answer/10099795 | 2026-10-28 | Official docs; fact check for `apps-from-sheets`, `planning-app-screens` |
+| D19 | Glide Docs: quick start (apps shared by link and added to a home screen; publishing details depend on plan, so the lesson states no plan detail) | https://www.glideapps.com/docs/getting-started | 2026-10-28 | Official docs |
+| D20 | Zapier Help: What is a Zap (trigger and actions) and Make Help: scenarios index (scenarios, modules, incomplete executions for failed runs) | https://help.make.com/scenarios | 2026-10-28 | Official docs; fact check for `automation`, `automation-tools` |
+| D21 | WhatsApp Business: business app page (greeting and away messages) and WhatsApp Help Center: How to use quick replies (type "/" or use Attach; suggestions from the business profile) | https://faq.whatsapp.com/1791149784551042 | 2026-10-28 | Official product page and help article; fact check for `message-automation` |
+| D22 | Data Protection Commission home page, re-read (eight principles; "all data controllers and processors must register") | https://dpc.gov.gh/ | 2026-10-28 | Official regulator site; plain summary in `privacy-and-permissions` |
+| D23 | Data Protection Commission home page, reviewer re-read: the eight principles by name (Accountability, Lawfulness of Processing, Specification of Purpose, Quality of Information, Purpose of Collection, Openness, Data Security Safeguards, Data Subject Participation) | https://dpc.gov.gh/ | 2026-10-28 | Official regulator site; review: `privacy-and-permissions` now lists all eight |
+| D24 | Zapier Help: Zap history (Zap runs and task usage; replay unsuccessful runs) and Replay Zap runs (manual replay of errored runs on every plan, including Free) | https://help.zapier.com/hc/en-us/articles/8496241726989-Replay-Zap-runs | 2026-10-28 | Official docs; review: `automation-tools` |
+| D25 | Glide Docs: data sources (Google Sheets, Excel, Airtable, Glide Tables and others); Glide quick start says publishing needs a paid plan, Free can build and preview | https://www.glideapps.com/docs/essentials/data-sources/glide-tables | 2026-10-28 | Official docs; review: `apps-from-sheets` practice step softened, no plan detail in the lesson |
+| D26 | Softr Docs: data sources (Airtable, Google Sheets, Notion, SQL databases and others, plus Softr Databases) | https://docs.softr.io/data-sources | 2026-10-28 | Official docs; review: `apps-from-sheets` |
+| D27 | ODK Docs: Central submissions (Central bundles ODK Web Forms for filling forms in a browser; web forms do not yet support offline use) | https://docs.getodk.org/central-submissions/ | 2026-10-28 | Official docs; review: `field-surveys` |
+| D28 | WhatsApp Help Center: How to use greeting messages (first message or after 14 days of inactivity) and How to use away messages (the device needs an internet connection) | https://faq.whatsapp.com/2565868990219715/ | 2026-10-28 | Official help articles; review: `message-automation` |
+| D29 | n8n licensing: Sustainable Use License ("fair code"), so it is described as publicly available code that can be self hosted, not as open source | https://docs.n8n.io/privacy-and-security/sustainable-use-license | 2026-10-28 | Official docs; review: `automation-tools` |
 | P1 | SydCrest Planning/12_TRACK_CATALOGUE.md (row 19, no code and automation; row 27, WordPress websites "could sit inside no code"; Moringa "AI Agents and Workflow Automation (No Code)") | (internal) | 2026-10-27 | Internal planning document |
 
 Most closed adverts now 404 or redirect, so many rows rely on search result snippets, which the
@@ -195,11 +216,54 @@ possible, and none is recommended over another.
 | testing-and-handover | F1 testing and documenting; A3 pilot testing; A13 SOPs; A15 end user support |
 | portfolio-and-work | Roles seen across A1 to A15; catalogue row 19 freelance earning |
 
+## Lesson writing (28 October 2026, issue #198)
+
+* **Coverage:** all 28 nodes, sections included, have an original explanation (499 to 599
+  words), a practice task doable with free or already owned tools and little data, and a 4 or 5
+  question quiz. Correct answers are spread across positions (29/28/31/32 over 120 questions)
+  and the correct option is the longest in under a fifth of questions.
+* **Slugs:** unchanged (the roadmap is published). `phone-or-laptop` keeps its slug; only its
+  title changed to "Phone, computer and data honestly".
+* **Outline wording:** summaries that said "laptop" now say "computer" (device neutral rule);
+  no nodes added, dropped or reordered, because the existing research already justified every
+  node and the lesson writing found no gap.
+* **Facts checked on official pages (D10 to D22):** each device claim (Android only collection
+  apps, Kobo web forms on any device, Sites setup on a computer), Forms branching question types,
+  WordPress roles, AppSheet concepts, Zapier and Make terms, WhatsApp Business greeting, away
+  and quick replies, and the DPC principles and registration line.
+* **Not stated, on purpose:** no prices and no free plan limits for any tool. The KoboToolbox
+  pricing page returned 403 to automated reads, so its plans are not described at all; Glide
+  publishing terms were not described. Lessons tell learners to read and date each plans page.
+* **No job title:** lessons frame no code as skills inside data collection, M&E,
+  communications, operations and freelance work, never as a "no code developer" job.
+* **Data protection:** Act 843 is introduced in `forms`, `online-forms` and `field-surveys`,
+  taught in `privacy-and-permissions`, and applied to AI steps in `ai-steps`. Lessons say they
+  are general guidance, not legal advice.
+
 ## Founder spot checks
 
 1. `field-surveys`: confirm KoboToolbox and ODK are the right examples for northern NGO work
    (adverts also name SurveyCTO and CommCare).
-2. `wordpress-basics` and `phone-or-laptop`: check the laptop guidance reads as honest, not
+2. `wordpress-basics` and `phone-or-laptop`: check the computer guidance reads as honest, not
    discouraging, for phone only learners.
 3. `ai-steps`: optional node; decide whether to keep it here or leave AI agents entirely to the
    AI Tools for Work track.
+4. `message-automation`: the lesson separates WhatsApp Business app features (greeting, away,
+   quick replies) from automated sending through WhatsApp's business platform, and tells
+   learners to read the official rules first; check this is the level of detail you want.
+5. `site-builders`: Google Sites, Wix, Squarespace and WordPress are named only as examples of
+   each type, with trade offs stated for each; check the balance reads as neutral.
+
+## Review (28 October 2026, independent reviewer, PR #217)
+
+* Re-checked on official pages: Zap history and replay, Glide data sources, Softr data sources,
+  ODK Central web forms, KoboToolbox web forms and ODK Collect offline behaviour, XLSForm
+  required columns and syntax, Google Forms branching, WordPress roles and Playground, AppSheet
+  sources, views and security filters, WhatsApp greeting, away messages and quick replies, and
+  the DPC principles (D23 to D29).
+* Changes: HTTPS wording softened in `going-live`; ODK web forms marked as not yet offline in
+  `field-surveys`; all eight DPC principles listed in `privacy-and-permissions`; Zapier replay
+  and the n8n licence corrected in `automation-tools`; greeting and away message details in
+  `message-automation`; a Google Sites limit added for balance in `site-builders`; computer
+  notes moved to the steps that need one in `apps-from-sheets` and `automation-tools`;
+  `survey-logic` example moved to Tamale so the Dagbani detail fits.
