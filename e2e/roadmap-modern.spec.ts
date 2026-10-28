@@ -64,10 +64,12 @@ test("the map pans and zooms with buttons, keys and a drag, with a minimap", asy
   // A drag pans the map and never opens the topic under the pointer.
   const surface = page.locator('[data-map-canvas="on"] [style*="translate"]');
   const before = await surface.getAttribute("style");
+  await canvas.scrollIntoViewIfNeeded();
   const box = (await canvas.boundingBox())!;
-  await page.mouse.move(box.x + 40, box.y + box.height / 2);
+  const y = Math.min(box.y + 200, page.viewportSize()!.height - 40);
+  await page.mouse.move(box.x + 40, y);
   await page.mouse.down();
-  await page.mouse.move(box.x + 140, box.y + box.height / 2 - 120, { steps: 6 });
+  await page.mouse.move(box.x + 140, y - 100, { steps: 6 });
   await page.mouse.up();
   await expect(surface).not.toHaveAttribute("style", before ?? "");
   await expect(page).toHaveURL(new RegExp(`/roadmaps/${seed.slug}$`));
