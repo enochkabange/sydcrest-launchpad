@@ -249,7 +249,7 @@ This is the point where reading is not enough. You need a Linux terminal to prac
 
 * A laptop or desktop running Linux, or Windows with WSL installed.
 * A free browser lab, such as the Killercoda Ubuntu playground, which needs a free account and no card. Each lab lasts up to an hour and is then deleted, so keep your notes outside it.
-* GitHub Codespaces, which gives a Linux machine in the browser within a free monthly allowance and blocks use rather than billing you when the allowance runs out, as long as you have not added a payment method.
+* GitHub Codespaces, which gives a Linux machine in the browser within a free monthly allowance and blocks use rather than billing you when the allowance runs out, as long as you have not added a payment method. A stopped codespace still uses part of your free storage allowance, so delete codespaces you no longer need.
 
 If you only have a phone today, read the lessons and write the commands in a notebook, then practise when you can reach a computer at a school lab, hub or library.
 
@@ -493,7 +493,7 @@ Hawa supports an NGO in Nalerigu that collects field surveys on tablets. Every e
     "networking-for-cloud": {
       explanation_md: `## Why it matters
 
-A server that works but cannot be reached is useless. Many cloud problems are network problems: a firewall rule blocking a port, a DNS record pointing to the wrong address, a database placed where the app cannot see it. Ghanaian infrastructure adverts name DNS, VPNs, load balancing and virtual networks. If [IP addresses](/roadmaps/it-support/ip-addresses) and [DNS](/roadmaps/it-support/dns) are new, read those IT support lessons first.
+A server that works but cannot be reached is useless. Many cloud problems are network problems: a firewall rule blocking a port, a DNS record pointing to the wrong address, a database placed where the app cannot see it. An infrastructure advert we read from a Ghanaian company named DNS, VPNs, load balancing and virtual networks. If [IP addresses](/roadmaps/it-support/ip-addresses) and [DNS](/roadmaps/it-support/dns) are new, read those IT support lessons first.
 
 ## IP ranges and subnets
 
@@ -533,7 +533,7 @@ When something breaks, check each hop in order: DNS, firewall, load balancer hea
 
 1. On paper or in a notes app, draw a VPC \`10.0.0.0/16\` with a public subnet \`10.0.1.0/24\` for a web server and a private subnet \`10.0.2.0/24\` for a database.
 2. Write the firewall rules for each: which ports, open to whom.
-3. In a free lab (Killercoda Ubuntu or a codespace), run \`dig example.com\` (install it with \`apt install -y dnsutils\` if missing) and note the A record. Then run \`curl -I https://example.com\` and note the status line.
+3. In a free lab (Killercoda Ubuntu or a codespace), run \`dig example.com\` (install it with \`sudo apt install -y dnsutils\` if missing) and note the A record. Then run \`curl -I https://example.com\` and note the status line.
 4. Install nginx as in the Linux lesson and run \`ss -tlnp\` to confirm it listens on port 80. Close the lab.
 
 **Done looks like:** a labelled diagram, a short rule list and your command outputs. This diagram style is exactly what you will draw for your portfolio project.`,
@@ -909,7 +909,7 @@ On a paid cloud account you pay for what you use, often in US dollars. A server 
 These were the terms on the providers' own pages when this lesson was written. They change, so read the provider's free tier page yourself before signing up.
 
 * **AWS** lets new customers choose a Free account plan or a Paid plan. The Free plan includes credits, lasts up to six months or until the credits run out, does not charge you unless you upgrade, and then closes. AWS says most new customers can sign up without a payment method, but it may ask for one to verify identity.
-* **Azure's** standard free account gives credit for a short period plus some free services, and needs a credit card or non prepaid debit card. **Azure for Students** needs a school email address instead of a card, if your institution qualifies.
+* **Azure's** standard free account gives credit for a short period plus some free services, and needs a credit card or non prepaid debit card. **Azure for Students** needs a school email address instead of a card; it is for full time university students whose institution qualifies.
 * **Google Cloud's** free trial gives credit for a limited period and needs a card or other payment method.
 
 In this track: never enter card details to practise. If any sign up page asks for one, stop and use a card free option: Killercoda, GitHub Codespaces within its free allowance, or the AWS Free plan if it does not ask for a card.
@@ -1111,7 +1111,7 @@ Napari and Sumaila share a repository for a clinic appointment app in Wa. Before
 3. On a new branch, change the price list in \`index.html\`, push it and open a pull request with a clear description.
 4. Ask a friend or mentor to review it. If nobody is available, leave a review comment on your own pull request explaining what you checked.
 5. Merge it, then create and push a tag \`v1.0.0\`.
-6. Add a \`.gitignore\` containing \`.env\`.
+6. Add a \`.gitignore\` containing \`.env\`, through another small pull request, since main is now protected.
 
 **Done looks like:** a merged pull request with a description, a protected main branch and a \`v1.0.0\` tag you can link to.`,
       quiz: {
@@ -1201,8 +1201,8 @@ After the tests, a later job might build a container image, push it to a registr
 Wumpini maintains a stock app for a pharmacy chain with branches in Tamale and Yendi. A colleague changed a price calculation and accidentally broke the discount for NHIS patients. The CI tests failed on the pull request within two minutes, the merge was blocked and the bug never reached a pharmacy counter.`,
       practice_task_md: `**Goal:** build a pipeline and watch it catch a broken change.
 
-1. In your public GitHub Pages repository, create \`.github/workflows/ci.yml\` with the workflow from the lesson. Make sure \`index.html\` contains the words "Price list".
-2. Push it and open the Actions tab. Wait for a green tick.
+1. In your public GitHub Pages repository, on a new branch, create \`.github/workflows/ci.yml\` with the workflow from the lesson. Make sure \`index.html\` contains the words "Price list".
+2. Push the branch, open a pull request and open the Actions tab. Wait for a green tick, then merge.
 3. On a branch, remove "Price list" from the page, push and open a pull request. Watch the check go red.
 4. Put the words back, push again and watch it turn green. Merge.
 5. Add a second step of your own, for example checking that the page contains a phone number.
@@ -1462,7 +1462,7 @@ resource "local_file" "menu" {
 }
 \`\`\`
 
-Run \`init\`, \`plan\` and \`apply\`, and \`menu.txt\` appears. Change the content and run \`plan\` again: Terraform shows exactly one change. Run \`destroy\` and the file is gone. Cloud resources such as a VM or a bucket work exactly the same way, with a different provider and resource type.
+Run \`init\`, \`plan\` and \`apply\`, and \`menu.txt\` appears. Change the content and run \`plan\` again: Terraform shows that one resource, the file, will be replaced. Run \`destroy\` and the file is gone. Cloud resources such as a VM or a bucket work exactly the same way, with a different provider and resource type.
 
 ## State
 

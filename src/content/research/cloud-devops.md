@@ -48,6 +48,7 @@ says where a laptop becomes necessary.
 | V1 | AWS Free Tier page and FAQs | https://aws.amazon.com/free/ and https://aws.amazon.com/free/free-tier-faqs/ | 2026-10-28 | Vendor page, facts checked |
 | V2 | AWS Billing docs: Explore AWS services with AWS Free Tier | https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier.html | 2026-10-28 | Vendor docs, facts checked |
 | V3 | Azure free account offer page and free services page | https://azure.microsoft.com/en-us/pricing/offers/ms-azr-0044p and https://azure.microsoft.com/en-us/pricing/free-services | 2026-10-28 | Vendor pages, facts checked |
+| V3b | Azure for Students offer page | https://azure.microsoft.com/en-us/free/students | 2026-10-28 | Vendor page, facts checked (no card, school email, full time university students) |
 | V4 | Google Cloud docs: Free cloud features (Free Trial and Free Tier) | https://docs.cloud.google.com/free/docs/free-cloud-features | 2026-10-28 | Vendor docs, facts checked |
 | V5 | Google Cloud Shell pricing, and quotas and limits | https://cloud.google.com/shell/pricing and https://docs.cloud.google.com/shell/docs/quotas-limits | 2026-10-28 | Vendor docs, facts checked |
 | V6 | GitHub Docs: Codespaces billing; Actions billing | https://docs.github.com/en/billing/concepts/product-billing/github-codespaces and https://docs.github.com/en/billing/concepts/product-billing/github-actions | 2026-10-28 | Vendor docs, facts checked |
@@ -140,8 +141,9 @@ rather than quoting amounts, and tells learners to check the provider page becau
   quota 50 hours; sessions capped at 12 hours; home directory deleted after 120 days without
   use. The pages do not say whether a billing account is needed, so lessons name it as an
   example with the instruction to stop if asked for payment details.
-* **GitHub (V6):** Codespaces free quota for personal accounts (120 core hours and 15 GB month
-  of storage per month); without a payment method usage is blocked, not billed. Actions are free
+* **GitHub (V6):** Codespaces free quota for personal accounts (120 compute hours and 15 GB month
+  of storage per month; larger machines use the hours faster, and storage counts while a codespace
+  exists, even when stopped); without a payment method usage is blocked, not billed. Actions are free
   on public repositories with standard runners. Quickstart uses `actions/checkout@v6` (V11).
 * **Killercoda (V7):** free membership, every free scenario usable as much as you like, each
   environment lasts up to one hour then is deleted, no daily or monthly limit, free
@@ -228,3 +230,18 @@ charge) and now leads with practising without card details.
 * Certification names and codes in `cloud-certifications` (AZ-900, CLF-C02, AZ-104, Cloud
   Digital Leader) were read on the official pages on 28 October 2026; recheck before publishing
   if much time passes.
+
+## Reviewer pass (28 October 2026)
+
+Independent review against the content guide rubric. Rechecked on the official pages: AWS Free plan
+FAQ (no payment method for most new customers; ends at six months or when credits run out; account
+suspended, data kept 90 days), Azure free account (credit or non prepaid debit card), Azure for
+Students (no card, school email, full time university students), Google Cloud Free Trial (card or
+other payment method) and Free Tier (billing account), Cloud Shell pricing and quotas (50 hours a
+week; pages still silent on billing), Codespaces and Actions billing, Killercoda FAQ (one hour per
+environment, free registration), Play with Docker notice (unavailable from 1 March 2026; not used),
+`actions/checkout@v6` in the Actions quickstart, and the AZ-900, CLF-C02, AZ-104, Solutions
+Architect Associate and Cloud Digital Leader pages. Small fixes: codespace storage note, an advert
+claim narrowed to the one advert that supports it, `sudo` added to one install command, practice
+steps adjusted so they still work once main is protected, Terraform plan wording (a changed
+`local_file` is replaced), and the Azure for Students eligibility line.
