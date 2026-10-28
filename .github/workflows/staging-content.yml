@@ -1,0 +1,57 @@
+name: Staging content
+
+# Run by hand from the Actions tab. Imports every roadmap outline and lesson
+# into the STAGING project, publishes the roadmaps, and optionally loads the
+# demo data set (supabase/demo). Never touches production: the project ref is
+# fixed here and the import script refuses any other project.
+on:
+  workflow_dispatch:
+    inputs:
+      demo:
+        description: "Also load the demo data (supabase/demo/demo-seed.sql)"
+        type: boolean
+        default: true
+
+concurrency:
+  group: staging-db
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  content:
+    name: Import content to staging
+    runs-on: ubuntu-latest
+    env:
+      SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+      SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_STAGING_DB_PASSWORD }}
+      STAGING_REF: wyxeerwocbnqmjjzpgun
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - uses: supabase/setup-cli@v3
+        with:
+          version: 2.114.0
+      - name: Fetch the staging secret key (masked)
+        run: |
+          key=$(supabase projects api-keys --project-ref "$STAGING_REF" --reveal -o json \
+            | jq -r 'map(select(.type == "secret" or .name == "service_role")) | first | .api_key // empty')
+          if [ -z "$key" ]; then echo "::error::No secret key found for staging"; exit 1; fi
+          echo "::add-mask::$key"
+          echo "SUPABASE_SECRET_KEY=$key" >> "$GITHUB_ENV"
+      - name: Import roadmaps and lessons, then publish
+        env:
+          SUPABASE_URL: https://wyxeerwocbnqmjjzpgun.supabase.co
+          NODE_OPTIONS: --conditions=react-server
+        run: pnpm tsx scripts/staging/import-content.ts
+      - name: Load the demo data
+        if: inputs.demo
+        run: |
+          supabase link --project-ref "$STAGING_REF"
+          supabase db query --linked -f supabase/demo/demo-seed.sql
