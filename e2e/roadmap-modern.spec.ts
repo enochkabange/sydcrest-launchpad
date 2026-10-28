@@ -206,7 +206,7 @@ test("optional topics can be hidden, and choices are labelled", async ({ page })
   await expect(tree.getByRole("treeitem", { name: /Counting stock/ })).toBeVisible();
 });
 
-test("the roadmap index filters by field, time, level and phone, and recommends from the path quiz", async ({ page }) => {
+test("the roadmap index filters by field, time, level and phone, and recommends from the path quiz", async ({ page, browser }) => {
   // The index is cached: publishing through the admin refreshes it, as in production.
   const draft = await seedModernRoadmap({ published: false, track: "data" });
   const phoneTrack = await seedModernRoadmap({ published: false, track: "digital-marketing", field: "marketing" });
@@ -214,15 +214,18 @@ test("the roadmap index filters by field, time, level and phone, and recommends 
   users.push(editor);
   await promoteToAdmin(editor.id);
   try {
-    await page.goto("/roadmaps");
-    await expect(page.getByRole("heading", { name: "Not sure where to start?" })).toBeVisible();
-
     await signIn(page, editor);
     for (const r of [draft, phoneTrack]) {
       await page.goto(`/admin/roadmaps/${r.id}`);
       await page.getByRole("button", { name: "Publish" }).click();
       await expect(page.getByText("Published", { exact: true })).toBeVisible();
     }
+
+    // A visitor without quiz answers gets the prompt instead.
+    const visitor = await browser.newPage();
+    await visitor.goto("/roadmaps");
+    await expect(visitor.getByRole("heading", { name: "Not sure where to start?" })).toBeVisible();
+    await visitor.close();
 
     await insert("personalized_paths", [{ profile_id: editor.id, quiz_answers: DATA_ANSWERS }]);
     await page.goto("/roadmaps");
