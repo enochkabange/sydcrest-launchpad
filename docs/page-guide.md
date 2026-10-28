@@ -159,7 +159,7 @@ Signed in people keep the app navigation on public pages (`viewer-frame`).
 - **Cut / move / collapse**: nothing to add; keep it one task.
 - **States**: first visit; returning with saved answers (offer "see your path").
 - **Phone**: one question per screen, big targets. **Desktop**: question in a reading column with a rail showing "what you get" and step progress; never a wide form.
-- **Nav**: Footer only today. **Should be** the hero primary on `/`, the empty state on `/path` and `/dashboard`, and an item in Learn.
+- **Nav**: Footer for visitors; for signed in people the Home rail's path card and the empty `/path` link to it. **Should be** the hero primary on `/` and an item in Learn (or the Your path item itself when there is no path).
 
 ### `/roadmaps` Learning roadmaps
 - **Audience**: everyone. **Job**: pick a track to look at.
@@ -469,7 +469,7 @@ Orphan; fold into `/opportunities` as a "Saved" filter (section 1).
 
 ### `/profile`
 - **Audience**: every signed in type. **Job**: edit who I am and what the public sees.
-- **Primary**: save details. **Secondary**: public page toggle and link, verified skills, WhatsApp opt in, invite a friend.
+- **Primary**: save details. **Secondary**: public page toggle and link, verified skills, milestone posts toggle and shareable milestones (#236), WhatsApp opt in, invite a friend.
 - **Priority**: 1 details; 2 public page (preview in rail); 3 verified skills; 4 contact preferences.
 - **Cut / move / collapse**: remove the outcome card (link to Outcomes); become the home for Talent listing and Expert profile sections (problem 9).
 - **Nav**: You → Profile.
@@ -539,8 +539,10 @@ and the record in another from lg. Every page checks `requireAdmin` itself.
 ### Orphan routes (no nav entry; #252)
 `/programme/apply`, `/skills/reviews`, `/certificates/issue`, `/briefs/mine`,
 `/briefs/new`, `/opportunities/saved`, `/community/moderation`, `/review`
-(card only), `/events/recordings`, `/outcomes/new`, `/start` (footer only for
-visitors, nothing for signed in people), `/settings` (signed out).
+(card only), `/events/recordings`, `/outcomes/new`, `/settings` (signed out).
+`/start` is reachable (footer for visitors; the Home rail and the empty
+`/path` for signed in people) but missing where it matters most: the home
+hero and the Learn group.
 
 ### Inconsistent patterns
 - Refusals: 404 vs explainer vs empty (problem 8).
@@ -560,7 +562,7 @@ should put the live preview or status in the rail.
 
 ## Appendix: route index
 
-Every `page.tsx` and `route.ts` under `src/app`, with the section above that covers it. Route handlers have no UI.
+Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section above that covers it. Route handlers have no UI.
 
 | Route | Kind | Section |
 |---|---|---|
@@ -700,3 +702,14 @@ Every `page.tsx` and `route.ts` under `src/app`, with the section above that cov
 | `/badges/[program]/achievement.json` | handler | 7 Account (Open Badges JSON) |
 | `/badges/issuer.json` | handler | 7 Account (Open Badges JSON) |
 | `/offline` | page | 2 Auth |
+| `/badges/[program]/image.png` | handler (image) | Share images: Open Graph cards and the badge image |
+| `/og/[page]` | handler (image) | Share images: Open Graph cards and the badge image |
+| `/og/achievements/[id]/[format]` | handler (image) | Share images: Open Graph cards and the badge image |
+| `/og/certificates/[id]/[format]` | handler (image) | Share images: Open Graph cards and the badge image |
+| `/og/events/[slug]` | handler (image) | Share images: Open Graph cards and the badge image |
+| `/og/events` | handler (image) | Share images: Open Graph cards and the badge image |
+| `/og/experts/[slug]` | handler (image) | Share images: Open Graph cards and the badge image |
+| `/og/experts` | handler (image) | Share images: Open Graph cards and the badge image |
+| `/og/roadmaps/[slug]/[node]` | handler (image) | Share images: Open Graph cards and the badge image |
+| `/og/roadmaps/[slug]` | handler (image) | Share images: Open Graph cards and the badge image |
+| `/og/roadmaps` | handler (image) | Share images: Open Graph cards and the badge image |
