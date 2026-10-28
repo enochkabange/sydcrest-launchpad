@@ -1,7 +1,8 @@
 import type { TrackContent } from "./types";
 
 /**
- * Original lesson content for the Digital Marketer roadmap (issue #84).
+ * Original lesson content for the Digital Marketer roadmap (issue #84),
+ * deepened with the full lesson anatomy for issue #256.
  * Research and sources: src/content/research/digital-marketing.md.
  */
 const content: TrackContent = {
@@ -9,47 +10,91 @@ const content: TrackContent = {
   nodes: {
     foundations: {
       outcomes: [
-        "Explain why marketing starts with people",
+        "Explain why marketing starts with people, not posts",
         "Ask the four marketing questions about a real business",
-        "Name the topics in this section",
+        "Describe the three foundations this section covers",
       ],
-      explanation_md: `Every business in Ghana, from a shea butter seller in Tamale to a fintech in Accra, needs people to know it exists, trust it and pay for what it offers. Digital marketing is the work of making that happen using phones, computers and the internet. Employers who hire junior marketers rarely ask first which apps you know. They ask whether you understand customers and can get results for the business.
+      explanation_md: `Every business in Ghana, from a shea butter seller in Tamale to a salon in Accra, needs people to know it exists, trust it and pay for what it offers. Digital marketing is the work of making that happen using phones, computers and the internet. Employers who hire junior marketers rarely start by asking which apps you know. They ask whether you understand customers and can get results for the business.
 
-## Marketing starts with people
+## Marketing is not the same as posting
 
-Marketing is not the same as posting. Posting is one activity. Marketing is the thinking behind it: who are we trying to reach, what do they need, what should they believe about us, and what do we want them to do next? If you skip that thinking, you can post every day and sell nothing.
+Posting is one activity. Marketing is the thinking behind it: who are we trying to reach, what do they need, what should they believe about us, and what do we want them to do next? If you skip that thinking, you can post every day and sell nothing. If you get it right, even a few posts a week can bring steady orders.
 
 A simple way to hold it in your head is four questions:
 
 * **Who?** The specific people the business wants, such as mothers in Tamale who buy shea butter for their children's skin.
-* **What problem?** Dry skin in the harmattan, and worry about fake products in the market.
-* **Why us?** Pure, locally made butter from a women's group that the seller knows personally.
+* **What problem?** Dry skin in the harmattan, and worry about fake or mixed products in the market.
+* **Why us?** Pure, locally made butter from a women's group the seller knows personally.
 * **What next?** Send a WhatsApp message to order and pay with mobile money.
+
+Write the answers in plain words the owner would use. If you cannot answer a question, that is useful too: it tells you what to find out before you create anything.
+
+## How to use the four questions on a new job
+
+When a business asks you to "help with marketing", work through these steps before you touch any app:
+
+1. **Listen first.** Ask the owner who buys most often, what they buy, and how they usually pay. Write down their words, not yours.
+2. **Answer the four questions.** One or two sentences each. Keep them on a single page you can read on any screen.
+3. **Check with a real customer.** Ask one or two buyers why they chose this business. Their answer to "Why us?" is often different from the owner's, and it is usually the one that sells.
+4. **Pick one clear action.** Decide the single "What next?" you want people to take this month, such as sending a message or visiting the shop.
+5. **Only then choose content and channels.** The rest of this roadmap shows you how.
+
+This takes an hour or two, and it saves weeks of effort aimed at the wrong people.
 
 ## What this section covers
 
-In this section you will learn three foundations that every later lesson builds on.
+This section gives you three foundations that every later lesson builds on.
 
-* **How customers find and buy.** The steps a person moves through, from first hearing about a business to paying and coming back.
-* **Knowing your audience and competitors.** How to describe the people you are trying to reach and learn from what similar businesses already do.
+* **How customers find and buy.** The stages a person moves through, from first hearing about a business to paying and coming back. You will learn to spot where customers drop off.
+* **Knowing your audience and competitors.** How to describe the people you want to reach, the languages they use and the apps they open, and how to learn from what similar businesses already do.
 * **The main channels.** The difference between messaging, social media, search, email and paid ads, and how to choose a few channels that suit a small budget.
 
-## A small example
+## Thinking like a marketer
 
-Hawa sells shea butter from her home in Tamale. Her nephew Fuseini offers to "do her marketing" and starts posting product photos on Facebook every day. After two weeks, a few people like the posts but nobody orders.
+Good marketers stay curious about people. When you walk through a market, notice which stalls are busy and why. When a post on your feed makes you want to buy something, ask yourself what it did right. When a business you like loses customers, ask where the experience went wrong.
 
-Fuseini stops and asks the four questions. He realises most of Hawa's buyers are women who already know her through church and the market, and they talk on WhatsApp, not Facebook. He changes plan: a clear WhatsApp Status each week showing fresh butter, the price in cedis, and how to pay. Within days, regular customers start sharing her Status with friends.
+You also need honesty. Marketing that promises what a business cannot deliver gets customers once and loses them for ever. Clear prices, true descriptions and quick replies build the trust that brings people back and makes them recommend the business to friends.
 
-Nothing about the tools changed. What changed was the thinking. That is what this section teaches, and it is what employers mean when they ask whether you "understand marketing".`,
+Finally, marketing is a cycle, not a single task. You plan, you try something, you look at what happened, and you adjust. Later sections teach you to measure results so that each cycle is better than the last. For now, the habit to build is simple: before you create anything, ask the four questions. That is what employers mean when they ask whether you "understand marketing".`,
+      workedExample_md: `Hawa sells shea butter from her home in Tamale. Her nephew Fuseini offers to "do her marketing" and starts posting product photos on Facebook every day. After two weeks, a few people like the posts but nobody orders.
+
+Fuseini stops and works through the steps:
+
+1. **Listen first.** He asks Hawa who buys most. She says women from her church and the market, plus a few nurses who buy for their families.
+2. **Answer the four questions.** Who: women in Tamale caring for their families' skin. What problem: harmattan dryness and fear of mixed butter. Why us: pure butter from a women's group Hawa knows. What next: order on WhatsApp and pay with MoMo.
+3. **Check with a customer.** A nurse, Amina, tells him she buys because Hawa's butter never smells stale. He had never thought of that.
+4. **Pick one action.** Send Hawa a WhatsApp message to order.
+5. **Choose content and channel.** Her buyers talk on WhatsApp, not Facebook. He switches to a weekly WhatsApp Status showing fresh butter, the price in cedis, a line about the fresh smell, and how to pay.
+
+Within days, regular customers start sharing her Status with friends. The tools barely changed. The thinking did.`,
+      keyTerms: [
+        { term: "Marketing", definition: "The thinking and work that helps the right people know, trust and buy from a business." },
+        { term: "Digital marketing", definition: "Marketing done through phones, computers and the internet, such as chat apps, social media, search and email." },
+        { term: "Target customer", definition: "The specific group of people a business most wants to reach." },
+        { term: "Call to action", definition: "The one clear next step you ask people to take, such as sending a message to order." },
+        { term: "Value", definition: "The reason a customer chooses this business over another, in the customer's own words." },
+      ],
+      commonMistakes: [
+        "Opening an app and posting before answering who the business is for",
+        "Writing the four answers in marketing jargon instead of the owner's plain words",
+        "Trusting only the owner's view of why customers buy, without asking a customer",
+        "Promising more than the business can deliver just to get attention",
+      ],
+      selfCheck: [
+        "Can you explain to a friend, in two sentences, the difference between marketing and posting?",
+        "For a business you know, which of the four questions would be hardest to answer, and how would you find out?",
+        "Why might a customer's reason for buying be more useful than the owner's?",
+      ],
       practice_task_md: `**Goal:** Practise the four marketing questions on a real business near you.
 
 **Steps:**
 1. Pick one small business you know well, such as a provisions shop, a chop bar, a tailor or a church event.
 2. In a notes app or Google Docs, answer the four questions: Who? What problem? Why us? What next?
-3. Write one sentence for each answer, using plain words the owner would understand.
-4. Show your answers to the owner and ask one question: "Is this right about your customers?" Note what they correct.
+3. Write one or two sentences for each answer, using plain words the owner would understand.
+4. Ask one customer why they buy there, and add their answer under "Why us?".
+5. Show your page to the owner and ask: "Is this right about your customers?" Note what they correct.
 
-**Done looks like:** A short note with four clear answers, plus one correction from the owner. Keep it; you will build on it in later lessons.`,
+**Done looks like:** A short page with four clear answers, one customer quote and one correction from the owner. Keep it; you will build on it in later lessons.`,
       quiz: {
         questions: [
           {
@@ -69,32 +114,32 @@ Nothing about the tools changed. What changed was the thinking. That is what thi
               "Mothers in Tamale who buy shea butter",
               "Dry skin during the harmattan",
               "Send a WhatsApp message to order and pay with mobile money",
-              "Butter made by a women's group the seller knows",
+              "Pure butter made by a women's group that the seller knows personally",
             ],
             answer_index: 2,
             explanation: "\"What next?\" is the action you want the customer to take, such as ordering on WhatsApp.",
           },
           {
-            prompt: "Why did Fuseini's daily Facebook posts for Hawa not lead to orders?",
+            prompt: "Why does the lesson suggest asking a real customer why they chose the business?",
             options: [
-              "Her shea butter was priced higher than the butter in the market",
-              "Facebook does not allow businesses to post photos",
-              "He posted at the wrong time of day",
-              "Her buyers mostly talked on WhatsApp, not Facebook",
+              "Customers can tell you exactly how much to spend on adverts each month",
+              "Customers expect to be paid for their opinion",
+              "It is a legal requirement before any marketing starts",
+              "Their reason is often different from the owner's and is usually the one that sells",
             ],
             answer_index: 3,
-            explanation: "When he asked the four questions, he found her customers were on WhatsApp, not Facebook.",
+            explanation: "Step 3 says a customer's answer to \"Why us?\" often differs from the owner's and usually sells better.",
           },
           {
-            prompt: "What do employers mean when they ask whether a junior marketer understands marketing?",
+            prompt: "Why did Fuseini's daily Facebook posts for Hawa not lead to orders?",
             options: [
-              "Whether you can think about customers and get results for the business",
-              "Whether you own an expensive phone",
-              "Whether you have used every social media app and can edit videos on them",
-              "Whether you can post more often than competitors",
+              "Her buyers mostly talked on WhatsApp, not Facebook",
+              "Facebook does not allow businesses to post photos",
+              "He posted at the wrong time of day",
+              "Her shea butter was priced higher than the butter sold in the market",
             ],
             answer_index: 0,
-            explanation: "The lesson says employers care whether you understand customers and can get results.",
+            explanation: "When he worked through the questions, he found her customers were on WhatsApp, not Facebook.",
           },
         ],
         pass_threshold: 75,
@@ -103,62 +148,108 @@ Nothing about the tools changed. What changed was the thinking. That is what thi
     "customer-journey": {
       outcomes: [
         "Describe the five stages of the customer journey",
-        "Find where a business loses customers",
-        "Map the journey for one real business",
+        "Find the stage where a business loses most customers",
+        "Map the journey for one real business and suggest fixes",
       ],
-      explanation_md: `When a business owner says "I need more customers", they usually have a specific problem hiding inside that sentence. Maybe nobody has heard of them. Maybe people hear about them but do not trust them. Maybe people want to buy but the payment is confusing. A marketer who can find where customers are dropping off is far more useful than one who just posts more. Junior job adverts in Ghana often mention lead generation and conversion; both are parts of this journey.
+      explanation_md: `When a business owner says "I need more customers", there is usually a specific problem hiding inside that sentence. Maybe nobody has heard of them. Maybe people hear about them but do not trust them. Maybe people want to buy but the payment is confusing. A marketer who can find where customers drop off is far more useful than one who just posts more. Junior job adverts in Ghana often mention lead generation and conversion; both are parts of this journey.
 
 ## The five stages
 
 A simple customer journey has five stages:
 
-* **Aware.** The person learns the business exists, for example from a friend's WhatsApp Status or a TikTok video.
-* **Interested.** They want to know more. They check the page, look at photos and prices, or ask a question.
-* **Decide.** They compare with other options and decide to buy. Trust matters most here: reviews, clear prices, a real phone number.
-* **Buy.** They pay. In Ghana this is often a mobile money payment after a chat, or cash on delivery.
+* **Aware.** The person learns the business exists, for example from a friend's WhatsApp Status, a TikTok video, a sign by the road or a Google Maps search.
+* **Interested.** They want to know more. They check the page, look at photos and prices, or send a question such as "How much?".
+* **Decide.** They compare with other options and decide whether to buy. Trust matters most here: reviews, clear prices, a real phone number and a quick, polite reply.
+* **Buy.** They pay. In Ghana this is often a mobile money payment after a chat, a card payment online, or cash on delivery.
 * **Return and recommend.** A happy customer buys again and tells others, which starts the journey for someone new.
 
 People do not always move neatly from one stage to the next. Some see a post and buy within minutes. Others watch a business for months before their first order. The stages are a thinking tool, not a strict rule.
 
 ## Finding the leak
 
-Think of the journey like a pipe. If water leaks out at one point, pouring more in at the top does not help much. The same is true for marketing. If lots of people message a business but few pay, more posts will not fix it. You need to find out why buyers stop at the decide or buy stage.
+Think of the journey like a water pipe. If water leaks out at one point, pouring more in at the top does not help much. Marketing works the same way. If lots of people message a business but few pay, more posts will not fix it. You need to find out why buyers stop at the decide or buy stage.
 
-## A worked example
+Here is a simple way to find the leak:
 
-Abdul-Rahman runs a phone accessories kiosk in Tamale and asks you why sales are slow. You go through the journey with him:
+1. **Write the five stages** down the side of a page or a spreadsheet.
+2. **Describe what happens today** at each stage, from the customer's point of view. How do they hear about the business? What do they see when they look closer? How long do they wait for a reply? How do they pay?
+3. **Gather small numbers where you can.** How many people viewed the Status this week? How many asked a question? How many paid? Even rough counts from a notebook help.
+4. **Look for the biggest drop.** If 40 people asked about prices and 3 paid, the leak is between interested and buy.
+5. **Ask why.** Talk to the owner and, if you can, to someone who asked but did not buy. Their answer often points straight at the fix.
 
-* **Aware:** his posts get views, and people say they have seen his kiosk. Fine.
-* **Interested:** many people send "How much?" on WhatsApp. Fine.
-* **Decide:** he replies hours later, sometimes the next day. Many never reply back. Leak found.
-* **Buy:** customers who do order pay by MoMo without problems.
-* **Return:** he never follows up after a sale.
+## Common leaks and simple fixes
 
-Your advice is not "post more". It is: set up quick replies with prices, answer within the hour during the day, and send a short thank you message after each sale asking the buyer to share his number with a friend. Those small changes fix the two weakest stages.
+* **Aware:** few people know the business. Fix with a Google Business Profile, regular WhatsApp Status posts or asking happy customers to share.
+* **Interested:** people look but do not ask. Show prices, sizes and photos clearly so they do not have to guess.
+* **Decide:** slow or rude replies, no reviews, unclear delivery. Reply quickly, collect genuine reviews and explain delivery in one sentence.
+* **Buy:** confusing payment. Send the MoMo name and number in one clear message and confirm when money arrives.
+* **Return:** no follow up. Send a short thank you and let customers know when new stock arrives, only if they have agreed to hear from you.
 
-When you take on any marketing job, sketch the journey first. It tells you where to spend your effort.`,
+## Online and offline together
+
+Many Ghanaian journeys mix both worlds. A customer in Accra might see a salon on Instagram, walk past it on the way to work, ask a friend about it, and then book by phone. A farmer in Damongo might hear about a seed shop on the radio and then message them on WhatsApp. When you map a journey, include the offline steps too. They are often where trust is built.
+
+When you take on any marketing job, sketch the journey first. It tells you where to spend your effort and stops you wasting the client's money on the wrong stage.`,
+      workedExample_md: `Abdul-Rahman runs a phone accessories kiosk in Tamale and asks why sales are slow. You map his journey with him in a shared Google Sheet.
+
+| Stage | What happens today | Rough count this week |
+| --- | --- | --- |
+| Aware | Posts on WhatsApp Status, kiosk on a busy road | About 120 Status views |
+| Interested | People send "How much?" | 35 questions |
+| Decide | He replies hours later, sometimes the next day | 6 reply back |
+| Buy | Customers pay by MoMo without trouble | 5 sales |
+| Return | No follow up after a sale | Unknown |
+
+The biggest drop is clear: 35 people asked, but only 6 came back after his slow replies. You call two of the people who never replied. Both say they bought elsewhere because another seller answered first.
+
+Your advice is not "post more". It is:
+
+1. Set up quick replies with his most common prices.
+2. Check messages every hour during the day.
+3. After each sale, send a short thank you and ask the buyer to share his number with a friend.
+
+Two weeks later he checks his notebook. More of the people who ask are buying, and two new customers say a friend sent them.`,
+      keyTerms: [
+        { term: "Customer journey", definition: "The stages a person goes through from first hearing about a business to buying and returning." },
+        { term: "Awareness", definition: "The stage where a person first learns that a business or product exists." },
+        { term: "Lead", definition: "A person who has shown interest, for example by asking a price, but has not yet bought." },
+        { term: "Conversion", definition: "When a person takes the action you wanted, such as paying for an order." },
+        { term: "Drop off", definition: "The point in the journey where many people stop moving forward." },
+        { term: "Repeat customer", definition: "Someone who buys from the business again after their first purchase." },
+      ],
+      commonMistakes: [
+        "Trying to reach more people when the real problem is lower down the journey",
+        "Mapping only online steps and ignoring word of mouth, radio or walking past the shop",
+        "Guessing the leak without counting even rough numbers at each stage",
+        "Forgetting the return stage, where happy customers bring in new ones for free",
+      ],
+      selfCheck: [
+        "Think of the last thing you bought from a small business. Which stages did you pass through, and where did you nearly stop?",
+        "If a business gets many questions but few payments, which stages would you look at first, and why?",
+        "Which offline steps might matter in the journey of a customer in your town?",
+      ],
       practice_task_md: `**Goal:** Map the customer journey for one real business and find its biggest leak.
 
 **Steps:**
 1. Choose a business you can observe or ask about, such as a market trader, a salon or a food vendor who sells on WhatsApp.
-2. On paper or in Google Docs, write the five stages: Aware, Interested, Decide, Buy, Return and recommend.
-3. Under each stage, write how a customer experiences it today. Ask the owner or a customer if you are not sure.
-4. Mark the stage where most people seem to drop off.
-5. Write two practical changes that would fix that stage without spending money.
+2. In a notebook, Google Docs or Google Sheets, write the five stages: Aware, Interested, Decide, Buy, Return and recommend.
+3. Under each stage, write how a customer experiences it today, including any offline steps. Ask the owner or a customer if you are not sure.
+4. Add a rough count for at least two stages, such as questions received and sales made in a week.
+5. Mark the stage with the biggest drop, and write two practical changes that would fix it without spending money.
 
-**Done looks like:** A one page journey map with the leak clearly marked and two realistic suggestions you could explain to the owner in a few minutes.`,
+**Done looks like:** A one page journey map with rough numbers, the leak clearly marked and two realistic suggestions you could explain to the owner in a few minutes.`,
       quiz: {
         questions: [
           {
-            prompt: "Which stage of the customer journey does trust matter most in, according to the lesson?",
+            prompt: "In which stage of the customer journey does trust matter most, according to the lesson?",
             options: ["Aware", "Decide", "Return and recommend", "Interested"],
             answer_index: 1,
-            explanation: "The lesson says trust matters most at the decide stage, where reviews, clear prices and a real number help.",
+            explanation: "The lesson says trust matters most at the decide stage, where reviews, clear prices and quick replies help.",
           },
           {
             prompt: "Many people message a business asking for prices, but few of them pay. What does the lesson suggest?",
             options: [
-              "Post more often so that more people reach the business",
+              "Post more often so that more new people reach the business every day",
               "Lower the price immediately",
               "Find out why buyers stop at the decide or buy stage",
               "Close the WhatsApp account and use only Facebook",
@@ -167,26 +258,26 @@ When you take on any marketing job, sketch the journey first. It tells you where
             explanation: "Pouring more people in at the top does not fix a leak lower down the journey.",
           },
           {
-            prompt: "What was the main leak in Abdul-Rahman's journey?",
+            prompt: "What did the counts in Abdul-Rahman's journey map show?",
             options: [
-              "Nobody had heard of his kiosk",
+              "Hardly anyone viewed his Status",
               "Customers could not pay with MoMo",
-              "His prices were too high",
-              "He replied to price questions very late",
+              "His prices were higher than those at the other phone accessory kiosks nearby",
+              "Many people asked prices but few came back after his slow replies",
             ],
             answer_index: 3,
-            explanation: "Slow replies at the decide stage meant many interested buyers never came back.",
+            explanation: "35 people asked but only 6 replied back, and the calls showed slow replies sent them elsewhere.",
           },
           {
-            prompt: "How should you treat the five stages?",
+            prompt: "Why does the lesson tell you to include offline steps in a journey map?",
             options: [
-              "As a thinking tool, since people do not always move through them neatly",
-              "As a strict rule every customer follows in order",
-              "As something only large companies need",
-              "As a replacement for actually talking to the business owner and customers",
+              "Offline steps such as a friend's advice or walking past the shop are often where trust is built",
+              "Offline steps are easier to measure than online ones",
+              "Online steps do not matter for small businesses",
+              "Customers in Ghana never buy after seeing a post",
             ],
             answer_index: 0,
-            explanation: "The lesson says the stages are a thinking tool, not a strict rule.",
+            explanation: "The lesson says journeys mix online and offline steps, and offline ones often build trust.",
           },
         ],
         pass_threshold: 75,
@@ -194,53 +285,96 @@ When you take on any marketing job, sketch the journey first. It tells you where
     },
     "know-your-audience": {
       outcomes: [
-        "Describe an audience clearly",
-        "Learn from competitors",
-        "Write an audience description for a local business",
+        "Write a clear audience description for a local business",
+        "Turn an audience description into a simple persona",
+        "Check competitors and name a gap the business can fill",
+        "Use audience habits to choose where and when to post",
       ],
-      explanation_md: `A message that works for students at a Tamale university will not land the same way with market women in Bolgatanga or civil servants in Wa. Job adverts for junior marketers in Ghana regularly ask for market research and competitor monitoring. Both come down to the same skill: finding out who you are talking to and what else they are seeing.
+      explanation_md: `A message that works for students at a Tamale university will not land the same way with market women in Bolgatanga or civil servants in Wa. Job adverts for junior marketers in Ghana regularly ask for market research and competitor monitoring. Both come down to the same skill: finding out who you are talking to and what else they are already seeing.
 
-## Describe the audience
+## Step 1: describe the audience
 
-Start by writing a short description of the people a business wants to reach. Cover:
+Start with a short written description of the people a business wants to reach. Cover five things:
 
-* **Who they are.** Age range, where they live, what they do for a living.
-* **What they need.** The problem the business solves for them.
-* **What worries them.** Price, quality, fake products, delivery, trust.
-* **Language.** English, Dagbani, Twi, Hausa, Pidgin or a mix. A short line in Dagbani can make people in Tamale feel the post is truly for them.
-* **Apps and habits.** WhatsApp, Facebook, TikTok, radio, church announcements. When are they online? Many people buy data in small bundles, so they skip heavy videos.
+* **Who they are.** Age range, where they live, what they do for a living, whether they buy for themselves or for a family or office.
+* **What they need.** The problem the business solves for them, in their words.
+* **What worries them.** Price, quality, fake products, delivery, being cheated, wasting a trip.
+* **Language.** English, Dagbani, Twi, Hausa, Gurune, Pidgin or a mix. A short line in Dagbani can make people in Tamale feel the post is truly for them.
+* **Apps and habits.** WhatsApp, Facebook, TikTok, Instagram, radio, church announcements. When are they online? Many people buy data in small bundles, so they skip heavy videos and long voice notes.
 
-Some marketers turn this into a "persona": a made up person who represents the typical customer, with a name and a short story. That helps you write as if you are talking to one real person.
+Most businesses have more than one audience. An Accra salon might serve office workers who book after work and students who come at weekends with smaller budgets. Write a separate short description for each group that matters.
 
-## Learn from competitors
+## Step 2: turn it into a persona
 
-Next, look at two or three similar businesses. You are not copying them. You are learning what customers in that market already see. Note:
+A persona is a made up person who represents a typical customer, with a name and a short story. For example: "Wumpini, 24, a nurse in Tamale, buys skin care for herself and her mother, checks WhatsApp Status on her break, worries about mixed products, pays by MoMo." Writing for one clear person makes your posts warmer and more specific than writing for "everyone". Keep personas based on what you have actually heard from customers, not on guesses.
+
+## Step 3: find out, do not guess
+
+The best audience facts come from real people. Simple, free ways to learn:
+
+* **Ask the owner** who buys most, what they ask, and what they complain about.
+* **Talk to three to five customers.** Ask why they chose the business, where they first heard of it, and which apps they use most.
+* **Read the questions** customers send on WhatsApp or in comments. Repeated questions show what the business is not explaining.
+* **Look at page insights** if the business already has a Facebook Page or Instagram account. They show broad age groups, towns and the times followers are online.
+
+When you collect any personal details, such as phone numbers or names, ask permission and keep them private. Ghana's Data Protection Act, 2012 (Act 843) sets rules for how personal data is collected and used.
+
+## Step 4: learn from competitors
+
+Next, look at two or three similar businesses. You are not copying them. You are learning what customers in that market already see. For each one, note:
 
 * Which channels they use, and which seem active.
 * What prices they show, and whether they show prices at all.
 * What customers praise or complain about in comments and reviews.
 * What nobody is doing well. That gap is your opportunity.
 
-## A worked example
+Spend no more than 20 or 30 minutes on this to save data. A simple table on your phone or computer is enough.
 
-Mariama's group in Bolgatanga weaves baskets and wants to sell more. You write a short audience description with them and end up with two groups:
+## Step 5: use it to choose platforms
 
-* **Local buyers** who want strong market baskets at a fair price. They speak Gurune and English, use WhatsApp and buy in person.
-* **Buyers in Accra and abroad** who want colourful decorative baskets as gifts. They use Instagram and expect clear photos, sizes and delivery details.
+Your audience description tells you where to show up. If the customers are older traders who live on WhatsApp, a TikTok account is not the first priority. If they are students who discover new places through short videos, TikTok or Instagram might be. Match the platform to the people, then match the posting time to their habits: a chop bar might post the lunch menu mid morning, while a salon might post evening booking reminders.
 
-Then you check three other basket sellers online. Most post beautiful photos but never mention sizes or delivery costs, and comments are full of people asking. That is the gap: Mariama's group can win trust simply by answering those questions in every post.
+Writing this down takes an hour. It saves weeks of posting the wrong thing to the wrong people, and it gives you a confident answer when a client asks, "Why are we doing it this way?"`,
+      workedExample_md: `Mariama's group in Bolgatanga weaves baskets and wants to sell more. You spend one afternoon with them.
 
-Writing this down takes an hour. It saves weeks of posting the wrong thing to the wrong people.`,
-      practice_task_md: `**Goal:** Write an audience description and a quick competitor check for one local business.
+1. **Describe the audience.** After talking to the group and four customers, you write two descriptions. Local buyers want strong market baskets at a fair price, speak Gurune and English, use WhatsApp and buy in person. Buyers in Accra and abroad want colourful baskets as gifts, use Instagram and expect clear photos, sizes and delivery details.
+2. **Write a persona** for the second group: "Mawuli, 30, works in an Accra office, buys gifts for weddings, scrolls Instagram in the evening, worries about delivery."
+3. **Check three competitors.** All post lovely photos. None mention sizes or delivery costs, and their comments are full of people asking.
+4. **Name the gap.** Mariama's group can win trust simply by answering those questions in every post.
+5. **Choose platforms.** WhatsApp Status for local buyers, posted in the morning before market. Instagram for gift buyers, posted in the evening, with size and delivery in every caption.
+
+The group now has a reason for every choice, and they can explain it to anyone who asks.`,
+      keyTerms: [
+        { term: "Audience", definition: "The group of people a business wants to reach with its marketing." },
+        { term: "Persona", definition: "A made up but realistic customer, with a name and short story, based on what real customers say." },
+        { term: "Market research", definition: "Finding out about customers and competitors before deciding what to do." },
+        { term: "Competitor", definition: "Another business that customers could choose instead of yours." },
+        { term: "Gap", definition: "Something customers want that no competitor is doing well." },
+        { term: "Page insights", definition: "Free statistics a social media page shows about its followers and posts." },
+      ],
+      commonMistakes: [
+        "Describing the audience as \"everyone\", which makes every message vague",
+        "Inventing a persona from guesses instead of from what real customers say",
+        "Copying a competitor's posts instead of looking for what they do badly",
+        "Choosing a platform because it is popular rather than because the customers use it",
+        "Collecting customer phone numbers without asking permission",
+      ],
+      selfCheck: [
+        "Could you describe the main customers of a business you know in five short lines?",
+        "What three questions would you ask a customer to test whether your persona is right?",
+        "When you looked at competitors, what did nobody do well?",
+      ],
+      practice_task_md: `**Goal:** Write an audience description, a persona and a quick competitor check for one local business.
 
 **Steps:**
-1. Pick a business, such as a basket weaving group, a church event or a phone repair shop.
-2. Write a short audience description covering who they are, what they need, what worries them, language, and apps and habits.
-3. Find two or three similar businesses on WhatsApp, Facebook, Instagram or TikTok. Spend no more than 20 minutes looking, to save data.
-4. For each competitor, note their channels, whether they show prices, and one common customer question or complaint.
-5. Write one sentence describing a gap your business could fill.
+1. Pick a business, such as a basket weaving group, a salon or a phone repair shop.
+2. Ask the owner and at least two customers the questions in Step 3 of the lesson.
+3. Write a short audience description covering who they are, what they need, what worries them, language, and apps and habits.
+4. Turn it into a one paragraph persona with a name.
+5. Look at two or three similar businesses online for no more than 20 minutes, and note their channels, whether they show prices, and one common customer question.
+6. Write one sentence naming a gap, and one sentence naming the best platform and posting time for this audience.
 
-**Done looks like:** One page with the audience description, a small table of competitors, and a clear gap statement.`,
+**Done looks like:** One page with the description, persona, a small competitor table and a clear gap and platform choice.`,
       quiz: {
         questions: [
           {
@@ -255,15 +389,15 @@ Writing this down takes an hour. It saves weeks of posting the wrong thing to th
             explanation: "The lesson gives the example of a line in Dagbani making people in Tamale feel included.",
           },
           {
-            prompt: "What is a persona?",
+            prompt: "What should a persona be based on?",
             options: [
-              "A real customer's name, phone number and private contact details",
-              "A paid advert aimed at one person",
-              "A made up person who represents the typical customer",
-              "A competitor's social media page",
+              "The marketer's own taste",
+              "A competitor's follower list",
+              "What you have actually heard from real customers",
+              "Whatever the most popular app in the country is showing this month",
             ],
             answer_index: 2,
-            explanation: "A persona is an invented, representative customer that helps you write for one person.",
+            explanation: "The lesson says to keep personas based on what customers say, not on guesses.",
           },
           {
             prompt: "What is the main purpose of looking at competitors?",
@@ -277,15 +411,15 @@ Writing this down takes an hour. It saves weeks of posting the wrong thing to th
             explanation: "The lesson says you are not copying; you are learning the market and finding gaps.",
           },
           {
-            prompt: "What gap did you find for Mariama's basket group?",
+            prompt: "The customers are older traders who use WhatsApp all day. What does the lesson suggest?",
             options: [
-              "Other sellers rarely mentioned sizes or delivery costs",
-              "Other sellers had no photos at all",
-              "Nobody sold baskets on WhatsApp",
-              "Other sellers only posted in Gurune",
+              "Match the platform to the people, so WhatsApp comes before a new TikTok account",
+              "Open accounts on every platform at once",
+              "Use TikTok first because it is popular",
+              "Avoid WhatsApp because it is only for personal chats",
             ],
             answer_index: 0,
-            explanation: "Competitors posted good photos but left out sizes and delivery details, so customers kept asking.",
+            explanation: "Step 5 says to match the platform to where the audience already is.",
           },
         ],
         pass_threshold: 75,
@@ -293,41 +427,87 @@ Writing this down takes an hour. It saves weeks of posting the wrong thing to th
     },
     "channels-overview": {
       outcomes: [
-        "Name the main marketing channels",
-        "Choose channels for a campaign and justify each one",
-        "Match channels to a local audience",
+        "Name the main digital marketing channels and what each is good for",
+        "Sort channels into owned, earned and paid",
+        "Choose two or three channels for a goal and give each one a job",
       ],
-      explanation_md: `A small business in Ghana cannot be everywhere. It may have a few hundred cedis a month for marketing, one phone and one person who also serves customers. Part of your value as a marketer is choosing the right two or three channels and doing them well, rather than spreading thin across every app.
+      explanation_md: `A small business in Ghana cannot be everywhere. It may have a small monthly budget, one phone and one person who also serves customers. Part of your value as a marketer is choosing the right two or three channels and doing them well, rather than spreading thin across every app. A channel is simply a route by which a business reaches people.
 
 ## The main channels
 
 * **Messaging (WhatsApp, Telegram).** Direct, personal and close to the sale. Status updates reach people who already have the number saved. Great for repeat customers and local trade.
-* **Social media (Facebook, Instagram, TikTok, X).** Good for being discovered by new people and showing products. Each platform decides who sees a post, so reach can rise and fall.
-* **Search and maps (Google Search, Google Maps).** People searching "tailor near me" or "hotel in Wa" already want something. Showing up there catches buyers at the moment they are ready.
-* **Email.** A list of people who agreed to hear from you. Slower, but you own the list, and no app decides who sees your message. Useful for NGOs, schools, B2B companies and online shops.
-* **Paid ads.** You pay a platform to show your message to people beyond your followers. Fast and measurable, but money is spent whether or not anyone buys.
+* **Social media (Facebook, Instagram, TikTok, X, LinkedIn).** Good for being discovered by new people and showing products. Each platform decides who sees a post, so reach can rise and fall without warning.
+* **Search and maps (Google Search, Google Maps).** People searching "tailor near me" or "hotel in Wa" already want something. Showing up there catches buyers at the moment they are ready. The work of appearing in free search results is called search engine optimisation, or SEO.
+* **Email.** A list of people who agreed to hear from you. Slower, but the business holds the list and no app decides who sees the message. Useful for NGOs, schools, companies that sell to other companies, and online shops.
+* **Paid ads.** You pay a platform such as Meta or Google to show your message to people beyond your followers. Fast and measurable, but money is spent whether or not anyone buys.
+* **A website.** Not a channel people scroll, but a home base the business controls. Search engines can find it, ads can send people to it, and it still works if a social account is lost.
 
-Some people group these as **owned** channels (your WhatsApp list, email list, website), **earned** attention (shares, reviews, word of mouth) and **paid** reach (ads). A healthy plan usually mixes them.
+## Owned, earned and paid
 
-## How to choose
+Marketers often group channels three ways:
 
-Ask three questions:
+* **Owned:** things the business controls, such as its website, email list, WhatsApp contacts and its own page.
+* **Earned:** attention you do not pay for, such as shares, reviews, mentions on radio and word of mouth.
+* **Paid:** reach you buy, such as ads and sponsored posts.
 
-* **Where are the customers already?** Use your audience description.
-* **What does the business need right now?** New customers, repeat sales, or trust?
-* **What can the owner keep up?** A channel that is abandoned after two weeks looks worse than no channel at all.
+A healthy plan usually mixes them. Paid reach can bring new people in quickly; owned channels let you keep in touch cheaply; earned attention builds trust that ads cannot buy.
 
-## A worked example
+## How to choose: a step by step method
 
-Issahaku helps his church in Tamale promote a youth conference. Members are already in a church WhatsApp group, so messaging is the first channel. To reach young people from other churches, he adds a Facebook event and short TikTok clips from last year's conference. He skips email because most members do not check it, and he skips paid ads because the budget is small and word of mouth is strong.
+1. **Start from the goal.** New customers, repeat sales, more bookings, or trust? Different goals favour different channels. Search and paid ads are strong for new customers; WhatsApp and email are strong for repeat sales.
+2. **Check where the customers already are.** Use your audience description. Do not start a channel the customers do not use.
+3. **Check what the owner can keep up.** A page that is abandoned after two weeks looks worse than no page. Count the hours each channel will need per week.
+4. **Check the budget.** Messaging, a Google Business Profile and organic posts cost time, not cash. Ads cost money every day they run.
+5. **Give each chosen channel one clear job.** For example: TikTok for discovery, WhatsApp for questions and orders, Google Business Profile for people searching nearby.
+6. **Write down what you are not doing, and why.** This protects the plan when someone says "Why are we not on every app?"
 
-Three channels, each with a clear job: WhatsApp for members, Facebook for event details, TikTok for discovery. That focus is what makes the plan work.`,
+## Channels work together
+
+Customers rarely use one channel alone. Someone might find a salon on Google Maps, look at its Instagram photos, then book on WhatsApp. So make sure the channels point to each other: put the WhatsApp number on the profile, the Instagram handle on the Status, and the same opening hours everywhere. Inconsistent details make people doubt the business.
+
+## Phone or computer
+
+You can run every channel in this lesson from a phone. A computer helps when you manage several accounts at once, build a website, or work with spreadsheets for planning and reporting. Many marketers use both: a phone for replying and posting on the go, and a computer for planning and reports.
+
+The later lessons go deeper into each channel. For now, the skill is choosing: fewer channels, each with a clear job, done consistently.`,
+      workedExample_md: `Issahaku helps his church in Tamale promote a youth conference. The goal is to fill the hall with young people from several churches.
+
+1. **Goal:** reach new young people, plus remind members.
+2. **Where are they?** Members are in the church WhatsApp group. Young people from other churches use TikTok and Facebook. Few check email.
+3. **What can be kept up?** Issahaku and one friend, about three hours a week each.
+4. **Budget:** small, and word of mouth is strong.
+5. **Jobs for each channel:**
+   * WhatsApp group and Status (owned): reminders and the registration link for members.
+   * Facebook event (owned): date, venue, map and speakers, easy to share.
+   * TikTok clips from last year's conference (owned, hoping for earned shares): discovery by young people from other churches.
+6. **Not doing:** email, because members do not read it; paid ads, because the budget is small and sharing is strong. If registrations are low two weeks before, they will review this choice.
+
+Every channel now points to the same registration link and the same date, venue and contact number. Three channels, each with a clear job, kept up by two people.`,
+      keyTerms: [
+        { term: "Channel", definition: "A route by which a business reaches people, such as WhatsApp, search, email or ads." },
+        { term: "Owned media", definition: "Channels the business controls, such as its website, email list and contacts." },
+        { term: "Earned media", definition: "Attention the business does not pay for, such as shares, reviews and word of mouth." },
+        { term: "Paid media", definition: "Reach the business buys, such as adverts and sponsored posts." },
+        { term: "SEO", definition: "Search engine optimisation: helping a business appear in free search results." },
+        { term: "Organic", definition: "Unpaid posts and results, as opposed to paid adverts." },
+      ],
+      commonMistakes: [
+        "Opening accounts on every platform and keeping none of them active",
+        "Choosing a channel because it is fashionable rather than because the customers use it",
+        "Giving several channels the same vague job instead of one clear job each",
+        "Showing different phone numbers or opening hours on different channels",
+      ],
+      selfCheck: [
+        "For a business you know, which channels are owned, earned and paid today?",
+        "Which channel would you drop first if the owner had only two hours a week, and why?",
+        "How would you make sure three chosen channels point customers to the same next step?",
+      ],
       practice_task_md: `**Goal:** Choose channels for a real or realistic local campaign and justify each choice.
 
 **Steps:**
-1. Pick a goal, such as promoting a church event, a MoMo promotion at a mobile money vendor, or a new menu at a chop bar.
-2. List the five channels: messaging, social media, search and maps, email, paid ads.
-3. For each, write one sentence on whether it suits this goal and why.
+1. Pick a goal, such as promoting a church event, a new menu at a chop bar or more weekday bookings at a salon.
+2. List the channels: messaging, social media, search and maps, email, paid ads, website.
+3. For each, write one sentence on whether it suits this goal and why. Mark each as owned, earned or paid.
 4. Choose your top two or three channels and give each one a clear job.
 5. Write one sentence on what you are deliberately not doing, and why.
 
@@ -341,37 +521,32 @@ Three channels, each with a clear job: WhatsApp for members, Facebook for event 
             explanation: "The lesson says search and maps catch buyers at the moment they are ready.",
           },
           {
-            prompt: "What is one advantage of email described in the lesson?",
-            options: [
-              "You own the list and no app decides who sees your message",
-              "It is always the fastest way to sell",
-              "It reaches people who never gave the business their email address",
-              "It is free of any writing work",
-            ],
+            prompt: "A customer review on Google and a friend recommending a shop are examples of which kind of media?",
+            options: ["Earned", "Owned", "Paid", "Organic search only"],
             answer_index: 0,
-            explanation: "Email is slower, but you own the list and reach is not controlled by a social app.",
+            explanation: "Earned media is attention the business does not pay for, such as reviews and word of mouth.",
           },
           {
-            prompt: "Why might a marketer choose not to use a channel at all?",
+            prompt: "Why does the lesson recommend writing down what you are not doing?",
             options: [
-              "Because using more channels is always better",
-              "Because every business is only allowed to use exactly one channel at a time",
-              "Because paid ads are illegal for small businesses",
-              "Because a channel that is abandoned after two weeks looks worse than none",
-            ],
-            answer_index: 3,
-            explanation: "The lesson says to ask what the owner can keep up.",
-          },
-          {
-            prompt: "Why did Issahaku skip email for the church conference?",
-            options: [
-              "Email is not allowed for churches",
-              "Most members do not check email",
-              "Email costs too much per message",
-              "He had already used up his email list",
+              "Platforms require a written list of unused channels before you can open any new account",
+              "It protects the plan when someone asks why the business is not on every app",
+              "It means you never need to review the plan again",
+              "It is the main way to save money on ads",
             ],
             answer_index: 1,
-            explanation: "He skipped email because members rarely check it and they were already on WhatsApp.",
+            explanation: "Step 6 says the note protects the plan and explains the choice.",
+          },
+          {
+            prompt: "Why is a website described as a home base?",
+            options: [
+              "Because people scroll websites more than social media",
+              "Because a website is always free to build",
+              "Because ads cannot send people to a website",
+              "Because the business controls it and it keeps working if a social account is lost",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says the business controls its website and it still works if a social account is lost.",
           },
         ],
         pass_threshold: 75,
@@ -379,11 +554,11 @@ Three channels, each with a clear job: WhatsApp for members, Facebook for event 
     },
     content: {
       outcomes: [
-        "Explain what counts as content",
-        "Describe what good content does",
-        "Give each content piece a clear job",
+        "Explain what counts as marketing content",
+        "Give every piece of content one clear job",
+        "Plan a balanced week of content for a small business",
       ],
-      explanation_md: `When Ghanaian companies hire junior marketers, the most common ask after social media management is content creation: posts, graphics, photos and short videos. Agencies, retailers, NGOs and startups all need a steady supply of it. The good news is that you can produce professional content with only a phone, daylight and free apps. What makes content good is clear thinking and care, not expensive equipment.
+      explanation_md: `When Ghanaian companies hire junior marketers, one of the most common requests after social media management is content creation: posts, graphics, photos and short videos. Agencies, retailers, NGOs and startups all need a steady supply of it. The good news is that you can produce professional content with a phone or computer, daylight and free apps. What makes content good is clear thinking and care, not expensive equipment.
 
 ## What counts as content
 
@@ -393,79 +568,133 @@ Content is anything a business shares to inform, help or persuade people. For ex
 * A product photo of shea butter in a clean jar, shot by a window.
 * A simple graphic announcing a church harvest with the date, place and a contact number.
 * A 20 second video showing how a Bolgatanga basket is woven.
-* A WhatsApp Status reminding customers about a MoMo discount.
+* A WhatsApp Status reminding customers about a weekend offer.
+* A short email newsletter or a page of helpful text on a website.
 
-## What good content does
+## Give every piece one job
 
-Good content has a job. Before you make anything, decide which of these it is for:
+Good content has a job. Before you make anything, decide which of these four it is for:
 
 * **Show** what the business offers, clearly enough that people understand at a glance.
-* **Help** people with useful tips, such as how to store shea butter in the dry season.
+* **Help** people with useful tips, such as how to store shea butter in the dry season or how to keep braids neat for longer.
 * **Prove** the business is trustworthy, through behind the scenes clips or genuine customer feedback shared with permission.
 * **Ask** people to act: order, call, visit, register.
 
-A healthy mix keeps people interested. If every post is "buy now", people tune out. If no post ever asks, nobody buys.
+A healthy mix keeps people interested. If every post is "buy now", people tune out. If no post ever asks, nobody buys. A simple starting rule is to make most posts show, help or prove, and to include a clear ask in some of them every week.
+
+## A simple workflow for making content
+
+Whatever the format, the same steps keep quality high:
+
+1. **Plan.** Decide the job, the audience and the one message. Write it in a sentence: "This post shows mothers in Tamale that our butter is fresh this week."
+2. **Gather.** Take the photos, record the clip, or collect the facts: price in cedis, sizes, opening hours, how to pay.
+3. **Create.** Write the caption, design the graphic or edit the video. Keep it simple and readable on a small screen.
+4. **Check.** Read it aloud. Check every price, date and phone number. Ask: would a busy person understand this in three seconds?
+5. **Publish.** Post at a time your audience is online, on the channel where they are.
+6. **Learn.** After a few days, look at what got replies, shares or orders, and make more of what worked.
+
+## Make it light on data
+
+Many of your clients' customers buy data in small bundles. Content that loads quickly gets seen more. Keep images to a sensible size, keep videos short, and put the key message in the first few seconds or the first line of text. Your own practice should be light on data too: draft captions offline, and upload when you are on Wi Fi or have a bundle.
+
+## Be honest and get permission
+
+Never use a customer's photo, name or words without asking. Never invent reviews or make claims the product cannot back up. Use your own photos or free images you are allowed to use, and never take another business's pictures from the internet. Honest content is slower to build but lasts.
 
 ## What this section covers
 
 * **Writing that sells.** Short, clear words with a consistent voice and a clear next step.
-* **Product photos and graphics.** Clean phone photos and simple branded designs in a free tool.
+* **Product photos and graphics.** Clean photos and simple branded designs in a free tool.
 * **Short video and live selling.** Vertical videos for TikTok, Reels and Status, and selling during live streams.
-* **Planning a content calendar.** Planning ahead around market days, holidays and local events.
+* **Planning a content calendar.** Planning ahead around market days, holidays and local events, so the business stays consistent.
 
-## A small example
+By the end of this section you will be able to produce a week of useful, honest content for a small business and explain why each piece exists.`,
+      workedExample_md: `Amina manages content for a small cosmetics shop in Tamale. On Sunday evening she plans the week in a notes app.
 
-Amina manages content for a small cosmetics shop in Tamale. For one week she plans five pieces: a product photo with price (show), a tip on caring for skin in the harmattan (help), a short clip of a happy regular customer who agreed to be filmed (prove), a reminder about delivery days (show), and a Friday offer with a clear WhatsApp link (ask). Each one took under an hour on her phone. Together they tell a full story about the shop.`,
+| Day | Piece | Job |
+| --- | --- | --- |
+| Monday | Photo of the new shea body cream with price | Show |
+| Tuesday | Three line tip on caring for skin in the harmattan | Help |
+| Wednesday | Short clip of a regular customer, Hawa, who agreed to be filmed saying why she buys | Prove |
+| Thursday | Graphic with delivery days and areas | Show |
+| Friday | Weekend offer with a clear "Send ORDER on WhatsApp" line | Ask |
+
+For each piece she follows the workflow. For Wednesday, she plans the message ("real customers trust us"), gathers the clip in daylight outside the shop, trims it to 15 seconds, checks Hawa is happy with it, posts at lunchtime when customers are on their phones, and later notes that it got the most replies of the week.
+
+Each piece took under an hour. Together they tell a full story about the shop, and only one of the five asked for a sale.`,
+      keyTerms: [
+        { term: "Content", definition: "Anything a business shares to inform, help or persuade people, such as posts, photos, videos and emails." },
+        { term: "Content mix", definition: "The balance of pieces that show, help, prove and ask over a week or month." },
+        { term: "Caption", definition: "The text that goes with a photo or video on social media." },
+        { term: "Format", definition: "The type of content, such as a photo, graphic, short video, text post or email." },
+        { term: "Permission", definition: "A clear yes from a person before you use their photo, name or words." },
+      ],
+      commonMistakes: [
+        "Making a post without deciding its job first",
+        "Making every post a sales request so people stop paying attention",
+        "Uploading heavy videos and images that customers on small bundles skip",
+        "Using customers' photos or other businesses' pictures without permission",
+      ],
+      selfCheck: [
+        "Look at the last five posts from a business you follow. Which jobs do they do, and which job is missing?",
+        "Which step of the workflow do you usually skip, and what could go wrong because of that?",
+        "How would you make a piece of content lighter on data without losing its message?",
+      ],
       practice_task_md: `**Goal:** Plan and make a small set of content pieces with clear jobs.
 
 **Steps:**
-1. Choose a business you know, such as a shea butter seller, a tailor or a church event.
-2. Plan four pieces, one for each job: show, help, prove and ask.
-3. For each piece, write the format (caption, photo, graphic or video) and one sentence describing it.
-4. Make at least one of the four on your phone or computer using free tools.
-5. Ask someone who could be a customer which piece they would most likely respond to, and why.
+1. Choose a small business you know, such as a salon, a chop bar or a shea butter seller.
+2. In a notes app, Google Docs or Google Sheets, plan five pieces for one week, one per day, and label each one show, help, prove or ask.
+3. Make two of them for real: for example, one photo with a caption and one short tip.
+4. For each of the two, write one line for each workflow step you followed (plan, gather, create, check).
+5. Share them with the owner or a friend and ask what they understood in the first three seconds.
 
-**Done looks like:** A short plan of four pieces with their jobs, one finished piece saved to your phone or computer, and a note of the feedback you got.`,
+**Done looks like:** A one week plan with jobs labelled, two finished pieces, and one note on what you would change after feedback.`,
       quiz: {
         questions: [
           {
-            prompt: "According to the lesson, what makes content good?",
+            prompt: "Which job does a short clip of a real customer explaining why she buys mainly do?",
             options: [
-              "Using the most expensive camera",
-              "Posting as many times as possible each day",
-              "Clear thinking and care",
-              "Always using paid design software",
-            ],
-            answer_index: 2,
-            explanation: "The lesson says good content comes from clear thinking and care, not expensive equipment.",
-          },
-          {
-            prompt: "A post explaining how to store shea butter in the dry season has which job?",
-            options: ["Help", "Ask", "Prove", "Show"],
-            answer_index: 0,
-            explanation: "Useful tips are content whose job is to help.",
-          },
-          {
-            prompt: "What happens if every post says \"buy now\"?",
-            options: [
-              "Sales always double",
-              "The platform pays the business",
-              "People trust the business more",
-              "People tend to tune out",
+              "Show what the business offers at a glance",
+              "Help with a useful tip",
+              "Ask people to order",
+              "Prove the business can be trusted",
             ],
             answer_index: 3,
-            explanation: "The lesson says a mix keeps people interested; constant selling makes people tune out.",
+            explanation: "Genuine customer feedback, shared with permission, proves the business is trustworthy.",
           },
           {
-            prompt: "Which of Amina's pieces had the job of proving the shop is trustworthy?",
+            prompt: "What problem does the lesson describe if every post says \"buy now\"?",
             options: [
-              "The Friday offer with a WhatsApp link",
-              "A short clip of a regular customer who agreed to be filmed",
-              "The reminder about delivery days",
-              "The product photo with a price",
+              "People tune out and stop paying attention",
+              "Platforms delete the business account straight away",
+              "The business runs out of stock immediately",
+              "Posts become too long to read",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says a feed of only sales requests makes people tune out.",
+          },
+          {
+            prompt: "In the content workflow, what happens at the check step?",
+            options: [
+              "You choose which app to download",
+              "You read it aloud and check every price, date and phone number",
+              "You count how many likes the post received",
+              "You ask a competitor to look over and approve the post before you publish anything",
             ],
             answer_index: 1,
-            explanation: "Genuine customer feedback shared with permission is content that proves trust.",
+            explanation: "The check step is reading aloud and confirming every fact before publishing.",
+          },
+          {
+            prompt: "Why does the lesson stress keeping content light on data?",
+            options: [
+              "Platforms charge businesses for every large file",
+              "Light files always look more professional",
+              "Many customers buy small data bundles and skip heavy content",
+              "Short videos are the only format allowed on WhatsApp",
+            ],
+            answer_index: 2,
+            explanation: "Content that loads quickly gets seen more by people on small bundles.",
           },
         ],
         pass_threshold: 75,
@@ -473,11 +702,12 @@ Amina manages content for a small cosmetics shop in Tamale. For one week she pla
     },
     copywriting: {
       outcomes: [
-        "Shape a selling message",
-        "Write in a brand's voice",
-        "Make only honest claims and use AI writing tools with care",
+        "Write a post using the hook, detail, proof and call to action pattern",
+        "Define a brand voice in three words and keep to it",
+        "Write short web page text that uses the words customers search for",
+        "Keep claims honest and check AI drafts before using them",
       ],
-      explanation_md: `Words do most of the selling online. A photo catches the eye, but the caption tells people what it is, why they should care and what to do next. Some Ghanaian job adverts for digital marketers ask directly for copywriting and for keeping a brand consistent, and almost every marketing role depends on it. If you can write short, clear, friendly words, you will always be useful.
+      explanation_md: `Words do most of the selling online. A photo catches the eye, but the caption tells people what it is, why they should care and what to do next. Ghanaian job adverts for digital marketers often ask for copywriting and for keeping a brand consistent, and almost every marketing role depends on it. If you can write short, clear, friendly words, you will always be useful.
 
 ## The shape of a selling message
 
@@ -486,83 +716,125 @@ Most good posts follow a simple pattern:
 * **Hook.** The first line, which people see before tapping "more". Lead with the benefit or a question. "Dry, cracked heels this harmattan?" beats "Good morning everyone".
 * **Detail.** What it is, the price in cedis, sizes, delivery days. Answer the questions people would otherwise send in a message.
 * **Proof.** A reason to trust: "made by our women's group in Tamale" or a short customer comment shared with permission.
-* **Call to action.** Exactly what to do next. "Send 'BUTTER' on WhatsApp to 024 000 0000 and pay with MoMo."
+* **Call to action.** Exactly what to do next. "Send BUTTER on WhatsApp to 024 000 0000 and pay with MoMo."
 
 Keep sentences short. Write for someone reading on a small screen, maybe in their second or third language. Read your post aloud; if you run out of breath, cut it.
 
+## Benefits before features
+
+A feature is what the product is. A benefit is what it does for the customer. "Hand woven from elephant grass" is a feature. "Strong enough to carry a full market load for years" is a benefit. Customers buy benefits, so lead with them and use features as proof.
+
 ## Brand voice
 
-A brand voice is the personality in the words. A youth church event might sound lively and warm. A microfinance company should sound calm and trustworthy. Write down three words for the voice, such as "friendly, honest, local", and check every post against them. Consistency helps people recognise the business, even before they see the logo.
+A brand voice is the personality in the words. A youth church event might sound lively and warm. A microfinance company should sound calm and trustworthy. An Accra salon might sound stylish and friendly. Write down three words for the voice, such as "friendly, honest, local", plus a few words the brand always uses and a few it never uses. Check every post against them. Consistency helps people recognise the business before they even see the logo.
+
+## Writing for a web page
+
+The same pattern works on a website, with one addition: people often arrive from a search engine, so use the words they actually type. If customers search "braids salon East Legon", those words should appear naturally in the page title, the main heading and the first paragraph. This is the basic keyword principle. Steps for a simple page:
+
+1. **List the words customers use.** Ask customers how they would search, and type the service plus the town into a search engine to see the suggestions.
+2. **Write a clear heading** that says what the business does and where: "Braids and natural hair care in East Legon".
+3. **Answer the main questions** in short paragraphs: services, prices or price ranges, opening hours, location and how to book.
+4. **Use the words naturally.** Never stuff the same phrase into every sentence; write for people first.
+5. **End with one clear action,** such as a WhatsApp button or phone number.
+
+The SEO lesson explains how search engines read pages, and the specialisations roadmap goes much deeper into keyword research.
 
 ## Honest claims only
 
-Never promise what the product cannot do. Do not call shea butter a cure for a disease, and do not invent customer reviews. In Ghana, the Food and Drugs Authority sets rules for adverts for products such as cosmetics, food and medicines. The platforms' own policies also expect claims to be truthful. One exposed lie can destroy trust that took years to build.
+Never promise what the product cannot do. Do not call shea butter a cure for a disease, and do not invent customer reviews. In Ghana, the Food and Drugs Authority sets rules for adverts for regulated products such as cosmetics, food and medicines. The platforms' own advertising policies also expect claims to be truthful. One exposed lie can destroy trust that took years to build.
 
 ## Using AI writing tools
 
-AI chat tools can suggest captions quickly. Treat them as a first draft only. Check every price, date and fact, remove anything that sounds foreign to your audience, and never trust an AI translation into Dagbani or Twi without a fluent speaker checking it.
+AI chat tools can suggest captions quickly. Treat them as a first draft only. Check every price, date and fact, remove anything that sounds foreign to your audience, and never trust an AI translation into Dagbani, Twi or any other language without a fluent speaker checking it.
 
-## A worked example
+## A quick editing checklist
 
-Sumaila runs a mobile money shop and writes his own posts. For a made up promotion, his first draft is: "We are pleased to inform our esteemed customers of our ongoing promotion." Nobody will read that. His rewrite:
+Before you post, check: Is the benefit in the first line? Is the price or next step clear? Is every fact true? Does it sound like the brand? Could a busy person on a small screen understand it in a few seconds? If any answer is no, edit once more.`,
+      workedExample_md: `Sumaila runs a mobile money and phone accessories shop in Tamale and writes his own posts. For a made up promotion, his first draft reads:
 
-"Do any MoMo cash out this week and get a free loyalty stamp. Five stamps earn you GHS 5 airtime. Only at Sumaila Ventures, opposite Aboabo market. Open 7am to 8pm."
+"We are pleased to inform our esteemed customers of our ongoing promotion at our shop."
 
-Benefit first, clear detail, location and a next step. That is copywriting.`,
-      practice_task_md: `**Goal:** Rewrite real posts so they sell more clearly.
+Nobody will read past "pleased". You help him rewrite it using the pattern:
+
+1. **Hook (benefit first):** "Free airtime for loyal customers this month."
+2. **Detail:** "Get a stamp each time you buy a phone accessory. Five stamps earn you airtime."
+3. **Proof:** "Serving Aboabo since your big brother's first phone."
+4. **Call to action:** "Visit Sumaila Ventures, opposite Aboabo market, 7am to 8pm, or send STAMP on WhatsApp to ask."
+
+You check it against his brand voice words, "friendly, quick, local", and read it aloud. It is short enough for a WhatsApp Status and clear in a few seconds.
+
+Then you adapt it for his simple web page. The customers search "phone accessories Aboabo Tamale", so the heading becomes "Phone accessories and chargers in Aboabo, Tamale", followed by the same benefit, opening hours and a WhatsApp button.`,
+      keyTerms: [
+        { term: "Copywriting", definition: "Writing words that persuade people to take an action, such as buying or booking." },
+        { term: "Hook", definition: "The first line of a post, written to make people stop and read more." },
+        { term: "Call to action", definition: "The exact next step you ask the reader to take." },
+        { term: "Benefit", definition: "What a product does for the customer, as opposed to what it is." },
+        { term: "Brand voice", definition: "The consistent personality in a business's words, such as friendly or formal." },
+        { term: "Keyword", definition: "A word or phrase people type into a search engine to find something." },
+      ],
+      commonMistakes: [
+        "Starting with greetings or the business name instead of the benefit",
+        "Leaving out the price or the next step, so people must message to ask",
+        "Stuffing the same keyword into every sentence of a web page",
+        "Making health or results claims the product cannot back up",
+        "Posting an AI draft or AI translation without checking it",
+      ],
+      selfCheck: [
+        "Can you turn one feature of a product you know into a clear benefit?",
+        "What three words would describe the voice of a business you like, and does every post match them?",
+        "What words would a customer type to find a service in your town, and where would you put them on a web page?",
+      ],
+      practice_task_md: `**Goal:** Rewrite real posts so they sell more clearly, and write a short web page section.
 
 **Steps:**
-1. Find two posts or WhatsApp Statuses from local businesses that you think are unclear. Screenshot them.
-2. For each, rewrite the message using hook, detail, proof and call to action.
-3. Choose three words for the business's brand voice and check your rewrite against them.
-4. Read both versions aloud to a friend and ask which one makes them more likely to act.
+1. Find three real posts from small businesses near you, on WhatsApp Status, Facebook or Instagram. Screenshot or copy them into a notes app.
+2. Rewrite each one using hook, detail, proof and call to action. Keep each under 50 words.
+3. Write three words for one business's brand voice and check your rewrites against them.
+4. For one of the businesses, write a heading and a short first paragraph for a web page, using the words a customer would search for.
+5. Ask a friend which version, old or new, they would act on, and why.
 
-**Done looks like:** Two before and after pairs saved in a Google Doc, each with a one line note on what you changed and why. This makes a good small portfolio piece.`,
+**Done looks like:** Three before and after pairs, a brand voice note, a short web page section, and one piece of feedback.`,
       quiz: {
         questions: [
           {
-            prompt: "What is the job of the hook in a selling message?",
+            prompt: "Which is the best hook for a shea butter post in the harmattan?",
             options: [
-              "To list every product the shop sells so buyers see the full range",
-              "To give the phone number",
-              "To catch attention in the first line with a benefit or question",
-              "To thank customers for reading",
+              "Good morning everyone, hope you are well",
+              "Welcome to our page, please follow us",
+              "Dry, cracked heels this harmattan?",
+              "We are pleased to inform our esteemed customers",
             ],
             answer_index: 2,
-            explanation: "The hook is the first line people see, so it should lead with a benefit or question.",
+            explanation: "A good hook leads with the benefit or a question the reader cares about.",
           },
           {
-            prompt: "Which of these is the clearest call to action?",
+            prompt: "\"Strong enough to carry a full market load for years\" is an example of what?",
+            options: ["A feature", "A benefit", "A brand voice", "A keyword"],
+            answer_index: 1,
+            explanation: "It describes what the basket does for the customer, which is a benefit.",
+          },
+          {
+            prompt: "What does the lesson say about using keywords on a web page?",
             options: [
-              "Send 'BUTTER' on WhatsApp to our number and pay with MoMo",
-              "We have the best butter in town",
-              "Contact us for more information",
-              "Good morning to all our customers",
+              "Use the words customers type naturally in the title, heading and first paragraph",
+              "Repeat the main keyword in every single sentence on the page so that search engines notice it",
+              "Keywords only matter for paid adverts",
+              "Hide keywords in small text at the bottom of the page",
             ],
             answer_index: 0,
-            explanation: "A call to action tells people exactly what to do next.",
+            explanation: "The lesson says to use customers' search words naturally and never stuff them.",
           },
           {
-            prompt: "How does the lesson suggest you keep a brand voice consistent?",
+            prompt: "How should you treat a caption suggested by an AI chat tool?",
             options: [
-              "Change the tone every week to keep people guessing",
-              "Copy the voice of the biggest competitor, since buyers already trust it",
-              "Only post in capital letters",
-              "Write down three words for the voice and check every post against them",
+              "Post it straight away, since AI tools are always accurate",
+              "Only use it if it is written in formal English",
+              "Translate it with the same tool and post both versions",
+              "As a first draft, checking every fact and anything that sounds foreign",
             ],
             answer_index: 3,
-            explanation: "Three agreed words give you a simple test for every post.",
-          },
-          {
-            prompt: "How should you use AI writing tools, according to the lesson?",
-            options: [
-              "Publish whatever they write without checking, since they know the facts",
-              "As a first draft, then check facts, prices and translations",
-              "Only for writing customer reviews",
-              "Never, because they are banned for marketing",
-            ],
-            answer_index: 1,
-            explanation: "AI drafts must be checked, and local language translations need a fluent speaker.",
+            explanation: "The lesson says AI output is only a first draft that you must check.",
           },
         ],
         pass_threshold: 75,
@@ -570,91 +842,140 @@ Benefit first, clear detail, location and a next step. That is copywriting.`,
     },
     "graphics-and-photos": {
       outcomes: [
-        "Take product photos on a phone",
-        "Make simple branded graphics",
-        "Keep image files light",
+        "Take a clean product photo in daylight with any phone camera",
+        "Design a simple promotional graphic in a free tool",
+        "Keep a brand consistent with a small set of colours and fonts",
+        "Export images small enough for customers on limited data",
       ],
-      explanation_md: `On WhatsApp, Instagram and Facebook, people decide in a second whether to stop scrolling. A clear photo or a clean graphic is often what makes them stop. Some Ghanaian adverts for marketing assistants and interns name Canva and similar design tools. You do not need a camera or paid software to meet that bar. You need daylight, a steady hand and a few simple rules.
+      explanation_md: `People decide in a second whether to stop scrolling, and pictures make that decision. A blurry, dark photo makes even good products look cheap. Many Ghanaian adverts for marketing assistants and interns name tools such as Canva for graphics, and clients expect clean product photos. You can do both well with free tools and a little practice.
 
-## Product photos on a phone
+## Taking a good product photo
 
-* **Use daylight.** Stand near a window or under a shade tree, out of harsh direct sun. Avoid the phone flash, which makes products look flat and shiny.
-* **Clean background.** A plain wall, a cloth or a sheet of paper. Remove clutter so the product is the only thing to look at.
-* **Wipe the lens.** Phones live in pockets. A quick wipe makes photos sharper instantly.
-* **Fill the frame.** Get close so the product takes up most of the picture. Show a hand or a common object for size, such as a basket next to a chair.
-* **Take several.** Shoot from the front, the side and up close on details like weaving or a label. Pick the best.
+You do not need a professional camera. Any recent phone camera is enough if you control the light and the background.
 
-## Simple graphics
+1. **Use daylight.** Stand near a window or in open shade outside. Avoid harsh midday sun, which makes hard shadows, and avoid the camera flash.
+2. **Clean the lens.** A quick wipe with a soft cloth fixes many blurry photos.
+3. **Choose a plain background.** A white sheet, a clean wall or a wooden table. Remove clutter so the product is the only thing that matters.
+4. **Fill the frame.** Move closer rather than zooming. Tap the screen on the product to focus.
+5. **Hold steady.** Brace your elbows on a table, or prop the phone against something.
+6. **Take several shots.** Try the front, the side, a close up of texture or detail, and one showing size, such as the product in someone's hand.
 
-Free design apps such as Canva offer templates for posts, Status images and flyers. Use them, but keep it simple:
+For food, shoot from above or at a slight angle in good light. For a salon, photograph finished hairstyles from the side and back with the client's permission. For crafts, show the detail of the weaving or stitching.
 
-* One message per graphic. A church harvest flyer needs the event, date, time, place and a contact. Not five paragraphs.
-* Large, readable text with strong contrast, such as dark text on a light background.
-* Two or three brand colours and one or two fonts, used every time. This is how people start recognising the business at a glance.
-* Use real photos of the business where possible, rather than generic stock images.
+## Simple edits
+
+Use the editor built into your phone or a free app. Straighten the photo, crop out distractions and lift brightness a little. Do not change colours so much that the product looks different from what customers receive. Honest photos prevent complaints.
+
+## Designing a promotional graphic
+
+A graphic combines a photo or shapes with a few words, for example to announce an offer, an event or new stock. Free tools such as Canva work in a browser on a computer and as an app on a phone. Steps:
+
+1. **Pick the size first.** Square suits many feeds, and a tall vertical size suits Status and Stories. Most tools offer ready made sizes.
+2. **Write the words before you design.** Keep it to a short headline, one or two lines of detail (price, date, place) and a call to action. If it takes more than a few seconds to read, cut words.
+3. **Choose one strong image** and place it where the eye lands first.
+4. **Use the brand's colours and fonts.** Two or three colours and one or two fonts are enough.
+5. **Check contrast.** Light text on a dark background or dark on light. Make the text big enough to read on a small screen.
+6. **Leave space.** Empty space around words makes a design look calm and professional.
+7. **Check every detail.** Price, date, phone number and spelling. A wrong number wastes the whole design.
+
+Templates can save time, but change them enough that the design fits the brand. Use only images you have taken, been given permission to use, or that the tool's licence allows.
+
+## A simple brand kit
+
+Create a small note, or use the brand kit feature in your design tool if it has one, with the logo, two or three colours, one or two fonts, and an example post. Using it every time makes a business recognisable, even when different people make the content.
 
 ## Keep files light
 
-Many customers buy data in small bundles. Large images load slowly or not at all. Export graphics as JPG for photos and keep the size modest; most apps offer a smaller download option. Check how the image looks on a small phone screen before posting.
+Many customers are on small data bundles. When you export, choose a sensible size rather than the largest option, and use JPG for photos. On a computer you can resize before uploading; on a phone, many apps let you choose a smaller export. A graphic that loads quickly gets seen.
 
-## A worked example
+## Phone or computer
 
-Wumpini helps a basket weaving group in Bolgatanga. Their old photos were taken indoors at night, with baskets piled together. She moves the shoot outside in the morning, places one basket at a time on a plain cloth, and adds a close up of the weaving. Then she builds one Canva template with the group's colours and logo, so every new basket post looks consistent: photo on top, name, size and price below. The group can now make a new post themselves in a few minutes.`,
-      practice_task_md: `**Goal:** Produce a small set of product photos and one branded graphic for a local seller.
+Both work. A phone is handy for shooting and quick designs. A computer gives a bigger screen for careful layout, checking small text, and organising files into folders by client and month.`,
+      workedExample_md: `Hawa sells shea butter in Tamale and wants a graphic for a weekend offer. Fuseini makes it in Canva.
+
+1. **Photo.** He places a jar on a white cloth by the window at about 9am, wipes the lens, taps to focus, and takes six shots. He picks the sharpest, crops it square and lifts the brightness slightly.
+2. **Words first.** He writes in his notes app: "Fresh shea butter, 500g jar" (headline), "Weekend price GHS 40, Saturday and Sunday only" (detail), "WhatsApp 024 000 0000 to order" (call to action). The price is an example for practice; he uses Hawa's real price on the live post.
+3. **Size.** He makes a square version for Facebook and a tall version for WhatsApp Status.
+4. **Brand kit.** He uses Hawa's two colours, deep green and cream, and one bold, easy font.
+5. **Check.** He zooms out on his phone to see if the headline is readable at a glance, then checks the number twice.
+6. **Export.** He exports as a JPG at a modest size so it loads quickly.
+
+Hawa approves it in two minutes. The design took Fuseini about 30 minutes, and he saves it as a template for next weekend.`,
+      keyTerms: [
+        { term: "Natural light", definition: "Daylight from a window or open shade, the best free light for product photos." },
+        { term: "Composition", definition: "How things are arranged in a photo or design so the eye goes to the right place." },
+        { term: "Contrast", definition: "The difference between text and background colours that makes words easy to read." },
+        { term: "Template", definition: "A ready made design you adapt with your own words, images and colours." },
+        { term: "Brand kit", definition: "A small set of a business's logo, colours and fonts used on every design." },
+        { term: "Export", definition: "Saving a finished design as an image file you can post or send." },
+      ],
+      commonMistakes: [
+        "Shooting with the flash or in a dark room, which makes products look cheap",
+        "Cramming too many words, colours and fonts into one graphic",
+        "Editing colours so much that the product looks different from what customers receive",
+        "Exporting very large files that customers on small bundles never load",
+        "Using images found online without permission",
+      ],
+      selfCheck: [
+        "What three changes would most improve the product photos of a business you follow?",
+        "Can a stranger read your graphic's main message in three seconds on a small screen?",
+        "Which two or three colours and fonts would you put in a brand kit for a business you know?",
+      ],
+      practice_task_md: `**Goal:** Produce one clean product photo and one promotional graphic for a real or realistic business.
 
 **Steps:**
-1. Choose three products from a seller you know, or from your own home if needed, such as a jar of shea butter, a basket or a pair of slippers.
-2. Photograph each in daylight on a plain background. Take at least three angles per product.
-3. Pick the best photo of each and crop it so the product fills the frame.
-4. In a free design app, create one graphic using one photo, the product name, the price in cedis and how to order. Use no more than three colours.
-5. View the graphic on your phone at normal size and fix anything that is hard to read.
+1. Choose a product you can access, such as a jar of shea butter, a basket, a plate of food or a phone case.
+2. Take at least five photos in daylight on a plain background, following the steps in the lesson. Pick the best and make simple edits.
+3. Write the headline, detail and call to action for an offer in a notes app.
+4. In a free design tool, create a square graphic and a tall vertical version using your photo, two or three colours and one or two fonts.
+5. Export both at a modest size and check them on a small screen.
 
-**Done looks like:** Three clean product photos and one readable branded graphic, ready to show a mentor or the seller.`,
+**Done looks like:** One edited photo and two graphic sizes, with readable text, correct details and files small enough to send easily on WhatsApp.`,
       quiz: {
         questions: [
           {
-            prompt: "What does the lesson recommend instead of using the phone flash?",
+            prompt: "What is the best light for a product photo, according to the lesson?",
             options: [
-              "Taking photos at night for better colour",
-              "Using daylight near a window or in shade",
-              "Using a paid filter app",
-              "Holding a torch behind the product",
-            ],
-            answer_index: 1,
-            explanation: "Daylight out of harsh sun gives better results than the flash.",
-          },
-          {
-            prompt: "Why should graphics use the same two or three brand colours every time?",
-            options: [
-              "So people start recognising the business at a glance",
-              "Because design apps only allow three colours",
-              "So the file size becomes larger",
-              "Because bright colours are not allowed in adverts on Facebook",
+              "Daylight near a window or in open shade",
+              "The camera flash in a dark room",
+              "Harsh midday sun directly on the product",
+              "A coloured bulb to make the product stand out",
             ],
             answer_index: 0,
-            explanation: "Consistent colours and fonts build recognition.",
+            explanation: "The lesson recommends daylight from a window or open shade and avoiding flash and harsh sun.",
           },
           {
-            prompt: "Why does the lesson say to keep image files light?",
+            prompt: "When designing a promotional graphic, what should you do before you start designing?",
             options: [
-              "Platforms delete large images",
-              "Light files always look sharper on phone screens than heavy ones",
-              "Lighter files cost more to post",
-              "Customers on small data bundles wait a long time for large images",
-            ],
-            answer_index: 3,
-            explanation: "Customers on limited data may not load heavy images.",
-          },
-          {
-            prompt: "What did Wumpini create so the basket group could make consistent posts themselves?",
-            options: [
-              "A paid advert",
-              "A new logo for every post",
-              "One template with the group's colours and logo",
-              "A website with an online shop",
+              "Choose as many colours as possible",
+              "Find a competitor's design to copy",
+              "Pick the size and write the words",
+              "Export the file at the largest size",
             ],
             answer_index: 2,
-            explanation: "A single reusable template made every post look consistent and easy to produce.",
+            explanation: "The steps say to pick the size first and write the words before designing.",
+          },
+          {
+            prompt: "Why should you avoid changing a product's colours too much when editing?",
+            options: [
+              "Editing apps charge more for colour changes",
+              "Platforms automatically block any photo that has been edited in an app, even slightly",
+              "Bright colours use more data",
+              "The product would look different from what customers receive, causing complaints",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says honest photos prevent complaints.",
+          },
+          {
+            prompt: "What is a brand kit?",
+            options: [
+              "A paid subscription to a design tool",
+              "A small set of the logo, colours and fonts used on every design",
+              "A box of products sent to customers",
+              "A folder of photos copied from other businesses",
+            ],
+            answer_index: 1,
+            explanation: "A brand kit keeps designs consistent with the same logo, colours and fonts.",
           },
         ],
         pass_threshold: 75,
@@ -662,24 +983,50 @@ Wumpini helps a basket weaving group in Bolgatanga. Their old photos were taken 
     },
     "short-video": {
       outcomes: [
-        "Make a short video that works",
-        "Edit on a phone",
-        "Use trends carefully and plan live selling",
+        "Plan a short vertical video with a strong opening and one idea",
+        "Film with clear sound and steady framing on a phone",
+        "Edit, caption and end a video with a clear next step",
+        "Prepare a simple live selling session",
       ],
-      explanation_md: `Short vertical video now drives much of what people watch on TikTok, Instagram Reels, Facebook and WhatsApp Status. Ghanaian employers, from car dealers to cosmetics shops, are hiring people who can film and edit short clips, and some retail and health product companies ask for staff who can sell during live streams. You can do all of this with a phone.
+      explanation_md: `Short vertical video now drives much of what people watch on TikTok, Instagram Reels, Facebook and WhatsApp Status. Ghanaian employers, from car dealers to cosmetics shops, advertise for people who can film and edit short clips, and some retail and health product companies ask for staff who can sell during live streams. Filming is one of the few tasks in this roadmap where a phone is the natural tool, because its camera is always with you. Editing can happen on the phone or on a computer.
 
 ## What makes a short video work
 
-* **The first few seconds.** People decide almost instantly whether to keep watching. Start with the most interesting moment: the finished basket, the steaming waakye, the before and after.
+* **The first few seconds.** People decide almost instantly whether to keep watching. Start with the most interesting moment: the finished basket, the steaming waakye, the before and after of a hairstyle.
 * **Vertical framing.** Hold the phone upright so the video fills the screen.
-* **Clear sound.** Viewers forgive average pictures but not bad sound. Film in a quiet spot, speak close to the phone, or use a cheap clip microphone if you have one.
+* **Clear sound.** Viewers forgive average pictures but not bad sound. Film in a quiet spot, speak close to the phone, or use a simple clip microphone if you have one.
 * **Captions.** Many people watch with the sound off, especially in public. Add on screen text so the message still lands.
 * **One idea.** One product, one tip or one story per video.
 * **A next step.** End with what to do: "Order on WhatsApp", "Visit us at Tamale Central Market".
 
-## Editing on a phone
+## Plan before you film
 
-Free editing apps such as CapCut, or the editors built into TikTok and Instagram, let you trim clips, add text, music and transitions. Keep edits simple. Cut any pause or shaky moment. When you add music, use the platform's own music library, because songs added from elsewhere can be muted or removed for copyright reasons.
+A short plan saves data, battery and time. Write three lines:
+
+1. **Opening shot:** the moment that makes people stop.
+2. **Middle:** two to four quick shots that show the process, product or tip.
+3. **Ending:** the result and the call to action.
+
+Then list the shots you need. For a chop bar: steam rising from the pot, the server dishing up, a close up of the plate, the price on screen, the WhatsApp number.
+
+## Filming steps
+
+1. **Clean the lens** and turn the phone upright.
+2. **Find light.** Face a window or film in open shade. Keep the sun behind you, not behind the subject.
+3. **Steady the phone.** Lean it against something, brace your arms, or use a cheap stand.
+4. **Film each shot for a few seconds longer than you need.** You will trim later.
+5. **Check sound.** Record a five second test and listen before filming everything.
+6. **Ask permission** before filming customers or staff, and respect anyone who says no.
+
+## Editing
+
+Free editing apps such as CapCut, or the editors built into TikTok and Instagram, let you trim clips, add text, music and transitions. Desktop editors work too if you prefer a bigger screen. Keep edits simple:
+
+* Cut any pause, shaky moment or repeated shot.
+* Put the key words on screen in large, high contrast text, away from the edges where app buttons sit.
+* Keep most business videos short; many work well at 15 to 30 seconds.
+* When you add music, use the platform's own music library, because songs added from elsewhere can be muted or removed for copyright reasons.
+* Export at a sensible quality so it uploads on a normal bundle.
 
 ## Trends, carefully
 
@@ -687,66 +1034,99 @@ Trends and popular sounds can help a video reach new people. Join a trend only i
 
 ## Live selling
 
-In a live stream, a seller shows products in real time, answers questions from comments and takes orders. It works well for clothes, cosmetics and accessories. Prepare like a small show: a list of products with prices, good light, a stable phone stand, and a helper who replies to comments and records orders. Platforms set conditions for who can go live, such as age and account requirements, and these change, so check the current rules in the app.
+In a live stream, a seller shows products in real time, answers questions from comments and takes orders. It works well for clothes, cosmetics and accessories. Prepare like a small show: a list of products with prices, good light, a stable phone stand, a strong connection, and a helper who replies to comments and records orders in a notebook or spreadsheet. Announce the time a day before on Status and social media. Platforms set conditions for who can go live, such as age and account requirements, and these change, so check the current rules in the app before promising a client a live session.
 
-## A worked example
+## Measure what matters
 
-Fuseini films for a Tamale tailor. His first video was a slow, sideways clip of the shop. His new one starts with a customer twirling in a finished kaba, then shows three quick cuts of cutting and sewing, with captions "Made in Tamale" and "Order on WhatsApp", ending on the phone number. Twenty seconds, one idea, clear next step.`,
+Views are nice, but for a business the useful signs are messages, saves, shares and orders that mention the video. Note them for each video so you learn what to make next. The specialisations roadmap covers storytelling, scripting and editing in more depth.`,
+      workedExample_md: `Fuseini films for a Tamale tailor, Madam Sala. His first attempt was a slow, sideways clip of the shop that nobody shared.
+
+His new plan, written in his notes app:
+
+* **Opening:** a customer, Mariama, twirling in a finished kaba, filmed with her permission.
+* **Middle:** three quick shots of cutting fabric, sewing a seam, and fitting.
+* **Ending:** the finished outfit with on screen text "Made in Tamale, ready in 7 days" and "Order on WhatsApp", plus the number.
+
+He films at 10am near the shop's open door, phone upright and leaning on a sewing machine. He records a five second sound test first and hears a generator, so he moves inside. He films each shot a little longer than needed.
+
+In CapCut he trims everything to 22 seconds, adds large captions away from the screen edges, picks a song from the app's own library and exports at a moderate quality.
+
+After a week he notes the results: more shares than any earlier post, and four WhatsApp messages asking about kaba prices. He saves the plan as a pattern for the next video.`,
+      keyTerms: [
+        { term: "Vertical video", definition: "Video filmed with the phone upright so it fills a phone screen." },
+        { term: "Hook", definition: "The opening seconds of a video that make people keep watching." },
+        { term: "Shot list", definition: "A short list of the clips you need to film before you start." },
+        { term: "Captions", definition: "On screen text that carries the message when the sound is off." },
+        { term: "Live selling", definition: "Showing and selling products in real time during a live stream." },
+        { term: "Trend", definition: "A popular format or sound that many people copy for a short time." },
+      ],
+      commonMistakes: [
+        "Starting with a slow logo or greeting instead of the most interesting moment",
+        "Filming sideways or with the light behind the subject",
+        "Ignoring sound and filming next to traffic or a generator",
+        "Adding songs from outside the app, so the video is muted",
+        "Joining a trend that has nothing to do with the business",
+      ],
+      selfCheck: [
+        "What would the first two seconds of a video for a business you know show?",
+        "Could someone understand your last video with the sound off?",
+        "What would you prepare before helping a shop run its first live selling session?",
+      ],
       practice_task_md: `**Goal:** Film and edit one short vertical video for a local business.
 
 **Steps:**
-1. Choose a product or process to show, such as weaving a basket, packaging shea butter or serving food.
-2. Plan four or five shots on paper. Start with the most interesting moment.
-3. Film vertically in a quiet place with good light. Keep each shot a few seconds long.
-4. Edit in a free app: trim pauses, add captions and end with a clear next step. Keep the video under 30 seconds.
-5. Watch it with the sound off. If the message is not clear, improve the captions.
+1. Choose a business you can film with permission, such as a tailor, a chop bar or a craft seller.
+2. Write a three line plan (opening, middle, ending) and a shot list.
+3. Film each shot upright in good light, after a quick sound test.
+4. Edit to 15 to 30 seconds in a free app, add captions and end with a clear next step.
+5. Export at a moderate quality and send it to the owner for approval.
 
-**Done looks like:** A finished video saved on your phone that makes sense with the sound off and ends with an action. Ask the business owner before posting it publicly.`,
+**Done looks like:** A finished vertical video under 30 seconds with a strong opening, readable captions and a clear call to action, plus your written plan.`,
       quiz: {
         questions: [
           {
-            prompt: "Why should short videos have captions?",
+            prompt: "Why does the lesson say captions matter in short videos?",
             options: [
-              "Platforms refuse videos without text",
-              "Many people watch with the sound off",
+              "Platforms reject videos without captions",
               "Captions make the file smaller",
-              "Captions replace the need for a next step",
-            ],
-            answer_index: 1,
-            explanation: "Captions let the message land even when people watch silently.",
-          },
-          {
-            prompt: "What does the lesson say about the first few seconds of a video?",
-            options: [
-              "They should show the business logo for a long time",
-              "They do not matter because people watch to the end",
-              "They should start with the most interesting moment",
-              "They should always be silent",
+              "Many people watch with the sound off",
+              "Captions replace the need for a call to action",
             ],
             answer_index: 2,
-            explanation: "People decide almost instantly whether to keep watching.",
+            explanation: "People often watch in public with the sound off, so on screen text carries the message.",
           },
           {
-            prompt: "Why use the platform's own music library when adding songs?",
+            prompt: "What did Fuseini do when his sound test picked up a generator?",
             options: [
-              "Songs from elsewhere can be muted or removed for copyright",
-              "The library songs are always louder",
-              "It makes the video vertical and adds captions automatically",
-              "Platforms pay you a share of earnings for using their music",
+              "Moved inside to film somewhere quieter",
+              "Added loud music to cover the noise",
+              "Filmed anyway and removed the sound later",
+              "Switched to taking photos instead of video",
             ],
             answer_index: 0,
-            explanation: "Outside music can trigger copyright muting or removal.",
+            explanation: "He moved inside, because clear sound matters more than perfect pictures.",
           },
           {
-            prompt: "Which of these is part of preparing for a live selling session?",
+            prompt: "Why should you add music from the platform's own library?",
             options: [
-              "Going live with no product list so it feels natural",
-              "Turning off comments so nobody can ask questions",
-              "Filming horizontally to fit more products",
-              "Having a helper reply to comments and record orders",
+              "It makes the video load faster for viewers",
+              "Songs added from elsewhere can be muted or removed for copyright reasons",
+              "Only music from the library can be played in a vertical video, because of the screen shape",
+              "Library music is always more popular",
+            ],
+            answer_index: 1,
+            explanation: "The lesson warns that outside songs can be muted or removed.",
+          },
+          {
+            prompt: "Which of these is the most useful sign that a business video worked?",
+            options: [
+              "A high view count",
+              "A trending sound",
+              "A long video length",
+              "Messages and orders that mention the video",
             ],
             answer_index: 3,
-            explanation: "The lesson suggests a product list, good light, a stand and a helper for comments and orders.",
+            explanation: "The lesson says messages, shares and orders matter more for a business than views.",
           },
         ],
         pass_threshold: 75,
@@ -754,99 +1134,154 @@ Fuseini films for a Tamale tailor. His first video was a slow, sideways clip of 
     },
     "content-calendar": {
       outcomes: [
-        "Decide what goes in a content calendar",
-        "Plan posts around real life and choose how often to post",
-        "Build a two week calendar in a spreadsheet",
+        "Build a two week content calendar in a spreadsheet",
+        "Plan posts around market days, holidays and local events",
+        "Balance content jobs and channels across a calendar",
+        "Present a calendar as part of a short campaign proposal",
       ],
-      explanation_md: `Businesses that post only when they remember look unreliable. A content calendar fixes that. It is a simple plan of what to post, where and when, made a few weeks ahead. Agencies and in house teams in Ghana use calendars to agree work with clients and managers before anything goes live. If you can build and keep one, you show that you are organised, which employers value as much as creativity.
+      explanation_md: `Businesses that post only when they remember look unreliable, and customers forget them. A content calendar is a simple plan of what will be posted, where and when. Employers and clients value marketers who can plan ahead, because it means fewer last minute rushes, fewer mistakes and content that matches what is happening in customers' lives. It is also one of the easiest pieces of work to show in a portfolio.
 
-## What goes in a calendar
+## What a calendar contains
 
-A basic calendar is a table with one row per post:
+A calendar can be a table in Google Sheets, a free spreadsheet app on your phone, or a page in a notebook. Each row is one piece of content. Useful columns:
 
-* **Date and time.** When it goes out.
-* **Channel.** WhatsApp Status, Facebook, Instagram, TikTok, email.
-* **Format.** Caption with photo, graphic, video, live.
-* **Topic and job.** What it is about and whether it shows, helps, proves or asks.
-* **Caption draft.** The words, written in advance.
-* **Status.** Idea, drafted, approved, posted.
+* **Date and time** it will go out.
+* **Channel**, such as WhatsApp Status, Facebook, Instagram or email.
+* **Job**: show, help, prove or ask.
+* **Topic or idea** in a few words.
+* **Format**: photo, graphic, video, text.
+* **Caption draft** or a link to it.
+* **Status**: idea, drafted, approved, posted.
+* **Result**: replies, shares or orders noticed afterwards.
 
-Google Sheets works well. It is free, opens on a phone or a computer, and you can share it with a client so they can approve posts with a comment.
+Spreadsheets are easier to edit and share on a computer, but they work on a phone too. Sharing the sheet with the owner lets them approve posts without long chats.
 
 ## Plan around real life
 
-The best calendars follow the rhythm of the customers' lives:
+Good calendars follow the rhythm of the customers' lives:
 
-* **Market days** in the town, when people have cash and are out buying.
-* **Holidays and festivals** such as Christmas, Eid, Easter, Independence Day, and local festivals like Damba in Dagbon or the Kakube harvest festival in Nandom.
-* **Seasons.** Harmattan for skin care, rainy season for umbrellas and wellington boots, school reopening for uniforms and stationery.
-* **Paydays** near the end of the month for salaried customers.
-* **Business events** such as a new stock arrival or an anniversary.
+* **Market days.** If Tamale's big market day brings traders to town, post offers the evening before.
+* **Paydays and month end.** Many people buy more just after payday and less just before it.
+* **Seasons.** Harmattan skin care, rainy season footwear, school resumption for uniforms and stationery.
+* **Holidays and festivals.** Christmas, Eid, Easter, Independence Day, Farmers' Day and local celebrations such as Damba in Dagbon. Be respectful: a sales post on a solemn religious day can offend.
+* **The business's own events:** new stock, a launch, an anniversary, a workshop.
 
-Mark these first, then fill in regular posts around them. Leave a little space for things you cannot plan, like a trending moment or a sudden stock problem.
+## How to build a two week calendar
 
-## How often to post
+1. **Start from the goal.** For example: "more weekday bookings at the salon".
+2. **Decide how often you can post** on each channel. Being consistent with three posts a week beats posting daily for one week and then stopping.
+3. **Mark key dates** in the two weeks: market days, holidays, payday, events.
+4. **Fill the slots with ideas,** mixing the four jobs so most posts show, help or prove and some ask.
+5. **Match format to channel.** Short video for TikTok or Reels, a graphic for Status, a longer caption for Facebook.
+6. **Draft captions in batches.** Write all of a week's captions in one sitting. It is faster and keeps the voice consistent.
+7. **Get approval** from the owner before posting.
+8. **Leave room** for news and replies. A calendar is a plan, not a prison.
 
-There is no magic number. A schedule the business can keep for months beats an ambitious one abandoned in two weeks. For a small shop, three good posts a week plus regular Status updates may be plenty.
+## Batching and scheduling
 
-## A worked example
+Making content in batches saves time and data: take all the week's photos in one morning, design all the graphics in one sitting. Some platforms let you schedule posts ahead, for example through Meta's business tools for Facebook and Instagram. WhatsApp Status cannot usually be scheduled in the same way, so set a reminder. Menus change, so check what the tools currently offer.
 
-Hawa's shea butter business plans December in a sheet. She marks the start of harmattan, Christmas and the Tamale market days. Her calendar has a skin care tip every Monday, a product photo with price on market days, a customer story mid month, and a Christmas gift pack offer from the second week. Every caption is drafted by the end of November, so in December she only has to post and reply to customers.`,
-      practice_task_md: `**Goal:** Build a two week content calendar for a local business in Google Sheets.
+## Review and improve
+
+At the end of each week, fill in the result column. Which posts brought messages or orders? Which got nothing? Make more of what worked next time. This turns the calendar into a learning tool, and the results feed straight into a client report.
+
+## Turning it into a proposal
+
+When you pitch a plan to a client or a mentor, three short slides are often enough:
+
+1. **Strategy:** the goal, the audience, the channels and why.
+2. **Example post one:** the finished design and caption.
+3. **Example post two:** a different job or format, plus a peek at the two week calendar.
+
+Keep text short on the slides and talk through the reasons. The campaign planning lesson shows how to grow this into a full campaign plan.`,
+      workedExample_md: `Wumpini helps an Accra salon, Grace Beauty Lounge, get more weekday bookings. The goal: fill Tuesday to Thursday slots. The salon can manage four posts a week on Instagram and daily WhatsApp Status.
+
+She builds a two week sheet. Week one looks like this:
+
+| Date | Channel | Job | Idea | Format | Status |
+| --- | --- | --- | --- | --- | --- |
+| Mon | Instagram | Show | Knotless braids finished look | Photo | Approved |
+| Tue | Status | Ask | "Weekday slots open, book on WhatsApp" | Graphic | Drafted |
+| Wed | Instagram | Help | How to sleep without ruining braids | Short video | Idea |
+| Thu | Status | Prove | Client quote, shared with permission | Graphic | Drafted |
+| Fri | Instagram | Show | Behind the scenes, Saturday prep | Short video | Idea |
+
+Week two adds month end, so she plans a payday reminder on the Friday and avoids a big offer just before it.
+
+She takes all the photos on Monday morning, drafts all captions on Monday evening and shares the sheet with the owner, who approves it in comments. On Friday she records which posts brought booking messages. The help video brought the most, so week two gets another tip video.`,
+      keyTerms: [
+        { term: "Content calendar", definition: "A plan showing what will be posted, on which channel and when." },
+        { term: "Batching", definition: "Making several pieces of content in one sitting to save time and data." },
+        { term: "Scheduling", definition: "Setting a post to publish automatically at a chosen time." },
+        { term: "Posting frequency", definition: "How often a business posts on each channel." },
+        { term: "Approval", definition: "The owner or client agreeing to content before it is posted." },
+      ],
+      commonMistakes: [
+        "Planning more posts than the business can keep up, then stopping",
+        "Ignoring market days, paydays and festivals that change what customers need",
+        "Posting sales offers on solemn religious days",
+        "Never filling in results, so the calendar teaches you nothing",
+      ],
+      selfCheck: [
+        "Which local dates in the next two weeks would matter for a business you know?",
+        "How many posts a week could that business keep up for three months?",
+        "What would you put on three slides to convince an owner to approve your calendar?",
+      ],
+      practice_task_md: `**Goal:** Build a two week content calendar and a three slide proposal for a real or mock business.
 
 **Steps:**
-1. Create a sheet with columns: Date, Channel, Format, Topic, Job, Caption draft, Status.
-2. Mark any market days, holidays, seasons or events in the next two weeks.
-3. Plan six to ten posts around those dates, using a mix of show, help, prove and ask.
-4. Write full caption drafts for at least three posts.
-5. Share the sheet with a friend or mentor using a view or comment link and ask for one improvement.
+1. Choose a business and write its goal in one sentence.
+2. In Google Sheets or another free spreadsheet, create the columns from the lesson.
+3. Mark key dates in the next two weeks, then plan at least eight posts across two channels, mixing show, help, prove and ask.
+4. Draft captions for at least four of them.
+5. Make two of the posts for real, then build three slides: strategy, example post one, example post two.
 
-**Done looks like:** A shared Google Sheet with two weeks of planned posts, local dates marked and at least three captions ready to use.`,
+**Done looks like:** A two week calendar with dates, channels, jobs and captions, plus a three slide proposal you could present in five minutes.`,
       quiz: {
         questions: [
           {
-            prompt: "What is a content calendar?",
+            prompt: "Why does the lesson say consistency beats posting daily for one week?",
             options: [
-              "A list of all the customers a business has",
-              "A plan of what to post, where and when, made ahead of time",
-              "A paid tool that posts automatically",
-              "A record of how much money each post earned for the business",
-            ],
-            answer_index: 1,
-            explanation: "The lesson defines it as a plan of posts made a few weeks ahead.",
-          },
-          {
-            prompt: "Why does the lesson suggest Google Sheets for a calendar?",
-            options: [
-              "It writes the captions for you",
-              "It is the only tool that clients accept",
-              "It is free, works on a phone and can be shared for approval",
-              "It publishes posts to every platform at the right time by itself",
+              "Platforms quietly punish and hide accounts that post something new every single day of the week",
+              "Daily posting costs more money in fees",
+              "Businesses that post only when they remember look unreliable and get forgotten",
+              "Customers only check apps once a week",
             ],
             answer_index: 2,
-            explanation: "Sheets is free, works on any device and is easy to share with a client.",
+            explanation: "The lesson says a steady rhythm keeps a business remembered and reliable.",
           },
           {
-            prompt: "What should you mark on the calendar first?",
+            prompt: "What is batching?",
             options: [
-              "Market days, holidays, seasons and business events",
-              "Random dates for paid ads",
-              "Only weekends",
-              "The competitor's posting times",
+              "Making several pieces of content in one sitting",
+              "Posting the same graphic on every channel at once",
+              "Deleting old posts in groups",
+              "Sending one message to many customers",
             ],
             answer_index: 0,
-            explanation: "Real life dates come first, then regular posts are filled in around them.",
+            explanation: "Batching means producing content in one sitting to save time and data.",
           },
           {
-            prompt: "What does the lesson say about how often to post?",
+            prompt: "What does the lesson suggest about posting on solemn religious days?",
             options: [
-              "Every business must post five times a day or the algorithm hides it",
-              "Posting once a month is always enough",
-              "Posting frequency does not matter at all",
-              "A schedule the business can keep for months beats an ambitious one",
+              "Post your biggest sales offer of the year, since many people are online and relaxed",
+              "Never post anything during any holiday month",
+              "Use only trending sounds on those days",
+              "Be respectful, because a sales post on a solemn day can offend",
             ],
             answer_index: 3,
-            explanation: "Consistency the owner can sustain matters more than a high number.",
+            explanation: "The lesson warns that sales posts on solemn religious days can offend customers.",
+          },
+          {
+            prompt: "In Wumpini's calendar, why did week two get another tip video?",
+            options: [
+              "The owner asked for more videos only",
+              "Her results column showed the help video brought the most booking messages",
+              "Tip videos are cheaper to boost",
+              "Instagram requires a video every week",
+            ],
+            answer_index: 1,
+            explanation: "She filled in results and made more of what worked.",
           },
         ],
         pass_threshold: 75,
@@ -854,89 +1289,143 @@ Hawa's shea butter business plans December in a sheet. She marks the start of ha
     },
     "social-and-messaging": {
       outcomes: [
-        "Tell apart three kinds of direct channel",
-        "Work professionally on social media, messaging and email",
-        "Audit the direct channels of a local business",
+        "Explain why chat, social and email are where many Ghanaian businesses sell",
+        "Describe the different job each of these channels does",
+        "Set professional standards for running a business account",
       ],
-      explanation_md: `In Ghana, a lot of buying and selling happens inside chat apps and social media. A customer sees a post, sends "How much?", agrees a price, pays with mobile money and arranges delivery, all without leaving their phone. Organisations like NGOs, schools and think tanks also rely on social pages and email newsletters to keep people informed. Managing these channels well is the most requested skill in junior marketing adverts, so this section is the heart of the roadmap.
+      explanation_md: `Walk through any Ghanaian market town and you will see it: traders taking orders on WhatsApp, salons showing hairstyles on Instagram, churches announcing events on Facebook, NGOs sending updates by email. For most small businesses, these channels are not "extra marketing". They are where selling happens. Job adverts for marketing assistants, social media marketers and junior digital marketers ask again and again for people who can run them well.
 
-## Three kinds of direct channel
+## Three kinds of channel, three jobs
 
-* **Messaging apps** such as WhatsApp put you in a private conversation with the customer. They are personal and close to the sale.
-* **Social media pages** on Facebook, Instagram and TikTok help new people discover a business and see its products. The platform decides who sees each post.
-* **Email newsletters** go to people who agreed to hear from you. You own the list, and no app decides who sees your message.
+* **Messaging apps** such as WhatsApp are where conversations turn into sales. Customers ask prices, send photos, pay by MoMo and arrange delivery. Speed and clarity matter most.
+* **Social media** such as Facebook, Instagram and TikTok is where people discover a business and decide whether it looks trustworthy. Good pictures, regular posts and polite public replies matter most.
+* **Email** is where a business keeps in touch with people who asked to hear from it. It is slower, but the business holds the list, so no app decides who sees the message.
 
-Each channel needs the same core habits: a complete and trustworthy profile, regular useful posts, and fast, polite replies.
+Most businesses use two or three of these together. A shea butter seller might use TikTok to be discovered, WhatsApp to take orders and a monthly email for wholesale buyers.
 
-## Working professionally
+## What "running it professionally" means
 
-Running channels for someone else is a position of trust. Good practice includes:
+Many owners already have these accounts. What they lack is someone who runs them with care. That is your opportunity. Professional management means:
 
-* **Get access properly.** Ask to be added as an admin or editor instead of asking for the owner's password. Facebook and Instagram let page owners add people with limited roles.
-* **Keep a record.** Note what you posted and any customer issues, so the owner always knows what is happening.
-* **Protect customers.** Never ask people to share PINs, codes or card numbers. Scammers copy business pages; warn customers that the business will never ask for their PIN.
-* **Respect privacy.** Ask permission before sharing a customer's photo, name or message.
+1. **Complete profiles.** The right name, a clear photo or logo, a short description, opening hours, location and one main contact number, the same on every channel.
+2. **Regular, planned posts** that follow a content calendar instead of random bursts.
+3. **Fast, polite replies** during opening hours, with prices and next steps included.
+4. **Safe handling of money and data.** Never ask customers to share PINs or codes, confirm payments from the network's message rather than a screenshot, and ask permission before adding anyone to a list.
+5. **Respect for people's attention.** No spam, no adding strangers to groups, an easy way to stop messages.
+6. **Learning from results.** Use the free insights each platform gives to see what brings messages and orders.
+
+## A weekly routine
+
+A simple routine keeps several channels under control without taking over your day:
+
+* **Daily:** check messages and comments at set times, such as morning, midday and evening, and post the planned Status or story.
+* **Two or three times a week:** publish the planned posts on social media.
+* **Weekly:** look at insights, note which posts brought messages or orders, and adjust next week's plan.
+* **Monthly:** send the newsletter, tidy contact lists, remove anyone who asked to stop, and report results to the owner.
+
+Write the routine down and share it with the owner, so everyone knows who replies when.
+
+## Consent and data
+
+When a business collects phone numbers or email addresses, those are personal data. Ghana's Data Protection Act, 2012 (Act 843) sets rules for how personal data is collected, used and kept, and the Data Protection Commission oversees it. In practice: ask clearly, explain what people will receive, keep lists private and stop messaging anyone who asks you to.
+
+## Phone or computer
+
+You can run all of these channels from a phone, and many marketers do. WhatsApp Business also has web and desktop versions, and Facebook, Instagram and email tools work in a browser, which helps when you type long replies, manage several clients or copy reports into a spreadsheet. Use whichever suits the task.
 
 ## What this section covers
 
-* **WhatsApp Business:** the profile, catalogue, quick replies, labels and Status.
-* **Facebook and Instagram pages:** running a page and reading insights.
-* **Community management and customer care:** replying, handling complaints and working with trusted local voices.
-* **Email newsletters:** building a list and sending useful updates.
+* **WhatsApp Business.** Setting up a profile, catalogue, quick replies and labels, and using Status and broadcasts responsibly.
+* **Facebook and Instagram pages.** Creating a page, posting well and reading the free insights.
+* **Community management and customer care.** Replying to comments and messages, handling complaints and working with trusted local voices.
+* **Email newsletters.** Building a list with consent and writing short, useful newsletters.
 
-## A small example
+These are the skills local businesses will pay a beginner for first, and they build the habits every later role depends on.`,
+      workedExample_md: `Sumaila, a marketing student in Tamale, offers to help a friend's family business, a provisions shop near Aboabo. He starts with a quick audit on his phone, using the six points from the lesson.
 
-Abdul-Rahman is hired part time by a Tamale pharmacy shop. Instead of taking the owner's phone, he asks to be added as an admin on the Facebook page and helps set up WhatsApp Business on the shop's own phone with quick replies. He keeps a simple log in Google Sheets of questions customers ask most. After a month, the owner can see every reply he sent and which questions keep coming up. That is the kind of trust that turns a short job into a long one.`,
-      practice_task_md: `**Goal:** Audit the direct channels of one local business or organisation.
+1. **Profiles:** the WhatsApp account is personal, the Facebook page has an old number and no opening hours. Not complete.
+2. **Posts:** the last Facebook post was four months ago. Not regular.
+3. **Replies:** some price questions waited a full day. Slow.
+4. **Money and data:** the owner accepts payment screenshots without checking. Risky.
+5. **Attention:** customers were added to a big group without being asked. A few have left angry.
+6. **Results:** nobody looks at page insights.
+
+He writes a one page plan: move the shop's number to WhatsApp Business with a full profile, fix the Facebook details, post three times a week, reply within the hour, confirm MoMo payments from the network message, and replace the group with a broadcast list for customers who agree to join.
+
+The owner agrees to try it for one month. Sumaila now has a real before and after for his portfolio.`,
+      keyTerms: [
+        { term: "Messaging app", definition: "An app for direct conversations, such as WhatsApp, where many sales happen." },
+        { term: "Social media", definition: "Platforms such as Facebook, Instagram and TikTok where people share and discover content." },
+        { term: "Business profile", definition: "The public details of a business account: name, photo, description, hours and contacts." },
+        { term: "Insights", definition: "Free statistics a platform gives about a page's followers and posts." },
+        { term: "Consent", definition: "A person's clear agreement before you add them to a list or use their data." },
+        { term: "Act 843", definition: "Ghana's Data Protection Act, 2012, which sets rules for using personal data." },
+      ],
+      commonMistakes: [
+        "Treating these channels as extras instead of the place where selling happens",
+        "Leaving old numbers and missing opening hours on profiles",
+        "Adding customers to groups or lists without asking",
+        "Asking customers for PINs or trusting payment screenshots",
+      ],
+      selfCheck: [
+        "For a business you know, which channel does discovery, which does sales and which keeps in touch?",
+        "How many of the six professional points would that business pass today?",
+        "How would you explain consent to an owner who wants to add every customer to a group?",
+      ],
+      practice_task_md: `**Goal:** Audit how one business uses chat, social media and email.
 
 **Steps:**
-1. Choose a business, church, school or NGO you know.
-2. Find its WhatsApp number, social media pages and any email newsletter.
-3. For each channel, check: Is the profile complete? When was the last post? How quickly do they reply? (Send a polite question if appropriate.)
-4. Note one thing each channel does well and one thing to improve.
-5. Write three practical recommendations the owner could act on this week.
+1. Pick a business that uses at least two of WhatsApp, Facebook, Instagram, TikTok or email.
+2. Check it against the six points in the lesson and write one line for each: what is good and what is missing.
+3. Message the business once as a customer would, and note how long the reply takes and whether it includes a price and next step.
+4. Write three improvements, starting with the one that would help most this month.
 
-**Done looks like:** A one page channel audit with clear, kind recommendations you could share with the owner.`,
+**Done looks like:** A one page audit with notes on all six points, your reply time test, and three prioritised suggestions.`,
       quiz: {
         questions: [
           {
-            prompt: "What is the best way to get access to a client's Facebook page?",
+            prompt: "Which channel does the lesson describe as where conversations turn into sales?",
             options: [
-              "Ask the owner for their personal password",
-              "Create a new page with the same name",
-              "Ask to be added as an admin or editor with a proper role",
-              "Log in on the owner's phone and change the password to keep it safe",
+              "Email newsletters sent to a list",
+              "Search results on Google and Maps",
+              "Messaging apps such as WhatsApp",
+              "Radio adverts on local stations",
             ],
             answer_index: 2,
-            explanation: "Page roles let owners give you access without sharing their password.",
+            explanation: "The lesson says messaging is where customers ask, pay and arrange delivery.",
           },
           {
-            prompt: "Which channel lets you own the list, so no app decides who sees your message?",
-            options: ["Instagram", "Email newsletters", "TikTok", "Facebook pages"],
-            answer_index: 1,
-            explanation: "Email goes to people who agreed to hear from you, and you own the list.",
-          },
-          {
-            prompt: "What should a business never ask customers to share?",
+            prompt: "How should a business confirm a mobile money payment?",
             options: [
-              "Their PINs, codes or card numbers",
-              "Their delivery area",
-              "Which product they want",
-              "Feedback about the service",
-            ],
-            answer_index: 0,
-            explanation: "Legitimate businesses never ask for PINs or codes, and customers should be warned about scammers.",
-          },
-          {
-            prompt: "Why did Abdul-Rahman keep a log in Google Sheets?",
-            options: [
-              "To hide which messages he answered from the owner until month end",
-              "Because Facebook requires it",
-              "To count his likes",
-              "So the owner could see his replies and the common questions",
+              "Accept the screenshot the customer sends",
+              "Ask the customer for their PIN to check",
+              "Wait for the customer to post a confirmation in the comments under the latest post",
+              "Check the message from the network, not a screenshot",
             ],
             answer_index: 3,
-            explanation: "Keeping a record builds trust and shows patterns in customer questions.",
+            explanation: "Screenshots can be faked, so confirm from the network's own message.",
+          },
+          {
+            prompt: "Which law sets rules in Ghana for collecting and using customers' phone numbers and emails?",
+            options: [
+              "The Data Protection Act, 2012 (Act 843)",
+              "The Companies Act",
+              "The Labour Act",
+              "The Food and Drugs Authority guidelines on cosmetics",
+            ],
+            answer_index: 0,
+            explanation: "Act 843 covers personal data, overseen by the Data Protection Commission.",
+          },
+          {
+            prompt: "What does the lesson say about running these channels on a phone or a computer?",
+            options: [
+              "They only work on a phone",
+              "Either works; browser and desktop versions help with long replies and several clients",
+              "A computer is required for WhatsApp Business",
+              "Email cannot be used on a phone",
+            ],
+            answer_index: 1,
+            explanation: "All can run from a phone, and computers help for some tasks.",
           },
         ],
         pass_threshold: 75,
@@ -944,87 +1433,131 @@ Abdul-Rahman is hired part time by a Tamale pharmacy shop. Instead of taking the
     },
     "whatsapp-business": {
       outcomes: [
-        "Set up a complete WhatsApp Business profile",
-        "Keep good messaging habits",
-        "Use WhatsApp Business for marketing",
+        "Set up a complete WhatsApp Business profile and catalogue",
+        "Create quick replies, greeting and away messages and labels",
+        "Use Status and broadcast lists without spamming customers",
+        "Confirm payments safely and handle customer numbers with consent",
       ],
-      explanation_md: `For many small businesses in Ghana, WhatsApp is the shop counter. Customers ask prices, send photos of what they want, confirm MoMo payments and arrange delivery in chat. Yet many owners still use a personal WhatsApp account, reply late and repeat the same answers all day. Setting up and running WhatsApp Business properly is one of the most practical paid services a beginner marketer can offer, and the app itself is free.
+      explanation_md: `For many small businesses in Ghana, WhatsApp is the shop counter. Customers ask prices, send photos of what they want, confirm MoMo payments and arrange delivery in chat. Yet many owners still use a personal account, reply late and type the same answers all day. Setting up and running WhatsApp Business properly is one of the most practical services a beginner marketer can offer, and the app itself is free.
 
 ## The WhatsApp Business app
 
-WhatsApp Business is a separate free app made for small businesses. A phone number can only be registered on one WhatsApp account at a time, so many owners move the shop's number over to the business app or use a second SIM. The main tools are:
+WhatsApp Business is a separate free app made for small businesses, available for Android and iPhone, with web and desktop versions for typing on a computer. A phone number can only be registered on one WhatsApp account at a time, so many owners move the shop's number to the business app or use a second SIM. The main tools, found in the app's business tools settings, are:
 
 * **Business profile.** Name, short description, category, address, opening hours and email or website. A complete profile looks trustworthy.
-* **Catalogue.** A list of products or services with photos, prices and descriptions that customers can browse inside the chat.
-* **Quick replies.** Saved answers to common questions, sent with a short shortcut. For example, a saved message with prices, delivery areas and how to pay.
+* **Catalogue.** Products or services with photos, prices and descriptions that customers can browse inside the chat.
+* **Quick replies.** Saved answers to common questions, sent with a short shortcut. For example, one message with prices, delivery areas and how to pay.
 * **Greeting and away messages.** Automatic replies when someone messages for the first time or outside opening hours, so nobody feels ignored.
-* **Labels.** Tags for chats, such as "new order", "paid" and "delivered", so you can track orders without a notebook.
-* **Status.** Photos, videos or text that your contacts can see for 24 hours. Many local buyers check Status daily, so it works like a shop window.
+* **Labels.** Tags for chats such as "new order", "paid" and "delivered", so you can track orders without a notebook.
+* **Status.** Photos, videos or text your contacts can see for 24 hours. Many local buyers check Status daily, so it works like a shop window.
 * **Short link and QR code.** A link or code that opens a chat with the business, useful on flyers, stickers and social pages.
 
-Broadcast lists let you send one message to many contacts privately, but only people who have saved the business number will receive it. That is a good reason to ask happy customers to save the number.
+Menus and names change from time to time, so if a tool has moved, look in the app's settings or the WhatsApp Help Center.
+
+## Setting up step by step
+
+1. **Install WhatsApp Business** and register the business number. Back up any old chats first if the number was used on personal WhatsApp.
+2. **Complete the profile:** clear logo or shopfront photo, a one line description that says what you sell and where, the right category, address and hours.
+3. **Build the catalogue:** start with the best sellers. One good photo, a clear name, the price in cedis and a short description each.
+4. **Write quick replies** for the three or four questions customers ask most: prices, delivery, how to pay, location.
+5. **Set the greeting and away messages.** Keep them short and warm, and say when you will reply.
+6. **Create labels** that match how orders move: new, paid, packed, delivered.
+7. **Share the short link or QR code** on social pages, the shop wall and packaging.
 
 ## Good habits
 
 * Reply quickly during opening hours. A fast answer often decides whether a person buys here or somewhere else.
 * Put the price and payment details in replies. Hiding the price makes people leave.
 * Confirm payments carefully. Check the MoMo message from the network, not a screenshot a customer sends, because fake screenshots are a common scam.
-* Do not spam. Too many broadcasts make people block the number.
+* Never ask a customer for a PIN or a verification code, and never share yours.
 
-## A worked example
+## Status and broadcasts, with consent
 
-Mariama's basket group in Bolgatanga used a personal account, and orders got lost in family chats. You help them install WhatsApp Business on the group's phone. You write a profile, add twelve baskets to the catalogue with sizes and prices, create quick replies for prices, delivery to Accra and MoMo payment, and set an away message for evenings. Labels show which orders are paid and which are packed. Now any member can handle the phone and nothing gets lost.`,
+Broadcast lists let you send one message to many contacts privately. Only people who have saved the business number receive it, which is a good reason to ask happy customers to save it. Before adding anyone to a broadcast list or group, ask them. Phone numbers are personal data, and Ghana's Data Protection Act, 2012 (Act 843) requires consent before personal data is used for direct marketing; people can also ask you to stop. Keep broadcasts useful and occasional, and remove anyone who asks. Too many messages make people block the number, and WhatsApp may limit accounts that many people block or report.
+
+For bigger businesses that need many staff on one number or automated messages, WhatsApp offers a separate paid business platform through official partners. For most small clients, the free app is enough.`,
+      workedExample_md: `Mariama's basket group in Bolgatanga used a personal account, and orders got lost among family chats. You help them set up WhatsApp Business on the group's phone.
+
+1. **Install and register** the group's number, after backing up old chats.
+2. **Profile:** a photo of the weavers' stall, "Hand woven Bolga baskets, made by our women's group, delivery across Ghana", category, address near the market and hours.
+3. **Catalogue:** twelve baskets with one daylight photo each, size, colour and price in cedis.
+4. **Quick replies:** a shortcut for prices, one for delivery to Accra and Kumasi, one for MoMo payment details.
+5. **Away message:** "Thank you for writing to us. We reply from 7am. Feel free to browse our catalogue."
+6. **Labels:** new order, paid, packed, sent.
+7. **Short link:** added to their Instagram bio and printed on a small card in every basket.
+
+You also agree a rule with the group: payments are confirmed only from the network's message, and customers are added to the monthly broadcast list only after saying yes. Now any member can hold the phone and nothing gets lost.`,
+      keyTerms: [
+        { term: "WhatsApp Business", definition: "A free WhatsApp app for small businesses with profile, catalogue and messaging tools." },
+        { term: "Catalogue", definition: "Products or services with photos and prices that customers browse inside WhatsApp." },
+        { term: "Quick reply", definition: "A saved answer sent with a short shortcut to save typing." },
+        { term: "Away message", definition: "An automatic reply sent when someone messages outside opening hours." },
+        { term: "Label", definition: "A tag on a chat, such as paid or delivered, to track orders." },
+        { term: "Broadcast list", definition: "A way to send one message privately to many contacts who have saved your number." },
+      ],
+      commonMistakes: [
+        "Leaving the profile half empty with no hours, address or description",
+        "Hiding prices so customers have to ask and often leave",
+        "Accepting payment screenshots without checking the network message",
+        "Adding customers to broadcasts or groups without asking them first",
+        "Sending so many broadcasts that people block the number",
+      ],
+      selfCheck: [
+        "What would you write in a one line description for a business you know?",
+        "Which three or four quick replies would save a busy owner the most time?",
+        "How would you ask customers for permission to send them updates?",
+      ],
       practice_task_md: `**Goal:** Set up a complete WhatsApp Business profile for a real or practice business.
 
 **Steps:**
-1. With the owner's permission, install WhatsApp Business on the business phone. If you are practising, use a spare SIM.
-2. Fill in the full profile: name, description, category, address, hours.
-3. Add at least five catalogue items with clear photos, prices in cedis and short descriptions.
-4. Create three quick replies: prices, delivery and how to pay.
-5. Set a greeting message, an away message and four labels for tracking orders.
-6. Post one Status that shows a product and tells people how to order.
+1. With the owner's permission, or using your own practice number, set up WhatsApp Business.
+2. Complete the profile: photo, description, category, address and hours.
+3. Add at least five catalogue items with photos and prices.
+4. Create three quick replies and a greeting and away message.
+5. Create labels for the order stages.
+6. Write a short consent message you would send before adding a customer to a broadcast list.
 
-**Done looks like:** Screenshots of the profile, catalogue, quick replies and labels, collected in one document you can show a mentor or a future client.`,
+**Done looks like:** Screenshots of the profile, catalogue, quick replies and labels, plus your consent message, ready to show a mentor.`,
       quiz: {
         questions: [
           {
-            prompt: "What is a quick reply in WhatsApp Business?",
-            options: [
-              "A saved answer to a common question, sent with a shortcut",
-              "A paid advert inside WhatsApp",
-              "A message that disappears after one hour",
-              "A way to call many customers at once with one recorded message",
-            ],
-            answer_index: 0,
-            explanation: "Quick replies are saved messages for questions you answer often.",
+            prompt: "Which WhatsApp Business tool lets you send a saved answer with a short shortcut?",
+            options: ["Labels", "Product catalogue", "Status", "Quick replies"],
+            answer_index: 3,
+            explanation: "Quick replies are saved answers sent with a shortcut.",
           },
           {
             prompt: "Who receives a broadcast list message?",
             options: [
-              "Every WhatsApp user in the same town",
-              "Anyone who has ever visited the shop",
               "Only contacts who have saved the business number",
-              "Only people in a WhatsApp group",
+              "Everyone saved in the owner's phone book, whether or not they saved the number",
+              "Anyone who has ever visited the shop",
+              "All WhatsApp users in the same town",
+            ],
+            answer_index: 0,
+            explanation: "Broadcasts only reach people who have saved the number.",
+          },
+          {
+            prompt: "What should you do before adding a customer to a broadcast list?",
+            options: [
+              "Nothing, since they already know the business",
+              "Ask them first, because consent is needed for direct marketing",
+              "Add them and wait to see if they complain",
+              "Ask for their MoMo PIN so you can confirm their identity before adding them",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to ask first, in line with Act 843.",
+          },
+          {
+            prompt: "Why can a phone number not be used on personal WhatsApp and WhatsApp Business at the same time?",
+            options: [
+              "WhatsApp Business only works on computers",
+              "Business numbers must start with a special code",
+              "A number can only be registered on one WhatsApp account at a time",
+              "Personal accounts are not allowed in Ghana",
             ],
             answer_index: 2,
-            explanation: "Broadcast messages only reach people who saved the business number.",
-          },
-          {
-            prompt: "How should a business confirm a mobile money payment?",
-            options: [
-              "Trust any screenshot of the payment that the customer sends",
-              "Ask the customer to send their PIN",
-              "Wait for the customer to say thank you",
-              "Check the payment message from the network",
-            ],
-            answer_index: 3,
-            explanation: "Fake screenshots are a common scam, so check the network's own message.",
-          },
-          {
-            prompt: "How long can contacts see a WhatsApp Status update?",
-            options: ["One hour", "24 hours", "One week", "Until the business deletes the app"],
-            answer_index: 1,
-            explanation: "Status updates are visible for 24 hours.",
+            explanation: "The lesson explains a number can only be on one WhatsApp account at a time.",
           },
         ],
         pass_threshold: 75,
@@ -1032,94 +1565,152 @@ Mariama's basket group in Bolgatanga used a personal account, and orders got los
     },
     "facebook-instagram": {
       outcomes: [
-        "Tell pages, profiles and professional accounts apart",
-        "Post well and schedule a week of posts",
-        "Read page insights",
+        "Create a Facebook Page and set up its key details",
+        "Connect an Instagram professional account to the Page",
+        "Write clear, engaging posts that suit each platform",
+        "Read basic insights to see which posts work",
       ],
-      explanation_md: `Facebook is widely used in Ghana by businesses, churches, schools and NGOs, and Instagram matters for fashion, food, beauty, crafts and anything visual. Job adverts for social media roles often expect you to manage pages on both and to use Meta's business tools. The skills are learnable on a phone or a computer, and Meta offers free training through Meta Blueprint.
+      explanation_md: `Facebook remains one of the places Ghanaians of many ages look for businesses, churches, events and NGOs, and Instagram is strong for anything visual: fashion, beauty, food, crafts and hospitality. Both are run by Meta, and both appear in Ghanaian marketing job adverts again and again. Knowing how to set up and run a page properly is a core skill.
 
-## Pages, profiles and professional accounts
+## Profile, Page and Group
 
-A business should use a Facebook Page, not a personal profile, and an Instagram professional account, not a personal one. Pages and professional accounts give access to insights, scheduling, ads and roles for helpers. Fill in everything: a clear profile picture or logo, a cover image, a short description, location, hours, phone number and a WhatsApp button or link.
+* A **personal profile** is for an individual. Do not run a business from one; it mixes private life with the business and limits what you can do.
+* A **Facebook Page** is a public presence for a business, organisation or public figure. Anyone can follow it, and it has free insights and the option to run ads.
+* A **Facebook Group** is a community space for discussion, such as a group for a church youth wing or a farmers' association. A business might run a group alongside its Page.
 
-Meta Business Suite is a free tool that lets you manage a Facebook Page and a linked Instagram account in one place, schedule posts in advance and see messages from both. Menus and button names change often, so learn what each feature does rather than memorising where it sits.
+## Creating a Facebook Page
 
-## Posting well
+You need a personal Facebook account to create and manage a Page, but the Page is shown separately and your personal details stay private. Steps, which work on the app or in a browser:
 
-* **Match the platform.** Facebook suits longer captions, event details, links and community discussion. Instagram is more visual: strong photos, Reels and short captions.
-* **Use Reels and Stories.** Short vertical video often reaches more people who do not yet follow you than still photos do.
-* **Be consistent.** Follow your content calendar. Steady posting builds trust.
-* **Use events and groups.** For a church harvest or an NGO workshop, a Facebook event collects interested people and reminds them.
+1. **Open the menu** and find Pages, then choose to create a new Page. The exact wording moves from time to time, so search Facebook's Help Centre for "create a Page" if you cannot find it.
+2. **Enter the name** customers know, such as "Hawa's Pure Shea, Tamale", and choose a category.
+3. **Write a short bio:** what the business offers and where.
+4. **Add contact details:** phone or WhatsApp number, address, opening hours and any website.
+5. **Add a profile picture** (a logo or clear shopfront) and a cover photo that shows the products.
+6. **Add a button** such as "Send WhatsApp message" or "Call now", if offered.
+7. **Invite the first followers:** the owner's friends and loyal customers, without spamming.
+
+Add other people as Page managers through the Page settings, rather than sharing a password. That way, access can be removed later.
+
+## Instagram professional accounts
+
+On Instagram, switch the business's account to a professional account (business or creator) in the settings. This adds contact buttons and insights. You can link it to the Facebook Page so you can manage both, and later run ads, from Meta's business tools.
+
+## Writing posts that work
+
+* **Lead with the picture.** On Instagram especially, the image or video does the first job.
+* **Hook in the first line,** then detail, proof and a call to action.
+* **Keep a rhythm,** following your content calendar. A few good posts a week beat daily filler.
+* **Use local language and humour** where it fits the brand.
+* **Hashtags** on Instagram help people find posts by topic. Use a few relevant ones, such as a product and a town, rather than a long list.
+* **Reply to comments,** because conversation shows the page is alive.
+* **Avoid engagement bait,** such as "Like if you agree, share to win". Meta discourages it and it rarely brings buyers.
+
+## Facebook or Instagram first?
+
+You do not have to use both equally. Facebook suits businesses whose customers are a wide range of ages, events that need details and directions, and organisations that want discussion in a Group. Instagram suits visual products and younger, style conscious audiences. Look at your audience description and start with the one your customers use most, then add the other when you can keep both up.
 
 ## Reading insights
 
-Insights tell you how your content performs. The names change from time to time, but they generally show:
+Both platforms give free insights for Pages and professional accounts. You will see figures such as:
 
-* **Reach.** Roughly how many different people saw your content.
-* **Engagement.** Reactions, comments, shares and saves.
-* **Followers.** How many people follow, and how that is changing.
-* **Actions.** Messages started, link clicks, calls or profile visits.
+* **Reach:** how many different people saw a post.
+* **Engagement or interactions:** likes, comments, shares and saves.
+* **Link clicks and messages:** people taking action.
+* **Followers:** growth over time, plus broad age, gender and location data.
 
-Look for patterns over several weeks, not single posts. Which topics, formats and times lead to messages and sales? Do more of those. A post with many likes but no messages may be entertaining but not selling.
+Look weekly. Ask: which posts led to messages or orders? Which got reach but no action? Make more of what works. The analytics lesson goes deeper.
 
-## A worked example
+## Safety
 
-Issahaku manages the Facebook Page of an NGO running a girls' education programme in the Northern Region. He checks insights monthly and notices that photos of classroom activities with short stories get far more shares than flyers with long text. Event posts for community meetings bring messages from parents. He shifts the calendar toward stories and events, schedules them in Business Suite every Friday, and reports the pattern to his manager with screenshots.`,
-      practice_task_md: `**Goal:** Plan and schedule a week of posts for a Facebook Page and read its insights.
+Turn on two step verification for the personal accounts that manage the Page. Many Ghanaian businesses lose pages to hackers who send fake "copyright warning" messages asking for logins. Meta will not ask for your password in a message.`,
+      workedExample_md: `Issahaku sets up a Facebook Page for a youth football academy in Wa, as a practice project for his cohort.
+
+1. **Create the Page** from the menu on his phone, name it "Wa Young Stars Football Academy" and pick a sports category.
+2. **Bio:** "Football training for boys and girls aged 8 to 16 in Wa. Weekend sessions, safe coaching."
+3. **Contacts:** the coach's WhatsApp number, the training ground location and session times.
+4. **Pictures:** the academy badge as profile picture, a team photo (parents agreed) as cover.
+5. **Button:** "Send WhatsApp message".
+6. **Managers:** he adds the coach, Coach Abdul-Rahman, as an admin through settings, instead of sharing a password, and both turn on two step verification.
+7. **First posts:** a welcome post with the hook "Want your child to train with qualified coaches this Saturday?", a training photo, and a short video of a drill.
+
+After two weeks he checks insights. The drill video reached the most people and brought three messages from parents. He plans one drill video every week.`,
+      keyTerms: [
+        { term: "Facebook Page", definition: "A public Facebook presence for a business or organisation, separate from a personal profile." },
+        { term: "Facebook Group", definition: "A community space where members discuss a shared interest." },
+        { term: "Professional account", definition: "An Instagram business or creator account with insights and contact options." },
+        { term: "Reach", definition: "The number of different people who saw a post." },
+        { term: "Engagement", definition: "Likes, comments, shares and saves on a post." },
+        { term: "Hashtag", definition: "A word or phrase after a # that groups posts by topic." },
+        { term: "Page manager", definition: "A person given access to run a Page without sharing passwords." },
+      ],
+      commonMistakes: [
+        "Running a business from a personal profile instead of a Page",
+        "Sharing passwords instead of adding managers through settings",
+        "Using long lists of unrelated hashtags",
+        "Chasing likes with engagement bait instead of posts that lead to messages",
+        "Falling for fake \"copyright warning\" messages that ask for logins",
+      ],
+      selfCheck: [
+        "What is the difference between a Page and a Group, and which would suit a business you know?",
+        "Which details would a customer look for first on a new Page?",
+        "If a post had high reach but no messages, what would you change next time?",
+      ],
+      practice_task_md: `**Goal:** Create a Facebook Page or Group for a mock project and write three posts.
 
 **Steps:**
-1. If you manage a page for a business, church, school or club, use it. If not, create a practice Facebook Page for a made up local business.
-2. Complete every profile field, including hours and a WhatsApp link.
-3. Write and schedule three posts for the coming week using Meta Business Suite: one photo, one short video, one event or useful tip.
-4. After a week, open insights and note reach, engagement and any messages for each post.
-5. Write two sentences on what you would do differently next week.
+1. Choose a mock project, such as a school club, a shea butter brand or a community clean up.
+2. Create a Facebook Page (or a Group, if discussion fits better) with name, category, bio, contacts and pictures.
+3. Write three posts using hook, detail, proof and call to action, each with one image.
+4. Add a friend or mentor as a manager through settings, not by sharing a password.
+5. After a week, note reach and interactions for each post.
 
-**Done looks like:** Screenshots of the completed page, the scheduled posts and the insights, with your short notes.`,
+**Done looks like:** A complete Page or Group with three posts, screenshots of its details, and a short note on which post worked best and why.`,
       quiz: {
         questions: [
           {
-            prompt: "Why should a business use a Facebook Page instead of a personal profile?",
+            prompt: "What is the safest way to let another person help run a business Page?",
             options: [
-              "Personal profiles cannot post photos",
-              "Pages give access to insights, scheduling, ads and roles",
-              "Pages are the only way to send and receive messages on Facebook",
-              "Pages never show adverts",
-            ],
-            answer_index: 1,
-            explanation: "Pages and professional accounts unlock business tools.",
-          },
-          {
-            prompt: "What does Meta Business Suite let you do?",
-            options: [
-              "Manage a Page and linked Instagram account and schedule posts",
-              "Send MoMo payments to customers",
-              "Edit TikTok videos",
-              "Build a full online shop website for free and link it to the Page",
-            ],
-            answer_index: 0,
-            explanation: "Business Suite brings both accounts together, with scheduling and messages.",
-          },
-          {
-            prompt: "In insights, what does reach roughly measure?",
-            options: [
-              "How much money a post earned",
-              "How many comments a post received",
-              "How many different people saw your content",
-              "How many people unfollowed the page",
+              "Share the owner's password on WhatsApp",
+              "Create a second personal profile for the business and share its login with them",
+              "Add them as a Page manager through the Page settings",
+              "Post the login details in a private group",
             ],
             answer_index: 2,
-            explanation: "Reach is roughly the number of different people who saw the content.",
+            explanation: "Adding managers through settings means access can be removed later.",
           },
           {
-            prompt: "What does the lesson say about a post with many likes but no messages?",
+            prompt: "What does reach measure?",
             options: [
-              "It is always the best kind of post",
-              "It should be deleted immediately",
-              "It proves the price is too low",
-              "It may be entertaining but not selling",
+              "How many different people saw a post",
+              "How many people bought after seeing a post",
+              "How many hashtags a post used",
+              "How many times the owner shared a post",
+            ],
+            answer_index: 0,
+            explanation: "Reach is the number of different people who saw a post.",
+          },
+          {
+            prompt: "What does the lesson suggest about hashtags on Instagram?",
+            options: [
+              "Use as many hashtags as the app allows, including popular ones unrelated to the product",
+              "Hashtags only work on Facebook",
+              "Never use hashtags on business accounts",
+              "Use a few relevant ones, such as a product and a town",
             ],
             answer_index: 3,
-            explanation: "Look for content that leads to messages and sales, not only likes.",
+            explanation: "A few relevant hashtags help people find posts by topic.",
+          },
+          {
+            prompt: "A message claims to be from Meta and asks for your Page login to avoid a copyright strike. What should you do?",
+            options: [
+              "Send the password quickly so the Page is not deleted",
+              "Ignore it and keep your login private, since Meta will not ask for passwords in a message",
+              "Forward it to customers as a warning with your login",
+              "Change the Page name",
+            ],
+            answer_index: 1,
+            explanation: "Fake copyright warnings are a common way pages are stolen.",
           },
         ],
         pass_threshold: 75,
@@ -1127,91 +1718,144 @@ Issahaku manages the Facebook Page of an NGO running a girls' education programm
     },
     "community-management": {
       outcomes: [
-        "Reply to comments well",
-        "Handle complaints, spam and scams",
-        "Work with trusted local voices",
+        "Reply to comments and messages quickly, politely and usefully",
+        "Handle a public complaint calmly and move details to private chat",
+        "Spot scams and harmful comments and deal with them safely",
+        "Work with trusted local voices honestly",
       ],
-      explanation_md: `Every comment, message and review is a conversation that other people are watching. A rude or slow reply can lose more than one customer. A calm, helpful reply can win new ones. Ghanaian adverts for community managers and social media executives ask for audience engagement and community growth, and some senior roles ask for influencer partnerships. This lesson covers all three at a beginner level.
+      explanation_md: `Posting is only half of social media. The other half is what happens after: comments, questions, complaints, praise and messages. Community management means looking after those conversations so people feel heard and want to come back. Ghanaian adverts for community managers, social media executives and marketing assistants often mention customer engagement, online reputation and partnerships with influencers. A business with friendly, fast replies wins customers from competitors who post nicer pictures but ignore people.
 
 ## Replying well
 
-* **Be quick.** Reply to comments and messages as soon as you can during working hours. Agree response times with the owner.
-* **Be human.** Use the person's name, keep a friendly tone and match the brand voice.
-* **Answer the actual question.** If someone asks the price, give the price.
-* **Know when to move to private.** Questions about an order, a payment or personal details should go to WhatsApp or direct messages. Say so politely in public so others see you responded.
+Every reply is public advertising for how the business treats people. A simple standard:
+
+1. **Reply quickly.** Agree a target with the owner, such as within an hour during opening hours. Check comments and messages at set times if you manage several clients.
+2. **Greet and use the name** if you can see it: "Thank you, Hawa".
+3. **Answer the actual question,** including price and next step. "It is available in 250g and 500g. Send us a WhatsApp message on 024 000 0000 to order."
+4. **Keep the brand voice** consistent, whether friendly, formal or playful.
+5. **Close the loop.** If you promised to check something, come back with the answer.
+
+Prepare a small bank of saved answers for common questions, then personalise them. Copy pasted replies that ignore the question annoy people.
 
 ## Handling complaints
 
-When someone complains in public, try this order:
+Complaints in public feel scary, but handled well they build trust because other customers watch how the business responds. Use a calm pattern:
 
-* **Acknowledge.** "Sorry to hear this, Amina."
-* **Take it private.** "We have sent you a message to sort it out."
-* **Fix it.** Work with the owner to solve the real problem.
-* **Follow up.** If it is resolved, a short public reply shows others you care.
+1. **Acknowledge** the problem without arguing: "We are sorry your order arrived late."
+2. **Move details to private chat:** "Please send us a message with your order details so we can fix this." Never ask for personal or payment details in public.
+3. **Fix it** if the complaint is fair: a replacement, a refund or a clear apology, as agreed with the owner.
+4. **Report back** publicly if appropriate: "Thank you for your patience, this has been sorted."
 
-Do not argue, do not delete genuine complaints just because they are negative, and never share a customer's private details in public.
+Do not delete honest complaints just because they are negative. Deleting them makes people angrier and others notice. Hide or delete only spam, scams, hate, threats or personal information posted publicly, following the platform's rules.
 
-## Spam and scams
+## Scams and safety
 
-Scammers often comment on business posts pretending to be the business, offering fake promotions and asking for MoMo PINs. Hide or delete those comments, report the accounts, and post a pinned reminder that the business will never ask for a PIN or code.
+Scammers often comment on business pages pretending to be the business, offering fake deals or asking customers to "verify" by sending a code. Watch for them and:
+
+* Remind customers that the business will never ask for a PIN, password or verification code.
+* Hide or delete scam comments and report the accounts.
+* Keep one official number on every profile, so customers know which is real.
+
+## Keeping a simple log
+
+When you manage replies for a client, keep a small log in a spreadsheet: the date, the channel, the question or complaint, what you replied and whether it was solved. Over a month this shows the most common questions, which you can answer in posts or saved replies, and the problems the owner needs to fix in the business itself, such as slow delivery. It also gives you real evidence for your monthly report.
 
 ## Working with trusted local voices
 
-Sometimes a business can reach new people through someone their audience already trusts: a respected pastor, a popular campus figure, a local radio presenter or a creator with a loyal following in Tamale. This is often called influencer or creator marketing. For a small budget, a creator with a smaller but engaged local audience can be more useful than a famous one. Agree in writing what they will post, when, and what they receive, and make sure paid posts are clearly marked as paid partnerships so followers are not misled.
+Some people are trusted in their community: a popular radio presenter in Tamale, a church youth leader, a well known Accra stylist, a respected farmer. When these people speak well of a business, others listen. A simple, honest collaboration might be sending a product to try, inviting them to an event or agreeing a small fee for a post.
 
-## A worked example
+Two rules matter. First, choose people whose followers match the audience and whose behaviour fits the brand. Second, any paid or gifted post must be clearly labelled, for example with "paid partnership" or a clear note in the caption. Platforms have their own branded content tools and rules, so check the current ones. Hidden adverts damage trust when people find out. The specialisations roadmap covers finding and pitching micro influencers in detail.
 
-A customer posts on a Tamale restaurant's page: "Ordered jollof yesterday and it came cold. Not happy." Hawa, the page manager, replies within the hour: "Sorry, Wumpini, that is not the standard we want. We have messaged you." In private she arranges a replacement meal. The next day Wumpini comments that the new meal was great. Dozens of people saw a complaint handled well, which builds more trust than a perfect post.`,
-      practice_task_md: `**Goal:** Practise replying to real types of comments with a clear, kind process.
+## Building a community
+
+Beyond replies, a community grows when people talk to each other: a question of the week, a customer photo shared with permission, a poll about which product to restock. Small, regular conversation makes followers feel part of something rather than just targets for adverts.`,
+      workedExample_md: `Abdul-Rahman manages the Facebook Page of a Tamale bakery. One morning a customer, Amina, comments publicly: "Bought bread yesterday and it was already stale. Very disappointed."
+
+He follows the pattern:
+
+1. **Acknowledge, publicly, within the hour:** "Hello Amina, we are really sorry about yesterday's bread. That is not the standard we want for you."
+2. **Move to private:** "Please send us a WhatsApp message on our official number, 024 000 0000, with the day and time you bought it, so we can put this right."
+3. **Fix it:** after checking with the owner, he offers Amina a fresh loaf at her next visit. She learns a batch was packed while still warm, so the bakery changes its cooling routine.
+4. **Report back:** "Thank you, Amina, for your patience. We have changed how we cool and pack our bread."
+
+The same day, a fake account comments "Bakery giveaway, send your MoMo code to claim". He hides it, reports the account and pins a post reminding followers the bakery never asks for codes.
+
+Amina later comments that the replacement loaf was lovely. Other customers saw the whole exchange.`,
+      keyTerms: [
+        { term: "Community management", definition: "Looking after the conversations around a brand so people feel heard and come back." },
+        { term: "Response time", definition: "How long it takes a business to reply to a message or comment." },
+        { term: "Online reputation", definition: "What people think and say about a business on the internet." },
+        { term: "Influencer", definition: "A person whose opinion others trust and follow, online or in the community." },
+        { term: "Paid partnership", definition: "A post a business has paid or given gifts for, which must be clearly labelled." },
+        { term: "Hide a comment", definition: "Making a comment invisible to the public while it stays visible to its writer." },
+      ],
+      commonMistakes: [
+        "Arguing with an angry customer in public",
+        "Deleting honest complaints because they look bad",
+        "Asking for order or payment details in public comments",
+        "Letting scam comments sit on the page",
+        "Posting paid or gifted content without labelling it",
+      ],
+      selfCheck: [
+        "How would you reply, in two lines, to a public complaint about late delivery?",
+        "Which comments should be hidden or deleted, and which should stay?",
+        "Who are the trusted local voices in your town that a business could work with honestly?",
+      ],
+      practice_task_md: `**Goal:** Practise replying to comments and messages for a mock or real business.
 
 **Steps:**
-1. Write down six example comments a local business might receive: two questions, two complaints, one compliment and one scam comment.
-2. Write a reply for each, following the lesson: quick, human, answer the question, move private when needed.
-3. For the scam comment, write the action you would take and a pinned warning post.
-4. Write a short note listing two local creators or trusted voices who could suit the business, and why.
-5. Ask a friend to act as an angry customer by message and practise replying calmly.
+1. Write five realistic comments for a business you know: a price question, praise, a complaint, a scam comment and a question about delivery.
+2. Write your reply to each, following the steps for replying well and handling complaints.
+3. Write three saved answers for the most common questions.
+4. Write a short pinned post reminding customers how to spot scams.
+5. Ask a friend to role play an angry customer in chat for five minutes, and note what you would do differently.
 
-**Done looks like:** A document with six comments and replies, a scam warning, and your short creator note.`,
+**Done looks like:** Five replies, three saved answers, one safety post and a short note from your role play.`,
       quiz: {
         questions: [
           {
-            prompt: "Someone asks a question about their payment in a public comment. What should you do?",
+            prompt: "What is the first step when a customer complains publicly?",
             options: [
-              "Ignore it so nobody sees it",
-              "Ask them to post their MoMo PIN and transaction ID so you can check it",
-              "Reply publicly that you will message them, then handle it in private",
-              "Delete the comment straight away",
-            ],
-            answer_index: 2,
-            explanation: "Payment and personal matters move to private, with a short public reply.",
-          },
-          {
-            prompt: "What is the first step when handling a public complaint?",
-            options: ["Acknowledge the problem", "Argue with the customer", "Delete the comment", "Block the customer"],
-            answer_index: 0,
-            explanation: "The lesson's order is acknowledge, take it private, fix it, follow up.",
-          },
-          {
-            prompt: "What should you do with a comment pretending to be the business and asking for PINs?",
-            options: [
-              "Reply and thank them",
-              "Leave it because deleting comments is never allowed",
-              "Share it so customers can see it",
-              "Hide or delete it, report the account and remind customers you never ask for PINs",
-            ],
-            answer_index: 3,
-            explanation: "Scam comments should be removed and reported, with a clear warning to customers.",
-          },
-          {
-            prompt: "What does the lesson say about paid posts by creators?",
-            options: [
-              "They should be hidden so the posts look natural to followers",
-              "They should be clearly marked as paid partnerships",
-              "Only famous creators are worth paying",
-              "No written agreement is needed",
+              "Delete the comment",
+              "Acknowledge the problem calmly without arguing",
+              "Ask for their MoMo number and order details in a public reply to the comment",
+              "Ignore it and post something new",
             ],
             answer_index: 1,
-            explanation: "Marking paid partnerships clearly means followers are not misled.",
+            explanation: "The complaint pattern starts with acknowledging without arguing.",
+          },
+          {
+            prompt: "Which comment is it right to hide or delete?",
+            options: [
+              "A scam comment asking customers to send codes",
+              "An honest complaint from a customer about a late delivery last week",
+              "A customer asking about prices",
+              "Praise from a regular customer",
+            ],
+            answer_index: 0,
+            explanation: "Only spam, scams, hate, threats and exposed personal data should be removed.",
+          },
+          {
+            prompt: "What must happen when a trusted local voice is paid or gifted to post about a business?",
+            options: [
+              "Nothing, because posts by local voices do not count as adverts at all",
+              "The post must be deleted after a week",
+              "The post should pretend to be a normal recommendation",
+              "The post must be clearly labelled as paid or a partnership",
+            ],
+            answer_index: 3,
+            explanation: "Paid or gifted posts must be labelled; hidden adverts damage trust.",
+          },
+          {
+            prompt: "Why does the lesson warn against copy pasted replies that ignore the question?",
+            options: [
+              "Platforms ban saved replies",
+              "They are slower to send than typed replies",
+              "They annoy people, so saved answers should be personalised",
+              "They use more data than typed replies",
+            ],
+            answer_index: 2,
+            explanation: "Saved answers help, but they should be personalised to the question.",
           },
         ],
         pass_threshold: 75,
@@ -1219,87 +1863,146 @@ A customer posts on a Tamale restaurant's page: "Ordered jollof yesterday and it
     },
     "email-marketing": {
       outcomes: [
-        "Explain who uses email marketing",
-        "Build a list with consent",
-        "Write a good newsletter",
+        "Build an email list with clear consent and an easy way to unsubscribe",
+        "Draft a short newsletter with a strong subject line and one main message",
+        "Explain the content choices behind a newsletter",
+        "Name the numbers to watch after sending",
       ],
-      explanation_md: `Email may feel old fashioned next to TikTok, but several Ghanaian marketing adverts ask for it, from agencies and agritech companies to think tanks and NGOs, and remote marketing assistant roles often do too. The reason is simple: an email list belongs to the business. No algorithm decides whether your subscribers see your message, and if a social account is hacked or blocked, the list is still there.
+      explanation_md: `Email may feel old fashioned next to TikTok, but many Ghanaian marketing adverts ask for it, from agencies and agritech companies to think tanks and NGOs, and remote marketing assistant roles often do too. The reason is simple: an email list belongs to the business. No algorithm decides whether subscribers see the message, and if a social account is hacked or blocked, the list is still there.
 
 ## Who uses email
 
 * **NGOs and think tanks** send newsletters to donors, partners and journalists.
-* **Schools and churches** send updates to parents and members who prefer something they can keep.
-* **Online shops and B2B companies** send offers, new stock alerts and reminders.
+* **Schools and churches** send updates to parents and members who want something they can keep.
+* **Online shops and companies that sell to other businesses** send offers, new stock alerts and reminders.
 * **Startups** send welcome messages and tips to new users.
 
 ## Building a list the right way
 
-People must agree to receive your emails. Collect addresses through a sign up form, at an event with a clear note of what they are signing up for, or when a customer orders and ticks a box. Never buy lists or add people without asking. Ghana's Data Protection Act, 2012 (Act 843) sets rules for collecting and using personal data, and the Data Protection Commission oversees it. Every marketing email should include a simple way to unsubscribe, and you must honour those requests.
+People must agree to receive your emails. Collect addresses through a sign up form, at an event with a clear note of what people are signing up for, or when a customer orders and ticks a box. Never buy lists or add people without asking. Ghana's Data Protection Act, 2012 (Act 843) requires consent before personal data is used for direct marketing and gives people the right to ask you to stop; the Data Protection Commission oversees it. Every marketing email should include a simple way to unsubscribe, and you must honour those requests promptly.
 
-## Writing a good newsletter
+## Writing a newsletter, step by step
 
-* **Subject line.** Short and specific. "Harvest thanksgiving: Sunday 10am" beats "Newsletter".
-* **One main message.** One event, one offer or one story, with a clear button or link.
-* **Mobile first.** Most people will read on a phone. Short paragraphs, large text and small images.
-* **Plain and personal.** Write as one person to another. Use the reader's name if your tool allows it.
-* **Regular but not constant.** A steady monthly or fortnightly newsletter is better than a flood followed by silence.
+1. **Decide the one main message.** One event, one offer or one story. Everything else is secondary.
+2. **Write the subject line.** Short and specific. "Harvest thanksgiving: Sunday 10am" beats "Newsletter". Many tools also let you add preview text, the short line people see next to the subject.
+3. **Open with the reader in mind.** A friendly greeting, using their name if your tool allows, then straight to what matters to them.
+4. **Keep the body short.** Short paragraphs, large text and one or two small images. Many people read on a phone, others on a computer at work; design for both.
+5. **Add one clear button or link** for the main action, such as "Register for Saturday's training".
+6. **Add one or two short extras** if useful: a tip, a thank you, a date to remember.
+7. **Finish with contact details and an unsubscribe link.**
+8. **Test before sending.** Send it to yourself, open it on a phone and a computer, click every link and check every date.
+
+## Explaining your choices
+
+Clients and mentors often ask why you wrote a newsletter the way you did. Be ready to explain: who it is for, why this is the main message, why the subject line should get it opened, why the button says what it says, and what you left out to keep it short. Being able to give reasons shows you think like a marketer, not just a writer.
+
+## How often
+
+Regular but not constant. A steady monthly or fortnightly newsletter is better than a flood followed by months of silence. Tell people at sign up how often to expect it, and keep that promise.
 
 ## Tools
 
-You can start with Gmail and a small list, but email marketing tools such as Mailchimp, Brevo or MailerLite add sign up forms, templates, unsubscribe links and reports. Many have free plans with limits that change, so check the current plan before you promise anything to a client. Useful numbers to watch are clicks, replies and unsubscribes.
+You can start with Gmail and a small list, using the blind copy (Bcc) field so subscribers cannot see each other's addresses. Email marketing tools such as Mailchimp, Brevo or MailerLite add sign up forms, templates, automatic unsubscribe links and reports. Many have free plans with limits that change, so check the current plan before you promise anything to a client.
 
-## A worked example
+## Numbers to watch
 
-Amina volunteers for a youth NGO in Wa that only posted on Facebook. She adds a sign up form to their page and collects emails at a community event, with a clear note that people will get a monthly update. Her first newsletter has one story about a training day, two photos, a link to register for the next session and an unsubscribe link at the bottom. Partners reply to say thank you, and two offer to share it.`,
-      practice_task_md: `**Goal:** Draft a short newsletter and a simple, consent based sign up form.
+* **Opens:** a rough sign of whether the subject line worked. Some email apps block or fake opens, so treat this number with care.
+* **Clicks:** how many people clicked the main link. This is usually more reliable.
+* **Replies:** a strong sign that people value the newsletter.
+* **Unsubscribes:** a few are normal; a sudden jump means something annoyed people.
+
+Use them to improve the next issue, and include them in client reports.`,
+      workedExample_md: `Amina volunteers for a youth NGO in Wa that only posted on Facebook. She adds a sign up form to their page that says "Get one email a month about our trainings. Unsubscribe any time." At a community event she collects more emails on a paper sheet with the same note.
+
+Her first newsletter:
+
+* **Subject:** "Free CV workshop in Wa, Saturday 9am"
+* **Preview text:** "Plus photos from last month's coding day"
+* **Opening:** "Hello Fuseini, our next free workshop is this Saturday."
+* **Body:** two short paragraphs on what participants will learn, where and when.
+* **Button:** "Reserve your seat"
+* **Extra:** two photos and one line of thanks to volunteers.
+* **Footer:** contact number, office address, unsubscribe link.
+
+She tests it on her phone and a library computer, then sends.
+
+When the director asks why she wrote it this way, she explains: the audience is young job seekers, so the workshop is the main message; the subject line gives the what, where and when; there is one button so people know what to do; and she left out a long history of the NGO to keep it short. A week later she reports clicks, three replies and no unsubscribes.`,
+      keyTerms: [
+        { term: "Email list", definition: "Addresses of people who agreed to receive emails from a business." },
+        { term: "Consent", definition: "A person's clear agreement to receive marketing messages." },
+        { term: "Subject line", definition: "The title of an email that people see before opening it." },
+        { term: "Preview text", definition: "The short line shown next to the subject in many inboxes." },
+        { term: "Unsubscribe link", definition: "A link that lets a person stop receiving emails." },
+        { term: "Click rate", definition: "The share of people who clicked a link in the email." },
+        { term: "Bcc", definition: "Blind copy: a field that hides recipients' addresses from each other." },
+      ],
+      commonMistakes: [
+        "Buying a list or adding people who never agreed",
+        "Sending a newsletter with five equal messages and no main one",
+        "Putting all addresses in the To field so everyone sees them",
+        "Forgetting the unsubscribe link or ignoring unsubscribe requests",
+        "Sending without testing links and dates",
+      ],
+      selfCheck: [
+        "What would the one main message be in a newsletter for an organisation you know?",
+        "How would you explain your subject line choice to a client?",
+        "What would you tell someone who wants to add every customer's email to a list without asking?",
+      ],
+      practice_task_md: `**Goal:** Draft a short newsletter for a mock organisation's weekly update and explain your content choices.
 
 **Steps:**
-1. Choose an organisation, such as a church, school club, NGO or online shop.
-2. Create a free Google Form that collects name and email, with a clear sentence explaining what people will receive and how often.
-3. Draft one newsletter in Gmail or Google Docs: a specific subject line, one main message, one link, and a line explaining how to unsubscribe.
-4. Send the draft to yourself and read it on a phone and on a computer. Fix anything hard to read.
+1. Choose a mock organisation, such as a church, school club, NGO or shop.
+2. Write a one sentence consent note for its sign up form.
+3. Draft the newsletter in Google Docs or Gmail: subject, preview text, opening, short body, one button or link, one extra and a footer with unsubscribe.
+4. Send it to yourself and check it on at least one screen size.
+5. Write a short paragraph explaining your choices: audience, main message, subject line, button and what you left out.
 
-**Done looks like:** A working sign up form link and a phone friendly newsletter draft that you can show a mentor.`,
+**Done looks like:** A tested newsletter draft and a paragraph explaining your choices, ready to submit or show a mentor.`,
       quiz: {
         questions: [
           {
             prompt: "Why does the lesson say an email list is valuable to a business?",
             options: [
-              "It belongs to the business and no algorithm decides who sees it",
-              "Emails are always opened by every subscriber on the same day",
-              "Email is the only channel that NGOs and churches are allowed to use",
-              "Email lists can be bought cheaply",
+              "The business holds the list, so no algorithm decides who sees the message",
+              "Emails always get more replies and more sales than any other marketing channel in Ghana",
+              "Email is the only channel that is free",
+              "Emails cannot be ignored by the reader",
             ],
             answer_index: 0,
-            explanation: "The list is owned by the business, unlike reach on a social app.",
-          },
-          {
-            prompt: "Which law sets rules for collecting and using personal data in Ghana?",
-            options: [
-              "The Electronic Transactions Act",
-              "The Data Protection Act, 2012 (Act 843)",
-              "The Companies Act",
-              "The Labour Act",
-            ],
-            answer_index: 1,
-            explanation: "The lesson names the Data Protection Act, 2012 (Act 843), overseen by the Data Protection Commission.",
-          },
-          {
-            prompt: "What should every marketing email include?",
-            options: [
-              "A long list of every product",
-              "The sender's MoMo PIN",
-              "A simple way to unsubscribe",
-              "At least five large images",
-            ],
-            answer_index: 2,
-            explanation: "Recipients must be able to unsubscribe, and those requests must be honoured.",
+            explanation: "The list belongs to the business, independent of social apps.",
           },
           {
             prompt: "Which subject line follows the lesson's advice?",
-            options: ["Newsletter", "Important!!!", "Update number 12", "Harvest thanksgiving: Sunday 10am"],
+            options: [
+              "Newsletter",
+              "Important update for all our members, please read",
+              "Free CV workshop in Wa, Saturday 9am",
+              "Hello",
+            ],
+            answer_index: 2,
+            explanation: "Good subject lines are short and specific.",
+          },
+          {
+            prompt: "Why should you treat the open rate with care?",
+            options: [
+              "Opens are never recorded at all",
+              "It only counts people who unsubscribe",
+              "It measures clicks, not opens",
+              "Some email apps block or fake opens",
+            ],
             answer_index: 3,
-            explanation: "Short and specific subject lines tell readers exactly what the email is about.",
+            explanation: "The lesson notes some apps block or fake opens, so clicks are more reliable.",
+          },
+          {
+            prompt: "When sending from Gmail to a small list, why use the Bcc field?",
+            options: [
+              "It makes the email arrive faster",
+              "It hides subscribers' addresses from each other",
+              "It adds an unsubscribe link automatically",
+              "It translates the email for each reader",
+            ],
+            answer_index: 1,
+            explanation: "Bcc keeps each person's address private from the others.",
           },
         ],
         pass_threshold: 75,

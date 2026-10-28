@@ -33,7 +33,8 @@ money and data, not short on ability.
 - Slugs are lowercase, hyphenated, stable. Change them only before publishing.
 
 ## Node content
-- **Explanation:** 300 to 600 words, markdown, short paragraphs, plain English.
+- **Explanation:** 300 to 900 words (denser lessons, issue #256, aim for
+  650 to 850 alongside the anatomy below), markdown, short paragraphs, plain English.
   Start with why it matters for a job in Ghana, then the idea, then a small
   worked example. Headings only if they help on a small screen. Code blocks
   short enough to read on a small screen.
