@@ -3,11 +3,10 @@
 import { startTransition, useActionState } from "react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { SelectField, TextField } from "@/components/ui/field";
+import { SelectField, TextAreaField, TextField } from "@/components/ui/field";
 import { EVENT_FORMATS, EVENT_KINDS, EVENT_STATUSES } from "@/lib/events/labels";
 import { toDateTimeInput } from "@/lib/events/time";
 import { REGIONS } from "@/lib/regions";
-import { TextAreaField } from "../roadmaps/fields";
 import { createEvent, updateEvent, type FormState } from "./actions";
 
 export type EditableEvent = {

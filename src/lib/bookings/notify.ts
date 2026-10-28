@@ -1,6 +1,8 @@
 import "server-only";
 import { createAdminClient } from "@/lib/messaging/admin";
+import { sendAlerts } from "@/lib/messaging/alerts";
 import { logOnce } from "@/lib/messaging/config";
+import { SITE_URL } from "@/lib/site";
 import { bookingNotification, type BookingEvent } from "./model";
 
 /**
@@ -9,8 +11,10 @@ import { bookingNotification, type BookingEvent } from "./model";
  * does nothing and logs once. Never throws: a missed notification must not
  * undo a request, a reply or a review that already saved.
  *
- * Email and WhatsApp alerts for bookings are hooks only for now: no consent
- * covers booking messages yet, so externalAlert reports "not configured".
+ * After the in app row, a WhatsApp alert goes to the recipient if they turned
+ * WhatsApp updates on (founder decision on #191; see lib/messaging/alerts).
+ * Email stays off until an email sender exists. A message alert that was
+ * skipped in app (one unread nudge per thread) is skipped on WhatsApp too.
  */
 export async function notifyBookingEvent(
   recipientId: string,
@@ -22,7 +26,7 @@ export async function notifyBookingEvent(
   const admin = createAdminClient();
   if (!admin) {
     logOnce("bookings-notify", "booking notifications not sent: set SUPABASE_SECRET_KEY.");
-    return { inApp: "skipped" as const, external: externalAlert() };
+    return { inApp: "skipped" as const };
   }
   try {
     // One unread nudge per thread is enough: skip a new message alert while the last one is unread.
@@ -35,19 +39,14 @@ export async function notifyBookingEvent(
         .is("read_at", null)
         .contains("payload", { booking_id: booking.id, event: "message" })
         .limit(1);
-      if (data?.length) return { inApp: "skipped" as const, external: externalAlert() };
+      if (data?.length) return { inApp: "skipped" as const };
     }
     const { error } = await admin.rpc("notify_user", { p_recipient_id: recipientId, p_kind: kind, p_payload: payload });
     if (error) console.error(`[bookings] notify ${event} failed: ${error.message}`);
-    return { inApp: error ? ("failed" as const) : ("sent" as const), external: externalAlert() };
+    const external = await sendAlerts(admin, [recipientId], { title: payload.title, href: payload.href }, SITE_URL.replace(/^https?:\/\//, ""));
+    return { inApp: error ? ("failed" as const) : ("sent" as const), external };
   } catch (e) {
     console.error(`[bookings] notify ${event} failed: ${e instanceof Error ? e.message : String(e)}`);
-    return { inApp: "failed" as const, external: externalAlert() };
+    return { inApp: "failed" as const };
   }
-}
-
-/** The email and WhatsApp hook for booking alerts. A safe no op until a provider and consent exist. */
-export function externalAlert(): { status: "skipped"; reason: "not_configured" } {
-  logOnce("bookings-external", "booking email and WhatsApp alerts are not set up yet; in app only.");
-  return { status: "skipped", reason: "not_configured" };
 }

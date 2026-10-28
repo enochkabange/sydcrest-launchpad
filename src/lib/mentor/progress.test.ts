@@ -6,7 +6,6 @@ import {
   learnerPath,
   parseCohortForm,
   parseCriteria,
-  parseGradeForm,
   parseReviewForm,
   rubricForWeek,
   weekNumbers,
@@ -111,23 +110,6 @@ describe("rubrics", () => {
     const parsed = parseCriteria(criteria);
     const { errors } = parseReviewForm(form({ score_clarity: "5", score_evidence: "2.5", comment: " " }), parsed);
     expect(Object.keys(errors).sort()).toEqual(["comment", "score_clarity", "score_evidence"]);
-  });
-});
-
-describe("parseGradeForm", () => {
-  it("needs a whole score to grade", () => {
-    expect(parseGradeForm(form({ decision: "grade", score: "72" })).data).toEqual({ score: 72, feedback: "", returnIt: false });
-    expect(parseGradeForm(form({ decision: "grade", score: "101" })).errors.score).toBeDefined();
-    expect(parseGradeForm(form({ decision: "grade", score: "" })).errors.score).toBeDefined();
-  });
-
-  it("needs feedback, not a score, to return work", () => {
-    expect(parseGradeForm(form({ decision: "return" })).errors).toEqual({ feedback: expect.any(String) });
-    expect(parseGradeForm(form({ decision: "return", feedback: "Add your sources, Fuseini." })).data).toEqual({
-      score: null,
-      feedback: "Add your sources, Fuseini.",
-      returnIt: true,
-    });
   });
 });
 

@@ -14,6 +14,8 @@ export const TEMPLATES = {
   reengage:
     "Hi {name}, it has been a week since you last worked on your SydCrest roadmap. Pick up where you left off at {url} " +
     OPT_OUT_LINE,
+  /** Booking and brief alerts (founder decision on #191): the in app title and a link. */
+  alert: "Hi {name}, news from SydCrest: {title}. See it at {url} " + OPT_OUT_LINE,
   event_reminder:
     "Hi {name}, a reminder that {event} starts {when}. Details and any joining link are at {url} " +
     OPT_OUT_LINE,

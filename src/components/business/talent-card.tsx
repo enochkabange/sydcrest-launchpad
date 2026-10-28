@@ -1,7 +1,9 @@
 import type { ReactNode } from "react";
 import Link from "@/components/ui/link";
 import { Initials } from "@/components/social/profile-bits";
+import { VerifiedSkillBadges } from "@/components/skills/verified-skill-badges";
 import { regionLabel } from "@/lib/regions";
+import { parseVerifiedSkills } from "@/lib/skills/verified";
 import { availabilityLabel, trackLabel } from "@/lib/talent/forms";
 import { Badge, Chip, formatDate } from "./bits";
 
@@ -18,6 +20,8 @@ export type TalentRow = {
   open_to_remote: boolean | null;
   portfolio_url: string | null;
   certificates: unknown;
+  /** `[{slug, name, source, issued_at}]` from the view (#165); earned, never typed in. */
+  verified_skills?: unknown;
 };
 
 type Certificate = { program_title?: string; specialization_label?: string | null; issued_at?: string };
@@ -46,6 +50,7 @@ export function TalentCard({
   const name = row.display_name ?? "Launchpad learner";
   const region = regionLabel(row.region);
   const certs = certificatesOf(row);
+  const verified = parseVerifiedSkills(row.verified_skills);
   return (
     <article className={`relative flex h-full flex-col gap-4 rounded-lg border border-line bg-surface p-5 ${href ? "transition-colors hover:bg-surface-sunken" : ""}`}>
       <header className="flex items-start gap-3">
@@ -89,9 +94,15 @@ export function TalentCard({
           </ul>
         </div>
       )}
+      {verified.length > 0 && (
+        <div className="flex flex-col gap-2">
+          <h4 className="text-sm font-semibold text-content-2">Verified skills</h4>
+          <VerifiedSkillBadges skills={verified} variant="compact" label={`Verified skills of ${name}`} />
+        </div>
+      )}
       {(row.skills?.length ?? 0) > 0 && (
         <div className="flex flex-col gap-2">
-          <h4 className="text-sm font-semibold text-content-2">Skills</h4>
+          <h4 className="text-sm font-semibold text-content-2">{verified.length > 0 ? "Other skills" : "Skills"}</h4>
           <ul className="flex flex-wrap gap-2">
             {(full ? row.skills! : row.skills!.slice(0, 8)).map((s) => (
               <Chip key={s}>{s}</Chip>

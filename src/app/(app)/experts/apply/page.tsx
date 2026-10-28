@@ -46,6 +46,7 @@ async function Application({ searchParams }: { searchParams: PageProps<"/experts
     slug: expert?.slug ?? suggestSlug(profile.display_name),
     headline: expert?.headline ?? "",
     skills: expert?.skills.join(", ") ?? "",
+    categories: expert?.categories ?? [],
     links: expert?.links.join("\n") ?? "",
     evidence_links: application?.evidence_links.join("\n") ?? "",
     experience: application?.experience ?? "",

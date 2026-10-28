@@ -68,6 +68,8 @@ test("a learner in the Northern Region joins and leaves the chapter", async ({ p
   await expect(members.getByText("Wumpini Abukari (you)")).toBeVisible();
   await expect(members.getByText("Fuseini Mahama")).toBeVisible();
   await expect(page.getByRole("heading", { name: "Chapter posts" })).toBeVisible();
+  // The chapter feed (#162) is mounted for members: they can post to it.
+  await expect(page.getByRole("heading", { name: /^Post to / })).toBeVisible();
   // Members cannot remove anyone or edit the page.
   await expect(page.getByRole("button", { name: /^Remove/ })).toHaveCount(0);
   await expect(page.getByRole("heading", { name: "Edit the chapter page" })).toHaveCount(0);

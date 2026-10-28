@@ -43,7 +43,7 @@ test("a mentor grades queued work, assigns a capstone peer review and defers a l
   await queue.getByRole("link", { name: "Fuseini Alhassan" }).click();
   await expect(page.getByRole("heading", { level: 1, name: /Fuseini Alhassan, week 1/ })).toBeVisible();
   await page.getByLabel("Final score (0 to 100)").fill("72");
-  await page.getByLabel("Feedback for the learner (optional)").fill("Good interviews, Fuseini. Add the prices you heard.");
+  await page.getByLabel("Feedback for the learner").fill("Good interviews, Fuseini. Add the prices you heard.");
   await page.getByRole("button", { name: "Save grade" }).click();
   await expect(page.getByText("Grade saved.")).toBeVisible();
 

@@ -30,12 +30,17 @@ export function ExpertAvatar({ expert, size = "sm" }: { expert: Pick<DirectoryEx
   );
 }
 
-/** The admin checked identity badge (not a verified skill, which #165 adds). */
+/**
+ * The admin's trust flag on an expert (expert_profiles.is_verified). There is
+ * no ID check behind it yet, so it says SydCrest vouches, not that an
+ * identity was checked (founder decision on #191). Verified skills are a
+ * separate badge (#165).
+ */
 export function VerifiedBadge() {
   return (
     <span className="inline-flex items-center gap-1 rounded-full bg-info-bg px-2.5 py-0.5 text-xs font-semibold text-info-fg">
       <BadgeCheck aria-hidden className="size-3.5" />
-      Identity verified
+      Verified by SydCrest
     </span>
   );
 }

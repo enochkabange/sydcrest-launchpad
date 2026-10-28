@@ -1,6 +1,8 @@
 import { expect, test } from "@playwright/test";
 import { createLearner, promoteToAdmin } from "./learners";
 import { certify, deleteOrganisation, signIn, signedInPage, verifiedOrganisation } from "./earn-business";
+import { deleteSkill, seedSkill } from "./skills-seed";
+import { insert } from "./supabase-admin";
 
 /**
  * Business accounts and the talent directory (issue #161), at phone and
@@ -8,8 +10,10 @@ import { certify, deleteOrganisation, signIn, signedInPage, verifiedOrganisation
  */
 
 const slugs: string[] = [];
+const skillIds: string[] = [];
 test.afterEach(async () => {
   for (const slug of slugs.splice(0)) await deleteOrganisation(slug);
+  for (const id of skillIds.splice(0)) await deleteSkill(id);
 });
 
 test("an organisation signs up, asks for review, is verified and goes public", async ({ page, browser }, testInfo) => {
@@ -67,11 +71,24 @@ test("an organisation signs up, asks for review, is verified and goes public", a
   await expect(visitor.getByText(/Verified by SydCrest/)).toBeVisible();
   await expect(visitor.getByText("Northern Region").first()).toBeVisible();
 
-  // The owner sees verified, and the placeholder for posting.
+  // The owner posts an opportunity under the organisation (OpportunityForm, #177).
   await page.goto(`/org/${slug}/opportunities`);
   await page.getByRole("link", { name: "Post an opportunity" }).click();
   await expect(page).toHaveURL(new RegExp(`/org/${slug}/opportunities/new$`), { timeout: 15_000 });
-  await expect(page.getByRole("heading", { name: "Posting is nearly here" })).toBeVisible();
+  await expect(page.getByLabel("Offered by")).toHaveCount(0);
+  const job = `Junior data assistant ${crypto.randomUUID().slice(0, 6)}`;
+  await page.getByLabel("Title").fill(job);
+  await page.getByLabel("Type").selectOption("job");
+  await page.getByLabel("Status").selectOption("open");
+  await page.getByLabel("Description").fill("Clean and record sales data for our Tamale shops, three days a week.");
+  await page.getByLabel("Application link").fill("https://example.org/data-assistant");
+  await page.getByRole("button", { name: "Post opportunity" }).click();
+  await expect(page).toHaveURL(new RegExp(`/org/${slug}/opportunities$`), { timeout: 15_000 });
+  await expect(page.getByText(job)).toBeVisible();
+
+  // Open posts show on the public page.
+  await visitor.goto(`/org/${slug}`);
+  await expect(visitor.getByText(job)).toBeVisible();
 });
 
 test("a certified learner opts in, an organisation asks to talk, and the learner shares a contact", async ({ page, browser }, testInfo) => {
@@ -79,6 +96,10 @@ test("a certified learner opts in, an organisation asks to talk, and the learner
   const learner = await createLearner("Fuseini Alhassan");
   const outsider = await createLearner("Hawa Seidu");
   const programme = await certify(learner);
+  // A skill SydCrest verified (#165), shown as a badge in the directory.
+  const skill = await seedSkill();
+  skillIds.push(skill.id);
+  await insert("verified_skills", [{ profile_id: learner.id, skill_id: skill.id, source: "assessment" }]);
   const orgName = `Tamale Data Works ${crypto.randomUUID().slice(0, 6)}`;
   const org = await verifiedOrganisation(owner, orgName);
   slugs.push(org.slug);
@@ -116,6 +137,7 @@ test("a certified learner opts in, an organisation asks to talk, and the learner
   // The list page stays in the DOM, hidden, after a client navigation; count what is shown.
   await expect(ownerPage.getByText("Junior data analyst").locator("visible=true")).toHaveCount(1);
   await expect(ownerPage.getByText(learner.email)).toHaveCount(0);
+  await expect(ownerPage.getByRole("list", { name: "Verified skills of Fuseini Alhassan" }).locator("visible=true").getByText(skill.name)).toBeVisible();
   await ownerPage.getByLabel("Message to Fuseini").fill("We are hiring a data intern in Tamale. Could we talk?");
   await ownerPage.getByRole("button", { name: "Ask to talk" }).click();
   await expect(ownerPage.getByText(/Request sent/)).toBeVisible();
