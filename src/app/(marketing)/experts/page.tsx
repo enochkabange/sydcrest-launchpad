@@ -90,7 +90,7 @@ function CategoryNav({ filters, counts }: { filters: Filters; counts: Map<string
   if (listed.length === 0) return null;
   const chip = (active: boolean) =>
     `inline-flex min-h-11 items-center gap-2 rounded-full border px-4 text-sm font-semibold whitespace-nowrap transition-colors ${
-      active ? "border-blue-600 bg-blue-600 text-white" : "border-line bg-surface text-content hover:bg-surface-sunken"
+      active ? "border-action bg-action text-action-fg" : "border-line bg-surface text-content hover:bg-surface-sunken"
     }`;
   return (
     <nav aria-label="Categories">

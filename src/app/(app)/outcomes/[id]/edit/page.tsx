@@ -13,10 +13,6 @@ import { OutcomeTypesGuide } from "../../types-guide";
 
 export const metadata: Metadata = { title: "Edit outcome" };
 
-// The app shell's nav reads usePathname() outside a Suspense boundary, which
-// a dynamic segment cannot prerender (same as /learn/[slug]/[node]).
-export const instant = false;
-
 async function Form({ params }: Pick<PageProps<"/outcomes/[id]/edit">, "params">) {
   const user = await requireUser();
   const { id } = await params;
