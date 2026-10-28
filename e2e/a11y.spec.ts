@@ -6,6 +6,7 @@ import { createLearner, promoteToAdmin, type Learner } from "./learners";
 import { deleteMentorCohort, seedMentorCohort, type MentorSeed } from "./mentor-seed";
 import { seedNotifications } from "./notifications-seed";
 import { deleteRoadmap, seedRoadmap, type SeededRoadmap } from "./seed";
+import { seedSharer } from "./sharing-seed";
 import { admin } from "./supabase-admin";
 
 /**
@@ -135,6 +136,29 @@ test.describe("axe sweep", () => {
       failures,
       "learner",
     );
+    expect(failures, failures.join("\n")).toEqual([]);
+  });
+
+  test("sharing: milestones, share panel and achievement page", async ({ page }) => {
+    const sharer = await seedSharer("Fuseini Mahama");
+    removeUser(sharer.learner);
+    cleanup.push(() => deleteRoadmap(sharer.roadmap.id));
+
+    await signIn(page, sharer.learner);
+    const failures: string[] = [];
+    await sweep(page, ["/profile", "/certificates", `/a/${sharer.roadmapAchievementId}`], failures, "sharer");
+    // The share panel, open.
+    await page.goto("/profile#milestones");
+    // Retried: a click that lands before hydration does nothing.
+    await expect(async () => {
+      await page.locator("#milestones").getByRole("button", { name: "Share card" }).first().click();
+      await expect(page.getByRole("radio", { name: /Status size/ })).toBeChecked({ timeout: 1_000 });
+    }).toPass();
+    const { violations } = await new AxeBuilder({ page }).include("#milestones").withTags(TAGS).analyze();
+    for (const v of violations) {
+      if (v.impact !== "serious" && v.impact !== "critical" && !STRUCTURAL.has(v.id)) continue;
+      failures.push(`sharer share panel: ${v.id} (${v.impact}) ${v.nodes.map((n) => n.target.join(" ")).slice(0, 4).join(", ")}`);
+    }
     expect(failures, failures.join("\n")).toEqual([]);
   });
 

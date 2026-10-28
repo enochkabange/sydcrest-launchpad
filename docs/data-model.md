@@ -16,7 +16,7 @@ is not `security_invoker`, or any private function is executable by everyone.
 ## Tables
 
 **profiles** (extended). One row per auth user, created by the sign up trigger.
-Owner reads and edits name, region, avatar, phone, slug, is_public, headline, skills, goals; role and datacamp_license_slot are staff only.
+Owner reads and edits name, region, avatar, phone, slug, is_public, headline, skills, goals, display_prefs and milestone_posts (off by default: automatic community posts for finished sections, roadmaps and certificates); role and datacamp_license_slot are staff only.
 
 **public_profiles** (view). Public columns of profiles where `is_public`: id, slug, name, headline, region, avatar, skills, goals.
 Readable by anyone; the only public path to profile data. Never carries phone, role or email.
@@ -48,8 +48,11 @@ Owner reads. Nobody writes it directly; see the anti cheat notes and verified co
 **personalized_paths**. Path quiz answers plus the recommended roadmap, skill gap and plan.
 Owner reads and can delete; the server (service role) writes, since the plan is generated.
 
-**achievements**. Milestones for the share loop: `roadmap_node_completed`, `roadmap_completed`, `streak`, `track_chosen`, `path_personalized`, with a `ref_id`.
-Visible to the owner, and to everyone when the owner's profile is public. Minted only by `private.mint_achievement`.
+**achievements**. Milestones for the share loop: `roadmap_node_completed`, `section_completed`, `roadmap_completed`, `streak`, `track_chosen`, `path_personalized`, with a `ref_id`.
+Visible to the owner, and to everyone when the owner's profile is public. Minted only by `private.mint_achievement`. `section_completed` (ref: the section node) is minted by a trigger when every required node in a top level section is verified (issue #233). Share cards for these live at `/og/achievements/<id>/story|square`, behind the same public profile gate as `/a/<id>`.
+
+**private.milestone_post_log**. `(profile_id, kind, ref_id)` for each milestone already posted to the community (kind `section`, `roadmap` or `certificate`, keyed by programme), so each is posted at most once even after the post is deleted.
+No policies or grants: only the definer triggers on achievements and certificates write it. A milestone post is skipped when the feed's rate limit refuses it or a moderator hid the learner's content in the last 30 days.
 
 **follows**. `(follower_id, following_id)` pairs; no self follow.
 Signed in users read the graph and insert or delete only rows where they are the follower.

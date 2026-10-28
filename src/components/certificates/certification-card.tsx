@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "@/components/ui/link";
+import { ShareCard } from "@/components/share/share-card";
 import { badgeUrls } from "@/lib/certificates/open-badges";
+import { certificateShareTarget } from "@/lib/share/card";
 import { SITE_URL } from "@/lib/site";
 import { formatIssued } from "@/lib/certificates/format";
 import type { CertificationStatus } from "@/lib/certificates/status";
@@ -63,6 +65,10 @@ export function CertificationCard({
           title={title}
           verificationId={certificate.verification_id}
           issuedAt={certificate.issued_at}
+        />
+        <ShareCard
+          {...certificateShareTarget(certificate, SITE_URL)}
+          note="The card shows the certificate, the date it was issued and the name it is made out to, as the verification page does. Anyone with the link can see it."
         />
       </section>
     );

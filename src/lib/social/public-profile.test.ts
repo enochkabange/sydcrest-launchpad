@@ -52,6 +52,7 @@ describe("describeAchievement", () => {
   it("uses titles and streak lengths when known", () => {
     expect(describeAchievement("roadmap_node_completed", "x", "SQL basics")).toBe("Completed SQL basics");
     expect(describeAchievement("roadmap_completed", "x", "Data Analyst")).toBe("Completed the Data Analyst roadmap");
+    expect(describeAchievement("section_completed", "x", "Foundations")).toBe("Completed the Foundations section");
     expect(describeAchievement("streak", "7")).toBe("7 day learning streak");
     expect(describeAchievement("track_chosen", null)).toBe("Chose a track");
   });
