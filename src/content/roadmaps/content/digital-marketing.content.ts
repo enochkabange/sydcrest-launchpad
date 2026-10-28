@@ -1470,7 +1470,7 @@ Menus and names change from time to time, so if a tool has moved, look in the ap
 
 ## Status and broadcasts, with consent
 
-Broadcast lists let you send one message to many contacts privately. Only people who have saved the business number receive it, which is a good reason to ask happy customers to save it. Before adding anyone to a broadcast list or group, ask them. Phone numbers are personal data, and Ghana's Data Protection Act, 2012 (Act 843) requires consent before personal data is used for direct marketing; people can also ask you to stop. Keep broadcasts useful and occasional, and remove anyone who asks. Too many messages make people block the number, and WhatsApp may limit accounts that many people block or report.
+Broadcast lists let you send one message to many contacts privately. Only people who have saved the business number receive it, which is a good reason to ask happy customers to save it. Before adding anyone to a broadcast list or group, ask them. Phone numbers are personal data, and section 40 of Ghana's Data Protection Act, 2012 (Act 843) says a business must have a person's prior written consent before using their data for direct marketing. A written yes, such as a reply to your message, is easy to keep as a record. The Act also lets people tell you in writing, at any time, to stop. Keep broadcasts useful and occasional, and remove anyone who asks. Too many messages make people block the number, and WhatsApp may limit accounts that many people block or report.
 
 For bigger businesses that need many staff on one number or automated messages, WhatsApp offers a separate paid business platform through official partners. For most small clients, the free app is enough.`,
       workedExample_md: `Mariama's basket group in Bolgatanga used a personal account, and orders got lost among family chats. You help them set up WhatsApp Business on the group's phone.
@@ -1538,12 +1538,12 @@ You also agree a rule with the group: payments are confirmed only from the netwo
             prompt: "What should you do before adding a customer to a broadcast list?",
             options: [
               "Nothing, since they already know the business",
-              "Ask them first, because consent is needed for direct marketing",
+              "Ask them first, because written consent is needed for direct marketing",
               "Add them and wait to see if they complain",
               "Ask for their MoMo PIN so you can confirm their identity before adding them",
             ],
             answer_index: 1,
-            explanation: "The lesson says to ask first, in line with Act 843.",
+            explanation: "The lesson says to get a written yes first, in line with section 40 of Act 843.",
           },
           {
             prompt: "Why can a phone number not be used on personal WhatsApp and WhatsApp Business at the same time?",
@@ -1620,7 +1620,7 @@ Look weekly. Ask: which posts led to messages or orders? Which got reach but no 
 
 ## Safety
 
-Turn on two step verification for the personal accounts that manage the Page. Many Ghanaian businesses lose pages to hackers who send fake "copyright warning" messages asking for logins. Meta will not ask for your password in a message.`,
+Turn on two step verification for the personal accounts that manage the Page. Pages are often stolen by hackers who send fake "copyright warning" messages asking for logins. Meta will not ask for your password in a message.`,
       workedExample_md: `Issahaku sets up a Facebook Page for a youth football academy in Wa, as a practice project for his cohort.
 
 1. **Create the Page** from the menu on his phone, name it "Wa Young Stars Football Academy" and pick a sports category.
@@ -1784,7 +1784,7 @@ Amina later comments that the replacement loaf was lovely. Other customers saw t
         { term: "Online reputation", definition: "What people think and say about a business on the internet." },
         { term: "Influencer", definition: "A person whose opinion others trust and follow, online or in the community." },
         { term: "Paid partnership", definition: "A post a business has paid or given gifts for, which must be clearly labelled." },
-        { term: "Hide a comment", definition: "Making a comment invisible to the public while it stays visible to its writer." },
+        { term: "Hide a comment", definition: "Making a comment invisible to the public while it stays visible to its writer and their friends." },
       ],
       commonMistakes: [
         "Arguing with an angry customer in public",
@@ -1876,7 +1876,7 @@ Amina later comments that the replacement loaf was lovely. Other customers saw t
 
 ## Building a list the right way
 
-People must agree to receive your emails. Collect addresses through a sign up form, at an event with a clear note of what people are signing up for, or when a customer orders and ticks a box. Never buy lists or add people without asking. Ghana's Data Protection Act, 2012 (Act 843) requires consent before personal data is used for direct marketing and gives people the right to ask you to stop; the Data Protection Commission oversees it. Every marketing email should include a simple way to unsubscribe, and you must honour those requests promptly.
+People must agree to receive your emails. Collect addresses through a sign up form, at an event with a clear note of what people are signing up for, or when a customer orders and ticks a box. Never buy lists or add people without asking. Section 40 of Ghana's Data Protection Act, 2012 (Act 843) says a business must have a person's prior written consent before using their data for direct marketing, and lets people tell the business in writing, at any time, to stop. The Data Protection Commission oversees the Act, so keep a record of how and when each person signed up. Every marketing email should include a simple way to unsubscribe, and you must honour those requests promptly.
 
 ## Writing a newsletter, step by step
 
@@ -3085,7 +3085,7 @@ Phone or computer both work for collecting numbers. A spreadsheet on a computer 
 The attention number (views) barely moved; the action and money numbers did. Next month every menu photo carries the price and order line, and he tests a new posting time.`,
       keyTerms: [
         { term: "Metric", definition: "A number that measures something, such as reach or orders." },
-        { term: "Vanity metric", definition: "A number that looks good but does not show progress toward the goal." },
+        { term: "Vanity metric", definition: "A number that looks good but does not show progress towards the goal." },
         { term: "Action number", definition: "A count of people doing something useful, such as messaging or calling." },
         { term: "Main number", definition: "The one metric chosen in advance to judge whether a campaign is working." },
         { term: "Attribution", definition: "Working out which activity led to a sale or action." },
@@ -3489,7 +3489,7 @@ She then checks the Instagram insights for a mock salon page she runs for practi
 
 Keep it to one page, or a short set of slides. Cover:
 
-1. **The goal.** Remind the client what you agreed to work toward and the main number.
+1. **The goal.** Remind the client what you agreed to work towards and the main number.
 2. **What we did.** Posts, videos, campaigns, emails, profile updates. Keep it brief.
 3. **What happened.** The numbers that connect to the goal, compared with last month or the target: messages, orders, sign ups, calls, cost per result.
 4. **What worked and what did not.** One or two examples of each, with a reason if you know it.
@@ -3631,7 +3631,7 @@ Before sending, her cohort partner Fuseini reviews it with the rubric. He scores
       outcomes: [
         "Compare employed, agency and freelance paths into marketing work",
         "List what Ghanaian employers and clients look for in junior marketers",
-        "Make a 30 day plan to move toward paid work",
+        "Make a 30 day plan to move towards paid work",
       ],
       explanation_md: `Skills only change your life when someone pays you for them. Digital marketing has several doors into paid work, and you can start knocking on some of them before you feel "ready". This section helps you choose a path, collect proof of your skills and get your first paying work in Ghana or remotely.
 
@@ -3714,7 +3714,7 @@ In the interview she opens her portfolio on her phone: the church page, the cont
         "What could you show an employer today, and what is missing?",
         "Can you say what you do in one clear sentence?",
       ],
-      practice_task_md: `**Goal:** Choose your first path and make a 30 day plan to move toward paid work.
+      practice_task_md: `**Goal:** Choose your first path and make a 30 day plan to move towards paid work.
 
 **Steps:**
 1. Answer the three questions in "Choosing where to start" in a few lines each.
@@ -4239,7 +4239,7 @@ Many lessons here are linked directly to DMP weeks, so cohort members can use th
 * **Week 10:** planning a campaign, the main channels, the content calendar and budgets.
 * **Weeks 11 and 12:** portfolio, applications, freelancing, planning and reporting.
 
-The specialisation weeks use a companion roadmap, Digital Marketing Specialisations, which goes much deeper into SEO, social media and Google Ads. Weeks 1 and 2 draw on the Digital Skills Bridge roadmap.
+The specialisation weeks use a companion roadmap, Digital Marketing Specialisations, which goes much deeper into SEO, social media and Google Ads. Weeks 1 and 2 draw on the Digital Skills Bridge roadmap, and week 3 pairs Bridge lessons on passwords, privacy and searching with the two lessons listed above.
 
 ## Choosing a specialisation
 
@@ -4336,7 +4336,7 @@ When she gets a place, the shared weeks feel familiar because she has already do
               "None, since she should skip the specialisation",
             ],
             answer_index: 1,
-            explanation: "Search and web page lessons point toward SEO and Content Marketing.",
+            explanation: "Search and web page lessons point towards SEO and Content Marketing.",
           },
         ],
         pass_threshold: 75,

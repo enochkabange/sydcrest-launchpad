@@ -38,7 +38,7 @@ Researched 25 October 2026 for issue #84.
 | Google Business Profile Help, verification methods (chosen by Google, cannot be changed) | https://support.google.com/business/answer/7107242 | 2026-10-28 | Official documentation; fact check for the Google Business Profile lesson (#256) |
 | Google Analytics Help, demo account (free, any Google account, Viewer access, merchandise store and game app data) | https://support.google.com/analytics/answer/6367342 | 2026-10-28 | Official documentation; fact check for the analytics lesson (#256) |
 | Google Analytics Help, key events (formerly conversions), rechecked | https://support.google.com/analytics/answer/13965727 | 2026-10-28 | Official documentation; fact check for the analytics lesson (#256) |
-| Act 843 section 40 (prior written consent for direct marketing), via Lex Mundi and Chambers summaries in search results | https://www.lexmundi.com/guides/data-privacy-guide/jurisdictions/africa/ghana | 2026-10-28 | Legal guide summaries; fact check for consent wording in the WhatsApp, email and social lessons (#256) |
+| Data Protection Act, 2012 (Act 843), section 40, official text (a data controller needs the data subject's prior written consent for direct marketing; the data subject may require it to stop at any time by notice in writing) | https://ghalii.org/akn/gh/act/2012/843 | 2026-10-28 | Ghanaian legislation; replaces an earlier check against legal guide summaries; fact check for consent wording in the WhatsApp and email lessons (#256, PR #265 review) |
 
 ## Adverts analysed (20)
 
