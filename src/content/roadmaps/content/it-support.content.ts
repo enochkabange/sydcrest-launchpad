@@ -55,7 +55,7 @@ You can learn most of this track on a phone or a computer. Some practice, such a
           {
             prompt: "What does it mean to escalate a support request?",
             options: [
-              "Close it without fixing it",
+              "Close the ticket without fixing it and advise the user to buy a new device",
               "Ask the user to call back tomorrow",
               "Pass it to staff with deeper skills when it is beyond first line",
               "Charge the user extra money",
@@ -67,7 +67,7 @@ You can learn most of this track on a phone or a computer. Some practice, such a
             prompt: "In the Bolgatanga example, what did Hawa do first when the teacher said the computer was not working?",
             options: [
               "Opened the computer case",
-              "Reinstalled Windows",
+              "Reinstalled Windows to clear out any software faults",
               "Ordered a new monitor",
               "Asked exactly what was happening",
             ],
@@ -80,7 +80,7 @@ You can learn most of this track on a phone or a computer. Some practice, such a
               "So nothing is forgotten and the team can see what is happening",
               "Because users enjoy filling in forms",
               "To make the work take longer",
-              "Because tickets fix the problem automatically",
+              "Because the ticket system fixes common problems automatically once logged",
             ],
             answer_index: 0,
             explanation: "Tickets keep a record so requests are not lost and progress is visible.",
@@ -152,7 +152,7 @@ Issahaku reads two adverts. One, at a community bank, asks for a degree, five ye
             options: [
               "It pays the most",
               "You never need to talk to users",
-              "You only work with servers",
+              "You only work with servers and never deal with everyday user problems",
               "You see every kind of problem and learn fast",
             ],
             answer_index: 3,
@@ -162,8 +162,8 @@ Issahaku reads two adverts. One, at a community bank, asks for a degree, five ye
             prompt: "In the example, why did Issahaku apply for the food company role rather than the bank role?",
             options: [
               "The bank was too far away",
-              "It was first line work he could do now, while the bank role needed years of experience",
-              "The food company paid more",
+              "It was first line work he could do now, unlike the bank role",
+              "The food company paid more and offered free training in networking",
               "He did not want to work in finance",
             ],
             answer_index: 1,
@@ -240,7 +240,7 @@ Mariama, a help desk officer at an NGO office in Tamale, gets a call: "I cannot 
             options: [
               "The printer was out of paper",
               "The user had forgotten their password",
-              "The network cable was cut",
+              "The network cable behind the printer had been cut during building work",
               "The laptop's default printer had changed to another office's printer",
             ],
             answer_index: 3,
@@ -252,7 +252,7 @@ Mariama, a help desk officer at an NGO office in Tamale, gets a call: "I cannot 
               "Checking the whole thing works and asking the user to try it",
               "Sending the user a bill",
               "Closing the ticket before testing",
-              "Escalating every problem to the supplier",
+              "Escalating every problem to the supplier so they can confirm the fix",
             ],
             answer_index: 0,
             explanation: "Verifying means confirming full function with the user, and thinking about prevention.",
@@ -317,7 +317,7 @@ Fuseini builds a simple ticket system for a small clinic in Yendi using a free o
             prompt: "What is a service level agreement (SLA)?",
             options: [
               "An agreed target for how quickly tickets get a response and a fix",
-              "A contract to buy new laptops",
+              "A contract with a supplier to deliver and repair all the office laptops",
               "The password policy for staff",
               "A type of network cable",
             ],
@@ -388,7 +388,7 @@ Amina volunteers in the computer lab of a junior high school in Damongo. Three o
             options: [
               "Switch it off and unplug the power",
               "Turn the screen brightness down",
-              "Connect it to the internet",
+              "Connect it to the internet so the drivers can update first",
               "Open the power supply unit",
             ],
             answer_index: 0,
@@ -397,7 +397,7 @@ Amina volunteers in the computer lab of a junior high school in Damongo. Three o
           {
             prompt: "Why should you never open a power supply unit?",
             options: [
-              "It has no useful parts",
+              "It has no useful parts, so there is nothing worth checking inside",
               "It voids the internet contract",
               "It holds dangerous charge even when unplugged",
               "It is glued shut on every computer",
@@ -408,7 +408,7 @@ Amina volunteers in the computer lab of a junior high school in Damongo. Three o
           {
             prompt: "Why do you touch a bare metal part of the case before working inside?",
             options: [
-              "To check the temperature",
+              "To check the temperature of the case before you open it up",
               "To release static electricity that can damage chips",
               "To switch the computer on",
               "To clean the case",
@@ -483,7 +483,7 @@ Sumaila is asked why a Wa NGO's reception desktop takes five minutes to start. H
             prompt: "What is the main advantage of an SSD over an HDD?",
             options: [
               "It has spinning platters",
-              "It always stores more data",
+              "It always stores more data for the same price as a hard drive",
               "It is far faster and has no moving parts",
               "It does not need a motherboard",
             ],
@@ -494,7 +494,7 @@ Sumaila is asked why a Wa NGO's reception desktop takes five minutes to start. H
             prompt: "A computer makes clicking noises and files are going missing. What should you do first?",
             options: [
               "Back up the files immediately",
-              "Add more RAM",
+              "Add more RAM so the computer can find the missing files",
               "Change the screen",
               "Install a new browser",
             ],
@@ -505,9 +505,9 @@ Sumaila is asked why a Wa NGO's reception desktop takes five minutes to start. H
             prompt: "What does the BIOS or UEFI firmware do?",
             options: [
               "Prints documents",
-              "Stores all your photos",
+              "Stores all your photos and documents when the computer is switched off",
               "Connects to Wi-Fi only",
-              "Starts the computer and checks hardware before the operating system loads",
+              "Starts the computer and checks hardware before the OS loads",
             ],
             answer_index: 3,
             explanation: "Firmware runs first at start up and hands over to the operating system.",
@@ -575,7 +575,7 @@ Wumpini maintains twelve laptops for a microfinance office in Tamale. After harm
             prompt: "What is preventive maintenance?",
             options: [
               "Looking after equipment before it fails",
-              "Buying new computers every year",
+              "Buying new computers every year so old ones never get the chance to fail",
               "Only fixing things after they break",
               "Installing games on staff computers",
             ],
@@ -585,7 +585,7 @@ Wumpini maintains twelve laptops for a microfinance office in Tamale. After harm
           {
             prompt: "Which upgrade usually makes an old computer start up and open programs much faster?",
             options: [
-              "A bigger monitor",
+              "A bigger monitor with a higher screen resolution",
               "A new keyboard",
               "Replacing the hard disk with an SSD",
               "A new mouse pad",
@@ -596,7 +596,7 @@ Wumpini maintains twelve laptops for a microfinance office in Tamale. After harm
           {
             prompt: "What should you do with a laptop whose battery has swollen?",
             options: [
-              "Keep using it but charge it less",
+              "Keep using it but only charge it to half so it does not swell further",
               "Press the case flat",
               "Leave it in the sun",
               "Stop using the battery and replace it",
@@ -670,7 +670,7 @@ Abdul-Rahman supports a pharmacy in Bolgatanga. After a storm, the router and th
             prompt: "What does a UPS do that a surge protector does not?",
             options: [
               "Keeps equipment running for a short time when power fails",
-              "Makes the internet faster",
+              "Makes the internet faster by cleaning up the power going to the router",
               "Prints documents during an outage",
               "Turns off the lights",
             ],
@@ -679,14 +679,14 @@ Abdul-Rahman supports a pharmacy in Bolgatanga. After a storm, the router and th
           },
           {
             prompt: "Which device corrects voltage that is too low or too high?",
-            options: ["A network switch", "A USB hub", "A voltage stabiliser", "A printer"],
+            options: ["A network switch", "A surge protector strip", "A voltage stabiliser", "A printer"],
             answer_index: 2,
             explanation: "Stabilisers, or AVRs, keep the voltage steady.",
           },
           {
             prompt: "Why should a laser printer not be plugged into a small UPS?",
             options: [
-              "Laser printers cannot use 230 V",
+              "Laser printers cannot use 230 V, so the UPS must convert the power first",
               "The UPS will change the print colour",
               "Laser printers do not work during the day",
               "It draws a lot of power when warming up and can overload the UPS",
@@ -750,7 +750,7 @@ Hawa, at a Bolgatanga school, gets three calls: nobody can print to the staff ro
             prompt: "Nothing is printing and the print queue has a stuck job. What should you try?",
             options: [
               "Buy a new printer",
-              "Reinstall Windows",
+              "Reinstall Windows and then add the printer again from the beginning",
               "Cancel the stuck job, and restart the print spooler if needed",
               "Unplug the router",
             ],
