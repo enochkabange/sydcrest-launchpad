@@ -63,3 +63,27 @@ test("visitors see a prompt to sign up for Study Buddy on the public topic page"
   await expect(panel.getByRole("link", { name: "Sign in" })).toHaveAttribute("href", `/login?next=${next}`);
   await expect(panel.getByRole("textbox")).toHaveCount(0);
 });
+
+test("a signed in learner gets the chat entry, not sign up, on the public topic page (#230)", async ({ page }) => {
+  roadmap = await seedRoadmap();
+  const { slug, quizNode } = roadmap;
+  const learner = await createLearner("Fuseini Alhassan");
+  await page.goto("/login");
+  await page.getByLabel("Email").fill(learner.email);
+  await page.getByLabel("Password").fill(PASSWORD);
+  await page.getByRole("button", { name: "Sign in" }).click();
+  await expect(page).toHaveURL(/\/dashboard$/);
+
+  await page.goto(`/roadmaps/${slug}/${quizNode.slug}`);
+  await expect(page.getByRole("heading", { name: quizNode.title, level: 1 })).toBeVisible();
+  const panel = page.getByRole("region", { name: "Study Buddy" });
+  // The positive check first: the fallback has no links, so the sign up check alone could pass early.
+  const chat = panel.getByRole("link", { name: "Chat about this topic" });
+  await expect(chat).toHaveAttribute("href", `/learn/${slug}/${quizNode.slug}#study-buddy-heading`);
+  await expect(panel.getByRole("link", { name: "Open Study Buddy" })).toHaveAttribute("href", "/study-buddy");
+  await expect(panel.getByRole("link", { name: /Sign up/ })).toHaveCount(0);
+
+  await chat.click();
+  await expect(page).toHaveURL(new RegExp(`/learn/${slug}/${quizNode.slug}#study-buddy-heading$`));
+  await expect(page.getByRole("region", { name: "Study Buddy" })).toBeVisible();
+});
