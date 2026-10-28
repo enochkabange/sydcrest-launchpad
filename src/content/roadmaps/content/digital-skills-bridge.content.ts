@@ -3642,6 +3642,7 @@ After a month he could type a short paragraph about himself without looking down
         "Treat learning as a skill",
         "Notice where records are used in work",
         "Connect your learning to a goal you care about",
+        "Turn a big wish into a clear goal you can measure",
       ],
       explanation_md: `Learning digital skills takes time and effort, so it helps to keep the reason in view: these skills can lead to work and income. Job adverts for shop attendants, cashiers, office assistants and field officers in Ghana ask for accurate records and payment handling. Digital careers in marketing, design, data and software start from the same foundations you are building now.
 
@@ -3661,13 +3662,66 @@ Many people start an online course full of energy and stop after two weeks. That
 
 Think about the jobs around you. A chop bar owner tracks what she spends on ingredients and what she sells. A market trader in Bolgatanga writes down who owes him money. An NGO field officer records how many households were visited. A shop attendant checks at the end of the day that the MoMo payments match the sales. Each one needs accurate, simple records, often on a phone. This habit is useful in any job and in your own business.
 
-## A worked example
+## Turning a big wish into a clear goal
 
-Zuweira from Savelugu wanted to work in digital marketing but felt it was far away. She set herself one small goal each day: one lesson, or twenty minutes of typing. She started keeping a simple record of the money she earned plaiting hair, using a notebook and later a simple table on her phone. She then looked at what a social media marketing role involves and realised she already took good photos of her clients' hairstyles and posted them. Her small business suddenly looked like a first portfolio.
+"I want a good job" is a wish. A goal is clearer. Try writing yours in four steps:
+
+1. **What exactly?** "Get an office assistant job" or "start taking orders for my snacks on WhatsApp".
+2. **Which skills does it need?** Look at two or three adverts or ask someone who does that work. Write down the skills that appear again and again.
+3. **What will I do this week?** One small action, such as finishing two lessons or practising typing three times.
+4. **How will I know I am moving?** Something you can see: a ticked list, a typing score, a finished practice task.
+
+Read your goal once a week and change it when you learn more. Goals are allowed to grow.
+
+## Your own small business counts
+
+Not every path starts with an employer. Many young people in Ghana sell, cook, plait hair, repair phones or tailor. The skills in this roadmap help there too: clear WhatsApp messages win customers, records show whether you are making money, and good photos show your work. What you build now can later become proof of your skills for an employer.
+
+## Be careful with promises
+
+Online you will see adverts promising quick money from digital skills. Real progress takes steady practice, and nobody can promise you a job or an income. Be wary of anyone who asks you to pay to "unlock" earnings. The scams lesson explains why.
+
+## Using what you have
+
+You can start building useful skills today with the device and data you already have. Every lesson in this roadmap uses free tools, and most practice tasks can be done in under an hour. If a course, app or person says you must pay first before you can start learning the basics, look for a free option. There usually is one.
 
 ## Keep the bigger picture
 
 You do not need to choose a career today. But knowing where these skills can lead makes the daily practice easier. When a lesson feels hard, remember that every skill in this roadmap appears in real job adverts or in the DMP cohort.`,
+      workedExample_md: `**Zuweira finds a first portfolio in her own work**
+
+Zuweira from Savelugu wanted to work in digital marketing but felt it was far away. She followed the four steps for a clear goal.
+
+1. **What exactly?** She wrote: "Get a place on the DMP cohort and aim for the social media specialisation."
+2. **Which skills?** She read the social media roadmap on SydCrest and two adverts for social media assistants. Writing posts, taking good photos and keeping records came up again and again.
+3. **What this week?** She set one small goal each day: one lesson, or twenty minutes of typing.
+4. **How will I know?** She ticked each day in her notebook.
+
+Then she looked at what she already did. She plaits hair and takes photos of her clients' styles to post on her WhatsApp status.
+
+5. She started keeping a simple record of the money she earned from plaiting, first in a notebook and later in a table on her phone.
+6. She chose her ten best client photos, with each client's permission, and wrote a short, clear caption for each.
+
+Her small business suddenly looked like a first portfolio: real photos, real captions and real records. She now had something to show a mentor.`,
+      keyTerms: [
+        { term: "Goal", definition: "A clear thing you want to achieve, with actions you can take and a way to see progress." },
+        { term: "Record", definition: "A written note of what happened, such as money in and out or tasks done." },
+        { term: "Portfolio", definition: "A collection of real work that shows what you can do." },
+        { term: "Digital career", definition: "Work that mainly uses digital tools, such as marketing, design, data, product or software." },
+        { term: "Specialisation", definition: "A focused area you study in depth, such as social media marketing in the DMP cohort." },
+      ],
+      commonMistakes: [
+        "Trying to learn everything at once and giving up after two weeks",
+        "Studying alone with nobody to check in with",
+        "Thinking your own small business does not count as experience",
+        "Believing adverts that promise quick money from digital skills",
+      ],
+      selfCheck: [
+        "Can you write your goal in the four steps from this lesson?",
+        "Which records do you, or someone you know, already keep?",
+        "What work have you already done that could become part of a portfolio?",
+        "Who could you check in with each week about your learning?",
+      ],
       practice_task_md: `**Goal:** Connect your learning to a goal you care about.
 
 **Steps**
@@ -3734,6 +3788,7 @@ You do not need to choose a career today. But knowing where these skills can lea
         "Set a small daily goal at a regular time",
         "Take notes in your own words and test yourself",
         "Learn with others and look after yourself",
+        "Review old lessons and keep going when motivation drops",
       ],
       explanation_md: `The Delta Mentoring Program runs for twelve weeks, with assignments every week. Employers also want people who keep learning new systems and tools on the job. The skill underneath both is the same: steady study habits. Talent helps, but habits are what get people to the end of a course.
 
@@ -3771,11 +3826,65 @@ Find a study partner or a small group. You can meet in person or create a WhatsA
 
 ## Look after yourself
 
-Sleep, food and short breaks matter. Studying for twenty five minutes, then resting for five, is a simple pattern many people find helpful. Long screen sessions tire your eyes, so look away from the screen now and then.
+Sleep, food and short breaks matter. Studying for twenty five minutes, then resting for five, is a simple pattern many people find helpful. Long screen sessions tire your eyes, so look away from the screen now and then. Drink water, stretch your back and hands between sessions, and try not to study late into the night before an early start. A rested mind learns faster than a tired one.
 
-## A worked example
+## Studying on your device without distractions
 
-Amina and Mariama in Tamale are both preparing to apply for the DMP cohort. They agreed to study for thirty minutes each evening after supper and send each other one sentence about what they learned. When Mariama missed three days because of a family funeral, Amina sent her the lessons she had missed and a short summary. Mariama caught up in a weekend. Neither of them studied for long hours, but they kept going, and that made the difference.`,
+The device you learn on is also full of things that pull you away. A few settings help:
+
+* Turn on **Do not disturb** or **Focus** mode for your study time, on a phone or a computer.
+* Close WhatsApp and social media before you start. On a computer, keep only the lesson tab open.
+* Put the phone face down, or in another room, if you are studying on a computer.
+* Download the lesson first if your connection is slow, so you are not waiting and tempted to wander off.
+
+## Come back to old lessons
+
+People forget most of what they learn unless they meet it again. A simple fix: each week, spend ten minutes on lessons from one or two weeks ago. Read your notes, then redo the quiz without looking. If you get something wrong, read that part of the lesson again. This spaced review makes learning stick far better than reading everything once.
+
+## When motivation drops
+
+Every learner has weeks when it feels hard. That is normal, not a sign you should stop. When it happens:
+
+1. Make the goal even smaller, such as five minutes instead of thirty.
+2. Look back at your notes from the first week and see how far you have come.
+3. Tell your study partner or mentor you are struggling. Saying it out loud often helps.
+4. Remind yourself of your reason for learning. Keep it written at the front of your notebook.
+
+Missing a few days does not erase what you have learned. Starting again is the habit that matters.`,
+      workedExample_md: `**Amina and Mariama keep each other going**
+
+Amina and Mariama in Tamale are both preparing to apply for the DMP cohort. Here is the routine they set up.
+
+1. **Time and place.** They agree to study for thirty minutes each evening after supper. Amina uses the kitchen table; Mariama uses her room with the door closed.
+2. **Small goal.** Each evening's goal is one lesson, or one practice task.
+3. **Focus.** They both turn on Do not disturb and close WhatsApp until the thirty minutes are up.
+4. **Notes.** After each lesson they write the main idea, one example and one question in their notebooks.
+5. **Check in.** At the end, each sends the other one sentence about what she learned, in their two person WhatsApp group.
+6. **Review.** On Sundays they quiz each other on the previous week's lessons.
+
+When Mariama misses three days because of a family funeral, Amina sends her the lessons she missed and a short summary. Mariama makes her goal smaller for a few days, then catches up over a weekend.
+
+Neither of them studies for long hours, but they keep going, and that makes the difference.`,
+      keyTerms: [
+        { term: "Daily goal", definition: "A small, specific task you can finish in one study session." },
+        { term: "Self testing", definition: "Checking what you remember without looking, for example by doing a quiz or explaining an idea aloud." },
+        { term: "Spaced review", definition: "Returning to old lessons after a few days or weeks so you remember them longer." },
+        { term: "Study partner", definition: "Someone who learns alongside you, so you can share progress and help each other." },
+        { term: "Focus mode", definition: "A device setting that silences notifications for a set time." },
+      ],
+      commonMistakes: [
+        "Setting a huge goal, such as learning digital marketing this week",
+        "Copying lessons word for word instead of writing notes in your own words",
+        "Reading notes again and again instead of testing yourself",
+        "Studying with WhatsApp and social media open",
+        "Giving up completely after missing a few days",
+      ],
+      selfCheck: [
+        "What is your study time and place, and what will your goal be tomorrow?",
+        "Who could be your study partner, and how will you check in?",
+        "When will you do your weekly review of older lessons?",
+        "What will you do the next time your motivation drops?",
+      ],
       practice_task_md: `**Goal:** Build a study routine you can keep for two weeks.
 
 **Steps**
@@ -3843,6 +3952,7 @@ Amina and Mariama in Tamale are both preparing to apply for the DMP cohort. They
         "Use mobile money confidently",
         "Read your transaction history",
         "Keep a simple money record",
+        "Balance the day's takings and keep receipts",
       ],
       explanation_md: `Cashiers, shop attendants and front desk staff in Ghana are asked to process MoMo and card payments, issue receipts and keep accurate records of every transaction. Office assistants keep purchase records. Field officers record activities. If you freelance or run a small business later, you will need records to know whether you are making money at all. This lesson builds those habits with tools you already have.
 
@@ -3859,6 +3969,8 @@ You may already send and receive MoMo. At work, the extra skills are:
 
 Your MoMo app or menu shows recent transactions: date, amount, who sent or received, and your balance. Look at it once a week. You will spot mistakes, unknown deductions or a payment you forgot.
 
+If you see a transaction you do not recognise, write down its date, amount and transaction ID, then call your network's official customer care number to ask about it. Do not call a number from a message. Acting quickly gives the best chance of sorting it out.
+
 ## A simple record
 
 A record does not need to be complicated. In a notebook, or a simple table on your phone or computer, use these columns:
@@ -3871,21 +3983,59 @@ A record does not need to be complicated. In a notebook, or a simple table on yo
 
 At the end of each day or week, add up money in and money out. The difference shows whether you gained or lost.
 
-## A worked example
+## Keep business money and personal money apart
 
-Fuseini sells phone accessories in Tamale. Here is part of his record for Monday. The prices are only examples to show how the record works:
+If you sell anything, even part time, try not to mix the business money with your own spending. Mixing makes it impossible to see whether the business is doing well. Some traders keep a separate MoMo number or wallet for the business. Others simply record every time they take money out for themselves, as "money out: personal". Either way, the record stays honest.
 
-* Monday, sold 3 chargers, money in 90 cedis, MoMo, ID noted.
-* Monday, sold 1 earphone, money in 25 cedis, cash.
-* Monday, bought transport to market, money out 10 cedis, cash.
+## Receipts
 
-At the end of the day, money in is 115 cedis and money out is 10 cedis, so he is up 105 cedis before stock costs. When a customer later claimed to have paid twice, Fuseini checked his record and the transaction IDs in his MoMo history and settled it calmly.
+A **receipt** is proof that a payment happened. At work you may write receipts in a book, print them from a machine, or send them as a message. A clear receipt has the date, what was bought, the amount, how it was paid and the business name. When you pay for something for work, ask for a receipt and keep it with your records, or take a photo of it and save it in a folder.
+
+## Checking at the end of the day
+
+In many shops, the last job of the day is to **balance** the takings:
+
+1. Count the cash in the drawer.
+2. Add up the MoMo payments in the business account's history.
+3. Add the two together and compare with the total sales in your record.
+4. If they do not match, check each line again before you assume anything is missing. Often it is a sale that was not written down.
 
 ## From notebook to spreadsheet
 
 In DMP week 2 you will learn Google Sheets, which can add up these columns for you. If you start a record on paper, a phone or a computer now, you will already understand what a spreadsheet is for when you get there.
 
 Accurate records build trust with employers, customers and anyone who might one day lend to or invest in your business.`,
+      workedExample_md: `**Fuseini records a Monday and settles a dispute**
+
+Fuseini sells phone accessories in Tamale. He keeps his record as a simple table in a notes app on his phone. The prices below are only examples to show how the record works.
+
+1. A customer buys 3 chargers and pays by MoMo. Before handing them over, Fuseini checks the business MoMo history and sees the payment. He writes: "Monday, sold 3 chargers, money in 90 cedis, MoMo, ID noted."
+2. Another customer pays cash for an earphone. He writes: "Monday, sold 1 earphone, money in 25 cedis, cash."
+3. He pays for transport to the market. He writes: "Monday, transport to market, money out 10 cedis, cash."
+4. At closing time he counts the cash and checks the MoMo history. Together they match his record.
+5. He adds up: money in is 115 cedis, money out is 10 cedis. He is up 105 cedis for the day, before the cost of his stock.
+
+On Wednesday the first customer returns and says she paid twice. Fuseini stays calm. He opens his record, finds Monday's line and the transaction ID, then checks his MoMo history with her. There is only one payment. She checks her own history and agrees. A clear record turned a possible argument into a two minute check.`,
+      keyTerms: [
+        { term: "Transaction", definition: "One payment or transfer of money, in or out." },
+        { term: "Transaction ID", definition: "The reference number for a mobile money payment. It helps prove and settle disputes." },
+        { term: "Transaction history", definition: "The list of recent payments in your MoMo app or menu, with dates and amounts." },
+        { term: "Money in and money out", definition: "Money you receive and money you spend. The difference shows whether you gained or lost." },
+        { term: "Receipt", definition: "Proof of a payment, showing the date, items, amount, how it was paid and who was paid." },
+        { term: "Balancing", definition: "Checking that the cash and MoMo you hold match the sales in your record." },
+      ],
+      commonMistakes: [
+        "Handing over goods because of a screenshot or SMS instead of checking the payment yourself",
+        "Entering your PIN before reading the receiver's name on the confirmation screen",
+        "Mixing business money and personal money with no record of either",
+        "Not writing down small amounts, so the totals never match",
+      ],
+      selfCheck: [
+        "How do you confirm that a MoMo payment really arrived?",
+        "Where will you keep your money record: a notebook, a phone or a computer?",
+        "What would you do if the day's cash and MoMo did not match your record?",
+        "What did your last week of records show about where your money goes?",
+      ],
       practice_task_md: `**Goal:** Keep a simple money record for one week.
 
 **Steps**
@@ -3953,6 +4103,7 @@ Accurate records build trust with employers, customers and anyone who might one 
         "Explore some digital career paths",
         "Ask yourself useful questions about a career",
         "Talk to people who do the work",
+        "Name first roles and check remote offers safely",
       ],
       explanation_md: `It is easier to keep practising when you know where the practice can lead. Digital skills open doors to many kinds of work, from entry level office and customer service roles to careers in marketing, design, data, product and software. Some of these jobs exist in Tamale, Bolgatanga and Wa, some in Accra and Kumasi, and some can be done remotely. You do not need to choose now, but exploring the options helps you stay motivated.
 
@@ -3980,11 +4131,61 @@ There are no wrong answers. Many people try one path and move to another later.
 
 If you know anyone who works with computers, at an NGO, a bank, a telecom shop or a business centre, ask them what they do all day. Most people are happy to talk about their work for ten minutes. Write down what surprised you.
 
-## A worked example
+Good questions to ask:
 
-Sumaila thought tech only meant coding, which worried him because he disliked maths. He read the digital marketing and UI design roadmaps on SydCrest and spoke to a cousin who manages social media pages for shops in Tamale. He realised he enjoyed writing short, catchy messages and taking product photos. He decided to aim for the social media specialisation in the DMP cohort. Knowing his direction made his typing and English practice feel worthwhile.
+1. What does a normal day look like for you?
+2. Which tools or apps do you use most?
+3. What did you have to learn when you started?
+4. What do you wish you had known earlier?
+5. What would you practise if you were starting now?
+
+Thank them afterwards with a short message. If they offered to help again, keep in touch, but do not ask them for a job in the first conversation.
+
+## First steps into the work
+
+Most people do not start with a big title. Common first roles that use the skills in this roadmap include front desk or office assistant, customer service agent, shop attendant who handles MoMo and records, data entry or field survey work for an NGO, and social media assistant for a small business. These roles build experience, and many people move from them into the paths above.
+
+## Working remotely
+
+Some digital work can be done from anywhere with a reliable connection, for employers in other towns or other countries. It is a real option, but it needs care. Remote jobs usually expect strong written English, reliable internet and a computer, and they attract many scams. Use the checks from the scams lesson: research the company, never pay a fee, and never share codes or PINs.
+
+## You do not have to decide alone
+
+Choosing a direction is easier with help. A mentor, a teacher or someone already doing the work can tell you what a path is really like. SydCrest's mentors in the DMP cohort can help too. Try one path, see how it feels, and adjust. Changing direction after learning something new is a sign of good judgement, not failure.
 
 Every path above starts with the foundations in this roadmap: confident use of your phone or computer, clear communication, safe accounts, files and forms, and basic computer skills.`,
+      workedExample_md: `**Sumaila discovers a path that suits him**
+
+Sumaila from Tamale thought tech only meant coding, which worried him because he disliked maths. He decided to explore properly before giving up.
+
+1. He answered the five questions in the lesson in his notebook. He wrote "yes" next to enjoying writing and talking to people, and next to drawing and noticing what is confusing.
+2. He opened two SydCrest roadmaps, digital marketing and UI and UX design, and read the first five topics of each.
+3. He messaged his cousin, Kwame, who manages social media pages for shops in Tamale, and asked for ten minutes.
+4. On the call he asked the five questions from the lesson. Kwame said most of his day is writing short posts, taking product photos, replying to customers and checking which posts got the most response.
+5. Sumaila wrote down what surprised him: very little maths, and a lot of clear writing.
+6. He thanked Kwame with a short message.
+7. He wrote three sentences: "Social media marketing interests me most. I like writing short, catchy messages and taking photos. I need typing and clear English from this roadmap."
+
+He decided to aim for the social media specialisation in the DMP cohort. Knowing his direction made his typing and English practice feel worthwhile.`,
+      keyTerms: [
+        { term: "Career path", definition: "A direction of work you can grow in over time, such as data or digital marketing." },
+        { term: "Digital marketing", definition: "Helping businesses reach customers online through social media, search, email and adverts." },
+        { term: "UI and UX design", definition: "Designing how apps and websites look and how easy they are to use." },
+        { term: "Entry level role", definition: "A first job that needs little or no previous work experience." },
+        { term: "Remote work", definition: "Work done away from the employer's office, usually online." },
+      ],
+      commonMistakes: [
+        "Thinking tech only means coding and giving up before exploring",
+        "Choosing a path only because a friend chose it",
+        "Asking a contact for a job in your first conversation",
+        "Trusting remote job offers without checking the company",
+      ],
+      selfCheck: [
+        "Which two paths from this lesson match your answers to the five questions?",
+        "Who do you know who uses a computer or smartphone for work?",
+        "What would you ask them first?",
+        "Which skill from this roadmap does your chosen path need most?",
+      ],
       practice_task_md: `**Goal:** Explore at least two digital career paths.
 
 **Steps**
@@ -4051,6 +4252,7 @@ Every path above starts with the foundations in this roadmap: confident use of y
         "Describe what the Delta Mentoring Program covers",
         "See how this bridge prepared you",
         "Map your progress to DMP week 1",
+        "Get your study setup ready before the cohort",
       ],
       explanation_md: `This is the last section of the Digital Skills Bridge. Its job is to check that you are ready for the first week of the Delta Mentoring Program, SydCrest's twelve week mentored cohort in digital skills and digital marketing, and to help you apply.
 
@@ -4082,11 +4284,68 @@ You are not expected to be an expert. The cohort will teach you. But arriving wi
 * **Readiness checklist.** A practical check of the skills week 1 assumes, with a link back to any lesson you should revisit.
 * **Apply to the DMP cohort.** Where to sign up, what to mention about your progress, and what to do if you do not get a seat this time.
 
-## A worked example
+## What a cohort week asks of you
 
-Hawa finished the bridge over two months. Before applying, she went through the readiness checklist. She could do everything except join a video call confidently, so she spent one more evening practising with a friend. When the cohort began, she followed along as her mentor explained files and folders, and she already knew where her own files lived. It felt like the next step, not a jump into the unknown.
+Every week of the cohort has goals and an assignment. Week 1's assignment, for example, is a short tip sheet written in Google Docs. Later weeks ask for things such as a short presentation, a content plan and, near the end, a portfolio with several pieces of work. Your mentor will explain how sessions run and when work is due.
+
+That means you need three things in place before you start:
+
+1. **Regular time.** Set aside study time on several days each week, not just one long session.
+2. **Regular computer access.** Some tasks are much easier on a computer: writing documents, building slides, working in a spreadsheet. Your time slot from the computer section matters here.
+3. **A way to stay connected.** Enough data or WiFi for messages, the occasional video call and opening shared documents.
+
+## Getting your setup ready
+
+Before you apply, check that these are in place:
+
+* Your own email address, with your own recovery number and two step verification on.
+* A Google Drive folder for your coursework, separate from your Job documents folder.
+* Your study routine and study partner from the study habits lesson.
+* A practice log showing your typing progress.
+* Your network's official customer care number saved, and your WhatsApp privacy set.
+
+None of this needs money beyond data. It just needs a little time.
+
+## If some parts still feel shaky
+
+That is fine. The bridge is not a test you pass or fail. Use the readiness checklist in the next lesson to find the exact gaps, revisit those lessons, and practise once more. Many people find that one or two extra sessions are enough.
+
+## Telling people at home
+
+A twelve week cohort is easier when the people around you understand it. Tell your family or employer what you are doing, which days you will study, and why it matters to you. Ask for the quiet time and the device access you need. Support at home often makes the difference between finishing and dropping out.
 
 Whatever happens with your application, the skills you built here are yours. They already make you more ready for many entry level jobs.`,
+      workedExample_md: `**Hawa checks she is ready for week 1**
+
+Hawa finished the bridge over two months. Before applying, she used the practice task for this lesson.
+
+1. She wrote the four parts of DMP week 1 in her notebook: computer hardware, files and folders, safe browsing and phishing, Gmail with attachments.
+2. Next to each she wrote the bridge lessons that prepared her. For files and folders she wrote "Photos, documents and files" and "Files, forms and finding things".
+3. She scored herself from 1 to 3. Files, email and scams were all 3. Computer hardware was 2, because she knew the parts but had only used a desktop.
+4. Then she went through the readiness checklist. Everything was a yes, except joining a video call confidently, which was "nearly".
+5. She spent one more evening practising a video call with a friend: muting, turning the camera off and on, and rejoining after leaving.
+6. She made a "DMP coursework" folder in Google Drive and confirmed her Saturday slot at the library computer.
+
+When the cohort began, she followed along as her mentor explained files and folders, and she already knew where her own files lived. It felt like the next step, not a jump into the unknown.`,
+      keyTerms: [
+        { term: "Delta Mentoring Program", definition: "SydCrest's twelve week mentored cohort in digital skills and digital marketing, often called the DMP." },
+        { term: "Cohort", definition: "A group of learners who start and move through a programme together." },
+        { term: "Mentor", definition: "An experienced person who guides you, answers questions and gives feedback on your work." },
+        { term: "Assignment", definition: "A task you complete and submit each week to show what you have learned." },
+        { term: "Specialisation", definition: "The focused area you choose in weeks 7 to 9: SEO and content, social media, or Google Ads." },
+      ],
+      commonMistakes: [
+        "Applying without checking which week 1 skills still feel shaky",
+        "Planning to study only on one day a week",
+        "Having no regular computer access arranged before the cohort starts",
+        "Thinking you must be an expert before you apply",
+      ],
+      selfCheck: [
+        "Which part of DMP week 1 do you feel least ready for, and which lesson will help?",
+        "Where and when will you have regular computer access during the cohort?",
+        "Is your email protected with your own recovery number and two step verification?",
+        "How many days a week can you set aside for study?",
+      ],
       practice_task_md: `**Goal:** Map your bridge progress to DMP week 1.
 
 **Steps**
@@ -4153,6 +4412,7 @@ Whatever happens with your application, the skills you built here are yours. The
         "Use the readiness checklist honestly",
         "Check your device, communication, accounts and files",
         "Decide what to do with your results",
+        "Turn your gaps into a short plan",
       ],
       explanation_md: `Before you apply to the DMP cohort, or to an entry level job that asks for basic digital skills, it helps to check honestly what you can already do. This checklist covers what DMP week 1 assumes, plus the everyday skills from the rest of this roadmap. It is not an exam. It is a way to find any small gaps so you can fix them before they slow you down.
 
@@ -4204,11 +4464,62 @@ For each item, do it for real, right now if you can, rather than just thinking "
 * **Some Nearly:** practise those items once more this week. You can still apply.
 * **Any Not yet:** go back to that lesson in this roadmap. Each item above matches a lesson by name.
 
-## A worked example
+## Turn gaps into a short plan
 
-Issahaku went through the list. He had Yes for most items, Nearly for scanning a document and Not yet for two step verification. He spent twenty minutes that evening turning on two step verification for Gmail and WhatsApp, and scanned his certificate with Google Drive. The next day every item was Yes or Nearly, and he applied with confidence.
+A list of Not yet items can feel heavy. Turn it into a plan instead:
+
+1. Write each Not yet or Nearly item on its own line.
+2. Next to it, write the lesson name. The checklist headings match the sections of this roadmap, so it is easy to find.
+3. Give each item a day this week. Most take less than half an hour.
+4. When you have practised, do the item for real again and update the mark.
+
+Fix safety items first, such as two step verification and recovery numbers, because they protect everything else.
+
+## Ask someone to watch
+
+It is easy to be too kind or too hard on yourself. Ask a friend, family member or mentor to watch you do three items, such as joining a video call, sending a PDF as a Document and typing a short paragraph. They do not need to be experts. They just tell you what they saw: did you do it without help, and did it work?
+
+## Ready for jobs too
+
+The same checklist describes what many entry level employers mean by basic digital skills: answering calls well, clear messages and email, safe accounts, sending documents, filling in forms, finding information and basic computer use. If an advert asks for these, you can now point to real things you have done, rather than just saying "I am good with computers".
+
+## Repeat the check later
+
+Skills fade if you stop using them. Do the checklist again a month from now, or just before the cohort starts. It takes about an hour, and it shows you what to refresh.
 
 Keep your completed checklist. It is useful evidence of your progress when you apply.`,
+      workedExample_md: `**Issahaku works through the checklist**
+
+Issahaku from Yendi sets aside one evening to do the readiness checklist properly.
+
+1. He copies the headings and items into his notebook.
+2. He does each item for real. He connects to WiFi, sends a PDF to his sister as a Document, joins a short WhatsApp video call with a friend and types a paragraph on the library computer the next morning.
+3. He marks each one. Most are Yes. Scanning a document is Nearly, because he had to look up where the scan button is. Two step verification is Not yet.
+4. He turns his gaps into a plan. Two step verification goes first, because it is a safety item. Scanning goes second.
+5. That evening he spends twenty minutes turning on two step verification for Gmail and WhatsApp, and saves his Google backup codes somewhere private at home.
+6. Then he scans his certificate with Google Drive, names it properly and saves it to his Job documents folder.
+7. He asks his friend Selorm to watch him send the PDF, join a video call and type a paragraph. Selorm says all three worked without help.
+8. He updates his marks. Every item is now Yes or Nearly.
+
+He applies with confidence, and keeps the checklist as evidence of his progress.`,
+      keyTerms: [
+        { term: "Readiness checklist", definition: "A list of skills you check by doing each one for real before applying." },
+        { term: "Yes, Nearly, Not yet", definition: "The three marks: did it without help, did it with a little help, could not do it yet." },
+        { term: "Gap", definition: "A skill you cannot do yet, or not without help." },
+        { term: "Evidence", definition: "Something you can show to prove a skill, such as a completed checklist or a practice log." },
+      ],
+      commonMistakes: [
+        "Ticking items from memory instead of doing them for real",
+        "Marking everything Yes to feel good, then struggling in week 1",
+        "Feeling discouraged by Not yet items instead of turning them into a plan",
+        "Leaving safety items until last",
+      ],
+      selfCheck: [
+        "Which items on the checklist did you mark Nearly or Not yet?",
+        "Which lesson will you revisit first, and on which day?",
+        "Who could watch you do three items and tell you honestly how it went?",
+        "Which items could you point to when an advert asks for basic digital skills?",
+      ],
       practice_task_md: `**Goal:** Complete the readiness checklist honestly.
 
 **Steps**
@@ -4276,6 +4587,7 @@ Keep your completed checklist. It is useful evidence of your progress when you a
         "Prepare before you apply",
         "Write about yourself clearly",
         "Fill in the form carefully and plan if you are not selected",
+        "Follow up after you apply",
       ],
       explanation_md: `You have built real foundations: confident use of your phone or computer, professional communication, safe accounts, files and forms, and first steps on a computer. The next step is to try for a seat in the Delta Mentoring Program. The first cohort is a free pilot with 25 seats, starting in January 2027. Applying is itself a useful skill, because job applications in Ghana use the same steps: read the instructions, fill in a form, attach documents and write about yourself clearly.
 
@@ -4305,9 +4617,54 @@ Use everything from the online forms lesson when you fill in the waitlist form a
 
 The pilot cohort has only 25 seats, so not everyone who joins the waitlist will get one. That does not mean you are not good enough. Keep learning on SydCrest's free roadmaps, keep your practice log going, and watch the Programme page. If another cohort is announced, apply again with even more progress to show. Everything you learn in the meantime makes you more ready for both the cohort and for jobs.
 
-## A worked example
+## After you apply
 
-Wumpini wrote: "My name is Wumpini Alhassan from Savelugu. I sell provisions and want to learn social media marketing to grow sales. I completed the Digital Skills Bridge, I now type a paragraph without looking at the keys, and I keep weekly sales records. I can study for six hours each week in the evenings." It is short, clear and specific.`,
+Applying is not the end of the job. Keep an eye out for a reply:
+
+* Check your email inbox, and your Spam folder, every day or two.
+* Keep your phone charged and answer unknown numbers politely, in case it is SydCrest calling. Remember your scam checks: the real team will not ask for a fee, a PIN or a code.
+* Reply quickly and clearly to any message, using the habits from the communication lessons.
+* Keep studying. Progress you make now is something you can mention later.
+
+## The same steps work for jobs
+
+Everything in this lesson also works for job applications: use the official source, read all the instructions, prepare your documents, write about yourself with specific examples, fill in the form carefully and follow up. Each application you make gets easier.
+
+Keep a simple list of everything you apply for: the date, what it was, the link, and any reply. It stops you missing a follow up, and it shows you how much you are doing even when replies are slow.`,
+      workedExample_md: `**Wumpini writes her application**
+
+Wumpini sells provisions in Savelugu and wants a seat in the pilot cohort.
+
+1. She opens the SydCrest website herself and goes to the **Programme** page, instead of using a link someone forwarded to her.
+2. She reads the whole page and the form before typing anything, and notes what it asks.
+3. In her notes app she drafts her answer using the four part structure.
+4. **Who she is:** "My name is Wumpini Alhassan from Savelugu. I sell provisions."
+5. **Why she wants to join:** "I want to learn social media marketing to grow my sales."
+6. **What she has done:** "I completed the Digital Skills Bridge, I now type a paragraph without looking at the keys, and I keep weekly sales records."
+7. **Her commitment:** "I can study for six hours each week in the evenings."
+8. She reads it aloud and asks her study partner to read it. Her partner suggests nothing more, because it is already short.
+9. She pastes it into the form, checks her email address and phone number digit by digit, submits, and takes a screenshot of the confirmation.
+
+Her final answer is four sentences long. It is short, clear and specific, and every claim in it is something she has really done.`,
+      keyTerms: [
+        { term: "Waitlist", definition: "A list of people who want a place, used when there are fewer seats than applicants." },
+        { term: "Pilot", definition: "A first, smaller run of a programme used to test and improve it." },
+        { term: "Application", definition: "The form and information you send to ask for a place in a programme or a job." },
+        { term: "Commitment", definition: "The time and effort you promise to give, stated honestly." },
+        { term: "Specific example", definition: "A real, checkable detail, such as practising typing for fifteen minutes a day, instead of a general claim." },
+      ],
+      commonMistakes: [
+        "Using a forwarded link or paying someone who promises to secure a seat",
+        "Writing big promises instead of specific examples",
+        "Promising more weekly hours than you can really give",
+        "Not checking your inbox or Spam folder after applying",
+      ],
+      selfCheck: [
+        "What would you write for each of the four parts about yourself?",
+        "Which two specific examples of progress from this roadmap will you mention?",
+        "How many hours a week can you honestly give to the cohort?",
+        "What will you keep doing if you do not get a seat this time?",
+      ],
       practice_task_md: `**Goal:** Prepare a strong application.
 
 **Steps**
@@ -4347,22 +4704,22 @@ Wumpini wrote: "My name is Wumpini Alhassan from Savelugu. I sell provisions and
             prompt: "Which of these belongs in the four part structure for writing about yourself?",
             options: [
               "Your favourite food",
-              "What you have already done on this roadmap",
               "The phone numbers of two friends who can vouch for you",
               "Your MoMo PIN",
+              "What you have already done on this roadmap",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The structure includes who you are, why, what you have done and your commitment.",
           },
           {
             prompt: "What should you do if you do not get a seat this time?",
             options: [
               "Stop learning completely",
-              "Keep learning on the free roadmaps and apply again",
               "Pay someone who says they can get you a seat next time",
+              "Keep learning on the free roadmaps and apply again",
               "Delete your email account",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "The pilot has only 25 seats, so keep learning and apply again with more progress if another cohort opens.",
           },
         ],
