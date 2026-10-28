@@ -2010,92 +2010,136 @@ When the director asks why she wrote it this way, she explains: the audience is 
     },
     "search-and-local": {
       outcomes: [
-        "Explain how search differs from social media",
-        "Tell apart two kinds of search visibility",
-        "Check how visible local businesses are in search",
+        "Explain why search catches customers who are ready to act",
+        "Describe how maps, profiles and websites work together in local search",
+        "Check how a business appears when someone searches for it",
       ],
-      explanation_md: `When someone in Tamale needs a phone repairer, a guest house or a printing shop, many of them open Google or Google Maps and type what they want. Those people are not scrolling for fun. They want something now. Businesses that show up with correct details, good photos and genuine reviews often get the call. Search skills appear in several Ghanaian digital marketing adverts, and they are a full specialisation in SydCrest's Delta Mentoring Program.
+      explanation_md: `When someone in Tamale types "tailor near me" or someone in Accra searches "salon open now East Legon", they are not idly scrolling. They want something, often today. Search is the channel that catches people at that moment. If a business does not show up, or shows up with the wrong hours or an old phone number, the customer simply goes to the next result. Junior marketing adverts in Ghana mention SEO, Google tools and local visibility, and it is one of the DMP specialisations.
 
-## How search differs from social media
+## Social media and search are different
 
-On social media, you put content in front of people who were not looking for it. On search, people come looking, and your job is to be found and to look trustworthy when they arrive. That changes how you think:
+On social media, you go to people: posts appear in feeds whether or not anyone was looking for them. With search, people come to you: they type what they need, and the search engine decides which results are most useful. That makes search slower to build but very valuable, because the people who arrive already want what the business offers.
 
-* You start from the words people type, not from what you want to say.
-* Accuracy matters a lot. A wrong phone number or closed hours lose the customer instantly.
-* Results build slowly. Search work often takes weeks or months to show, but it keeps working once it does.
+## The three pieces of local visibility
 
-## Two kinds of search visibility
+For most small Ghanaian businesses, search visibility rests on three pieces:
 
-* **Local search.** Results on Google Maps and the map box that appears for searches like "pharmacy near me" or "hotel in Bolgatanga". These mostly come from Google Business Profile listings.
-* **Organic search.** The ordinary list of web pages that Google ranks for a search. Getting there is the work of search engine optimisation, or SEO.
+* **A Google Business Profile.** The box with name, map pin, photos, hours, phone number and reviews that shows on Google Maps and in search. Free, and often the first thing a nearby customer sees.
+* **A simple website or web page.** Somewhere the business controls, with clear text about what it offers and where. Search engines read it to understand the business.
+* **Mentions elsewhere.** Listings in local directories, a partner's website, a news story or a tourism site. These help search engines and people trust that the business is real.
 
-There are also paid search ads, which appear above or among results. You will meet those in the paid advertising section.
+They work together. A profile might link to the website; the website shows the same address and number; directories repeat the same details. Consistency matters: if the hours or phone number differ from place to place, both customers and search engines get confused.
+
+## How to check a business's visibility
+
+Before you change anything, see what customers see. This takes about fifteen minutes on a phone or computer:
+
+1. **Search the business's name** with its town. Does a profile appear? Are the details correct?
+2. **Search the service plus the town,** such as "guest house Wa" or "shea butter Tamale". Does the business appear at all? Who appears instead?
+3. **Open Google Maps** and search the same words. Is the map pin in the right place?
+4. **Check reviews.** How many are there, how recent, and does the business reply?
+5. **Look for a website.** If there is one, does it say clearly what the business does and where? Does it load quickly on a phone?
+6. **Write down the gaps:** wrong details, no profile, no reviews, no website, competitors showing up instead.
+
+## Phone and computer searches
+
+Many local searches happen on phones, often on the move, so the profile's phone number, directions and opening hours matter most. Searches on a computer at work or school are more likely to lead to a website visit. Check results on both if you can, because what appears first can look different on each screen.
+
+## Honest expectations
+
+Nobody can guarantee a business the top spot on Google, and anyone who promises it is not being honest. Search engines aim to show the most relevant, trustworthy and helpful results. Your job is to make the business's information complete, correct and useful, and to keep it that way. Results often take weeks or months to change, so set expectations with clients early.
 
 ## What this section covers
 
-* **Google Business Profile:** creating and keeping a free listing that shows on Maps and Search.
-* **SEO and keyword basics:** how search engines find and rank pages, and how to research what people actually type.
+* **Google Business Profile.** Creating, verifying and keeping a profile fresh, and handling reviews honestly.
+* **SEO and keyword basics.** How search engines work, why a website matters, and how to write web content using the words customers search for.
 
-Even businesses without a website can benefit. A complete Business Profile, an active social page and consistent details everywhere already help people find them.
+Deeper topics such as detailed keyword research, on page optimisation, backlinks and local listings outreach are covered in the SEO track of the specialisations roadmap. This section gives you the base every one of those builds on, and it is enough to make a real difference for most small local businesses.`,
+      workedExample_md: `Hawa sells shea butter in Tamale. Her nephew Fuseini runs a visibility check on his phone.
 
-## A small example
+1. **Name search:** "Hawa's Pure Shea Tamale" shows nothing. No profile exists.
+2. **Service search:** "shea butter Tamale" shows two other sellers with profiles, photos and a few reviews each.
+3. **Maps:** Hawa's home workshop does not appear at all.
+4. **Reviews:** none, since there is no profile.
+5. **Website:** none. Her Facebook page has an old phone number.
+6. **Gaps written down:** no profile, no reviews, wrong number on Facebook, competitors appear instead of her.
 
-Sumaila runs a guest house in Bolgatanga. Travellers kept saying they could not find it, and some went to a competitor whose listing showed up on Maps with photos and reviews. You search "guest house Bolgatanga" and confirm his business is missing. You help him create a Business Profile with the right location pin, phone number, photos of the rooms and hours, and complete Google's verification steps. Over the next weeks, he asks happy guests to leave honest reviews. Travellers start calling from the listing, and he tells you which calls came from Maps so you can track it.`,
-      practice_task_md: `**Goal:** Check how visible a few local businesses are in search.
+He explains to Hawa that people searching "shea butter Tamale" are ready to buy, and right now they find her competitors. They agree a plan: create and verify a Google Business Profile with a service area rather than her home address, fix the Facebook number so every channel matches, and build a simple one page site later. He also sets honest expectations: it may take weeks before she appears for the service search.
+
+A month later, a customer messages Hawa saying she found her on Google Maps.`,
+      keyTerms: [
+        { term: "Search engine", definition: "A tool such as Google that finds web pages and places that match what someone types." },
+        { term: "Local search", definition: "A search for something nearby, such as a service plus a town or \"near me\"." },
+        { term: "Google Business Profile", definition: "A free listing that shows a business on Google Maps and in search results." },
+        { term: "Visibility", definition: "How easily a business can be found when people search." },
+        { term: "Consistency", definition: "Showing the same name, address, phone number and hours everywhere online." },
+      ],
+      commonMistakes: [
+        "Promising a client the top spot on Google",
+        "Leaving different phone numbers and hours on different sites",
+        "Changing things before checking what customers currently see",
+        "Expecting search results to change in a few days",
+      ],
+      selfCheck: [
+        "What would a customer see today if they searched for a business you know plus its town?",
+        "How is reaching people through search different from reaching them on social media?",
+        "Which of the three pieces of local visibility is weakest for that business?",
+      ],
+      practice_task_md: `**Goal:** Run a local visibility check for one business.
 
 **Steps:**
-1. Pick three types of business in your town, such as a pharmacy, a guest house and a tailor.
-2. On Google and Google Maps, search for each type plus your town name, for example "tailor Tamale".
-3. Note which businesses appear, whether their details look correct, whether they have photos, and whether they have reviews.
-4. Find one real business you know that is missing or has a poor listing.
-5. Write three things that business could do to be found more easily.
+1. Choose a local business, such as a guest house, salon, clinic or shop.
+2. Follow the six checking steps in the lesson on your phone or computer.
+3. Take screenshots of what you find for the name search and the service search.
+4. Write down every gap, and the two or three competitors who appear instead.
+5. Write three improvements in order of importance.
 
-**Done looks like:** A short table of search results for three searches and a note of recommendations for one business.`,
+**Done looks like:** A one page visibility check with screenshots, a list of gaps and three prioritised improvements you could explain to the owner.`,
       quiz: {
         questions: [
           {
-            prompt: "How do people on search differ from people scrolling social media?",
+            prompt: "Why are people who search \"tailor near me\" valuable to a business?",
             options: [
-              "They are looking for something specific, often right now",
-              "They never buy anything",
-              "They only want entertainment",
-              "They cannot see business details such as phone numbers or opening hours",
+              "They are already looking for what the business offers, often today",
+              "They always have larger budgets than people who scroll social media apps each evening",
+              "They cannot see any competitors in the results",
+              "Search engines pay businesses for each visitor",
             ],
             answer_index: 0,
-            explanation: "On search, people come looking with a need.",
+            explanation: "Search catches people at the moment they want something.",
           },
           {
-            prompt: "Where do most local results on Google Maps come from?",
+            prompt: "Why does consistency of details matter across profiles, websites and directories?",
             options: [
-              "Facebook Pages",
-              "WhatsApp catalogues",
-              "Google Business Profile listings",
-              "Email newsletters",
+              "Search engines only read one site per business",
+              "Directories charge businesses a fee every time their details are different",
+              "Different hours or numbers confuse customers and search engines",
+              "It makes the website load faster",
             ],
             answer_index: 2,
-            explanation: "The lesson says local results mostly come from Google Business Profile listings.",
+            explanation: "The lesson says inconsistent details confuse both customers and search engines.",
           },
           {
-            prompt: "What is SEO?",
+            prompt: "What should you do before changing a business's search presence?",
             options: [
-              "Paying for ads that appear above the ordinary search results",
-              "A type of social media video",
-              "A rule for email newsletters",
-              "The work of getting pages to rank in ordinary search results",
-            ],
-            answer_index: 3,
-            explanation: "Search engine optimisation aims at organic search results.",
-          },
-          {
-            prompt: "Can a business without a website still improve its search visibility?",
-            options: [
-              "No, search only works for businesses that have their own website",
-              "Yes, with a complete Business Profile and consistent details",
-              "Only by buying ads",
-              "Only if it has more than one branch",
+              "Delete the old profile and start again",
+              "Check what customers currently see when they search",
+              "Buy a paid listing on every directory you can find in Ghana",
+              "Ask the owner to change the business name",
             ],
             answer_index: 1,
-            explanation: "The lesson says a complete Business Profile and consistent details already help.",
+            explanation: "The lesson's first job is a visibility check of what customers see now.",
+          },
+          {
+            prompt: "A company promises your client the top spot on Google within a week. What does the lesson say?",
+            options: [
+              "Accept quickly before competitors do",
+              "Only accept if the price is in cedis",
+              "Top spots are guaranteed for verified businesses",
+              "Nobody can guarantee the top spot, so the promise is not honest",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says nobody can guarantee rankings.",
           },
         ],
         pass_threshold: 75,
@@ -2103,95 +2147,127 @@ Sumaila runs a guest house in Bolgatanga. Travellers kept saying they could not 
     },
     "google-business-profile": {
       outcomes: [
-        "Set up a Google Business Profile",
-        "Manage reviews",
-        "Keep a profile fresh",
+        "Create a Google Business Profile with accurate details for a shop",
+        "Explain how verification works and why methods differ",
+        "Ask for, and reply to, genuine reviews within Google's rules",
+        "Keep a profile fresh with photos, hours and updates",
       ],
-      explanation_md: `A Google Business Profile is the box with a business's name, map pin, photos, hours, phone number and reviews that appears on Google Maps and in Google Search. It is free, it works even without a website, and for a nearby customer it is often the first thing they see. Setting up and maintaining profiles is a simple, valuable service for shops, guest houses, clinics, schools and churches, and it appears in both Google's free Skillshop training and the DMP cohort.
+      explanation_md: `A Google Business Profile, once called Google My Business, is the box with a business's name, map pin, photos, hours, phone number and reviews that appears on Google Maps and in Google Search. It is free, it works even without a website, and for a nearby customer it is often the first thing they see. Setting up and maintaining profiles is a simple, valuable service for shops, guest houses, clinics, schools, salons and churches, and it is part of the DMP cohort's week on digital marketing concepts.
 
-## Setting up a profile
+## Before you start
 
-You can create a profile from Google Maps or Google's Business Profile pages. The main fields are:
+Gather the facts first, so you do not enter guesses: the exact name on the signboard, the main category, the address or the areas the business serves, opening hours, the phone or WhatsApp number customers should use, a website or social link, and several good daylight photos. Agree with the owner whose Google account will own the profile. It should be the business's account, with you added as a manager, so the owner never loses control if you stop working together.
 
-* **Business name.** The real name the business uses on its signboard. Do not stuff extra keywords into it, such as "Best Cheap Tailor Tamale". That breaks Google's guidelines and can get the profile suspended.
-* **Category.** The main type of business, such as "Tailor" or "Guest house". Choose the most accurate one.
-* **Location or service area.** A shop customers visit gets an exact map pin. A business that travels to customers, like a plumber, can show a service area instead of a home address.
-* **Hours.** Including special hours for holidays.
-* **Phone number and website or social link.** A WhatsApp number works if that is how the business takes orders.
-* **Photos.** The outside so people can recognise it, the inside, products and staff (with permission).
+## Creating the profile, step by step
 
-Google then asks the owner to verify that they really run the business. The methods vary by country and change over time, so follow the steps Google shows.
+You can start from Google Maps or from Google's Business Profile pages, on a phone or a computer. The screens change from time to time, so follow what Google shows, but the main steps are:
+
+1. **Enter the business name** exactly as customers know it. Do not add extra words such as "Best Cheap Tailor Tamale". Stuffing keywords into the name breaks Google's guidelines and can get the profile suspended.
+2. **Choose the main category,** the most accurate one, such as "Tailor", "Beauty salon" or "Guest house". You can add a few extra categories later if they are true.
+3. **Set the location.** A shop customers visit gets an exact map pin. A business that travels to customers, such as a caterer or a plumber, can show a service area instead of a home address.
+4. **Add contact details:** phone number and a website or social link. A WhatsApp number works if that is how the business takes orders.
+5. **Verify the business** (see below).
+6. **Complete the profile:** hours, special hours for holidays, a short description, services or products, and photos of the outside so people recognise it, the inside, products and staff (with permission).
+
+## Verification
+
+Google asks the owner to prove they really run the business. According to Google's help pages, methods can include a phone call or text, email, a video recording, a live video call or a postcard, and Google chooses which ones are offered based on the business type, region and other factors. You cannot pick the method yourself, and some businesses need more than one step. Read the instructions on screen carefully, and keep the signboard, shop interior and proof of the business ready in case a video is requested.
 
 ## Reviews
 
 Reviews strongly influence whether people trust a business. Good practice:
 
-* Ask happy customers to leave an honest review, for example with a short link or a QR code at the counter.
-* Never pay or reward people for reviews, never write reviews for your own client, and never post fake ones. Google's policies forbid this and can remove reviews or the profile.
-* Reply to every review politely. Thank people for good ones. For bad ones, apologise, explain what you will do and invite them to contact you.
+* Ask happy customers to leave an honest review, for example with the review link from the profile or a QR code at the counter.
+* Never pay or reward people for reviews, never write reviews for your own client, and never post fake ones. Google's policies forbid this and Google can remove reviews or restrict the profile.
+* Reply to every review politely. Thank people for good ones. For bad ones, apologise, explain what you will do and invite them to contact the business privately.
 
 ## Keeping it fresh
 
-Update hours before holidays, add new photos regularly, and use the updates or posts feature to share offers and events. A profile with recent activity looks alive.
+Update hours before holidays such as Christmas and Eid, add new photos regularly, answer questions customers ask on the profile, and use the updates feature to share offers and events. A profile with recent activity looks alive and trustworthy. Check it monthly: other people can suggest edits to a profile, so make sure the details are still correct.
 
-## A worked example
+## What you can report
 
-Fuseini helps a clinic in Tamale whose Maps pin pointed to the wrong street. Patients kept getting lost. He works with the clinic manager to correct the pin, set the right category, add clear photos of the entrance and signboard, and list special Eid and Christmas hours. He prints a small card at reception with a QR code asking patients to share honest feedback. Months later the clinic has a set of genuine reviews and the manager replies to each one.`,
-      practice_task_md: `**Goal:** Audit and improve a Google Business Profile, or plan one for a business that has none.
+The profile shows simple performance numbers, such as how many people viewed it, asked for directions, called or clicked to the website. These are useful for client reports because they connect directly to customers taking action.`,
+      workedExample_md: `Fuseini helps a small clinic in Tamale whose map pin pointed to the wrong street, so patients kept getting lost.
+
+1. **Gather facts.** With the clinic manager, Mrs Wumpini Alhassan, he notes the exact name on the signboard, the correct location, hours including Sunday emergency hours, and the reception phone number.
+2. **Ownership.** The profile already exists under an old staff member's account. The manager requests access through Google's process, and once it is the clinic's own Google account, she adds Fuseini as a manager.
+3. **Fix the details.** He moves the map pin to the right street, checks the main category, and adds a short description of services.
+4. **Photos.** He takes daylight photos of the entrance and signboard so patients recognise the building, plus the waiting area.
+5. **Special hours.** He adds Eid and Christmas hours a week before each holiday.
+6. **Reviews.** He prints a small card at reception with a QR code asking patients to share honest feedback, with no reward offered. The manager replies to each review politely.
+
+After three months, the profile's numbers show more requests for directions, and staff report fewer lost patients calling from the wrong street.`,
+      keyTerms: [
+        { term: "Google Business Profile", definition: "A free Google listing showing a business on Maps and in search, formerly called Google My Business." },
+        { term: "Verification", definition: "Google's check that the person managing a profile really runs the business." },
+        { term: "Primary category", definition: "The main type of business chosen on the profile, such as Tailor or Guest house." },
+        { term: "Service area", definition: "The areas a business serves, shown instead of an address when it travels to customers." },
+        { term: "Review", definition: "A customer's public rating and comment about a business." },
+        { term: "Manager", definition: "A person given access to edit a profile without owning it." },
+      ],
+      commonMistakes: [
+        "Adding keywords like \"best\" or a town name to the business name",
+        "Creating the profile under your own account instead of the owner's",
+        "Offering discounts or gifts in exchange for reviews",
+        "Forgetting to set special hours for holidays",
+        "Never checking the profile again after setting it up",
+      ],
+      selfCheck: [
+        "Whose Google account should own a client's profile, and why?",
+        "How would you reply to a fair one star review about long waiting times?",
+        "Which photos would help a first time customer find a business you know?",
+      ],
+      practice_task_md: `**Goal:** Create a Google Business Profile plan for a sample shop, or audit and improve a real one.
 
 **Steps:**
-1. Find a local business on Google Maps. If it has a profile, check every field: name, category, pin, hours, phone, photos and reviews.
-2. List anything wrong or missing, and whether reviews get replies.
-3. If the business has no profile, write out every field it would need, ready for the owner to create and verify it with you.
-4. Draft two review replies: one for a five star review and one for a disappointed customer.
-5. Share your findings with the owner, kindly and briefly.
+1. Choose a shop near you, or a mock shop if you cannot work with a real owner.
+2. Gather the facts: name, category, location or service area, hours, phone, link and at least four photos.
+3. If the owner agrees, create or update the profile from their account and add yourself as a manager. Otherwise, write every field in a document as if you were filling it in.
+4. Write a short, honest review request card with no reward offered.
+5. Write a polite reply to one good and one bad sample review.
 
-**Done looks like:** A one page audit or setup plan plus two review reply drafts. Do not create or claim a profile for a business without the owner's permission.`,
+**Done looks like:** A live profile or a complete written plan, photos, a review request card and two sample replies.`,
       quiz: {
         questions: [
           {
-            prompt: "Why should you not add extra keywords to the business name on a profile?",
-            options: [
-              "It breaks Google's guidelines and can get the profile suspended",
-              "Google only allows names in capital letters",
-              "It makes the map pin move",
-              "Customers cannot read long names, so the profile gets fewer calls",
-            ],
-            answer_index: 0,
-            explanation: "The name should match the real business name; keyword stuffing breaks the guidelines.",
+            prompt: "What was Google Business Profile formerly called?",
+            options: ["Google Shop Window", "Google My Business", "Google Shop Finder", "Google Local Pages"],
+            answer_index: 1,
+            explanation: "The lesson notes it was once called Google My Business.",
           },
           {
-            prompt: "A plumber travels to customers' homes. What should their profile show?",
+            prompt: "Who chooses the verification method for a Google Business Profile?",
             options: [
-              "Their personal home address",
-              "No location information at all",
-              "A service area instead of a home address",
-              "A competitor's address",
+              "The business owner picks any method they like",
+              "The marketer managing the profile",
+              "Google, based on factors such as business type and region",
+              "The customers who leave reviews",
             ],
             answer_index: 2,
-            explanation: "Businesses that travel to customers can show a service area.",
+            explanation: "Google decides which methods are offered and they cannot be chosen by the owner.",
           },
           {
-            prompt: "Which of these is allowed when collecting reviews?",
+            prompt: "Why should the business's own Google account own the profile, with you as a manager?",
             options: [
-              "Giving free airtime to anyone who leaves five stars",
-              "Writing reviews for your own client",
-              "Posting reviews from made up names",
-              "Asking happy customers to leave an honest review",
+              "So the owner keeps control if you stop working together",
+              "Because managers are not allowed to post photos or reply to any customer reviews",
+              "Because profiles owned by marketers rank lower",
+              "So Google can charge the owner a monthly fee",
+            ],
+            answer_index: 0,
+            explanation: "Ownership by the business protects the owner if the marketer leaves.",
+          },
+          {
+            prompt: "Which of these breaks Google's rules on reviews?",
+            options: [
+              "Asking happy customers for an honest review",
+              "Replying politely to a negative review",
+              "Putting a QR code linking to the review page at the counter",
+              "Giving a discount to customers who leave five stars",
             ],
             answer_index: 3,
-            explanation: "Asking for honest reviews is fine; paying, rewarding or faking reviews is not.",
-          },
-          {
-            prompt: "How should a business respond to a bad review?",
-            options: [
-              "Ignore it completely",
-              "Apologise, say what you will do and invite them to get in touch",
-              "Argue that the customer is lying",
-              "Ask friends and family to post good reviews so it gets pushed down",
-            ],
-            answer_index: 1,
-            explanation: "A polite reply with a plan shows other customers the business cares.",
+            explanation: "Rewarding people for reviews is forbidden.",
           },
         ],
         pass_threshold: 75,
@@ -2199,102 +2275,160 @@ Fuseini helps a clinic in Tamale whose Maps pin pointed to the wrong street. Pat
     },
     "seo-basics": {
       outcomes: [
-        "Explain how search engines work",
-        "Do free keyword research",
-        "Apply on page and off page basics",
+        "Explain how search engines crawl, index and rank pages",
+        "Explain why a small business benefits from a simple website",
+        "Find the words customers search for using free methods",
+        "Lay out a homepage that uses keywords naturally",
       ],
-      explanation_md: `Search engine optimisation, or SEO, is the work of helping web pages appear when people search for what a business offers. Several Ghanaian marketing adverts ask for SEO and keyword research, an agritech company wanted content writers who understand it, and it is one of the three DMP specialisations. You can learn the basics without paying for any tools.
+      explanation_md: `Search engine optimisation, or SEO, is the work of helping web pages appear when people search for what a business offers. Ghanaian marketing adverts ask for SEO and keyword research, content roles at agritech and media companies expect it, and it is one of the three DMP specialisations. You can learn the basics without paying for any tools.
 
 ## How search engines work
 
-In simple terms, a search engine like Google does three things:
+In simple terms, a search engine such as Google does three things:
 
-* **Crawls.** Automated programs follow links to discover pages on the web.
-* **Indexes.** It stores and organises what each page is about.
-* **Ranks.** When someone searches, it chooses which pages are most helpful for that search and in what order.
+* **Crawls.** Automated programs follow links from page to page to discover what is on the web.
+* **Indexes.** It stores and organises what each page is about, like a giant library catalogue.
+* **Ranks.** When someone searches, it chooses which indexed pages are most helpful for that search and in what order.
 
-Google says it aims to show helpful, reliable content made for people. There is no trick that guarantees the top spot, and anyone promising one is not being honest.
+Google says it aims to show helpful, reliable content made for people. There is no trick that guarantees the top spot, and anyone promising one is not being honest. The basics below simply make it easy for search engines and people to understand a page.
 
-## Start with keywords
+## Why a website matters
 
-Keywords are the words and phrases people actually type. You find them by thinking like a customer and checking what Google suggests:
+Many Ghanaian businesses rely only on social media. That works until an account is hacked, a platform changes, or a customer searches Google and finds nothing. A simple website:
 
-* **Autocomplete.** Start typing "shea butter" and see what Google suggests.
-* **Related searches and questions.** Look at the questions and related searches Google shows on the results page.
-* **Google Trends.** Compare interest in different phrases over time and by region.
-* **Local phrases.** Many searches combine a service and a place: "basket weavers Bolgatanga", "event centre Tamale".
+* **Is owned by the business,** so it cannot be taken away by a platform's decision.
+* **Can be found in search** for the questions customers type, not only by people who already follow the page.
+* **Looks credible** to bigger clients, NGOs, tourists and buyers from other regions.
+* **Holds the full story:** services, prices or price ranges, location, hours and how to order, all in one place.
 
-Also think about **intent**: what does the person want? "How to store shea butter" is someone seeking information. "Buy shea butter Tamale" is someone ready to buy. Match the page to the intent.
+It does not need to be expensive. Free and low cost website builders, Google Sites, or a single page with clear information is a strong start.
+
+## Finding keywords
+
+Keywords are the words and phrases people actually type. Find them by thinking like a customer and checking what search engines suggest:
+
+1. **Ask customers** how they would search for the business.
+2. **Use autocomplete.** Start typing "shea butter" and note the suggestions.
+3. **Look at the results page** for related searches and common questions.
+4. **Add places.** Many searches combine a service and a town: "basket weavers Bolgatanga", "event centre Tamale".
+5. **Think about intent.** "How to store shea butter" is someone seeking information; "buy shea butter Tamale" is someone ready to buy. Match each page to the intent.
+
+Pick one main phrase for each page, plus a few related ones. The specialisations roadmap covers keyword research tools and keyword mapping in depth.
+
+## Laying out a homepage
+
+A homepage should answer, within a few seconds, "What is this, is it for me, and what do I do next?" A simple layout, from top to bottom:
+
+1. **Header:** logo or name, and a short menu (Home, Products or Services, About, Contact).
+2. **Main heading with the main keyword:** "Pure shea butter from Tamale, delivered across Ghana".
+3. **A short line underneath** with the main benefit, and one clear button: "Order on WhatsApp".
+4. **A strong image** of the product, shop or people at work.
+5. **Products or services** in a short list or grid, each with a photo, name and price or price range.
+6. **Proof:** a few genuine customer comments shared with permission, or partners.
+7. **About in two or three sentences:** who is behind the business and why customers can trust it.
+8. **Contact and location:** phone, WhatsApp, address or map, opening hours.
+
+You can sketch this on paper or as boxes on a slide before anyone builds it.
 
 ## On page basics
 
-* **Page title.** Each page gets a clear, unique title containing its main keyword, such as "Handwoven Bolgatanga Baskets | Mariama Weavers".
-* **Meta description.** A short summary that may show under the title in results, written to make people click.
-* **Headings and content.** Answer the searcher's question clearly. Use the keyword naturally, never stuffed.
-* **Fast and mobile friendly.** Many visitors are on phones with limited data, and Google considers page experience.
+* **Page title:** a clear, unique title with the main keyword, such as "Handwoven Bolgatanga Baskets | Mariama Weavers".
+* **Meta description:** a short summary that may show under the title in results.
+* **Headings and text:** answer the searcher's question in plain words, using the keyword naturally, never stuffed.
+* **Images:** small files with short descriptions (alt text) of what they show.
+* **Fast and readable on any screen,** since many visitors are on phones with limited data.`,
+      workedExample_md: `Mariama's basket group in Bolgatanga wants a one page website. You plan the homepage with them on Google Slides, using boxes as placeholders.
 
-## Off page basics
+1. **Keywords.** Customers say they search "Bolga baskets" and "baskets Bolgatanga". Autocomplete also suggests "Bolga basket wholesale". You choose "Bolgatanga baskets" as the main phrase for the homepage, and note "wholesale" for a later page.
+2. **Intent.** Most homepage visitors want to see and buy, so the page focuses on products and ordering.
+3. **Layout on the slide:**
+   * Header: group name and menu.
+   * Heading: "Handwoven Bolgatanga baskets from Mariama Weavers".
+   * Line and button: "Strong, colourful, made by our women's group. Order on WhatsApp."
+   * Image box: weavers at work.
+   * Product grid: market basket, shopping basket, decorative bowl, each with a price range.
+   * Proof: two customer comments shared with permission.
+   * About: three sentences on the group.
+   * Contact: WhatsApp, location near the market, hours.
+4. **Title and description** written for the page: "Handwoven Bolgatanga Baskets | Mariama Weavers" and a one sentence summary.
 
-Links from other trusted sites help search engines see a page as credible. For a local business, that might be a mention on a local news site, a tourism directory or a partner's website. Never buy links or join link schemes; they break Google's spam policies.
-
-## A worked example
-
-Mariama's basket group has a simple website. Wumpini checks autocomplete and finds people search "Bolgatanga basket price" and "Bolga baskets wholesale". She rewrites the homepage title and adds a clear section on sizes, prices and wholesale orders. She also asks a regional tourism blog that already features local crafts to link to them.`,
-      practice_task_md: `**Goal:** Do free keyword research and write search friendly titles for a local business.
+The group can now hand this slide to whoever builds the site.`,
+      keyTerms: [
+        { term: "SEO", definition: "Search engine optimisation: helping pages appear in free search results." },
+        { term: "Crawling", definition: "Search engine programs following links to discover pages." },
+        { term: "Indexing", definition: "Storing and organising what each page is about so it can be found." },
+        { term: "Ranking", definition: "Deciding which pages to show first for a search." },
+        { term: "Search intent", definition: "What a person really wants when they type a search, such as to learn or to buy." },
+        { term: "Page title", definition: "The clickable headline of a page in search results." },
+        { term: "Alt text", definition: "A short description of an image that search engines and screen readers can read." },
+      ],
+      commonMistakes: [
+        "Relying only on social media, so the business cannot be found in search",
+        "Choosing keywords the owner likes instead of words customers type",
+        "Stuffing the same keyword into every line of a page",
+        "Hiding the business's location, prices and contact details deep in the site",
+        "Uploading huge images that make pages slow on a phone",
+      ],
+      selfCheck: [
+        "Can you explain crawling, indexing and ranking to a friend in three sentences?",
+        "What would a customer type to find a business you know, and is that phrase informational or ready to buy?",
+        "Does a homepage you know answer \"What is this, is it for me, and what do I do next?\" within a few seconds?",
+      ],
+      practice_task_md: `**Goal:** Draft a basic homepage layout for a small business using Google Slides.
 
 **Steps:**
-1. Pick a business, such as a shea butter producer, a guest house or a printing shop.
-2. Using Google autocomplete, related searches and Google Trends, collect ten keyword phrases people might use.
-3. Mark each phrase as information seeking or ready to buy.
-4. Write a page title and a meta description for the business's main page, using the best keyword naturally.
-5. Suggest two trusted local websites or directories that could mention the business.
+1. Choose a small business and find five phrases customers might search, using the steps in the lesson.
+2. Pick one main phrase for the homepage and note its intent.
+3. In Google Slides, draw boxes for each part of the layout: header, heading, line and button, image, products, proof, about, contact.
+4. Write real text for the heading, button and about section, and label image placeholders with what each photo will show.
+5. Write a page title and a one sentence description.
 
-**Done looks like:** A short Google Doc with your keyword list, intent labels, a title, a description and two link ideas.`,
+**Done looks like:** One or two slides showing a clear homepage layout with your keyword used naturally, plus a title and description, ready to submit.`,
       quiz: {
         questions: [
           {
-            prompt: "What are the three things a search engine does, in simple terms?",
+            prompt: "What does a search engine do when it indexes a page?",
             options: [
-              "Posts, likes and shares",
-              "Crawls, indexes and ranks",
-              "Designs, prints and delivers",
-              "Buys, sells and refunds",
+              "Pays the page owner for each visitor",
+              "Stores and organises what the page is about",
+              "Deletes pages that have too many keywords",
+              "Sends a copy of the page to every user's phone in the background",
             ],
             answer_index: 1,
-            explanation: "Search engines discover pages, store them and choose the order to show them.",
+            explanation: "Indexing is storing and organising what each page is about.",
           },
           {
             prompt: "Which search shows someone who is ready to buy?",
             options: [
-              "How to store shea butter",
-              "History of shea trees",
-              "Buy shea butter Tamale",
+              "How to store shea butter in the dry season",
+              "History of shea trees in northern Ghana",
               "What is shea butter made from",
-            ],
-            answer_index: 2,
-            explanation: "\"Buy\" plus a place shows buying intent; the others seek information.",
-          },
-          {
-            prompt: "What does the lesson say about buying links?",
-            options: [
-              "It breaks Google's spam policies and should be avoided",
-              "It is the fastest safe way to rank",
-              "It is required for local businesses",
-              "It only works for websites in Ghana",
-            ],
-            answer_index: 0,
-            explanation: "Buying links or joining link schemes breaks Google's spam policies.",
-          },
-          {
-            prompt: "Which of these is a free way to find keywords mentioned in the lesson?",
-            options: [
-              "Asking a competitor for their password",
-              "Guessing without checking",
-              "Paying for followers",
-              "Google autocomplete suggestions",
+              "Buy shea butter Tamale",
             ],
             answer_index: 3,
-            explanation: "Autocomplete, related searches and Google Trends are free sources of keywords.",
+            explanation: "A search with \"buy\" and a town shows intent to purchase.",
+          },
+          {
+            prompt: "Which is a reason the lesson gives for a small business to have a website?",
+            options: [
+              "It can be found in search and cannot be taken away by a platform's decision",
+              "Websites replace the need for any social media",
+              "A website guarantees the top spot on Google",
+              "Websites are required by law for all shops",
+            ],
+            answer_index: 0,
+            explanation: "A website is owned by the business and can be found in search.",
+          },
+          {
+            prompt: "On the suggested homepage layout, what should come straight after the main heading?",
+            options: [
+              "A long history of the business",
+              "The full price list for every product",
+              "A short benefit line and one clear button",
+              "A list of all the keywords used on the page so that search engines notice",
+            ],
+            answer_index: 2,
+            explanation: "The layout puts a short benefit line and one clear call to action under the heading.",
           },
         ],
         pass_threshold: 75,
@@ -2302,11 +2436,11 @@ Mariama's basket group has a simple website. Wumpini checks autocomplete and fin
     },
     "paid-ads": {
       outcomes: [
-        "Explain how online ads work and their building blocks",
-        "Follow advertising rules responsibly",
-        "Write a simple ad brief",
+        "Explain how ad auctions and common pricing models work",
+        "List the five decisions every campaign needs",
+        "Decide whether paid ads make sense for a business right now",
       ],
-      explanation_md: `Free posting only reaches some of the people who follow a page, and growing an audience from nothing takes time. Paid advertising lets a business pay a platform such as Meta, TikTok or Google to show its message to chosen people beyond its followers. Ghanaian adverts for digital marketers often mention Meta Ads and Google Ads, and Google Ads is one of the DMP specialisations. Handling a client's ad money carefully is a big responsibility, so this section starts with the basics.
+      explanation_md: `Free posting only reaches some of the people who follow a page, and growing an audience from nothing takes time. Paid advertising lets a business pay a platform such as Meta, TikTok or Google to show its message to chosen people beyond its followers. Ghanaian adverts for digital marketers often mention Meta Ads and Google Ads, and both social and Google Ads are DMP specialisations. Handling a client's ad money carefully is a big responsibility, so this section starts with the basics.
 
 ## How online ads work
 
@@ -2316,75 +2450,132 @@ Advertisers usually pay in one of a few ways:
 
 * **Per thousand views (impressions).** Common for awareness campaigns.
 * **Per click.** Common on search ads.
-* **Per result.** The platform optimises toward an action you choose, such as messages or sign ups, and reports what each one cost.
+* **Per result.** The platform aims for an action you choose, such as messages or sign ups, and reports what each one cost.
 
-## The building blocks
+## The five building blocks
 
 Whichever platform you use, every campaign needs the same decisions:
 
-* **Goal.** What should happen? Awareness, website visits, WhatsApp messages, sign ups or sales.
-* **Audience.** Who should see it? Location, age, interests, or the words they search.
-* **Budget and schedule.** How much per day or in total, and for how long.
-* **Creative.** The image or video and the words.
-* **Destination.** Where people go after clicking: a WhatsApp chat, a page, a form or a website.
+1. **Goal.** What should happen? Awareness, website visits, WhatsApp messages, sign ups or sales. Choose one main goal per campaign.
+2. **Audience.** Who should see it? Location, age, interests, past customers, or the words they search.
+3. **Budget and schedule.** How much per day or in total, and for how long. Always set an end date.
+4. **Creative.** The image or video and the words, following the copywriting and design lessons.
+5. **Destination.** Where people go after clicking: a WhatsApp chat, a page, a form or a website. It must match the promise in the ad.
+
+## Is the business ready for ads?
+
+Ads make a good business busier; they rarely rescue a weak one. Before spending, check:
+
+* **The offer is clear,** with a price or price range people can understand.
+* **Someone can reply quickly.** Paying for WhatsApp messages that wait a day for a reply wastes money.
+* **The profile or page looks trustworthy,** with recent posts and correct contact details.
+* **There is a way to count results,** even a notebook tally of messages and sales.
+* **The owner can afford to lose the test budget.** Early campaigns are partly for learning.
+
+If several of these fail, fix them first using the free channels in earlier lessons.
+
+## Organic and paid together
+
+Paid ads work best on top of steady organic activity. A post that already gets good comments and shares often makes a strong ad, because people have shown they like it. Ads can also grow the list of people who later see free posts and Status updates.
 
 ## Rules and responsibility
 
-All platforms review ads against their policies. Some topics, such as health products, financial services, jobs, politics and alcohol, have extra rules or restrictions. Read the policy before you build, or the ad may be rejected. Billing methods and currencies also differ by country and change over time, so check each platform's billing help for Ghana before promising a client anything.
+All platforms review ads against their policies. Some topics, such as health products, financial services, jobs, housing, politics and alcohol, have extra rules or restrictions. Read the current policy before you build, or the ad may be rejected. In Ghana, the Food and Drugs Authority also sets rules for advertising regulated products such as food, cosmetics and medicines. Billing methods and currencies differ by country and change over time, so check each platform's billing help for Ghana before promising a client anything.
 
 ## What this section covers
 
-* **Social media ads:** campaigns on Meta and similar platforms.
-* **Search ads:** keyword based ads on Google.
-* **Budgets and payment for ads:** planning in cedis, records and clear agreements.
+* **Social media ads:** setting up a simple campaign on Meta and similar platforms, and testing two versions.
+* **Search ads:** how keyword based ads on Google work at a basic level.
+* **Budgets and payment for ads:** planning in cedis, cost per result, records and clear agreements.
 
-## A small example
+Detailed campaign structure, audience targeting, match types and bidding belong to the specialisations roadmap. This section gives you the judgement to know when ads make sense and how to spend a small amount responsibly.`,
+      workedExample_md: `Abdul-Rahman's phone accessories kiosk in Tamale wants to "run ads". Before taking any money, his friend Wumpini, a marketing student, uses the readiness check.
 
-A church in Tamale wants more young people at a youth conference. Issahaku sets a goal of WhatsApp messages from people aged 18 to 30 within 20 km of Tamale, a modest daily budget for ten days, a short video from last year's event and a button that opens a chat with the youth leader. Every decision is written down and agreed before he spends a cedi.`,
-      practice_task_md: `**Goal:** Write a simple ad brief before touching any ad platform.
+1. **Clear offer?** Partly. Prices are only given in chat. She asks him to add prices for his top ten items to his WhatsApp catalogue.
+2. **Quick replies?** He used to reply hours later. Since setting up quick replies, he answers within the hour. Pass.
+3. **Trustworthy page?** His Facebook page has recent posts and the right number. Pass.
+4. **Counting results?** No. She sets up a simple sheet: date, messages, sales, and "where did you hear about us?".
+5. **Affordable test?** He agrees a small test amount he could lose without hurting the business.
+
+Then she writes the five building blocks:
+
+* Goal: WhatsApp messages.
+* Audience: adults within a few kilometres of the kiosk.
+* Budget and schedule: the small test amount over seven days, with an end date.
+* Creative: a short video of phone chargers and cases, price shown, from a post that already got good comments.
+* Destination: a WhatsApp chat.
+
+Only after the test and a look at the numbers will they decide whether to spend more.`,
+      keyTerms: [
+        { term: "Paid advertising", definition: "Paying a platform to show a message to chosen people beyond a page's followers." },
+        { term: "Ad auction", definition: "The process a platform uses to choose which ad to show, based on bids and relevance." },
+        { term: "Impressions", definition: "The number of times an ad was shown on screen." },
+        { term: "Cost per click", definition: "The average amount paid each time someone clicks an ad." },
+        { term: "Creative", definition: "The image, video and words that make up an ad." },
+        { term: "Destination", definition: "Where people land after clicking an ad, such as a chat or web page." },
+      ],
+      commonMistakes: [
+        "Running ads before the offer, page and replies are ready",
+        "Setting no end date, so a campaign runs on by accident",
+        "Choosing several goals in one campaign",
+        "Sending people to a destination that does not match the ad",
+        "Ignoring ad policies for health, finance and other restricted topics",
+      ],
+      selfCheck: [
+        "Which of the readiness checks would a business you know fail today?",
+        "Why might a relevant ad beat a bigger budget in an auction?",
+        "What would you say to an owner who wants ads but replies to messages a day later?",
+      ],
+      practice_task_md: `**Goal:** Decide whether a real business is ready for paid ads, and outline a first test.
 
 **Steps:**
-1. Choose a real or realistic goal, such as a church event, a MoMo promotion at a vendor or a new product at a shea butter shop.
-2. Write down the five building blocks: goal, audience, budget and schedule, creative, destination.
-3. Look up the platform's advertising policy for any topic that might be restricted, such as health or finance, and note what you find.
-4. Ask a friend or mentor to read the brief and point out anything unclear.
+1. Choose a business you know.
+2. Go through the five readiness checks and mark each as pass or fail, with one line of evidence.
+3. For any fail, write the free fix you would make first.
+4. Write the five building blocks for a first small test campaign.
+5. Write one sentence on what result would make the owner decide to continue.
 
-**Done looks like:** A one page ad brief with all five blocks filled in and a note on policy checks. Do not spend money on this task.`,
+**Done looks like:** A one page readiness check and a five line campaign outline you could discuss with the owner.`,
       quiz: {
         questions: [
           {
-            prompt: "How do most ad platforms decide which ad to show?",
+            prompt: "In an ad auction, what besides the bid affects which ad is shown?",
             options: [
-              "Whoever registered the ad account first always wins the space",
-              "An auction based on bids and how relevant each ad seems",
-              "Ads are shown in alphabetical order",
-              "The platform picks at random",
+              "The age of the business owner",
+              "How relevant and useful the ad seems",
+              "The number of staff the business has",
+              "Whether the business has a website in English",
             ],
             answer_index: 1,
-            explanation: "Platforms run auctions that consider both bids and relevance.",
+            explanation: "Platforms weigh both bids and how relevant and useful the ad seems.",
           },
           {
-            prompt: "Which payment method is common on search ads?",
-            options: ["Per click", "Per follower", "Per month of posting", "Per comment"],
-            answer_index: 0,
-            explanation: "The lesson notes that paying per click is common on search ads.",
-          },
-          {
-            prompt: "Which of these is one of the five building blocks of every campaign?",
-            options: ["Page password", "Logo colour", "Audience", "Competitor's budget"],
+            prompt: "Which pricing model is common on search ads?",
+            options: ["Per thousand views", "Per follower", "Per click", "Per month"],
             answer_index: 2,
-            explanation: "Goal, audience, budget and schedule, creative and destination are the building blocks.",
+            explanation: "The lesson says paying per click is common on search ads.",
           },
           {
-            prompt: "Why should you check billing help for Ghana before promising a client anything?",
+            prompt: "An owner wants ads but replies to WhatsApp messages a day later. What does the lesson suggest?",
             options: [
-              "Ads are banned in Ghana",
-              "Billing is always free in Ghana",
-              "Platforms only accept cash payments at their offices in Accra",
-              "Billing methods differ by country and change over time",
+              "Fix reply speed first, since paid messages that wait a day waste money",
+              "Run ads anyway, because more messages will force quicker replies",
+              "Double the budget to make up for lost customers",
+              "Switch the destination to a phone number nobody answers",
+            ],
+            answer_index: 0,
+            explanation: "Ads make a business busier; they cannot fix slow replies.",
+          },
+          {
+            prompt: "Why can a post that already gets good comments make a strong ad?",
+            options: [
+              "Platforms show it for free",
+              "Comments lower the price of every click",
+              "Ads must always use old posts",
+              "People have already shown they like it",
             ],
             answer_index: 3,
-            explanation: "The lesson says billing details vary and change, so check current help pages.",
+            explanation: "Organic engagement is a sign the content works, so it often makes a good ad.",
           },
         ],
         pass_threshold: 75,
@@ -2392,96 +2583,147 @@ A church in Tamale wants more young people at a youth conference. Issahaku sets 
     },
     "social-ads": {
       outcomes: [
-        "Tell boosting from a full campaign",
-        "Organise a Meta campaign and choose an audience",
-        "Start small, test and follow the rules",
+        "Explain the difference between boosting a post and building a campaign",
+        "Describe the campaign, ad set and ad levels in Meta's ad tools",
+        "Run a fair A/B test on an ad or a post by changing one thing",
+        "Judge a test by cost per result and decide what to keep",
       ],
-      explanation_md: `Many small businesses in Ghana have tapped the "Boost" button on a Facebook or Instagram post and wondered where their money went. A marketer who can set up a proper campaign with a clear goal, the right audience and honest tracking is worth paying. Meta Ads appear in Ghanaian digital marketer adverts, and the DMP social media specialisation builds directly on this lesson.
+      explanation_md: `Many small businesses in Ghana have tapped the "Boost" button on a Facebook or Instagram post and wondered where their money went. A marketer who can set up a simple campaign with a clear goal, a sensible audience and honest tracking is worth paying. Meta Ads appear in Ghanaian digital marketer adverts, and the DMP social media specialisation builds directly on this lesson. TikTok and other platforms have their own ad tools, but the ideas here carry across.
 
 ## Boosting versus a full campaign
 
-**Boosting** a post is quick: you pick a post, an audience, a budget and a duration. It suits simple goals. **Ads Manager** gives you more control over goals, audiences, placements and testing. Learn both, but understand why you are choosing one.
+**Boosting** a post is quick: you pick a post, an audience, a budget and a duration, all from the post itself. It suits simple goals, such as getting a good post in front of more local people. **Ads Manager**, Meta's main advertising tool, gives you more control over goals, audiences, placements and testing. Learn both, and be able to explain why you chose one.
 
 ## How a Meta campaign is organised
 
 Ads Manager has three levels:
 
-* **Campaign.** Where you choose the objective, such as awareness, traffic, engagement, leads or sales. The names may change, but the idea stays: tell the platform what result you want.
-* **Ad set.** Where you choose the audience, budget, schedule and placements (Facebook, Instagram, and others).
-* **Ad.** The creative: image or video, text, headline and button.
+* **Campaign.** Where you choose the objective: the result you want, such as awareness, traffic, engagement, leads or sales. Meta renames and regroups objectives from time to time, so pick the one on screen that matches your goal.
+* **Ad set.** Where you choose the audience, budget, schedule and placements (where the ad appears, such as Facebook, Instagram or Messenger).
+* **Ad.** The creative: image or video, text, headline, button and destination.
 
-A popular option for Ghanaian businesses is an ad that opens a WhatsApp chat, so interested people can ask questions and order the way they already prefer.
+A popular option for Ghanaian businesses is an ad that opens a WhatsApp chat, so interested people can ask questions and order the way they already prefer. The specialisations roadmap covers campaign structure and advanced targeting in detail.
 
-## Choosing an audience
+## Setting up a simple campaign
 
-* **Location.** A town, or a radius around a shop. A Tamale chop bar does not need viewers in Takoradi.
-* **Age and other basics** when they truly matter.
-* **Interests.** Use them carefully; they are estimates.
-* **Custom audiences.** People who have engaged with the page or messaged the business before.
+1. **Write the goal in one sentence:** "Get WhatsApp messages from people near the shop who might order gift packs."
+2. **Choose the matching objective** in Ads Manager.
+3. **Set a simple audience:** location (a town or a radius around the shop), age if it truly matters, and keep the rest fairly broad so the platform can learn.
+4. **Set a small daily or total budget and an end date.**
+5. **Build the ad** using a strong post or a new creative, with the price and a clear button.
+6. **Check the preview** on different placements, then submit for review. Meta reviews ads against its advertising standards before they run.
 
-Keep audiences reasonably broad at first and let the platform learn. Very narrow audiences can make ads expensive.
+Ads Manager works in a browser on a computer and in the Meta Ads Manager app on a phone. Many marketers find a computer easier for building campaigns and a phone handy for checking results.
 
-## Start small and test
+## A/B testing: change one thing
 
-Run a small test first. Change one thing at a time, such as two different images with the same text, and compare the cost per result after a few days. This is called an A/B test. Keep what works, stop what does not, and only then increase the budget.
+An A/B test compares two versions that are identical except for one change, to see which works better. For example:
+
+* Two images with the same text and audience.
+* The same image with two different first lines.
+* The same ad sent to WhatsApp chat versus a website.
+
+Steps:
+
+1. **Choose one thing to test** and write what you expect: "The video will bring cheaper messages than the photo."
+2. **Keep everything else the same:** audience, budget, dates.
+3. **Run both long enough** to collect a fair number of results; a few days is usually the minimum, and tiny numbers can mislead.
+4. **Compare cost per result,** not likes.
+5. **Keep the winner,** pause the loser, and test the next idea.
+
+Meta offers a built in A/B test feature, but you can also run a simple test by hand with two ads. The same idea works for free posts: post two styles at similar times on similar days and compare messages or shares.
 
 ## Follow the rules
 
-Ads must follow Meta's advertising standards. Some topics, such as credit, jobs, health products and political or social issues, have extra rules. Never make claims you cannot support.
+Ads must follow Meta's advertising standards. Some topics, such as credit, jobs, housing, health products and social or political issues, have extra rules. Never make claims you cannot support, and never target or describe people in a way that singles out personal traits such as health conditions.`,
+      workedExample_md: `Hawa wants more orders for her shea butter gift packs before Christmas. Abdul-Rahman plans a small campaign in Ads Manager on a computer at a hub.
 
-## A worked example
+1. **Goal:** WhatsApp messages from people near Tamale who might order gift packs.
+2. **Objective:** the one on screen that aims for messages.
+3. **Audience:** adults within a set distance of Tamale, otherwise broad.
+4. **Budget:** a small daily amount Hawa agreed, for eight days, with an end date.
+5. **A/B test:** two ads, identical text and button, one with a photo of the gift pack and one with a 15 second video of Hawa packing it. His expectation: the video will bring cheaper messages.
+6. **Tracking:** a sheet where Hawa ticks each message and sale, with "ad" or "not ad".
 
-Hawa wants more orders for her shea butter gift packs before Christmas. Abdul-Rahman sets up a campaign whose goal is WhatsApp messages, with an audience of adults within a set distance of Tamale, a small daily budget and two versions of the ad: one photo and one short video. After four days the video brings messages at a lower cost, so he pauses the photo and moves its budget to the video. He records every message and sale in a sheet so Hawa can see what the money achieved.`,
-      practice_task_md: `**Goal:** Build a practice social ad campaign up to the review step without spending money.
+After four days:
+
+| Version | Messages | Cost per message |
+| --- | --- | --- |
+| Photo | 9 | higher |
+| Video | 21 | about half the photo's |
+
+The numbers are small, so he waits two more days. The pattern holds. He pauses the photo and moves its budget to the video. At the end he shows Hawa the spend, the messages and the sales from her sheet, so she can see what the money achieved.`,
+      keyTerms: [
+        { term: "Boost", definition: "A quick way to turn an existing post into an ad from the post itself." },
+        { term: "Ads Manager", definition: "Meta's main tool for building, running and measuring ad campaigns." },
+        { term: "Objective", definition: "The result you tell the platform you want, such as messages or sales." },
+        { term: "Ad set", definition: "The level where audience, budget, schedule and placements are chosen." },
+        { term: "Placement", definition: "Where an ad appears, such as Facebook feed, Instagram Stories or Messenger." },
+        { term: "A/B test", definition: "Comparing two versions that differ in only one way to see which works better." },
+        { term: "Cost per result", definition: "Total spend divided by the number of results, such as messages." },
+      ],
+      commonMistakes: [
+        "Boosting posts with no clear goal and no way to count results",
+        "Changing several things at once, so you cannot tell what made the difference",
+        "Stopping a test after a few hours with tiny numbers",
+        "Judging ads by likes instead of cost per result",
+        "Making very narrow audiences that push costs up",
+      ],
+      selfCheck: [
+        "When would you choose a boost, and when Ads Manager?",
+        "What one thing would you test first for a business you know, and what do you expect to happen?",
+        "How would you explain cost per message to a business owner in one sentence?",
+      ],
+      practice_task_md: `**Goal:** Plan a mock social ad campaign with an A/B test, without spending money.
 
 **Steps:**
-1. Using a practice Facebook Page, open Meta Ads Manager on a phone browser or laptop.
-2. Create a campaign with a clear objective that fits a local business goal.
-3. Set an ad set with a location, a basic audience, a small daily budget and a short schedule.
-4. Create two ad versions with different images or videos but the same text.
-5. Stop at the review screen. Take screenshots of each level, then leave the campaign as a draft or delete it. Do not publish or add payment details.
+1. Choose a mock or real business and write the campaign goal in one sentence.
+2. Write down the objective, audience, budget, dates and destination.
+3. Create two versions of the ad that differ in only one way, and write your expectation.
+4. If you have access to Ads Manager, build the campaign up to the review step and stop there without publishing. Otherwise, write each setting in a document.
+5. Using made up results, calculate cost per result for each version and decide which to keep.
 
-**Done looks like:** Screenshots of the campaign, ad set and two ads, plus two sentences explaining your choices.`,
+**Done looks like:** A one page campaign plan, two ad versions, your test expectation and a short decision based on cost per result.`,
       quiz: {
         questions: [
           {
             prompt: "At which level of a Meta campaign do you choose the audience and budget?",
-            options: ["Campaign", "Ad set", "Ad", "Page settings"],
-            answer_index: 1,
-            explanation: "The ad set holds the audience, budget, schedule and placements.",
+            options: ["Campaign", "Ad", "Ad set", "Page"],
+            answer_index: 2,
+            explanation: "The ad set is where audience, budget, schedule and placements are chosen.",
           },
           {
-            prompt: "Why might a Ghanaian business choose an ad that opens a WhatsApp chat?",
+            prompt: "Which is a fair A/B test?",
             options: [
-              "People can ask questions and order the way they already prefer",
-              "WhatsApp ads are always free",
-              "It removes the need for a budget because WhatsApp chats are free",
-              "It shows the ad only to the owner",
-            ],
-            answer_index: 0,
-            explanation: "Many local customers prefer to order through WhatsApp chat.",
-          },
-          {
-            prompt: "What is an A/B test?",
-            options: [
-              "Running ads in two countries at once",
-              "Doubling the budget every day until the ad gets more messages",
-              "Asking two friends to like the ad",
-              "Changing one thing, such as the image, and comparing results",
+              "Two ads with different images, text, audiences and budgets",
+              "One ad run for a week, then a different ad the next month",
+              "Comparing your ad with a competitor's ad",
+              "Two ads that are identical except for the image",
             ],
             answer_index: 3,
-            explanation: "An A/B test compares versions that differ in one thing.",
+            explanation: "A fair test changes only one thing.",
           },
           {
-            prompt: "What did Abdul-Rahman do after the video ad brought messages at a lower cost?",
+            prompt: "How should you judge which version of an ad won?",
             options: [
-              "Stopped all advertising",
-              "Doubled the photo ad budget",
-              "Paused the photo ad and moved its budget to the video",
-              "Changed every setting at once",
+              "By cost per result, such as cost per message",
+              "By which one has more likes and heart reactions from followers",
+              "By which one the owner prefers",
+              "By which one was published first",
             ],
-            answer_index: 2,
-            explanation: "He kept what worked and stopped what did not.",
+            answer_index: 0,
+            explanation: "The lesson says to compare cost per result, not likes.",
+          },
+          {
+            prompt: "Why did Abdul-Rahman wait two more days before deciding?",
+            options: [
+              "Meta does not show results before six days",
+              "The numbers were small, and tiny numbers can mislead",
+              "Hawa was travelling",
+              "The budget had not been approved yet",
+            ],
+            answer_index: 1,
+            explanation: "Small numbers can mislead, so he collected more results first.",
           },
         ],
         pass_threshold: 75,
@@ -2489,92 +2731,140 @@ Hawa wants more orders for her shea butter gift packs before Christmas. Abdul-Ra
     },
     "search-ads": {
       outcomes: [
-        "Choose keywords for search ads",
-        "Write a search ad",
-        "Explain how the ad auction works",
+        "Explain how search ads differ from social ads",
+        "Describe how keywords, ads and landing pages fit together",
+        "Write a simple search ad that matches what people type",
+        "Start Google's free Skillshop training safely",
       ],
-      explanation_md: `Search ads appear when someone types a search on Google, often marked as sponsored, above or among the normal results. Because the person is already looking, these ads can bring customers who are ready to act. Some Ghanaian digital marketer adverts list Google Ads as a must have, and Google Ads (search marketing) is one of the three DMP specialisations. Google's free Skillshop training includes a Google Ads Search certification you can add to your CV.
+      explanation_md: `Search ads appear when someone types a search on Google, marked as sponsored, above or among the normal results. Because the person is already looking, these ads can bring customers who are ready to act. Some Ghanaian digital marketer adverts list Google Ads as a must have, and Google Ads is one of the three DMP specialisations. This lesson gives you the foundation; the specialisation goes deep.
 
-## Keywords are the heart of it
+## Search ads versus social ads
 
-With search ads, you choose keywords that should trigger your ad. Google offers **match types** that control how closely a search must match:
+Social ads interrupt people while they scroll, so they must catch attention and create interest. Search ads answer a need someone has just typed, so they must be relevant and make it easy to act. A social ad for an event centre might show a beautiful wedding video to people who are not yet planning anything. A search ad for the same centre appears only when someone types something like "wedding venue Tamale". Both are useful; they do different jobs in the customer journey.
 
-* **Broad match.** Shows for searches related to your keyword, giving the most reach but less control.
-* **Phrase match.** Shows for searches that include the meaning of your phrase.
-* **Exact match.** Shows for searches with the same meaning as your keyword, giving the most control.
+## How the pieces fit together
 
-**Negative keywords** stop your ad showing for searches you do not want. A paid printing service might add "free" so it does not pay for clicks from people looking for free printing.
+A simple search campaign has three linked parts:
 
-## Writing the ad
+* **Keywords.** The words and phrases that should trigger the ad, chosen from what customers actually type. Google's Keyword Planner, inside Google Ads, suggests ideas and rough search estimates. You can also control how closely a search must match a keyword and block unwanted searches with negative keywords; the specialisation teaches these settings in detail.
+* **The ad.** Mostly text: several headlines and descriptions that Google combines and tests.
+* **The landing page.** The page people reach after clicking. It must deliver what the ad promised.
 
-Search ads are mostly text. Google lets you write several headlines and descriptions, then tests combinations. Good search ads:
+If any one part is weak, the whole campaign suffers. A great ad leading to a confusing page wastes money.
 
-* Repeat the words the person searched, so it is clearly relevant.
-* Give a reason to choose you: location, price, speed, trust.
-* End with an action: call, visit, order.
-* Send people to a page that matches the ad. If the ad says "Event hall in Tamale", the page should show the hall, prices and how to book.
+## How Google chooses and charges
 
-## How the auction works
+Google runs an auction each time someone searches. It looks at what advertisers are willing to pay and at the quality and relevance of their ads and landing pages. Better quality can mean lower costs, so relevance matters as much as money. Advertisers usually pay when someone clicks. You set an average daily budget, and Google's help pages explain that a campaign may spend more than that on some days and less on others, within a monthly limit.
 
-You set a budget and a bid strategy. Google's auction looks at your bid and the quality of your ad, including how relevant it is and how useful the landing page seems. Better quality can mean lower costs, so relevance matters as much as money. You usually pay when someone clicks.
+## Writing a search ad, step by step
 
-## Keyword Planner and practice
+1. **Start from the search.** Write down two or three phrases the customer would type.
+2. **Repeat their words in a headline,** so the ad is clearly relevant: "Wedding Venue in Tamale".
+3. **Give a reason to choose this business:** location, capacity, price range, speed, trust. "Seats 300, Parking on Site".
+4. **Add a clear action:** "Book a Viewing Today".
+5. **Write a description** that adds detail and repeats the action in one or two short sentences.
+6. **Check the landing page** shows the same thing: photos, capacity, prices or how to get a quote, and a WhatsApp or call button.
+7. **Stay honest.** Google's ad policies forbid misleading claims, and some business types, such as financial services and health products, have extra requirements.
 
-Google's Keyword Planner, inside Google Ads, suggests keywords and gives rough search estimates. Skillshop's Google Ads courses walk you through campaign setup with examples, which is a safe way to practise before using a client's money.
+## When search ads make sense
 
-## A worked example
+Search ads suit businesses people actively search for: event venues, guest houses, schools, repair services, clinics, courses, and shops that deliver. They are less useful for products nobody searches for yet; social ads or content may work better there. Check the free options first: a complete Google Business Profile often brings local searches at no cost.
 
-Sumaila owns an event centre in Tamale. Amina builds a small search campaign with phrase match keywords like "event centre Tamale" and "wedding venue Tamale", adds negatives like "jobs" and "free", and writes headlines such as "Wedding Venue in Tamale" and "Book a Viewing Today". The ad links to a page with photos, capacity and a WhatsApp booking button. She checks the search terms report weekly and adds new negatives when irrelevant searches appear.`,
-      practice_task_md: `**Goal:** Plan a small search campaign and start the free Skillshop training.
+## Practising safely with Skillshop
+
+Google's Skillshop offers free online courses on Google Ads, including search campaigns, with examples and assessments. It is a safe way to learn before using a client's money. Some courses lead to a certification; check the current details on Skillshop before relying on any certificate for a job application. Never practise with a real card on a live campaign without the owner's written agreement and a strict budget.
+
+## Phone or computer
+
+You can check campaigns in the Google Ads app on a phone, but building and editing campaigns is easier on a computer with a bigger screen, especially when writing many headlines or reading reports.`,
+      workedExample_md: `Sumaila owns an event centre in Tamale. Amina plans a first search campaign with him on a laptop.
+
+1. **Searches customers type:** "event centre Tamale", "wedding venue Tamale", "conference hall Tamale".
+2. **Keywords:** she groups wedding phrases together, and notes that "free" and "jobs" should be blocked so the ad does not show for people looking for free halls or work.
+3. **Headlines:**
+   * "Wedding Venue in Tamale"
+   * "Seats 300, Parking on Site"
+   * "Book a Viewing Today"
+4. **Description:** "Air conditioned hall near the city centre. See photos and prices, then book a viewing on WhatsApp."
+5. **Landing page check:** the existing page only had one dark photo and no prices. Before launching, Sumaila adds bright photos, capacity, a price range and a WhatsApp button.
+6. **Budget:** a small average daily budget agreed in writing, with an end date.
+
+After two weeks, Amina looks at which searches triggered the ad and which led to WhatsApp chats. Wedding searches bring real bookings; "conference" searches bring few. She suggests putting more of the budget behind wedding phrases next month.`,
+      keyTerms: [
+        { term: "Search ad", definition: "A text ad shown in search results when someone types a related search." },
+        { term: "Keyword", definition: "A word or phrase chosen to trigger an ad when people search for it." },
+        { term: "Negative keyword", definition: "A word that stops an ad showing for searches you do not want." },
+        { term: "Landing page", definition: "The page people reach after clicking an ad." },
+        { term: "Pay per click", definition: "A pricing model where the advertiser pays when someone clicks the ad." },
+        { term: "Skillshop", definition: "Google's free online training for its advertising and marketing tools." },
+      ],
+      commonMistakes: [
+        "Writing ads that do not repeat the words people searched",
+        "Sending clicks to a page that does not match the ad",
+        "Running search ads for products nobody searches for",
+        "Skipping the free Google Business Profile before paying for ads",
+        "Practising on a live campaign without a written budget agreement",
+      ],
+      selfCheck: [
+        "For a business you know, what three phrases would a ready to buy customer type?",
+        "What would a visitor need to see on the landing page to act straight away?",
+        "Would search ads or social ads suit that business better, and why?",
+      ],
+      practice_task_md: `**Goal:** Plan a small search campaign on paper and start the free Skillshop training.
 
 **Steps:**
-1. Pick a local business that people search for, such as an event centre, a guest house or a printing shop.
-2. In Google Sheets, list ten keywords with a match type for each, and five negative keywords.
-3. Write three headlines and two descriptions for one ad, keeping them short and relevant.
-4. Describe the landing page the ad should send people to.
-5. Begin the free Google Ads Search course on Skillshop and note one thing you learned.
+1. Choose a business people actively search for, such as a guest house, a school or a repair service.
+2. Write five phrases customers would type and two words you would block.
+3. Write three headlines and one description following the steps in the lesson.
+4. Check the business's current landing page or profile and list what must change before any ad runs.
+5. Open Google Skillshop, find a Google Ads search course, and complete the first module.
 
-**Done looks like:** A shared sheet with keywords, negatives and ad text, plus a note on your Skillshop progress. Do not spend money on this task.`,
+**Done looks like:** A one page plan with keywords, blocked words, ad text and landing page fixes, plus a screenshot of your first completed Skillshop module.`,
       quiz: {
         questions: [
           {
-            prompt: "Which match type gives the most control over which searches show your ad?",
-            options: ["Broad match", "Phrase match", "Exact match", "Negative match"],
-            answer_index: 2,
-            explanation: "Exact match gives the most control, while broad match gives the most reach.",
-          },
-          {
-            prompt: "Why would a paid printing service add \"free\" as a negative keyword?",
+            prompt: "How do search ads differ from social ads, according to the lesson?",
             options: [
-              "So the ad does not show to people looking for free printing",
-              "To make the ad cheaper for everyone",
-              "Because Google bans the word free",
-              "To show the ad only on weekends",
+              "Search ads answer a need someone has just typed",
+              "Search ads are always cheaper",
+              "Social ads can only use text",
+              "Search ads appear in people's feeds while they scroll",
             ],
             answer_index: 0,
-            explanation: "Negative keywords stop the ad appearing for unwanted searches.",
+            explanation: "Search ads respond to a search; social ads interrupt scrolling.",
           },
           {
-            prompt: "What does Google's auction consider besides your bid?",
+            prompt: "What is a negative keyword used for?",
             options: [
-              "How many followers your Facebook page has and how active they are",
-              "The colour of your logo",
-              "How long the business has existed",
-              "The quality and relevance of your ad and landing page",
+              "To show the ad to more people",
+              "To lower the price of every click on the campaign by half",
+              "To stop the ad showing for searches you do not want",
+              "To write negative reviews of competitors",
             ],
-            answer_index: 3,
-            explanation: "Ad quality, including relevance and landing page usefulness, affects the auction.",
+            answer_index: 2,
+            explanation: "Negative keywords block unwanted searches.",
           },
           {
-            prompt: "Where should a search ad for \"Event hall in Tamale\" send people?",
+            prompt: "What did Sumaila have to fix before the campaign launched?",
             options: [
-              "To the business owner's personal profile so people can chat",
-              "To a page showing the hall, prices and how to book",
-              "To the Google homepage",
-              "To a general page about Ghana",
+              "The business name on the signboard",
+              "The landing page, which had one dark photo and no prices",
+              "The headlines, which were too short and did not mention Tamale at all",
+              "His Google account password",
             ],
             answer_index: 1,
-            explanation: "The landing page should match what the ad promises.",
+            explanation: "A weak landing page wastes clicks, so it was fixed first.",
+          },
+          {
+            prompt: "What does the lesson say about certificates from Skillshop?",
+            options: [
+              "They guarantee a job in Ghana",
+              "They must be paid for before any course can be started",
+              "They replace the need for real work in a portfolio",
+              "Check the current details on Skillshop before relying on one",
+            ],
+            answer_index: 3,
+            explanation: "Courses are free; check certification details on Skillshop.",
           },
         ],
         pass_threshold: 75,
@@ -2582,11 +2872,12 @@ Sumaila owns an event centre in Tamale. Amina builds a small search campaign wit
     },
     "budgets-in-cedis": {
       outcomes: [
-        "Tell apart the two costs of advertising",
-        "Control spend and pay the platform safely",
-        "Work out cost per result and keep a record",
+        "Separate ad spend from your own fee in every agreement",
+        "Set up client billing so the client keeps control of the account",
+        "Calculate cost per result and check whether a campaign made money",
+        "Keep a simple budget record a client can understand in a minute",
       ],
-      explanation_md: `Money causes more fights between marketers and clients than anything else. Who paid the platform? Why did the card get charged more than expected? What did the money achieve? If you handle budgets clearly and keep good records, clients trust you with bigger campaigns. Senior adverts in Ghana list budget management as a core duty, and it starts with habits you can build now.
+      explanation_md: `Money causes more fights between marketers and clients than anything else. Who paid the platform? Why did the card get charged more than expected? What did the money achieve? If you handle budgets clearly and keep good records, clients trust you with bigger campaigns. Ghanaian adverts for senior marketing roles list budget management as a core duty, and it starts with habits you can build now.
 
 ## Two different costs
 
@@ -2595,85 +2886,123 @@ Always separate:
 * **Ad spend.** The money paid to the platform, such as Meta or Google, to show ads.
 * **Your fee.** What the client pays you for planning, creating and managing the work.
 
-Write both down in your agreement. Clients should never be surprised by either.
+Write both down in your agreement, with dates. Clients should never be surprised by either.
 
 ## Who pays the platform
 
-The safest arrangement is that the client adds their own payment method to their own ad account and gives you access to manage it. That way you never hold the client's money, every charge appears in their records, and if you stop working together they keep the account and its history. If you ever do pay on a client's behalf, get the money first, keep every receipt and agree it in writing.
+The safest arrangement is that the client adds their own payment method to their own ad account and gives you access to manage it. That way you never hold the client's money, every charge appears in their records, and if you stop working together they keep the account and its history. If you ever pay on a client's behalf, get the money first, keep every receipt and agree it in writing.
 
-Platforms bill in different ways, and the accepted payment methods and currencies for Ghana change over time. Some charge a card in another currency, so the cost in cedis depends on the exchange rate and bank charges on the day. Check the platform's billing help and tell the client this in advance.
+Platforms bill in different ways, and the accepted payment methods and currencies for Ghana change over time. An ad account may be set in a currency other than cedis, so the cost in cedis depends on the exchange rate and bank charges on the day. Check the platform's billing help and tell the client this in advance.
 
-## Controlling spend
+## How budgets behave
 
-* **Daily or total budgets.** Set them for every campaign. Some platforms may spend a little more on some days and less on others while keeping to the overall budget, so read how each one works.
+* **Daily or total budgets.** Set one for every campaign. Platforms do not spend exactly the same each day. Google's help pages, for example, explain that a campaign can spend up to about twice its average daily budget on a busy day, but over a month it will not charge more than about 30.4 times the average daily budget. Read how each platform works before promising exact figures.
 * **Spending limits.** Many ad accounts let you set an overall limit as a safety net.
-* **Schedules.** Give campaigns an end date so nothing runs forever by accident.
+* **End dates.** Give campaigns an end date so nothing runs for ever by accident.
+
+## Planning a budget, step by step
+
+1. **Start from the goal and a target cost.** How much can the business afford to pay for one result, such as a sale? That depends on the profit on each sale.
+2. **Choose a test amount** the owner can afford to lose while you learn.
+3. **Split it** across the test period and any versions you are comparing.
+4. **Add a buffer** for exchange rates and bank charges if the account is not in cedis.
+5. **Agree it in writing,** with the end date and when you will report.
 
 ## Working out cost per result
 
 The key number is what each result cost: total spend divided by the number of results.
 
-If Hawa spends GHS 300 on a campaign and gets 30 WhatsApp messages, each message cost GHS 10. If six of those people bought, each sale cost GHS 50. If a gift pack gives her GHS 80 profit, the campaign made money. If it gives GHS 30 profit, it lost money even though the messages looked good.
+Imagine Hawa spends GHS 300 on a campaign and gets 30 WhatsApp messages. Each message cost GHS 10. If six of those people bought, each sale cost GHS 50. If a gift pack gives her GHS 80 profit, the campaign made money. If it gives GHS 30 profit, it lost money even though the messages looked good. These numbers are only an example; use the client's real figures.
 
-This is why you track results that connect to money, not only clicks.
+This is why you track results that connect to money, not only clicks or likes.
 
 ## Keep a simple record
 
-A Google Sheet with columns for date, campaign, platform, amount spent, results and notes is enough. Add screenshots of billing pages each month. When a client asks where the money went, you can show them in a minute.
+A Google Sheet with columns for date, campaign, platform, amount spent, results, sales and notes is enough. Add screenshots or downloads of billing pages each month. When a client asks where the money went, you can show them in a minute. Share the sheet with the client so they can see it at any time.
 
-## A worked example
+## Being honest about money
 
-Mariama's group agrees a monthly fee for Wumpini's work and a separate ad budget. The group adds its own card to its ad account and gives Wumpini access. She sets a monthly spending limit, ends each campaign on a fixed date and sends a short sheet every Friday with spend and messages so far. There are no surprises.`,
+If a campaign loses money, say so early, explain what you learned and suggest what to change or whether to stop. Never hide charges, never add your own markup to ad spend without telling the client, and never keep unused ad money. Trust about money is what turns a one off job into a long relationship.`,
+      workedExample_md: `Mariama's basket group hires Wumpini to run a small Instagram campaign for gift baskets.
+
+1. **Agreement:** Wumpini writes a one page agreement with her monthly fee and, separately, the ad budget, with dates.
+2. **Billing:** the group adds its own card to its ad account and gives Wumpini access. She never handles the ad money.
+3. **Target cost:** each gift basket gives the group about GHS 60 profit (their figure), so a sale must cost well under that.
+4. **Test amount:** the group agrees GHS 400 for two weeks, split evenly between two ad versions, plus a small buffer because the card is charged in another currency.
+5. **Safety:** she sets an account spending limit and an end date.
+6. **Record:** a shared sheet with date, spend, messages and sales, updated every Friday.
+
+After two weeks the sheet shows GHS 400 spent, 32 messages and 8 sales. Cost per sale: GHS 50. That is under the GHS 60 profit, but only just. Wumpini tells the group honestly: the campaign covered its cost, version B did better, and she suggests running only B next time to bring the cost per sale down.`,
+      keyTerms: [
+        { term: "Ad spend", definition: "Money paid to a platform to show ads." },
+        { term: "Fee", definition: "What a client pays the marketer for planning and managing the work." },
+        { term: "Daily budget", definition: "The average amount a campaign is set to spend each day." },
+        { term: "Spending limit", definition: "A cap on the total an ad account can spend." },
+        { term: "Cost per result", definition: "Total spend divided by the number of results." },
+        { term: "Exchange rate", definition: "The price of one currency in another, which changes the cedi cost of foreign charges." },
+      ],
+      commonMistakes: [
+        "Mixing ad spend and your fee in one unclear amount",
+        "Paying for ads with your own card and being owed money by the client",
+        "Forgetting exchange rates and bank charges when the account is not in cedis",
+        "Judging a campaign by messages without checking profit per sale",
+        "Hiding a losing campaign instead of reporting it early",
+      ],
+      selfCheck: [
+        "How would you explain the difference between ad spend and your fee to a new client?",
+        "If a campaign cost GHS 200 and brought 4 sales, what was the cost per sale?",
+        "Why is it safer for the client's own card to be on the ad account?",
+      ],
       practice_task_md: `**Goal:** Build a budget tracker and practise cost per result calculations.
 
 **Steps:**
-1. Create a Google Sheet with columns: Date, Campaign, Platform, Spend (GHS), Results, Cost per result, Notes.
-2. Add a formula so Cost per result divides Spend by Results.
-3. Enter three made up campaigns for a local business, such as a church event, a MoMo promotion and a shea butter offer.
-4. Add a row for profit per sale and work out whether each campaign made or lost money.
-5. Write two sentences explaining to the owner which campaign you would keep running and why.
+1. In Google Sheets or another free spreadsheet, create columns: date, campaign, platform, spend, results, sales, notes.
+2. Fill in two weeks of made up data for a small campaign.
+3. Add formulas for total spend, cost per result and cost per sale.
+4. Choose a profit per sale and write whether the campaign made money.
+5. Write a three line agreement that separates ad spend from your fee and says who pays the platform.
 
-**Done looks like:** A working sheet with formulas and a short recommendation note.`,
+**Done looks like:** A working sheet with formulas, a short profit check and a clear three line agreement.`,
       quiz: {
         questions: [
           {
-            prompt: "What is the difference between ad spend and your fee?",
-            options: [
-              "They are the same thing",
-              "Ad spend goes to the platform, your fee pays for your work",
-              "Ad spend is paid only after the campaign ends and results are in",
-              "Your fee is always paid by the platform",
-            ],
-            answer_index: 1,
-            explanation: "The lesson says to separate money for the platform from payment for your work.",
-          },
-          {
             prompt: "What is the safest way for a client's ads to be paid for?",
             options: [
-              "The client adds their own payment method to their own ad account",
-              "The client sends you cash and you pay the platform with your card later",
-              "You use your own card and add a secret extra charge",
-              "You share one ad account for all your clients",
-            ],
-            answer_index: 0,
-            explanation: "This keeps the client in control and you never hold their money.",
-          },
-          {
-            prompt: "A campaign spends GHS 200 and gets 20 messages. What was the cost per message?",
-            options: ["GHS 20", "GHS 4", "GHS 200", "GHS 10"],
-            answer_index: 3,
-            explanation: "Total spend divided by results: 200 divided by 20 is 10.",
-          },
-          {
-            prompt: "Why might the cost of ads in cedis differ from what you expected?",
-            options: [
-              "Platforms change prices every hour",
-              "Cedis cannot be used online",
-              "Some platforms bill in another currency, so exchange rates matter",
-              "Ads are always cheaper on weekends, so weekday budgets run out faster",
+              "The marketer pays with their own card and sends the client an invoice later",
+              "The client sends MoMo to the marketer for each ad",
+              "The client's own payment method is on the client's own ad account",
+              "The marketer borrows from another client's budget",
             ],
             answer_index: 2,
-            explanation: "Billing in another currency means the cedi cost depends on the rate and charges.",
+            explanation: "The client keeps control and every charge appears in their records.",
+          },
+          {
+            prompt: "A campaign spends GHS 300 and brings 30 messages, of which 6 people buy. What is the cost per sale?",
+            options: ["GHS 10", "GHS 30", "GHS 6", "GHS 50"],
+            answer_index: 3,
+            explanation: "GHS 300 divided by 6 sales is GHS 50 per sale.",
+          },
+          {
+            prompt: "According to Google's help pages, what can happen with an average daily budget?",
+            options: [
+              "Spend can go higher on some days but stays within a monthly limit",
+              "Google always spends exactly the daily budget, never more or less",
+              "Google charges the full monthly budget on the first day",
+              "Budgets only apply to social media ads",
+            ],
+            answer_index: 0,
+            explanation: "Daily spend varies, but monthly charges stay within about 30.4 times the daily average.",
+          },
+          {
+            prompt: "Why might the cedi cost of a campaign differ from what was planned?",
+            options: [
+              "Platforms change prices every hour",
+              "The account may be charged in another currency, with exchange rates and bank charges",
+              "Clients always pay late",
+              "Cedis cannot be used to plan budgets",
+            ],
+            answer_index: 1,
+            explanation: "Foreign currency billing adds exchange rate and bank charge differences.",
           },
         ],
         pass_threshold: 75,
