@@ -1,5 +1,5 @@
 import { CheckCircle2, Clock } from "lucide-react";
-import { formatMinutes } from "@/lib/roadmaps/estimate";
+import { formatMinutes } from "@/lib/roadmaps/estimates";
 import {
   complexityText,
   DIFFICULTY_LABEL,

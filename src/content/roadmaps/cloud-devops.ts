@@ -57,6 +57,8 @@ export const cloudDevops: RoadmapDraft = {
     "Run the servers, pipelines and cloud accounts that keep apps online for banks, fintechs and telcos. This is a next step after the backend or IT support track. Theory works on any device; the hands on labs need a computer or a free browser lab.",
   track: "cloud-devops",
   field_category: "infrastructure",
+  level: "next-step",
+  leads_to: ["cybersecurity"],
   locale: "en-GH",
   status: "draft",
   nodes: [

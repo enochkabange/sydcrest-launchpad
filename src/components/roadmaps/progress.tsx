@@ -40,10 +40,18 @@ export async function NodeMark({ nodeId }: { nodeId: string }) {
   return <ProgressMark status={progress.get(nodeId) ?? "not_started"} />;
 }
 
-/** The outline mark for one node of a roadmap view. Nothing for visitors. */
+/** The outline mark for one node of a roadmap view, with "Up next" on the learner's next step. Nothing for visitors. */
 export async function ViewNodeMark({ view, nodeId }: { view: RoadmapView; nodeId: string }) {
-  const status = (await liveView(view)).byId[nodeId]?.status;
-  return status ? <ProgressMark status={status} /> : null;
+  const live = await liveView(view);
+  const status = live.byId[nodeId]?.status;
+  if (!status) return null;
+  if (live.upNextId !== nodeId) return <ProgressMark status={status} />;
+  return (
+    <span data-up-next className="inline-flex shrink-0 items-center gap-1.5">
+      <span className="rounded-full bg-roadmap-up-next px-2 py-0.5 text-xs font-bold text-content-inv">Up next</span>
+      <ProgressMark status={status} />
+    </span>
+  );
 }
 
 /** "3 of 12 required topics done" and a progress bar for learners; a sign in prompt for visitors. */

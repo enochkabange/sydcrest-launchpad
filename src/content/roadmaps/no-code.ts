@@ -66,6 +66,8 @@ export const noCode: RoadmapDraft = {
     "Build forms, field surveys, simple apps, websites and time saving automations for shops, NGOs, schools and small offices without writing code. Learn to keep data clean and private, test your builds, hand them over to clients, and turn small projects into paid work, with honest notes on what you can do on a phone and when a computer really helps.",
   track: "no-code",
   field_category: "software",
+  level: "beginner",
+  leads_to: ["product", "freelancing"],
   locale: "en-GH",
   status: "draft",
   nodes: [

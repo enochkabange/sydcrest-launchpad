@@ -31,6 +31,8 @@ export async function importRoadmapDrafts(supabase: Client, drafts: RoadmapDraft
       description: d.description,
       track: d.track,
       field_category: d.field_category,
+      level: d.level,
+      leads_to: [...d.leads_to],
       locale: d.locale,
       display_order,
       is_published: false,
@@ -43,7 +45,15 @@ export async function importRoadmapDrafts(supabase: Client, drafts: RoadmapDraft
   for (const d of drafts.filter((d) => existed.has(d.slug))) {
     const { error } = await supabase
       .from("roadmaps")
-      .update({ title: d.title, description: d.description, track: d.track, field_category: d.field_category, locale: d.locale })
+      .update({
+        title: d.title,
+        description: d.description,
+        track: d.track,
+        field_category: d.field_category,
+        level: d.level,
+        leads_to: [...d.leads_to],
+        locale: d.locale,
+      })
       .eq("slug", d.slug);
     if (error) throw new Error(`Could not update ${d.slug}: ${error.message}`);
   }

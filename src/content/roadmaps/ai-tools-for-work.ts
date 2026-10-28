@@ -57,6 +57,8 @@ export const aiToolsForWork: RoadmapDraft = {
     "Use AI assistants safely and well for real work and earning, on a phone or a computer. Learn to prompt, check facts, protect privacy, write, handle data, translate, automate small tasks and build simple digital products you can sell honestly.",
   track: "ai-tools-for-work",
   field_category: "ai",
+  level: "beginner",
+  leads_to: ["no-code", "virtual-assistant", "ai-ml"],
   locale: "en-GH",
   status: "draft",
   nodes: [

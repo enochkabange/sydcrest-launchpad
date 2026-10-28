@@ -8,6 +8,8 @@ export const uiUx: RoadmapDraft = {
     "Design apps and websites that real Ghanaian users find easy, from traders on shared phones to students on slow data. Learn research, interface design and testing with free tools, and leave with case studies employers can trust.",
   track: "ui-ux",
   field_category: "design",
+  level: "beginner",
+  leads_to: ["product", "frontend"],
   locale: "en-GH",
   status: "draft",
   nodes: [

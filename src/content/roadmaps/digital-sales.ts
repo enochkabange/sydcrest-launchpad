@@ -41,6 +41,8 @@ export const digitalSales: RoadmapDraft = {
     "Sell for businesses using the phone, WhatsApp, email and a simple CRM. Learn to find and qualify leads, hold good sales conversations, keep a pipeline and close honestly, all from a phone or a computer.",
   track: "digital-sales",
   field_category: "business",
+  level: "beginner",
+  leads_to: ["digital-business"],
   locale: "en-GH",
   status: "draft",
   nodes: [

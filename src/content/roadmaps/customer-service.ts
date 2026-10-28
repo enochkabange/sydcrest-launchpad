@@ -44,6 +44,8 @@ export const customerService: RoadmapDraft = {
     "Help customers by phone, chat, WhatsApp and email for banks, fintechs, delivery firms and remote support teams. Learn tickets, CRM records, calm problem solving and service quality, and do almost all of it on a phone or a computer.",
   track: "customer-service",
   field_category: "business",
+  level: "beginner",
+  leads_to: ["digital-sales"],
   locale: "en-GH",
   status: "draft",
   nodes: [

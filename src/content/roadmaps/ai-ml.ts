@@ -79,6 +79,8 @@ export const aiMl: RoadmapDraft = {
     "Learn how machine learning models are built, tested and put to work, from classic prediction to language models and Ghanaian language tools. This is an advanced track to take after the Data Analyst track: you will need Python, school level maths you are willing to extend, and a laptop.",
   track: "ai-ml",
   field_category: "ai",
+  level: "next-step",
+  leads_to: [],
   locale: "en-GH",
   status: "draft",
   nodes: [

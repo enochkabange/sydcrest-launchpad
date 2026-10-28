@@ -55,6 +55,8 @@ export const socialMediaManagement: RoadmapDraft = {
     "Run Facebook, Instagram, TikTok and WhatsApp pages for shops, brands, churches, schools and NGOs. Learn to onboard a client, keep their accounts safe, plan and schedule posts, run the inbox and community, host live selling, follow platform rules and report results, all from a phone or a computer, then build a portfolio and manage several clients.",
   track: "social-media-management",
   field_category: "marketing",
+  level: "beginner",
+  leads_to: ["digital-marketing-specialisations", "freelancing"],
   locale: "en-GH",
   status: "draft",
   nodes: [

@@ -280,6 +280,11 @@
   --color-roadmap-badge-practice:      #f79020;
   --color-roadmap-badge-practice-fg:   #211d1d;  /* 7.14:1                    */
   --color-roadmap-scrim:               rgb(33 29 29 / 0.4);  /* behind the topic panel */
+  --color-roadmap-canvas:              #fafaf9;  /* behind the pannable map    */
+  --color-roadmap-minimap:             #a3a29d;  /* section blocks in the minimap */
+  --color-roadmap-minimap-view:        #1c75bb;  /* the visible area outline   */
+  --color-roadmap-up-next:             #1c75bb;  /* ring on the learner's next step, 4.87:1 */
+  --color-roadmap-choice:              #78776f;  /* frame around a pick one group */
 }
 
 /* --- Responsive type scale (issue #154) ------------------------------------
@@ -459,6 +464,11 @@
   --color-roadmap-badge-practice:      #f79020;
   --color-roadmap-badge-practice-fg:   #211d1d;
   --color-roadmap-scrim:               rgb(0 0 0 / 0.5);
+  --color-roadmap-canvas:              #101317;
+  --color-roadmap-minimap:             #5a5f68;
+  --color-roadmap-minimap-view:        #6fb0e3;
+  --color-roadmap-up-next:             #6fb0e3;
+  --color-roadmap-choice:              #7d838c;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -521,6 +531,11 @@
     --color-roadmap-badge-practice:      #f79020;
     --color-roadmap-badge-practice-fg:   #211d1d;
     --color-roadmap-scrim:               rgb(0 0 0 / 0.5);
+    --color-roadmap-canvas:              #101317;
+    --color-roadmap-minimap:             #5a5f68;
+    --color-roadmap-minimap-view:        #6fb0e3;
+    --color-roadmap-up-next:             #6fb0e3;
+    --color-roadmap-choice:              #7d838c;
   }
 }
 
