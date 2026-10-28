@@ -6,7 +6,7 @@ import { createClient } from "@/lib/supabase/server";
 import { siteOrigin } from "@/lib/site-url";
 import { parseAgeAndConsent, parseSignIn, parseSignUp, safeNextPath, type FieldErrors } from "@/lib/validation";
 import { UNDER_AGE_MESSAGE } from "@/lib/legal";
-import { track, trackRefusal } from "@/lib/analytics/track";
+import { track, trackNow, trackRefusal } from "@/lib/analytics/track";
 import { recordLegalConsent } from "@/lib/consent-records";
 import { allowFormSubmission, allowSignIn, FORM_RATE_LIMIT_MESSAGE, recordSignInFailure, SIGN_IN_LIMIT_MESSAGE } from "@/lib/rate-limit";
 
@@ -167,8 +167,8 @@ export async function signInWithGoogle(form?: FormData) {
 }
 
 export async function signOut() {
-  // Before signing out, so the event belongs to the session that ended.
-  await track("sign_out");
+  // Written now, before signing out, so the event belongs to the session that ended.
+  await trackNow("sign_out");
   const supabase = await createClient();
   await supabase.auth.signOut();
   redirect("/");

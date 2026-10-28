@@ -10,7 +10,7 @@ vi.mock("@/lib/supabase/server", () => ({
   createClient: async () => ({ auth: { signInWithPassword, signInWithOAuth }, rpc }),
 }));
 vi.mock("@/lib/site-url", () => ({ siteOrigin: async () => "https://sydcrest.example" }));
-vi.mock("@/lib/analytics/track", () => ({ track: vi.fn(), trackRefusal: vi.fn() }));
+vi.mock("@/lib/analytics/track", () => ({ track: vi.fn(), trackNow: vi.fn(), trackRefusal: vi.fn() }));
 vi.mock("@/lib/consent-records", () => ({ recordLegalConsent: vi.fn() }));
 let requestHeaders = new Headers();
 vi.mock("next/headers", () => ({ headers: async () => requestHeaders }));
