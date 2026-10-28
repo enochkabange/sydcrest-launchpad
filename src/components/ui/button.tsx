@@ -1,7 +1,7 @@
 import type { ComponentProps } from "react";
 
 const VARIANTS = {
-  primary: "bg-blue-600 text-white hover:bg-blue-700",
+  primary: "bg-action text-action-fg hover:bg-action-hover",
   secondary: "border border-line-strong bg-surface text-content hover:bg-surface-sunken",
   ghost: "text-content-2 hover:bg-surface-sunken hover:text-content",
 } as const;

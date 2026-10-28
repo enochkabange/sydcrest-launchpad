@@ -13,10 +13,6 @@ import { RoleForm } from "./role-form";
 
 export const metadata: Metadata = { title: "Team", robots: { index: false } };
 
-// A dynamic segment under the app shell, whose nav reads usePathname() outside
-// Suspense: allow blocking, as /learn/[slug]/[node] does, until the shell wraps it.
-export const instant = false;
-
 type Row = { profile_id: string; display_name: string; role: string; status: string; joined_at: string | null; created_at: string };
 
 async function Team({ params }: { params: Promise<{ slug: string }> }) {

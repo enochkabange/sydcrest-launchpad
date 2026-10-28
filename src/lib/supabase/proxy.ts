@@ -1,6 +1,7 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import { hasAgeAndConsent } from "@/lib/legal";
+import { isSignedInPath, matchesPrefix } from "./protected-paths";
 import {
   ANONYMOUS_ID_COOKIE,
   ANONYMOUS_ID_COOKIE_OPTIONS,
@@ -20,17 +21,12 @@ import {
  * Signed out visitors get a random first party anonymous id cookie for the
  * analytics funnel (lib/analytics); nothing personal, no third parties.
  */
-const PROTECTED = ["/dashboard", "/profile", "/learn", "/leaderboards", "/cohort", "/admin"];
-const SIGNED_IN_ONLY = [...PROTECTED, "/welcome"];
+// Every signed in area: see protected-paths.ts.
 /**
  * The path quiz result: signed out visitors arrive from the quiz, so they go
  * to sign up (not sign in) and come back here afterwards.
  */
 const PATH_RESULT = "/path";
-
-function matches(path: string, prefixes: string[]) {
-  return prefixes.some((p) => path === p || path.startsWith(`${p}/`));
-}
 
 export async function updateSession(request: NextRequest) {
   let response = NextResponse.next({ request });
@@ -75,14 +71,15 @@ export async function updateSession(request: NextRequest) {
     if (!claims) return redirectTo("/signup", `?next=${PATH_RESULT}`);
     if (!hasAgeAndConsent(claims.user_metadata)) return redirectTo("/welcome", `?next=${PATH_RESULT}`);
   }
-  if (!claims && matches(path, SIGNED_IN_ONLY)) return redirectTo("/login");
+  const signedInOnly = isSignedInPath(path);
+  if (!claims && (signedInOnly || matchesPrefix(path, ["/welcome"]))) return redirectTo("/login");
 
   // Set after getClaims: the setAll above replaces `response`.
   if (!claims && !isAnonymousId(request.cookies.get(ANONYMOUS_ID_COOKIE)?.value)) {
     const id = newAnonymousId();
     response.cookies.set(ANONYMOUS_ID_COOKIE, id, ANONYMOUS_ID_COOKIE_OPTIONS);
   }
-  if (claims && matches(path, PROTECTED) && !hasAgeAndConsent(claims.user_metadata)) {
+  if (claims && signedInOnly && !hasAgeAndConsent(claims.user_metadata)) {
     return redirectTo("/welcome");
   }
 

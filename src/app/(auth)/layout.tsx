@@ -44,7 +44,7 @@ export default function AuthLayout({ children }: LayoutProps<"/">) {
         <ul className="flex max-w-lg flex-col gap-3 border-t border-line pt-6">
           {FACTS.map((f) => (
             <li key={f} className="flex items-start gap-3 text-content-2">
-              <span aria-hidden className="mt-2 size-2 shrink-0 rounded-full bg-orange-500" />
+              <span aria-hidden className="mt-2 size-2 shrink-0 rounded-full bg-brand-mark" />
               {f}
             </li>
           ))}

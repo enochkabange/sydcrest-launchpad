@@ -13,10 +13,6 @@ import { ContactForm } from "./contact-form";
 
 export const metadata: Metadata = { title: "Talent", robots: { index: false } };
 
-// A dynamic segment under the app shell, whose nav reads usePathname() outside
-// Suspense: allow blocking, as /learn/[slug]/[node] does, until the shell wraps it.
-export const instant = false;
-
 async function Person({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   if (!isUuid(id)) notFound();

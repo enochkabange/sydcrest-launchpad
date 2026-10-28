@@ -144,7 +144,7 @@ export function SubmissionForm(props: SubmissionFormProps) {
           ) : (
             <label
               htmlFor={fileId}
-              className="flex min-h-11 cursor-pointer items-center gap-2 rounded-md border border-dashed border-line-strong bg-surface px-3 text-sm font-semibold text-content transition-colors hover:bg-surface-sunken focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-blue-600"
+              className="flex min-h-11 cursor-pointer items-center gap-2 rounded-md border border-dashed border-line-strong bg-surface px-3 text-sm font-semibold text-content transition-colors hover:bg-surface-sunken focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-ring"
             >
               <Paperclip aria-hidden className="size-4 text-content-3" />
               {upload.busy ? "Uploading…" : "Choose a file"}
