@@ -84,7 +84,7 @@ Many people already manage projects without calling it that. If you have helped 
             options: [
               "It has nothing to do with project management",
               "It only counts if you were paid",
-              "It means you no longer need to learn anything",
+              "It means you already have every skill needed and no longer need to learn anything about projects",
               "It involves juggling tasks, money, people and deadlines, like a project",
             ],
             answer_index: 3,
@@ -147,7 +147,7 @@ When a manager or donor asks for "just one more thing", you can say: "We can do 
             prompt: "Which of these is a project rather than routine work?",
             options: [
               "Selling soap in the shop every day",
-              "Pumping water from the borehole every morning",
+              "Pumping water from the borehole every morning for the school kitchen",
               "Drilling a borehole and training a water committee",
               "Opening the shop doors at 8 every morning",
             ],
@@ -166,7 +166,7 @@ When a manager or donor asks for "just one more thing", you can say: "We can do 
               "Nothing changes at all",
               "The project finishes earlier",
               "She will miss the date, overspend or lower quality",
-              "The budget automatically increases",
+              "The budget automatically increases to cover the new website",
             ],
             answer_index: 2,
             explanation: "Changing scope without changing time or cost usually breaks one of them or hurts quality.",
@@ -176,7 +176,7 @@ When a manager or donor asks for "just one more thing", you can say: "We can do 
             options: [
               "A tool for drawing schedules",
               "Slow, unplanned growth in what a project must deliver",
-              "A type of donor report",
+              "A type of donor report that lists every new activity added during the year",
               "Cutting the budget in half",
             ],
             answer_index: 1,
@@ -188,7 +188,7 @@ When a manager or donor asks for "just one more thing", you can say: "We can do 
               "Refuse because the plan can never change",
               "Agree and say nothing about the impact",
               "Explain what it means for the date or budget and ask which they prefer",
-              "Quietly drop another activity without telling anyone",
+              "Quietly drop another activity without telling anyone, so the date and budget still look the same",
             ],
             answer_index: 2,
             explanation: "The lesson recommends showing the effect on time or cost and letting the decision maker choose.",
@@ -272,7 +272,7 @@ A RACI chart takes ten minutes to make in a spreadsheet and saves hours of confu
             prompt: "In the example, what is the chief's letter for booking the venue, and what does it mean?",
             options: [
               "R, he books the venue himself",
-              "A, he approves the booking",
+              "A, he approves the booking and signs off on the final cost",
               "I, he is only told afterwards",
               "C, he is asked for advice before the booking",
             ],
@@ -342,7 +342,7 @@ Real projects are messy. A long programme may plan the second year while still d
           {
             prompt: "How does the lesson describe the relationship between monitoring and doing?",
             options: [
-              "Monitoring only happens after all the work is finished",
+              "Monitoring only happens after all of the work is finished and the money has been spent",
               "Monitoring replaces doing",
               "Monitoring runs alongside doing as a loop of check and adjust",
               "Monitoring happens before planning",
@@ -362,7 +362,7 @@ Real projects are messy. A long programme may plan the second year while still d
               "Collected daily meal counts and entered them in a shared spreadsheet",
               "Drilled a borehole",
               "Wrote the charter",
-              "Handed kitchens to the parent teacher associations",
+              "Handed the kitchens over to the parent teacher associations at each of the schools",
             ],
             answer_index: 0,
             explanation: "Wumpini's monitoring work was collecting meal counts and entering them in the spreadsheet.",
@@ -426,7 +426,7 @@ At the start of anything, from a church harvest to a donor programme, pause and 
             options: [
               "To make the charter longer",
               "To protect the team from scope creep later",
-              "Because donors refuse to read goals",
+              "Because donors refuse to read goals unless limits are listed first",
               "To avoid talking to the community",
             ],
             answer_index: 1,
@@ -438,7 +438,7 @@ At the start of anything, from a church harvest to a donor programme, pause and 
               "That the first suggested spot flooded and women preferred a site near the school",
               "That nobody needed water",
               "That the donor had cancelled funding",
-              "That the drilling team was not available",
+              "That the drilling team was not available until after the rainy season, so work had to wait",
             ],
             answer_index: 0,
             explanation: "The meeting revealed the flooding problem and the women's preferred location.",
@@ -447,7 +447,7 @@ At the start of anything, from a church harvest to a donor programme, pause and 
             prompt: "Which of these does the lesson say assistants are often asked to do at the start of a project?",
             options: [
               "Sign the donor contract",
-              "Approve the final budget",
+              "Approve the final budget and sign it on behalf of the organisation",
               "Take notes at meetings and draft parts of documents",
               "Choose the project coordinator",
             ],
@@ -516,7 +516,7 @@ A charter is not filed and forgotten. If the budget, dates or scope change in a 
           {
             prompt: "What is the main purpose of a project charter?",
             options: [
-              "To record every daily task in detail",
+              "To record every daily task in detail, with who did it and how long it took each day",
               "To say why the project exists and the basic terms it runs on, agreed at the start",
               "To list receipts for the auditors",
               "To advertise the project on social media",
@@ -614,7 +614,7 @@ Good engagement builds trust that lasts beyond the project, and that trust is of
             options: [
               "Only the people who pay for the project",
               "Anyone who affects the project or is affected by it",
-              "Only staff of the organisation",
+              "Only staff of the organisation running the project and its partners",
               "People who own shares in a company",
             ],
             answer_index: 1,
@@ -630,7 +630,7 @@ Good engagement builds trust that lasts beyond the project, and that trust is of
             prompt: "Why does the lesson warn that the grid is not a ranking of who matters?",
             options: [
               "Because people with little formal influence are often the ones the project serves",
-              "Because donors do not like grids",
+              "Because donors do not like grids and prefer stakeholders written as a simple list in the report",
               "Because influence never changes",
               "Because only the chief matters",
             ],
@@ -641,7 +641,7 @@ Good engagement builds trust that lasts beyond the project, and that trust is of
             prompt: "Which is an example of respectful engagement from the lesson?",
             options: [
               "Holding all meetings in English at night",
-              "Promising every community a borehole",
+              "Promising every community a borehole so that nobody feels left out of the project",
               "Skipping the chief to save time",
               "Greeting traditional authorities first through the right channels",
             ],
@@ -709,7 +709,7 @@ Different donors use slightly different terms: results framework, theory of chan
           {
             prompt: "In a logframe, what is an output?",
             options: [
-              "The long term change in the region",
+              "The long term change in the region, such as better health over ten years",
               "What the activities directly produce, such as a working borehole",
               "The money the donor gives",
               "A meeting with the chief",
@@ -733,7 +733,7 @@ Different donors use slightly different terms: results framework, theory of chan
             options: [
               "Where the evidence for each indicator comes from",
               "The names of the donors",
-              "The budget for each activity",
+              "The budget for each activity and who will approve the spending",
               "The risks the team controls",
             ],
             answer_index: 0,
@@ -743,7 +743,7 @@ Different donors use slightly different terms: results framework, theory of chan
             prompt: "What is an assumption in a logframe?",
             options: [
               "A guess about the budget",
-              "An activity the team will do",
+              "An activity the team will do once the budget has been approved",
               "A type of indicator",
               "Something outside the project's control that must hold true",
             ],
@@ -756,7 +756,7 @@ Different donors use slightly different terms: results framework, theory of chan
               "It is evidence for an indicator in the donor report",
               "It replaces the budget",
               "Donors collect autographs",
-              "It is needed to drill the borehole",
+              "It is needed before the drilling team can start on the borehole",
             ],
             answer_index: 0,
             explanation: "The attendance sheet proves the 'ten members trained' indicator.",
@@ -833,7 +833,7 @@ A plan is a best guess made with the information you have today. When things cha
               "So everyone sees the same, current version of the plan",
               "Because spreadsheets cannot be printed",
               "So nobody needs to update it",
-              "Because donors require a specific app",
+              "Because donors require every project to use one specific paid app for plans",
             ],
             answer_index: 0,
             explanation: "One shared file avoids confusion from several different versions on different devices.",
@@ -948,7 +948,7 @@ Breaking down work is best done as a group. In a short meeting, write the delive
               "When the list reaches exactly ten items",
               "When the manager is tired",
               "When each task can be owned by one person, estimated and clearly finished",
-              "Never; keep breaking it down forever",
+              "Never; keep breaking each task into smaller pieces until it cannot be split any further at all",
             ],
             answer_index: 2,
             explanation: "The lesson says to stop when a task has one owner, can be estimated and has a clear finish.",
@@ -1031,7 +1031,7 @@ Update the schedule each week: mark tasks done, move bars that slipped, and chec
             prompt: "What is a dependency in a schedule?",
             options: [
               "A task that cannot start until another one finishes",
-              "A staff member who depends on their salary",
+              "A staff member who depends on their salary to support a family",
               "A spare amount of money",
               "A type of chart colour",
             ],
@@ -1043,7 +1043,7 @@ Update the schedule each week: mark tasks done, move bars that slipped, and chec
             options: [
               "The longest task in the project",
               "An important point in the schedule with no length of its own",
-              "A distance marker on the road to the site",
+              "A distance marker on the road to the project site, used to plan travel",
               "The final budget total",
             ],
             answer_index: 1,
@@ -1053,7 +1053,7 @@ Update the schedule each week: mark tasks done, move bars that slipped, and chec
             prompt: "Why should you add buffer time before important milestones?",
             options: [
               "To make the chart look longer",
-              "Because donors pay more for longer projects",
+              "Because donors pay more for longer projects, so buffer time increases the final grant",
               "Because things will slip, and buffer protects the final date",
               "So staff can take holidays",
             ],
@@ -1064,7 +1064,7 @@ Update the schedule each week: mark tasks done, move bars that slipped, and chec
             prompt: "In Wumpini's plan, why must menus be agreed before food is bought?",
             options: [
               "Because it is the shortest task",
-              "Because cooks need to be paid first",
+              "Because the cooks need to be paid first, before anything else can be bought",
               "Because the donor said so",
               "Because what food to buy depends on the agreed menus",
             ],
@@ -1148,7 +1148,7 @@ Once a donor approves a budget, spending usually has to match the approved lines
             prompt: "Why is building costs from units and quantities helpful?",
             options: [
               "It makes the budget longer",
-              "It hides costs from the donor",
+              "It hides the small costs from the donor so the budget looks simpler to approve",
               "It makes the budget easy to check and adjust when numbers change",
               "It removes the need for receipts",
             ],
@@ -1158,7 +1158,7 @@ Once a donor approves a budget, spending usually has to match the approved lines
           {
             prompt: "What is contingency?",
             options: [
-              "A fee paid to the facilitator",
+              "A fee paid to the facilitator for preparing the budget",
               "A small amount set aside for unexpected costs",
               "The donor's profit",
               "The cost of transport",
@@ -1171,7 +1171,7 @@ Once a donor approves a budget, spending usually has to match the approved lines
             options: [
               "A random guess",
               "The highest price you can imagine",
-              "Last year's budget from a different country",
+              "Last year's budget from a different country, since prices are similar everywhere in the region",
               "Real quotes, recent receipts or the organisation's standard rates",
             ],
             answer_index: 3,
@@ -1181,7 +1181,7 @@ Once a donor approves a budget, spending usually has to match the approved lines
             prompt: "After a donor approves a budget, what usually applies?",
             options: [
               "Spending should match the approved lines unless permission is given",
-              "You can move money freely between lines",
+              "You can move money freely between lines, as long as you spend it all before the end",
               "The budget no longer matters",
               "Only the total needs to be correct",
             ],
@@ -1256,7 +1256,7 @@ Review the register at every team meeting. Ask: has anything changed? Are there 
             options: [
               "A risk might happen; an issue has already happened",
               "A risk is small; an issue is large",
-              "A risk is about money; an issue is about people",
+              "A risk is about money, while an issue is always about people",
               "There is no difference",
             ],
             answer_index: 0,
@@ -1282,7 +1282,7 @@ Review the register at every team meeting. Ask: has anything changed? Are there 
           {
             prompt: "Why does the lesson suggest keeping an issue log?",
             options: [
-              "To blame the person responsible",
+              "To show the donor who was responsible for each problem so that person can be blamed",
               "To answer questions later with facts about what happened and what was done",
               "Because donors ban risk registers",
               "To replace the budget",
@@ -1366,7 +1366,7 @@ These habits matter more than any tool, and they are what managers remember when
             options: [
               "Kept them private",
               "Deleted them",
-              "Waited a week before sharing",
+              "Waited a week before sharing them so that people had time to forget the arguments",
               "Sent them to the team WhatsApp group with action points, names and dates",
             ],
             answer_index: 3,
@@ -1465,7 +1465,7 @@ Look at the board at the start of each team meeting and walk through Doing first
             prompt: "Why do many teams limit the number of cards in Doing?",
             options: [
               "So that people finish tasks before starting new ones",
-              "Because apps only allow three cards",
+              "Because task board apps only allow three cards in each column",
               "To hide work from managers",
               "Because donors require it",
             ],
@@ -1489,7 +1489,7 @@ Look at the board at the start of each team meeting and walk through Doing first
               "It printed the labels automatically",
               "It showed the label card stuck in To do, so she called Amina and fixed the problem",
               "It sent money to the printer",
-              "It replaced the need to talk to her team",
+              "It replaced the need to talk to her team, because everyone could see the cards",
             ],
             answer_index: 1,
             explanation: "Seeing the stuck card prompted Hawa to find out why and solve it.",
@@ -1598,7 +1598,7 @@ Following up on action points is where minutes become useful. A day before each 
               "Leave quickly without summarising",
               "Take photos without asking",
               "Read the key decisions back so everyone hears the same thing",
-              "Collect money from participants",
+              "Collect money from participants for refreshments and transport",
             ],
             answer_index: 2,
             explanation: "Reading decisions back helps everyone share the same understanding.",
@@ -1659,7 +1659,7 @@ Procurement rules protect you as well as the project. Never split a purchase int
             options: [
               "Writing the donor report",
               "The process of buying goods and services for the project",
-              "Taking minutes at a meeting",
+              "Taking minutes at a meeting and sharing them with suppliers",
               "Drawing a Gantt chart",
             ],
             answer_index: 1,
@@ -1679,7 +1679,7 @@ Procurement rules protect you as well as the project. Never split a purchase int
           {
             prompt: "Why did Abdul-Rahman recommend the second cheapest printer?",
             options: [
-              "It was owned by his cousin",
+              "It was owned by his cousin, who promised to print the job carefully",
               "It gave him a gift",
               "It could deliver two days earlier, which mattered for the schedule",
               "It had the nicest shop",
@@ -1692,7 +1692,7 @@ Procurement rules protect you as well as the project. Never split a purchase int
             options: [
               "Collecting written quotes",
               "Signing a delivery note",
-              "Declaring that a supplier is a relative",
+              "Declaring that a supplier you want to use is a relative of yours",
               "Splitting a purchase into smaller ones to avoid the quote rule",
             ],
             answer_index: 3,
@@ -1766,7 +1766,7 @@ Report what really happened, including problems. Donors understand that projects
               "Monitoring is regular ongoing checking; evaluation is a deeper look, often in the middle or at the end",
               "Monitoring is about money; evaluation is about people",
               "They are the same thing",
-              "Evaluation happens every day; monitoring once a year",
+              "Evaluation happens every day in the field, while monitoring is done once a year by an outside expert",
             ],
             answer_index: 0,
             explanation: "The lesson describes monitoring as ongoing and evaluation as a deeper periodic review.",
@@ -1783,7 +1783,7 @@ Report what really happened, including problems. Donors understand that projects
               "Deleted the numbers",
               "Waited until the end of the year",
               "Asked the head teacher why, logged the issue, and a backup cook was arranged",
-              "Reported a higher number to the donor",
+              "Reported a higher number to the donor so the school would not lose its funding",
             ],
             answer_index: 2,
             explanation: "She followed the cycle: compared, asked why, logged it and the team acted.",
@@ -1878,7 +1878,7 @@ If the tracking sheet is current, writing the report becomes much easier, becaus
               "The difference between the budget and actual spending",
               "The name of the donor",
               "A type of chart",
-              "The total project budget",
+              "The total project budget agreed with the donor",
             ],
             answer_index: 0,
             explanation: "The lesson defines variance as the difference between budget and actual.",
@@ -1893,7 +1893,7 @@ If the tracking sheet is current, writing the report becomes much easier, becaus
             prompt: "What does conditional formatting do?",
             options: [
               "Deletes old rows",
-              "Sends the report to the donor",
+              "Sends the report to the donor automatically every month",
               "Changes a cell's colour automatically based on a rule",
               "Locks the spreadsheet",
             ],
@@ -1905,7 +1905,7 @@ If the tracking sheet is current, writing the report becomes much easier, becaus
             options: [
               "It had not been used at all",
               "The donor cancelled it",
-              "It was the largest line",
+              "It was the largest line in the budget, so the donor checks it first",
               "It was 90 percent spent with several field trips still planned",
             ],
             answer_index: 3,
@@ -2005,7 +2005,7 @@ Before you send any report, check that numbers match, names are spelled correctl
           {
             prompt: "What did Wumpini do before using the head teacher's quote?",
             options: [
-              "Changed it to sound better",
+              "Changed it to sound better, since quotes in reports should read smoothly",
               "Used it without asking",
               "Paid for it",
               "Asked permission and checked the wording with her",
@@ -2017,7 +2017,7 @@ Before you send any report, check that numbers match, names are spelled correctl
             prompt: "What is a concept note?",
             options: [
               "A short document describing a problem, proposed project, expected results and rough budget",
-              "The minutes of a team meeting",
+              "The minutes of a team meeting where the project idea was first discussed by staff",
               "A receipt for a purchase",
               "A daily task board",
             ],
@@ -2124,7 +2124,7 @@ Good records are not extra work added at the end. They are a habit built into ev
             options: [
               "Collecting only the data the project needs",
               "Getting consent for photos",
-              "Removing file access when someone leaves",
+              "Removing a person's file access on the day they leave the project team",
               "Posting participants' phone numbers in a public WhatsApp group",
             ],
             answer_index: 3,
@@ -2191,7 +2191,7 @@ Think of closing as the last activity in your work plan, with its own tasks, own
             options: [
               "Leaving receipts with whoever has them",
               "Handing over results to the people who will keep them going",
-              "Starting a new project without finishing reports",
+              "Starting a new project straight away without finishing the old reports",
               "Deleting the project folders",
             ],
             answer_index: 1,
@@ -2201,7 +2201,7 @@ Think of closing as the last activity in your work plan, with its own tasks, own
             prompt: "What kind of work suits a plan driven, or waterfall, approach?",
             options: [
               "Work where the goal is clear and changes are costly, like drilling a borehole",
-              "Work where nobody knows what the result should be",
+              "Work where nobody knows what the result should be and users keep changing their minds",
               "Only software projects",
               "Work with no budget",
             ],
@@ -2212,7 +2212,7 @@ Think of closing as the last activity in your work plan, with its own tasks, own
             prompt: "How do agile teams work, according to the lesson?",
             options: [
               "They never plan anything",
-              "They plan everything once and never change",
+              "They plan everything once at the start and never change it, even after feedback",
               "They plan in short cycles, deliver something small, get feedback and adjust",
               "They only work at night",
             ],
@@ -2224,7 +2224,7 @@ Think of closing as the last activity in your work plan, with its own tasks, own
             options: [
               "As something that happens on its own",
               "As the donor's job only",
-              "As optional if the money is spent",
+              "As optional if the money is spent, since donors only care about the final report",
               "As the last activity in the work plan, with tasks, owners and dates",
             ],
             answer_index: 3,
@@ -2316,7 +2316,7 @@ Lessons only help if the next team reads them. Keep a shared lessons file for th
             options: [
               "Pumps never break",
               "The donor should fix all pumps",
-              "Repairs should be done by the chief",
+              "Repairs should be done by the chief, who should be given the tools when the project closes",
               "Include a repairer's contact list and a repair fund plan in the handover",
             ],
             answer_index: 3,
@@ -2381,7 +2381,7 @@ Even on a plan driven NGO project, you can borrow agile habits: short regular ch
           {
             prompt: "What is the main idea behind agile ways of working?",
             options: [
-              "Plan everything in detail for a year and never change",
+              "Plan everything in detail for a year at the start and never change the plan after that",
               "Deliver something useful early, get feedback often and change the plan as you learn",
               "Avoid talking to users until the end",
               "Work without any plan at all",
@@ -2401,7 +2401,7 @@ Even on a plan driven NGO project, you can borrow agile habits: short regular ch
               "A fixed cycle of one month or less, for example two weeks",
               "Exactly one day",
               "One full year",
-              "As long as the team likes, with no limit",
+              "As long as the team likes, with no limit, until the work feels finished",
             ],
             answer_index: 0,
             explanation: "A sprint is a fixed cycle of one month or less.",
@@ -2422,7 +2422,7 @@ Even on a plan driven NGO project, you can borrow agile habits: short regular ch
             options: [
               "Farmers found the SMS most useful and the app screens too busy",
               "Farmers did not want any market prices",
-              "The app was perfect and needed no changes",
+              "The app was perfect and needed no changes before it went out to all farmers",
               "The team should stop holding Daily Scrums",
             ],
             answer_index: 0,
@@ -2506,7 +2506,7 @@ Jobs in this field are competitive and applications often have strict deadlines.
             prompt: "How did Azara show her skills without a project job?",
             options: [
               "She paid for a certificate only",
-              "She copied someone else's documents",
+              "She copied someone else's project documents and shared them as her own",
               "She ran a small real project and shared its charter, budget, task board and report",
               "She waited until she was offered a job",
             ],
@@ -2516,7 +2516,7 @@ Jobs in this field are competitive and applications often have strict deadlines.
           {
             prompt: "What mindset does the lesson recommend for job hunting?",
             options: [
-              "Apply once and stop if you are not selected",
+              "Apply once to your favourite organisation and stop if you are not selected",
               "Only apply for manager roles",
               "Avoid asking people in the field for advice",
               "Expect to apply many times, keep improving and keep building proof",
@@ -2606,7 +2606,7 @@ A certificate does not replace experience, and experience can be built without o
           {
             prompt: "What did Kassim do before taking an exam?",
             options: [
-              "Borrowed money to pay for three exams at once",
+              "Borrowed money to pay for three exams at once so he would finish faster than everyone else",
               "Bought a certificate online without an exam",
               "Skipped all work experience",
               "Learned from free materials, built a portfolio and gained experience first",
@@ -2684,7 +2684,7 @@ Once you are in, ask to help with tasks just above your level: drafting a sectio
             prompt: "Why does the lesson recommend running a small real project?",
             options: [
               "To show employers proof that you can plan, organise, track money and report",
-              "Because employers only hire event planners",
+              "Because employers only hire people who have worked as event planners before",
               "To avoid applying for jobs",
               "Because certificates are banned",
             ],

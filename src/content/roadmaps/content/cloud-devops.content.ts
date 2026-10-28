@@ -60,13 +60,13 @@ Issahaku finished the IT support track and now looks after computers at a microf
           },
           {
             prompt: "When does this track say you need a laptop, desktop or browser lab?",
-            options: ["From the Linux section onwards, for the practice tasks", "From the very first lesson", "Only for the certification exam", "Never; everything is reading"],
+            options: ["From the Linux section onwards, for the practice tasks", "From the very first lesson", "Only for the certification exam, which has to be taken on a desktop", "Never; everything is reading"],
             answer_index: 0,
             explanation: "You can read every lesson on any device, but the hands on practice from the Linux section needs a computer or a free browser lab.",
           },
           {
             prompt: "What does the track promise about payment details?",
-            options: ["You must add a card before the first lesson", "You will never be asked to enter card details to practise", "A card is needed only for Linux practice", "Payment is required to unlock quizzes"],
+            options: ["You must add a card before the first lesson, but it is never charged", "You will never be asked to enter card details to practise", "A card is needed only for Linux practice", "Payment is required to unlock quizzes"],
             answer_index: 1,
             explanation: "Every lab uses card free options, and the lessons say plainly when a provider requires a card.",
           },
@@ -128,7 +128,7 @@ Mariama finished the backend track and built an API for a Bolgatanga shea butter
         questions: [
           {
             prompt: "Why does this track send you to the IT support and backend tracks for some topics?",
-            options: ["Because those topics are not used in cloud jobs", "Because certifications require it", "Because the cloud track has no lessons of its own", "Because cloud work builds on Linux, networking, scripting and Git, and those tracks already teach them"],
+            options: ["Because those topics are not used in cloud jobs", "Because certifications require it", "Because the cloud track has no lessons of its own and only links to other tracks for everything it covers", "Because cloud work builds on Linux, networking, scripting and Git, and those tracks already teach them"],
             answer_index: 3,
             explanation: "The cloud is built from those foundations, so the lesson links to where SydCrest already teaches them.",
           },
@@ -152,7 +152,7 @@ Mariama finished the backend track and built an API for a Bolgatanga shea butter
           },
           {
             prompt: "What happens to a Killercoda lab after about an hour?",
-            options: ["It starts charging money", "It is deleted and you can start a fresh one", "It becomes your permanent server", "It sends your files to your email"],
+            options: ["It starts charging money", "It is deleted and you can start a fresh one", "It becomes your permanent server, kept for you until you delete it", "It sends your files to your email"],
             answer_index: 1,
             explanation: "Each Killercoda environment lasts up to an hour and is then deleted.",
           },
@@ -210,19 +210,19 @@ Fuseini works on a help desk at a telco in Accra. He finished the IT support tra
           },
           {
             prompt: "What does the lesson say about experience in most cloud adverts?",
-            options: ["None of them mention experience", "Most ask for one or more years, and few are labelled junior", "They all hire school leavers with no skills", "They require ten years in every case"],
+            options: ["None of them mention experience", "Most ask for one or more years, and few are labelled junior", "They all hire school leavers with no skills and train them on the job for a year", "They require ten years in every case"],
             answer_index: 1,
             explanation: "Most adverts asked for experience, so the route usually has a step before the cloud title.",
           },
           {
             prompt: "Which of these is a realistic route into a cloud role named in the lesson?",
-            options: ["Waiting until you hold five certifications", "Applying only to senior roles", "Starting in cloud support, IT operations or a help desk role and growing into cloud work", "Avoiding any IT job until a cloud job appears"],
+            options: ["Waiting until you hold five certifications from different providers before applying anywhere at all", "Applying only to senior roles", "Starting in cloud support, IT operations or a help desk role and growing into cloud work", "Avoiding any IT job until a cloud job appears"],
             answer_index: 2,
             explanation: "Support and operations roles let you learn real systems and grow into cloud work.",
           },
           {
             prompt: "In the example, how did Fuseini move into cloud work?",
-            options: ["He showed a portfolio project and took on monitoring work in his help desk job", "He left IT completely", "He bought a certification without practice", "He was promoted on his first day"],
+            options: ["He showed a portfolio project and took on monitoring work in his help desk job", "He left IT completely", "He bought a certification without practice and listed it as experience on his CV", "He was promoted on his first day"],
             answer_index: 0,
             explanation: "His project and willingness to take on cloud tasks in his existing job opened the door.",
           },
@@ -278,7 +278,7 @@ Amina runs the IT side of a small courier business in Wa. The company's tracking
           },
           {
             prompt: "Which three topics does this section cover?",
-            options: ["Logo design, branding and colour", "The Linux terminal, scripting and automation, and networking for the cloud", "Spreadsheets, slides and email", "Hardware repair, printers and toner"],
+            options: ["Logo design, branding and colour", "The Linux terminal, scripting and automation, and networking for the cloud", "Spreadsheets, slides and email", "Hardware repair, printers and toner, and setting up office Wi Fi routers"],
             answer_index: 1,
             explanation: "The section turns Linux, scripting and networking basics into server skills.",
           },
@@ -290,7 +290,7 @@ Amina runs the IT side of a small courier business in Wa. The company's tracking
           },
           {
             prompt: "How can you avoid wasting data in a browser lab?",
-            options: ["Open several labs at once", "Keep the lab open all day", "Stream videos while it runs", "Plan what you will type, do the task, save notes and close the tab"],
+            options: ["Open several labs at once", "Keep the lab open all day so your work is saved and you never need to start again from scratch", "Stream videos while it runs", "Plan what you will type, do the task, save notes and close the tab"],
             answer_index: 3,
             explanation: "Terminal text is light; leaving labs open idle is what wastes data.",
           },
@@ -361,7 +361,7 @@ Sumaila looks after the server for a school results portal in Damongo. Parents r
         questions: [
           {
             prompt: "What does the command `pwd` show?",
-            options: ["The folder you are currently in", "Your password", "The list of running services", "The server's IP address"],
+            options: ["The folder you are currently in", "Your password", "The list of running services on the server", "The server's IP address"],
             answer_index: 0,
             explanation: "`pwd` prints the current working directory.",
           },
@@ -379,13 +379,13 @@ Sumaila looks after the server for a school results portal in Damongo. Parents r
           },
           {
             prompt: "How should you connect to a cloud server, according to the lesson?",
-            options: ["With SSH using a private key that you keep secret", "By emailing the server", "By sharing your key in a WhatsApp group", "Through a USSD code"],
+            options: ["With SSH using a private key that you keep secret", "By emailing the server", "By sharing your key in a WhatsApp group so the team can log in too", "Through a USSD code"],
             answer_index: 0,
             explanation: "SSH with a key is the normal way, and private keys must stay secret.",
           },
           {
             prompt: "In Sumaila's example, what caused the results portal errors?",
-            options: ["A typing mistake in an nginx config file that stopped the web server", "A broken cable", "A full disk", "Too many users"],
+            options: ["A typing mistake in an nginx config file that stopped the web server", "A broken cable", "A full disk on the server, because exam results files had grown too large to store", "Too many users"],
             answer_index: 0,
             explanation: "The service log showed a config mistake from the day before.",
           },
@@ -464,7 +464,7 @@ Hawa supports an NGO in Nalerigu that collects field surveys on tablets. Every e
           },
           {
             prompt: "What does `set -euo pipefail` do at the top of a Bash script?",
-            options: ["Deletes the script after it runs", "Runs the script every night", "Makes the script stop on errors instead of carrying on silently", "Connects to the internet"],
+            options: ["Deletes the script after it runs", "Runs the script automatically every night at midnight and emails you the output", "Makes the script stop on errors instead of carrying on silently", "Connects to the internet"],
             answer_index: 2,
             explanation: "It makes failures visible by stopping the script when a command fails.",
           },
@@ -476,13 +476,13 @@ Hawa supports an NGO in Nalerigu that collects field surveys on tablets. Every e
           },
           {
             prompt: "When does the lesson suggest switching from Bash to Python?",
-            options: ["Never, Bash does everything", "For every one line task", "When the script needs real logic, works with JSON or grows long", "Only on Windows"],
+            options: ["Never, because Bash can do everything Python does with less effort and fewer files", "For every one line task", "When the script needs real logic, works with JSON or grows long", "Only on Windows"],
             answer_index: 2,
             explanation: "Bash suits short glue jobs; Python suits more complex logic and data.",
           },
           {
             prompt: "Where should passwords and keys used by a script come from?",
-            options: ["Typed directly into the script", "A comment at the top of the script", "Environment variables, not the script itself", "The script's file name"],
+            options: ["Typed directly into the script", "A comment at the top of the script where everyone can read them", "Environment variables, not the script itself", "The script's file name"],
             answer_index: 2,
             explanation: "Secrets in scripts end up in Git and shared copies, so read them from the environment.",
           },
@@ -541,7 +541,7 @@ When something breaks, check each hop in order: DNS, firewall, load balancer hea
         questions: [
           {
             prompt: "Where should a database usually be placed in a cloud network?",
-            options: ["In a public subnet open to the internet", "In a private subnet with no direct route from the internet", "On a load balancer", "In the DNS records"],
+            options: ["In a public subnet open to the internet so the app can reach it from anywhere", "In a private subnet with no direct route from the internet", "On a load balancer", "In the DNS records"],
             answer_index: 1,
             explanation: "Private subnets keep databases out of direct reach from outside.",
           },
@@ -559,13 +559,13 @@ When something breaks, check each hop in order: DNS, firewall, load balancer hea
           },
           {
             prompt: "What does a load balancer do when a server fails its health check?",
-            options: ["Shuts down every server", "Stops sending that server traffic", "Deletes the DNS record", "Sends all traffic to it"],
+            options: ["Shuts down every server", "Stops sending that server traffic", "Deletes the DNS record", "Sends all of the traffic to it so the server can recover faster"],
             answer_index: 1,
             explanation: "The load balancer routes around unhealthy servers so users never reach them.",
           },
           {
             prompt: "When a site stops working, what order does the lesson suggest for checking?",
-            options: ["Database, then DNS, then nothing else", "Check the user's phone only", "Restart everything first", "DNS, firewall, load balancer health, server, database"],
+            options: ["Database first, then DNS, then nothing else, since the server is rarely the cause", "Check the user's phone only", "Restart everything first", "DNS, firewall, load balancer health, server, database"],
             answer_index: 3,
             explanation: "Following the request hop by hop finds where it breaks.",
           },
@@ -614,7 +614,7 @@ Zenabu works at a fintech in Accra that runs on AWS. Her friend Alhassan works a
         questions: [
           {
             prompt: "Why does this section teach ideas before provider names?",
-            options: ["Because provider names never change", "Because exams do not test ideas", "Because only one provider exists", "Because AWS, Azure and Google Cloud sell the same building blocks under different names"],
+            options: ["Because provider names never change", "Because exams do not test ideas", "Because only one provider exists in Ghana, so the other names do not matter to learners here", "Because AWS, Azure and Google Cloud sell the same building blocks under different names"],
             answer_index: 3,
             explanation: "The ideas are shared, so learning them first makes switching providers mostly a matter of new names.",
           },
@@ -626,13 +626,13 @@ Zenabu works at a fintech in Accra that runs on AWS. Her friend Alhassan works a
           },
           {
             prompt: "According to the lesson, which free options ask for a card at sign up?",
-            options: ["Free browser labs such as Killercoda", "Azure's standard free account and Google Cloud's free trial", "Reading the documentation", "Drawing diagrams"],
+            options: ["Free browser labs such as Killercoda and GitHub Codespaces", "Azure's standard free account and Google Cloud's free trial", "Reading the documentation", "Drawing diagrams"],
             answer_index: 1,
             explanation: "Both ask for a card, so the track only reads about them.",
           },
           {
             prompt: "What should you always do before signing up for any free cloud offer?",
-            options: ["Enter your card details to be safe", "Check the provider's own free tier page, because terms change", "Ask a friend for their account", "Start a large server to test it"],
+            options: ["Enter your card details to be safe", "Check the provider's own free tier page, because terms change", "Ask a friend for their account", "Start a large server to test it before the free period runs out"],
             answer_index: 1,
             explanation: "Free tier terms change, so the provider's page is the place to check.",
           },
@@ -694,25 +694,25 @@ Rashida's team builds a market price app for traders in Bolgatanga. They choose 
           },
           {
             prompt: "What is an availability zone?",
-            options: ["A separate data centre within a region with its own power and networking", "A country where cloud is legal", "A discount for new customers", "A type of database"],
+            options: ["A separate data centre within a region with its own power and networking", "A country where using cloud services is legal for banks and government offices", "A discount for new customers", "A type of database"],
             answer_index: 0,
             explanation: "Zones inside a region are independent, so spreading across them improves resilience.",
           },
           {
             prompt: "Under the shared responsibility model, what are you always responsible for?",
-            options: ["The provider's physical buildings", "Your data, your users and who has access", "The cables between data centres", "The provider's hardware repairs"],
+            options: ["The provider's physical buildings and the guards who protect them", "Your data, your users and who has access", "The cables between data centres", "The provider's hardware repairs"],
             answer_index: 1,
             explanation: "Data and access are always the customer's responsibility.",
           },
           {
             prompt: "What does elasticity mean?",
-            options: ["Paying for servers up front", "Adding and removing resources automatically as demand changes", "Storing data in only one place", "Using only SaaS"],
+            options: ["Paying for servers up front so the price stays the same as demand changes", "Adding and removing resources automatically as demand changes", "Storing data in only one place", "Using only SaaS"],
             answer_index: 1,
             explanation: "Elasticity is automatic scaling up and down with demand.",
           },
           {
             prompt: "Why might a Ghanaian bank keep core systems on site and run its app in the public cloud?",
-            options: ["Because it is a private cloud only", "Because public cloud cannot run apps", "It is using a hybrid cloud, mixing on site and public cloud", "Because SaaS requires it"],
+            options: ["Because it is a private cloud only", "Because the public cloud cannot run apps that handle money in Ghana", "It is using a hybrid cloud, mixing on site and public cloud", "Because SaaS requires it"],
             answer_index: 2,
             explanation: "Mixing on site systems with public cloud is a hybrid model.",
           },
@@ -779,25 +779,25 @@ The practice below needs no cloud account. If you choose to use a real account, 
           },
           {
             prompt: "What is object storage best suited for?",
-            options: ["Running a long program all day", "Replacing DNS", "Acting as a firewall", "Storing files such as photos, backups and reports, and hosting static websites"],
+            options: ["Running a long program all day and night without stopping, such as a busy website's server", "Replacing DNS", "Acting as a firewall", "Storing files such as photos, backups and reports, and hosting static websites"],
             answer_index: 3,
             explanation: "Object storage holds files in buckets and can serve a static site.",
           },
           {
             prompt: "What does a managed database service do for you?",
-            options: ["Writes your SQL queries", "Removes the need for any data", "Makes the database public", "Handles backups, updates and failover while you choose the engine and size"],
+            options: ["Writes and tunes your SQL queries, so you never need to learn SQL yourself", "Removes the need for any data", "Makes the database public", "Handles backups, updates and failover while you choose the engine and size"],
             answer_index: 3,
             explanation: "The provider runs the database operations; you use it.",
           },
           {
             prompt: "In Tahiru's portal, what happens when a teacher uploads a spreadsheet?",
-            options: ["A VM is bought", "A function runs, checks the file and loads it into the database", "The bucket is made public", "DNS is updated"],
+            options: ["A VM is bought", "A function runs, checks the file and loads it into the database", "The bucket is made public so parents can download the results directly", "DNS is updated"],
             answer_index: 1,
             explanation: "A serverless function reacts to the upload event.",
           },
           {
             prompt: "What is a common storage mistake the lesson warns about?",
-            options: ["Using private subnets", "Leaving a bucket open to the public by accident", "Making backups", "Naming buckets clearly"],
+            options: ["Using private subnets", "Leaving a bucket open to the public by accident", "Making backups", "Naming buckets clearly by project and environment"],
             answer_index: 1,
             explanation: "Buckets should be private unless you deliberately host public files.",
           },
@@ -867,13 +867,13 @@ Mahama joins a logistics startup in Kumasi and finds that every developer signs 
         questions: [
           {
             prompt: "What does least privilege mean?",
-            options: ["Everyone shares one admin account", "Only managers can sign in", "Each identity gets only the permissions it needs, for only as long as it needs them", "Permissions are never reviewed"],
+            options: ["Everyone shares one admin account so nobody is ever blocked from finishing their work", "Only managers can sign in", "Each identity gets only the permissions it needs, for only as long as it needs them", "Permissions are never reviewed"],
             answer_index: 2,
             explanation: "Least privilege limits damage if any identity is misused.",
           },
           {
             prompt: "What should you do with the root account after creating a cloud account?",
-            options: ["Share it with the whole team", "Put its password in the code", "Delete it immediately", "Protect it with a strong password and MFA, then stop using it day to day"],
+            options: ["Share it with the whole team", "Put its password in the code", "Delete it immediately so that nobody can ever use it to sign in again", "Protect it with a strong password and MFA, then stop using it day to day"],
             answer_index: 3,
             explanation: "Root can do everything, so lock it down and use separate identities.",
           },
@@ -891,7 +891,7 @@ Mahama joins a logistics startup in Kumasi and finds that every developer signs 
           },
           {
             prompt: "What should you do first if an access key leaks?",
-            options: ["Wait to see if anyone uses it", "Post about it publicly", "Disable it immediately, then investigate", "Create another key and keep both"],
+            options: ["Wait to see if anyone uses it", "Post about it publicly", "Disable it immediately, then investigate", "Create another key and keep both active so the program does not stop"],
             answer_index: 2,
             explanation: "Disabling the key stops misuse; investigation comes next.",
           },
@@ -960,19 +960,19 @@ Iddrisu, a developer in Tamale, practised on a paid account years ago, launched 
           },
           {
             prompt: "Why is stopping a VM not enough to stop all charges?",
-            options: ["Stopped VMs bill more than running ones", "Stopping deletes your data", "The provider restarts it automatically", "Its disk and snapshots still bill while it is stopped"],
+            options: ["Stopped VMs bill more than running ones", "Stopping deletes your data", "The provider restarts it automatically after a few hours unless you delete it", "Its disk and snapshots still bill while it is stopped"],
             answer_index: 3,
             explanation: "Storage keeps billing, so delete the VM, disks and snapshots.",
           },
           {
             prompt: "What does a budget alert do?",
-            options: ["Automatically deletes all resources", "Emails you when spending passes an amount you choose, so you can act", "Gives free credit", "Lowers the exchange rate"],
+            options: ["Automatically deletes all resources in the account once spending passes a set amount", "Emails you when spending passes an amount you choose, so you can act", "Gives free credit", "Lowers the exchange rate"],
             answer_index: 1,
             explanation: "Alerts warn you but do not stop spending by themselves.",
           },
           {
             prompt: "What should you do if a sign up page asks for card details during practice?",
-            options: ["Enter them and hope for the best", "Stop and use a card free option such as Killercoda or GitHub Codespaces", "Use a relative's card", "Leave the page open"],
+            options: ["Enter them and hope for the best, since practice accounts are almost never charged", "Stop and use a card free option such as Killercoda or GitHub Codespaces", "Use a relative's card", "Leave the page open"],
             answer_index: 1,
             explanation: "The track never asks you to enter card details for practice.",
           },
@@ -1026,25 +1026,25 @@ A small Accra agency released its clients' websites by copying files over FTP. O
         questions: [
           {
             prompt: "What problem does this section aim to solve?",
-            options: ["Developers writing too little code", "Phones having too little storage", "Releasing software by hand, which is slow and error prone", "Cloud providers changing their logos"],
+            options: ["Developers writing too little code", "Phones having too little storage", "Releasing software by hand, which is slow and error prone", "Cloud providers changing their logos and menu names every year"],
             answer_index: 2,
             explanation: "DevOps automates testing, packaging and delivery so releases are safe and repeatable.",
           },
           {
             prompt: "In Napari's example, what starts the pipeline?",
-            options: ["A phone call to the manager", "Opening a pull request with a new Git branch", "Logging into the server by hand", "A weekly meeting"],
+            options: ["A phone call to the manager", "Opening a pull request with a new Git branch", "Logging into the server by hand and copying the new files", "A weekly meeting"],
             answer_index: 1,
             explanation: "Git events such as pull requests trigger the pipeline automatically.",
           },
           {
             prompt: "How did Napari's team recover if a new version misbehaved?",
-            options: ["They rewrote the app from scratch", "They switched cloud providers", "They waited for users to stop complaining", "They redeployed the previous image in minutes"],
+            options: ["They rewrote the app from scratch", "They switched cloud providers", "They waited for users to stop complaining and then fixed it in the next release", "They redeployed the previous image in minutes"],
             answer_index: 3,
             explanation: "Tagged images make rolling back to the previous version quick.",
           },
           {
             prompt: "What does the lesson say the goal of DevOps releases should be?",
-            options: ["Exciting and rare", "Done once a year", "Done only by the most senior engineer", "Boring: small changes, tested automatically, delivered the same way every time"],
+            options: ["Exciting and rare", "Done once a year", "Done only by the most senior engineer, late at night, so that any mistakes affect fewer users", "Boring: small changes, tested automatically, delivered the same way every time"],
             answer_index: 3,
             explanation: "Boring, repeatable releases let teams ship fixes more often and safely.",
           },
@@ -1118,13 +1118,13 @@ Napari and Sumaila share a repository for a clinic appointment app in Wa. Before
         questions: [
           {
             prompt: "Why does Git matter so much in DevOps?",
-            options: ["It replaces the cloud", "It makes code run faster", "It is only used for backups", "Git events such as pushes, merges and tags start tests, deployments and releases"],
+            options: ["It replaces the cloud", "It makes code run faster", "It is only used for backups of code, not for starting anything else in the system", "Git events such as pushes, merges and tags start tests, deployments and releases"],
             answer_index: 3,
             explanation: "Pipelines are triggered by Git events, so Git habits shape the whole delivery process.",
           },
           {
             prompt: "What does branch protection on main do?",
-            options: ["Deletes old branches", "Stops direct pushes so changes merge only through pull requests that pass checks and review", "Makes the repository private", "Speeds up downloads"],
+            options: ["Deletes old branches", "Stops direct pushes so changes merge only through pull requests that pass checks and review", "Makes the repository private so only the team can see the main branch and its history at all", "Speeds up downloads"],
             answer_index: 1,
             explanation: "Branch protection makes reviews and passing checks a rule, not just a habit.",
           },
@@ -1136,7 +1136,7 @@ Napari and Sumaila share a repository for a clinic appointment app in Wa. Before
           },
           {
             prompt: "What should you assume if a password was pushed to Git, even if you deleted it later?",
-            options: ["It is safe because it was deleted", "GitHub removes it automatically", "Only you can see it", "It is leaked, because Git history keeps it, so rotate it"],
+            options: ["It is safe because it was deleted", "GitHub removes it automatically within a few minutes of the push", "Only you can see it", "It is leaked, because Git history keeps it, so rotate it"],
             answer_index: 3,
             explanation: "Git history keeps old versions, so pushed secrets must be treated as exposed.",
           },
@@ -1212,7 +1212,7 @@ Wumpini maintains a stock app for a pharmacy chain with branches in Tamale and Y
         questions: [
           {
             prompt: "What is continuous integration?",
-            options: ["Copying files to the server by hand", "Releasing software once a year", "Automatically building and testing every push so mistakes are caught within minutes", "Writing code without Git"],
+            options: ["Copying files to the server by hand after every change, so each one is checked by a person", "Releasing software once a year", "Automatically building and testing every push so mistakes are caught within minutes", "Writing code without Git"],
             answer_index: 2,
             explanation: "CI checks every change automatically while it is fresh.",
           },
@@ -1224,19 +1224,19 @@ Wumpini maintains a stock app for a pharmacy chain with branches in Tamale and Y
           },
           {
             prompt: "In the example workflow, what makes the check turn red?",
-            options: ["The repository being public", "Pushing to a branch", "Using ubuntu-latest", "`grep -q` failing because \"Price list\" is missing from the page"],
+            options: ["The repository being public, which blocks workflows from running", "Pushing to a branch", "Using ubuntu-latest", "`grep -q` failing because \"Price list\" is missing from the page"],
             answer_index: 3,
             explanation: "grep exits with an error when the text is missing, which fails the step.",
           },
           {
             prompt: "Where should a pipeline's deploy credentials be stored?",
-            options: ["In the YAML file", "In the README", "In a commit message", "In the platform's secret store, not in the code"],
+            options: ["In the YAML file", "In the README", "In a commit message so the history shows who added them", "In the platform's secret store, not in the code"],
             answer_index: 3,
             explanation: "Secrets stay out of code and are injected by the platform at run time.",
           },
           {
             prompt: "In Wumpini's example, what stopped the broken discount reaching customers?",
-            options: ["CI tests failing on the pull request and blocking the merge", "A manual check a week later", "A customer complaint", "Turning off the server"],
+            options: ["CI tests failing on the pull request and blocking the merge", "A manual check by the manager a week later, before the next sale", "A customer complaint", "Turning off the server"],
             answer_index: 0,
             explanation: "The failing tests blocked the change before it was merged.",
           },
@@ -1319,25 +1319,25 @@ Fuseini's team builds a delivery tracking API in Kumasi. One developer used one 
           },
           {
             prompt: "What is the difference between an image and a container?",
-            options: ["An image is a read only package; a container is a running copy of it", "They are exactly the same", "A container is stored in a registry and an image runs", "Images only work on Windows"],
+            options: ["An image is a read only package; a container is a running copy of it", "They are exactly the same", "A container is stored in a registry and an image is the running copy of it", "Images only work on Windows"],
             answer_index: 0,
             explanation: "You build an image once and run containers from it.",
           },
           {
             prompt: "In `docker run -p 8080:80`, what does `8080:80` mean?",
-            options: ["Run 8080 containers", "Connect port 8080 on the host to port 80 in the container", "Use 80 percent of memory", "Wait 8080 seconds"],
+            options: ["Run 8080 containers", "Connect port 8080 on the host to port 80 in the container", "Use 80 percent of memory and 8080 megabytes of disk for the container", "Wait 8080 seconds"],
             answer_index: 1,
             explanation: "The flag maps a host port to a container port.",
           },
           {
             prompt: "How should secrets reach a container?",
-            options: ["Passed as environment variables at run time", "Written in the Dockerfile", "Copied into the image during build", "Included in the image name"],
+            options: ["Passed as environment variables at run time", "Written in the Dockerfile", "Copied into the image during the build so they are always there", "Included in the image name"],
             answer_index: 0,
             explanation: "Secrets baked into images can be read by anyone who gets the image.",
           },
           {
             prompt: "Why are containers lighter than virtual machines?",
-            options: ["They have no files", "They share the host's Linux kernel instead of each running a full operating system", "They only run at night", "They cannot use the network"],
+            options: ["They have no files", "They share the host's Linux kernel instead of each running a full operating system", "They only run at night", "They cannot use the network, so they need fewer resources than a full virtual machine"],
             answer_index: 1,
             explanation: "Sharing the kernel avoids the weight of a full operating system per container.",
           },
@@ -1397,19 +1397,19 @@ A fintech in Accra had one engineer who knew how the servers were set up, all fr
           },
           {
             prompt: "Why is Kubernetes optional in this track?",
-            options: ["It is no longer used", "It requires a certification", "It only runs on phones", "It appears mostly in mid level adverts, though the main ideas help in interviews"],
+            options: ["It is no longer used", "It requires a paid certification before any provider will let you use it", "It only runs on phones", "It appears mostly in mid level adverts, though the main ideas help in interviews"],
             answer_index: 3,
             explanation: "Kubernetes is common in mid and senior roles, so beginners learn the ideas first.",
           },
           {
             prompt: "How does the lesson suggest you practise Kubernetes without spending money?",
-            options: ["Rent a large cluster and delete it next month", "Skip practice completely", "Borrow a company's production cluster", "Use the free Killercoda Kubernetes playground, which is deleted after an hour"],
+            options: ["Rent a large cluster for a month and delete it before the bill arrives", "Skip practice completely", "Borrow a company's production cluster", "Use the free Killercoda Kubernetes playground, which is deleted after an hour"],
             answer_index: 3,
             explanation: "Free browser labs give you a real cluster with no cost and no card.",
           },
           {
             prompt: "In the fintech example, what made the first failure take a day to fix?",
-            options: ["Only one engineer knew the setup, and it was kept in her memory", "The internet was slow", "The provider was closed", "The app had too many users"],
+            options: ["Only one engineer knew the setup, and it was kept in her memory", "The internet was slow", "The provider was closed", "The app had too many users at once, so every server crashed at the same time"],
             answer_index: 0,
             explanation: "Without written, repeatable setup, nobody else could rebuild the server.",
           },
@@ -1508,7 +1508,7 @@ Azara's team runs a payroll app for schools across the Northern Region. Test and
           },
           {
             prompt: "What is Ansible often used for next to Terraform?",
-            options: ["Paying cloud bills", "Designing logos", "Replacing DNS", "Configuration management: installing and configuring software on existing servers"],
+            options: ["Paying cloud bills automatically each month from the account", "Designing logos", "Replacing DNS", "Configuration management: installing and configuring software on existing servers"],
             answer_index: 3,
             explanation: "The lesson describes Ansible as configuration management.",
           },
@@ -1602,19 +1602,19 @@ Alhassan's team at a ride hailing startup in Accra runs its booking service on K
         questions: [
           {
             prompt: "What does desired state mean in Kubernetes?",
-            options: ["The state the server was bought in", "You describe what should run, and Kubernetes continuously makes reality match it", "A list of your favourite apps", "The final version of your code"],
+            options: ["The state the server was bought in", "You describe what should run, and Kubernetes continuously makes reality match it", "A list of your favourite apps", "The final version of your code, frozen so that it can never be changed by anyone on the team"],
             answer_index: 1,
             explanation: "Kubernetes compares what you asked for with what is running and fixes the difference.",
           },
           {
             prompt: "What is a Kubernetes Service for?",
-            options: ["Billing customers", "Storing container images", "Giving a stable address that sends traffic to the right pods as they come and go", "Writing manifests"],
+            options: ["Billing customers", "Storing container images so pods can download them faster when they start", "Giving a stable address that sends traffic to the right pods as they come and go", "Writing manifests"],
             answer_index: 2,
             explanation: "Pods change, so a Service provides a stable way to reach them.",
           },
           {
             prompt: "What happens when you delete one pod managed by a deployment that wants three?",
-            options: ["Kubernetes starts a new pod to get back to three", "The app stops forever", "All pods are deleted", "The cluster shuts down"],
+            options: ["Kubernetes starts a new pod to get back to three", "The app stops forever", "All pods are deleted and must be started again by hand", "The cluster shuts down"],
             answer_index: 0,
             explanation: "The deployment restores the desired number of pods.",
           },
@@ -1626,7 +1626,7 @@ Alhassan's team at a ride hailing startup in Accra runs its booking service on K
           },
           {
             prompt: "When might Kubernetes be the wrong choice?",
-            options: ["For a large service with many containers", "When you use containers", "When you need self healing", "For a small app with a few users, where a VM, platform service or serverless is simpler"],
+            options: ["For a large service with many containers that must keep running when a server fails", "When you use containers", "When you need self healing", "For a small app with a few users, where a VM, platform service or serverless is simpler"],
             answer_index: 3,
             explanation: "Simpler options often suit small apps better.",
           },
@@ -1704,7 +1704,7 @@ Hawa looks after a hospital appointment system in Tamale. She set up an uptime c
         questions: [
           {
             prompt: "What is the difference between metrics and logs?",
-            options: ["Metrics are numbers over time; logs are text records of individual events", "There is no difference", "Logs are only for security teams", "Metrics are stored on paper"],
+            options: ["Metrics are numbers over time; logs are text records of individual events", "There is no difference", "Logs are only for security teams, while metrics are for the developers who built the app", "Metrics are stored on paper"],
             answer_index: 0,
             explanation: "Metrics suit dashboards and alerts; logs explain what happened.",
           },
@@ -1722,7 +1722,7 @@ Hawa looks after a hospital appointment system in Tamale. She set up an uptime c
           },
           {
             prompt: "What does the curl command in the lesson print?",
-            options: ["The status code and the total time taken", "The website's HTML only", "The server's password", "The number of users online"],
+            options: ["The status code and the total time taken", "The website's full HTML only, without any timing", "The server's password", "The number of users online"],
             answer_index: 0,
             explanation: "The `-w` format prints the status code and time in seconds.",
           },
@@ -1794,19 +1794,19 @@ Issahaku's team ran a microfinance loan app. A developer ran a cleanup script ag
           },
           {
             prompt: "What does recovery point objective (RPO) describe?",
-            options: ["The cost of storage", "How fast the server's CPU is", "The number of users", "How much recent data you can afford to lose"],
+            options: ["The cost of storage", "How fast the server's CPU is when restoring the data after a failure", "The number of users", "How much recent data you can afford to lose"],
             answer_index: 3,
             explanation: "RPO is about acceptable data loss; RTO is about acceptable downtime.",
           },
           {
             prompt: "Where should API keys and database passwords be stored?",
-            options: ["In the code, so they are easy to find", "In a secrets manager or the pipeline's secret store", "In the container image", "In a team chat"],
+            options: ["In the code, so they are easy to find when something breaks", "In a secrets manager or the pipeline's secret store", "In the container image", "In a team chat"],
             answer_index: 1,
             explanation: "Secrets managers keep credentials out of code, images and messages.",
           },
           {
             prompt: "During an incident, what should the team do first?",
-            options: ["Find someone to blame", "Wait for the problem to fix itself", "Rewrite the whole app", "Restore service, for example by rolling back, and investigate later"],
+            options: ["Find someone to blame", "Wait for the problem to fix itself, then write a report on what happened", "Rewrite the whole app", "Restore service, for example by rolling back, and investigate later"],
             answer_index: 3,
             explanation: "Mitigation comes first; the investigation follows once users are served again.",
           },
@@ -1870,13 +1870,13 @@ Mariama had finished several free courses but got no interviews. A mentor asked 
         questions: [
           {
             prompt: "What do cloud employers most want to see, according to the lesson?",
-            options: ["A long list of courses watched", "Expensive equipment", "A large social media following", "Evidence that you can build something, run it and fix it"],
+            options: ["A long list of courses watched and certificates of completion", "Expensive equipment", "A large social media following", "Evidence that you can build something, run it and fix it"],
             answer_index: 3,
             explanation: "Hands on evidence matters more than course lists.",
           },
           {
             prompt: "Which of these is listed as a kind of proof employers look for?",
-            options: ["Typing speed certificates", "Owning a cloud company", "Clear communication, such as documentation and incident write ups", "Knowing every provider's prices"],
+            options: ["Typing speed certificates", "Owning a cloud company", "Clear communication, such as documentation and incident write ups", "Knowing every provider's prices for servers and storage by heart"],
             answer_index: 2,
             explanation: "Communication skills appear in adverts alongside technical skills.",
           },
@@ -1888,7 +1888,7 @@ Mariama had finished several free courses but got no interviews. A mentor asked 
           },
           {
             prompt: "What changed Mariama's results?",
-            options: ["Watching more courses", "Applying only to senior roles", "Paying for a premium account", "Building one documented project and writing about a bug her pipeline caught"],
+            options: ["Watching more courses", "Applying only to senior roles so recruiters would take her application seriously", "Paying for a premium account", "Building one documented project and writing about a bug her pipeline caught"],
             answer_index: 3,
             explanation: "A real project gave interviewers something concrete to discuss.",
           },
@@ -1971,7 +1971,7 @@ Sumaila noticed that the bank adverts he read in Accra mentioned Azure. He used 
           },
           {
             prompt: "What is the first step in the free preparation plan?",
-            options: ["Book the exam immediately", "Download the official exam guide or study guide", "Buy a paid course", "Memorise practice answers"],
+            options: ["Book the exam immediately", "Download the official exam guide or study guide", "Buy a paid course", "Memorise practice answers from a question bank"],
             answer_index: 1,
             explanation: "The official guide lists every topic tested, so it shapes your plan.",
           },
@@ -2041,7 +2041,7 @@ Abdul-Rahman built a page for his aunt's shea butter business in Bolgatanga. His
           },
           {
             prompt: "Which of these belongs in the README according to the lesson?",
-            options: ["Your password for the cloud account", "A copy of a job advert", "An architecture diagram and a costs and teardown section", "Nothing; code speaks for itself"],
+            options: ["Your password for the cloud account so reviewers can log in and check", "A copy of a job advert", "An architecture diagram and a costs and teardown section", "Nothing; code speaks for itself"],
             answer_index: 2,
             explanation: "The README explains the project, including how it stays free and how to delete it.",
           },
@@ -2137,7 +2137,7 @@ Amina applied for six cloud engineer roles without success. She widened her sear
           },
           {
             prompt: "How should your CV present your skills?",
-            options: ["As a long list of every course watched", "Leading with projects and naming tools you have actually used", "With as many tool names as possible, used or not", "Without any links"],
+            options: ["As a long list of every course watched", "Leading with projects and naming tools you have actually used", "With as many tool names as possible, whether or not you have used them, so searches find you", "Without any links"],
             answer_index: 1,
             explanation: "Projects and honest tool lists make a stronger CV.",
           },
@@ -2149,7 +2149,7 @@ Amina applied for six cloud engineer roles without success. She widened her sear
           },
           {
             prompt: "How did Amina move onto a cloud team?",
-            options: ["She was hired as a senior engineer straight away", "She bought several certifications", "She took a NOC analyst role, helped the cloud team and documented her work", "She stopped applying"],
+            options: ["She was hired as a senior engineer straight away because of her certifications", "She bought several certifications", "She took a NOC analyst role, helped the cloud team and documented her work", "She stopped applying"],
             answer_index: 2,
             explanation: "A related role plus volunteering for cloud tasks became her route in.",
           },
