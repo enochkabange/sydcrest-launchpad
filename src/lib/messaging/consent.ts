@@ -4,7 +4,15 @@
  * sends require a live consent of the current version.
  */
 export const WHATSAPP_CONSENT_KIND = "whatsapp";
-export const WHATSAPP_CONSENT_VERSION = "2026-10";
+/**
+ * 2026-10-28: the promise grew to cover bookings and briefs (#191). Older
+ * consents get no messages until the learner confirms the new wording.
+ */
+export const WHATSAPP_CONSENT_VERSION = "2026-10-28";
+
+/** The promise next to the WhatsApp checkbox. Change it only with a version bump. */
+export const WHATSAPP_CONSENT_PROMISE =
+  "Send me updates on WhatsApp about my learning, my cohort, and bookings or briefs I take part in.";
 
 /** Twilio's standard opt out keywords, matched on the whole message. */
 const STOP_WORDS = new Set(["STOP", "STOPALL", "UNSUBSCRIBE", "CANCEL", "END", "QUIT"]);

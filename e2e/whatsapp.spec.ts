@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
 import { confirmationLink } from "./mailpit";
+import { admin } from "./supabase-admin";
 
 // CI has no Twilio credentials, so this exercises the consent flow and the
 // no op send path; nothing leaves the machine.
@@ -57,6 +58,19 @@ test("a learner turns WhatsApp updates on and off from their profile", async ({ 
     await page.reload();
     await expect(toggle).toBeChecked();
     await expect(page.getByText("Updates stopped when your number changed.")).toBeHidden();
+  });
+
+  await test.step("a consent for older wording asks to confirm the updated wording", async () => {
+    await admin("/rest/v1/consents?kind=eq.whatsapp&revoked_at=is.null&phone=eq.%2B233501234567", { method: "PATCH", body: { version: "2026-10" } });
+    await page.reload();
+    await expect(toggle).not.toBeChecked();
+    await expect(page.getByText(/confirm the updated wording/)).toBeVisible();
+    await toggle.check();
+    await save.click();
+    await expect(page.getByText("WhatsApp updates are on.")).toBeVisible();
+    await page.reload();
+    await expect(toggle).toBeChecked();
+    await expect(page.getByText(/confirm the updated wording/)).toBeHidden();
   });
 
   await test.step("opts out", async () => {

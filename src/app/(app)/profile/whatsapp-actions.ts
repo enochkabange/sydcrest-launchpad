@@ -36,6 +36,11 @@ export async function setWhatsAppConsent(_prev: WhatsAppState, form: FormData): 
   // revokes it in the database.
   const live = existing.some((c) => c.version === WHATSAPP_CONSENT_VERSION && c.revoked_at === null);
   if (!live) {
+    // A live consent for older wording is replaced, so only the current promise stays live.
+    if (existing.some((c) => c.revoked_at === null)) {
+      const { error } = await supabase.rpc("revoke_consent", { p_kind: WHATSAPP_CONSENT_KIND });
+      if (error) return { enabled: false, message: "We couldn't save your choice. Try again." };
+    }
     // No .select() after insert: the insert grant is column restricted. The
     // database records the profile's number on the row; we never send one.
     const { error } = await supabase.from("consents").insert({ kind: WHATSAPP_CONSENT_KIND, version: WHATSAPP_CONSENT_VERSION });

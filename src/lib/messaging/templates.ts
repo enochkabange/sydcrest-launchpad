@@ -9,7 +9,7 @@ export const OPT_OUT_LINE = "Reply STOP to stop these messages.";
 
 export const TEMPLATES = {
   welcome:
-    "Hi {name}, this is SydCrest. You turned on WhatsApp updates, so we will message you about your learning and your cohort. " +
+    "Hi {name}, this is SydCrest. You turned on WhatsApp updates, so we will message you about your learning, your cohort, and bookings or briefs you take part in. " +
     OPT_OUT_LINE,
   reengage:
     "Hi {name}, it has been a week since you last worked on your SydCrest roadmap. Pick up where you left off at {url} " +
