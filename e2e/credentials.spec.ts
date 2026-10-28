@@ -44,6 +44,8 @@ test.describe("credentials wallet", () => {
     cleanup.push(() => deleteUser(learner.id));
     await makePublic(learner);
     const slug = await slugOf(learner);
+    // Unique per run: both projects run at once and the admin queue is shared.
+    const title = `Google Data Analytics ${crypto.randomUUID().slice(0, 6)}`;
 
     await signIn(page, learner);
     await page.goto("/profile#credentials");
@@ -51,7 +53,7 @@ test.describe("credentials wallet", () => {
 
     await test.step("add a certificate with an image of it", async () => {
       await openPanel(page, "Add a certificate");
-      await wallet.getByLabel("Certificate name").fill("Google Data Analytics");
+      await wallet.getByLabel("Certificate name").fill(title);
       await wallet.getByLabel("Issued by").fill("Google");
       await wallet.getByLabel("Issue date (optional)").fill("2026-05-14");
       await wallet.getByLabel("Credential ID (optional)").fill("GDA-2026-0042");
@@ -62,7 +64,7 @@ test.describe("credentials wallet", () => {
       await expect(wallet.getByText("Saved to your wallet.")).toBeVisible();
     });
 
-    const card = wallet.locator("article", { hasText: "Google Data Analytics" });
+    const card = wallet.locator("article", { hasText: title });
     await test.step("it is private and the learner's word", async () => {
       await expect(card.getByText("Added by the learner", { exact: true })).toBeVisible();
       await expect(card.getByText("Only you can see it.")).toBeVisible();
@@ -80,7 +82,7 @@ test.describe("credentials wallet", () => {
       expect(url.origin + url.pathname).toBe("https://www.linkedin.com/profile/add");
       expect(Object.fromEntries(url.searchParams)).toMatchObject({
         startTask: "CERTIFICATION_NAME",
-        name: "Google Data Analytics",
+        name: title,
         organizationName: "Google",
         issueYear: "2026",
         issueMonth: "5",
@@ -98,9 +100,9 @@ test.describe("credentials wallet", () => {
       await visitor.goto(`/u/${slug}/credentials`);
       await expect(visitor.getByRole("heading", { level: 1, name: "Abdul-Rahman Issah's credentials" })).toBeVisible();
       const publicCard = visitor.locator(`#c-${row.id}`);
-      await expect(publicCard.getByRole("heading", { name: "Google Data Analytics" })).toBeVisible();
+      await expect(publicCard.getByRole("heading", { name: title })).toBeVisible();
       await expect(publicCard.getByText("Added by the learner", { exact: true })).toBeVisible();
-      await expect(publicCard.getByText(/SydCrest has not checked it/)).toBeVisible();
+      await expect(publicCard.getByText(/SydCrest has not checked this/)).toBeVisible();
       await expect(publicCard.getByRole("link", { name: /Check with Google/ })).toHaveAttribute("href", /coursera\.org/);
       const img = await visitor.request.get((await publicCard.locator("img").getAttribute("src"))!);
       expect(img.status()).toBe(200);
@@ -137,10 +139,13 @@ test.describe("credentials wallet", () => {
       const mod = await browser.newPage();
       await signIn(mod, moderator);
       await mod.goto("/admin/reports");
-      const report = mod.locator("li", { hasText: "Credential: Google Data Analytics" });
+      const report = mod.locator("li", { hasText: `Credential: ${title}` });
       await expect(report).toBeVisible();
       await report.getByRole("button", { name: "Hide credential" }).click();
-      await expect(report.getByRole("button", { name: "Show credential again" })).toBeVisible();
+      // Hiding marks the report actioned, so it leaves the open queue.
+      await expect(report).toHaveCount(0);
+      await mod.goto("/admin/reports?status=actioned");
+      await expect(mod.locator("li", { hasText: `Credential: ${title}` }).getByRole("button", { name: "Show credential again" })).toBeVisible();
       await mod.close();
       cleanup.push(() => admin(`/rest/v1/reports?target_id=eq.${row.id}`, { method: "DELETE" }));
 
@@ -148,7 +153,8 @@ test.describe("credentials wallet", () => {
       await visitor.goto(`/u/${slug}/credentials`);
       await expect(visitor.getByText("Nothing to show yet")).toBeVisible();
       await visitor.close();
-      await page.goto("/profile#credentials");
+      // Same URL with a hash would not reload.
+      await page.reload();
       await expect(page.locator("#credentials").getByText(/Our team hid this credential/)).toBeVisible();
     });
   });

@@ -176,7 +176,7 @@ test.describe("axe sweep", () => {
     await page.goto("/");
     await sweep(page, [`/u/${slug}/credentials`, `/u/${slug}`], failures, "visitor");
     await signIn(page, sharer.learner);
-    await sweep(page, ["/profile#credentials"], failures, "wallet owner");
+    await sweep(page, ["/profile"], failures, "wallet owner");
     expect(failures, failures.join("\n")).toEqual([]);
   });
 

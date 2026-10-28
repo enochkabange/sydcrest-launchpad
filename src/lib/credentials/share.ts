@@ -20,7 +20,7 @@ export const VERIFICATION_LABEL: Record<Verification, string> = {
 export const VERIFICATION_EXPLAINER: Record<Verification, string> = {
   sydcrest: "Earned on SydCrest Launchpad. Anyone can check it on its verification page.",
   issuer: "The issuer's own record of this badge was checked when it was imported. SydCrest did not award it.",
-  learner: "Added by the learner. SydCrest has not checked it; use the issuer's link to check it with them.",
+  learner: "SydCrest has not checked this. Ask the issuer, or use their link, to confirm it.",
 };
 
 export type LinkedInCertification = {

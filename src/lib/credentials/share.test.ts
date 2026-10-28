@@ -60,7 +60,7 @@ describe("labels", () => {
       learner: "Added by the learner",
     });
     expect(VERIFICATION_EXPLAINER.issuer).toContain("SydCrest did not award it");
-    expect(VERIFICATION_EXPLAINER.learner).toContain("SydCrest has not checked it");
+    expect(VERIFICATION_EXPLAINER.learner).toContain("SydCrest has not checked this");
     for (const text of [...Object.values(VERIFICATION_LABEL), ...Object.values(VERIFICATION_EXPLAINER)]) {
       expect(text).not.toMatch(/[–—]| - /);
     }
