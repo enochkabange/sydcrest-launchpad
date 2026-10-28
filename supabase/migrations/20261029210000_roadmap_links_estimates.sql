@@ -1,4 +1,5 @@
--- Modern roadmap experience (issue #244). Additive only.
+-- Modern roadmap experience (issue #244). Additive only, and idempotent:
+-- staging already ran these statements under an earlier version number.
 --
 -- roadmaps.leads_to: the tracks a learner can move on to after this roadmap
 -- ("Leads to"). "Builds on" is the inverse, derived in the app
@@ -21,13 +22,13 @@
 -- RLS on roadmaps is unchanged: its policies and grants cover the new columns.
 
 alter table public.roadmaps
-  add column leads_to text[] not null default '{}'
+  add column if not exists leads_to text[] not null default '{}'
     constraint roadmaps_leads_to_check check (
       cardinality(leads_to) <= 20
       and array_position(leads_to, null) is null
       and array_to_string(leads_to, ',') ~ '^([a-z0-9][a-z0-9-]{0,38}[a-z0-9](,|$))*$'
     ),
-  add column level text
+  add column if not exists level text
     constraint roadmaps_level_check check (level in ('first-steps', 'beginner', 'next-step'));
 
 comment on column public.roadmaps.leads_to is
@@ -35,7 +36,7 @@ comment on column public.roadmaps.leads_to is
 comment on column public.roadmaps.level is
   'first-steps, beginner or next-step, for the roadmap index filter. Null: not set.';
 
-create view public.node_estimate_inputs
+create or replace view public.node_estimate_inputs
   with (security_invoker = true)
 as
 select

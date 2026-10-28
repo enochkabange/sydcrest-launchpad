@@ -300,7 +300,7 @@ and pans the map to it.
 ### Builds on and Leads to
 
 `roadmaps.leads_to` (track keys, migration
-`20261029180000_roadmap_links_estimates.sql`) comes from each draft's typed
+`20261029210000_roadmap_links_estimates.sql`) comes from each draft's typed
 `leads_to: RoadmapTrack[]` through the import. "Builds on" is derived as the
 inverse in `src/lib/roadmaps/links.ts`; unpublished tracks are skipped. A test
 keeps every one of the 27 tracks linked and agrees with the path quiz's
