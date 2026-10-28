@@ -649,7 +649,7 @@ Exploratory testing does not replace test cases. Many teams run their test cases
 
 ## A small example
 
-Sumaila is given a 45 minute session with this charter: "Explore the order history screen of a food delivery app to discover problems with old and cancelled orders." She notices that a cancelled order still shows "On the way". She then tries reordering it and finds she is charged, but no order appears. She writes in her notes the time, the steps and a screen recording, then files two bug reports. Neither problem was in the written test cases.
+Sumaila is given a 45 minute session with this charter: "Explore the order history screen of a food delivery app to discover problems with old and cancelled orders." He notices that a cancelled order still shows "On the way". He then tries reordering it and finds he is charged, but no order appears. He writes in his notes the time, the steps and a screen recording, then files two bug reports. Neither problem was in the written test cases.
 
 ## Taking good notes
 
@@ -1174,7 +1174,7 @@ The response has a **status code** and usually a JSON body. Status codes you sho
 
 ## Testing with Postman
 
-Postman lets you build requests, send them and check responses. It runs in a web browser or as a desktop app, and it is free for individuals. A computer is much easier for this work, because you type URLs and JSON and read long responses. Postman's web version can open on a phone browser, but it is cramped.
+Postman lets you build requests, send them and check responses. It runs in a web browser or as a desktop app, and it has a free plan. A computer is much easier for this work, because you type URLs and JSON and read long responses. Postman's web version can open on a phone browser, but it is cramped.
 
 To practise safely, use a free public practice API such as JSONPlaceholder, which returns made up data and is built for learning. Try:
 
@@ -1712,7 +1712,7 @@ Poor candidates:
 
 ## You need a computer from here
 
-Automation tools run on Windows, macOS or Linux, and you install a code editor, a language runtime such as Node.js or Python, and browsers. A phone is not enough for this section. If you do not own a laptop, look for one you can use regularly at a school lab, a library, a tech hub or a community centre. A modest laptop with 8 GB of memory is comfortable for small projects; less can work slowly. Installing tools needs a few hundred megabytes of data once, so do it on Wi-Fi if you can.
+Automation tools run on Windows, macOS or Linux, and you install a code editor, a language runtime such as Node.js or Python, and browsers. A phone is not enough for this section. If you do not own a laptop, look for one you can use regularly at a school lab, a library, a tech hub or a community centre. A modest laptop is enough for small projects, though very low memory machines can be slow. Installing tools needs a few hundred megabytes of data once, so do it on Wi-Fi if you can.
 
 ## Keep your manual skills
 
@@ -1940,7 +1940,7 @@ This example uses Playwright's public practice to do app:
 import { test, expect } from '@playwright/test';
 
 test('adds a to do item', async ({ page }) => {
-  await page.goto('https://demo.playwright.dev/todomvc');
+  await page.goto('https://demo.playwright.dev/todomvc/');
   const box = page.getByPlaceholder('What needs to be done?');
   await box.fill('Buy shea butter');
   await box.press('Enter');
@@ -1955,7 +1955,7 @@ Every test has the same shape as a manual test case: go somewhere, act, then che
 \`\`\`js
 describe('to do list', () => {
   it('adds an item', () => {
-    cy.visit('https://demo.playwright.dev/todomvc');
+    cy.visit('https://demo.playwright.dev/todomvc/');
     cy.get('.new-todo').type('Buy shea butter{enter}');
     cy.contains('Buy shea butter').should('be.visible');
   });

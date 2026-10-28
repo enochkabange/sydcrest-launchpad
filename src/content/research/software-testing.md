@@ -46,6 +46,9 @@ points toward automation, remote work and adjacent roles so the skills stay usef
 | P1 | SydCrest track catalogue, row 23 and Tier B notes | Planning/12_TRACK_CATALOGUE.md | 2026-10-27 | Internal |
 
 All resource links in the outline were checked to return HTTP 200 on 2026-10-27.
+Lesson links (practice sites used in the content file) checked to return HTTP 200 on 2026-10-28:
+`https://demo.playwright.dev/todomvc/` (Playwright's public demo app) and
+`https://jsonplaceholder.typicode.com/` (free fake REST API for learning).
 
 ## Adverts analysed (20)
 
