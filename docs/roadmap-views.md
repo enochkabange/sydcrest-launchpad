@@ -34,6 +34,16 @@ ROADMAP_VIEWS: map │ outline                layer 3  renderers (swappable)
 | `choice_group` | slug style key, 2 to 40 chars | not part of a choice |
 
 Siblings sharing a `choice_group` are "pick one of these" alternatives.
+
+Lesson structure (issue #255, `20261029180000_lesson_structure.sql`, pgTAP in
+`lesson_structure.test.sql`) adds nullable `difficulty`, `complexity`,
+`career_level` and `jobs`. They reach the view model as the optional
+`ViewNode` slots `difficulty`, `complexity`, `careerLevel` and `jobs` (left
+out when null). `CareerLevelSuffix` and `CareerLevelTag`
+(`src/components/roadmaps/career-level.tsx`) put the level on a section
+header; `RoadmapCareerLevels` (`roadmap-career-levels.tsx`) is the Jobs at
+each level panel under the roadmap, drawn from `view.sections` only, so it
+stays in the prerendered shell.
 `is_optional` is unchanged. RLS is unchanged (the table's policies cover the
 new columns).
 
