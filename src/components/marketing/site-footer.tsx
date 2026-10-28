@@ -6,6 +6,7 @@ import { FOOTER_NAV } from "@/lib/nav/config";
 const LEGAL = [
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
+  { href: "/accessibility", label: "Accessibility" },
 ] as const;
 
 export function SiteFooter() {

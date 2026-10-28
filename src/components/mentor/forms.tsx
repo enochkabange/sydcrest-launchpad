@@ -55,7 +55,7 @@ export function GradeForm({
             value="grade"
             checked={decision === "grade"}
             onChange={() => setDecision("grade")}
-            className="size-5 accent-blue-600"
+            className="size-5 accent-line-selected"
           />
           Grade this work
         </label>
@@ -66,7 +66,7 @@ export function GradeForm({
             value="return"
             checked={decision === "return"}
             onChange={() => setDecision("return")}
-            className="size-5 accent-blue-600"
+            className="size-5 accent-line-selected"
           />
           Return it for changes
         </label>

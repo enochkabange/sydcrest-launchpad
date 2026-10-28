@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import Link from "@/components/ui/link";
 import Logo, { LogoMark } from "@/components/brand/Logo";
 import { buttonClasses } from "@/components/ui/button";
+import { ThemeSwitch } from "@/components/display/theme-switch";
 import { MarketingNavLinks, MarketingNavLinksFallback } from "./nav-links";
 
 /**
@@ -15,7 +16,8 @@ export function SiteHeader() {
   return (
     <header className="border-b border-line bg-surface">
       <div className="mx-auto flex w-full max-w-page flex-col gap-1 px-4 pt-3 md:px-8">
-        <div className="flex items-center justify-between gap-3">
+        {/* Wraps instead of overflowing when text is enlarged (#204). */}
+        <div className="flex flex-wrap items-center justify-between gap-x-3 gap-y-1">
           <Link href="/" aria-label="SydCrest Launchpad home" className="flex min-h-11 shrink-0 items-center no-underline">
             <span className="sm:hidden">
               <LogoMark size={36} variant="auto" />
@@ -24,7 +26,8 @@ export function SiteHeader() {
               <Logo size={34} />
             </span>
           </Link>
-          <div className="flex items-center gap-2">
+          <div className="flex min-w-0 flex-wrap items-center justify-end gap-2">
+            <ThemeSwitch />
             <Link href="/login" className={buttonClasses("ghost", "whitespace-nowrap")}>
               Sign in
             </Link>
