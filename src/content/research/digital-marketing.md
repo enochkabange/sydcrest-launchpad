@@ -34,6 +34,11 @@ Researched 25 October 2026 for issue #84.
 | Google Ads Help, Google Ads training on Skillshop ("free online courses") | https://support.google.com/google-ads/answer/7539883 | 2026-10-25 | Official documentation; fact check for certificates (certification fees not stated there; free certification confirmed only by third party guides) |
 | Pearson VUE, Meta Certification testing (exam vouchers are purchased) | https://www.pearsonvue.com/us/en/facebook.html | 2026-10-25 | Official exam provider page; fact check for Meta Blueprint exam fees |
 | SydCrest DMP curriculum | `src/content/dmp/curriculum.ts` | 2026-10-25 | Internal |
+| Google Ads Help, average daily budget (spend up to about twice the daily average on a day, monthly charges within about 30.4 times it) | https://support.google.com/google-ads/answer/2375423 | 2026-10-28 | Official documentation; fact check for the budgets lesson (#256) |
+| Google Business Profile Help, verification methods (chosen by Google, cannot be changed) | https://support.google.com/business/answer/7107242 | 2026-10-28 | Official documentation; fact check for the Google Business Profile lesson (#256) |
+| Google Analytics Help, demo account (free, any Google account, Viewer access, merchandise store and game app data) | https://support.google.com/analytics/answer/6367342 | 2026-10-28 | Official documentation; fact check for the analytics lesson (#256) |
+| Google Analytics Help, key events (formerly conversions), rechecked | https://support.google.com/analytics/answer/13965727 | 2026-10-28 | Official documentation; fact check for the analytics lesson (#256) |
+| Act 843 section 40 (prior written consent for direct marketing), via Lex Mundi and Chambers summaries in search results | https://www.lexmundi.com/guides/data-privacy-guide/jurisdictions/africa/ghana | 2026-10-28 | Legal guide summaries; fact check for consent wording in the WhatsApp, email and social lessons (#256) |
 
 ## Adverts analysed (20)
 
