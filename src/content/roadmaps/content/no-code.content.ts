@@ -1226,6 +1226,428 @@ Always pilot test: fill in the form yourself with normal answers, odd answers an
         pass_threshold: 75,
       },
     },
+    websites: {
+      explanation_md: `When a funder hears about a small NGO in Bolgatanga, the first thing they do is search for it online. When someone in Accra wants to order smocks from a weaver in Daboya, they want to see her work and a way to contact her. A simple, honest website helps people trust and find an organisation. Building and looking after these sites is a skill that appears in Ghanaian adverts for communications officers, social media officers, IT officers and web roles, often naming WordPress.
+
+## Do they even need a website?
+
+Start with the honest question. A trader whose customers all come through WhatsApp may be better served by a WhatsApp Business catalogue or a social media page. A website makes sense when people need to find the business through search, when funders or partners expect one, when there is more to say than a social profile allows, or when the business wants a place it controls rather than a platform's page.
+
+## What this section covers
+
+* **Choosing a website builder:** the range from simple page tools to full systems, and how to match one to the client.
+* **WordPress basics:** pages, posts, themes, plugins, user roles, updates and backups.
+* **Domains, hosting and a findable site:** how a site gets its own address, who should own the accounts, and checks for speed, search and accessibility.
+
+## The parts of any website
+
+Every website, however it is built, has the same basic parts:
+
+* **Content:** the words, photos and contact details.
+* **Structure:** which pages exist and how the menu links them. Most small sites need only Home, About, Services or Products, and Contact.
+* **Design:** colours, fonts and layout, usually from a theme or template.
+* **Address:** the web address people type, either an address on the builder's own domain or the organisation's own domain name.
+* **Hosting:** the computer, called a web server, that stores the site and sends it to visitors' browsers.
+
+With no code builders, the tool handles most of the technical parts. Your job is to plan clear content, choose sensible design settings and keep things updated.
+
+## Phone and computer
+
+You can read, test and make small edits to many sites from a phone, such as fixing opening hours or posting news. Setting a site up, choosing a theme and arranging pages are much easier on a computer with a full browser, so plan those for a computer session. Always check the finished site on a phone too, because many of your visitors will arrive on one using mobile data.
+
+## A worked example
+
+Sumaila is asked by a youth NGO in Wa to "make a website". Before choosing any tool he asks four questions: who should find the site, what they need to do on it, who will update it after he leaves, and what the NGO can afford each year. The answers are funders and volunteers; read about projects and get in touch; the programme officer, who is not technical; and very little.
+
+That points to a small site with four pages, a simple builder or a basic WordPress setup, and a short guide for the programme officer. The tool choice comes last, after the questions.
+
+## Content first
+
+Collect the content before building: a short description, a few good photos taken with permission, a list of services, a phone number, an email address and a location. A beautiful empty template helps nobody. Clear words and real contact details do.`,
+      practice_task_md: `**Goal:** Plan a small website for a real or imagined organisation.
+
+**Steps:**
+1. Pick an organisation you know: a shop, a church, a club, an NGO or a craftsperson.
+2. Answer Sumaila's four questions for it: who should find the site, what they need to do, who will update it, and what it can afford.
+3. Decide whether it truly needs a website or whether a social page or catalogue would be enough, and write why.
+4. If it needs a site, sketch the pages and menu on paper.
+5. Write the content for the Home page in under 100 words, and list the photos you would need permission for.
+
+**Done looks like:** Written answers to the four questions, a decision with a reason, a page sketch and draft Home page text.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "When does the lesson say a website makes sense for a business?",
+            options: [
+              "Whenever a business has more than one customer",
+              "When people need to find it through search, or funders and partners expect one",
+              "Only when the business already sells online and takes card payments through the site",
+              "Never, because social media pages always replace websites",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists search, funder expectations, more to say and wanting control as reasons for a website.",
+          },
+          {
+            prompt: "What is hosting?",
+            options: [
+              "The colours and fonts a site uses",
+              "The menu that links the pages",
+              "The web server that stores the site and sends it to visitors' browsers",
+              "The person who greets visitors on the Contact page and answers their questions",
+            ],
+            answer_index: 2,
+            explanation: "The lesson defines hosting as the web server that stores the site and sends it to visitors.",
+          },
+          {
+            prompt: "Which website task does the lesson say is much easier on a computer?",
+            options: [
+              "Choosing a theme and arranging pages",
+              "Reading the site to check it loads",
+              "Fixing the opening hours on the Contact page",
+              "Posting a short news update",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says setting up, choosing a theme and arranging pages are much easier with a full browser.",
+          },
+          {
+            prompt: "In Sumaila's example, when did he choose the tool?",
+            options: [
+              "Before talking to the NGO, using his favourite builder",
+              "After the NGO had already paid for a year of a premium plan",
+              "After building the pages",
+              "Last, after asking who the site was for, what it must do, who would update it and the budget",
+            ],
+            answer_index: 3,
+            explanation: "The example shows the tool choice coming after the four planning questions.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "site-builders": {
+      explanation_md: `There are many ways to build a website without code, and none of them is best for everyone. A good builder for a youth club is a poor builder for a growing online shop. Knowing the trade offs lets you advise clients honestly and avoid sites that get abandoned after a month.
+
+## The range of builders
+
+Think of builders on a line from simple to powerful.
+
+**Simple page tools.** Google Sites is an example. You drag text boxes, images and embedded items, such as a Google Form or a map, onto pages. There are few design choices, which is a strength: it is hard to make a mess. Good for a school club, a project page, an internal staff site or a first portfolio.
+
+**All in one builders.** Wix and Squarespace are examples. They offer polished templates, drag and drop layout, and add ons for bookings, blogs or small shops, with hosting included. Easy to start, but you depend on one company: moving the site elsewhere later is usually hard, and the most useful features may need a paid plan.
+
+**WordPress.** The WordPress software is open source and runs many business and NGO sites. It can be run on your own hosting or through hosted services such as WordPress.com. It is the most flexible option, with a large directory of themes and plugins, and the one Ghanaian adverts mention most. It also needs the most care: updates, backups and security. The next lesson covers it.
+
+## How to choose
+
+Ask these questions with the client:
+
+* **Who will update it?** A non technical programme officer needs something simple and a short guide.
+* **What must it do?** Information only, a blog, bookings, a shop?
+* **What can they afford every year?** Remember domain renewals and any paid plan, now and later.
+* **How much control do they need?** Do they need to move the site, add special features, or have several staff with different permissions?
+* **Who already has accounts?** An organisation already using Google Workspace may find Google Sites easiest to manage.
+
+Read the current plans page of any builder you consider, because features and limits change.
+
+## Phone and computer
+
+You can view and test all of these on a phone. Google's setup steps for Sites start on a computer, and building pages in any of these tools is far easier with a full screen and mouse. Some builders have apps for small edits, which suits a client who mainly uses a phone.
+
+## A worked example: a one page site
+
+Mariama wants a simple site for her tailoring business in Tamale. She chooses a simple page tool and builds one page with:
+
+1. A heading with the business name and one line about what she sews.
+2. Three photos of finished outfits, taken with the customers' permission.
+3. Opening hours and location in plain text, not inside an image, so search engines and screen readers can read them.
+4. An embedded order request form linked to a sheet.
+5. A phone number and a link to her WhatsApp Business chat.
+
+She checks it on her phone and a friend's computer, asks two customers whether anything is confusing, then publishes. Later, if she needs online payments or a blog, she can move to a more powerful builder, keeping her content and photos.
+
+## Keep it simple
+
+The most common failure is not a bad builder. It is a site nobody updates. Pick the simplest tool that does the job, and make sure the owner can change the basics without calling you.`,
+      practice_task_md: `**Goal:** Build and publish a one page site.
+
+**Steps:**
+1. On a computer if possible, open a simple website builder such as Google Sites.
+2. Build one page for a real or imagined small business with: a heading and one line description, two or three images you have rights to use, opening hours and location as text, and a contact method.
+3. Embed the form you built in the online forms lesson, or add a link to it.
+4. Preview the site in phone view and computer view, and fix anything that looks broken.
+5. Publish it, open the link on a phone, and send it to one person for feedback.
+
+**Done looks like:** A published one page site link that reads well on a phone, plus one change you made after feedback.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is one drawback of all in one builders such as Wix and Squarespace, according to the lesson?",
+            options: [
+              "They cannot show photos",
+              "They do not include hosting, so you must always find a separate web server yourself",
+              "Moving the site elsewhere later is usually hard, and useful features may need a paid plan",
+              "They can only be edited on a phone",
+            ],
+            answer_index: 2,
+            explanation: "The lesson notes dependence on one company, hard migration and paid features as trade offs.",
+          },
+          {
+            prompt: "Why does WordPress need the most care of the options described?",
+            options: [
+              "It needs updates, backups and attention to security",
+              "It only works in one country",
+              "It cannot be used by businesses",
+              "It deletes every page automatically after a year unless the owner pays for a renewal plan",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says WordPress is the most flexible but needs updates, backups and security care.",
+          },
+          {
+            prompt: "Why did Mariama put her opening hours in plain text rather than inside an image?",
+            options: [
+              "Images are not allowed on one page sites",
+              "Plain text uses less ink when printed",
+              "Plain text makes the page load more slowly, which keeps visitors on the page for longer",
+              "So search engines and screen readers can read them",
+            ],
+            answer_index: 3,
+            explanation: "The example says text, not images, lets search engines and screen readers read the hours.",
+          },
+          {
+            prompt: "What does the lesson call the most common failure with small business websites?",
+            options: [
+              "Choosing the wrong colours",
+              "A site nobody updates",
+              "Using too few plugins and themes, so that the site looks plain next to competitors",
+              "Publishing too early",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says the most common failure is a site nobody updates, so choose the simplest tool that works.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "wordpress-basics": {
+      explanation_md: `WordPress appears in Ghanaian adverts for communications officers, social media officers, IT officers and web developers. Often the job is not building a site from nothing but looking after one: adding news, updating pages, installing a plugin, keeping things updated. Those are learnable without code, and they make you useful to many organisations.
+
+## Two ways to get WordPress
+
+* **WordPress software (from WordPress.org):** open source software that you install on hosting you rent. You control everything, and you are responsible for updates and backups.
+* **Hosted WordPress (such as WordPress.com):** a company runs the software for you. Less to manage, but some features depend on the plan.
+
+Both use the same dashboard ideas, so the skills transfer.
+
+## Practise without hosting
+
+**WordPress Playground** runs WordPress inside your browser with no hosting needed. It is a good place to explore the dashboard, try themes and break things safely. Treat it as a practice space and check whether your work is kept before you rely on it.
+
+## The core ideas
+
+**Pages and posts.** Pages are for content that rarely changes, such as About, Services and Contact. Posts are dated entries shown newest first, such as news, project updates or a blog. Posts can have categories and tags; pages usually sit in the menu.
+
+**The block editor.** Content is built from blocks: a paragraph, a heading, an image, a button, a list. You add a block, type or choose content, and move it up or down.
+
+**Themes.** A theme controls the design: layout, colours and fonts. Changing the theme changes the look without changing your content. Many modern themes let you adjust headers, footers and colours in the Site Editor.
+
+**Plugins.** Plugins add features, such as a contact form, an image optimiser, extra security or a backup tool. Every plugin is extra code that must be kept updated, so install only what you need, from trusted sources, and remove plugins you no longer use.
+
+**User roles.** WordPress has roles that limit what each person can do. An **Administrator** can manage the whole site. An **Editor** can publish and manage everyone's posts. An **Author** can publish and manage their own posts. A **Contributor** can write and manage their own posts but cannot publish them. A **Subscriber** can only manage their own profile. Give each person the lowest role that lets them do their job.
+
+## Keeping a site healthy
+
+* **Updates.** WordPress itself, themes and plugins all receive updates, many fixing security problems. Check for them regularly.
+* **Backups.** Keep regular backups of files and database, stored somewhere other than the site's own hosting.
+* **Strong logins.** Use strong passwords, avoid the username "admin", and turn on two step verification where available.
+
+## A worked example
+
+Fuseini becomes the volunteer web person for a farmers' cooperative in Karaga. He gives the secretary an Author account to post market updates, keeps the Administrator role for himself and the chairman, and removes three old plugins nobody uses. Each month he updates WordPress, the theme and plugins, after first making a backup. When the secretary asks to change the homepage design, Fuseini explains why her role cannot, and makes the change for her.
+
+## Phone and computer
+
+The dashboard opens in a phone browser, and posting a short update from a phone works. Choosing themes, editing templates and managing plugins are much easier on a computer.`,
+      practice_task_md: `**Goal:** Practise the core WordPress jobs in a safe space.
+
+**Steps:**
+1. On a computer if possible, open WordPress Playground in your browser.
+2. Create two pages (About and Contact) and two posts (news items for a made up cooperative or club).
+3. Add a menu with your two pages.
+4. Switch to a different theme and note what changed and what stayed the same.
+5. Install one plugin, then deactivate and delete it.
+6. Add a user with the Author role and write one sentence explaining why you did not make them an Administrator.
+
+**Done looks like:** Screenshots of your pages, posts, menu and the user list, plus your sentence on roles. If Playground does not keep your work, the screenshots are your evidence.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which should be a page rather than a post?",
+            options: [
+              "A dated project update from last week",
+              "News about a training held yesterday",
+              "A monthly market price update",
+              "An About section that rarely changes",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says pages are for content that rarely changes, while posts are dated entries.",
+          },
+          {
+            prompt: "What can a Contributor do in WordPress?",
+            options: [
+              "Write and manage their own posts but not publish them",
+              "Manage the whole site, including themes and plugins",
+              "Publish and manage everyone's posts",
+              "Only read the site, without any ability to write anything at all",
+            ],
+            answer_index: 0,
+            explanation: "The lesson describes Contributors as able to write and manage their own posts but not publish them.",
+          },
+          {
+            prompt: "Why should you install only the plugins you need?",
+            options: [
+              "WordPress allows only three plugins on each site",
+              "Every plugin is extra code that must be kept updated",
+              "Plugins delete your posts when they are switched on",
+              "Plugins change the site's domain name every time a new one is installed",
+            ],
+            answer_index: 1,
+            explanation: "The lesson warns every plugin is extra code that must be updated, so remove what you do not use.",
+          },
+          {
+            prompt: "What is WordPress Playground useful for, according to the lesson?",
+            options: [
+              "Hosting a business site permanently with its own domain",
+              "Sending marketing emails to customers",
+              "Exploring WordPress in the browser without hosting, as a practice space",
+              "Backing up a live site's database every night to another server",
+            ],
+            answer_index: 2,
+            explanation: "The lesson describes Playground as running WordPress in the browser with no hosting, good for practice.",
+          },
+          {
+            prompt: "In the worked example, what did Fuseini do before each monthly update?",
+            options: [
+              "Deleted all old posts",
+              "Changed the theme",
+              "Made a backup",
+              "Asked every member of the cooperative to log out and change their passwords",
+            ],
+            answer_index: 2,
+            explanation: "The example says he updates WordPress, themes and plugins after first making a backup.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "going-live": {
+      explanation_md: `A site that sits on a builder's own address can be enough for practice or a club. A real business or NGO usually wants its own address, a site that loads fast on mobile data, and a way for people to find it. Web roles in Ghana mention hosting control panels, accessibility and keeping sites maintained. This lesson explains the pieces in plain terms so you can set them up, or at least advise clients well.
+
+## Domains and hosting
+
+A **domain name** is the human friendly address, such as an imagined **savannahshea.com.gh**. You rent it from a **registrar**, usually for a year at a time, and you must **renew** it or lose it. Choose something short, easy to spell when said aloud, and close to the business name.
+
+**Hosting** is the web server where the site's files live. With builders such as Google Sites or Wix, hosting is included. With WordPress software, you rent hosting, often managed through a control panel.
+
+**DNS** (the Domain Name System) is the directory that connects the name to the server. When you connect a domain to a site, you change DNS settings at the registrar, following the builder's or host's instructions. Changes can take some time to spread.
+
+## Who owns the accounts?
+
+This is where many small organisations get hurt. If the domain is registered in a freelancer's personal account and that person disappears, the business can lose its own address. So:
+
+* Register the domain and hosting in the **client's name and email**.
+* Add yourself as a helper or share access safely, not the other way round.
+* Write down renewal dates and set reminders.
+
+## HTTPS
+
+Visitors' browsers expect a secure connection, shown by **https** and a padlock. This needs a security certificate. Many builders and hosts provide one, but check it is switched on, because browsers warn visitors away from sites without it.
+
+## Fast on mobile data
+
+Many visitors arrive on phones with prepaid data and weak signal.
+
+* Resize and compress photos before uploading. A huge camera photo can weigh more than the rest of the page.
+* Avoid autoplay videos and heavy sliders.
+* Use few plugins and fonts.
+* Test with a tool such as PageSpeed Insights and fix the biggest problems it lists.
+
+## Findable
+
+* Give every page a clear title and write the business name, what it does and the town in plain text.
+* Make the Contact page complete, with phone, email and location.
+* Google's SEO starter guide explains the basics of how Google finds and shows pages.
+
+## Accessible
+
+* Add **alt text** to images: a short description for people using screen readers.
+* Use real headings in order, not just big bold text.
+* Keep strong contrast between text and background.
+* Make buttons and links large enough to tap.
+
+## A worked example
+
+Hawa launches a site for a shea butter group in Nalerigu. She registers the domain in the group's name using the group's email, connects it to the builder, checks the padlock appears, compresses six photos, adds alt text and runs a speed test. She writes the renewal date and logins in a handover sheet kept by the group's treasurer.`,
+      practice_task_md: `**Goal:** Make your one page site ready for real visitors.
+
+**Steps:**
+1. Open the site you built in the site builders lesson.
+2. Write three possible domain names for it and choose the best, explaining why in one line. Do not buy one.
+3. Check every image: compress any large ones and add alt text.
+4. Run PageSpeed Insights on your published address and write down the top two suggestions.
+5. Fix at least one of them, then test again.
+6. Write a short "account ownership" note saying whose name and email the domain and hosting would be registered under, and where renewal dates would be recorded.
+
+**Done looks like:** A chosen domain name with a reason, images with alt text, before and after speed notes, and a clear ownership note.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does DNS do?",
+            options: [
+              "Stores the photos on the website",
+              "Connects the domain name to the server where the site lives",
+              "Checks the spelling on every page",
+              "Sends the site owner an invoice when the hosting plan is close to running out",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes DNS as the directory that connects the name to the server.",
+          },
+          {
+            prompt: "Whose name and email should a client's domain be registered under?",
+            options: [
+              "The client's own name and email",
+              "The freelancer's personal account, so they can fix problems quickly",
+              "Any friend who has a credit card",
+              "The web designer's company, which then rents it back to the client every year",
+            ],
+            answer_index: 0,
+            explanation: "The lesson warns that domains in a freelancer's account can be lost, so register them to the client.",
+          },
+          {
+            prompt: "Which change most helps a page load faster on mobile data?",
+            options: [
+              "Adding an autoplay video to the home page",
+              "Installing more fonts",
+              "Uploading photos straight from the camera at full size so they look sharp on every screen",
+              "Resizing and compressing photos before uploading",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says large camera photos can outweigh the rest of the page, so compress them.",
+          },
+          {
+            prompt: "What is alt text?",
+            options: [
+              "A backup copy of the page",
+              "The secret password for the hosting account",
+              "A short image description for people using screen readers",
+              "A second version of the site in another language for visitors from outside Ghana",
+            ],
+            answer_index: 2,
+            explanation: "The lesson defines alt text as a short description of an image for screen reader users.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
