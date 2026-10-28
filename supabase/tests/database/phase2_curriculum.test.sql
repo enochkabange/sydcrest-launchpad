@@ -50,7 +50,8 @@ select is(
 select is(
   (select array_agg(distinct n.roadmap_slug order by n.roadmap_slug) from public.program_week_nodes n
    join public.program_weeks w on w.id = n.program_week_id join public.programs p on p.id = w.program_id where p.slug = 'dmp'),
-  array['digital-marketer', 'digital-skills-bridge'], 'links point at the Digital Skills Bridge and Digital Marketer roadmaps');
+  array['digital-marketer', 'digital-marketing-specialisations', 'digital-skills-bridge'],
+  'links point at the Digital Skills Bridge, Digital Marketer and specialisation lesson roadmaps');
 select results_eq(
   $$ select r.title, r.program_week_id is null from public.rubrics r join public.programs p on p.id = r.program_id
      where p.slug = 'dmp' order by r.title $$,
