@@ -9,6 +9,13 @@ import { admin, insert } from "./supabase-admin";
 export type BriefsSeed = {
   /** Unique skill for this run, so filters and matching only see this run's rows. */
   tag: string;
+  /**
+   * A second unique skill for this run. Briefs posted in a test name only
+   * this run's skills, never a common one like "Excel": a new brief notifies
+   * every approved expert sharing a skill, and other specs seed experts in
+   * parallel on the same database.
+   */
+  sheetsTag: string;
   poster: Learner;
   expert: Learner & { slug: string; gigId: string };
   otherExpert: Learner;
@@ -19,6 +26,7 @@ export type BriefsSeed = {
 export async function seedBriefs(): Promise<BriefsSeed> {
   const suffix = crypto.randomUUID().slice(0, 6);
   const tag = `Dagbon${suffix}`;
+  const sheetsTag = `Sheets${suffix}`;
   const [poster, expert, otherExpert, owner] = await Promise.all([
     createLearner("Wumpini Alhassan"),
     createLearner("Fuseini Iddrisu"),
@@ -31,7 +39,7 @@ export async function seedBriefs(): Promise<BriefsSeed> {
       profile_id: expert.id,
       slug: `fuseini-briefs-${suffix}`,
       headline: "Data analyst helping NGOs in Tamale clean survey data",
-      skills: ["Excel", tag],
+      skills: [sheetsTag, tag],
       categories: ["data"],
       status: "approved",
       approved_at: approvedAt,
@@ -70,7 +78,7 @@ export async function seedBriefs(): Promise<BriefsSeed> {
     },
   ]);
   // Creating an organisation makes its creator the active owner (a database trigger).
-  return { tag, poster, expert: { ...expert, slug: `fuseini-briefs-${suffix}`, gigId: gig.id }, otherExpert, owner, org: { id: org.id, name } };
+  return { tag, sheetsTag, poster, expert: { ...expert, slug: `fuseini-briefs-${suffix}`, gigId: gig.id }, otherExpert, owner, org: { id: org.id, name } };
 }
 
 /** Deleting the organisation and the accounts cascades to briefs, pitches, bookings and notifications. */
