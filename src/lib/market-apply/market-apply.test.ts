@@ -10,9 +10,9 @@ import {
 } from "./expert";
 import { formatIndicativePrice, offerFacts, parseOffer } from "./offers";
 
-function form(values: Record<string, string>) {
+function form(values: Record<string, string | string[]>) {
   const f = new FormData();
-  for (const [k, v] of Object.entries(values)) f.set(k, v);
+  for (const [k, v] of Object.entries(values)) for (const item of Array.isArray(v) ? v : [v]) f.append(k, item);
   return f;
 }
 
@@ -20,6 +20,7 @@ const APPLICATION = {
   slug: "hawa-iddrisu",
   headline: "Data analyst helping beginners in Tamale",
   skills: "Excel, Power BI, excel, SQL",
+  categories: ["data", "careers", "data"],
   links: "hawa.dev",
   evidence_links: "https://github.com/hawa/sales-dashboard\nhttps://hawa.dev/report",
   experience: "Two years at an NGO in Tamale.",
@@ -45,6 +46,7 @@ describe("parseApplication", () => {
       slug: "hawa-iddrisu",
       headline: "Data analyst helping beginners in Tamale",
       skills: ["Excel", "Power BI", "SQL"],
+      categories: ["data", "careers"],
       links: ["https://hawa.dev"],
     });
     expect(data.application.evidence_links).toHaveLength(2);
@@ -54,6 +56,13 @@ describe("parseApplication", () => {
   it("requires a headline, skills, sample work and a reason", () => {
     const { errors } = parseApplication(form({ ...APPLICATION, headline: "", skills: "", evidence_links: "", motivation: "" }));
     expect(Object.keys(errors).sort()).toEqual(["evidence_links", "headline", "motivation", "skills"]);
+  });
+
+  it("needs one to five categories from the browse list", () => {
+    expect(parseApplication(form({ ...APPLICATION, categories: [] })).errors.categories).toMatch(/at least one/);
+    expect(parseApplication(form({ ...APPLICATION, categories: ["data", "astrology"] })).errors.categories).toMatch(/from the list/);
+    const six = ["software", "data", "design", "marketing", "it-cloud", "careers"];
+    expect(parseApplication(form({ ...APPLICATION, categories: six })).errors.categories).toMatch(/up to 5/);
   });
 
   it("rejects unsafe links and bad link names", () => {
@@ -85,6 +94,7 @@ describe("parseExpertProfile", () => {
       bio: null,
       languages: ["English", "Dagbani"],
       region: "northern",
+      categories: ["data", "careers"],
       availability_note: "Weekday evenings",
       accepting_requests: true,
       offers_free_intro: false,

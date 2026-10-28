@@ -1,42 +1,5 @@
-import type { ComponentProps, ReactNode } from "react";
+import type { ReactNode } from "react";
 import type { CellState } from "@/lib/mentor/progress";
-
-/** Multi line field styled like TextField (components/ui/field.tsx). */
-export function TextAreaField({
-  id,
-  label,
-  hint,
-  error,
-  ...props
-}: { id: string; label: string; hint?: string; error?: string } & ComponentProps<"textarea">) {
-  const describedBy = error ? `${id}-error` : hint ? `${id}-hint` : undefined;
-  return (
-    <div className="flex flex-col gap-1.5">
-      <label htmlFor={id} className="text-sm font-semibold text-content">
-        {label}
-      </label>
-      <textarea
-        id={id}
-        name={props.name ?? id}
-        rows={4}
-        aria-invalid={error ? true : undefined}
-        aria-describedby={describedBy}
-        className="min-h-24 w-full rounded-md border border-line-strong bg-surface px-3 py-2 text-base text-content placeholder:text-content-3 aria-invalid:border-danger-fg"
-        {...props}
-      />
-      {hint && !error && (
-        <p id={`${id}-hint`} className="text-sm text-content-3">
-          {hint}
-        </p>
-      )}
-      {error && (
-        <p id={`${id}-error`} className="text-sm text-danger-fg">
-          {error}
-        </p>
-      )}
-    </div>
-  );
-}
 
 const PILL = {
   neutral: "border-line text-content-2",

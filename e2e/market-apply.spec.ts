@@ -43,6 +43,7 @@ test("a learner applies to be an expert, drafts a gig and is approved, verified 
 
     await page.getByLabel("Expert page link name").fill(slug);
     await page.getByLabel("Skills").fill("Excel, Power BI, SQL");
+    await page.getByLabel("Data and analytics").check();
     await page.getByLabel("Links about you (optional)").fill("https://example.com/hawa");
     await page.getByLabel("Sample work").fill("https://example.com/hawa/sales-dashboard");
     await page.getByLabel("Why do you want to be an expert on SydCrest?").fill("I want more young people in the north to get data jobs.");
@@ -97,10 +98,14 @@ test("a learner applies to be an expert, drafts a gig and is approved, verified 
     await expect(page.getByRole("list", { name: "Badges" }).getByText("Verified")).toBeVisible();
     await expect(page.getByRole("link", { name: "View your expert page" })).toHaveAttribute("href", `/experts/${slug}`);
 
+    // Categories chosen at application carry over to the profile.
+    await expect(page.getByLabel("Data and analytics")).toBeChecked();
+    await page.getByLabel("Careers and job search").check();
     await page.getByLabel("Availability note (optional)").fill("Weekday evenings and Saturday mornings");
     await page.getByRole("button", { name: "Save expert profile" }).click();
     await expect(page.getByText("Expert profile saved.")).toBeVisible(AFTER_SUBMIT);
     await expect(page.getByLabel("Availability note (optional)")).toHaveValue("Weekday evenings and Saturday mornings");
+    await expect(page.getByLabel("Careers and job search")).toBeChecked();
   });
 
   await test.step("an admin delists the expert with a reason the expert can read", async () => {

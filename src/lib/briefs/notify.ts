@@ -1,6 +1,8 @@
 import "server-only";
 import { createAdminClient } from "@/lib/messaging/admin";
+import { sendAlerts } from "@/lib/messaging/alerts";
 import { logOnce } from "@/lib/messaging/config";
+import { SITE_URL } from "@/lib/site";
 import { matchExperts } from "./briefs";
 
 /**
@@ -10,9 +12,9 @@ import { matchExperts } from "./briefs";
  * `opportunity` for a new brief that matches an expert, `booking` for pitch
  * news, since an accepted pitch becomes a booking.
  *
- * Email and WhatsApp are hooks only: the app has no email provider yet, and
- * WhatsApp messages a business starts need a Meta approved template, so
- * both no-op (logged once) until they are set up. Nothing here throws: a
+ * Each in app row is followed by a WhatsApp alert for recipients who turned
+ * WhatsApp updates on (founder decision on #191; see lib/messaging/alerts).
+ * Email stays off until an email sender exists. Nothing here throws: a
  * failed notification never blocks posting, pitching or accepting.
  */
 
@@ -30,14 +32,8 @@ async function send(recipients: string[], kind: "opportunity" | "booking", paylo
   );
   const failed = results.filter((r) => r.error);
   if (failed.length) console.error(`[briefs] ${failed.length} notifications failed: ${failed[0].error?.message}`);
-  externalHooks(recipients.length);
+  await sendAlerts(admin, recipients, { title: payload.title, href: payload.href }, SITE_URL.replace(/^https?:\/\//, ""));
   return results.length - failed.length;
-}
-
-/** Email and WhatsApp for brief news: not set up yet, so a logged no-op. */
-function externalHooks(count: number) {
-  if (count === 0) return;
-  logOnce("briefs-external", "brief email and WhatsApp alerts are not set up; in app notifications only.");
 }
 
 /**

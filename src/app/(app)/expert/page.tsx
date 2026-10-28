@@ -135,6 +135,7 @@ async function ProfileEditor() {
             headline: expert.headline,
             bio: expert.bio,
             skills: expert.skills,
+            categories: expert.categories,
             links: expert.links,
             languages: expert.languages,
             region: expert.region,
@@ -206,7 +207,7 @@ async function StatusRail() {
         <p className="text-sm text-content-2">{status.body}</p>
         {(expert.is_verified || expert.is_featured) && (
           <ul className="flex flex-wrap gap-2" aria-label="Badges">
-            {expert.is_verified && <li className="rounded-full border border-line px-2.5 py-0.5 text-sm text-content-2">Verified</li>}
+            {expert.is_verified && <li className="rounded-full border border-line px-2.5 py-0.5 text-sm text-content-2">Verified by SydCrest</li>}
             {expert.is_featured && <li className="rounded-full border border-line px-2.5 py-0.5 text-sm text-content-2">Featured</li>}
           </ul>
         )}

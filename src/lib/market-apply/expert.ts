@@ -1,6 +1,7 @@
 import type { FieldErrors } from "@/lib/validation";
 import { isRegionSlug, type RegionSlug } from "@/lib/regions";
 import { parseSkills, SLUG_PATTERN } from "@/lib/social/public-profile";
+import { isExpertCategory, type ExpertCategory } from "@/lib/experts/categories";
 
 /**
  * Parsing for the expert application and the expert profile (issue #149).
@@ -13,6 +14,7 @@ export const LIMITS = {
   headline: 120,
   bio: 3000,
   skills: 30,
+  categories: 5,
   skillLength: 40,
   links: 10,
   languages: 10,
@@ -22,12 +24,13 @@ export const LIMITS = {
   url: 2000,
 } as const;
 
-export type ApplicationFields = "slug" | "headline" | "skills" | "links" | "evidence_links" | "experience" | "motivation";
+export type ApplicationFields = "slug" | "headline" | "skills" | "categories" | "links" | "evidence_links" | "experience" | "motivation";
 export type ProfileFields =
   | "slug"
   | "headline"
   | "bio"
   | "skills"
+  | "categories"
   | "links"
   | "languages"
   | "region"
@@ -37,6 +40,8 @@ export type ExpertProfileInput = {
   slug: string;
   headline: string;
   skills: string[];
+  /** Browse categories from src/lib/experts/categories.ts (1 to 5). */
+  categories: ExpertCategory[];
   links: string[];
 };
 
@@ -88,6 +93,20 @@ function checkLinks(links: string[], label: string): string | undefined {
   return undefined;
 }
 
+/**
+ * The ticked browse categories: known slugs only, no repeats. One to five,
+ * so every expert shows under at least one directory filter (the database
+ * allows up to five).
+ */
+export function parseCategories(form: FormData): { categories: ExpertCategory[]; error?: string } {
+  const raw = form.getAll("categories").filter((v): v is string => typeof v === "string");
+  const categories = [...new Set(raw.filter(isExpertCategory))];
+  if (raw.some((v) => !isExpertCategory(v))) return { categories, error: "Choose categories from the list." };
+  if (!categories.length) return { categories, error: "Choose at least one category, so learners can find you." };
+  if (categories.length > LIMITS.categories) return { categories, error: `Choose up to ${LIMITS.categories} categories.` };
+  return { categories };
+}
+
 function checkSkills(skills: string[]): string | undefined {
   if (!skills.length) return "List at least one skill.";
   if (skills.length > LIMITS.skills) return `List up to ${LIMITS.skills} skills.`;
@@ -113,7 +132,8 @@ function parseProfileBase(form: FormData) {
   const headline = text(form, "headline");
   const skills = parseSkills(text(form, "skills"));
   const links = parseLinks(text(form, "links"));
-  const errors: FieldErrors<"slug" | "headline" | "skills" | "links"> = {};
+  const { categories, error: categoriesError } = parseCategories(form);
+  const errors: FieldErrors<"slug" | "headline" | "skills" | "categories" | "links"> = {};
 
   if (!SLUG_PATTERN.test(slug)) {
     errors.slug = "Use 3 to 40 lowercase letters, numbers or hyphens, starting and ending with a letter or number.";
@@ -122,10 +142,11 @@ function parseProfileBase(form: FormData) {
   else if (headline.length > LIMITS.headline) errors.headline = `Keep your headline under ${LIMITS.headline} characters.`;
   const skillsError = checkSkills(skills);
   if (skillsError) errors.skills = skillsError;
+  if (categoriesError) errors.categories = categoriesError;
   const linksError = checkLinks(links, "links");
   if (linksError) errors.links = linksError;
 
-  return { data: { slug, headline, skills, links }, errors };
+  return { data: { slug, headline, skills, categories, links }, errors };
 }
 
 /** The /experts/apply form: the public profile basics plus the review record. */

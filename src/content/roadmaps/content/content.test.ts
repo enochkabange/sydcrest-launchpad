@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { parseGeneratedContent } from "@/lib/content-generation/schema";
+import { QUIZ_BALANCE_MAX, quizBalance } from "@/lib/content-generation/quiz-balance";
 import { ROADMAP_DRAFTS } from "@/content/roadmaps";
 import type { TrackContent } from "./types";
 
@@ -30,6 +31,12 @@ describe("roadmap lesson content", () => {
       it("only covers nodes that exist in that roadmap", () => {
         const slugs = new Set(draft?.nodes.map((n) => n.slug));
         for (const slug of Object.keys(content.nodes)) expect(slugs.has(slug), `unknown node ${slug}`).toBe(true);
+      });
+
+      it("quiz answers cannot be guessed by length or position (#214)", () => {
+        const b = quizBalance(Object.values(content.nodes).flatMap((n) => n.quiz.questions));
+        expect(b.longestShare, "share of questions whose correct option is strictly the longest").toBeLessThanOrEqual(QUIZ_BALANCE_MAX);
+        expect(b.maxPositionShare, `share of correct answers in one position (${b.positions.join("/")})`).toBeLessThanOrEqual(QUIZ_BALANCE_MAX);
       });
 
       for (const [slug, node] of Object.entries(content.nodes)) {

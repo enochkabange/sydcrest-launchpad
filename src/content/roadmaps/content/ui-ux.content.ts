@@ -51,7 +51,7 @@ Work through the sections in order. Each topic has a short lesson, a practice ta
           {
             prompt: "Which statement best describes UX?",
             options: [
-              "The colours and fonts used on a screen",
+              "The colours, fonts and button styles a person sees on a screen",
               "The logo and brand of a company",
               "The code that makes an app run",
               "How something works for the person using it, from start to finish",
@@ -73,10 +73,10 @@ Work through the sections in order. Each topic has a short lesson, a practice ta
           {
             prompt: "In the solar lamp example, why did Fuseini not simply make the app prettier?",
             options: [
-              "He learned that most customers never opened the app and paid through USSD on basic phones",
+              "He found most customers paid by USSD on basic phones and never opened the app",
               "The founder had no budget for design",
               "The founder changed his mind about the design",
-              "He did not know how to use a design tool",
+              "He did not yet know how to use a design tool such as Figma to restyle the screens",
             ],
             answer_index: 0,
             explanation: "Visiting customers showed the real problem was the phone, language and payment steps, not the app's looks.",
@@ -85,7 +85,7 @@ Work through the sections in order. Each topic has a short lesson, a practice ta
             prompt: "What does each topic in this roadmap include?",
             options: [
               "Only a video to watch",
-              "A paid course and a certificate",
+              "A paid video course with a certificate at the end",
               "A short lesson, a practice task with free tools and a quiz",
               "A group call with a recruiter",
             ],
@@ -148,7 +148,7 @@ You do not need to master everything at once. This roadmap gives you a solid bas
             prompt: "Which kind of design work is mainly about organising content, menus and labels so people can find things?",
             options: [
               "Visual design",
-              "Motion design",
+              "Interaction design and flows",
               "User research",
               "Information architecture",
             ],
@@ -159,8 +159,8 @@ You do not need to master everything at once. This roadmap gives you a solid bas
             prompt: "What does a product designer usually do?",
             options: [
               "Only draws logos",
-              "Works across research, flows and visuals and thinks about business goals with product and engineering",
-              "Only writes code for the app",
+              "Covers research, flows and visuals, and connects them to business goals",
+              "Only turns finished screens from the UI designer into working code for the app",
               "Only manages social media pages",
             ],
             answer_index: 1,
@@ -181,7 +181,7 @@ You do not need to master everything at once. This roadmap gives you a solid bas
             prompt: "Which of these appears again and again in junior design adverts?",
             options: [
               "A portfolio with case studies that show your process",
-              "Ten years of management experience",
+              "Ten years of management experience at an agency",
               "Owning a high end laptop",
               "A degree in fine art only",
             ],
@@ -246,7 +246,7 @@ The research section covers understanding and defining. Structure and interface 
             prompt: "Which is the best example of a defined problem?",
             options: [
               "Parents need to pay fees in parts and see what they still owe, without keeping paper",
-              "Build a fees app",
+              "Build a fees app where parents pay by MoMo and download a receipt after every payment",
               "Make the school website blue",
               "Use the newest design tool",
             ],
@@ -257,7 +257,7 @@ The research section covers understanding and defining. Structure and interface 
             prompt: "Why is the design process called a loop?",
             options: [
               "Because you only do each stage once",
-              "Because each stage happens at the same time",
+              "Because the same five stages are repeated in order for every new product a team builds",
               "Because testing often sends you back to earlier stages to improve the design",
               "Because developers start before designers",
             ],
@@ -267,7 +267,7 @@ The research section covers understanding and defining. Structure and interface 
           {
             prompt: "What matters most at the ideate stage?",
             options: [
-              "Polished, final screens",
+              "Polished, final screens for the client",
               "Choosing colours",
               "Writing the code",
               "Sketching many possible solutions quickly",
@@ -281,7 +281,7 @@ The research section covers understanding and defining. Structure and interface 
               "Reading the school's name",
               "Choosing between two similar options, Pay and Pay part",
               "Finding the USSD code",
-              "Entering their PIN",
+              "Entering their PIN on the last card before the payment went through",
             ],
             answer_index: 1,
             explanation: "Two similar options confused parents, so Amina merged them into one step.",
@@ -289,7 +289,7 @@ The research section covers understanding and defining. Structure and interface 
           {
             prompt: "Why is it cheaper to find problems early in the process?",
             options: [
-              "Developers prefer to start from sketches",
+              "Developers charge less when they can build straight from paper sketches instead of screens",
               "Fixing a paper sketch costs almost nothing compared with changing built software",
               "Early users are more forgiving",
               "Managers review sketches for free",
@@ -361,7 +361,7 @@ Research involves real people giving you their time and trust. Ask permission, e
           {
             prompt: "Why is asking people which features they want not a reliable method?",
             options: [
-              "Users ask for too many features to count",
+              "Users always ask for too many features to build",
               "It takes too long to ask",
               "Feature lists are the developers' job",
               "People are poor at predicting what they will actually use",
@@ -373,7 +373,7 @@ Research involves real people giving you their time and trust. Ask permission, e
             prompt: "In Issahaku's clinic research, what was the biggest pain he found?",
             options: [
               "Patients could not find the clinic",
-              "Patients wanted a better app design",
+              "Patients wanted a better designed booking app on their phones",
               "Waiting without knowing when they would be seen",
               "The clinic had no phone",
             ],
@@ -385,7 +385,7 @@ Research involves real people giving you their time and trust. Ask permission, e
             options: [
               "Shared phones, cracked screens and bright sun that you observe",
               "Only answers to written questionnaires",
-              "Only what the company manager believes",
+              "Only what the company manager believes the traders need from the app",
               "Only data from an online survey",
             ],
             answer_index: 0,
@@ -451,7 +451,7 @@ You do not need special equipment. A notebook, a pen, a phone for photos with pe
             options: [
               "The colours of the final app",
               "The decision the research will help the team make",
-              "A list of every person in the town",
+              "A list of every person in the town to interview",
               "The price of the product",
             ],
             answer_index: 1,
@@ -462,7 +462,7 @@ You do not need special equipment. A notebook, a pen, a phone for photos with pe
             options: [
               "Nothing, if it is a public market",
               "Ask after you have taken the photo",
-              "Only if you plan to publish it",
+              "Only ask if you plan to publish the photo or recording online",
               "Ask their permission and explain how you will use it",
             ],
             answer_index: 3,
@@ -483,7 +483,7 @@ You do not need special equipment. A notebook, a pen, a phone for photos with pe
             prompt: "In Sumaila's example, what did the treasurer's habit of typing numbers twice reveal?",
             options: [
               "A fear of sending money to the wrong person",
-              "She did not know how to use a phone",
+              "She did not know how to use the phone's mobile money menu",
               "The phone keyboard was broken",
               "She wanted a bigger screen",
             ],
@@ -562,7 +562,7 @@ That one sentence teaches Wumpini more than any yes or no answer could: for Mari
             prompt: "Which interview question is strongest?",
             options: [
               "Would you use an app to track your sales?",
-              "Don't you think tracking sales is important?",
+              "Don't you think tracking your sales every day is important for your business?",
               "Tell me about the last time you checked how much you sold in a day.",
               "Do you like apps?",
             ],
@@ -574,7 +574,7 @@ That one sentence teaches Wumpini more than any yes or no answer could: for Mari
             options: [
               "What happened next?",
               "Can you show me how you did it?",
-              "How do you usually pay for data?",
+              "How do you pay for your data bundle?",
               "Don't you find mobile money confusing?",
             ],
             answer_index: 3,
@@ -583,7 +583,7 @@ That one sentence teaches Wumpini more than any yes or no answer could: for Mari
           {
             prompt: "What is a survey better at than an interview?",
             options: [
-              "Understanding why people do something",
+              "Understanding the reasons why people do something a certain way",
               "Building trust with one person",
               "Checking how common something is across many people",
               "Watching how people use a phone",
@@ -594,7 +594,7 @@ That one sentence teaches Wumpini more than any yes or no answer could: for Mari
           {
             prompt: "What did Mariama's quote reveal to Wumpini?",
             options: [
-              "Mariama wants a brighter app",
+              "Mariama wants a brighter app with bigger buttons for her savings",
               "Mariama prefers banks",
               "Mariama does not own a phone",
               "Keeping money out of easy reach matters to Mariama",
@@ -674,7 +674,7 @@ Abdul-Rahman interviews eight shop owners in Tamale about restocking. He groups 
               "Drawing the final screens",
               "Grouping research notes into themes that belong together",
               "Choosing brand colours",
-              "Writing code for a map feature",
+              "Writing code for a map feature that groups users by location",
             ],
             answer_index: 1,
             explanation: "Affinity mapping groups notes into named themes to find patterns.",
@@ -705,7 +705,7 @@ Abdul-Rahman interviews eight shop owners in Tamale about restocking. He groups 
             prompt: "Which is the best problem statement?",
             options: [
               "Build a stock app with charts",
-              "Shop owners would like a modern app",
+              "Shop owners would like a modern stock app that sends them alerts and shows their sales on charts",
               "Shop owners run out of fast moving items because they only notice when a customer asks",
               "Add a sales dashboard with charts",
             ],
@@ -763,7 +763,7 @@ By the end of this section you will be able to organise a product's content, dra
               "Changing structure is cheap early and expensive later",
               "Users notice structure but never colour",
               "Colour is decided by the marketing team",
-              "Colour must be approved by developers first",
+              "Colour must be approved by developers before any screen is designed",
             ],
             answer_index: 0,
             explanation: "Moving boxes on a sketch is quick; changing built structure is slow and costly.",
@@ -771,7 +771,7 @@ By the end of this section you will be able to organise a product's content, dra
           {
             prompt: "What does information architecture decide?",
             options: [
-              "How fast the server responds",
+              "How fast the server responds for each section",
               "Which font to use",
               "What content exists and how it is grouped and named",
               "The price of the product",
@@ -782,10 +782,10 @@ By the end of this section you will be able to organise a product's content, dra
           {
             prompt: "Does structure matter for a USSD menu?",
             options: [
-              "No, only apps have structure",
+              "No, USSD menus are fixed by the network, so designers cannot change them",
               "Only if it has pictures",
               "Only on smartphones",
-              "Yes, options, order and wording are structure, with even less room for mistakes",
+              "Yes, its options, order and wording are all structure",
             ],
             answer_index: 3,
             explanation: "USSD, SMS and voice menus all have structure, and small screens make it more critical.",
@@ -796,7 +796,7 @@ By the end of this section you will be able to organise a product's content, dra
               "She asked members what they come for and grouped content around that",
               "She copied another church's website",
               "She used the pastor's full list as it was",
-              "She picked the sections with the nicest photos",
+              "She grouped content by the church's internal departments and committees",
             ],
             answer_index: 0,
             explanation: "Members' real needs guided the grouping into four main sections.",
@@ -853,7 +853,7 @@ Hawa is organising a farm advisory service for an NGO in the Upper East Region. 
           {
             prompt: "How should you group features in a banking app?",
             options: [
-              "By the bank's internal departments",
+              "By the bank's internal departments and branches",
               "By customer tasks such as sending money or checking a balance",
               "Alphabetically, always",
               "By which team built them",
@@ -878,7 +878,7 @@ Hawa is organising a farm advisory service for an NGO in the Upper East Region. 
               "Users sort cards of features into groups and name them",
               "Designers sort users by age",
               "Developers test the code",
-              "Users rate colours from one to five",
+              "Users rate each screen's colours from one to five",
             ],
             answer_index: 0,
             explanation: "Card sorting shows how users group and name content.",
@@ -888,8 +888,8 @@ Hawa is organising a farm advisory service for an NGO in the Upper East Region. 
             options: [
               "Whether the app loads quickly",
               "Whether farmers own phones",
-              "Whether the colours look good",
-              "Whether people can find things in your structure, without any visual design",
+              "Whether the colours and icons look good to farmers on a small screen",
+              "Whether people can find things in your menu structure alone",
             ],
             answer_index: 3,
             explanation: "A tree test checks the menu structure on its own, as a plain list.",
@@ -900,7 +900,7 @@ Hawa is organising a farm advisory service for an NGO in the Upper East Region. 
               "The NGO asked for longer words",
               "It was too short",
               "Farmers did not use or understand that word",
-              "The word did not fit on the button",
+              "The word was too long to fit on the button on small phones",
             ],
             answer_index: 2,
             explanation: "Farmers used different words, so the new labels matched their language.",
@@ -979,7 +979,7 @@ The same task can have a different flow on a smartphone app, a USSD menu and a p
             options: [
               "A screen",
               "A decision, such as whether the PIN is correct",
-              "The end of the flow",
+              "The end of the flow, when the task is done",
               "A colour choice",
             ],
             answer_index: 1,
@@ -991,7 +991,7 @@ The same task can have a different flow on a smartphone app, a USSD menu and a p
               "The user pays successfully",
               "The user opens the app",
               "The network drops during payment",
-              "The user sees the home screen",
+              "The user sees the home screen after logging in",
             ],
             answer_index: 2,
             explanation: "Unhappy paths are where something goes wrong, like a network drop.",
@@ -999,7 +999,7 @@ The same task can have a different flow on a smartphone app, a USSD menu and a p
           {
             prompt: "Why should designers count the steps in a flow?",
             options: [
-              "To show the client how much work was done",
+              "To show the client how much work the design team did, so they can set the price",
               "To make every flow exactly ten steps",
               "To estimate how much data the app uses",
               "To find steps that can be removed or merged, saving time and mistakes",
@@ -1013,7 +1013,7 @@ The same task can have a different flow on a smartphone app, a USSD menu and a p
               "Users did not know whether they had paid, so some paid twice",
               "Users could not see the colours",
               "Users forgot the short code",
-              "Users chose the wrong bill type",
+              "Users chose the wrong bill type because the menu labels were unclear",
             ],
             answer_index: 0,
             explanation: "Without a clear result, users were unsure and sometimes paid again.",
@@ -1081,7 +1081,7 @@ When the structure is stable, recreate your best sketches as grey wireframes in 
           {
             prompt: "What does a wireframe show?",
             options: [
-              "Final colours and photos",
+              "Final colours, photos and brand fonts",
               "The app's source code",
               "Layout and content without colour or decoration",
               "The marketing plan",
@@ -1092,7 +1092,7 @@ When the structure is stable, recreate your best sketches as grey wireframes in 
           {
             prompt: "Why do people often give more honest feedback on rough sketches?",
             options: [
-              "Sketches are harder to understand",
+              "Sketches are harder to understand, so people ask more questions about them",
               "They do not worry about hurting the designer's feelings",
               "Sketches are always correct",
               "They cannot see rough sketches clearly",
@@ -1105,7 +1105,7 @@ When the structure is stable, recreate your best sketches as grey wireframes in 
             options: [
               "Empty, loading, error and success states",
               "Fake text in Latin",
-              "Only the success state",
+              "Only the success state most users see",
               "Final brand colours",
             ],
             answer_index: 0,
@@ -1115,7 +1115,7 @@ When the structure is stable, recreate your best sketches as grey wireframes in 
             prompt: "What did Amina change after testing the stock screen?",
             options: [
               "She changed the colours",
-              "She made the list longer",
+              "She made the list longer so every item showed at once",
               "She removed all items",
               "She added a Running low box at the top",
             ],
@@ -1176,7 +1176,7 @@ Learn the tool alongside the principles, not instead of them. A designer who kno
               "The company's management structure",
               "Every element is bold",
               "The most important thing on the screen is the most noticeable",
-              "The order in which screens were designed",
+              "The order in which screens were designed and built",
             ],
             answer_index: 2,
             explanation: "Hierarchy guides the eye to what matters most.",
@@ -1195,7 +1195,7 @@ Learn the tool alongside the principles, not instead of them. A designer who kno
           {
             prompt: "Why should you test designs on a modest phone outdoors?",
             options: [
-              "Because phones show colours more accurately than laptops",
+              "Because phone screens show colours more accurately than laptop screens do",
               "Because many users have older phones and use them in strong sun",
               "Because it is faster to design on a phone",
               "Because colours look the same everywhere",
@@ -1206,8 +1206,8 @@ Learn the tool alongside the principles, not instead of them. A designer who kno
           {
             prompt: "What problem did Wumpini notice when she checked her design outside?",
             options: [
-              "Light grey text disappeared in the sun and the photo pushed the balance down",
-              "The button was too large",
+              "Light grey text vanished in the sun and the photo pushed the balance down",
+              "The Pay button was so large that it covered part of the balance on small phones",
               "The app would not open",
               "The font was too dark",
             ],
@@ -1298,7 +1298,7 @@ Issahaku builds a "Send money" flow in Figma. He makes one frame per step, build
               "Upload many large photos",
               "Keep twenty tabs open",
               "Avoid large images and work on one file at a time",
-              "Download every free template",
+              "Download every free template and icon pack before you start",
             ],
             answer_index: 2,
             explanation: "Fewer heavy files and tabs means less data used.",
@@ -1307,7 +1307,7 @@ Issahaku builds a "Send money" flow in Figma. He makes one frame per step, build
             prompt: "Why should you name layers clearly, such as Pay button?",
             options: [
               "It helps you and developers understand the file",
-              "It is needed before you can export",
+              "Design tools require named layers before you can export a screen",
               "It makes the file smaller",
               "It makes the prototype run faster",
             ],
@@ -1381,7 +1381,7 @@ Amina designs a receipt screen for a chop bar's ordering app in Tamale. Version 
               "Some people cannot tell certain colours apart, so words or icons are needed too",
               "Brand rules forbid using colour for meaning",
               "Icons load faster than colours",
-              "Red and green look the same on every phone",
+              "Red and green look the same on most phone screens when the brightness is turned down",
             ],
             answer_index: 0,
             explanation: "Adding words or icons makes meaning clear for colour blind users.",
@@ -1389,7 +1389,7 @@ Amina designs a receipt screen for a chop bar's ordering app in Tamale. Version 
           {
             prompt: "What does proximity mean in layout?",
             options: [
-              "Putting everything as far apart as possible",
+              "Putting everything as far apart as possible so each item stands out clearly",
               "Making all text bold",
               "Grouping related items closer and separating unrelated ones",
               "Using only one colour",
@@ -1401,7 +1401,7 @@ Amina designs a receipt screen for a chop bar's ordering app in Tamale. Version 
             prompt: "In Amina's improved receipt, what helped colour blind users?",
             options: [
               "A bigger logo",
-              "Four extra colours",
+              "Four extra colours, one for each status",
               "Smaller text",
               "The word Paid and a tick next to the green colour",
             ],
@@ -1476,7 +1476,7 @@ Hawa designs a market price checker for an NGO. Her first version puts the "Chec
             options: [
               "There is no recommendation",
               "10 by 10 pixels",
-              "100 by 100 pixels",
+              "100 by 100 density independent pixels",
               "48 by 48 density independent pixels",
             ],
             answer_index: 3,
@@ -1485,7 +1485,7 @@ Hawa designs a market price checker for an NGO. Her first version puts the "Chec
           {
             prompt: "Where should the main action usually go for one handed use?",
             options: [
-              "The top right corner",
+              "The top right corner, where menus usually sit",
               "Hidden in a menu",
               "Near the bottom or middle where the thumb reaches",
               "In the middle of a long scroll",
@@ -1496,7 +1496,7 @@ Hawa designs a market price checker for an NGO. Her first version puts the "Chec
           {
             prompt: "What does designing mobile first mean?",
             options: [
-              "Only designing for phones and ignoring laptops",
+              "Designing only for phones and leaving laptop and desktop layouts out entirely",
               "Starting with the smallest screen, then deciding how the layout grows",
               "Designing on a phone instead of a laptop",
               "Building the mobile app before research",
@@ -1509,7 +1509,7 @@ Hawa designs a market price checker for an NGO. Her first version puts the "Chec
             options: [
               "Labels use less data",
               "Placeholder text disappears when people start typing",
-              "Placeholder text cannot be translated",
+              "Placeholder text cannot be translated into local languages like Dagbani",
               "Labels make the field smaller",
             ],
             answer_index: 1,
@@ -1586,7 +1586,7 @@ Build accessibility into your components: good contrast, large touch targets, vi
             options: [
               "Icons for mobile money",
               "Payments made to designers",
-              "Passwords for design tools",
+              "Short codes that let developers open a shared design file and copy its screens",
               "Named values for colours, type sizes and spacing shared by design and code",
             ],
             answer_index: 3,
@@ -1595,7 +1595,7 @@ Build accessibility into your components: good contrast, large touch targets, vi
           {
             prompt: "Which list shows states a button might need?",
             options: [
-              "Primary, secondary and brand colour",
+              "Primary, secondary and brand colour versions",
               "Mobile, tablet and laptop",
               "Default, pressed, disabled and loading",
               "Header, body and footer",
@@ -1608,7 +1608,7 @@ Build accessibility into your components: good contrast, large touch targets, vi
             options: [
               "Shared names and components remove guessing and keep changes consistent",
               "It makes apps slower",
-              "It removes the need for developers",
+              "It removes the need for developers to write code, since screens export as finished apps",
               "It writes all their tests",
             ],
             answer_index: 0,
@@ -1618,7 +1618,7 @@ Build accessibility into your components: good contrast, large touch targets, vi
             prompt: "What was the problem Sumaila fixed?",
             options: [
               "The app loaded too slowly on old phones",
-              "The developer wanted a different design tool",
+              "The developer wanted the whole team to move to a different design tool first",
               "Buttons appeared in three shades of green, different shapes and heights",
               "Parents could not find the fees screen",
             ],
@@ -1674,7 +1674,7 @@ Treat these four topics as part of every project, not an extra at the end. Check
             options: [
               "Design only for one user",
               "Use one colour everywhere",
-              "Build one feature at a time",
+              "Build one feature at a time and release it to one group of users first",
               "A solution for a specific difficulty often helps everyone",
             ],
             answer_index: 3,
@@ -1684,7 +1684,7 @@ Treat these four topics as part of every project, not an extra at the end. Check
             prompt: "Why should tests include people who struggle, not only confident users?",
             options: [
               "Testing only confident users covers just a small slice of real users",
-              "Confident users are not allowed in tests",
+              "Confident users give poor feedback because they already know how most apps work",
               "People who struggle finish faster",
               "It makes the test shorter",
             ],
@@ -1694,7 +1694,7 @@ Treat these four topics as part of every project, not an extra at the end. Check
           {
             prompt: "What did Mariama's final health reminder design use?",
             options: [
-              "A smartphone app in English only",
+              "A smartphone app in English with large buttons and pictures",
               "Voice messages in local languages plus a simple SMS",
               "Posters at the clinic only",
               "Email newsletters",
@@ -1708,7 +1708,7 @@ Treat these four topics as part of every project, not an extra at the end. Check
               "Throughout every project, starting early",
               "Never, they are optional",
               "Only after launch",
-              "Only if a customer complains",
+              "Only once a customer complains",
             ],
             answer_index: 0,
             explanation: "Early checks are cheap; fixing after launch is costly.",
@@ -1795,7 +1795,7 @@ Checklists catch many problems, but nothing replaces testing with disabled users
               "A chat app",
               "A free screen reader built into Android phones",
               "A design tool",
-              "A mobile money service",
+              "A voice calling app for sending audio messages to friends",
             ],
             answer_index: 1,
             explanation: "TalkBack reads the screen aloud for blind and low vision users.",
@@ -1804,9 +1804,9 @@ Checklists catch many problems, but nothing replaces testing with disabled users
             prompt: "Why could Issahaku not buy a ticket at first?",
             options: [
               "The text was too large for his phone",
-              "The app was only in English",
+              "The app was only in English and his screen reader could not read it",
               "He preferred to buy tickets at the station",
-              "The seat map had no labels and the Pay button was announced only as Button",
+              "The seat map had no labels and Pay was announced only as Button",
             ],
             answer_index: 3,
             explanation: "Unlabelled images and buttons are invisible to screen reader users.",
@@ -1814,7 +1814,7 @@ Checklists catch many problems, but nothing replaces testing with disabled users
           {
             prompt: "What should you check when someone increases their phone's font size?",
             options: [
-              "That the app blocks the change",
+              "That the app blocks the change to keep the layout",
               "That the layout still works and text is not cut off",
               "That colours change automatically",
               "Nothing, font size is not your concern",
@@ -1891,7 +1891,7 @@ Wumpini is improving a farm loan app. Her test shows farmers near Savelugu skip 
           {
             prompt: "Why use digits for numbers?",
             options: [
-              "Words for numbers are not allowed",
+              "Words for numbers are not allowed in app store guidelines",
               "Digits use more data",
               "Many people who read few words still read numbers well",
               "Digits look more modern",
@@ -1905,7 +1905,7 @@ Wumpini is improving a farm loan app. Her test shows farmers near Savelugu skip 
               "Use word by word translation and skip testing",
               "Work with a fluent community speaker to translate meaning, then test with users",
               "Guess the words yourself",
-              "Use a translation app and publish the result directly",
+              "Use a free translation app for every screen and publish the result without checking",
             ],
             answer_index: 1,
             explanation: "Meaning based translation, checked with real users, avoids confusing wording.",
@@ -1925,7 +1925,7 @@ Wumpini is improving a farm loan app. Her test shows farmers near Savelugu skip 
             prompt: "What did Wumpini add to help farmers understand repayments?",
             options: [
               "A table with large digits and a Listen in Dagbani button",
-              "A longer English paragraph",
+              "A longer English paragraph explaining each repayment date",
               "A video advert",
               "A new logo",
             ],
@@ -1994,10 +1994,10 @@ Draw each USSD screen as a small box with numbered options. Test it on paper: re
           {
             prompt: "Why does USSD matter for design in Ghana?",
             options: [
-              "It only works on new smartphones",
+              "It only works on newer smartphones that have a data bundle and a strong signal",
               "It is only used for games",
               "It replaces all apps",
-              "It works on any mobile phone without data, so it reaches people with basic phones",
+              "It works on any mobile phone without data, reaching people with basic phones",
             ],
             answer_index: 3,
             explanation: "USSD works on basic phones with no internet.",
@@ -2006,7 +2006,7 @@ Draw each USSD screen as a small box with numbered options. Test it on paper: re
             prompt: "Which is a limit of USSD?",
             options: [
               "Unlimited text on each screen",
-              "It needs a strong data connection",
+              "It needs a strong data signal to work",
               "Sessions can time out if the user is slow",
               "It only works in English",
             ],
@@ -2019,7 +2019,7 @@ Draw each USSD screen as a small box with numbered options. Test it on paper: re
               "SMS is free for everyone",
               "The USSD screen disappears, so people need a lasting record",
               "It replaces the PIN",
-              "It is required for every menu option",
+              "The network requires an SMS to be sent after every USSD menu option",
             ],
             answer_index: 1,
             explanation: "An SMS keeps proof of the action after the session ends.",
@@ -2027,7 +2027,7 @@ Draw each USSD screen as a small box with numbered options. Test it on paper: re
           {
             prompt: "What can happen when an SMS uses special characters such as ɛ or ɔ?",
             options: [
-              "The message cannot be sent at all",
+              "The message cannot be sent at all to basic phones that lack those letters",
               "It is delivered faster",
               "It is shown in bold",
               "Each message holds fewer characters, so it may split into parts",
@@ -2039,7 +2039,7 @@ Draw each USSD screen as a small box with numbered options. Test it on paper: re
             prompt: "On a shared phone, which design choice protects privacy?",
             options: [
               "Hide balances by default and ask for a PIN before showing them",
-              "Show the balance in large text on the home screen",
+              "Show the balance in large text on the home screen so it is easy to read",
               "Save every PIN on the screen",
               "Remove the log out option",
             ],
@@ -2108,7 +2108,7 @@ Most phones let you turn on a data saver mode, and browser developer tools can s
             options: [
               "Every megabyte costs users money and slows loading",
               "Small images always look more modern",
-              "Users prefer apps with no pictures at all",
+              "Users prefer apps with no pictures at all, even on fast networks",
               "Images make text harder to translate",
             ],
             answer_index: 0,
@@ -2117,7 +2117,7 @@ Most phones let you turn on a data saver mode, and browser developer tools can s
           {
             prompt: "What is a skeleton screen?",
             options: [
-              "A screen with no buttons",
+              "A plain screen with no buttons for reading",
               "A screen about health",
               "An error message",
               "A grey outline of content shown while it loads",
@@ -2130,8 +2130,8 @@ Most phones let you turn on a data saver mode, and browser developer tools can s
             options: [
               "Nothing, and let the user try again",
               "Payment failed, even if unsure",
-              "That the payment is being checked, not to pay again, and that an SMS will follow",
-              "Please try the payment again now",
+              "That the payment is being checked, not to pay again, and an SMS will follow",
+              "Please try the payment again now, since the first attempt probably did not go through",
             ],
             answer_index: 2,
             explanation: "Honest, clear messages prevent double payments and worry.",
@@ -2140,9 +2140,9 @@ Most phones let you turn on a data saver mode, and browser developer tools can s
             prompt: "How did Fuseini's survey app stop answers going missing?",
             options: [
               "It asked officers to use paper only",
-              "It saved each answer on the phone and sent surveys when the network returned",
+              "It saved answers on the phone and sent surveys when the network returned",
               "It made the survey shorter",
-              "It required a strong signal to start",
+              "It only let officers start a new survey when the phone had a strong signal",
             ],
             answer_index: 1,
             explanation: "Saving locally and queuing uploads protects work during network drops.",
@@ -2199,7 +2199,7 @@ Good designers build testing into every project. It turns opinions into evidence
           {
             prompt: "What does you are not your user mean?",
             options: [
-              "Designers should never use their own products",
+              "Designers should never try their own products, because they will like everything they made",
               "People will use your design differently from how you expect, so you must test",
               "Users should design the product",
               "Designers do not need research",
@@ -2224,7 +2224,7 @@ Good designers build testing into every project. It turns opinions into evidence
               "Only after the product is launched",
               "Only when the design looks finished",
               "At every stage, from paper sketches to the built product",
-              "Never, if the designer is experienced",
+              "Never, if the designer is experienced and has done research first",
             ],
             answer_index: 2,
             explanation: "Each round catches different problems, and early fixes are cheap.",
@@ -2235,7 +2235,7 @@ Good designers build testing into every project. It turns opinions into evidence
               "Parents stopped at the PIN screen because many had lost the PIN slip",
               "The results screen had too much text",
               "The results were published too late",
-              "Parents preferred to visit the school in person",
+              "Parents preferred to visit the school in person to collect printed results",
             ],
             answer_index: 0,
             explanation: "Numbers showed a drop at the PIN screen and calls explained why.",
@@ -2301,7 +2301,7 @@ Mariama wants to test a new "Pay school fees" flow with parents in Bolgatanga. S
               "When testing whether people understand a menu, quickly and cheaply",
               "When testing server speed",
               "When the app is already launched",
-              "When testing final brand colours",
+              "When testing whether the final brand colours look right on cheap phones",
             ],
             answer_index: 0,
             explanation: "Paper is ideal for fast, cheap tests of structure and understanding.",
@@ -2309,7 +2309,7 @@ Mariama wants to test a new "Pay school fees" flow with parents in Bolgatanga. S
           {
             prompt: "What should a focused prototype include?",
             options: [
-              "Every screen in the product",
+              "Every screen in the product, so participants can explore it freely",
               "The path for one task, including an error and success screen",
               "Only the logo",
               "Only the home screen",
@@ -2321,7 +2321,7 @@ Mariama wants to test a new "Pay school fees" flow with parents in Bolgatanga. S
             prompt: "What does it mean if a participant taps something you did not build?",
             options: [
               "The test has failed and must be cancelled",
-              "The prototype must be rebuilt before continuing",
+              "The prototype is broken and must be rebuilt before you continue",
               "It shows what they expected, which is useful information",
               "You should stop and explain the screen",
             ],
@@ -2333,7 +2333,7 @@ Mariama wants to test a new "Pay school fees" flow with parents in Bolgatanga. S
             options: [
               "Switch the test to a laptop instead",
               "Cut the prototype down to one screen",
-              "Ask participants to use their own data",
+              "Ask each participant to switch on their own data bundle so the prototype loads",
               "Open and check it at home on WiFi, or prepare screenshots as a backup",
             ],
             answer_index: 3,
@@ -2403,7 +2403,7 @@ Issahaku tests a bus ticket app with four travellers at the Tamale station. Thre
               "Your sister in Wa needs 10 cedis of airtime. Send it to her.",
               "Tap the Send Airtime button",
               "Do you like this app?",
-              "Find the blue button at the bottom",
+              "Find the blue Send button at the bottom and tap it to send airtime",
             ],
             answer_index: 0,
             explanation: "A realistic situation that does not reveal the button words gives honest results.",
@@ -2411,7 +2411,7 @@ Issahaku tests a bus ticket app with four travellers at the Tamale station. Thre
           {
             prompt: "A participant asks What do I press? What should you say?",
             options: [
-              "Press the green button",
+              "Press the green button at the bottom",
               "What would you do if I were not here?",
               "You are doing it wrong",
               "Let me do it for you",
@@ -2422,7 +2422,7 @@ Issahaku tests a bus ticket app with four travellers at the Tamale station. Thre
           {
             prompt: "Which problems should you fix first?",
             options: [
-              "Problems only you noticed",
+              "Problems only you noticed while watching the recordings",
               "Minor annoyances",
               "Critical problems that stop people finishing",
               "Colour preferences",
@@ -2433,7 +2433,7 @@ Issahaku tests a bus ticket app with four travellers at the Tamale station. Thre
           {
             prompt: "What does the heuristic visibility of system status mean?",
             options: [
-              "The app should hide what it is doing",
+              "The app should hide what it is doing so screens look clean and calm",
               "Use bright colours everywhere",
               "Only show status to developers",
               "Always show users what is happening, such as Sending",
@@ -2446,7 +2446,7 @@ Issahaku tests a bus ticket app with four travellers at the Tamale station. Thre
             options: [
               "No, it is a useful extra check but does not replace watching users",
               "Only for apps in English",
-              "Yes, if the expert is senior",
+              "Yes, if the expert is senior and has reviewed many similar apps before",
               "Yes, always",
             ],
             answer_index: 0,
@@ -2512,7 +2512,7 @@ Keep one source of truth. Mark which screens are final, which are still being ex
           {
             prompt: "Which of these should a good handoff include?",
             options: [
-              "Only the happy path screens",
+              "Only the happy path screens, since developers handle errors themselves",
               "Every state, such as loading, error, empty and success",
               "Only the final colours",
               "Only the logo files",
@@ -2525,7 +2525,7 @@ Keep one source of truth. Mark which screens are final, which are still being ex
             options: [
               "To replace developers",
               "It is not useful at all",
-              "Because design tools need code to open",
+              "Because most design tools need you to write code before you can export",
               "To understand what is easy and what is costly to build",
             ],
             answer_index: 3,
@@ -2537,7 +2537,7 @@ Keep one source of truth. Mark which screens are final, which are still being ex
               "Refuse to change it",
               "Drop the feature without telling anyone",
               "Ask developers for a simpler option that still solves the user's problem",
-              "Build it anyway and fix it later",
+              "Ask the developers to build it anyway and plan to simplify it after launch",
             ],
             answer_index: 2,
             explanation: "Working together on trade offs gets a useful version shipped sooner.",
@@ -2545,7 +2545,7 @@ Keep one source of truth. Mark which screens are final, which are still being ex
           {
             prompt: "What was missing from Fuseini's first handoff?",
             options: [
-              "The happy path screens",
+              "The happy path screens showing a successful payment from start to end",
               "Edge cases such as long names, network drops and loading states",
               "A logo",
               "The app's name",
@@ -2615,7 +2615,7 @@ Write short updates: what you changed, what the numbers showed and what users sa
             prompt: "What does a funnel show?",
             options: [
               "How long each screen takes to load",
-              "The order the screens were designed in",
+              "The order the screens were designed in, from the first sketch to the final build",
               "Which users are most satisfied",
               "How many people reach each step of a task, showing where they drop off",
             ],
@@ -2627,7 +2627,7 @@ Write short updates: what you changed, what the numbers showed and what users sa
             options: [
               "Talk to users, support staff or run a test to learn why",
               "Ignore it",
-              "Remove the PIN completely",
+              "Remove the PIN completely so nobody gets stuck on that screen",
               "Change all the colours",
             ],
             answer_index: 0,
@@ -2637,7 +2637,7 @@ Write short updates: what you changed, what the numbers showed and what users sa
             prompt: "Why change only one thing in an A/B test?",
             options: [
               "To make the test longer",
-              "Because tools allow only one change",
+              "Because tools only allow one change",
               "So you know what caused any difference",
               "So users do not notice",
             ],
@@ -2715,7 +2715,7 @@ Job hunting takes time. Set a weekly routine: improve one case study, apply to a
               "Only beautiful final screens",
               "How you think: research, problems, options and reasons for your decisions",
               "A list of certificates",
-              "The number of design tools you know",
+              "The number of design tools you know and how long you have used each one",
             ],
             answer_index: 1,
             explanation: "Case studies show your process and reasoning, which employers value.",
@@ -2724,9 +2724,9 @@ Job hunting takes time. Set a weekly routine: improve one case study, apply to a
             prompt: "Why is local knowledge of northern Ghana an advantage?",
             options: [
               "Employers only hire from the north",
-              "It means you do not need design skills",
+              "It means employers there will hire you without checking your design skills",
               "It replaces the need for a portfolio",
-              "Companies building for these users need designers who understand them, and that experience is not easy to find",
+              "Companies building for these users need designers who understand them",
             ],
             answer_index: 3,
             explanation: "Experience with these users is valuable and not easy to find.",
@@ -2734,7 +2734,7 @@ Job hunting takes time. Set a weekly routine: improve one case study, apply to a
           {
             prompt: "What should you do if a project was a practice redesign?",
             options: [
-              "Pretend it was a paid client project",
+              "Present it as a paid client project to look more experienced",
               "Invent results to make it impressive",
               "Say clearly that it was a practice redesign",
               "Leave it out entirely",
@@ -2820,7 +2820,7 @@ Abdul-Rahman writes up his clinic SMS reminder project. His first draft is eight
               "The reasons behind your design choices",
               "The price you charge for a design",
               "The tool you used",
-              "The number of screens you made",
+              "The number of screens in your design",
             ],
             answer_index: 0,
             explanation: "Rationale is the why behind each decision.",
@@ -2829,7 +2829,7 @@ Abdul-Rahman writes up his clinic SMS reminder project. His first draft is eight
             prompt: "Which statement shows a decision best?",
             options: [
               "I improved the menu",
-              "I made it look nicer",
+              "I made the whole menu look nicer and more modern, so members enjoyed using it more",
               "I used the newest colours",
               "I moved Check balance to option 1 because most members I interviewed said it was the first thing they do",
             ],
@@ -2840,7 +2840,7 @@ Abdul-Rahman writes up his clinic SMS reminder project. His first draft is eight
             prompt: "What should you do if you have no real usage data for a project?",
             options: [
               "Invent numbers that look good",
-              "Remove the project from your portfolio",
+              "Remove the project from your portfolio until a real client gives you usage numbers",
               "Say honestly that you did not have usage data and share test results instead",
               "Copy numbers from another company",
             ],
@@ -2861,7 +2861,7 @@ Abdul-Rahman writes up his clinic SMS reminder project. His first draft is eight
           {
             prompt: "What was missing from Abdul-Rahman's first draft?",
             options: [
-              "Polished screens",
+              "Polished screens showing what the final SMS reminder looked like",
               "Colour",
               "A title",
               "His thinking: research findings, options considered and testing",
@@ -2937,7 +2937,7 @@ Amina offers to redesign the WhatsApp ordering for a chop bar near the Tamale Te
             prompt: "Which should you agree with a client before starting work?",
             options: [
               "Only the colour scheme",
-              "Nothing, it is better to start quickly",
+              "Only the price, because the other details are easier to agree as the work goes along",
               "What you will deliver, what is not included, rounds of changes, price, payment and timeline",
               "Only your favourite font",
             ],
@@ -2947,7 +2947,7 @@ Amina offers to redesign the WhatsApp ordering for a chop bar near the Tamale Te
           {
             prompt: "Why should you ask the client about showing the work in your portfolio?",
             options: [
-              "It is required by the design tool",
+              "Design tools require written client permission before you export",
               "To agree whether you can use it as a case study",
               "It makes the price higher",
               "Clients always say no",
@@ -2960,7 +2960,7 @@ Amina offers to redesign the WhatsApp ordering for a chop bar near the Tamale Te
             options: [
               "Being asked to pay to unlock freelance jobs",
               "A client who agrees the scope in writing",
-              "A client who pays part upfront",
+              "A client who pays part of the fee upfront by MoMo",
               "A client who gives clear feedback",
             ],
             answer_index: 0,
@@ -2970,7 +2970,7 @@ Amina offers to redesign the WhatsApp ordering for a chop bar near the Tamale Te
             prompt: "What problem did Amina see when she watched the chop bar take orders?",
             options: [
               "Prices on the menu were out of date",
-              "Customers wanted delivery instead",
+              "Customers wanted delivery instead of collecting food",
               "Staff wrote orders in a notebook too slowly",
               "Customers sent unclear messages like 1 plate",
             ],
@@ -3041,7 +3041,7 @@ Issahaku applies to a remote startup building savings products for Africa. In th
               "An employer asks for your portfolio",
               "Being asked to pay money to receive a job offer",
               "A short screening call",
-              "A design exercise of an hour",
+              "A design exercise that takes about an hour",
             ],
             answer_index: 1,
             explanation: "Legitimate employers do not ask candidates to pay for jobs.",
@@ -3049,7 +3049,7 @@ Issahaku applies to a remote startup building savings products for Africa. In th
           {
             prompt: "What should you do first in a design exercise?",
             options: [
-              "Start drawing final screens immediately",
+              "Start drawing final screens immediately to show your speed",
               "Choose the brand colours",
               "Ask questions about users, devices and constraints",
               "Say you need a week to think",
@@ -3074,7 +3074,7 @@ Issahaku applies to a remote startup building savings products for Africa. In th
               "His questions and his thinking about basic phones and USSD",
               "His very detailed final screens",
               "That he finished in five minutes",
-              "That he skipped questions to save time",
+              "That he skipped questions to save time and went straight to screens",
             ],
             answer_index: 0,
             explanation: "Asking about users and designing for basic phones showed real understanding.",

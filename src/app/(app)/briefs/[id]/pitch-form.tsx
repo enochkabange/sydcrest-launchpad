@@ -3,10 +3,9 @@
 import { useActionState } from "react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { SelectField, TextField } from "@/components/ui/field";
+import { SelectField, TextAreaField, TextField } from "@/components/ui/field";
 import { MESSAGE_MAX, TIMELINE_MAX } from "@/lib/briefs/briefs";
 import { submitPitch, type FormState } from "../actions";
-import { TextArea } from "../text-area";
 
 export function PitchForm({ briefId, offers }: { briefId: string; offers: { id: string; label: string }[] }) {
   const [state, action, pending] = useActionState<FormState, FormData>(submitPitch.bind(null, briefId), {});
@@ -17,7 +16,7 @@ export function PitchForm({ briefId, offers }: { briefId: string; offers: { id: 
   return (
     <form action={action} className="flex flex-col gap-5" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
-      <TextArea
+      <TextAreaField
         id="message"
         label="Your pitch"
         hint="How you would approach it and similar work you have done."

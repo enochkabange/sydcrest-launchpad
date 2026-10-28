@@ -9,11 +9,13 @@ export const OPT_OUT_LINE = "Reply STOP to stop these messages.";
 
 export const TEMPLATES = {
   welcome:
-    "Hi {name}, this is SydCrest. You turned on WhatsApp updates, so we will message you about your learning and your cohort. " +
+    "Hi {name}, this is SydCrest. You turned on WhatsApp updates, so we will message you about your learning, your cohort, and bookings or briefs you take part in. " +
     OPT_OUT_LINE,
   reengage:
     "Hi {name}, it has been a week since you last worked on your SydCrest roadmap. Pick up where you left off at {url} " +
     OPT_OUT_LINE,
+  /** Booking and brief alerts (founder decision on #191): the in app title and a link. */
+  alert: "Hi {name}, news from SydCrest: {title}. See it at {url} " + OPT_OUT_LINE,
   event_reminder:
     "Hi {name}, a reminder that {event} starts {when}. Details and any joining link are at {url} " +
     OPT_OUT_LINE,

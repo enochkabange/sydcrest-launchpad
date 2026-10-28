@@ -5,11 +5,11 @@ import Link from "@/components/ui/link";
 import { buttonClasses } from "@/components/ui/button";
 import { MainWithRail } from "@/components/ui/layout";
 import { PersonRow, placeLabel, StatusBadge } from "@/components/chapters/chapter-bits";
+import { CommunityFeed } from "@/components/community";
 import { isJoinable, statusCopy } from "@/lib/chapters/model";
 import { getChapterLeads, getPublicChapter, getPublicChapters, type PublicChapter } from "@/lib/chapters/public";
 import { getChapterRoster, getChapterViewer, getUpcomingChapterEvents, type Viewer } from "@/lib/chapters/viewer";
 import { ChapterDetailsForm, MembershipButton, RemoveMemberButton } from "./controls";
-import { ChapterFeedSlot } from "./feed-slot";
 
 /** Placeholder so the build has one param when the database is unreachable (CI). */
 const PLACEHOLDER_SLUG = "chapter";
@@ -252,7 +252,12 @@ async function MembersOnly({ chapter }: { chapter: PublicChapter }) {
   const canManage = viewer.role === "lead" || viewer.isAdmin;
   return (
     <>
-      <ChapterFeedSlot chapterId={chapter.id} />
+      <section aria-labelledby="chapter-posts-heading" className="flex flex-col gap-3">
+        <h2 id="chapter-posts-heading" className="text-subtitle text-content">
+          Chapter posts
+        </h2>
+        <CommunityFeed scope="chapter" scopeId={chapter.id} />
+      </section>
       <MemberList chapter={chapter} roster={roster} viewer={viewer} canManage={canManage} />
       {canManage && (
         <section aria-labelledby="lead-tools-heading" className="flex flex-col gap-3">

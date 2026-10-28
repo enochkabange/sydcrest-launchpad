@@ -3,7 +3,7 @@
 import { useActionState } from "react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { TextAreaField } from "@/components/bookings/text-area-field";
+import { TextAreaField } from "@/components/ui/field";
 import { PREFERRED_TIMES_MAX, REQUEST_MESSAGE_MAX } from "@/lib/bookings/model";
 import { submitRequest, type RequestState } from "./actions";
 
@@ -27,7 +27,7 @@ export function RequestForm({ slug, offerId, expertFirstName }: { slug: string; 
       />
       <TextAreaField
         id="preferred_times"
-        label="When suits you?"
+        label="When suits you? (optional)"
         hint="Days and times that work for you, for example Saturday mornings or weekday evenings."
         rows={3}
         maxLength={PREFERRED_TIMES_MAX}

@@ -152,28 +152,6 @@ export function parseReviewForm(
   return { data: { scores, comment }, errors };
 }
 
-export type GradeInput = { score: number | null; feedback: string; returnIt: boolean };
-
-/** Reads the grade form: a score 0 to 100 unless the work is being returned. */
-export function parseGradeForm(form: { get(name: string): FormDataEntryValue | null }): {
-  data: GradeInput;
-  errors: Partial<Record<"score" | "feedback", string>>;
-} {
-  const returnIt = form.get("decision") === "return";
-  const raw = String(form.get("score") ?? "").trim();
-  const feedback = String(form.get("feedback") ?? "").trim();
-  const errors: Partial<Record<"score" | "feedback", string>> = {};
-  let score: number | null = null;
-  if (!returnIt) {
-    const n = Number(raw);
-    if (raw === "" || !Number.isInteger(n) || n < 0 || n > 100) errors.score = "Give a whole number from 0 to 100.";
-    else score = n;
-  }
-  if (returnIt && !feedback) errors.feedback = "Say what to change so the learner can fix it.";
-  if (feedback.length > 8000) errors.feedback = "Keep feedback under 8000 characters.";
-  return { data: { score, feedback, returnIt }, errors };
-}
-
 /** Friendly copy for the error codes the Phase 2 functions raise. */
 export function friendlyDbError(error: { code?: string; message?: string } | null | undefined, fallback: string): string {
   if (!error) return fallback;

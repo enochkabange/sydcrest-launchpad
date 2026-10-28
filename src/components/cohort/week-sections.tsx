@@ -2,15 +2,15 @@ import type { ReactNode } from "react";
 import { CheckCircle2, Circle, ExternalLink } from "lucide-react";
 import Link from "@/components/ui/link";
 import { displayTheme } from "@/components/marketing/curriculum-weeks";
-import type { CohortWeek, MySubmission } from "@/lib/cohort/data";
+import type { CohortWeek } from "@/lib/cohort/data";
 import { dueDate, formatDay, lateAfter, type WeekState } from "@/lib/cohort/schedule";
 import { StateBadge } from "./week-plan";
 
 /**
  * The sections of one programme week, exported separately so other screens
  * compose them: /cohort shows this week with them, /cohort/week/[n] shows the
- * whole week, and the submission work (#145) fills `WeekAssignment`'s slot,
- * which carries the `#submit` anchor.
+ * whole week, and the submission form (#145, WeekSubmission) goes in
+ * `WeekAssignment`'s children, under the `#submit` anchor.
  */
 
 export function WeekHeader({
@@ -142,8 +142,8 @@ export function DueLine({ startsOn, weekNumber, graceDays }: { startsOn: string;
 }
 
 /**
- * The assignment, its due date and the slot for sending work. `children`
- * replaces the default slot; this section is the `#submit` anchor.
+ * The assignment, its due date and, as `children`, the form for sending
+ * work. This section is the `#submit` anchor.
  */
 export function WeekAssignment({
   week,
@@ -171,42 +171,5 @@ export function WeekAssignment({
       <DueLine startsOn={startsOn} weekNumber={weekNumber} graceDays={graceDays} />
       {children}
     </section>
-  );
-}
-
-const SUBMISSION_LABEL: Record<string, string> = {
-  draft: "You have a draft saved.",
-  submitted: "Sent. Feedback is on its way.",
-  ai_reviewed: "Sent. First feedback is in; your mentor grades it next.",
-  returned: "Your mentor returned this for another try.",
-  graded: "Graded by your mentor.",
-};
-
-/**
- * Default content of the assignment's slot: where the learner's work stands.
- * The form for sending work (#145) replaces or joins this.
- */
-export function SubmissionSlot({ submission, passScore }: { submission: MySubmission | undefined; passScore: number }) {
-  return (
-    <div className="flex flex-col gap-2 border-t border-line pt-3" data-slot="submission">
-      {submission ? (
-        <>
-          <p className="text-sm text-content">{SUBMISSION_LABEL[submission.status] ?? "Sent."}</p>
-          {submission.status === "graded" && submission.final_score !== null && (
-            <p className="text-sm text-content-2">
-              Score {submission.final_score} out of 100
-              {submission.final_score >= passScore ? ", a pass." : `. A pass is ${passScore}.`}
-            </p>
-          )}
-          {submission.mentor_feedback && (submission.status === "graded" || submission.status === "returned") && (
-            <blockquote className="max-w-reading border-l-2 border-line-strong pl-3 text-sm text-content-2">
-              {submission.mentor_feedback}
-            </blockquote>
-          )}
-        </>
-      ) : (
-        <p className="text-sm text-content-2">Nothing sent for this week yet. Sending work from this page opens soon.</p>
-      )}
-    </div>
   );
 }
