@@ -1449,7 +1449,7 @@ WhatsApp Business is a separate free app made for small businesses, available fo
 * **Status.** Photos, videos or text your contacts can see for 24 hours. Many local buyers check Status daily, so it works like a shop window.
 * **Short link and QR code.** A link or code that opens a chat with the business, useful on flyers, stickers and social pages.
 
-Menus and names change from time to time, so if a tool has moved, look in the app's settings or the WhatsApp Help Center.
+Menus and names change from time to time, so if a tool has moved, look in the app's settings or WhatsApp's help pages.
 
 ## Setting up step by step
 
@@ -1483,7 +1483,7 @@ For bigger businesses that need many staff on one number or automated messages, 
 6. **Labels:** new order, paid, packed, sent.
 7. **Short link:** added to their Instagram bio and printed on a small card in every basket.
 
-You also agree a rule with the group: payments are confirmed only from the network's message, and customers are added to the monthly broadcast list only after saying yes. Now any member can hold the phone and nothing gets lost.`,
+You also agree a rule with the group: payments are confirmed only from the network's message, and customers are added to the monthly broadcast list only after replying yes in writing, and Mariama keeps those replies as the record. Now any member can hold the phone and nothing gets lost.`,
       keyTerms: [
         { term: "WhatsApp Business", definition: "A free WhatsApp app for small businesses with profile, catalogue and messaging tools." },
         { term: "Catalogue", definition: "Products or services with photos and prices that customers browse inside WhatsApp." },
@@ -1579,7 +1579,7 @@ You also agree a rule with the group: payments are confirmed only from the netwo
 
 You need a personal Facebook account to create and manage a Page, but the Page is shown separately and your personal details stay private. Steps, which work on the app or in a browser:
 
-1. **Open the menu** and find Pages, then choose to create a new Page. The exact wording moves from time to time, so search Facebook's Help Centre for "create a Page" if you cannot find it.
+1. **Open the menu** and find Pages, then choose to create a new Page. The exact wording moves from time to time, so search Facebook's help pages for "create a Page" if you cannot find it.
 2. **Enter the name** customers know, such as "Hawa's Pure Shea, Tamale", and choose a category.
 3. **Write a short bio:** what the business offers and where.
 4. **Add contact details:** phone or WhatsApp number, address, opening hours and any website.
