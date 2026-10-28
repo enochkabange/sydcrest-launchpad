@@ -104,6 +104,8 @@ export const itSupport: RoadmapDraft = {
     "Keep computers, phones, printers and networks working for schools, banks, NGOs, shops and offices. Learn hardware, Windows, Linux and Android, networks, accounts, security and backups, plus the calm troubleshooting and customer care that help desk jobs ask for, and the route on to cybersecurity and cloud.",
   track: "it-support",
   field_category: "infrastructure",
+  level: "beginner",
+  leads_to: ["cloud-devops", "cybersecurity"],
   locale: "en-GH",
   status: "draft",
   nodes: [

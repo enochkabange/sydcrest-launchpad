@@ -64,6 +64,8 @@ export const freelancing: RoadmapDraft = {
     "Turn a skill from any SydCrest track into paid client work, in Tamale or for clients abroad. Learn to choose a service, build a portfolio, find clients locally and online, write proposals, price in cedis, agree simple contracts, get paid safely from Ghana, avoid scams and build a reputation that brings repeat work.",
   track: "freelancing",
   field_category: "business",
+  level: "beginner",
+  leads_to: ["digital-business"],
   locale: "en-GH",
   status: "draft",
   nodes: [

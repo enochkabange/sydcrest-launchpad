@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowRight, BookOpen, ExternalLink, Video, Wrench } from "lu
 import { Suspense, type ReactNode } from "react";
 import Link from "@/components/ui/link";
 import type { NodeDetail } from "@/lib/roadmaps/public";
+import { formatMinutes } from "@/lib/roadmaps/estimates";
 import { nodePath, roadmapPath } from "@/lib/roadmaps/seo";
 import type { ViewNode, ViewSection } from "@/lib/roadmaps/view-model";
 import { NodeStatus } from "./progress";
@@ -47,7 +48,10 @@ export function TopicSummary({
   const Heading = headingLevel === 1 ? "h1" : "h2";
   return (
     <div>
-      <p className="text-sm text-content-3">{topicEyebrow(node, section, sectionCount)}</p>
+      <p className="text-sm text-content-3">
+        {topicEyebrow(node, section, sectionCount)}
+        {node.minutes !== null && <> · {formatMinutes(node.minutes)}</>}
+      </p>
       <Heading id={headingId} className={headingLevel === 1 ? "mt-1 text-title text-content" : "mt-2 text-h2 text-content lg:text-subtitle"}>
         {node.title}
       </Heading>

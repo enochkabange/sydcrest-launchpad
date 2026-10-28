@@ -18,4 +18,9 @@ export type RoadmapViewDefinition = {
   /** The switcher's button label. */
   label: string;
   Component: ComponentType<RoadmapViewProps>;
+  /**
+   * Shown before the learner picks a view: "wide" from md, "narrow" below.
+   * Exactly one view has each.
+   */
+  auto?: "wide" | "narrow";
 };

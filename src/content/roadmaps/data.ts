@@ -29,6 +29,8 @@ export const data: RoadmapDraft = {
     "Turn messy records into clear answers for NGOs, businesses, banks and public bodies. Start with spreadsheets and field surveys on any device, then build up to monitoring and evaluation, SQL, dashboards and Python.",
   track: "data",
   field_category: "data",
+  level: "beginner",
+  leads_to: ["data-science", "ai-ml"],
   locale: "en-GH",
   status: "draft",
   nodes: [

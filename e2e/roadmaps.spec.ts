@@ -113,13 +113,14 @@ test("a published roadmap shows its outline, metadata and share card", async ({ 
   await expect(meta(page, "og:title")).toHaveAttribute("content", `${seed.title} roadmap · SydCrest Launchpad`);
   await expect(meta(page, "og:image")).toHaveAttribute("content", new RegExp(`/og/roadmaps/${seed.slug}$`));
 
-  // The map is the default view; List shows the outline.
-  await expect(page.getByRole("list", { name: "Roadmap map" })).toBeVisible();
+  // The map is the default view from md, the journey below; List shows the outline.
+  const phone = test.info().project.name === "phone";
+  await expect(page.getByRole(phone ? "list" : "tree", { name: phone ? "Roadmap journey" : "Roadmap map" })).toBeVisible();
   await page.getByRole("button", { name: "List" }).click();
-  const outline = page.getByRole("list", { name: "Roadmap outline" });
-  await expect(outline.getByRole("link", { name: /Foundations/ })).toHaveAttribute("href", `${path}/foundations`);
-  await expect(outline.getByRole("link", { name: /1\.1\s*Spreadsheets first/ })).toBeVisible();
-  await expect(outline.getByRole("link", { name: /Sharing your records\s*Optional/ })).toBeVisible();
+  const outline = page.getByRole("tree", { name: "Roadmap outline" });
+  await expect(outline.getByRole("treeitem", { name: /Foundations/ })).toHaveAttribute("href", `${path}/foundations`);
+  await expect(outline.getByRole("treeitem", { name: /1\.1\s*Spreadsheets first/ })).toBeVisible();
+  await expect(outline.getByRole("treeitem", { name: /Sharing your records\s*Optional/ })).toBeVisible();
 
   // Visitors get a sign in prompt and no progress marks.
   await expect(page.getByText("to save your progress as you learn.")).toBeVisible();
@@ -254,7 +255,8 @@ test("a signed in learner sees their progress marks", async ({ page }, testInfo)
     await expect(page.getByTestId("roadmap-progress")).toHaveText("1 of 3 required topics done.");
     await expect(page.getByRole("progressbar", { name: "Roadmap progress" })).toHaveAttribute("aria-valuenow", "33");
     // The map colours topics by status: one done, one in progress, and its section count.
-    const map = page.getByRole("list", { name: "Roadmap map" });
+    if (test.info().project.name === "phone") await page.getByRole("button", { name: "Map" }).click();
+    const map = page.getByRole("tree", { name: "Roadmap map" });
     await expect(map.locator('[data-progress="done"]')).toHaveCount(1);
     await expect(map.locator('[data-progress="in_progress"]')).toHaveCount(1);
     await expect(map.getByText("1 of 3 required done")).toBeVisible();

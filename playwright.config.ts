@@ -13,6 +13,9 @@ if (!["127.0.0.1", "localhost", "[::1]"].includes(supabaseHost)) {
   );
 }
 
+// `next start` reads PORT too, so a local run can use another port (PORT=3101 pnpm e2e).
+const baseURL = `http://localhost:${process.env.PORT ?? 3000}`;
+
 /**
  * End to end tests against a production build of the app and the LOCAL
  * Supabase stack (`supabase start`). Never point these at staging or
@@ -25,7 +28,7 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   reporter: process.env.CI ? [["github"], ["html", { open: "never" }]] : "list",
   use: {
-    baseURL: "http://localhost:3000",
+    baseURL,
     trace: "retain-on-failure",
   },
   projects: [
@@ -35,7 +38,7 @@ export default defineConfig({
   ],
   webServer: {
     command: "pnpm start",
-    url: "http://localhost:3000",
+    url: baseURL,
     reuseExistingServer: !process.env.CI,
     timeout: 60_000,
   },

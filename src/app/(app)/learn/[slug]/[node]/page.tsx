@@ -11,7 +11,7 @@ import { LessonMetaStrip, LessonOutcomes } from "@/components/learn/lesson-meta"
 import { asKeyTerms, asStrings, CommonMistakes, KeyTerms, SelfCheck } from "@/components/learn/lesson-anatomy";
 import { LESSON_SECTIONS, lessonToc } from "@/components/learn/lesson-toc";
 import { MainWithRail } from "@/components/ui/layout";
-import { estimateLessonMinutes } from "@/lib/roadmaps/estimate";
+import { estimateLessonMinutes } from "@/lib/roadmaps/estimates";
 import { asComplexity, asDifficulty } from "@/lib/roadmaps/levels";
 import { byPosition, nextByPosition } from "@/components/learn/next-node";
 import { parseQuestions } from "@/components/learn/quiz-data";

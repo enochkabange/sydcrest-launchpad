@@ -2,6 +2,7 @@ import "server-only";
 import { createClient } from "@supabase/supabase-js";
 import { cacheLife, cacheTag } from "next/cache";
 import type { Database } from "@/lib/supabase/database.types";
+import { estimateMinutes } from "./estimates";
 import { asCareerLevel, asComplexity, asDifficulty, asJobs } from "./levels";
 import { buildNodeTree, type FlatNode } from "./tree";
 
@@ -61,6 +62,29 @@ function asNodeKind(kind: string | null): FlatNode["kind"] {
   return NODE_KINDS.find((k) => k === kind) ?? null;
 }
 
+const LEVELS = ["first-steps", "beginner", "next-step"] as const;
+export type RoadmapLevel = (typeof LEVELS)[number];
+function asLevel(level: string | null): RoadmapLevel | null {
+  return LEVELS.find((l) => l === level) ?? null;
+}
+
+type EstimateRow = Omit<Database["public"]["Views"]["node_estimate_inputs"]["Row"], "roadmap_id">;
+
+/** Estimated minutes per node id (estimates.ts), null where a node has no lesson. */
+function minutesByNode(rows: readonly EstimateRow[]): Record<string, number | null> {
+  const out: Record<string, number | null> = {};
+  for (const r of rows) {
+    if (!r.node_id) continue;
+    out[r.node_id] = estimateMinutes({
+      hasLesson: !!r.has_lesson,
+      lessonWords: r.lesson_words ?? 0,
+      practiceWords: r.practice_words ?? 0,
+      quizQuestions: r.quiz_questions ?? 0,
+    });
+  }
+  return out;
+}
+
 export type RoadmapSummary = {
   id: string;
   slug: string;
@@ -68,8 +92,14 @@ export type RoadmapSummary = {
   description: string | null;
   track: string | null;
   field_category: string | null;
+  level: RoadmapLevel | null;
+  leads_to: string[];
   updated_at: string;
   node_count: number;
+  /** Ids of required (non optional) nodes, for progress on the index cards. */
+  required_ids: string[];
+  /** Estimated minutes of the required nodes with lessons; 0 when none has one yet. */
+  required_minutes: number;
 };
 
 export async function getPublishedRoadmaps(): Promise<RoadmapSummary[]> {
@@ -78,14 +108,29 @@ export async function getPublishedRoadmaps(): Promise<RoadmapSummary[]> {
   cacheTag(ROADMAPS_TAG, ALL_ROADMAPS_TAG);
 
   return guarded("roadmaps", [], async () => {
-    const { data, error } = await anonClient()
-      .from("roadmaps")
-      .select("id, slug, title, description, track, field_category, updated_at, roadmap_nodes(count)")
-      .eq("is_published", true)
-      .order("display_order")
-      .order("title");
+    const client = anonClient();
+    const [{ data, error }, estimates] = await Promise.all([
+      client
+        .from("roadmaps")
+        .select("id, slug, title, description, track, field_category, level, leads_to, updated_at, roadmap_nodes(id, is_optional)")
+        .eq("is_published", true)
+        .order("display_order")
+        .order("title"),
+      client.from("node_estimate_inputs").select("node_id, has_lesson, lesson_words, practice_words, quiz_questions"),
+    ]);
     check(error);
-    return (data ?? []).map(({ roadmap_nodes, ...r }) => ({ ...r, node_count: roadmap_nodes[0]?.count ?? 0 }));
+    check(estimates.error);
+    const minutes = minutesByNode(estimates.data ?? []);
+    return (data ?? []).map(({ roadmap_nodes, level, ...r }) => {
+      const required_ids = roadmap_nodes.filter((n) => !n.is_optional).map((n) => n.id);
+      return {
+        ...r,
+        level: asLevel(level),
+        node_count: roadmap_nodes.length,
+        required_ids,
+        required_minutes: required_ids.reduce((sum, id) => sum + (minutes[id] ?? 0), 0),
+      };
+    });
   });
 }
 
@@ -95,8 +140,11 @@ export type PublishedRoadmap = {
   title: string;
   description: string | null;
   track: string | null;
+  leads_to: string[];
   updated_at: string;
   nodes: FlatNode[];
+  /** Estimated minutes per node id; null (or missing) where a node has no lesson. */
+  minutes: Record<string, number | null>;
 };
 
 export async function getPublishedRoadmap(slug: string): Promise<PublishedRoadmap | null> {
@@ -108,13 +156,18 @@ export async function getPublishedRoadmap(slug: string): Promise<PublishedRoadma
     const { data, error } = await anonClient()
       .from("roadmaps")
       .select(
-        "id, slug, title, description, track, updated_at, roadmap_nodes(id, parent_id, slug, title, summary, position, is_optional, kind, choice_group, difficulty, complexity, career_level, jobs)",
+        "id, slug, title, description, track, leads_to, updated_at, roadmap_nodes(id, parent_id, slug, title, summary, position, is_optional, kind, choice_group, difficulty, complexity, career_level, jobs)",
       )
       .eq("slug", slug)
       .eq("is_published", true)
       .maybeSingle();
     check(error);
     if (!data) return null;
+    const estimates = await anonClient()
+      .from("node_estimate_inputs")
+      .select("node_id, has_lesson, lesson_words, practice_words, quiz_questions")
+      .eq("roadmap_id", data.id);
+    check(estimates.error);
     const { roadmap_nodes, ...roadmap } = data;
     return {
       ...roadmap,
@@ -126,6 +179,7 @@ export async function getPublishedRoadmap(slug: string): Promise<PublishedRoadma
         career_level: asCareerLevel(n.career_level),
         jobs: asJobs(n.jobs),
       })),
+      minutes: minutesByNode(estimates.data ?? []),
     };
   });
 }

@@ -6,10 +6,12 @@
  * at prerender time (without progress) and again in a request time island
  * (with the learner's progress). See docs/roadmap-views.md for the contract.
  */
+import { sumEstimates, type Estimate } from "./estimates";
 import type { CareerLevel, Complexity, Difficulty } from "./levels";
-import { flattenTree, type ProgressStatus, type TreeNode } from "./tree";
+import { buildNodeTree, flattenTree, type FlatNode, type ProgressStatus, type TreeNode } from "./tree";
 
 export type NodeKind = "section" | "topic" | "checkpoint";
+export type { CareerLevel, Complexity, Difficulty };
 
 export type ViewNode = {
   id: string;
@@ -37,7 +39,9 @@ export type ViewNode = {
   place: { n: number; of: number } | null;
   /** Nodes nested under a topic (deeper than the shallow section and topic tree). Empty on sections. */
   children: ViewNode[];
-  /** Lesson structure (issue #255), present once a roadmap is rated. */
+  /** Estimated minutes (estimates.ts), or null when the node has no lesson yet. */
+  minutes: number | null;
+  /** Lesson structure (issue #255), present once a roadmap is rated; views render it only when set. */
   difficulty?: Difficulty;
   complexity?: Complexity;
   /** Sections only. */
@@ -79,6 +83,10 @@ export type ViewSection = {
   choiceGroups: ChoiceGroup[];
   /** The section node, its topics (and nested nodes) and its checkpoints. */
   counts: Counts;
+  /** Every node in the section. */
+  estimate: Estimate;
+  /** Required nodes only: what finishing the section takes. */
+  requiredEstimate: Estimate;
 };
 
 export type RoadmapView = {
@@ -94,6 +102,17 @@ export type RoadmapView = {
   choiceGroups: ChoiceGroup[];
   /** True when built with a learner's progress (signed in). */
   hasProgress: boolean;
+  /** Every node, and required nodes only. */
+  estimate: Estimate;
+  requiredEstimate: Estimate;
+  /**
+   * The learner's next step: the first node in reading order that is in
+   * progress, else the first required node not started. Null without
+   * progress (a visitor) or when every required node is done.
+   */
+  upNextId: string | null;
+  /** Estimated minutes of required nodes not done yet (the whole roadmap without progress). */
+  minutesLeft: number;
 };
 
 /**
@@ -110,7 +129,11 @@ export type RoadmapView = {
  * - A node whose parent is missing was already promoted to the top level by
  *   `buildNodeTree`, so it becomes a section and is never dropped.
  */
-export function buildRoadmapView(tree: readonly TreeNode[], progress?: ReadonlyMap<string, ProgressStatus> | null): RoadmapView {
+export function buildRoadmapView(
+  tree: readonly TreeNode[],
+  progress?: ReadonlyMap<string, ProgressStatus> | null,
+  minutes?: ReadonlyMap<string, number | null> | null,
+): RoadmapView {
   const flat = flattenTree(tree);
   const indexById = new Map(flat.map((n, i) => [n.id, i]));
 
@@ -134,6 +157,7 @@ export function buildRoadmapView(tree: readonly TreeNode[], progress?: ReadonlyM
       nextId: index < flat.length - 1 ? flat[index + 1].id : null,
       place: null,
       children: nest ? node.children.map((child) => toView(child, child.kind === "checkpoint" ? "checkpoint" : "topic", sectionId)) : [],
+      minutes: minutes?.get(node.id) ?? null,
       ...(node.difficulty ? { difficulty: node.difficulty } : {}),
       ...(node.complexity ? { complexity: node.complexity } : {}),
       ...(node.career_level ? { careerLevel: node.career_level } : {}),
@@ -159,7 +183,16 @@ export function buildRoadmapView(tree: readonly TreeNode[], progress?: ReadonlyM
       else topics.push(toView(child, "topic", root.id));
     }
     topics.forEach((topic, i) => (topic.place = { n: i + 1, of: topics.length }));
-    sections.push({ node, number: sections.length + 1, topics, checkpoints, choiceGroups: [], counts: EMPTY });
+    sections.push({
+      node,
+      number: sections.length + 1,
+      topics,
+      checkpoints,
+      choiceGroups: [],
+      counts: EMPTY,
+      estimate: NO_ESTIMATE,
+      requiredEstimate: NO_ESTIMATE,
+    });
   }
 
   // Choice groups: siblings (same parent) sharing a key, in reading order.
@@ -185,11 +218,23 @@ export function buildRoadmapView(tree: readonly TreeNode[], progress?: ReadonlyM
     counts: EMPTY,
     choiceGroups,
     hasProgress: false,
+    estimate: NO_ESTIMATE,
+    requiredEstimate: NO_ESTIMATE,
+    upNextId: null,
+    minutesLeft: 0,
   };
   return withProgress(view, progress ?? null);
 }
 
 const EMPTY: Counts = { done: 0, total: 0, started: false, complete: false, percent: 0 };
+const NO_ESTIMATE: Estimate = { minutes: 0, missing: 0 };
+
+function estimates(nodes: readonly ViewNode[]) {
+  return {
+    estimate: sumEstimates(nodes.map((n) => n.minutes)),
+    requiredEstimate: sumEstimates(nodes.filter((n) => !n.optional).map((n) => n.minutes)),
+  };
+}
 
 /** Same rule as `progressSummary`: required nodes done out of required nodes. */
 export function countNodes(nodes: readonly Pick<ViewNode, "optional" | "status">[]): Counts {
@@ -231,14 +276,22 @@ export function withProgress(view: RoadmapView, progress: ReadonlyMap<string, Pr
     const topics = section.topics.map(apply);
     const checkpoints = section.checkpoints.map(apply);
     const members = [node, ...topics.flatMap(subtree), ...checkpoints.flatMap(subtree)];
-    return { ...section, node, topics, checkpoints, counts: countNodes(members) };
+    return { ...section, node, topics, checkpoints, counts: countNodes(members), ...estimates(members) };
   });
+  const all = view.order.map((id) => byId[id]).filter(Boolean);
+  const upNext = progress
+    ? (all.find((n) => n.status === "in_progress") ?? all.find((n) => !n.optional && n.status !== "done") ?? null)
+    : null;
+  const minutesLeft = all.filter((n) => !n.optional && n.status !== "done").reduce((sum, n) => sum + (n.minutes ?? 0), 0);
   return {
     ...view,
     sections,
     byId,
     counts: countNodes(Object.values(byId)),
     hasProgress: progress !== null,
+    ...estimates(all),
+    upNextId: upNext?.id ?? null,
+    minutesLeft,
   };
 }
 
@@ -259,4 +312,26 @@ export function locateInView(view: RoadmapView, slug: string) {
     previous: node.previousId ? view.byId[node.previousId] : null,
     next: node.nextId ? view.byId[node.nextId] : null,
   };
+}
+
+/** The prerendered view of a published roadmap: its structure and time estimates, no learner state. */
+export function roadmapViewOf(roadmap: { nodes: readonly FlatNode[]; minutes?: Readonly<Record<string, number | null>> }): RoadmapView {
+  return buildRoadmapView(buildNodeTree(roadmap.nodes), null, new Map(Object.entries(roadmap.minutes ?? {})));
+}
+
+/** Compact search entries for every node, in reading order (src/lib/roadmaps/search.ts). */
+export function searchItemsOf(view: RoadmapView) {
+  return view.order.map((id) => {
+    const node = view.byId[id];
+    const section = sectionOf(view, id);
+    return {
+      id,
+      slug: node.slug,
+      title: node.title,
+      summary: node.summary,
+      number: node.number,
+      sectionTitle: section?.node.title ?? "",
+      optional: node.optional,
+    };
+  });
 }

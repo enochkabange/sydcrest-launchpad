@@ -1644,6 +1644,13 @@ export type Database = {
             foreignKeyName: "node_content_node_id_fkey"
             columns: ["node_id"]
             isOneToOne: true
+            referencedRelation: "node_estimate_inputs"
+            referencedColumns: ["node_id"]
+          },
+          {
+            foreignKeyName: "node_content_node_id_fkey"
+            columns: ["node_id"]
+            isOneToOne: true
             referencedRelation: "roadmap_nodes"
             referencedColumns: ["id"]
           },
@@ -1675,6 +1682,13 @@ export type Database = {
           updated_at?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "node_quiz_node_id_fkey"
+            columns: ["node_id"]
+            isOneToOne: true
+            referencedRelation: "node_estimate_inputs"
+            referencedColumns: ["node_id"]
+          },
           {
             foreignKeyName: "node_quiz_node_id_fkey"
             columns: ["node_id"]
@@ -1748,6 +1762,13 @@ export type Database = {
           url?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "node_resources_node_id_fkey"
+            columns: ["node_id"]
+            isOneToOne: false
+            referencedRelation: "node_estimate_inputs"
+            referencedColumns: ["node_id"]
+          },
           {
             foreignKeyName: "node_resources_node_id_fkey"
             columns: ["node_id"]
@@ -2672,6 +2693,13 @@ export type Database = {
             foreignKeyName: "review_answers_node_id_fkey"
             columns: ["node_id"]
             isOneToOne: false
+            referencedRelation: "node_estimate_inputs"
+            referencedColumns: ["node_id"]
+          },
+          {
+            foreignKeyName: "review_answers_node_id_fkey"
+            columns: ["node_id"]
+            isOneToOne: false
             referencedRelation: "roadmap_nodes"
             referencedColumns: ["id"]
           },
@@ -2790,6 +2818,13 @@ export type Database = {
             foreignKeyName: "roadmap_nodes_roadmap_id_parent_id_fkey"
             columns: ["roadmap_id", "parent_id"]
             isOneToOne: false
+            referencedRelation: "node_estimate_inputs"
+            referencedColumns: ["roadmap_id", "node_id"]
+          },
+          {
+            foreignKeyName: "roadmap_nodes_roadmap_id_parent_id_fkey"
+            columns: ["roadmap_id", "parent_id"]
+            isOneToOne: false
             referencedRelation: "roadmap_nodes"
             referencedColumns: ["roadmap_id", "id"]
           },
@@ -2834,6 +2869,13 @@ export type Database = {
             foreignKeyName: "roadmap_progress_node_id_fkey"
             columns: ["node_id"]
             isOneToOne: false
+            referencedRelation: "node_estimate_inputs"
+            referencedColumns: ["node_id"]
+          },
+          {
+            foreignKeyName: "roadmap_progress_node_id_fkey"
+            columns: ["node_id"]
+            isOneToOne: false
             referencedRelation: "roadmap_nodes"
             referencedColumns: ["id"]
           },
@@ -2854,6 +2896,8 @@ export type Database = {
           field_category: string | null
           id: string
           is_published: boolean
+          leads_to: string[]
+          level: string | null
           locale: string
           og_image_url: string | null
           slug: string
@@ -2868,6 +2912,8 @@ export type Database = {
           field_category?: string | null
           id?: string
           is_published?: boolean
+          leads_to?: string[]
+          level?: string | null
           locale?: string
           og_image_url?: string | null
           slug: string
@@ -2882,6 +2928,8 @@ export type Database = {
           field_category?: string | null
           id?: string
           is_published?: boolean
+          leads_to?: string[]
+          level?: string | null
           locale?: string
           og_image_url?: string | null
           slug?: string
@@ -3659,6 +3707,25 @@ export type Database = {
           status: string | null
         }
         Relationships: []
+      }
+      node_estimate_inputs: {
+        Row: {
+          has_lesson: boolean | null
+          lesson_words: number | null
+          node_id: string | null
+          practice_words: number | null
+          quiz_questions: number | null
+          roadmap_id: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "roadmap_nodes_roadmap_id_fkey"
+            columns: ["roadmap_id"]
+            isOneToOne: false
+            referencedRelation: "roadmaps"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       organisation_roster: {
         Row: {

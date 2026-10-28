@@ -30,6 +30,8 @@ export const digitalBusiness: RoadmapDraft = {
     "Run a small business online in Ghana: choose what to sell, price it in cedis, sell on WhatsApp and social media, take mobile money safely, deliver, keep records and register properly. Built for traders, makers and farmers, whether they learn on a phone or a computer.",
   track: "digital-business",
   field_category: "business",
+  level: "beginner",
+  leads_to: ["freelancing", "digital-marketing"],
   locale: "en-GH",
   status: "draft",
   nodes: [
