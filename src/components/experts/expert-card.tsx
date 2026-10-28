@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "@/components/ui/link";
 import type { DirectoryExpert } from "@/lib/experts/directory";
 import { expertPath, offerKindLabel } from "@/lib/experts/offers";
+import { VerifiedSkillBadges } from "@/components/skills/verified-skill-badges";
 import { ExpertAvatar, FeaturedBadge, SkillChips, TrustFacts, VerifiedBadge } from "./expert-bits";
 
 /** A card in the directory. The whole card is one link to the expert's page. */
@@ -34,7 +35,8 @@ export function ExpertCard({ expert, featured = false }: { expert: DirectoryExpe
         </div>
       )}
 
-      <SkillChips skills={expert.skills} max={4} />
+      <VerifiedSkillBadges skills={expert.verifiedSkillBadges} variant="compact" label={`Verified skills of ${expert.name}`} />
+      <SkillChips skills={expert.skills.filter((s) => !expert.verifiedSkills.includes(s))} max={4} />
       <TrustFacts expert={expert} />
 
       <div className="mt-auto flex items-center justify-between gap-3 border-t border-line pt-3 text-sm text-content-2">

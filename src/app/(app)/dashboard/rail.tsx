@@ -2,10 +2,12 @@ import type { ReactNode } from "react";
 import Link from "@/components/ui/link";
 import { Initials } from "@/components/social/profile-bits";
 import { buttonClasses } from "@/components/ui/button";
-import { CHAPTERS, COMMUNITY_SIZE } from "@/content/marketing";
+import { COMMUNITY_SIZE } from "@/content/marketing";
+import { plannedFor, statusCopy, suggestChapter } from "@/lib/chapters/model";
+import { getPublicChapters } from "@/lib/chapters/public";
+import { getMyChapters } from "@/lib/chapters/viewer";
 import { getMyProfile, requireUser } from "@/lib/auth";
 import { latestSavedAnswers, resultFor } from "@/lib/path/server";
-import { regionLabel } from "@/lib/regions";
 import { createPublicClient } from "@/lib/supabase/public";
 
 /**
@@ -138,26 +140,48 @@ export async function LeaderboardSnapshot() {
   );
 }
 
-/** The learner's regional chapter (if it is one of the five) and the WhatsApp community, as on record. */
+/**
+ * The learner's chapter: the one they are in, else the one for their profile
+ * region (a real chapter page when it exists), else the planned capital.
+ * Plus the WhatsApp community, as on record.
+ */
 export async function CommunityCard() {
-  const profile = await getMyProfile();
-  const region = regionLabel(profile.region);
-  const index = CHAPTERS.findIndex((c) => c.region === region);
-  const chapter = index >= 0 ? CHAPTERS[index] : null;
+  const [user, profile, chapters] = await Promise.all([requireUser(), getMyProfile(), getPublicChapters()]);
+  const mine = await getMyChapters(user.id);
+  const joined = mine[0];
+  const suggested = joined ? null : suggestChapter(chapters, profile.region);
+  const planned = plannedFor(profile.region);
+
+  let text: string;
+  let link: { href: string; label: string };
+  if (joined) {
+    text = `You are ${joined.role === "lead" ? "a lead" : "a member"} of ${joined.name}.`;
+    link = { href: `/chapters/${joined.slug}`, label: `Open ${joined.name}` };
+  } else if (suggested) {
+    text = `Your local chapter is ${suggested.name}. ${statusCopy(suggested.status).summary}`;
+    link = { href: `/chapters/${suggested.slug}`, label: `See the ${suggested.city} chapter` };
+  } else {
+    text = planned
+      ? `Your local chapter will be ${planned.city}. It is being set up${planned.city === "Tamale" ? " now" : ", after Tamale"}.`
+      : "Chapters start in the five northern regional capitals, beginning with Tamale.";
+    link = { href: "/chapters", label: "See all chapters" };
+  }
+
   return (
     <RailCard
       title="Community"
       action={
-        <Link href="/profile" className={railLink}>
-          WhatsApp updates on your profile
-        </Link>
+        <div className="flex flex-col">
+          <Link href={link.href} className={railLink}>
+            {link.label}
+          </Link>
+          <Link href="/profile" className={railLink}>
+            WhatsApp updates on your profile
+          </Link>
+        </div>
       }
     >
-      <p className="text-sm text-content-2">
-        {chapter
-          ? `Your local chapter is ${chapter.city}. ${index === 0 ? "It is being set up now." : "It is planned, after Tamale."}`
-          : "Chapters start in the five northern regional capitals, beginning with Tamale."}
-      </p>
+      <p className="text-sm text-content-2">{text}</p>
       <p className="text-sm text-content-2">Our WhatsApp community has {COMMUNITY_SIZE} members learning together.</p>
     </RailCard>
   );

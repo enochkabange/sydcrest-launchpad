@@ -123,7 +123,7 @@ test("someone who is not an expert sees an honest empty dashboard, and the admin
   await signIn(page, learner);
   await page.goto("/expert");
   await expect(page.getByRole("heading", { name: "You are not an expert yet" })).toBeVisible();
-  await page.getByRole("link", { name: "Become an expert" }).click();
+  await page.locator("main").getByRole("link", { name: "Become an expert" }).click();
   await expect(page).toHaveURL(/\/experts\/apply$/);
   await page.goto("/admin/experts");
   await expect(page.getByText("This page could not be found.")).toBeVisible();
