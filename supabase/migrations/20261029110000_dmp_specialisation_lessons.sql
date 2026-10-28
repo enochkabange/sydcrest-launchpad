@@ -280,7 +280,7 @@ begin
       continue;
     end if;
 
-    delete from public.program_week_nodes n
+    delete from public.program_week_nodes n -- allow-destructive: replaces this week's links only; links hold no learner data
      where n.program_week_id = v_week_id
        and not exists (
          select 1 from jsonb_array_elements(v_week -> 'roadmap_nodes') l
