@@ -44,8 +44,8 @@ The digital marketer track already has one `freelancing` node and the content cr
 | D1 | Ghana Revenue Authority: Tax registration | https://gra.gov.gh/domestic-tax/tax-registration/ | 2026-10-27 | Official: individuals with taxable income, including self employed people, professionals and consultants, register; Ghana Card or ECOWAS Card PIN is the TIN; register online at the Taxpayers Portal or at a service centre |
 | D2 | Ghana Revenue Authority: Personal income tax | https://gra.gov.gh/domestic-tax/personal-income-tax/ | 2026-10-27 | Official: sole proprietors are covered; annual return; filing through the Taxpayers Portal. Thresholds and rates not used in content |
 | D3 | Office of the Registrar of Companies, Ghana | https://orc.gov.gh/ | 2026-10-27 | Official regulator site (existence checked) |
-| D4 | Bank of Ghana: Updated guidelines for inward remittance services by payment service providers (August 2025) | https://www.bog.gov.gh/wp-content/uploads/2025/08/UPDATED-GUIDELINES-FOR-INWARD-REMITTANCE-SERVICES-BY-PAYMENT-SERVICE-PROVIDERS.pdf | 2026-10-27 | Official PDF, seen via search excerpt only; payouts to bank accounts, mobile money wallets and approved wallets through licensed partners |
-| D5 | Bank of Ghana: Approved fintech institutions | https://www.bog.gov.gh/fintech-innovation/approved-institutions/ | 2026-10-27 | Official directory of licensed payment service providers and electronic money issuers; full page read |
+| D4 | Bank of Ghana: Updated guidelines for inward remittance services by payment service providers (Notice BG/GOV/SEC/2025/25, August 2025) | https://www.bog.gov.gh/news/updated-guidelines-for-inward-remittance-services-by-payment-service-providers/ | 2026-10-28 | Official news page read (announces Notice BG/GOV/SEC/2025/25, no date shown). Review, 2026-10-28: the notice PDF (https://www.bog.gov.gh/wp-content/uploads/2025/08/NOTICE-NO.-BG-GOV-SEC-2025-25-UPDATED-GUIDELINES-FOR-INWARD-REMITTANCE-SERVICES-BY-PAYMENT-SERVICE-PROVIDERS.pdf) was read: it governs Ghanaian e money issuers and enhanced PSPs partnering with money transfer operators. Nothing in the lessons relies on it beyond D13 |
+| D5 | Bank of Ghana: Approved fintech institutions | https://www.bog.gov.gh/fintech-innovation/approved-institutions/ | 2026-10-28 | Official directory, full page re read: licence categories PFTSP, PSP Enhanced, PSP Medium, PSP Standard, Dedicated Electronic Money Issuer; no remittance or IMTO category; no last updated date shown |
 | D6 | Citi Newsroom (January 2026): BoG tightens rules on international money transfers | https://citinewsroom.com/2026/01/bog-tightens-rules-on-international-money-transfers/ | 2026-10-27 | News, snippet only; context that rules change, so content tells learners to check the official list rather than naming providers |
 | D7 | Cyber Security Authority, Ghana: Job scams on the rise (CERT GH alert, November 2023) | https://csa.gov.gh/cert-gh-alert23.php | 2026-10-27 | Official alert, full page read: task scams, deposit demands, unsolicited offers, reporting channels |
 | D8 | Ghana News Agency (September 2026): CSA cautions jobseekers over new trends in fake recruitment | https://gna.org.gh/2026/09/csa-cautions-jobseekers-over-new-trends-in-fake-recruitment/ | 2026-10-27 | News report of an official alert, full page read: cloned sites, impersonation, fake fees |
@@ -53,6 +53,15 @@ The digital marketer track already has one `freelancing` node and the content cr
 | D10 | WIPO: Copyright | https://www.wipo.int/en/web/copyright | 2026-10-27 | Official intergovernmental page; concepts only |
 | D11 | freeCodeCamp: free web design proposal template | https://www.freecodecamp.org/news/free-web-design-proposal-template/ | 2026-10-27 | Free article; linked as a resource only |
 | D12 | Freelancers Union: contract creator | https://www.freelancersunion.org/resources/contract-creator/ | 2026-10-27 | Free tool, US oriented; label tells learners to adapt it |
+| D13 | Bank of Ghana: Guidelines for the registration and operations of international money transfer operators (IMTOs) in Ghana (December 2025, posted January 2026) | https://www.bog.gov.gh/wp-content/uploads/2026/01/GUIDELINES-FOR-THE-REGISTRATION-AND-OPERTIONS-OF-INTERNATIONAL-MONEY-TRANSFER-OPERATORS-IMTO-Guidelines-Dec-2025-Final.pdf | 2026-10-28 | Official PDF, full text read: IMTOs must be registered with BoG; banks and PSPs may only act as agents of registered IMTOs; settlement in local currency; payout via bank accounts, payment wallets, cash; no fees on beneficiaries beyond those agreed with the sender; services primarily person to person |
+| D14 | Bank of Ghana: Remittance companies (registered institutions) | https://www.bog.gov.gh/supervision-regulation/registered-institutions/remittance-companies/ | 2026-10-28 | Official page, full page read; one entry, no date. Not a complete list of IMTOs, so not used as a learner check |
+| D15 | Bank of Ghana: Unapproved MTOs operating in the remittance sector | https://www.bog.gov.gh/news/unapproved-mtos-operating-in-the-remittance-sector/ | 2026-10-28 | Official notice page (2023 notice; a June 2025 notice also exists). Used only to tell learners such notices exist; no names used |
+| D16 | Ghana Revenue Authority: Tax registration (re read) | https://gra.gov.gh/domestic-tax/tax-registration/ | 2026-10-28 | Official, full page read: individuals with taxable income including self employed and professionals register; Ghana Card or ECOWAS Card PIN is the TIN; online via the taxpayers portal (register with Ghana Card PIN, then apply for a tax type) or at a Taxpayer Service Centre |
+| D17 | Ghana Revenue Authority: Personal income tax (re read) | https://gra.gov.gh/domestic-tax/personal-income-tax/ | 2026-10-28 | Official, full page read: employees, sole proprietors and partners; employment, business and investment income combined at year end; annual return; forms DT 103, DT 104, DT 104A. The page shows a monthly threshold but no rates (corrected in review; the lesson had said it showed rates). Threshold deliberately not used; no deadline or instalment rules on the page; contact numbers are not labelled toll free |
+| D18 | Office of the Registrar of Companies (re read) | https://orc.gov.gh/ | 2026-10-28 | Official: business name (sole proprietorship) registration listed; online renewal described; online registration not clearly offered, so lessons say to check the current process |
+| D19 | Bank of Ghana: Notice BG/GOV/SEC/2026/13, Deadline for the registration of IMTOs in Ghana (12 June 2026) | https://www.bog.gov.gh/wp-content/uploads/2026/06/DEADLINE-FOR-THE-REGISTRATION-OF-INTERNATIONAL-MONEY-TRANSFER-OPERATORS-IMTOs-IN-GHANA-NOTICE-13-1.pdf | 2026-10-28 | Official PDF, full text read: refers to Notice BG/GOV/SEC/2026/02 of 20 January 2026 issuing the IMTO guidelines; deadline for existing IMTOs extended to 31 July 2026; those that fail to register not permitted to operate, partnerships with banks, SDIs and PSPs void. No list of registered IMTOs was found on the BoG site in review (not the same as confirming none exists) |
+| D20 | Cyber Security Authority: Report page | https://csa.gov.gh/report | 2026-10-28 | Official, read in review: call 292, SMS 292, WhatsApp 0501603111, email report@csa.gov.gh, online incident reporting form, CSA GHANA mobile app |
+| D21 | Office of the Registrar of Companies: Business names (sole proprietorship) registration | https://orc.gov.gh/service-business-registration.php | 2026-10-28 | Official, read in review: name availability search, prescribed Form A, submit at the Business Names counter, processing fee, certificate and certified copy, mandatory annual renewal (USSD *222# for the renewal fee). Fees shown but not used in content; online registration not described |
 | P1 | SydCrest Planning/12_TRACK_CATALOGUE.md (row 20, ALX survey) | (internal) | 2026-10-27 | Internal planning document |
 
 All resource links in the outline file were checked with an HTTP request (browser user agent) on
@@ -185,3 +194,45 @@ third party blogs on proposal writing and pricing (not used as evidence).
 * Inward remittance rules (D4, D6) were seen through excerpts and news; lesson writers must read
   the current Bank of Ghana text before stating anything specific.
 * Freelancers Union contract creator is US oriented; kept with a label saying to adapt it.
+
+## Lesson wave (issue #198, 28 October 2026)
+
+All 30 nodes now have original lessons in
+`src/content/roadmaps/content/freelancing.content.ts`. No nodes were added, removed, merged or
+renamed. The current official pages were read before writing the money and tax lessons.
+
+* **paid-from-abroad** states only what D13 says (registration of foreign operators with the
+  Bank of Ghana, banks and PSPs only as agents, settlement in cedis, payout channels, no extra
+  fees on the receiver). It names no company. Because D5 has no remittance category and D14 is
+  not a full list, the lesson tells learners to check the Ghanaian payout side on D5, search the
+  Bank of Ghana site for its latest notices on money transfer operators (D15), and ask their bank
+  or wallet provider. Because D13 describes these services as primarily person to person, the
+  lesson tells learners to ask a service whether it accepts payments for work. Foreign currency
+  account rules were not verified, so the lesson only says to ask your bank.
+* **records-and-tax** states only what D16 and D17 say. No thresholds, rates, deadlines or
+  instalment rules. Business name registration is described without claiming it can be done
+  online (D18).
+* **spotting-scams** uses the CSA pattern and reporting channels from D7 (292 call or text,
+  WhatsApp 0501603111, report@csa.gov.gh); case counts and amounts are left out.
+* **pricing-in-cedis** uses one clearly labelled made up calculation to show the method; no
+  market rates or income claims anywhere in the track. No lesson suggests SydCrest handles,
+  holds or settles money.
+
+## Review (issue #84, 28 October 2026)
+
+Independent review of PR #207. Every regulatory statement in `paid-from-abroad`,
+`records-and-tax` and `spotting-scams` was re checked against D13, D16, D17, D19, D20 and D21.
+
+* **paid-from-abroad:** all four guideline points confirmed against D13 (6.1(a), 6.2(h), 9.0,
+  13.0(b), 14.1(b), 10.1(c), 13.0(d)(vii)). Added from D13: services are mainly person to person
+  (10.1(d)) and must not pay into business or corporate accounts (10.2(d)), so the lesson says to
+  ask the service about payments for work and to ask a bank about business account payments.
+  Added from D19: the 31 July 2026 registration deadline for existing operators. Date wording
+  changed to "dated December 2025 and issued in January 2026". The unverified line about
+  foreign currency accounts was removed. Resource list now links D13 instead of the BoG home page.
+* **records-and-tax:** corrected "the GRA page sets out ... the rates" (D17 shows a threshold, not
+  rates) and "toll free line" (not labelled so). Added from D16 that all businesses, including sole
+  proprietorships, must register. Added the business name steps from D21 without fees.
+* **spotting-scams:** reporting channels confirmed by D7 and D20; added D20's online form and app.
+* Foreign currency invoicing rules (BoG, August 2025, seen only through news) were not verified and
+  are not used; the pricing lesson only tells learners to agree a currency with clients abroad.

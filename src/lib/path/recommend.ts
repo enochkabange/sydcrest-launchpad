@@ -33,6 +33,12 @@ const INTEREST_TRACKS: Record<Exclude<Interest, "unsure">, readonly Track[]> = {
 };
 
 /**
+ * Tracks the path quiz never recommends. They are companions taught inside a
+ * cohort (the DMP specialisation weeks link to them), not starting points.
+ */
+export const COHORT_ONLY_TRACKS: ReadonlySet<Track> = new Set<Track>(["digital-marketing-specialisations"]);
+
+/**
  * Tracks with full lessons, matching src/content/roadmaps/content/index.ts
  * (a test keeps the two in step). Kept as a list here so the path page does
  * not load every lesson just to know which tracks have them.

@@ -1,7 +1,7 @@
 import { RES } from "./resources";
 import type { ResourceDraft, RoadmapDraft } from "./types";
 
-/** Track specific links not in the shared pool; each checked to resolve with HTTP 200 (27 October 2026). */
+/** Track specific links not in the shared pool; each checked to resolve with HTTP 200 (27 October 2026; orc, bogImto and csa re checked 28 October 2026). */
 const r = (label: string, url: string, kind: ResourceDraft["kind"] = "article"): ResourceDraft => ({ label, url, kind });
 
 const wikiFreelancer = r("Wikipedia: Freelancer", "https://en.wikipedia.org/wiki/Freelancer");
@@ -39,9 +39,16 @@ const bogApproved = r(
 );
 const graRegistration = r("Ghana Revenue Authority: Tax registration", "https://gra.gov.gh/domestic-tax/tax-registration/");
 const graIncomeTax = r("Ghana Revenue Authority: Personal income tax", "https://gra.gov.gh/domestic-tax/personal-income-tax/");
-const orc = r("Office of the Registrar of Companies, Ghana", "https://orc.gov.gh/");
+const orc = r(
+  "Office of the Registrar of Companies: Business name registration",
+  "https://orc.gov.gh/service-business-registration.php",
+);
+const bogImto = r(
+  "Bank of Ghana: Guidelines for international money transfer operators (PDF)",
+  "https://www.bog.gov.gh/wp-content/uploads/2026/01/GUIDELINES-FOR-THE-REGISTRATION-AND-OPERTIONS-OF-INTERNATIONAL-MONEY-TRANSFER-OPERATORS-IMTO-Guidelines-Dec-2025-Final.pdf",
+);
 const csaJobScams = r("Cyber Security Authority: Job scams on the rise", "https://csa.gov.gh/cert-gh-alert23.php");
-const csa = r("Cyber Security Authority, Ghana", "https://www.csa.gov.gh/");
+const csa = r("Cyber Security Authority: Report a cyber incident", "https://csa.gov.gh/report");
 const cisaPhishing = r("CISA: Recognise and report phishing", "https://www.cisa.gov/secure-our-world/recognize-and-report-phishing");
 const khanFinance = r("Khan Academy: Personal finance", "https://www.khanacademy.org/college-careers-more/personal-finance", "video");
 const khanEntrepreneurship = r(
@@ -292,7 +299,7 @@ export const freelancing: RoadmapDraft = {
         "Foreign clients can pay through a marketplace's own withdrawal options, a licensed international payment or remittance service, or a bank account able to receive foreign transfers, and each has different fees, limits and speeds. Compare the total cost before you agree terms, keep account names matching your Ghana Card, and check that any payment company is approved by the Bank of Ghana.",
       parent: "getting-paid",
       optional: false,
-      resources: [bogApproved, bogFx, RES.bog],
+      resources: [bogApproved, bogImto, bogFx],
     },
     {
       slug: "records-and-tax",
