@@ -11,7 +11,7 @@ export function WelcomeForm() {
   const [state, action, pending] = useActionState<AuthState, FormData>(completeWelcome, {});
 
   return (
-    <form action={action} className="flex flex-col gap-4" noValidate>
+    <form data-analytics-form="welcome" action={action} className="flex flex-col gap-4" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       <NextField />
       <AgeConsentFields defaultDateOfBirth={state.values?.date_of_birth} errors={state.errors} />

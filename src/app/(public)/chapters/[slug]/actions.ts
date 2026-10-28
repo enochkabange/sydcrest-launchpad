@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { requireUser } from "@/lib/auth";
 import { parseChapterDetails } from "@/lib/chapters/model";
@@ -27,6 +28,7 @@ export async function joinChapter(chapterId: string): Promise<ActionState> {
   const supabase = await createClient();
   // profile_id and role default to the caller and 'member'. A repeat join is a no op.
   const { error } = await supabase.from("chapter_members").insert({ chapter_id: chapterId, profile_id: user.id });
+  await trackResult("chapter_joined", error && error.code !== "23505" ? error : null);
   if (error && error.code !== "23505") {
     return { error: error.code === "42501" ? "This chapter is not taking new members right now." : "We couldn't add you. Try again." };
   }
@@ -43,6 +45,7 @@ export async function leaveChapter(chapterId: string, slug: string): Promise<Act
     .eq("chapter_id", chapterId)
     .eq("profile_id", user.id)
     .select("role");
+  await trackResult("chapter_left", error);
   if (error) return { error: "We couldn't take you out of the chapter. Try again." };
   // A lead leaving changes the public lead list.
   if (data?.some((r) => r.role === "lead")) revalidateChapters(slug);

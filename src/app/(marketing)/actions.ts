@@ -1,5 +1,6 @@
 "use server";
 
+import { track, trackRefusal } from "@/lib/analytics/track";
 import { headers } from "next/headers";
 import { createPublicClient } from "@/lib/supabase/public";
 import { allowFormSubmission, FORM_RATE_LIMIT_MESSAGE, isRateLimited } from "@/lib/rate-limit";
@@ -29,6 +30,7 @@ export async function joinWaitlist(_prev: WaitlistState, form: FormData): Promis
     // so the insert asks for no rows in return.
     const supabase = await createPublicClient();
     if (!(await allowFormSubmission(supabase, "waitlist", await headers()))) {
+      await trackRefusal("waitlist_joined", "rate_limited");
       return { message: FORM_RATE_LIMIT_MESSAGE, values: data };
     }
     const { error } = await supabase.from("waitlist").insert(data);
@@ -37,6 +39,7 @@ export async function joinWaitlist(_prev: WaitlistState, form: FormData): Promis
     // sign up so the form never reveals whether an email is already there.
     if (error && error.code !== "23505") {
       console.error("waitlist insert failed", { code: error.code, message: error.message });
+      await trackRefusal("waitlist_joined", isRateLimited(error) ? "rate_limited" : "server_error", error.code);
       return { message: TRY_AGAIN, values: data };
     }
   } catch (cause) {
@@ -44,5 +47,6 @@ export async function joinWaitlist(_prev: WaitlistState, form: FormData): Promis
     return { message: TRY_AGAIN, values: data };
   }
 
+  await track("waitlist_joined");
   return { done: true };
 }

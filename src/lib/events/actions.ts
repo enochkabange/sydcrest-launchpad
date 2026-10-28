@@ -1,5 +1,6 @@
 "use server";
 
+import { trackRefusal, trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { getCurrentUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
@@ -31,6 +32,7 @@ export async function rsvpAction(_prev: ActionState, form: FormData): Promise<Ac
   const session = await signedIn();
   if (!session) return { message: "Sign in to RSVP." };
   const { data, error } = await session.supabase.rpc("rsvp_event", { p_event_id: field(form, "event_id") });
+  await trackResult("event_rsvp", error, { going: true });
   if (error) return { message: eventErrorMessage(error) };
   refresh();
   return { ok: Date.now(), rsvp: data as RsvpStatus };
@@ -40,6 +42,7 @@ export async function cancelRsvpAction(_prev: ActionState, form: FormData): Prom
   const session = await signedIn();
   if (!session) return { message: "Sign in first." };
   const { error } = await session.supabase.rpc("cancel_rsvp", { p_event_id: field(form, "event_id") });
+  await trackResult("event_rsvp", error, { going: false });
   if (error) return { message: eventErrorMessage(error) };
   refresh();
   return { ok: Date.now(), rsvp: "cancelled" };
@@ -51,6 +54,7 @@ export async function checkInAction(_prev: ActionState, form: FormData): Promise
   const code = normaliseCode(field(form, "code"));
   if (!code) return { errors: { code: "Enter the code from the host." } };
   const { error } = await session.supabase.rpc("check_in_event", { p_event_id: field(form, "event_id"), p_code: code });
+  await trackResult("event_checked_in", error, { by: "self" });
   if (error) {
     const message = eventErrorMessage(error);
     return error.message?.includes("Wrong code") ? { errors: { code: message } } : { message };
@@ -63,7 +67,10 @@ export async function feedbackAction(_prev: ActionState, form: FormData): Promis
   const session = await signedIn();
   if (!session) return { message: "Sign in first." };
   const { data, errors } = parseFeedbackForm(form);
-  if (Object.keys(errors).length) return { errors, message: errors.form };
+  if (Object.keys(errors).length) {
+    await trackRefusal("event_feedback_sent", "validation");
+    return { errors, message: errors.form };
+  }
   const eventId = field(form, "event_id");
   const { supabase, user } = session;
 
@@ -78,6 +85,7 @@ export async function feedbackAction(_prev: ActionState, form: FormData): Promis
   const { error } = existing
     ? await supabase.from("event_feedback").update(data).eq("event_id", eventId).eq("profile_id", user.id)
     : await supabase.from("event_feedback").insert({ ...data, event_id: eventId });
+  await trackResult("event_feedback_sent", error, { recommend: data.recommend ?? undefined });
   if (error) {
     return {
       message:
@@ -97,6 +105,7 @@ export async function hostCheckInAction(_prev: ActionState, form: FormData): Pro
     p_event_id: field(form, "event_id"),
     p_profile_id: field(form, "profile_id"),
   });
+  await trackResult("event_checked_in", error, { by: "host" });
   if (error) return { message: eventErrorMessage(error) };
   refresh();
   return { ok: Date.now() };

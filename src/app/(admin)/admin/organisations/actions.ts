@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/admin";
 import { isUuid } from "@/lib/talent/forms";
@@ -24,6 +25,7 @@ export async function decideOrganisation(organisationId: string, _prev: Decision
     p_status: status as string,
     ...(note ? { p_note: note } : {}),
   });
+  await trackResult("organisation_decided", error, { decision: status as "verified" | "rejected" | "suspended" | "unverified" });
   if (error) return { message: `Could not save: ${error.message}` };
   revalidatePath("/admin/organisations");
   return { done: String(status) };
