@@ -6,6 +6,7 @@ import {
   api,
   cleanUp,
   createLearner,
+  PASSWORD,
   promoteToAdmin,
   seedApplication,
   seedCohort,
@@ -111,7 +112,7 @@ test("under 18: the sign up form and the Auth API both refuse, and no one can ch
   await page.goto("/signup");
   await page.getByLabel("Your name").fill("Fuseini Mahama");
   await page.getByLabel("Email").fill(`fuseini.minor.${crypto.randomUUID().slice(0, 8)}@example.test`);
-  await page.getByLabel("Password").fill("Tamale-2027-pilot");
+  await page.getByLabel("Password").fill(PASSWORD);
   await page.getByLabel("Date of birth").fill(dob);
   await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
   await page.getByRole("button", { name: "Create account" }).click();
@@ -120,7 +121,7 @@ test("under 18: the sign up form and the Auth API both refuse, and no one can ch
   // Skipping the form: the Auth API itself refuses an under 18 date of birth.
   const direct = await api(null, "POST", "/auth/v1/signup", {
     email: `fuseini.api.${crypto.randomUUID().slice(0, 8)}@example.test`,
-    password: "Tamale-2027-pilot",
+    password: PASSWORD,
     data: { full_name: "Fuseini Mahama", date_of_birth: dob, terms_version: "e2e" },
   });
   expect(direct.status, "direct sign up is refused").toBeGreaterThanOrEqual(400);
