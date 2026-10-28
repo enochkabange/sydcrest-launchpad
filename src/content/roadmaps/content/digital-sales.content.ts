@@ -2214,7 +2214,7 @@ The rest of this section helps you be the second kind of seller, and stay well w
 
 Ghana's **Data Protection Act, 2012 (Act 843)** sets rules for how organisations collect and use personal data, and the **Data Protection Commission** oversees it. You do not need to be a lawyer, but as a seller you should follow these practical principles, together with your employer's policies:
 
-* **Get written consent before direct marketing.** Section 40 of the Act says personal data must not be used for direct marketing without the person's prior written consent. The Act describes direct marketing as advertising or marketing material directed to particular individuals. Follow your employer's process for recording each person's consent.
+* **Get written consent before direct marketing.** Section 40 of the Act says personal data must not be used for direct marketing without the person's prior written consent. The Act describes direct marketing as advertising or marketing material directed to particular individuals. Follow your employer's process for recording each person's consent. Some businesses are run by one person, a sole trader, on a published number. The law does not spell out how this case is treated, so before calling or messaging a sole trader about offers, check your employer's policy and consent process.
 * **Collect only what you need.** For a sale you may need a name, number and delivery area. You rarely need someone's ID number or family details.
 * **Use data only for the purpose given.** A number shared for a delivery is not permission to add someone to a promotion list.
 * **Make opting out easy and honour it.** The Act lets a person tell you in writing at any time to stop using their data for direct marketing. Make that easy, for example with a line such as "Reply STOP to opt out", and remove people promptly.
@@ -2271,7 +2271,7 @@ Rashida starts a telesales job. A colleague offers her a list of numbers "from a
               "People who filled in an enquiry form and agreed to hear from you",
               "Existing customers who agreed to receive offers",
               "Numbers copied from WhatsApp groups or church registers",
-              "Businesses whose contact details are published for enquiries",
+              "Businesses that asked you to send them a written quote",
             ],
             answer_index: 2,
             explanation: "The lesson lists numbers copied from WhatsApp groups, church registers or school lists as ones to avoid.",
