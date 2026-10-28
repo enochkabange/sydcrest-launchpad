@@ -58,46 +58,46 @@ Go slowly. Run every code example yourself in a notebook. When a topic feels lik
           {
             prompt: "Which track does SydCrest recommend you finish before starting AI and Machine Learning?",
             options: [
-              "Digital Skills Bridge only",
               "The Data Analyst track",
+              "Digital Skills Bridge only",
               "Graphic Design",
               "No track is needed first",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "This is an advanced track built on the Python, pandas, SQL and statistics taught in the Data Analyst track.",
           },
           {
             prompt: "In the maize yield example, what does the model actually learn from?",
             options: [
-              "Rules a programmer typed in about each farm",
-              "The farmers' opinions about next season",
-              "Records of past seasons with inputs and the yield each farm got",
-              "A list of fertiliser prices",
+              "Rules a programmer typed in for each farm",
+              "Farmers' opinions about how next season will go",
+              "This year's list of fertiliser prices by district",
+              "Records of past seasons with inputs and yields",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "Machine learning learns a pattern from past examples rather than from hand written rules.",
           },
           {
             prompt: "Why does this track say you need a laptop or desktop computer?",
             options: [
-              "Lessons cannot be read on a phone",
-              "Models only run on expensive computers",
-              "Writing and running model code needs a keyboard and bigger screen, even when the computing runs in a free online notebook",
-              "Free online notebooks do not exist",
+              "The lessons cannot be opened on a phone at all",
+              "Models only run on very expensive, powerful computers",
+              "Writing and running model code needs a keyboard and bigger screen",
+              "Free online notebooks are blocked on other devices",
             ],
             answer_index: 2,
-            explanation: "You can read anywhere, but coding work needs a proper computer, though it does not have to be powerful.",
+            explanation: "You can read anywhere, but coding work needs a proper computer, though it does not have to be powerful because free online notebooks can do the computing.",
           },
           {
             prompt: "What does the lesson say about entry level machine learning jobs in Ghana?",
             options: [
-              "They are the easiest tech jobs to get",
-              "They are rare, and most people get in through data, software or research roles first",
-              "They need no experience or qualifications",
-              "They only exist outside Africa",
+              "They are the easiest tech jobs to get with a certificate",
+              "They are rare, so most people start in a related role",
+              "They need no experience or qualifications of any kind",
+              "They exist only outside Africa, so you must relocate",
             ],
             answer_index: 1,
-            explanation: "The adverts studied asked for degrees and experience, so a stepping stone role is the realistic route.",
+            explanation: "The adverts studied asked for degrees and experience, so a stepping stone role in data, software or research is the realistic route.",
           },
         ],
         pass_threshold: 75,
@@ -153,43 +153,43 @@ Hawa thinks she is ready. She loads a CSV of a shop's sales, removes rows with m
           {
             prompt: "Why does the lesson say pandas skills matter so much for machine learning?",
             options: [
-              "pandas trains neural networks",
-              "Almost every model starts as a pandas table that must be loaded and cleaned",
-              "pandas replaces the need for statistics",
-              "Models cannot use any other data format",
+              "Almost every model starts as a table that must be cleaned",
+              "pandas is the library that trains neural networks",
+              "pandas removes the need to learn any statistics",
+              "Models refuse to read data in any other format",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "The lesson explains that most model work is ordinary data code, and the data usually starts as a pandas table.",
           },
           {
             prompt: "What does SQL let you do in a machine learning job, according to the lesson?",
             options: [
-              "Draw charts of model accuracy",
+              "Draw charts of a model's accuracy",
               "Speed up neural network training",
+              "Replace Python for writing models",
               "Fetch your own training data from a database",
-              "Replace Python entirely",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "Data often lives in a database, and SQL lets you get it yourself.",
           },
           {
             prompt: "What does the lesson say about free hosted notebooks such as Google Colab?",
             options: [
-              "They need a powerful laptop to run",
-              "They have no limits at all",
-              "They run code on their servers through your browser, but free tiers have limits that change, so check the official terms",
-              "They only work offline",
+              "They only work on a powerful laptop with a large graphics card",
+              "They are unlimited, so you never need to read their terms",
+              "They run code on their servers, but free limits change over time",
+              "They only run offline, so they use no data at all",
             ],
             answer_index: 2,
-            explanation: "The heavy computing happens on the service's servers, and free usage limits can change over time.",
+            explanation: "The heavy computing happens on the service's servers, and free usage limits can change, so check the official terms.",
           },
           {
             prompt: "Which maths level does the lesson say you should start from?",
             options: [
-              "University calculus",
-              "School algebra such as rearranging formulas and plotting straight lines",
-              "No maths at all, ever",
-              "Advanced statistics proofs",
+              "University calculus and proofs",
+              "School algebra and straight lines",
+              "No maths at any point in the track",
+              "Advanced statistics from a degree",
             ],
             answer_index: 1,
             explanation: "You start from school algebra, and the next section builds the extra maths step by step.",
@@ -248,20 +248,20 @@ Treat machine learning as a skill you grow inside a job, not a ticket to your fi
             prompt: "What did the job adverts studied for this track mostly ask for?",
             options: [
               "No experience and no qualifications",
+              "A large social media following",
               "A degree and several years of experience",
-              "Only a social media following",
-              "A certificate from a single online course",
+              "One certificate from an online course",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Almost every machine learning advert asked for a degree and experience, and none was entry level.",
           },
           {
             prompt: "Which of these is a stepping stone role named in the lesson?",
             options: [
-              "Delivery rider",
-              "Research assistant at a university, NGO or survey firm",
-              "Football coach",
-              "Chef in a hotel kitchen",
+              "Sales agent for a phone network",
+              "Research assistant at an NGO or university",
+              "Social media influencer for a brand",
+              "Cashier at a supermarket in Accra",
             ],
             answer_index: 1,
             explanation: "Research assistant posts involve data cleaning and analysis and sometimes model work.",
@@ -269,23 +269,23 @@ Treat machine learning as a skill you grow inside a job, not a ticket to your fi
           {
             prompt: "What advice does the lesson give about remote and contract offers?",
             options: [
-              "Accept any offer that mentions AI",
-              "Pay a fee to secure your place",
               "Read every offer carefully and never pay to apply",
-              "Only apply to roles outside Africa",
+              "Accept any offer that mentions AI in the title",
+              "Pay a small fee to secure your place early",
+              "Apply only to roles based outside Africa",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "Remote work can be a real route, but genuine employers do not charge you to apply.",
           },
           {
             prompt: "In the worked example, how did Fuseini get his first real machine learning project?",
             options: [
-              "By winning a lottery",
-              "By building and honestly testing a small model to help the NGO he already worked for",
-              "By copying a project from the internet",
-              "By waiting for a machine learning job advert",
+              "He copied a finished project from the internet",
+              "He waited until a machine learning advert appeared",
+              "He paid a company to give him a project to do",
+              "He built a model for the NGO he already worked at",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "He applied a model inside his existing data job, which gave him real experience and a reference.",
           },
         ],
@@ -331,21 +331,21 @@ Free video courses on linear algebra, calculus and probability are linked as fur
           {
             prompt: "In the lesson, what is a vector?",
             options: [
-              "A type of chart",
-              "A list of numbers, such as one farm's rainfall, fertiliser and planting week",
-              "A Python library",
-              "A kind of probability",
+              "A chart that shows how data changes",
+              "A Python library for loading files",
+              "The probability that a model is right",
+              "A list of numbers describing one record",
             ],
-            answer_index: 1,
-            explanation: "One record becomes a list of numbers called a vector, and a table becomes a matrix.",
+            answer_index: 3,
+            explanation: "One record, such as a farm's rainfall, fertiliser and planting week, becomes a list of numbers called a vector.",
           },
           {
             prompt: "What does gradient descent do during training?",
             options: [
-              "Deletes the worst rows of data",
-              "Draws a chart of the results",
-              "Repeatedly nudges the model's settings in the direction that makes it less wrong",
-              "Chooses which Python library to use",
+              "Deletes the rows the model gets most wrong",
+              "Draws a chart of the training results",
+              "Nudges settings to make the model less wrong",
+              "Chooses which Python library to use next",
             ],
             answer_index: 2,
             explanation: "The model measures its error, works out which way to adjust each setting, and repeats many times.",
@@ -364,24 +364,24 @@ Free video courses on linear algebra, calculus and probability are linked as fur
           {
             prompt: "What does a model output such as \"0.8 chance of being repaid\" describe?",
             options: [
-              "A guaranteed result",
-              "A probability, which can still turn out wrong",
+              "A probability that can still turn out wrong",
+              "A guaranteed result for that loan",
               "The number of loans in the dataset",
-              "The model's training time",
+              "How long the model took to train",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Probability tells you how likely an outcome is, and even confident predictions are sometimes wrong.",
           },
           {
             prompt: "What study habit does the lesson recommend for maths?",
             options: [
-              "Skip the maths and only use code",
-              "Work a small example by hand, then check it with NumPy",
-              "Memorise formulas without pictures",
-              "Only study maths after finishing the track",
+              "Skip the maths and rely only on library code",
+              "Memorise each formula without drawing pictures",
+              "Leave all maths until the end of the track",
+              "Work an example by hand, then check it in code",
             ],
-            answer_index: 1,
-            explanation: "Working by hand then checking in code builds real understanding.",
+            answer_index: 3,
+            explanation: "Working by hand then checking with NumPy builds real understanding.",
           },
         ],
         pass_threshold: 80,
@@ -446,29 +446,29 @@ In neural networks, each layer holds a matrix of weights, and data flows through
             options: [
               "6.5",
               "7.7",
-              "9.1",
               "10.5",
+              "9.1",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "Multiply matching entries and add them: 5 × 1.5 + 2 × 0.8 = 9.1.",
           },
           {
             prompt: "A matrix with 3 rows and 2 columns has which shape?",
             options: [
-              "(3, 2)",
               "(2, 3)",
               "(6, 1)",
+              "(3, 2)",
               "(5, 0)",
             ],
-            answer_index: 0,
+            answer_index: 2,
             explanation: "Shape is written as rows first, then columns.",
           },
           {
             prompt: "For a matrix times a vector to work, what must match?",
             options: [
-              "The number of rows in the matrix and the bias",
-              "The number of columns in the matrix and the length of the vector",
-              "The largest number in each",
+              "The number of rows and the size of the bias",
+              "The matrix's columns and the vector's length",
+              "The largest number in the matrix and vector",
               "The number of rows and the number of columns",
             ],
             answer_index: 1,
@@ -477,24 +477,24 @@ In neural networks, each layer holds a matrix of weights, and data flows through
           {
             prompt: "What does the `@` symbol do in the NumPy example?",
             options: [
-              "Adds two arrays",
-              "Prints the shape",
-              "Performs matrix multiplication",
-              "Imports NumPy",
+              "Multiplies matrices together",
+              "Adds two arrays together",
+              "Prints the shape of an array",
+              "Imports the NumPy library",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "In Python, `@` multiplies matrices, here giving one prediction per farm.",
           },
           {
             prompt: "Why is matrix multiplication so important in machine learning?",
             options: [
-              "It makes data smaller",
-              "It computes predictions for many records at once, and computers do it very fast",
-              "It removes missing values",
-              "It is only used for drawing charts",
+              "It makes datasets smaller before training",
+              "It removes missing values from the data",
+              "It is mainly used for drawing charts",
+              "It computes predictions for many rows at once",
             ],
-            answer_index: 1,
-            explanation: "One matrix multiplication handles every row in a single step.",
+            answer_index: 3,
+            explanation: "One matrix multiplication handles every row in a single step, and computers do it very fast.",
           },
         ],
         pass_threshold: 80,
@@ -563,21 +563,21 @@ Libraries such as scikit learn and PyTorch compute gradients for you, so you wil
           {
             prompt: "What does a loss such as mean squared error measure?",
             options: [
-              "How long training takes",
-              "How wrong the model's predictions are overall",
-              "How many features the data has",
-              "How fast the computer is",
+              "How long training takes to finish",
+              "How many features the data contains",
+              "How wrong the predictions are overall",
+              "How fast the computer can calculate",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "The loss is one number summarising the model's error, and lower is better.",
           },
           {
             prompt: "In the hill picture, what does the derivative tell you?",
             options: [
-              "How high the hill is",
+              "How high the hill is above the valley",
               "Which way the ground slopes and how steeply",
-              "Where the valley is exactly",
-              "How many steps you have taken",
+              "Exactly where the lowest point of the valley is",
+              "How many steps you have taken so far",
             ],
             answer_index: 1,
             explanation: "The derivative is the slope of the loss, showing which direction makes it go down.",
@@ -585,23 +585,23 @@ Libraries such as scikit learn and PyTorch compute gradients for you, so you wil
           {
             prompt: "What happens if the learning rate is far too big?",
             options: [
-              "Training becomes perfectly accurate",
-              "The model jumps past the low point and may never settle",
-              "The data gets deleted",
-              "Nothing changes",
+              "The model overshoots and may never settle",
+              "Training quickly becomes perfectly accurate",
+              "The training data is deleted after each step",
+              "Nothing changes because the rate is ignored",
             ],
-            answer_index: 1,
-            explanation: "Steps that are too large overshoot the valley in the loss.",
+            answer_index: 0,
+            explanation: "Steps that are too large jump past the valley in the loss.",
           },
           {
             prompt: "In each pass of gradient descent, how are the weights changed?",
             options: [
-              "They are set to random values",
-              "They are doubled",
-              "They move a small step against the slope of the loss",
-              "They stay the same",
+              "They are reset to new random values",
+              "They are doubled to speed up learning",
+              "They stay fixed while the data changes",
+              "They take a small step against the slope",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "Each update nudges the weights downhill on the loss.",
           },
         ],
@@ -647,46 +647,46 @@ A model gives 0.7 for a loan. Approve or not? You choose a **threshold**. At 0.5
           {
             prompt: "What does P(A | B) mean?",
             options: [
-              "The probability of A plus B",
-              "The probability of A given that B is known to be true",
+              "The probability of A plus the probability of B",
               "The probability that A and B never happen",
-              "A divided by B",
+              "The number A divided by the number B",
+              "The probability of A given that B is true",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The bar is read as \"given\", so it is the chance of A when we already know B.",
           },
           {
             prompt: "In the fraud example, why are most flagged transfers honest?",
             options: [
-              "The model is broken",
-              "Fraud is rare, so even a small rate of false alarms on honest transfers outnumbers the real fraud",
-              "Honest customers are more likely to commit fraud",
-              "The threshold was set to zero",
+              "The model was trained on the wrong country's data",
+              "Honest customers send more money than fraudsters",
+              "Fraud is rare, so false alarms outnumber real cases",
+              "The threshold was set to zero by mistake",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "With a low base rate, false alarms from the large honest group dominate the flags.",
           },
           {
             prompt: "A model gives a probability of 0.9 for one case. What does that promise?",
             options: [
-              "The outcome will definitely happen",
-              "Across many cases given 0.9, about nine in ten should happen, but this one could still be wrong",
-              "The model is 90 percent accurate overall",
+              "The outcome will definitely happen this time",
+              "About nine in ten such cases should happen",
+              "The model is right 90 percent of the time overall",
               "The outcome will happen within nine days",
             ],
             answer_index: 1,
-            explanation: "A probability describes likelihood over many similar cases, not certainty for one.",
+            explanation: "A probability describes likelihood over many similar cases, so this one case could still go the other way.",
           },
           {
             prompt: "How should the threshold for approving loans be chosen?",
             options: [
-              "Always use 0.5",
-              "Pick the highest number possible",
-              "By weighing the costs of each kind of mistake, which is partly a business and ethical choice",
-              "Let the model choose its own threshold",
+              "By weighing the cost of each kind of mistake",
+              "Always use 0.5, because it is the standard value",
+              "Pick the highest number possible to be safe",
+              "Let the model pick its own threshold in training",
             ],
-            answer_index: 2,
-            explanation: "Different thresholds trade one kind of error for another, so people must decide which costs matter more.",
+            answer_index: 0,
+            explanation: "Different thresholds trade one kind of error for another, so people must decide which costs matter more, partly as a business and ethical choice.",
           },
         ],
         pass_threshold: 75,
@@ -749,44 +749,44 @@ The two topics in this section cover NumPy with pandas, and how to use free note
             prompt: "Which library in the lesson is used mainly for tables with named columns?",
             options: [
               "NumPy",
-              "pandas",
               "matplotlib",
+              "pandas",
               "PyTorch",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "pandas handles tables, which is how most real data arrives.",
           },
           {
             prompt: "What does scikit learn provide, according to the lesson?",
             options: [
-              "Only charts",
-              "Classic models, tools to split and test data, and feature preparation",
-              "A web server for apps",
-              "A replacement for Python",
+              "Charts and dashboards for reports",
+              "Classic models and tools to test them",
+              "A web server for hosting apps",
+              "A faster replacement for Python",
             ],
             answer_index: 1,
-            explanation: "scikit learn is used throughout the classic machine learning section for models, testing and preparation.",
+            explanation: "scikit learn gives classic models, tools to split and test data, and ways to prepare features.",
           },
           {
             prompt: "In Amina's work, where does most of her time go?",
             options: [
-              "Choosing a deep learning library",
-              "Loading, exploring, cleaning and converting data",
-              "Writing the model line",
-              "Drawing logos for her reports",
+              "Loading, exploring and cleaning the data",
+              "Choosing between deep learning libraries",
+              "Writing the single line that trains the model",
+              "Designing logos and covers for her reports",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "The model step is short; preparing data takes most of the time.",
           },
           {
             prompt: "Why should you choose Restart and run all before sharing a notebook?",
             options: [
-              "It deletes your data",
-              "It proves the notebook works from top to bottom",
-              "It makes the model more accurate",
-              "It uploads the notebook automatically",
+              "It deletes any private data in the notebook",
+              "It makes the model's predictions more accurate",
+              "It uploads the notebook to your drive for you",
+              "It proves the notebook runs from top to bottom",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Running everything in order catches cells that only worked because of earlier, hidden state.",
           },
         ],
@@ -857,10 +857,10 @@ NumPy also lets you do maths on whole columns at once, which is called **vectori
           {
             prompt: "In machine learning code, what are `X` and `y` usually?",
             options: [
-              "Two charts",
-              "The features and the target answers",
+              "Two charts of the data",
+              "The features and the target",
               "Two Python libraries",
-              "The training time and test time",
+              "Training time and test time",
             ],
             answer_index: 1,
             explanation: "`X` holds the input features and `y` holds the answers the model learns to predict.",
@@ -868,46 +868,46 @@ NumPy also lets you do maths on whole columns at once, which is called **vectori
           {
             prompt: "Why are rows with a blank yield dropped in the example?",
             options: [
-              "They make the file too big",
-              "A row without an answer cannot teach the model anything",
-              "pandas cannot read blank values",
-              "Yield is not important",
+              "A row with no answer cannot teach the model",
+              "They make the CSV file too large to load",
+              "pandas is unable to read blank values",
+              "Yield is the least important column",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "The target is what the model learns from, so rows without it are removed rather than guessed.",
           },
           {
             prompt: "What does the lesson say about filling blank fertiliser values with the median?",
             options: [
-              "It is always correct",
-              "It is a choice, and zero might be more honest if a blank means none was used",
-              "It should never be done",
-              "It changes the target values",
+              "It is always the correct thing to do",
+              "It should never be done under any circumstances",
+              "It also fills in the missing target values",
+              "It is a choice to check with the data collectors",
             ],
-            answer_index: 1,
-            explanation: "Filling missing values is a judgement you should check with whoever collected the data.",
+            answer_index: 3,
+            explanation: "If a blank really means no fertiliser was used, zero might be more honest, so ask whoever collected the data.",
           },
           {
             prompt: "`X.shape` is `(199, 2)` and `y.shape` is `(150,)`. What is most likely wrong?",
             options: [
-              "The model is too small",
-              "Rows were dropped from one array and not the other",
-              "There are too many features",
-              "NumPy is not installed",
+              "The model is too small for the data",
+              "There are too many feature columns",
+              "Rows were dropped from only one of them",
+              "NumPy has not been installed properly",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "The first numbers must match because each row of `X` needs one answer in `y`.",
           },
           {
             prompt: "Which of these should you never fill in with a guess?",
             options: [
               "Missing fertiliser values",
+              "Missing target values",
               "Missing rainfall values",
-              "Missing target values you are trying to predict",
               "Missing planting weeks",
             ],
-            answer_index: 2,
-            explanation: "Guessing the answers makes the model look better than it is.",
+            answer_index: 1,
+            explanation: "Guessing the answers you are trying to predict makes the model look better than it is.",
           },
         ],
         pass_threshold: 80,
@@ -961,10 +961,10 @@ Sumaila is training a small model in a free notebook at a Tamale hub. He saves a
           {
             prompt: "What happens to files saved in a hosted notebook's session storage when the session ends?",
             options: [
-              "They are kept forever",
-              "They disappear, so you must save important files elsewhere",
-              "They are emailed to you",
-              "They move to the next notebook automatically",
+              "They are kept safely on the service forever",
+              "They disappear unless you saved them elsewhere",
+              "They are emailed to your account automatically",
+              "They move into your next notebook by themselves",
             ],
             answer_index: 1,
             explanation: "The hosted machine is temporary, so copy anything important to your drive or device.",
@@ -972,35 +972,35 @@ Sumaila is training a small model in a free notebook at a Tamale hub. He saves a
           {
             prompt: "When does the lesson suggest switching on a GPU?",
             options: [
-              "For every notebook, all the time",
-              "For training neural networks, switching it off afterwards",
-              "Only for loading CSV files",
-              "Never, GPUs are not allowed",
+              "For training neural networks, then off again",
+              "For every notebook, from start to finish",
+              "Only while loading CSV files into pandas",
+              "Never, because GPUs are not allowed for free",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Classic models run fine without one, so save your GPU allowance for deep learning.",
           },
           {
             prompt: "Why should you check a free notebook service's official pages?",
             options: [
-              "To find a discount code",
-              "Because free tiers and their limits change over time",
-              "Because the lesson recommends one service over all others",
-              "To download the notebook software",
+              "To find a discount code for a paid plan",
+              "Because the lesson names one service as the best",
+              "To download the notebook software to install",
+              "Because free tiers and limits change over time",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Limits are not fixed, so the official terms are the only reliable source.",
           },
           {
             prompt: "Which habit saved Sumaila's work when his session timed out?",
             options: [
-              "He never trained a model",
-              "He saved the notebook at the start and saved the trained model to his drive straight away",
-              "He used a bigger dataset",
-              "He kept the GPU on all day",
+              "He kept the GPU switched on all day long",
+              "He trained on a much bigger dataset instead",
+              "He saved early and saved the model at once",
+              "He avoided training a model in the session",
             ],
-            answer_index: 1,
-            explanation: "Saving early and saving the model as soon as training ended meant the timeout cost him nothing.",
+            answer_index: 2,
+            explanation: "Saving the notebook first and saving the model as soon as training ended meant the timeout cost him nothing.",
           },
         ],
         pass_threshold: 75,
@@ -1066,45 +1066,45 @@ Mariama works for a savings group network in the Upper East Region. Leaders want
             prompt: "Predicting whether a loan will be repaid or defaulted is which kind of task?",
             options: [
               "Regression",
-              "Classification",
               "Unsupervised learning",
               "Data cleaning",
+              "Classification",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The label is a category, so it is classification.",
           },
           {
             prompt: "Why does the workflow start with a baseline?",
             options: [
-              "It is the most accurate model available",
-              "It gives a simple standard that any real model must beat",
-              "It replaces the need for test data",
-              "It makes training faster",
+              "It is the most accurate model you can build",
+              "It replaces the need for a held out test set",
+              "It sets a simple standard any model must beat",
+              "It makes every later model train faster",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "If a model cannot beat a simple rule like predicting the average, it is not useful.",
           },
           {
             prompt: "Why does the lesson say classic models are often used on tables of business data?",
             options: [
-              "They only work in English",
-              "They are faster to train, easier to explain and often as accurate on tabular data",
-              "They never make mistakes",
-              "They need no data at all",
+              "They are the only models that can read numbers",
+              "They are quick, explainable and often accurate",
+              "They never make mistakes on business data",
+              "They need no data at all to make predictions",
             ],
             answer_index: 1,
-            explanation: "For tabular problems, classic models are practical and explainable.",
+            explanation: "For tabular problems, classic models are faster to train, easier to explain and often as accurate as deep learning.",
           },
           {
             prompt: "In Mariama's project, which limit did she report?",
             options: [
-              "The model works perfectly for everyone",
-              "New members with short histories get less reliable predictions",
-              "The model cannot use savings data",
-              "The baseline was better than the model",
+              "Predictions are weaker for newer members",
+              "The model needs a GPU to make predictions",
+              "The model cannot use savings history data",
+              "The baseline did better than her model",
             ],
-            answer_index: 1,
-            explanation: "Reporting limits honestly is part of the final step of the workflow.",
+            answer_index: 0,
+            explanation: "New members with short histories get less reliable predictions, and reporting this is part of the final step.",
           },
         ],
         pass_threshold: 80,
@@ -1177,20 +1177,20 @@ All of them use the same create, fit, predict pattern.`,
             prompt: "What are the three steps every scikit learn model follows?",
             options: [
               "Load, chart, delete",
-              "Create, fit, predict",
               "Import, export, upload",
+              "Create, fit, predict",
               "Clean, sort, print",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "You create a model, fit it to training data, then predict on new data.",
           },
           {
             prompt: "What does the `DummyRegressor` in the example always predict?",
             options: [
-              "Zero",
-              "The average of the training targets",
-              "The largest yield seen",
-              "A random number",
+              "Zero for every farm",
+              "The average training target",
+              "The largest yield it has seen",
+              "A new random number each time",
             ],
             answer_index: 1,
             explanation: "It is a baseline that predicts the average, which a real model must beat.",
@@ -1198,23 +1198,23 @@ All of them use the same create, fit, predict pattern.`,
           {
             prompt: "What does mean absolute error tell you?",
             options: [
-              "How many rows were used",
-              "The average size of the model's mistakes in the target's units",
-              "The probability of each class",
-              "How long training took",
+              "The average size of the model's mistakes",
+              "How many rows were used for testing",
+              "The probability of each possible class",
+              "How long the model took to train",
             ],
-            answer_index: 1,
-            explanation: "It averages the size of the errors, here in bags of maize.",
+            answer_index: 0,
+            explanation: "It averages the size of the errors in the target's units, here bags of maize.",
           },
           {
             prompt: "Logistic regression is used for which kind of task?",
             options: [
               "Regression only",
-              "Classification",
               "Clustering",
               "Drawing charts",
+              "Classification",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Despite its name, logistic regression predicts classes and their probabilities.",
           },
           {
@@ -1294,21 +1294,21 @@ Issahaku's model predicts which motorbike loans will default. Training accuracy 
           {
             prompt: "What is the clearest sign of overfitting?",
             options: [
-              "Low scores on both training and test data",
-              "Excellent scores on training data and much worse scores on test data",
-              "The model trains very quickly",
-              "The dataset has many columns",
+              "Low scores on both the training and the test data",
+              "The model finishes training in a few seconds",
+              "High training scores but much lower test scores",
+              "The dataset has a large number of columns",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "A big gap between training and test performance shows the model memorised rather than learned.",
           },
           {
             prompt: "Why should the test set be used only once, at the end?",
             options: [
-              "It is too large to use more often",
-              "Repeatedly checking and adjusting tunes the model to it, so the final score stops being honest",
-              "scikit learn deletes it after one use",
-              "It contains no labels",
+              "It is too large to load into memory more than once",
+              "Repeated checking tunes the model to it, so scores stop being honest",
+              "scikit learn deletes the test set after it is used once",
+              "The test set has no labels until the very end",
             ],
             answer_index: 1,
             explanation: "Keeping the test set locked away keeps the final measurement honest.",
@@ -1316,34 +1316,34 @@ Issahaku's model predicts which motorbike loans will default. Training accuracy 
           {
             prompt: "A model always predicts \"healthy\" when 2 in 100 patients are sick. Why is its accuracy misleading?",
             options: [
+              "It scores 98 percent yet catches no sick patients",
               "Accuracy cannot be calculated for health data",
-              "It is 98 percent accurate yet catches none of the sick patients",
-              "The model is overfitting",
-              "Accuracy only works for regression",
+              "The model is overfitting to the training data",
+              "Accuracy is a measure used only for regression",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "With a rare outcome, accuracy can be high while the model is useless.",
           },
           {
             prompt: "What does recall measure?",
             options: [
-              "How fast the model predicts",
-              "Of the real positive cases, how many the model caught",
-              "Of the flagged cases, how many were real",
-              "The number of features used",
+              "How quickly the model makes a prediction",
+              "The share of flagged cases that were real",
+              "The number of features used by the model",
+              "The share of real positive cases it caught",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Recall is about catching real positives, which matters most when missing a case is costly.",
           },
           {
             prompt: "What does cross validation do?",
             options: [
-              "Removes duplicate rows",
-              "Trains and tests several times on different splits and averages the scores",
-              "Translates the data into another format",
-              "Doubles the size of the dataset",
+              "Removes duplicate rows from the dataset before training",
+              "Converts the data into a format the model can read",
+              "Trains and tests on several splits and averages the scores",
+              "Doubles the size of the dataset by copying rows",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Averaging over several splits gives a steadier estimate than one lucky or unlucky split.",
           },
         ],
@@ -1421,43 +1421,43 @@ Wumpini's first model to predict clinic no shows looks almost perfect. She check
           {
             prompt: "Why should district names not simply be numbered 1, 2 and 3?",
             options: [
-              "Numbers take more memory",
-              "The model would treat the numbers as an order or size that does not exist",
-              "scikit learn cannot read numbers",
-              "Districts are never useful features",
+              "The model would read a false order or size into them",
+              "Numbers use far more memory than text does",
+              "scikit learn is unable to read numeric columns",
+              "District is never a useful feature for a model",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "One hot encoding avoids inventing a false order between categories.",
           },
           {
             prompt: "What is data leakage?",
             options: [
-              "Losing data when a session times out",
-              "Information that would not be available at prediction time getting into the features",
-              "Sharing data with a colleague",
-              "Having too few rows",
+              "Losing your files when a notebook session times out",
+              "Sharing a dataset with a colleague by email",
+              "Having too few rows to train a reliable model",
+              "Features that use information unknown at prediction time",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Leakage makes a model look good in testing and fail in real use.",
           },
           {
             prompt: "Why does the example put the imputer and encoder inside a pipeline?",
             options: [
-              "To make the code longer",
-              "So they learn only from training rows and the same steps run every time",
-              "Because models cannot be trained without a pipeline",
-              "To remove the need for test data",
+              "To make the code longer and easier to grade",
+              "Because models cannot be trained without one",
+              "So they learn only from training rows, every time",
+              "To remove the need for a held out test set",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "Pipelines keep preparation consistent and stop test rows influencing training.",
           },
           {
             prompt: "In Wumpini's example, why was `rescheduled_date` a problem?",
             options: [
-              "It had the wrong format",
-              "It is only filled after a patient misses a visit, so it leaks the answer",
-              "It was a category column",
-              "It had no missing values",
+              "Its dates were stored in the wrong format",
+              "It is only filled after a visit is missed",
+              "It was a category column with many values",
+              "It had no missing values, so it added nothing",
             ],
             answer_index: 1,
             explanation: "The model was using information from after the event it was meant to predict.",
@@ -1465,12 +1465,12 @@ Wumpini's first model to predict clinic no shows looks almost perfect. She check
           {
             prompt: "Which question should you ask of every feature?",
             options: [
-              "Is this column the longest?",
-              "Would I really know this at the moment I need the prediction?",
-              "Does this column have a short name?",
-              "Was this column added last?",
+              "Would I know this when I need the prediction?",
+              "Is this the column with the most unique values?",
+              "Does this column have a short, clear name?",
+              "Was this column added to the file last?",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "This question catches most leakage before it fools you.",
           },
         ],
@@ -1540,21 +1540,21 @@ Clustering always produces groups, even in random data. So treat its output as a
           {
             prompt: "What makes unsupervised learning different from supervised learning?",
             options: [
-              "It needs more labels",
-              "It looks for structure without any answers to learn from",
-              "It only works on images",
-              "It always gives perfect results",
+              "It needs many more labelled examples",
+              "It only works on photos and audio",
+              "It finds structure without labelled answers",
+              "It always gives perfectly stable results",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "There is no target column; the method looks for patterns on its own.",
           },
           {
             prompt: "Why should you scale columns before k means?",
             options: [
-              "Scaling removes missing values",
-              "Otherwise the column with bigger numbers dominates the distance",
-              "k means only accepts text",
-              "Scaling chooses k for you",
+              "Scaling fills in any missing values",
+              "Otherwise bigger numbers dominate distance",
+              "k means only accepts text columns",
+              "Scaling chooses the value of k for you",
             ],
             answer_index: 1,
             explanation: "k means uses distance, so columns need similar ranges to count fairly.",
@@ -1562,24 +1562,1182 @@ Clustering always produces groups, even in random data. So treat its output as a
           {
             prompt: "What does k means not tell you?",
             options: [
+              "What each group actually means",
               "Which group each record belongs to",
-              "Where the group centres are",
-              "What each group means",
+              "Where each group's centre is",
               "How many groups you asked for",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "You interpret the groups yourself by looking at their averages and talking to people who know the data.",
           },
           {
             prompt: "Why does the lesson say to treat clustering results as questions?",
             options: [
-              "Clustering is illegal in Ghana",
-              "Clustering always produces groups, even in random data",
-              "The groups are always wrong",
-              "Questions are easier to code",
+              "Clustering is not allowed on Ghanaian data",
+              "The groups it finds are always wrong",
+              "Questions are easier to put into code",
+              "It always makes groups, even in random data",
+            ],
+            answer_index: 3,
+            explanation: "Groups must be checked for stability and real meaning before anyone acts on them.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "deep-learning": {
+      explanation_md: `## Why deep learning matters
+
+Classic models work well on tables. But some data has no neat columns: a photo of a cassava leaf, a voice note in Dagbani, a paragraph of Twi text, a satellite image of farmland. **Deep learning** is the family of methods that handles this kind of data, and it powers speech recognition, image recognition, translation and the large language models behind modern chat assistants. Ghanaian employers working on speech tools for local languages and on AI products name deep learning libraries such as PyTorch, TensorFlow and Keras in their adverts.
+
+## What makes it "deep"
+
+Deep learning uses **neural networks**: layers of simple units, each taking numbers in, multiplying them by weights, adding them up and passing the result on. "Deep" just means many layers. Early layers learn simple patterns; later layers combine them into complex ones. In an image model, early layers might respond to edges, middle layers to shapes like leaf spots, and the last layers to "healthy" or "diseased".
+
+The important change from classic machine learning is that you no longer have to design every feature by hand. Given enough examples, the network learns useful features from the raw pixels, sounds or text itself.
+
+## The trade offs
+
+Deep learning is powerful but not always the right choice:
+
+* **It needs a lot of data.** Thousands or millions of labelled examples are common. For Ghanaian languages and local problems, that data often does not exist yet, which is both a challenge and an opportunity.
+* **It needs more computing.** Training usually needs a GPU, which is why free hosted notebooks matter for learners.
+* **It is harder to explain.** Saying why a network made a decision is difficult, which matters for loans, health and anything that affects people's lives.
+* **On ordinary tables, classic models often win.** Try a classic model first and use deep learning when the data calls for it.
+
+## A common shortcut: reuse a trained model
+
+Very few people train big networks from scratch. Instead they take a model already trained on a large dataset and **fine tune** it on their smaller, local dataset. A model trained on millions of general photos can be fine tuned on a few thousand photos of maize leaves from farms around Yendi. This is called **transfer learning**, and it is how most practical deep learning gets done, especially where data is scarce.
+
+## A worked example in words
+
+Hawa's team wants to help farmers spot a leaf disease from a photo. They collect a few thousand labelled leaf photos with the farmers' permission, fine tune an existing image model in a free notebook, and test it on photos from farms the model never saw. It works well in good light but struggles with blurry photos taken at dusk, so they add a message asking farmers to retake unclear photos.
+
+## What this section covers
+
+* **Neural networks:** how they work and how to train a small one.
+* **Language, speech and Ghanaian languages:** how text and audio become model inputs.
+* **Large language models and embeddings:** what they are, what they can do and where they fail.`,
+      practice_task_md: `**Goal:** decide when deep learning is the right tool.
+
+1. List five Ghanaian problems where data might be used, such as predicting monthly shop sales, recognising spoken numbers in Dagbani, sorting photos of cassava leaves, flagging unusual mobile money transfers, or summarising long reports.
+2. For each, write the type of data (table, image, audio or text), whether you would start with a classic model or deep learning, and why.
+3. For the deep learning cases, write where the training data could come from, how you would get permission, and whether an existing trained model might be fine tuned.
+
+**Done looks like:** a short table or list covering all five problems, with a reason for each choice. Discuss it with a mentor or study partner.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What kind of data is deep learning especially good at?",
+            options: [
+              "Small spreadsheets with a few clean columns",
+              "Only numbers that fall between 0 and 1",
+              "Data where no examples exist at all",
+              "Images, audio and text without neat columns",
+            ],
+            answer_index: 3,
+            explanation: "Deep learning learns features from raw pixels, sounds and text.",
+          },
+          {
+            prompt: "What does \"deep\" mean in deep learning?",
+            options: [
+              "The model is always very accurate",
+              "The data is stored deep in a database",
+              "The network has many stacked layers",
+              "The code runs to thousands of lines",
+            ],
+            answer_index: 2,
+            explanation: "Deep simply refers to many stacked layers.",
+          },
+          {
+            prompt: "What is transfer learning?",
+            options: [
+              "Moving a dataset from a phone onto a laptop",
+              "Fine tuning an already trained model on local data",
+              "Training a brand new model for every single problem",
+              "Rewriting a model's code in another language",
             ],
             answer_index: 1,
-            explanation: "Groups must be checked for stability and real meaning before anyone acts on them.",
+            explanation: "Reusing a trained model is how most practical deep learning gets done, especially where data is scarce.",
+          },
+          {
+            prompt: "According to the lesson, what should you usually try first for ordinary table data?",
+            options: [
+              "A classic model",
+              "The largest neural network you can find",
+              "A large language model",
+              "Nothing, tables cannot be modelled",
+            ],
+            answer_index: 0,
+            explanation: "On tabular data, classic models are often as good and easier to explain.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "neural-networks": {
+      explanation_md: `## Why this matters
+
+Neural networks sit behind speech recognition, image models and language models. You will rarely design a big one from scratch in your first roles, but you must understand what layers, activations, epochs and loss mean, or every training log and fine tuning guide will look like noise. Ghanaian AI adverts name PyTorch, TensorFlow and Keras for this reason.
+
+## One unit, then a layer
+
+A single unit (often called a neuron) does what you already know from the maths section: a dot product of inputs and weights, plus a bias. Then it applies an **activation function**. The most common is **ReLU**, which keeps positive numbers and turns negatives into zero.
+
+A **layer** is many units side by side, each with its own weights. In matrix terms, a layer is one matrix multiplication followed by the activation.
+
+## Why the activation matters
+
+Without activations, stacking layers is pointless: a chain of straight line calculations is still a straight line. The activation adds a bend. With enough units and layers, those bends let a network fit very complicated patterns.
+
+## Training
+
+Training a network is gradient descent, the same loop from the maths section:
+
+1. **Forward pass:** feed inputs through the layers to get predictions.
+2. **Loss:** measure how wrong they are.
+3. **Backward pass:** the library works out the gradient of the loss for every weight. This step is called **backpropagation**.
+4. **Update:** an **optimiser** such as Adam nudges every weight.
+
+One pass through all the training data is an **epoch**.
+
+## A small network in PyTorch
+
+This predicts whether an invented example farm had an above usual yield, from scaled rainfall and fertiliser values:
+
+\`\`\`python
+import torch
+from torch import nn
+
+X = torch.tensor(X_train, dtype=torch.float32)
+y = torch.tensor(y_train, dtype=torch.float32).reshape(-1, 1)
+
+model = nn.Sequential(nn.Linear(2, 16), nn.ReLU(), nn.Linear(16, 1))
+loss_fn = nn.BCEWithLogitsLoss()
+opt = torch.optim.Adam(model.parameters(), lr=0.01)
+
+for epoch in range(300):
+    opt.zero_grad()
+    loss = loss_fn(model(X), y)
+    loss.backward()
+    opt.step()
+\`\`\`
+
+Reading it: the first layer takes 2 inputs to 16 units, ReLU adds the bend, and the last layer gives one number. \`BCEWithLogitsLoss\` is a loss for yes or no labels. In the loop, \`zero_grad\` clears old gradients, \`backward\` computes new ones and \`step\` updates the weights. Afterwards, \`torch.sigmoid(model(X))\` turns outputs into probabilities from 0 to 1.
+
+## Practical lessons
+
+* **Scale your inputs.** Networks train badly when one feature is in hundreds and another in single digits.
+* **Watch validation loss.** If training loss keeps falling while validation loss rises, the network is overfitting. Stop earlier or use more data.
+* **Start small.** A tiny network that trains is more useful than a huge one that does not.
+* **Compare with a classic model.** On a small table like this, logistic regression may do just as well.`,
+      practice_task_md: `**Goal:** train a small network and compare it with a classic model.
+
+1. On a laptop or desktop, open a free hosted notebook. PyTorch is usually already installed on hosted services; if not, install it.
+2. Create an invented example dataset of 300 farms with rainfall, fertiliser and a yes or no label for above usual yield. Split it, then scale the features with \`StandardScaler\`.
+3. Train the network from the lesson. Every 50 epochs, print the training loss.
+4. Compute accuracy on the test set by turning probabilities above 0.5 into a yes.
+5. Train a \`LogisticRegression\` on the same split and compare accuracies.
+
+**Done looks like:** a notebook with a falling loss log, two test accuracies and a short note saying which model you would use and why.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does the ReLU activation do?",
+            options: [
+              "Doubles every number it receives",
+              "Keeps positives and turns negatives to zero",
+              "Converts the numbers it receives into text",
+              "Removes the bias from every unit",
+            ],
+            answer_index: 1,
+            explanation: "ReLU passes positives through and sets negatives to zero, adding a bend to the calculation.",
+          },
+          {
+            prompt: "Why does a network need activation functions between layers?",
+            options: [
+              "Without them, the layers add up to one straight line",
+              "They make each training step run faster",
+              "They store the training data inside the network",
+              "They choose the learning rate automatically",
+            ],
+            answer_index: 0,
+            explanation: "Activations add the bends that let networks fit complex patterns.",
+          },
+          {
+            prompt: "What is an epoch?",
+            options: [
+              "One weight inside the network",
+              "A type of activation function",
+              "The final accuracy on the test set",
+              "One pass through all the training data",
+            ],
+            answer_index: 3,
+            explanation: "Training usually runs for many epochs.",
+          },
+          {
+            prompt: "In the PyTorch loop, what does `loss.backward()` do?",
+            options: [
+              "Deletes the loss value",
+              "Prints the loss on screen",
+              "Computes every weight's gradient",
+              "Saves the model to a file",
+            ],
+            answer_index: 2,
+            explanation: "This is backpropagation, after which the optimiser updates the weights.",
+          },
+          {
+            prompt: "Training loss keeps falling while validation loss rises. What is happening?",
+            options: [
+              "The network is underfitting",
+              "The network is overfitting",
+              "The learning rate is zero",
+              "The data has no labels",
+            ],
+            answer_index: 1,
+            explanation: "Improving on training data while getting worse on unseen data is overfitting.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "language-and-speech": {
+      explanation_md: `## Why this matters
+
+Ghanaians speak Dagbani, Twi, Ewe, Ga, Dagaare, Gonja and many other languages every day, yet most language technology works best in English. Speech and text tools in local languages could let a farmer in Karaga ask for weather advice by voice, or let a health worker hear guidance in a patient's own language. At least one Ghanaian agritech employer has advertised for engineers to build speech recognition and language models for exactly these low resource languages. It is hard work, and valuable.
+
+## What "low resource" means
+
+Language models learn from huge amounts of text and recorded speech. English has an enormous supply online. Most Ghanaian languages have far less written text, few labelled datasets and limited recorded speech with transcripts. Other complications:
+
+* **Spelling varies.** People write the same word in different ways, especially in WhatsApp messages and social media.
+* **Special letters and tone.** Letters such as ɛ and ɔ appear in Twi, Ewe and Dagbani writing, but many keyboards drop them, so the same word appears with and without them.
+* **Code switching.** People mix English and a local language in one sentence, which confuses models trained on one language at a time.
+
+## Turning text into numbers
+
+Models need numbers, so text is first split into pieces called **tokens**: whole words, parts of words or single characters. Each token gets an ID number, and later a vector. For languages with little data, splitting into **characters or short character sequences** often works better than whole words, because it copes with spelling variation and rare words.
+
+## Turning speech into numbers
+
+Audio is a long list of pressure readings, many thousands per second. Speech models usually convert it into a **spectrogram**, a picture of which frequencies are loud at each moment, and learn from that. A speech recogniser learns to map those pictures to text, which is why it needs many hours of recordings paired with accurate transcripts.
+
+## A worked example: which language is this?
+
+A first project could be **language identification**: given a short message, predict whether it is Dagbani, Twi, Ewe or English. With a few hundred labelled messages per language, a classic model on character sequences is a sensible first approach:
+
+\`\`\`python
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import make_pipeline
+
+model = make_pipeline(
+    TfidfVectorizer(analyzer="char_wb", ngram_range=(1, 3)),
+    LogisticRegression(max_iter=1000))
+model.fit(train_texts, train_labels)
+\`\`\`
+
+Here \`train_texts\` is a list of messages and \`train_labels\` the language of each, from a dataset you collected with permission or an openly licensed one.
+
+## Doing it responsibly
+
+Collect text and voice only with clear consent, explain how it will be used, and remove names and phone numbers. Work with native speakers to check labels and transcripts, and credit the communities whose language you use. African research communities such as Masakhane work openly on language tools for African languages and are a good place to learn and contribute.`,
+      practice_task_md: `**Goal:** plan a small, ethical language dataset.
+
+1. Choose a Ghanaian language you speak well, such as Dagbani, Twi or Ewe.
+2. Write a one page plan to collect 200 short text messages in that language and 200 in English for a language identification model: who you would ask, how you would explain the purpose and get consent, and how you would remove names and phone numbers.
+3. Write ten short sentences yourself in your chosen language, then note any spelling choices (special letters, tone marks, alternative spellings) a model would need to cope with.
+4. If you have a laptop or desktop, try the pipeline from the lesson on your own small labelled set, using sentences you wrote yourself.
+
+**Done looks like:** your consent and collection plan, your ten sentences with spelling notes, and optionally a notebook with a first model. Ask a native speaker to check your sentences.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does it mean that many Ghanaian languages are \"low resource\"?",
+            options: [
+              "Very few people speak them at home today",
+              "Little text, labelled data and transcribed speech exist",
+              "They have no written grammar or spelling at all",
+              "They cannot be typed on any phone or computer",
+            ],
+            answer_index: 1,
+            explanation: "Low resource refers to the shortage of data, not the number of speakers.",
+          },
+          {
+            prompt: "Why can splitting text into characters work better than whole words for these languages?",
+            options: [
+              "It copes better with varied spellings and rare words",
+              "Characters are more accurate than words in every language",
+              "Models are unable to read whole words as input",
+              "It makes the dataset much smaller to download",
+            ],
+            answer_index: 0,
+            explanation: "Character pieces handle the same word spelled in different ways.",
+          },
+          {
+            prompt: "What is a spectrogram?",
+            options: [
+              "A list of the tokens in a sentence",
+              "A type of microphone for recording speech",
+              "A label saying which language was spoken",
+              "A picture of loud frequencies over time",
+            ],
+            answer_index: 3,
+            explanation: "Speech models usually learn from spectrograms rather than raw audio readings.",
+          },
+          {
+            prompt: "What is code switching?",
+            options: [
+              "Changing from one programming language to another",
+              "Encrypting a message before sending it",
+              "Mixing English and a local language in one sentence",
+              "Switching a GPU on and off to save time",
+            ],
+            answer_index: 2,
+            explanation: "Mixed language sentences are common and challenge models trained on one language.",
+          },
+          {
+            prompt: "Which practice does the lesson require when collecting voice or text data?",
+            options: [
+              "Collect as much as possible without asking anyone",
+              "Get consent and remove names and phone numbers",
+              "Use only messages copied from strangers online",
+              "Keep the purpose secret so people speak naturally",
+            ],
+            answer_index: 1,
+            explanation: "People's words and voices are personal data and must be collected with consent and a clear explanation.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "llms-and-embeddings": {
+      explanation_md: `## Why this matters
+
+Large language models (LLMs) power the chat assistants many people now use for writing, summarising and answering questions. Ghanaian employers advertise for engineers who can build applications on them, fine tune them, and design prompts. To do that work well, and safely, you need to understand what these models actually do, because it is not what most people assume.
+
+## What an LLM does
+
+An LLM is a very large neural network trained to do one thing: **predict the next token** of text. Given "The capital of the Northern Region is", it assigns a probability to every possible next token and picks one. Then it adds that token to the text and predicts again, one piece at a time, until it stops.
+
+Trained on enormous amounts of text, this simple task produces models that can answer questions, summarise, translate and write code. Most modern LLMs use a design called the **transformer**, whose key idea, **attention**, lets each token look at every other token in the text to decide what matters for the next prediction.
+
+After this first training, models are usually tuned further on examples of helpful answers and human feedback, which makes them better at following instructions.
+
+## Why LLMs state false things confidently
+
+An LLM predicts text that **sounds** likely. It has no built in way to check facts. When it does not know something, it can still produce fluent, confident text that is wrong. This is often called **hallucination**. It may invent a statistic, a law section, a reference or a person. Everything an LLM produces for real use must be checked, especially anything about health, money or the law.
+
+LLMs also have other limits: knowledge that stops at their training date, weaker performance in low resource languages such as many Ghanaian languages, and biases learned from their training text.
+
+## Embeddings
+
+An **embedding** is a vector of numbers that represents the meaning of a word, sentence or document. Models learn embeddings so that texts with similar meanings get vectors that are close together. "Maize price in Tamale market" and "cost of corn in Tamale" should land near each other even though they share few words.
+
+You measure closeness with **cosine similarity**, which compares the direction of two vectors: close to 1 means very similar, close to 0 means unrelated.
+
+## A worked example: search by meaning
+
+Mariama works for an agricultural NGO with hundreds of advice sheets. Farmers ask questions in many different words. She:
+
+1. Uses an embedding model to turn every advice sheet into a vector, once.
+2. Turns each farmer's question into a vector.
+3. Finds the advice sheets with the highest cosine similarity to the question.
+
+This is **semantic search**. It finds relevant sheets even when the question uses different words from the sheet. If she then gives the best sheets to an LLM and asks it to answer **only** from them, that is called **retrieval augmented generation**. Grounding the answer in trusted documents reduces made up answers, though it does not remove them, so she still tests the answers carefully with real questions.`,
+      practice_task_md: `**Goal:** see embeddings and LLM limits for yourself, using little data.
+
+1. Write ten short questions a farmer, trader or student in your area might ask, in English. Group them by hand into topics.
+2. On a laptop or desktop with a free hosted notebook, use a small, openly available sentence embedding model (for example one listed in the Hugging Face model hub) to embed the questions, then compute cosine similarity between them. Check whether the closest pairs match your hand grouping.
+3. Separately, ask any free chat assistant three factual questions about your district or a Ghanaian law. Check each answer against an official source.
+4. Note which answers were right, wrong or impossible to verify.
+
+**Done looks like:** a notebook or note with your similarity results compared with your grouping, plus your fact check table. Never paste personal data into a chat assistant.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the core task an LLM is trained to do?",
+            options: [
+              "Search the internet for answers",
+              "Check facts against a database",
+              "Translate only English and French",
+              "Predict the next token of text",
+            ],
+            answer_index: 3,
+            explanation: "LLMs generate text one token at a time by predicting what comes next.",
+          },
+          {
+            prompt: "Why can an LLM state false things confidently?",
+            options: [
+              "It is deliberately designed to mislead people",
+              "It only works without an internet connection",
+              "It predicts likely text and cannot check facts",
+              "It always copies its answers from one website",
+            ],
+            answer_index: 2,
+            explanation: "Fluent text is not the same as true text, so outputs must be checked.",
+          },
+          {
+            prompt: "What is an embedding?",
+            options: [
+              "A chat assistant built into an app",
+              "A vector that represents text's meaning",
+              "A spelling checker for local languages",
+              "A file format used for storing images",
+            ],
+            answer_index: 1,
+            explanation: "Texts with similar meanings get embedding vectors that are close together.",
+          },
+          {
+            prompt: "In Mariama's semantic search, how are relevant advice sheets found?",
+            options: [
+              "By comparing embeddings with cosine similarity",
+              "By matching only the exact words in the question",
+              "By picking a few advice sheets at random",
+              "By asking each farmer to search the sheets",
+            ],
+            answer_index: 0,
+            explanation: "Comparing embeddings finds sheets with similar meaning even when the words differ.",
+          },
+          {
+            prompt: "What does retrieval augmented generation do?",
+            options: [
+              "Removes the need to test the answers",
+              "Trains a new language model from scratch",
+              "Guarantees every answer is correct",
+              "Grounds answers in trusted documents",
+            ],
+            answer_index: 3,
+            explanation: "Giving the model trusted documents to answer from reduces made up answers but does not remove them, so testing is still needed.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "building-with-ai": {
+      explanation_md: `## Why this section matters
+
+A model sitting in a notebook helps nobody. Much of the AI work companies hire for is about putting models to work inside real products: a loan app that gives a decision in seconds, a farm advice line that answers questions, a dashboard that flags unusual transactions for a person to check. Adverts in Accra for AI engineers and AI application engineers describe exactly this, often more than inventing new models. Some of the most employable AI skills are therefore software and judgement skills, not only maths.
+
+## Two ways to put AI to work
+
+* **Use a hosted model through an API.** A company runs a large model on its servers, and your app sends text and receives answers over the internet. This is the fastest way to add summarising, translation or question answering, and you pay for what you use.
+* **Serve your own model.** You train a model, such as a credit scoring model in scikit learn, and run it yourself behind a small web API so other software can call it. You control the model and the data, but you are responsible for keeping it running and accurate.
+
+Many real products use both: their own classic model for decisions on internal data, and a hosted language model for working with text.
+
+## What changes when a model meets real users
+
+In a notebook, you control everything. In a product:
+
+* **Inputs are messy.** People type in unexpected ways, leave fields blank and send text in several languages.
+* **Mistakes have consequences.** A wrong answer can cost someone money or give bad health advice.
+* **The world changes.** Prices, seasons and customer habits shift, and a model trained last year slowly gets worse.
+* **Costs are real.** Every API call or server hour costs money.
+* **Data must be protected.** Personal data sent to a model or stored in logs is covered by Ghana's Data Protection Act, 2012 (Act 843).
+
+## A worked example in words
+
+Issahaku's team at a small Tamale startup builds a WhatsApp helper for market traders. It uses a hosted language model to answer questions about stock records, and their own small model to predict which items will run out next week. They test both on real (anonymised) examples before launch, keep phone numbers out of what they send to the API, set a monthly spending limit, and give traders an easy way to reach a person when the bot is unsure.
+
+## What this section covers
+
+* **Building apps with AI APIs:** prompts, testing outputs, costs and private data.
+* **Serving a model:** saving a model, wrapping it in an API and watching it over time.
+* **Fairness, privacy and responsible AI:** checking who a model fails, and protecting the people in your data.
+
+The final lesson in this section is not an extra. In Ghana and everywhere else, responsible use is part of doing the job properly.`,
+      practice_task_md: `**Goal:** design an AI feature on paper before writing any code.
+
+1. Pick a product idea that could help people in your area, such as a clinic appointment reminder that predicts no shows, or a helper that summarises long community meeting notes.
+2. Decide whether it needs a hosted model through an API, your own served model, or both. Write why.
+3. List what could go wrong for real users: messy inputs, wrong answers, changing conditions, costs and personal data.
+4. For each risk, write one practical safeguard, such as a human check, a spending limit or removing names before sending data.
+
+**Done looks like:** a one page design note with your idea, your approach, at least five risks and a safeguard for each. Share it with a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does using a hosted model through an API mean?",
+            options: [
+              "Training a model on your own laptop each time",
+              "Printing model results on paper for users",
+              "Your app calls a model on a provider's servers",
+              "Copying the model's code into your own app",
+            ],
+            answer_index: 2,
+            explanation: "Hosted models run elsewhere and are called over the internet, usually at a cost per use.",
+          },
+          {
+            prompt: "Which is an advantage of serving your own model?",
+            options: [
+              "Someone else keeps it accurate for you",
+              "You control the model and the data",
+              "It never needs updating or checking",
+              "It costs nothing at all to run",
+            ],
+            answer_index: 1,
+            explanation: "Running your own model gives control but also makes you responsible for it.",
+          },
+          {
+            prompt: "Why does a model trained last year slowly get worse in a product?",
+            options: [
+              "Prices, seasons and habits change",
+              "Computers get slower as they age",
+              "Models gradually forget their weights",
+              "Users delete parts of the model",
+            ],
+            answer_index: 0,
+            explanation: "When real conditions shift away from the training data, predictions degrade.",
+          },
+          {
+            prompt: "Which Ghanaian law covers personal data sent to models or stored in logs?",
+            options: [
+              "The Copyright Act",
+              "The Road Traffic Act",
+              "The Labour Act",
+              "The Data Protection Act, 2012 (Act 843)",
+            ],
+            answer_index: 3,
+            explanation: "Act 843 governs how personal data is collected, used and protected.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "ai-apis": {
+      explanation_md: `## Why this matters
+
+Adding AI to an app no longer needs a research team. Hosted model APIs let a small Ghanaian startup add summarising, translation, classification or question answering with a few web requests. Adverts for AI engineers and prompt engineers in Accra ask for exactly this: designing prompts, testing outputs and building them safely into products. Doing it well is a real engineering skill.
+
+## How an AI API works
+
+Your app sends an HTTP request to the provider's server. The request contains your **API key** (a secret that identifies your account), the model name, and your **prompt**: the instructions and text you want the model to work on. The server sends back the model's answer, usually as JSON. Providers charge by the amount of text processed, usually counted in tokens, so long prompts and long answers cost more.
+
+Most providers publish official client libraries for Python and other languages. Use those and follow the provider's own documentation, because model names and options change often.
+
+## Writing good prompts
+
+A prompt is a set of instructions for a capable assistant that knows nothing about your situation. Good prompts:
+
+* **Give context.** Say who the users are and what the output is for: "You help market traders in Tamale understand their stock records."
+* **Are specific about the task and format.** "Summarise in three bullet points of plain English, under 60 words."
+* **Include an example** of a good answer when the format matters.
+* **Say what to do when unsure.** "If the records do not answer the question, say so instead of guessing."
+
+## Test on real examples, not one lucky try
+
+A prompt that works once may fail on the next input. Build a small set of test cases from real (anonymised) examples, with what a good answer must contain, and run them every time you change the prompt or model:
+
+\`\`\`python
+tests = [
+    ("When does the clinic open?", "8am"),
+    ("When does the clinic close?", "4pm"),
+]
+for question, must_contain in tests:
+    answer = ask_model(question)  # your provider call
+    ok = must_contain.lower() in answer.lower()
+    print("PASS" if ok else "FAIL", question)
+\`\`\`
+
+Simple checks like this catch many problems. For subtler qualities, such as tone, have a person review a sample of answers.
+
+## Keep secrets, costs and private data under control
+
+* **Never put an API key in your code** or in a public repository. Load it from an environment variable or a secrets manager. If a key leaks, revoke it at once.
+* **Set spending limits** in the provider's dashboard and log how many requests you make.
+* **Send the least personal data possible.** Remove names, phone numbers and Ghana Card numbers before text leaves your system. Sending personal data to a service abroad needs care under the Data Protection Act, 2012 (Act 843), so check your organisation's data protection rules first.
+* **Read the provider's data terms** to know whether your inputs are stored or used for training.
+
+## A worked example
+
+Amina builds a feature that turns long community meeting notes into short summaries. She writes a clear prompt with context, format and an "if unsure" rule, tests it on twenty anonymised notes, finds it sometimes invents decisions, adds the instruction "only include decisions stated in the notes", and reruns her tests until they pass.`,
+      practice_task_md: `**Goal:** design and test a prompt without spending money.
+
+1. Pick a task, such as summarising a school announcement or sorting customer messages into "order", "complaint" or "question".
+2. Write five realistic test inputs yourself, with no real personal data, and for each write what a good answer must contain.
+3. Write a first prompt using context, task, format, an example and an "if unsure" rule.
+4. Using any free chat assistant, paste your prompt with each test input and record pass or fail.
+5. Improve the prompt once and rerun all five tests.
+
+**Done looks like:** your test set, both prompt versions and a pass or fail table for each. Optionally, on a laptop or desktop, turn the tests into a short Python script like the one in the lesson.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is an API key?",
+            options: [
+              "A secret that identifies your account",
+              "A keyboard shortcut for the editor",
+              "The answer the model sends back",
+              "A special kind of prompt template",
+            ],
+            answer_index: 0,
+            explanation: "The key proves who is calling the API, so it must be kept secret.",
+          },
+          {
+            prompt: "Where should you keep an API key?",
+            options: [
+              "Typed directly into your code",
+              "In a public repository for teammates",
+              "Inside the prompt text itself",
+              "In an environment variable",
+            ],
+            answer_index: 3,
+            explanation: "Keys in code or public repositories leak easily; load them from the environment or a secrets manager.",
+          },
+          {
+            prompt: "Why does the lesson recommend a set of test cases for prompts?",
+            options: [
+              "Providers refuse requests from apps without them",
+              "Running tests makes the API free of charge",
+              "A prompt that works once may fail on other inputs",
+              "Tests remove the need to write a prompt at all",
+            ],
+            answer_index: 2,
+            explanation: "Repeatable tests, rerun after every change, catch failures that one lucky try hides.",
+          },
+          {
+            prompt: "Which practice protects personal data when using an AI API?",
+            options: [
+              "Sending full customer records for better answers",
+              "Removing names and phone numbers before sending",
+              "Posting your test data in a public WhatsApp group",
+              "Skipping the provider's data terms to save time",
+            ],
+            answer_index: 1,
+            explanation: "Send the least personal data possible, including removing Ghana Card numbers, and follow Act 843.",
+          },
+          {
+            prompt: "In Amina's example, what problem did testing reveal?",
+            options: [
+              "Summaries invented decisions",
+              "Her API key had expired",
+              "The meeting notes were too short",
+              "The model refused to answer",
+            ],
+            answer_index: 0,
+            explanation: "Testing showed made up decisions, which she fixed with a clearer instruction.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "serving-models": {
+      explanation_md: `## Why this matters
+
+A model becomes useful when other software can ask it for predictions: a mobile app, a website, a spreadsheet tool or another service. Ghanaian machine learning adverts mention model serving, secure API endpoints, Docker and keeping models working in production. This work sits between data science and software development, and it is a strong skill to show.
+
+## Step one: save the trained model
+
+After training, save the model to a file so you do not retrain it every time. For scikit learn models, \`joblib\` is the usual tool:
+
+\`\`\`python
+import joblib
+joblib.dump(model, "yield_model.joblib")
+\`\`\`
+
+Only load model files you created or fully trust. Loading a file like this can run code inside it, so never load one from an unknown source.
+
+## Step two: wrap it in a web API
+
+A small web framework such as FastAPI turns a Python function into a web address that accepts requests:
+
+\`\`\`python
+import joblib
+import pandas as pd
+from fastapi import FastAPI
+from pydantic import BaseModel
+
+app = FastAPI()
+model = joblib.load("yield_model.joblib")
+
+class Farm(BaseModel):
+    rainfall_mm: float
+    fertiliser_bags: float
+
+@app.post("/predict")
+def predict(farm: Farm):
+    row = pd.DataFrame([farm.model_dump()])
+    return {"yield_bags": round(float(model.predict(row)[0]), 1)}
+\`\`\`
+
+The \`Farm\` class describes the expected input, so a request with missing or non numeric values is rejected automatically before it reaches the model. Other software sends JSON such as rainfall 650 and fertiliser 2, and gets back a predicted yield. You can run it on your computer with a server such as uvicorn and try it in the browser page FastAPI generates.
+
+## Step three: package it
+
+A **container**, built with a tool like Docker, packages the code, the model file and the exact library versions together, so the API runs the same way on your laptop and on a cloud server. This avoids the classic problem of "it worked on my computer".
+
+## Step four: watch it after launch
+
+Serving is not the end. Models get worse over time when the world changes, which is called **drift**. A yield model trained before a drought year, or a credit model trained before prices rose, may slowly become wrong. Good practice:
+
+* **Log** inputs and predictions, without storing more personal data than needed.
+* **Compare** predictions with real outcomes when they arrive, such as the actual harvest.
+* **Watch the inputs** for shifts, such as rainfall values outside anything in the training data.
+* **Retrain** on fresh data on a schedule or when performance drops, and keep the old version so you can roll back.
+* **Secure the endpoint** with authentication so only approved software can call it.
+
+## A worked example
+
+Fuseini serves a yield model for a cooperative's field officers. After one season he compares predictions with real harvests and finds the model overestimates yields in a district hit by late rains. He retrains with the new season's data, records the change, and adds an alert when rainfall inputs fall outside the training range.`,
+      practice_task_md: `**Goal:** serve a small model on your own computer.
+
+1. On a laptop or desktop with Python installed, train a simple scikit learn model on an invented example dataset (for example, yield from rainfall and fertiliser) and save it with \`joblib\`.
+2. Install FastAPI and uvicorn, then create the API from the lesson in a file called \`app.py\`.
+3. Start it with \`uvicorn app:app\` and open the automatic docs page at \`/docs\` on the local address uvicorn prints.
+4. Send three test requests from the docs page, including one with a missing field. Note what happens.
+5. Write three things you would monitor if this model were used by real field officers.
+
+**Done looks like:** screenshots of a successful prediction and a rejected bad request, plus your monitoring list. If you cannot install Python locally, do steps 1 and 5 in a free notebook and write out how you would serve it.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why save a trained model with joblib?",
+            options: [
+              "To make its predictions more accurate",
+              "To share it publicly on social media",
+              "To delete the training data safely",
+              "To reuse it without retraining each time",
+            ],
+            answer_index: 3,
+            explanation: "Saving the model lets the API load it once and serve predictions.",
+          },
+          {
+            prompt: "What safety rule does the lesson give about model files?",
+            options: [
+              "Load any model file you find online",
+              "Model files can never contain code",
+              "Only load model files you trust",
+              "Email model files to every customer",
+            ],
+            answer_index: 2,
+            explanation: "Loading an untrusted model file can run harmful code.",
+          },
+          {
+            prompt: "What does the `Farm` class do in the FastAPI example?",
+            options: [
+              "It trains the model on new farm data",
+              "It checks inputs and rejects bad requests",
+              "It draws a chart of every prediction",
+              "It stores farmers' names and numbers",
+            ],
+            answer_index: 1,
+            explanation: "Input validation stops missing or wrong values reaching the model.",
+          },
+          {
+            prompt: "What is drift?",
+            options: [
+              "A model worsening as the world changes",
+              "A bug in an old Python version",
+              "A way to package code into containers",
+              "A type of neural network layer",
+            ],
+            answer_index: 0,
+            explanation: "When real conditions move away from the training data, predictions degrade.",
+          },
+          {
+            prompt: "Why package a model API in a container?",
+            options: [
+              "To make the model file smaller",
+              "Containers make predictions more accurate",
+              "Containers remove the need for testing",
+              "So it runs the same way everywhere",
+            ],
+            answer_index: 3,
+            explanation: "Packaging code, model and exact library versions together avoids \"it worked on my computer\" problems.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "responsible-ai": {
+      explanation_md: `## Why this matters
+
+Models make or shape decisions about people: who gets a loan, which patients get a follow up call, which job applications a recruiter reads first. A model can be accurate on average and still fail one group badly. Ghanaian AI adverts name fairness, explainability and bias mitigation as skills, and every model that touches personal data in Ghana falls under the Data Protection Act, 2012 (Act 843). Responsible AI is part of the job, not an extra.
+
+## Where unfairness comes from
+
+* **Unrepresentative data.** A credit model trained mostly on city salary earners may score farmers and traders in the north poorly, simply because it saw few of them.
+* **Historical bias.** If past decisions were unfair, a model trained on them learns to repeat them.
+* **Proxies.** Even if you remove a sensitive column, others can stand in for it. A home district or a phone type can act as a proxy for income or ethnicity.
+* **Measurement gaps.** A speech model tested only on Accra accents may fail for speakers from Bawku or Lawra.
+
+## Check results across groups
+
+Never report one overall score and stop. Split your test results by group (region, gender, age band, language) and compare the error rates. Suppose an invented example loan model has good overall accuracy, but when Sumaila breaks it down, it wrongly rejects good borrowers in the Upper West Region far more often than in Greater Accra. The average hid the problem. Fixes might include collecting more representative data, removing proxy features, choosing different thresholds, or deciding the model should not be used for that group at all.
+
+## Explain your model's limits
+
+People affected by a decision deserve a clear explanation. Prefer simpler models where decisions matter a lot, show which features drive predictions, and write down what the model was trained on, what it should and should not be used for, and where it performs worse. A short document like this is often called a **model card**.
+
+## Protecting personal data under Act 843
+
+Act 843 governs how personal data is collected, used and kept, and the Data Protection Commission enforces it. In practice for machine learning work:
+
+* **Collect only what you need** for a stated purpose, and do not reuse data for an unrelated purpose without a lawful basis.
+* **Treat health data with extra care.** The Act classes health information as special personal data, which needs explicit consent or another narrow legal basis. Use aggregated or anonymised data wherever possible.
+* **Keep data accurate and secure.** Limit who can access it, never share raw files on WhatsApp or personal drives, and delete what you no longer need.
+* **Respect people's rights**, such as asking what data you hold about them and correcting it.
+* **Organisations that process personal data must register** with the Data Protection Commission.
+
+Check the Commission's official website for current guidance; this lesson is an introduction, not legal advice.
+
+## A worked example
+
+Hawa builds a model to predict which pregnant women may miss antenatal visits at clinics in Northern Region. She works only with anonymised records the health service approved, checks error rates by district and age group, finds younger women are missed more often, adds features that help, and writes a model card stating the model supports nurses' judgement and never replaces it.`,
+      practice_task_md: `**Goal:** run a simple fairness and privacy check.
+
+1. In a free notebook, create an invented example loan dataset of 400 rows with a \`region\` column (four regions), a few features and a \`repaid\` label. Make one region smaller than the others. Label it as example data.
+2. Train a classifier and report overall accuracy.
+3. Split the test results by region and compare accuracy and the rate of wrongly rejected good borrowers for each.
+4. Write a short model card: what the model is for, what it was trained on, where it performs worse and what it must not be used for.
+5. List which columns in your dataset would count as personal data and how you would protect them.
+
+**Done looks like:** a notebook with per region results, a one page model card and your personal data list.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a proxy feature?",
+            options: [
+              "A feature with many missing values",
+              "A column that stands in for a sensitive one",
+              "The target column the model predicts",
+              "A feature that a pipeline creates",
+            ],
+            answer_index: 1,
+            explanation: "Removing a sensitive column is not enough if others, such as home district standing in for income, carry the same information.",
+          },
+          {
+            prompt: "Why should you split test results by group?",
+            options: [
+              "A good average can hide a group's failures",
+              "To make the test dataset bigger",
+              "Because scikit learn requires it",
+              "To make the model train faster",
+            ],
+            answer_index: 0,
+            explanation: "Comparing error rates across groups reveals problems the average hides.",
+          },
+          {
+            prompt: "How does Act 843 treat health information?",
+            options: [
+              "As public data that anyone may use freely",
+              "It says nothing at all about health data",
+              "As data that only doctors may ever see",
+              "As special personal data needing extra care",
+            ],
+            answer_index: 3,
+            explanation: "Health data needs explicit consent or another narrow legal basis, and anonymised or aggregated data should be used where possible.",
+          },
+          {
+            prompt: "Which body enforces Act 843 in Ghana?",
+            options: [
+              "The Ghana Revenue Authority",
+              "The Electoral Commission",
+              "The Data Protection Commission",
+              "The Ghana Statistical Service",
+            ],
+            answer_index: 2,
+            explanation: "The Data Protection Commission enforces the Act and registers organisations that process personal data.",
+          },
+          {
+            prompt: "What is a model card?",
+            options: [
+              "A payment card for buying AI services",
+              "A short note on a model's purpose and limits",
+              "A graphics card used for training",
+              "A list of the model's passwords",
+            ],
+            answer_index: 1,
+            explanation: "Model cards describe what a model is for, its training data and its limits, so people can use it responsibly.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "getting-hired": {
+      explanation_md: `## Why this section matters
+
+You now know how models are built, tested, served and checked for fairness. The next challenge is convincing someone to pay you to do it. As the first section said honestly, machine learning adverts in Ghana almost always ask for a degree and experience, and entry level machine learning engineer roles are rare. That does not shut you out. It means your evidence has to work harder, and your route in may go through a neighbouring role first.
+
+## What employers want to see
+
+Reading across adverts for data science and machine learning roles, a few things come up again and again:
+
+* **You can take a real problem from data to a working model.** Not a copied tutorial, but a question you framed, data you cleaned and a model you evaluated.
+* **You evaluate honestly.** A baseline, a held out test set, the right measure for the problem, and a clear statement of limits.
+* **You can explain your work** to people who do not know machine learning, in writing and in conversation.
+* **You know the core tools**: Python, pandas, SQL, scikit learn, Git and at least some exposure to a deep learning library.
+* **You can work with others**: clear notebooks, readable code and good habits with data.
+
+## Evidence beats claims
+
+Writing "skilled in machine learning" on a CV proves nothing. A short, public project that shows your thinking proves a lot. That is why this section starts with a portfolio. Two or three well documented projects on Ghanaian or African data, each with a clear question and an honest evaluation, are worth more than a long list of course certificates.
+
+## Planning a realistic route
+
+Think in steps rather than one leap:
+
+1. **Get into data work.** Data analyst, data officer, monitoring and evaluation, or research assistant roles let you handle real data every day.
+2. **Use machine learning where you are.** Find a problem in your workplace that a simple model could help with, and do it properly.
+3. **Build a public record.** Competitions, open source contributions and short write ups show steady growth.
+4. **Move across.** With real projects and references, apply for data science, machine learning or AI application roles, locally or remote.
+
+## A worked example in words
+
+Abdul-Rahman finishes this track while working as a research assistant on a farming survey in Savelugu. He builds a portfolio project predicting maize yields from the survey's anonymised data (with his supervisor's permission), enters two data science competitions focused on African problems, and writes short posts explaining what he learned. When a remote junior data science contract appears, his application links to real work, and he can talk through every decision in the interview.
+
+## What this section covers
+
+* **A machine learning portfolio:** what to build and how to present it.
+* **Routes into AI roles:** stepping stone jobs, remote work, research posts and how to keep growing.`,
+      practice_task_md: `**Goal:** write a twelve month plan into AI work.
+
+1. Write down your current situation: skills, job or studies, computer access and time per week.
+2. Choose one stepping stone role you could apply for in the next six months, and one AI related role you aim for within two years.
+3. List the evidence each role would need: projects, skills and references.
+4. Break the next twelve months into four three month blocks, each with one project or learning goal and one public output, such as a write up or competition entry.
+
+**Done looks like:** a one page plan with your two target roles, the evidence list and four dated blocks. Review it with a mentor every three months.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, what proves your machine learning skill best?",
+            options: [
+              "A long list of online course certificates",
+              "The words \"skilled in machine learning\" on a CV",
+              "The number of libraries you have installed",
+              "A public project showing your full process",
+            ],
+            answer_index: 3,
+            explanation: "Documented projects showing your question, data work, model and honest evaluation prove what claims cannot.",
+          },
+          {
+            prompt: "What is the first step in the realistic route the lesson describes?",
+            options: [
+              "Apply only for senior machine learning roles",
+              "Wait until you have finished a PhD abroad",
+              "Get into data work, such as a data officer job",
+              "Stop learning and apply for every AI job",
+            ],
+            answer_index: 2,
+            explanation: "Data roles give daily practice with real data and chances to use models.",
+          },
+          {
+            prompt: "Which of these is listed as something employers want to see?",
+            options: [
+              "That you have never made a single mistake",
+              "That you can explain your work in plain words",
+              "That you have memorised every algorithm",
+              "That you have used the costliest cloud tools",
+            ],
+            answer_index: 1,
+            explanation: "Clear explanation, in writing and conversation, appears repeatedly in what employers want.",
+          },
+          {
+            prompt: "In the worked example, why was Abdul-Rahman's application strong?",
+            options: [
+              "It linked to real work he could explain",
+              "He had a famous person as his referee",
+              "He sent it to hundreds of jobs at once",
+              "He had paid for a premium online course",
+            ],
+            answer_index: 0,
+            explanation: "Real projects plus the ability to explain every decision made his evidence convincing.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "ml-portfolio": {
+      explanation_md: `## Why this matters
+
+When you have no machine learning job on your CV yet, your portfolio is your experience. A reviewer at a Ghanaian startup or a remote team will spend a few minutes on it. In that time they want to see that you can frame a problem, handle messy data, evaluate honestly and explain clearly. Two or three strong projects beat ten weak ones.
+
+## What makes a strong project
+
+Each project should have:
+
+* **A clear question** that matters to someone: "Can we estimate maize yield per acre from rainfall, fertiliser and planting date, well enough to help a cooperative plan storage?"
+* **Real or realistic data**, with its source and licence stated. Ghanaian or African datasets make your work stand out and show you understand local problems.
+* **A baseline** and at least one model that beats it, or an honest note that none did.
+* **Honest evaluation** on held out data, with a measure that fits the problem and results broken down by group where it matters.
+* **A short write up** at the top: the question, the data, what you did, what you found, the limits, and what you would do next.
+* **Clean, runnable code**, so someone can rerun your notebook from top to bottom.
+
+## Where to find data
+
+* **Open data portals** run by governments, universities and international organisations publish agriculture, health and economic data. Check each dataset's licence.
+* **Competition platforms** such as Zindi, which focuses on African problems, and Kaggle offer real datasets, a clear goal and a public leaderboard. Read each competition's rules on how you may use and share the data.
+* **Data you collect yourself**, with consent and personal details removed, can make the most original project of all.
+
+Never use leaked data, scraped personal profiles or private records without permission. A portfolio built on data you should not have is a warning sign to employers.
+
+## A balanced set of projects
+
+Aim for variety:
+
+1. **A tabular prediction project**, such as yields, prices or loan repayment, with a careful evaluation.
+2. **A text or language project**, such as language identification or classifying messages, ideally including a Ghanaian language.
+3. **An applied project** that serves a model through a small API or uses a hosted model with proper testing.
+
+## Present it well
+
+Put each project in its own public repository with a clear README. Keep data files small or link to the source instead of uploading large files. Add a short summary of each project to a single page you can share, and link to it from your CV.
+
+## A worked example
+
+Mariama's portfolio has three projects: a crop yield model on open agricultural data with results by region, a Twi and English message classifier built with friends who checked the labels, and a small yield prediction API. Each README starts with a five line summary. In interviews she is asked mostly about her limits sections, because they show judgement.`,
+      practice_task_md: `**Goal:** plan and start your first portfolio project.
+
+1. Choose a question that matters to someone in Ghana and write it in one sentence.
+2. Find a dataset for it on an open data portal or a competition platform. Record its source, licence and any rules on use.
+3. Create a public repository with a README containing: the question, the data source and licence, your planned baseline and evaluation measure, and a "limits" heading you will fill in later.
+4. On a laptop or desktop, load the data in a notebook, explore it, and build the baseline.
+
+**Done looks like:** a public repository with a README and a notebook that loads the data and reports a baseline score. Share the link with a mentor for early feedback.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these should every portfolio project include?",
+            options: [
+              "A baseline and honest held out evaluation",
+              "A list of every library you have heard of",
+              "Only the final accuracy number, nothing else",
+              "Private records you collected without asking",
+            ],
+            answer_index: 0,
+            explanation: "A baseline and honest evaluation show you can judge whether a model really works.",
+          },
+          {
+            prompt: "What should you check before using a dataset from a competition platform?",
+            options: [
+              "The colour scheme of the data files",
+              "Whether it is the largest one available",
+              "Nothing, because all data is free to use",
+              "The rules on how you may use the data",
+            ],
+            answer_index: 3,
+            explanation: "Competition data comes with rules on use and sharing that you must follow.",
+          },
+          {
+            prompt: "Why does the lesson warn against leaked or scraped personal data?",
+            options: [
+              "It is usually too large to download",
+              "It always has too many missing values",
+              "It is unethical and worries employers",
+              "It cannot be loaded with pandas",
+            ],
+            answer_index: 2,
+            explanation: "Employers look for judgement, and misusing data shows the opposite.",
+          },
+          {
+            prompt: "In Mariama's interviews, which part of her projects was she asked about most?",
+            options: [
+              "The colours of her charts",
+              "Her sections on limits",
+              "How long her code was",
+              "Which laptop she used",
+            ],
+            answer_index: 1,
+            explanation: "Honest limits sections show the judgement employers value.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "routes-into-ai": {
+      explanation_md: `## Why this matters
+
+You have the skills and a portfolio. Now you need a plan that fits the real job market. In Ghana, machine learning engineer roles mostly ask for degrees and years of experience, and we found no entry level ones. So the smart move is to aim at the roles that are open to you now, and grow into AI work from inside them.
+
+## Stepping stone roles in Ghana
+
+* **Data analyst and data officer roles** at banks, telecoms, NGOs, government agencies and startups. You work with real data daily and can introduce simple models where they help. The [Data Analyst track](/roadmaps/data-analyst) prepares you for these.
+* **Monitoring and evaluation roles** at NGOs and development projects, which involve survey data, analysis and reporting across the northern regions and beyond.
+* **Research assistant posts** at universities, research institutes and survey firms. Some projects involve health, agriculture or language data and machine learning methods. Watch university career pages and research group announcements.
+* **Junior software developer roles**, especially where companies are adding AI features to their products.
+
+## Remote and contract work
+
+Some remote employers welcome applicants based in Africa for data and AI work: data labelling, evaluating model outputs, junior data science contracts and research support. These can build experience and income. Protect yourself:
+
+* **Never pay to apply** or to receive "training" before a job starts.
+* **Check the company** has a real website, real people and a clear contract.
+* **Be careful with personal documents**; share them only once an offer is genuine.
+* **Agree payment terms** in writing, including how you will be paid in Ghana.
+
+## Keep growing in public
+
+* **Competitions** on platforms such as Zindi and Kaggle give practice and a public record.
+* **Open source and research communities** such as Masakhane, which works on African language technology, welcome contributors; you can help with datasets, evaluation and documentation as well as code.
+* **Write short posts** about what you build and learn. Clear writing gets noticed.
+* **Fellowships, internships and research programmes** sometimes open to early career Africans. Read eligibility carefully and apply early.
+
+## Further study
+
+Some AI roles, especially research ones, expect a degree in computer science, statistics, mathematics or engineering, and sometimes a master's. Free university level courses can deepen your knowledge, but if research is your goal, plan for formal study too, and look for scholarships.
+
+## A worked example
+
+Wumpini takes a data officer job with an NGO in Bolgatanga after the Data Analyst track. She uses machine learning to predict which water points are likely to break down, contributes evaluation work to an open African language project in the evenings, and keeps a simple public portfolio. Two years later she moves to a junior data scientist role with a remote team, with real projects and references behind her.
+
+## Your next step
+
+Pick one stepping stone role and one public activity, and start this month. Progress in AI comes from steady, honest work over time.`,
+      practice_task_md: `**Goal:** take three concrete steps toward your first role.
+
+1. Find two current stepping stone adverts (data analyst, monitoring and evaluation, research assistant or junior developer) open to you in Ghana or remotely. Note the skills they ask for in your own words.
+2. Update your CV so it links to your portfolio and lists only skills you can show evidence for.
+3. Choose one public activity, such as a competition, an open source issue or a short blog post, and complete it within a month.
+4. Write a short message to someone already working in data or AI in Ghana, asking one specific question about their route in. Send it only through a channel they use publicly for that purpose.
+
+**Done looks like:** two analysed adverts, an updated CV with a portfolio link, one completed public activity, and one sent question. Review progress with a mentor.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson recommend stepping stone roles?",
+            options: [
+              "ML roles want experience, so you grow in from a related job",
+              "Machine learning work does not exist in Ghana at all",
+              "Stepping stone roles always pay more than AI roles",
+              "AI employers only hire people who worked at NGOs",
+            ],
+            answer_index: 0,
+            explanation: "Entry level machine learning roles were not found, so neighbouring roles are the realistic way in.",
+          },
+          {
+            prompt: "Which of these is a warning sign in a remote job offer?",
+            options: [
+              "A clear written contract",
+              "A company with a real website",
+              "Payment terms agreed in writing",
+              "Being asked to pay before starting",
+            ],
+            answer_index: 3,
+            explanation: "Genuine employers do not charge you to apply or start work.",
+          },
+          {
+            prompt: "How can you contribute to an open African language project, according to the lesson?",
+            options: [
+              "Only by writing complex model code yourself",
+              "By paying a monthly membership fee first",
+              "With datasets, evaluation, documentation or code",
+              "Only once you have completed a PhD",
+            ],
+            answer_index: 2,
+            explanation: "Communities such as Masakhane value many kinds of contribution.",
+          },
+          {
+            prompt: "What does the lesson say about further study for research roles?",
+            options: [
+              "Degrees never matter for any AI role",
+              "Plan for a relevant degree if research is your goal",
+              "Free online courses always replace degrees",
+              "Only medical degrees are accepted for AI research",
+            ],
+            answer_index: 1,
+            explanation: "Some research roles expect a relevant degree and sometimes a master's, so plan formal study and look for scholarships.",
           },
         ],
         pass_threshold: 75,
