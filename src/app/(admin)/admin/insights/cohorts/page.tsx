@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "@/components/ui/link";
-import { DataTable, SectionGrid, rowLinkClass, type Column } from "@/components/ui/layout";
-import { NothingYet, StatTile } from "@/components/insights/charts";
+import { DataTable, rowLinkClass, type Column } from "@/components/ui/layout";
+import { NothingYet, StatTile, StatGrid } from "@/components/insights/charts";
 import type { RowOf } from "@/lib/insights/dashboards";
 import { loadTable } from "@/lib/insights/data";
 import { formatDay } from "@/lib/insights/filters";
@@ -79,7 +79,7 @@ async function Cohorts({ supabase, filters }: InsightsContext) {
         <NothingYet>No cohort runs during this range. Cohorts appear here from their start date to the end of their last week.</NothingYet>
       ) : (
         <>
-          <SectionGrid cols={4} as="dl">
+          <StatGrid>
             <StatTile value={formatCount(t.learners)} label="Active learners" detail={`${cohorts.length} ${cohorts.length === 1 ? "cohort" : "cohorts"}`} />
             <StatTile value={formatRate(t.onTime, t.due)} label="Weeks sent on time" detail={`${formatCount(t.onTime)} of ${formatCount(t.due)} due learner weeks`} />
             <StatTile
@@ -88,7 +88,7 @@ async function Cohorts({ supabase, filters }: InsightsContext) {
               detail={single ? `${formatCount(single.graded)} graded in the range` : "Pick one cohort for its grading time"}
             />
             <StatTile value={formatCount(t.risk)} label="Learners at risk" detail={`${formatCount(t.active)} learners active in the last 7 days`} />
-          </SectionGrid>
+          </StatGrid>
           <Section id="cohorts" title="By cohort" table="cohorts" filters={filters}>
             <DataTable caption="Cohorts" columns={columns} rows={cohorts} rowKey={(c) => c.cohort_id} />
           </Section>

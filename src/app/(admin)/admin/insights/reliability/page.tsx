@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { DataTable, SectionGrid, type Column } from "@/components/ui/layout";
-import { ColumnChart, NothingYet, StatTile } from "@/components/insights/charts";
+import { DataTable, type Column } from "@/components/ui/layout";
+import { ColumnChart, NothingYet, StatTile, StatGrid } from "@/components/insights/charts";
 import type { RowOf } from "@/lib/insights/dashboards";
 import { loadTable } from "@/lib/insights/data";
 import { DEVICES } from "@/lib/insights/filters";
@@ -117,12 +117,12 @@ async function Reliability({ supabase, filters }: InsightsContext) {
 
   return (
     <>
-      <SectionGrid cols={4} as="dl">
+      <StatGrid>
         <StatTile value={formatCount(t.views)} label="Page views" />
         <StatTile value={formatCount(t.server)} label="Server errors" detail={perThousand(t.server, t.views)} />
         <StatTile value={formatCount(t.client)} label="Browser errors" detail={`${perThousand(t.client, t.views)}, from half of sessions`} />
         <StatTile value={formatCount(t.failed)} label="Failed actions" detail="Refused or broken form submissions" />
-      </SectionGrid>
+      </StatGrid>
 
       <div className="grid gap-4 lg:grid-cols-2 xl:gap-6">
         <ColumnChart

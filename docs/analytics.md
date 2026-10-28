@@ -235,3 +235,33 @@ demand (`?days=N`, 1 to 400), unscheduled. Both need `CRON_SECRET` and
   save record the right events and attributes; Do Not Track and the privacy
   switch record nothing; the beacon refuses other sites) and
   `e2e/analytics.spec.ts`.
+
+## 8. Admin insights (issue #243)
+
+Nine dashboards under `/admin/insights` (overview, funnel, retention,
+learning, feature use, DMP cohorts, mentors and Earn, community,
+reliability). Pages: `src/app/(admin)/admin/insights/*`; registry of
+dashboards and exportable tables: `src/lib/insights/dashboards.ts`.
+
+- **Access.** Every page calls `requireAdmin` in its Suspense island (404 for
+  everyone else). Data comes only from `public.admin_insights_*` functions
+  (migration `20261029250000_admin_insights.sql`): security definer,
+  `search_path = ''`, `private.insights_guard` refuses non admins (42501) and
+  ranges over 400 days (22023). pgTAP: `admin_insights.test.sql`.
+- **Sources.** Event counts read the rollups; distinct people (DAU, WAU, MAU,
+  funnel steps, retention, feature users) and Web Vitals p75 read raw
+  `public.events` (actors and percentiles cannot be added across rows or
+  days). Learning, cohorts, Earn and community read the domain tables.
+- **Filters.** URL search params: `range` (7, 30, 90 or `custom` with `from`
+  and `to`), `track`, `region`, `chapter`, `cohort`, `device`
+  (`src/lib/insights/filters.ts`). Each dashboard shows only the filters it
+  supports; every function takes the same seven arguments.
+- **Export.** `GET /admin/insights/export?table=<key>&<filters>` returns the
+  table's rows as CSV (admin checked, 404 otherwise). The at risk list carries
+  display names only, as the admin cohort page does.
+- **Small numbers.** Rates, medians and percentiles under `MIN_SAMPLE` (5)
+  cases read "Not enough data yet" (`src/lib/insights/metrics.ts`); a
+  retention week that has not ended is "Not yet", never zero.
+- **Not collected yet.** Acquisition source (referrer or campaign) and
+  attendance at live cohort sessions; the dashboards say so instead of
+  estimating.

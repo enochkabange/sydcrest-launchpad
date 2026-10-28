@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { DataTable, SectionGrid, type Column } from "@/components/ui/layout";
-import { BarList, ColumnChart, NothingYet, StatTile } from "@/components/insights/charts";
+import { DataTable, type Column } from "@/components/ui/layout";
+import { BarList, ColumnChart, NothingYet, StatTile, StatGrid } from "@/components/insights/charts";
 import type { RowOf } from "@/lib/insights/dashboards";
 import { loadTable } from "@/lib/insights/data";
 import { MIN_SAMPLE, enough, formatCount, formatRate, formatShare } from "@/lib/insights/metrics";
@@ -81,12 +81,12 @@ async function Learning({ supabase, filters }: InsightsContext) {
 
   return (
     <>
-      <SectionGrid cols={4} as="dl">
+      <StatGrid>
         <StatTile value={formatCount(totals.started)} label="Topics started" />
         <StatTile value={formatCount(totals.done)} label="Topics done" />
         <StatTile value={formatRate(totals.passed, totals.attempted)} label="Quiz pass rate" detail={`${formatCount(totals.passed)} of ${formatCount(totals.attempted)} quiz topics`} />
         <StatTile value={formatCount(rev.sessions)} label="Reviews completed" detail={`${formatRate(rev.correct, rev.questions)} of answers correct`} />
-      </SectionGrid>
+      </StatGrid>
 
       <div className="grid gap-8 lg:grid-cols-2 lg:gap-10">
         <Section id="pass" title="Quiz pass rate by roadmap" lead={`Lowest first. Roadmaps with fewer than ${MIN_SAMPLE} quiz topics attempted are left out.`} table="roadmaps" filters={filters}>

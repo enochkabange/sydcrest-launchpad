@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { DataTable, SectionGrid, type Column } from "@/components/ui/layout";
-import { ColumnChart, NothingYet, StatTile } from "@/components/insights/charts";
+import { DataTable, type Column } from "@/components/ui/layout";
+import { ColumnChart, NothingYet, StatTile, StatGrid } from "@/components/insights/charts";
 import type { RowOf } from "@/lib/insights/dashboards";
 import { loadRow, loadTable } from "@/lib/insights/data";
 import { formatCount, formatHours, formatRate } from "@/lib/insights/metrics";
@@ -40,24 +40,24 @@ async function Earn({ supabase, filters }: InsightsContext) {
         <h2 id="mentors-heading" className="text-subtitle text-content">
           Mentors and bookings
         </h2>
-        <SectionGrid cols={4} as="dl">
+        <StatGrid>
           <StatTile value={formatCount(e.bookings_requested)} label="Booking requests" detail={`${formatCount(e.bookings_completed)} completed so far`} />
           <StatTile value={formatRate(e.bookings_accepted, e.bookings_requested)} label="Accepted" detail={`${formatCount(e.bookings_accepted)} accepted, ${formatCount(e.bookings_declined)} declined`} />
           <StatTile value={formatHours(e.booking_response_hours, e.booking_responses)} label="Median time to respond" detail="From request to accept or decline" />
           <StatTile value={formatCount(e.experts_listed)} label="Experts listed" detail={`${formatCount(e.experts_approved)} approved in the range`} />
-        </SectionGrid>
+        </StatGrid>
       </section>
 
       <section aria-labelledby="briefs-heading" className="flex flex-col gap-3">
         <h2 id="briefs-heading" className="text-subtitle text-content">
           Briefs, pitches and outcomes
         </h2>
-        <SectionGrid cols={4} as="dl">
+        <StatGrid>
           <StatTile value={formatCount(e.briefs_posted)} label="Briefs posted" detail={`${formatCount(e.briefs_awarded)} awarded`} />
           <StatTile value={formatCount(e.pitches_submitted)} label="Pitches sent" detail={`${formatRate(e.pitches_accepted, e.pitches_submitted)} accepted`} />
           <StatTile value={formatHours(e.pitch_decision_hours, e.pitches_decided)} label="Median time to decide a pitch" />
           <StatTile value={formatCount(e.outcomes_verified)} label="Outcomes verified" detail={`${formatCount(e.outcomes_reported)} reported in the range`} />
-        </SectionGrid>
+        </StatGrid>
       </section>
 
       <div className="grid gap-4 lg:grid-cols-3 xl:gap-6">

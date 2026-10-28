@@ -213,12 +213,17 @@ export function BarList({ label, bars, format = formatCount }: { label: string; 
   );
 }
 
+/** Headline numbers: two across on phones (as on the North Star page), four from lg. */
+export function StatGrid({ children }: { children: ReactNode }) {
+  return <dl className="grid grid-cols-2 gap-3 lg:grid-cols-4 xl:gap-6">{children}</dl>;
+}
+
 /** A headline number. */
 export function StatTile({ value, label, detail }: { value: string; label: string; detail?: string }) {
   return (
     <div className="flex min-w-0 flex-col gap-1 rounded-lg border border-line bg-surface p-4 xl:p-5">
       <dt className="order-2 text-sm font-semibold text-content">{label}</dt>
-      <dd className="order-1 text-h2 text-content tabular-nums">{value}</dd>
+      <dd className={`order-1 text-content tabular-nums ${value.length > 9 ? "text-subtitle" : "text-h2"}`}>{value}</dd>
       {detail && <dd className="order-3 text-sm text-content-2">{detail}</dd>}
     </div>
   );

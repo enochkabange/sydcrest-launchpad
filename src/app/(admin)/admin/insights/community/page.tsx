@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { DataTable, SectionGrid, type Column } from "@/components/ui/layout";
-import { ColumnChart, NothingYet, StatTile } from "@/components/insights/charts";
+import { DataTable, type Column } from "@/components/ui/layout";
+import { ColumnChart, NothingYet, StatTile, StatGrid } from "@/components/insights/charts";
 import type { RowOf } from "@/lib/insights/dashboards";
 import { loadRow, loadTable } from "@/lib/insights/data";
 import { formatCount, formatRate } from "@/lib/insights/metrics";
@@ -45,12 +45,12 @@ async function Community({ supabase, filters }: InsightsContext) {
 
   return (
     <>
-      <SectionGrid cols={4} as="dl">
+      <StatGrid>
         <StatTile value={formatCount(c.posts)} label="Posts" detail={`${formatCount(c.posters)} people posted or replied`} />
         <StatTile value={formatCount(c.replies)} label="Replies" detail={`${formatCount(c.reactions)} reactions`} />
         <StatTile value={formatCount(c.rsvps_going)} label="RSVPs" detail={`${formatCount(c.events_held)} events in the range`} />
         <StatTile value={formatCount(c.checkins)} label="Check ins" detail={`${formatRate(c.checkins, c.rsvps_going)} of RSVPs`} />
-      </SectionGrid>
+      </StatGrid>
 
       <div className="grid gap-4 lg:grid-cols-2 xl:gap-6">
         <ColumnChart title="Posts" valueLabel="Posts" points={daily.map((d) => ({ x: d.day, y: d.posts }))} actions={csv} />

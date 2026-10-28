@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "@/components/ui/link";
-import { AutoGrid, SectionGrid } from "@/components/ui/layout";
-import { ColumnChart, StatTile } from "@/components/insights/charts";
+import { AutoGrid } from "@/components/ui/layout";
+import { ColumnChart, StatTile, StatGrid } from "@/components/insights/charts";
 import { DASHBOARDS } from "@/lib/insights/dashboards";
 import { loadRow, loadTable } from "@/lib/insights/data";
 import { formatDay } from "@/lib/insights/filters";
@@ -30,7 +30,7 @@ async function Overview({ supabase, filters }: InsightsContext) {
         <h2 id="headline-heading" className="text-subtitle text-content">
           Headline numbers
         </h2>
-        <SectionGrid cols={4} as="dl">
+        <StatGrid>
           <StatTile value={formatCount(h.dau)} label="Active that day" detail={`Signed in people on ${endLabel}`} />
           <StatTile value={formatCount(h.wau)} label="Active in 7 days" detail={`The week to ${endLabel}`} />
           <StatTile value={formatCount(h.mau)} label="Active in 30 days" detail={`Daily share of monthly: ${formatRate(h.dau, h.mau)}`} />
@@ -50,7 +50,7 @@ async function Overview({ supabase, filters }: InsightsContext) {
               </Link>
             </dd>
           </div>
-        </SectionGrid>
+        </StatGrid>
       </section>
 
       <section aria-labelledby="trends-heading" className="flex flex-col gap-3">

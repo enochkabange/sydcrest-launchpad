@@ -29,7 +29,8 @@ test("admins read every dashboard with exact numbers and download CSV; learners 
   // Once: rebuilding the rollups from two projects at the same time could count a day twice.
   test.skip(testInfo.project.name !== "desktop", "Seeds and rebuilds the rollups once; the phone layout is checked below.");
   test.setTimeout(240_000);
-  const back = 300;
+  // Far enough back that no other spec (or local demo data) has events that day, inside the 13 month retention.
+  const back = 380;
   const day = new Date(Date.now() - back * DAY_MS).toISOString().slice(0, 10);
   const at = (h: number) => `${day}T${String(h).padStart(2, "0")}:00:00Z`;
   const tag = crypto.randomUUID().slice(0, 8);
@@ -46,7 +47,7 @@ test("admins read every dashboard with exact numbers and download CSV; learners 
   });
   const events = [
     visitor(1, "mobile"), visitor(2, "mobile"), visitor(3, "mobile"), visitor(4, "desktop"), visitor(5, "desktop"),
-    { name: "signup", profile_id: learner.id, session_id: crypto.randomUUID(), props: { method: "email" }, created_at: at(10), device_class: "mobile", signed_in: true, primary_role: "learner", route: "/signup", source: "server" },
+    { name: "signup", profile_id: learner.id, session_id: crypto.randomUUID(), props: { method: "email" }, created_at: at(10), device_class: "mobile", signed_in: true, primary_role: "learner", route, source: "server" },
     ...[1, 2, 3, 4].map(() => ({
       name: "booking_requested", profile_id: learner.id, session_id: crypto.randomUUID(), props: {}, created_at: at(11),
       device_class: "mobile", signed_in: true, primary_role: "learner", route, source: "server",
@@ -99,8 +100,8 @@ test("admins read every dashboard with exact numbers and download CSV; learners 
     await test.step("DMP cohorts and the at risk export", async () => {
       await page.goto(`/admin/insights/cohorts?cohort=${cohort.id}`);
       await settled(page);
-      await expect(page.locator("tr").filter({ hasText: `Insights cohort ${tag}` })).toBeVisible();
-      await expect(page.locator("tr").filter({ hasText: learner.name })).toBeVisible();
+      await expect(page.getByRole("region", { name: "By cohort" }).locator("tr").filter({ hasText: `Insights cohort ${tag}` })).toBeVisible();
+      await expect(page.getByRole("region", { name: "Learners at risk" }).locator("tr").filter({ hasText: learner.name })).toBeVisible();
 
       const href = await page.getByRole("link", { name: "Download CSV" }).last().getAttribute("href");
       expect(href).toContain("table=at_risk");
