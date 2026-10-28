@@ -80,7 +80,7 @@ $$;
 
 revoke execute on function private.guard_auth_date_of_birth() from public, anon, authenticated;
 
-drop trigger if exists guard_date_of_birth on auth.users;
+drop trigger if exists guard_date_of_birth on auth.users; -- allow-destructive: replaces this PR's own trigger if the earlier copy ran on staging (version 20261029170000)
 create trigger guard_date_of_birth
   before insert or update of raw_user_meta_data on auth.users
   for each row execute function private.guard_auth_date_of_birth();
