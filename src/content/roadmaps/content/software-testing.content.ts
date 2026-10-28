@@ -59,7 +59,7 @@ Read each lesson, do the practice task, and keep everything you produce in one f
             options: [
               "Comparing what software does with what people need and reporting the gaps",
               "Writing the code for new features",
-              "Designing logos and screens for an app",
+              "Designing the logos, screens and colours of an app so customers enjoy using it",
               "Selling software to customers",
             ],
             answer_index: 0,
@@ -150,7 +150,7 @@ Employers look for attention to detail, clear writing, curiosity, patience and g
             options: [
               "He asked what should happen if one friend's payment failed, before coding started",
               "He fixed the payment code himself",
-              "He wrote an automated test for every screen",
+              "He wrote an automated test for every single screen before the developers had started any work",
               "He changed the release date",
             ],
             answer_index: 0,
@@ -171,7 +171,7 @@ Employers look for attention to detail, clear writing, curiosity, patience and g
           {
             prompt: "Why should you read the location rules on a remote testing advert?",
             options: [
-              "Remote roles never accept applicants from Africa",
+              "Remote roles never accept applicants based anywhere in Africa",
               "Many remote roles are limited to certain countries",
               "Location rules decide the salary",
               "Remote adverts always require relocation",
@@ -184,7 +184,7 @@ Employers look for attention to detail, clear writing, curiosity, patience and g
             options: [
               "Setting the company's prices",
               "Hiring new developers",
-              "Managing the office budget",
+              "Managing the office budget and approving staff expenses each month",
               "Confirming that a bug fix works and nothing nearby broke",
             ],
             answer_index: 3,
@@ -250,7 +250,7 @@ The ISTQB Foundation syllabus, in its chapters on fundamentals and on testing th
               "Early bugs are more interesting",
               "Fixing a problem in a written plan costs far less than fixing it after release",
               "Developers prefer to work on old code",
-              "Early testing removes the need for later testing",
+              "Early testing removes the need for any later testing, so releases can go out much faster",
             ],
             answer_index: 1,
             explanation:
@@ -259,7 +259,7 @@ The ISTQB Foundation syllabus, in its chapters on fundamentals and on testing th
           {
             prompt: "Since you can never test everything, how do testers decide what to test?",
             options: [
-              "They test features in alphabetical order",
+              "They test features in alphabetical order, one per day, so that nothing is ever forgotten",
               "They test only what developers ask for",
               "They pick features at random",
               "They focus on the most important features and where failure would hurt most",
@@ -276,7 +276,7 @@ The ISTQB Foundation syllabus, in its chapters on fundamentals and on testing th
           {
             prompt: "In Hawa's example, what did acceptance testing reveal?",
             options: [
-              "The fee function returned the wrong number",
+              "The fee function returned the wrong number for large sales",
               "The server did not respond",
               "The app crashed on one phone",
               "Shop owners found the fee text hard to find",
@@ -290,7 +290,7 @@ The ISTQB Foundation syllabus, in its chapters on fundamentals and on testing th
               "The app has no bugs",
               "Testing is finished forever",
               "Say what you checked, because passing tests cannot prove no bugs remain",
-              "The developers made no mistakes",
+              "The developers made no mistakes, so the app can be released without further checks",
             ],
             answer_index: 2,
             explanation: "Tests show problems exist; they cannot prove there are none, so report what was checked.",
@@ -358,7 +358,7 @@ A phone or computer, a free notes app or spreadsheet, and any public app or webs
           {
             prompt: "What are people better at than automated checks?",
             options: [
-              "Repeating the same check thousands of times",
+              "Repeating the exact same check thousands of times without getting tired or bored",
               "Running tests overnight",
               "Noticing a confusing label or a flow that makes no sense to a new user",
               "Checking every possible input",
@@ -371,7 +371,7 @@ A phone or computer, a free notes app or spreadsheet, and any public app or webs
             options: [
               "Automation is not allowed until a manager approves",
               "Someone must work out what the check should be before it can be automated",
-              "Manual testing is faster than automation",
+              "Manual testing is always faster than automation, so teams do it first to save time and money",
               "Automated tests cannot run on websites",
             ],
             answer_index: 1,
@@ -382,7 +382,7 @@ A phone or computer, a free notes app or spreadsheet, and any public app or webs
             options: [
               "The page showed Success even though no account was created",
               "The logo was the wrong colour",
-              "The password field accepted long passwords",
+              "The password field accepted very long passwords of over a hundred characters",
               "The page loaded in a different language",
             ],
             answer_index: 0,
@@ -461,7 +461,7 @@ Write the expected result first. It is your promise of what correct looks like.`
             options: [
               "A test that always fails",
               "A test that checks the software handles invalid input safely",
-              "A test written by an unhappy tester",
+              "A test written by an unhappy tester to prove the developers made mistakes",
               "A test that is skipped",
             ],
             answer_index: 1,
@@ -471,7 +471,7 @@ Write the expected result first. It is your promise of what correct looks like.`
             prompt: "Why should preconditions be written down?",
             options: [
               "Because they make the test case longer",
-              "So developers can skip reading the steps",
+              "So developers can skip reading the steps and jump straight to the result they need to check",
               "Because tools require them",
               "So results do not differ between testers who start from different states",
             ],
@@ -483,7 +483,7 @@ Write the expected result first. It is your promise of what correct looks like.`
             options: [
               "Sending 50 cedis to a valid number",
               "Entering an amount larger than the wallet balance",
-              "Checking the balance after a transfer",
+              "Checking the balance on the home screen after a transfer",
               "Opening the app",
             ],
             answer_index: 1,
@@ -493,7 +493,7 @@ Write the expected result first. It is your promise of what correct looks like.`
             prompt: "Why write the expected result before running the test?",
             options: [
               "It is faster to type",
-              "Because tools hide the actual result",
+              "Because testing tools hide the actual result until you have typed an expected one",
               "Developers write the actual result",
               "So you are not tempted to accept whatever happened as correct",
             ],
@@ -575,7 +575,7 @@ Abdul-Rahman tests an airtime top up screen with a range of 1 to 500 cedis. Usin
           {
             prompt: "What is the idea behind equivalence partitioning?",
             options: [
-              "Test every possible value in the range",
+              "Test every possible value in the range, one by one, so that no group of inputs is ever missed out",
               "Split inputs into groups that should behave the same and test one value from each group",
               "Only test values the developer suggests",
               "Test the same value many times",
@@ -587,7 +587,7 @@ Abdul-Rahman tests an airtime top up screen with a range of 1 to 500 cedis. Usin
             prompt: "When is a decision table most useful?",
             options: [
               "When the result depends on combinations of conditions",
-              "When a page has only one button",
+              "When a page has only one button and a single text field",
               "When checking spelling",
               "When writing a bug title",
             ],
@@ -596,7 +596,7 @@ Abdul-Rahman tests an airtime top up screen with a range of 1 to 500 cedis. Usin
           },
           {
             prompt: "In Abdul-Rahman's example, which test found the bug?",
-            options: ["Entering 1 cedi", "Entering letters", "Entering exactly 500 cedis", "Entering 250 cedis"],
+            options: ["Entering 1 cedi", "Entering letters", "Entering exactly 500 cedis", "Entering 250 cedis, which is half the limit"],
             answer_index: 2,
             explanation: "The valid upper boundary of 500 was wrongly rejected.",
           },
@@ -605,7 +605,7 @@ Abdul-Rahman tests an airtime top up screen with a range of 1 to 500 cedis. Usin
             options: [
               "Typing a very long name",
               "Checking text contrast",
-              "Entering a decimal amount",
+              "Entering a decimal amount such as 12.50 cedis in the payment box",
               "Trying to cancel an order that has already been delivered",
             ],
             answer_index: 3,
@@ -675,7 +675,7 @@ A screen recording, which most phones and computers can make for free, is the be
           {
             prompt: "What is a charter in exploratory testing?",
             options: [
-              "A contract signed with the client",
+              "A contract signed with the client that lists every test to be run in a session",
               "A list of all the developers",
               "A one line mission saying what to explore and what to look for",
               "A tool that records the screen",
@@ -709,7 +709,7 @@ A screen recording, which most phones and computers can make for free, is the be
             prompt: "What should you do with a bug found during exploring?",
             options: [
               "Report it and consider turning it into a new test case",
-              "Keep it secret until the next session",
+              "Keep it secret until the next session so you can check it again first",
               "Delete your notes",
               "Ask the user to find it again",
             ],
@@ -797,7 +797,7 @@ Most teams log bugs in an issue tracker such as Jira, GitHub Issues or a shared 
               "They mean the same thing",
               "Severity is decided by customers; priority by testers",
               "Severity is how bad the effect is; priority is how soon the team should fix it",
-              "Priority is about the device; severity is about the browser",
+              "Priority is about which device the bug appears on; severity is about which browser shows it",
             ],
             answer_index: 2,
             explanation: "A minor issue can still be high priority, for example before a launch.",
@@ -808,7 +808,7 @@ Most teams log bugs in an issue tracker such as Jira, GitHub Issues or a shared 
               "The weather on the day of testing",
               "Device model, operating system and browser or app versions",
               "The developer's name",
-              "The tester's opinion of the design",
+              "The tester's opinion of the design and which colours should be changed",
             ],
             answer_index: 1,
             explanation: "Environment details help developers reproduce the problem on the same setup.",
@@ -819,7 +819,7 @@ Most teams log bugs in an issue tracker such as Jira, GitHub Issues or a shared 
               "Parents may think they paid for the wrong child",
               "The page was slow",
               "The colour was wrong",
-              "It only happened once",
+              "It happened only once, on the slowest phone in the office",
             ],
             answer_index: 0,
             explanation: "Showing the wrong child's name on a payment has a serious effect on users.",
@@ -829,7 +829,7 @@ Most teams log bugs in an issue tracker such as Jira, GitHub Issues or a shared 
             options: [
               "Reproduce it at least twice and look for the shortest steps",
               "Report it immediately without checking",
-              "Combine it with other bugs into one report",
+              "Combine it with other bugs into one report so developers have fewer tickets",
               "Ask the customer to report it",
             ],
             answer_index: 0,
@@ -891,7 +891,7 @@ Hawa tests a savings app. On her laptop browser the website looks perfect. On a 
             options: [
               "The app's icon",
               "A type of phone screen",
-              "The company's marketing plan",
+              "The company's marketing plan for its website and mobile app launch",
               "The set of rules the website and app use to talk to the server",
             ],
             answer_index: 3,
@@ -912,7 +912,7 @@ Hawa tests a savings app. On her laptop browser the website looks perfect. On a 
           {
             prompt: "In Hawa's example, which bug did the screen hide?",
             options: [
-              "The Save button under the keyboard",
+              "The Save button hidden under the phone's keyboard",
               "The website colours",
               "The API accepting a negative savings amount",
               "A slow loading page",
@@ -924,7 +924,7 @@ Hawa tests a savings app. On her laptop browser the website looks perfect. On a 
             prompt: "Why does knowing the layers help your bug reports?",
             options: [
               "It makes reports longer",
-              "Developers only read reports about the API",
+              "Developers only read reports that mention the API layer",
               "It removes the need for steps to reproduce",
               "You can say where the problem seems to live",
             ],
@@ -1005,7 +1005,7 @@ You need a laptop or desktop computer with Chrome, Edge or Firefox for steps 2 t
               "Device mode only works at night",
               "Real phones show the Console",
               "Device mode is a simulation and may not match a real phone exactly",
-              "Developers do not accept screenshots",
+              "Developers do not accept screenshots taken in device mode as evidence of a bug",
             ],
             answer_index: 2,
             explanation: "Device mode simulates screen sizes; important bugs should be confirmed on real devices.",
@@ -1013,7 +1013,7 @@ You need a laptop or desktop computer with Chrome, Edge or Firefox for steps 2 t
           {
             prompt: "What does the throttling menu let you do?",
             options: [
-              "Change the website's colours",
+              "Change the website's colours to test contrast",
               "Delete the browser history",
               "Translate the page",
               "Simulate a slower connection such as 3G",
@@ -1026,7 +1026,7 @@ You need a laptop or desktop computer with Chrome, Edge or Firefox for steps 2 t
             options: [
               "It is faster to type in",
               "So you are not seeing an old cached copy of the page",
-              "Private windows show more errors",
+              "Private windows show more errors in the Console than normal ones",
               "Developers require it",
             ],
             answer_index: 1,
@@ -1096,7 +1096,7 @@ You need an Android phone for the developer options steps. If you use an iPhone,
               "Full phones run apps faster",
               "Storage does not affect apps",
               "Apps may fail to install, update or save on them",
-              "App stores block full phones",
+              "App stores block phones with full storage from downloading any new apps",
             ],
             answer_index: 2,
             explanation: "Low storage is common on budget phones and causes install and save failures.",
@@ -1106,7 +1106,7 @@ You need an Android phone for the developer options steps. If you use an iPhone,
             options: [
               "Restart the phone three times",
               "Download a special app",
-              "Hold the power button for a minute",
+              "Hold the power button for a full minute until a menu appears",
               "Tap Build number seven times in About phone",
             ],
             answer_index: 3,
@@ -1116,7 +1116,7 @@ You need an Android phone for the developer options steps. If you use an iPhone,
             prompt: "What does the Show taps setting do?",
             options: [
               "Draws a dot where you touch, making recordings clearer",
-              "Counts how many apps are installed",
+              "Counts how many apps are installed and how often each one is opened",
               "Shows hidden files",
               "Speeds up the screen",
             ],
@@ -1127,7 +1127,7 @@ You need an Android phone for the developer options steps. If you use an iPhone,
             prompt: "Why did Fuseini's bug never appear on the developer's phone?",
             options: [
               "The developer used a different language",
-              "The developer's phone had no WhatsApp",
+              "The developer's phone had no WhatsApp installed, so the app never had to share the screen",
               "The bug only happens on Fridays",
               "The developer's new phone had plenty of memory, so the screen was not closed",
             ],
@@ -1139,7 +1139,7 @@ You need an Android phone for the developer options steps. If you use an iPhone,
             options: [
               "Use a friend's account",
               "Ask for a test account or test environment instead of using real funds",
-              "Send large amounts to check limits",
+              "Send large amounts of real money from your own account to check the limits work",
               "Use any account you can find",
             ],
             answer_index: 1,
@@ -1255,7 +1255,7 @@ A laptop or desktop computer is strongly recommended for this task. The requests
             options: [
               "Any company's API you can find",
               "Practice APIs or your employer's test environment, where you have permission",
-              "Bank APIs using real accounts",
+              "Bank APIs using real accounts, since those show how the system behaves for real customers",
               "Government systems",
             ],
             answer_index: 1,
@@ -1315,7 +1315,7 @@ Write accessibility and usability findings as bug reports with steps, device set
             prompt: "Why is showing errors only in red a problem?",
             options: [
               "Red uses more battery",
-              "Red is not allowed on websites",
+              "Red is not allowed on websites by accessibility law in most countries",
               "Red text loads slowly",
               "Colour blind users may miss them without text or an icon",
             ],
@@ -1336,7 +1336,7 @@ Write accessibility and usability findings as bug reports with steps, device set
           {
             prompt: "When watching someone use a product for a usability check, what should you do?",
             options: [
-              "Tell them each step to take",
+              "Tell them each step to take so they can finish the task quickly without getting confused",
               "Watch quietly and note where they get stuck, helping only if asked",
               "Complete the task for them",
               "Leave the room",
@@ -1406,7 +1406,7 @@ Remote testing roles work the same way, but almost everything happens in writing
           {
             prompt: "How do most software teams organise work today?",
             options: [
-              "One large build for a year, then testing at the end",
+              "One large build for a whole year, then all of the testing at the end before release day",
               "Short cycles of planning, building, testing and releasing that repeat",
               "Testing only after customers complain",
               "Developers and testers working in separate companies",
@@ -1418,7 +1418,7 @@ Remote testing roles work the same way, but almost everything happens in writing
             prompt: "What is an issue tracker?",
             options: [
               "A shared list where each task, feature and bug is a ticket with a status",
-              "A tool that fixes bugs automatically",
+              "A tool that fixes reported bugs automatically and tells the tester when each one is done",
               "A phone's battery monitor",
               "A report sent to customers",
             ],
@@ -1431,7 +1431,7 @@ Remote testing roles work the same way, but almost everything happens in writing
               "Only the features that passed",
               "Features tested, an open bug and an area he could not test",
               "A list of developers' mistakes",
-              "Nothing, he released the app himself",
+              "Nothing, because he released the app to customers himself",
             ],
             answer_index: 1,
             explanation: "A good summary includes what passed, what is open and what could not be tested.",
@@ -1441,7 +1441,7 @@ Remote testing roles work the same way, but almost everything happens in writing
             options: [
               "Almost everything happens through tickets, chat and recordings",
               "Remote teams never meet or talk",
-              "Remote testers do not report bugs",
+              "Remote testers do not report bugs; they only write documentation",
               "Writing is faster than testing",
             ],
             answer_index: 0,
@@ -1510,7 +1510,7 @@ Hawa's sprint includes the trader sales story above. Reading the criteria in pla
             options: [
               "A fixed cycle, often one or two weeks, to finish a set of work",
               "A fast way of typing code",
-              "A meeting held once a year",
+              "A planning meeting held once a year to decide every feature for the next release",
               "A type of bug",
             ],
             answer_index: 0,
@@ -1519,7 +1519,7 @@ Hawa's sprint includes the trader sales story above. Reading the criteria in pla
           {
             prompt: "Why are acceptance criteria useful to testers?",
             options: [
-              "They list the developers on the team",
+              "They list the developers on the team and who owns each feature, so you know who to ask",
               "They set the release date",
               "They replace bug reports",
               "They tell you the conditions that must be true, so you know what to test",
@@ -1544,7 +1544,7 @@ Hawa's sprint includes the trader sales story above. Reading the criteria in pla
               "The team releases the app",
               "Customers test the product",
               "Each person shares what they did, what they will do and any blockers",
-              "The manager writes all the code",
+              "The manager writes all the code while the others watch and comment on what they see",
             ],
             answer_index: 2,
             explanation: "A stand up is a short daily check on progress and blockers.",
@@ -1553,7 +1553,7 @@ Hawa's sprint includes the trader sales story above. Reading the criteria in pla
             prompt: "In Hawa's example, what did she do after finding that refunds were counted twice?",
             options: [
               "Logged a bug linked to the story and moved the story back to In progress",
-              "Ignored it until the next sprint",
+              "Ignored it until the next sprint, since the story had already been marked Done by the developer",
               "Fixed the code herself",
               "Deleted the story",
             ],
@@ -1625,7 +1625,7 @@ Sumaila writes a one page plan for a new version of a bus ticket booking app: bo
           {
             prompt: "What is regression testing?",
             options: [
-              "Testing a feature for the first time",
+              "Testing a brand new feature for the very first time, before it is released to customers",
               "Testing only on old phones",
               "Rechecking existing features after changes to make sure nothing broke",
               "Removing old features",
@@ -1669,7 +1669,7 @@ Sumaila writes a one page plan for a new version of a bus ticket booking app: bo
           {
             prompt: "What did Sumaila's summary include besides results?",
             options: [
-              "Blame for the developer who broke the SMS",
+              "Blame for the developer who broke the SMS feature in the last release",
               "A risk he could not test and a clear recommendation",
               "Only the number of passed tests",
               "A new feature idea",
@@ -1740,7 +1740,7 @@ Start small. Automate one test case you already wrote by hand, make it pass reli
             prompt: "Which is a good candidate for automation?",
             options: [
               "A feature that changes every week",
-              "Deciding whether a screen is confusing",
+              "Deciding whether a new screen is confusing for first time users",
               "A regression check that repeats every release",
               "A one off test",
             ],
@@ -1751,7 +1751,7 @@ Start small. Automate one test case you already wrote by hand, make it pass reli
             prompt: "Why does this section need a computer?",
             options: [
               "Phones cannot open websites",
-              "Computers are required by law",
+              "Computers are required by law for any testing done for a registered company in Ghana",
               "Automation needs a printer",
               "Automation tools run on desktop operating systems with an editor, runtime and browsers",
             ],
@@ -1773,7 +1773,7 @@ Start small. Automate one test case you already wrote by hand, make it pass reli
           {
             prompt: "Why do manual testing skills still matter once you automate?",
             options: [
-              "Automation tools need manual approval to run",
+              "Automation tools need a manual tester to approve every run before it starts",
               "Manual skills make code run faster",
               "Automated tests only check what someone chose to check",
               "They do not matter after automation",
@@ -1878,7 +1878,7 @@ You need a computer with Node.js and a code editor, or a free browser based Java
               "Repeat work, such as trying many test inputs",
               "Store a single value",
               "Connect to the internet",
-              "Make the code run only once",
+              "Make the code run only once, even if it is called many times",
             ],
             answer_index: 0,
             explanation: "Loops repeat steps, which is ideal for checking many inputs.",
@@ -1897,7 +1897,7 @@ You need a computer with Node.js and a code editor, or a free browser based Java
           {
             prompt: "Why might a tester use SQL?",
             options: [
-              "To design the app's logo",
+              "To design the app's logo and choose its colour scheme",
               "To send SMS messages",
               "To confirm what the app saved in a test database",
               "To speed up the phone",
@@ -2006,7 +2006,7 @@ You need a computer with Node.js and Wi-Fi or enough data for a one time install
             options: [
               "A test that always fails",
               "A test written in Python",
-              "A test that runs very fast",
+              "A test that runs very fast because it skips the slow steps",
               "A test that sometimes passes and sometimes fails for no real reason",
             ],
             answer_index: 3,
@@ -2015,7 +2015,7 @@ You need a computer with Node.js and Wi-Fi or enough data for a one time install
           {
             prompt: "Which locator is the most reliable choice?",
             options: [
-              "A long path based on page layout",
+              "A long path based on the page layout, such as the fifth div inside the second section",
               "The fifth div on the page",
               "The element's screen position",
               "A role, label, visible text or a dedicated test id",
@@ -2040,7 +2040,7 @@ You need a computer with Node.js and Wi-Fi or enough data for a one time install
               "So they all share one account",
               "Because tools run only one test",
               "So each test can run without relying on another test running first",
-              "So they run in alphabetical order",
+              "So they run in alphabetical order and share the same test account between them",
             ],
             answer_index: 2,
             explanation: "Independent tests can run in any order and fail for clear reasons.",
@@ -2259,7 +2259,7 @@ Amina finished this track with a GitHub portfolio. She applied to two Accra role
             options: [
               "She had a certificate",
               "She had practised writing test cases in her practice tasks",
-              "The test was very easy for everyone",
+              "The test was very easy for everyone who applied, so all candidates passed",
               "She asked a friend to do it",
             ],
             answer_index: 1,
@@ -2320,7 +2320,7 @@ Fuseini's portfolio README says: "I tested the sign up and donation flows of a p
             prompt: "Why is a portfolio especially valuable for a new tester?",
             options: [
               "It lets employers judge your work directly without previous job experience",
-              "It replaces the need to apply for jobs",
+              "It replaces the need to apply for jobs, since employers will find it and contact you directly",
               "It is required by law",
               "It guarantees an interview",
             ],
@@ -2342,7 +2342,7 @@ Fuseini's portfolio README says: "I tested the sign up and donation flows of a p
             prompt: "What is the purpose of the README?",
             options: [
               "To store passwords",
-              "To list every bug you ever found",
+              "To list every bug you have ever found, with the date and the app for each one",
               "To act as the front door, introducing you and linking your best work",
               "To run automated tests",
             ],
@@ -2464,7 +2464,7 @@ Hawa studies the free CTFL syllabus alongside this track, using it as a checklis
           {
             prompt: "What is true of crowdtesting platforms?",
             options: [
-              "They guarantee a full time salary",
+              "They guarantee a full time salary once you pass their entry test, wherever you live in the world",
               "They only accept certified testers",
               "They require relocation",
               "Work can be irregular, availability varies by country, and you should never pay to join",
@@ -2527,7 +2527,7 @@ Issahaku started as a manual tester at a software company in Accra. He learned P
           {
             prompt: "What is an SDET?",
             options: [
-              "A sales director for enterprise tools",
+              "A sales director for enterprise tools who sells testing software",
               "A security device for phones",
               "A software development engineer in test, focused on automated testing",
               "A type of bug report",

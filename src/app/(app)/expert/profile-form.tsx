@@ -3,8 +3,8 @@
 import { useActionState } from "react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { CheckboxField, SelectField, TextField } from "@/components/ui/field";
-import { TextAreaField } from "@/components/experts/textarea-field";
+import { CheckboxField, CheckboxGroup, SelectField, TextAreaField, TextField } from "@/components/ui/field";
+import { EXPERT_CATEGORY_OPTIONS } from "@/lib/experts/categories";
 import { LIMITS } from "@/lib/market-apply/expert";
 import { REGIONS } from "@/lib/regions";
 import { updateExpertProfile, type ExpertProfileState } from "./actions";
@@ -14,6 +14,7 @@ export type ExpertProfileValues = {
   headline: string;
   bio: string | null;
   skills: string[];
+  categories: string[];
   links: string[];
   languages: string[];
   region: string | null;
@@ -68,6 +69,15 @@ export function ExpertProfileForm({ initial: saved, origin }: { initial: ExpertP
         defaultValue={initial.skills.join(", ")}
         error={e.skills}
         required
+      />
+      <CheckboxGroup
+        name="categories"
+        legend="Categories"
+        legendStyle="field"
+        hint="Up to 5. Learners browse experts by these, so pick what you help with most."
+        options={EXPERT_CATEGORY_OPTIONS}
+        checked={initial.categories}
+        error={e.categories}
       />
       <TextAreaField
         id="links"

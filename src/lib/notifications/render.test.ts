@@ -104,6 +104,15 @@ describe("renderNotification: server sent and unknown kinds", () => {
     expect(renderNotification("booking", { brief_id: POST, title: "x", href: "https://evil.example" }).href).toBe(`/briefs/${POST}`);
   });
 
+  it("shows pitch news as brief news until the pitch becomes a booking", () => {
+    expect(renderNotification("booking", { brief_id: POST, title: "Abdul-Rahman pitched on your brief" }).icon).toBe("opportunity");
+    expect(renderNotification("booking", { brief_id: POST })).toMatchObject({ title: "News about a brief", icon: "opportunity" });
+    expect(renderNotification("booking", { brief_id: POST, booking_id: POST, title: "Your pitch was accepted" })).toMatchObject({
+      href: `/bookings/${POST}`,
+      icon: "booking",
+    });
+  });
+
   it("falls back safely for a kind it has never seen", () => {
     expect(renderNotification("payout_sent", { amount: 5 })).toEqual({
       title: "Something new on SydCrest",

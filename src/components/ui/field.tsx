@@ -119,3 +119,83 @@ export function CheckboxField({
     </div>
   );
 }
+
+/** A multi line TextField: label, hint and error wired the same way. Three rows unless `rows` says otherwise. */
+export function TextAreaField({
+  id,
+  label,
+  hint,
+  error,
+  rows = 3,
+  ...props
+}: { id: string; label: string; hint?: string; error?: string } & ComponentProps<"textarea">) {
+  return (
+    <FieldShell id={id} label={label} hint={hint} error={error}>
+      <textarea
+        id={id}
+        name={id}
+        rows={rows}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={describedBy(id, hint, error)}
+        className="min-h-24 w-full rounded-md border border-line-strong bg-surface px-3 py-2 text-base text-content placeholder:text-content-3 aria-invalid:border-danger-fg"
+        {...props}
+      />
+    </FieldShell>
+  );
+}
+
+/**
+ * A group of checkboxes sharing one name (the form posts every ticked value).
+ * One column on phones, two from sm; each row is a 44px target. The legend
+ * is a section heading by default; `legendStyle="field"` sizes it like a field
+ * label, for a group inside a longer fieldset.
+ */
+export function CheckboxGroup({
+  name,
+  legend,
+  hint,
+  options,
+  checked,
+  error,
+  legendStyle = "section",
+}: {
+  name: string;
+  legend: string;
+  legendStyle?: "section" | "field";
+  hint?: string;
+  options: readonly { value: string; label: string }[];
+  checked: readonly string[];
+  error?: string;
+}) {
+  const described = error ? `${name}-error` : hint ? `${name}-hint` : undefined;
+  return (
+    <fieldset className="flex flex-col gap-2" aria-describedby={described}>
+      <legend className={legendStyle === "field" ? "text-sm font-semibold text-content" : "text-h3 text-content"}>{legend}</legend>
+      {hint && (
+        <p id={`${name}-hint`} className="text-sm text-content-3">
+          {hint}
+        </p>
+      )}
+      {error && (
+        <p id={`${name}-error`} className="text-sm text-danger-fg">
+          {error}
+        </p>
+      )}
+      <div className="grid gap-x-4 sm:grid-cols-2">
+        {options.map((opt) => (
+          <label key={opt.value} htmlFor={`${name}-${opt.value}`} className="flex min-h-11 items-center gap-3 text-sm text-content">
+            <input
+              id={`${name}-${opt.value}`}
+              name={name}
+              value={opt.value}
+              type="checkbox"
+              defaultChecked={checked.includes(opt.value)}
+              className="size-5 shrink-0 accent-line-selected"
+            />
+            {opt.label}
+          </label>
+        ))}
+      </div>
+    </fieldset>
+  );
+}

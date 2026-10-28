@@ -22,7 +22,7 @@ test.afterEach(async () => {
 
 test("post an advice brief, pitch on it and accept the pitch", async ({ page }) => {
   test.setTimeout(120_000);
-  const { tag, poster, expert, otherExpert } = seed!;
+  const { tag, sheetsTag, poster, expert, otherExpert } = seed!;
   const title = `Clean my Savelugu farm survey ${tag}`;
 
   // The poster is not an expert: the board says who sees open briefs.
@@ -44,7 +44,7 @@ test("post an advice brief, pitch on it and accept the pitch", async ({ page }) 
   await page
     .getByLabel("Describe what you need")
     .fill("I collected 300 survey rows from farmers in Savelugu and need help removing duplicates before Friday.");
-  await page.getByLabel("Skills it takes").fill(`Excel, ${tag}`);
+  await page.getByLabel("Skills it takes").fill(`${sheetsTag}, ${tag}`);
   await page.getByLabel("Indicative budget in cedis (optional)").fill("400");
   await page.getByRole("button", { name: "Post brief" }).click();
 

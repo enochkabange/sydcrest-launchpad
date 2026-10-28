@@ -1,7 +1,7 @@
 "use client";
 
 import { useActionState, useState } from "react";
-import { TextAreaField } from "@/components/bookings/text-area-field";
+import { TextAreaField } from "@/components/ui/field";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { MESSAGE_MAX, REASON_MAX, REVIEW_MAX, type BookingAction } from "@/lib/bookings/model";
@@ -40,7 +40,7 @@ export function StatusActions({ bookingId, actions }: { bookingId: string; actio
         <input type="hidden" name="action" value={confirming} />
         <p className="text-sm text-content-2">{copy.confirm}</p>
         {copy.reasonLabel && (
-          <TextAreaField id="reason" label={copy.reasonLabel} rows={3} maxLength={REASON_MAX} error={state.errors?.reason} />
+          <TextAreaField id="reason" label={`${copy.reasonLabel} (optional)`} rows={3} maxLength={REASON_MAX} error={state.errors?.reason} />
         )}
         {state.message && <Alert tone="danger">{state.message}</Alert>}
         <div className="flex flex-wrap gap-2">
@@ -129,7 +129,7 @@ export function ReviewForm({ bookingId, expertFirstName }: { bookingId: string; 
       </fieldset>
       <TextAreaField
         id="review"
-        label={`What should others know about working with ${expertFirstName}?`}
+        label={`What should others know about working with ${expertFirstName}? (optional)`}
         rows={4}
         maxLength={REVIEW_MAX}
         defaultValue={state.values?.review}

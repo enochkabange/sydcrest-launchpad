@@ -12,6 +12,7 @@ export type ApplyValues = {
   slug: string;
   headline: string;
   skills: string;
+  categories: string[];
   links: string;
   evidence_links: string;
   experience: string;
@@ -26,6 +27,7 @@ function echo(form: FormData): ApplyValues {
     slug: get("slug"),
     headline: get("headline"),
     skills: get("skills"),
+    categories: form.getAll("categories").filter((c): c is string => typeof c === "string"),
     links: get("links"),
     evidence_links: get("evidence_links"),
     experience: get("experience"),

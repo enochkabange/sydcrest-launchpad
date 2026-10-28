@@ -48,12 +48,12 @@ Take your time here. Learners who are solid on these basics usually move faster 
           {
             prompt: "In backend work, what is a server?",
             options: [
-              "The screen of the phone a customer uses",
-              "A computer that receives requests, does work such as saving records, and sends back answers",
-              "A cable that connects a shop to the internet",
+              "The screen of the phone or laptop a customer uses to place orders",
               "A type of mobile money account",
+              "A cable that connects a shop to the internet",
+              "A computer that receives requests, does the work and replies",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The explanation describes the server as the hidden computer that looks things up, saves records and replies.",
           },
           {
@@ -61,8 +61,8 @@ Take your time here. Learners who are solid on these basics usually move faster 
             options: [
               "Because frameworks only run on Windows",
               "Because Git cannot be used without a mouse",
-              "Because most servers run Linux without a screen, so you control them by typing commands",
-              "Because HTTP requests must be typed by hand every time",
+              "Because most servers run Linux with no screen, so you type commands",
+              "Because HTTP requests must be typed out by hand every time they are sent",
             ],
             answer_index: 2,
             explanation: "Servers usually have no screen, so typing commands is how you run code and read logs on them.",
@@ -70,20 +70,20 @@ Take your time here. Learners who are solid on these basics usually move faster 
           {
             prompt: "In the ordering example, what does Mariama's server do after receiving Fuseini's request?",
             options: [
+              "It checks the details, saves the order and replies",
               "It sends an SMS to every customer",
-              "It checks the details, saves the order and replies with a response",
               "It deletes the order to save space",
-              "It waits until Fuseini calls the shop",
+              "It waits until Fuseini calls the shop to confirm the order",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Step 2 and step 3 of the loop are checking and saving, then replying.",
           },
           {
             prompt: "Why does the section suggest learning these basics before a framework?",
             options: [
-              "So that when something breaks you can tell whether the problem is the code, network, database or server",
-              "Because frameworks are banned in Ghanaian companies",
-              "Because frameworks need more data than any other tool",
+              "So when something breaks you can tell where the problem is",
+              "Because frameworks are banned in many Ghanaian companies",
+              "Because frameworks need more mobile data than any other tool",
               "Because employers never ask about frameworks",
             ],
             answer_index: 0,
@@ -180,12 +180,12 @@ Mobile networks can be slow or drop for a few seconds. A request might reach the
           {
             prompt: "Why does the difference between 4xx and 5xx codes matter to a backend developer?",
             options: [
-              "4xx codes are always faster than 5xx codes",
-              "4xx means the client sent something wrong, while 5xx means the server code needs attention",
+              "4xx codes are always returned faster than 5xx codes by the server",
+              "There is no real difference, since both mean the request succeeded",
               "5xx codes only appear when using HTTPS",
-              "There is no real difference; both mean success",
+              "4xx points at the client, while 5xx points at your server code",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The lesson explains that 4xx points at the client and 5xx points at your server.",
           },
           {
@@ -193,8 +193,8 @@ Mobile networks can be slow or drop for a few seconds. A request might reach the
             options: [
               "It makes pages load without any data",
               "It removes the need for status codes",
-              "It lets a server handle only GET requests",
-              "It encrypts traffic so people on the same network cannot read things like passwords",
+              "It lets a server handle only GET requests, which are safer than POST",
+              "It encrypts traffic so others on the network cannot read passwords",
             ],
             answer_index: 3,
             explanation: "HTTPS adds encryption, which protects data on shared networks.",
@@ -202,12 +202,12 @@ Mobile networks can be slow or drop for a few seconds. A request might reach the
           {
             prompt: "On a mobile network, a request reaches the server but the reply is lost. What might happen next?",
             options: [
-              "The phone automatically gets a refund",
               "The user may tap again, so the server sees the same request twice",
+              "The phone automatically gets a refund",
               "The server deletes the first request",
-              "Nothing, because lost replies are impossible",
+              "Nothing, because lost replies are impossible over a mobile network",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "The lesson warns that dropped replies lead to repeated requests.",
           },
         ],
@@ -323,9 +323,9 @@ Practise a little every day. After a week the terminal stops feeling strange and
           {
             prompt: "What are environment variables used for in later lessons?",
             options: [
-              "Changing the colour of the terminal",
+              "Changing the colour and font size of the terminal window",
               "Making files larger",
-              "Replacing the need for Git",
+              "Replacing the need for Git when you share code with teammates",
               "Keeping settings and secrets such as API keys out of your code",
             ],
             answer_index: 3,
@@ -399,8 +399,8 @@ Pin your best projects, give each a clear README that says what it does and how 
           {
             prompt: "What is a commit in Git?",
             options: [
-              "A saved snapshot of your project with a message describing the change",
-              "A message sent to a teammate on WhatsApp",
+              "A saved snapshot of your project with a message",
+              "A message sent to a teammate on WhatsApp about your code",
               "A file that deletes old code",
               "A paid feature of GitHub",
             ],
@@ -411,11 +411,11 @@ Pin your best projects, give each a clear README that says what it does and how 
             prompt: "Why is a branch useful when building a new feature?",
             options: [
               "It makes the code run faster",
-              "It removes the need to commit",
+              "It removes the need to commit while the feature is unfinished",
+              "It automatically deploys the code to the live server",
               "It lets you work separately while the main branch stays safe",
-              "It automatically deploys the code",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "Branches keep new work apart until it is ready to merge.",
           },
           {
@@ -432,12 +432,12 @@ Pin your best projects, give each a clear README that says what it does and how 
           {
             prompt: "You accidentally pushed an API key to GitHub. What should you do?",
             options: [
-              "Nothing, because nobody reads GitHub",
               "Treat it as stolen and change the key at once",
+              "Nothing, because nobody reads GitHub",
               "Rename the file and push again",
-              "Make the repository private and keep the key",
+              "Make the repository private and keep using the same key",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "The lesson says any leaked secret must be changed immediately.",
           },
         ],
@@ -505,12 +505,12 @@ Imagine Wumpini, learning in Damongo, sets herself one rule: write some code eve
           {
             prompt: "Which is a reason the lesson gives for choosing Node.js?",
             options: [
-              "It only works on expensive laptops",
+              "It uses JavaScript, the same language as the frontend",
               "It cannot be used with frameworks",
-              "It uses the same language as the frontend, which helps for full stack roles",
-              "It is the only language banks use",
+              "It only works on expensive laptops",
+              "It is the only backend language that banks in Accra hire for",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "Node.js lets you use JavaScript on both frontend and backend.",
           },
           {
@@ -528,8 +528,8 @@ Imagine Wumpini, learning in Damongo, sets herself one rule: write some code eve
             prompt: "How does the lesson suggest you decide between languages?",
             options: [
               "Pick whichever language has the longest name",
-              "Change language every week until one feels easy",
-              "Count which language appears most in five adverts you would apply for",
+              "Change language every week until one feels easy, then stay with it",
+              "Count which language appears most in adverts you would apply for",
               "Ask a friend to pick at random",
             ],
             answer_index: 2,
@@ -632,11 +632,11 @@ Print the result of each function with sample data. Then break one input on purp
             prompt: "Why do many systems store cedi amounts as whole pesewas?",
             options: [
               "Because pesewas are no longer used",
-              "Because whole numbers use less data on a phone",
-              "Because decimal numbers can cause tiny rounding errors in computers",
+              "Because whole numbers use less mobile data when sent to a phone",
               "Because banks forbid decimal points",
+              "Because decimals can cause tiny rounding errors in computers",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "The lesson explains that 0.1 plus 0.2 is not exactly 0.3, so whole pesewas avoid errors.",
           },
           {
@@ -653,8 +653,8 @@ Print the result of each function with sample data. Then break one input on purp
           {
             prompt: "What is try and catch used for?",
             options: [
-              "Handling errors you expect, such as bad input, so the program does not crash",
-              "Making loops run twice as fast",
+              "Handling errors you expect, such as bad input",
+              "Making loops run twice as fast by skipping failed steps",
               "Sending code to GitHub",
               "Converting cedis to dollars",
             ],
@@ -743,8 +743,8 @@ Payments, webhooks, SMS and background jobs all depend on handling slow and fail
           {
             prompt: "Why does a backend need asynchronous code?",
             options: [
-              "So that it never needs a database",
-              "So it can handle other requests while waiting for slow tasks such as database calls",
+              "So that it never needs a database and can keep data in memory",
+              "So it can serve other requests while waiting for slow tasks",
               "So that code runs without errors",
               "So that it uses no electricity",
             ],
@@ -754,20 +754,20 @@ Payments, webhooks, SMS and background jobs all depend on handling slow and fail
           {
             prompt: "In the chop bar example, what does the server (the person) do after passing an order to the kitchen?",
             options: [
-              "Stands at the kitchen door until the food is ready",
+              "Stands at the kitchen door and waits until each meal is ready",
               "Closes the chop bar",
-              "Goes to take the next order and returns when the food is ready",
               "Cooks the food herself",
+              "Takes the next order and returns when the food is ready",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "This is the asynchronous pattern the lesson describes.",
           },
           {
             prompt: "What does setting a timeout on a network call do?",
             options: [
-              "Makes the call use less data",
-              "Stops waiting after a set time and raises an error you can handle",
-              "Guarantees the call succeeds",
+              "Makes the call use less data by cutting the response short",
+              "Stops waiting after a set time and raises an error",
+              "Guarantees the call succeeds within the time you set",
               "Repeats the call forever",
             ],
             answer_index: 1,
@@ -776,12 +776,12 @@ Payments, webhooks, SMS and background jobs all depend on handling slow and fail
           {
             prompt: "When should you use Promise.all?",
             options: [
-              "When the second task needs the result of the first",
+              "When tasks are independent and can run at the same time",
               "Only when you have no internet",
-              "When two or more tasks are independent and can run at the same time",
-              "Whenever you want to skip error handling",
+              "When the second task needs the result of the first one to start",
+              "Whenever you want to run tasks without writing error handling",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "The lesson says Promise.all is for independent tasks.",
           },
           {
@@ -844,11 +844,11 @@ Imagine Abdul-Rahman runs a small shop in Nalerigu that takes orders on WhatsApp
             prompt: "What is the main job of a database in a backend?",
             options: [
               "To make the app look nicer",
-              "To store data so it survives restarts, can be searched quickly and stays correct",
+              "To replace the need for an API between the app and the server",
               "To send SMS messages to customers",
-              "To replace the need for an API",
+              "To keep data safe, searchable and correct across restarts",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The lesson describes the database as the memory of the business.",
           },
           {
@@ -867,8 +867,8 @@ Imagine Abdul-Rahman runs a small shop in Nalerigu that takes orders on WhatsApp
             options: [
               "They make the database free to use",
               "They make a group of changes happen completely or not at all",
-              "They hide data from administrators",
-              "They remove the need for backups",
+              "They hide data from administrators and other staff",
+              "They remove the need for backups because nothing is ever lost",
             ],
             answer_index: 1,
             explanation: "The lesson explains transactions as all or nothing changes.",
@@ -876,12 +876,12 @@ Imagine Abdul-Rahman runs a small shop in Nalerigu that takes orders on WhatsApp
           {
             prompt: "Which option does the lesson suggest for practising databases on a budget?",
             options: [
-              "Buying a dedicated server",
+              "Using SQLite, a small file based database",
               "Waiting until you get a job",
-              "Using SQLite, a small file based database that runs almost anywhere",
+              "Buying a dedicated server",
               "Only reading about databases without practising",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "SQLite runs on modest devices, including Android with Termux.",
           },
         ],
@@ -1019,19 +1019,19 @@ Free interactive sites let you type queries in the browser and check results ins
             prompt: "What is a join used for?",
             options: [
               "Deleting duplicate tables",
-              "Speeding up the internet connection",
-              "Bringing related data from different tables together, such as orders with customer names",
+              "Speeding up the internet connection to the database server",
               "Turning SQL into JavaScript",
+              "Bringing related data from different tables together",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "The join example shows orders alongside customer names.",
           },
           {
             prompt: "How do you protect a query from SQL injection?",
             options: [
-              "Ask users to type carefully",
+              "Ask users to type carefully and avoid special characters",
               "Only use SQL at night",
-              "Pass user values as parameters instead of gluing them into the query text",
+              "Pass user values as parameters, not glued into the query",
               "Store all data in a text file",
             ],
             answer_index: 2,
@@ -1117,12 +1117,12 @@ Sketch boxes for tables and lines for relationships on paper. This kind of diagr
           {
             prompt: "Why should a customer's name not be stored inside every order?",
             options: [
+              "A correction would need changing in many places",
               "Names take too much data on a phone",
-              "A correction would need changing in many places, and some would be missed",
               "Orders cannot contain text",
-              "It makes the database refuse all orders",
+              "It makes the database refuse all orders with the same name",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Storing each fact once avoids inconsistent copies.",
           },
           {
@@ -1140,11 +1140,11 @@ Sketch boxes for tables and lines for relationships on paper. This kind of diagr
             prompt: "What is an index for?",
             options: [
               "Backing up the database",
-              "Helping the database find rows quickly in columns you search often",
+              "Making every write and update to the table faster",
               "Storing images",
-              "Making every write faster",
+              "Finding rows quickly in columns you search often",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Indexes speed up searches, at a small cost to writes.",
           },
         ],
@@ -1231,9 +1231,9 @@ Imagine Fuseini runs the backend for a cooperative's savings app in Yendi. Membe
           {
             prompt: "How does a migration tool know which changes to run on deploy?",
             options: [
-              "It runs every file every time",
+              "It runs every migration file again from the start each time",
               "It asks the customer",
-              "It records which files have already run and runs only the new ones",
+              "It records which files have run and runs only the new ones",
               "It picks files at random",
             ],
             answer_index: 2,
@@ -1253,12 +1253,12 @@ Imagine Fuseini runs the backend for a cooperative's savings app in Yendi. Membe
           {
             prompt: "Why does the lesson teach SQL before ORMs?",
             options: [
+              "ORMs can hide slow queries that you need SQL to understand",
+              "SQL must be installed separately before you can install an ORM",
               "ORMs cannot connect to databases",
-              "SQL is required to install an ORM",
-              "ORMs can hide slow queries, and you still need SQL to understand problems",
               "ORMs are only used in Python",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "Understanding the SQL underneath helps when things go wrong.",
           },
         ],
@@ -1323,8 +1323,8 @@ Start with one relational database. Add a cache when you can see the same slow q
           {
             prompt: "What is a cache?",
             options: [
-              "A backup of the whole database stored offline",
-              "A quick place to keep an answer you already worked out so you do not repeat the work",
+              "A backup of the whole database stored offline on a disk",
+              "A quick store for answers you already worked out",
               "A type of SQL join",
               "A list of all users who are logged in",
             ],
@@ -1336,10 +1336,10 @@ Start with one relational database. Add a cache when you can see the same slow q
             options: [
               "Limits the cache to 300 users",
               "Makes the request 300 times faster",
+              "Deletes the database after 300 seconds of no use",
               "Makes the cached copy expire after 300 seconds",
-              "Deletes the database after 300 seconds",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "The value expires after 300 seconds so data stays reasonably fresh.",
           },
           {
@@ -1445,10 +1445,10 @@ Imagine Amina is building an API for a farmers' cooperative in Savelugu. Officer
           {
             prompt: "Why is it powerful that many clients can use the same API?",
             options: [
-              "It means you never need a database",
-              "It makes every app free to download",
+              "It means you never need a database behind the API",
+              "It makes every app free to download and use",
               "It removes the need for HTTPS",
-              "You build the logic once and a phone app, USSD menu and dashboard can all use it",
+              "You build the logic once and many apps can use it",
             ],
             answer_index: 3,
             explanation: "One API can serve many different clients.",
@@ -1457,7 +1457,7 @@ Imagine Amina is building an API for a farmers' cooperative in Savelugu. Officer
             prompt: "Which is a sign of a predictable API?",
             options: [
               "Similar things work in similar ways, such as /products and /customers",
-              "Every endpoint uses a different naming style",
+              "Every endpoint uses its own naming style so routes are easy to tell apart",
               "Errors always return status 200",
               "Endpoint names change every week",
             ],
@@ -1467,12 +1467,12 @@ Imagine Amina is building an API for a farmers' cooperative in Savelugu. Officer
           {
             prompt: "How can an API be kinder to users on small data bundles?",
             options: [
-              "Send every field for every record",
+              "Send every field for every record so the app never asks twice",
               "Use larger images",
-              "Return only the fields a screen needs and split long lists into pages",
               "Make users download the whole database",
+              "Return only the fields needed and split long lists into pages",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "Small, paged responses save data and work better on weak signals.",
           },
         ],
@@ -1602,10 +1602,10 @@ Use \`curl\` or a free API client to send requests while you build. Check each s
           {
             prompt: "Why should list endpoints limit how many records one request returns?",
             options: [
-              "Because JSON cannot hold more than ten records",
+              "Because JSON cannot hold more than ten records in one response",
               "Because REST forbids lists",
               "Because databases cannot count",
-              "Because huge responses are slow and expensive for users on mobile data",
+              "Because huge responses are slow and costly on mobile data",
             ],
             answer_index: 3,
             explanation: "The lesson recommends paging to keep responses small.",
@@ -1613,8 +1613,8 @@ Use \`curl\` or a free API client to send requests while you build. Check each s
           {
             prompt: "When should you create a new API version such as /v2/orders?",
             options: [
-              "When a change would break existing apps that use the old behaviour",
-              "Every time you fix a typo",
+              "When a change would break apps using the old behaviour",
+              "Every time you fix a typo or small bug in the response messages",
               "Whenever you add a new teammate",
               "Only when the server restarts",
             ],
@@ -1704,12 +1704,12 @@ Hawa's school fees API accepts \`{ phone, amount }\`. A parent types \`+233 24 1
           {
             prompt: "Why must the server validate inputs even if the app's form already checks them?",
             options: [
+              "Because anyone can call the API directly and skip the form",
               "Because forms never work on phones",
-              "Because anyone can send requests straight to the API and skip the form",
-              "Because validation makes the server faster",
+              "Because validation on the server makes every request faster",
               "Because the database cannot store text",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "The lesson explains that clients can be bypassed, so the server must check again.",
           },
           {
@@ -1749,9 +1749,9 @@ Hawa's school fees API accepts \`{ phone, amount }\`. A parent types \`+233 24 1
             prompt: "Why does the lesson suggest returning all validation problems at once?",
             options: [
               "It hides the errors from the user",
-              "It reduces the number of database tables",
+              "It reduces the number of database tables the API needs to check",
               "It is required by HTTPS",
-              "So a user on a slow network does not have to resubmit many times",
+              "So a user on a slow network does not resubmit many times",
             ],
             answer_index: 3,
             explanation: "Listing every problem saves round trips on slow connections.",
@@ -1829,8 +1829,8 @@ Writing your own sign in system from scratch is a good learning exercise, but fo
           {
             prompt: "What is the difference between authentication and authorisation?",
             options: [
-              "Authentication checks who you are; authorisation checks what you are allowed to do",
-              "Authentication is for phones; authorisation is for laptops",
+              "Authentication is who you are; authorisation is what you may do",
+              "Authentication is for phone apps; authorisation is for laptop browsers",
               "They are two words for the same thing",
               "Authorisation happens before the user exists",
             ],
@@ -1840,10 +1840,10 @@ Writing your own sign in system from scratch is a good learning exercise, but fo
           {
             prompt: "How should passwords be stored?",
             options: [
-              "As plain text so support staff can read them",
+              "As plain text so support staff can read them out to users",
               "In the app's frontend code",
               "In a public spreadsheet",
-              "As hashes made with a slow, purpose built algorithm such as bcrypt",
+              "As hashes made with a slow algorithm such as bcrypt",
             ],
             answer_index: 3,
             explanation: "Hashing protects passwords if the database leaks.",
@@ -1863,7 +1863,7 @@ Writing your own sign in system from scratch is a good learning exercise, but fo
             prompt: "Why should you limit how many codes a phone number can request?",
             options: [
               "To make the app look busy",
-              "Because phones cannot receive more than one SMS",
+              "Because most phones cannot receive more than one SMS per minute",
               "To stop attackers running up your SMS bill or guessing codes",
               "Because JWTs require it",
             ],
@@ -1874,7 +1874,7 @@ Writing your own sign in system from scratch is a good learning exercise, but fo
             prompt: "Why is hiding a button in the app not enough to protect data?",
             options: [
               "Buttons are always visible on small screens",
-              "Attackers can call the API directly or change an id in the URL",
+              "Attackers can call the API directly or change an id",
               "The database ignores buttons",
               "HTTPS removes all buttons",
             ],
@@ -1936,12 +1936,12 @@ Imagine Mariama's online store in Tamale. When Fuseini pays for a bag of rice wi
           {
             prompt: "In this section, what is a webhook?",
             options: [
-              "A type of mobile phone",
+              "A call the provider makes to your server to say what happened",
               "A database index",
-              "A call the provider makes to a URL on your server to tell you what happened",
-              "A password for an SMS gateway",
+              "A type of mobile phone",
+              "A password and secret key an SMS gateway gives you to send messages",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "The lesson defines a webhook as the provider calling your server.",
           },
           {
@@ -1960,7 +1960,7 @@ Imagine Mariama's online store in Tamale. When Fuseini pays for a bag of rice wi
             options: [
               "In the provider's test or sandbox mode with test keys",
               "With real customers' money",
-              "Directly on the live server with live keys",
+              "Directly on the live server with live keys and a small amount",
               "Only on paper, never in code",
             ],
             answer_index: 0,
@@ -1971,10 +1971,10 @@ Imagine Mariama's online store in Tamale. When Fuseini pays for a bag of rice wi
             options: [
               "How fast can I merge this?",
               "Can we skip the review?",
+              "Which provider is the cheapest for each transfer?",
               "What happens if this webhook arrives twice?",
-              "Which provider is the cheapest?",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "Thinking about repeats and failures shows care with money.",
           },
         ],
@@ -2068,9 +2068,9 @@ At the end of each day, compare your \`paid\` payments with the provider's repor
             prompt: "Why must you verify a webhook's signature?",
             options: [
               "To make the webhook arrive faster",
-              "Because providers charge for unsigned webhooks",
+              "Because providers charge extra for every unsigned webhook they send",
               "To reduce the size of the response",
-              "Because the URL is public and anyone could send a fake success message",
+              "Because the URL is public and anyone could send a fake success",
             ],
             answer_index: 3,
             explanation: "Signatures prove the webhook came from the provider.",
@@ -2078,9 +2078,9 @@ At the end of each day, compare your \`paid\` payments with the provider's repor
           {
             prompt: "Why should a webhook handler reply quickly with a 2xx code?",
             options: [
-              "So the provider knows it was received and does not keep retrying",
+              "So the provider knows it arrived and stops retrying",
               "So the customer gets a free bundle",
-              "Because slow replies delete the payment",
+              "Because slow replies make the provider delete the payment",
               "Because 2xx codes skip verification",
             ],
             answer_index: 0,
@@ -2089,12 +2089,12 @@ At the end of each day, compare your \`paid\` payments with the provider's repor
           {
             prompt: "What is reconciliation?",
             options: [
-              "Sending an apology SMS to every customer",
+              "Matching your payment records with the provider's report",
               "Deleting failed payments each night",
-              "Comparing your payment records with the provider's report so every transaction matches",
+              "Sending an apology SMS to every customer whose payment failed",
               "Changing the provider every month",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "The lesson defines reconciliation as matching records.",
           },
           {
@@ -2102,7 +2102,7 @@ At the end of each day, compare your \`paid\` payments with the provider's repor
             options: [
               "From whatever amount the app sends",
               "From the customer's SMS reply",
-              "From the webhook alone with no checks",
+              "From the webhook alone, with no checks against your records",
               "From your own order record on the server",
             ],
             answer_index: 3,
@@ -2181,12 +2181,12 @@ Even with all this, some cases stay unclear. A scheduled job that checks old pen
           {
             prompt: "A call to a payment provider times out. What can you safely conclude?",
             options: [
-              "The payment definitely failed",
+              "The payment definitely failed, so you should charge the customer again",
               "The payment definitely succeeded",
-              "You do not know yet; the provider may have processed it and only the reply was lost",
               "The customer's account is closed",
+              "You do not know yet; it may have worked and only the reply was lost",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "The lesson stresses that a timeout does not mean failure.",
           },
           {
@@ -2194,7 +2194,7 @@ Even with all this, some cases stay unclear. A scheduled job that checks old pen
             options: [
               "Temporary ones such as timeouts and 5xx server errors",
               "400 errors caused by bad input",
-              "Every error, forever, without waiting",
+              "Every error, forever, without waiting between attempts",
               "None; retries are never useful",
             ],
             answer_index: 0,
@@ -2205,8 +2205,8 @@ Even with all this, some cases stay unclear. A scheduled job that checks old pen
             options: [
               "Retrying as fast as possible",
               "Retrying only once a day",
-              "Sending requests to many providers at once",
-              "Waiting longer between each retry, such as 1, 2 and then 4 seconds",
+              "Sending the same request to many providers at once and taking the first",
+              "Waiting longer between each retry, such as 1, 2 then 4 seconds",
             ],
             answer_index: 3,
             explanation: "Growing waits avoid hammering a struggling service.",
@@ -2225,7 +2225,7 @@ Even with all this, some cases stay unclear. A scheduled job that checks old pen
           {
             prompt: "A late webhook says pending for a payment you already marked paid. What should you do?",
             options: [
-              "Change the payment back to pending",
+              "Change the payment back to pending, since the latest webhook wins",
               "Charge the customer again",
               "Ignore the update because it would move the payment backwards",
               "Delete the payment",
@@ -2298,12 +2298,12 @@ Imagine Hawa's school in Bolgatanga. Parents get a fee reminder by SMS, can chec
           {
             prompt: "Why should an order endpoint not wait for the SMS to send before replying?",
             options: [
-              "SMS messages cannot be sent from servers",
-              "A slow or failing provider would make the whole app slow",
-              "Customers prefer to wait",
+              "SMS messages cannot be sent from servers, only from phones",
               "Databases cannot store messages",
+              "Customers prefer to wait",
+              "A slow or failing provider would make the whole app slow",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Sending in the background keeps the API fast.",
           },
           {
@@ -2311,8 +2311,8 @@ Imagine Hawa's school in Bolgatanga. Parents get a fee reminder by SMS, can chec
             options: [
               "Deletes orders that are older than a day",
               "Designs the frontend",
-              "Picks up queued messages, sends them and records whether they were sent or failed",
-              "Approves mobile money payments",
+              "Picks up queued messages, sends them and records the result",
+              "Approves mobile money payments once the customer replies by SMS",
             ],
             answer_index: 2,
             explanation: "The worker processes the queue separately from the request.",
@@ -2322,8 +2322,8 @@ Imagine Hawa's school in Bolgatanga. Parents get a fee reminder by SMS, can chec
             options: [
               "Short messages are encrypted",
               "Long messages cannot contain numbers",
-              "Providers refuse any message over ten words",
-              "Longer texts are split into several parts, and each part is usually billed",
+              "Providers refuse any message over ten words, so it would not arrive",
+              "Longer texts are split into parts, and each part is usually billed",
             ],
             answer_index: 3,
             explanation: "The lesson explains that long texts split into billed parts.",
@@ -2409,8 +2409,8 @@ Imagine Sumaila has built an API for a farmers' cooperative in Yendi. Before tel
             prompt: "Why do logs and monitoring matter in production?",
             options: [
               "They make the app load faster",
-              "They replace the need for tests",
-              "You cannot see the user's screen, so they tell you what happened",
+              "They replace the need for tests because errors show up anyway",
+              "You cannot see the user's screen, so they show what happened",
               "They are required to write SQL",
             ],
             answer_index: 2,
@@ -2507,7 +2507,7 @@ The OWASP Top Ten is a free, regularly updated list of the most important web ap
           {
             prompt: "What is the main defence against SQL injection?",
             options: [
-              "Hiding the database password in the frontend",
+              "Hiding the database password in the frontend so nobody finds it",
               "Using parameterised queries instead of joining strings",
               "Turning off HTTPS",
               "Using shorter table names",
@@ -2540,7 +2540,7 @@ The OWASP Top Ten is a free, regularly updated list of the most important web ap
           {
             prompt: "Which practice supports Ghana's Data Protection Act?",
             options: [
-              "Collecting as much personal data as possible just in case",
+              "Collecting as much personal data as possible in case it is useful later",
               "Copying real customer data to your laptop for testing",
               "Keeping data forever even when not needed",
               "Collecting only what you need and deleting what you no longer need",
@@ -2551,8 +2551,8 @@ The OWASP Top Ten is a free, regularly updated list of the most important web ap
           {
             prompt: "What does rate limiting protect against?",
             options: [
-              "One person or bot sending huge numbers of requests, such as guessing codes",
-              "Users with slow phones",
+              "One person or bot sending huge numbers of requests",
+              "Users on slow phones timing out before the reply arrives",
               "Database migrations",
               "Typos in SQL",
             ],
@@ -2642,8 +2642,8 @@ Write a test when you write a function, or even before. Run tests before every c
           {
             prompt: "What is a unit test?",
             options: [
-              "A test that checks one small function, such as a phone number checker",
-              "A test that clicks through the whole app in a browser",
+              "A test that checks one small function, such as a phone checker",
+              "A test that clicks through the whole app in a browser like a user",
               "A survey sent to users",
               "A way to measure server speed",
             ],
@@ -2655,8 +2655,8 @@ Write a test when you write a function, or even before. Run tests before every c
             options: [
               "Providers do not allow testing at all",
               "Real providers make tests too easy",
-              "A fake lets you test failures and timeouts any time, for free, with no data",
-              "Tests cannot use the internet under any circumstances",
+              "A fake lets you test failures and timeouts any time, for free",
+              "Tests are not allowed to use the internet under any circumstances",
             ],
             answer_index: 2,
             explanation: "Fakes give you control over provider behaviour.",
@@ -2666,8 +2666,8 @@ Write a test when you write a function, or even before. Run tests before every c
             options: [
               "The colour of buttons",
               "The README formatting",
-              "The length of variable names",
-              "Money calculations, payment status changes and permission checks",
+              "The length of variable names and how comments are formatted",
+              "Money calculations, payment status and permission checks",
             ],
             answer_index: 3,
             explanation: "Focus tests where mistakes hurt most.",
@@ -2675,8 +2675,8 @@ Write a test when you write a function, or even before. Run tests before every c
           {
             prompt: "What is one benefit of tests on a team?",
             options: [
-              "They remove the need for code review",
-              "They run on every pull request so changes that break things are caught before merging",
+              "They remove the need for code review, since tests check everything",
+              "They run on every pull request and catch breakage before merging",
               "They make the server use less memory",
               "They replace documentation",
             ],
@@ -2769,12 +2769,12 @@ Use test keys only, add sample data with made up names, and make sure there is n
           {
             prompt: "What does continuous deployment mean in this lesson?",
             options: [
-              "Deploying by copying files by hand once a year",
+              "Deploying by copying files to the server by hand after each change",
               "Running the app only on your laptop",
-              "The platform automatically builds and releases your app when you push to the main branch",
               "Paying for a server monthly",
+              "The platform builds and releases your app when you push to main",
             ],
-            answer_index: 2,
+            answer_index: 3,
             explanation: "The lesson describes automatic build and release on push as continuous deployment.",
           },
           {
@@ -2793,8 +2793,8 @@ Use test keys only, add sample data with made up names, and make sure there is n
             options: [
               "So that they appear in the README",
               "Because code cannot contain text",
-              "So the same code runs everywhere and only configuration changes",
-              "Because hosting platforms cannot read files",
+              "So the same code runs everywhere and only settings change",
+              "Because hosting platforms cannot read files from your project",
             ],
             answer_index: 2,
             explanation: "Configuration lives outside code, keeping secrets safe.",
@@ -2880,8 +2880,8 @@ Imagine Issahaku joining a remote team. Their README says "run \`docker compose 
             prompt: "What problem do containers mainly solve?",
             options: [
               "They make code run without electricity",
-              "They package an app with everything it needs so it behaves the same everywhere",
-              "They replace the need for a database",
+              "They package an app with what it needs so it runs the same everywhere",
+              "They replace the need for a database by storing data inside the image",
               "They make apps free to host",
             ],
             answer_index: 1,
@@ -2891,9 +2891,9 @@ Imagine Issahaku joining a remote team. Their README says "run \`docker compose 
             prompt: "What is the difference between an image and a container?",
             options: [
               "They are the same thing",
-              "A container is the recipe; an image is a running copy",
+              "A container is the recipe and contents; an image is a running copy",
               "An image is a type of database",
-              "An image is the recipe and contents; a container is a running copy of it",
+              "An image is the recipe; a container is a running copy of it",
             ],
             answer_index: 3,
             explanation: "You start containers from images.",
@@ -2901,12 +2901,12 @@ Imagine Issahaku joining a remote team. Their README says "run \`docker compose 
           {
             prompt: "Why should secrets not be baked into a Docker image?",
             options: [
+              "Images are often shared, and anything inside can be read",
               "Images cannot contain text files",
-              "Images are often shared, and anything inside them can be read",
               "Secrets make images run slower",
-              "Docker deletes secrets automatically",
+              "Docker deletes secrets automatically when the image is built",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Pass secrets as environment variables at run time instead.",
           },
           {
@@ -2914,8 +2914,8 @@ Imagine Issahaku joining a remote team. Their README says "run \`docker compose 
             options: [
               "Never learn Docker",
               "Download the largest images available",
-              "Use slim base images, download them once on a good connection and reuse them",
-              "Rebuild every image from scratch daily",
+              "Use slim base images, download once on good data and reuse them",
+              "Rebuild every image from scratch each day so it stays up to date",
             ],
             answer_index: 2,
             explanation: "Small images and reuse save data.",
@@ -2983,9 +2983,9 @@ Imagine Abdul-Rahman in Wa with two deployed APIs, a clean GitHub profile and a 
           {
             prompt: "Why does the lesson say backend developers must work harder to make skills visible?",
             options: [
-              "Backend work is not important to employers",
-              "Backend work is mostly invisible, unlike a screen a frontend developer can show",
-              "Backend code cannot be put on GitHub",
+              "Backend work is not seen as important by most employers",
+              "Backend work is mostly invisible, unlike a frontend screen",
+              "Backend code cannot be put on GitHub because it holds secrets",
               "Employers do not read READMEs",
             ],
             answer_index: 1,
@@ -3005,8 +3005,8 @@ Imagine Abdul-Rahman in Wa with two deployed APIs, a clean GitHub profile and a 
           {
             prompt: "What should you check before applying for a remote role?",
             options: [
-              "Nothing, because all remote roles hire from anywhere",
-              "Whether it hires Africa based developers or is limited to certain countries",
+              "Nothing, because all remote roles hire from any country in the world",
+              "Whether it hires developers in Africa or only in certain countries",
               "Whether the company uses dark mode",
               "Whether the advert is longer than one page",
             ],
@@ -3086,7 +3086,7 @@ After feedback from your mentor or a reviewer, open issues on your own repositor
               "Twenty small tutorial projects",
               "Two or three deployed, tested, well explained systems",
               "One very long README with no code",
-              "A list of every language you have tried",
+              "A list of every language and framework you have tried",
             ],
             answer_index: 1,
             explanation: "Quality and completeness beat quantity.",
@@ -3094,12 +3094,12 @@ After feedback from your mentor or a reviewer, open issues on your own repositor
           {
             prompt: "Why does the lesson recommend a short demo video?",
             options: [
+              "Many reviewers will not run your code but will watch a video",
+              "Hosting platforms require a video before they will deploy your app",
               "Videos replace the need for code",
-              "Hosting platforms require videos",
-              "Many reviewers will not run your code, but they will watch a short video",
               "Videos make the API faster",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "A video shows your work to people who will not run it.",
           },
           {
@@ -3217,7 +3217,7 @@ Imagine Mariama sends ten tailored applications in a month, gets two interviews 
           {
             prompt: "When freelancing on a payment integration, where should the customer's money go?",
             options: [
-              "Through your personal mobile money wallet first",
+              "Through your personal mobile money wallet first, then to the client",
               "Into a shared account you control",
               "Straight to the client's own payment provider account",
               "To whoever finishes the job first",
