@@ -11,6 +11,7 @@ import { getPublishedRoadmaps } from "@/lib/roadmaps/public";
 import { roadmapPath } from "@/lib/roadmaps/seo";
 import { Alert } from "@/components/ui/alert";
 import { PASSWORD_CHANGED_NOTICE } from "@/lib/password-reset";
+import { ThisWeek, ThisWeekSkeleton } from "@/components/learning-loop/this-week";
 import {
   CommunityCard,
   LeaderboardSnapshot,
@@ -190,7 +191,8 @@ async function Explore() {
 }
 
 /**
- * Main column: greeting, the roadmaps in progress and others to explore.
+ * Main column: greeting, this week's goal, streak and review (issue #232),
+ * the roadmaps in progress and others to explore.
  * Right rail from lg: path and weekly plan, a leaderboard snapshot and the
  * community. Phones keep the greeting and roadmaps; the tab bar reaches the rest.
  * Every block reads the session, so each is its own Suspense island.
@@ -220,6 +222,9 @@ export default function DashboardPage({ searchParams }: PageProps<"/dashboard">)
         </Suspense>
         <Suspense fallback={<div className="h-9 w-48 animate-skeleton rounded-md bg-surface-sunken" />}>
           <Greeting />
+        </Suspense>
+        <Suspense fallback={<ThisWeekSkeleton />}>
+          <ThisWeek />
         </Suspense>
         <Suspense fallback={<div className="h-32 animate-skeleton rounded-lg bg-surface-sunken" />}>
           <Learning />

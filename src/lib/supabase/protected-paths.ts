@@ -23,6 +23,7 @@ export const SIGNED_IN_PREFIXES = [
   "/cohort",
   "/certificates",
   "/study-buddy",
+  "/review",
   "/programme/apply",
   "/skills/reviews",
   // Mentors

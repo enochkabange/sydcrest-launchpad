@@ -129,6 +129,7 @@ test.describe("axe sweep", () => {
         "/briefs",
         "/outcomes",
         "/study-buddy",
+        "/review",
         "/talent/me",
       ],
       failures,

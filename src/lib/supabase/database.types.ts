@@ -2618,6 +2618,90 @@ export type Database = {
           },
         ]
       }
+      review_answers: {
+        Row: {
+          answered_at: string
+          correct: boolean
+          id: number
+          node_id: string
+          profile_id: string
+          question_id: string
+          session_id: string
+        }
+        Insert: {
+          answered_at?: string
+          correct: boolean
+          id?: never
+          node_id: string
+          profile_id: string
+          question_id: string
+          session_id: string
+        }
+        Update: {
+          answered_at?: string
+          correct?: boolean
+          id?: never
+          node_id?: string
+          profile_id?: string
+          question_id?: string
+          session_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "review_answers_node_id_fkey"
+            columns: ["node_id"]
+            isOneToOne: false
+            referencedRelation: "roadmap_nodes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "review_answers_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "review_answers_session_id_fkey"
+            columns: ["session_id"]
+            isOneToOne: false
+            referencedRelation: "review_sessions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      review_sessions: {
+        Row: {
+          completed_at: string
+          correct_count: number
+          id: string
+          profile_id: string
+          question_count: number
+        }
+        Insert: {
+          completed_at?: string
+          correct_count?: number
+          id?: string
+          profile_id: string
+          question_count: number
+        }
+        Update: {
+          completed_at?: string
+          correct_count?: number
+          id?: string
+          profile_id?: string
+          question_count?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "review_sessions_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       roadmap_nodes: {
         Row: {
           choice_group: string | null
@@ -3360,6 +3444,38 @@ export type Database = {
           region?: string | null
         }
         Relationships: []
+      }
+      weekly_goals: {
+        Row: {
+          created_at: string
+          profile_id: string
+          topics_target: number
+          updated_at: string
+          week_start: string
+        }
+        Insert: {
+          created_at?: string
+          profile_id: string
+          topics_target: number
+          updated_at?: string
+          week_start: string
+        }
+        Update: {
+          created_at?: string
+          profile_id?: string
+          topics_target?: number
+          updated_at?: string
+          week_start?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "weekly_goals_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
     }
     Views: {
@@ -4573,6 +4689,15 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      submit_review: {
+        Args: { p_answers: Json }
+        Returns: {
+          correct_count: number
+          question_count: number
+          results: Json
+          session_id: string
+        }[]
       }
       submit_skill_portfolio: {
         Args: {
