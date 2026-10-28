@@ -197,7 +197,7 @@ export const NAV_GROUPS: NavGroup[] = [
     items: [
       { href: "/profile", label: "Profile", icon: UserRound, description: "Your details and public profile." },
       { href: "/notifications", label: "Notifications", icon: Bell, description: "Replies, bookings and updates for you." },
-      { href: "/profile#settings", label: "Settings", icon: Settings, description: "WhatsApp reminders and messages." },
+      { href: "/settings", label: "Settings", icon: Settings, description: "Theme, text size, accessibility and reminders." },
       { href: "/admin", label: "Admin", icon: Shield, description: "Run the platform.", audience: "admin" },
     ],
   },

@@ -2,7 +2,7 @@ import { RES } from "./resources";
 import type { ResourceDraft, RoadmapDraft } from "./types";
 
 /**
- * Tier B outline (issue #96): topics and free resources only, lessons to follow.
+ * Outline from issue #96; original lessons in content/cloud-devops.content.ts (issue #198).
  * Research and sources: src/content/research/cloud-devops.md.
  * Track specific links not in the shared pool; each checked to resolve (October 2026).
  */
@@ -54,7 +54,7 @@ export const cloudDevops: RoadmapDraft = {
   slug: "cloud-devops-engineer",
   title: "Cloud and DevOps",
   description:
-    "Run the servers, pipelines and cloud accounts that keep apps online for banks, fintechs and telcos. This is a next step after the backend or IT support track, and the hands on labs need a laptop.",
+    "Run the servers, pipelines and cloud accounts that keep apps online for banks, fintechs and telcos. This is a next step after the backend or IT support track. Theory works on any device; the hands on labs need a computer or a free browser lab.",
   track: "cloud-devops",
   field_category: "infrastructure",
   locale: "en-GH",
@@ -73,7 +73,7 @@ export const cloudDevops: RoadmapDraft = {
       slug: "what-you-need-first",
       title: "What you need first",
       summary:
-        "You should already be comfortable with networks and operating systems from IT support, or with code, Git and APIs from backend development. You can read theory on a phone, but from the Linux section onwards you will need a laptop and a steady connection for labs.",
+        "You should already be comfortable with networks and operating systems from IT support, or with code, Git and APIs from backend development. You can read the theory on any device, but from the Linux section onwards you will need a laptop or desktop and a steady connection, or a free browser lab.",
       parent: "before-you-start",
       optional: false,
       resources: [RES.gitBook],
@@ -163,7 +163,7 @@ export const cloudDevops: RoadmapDraft = {
       slug: "cloud-costs",
       title: "Free tiers and keeping costs under control",
       summary:
-        "Cloud bills are charged in foreign currency to a card, so a forgotten server can cost far more than you expect in cedis. Set a budget alert before you build anything, use free tier services and delete what you no longer need.",
+        "On a paid cloud account a forgotten server keeps billing in foreign currency, which can cost far more than you expect in cedis. Practise without entering card details, set a budget alert on any real account and delete what you no longer need.",
       parent: "cloud-fundamentals",
       optional: false,
       resources: [awsFree, awsBudgets, azureBudgets],
@@ -199,7 +199,7 @@ export const cloudDevops: RoadmapDraft = {
       slug: "containers",
       title: "Containers with Docker",
       summary:
-        "A container packages an app with everything it needs so it runs the same on your laptop and on a server. Learn to write a Dockerfile, build an image and run it, which needs a laptop with enough memory.",
+        "A container packages an app with everything it needs so it runs the same on your laptop and on a server. Learn to write a Dockerfile, build an image and run it, on a computer with enough memory or in a free browser lab.",
       parent: "shipping-software",
       optional: false,
       resources: [RES.docker, RES.twelveFactor],

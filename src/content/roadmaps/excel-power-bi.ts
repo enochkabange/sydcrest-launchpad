@@ -55,14 +55,18 @@ const pbiService = learn("Get started with the Power BI service", "power-bi/fund
 const pbiRefresh = learn("Data refresh in Power BI", "power-bi/connect-data/refresh-data");
 const pbiPublishWeb = learn("Publish to web and its risks", "power-bi/collaborate-share/service-publish-to-web");
 const pbiMobile = learn("Power BI mobile apps", "power-bi/consumer/mobile/mobile-apps-for-mobile-devices");
+const dataStudio = r("Google Data Studio help (free, formerly Looker Studio)", "https://docs.cloud.google.com/data-studio");
 const pl300 = learn("Power BI Data Analyst Associate certification", "credentials/certifications/data-analyst-associate/");
-const mosExcel = learn("Microsoft Office Specialist: Excel Associate", "credentials/certifications/mos-excel-2019/");
+const mosExcel = learn(
+  "Microsoft Office Specialist: Excel Associate (Microsoft 365 Apps)",
+  "credentials/certifications/mos-excel-associate-m365-apps/",
+);
 
 export const excelPowerBi: RoadmapDraft = {
   slug: "excel-power-bi",
   title: "Excel and Power BI",
   description:
-    "The office data skills employers everywhere ask for: clean tables, formulas, lookups, PivotTables and charts in Excel, then dashboards in Power BI. Excel works on a phone or a computer; Power BI needs a Windows laptop.",
+    "The office data skills employers everywhere ask for: clean tables, formulas, lookups, PivotTables and charts in Excel, then dashboards in Power BI. Excel works on a phone or a computer; Power BI Desktop needs a Windows computer.",
   track: "excel-power-bi",
   field_category: "data",
   locale: "en-GH",
@@ -72,16 +76,16 @@ export const excelPowerBi: RoadmapDraft = {
       slug: "spreadsheet-basics",
       title: "Spreadsheet basics",
       summary:
-        "Banks, NGOs, shops and offices keep their records in spreadsheets, and almost every office job expects you to use one. This section gets you working in Excel on a phone or in a browser.",
+        "Banks, NGOs, shops and offices keep their records in spreadsheets, and almost every office job expects you to use one. This section gets you working in a free spreadsheet on whatever device you have.",
       parent: null,
       optional: false,
       resources: [excelHelp, lfExcel],
     },
     {
       slug: "excel-on-a-phone",
-      title: "Getting Excel on a phone or the web",
+      title: "Getting Excel for free",
       summary:
-        "Excel for the web and the Excel mobile app are free with a Microsoft account, with some features missing, and Google Sheets works much the same way. You will set one up, save files to the cloud and learn which tasks are easier on a bigger screen.",
+        "Excel for the web and the Excel mobile app are free with a Microsoft account, with some features missing, and Google Sheets works much the same way. You will set one up, save files to OneDrive and learn which tasks are easier on a bigger screen.",
       parent: "spreadsheet-basics",
       optional: false,
       resources: [officeWeb, excelAndroid, RES.lfSheets],
@@ -162,7 +166,7 @@ export const excelPowerBi: RoadmapDraft = {
       slug: "pivottables",
       title: "PivotTables",
       summary:
-        "A PivotTable summarises thousands of rows in seconds, for example total sales by month and region. You will build and rearrange PivotTables, which is easier on a laptop but possible in Excel for the web.",
+        "A PivotTable summarises thousands of rows in seconds, for example total sales by month and region. You will build and rearrange PivotTables, which is easier on a computer screen but possible in Excel for the web.",
       parent: "summaries-and-charts",
       optional: false,
       resources: [excelPivot, sheetsPivot],
@@ -198,7 +202,7 @@ export const excelPowerBi: RoadmapDraft = {
       slug: "power-query-in-excel",
       title: "Power Query for repeat cleaning",
       summary:
-        "Power Query records your cleaning steps so next month's file can be cleaned with one click. It is best used in desktop Excel on a laptop, and the same engine powers Power BI.",
+        "Power Query records your cleaning steps so next month's file can be cleaned with one click. The editor is in desktop Excel for Windows and Mac, not in free Excel for the web, and the same engine is free inside Power BI Desktop.",
       parent: "excel-reports",
       optional: false,
       resources: [excelPowerQuery, powerQueryWhat],
@@ -216,16 +220,16 @@ export const excelPowerBi: RoadmapDraft = {
       slug: "power-bi",
       title: "Power BI",
       summary:
-        "Power BI builds interactive dashboards from one or many data sources and appears in many Ghanaian reporting, MIS and monitoring adverts. Power BI Desktop runs only on Windows, so for this section you need a Windows laptop, for example at a school lab, library or internet café.",
+        "Power BI builds interactive dashboards from one or many data sources and appears in many Ghanaian reporting, MIS and monitoring adverts. Power BI Desktop runs only on Windows, so for this section you need a Windows computer, for example at a school lab, library or internet café; without one, a free browser tool such as Google's Data Studio teaches the same ideas.",
       parent: null,
       optional: false,
-      resources: [RES.powerBi, pbiDesktopStart],
+      resources: [RES.powerBi, pbiDesktopStart, dataStudio],
     },
     {
       slug: "power-bi-desktop-setup",
       title: "Setting up Power BI Desktop",
       summary:
-        "Power BI Desktop is a free download for Windows, and you can build and save reports in it without a paid licence. You will install it, tour the report, data and model views, and open a sample file.",
+        "Power BI Desktop is a free download for Windows, and you can build and save reports in it without any account or licence. You will check the computer can run it, install it, tour the report, table and model views, and open a sample file.",
       parent: "power-bi",
       optional: false,
       resources: [pbiDesktopDownload, pbiDesktopStart],
@@ -279,7 +283,7 @@ export const excelPowerBi: RoadmapDraft = {
       slug: "sharing-and-refresh",
       title: "Sharing reports and keeping them fresh",
       summary:
-        "Organisations share reports through the Power BI service and mobile app, and set data to refresh on a schedule. You will learn why publish to web makes a report public to anyone, which must never be used for bank, health or beneficiary data.",
+        "Organisations share reports through the Power BI service and mobile app, which need a work or school account, and set data to refresh on a schedule. You will learn how sharing works once you join an organisation, and why publish to web makes a report public to anyone, which must never be used for bank, health or beneficiary data.",
       parent: "reports-people-use",
       optional: false,
       resources: [pbiService, pbiRefresh, pbiPublishWeb],
@@ -306,7 +310,7 @@ export const excelPowerBi: RoadmapDraft = {
       slug: "jobs-and-next-steps",
       title: "Jobs, certifications and next steps",
       summary:
-        "These skills fit admin, accounts, MIS, monitoring and evaluation, and reporting roles, and optional exams such as Microsoft Office Specialist Excel and Power BI Data Analyst (PL 300) exist if an employer asks for them. To go further into SQL and Python, continue with the Data Analyst track.",
+        "These skills fit admin, accounts, MIS, monitoring and evaluation, and reporting roles, and optional paid exams such as Microsoft Office Specialist Excel Associate and Power BI Data Analyst (PL 300) exist if an employer asks for them. To go further into SQL and Python, continue with the Data Analyst track.",
       parent: "getting-hired-excel",
       optional: false,
       resources: [mosExcel, pl300],

@@ -180,7 +180,7 @@
   --color-surface-sunken: #fafaf9;   /* wells, table headers, footers        */
   --color-content:        #211d1d;   /* 16.69:1 */
   --color-content-2:      #57564f;   /*  7.37:1 */
-  --color-content-3:      #78776f;   /*  4.50:1 */
+  --color-content-3:      #6b6a63;   /*  5.43:1; 4.93:1 on neutral-100 (#78776f was 4.50, under 4.5 on sunken) */
   --color-content-inv:    #ffffff;
   --color-line:           #e7e6e3;
   --color-line-strong:    #d4d3cf;
@@ -191,6 +191,26 @@
   --color-warning-fg: #a16207;  --color-warning-bg: #fefaeb;
   --color-danger-fg:  #b91c1c;  --color-danger-bg:  #fef2f2;
   --color-info-fg:    #165b93;  --color-info-bg:    #f1f7fb;
+  --color-info-line:  #bfd8ec;  /* a tinted border, decorative (text sits in content) */
+
+  /* --- Actions and selection (issue #204) -------------------------------
+     The primary button, a checked choice, a checkbox tick and the current
+     step all name a role here instead of a blue rung, so they re-point with
+     the theme. Light: white on blue-600 (5.87:1). Dark flips to a lighter
+     blue carrying dark ink (6.40:1), which also keeps the fill at 6.07:1
+     against the dark surface. `line-selected` is the border of a chosen
+     option and the accent-color of native ticks: 3:1 or more as a non-text
+     boundary in both themes. */
+  --color-action:        #1968a7;  /* 5.87:1 with action-fg              */
+  --color-action-hover:  #165b93;  /* 7.11:1                             */
+  --color-action-fg:     #ffffff;
+  --color-line-selected: #1968a7;  /* 5.87:1 on surface                  */
+
+  /* Fixed in every theme, on purpose: the brand orange as a decorative mark
+     (bullets, dots; never text on light), and white for marks that always
+     sit on a fixed dark ground (the inverse logo on Sea Blue or ink). */
+  --color-brand-mark: #f79020;
+  --color-on-dark:    #ffffff;
 
   /* Aliases for shadcn/ui components (Radix primitives, restyled to this
      token system rather than shadcn's own default palette) — pointing at
@@ -381,20 +401,26 @@
    Explicit `data-theme` wins in both directions; the media query is only the
    default for someone who has never touched the setting. */
 :root[data-theme="dark"] {
+  color-scheme: dark;  /* native controls, scrollbars and form fields follow */
   --color-surface:        #14171c;
   --color-surface-raised: #1b1f26;
   --color-surface-sunken: #0e1114;
   --color-content:        #f4f4f2;  /* 16.31:1 */
   --color-content-2:      #a3a29d;  /*  7.02:1 */
-  --color-content-3:      #83827b;  /*  4.65:1 — was #78776f at 3.99, failed */
+  --color-content-3:      #8d8c86;  /*  5.62:1; 4.90:1 on raised (#83827b was 4.28:1 there) */
   --color-content-inv:    #211d1d;
   --color-line:           #262b33;
   --color-line-strong:    #333a44;
 
   --color-success-fg: #16a34a;  --color-success-bg: #142922;
   --color-warning-fg: #eab308;  --color-warning-bg: #302b19;
-  --color-danger-fg:  #e24949;  --color-danger-bg:  #2e191d;  /* was #b91c1c at 3.72, failed */
-  --color-info-fg:    #3786c3;  --color-info-bg:    #152331;
+  --color-danger-fg:  #f06a6a;  --color-danger-bg:  #2e191d;  /* 5.48:1; #b91c1c was 3.72, #e24949 4.15 */
+  --color-info-fg:    #5c9cce;  --color-info-bg:    #152331;  /* 5.39:1 (#3786c3 was 4.07) */
+  --color-info-line:  #2a3f52;
+  --color-action:        #5c9cce;
+  --color-action-hover:  #92bdde;
+  --color-action-fg:     #0e1114;  /* 6.40:1 */
+  --color-line-selected: #5c9cce;  /* 6.07:1 */
 
   --content-link:   var(--color-blue-300);   /* 9.03:1 */
   --content-accent: var(--color-orange-400); /* 9.40:1 */
@@ -437,20 +463,26 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
+    color-scheme: dark;
     --color-surface:        #14171c;
     --color-surface-raised: #1b1f26;
     --color-surface-sunken: #0e1114;
     --color-content:        #f4f4f2;
     --color-content-2:      #a3a29d;
-    --color-content-3:      #83827b;
+    --color-content-3:      #8d8c86;
     --color-content-inv:    #211d1d;
     --color-line:           #262b33;
     --color-line-strong:    #333a44;
 
     --color-success-fg: #16a34a;  --color-success-bg: #142922;
     --color-warning-fg: #eab308;  --color-warning-bg: #302b19;
-    --color-danger-fg:  #e24949;  --color-danger-bg:  #2e191d;
-    --color-info-fg:    #3786c3;  --color-info-bg:    #152331;
+    --color-danger-fg:  #f06a6a;  --color-danger-bg:  #2e191d;
+    --color-info-fg:    #5c9cce;  --color-info-bg:    #152331;  /* 5.39:1 (#3786c3 was 4.07) */
+    --color-info-line:  #2a3f52;
+    --color-action:        #5c9cce;
+    --color-action-hover:  #92bdde;
+    --color-action-fg:     #0e1114;  /* 6.40:1 */
+    --color-line-selected: #5c9cce;  /* 6.07:1 */
 
     --content-link:   var(--color-blue-300);
     --content-accent: var(--color-orange-400);
@@ -492,6 +524,116 @@
   }
 }
 
+/* --- Higher contrast (issue #204) ------------------------------------------
+   Set from /settings as <html data-contrast="more">. Text moves to WCAG AAA
+   (7:1) where the role allows it, and borders that separate controls rise
+   above 3:1 so an input or card edge is visible on a dim or cheap screen.
+   Three blocks, mirroring the theme blocks above: light, explicit dark, and
+   dark by system preference. Each block sets the same variables, so the
+   order between them never matters. Ratios are against `surface` (status
+   colours against their own bg). */
+:root[data-contrast="more"] {
+  --color-content-2:      #44433d;  /*  9.92:1 */
+  --color-content-3:      #57564f;  /*  7.37:1 */
+  --color-line:           #78776f;  /*  4.50:1 */
+  --color-line-strong:    #57564f;  /*  7.37:1 */
+  --color-success-fg:     #14532d;  /*  8.64:1 */
+  --color-warning-fg:     #713f12;  /*  8.29:1 */
+  --color-danger-fg:      #991b1b;  /*  7.60:1 */
+  --color-info-fg:        #124e7e;  /*  8.04:1 */
+  --color-info-line:      #124e7e;
+  --color-action:         #124e7e;  /*  8.69:1 with white */
+  --color-action-hover:   #0f406a;
+  --color-line-selected:  #124e7e;
+  --content-link:         #124e7e;  /*  8.69:1 */
+  --focus-ring:           #124e7e;
+}
+:root[data-contrast="more"][data-theme="dark"] {
+  --color-content:        #ffffff;  /* 17.96:1 */
+  --color-content-2:      #d4d3cf;  /* 11.99:1 */
+  --color-content-3:      #b5b4ae;  /*  8.64:1 */
+  --color-line:           #7d838c;  /*  4.70:1 */
+  --color-line-strong:    #8b919a;  /*  5.66:1 */
+  --color-success-fg:     #86efac;  /* 10.92:1 */
+  --color-warning-fg:     #fde047;  /* 10.73:1 */
+  --color-danger-fg:      #fca5a5;  /*  8.69:1 */
+  --color-info-fg:        #bfd8ec;  /* 10.82:1 */
+  --color-info-line:      #bfd8ec;
+  --color-action:         #92bdde;  /*  9.52:1 with action-fg */
+  --color-action-hover:   #bfd8ec;
+  --color-line-selected:  #bfd8ec;
+  --content-link:         #bfd8ec;  /* 12.19:1 */
+  --focus-ring:           #bfd8ec;
+}
+@media (prefers-color-scheme: dark) {
+  :root[data-contrast="more"]:not([data-theme="light"]) {
+    --color-content:        #ffffff;
+    --color-content-2:      #d4d3cf;
+    --color-content-3:      #b5b4ae;
+    --color-line:           #7d838c;
+    --color-line-strong:    #8b919a;
+    --color-success-fg:     #86efac;
+    --color-warning-fg:     #fde047;
+    --color-danger-fg:      #fca5a5;
+    --color-info-fg:        #bfd8ec;
+    --color-info-line:      #bfd8ec;
+    --color-action:         #92bdde;
+    --color-action-hover:   #bfd8ec;
+    --color-line-selected:  #bfd8ec;
+    --content-link:         #bfd8ec;
+    --focus-ring:           #bfd8ec;
+  }
+}
+
+/* --- Display preferences (issue #204) ---------------------------------------
+   The inline script in app/layout.tsx copies the saved choices onto <html>
+   before the first paint (src/lib/display/script.ts). Only the rules live
+   here. Text size scales the root, so every rem (type, spacing, widths)
+   grows together; breakpoints are in rem too but media queries measure the
+   browser default, so the md and lg splits do not move. */
+@layer base {
+  :root[data-text-size="112"] { font-size: 112.5%; }
+  :root[data-text-size="125"] { font-size: 125%; }
+  :root[data-text-size="150"] { font-size: 150%; }
+
+  /* The system font: nothing to download, and plainer letter shapes. */
+  :root[data-font="system"] {
+    --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans", Arial, sans-serif;
+  }
+
+  :root[data-motion="reduce"] *,
+  :root[data-motion="reduce"] *::before,
+  :root[data-motion="reduce"] *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* These two must beat utilities (`no-underline`, `leading-*`, `text-sm`), so
+   they sit in the utilities layer with a higher specificity than any single
+   class. */
+@layer utilities {
+  :root[data-underline-links="on"] a {
+    text-decoration-line: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
+  }
+  /* Easier reading: more room between lines, letters and words. */
+  :root[data-spacing="wide"] body {
+    letter-spacing: 0.03em;
+    word-spacing: 0.1em;
+  }
+  :root[data-spacing="wide"] :is(p, li, dd, dt, td, th, blockquote, label, figcaption) {
+    line-height: 1.85;
+  }
+  :root[data-spacing="wide"] :is(h1, h2, h3, h4) {
+    letter-spacing: 0;
+    line-height: 1.3;
+  }
+}
+
 /* --- Base -------------------------------------------------------------
    Wrapped in @layer base: CSS cascade layers always lose to un-layered
    rules regardless of specificity or source order, and Tailwind's own
@@ -515,7 +657,11 @@
     -webkit-font-smoothing: antialiased;
   }
   h1, h2, h3, h4 { font-weight: var(--font-weight-bold); letter-spacing: -0.02em; }
-  a { color: var(--content-link); }
+  a { color: var(--content-link); text-underline-offset: 3px; }
+  /* A link inside running text is underlined, so it never relies on colour
+     alone (WCAG 1.4.1, axe link-in-text-block). Links styled as buttons or
+     nav items opt out with their own utilities, which beat this layer. */
+  :where(p, dd, td, blockquote) > a { text-decoration-line: underline; }
 
   /* One focus treatment everywhere — visible on both themes. */
   :where(a, button, input, select, textarea, [tabindex]):focus-visible {

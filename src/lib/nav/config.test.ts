@@ -59,10 +59,13 @@ describe("nav config", () => {
       .map((i) => i.href.split("#")[0])
       .filter((href) => !PUBLIC_NAV.some((p) => p.href === href))
       // The path quiz result sends visitors to sign up instead (proxy.ts).
-      .filter((href) => href !== "/path");
+      .filter((href) => href !== "/path")
+      // Display settings work for visitors too (#204): they are per device.
+      .filter((href) => href !== "/settings");
     for (const href of signedIn) expect(isSignedInPath(href), href).toBe(true);
     for (const g of NAV_GROUPS) if (g.hub) expect(isSignedInPath(g.hub)).toBe(true);
     for (const { href } of FOOTER_NAV) expect(isSignedInPath(href), href).toBe(false);
+    expect(isSignedInPath("/settings")).toBe(false);
   });
 
   it("lists the public areas in the header and footer", () => {

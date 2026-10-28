@@ -116,7 +116,7 @@ async function Queue({ searchParams }: Pick<PageProps<"/admin/applications">, "s
                   aria-valuemax={c.max_size}
                   aria-valuenow={used}
                 >
-                  <div className="h-full rounded-full bg-blue-600" style={{ width: `${pct}%` }} />
+                  <div className="h-full rounded-full bg-action" style={{ width: `${pct}%` }} />
                 </div>
                 <p className="text-sm text-content-3">
                   {used} of {c.max_size} learners · {seatsLabel(c)}
