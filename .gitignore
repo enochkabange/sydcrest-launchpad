@@ -51,3 +51,11 @@ next-env.d.ts
 
 # Playwright screenshots (e2e/screens/); CI uploads them as an artifact
 /e2e-screenshots/
+
+# design-sync (/design-sync): staged converter scripts, generated bundle and machine state
+/.ds-sync/
+/ds-bundle/
+/dist-ds/
+/.design-sync/.cache/
+/.design-sync/learnings/
+/.design-sync/node_modules

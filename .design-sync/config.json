@@ -1,0 +1,110 @@
+{
+  "projectId": "094f71d0-381c-4905-9ee6-69fda04c7e73",
+  "pkg": "sydcrest-launchpad",
+  "globalName": "SydCrest",
+  "shape": "package",
+  "buildCmd": "node .design-sync/build/build-dist.mjs",
+  "entry": "./dist-ds/index.js",
+  "tsconfig": "../tsconfig.json",
+  "cssEntry": "styles.css",
+  "extraFonts": [
+    "../.design-sync/build/urbanist.css"
+  ],
+  "docsDir": "../.design-sync/docs",
+  "componentSrcMap": {
+    "RoadmapUi": null
+  },
+  "overrides": {
+    "TopLinks": {
+      "cardMode": "column"
+    },
+    "DataTable": {
+      "cardMode": "column"
+    },
+    "SectionGrid": {
+      "cardMode": "column"
+    },
+    "PageHeader": {
+      "cardMode": "column"
+    },
+    "BriefCard": {
+      "cardMode": "column"
+    },
+    "ExpertCard": {
+      "cardMode": "column"
+    },
+    "OutlineView": {
+      "cardMode": "column"
+    },
+    "AppTopBar": {
+      "cardMode": "column"
+    },
+    "PostCard": {
+      "cardMode": "column"
+    },
+    "EventCard": {
+      "cardMode": "column"
+    },
+    "OpportunityCard": {
+      "cardMode": "column"
+    },
+    "CertificationCard": {
+      "cardMode": "column"
+    },
+    "CertificateChecklist": {
+      "cardMode": "column"
+    },
+    "Celebration": {
+      "cardMode": "column"
+    },
+    "Quiz": {
+      "cardMode": "column"
+    },
+    "ThisWeek": {
+      "cardMode": "column"
+    },
+    "MainWithRail": {
+      "cardMode": "column",
+      "viewport": "1280x800"
+    },
+    "TalentCard": {
+      "cardMode": "column"
+    },
+    "ReplyCard": {
+      "cardMode": "column"
+    },
+    "VerifiedSkillBadges": {
+      "cardMode": "column"
+    },
+    "PublicPortfolio": {
+      "cardMode": "column"
+    },
+    "Alert": {
+      "cardMode": "column"
+    },
+    "CheckboxGroup": {
+      "cardMode": "column"
+    },
+    "Section": {
+      "cardMode": "column",
+      "viewport": "1280x900"
+    },
+    "TextField": {
+      "cardMode": "column"
+    },
+    "TextAreaField": {
+      "cardMode": "column"
+    },
+    "SelectField": {
+      "cardMode": "column"
+    },
+    "CheckboxField": {
+      "cardMode": "column"
+    },
+    "TabList": {
+      "cardMode": "column",
+      "viewport": "390x400"
+    }
+  },
+  "readmeHeader": ".design-sync/conventions.md"
+}
