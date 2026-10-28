@@ -3,8 +3,7 @@
 import { useActionState } from "react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { TextField } from "@/components/ui/field";
-import { TextAreaField } from "@/app/(admin)/admin/roadmaps/fields";
+import { TextAreaField, TextField } from "@/components/ui/field";
 import { SUMMARY_MAX } from "@/lib/chapters/model";
 import { joinChapter, leaveChapter, removeMember, saveChapterDetails, type ActionState } from "./actions";
 

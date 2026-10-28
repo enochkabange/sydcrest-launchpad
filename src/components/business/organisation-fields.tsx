@@ -1,8 +1,7 @@
-import { SelectField, TextField } from "@/components/ui/field";
+import { SelectField, TextAreaField, TextField } from "@/components/ui/field";
 import { REGIONS } from "@/lib/regions";
 import { ORG_KINDS, type OrganisationFields } from "@/lib/organisations/forms";
 import type { FieldErrors } from "@/lib/validation";
-import { TextAreaField } from "./bits";
 
 export type OrganisationValues = {
   name: string;

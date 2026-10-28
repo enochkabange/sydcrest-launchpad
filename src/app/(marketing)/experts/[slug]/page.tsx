@@ -181,7 +181,7 @@ function DetailsCard({ expert }: { expert: DirectoryExpert }) {
       )}
       {expert.verifiedSkillBadges.length > 0 && (
         <div className="flex flex-col gap-2">
-          <h2 className="text-sm font-semibold text-content">Verified by SydCrest</h2>
+          <h2 className="text-sm font-semibold text-content">Verified skills</h2>
           <VerifiedSkillBadges skills={expert.verifiedSkillBadges} variant="compact" />
           <Link href="/skills" className="inline-flex min-h-11 items-center self-start text-sm text-content-link underline">
             How skills are verified

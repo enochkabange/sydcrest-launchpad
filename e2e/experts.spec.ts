@@ -47,7 +47,7 @@ test("find an expert, read their page and open an offer", async ({ page }) => {
   await results.getByRole("link", { name: new RegExp(verified.name) }).click();
   await expect(page).toHaveURL(new RegExp(`/experts/${verified.slug}$`));
   await expect(page.getByRole("heading", { level: 1, name: verified.name })).toBeVisible();
-  await expect(page.getByText("Identity verified").first()).toBeVisible();
+  await expect(page.getByText("Verified by SydCrest").first()).toBeVisible();
   await expect(page.getByText("1 completed session").first()).toBeVisible();
   await expect(page.getByText("5.0 out of 5 from 1 review").first()).toBeVisible();
   await expect(page.getByText("Fuseini showed me how to find duplicate rows.")).toBeVisible();

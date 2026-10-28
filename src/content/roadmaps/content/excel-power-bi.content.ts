@@ -59,11 +59,11 @@ Work with real or realistic records from people around you: a trader, a church t
             prompt: "What does the cell address B4 refer to?",
             options: [
               "Row B, column 4",
-              "Column B, row 4",
-              "The fourth sheet in the workbook",
               "The fourth formula in column B",
+              "The fourth sheet in the workbook",
+              "Column B, row 4",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Columns are named with letters and rows with numbers, so B4 is column B, row 4.",
           },
           {
@@ -80,12 +80,12 @@ Work with real or realistic records from people around you: a trader, a church t
           {
             prompt: "Hawa corrects the number of tubs in one sale. What happens to a total that is calculated with a formula?",
             options: [
-              "It stays the same until she retypes it",
               "It updates by itself",
+              "It stays the same until she retypes it",
               "It shows an error",
               "It is deleted",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Formulas recalculate automatically when the cells they depend on change.",
           },
           {
@@ -93,7 +93,7 @@ Work with real or realistic records from people around you: a trader, a church t
             options: [
               "One row of data",
               "A printed report",
-              "A single cell that holds a formula",
+              "A single cell that holds a long formula and its result",
               "A spreadsheet file that can hold several sheets",
             ],
             answer_index: 3,
@@ -146,18 +146,18 @@ Issahaku has an Android phone and no laptop. He signs in to the Excel app with a
           {
             prompt: "Where are files you create in free Excel for the web saved?",
             options: [
-              "Only on the device you used",
-              "In OneDrive, Microsoft's online storage",
-              "In Google Drive",
+              "Only on the device you used, until you email the file to yourself",
               "On a USB stick you must plug in",
+              "In Google Drive",
+              "In OneDrive, Microsoft's online storage",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Excel for the web saves files in OneDrive so you can open them on any device.",
           },
           {
             prompt: "What limit does Microsoft set on free editing in the Excel app without a subscription?",
             options: [
-              "You can only open files, never create them",
+              "You can only open and read files, never create or change them",
               "Only five files can be edited per month",
               "Free editing is limited to screens of 10.1 inches or smaller",
               "Editing works only when you are offline",
@@ -242,18 +242,18 @@ Before you type a single row, write your column headers and ask: "Could I sort, 
             prompt: "Which entry follows the tidy table rules for a Quantity column?",
             options: [
               "\"12 cartons\"",
-              "12, with \"carton\" in a separate Unit column",
-              "\"twelve\"",
               "12 cartons, with the cell merged across two columns",
+              "\"twelve\"",
+              "12, with \"carton\" in a separate Unit column",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "A column should hold one kind of value, so the number goes in Quantity and the unit in its own column.",
           },
           {
             prompt: "Why should you avoid typing subtotal rows in the middle of your data?",
             options: [
               "They make the file too large to save",
-              "Excel does not allow numbers in the middle of a table",
+              "Excel does not allow numbers typed in the middle of a table, so it shows an error",
               "They break sorting, filtering and summaries because they are not real records",
               "They change the colour of the table",
             ],
@@ -264,11 +264,11 @@ Before you type a single row, write your column headers and ask: "Could I sort, 
             prompt: "What does Excel do when you turn a tidy range into a table?",
             options: [
               "It deletes the header row",
-              "It adds filter buttons and grows automatically when you add rows",
-              "It converts all numbers to text",
               "It merges the header cells",
+              "It converts all numbers to text so they line up neatly in the columns",
+              "It adds filter buttons and grows automatically when you add rows",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Tables add filter buttons, banded rows and expand automatically when new rows are added.",
           },
           {
@@ -341,11 +341,11 @@ Reading these messages calmly, and clicking the cell to check its references, so
             prompt: "You write =B2*C2 in D2 and copy it to D3. What formula appears in D3?",
             options: [
               "=B2*C2",
-              "=B3*C3",
-              "=B3*C2",
               "=D2*D3",
+              "=B3*C2",
+              "=B3*C3",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Relative references move with the formula, so both row numbers increase by one.",
           },
           {
@@ -363,7 +363,7 @@ Reading these messages calmly, and clicking the cell to check its references, so
             prompt: "A cell shows #VALUE!. What is a likely cause?",
             options: [
               "The formula is calculating with a cell that contains text, such as \"12 bags\"",
-              "The column is too narrow",
+              "The column is too narrow to show the whole answer, so Excel shows an error instead",
               "The formula divided by zero",
               "The file has not been saved",
             ],
@@ -385,7 +385,7 @@ Reading these messages calmly, and clicking the cell to check its references, so
             prompt: "What does #REF! tell you?",
             options: [
               "The cell contains a date",
-              "The formula has too many brackets",
+              "The formula has too many brackets for Excel to read",
               "You forgot the equals sign",
               "The formula points at a cell that was deleted",
             ],
@@ -455,12 +455,12 @@ Use one dataset through the whole section so you can see how the skills connect.
           {
             prompt: "What are arguments in a function?",
             options: [
-              "Error messages the function can show",
               "The pieces of information you give the function inside the brackets",
-              "Other people who disagree with your formula",
+              "Error messages the function can show",
+              "Other people who disagree with your formula and leave comments on it",
               "The name of the function",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Arguments are the inputs inside the brackets, separated by commas.",
           },
           {
@@ -468,7 +468,7 @@ Use one dataset through the whole section so you can see how the skills connect.
             options: [
               "COUNTIF only counts numbers",
               "Some cells may contain \"Tamale \" with a hidden space",
-              "COUNTIF cannot use text in quotes",
+              "COUNTIF cannot use text in quotes, only numbers and cell addresses",
               "The range is too long",
             ],
             answer_index: 1,
@@ -477,12 +477,12 @@ Use one dataset through the whole section so you can see how the skills connect.
           {
             prompt: "Why should you keep a copy of the original data before changing it?",
             options: [
-              "Excel deletes data after a week",
-              "Functions only work on copies",
               "So you can always go back and check what the raw data said",
-              "Copies make the file load faster",
+              "Functions only work on copies",
+              "Excel deletes data after a week",
+              "Copies make the file load faster on a phone with little memory",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "A raw copy lets you recover from mistakes and check your cleaning against the original.",
           },
         ],
@@ -559,11 +559,11 @@ Her manager gets four clear numbers, each one checkable by clicking the cell.
             prompt: "Which formula counts how many cells in D2:D200 say \"Female\"?",
             options: [
               "=SUM(D2:D200,\"Female\")",
-              "=COUNTIF(D2:D200,\"Female\")",
-              "=COUNT(D2:D200)",
               "=IF(D2:D200,\"Female\")",
+              "=COUNT(D2:D200)",
+              "=COUNTIF(D2:D200,\"Female\")",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "COUNTIF counts the cells in a range that meet one condition.",
           },
           {
@@ -591,7 +591,7 @@ Her manager gets four clear numbers, each one checkable by clicking the cell.
           {
             prompt: "What is the difference between COUNT and COUNTA?",
             options: [
-              "COUNT is for Google Sheets and COUNTA is for Excel",
+              "COUNT is the Google Sheets version and COUNTA is the Excel version of the same function",
               "COUNTA only counts numbers",
               "COUNT counts cells with numbers; COUNTA counts every cell that is not empty",
               "There is no difference",
@@ -602,12 +602,12 @@ Her manager gets four clear numbers, each one checkable by clicking the cell.
           {
             prompt: "How can you check that a SUMIFS answer is right?",
             options: [
-              "Retype the formula in a new cell",
               "Filter the table to the same condition and compare the total",
+              "Retype the same formula in a new cell and check that both give the same answer",
               "Make the column wider",
               "Save the file and reopen it",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Filtering to the same condition and reading the total is a quick independent check.",
           },
         ],
@@ -680,11 +680,11 @@ Then Amount is \`=C2*E2\`. When the supplier changes a price, Fuseini updates th
             prompt: "What does =XLOOKUP(C2, Prices!A:A, Prices!C:C) return?",
             options: [
               "The value in cell C2",
-              "The item in column C of Prices on the row where column A matches C2",
-              "The total of column C on the Prices sheet",
               "The row number where C2 was found",
+              "The total of column C on the Prices sheet, added up for every row that matches",
+              "The item in column C of Prices on the row where column A matches C2",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "XLOOKUP finds C2 in the first range and returns the item on the same row of the second range.",
           },
           {
@@ -701,29 +701,29 @@ Then Amount is \`=C2*E2\`. When the supplier changes a price, Fuseini updates th
           {
             prompt: "Why is FALSE important at the end of a VLOOKUP?",
             options: [
-              "It makes the formula calculate faster",
-              "It asks for an exact match, so VLOOKUP does not return a wrong nearby value",
-              "It hides errors",
+              "It makes the formula calculate much faster on large price lists with many rows",
               "It lets VLOOKUP look to the left",
+              "It hides errors",
+              "It asks for an exact match, so VLOOKUP does not return a wrong nearby value",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Without FALSE, VLOOKUP may return an approximate match without any warning.",
           },
           {
             prompt: "An office uses Excel 2019. Which lookup should you expect to use there?",
             options: [
               "XLOOKUP",
-              "VLOOKUP, or INDEX with MATCH",
-              "Neither, Excel 2019 has no lookups",
               "Only Google Sheets lookups",
+              "Neither, Excel 2019 has no lookups",
+              "VLOOKUP, or INDEX with MATCH",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "XLOOKUP is not available in Excel 2019 or older, so those versions use VLOOKUP or INDEX and MATCH.",
           },
           {
             prompt: "What does the fourth argument in =XLOOKUP(C2, Prices!A:A, Prices!C:C, \"Code not found\") do?",
             options: [
-              "Sets the column number to return",
+              "Sets which column number of the price list the formula should return",
               "Turns on approximate matching",
               "Shows \"Code not found\" instead of an error when there is no match",
               "Sorts the price list",
@@ -789,7 +789,7 @@ When volunteers fill the sheet, typing errors are blocked as they happen. At the
           {
             prompt: "What is the main difference between filtering and deleting rows?",
             options: [
-              "Filtering removes rows permanently",
+              "Filtering removes the hidden rows permanently once you save the file",
               "Filtering only hides rows, which come back when you clear the filter",
               "Filtering works only on numbers",
               "There is no difference",
@@ -802,7 +802,7 @@ When volunteers fill the sheet, typing errors are blocked as they happen. At the
             options: [
               "Sorting one column alone scrambles the rows so details no longer match",
               "Single columns cannot be sorted in Excel",
-              "Sorting the whole table is faster on a phone",
+              "Sorting the whole table is faster on a phone because Excel sorts all columns at once",
               "Sorting one column deletes the header",
             ],
             answer_index: 0,
@@ -822,18 +822,18 @@ When volunteers fill the sheet, typing errors are blocked as they happen. At the
           {
             prompt: "Why keep dropdown values on a separate Lists sheet?",
             options: [
-              "Dropdowns only work across sheets",
               "So you can update the allowed values in one place",
+              "Dropdowns only work when their values are on another sheet",
               "It hides the values from everyone",
               "It makes the file smaller",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Keeping the list in one place makes it easy to add or correct allowed values later.",
           },
           {
             prompt: "You want each branch's biggest sales at the top of its group. How do you sort?",
             options: [
-              "By Amount only, smallest to largest",
+              "By Amount only, from the smallest sale to the largest",
               "By Branch only, Z to A",
               "By Branch A to Z, then by Amount largest to smallest",
               "By Date, then by Branch",
@@ -907,40 +907,40 @@ Mariama receives a survey export of 400 rows. She adds helper columns: \`=PROPER
           {
             prompt: "What does =TRIM(A2) do to \" tamale  central \"?",
             options: [
-              "Changes it to \"TAMALE CENTRAL\"",
               "Removes the outer spaces and the double space, giving \"tamale central\"",
+              "Changes every letter to a capital, giving \"TAMALE CENTRAL\" with the spaces kept",
               "Deletes the text",
               "Splits it into two columns",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "TRIM removes spaces at the start and end and reduces double spaces to single ones.",
           },
           {
             prompt: "A phone number shows as 244123456 instead of 0244123456. Why?",
             options: [
-              "The number was typed with a letter O",
               "The column was formatted as a number, so Excel dropped the leading zero",
+              "The number was typed with a capital letter O at the start instead of a zero",
               "TRIM removed the zero",
               "The cell is too narrow",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Number formatting drops leading zeros, which is why phone numbers should be stored as text.",
           },
           {
             prompt: "Which sign suggests a date is stored as text, not as a real date?",
             options: [
               "It lines up on the right of the cell by default",
-              "=ISNUMBER on the cell returns FALSE",
-              "It can be subtracted from another date",
               "It groups by month in a summary",
+              "It can be subtracted from another date",
+              "=ISNUMBER on the cell returns FALSE",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "A real date is a number, so ISNUMBER returns FALSE when the date is only text.",
           },
           {
             prompt: "Why should you clean in a helper column instead of overwriting the original?",
             options: [
-              "Excel does not allow overwriting",
+              "Excel does not allow you to overwrite a column that other formulas depend on",
               "So you can check results against the original before replacing anything",
               "Helper columns calculate faster",
               "Formulas only work in new columns",
@@ -952,11 +952,11 @@ Mariama receives a survey export of 400 rows. She adds helper columns: \`=PROPER
             prompt: "Text dates are written as DD/MM/YYYY. Which formula rebuilds a real date from A2?",
             options: [
               "=DATE(LEFT(A2,2), MID(A2,4,2), RIGHT(A2,4))",
-              "=DATE(RIGHT(A2,4), MID(A2,4,2), LEFT(A2,2))",
-              "=TRIM(A2)",
               "=TEXT(A2,\"0000000000\")",
+              "=TRIM(A2)",
+              "=DATE(RIGHT(A2,4), MID(A2,4,2), LEFT(A2,2))",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "DATE takes year, month, day, so the year comes from the right, the month from the middle and the day from the left.",
           },
         ],
@@ -1017,11 +1017,11 @@ Charts and conditional formatting are fine on any device. Building PivotTables o
             prompt: "What are the three steps of reporting described in this lesson?",
             options: [
               "Type, save, print",
-              "Summarise, show, highlight",
-              "Sort, filter, delete",
               "Collect, clean, store",
+              "Sort, filter, delete",
+              "Summarise, show, highlight",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The lesson describes reporting as summarising the data, showing it visually and highlighting what needs action.",
           },
           {
@@ -1030,7 +1030,7 @@ Charts and conditional formatting are fine on any device. Building PivotTables o
               "Choose a colour scheme",
               "Download a template",
               "Write the question you are answering in one sentence",
-              "Make a PivotTable of every column",
+              "Make a PivotTable of every column so nothing is missed",
             ],
             answer_index: 2,
             explanation: "Starting from a clear question decides which summary or chart you need.",
@@ -1049,12 +1049,12 @@ Charts and conditional formatting are fine on any device. Building PivotTables o
           {
             prompt: "Why does this section depend on clean data from earlier lessons?",
             options: [
-              "Charts only work on sheets named Clean",
               "Summaries treat messy spellings as different values, giving wrong totals",
-              "PivotTables delete messy rows automatically",
+              "Charts only work on sheets named Clean",
+              "PivotTables delete messy rows automatically, so clean data keeps every record in the total",
               "Conditional formatting cleans data first",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Values like \"Tamale\" and \"Tamale \" are grouped separately, so dirty data gives wrong summaries.",
           },
         ],
@@ -1126,12 +1126,12 @@ She inserts a PivotTable, puts Shop in Rows, Amount in Values and Product in Fil
           {
             prompt: "You correct some rows in your data. What must you do in Excel so the PivotTable shows the new numbers?",
             options: [
-              "Delete and rebuild the PivotTable",
               "Refresh the PivotTable",
+              "Delete and rebuild the PivotTable",
               "Save and close the file",
               "Nothing, it always updates by itself",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Excel PivotTables do not update automatically; you must refresh them.",
           },
           {
@@ -1140,7 +1140,7 @@ She inserts a PivotTable, puts Shop in Rows, Amount in Values and Product in Fil
               "Put Gender in Values and sum it",
               "Put Gender in Rows and set a name field in Values to Count",
               "Put Gender in Filters only",
-              "You cannot count text in a PivotTable",
+              "You cannot count text in a PivotTable, only add up numbers",
             ],
             answer_index: 1,
             explanation: "Grouping by gender in Rows and counting a field in Values gives the number of participants per gender.",
@@ -1149,7 +1149,7 @@ She inserts a PivotTable, puts Shop in Rows, Amount in Values and Product in Fil
             prompt: "What does \"pivoting\" a PivotTable mean?",
             options: [
               "Printing it sideways",
-              "Converting it to a chart",
+              "Converting it into a chart that turns around as you scroll down the sheet",
               "Rearranging fields to look at the data a different way",
               "Deleting the original data",
             ],
@@ -1160,7 +1160,7 @@ She inserts a PivotTable, puts Shop in Rows, Amount in Values and Product in Fil
             prompt: "Why is an Excel table a good source for a PivotTable?",
             options: [
               "PivotTables only work with tables",
-              "Tables make PivotTables update without refreshing",
+              "Tables make PivotTables update by themselves without ever needing a refresh",
               "The table grows to include new rows, so a refresh picks them up",
               "Tables remove duplicates automatically",
             ],
@@ -1224,11 +1224,11 @@ He replaces it with a horizontal bar chart, sorted from most to fewest attendees
             prompt: "Which chart best shows how monthly sales changed over a year?",
             options: [
               "A pie chart",
-              "A line chart",
-              "A 3D column chart",
               "A table of phone numbers",
+              "A 3D column chart",
+              "A line chart",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Line charts show change over time, with months running left to right.",
           },
           {
@@ -1236,7 +1236,7 @@ He replaces it with a horizontal bar chart, sorted from most to fewest attendees
             options: [
               "Excel requires it",
               "Starting higher makes small differences look much bigger than they are",
-              "It makes the chart load faster",
+              "It makes the chart load faster on a phone and print neatly on a single page",
               "It removes the need for a title",
             ],
             answer_index: 1,
@@ -1257,7 +1257,7 @@ He replaces it with a horizontal bar chart, sorted from most to fewest attendees
             prompt: "When is a pie chart a reasonable choice?",
             options: [
               "For comparing twelve communities",
-              "For showing a trend over time",
+              "For showing a trend over time, such as monthly sales",
               "For showing two or three parts of a whole",
               "For exact values people must look up",
             ],
@@ -1267,12 +1267,12 @@ He replaces it with a horizontal bar chart, sorted from most to fewest attendees
           {
             prompt: "How should you use colour in a chart?",
             options: [
-              "A different bright colour for every bar",
               "One neutral colour, with one strong colour to highlight what matters",
+              "A different bright colour for every bar so each one stands out clearly",
               "Only red and green",
               "As many colours as the theme allows",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "A single highlight colour draws attention to the point of the chart.",
           },
         ],
@@ -1349,7 +1349,7 @@ She also adds a Status column with an IF formula that says "Reorder" or "OK", so
               "Sorts data by colour",
               "Changes how cells look based on their values, updating as data changes",
               "Converts numbers to text",
-              "Deletes rows that break a rule",
+              "Deletes the rows that break a rule you set, so only the good data remains",
             ],
             answer_index: 1,
             explanation: "Conditional formatting applies formats automatically according to rules about cell values.",
@@ -1357,12 +1357,12 @@ She also adds a Status column with an IF formula that says "Reorder" or "OK", so
           {
             prompt: "In the rule =$E2<TODAY() applied to A2:F300, why is there a $ before E?",
             options: [
-              "To make the formula absolute in every direction",
-              "So every cell in a row checks column E while each row checks its own date",
-              "Because dates always need a dollar sign",
+              "To make the reference absolute in every direction, so every cell checks cell E2 only",
               "To format the cell as currency",
+              "Because dates always need a dollar sign",
+              "So every cell in a row checks column E while each row checks its own date",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Locking the column but not the row makes every cell in a row test that row's due date.",
           },
           {
@@ -1382,7 +1382,7 @@ She also adds a Status column with an IF formula that says "Reorder" or "OK", so
               "Colours slow down Excel",
               "Some people cannot tell certain colours apart, and colour may be lost in printing",
               "Colours are not allowed in reports",
-              "Conditional formatting only works in Google Sheets",
+              "Conditional formatting colours only show in Google Sheets, never in Excel files",
             ],
             answer_index: 1,
             explanation: "Adding words or icons keeps the meaning clear for everyone and in every format.",
@@ -1452,7 +1452,7 @@ Even a repeatable report needs a human check. Compare this month's totals with l
               "It uses more colours",
               "Next month you replace the data and refresh instead of rebuilding by hand",
               "It never needs checking",
-              "It only works in Google Sheets",
+              "It only works in Google Sheets, where reports refresh by themselves every month",
             ],
             answer_index: 1,
             explanation: "A repeatable report reuses the same rules, so producing the next one is quick and consistent.",
@@ -1474,7 +1474,7 @@ Even a repeatable report needs a human check. Compare this month's totals with l
               "Hold the raw data",
               "Store the dropdown lists",
               "Only display results such as key numbers, charts and highlights",
-              "Hold the cleaning formulas",
+              "Hold the cleaning formulas and the raw data side by side so readers can check them",
             ],
             answer_index: 2,
             explanation: "The Report sheet is for reading; data, cleaning and calculations live on other sheets.",
@@ -1484,7 +1484,7 @@ Even a repeatable report needs a human check. Compare this month's totals with l
             options: [
               "Refreshing deletes the data",
               "New data can contain surprises, so comparing with last month and spot checking catches errors",
-              "Repeatable reports are always wrong",
+              "Repeatable reports are always wrong after a refresh until you rebuild every formula by hand",
               "Excel requires a manual check",
             ],
             answer_index: 1,
@@ -1556,7 +1556,7 @@ If you only have free Excel for the web, a phone or Google Sheets, write your st
               "A video of your screen",
               "A list of applied steps that can be replayed",
               "A backup copy of every cell",
-              "A macro written in VBA",
+              "A macro written in VBA that you can edit and share",
             ],
             answer_index: 1,
             explanation: "Each change is saved as a step in the Applied Steps list and replays on refresh.",
@@ -1575,12 +1575,12 @@ If you only have free Excel for the web, a phone or Google Sheets, write your st
           {
             prompt: "Dates in your file are written day first, like 05/03/2026. How should you set the type in Power Query?",
             options: [
-              "Change type to Text",
               "Change type Using Locale, choosing a day first locale such as English (United Kingdom)",
+              "Change type to Text",
               "Remove the column",
               "Change type to Whole number",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Using Locale tells Power Query to read the date in day first order.",
           },
           {
@@ -1588,7 +1588,7 @@ If you only have free Excel for the web, a phone or Google Sheets, write your st
             options: [
               "Rebuild every step from scratch",
               "Save it in place of the old file and use Refresh All",
-              "Copy the old results into the new file",
+              "Copy the old results into the new file and rebuild the steps there",
               "Email it to Microsoft",
             ],
             answer_index: 1,
@@ -1597,7 +1597,7 @@ If you only have free Excel for the web, a phone or Google Sheets, write your st
           {
             prompt: "With a free personal Microsoft account, what can you do with Power Query in Excel for the web?",
             options: [
-              "Use the full editor with no limits",
+              "Use the full editor with no limits, exactly as you would in the desktop app on Windows",
               "You cannot build queries there; that needs a Microsoft 365 business or enterprise plan",
               "Use it only on weekends",
               "Edit queries but not load them",
@@ -1669,23 +1669,23 @@ For portfolio pieces, use open data or data you invent and label as invented. Ne
           {
             prompt: "Which key number is most useful on a one page report?",
             options: [
-              "412",
               "Farmers trained: 412 (target 400)",
+              "412",
               "A list of all 412 farmer names",
               "Row 412",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "A labelled number with a comparison tells the reader whether the result is good or bad.",
           },
           {
             prompt: "How should numbers on the Report sheet be filled in?",
             options: [
               "Typed by hand each month",
-              "Linked by formula to the calculation sheet, such as =Calc!B4",
+              "Left blank so the reader can calculate them from the attached raw data",
               "Copied from last month's PDF",
-              "Left blank for the reader to calculate",
+              "Linked by formula to the calculation sheet, such as =Calc!B4",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Linking by formula keeps the report accurate and makes it refreshable.",
           },
           {
@@ -1702,7 +1702,7 @@ For portfolio pieces, use open data or data you invent and label as invented. Ne
           {
             prompt: "Why keep the report layout narrow, around columns A to H?",
             options: [
-              "Excel only prints eight columns",
+              "Excel can only print eight columns on one page, so wider reports are cut off",
               "So it reads on a phone and fits one page wide without much side scrolling",
               "Wide reports cannot hold charts",
               "Narrow sheets calculate faster",
@@ -1716,7 +1716,7 @@ For portfolio pieces, use open data or data you invent and label as invented. Ne
               "Every number from the raw data",
               "The formulas used",
               "Two or three plain sentences on what went well, what is behind and a suggested action",
-              "The names of everyone in the dataset",
+              "The names and phone numbers of everyone in the dataset, so readers can follow up directly",
             ],
             answer_index: 2,
             explanation: "Highlights explain the result in words and suggest what to do next.",
@@ -1808,22 +1808,22 @@ Fuseini works for a solar lamp distributor with agents across the Upper East Reg
             prompt: "You only have a phone and a Mac for now. What does the lesson suggest?",
             options: [
               "Skip the Power BI section completely",
-              "Read the lessons and practise dashboards with a free browser tool such as Google's Data Studio",
-              "Buy a new Windows laptop before continuing",
               "Build reports in the Power BI mobile app",
+              "Buy a new Windows laptop before continuing",
+              "Read the lessons and practise dashboards with a free browser tool such as Google's Data Studio",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The ideas still matter, and a free browser tool lets you practise dashboards until you can use a Windows computer.",
           },
           {
             prompt: "What is the correct order of the Power BI workflow?",
             options: [
-              "Share, model, get data, measure, visualise",
               "Get data, model, measure, visualise, share",
+              "Share, model, get data, measure, visualise",
               "Visualise, get data, share, model, measure",
               "Measure, share, model, visualise, get data",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Reports start with getting and cleaning data, then modelling, measures, visuals and finally sharing.",
           },
         ],
@@ -1901,7 +1901,7 @@ You need a Windows computer for this task. If you do not have access yet, comple
             options: [
               "It runs on a Mac",
               "It does not need administrator rights and updates automatically",
-              "It includes a free Pro licence",
+              "It includes a free Pro licence for sharing reports with colleagues",
               "It works without Windows",
             ],
             answer_index: 1,
@@ -1911,7 +1911,7 @@ You need a Windows computer for this task. If you do not have access yet, comple
             prompt: "Do you need to sign in to build and save reports in Power BI Desktop?",
             options: [
               "Yes, with a Gmail account",
-              "Yes, with a paid licence",
+              "Yes, with a paid licence, even to save a report on your own computer",
               "No, signing in is only needed to publish to the Power BI service",
               "No, but you cannot save files",
             ],
@@ -2001,7 +2001,7 @@ You need a Windows computer with Power BI Desktop. Without one, do the same shap
             options: [
               "Load deletes the source file",
               "Transform Data opens Power Query so you can check and clean the data first",
-              "Transform Data makes the file smaller",
+              "Transform Data makes the file smaller by loading only the first thousand rows",
               "Load only works for CSV files",
             ],
             answer_index: 1,
@@ -2010,23 +2010,23 @@ You need a Windows computer with Power BI Desktop. Without one, do the same shap
           {
             prompt: "Why is setting the correct data type important?",
             options: [
-              "It changes the colour of the column",
               "A column of numbers stored as text cannot be summed",
+              "It changes the colour of the column",
               "Power BI deletes columns without types",
               "It is only needed for dates",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Calculations need numeric types, so numbers stored as text will not total.",
           },
           {
             prompt: "Why rename columns in plain words such as \"Amount (GHS)\"?",
             options: [
-              "Power BI requires short names",
-              "Column names appear on visuals, so readers need to understand them",
-              "Renaming speeds up refresh",
+              "Power BI requires short column names without any spaces, brackets or symbols",
               "It is required before saving",
+              "Renaming speeds up refresh",
+              "Column names appear on visuals, so readers need to understand them",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Clear names make the model and the visuals easier for everyone to read.",
           },
           {
@@ -2126,12 +2126,12 @@ You need a Windows computer with Power BI Desktop. Without one, sketch the star 
           {
             prompt: "What is a star schema?",
             options: [
-              "A table with a star rating column",
               "A fact table in the middle connected to dimension tables around it",
-              "One large flat table with every detail repeated",
+              "A table with a star rating column",
+              "One large flat table with every detail repeated on every row of the data",
               "A chart type in Power BI",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "The star schema puts the fact table at the centre with dimensions around it.",
           },
           {
@@ -2159,12 +2159,12 @@ You need a Windows computer with Power BI Desktop. Without one, sketch the star 
           {
             prompt: "Why add a Calendar table?",
             options: [
-              "Power BI cannot show dates without one",
-              "So reports can group and filter by month and year consistently across the model",
-              "To store public holidays only",
+              "Power BI cannot show any dates at all unless the model includes a Calendar table",
               "To replace the Sales table",
+              "To store public holidays only",
+              "So reports can group and filter by month and year consistently across the model",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "A date table with one row per date gives reliable grouping by month and year.",
           },
         ],
@@ -2247,12 +2247,12 @@ You need a Windows computer with Power BI Desktop and the model from the last le
           {
             prompt: "What is a DAX measure?",
             options: [
-              "A column stored on every row",
-              "A formula that calculates an answer using the current filters",
-              "A type of chart",
+              "A column stored on every row of the table, calculated once when data loads",
               "A Power Query step",
+              "A type of chart",
+              "A formula that calculates an answer using the current filters",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Measures are calculated when shown, using the current filter context.",
           },
           {
@@ -2280,23 +2280,23 @@ You need a Windows computer with Power BI Desktop and the model from the last le
           {
             prompt: "What does CALCULATE do in Tamale Sales = CALCULATE([Total Sales], Branches[Branch name] = \"Tamale\")?",
             options: [
-              "Deletes all branches except Tamale",
               "Changes the filter context so the measure always shows Tamale's total",
+              "Deletes every branch except Tamale from the Branches table for the whole report",
               "Creates a new table called Tamale",
               "Sorts the branches",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "CALCULATE evaluates the measure with a changed filter, here Branch name equal to Tamale.",
           },
           {
             prompt: "When should you use a measure rather than a calculated column?",
             options: [
-              "For a label you want to group by",
               "For totals, averages and ratios",
+              "For a label you want to group by",
               "For storing phone numbers",
               "For renaming tables",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Measures suit totals and ratios; calculated columns suit row values used for grouping or filtering.",
           },
         ],
@@ -2359,7 +2359,7 @@ Reports often contain personal data: names, phone numbers, health or financial d
             options: [
               "Which colours, which fonts, which logo",
               "Who will read it, what decision it supports, and where and how often they will read it",
-              "How many pages, how many charts, how many tables",
+              "How many pages, how many charts and how many tables the report should have in total",
               "Which software, which version, which computer",
             ],
             answer_index: 1,
@@ -2391,11 +2391,11 @@ Reports often contain personal data: names, phone numbers, health or financial d
             prompt: "A report contains names and phone numbers of clients. What should you do?",
             options: [
               "Share it publicly so everyone can help",
-              "Show only what each reader needs and share only with people who should see it",
-              "Remove all numbers from the report",
               "Print it and leave copies in the office",
+              "Remove all the numbers from the report, then share it with the whole office by email",
+              "Show only what each reader needs and share only with people who should see it",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Personal data must be limited to those who need it, in line with data protection rules.",
           },
         ],
@@ -2493,22 +2493,22 @@ You need Power BI Desktop for the full task. Without it, apply the same rules to
             prompt: "What does Mobile layout in Power BI Desktop let you do?",
             options: [
               "Build reports on a phone",
-              "Arrange visuals specifically for viewing in the mobile app on a phone",
-              "Share reports by SMS",
               "Turn off the report on phones",
+              "Share reports by SMS",
+              "Arrange visuals specifically for viewing in the mobile app on a phone",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Mobile layout creates a phone friendly arrangement of the page's visuals.",
           },
           {
             prompt: "Which colour practice does the lesson recommend?",
             options: [
-              "A different colour for every visual",
               "A neutral colour for most data and one accent colour for what needs attention",
-              "Red and green only, with no labels",
+              "A different colour for every visual",
+              "Red and green only, with no labels, so every reader can see status at a single glance",
               "Changing colours on each page to keep it interesting",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "One accent colour draws attention, and consistency avoids confusion.",
           },
           {
@@ -2606,11 +2606,11 @@ Fuseini publishes his distributor report to a team workspace, sets refresh for 6
             prompt: "Data lives in an Excel file on an office server. What is needed for scheduled refresh?",
             options: [
               "Nothing, the service reads office computers directly",
-              "An on premises data gateway",
-              "Publish to web",
               "A Power BI mobile app",
+              "Publish to web",
+              "An on premises data gateway",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "A gateway lets the service reach data stored on local computers or servers securely.",
           },
           {
@@ -2694,12 +2694,12 @@ Skills fade if you stop. Offer to help a church, a school or a small business wi
           {
             prompt: "Why is a CV line such as \"proficient in Microsoft Office\" not enough?",
             options: [
-              "Employers do not use Microsoft Office",
               "It gives no evidence the employer can check",
+              "Employers do not use Microsoft Office",
               "It is too long",
               "It should be written in capitals",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "Employers trust what they can see, such as a finished report.",
           },
           {
@@ -2794,23 +2794,23 @@ Before you share widely, ask a mentor or someone who reads reports at work to re
           {
             prompt: "Which set of pieces gives the best mix for an office data portfolio?",
             options: [
-              "Three copies of the same chart in different colours",
-              "A cleaning and validation piece, a one page Excel report and a Power BI or dashboard report",
-              "A list of every Excel function you know",
+              "Three copies of the same chart in different colours, plus screenshots of your certificates",
               "Screenshots of certificates only",
+              "A list of every Excel function you know",
+              "A cleaning and validation piece, a one page Excel report and a Power BI or dashboard report",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "Different pieces show handling messy data, getting numbers right and presenting clearly.",
           },
           {
             prompt: "What are the four parts of the case study write up?",
             options: [
-              "Title, colours, fonts, logo",
               "Problem, data, what you did, result",
+              "Title, colours, fonts, logo",
               "Introduction, theory, conclusion, references",
               "Name, age, school, hobbies",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "The lesson recommends describing the problem, the data, your steps and the result.",
           },
           {
@@ -2838,12 +2838,12 @@ Before you share widely, ask a mentor or someone who reads reports at work to re
           {
             prompt: "You have not had access to a Windows computer yet. What can stand in for the Power BI piece?",
             options: [
-              "Nothing, the portfolio is incomplete without Power BI",
               "A Data Studio dashboard showing the same thinking, with Power BI added later",
+              "Nothing, the portfolio is incomplete without Power BI",
               "A screenshot of someone else's Power BI report",
               "A description of Power BI copied from a website",
             ],
-            answer_index: 1,
+            answer_index: 0,
             explanation: "A free browser dashboard shows the same skills until you can build in Power BI.",
           },
         ],
@@ -2904,11 +2904,11 @@ Issahaku finished this track, built a portfolio and applied for an M&E assistant
             prompt: "Which role mainly works with survey data from tools such as KoboToolbox and prepares donor reports?",
             options: [
               "Administrative assistant",
-              "Monitoring and evaluation officer",
-              "Accounts assistant",
               "Front desk receptionist",
+              "Accounts assistant",
+              "Monitoring and evaluation officer",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "M&E roles collect and analyse programme data and prepare donor reports.",
           },
           {
