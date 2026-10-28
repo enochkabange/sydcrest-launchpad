@@ -1,7 +1,8 @@
 # Research: AI and Machine Learning track (`ai-ml`)
 
-Tier B outline (issue #96). Researched and written 27 October 2026. Outline only: topic
-summaries and free resources in `src/content/roadmaps/ai-ml.ts`, lessons to follow. Everything
+Tier B outline (issue #96). Researched and written 27 October 2026. Lessons and quizzes
+for every node added 28 October 2026 (issue #198) in
+`src/content/roadmaps/content/ai-ml.content.ts`; see "Lesson wave refresh" at the end. Everything
 is original. roadmap.sh was not opened, searched or used, and no "<field> roadmap" style
 searches were run. No logins; LinkedIn was not opened. Job adverts were read for which skills
 appear; no advert text is reproduced. Pay figures shown on some pages were ignored.
@@ -37,6 +38,17 @@ Analyst track first.
 | F1 | O*NET 15-2051.00 Data Scientists (closest O*NET profile; no separate machine learning engineer profile was used) | https://www.onetonline.org/link/summary/15-2051.00 | 2026-10-27 | Public domain (US DOL), read for tasks and tools |
 | C1 | Google Machine Learning Crash Course, module list | https://developers.google.com/machine-learning/crash-course | 2026-10-27 | Content CC BY 4.0 per Google Developers site policies (https://developers.google.com/site-policies); topic list read, no text reused |
 | P1 | SydCrest track catalogue, row 25 and Tier B notes | Planning/12_TRACK_CATALOGUE.md | 2026-10-27 | Internal |
+| S13 | Web search snippets: MTN Ghana, Data Scientist (Digital), Accra (Careerjet Ghana) | https://www.careerjet.com.gh/jobad/gha0d68881f4605a583a20717ec44f63eb | 2026-10-28 | Search snippet only |
+| S14 | Web search snippets: M-KOPA, Senior Analytics Manager, Customer Behaviour, Accra (March 2026) | https://resumegeni.com/jobs/senior-analytics-manager-customer-behaviour-at-m-kopa-accra | 2026-10-28 | Search snippet only |
+| S15 | Web search snippets: Appruve, Machine Learning Engineer, remote (older listing) | https://www.jobsearchgh.com/jobs/11516/machine-learning-engineer-remote-appruve/ | 2026-10-28 | Search snippet only (title and remote status) |
+| S16 | Web search snippets: Google, Student Researcher 2026 (deadline February 2026) | https://ghanacareers.com/job/student-researcher-2026-at-google | 2026-10-28 | Search snippet only |
+| S17 | Web search snippets: Penuel-Charis Consultancy, Research Assistant, Hohoe (February 2026) | https://ghanacareers.com/job/research-assistant-at-penuel-charis-consultancy/ | 2026-10-28 | Search snippet only |
+| S18 | Web search snippets: remote Junior Data Scientist contract open to Ghana (October 2026) | https://remowork.life/remote-jobs-in/ghana/ai-expert-data-science | 2026-10-28 | Search snippet only |
+| D1 | Google Colab FAQ (free tier: resources not guaranteed, limits dynamic, idle timeouts, temporary VM) | https://research.google.com/colaboratory/faq.html | 2026-10-28 | Official documentation, read for facts only |
+| D2 | Kaggle: Efficient GPU usage tips and notebooks docs (weekly accelerator quota; page is script rendered, so no numbers are stated in lessons) | https://www.kaggle.com/docs/efficient-gpu-usage | 2026-10-28 | Official documentation and forum search results, read for facts only |
+| D3 | Ghana Data Protection Commission | https://dpc.gov.gh/ | 2026-10-28 | Regulator site, linked as further reading |
+| D4 | Act 843 secondary summaries (Wikipedia "Data Protection Act, 2012"; DLA Piper Data Protection in Ghana) used to confirm: the Act's name and year, the Commission as enforcer, registration of processors, health data as special personal data | https://en.wikipedia.org/wiki/Data_Protection_Act,_2012 and https://www.dlapiperdataprotection.com/?t=law&c=GH | 2026-10-28 | Secondary sources; section numbers conflict between sources, so lessons cite none |
+| D5 | scikit learn, pandas, NumPy, PyTorch, FastAPI official docs (API names only) | https://scikit-learn.org/stable/ , https://pandas.pydata.org/docs/ , https://pytorch.org/docs/stable/ , https://fastapi.tiangolo.com/ | 2026-10-28 | Official documentation (BSD, BSD, BSD style, MIT licensed projects); no text reused |
 
 All resource links in the outline were checked to return HTTP 200 on 2026-10-27.
 
@@ -134,8 +146,62 @@ All resource links in the outline were checked to return HTTP 200 on 2026-10-27.
 | `ml-portfolio` | Evidence needed given A1 to A12 experience asks; A10 entry route |
 | `routes-into-ai` | No entry level Ghana adverts; A10 student and graduate route; P1 follow on from data analyst |
 
+## Lesson wave refresh (28 October 2026, issue #198)
+
+### More adverts (snippet level; skills only, no text copied, pay figures ignored)
+
+| # | Role, employer, place | Level | Read as | Skills named |
+|---|---|---|---|---|
+| A13 | Data Scientist (Digital), MTN Ghana, Accra | Experienced | Snippet (S13) | Python with scikit learn, TensorFlow and PyTorch; SQL; BigQuery ML; cloud AI services |
+| A14 | Senior Analytics Manager, M-KOPA, Accra | Senior | Snippet (S14) | Python or R, pandas, scikit learn; building models, not only queries |
+| A15 | Machine Learning Engineer, Appruve, remote | Not stated | Snippet, title only (S15) | Title and remote status only |
+| A16 | Student Researcher 2026, Google (listed in Ghana) | Master's | Snippet (S16) | Machine learning research areas; research route needs formal study |
+| A17 | Research Assistant, Penuel-Charis Consultancy, Hohoe | Entry | Snippet (S17) | Data collection and analysis (general research, not ML specific) |
+| A18 | Junior Data Scientist, contract, remote, open to Ghana | Junior | Snippet (S18) | Junior data science contract work (title level) |
+
+Now 18 adverts. Effect on frequencies: scikit learn and pandas rise (A10, A13, A14); model
+building on business data rises (A11, A12, A13, A14); A17 and A18 confirm research assistant
+and remote junior data routes; A16 confirms research roles expect formal study. Still no entry
+level machine learning engineer advert in Ghana. No outline change needed: every new signal
+maps to an existing node, so all 26 slugs are kept (the roadmap is published) and there are
+no renames.
+
+### How the lessons use the research
+
+* `what-you-need-first`, `before-you-start`, `routes-into-ai` link to the Data Analyst track
+  (`/roadmaps/data-analyst`) as the prerequisite and say plainly that a laptop or desktop is
+  needed for hands on work.
+* Free notebooks (Google Colab, Kaggle Notebooks) are named as examples only. Following D1 and
+  D2, no hour counts or quotas are stated; lessons say limits change and point to the official
+  pages.
+* Act 843: lessons state only facts confirmed by D3 and D4 (Act name, the Commission as
+  enforcer, registration, health data as special personal data needing explicit consent or a
+  narrow legal basis). No section numbers and no principle count, because sources disagree.
+  `responsible-ai` says it is an introduction, not legal advice.
+* Google ML Crash Course (C1, CC BY 4.0) was used as a topic checklist only; no text, examples
+  or ordering were copied.
+* Ghanaian languages: lessons name Dagbani, Twi and Ewe and the letters ɛ and ɔ, but contain no
+  sentences in those languages, to avoid publishing incorrect text. The practice task asks
+  learners to write their own and have a native speaker check them.
+* All datasets in lessons are invented and labelled as examples. No statistics or salaries.
+
+### Code checked
+
+Every snippet was run on 28 October 2026 in a fresh Python 3.14 virtual environment with
+scikit learn 1.9.1, pandas 3.1.0, NumPy 2.5.4, PyTorch 2.14.1, FastAPI
+0.162.0 and pydantic 2.14.1, against an invented farm dataset. The `ai-apis` snippet is a
+provider neutral test loop; it calls a function the learner writes with their provider's own
+client library, because model names and client APIs change often.
+
 ## Founder spot checks
 
 * `language-and-speech` names Dagbani, Twi and Ewe as example languages; confirm the choice.
 * `ai-work-in-ghana` states no beginner adverts were found; confirm the tone is right for a
   heavily searched track.
+* Lessons (28 October): `ai-work-in-ghana` and `routes-into-ai` say no entry level machine
+  learning roles were found and point to data, research assistant, software and remote roles;
+  confirm the tone.
+* `responsible-ai` and `building-with-ai`: confirm the Act 843 wording (no section numbers by
+  design) before publishing.
+* `language-and-speech`: contains no sentences in Ghanaian languages by design; a Dagbani, Twi
+  or Ewe speaker could add one checked example later.
