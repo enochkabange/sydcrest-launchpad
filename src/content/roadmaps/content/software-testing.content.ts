@@ -1360,6 +1360,431 @@ Write accessibility and usability findings as bug reports with steps, device set
         pass_threshold: 75,
       },
     },
+    "working-in-a-team": {
+      explanation_md: `## Why this matters
+
+Testers rarely work alone. You will sit inside a product team with developers, a product manager and perhaps a designer, all working towards a release date. Knowing how teams organise their work, where bugs and tasks are tracked, and how to report on testing is what turns a careful individual into a useful team member. Several testing adverts we read named Agile ways of working and tools like Jira directly.
+
+## How software teams organise work
+
+Most software teams today work in short cycles. Instead of building for a year and testing at the end, they plan a small piece of work, build it, test it and release it, then repeat. Each cycle might last one or two weeks. This means testing happens all the time, alongside development, and you need to keep up with a steady flow of changes.
+
+Teams track every piece of work in an **issue tracker**: a shared list where each task, feature and bug is a card or ticket with a status such as To do, In progress, In review, Testing and Done. Testers spend a lot of time in these tools: reading feature tickets, logging bugs and moving tickets along when testing passes.
+
+## What this section covers
+
+* **Agile teams and issue trackers.** The vocabulary of sprints, user stories, acceptance criteria and stand ups, and how to work in a tracker such as Jira.
+* **Test plans, regression and reporting.** How to plan what will be tested before a release, how to recheck old features after changes, and how to summarise results so the team can decide whether to release.
+
+## Communication is part of the job
+
+Being right about a bug is not enough; you need to share it in a way that helps. Good team habits for testers:
+
+* **Raise risks early,** at the planning stage, not on release day.
+* **Be specific,** with ticket numbers, steps and evidence, rather than "the app is buggy".
+* **Be calm under pressure.** Releases can be stressful. A clear, factual message helps everyone decide.
+* **Respect developers' time.** Group small questions together and check the tracker before asking.
+* **Celebrate fixes.** Thank developers when they fix things. Testers and developers are on the same side.
+
+## A small example
+
+Issahaku works as a tester for a company building a crop prices app. On Monday the team plans a two week cycle with four features. He reads each ticket and asks how prices should show when the market has not updated today. Midweek he tests the first feature, logs two bugs in the tracker and links them to the feature ticket. On the second Thursday he reruns his regression checks on the whole app and writes a short summary: all four features tested, one minor bug still open, one area he could not test because the test server was down. The product manager decides to release with a note about the open bug. Issahaku's clear summary made that decision easy.
+
+## Remote teams
+
+Remote testing roles work the same way, but almost everything happens in writing: tickets, chat messages and recorded demos. Strong written communication matters even more when your team is in another country.`,
+      practice_task_md: `**Goal:** set up a simple tracker for your own testing work.
+
+1. Use a free board tool such as Trello, GitHub Projects or a spreadsheet, on any device.
+2. Create columns: To do, In progress, Testing, Done.
+3. Add cards for the testing tasks from earlier lessons and for any bugs you have found.
+4. Move each card to the right column and add one comment to each with a short status.
+5. Write a three sentence status update as if for a team stand up: what you did, what you will do next, anything blocking you.
+
+**Done looks like:** a small board with at least six cards, plus a written status update.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How do most software teams organise work today?",
+            options: [
+              "One large build for a year, then testing at the end",
+              "Short cycles of planning, building, testing and releasing that repeat",
+              "Testing only after customers complain",
+              "Developers and testers working in separate companies",
+            ],
+            answer_index: 1,
+            explanation: "Short repeating cycles mean testing happens continuously alongside development.",
+          },
+          {
+            prompt: "What is an issue tracker?",
+            options: [
+              "A shared list where each task, feature and bug is a ticket with a status",
+              "A tool that fixes bugs automatically",
+              "A phone's battery monitor",
+              "A report sent to customers",
+            ],
+            answer_index: 0,
+            explanation: "Trackers hold every piece of work with its current status.",
+          },
+          {
+            prompt: "What did Issahaku include in his release summary?",
+            options: [
+              "Only the features that passed",
+              "Features tested, an open bug and an area he could not test",
+              "A list of developers' mistakes",
+              "Nothing, he released the app himself",
+            ],
+            answer_index: 1,
+            explanation: "A good summary includes what passed, what is open and what could not be tested.",
+          },
+          {
+            prompt: "Why does written communication matter even more in remote testing roles?",
+            options: [
+              "Remote teams never meet or talk",
+              "Almost everything happens through tickets, chat and recordings",
+              "Remote testers do not report bugs",
+              "Writing is faster than testing",
+            ],
+            answer_index: 1,
+            explanation: "Remote work relies on clear writing in tickets and messages.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "agile-and-issue-trackers": {
+      explanation_md: `## Why this matters
+
+When you join a team, you will hear words like sprint, story, acceptance criteria and stand up from the first day. Adverts for testing roles in Ghana and on remote boards often mention Agile and Jira. Knowing the vocabulary means you can start contributing quickly instead of spending weeks working out what people mean.
+
+## Agile and Scrum in plain words
+
+**Agile** is a family of ways of working where teams deliver software in small pieces, get feedback and adjust. **Scrum** is one popular Agile method. Its key parts:
+
+* **Sprint:** a fixed cycle, often one or two weeks, in which the team aims to finish a set of work.
+* **Backlog:** the ordered list of all work waiting to be done.
+* **Sprint planning:** a meeting at the start of each sprint to choose work from the backlog.
+* **Stand up:** a short daily meeting where each person says what they did, what they will do and what is blocking them.
+* **Review and retrospective:** at the end of the sprint, the team shows what was built and discusses how to work better.
+
+Not every team uses Scrum exactly. Some use **Kanban**, a continuous flow of work across a board without fixed sprints. The habits of small pieces, visible work and regular feedback are common to both.
+
+## User stories and acceptance criteria
+
+Features are often written as **user stories** in a simple pattern: "As a [type of user], I want [something] so that [reason]." For example: "As a market trader, I want to see today's total sales so that I know if I made a profit."
+
+Each story has **acceptance criteria**: the conditions that must be true for the story to be done. These are a tester's best friend, because they tell you what to test. Many teams write them in a Given, When, Then pattern:
+
+* **Given** I have recorded three sales today
+* **When** I open the summary screen
+* **Then** I see the total of those three sales in cedis
+
+When you read acceptance criteria before development starts, look for gaps. What if there are no sales today? What about refunds? Asking these questions early is one of the most valuable things a tester does. Reviewing written requirements like this, before any code exists, is sometimes called static testing.
+
+## Working in an issue tracker
+
+Tools such as Jira, GitHub Issues, Linear, Trello or Azure Boards all hold work as tickets. As a tester you will:
+
+* Read story tickets and their acceptance criteria.
+* Log bugs as new tickets and link them to the story they affect.
+* Move tickets through statuses, such as from Testing to Done when your tests pass.
+* Comment with findings, evidence and questions.
+* Filter and search to find bugs assigned to you or waiting to be retested.
+
+## A small example
+
+Hawa's sprint includes the trader sales story above. Reading the criteria in planning, she asks what the total should show if a sale was refunded. The product manager adds a fourth criterion. During the sprint, Hawa writes test cases from each criterion, finds that refunds are counted twice, logs a bug linked to the story and moves the story back to In progress. When the fix arrives, she retests and moves it to Done.`,
+      practice_task_md: `**Goal:** turn a user story into acceptance criteria and tests.
+
+1. Write a user story for a simple feature you can imagine, such as a church WhatsApp group bot that lists this week's events.
+2. Write three acceptance criteria in Given, When, Then form.
+3. List two questions that expose gaps in the criteria, such as "what if there are no events this week?"
+4. Write one test case for each criterion.
+5. If you set up a board in the previous lesson, add the story as a card and link your test cases to it.
+
+**Done looks like:** one story, three criteria, two gap questions and three test cases, saved in your portfolio.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a sprint in Scrum?",
+            options: [
+              "A fast way of typing code",
+              "A fixed cycle, often one or two weeks, to finish a set of work",
+              "A meeting held once a year",
+              "A type of bug",
+            ],
+            answer_index: 1,
+            explanation: "A sprint is a short fixed cycle of work.",
+          },
+          {
+            prompt: "Why are acceptance criteria useful to testers?",
+            options: [
+              "They list the developers on the team",
+              "They tell you the conditions that must be true, so you know what to test",
+              "They set the release date",
+              "They replace bug reports",
+            ],
+            answer_index: 1,
+            explanation: "Acceptance criteria define done, which tells testers what to check.",
+          },
+          {
+            prompt: "Which line follows the Given, When, Then pattern correctly?",
+            options: [
+              "Given I have three sales, When I open the summary, Then I see their total",
+              "When the app is good, Then it is done",
+              "Given the developer, Then the bug",
+              "Then I test, When I finish, Given I start",
+            ],
+            answer_index: 0,
+            explanation: "Given sets the starting state, When is the action, Then is the expected outcome.",
+          },
+          {
+            prompt: "What happens in a daily stand up?",
+            options: [
+              "The team releases the app",
+              "Each person shares what they did, what they will do and any blockers",
+              "Customers test the product",
+              "The manager writes all the code",
+            ],
+            answer_index: 1,
+            explanation: "A stand up is a short daily check on progress and blockers.",
+          },
+          {
+            prompt: "In Hawa's example, what did she do after finding that refunds were counted twice?",
+            options: [
+              "Ignored it until the next sprint",
+              "Logged a bug linked to the story and moved the story back to In progress",
+              "Fixed the code herself",
+              "Deleted the story",
+            ],
+            answer_index: 1,
+            explanation: "Linking the bug and moving the story keeps the team's board accurate.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+
+    "test-plans-and-regression": {
+      explanation_md: `## Why this matters
+
+Before any release, someone has to answer: what will we test, how, and are we ready? Adverts for testing roles ask for test plans and test reporting, and regression testing is a core part of every tester's routine. This is also where you show the judgement that makes teams trust you.
+
+## Test plans
+
+A test plan is a short document that sets out the testing for a release or project. It does not need to be long. A useful one answers:
+
+* **Scope:** which features are in and which are out.
+* **Approach:** what kinds of testing you will do, such as test cases, exploratory sessions, API checks and accessibility checks.
+* **Environments and devices:** which browsers, phones, Android versions and test servers.
+* **Test data:** what accounts and data you need.
+* **Risks:** what could go wrong with the testing itself, such as a late build or no access to a payment test account.
+* **Entry and exit criteria:** when testing can start, and what "ready to release" means, for example no open critical bugs.
+* **Schedule and people:** who tests what and by when.
+
+A one page plan that the team reads beats a long one nobody opens.
+
+## Regression testing
+
+Every change can break something that used to work. A developer fixing the sign in screen might accidentally break password reset. **Regression testing** means rechecking existing features after changes. Teams keep a **regression suite**: a set of test cases covering the most important flows, rerun before each release.
+
+Because you cannot rerun everything every time, choose by risk:
+
+* The flows customers use most, such as sign in and payments.
+* Areas near the change.
+* Areas that have broken before.
+
+Regression suites are the first thing teams automate, because the same checks repeat every release. That is one reason the next section matters.
+
+Also note the difference between **retesting**, which checks that a specific bug is fixed, and **regression testing**, which checks that the fix did not break anything else.
+
+## Reporting results
+
+At the end of testing, write a short summary for people deciding whether to release. Use plain language:
+
+* What was tested, on which devices and environments.
+* How many test cases passed, failed or were blocked.
+* Open bugs, with the serious ones listed by title.
+* Risks: anything you could not test and why.
+* Your recommendation, clearly labelled as a recommendation.
+
+## A small example
+
+Sumaila writes a one page plan for a new version of a bus ticket booking app: booking and payment in scope, Android 10 and above plus Chrome on desktop, exit criterion of no critical bugs. Before release he runs his twenty case regression suite. Booking passes, but the change to payments has broken the receipt SMS. He logs it as critical. His summary reads: "Booking ready; receipt SMS broken; could not test on iPhone, no device available. Recommend fixing the SMS before release." The team agrees.`,
+      practice_task_md: `**Goal:** write a one page test plan and a small regression suite.
+
+1. Choose an app or website you have tested in earlier lessons.
+2. Write a one page test plan with the seven headings from the lesson.
+3. Pick the five most important flows and write one regression test case for each.
+4. Run your suite and record pass, fail or blocked.
+5. Write a five line test summary with a clear recommendation.
+
+**Done looks like:** a test plan, a five case regression suite with results, and a summary, all saved in your portfolio.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is regression testing?",
+            options: [
+              "Testing a feature for the first time",
+              "Rechecking existing features after changes to make sure nothing broke",
+              "Testing only on old phones",
+              "Removing old features",
+            ],
+            answer_index: 1,
+            explanation: "Regression testing catches changes that break previously working features.",
+          },
+          {
+            prompt: "What is the difference between retesting and regression testing?",
+            options: [
+              "There is no difference",
+              "Retesting checks a specific fix; regression testing checks the fix did not break anything else",
+              "Retesting is automated; regression is manual",
+              "Regression testing is only for websites",
+            ],
+            answer_index: 1,
+            explanation: "Retesting confirms the bug is fixed; regression checks the wider product.",
+          },
+          {
+            prompt: "Which is an example of an exit criterion?",
+            options: [
+              "No open critical bugs",
+              "The tester's lunch break",
+              "The number of developers",
+              "The app's colour scheme",
+            ],
+            answer_index: 0,
+            explanation: "Exit criteria define what ready to release means.",
+          },
+          {
+            prompt: "Why are regression suites often the first tests to be automated?",
+            options: [
+              "They are the hardest to understand",
+              "The same checks repeat every release",
+              "Automation is only allowed for regression",
+              "They never find bugs",
+            ],
+            answer_index: 1,
+            explanation: "Repeated checks are ideal for automation.",
+          },
+          {
+            prompt: "What did Sumaila's summary include besides results?",
+            options: [
+              "Blame for the developer who broke the SMS",
+              "A risk he could not test and a clear recommendation",
+              "Only the number of passed tests",
+              "A new feature idea",
+            ],
+            answer_index: 1,
+            explanation: "Good summaries name untested risks and give a labelled recommendation.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+
+    "test-automation": {
+      explanation_md: `## Why this matters
+
+Many testing adverts in Ghana and on remote boards ask for automation alongside manual skills, and testers who can automate have more options, including roles as automation or QA engineers. Automation does not replace manual testing; it takes over the repetitive checks so people can spend their time on thinking and exploring.
+
+## What test automation is
+
+Test automation means writing code that runs checks for you. An automated test might open a browser, go to a sign in page, type a phone number and password, press Sign in, and confirm that the dashboard appears. Once written, it can run hundreds of times, on every change, in minutes.
+
+Good candidates for automation:
+
+* **Regression checks** that repeat every release.
+* **Important flows** such as sign in, payments and checkout.
+* **Data heavy checks,** such as trying the same form with fifty inputs.
+* **API checks** that are fast and stable.
+
+Poor candidates:
+
+* Features that change every week.
+* Checks that need human judgement, such as "is this screen confusing?"
+* One off tests you will run only once.
+
+## What this section covers
+
+* **Enough programming to automate.** Variables, conditions, loops and functions in JavaScript or Python, plus a little SQL for checking data.
+* **Browser and app automation.** Tools such as Playwright, Cypress and Selenium that drive a browser like a person would.
+* **Running tests automatically** (optional). Connecting your tests to a pipeline so they run every time someone changes the code.
+
+## You need a computer from here
+
+Automation tools run on Windows, macOS or Linux, and you install a code editor, a language runtime such as Node.js or Python, and browsers. A phone is not enough for this section. If you do not own a laptop, look for one you can use regularly at a school lab, a library, a tech hub or a community centre. A modest laptop with 8 GB of memory is comfortable for small projects; less can work slowly. Installing tools needs a few hundred megabytes of data once, so do it on Wi-Fi if you can.
+
+## Keep your manual skills
+
+Automated tests only check what someone told them to check. The skills from earlier sections, such as choosing tests by risk, boundary values and clear bug reports, decide whether your automation is useful. A badly chosen automated test is just a fast way to check the wrong thing.
+
+## A small example
+
+Wumpini's team releases a delivery app every week. Each release she spent most of a day rerunning thirty regression test cases by hand. Over two months she automated the twenty most stable ones using Playwright. Now they run in about ten minutes whenever a developer pushes code. When a change broke the delivery address form, the automated test failed before the release and the developer fixed it the same hour. Wumpini now spends her freed time on exploratory sessions, where she finds the bugs automation cannot.
+
+## A realistic path
+
+Start small. Automate one test case you already wrote by hand, make it pass reliably, then add another. A handful of solid, well named tests in a public project is more impressive to employers than a large, flaky suite.`,
+      practice_task_md: `**Goal:** choose what you would automate first.
+
+1. Look at the test cases and regression suite you wrote in earlier lessons.
+2. Sort them into three groups: good to automate, poor to automate, unsure.
+3. For each, write one sentence explaining why, using the guidance in the lesson.
+4. Pick the single best first candidate and write down the exact steps and checks an automated test would need.
+5. Plan where you will get regular computer access for the next lessons.
+
+**Done looks like:** a sorted list with reasons, one chosen test written out step by step, and a note on your computer access plan.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which is a good candidate for automation?",
+            options: [
+              "A feature that changes every week",
+              "A regression check that repeats every release",
+              "Deciding whether a screen is confusing",
+              "A one off test",
+            ],
+            answer_index: 1,
+            explanation: "Repeated, stable checks give the most value when automated.",
+          },
+          {
+            prompt: "Why does this section need a computer?",
+            options: [
+              "Automation tools run on desktop operating systems with an editor, runtime and browsers",
+              "Phones cannot open websites",
+              "Computers are required by law",
+              "Automation needs a printer",
+            ],
+            answer_index: 0,
+            explanation: "You install Node.js or Python, a code editor and browsers, which need Windows, macOS or Linux.",
+          },
+          {
+            prompt: "What did Wumpini do with the time automation saved?",
+            options: [
+              "She stopped testing",
+              "She spent it on exploratory sessions",
+              "She automated every test including unstable ones",
+              "She moved to marketing",
+            ],
+            answer_index: 1,
+            explanation: "Automation freed her to explore and find bugs scripts miss.",
+          },
+          {
+            prompt: "Why do manual testing skills still matter once you automate?",
+            options: [
+              "Automated tests only check what someone chose to check",
+              "Automation tools need manual approval to run",
+              "Manual skills make code run faster",
+              "They do not matter after automation",
+            ],
+            answer_index: 0,
+            explanation: "Good test choices decide whether automation is useful.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
 //NEXT
   },
 };
