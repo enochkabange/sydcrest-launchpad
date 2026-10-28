@@ -3,6 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { ROADMAP_DRAFTS } from "../roadmaps";
 import { buildWeeks, TRACK_LABELS, TRACKS, type DmpWeek } from "./curriculum";
+import { SPECIALISATION_ROADMAP, SPECIALISATION_WEEKS, weekNodeLinks } from "./week-lessons";
 
 /**
  * The DMP is seeded by a data migration (production needs it too), from a
@@ -95,14 +96,23 @@ describe("DMP seed migration", () => {
     expect(seed.weeks.filter((w) => w.is_capstone).map((w) => w.week_number)).toEqual([12]);
   });
 
-  it("links every week to topics that exist in the bridge and marketing roadmaps", () => {
-    const allowed = new Set(["digital-skills-bridge", "digital-marketer"]);
+  it("links every week to topics that exist in the bridge, marketing and specialisation roadmaps", () => {
+    const allowed = new Set(["digital-skills-bridge", "digital-marketer", SPECIALISATION_ROADMAP]);
     for (const w of seed.weeks) {
       expect(w.roadmap_nodes.length, `week ${w.week_number} ${w.specialization ?? ""}`).toBeGreaterThan(0);
       for (const link of w.roadmap_nodes) {
         expect(allowed.has(link.roadmap_slug)).toBe(true);
         const roadmap = ROADMAP_DRAFTS.find((r) => r.slug === link.roadmap_slug);
         expect(roadmap?.nodes.some((n) => n.slug === link.node_slug), `${link.roadmap_slug}/${link.node_slug}`).toBe(true);
+      }
+    }
+  });
+
+  it("links weeks 7 to 9 to the specialisation lessons in week-lessons.ts", () => {
+    for (const track of TRACKS) {
+      for (const n of SPECIALISATION_WEEKS) {
+        const week = seed.weeks.find((w) => w.week_number === n && w.specialization === track);
+        expect(week?.roadmap_nodes, `${track} week ${n}`).toEqual(weekNodeLinks(track, n));
       }
     }
   });
