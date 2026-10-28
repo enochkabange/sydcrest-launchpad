@@ -2,8 +2,8 @@ import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { ROADMAP_DRAFTS } from "../roadmaps";
-import { buildWeeks, TRACK_LABELS, TRACKS, type DmpWeek } from "./curriculum";
-import { SPECIALISATION_ROADMAP, SPECIALISATION_WEEKS, weekNodeLinks } from "./week-lessons";
+import { buildWeeks, MAX_WEEK_RESOURCES, TRACK_LABELS, TRACKS, type DmpWeek } from "./curriculum";
+import { SHARED_WEEK_LINKS, SHARED_WEEKS, SPECIALISATION_ROADMAP, SPECIALISATION_WEEKS, weekNodeLinks } from "./week-lessons";
 
 /**
  * The DMP is seeded by a data migration (production needs it too), from a
@@ -11,7 +11,9 @@ import { SPECIALISATION_ROADMAP, SPECIALISATION_WEEKS, weekNodeLinks } from "./w
  * and checks every week's roadmap links point at real topics.
  */
 
-type SeedWeek = DmpWeek & {
+type SeedWeek = Omit<DmpWeek, "resources"> & {
+  /** Added by the week links and resources migration (#239); absent in the original seed. */
+  resources?: DmpWeek["resources"];
   specialization: string | null;
   is_capstone: boolean;
   roadmap_nodes: { roadmap_slug: string; node_slug: string }[];
@@ -35,7 +37,8 @@ function jsonLiteral(file: string): unknown {
 /**
  * The seed, then every later `_dmp_` migration in order. A follow up carries
  * {"weeks": [{week_number, specialization, ...fields}]} and overwrites those
- * fields on the matching week, as its SQL does.
+ * fields on the matching week, as its SQL does: resource_name, resource_url,
+ * resources (#239) and roadmap_nodes (replaced only when present).
  */
 function loadSeed(): Seed {
   if (!seedFile) throw new Error("phase2_dmp_seed migration not found");
@@ -62,6 +65,7 @@ function asCurriculum(w: SeedWeek): DmpWeek {
     objectives: w.objectives,
     resource_name: w.resource_name,
     resource_url: w.resource_url,
+    resources: w.resources ?? [],
     assignment: w.assignment,
   };
 }
@@ -105,6 +109,33 @@ describe("DMP seed migration", () => {
         const roadmap = ROADMAP_DRAFTS.find((r) => r.slug === link.roadmap_slug);
         expect(roadmap?.nodes.some((n) => n.slug === link.node_slug), `${link.roadmap_slug}/${link.node_slug}`).toBe(true);
       }
+    }
+  });
+
+  it("gives every week one to three https resources, the first mirrored in resource_name and resource_url", () => {
+    for (const w of seed.weeks) {
+      const label = `week ${w.week_number} ${w.specialization ?? ""}`;
+      const resources = w.resources ?? [];
+      expect(resources.length, label).toBeGreaterThanOrEqual(1);
+      expect(resources.length, label).toBeLessThanOrEqual(MAX_WEEK_RESOURCES);
+      for (const r of resources) {
+        expect(r.url, label).toMatch(/^https:\/\//);
+        expect(r.url, label).not.toMatch(/roadmap\.sh/);
+        expect(r.name, label).not.toMatch(/[—–]/);
+      }
+      expect(new Set(resources.map((r) => r.url)).size, label).toBe(resources.length);
+      expect([w.resource_name, w.resource_url], label).toEqual([resources[0].name, resources[0].url]);
+    }
+  });
+
+  it("links the shared weeks to SHARED_WEEK_LINKS, 2 to 5 SydCrest lessons each", () => {
+    for (const n of SHARED_WEEKS) {
+      const week = seed.weeks.find((w) => w.week_number === n && w.specialization === null);
+      expect(week?.roadmap_nodes, `week ${n}`).toEqual(SHARED_WEEK_LINKS[n]);
+      expect(week?.roadmap_nodes.length).toBeGreaterThanOrEqual(2);
+      expect(week?.roadmap_nodes.length).toBeLessThanOrEqual(5);
+      const keys = week?.roadmap_nodes.map((l) => `${l.roadmap_slug}/${l.node_slug}`) ?? [];
+      expect(new Set(keys).size, `week ${n}`).toBe(keys.length);
     }
   });
 
