@@ -13,9 +13,10 @@ import { StudyBuddyPrompt } from "./study-buddy-prompt";
 type Status = "idle" | "streaming" | "limit" | "error";
 
 type Props = {
-  /** roadmap_nodes.id of the topic on screen. */
-  nodeId: string;
-  nodeTitle: string;
+  /** roadmap_nodes.id of the topic on screen, or null for the companion chat outside a lesson. */
+  nodeId: string | null;
+  /** The topic's title; ignored in the companion chat. */
+  nodeTitle?: string;
   /** False shows the sign up prompt instead of the chat. */
   signedIn: boolean;
   /** False when the server has no model key: a friendly notice instead of the chat. */
@@ -27,6 +28,14 @@ type Props = {
 
 const STARTERS = ["Can you explain this topic simply?", "Give me a question to check my understanding"];
 
+/** Companion chat starters: each one leads to a tool over the learner's own data. */
+export const COMPANION_STARTERS = [
+  "What should I do next?",
+  "Who could mentor me?",
+  "Any opportunities for me?",
+  "What events are coming up?",
+];
+
 export function StudyBuddy({
   nodeId,
   nodeTitle,
@@ -35,17 +44,18 @@ export function StudyBuddy({
   remainingToday = null,
   limit = DAILY_MESSAGE_LIMIT,
 }: Props) {
-  if (!signedIn) return <StudyBuddyPrompt nodeTitle={nodeTitle} />;
-  if (!available) return <Unavailable />;
-  return <ChatPanel nodeId={nodeId} nodeTitle={nodeTitle} initialRemaining={remainingToday} limit={limit} />;
+  if (!signedIn) return <StudyBuddyPrompt nodeTitle={nodeTitle ?? "your next step"} />;
+  if (!available) return <Unavailable companion={nodeId === null} />;
+  return <ChatPanel nodeId={nodeId} nodeTitle={nodeTitle ?? ""} initialRemaining={remainingToday} limit={limit} />;
 }
 
-function Unavailable() {
+function Unavailable({ companion }: { companion: boolean }) {
   return (
     <PanelShell>
       <Alert tone="info">
-        Study Buddy is resting right now, so chat is switched off for the moment. The lesson, practice task and
-        checkpoint all work as usual. Please check back later.
+        {companion
+          ? "Study Buddy is resting right now, so chat is switched off for the moment. Your path, lessons and the rest of SydCrest work as usual. Please check back later."
+          : "Study Buddy is resting right now, so chat is switched off for the moment. The lesson, practice task and checkpoint all work as usual. Please check back later."}
       </Alert>
     </PanelShell>
   );
@@ -65,7 +75,7 @@ function ChatPanel({
   initialRemaining,
   limit,
 }: {
-  nodeId: string;
+  nodeId: string | null;
   nodeTitle: string;
   initialRemaining: number | null;
   limit: number;
@@ -76,7 +86,9 @@ function ChatPanel({
   const [notice, setNotice] = useState<string | null>(null);
   const [remaining, setRemaining] = useState<number | null>(initialRemaining);
   const logRef = useRef<HTMLDivElement>(null);
-  const inputId = `study-buddy-input-${nodeId}`;
+  const inputId = `study-buddy-input-${nodeId ?? "companion"}`;
+  const companion = nodeId === null;
+  const starters = companion ? COMPANION_STARTERS : STARTERS;
 
   const busy = status === "streaming";
   const blocked = status === "limit";
@@ -199,12 +211,13 @@ function ChatPanel({
         {messages.length === 0 ? (
           <div className="flex flex-col gap-3">
             <p className="text-content-2">
-              Ask anything about {nodeTitle}. I will help you work it out step by step rather than just give you the
-              answer.
+              {companion
+                ? "Ask me what to learn next, who could mentor you, or which opportunities and events suit your path. I look at your own progress on SydCrest to answer."
+                : `Ask anything about ${nodeTitle}. I will help you work it out step by step rather than just give you the answer.`}
             </p>
             {!blocked && (
               <div className="flex flex-wrap gap-2">
-                {STARTERS.map((starter) => (
+                {starters.map((starter) => (
                   <Button key={starter} variant="secondary" onClick={() => void send(starter)} disabled={busy}>
                     {starter}
                   </Button>

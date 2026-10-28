@@ -69,6 +69,56 @@ export type Database = {
           },
         ]
       }
+      ai_review_usage: {
+        Row: {
+          attempt: number
+          cache_creation_input_tokens: number
+          cache_read_input_tokens: number
+          created_at: string
+          estimated_usd: number | null
+          id: string
+          input_tokens: number
+          model: string
+          outcome: string
+          output_tokens: number
+          submission_id: string
+        }
+        Insert: {
+          attempt: number
+          cache_creation_input_tokens?: number
+          cache_read_input_tokens?: number
+          created_at?: string
+          estimated_usd?: number | null
+          id?: string
+          input_tokens?: number
+          model: string
+          outcome: string
+          output_tokens?: number
+          submission_id: string
+        }
+        Update: {
+          attempt?: number
+          cache_creation_input_tokens?: number
+          cache_read_input_tokens?: number
+          created_at?: string
+          estimated_usd?: number | null
+          id?: string
+          input_tokens?: number
+          model?: string
+          outcome?: string
+          output_tokens?: number
+          submission_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "ai_review_usage_submission_id_fkey"
+            columns: ["submission_id"]
+            isOneToOne: false
+            referencedRelation: "submissions"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       ai_usage: {
         Row: {
           day: string
@@ -3603,6 +3653,24 @@ export type Database = {
         }
         Relationships: []
       }
+      public_portfolio: {
+        Row: {
+          body_excerpt: string | null
+          body_is_excerpt: boolean | null
+          graded_at: string | null
+          has_file: boolean | null
+          is_capstone: boolean | null
+          link_url: string | null
+          profile_id: string | null
+          program_slug: string | null
+          program_title: string | null
+          public_slug: string | null
+          submission_id: string | null
+          theme: string | null
+          week_number: number | null
+        }
+        Relationships: []
+      }
       public_profile_stats: {
         Row: {
           avatar_url: string | null
@@ -3715,6 +3783,13 @@ export type Database = {
           program_title: string
           starts_on: string
           window_ends_on: string
+        }[]
+      }
+      admin_find_profile_by_email: {
+        Args: { p_email: string }
+        Returns: {
+          display_name: string
+          id: string
         }[]
       }
       admin_reports: {
@@ -3919,6 +3994,29 @@ export type Database = {
           p_scope: string
           p_scope_id?: string
         }
+        Returns: {
+          author_avatar_url: string
+          author_id: string
+          author_is_lead: boolean
+          author_name: string
+          author_public_slug: string
+          body: string
+          chapter_id: string
+          cohort_id: string
+          created_at: string
+          edited_at: string
+          hidden_at: string
+          id: string
+          link_url: string
+          my_reactions: string[]
+          pinned_at: string
+          reaction_counts: Json
+          reply_count: number
+          scope: string
+        }[]
+      }
+      community_post: {
+        Args: { p_post_id: string }
         Returns: {
           author_avatar_url: string
           author_id: string

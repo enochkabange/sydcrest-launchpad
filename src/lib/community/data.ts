@@ -152,37 +152,23 @@ export async function loadFeedPage(ref: FeedRef, before: string | null = null): 
 export type PostWithThread = { post: PostView; replies: ReplyView[] };
 
 /**
- * A post and its replies. community_thread returns replies only, and author
- * names only come through definer functions, so the post itself is read
- * through community_feed just above its own created_at (where the feed is
- * plain newest first) and picked by id. Null when the viewer cannot read it.
+ * A post and its replies: community_post returns the post in the feed row
+ * shape and community_thread its replies, with the same visibility rules.
+ * Null when the viewer cannot read it.
  */
 export const loadThread = cache(async (postId: string): Promise<PostWithThread | null> => {
   await requireUser();
   const supabase = await createClient();
-  const { data: row } = await supabase
-    .from("community_posts")
-    .select("id, scope, chapter_id, cohort_id, created_at")
-    .eq("id", postId)
-    .maybeSingle();
-  if (!row) return null;
-
-  const justAfter = new Date(Date.parse(row.created_at) + 1).toISOString();
-  const [{ data: feed, error: feedError }, { data: replies, error: threadError }] = await Promise.all([
-    supabase.rpc("community_feed", {
-      p_scope: row.scope,
-      ...(row.chapter_id ? { p_scope_id: row.chapter_id } : row.cohort_id ? { p_scope_id: row.cohort_id } : {}),
-      p_before: justAfter,
-      p_limit: 10,
-    }),
+  const [{ data: post, error: postError }, { data: replies, error: threadError }] = await Promise.all([
+    supabase.rpc("community_post", { p_post_id: postId }),
     supabase.rpc("community_thread", { p_post_id: postId }),
   ]);
-  if (feedError?.code === "42501" || threadError?.code === "P0002") return null;
-  if (feedError) throw new Error(`Could not load the post: ${feedError.message}`);
+  if (postError?.code === "P0002" || threadError?.code === "P0002") return null;
+  if (postError) throw new Error(`Could not load the post: ${postError.message}`);
   if (threadError) throw new Error(`Could not load the replies: ${threadError.message}`);
-  const match = (feed ?? []).find((p) => p.id === postId);
-  if (!match) return null;
-  return { post: toPostView(match), replies: (replies ?? []).map(toReplyView) };
+  const row = post?.[0];
+  if (!row) return null;
+  return { post: toPostView(row), replies: (replies ?? []).map(toReplyView) };
 });
 
 export const REPORT_STATUSES = ["open", "reviewing", "actioned", "dismissed"] as const;

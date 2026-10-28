@@ -8,6 +8,7 @@ import { MainWithRail } from "@/components/ui/layout";
 import { ProfileForm } from "./profile-form";
 import { PublicProfilePreview } from "./public-profile-preview";
 import { PublicProfileSection } from "./public-profile-section";
+import { VerifiedSkillsSection } from "./verified-skills-section";
 import { WhatsAppConsent } from "./whatsapp-consent";
 
 export const metadata: Metadata = { title: "Profile" };
@@ -47,6 +48,9 @@ export default function ProfilePage() {
             <WhatsAppConsent />
           </Suspense>
         </div>
+        <Suspense fallback={<div className="h-48 animate-skeleton rounded-lg bg-surface-sunken" />}>
+          <VerifiedSkillsSection />
+        </Suspense>
         <Suspense fallback={<div className="h-96 animate-skeleton rounded-lg bg-surface-sunken" />}>
           <PublicProfileSection />
         </Suspense>
