@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
@@ -25,6 +26,7 @@ export async function chooseSpecialization(_prev: SpecializationState, form: For
     p_cohort_member_id: memberId,
     p_specialization: slug,
   });
+  await trackResult("specialisation_chosen", error, { specialisation: slug });
   if (error) {
     if (error.code === "42501") {
       return {

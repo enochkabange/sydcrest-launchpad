@@ -33,7 +33,7 @@ export const FORM_RATE_LIMIT_MESSAGE =
 export const SIGN_IN_LIMIT_MESSAGE =
   "Too many attempts. Please wait a few minutes and try again, or reset your password.";
 
-export type FormBucket = "waitlist" | "sign_up" | "password_reset";
+export type FormBucket = "waitlist" | "sign_up" | "password_reset" | "beacon";
 
 /** True when a Supabase error is the rate limiter refusing the write. */
 export function isRateLimited(error: { code?: string | null } | null | undefined): boolean {

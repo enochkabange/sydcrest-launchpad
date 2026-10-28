@@ -12,7 +12,7 @@ export function LoginForm() {
   const [state, action, pending] = useActionState<AuthState, FormData>(signIn, {});
 
   return (
-    <form action={action} className="flex flex-col gap-4" noValidate>
+    <form data-analytics-form="sign_in" action={action} className="flex flex-col gap-4" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       <NextField />
       <TextField

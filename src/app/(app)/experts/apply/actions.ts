@@ -1,5 +1,6 @@
 "use server";
 
+import { trackRefusal, trackResult } from "@/lib/analytics/track";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
@@ -45,7 +46,10 @@ export async function applyAsExpert(_prev: ApplyState, form: FormData): Promise<
   const user = await requireUser();
   const values = echo(form);
   const { data, errors } = parseApplication(form);
-  if (Object.keys(errors).length) return { errors, values };
+  if (Object.keys(errors).length) {
+    await trackRefusal("expert_applied", "validation");
+    return { errors, values };
+  }
 
   const supabase = await createClient();
   const { data: existing } = await supabase
@@ -59,6 +63,7 @@ export async function applyAsExpert(_prev: ApplyState, form: FormData): Promise<
     ? supabase.from("expert_profiles").update(data.profile).eq("profile_id", user.id)
     : supabase.from("expert_profiles").insert({ profile_id: user.id, ...data.profile });
   const { error: profileError } = await profileWrite;
+  if (profileError) await trackResult("expert_applied", profileError);
   if (profileError) {
     if (profileError.code === PG.uniqueViolation) {
       return { errors: { slug: "That link name is taken. Try another." }, values };
@@ -68,6 +73,7 @@ export async function applyAsExpert(_prev: ApplyState, form: FormData): Promise<
   }
 
   const { error } = await supabase.from("expert_applications").insert({ profile_id: user.id, ...data.application });
+  await trackResult("expert_applied", error);
   if (error) {
     if (error.code === PG.uniqueViolation) {
       return { message: "You already have an application in review. You can see its status on this page.", values };

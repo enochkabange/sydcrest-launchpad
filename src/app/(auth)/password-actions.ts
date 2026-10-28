@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/server";
 import { siteOrigin } from "@/lib/site-url";
 import { parseNewPassword, parseResetRequest, type FieldErrors } from "@/lib/validation";
 import { allowFormSubmission, FORM_RATE_LIMIT_MESSAGE } from "@/lib/rate-limit";
+import { track, trackRefusal } from "@/lib/analytics/track";
 import {
   isRecoverySession,
   PASSWORD_CHANGED_NOTICE,
@@ -38,6 +39,7 @@ export async function requestPasswordReset(_prev: ResetRequestState, form: FormD
 
   const supabase = await createClient();
   if (!(await allowFormSubmission(supabase, "password_reset", await headers()))) {
+    await trackRefusal("password_reset_requested", "rate_limited");
     return { message: FORM_RATE_LIMIT_MESSAGE, values: { email: data.email } };
   }
   const { error } = await supabase.auth.resetPasswordForEmail(data.email, {
@@ -47,6 +49,7 @@ export async function requestPasswordReset(_prev: ResetRequestState, form: FormD
     // Logged without the address so Vercel logs say why, never who.
     console.error("resetPasswordForEmail failed", { code: error.code, status: error.status, message: error.message });
   }
+  await track("password_reset_requested");
   return { sent: RESET_SENT_MESSAGE };
 }
 
@@ -71,6 +74,7 @@ export async function updatePassword(_prev: NewPasswordState, form: FormData): P
   const { error } = await supabase.auth.updateUser({ password: data.password });
   if (error) {
     console.error("updatePassword failed", { code: error.code, status: error.status, message: error.message });
+    await trackRefusal("password_updated", error.code === "weak_password" || error.code === "same_password" ? "validation" : "server_error", error.code);
     if (error.code === "weak_password") return { errors: { password: "Choose a stronger password." } };
     if (error.code === "same_password") {
       return { errors: { password: "That is your current password. Choose a new one." } };
@@ -78,6 +82,7 @@ export async function updatePassword(_prev: NewPasswordState, form: FormData): P
     if (error.code === "session_not_found" || error.status === 401) return { expired: true };
     return { message: "We couldn't save your new password. Try again." };
   }
+  await track("password_updated");
   // One new password per link: the session stays signed in, but no longer counts as a reset.
   cookieStore.delete(RECOVERY_COOKIE);
   redirect(`/dashboard?notice=${PASSWORD_CHANGED_NOTICE}`);

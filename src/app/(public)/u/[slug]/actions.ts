@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { revalidatePath } from "next/cache";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
@@ -12,6 +13,7 @@ export async function follow(profileId: string, slug: string) {
   const supabase = await createClient();
   // No .select(): the row is not needed back. A repeat follow is a no op.
   const { error } = await supabase.from("follows").insert({ follower_id: user.id, following_id: profileId });
+  await trackResult("profile_followed", error && error.code !== "23505" ? error : null, { on: true });
   if (error && error.code !== "23505") throw new Error("Could not follow");
   revalidatePath(`/u/${slug}`);
 }
@@ -20,6 +22,7 @@ export async function unfollow(profileId: string, slug: string) {
   const user = await requireUser();
   const supabase = await createClient();
   const { error } = await supabase.from("follows").delete().eq("follower_id", user.id).eq("following_id", profileId);
+  await trackResult("profile_followed", error, { on: false });
   if (error) throw new Error("Could not unfollow");
   revalidatePath(`/u/${slug}`);
 }
@@ -42,6 +45,7 @@ export async function reportProfile(profileId: string, _prev: ReportState, form:
     target_id: profileId,
     reason: details ? `${reason}: ${details}` : reason,
   });
+  await trackResult("profile_reported", error);
   if (error) return { error: isRateLimited(error) ? RATE_LIMIT_MESSAGE : "We couldn't send your report. Try again." };
   return { done: true };
 }

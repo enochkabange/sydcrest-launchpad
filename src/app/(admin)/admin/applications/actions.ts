@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { requireAdmin } from "@/lib/admin";
 import { decisionErrorMessage, isDecision, NOTE_MAX } from "@/lib/programme-apply/screening";
@@ -27,6 +28,7 @@ export async function decideApplication(applicationId: string, _prev: DecisionSt
     ...(decision === "accepted" ? { p_cohort_id: cohortId } : {}),
     ...(note ? { p_note: note } : {}),
   });
+  await trackResult("application_decided", error, { decision });
   if (error) return { message: decisionErrorMessage(error) };
 
   refresh();

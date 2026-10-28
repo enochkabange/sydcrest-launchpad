@@ -1,3 +1,4 @@
+import { track, trackRefusal } from "@/lib/analytics/track";
 import { getCurrentUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { capStatus, LIMIT_MESSAGE, reservationStatus } from "@/lib/study-buddy/cap";
@@ -39,7 +40,10 @@ export async function POST(request: Request) {
   if (!user.hasAgeAndConsent) return fail(403, "setup_incomplete", "Finish setting up your account first.");
 
   const client = createStudyBuddyClient();
-  if (!client) return fail(503, "unavailable", "Study Buddy is resting right now. Please try again later.");
+  if (!client) {
+    await trackRefusal("study_buddy_message", "server_error", "unkeyed");
+    return fail(503, "unavailable", "Study Buddy is resting right now. Please try again later.");
+  }
 
   let body: unknown;
   try {
@@ -48,24 +52,34 @@ export async function POST(request: Request) {
     return fail(400, "bad_request", "Send a JSON body.");
   }
   const parsed = parseStudyBuddyRequest(body);
-  if (!parsed.ok) return fail(400, "bad_request", parsed.error);
+  if (!parsed.ok) {
+    await trackRefusal("study_buddy_message", "validation", "bad_request");
+    return fail(400, "bad_request", parsed.error);
+  }
   const { nodeId, messages, latestUserMessage } = parsed.data;
 
   const supabase = await createClient();
   // Cheap early refusal for a learner already at the limit; it does not count a message.
   const cap = capStatus(await getMessagesUsedToday(supabase, user.id));
-  if (!cap.allowed) return fail(429, "limit_reached", LIMIT_MESSAGE, { remaining: 0, limit: cap.limit });
+  if (!cap.allowed) {
+    await trackRefusal("study_buddy_message", "rate_limited", "daily_limit");
+    return fail(429, "limit_reached", LIMIT_MESSAGE, { remaining: 0, limit: cap.limit });
+  }
 
   const node = nodeId ? await loadNodeContext(supabase, nodeId) : null;
   if (nodeId && !node) return fail(404, "not_found", "We could not find that topic.");
 
   // The authoritative check: reserve this turn, then decide from the count it returns.
   const reserved = reservationStatus(await reserveMessage(supabase));
-  if (!reserved.allowed) return fail(429, "limit_reached", LIMIT_MESSAGE, { remaining: 0, limit: reserved.limit });
+  if (!reserved.allowed) {
+    await trackRefusal("study_buddy_message", "rate_limited", "daily_limit");
+    return fail(429, "limit_reached", LIMIT_MESSAGE, { remaining: 0, limit: reserved.limit });
+  }
 
   const route = routeMessage(latestUserMessage);
   const params = buildRequestParams(route, buildSystemPrompt(node), messages, COMPANION_TOOLS);
   const runTool = createToolRunner(createCompanionData(supabase, user.id));
+  await track("study_buddy_message", { turn: messages.length });
   const reply = streamReply(client, params, (usage) => recordTokens(supabase, usage), runTool);
 
   return new Response(reply, {
