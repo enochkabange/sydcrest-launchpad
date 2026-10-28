@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
@@ -116,6 +117,7 @@ export async function inviteMember(organisationId: string, _prev: InviteState, f
   const { error } = await supabase
     .from("organisation_members")
     .insert({ organisation_id: organisationId, profile_id: profile.id, role, invited_by: user.id });
+  await trackResult("organisation_member_invited", error, { role });
   if (error) {
     if (error.code === "23505") return { errors: { profile: "They are already a member or invited." } };
     return { message: error.code === "42501" ? "You can't invite people at that role." : "We couldn't send the invitation. Try again." };
@@ -197,6 +199,7 @@ export async function createOrgOpportunity(
   // prepare_opportunity trigger replaces organisation_name with the
   // organisation's own name, so nobody posts as someone else.
   const { error } = await supabase.from("opportunities").insert({ ...data, organisation_id: organisationId, organisation_name: "" });
+  await trackResult("opportunity_created", error, { by: "organisation" });
   if (error?.code === UNIQUE_VIOLATION) return rejected(data, form, { slug: "Another opportunity already uses this slug." });
   if (error) {
     console.error("createOrgOpportunity failed", { code: error.code, message: error.message });

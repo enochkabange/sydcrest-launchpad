@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
@@ -15,6 +16,7 @@ export async function acceptInvite(organisationId: string, slug: string): Promis
   if (!isUuid(organisationId)) return { message: "That invitation is not valid." };
   const supabase = await createClient();
   const { error } = await supabase.rpc("accept_organisation_invite", { p_organisation_id: organisationId });
+  await trackResult("organisation_invite_accepted", error);
   if (error) {
     return {
       message:

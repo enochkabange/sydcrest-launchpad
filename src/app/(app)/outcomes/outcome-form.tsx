@@ -31,7 +31,7 @@ export function OutcomeForm({
   const errors = state.errors ?? {};
 
   return (
-    <form action={formAction} className="flex flex-col gap-5" noValidate>
+    <form data-analytics-form="outcome" action={formAction} className="flex flex-col gap-5" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       {Object.keys(errors).length > 0 && <Alert tone="danger">Check the fields marked below.</Alert>}
 

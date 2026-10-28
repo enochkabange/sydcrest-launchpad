@@ -3,7 +3,8 @@
 import { refresh } from "next/cache";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { track } from "@/lib/analytics/track";
+import { track, trackRefusal } from "@/lib/analytics/track";
+import { classifyError, errorCode } from "@/lib/analytics/refusal";
 import { achievementShareTarget } from "@/lib/share/card";
 import { biggestMilestone, sectionIdOf } from "@/lib/share/milestones";
 import { SITE_URL } from "@/lib/site";
@@ -95,18 +96,18 @@ export async function startNode(nodeId: string): Promise<void> {
   const user = await requireUser();
   if (!UUID.test(nodeId)) return;
   const supabase = await createClient();
-  const { data: existing } = await supabase
-    .from("roadmap_progress")
-    .select("status")
-    .eq("profile_id", user.id)
-    .eq("node_id", nodeId)
-    .maybeSingle();
+  const [{ data: existing }, { data: node }] = await Promise.all([
+    supabase.from("roadmap_progress").select("status").eq("profile_id", user.id).eq("node_id", nodeId).maybeSingle(),
+    supabase.from("roadmap_nodes").select("roadmaps(slug)").eq("id", nodeId).maybeSingle(),
+  ]);
+  const roadmap = node?.roadmaps?.slug ?? undefined;
+  // Every open counts for lesson abandonment (opened, not finished).
+  await track("lesson_opened", { roadmap, node_id: nodeId });
   // set_node_status overwrites the status, so calling it on a done node would undo the completion.
   if (existing && existing.status !== "not_started") return;
   const { error } = await supabase.rpc("set_node_status", { p_node_id: nodeId, p_status: "in_progress" });
   if (error) return;
-  const { data: node } = await supabase.from("roadmap_nodes").select("roadmaps(slug)").eq("id", nodeId).single();
-  await track("node_started", { roadmap: node?.roadmaps?.slug ?? "", node_id: nodeId }, { profileId: user.id });
+  await track("node_started", { roadmap, node_id: nodeId });
 }
 
 export async function submitQuiz(_prev: CompletionState, form: FormData): Promise<CompletionState> {
@@ -120,21 +121,28 @@ export async function submitQuiz(_prev: CompletionState, form: FormData): Promis
   if (!questions.length) return { message: "This topic has no checkpoint quiz yet." };
 
   const answers = parseAnswers(form, questions);
-  if (!answers) return { message: "Choose an answer for every question, then check again." };
+  if (!answers) {
+    await trackRefusal("quiz_submitted", "validation", "unanswered");
+    return { message: "Choose an answer for every question, then check again." };
+  }
 
   const doneBefore = await wasDone(supabase, user.id, nodeId);
   const { data, error } = await supabase
     .rpc("submit_node_quiz", { p_node_id: nodeId, p_answers: answers })
     .single();
-  if (error || !data) return { message: friendly(error?.code, "We couldn't check your answers. Try again.") };
+  if (error || !data) {
+    await trackRefusal("quiz_submitted", classifyError(error), errorCode(error));
+    return { message: friendly(error?.code, "We couldn't check your answers. Try again.") };
+  }
 
   const outcome: QuizOutcome = { score: data.score, passed: data.passed, results: parseResults(data.results) };
+  await track("quiz_submitted", { node_id: nodeId, score: data.score, passed: data.passed });
   if (!outcome.passed) return { outcome, at: Date.now() };
 
   const { unlocked, roadmapSlug } = await readUnlocked(supabase, user.id, nodeId);
   // Count the first completion only; retaking a passed quiz is not a new one.
   if (!doneBefore) {
-    await track("node_completed", { roadmap: roadmapSlug, node_id: nodeId, via: "quiz" }, { profileId: user.id });
+    await track("node_completed", { roadmap: roadmapSlug, node_id: nodeId, via: "quiz" });
   }
   refresh();
   return { outcome, unlocked, at: Date.now() };
@@ -150,6 +158,7 @@ export async function markComplete(_prev: CompletionState, form: FormData): Prom
   const doneBefore = await wasDone(supabase, user.id, nodeId);
   const { error } = await supabase.rpc("set_node_status", { p_node_id: nodeId, p_status: "done" });
   if (error) {
+    await trackRefusal("node_completed", classifyError(error), errorCode(error));
     const message =
       error.code === "42501" && error.message.includes("quiz")
         ? "Pass the checkpoint quiz to complete this topic."
@@ -159,7 +168,7 @@ export async function markComplete(_prev: CompletionState, form: FormData): Prom
 
   const { unlocked, roadmapSlug } = await readUnlocked(supabase, user.id, nodeId);
   if (!doneBefore) {
-    await track("node_completed", { roadmap: roadmapSlug, node_id: nodeId, via: "self" }, { profileId: user.id });
+    await track("node_completed", { roadmap: roadmapSlug, node_id: nodeId, via: "self" });
   }
   refresh();
   // Marking by hand is personal tracking: it never offers a share card.

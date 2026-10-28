@@ -15,12 +15,12 @@ const WUMPINI = { id: "aaaaaaaa-0000-0000-0000-000000000001", email: "wumpini@ex
 describe("recordInviteSent", () => {
   beforeEach(() => vi.clearAllMocks());
 
-  it("records how the invite was sent, attributed to the learner, with nothing personal", async () => {
+  it("records how the invite was sent, with nothing personal (the database attributes it to the session)", async () => {
     getCurrentUser.mockResolvedValue(WUMPINI);
     await recordInviteSent("copy");
     await recordInviteSent("share");
-    expect(track).toHaveBeenNthCalledWith(1, "invite_sent", { method: "copy" }, { profileId: WUMPINI.id });
-    expect(track).toHaveBeenNthCalledWith(2, "invite_sent", { method: "share" }, { profileId: WUMPINI.id });
+    expect(track).toHaveBeenNthCalledWith(1, "invite_sent", { method: "copy" });
+    expect(track).toHaveBeenNthCalledWith(2, "invite_sent", { method: "share" });
   });
 
   it("ignores anything other than copy or share", async () => {

@@ -23,7 +23,7 @@ export function ProfileForm({
   const current = state.saved ?? { display_name: displayName, region, phone };
 
   return (
-    <form key={state.saved?.at ?? 0} action={action} className="flex flex-col gap-4" noValidate>
+    <form data-analytics-form="profile" key={state.saved?.at ?? 0} action={action} className="flex flex-col gap-4" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       {state.saved && <Alert tone="success">Saved.</Alert>}
       {state.whatsappOff && (

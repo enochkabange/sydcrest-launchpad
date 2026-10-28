@@ -83,6 +83,7 @@ export function FeedbackForm({
   const e = state.errors ?? {};
   return (
     <form
+      data-analytics-form="event_feedback"
       // Submitted by hand so React does not reset the fields after an error.
       onSubmit={(ev) => {
         ev.preventDefault();
