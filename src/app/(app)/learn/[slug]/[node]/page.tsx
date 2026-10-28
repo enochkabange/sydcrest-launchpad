@@ -195,9 +195,10 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
           <StudyBuddySlot nodeId={node.id} nodeTitle={node.title} />
         </Suspense>
       </article>
-      <aside className="hidden xl:sticky xl:top-8 xl:block">
+      {/* A plain wrapper: the outline is already a labelled nav landmark. */}
+      <div className="hidden xl:sticky xl:top-8 xl:block">
         <TopicOutline roadmap={roadmap} nodes={nodes} currentId={node.id} progress={allProgress ?? new Map()} />
-      </aside>
+      </div>
     </div>
   );
 }

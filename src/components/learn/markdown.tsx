@@ -36,10 +36,12 @@ function renderInline(nodes: Inline[]): ReactNode {
   });
 }
 
+// The markdown sits under the lesson's h2 sections, and lesson content uses
+// "##" for its top level, so "#" and "##" both become h3 (no skipped levels).
 const HEADINGS = {
   1: "h3",
-  2: "h4",
-  3: "h5",
+  2: "h3",
+  3: "h4",
 } as const;
 
 function renderBlock(block: Block, key: number): ReactNode {
@@ -66,7 +68,7 @@ function renderBlock(block: Block, key: number): ReactNode {
     }
     case "code":
       return (
-        <pre key={key} className="overflow-x-auto rounded-md border border-line bg-surface-sunken p-3 text-sm">
+        <pre key={key} tabIndex={0} className="overflow-x-auto rounded-md border border-line bg-surface-sunken p-3 text-sm">
           <code className="font-mono text-content">{block.text}</code>
         </pre>
       );

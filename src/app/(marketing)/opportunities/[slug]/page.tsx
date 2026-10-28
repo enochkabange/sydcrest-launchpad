@@ -209,7 +209,7 @@ function Tags({ label, items }: { label: string; items: string[] }) {
 
 function DetailSkeleton() {
   return (
-    <div aria-busy="true" className="mx-auto w-full max-w-page animate-pulse px-4 pt-6 pb-16 md:px-8 md:pt-10">
+    <div aria-busy="true" className="mx-auto min-h-dvh w-full max-w-page animate-pulse px-4 pt-6 pb-16 md:px-8 md:pt-10">
       <div className="h-4 w-28 rounded bg-surface-sunken" />
       <div className="mt-6 h-10 w-2/3 rounded bg-surface-sunken" />
       <div className="mt-3 h-6 w-1/3 rounded bg-surface-sunken" />

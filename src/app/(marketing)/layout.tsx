@@ -1,5 +1,6 @@
 import { Suspense } from "react";
 import { SiteFooter } from "@/components/marketing/site-footer";
+import { SkipLink } from "@/components/app-shell/skip-link";
 import { ViewerHeader, ViewerTabBar } from "@/components/app-shell/viewer-frame";
 import { PageViewTracker } from "@/lib/analytics/page-view-tracker";
 
@@ -11,6 +12,7 @@ import { PageViewTracker } from "@/lib/analytics/page-view-tracker";
 export default function MarketingLayout({ children }: LayoutProps<"/">) {
   return (
     <>
+      <SkipLink />
       <ViewerHeader />
       <main id="main" className="flex flex-1 flex-col">{children}</main>
       <SiteFooter />

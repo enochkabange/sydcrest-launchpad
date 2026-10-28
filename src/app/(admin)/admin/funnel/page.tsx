@@ -47,7 +47,8 @@ async function FunnelTable() {
         ))}
       </dl>
 
-      <div className="overflow-x-auto rounded-lg border border-line">
+      {/* Focusable so keyboard users can scroll the table sideways on a phone. */}
+      <div tabIndex={0} role="region" aria-label="Funnel by week" className="overflow-x-auto rounded-lg border border-line">
         <table className="w-full text-left text-sm">
           <caption className="sr-only">Visitors, sign ups and activations by week, newest first</caption>
           <thead className="bg-surface-sunken text-content-2">

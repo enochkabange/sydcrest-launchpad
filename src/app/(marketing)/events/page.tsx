@@ -147,7 +147,7 @@ async function EventLists({ searchParams }: Pick<PageProps<"/events">, "searchPa
 
 function ListSkeleton() {
   return (
-    <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]" aria-busy="true">
+    <div className="grid min-h-dvh gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]" aria-busy="true">
       <div className="grid gap-4 md:grid-cols-2">
         {[0, 1, 2, 3].map((i) => (
           <div key={i} className="h-40 animate-skeleton rounded-lg bg-surface-sunken" />

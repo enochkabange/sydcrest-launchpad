@@ -32,7 +32,7 @@ test("a learner reads, opens, marks and deletes notifications", async ({ page })
   await expect(rows.filter({ hasText: "Reminder: Spreadsheet skillshop" })).toHaveAttribute("data-read", "true");
 
   // Mark one read without leaving.
-  await page.getByRole("button", { name: "Mark as read: You earned a verified skill: Excel basics" }).click();
+  await page.getByRole("button", { name: "Mark read: You earned a verified skill: Excel basics" }).click();
   await expect(page.getByRole("heading", { name: "3 unread" })).toBeVisible();
 
   // Delete one.

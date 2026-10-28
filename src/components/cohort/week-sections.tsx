@@ -43,22 +43,26 @@ export function WeekHeader({
   );
 }
 
-function Block({ title, children, id }: { title: string; children: ReactNode; id?: string }) {
+/** Section heading level: 3 under a week header at h2 (the cohort home), 2 under the week page's h1. */
+type Level = 2 | 3;
+
+function Block({ title, children, id, level = 3 }: { title: string; children: ReactNode; id?: string; level?: Level }) {
   const headingId = `${id ?? title.toLowerCase().replace(/[^a-z]+/g, "-")}-heading`;
+  const Heading = level === 2 ? "h2" : "h3";
   return (
     <section id={id} aria-labelledby={headingId} className="flex scroll-mt-8 flex-col gap-3">
-      <h3 id={headingId} className="text-h3 text-content">
+      <Heading id={headingId} className="text-h3 text-content">
         {title}
-      </h3>
+      </Heading>
       {children}
     </section>
   );
 }
 
-export function WeekObjectives({ week }: { week: CohortWeek }) {
+export function WeekObjectives({ week, level }: { week: CohortWeek; level?: Level }) {
   if (!week.objectives.length) return null;
   return (
-    <Block title="By the end of the week you can">
+    <Block title="By the end of the week you can" level={level}>
       <ul className="flex max-w-reading list-disc flex-col gap-1.5 pl-5 text-content-2">
         {week.objectives.map((o) => (
           <li key={o}>{o}</li>
@@ -68,10 +72,10 @@ export function WeekObjectives({ week }: { week: CohortWeek }) {
   );
 }
 
-export function WeekLessons({ week }: { week: CohortWeek }) {
+export function WeekLessons({ week, level }: { week: CohortWeek; level?: Level }) {
   const done = week.lessons.filter((l) => l.done).length;
   return (
-    <Block title="Lessons">
+    <Block title="Lessons" level={level}>
       {week.lessons.length > 0 ? (
         <>
           <p className="text-sm text-content-3">
@@ -111,10 +115,10 @@ export function WeekLessons({ week }: { week: CohortWeek }) {
   );
 }
 
-export function WeekResource({ week }: { week: CohortWeek }) {
+export function WeekResource({ week, level }: { week: CohortWeek; level?: Level }) {
   if (!week.resource_name || !week.resource_url) return null;
   return (
-    <Block title="Free resource">
+    <Block title="Free resource" level={level}>
       <a
         href={week.resource_url}
         target="_blank"
@@ -151,22 +155,25 @@ export function WeekAssignment({
   startsOn,
   graceDays,
   children,
+  level = 3,
 }: {
   week: CohortWeek;
   weekNumber: number;
   startsOn: string;
   graceDays: number;
   children?: ReactNode;
+  level?: Level;
 }) {
+  const Heading = level === 2 ? "h2" : "h3";
   return (
     <section
       id="submit"
       aria-labelledby="assignment-heading"
       className="flex scroll-mt-8 flex-col gap-3 rounded-lg border border-line p-5 xl:p-6"
     >
-      <h3 id="assignment-heading" className="text-h3 text-content">
+      <Heading id="assignment-heading" className="text-h3 text-content">
         {week.is_capstone ? "Capstone assignment" : "Assignment"}
-      </h3>
+      </Heading>
       <p className="max-w-reading text-content">{week.assignment}</p>
       <DueLine startsOn={startsOn} weekNumber={weekNumber} graceDays={graceDays} />
       {children}
