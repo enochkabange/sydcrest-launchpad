@@ -1841,7 +1841,7 @@ Here \`train_texts\` is a list of messages and \`train_labels\` the language of 
 
 ## Doing it responsibly
 
-Collect text and voice only with clear consent, explain how it will be used, and remove names and phone numbers. Work with native speakers to check labels and transcripts, and credit the communities whose language you use. African research communities such as Masakhane work openly on language tools for African languages and are a good place to learn and contribute.`,
+Collect text and voice only with clear consent, explain how it will be used, and remove names and phone numbers. Work with native speakers to check labels and transcripts, and credit the communities whose language you use. African research communities such as Masakhane work openly on language tools for African languages and welcome contributors.`,
       practice_task_md: `**Goal:** plan a small, ethical language dataset.
 
 1. Choose a Ghanaian language you speak well, such as Dagbani, Twi or Ewe.

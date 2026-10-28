@@ -48,7 +48,7 @@ Analyst track first.
 | D2 | Kaggle: Efficient GPU usage tips and notebooks docs (weekly accelerator quota; page is script rendered, so no numbers are stated in lessons) | https://www.kaggle.com/docs/efficient-gpu-usage | 2026-10-28 | Official documentation and forum search results, read for facts only |
 | D3 | Ghana Data Protection Commission | https://dpc.gov.gh/ | 2026-10-28 | Regulator site, linked as further reading |
 | D4 | Act 843 secondary summaries (Wikipedia "Data Protection Act, 2012"; DLA Piper Data Protection in Ghana) used to confirm: the Act's name and year, the Commission as enforcer, registration of processors, health data as special personal data | https://en.wikipedia.org/wiki/Data_Protection_Act,_2012 and https://www.dlapiperdataprotection.com/?t=law&c=GH | 2026-10-28 | Secondary sources; section numbers conflict between sources, so lessons cite none |
-| D5 | scikit learn, pandas, NumPy, PyTorch, FastAPI official docs (API names only) | https://scikit-learn.org/stable/ , https://pandas.pydata.org/docs/ , https://pytorch.org/docs/stable/ , https://fastapi.tiangolo.com/ | 2026-10-28 | Official documentation (BSD, BSD, BSD style, MIT licensed projects); no text reused |
+| D5 | scikit learn, pandas, NumPy, PyTorch, FastAPI official docs (API names only) | https://scikit-learn.org/stable/ , https://pandas.pydata.org/docs/ , https://pytorch.org/docs/stable/ , https://fastapi.tiangolo.com/ | 2026-10-28 | Official documentation (BSD, BSD, BSD, BSD style and MIT licensed projects); no text reused |
 
 All resource links in the outline were checked to return HTTP 200 on 2026-10-27.
 
