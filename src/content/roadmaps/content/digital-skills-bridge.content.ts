@@ -799,9 +799,10 @@ Hawa finishes training with a working app and a phone that is still safe.`,
 
     "communicating-at-work": {
       outcomes: [
-        "Tell friendly messages at home from professional ones at work",
+        "Tell a friendly message from a professional one",
         "Explain why this matters for the DMP cohort",
         "Check how professional your messages are",
+        "Use four habits that work on every work tool",
       ],
       explanation_md: `Read entry level job adverts in Ghana for front desk staff, customer service agents, shop attendants or office assistants, and the same skills keep coming up. Answer calls. Reply on WhatsApp. Respond to email. Communicate well in English. These are not "tech" skills in the way coding is, but they are digital skills, and employers look for them first.
 
@@ -830,7 +831,74 @@ SydCrest's Delta Mentoring Program is a twelve week cohort with a mentor. In wee
 
 ## How to practise
 
-You do not need a job to practise. Use your church or mosque group, your class group, or a family member who runs a business. Each lesson ends with a task you can do with people you already know. Small, daily practice builds the habit faster than you might expect.`,
+You do not need a job to practise. Use your church or mosque group, your class group, or a family member who runs a business. Each lesson ends with a task you can do with people you already know. Small, daily practice builds the habit faster than you might expect.
+
+## Four habits that work on every tool
+
+Calls, WhatsApp, email and video calls look different, but good communication follows the same four habits on all of them:
+
+1. **Greet and name.** Start with a greeting and the person's name if you know it. Say who you are if they may not know you.
+2. **Main point first.** Say what the message is about in the first sentence, not the last.
+3. **Make the next step clear.** End with a question, a request or what you will do next, and when.
+4. **Check before you send or hang up.** Look again at names, dates, prices and numbers. A wrong number can cost a sale.
+
+If you remember only these four steps, you will already sound more professional than many people.
+
+## Choosing the right tool
+
+Each tool suits a different job:
+
+* **A phone call** is best when something is urgent or needs a quick discussion.
+* **A WhatsApp message** suits short updates, orders and questions that can wait a little.
+* **An email** suits anything formal or anything that needs a record, such as a job application, a complaint or a document.
+* **A video call** suits meetings, classes and interviews where seeing each other helps.
+
+When you are not sure, ask your manager or mentor which tool they prefer.
+
+## Phone or computer
+
+You can do all of this on a phone. Many offices also use the same tools on a computer: WhatsApp has a web and desktop version that links to your phone, and email and video calls work in a web browser. The habits do not change. A computer just makes typing longer messages easier.
+
+## Replying on time
+
+At work, a fast and short reply is often better than a slow and perfect one. If you need time to find an answer, send a quick note such as "Thank you, I will check and reply by 2pm," then keep that promise.`,
+      workedExample_md: `**Akosua fixes a message to her manager**
+
+Akosua has just started as a sales assistant at a phone accessories shop in Wa. Her manager, Mr Sumaila, is at the bank. A customer wants ten chargers, but there are only six on the shelf. Her first draft on WhatsApp says:
+
+"sir the charger finish"
+
+Before sending, she uses the four habits.
+
+1. **Greet and name.** She starts: "Good afternoon Mr Sumaila."
+2. **Main point first.** "A customer wants 10 chargers of the white type, but we have only 6 in the shop."
+3. **Make the next step clear.** "Should I sell the 6 now and take her number for the other 4, or is there more stock in the store room?"
+4. **Check before sending.** She counts the shelf again to be sure the number 6 is right, and checks she has written 10, not 100.
+
+She adds her name at the end because he may read it on the shared shop phone. Her final message:
+
+"Good afternoon Mr Sumaila. A customer wants 10 chargers of the white type, but we have only 6 in the shop. Should I sell the 6 now and take her number for the other 4, or is there more stock in the store room? Akosua."
+
+Mr Sumaila replies within a minute: "Sell the 6, take her number. More stock tomorrow." The customer leaves happy.`,
+      keyTerms: [
+        { term: "Professional communication", definition: "Messages and calls that are polite, clear and easy for the other person to act on." },
+        { term: "Main point", definition: "The most important thing you want the other person to know, placed in the first sentence." },
+        { term: "Next step", definition: "What should happen after the message, such as a reply, a decision or a callback, and when." },
+        { term: "Short forms", definition: "Shortened spellings like hw, pls or u. Fine with friends, unclear at work." },
+        { term: "WhatsApp Web", definition: "A version of WhatsApp that runs in a computer's browser and links to the account on your phone." },
+      ],
+      commonMistakes: [
+        "Using the same short forms and slang with a manager or customer that you use with friends",
+        "Putting the main point at the end of a long message",
+        "Forgetting to say what you need, so the other person does not know how to reply",
+        "Sending without checking names, prices and numbers",
+      ],
+      selfCheck: [
+        "Can you name the four habits that work on every tool?",
+        "Which tool would you choose to send a job application, and why?",
+        "Look at your last work or class message. Was the main point in the first sentence?",
+        "How would you reply if someone asks a question you cannot answer straight away?",
+      ],
       practice_task_md: `**Goal:** See how professional your messages already are.
 
 **Steps**
@@ -896,6 +964,7 @@ You do not need a job to practise. Use your church or mosque group, your class g
         "Answer a work call properly",
         "Listen, check and take a message someone can act on",
         "End a call and follow up",
+        "Stay calm and helpful with an upset caller",
       ],
       explanation_md: `Customer service agents, front desk staff, call centre workers and office assistants all spend a lot of their day on the phone. A caller cannot see your face or your office. Your voice and what you say are all they have to judge you and your employer. Good phone habits are simple to learn and very easy for a manager to notice.
 
@@ -932,11 +1001,69 @@ Write it down straight away in a notebook or a notes app, then pass it on. Some 
 
 Summarise what will happen next, thank them and let them hang up first. If you promised a callback, keep that promise even if you only have a partial answer.
 
-## A worked example
+## Making calls to customers
 
-Sumaila works at the front desk of a small hotel in Tamale. A caller asks for the manager, who is out. Sumaila writes: "Tuesday 10:15am. Mr Alhassan, 024 000 0000. Wants to book the hall for a naming ceremony on 14th. Promised manager will call back before 2pm." He sends this to the manager on WhatsApp. The manager calls back on time, and the booking is made. A two minute habit helped win a customer.
+Calls you make to customers are sometimes called **outbound calls**. They use the same skills, with a little preparation first:
 
-Making calls to customers, sometimes called outbound calls, uses the same skills: greet, say who you are and why you are calling, listen, and record what was agreed.`,
+1. Write down why you are calling and what you need to find out.
+2. Have any details ready: the order, the price, the date.
+3. Greet, say your name, the business and why you are calling: "Good morning, this is Kojo from Zaa Prints. I am calling about your wedding invitations."
+4. Ask whether it is a good time to talk. If not, agree a better time.
+5. Listen, and record what was agreed before you forget.
+
+## When a caller is upset
+
+Sometimes a caller is angry about a late delivery or a wrong order. Stay calm and do not argue.
+
+* Let them explain without interrupting.
+* Say you understand: "I am sorry this has happened."
+* Repeat the problem back so they know you listened.
+* Say clearly what you will do, and when. If you cannot fix it yourself, say who will.
+* Write it down and pass it on straight away.
+
+You do not have to accept rude language. If a caller becomes abusive, say politely that you will end the call, and tell your manager.
+
+## Missed calls and voice messages
+
+If you miss a work call, return it as soon as you can, and start by saying who you are: "Good afternoon, this is Mariama from Zaa Prints. I missed a call from this number." If you reach a voicemail, leave a short message with your name, the business, why you called and a number to call back. Speak the number slowly.
+
+## Keeping a call log
+
+A call log is a simple list of calls and what happened. You can keep one in a notebook, a notes app on your phone, or a spreadsheet on a computer with columns for date, time, name, number, request and action. Some offices use a computer system for this. Whatever the tool, a log means nothing is forgotten when you are busy or when someone else takes over your desk.`,
+      workedExample_md: `**Sumaila takes a booking message at a hotel**
+
+Sumaila works at the front desk of a small hotel in Tamale. The phone rings at 10:15 on a Tuesday morning.
+
+1. He answers within three rings: "Good morning, Sunrise Guest House, this is Sumaila speaking. How can I help you?"
+2. The caller, Mr Alhassan, wants to book the hall for a naming ceremony. He asks for the manager, who is out.
+3. Sumaila listens without interrupting, then checks: "So you would like the hall on Saturday the 14th, for the morning, is that right?" Mr Alhassan corrects him: it is the afternoon. Checking caught a mistake.
+4. Sumaila does not guess the price. He says: "The manager handles bookings. Can she call you back before 2pm today?" Mr Alhassan agrees.
+5. He takes the number, reads it back digit by digit, and writes the message:
+"Tuesday 10:15am. Mr Alhassan, 024 000 0000. Wants the hall for a naming ceremony, Saturday 14th, afternoon. Promised manager will call back before 2pm."
+6. He thanks Mr Alhassan and waits for him to hang up first.
+7. He sends the message to the manager on WhatsApp and adds it to the call log.
+
+The manager calls back at 1pm and the booking is made. A two minute habit helped win a customer.`,
+      keyTerms: [
+        { term: "Outbound call", definition: "A call you make to a customer or supplier, rather than one you receive." },
+        { term: "Callback", definition: "A promise to phone someone back later, usually by a set time." },
+        { term: "Phone message", definition: "A written note of a call for someone who was not there: name, number, time, request and promise." },
+        { term: "Call log", definition: "A simple list of calls with the date, caller and what happened, kept on paper, in an app or in a spreadsheet." },
+        { term: "Voicemail", definition: "A recorded message left when someone does not answer the phone." },
+      ],
+      commonMistakes: [
+        "Answering a work call with just hello, so the caller is not sure they reached the right place",
+        "Guessing a price or date instead of checking and calling back",
+        "Taking a message without the caller's number, or writing the number down wrongly",
+        "Promising a callback and then forgetting it",
+        "Arguing with an upset caller instead of listening and saying what you will do",
+      ],
+      selfCheck: [
+        "What would you say in the first five seconds of answering a call for a business you know?",
+        "Which five details belong in a phone message someone else can act on?",
+        "How would you calm an upset caller whose order is late?",
+        "Where will you keep your call log: in a notebook, an app or a spreadsheet?",
+      ],
       practice_task_md: `**Goal:** Practise answering a work call and taking a clear message.
 
 **Steps**
@@ -1004,6 +1131,7 @@ Making calls to customers, sometimes called outbound calls, uses the same skills
         "Write clear work messages",
         "Choose between a voice note and text",
         "Share files and follow group manners",
+        "Use WhatsApp on a computer and log out safely",
       ],
       explanation_md: `In Ghana, a lot of business happens on WhatsApp. Shops take orders on it, offices share schedules in groups, NGOs send field updates, and job adverts for shop attendants and customer service roles often ask for people who are comfortable using it for work. SydCrest itself runs a WhatsApp community. Using WhatsApp well at work is different from chatting with friends.
 
@@ -1036,9 +1164,62 @@ Voice notes are quick, but the listener must find a quiet place to play them, an
 
 Some shops use **WhatsApp Business**, a separate free app with a business profile, quick replies for common questions and labels to organise chats. If a job uses it, the skills above still apply.
 
-## A worked example
+## Using WhatsApp on a computer
 
-Amina runs a small fabric shop in Tamale. Her new attendant, Napari, receives an order on WhatsApp. Napari replies (the price here is only an example): "Good afternoon. Thank you for your order. We have the blue wax print, 6 yards, for 180 cedis. Delivery to Lamashegu is possible tomorrow. Please confirm and we will send the MoMo details." Clear, polite and complete. The customer confirms in one reply.`,
+Many offices keep WhatsApp open on a computer, because typing is faster and files are easier to attach. It is called **WhatsApp Web** in a browser, and there is also a desktop app. Both link to the account on your phone.
+
+1. On the computer, open the official WhatsApp website or desktop app. A square code, called a QR code, appears.
+2. On your phone, open WhatsApp's settings and look for **Linked devices**, then **Link a device**.
+3. Point your phone's camera at the code on the computer screen. Your chats appear on the computer.
+4. When you finish on a computer that is not yours, log out. You can do it on the computer, or from Linked devices on your phone.
+
+That last step matters. Anyone who sits at a shared computer where you stayed logged in can read and send your messages.
+
+## Finding things later
+
+Work chats get long. Two tools help:
+
+* **Search.** Tap or click the magnifying glass and type a word such as "invoice" or a customer's name.
+* **Starred messages.** Long press a message on a phone, or hover and open the menu on a computer, and choose **Star**. Important messages such as an address or a price list are then saved in one place.
+
+## Keeping work and personal apart
+
+Your profile photo, name and About line are seen by customers and managers. Use a clear photo of yourself and your real name. If your status updates are personal, check your privacy settings so only your contacts see them. Some people keep a second number with WhatsApp Business only for work. That is a choice, not a rule.`,
+      workedExample_md: `**Napari answers a fabric order**
+
+Amina runs a small fabric shop in Tamale. Her new attendant, Napari, handles the shop's WhatsApp. A customer, Mrs Owusu, sends a photo of a blue wax print and asks: "Do you have this? I need 6 yards, delivered to Lamashegu."
+
+1. Napari checks the shelf first, so she does not promise something the shop does not have. There are 8 yards.
+2. She checks the price list Amina starred in the chat, so the price is correct.
+3. She writes one complete message instead of sending "Hello" and waiting:
+"Good afternoon Mrs Owusu. Thank you for your order. We have the blue wax print, 6 yards, for 180 cedis. Delivery to Lamashegu is possible tomorrow. Please confirm and we will send the MoMo details."
+(The price here is only an example.)
+4. She reads it once more and checks the yards, the price and the area.
+5. Mrs Owusu confirms in one reply. Napari sends the payment details as text, not a voice note, so they are easy to copy.
+6. When the payment arrives, she sends a short thank you and the delivery time, and stars the order so Amina can find it later.
+
+Clear, polite and complete. The whole sale took five messages.`,
+      keyTerms: [
+        { term: "Send as Document", definition: "Attaching a file through the Document option, which keeps it sharp and keeps its file name." },
+        { term: "Voice note", definition: "A short recorded audio message. Quick to send, but hard to search later." },
+        { term: "WhatsApp Web", definition: "WhatsApp in a computer's browser, linked to your phone by scanning a QR code." },
+        { term: "Linked devices", definition: "The WhatsApp setting that shows every computer logged in to your account, where you can log them out." },
+        { term: "Starred message", definition: "A message you mark so you can find it quickly later." },
+        { term: "WhatsApp Business", definition: "A separate free app for businesses, with a business profile, quick replies and labels." },
+      ],
+      commonMistakes: [
+        "Sending Hello and waiting, instead of the full message in one go",
+        "Sending a CV or price list through the gallery, so it arrives blurry",
+        "Giving prices, addresses or account details in a voice note",
+        "Forwarding jokes, chain messages or political posts in a work group",
+        "Staying logged in to WhatsApp Web on a shared computer",
+      ],
+      selfCheck: [
+        "What are the parts of a clear work message on WhatsApp?",
+        "When would you choose a voice note, and when would you type?",
+        "How do you check which computers are logged in to your WhatsApp?",
+        "Would you be happy for an employer to see your WhatsApp profile as it is today?",
+      ],
       practice_task_md: `**Goal:** Use WhatsApp the way a professional would.
 
 **Steps**
@@ -1106,6 +1287,7 @@ Amina runs a small fabric shop in Tamale. Her new attendant, Napari, receives an
         "Join a video call from a link",
         "Use the buttons that matter",
         "Save data and look ready on a call",
+        "Recover calmly when a call drops",
       ],
       explanation_md: `Online classes, team meetings, some mentoring sessions and some job interviews now happen on video calls. Joining on time, with your microphone and camera under control, shows that you are ready for online work. It is a skill you can learn in one afternoon.
 
@@ -1144,10 +1326,69 @@ Video calls use a lot of data. To use less:
 * Prop your phone or laptop up so the camera is steady and at eye level.
 * Use earphones if you have them. They cut echo and noise.
 * Use your real name as your display name, so the host knows who you are.
+* Choose the quietest place you can, and tell people nearby that you will be on a call.
 
-## A worked example
+## Test before the real call
 
-Rashida in Damongo has been invited to an online interview for an office job. The interviewer sends her a Google Meet link. The day before, on her school's WiFi, she installs the Meet app and signs in with her email. On the day she joins five minutes early, greets the interviewer and keeps her camera on so they can see her. She sits facing the window and uses earphones, so her voice is clear. When the interviewer shares a slide about the job, she asks if she may turn her camera off for a moment to save data, and the interviewer agrees. She leaves the call feeling prepared, not stressed.`,
+Never let an important call be your first time using the app. A day or two before:
+
+1. Open the link, or the app, and check you can sign in.
+2. Most apps show a preview screen before you join. Use it to check that your camera shows your face and that the microphone moves when you speak.
+3. Find the mute, camera, chat and leave buttons, so you are not searching for them later.
+4. Charge your device fully, and plan where you will sit.
+
+## Good manners on a call
+
+* Greet everyone when you join, then mute if it is a group.
+* Speak one at a time. If two people start together, stop and say "Please go ahead."
+* Use the chat or raise hand in a big class, rather than talking over the teacher.
+* Look at the camera, not only the screen, when you speak, so it feels like eye contact.
+* Do not eat, walk around the market or have side conversations while your camera is on.
+
+## If something goes wrong
+
+Problems happen to everyone on video calls. What matters is how calmly you deal with them.
+
+* **Nobody can hear you.** Check the microphone is not muted. If you use earphones, check they are connected.
+* **The picture freezes.** Turn your camera off to give your sound more of the connection.
+* **The call drops.** Open the same link again. It usually lets you back in.
+* **You cannot rejoin.** Send a short message to the host on WhatsApp or by email: "My connection dropped. I am trying to rejoin now."
+
+Saying what happened, briefly and politely, is professional. Disappearing without a word is not.`,
+      workedExample_md: `**Rashida prepares for an online interview**
+
+Rashida lives in Damongo and has been invited to an online interview for an office job. The interviewer sends a Google Meet link by email for Thursday at 10am.
+
+1. **Two days before**, on her school's WiFi, she installs the Meet app from the Play Store and signs in with the same email she used to apply.
+2. She opens the link early to see the preview screen. Her face is dark because the window is behind her, so she turns her chair round to face it.
+3. She asks a friend to join a short test call. They practise muting, turning the camera off and on, and using the chat.
+4. **On the morning**, she charges her phone fully, props it on a pile of books at eye level and plugs in her earphones.
+5. She joins five minutes early, with her camera on and her real name showing.
+6. When the interviewer shares a slide about the job, she asks: "May I turn my camera off for a moment to save data?" The interviewer agrees.
+7. Halfway through, the call drops. She opens the link again and is back in within a minute. She says: "Sorry, my connection dropped. Could you repeat the last question?"
+
+She leaves the call feeling prepared, not stressed.`,
+      keyTerms: [
+        { term: "Video call", definition: "A live call where people can see and hear each other through a camera and microphone." },
+        { term: "Meeting link", definition: "A web address that opens a particular video call in an app or browser." },
+        { term: "Mute", definition: "Turning off your microphone so others cannot hear you." },
+        { term: "Preview screen", definition: "The screen before you join a call, where you can check your camera and microphone." },
+        { term: "Display name", definition: "The name others see on a call. Use your real name." },
+        { term: "Host", definition: "The person who set up the call and can admit or remove people." },
+      ],
+      commonMistakes: [
+        "Installing the app for the first time a few minutes before an important call",
+        "Leaving the microphone on in a noisy place",
+        "Sitting with a bright window or bulb behind you, so your face is dark",
+        "Using a nickname as your display name",
+        "Disappearing when the call drops, instead of rejoining or sending a message",
+      ],
+      selfCheck: [
+        "Which video call apps are already installed on your device, and can you sign in to them?",
+        "Where in your home or school could you sit for a quiet call with good light?",
+        "What would you do first if people said they could not hear you?",
+        "How would you tell the host that your connection dropped?",
+      ],
       practice_task_md: `**Goal:** Join and control a video call confidently before you need to.
 
 **Steps**
@@ -1215,6 +1456,7 @@ Rashida in Damongo has been invited to an online interview for an office job. Th
         "Read lessons with confidence",
         "Write clear messages and emails",
         "Make reading and writing practice a habit",
+        "Use polite phrases and check your own writing",
       ],
       explanation_md: `Most free online courses, most job adverts and most office work in Ghana use written English. Job adverts for front desk, call centre and office roles often ask for good spoken and written English. You do not need perfect grammar. You need to understand what you read and write messages that are clear and polite. Both improve quickly with practice.
 
@@ -1240,21 +1482,71 @@ Short and simple is professional. A good work message or email has:
 
 Before you send anything important, read it once more. Check names, dates and numbers. Your phone keyboard, and most browsers and writing apps on a computer, underline spelling mistakes in red. Tap or right click the word to see suggestions.
 
-## A worked example
+## Polite phrases that help
 
-Here is a first draft from Baba, who wants to ask about a course:
+A few phrases make almost any work message sound polite and clear. Keep them in a note and use them until they feel natural:
 
-"pls i want to no about the course when it start and the price thank u"
+* "I would like to ask about..." to start a question.
+* "Could you please..." to make a request.
+* "Thank you for letting me know." to reply to news or an update.
+* "I am sorry for the delay." when you reply late.
+* "Please let me know if you need anything else." to close.
 
-Here is his improved version:
+Avoid writing a whole message in capital letters. Online, capitals read like shouting.
 
-"Good morning. My name is Baba Salifu. I would like to know when the next digital skills course starts and how much it costs. Thank you."
+## Making reading easier on your device
 
-The second version is still short. It is clearer because it uses full words, full sentences and one idea at a time.
+* **Make the text bigger.** On a phone, search Settings for **Font size**. In a computer's browser, hold Ctrl and press the plus key, or Command and plus on a Mac.
+* **Use reading mode.** Many browsers have a simple reading view that hides adverts and menus. Look for it in the browser menu.
+* **Listen as you read.** Many phones and computers can read text aloud. Search Settings for **Text to speech** or **Read aloud**. Hearing and reading together helps with new words.
+
+## Translation and spell check tools
+
+Translation apps and spell checkers are useful helpers, but they make mistakes. Use a translator to understand a hard sentence, not to write a whole message for you. A spell checker will not notice when you type "form" instead of "from", because both are real words. Always read your message yourself before you send it.
 
 ## Making practice a habit
 
 Spend ten minutes a day reading something in English that interests you: a news article, a lesson, or a story. Then write two or three sentences about it. Free websites such as BBC Learning English have short lessons made for learners. Over a few weeks, reading gets faster and writing feels natural.`,
+      workedExample_md: `**Baba rewrites a message about a course**
+
+Baba Salifu lives in Gushegu and wants to ask a training centre about its next course. His first draft is:
+
+"pls i want to no about the course when it start and the price thank u"
+
+He improves it step by step.
+
+1. **Add a greeting.** "Good morning."
+2. **Say who he is.** "My name is Baba Salifu." The centre does not have his number saved.
+3. **Put the main point first, in full words.** "pls i want to no" becomes "I would like to know". Spell check did not catch "no" instead of "know", because both are real words. Baba spotted it by reading aloud.
+4. **One idea at a time.** "when it start and the price" becomes "when the next digital skills course starts and how much it costs."
+5. **Polite close.** "Thank you."
+6. **Check once more.** He reads the whole message slowly and checks the spelling of his name.
+
+His improved version:
+
+"Good morning. My name is Baba Salifu. I would like to know when the next digital skills course starts and how much it costs. Thank you."
+
+The second version is still short. It is clearer because it uses full words, full sentences and one idea at a time. The centre replies the same day with the dates.`,
+      keyTerms: [
+        { term: "Heading", definition: "A short title above a part of a page that tells you what that part is about." },
+        { term: "Spell check", definition: "A tool that underlines misspelt words, usually in red. It cannot catch a real word used in the wrong place." },
+        { term: "Polite close", definition: "The ending of a message, such as Thank you, followed by your name." },
+        { term: "Reading mode", definition: "A simple view in a browser that shows the main text without adverts or menus." },
+        { term: "Text to speech", definition: "A setting that reads text on your screen aloud." },
+      ],
+      commonMistakes: [
+        "Stopping a lesson because you do not know every word",
+        "Using short forms such as pls and u in messages to people you do not know well",
+        "Copying a whole message from a translation app without checking it",
+        "Trusting spell check to catch every mistake",
+        "Writing in capital letters, which reads like shouting",
+      ],
+      selfCheck: [
+        "What do you look at first when you open a new lesson page?",
+        "Can you write a three sentence message asking about a course, with a greeting, main point and polite close?",
+        "Which polite phrases from this lesson will you start using this week?",
+        "Could you explain this lesson to a friend in a language you speak?",
+      ],
       practice_task_md: `**Goal:** Read one short lesson and write a clear message about it.
 
 **Steps**
