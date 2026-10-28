@@ -177,7 +177,7 @@ export function OpportunityForm({
               </SelectField>
             </div>
             <label htmlFor="is_remote" className="flex min-h-11 items-center gap-3 text-sm text-content">
-              <input id="is_remote" name="is_remote" type="checkbox" defaultChecked={o.is_remote ?? false} className="size-5 shrink-0 accent-blue-600" />
+              <input id="is_remote" name="is_remote" type="checkbox" defaultChecked={o.is_remote ?? false} className="size-5 shrink-0 accent-line-selected" />
               Can be done remotely
             </label>
           </fieldset>
@@ -314,7 +314,7 @@ function CheckboxGroup({
               value={opt.value}
               type="checkbox"
               defaultChecked={checked.includes(opt.value)}
-              className="size-5 shrink-0 accent-blue-600"
+              className="size-5 shrink-0 accent-line-selected"
             />
             {opt.label}
           </label>

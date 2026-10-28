@@ -5,7 +5,8 @@ import { MAX_HISTORY_MESSAGES, MAX_MESSAGE_CHARS } from "./config";
 export type ChatMessage = { role: "user" | "assistant"; content: string };
 
 export type StudyBuddyRequest = {
-  nodeId: string;
+  /** The topic the chat is about, or null for the companion chat outside a lesson. */
+  nodeId: string | null;
   messages: Anthropic.MessageParam[];
   latestUserMessage: string;
 };
@@ -13,7 +14,8 @@ export type StudyBuddyRequest = {
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 /**
- * Validates POST {nodeId, messages}. Keeps only the last MAX_HISTORY_MESSAGES
+ * Validates POST {nodeId?, messages}. Without nodeId (or null) it is the
+ * companion chat. Keeps only the last MAX_HISTORY_MESSAGES
  * turns, drops empty ones, merges any consecutive same role turns (the API
  * needs alternation) and requires the conversation to end with the learner.
  */
@@ -23,7 +25,9 @@ export function parseStudyBuddyRequest(
   if (!body || typeof body !== "object") return { ok: false, error: "Send a JSON body." };
   const { nodeId, messages } = body as { nodeId?: unknown; messages?: unknown };
 
-  if (typeof nodeId !== "string" || !UUID.test(nodeId)) return { ok: false, error: "nodeId must be a topic id." };
+  if (nodeId !== undefined && nodeId !== null && (typeof nodeId !== "string" || !UUID.test(nodeId))) {
+    return { ok: false, error: "nodeId must be a topic id." };
+  }
   if (!Array.isArray(messages) || messages.length === 0) return { ok: false, error: "Send at least one message." };
 
   const cleaned: ChatMessage[] = [];
@@ -53,7 +57,7 @@ export function parseStudyBuddyRequest(
   return {
     ok: true,
     data: {
-      nodeId,
+      nodeId: typeof nodeId === "string" ? nodeId : null,
       messages: recent.map(({ role, content }) => ({ role, content })),
       latestUserMessage: latest.content,
     },

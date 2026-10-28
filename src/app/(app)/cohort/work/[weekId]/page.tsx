@@ -10,11 +10,6 @@ import { getWeek } from "@/lib/submissions/queries";
 
 export const metadata: Metadata = { title: "Your work" };
 
-// The app shell's nav reads usePathname() outside a Suspense boundary, which a
-// dynamic segment cannot prerender; same as /learn/[slug]/[node] until the
-// shell wraps the nav in Suspense.
-export const instant = false;
-
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 /** One week's assignment and feedback, linked from Your work. The cohort week page mounts the same section. */

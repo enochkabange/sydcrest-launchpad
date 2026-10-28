@@ -32,7 +32,7 @@ export function SubmittedWork({
                 href={linkUrl}
                 target="_blank"
                 rel="noopener noreferrer nofollow"
-                className="inline-flex min-h-11 max-w-full items-center gap-2 break-all text-sm font-semibold text-blue-600 underline-offset-4 hover:underline"
+                className="inline-flex min-h-11 max-w-full items-center gap-2 break-all text-sm font-semibold text-content-link underline-offset-4 hover:underline"
               >
                 <ExternalLink aria-hidden className="size-4 shrink-0" />
                 <span className="truncate">{linkUrl}</span>
@@ -47,7 +47,7 @@ export function SubmittedWork({
                   href={fileUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex min-h-11 max-w-full items-center gap-2 text-sm font-semibold text-blue-600 underline-offset-4 hover:underline"
+                  className="inline-flex min-h-11 max-w-full items-center gap-2 text-sm font-semibold text-content-link underline-offset-4 hover:underline"
                 >
                   <Paperclip aria-hidden className="size-4 shrink-0" />
                   <span className="truncate">{fileName}</span>

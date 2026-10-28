@@ -54,8 +54,7 @@ export async function addStaff(cohortId: string, _prev: AdminFormState, form: Fo
   if (role !== "mentor" && role !== "coordinator") errors.role = "Choose mentor or coordinator.";
   if (Object.keys(errors).length) return { errors };
 
-  const id = await findUserIdByEmail(email);
-  if (id === "unavailable") return { message: "Looking people up by email needs the server key, which is not set here." };
+  const id = await findUserIdByEmail(supabase, email);
   if (!id) return { errors: { email: "No account uses that email. Ask them to sign up first." } };
 
   const { error } = await supabase.from("cohort_members").insert({ cohort_id: cohortId, profile_id: id, role });

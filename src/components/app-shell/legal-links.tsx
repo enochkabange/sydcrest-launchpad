@@ -3,10 +3,11 @@ import Link from "@/components/ui/link";
 const LEGAL = [
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
+  { href: "/accessibility", label: "Accessibility" },
 ] as const;
 
 /**
- * Privacy and Terms links for every frame outside the marketing site, whose
+ * Privacy, Terms and Accessibility links for every frame outside the marketing site, whose
  * own footer already carries them. Static: no session reads.
  */
 export function LegalLinks({ className = "" }: { className?: string }) {

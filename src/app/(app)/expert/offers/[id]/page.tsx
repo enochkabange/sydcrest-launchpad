@@ -10,11 +10,6 @@ import { OfferEditorFrame } from "../offer-editor";
 
 export const metadata: Metadata = { title: "Edit offer" };
 
-// As on /learn/[slug]/[node]: the app shell's nav reads usePathname() outside
-// a Suspense boundary, which a dynamic segment cannot prerender. Allow this
-// route to block until the shell wraps the nav in Suspense.
-export const instant = false;
-
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
 async function EditOffer({ params }: { params: PageProps<"/expert/offers/[id]">["params"] }) {

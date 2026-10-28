@@ -106,7 +106,7 @@ export function QuestionEditor({
                             value={j}
                             checked={d.correct === j}
                             onChange={() => update(i, { correct: j })}
-                            className="size-5 accent-blue-600"
+                            className="size-5 accent-line-selected"
                           />
                           <span className="sr-only">Option {j + 1} is the right answer</span>
                         </label>

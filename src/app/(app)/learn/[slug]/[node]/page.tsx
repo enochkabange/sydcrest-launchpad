@@ -20,11 +20,6 @@ import { TopicOutline } from "./topic-outline";
 
 export const metadata: Metadata = { title: "Learn" };
 
-// The app shell's nav reads usePathname() outside a Suspense boundary, which
-// a dynamic segment cannot prerender. Allow this route to block until the
-// shell wraps the nav in Suspense (see the PR's integration notes).
-export const instant = false;
-
 const RESOURCE_KIND = {
   article: { label: "Read", icon: BookOpen },
   video: { label: "Watch", icon: PlayCircle },

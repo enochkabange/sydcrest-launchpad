@@ -41,8 +41,10 @@ function fakeDb(opts: { capstone?: boolean; rubric?: "week" | "default" | "none"
           { id: "default", title: "Default", criteria, program_week_id: null },
           ...(opts.rubric === "default" ? [] : [{ id: "weekly", title: "Week 3", criteria, program_week_id: WEEK_ID }]),
         ];
+  const insert = vi.fn<(row: Record<string, unknown>) => Promise<{ error: { message: string } | null }>>(async () => ({ error: null }));
   const from = vi.fn((table: string) => {
     const chain = {
+      insert,
       select: () => chain,
       eq: () => chain,
       or: async () => ({ data: table === "rubrics" ? rubrics : [], error: null }),
@@ -50,7 +52,7 @@ function fakeDb(opts: { capstone?: boolean; rubric?: "week" | "default" | "none"
     };
     return chain;
   });
-  return { db: { from, rpc } as unknown as AdminDb, rpc };
+  return { db: { from, rpc } as unknown as AdminDb, rpc, insert, from };
 }
 
 const usage = { input_tokens: 120, output_tokens: 300, cache_creation_input_tokens: 0, cache_read_input_tokens: 900 } as Anthropic.Usage;
@@ -103,7 +105,7 @@ describe("configuration", () => {
 
 describe("reviewSubmission", () => {
   it("reviews with Haiku, caches the system prompt, records the attempt it read and logs usage", async () => {
-    const { db, rpc } = fakeDb();
+    const { db, rpc, from, insert } = fakeDb();
     const { client, calls } = fakeClient(answer);
     const log = vi.fn<(e: UsageLogEntry) => void>();
     const outcome = await reviewSubmission({ db, client, log }, sub);
@@ -131,6 +133,28 @@ describe("reviewSubmission", () => {
       output_tokens: 300,
       cache_read_input_tokens: 900,
     });
+    expect(from).toHaveBeenCalledWith("ai_review_usage");
+    expect(insert).toHaveBeenCalledTimes(1);
+    expect(insert.mock.calls[0][0]).toMatchObject({
+      submission_id: sub.id,
+      attempt: 2,
+      model: "claude-haiku-5-5",
+      outcome: "recorded",
+      input_tokens: 120,
+      output_tokens: 300,
+      cache_creation_input_tokens: 0,
+      cache_read_input_tokens: 900,
+    });
+  });
+
+  it("still returns the outcome when storing usage fails", async () => {
+    const { db, insert } = fakeDb();
+    insert.mockResolvedValueOnce({ error: { message: "permission denied" } });
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    const { client } = fakeClient(answer);
+    expect((await reviewSubmission({ db, client, log: () => {} }, sub)).status).toBe("recorded");
+    expect(warn).toHaveBeenCalledWith(expect.stringContaining("permission denied"));
+    warn.mockRestore();
   });
 
   it("uses Sonnet for capstone weeks and the programme default rubric when the week has none", async () => {
@@ -148,14 +172,14 @@ describe("reviewSubmission", () => {
     expect(await reviewSubmission({ db, client, log: () => {} }, sub)).toEqual({ status: "stale", model: "claude-haiku-5-5" });
   });
 
-  it("never stores a malformed, refused or cut off answer, but still logs its usage", async () => {
+  it("never stores a malformed, refused or cut off answer, but still logs and stores its usage", async () => {
     for (const [reply, stop, reason] of [
       ["not json", "end_turn", "invalid_json"],
       [{ summary: "x", criteria: [{ id: "understanding", points: 9, comment: "?" }] }, "end_turn", "invalid_review"],
       [answer, "refusal", "refusal"],
       [answer, "max_tokens", "max_tokens"],
     ] as const) {
-      const { db, rpc } = fakeDb();
+      const { db, rpc, insert } = fakeDb();
       const { client } = fakeClient(reply, stop);
       const log = vi.fn();
       const outcome = await reviewSubmission({ db, client, log }, sub);
@@ -163,6 +187,7 @@ describe("reviewSubmission", () => {
       expect(outcome.status === "failed" && outcome.reason).toMatch(new RegExp(`^${reason}`));
       expect(rpc).not.toHaveBeenCalled();
       expect(log).toHaveBeenCalledTimes(1);
+      expect(insert.mock.calls[0][0]).toMatchObject({ outcome: "failed" });
     }
   });
 

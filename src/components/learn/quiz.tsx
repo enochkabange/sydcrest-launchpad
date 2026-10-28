@@ -79,7 +79,7 @@ export function Quiz({
                     checked={choices[q.id] === oi}
                     onChange={() => setChoices((c) => ({ ...c, [q.id]: oi }))}
                     required
-                    className="size-5 shrink-0 accent-blue-600"
+                    className="size-5 shrink-0 accent-line-selected"
                   />
                   <span>{option}</span>
                 </label>
