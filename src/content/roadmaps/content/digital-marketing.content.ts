@@ -50,8 +50,8 @@ Nothing about the tools changed. What changed was the thinking. That is what thi
           {
             prompt: "According to this lesson, what is the difference between marketing and posting?",
             options: [
-              "They mean exactly the same thing",
-              "Posting is one activity, while marketing is the thinking about who to reach and what they should do next",
+              "They mean the same thing, since both are about putting content online",
+              "Posting is one activity, and marketing is the thinking behind it",
               "Marketing only happens on paid ads, while posting is free",
               "Posting is for big companies and marketing is for small shops",
             ],
@@ -72,10 +72,10 @@ Nothing about the tools changed. What changed was the thinking. That is what thi
           {
             prompt: "Why did Fuseini's daily Facebook posts for Hawa not lead to orders?",
             options: [
-              "Her shea butter was too expensive",
+              "Her shea butter was priced higher than the butter in the market",
               "Facebook does not allow businesses to post photos",
               "He posted at the wrong time of day",
-              "Most of her buyers talked on WhatsApp, so he was using the wrong channel for her customers",
+              "Her buyers mostly talked on WhatsApp, not Facebook",
             ],
             answer_index: 3,
             explanation: "When he asked the four questions, he found her customers were on WhatsApp, not Facebook.",
@@ -85,7 +85,7 @@ Nothing about the tools changed. What changed was the thinking. That is what thi
             options: [
               "Whether you can think about customers and get results for the business",
               "Whether you own an expensive phone",
-              "Whether you have used every social media app",
+              "Whether you have used every social media app and can edit videos on them",
               "Whether you can post more often than competitors",
             ],
             answer_index: 0,
@@ -148,7 +148,7 @@ When you take on any marketing job, sketch the journey first. It tells you where
           {
             prompt: "Many people message a business asking for prices, but few of them pay. What does the lesson suggest?",
             options: [
-              "Post more often to reach more people",
+              "Post more often so that more people reach the business",
               "Lower the price immediately",
               "Find out why buyers stop at the decide or buy stage",
               "Close the WhatsApp account and use only Facebook",
@@ -173,7 +173,7 @@ When you take on any marketing job, sketch the journey first. It tells you where
               "As a thinking tool, since people do not always move through them neatly",
               "As a strict rule every customer follows in order",
               "As something only large companies need",
-              "As a replacement for talking to the business owner",
+              "As a replacement for actually talking to the business owner and customers",
             ],
             answer_index: 0,
             explanation: "The lesson says the stages are a thinking tool, not a strict rule.",
@@ -231,7 +231,7 @@ Writing this down takes an hour. It saves weeks of posting the wrong thing to th
           {
             prompt: "Why does the lesson suggest considering the audience's language?",
             options: [
-              "Because posts must always be written in English",
+              "Because posts must always be written in formal English to look professional to buyers",
               "Because a short line in a local language can make people feel the post is for them",
               "Because local languages are not allowed on social media",
               "Because language does not affect how people respond",
@@ -242,7 +242,7 @@ Writing this down takes an hour. It saves weeks of posting the wrong thing to th
           {
             prompt: "What is a persona?",
             options: [
-              "A real customer's private contact details",
+              "A real customer's name, phone number and private contact details",
               "A paid advert aimed at one person",
               "A made up person who represents the typical customer",
               "A competitor's social media page",
@@ -255,7 +255,7 @@ Writing this down takes an hour. It saves weeks of posting the wrong thing to th
             options: [
               "To copy their posts word for word",
               "To leave negative comments on their pages",
-              "To always charge a lower price than them",
+              "To make sure the business always charges a lower price than all of them",
               "To learn what customers already see and spot what nobody is doing well",
             ],
             answer_index: 3,
@@ -325,7 +325,7 @@ Three channels, each with a clear job: WhatsApp for members, Facebook for event 
             options: [
               "You own the list and no app decides who sees your message",
               "It is always the fastest way to sell",
-              "It reaches people who never gave you their address",
+              "It reaches people who never gave the business their email address",
               "It is free of any writing work",
             ],
             answer_index: 0,
@@ -335,7 +335,7 @@ Three channels, each with a clear job: WhatsApp for members, Facebook for event 
             prompt: "Why might a marketer choose not to use a channel at all?",
             options: [
               "Because using more channels is always better",
-              "Because every business must use exactly one channel",
+              "Because every business is only allowed to use exactly one channel at a time",
               "Because paid ads are illegal for small businesses",
               "Because a channel that is abandoned after two weeks looks worse than none",
             ],
@@ -493,7 +493,7 @@ Benefit first, clear detail, location and a next step. That is copywriting.`,
           {
             prompt: "What is the job of the hook in a selling message?",
             options: [
-              "To list every product the shop sells",
+              "To list every product the shop sells so buyers see the full range",
               "To give the phone number",
               "To catch attention in the first line with a benefit or question",
               "To thank customers for reading",
@@ -516,7 +516,7 @@ Benefit first, clear detail, location and a next step. That is copywriting.`,
             prompt: "How does the lesson suggest you keep a brand voice consistent?",
             options: [
               "Change the tone every week to keep people guessing",
-              "Copy the voice of the biggest competitor",
+              "Copy the voice of the biggest competitor, since buyers already trust it",
               "Only post in capital letters",
               "Write down three words for the voice and check every post against them",
             ],
@@ -526,8 +526,8 @@ Benefit first, clear detail, location and a next step. That is copywriting.`,
           {
             prompt: "How should you use AI writing tools, according to the lesson?",
             options: [
-              "Publish whatever they write without checking",
-              "As a first draft, checking facts, prices and any local language translation",
+              "Publish whatever they write without checking, since they know the facts",
+              "As a first draft, then check facts, prices and translations",
               "Only for writing customer reviews",
               "Never, because they are banned for marketing",
             ],
@@ -594,7 +594,7 @@ Wumpini helps a basket weaving group in Bolgatanga. Their old photos were taken 
               "So people start recognising the business at a glance",
               "Because design apps only allow three colours",
               "So the file size becomes larger",
-              "Because bright colours are illegal in adverts",
+              "Because bright colours are not allowed in adverts on Facebook",
             ],
             answer_index: 0,
             explanation: "Consistent colours and fonts build recognition.",
@@ -603,9 +603,9 @@ Wumpini helps a basket weaving group in Bolgatanga. Their old photos were taken 
             prompt: "Why does the lesson say to keep image files light?",
             options: [
               "Platforms delete large images",
-              "Light files always look sharper",
+              "Light files always look sharper on phone screens than heavy ones",
               "Lighter files cost more to post",
-              "Many customers have small data bundles, so large images load slowly",
+              "Customers on small data bundles wait a long time for large images",
             ],
             answer_index: 3,
             explanation: "Customers on limited data may not load heavy images.",
@@ -689,10 +689,10 @@ Fuseini films for a Tamale tailor. His first video was a slow, sideways clip of 
           {
             prompt: "Why use the platform's own music library when adding songs?",
             options: [
-              "Songs added from elsewhere can be muted or removed for copyright reasons",
+              "Songs from elsewhere can be muted or removed for copyright",
               "The library songs are always louder",
-              "It makes the video vertical automatically",
-              "Platforms pay you for using their music",
+              "It makes the video vertical and adds captions automatically",
+              "Platforms pay you a share of earnings for using their music",
             ],
             answer_index: 0,
             explanation: "Outside music can trigger copyright muting or removal.",
@@ -733,7 +733,7 @@ Google Sheets works well. It is free, opens on a phone or a computer, and you ca
 The best calendars follow the rhythm of the customers' lives:
 
 * **Market days** in the town, when people have cash and are out buying.
-* **Holidays and festivals** such as Christmas, Eid, Easter, Independence Day, and local festivals like Damba in Dagbon or Bugum.
+* **Holidays and festivals** such as Christmas, Eid, Easter, Independence Day, and local festivals like Damba in Dagbon or the Kakube harvest festival in Nandom.
 * **Seasons.** Harmattan for skin care, rainy season for umbrellas and wellington boots, school reopening for uniforms and stationery.
 * **Paydays** near the end of the month for salaried customers.
 * **Business events** such as a new stock arrival or an anniversary.
@@ -765,7 +765,7 @@ Hawa's shea butter business plans December in a sheet. She marks the start of ha
               "A list of all the customers a business has",
               "A plan of what to post, where and when, made ahead of time",
               "A paid tool that posts automatically",
-              "A record of how much each post earned",
+              "A record of how much money each post earned for the business",
             ],
             answer_index: 1,
             explanation: "The lesson defines it as a plan of posts made a few weeks ahead.",
@@ -775,8 +775,8 @@ Hawa's shea butter business plans December in a sheet. She marks the start of ha
             options: [
               "It writes the captions for you",
               "It is the only tool that clients accept",
-              "It is free, works on a phone or a computer and can be shared for approval",
-              "It publishes posts to every platform",
+              "It is free, works on a phone and can be shared for approval",
+              "It publishes posts to every platform at the right time by itself",
             ],
             answer_index: 2,
             explanation: "Sheets is free, works on any device and is easy to share with a client.",
@@ -795,10 +795,10 @@ Hawa's shea butter business plans December in a sheet. She marks the start of ha
           {
             prompt: "What does the lesson say about how often to post?",
             options: [
-              "Every business must post five times a day",
+              "Every business must post five times a day or the algorithm hides it",
               "Posting once a month is always enough",
               "Posting frequency does not matter at all",
-              "A schedule the business can keep for months beats an ambitious one that is abandoned",
+              "A schedule the business can keep for months beats an ambitious one",
             ],
             answer_index: 3,
             explanation: "Consistency the owner can sustain matters more than a high number.",
@@ -855,7 +855,7 @@ Abdul-Rahman is hired part time by a Tamale pharmacy shop. Instead of taking the
               "Ask the owner for their personal password",
               "Create a new page with the same name",
               "Ask to be added as an admin or editor with a proper role",
-              "Log in on the owner's phone without telling them",
+              "Log in on the owner's phone and change the password to keep it safe",
             ],
             answer_index: 2,
             explanation: "Page roles let owners give you access without sharing their password.",
@@ -880,10 +880,10 @@ Abdul-Rahman is hired part time by a Tamale pharmacy shop. Instead of taking the
           {
             prompt: "Why did Abdul-Rahman keep a log in Google Sheets?",
             options: [
-              "To hide his work from the owner",
+              "To hide which messages he answered from the owner until month end",
               "Because Facebook requires it",
               "To count his likes",
-              "So the owner could see his replies and the most common customer questions",
+              "So the owner could see his replies and the common questions",
             ],
             answer_index: 3,
             explanation: "Keeping a record builds trust and shows patterns in customer questions.",
@@ -935,10 +935,10 @@ Mariama's basket group in Bolgatanga used a personal account, and orders got los
           {
             prompt: "What is a quick reply in WhatsApp Business?",
             options: [
-              "A saved answer to a common question that you can send with a shortcut",
+              "A saved answer to a common question, sent with a shortcut",
               "A paid advert inside WhatsApp",
               "A message that disappears after one hour",
-              "A way to call many customers at once",
+              "A way to call many customers at once with one recorded message",
             ],
             answer_index: 0,
             explanation: "Quick replies are saved messages for questions you answer often.",
@@ -957,7 +957,7 @@ Mariama's basket group in Bolgatanga used a personal account, and orders got los
           {
             prompt: "How should a business confirm a mobile money payment?",
             options: [
-              "Trust any screenshot the customer sends",
+              "Trust any screenshot of the payment that the customer sends",
               "Ask the customer to send their PIN",
               "Wait for the customer to say thank you",
               "Check the payment message from the network",
@@ -1021,8 +1021,8 @@ Issahaku manages the Facebook Page of an NGO running a girls' education programm
             prompt: "Why should a business use a Facebook Page instead of a personal profile?",
             options: [
               "Personal profiles cannot post photos",
-              "Pages give access to insights, scheduling, ads and roles for helpers",
-              "Pages are the only way to send messages",
+              "Pages give access to insights, scheduling, ads and roles",
+              "Pages are the only way to send and receive messages on Facebook",
               "Pages never show adverts",
             ],
             answer_index: 1,
@@ -1031,10 +1031,10 @@ Issahaku manages the Facebook Page of an NGO running a girls' education programm
           {
             prompt: "What does Meta Business Suite let you do?",
             options: [
-              "Manage a Facebook Page and linked Instagram account and schedule posts",
+              "Manage a Page and linked Instagram account and schedule posts",
               "Send MoMo payments to customers",
               "Edit TikTok videos",
-              "Build a full website for free",
+              "Build a full online shop website for free and link it to the Page",
             ],
             answer_index: 0,
             explanation: "Business Suite brings both accounts together, with scheduling and messages.",
@@ -1113,7 +1113,7 @@ A customer posts on a Tamale restaurant's page: "Ordered jollof yesterday and it
             prompt: "Someone asks a question about their payment in a public comment. What should you do?",
             options: [
               "Ignore it so nobody sees it",
-              "Ask them to post their MoMo PIN so you can check",
+              "Ask them to post their MoMo PIN and transaction ID so you can check it",
               "Reply publicly that you will message them, then handle it in private",
               "Delete the comment straight away",
             ],
@@ -1140,7 +1140,7 @@ A customer posts on a Tamale restaurant's page: "Ordered jollof yesterday and it
           {
             prompt: "What does the lesson say about paid posts by creators?",
             options: [
-              "They should be hidden so they look natural",
+              "They should be hidden so the posts look natural to followers",
               "They should be clearly marked as paid partnerships",
               "Only famous creators are worth paying",
               "No written agreement is needed",
@@ -1195,9 +1195,9 @@ Amina volunteers for a youth NGO in Wa that only posted on Facebook. She adds a 
           {
             prompt: "Why does the lesson say an email list is valuable to a business?",
             options: [
-              "It belongs to the business and no algorithm decides who sees the message",
-              "Emails are always opened by every subscriber",
-              "Email is the only channel allowed for NGOs",
+              "It belongs to the business and no algorithm decides who sees it",
+              "Emails are always opened by every subscriber on the same day",
+              "Email is the only channel that NGOs and churches are allowed to use",
               "Email lists can be bought cheaply",
             ],
             answer_index: 0,
@@ -1281,7 +1281,7 @@ Sumaila runs a guest house in Bolgatanga. Travellers kept saying they could not 
               "They are looking for something specific, often right now",
               "They never buy anything",
               "They only want entertainment",
-              "They cannot see business details",
+              "They cannot see business details such as phone numbers or opening hours",
             ],
             answer_index: 0,
             explanation: "On search, people come looking with a need.",
@@ -1300,10 +1300,10 @@ Sumaila runs a guest house in Bolgatanga. Travellers kept saying they could not 
           {
             prompt: "What is SEO?",
             options: [
-              "Paying for ads above search results",
+              "Paying for ads that appear above the ordinary search results",
               "A type of social media video",
               "A rule for email newsletters",
-              "The work of getting web pages to rank in ordinary search results",
+              "The work of getting pages to rank in ordinary search results",
             ],
             answer_index: 3,
             explanation: "Search engine optimisation aims at organic search results.",
@@ -1311,7 +1311,7 @@ Sumaila runs a guest house in Bolgatanga. Travellers kept saying they could not 
           {
             prompt: "Can a business without a website still improve its search visibility?",
             options: [
-              "No, search only works for businesses with websites",
+              "No, search only works for businesses that have their own website",
               "Yes, with a complete Business Profile and consistent details",
               "Only by buying ads",
               "Only if it has more than one branch",
@@ -1372,7 +1372,7 @@ Fuseini helps a clinic in Tamale whose Maps pin pointed to the wrong street. Pat
               "It breaks Google's guidelines and can get the profile suspended",
               "Google only allows names in capital letters",
               "It makes the map pin move",
-              "Customers cannot read long names",
+              "Customers cannot read long names, so the profile gets fewer calls",
             ],
             answer_index: 0,
             explanation: "The name should match the real business name; keyword stuffing breaks the guidelines.",
@@ -1403,9 +1403,9 @@ Fuseini helps a clinic in Tamale whose Maps pin pointed to the wrong street. Pat
             prompt: "How should a business respond to a bad review?",
             options: [
               "Ignore it completely",
-              "Apologise, explain what you will do and invite them to get in touch",
+              "Apologise, say what you will do and invite them to get in touch",
               "Argue that the customer is lying",
-              "Ask friends to post good reviews to hide it",
+              "Ask friends and family to post good reviews so it gets pushed down",
             ],
             answer_index: 1,
             explanation: "A polite reply with a plan shows other customers the business cares.",
@@ -1562,8 +1562,8 @@ A church in Tamale wants more young people at a youth conference. Issahaku sets 
           {
             prompt: "How do most ad platforms decide which ad to show?",
             options: [
-              "Whoever registered first always wins",
-              "An auction based on what advertisers will pay and how relevant their ads seem",
+              "Whoever registered the ad account first always wins the space",
+              "An auction based on bids and how relevant each ad seems",
               "Ads are shown in alphabetical order",
               "The platform picks at random",
             ],
@@ -1587,8 +1587,8 @@ A church in Tamale wants more young people at a youth conference. Issahaku sets 
             options: [
               "Ads are banned in Ghana",
               "Billing is always free in Ghana",
-              "Platforms only accept cash payments",
-              "Billing methods and currencies differ by country and change over time",
+              "Platforms only accept cash payments at their offices in Accra",
+              "Billing methods differ by country and change over time",
             ],
             answer_index: 3,
             explanation: "The lesson says billing details vary and change, so check current help pages.",
@@ -1655,9 +1655,9 @@ Hawa wants more orders for her shea butter gift packs before Christmas. Abdul-Ra
           {
             prompt: "Why might a Ghanaian business choose an ad that opens a WhatsApp chat?",
             options: [
-              "Interested people can ask questions and order the way they already prefer",
+              "People can ask questions and order the way they already prefer",
               "WhatsApp ads are always free",
-              "It removes the need for a budget",
+              "It removes the need for a budget because WhatsApp chats are free",
               "It shows the ad only to the owner",
             ],
             answer_index: 0,
@@ -1667,7 +1667,7 @@ Hawa wants more orders for her shea butter gift packs before Christmas. Abdul-Ra
             prompt: "What is an A/B test?",
             options: [
               "Running ads in two countries at once",
-              "Doubling the budget every day",
+              "Doubling the budget every day until the ad gets more messages",
               "Asking two friends to like the ad",
               "Changing one thing, such as the image, and comparing results",
             ],
@@ -1754,7 +1754,7 @@ Sumaila owns an event centre in Tamale. Amina builds a small search campaign wit
           {
             prompt: "What does Google's auction consider besides your bid?",
             options: [
-              "How many followers your Facebook page has",
+              "How many followers your Facebook page has and how active they are",
               "The colour of your logo",
               "How long the business has existed",
               "The quality and relevance of your ad and landing page",
@@ -1765,7 +1765,7 @@ Sumaila owns an event centre in Tamale. Amina builds a small search campaign wit
           {
             prompt: "Where should a search ad for \"Event hall in Tamale\" send people?",
             options: [
-              "To the business owner's personal profile",
+              "To the business owner's personal profile so people can chat",
               "To a page showing the hall, prices and how to book",
               "To the Google homepage",
               "To a general page about Ghana",
@@ -1833,7 +1833,7 @@ Mariama's group agrees a monthly fee for Wumpini's work and a separate ad budget
             options: [
               "They are the same thing",
               "Ad spend goes to the platform, your fee pays for your work",
-              "Ad spend is paid only after the campaign ends",
+              "Ad spend is paid only after the campaign ends and results are in",
               "Your fee is always paid by the platform",
             ],
             answer_index: 1,
@@ -1842,8 +1842,8 @@ Mariama's group agrees a monthly fee for Wumpini's work and a separate ad budget
           {
             prompt: "What is the safest way for a client's ads to be paid for?",
             options: [
-              "The client adds their own payment method to their own ad account and gives you access",
-              "The client sends you cash and you pay later",
+              "The client adds their own payment method to their own ad account",
+              "The client sends you cash and you pay the platform with your card later",
               "You use your own card and add a secret extra charge",
               "You share one ad account for all your clients",
             ],
@@ -1861,8 +1861,8 @@ Mariama's group agrees a monthly fee for Wumpini's work and a separate ad budget
             options: [
               "Platforms change prices every hour",
               "Cedis cannot be used online",
-              "Some platforms charge in another currency, so exchange rates and bank charges affect the cost",
-              "Ads are always cheaper on weekends",
+              "Some platforms bill in another currency, so exchange rates matter",
+              "Ads are always cheaper on weekends, so weekday budgets run out faster",
             ],
             answer_index: 2,
             explanation: "Billing in another currency means the cedi cost depends on the rate and charges.",
@@ -1945,10 +1945,10 @@ Fuseini runs posts for a Tamale tailor. Last month the page got many likes, but 
           {
             prompt: "How can a business without a website track where sales come from?",
             options: [
-              "It cannot track anything without a website",
+              "It cannot track anything without a website and Google Analytics",
               "By buying more followers",
               "By counting likes only",
-              "By asking customers how they found the business and logging it in a sheet",
+              "By asking customers how they found the business and logging it",
             ],
             answer_index: 3,
             explanation: "A simple order log with a \"how did you find us\" column works without a website.",
@@ -1957,9 +1957,9 @@ Fuseini runs posts for a Tamale tailor. Last month the page got many likes, but 
             prompt: "What did Fuseini learn from the tailor's order log?",
             options: [
               "Most new customers came from WhatsApp Status and one video",
-              "Likes were bringing most of the customers",
+              "Likes on Facebook were bringing most of the new customers",
               "Nobody used WhatsApp",
-              "The tailor needed paid search ads",
+              "The tailor needed paid search ads to bring in new customers",
             ],
             answer_index: 0,
             explanation: "The log showed WhatsApp Status and a kaba video brought new customers.",
@@ -2127,10 +2127,10 @@ Mariama's basket group has a small website and a Facebook Page. Wumpini uses tag
           {
             prompt: "What are key events in Google Analytics 4?",
             options: [
-              "Holidays marked on the calendar",
+              "Holidays and market days marked on the calendar in the report",
               "Every page view on the site",
               "Errors on the website",
-              "Events you mark as important for the business, such as a completed form",
+              "Actions you mark as important, such as a completed form",
             ],
             answer_index: 3,
             explanation: "Key events are the important actions; older guides call them conversions.",
@@ -2149,9 +2149,9 @@ Mariama's basket group has a small website and a Facebook Page. Wumpini uses tag
           {
             prompt: "What did Wumpini recommend about the newsletter?",
             options: [
-              "Stop sending it because it brought fewer visitors",
+              "Stop sending it, because it brought fewer visitors than social posts",
               "Replace it with paid ads",
-              "Put more care into it because its visitors sent more wholesale enquiries",
+              "Give it more care, since its visitors sent more wholesale enquiries",
               "Send it every day",
             ],
             answer_index: 2,
@@ -2209,7 +2209,7 @@ Issahaku sends his monthly report to the NGO he supports in Tamale. Goal: more p
             options: [
               "A list of every number the platform shows",
               "What worked, what did not, and what you will try next",
-              "Only the best results, with weak ones left out",
+              "Only the best results, leaving weak ones out to keep the client happy",
               "Technical words to impress the client",
             ],
             answer_index: 1,
@@ -2230,7 +2230,7 @@ Issahaku sends his monthly report to the NGO he supports in Tamale. Goal: more p
             prompt: "What should you do when a campaign did not work?",
             options: [
               "Hide it from the report",
-              "Change the numbers to look better",
+              "Change the numbers slightly so the results look better than they were",
               "Blame the client",
               "Say so clearly, explain what went wrong and what you will change",
             ],
@@ -2240,7 +2240,7 @@ Issahaku sends his monthly report to the NGO he supports in Tamale. Goal: more p
           {
             prompt: "Why does the lesson suggest sending a short WhatsApp summary with the report?",
             options: [
-              "WhatsApp is the only legal way to send reports",
+              "WhatsApp is the only legal way to send business reports in Ghana",
               "It replaces the need for a report",
               "So the owner can get the main points easily on a busy day",
               "So the report cannot be forwarded",
@@ -2314,7 +2314,7 @@ Your first paid work rarely arrives by waiting. It comes from doing real work, s
             prompt: "According to the lesson, what often helps more than a certificate?",
             options: [
               "Real work, such as a page you grew or a report you wrote",
-              "A long list of apps you have downloaded",
+              "A long list of the marketing apps you have downloaded on your phone",
               "Paying for a job placement",
               "A very long CV",
             ],
@@ -2325,7 +2325,7 @@ Your first paid work rarely arrives by waiting. It comes from doing real work, s
             prompt: "What is one downside of freelancing mentioned in the lesson?",
             options: [
               "You can never choose your clients",
-              "You are not allowed to work for local businesses",
+              "You are not allowed to work for local businesses in your town",
               "You must work in an office",
               "You handle your own sales, agreements and invoices",
             ],
@@ -2337,8 +2337,8 @@ Your first paid work rarely arrives by waiting. It comes from doing real work, s
             options: [
               "She brought a letter from a celebrity",
               "She promised to work for free forever",
-              "She showed her real church page, content calendar and a report on her phone",
-              "She described skills she had not yet used",
+              "She showed her real church page, calendar and report on her phone",
+              "She described skills she had read about but not yet used for anyone",
             ],
             answer_index: 2,
             explanation: "Real work shown on her phone made her skills clear.",
@@ -2398,7 +2398,7 @@ Wumpini's portfolio has three case studies: a Bolgatanga basket group's WhatsApp
             prompt: "Why does the lesson suggest offering a short trial to real local businesses?",
             options: [
               "Real work convinces employers and clients more than mock projects",
-              "Mock projects are not allowed in portfolios",
+              "Mock projects are not allowed in portfolios that employers look at",
               "Businesses must pay double for trials",
               "Trials are required by law",
             ],
@@ -2489,7 +2489,7 @@ Mariama finds an advert for a marketing assistant at a Tamale hotel asking for C
               "They are always free",
               "They usually charge a fee, so check before registering",
               "They are only for people in Europe",
-              "They replace the need for a portfolio",
+              "They replace the need for a portfolio when applying for jobs",
             ],
             answer_index: 1,
             explanation: "Meta's courses are free, but its formal certification exams usually charge a fee.",
@@ -2509,7 +2509,7 @@ Mariama finds an advert for a marketing assistant at a Tamale hotel asking for C
             prompt: "What should you check before applying for a remote role?",
             options: [
               "Location rules, working hours and how you will be paid",
-              "Whether you can pay a fee to skip the interview",
+              "Whether you can pay a fee to skip the interview and start sooner",
               "Whether the company has many followers",
               "Nothing, remote jobs are open to everyone",
             ],
@@ -2588,7 +2588,7 @@ Fuseini offers three packages to businesses in Tamale. A pharmacy shop takes the
               "Owners find it easier to buy something specific",
               "Packages remove the need for agreements",
               "Packages must always be the same price",
-              "Clients are not allowed to buy single services",
+              "Clients are not allowed to buy single services from a freelancer",
             ],
             answer_index: 0,
             explanation: "Specific packages are easier for owners to understand and buy.",
