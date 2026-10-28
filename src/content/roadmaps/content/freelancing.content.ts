@@ -1453,6 +1453,479 @@ Fuseini gets a call from someone who says they are from his mobile money provide
         pass_threshold: 75,
       },
     },
+    "winning-work": {
+      explanation_md: `An enquiry is not yet a job. Between "Can you help me?" and "Yes, let's start" there are three steps: understanding what the client really needs, offering a clear solution, and agreeing a price that is fair to both of you. Freelancers who handle these steps well win more of the work they want, and have fewer arguments later.
+
+## Why this stage matters
+
+Most freelance problems that appear at the end of a project, such as an unhappy client, endless changes or an argument about money, actually started at the beginning. The client expected one thing, the freelancer understood another, and nobody wrote it down. A little care at this stage saves a lot of trouble later.
+
+This stage is also where you show professionalism. A client comparing three freelancers will often choose the one who asked sensible questions and sent a clear, simple offer, even if their price was not the lowest.
+
+## What this section covers
+
+* **Reading a brief and asking good questions.** How to find out the goal, the audience, the deadline, the budget and what "finished" looks like, without overwhelming the client.
+* **Writing proposals that get replies.** How to restate the client's need, explain your approach, point to a relevant sample and give a clear price and timeline, in a message short enough to read quickly.
+* **Pricing your work in cedis.** How to work out a price from your time and costs, choose between project, hourly and monthly pricing, and think about currency when a client is abroad.
+
+## The skills behind this stage
+
+Skills frameworks describe these abilities in general terms: active listening, persuasion, negotiation and managing financial resources. In practice for a freelancer they mean:
+
+* **Listening.** Letting the client explain, and checking you understood.
+* **Persuasion.** Showing, with evidence, why your approach suits them.
+* **Negotiation.** Finding an arrangement both sides accept, such as adjusting scope to fit a budget instead of simply cutting your price.
+* **Money sense.** Knowing your costs so you never agree to a price that leaves you working at a loss.
+
+## A small example
+
+A youth association in Wa asks Amina to "do some posters" for a football tournament. Instead of starting straight away, Amina asks a few questions by message. She learns they need one main poster, three social media versions and a printed banner, all within ten days, with a limited budget.
+
+She sends a short proposal: one poster design adapted into the four formats, two rounds of changes, delivery in seven days, with half the price before she starts. When the association says the budget is lower, she suggests dropping the banner design instead of cutting her rate. They agree. Everyone knows what is included, and nobody is surprised at the end.
+
+## Be patient with yourself
+
+You will not win every proposal. Clients choose someone else for many reasons, including budget and timing. Treat each proposal as practice, note what you would improve, and keep going.`,
+      practice_task_md: `**Goal:** Map the steps from enquiry to agreed job.
+
+**Steps:**
+1. Write a realistic enquiry for your service, as a client might send it in one short message.
+2. List four things you would need to find out before you could quote.
+3. Write one way you could adjust the scope if the client's budget is lower than your price, instead of just reducing your rate.
+4. Write what you would want to be clear in writing before you start.
+
+**Done looks like:** One sample enquiry, four questions, one scope adjustment idea and a short list of what must be agreed in writing.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "According to the lesson, where do many end of project problems really start?",
+            options: [
+              "At the payment stage",
+              "At the beginning, when expectations were not clear or written down",
+              "When the client posts a review",
+              "When the freelancer buys new software",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says most end of project problems start with unclear expectations at the beginning.",
+          },
+          {
+            prompt: "In the example, what did Amina do when the association's budget was lower than her price?",
+            options: [
+              "She cut her rate by half",
+              "She refused the job",
+              "She suggested dropping the banner design so the scope fitted the budget",
+              "She agreed to do everything for the lower price",
+            ],
+            answer_index: 2,
+            explanation: "She adjusted the scope instead of simply cutting her rate.",
+          },
+          {
+            prompt: "What does negotiation mean for a freelancer in this lesson?",
+            options: [
+              "Always accepting the client's first offer",
+              "Finding an arrangement both sides accept, such as adjusting scope to fit a budget",
+              "Arguing until the client gives up",
+              "Refusing to discuss price",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes negotiation as finding an arrangement both sides accept.",
+          },
+          {
+            prompt: "What does the lesson say about not winning every proposal?",
+            options: [
+              "It means you should stop freelancing",
+              "It is normal; treat each one as practice and keep going",
+              "It means your price is always too high",
+              "It only happens to beginners abroad",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says clients choose others for many reasons and to treat proposals as practice.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "reading-a-brief": {
+      explanation_md: `A brief is the client's description of what they want. Sometimes it is a detailed document. Often, especially with local clients, it is one line in a message: "I need a logo" or "Help me with my Facebook page." Most freelance trouble starts with a vague brief, so learning to turn one line into a clear plan is one of the most valuable skills you can have.
+
+## The five things to find out
+
+Before you quote or start, make sure you know:
+
+* **The goal.** Why do they want this? "A logo" might really be "I am opening a second shop and want to look established." The goal guides every decision you make.
+* **The audience.** Who will see or use the work? Students, mothers, farmers, hotel guests, customers abroad? A flyer for a youth programme looks different from one for a law firm.
+* **The deadline.** When do they need it, and is there a fixed event date? Ask when they need a first draft as well as the final version.
+* **The budget.** What are they able to spend? Many clients will not say at first. You can ask, "Do you have a budget range in mind, so I can suggest an option that fits?"
+* **What finished looks like.** What exactly will they receive? How many designs, posts, pages or rows? In which formats? How many rounds of changes?
+
+## Ask few, good questions
+
+Do not send twenty questions; it overwhelms people. Choose the five to seven that matter most for your service and ask them in one clear message, a short call or a voice note followed by a written summary. Number your questions so the client can answer each one.
+
+Useful questions by service:
+
+* **Design:** Where will it be used: print, WhatsApp, a sign? Any colours or examples they like or dislike?
+* **Social media:** Which platforms? How many posts a week? Who provides photos? Who approves posts?
+* **Data or admin:** What format is the data in now? How many records? What should the final file look like?
+* **Websites:** How many pages? Who writes the text? Do they already have a domain name?
+
+## Write it back
+
+After you have the answers, summarise the brief in a few lines and send it to the client: "To confirm, you need ... by ..., for ..., delivered as ..." Ask them to confirm. This catches misunderstandings early and becomes the basis of your proposal and agreement.
+
+## A small example
+
+A clinic manager in Nalerigu messages Wumpini: "We need something for our Facebook." Wumpini replies with five numbered questions. She learns the goal is to tell the community about a free vaccination day, the audience is parents, the date is in two weeks, the clinic has a small budget, and they want three posts and one image for WhatsApp status. She writes this back in four lines. The manager confirms, and Wumpini can now give an accurate price.`,
+      practice_task_md: `**Goal:** Turn a vague brief into a clear one.
+
+**Steps:**
+1. Write a one line vague brief a client might send for your service, such as "I need help with my page."
+2. Write five to seven numbered questions that cover the goal, audience, deadline, budget and what finished looks like.
+3. Invent realistic answers.
+4. Write a summary of the brief in four or five lines, ending with a request for the client to confirm.
+
+**Done looks like:** A vague brief, your numbered questions, sample answers and a short written summary ready to send. Keep your question list as a template for real enquiries.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is one of the five things to find out from a brief?",
+            options: ["The client's age", "What finished looks like", "The client's favourite music", "How many employees they have"],
+            answer_index: 1,
+            explanation: "The lesson lists the goal, audience, deadline, budget and what finished looks like.",
+          },
+          {
+            prompt: "Why does the lesson suggest asking only five to seven questions?",
+            options: [
+              "Because clients are not allowed to answer more",
+              "Because twenty questions can overwhelm the client",
+              "Because questions cost money",
+              "Because the law limits questions",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says too many questions overwhelm people, so choose the ones that matter most.",
+          },
+          {
+            prompt: "What is a polite way to ask about budget when the client has not mentioned it?",
+            options: [
+              "How much money do you have?",
+              "Do you have a budget range in mind, so I can suggest an option that fits?",
+              "Tell me your budget or I will not work with you",
+              "Never ask about budget",
+            ],
+            answer_index: 1,
+            explanation: "The lesson gives this wording as a respectful way to ask.",
+          },
+          {
+            prompt: "Why should you write the brief back to the client?",
+            options: [
+              "To make the job seem bigger",
+              "To catch misunderstandings early and form the basis of your proposal",
+              "To avoid sending a proposal",
+              "Because clients like long messages",
+            ],
+            answer_index: 1,
+            explanation: "A written summary confirmed by the client catches misunderstandings and supports the agreement.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "writing-proposals": {
+      explanation_md: `A proposal is your offer to the client: what you will do, how, by when and for how much. On marketplaces it is the message you send in reply to a posting. With local clients it may be a short message or a one page document after a conversation. Either way, a good proposal is specific, short and easy to say yes to.
+
+## What a good proposal contains
+
+* **The client's problem, in their words.** Show you read and understood. "You need a weekly set of five posts for your boutique's Instagram page, ready for the festive season."
+* **How you will solve it.** Two or three sentences on your approach. "I will plan the posts with you each Monday, design them to match your shop's colours and send them for approval by Wednesday."
+* **One relevant sample.** A link or image of similar work. One matching sample is better than ten unrelated ones.
+* **Price and timeline.** A clear price, what it includes, and when you will deliver. If there are options, give two at most.
+* **A simple next step.** "If this suits you, I can start on Monday after the deposit."
+
+## Answer every question the client asked
+
+Many postings ask applicants to answer specific questions, mention a word to prove they read everything, or state availability. Answer every one, clearly. Skipping them is one of the fastest ways to be ignored.
+
+## Keep it short and personal
+
+Clients often read many proposals between other tasks. Aim for a proposal that can be read in about a minute. Use short paragraphs. Use the client's name if you know it.
+
+Do not send the same general proposal to every posting. Copied proposals that begin "Dear Sir or Madam, I am a hardworking professional with many skills" are easy to spot. You can keep a template for structure, but rewrite the opening and approach for each client.
+
+## Be honest
+
+Only claim what you can do. If something in the brief is outside your skills, say so, or suggest the part you can do well. Never promise results you cannot control, such as a certain number of followers or sales. Promise what you control: quality, timing and communication.
+
+## A sample proposal
+
+> Hello Madam Mariama,
+>
+> Thank you for sharing your plan for the shea butter cooperative's new price list. You need a one page list for print and a version for WhatsApp, ready before the Tamale trade fair.
+>
+> I will design both versions using your logo and colours, with clear sections for each product size. You will see a first draft in two days and can request two rounds of changes.
+>
+> Here is a price list I made for a provisions shop: [link]
+>
+> Price: one fixed fee covering both versions and two rounds of changes, with half before I start and half on delivery. Delivery: four days from the deposit.
+>
+> If this suits you, I can start tomorrow.
+>
+> Kind regards,
+> Hawa
+
+## After you send
+
+If there is no reply, follow up once after a few days. If the client chooses someone else, thank them politely. They may come back next time.`,
+      practice_task_md: `**Goal:** Write a complete proposal for a realistic job.
+
+**Steps:**
+1. Find a real posting for your service online, or use the brief summary from the previous lesson.
+2. Write a proposal with all five parts: the client's problem in their words, your approach, one sample link, price and timeline, and a next step.
+3. Answer every question the posting asked, if any.
+4. Check it can be read in about a minute. Remove anything that is not specific to this client.
+5. Ask a study partner or mentor to read it and say whether they would hire you.
+
+**Done looks like:** One tailored proposal with all five parts, under about 200 words, plus notes on the feedback you received. Only send it to a real client if you can genuinely do the work.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should the first part of a good proposal do?",
+            options: [
+              "List all your qualifications",
+              "Restate the client's problem in their words",
+              "Ask for payment immediately",
+              "Describe your hobbies",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says to show you understood by restating the client's problem.",
+          },
+          {
+            prompt: "A posting asks applicants to state their availability and answer two questions. What should you do?",
+            options: [
+              "Ignore them and send your usual message",
+              "Answer every question clearly",
+              "Answer only the easiest question",
+              "Ask the client to call you instead",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says skipping the client's questions is one of the fastest ways to be ignored.",
+          },
+          {
+            prompt: "Which promise follows the lesson's honesty advice?",
+            options: [
+              "I guarantee 1,000 new followers in a month",
+              "I will double your sales",
+              "You will see a first draft in two days and can request two rounds of changes",
+              "Your business will never have problems again",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says to promise what you control: quality, timing and communication.",
+          },
+          {
+            prompt: "How many samples does the lesson suggest including in a proposal?",
+            options: [
+              "One relevant sample",
+              "At least ten of any kind",
+              "None, samples are not needed",
+              "Your entire portfolio as attachments",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says one matching sample is better than ten unrelated ones.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "pricing-in-cedis": {
+      explanation_md: `Pricing worries almost every new freelancer. Charge too much and clients say no; charge too little and you work hard for nothing, and clients may doubt your quality. There is no single right price, but there is a sensible way to work one out. This lesson gives you the method; the numbers are yours to fill in.
+
+## Start with time and costs
+
+Before you think about what clients will pay, know what a job costs you.
+
+* **Time.** Estimate honestly how many hours the job takes, including talking to the client, revisions and sending files. Beginners usually underestimate, so add some extra.
+* **Direct costs.** Data bundles, electricity or fuel for a generator, transport to meet the client, printing, paid fonts, stock images or software subscriptions.
+* **A share of your tools.** Your phone or laptop wears out and will need replacing. A small part of each job should help pay for that.
+
+Decide what an hour of your time should be worth to you, considering your skill level and your needs. Multiply by the hours, add the costs, and you have a floor: the lowest price at which the job is worth doing.
+
+## Then look at the market
+
+Find out what similar work costs locally and online. Ask freelancers you trust, look at prices shops display, and read postings for your service. You are not trying to copy anyone. You are checking whether your floor is realistic and where your work fits: a beginner with a small portfolio usually prices lower than someone with years of results, and raises prices as proof grows.
+
+## Choose a pricing model
+
+* **Project price.** One price for a defined result, such as a menu design. Clients like knowing the total. You carry the risk if the job takes longer, so define the scope and number of changes clearly.
+* **Hourly rate.** Payment for each hour worked. Common on some marketplaces and for ongoing support. You need a way to track your time honestly.
+* **Per item.** A price for each post, video or page. Easy to understand for repeated work.
+* **Monthly retainer.** A fixed monthly fee for a defined amount of ongoing work, such as twelve posts a month. Gives both sides predictability.
+
+## A worked example
+
+Here is the method with made up numbers, only to show the arithmetic. Issahaku estimates a flyer job takes 5 hours. He decides an hour of his time is worth 30 cedis for now, so time comes to 150 cedis. He adds 20 cedis for data and power and 10 cedis towards his laptop. His floor is 180 cedis. Local prices he has seen suggest that is reasonable, so he quotes 200 cedis with two rounds of changes. Your own numbers will be different.
+
+## Clients abroad and currency
+
+If a client abroad pays you, agree in writing which currency the price is in. Remember that what reaches you in cedis depends on the exchange rate on the day, and on fees charged by the platform and the payment route. The Bank of Ghana publishes reference exchange rates you can check. Work out roughly what you will receive in cedis after fees before you agree a price, not after.
+
+## Be confident and consistent
+
+State your price clearly, without apologising. If a client says it is too high, offer a smaller scope rather than cutting your rate straight away. Keep a note of what you charged each client, so your prices stay consistent.`,
+      practice_task_md: `**Goal:** Work out a price for one of your services.
+
+**Steps:**
+1. Choose one service you offer and describe exactly what is included.
+2. Estimate the hours it takes, including communication and revisions, then add a little extra.
+3. List your direct costs for the job: data, power, transport, printing, software.
+4. Decide what an hour of your time is worth for now, and calculate your floor: hours times hourly value, plus costs, plus a small amount for your tools.
+5. Look at a few local or online prices for similar work and decide your quoted price and pricing model.
+6. Write one sentence you would use to offer a smaller scope if a client says your price is too high.
+
+**Done looks like:** A short calculation showing your floor and quoted price, the model you chose and your scope sentence. Keep it in your jobs spreadsheet.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the floor price in this lesson?",
+            options: [
+              "The average price other freelancers charge",
+              "The lowest price at which the job is worth doing, based on your time and costs",
+              "The price a client first offers",
+              "The highest price you can ask for",
+            ],
+            answer_index: 1,
+            explanation: "The lesson calculates the floor from hours, the value of your time and your costs.",
+          },
+          {
+            prompt: "Which of these is a direct cost the lesson tells you to include?",
+            options: ["Your favourite meal", "Data bundles and electricity or fuel", "Your friend's school fees", "The client's rent"],
+            answer_index: 1,
+            explanation: "The lesson lists data, power, transport, printing and software as direct costs.",
+          },
+          {
+            prompt: "What is a monthly retainer?",
+            options: [
+              "A fine paid for late delivery",
+              "A fixed monthly fee for a defined amount of ongoing work",
+              "A tax paid each month",
+              "A deposit that is never returned",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes a retainer as a fixed monthly fee for defined ongoing work.",
+          },
+          {
+            prompt: "When a client abroad pays you, what affects the amount that reaches you in cedis?",
+            options: [
+              "Only the price you agreed",
+              "The exchange rate on the day and fees charged by the platform and payment route",
+              "Nothing; it is always the same",
+              "The client's time zone",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says exchange rates and fees change what reaches you, so work it out before agreeing.",
+          },
+          {
+            prompt: "A client says your price is too high. What does the lesson suggest first?",
+            options: [
+              "Cut your rate in half straight away",
+              "Offer a smaller scope rather than cutting your rate immediately",
+              "Stop replying",
+              "Add extra work for free",
+            ],
+            answer_index: 1,
+            explanation: "The lesson advises adjusting scope before reducing your rate.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "contracts-and-delivery": {
+      explanation_md: `Once a client says yes, two things protect the relationship: clear written terms, and steady, reliable delivery. Neither needs to be complicated. A short written agreement and a simple system for deadlines and changes prevent most disputes before they start.
+
+## Why put things in writing
+
+Memories differ. A client may honestly remember agreeing to "unlimited changes" when you remember "two rounds". A WhatsApp chat scattered over weeks is hard to search and easy to argue about. A short written agreement, even one page or one clear email, means both of you can look back at the same words.
+
+Written terms are not a sign of distrust. Good clients usually welcome them, because they protect the client too: they know what they will receive, when and for how much.
+
+## What this section covers
+
+* **Simple written agreements.** The parts every agreement should have: the work, the deadline, the number of revisions, the price, the payment dates and who owns the finished files.
+* **Deposits, milestones and invoices.** How taking part payment before you start, and splitting large jobs into stages, limits how much you can lose. How to write a clear invoice and follow up late payment politely and firmly.
+* **Managing deadlines and revisions.** How to track every deadline, give updates before anyone asks, handle change requests calmly and quote for extra work instead of doing it free.
+
+## Delivery is where reputation is made
+
+Clients often remember how working with you felt as much as the final result. Did you reply? Did you deliver on the day you promised? Did you warn them early when something changed? A freelancer with good, reliable delivery often gets more repeat work than a more talented one who is hard to reach.
+
+## Scope creep
+
+Scope creep is when a project slowly grows beyond what was agreed: "Can you just add one more page?" "Can you also do the Facebook cover?" Each request seems small, but together they can double your work for the same price. Written terms give you a polite way to respond: "That is outside what we agreed, but I am happy to do it. It would cost an extra amount and add two days."
+
+## A small example
+
+Abdul-Rahman agrees to build a three page website for a guesthouse in Tamale. He sends a one page agreement listing the three pages, the delivery date, two rounds of changes, the price split into a deposit and a final payment, and that the guesthouse owns the finished site once fully paid. Halfway through, the owner asks for a booking form. Abdul-Rahman points to the agreement and offers a separate price. The owner agrees, and the relationship stays friendly because both sides knew the rules from the start.
+
+## Keep it proportionate
+
+A small job for a neighbour may need only a clear message confirming the work, price and date. A larger or longer project deserves a fuller written agreement. The bigger the job and the less you know the client, the more detail you need.`,
+      practice_task_md: `**Goal:** Plan the terms and delivery for one realistic job.
+
+**Steps:**
+1. Choose a realistic job for your service, small or medium sized.
+2. Write down the six parts an agreement should cover: work, deadline, revisions, price, payment dates, ownership of files. Fill in each for your job.
+3. Write one polite sentence you would use if the client asks for extra work outside the agreement.
+4. Decide whether this job needs a short message or a fuller agreement, and write why.
+
+**Done looks like:** A filled in list of the six parts for one job, your scope creep sentence and your decision about the level of detail needed.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson say a WhatsApp chat alone is weak protection?",
+            options: [
+              "Because WhatsApp messages are illegal as evidence",
+              "Because a chat scattered over weeks is hard to search and easy to argue about",
+              "Because clients cannot read WhatsApp",
+              "Because chats are automatically deleted every day",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says scattered chats are hard to search and easy to dispute, unlike one clear written agreement.",
+          },
+          {
+            prompt: "What is scope creep?",
+            options: [
+              "When a client pays early",
+              "When a project slowly grows beyond what was agreed",
+              "When a freelancer delivers too quickly",
+              "When a contract is signed",
+            ],
+            answer_index: 1,
+            explanation: "The lesson defines scope creep as small extra requests that add up beyond the agreement.",
+          },
+          {
+            prompt: "How did Abdul-Rahman respond when the owner asked for a booking form?",
+            options: [
+              "He added it for free",
+              "He refused and stopped the project",
+              "He pointed to the agreement and offered a separate price",
+              "He ignored the request",
+            ],
+            answer_index: 2,
+            explanation: "He used the written terms to quote for the extra work, keeping things friendly.",
+          },
+          {
+            prompt: "According to the lesson, when do you need more detail in a written agreement?",
+            options: [
+              "When the job is bigger and you know the client less",
+              "Only when the client is a family member",
+              "Never; one line is always enough",
+              "Only for clients abroad",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says the bigger the job and the less you know the client, the more detail you need.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
     // @@NEXT@@
   },
 };
