@@ -13,7 +13,7 @@ export const metadata = pageMetadata({
 });
 
 /** Written for this page (issue #204). Update it whenever support changes; never claim more than we test. */
-const ACCESSIBILITY_UPDATED = "27 October 2026";
+const ACCESSIBILITY_UPDATED = "28 October 2026";
 
 const REPORT_MAILTO = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Accessibility problem")}`;
 
