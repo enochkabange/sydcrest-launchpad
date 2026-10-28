@@ -4,9 +4,10 @@ import type { TrackContent } from "./types";
  * Original lesson content for the Freelancing and Getting Paid roadmap
  * (issue #198, process from issue #84).
  * Research and sources: src/content/research/freelancing.md.
- * Money from abroad and tax lessons state only what the current Bank of Ghana
- * and Ghana Revenue Authority pages say (read 27 October 2026); everything
- * else tells the learner how to check. No payment company is named.
+ * Money from abroad and tax lessons state only what the current Bank of Ghana,
+ * Ghana Revenue Authority and Registrar of Companies pages say (read 27 and
+ * 28 October 2026, re checked in review 28 October 2026); everything else tells the
+ * learner how to check. No payment company is named.
  */
 const content: TrackContent = {
   roadmap: "freelancing",
@@ -393,7 +394,7 @@ Mariama manages social media for two shops in Bolgatanga. Every Sunday she check
 
 A client who has never met you is taking a risk. They are trusting you with their money, their deadline and sometimes their reputation. Anything that reduces that risk makes them more likely to hire you. A good sample reduces the risk that the work will be poor. A clear profile reduces the risk that you are not who you say you are. A polite, clear message reduces the risk that working with you will be stressful.
 
-Many online postings say clearly that applications without samples or live links will not be considered. Local clients may not say it, but they think the same way: "Show me something you have done."
+Some online postings say clearly that applications without samples or live links will not be considered. Local clients may not say it, but they think the same way: "Show me something you have done."
 
 ## What this section covers
 
@@ -682,7 +683,7 @@ Wumpini offers social media management for salons and boutiques in Tamale. Her b
 
 ## Five habits of professional client messages
 
-* **Greet properly and use their name.** "Good morning, Madam Hawa" or "Hello Daniel" is better than starting with "pls" or no greeting.
+* **Greet properly and use their name.** "Good morning, Madam Hawa" or "Hello Mr Iddrisu" is better than starting with "pls" or no greeting.
 * **Answer the question they asked.** If a client asks for a price and a delivery date, give both in your first reply. Do not make them ask twice.
 * **Be short and clear.** Use short sentences. Put one topic in each paragraph. Avoid slang, heavy abbreviations and long voice notes for important details.
 * **Confirm important details in writing.** After a call or voice note, send a short written summary: what will be done, by when and for how much. This protects both of you later.
@@ -1179,7 +1180,7 @@ Abdul-Rahman designs simple websites. He finds five guesthouses in Tamale with o
 
 ## One rule to remember
 
-**Real clients pay you to work. They never ask you to pay them to get work.** If anyone asks for a registration fee, a deposit to unlock tasks, money for "training materials" before a job, or a payment to release your earnings, stop. That one rule catches a large share of the scams beginners meet.
+**Real clients pay you to work. They never ask you to pay them to get work.** If anyone asks for a registration fee, a deposit to unlock tasks, money for "training materials" before a job, or a payment to release your earnings, stop. That one rule protects you from many common scams.
 
 ## Slow down when you feel pressure
 
@@ -1286,7 +1287,7 @@ The CSA has described this pattern in its alerts:
 
 ## How to report
 
-The CSA lists these reporting channels in its alert: call or text **292**, WhatsApp **0501603111**, or email **report@csa.gov.gh**. Also report the account to the platform or app where it contacted you. Reporting can protect the next person.
+The CSA lists these reporting channels: call or text **292**, WhatsApp **0501603111**, or email **report@csa.gov.gh**. Its report page on csa.gov.gh also offers an online reporting form and its mobile app. Also report the account to the platform or app where it contacted you. Reporting can protect the next person.
 
 ## A small example
 
@@ -1643,7 +1644,7 @@ A clinic manager in Nalerigu messages Wumpini: "We need something for our Facebo
 
 ## Answer every question the client asked
 
-Many postings ask applicants to answer specific questions, mention a word to prove they read everything, or state availability. Answer every one, clearly. Skipping them is one of the fastest ways to be ignored.
+Some postings ask applicants to answer specific questions, mention a word to prove they read everything, or state availability. Answer every one, clearly. Skipping them is one of the fastest ways to be ignored.
 
 ## Keep it short and personal
 
@@ -1761,7 +1762,7 @@ Find out what similar work costs locally and online. Ask freelancers you trust, 
 
 ## A worked example
 
-Here is the method with made up numbers, only to show the arithmetic. Issahaku estimates a flyer job takes 5 hours. He decides an hour of his time is worth 30 cedis for now, so time comes to 150 cedis. He adds 20 cedis for data and power and 10 cedis towards his laptop. His floor is 180 cedis. Local prices he has seen suggest that is reasonable, so he quotes 200 cedis with two rounds of changes. Your own numbers will be different.
+Here is the method with made up numbers, only to show the arithmetic. They are not suggested prices or rates. Issahaku estimates a flyer job takes 5 hours. He decides an hour of his time is worth 30 cedis for now, so time comes to 150 cedis. He adds 20 cedis for data and power and 10 cedis towards his laptop. His floor is 180 cedis. Local prices he has seen suggest that is reasonable, so he quotes 200 cedis with two rounds of changes. Your own numbers will be different.
 
 ## Clients abroad and currency
 
@@ -2035,7 +2036,7 @@ Many freelance marketplaces use a form of escrow: the client pays the platform f
 
 ## Invoices
 
-An invoice is a document that asks a client to pay for work. Even local clients increasingly expect one, and organisations such as NGOs and schools usually need one for their records. A clear invoice includes:
+An invoice is a document that asks a client to pay for work. Organisations such as NGOs and schools often need one for their records, and it makes you look professional to any client. A clear invoice includes:
 
 * The word "Invoice", an invoice number and the date.
 * Your name, contact details and, if you have one, your business name.
@@ -2412,29 +2413,32 @@ Hawa finishes flyers for a youth programme in Damongo. The organiser messages a 
       },
     },
     "paid-from-abroad": {
-      explanation_md: `Clients abroad usually cannot pay you by Ghanaian mobile money directly, so the money has to travel through an international route. Each route has different fees, speeds and rules, and the rules are set by the Bank of Ghana and can change. This lesson names no companies; it explains the kinds of route and how to check that a service is legal.
+      explanation_md: `Clients abroad usually cannot pay you by Ghanaian mobile money directly, so the money has to travel through an international route. Each route has different fees, speeds and rules, and the Bank of Ghana's rules can change. This lesson names no companies; it explains the kinds of route and how to check that a service is legal.
 
 ## The main kinds of route
 
-* **Withdrawing from a freelance marketplace.** If you work through a marketplace, the client pays the platform, and you withdraw your earnings using the withdrawal methods the platform offers for accounts in Ghana. Read the platform's help pages for which methods are available, how long they take and what they cost.
-* **An international money transfer service.** Companies that send money from abroad pay it out in Ghana through local partners such as banks and licensed payment companies, into a bank account, a mobile money or other payment wallet, or as cash at a counter. Ask the service, before your client sends anything, whether it accepts payments for work as well as personal transfers.
-* **A bank transfer to your bank account.** A client can send an international bank transfer to a Ghanaian bank account. Some banks offer accounts that can hold foreign currency. Ask your own bank what you need to receive international transfers, what documents it will ask for and what it charges.
+* **Withdrawing from a freelance marketplace.** The client pays the platform, and you withdraw your earnings using the methods the platform offers for accounts in Ghana. Read its help pages for which methods are available, how long they take and what they cost.
+* **An international money transfer service.** These companies pay money out in Ghana through local partners such as banks and licensed payment companies, into a bank account, a mobile money or other payment wallet, or as cash at a counter.
+* **A bank transfer to your bank account.** A client can send an international bank transfer to a Ghanaian bank account. Ask your own bank what you need to receive one, what documents it will ask for and what it charges.
 
 ## What the Bank of Ghana rules say
 
-The Bank of Ghana published guidelines in December 2025 for international money transfer operators sending money into Ghana. They say, among other things, that:
+The Bank of Ghana's guidelines for international money transfer operators, dated December 2025 and issued in January 2026, say that:
 
-* A foreign money transfer operator must be **registered with the Bank of Ghana** to provide inward remittance services, and Ghanaian banks and payment companies may only act as agents for registered operators.
-* Settlement of these transfers is **done in cedis**, and funds reach people through authorised channels such as bank accounts, payment wallets or cash payouts.
+* A foreign money transfer operator must be **registered with the Bank of Ghana** to send money into Ghana, and Ghanaian banks and payment companies may only act as agents for registered operators.
+* Settlement is **done in cedis**, and money reaches people through authorised channels such as bank accounts, payment wallets or cash payouts.
 * The person receiving the money should not be charged fees beyond those agreed with the sender when the transfer was started.
+* These services are mainly for **person to person** transfers, and they must not pay money into business accounts.
 
-So expect such transfers to reach you in cedis.
+So expect such transfers to reach you in cedis, in a personal account. Before your client sends anything, ask the service whether it accepts payments for work. If a client needs to pay a registered business account, ask your bank about a bank transfer instead.
+
+A later Bank of Ghana notice gave existing operators until 31 July 2026 to register, and said those that did not would not be permitted to operate in Ghana.
 
 ## How to check a service is legal
 
-* **The Ghanaian side.** The Bank of Ghana publishes a list of approved payment and fintech institutions on its website. Check that the Ghanaian bank or payment company that will pay you appears there, or is a licensed bank.
-* **The foreign side.** The Bank of Ghana has published notices warning the public about money transfer operators that were not approved. Search the Bank of Ghana website for its latest notices on money transfer operators, and ask your bank or wallet provider whether a service is allowed to pay into their accounts.
-* **Use official sources only.** Go to the Bank of Ghana website yourself; do not trust a list someone forwards you.
+* **The Ghanaian side.** The Bank of Ghana publishes a list of approved payment and fintech institutions. Check that the payment company that will pay you appears there, or that it is a licensed bank.
+* **The foreign side.** Search the Bank of Ghana website for its latest notices on money transfer operators, and ask your bank or wallet provider whether a service is registered and allowed to pay into their accounts.
+* **Use official sources only.** Go to the Bank of Ghana website yourself; never trust a forwarded list.
 
 ## What to compare before agreeing terms
 
@@ -2459,15 +2463,10 @@ Abdul-Rahman agrees to build a website for a small shop abroad. Before quoting, 
       quiz: {
         questions: [
           {
-            prompt: "Which of these is one of the main kinds of route for money from abroad described in the lesson?",
-            options: [
-              "Asking the client to post cash in an envelope",
-              "Withdrawing earnings from a freelance marketplace",
-              "Asking a stranger to receive the money for you",
-              "Paying a fee to a recruiter to release the money",
-            ],
-            answer_index: 1,
-            explanation: "The lesson lists marketplace withdrawals, international money transfer services and bank transfers.",
+            prompt: "According to the Bank of Ghana guidelines described in the lesson, which kind of account must money transfer services not pay into?",
+            options: ["Business accounts", "Personal bank accounts", "Mobile money wallets", "Cash payouts at a counter"],
+            answer_index: 0,
+            explanation: "The guidelines describe these services as mainly person to person and say they must not pay into business accounts.",
           },
           {
             prompt: "According to the Bank of Ghana guidelines described in the lesson, what must a foreign money transfer operator do to provide inward remittance services?",
@@ -2527,7 +2526,7 @@ Keep copies of invoices, receipts and agreements in a folder for each year, in c
 
 ## What the GRA says about registering
 
-According to the GRA's tax registration page, individuals with taxable income, including employees, self employed individuals and professionals, must register. For individuals, **your Ghana Card Personal Identification Number is your Taxpayer Identification Number (TIN)**. ECOWAS Card holders use that card's number.
+According to the GRA's tax registration page, individuals with taxable income, including employees, self employed individuals and professionals, must register. The same page says all businesses, including sole proprietorships, must register too. For individuals, **your Ghana Card Personal Identification Number is your Taxpayer Identification Number (TIN)**. ECOWAS Card holders use that card's number.
 
 The GRA describes two ways to register:
 
@@ -2538,11 +2537,11 @@ The GRA describes two ways to register:
 
 The GRA's personal income tax page says the tax applies to employees, sole proprietors and partners, and covers income from employment, business and investments, which are put together and taxed as one at the end of the year. It says you file a return at the end of the year, and it lists forms including a personal income tax return and a self assessment estimate.
 
-The GRA page sets out the income level at which tax starts and the rates. These change, so read the current page rather than relying on numbers you hear from friends. If you are unsure whether or how much you need to pay, ask at a GRA office or call the GRA's toll free line shown on its website.
+The GRA page shows the income level at which tax starts. That level and the tax rates change, so read the current GRA information rather than relying on numbers you hear from friends. If you are unsure whether or how much you need to pay, ask at a GRA office or call one of the contact numbers on the GRA website.
 
 ## Registering a business name
 
-You can freelance under your own name. Some freelancers choose to register a business name, also called a sole proprietorship, with the Office of the Registrar of Companies, which can help when organisations want an invoice from a registered business. Check the Registrar's official website for the current process and requirements.
+You can freelance under your own name. Some freelancers choose to register a business name, also called a sole proprietorship, with the Office of the Registrar of Companies, which can help when organisations want an invoice from a registered business. The Registrar's website describes the steps: search that the name is available, fill in the prescribed form, submit it, pay a processing fee and receive a certificate. The registration must be renewed every year for a fee. Fees and steps change, so check the Registrar's website or office for the current process. Remember from the last lesson that money transfer services must not pay into business accounts.
 
 ## A small example
 
