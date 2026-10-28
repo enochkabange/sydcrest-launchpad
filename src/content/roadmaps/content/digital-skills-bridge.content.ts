@@ -50,7 +50,7 @@ By the end of this section you will know your own phone or computer better, and 
           {
             prompt: "According to this lesson, what do you need to start learning digital skills?",
             options: [
-              "A new laptop",
+              "A new laptop with Microsoft Office installed",
               "A home internet connection",
               "A paid course certificate",
               "The phone or computer you already have",
@@ -62,7 +62,7 @@ By the end of this section you will know your own phone or computer better, and 
             prompt: "Why was Wumpini struggling to learn on her phone?",
             options: [
               "She was not clever enough",
-              "Her phone was too old to use apps",
+              "Her phone was too old to install any learning apps",
               "Her phone was not set up for learning yet",
               "She did not have a SIM card",
             ],
@@ -72,9 +72,9 @@ By the end of this section you will know your own phone or computer better, and 
           {
             prompt: "What should you do if a menu has a slightly different name on your device?",
             options: [
-              "Stop the lesson and buy a different device",
+              "Stop the lesson and buy the exact device the lesson used",
               "Reset the device to factory settings",
-              "Look for the closest match or use the search box in Settings",
+              "Find the closest match or search in Settings",
               "Skip that lesson completely",
             ],
             answer_index: 2,
@@ -163,7 +163,7 @@ On a computer, practise the computer versions instead: zoom a web page in and ou
               "Tap once",
               "Long press",
               "Pinch with two fingers moving apart",
-              "Press the Back button",
+              "Pinch with two fingers moving together",
             ],
             answer_index: 2,
             explanation: "Moving two fingers apart on the screen zooms in.",
@@ -182,7 +182,7 @@ On a computer, practise the computer versions instead: zoom a web page in and ou
           {
             prompt: "On a computer, what does the same job as a long press on a phone?",
             options: [
-              "A right click",
+              "A right click with the mouse",
               "Pressing the plus key",
               "Sliding two fingers on the touchpad",
               "Clicking the WiFi icon",
@@ -261,7 +261,7 @@ Check your storage once a week. It takes two minutes and saves a lot of frustrat
               "The battery lasts longer",
               "Data bundles become cheaper",
               "The device slows down and new files may not save",
-              "WhatsApp sends fewer messages",
+              "WhatsApp deletes your oldest chats to make room automatically",
             ],
             answer_index: 2,
             explanation: "A full device slows down, apps crash and new files will not save.",
@@ -363,7 +363,7 @@ Compare the bundles your network offers before you buy. A bigger bundle that las
             options: [
               "Stops many apps from using data in the background",
               "Makes your bundle cheaper to buy",
-              "Turns off WiFi to protect your phone",
+              "Turns off WiFi so only your bundle is used for browsing",
               "Deletes old photos to make space",
             ],
             answer_index: 0,
@@ -372,7 +372,7 @@ Compare the bundles your network offers before you buy. A bigger bundle that las
           {
             prompt: "How can you see which apps used the most data this month?",
             options: [
-              "Ask your network by SMS",
+              "Dial your network's short code to see your remaining bundle",
               "Look at your Gallery",
               "Check Settings, then Data usage",
               "Restart the phone",
@@ -384,7 +384,7 @@ Compare the bundles your network offers before you buy. A bigger bundle that las
             prompt: "What should you avoid doing on a public WiFi network you do not trust?",
             options: [
               "Reading a lesson",
-              "Downloading course notes",
+              "Downloading free course notes from a trusted website",
               "Logging in to your bank or MoMo account",
               "Checking the time",
             ],
@@ -452,7 +452,7 @@ Safe habits like these are what employers mean when they ask for someone who is 
               "Files sent on WhatsApp",
               "A link in an SMS about a prize",
               "Any website that offers a free download",
-              "The Google Play Store",
+              "The official Google Play Store",
             ],
             answer_index: 3,
             explanation: "The Play Store is the official store, and its apps are checked before listing.",
@@ -462,7 +462,7 @@ Safe habits like these are what employers mean when they ask for someone who is 
             options: [
               "That is normal for all apps",
               "You must allow it or the phone will break",
-              "It is a warning sign",
+              "It is a warning sign of a risky app",
               "It will make the torch brighter",
             ],
             answer_index: 2,
@@ -471,10 +471,10 @@ Safe habits like these are what employers mean when they ask for someone who is 
           {
             prompt: "On a phone, how can you change an app's permissions after installing it?",
             options: [
-              "In Settings, find the app under Apps and open its Permissions",
+              "Open Settings, then Apps, then the app's Permissions",
               "Restart the phone twice",
               "Send the app to a friend",
-              "You cannot change them once allowed",
+              "You cannot change them once allowed, only uninstall the app",
             ],
             answer_index: 0,
             explanation: "Permissions can be changed in Settings under Apps.",
@@ -485,7 +485,7 @@ Safe habits like these are what employers mean when they ask for someone who is 
               "Apps sent as files are not checked and can be harmful",
               "Files are always too large",
               "Her phone cannot open files",
-              "Her supervisor banned WhatsApp",
+              "The file version only works on phones with more storage",
             ],
             answer_index: 0,
             explanation: "Apps shared as files skip the store's checks and can contain harmful software.",
@@ -540,7 +540,7 @@ You do not need a job to practise. Use your church or mosque group, your class g
             options: [
               "Coding and web design",
               "Driving and cooking",
-              "Video editing and photography",
+              "Video editing, photography and graphic design software",
               "Answering calls, WhatsApp, email and clear English",
             ],
             answer_index: 3,
@@ -560,9 +560,9 @@ You do not need a job to practise. Use your church or mosque group, your class g
           {
             prompt: "According to the lesson, what is the idea of professional communication?",
             options: [
-              "Use as many big words as possible",
+              "Use formal words and long sentences so you sound serious",
               "Always call instead of texting",
-              "Be polite, be clear and make it easy for the other person to act",
+              "Be polite, clear and easy for the other person to act on",
               "Never use WhatsApp at work",
             ],
             answer_index: 2,
@@ -573,7 +573,7 @@ You do not need a job to practise. Use your church or mosque group, your class g
             options: [
               "The cohort does not use phones at all",
               "You must sell products by phone to join",
-              "The cohort only teaches phone calls",
+              "The cohort only teaches phone calls and customer service scripts",
               "You send emails and write assignments in English from week 1",
             ],
             answer_index: 3,
@@ -644,7 +644,7 @@ Making calls to customers, sometimes called outbound calls, uses the same skills
               "A greeting, the business name, and your name with an offer to help",
               "Your age, your town and your school",
               "Only hello",
-              "The price list and opening hours",
+              "The date, the price list and the business opening hours",
             ],
             answer_index: 0,
             explanation: "The lesson recommends a greeting, where they have reached, and your name with an offer to help.",
@@ -653,7 +653,7 @@ Making calls to customers, sometimes called outbound calls, uses the same skills
             prompt: "Why should you repeat key details back to the caller?",
             options: [
               "To make the call longer",
-              "Because the caller cannot hear well",
+              "Because it gives you time to think of an answer",
               "To check you understood and prevent mistakes",
               "To practise your English",
             ],
@@ -739,7 +739,7 @@ Amina runs a small fabric shop in Tamale. Her new attendant, Napari, receives an
             prompt: "What should you avoid when starting a work message on WhatsApp?",
             options: [
               "Greeting the person by name",
-              "Putting the main point first",
+              "Putting the main point in the very first message",
               "Sending only Hello and waiting for a reply",
               "Using full words",
             ],
@@ -762,7 +762,7 @@ Amina runs a small fabric shop in Tamale. Her new attendant, Napari, receives an
             options: [
               "When you are sharing prices, addresses, dates or names",
               "When you want to sound friendly",
-              "When the message is very long and complicated",
+              "When the message is very long and you are telling a story",
               "Never, voice notes are always better",
             ],
             answer_index: 0,
@@ -773,8 +773,8 @@ Amina runs a small fabric shop in Tamale. Her new attendant, Napari, receives an
             options: [
               "Forwarding chain messages",
               "Posting jokes late at night",
-              "Staying on topic and replying privately when the answer is for one person",
-              "Sharing members' numbers without asking",
+              "Staying on topic and replying to one person privately",
+              "Sharing members' numbers with outside sellers who ask for them",
             ],
             answer_index: 2,
             explanation: "The lesson asks you to stay on topic, reply privately when needed and respect privacy.",
@@ -864,8 +864,8 @@ Rashida in Damongo has been invited to an online interview for an office job. Th
           {
             prompt: "Which of these helps you use less data on a video call?",
             options: [
-              "Turning your camera off when you do not need to be seen",
-              "Keeping many apps open",
+              "Turning your camera off when you need not be seen",
+              "Switching the video to the highest quality setting",
               "Unmuting all the time",
               "Raising your hand often",
             ],
@@ -878,7 +878,7 @@ Rashida in Damongo has been invited to an online interview for an office job. Th
               "It makes the call cheaper for the host",
               "It makes your camera clearer",
               "It stops background noise disturbing everyone",
-              "It makes your own voice louder for others",
+              "It makes your own voice louder and clearer when you unmute",
             ],
             answer_index: 2,
             explanation: "Background noise from markets, radios or generators can make it hard for others to hear.",
@@ -945,9 +945,9 @@ Spend ten minutes a day reading something in English that interests you: a news 
             prompt: "What does the lesson suggest you do first when reading a lesson page?",
             options: [
               "Look up every single word",
-              "Translate the whole page",
+              "Translate the whole page into your own language",
               "Skip straight to the quiz",
-              "Read the headings first",
+              "Read all the headings first",
             ],
             answer_index: 3,
             explanation: "Headings tell you what the page is about before you start reading.",
@@ -967,8 +967,8 @@ Spend ten minutes a day reading something in English that interests you: a news 
             prompt: "Why is Baba's second message better than his first?",
             options: [
               "It is much longer",
-              "It uses difficult vocabulary",
-              "It uses full words, full sentences and one idea at a time",
+              "It uses longer words and more formal vocabulary",
+              "It uses full words and one idea at a time",
               "It has no greeting",
             ],
             answer_index: 2,
@@ -979,7 +979,7 @@ Spend ten minutes a day reading something in English that interests you: a news 
             options: [
               "Explain it to someone in any language you speak",
               "Read only the first line",
-              "Copy it word for word",
+              "Read it again several times until it sounds familiar",
               "Close the page quickly",
             ],
             answer_index: 0,
@@ -1032,8 +1032,8 @@ If a message makes you feel rushed, scared or very excited, stop. Scammers want 
             options: [
               "Because it is made of metal",
               "Because it never needs a password",
-              "Because it opens your front door",
-              "Because someone with it can reset your other accounts and pretend to be you",
+              "Because it unlocks your phone and every app without a PIN",
+              "Because someone with it can reset your other accounts",
             ],
             answer_index: 3,
             explanation: "Access to your email lets someone reset other passwords and read your messages.",
@@ -1043,8 +1043,8 @@ If a message makes you feel rushed, scared or very excited, stop. Scammers want 
             options: [
               "He used his own number and a strong password",
               "He never created an email address",
-              "He linked his sister's number and used a weak password, then could not recover the account",
-              "His phone was stolen at a business centre",
+              "He linked his sister's number and used a weak password",
+              "His phone was stolen, and the thief reset his email password",
             ],
             answer_index: 2,
             explanation: "A recovery number that was not his and a weak password meant he lost the account.",
@@ -1066,7 +1066,7 @@ If a message makes you feel rushed, scared or very excited, stop. Scammers want 
               "Nothing, email is not used",
               "Only teach phone calls",
               "Teach you to build an email app",
-              "Use Gmail to send emails with attachments and recognise phishing",
+              "Use Gmail for attachments and spotting phishing",
             ],
             answer_index: 3,
             explanation: "The lesson explains that week 1 uses Gmail with attachments and covers phishing.",
@@ -1132,7 +1132,7 @@ Once your account is ready, DMP week 1 will teach you to use it fully: writing, 
           {
             prompt: "Which email address is the most professional?",
             options: [
-              "partyboy4real",
+              "kingwumpini4real2005",
               "bigmoneyking",
               "wumpini.alhassan",
               "cutegirl2005",
@@ -1236,9 +1236,9 @@ Issahaku received an SMS with a WhatsApp code he had not requested, followed by 
           {
             prompt: "Why should important accounts have different passwords?",
             options: [
-              "If one site is hacked, criminals try that password on your other accounts",
+              "If one site is hacked, criminals try that password elsewhere",
               "Websites require it by law",
-              "Different passwords make your phone faster",
+              "Each website checks that your password is not used anywhere else",
               "So you can share one of them",
             ],
             answer_index: 0,
@@ -1248,7 +1248,7 @@ Issahaku received an SMS with a WhatsApp code he had not requested, followed by 
             prompt: "What does two step verification add?",
             options: [
               "A second lock, such as a code sent to your phone",
-              "A second email address",
+              "A second email address that receives copies of your mail",
               "Free data",
               "A longer username",
             ],
@@ -1311,10 +1311,10 @@ If you do lose money, contact your network's official customer care immediately 
           {
             prompt: "You get an SMS saying money was sent to you, then a caller asks you to send it back. What should you do first?",
             options: [
-              "Send the money back immediately",
+              "Send the money back, because the caller sounds honest and worried",
               "Forward the SMS to friends",
               "Give the caller your PIN so they can check",
-              "Check your real balance yourself in the MoMo app or official menu",
+              "Check your real balance in the MoMo app or official menu",
             ],
             answer_index: 3,
             explanation: "Often no money arrived, so check your real balance yourself first.",
@@ -1324,8 +1324,8 @@ If you do lose money, contact your network's official customer care immediately 
             options: [
               "It is a normal part of every job",
               "You should pay quickly before others do",
-              "It is likely a scam, because real employers do not charge you to get a job",
-              "It guarantees a good salary",
+              "It is likely a scam, because real employers do not charge you",
+              "It shows the company is serious about training its new staff",
             ],
             answer_index: 2,
             explanation: "The lesson says never to pay for a job.",
@@ -1336,7 +1336,7 @@ If you do lose money, contact your network's official customer care immediately 
               "Give the PIN if they sound polite",
               "Hang up and call the official customer care number yourself",
               "Dial the code they give you",
-              "Send them a verification code instead",
+              "Send them a verification code instead, since it is not your PIN",
             ],
             answer_index: 1,
             explanation: "Real companies never need your PIN, so call the official number yourself.",
@@ -1428,9 +1428,9 @@ Amina shares a phone with her younger brother. She set a fingerprint lock on Wha
           {
             prompt: "What does an Incognito tab in Chrome do on a shared phone or computer?",
             options: [
-              "Hides everything from your network",
+              "Hides everything you do from your network and employer",
               "Speeds up your downloads",
-              "Does not keep a record of the sites you visited after you close it",
+              "Does not save your browsing history after you close it",
               "Locks the device",
             ],
             answer_index: 2,
@@ -1439,10 +1439,10 @@ Amina shares a phone with her younger brother. She set a fingerprint lock on Wha
           {
             prompt: "Why do customer service jobs care about privacy habits?",
             options: [
-              "Staff handle customer details and must keep them confidential",
+              "Staff handle customer details and must keep them private",
               "Staff never see customer information",
               "Privacy makes calls shorter",
-              "It is only needed for managers",
+              "It is only needed for managers who sign the company contracts",
             ],
             answer_index: 0,
             explanation: "These roles handle names, numbers and payment details that must stay confidential.",
@@ -1497,7 +1497,7 @@ Have a real document nearby, such as a certificate, a receipt or a school report
             options: [
               "Coding, design and marketing",
               "Selling, driving and cooking",
-              "Typing, printing and photocopying",
+              "Typing letters, printing documents and photocopying certificates",
               "Handling files, filling in forms and finding information",
             ],
             answer_index: 3,
@@ -1507,8 +1507,8 @@ Have a real document nearby, such as a certificate, a receipt or a school report
             prompt: "Why does learning files on a phone help before the DMP cohort's computer lessons?",
             options: [
               "Computers do not use files",
-              "The ideas are the same, so the computer version will feel familiar",
-              "DMP does not cover files at all",
+              "The ideas are the same, so computers will feel familiar",
+              "DMP does not cover files, so phones are the only way to learn",
               "Phones cannot share files",
             ],
             answer_index: 1,
@@ -1611,7 +1611,7 @@ Sumaila needed to send his certificate to an employer in Tamale. He placed it on
             options: [
               "Long names use more data",
               "It makes the photo sharper",
-              "Phones delete unnamed files",
+              "Phones delete files with long number names after a month",
               "A clear name helps the employer find and recognise it",
             ],
             answer_index: 3,
@@ -1620,7 +1620,7 @@ Sumaila needed to send his certificate to an employer in Tamale. He placed it on
           {
             prompt: "What is a good way to make a clear copy of a paper certificate?",
             options: [
-              "Take a quick photo in a dark room",
+              "Take a quick photo at night with the flash turned on",
               "Use a scan tool such as the one in Google Drive",
               "Draw a copy by hand",
               "Send a voice note describing it",
@@ -1631,10 +1631,10 @@ Sumaila needed to send his certificate to an employer in Tamale. He placed it on
           {
             prompt: "Why keep important documents in Google Drive?",
             options: [
-              "So you still have them if your phone or computer is lost or broken",
+              "So you still have them if your device is lost or broken",
               "So they become public",
               "So they cannot be opened",
-              "Because WhatsApp requires it",
+              "Because WhatsApp only lets you send files that are saved in Drive",
             ],
             answer_index: 0,
             explanation: "Drive keeps a backup when phones and computers get lost, stolen or broken.",
@@ -1706,7 +1706,7 @@ Careful form filling is a small skill, but it shows exactly what employers mean 
             prompt: "What should you do before you start typing answers?",
             options: [
               "Submit the form to test it",
-              "Close the form and come back later",
+              "Close the form and ask a friend to fill it in for you",
               "Fill in only the first page",
               "Read the whole form first so you know what you need",
             ],
@@ -1718,7 +1718,7 @@ Careful form filling is a small skill, but it shows exactly what employers mean 
             options: [
               "Forms charge per digit",
               "One wrong digit means nobody can call you",
-              "Phone numbers are optional",
+              "The form will correct a wrong digit for you",
               "It makes the form shorter",
             ],
             answer_index: 1,
@@ -1728,9 +1728,9 @@ Careful form filling is a small skill, but it shows exactly what employers mean 
             prompt: "What does the lesson say about survey apps like Kobo Collect?",
             options: [
               "They only work in Accra",
-              "They replace the need to ask questions",
+              "They replace paper forms but need network for every question",
               "They do not need careful answers",
-              "They let you fill in forms without network and send them later",
+              "They let you fill in forms offline and send them later",
             ],
             answer_index: 3,
             explanation: "Forms can be filled offline and sent when there is a connection.",
@@ -1802,7 +1802,7 @@ DMP week 3 goes deeper into judging online sources. This lesson gives you the ev
             prompt: "What does typing site:gov.gh before your search words do?",
             options: [
               "Shows results only from Ghana government websites",
-              "Makes the search free",
+              "Makes the search free of adverts and sponsored results",
               "Translates the page",
               "Deletes your search history",
             ],
@@ -1815,7 +1815,7 @@ DMP week 3 goes deeper into judging online sources. This lesson gives you the ev
               "Is the page colourful?",
               "Who wrote it and when was it written?",
               "Does it load quickly?",
-              "Does it have many adverts?",
+              "Does it appear first in the search results?",
             ],
             answer_index: 1,
             explanation: "Knowing the author and date helps you judge reliability.",
@@ -1824,7 +1824,7 @@ DMP week 3 goes deeper into judging online sources. This lesson gives you the ev
             prompt: "Why do quotation marks help in a search?",
             options: [
               "They find pages with those exact words together",
-              "They make the results shorter",
+              "They search for each word separately on different pages",
               "They hide adverts",
               "They search only videos",
             ],
@@ -1900,7 +1900,7 @@ You do not need to be fast. You need to be comfortable enough that the computer 
               "Yes, you must buy one first",
               "No, regular practice on a shared computer is enough",
               "Yes, a phone cannot help at all",
-              "No, computers are not used in tech",
+              "No, watching videos about computers is enough practice",
             ],
             answer_index: 1,
             explanation: "Many people learn on shared computers; regular practice matters most.",
@@ -1909,9 +1909,9 @@ You do not need to be fast. You need to be comfortable enough that the computer 
             prompt: "How did Napari get access to a computer?",
             options: [
               "She bought a new laptop",
-              "She asked her former school's ICT teacher to use the lab and offered to help in return",
+              "She asked her former school's ICT teacher to use the lab",
               "She used her friend's password",
-              "She waited until the cohort started",
+              "She paid a business centre to let her use a computer daily",
             ],
             answer_index: 1,
             explanation: "She asked politely and offered to help tidy the lab.",
@@ -1987,7 +1987,7 @@ If you truly cannot find access yet, keep practising the rest of this roadmap on
               "Your school's ICT lab",
               "A bus station",
               "A football pitch",
-              "A petrol station",
+              "A mobile money agent's kiosk",
             ],
             answer_index: 0,
             explanation: "Schools with ICT labs are one of the suggested places.",
@@ -1996,9 +1996,9 @@ If you truly cannot find access yet, keep practising the rest of this roadmap on
             prompt: "What makes people more likely to say yes when you ask?",
             options: [
               "Demanding access",
-              "Being clear and polite, and offering something in return",
+              "Being clear, polite and offering something in return",
               "Asking only once and never again",
-              "Asking someone else to go for you",
+              "Asking someone important to call them on your behalf",
             ],
             answer_index: 1,
             explanation: "A clear, polite request with an offer to help works best.",
@@ -2093,7 +2093,7 @@ Hawa opens a browser on a library computer. She clicks the address bar, types a 
               "Shows a menu of extra options",
               "Turns the computer off",
               "Types a capital letter",
-              "Deletes a file immediately",
+              "Deletes the selected file without asking",
             ],
             answer_index: 0,
             explanation: "A right click shows a menu of extra options, like a long press on a phone.",
@@ -2113,7 +2113,7 @@ Hawa opens a browser on a library computer. She clicks the address bar, types a 
             prompt: "What does Backspace do?",
             options: [
               "Deletes the character to the left of the cursor",
-              "Starts a new line",
+              "Deletes the character to the right of the cursor",
               "Copies text",
               "Opens a folder",
             ],
@@ -2282,7 +2282,7 @@ You do not need to choose a career today. But knowing where these skills can lea
             prompt: "According to the lesson, why do many people stop online courses early?",
             options: [
               "They are not clever enough",
-              "They finish everything in two weeks",
+              "They finish the course too quickly to remember anything",
               "Courses are always too short",
               "They try to do too much at once or study alone",
             ],
@@ -2292,9 +2292,9 @@ You do not need to choose a career today. But knowing where these skills can lea
           {
             prompt: "Which of these is an example of keeping records from the lesson?",
             options: [
-              "A shop attendant checking that MoMo payments match the sales",
+              "A shop attendant matching MoMo payments to sales",
               "Watching a film",
-              "Charging a phone",
+              "Charging customers' phones for a small fee at the shop",
               "Changing a ringtone",
             ],
             answer_index: 0,
@@ -2306,7 +2306,7 @@ You do not need to choose a career today. But knowing where these skills can lea
               "Two weeks",
               "Twelve weeks",
               "One year",
-              "Four days",
+              "Eighteen months",
             ],
             answer_index: 1,
             explanation: "The lesson says the DMP cohort runs for twelve weeks.",
@@ -2396,8 +2396,8 @@ Amina and Mariama in Tamale are both preparing to apply for the DMP cohort. They
           {
             prompt: "What should you write after reading a section?",
             options: [
-              "A copy of the lesson word for word",
-              "The main idea, one example and one question, in your own words",
+              "A copy of every sentence you highlighted in the lesson",
+              "The main idea, one example and one question",
               "Nothing, notes are not useful",
               "Only the title",
             ],
@@ -2420,7 +2420,7 @@ Amina and Mariama in Tamale are both preparing to apply for the DMP cohort. They
             options: [
               "She quit the course",
               "Her study partner sent her the missed lessons and a summary",
-              "She studied for twenty hours in one day",
+              "She studied alone through the night until she had read everything",
               "She skipped those lessons",
             ],
             answer_index: 1,
@@ -2492,8 +2492,8 @@ Accurate records build trust with employers, customers and anyone who might one 
             options: [
               "Accept it and hand over the goods",
               "Refuse to sell anything",
-              "Ask them to send another screenshot",
-              "Confirm the money arrived in the business account through the official app or menu",
+              "Ask them to send another screenshot with the transaction ID visible",
+              "Confirm the money arrived through the official app or menu",
             ],
             answer_index: 3,
             explanation: "Screenshots and SMS messages can be faked, so confirm the payment yourself.",
@@ -2515,7 +2515,7 @@ Accurate records build trust with employers, customers and anyone who might one 
               "Date, what happened, money in, money out, how",
               "Name, age, height, colour",
               "Only the total for the year",
-              "Phone model and battery level",
+              "Customer name, phone number and favourite item",
             ],
             answer_index: 0,
             explanation: "These five columns are enough for a simple, useful record.",
@@ -2605,7 +2605,7 @@ Every path above starts with the foundations in this roadmap: confident use of y
           {
             prompt: "Someone enjoys numbers, puzzles and finding patterns. Which path might suit them?",
             options: [
-              "Data",
+              "Data analysis",
               "Customer service only",
               "Driving",
               "Photography only",
@@ -2682,7 +2682,7 @@ Whatever happens with your application, the skills you built here are yours. The
             options: [
               "Four weeks",
               "Twelve weeks",
-              "Six months",
+              "Eighteen months",
               "One year",
             ],
             answer_index: 1,
@@ -2823,7 +2823,7 @@ Keep your completed checklist. It is useful evidence of your progress when you a
               "I can type very fast",
               "I have two step verification turned on for my email and WhatsApp",
               "I can build a website",
-              "I own a laptop",
+              "I own a laptop with antivirus software and all the latest updates installed",
             ],
             answer_index: 1,
             explanation: "Two step verification is one of the accounts and safety items.",
@@ -2834,7 +2834,7 @@ Keep your completed checklist. It is useful evidence of your progress when you a
               "Yes, with no mistakes allowed",
               "No, it is a way to find small gaps to fix",
               "Yes, and it is timed",
-              "No, it is not related to the DMP",
+              "No, it is only a survey for the SydCrest team to read",
             ],
             answer_index: 1,
             explanation: "The lesson says it is not an exam but a way to find gaps.",
@@ -2892,8 +2892,8 @@ Wumpini wrote: "My name is Wumpini Alhassan from Savelugu. I sell provisions and
           {
             prompt: "Where should you sign up for the DMP?",
             options: [
-              "From anyone who asks for a fee to secure a seat",
-              "The waitlist form on the Programme page of the SydCrest website",
+              "From anyone who asks for a small fee to secure your seat early",
+              "The waitlist form on the SydCrest website's Programme page",
               "In a random forwarded WhatsApp message",
               "From an unknown caller",
             ],
@@ -2906,7 +2906,7 @@ Wumpini wrote: "My name is Wumpini Alhassan from Savelugu. I sell provisions and
               "I am very hardworking",
               "I practise typing for fifteen minutes every day at the community library",
               "I am the best candidate",
-              "I will learn everything quickly",
+              "I am passionate about technology and I promise to learn everything very quickly",
             ],
             answer_index: 1,
             explanation: "Specific examples are more convincing than big promises.",
@@ -2915,8 +2915,8 @@ Wumpini wrote: "My name is Wumpini Alhassan from Savelugu. I sell provisions and
             prompt: "Which of these belongs in the four part structure for writing about yourself?",
             options: [
               "Your favourite food",
-              "What you have already done, such as progress on this roadmap",
-              "Your friends' phone numbers",
+              "What you have already done on this roadmap",
+              "The phone numbers of two friends who can vouch for you",
               "Your MoMo PIN",
             ],
             answer_index: 1,
@@ -2926,8 +2926,8 @@ Wumpini wrote: "My name is Wumpini Alhassan from Savelugu. I sell provisions and
             prompt: "What should you do if you do not get a seat this time?",
             options: [
               "Stop learning completely",
-              "Keep learning on the free roadmaps and apply again if another cohort is announced",
-              "Pay someone to get you in",
+              "Keep learning on the free roadmaps and apply again",
+              "Pay someone who says they can get you a seat next time",
               "Delete your email account",
             ],
             answer_index: 1,
