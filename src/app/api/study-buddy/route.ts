@@ -6,10 +6,17 @@ import { getMessagesUsedToday, loadNodeContext, recordTokens, reserveMessage } f
 import { buildSystemPrompt } from "@/lib/study-buddy/prompt";
 import { parseStudyBuddyRequest } from "@/lib/study-buddy/request";
 import { routeMessage } from "@/lib/study-buddy/router";
+import { createCompanionData } from "@/lib/study-buddy/tools/data";
+import { COMPANION_TOOLS } from "@/lib/study-buddy/tools/definitions";
+import { createToolRunner } from "@/lib/study-buddy/tools/run";
 
 /**
- * POST {nodeId, messages} and get the tutor's reply streamed back as plain
- * text. Signed in learners only, within DAILY_MESSAGE_LIMIT a day.
+ * POST {nodeId?, messages} and get the tutor's reply streamed back as plain
+ * text. Signed in learners only, within DAILY_MESSAGE_LIMIT a day. With a
+ * nodeId the chat is about that topic; without one it is the companion chat.
+ * Either way the model may call the read only companion tools (path and
+ * progress, mentors, opportunities, events), which read through the
+ * learner's own client, so RLS scopes them to what this learner may see.
  *
  * The cap is exact: the turn is reserved (counted) before the model is called,
  * and only reservations up to the limit go ahead, so parallel requests cannot
@@ -49,16 +56,17 @@ export async function POST(request: Request) {
   const cap = capStatus(await getMessagesUsedToday(supabase, user.id));
   if (!cap.allowed) return fail(429, "limit_reached", LIMIT_MESSAGE, { remaining: 0, limit: cap.limit });
 
-  const node = await loadNodeContext(supabase, nodeId);
-  if (!node) return fail(404, "not_found", "We could not find that topic.");
+  const node = nodeId ? await loadNodeContext(supabase, nodeId) : null;
+  if (nodeId && !node) return fail(404, "not_found", "We could not find that topic.");
 
   // The authoritative check: reserve this turn, then decide from the count it returns.
   const reserved = reservationStatus(await reserveMessage(supabase));
   if (!reserved.allowed) return fail(429, "limit_reached", LIMIT_MESSAGE, { remaining: 0, limit: reserved.limit });
 
   const route = routeMessage(latestUserMessage);
-  const params = buildRequestParams(route, buildSystemPrompt(node), messages);
-  const reply = streamReply(client, params, (usage) => recordTokens(supabase, usage));
+  const params = buildRequestParams(route, buildSystemPrompt(node), messages, COMPANION_TOOLS);
+  const runTool = createToolRunner(createCompanionData(supabase, user.id));
+  const reply = streamReply(client, params, (usage) => recordTokens(supabase, usage), runTool);
 
   return new Response(reply, {
     headers: {

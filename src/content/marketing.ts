@@ -49,12 +49,3 @@ export const SPONSOR_TIERS = [
   { name: "Silver", amount: "GHS 4,000" },
   { name: "Bronze", amount: "GHS 2,000" },
 ] as const;
-
-export const MARKETING_NAV = [
-  { href: "/roadmaps", label: "Roadmaps" },
-  { href: "/start", label: "Find your path" },
-  { href: "/about", label: "About" },
-  { href: "/programme", label: "Programme" },
-  { href: "/partners", label: "Partners" },
-  { href: "/business", label: "For business" },
-] as const;

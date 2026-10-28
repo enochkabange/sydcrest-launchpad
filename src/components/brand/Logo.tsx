@@ -100,7 +100,7 @@ export default function Logo({
   ...props
 }: { size?: number; tone?: "ink" | "inverse"; variant?: MarkVariant } & ComponentProps<"span">) {
   const inverse = tone === "inverse";
-  const text = inverse ? "text-white" : "text-content";
+  const text = inverse ? "text-on-dark" : "text-content";
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`} {...props}>
       <LogoMark size={size} variant={variant ?? (inverse ? "onDark" : "auto")} />
@@ -108,7 +108,7 @@ export default function Logo({
         className={`flex flex-col leading-[0.92] ${text}`}
         style={{ fontSize: size * 0.42 }}
       >
-        <span className="font-bold tracking-[-0.01em]">SydCrest</span>
+        <span className="font-bold tracking-[-0.01em]">SydCrest</span>{" "}
         <span className="font-light tracking-[-0.01em]">Launchpad</span>
       </span>
     </span>

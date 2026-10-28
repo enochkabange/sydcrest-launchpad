@@ -15,10 +15,6 @@ import { submitPeerReview } from "../actions";
 
 export const metadata: Metadata = { title: "Peer review", robots: { index: false } };
 
-// The app shell's nav reads usePathname() outside Suspense, which a dynamic
-// segment cannot prerender (same as /learn/[slug]/[node]).
-export const instant = false;
-
 export default function PeerReviewPage({ params }: PageProps<"/cohort/reviews/[reviewId]">) {
   return (
     <div className="flex flex-col gap-8">

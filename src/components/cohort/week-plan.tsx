@@ -68,7 +68,7 @@ export function WeekPlan({ home, selected }: { home: CohortHome; selected?: numb
               >
                 <span
                   className={`mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
-                    week_number === current ? "bg-blue-600 text-white" : "bg-surface-sunken text-content-2 ring-1 ring-line"
+                    week_number === current ? "bg-action text-action-fg" : "bg-surface-sunken text-content-2 ring-1 ring-line"
                   }`}
                 >
                   <span className="sr-only">Week </span>

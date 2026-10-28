@@ -1,10 +1,12 @@
 import Link from "@/components/ui/link";
 import { LogoMark } from "@/components/brand/Logo";
-import { CONTACT_EMAIL, MARKETING_NAV } from "@/content/marketing";
+import { CONTACT_EMAIL } from "@/content/marketing";
+import { FOOTER_NAV } from "@/lib/nav/config";
 
 const LEGAL = [
   { href: "/privacy", label: "Privacy" },
   { href: "/terms", label: "Terms" },
+  { href: "/accessibility", label: "Accessibility" },
 ] as const;
 
 export function SiteFooter() {
@@ -21,10 +23,10 @@ export function SiteFooter() {
             {CONTACT_EMAIL}
           </a>
         </div>
-        <nav aria-label="Footer" className="grid grid-cols-2 gap-x-10 gap-y-1 text-sm sm:flex sm:gap-x-12">
-          {/* Two short columns from lg instead of one tall one. */}
-          <ul className="flex flex-col lg:grid lg:grid-cols-2 lg:gap-x-12">
-            {MARKETING_NAV.map(({ href, label }) => (
+        <nav aria-label="Footer" className="flex flex-col gap-2 text-sm md:max-w-xl md:flex-1">
+          {/* Two columns on phones, three from sm: twelve links never make one tall list. */}
+          <ul className="grid grid-cols-2 gap-x-8 sm:grid-cols-3">
+            {FOOTER_NAV.map(({ href, label }) => (
               <li key={href}>
                 <Link href={href} className="flex min-h-11 items-center text-content-2 no-underline hover:text-content">
                   {label}
@@ -32,7 +34,7 @@ export function SiteFooter() {
               </li>
             ))}
           </ul>
-          <ul className="flex flex-col">
+          <ul className="flex flex-wrap gap-x-8 border-t border-line pt-2">
             {LEGAL.map(({ href, label }) => (
               <li key={href}>
                 <Link href={href} className="flex min-h-11 items-center text-content-2 no-underline hover:text-content">

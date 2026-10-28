@@ -45,7 +45,7 @@ function Scale({
                 defaultChecked={defaultValue === v}
                 className="peer sr-only"
               />
-              <span className="flex size-11 cursor-pointer items-center justify-center rounded-md border border-line-strong bg-surface text-sm font-semibold text-content transition-colors peer-checked:border-blue-600 peer-checked:bg-blue-600 peer-checked:text-white peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-blue-600 hover:bg-surface-sunken peer-checked:hover:bg-blue-700">
+              <span className="flex size-11 cursor-pointer items-center justify-center rounded-md border border-line-strong bg-surface text-sm font-semibold text-content transition-colors peer-checked:border-line-selected peer-checked:bg-action peer-checked:text-action-fg peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-ring hover:bg-surface-sunken peer-checked:hover:bg-action-hover">
                 {v}
               </span>
             </label>
@@ -131,14 +131,14 @@ export function FeedbackForm({
           ].map(([value, label]) => (
             <label
               key={value}
-              className="flex min-h-11 cursor-pointer items-center gap-2 rounded-md border border-line-strong px-4 text-sm font-semibold text-content has-checked:border-blue-600 has-checked:bg-info-bg"
+              className="flex min-h-11 cursor-pointer items-center gap-2 rounded-md border border-line-strong px-4 text-sm font-semibold text-content has-checked:border-line-selected has-checked:bg-info-bg"
             >
               <input
                 type="radio"
                 name="attend_again"
                 value={value}
                 defaultChecked={saved?.attend_again === (value === "yes")}
-                className="size-4 accent-blue-600"
+                className="size-4 accent-line-selected"
               />
               {label}
             </label>

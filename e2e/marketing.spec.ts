@@ -75,8 +75,13 @@ test("home links to sign up and every marketing page", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("link", { name: "Create a free account" })).toHaveAttribute("href", "/signup");
   const nav = page.getByRole("navigation", { name: "Site" });
-  for (const name of ["About", "Programme", "Partners", "For business"]) {
+  for (const name of ["Roadmaps", "Programme", "Experts"]) {
     await expect(nav.getByRole("link", { name })).toBeVisible();
+  }
+  // About and Partners are about SydCrest itself: the footer carries them.
+  const footer = page.getByRole("navigation", { name: "Footer" });
+  for (const name of ["About", "Partners", "Find your path", "For business"]) {
+    await expect(footer.getByRole("link", { name })).toBeVisible();
   }
 });
 

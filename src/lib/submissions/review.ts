@@ -49,7 +49,7 @@ export type UsageLogEntry = {
 export type ReviewDeps = {
   db: AdminDb;
   client: ReviewClient;
-  /** Where usage goes; defaults to one structured server log line per model call. */
+  /** Where the usage log line goes; defaults to one structured server log line per model call. Usage is also stored in ai_review_usage. */
   log?: (entry: UsageLogEntry) => void;
 };
 
@@ -155,7 +155,8 @@ function answerText(message: Anthropic.Message): string {
 /**
  * Reviews one attempt and stores it with record_ai_review. Never throws:
  * a failed review leaves the work as submitted for the mentor, and the
- * outcome says why. Usage is logged for every model call, also failed ones.
+ * outcome says why. Usage is logged and stored for every model call that
+ * answered, also failed ones.
  */
 export async function reviewSubmission(deps: ReviewDeps, sub: SubmissionToReview): Promise<ReviewOutcome> {
   const log = deps.log ?? defaultLog;
@@ -193,7 +194,7 @@ export async function reviewSubmission(deps: ReviewDeps, sub: SubmissionToReview
 
   const outcome = await interpret(deps.db, message, rubric, sub, model);
   const usage = message.usage;
-  log({
+  const entry: UsageLogEntry = {
     event: "submission_ai_review",
     submission_id: sub.id,
     attempt: sub.attempt,
@@ -204,8 +205,33 @@ export async function reviewSubmission(deps: ReviewDeps, sub: SubmissionToReview
     cache_creation_input_tokens: usage?.cache_creation_input_tokens ?? 0,
     cache_read_input_tokens: usage?.cache_read_input_tokens ?? 0,
     estimated_usd: estimateUsd(model, usage),
-  });
+  };
+  log(entry);
+  await storeUsage(deps.db, entry);
   return outcome;
+}
+
+/**
+ * Keeps the usage in ai_review_usage (service role only, admins read). A
+ * failed write never fails the review: the log line above still has it.
+ */
+async function storeUsage(db: AdminDb, entry: UsageLogEntry) {
+  try {
+    const { error } = await db.from("ai_review_usage").insert({
+      submission_id: entry.submission_id,
+      attempt: entry.attempt,
+      model: entry.model,
+      outcome: entry.outcome === "recorded" || entry.outcome === "stale" ? entry.outcome : "failed",
+      input_tokens: entry.input_tokens,
+      output_tokens: entry.output_tokens,
+      cache_creation_input_tokens: entry.cache_creation_input_tokens,
+      cache_read_input_tokens: entry.cache_read_input_tokens,
+      estimated_usd: entry.estimated_usd,
+    });
+    if (error) console.warn(`Could not store AI review usage: ${error.message}`);
+  } catch (error) {
+    console.warn(`Could not store AI review usage: ${error instanceof Error ? error.message : String(error)}`);
+  }
 }
 
 async function interpret(

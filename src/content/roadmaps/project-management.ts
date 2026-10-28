@@ -37,7 +37,6 @@ const tools4devLogframe = r(
 const tools4dev = r("tools4dev: Practical tools for development work", "https://tools4dev.org/");
 const trelloGuide = r("Trello guide", "https://trello.com/guide", "practice");
 const trelloTemplates = r("Trello templates", "https://trello.com/templates", "practice");
-const sheetsTimeline = r("Google Sheets: Timeline view", "https://support.google.com/docs/answer/12935277", "practice");
 const sheetsConditional = r("Google Sheets: Conditional formatting rules", "https://support.google.com/docs/answer/78413");
 const scrumGuide = r("The Scrum Guide", "https://scrumguides.org/scrum-guide.html");
 const peoplecert = r("PeopleCert (PRINCE2 exams)", "https://www.peoplecert.org/");
@@ -149,7 +148,7 @@ export const projectManagement: RoadmapDraft = {
         "A schedule puts tasks in order, notes which ones depend on others and sets realistic dates around holidays, market days and the rainy season. You will draw a simple Gantt chart or timeline in a spreadsheet.",
       parent: "planning",
       optional: false,
-      resources: [atlassianGantt, sheetsTimeline],
+      resources: [atlassianGantt, sheetsConditional],
     },
     {
       slug: "simple-budgets",

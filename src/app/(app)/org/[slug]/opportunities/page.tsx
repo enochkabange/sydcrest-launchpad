@@ -10,10 +10,6 @@ import { getOrgForMember } from "@/lib/organisations/queries";
 
 export const metadata: Metadata = { title: "Opportunities", robots: { index: false } };
 
-// A dynamic segment under the app shell, whose nav reads usePathname() outside
-// Suspense: allow blocking, as /learn/[slug]/[node] does, until the shell wraps it.
-export const instant = false;
-
 async function Opportunities({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const { org } = await getOrgForMember(slug);

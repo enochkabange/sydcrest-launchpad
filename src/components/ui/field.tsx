@@ -106,7 +106,7 @@ export function CheckboxField({
           type="checkbox"
           aria-invalid={error ? true : undefined}
           aria-describedby={error ? `${id}-error` : undefined}
-          className="mt-0.5 size-5 shrink-0 accent-blue-600"
+          className="mt-0.5 size-5 shrink-0 accent-line-selected"
           {...props}
         />
         <span>{children}</span>
