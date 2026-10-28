@@ -5,6 +5,7 @@ import { signIn, type AuthState } from "../actions";
 import { Button } from "@/components/ui/button";
 import { TextField } from "@/components/ui/field";
 import { Alert } from "@/components/ui/alert";
+import Link from "@/components/ui/link";
 import { NextField } from "../next-field";
 
 export function LoginForm() {
@@ -31,6 +32,12 @@ export function LoginForm() {
         error={state.errors?.password}
         required
       />
+      <Link
+        href="/forgot-password"
+        className="-mt-2 inline-flex min-h-11 items-center self-end text-sm font-semibold text-content-link hover:underline"
+      >
+        Forgot your password?
+      </Link>
       <Button type="submit" disabled={pending} className="w-full">
         {pending ? "Signing in…" : "Sign in"}
       </Button>

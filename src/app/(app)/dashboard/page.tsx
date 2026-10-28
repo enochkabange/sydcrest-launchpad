@@ -9,6 +9,8 @@ import { ReportOutcomeCard } from "@/components/outcomes/report-outcome-card";
 import { AutoGrid, MainWithRail } from "@/components/ui/layout";
 import { getPublishedRoadmaps } from "@/lib/roadmaps/public";
 import { roadmapPath } from "@/lib/roadmaps/seo";
+import { Alert } from "@/components/ui/alert";
+import { PASSWORD_CHANGED_NOTICE } from "@/lib/password-reset";
 import {
   CommunityCard,
   LeaderboardSnapshot,
@@ -17,6 +19,17 @@ import {
 } from "./rail";
 
 export const metadata: Metadata = { title: "Home" };
+
+const NOTICES: Record<string, string> = {
+  [PASSWORD_CHANGED_NOTICE]: "Your new password is saved. Use it the next time you sign in.",
+};
+
+/** A one off confirmation from the page that sent the learner here (`?notice=`). */
+async function Notice({ searchParams }: { searchParams: PageProps<"/dashboard">["searchParams"] }) {
+  const { notice } = await searchParams;
+  const message = typeof notice === "string" ? NOTICES[notice] : undefined;
+  return message ? <Alert tone="success">{message}</Alert> : null;
+}
 
 async function Greeting() {
   const profile = await getMyProfile();
@@ -182,7 +195,7 @@ async function Explore() {
  * community. Phones keep the greeting and roadmaps; the tab bar reaches the rest.
  * Every block reads the session, so each is its own Suspense island.
  */
-export default function DashboardPage() {
+export default function DashboardPage({ searchParams }: PageProps<"/dashboard">) {
   return (
     <MainWithRail
       railLabel="Your path and community"
@@ -202,6 +215,9 @@ export default function DashboardPage() {
       }
     >
       <div className="flex flex-col gap-6">
+        <Suspense fallback={null}>
+          <Notice searchParams={searchParams} />
+        </Suspense>
         <Suspense fallback={<div className="h-9 w-48 animate-skeleton rounded-md bg-surface-sunken" />}>
           <Greeting />
         </Suspense>

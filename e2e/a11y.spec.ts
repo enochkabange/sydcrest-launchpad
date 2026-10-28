@@ -81,6 +81,8 @@ test.describe("axe sweep", () => {
       "/settings",
       "/login",
       "/signup",
+      "/forgot-password",
+      "/reset-password",
     ];
     const failures: string[] = [];
     await page.goto("/");

@@ -79,9 +79,36 @@ export function parseSignUp(form: FormData, now: Date = new Date()) {
   if (!fullName) errors.full_name = "Tell us your name.";
   else if (fullName.length > 80) errors.full_name = "Keep your name under 80 characters.";
   if (!EMAIL.test(email)) errors.email = "Enter a valid email address.";
-  if (password.length < MIN_PASSWORD) errors.password = `Use at least ${MIN_PASSWORD} characters.`;
+  const weak = passwordError(password);
+  if (weak) errors.password = weak;
 
   return { data: { fullName, email, password, ...age.data }, errors };
+}
+
+/** The password rule for sign up and for setting a new one after a reset. */
+export function passwordError(password: string): string | undefined {
+  return password.length < MIN_PASSWORD ? `Use at least ${MIN_PASSWORD} characters.` : undefined;
+}
+
+/** The forgot password form: just an email address. */
+export function parseResetRequest(form: FormData) {
+  const email = text(form, "email").toLowerCase();
+  const errors: FieldErrors<"email"> = {};
+  if (!EMAIL.test(email)) errors.email = "Enter a valid email address.";
+  return { data: { email }, errors };
+}
+
+/** A new password typed twice, with the same rule as sign up. */
+export function parseNewPassword(form: FormData) {
+  const raw = (key: string) => (typeof form.get(key) === "string" ? (form.get(key) as string) : "");
+  const password = raw("password");
+  const confirm = raw("confirm_password");
+  const errors: FieldErrors<"password" | "confirm_password"> = {};
+  const weak = passwordError(password);
+  if (weak) errors.password = weak;
+  else if (!confirm) errors.confirm_password = "Type your new password again.";
+  else if (confirm !== password) errors.confirm_password = "The two passwords don't match.";
+  return { data: { password }, errors };
 }
 
 export function parseSignIn(form: FormData) {

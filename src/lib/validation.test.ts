@@ -5,7 +5,9 @@ import {
   normalizePhone,
   parseAgeAndConsent,
   parseIsoDate,
+  parseNewPassword,
   parseProfile,
+  parseResetRequest,
   parseSignIn,
   parseSignUp,
   safeNextPath,
@@ -140,6 +142,35 @@ describe("parseSignIn", () => {
   it("requires a password but does not length-check it", () => {
     expect(parseSignIn(form({ email: "a@b.co", password: "" })).errors.password).toBeDefined();
     expect(parseSignIn(form({ email: "a@b.co", password: "x" })).errors).toEqual({});
+  });
+});
+
+describe("parseResetRequest", () => {
+  it("lower cases a valid email and rejects a malformed one", () => {
+    expect(parseResetRequest(form({ email: " Mariama@Example.com " }))).toEqual({ data: { email: "mariama@example.com" }, errors: {} });
+    expect(parseResetRequest(form({ email: "mariama@" })).errors.email).toBe("Enter a valid email address.");
+    expect(parseResetRequest(new FormData()).errors.email).toBeDefined();
+  });
+});
+
+describe("parseNewPassword", () => {
+  it("accepts a password typed the same way twice", () => {
+    expect(parseNewPassword(form({ password: "Tamale-2027", confirm_password: "Tamale-2027" }))).toEqual({
+      data: { password: "Tamale-2027" },
+      errors: {},
+    });
+  });
+
+  it("applies the sign up length rule", () => {
+    const short = parseNewPassword(form({ password: "short", confirm_password: "short" }));
+    expect(short.errors.password).toBe(parseSignUp(form({ password: "short" })).errors.password);
+  });
+
+  it("asks for the second copy and refuses a mismatch", () => {
+    expect(parseNewPassword(form({ password: "Tamale-2027" })).errors.confirm_password).toBe("Type your new password again.");
+    expect(parseNewPassword(form({ password: "Tamale-2027", confirm_password: "Tamale-2028" })).errors).toEqual({
+      confirm_password: "The two passwords don't match.",
+    });
   });
 });
 
