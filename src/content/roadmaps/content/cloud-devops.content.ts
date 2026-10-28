@@ -54,20 +54,20 @@ Issahaku finished the IT support track and now looks after computers at a microf
           },
           {
             prompt: "What is the main idea behind DevOps?",
-            options: ["Developers stop testing so they can work faster", "Operations staff write all the code", "Developers and operations share responsibility and automate risky steps like testing and deployment", "Every change is copied to the server by hand"],
-            answer_index: 2,
+            options: ["Developers and operations share responsibility and automate risky steps like testing and deployment", "Operations staff write all the code", "Developers stop testing so they can work faster", "Every change is copied to the server by hand"],
+            answer_index: 0,
             explanation: "DevOps is a shared way of working that automates testing, packaging and deployment.",
           },
           {
             prompt: "When does this track say you need a laptop, desktop or browser lab?",
-            options: ["From the very first lesson", "From the Linux section onwards, for the practice tasks", "Only for the certification exam", "Never; everything is reading"],
-            answer_index: 1,
+            options: ["From the Linux section onwards, for the practice tasks", "From the very first lesson", "Only for the certification exam", "Never; everything is reading"],
+            answer_index: 0,
             explanation: "You can read every lesson on any device, but the hands on practice from the Linux section needs a computer or a free browser lab.",
           },
           {
             prompt: "What does the track promise about payment details?",
-            options: ["You must add a card before the first lesson", "A card is needed only for Linux practice", "You will never be asked to enter card details to practise", "Payment is required to unlock quizzes"],
-            answer_index: 2,
+            options: ["You must add a card before the first lesson", "You will never be asked to enter card details to practise", "A card is needed only for Linux practice", "Payment is required to unlock quizzes"],
+            answer_index: 1,
             explanation: "Every lab uses card free options, and the lessons say plainly when a provider requires a card.",
           },
         ],
@@ -128,26 +128,26 @@ Mariama finished the backend track and built an API for a Bolgatanga shea butter
         questions: [
           {
             prompt: "Why does this track send you to the IT support and backend tracks for some topics?",
-            options: ["Because those topics are not used in cloud jobs", "Because cloud work builds on Linux, networking, scripting and Git, and those tracks already teach them", "Because the cloud track has no lessons of its own", "Because certifications require it"],
-            answer_index: 1,
+            options: ["Because those topics are not used in cloud jobs", "Because certifications require it", "Because the cloud track has no lessons of its own", "Because cloud work builds on Linux, networking, scripting and Git, and those tracks already teach them"],
+            answer_index: 3,
             explanation: "The cloud is built from those foundations, so the lesson links to where SydCrest already teaches them.",
           },
           {
             prompt: "Mariama comes from the backend track. Which topic does the lesson suggest she studies before the Linux section?",
-            options: ["Graphic design", "Mobile money APIs", "Networking, such as IP addresses and DNS", "Printer repair"],
-            answer_index: 2,
+            options: ["Graphic design", "Mobile money APIs", "Printer repair", "Networking, such as IP addresses and DNS"],
+            answer_index: 3,
             explanation: "Backend learners often lack networking, so the lesson points them to the IT support networking lessons.",
           },
           {
             prompt: "Which option gives you a Linux machine inside a web page without a card?",
-            options: ["A paid virtual server", "A free browser lab such as Killercoda or GitHub Codespaces", "A USSD menu", "A spreadsheet app"],
-            answer_index: 1,
+            options: ["A free browser lab such as Killercoda or GitHub Codespaces", "A paid virtual server", "A USSD menu", "A spreadsheet app"],
+            answer_index: 0,
             explanation: "Both are named as free browser labs that do not need a card.",
           },
           {
             prompt: "What should you do if a cloud shell or lab page asks for payment details?",
-            options: ["Enter them quickly so the lab starts", "Use a friend's card", "Stop and use another option", "Leave the page open and come back later"],
-            answer_index: 2,
+            options: ["Enter them quickly so the lab starts", "Use a friend's card", "Leave the page open and come back later", "Stop and use another option"],
+            answer_index: 3,
             explanation: "The track never asks you to enter payment details for practice; stop and choose a card free option.",
           },
           {
@@ -204,26 +204,26 @@ Fuseini works on a help desk at a telco in Accra. He finished the IT support tra
         questions: [
           {
             prompt: "Which set of skills appeared again and again in the cloud and DevOps adverts described in the lesson?",
-            options: ["Video editing, photography and social media", "A cloud platform, pipelines, Docker, infrastructure as code, Linux, scripting and monitoring", "Accounting, payroll and tax filing", "Only typing speed"],
-            answer_index: 1,
+            options: ["Video editing, photography and social media", "Accounting, payroll and tax filing", "A cloud platform, pipelines, Docker, infrastructure as code, Linux, scripting and monitoring", "Only typing speed"],
+            answer_index: 2,
             explanation: "The lesson lists those skills as the ones repeated across adverts.",
           },
           {
             prompt: "What does the lesson say about experience in most cloud adverts?",
-            options: ["None of them mention experience", "They all hire school leavers with no skills", "Most ask for one or more years, and few are labelled junior", "They require ten years in every case"],
-            answer_index: 2,
+            options: ["None of them mention experience", "Most ask for one or more years, and few are labelled junior", "They all hire school leavers with no skills", "They require ten years in every case"],
+            answer_index: 1,
             explanation: "Most adverts asked for experience, so the route usually has a step before the cloud title.",
           },
           {
             prompt: "Which of these is a realistic route into a cloud role named in the lesson?",
-            options: ["Starting in cloud support, IT operations or a help desk role and growing into cloud work", "Applying only to senior roles", "Waiting until you hold five certifications", "Avoiding any IT job until a cloud job appears"],
-            answer_index: 0,
+            options: ["Waiting until you hold five certifications", "Applying only to senior roles", "Starting in cloud support, IT operations or a help desk role and growing into cloud work", "Avoiding any IT job until a cloud job appears"],
+            answer_index: 2,
             explanation: "Support and operations roles let you learn real systems and grow into cloud work.",
           },
           {
             prompt: "In the example, how did Fuseini move into cloud work?",
-            options: ["He bought a certification without practice", "He left IT completely", "He showed a portfolio project and took on monitoring work in his help desk job", "He was promoted on his first day"],
-            answer_index: 2,
+            options: ["He showed a portfolio project and took on monitoring work in his help desk job", "He left IT completely", "He bought a certification without practice", "He was promoted on his first day"],
+            answer_index: 0,
             explanation: "His project and willingness to take on cloud tasks in his existing job opened the door.",
           },
         ],
@@ -272,8 +272,8 @@ Amina runs the IT side of a small courier business in Wa. The company's tracking
         questions: [
           {
             prompt: "Why do cloud engineers work mainly through a terminal?",
-            options: ["Terminals are more colourful than websites", "Most cloud servers run Linux without a screen, so you connect over the network and type commands", "Cloud providers ban mice", "It is the only way to use a phone"],
-            answer_index: 1,
+            options: ["Terminals are more colourful than websites", "Cloud providers ban mice", "Most cloud servers run Linux without a screen, so you connect over the network and type commands", "It is the only way to use a phone"],
+            answer_index: 2,
             explanation: "Cloud servers usually have no screen, so engineers connect remotely and use commands.",
           },
           {
@@ -284,14 +284,14 @@ Amina runs the IT side of a small courier business in Wa. The company's tracking
           },
           {
             prompt: "What should you do if you only have a phone today?",
-            options: ["Skip the section completely", "Pay for a server", "Read the lessons, write the commands in a notebook and practise when you reach a computer", "Enter a card into a cloud console"],
-            answer_index: 2,
+            options: ["Read the lessons, write the commands in a notebook and practise when you reach a computer", "Pay for a server", "Skip the section completely", "Enter a card into a cloud console"],
+            answer_index: 0,
             explanation: "The lesson suggests reading and noting commands now, then practising on a computer later.",
           },
           {
             prompt: "How can you avoid wasting data in a browser lab?",
-            options: ["Plan what you will type, do the task, save notes and close the tab", "Keep the lab open all day", "Stream videos while it runs", "Open several labs at once"],
-            answer_index: 0,
+            options: ["Open several labs at once", "Keep the lab open all day", "Stream videos while it runs", "Plan what you will type, do the task, save notes and close the tab"],
+            answer_index: 3,
             explanation: "Terminal text is light; leaving labs open idle is what wastes data.",
           },
         ],
@@ -361,14 +361,14 @@ Sumaila looks after the server for a school results portal in Damongo. Parents r
         questions: [
           {
             prompt: "What does the command `pwd` show?",
-            options: ["Your password", "The folder you are currently in", "The list of running services", "The server's IP address"],
-            answer_index: 1,
+            options: ["The folder you are currently in", "Your password", "The list of running services", "The server's IP address"],
+            answer_index: 0,
             explanation: "`pwd` prints the current working directory.",
           },
           {
             prompt: "In the permission string `rwxr-x---`, what can everyone else (the last three letters) do?",
-            options: ["Read only", "Read and execute", "Nothing", "Everything"],
-            answer_index: 2,
+            options: ["Read only", "Read and execute", "Everything", "Nothing"],
+            answer_index: 3,
             explanation: "The last three characters are all dashes, so others have no permissions.",
           },
           {
@@ -379,14 +379,14 @@ Sumaila looks after the server for a school results portal in Damongo. Parents r
           },
           {
             prompt: "How should you connect to a cloud server, according to the lesson?",
-            options: ["By emailing the server", "With SSH using a private key that you keep secret", "By sharing your key in a WhatsApp group", "Through a USSD code"],
-            answer_index: 1,
+            options: ["With SSH using a private key that you keep secret", "By emailing the server", "By sharing your key in a WhatsApp group", "Through a USSD code"],
+            answer_index: 0,
             explanation: "SSH with a key is the normal way, and private keys must stay secret.",
           },
           {
             prompt: "In Sumaila's example, what caused the results portal errors?",
-            options: ["A full disk", "A broken cable", "A typing mistake in an nginx config file that stopped the web server", "Too many users"],
-            answer_index: 2,
+            options: ["A typing mistake in an nginx config file that stopped the web server", "A broken cable", "A full disk", "Too many users"],
+            answer_index: 0,
             explanation: "The service log showed a config mistake from the day before.",
           },
         ],
@@ -464,8 +464,8 @@ Hawa supports an NGO in Nalerigu that collects field surveys on tablets. Every e
           },
           {
             prompt: "What does `set -euo pipefail` do at the top of a Bash script?",
-            options: ["Deletes the script after it runs", "Makes the script stop on errors instead of carrying on silently", "Runs the script every night", "Connects to the internet"],
-            answer_index: 1,
+            options: ["Deletes the script after it runs", "Runs the script every night", "Makes the script stop on errors instead of carrying on silently", "Connects to the internet"],
+            answer_index: 2,
             explanation: "It makes failures visible by stopping the script when a command fails.",
           },
           {
@@ -476,8 +476,8 @@ Hawa supports an NGO in Nalerigu that collects field surveys on tablets. Every e
           },
           {
             prompt: "When does the lesson suggest switching from Bash to Python?",
-            options: ["Never, Bash does everything", "When the script needs real logic, works with JSON or grows long", "For every one line task", "Only on Windows"],
-            answer_index: 1,
+            options: ["Never, Bash does everything", "For every one line task", "When the script needs real logic, works with JSON or grows long", "Only on Windows"],
+            answer_index: 2,
             explanation: "Bash suits short glue jobs; Python suits more complex logic and data.",
           },
           {
@@ -547,26 +547,26 @@ When something breaks, check each hop in order: DNS, firewall, load balancer hea
           },
           {
             prompt: "Which network range holds 256 addresses?",
-            options: ["`10.0.0.0/16`", "`10.0.1.0/24`", "`10.0.0.0/8`", "Any range with a slash"],
-            answer_index: 1,
+            options: ["`10.0.0.0/16`", "Any range with a slash", "`10.0.0.0/8`", "`10.0.1.0/24`"],
+            answer_index: 3,
             explanation: "A /24 holds 256 addresses; a /16 holds far more.",
           },
           {
             prompt: "What is a safe firewall rule for SSH on port 22?",
-            options: ["Open to everyone on the internet", "Allowed only from your own address", "Allowed only from the database", "SSH does not need a rule"],
-            answer_index: 1,
+            options: ["Allowed only from your own address", "Open to everyone on the internet", "Allowed only from the database", "SSH does not need a rule"],
+            answer_index: 0,
             explanation: "SSH should be limited to the addresses that need it.",
           },
           {
             prompt: "What does a load balancer do when a server fails its health check?",
-            options: ["Shuts down every server", "Deletes the DNS record", "Stops sending that server traffic", "Sends all traffic to it"],
-            answer_index: 2,
+            options: ["Shuts down every server", "Stops sending that server traffic", "Deletes the DNS record", "Sends all traffic to it"],
+            answer_index: 1,
             explanation: "The load balancer routes around unhealthy servers so users never reach them.",
           },
           {
             prompt: "When a site stops working, what order does the lesson suggest for checking?",
-            options: ["Database, then DNS, then nothing else", "DNS, firewall, load balancer health, server, database", "Restart everything first", "Check the user's phone only"],
-            answer_index: 1,
+            options: ["Database, then DNS, then nothing else", "Check the user's phone only", "Restart everything first", "DNS, firewall, load balancer health, server, database"],
+            answer_index: 3,
             explanation: "Following the request hop by hop finds where it breaks.",
           },
         ],
@@ -614,14 +614,14 @@ Zenabu works at a fintech in Accra that runs on AWS. Her friend Alhassan works a
         questions: [
           {
             prompt: "Why does this section teach ideas before provider names?",
-            options: ["Because provider names never change", "Because AWS, Azure and Google Cloud sell the same building blocks under different names", "Because only one provider exists", "Because exams do not test ideas"],
-            answer_index: 1,
+            options: ["Because provider names never change", "Because exams do not test ideas", "Because only one provider exists", "Because AWS, Azure and Google Cloud sell the same building blocks under different names"],
+            answer_index: 3,
             explanation: "The ideas are shared, so learning them first makes switching providers mostly a matter of new names.",
           },
           {
             prompt: "Which service is AWS's object storage?",
-            options: ["EC2", "Amazon S3", "Compute Engine", "Azure Virtual Machines"],
-            answer_index: 1,
+            options: ["Amazon S3", "EC2", "Compute Engine", "Azure Virtual Machines"],
+            answer_index: 0,
             explanation: "Amazon S3 is AWS object storage; EC2 is its virtual machine service.",
           },
           {
@@ -688,20 +688,20 @@ Rashida's team builds a market price app for traders in Bolgatanga. They choose 
         questions: [
           {
             prompt: "In the harvest analogy, which service model means you bring the recipe while the caterer provides the kitchen and cooks?",
-            options: ["IaaS", "PaaS", "SaaS", "Private cloud"],
-            answer_index: 1,
+            options: ["IaaS", "Private cloud", "SaaS", "PaaS"],
+            answer_index: 3,
             explanation: "With PaaS you supply the code and the platform runs it.",
           },
           {
             prompt: "What is an availability zone?",
-            options: ["A country where cloud is legal", "A separate data centre within a region with its own power and networking", "A discount for new customers", "A type of database"],
-            answer_index: 1,
+            options: ["A separate data centre within a region with its own power and networking", "A country where cloud is legal", "A discount for new customers", "A type of database"],
+            answer_index: 0,
             explanation: "Zones inside a region are independent, so spreading across them improves resilience.",
           },
           {
             prompt: "Under the shared responsibility model, what are you always responsible for?",
-            options: ["The provider's physical buildings", "The cables between data centres", "Your data, your users and who has access", "The provider's hardware repairs"],
-            answer_index: 2,
+            options: ["The provider's physical buildings", "Your data, your users and who has access", "The cables between data centres", "The provider's hardware repairs"],
+            answer_index: 1,
             explanation: "Data and access are always the customer's responsibility.",
           },
           {
@@ -712,8 +712,8 @@ Rashida's team builds a market price app for traders in Bolgatanga. They choose 
           },
           {
             prompt: "Why might a Ghanaian bank keep core systems on site and run its app in the public cloud?",
-            options: ["Because it is a private cloud only", "It is using a hybrid cloud, mixing on site and public cloud", "Because public cloud cannot run apps", "Because SaaS requires it"],
-            answer_index: 1,
+            options: ["Because it is a private cloud only", "Because public cloud cannot run apps", "It is using a hybrid cloud, mixing on site and public cloud", "Because SaaS requires it"],
+            answer_index: 2,
             explanation: "Mixing on site systems with public cloud is a hybrid model.",
           },
         ],
@@ -773,20 +773,20 @@ The practice below needs no cloud account. If you choose to use a real account, 
         questions: [
           {
             prompt: "Which building block gives you the most control and the most responsibility for patching?",
-            options: ["A virtual machine", "A serverless function", "A SaaS email service", "Object storage"],
-            answer_index: 0,
+            options: ["Object storage", "A serverless function", "A SaaS email service", "A virtual machine"],
+            answer_index: 3,
             explanation: "With a VM you manage and patch the operating system yourself.",
           },
           {
             prompt: "What is object storage best suited for?",
-            options: ["Running a long program all day", "Storing files such as photos, backups and reports, and hosting static websites", "Acting as a firewall", "Replacing DNS"],
-            answer_index: 1,
+            options: ["Running a long program all day", "Replacing DNS", "Acting as a firewall", "Storing files such as photos, backups and reports, and hosting static websites"],
+            answer_index: 3,
             explanation: "Object storage holds files in buckets and can serve a static site.",
           },
           {
             prompt: "What does a managed database service do for you?",
-            options: ["Writes your SQL queries", "Handles backups, updates and failover while you choose the engine and size", "Makes the database public", "Removes the need for any data"],
-            answer_index: 1,
+            options: ["Writes your SQL queries", "Removes the need for any data", "Makes the database public", "Handles backups, updates and failover while you choose the engine and size"],
+            answer_index: 3,
             explanation: "The provider runs the database operations; you use it.",
           },
           {
@@ -797,8 +797,8 @@ The practice below needs no cloud account. If you choose to use a real account, 
           },
           {
             prompt: "What is a common storage mistake the lesson warns about?",
-            options: ["Using private subnets", "Making backups", "Leaving a bucket open to the public by accident", "Naming buckets clearly"],
-            answer_index: 2,
+            options: ["Using private subnets", "Leaving a bucket open to the public by accident", "Making backups", "Naming buckets clearly"],
+            answer_index: 1,
             explanation: "Buckets should be private unless you deliberately host public files.",
           },
         ],
@@ -867,32 +867,32 @@ Mahama joins a logistics startup in Kumasi and finds that every developer signs 
         questions: [
           {
             prompt: "What does least privilege mean?",
-            options: ["Everyone shares one admin account", "Each identity gets only the permissions it needs, for only as long as it needs them", "Only managers can sign in", "Permissions are never reviewed"],
-            answer_index: 1,
+            options: ["Everyone shares one admin account", "Only managers can sign in", "Each identity gets only the permissions it needs, for only as long as it needs them", "Permissions are never reviewed"],
+            answer_index: 2,
             explanation: "Least privilege limits damage if any identity is misused.",
           },
           {
             prompt: "What should you do with the root account after creating a cloud account?",
-            options: ["Share it with the whole team", "Protect it with a strong password and MFA, then stop using it day to day", "Delete it immediately", "Put its password in the code"],
-            answer_index: 1,
+            options: ["Share it with the whole team", "Put its password in the code", "Delete it immediately", "Protect it with a strong password and MFA, then stop using it day to day"],
+            answer_index: 3,
             explanation: "Root can do everything, so lock it down and use separate identities.",
           },
           {
             prompt: "How should a server get permission to read from a bucket?",
-            options: ["With the root password stored on the server", "With a key pasted into the code", "By using a role", "By making the bucket public"],
-            answer_index: 2,
+            options: ["With the root password stored on the server", "With a key pasted into the code", "By making the bucket public", "By using a role"],
+            answer_index: 3,
             explanation: "Roles give temporary credentials without storing secrets on the machine.",
           },
           {
             prompt: "In the example policy, which resource can the program read?",
-            options: ["Every bucket in the account", "Objects in the `school-reports` bucket only", "The billing page", "All databases"],
-            answer_index: 1,
+            options: ["Objects in the `school-reports` bucket only", "Every bucket in the account", "The billing page", "All databases"],
+            answer_index: 0,
             explanation: "The resource line limits access to that one bucket.",
           },
           {
             prompt: "What should you do first if an access key leaks?",
-            options: ["Wait to see if anyone uses it", "Disable it immediately, then investigate", "Post about it publicly", "Create another key and keep both"],
-            answer_index: 1,
+            options: ["Wait to see if anyone uses it", "Post about it publicly", "Disable it immediately, then investigate", "Create another key and keep both"],
+            answer_index: 2,
             explanation: "Disabling the key stops misuse; investigation comes next.",
           },
         ],
@@ -948,20 +948,20 @@ Iddrisu, a developer in Tamale, practised on a paid account years ago, launched 
         questions: [
           {
             prompt: "What is the first rule for learners in this lesson?",
-            options: ["Use the biggest server to learn faster", "Practise in ways that cannot bill you", "Always add a card before starting", "Share one account with friends"],
-            answer_index: 1,
+            options: ["Practise in ways that cannot bill you", "Use the biggest server to learn faster", "Always add a card before starting", "Share one account with friends"],
+            answer_index: 0,
             explanation: "The lesson's first rule is to practise without any risk of a bill.",
           },
           {
             prompt: "Which offer described in the lesson needs a school email address instead of a card?",
-            options: ["Google Cloud's free trial", "Azure's standard free account", "Azure for Students", "A paid AWS plan"],
-            answer_index: 2,
+            options: ["Google Cloud's free trial", "Azure for Students", "Azure's standard free account", "A paid AWS plan"],
+            answer_index: 1,
             explanation: "Azure for Students uses an academic email rather than a card.",
           },
           {
             prompt: "Why is stopping a VM not enough to stop all charges?",
-            options: ["Stopped VMs bill more than running ones", "Its disk and snapshots still bill while it is stopped", "The provider restarts it automatically", "Stopping deletes your data"],
-            answer_index: 1,
+            options: ["Stopped VMs bill more than running ones", "Stopping deletes your data", "The provider restarts it automatically", "Its disk and snapshots still bill while it is stopped"],
+            answer_index: 3,
             explanation: "Storage keeps billing, so delete the VM, disks and snapshots.",
           },
           {
@@ -1026,8 +1026,8 @@ A small Accra agency released its clients' websites by copying files over FTP. O
         questions: [
           {
             prompt: "What problem does this section aim to solve?",
-            options: ["Developers writing too little code", "Releasing software by hand, which is slow and error prone", "Phones having too little storage", "Cloud providers changing their logos"],
-            answer_index: 1,
+            options: ["Developers writing too little code", "Phones having too little storage", "Releasing software by hand, which is slow and error prone", "Cloud providers changing their logos"],
+            answer_index: 2,
             explanation: "DevOps automates testing, packaging and delivery so releases are safe and repeatable.",
           },
           {
@@ -1038,18 +1038,1123 @@ A small Accra agency released its clients' websites by copying files over FTP. O
           },
           {
             prompt: "How did Napari's team recover if a new version misbehaved?",
-            options: ["They rewrote the app from scratch", "They redeployed the previous image in minutes", "They waited for users to stop complaining", "They switched cloud providers"],
-            answer_index: 1,
+            options: ["They rewrote the app from scratch", "They switched cloud providers", "They waited for users to stop complaining", "They redeployed the previous image in minutes"],
+            answer_index: 3,
             explanation: "Tagged images make rolling back to the previous version quick.",
           },
           {
             prompt: "What does the lesson say the goal of DevOps releases should be?",
-            options: ["Exciting and rare", "Boring: small changes, tested automatically, delivered the same way every time", "Done only by the most senior engineer", "Done once a year"],
-            answer_index: 1,
+            options: ["Exciting and rare", "Done once a year", "Done only by the most senior engineer", "Boring: small changes, tested automatically, delivered the same way every time"],
+            answer_index: 3,
             explanation: "Boring, repeatable releases let teams ship fixes more often and safely.",
           },
         ],
         pass_threshold: 75,
+      },
+    },
+    "git-for-teams": {
+      explanation_md: `## Why it matters
+
+In a DevOps team, Git is not just where code is saved. It is the starting switch for everything: a push starts the tests, a merge starts a deployment, a tag starts a release. Adverts name Git, GitHub and GitLab because a team's Git habits decide whether its pipelines are calm or chaotic. If Git is new, finish [Git and GitHub](/roadmaps/backend-developer/git-and-github) in the backend track first.
+
+## Branches and pull requests
+
+Nobody works directly on the main branch. You make a short lived branch, commit small changes and open a **pull request** (GitLab calls it a merge request) asking to merge into main:
+
+\`\`\`bash
+git switch -c fix/receipt-total
+git add receipt.js
+git commit -m "Fix rounding in receipt total"
+git push -u origin fix/receipt-total
+\`\`\`
+
+On GitHub you then open the pull request, describe what changed and why, and ask a teammate to review.
+
+## Code review
+
+A reviewer reads the change, asks questions and suggests improvements. Good reviews are kind and specific: "This loop runs once per customer; could we fetch them in one query?" rather than "this is bad". Reviews catch bugs, spread knowledge and stop any one person being the only one who understands a system.
+
+## Protecting main
+
+Teams turn on **branch protection** so nobody can push straight to main. A pull request can only merge when the pipeline's checks pass and at least one reviewer approves. This one setting turns good intentions into a rule.
+
+## Keeping branches short
+
+Long running branches drift away from main and end in painful merge conflicts. Many teams merge small changes at least daily. If a feature is not ready for users, it can be merged but hidden behind a setting until it is.
+
+## Merge conflicts
+
+When two people change the same lines, Git asks you to choose. Open the file, find the markers \`<<<<<<<\`, \`=======\` and \`>>>>>>>\`, keep the right code, delete the markers, then commit. Pull from main often and conflicts stay small.
+
+## Tags and versions
+
+A **tag** marks a commit as a release:
+
+\`\`\`bash
+git tag v1.4.0
+git push origin v1.4.0
+\`\`\`
+
+Many teams use semantic versioning: MAJOR.MINOR.PATCH. Bump PATCH for a bug fix, MINOR for a new feature that does not break anything, MAJOR for a breaking change. Pipelines often deploy to production only when a version tag is pushed.
+
+## Keep secrets out
+
+Add a \`.gitignore\` file listing files Git must never track, such as \`.env\`. Once a password is pushed, assume it is leaked even if you delete it later, because Git history keeps it. Rotate it.
+
+## A small example
+
+Napari and Sumaila share a repository for a clinic appointment app in Wa. Before, both pushed to main and overwrote each other. Now each works on a branch, main is protected, and every pull request needs green tests and one approval. When a release goes out, they tag it, so they always know which version patients are using.`,
+      practice_task_md: `**Goal:** run a real team workflow, even on your own.
+
+1. Use the GitHub Pages repository from the core services lesson, or create a new public repository.
+2. Turn on branch protection for main (Settings, then Branches or Rules) so changes need a pull request.
+3. On a new branch, change the price list in \`index.html\`, push it and open a pull request with a clear description.
+4. Ask a friend or mentor to review it. If nobody is available, leave a review comment on your own pull request explaining what you checked.
+5. Merge it, then create and push a tag \`v1.0.0\`.
+6. Add a \`.gitignore\` containing \`.env\`.
+
+**Done looks like:** a merged pull request with a description, a protected main branch and a \`v1.0.0\` tag you can link to.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does Git matter so much in DevOps?",
+            options: ["It replaces the cloud", "It makes code run faster", "It is only used for backups", "Git events such as pushes, merges and tags start tests, deployments and releases"],
+            answer_index: 3,
+            explanation: "Pipelines are triggered by Git events, so Git habits shape the whole delivery process.",
+          },
+          {
+            prompt: "What does branch protection on main do?",
+            options: ["Deletes old branches", "Stops direct pushes so changes merge only through pull requests that pass checks and review", "Makes the repository private", "Speeds up downloads"],
+            answer_index: 1,
+            explanation: "Branch protection makes reviews and passing checks a rule, not just a habit.",
+          },
+          {
+            prompt: "Under semantic versioning, what should change for a bug fix?",
+            options: ["The MAJOR number", "The PATCH number", "The MINOR number", "Nothing"],
+            answer_index: 1,
+            explanation: "PATCH is bumped for bug fixes that do not add features or break anything.",
+          },
+          {
+            prompt: "What should you assume if a password was pushed to Git, even if you deleted it later?",
+            options: ["It is safe because it was deleted", "GitHub removes it automatically", "Only you can see it", "It is leaked, because Git history keeps it, so rotate it"],
+            answer_index: 3,
+            explanation: "Git history keeps old versions, so pushed secrets must be treated as exposed.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "ci-cd-pipelines": {
+      explanation_md: `## Why it matters
+
+Continuous integration and delivery (CI/CD) appears in more Ghanaian DevOps adverts than any skill except the cloud itself, under tool names such as GitHub Actions, GitLab CI, Jenkins and Azure DevOps. A pipeline is a robot teammate that checks every change the same way, every time, and never gets tired at 11 at night.
+
+## The idea
+
+* **Continuous integration (CI):** every push is automatically built and tested, so mistakes are caught within minutes, while the change is fresh in the author's mind.
+* **Continuous delivery:** every change that passes is packaged and ready to release with one approval.
+* **Continuous deployment:** every passing change goes to users automatically, with no human step.
+
+Most teams start with CI, then add delivery to a test environment, and only later deploy to production automatically.
+
+## Parts of a pipeline
+
+* **Trigger:** what starts it, such as a push or pull request.
+* **Runner:** the machine that runs the work, usually a fresh Linux VM.
+* **Jobs and steps:** the commands, such as install, test, build.
+* **Artifacts:** the outputs, such as a container image or a zip file.
+* **Secrets:** passwords and tokens the pipeline needs, stored in the platform's secret store and never in the code.
+
+## A first GitHub Actions workflow
+
+Save this as \`.github/workflows/ci.yml\` in a repository:
+
+\`\`\`yaml
+name: CI
+on: [push, pull_request]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Page has a price list
+        run: grep -q "Price list" index.html
+\`\`\`
+
+On every push or pull request, GitHub starts a fresh Ubuntu runner, checks out the code and runs the test command. \`grep -q\` exits with an error if the text is missing, which turns the check red. In a real project the \`run\` line would be your test command, such as \`npm test\` or \`pytest\`. Look up the current version of \`actions/checkout\` in GitHub's documentation when you build yours.
+
+GitHub Actions is free for public repositories on standard runners, so you can practise without a card.
+
+## Delivery and deployment
+
+After the tests, a later job might build a container image, push it to a registry and deploy it. Deploy jobs need credentials, which live in the repository's secrets, not in the YAML file. Many teams deploy first to a staging environment, check it, then promote the same build to production.
+
+## Good pipeline habits
+
+* Keep it fast. A slow pipeline gets ignored.
+* Fail loudly: a red check should block the merge.
+* Build once, deploy the same artifact everywhere.
+* Treat the pipeline file as code: review changes to it.
+
+## A small example
+
+Wumpini maintains a stock app for a pharmacy chain with branches in Tamale and Yendi. A colleague changed a price calculation and accidentally broke the discount for NHIS patients. The CI tests failed on the pull request within two minutes, the merge was blocked and the bug never reached a pharmacy counter.`,
+      practice_task_md: `**Goal:** build a pipeline and watch it catch a broken change.
+
+1. In your public GitHub Pages repository, create \`.github/workflows/ci.yml\` with the workflow from the lesson. Make sure \`index.html\` contains the words "Price list".
+2. Push it and open the Actions tab. Wait for a green tick.
+3. On a branch, remove "Price list" from the page, push and open a pull request. Watch the check go red.
+4. Put the words back, push again and watch it turn green. Merge.
+5. Add a second step of your own, for example checking that the page contains a phone number.
+
+**Done looks like:** a repository with a working workflow and a pull request history showing one red run and one green run. This is a portfolio piece: link it in your notes.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is continuous integration?",
+            options: ["Copying files to the server by hand", "Releasing software once a year", "Automatically building and testing every push so mistakes are caught within minutes", "Writing code without Git"],
+            answer_index: 2,
+            explanation: "CI checks every change automatically while it is fresh.",
+          },
+          {
+            prompt: "What is the difference between continuous delivery and continuous deployment?",
+            options: ["There is no difference", "Deployment only works on Windows", "Delivery skips tests", "Delivery keeps passing changes ready to release with one approval; deployment releases them automatically"],
+            answer_index: 3,
+            explanation: "Continuous deployment removes the final human approval step.",
+          },
+          {
+            prompt: "In the example workflow, what makes the check turn red?",
+            options: ["The repository being public", "Pushing to a branch", "Using ubuntu-latest", "`grep -q` failing because \"Price list\" is missing from the page"],
+            answer_index: 3,
+            explanation: "grep exits with an error when the text is missing, which fails the step.",
+          },
+          {
+            prompt: "Where should a pipeline's deploy credentials be stored?",
+            options: ["In the YAML file", "In the README", "In a commit message", "In the platform's secret store, not in the code"],
+            answer_index: 3,
+            explanation: "Secrets stay out of code and are injected by the platform at run time.",
+          },
+          {
+            prompt: "In Wumpini's example, what stopped the broken discount reaching customers?",
+            options: ["CI tests failing on the pull request and blocking the merge", "A manual check a week later", "A customer complaint", "Turning off the server"],
+            answer_index: 0,
+            explanation: "The failing tests blocked the change before it was merged.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "containers": {
+      explanation_md: `## Why it matters
+
+"It works on my machine" is one of the oldest problems in software. A container solves it by packaging an app with everything it needs: the runtime, libraries and settings. The same container runs on a developer's laptop, in the pipeline and on a cloud server. Docker appears in most Ghanaian DevOps adverts we read, and containers are the input to Kubernetes later in this track.
+
+## Images and containers
+
+* An **image** is a read only package: a recipe already cooked and frozen.
+* A **container** is a running copy of an image. You can run many containers from one image.
+* A **registry** stores images so others can download them. Docker Hub and the cloud providers' registries are examples.
+
+Containers are lighter than virtual machines because they share the host's Linux kernel instead of each running a full operating system.
+
+## A first Dockerfile
+
+This packages a static site with the nginx web server:
+
+\`\`\`dockerfile
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/index.html
+EXPOSE 80
+\`\`\`
+
+\`FROM\` picks a base image, \`COPY\` adds your file and \`EXPOSE\` documents the port the app listens on.
+
+## Build, run, check, clean up
+
+\`\`\`bash
+docker build -t shop-site:1.0 .
+docker run -d -p 8080:80 --name shop shop-site:1.0
+curl localhost:8080
+docker logs shop
+docker stop shop && docker rm shop
+\`\`\`
+
+\`-t\` names and tags the image. \`-p 8080:80\` connects port 8080 on the host to port 80 in the container. \`-d\` runs it in the background. Always stop and remove containers you no longer need.
+
+## Good habits
+
+* **Pin versions** of base images in real projects (for example a specific nginx version) so builds do not change by surprise.
+* **Keep images small:** start from slim or alpine bases and copy only what you need.
+* **Never bake secrets into images.** Pass them as environment variables at run time.
+* **One main process per container.** Run the database in its own container, not inside the app's.
+* **Use a \`.dockerignore\`** to keep files such as \`.env\` and \`.git\` out of the image.
+
+For apps with several parts, Docker Compose describes them in one file so \`docker compose up\` starts them all together.
+
+## Where to practise
+
+Docker needs a Linux machine with enough memory. Use a laptop or desktop with Docker installed, or a free browser lab such as the Killercoda Ubuntu playground or a GitHub codespace. In a browser lab, image downloads happen on the lab's connection, not your data bundle. If \`docker --version\` fails in your lab, install it first (on Ubuntu, \`apt install -y docker.io\`).
+
+## A small example
+
+Fuseini's team builds a delivery tracking API in Kumasi. One developer used one version of Node.js, another used a different one, and the server had a third. Bugs appeared only in production. They wrote a Dockerfile, built one image in the pipeline and ran that exact image everywhere. The "only in production" bugs stopped.`,
+      practice_task_md: `**Goal:** containerise your shop page in a free lab.
+
+1. Open the Killercoda Ubuntu playground or a GitHub codespace. Run \`docker --version\`; if it fails on Ubuntu, run \`apt install -y docker.io\`.
+2. Create a folder with your \`index.html\` from earlier (paste it in with \`nano\`) and the Dockerfile from the lesson.
+3. Build the image, run it on port 8080 and use \`curl localhost:8080\` to see your page.
+4. Change the page, rebuild as \`shop-site:1.1\`, run it and confirm the change.
+5. Add a \`.dockerignore\` containing \`.env\` and \`.git\`.
+6. Stop and remove your containers, then close the lab or stop the codespace.
+7. Commit the Dockerfile and \`.dockerignore\` to your GitHub repository.
+
+**Done looks like:** a Dockerfile in your repository and notes showing the build, run and cleanup commands you used.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What problem do containers solve?",
+            options: ["Slow mobile networks", "Apps behaving differently on different machines, by packaging the app with everything it needs", "Expensive phones", "Missing DNS records"],
+            answer_index: 1,
+            explanation: "Containers make an app run the same everywhere.",
+          },
+          {
+            prompt: "What is the difference between an image and a container?",
+            options: ["An image is a read only package; a container is a running copy of it", "They are exactly the same", "A container is stored in a registry and an image runs", "Images only work on Windows"],
+            answer_index: 0,
+            explanation: "You build an image once and run containers from it.",
+          },
+          {
+            prompt: "In `docker run -p 8080:80`, what does `8080:80` mean?",
+            options: ["Run 8080 containers", "Connect port 8080 on the host to port 80 in the container", "Use 80 percent of memory", "Wait 8080 seconds"],
+            answer_index: 1,
+            explanation: "The flag maps a host port to a container port.",
+          },
+          {
+            prompt: "How should secrets reach a container?",
+            options: ["Passed as environment variables at run time", "Written in the Dockerfile", "Copied into the image during build", "Included in the image name"],
+            answer_index: 0,
+            explanation: "Secrets baked into images can be read by anyone who gets the image.",
+          },
+          {
+            prompt: "Why are containers lighter than virtual machines?",
+            options: ["They have no files", "They share the host's Linux kernel instead of each running a full operating system", "They only run at night", "They cannot use the network"],
+            answer_index: 1,
+            explanation: "Sharing the kernel avoids the weight of a full operating system per container.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "running-at-scale": {
+      explanation_md: `## Why this section matters
+
+Getting an app online once is a good start. Keeping it online for thousands of customers, rebuilding it after a disaster and knowing it is broken before customers call is the harder part, and it is where DevOps and cloud engineers earn trust. Ghanaian adverts for DevOps roles list Terraform, Kubernetes, Prometheus, Grafana and disaster recovery alongside the cloud and containers.
+
+## What this section covers
+
+* **Infrastructure as code.** Describing servers, networks and databases in files that can be reviewed, versioned, rebuilt and deleted with a command. Terraform is a common example.
+* **Kubernetes basics (optional).** Running many containers across many machines, restarting them when they fail and scaling them up when traffic grows. It appears mostly in mid level adverts, so it is optional here, but knowing the main ideas helps in interviews.
+* **Monitoring, logs and alerts.** Collecting numbers and logs, building dashboards and setting alerts that wake the right person for the right reason.
+* **Backups, security and incidents.** Tested backups, patching, secrets management and a calm process when something goes wrong.
+
+## The common thread: repeatable and observable
+
+Each topic answers one of two questions:
+
+1. **Can we rebuild it?** If a server dies, a region has an outage or someone deletes something by mistake, can you recreate everything quickly and exactly? Infrastructure as code, containers and tested backups make the answer yes.
+2. **Can we see it?** Do you know right now whether the app is healthy, how fast it is and what failed last night? Monitoring, logs and alerts make the answer yes.
+
+Kubernetes combines both: you describe what should be running, and it keeps reality matching that description.
+
+## How to practise without spending
+
+This section is where cloud bills usually surprise people, because real clusters and load balancers cost money while they run. You will not need any of them:
+
+* Terraform can manage files and resources on your own lab machine, so you learn the full plan, apply and destroy cycle with no cloud account.
+* Kubernetes runs free in the Killercoda Kubernetes playground, which is deleted after an hour.
+* Monitoring can be practised with scripts and free tools in a browser lab.
+
+Never leave anything running when you finish a session.
+
+## A small example
+
+A fintech in Accra had one engineer who knew how the servers were set up, all from memory. When she went on leave and a server failed, nobody could rebuild it for a day. Afterwards the team wrote their infrastructure as code, added monitoring with alerts and practised restoring backups every quarter. The next failure took twenty minutes to fix, and anyone on the team could do it.`,
+      practice_task_md: `**Goal:** check how repeatable and observable a system is.
+
+1. Choose a system you know: your shop page project, a school or church website, or a business app you use.
+2. Answer in writing: if it disappeared today, what would you need to rebuild it, and how long would it take?
+3. Answer: how would you know if it went down at 2 in the morning?
+4. List one change for each answer that would make it better, for example "keep the server setup in a file in Git" or "add an uptime check".
+
+**Done looks like:** a short note answering both questions with one improvement each. You will make those improvements in the next lessons.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What two questions does this section say each topic answers?",
+            options: ["How much does it cost and who made it", "Is it fast and is it pretty", "Can we rebuild it, and can we see it", "Which provider and which country"],
+            answer_index: 2,
+            explanation: "The section is about being repeatable and observable.",
+          },
+          {
+            prompt: "Why is Kubernetes optional in this track?",
+            options: ["It is no longer used", "It requires a certification", "It only runs on phones", "It appears mostly in mid level adverts, though the main ideas help in interviews"],
+            answer_index: 3,
+            explanation: "Kubernetes is common in mid and senior roles, so beginners learn the ideas first.",
+          },
+          {
+            prompt: "How does the lesson suggest you practise Kubernetes without spending money?",
+            options: ["Rent a large cluster and delete it next month", "Skip practice completely", "Borrow a company's production cluster", "Use the free Killercoda Kubernetes playground, which is deleted after an hour"],
+            answer_index: 3,
+            explanation: "Free browser labs give you a real cluster with no cost and no card.",
+          },
+          {
+            prompt: "In the fintech example, what made the first failure take a day to fix?",
+            options: ["Only one engineer knew the setup, and it was kept in her memory", "The internet was slow", "The provider was closed", "The app had too many users"],
+            answer_index: 0,
+            explanation: "Without written, repeatable setup, nobody else could rebuild the server.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "infrastructure-as-code": {
+      explanation_md: `## Why it matters
+
+Clicking through a cloud console is fine for learning, but at work it causes problems: nobody remembers exactly what was clicked, test and production drift apart, and rebuilding after a disaster is guesswork. **Infrastructure as code** (IaC) means describing servers, networks and databases in text files kept in Git. Ghanaian DevOps adverts name Terraform and AWS CloudFormation often, and telco and bank cloud roles list IaC directly.
+
+## How it works
+
+You write what you want, not the clicks to get there. The tool compares your files with what exists and makes only the changes needed. Because the files live in Git, every change is reviewed in a pull request, and you can rebuild the whole setup from scratch.
+
+Common tools:
+
+* **Terraform** (and its open source fork **OpenTofu**) works with AWS, Azure, Google Cloud and many other services.
+* **AWS CloudFormation**, **Azure Bicep** and Google's tools work with their own clouds.
+* **Ansible** is often used next to them for configuration management: installing and configuring software on servers that already exist.
+
+## The Terraform cycle
+
+Terraform uses four main commands:
+
+\`\`\`bash
+terraform init      # download providers
+terraform plan      # preview changes
+terraform apply     # make the changes
+terraform destroy   # delete everything
+\`\`\`
+
+Always read the **plan** before applying. It lists what will be created, changed or destroyed.
+
+## A first example with no cloud account
+
+The \`local\` provider manages files on your own machine, so you can learn the full cycle at no cost:
+
+\`\`\`hcl
+terraform {
+  required_providers {
+    local = { source = "hashicorp/local" }
+  }
+}
+
+resource "local_file" "menu" {
+  filename = "\${path.module}/menu.txt"
+  content  = "Waakye\\nTZ with ayoyo\\n"
+}
+\`\`\`
+
+Run \`init\`, \`plan\` and \`apply\`, and \`menu.txt\` appears. Change the content and run \`plan\` again: Terraform shows exactly one change. Run \`destroy\` and the file is gone. Cloud resources such as a VM or a bucket work exactly the same way, with a different provider and resource type.
+
+## State
+
+Terraform records what it created in a **state file**. On a team, state is stored remotely (for example in a bucket) and locked so two people cannot change things at once. State can contain secrets, so never commit it to Git; add \`*.tfstate\` to \`.gitignore\`.
+
+## Why IaC saves money while learning
+
+Once a practice setup is code, \`terraform destroy\` removes every piece of it, including the forgotten disks and IP addresses that keep billing. On any real account, destroy at the end of every session.
+
+## A small example
+
+Azara's team runs a payroll app for schools across the Northern Region. Test and production were set up by hand months apart and behaved differently. She wrote both in Terraform with the same files and different settings. Now a change is reviewed in a pull request, planned, applied to test, then applied to production, and the two environments stay identical.`,
+      practice_task_md: `**Goal:** run the full Terraform cycle with no cloud account.
+
+1. Open a GitHub codespace or the Killercoda Ubuntu playground. Install Terraform by following the Linux steps on HashiCorp's official install page, or install OpenTofu (\`tofu\` instead of \`terraform\`). Check with \`terraform version\`.
+2. Create \`main.tf\` with the menu example from the lesson.
+3. Run \`terraform init\`, \`terraform plan\` and \`terraform apply\`. Open \`menu.txt\`.
+4. Add a line to the menu, run \`plan\` and note what Terraform says will change. Apply it.
+5. Add a second \`local_file\` resource for a price list. Apply.
+6. Run \`terraform destroy\` and confirm both files are gone. Close the lab.
+7. Commit \`main.tf\` and a \`.gitignore\` with \`*.tfstate*\` and \`.terraform/\` to a GitHub repository.
+
+**Done looks like:** a repository with your Terraform file and notes showing the plan output before and after your change.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is infrastructure as code?",
+            options: ["Writing apps that run on servers", "Describing servers, networks and databases in text files kept in Git, so they can be reviewed and rebuilt", "Clicking through a console carefully", "A type of programming language for phones"],
+            answer_index: 1,
+            explanation: "IaC replaces manual clicks with files that are versioned and repeatable.",
+          },
+          {
+            prompt: "Which Terraform command previews changes without making them?",
+            options: ["`terraform apply`", "`terraform init`", "`terraform destroy`", "`terraform plan`"],
+            answer_index: 3,
+            explanation: "Plan shows what would be created, changed or destroyed.",
+          },
+          {
+            prompt: "Why should the Terraform state file never be committed to Git?",
+            options: ["It is too small", "It can contain secrets", "Git cannot store text files", "It deletes itself"],
+            answer_index: 1,
+            explanation: "State can hold sensitive values, so it is kept out of Git and stored remotely on teams.",
+          },
+          {
+            prompt: "What is Ansible often used for next to Terraform?",
+            options: ["Paying cloud bills", "Designing logos", "Replacing DNS", "Configuration management: installing and configuring software on existing servers"],
+            answer_index: 3,
+            explanation: "The lesson describes Ansible as configuration management.",
+          },
+          {
+            prompt: "How does infrastructure as code help control costs while learning?",
+            options: ["It gives free credit", "`terraform destroy` removes every piece of a practice setup, including forgotten extras", "It makes servers run faster", "It hides the bill"],
+            answer_index: 1,
+            explanation: "Destroying from code removes resources you might forget to delete by hand.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "kubernetes-basics": {
+      explanation_md: `## Why it matters
+
+When a company runs dozens of containers across many servers, someone has to decide where each runs, restart them when they crash and add more when traffic spikes on salary day. Kubernetes does that. It appears in many Ghanaian DevOps adverts, mostly at mid and senior level, which is why this lesson is optional. Knowing the main ideas still helps you in interviews and in reading a team's setup on day one.
+
+## The core idea: desired state
+
+You tell Kubernetes what you want ("three copies of the web app, always") and it works continuously to make reality match. If a container crashes or a server dies, Kubernetes notices the difference and starts a replacement. You describe; it maintains.
+
+## The main pieces
+
+* **Cluster:** a group of machines run by Kubernetes.
+* **Control plane:** the brain that stores desired state and makes decisions.
+* **Nodes:** the worker machines that run your containers.
+* **Pod:** the smallest unit, one or more containers that run together.
+* **Deployment:** says which image to run and how many pods to keep.
+* **Service:** a stable address that sends traffic to the right pods, even as pods come and go.
+
+## A small manifest
+
+Kubernetes is configured with YAML files called manifests:
+
+\`\`\`yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web
+spec:
+  replicas: 3
+  selector:
+    matchLabels: {app: web}
+  template:
+    metadata:
+      labels: {app: web}
+    spec:
+      containers:
+        - name: web
+          image: nginx:alpine
+\`\`\`
+
+Apply it with \`kubectl apply -f web.yaml\`.
+
+## Everyday kubectl
+
+\`\`\`bash
+kubectl get pods
+kubectl describe pod <name>
+kubectl logs <name>
+kubectl scale deployment web --replicas=5
+kubectl delete pod <name>
+\`\`\`
+
+Delete a pod and run \`kubectl get pods\` again: a new one appears, because the deployment still wants three.
+
+## Managed Kubernetes and cost
+
+Cloud providers run the control plane for you: Amazon EKS, Azure Kubernetes Service and Google Kubernetes Engine. They are paid services, and clusters cost money every hour they exist. Do not create one to practise. Free browser labs give you a real cluster with no card.
+
+## When not to use Kubernetes
+
+Kubernetes is powerful but complex. A small app with a few users is often better on a single VM, a platform service or serverless. Choosing the simpler option is a sign of good judgement, not a lack of skill.
+
+## A small example
+
+Alhassan's team at a ride hailing startup in Accra runs its booking service on Kubernetes. On a Friday evening a bug made one pod crash repeatedly. Kubernetes kept restarting it and routing traffic to the healthy pods, so riders barely noticed. On Monday, Alhassan used \`kubectl logs\` to find the bug.`,
+      practice_task_md: `**Goal:** see desired state in action in a free lab.
+
+1. Open the Killercoda Kubernetes playground (free account, no card; it is deleted after an hour).
+2. Save the manifest from the lesson as \`web.yaml\` and run \`kubectl apply -f web.yaml\`.
+3. Run \`kubectl get pods\` and confirm three pods are running.
+4. Delete one pod and run \`kubectl get pods\` again. Note what happened.
+5. Scale to five replicas, then back to two.
+6. Run \`kubectl expose deployment web --port=80\` and \`kubectl get services\` to see the stable address.
+7. Copy your commands and observations into your notes before the lab expires, then close the tab.
+
+**Done looks like:** notes showing a deleted pod being replaced and the deployment scaled up and down, in your own words.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does desired state mean in Kubernetes?",
+            options: ["The state the server was bought in", "You describe what should run, and Kubernetes continuously makes reality match it", "A list of your favourite apps", "The final version of your code"],
+            answer_index: 1,
+            explanation: "Kubernetes compares what you asked for with what is running and fixes the difference.",
+          },
+          {
+            prompt: "What is a Kubernetes Service for?",
+            options: ["Billing customers", "Storing container images", "Giving a stable address that sends traffic to the right pods as they come and go", "Writing manifests"],
+            answer_index: 2,
+            explanation: "Pods change, so a Service provides a stable way to reach them.",
+          },
+          {
+            prompt: "What happens when you delete one pod managed by a deployment that wants three?",
+            options: ["Kubernetes starts a new pod to get back to three", "The app stops forever", "All pods are deleted", "The cluster shuts down"],
+            answer_index: 0,
+            explanation: "The deployment restores the desired number of pods.",
+          },
+          {
+            prompt: "Why does the lesson say not to create a managed Kubernetes cluster to practise?",
+            options: ["They do not work", "They are only for banks", "They are paid services that cost money every hour they exist; free browser labs are enough", "They need a special phone"],
+            answer_index: 2,
+            explanation: "Managed clusters bill by the hour, while free labs give a real cluster without a card.",
+          },
+          {
+            prompt: "When might Kubernetes be the wrong choice?",
+            options: ["For a large service with many containers", "When you use containers", "When you need self healing", "For a small app with a few users, where a VM, platform service or serverless is simpler"],
+            answer_index: 3,
+            explanation: "Simpler options often suit small apps better.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "monitoring-and-logging": {
+      explanation_md: `## Why it matters
+
+The worst way to learn your service is down is from an angry customer on social media. Good teams know first, and know why. Monitoring and logging appear across Ghanaian cloud and DevOps adverts, with tools such as Prometheus, Grafana, the ELK stack, Amazon CloudWatch and Azure Monitor. If you deployed an API in the backend track's [deploy and monitor](/roadmaps/backend-developer/deploy-and-monitor) lesson, this goes deeper.
+
+## Three kinds of signal
+
+* **Metrics** are numbers over time: requests per minute, error rate, response time, CPU and disk use. Cheap to store and great for dashboards and alerts.
+* **Logs** are text records of events: "payment 4821 failed: timeout". Great for finding out why something happened.
+* **Traces** follow one request through several services, showing where the time went.
+
+## What to watch: four signals
+
+For any service that users reach, start with four signals:
+
+1. **Latency:** how long requests take.
+2. **Traffic:** how many requests arrive.
+3. **Errors:** how many fail.
+4. **Saturation:** how full the resources are, such as CPU, memory or disk.
+
+A sudden rise in errors or latency usually means users are suffering, whatever the cause.
+
+## Tools you will meet
+
+* **Prometheus** collects metrics by regularly asking each service for its numbers, and stores them.
+* **Grafana** draws dashboards from Prometheus and many other sources.
+* **ELK** (Elasticsearch, Logstash, Kibana) and similar stacks collect and search logs.
+* Each cloud has its own: CloudWatch on AWS, Azure Monitor, and Google Cloud's operations tools.
+* **Uptime checks** request your site from outside every minute or so and alert you if it fails.
+
+## Measuring with a script
+
+You can measure response time with nothing but \`curl\`:
+
+\`\`\`bash
+curl -o /dev/null -s \\
+  -w "%{http_code} %{time_total}\\n" \\
+  https://example.com
+\`\`\`
+
+It prints the status code and the time in seconds. Run it in a loop and you have a tiny monitor.
+
+## Alerts that people trust
+
+An alert should mean a human must act now. Alert on symptoms users feel (errors, slowness, site down), not on every small cause. Send each alert to the person on call, with a link to the dashboard and a short note on what to check first. Too many noisy alerts teach people to ignore them, which is how real outages get missed.
+
+## Reliability targets
+
+Teams agree on a target, such as "99.9 percent of requests succeed each month". This is called a service level objective (SLO). It turns arguments about "good enough" into a number the team can watch on a dashboard.
+
+## Logging habits
+
+Log useful facts (time, request ID, what failed) in a consistent format. Never log passwords, full card numbers, PINs or other personal data. Ghana's Data Protection Act applies to logs too.
+
+## A small example
+
+Hawa looks after a hospital appointment system in Tamale. She set up an uptime check and an error rate alert. One night the alert fired: errors jumped because the database disk was full. She cleared old logs and added disk space before the morning clinic opened. Patients never knew.`,
+      practice_task_md: `**Goal:** build a tiny monitor and design real alerts.
+
+1. In the Killercoda Ubuntu playground or a codespace, write \`monitor.sh\` that runs the \`curl\` command from the lesson against a site of your choice 10 times, 30 seconds apart (use a \`for\` loop and \`sleep 30\`), appending each result with the time (\`date +%T\`) to \`results.txt\`.
+2. Run it and look at the results. Write down the slowest time and any non 200 codes.
+3. Use \`awk '{ s += $3 } END { print s/NR }' results.txt\` to get the average time (adjust the column number to match your file).
+4. On paper, design three alerts for a MoMo merchant API: what triggers each, who receives it and what they check first.
+5. Save \`monitor.sh\` to GitHub and close the lab. Do not leave the script running.
+
+**Done looks like:** a working script, a results file summary and three written alerts.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the difference between metrics and logs?",
+            options: ["Metrics are numbers over time; logs are text records of individual events", "There is no difference", "Logs are only for security teams", "Metrics are stored on paper"],
+            answer_index: 0,
+            explanation: "Metrics suit dashboards and alerts; logs explain what happened.",
+          },
+          {
+            prompt: "Which of these is one of the four signals the lesson suggests watching?",
+            options: ["Number of staff", "Logo colour", "Office temperature", "Errors"],
+            answer_index: 3,
+            explanation: "Latency, traffic, errors and saturation are the four signals.",
+          },
+          {
+            prompt: "What should an alert mean, according to the lesson?",
+            options: ["Something small changed somewhere", "A weekly report is ready", "A human must act now", "The dashboard was opened"],
+            answer_index: 2,
+            explanation: "Alerts that do not need action create noise and get ignored.",
+          },
+          {
+            prompt: "What does the curl command in the lesson print?",
+            options: ["The status code and the total time taken", "The website's HTML only", "The server's password", "The number of users online"],
+            answer_index: 0,
+            explanation: "The `-w` format prints the status code and time in seconds.",
+          },
+          {
+            prompt: "Which of these should never appear in logs?",
+            options: ["The time of the request", "A request ID", "Which step failed", "Passwords and PINs"],
+            answer_index: 3,
+            explanation: "Logs must never contain secrets or sensitive personal data.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "reliability-and-security": {
+      explanation_md: `## Why it matters
+
+Things will break: disks fail, someone deletes the wrong folder, a dependency has a security hole, a region has an outage. Employers trust engineers who plan for failure and stay calm when it comes. Ghanaian infrastructure adverts name disaster recovery, backups and security standards, and banks and telcos treat them as essential. This builds on [backups](/roadmaps/it-support/backups) and [security basics](/roadmaps/it-support/security-basics) from IT support and [security](/roadmaps/backend-developer/security) from backend.
+
+## Backups you have actually tested
+
+A backup you have never restored is a hope, not a backup. The three copies rule still applies in the cloud: keep at least three copies of important data, on two kinds of storage, with one copy somewhere else, such as another region or account. Then restore regularly into a test environment and check the data is complete.
+
+Two questions shape a backup plan:
+
+* **Recovery point objective (RPO):** how much recent data can we afford to lose? If backups run nightly, up to a day.
+* **Recovery time objective (RTO):** how long can we be down while restoring?
+
+A bank's payments system needs both close to zero; a school newsletter can accept much more.
+
+## Designing for failure
+
+Run important services in more than one availability zone, behind a load balancer with health checks. Keep infrastructure as code so you can rebuild in another region. Avoid single points of failure, including people: document how things work.
+
+## Patching and hardening
+
+Most attacks use known holes that already have fixes. Apply operating system and dependency updates on a schedule, rebuild container images regularly so they pick up fixes, close every port you do not need and turn off password login for SSH in favour of keys.
+
+## Secrets management
+
+Passwords, API keys and database credentials belong in a secrets manager, such as AWS Secrets Manager, Azure Key Vault or Google Secret Manager, or the pipeline's secret store. Never in code, images or chat messages. Encrypt data in transit (HTTPS) and at rest (the storage encryption most cloud services offer).
+
+## When something breaks: incident response
+
+1. **Detect:** an alert or report arrives.
+2. **Respond:** one person leads; others help. Communicate early to affected users and managers, even if you do not know the cause yet.
+3. **Mitigate:** restore service first, for example by rolling back to the last good version. Investigate later.
+4. **Resolve and review:** once stable, write a short review: what happened, the timeline, the cause, and actions to prevent it. Keep it **blameless**: focus on how the system allowed the mistake, not on punishing a person, so people report problems honestly.
+
+## A small example
+
+Issahaku's team ran a microfinance loan app. A developer ran a cleanup script against the wrong database and deleted a day of loan records. Because Issahaku had tested restores monthly, he knew the steps by heart and restored the latest backup within an hour. The blameless review led to two changes: production access now needs a second person's approval, and the script asks for confirmation before deleting anything.`,
+      practice_task_md: `**Goal:** run a backup and restore drill and write an incident review.
+
+1. In the Killercoda Ubuntu playground or a codespace, create a folder \`loans\` with a few text files of invented records.
+2. Back it up with \`tar -czf loans-backup.tar.gz loans\` and record a checksum with \`sha256sum loans-backup.tar.gz > backup.sha256\`.
+3. Delete the folder with \`rm -r loans\`. (This is your "accident".)
+4. Check the backup with \`sha256sum -c backup.sha256\`, then restore it with \`tar -xzf loans-backup.tar.gz\` and confirm the files are back.
+5. Write a one page blameless incident review for the accident: summary, timeline, cause, how it was fixed, and two actions to prevent it.
+6. Close the lab.
+
+**Done looks like:** notes from a successful restore drill and a written incident review you could show an interviewer.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson call an untested backup \"a hope, not a backup\"?",
+            options: ["Backups never work", "Backups are illegal", "Until you restore it, you do not know whether the data is complete and usable", "Testing deletes backups"],
+            answer_index: 2,
+            explanation: "Only a successful restore proves a backup works.",
+          },
+          {
+            prompt: "What does recovery point objective (RPO) describe?",
+            options: ["The cost of storage", "How fast the server's CPU is", "The number of users", "How much recent data you can afford to lose"],
+            answer_index: 3,
+            explanation: "RPO is about acceptable data loss; RTO is about acceptable downtime.",
+          },
+          {
+            prompt: "Where should API keys and database passwords be stored?",
+            options: ["In the code, so they are easy to find", "In a secrets manager or the pipeline's secret store", "In the container image", "In a team chat"],
+            answer_index: 1,
+            explanation: "Secrets managers keep credentials out of code, images and messages.",
+          },
+          {
+            prompt: "During an incident, what should the team do first?",
+            options: ["Find someone to blame", "Wait for the problem to fix itself", "Rewrite the whole app", "Restore service, for example by rolling back, and investigate later"],
+            answer_index: 3,
+            explanation: "Mitigation comes first; the investigation follows once users are served again.",
+          },
+          {
+            prompt: "Why should incident reviews be blameless?",
+            options: ["So nobody needs to write anything", "So people report problems honestly and the team fixes how the system allowed the mistake", "Because mistakes never happen", "To hide incidents from managers"],
+            answer_index: 1,
+            explanation: "Blameless reviews focus on improving systems and encourage honesty.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "getting-hired": {
+      explanation_md: `## Why this section matters
+
+Cloud and DevOps employers are trusting you with the systems that hold their customers' money and data. They want evidence that you can build something, run it and fix it, not just a list of courses watched. This section turns everything you have practised into that evidence and points you towards realistic first steps.
+
+## What employers look for
+
+From the Ghanaian and remote adverts we read, three kinds of proof stand out:
+
+* **Hands on experience:** something you built and ran, with a pipeline, containers, infrastructure as code and monitoring. Experience can come from a job, an internship, national service or a serious personal project.
+* **A recognised baseline:** some adverts ask for a cloud certification or a degree. A fundamentals certification is a common first one.
+* **Clear communication:** documentation, incident write ups and the ability to explain a technical choice to a manager. Adverts mention documentation and teamwork alongside the technical skills.
+
+## What this section covers
+
+* **Cloud certifications.** What the entry level exams test, how to prepare for free, and why a certificate supports hands on work rather than replacing it.
+* **A cloud portfolio project.** One small app taken end to end, documented clearly and torn down so it costs nothing.
+* **Finding your first cloud role.** The job titles to search for, routes in through support, operations and development roles, and how to talk about your work in interviews.
+
+## Your evidence so far
+
+If you have done the practice tasks, you already have pieces of a portfolio:
+
+* A GitHub repository with a protected main branch, a pull request history and version tags.
+* A working CI workflow that caught a broken change.
+* A Dockerfile and a Terraform file.
+* Scripts for backups and monitoring.
+* Network diagrams, an incident review and your teardown checklist.
+
+The next lessons pull these together into one story.
+
+## A word on patience
+
+Moving into cloud work often takes more than one step. Many engineers start in IT support, operations or development and take on cloud tasks until the title catches up. That is a normal path, not a failure. Keep building, keep writing up what you learn and keep applying.
+
+## A small example
+
+Mariama had finished several free courses but got no interviews. A mentor asked to see something she had built. She had nothing to show. Over six weeks she built one small project with a pipeline, a container, Terraform and a clear README, and wrote a short post about a bug her pipeline caught. Her next application led to an interview, and the interviewer spent most of it asking about that project.`,
+      practice_task_md: `**Goal:** gather your evidence in one place.
+
+1. Make a list of every practice output you have from this track: repositories, workflows, scripts, diagrams and written notes.
+2. For each, write one sentence on what it shows an employer, for example "shows I can build a CI pipeline that blocks broken changes".
+3. Mark any gaps: things adverts ask for that you cannot yet show.
+4. Pin your best two or three repositories on your GitHub profile.
+
+**Done looks like:** an evidence list with one line per item and a short gaps list. You will fill the gaps in the portfolio lesson.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What do cloud employers most want to see, according to the lesson?",
+            options: ["A long list of courses watched", "Expensive equipment", "A large social media following", "Evidence that you can build something, run it and fix it"],
+            answer_index: 3,
+            explanation: "Hands on evidence matters more than course lists.",
+          },
+          {
+            prompt: "Which of these is listed as a kind of proof employers look for?",
+            options: ["Typing speed certificates", "Owning a cloud company", "Clear communication, such as documentation and incident write ups", "Knowing every provider's prices"],
+            answer_index: 2,
+            explanation: "Communication skills appear in adverts alongside technical skills.",
+          },
+          {
+            prompt: "What does the lesson say about taking more than one step to reach a cloud role?",
+            options: ["It means you have failed", "It is a normal path, often through support, operations or development", "It is impossible", "It only happens outside Ghana"],
+            answer_index: 1,
+            explanation: "Many engineers grow into cloud work from related roles.",
+          },
+          {
+            prompt: "What changed Mariama's results?",
+            options: ["Watching more courses", "Applying only to senior roles", "Paying for a premium account", "Building one documented project and writing about a bug her pipeline caught"],
+            answer_index: 3,
+            explanation: "A real project gave interviewers something concrete to discuss.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "cloud-certifications": {
+      explanation_md: `## Why it matters
+
+Some Ghanaian cloud adverts ask for a cloud certification, and recruiters use them to filter applications. A fundamentals certification also gives your learning a clear structure and a deadline. But a certificate without hands on practice is easy to spot in an interview. Treat the exam as a milestone on top of real work, never a replacement for it.
+
+## The entry level exams
+
+Each major provider has one. These names were checked on the official pages in October 2026; check them again before you book, because exams are updated and retired.
+
+* **Microsoft Certified: Azure Fundamentals** (exam **AZ-900**). Tests cloud concepts, Azure architecture and services, and Azure management and governance. Microsoft Learn offers free learning paths and a free practice assessment for it.
+* **AWS Certified Cloud Practitioner** (exam CLF-C02). Aimed at people new to the cloud; AWS says some exposure to AWS helps but is not required. AWS Skill Builder has free preparation courses. The certification is valid for three years.
+* **Google Cloud Cloud Digital Leader.** No prerequisites; focuses on cloud basics and how Google Cloud services help organisations. Valid for three years.
+
+All three overlap heavily with what you learned in the cloud fundamentals section of this track.
+
+## What comes after
+
+Associate level certifications go deeper and expect hands on skill. Examples are **AWS Certified Solutions Architect Associate** and **Microsoft Certified: Azure Administrator Associate** (exam AZ-104). Aim for these after you have built real projects or started a cloud related job.
+
+## Preparing for free
+
+1. Download the official exam guide or study guide. It lists every topic tested.
+2. Work through the provider's free official training.
+3. Map each topic to a lesson or practice task in this track and fill gaps.
+4. Take the official free practice questions or assessment where offered.
+5. Explain each topic aloud, as if to a friend. If you cannot, study it again.
+
+## Money and honesty
+
+Exams have a fee that depends on your country; the official page shows it when you register. Some training programmes and employers offer free vouchers, so ask before paying. Never buy "exam dumps" (leaked real questions). They break the providers' rules, can get your certification cancelled and teach you nothing useful for the job.
+
+## Which one first?
+
+Pick the provider that appears most in adverts you want. If you are unsure, any fundamentals exam teaches the shared ideas. One certificate plus a strong project is better than three certificates and nothing to show.
+
+## A small example
+
+Sumaila noticed that the bank adverts he read in Accra mentioned Azure. He used the free Microsoft Learn paths and practice assessment over six weeks, mapping each topic to his own lab notes. In his interview he talked about his CI pipeline and his Terraform project, and mentioned the AZ-900 at the end as proof he knew the vocabulary. The project got the attention; the certificate got him past the filter.`,
+      practice_task_md: `**Goal:** build a free study plan for one fundamentals exam.
+
+1. Choose one exam from the lesson based on adverts you have read.
+2. Open its official exam page and study guide (text pages, little data). Copy the main topic areas into your notes, in your own words.
+3. Next to each topic, write the lesson in this track that covers it and mark your confidence: strong, okay or weak.
+4. Write a six week plan that spends most time on weak topics, using only free official training.
+5. If the provider offers a free practice assessment, schedule a date to take it.
+
+**Done looks like:** a topic map with confidence marks and a dated six week study plan.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "How should you treat a fundamentals certification, according to the lesson?",
+            options: ["As a replacement for hands on work", "As something to avoid", "As a milestone on top of real practice", "As the only thing employers check"],
+            answer_index: 2,
+            explanation: "Certificates support hands on evidence; they do not replace it.",
+          },
+          {
+            prompt: "What is the exam code for Microsoft Certified: Azure Fundamentals?",
+            options: ["AZ-900", "AZ-104", "CLF-C02", "It has no exam code"],
+            answer_index: 0,
+            explanation: "AZ-900 is the Azure Fundamentals exam; AZ-104 is Azure Administrator.",
+          },
+          {
+            prompt: "Which certification is described as having no prerequisites and focusing on Google Cloud basics?",
+            options: ["AWS Certified Solutions Architect Associate", "Microsoft Certified: Azure Administrator Associate", "Cloud Digital Leader", "AWS Certified Cloud Practitioner"],
+            answer_index: 2,
+            explanation: "Cloud Digital Leader is Google Cloud's entry level certification.",
+          },
+          {
+            prompt: "Why should you never use exam dumps?",
+            options: ["They are too expensive", "They make the exam harder", "They are only in French", "They break the providers' rules, can get your certification cancelled and teach nothing useful"],
+            answer_index: 3,
+            explanation: "Dumps are leaked questions and violate exam rules.",
+          },
+          {
+            prompt: "What is the first step in the free preparation plan?",
+            options: ["Book the exam immediately", "Download the official exam guide or study guide", "Buy a paid course", "Memorise practice answers"],
+            answer_index: 1,
+            explanation: "The official guide lists every topic tested, so it shapes your plan.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "cloud-portfolio": {
+      explanation_md: `## Why it matters
+
+A single well documented project that you built, ran and tore down says more to an employer than a list of certificates. It gives interviewers something real to ask about, and it gives you real stories to tell. This lesson brings every part of the track together into one portfolio project.
+
+## The project
+
+Build one small app end to end. Keep the app itself simple so your effort goes into the infrastructure: a static page for a local business (a Tamale tailor, a Bolgatanga basket weaving cooperative, a Wa pharmacy), or a small API from the backend track if you have one.
+
+Your project should include:
+
+1. **Git:** a public repository with a protected main branch, pull requests and version tags.
+2. **CI:** a GitHub Actions workflow that tests every change and blocks broken ones.
+3. **Container:** a Dockerfile, built by the pipeline.
+4. **Infrastructure as code:** Terraform or OpenTofu files. Using the \`local\` provider is fine; if you have a cloud account that cannot bill you, you may describe a real resource, as long as you destroy it.
+5. **Monitoring:** your health check script, or an uptime check, with an alert you have designed.
+6. **Safety:** secrets kept out of code, a \`.gitignore\` and a \`.dockerignore\`.
+7. **Documentation:** a README that explains it all.
+
+## Hosting for free
+
+GitHub Pages hosts static sites at no cost and needs no card, and your CI workflow can check the page before every change goes live. If you use any other hosting service, read its free tier page first; if it asks for card details, choose another option.
+
+## The README is half the project
+
+Write it for a busy hiring manager:
+
+* **What it is:** one paragraph.
+* **Architecture diagram:** a simple drawing of the parts and how a request flows, made with a free diagram tool or drawn neatly and photographed.
+* **How to run it:** the exact commands.
+* **How it is deployed:** what the pipeline does, step by step.
+* **Costs and teardown:** what it would cost to run for real, how you kept it free and how to delete everything (for example \`terraform destroy\`).
+* **What I would improve:** two or three honest next steps, such as multiple availability zones or a proper monitoring stack.
+* **What I learned:** one problem you hit and how you solved it.
+
+## Tear it down
+
+When you have finished and recorded screenshots or a short screen recording, delete anything that could cost money or keep running: cloud resources, codespaces and lab sessions. The code and README stay on GitHub forever; the infrastructure can be rebuilt with one command. Being able to say "I tore it down and can rebuild it in five minutes" is itself impressive.
+
+## A small example
+
+Abdul-Rahman built a page for his aunt's shea butter business in Bolgatanga. His repository showed a pipeline that checked the page and built a container, Terraform files, a monitor script and a README with a hand drawn diagram. In an interview at a software firm in Accra, he spent twenty minutes explaining how his pipeline caught a broken price list. He was offered an internship.`,
+      practice_task_md: `**Goal:** build and document your portfolio project.
+
+1. Choose your app: a business page or a small API. Create a new public repository.
+2. Work through the seven parts in the lesson, one per session, committing as you go through pull requests.
+3. Draw the architecture diagram and add it to the README.
+4. Write the README using every heading in the lesson.
+5. Ask a mentor or friend to follow your "how to run it" steps. Fix anything that confuses them.
+6. Tear down anything running: stop codespaces, close labs and destroy any cloud resources. Write in the README how you did it.
+
+**Done looks like:** a public repository with all seven parts, a green CI badge or run history, a README with a diagram, and nothing left running anywhere.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why should the app itself be simple in your portfolio project?",
+            options: ["So your effort goes into the infrastructure: Git, CI, containers, IaC and monitoring", "Employers dislike complex apps", "Simple apps are free and complex ones are not", "Because GitHub only accepts small apps"],
+            answer_index: 0,
+            explanation: "The project is meant to show cloud and DevOps skills, not app features.",
+          },
+          {
+            prompt: "Which of these belongs in the README according to the lesson?",
+            options: ["Your password for the cloud account", "A copy of a job advert", "An architecture diagram and a costs and teardown section", "Nothing; code speaks for itself"],
+            answer_index: 2,
+            explanation: "The README explains the project, including how it stays free and how to delete it.",
+          },
+          {
+            prompt: "What should you do if a hosting service asks for card details?",
+            options: ["Enter them because it is free", "Choose another option, such as GitHub Pages", "Use a friend's card", "Skip hosting entirely and delete the project"],
+            answer_index: 1,
+            explanation: "The track never asks you to enter card details; free options without cards exist.",
+          },
+          {
+            prompt: "What does the lesson say about tearing the project down?",
+            options: ["You should leave it running to show employers", "Delete anything that could cost money or keep running; the code and README stay and you can rebuild it", "Delete the GitHub repository too", "Tearing down is only for paid accounts"],
+            answer_index: 1,
+            explanation: "Infrastructure as code lets you rebuild, so nothing needs to keep running.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "first-cloud-role": {
+      explanation_md: `## Why it matters
+
+Knowing the skills is one thing; getting the first job is another. Cloud and DevOps titles often ask for experience, so your first role may have a different name. This lesson helps you search smartly, present your work well and use the role you have now as a route in.
+
+## Titles to search for
+
+Search for more than "cloud engineer":
+
+* Cloud support engineer or associate
+* Junior DevOps engineer or DevOps intern
+* IT infrastructure or systems administrator
+* IT operations engineer or NOC (network operations centre) analyst
+* Site reliability engineering intern
+* Technical support engineer at a software or cloud company
+
+Banks, telcos, fintechs, software companies, consultancies and managed service providers in Accra, Kumasi and Takoradi all hire for these roles. Remote boards that welcome Africa based applicants list cloud support and junior DevOps roles too.
+
+## Routes in
+
+* **Internships and national service.** Ask IT, infrastructure and software teams directly whether they take national service personnel or interns, and say what you can already do.
+* **Free training cohorts.** Some employers and training partners run free cloud training with placement support. Check the organisation's own website before applying, never pay to apply for a "free" programme and be wary of anyone promising guaranteed jobs.
+* **Inside your current job.** If you work in IT support or as a developer, volunteer for the deployment, monitoring or cloud tasks. Document what you do. Many engineers move into DevOps this way.
+* **Freelance and community work.** Set up a pipeline or hosting for a church, school or NGO, with permission and without taking on costs they cannot afford.
+
+## Your CV and profile
+
+* Lead with projects, not course lists: "Built a CI pipeline that tests and containerises a site on every change".
+* Name the tools you have actually used.
+* Link your GitHub and your portfolio README.
+* Keep it to one or two pages, readable on a phone screen.
+
+## Interview preparation
+
+Practise answering these aloud:
+
+* What happens when you type a website address and press enter?
+* A site is down. Walk me through how you would find out why.
+* What is least privilege, and how have you applied it?
+* Explain your portfolio project and one problem you solved.
+* How do you keep cloud costs under control?
+
+When you do not know an answer, say how you would find out. Interviewers value honest reasoning.
+
+## Keep going
+
+Join a local tech community or meetup, share short write ups of what you learn, and keep a list of applications with dates and follow ups. Each interview, even an unsuccessful one, shows you what to learn next.
+
+## A small example
+
+Amina applied for six cloud engineer roles without success. She widened her search, applied for a NOC analyst role at a telco, and got it. She used her portfolio to show her monitoring skills, volunteered to help the cloud team with their dashboards and wrote up everything she did. Eighteen months later she moved onto that cloud team.`,
+      practice_task_md: `**Goal:** start a focused, realistic job search.
+
+1. Search two job boards or company career pages for three of the titles in the lesson. Save five adverts that fit your current skills or are one step above.
+2. Rewrite the top of your CV so it leads with your portfolio project in one or two sentences, and name only tools you have used.
+3. Write your answers to the five interview questions in the lesson, then say them aloud, timing each at about two minutes.
+4. Start an application tracker (a spreadsheet or notes app) with columns: organisation, role, link, date applied, status, follow up date.
+5. If you are in an IT or developer job now, write one cloud related task you could volunteer for this month.
+
+**Done looks like:** five saved adverts, an updated CV top section, written interview answers and a tracker with at least one application.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why does the lesson suggest searching for more titles than \"cloud engineer\"?",
+            options: ["Your first role may have a different name, such as cloud support or IT operations", "Cloud engineer roles do not exist in Ghana", "Other titles pay more", "Recruiters prefer unclear titles"],
+            answer_index: 0,
+            explanation: "Related roles are realistic first steps into cloud work.",
+          },
+          {
+            prompt: "What should you do before applying to a free cloud training cohort?",
+            options: ["Pay the application fee quickly", "Check the organisation's own website, and never pay to apply for a \"free\" programme", "Share your bank details", "Trust any promise of a guaranteed job"],
+            answer_index: 1,
+            explanation: "Verifying the source and refusing to pay protects you from scams.",
+          },
+          {
+            prompt: "How should your CV present your skills?",
+            options: ["As a long list of every course watched", "Leading with projects and naming tools you have actually used", "With as many tool names as possible, used or not", "Without any links"],
+            answer_index: 1,
+            explanation: "Projects and honest tool lists make a stronger CV.",
+          },
+          {
+            prompt: "What should you do in an interview when you do not know an answer?",
+            options: ["Make something up confidently", "Stay silent", "Change the subject", "Explain how you would find out"],
+            answer_index: 3,
+            explanation: "Interviewers value honest reasoning about how you would solve the problem.",
+          },
+          {
+            prompt: "How did Amina move onto a cloud team?",
+            options: ["She was hired as a senior engineer straight away", "She bought several certifications", "She took a NOC analyst role, helped the cloud team and documented her work", "She stopped applying"],
+            answer_index: 2,
+            explanation: "A related role plus volunteering for cloud tasks became her route in.",
+          },
+        ],
+        pass_threshold: 80,
       },
     },
   },

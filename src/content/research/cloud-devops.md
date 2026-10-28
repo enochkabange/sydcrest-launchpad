@@ -219,3 +219,12 @@ charge) and now leads with practising without card details.
   learners experience.
 * `cloud-devops-jobs` and `first-cloud-role`: decide whether to name specific free cloud
   programmes once an official page is verified.
+* `cloud-costs` and `cloud-fundamentals`: the lessons say AWS lets most new customers open a
+  Free account plan without a payment method (AWS FAQ, 28 October 2026). Worth one real sign up
+  test from Ghana to confirm AWS does not ask Ghanaian learners for a card; if it does, the
+  lessons already say to stop, but the wording could then lead with the browser labs only.
+* `what-you-need-first`: Google Cloud Shell is named as an example with a "stop if asked for
+  payment details" line, because its pages do not say whether a billing account is needed.
+* Certification names and codes in `cloud-certifications` (AZ-900, CLF-C02, AZ-104, Cloud
+  Digital Leader) were read on the official pages on 28 October 2026; recheck before publishing
+  if much time passes.
