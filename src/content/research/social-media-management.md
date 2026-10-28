@@ -258,4 +258,4 @@ TikTok LIVE follower threshold, any loss figures or counts from CSA reports.
    only as an example of ad labelling.
 4. `account-security` and `moderation` quote the CSA reporting numbers (292, WhatsApp
    0501603111); confirm they are still current before release.
-5. `content-pillars` lists Northern festivals (Damba, Bugum, Kakube, Kobine) as examples. Reviewer checked placement 2026-10-28: Damba (Dagbon and neighbouring states, visitghana.com), Bugum fire festival (Dagbon; the Ya-Na suspended Tamale celebrations in July 2025, GNA), Kakube (Nandom Traditional Area, Ghanaian Times, Graphic), Kobine (Lawra Traditional Area, GNA).
+5. `content-pillars` lists Northern festivals (Damba, Kakube, Kobine) as examples. Bugum (Fire Festival) was removed on the lead's decision (28 October 2026) because the Ya-Na suspended Tamale celebrations in July 2025 (GNA). Reviewer checked placement 2026-10-28: Damba (Dagbon and neighbouring states, visitghana.com), Kakube (Nandom Traditional Area, Ghanaian Times, Graphic), Kobine (Lawra Traditional Area, GNA).

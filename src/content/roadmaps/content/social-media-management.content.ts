@@ -898,7 +898,7 @@ If every post sells, followers tune out. If no post sells, the page entertains b
 Make a grid. Pillars go across the top; weeks go down the side. Fill each square with an idea. Then mark the moments that matter to your client's customers:
 
 * Religious and national days: Eid al Fitr, Eid al Adha, Christmas, Easter, Independence Day, Farmers' Day.
-* Local festivals: Damba in Dagbon, Fire Festival (Bugum), Kakube in Nandom, Kobine in Lawra and others near you.
+* Local festivals: Damba in Dagbon, Kakube in Nandom, Kobine in Lawra and others near you.
 * School calendar: reopening, exams, vacation.
 * Seasons and life: harmattan, rainy season, market days, month end when salaries arrive.
 
