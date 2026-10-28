@@ -45,6 +45,8 @@ export const contentCreation: RoadmapDraft = {
     "Tell stories with your phone: plan, shoot, edit and publish short videos, photos and YouTube content for yourself, local businesses and brands. Learn with free apps and little data, and build a portfolio that clients can see.",
   track: "content-creation",
   field_category: "marketing",
+  level: "beginner",
+  leads_to: ["social-media-management", "freelancing"],
   locale: "en-GH",
   status: "draft",
   nodes: [

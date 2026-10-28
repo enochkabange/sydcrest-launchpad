@@ -42,6 +42,8 @@ export const softwareTesting: RoadmapDraft = {
     "Find the bugs before customers do by testing websites and mobile apps, starting with manual testing you can practise on a phone or a computer. We found only a handful of testing openings in Ghana, mostly in Accra, so this track also prepares you for remote work and for moving into automation or development.",
   track: "software-testing",
   field_category: "software",
+  level: "beginner",
+  leads_to: ["cybersecurity"],
   locale: "en-GH",
   status: "draft",
   nodes: [

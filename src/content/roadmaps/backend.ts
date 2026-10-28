@@ -8,6 +8,8 @@ export const backend: RoadmapDraft = {
     "Build the servers, databases and APIs behind apps, including the payment and messaging integrations Ghanaian products rely on. Go from your first script to deployed services you can show an employer.",
   track: "backend",
   field_category: "software",
+  level: "beginner",
+  leads_to: ["cloud-devops", "mobile-app-developer", "software-testing"],
   locale: "en-GH",
   status: "draft",
   nodes: [

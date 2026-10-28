@@ -47,6 +47,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
     "Go deeper in one area of digital marketing after the foundations: search engine optimisation and content, social media advertising and video, or Google search ads. Each specialisation is taught in full with Ghanaian examples and practice you can do with free tools.",
   track: "digital-marketing-specialisations",
   field_category: "marketing",
+  level: "next-step",
+  leads_to: ["freelancing"],
   locale: "en-GH",
   status: "draft",
   nodes: [

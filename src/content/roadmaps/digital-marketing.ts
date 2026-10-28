@@ -12,6 +12,8 @@ export const digitalMarketing: RoadmapDraft = {
     "Help Ghanaian businesses, churches and NGOs find and keep customers on WhatsApp, social media, email and search. Learn on your phone or computer with free tools and build a portfolio from real local clients.",
   track: "digital-marketing",
   field_category: "marketing",
+  level: "beginner",
+  leads_to: ["digital-marketing-specialisations", "social-media-management", "content-creation", "digital-sales"],
   locale: "en-GH",
   status: "draft",
   nodes: [

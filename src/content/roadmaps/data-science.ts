@@ -48,6 +48,8 @@ export const dataScience: RoadmapDraft = {
     "Use statistics, experiments and predictive models to help banks, mobile money providers, NGOs and climate projects make better decisions. This is an advanced step after the Data Analyst track, and it needs comfort with maths and a laptop.",
   track: "data-science",
   field_category: "data",
+  level: "next-step",
+  leads_to: ["ai-ml"],
   locale: "en-GH",
   status: "draft",
   nodes: [

@@ -62,6 +62,8 @@ export const cybersecurity: RoadmapDraft = {
     "Learn to defend people, phones and company systems in Ghana, from mobile money fraud and phishing to logs, alerts and incident response. Built for learners who have finished or are taking IT support; theory works on a phone, and hands on labs need a computer.",
   track: "cybersecurity",
   field_category: "security",
+  level: "beginner",
+  leads_to: [],
   locale: "en-GH",
   status: "draft",
   nodes: [

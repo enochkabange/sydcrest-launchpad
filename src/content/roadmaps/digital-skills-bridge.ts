@@ -21,6 +21,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
     "Start from the phone or computer you already have and build the everyday digital skills that entry level jobs and tech courses expect. It ends with you ready to apply for SydCrest's Delta Mentoring Program.",
   track: "digital-skills-bridge",
   field_category: "foundations",
+  level: "first-steps",
+  leads_to: ["ai-tools-for-work", "virtual-assistant", "customer-service", "digital-marketing", "excel-power-bi", "it-support", "graphic-design", "frontend", "data"],
   locale: "en-GH",
   status: "draft",
   nodes: [

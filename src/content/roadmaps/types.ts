@@ -89,12 +89,25 @@ export type FieldCategory =
   | "security"
   | "ai";
 
+/**
+ * Who a roadmap is for, for the roadmap index filter: first-steps (new to
+ * digital tools), beginner (no tech experience needed), next-step (best
+ * after another track).
+ */
+export type RoadmapLevel = "first-steps" | "beginner" | "next-step";
+
 export type RoadmapDraft = {
   slug: string;
   title: string;
   description: string;
   track: RoadmapTrack;
   field_category: FieldCategory;
+  level: RoadmapLevel;
+  /**
+   * Tracks a learner can move on to after this one ("Leads to"). "Builds on"
+   * is derived as the inverse (src/lib/roadmaps/links.ts), never written.
+   */
+  leads_to: readonly RoadmapTrack[];
   locale: "en-GH";
   status: "draft";
   nodes: NodeDraft[];

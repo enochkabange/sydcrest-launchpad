@@ -20,7 +20,7 @@ import {
   roadmapPath,
 } from "@/lib/roadmaps/seo";
 import { locateNode, type TreeNode } from "@/lib/roadmaps/tree";
-import { buildRoadmapView, locateInView } from "@/lib/roadmaps/view-model";
+import { locateInView, roadmapViewOf } from "@/lib/roadmaps/view-model";
 
 type Props = PageProps<"/roadmaps/[slug]/[node]">;
 
@@ -65,7 +65,7 @@ async function Node({ params }: Pick<Props, "params">) {
   const located = locateNode(tree, nodeSlug);
   if (!located) notFound();
   const { node, ancestors } = located;
-  const view = buildRoadmapView(tree);
+  const view = roadmapViewOf(roadmap);
   const inView = locateInView(view, nodeSlug);
   if (!inView) notFound();
   const detail = await getNodeDetail(slug, node.id);

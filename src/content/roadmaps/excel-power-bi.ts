@@ -69,6 +69,8 @@ export const excelPowerBi: RoadmapDraft = {
     "The office data skills employers everywhere ask for: clean tables, formulas, lookups, PivotTables and charts in Excel, then dashboards in Power BI. Excel works on a phone or a computer; Power BI Desktop needs a Windows computer.",
   track: "excel-power-bi",
   field_category: "data",
+  level: "beginner",
+  leads_to: ["data", "project-management"],
   locale: "en-GH",
   status: "draft",
   nodes: [

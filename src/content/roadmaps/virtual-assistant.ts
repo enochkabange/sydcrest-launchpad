@@ -40,6 +40,8 @@ export const virtualAssistant: RoadmapDraft = {
     "Support busy people and businesses with email, calendars, documents, research and customer messages, for local employers or remote clients abroad. Learn the tools on your phone or computer, work reliably through power and data cuts, find honest clients and get paid safely.",
   track: "virtual-assistant",
   field_category: "business",
+  level: "beginner",
+  leads_to: ["project-management", "freelancing", "customer-service"],
   locale: "en-GH",
   status: "draft",
   nodes: [

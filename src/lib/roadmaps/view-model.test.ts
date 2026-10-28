@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { ROADMAP_DRAFTS } from "@/content/roadmaps";
 import { buildNodeTree, locateNode, progressSummary, type FlatNode, type ProgressStatus } from "./tree";
-import { buildRoadmapView, locateInView, sectionOf, withProgress } from "./view-model";
+import { buildRoadmapView, locateInView, roadmapViewOf, searchItemsOf, sectionOf, withProgress } from "./view-model";
 
 function node(id: string, parent: string | null, position: number, extra: Partial<FlatNode> = {}): FlatNode {
   return { id, parent_id: parent, slug: id, title: id, summary: null, position, is_optional: false, ...extra };
@@ -190,5 +190,102 @@ describe("buildRoadmapView", () => {
       expect(placed.sort(), draft.slug).toEqual(nodes.map((n) => n.id).sort());
       expect(view.counts.total, draft.slug).toBe(nodes.filter((n) => !n.is_optional).length);
     }
+  });
+});
+
+describe("time estimates in the view", () => {
+  const minutes = new Map<string, number | null>([
+    ["foundations", 10],
+    ["notebook", 25],
+    ["excel", 20],
+    ["sheets", null],
+    ["sharing", 5],
+    ["whatsapp", 30],
+    ["reports", 15],
+  ]);
+
+  it("carries each node's minutes and sums sections and the roadmap", () => {
+    const view = buildRoadmapView(tree(), null, minutes);
+    expect(view.byId.notebook.minutes).toBe(25);
+    expect(view.byId.sheets.minutes).toBeNull();
+    expect(view.sections[0].estimate).toEqual({ minutes: 55, missing: 1 });
+    expect(view.sections[1].estimate).toEqual({ minutes: 50, missing: 0 });
+    expect(view.sections[1].requiredEstimate).toEqual({ minutes: 20, missing: 0 });
+    expect(view.estimate).toEqual({ minutes: 105, missing: 1 });
+    expect(view.requiredEstimate).toEqual({ minutes: 75, missing: 1 });
+  });
+
+  it("has no estimate without minutes", () => {
+    const view = buildRoadmapView(tree());
+    expect(view.byId.notebook.minutes).toBeNull();
+    expect(view.estimate).toEqual({ minutes: 0, missing: 7 });
+  });
+
+  it("keeps minutes through withProgress and counts the required minutes left", () => {
+    const view = withProgress(buildRoadmapView(tree(), null, minutes), progress({ foundations: "done", notebook: "done" }));
+    expect(view.byId.excel.minutes).toBe(20);
+    // excel 20 + sheets ? + sharing 5 + reports 15; whatsapp is optional
+    expect(view.minutesLeft).toBe(40);
+  });
+
+  it("builds from a published roadmap's nodes and minutes", () => {
+    const view = roadmapViewOf({ nodes: NODES, minutes: { notebook: 25 } });
+    expect(view.byId.notebook.minutes).toBe(25);
+    expect(view.byId.excel.minutes).toBeNull();
+    expect(view.hasProgress).toBe(false);
+  });
+});
+
+describe("up next", () => {
+  it("is null for a visitor", () => {
+    expect(buildRoadmapView(tree()).upNextId).toBeNull();
+  });
+
+  it("is the first node in progress, in reading order", () => {
+    const view = buildRoadmapView(tree(), progress({ foundations: "done", reports: "in_progress", excel: "in_progress" }));
+    expect(view.upNextId).toBe("excel");
+  });
+
+  it("is otherwise the first required node not done, skipping optional ones", () => {
+    expect(buildRoadmapView(tree(), progress({})).upNextId).toBe("foundations");
+    const done = { foundations: "done", notebook: "done", excel: "done", sheets: "done", sharing: "done" } as const;
+    expect(buildRoadmapView(tree(), progress(done)).upNextId).toBe("reports");
+  });
+
+  it("is null once every required node is done", () => {
+    const all = Object.fromEntries(NODES.filter((n) => !n.is_optional).map((n) => [n.id, "done" as const]));
+    const view = buildRoadmapView(tree(), progress(all));
+    expect(view.upNextId).toBeNull();
+    expect(view.minutesLeft).toBe(0);
+  });
+});
+
+describe("optional content slots", () => {
+  it("are empty until content sets them", () => {
+    const view = buildRoadmapView(tree());
+    expect(view.byId.notebook.difficulty).toBeNull();
+    expect(view.byId.notebook.complexity).toBeNull();
+    expect(view.sections[0].careerLevel).toBeNull();
+    expect(view.sections[0].jobs).toEqual([]);
+  });
+
+  it("carry difficulty, complexity, career level and jobs when present", () => {
+    const nodes = [
+      node("foundations", null, 0, { career_level: "junior", jobs: ["Data clerk"] }),
+      node("notebook", "foundations", 0, { difficulty: "beginner", complexity: 2 }),
+    ];
+    const view = buildRoadmapView(buildNodeTree(nodes));
+    expect(view.sections[0].careerLevel).toBe("junior");
+    expect(view.sections[0].jobs).toEqual(["Data clerk"]);
+    expect(view.byId.notebook.difficulty).toBe("beginner");
+    expect(view.byId.notebook.complexity).toBe(2);
+  });
+});
+
+describe("searchItemsOf", () => {
+  it("lists every node in reading order with its section title", () => {
+    const items = searchItemsOf(buildRoadmapView(tree()));
+    expect(items.map((i) => i.id)).toEqual(["foundations", "notebook", "excel", "sheets", "sharing", "whatsapp", "reports"]);
+    expect(items[5]).toMatchObject({ slug: "whatsapp", number: "2.1", sectionTitle: "sharing", optional: true });
   });
 });

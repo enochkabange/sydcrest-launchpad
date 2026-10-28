@@ -65,6 +65,8 @@ export const mobileAppDeveloper: RoadmapDraft = {
     "Build Android apps that work on the low cost phones and patchy networks people in Ghana really use, starting with Flutter and Dart. Go from your first lines of code, even on a phone, to a published app and a portfolio that Ghanaian and remote employers can test.",
   track: "mobile-app-developer",
   field_category: "software",
+  level: "beginner",
+  leads_to: ["software-testing"],
   locale: "en-GH",
   status: "draft",
   nodes: [

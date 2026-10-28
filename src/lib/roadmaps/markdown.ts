@@ -184,3 +184,15 @@ export function markdownToText(source: string): string {
     .filter(Boolean)
     .join(" ");
 }
+
+/**
+ * The outcome a practice task states, from its "**Done looks like:**" line
+ * (every lesson has one), as plain text. Null when the task has none, so the
+ * topic panel never invents an outcome.
+ */
+export function practiceOutcome(practiceMd: string | null | undefined): string | null {
+  if (!practiceMd) return null;
+  const match = /\*\*Done looks like:?\*\*:?\s*([\s\S]*?)(?:\n\s*\n|$)/i.exec(practiceMd);
+  const text = match ? markdownToText(match[1]).trim() : "";
+  return text ? text.charAt(0).toUpperCase() + text.slice(1) : null;
+}

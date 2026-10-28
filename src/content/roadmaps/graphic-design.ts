@@ -61,6 +61,8 @@ export const graphicDesign: RoadmapDraft = {
     "Design flyers, social media graphics, logos and brand materials that shops, churches, schools, NGOs and agencies pay for. Start with free design apps on your phone or computer, then learn the principles, print know how, client skills and portfolio that turn design into paid work.",
   track: "graphic-design",
   field_category: "design",
+  level: "beginner",
+  leads_to: ["ui-ux", "content-creation", "social-media-management"],
   locale: "en-GH",
   status: "draft",
   nodes: [
