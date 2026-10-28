@@ -10,7 +10,7 @@ const content: TrackContent = {
   roadmap: "digital-sales",
   nodes: {
     "sales-foundations": {
-      explanation_md: `Almost every business in Ghana needs someone who can sell. An internet provider needs people to sign up shops and homes. A seed and fertiliser company needs people to reach farmers and agro dealers. A software company needs people to book demos with schools and clinics. A food manufacturer needs people to get its products onto supermarket shelves. Job boards in Ghana list sales roles more often than almost any other kind of work, and many of them accept school leavers and graduates who can show the right habits.
+      explanation_md: `Almost every business in Ghana needs someone who can sell. An internet provider needs people to sign up shops and homes. A seed and fertiliser company needs people to reach farmers and agro dealers. A software company needs people to book demos with schools and clinics. A food manufacturer needs people to get its products onto supermarket shelves. Sales is one of the biggest categories on Ghanaian job boards, and many of the roles accept school leavers and graduates who can show the right habits.
 
 ## What digital sales means
 
@@ -282,7 +282,7 @@ Hawa sells agro inputs. A farmer asks about a new maize seed. Hawa does not star
       },
     },
     "targets-and-numbers": {
-      explanation_md: `Sales is one of the most measured jobs there is. Almost every sales advert in Ghana mentions targets, and interviewers often ask how you handle them. Understanding the numbers early means they help you instead of frightening you.
+      explanation_md: `Sales is one of the most measured jobs there is. Many sales adverts in Ghana mention targets, and interviewers often ask how you handle them. Understanding the numbers early means they help you instead of frightening you.
 
 ## What sales teams measure
 
@@ -406,7 +406,7 @@ Ask questions politely in writing if something is unclear. A good employer will 
       },
     },
     "finding-prospects": {
-      explanation_md: `No one can buy from you if you never meet them. Prospecting, which means finding people and businesses who might need what you sell, is the most common skill in Ghanaian sales adverts. It is also where many new sellers struggle, because they wait for customers to appear. This section teaches you to fill your own list.
+      explanation_md: `No one can buy from you if you never meet them. Prospecting, which means finding people and businesses who might need what you sell, is one of the most common skills in Ghanaian sales adverts. It is also where many new sellers struggle, because they wait for customers to appear. This section teaches you to fill your own list.
 
 ## Three ideas to hold on to
 
@@ -665,13 +665,13 @@ Mariama sells a bulk SMS service to businesses. A caller from a hair salon in Wa
           {
             prompt: "Which question is the lesson's suggested way to ask about budget?",
             options: [
-              "Do you have a rough budget in mind, so I can suggest an option?",
+              "Do you have a rough budget in mind?",
               "Do you actually have any money, or am I wasting my time today?",
               "Can you send me a copy of your bank statement before we talk?",
               "How much profit does your business make each month?",
             ],
             answer_index: 0,
-            explanation: "The lesson suggests asking for a rough budget so you can suggest the right option.",
+            explanation: "The lesson suggests asking about budget gently, for example \"Do you have a rough budget in mind?\"",
           },
           {
             prompt: "Why does the lesson say honestly telling someone a product might not be right for them is good?",
@@ -703,7 +703,7 @@ A person asking about internet, a phone or a course is often asking several sell
 2. **Add one useful fact.** What is included, delivery time, or warranty.
 3. **Ask one question** that helps you recommend the right option.
 
-Example: "Hello Sir, thanks for asking. The home plan is from 250 cedis a month, with free installation in Tamale this month. Is it for a home or a business, and how many people will use it?"
+Example: "Hello Sir, thanks for asking. The home plan is from 250 cedis a month, with free installation in Tamale this month. Is it for a home or a business, and how many people will use it?" (The price here is made up for this example.)
 
 ## Ask, then recommend
 
@@ -877,7 +877,7 @@ Napari contacts a guest house in Bolgatanga about a booking app. She emails the 
       },
     },
     "calls-and-telesales": {
-      explanation_md: `Telesales and outbound calling appear in more Ghanaian sales adverts than almost any other skill. A sales call is short. You have a few seconds to earn the right to a minute, and a minute to earn a next step. The good news is that a simple structure, practised aloud, makes calls much easier.
+      explanation_md: `Telesales and outbound calling are among the most common skills in Ghanaian sales adverts. A sales call is short. You have a few seconds to earn the right to a minute, and a minute to earn a next step. The good news is that a simple structure, practised aloud, makes calls much easier.
 
 ## Before you dial
 
@@ -986,7 +986,7 @@ Speak clearly and a little slower than normal. If the customer is more comfortab
       },
     },
     "selling-on-whatsapp": {
-      explanation_md: `For many Ghanaian customers, WhatsApp is the natural place to talk to a business. They ask questions, see photos, agree a price and send mobile money without leaving the chat. Sales roles increasingly expect you to convert leads through WhatsApp follow up. Doing it well means being organised, quick and respectful.
+      explanation_md: `For many Ghanaian customers, WhatsApp is the natural place to talk to a business. They ask questions, see photos, agree a price and send mobile money without leaving the chat. Many sales roles expect you to follow up leads on WhatsApp. Doing it well means being organised, quick and respectful.
 
 ## Use WhatsApp Business
 
@@ -1000,7 +1000,7 @@ WhatsApp Business is a free app, separate from personal WhatsApp, made for busin
 
 ## Broadcast lists and consent
 
-A broadcast list sends one message to many contacts, but each person receives it as a private chat. On WhatsApp, broadcast messages only reach people who have saved your number in their contacts, which is a built in signal of consent. Even so, only add people who have agreed to hear from you, keep messages relevant and occasional, and include a line such as "Reply STOP if you would rather not receive these." Remove anyone who asks, immediately.
+A broadcast list sends one message to many contacts, but each person receives it as a private chat. WhatsApp's help pages say only people who have added your number to their phone's contacts will receive your broadcast. Saving your number is not the same as agreeing to marketing, so only add people who have agreed to hear from you, keep messages relevant and occasional, and include a line such as "Reply STOP if you would rather not receive these." Remove anyone who asks, immediately.
 
 Never add customers to groups without asking. A group exposes everyone's number to strangers, which customers rightly dislike.
 
@@ -1022,7 +1022,7 @@ Mahama sells school uniforms. A parent asks about sizes. Mahama shares the catal
       practice_task_md: `**Goal:** Set up WhatsApp Business as a small sales tool.
 
 **Steps:**
-1. If you can, install WhatsApp Business on a spare number or use the free trial of a test account. If not, do steps 2 to 4 in a notes app.
+1. If you can, install WhatsApp Business on a spare number. If not, do steps 2 to 6 in a notes app.
 2. Write a business profile description of under 50 words for a real or imaginary shop.
 3. Create (or write) three catalogue items with a name, price in cedis and one sentence description.
 4. Write three quick replies: delivery areas, how to pay by mobile money safely, and opening hours.
@@ -1365,7 +1365,7 @@ Alhassan sells solar systems. A chop bar owner in Tamale says she wants "solar".
       },
     },
     "presenting-offers": {
-      explanation_md: `After discovery, the customer wants to know what you recommend and what it costs. Sales adverts in Ghana often ask for people who can prepare quotes and proposals, and O*NET lists preparing presentations and proposals as a core task for sales representatives. A clear, honest offer makes saying yes easy.
+      explanation_md: `After discovery, the customer wants to know what you recommend and what it costs. Sales adverts in Ghana often ask for people who can prepare quotes and proposals, and O*NET lists preparing presentations and proposals among the tasks of sales representatives. A clear, honest offer makes saying yes easy.
 
 ## Present around their needs
 
@@ -1979,7 +1979,7 @@ Azara sells software to private schools. Before the term starts she has fifteen 
           {
             prompt: "Why does the lesson suggest closing dead deals as lost?",
             options: [
-              "A pipeline full of false hope misleads you and your manager",
+              "False hope in a pipeline misleads you and your manager",
               "Closed deals earn extra points in most CRM software",
               "Customers prefer to be removed from every list immediately",
               "It allows you to contact the same customers again next day",
@@ -1992,7 +1992,7 @@ Azara sells software to private schools. Before the term starts she has fifteen 
             options: [
               "Every deal had already closed as won during the holiday",
               "Her CRM had deleted all of her deals by mistake",
-              "Four deals with no next step and three stuck for a month",
+              "Four deals with no next step, three stuck",
               "That schools never buy software before the term starts",
             ],
             answer_index: 2,
@@ -2199,7 +2199,7 @@ The rest of this section helps you be the second kind of seller, and stay well w
       },
     },
     "honest-selling-and-data": {
-      explanation_md: `Every sales job in Ghana comes with two kinds of responsibility: telling customers the truth, and treating their personal information with care. Employers increasingly expect new sellers to understand both from day one, because mistakes damage customers and the company's name.
+      explanation_md: `Every sales job in Ghana comes with two kinds of responsibility: telling customers the truth, and treating their personal information with care. Employers expect new sellers to understand both from day one, because mistakes damage customers and the company's name.
 
 ## Honest selling
 
@@ -2214,10 +2214,10 @@ The rest of this section helps you be the second kind of seller, and stay well w
 
 Ghana's **Data Protection Act, 2012 (Act 843)** sets rules for how organisations collect and use personal data, and the **Data Protection Commission** oversees it. You do not need to be a lawyer, but as a seller you should follow these practical principles, together with your employer's policies:
 
-* **Have a lawful reason and consent for marketing.** The Act has rules on direct marketing: in general, you need a person's consent before using their personal data to market to them. Business enquiries to a company's published contact are different from messaging private individuals.
+* **Get written consent before direct marketing.** Section 40 of the Act says personal data must not be used for direct marketing without the person's prior written consent. The Act describes direct marketing as advertising or marketing material directed to particular individuals. Follow your employer's process for recording each person's consent.
 * **Collect only what you need.** For a sale you may need a name, number and delivery area. You rarely need someone's ID number or family details.
 * **Use data only for the purpose given.** A number shared for a delivery is not permission to add someone to a promotion list.
-* **Make opting out easy and honour it.** Include "Reply STOP to opt out" or similar in marketing messages, and remove people promptly.
+* **Make opting out easy and honour it.** The Act lets a person tell you in writing at any time to stop using their data for direct marketing. Make that easy, for example with a line such as "Reply STOP to opt out", and remove people promptly.
 * **Keep it safe.** Use your employer's CRM, not personal notebooks or random spreadsheets. Do not forward customer lists to friends, and never sell or share them.
 * **Be accurate.** Update records when customers correct their details.
 
@@ -2260,7 +2260,7 @@ Rashida starts a telesales job. A colleague offers her a list of numbers "from a
               "Yes, any number you receive can be used for any marketing",
               "Yes, as long as you send promotions less than once a day",
               "Yes, if you remove her number again after one month",
-              "No, data should only be used for the purpose it was given",
+              "No, only for the purpose she gave it",
             ],
             answer_index: 3,
             explanation: "The lesson says a number shared for delivery is not permission to add someone to a promotion list.",
@@ -2279,7 +2279,7 @@ Rashida starts a telesales job. A colleague offers her a list of numbers "from a
           {
             prompt: "What does honest selling require when a product is sold on instalments?",
             options: [
-              "The customer understands the total cost and can realistically afford it",
+              "The customer knows the total cost and can afford it",
               "The seller hides interest so the monthly payment looks smaller",
               "The customer borrows from relatives to pay the deposit",
               "The seller only mentions late fees after the first payment",
@@ -2293,7 +2293,7 @@ Rashida starts a telesales job. A colleague offers her a list of numbers "from a
               "Sent one final offer before stopping, to be sure he meant it",
               "Asked a colleague to message him instead from another number",
               "Kept him on the list but sent messages less often",
-              "Marked him do not contact and removed him from the list that day",
+              "Marked him do not contact and removed him that day",
             ],
             answer_index: 3,
             explanation: "She marked him do not contact in the CRM and removed him from the broadcast list the same day.",
@@ -2555,7 +2555,7 @@ Amina had no work experience when she applied for a telesales role with an inter
             options: [
               "Listing as many adjectives about yourself as possible",
               "Making the CV several pages long so it looks serious",
-              "Proof such as a recorded practice call or a sample pipeline",
+              "Proof, such as a recorded practice call",
               "Using a colourful CV design with your photo at the top",
             ],
             answer_index: 2,
@@ -2567,7 +2567,7 @@ Amina had no work experience when she applied for a telesales role with an inter
               "A role that trains you on the product in your first weeks",
               "A field sales role that covers towns in the northern regions",
               "A telesales team that asks you to role play in the interview",
-              "An offer that asks you to pay a registration fee before you start",
+              "A request to pay a registration fee first",
             ],
             answer_index: 3,
             explanation: "The lesson says a genuine employer does not charge you to work.",
@@ -2575,7 +2575,7 @@ Amina had no work experience when she applied for a telesales role with an inter
           {
             prompt: "Which of these is listed as a common entry route into sales?",
             options: [
-              "Telesales teams for telecoms, fintechs, insurers and internet providers",
+              "Telesales teams for telecoms and insurers",
               "Only senior management roles that need many years of experience",
               "Paying a company to give you a list of customers to sell to",
               "Roles that require a degree in sales from a foreign university",
@@ -2657,7 +2657,7 @@ Issahaku interviews for a field sales role with an agro input company. When aske
           {
             prompt: "What are the four parts of a real selling story in this lesson?",
             options: [
-              "Greeting, product, price and goodbye",
+              "Greeting, product features, price and a polite goodbye",
               "Situation, what you did, result and what you learned",
               "Problem, blame, excuse and apology",
               "Company, salary, commission and target",
@@ -2671,7 +2671,7 @@ Issahaku interviews for a field sales role with an agro input company. When aske
               "Make the numbers bigger so you look more impressive",
               "Leave out the result so the interviewer has to guess",
               "Copy a result from someone else's story online",
-              "Honestly, using numbers only if you really recorded them",
+              "Honestly, with numbers only if you recorded them",
             ],
             answer_index: 3,
             explanation: "The lesson says to describe results honestly and use numbers only if you recorded them.",
@@ -2679,7 +2679,7 @@ Issahaku interviews for a field sales role with an agro input company. When aske
           {
             prompt: "In a \"Sell me this pen\" role play, what should you do first?",
             options: [
-              "Ask discovery questions, such as what they use a pen for",
+              "Ask what they use a pen for",
               "List every feature of the pen as quickly as you can",
               "Offer a discount before the interviewer says anything",
               "Explain the history of the pen company in detail",

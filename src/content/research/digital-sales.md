@@ -47,6 +47,12 @@ selling.
 | S12 | jobsearchgh.com: FMCG Sales Executive, food company, Accra and Kumasi | https://jobsearchgh.com/jobs/22254/fmcg-sales-executive-legendary-foods | 2026-10-28 | Search result snippet only |
 | S13 | Jobberman: Business Development Telesales Consultant (second listing) | https://jobberman.com.gh/listings/business-development-telesales-consultant-vw88ep | 2026-10-28 | Search result snippet only |
 | P1 | SydCrest Planning/12_TRACK_CATALOGUE.md | (internal) | 2026-10-27 | Internal planning document |
+| D2 | Data Protection Act, 2012 (Act 843), official text (section 40, direct marketing) | https://dpc.gov.gh/wp-content/uploads/2025/05/data-protection-act-2012-act-843.pdf | 2026-10-28 | Official statute, published by the regulator |
+| W1 | WhatsApp Help Center: How to use broadcast lists | https://faq.whatsapp.com/861663048350950 | 2026-10-28 | Official help page |
+| W2 | WhatsApp Business: Business app features | https://whatsappbusiness.com/products/business-app-features/ | 2026-10-28 | Official product page |
+| T1 | HubSpot: Free CRM product page | https://www.hubspot.com/products/crm/free | 2026-10-28 | Vendor page (example tool only) |
+| T2 | Bigin by Zoho CRM: pricing (free plan) | https://www.bigin.com/pricing.html | 2026-10-28 | Vendor page (example tool only) |
+| H1 | WHO: Questions and answers on stress | https://www.who.int/news-room/questions-and-answers/item/stress | 2026-10-28 | Official health body page |
 
 Resource links in the outline were checked with an HTTP request on 27 October 2026. Many
 HubSpot sales blog URLs returned 404 and were not used; the ones linked returned 200. LearnFree
@@ -180,3 +186,20 @@ Services lead role (S7), which names Zoho CRM but asks for many years of experie
 * Overlap with Digital Customer Service and Digital Marketer is avoided: channel lessons here
   are about outbound selling, booking next steps and deal stages, not resolving complaints or
   running campaigns.
+
+## Review changes (28 October 2026, PR #216 review)
+
+* `honest-selling-and-data`: the direct marketing bullet now states only what section 40 of Act 843
+  says (D2): prior written consent before using personal data for direct marketing, direct marketing
+  defined as material directed to particular individuals, and the right to require, in writing, that
+  processing for direct marketing stops. The claim that the Act treats published business contacts
+  differently was removed, because the Act's text does not say so.
+* `selling-on-whatsapp`: the broadcast rule now follows W1 (only people who have added your number
+  to their contacts receive a broadcast) and says this is not the same as agreeing to marketing.
+  Practice step 1 no longer mentions a free trial, which does not exist.
+* `inbound-enquiries`: the 250 cedis price is labelled as made up for the example.
+* Frequency claims softened to match the 20 advert sample (sales category size, targets, prospecting,
+  telesales, WhatsApp follow up, "increasingly" claims); O*NET wording changed from "core task" to
+  "among the tasks".
+* Quiz options rebalanced so the correct option is the longest in about a quarter of questions.
+
