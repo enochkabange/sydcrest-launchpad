@@ -8,6 +8,7 @@
  */
 import { categoryLabel, isExpertCategory } from "./categories";
 import { isOfferKind, offerKindLabel, type OfferKind } from "./offers";
+import { parseVerifiedSkills, type VerifiedSkill } from "@/lib/skills/verified";
 
 /** One approved expert, from `public_experts`, with nulls normalised. */
 export type DirectoryExpert = {
@@ -39,10 +40,12 @@ export type DirectoryExpert = {
   /** Titles of active offers, for search. */
   offerTitles: string[];
   /**
-   * Skills SydCrest has verified (#165). Empty until that feature fills it;
-   * the `verifiedSkill` ranking signal already reads it.
+   * Names of skills SydCrest has verified (#165), from the view's
+   * `verified_skills` column. The `verifiedSkill` ranking signal reads these.
    */
   verifiedSkills: string[];
+  /** The same verified skills with how and when they were earned, for badges. */
+  verifiedSkillBadges: VerifiedSkill[];
 };
 
 export type PublicExpertRow = {
@@ -67,6 +70,8 @@ export type PublicExpertRow = {
   review_count: number | null;
   average_rating: number | null;
   median_response_hours: number | null;
+  /** `[{slug, name, source, issued_at}]`, live verified skills only (#165). */
+  verified_skills?: unknown;
 };
 
 export type OfferSummaryRow = { expert_id: string; kind: string; title: string };
@@ -75,6 +80,7 @@ export function toDirectoryExpert(row: PublicExpertRow, offers: OfferSummaryRow[
   if (!row.profile_id || !row.slug) return null;
   const own = offers.filter((o) => o.expert_id === row.profile_id);
   const kinds = [...new Set(own.map((o) => o.kind).filter(isOfferKind))];
+  const badges = parseVerifiedSkills(row.verified_skills);
   return {
     profileId: row.profile_id,
     slug: row.slug,
@@ -99,7 +105,8 @@ export function toDirectoryExpert(row: PublicExpertRow, offers: OfferSummaryRow[
     medianResponseHours: row.median_response_hours === null ? null : Number(row.median_response_hours),
     offerKinds: kinds,
     offerTitles: own.map((o) => o.title),
-    verifiedSkills: [],
+    verifiedSkills: badges.map((b) => b.name),
+    verifiedSkillBadges: badges,
   };
 }
 
@@ -198,6 +205,7 @@ function haystack(e: DirectoryExpert): string {
       e.headline,
       e.bio ?? "",
       ...e.skills,
+      ...e.verifiedSkills,
       ...e.categories.map((c) => categoryLabel(c) ?? c),
       ...e.offerKinds.map(offerKindLabel),
       ...e.offerTitles,
@@ -206,7 +214,7 @@ function haystack(e: DirectoryExpert): string {
 }
 
 export function matches(e: DirectoryExpert, f: Filters): boolean {
-  if (f.skill && !e.skills.some((s) => fold(s) === fold(f.skill))) return false;
+  if (f.skill && ![...e.skills, ...e.verifiedSkills].some((s) => fold(s) === fold(f.skill))) return false;
   if (f.category && !e.categories.includes(f.category)) return false;
   if (f.kind && !e.offerKinds.includes(f.kind)) return false;
   if (f.availability === "accepting" && !e.acceptingRequests) return false;
@@ -259,7 +267,6 @@ export const RANK_SIGNALS: RankSignal[] = [
   /**
    * #165: SydCrest verified skills. Full credit for a verified skill that
    * matches the skill filter or search, half credit for any verified skill.
-   * Zero for everyone until `verifiedSkills` is filled from the database.
    */
   {
     id: "verifiedSkill",
@@ -311,7 +318,7 @@ export function featuredExperts(experts: DirectoryExpert[], limit = 3): Director
 /** Options for the filter selects, from the experts actually listed. */
 export function facets(experts: DirectoryExpert[]) {
   const skills = new Map<string, string>();
-  for (const e of experts) for (const s of e.skills) if (!skills.has(fold(s))) skills.set(fold(s), s);
+  for (const e of experts) for (const s of [...e.skills, ...e.verifiedSkills]) if (!skills.has(fold(s))) skills.set(fold(s), s);
   const categoryCounts = new Map<string, number>();
   for (const e of experts)
     for (const c of e.categories) if (isExpertCategory(c)) categoryCounts.set(c, (categoryCounts.get(c) ?? 0) + 1);
