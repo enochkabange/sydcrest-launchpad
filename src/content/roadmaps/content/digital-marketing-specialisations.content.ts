@@ -63,7 +63,7 @@ By the end you will have a keyword map, an improved page, a short list of local 
             options: [
               "By making pages that are easy to discover, easy to understand and genuinely useful",
               "By paying the search engine a monthly fee",
-              "By repeating its keyword as many times as possible",
+              "By repeating its main keyword as many times as possible in every heading and paragraph",
               "By posting more often on social media",
             ],
             answer_index: 0,
@@ -72,7 +72,7 @@ By the end you will have a keyword map, an improved page, a short list of local 
           {
             prompt: "Why does a well made page often keep bringing visitors after a paid ad has stopped?",
             options: [
-              "Because search engines charge less over time",
+              "Because search engines charge less for each visit as a page gets older and more popular",
               "Because ads are not allowed in Ghana",
               "Because old pages are always ranked first",
               "Because a ranking page keeps appearing in results without a payment for each visit",
@@ -139,7 +139,7 @@ His shortlist has eight phrases. Three show buying intent, such as "school unifo
             options: [
               "They are searched more often than short phrases",
               "The searcher usually knows exactly what they want and fewer businesses compete for them",
-              "Search engines only show small businesses for long phrases",
+              "Search engines only show small local businesses when someone types a long, specific phrase",
               "They are free while short phrases cost money",
             ],
             answer_index: 1,
@@ -160,7 +160,7 @@ His shortlist has eight phrases. Three show buying intent, such as "school unifo
             prompt: "Why does this lesson not depend on Keyword Planner?",
             options: [
               "It needs a Google Ads account with billing details completed",
-              "It only works for businesses outside Ghana",
+              "It only works for businesses outside Ghana that sell to customers abroad",
               "It shows no keyword ideas at all",
               "It has been closed down",
             ],
@@ -173,7 +173,7 @@ His shortlist has eight phrases. Three show buying intent, such as "school unifo
               "In Google Trends",
               "In a paid keyword tool",
               "In Amina's WhatsApp messages from customers",
-              "On a competitor's price list",
+              "On a competitor's price list pinned at the market",
             ],
             answer_index: 2,
             explanation: "He read Amina's customer messages, which the lesson says are often the best source of keywords.",
@@ -240,7 +240,7 @@ His map gives the home page the main keyword "tailor in Wa" with "kaba and slit 
               "Ask the business owner",
               "Count how many words the keyword has",
               "Search the keyword and look at what kinds of pages already rank",
-              "Check how many times competitors use the keyword",
+              "Check how many times competitors use the keyword on their home pages",
             ],
             answer_index: 2,
             explanation: "The results page shows what searchers expect, so you look at what already ranks.",
@@ -250,7 +250,7 @@ His map gives the home page the main keyword "tailor in Wa" with "kaba and slit 
             options: [
               "The pages compete with each other so none is clearly the best answer",
               "The site loads too slowly",
-              "The keyword becomes too expensive",
+              "The keyword becomes too expensive because each page bids against the others",
               "The pages stop appearing on phones",
             ],
             answer_index: 0,
@@ -261,7 +261,7 @@ His map gives the home page the main keyword "tailor in Wa" with "kaba and slit 
             options: [
               "None",
               "One main keyword plus a few close variations",
-              "As many as possible",
+              "As many as possible, so each page can rank for more searches",
               "Exactly ten",
             ],
             answer_index: 1,
@@ -316,7 +316,7 @@ He adds a link to the new "How to store shea butter" guide and shrinks the photo
             prompt: "What does Google's guidance say about page titles?",
             options: [
               "Use the same title on every page",
-              "Titles must be exactly 60 characters",
+              "Titles must be exactly 60 characters and repeat the main keyword at least three times",
               "Give every page a unique, descriptive, concise title without keyword stuffing",
               "Titles are not shown in search results",
             ],
@@ -327,7 +327,7 @@ He adds a link to the new "How to store shea butter" guide and shrinks the photo
             prompt: "How do search engines usually build the snippet under a title?",
             options: [
               "Mostly from the page's own text, sometimes from the meta description",
-              "Always from the meta description",
+              "Always from the meta description, which the search engine copies word for word",
               "From the business's social media bio",
               "From the image alt text only",
             ],
@@ -359,7 +359,7 @@ He adds a link to the new "How to store shea butter" guide and shrinks the photo
           {
             prompt: "Why is repeating a keyword many times a bad idea?",
             options: [
-              "Search engines cannot read repeated words",
+              "Search engines cannot read a word that appears more than once on a page",
               "It makes the page worse to read and can count against it",
               "It makes the page load slower",
               "It is the only way to rank",
@@ -426,7 +426,7 @@ Sumaila manages marketing for an agro input shop in Damongo. He lists every orga
             prompt: "According to Google's spam policies, which of these is link spam?",
             options: [
               "Paying for links to raise rankings without marking them as paid",
-              "Being listed by a trade association you belong to",
+              "Being listed in the member directory of a trade association you belong to",
               "A news story that mentions and links to a business",
               "A partner linking from its partner page",
             ],
@@ -448,7 +448,7 @@ Sumaila manages marketing for an agro input shop in Damongo. He lists every orga
             prompt: "What is an \"unlinked mention\" and what should you do about it?",
             options: [
               "A bad review; you should report it",
-              "A link that no longer works; delete your page",
+              "A link that no longer works; delete your own page so visitors never land on an error",
               "A paid listing; ask for a refund",
               "A site names the business without linking; politely ask them to add a link",
             ],
@@ -519,7 +519,7 @@ Wumpini helps a pharmacy in Bolgatanga. She finds four versions of its name onli
               "No, Google states there is no way to request or pay for a better local ranking",
               "Yes, through a monthly fee",
               "Yes, by buying reviews",
-              "Only if it also runs ads",
+              "Only if it also runs Google Ads, which moves it up the local map results",
             ],
             answer_index: 0,
             explanation: "The lesson quotes Google's statement that local ranking cannot be requested or bought.",
@@ -530,7 +530,7 @@ Wumpini helps a pharmacy in Bolgatanga. She finds four versions of its name onli
               "Posting at the same time every day",
               "Using the same name, address and phone number everywhere the business appears",
               "Having a nap in the afternoon to stay creative",
-              "Using the same photo on every platform",
+              "Using the same photo and the same opening hours on every platform where you post",
             ],
             answer_index: 1,
             explanation: "NAP stands for name, address and phone, which should match everywhere.",
@@ -538,7 +538,7 @@ Wumpini helps a pharmacy in Bolgatanga. She finds four versions of its name onli
           {
             prompt: "Which review practice does the lesson recommend?",
             options: [
-              "Write a few reviews yourself to get started",
+              "Write a few good reviews yourself to get started, then ask friends to add more",
               "Pay customers for five star reviews",
               "Ask happy customers for honest reviews and reply to every review",
               "Delete the profile if a bad review appears",
@@ -606,7 +606,7 @@ It is short, specific and easy to say yes to.`,
             options: [
               "A site that charges just to add a link and has pages full of unrelated links",
               "An active regional tourism blog",
-              "A trade association that lists its members",
+              "A trade association that lists its members along with their phone numbers and addresses",
               "A partner NGO's website",
             ],
             answer_index: 0,
@@ -616,7 +616,7 @@ It is short, specific and easy to say yes to.`,
             prompt: "What should an outreach email include in its request?",
             options: [
               "Only a link to the business's Facebook page",
-              "A long history of the business",
+              "A long history of the business and its owner so the site understands who you are",
               "A demand for a reply within one day",
               "Everything the site needs: name, address, phone, website and a short description",
             ],
@@ -629,7 +629,7 @@ It is short, specific and easy to say yes to.`,
               "None",
               "One polite follow up about a week later",
               "One every day until they reply",
-              "Three in the first week",
+              "Three follow ups in the first week so they do not forget",
             ],
             answer_index: 1,
             explanation: "Follow up once, politely, about a week later, then stop.",
@@ -640,7 +640,7 @@ It is short, specific and easy to say yes to.`,
               "It was long and detailed about the guesthouse's history",
               "It was short, specific, showed she knew the blog, and was easy to say yes to",
               "It offered money for the listing",
-              "It was sent to many blogs at once with the same greeting",
+              "It was sent to many blogs at once with the same greeting, so it reached more people quickly",
             ],
             answer_index: 1,
             explanation: "The lesson highlights that the email was short, specific and easy to agree to.",
@@ -704,7 +704,7 @@ Zakaria plans content for the Tamale solar installer. His keyword map shows many
             options: [
               "A single social media post",
               "A paid advert",
-              "A list of every keyword on the site",
+              "A list of every keyword on the site, kept in a sheet and updated each month",
               "A broad topic central to the business, covered on one main page",
             ],
             answer_index: 3,
@@ -716,7 +716,7 @@ Zakaria plans content for the Tamale solar installer. His keyword map shows many
               "Cluster pages link back to the pillar and the pillar links out to each cluster",
               "They do not link to each other",
               "Only the home page links to them",
-              "They link only to competitor sites",
+              "They link only to competitor sites, which shows search engines the topic is well covered",
             ],
             answer_index: 0,
             explanation: "The lesson describes links in both directions between pillar and clusters.",
@@ -727,7 +727,7 @@ Zakaria plans content for the Tamale solar installer. His keyword map shows many
               "Cheapest, fastest, longest",
               "Trending, funny and short",
               "Customers care about it, the business genuinely knows it, and it leads to sales",
-              "Competitors use it, it has many keywords, it is new",
+              "Competitors already use it, it has many keywords, and it is new enough to be trending",
             ],
             answer_index: 2,
             explanation: "Good pillars sit where customer interest, real knowledge and sales meet.",
@@ -735,7 +735,7 @@ Zakaria plans content for the Tamale solar installer. His keyword map shows many
           {
             prompt: "Which of these is the lesson's advice on refreshing old content?",
             options: [
-              "Change the date so it looks new",
+              "Change the date at the top so search engines think the page was just written and rank it again",
               "Delete all old pages every year",
               "Copy a competitor's newer page",
               "Genuinely improve it with updated prices, new questions and fixed links",
@@ -801,7 +801,7 @@ Ayishetu runs a small catering business in Wa. She collects ten questions from h
             prompt: "Where should FAQ questions come from?",
             options: [
               "Questions the marketer imagines",
-              "A competitor's FAQ copied word for word",
+              "A competitor's FAQ copied word for word, since they already know what customers ask",
               "Real questions customers ask, in their own words",
               "Only the business owner's favourite topics",
             ],
@@ -812,7 +812,7 @@ Ayishetu runs a small catering business in Wa. She collects ten questions from h
             prompt: "How should an FAQ answer start?",
             options: [
               "With a direct answer in one or two sentences",
-              "With a long story about the business",
+              "With a long story about how the business started",
               "With a link to another site",
               "With a list of keywords",
             ],
@@ -834,7 +834,7 @@ Ayishetu runs a small catering business in Wa. She collects ten questions from h
             prompt: "Why does the lesson recommend captions or a transcript for videos?",
             options: [
               "They make the video longer",
-              "They are required by law in Ghana",
+              "They are required by law for every business video posted in Ghana and can be fined if missing",
               "They help people watching without sound and give search engines text to read",
               "They stop people sharing the video",
             ],
@@ -913,7 +913,7 @@ Issahaku's strategy for Mariama's Tamale guesthouse reads, in short: Goal, more 
             prompt: "What does Google Search Console show?",
             options: [
               "Your competitors' passwords",
-              "How much a competitor spends on ads",
+              "How much each competitor spends on ads and which keywords they bid on, by month",
               "Only the number of social media followers",
               "Which searches the site appeared for, how often, and how many people clicked",
             ],
@@ -926,7 +926,7 @@ Issahaku's strategy for Mariama's Tamale guesthouse reads, in short: Goal, more 
               "Because rankings never change",
               "Because new pages can take weeks or months to settle",
               "Because reports must be long",
-              "Because search engines only update once a year",
+              "Because search engines only update their rankings once a year, in January",
             ],
             answer_index: 1,
             explanation: "The lesson says to give SEO time and report trends.",
@@ -934,7 +934,7 @@ Issahaku's strategy for Mariama's Tamale guesthouse reads, in short: Goal, more 
           {
             prompt: "What does the lesson say about publishing frequency?",
             options: [
-              "Publish ten pages a week no matter what",
+              "Publish ten new pages a week no matter what, since more pages always means more visitors",
               "One excellent page a fortnight, kept up, beats many planned pages that never appear",
               "Publish only once a year",
               "Frequency does not matter at all",
@@ -1006,7 +1006,7 @@ By the end you will have a mock campaign plan with a defined audience and budget
               "Notice which organic posts people love, then put money behind those proven posts",
               "Only ever use paid ads",
               "Stop posting once ads start",
-              "Use paid ads only for posts nobody liked",
+              "Use paid ads only for the posts nobody liked, so that every post eventually gets seen by people",
             ],
             answer_index: 0,
             explanation: "Good marketers boost posts that have already proved popular organically.",
@@ -1017,7 +1017,7 @@ By the end you will have a mock campaign plan with a defined audience and budget
               "Sharing customers' phone numbers with other businesses",
               "Making any claim that gets attention",
               "Labelling paid partnerships honestly and keeping customers' details private",
-              "Ignoring platform advertising rules for small budgets",
+              "Ignoring the platform's advertising rules, since they only apply to large budgets over a set amount",
             ],
             answer_index: 2,
             explanation: "The lesson lists honest labelling, privacy and following advertising rules.",
@@ -1025,7 +1025,7 @@ By the end you will have a mock campaign plan with a defined audience and budget
           {
             prompt: "In the example, which of Hawa's posts did Rahinatu suggest putting money behind?",
             options: [
-              "A new post nobody had seen",
+              "A new post nobody had seen yet, so the ad would feel fresh to everyone who saw it",
               "A text post about prices",
               "A competitor's post",
               "The video of the women's group that got far more shares than anything else",
@@ -1119,7 +1119,7 @@ Salifu runs ads for a phone accessories shop in Bolgatanga. The owner wants more
           {
             prompt: "Why does the lesson say to check the objective list on screen?",
             options: [
-              "Because objectives are different for every user",
+              "Because the objectives shown are different for every user, even in the same country",
               "Because the list is secret",
               "Because platforms change their labels from time to time",
               "Because there is only one objective",
@@ -1193,7 +1193,7 @@ Mariama runs ads for a guesthouse in Tamale. Her first ad set targets people in 
             prompt: "What does a lookalike audience do?",
             options: [
               "Shows the ad only to the business owner",
-              "Copies a competitor's audience",
+              "Copies a competitor's audience so your ad reaches the people who follow their page",
               "Targets people with the same name",
               "Finds new people who resemble a source audience such as past buyers",
             ],
@@ -1205,7 +1205,7 @@ Mariama runs ads for a guesthouse in Tamale. Her first ad set targets people in 
             options: [
               "They are not allowed",
               "They can make ads expensive and slow to learn",
-              "They always reach too many people",
+              "They always reach too many people and spend the budget in a day",
               "They only work for big brands",
             ],
             answer_index: 1,
@@ -1279,7 +1279,7 @@ Issahaku plans a mock campaign for a tailor in Wa ahead of the new school term. 
             prompt: "When is a lifetime budget especially useful?",
             options: [
               "For a campaign that will run forever",
-              "When you do not know how much you can spend",
+              "When you do not yet know how much you can spend, since it adjusts to your balance",
               "Only for awareness campaigns",
               "For a short promotion with clear start and end dates",
             ],
@@ -1301,7 +1301,7 @@ Issahaku plans a mock campaign for a tailor in Wa ahead of the new school term. 
             prompt: "What makes a fair test between two ads?",
             options: [
               "Changing several things at once to save time",
-              "Running one ad this month and the other next month",
+              "Running one ad this month and the other next month, then comparing which got more sales",
               "Changing one thing only, with the same budget, at the same time",
               "Giving the favourite ad more budget",
             ],
@@ -1311,7 +1311,7 @@ Issahaku plans a mock campaign for a tailor in Wa ahead of the new school term. 
           {
             prompt: "For a messaging campaign, which result matters most?",
             options: [
-              "The number of cheap clicks",
+              "The number of cheap clicks, since a low cost per click means the campaign is working well",
               "How many likes the ad got",
               "How long the ad text is",
               "Cost per conversation started, and how many conversations became sales",
@@ -1381,7 +1381,7 @@ Salifu agreed to appear. The story is true, short and focused on him.`,
             prompt: "What are the four beats of the story shape in this lesson?",
             options: [
               "Logo, price, address, phone",
-              "Introduction, history, staff, awards",
+              "Introduction, history, staff and awards won",
               "Hook, problem, change, result and next step",
               "Music, dance, filter, hashtag",
             ],
@@ -1392,7 +1392,7 @@ Salifu agreed to appear. The story is true, short and focused on him.`,
             prompt: "Who should usually be the hero of a business's story?",
             options: [
               "The customer or a real person, with the business as the helper",
-              "The business itself",
+              "The business itself, since it is the one paying for the story to be told",
               "A famous celebrity",
               "The marketer",
             ],
@@ -1497,7 +1497,7 @@ He films in the morning light outside the workshop, two takes of each shot.`,
           {
             prompt: "What is b roll?",
             options: [
-              "The second half of the video",
+              "The second half of the video, where the price and contact details are shown",
               "A type of microphone",
               "A paid video ad",
               "Extra shots such as close ups and hands that make editing easier",
@@ -1508,7 +1508,7 @@ He films in the morning light outside the workshop, two takes of each shot.`,
           {
             prompt: "Which lighting advice does the lesson give?",
             options: [
-              "Film with a bright window behind the person",
+              "Film with a bright window behind the person so their face looks soft and even",
               "Film near a window or outside in shade, avoiding harsh midday sun on faces",
               "Always film at night",
               "Use the flash for every shot",
@@ -1521,7 +1521,7 @@ He films in the morning light outside the workshop, two takes of each shot.`,
             options: [
               "Because the edges are always blurry",
               "Because buttons and captions cover the edges",
-              "Because platforms crop the centre",
+              "Because platforms crop the centre of every vertical video",
               "Because it uses less data",
             ],
             answer_index: 1,
@@ -1581,7 +1581,7 @@ Fuseini edits his smock promo in a free phone editor. His first cut is 48 second
             prompt: "What is the first thing to check after your rough edit?",
             options: [
               "Whether the music is loud enough",
-              "Whether the video is longer than a minute",
+              "Whether the video is longer than a minute, since longer videos are always shown to fewer people",
               "Whether the logo appears first",
               "Whether the first three seconds would make you stop scrolling",
             ],
@@ -1594,7 +1594,7 @@ Fuseini edits his smock promo in a free phone editor. His first cut is 48 second
               "They often get Ghanaian names, places and local words wrong",
               "They are always perfect",
               "They make the video longer",
-              "They are not allowed on social media",
+              "They are not allowed on social media adverts and can get the post removed",
             ],
             answer_index: 0,
             explanation: "Automatic captions often misspell local names and words.",
@@ -1614,7 +1614,7 @@ Fuseini edits his smock promo in a free phone editor. His first cut is 48 second
             prompt: "What does the lesson recommend about free editing tools?",
             options: [
               "Pay for the most expensive editor",
-              "Use a different editor for every video",
+              "Use a different editor for every video so you learn which one gives the best result over time",
               "Never edit, post raw clips",
               "Pick one, learn it well, and check its terms for watermarks or limits",
             ],
@@ -1683,7 +1683,7 @@ Wumpini manages a Facebook Group for a farm inputs shop in Damongo. Its purpose 
             prompt: "What is the key difference between an audience and a community?",
             options: [
               "A community is always bigger",
-              "An audience pays and a community does not",
+              "An audience pays to join and a community is free for everyone",
               "In a community, members also talk to each other",
               "There is no difference",
             ],
@@ -1704,7 +1704,7 @@ Wumpini manages a Facebook Group for a farm inputs shop in Damongo. Its purpose 
           {
             prompt: "What privacy point does the lesson make about WhatsApp groups?",
             options: [
-              "Nobody can see anyone's number",
+              "Nobody can see anyone's number, because WhatsApp hides them from every member except the admin",
               "Members can usually see each other's phone numbers, so tell people before they join",
               "Groups are always anonymous",
               "Only admins can post",
@@ -1716,7 +1716,7 @@ Wumpini manages a Facebook Group for a farm inputs shop in Damongo. Its purpose 
             prompt: "Which measure best shows a healthy community?",
             options: [
               "Total member count only",
-              "How many adverts the business posts",
+              "How many adverts the business posts in the group each week, and how many people see them",
               "How many members post, reply and answer each other each week",
               "How long the rules are",
             ],
@@ -1783,7 +1783,7 @@ Rahinatu is searching for partners for Hawa's shea butter. She finds three creat
             options: [
               "Their smaller, closer audiences often trust them more personally and may match local customers",
               "They always charge nothing",
-              "They have more followers",
+              "They have more followers than most celebrities, so a post reaches far more people for less money",
               "They never post adverts",
             ],
             answer_index: 0,
@@ -1806,7 +1806,7 @@ Rahinatu is searching for partners for Hawa's shea butter. She finds three creat
               "Followers asking where to buy products",
               "A large follower count with very few, repetitive comments",
               "The creator replying in two languages",
-              "Steady growth after a popular video",
+              "Steady growth in followers after one of their videos became popular",
             ],
             answer_index: 1,
             explanation: "Big numbers with few or repetitive comments suggest bought followers.",
@@ -1814,7 +1814,7 @@ Rahinatu is searching for partners for Hawa's shea butter. She finds three creat
           {
             prompt: "Why did Rahinatu choose the Tamale beauty creator?",
             options: [
-              "She had the most followers",
+              "She had the most followers of any creator in the Northern Region",
               "Her audience was local, engaged and asked where to buy products",
               "She was the cheapest",
               "She posted only in English",
@@ -1885,7 +1885,7 @@ Rahinatu writes to the Tamale beauty creator: "Hello Ayishetu, your harmattan sk
             prompt: "What should the opening of an influencer proposal do?",
             options: [
               "List the business's full history",
-              "State the lowest fee you will pay",
+              "State the lowest fee you will pay so they know straight away whether to reply",
               "Ask for their follower numbers",
               "Say why you chose them, mentioning specific content you liked",
             ],
@@ -1898,7 +1898,7 @@ Rahinatu writes to the Tamale beauty creator: "Hello Ayishetu, your harmattan sk
               "Creators must use the paid partnership label to tag the business they work with",
               "Nothing; disclosure is optional",
               "Only celebrities must disclose",
-              "Disclosure only in private messages",
+              "Disclosure is needed only in private messages between the creator and the business",
             ],
             answer_index: 0,
             explanation: "The lesson cites Instagram's requirement to use the paid partnership label.",
@@ -1907,7 +1907,7 @@ Rahinatu writes to the Tamale beauty creator: "Hello Ayishetu, your harmattan sk
             prompt: "Is a product given in exchange for content a commercial relationship?",
             options: [
               "No, gifts never count",
-              "Only if the product is expensive",
+              "Only if the product is expensive, such as a phone or a laptop",
               "Yes, it still counts as a commercial relationship",
               "Only on TikTok",
             ],
@@ -1918,7 +1918,7 @@ Rahinatu writes to the Tamale beauty creator: "Hello Ayishetu, your harmattan sk
             prompt: "How can a business measure sales from a creator's post?",
             options: [
               "Guess from the number of likes",
-              "Ask the creator to estimate",
+              "Ask the creator to estimate how many of their followers bought, based on comments and likes",
               "It cannot be measured",
               "Give the creator a unique code or a phrase followers send on WhatsApp, then count them",
             ],
@@ -1986,7 +1986,7 @@ Abdul-Rahman manages a car rental business in Tamale. Most customers arrive by a
             prompt: "Why are search ads powerful for many businesses?",
             options: [
               "They are always free",
-              "They guarantee the first position",
+              "They guarantee the first position on the page for as long as the campaign runs",
               "They reach people at the moment they search for what the business sells",
               "They replace the need for a phone number",
             ],
@@ -2007,7 +2007,7 @@ Abdul-Rahman manages a car rental business in Tamale. Most customers arrive by a
           {
             prompt: "Whose account and payment method should a campaign usually use?",
             options: [
-              "The marketer's personal account, so the client cannot see it",
+              "The marketer's personal account and card, so the client never has to see the ad settings",
               "The client's own account and payment method, or with full client access",
               "A friend's account",
               "No account is needed",
@@ -2099,7 +2099,7 @@ Two shops in Tamale advertise for "laptop repair Tamale". Shop A bids more but i
             options: [
               "Bid, budget and schedule",
               "Followers, likes and shares",
-              "Headline length, colour and font",
+              "Headline length, the colour of the ad and the font used on the landing page",
               "Expected clickthrough rate, ad relevance and landing page experience",
             ],
             answer_index: 3,
@@ -2110,7 +2110,7 @@ Two shops in Tamale advertise for "laptop repair Tamale". Shop A bids more but i
             options: [
               "It is the only input in the auction",
               "It is a diagnostic tool and not itself an input in the auction",
-              "It decides the price of every click",
+              "It decides the exact price of every click, and nothing else is used in the auction",
               "It is hidden from advertisers",
             ],
             answer_index: 1,
@@ -2121,7 +2121,7 @@ Two shops in Tamale advertise for "laptop repair Tamale". Shop A bids more but i
             options: [
               "She paid a secret fee",
               "Her ad and landing page were far more relevant to the search",
-              "She used more keywords",
+              "She used more keywords than the other bidder in her ad group",
               "Her shop is older",
             ],
             answer_index: 1,
@@ -2201,7 +2201,7 @@ Mariama's guesthouse in Tamale wants direct bookings. She has a simple website w
             prompt: "Why does the lesson recommend that beginners start with Search?",
             options: [
               "You choose keywords and ads and can see which searches led to clicks",
-              "It is the only type allowed in Ghana",
+              "It is the only campaign type that businesses in Ghana are allowed to run",
               "It never costs money",
               "It shows only video ads",
             ],
@@ -2297,7 +2297,7 @@ Sumaila inherits an account for an electronics shop in Wa. It has one campaign c
             prompt: "What should each ad group contain?",
             options: [
               "One theme of closely related keywords and ads written for them",
-              "Every keyword the business could ever want",
+              "Every keyword the business could ever want, so the ads can show on any search",
               "Only one ad and no keywords",
               "Keywords for different businesses",
             ],
@@ -2318,7 +2318,7 @@ Sumaila inherits an account for an electronics shop in Wa. It has one campaign c
           {
             prompt: "Why might you create separate campaigns for rooms and a conference hall?",
             options: [
-              "Because Google requires one campaign per product",
+              "Because Google requires a separate campaign for each product a business sells",
               "Because it makes reports longer",
               "Because they have different budgets and customers",
               "Because ad groups cannot hold keywords",
@@ -2404,7 +2404,7 @@ Abdul-Rahman builds keywords for the car rental business. In the "Airport Car Hi
           {
             prompt: "What does a negative keyword do?",
             options: [
-              "Lowers the price of every click",
+              "Lowers the price of every click on that keyword",
               "Stops your ad showing on searches that include it",
               "Writes bad reviews of competitors",
               "Hides the business from maps",
@@ -2522,7 +2522,7 @@ Each headline is under 30 characters and makes sense in any combination.`,
           {
             prompt: "Why must every headline make sense on its own?",
             options: [
-              "Because only one headline is ever shown",
+              "Because only one headline is ever shown at a time, and Google picks it at random each day",
               "Because headlines are read aloud",
               "Because descriptions are not allowed",
               "Because Google can show headlines in different combinations and orders",
@@ -2600,7 +2600,7 @@ Wumpini's laptop repair ad in Tamale used to send people to the shop's home page
             prompt: "What are sitelinks?",
             options: [
               "Extra links in an ad to specific pages such as Prices or Contact",
-              "Links from other websites to yours",
+              "Links from other websites to yours, which Google counts in the ad",
               "Links in a social media bio",
               "Broken links on your site",
             ],
@@ -2613,7 +2613,7 @@ Wumpini's laptop repair ad in Tamale used to send people to the shop's home page
               "It must be the home page",
               "It must match the ad's promise and make the next step obvious",
               "It must have autoplaying video",
-              "It must be as long as possible",
+              "It must be as long as possible so that every question is answered on one page",
             ],
             answer_index: 1,
             explanation: "A landing page should match the ad and make it easy to act.",
@@ -2835,7 +2835,7 @@ Fuseini reviews a month of a mock campaign for a solar shop in Bolgatanga. "Sola
           {
             prompt: "What does the search terms report show?",
             options: [
-              "The keywords competitors use",
+              "The keywords your competitors use and how much they pay for each click",
               "Your website's speed",
               "Your social media followers",
               "The actual searches people typed that triggered your ads",
@@ -2944,7 +2944,7 @@ From his analysis of the Bolgatanga solar shop campaign, Fuseini recommends: add
               "Rewriting a headline",
               "Adding a sitelink",
               "Lowering bids at hours when nobody answers the phone",
-              "Changing the landing page photo",
+              "Changing the landing page photo to one that better matches the ad",
             ],
             answer_index: 2,
             explanation: "Ad schedule adjustments change bids for certain hours.",
