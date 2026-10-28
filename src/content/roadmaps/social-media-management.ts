@@ -116,7 +116,7 @@ export const socialMediaManagement: RoadmapDraft = {
       slug: "page-access",
       title: "Page access without sharing passwords",
       summary:
-        "Business tools like Meta Business Suite let an owner give you a role on their page so nobody has to hand over a password. Learn the difference between full control and partial access, and how the owner removes you cleanly when the work ends.",
+        "Business tools like Meta Business Suite let an owner give you a role on their page so nobody has to hand over a password. Learn the difference between full control and partial control, and how the owner removes you cleanly when the work ends.",
       parent: "taking-on-a-client",
       optional: false,
       resources: [RES.metaLearn, tiktokBcRoles, linkedinRoles],

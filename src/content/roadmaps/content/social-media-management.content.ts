@@ -299,7 +299,7 @@ You can keep this in a notes app or a shared document and tick it off:
 
 Issahaku is asked to manage the pages of a private basic school in Tamale. Before posting anything, he meets the head teacher for thirty minutes. He learns that the school's goal is more admission enquiries before the new academic year, that parents mostly ask questions on WhatsApp, that photos of pupils need parents' permission, and that the head teacher must approve every post. He writes all of this down in a one page brief and sends it back for confirmation.
 
-Next, the head teacher adds him to the school's Facebook Page from her own account, giving him partial access so he can post and reply but not change settings. He turns on two step verification on his own account. Only then does he start planning posts.
+Next, the head teacher adds him to the school's Facebook Page from her own account, giving him Facebook access with partial control so he can post and reply but not change settings. He turns on two step verification on his own account. Only then does he start planning posts.
 
 None of this took long, but every later decision is easier because of it. When a parent asks why a photo was posted, Issahaku can point to the agreed permission process. When the head teacher wants faster replies, they can look at the agreed reply times together.
 
@@ -309,7 +309,7 @@ Treat every client account as if it holds money, because in a sense it does. Be 
       practice_task_md: `**Goal:** Build your reusable client onboarding checklist.
 
 **Steps:**
-1. Open a notes app, Google Docs or a notebook.
+1. Open a notes app, a free online document such as Google Docs, or a notebook.
 2. Write the seven checklist items from this lesson in your own words.
 3. Add two items that would matter for clients in your town, for example "agree which local language posts can use" or "check market day timing".
 4. Save it with a clear name such as "Client onboarding checklist" so you can copy it for every new client.
@@ -412,7 +412,7 @@ Mariama owns a fabric shop in Tamale. In onboarding, she says most buyers are wo
 1. Choose a business you can talk to: a relative's shop, a church, a school club or a friend's side business.
 2. Ask the onboarding questions from this lesson in a short conversation or by voice notes.
 3. Audit one of its pages using the list in the lesson.
-4. Write a one page brief in Google Docs or a notes app with: business summary, customers, one goal, platforms, approver, reply times, limits and three first fixes.
+4. Write a one page brief in a free document tool such as Google Docs, or a notes app, with: business summary, customers, one goal, platforms, approver, reply times, limits and three first fixes.
 
 **Done looks like:** a brief the owner has read and confirmed. This is your first portfolio document.`,
       quiz: {
@@ -517,7 +517,7 @@ Share the guide with the client for approval and update it when something new co
 **Steps:**
 1. Use the business from your onboarding brief, or any local business you know well.
 2. Read some of its existing posts and messages, or talk to the owner for ten minutes.
-3. In Google Docs or a notes app, write: three voice words, how to address people, words to use and avoid, languages, emoji use, colours and logo notes, sensitive topics, and three sample lines (a post, a reply to a question, a reply to a complaint).
+3. In a document or notes app, write: three voice words, how to address people, words to use and avoid, languages, emoji use, colours and logo notes, sensitive topics, and three sample lines (a post, a reply to a question, a reply to a complaint).
 4. Ask the owner or a friend who knows the business whether it sounds right, and adjust.
 
 **Done looks like:** a one page guide with all eight parts filled in.`,
@@ -576,13 +576,13 @@ Share the guide with the client for approval and update it when something new co
 
 ## How Meta does it
 
-On Facebook, a Page can give people different levels of access. The names shift as Meta updates its tools (you may see Business Suite, business portfolio or the older Business Manager), so learn the ideas rather than the exact buttons:
+On Facebook, a Page can give people different levels of access. The names shift as Meta updates its tools (you may see Business Suite, business portfolio or the older Business Manager), and levels differ when a Page sits in a business portfolio, so learn the ideas rather than the exact buttons:
 
-* **Full control.** Can manage everything, including settings, and can give or remove access for other people, even others with full control. Keep this for the owner and perhaps one trusted senior person.
-* **Partial access.** Can create, manage and delete content, reply to messages as the Page and see insights, but cannot change settings or manage who has access. This is usually right for a page manager.
+* **Facebook access with full control.** Can manage everything, including settings, and can give or remove access for other people, even others with full control. Keep this for the owner and perhaps one trusted senior person.
+* **Facebook access with partial control.** Can create, manage and delete content, reply to messages and comments as the Page, run ads, remove or ban people and see insights, but cannot change settings or manage who has access. This is usually right for a page manager.
 * **Task access.** Can work on specific tasks through business tools such as Meta Business Suite or Ads Manager, but cannot switch into the Page on Facebook itself.
 
-A Page must always keep at least one person with full control, or it can be deactivated. That person should be the owner, not you.
+A Page must always keep at least one person with full control. If nobody has it, Meta deactivates the Page and schedules it for deletion. That person should be the owner, not you.
 
 When an agency works with a business, Meta also lets the business add the agency's own business portfolio as a **partner**, so the agency can assign its staff without the client adding each person.
 
@@ -603,16 +603,16 @@ A linked Instagram professional account can be managed through the same business
 
 ## Worked example
 
-Hawa owns the shea butter business and has full control of her Facebook Page. Fuseini asks to be added. From her Page settings, Hawa adds Fuseini with partial access. Fuseini can now post, schedule and answer messages from his own account, protected by his own two step verification. Six months later, Hawa hires her niece to take over. She removes Fuseini's access in two taps and adds her niece. No passwords changed hands at any point.`,
+Hawa owns the shea butter business and has full control of her Facebook Page. Fuseini asks to be added. From her Page settings, Hawa adds Fuseini with partial control. Fuseini can now post, schedule and answer messages from his own account, protected by his own two step verification. Six months later, Hawa hires her niece to take over. She removes Fuseini's access in two taps and adds her niece. No passwords changed hands at any point.`,
       practice_task_md: `**Goal:** Practise giving access safely, with no real client risk.
 
 **Steps:**
 1. Create a practice Facebook Page for an imaginary business, or use a page you already own.
-2. Ask a friend or classmate for permission, then add them to the Page with partial access (not full control) from the Page's settings. Menu names change, so look for words like "Page access" or "people".
+2. Ask a friend or classmate for permission, then give them Facebook access with partial control (not full control) from the Page's settings. Menu names change, so look for words like "Page access" or "people".
 3. Ask your friend to confirm what they can and cannot do.
 4. Remove their access, and write a short record of the date added, the level and the date removed.
 
-**Done looks like:** a three line access record and a short note explaining why partial access was the right choice.`,
+**Done looks like:** a three line access record and a short note explaining why partial control was the right choice.`,
       quiz: {
         questions: [
           {
@@ -628,12 +628,12 @@ Hawa owns the shea butter business and has full control of her Facebook Page. Fu
           },
           {
             prompt: "Which level of Facebook Page access usually suits a page manager?",
-            options: ["Full control", "Partial access", "No access", "Owner access to the bank account"],
+            options: ["Full control", "Partial control", "No access", "Owner access to the bank account"],
             answer_index: 1,
-            explanation: "Partial access lets you post and reply without changing settings or managing who has access.",
+            explanation: "Partial control lets you post and reply without changing settings or managing who has access.",
           },
           {
-            prompt: "What can someone with full control of a Facebook Page do that partial access cannot?",
+            prompt: "What can someone with full control of a Facebook Page do that partial control cannot?",
             options: [
               "Reply to messages",
               "Create posts",
@@ -915,7 +915,7 @@ Sumaila manages the page of a cold store in Damongo. The goal is more orders fro
 
 **Steps:**
 1. Use the business from your brief. Choose three to five pillars and write one line on why each supports the goal.
-2. In Google Sheets or on paper, make a grid with pillars across the top and four weeks down the side.
+2. In a free spreadsheet such as Google Sheets, or on paper, make a grid with pillars across the top and four weeks down the side.
 3. Fill every square with a short post idea.
 4. Mark at least two local moments in that month, such as a festival, market day or school reopening, and adjust ideas around them.
 5. Check the balance: about a quarter of ideas should be direct sales posts.
@@ -1071,10 +1071,10 @@ Amina, who runs the catering service in Wa, is busy with orders all week. Her pa
 
 * **Meta Business Suite.** Free, on the web and in its mobile app. You can create a post for a Facebook Page and a linked Instagram account, choose a date and time, and see scheduled posts in a planner view. Scheduling limits and menu names change, so check what the tool offers when you use it.
 * **TikTok.** Business accounts can schedule videos from the TikTok website on a computer, from at least fifteen minutes up to ten days ahead.
-* **LinkedIn.** Page admins can schedule posts when creating them.
+* **LinkedIn.** Super admins and content admins of a Page can schedule posts when creating them; analysts cannot.
 * **Third party schedulers.** Tools such as Buffer offer free plans with limits, covering several platforms in one place. They are examples, not requirements.
 
-WhatsApp status updates are usually posted by hand from the app, so plan time for them in your routine.
+Meta Business Suite does not handle WhatsApp status, so status updates are posted from the WhatsApp Business app itself. Plan time for them in your routine.
 
 ## The approval step
 
@@ -1270,7 +1270,7 @@ When this section is done well, customers feel answered, scammers find no space,
 
 ## One place for messages
 
-Meta Business Suite brings Facebook Page messages, Instagram direct messages and comments into one inbox, on the web and in its mobile app. If the business uses WhatsApp Business connected to its Page, those chats can appear there too. TikTok and LinkedIn messages are handled in their own apps. Know where every kind of message arrives, so nothing waits unseen.
+Meta Business Suite brings Facebook Page messages, Instagram direct messages and comments into one inbox, on the web and in its mobile app. In countries where Meta offers it, a WhatsApp Business account can be synced to the same inbox, though WhatsApp status and groups stay in the WhatsApp Business app. TikTok and LinkedIn messages are handled in their own apps. Know where every kind of message arrives, so nothing waits unseen.
 
 ## Tools that save time
 
@@ -1304,7 +1304,7 @@ Fuseini sets up Hawa's inbox. He writes six saved replies (price list, delivery 
 1. Write five saved replies for your practice client: price list, delivery or location, payment method, opening hours and one product question. Use the brand voice.
 2. Write an instant reply and an away message.
 3. Choose four or five labels you would use.
-4. Create a simple log in Google Sheets with columns for date, platform, first name, type, action and status, and add three made up rows.
+4. Create a simple log in a free spreadsheet such as Google Sheets, with columns for date, platform, first name, type, action and status, and add three made up rows.
 5. If you have WhatsApp Business, set up one quick reply and one label to see how they work.
 
 **Done looks like:** saved replies, automatic messages, labels and a log template ready for a client.`,
@@ -1607,7 +1607,7 @@ Live selling works best with two people:
 * **The host** presents products and talks to viewers.
 * **The moderator** reads comments, answers simple questions in writing, hides spam and scam comments, and records every order in a sheet: name, product, size, quantity and how to contact them.
 
-If you only have one person, slow down and read orders aloud so you can note them.
+On a Facebook Page, the owner can give the moderator community manager access, which lets them moderate live chat without managing the Page. If you only have one person, slow down and read orders aloud so you can note them.
 
 ## During the stream
 
@@ -1635,7 +1635,7 @@ Wumpini hosts a Friday evening Facebook live for Mariama's fabric shop, with her
 1. Choose a real or practice business and five products.
 2. Write a run sheet with each product's price, options, stock and one talking point.
 3. Write the announcement post and the pinned comment with ordering and payment rules.
-4. Create an order sheet in Google Sheets with columns for name, product, option, quantity, contact route and status.
+4. Create an order sheet in a free spreadsheet, with columns for name, product, option, quantity, contact route and status.
 5. If you can, practise a ten minute session with a friend as moderator on a practice account, then fill in the sheet.
 
 **Done looks like:** a run sheet, announcement, pinned comment and order sheet, plus notes from a practice run if you did one.`,
@@ -1788,7 +1788,7 @@ The details differ, but most platforms cover similar areas:
 
 ## Common ways business pages break rules by accident
 
-* **Music.** Adding a popular song to a business video. Business accounts on TikTok are expected to use the Commercial Music Library, and Meta has its own sound collection for business use. Songs from elsewhere can be muted or removed.
+* **Music.** Adding a popular song to a business video. TikTok recommends its Commercial Music Library for any post that promotes a brand, product or service, because its licences for other music do not cover commercial use. Meta offers Sound Collection, free music cleared for use on Facebook and Instagram. Songs from elsewhere can be muted or removed.
 * **Copied photos.** Using another seller's product photos or a picture found online.
 * **Health and weight claims.** "Cures", "guaranteed results", before and after photos for slimming products.
 * **Engagement bait.** "Comment YES to win" or "tag ten friends" posts, which platforms may show less.
@@ -1832,15 +1832,15 @@ Sumaila's client, a Bolgatanga gym, has a Reel removed. The notice says it broke
             explanation: "Meta's rules are called Community Standards; TikTok calls its rules Community Guidelines.",
           },
           {
-            prompt: "Why should a business account on TikTok use the Commercial Music Library?",
+            prompt: "Why does TikTok recommend its Commercial Music Library for posts that promote a business?",
             options: [
               "It makes videos longer",
-              "Songs from elsewhere can be muted or removed for business use",
+              "Its licences for other music do not cover commercial use, so other songs can be muted or removed",
               "It is the only way to add captions",
               "It removes the need for approval",
             ],
             answer_index: 1,
-            explanation: "Business accounts are expected to use music cleared for commercial use.",
+            explanation: "TikTok says music outside the Commercial Music Library is not licensed for commercial use.",
           },
           {
             prompt: "What usually happens when a page breaks rules repeatedly?",
@@ -1999,7 +1999,7 @@ A post is promotional if the person posting gets something for it: money, free p
 
 ## Claims that need care
 
-* **Health, beauty and food.** Do not claim a product cures, prevents or treats diseases unless it is approved to say so. The Ghana Food and Drugs Authority (FDA) requires approval of adverts for regulated products such as food, medicines, cosmetics and household chemicals, including on social media, and it publishes guidelines with banned claims. Ask the client for the FDA approval details and keep them on file.
+* **Health, beauty and food.** Do not claim a product cures, prevents or treats diseases unless it is approved to say so. The Ghana Food and Drugs Authority (FDA) requires approval of adverts for regulated products such as food, medicines, cosmetics and household chemicals, including on social media, and it publishes guidelines with banned claims. Approved adverts must carry a line such as "This advert is FDA approved". Ask the client for the FDA approval details and keep them on file.
 * **Prices and offers.** "Lowest price in Tamale" or "half price" must be true and match what customers pay.
 * **Results.** Do not promise outcomes you cannot prove, such as guaranteed exam results or guaranteed loans.
 * **Reviews.** Never write fake reviews, buy followers or ask staff to pose as customers.
@@ -2309,7 +2309,7 @@ Before any boost, get written approval of:
 * The area and basic audience, such as people in Tamale Metro aged over eighteen.
 * The aim: messages, profile visits, more people seeing an event.
 
-A simple message works: "Boost the uniform fabric post, GH¢100 total over five days, Tamale area, aim WhatsApp messages. Approve?" Wait for a clear yes.
+A simple message works: "Boost the uniform fabric post, GH₵100 total over five days, Tamale area, aim WhatsApp messages. Approve?" Wait for a clear yes.
 
 ## Basic settings, kept simple
 
@@ -2325,12 +2325,12 @@ If the client wants regular ads, multiple audiences, testing or bigger budgets, 
 
 ## Worked example
 
-Sumaila's cold store client in Damongo wants more restaurant orders. A post about frozen chicken in bulk gets several messages from followers. Sumaila suggests a boost and sends: "GH¢80 over four days, Damongo and nearby towns, aim WhatsApp messages." The owner approves and uses his own card in the ad account. Sumaila logs the spend, and the monthly review shows the messages the boost brought.`,
+Sumaila's cold store client in Damongo wants more restaurant orders. A post about frozen chicken in bulk gets several messages from followers. Sumaila suggests a boost and sends: "GH₵80 over four days, Damongo and nearby towns, aim WhatsApp messages." The owner approves and uses his own card in the ad account. Sumaila logs the spend, and the monthly review shows the messages the boost brought.`,
       practice_task_md: `**Goal:** Prepare a safe boosting routine, without spending money.
 
 **Steps:**
 1. Write an approval message template that includes post, total amount in cedis, days, area, audience and aim.
-2. Create a spend log in Google Sheets with columns for date, post, approved amount, spent amount, result and receipt link.
+2. Create a spend log in a free spreadsheet, with columns for date, post, approved amount, spent amount, result and receipt link.
 3. On a practice Page, open the boost option and look through the choices up to the payment step, then stop without paying. Note the goal and audience options you saw.
 4. Write three sentences explaining to a client why their own ad account and payment method should be used.
 
@@ -2585,7 +2585,7 @@ Add supporting documents if you have them: a brief, a style guide, a month of co
 
 ## Where to keep it
 
-* **A shared folder or document.** A Google Doc or Slides file with a link anyone can view works well and is easy to update on any device.
+* **A shared folder or document.** A document or slides file, for example in Google Docs, with a link anyone can view works well and is easy to update on any device.
 * **A simple free website or link page,** if you want one.
 * **Your own professional profile** on a platform such as LinkedIn, with links to the case studies.
 
