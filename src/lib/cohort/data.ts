@@ -25,14 +25,25 @@ import {
 
 export type Lesson = { roadmapSlug: string; nodeSlug: string; title: string; done: boolean };
 
+export type WeekResourceLink = { name: string; url: string };
+
+/** program_weeks.resources, checked in the database; anything malformed is dropped rather than rendered. */
+export function weekResources(raw: unknown): WeekResourceLink[] {
+  if (!Array.isArray(raw)) return [];
+  return raw.flatMap((r: unknown) => {
+    const { name, url } = (r && typeof r === "object" ? r : {}) as Record<string, unknown>;
+    return typeof name === "string" && typeof url === "string" && url.startsWith("https://") ? [{ name, url }] : [];
+  });
+}
+
 export type CohortWeek = {
   id: string;
   week_number: number;
   specialization: string | null;
   theme: string;
   objectives: string[];
-  resource_name: string | null;
-  resource_url: string | null;
+  /** Up to three free official resources for extra practice, in display order. */
+  resources: WeekResourceLink[];
   assignment: string;
   is_capstone: boolean;
   /** Linked topics that are published on the site, in order. */
@@ -118,7 +129,7 @@ export const getCohortHome = cache(async (): Promise<CohortHome | null> => {
     supabase
       .from("program_weeks")
       .select(
-        "id, week_number, specialization, theme, objectives, resource_name, resource_url, assignment, is_capstone, program_week_nodes(roadmap_slug, node_slug, position)",
+        "id, week_number, specialization, theme, objectives, resources, assignment, is_capstone, program_week_nodes(roadmap_slug, node_slug, position)",
       )
       .eq("program_id", cohort.program_id)
       .order("week_number"),
@@ -170,8 +181,7 @@ export const getCohortHome = cache(async (): Promise<CohortHome | null> => {
       specialization: w.specialization,
       theme: w.theme,
       objectives: w.objectives,
-      resource_name: w.resource_name,
-      resource_url: w.resource_url,
+      resources: weekResources(w.resources),
       assignment: w.assignment,
       is_capstone: w.is_capstone,
       lessons,

@@ -67,6 +67,7 @@ test.describe("axe sweep", () => {
       "/accessibility",
       "/business",
       "/programme",
+      "/programme/curriculum",
       "/start",
       "/roadmaps",
       `/roadmaps/${roadmap.slug}`,

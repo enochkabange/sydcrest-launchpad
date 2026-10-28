@@ -2477,6 +2477,7 @@ export type Database = {
           program_id: string
           resource_name: string | null
           resource_url: string | null
+          resources: Json
           specialization: string | null
           theme: string
           updated_at: string
@@ -2491,6 +2492,7 @@ export type Database = {
           program_id: string
           resource_name?: string | null
           resource_url?: string | null
+          resources?: Json
           specialization?: string | null
           theme: string
           updated_at?: string
@@ -2505,6 +2507,7 @@ export type Database = {
           program_id?: string
           resource_name?: string | null
           resource_url?: string | null
+          resources?: Json
           specialization?: string | null
           theme?: string
           updated_at?: string

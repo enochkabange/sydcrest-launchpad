@@ -56,6 +56,10 @@ export async function seedCohort(learnerId: string): Promise<SeededCohort> {
       assignment: "Build a price sheet for five items sold at Aboabo market and total one day of sales.",
       resource_name: "Free spreadsheet course",
       resource_url: "https://example.com/sheets",
+      resources: [
+        { name: "Free spreadsheet course", url: "https://example.com/sheets" },
+        { name: "Free guide to formulas", url: "https://example.com/formulas" },
+      ],
     },
     {
       program_id: program.id,

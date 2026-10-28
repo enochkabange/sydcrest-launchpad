@@ -153,9 +153,15 @@ export type LearnerProgramme = {
 
 /**
  * The signed in learner's programmes (one per programme, their current or
- * latest membership) with the criteria check and any live certificate.
+ * latest membership) with the criteria check and any live certificate,
+ * plus every certificate they hold, cohort or not (issue #238).
  */
-export async function getMyCertification(profileId: string): Promise<{ programmes: LearnerProgramme[]; certificates: OwnCertificate[] }> {
+export type MyCertificate = OwnCertificate & {
+  /** Null when the programme is no longer published (the badge image is then left out). */
+  program_slug: string | null;
+};
+
+export async function getMyCertification(profileId: string): Promise<{ programmes: LearnerProgramme[]; certificates: MyCertificate[] }> {
   const supabase = await createClient();
   const [members, certs] = await Promise.all([
     supabase
@@ -165,14 +171,19 @@ export async function getMyCertification(profileId: string): Promise<{ programme
       .eq("role", "learner"),
     supabase
       .from("certificates")
-      .select("id, verification_id, program_id, program_title, specialization_label, issued_at, revoked_at")
+      .select(
+        "id, verification_id, program_id, program_title, specialization_label, issued_at, revoked_at, programs!certificates_program_id_fkey(slug)",
+      )
       .eq("profile_id", profileId)
       .order("issued_at", { ascending: false }),
   ]);
   // Fail loudly: an error must not read as "no programmes yet".
   if (members.error) throw new Error(`Could not load your programmes: ${members.error.message}`);
   if (certs.error) throw new Error(`Could not load your certificates: ${certs.error.message}`);
-  const certificates = certs.data ?? [];
+  const certificates: MyCertificate[] = (certs.data ?? []).map(({ programs, ...c }) => ({
+    ...c,
+    program_slug: programs?.slug ?? null,
+  }));
   const byProgram = new Map<string, { row: NonNullable<typeof members.data>[number]; rank: number }>();
   for (const row of members.data ?? []) {
     const program = row.cohorts?.programs;

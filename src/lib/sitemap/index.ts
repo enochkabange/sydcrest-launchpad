@@ -5,6 +5,7 @@ import { expertEntries } from "./experts";
 import { outcomePages } from "./outcomes";
 import { opportunityEntries, opportunityPages } from "./opportunities";
 import { corePages } from "./pages";
+import { programmePages } from "./programme";
 import { roadmapEntries } from "./roadmaps";
 import { skillEntries } from "./skills";
 import type { SitemapSource } from "./url";
@@ -16,6 +17,7 @@ import type { SitemapSource } from "./url";
  */
 export const SITEMAP_SOURCES: SitemapSource[] = [
   corePages,
+  programmePages,
   roadmapEntries,
   expertEntries,
   outcomePages,
