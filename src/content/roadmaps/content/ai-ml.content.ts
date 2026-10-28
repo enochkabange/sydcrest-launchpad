@@ -692,6 +692,899 @@ A model gives 0.7 for a loan. Approve or not? You choose a **threshold**. At 0.5
         pass_threshold: 75,
       },
     },
+    "python-ml-tools": {
+      explanation_md: `## Why tools come next
+
+Machine learning teams in Ghana and abroad work in Python, and adverts for data science and machine learning roles name the same small set of libraries again and again: NumPy, pandas, scikit learn, and a deep learning library such as PyTorch, TensorFlow or Keras. Learning this toolkit well matters more than chasing every new tool you see online.
+
+## The toolkit
+
+Think of the tools as a workshop with a few benches:
+
+* **Python** is the language that ties everything together. You already know the basics from the Data Analyst track.
+* **NumPy** handles fast maths on arrays of numbers. Vectors and matrices from the maths section live here.
+* **pandas** handles tables with named columns, which is how real data arrives: CSV files, spreadsheet exports and database queries.
+* **scikit learn** provides classic models, tools to split and test data, and ways to prepare features. You will use it throughout the classic machine learning section.
+* **A deep learning library**, such as PyTorch or Keras, builds neural networks. You meet one later in the track.
+* **matplotlib** or a similar library draws charts so you can see your data and your results.
+
+## Where the code runs
+
+You write and run all of this in a **notebook**: a document that mixes code cells, their output and your notes. Notebooks are how most data scientists explore data and share results. You can run them on your own computer with Jupyter, or in a browser through a free hosted service, which is often easier on a low spec laptop because the service's servers do the heavy computing.
+
+## A typical workflow
+
+Here is the shape of almost every project in this track, with the tool for each step:
+
+1. Load data from a CSV or database into **pandas**.
+2. Explore it with summaries and charts.
+3. Clean it: fix missing values, wrong types and odd entries.
+4. Convert the columns you need into **NumPy** arrays or let **scikit learn** do it.
+5. Train a model with **scikit learn** or a deep learning library.
+6. Test it on data it has not seen.
+7. Write up what you found in the notebook's text cells.
+
+Amina, an NGO data officer in Damongo, follows exactly this pattern when she predicts which villages need extra supplies. Most of her time goes on steps 1 to 4. The model step is a few lines.
+
+## Good habits from day one
+
+* **Restart and run all** before you share a notebook, so you know it works from top to bottom.
+* **Name things clearly.** \`yield_bags\` is better than \`y2\`.
+* **Note library versions** at the top of a notebook. Libraries change, and code that worked last year can break.
+* **Keep data small while learning.** It is faster, kinder to your data bundle, and easier to check by eye.
+
+The two topics in this section cover NumPy with pandas, and how to use free notebooks without losing work.`,
+      practice_task_md: `**Goal:** set up a tidy starter notebook you will reuse for the whole track.
+
+1. On a laptop or desktop, open a free hosted notebook or a local Jupyter install.
+2. In the first cell, import NumPy, pandas, scikit learn and matplotlib, and print each library's \`__version__\`.
+3. Add a text cell with a title, your name, the date and one sentence on what the notebook is for.
+4. Add the seven workflow steps from this lesson as empty headings in text cells.
+5. Choose **Restart and run all** and confirm it runs without errors. Save a copy to your own storage.
+
+**Done looks like:** a template notebook with version numbers printed and seven headed sections, saved where you can find it again.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which library in the lesson is used mainly for tables with named columns?",
+            options: [
+              "NumPy",
+              "pandas",
+              "matplotlib",
+              "PyTorch",
+            ],
+            answer_index: 1,
+            explanation: "pandas handles tables, which is how most real data arrives.",
+          },
+          {
+            prompt: "What does scikit learn provide, according to the lesson?",
+            options: [
+              "Only charts",
+              "Classic models, tools to split and test data, and feature preparation",
+              "A web server for apps",
+              "A replacement for Python",
+            ],
+            answer_index: 1,
+            explanation: "scikit learn is used throughout the classic machine learning section for models, testing and preparation.",
+          },
+          {
+            prompt: "In Amina's work, where does most of her time go?",
+            options: [
+              "Choosing a deep learning library",
+              "Loading, exploring, cleaning and converting data",
+              "Writing the model line",
+              "Drawing logos for her reports",
+            ],
+            answer_index: 1,
+            explanation: "The model step is short; preparing data takes most of the time.",
+          },
+          {
+            prompt: "Why should you choose Restart and run all before sharing a notebook?",
+            options: [
+              "It deletes your data",
+              "It proves the notebook works from top to bottom",
+              "It makes the model more accurate",
+              "It uploads the notebook automatically",
+            ],
+            answer_index: 1,
+            explanation: "Running everything in order catches cells that only worked because of earlier, hidden state.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "numpy-and-pandas": {
+      explanation_md: `## Why this matters
+
+A model never sees a spreadsheet. It sees an array of numbers called **features**, usually written \`X\`, and an array of answers called the **target**, usually written \`y\`. Getting from a messy table to clean \`X\` and \`y\` is the most common task in machine learning work, and adverts that mention pipelines and data preparation are describing exactly this.
+
+## pandas for the table, NumPy for the numbers
+
+pandas is where you load, inspect and clean. NumPy is the format models expect underneath. In practice you move from one to the other in a few lines.
+
+Useful pandas checks before any model:
+
+* \`df.head()\` shows the first rows, so you see what the columns really contain.
+* \`df.info()\` shows each column's type and how many values are missing.
+* \`df.describe()\` gives counts, means and ranges, which reveals impossible values such as negative rainfall.
+* \`df["district"].value_counts()\` shows how often each category appears.
+
+## A worked example
+
+Imagine an invented example file, \`farms.csv\`, from a cooperative near Tamale, with columns \`rainfall_mm\`, \`fertiliser_bags\`, \`district\`, \`planting_week\` and \`yield_bags\`. Some rows have a blank yield, and a few have a blank fertiliser value.
+
+\`\`\`python
+import pandas as pd
+
+df = pd.read_csv("farms.csv")
+df = df.dropna(subset=["yield_bags"])
+median = df["fertiliser_bags"].median()
+df["fertiliser_bags"] = df["fertiliser_bags"].fillna(median)
+
+X = df[["rainfall_mm", "fertiliser_bags"]].to_numpy()
+y = df["yield_bags"].to_numpy()
+print(X.shape, y.shape)
+\`\`\`
+
+Step by step:
+
+* Rows with no yield are dropped, because a row without an answer cannot teach the model anything.
+* Blank fertiliser values are filled with the median. This is a **choice**, not a fact. If a blank really means the farmer used none, filling with zero would be more honest. Ask the people who collected the data.
+* \`X\` becomes a matrix with one row per farm and two columns. \`y\` becomes a vector with one value per farm. Their row counts must match.
+
+## Arrays and why shape matters
+
+\`X.shape\` might print \`(199, 2)\` and \`y.shape\` \`(199,)\`. The first number in each is the number of farms, and they must agree. If they differ, rows were dropped from one and not the other, and the model will refuse to train.
+
+NumPy also lets you do maths on whole columns at once, which is called **vectorisation**. \`X[:, 0] / 100\` converts every rainfall value to hundreds of millimetres in one step, with no loop. Vectorised code is shorter and much faster than looping over rows.
+
+## Common traps
+
+* Numbers stored as text, such as "1,200" with a comma, will not convert. Clean them first.
+* Dates need converting with \`pd.to_datetime\` before you can use them.
+* Never fill in missing **target** values. Guessing the answers you are trying to predict makes the model look better than it is.`,
+      practice_task_md: `**Goal:** turn a messy table into clean \`X\` and \`y\`.
+
+1. In a spreadsheet, make an invented example table of 30 rows for a Bolgatanga shoe seller: \`price_ghs\`, \`days_on_display\`, \`colour\` and \`sold\` (1 or 0). Leave three prices blank and type one price as text with a comma, such as "1,200".
+2. Download it as CSV and load it in a free notebook with pandas.
+3. Use \`info()\` and \`describe()\` to find the problems. Write down each one.
+4. Fix the text price, fill the blank prices with a value you justify in a text cell, and build \`X\` from the two numeric columns and \`y\` from \`sold\`.
+5. Print both shapes and confirm the row counts match.
+
+**Done looks like:** a notebook that loads the file, lists the problems found, fixes them with a reason for each choice, and prints matching shapes.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "In machine learning code, what are `X` and `y` usually?",
+            options: [
+              "Two charts",
+              "The features and the target answers",
+              "Two Python libraries",
+              "The training time and test time",
+            ],
+            answer_index: 1,
+            explanation: "`X` holds the input features and `y` holds the answers the model learns to predict.",
+          },
+          {
+            prompt: "Why are rows with a blank yield dropped in the example?",
+            options: [
+              "They make the file too big",
+              "A row without an answer cannot teach the model anything",
+              "pandas cannot read blank values",
+              "Yield is not important",
+            ],
+            answer_index: 1,
+            explanation: "The target is what the model learns from, so rows without it are removed rather than guessed.",
+          },
+          {
+            prompt: "What does the lesson say about filling blank fertiliser values with the median?",
+            options: [
+              "It is always correct",
+              "It is a choice, and zero might be more honest if a blank means none was used",
+              "It should never be done",
+              "It changes the target values",
+            ],
+            answer_index: 1,
+            explanation: "Filling missing values is a judgement you should check with whoever collected the data.",
+          },
+          {
+            prompt: "`X.shape` is `(199, 2)` and `y.shape` is `(150,)`. What is most likely wrong?",
+            options: [
+              "The model is too small",
+              "Rows were dropped from one array and not the other",
+              "There are too many features",
+              "NumPy is not installed",
+            ],
+            answer_index: 1,
+            explanation: "The first numbers must match because each row of `X` needs one answer in `y`.",
+          },
+          {
+            prompt: "Which of these should you never fill in with a guess?",
+            options: [
+              "Missing fertiliser values",
+              "Missing rainfall values",
+              "Missing target values you are trying to predict",
+              "Missing planting weeks",
+            ],
+            answer_index: 2,
+            explanation: "Guessing the answers makes the model look better than it is.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "notebooks-and-free-compute": {
+      explanation_md: `## Why this matters
+
+You do not need an expensive computer to learn machine learning. Free hosted notebooks give you a capable machine in the browser, sometimes with a **GPU** (graphics processing unit), the chip that makes deep learning practical. Using them well, without losing work or burning through your data bundle, is a real skill.
+
+## What a hosted notebook is
+
+A hosted notebook runs on a computer in a data centre. Your browser shows the cells and sends your code there; the results come back to your screen. Well known free examples are **Google Colab** and **Kaggle Notebooks**. Both use the same notebook format as Jupyter, so a notebook from one usually opens in the others.
+
+These are named as examples, not recommendations. Free tiers and their limits change over time, so always read the current terms on each service's official pages, such as the Colab FAQ and Kaggle's notebook documentation.
+
+## The limits you must plan for
+
+Free hosted notebooks are generous but not unlimited:
+
+* **Sessions end.** If you are idle for a while, or a session runs for a long time, the service shuts it down. Colab's own FAQ says free resources are not guaranteed and its limits change.
+* **The machine is temporary.** Files you upload or create in the session's storage disappear when the session ends. Save anything important to your own cloud drive or download it.
+* **GPU time is rationed.** Free GPU access is limited and sometimes unavailable. Some services give a weekly allowance and may ask you to verify your account first.
+* **Rules apply.** Free notebooks are for interactive work and learning. Read the terms on what is and is not allowed.
+
+## Habits that protect your work
+
+* **Save early and often.** Save a copy of the notebook to your own drive at the start, not the end.
+* **Write checkpoints.** After a long training run, save the trained model to a file and download it or copy it to your drive straight away.
+* **Use the GPU only when you need it.** Classic models in scikit learn run fine on a normal processor. Switch on a GPU for neural networks and switch it off afterwards, so you keep your allowance for when it matters.
+* **Make notebooks rerunnable.** Put downloads and installs at the top so a fresh session can rebuild everything with Restart and run all.
+
+## Protecting your data bundle
+
+Notebooks use data while open, and downloading datasets uses more. Work with small samples while you build and test, for example the first few thousand rows. Download a dataset once into the session rather than reloading it in every cell. Close tabs you are not using. Where possible, do your heavy sessions on Wi Fi at a hub, school or office.
+
+## A worked example
+
+Sumaila is training a small model in a free notebook at a Tamale hub. He saves a copy to his drive first. He tests his code on 2,000 rows with the GPU off, then switches the GPU on for the full run. When training ends he saves the model to his drive at once. Ten minutes later the session times out while he steps out for lunch. He loses nothing.`,
+      practice_task_md: `**Goal:** practise a safe notebook routine.
+
+1. Open a free hosted notebook on a laptop or desktop and read the service's current FAQ or usage page. Write down two limits it mentions, in your own words.
+2. Save a copy of the notebook to your own drive before writing any code.
+3. In a cell, create a small pandas table of invented example data and save it to a CSV file in the session.
+4. Copy or download that CSV to your drive or device.
+5. Restart the session, confirm the session file has gone, and reload it from your saved copy.
+
+**Done looks like:** a notebook with a text cell listing the two limits, and code that reloads your data from your own storage after a restart.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What happens to files saved in a hosted notebook's session storage when the session ends?",
+            options: [
+              "They are kept forever",
+              "They disappear, so you must save important files elsewhere",
+              "They are emailed to you",
+              "They move to the next notebook automatically",
+            ],
+            answer_index: 1,
+            explanation: "The hosted machine is temporary, so copy anything important to your drive or device.",
+          },
+          {
+            prompt: "When does the lesson suggest switching on a GPU?",
+            options: [
+              "For every notebook, all the time",
+              "For training neural networks, switching it off afterwards",
+              "Only for loading CSV files",
+              "Never, GPUs are not allowed",
+            ],
+            answer_index: 1,
+            explanation: "Classic models run fine without one, so save your GPU allowance for deep learning.",
+          },
+          {
+            prompt: "Why should you check a free notebook service's official pages?",
+            options: [
+              "To find a discount code",
+              "Because free tiers and their limits change over time",
+              "Because the lesson recommends one service over all others",
+              "To download the notebook software",
+            ],
+            answer_index: 1,
+            explanation: "Limits are not fixed, so the official terms are the only reliable source.",
+          },
+          {
+            prompt: "Which habit saved Sumaila's work when his session timed out?",
+            options: [
+              "He never trained a model",
+              "He saved the notebook at the start and saved the trained model to his drive straight away",
+              "He used a bigger dataset",
+              "He kept the GPU on all day",
+            ],
+            answer_index: 1,
+            explanation: "Saving early and saving the model as soon as training ended meant the timeout cost him nothing.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "classic-ml": {
+      explanation_md: `## Why classic machine learning first
+
+When people hear "AI" they picture chatbots and image generators. But much of the machine learning that companies actually use runs on ordinary tables of data: credit scoring from mobile money histories, predicting which customers might leave a telecom network, estimating crop yields, flagging unusual transactions. Data science adverts in Accra describe exactly this kind of predictive modelling. Classic models are faster to train, easier to explain and often just as accurate on tabular data as deep learning.
+
+## Supervised learning
+
+Most classic machine learning is **supervised**: you have past examples where you know the answer, and the model learns to predict that answer for new cases. The answer is called the **label** or target.
+
+* If the label is a **number**, such as yield in bags or a price in cedis, the task is **regression**.
+* If the label is a **category**, such as repaid or defaulted, the task is **classification**.
+
+There is also **unsupervised** learning, where there is no label and the model looks for structure, such as groups of similar customers. It appears as an optional topic in this section.
+
+## The workflow you will learn
+
+Every project in this section follows the same steps:
+
+1. **Frame the question.** What exactly are you predicting, for whom, and what will someone do with the prediction?
+2. **Prepare the data.** Clean it, choose features and turn categories and dates into numbers.
+3. **Split the data.** Keep some records aside that the model never sees during training.
+4. **Start with a baseline.** A simple rule, such as always predicting the average. Any model must beat this.
+5. **Train a model.** Fit it on the training records.
+6. **Evaluate honestly.** Test it on the held out records with a measure that fits the problem.
+7. **Explain and decide.** Describe what the model gets right and wrong, and whether it is good enough to use.
+
+## A worked example in words
+
+Mariama works for a savings group network in the Upper East Region. Leaders want to know which members might fall behind on loan repayments, so they can offer support early. She frames it as classification: will this member miss two or more repayments in the next three months? She prepares features such as savings history and past repayment record, holds back a portion of the records, and compares a simple model with a baseline that predicts nobody will fall behind. Her model catches more members who need help than the baseline does, so she writes up its accuracy and its limits, including that new members with short histories get less reliable predictions.
+
+## What this section covers
+
+* **Regression and classification:** your first scikit learn models and a baseline.
+* **Training, testing and avoiding overfitting:** how to measure honestly.
+* **Features and messy real data:** the preparation that often matters most.
+* **Clustering and finding patterns:** an optional look at unsupervised learning.`,
+      practice_task_md: `**Goal:** frame three Ghanaian problems as machine learning tasks.
+
+1. Pick three problems you know from your community, for example: estimating next month's sales at a provisions shop, predicting whether a patient will miss a clinic appointment, or grouping market traders by how they use mobile money.
+2. For each, write: what you would predict, whether it is regression, classification or unsupervised, which features you might use, and what simple baseline a model would need to beat.
+3. For each, write one way a wrong prediction could harm someone, and how you would reduce that risk.
+
+**Done looks like:** a one page note covering all three problems with every item answered. Share it with a mentor for feedback.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Predicting a maize price in cedis is which kind of task?",
+            options: [
+              "Regression",
+              "Classification",
+              "Clustering",
+              "Translation",
+            ],
+            answer_index: 0,
+            explanation: "The label is a number, so it is regression.",
+          },
+          {
+            prompt: "Predicting whether a loan will be repaid or defaulted is which kind of task?",
+            options: [
+              "Regression",
+              "Classification",
+              "Unsupervised learning",
+              "Data cleaning",
+            ],
+            answer_index: 1,
+            explanation: "The label is a category, so it is classification.",
+          },
+          {
+            prompt: "Why does the workflow start with a baseline?",
+            options: [
+              "It is the most accurate model available",
+              "It gives a simple standard that any real model must beat",
+              "It replaces the need for test data",
+              "It makes training faster",
+            ],
+            answer_index: 1,
+            explanation: "If a model cannot beat a simple rule like predicting the average, it is not useful.",
+          },
+          {
+            prompt: "Why does the lesson say classic models are often used on tables of business data?",
+            options: [
+              "They only work in English",
+              "They are faster to train, easier to explain and often as accurate on tabular data",
+              "They never make mistakes",
+              "They need no data at all",
+            ],
+            answer_index: 1,
+            explanation: "For tabular problems, classic models are practical and explainable.",
+          },
+          {
+            prompt: "In Mariama's project, which limit did she report?",
+            options: [
+              "The model works perfectly for everyone",
+              "New members with short histories get less reliable predictions",
+              "The model cannot use savings data",
+              "The baseline was better than the model",
+            ],
+            answer_index: 1,
+            explanation: "Reporting limits honestly is part of the final step of the workflow.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "regression-and-classification": {
+      explanation_md: `## Why this matters
+
+Regression and classification are the two everyday tasks of machine learning. A fintech estimating a safe loan size is doing regression; the same company deciding whether to approve the loan is doing classification. scikit learn, named in junior data science adverts, makes both possible in a few lines, and its pattern is the same for every model.
+
+## The scikit learn pattern
+
+Every scikit learn model follows three steps:
+
+* **Create** the model: \`model = LinearRegression()\`.
+* **Fit** it to training data: \`model.fit(X_train, y_train)\`.
+* **Predict** on new data: \`model.predict(X_test)\`.
+
+Learn this once and you can swap in dozens of other models with one changed line.
+
+## Regression with a baseline
+
+Using the invented example farm data from earlier, with \`X\` holding rainfall and fertiliser and \`y\` holding yield in bags:
+
+\`\`\`python
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.dummy import DummyRegressor
+from sklearn.metrics import mean_absolute_error
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42)
+
+baseline = DummyRegressor().fit(X_train, y_train)
+model = LinearRegression().fit(X_train, y_train)
+
+print(mean_absolute_error(y_test, baseline.predict(X_test)))
+print(mean_absolute_error(y_test, model.predict(X_test)))
+\`\`\`
+
+\`train_test_split\` keeps a fifth of the farms aside. The \`DummyRegressor\` always predicts the average yield: that is the baseline. **Mean absolute error** is the average size of the mistakes, in bags. If the baseline is off by about 3 bags and the model by under 1, the model has learned something real. If the model barely beats the baseline, your features are not telling it much.
+
+## Classification and probabilities
+
+For a yes or no label, such as whether a farm's yield was above the cooperative's usual level, swap in \`LogisticRegression\`. Despite the name, it is a classification model. It has two useful outputs:
+
+* \`model.predict(X_test)\` gives the class, 0 or 1.
+* \`model.predict_proba(X_test)\` gives the probability of each class, such as 0.16 for no and 0.84 for yes.
+
+Use the probabilities when the decision needs a threshold you choose, as in the probability lesson. The baseline for classification is \`DummyClassifier\`, which always predicts the most common class.
+
+## Other models worth knowing
+
+* **Decision trees** split the data with simple questions such as "is rainfall above 600 mm?". Easy to explain, but a single tree overfits easily.
+* **Random forests** and **gradient boosting** combine many trees. They are often the strongest choice for tabular data and are widely used in industry.
+
+All of them use the same create, fit, predict pattern.`,
+      practice_task_md: `**Goal:** train and compare your first models.
+
+1. In a free notebook on a laptop or desktop, create an invented example dataset of 100 farms with pandas and NumPy: rainfall between 400 and 900 mm, fertiliser between 0 and 4 bags, and a yield you calculate from them plus some random noise. Label it as example data.
+2. Split it 80 to 20 with \`train_test_split\`.
+3. Train a \`DummyRegressor\` and a \`LinearRegression\`, and print the mean absolute error of each on the test set.
+4. Add a \`RandomForestRegressor\` from \`sklearn.ensemble\` and compare all three.
+5. In a text cell, explain in plain words which model did best and by how many bags.
+
+**Done looks like:** a notebook that runs from top to bottom, three error numbers, and a short plain language comparison.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What are the three steps every scikit learn model follows?",
+            options: [
+              "Load, chart, delete",
+              "Create, fit, predict",
+              "Import, export, upload",
+              "Clean, sort, print",
+            ],
+            answer_index: 1,
+            explanation: "You create a model, fit it to training data, then predict on new data.",
+          },
+          {
+            prompt: "What does the `DummyRegressor` in the example always predict?",
+            options: [
+              "Zero",
+              "The average of the training targets",
+              "The largest yield seen",
+              "A random number",
+            ],
+            answer_index: 1,
+            explanation: "It is a baseline that predicts the average, which a real model must beat.",
+          },
+          {
+            prompt: "What does mean absolute error tell you?",
+            options: [
+              "How many rows were used",
+              "The average size of the model's mistakes in the target's units",
+              "The probability of each class",
+              "How long training took",
+            ],
+            answer_index: 1,
+            explanation: "It averages the size of the errors, here in bags of maize.",
+          },
+          {
+            prompt: "Logistic regression is used for which kind of task?",
+            options: [
+              "Regression only",
+              "Classification",
+              "Clustering",
+              "Drawing charts",
+            ],
+            answer_index: 1,
+            explanation: "Despite its name, logistic regression predicts classes and their probabilities.",
+          },
+          {
+            prompt: "Which method gives the probability of each class?",
+            options: [
+              "`fit`",
+              "`predict`",
+              "`predict_proba`",
+              "`train_test_split`",
+            ],
+            answer_index: 2,
+            explanation: "`predict_proba` returns class probabilities, while `predict` returns the class.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "model-evaluation": {
+      explanation_md: `## Why this matters
+
+Anyone can train a model that looks brilliant on the data it learned from. The real question is how it performs on cases it has never seen, because that is what happens once it is in use. Employers list "evaluating models" and "testing and validating models" because a badly evaluated model can approve bad loans, miss sick patients or waste a company's money, while everyone believes it works.
+
+## Overfitting
+
+**Overfitting** is when a model memorises its training data, including its noise and accidents, instead of learning the general pattern. Think of a student who memorises last year's exam answers word for word. They score full marks on that paper and fail a new one. An overfit model does the same. The opposite problem, **underfitting**, is a model too simple to capture the pattern at all.
+
+The signal of overfitting is a big gap: excellent scores on training data, much worse scores on test data.
+
+## Train, validation and test
+
+* The **training set** is what the model learns from.
+* The **validation set** is used to compare models and settings while you work.
+* The **test set** is locked away and used once, at the end, to report honest performance.
+
+If you keep checking the test set and adjusting, you slowly tune the model to it, and the final score stops being honest.
+
+## Cross validation
+
+With small datasets, one split can be lucky or unlucky. **Cross validation** splits the data into, say, five parts, trains five times with a different part held out each time, and averages the scores:
+
+\`\`\`python
+from sklearn.model_selection import cross_val_score
+from sklearn.linear_model import LogisticRegression
+
+scores = cross_val_score(
+    LogisticRegression(max_iter=1000), X, y, cv=5)
+print(scores.mean(), scores.std())
+\`\`\`
+
+The mean is your estimate; the standard deviation shows how much it varies between splits.
+
+## When accuracy misleads
+
+**Accuracy** is the share of predictions that are right. It fails badly when one outcome is rare. If only 2 in 100 invented example clinic patients have a condition, a model that always says "healthy" is 98 percent accurate and completely useless.
+
+Better measures for rare outcomes come from the **confusion matrix**, which counts four kinds of result: true positives, false positives, true negatives and false negatives. From it:
+
+* **Precision:** of the cases the model flagged, how many were really positive? Low precision means many false alarms.
+* **Recall:** of the real positive cases, how many did the model catch? Low recall means many missed cases.
+
+Which matters more depends on the cost of each mistake. Missing a sick patient is worse than an extra test, so a screening model needs high recall. Blocking honest customers is costly, so a fraud model needs good precision too.
+
+## A worked example
+
+Issahaku's model predicts which motorbike loans will default. Training accuracy is 99 percent, test accuracy 81 percent: a clear sign of overfitting. He simplifies the model, uses cross validation, and reports recall on defaulters, which is what the lender cares about.`,
+      practice_task_md: `**Goal:** catch overfitting and choose the right measure.
+
+1. In a free notebook, create an invented example classification dataset of 300 rows where only about 1 in 10 rows is positive, for example clinic patients who miss a follow up visit.
+2. Train a \`DecisionTreeClassifier\` with no depth limit. Print its accuracy on the training set and on a test set.
+3. Train it again with \`max_depth=3\` and compare the gap.
+4. For the better model, print the \`confusion_matrix\`, \`precision_score\` and \`recall_score\` from \`sklearn.metrics\`.
+5. In a text cell, explain which measure the clinic should care about most and why.
+
+**Done looks like:** a notebook showing the training and test scores for both trees, a confusion matrix, precision and recall, and your short explanation.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the clearest sign of overfitting?",
+            options: [
+              "Low scores on both training and test data",
+              "Excellent scores on training data and much worse scores on test data",
+              "The model trains very quickly",
+              "The dataset has many columns",
+            ],
+            answer_index: 1,
+            explanation: "A big gap between training and test performance shows the model memorised rather than learned.",
+          },
+          {
+            prompt: "Why should the test set be used only once, at the end?",
+            options: [
+              "It is too large to use more often",
+              "Repeatedly checking and adjusting tunes the model to it, so the final score stops being honest",
+              "scikit learn deletes it after one use",
+              "It contains no labels",
+            ],
+            answer_index: 1,
+            explanation: "Keeping the test set locked away keeps the final measurement honest.",
+          },
+          {
+            prompt: "A model always predicts \"healthy\" when 2 in 100 patients are sick. Why is its accuracy misleading?",
+            options: [
+              "Accuracy cannot be calculated for health data",
+              "It is 98 percent accurate yet catches none of the sick patients",
+              "The model is overfitting",
+              "Accuracy only works for regression",
+            ],
+            answer_index: 1,
+            explanation: "With a rare outcome, accuracy can be high while the model is useless.",
+          },
+          {
+            prompt: "What does recall measure?",
+            options: [
+              "How fast the model predicts",
+              "Of the real positive cases, how many the model caught",
+              "Of the flagged cases, how many were real",
+              "The number of features used",
+            ],
+            answer_index: 1,
+            explanation: "Recall is about catching real positives, which matters most when missing a case is costly.",
+          },
+          {
+            prompt: "What does cross validation do?",
+            options: [
+              "Removes duplicate rows",
+              "Trains and tests several times on different splits and averages the scores",
+              "Translates the data into another format",
+              "Doubles the size of the dataset",
+            ],
+            answer_index: 1,
+            explanation: "Averaging over several splits gives a steadier estimate than one lucky or unlucky split.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "feature-engineering": {
+      explanation_md: `## Why this matters
+
+Experienced practitioners often say the data matters more than the model. A simple model with well prepared inputs usually beats a clever model with poor ones. Ghanaian adverts for machine learning roles name feature engineering directly, and real Ghanaian data is messy: district names typed three ways, dates in mixed formats, blank cells from field surveys and amounts recorded in old and new cedis.
+
+## What a feature is
+
+A **feature** is one input column the model uses. Feature engineering means choosing, cleaning and creating those columns so they carry useful signal. Some examples:
+
+* From a planting date, create \`planting_week\` or \`days_after_first_rain\`.
+* From a transaction time, create \`hour_of_day\` or \`is_weekend\`.
+* From total sales and number of days, create \`sales_per_day\`.
+
+## Categories
+
+Models need numbers, but many columns are categories, such as district or crop type. You cannot just number them Tolon = 1, Savelugu = 2, Yendi = 3, because the model would think Yendi is "bigger" than Tolon. Instead use **one hot encoding**: one column per category, holding 1 if the row belongs to it and 0 otherwise. Clean the spelling first, or "Savelugu" and "savelugu " become two different districts.
+
+## Missing values
+
+Decide case by case. Fill with the median, fill with a fixed value, or add a column that flags "this was missing", which sometimes carries signal itself. Never fill missing targets.
+
+## Putting it together with a pipeline
+
+A scikit learn **pipeline** bundles preparation and model together so the same steps run every time:
+
+\`\`\`python
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import OneHotEncoder
+from sklearn.impute import SimpleImputer
+from sklearn.pipeline import make_pipeline
+from sklearn.linear_model import LinearRegression
+
+prep = ColumnTransformer([
+    ("num", SimpleImputer(strategy="median"),
+     ["rainfall_mm", "fertiliser_bags"]),
+    ("cat", OneHotEncoder(handle_unknown="ignore"),
+     ["district"]),
+])
+model = make_pipeline(prep, LinearRegression())
+model.fit(X_train, y_train)
+\`\`\`
+
+Here \`X_train\` is a pandas table with the three named columns. Because the imputer and encoder sit inside the pipeline, they learn only from training rows, even inside cross validation. \`handle_unknown="ignore"\` stops the model crashing if a new district appears later.
+
+## Data leakage
+
+**Leakage** is when information that would not be available at prediction time sneaks into the features. The model looks amazing in testing and fails in real use. Common examples:
+
+* Predicting whether a loan defaults using a column like \`days_overdue\`, which only exists after the default happened.
+* Filling missing values using the whole dataset's median before splitting, so the test rows influence training.
+* Having the same farm appear in both training and test sets across different years, so the model recognises the farm instead of learning the pattern.
+
+Always ask of every feature: would I really know this at the moment I need the prediction?
+
+## A worked example
+
+Wumpini's first model to predict clinic no shows looks almost perfect. She checks her features and finds \`rescheduled_date\`, which is only filled after a patient misses a visit. She removes it. Accuracy drops, but now the model is honest and can actually be used.`,
+      practice_task_md: `**Goal:** prepare messy data with a pipeline and hunt for leakage.
+
+1. Create an invented example table of 60 rows for a Wa shop: \`date\`, \`district\` (type some names with different capitals or trailing spaces), \`promo\` (yes or no), \`items_sold\`, and \`restock_ordered\` (filled only after a day sells out).
+2. Clean the district spellings and create \`day_of_week\` from \`date\`.
+3. Build a pipeline that one hot encodes \`district\`, \`promo\` and \`day_of_week\` and trains a model to predict \`items_sold\`.
+4. Look at \`restock_ordered\`. Decide whether it leaks information and write why.
+5. Compare cross validation scores with and without it.
+
+**Done looks like:** a notebook with a working pipeline, the two scores, and a short note explaining the leak.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why should district names not simply be numbered 1, 2 and 3?",
+            options: [
+              "Numbers take more memory",
+              "The model would treat the numbers as an order or size that does not exist",
+              "scikit learn cannot read numbers",
+              "Districts are never useful features",
+            ],
+            answer_index: 1,
+            explanation: "One hot encoding avoids inventing a false order between categories.",
+          },
+          {
+            prompt: "What is data leakage?",
+            options: [
+              "Losing data when a session times out",
+              "Information that would not be available at prediction time getting into the features",
+              "Sharing data with a colleague",
+              "Having too few rows",
+            ],
+            answer_index: 1,
+            explanation: "Leakage makes a model look good in testing and fail in real use.",
+          },
+          {
+            prompt: "Why does the example put the imputer and encoder inside a pipeline?",
+            options: [
+              "To make the code longer",
+              "So they learn only from training rows and the same steps run every time",
+              "Because models cannot be trained without a pipeline",
+              "To remove the need for test data",
+            ],
+            answer_index: 1,
+            explanation: "Pipelines keep preparation consistent and stop test rows influencing training.",
+          },
+          {
+            prompt: "In Wumpini's example, why was `rescheduled_date` a problem?",
+            options: [
+              "It had the wrong format",
+              "It is only filled after a patient misses a visit, so it leaks the answer",
+              "It was a category column",
+              "It had no missing values",
+            ],
+            answer_index: 1,
+            explanation: "The model was using information from after the event it was meant to predict.",
+          },
+          {
+            prompt: "Which question should you ask of every feature?",
+            options: [
+              "Is this column the longest?",
+              "Would I really know this at the moment I need the prediction?",
+              "Does this column have a short name?",
+              "Was this column added last?",
+            ],
+            answer_index: 1,
+            explanation: "This question catches most leakage before it fools you.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "unsupervised-learning": {
+      explanation_md: `## Why this matters
+
+Sometimes there is no label to predict. A mobile money agent network might want to understand its customers before designing new services, or an NGO might want to see which villages have similar needs. **Unsupervised learning** looks for structure in data without answers to learn from. It is less common in job adverts than prediction, which is why this topic is optional, but it is a useful tool for exploring data and starting conversations.
+
+## Clustering
+
+**Clustering** groups records that are similar to each other. The most common method is **k means**:
+
+1. You choose how many groups you want, called k.
+2. The algorithm places k centre points.
+3. Each record joins its nearest centre.
+4. Each centre moves to the middle of its group.
+5. Steps 3 and 4 repeat until the groups stop changing.
+
+The result is a group number for every record. The algorithm does not tell you what the groups mean. You work that out by looking at them.
+
+## Scale matters
+
+k means measures distance between records. If one column is transfers per month (1 to 60) and another is average amount in cedis (5 to 800), the cedi column dominates simply because its numbers are bigger. Scale the columns first so each has a similar range. \`StandardScaler\` does this.
+
+## A worked example
+
+With an invented example table of 100 agent customers:
+
+\`\`\`python
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+
+scaled = StandardScaler().fit_transform(cust)
+km = KMeans(n_clusters=3, n_init=10, random_state=0)
+cust["group"] = km.fit_predict(scaled)
+print(cust.groupby("group").mean().round(1))
+\`\`\`
+
+The final line shows the average of each column per group. You might see one group making many small transfers, one making a few large transfers, and one in between. Abdul-Rahman, who manages the agents, might call them "daily traders", "monthly remitters" and "occasional users", and test whether a new service suits one group.
+
+## Choosing k
+
+There is no single right answer. Try several values and look at whether the groups make sense to people who know the customers. Charts help: plot two features and colour each point by group. If the groups are not useful or change wildly when you rerun with a different random seed, the structure may not really be there.
+
+## Treat results as questions
+
+Clustering always produces groups, even in random data. So treat its output as a set of questions to check, not as facts. Are these groups stable? Do they match what field staff see? Would acting on them treat anyone unfairly? Be careful with personal data too: grouping people by behaviour is still processing personal data, and the same privacy rules apply.
+
+## Other unsupervised tools
+
+* **Dimensionality reduction**, such as principal component analysis, squeezes many columns into a few so you can plot and explore them.
+* **Anomaly detection** finds records that look unlike the rest, such as unusual transactions worth a human check.`,
+      practice_task_md: `**Goal:** cluster invented customers and interpret the groups honestly.
+
+1. In a free notebook, create an invented example table of 150 customers with \`transfers_per_month\` and \`avg_amount_ghs\`. Make three loose patterns on purpose: many small transfers, few large ones, and few small ones.
+2. Scale the columns and run k means with k = 2, 3 and 4.
+3. For each k, print the group averages and draw a scatter plot coloured by group.
+4. Choose the k that makes most sense and give each group a plain name.
+5. Write two questions you would ask field staff to check whether the groups are real.
+
+**Done looks like:** a notebook with three runs, plots, named groups and your two check questions.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What makes unsupervised learning different from supervised learning?",
+            options: [
+              "It needs more labels",
+              "It looks for structure without any answers to learn from",
+              "It only works on images",
+              "It always gives perfect results",
+            ],
+            answer_index: 1,
+            explanation: "There is no target column; the method looks for patterns on its own.",
+          },
+          {
+            prompt: "Why should you scale columns before k means?",
+            options: [
+              "Scaling removes missing values",
+              "Otherwise the column with bigger numbers dominates the distance",
+              "k means only accepts text",
+              "Scaling chooses k for you",
+            ],
+            answer_index: 1,
+            explanation: "k means uses distance, so columns need similar ranges to count fairly.",
+          },
+          {
+            prompt: "What does k means not tell you?",
+            options: [
+              "Which group each record belongs to",
+              "Where the group centres are",
+              "What each group means",
+              "How many groups you asked for",
+            ],
+            answer_index: 2,
+            explanation: "You interpret the groups yourself by looking at their averages and talking to people who know the data.",
+          },
+          {
+            prompt: "Why does the lesson say to treat clustering results as questions?",
+            options: [
+              "Clustering is illegal in Ghana",
+              "Clustering always produces groups, even in random data",
+              "The groups are always wrong",
+              "Questions are easier to code",
+            ],
+            answer_index: 1,
+            explanation: "Groups must be checked for stability and real meaning before anyone acts on them.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
