@@ -3,12 +3,13 @@
 import { refresh } from "next/cache";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { friendlyDbError, parseGradeForm } from "@/lib/mentor/progress";
+import { friendlyDbError } from "@/lib/mentor/progress";
 
 /**
  * Mentor console mutations. Each re-checks the session; the database
  * functions and RLS decide whether this person is staff for that learner
- * (grade_submission, assign_peer_review, defer_learner, cohort_notes).
+ * (assign_peer_review, defer_learner, cohort_notes). Grading uses the
+ * submissions feature's gradeSubmission (src/components/cohort/submission).
  */
 
 export type FormState = {
@@ -18,22 +19,6 @@ export type FormState = {
   /** Changes on every success so a form can reset its fields. */
   at?: number;
 };
-
-export async function gradeSubmission(submissionId: string, _prev: FormState, form: FormData): Promise<FormState> {
-  await requireUser();
-  const { data, errors } = parseGradeForm(form);
-  if (Object.keys(errors).length) return { errors };
-  const supabase = await createClient();
-  const { error } = await supabase.rpc("grade_submission", {
-    p_submission_id: submissionId,
-    p_final_score: data.score ?? 0,
-    p_mentor_feedback: data.feedback || undefined,
-    p_return: data.returnIt,
-  });
-  if (error) return { message: friendlyDbError(error, "We could not save the grade. Try again.") };
-  refresh();
-  return { ok: data.returnIt ? "Returned to the learner with your feedback." : "Grade saved.", at: Date.now() };
-}
 
 export async function assignPeerReview(submissionId: string, _prev: FormState, form: FormData): Promise<FormState> {
   await requireUser();

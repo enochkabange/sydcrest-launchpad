@@ -165,7 +165,7 @@ function ExpertLine({ pitch }: { pitch: PitchView }) {
         {pitch.expert.isVerified && (
           <span className="inline-flex items-center gap-1 text-xs text-info-fg">
             <BadgeCheck aria-hidden className="size-3.5" />
-            Identity verified
+            Verified by SydCrest
           </span>
         )}
       </p>

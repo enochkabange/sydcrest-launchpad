@@ -52,13 +52,13 @@ That routine, more than any expensive tool, is what gets people job ready. Set y
         questions: [
           {
             prompt: "What is the minimum you need to start this roadmap?",
-            options: ["A free code editor and a modern browser, or a browser editor on a phone", "A new high end laptop and a paid editor", "A paid hosting account", "A computer science degree"],
+            options: ["A free code editor and a browser, or a browser editor on a phone", "A new high end laptop and a paid editor with a yearly licence", "A paid hosting account and a registered domain name for your site", "A computer science degree"],
             answer_index: 0,
             explanation: "The lesson explains that free tools on a modest laptop, or a browser editor on a phone, are enough to start.",
           },
           {
             prompt: "Why should you download documentation and long videos on WiFi?",
-            options: ["Because they only work offline", "Because mobile data costs money and WiFi saves your bundle", "Because browsers block them on mobile data", "Because employers require it"],
+            options: ["Because they only work offline", "Because mobile data costs money and WiFi saves your bundle", "Because browsers block large downloads whenever you use mobile data", "Because employers require it"],
             answer_index: 1,
             explanation: "Planning downloads around WiFi saves your prepaid data for practice.",
           },
@@ -127,7 +127,7 @@ No laptop? Write the five sentences from the lesson and draw the journey on pape
         questions: [
           {
             prompt: "What does DNS do when you type a domain name?",
-            options: ["It styles the page", "It encrypts your password", "It runs the JavaScript", "It turns the name into the server's numeric address"],
+            options: ["It styles the page", "It encrypts your password before it leaves the phone", "It downloads and runs the page's JavaScript", "It turns the name into the server's numeric address"],
             answer_index: 3,
             explanation: "DNS works like a phone book, turning a name into an address.",
           },
@@ -145,7 +145,7 @@ No laptop? Write the five sentences from the lesson and draw the journey on pape
           },
           {
             prompt: "Why does each extra file matter on a slow mobile network?",
-            options: ["Files are free on mobile networks", "Each file is a separate request that adds waiting time and uses data", "Browsers refuse pages with many files", "Extra files make HTTPS stop working"],
+            options: ["Files are free on mobile networks", "Each file is a separate request that costs time and data", "Browsers refuse to open pages made of more than twenty files", "Extra files make HTTPS stop working"],
             answer_index: 1,
             explanation: "Every file is another trip over the network, which costs time and data.",
           },
@@ -224,7 +224,7 @@ Git can feel strange for a week. Keep using it and it becomes automatic.`,
           },
           {
             prompt: "Why do teams create a branch for each feature?",
-            options: ["To keep the main version working while the feature is built", "To delete old code", "To make the site load faster", "Because GitHub charges per branch"],
+            options: ["So main keeps working while the feature is built", "To delete old code", "To make the live site load faster for visitors on phones", "Because GitHub charges per branch"],
             answer_index: 0,
             explanation: "A branch is a separate line of work, so main stays stable.",
           },
@@ -295,19 +295,19 @@ Structure first, then style, then test on a phone and a computer. Follow that or
           },
           {
             prompt: "Why keep structure (HTML) and style (CSS) separate?",
-            options: ["Because browsers cannot read both in one file", "So screen readers and search engines understand the page, and you can restyle by changing CSS", "Because CSS runs on the server", "So the page uses more data"],
+            options: ["Because browsers cannot read both in one file", "Screen readers and search engines understand it, and you can restyle with CSS alone", "Because CSS is processed on the server and HTML on the phone, so mixing them breaks the page", "So the page uses more data"],
             answer_index: 1,
             explanation: "Separation keeps pages accessible, understandable and easy to restyle.",
           },
           {
             prompt: "Which order does the lesson recommend for building a page?",
-            options: ["Style first, then structure, then test", "Test first, then style", "Framework first, then HTML", "Structure first, then style, then test on a phone and a computer"],
+            options: ["Style first so it looks right, then add structure, then test", "Test first, then style", "Framework first, then HTML", "Structure, then style, then test on a phone and a computer"],
             answer_index: 3,
             explanation: "Write HTML first, add CSS, then check on a phone and a computer.",
           },
           {
             prompt: "Why do frameworks such as React not replace learning HTML and CSS?",
-            options: ["Frameworks are only for backend work", "Frameworks do not work on phones", "Frameworks still produce HTML and CSS in the end", "Employers have stopped using frameworks"],
+            options: ["Frameworks only run on the server, so phones never see them", "Frameworks do not work on phones", "Frameworks still produce HTML and CSS in the end", "Employers have stopped using frameworks"],
             answer_index: 2,
             explanation: "Whatever framework you use, the browser still receives HTML and CSS.",
           },
@@ -378,13 +378,13 @@ When in doubt, ask: "what is this content?" Then pick the element that says so.`
         questions: [
           {
             prompt: "Why is a `button` element better than a clickable `div` for an action?",
-            options: ["It downloads faster", "It is the only element CSS can style", "It works with the keyboard and screen readers without extra code", "Search engines ignore divs completely"],
+            options: ["It downloads faster", "It is the only element CSS can style", "It works with the keyboard and screen readers without extra code", "Search engines rank pages with buttons higher than pages with divs"],
             answer_index: 2,
             explanation: "A real button can be focused, pressed with Enter or Space, and is announced as a button.",
           },
           {
             prompt: "How should you choose a heading level?",
-            options: ["By the text size you want", "Always use h1 for every heading", "Randomly, since browsers ignore headings", "By the meaning and order of the content, then use CSS for size"],
+            options: ["By the text size you want, since that is what heading levels set", "Use h1 for every heading so each one looks equally important", "Randomly, since browsers ignore headings", "By the meaning and order of the content, then use CSS for size"],
             answer_index: 3,
             explanation: "Headings form a map; CSS handles size.",
           },
@@ -471,19 +471,19 @@ Avoid fixed pixel widths for big containers. Let flexbox and grid do the work.`,
         questions: [
           {
             prompt: "When should you reach for flexbox rather than grid?",
-            options: ["When you need rows and columns together", "When you want to store data", "Only for printing pages", "When you are lining things up in one direction"],
+            options: ["When you need rows and columns that line up with each other", "When you want to store data", "Only for printing pages", "When you are lining things up in one direction"],
             answer_index: 3,
             explanation: "Flexbox handles one direction; grid handles two.",
           },
           {
             prompt: "What does `box-sizing: border-box` do?",
-            options: ["Removes all borders", "Makes boxes round", "Turns every element into a grid", "Includes padding and border in the element's width"],
+            options: ["Removes all borders", "Makes boxes round", "Adds the border outside the width so boxes grow bigger", "Includes padding and border in the element's width"],
             answer_index: 3,
             explanation: "With border-box, widths include padding and border, so boxes do not overflow.",
           },
           {
             prompt: "What does `repeat(auto-fill, minmax(150px, 1fr))` achieve in a grid?",
-            options: ["As many columns as fit, each at least 150 pixels wide", "Exactly three columns on every screen", "One column only", "Columns exactly 1 pixel wide"],
+            options: ["As many columns as fit, each at least 150 pixels wide", "Exactly three columns on every screen, each 150 pixels wide", "One column only", "Columns exactly 1 pixel wide"],
             answer_index: 0,
             explanation: "The grid adds or removes columns depending on the space available.",
           },
@@ -553,13 +553,13 @@ Browser developer tools have a device mode for simulating phone sizes, which is 
         questions: [
           {
             prompt: "What does mobile first mean in CSS?",
-            options: ["Building a native Android app", "Hiding the page on laptops", "Designing for laptops and shrinking later", "Writing base styles for small screens, then adding media queries for larger ones"],
+            options: ["Building a native Android app", "Hiding the page on laptops", "Designing for laptops first, then using media queries to shrink it for phones", "Base styles for small screens first, then media queries for larger ones"],
             answer_index: 3,
             explanation: "Mobile first starts with the small screen and adds rules as space grows.",
           },
           {
             prompt: "What happens if you leave out the viewport meta tag?",
-            options: ["The page loads faster", "Images stop loading", "Phones show the page as if on a wide screen, making text tiny", "JavaScript stops running"],
+            options: ["The page loads faster", "Images stop loading", "Phones show the page as if on a wide screen, making text tiny", "The browser blocks the page because it cannot tell it is on a phone"],
             answer_index: 2,
             explanation: "Without it, phones pretend to be desktop width and shrink the page.",
           },
@@ -571,7 +571,7 @@ Browser developer tools have a device mode for simulating phone sizes, which is 
           },
           {
             prompt: "Which rule stops images from overflowing a small screen?",
-            options: ["img { width: 2000px; }", "img { max-width: 100%; height: auto; }", "img { display: none; }", "img { position: absolute; }"],
+            options: ["img { min-width: 100%; height: auto; }", "img { max-width: 100%; height: auto; }", "img { display: none; }", "img { position: absolute; }"],
             answer_index: 1,
             explanation: "max-width 100% keeps images inside their container while keeping their shape.",
           },
@@ -642,7 +642,7 @@ Hawa builds an order form for a shea butter cooperative. It asks for name, phone
         questions: [
           {
             prompt: "Why should every input have a visible label linked with `for` and `id`?",
-            options: ["Tapping the label focuses the field and screen readers announce it", "It makes the form submit faster", "It hides the field on phones", "It encrypts the data"],
+            options: ["Tapping it focuses the field and screen readers announce it", "It makes the browser check the typed data so the server does not have to", "It hides the field on phones", "It encrypts the data"],
             answer_index: 0,
             explanation: "Linked labels help touch users and screen reader users.",
           },
@@ -654,13 +654,13 @@ Hawa builds an order form for a shea butter cooperative. It asks for name, phone
           },
           {
             prompt: "Why is browser validation not enough on its own?",
-            options: ["It never works on phones", "It deletes user data", "It only works in Firefox", "It is a first line of help, and the server must check data again"],
+            options: ["It never works on phones", "It deletes user data", "It only runs after the data has already reached your server", "It is a first line of help, and the server must check again"],
             answer_index: 3,
             explanation: "Anyone can bypass browser checks, so the server must validate too.",
           },
           {
             prompt: "What makes a good error message?",
-            options: ["The word Invalid in red", "Saying what is wrong and how to fix it, next to the field", "Clearing the form so the user starts again", "A pop up that blocks the whole page"],
+            options: ["The word Invalid in red", "Saying what is wrong and how to fix it, next to the field", "Clearing the form so the user starts again", "A pop up listing every rule the form has, shown before typing"],
             answer_index: 1,
             explanation: "Clear, specific messages next to the field help people recover.",
           },
@@ -728,7 +728,7 @@ JavaScript files are downloaded to every visitor's phone and must be processed b
           },
           {
             prompt: "Why does the lesson recommend typing code yourself instead of copying it?",
-            options: ["Copying is against the law", "Browsers reject pasted code", "Typing, making mistakes and fixing them is how it sticks", "Typing makes code run faster"],
+            options: ["Copying is against the law", "Browsers reject pasted code", "Typing it, breaking it and fixing it is how it sticks", "Typed code runs faster in the browser than pasted code"],
             answer_index: 2,
             explanation: "Active practice builds understanding.",
           },
@@ -740,7 +740,7 @@ JavaScript files are downloaded to every visitor's phone and must be processed b
           },
           {
             prompt: "Why should you avoid unnecessary JavaScript?",
-            options: ["Heavy scripts download to every phone and can make pages feel frozen on low cost devices", "JavaScript only works on laptops", "Employers dislike JavaScript", "JavaScript cannot change the page"],
+            options: ["Heavy scripts cost data and can freeze pages on low cost phones", "JavaScript only runs well on laptops, so phones skip it entirely", "Employers dislike JavaScript", "JavaScript cannot change the page"],
             answer_index: 0,
             explanation: "Every script costs data and processing time on the user's phone.",
           },
@@ -842,7 +842,7 @@ Solve small problems daily and explain each solution out loud. Free sites such a
           },
           {
             prompt: "Why does the lesson recommend `===` for comparisons?",
-            options: ["It is faster to type", "It checks both value and type, avoiding surprises", "It assigns a value", "It only works with strings"],
+            options: ["It is faster to type", "It checks both value and type, avoiding surprises", "It assigns a value", "It turns both sides into numbers before comparing them"],
             answer_index: 1,
             explanation: "Strict equality compares type as well as value.",
           },
@@ -860,7 +860,7 @@ Solve small problems daily and explain each solution out loud. Free sites such a
           },
           {
             prompt: "What is a good first step when you are stuck on a bug?",
-            options: ["Delete the whole file", "Write down what you expect, then use console.log to see what actually happens", "Switch to a different language", "Wait for the bug to disappear"],
+            options: ["Delete the whole file", "Write down what you expect, then console.log what actually happens", "Switch to a different language", "Copy a full solution from the internet and replace your code with it"],
             answer_index: 1,
             explanation: "Comparing expected and actual values shows where the bug is.",
           },
@@ -938,13 +938,13 @@ Use real \`button\` elements for things people tap, so keyboard and screen reade
         questions: [
           {
             prompt: "What is the DOM?",
-            options: ["A CSS framework", "A tree of objects the browser builds from your HTML", "A type of server", "A Git command"],
+            options: ["A CSS framework that styles HTML elements for you", "A tree of objects the browser builds from HTML", "A file on the server that stores your HTML pages", "A Git command"],
             answer_index: 1,
             explanation: "The browser turns HTML into the Document Object Model, which JavaScript can change.",
           },
           {
             prompt: "Why prefer `textContent` over `innerHTML` for user typed text?",
-            options: ["innerHTML is slower to type", "innerHTML treats text as HTML, which can allow harmful code to be injected", "textContent changes colours", "innerHTML only works on laptops"],
+            options: ["innerHTML is slower to type", "innerHTML reads text as HTML, so harmful code can be injected", "textContent changes colours", "innerHTML strips spaces and line breaks from what the user typed"],
             answer_index: 1,
             explanation: "textContent shows text as plain text, which is safer.",
           },
@@ -956,13 +956,13 @@ Use real \`button\` elements for things people tap, so keyboard and screen reade
           },
           {
             prompt: "What does `e.preventDefault()` do in a submit handler?",
-            options: ["Stops the browser's default page reload so your code can handle the form", "Deletes the form", "Sends the form twice", "Hides the submit button"],
+            options: ["Stops the default page reload so your code handles the form", "Deletes the form", "Sends the form to the server before the page reloads", "Clears every field so the user cannot send the same form twice"],
             answer_index: 0,
             explanation: "It stops the default action so JavaScript can take over.",
           },
           {
             prompt: "What is a benefit of event delegation?",
-            options: ["It adds one listener per item", "One listener on a parent handles many items, using less memory and working for items added later", "It makes CSS load faster", "It removes the need for buttons"],
+            options: ["It adds one listener to each item, so every tap is handled separately", "One parent listener handles many items, including ones added later", "It makes CSS load faster", "It removes the need for buttons"],
             answer_index: 1,
             explanation: "A single parent listener uses e.target to know which item was tapped.",
           },
@@ -1047,13 +1047,13 @@ Test every feature with a slow network setting. It is the quickest way to see yo
           },
           {
             prompt: "What does `await` do inside an async function?",
-            options: ["Freezes the whole page", "Pauses that function until the result arrives, while the page keeps working", "Deletes the request", "Makes the request skip the network"],
+            options: ["Freezes the whole page until the request has finished", "Pauses only that function until the result arrives", "Deletes the request", "Makes the request skip the network"],
             answer_index: 1,
             explanation: "await pauses only the async function, not the page.",
           },
           {
             prompt: "Why must you check `res.ok` after `fetch`?",
-            options: ["res.ok makes the request faster", "It converts JSON to HTML", "It is required for CSS to load", "fetch does not throw for server errors like 404 or 500"],
+            options: ["res.ok turns the response body into a JavaScript object", "It converts JSON to HTML", "It is required for CSS to load", "fetch does not throw for server errors like 404 or 500"],
             answer_index: 3,
             explanation: "fetch only throws on network failure, so status errors must be checked.",
           },
@@ -1065,7 +1065,7 @@ Test every feature with a slow network setting. It is the quickest way to see yo
           },
           {
             prompt: "Why disable a button while a request is in flight?",
-            options: ["To prevent double taps that could send an order or payment twice", "To save electricity", "Because buttons cannot be clicked during fetch", "To hide the loading message"],
+            options: ["To stop double taps sending an order or payment twice", "To save electricity", "Because a button that is tapped during fetch cancels the request", "To hide the loading message"],
             answer_index: 0,
             explanation: "Disabling prevents duplicate requests.",
           },
@@ -1120,7 +1120,7 @@ Make this checklist a habit for every project in your portfolio. Reviewers notic
         questions: [
           {
             prompt: "Which four habits does this section cover?",
-            options: ["Logos, colours, fonts and animations", "Accessibility, performance, debugging and testing", "Marketing, sales, payments and hiring", "HTML, CSS, JavaScript and Git"],
+            options: ["Accessibility, animation, deployment and marketing", "Accessibility, performance, debugging and testing", "Marketing, sales, payments and hiring", "HTML, CSS, JavaScript and Git"],
             answer_index: 1,
             explanation: "The quality section covers accessibility, performance, debugging and testing.",
           },
@@ -1132,7 +1132,7 @@ Make this checklist a habit for every project in your portfolio. Reviewers notic
           },
           {
             prompt: "According to the lesson, when should quality work happen?",
-            options: ["As part of building the feature", "Only after launch", "Only if a manager asks", "Once a year"],
+            options: ["As part of building the feature", "Only after launch, once users report problems", "Only if a manager asks", "Once a year"],
             answer_index: 0,
             explanation: "Quality is part of building, not polish added at the end.",
           },
@@ -1209,7 +1209,7 @@ Test with a keyboard and a screen reader regularly. It quickly becomes second na
         questions: [
           {
             prompt: "What are the four principles WCAG is organised around?",
-            options: ["Fast, cheap, pretty and modern", "HTML, CSS, JavaScript and ARIA", "Colour, font, layout and motion", "Perceivable, operable, understandable and robust"],
+            options: ["Fast, cheap, pretty and modern", "HTML, CSS, JavaScript and ARIA", "Contrast, captions, keyboard access and screen readers", "Perceivable, operable, understandable and robust"],
             answer_index: 3,
             explanation: "WCAG content must be perceivable, operable, understandable and robust.",
           },
@@ -1227,13 +1227,13 @@ Test with a keyboard and a screen reader regularly. It quickly becomes second na
           },
           {
             prompt: "What is the first rule of using ARIA?",
-            options: ["Prefer native HTML elements, and use ARIA only to fill gaps", "Add ARIA to every element", "ARIA replaces the need for buttons", "ARIA is only for colour"],
+            options: ["Prefer native HTML, and use ARIA only to fill gaps", "Add ARIA to every element", "Add ARIA roles to divs so they act like real buttons", "ARIA is only for colour"],
             answer_index: 0,
             explanation: "Native HTML elements come with built in accessibility.",
           },
           {
             prompt: "Why should a failed payment not be shown in red alone?",
-            options: ["Red is not allowed on the web", "Colour blind users may miss it, so add words or an icon", "Red uses more data", "Screen readers only read blue text"],
+            options: ["Red is not allowed on the web", "Colour blind users may miss it, so add words or an icon", "Red uses more data", "Red looks orange on some phone screens, so add a second colour"],
             answer_index: 1,
             explanation: "Information should never depend on colour alone.",
           },
@@ -1314,19 +1314,19 @@ Make "how much data does this cost my user?" a question you ask about every feat
           },
           {
             prompt: "What does `loading=\"lazy\"` do on an image?",
-            options: ["Makes the image blurry", "Loads the image twice", "Converts the image to WebP", "Delays loading images below the screen until they are needed"],
+            options: ["Makes the image blurry", "Loads the image twice", "Converts the image to WebP so it downloads in a smaller size", "Delays images below the screen until they are needed"],
             answer_index: 3,
             explanation: "Lazy loading saves data by waiting until the image is near the screen.",
           },
           {
             prompt: "Why set `width` and `height` on images?",
-            options: ["To make images download faster", "To hide images on phones", "Because alt text needs them", "To reserve space so the page does not jump while images load"],
+            options: ["To make images download faster", "To hide images on phones", "To make the browser download a smaller copy of each image", "To reserve space so the page does not jump as images load"],
             answer_index: 3,
             explanation: "Known dimensions let the browser keep space for the image.",
           },
           {
             prompt: "Why does JavaScript cost a user twice?",
-            options: ["It must be bought from a store", "It runs on the server and the phone", "It is downloaded, then processed on the phone's chip", "It is sent by SMS"],
+            options: ["It must be bought from a store", "It runs once on the server and again on the phone's chip", "It is downloaded, then processed on the phone's chip", "It is sent by SMS"],
             answer_index: 2,
             explanation: "Scripts cost data to download and time to run on slower phones.",
           },
@@ -1410,19 +1410,19 @@ Mariama's order total shows "NaN". She logs the cart and sees prices stored as t
           },
           {
             prompt: "What does a crossed out rule in the Elements panel tell you?",
-            options: ["That rule was overridden by another rule", "The CSS file is missing", "The rule is spelled correctly", "The page is offline"],
+            options: ["That rule was overridden by another rule", "The rule only applies when the page is printed", "The rule is spelled correctly", "The page is offline"],
             answer_index: 0,
             explanation: "Crossed out rules show which styles lost to others.",
           },
           {
             prompt: "What does the `debugger` statement do when DevTools is open?",
-            options: ["Deletes the bug", "Sends an error report", "Speeds up the code", "Pauses code at that line so you can inspect variables"],
+            options: ["Deletes the bug", "Sends an error report with the line number to the console", "Speeds up the code", "Pauses code at that line so you can inspect variables"],
             answer_index: 3,
             explanation: "debugger acts like a breakpoint written in code.",
           },
           {
             prompt: "How does the lesson suggest using AI coding assistants?",
-            options: ["As a second opinion, always confirming with DevTools and understanding the fix", "Trust every suggestion", "Never read their output", "Only for CSS"],
+            options: ["As a second opinion, checking with DevTools and understanding the fix", "Paste in every suggestion it gives, since it has read more code than you", "Never read their output", "Only for CSS"],
             answer_index: 0,
             explanation: "AI tools can be wrong, so verify and understand.",
           },
@@ -1503,7 +1503,7 @@ Sumaila writes a function that formats amounts as cedis. He adds tests for whole
         questions: [
           {
             prompt: "What does a unit test check?",
-            options: ["A full journey in a real browser", "The speed of the network", "The design in Figma", "One small piece of code, such as a single function"],
+            options: ["A full journey such as checkout, run in a real browser", "The speed of the network", "The design in Figma", "One small piece of code, such as a single function"],
             answer_index: 3,
             explanation: "Unit tests check one small piece in isolation.",
           },
@@ -1521,13 +1521,13 @@ Sumaila writes a function that formats amounts as cedis. He adds tests for whole
           },
           {
             prompt: "What is continuous integration (CI)?",
-            options: ["Writing code without breaks", "Hosting a site for free", "Running tests automatically on every pull request", "A type of CSS layout"],
+            options: ["Writing code without breaks", "Publishing the site to a free host every time you save a file", "Running tests automatically on every pull request", "A type of CSS layout"],
             answer_index: 2,
             explanation: "CI runs checks automatically so broken changes are caught before merging.",
           },
           {
             prompt: "What does it mean to test what the code does, not how it does it?",
-            options: ["Tests should check results, so a rewrite with the same answers still passes", "Tests should copy the code line by line", "Tests should only check variable names", "Tests should never use real inputs"],
+            options: ["Tests check results, so a rewrite with the same answers still passes", "Tests should check that each internal step runs in the same order as before", "Tests should only check variable names", "Tests should never use real inputs"],
             answer_index: 0,
             explanation: "Testing behaviour keeps tests useful when you refactor.",
           },
@@ -1589,25 +1589,25 @@ Abdul-Rahman rebuilds his market price list in React. His filter, list and save 
         questions: [
           {
             prompt: "What is the main idea behind frameworks such as React?",
-            options: ["They replace HTML entirely", "They only work on servers", "You describe the screen for the current data and the framework updates the page", "They make CSS unnecessary"],
+            options: ["They replace HTML entirely, so the browser runs only JavaScript files", "They only work on servers", "You describe the screen for the data and the framework updates it", "They make CSS unnecessary"],
             answer_index: 2,
             explanation: "React updates the page to match your data, so you do not change it by hand.",
           },
           {
             prompt: "What is a component?",
-            options: ["A type of server", "A small, reusable piece of interface such as a ProductCard", "A Git branch", "An image format"],
+            options: ["A type of server", "A reusable piece of interface such as a ProductCard", "A Git branch that holds one feature of the interface", "An image format"],
             answer_index: 1,
             explanation: "Components are reusable building blocks of an interface.",
           },
           {
             prompt: "When does the lesson suggest starting this section?",
-            options: ["Before learning any JavaScript", "When you can write functions, handle events and fetch data comfortably", "Only after getting a job", "After learning backend development"],
+            options: ["Right after HTML and CSS, before writing any JavaScript", "When you can write functions, handle events and fetch data", "Only after getting a job", "After learning a backend language and setting up a database"],
             answer_index: 1,
             explanation: "Frameworks build on solid JavaScript skills.",
           },
           {
             prompt: "What cost do frameworks add for users on low cost phones?",
-            options: ["More JavaScript to download and run, which can slow start up", "They require a paid browser", "They stop images loading", "They disable accessibility"],
+            options: ["More JavaScript to download and run, which can slow start up", "They require a newer browser that most phones cannot install", "They stop images loading", "They disable accessibility"],
             answer_index: 0,
             explanation: "Framework code adds weight that every visitor must download and process.",
           },
@@ -1707,19 +1707,19 @@ Each library you add increases what phones download. Reach for plain React first
           },
           {
             prompt: "What happens when you call the setter from `useState`?",
-            options: ["React re renders the component with the new value", "Nothing until the page reloads", "The component is deleted", "The browser downloads React again"],
+            options: ["React re renders the component with the new value", "Nothing until the page reloads", "The component is deleted", "React reloads the whole page from the server with the value"],
             answer_index: 0,
             explanation: "Calling the setter tells React to re render with new state.",
           },
           {
             prompt: "Why does each item in a rendered list need a stable, unique `key`?",
-            options: ["To style the item", "To make it a link", "Keys are only for accessibility", "To help React update the right items efficiently"],
+            options: ["To style the item", "To make it a link", "Keys tell screen readers how many items are in the list", "To help React update the right items efficiently"],
             answer_index: 3,
             explanation: "Keys let React track which items changed.",
           },
           {
             prompt: "Two sibling components need the same search text. What does the lesson suggest?",
-            options: ["Lift the state up to their closest common parent and pass it down", "Copy the state into both", "Store it in a CSS variable", "Reload the page each time"],
+            options: ["Lift the state to their closest common parent and pass it down", "Give each sibling its own copy of the state and keep them in sync", "Store it in a CSS variable", "Reload the page each time"],
             answer_index: 0,
             explanation: "Lifting state up gives both siblings one source of truth.",
           },
@@ -1832,7 +1832,7 @@ Start by typing function inputs, props and API data. That covers most of the ben
         questions: [
           {
             prompt: "What does TypeScript add to JavaScript?",
-            options: ["Faster images", "A new browser", "Types that let your editor catch mistakes early", "Automatic hosting"],
+            options: ["Faster images", "A new browser", "Types that let your editor catch mistakes early", "A faster engine that makes JavaScript run quicker on phones"],
             answer_index: 2,
             explanation: "TypeScript adds types so errors appear before code runs.",
           },
@@ -1844,19 +1844,19 @@ Start by typing function inputs, props and API data. That covers most of the ben
           },
           {
             prompt: "Why is `type PayStatus = \"pending\" | \"success\" | \"failed\"` useful?",
-            options: ["It makes payments faster", "It encrypts the status", "It limits the value to known options, so typos are caught", "It sends the status to the server"],
+            options: ["It makes payments faster", "It encrypts the status", "It limits the value to known options, so typos are caught", "It checks the status from the server while the app is running"],
             answer_index: 2,
             explanation: "Union types restrict values to a set of allowed options.",
           },
           {
             prompt: "Does TypeScript check data arriving from a server while the app runs?",
-            options: ["Yes, always", "Only on Android", "Only for numbers", "No, so you must still handle missing or wrong data"],
+            options: ["Yes, it checks every server response while the app runs", "Only on Android", "Only for numbers", "No, so you must still handle missing or wrong data"],
             answer_index: 3,
             explanation: "Types are removed at build time and cannot check runtime data.",
           },
           {
             prompt: "Do TypeScript types increase what users' phones download?",
-            options: ["Yes, a lot", "Only on slow networks", "Only in React", "No, types are removed when the project is built"],
+            options: ["Yes, a lot", "Yes, each type adds a little extra code to the download", "Only in React", "No, types are removed when the project is built"],
             answer_index: 3,
             explanation: "Types disappear in the built JavaScript.",
           },
@@ -1933,13 +1933,13 @@ Amina rebuilds a church events site in Next.js. The events list is a server comp
         questions: [
           {
             prompt: "How does Next.js create page addresses in the `app` folder?",
-            options: ["From a config file listing every URL", "From the page title", "Routes must be added in CSS", "Folders form the route, and a page file makes it a page, for example app/menu/page.tsx becomes /menu"],
+            options: ["From a routes.json file where you list every URL and the page it shows", "From the page title", "Routes must be added in CSS", "Folders form the route, and a page.tsx file inside makes it a page"],
             answer_index: 3,
             explanation: "Next.js uses folder based routing.",
           },
           {
             prompt: "Why can server rendering help users on slow networks?",
-            options: ["It turns off images", "It makes data free", "The phone receives ready HTML and does less work", "It removes the need for HTML"],
+            options: ["It turns off images", "It makes data free", "The phone receives ready HTML and does less work", "It sends JavaScript first so the phone can build the HTML faster"],
             answer_index: 2,
             explanation: "Sending finished HTML shows content sooner on weak connections.",
           },
@@ -1951,7 +1951,7 @@ Amina rebuilds a church events site in Next.js. The events list is a server comp
           },
           {
             prompt: "What habit keeps the JavaScript sent to phones small?",
-            options: ["Make every component a client component", "Avoid HTML", "Keep most of the page as server components and use small client components for interaction", "Load every library on every page"],
+            options: ["Make every component a client component so the phone does the rendering work", "Avoid HTML", "Mostly server components, with small client components only where needed", "Load every library on every page"],
             answer_index: 2,
             explanation: "Only client components send their code to the browser.",
           },
@@ -2028,25 +2028,25 @@ Mariama receives a Figma design for a Bolgatanga craft shop. She notes four colo
         questions: [
           {
             prompt: "What should you look for when inspecting a Figma design, besides sizes?",
-            options: ["Only the logo", "The designer's name", "The file size", "Spacing, colour and text styles, and every state of each element"],
+            options: ["Only the logo", "The export settings for turning each frame into one big image", "The file size", "Spacing, colour, text styles and every state of each element"],
             answer_index: 3,
             explanation: "Spacing, styles and states are what make a build accurate.",
           },
           {
             prompt: "What are design tokens in CSS?",
-            options: ["Payment codes", "Login passwords", "Image formats", "Named custom properties for repeated values such as colours and spacing"],
+            options: ["Payment codes", "Short codes Figma adds to each layer so developers can find it", "Image formats", "Named custom properties for repeated colours and spacing"],
             answer_index: 3,
             explanation: "Tokens like --color-primary keep values consistent and easy to change.",
           },
           {
             prompt: "What does component driven development mean?",
-            options: ["Writing all pages in one file", "Designing without a designer", "Using only images for interfaces", "Building each repeating piece as a reusable component, then assembling screens"],
+            options: ["Writing each page as one large component so the code stays in one place", "Designing without a designer", "Using only images for interfaces", "Building reusable components first, then assembling screens from them"],
             answer_index: 3,
             explanation: "You build reusable pieces first and combine them into pages.",
           },
           {
             prompt: "What should you do if a design only shows a large screen?",
-            options: ["Refuse to build it", "Build only the large screen", "Ask for the phone version or make sensible mobile first decisions and confirm them", "Shrink it with CSS zoom"],
+            options: ["Refuse to build it", "Build only the large screen and let the phone browser scale it down", "Ask for the phone version, or decide mobile first and confirm", "Shrink it with CSS zoom"],
             answer_index: 2,
             explanation: "Ask or decide using mobile first skills, then confirm with the designer.",
           },
@@ -2103,7 +2103,7 @@ Fuseini's aunt sells shea butter in Tamale and takes orders over WhatsApp. He bu
         questions: [
           {
             prompt: "Why must Ghanaian checkout screens handle mobile money clearly?",
-            options: ["Cards are not allowed in Ghana", "Mobile money needs no internet at all", "Many people pay with mobile money rather than cards", "Mobile money is only used by businesses"],
+            options: ["Cards are not allowed in Ghana", "Mobile money works without internet, so the page can stay offline", "Many people pay with mobile money rather than cards", "Mobile money is only used by businesses"],
             answer_index: 2,
             explanation: "Mobile money is a common way people pay.",
           },
@@ -2187,19 +2187,19 @@ Wumpini builds a checkout for a school fees demo. After tapping Pay, the button 
         questions: [
           {
             prompt: "Where does the customer enter their mobile money PIN?",
-            options: ["In a field on your checkout page", "On the approval prompt on their own phone", "In an email", "In the browser console"],
+            options: ["In a secure field on your checkout page, sent over HTTPS", "On the approval prompt on their own phone", "In an email", "In the browser console"],
             answer_index: 1,
             explanation: "The provider's prompt on the phone collects the PIN, never your form.",
           },
           {
             prompt: "Why must payment secret keys stay off the frontend?",
-            options: ["Anyone can read frontend code, so keys there could be stolen", "Frontend code runs too slowly", "Keys only work in CSS", "Browsers delete keys"],
+            options: ["Anyone can read frontend code and steal the keys", "Keys stop working when the page is reloaded on a phone", "Keys only work in CSS", "Browsers delete keys"],
             answer_index: 0,
             explanation: "Frontend code is visible to users; secrets belong on the server.",
           },
           {
             prompt: "What should the screen offer when the payment result is unknown or timed out?",
-            options: ["A message that confirmation has not arrived and an option to check the status", "A Pay again button straight away", "Nothing, just a blank screen", "A request for the PIN"],
+            options: ["Say confirmation has not arrived and offer to check the status", "A Pay again button straight away so the customer does not wait", "Nothing, just a blank screen", "A request for the PIN"],
             answer_index: 0,
             explanation: "Checking status first avoids charging the customer twice.",
           },
@@ -2290,7 +2290,7 @@ Hawa builds a price list app for traders. She adds a manifest so it can be insta
           },
           {
             prompt: "What does a service worker do?",
-            options: ["Styles the page", "Sends SMS messages", "Sits between the page and the network and can serve cached files when offline", "Replaces HTML"],
+            options: ["Styles the page", "Runs on the server and pushes updated pages to each phone as they change", "Sits between page and network and can serve cached files offline", "Replaces HTML"],
             answer_index: 2,
             explanation: "Service workers can intercept requests and use a cache.",
           },
@@ -2372,19 +2372,19 @@ Sumaila finishes his bus times page. He pushes it to GitHub and turns on GitHub 
         questions: [
           {
             prompt: "What is a static site?",
-            options: ["A site with no images", "A site that never changes colour", "A set of files a host simply serves, such as HTML, CSS and JavaScript", "A site that only works offline"],
+            options: ["A site with no images", "A site that never changes colour", "Prebuilt HTML, CSS and JavaScript files a host simply serves", "A site whose server builds a fresh page for every single visitor"],
             answer_index: 2,
             explanation: "Static sites are prebuilt files served as they are.",
           },
           {
             prompt: "What does `npm run build` usually produce?",
-            options: ["Optimised static files in a folder such as dist or build", "A Figma file", "A database", "A Git branch"],
+            options: ["Optimised static files in a folder like dist or build", "A Figma file", "A database", "A new Git branch called build that holds the deployable code"],
             answer_index: 0,
             explanation: "The build step turns source code into files ready to host.",
           },
           {
             prompt: "Why should you read a host's current free plan page?",
-            options: ["It is required to use HTML", "Free plans have limits and terms that change", "It makes your site faster", "Hosts charge you for reading it"],
+            options: ["It is required to use HTML", "Free plans have limits and terms that change", "It makes your site faster", "Reading it unlocks the free plan, which stays free forever"],
             answer_index: 1,
             explanation: "Terms change, so check before you rely on them.",
           },
@@ -2454,19 +2454,19 @@ Amina from Nalerigu finishes this roadmap with four solid projects. She builds a
           },
           {
             prompt: "Besides technical skills, what do employers look for, according to the lesson?",
-            options: ["Proof, communication, collaboration and learning on your own", "Expensive laptops", "Only university grades", "A large social media following"],
+            options: ["Proof, communication, teamwork and learning on your own", "Expensive laptops", "A computer science degree and high university grades", "A large social media following"],
             answer_index: 0,
             explanation: "These came up again and again in the adverts studied.",
           },
           {
             prompt: "How should you treat rejections?",
-            options: ["As normal practice, asking for feedback when you can", "As proof you should stop", "As a reason to invent experience", "By never applying again to that company"],
+            options: ["As normal practice, asking for feedback when you can", "As proof you should stop", "As a reason to invent experience", "As a sign to apply to many more jobs without changing anything"],
             answer_index: 0,
             explanation: "Rejections are normal and a chance to improve.",
           },
           {
             prompt: "What should you say about a tool you have not used yet?",
-            options: ["Claim you are an expert", "Change the subject", "Say you have not used it yet and explain how you would learn it", "Say the tool is useless"],
+            options: ["Say you have used it, then learn it quickly before your first day", "Change the subject", "Say you have not used it and explain how you would learn it", "Say the tool is useless"],
             answer_index: 2,
             explanation: "Honesty builds trust with employers.",
           },
@@ -2539,13 +2539,13 @@ Issahaku's portfolio shows four projects. The first is a live site for a tailori
           },
           {
             prompt: "Which kind of project counts for more than a tutorial copy?",
-            options: ["A project with the most colours", "A project with no README", "A project built for a real person or organisation", "A project that only works on a laptop"],
+            options: ["A project with the most colours", "A project with no README", "A project built for a real person or organisation", "A project that copies a famous app's design pixel for pixel"],
             answer_index: 2,
             explanation: "Real projects show judgement and real problem solving.",
           },
           {
             prompt: "What should a project README explain?",
-            options: ["Only the project name", "Your salary expectations", "The problem, what you built, what was hard, how you tested, and what you would improve", "A copy of the tutorial"],
+            options: ["Only the project name", "Your salary expectations", "The problem, what you built, what was hard, and how you tested it", "The full list of every tool you installed and every command you ran"],
             answer_index: 2,
             explanation: "A good README tells the story of the project.",
           },
@@ -2616,7 +2616,7 @@ Mariama builds a site for a pharmacy in Bolgatanga. She writes a scope on WhatsA
         questions: [
           {
             prompt: "What do many small business owners care about most in a website?",
-            options: ["Complex animations", "Using the newest framework", "That it loads quickly, looks trustworthy and brings customers", "Having many pages"],
+            options: ["Complex animations", "Using the newest framework", "That it loads fast, looks trustworthy and brings customers", "Having many pages and animations so it looks like a big brand"],
             answer_index: 2,
             explanation: "Simple, fast and trustworthy sites serve small businesses best.",
           },
@@ -2628,7 +2628,7 @@ Mariama builds a site for a pharmacy in Bolgatanga. She writes a scope on WhatsA
           },
           {
             prompt: "What payment approach does the lesson suggest?",
-            options: ["Ask for part before starting and the rest on delivery", "Never ask for payment", "Ask for ten times the price", "Accept payment only after a year"],
+            options: ["Ask for part before starting and the rest on delivery", "Never ask for payment", "Ask for ten times the price", "Accept the full payment only after the site has run for a year"],
             answer_index: 0,
             explanation: "Partial upfront payment reduces your risk.",
           },
@@ -2711,7 +2711,7 @@ Abdul-Rahman applies to a junior role at an Accra agency. For the take home task
           },
           {
             prompt: "What should you do during a live coding task?",
-            options: ["Stay silent until finished", "Think out loud and ask clarifying questions first", "Refuse to start without the internet", "Write the most complex solution possible"],
+            options: ["Stay silent until finished", "Think out loud and ask clarifying questions first", "Refuse to start without the internet", "Write the most complex solution possible to show your skill"],
             answer_index: 1,
             explanation: "Interviewers want to follow your reasoning.",
           },

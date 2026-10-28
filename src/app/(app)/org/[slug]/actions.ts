@@ -15,6 +15,8 @@ import {
 } from "@/lib/organisations/forms";
 import { isUuid } from "@/lib/talent/forms";
 import type { FieldErrors } from "@/lib/validation";
+import { parseOpportunityForm, rejected, type OpportunityFormState } from "@/lib/opportunities/form";
+import { revalidateOpportunities } from "@/lib/opportunities/revalidate";
 
 /**
  * Server Actions for an organisation's member area. Each re-checks the user
@@ -162,4 +164,49 @@ export async function withdrawContactRequest(requestId: string): Promise<{ messa
   if (error) return { message: "Only a request still waiting for a reply can be withdrawn." };
   refresh();
   return {};
+}
+
+const UNIQUE_VIOLATION = "23505";
+const RLS_VIOLATION = "42501";
+
+/**
+ * Posts an opportunity under the organisation (#161, #177). Owners, admins
+ * and recruiters of a verified organisation may post; RLS
+ * (private.can_post_for_org) checks that again, and a trigger sets the
+ * poster name from the organisation, so the form has no name field.
+ */
+export async function createOrgOpportunity(
+  organisationId: string,
+  _prev: OpportunityFormState,
+  form: FormData,
+): Promise<OpportunityFormState> {
+  if (!isUuid(organisationId)) return { message: "That organisation is not valid." };
+  const { supabase, role } = await myRole(organisationId);
+  const { data, errors } = parseOpportunityForm(form, { mode: "organisation" });
+  if (role !== "owner" && role !== "admin" && role !== "recruiter") {
+    return rejected(data, form, {}, "Only owners, admins and recruiters can post opportunities.");
+  }
+  if (Object.keys(errors).length) return rejected(data, form, errors);
+
+  const { data: org } = await supabase.from("organisations").select("slug, verification_status").eq("id", organisationId).single();
+  if (org?.verification_status !== "verified") {
+    return rejected(data, form, {}, "Posting opens once your organisation is verified.");
+  }
+
+  // posted_by defaults to the caller (auth.uid()); RLS requires that. The
+  // prepare_opportunity trigger replaces organisation_name with the
+  // organisation's own name, so nobody posts as someone else.
+  const { error } = await supabase.from("opportunities").insert({ ...data, organisation_id: organisationId, organisation_name: "" });
+  if (error?.code === UNIQUE_VIOLATION) return rejected(data, form, { slug: "Another opportunity already uses this slug." });
+  if (error) {
+    console.error("createOrgOpportunity failed", { code: error.code, message: error.message });
+    return rejected(
+      data,
+      form,
+      {},
+      error.code === RLS_VIOLATION ? "You can't post for this organisation." : "We couldn't post the opportunity. Try again.",
+    );
+  }
+  revalidateOpportunities();
+  redirect(`/org/${org.slug}/opportunities`);
 }

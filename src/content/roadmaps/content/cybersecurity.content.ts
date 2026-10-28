@@ -93,7 +93,7 @@ You can learn all the ideas in this section on a phone or a computer. Later sect
               "She deleted the account",
               "She asked calm questions about what was at risk, changed or unavailable",
               "She blamed the staff member",
-              "She ignored it because the account was already locked",
+              "She ignored it, since a locked account means the attacker is already shut out",
             ],
             answer_index: 1,
             explanation: "Hawa started with calm questions, then gathered evidence before acting.",
@@ -181,7 +181,7 @@ When you see a security problem, ask: which part of CIA is at risk, what is the 
               "A missing software update",
               "A fraudster",
               "A flood",
-              "A computer virus",
+              "A computer virus spreading on the network",
             ],
             answer_index: 0,
             explanation: "A vulnerability is a weakness, such as a missing update, that a threat could use.",
@@ -252,7 +252,7 @@ Protect what you are responsible for, investigate only within your role, and lea
             prompt: "Under Act 772, which of these is an offence?",
             options: [
               "Updating your own laptop",
-              "Practising on a training platform built for learners",
+              "Practising attacks on a training platform built for learners, using your own account",
               "Intentionally accessing an electronic record without authority or permission",
               "Reporting a suspicious message to your supervisor",
             ],
@@ -285,7 +285,7 @@ Protect what you are responsible for, investigate only within your role, and lea
             prompt: "Why did Sumaila refuse to run the \"free tool\"?",
             options: [
               "It was too slow",
-              "He had already used a better tool",
+              "He already had a paid version of the same tool installed on his work laptop",
               "Using it on others would be unauthorised access and it might carry malware",
               "His phone did not support it",
             ],
@@ -350,8 +350,8 @@ By the end of this section you will be able to read a simple connection record, 
             options: [
               "Because most phones in Ghana run desktop Linux",
               "Because Windows has no logs",
-              "Because Linux cannot be attacked",
-              "Because many servers and security tools run on it and its logs are read from the command line",
+              "Because Linux cannot be infected by malware, so it needs no monitoring",
+              "Because many servers and security tools run on it",
             ],
             answer_index: 3,
             explanation: "Many servers, cloud systems and tools run Linux, and analysts search its logs at the command line.",
@@ -360,8 +360,8 @@ By the end of this section you will be able to read a simple connection record, 
             prompt: "What is a sensible plan if you only have a phone for the hands on parts?",
             options: [
               "Skip this section entirely",
-              "Use browser based courses and book planned time on a computer at a lab, library or community centre",
-              "Download several large virtual machines on mobile data",
+              "Use browser courses and book time on a computer at a lab, library or community centre",
+              "Download several large virtual machines on mobile data and run them all on the phone itself",
               "Practise on a friend's office network",
             ],
             answer_index: 1,
@@ -371,8 +371,8 @@ By the end of this section you will be able to read a simple connection record, 
             prompt: "In the example, what made Mariama suspicious of the firewall log line?",
             options: [
               "The computer was switched off",
-              "Repeated overnight connections to an unknown overseas address on an unusual port",
-              "The connection used port 443",
+              "Repeated overnight connections to an unknown overseas address on an odd port",
+              "The connection used port 443, which is only ever used by attackers for hidden traffic",
               "The computer belonged to her manager",
             ],
             answer_index: 1,
@@ -442,7 +442,7 @@ Issahaku works on a help desk in Tamale. Staff complain the internet is slow. He
             prompt: "What does DNS do?",
             options: [
               "Turns names like example.com into IP addresses",
-              "Encrypts every file on a computer",
+              "Encrypts web traffic between your browser and a website",
               "Blocks all traffic from outside",
               "Stores passwords for websites",
             ],
@@ -475,7 +475,7 @@ Issahaku works on a help desk in Tamale. Staff complain the internet is slow. He
             prompt: "When is it acceptable to capture network traffic with a tool like Wireshark?",
             options: [
               "On any public Wi Fi",
-              "On a neighbour's network if it is unprotected",
+              "On a neighbour's network, as long as it has no password set",
               "On your own network or a lab you are responsible for",
               "On a school network if nobody notices",
             ],
@@ -553,7 +553,7 @@ Exploring Event Viewer needs a Windows computer. If you do not have one, use a s
             prompt: "Why is a cleared security log (Event ID 1102) a red flag?",
             options: [
               "Attackers often clear logs to hide their tracks",
-              "It means the computer needs more storage",
+              "It means the computer ran out of storage and deleted old logs",
               "It always means Windows Update ran",
               "It shows a successful backup",
             ],
@@ -585,7 +585,7 @@ Exploring Event Viewer needs a Windows computer. If you do not have one, use a s
           {
             prompt: "In the example, what did the 4720 event show Amina?",
             options: [
-              "The manager changed his wallpaper",
+              "The manager changed his own password, as the policy requires",
               "The computer installed an update",
               "The security log was cleared",
               "A new user account was created that nobody requested",
@@ -650,7 +650,7 @@ The best practice is on a computer, using a free Linux virtual machine or a brow
           {
             prompt: "On Ubuntu, which file usually records login activity?",
             options: [
-              "/home/music.txt",
+              "/home/admin/Documents/logins.txt",
               "/var/log/auth.log",
               "/etc/wallpaper",
               "/bin/games",
@@ -663,7 +663,7 @@ The best practice is on a computer, using a free Linux virtual machine or a brow
             options: [
               "Deletes a file",
               "Searches for lines that contain a pattern",
-              "Changes your password",
+              "Changes the permissions on a file or folder",
               "Restarts the server",
             ],
             answer_index: 1,
@@ -673,7 +673,7 @@ The best practice is on a computer, using a free Linux virtual machine or a brow
             prompt: "Which command shows the last 20 lines of a log?",
             options: [
               "pwd",
-              "cd file",
+              "head -n 20 file",
               "ls -l",
               "tail -n 20 file",
             ],
@@ -748,7 +748,7 @@ Wumpini's aunt in Savelugu receives a call from "customer care" saying her mobil
             prompt: "How do most attacks people face in Ghana begin?",
             options: [
               "With advanced code written by experts",
-              "With physical break ins at telco offices",
+              "With physical break ins at telco offices and bank data centres",
               "With satellite interference",
               "With persuasion through calls, messages or fake links",
             ],
@@ -758,7 +758,7 @@ Wumpini's aunt in Savelugu receives a call from "customer care" saying her mobil
           {
             prompt: "Where should you get the CSA's current incident reporting channels?",
             options: [
-              "From a number forwarded in a WhatsApp group",
+              "From a hotline number forwarded in a trusted family WhatsApp group",
               "From the caller who contacted the victim",
               "From the CSA's official report page at csa.gov.gh/report",
               "From any website that appears in a search",
@@ -769,8 +769,8 @@ Wumpini's aunt in Savelugu receives a call from "customer care" saying her mobil
           {
             prompt: "What did Wumpini do after telling her aunt to hang up?",
             options: [
-              "Called the scammer back to argue",
-              "Checked the balance using the official menu and helped report the number",
+              "Called the number back from her own phone to find out who the caller really was",
+              "Checked the balance on the official menu and helped report the number",
               "Shared the code to see what would happen",
               "Deleted the mobile money app",
             ],
@@ -824,7 +824,7 @@ Mariama works in a fintech's fraud team in Accra. She notices several customers 
             prompt: "You get an SMS that looks like a deposit alert, then a call asking you to send the money back. What should you do first?",
             options: [
               "Check your real balance through the official menu",
-              "Send the money back quickly to be kind",
+              "Send the money back quickly, since keeping it could be treated as theft",
               "Share your PIN so they can reverse it",
               "Forward the SMS to all your contacts",
             ],
@@ -836,8 +836,8 @@ Mariama works in a fintech's fraud team in Accra. She notices several customers 
             options: [
               "Your phone battery is replaced",
               "Your network provider upgrades you to faster data",
-              "A fraudster gets a new SIM issued for your number and receives your calls, texts and codes",
-              "Your phone's apps are moved to a memory card",
+              "A fraudster gets a new SIM for your number and then receives your codes",
+              "Your contacts and apps are copied to a memory card so a thief can read them later",
             ],
             answer_index: 2,
             explanation: "SIM swap moves your number to a SIM the fraudster controls.",
@@ -856,7 +856,7 @@ Mariama works in a fintech's fraud team in Accra. She notices several customers 
           {
             prompt: "Why is a one time code sent to your phone so valuable to a fraudster?",
             options: [
-              "It can be sold as airtime",
+              "It can be loaded as airtime credit or resold to others as a voucher",
               "It unlocks free data",
               "It changes your phone's language",
               "It is often the key that confirms access to a wallet or account",
@@ -950,7 +950,7 @@ Never click suspicious links "to see what happens". On real systems, analysts ex
               "Call the bank on the number from its official website or your card",
               "Reply to the message and ask",
               "Call the number given in the message",
-              "Click the link and see if the page looks real",
+              "Click the link and check that the page shows the bank's real logo and colours",
             ],
             answer_index: 0,
             explanation: "Use a contact you already trust, never details from the suspicious message.",
@@ -970,9 +970,9 @@ Never click suspicious links "to see what happens". On real systems, analysts ex
             prompt: "What did Fuseini do with the payroll email?",
             options: [
               "Clicked the link to test the login page",
-              "Ignored it because only one person reported it",
+              "Ignored it, because only one member of staff had reported it so it was not a real campaign",
               "Replied to the sender asking who they were",
-              "Recorded the details, checked who else received it, had the domain blocked and warned staff",
+              "Recorded the details, checked who else got it, had the domain blocked and warned staff",
             ],
             answer_index: 3,
             explanation: "He gathered evidence, limited the spread and warned staff without clicking anything.",
@@ -1057,7 +1057,7 @@ You can check a file's reputation on VirusTotal, which compares it against many 
               "Regular backups with an offline copy that you test",
               "A faster internet connection",
               "A new screen saver",
-              "Paying quickly",
+              "Paying quickly, so the attackers send the key before prices rise",
             ],
             answer_index: 0,
             explanation: "Tested backups, including an offline copy, let you restore without paying.",
@@ -1066,7 +1066,7 @@ You can check a file's reputation on VirusTotal, which compares it against many 
             prompt: "What was Issahaku's first action when he found the ransom note?",
             options: [
               "Paid the ransom",
-              "Restarted the computer repeatedly",
+              "Restarted the computer to see if the note went away",
               "Unplugged the computer from the network",
               "Emailed the attackers",
             ],
@@ -1134,7 +1134,7 @@ The three topics in this section go deeper into each layer: identity and access 
           {
             prompt: "What does defence in depth mean?",
             options: [
-              "Buying the most expensive security product",
+              "Buying the single most expensive security product and relying on it",
               "Hiding the server room underground",
               "Turning off the internet at night",
               "Using several layers of protection that support each other",
@@ -1145,7 +1145,7 @@ The three topics in this section go deeper into each layer: identity and access 
           {
             prompt: "Which layer do strong passwords and multi factor authentication belong to?",
             options: [
-              "Data protection",
+              "Data protection and encryption",
               "Identity and access",
               "People",
               "Backups",
@@ -1240,7 +1240,7 @@ Abdul-Rahman is doing national service in a bank's IT security unit in Accra. Hi
           {
             prompt: "Why is an authenticator app usually stronger than SMS codes?",
             options: [
-              "Apps work without a phone",
+              "Apps work without a phone or any internet connection",
               "SMS codes are longer",
               "SMS codes can be stolen through SIM swap",
               "Apps never need updating",
@@ -1262,7 +1262,7 @@ Abdul-Rahman is doing national service in a bank's IT security unit in Accra. Hi
           {
             prompt: "When a staff member changes role, what should happen under least privilege?",
             options: [
-              "Add the new access and keep the old",
+              "Add the new access and keep the old access in case they need it",
               "Give them administrator rights",
               "Remove access that the new role does not need",
               "Delete all their files",
@@ -1345,8 +1345,8 @@ Hawa works for an NGO in Bolgatanga that runs a health survey. A field officer's
             prompt: "How is asymmetric encryption different from symmetric encryption?",
             options: [
               "It uses no keys at all",
-              "It only works offline",
-              "It uses a public and private key pair instead of one shared key",
+              "It uses one shared key, but that key is changed every session",
+              "It uses a public and private key pair, not one shared key",
               "It is used only for passwords",
             ],
             answer_index: 2,
@@ -1356,7 +1356,7 @@ Hawa works for an NGO in Bolgatanga that runs a health survey. A field officer's
             prompt: "Which statement about a hash is true?",
             options: [
               "Changing one letter of the input changes the hash completely",
-              "You can turn a hash back into the original data",
+              "You can turn a hash back into the original data if you know the key",
               "A hash is the same as a password",
               "Hashes are only used for videos",
             ],
@@ -1366,7 +1366,7 @@ Hawa works for an NGO in Bolgatanga that runs a health survey. A field officer's
           {
             prompt: "Under Ghana's Data Protection Act, 2012 (Act 843), what must organisations that process personal data do?",
             options: [
-              "Publish all data online",
+              "Publish every customer's personal data on their website",
               "Delete data every week",
               "Store data only on paper",
               "Register with the Data Protection Commission",
@@ -1434,7 +1434,7 @@ An awareness session you have actually delivered, with your slides or notes and 
             options: [
               "One long lecture a year",
               "Short, regular, local sessions ending with one clear action",
-              "Sending staff a long policy document",
+              "Sending staff a long policy document to read and sign once a year",
               "Punishing people who fall for scams",
             ],
             answer_index: 1,
@@ -1465,7 +1465,7 @@ An awareness session you have actually delivered, with your slides or notes and 
           {
             prompt: "What must always happen before a simulated phishing exercise?",
             options: [
-              "Staff must be told the exact date and time",
+              "Staff must be told the exact date and time so nobody feels tricked",
               "It must use real customer data",
               "It must be approved by management and planned carefully",
               "It must be run by an outside hacker",
@@ -1529,7 +1529,7 @@ You can learn the ideas and practise reading logs and alerts on a phone or a com
             prompt: "In a SOC with levels, what do Level 1 analysts mainly do?",
             options: [
               "Approve budgets",
-              "Write the company's laws",
+              "Write the company's security policies and budgets",
               "Watch and triage alerts, then escalate",
               "Repair printers",
             ],
@@ -1551,7 +1551,7 @@ You can learn the ideas and practise reading logs and alerts on a phone or a com
             prompt: "What made Wumpini's handover smooth?",
             options: [
               "She wrote clear notes in the ticket and escalated through the playbook",
-              "She solved everything alone without telling anyone",
+              "She solved everything alone overnight without telling anyone, to save the team time",
               "She waited until morning to look at the alert",
               "She deleted the alert",
             ],
@@ -1644,7 +1644,7 @@ Mariama is asked why a shared folder at a Tamale NGO went missing. She checks th
             options: [
               "An outside address failed twice then logged in as admin late at night",
               "They show a normal morning login",
-              "The user changed their password as required",
+              "The user simply changed their password, as the monthly policy requires",
               "The clock was wrong",
             ],
             answer_index: 0,
@@ -1655,7 +1655,7 @@ Mariama is asked why a shared folder at a Tamale NGO went missing. She checks th
             options: [
               "To make computers run faster",
               "To save printer paper",
-              "Because local logs are illegal",
+              "Because local logs are illegal to keep under Ghana's data law",
               "So one hacked machine cannot erase its own evidence",
             ],
             answer_index: 3,
@@ -1747,10 +1747,10 @@ LetsDefend and CyberDefenders offer browser based SOC style practice with free c
           {
             prompt: "What does a SIEM do?",
             options: [
-              "Replaces all antivirus software",
+              "Replaces antivirus by scanning and blocking malware on every computer in the network",
               "Repairs damaged hard drives",
               "Sends marketing emails",
-              "Collects logs from many sources, lets analysts search them and raises alerts using rules",
+              "Collects logs from many sources, lets analysts search them and raises alerts",
             ],
             answer_index: 3,
             explanation: "A SIEM centralises logs, supports searching and raises rule based alerts.",
@@ -1771,8 +1771,8 @@ LetsDefend and CyberDefenders offer browser based SOC style practice with free c
             options: [
               "Charging money for it",
               "Deleting old alerts",
-              "Adding context such as IP reputation, user travel and asset importance",
-              "Sending it to every staff member",
+              "Adding context like IP reputation, user travel and asset importance",
+              "Sending it to every staff member so more people can look at it quickly",
             ],
             answer_index: 2,
             explanation: "Enrichment adds context that helps decide whether the alert is real.",
@@ -1780,7 +1780,7 @@ LetsDefend and CyberDefenders offer browser based SOC style practice with free c
           {
             prompt: "What is MITRE ATT&CK?",
             options: [
-              "A paid antivirus product",
+              "A paid antivirus product used by large SOCs to block attackers",
               "A Ghanaian law",
               "A type of firewall",
               "A free knowledge base of attacker tactics and techniques",
@@ -1862,7 +1862,7 @@ At a microfinance company in Wa, Abdul-Rahman notices a staff laptop sending lar
               "The machine may hold evidence the team needs",
               "Wiping takes too long",
               "Wiping is illegal in Ghana",
-              "Backups do not work after wiping",
+              "Backups stop working once the original machine is wiped",
             ],
             answer_index: 0,
             explanation: "Preserving evidence helps the team understand and fully remove the threat.",
@@ -1873,7 +1873,7 @@ At a microfinance company in Wa, Abdul-Rahman notices a staff laptop sending lar
               "One week",
               "30 days",
               "24 hours after detection",
-              "There is no time limit",
+              "Only after the investigation ends",
             ],
             answer_index: 2,
             explanation: "Section 47(5) sets a maximum of 24 hours after the incident is detected.",
@@ -1893,7 +1893,7 @@ At a microfinance company in Wa, Abdul-Rahman notices a staff laptop sending lar
             prompt: "In the example, what did Abdul-Rahman do with the suspicious laptop?",
             options: [
               "Reinstalled Windows immediately",
-              "Posted about it in the staff WhatsApp group",
+              "Posted a warning in the staff WhatsApp group, then switched the laptop off to stop the spread",
               "Gave it back to the staff member",
               "Disconnected it from the network, left it on, started a timeline and called his lead",
             ],
@@ -1952,7 +1952,7 @@ Running scanners needs a computer and permission. On a phone, you can still prac
             options: [
               "A type of firewall",
               "A public identifier for a known vulnerability",
-              "A Ghanaian regulator",
+              "A paid scanner that finds vulnerabilities on a network",
               "A password manager",
             ],
             answer_index: 1,
@@ -1973,7 +1973,7 @@ Running scanners needs a computer and permission. On a phone, you can still prac
             prompt: "Why does a listing in CISA's Known Exploited Vulnerabilities catalog raise a vulnerability's priority?",
             options: [
               "It means the vulnerability is harmless",
-              "It means the vendor has stopped trading",
+              "It means the vendor has stopped supporting the product",
               "It means the system is offline",
               "It means attackers are actively using it",
             ],
@@ -2048,7 +2048,7 @@ Laws are amended and directives are updated. Always check the official source, s
           {
             prompt: "Which body runs Ghana's National Computer Emergency Response Team (CERT GH)?",
             options: [
-              "The Ghana Revenue Authority",
+              "The National Communications Authority",
               "The Electoral Commission",
               "The Ghana Tourism Authority",
               "The Cyber Security Authority",
@@ -2082,7 +2082,7 @@ Laws are amended and directives are updated. Always check the official source, s
             prompt: "Where should you check for the latest version of a directive or law?",
             options: [
               "The official source, such as csa.gov.gh or bog.gov.gh",
-              "An old social media post",
+              "A recent social media post from a well known security blogger",
               "A friend's summary",
               "Any search result",
             ],
@@ -2162,7 +2162,7 @@ You do not need to memorise every section. Know what the CSA is, what CII and CE
             options: [
               "Every smartphone owner",
               "All university students",
-              "Anyone who uses mobile money",
+              "Anyone who sells phones or mobile money services",
               "Cybersecurity service providers",
             ],
             answer_index: 3,
@@ -2182,7 +2182,7 @@ You do not need to memorise every section. Know what the CSA is, what CII and CE
           {
             prompt: "If you later offer penetration testing or forensics to clients, what should you do first?",
             options: [
-              "Start immediately and register later",
+              "Start immediately and register once you have your first few clients",
               "Check the CSA's current licensing and accreditation rules",
               "Ask a friend if it is allowed",
               "Only work for clients outside Ghana",
@@ -2259,9 +2259,9 @@ You do not need to read every standard in full now. Learn what each is for, and 
           {
             prompt: "What is ISO/IEC 27001 about?",
             options: [
-              "An information security management system for the whole organisation",
+              "An information security management system for an organisation",
               "Payment card data only",
-              "A list of attacker techniques",
+              "A public catalogue of attacker tactics and techniques used by SOC teams",
               "Ghana's data protection law",
             ],
             answer_index: 0,
@@ -2273,7 +2273,7 @@ You do not need to read every standard in full now. Learn what each is for, and 
               "Only schools",
               "Only government ministries",
               "Organisations that store, process or transmit payment card data",
-              "Every person with a smartphone",
+              "Only banks, since they are the ones that issue the payment cards",
             ],
             answer_index: 2,
             explanation: "PCI DSS applies wherever payment card data is handled.",
@@ -2283,7 +2283,7 @@ You do not need to read every standard in full now. Learn what each is for, and 
             options: [
               "A type of antivirus",
               "A Ghanaian directive",
-              "A backup method",
+              "A specific method an attacker uses, such as phishing",
               "An attacker's goal, such as gaining initial access",
             ],
             answer_index: 3,
@@ -2340,7 +2340,7 @@ Be careful of offers that promise a guaranteed security job in exchange for a fe
             prompt: "Why does this track build on IT support?",
             options: [
               "Because security has nothing to do with computers",
-              "Because IT support pays the same as security",
+              "Because IT support pays the same as security, so the switch is easy",
               "Because many entry security roles still ask for some IT experience",
               "Because certificates are not allowed in security",
             ],
@@ -2363,7 +2363,7 @@ Be careful of offers that promise a guaranteed security job in exchange for a fe
             options: [
               "He used browser lessons on his phone and a community centre computer for labs",
               "He gave up on labs",
-              "He used his employer's customers' computers",
+              "He practised on his employer's customer computers after hours without asking anyone",
               "He bought an expensive course",
             ],
             answer_index: 0,
@@ -2372,7 +2372,7 @@ Be careful of offers that promise a guaranteed security job in exchange for a fe
           {
             prompt: "What should you think about an offer of a guaranteed security job in exchange for a fee?",
             options: [
-              "It is a normal part of hiring",
+              "It is a normal part of hiring, since employers must cover training and vetting",
               "Pay quickly before the offer ends",
               "Be careful: genuine employers do not ask you to pay to be hired",
               "It is required by the CSA",
@@ -2444,7 +2444,7 @@ For either path, write a lab report with: goal, steps, findings, problems and le
               "On systems you own or platforms built for learning",
               "On any network with weak security",
               "On a library's computers without asking",
-              "On a friend's phone without telling them",
+              "On a friend's phone, as long as you tell them about it afterwards",
             ],
             answer_index: 0,
             explanation: "Practise only on your own systems or learning platforms built for it.",
@@ -2452,7 +2452,7 @@ For either path, write a lab report with: goal, steps, findings, problems and le
           {
             prompt: "What is a snapshot in VirtualBox useful for?",
             options: [
-              "Taking photos with your webcam",
+              "Saving a photo of your screen to share in a write up",
               "Speeding up your internet",
               "Encrypting your phone",
               "Rolling back a virtual machine if something breaks",
@@ -2667,7 +2667,7 @@ Wumpini applies for a national service post in a telco's IT security unit. Her C
             prompt: "Which is a warning sign of a fake job offer?",
             options: [
               "It includes an interview",
-              "It lists the company's official website",
+              "It lists the company's official website and a named contact",
               "It asks you to pay a fee or forward money",
               "It describes the duties clearly",
             ],
@@ -2678,7 +2678,7 @@ Wumpini applies for a national service post in a telco's IT security unit. Her C
             prompt: "How did Wumpini answer the question about a suspicious email?",
             options: [
               "She walked through her phishing analysis step by step",
-              "She said she would forward it to everyone",
+              "She said she would forward it to everyone in the office as a warning",
               "She said she had never seen one",
               "She guessed",
             ],

@@ -1,9 +1,9 @@
 "use client";
 
-import { useActionState, type ComponentProps } from "react";
+import { useActionState } from "react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { SelectField, TextField } from "@/components/ui/field";
+import { CheckboxGroup, SelectField, TextAreaField, TextField } from "@/components/ui/field";
 import {
   LIMITS,
   type OpportunityFormMode,
@@ -240,86 +240,5 @@ export function OpportunityForm({
         {pending ? "Saving…" : (submitLabel ?? (editing ? "Save changes" : "Post opportunity"))}
       </Button>
     </form>
-  );
-}
-
-function TextAreaField({
-  id,
-  label,
-  hint,
-  error,
-  ...props
-}: { id: string; label: string; hint?: string; error?: string } & ComponentProps<"textarea">) {
-  const describedBy = error ? `${id}-error` : hint ? `${id}-hint` : undefined;
-  return (
-    <div className="flex flex-col gap-1.5">
-      <label htmlFor={id} className="text-sm font-semibold text-content">
-        {label}
-      </label>
-      <textarea
-        id={id}
-        name={id}
-        rows={3}
-        aria-invalid={error ? true : undefined}
-        aria-describedby={describedBy}
-        className="min-h-24 w-full rounded-md border border-line-strong bg-surface px-3 py-2 text-base text-content placeholder:text-content-3 aria-invalid:border-danger-fg"
-        {...props}
-      />
-      {hint && !error && (
-        <p id={`${id}-hint`} className="text-sm text-content-3">
-          {hint}
-        </p>
-      )}
-      {error && (
-        <p id={`${id}-error`} className="text-sm text-danger-fg">
-          {error}
-        </p>
-      )}
-    </div>
-  );
-}
-
-function CheckboxGroup({
-  name,
-  legend,
-  hint,
-  options,
-  checked,
-  error,
-}: {
-  name: string;
-  legend: string;
-  hint: string;
-  options: readonly { value: string; label: string }[];
-  checked: string[];
-  error?: string;
-}) {
-  return (
-    <fieldset className="flex flex-col gap-2" aria-describedby={`${name}-${error ? "error" : "hint"}`}>
-      <legend className="text-h3 text-content">{legend}</legend>
-      <p id={`${name}-hint`} className="text-sm text-content-3">
-        {hint}
-      </p>
-      {error && (
-        <p id={`${name}-error`} className="text-sm text-danger-fg">
-          {error}
-        </p>
-      )}
-      <div className="grid gap-x-4 sm:grid-cols-2">
-        {options.map((opt) => (
-          <label key={opt.value} htmlFor={`${name}-${opt.value}`} className="flex min-h-11 items-center gap-3 text-sm text-content">
-            <input
-              id={`${name}-${opt.value}`}
-              name={name}
-              value={opt.value}
-              type="checkbox"
-              defaultChecked={checked.includes(opt.value)}
-              className="size-5 shrink-0 accent-line-selected"
-            />
-            {opt.label}
-          </label>
-        ))}
-      </div>
-    </fieldset>
   );
 }

@@ -18,6 +18,8 @@ export async function WhatsAppConsent() {
   const latest = data?.[0];
   const enabled = Boolean(latest && latest.revoked_at === null && latest.version === WHATSAPP_CONSENT_VERSION);
   const numberChanged = latest?.revoked_reason === "phone_changed" && Boolean(profile.phone);
+  // Live, but given for older wording: nothing is sent until they confirm the new promise.
+  const outdated = Boolean(latest && latest.revoked_at === null && latest.version !== WHATSAPP_CONSENT_VERSION);
 
   return (
     <section aria-labelledby="whatsapp-heading" className="flex flex-col gap-3 border-t border-line pt-6">
@@ -26,10 +28,11 @@ export async function WhatsAppConsent() {
       </h2>
       {/* Keyed on the stored state so a number change elsewhere on the page resets the toggle. */}
       <WhatsAppToggle
-        key={`${enabled}-${numberChanged}`}
+        key={`${enabled}-${numberChanged}-${outdated}`}
         enabled={enabled}
         hasPhone={Boolean(profile.phone)}
         numberChanged={numberChanged}
+        outdated={outdated}
       />
     </section>
   );

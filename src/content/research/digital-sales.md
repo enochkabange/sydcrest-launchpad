@@ -1,7 +1,8 @@
 # Research: Digital Sales track (`digital-sales`)
 
-Tier B outline (issue #96). Researched and written 27 October 2026. Outline only: lessons are
-marked "coming soon" by the site. Everything in `src/content/roadmaps/digital-sales.ts` is
+Tier B outline (issue #96), researched and written 27 October 2026. Lessons and quizzes added
+28 October 2026 (issue #198) in `src/content/roadmaps/content/digital-sales.content.ts`; six more
+adverts were read for that wave (A15 to A20) to bring the sample to 20. Everything in `src/content/roadmaps/digital-sales.ts` is
 original. roadmap.sh was not opened, searched or used, and no "<field> roadmap" style searches
 were run. No logins; LinkedIn was not opened. Job adverts were read for which skills appear; no
 advert text is reproduced. Salary and commission figures on some pages were ignored.
@@ -39,7 +40,19 @@ selling.
 | C1 | Blossom Academy: AI Powered Sales course page | https://blossom.africa/courses/ai-powered-sales/ | 2026-10-27 | Programme page; topic keywords only, not openly licensed |
 | C2 | HubSpot Academy: Inbound Sales course page | https://academy.hubspot.com/courses/inbound-sales | 2026-10-27 | Free course catalogue page (existence checked; needs a free account) |
 | D1 | Data Protection Commission, Ghana | https://dpc.gov.gh/ | 2026-10-27 | Official regulator site |
+| S8 | Hollard Insurance Ghana: Outbound Telesales Agent (deadline 29 May 2026) | https://ghanacareers.com/?p=47541 | 2026-10-28 | Search result snippet only |
+| S9 | Rosies People: Telesales Representative, Ghana | https://careers-page.com/rosies-people/job/V6858938 | 2026-10-28 | Search result snippet only |
+| S10 | Jobberman: Sales Executive (Accra Spintex or Kumasi) | https://www.jobberman.com.gh/listings/sales-executive-q200wj | 2026-10-28 | Search result snippet only |
+| S11 | Jobberman: Field Sales Executive (Accra, Tema, Kasoa, Kumasi) | https://www.jobberman.com.gh/listings/field-sales-executive-accra-tema-kasoa-kumasi-r89w95 | 2026-10-28 | Search result snippet only |
+| S12 | jobsearchgh.com: FMCG Sales Executive, food company, Accra and Kumasi | https://jobsearchgh.com/jobs/22254/fmcg-sales-executive-legendary-foods | 2026-10-28 | Search result snippet only |
+| S13 | Jobberman: Business Development Telesales Consultant (second listing) | https://jobberman.com.gh/listings/business-development-telesales-consultant-vw88ep | 2026-10-28 | Search result snippet only |
 | P1 | SydCrest Planning/12_TRACK_CATALOGUE.md | (internal) | 2026-10-27 | Internal planning document |
+| D2 | Data Protection Act, 2012 (Act 843), official text (section 40, direct marketing) | https://dpc.gov.gh/wp-content/uploads/2025/05/data-protection-act-2012-act-843.pdf | 2026-10-28 | Official statute, published by the regulator |
+| W1 | WhatsApp Help Center: How to use broadcast lists | https://faq.whatsapp.com/861663048350950 | 2026-10-28 | Official help page |
+| W2 | WhatsApp Business: Business app features | https://whatsappbusiness.com/products/business-app-features/ | 2026-10-28 | Official product page |
+| T1 | HubSpot: Free CRM product page | https://www.hubspot.com/products/crm/free | 2026-10-28 | Vendor page (example tool only) |
+| T2 | Bigin by Zoho CRM: pricing (free plan) | https://www.bigin.com/pricing.html | 2026-10-28 | Vendor page (example tool only) |
+| H1 | WHO: Questions and answers on stress | https://www.who.int/news-room/questions-and-answers/item/stress | 2026-10-28 | Official health body page |
 
 Resource links in the outline were checked with an HTTP request on 27 October 2026. Many
 HubSpot sales blog URLs returned 404 and were not used; the ones linked returned 200. LearnFree
@@ -47,7 +60,7 @@ HubSpot sales blog URLs returned 404 and were not used; the ones linked returned
 added beyond entries already in the shared `RES` pool. WhatsApp pages return 400 to automated
 requests but are reused from the shared pool, which existing tracks already use.
 
-## Adverts analysed (14)
+## Adverts analysed (20)
 
 | # | Role | Employer type | Location | Date | Seen as | Skills signalled (keywords) |
 |---|---|---|---|---|---|---|
@@ -65,27 +78,37 @@ requests but are reused from the shared pool, which existing tracks already use.
 | A12 | Sales Agronomist | Recruiter (agri inputs) | Accra and Tema | Oct 2026 | Card (S1) | Product knowledge, advice to farmers, business development |
 | A13 | Sales and Marketing Assistant | Recruiter (electrical) | Accra and Tema | Oct 2026 | Card (S1) | Customer service, communication, retention |
 | A14 | Business Development and Telesales Consultant | Not named | Accra and Tema | 2026 | Snippet (S6) | Telesales, business development; mid level, three years |
+| A15 | Outbound Telesales Agent | Insurer | Ghana | May 2026 | Snippet (S8) | Outbound calls, accurate customer records and sales activity in a CRM |
+| A16 | Telesales Representative | Staffing firm for a client | Ghana | 2026 | Snippet (S9) | Telesales, CRM or customer management systems |
+| A17 | Sales Executive | Not named | Accra or Kumasi | 2026 | Snippet (S10) | Finding business opportunities, lead generation, promotion, customer relationships |
+| A18 | Field Sales Executive | Online marketplace (sellers) | Accra, Tema, Kasoa, Kumasi | 2026 | Snippet (S11) | Approaching SMEs and business owners (B2B), follow up by calls and visits |
+| A19 | FMCG Sales Executive | Food manufacturer | Accra and Kumasi | 2026 | Snippet (S12) | Acquiring new clients, managing a pipeline |
+| A20 | Business Development Telesales Consultant | Not named | Ghana | 2026 | Snippet (S13) | Targets, pipeline conversion, retention, CRM compliance; three to five years (context) |
+
+A related Nigerian telesales listing (not counted) described converting leads by phone calls and
+WhatsApp follow up against call volume and conversion targets, which supports the WhatsApp node.
+Salary ranges shown on Jobberman pages were ignored.
 
 Not counted, context only: senior sales manager and territory manager cards on S1; the CSY HR
 Services lead role (S7), which names Zoho CRM but asks for many years of experience.
 
-## Skills frequency (14 adverts)
+## Skills frequency (20 adverts)
 
 | Skill | Adverts | Count | Full listings only (A2 A3 A4) |
 |---|---|---|---|
-| Prospecting and lead generation | A1 A2 A3 A5 A7 A10 | 6 | 2 |
-| Phone sales, cold calls, telesales | A1 A2 A3 A4 A14 | 5 | 3 |
-| CRM and pipeline | A1 A2 A3 A4 | 4 | 3 |
+| Prospecting and lead generation | A1 A2 A3 A5 A7 A10 A17 A18 A19 | 9 | 2 |
+| Phone sales, cold calls, telesales | A1 A2 A3 A4 A14 A15 A16 A20 | 8 | 3 |
+| CRM and pipeline | A1 A2 A3 A4 A15 A16 A19 A20 | 8 | 3 |
 | Negotiation and closing | A2 A3 A7 A8 | 4 | 2 |
-| Targets and reporting | A1 A3 A4 A7 | 4 | 2 |
-| Relationship building, retention, customer service | A6 A8 A13 | 3 | 0 |
+| Targets and reporting | A1 A3 A4 A7 A20 | 5 | 2 |
+| Relationship building, retention, customer service | A6 A8 A13 A17 A20 | 5 | 0 |
 | Product knowledge and consultative selling | A4 A12 | 2 | 1 |
 | Qualification of leads | A2 A3 | 2 | 2 |
 | Email, LinkedIn and digital outreach | A2 A3 A9 | 3 | 2 |
 | Objection handling | A4 | 1 | 1 |
 | Proposals and quotes | A1 A3 | 2 | 1 |
 | Local languages | A4 A6 | 2 | 1 |
-| Field visits and onboarding | A5 A10 | 2 | 0 |
+| Field visits and onboarding | A5 A10 A18 | 3 | 0 |
 
 ## Frameworks and curricula
 
@@ -149,3 +172,34 @@ Services lead role (S7), which names Zoho CRM but asks for many years of experie
 | getting-hired-sales (section) | Groups job readiness |
 | showing-sales-skills | Prerequisite for applications; A8 graduate trainee route |
 | finding-sales-roles | S1 category; A2 trainee; A10 field sales; A9 remote |
+
+## Lesson wave changes (28 October 2026, issue #198)
+
+* No slugs renamed, added or removed; the outline stays at 28 nodes.
+* Removed the link to a named training programme's course page from the resources of
+  `how-selling-works`, `ai-for-sales` and `finding-sales-roles`, so the track does not appear to
+  endorse one programme. Lessons describe free training and trainee routes generically.
+* Lessons describe mobile money without naming any provider and make no income, commission or
+  salary claims; `targets-and-numbers` explains how pay structures are written, not amounts.
+* The Data Protection Act, 2012 (Act 843) and the Data Protection Commission are named as facts
+  in `honest-selling-and-data`, limited to consent, purpose, opt out and safe keeping of lists.
+* Overlap with Digital Customer Service and Digital Marketer is avoided: channel lessons here
+  are about outbound selling, booking next steps and deal stages, not resolving complaints or
+  running campaigns.
+
+## Review changes (28 October 2026, PR #216 review)
+
+* `honest-selling-and-data`: the direct marketing bullet now states only what section 40 of Act 843
+  says (D2): prior written consent before using personal data for direct marketing, direct marketing
+  defined as material directed to particular individuals, and the right to require, in writing, that
+  processing for direct marketing stops. The claim that the Act treats published business contacts
+  differently was removed, because the Act's text does not say so.
+* `selling-on-whatsapp`: the broadcast rule now follows W1 (only people who have added your number
+  to their contacts receive a broadcast) and says this is not the same as agreeing to marketing.
+  Practice step 1 no longer mentions a free trial, which does not exist.
+* `inbound-enquiries`: the 250 cedis price is labelled as made up for the example.
+* Frequency claims softened to match the 20 advert sample (sales category size, targets, prospecting,
+  telesales, WhatsApp follow up, "increasingly" claims); O*NET wording changed from "core task" to
+  "among the tasks".
+* Quiz options rebalanced so the correct option is the longest in about a quarter of questions.
+

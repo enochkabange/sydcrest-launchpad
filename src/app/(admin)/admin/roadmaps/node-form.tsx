@@ -4,9 +4,8 @@ import { useActionState } from "react";
 import { addNode, updateNode, type FormState } from "./actions";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { CheckboxField, SelectField, TextField } from "@/components/ui/field";
+import { CheckboxField, SelectField, TextAreaField, TextField } from "@/components/ui/field";
 import { NODE_KINDS } from "@/lib/roadmap-admin";
-import { TextAreaField } from "./fields";
 
 export type ParentOption = { id: string; title: string; depth: number };
 
