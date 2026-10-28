@@ -12,7 +12,7 @@ const content: TrackContent = {
     "phone-as-a-tool": {
       outcomes: [
         "Explain why your phone or computer is the place to start",
-        "Learn in this section in short steps",
+        "Plan a week of short lessons for this section",
         "Take a snapshot of your device today",
       ],
       explanation_md: `Many people think you need a laptop to start learning digital skills. You do not. The phone in your hand can already send emails, join a class, fill in a job application and keep records for a small business. If you have a laptop or desktop computer at home, at school or at work, that works too, and the lessons in this section give the computer version wherever it is different. Shops, offices and NGOs in Ghana look for people who are comfortable with smartphones and computers, because so much daily work now happens on them.
@@ -38,7 +38,60 @@ You might already know some of this. That is good. Go through each lesson anyway
 * Do not worry about breaking anything. The settings in this section are safe, and you can always change them back.
 * Phones and computers look a little different from brand to brand. If a menu has a slightly different name on your device, look for the closest match, or type what you want into the search box in Settings. Phones and computers both have one.
 
+## A plan for your first week
+
+You do not need to finish this section in one sitting. Short, regular steps work better. Here is one way to do it:
+
+1. **Day 1.** Read this page and do the snapshot task below. It takes about ten minutes.
+2. **Day 2.** Do the lesson on first steps. Practise each movement or click until you can do it without looking at the notes.
+3. **Day 3.** Do the lesson on settings, storage and battery. Free up some space.
+4. **Day 4.** Do the lesson on saving data. Change at least two settings.
+5. **Day 5.** Do the lesson on installing apps safely. Check the permissions of three apps.
+6. **Day 6 or 7.** Repeat the snapshot and compare it with day 1.
+
+If a day goes wrong, that is fine. Pick up where you stopped. Nothing in this roadmap has a deadline.
+
+## If you share a device
+
+Many people share a phone or computer with family, or use one at school or a hub. You can still do this section. Ask the owner before you change settings, and explain what you want to change and why. On a computer that belongs to a school or office, some settings may be locked. That is normal. Just read the lesson, note what you would change, and practise the parts you are allowed to.
+
+## What success looks like
+
+At the end of this section you should be able to open any setting by searching for it, keep enough free space to save new files, make a bundle last noticeably longer than before, and say why you trust each app on your device. Those four habits are small, but they are the base for everything that follows.
+
 By the end of this section you will know your own phone or computer better, and you will feel more in control of it. That confidence matters, because every other part of this roadmap builds on it.`,
+      workedExample_md: `**Kwabena takes his first snapshot**
+
+Kwabena is studying in Tamale and shares a laptop with his brother, but he mostly uses his own Android phone. He wants to know where he is starting from, so he follows the snapshot task.
+
+1. He opens **Settings** and searches for "About". He finds the phone's model name and writes it in his notebook.
+2. He searches Settings for **Storage**. The screen shows the storage is nearly full, with only a small amount of space free. He writes down the exact figure.
+3. He checks the battery. It is 9am and the phone shows 64%. He writes down the time and the level, so later he can see how fast it drops.
+4. He thinks about data. His last bundle lasted four days. He writes "4 days".
+5. He writes one sentence: "My phone says storage is full when I try to download a PDF."
+6. On the shared laptop, he asks his brother first, then searches Settings for "About" and "Storage" there too, and adds those answers on a second line.
+
+A week later, after the other lessons in this section, he checks again. He has more free space, his bundle lasted six days, and the PDF downloads. The notes prove his progress, and he can show them to a mentor.`,
+      keyTerms: [
+        { term: "Device", definition: "Any phone, tablet, laptop or desktop computer you use. Lessons say device when the idea works on all of them." },
+        { term: "Settings", definition: "The app or page where you control how your device works. Phones and computers both have a search box inside Settings." },
+        { term: "Storage", definition: "The space on your device that holds apps, photos, videos, documents and messages." },
+        { term: "Data bundle", definition: "Prepaid internet data you buy from your mobile network. It runs out when you use it up or when it expires." },
+        { term: "WiFi", definition: "A wireless internet connection from a router at a home, school, office or hub. It does not use your data bundle." },
+        { term: "App", definition: "A program you install on a phone or computer to do one job, such as messaging, video calls or taking notes." },
+      ],
+      commonMistakes: [
+        "Thinking you must buy a laptop before you can start learning",
+        "Skipping a lesson because you think you already know it, and missing the one setting that would save you data",
+        "Changing settings on someone else's phone or a school computer without asking first",
+        "Trying to do the whole section in one long session instead of a little each day",
+      ],
+      selfCheck: [
+        "What is the one thing that annoys you most about your device, and which lesson in this section will help with it?",
+        "Can you find the search box in Settings on your own phone or computer without help?",
+        "When during the week can you set aside ten or fifteen minutes for each lesson?",
+        "If you share a device, who do you need to ask before you change its settings?",
+      ],
       practice_task_md: `**Goal:** Take a snapshot of your phone or computer today, so you can see your progress later.
 
 **Steps**
@@ -106,6 +159,7 @@ By the end of this section you will know your own phone or computer better, and 
         "Use the basic movements on a phone",
         "Find the buttons that take you home",
         "Connect to WiFi and mobile data, and use a computer's basics",
+        "Copy and paste text and take a screenshot",
       ],
       explanation_md: `Every app on a smartphone is controlled with the same few movements, and a computer has its own matching set. Once these feel natural, you can learn any new app quickly, whether it is a work WhatsApp group, a sales app at a shop or a survey app an NGO gives you in the field. Employers notice when someone handles a phone or a computer calmly and confidently.
 
@@ -147,11 +201,72 @@ The same jobs have computer versions:
 
 If you have never used a mouse, the lesson on mouse and keyboard basics later in this roadmap goes step by step.
 
-## A worked example
+## Copy and paste
 
-Fuseini works at a provisions shop in Tamale. His manager sends the price list as a photo on WhatsApp. The numbers are small, so Fuseini taps the photo to open it, then pinches outward to zoom in on the price of rice. He swipes down from the top to check he is on the shop's WiFi, so the photos do not use his own data. When a customer calls, he presses Home, answers, then uses Recent apps to jump straight back to the price list.
+Copying saves you from typing the same thing twice, and it stops mistakes in long numbers such as an account or reference number.
 
-That is four simple movements and two buttons, used together. Practise them every day and soon you will stop thinking about them at all.`,
+On a phone:
+
+1. Long press on a word. It turns blue, with small handles at each end.
+2. Drag the handles to cover all the text you want.
+3. Tap **Copy** in the small menu that appears.
+4. Go to where you want the text, long press in the empty box and tap **Paste**.
+
+On a computer, drag across the text with the mouse to select it, then press **Ctrl and C** to copy and **Ctrl and V** to paste. On a Mac, use Command instead of Ctrl. You can also right click and choose Copy or Paste.
+
+## Taking a screenshot
+
+A screenshot is a picture of exactly what is on your screen. It is useful for showing a mentor an error message, or keeping proof that a payment or form went through.
+
+* On most Android phones, press the **Power** and **Volume down** buttons together for a moment. Some phones also let you swipe down with three fingers.
+* On an iPhone, the buttons depend on the model, so search "screenshot" in the phone's help or in Settings.
+* On Windows, press the **Windows key, Shift and S** together, then drag over the part of the screen you want.
+* On a Mac, press **Command, Shift and 4**, then drag.
+
+The picture goes into your Gallery, Photos or Screenshots folder.
+
+## When something goes wrong
+
+Everyone taps the wrong thing sometimes. Try these steps in order:
+
+1. Press **Back** once, or press Esc on a computer.
+2. If that does not help, press **Home** and open the app again.
+3. If the app is frozen, close it from Recent apps, or on a computer close the window, and open it again.
+4. If the whole device is stuck, restart it.
+
+Most problems end at step 1 or 2. Staying calm is part of the skill.`,
+      workedExample_md: `**Fuseini checks a price list at work**
+
+Fuseini works at a provisions shop in Tamale. His manager sends the new price list as a photo on WhatsApp, and a customer wants to know the price of a bag of rice.
+
+1. Fuseini swipes down from the top of the screen and checks that the WiFi icon is on and connected to the shop's network. Now the photo will not use his own bundle.
+2. He opens the chat and taps the photo to open it full screen.
+3. The numbers are small, so he pinches outward with two fingers to zoom in on the rice row. He reads the price to the customer.
+4. His phone rings. He presses **Home**, answers the call and takes the message.
+5. After the call he opens **Recent apps** and taps WhatsApp to jump straight back to the price list, still zoomed in.
+6. The customer wants the price in writing. Fuseini takes a screenshot of the zoomed price list and sends it to the customer.
+
+That is four movements, two buttons and one screenshot, used together in under two minutes. On the shop's computer the same job would be clicking the photo, pressing Ctrl and the plus key to zoom, and using the taskbar to switch windows.`,
+      keyTerms: [
+        { term: "Tap", definition: "Touching the screen once, lightly, to open or press something." },
+        { term: "Long press", definition: "Holding your finger on something for about a second to see extra options. A right click does the same job on a computer." },
+        { term: "Pinch", definition: "Moving two fingers apart to zoom in, or together to zoom out." },
+        { term: "Recent apps", definition: "The control that shows the apps you have open so you can switch between them." },
+        { term: "Taskbar", definition: "The bar along the bottom of a Windows screen showing open programs. On a Mac it is called the Dock." },
+        { term: "Screenshot", definition: "A picture of exactly what is on your screen, saved to your photos or a Screenshots folder." },
+      ],
+      commonMistakes: [
+        "Pressing too hard or too long when you only need a light tap",
+        "Turning the device off whenever you feel lost, instead of pressing Back or Home",
+        "Leaving mobile data on while connected to WiFi and not checking which one is in use",
+        "Typing long numbers by hand instead of copying and pasting them, which leads to mistakes",
+      ],
+      selfCheck: [
+        "Can you zoom in, switch apps and go Home without looking at the notes?",
+        "How would you copy a long reference number from one app into another on your own device?",
+        "Which buttons take a screenshot on the device you use most?",
+        "What are the first two things you would try if an app stopped responding?",
+      ],
       practice_task_md: `**Goal:** Practise every movement and control from this lesson in five minutes.
 
 **Steps**
@@ -221,6 +336,7 @@ On a computer, practise the computer versions instead: zoom a web page in and ou
         "Free up storage space",
         "Cut distracting notifications",
         "Make your battery last and keep updates on",
+        "Back up files before you delete them",
       ],
       explanation_md: `A phone or computer that is full, slow or always out of battery makes learning and working hard. A front desk assistant who cannot take a photo of a receipt because "storage is full" looks unprepared. Keeping your device tidy is a small, real work skill.
 
@@ -250,13 +366,66 @@ Every buzz pulls you away from your lesson. In **Settings**, find **Notification
 
 ## Updates
 
-Phone, computer and app updates fix problems and close security holes. Install them, but do it on WiFi so they do not finish your bundle.
+Phone, computer and app updates fix problems and close security holes. Install them, but do it on WiFi so they do not finish your bundle. A big update can take a while, so start it when the battery is well charged or the device is plugged in.
 
-## A worked example
+## Save before you delete
 
-Mariama in Bolgatanga could not download a course PDF because her phone was full. She opened WhatsApp's storage tool and found one church group had saved hundreds of forwarded videos. She deleted them, removed two old games and turned off game notifications. The PDF downloaded, and her phone felt faster too.
+Before you delete photos, videos or documents, ask yourself: will I need this again? If yes, keep a copy somewhere else first.
 
-Check your storage once a week. It takes two minutes and saves a lot of frustration.`,
+* **A cloud service.** Google Drive, Google Photos, OneDrive and iCloud store copies online, so you can get them back on another device. Free space on these services is limited, and the rules change, so check how much you have before you rely on it. Uploading uses data, so do it on WiFi.
+* **A computer or memory card.** Copy files across with a cable or card reader. This uses no data at all.
+* **Send it to yourself.** For one or two important documents, email them to your own address. Then they are safe in your inbox.
+
+Once a copy is safe, delete the file from the device.
+
+## Cache and app data
+
+Apps keep small temporary files called a **cache** so they open faster. Over time a cache can grow large. On an Android phone, open Settings, then Apps, choose an app and look for **Storage**, then **Clear cache**. This is safe. Your account and messages stay. Do not tap **Clear storage** or **Clear data** unless you mean it, because that can sign you out and remove the app's saved files. A web browser on a computer has a similar option in its settings, often called clearing browsing data.
+
+## A weekly two minute routine
+
+Pick one day, maybe Sunday evening, and do this:
+
+1. Open Settings and check Storage. If free space is low, act now, not when it is full.
+2. Clear out large WhatsApp videos you no longer need, or the Downloads folder on a computer.
+3. Check for updates and install them on WiFi.
+4. Look at your notifications. If one app keeps disturbing you, turn it off.
+5. Charge your device fully before the new week of study.
+
+Doing a little every week means you never face a full device in the middle of a job application or a lesson.`,
+      workedExample_md: `**Mariama makes room for a course PDF**
+
+Mariama lives in Bolgatanga. Her tutor shares a course PDF in the class WhatsApp group, but when she taps it her phone says storage is full. Here is what she does.
+
+1. She opens **Settings**, searches for Storage and sees that most of the space is used by WhatsApp and Photos.
+2. In WhatsApp's Settings she opens **Storage and data**, then **Manage storage**. The list shows that one church group has saved hundreds of forwarded videos.
+3. She opens that chat in the list, sorts by size, selects the largest videos and deletes them. She keeps the few she cares about.
+4. In her Gallery she finds two long videos of a family wedding. On her cousin's WiFi she uploads them to Google Photos, checks they play there, then deletes them from the phone.
+5. She uninstalls two games she has not opened in months and turns off notifications for a shopping app.
+6. She checks Storage again. There is now plenty of space free.
+
+She taps the PDF and it downloads. Her phone also opens apps faster than before. She writes "Sunday: storage check" in her calendar so it never gets that full again.`,
+      keyTerms: [
+        { term: "Storage", definition: "The space on your device for apps, photos, videos and files. When it is nearly full, the device slows down." },
+        { term: "Cache", definition: "Temporary files an app keeps so it opens faster. Clearing it is safe and frees space." },
+        { term: "Notification", definition: "An alert, sound or banner an app shows to get your attention." },
+        { term: "Battery saver", definition: "A setting that reduces background activity so the battery lasts longer. Computers may call it energy saver or Low Power Mode." },
+        { term: "Update", definition: "A new version of the system or an app that fixes problems and closes security holes." },
+        { term: "Cloud storage", definition: "Space on a company's computers, reached over the internet, where you can keep copies of your files." },
+      ],
+      commonMistakes: [
+        "Waiting until the device says storage is full before cleaning it",
+        "Deleting photos or documents you need without saving a copy first",
+        "Tapping Clear data or Clear storage instead of Clear cache, and losing an app's saved files",
+        "Ignoring updates for months because they seem like a nuisance",
+        "Starting a large update on mobile data and using up the whole bundle",
+      ],
+      selfCheck: [
+        "How much free space does your device have right now, and what is using the most?",
+        "Where would you keep a copy of an important file before deleting it from your device?",
+        "Which two apps send you notifications you could turn off today?",
+        "Which day of the week will you do your two minute routine?",
+      ],
       practice_task_md: `**Goal:** Free up space and cut distractions on your own phone or computer.
 
 **Steps**
@@ -324,6 +493,7 @@ Check your storage once a week. It takes two minutes and saves a lot of frustrat
         "Use WiFi whenever you can",
         "Stop apps using data in the background",
         "Check where your data goes",
+        "Plan a week of offline learning",
       ],
       explanation_md: `Prepaid data is one of the biggest costs of learning online. If your bundle runs out halfway through a course, you lose time and money. Learning to control data use also helps at work: field staff and sales officers often use their own bundles, and the ones who manage data well stay connected when it matters.
 
@@ -348,11 +518,62 @@ WiFi does not use your bundle. Places that may have WiFi include some schools, l
 
 In **Settings**, search for **Data usage**. This works on most phones and on Windows computers. You will see which apps used the most data this month. If something surprises you, restrict it or delete it.
 
-## A worked example
+On an Android phone you can usually go one step further. Open Settings, then Apps, choose the app and look for **Mobile data** or **Data usage**. Turn off **Background data** for apps that do not need to work when you are not using them, such as games or shopping apps. Leave it on for WhatsApp and your email, or you may miss messages.
 
-Issahaku in Yendi used to buy a bundle every few days. He checked Data usage and found that WhatsApp videos and a video app were using most of it. He set WhatsApp media to download on WiFi only, lowered his video quality and turned off autoplay. On Saturdays he downloads the week's notes at the community library's WiFi. Now one bundle lasts him much longer, and he spends that money on transport to his study group instead.
+## Check your balance before it surprises you
+
+Every network lets you check your remaining data, either by dialling a short code or through its own app. The codes change from time to time, so get the current one from your network's official app, website or a shop, not from a random message. Check your balance at the start of a study session. If it is low, choose reading over video that day.
+
+Many phones also let you set a **data warning** in the Data usage settings. You choose an amount, and the phone warns you when you reach it.
+
+## Plan a week of offline learning
+
+Offline means using something without the internet. With a little planning you can do most of your study offline:
+
+1. When you have WiFi, open the lessons you plan to study this week.
+2. Download any PDFs or notes, and save any videos the app allows you to keep for offline use.
+3. Check they open with mobile data and WiFi turned off.
+4. During the week, study from the downloads. Use your bundle only for quizzes, messages to your mentor, or things that must be live.
+
+## Be careful with hotspots
+
+A **hotspot** shares your phone's data with another device, such as a laptop or a friend's phone. It is useful, but the other device can use a lot of data quickly. Only share with people you trust, set a password on the hotspot, and turn it off when you finish.
 
 Compare the bundles your network offers before you buy. A bigger bundle that lasts longer is sometimes better value than many small ones, but check the expiry date.`,
+      workedExample_md: `**Issahaku makes his bundle last longer**
+
+Issahaku lives in Yendi and used to buy a new bundle every few days. He decided to find out where the data was going.
+
+1. He opened **Settings**, searched for **Data usage** and looked at the list for the past month. A video app and WhatsApp were at the top.
+2. In WhatsApp's **Storage and data** settings, he set photos, videos and documents to download automatically only on WiFi. Now he taps a file when he actually wants it.
+3. In his video app he turned off **autoplay** and set the quality to a lower level. He tested a lesson video and could still read the writing on screen.
+4. In Settings, under Apps, he turned off background data for two games.
+5. He turned on **Data saver** and set a data warning a little below the size of his usual bundle.
+6. On Saturday he went to the community library, which has WiFi, and downloaded the week's notes and two lesson videos.
+7. Seven days later he opened Data usage again and compared it with his notes.
+
+His bundle now lasts much longer. He spends the money he saves on transport to his study group.`,
+      keyTerms: [
+        { term: "Data saver", definition: "A setting that stops many apps using data in the background." },
+        { term: "Background data", definition: "Data an app uses when you are not looking at it, for example to update or download." },
+        { term: "Autoplay", definition: "A feature that starts the next video by itself when one finishes." },
+        { term: "Offline", definition: "Using something without an internet connection, such as a downloaded PDF or video." },
+        { term: "Hotspot", definition: "A setting that shares your phone's internet with another device nearby." },
+        { term: "Metered connection", definition: "A Windows setting that tells the computer to hold back large downloads on that network." },
+      ],
+      commonMistakes: [
+        "Watching lesson videos on the highest quality when a lower one is clear enough",
+        "Letting WhatsApp download every video from every group automatically",
+        "Turning off background data for WhatsApp or email and then missing important messages",
+        "Sharing a hotspot with a laptop without setting it as metered, so updates use the whole bundle",
+        "Trusting a balance code from a forwarded message instead of the network's official source",
+      ],
+      selfCheck: [
+        "Which three apps used the most data on your device last month?",
+        "What will you download the next time you have WiFi, so you can study offline?",
+        "How do you check your remaining data on your own network?",
+        "Which apps on your device should keep background data, and which do not need it?",
+      ],
       practice_task_md: `**Goal:** Cut your data use for the next week.
 
 **Steps**
@@ -453,11 +674,67 @@ You can change permissions later. On a phone, open **Settings**, find **Apps**, 
 
 Apps you do not use still take space, may use data and may keep permissions they no longer need. Delete them. On a Windows computer, uninstall programs from Settings, under Apps. On a Mac, drag them from Applications to the Bin. You can always install them again from the store.
 
-## A worked example
+## Installing an app, step by step
 
-Hawa got a job as a temporary enumerator for a household survey near Wa. Her supervisor told her to install the survey app from the Play Store. She searched for it, checked that the developer name matched what her supervisor wrote in the WhatsApp group, and installed it. The app asked for camera and location access, which made sense for photos and survey locations, so she allowed them. When a stranger later sent her a "faster version" of the app as a file, she ignored it and told her supervisor.
+On a phone:
+
+1. Connect to WiFi if you can, because apps can be large.
+2. Open the Play Store or App Store and type the exact name of the app in the search box.
+3. Before you tap Install, open the app's page and check the developer name, the reviews and the data safety section.
+4. Tap **Install**. Wait for it to finish, then tap **Open**.
+5. Read each permission request as it appears. Allow only what makes sense.
+
+On a computer, open the Microsoft Store or the Mac App Store and follow the same steps. If the program is not in the store, type the company's official web address yourself rather than clicking an advert or a link from a message, then download from that site.
+
+## Signs of a fake or harmful app
+
+* The name or logo is almost right, but with a small spelling change.
+* The developer name does not match the company you expected.
+* It has very few downloads, or many reviews that sound the same.
+* It asks for permissions that have nothing to do with its job, such as a calculator wanting your messages.
+* Someone sends it to you as a file and says it is a "special" or "faster" version.
+
+If you see even one of these, stop and ask someone you trust before you install.
+
+## Keep unknown apps blocked
+
+Android phones have a setting, often called **Install unknown apps**, that allows apps from outside the Play Store. Leave it switched off for every app, including your browser and WhatsApp. If an employer truly needs you to install something from outside the store, ask a supervisor or IT person to show you, and switch the setting off again afterwards.
 
 Safe habits like these are what employers mean when they ask for someone who is "comfortable with smartphones".`,
+      workedExample_md: `**Hawa installs a survey app for a field job**
+
+Hawa gets work as a temporary enumerator for a household survey near Wa. On her first morning, her supervisor posts in the team WhatsApp group: "Install the survey app from the Play Store before training."
+
+1. Hawa waits until she reaches the district office, which has WiFi.
+2. She opens the Play Store and types the exact app name the supervisor wrote.
+3. Two apps with similar names appear. She opens each page and compares the developer name with the one in the supervisor's message. Only one matches.
+4. She reads a few recent reviews and the data safety section, then taps **Install**.
+5. When she opens the app, it asks for the camera and location. Photos and survey locations are part of the job, so she allows both.
+6. It also asks for her contacts. The survey does not need them, so she taps **Don't allow**. The app still works.
+7. That evening a stranger sends her a "faster version" of the app as a file. She does not open it. She deletes the message and tells her supervisor, who warns the rest of the team.
+
+Hawa finishes training with a working app and a phone that is still safe.`,
+      keyTerms: [
+        { term: "App store", definition: "The official place to get apps, such as the Google Play Store, the Apple App Store or the Microsoft Store. Apps there are checked before listing." },
+        { term: "Developer", definition: "The person or company that made an app. Their name is shown on the app's store page." },
+        { term: "Permission", definition: "Your agreement for an app to use something on your device, such as the camera, microphone, location or contacts." },
+        { term: "Harmful software", definition: "A program made to steal information, show unwanted adverts or damage a device. It often hides inside fake apps." },
+        { term: "Install unknown apps", definition: "An Android setting that allows apps from outside the Play Store. It is safest left off." },
+        { term: "Uninstall", definition: "Removing an app or program from your device completely." },
+      ],
+      commonMistakes: [
+        "Installing an app sent as a file on WhatsApp because a friend said it was fine",
+        "Tapping Allow on every permission request without reading it",
+        "Choosing the first search result without checking the developer name",
+        "Downloading free copies of paid computer software from random websites",
+        "Keeping apps you never use, which still take space, data and permissions",
+      ],
+      selfCheck: [
+        "How would you tell the real version of an app from a copy with a similar name?",
+        "Which app on your device has a permission that does not match its job?",
+        "Is the setting that allows unknown apps switched off on your phone?",
+        "What would you do if a stranger sent you an app file with a tempting message?",
+      ],
       practice_task_md: `**Goal:** Check the apps and permissions on your own phone or computer.
 
 **Steps**
