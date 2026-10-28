@@ -25,10 +25,6 @@ import { MessageComposer, ReviewForm, StatusActions } from "./thread-forms";
 
 export const metadata: Metadata = { title: "Booking", robots: { index: false } };
 
-// The app shell's nav reads usePathname() outside a Suspense boundary, which
-// a dynamic segment cannot prerender (same as /cohort/week/[n]).
-export const instant = false;
-
 export default function BookingPage({ params }: PageProps<"/bookings/[id]">) {
   return (
     <div className="flex flex-col gap-6">

@@ -42,9 +42,12 @@ export default function ProfilePage() {
         <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>
           <ProfileDetails />
         </Suspense>
-        <Suspense fallback={<div className="h-32 animate-skeleton rounded-lg bg-surface-sunken" />}>
-          <WhatsAppConsent />
-        </Suspense>
+        {/* "Settings" in the You menu lands here (src/lib/nav/config.ts). */}
+        <div id="settings" className="scroll-mt-8">
+          <Suspense fallback={<div className="h-32 animate-skeleton rounded-lg bg-surface-sunken" />}>
+            <WhatsAppConsent />
+          </Suspense>
+        </div>
         <Suspense fallback={<div className="h-48 animate-skeleton rounded-lg bg-surface-sunken" />}>
           <VerifiedSkillsSection />
         </Suspense>

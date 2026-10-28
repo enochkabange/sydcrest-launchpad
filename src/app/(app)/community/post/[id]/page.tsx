@@ -13,10 +13,6 @@ import { feedHref, isUuid, type FeedRef } from "@/lib/community/model";
 
 export const metadata: Metadata = { title: "Post", robots: { index: false } };
 
-// The app shell's nav reads usePathname() outside a Suspense boundary, which
-// a dynamic segment cannot prerender (same as /cohort/week/[n]).
-export const instant = false;
-
 type Params = Pick<PageProps<"/community/post/[id]">, "params">;
 
 function refOf(post: { scope: string; chapterId: string | null; cohortId: string | null }): FeedRef {

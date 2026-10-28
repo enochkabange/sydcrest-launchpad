@@ -18,10 +18,6 @@ import {
 
 export const metadata: Metadata = { title: "Cohort week" };
 
-// The app shell's nav reads usePathname() outside a Suspense boundary, which
-// a dynamic segment cannot prerender (same as /learn/[slug]/[node]).
-export const instant = false;
-
 /** "7" to 7; anything that is not a whole week number is a 404. */
 function weekParam(raw: string): number | null {
   return /^[1-9][0-9]?$/.test(raw) ? Number(raw) : null;

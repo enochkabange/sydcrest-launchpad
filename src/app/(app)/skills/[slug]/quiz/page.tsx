@@ -14,11 +14,6 @@ import { SkillQuiz } from "./skill-quiz";
 
 export const metadata: Metadata = { title: "Skill assessment", robots: { index: false } };
 
-// The app shell's nav reads usePathname() outside a Suspense boundary, which a
-// dynamic segment cannot prerender (as on /learn/[slug]/[node]). Allow this
-// route to block until the shell wraps the nav in Suspense.
-export const instant = false;
-
 export default function SkillQuizPage({ params }: PageProps<"/skills/[slug]/quiz">) {
   return (
     <Suspense fallback={<div className="h-96 animate-skeleton rounded-lg bg-surface-sunken" />}>

@@ -14,10 +14,6 @@ import { OrganisationProfileForm } from "./profile-form";
 
 export const metadata: Metadata = { title: "Organisation", robots: { index: false } };
 
-// A dynamic segment under the app shell, whose nav reads usePathname() outside
-// Suspense: allow blocking, as /learn/[slug]/[node] does, until the shell wraps it.
-export const instant = false;
-
 type Params = { params: Promise<{ slug: string }> };
 
 function VerificationPanel({

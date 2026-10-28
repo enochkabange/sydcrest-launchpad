@@ -4,11 +4,18 @@ import Logo, { LogoMark } from "@/components/brand/Logo";
 import { buttonClasses } from "@/components/ui/button";
 import { MarketingNavLinks, MarketingNavLinksFallback } from "./nav-links";
 
+/**
+ * The visitor header: logo and account buttons, then the public areas
+ * (PUBLIC_NAV in src/lib/nav/config.ts) on their own row at every width.
+ * Nine links do not fit beside the logo and buttons even at 1280; on their
+ * own row they all show from lg, and narrower screens scroll the row inside
+ * itself, never the page (#136).
+ */
 export function SiteHeader() {
   return (
     <header className="border-b border-line bg-surface">
-      <div className="mx-auto flex w-full max-w-page flex-col gap-1 px-4 pt-3 md:px-8 lg:flex-row lg:items-center lg:gap-6 lg:py-3">
-        <div className="flex items-center justify-between gap-3 lg:contents">
+      <div className="mx-auto flex w-full max-w-page flex-col gap-1 px-4 pt-3 md:px-8">
+        <div className="flex items-center justify-between gap-3">
           <Link href="/" aria-label="SydCrest Launchpad home" className="flex min-h-11 shrink-0 items-center no-underline">
             <span className="sm:hidden">
               <LogoMark size={36} variant="auto" />
@@ -17,7 +24,7 @@ export function SiteHeader() {
               <Logo size={34} />
             </span>
           </Link>
-          <div className="flex items-center gap-2 lg:order-last lg:ml-auto">
+          <div className="flex items-center gap-2">
             <Link href="/login" className={buttonClasses("ghost", "whitespace-nowrap")}>
               Sign in
             </Link>
@@ -26,8 +33,7 @@ export function SiteHeader() {
             </Link>
           </div>
         </div>
-        {/* Stacked below lg: at 768 the logo, links and buttons do not fit one row. */}
-        <nav aria-label="Site" className="min-w-0 pb-2 lg:flex-1 lg:pb-0">
+        <nav aria-label="Site" className="min-w-0 pb-2">
           {/* usePathname is unknown while prerendering a dynamic route's App Shell. */}
           <Suspense fallback={<MarketingNavLinksFallback />}>
             <MarketingNavLinks />
