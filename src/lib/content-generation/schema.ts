@@ -13,11 +13,32 @@ export type GeneratedQuestion = {
   explanation: string;
 };
 
-export type GeneratedContent = {
+export type KeyTerm = { term: string; definition: string };
+
+/**
+ * Optional structured parts of a lesson (issue #255). All optional so lessons
+ * written before them still validate and render; a lesson page shows each one
+ * in a fixed order when it is present.
+ */
+export type LessonAnatomy = {
+  /** "You will be able to" items: 3 or 4 short, plain statements. */
+  outcomes?: string[];
+  workedExample_md?: string;
+  keyTerms?: KeyTerm[];
+  commonMistakes?: string[];
+  selfCheck?: string[];
+};
+
+export type GeneratedContent = LessonAnatomy & {
   explanation_md: string;
   practice_task_md: string;
   quiz: { questions: GeneratedQuestion[]; pass_threshold: number };
 };
+
+export const OUTCOMES_MIN = 3;
+export const OUTCOMES_MAX = 4;
+/** Outcomes are short: one line in the lesson header. */
+export const OUTCOME_MAX_CHARS = 120;
 
 /**
  * JSON schema sent as output_config.format. Structured outputs reject numeric,
@@ -104,7 +125,16 @@ export function parseGeneratedContent(raw: unknown): ParseResult {
 
   const errors: string[] = [];
   const obj = value as Record<string, unknown>;
-  const allowedTop = new Set(["explanation_md", "practice_task_md", "quiz"]);
+  const allowedTop = new Set([
+    "explanation_md",
+    "practice_task_md",
+    "quiz",
+    "outcomes",
+    "workedExample_md",
+    "keyTerms",
+    "commonMistakes",
+    "selfCheck",
+  ]);
   for (const key of Object.keys(obj)) if (!allowedTop.has(key)) errors.push(`unexpected field "${key}"`);
 
   const strings: { label: string; text: string }[] = [];
@@ -179,6 +209,8 @@ export function parseGeneratedContent(raw: unknown): ParseResult {
     }
   }
 
+  const anatomy = parseAnatomy(obj, errors, strings);
+
   for (const { label, text } of strings) {
     for (const problem of findDashes(text)) errors.push(`${label} ${problem}`);
   }
@@ -187,11 +219,78 @@ export function parseGeneratedContent(raw: unknown): ParseResult {
   return {
     ok: true,
     content: {
+      ...anatomy,
       explanation_md: (obj.explanation_md as string).trim(),
       practice_task_md: (obj.practice_task_md as string).trim(),
       quiz: { questions, pass_threshold: passThreshold },
     },
   };
+}
+
+function stringList(
+  value: unknown,
+  label: string,
+  errors: string[],
+  strings: { label: string; text: string }[],
+  { min = 1, max = 12, maxChars }: { min?: number; max?: number; maxChars?: number } = {},
+): string[] | undefined {
+  if (value === undefined) return undefined;
+  if (!Array.isArray(value) || !value.every(isNonEmptyString)) {
+    errors.push(`${label} must be a list of non empty strings`);
+    return undefined;
+  }
+  if (value.length < min || value.length > max) errors.push(`${label} must have ${min} to ${max} items, got ${value.length}`);
+  const items = value.map((v) => v.trim());
+  items.forEach((text, i) => {
+    if (maxChars && text.length > maxChars) errors.push(`${label}[${i}] is longer than ${maxChars} characters`);
+    strings.push({ label: `${label}[${i}]`, text });
+  });
+  return items;
+}
+
+/** The optional anatomy fields: each is checked only when present. */
+function parseAnatomy(obj: Record<string, unknown>, errors: string[], strings: { label: string; text: string }[]): LessonAnatomy {
+  const anatomy: LessonAnatomy = {};
+  const outcomes = stringList(obj.outcomes, "outcomes", errors, strings, {
+    min: OUTCOMES_MIN,
+    max: OUTCOMES_MAX,
+    maxChars: OUTCOME_MAX_CHARS,
+  });
+  if (outcomes) anatomy.outcomes = outcomes;
+
+  if (obj.workedExample_md !== undefined) {
+    if (!isNonEmptyString(obj.workedExample_md)) errors.push("workedExample_md must be a non empty string");
+    else {
+      anatomy.workedExample_md = obj.workedExample_md.trim();
+      strings.push({ label: "workedExample_md", text: anatomy.workedExample_md });
+    }
+  }
+
+  if (obj.keyTerms !== undefined) {
+    const terms = obj.keyTerms;
+    if (!Array.isArray(terms) || terms.length === 0) errors.push("keyTerms must be a non empty list");
+    else {
+      const parsed: KeyTerm[] = [];
+      terms.forEach((t, i) => {
+        const item = t as Record<string, unknown> | null;
+        if (!item || typeof item !== "object" || Array.isArray(item) || !isNonEmptyString(item.term) || !isNonEmptyString(item.definition)) {
+          errors.push(`keyTerms[${i}] must have a non empty term and definition`);
+          return;
+        }
+        for (const key of Object.keys(item)) if (key !== "term" && key !== "definition") errors.push(`unexpected field "keyTerms[${i}].${key}"`);
+        const term = { term: item.term.trim(), definition: item.definition.trim() };
+        parsed.push(term);
+        strings.push({ label: `keyTerms[${i}].term`, text: term.term }, { label: `keyTerms[${i}].definition`, text: term.definition });
+      });
+      if (parsed.length === terms.length) anatomy.keyTerms = parsed;
+    }
+  }
+
+  const mistakes = stringList(obj.commonMistakes, "commonMistakes", errors, strings);
+  if (mistakes) anatomy.commonMistakes = mistakes;
+  const selfCheck = stringList(obj.selfCheck, "selfCheck", errors, strings);
+  if (selfCheck) anatomy.selfCheck = selfCheck;
+  return anatomy;
 }
 
 /**

@@ -1,3 +1,4 @@
+import { CareerLevelTag } from "@/components/roadmaps/career-level";
 import { ChevronRight } from "lucide-react";
 import { Suspense } from "react";
 import Link from "@/components/ui/link";
@@ -19,6 +20,7 @@ export function OutlineView({ slug, view }: RoadmapViewProps) {
         return (
           <li key={section.node.id} className="flex flex-col rounded-lg border border-line bg-surface">
             <NodeRow slug={slug} view={view} node={section.node} heading />
+            <CareerLevelTag node={section.node} className="px-4 pb-2" />
             {section.node.summary && <p className="px-4 pb-3 text-sm text-content-2">{section.node.summary}</p>}
             {items.length > 0 && (
               <ol className="border-t border-line py-1">

@@ -27,6 +27,35 @@ describe("sameContent", () => {
   });
 });
 
+describe("sameContent with the lesson anatomy (#255)", () => {
+  const withAnatomy: GeneratedContent = {
+    ...content,
+    outcomes: ["Name the parts", "Sort a list", "Explain a total"],
+    keyTerms: [{ term: "Cell", definition: "One box in a sheet." }],
+  };
+  const storedAnatomy = {
+    ...stored,
+    outcomes: withAnatomy.outcomes,
+    worked_example_md: null,
+    // jsonb may hand keys back in another order
+    key_terms: [{ definition: "One box in a sheet.", term: "Cell" }],
+    common_mistakes: null,
+    self_check: null,
+  };
+
+  it("writes a lesson again when outcomes are added to it", () => {
+    expect(sameContent(stored, storedQuiz, rows.answerKey, withAnatomy)).toBe(false);
+  });
+
+  it("treats stored anatomy as unchanged whatever the jsonb key order", () => {
+    expect(sameContent(storedAnatomy, storedQuiz, rows.answerKey, withAnatomy)).toBe(true);
+  });
+
+  it("detects an edited outcome", () => {
+    expect(sameContent({ ...storedAnatomy, outcomes: ["Other"] }, storedQuiz, rows.answerKey, withAnatomy)).toBe(false);
+  });
+});
+
 describe("mapLimit", () => {
   it("keeps input order and never runs more than the limit at once", async () => {
     let inFlight = 0;

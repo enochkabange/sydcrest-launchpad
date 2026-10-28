@@ -4,6 +4,7 @@ import Link from "@/components/ui/link";
 import { nodePath } from "@/lib/roadmaps/seo";
 import type { ProgressStatus } from "@/lib/roadmaps/tree";
 import type { RoadmapView, ViewNode, ViewSection } from "@/lib/roadmaps/view-model";
+import { CareerLevelSuffix } from "@/components/roadmaps/career-level";
 import { STATUS_LABELS, ViewNodeMark } from "../progress";
 import { liveView } from "./live";
 import type { RoadmapViewProps } from "./types";
@@ -88,6 +89,7 @@ function MapSection({ slug, view, section }: RoadmapViewProps & { section: ViewS
         <span className="flex min-w-0 flex-col md:items-center md:gap-1">
           <span className="sr-only text-xs font-bold tracking-widest text-roadmap-section-muted uppercase md:not-sr-only md:group-has-[[data-complete]]/section:text-roadmap-section-done-muted">
             Section {number}
+            <CareerLevelSuffix node={node} />
           </span>
           <span className="text-base leading-snug font-bold md:text-xl">
             {node.title}

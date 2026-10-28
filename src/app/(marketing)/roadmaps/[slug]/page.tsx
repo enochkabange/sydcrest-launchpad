@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { SectionAccent } from "@/components/brand/illustrations";
 import { RoadmapProgress } from "@/components/roadmaps/progress";
+import { RoadmapCareerLevels } from "@/components/roadmaps/roadmap-career-levels";
 import { ShareButton } from "@/components/roadmaps/share-button";
 import { ROADMAP_VIEWS } from "@/components/roadmaps/views/registry";
 import { ActiveRoadmapView, RoadmapViewSwitcher } from "@/components/roadmaps/views/view-switcher";
@@ -100,6 +101,8 @@ async function Roadmap({ params }: Pick<PageProps<"/roadmaps/[slug]">, "params">
           )}
         </div>
       </section>
+
+      <RoadmapCareerLevels sections={view.sections} trackTitle={roadmap.title} />
     </Container>
   );
 }
