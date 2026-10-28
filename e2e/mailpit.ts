@@ -3,6 +3,10 @@ const MAILPIT = process.env.MAILPIT_URL ?? "http://127.0.0.1:54324";
 
 type Summary = { ID: string };
 
+/**
+ * The link in the newest auth email to `email`. Our templates link to the
+ * app's own /auth/confirm (supabase/templates), never to Supabase.
+ */
 export async function confirmationLink(email: string, timeoutMs = 15_000): Promise<string> {
   const deadline = Date.now() + timeoutMs;
   while (Date.now() < deadline) {
@@ -10,7 +14,7 @@ export async function confirmationLink(email: string, timeoutMs = 15_000): Promi
     const { messages } = (await res.json()) as { messages: Summary[] };
     if (messages?.length) {
       const message = await (await fetch(`${MAILPIT}/api/v1/message/${messages[0].ID}`)).json();
-      const link = /href="([^"]+\/auth\/v1\/verify[^"]+)"/.exec(message.HTML ?? "")?.[1];
+      const link = /href="([^"]+\/auth\/confirm\?[^"]+)"/.exec(message.HTML ?? "")?.[1];
       if (link) return link.replaceAll("&amp;", "&");
     }
     await new Promise((r) => setTimeout(r, 500));
