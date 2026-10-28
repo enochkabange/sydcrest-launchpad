@@ -1,7 +1,9 @@
 # Research: Software Testing track (`software-testing`)
 
-Tier B outline (issue #96). Researched and written 27 October 2026. Outline only: topic
-summaries and free resources in `src/content/roadmaps/software-testing.ts`, lessons to follow.
+Tier B outline (issue #96). Researched and written 27 October 2026. Refreshed 28 October 2026
+for the lesson wave (issue #198): eight remote adverts added (A13 to A20), frequency counts
+updated, and full lessons written in `src/content/roadmaps/content/software-testing.content.ts`.
+The outline (`src/content/roadmaps/software-testing.ts`) is unchanged: no slugs renamed.
 Everything is original. roadmap.sh was not opened, searched or used, and no "<field> roadmap"
 style searches were run. No logins; LinkedIn was not opened. Job adverts were read for which
 skills appear; no advert text is reproduced. Pay figures were ignored.
@@ -37,13 +39,15 @@ points toward automation, remote work and adjacent roles so the skills stay usef
 | S10 | Web search snippets: Farmerline QA Engineer, Accra (removed 2025) | https://jobs.unreasonablegroup.com/companies/farmerline/jobs/44565039-qa-engineer | 2026-10-27 | Search snippet only |
 | S11 | Web search snippets: Tana, Junior QA Engineer, remote, Kenya based | https://careers-page.com/tanacareers/job/X947YR93 | 2026-10-27 | Search snippet only |
 | S12 | Web search snippets: The Legends Agency, Junior QA Tester, Johannesburg | https://www.pnet.co.za/jobs--Junior-QA-Tester-Johannesburg-The-Legends-Agency--3985858-inline.html | 2026-10-27 | Search snippet only |
+| S13 | Remote Rocketship: remote QA tester jobs in Africa (aggregator listing page) | https://www.remoterocketship.com/country/africa/jobs/qa-tester/ | 2026-10-28 | Job aggregator, listing titles and skill tags only |
+| S14 | Remote Rocketship: remote junior QA engineer jobs in Africa (aggregator listing page) | https://www.remoterocketship.com/country/africa/jobs/junior-qa-engineer/ | 2026-10-28 | Job aggregator, listing titles and skill tags only |
 | F1 | O*NET 15-1253.00 Software Quality Assurance Analysts and Testers | https://www.onetonline.org/link/summary/15-1253.00 | 2026-10-27 | Public domain (US DOL), read for tasks and tools |
 | C1 | ISTQB Certified Tester Foundation Level syllabus v4.0.1 | https://www.istqb.org/wp-content/uploads/2024/11/ISTQB_CTFL_Syllabus_v4.0.1.pdf | 2026-10-27 | Copyright ISTQB; free to read; chapter and section titles read for topic coverage only, no text reused or adapted |
 | P1 | SydCrest track catalogue, row 23 and Tier B notes | Planning/12_TRACK_CATALOGUE.md | 2026-10-27 | Internal |
 
 All resource links in the outline were checked to return HTTP 200 on 2026-10-27.
 
-## Adverts analysed (12)
+## Adverts analysed (20)
 
 | # | Role, employer, place | Level | Read as | Skills named |
 |---|---|---|---|---|
@@ -59,20 +63,41 @@ All resource links in the outline were checked to return HTTP 200 on 2026-10-27.
 | A10 | QA Engineer, Farmerline, Accra | Not stated | Snippet (S10) | Automation frameworks, test strategy |
 | A11 | Junior QA Engineer, Tana, remote (Kenya based) | Junior | Snippet (S11) | Manual and automated testing, UI, API and backend, reproducing defects, Jira |
 | A12 | Junior QA Tester, Legends Agency, Johannesburg | Two to three years | Snippet (S12) | Test case design and execution, bug tracking |
+| A13 | Manual QA Engineer (middle level), InvestEngine, remote anywhere, Oct 2026 | Mid | Skill tags (S13) | Android, iOS, SQL, manual testing |
+| A14 | QA Engineer, Huzzle, remote South Africa, Aug 2026 | Not stated | Skill tags (S13, S14) | Cypress, Selenium, SQL, Azure |
+| A15 | QA Engineer (manual, API and automation), SSC HR Solutions, remote Egypt, Aug 2026 | Not stated | Skill tags (S13) | Manual testing, API testing, Cypress, SOAP, SQL |
+| A16 | Salesforce QA Consultant, Robusta Studio, remote Egypt, Oct 2026 | Not stated | Skill tags (S13) | Manual and automated QA, regression testing, user acceptance testing |
+| A17 | Application Tester, RecruitGo, remote South Africa, Sep 2026 | Contract | Skill tags (S13) | Android app testing |
+| A18 | AI enabled QA Engineer, Scale Army, remote (several African countries), Sep 2026 | Not stated | Skill tags (S13) | Cypress, Selenium, SQL |
+| A19 | Manual Tester (fixed term), Inspired Thinking Group, remote South Africa, Sep 2026 | Junior | Title and summary (S13, S14) | Manual testing of web applications |
+| A20 | Quality Assurance Engineer, Digital Skynet, remote (Egypt and others), Jul 2026 | Not stated | Skill tags (S13) | Selenium, JUnit |
 
-## Skills frequency (12 adverts, rough)
+## Skills frequency (20 adverts, rough)
+
+A13 to A20 were read only as aggregator titles and skill tags, so they undercount soft skills
+such as test cases and bug reports, which tags rarely list.
 
 * Test cases and test plans: 8 (A1, A3, A4, A6, A7, A8, A11, A12)
 * Bug reporting and tracking: 6 (A1, A3, A5, A7, A11, A12)
-* Manual testing named: 5 (A1, A5, A6, A7, A11)
-* Automation (Selenium, Appium, Playwright, frameworks): 7 (A1, A2, A4, A5, A7, A10, A11)
-* Mobile and Android testing: 4 (A1, A2, A5, A9)
-* API testing (Postman and similar): 4 (A1, A2, A5, A11)
+* Manual testing named: 10 (A1, A5, A6, A7, A11, A13, A15, A16, A17, A19)
+* Automation (Selenium, Appium, Playwright, Cypress, frameworks): 12 (A1, A2, A4, A5, A7, A10, A11, A14, A15, A16, A18, A20)
+* Of which Cypress: 3 (A14, A15, A18); Playwright: 1 (A5); Selenium: 6 (A1, A2, A7, A14, A18, A20)
+* Mobile and Android testing: 6 (A1, A2, A5, A9, A13, A17)
+* API testing (Postman and similar): 5 (A1, A2, A5, A11, A15)
+* SQL: 5 (A2, A13, A14, A15, A18)
 * Jira and Agile: 5 (A1, A2, A4, A5, A7)
+* Regression and acceptance testing named: 3 (A2, A16, F1)
 * Performance or security testing: 3 (A4, A5, A9)
 * ISTQB: 2 (A1 as a plus, A8)
-* Programming (Java, Python, SQL): 3 (A1, A2, A5)
+* Programming (Java, Python, SQL): 3 (A1, A2, A5) plus the SQL tags above
 * CI/CD: 1 (A2) plus F1 Jenkins and Git
+
+**What the refresh changed.** The remote adverts confirm the shape of the outline: manual
+testing, mobile testing and automation are the commonest asks. Two things went into lessons
+rather than new nodes: Cypress sits beside Playwright and Selenium in `ui-automation`, and
+basic SQL (reading data to confirm a test result) is introduced in `programming-for-testers`.
+Remote roles open to Ghana based applicants were few; most were tied to South Africa, Egypt or
+Nigeria, and the lessons say so plainly.
 
 ## Frameworks and curricula
 
@@ -87,7 +112,7 @@ All resource links in the outline were checked to return HTTP 200 on 2026-10-27.
 
 ## Outline decisions and why
 
-24 nodes in six sections.
+24 nodes in six sections. Unchanged in the lesson wave.
 
 * **Manual first, phone friendly**: test cases, design techniques, exploratory testing and bug
   reports are the most common signals (8 and 6 adverts) and can be practised on a phone.
@@ -118,19 +143,19 @@ All resource links in the outline were checked to return HTTP 200 on 2026-10-27.
 | `bug-reports` | A1 A3 A5 A7 A11 A12 bug reporting and tracking; F1 document defects in a tracker; C1 defect management |
 | `testing-web-and-mobile` | Section. A1 A5 A9 web and mobile |
 | `web-testing` | A1 A5 web testing; A9 web app quality |
-| `mobile-testing` | A1 A2 A5 A9 mobile and Android; local device and network conditions |
+| `mobile-testing` | A1 A2 A5 A9 A13 A17 mobile and Android; local device and network conditions |
 | `api-testing` | A1 Postman; A2 A5 A11 API testing |
 | `accessibility-and-usability` | F1 usability testing (optional; no Ghana advert) |
 | `working-in-a-team` | Section. A1 A2 A4 A5 Agile; A1 A5 A7 A11 Jira |
 | `agile-and-issue-trackers` | A1 A2 A4 A5 Agile; A1 A5 A7 A11 Jira; F1 Jira |
 | `test-plans-and-regression` | A3 A4 A8 test plans; A3 test reporting; F1 regression testing; C1 chapter 5 |
 | `test-automation` | Section. Automation in 7 adverts; C1 chapter 6 |
-| `programming-for-testers` | A1 Java or Python; A5 Java; A2 SQL; prerequisite of `ui-automation` |
-| `ui-automation` | A1 A2 A7 Selenium; A1 A5 Appium; A5 Playwright; A4 A10 automation frameworks |
+| `programming-for-testers` | A1 Java or Python; A5 Java; A2 A13 A14 A15 A18 SQL; prerequisite of `ui-automation` |
+| `ui-automation` | A1 A2 A7 A14 A18 A20 Selenium; A14 A15 A18 Cypress; A1 A5 Appium; A5 Playwright; A4 A10 automation frameworks |
 | `tests-in-ci` | A2 CI/CD and Jenkins; F1 Jenkins and Git (optional) |
 | `getting-hired` | Section. Qualification and experience asks across adverts |
 | `testing-portfolio` | Evidence for A1 A4 entry roles; A3 test reporting |
-| `certificates-and-first-role` | A1 A8 ISTQB; A4 fellowship; A11 remote junior role |
+| `certificates-and-first-role` | A1 A8 ISTQB; A4 fellowship; A11 A19 remote junior roles; A13 to A20 remote boards |
 | `where-testing-leads` | Automation roles A2 A10; adjacency to development and DevOps (optional) |
 
 ## Founder spot checks
