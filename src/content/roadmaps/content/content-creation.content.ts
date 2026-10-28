@@ -49,7 +49,7 @@ Mariama lives in Damongo and loves filming her friends. She notices that a local
           {
             prompt: "Which skill do Ghanaian content creator adverts most often ask for?",
             options: [
-              "Owning a professional cinema camera",
+              "Owning a professional cinema camera and a full set of studio lights",
               "Writing computer code for websites",
               "Shooting and editing short vertical videos for social platforms",
               "Running a television station",
@@ -60,8 +60,8 @@ Mariama lives in Damongo and loves filming her friends. She notices that a local
           {
             prompt: "Why does client work often earn money sooner than building your own audience?",
             options: [
-              "Because a business can pay you this week while an audience takes months or years to grow",
-              "Because platforms pay beginners straight away",
+              "Because a shop owner can pay you now, while an audience grows slowly",
+              "Because platforms start paying beginners from their very first upload",
               "Because audiences grow in a few days",
               "Because client work needs no portfolio",
             ],
@@ -83,8 +83,8 @@ Mariama lives in Damongo and loves filming her friends. She notices that a local
             prompt: "Mariama got her first client mainly because she:",
             options: [
               "Bought an expensive camera",
-              "Made a useful video for a group with a weak online presence and showed it to them",
-              "Waited for the group to post a job advert",
+              "Filmed a useful video for a group that needed one and showed it to them",
+              "Waited for the cooperative to advertise a paid job on its Facebook page first",
               "Copied another creator's video",
             ],
             answer_index: 1,
@@ -147,7 +147,7 @@ Fuseini is asked to film a pastor's short message for a church page in Tamale. B
           {
             prompt: "Why is walking closer usually better than zooming in?",
             options: [
-              "Zoom uses more data",
+              "Zooming uses more data when the clip is uploaded later",
               "Walking closer charges the battery",
               "Digital zoom often makes the picture look softer",
               "Zooming deletes your files",
@@ -161,7 +161,7 @@ Fuseini is asked to film a pastor's short message for a church page in Tamale. B
               "It makes the video vertical",
               "It stops the picture changing brightness and focus while you film",
               "It adds music automatically",
-              "It uploads the clip to YouTube",
+              "It switches the phone to the front camera so you can see yourself while filming",
             ],
             answer_index: 1,
             explanation: "Holding on the subject keeps focus and brightness fixed during the shot.",
@@ -243,7 +243,7 @@ Hawa in Bolgatanga edits a two minute video for a tailor. She edits fully offlin
           {
             prompt: "What happens when you send a video the normal way on WhatsApp?",
             options: [
-              "It always arrives in 4K",
+              "It arrives at full quality, exactly as it was recorded",
               "It is deleted after one hour",
               "It is compressed and loses quality",
               "It uses no data",
@@ -257,7 +257,7 @@ Hawa in Bolgatanga edits a two minute video for a tailor. She edits fully offlin
               "Clients prefer blurry videos",
               "It saves data while the client approves or asks for changes",
               "It makes the final video longer",
-              "Platforms only accept small files",
+              "Platforms only accept small files, so the preview is what gets posted",
             ],
             answer_index: 1,
             explanation: "A small preview is cheap to send; the full file goes only after approval.",
@@ -265,7 +265,7 @@ Hawa in Bolgatanga edits a two minute video for a tailor. She edits fully offlin
           {
             prompt: "Which setting stops WhatsApp using your bundle on media you never asked for?",
             options: [
-              "Turning on read receipts",
+              "Turning on read receipts so senders know you have seen the media",
               "Changing your profile picture",
               "Setting media auto download to WiFi only or off",
               "Muting a group",
@@ -314,7 +314,7 @@ Issahaku is asked to make a video for a borehole project run by an NGO near Nale
             options: [
               "Making people stop, understand the message and take an action",
               "Pressing record on a phone",
-              "Using as many apps as possible",
+              "Owning the newest phone and using as many editing apps as possible",
               "Posting every hour",
             ],
             answer_index: 0,
@@ -325,8 +325,8 @@ Issahaku is asked to make a video for a borehole project run by an NGO near Nale
             options: [
               "Writing a caption of one sentence",
               "Filming one shot only",
-              "Asking the client for one sentence of feedback",
-              "Finishing the sentence about who the content is for and what they will feel, know or do after",
+              "Asking the client to sum up the whole finished video in one sentence after you deliver it",
+              "Finishing a sentence on who the content is for and what they will feel, know or do",
             ],
             answer_index: 3,
             explanation: "The test checks you know the audience and the goal before filming.",
@@ -346,7 +346,7 @@ Issahaku is asked to make a video for a borehole project run by an NGO near Nale
             prompt: "In Issahaku's borehole video, what was the story really about?",
             options: [
               "How clean water near home changed Wumpini's day",
-              "The borehole's engineering",
+              "How the engineers drilled and installed the new borehole",
               "The NGO's logo",
               "The music he chose",
             ],
@@ -418,8 +418,8 @@ Sumaila makes a video for a barber in Wa. Version one starts with the shop sign 
             prompt: "Why should you avoid clickbait hooks?",
             options: [
               "They are too short",
-              "They promise something the video does not deliver, so people leave and stop trusting you",
-              "Platforms ban all questions",
+              "They promise what the video does not deliver, so viewers stop trusting you",
+              "Platforms automatically remove any video that opens with a question or a bold claim",
               "They use too much data",
             ],
             answer_index: 1,
@@ -440,7 +440,7 @@ Sumaila makes a video for a barber in Wa. Version one starts with the shop sign 
             prompt: "What does show, do not just tell mean for a soap advert?",
             options: [
               "Reading the ingredients aloud",
-              "Printing the price in large text only",
+              "Printing the price and the ingredients in large text on screen",
               "Using a longer title",
               "Showing a mother bathing her baby with the soap",
             ],
@@ -452,7 +452,7 @@ Sumaila makes a video for a barber in Wa. Version one starts with the shop sign 
             options: [
               "Its hook made people want to see the finished haircut",
               "It was longer",
-              "It opened with the shop sign",
+              "It opened with a long shot of the shop sign and the barber's name",
               "It had no ending",
             ],
             answer_index: 0,
@@ -538,8 +538,8 @@ Her shot list adds b roll of shelves and the street outside. She finishes in twe
             prompt: "What is b roll?",
             options: [
               "A backup phone battery",
-              "The second version of a script",
-              "Extra shots like close ups of hands, products and surroundings used to cover cuts",
+              "The second draft of a script, rewritten after the client has given feedback",
+              "Extra shots, such as close ups of hands or products, used to cover cuts",
               "A type of background music",
             ],
             answer_index: 2,
@@ -606,7 +606,7 @@ Abdul-Rahman posts a video for a tailor in Tamale with the caption "Nice work!!"
             prompt: "Why should the most important point go in the first line of a caption?",
             options: [
               "Because hashtags must come last",
-              "Because platforms delete long captions",
+              "Because platforms delete any caption longer than two short lines",
               "Because it uses less data",
               "Because only the first line or two show before people tap more",
             ],
@@ -619,7 +619,7 @@ Abdul-Rahman posts a video for a tailor in Tamale with the caption "Nice work!!"
               "My farm day",
               "How to plant soybeans in Northern Ghana",
               "Vibes only",
-              "Watch this",
+              "A day on the farm with the family, part two",
             ],
             answer_index: 1,
             explanation: "It uses the words people would type into search.",
@@ -651,7 +651,7 @@ Abdul-Rahman posts a video for a tailor in Tamale with the caption "Nice work!!"
             options: [
               "More emojis",
               "It stated what was offered, the price, timing and how to order",
-              "It was in capital letters",
+              "It was written all in capital letters so it stood out in the feed",
               "It had no location",
             ],
             answer_index: 1,
@@ -705,9 +705,9 @@ Hawa makes a short video about handwashing for a clinic in Tolon. Her first vers
             prompt: "Why might a health message work better in a local language?",
             options: [
               "Because English is not allowed on social media",
-              "Because local language videos are always shorter",
+              "Because local language videos are always shorter and cheaper to make than English ones",
               "Because subtitles are impossible in English",
-              "Because messages about health and money are easier to trust in a familiar language",
+              "Because people trust health and money messages more in a familiar language",
             ],
             answer_index: 3,
             explanation: "Familiar language builds trust for important messages.",
@@ -717,7 +717,7 @@ Hawa makes a short video about handwashing for a clinic in Tolon. Her first vers
             options: [
               "Trust them completely",
               "Never use them",
-              "Only use them in English",
+              "Only use them for English videos, since they are always accurate in English",
               "Check and correct them by hand, especially for Ghanaian languages and names",
             ],
             answer_index: 3,
@@ -726,8 +726,8 @@ Hawa makes a short video about handwashing for a clinic in Tolon. Her first vers
           {
             prompt: "Which group do subtitles help?",
             options: [
-              "People who speak another language, watch without sound or are deaf or hard of hearing",
-              "Only people with fast internet",
+              "Viewers who speak another language, watch on mute or are deaf or hard of hearing",
+              "Only viewers on fast internet, because subtitles load separately and use extra data",
               "Only the creator",
               "Only advertisers",
             ],
@@ -740,7 +740,7 @@ Hawa makes a short video about handwashing for a clinic in Tolon. Her first vers
               "Guess the words",
               "Use only emojis",
               "Ask a fluent speaker to check your script and subtitles",
-              "Avoid subtitles",
+              "Avoid subtitles in that language and post the video in English only",
             ],
             answer_index: 2,
             explanation: "A fluent check prevents wrong or offensive wording.",
@@ -801,9 +801,9 @@ Fuseini films a short interview with a shea butter producer in Savelugu. In his 
           {
             prompt: "According to the lesson, why is sound so important?",
             options: [
-              "Platforms delete silent videos",
+              "Platforms automatically delete videos with poor sound before anyone sees them",
               "Sound makes files smaller",
-              "People leave quickly when they cannot hear, even if they accept softer video",
+              "People leave quickly when they cannot hear, even if the picture is soft",
               "Clients never watch the picture",
             ],
             answer_index: 2,
@@ -813,7 +813,7 @@ Fuseini films a short interview with a shea butter producer in Savelugu. In his 
             prompt: "What is the lesson's view on buying gear?",
             options: [
               "Start with your phone; cheap gear helps later but does not replace skill",
-              "You must buy a camera before starting",
+              "You must buy a proper camera and microphone before you take on any paid work",
               "Gear replaces skill",
               "Only expensive lights work",
             ],
@@ -825,8 +825,8 @@ Fuseini films a short interview with a shea butter producer in Savelugu. In his 
             options: [
               "He bought a new phone",
               "He added more music",
-              "He filmed at night",
-              "He moved to shade, turned away from the road, steadied the phone and moved closer",
+              "He waited until night when the road was quiet and filmed with the phone's flash on",
+              "He moved to shade, turned from the road, steadied the phone and came closer",
             ],
             answer_index: 3,
             explanation: "He fixed light, noise, steadiness and distance with the same phone.",
@@ -899,7 +899,7 @@ Mariama films a carpenter in Wa. She starts with a wide shot of the workshop, th
             prompt: "What does the rule of thirds suggest?",
             options: [
               "Place important things near where the grid lines cross",
-              "Always place the subject dead centre",
+              "Always place the subject dead centre so the frame looks balanced",
               "Film only three shots",
               "Cut every video into three parts",
             ],
@@ -910,7 +910,7 @@ Mariama films a carpenter in Wa. She starts with a wide shot of the workshop, th
             prompt: "If someone is looking to the right, where should you leave space?",
             options: [
               "On the left",
-              "Above their head only",
+              "Behind them, so the viewer can see where they have come from",
               "On the right, in the direction they are looking",
               "Nowhere; fill the frame",
             ],
@@ -931,10 +931,10 @@ Mariama films a carpenter in Wa. She starts with a wide shot of the workshop, th
           {
             prompt: "Why should you check the background before recording?",
             options: [
-              "Backgrounds change the video length",
+              "Busy backgrounds make the exported file much larger and slower to send over WhatsApp",
               "Platforms require plain walls",
               "It saves battery",
-              "Distractions like a bright window or a pole behind someone's head pull attention away",
+              "Things like a bright window or a pole behind someone's head pull attention away",
             ],
             answer_index: 3,
             explanation: "A messy background distracts from the subject.",
@@ -1003,7 +1003,7 @@ Amina helps a bead seller in Tamale. The seller's old photos show necklaces pile
             prompt: "Why take several angles of a product?",
             options: [
               "Online buyers cannot touch it, so photos must show it fully",
-              "Platforms require exactly five photos",
+              "Marketplace platforms require exactly five photos for every product listing",
               "It uses less storage",
               "It makes the product cheaper",
             ],
@@ -1013,7 +1013,7 @@ Amina helps a bead seller in Tamale. The seller's old photos show necklaces pile
           {
             prompt: "Why must product colours stay true in editing?",
             options: [
-              "Bright colours use too much data",
+              "Bright, boosted colours make products look better and sell faster online",
               "Filters are illegal",
               "Customers who receive something different stop trusting the shop",
               "True colours look more blurry",
@@ -1089,8 +1089,8 @@ Sumaila records a cooking video for a chop bar in Damongo inside a dark kitchen.
           {
             prompt: "What is open shade?",
             options: [
-              "Shade of a tree or building where the subject still faces bright open sky",
-              "A dark room with no windows",
+              "Shade of a tree or building where the subject still faces open sky",
+              "A dark indoor room with the curtains closed and no direct light at all",
               "Filming at midnight",
               "Covering the lens with your hand",
             ],
@@ -1100,7 +1100,7 @@ Sumaila records a cooking video for a chop bar in Damongo inside a dark kitchen.
           {
             prompt: "What does a white sheet or card do in lighting?",
             options: [
-              "Blocks all light",
+              "Absorbs light so the shadows look deeper",
               "Records sound",
               "Makes the video vertical",
               "Bounces light back into shadows",
@@ -1112,8 +1112,8 @@ Sumaila records a cooking video for a chop bar in Damongo inside a dark kitchen.
             prompt: "Why avoid mixing indoor bulbs and daylight?",
             options: [
               "It drains the battery",
-              "Their different colours can make faces look orange on one side and blue on the other",
-              "It is against platform rules",
+              "Their different colours can make one side of a face orange and the other blue",
+              "Mixed light confuses the phone's autofocus, so faces keep drifting in and out of focus",
               "It makes the file larger",
             ],
             answer_index: 1,
@@ -1195,7 +1195,7 @@ Issahaku interviews a teacher in Bolgatanga beside a busy road. Playing it back,
           {
             prompt: "Which room usually echoes less?",
             options: [
-              "An empty concrete room",
+              "An empty concrete room with bare walls and a high ceiling",
               "A room with curtains, cloth and many objects",
               "A tiled bathroom",
               "A large empty hall",
@@ -1217,10 +1217,10 @@ Issahaku interviews a teacher in Bolgatanga beside a busy road. Playing it back,
           {
             prompt: "What is one cheap way to record clearer interview audio?",
             options: [
-              "Film from across the street",
+              "Film from across the street with the phone at full zoom so the speaker feels natural",
               "Cover the microphone with your finger",
               "Play music during the interview",
-              "Use a clip on lapel mic or record a voice note on a second phone close to the speaker",
+              "Use a clip on lapel mic, or a voice note on a second phone near the speaker",
             ],
             answer_index: 3,
             explanation: "A mic close to the speaker captures the voice clearly.",
@@ -1274,8 +1274,8 @@ Wumpini films a ten minute walk through a weekend market in Tamale for a food ve
           {
             prompt: "What does the lesson say about editing on a phone?",
             options: [
-              "Free phone editors can do professional short videos; a laptop helps for longer layered videos",
-              "Professional editing is impossible on a phone",
+              "Free phone editors can make professional short videos; a laptop helps for long ones",
+              "Professional editing is impossible on a phone, so you need a laptop before taking any client",
               "Only paid apps can export video",
               "Phones cannot add text",
             ],
@@ -1286,7 +1286,7 @@ Wumpini films a ten minute walk through a weekend market in Tamale for a food ve
             prompt: "Why must you keep original clips until a project is exported?",
             options: [
               "Platforms ask for the originals",
-              "Originals make the export smaller",
+              "Keeping the originals on the phone makes the final export much smaller and faster",
               "Editing apps refer to the original files, so deleting them breaks the project",
               "It saves data",
             ],
@@ -1309,8 +1309,8 @@ Wumpini films a ten minute walk through a weekend market in Tamale for a food ve
             options: [
               "Keeping all forty clips at full length",
               "Adding as many effects as possible",
-              "Choosing the best moments, trimming them and adding voice over and price text",
-              "Turning it into a horizontal ten minute film",
+              "Picking the best moments, trimming them and adding voice over and price text",
+              "Turning it into a horizontal ten minute film with a long title sequence at the start",
             ],
             answer_index: 2,
             explanation: "She selected, trimmed and supported the story with voice and text.",
@@ -1379,7 +1379,7 @@ Mariama has twelve minutes of footage of a youth football tournament in Wa. Her 
           {
             prompt: "What is a jump cut?",
             options: [
-              "A spinning transition",
+              "A fast spinning transition that jumps from one location to another",
               "A video of someone jumping",
               "Moving a clip to another project",
               "A cut that removes a pause so the speaker jumps slightly",
@@ -1390,7 +1390,7 @@ Mariama has twelve minutes of footage of a youth football tournament in Wa. Her 
           {
             prompt: "How can you hide a cut in the middle of someone speaking?",
             options: [
-              "Add a long black screen",
+              "Add a long black screen with music while the speaker pauses",
               "Cover it with b roll while their voice continues",
               "Increase the volume",
               "Delete the whole interview",
@@ -1401,9 +1401,9 @@ Mariama has twelve minutes of footage of a youth football tournament in Wa. Her 
           {
             prompt: "What does the lesson say about flashy transitions?",
             options: [
-              "Straight cuts are used most; save effects for when they add meaning",
+              "Use straight cuts mostly and save effects for when they add meaning",
               "Use one between every clip",
-              "They are required by platforms",
+              "Platforms reward them, so fast spinning effects push videos to more viewers",
               "They always increase views",
             ],
             answer_index: 0,
@@ -1470,7 +1470,7 @@ Abdul-Rahman edits a promo for a phone repair shop in Tamale. His first version 
           {
             prompt: "What can happen if you upload a video using a popular song you do not have rights to?",
             options: [
-              "It gets more views automatically",
+              "It gets more views automatically because the song is trending",
               "It may be muted, blocked or your account warned",
               "The artist pays you",
               "Nothing ever happens",
@@ -1481,7 +1481,7 @@ Abdul-Rahman edits a promo for a phone repair shop in Tamale. His first version 
           {
             prompt: "What should you do with music while someone is speaking?",
             options: [
-              "Raise it",
+              "Raise it so the video feels more exciting",
               "Remove the voice",
               "Speed it up",
               "Lower it so the words are clear",
@@ -1503,10 +1503,10 @@ Abdul-Rahman edits a promo for a phone repair shop in Tamale. His first version 
           {
             prompt: "What makes on screen text easy to read?",
             options: [
-              "Large, short text with high contrast, such as white with a dark outline or box",
+              "Large, short text with high contrast, like white with a dark outline",
               "Small thin letters",
               "Long paragraphs",
-              "Text that flashes quickly",
+              "Thin decorative fonts in the brand's colours placed over a busy background",
             ],
             answer_index: 0,
             explanation: "Short, large, high contrast text reads on small screens.",
@@ -1590,7 +1590,7 @@ Hawa edits weekly videos for a pharmacy and a fashion shop. Early on she sent th
               "final.mp4",
               "video1.mp4",
               "TamaleTailor_Uniforms_v2_20261012.mp4",
-              "new new final.mp4",
+              "final_video_edited_latest_version_new.mp4",
             ],
             answer_index: 2,
             explanation: "Client, topic, version and date make files easy to find.",
@@ -1599,7 +1599,7 @@ Hawa edits weekly videos for a pharmacy and a fashion shop. Early on she sent th
             prompt: "What makes a good YouTube thumbnail?",
             options: [
               "One clear subject, few large words, strong contrast and honesty",
-              "Many small words and several subjects",
+              "Many small words and several faces so the thumbnail looks full and busy",
               "A blank background",
               "A misleading picture to get clicks",
             ],
@@ -1685,7 +1685,7 @@ Sumaila runs a channel teaching phone repair tips in Hausa and English from Tama
               "Turning one shoot into content for several platforms",
               "Deleting old videos",
               "Copying another creator's video",
-              "Posting the same file everywhere without changes",
+              "Posting the same file on every platform without any changes",
             ],
             answer_index: 0,
             explanation: "One shoot can become shorts, photos and Status updates.",
@@ -1696,7 +1696,7 @@ Sumaila runs a channel teaching phone repair tips in Hausa and English from Tama
               "Platforms ban bursts",
               "It uses more data",
               "It builds trust and fits what you can keep up",
-              "It guarantees viral videos",
+              "It guarantees that the algorithm will make some videos go viral",
             ],
             answer_index: 2,
             explanation: "Consistency helps audiences know what to expect.",
@@ -1782,8 +1782,8 @@ Amina makes Reels for a smock weaver in Bolgatanga. Her best video starts with t
             options: [
               "Join every trend, whatever the brand",
               "Use trends that mock people",
-              "Copy another creator's video exactly",
-              "Make sure it fits the brand, add your own twist and check the sound is allowed",
+              "Copy a popular creator's trend video exactly, since trends belong to everyone",
+              "Check it fits the brand, add your own twist and confirm the sound is allowed",
             ],
             answer_index: 3,
             explanation: "Trends must suit the brand and be legally usable.",
@@ -1792,7 +1792,7 @@ Amina makes Reels for a smock weaver in Bolgatanga. Her best video starts with t
             prompt: "Why might music that works on a personal account be a problem for a business account?",
             options: [
               "Some app music is allowed for personal use but not for commercial use",
-              "Business accounts cannot use any sound",
+              "Business accounts cannot use any sound at all, even music they have paid for",
               "Music makes business videos longer",
               "It changes the video shape",
             ],
@@ -1803,8 +1803,8 @@ Amina makes Reels for a smock weaver in Bolgatanga. Her best video starts with t
             prompt: "Which is part of a well planned live selling session?",
             options: [
               "No prices so people must guess",
-              "Going live on a weak connection without testing",
-              "Products ready, clear prices, good light, a helper reading comments and a clear way to pay",
+              "Going live straight away on a weak connection, with prices shared later in private messages",
+              "Products ready, clear prices, good light, someone reading comments and easy payment",
               "Ignoring comments",
             ],
             answer_index: 2,
@@ -1877,7 +1877,7 @@ Fuseini starts a channel teaching smallholder farmers in the Northern Region how
               "It makes videos longer",
               "It removes the need for titles",
               "Others can help manage it without sharing your personal password",
-              "It is the only way to upload Shorts",
+              "It is the only type of channel allowed to upload Shorts or go live",
             ],
             answer_index: 2,
             explanation: "Brand channels allow shared management safely.",
@@ -1896,7 +1896,7 @@ Fuseini starts a channel teaching smallholder farmers in the Northern Region how
           {
             prompt: "Why upload as private or unlisted first?",
             options: [
-              "Because public uploads cost money",
+              "Because public uploads cost money until the channel is verified",
               "To hide it forever",
               "To make it a Short",
               "To check everything before the public sees it",
@@ -1982,7 +1982,7 @@ Mariama starts a page sharing northern recipes. At first she posts randomly. The
             prompt: "What does serve before you sell mean?",
             options: [
               "Only post adverts",
-              "Never mention products",
+              "Never mention your products, so the audience never feels sold to at all",
               "Make most content helpful or entertaining and only some promotional",
               "Charge for every video",
             ],
@@ -1993,9 +1993,9 @@ Mariama starts a page sharing northern recipes. At first she posts randomly. The
             prompt: "Why should you not buy fake followers?",
             options: [
               "It is too cheap",
-              "It breaks platform rules, misleads clients and makes your real numbers meaningless",
+              "It breaks platform rules, misleads clients and makes your real numbers useless",
               "It makes videos vertical",
-              "It improves engagement",
+              "Fake followers boost engagement, so the algorithm shows your videos to more real people",
             ],
             answer_index: 1,
             explanation: "Fake numbers damage trust and break rules.",
@@ -2005,7 +2005,7 @@ Mariama starts a page sharing northern recipes. At first she posts randomly. The
             options: [
               "Ignore comments",
               "Post only once a year",
-              "Turn off all comments always",
+              "Turn off comments so that negative replies never appear under your videos",
               "Reply to comments, ask questions and answer common questions in videos",
             ],
             answer_index: 3,
@@ -2081,7 +2081,7 @@ Practice numbers if needed: Video A had 900 views, 4 seconds average watch time 
               "What share of viewers were still watching at each moment",
               "How many followers you have",
               "Your income",
-              "How much data you used",
+              "How many viewers subscribed to the channel after watching the video",
             ],
             answer_index: 0,
             explanation: "Retention shows where viewers leave.",
@@ -2193,7 +2193,7 @@ Issahaku has made a few videos for friends in Wa. Then someone on social media o
             prompt: "Which is a warning sign of a scam?",
             options: [
               "A client sends a clear brief",
-              "A business asks to see your portfolio",
+              "A business asks to see your portfolio before agreeing to hire you",
               "A client agrees terms in writing",
               "Someone asks you to pay a fee to get a job or brand deal",
             ],
@@ -2216,7 +2216,7 @@ Issahaku has made a few videos for friends in Wa. Then someone on social media o
             options: [
               "It protects you from removed videos, strikes and legal trouble",
               "It makes videos longer",
-              "It is only a matter of politeness",
+              "It is only a matter of politeness, since nobody checks small creators",
               "Platforms pay you for asking",
             ],
             answer_index: 0,
@@ -2286,8 +2286,8 @@ Hawa edits an advert for a hotel in Tamale using a popular song. Before deliveri
             prompt: "Which is a safe music source for a client video?",
             options: [
               "A popular radio song downloaded online",
-              "A track from a free library with clear terms, such as the YouTube Audio Library",
-              "Music ripped from another creator's video",
+              "A free library track with clear terms, such as the YouTube Audio Library",
+              "Music ripped from another creator's video, as long as you tag them in the caption",
               "Any song if you add credit",
             ],
             answer_index: 1,
@@ -2296,7 +2296,7 @@ Hawa edits an advert for a hotel in Tamale using a popular song. Before deliveri
           {
             prompt: "What should you check with a Creative Commons work?",
             options: [
-              "Nothing; all CC works can be used any way",
+              "Nothing, because every Creative Commons work can be used in any way you like",
               "Only the file size",
               "Only the colour",
               "The specific licence, such as whether commercial use is allowed",
@@ -2307,10 +2307,10 @@ Hawa edits an advert for a hotel in Tamale using a popular song. Before deliveri
           {
             prompt: "What is good practice when filming children?",
             options: [
-              "Film freely without asking",
+              "Film freely at public events, since anyone outside can be recorded and posted online",
               "Ask the child only",
               "Post first and ask later",
-              "Get permission from a parent or guardian and be careful about showing their school or location",
+              "Ask a parent or guardian first and be careful about showing their school or location",
             ],
             answer_index: 3,
             explanation: "Children need guardian consent and extra protection.",
@@ -2318,10 +2318,10 @@ Hawa edits an advert for a hotel in Tamale using a popular song. Before deliveri
           {
             prompt: "Why should a brand campaign built on adinkra designs or traditional songs raise questions early?",
             options: [
-              "Using folklore beyond the permitted uses needs permission from the National Folklore Board",
+              "Using folklore beyond permitted uses needs permission from the National Folklore Board",
               "Folklore cannot appear in videos at all",
               "It always makes videos longer",
-              "Platforms block all traditional music",
+              "Platforms automatically block all traditional music and adinkra symbols in paid adverts",
             ],
             answer_index: 0,
             explanation: "Ghana's law protects folklore, and uses such as a brand campaign need the Board's permission.",
@@ -2409,7 +2409,7 @@ Wumpini is asked by a cosmetics seller in Tamale to make three videos. She write
           {
             prompt: "What should you do when a brand pays you to feature them on your channel?",
             options: [
-              "Hide it so it looks natural",
+              "Hide it so the post looks natural, since followers trust it more that way",
               "Only tell your friends",
               "Disclose it using platform tools and clearly in the video or caption",
               "Delete the video later",
@@ -2421,7 +2421,7 @@ Wumpini is asked by a cosmetics seller in Tamale to make three videos. She write
             prompt: "A brand asks you to say a cream removes all dark spots in three days. What should you do?",
             options: [
               "Refuse claims you cannot check and suggest an honest alternative",
-              "Say it, since they are paying",
+              "Say it, since the brand takes responsibility for its own product claims",
               "Say it in small text",
               "Make the claim even bigger",
             ],
@@ -2491,8 +2491,8 @@ Sumaila in Tamale starts by filming events for churches and two shops. He keeps 
           {
             prompt: "What does YouTube require before a channel can join its Partner Program?",
             options: [
-              "Nothing; every channel is paid from the first video",
-              "Meeting eligibility rules such as minimum subscribers and watch hours or Shorts views, plus policies and a payment account",
+              "Nothing, because every channel starts earning from its first video once a mobile money account is linked",
+              "Meeting minimum subscriber and watch hour or Shorts view rules, plus policies and a payment account",
               "Only a verified phone number",
               "Paying a joining fee",
             ],
@@ -2503,7 +2503,7 @@ Sumaila in Tamale starts by filming events for churches and two shops. He keeps 
             prompt: "What do remote editing roles often require?",
             options: [
               "A strong portfolio, reliable internet and often a laptop that can edit HD video",
-              "A registration fee",
+              "A registration fee paid to the agency before they send you any editing work",
               "No portfolio at all",
               "Living in the client's country",
             ],
@@ -2514,8 +2514,8 @@ Sumaila in Tamale starts by filming events for churches and two shops. He keeps 
             prompt: "What is the lesson's honest message about creator income?",
             options: [
               "Everyone earns a lot quickly",
-              "Platform payouts are guaranteed",
-              "Income varies, many earn little at first and nobody can promise you an income",
+              "Platform payouts are guaranteed once you post every day for three months straight",
+              "Income varies, many earn little at first and nobody can promise an income",
               "Only famous people earn anything",
             ],
             answer_index: 2,
@@ -2585,7 +2585,7 @@ Amina wants a content creator job in Tamale. She builds a one page portfolio wit
           {
             prompt: "What does the lesson say matters most in a portfolio?",
             options: [
-              "Having as many pieces as possible",
+              "Having as many pieces as possible, including unfinished drafts",
               "A small set of your best work showing range",
               "Only certificates",
               "Only photos of your equipment",
@@ -2608,9 +2608,9 @@ Amina wants a content creator job in Tamale. She builds a one page portfolio wit
             prompt: "What should you do if you have no clients yet?",
             options: [
               "Wait until someone hires you",
-              "Use other creators' videos",
+              "Use other creators' best videos as samples until you have finished your own work",
               "Invent client names",
-              "Create real work with permission, such as for a family business, church or community event",
+              "Create real work with permission, such as for a family business or church",
             ],
             answer_index: 3,
             explanation: "Real projects, even unpaid, build genuine proof.",
@@ -2629,7 +2629,7 @@ Amina wants a content creator job in Tamale. She builds a one page portfolio wit
           {
             prompt: "What might some employers ask candidates to do?",
             options: [
-              "Pay an application fee",
+              "Pay an application fee to cover the cost of reviewing your work",
               "Buy their products",
               "Complete a test task such as editing sample footage",
               "Bring their own studio",

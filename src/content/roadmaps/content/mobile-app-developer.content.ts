@@ -16,7 +16,7 @@ const content: TrackContent = {
           {
             "prompt": "Why does this roadmap say you will eventually need a laptop?",
             "options": [
-              "Employers only accept code written on a laptop",
+              "Employers in Ghana only accept code that was written and tested on a laptop",
               "The tools that build and test full apps are too heavy to run on a phone",
               "Phones cannot open documentation pages",
               "Mobile apps can only be designed on a laptop screen"
@@ -30,7 +30,7 @@ const content: TrackContent = {
               "Video editing, social media and copywriting",
               "Spreadsheet formulas, pivot tables and dashboards",
               "A cross platform framework, REST APIs, Git, Firebase, testing and Play Store publishing",
-              "Network cabling, printers and help desk work"
+              "Network cabling, printer repair, help desk support and setting up Windows servers for offices"
             ],
             "answer_index": 2,
             "explanation": "The lesson lists a framework such as Flutter or React Native, APIs, Git, Firebase, testing and publishing as the repeated signals."
@@ -50,7 +50,7 @@ const content: TrackContent = {
             "prompt": "Which of these is a normal part of a mobile developer's week, according to the lesson?",
             "options": [
               "Selling data bundles to app users",
-              "Repairing broken phone screens for customers",
+              "Repairing broken phone screens for customers who use the app",
               "Making sure the app still works when the network drops",
               "Installing internet cables in offices"
             ],
@@ -70,9 +70,9 @@ const content: TrackContent = {
             "prompt": "What does DartPad let you do?",
             "options": [
               "Publish apps to the Play Store from a phone",
-              "Run Dart code, and small Flutter screens, in a browser with no install",
+              "Run Dart code and small Flutter screens in a browser",
               "Install the Android emulator on a phone",
-              "Download any package from pub.dev into a phone"
+              "Download any package from pub.dev and run it in the browser"
             ],
             "answer_index": 1,
             "explanation": "DartPad runs Dart and simple Flutter code in the browser, though most extra packages are not supported."
@@ -81,7 +81,7 @@ const content: TrackContent = {
             "prompt": "According to the lesson, which laptop feature matters most for mobile development?",
             "options": [
               "Enough memory (RAM)",
-              "A touch screen",
+              "A touch screen for testing apps by hand",
               "A backlit keyboard",
               "A large display"
             ],
@@ -94,7 +94,7 @@ const content: TrackContent = {
               "Connecting your own Android phone with USB debugging turned on",
               "Emailing the app file to a friend",
               "Running the app in a spreadsheet",
-              "Testing the app inside DartPad only"
+              "Running the full app inside DartPad, which supports every Flutter package"
             ],
             "answer_index": 0,
             "explanation": "Running the app on a real phone through USB avoids the heavy emulator and shows how the app feels on a real device."
@@ -105,7 +105,7 @@ const content: TrackContent = {
               "Restart the phone while holding the volume key",
               "Install a special app from the Play Store",
               "Ask your network provider to enable it",
-              "Tap Build number several times in the About phone settings"
+              "Tap Build number several times in About phone"
             ],
             "answer_index": 3,
             "explanation": "Tapping Build number repeatedly in About phone unlocks developer options, where USB debugging lives."
@@ -124,7 +124,7 @@ const content: TrackContent = {
             "options": [
               "It lets you skip learning a programming language",
               "It removes the need to test the app",
-              "It only works on the newest phones",
+              "It runs faster than native Kotlin and reaches every phone feature",
               "One codebase can produce both Android and iPhone apps"
             ],
             "answer_index": 3,
@@ -145,9 +145,9 @@ const content: TrackContent = {
             "prompt": "According to the lesson, who might reasonably choose React Native instead of Flutter?",
             "options": [
               "Someone who wants to avoid testing",
-              "Someone who has no laptop at all",
+              "Someone who wants the best performance and full access to every phone feature",
               "Someone who wants an app that only runs on Android",
-              "Someone who has already learned JavaScript and React on the frontend track"
+              "Someone who already knows JavaScript and React from web work"
             ],
             "answer_index": 3,
             "explanation": "React Native reuses JavaScript and React skills, so it suits learners coming from web development."
@@ -157,7 +157,7 @@ const content: TrackContent = {
             "options": [
               "It cannot be published on the Play Store",
               "It only runs inside a web browser",
-              "It cannot use the phone's camera or location",
+              "It cannot use the phone's camera, location or other hardware features",
               "An iPhone version would need to be built separately"
             ],
             "answer_index": 3,
@@ -166,7 +166,7 @@ const content: TrackContent = {
           {
             "prompt": "What does the lesson say matters more than choosing the perfect framework?",
             "options": [
-              "Only applying to jobs that use your exact framework",
+              "Only applying to jobs that use the exact framework you already know",
               "Learning every framework at the same time",
               "Choosing one approach and going deep, because concepts transfer",
               "Waiting until you can afford a paid course"
@@ -187,8 +187,8 @@ const content: TrackContent = {
             "prompt": "What is a commit in Git?",
             "options": [
               "A request for a job",
-              "A copy of GitHub on your laptop",
-              "A saved snapshot of your project with a message describing the change",
+              "A copy of a GitHub repository downloaded to your laptop",
+              "A saved snapshot of your project with a message",
               "A file that stores passwords"
             ],
             "answer_index": 2,
@@ -208,9 +208,9 @@ const content: TrackContent = {
           {
             "prompt": "What is a pull request used for?",
             "options": [
-              "Asking for a branch to be merged, so a teammate can review the code first",
+              "Asking for a branch to be merged after a teammate reviews it",
               "Sending an SMS to a teammate",
-              "Downloading the latest version of Flutter",
+              "Downloading the latest commits from GitHub onto a lab computer",
               "Deleting old commits"
             ],
             "answer_index": 0,
@@ -239,7 +239,7 @@ const content: TrackContent = {
           {
             "prompt": "Why does this roadmap teach Dart first?",
             "options": [
-              "It is the only language that runs on Android",
+              "It is the only language that runs on Android phones",
               "It is used only for websites",
               "It is the language Flutter apps are written in",
               "It does not need any practice to learn"
@@ -251,7 +251,7 @@ const content: TrackContent = {
             "prompt": "What does it mean that Dart is a typed language?",
             "options": [
               "You must type every program twice",
-              "It only works with a physical keyboard",
+              "It only works when you type on a physical keyboard",
               "It checks many mistakes before the program runs",
               "It can only store text"
             ],
@@ -262,9 +262,9 @@ const content: TrackContent = {
             "prompt": "What study habit does the lesson recommend for each example?",
             "options": [
               "Paste the example and move on quickly",
-              "Read it three times without running it",
+              "Read it three times without running it, then copy it into your notes",
               "Skip examples and go straight to the quiz",
-              "Type it yourself, change one thing and predict the result before running"
+              "Type it yourself, change one thing and predict the result"
             ],
             "answer_index": 3,
             "explanation": "Typing, changing and predicting builds real understanding."
@@ -272,8 +272,8 @@ const content: TrackContent = {
           {
             "prompt": "What should you do when DartPad shows a red error message?",
             "options": [
-              "Delete the whole program and start again",
-              "Read it slowly, because it usually gives the line and what was expected",
+              "Delete the whole program and start again in a fresh DartPad tab",
+              "Read it slowly, as it usually shows the line and the problem",
               "Assume the tool is broken",
               "Ignore it and run the code again"
             ],
@@ -314,7 +314,7 @@ const content: TrackContent = {
           {
             "prompt": "In Dart, how do you put a calculation result inside a piece of text?",
             "options": [
-              "Using square brackets around the calculation",
+              "Using square brackets around the calculation, like a list index",
               "Using a dollar sign with curly braces around the calculation",
               "Using a hash sign before the calculation",
               "Calculations cannot be put inside text"
@@ -325,7 +325,7 @@ const content: TrackContent = {
           {
             "prompt": "What danger does the lesson mention for while loops?",
             "options": [
-              "They make the program skip the if statements",
+              "They make the program skip any if statements inside the loop",
               "If the condition never becomes false, the loop never ends",
               "They cannot use numbers",
               "They can only run once"
@@ -345,7 +345,7 @@ const content: TrackContent = {
           {
             "prompt": "What is the main benefit of putting repeated work into a function?",
             "options": [
-              "It makes the program run without a phone",
+              "It makes the program run much faster on low cost phones",
               "It stops the program from printing anything",
               "You write the logic once and fix it in one place",
               "It turns numbers into text automatically"
@@ -370,7 +370,7 @@ const content: TrackContent = {
               "When you only need to store one value",
               "When the order of items is the only thing that matters",
               "When you want to repeat code many times",
-              "When you want to look values up by a key, such as an item name"
+              "When you look values up by a key such as a name"
             ],
             "answer_index": 3,
             "explanation": "Maps store key and value pairs, which makes lookups by name easy."
@@ -398,7 +398,7 @@ const content: TrackContent = {
           {
             "prompt": "What is the difference between a class and an object?",
             "options": [
-              "An object is a template and a class is made from it",
+              "An object is a template and a class is one thing made from it",
               "They mean exactly the same thing",
               "A class is a number and an object is text",
               "A class is a template and an object is one thing made from it"
@@ -420,9 +420,9 @@ const content: TrackContent = {
           {
             "prompt": "What does email ?? 'No email given' do?",
             "options": [
-              "Always prints 'No email given'",
+              "Always prints 'No email given', whether or not email has a value",
               "Crashes if email is null",
-              "Uses email if it has a value, otherwise uses the fallback text",
+              "Uses email if it has a value, otherwise the fallback text",
               "Deletes the email value"
             ],
             "answer_index": 2,
@@ -434,7 +434,7 @@ const content: TrackContent = {
               "It only works on phones",
               "It turns the value into a number",
               "If the value is actually null, the app crashes",
-              "It slows the app down a lot"
+              "It slows the app down a lot, especially on low cost phones"
             ],
             "answer_index": 2,
             "explanation": "The exclamation mark tells Dart a value is not null, and if that is wrong the app crashes."
@@ -451,7 +451,7 @@ const content: TrackContent = {
           {
             "prompt": "What is a Future in Dart?",
             "options": [
-              "A variable that can never change",
+              "A variable that can never change once it is set",
               "A type of loop",
               "A promise of a value that will arrive later",
               "A list of dates"
@@ -462,8 +462,8 @@ const content: TrackContent = {
           {
             "prompt": "What does await do inside an async function?",
             "options": [
-              "Pauses that function until the Future finishes, while the rest of the app keeps running",
-              "Freezes the whole app until the data arrives",
+              "Pauses only that function until the Future finishes",
+              "Freezes the whole app, screen included, until the data arrives",
               "Turns the Future into a list",
               "Cancels the network request"
             ],
@@ -474,8 +474,8 @@ const content: TrackContent = {
             "prompt": "Why should network calls be wrapped in try and catch?",
             "options": [
               "It makes the request faster",
-              "So the app can show a friendly message instead of crashing when the request fails",
-              "It stores the data on the phone",
+              "So the app shows a friendly message instead of crashing",
+              "It stores the data on the phone so it loads faster next time",
               "It is required before using a for loop"
             ],
             "answer_index": 1,
@@ -484,8 +484,8 @@ const content: TrackContent = {
           {
             "prompt": "What is a Stream, as described in the lesson?",
             "options": [
-              "Something like a Future that can deliver many values over time",
-              "A Future that always fails",
+              "Like a Future, but delivering many values over time",
+              "A Future that always fails, used for testing error messages",
               "A video file",
               "A kind of map"
             ],
@@ -506,8 +506,8 @@ const content: TrackContent = {
             "options": [
               "Only a button",
               "A type of database",
-              "A file stored on the server",
-              "Any piece of the screen, from text and buttons to padding and whole pages"
+              "A design file stored on the server that tells the app how to look",
+              "Any piece of the screen, from text and padding to whole pages"
             ],
             "answer_index": 3,
             "explanation": "Everything visible in a Flutter app is built from widgets."
@@ -515,9 +515,9 @@ const content: TrackContent = {
           {
             "prompt": "What does hot reload let you do?",
             "options": [
-              "Install the app on many phones at once",
+              "Install a new version on many phones at once over WiFi",
               "Translate the app into other languages",
-              "See code changes on a running app in about a second without restarting it",
+              "See code changes on a running app in about a second",
               "Reduce the size of the app"
             ],
             "answer_index": 2,
@@ -526,9 +526,9 @@ const content: TrackContent = {
           {
             "prompt": "Why does the lesson recommend designing for a small, low cost phone first?",
             "options": [
-              "Because an app that works well there will also work on bigger phones",
+              "An app that works well there will work on bigger phones too",
               "Because designers only use small phones",
-              "Because small phones have faster processors",
+              "Because small phones have faster processors and need less testing",
               "Because large phones cannot run Flutter apps"
             ],
             "answer_index": 0,
@@ -538,9 +538,9 @@ const content: TrackContent = {
             "prompt": "What did Wumpini do before writing any code?",
             "options": [
               "Bought a new phone for testing",
-              "Published a test version to the Play Store",
+              "Published a test version to the Play Store for members to try",
               "Wrote the database first",
-              "Sketched screens on paper and got feedback from the cooperative leader"
+              "Sketched screens on paper and got the leader's feedback"
             ],
             "answer_index": 3,
             "explanation": "She sketched screens and changed them based on the leader's feedback, which saved rebuilding later."
@@ -570,7 +570,7 @@ const content: TrackContent = {
             "options": [
               "Only for the very first screen of the app",
               "When the widget shows something that does not change by itself",
-              "When the widget must hold a counter that changes",
+              "When the widget must hold a counter that changes while the screen is open",
               "When the widget needs to talk to a server"
             ],
             "answer_index": 1,
@@ -579,7 +579,7 @@ const content: TrackContent = {
           {
             "prompt": "What does a yellow and black striped overflow bar mean?",
             "options": [
-              "The app has lost its internet connection",
+              "The app has lost its internet connection and cannot load",
               "The phone's battery is low",
               "The app has been published successfully",
               "A widget is bigger than the space available"
@@ -591,7 +591,7 @@ const content: TrackContent = {
             "prompt": "In the worked example, why is the text column wrapped in Expanded?",
             "options": [
               "So long names wrap instead of pushing the button off the screen",
-              "To add a border around the text",
+              "To add a border and rounded corners around the product name and price",
               "To hide the button",
               "To make the text bold"
             ],
@@ -601,9 +601,9 @@ const content: TrackContent = {
           {
             "prompt": "Why does the lesson suggest writing const before widgets that never change?",
             "options": [
-              "It makes them change colour automatically",
+              "It makes them change colour automatically when dark mode is on",
               "It is required for every widget",
-              "Flutter can reuse them instead of rebuilding them, which helps performance",
+              "Flutter can reuse them instead of rebuilding them",
               "It translates the text into other languages"
             ],
             "answer_index": 2,
@@ -622,7 +622,7 @@ const content: TrackContent = {
             "prompt": "Why use ListView.builder for a long list?",
             "options": [
               "It only builds the rows that are visible, saving memory",
-              "It downloads the items from the internet",
+              "It downloads every item from the internet before showing the list",
               "It sorts the items automatically",
               "It makes every row a button"
             ],
@@ -646,7 +646,7 @@ const content: TrackContent = {
               "Saves the form to a database",
               "Puts a new screen on top of the stack",
               "Closes the app",
-              "Sends a push notification"
+              "Sends a push notification to the user's phone"
             ],
             "answer_index": 1,
             "explanation": "Navigator.push adds a new screen on top of the navigation stack."
@@ -656,8 +656,8 @@ const content: TrackContent = {
             "options": [
               "It makes the app smaller",
               "It changes the app's colour",
-              "A number pad for amounts and phone numbers saves users time and mistakes",
-              "It is needed for the back button to work"
+              "The right keyboard saves users time and mistakes",
+              "It is needed for the Android back button to work on forms"
             ],
             "answer_index": 2,
             "explanation": "Showing the right keyboard makes typing faster and reduces errors on a phone."
@@ -686,7 +686,7 @@ const content: TrackContent = {
             "prompt": "Why should you avoid fixed heights around text?",
             "options": [
               "Text cannot be shown without a fixed height",
-              "Fixed heights make the app download slower",
+              "Fixed heights make the app download slower and use more storage",
               "Fixed heights stop the back button working",
               "Users with large text settings may have their text cut off"
             ],
@@ -698,8 +698,8 @@ const content: TrackContent = {
             "options": [
               "A tool for recording app videos",
               "A way to send SMS from an app",
-              "A chat feature in Flutter",
-              "Android's built in screen reader that reads the screen aloud"
+              "A Flutter chat feature that lets users talk back to support staff",
+              "Android's screen reader, which reads the screen aloud"
             ],
             "answer_index": 3,
             "explanation": "TalkBack is the Android screen reader used by people with low or no vision."
@@ -710,7 +710,7 @@ const content: TrackContent = {
               "Remove the icon completely",
               "Give it a label, for example with a tooltip or Semantics",
               "Make it smaller",
-              "Make the icon red"
+              "Make the icon red so the screen reader knows it is important"
             ],
             "answer_index": 1,
             "explanation": "A tooltip or Semantics label gives the screen reader words to read for the button."
@@ -727,7 +727,7 @@ const content: TrackContent = {
           {
             "prompt": "What is state in a mobile app?",
             "options": [
-              "The name of the app on the Play Store",
+              "The name and icon the app shows on the Play Store listing",
               "The data that decides what the screen shows right now",
               "The region of Ghana where the app is used",
               "The colour scheme of the app"
@@ -740,8 +740,8 @@ const content: TrackContent = {
             "options": [
               "Chooses the app's font",
               "Sends the app to the Play Store",
-              "Draws buttons on the screen",
-              "Fetches data from the network and reads and writes local storage"
+              "Draws widgets on the screen and reacts when the user taps them",
+              "Fetches from the network and reads and writes local storage"
             ],
             "answer_index": 3,
             "explanation": "The repository sits in the data layer and handles network and local storage."
@@ -749,10 +749,10 @@ const content: TrackContent = {
           {
             "prompt": "Why should widgets not call the server directly?",
             "options": [
-              "Widgets are not allowed to use the internet on Android",
+              "Widgets are not allowed to use the internet on Android phones",
               "It makes the app download faster",
               "Servers only accept requests from databases",
-              "Keeping layers separate makes the app easier to test and change"
+              "Separate layers make the app easier to test and change"
             ],
             "answer_index": 3,
             "explanation": "Separating UI, state and data means changes in one layer do not break the others."
@@ -761,9 +761,9 @@ const content: TrackContent = {
             "prompt": "In the survey example, what happened to forms completed with no network?",
             "options": [
               "They were sent by SMS immediately",
-              "They were lost and had to be filled again",
+              "They were lost and had to be filled in again the next morning",
               "The app refused to save them",
-              "They were saved on the phone and uploaded when a connection returned"
+              "They were saved on the phone and uploaded later"
             ],
             "answer_index": 3,
             "explanation": "The repository saved forms locally first and uploaded them later, so nothing was lost."
@@ -780,8 +780,8 @@ const content: TrackContent = {
           {
             "prompt": "What happens when you call setState in a StatefulWidget?",
             "options": [
-              "The data is saved to the server",
-              "Flutter rebuilds the widget so the screen shows the new state",
+              "The data is saved to the server so other phones see it",
+              "Flutter rebuilds the widget to show the new state",
               "The app restarts",
               "The widget is deleted"
             ],
@@ -793,7 +793,7 @@ const content: TrackContent = {
             "options": [
               "Writing const before a widget",
               "Changing a value without setState, so the screen does not update",
-              "Calling setState too many times in a row",
+              "Calling setState too many times in a row, which makes the app crash",
               "Using a Column instead of a Row"
             ],
             "answer_index": 1,
@@ -804,7 +804,7 @@ const content: TrackContent = {
             "options": [
               "The list of permissions the app requests",
               "Data that many parts of the app share, such as a cart total",
-              "State that only one button needs",
+              "State that only one button needs, kept inside its own widget",
               "The app's version number"
             ],
             "answer_index": 1,
@@ -815,7 +815,7 @@ const content: TrackContent = {
             "options": [
               "Clears the cart",
               "Tells widgets that depend on the model to rebuild",
-              "Sends a push notification to the user",
+              "Sends a push notification to the user about the change",
               "Writes data to the phone's storage"
             ],
             "answer_index": 1,
@@ -846,7 +846,7 @@ const content: TrackContent = {
             "options": [
               "The thing you asked for was not found",
               "The server crashed",
-              "The user must update the app",
+              "The user must update the app before it can connect",
               "The request succeeded"
             ],
             "answer_index": 0,
@@ -855,7 +855,7 @@ const content: TrackContent = {
           {
             "prompt": "Why convert JSON maps into your own Dart classes with fromJson?",
             "options": [
-              "It makes the server respond faster",
+              "It makes the server respond faster and use less of the data bundle",
               "The rest of your code can then use safe, typed objects",
               "JSON cannot be read by Dart at all",
               "It is the only way to show a list"
@@ -878,7 +878,7 @@ const content: TrackContent = {
             "prompt": "Which habit helps save users' data bundles?",
             "options": [
               "Downloading the full list every time a screen opens",
-              "Using larger images so they look clearer",
+              "Using larger images so they look sharp and clear on small screens",
               "Requesting data in pages and reusing data you already have",
               "Removing timeouts so requests always finish"
             ],
@@ -899,7 +899,7 @@ const content: TrackContent = {
             "options": [
               "A file in the downloads folder",
               "Key value storage such as shared_preferences",
-              "A large SQLite table",
+              "A large SQLite table with a column for every setting",
               "A push notification"
             ],
             "answer_index": 1,
@@ -911,7 +911,7 @@ const content: TrackContent = {
               "It sends the query to the server",
               "It is required to show a list",
               "It protects against SQL injection and related bugs",
-              "It makes the database smaller"
+              "It makes the database smaller and the queries run faster"
             ],
             "answer_index": 2,
             "explanation": "Parameters keep user input separate from the SQL command, preventing injection."
@@ -920,7 +920,7 @@ const content: TrackContent = {
             "prompt": "Where should you store a user's sign in token?",
             "options": [
               "Inside the app's source code",
-              "In plain shared_preferences",
+              "In plain shared_preferences, next to the language setting",
               "In a public file on the phone",
               "In secure storage that uses Android's Keystore"
             ],
@@ -931,7 +931,7 @@ const content: TrackContent = {
             "prompt": "What are database migrations for?",
             "options": [
               "Translating the app",
-              "Uploading data to the Play Store",
+              "Uploading the latest database file to the Play Store with each release",
               "Moving the app to a new phone",
               "Upgrading saved data when the database structure changes"
             ],
@@ -962,7 +962,7 @@ const content: TrackContent = {
             "prompt": "Which kind of action should usually stay online only?",
             "options": [
               "Writing a note",
-              "Recording a farm visit",
+              "Recording a farm visit with notes and a photo",
               "Confirming a payment or money transfer",
               "Saving a survey answer"
             ],
@@ -973,9 +973,9 @@ const content: TrackContent = {
             "prompt": "Why create a unique ID for each record on the phone?",
             "options": [
               "So the app does not need a database",
-              "So the user can see the record faster",
+              "So the user can see the new record faster on a slow phone",
               "So the record takes less space",
-              "So the server can recognise the same record if it arrives twice"
+              "So the server can spot the same record arriving twice"
             ],
             "answer_index": 3,
             "explanation": "Phone created IDs let the server ignore duplicates after retries."
@@ -985,7 +985,7 @@ const content: TrackContent = {
             "options": [
               "It only works on iPhones",
               "It never saves any data",
-              "It uses too much storage",
+              "It uses too much storage by keeping every old version",
               "It can silently overwrite someone else's edit"
             ],
             "answer_index": 3,
@@ -1004,9 +1004,9 @@ const content: TrackContent = {
             "prompt": "What is the golden rule described in this lesson?",
             "options": [
               "Payments should be confirmed by the app itself",
-              "The app is not trusted, so secrets and important decisions belong on a server",
+              "Secrets and important decisions belong on a server, not in the app",
               "Every app must use SMS instead of push notifications",
-              "Apps should store all keys to work offline"
+              "Apps should store all keys inside the app so they keep working offline"
             ],
             "answer_index": 1,
             "explanation": "Because apps can be unpacked and altered, secrets and decisions like payment status must live on a server."
@@ -1026,7 +1026,7 @@ const content: TrackContent = {
             "prompt": "What does the lesson suggest to avoid unnecessary costs?",
             "options": [
               "Send an SMS for every update",
-              "Store everything in the app to avoid using a server",
+              "Store everything inside the app so you never have to pay for a server",
               "Use a free push notification instead of an SMS where it will do",
               "Avoid reading pricing pages"
             ],
@@ -1038,7 +1038,7 @@ const content: TrackContent = {
             "options": [
               "Collect only what you need, protect it and be honest about its use",
               "Share it with other apps to improve features",
-              "Collect as much as possible in case it is useful later",
+              "Collect as much as possible in case it becomes useful for a later feature",
               "Keep it secret from users"
             ],
             "answer_index": 0,
@@ -1056,10 +1056,10 @@ const content: TrackContent = {
           {
             "prompt": "What is a backend as a service?",
             "options": [
-              "Ready made server features, such as sign in and a cloud database, that you use through a package",
+              "Ready made server features you use through a package in your app",
               "A paid course on backend development",
               "A tool for designing app icons",
-              "A phone that runs servers"
+              "A cheap server you rent and manage yourself, installing everything by hand"
             ],
             "answer_index": 0,
             "explanation": "Services such as Firebase provide hosted backend features so you do not have to run your own servers."
@@ -1070,7 +1070,7 @@ const content: TrackContent = {
               "It is the only method Firebase supports",
               "It does not need any network",
               "Many people use a phone number rather than email",
-              "It never costs the provider anything"
+              "It never costs the provider anything to send the code"
             ],
             "answer_index": 2,
             "explanation": "The lesson notes that many people do not use email, so phone sign in fits."
@@ -1081,7 +1081,7 @@ const content: TrackContent = {
               "Making the app icon hard to find",
               "Using a long app name",
               "Security rules on the server that decide who can read and write",
-              "Keeping the configuration file secret"
+              "Keeping the configuration file secret so nobody can find your project"
             ],
             "answer_index": 2,
             "explanation": "The config file only identifies the project, so server side security rules are what protect data."
@@ -1090,7 +1090,7 @@ const content: TrackContent = {
             "prompt": "Where should a payment provider's secret key go?",
             "options": [
               "In shared_preferences",
-              "In the Firebase configuration file",
+              "In the Firebase configuration file inside the app",
               "In the app's source code",
               "In cloud functions or your own server"
             ],
@@ -1122,8 +1122,8 @@ const content: TrackContent = {
             "options": [
               "Because prices cannot be sent over the internet",
               "To make the request smaller",
-              "Because the provider only accepts order IDs",
-              "So the server uses the real price and a changed app cannot pay less"
+              "Because the provider only accepts order IDs, never amounts in cedis",
+              "So the server uses the real price, even if the app was changed"
             ],
             "answer_index": 3,
             "explanation": "The server looks up the real price, so a tampered app cannot change what is charged."
@@ -1133,8 +1133,8 @@ const content: TrackContent = {
             "options": [
               "A type of mobile money wallet",
               "The customer's PIN",
-              "A URL on your server that the provider calls with the payment result",
-              "A button in the app that confirms payment"
+              "A URL on your server that the provider calls with the result",
+              "A button in the app that confirms payment once the customer taps it"
             ],
             "answer_index": 2,
             "explanation": "Providers call your webhook to tell your server whether a payment succeeded or failed."
@@ -1206,9 +1206,9 @@ const content: TrackContent = {
           {
             "prompt": "Why does the lesson suggest writing GHS instead of the cedi sign in SMS?",
             "options": [
-              "The cedi sign is not allowed in Ghana",
+              "The cedi sign is not allowed in SMS messages sent within Ghana",
               "GHS is shorter to type",
-              "Special characters can switch the encoding, fitting fewer characters and raising cost",
+              "Special characters can change the encoding and raise the cost",
               "SMS cannot contain numbers"
             ],
             "answer_index": 2,
@@ -1387,10 +1387,10 @@ const content: TrackContent = {
           {
             "prompt": "What does Flutter's compute function help with?",
             "options": [
-              "Measuring the app's download size",
+              "Measuring the app's download size and which packages are largest",
               "Sending push notifications",
               "Signing the release build",
-              "Running heavy work in a separate isolate so the screen does not freeze"
+              "Running heavy work in an isolate so the screen does not freeze"
             ],
             "answer_index": 3,
             "explanation": "Compute moves heavy work such as large JSON parsing off the main thread."
@@ -1420,8 +1420,8 @@ const content: TrackContent = {
             "options": [
               "It is needed for hot reload",
               "It makes the app download faster",
-              "Git cannot store small files",
-              "It proves updates come from you, and leaking it would let others sign as you"
+              "Git cannot store small binary files, so pushing the key would fail",
+              "It proves uploads come from you, so anyone with it could sign as you"
             ],
             "answer_index": 3,
             "explanation": "The key is private proof of authorship, so it must be safe, backed up and never public."
@@ -1482,8 +1482,8 @@ const content: TrackContent = {
           {
             "prompt": "How should you treat years of experience listed in junior adverts?",
             "options": [
-              "Never apply unless you match exactly",
-              "As a guide, since a portfolio of real apps can stand in for some experience",
+              "Never apply unless you match the years listed in the advert exactly",
+              "As a guide, since real apps can stand in for some experience",
               "As a reason to lie on your CV",
               "As a sign the advert is fake"
             ],
@@ -1537,8 +1537,8 @@ const content: TrackContent = {
             "options": [
               "Your favourite programming language",
               "How much the app cost to build",
-              "Why you made choices such as using SQLite, or how the app handles dropped connections",
-              "The names of every package version"
+              "Why you made choices such as using SQLite",
+              "The names and exact versions of every package the app uses"
             ],
             "answer_index": 2,
             "explanation": "This section shows employers how you think, by explaining real choices."
@@ -1548,8 +1548,8 @@ const content: TrackContent = {
             "options": [
               "Copy a solution from the internet",
               "Ignore it and wait for an interview",
-              "Do the minimum and skip error handling",
-              "Treat it like a portfolio project with clean code, a README and loading and error states"
+              "Do only the minimum asked and skip loading and error states to save time",
+              "Treat it like a portfolio project, with a README and error handling"
             ],
             "answer_index": 3,
             "explanation": "Careful, complete take home work shows the same qualities as a strong portfolio project."
@@ -1579,8 +1579,8 @@ const content: TrackContent = {
             "options": [
               "Kotlin only runs on iPhones",
               "Kotlin replaces the need for Git",
-              "Some employers ask for Kotlin alongside Flutter, and it helps with platform specific problems",
-              "Flutter apps cannot be published without Kotlin"
+              "Some employers ask for it, and it helps with platform specific problems",
+              "Flutter apps cannot be published on the Play Store without a Kotlin module"
             ],
             "answer_index": 2,
             "explanation": "Some adverts ask for Kotlin as well as Flutter, and native knowledge helps fix platform issues."
@@ -1600,8 +1600,8 @@ const content: TrackContent = {
             "prompt": "What is Jetpack Compose?",
             "options": [
               "A payment provider",
-              "The modern toolkit for building Android screens from composable functions",
-              "A database library for Android",
+              "The modern toolkit for building Android screens",
+              "A database library for storing Android app data offline",
               "A tool for compressing images"
             ],
             "answer_index": 1,

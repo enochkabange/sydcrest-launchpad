@@ -2,7 +2,7 @@ import { RES } from "./resources";
 import type { ResourceDraft, RoadmapDraft } from "./types";
 
 /**
- * Tier B outline (issue #96): topics and free resources only, lessons to follow.
+ * Outline from issue #96; full SydCrest lessons in content/data-science.content.ts (issue #198).
  * Research and sources: src/content/research/data-science.md.
  * Track specific links not in the shared pool; each checked to resolve (October 2026).
  */
@@ -21,6 +21,10 @@ const pgWindow = r("PostgreSQL tutorial: Window functions", "https://www.postgre
 const carpentryGit = r("Software Carpentry: Version control with Git", "https://swcarpentry.github.io/git-novice/", "practice");
 const sklearnStart = r("scikit learn: Getting started", "https://scikit-learn.org/stable/getting_started.html");
 const sklearnCv = r("scikit learn: Cross validation", "https://scikit-learn.org/stable/modules/cross_validation.html");
+const sklearnPreprocessing = r(
+  "scikit learn: Preprocessing data",
+  "https://scikit-learn.org/stable/modules/preprocessing.html",
+);
 const mlccOverfitting = r(
   "Google ML Crash Course: Overfitting",
   "https://developers.google.com/machine-learning/crash-course/overfitting",
@@ -159,7 +163,7 @@ export const dataScience: RoadmapDraft = {
       slug: "predictive-modelling",
       title: "Predictive modelling",
       summary:
-        "Prediction helps organisations plan, such as estimating which customers may stop using a service. This section covers building models and checking them honestly.",
+        "Prediction helps organisations plan, such as estimating which customers may stop using a service. This section covers building features and models for real decisions and checking them honestly.",
       parent: null,
       optional: false,
       resources: [],
@@ -172,6 +176,15 @@ export const dataScience: RoadmapDraft = {
       parent: "predictive-modelling",
       optional: false,
       resources: [RES.kaggleMl, sklearnStart, RES.mlCrash],
+    },
+    {
+      slug: "features-for-decisions",
+      title: "Feature engineering",
+      summary:
+        "The columns you build from raw records, such as days since a farmer's last loan repayment or a household's distance to the nearest clinic, usually matter more than the choice of algorithm. Learn to create, encode and scale features that carry real meaning without leaking the answer into the model.",
+      parent: "predictive-modelling",
+      optional: false,
+      resources: [sklearnPreprocessing, RES.kaggleMl],
     },
     {
       slug: "model-validation",

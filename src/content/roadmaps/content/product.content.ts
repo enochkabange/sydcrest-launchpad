@@ -75,7 +75,7 @@ Each lesson has an explanation, a short practice task and a quiz. The people, bu
             "What does a product person usually focus on?",
             [
               "Making sure the team builds the right thing in a sensible order",
-              "Writing most of the code themselves",
+              "Writing most of the code themselves so the team ships features faster",
               "Designing every screen alone",
               "Handling the company accounts",
             ],
@@ -163,8 +163,8 @@ Titles vary a lot between companies. "Product Executive", "Product Officer" or "
           q(
             "What does product operations mainly do?",
             [
-              "Keeps a live product running smoothly, including onboarding, guides and escalations",
-              "Sets the company's long term strategy",
+              "Keeps a live product running smoothly, with onboarding, guides and escalations",
+              "Sets the company's long term strategy and decides which new markets to enter next",
               "Writes all the backend code",
               "Designs the company logo",
             ],
@@ -174,7 +174,7 @@ Titles vary a lot between companies. "Product Executive", "Product Officer" or "
           q(
             "In the farmers' market example, what did Mariama the product analyst discover?",
             [
-              "Buyers wanted a delivery feature",
+              "Buyers wanted a delivery feature added to the app",
               "Orders moved by phone calls",
               "Farmer leaders needed training",
               "Many farmers registered but never listed produce",
@@ -255,7 +255,7 @@ The lesson: start from how people live today, then design the smallest change th
               "USSD works on any phone without internet",
               "USSD looks more modern",
               "USSD has unlimited screen space",
-              "USSD is required for card payments",
+              "USSD is required by banks for all card payments",
             ],
             0,
             "USSD works on basic phones without data, so nobody is left out.",
@@ -274,7 +274,7 @@ The lesson: start from how people live today, then design the smallest change th
           q(
             "Why can a WhatsApp number plus a spreadsheet be a good first version of a product?",
             [
-              "WhatsApp replaces the need to talk to users",
+              "WhatsApp replaces the need to talk to users, since they post their needs in groups",
               "Spreadsheets never make mistakes",
               "People already use WhatsApp, and downloading a new app costs data and storage",
               "Apps are not allowed in Ghana",
@@ -288,7 +288,7 @@ The lesson: start from how people live today, then design the smallest change th
               "He added more charts",
               "He planned USSD, small daily saving and SMS confirmations",
               "He removed SMS confirmations",
-              "He made the feature card only",
+              "He made the feature card only, for traders with bank accounts",
             ],
             1,
             "Traders saved small amounts daily, trusted known people and some used basic phones, so he adjusted the plan.",
@@ -347,7 +347,7 @@ You do not need to be an accountant. You need to spot when a feature changes the
             "What is margin?",
             [
               "What is left from each sale after its direct costs",
-              "All the money a company has in the bank",
+              "All the money a company has in the bank at the end of the month",
               "The number of customers",
               "The price shown on the app",
             ],
@@ -357,7 +357,7 @@ You do not need to be an accountant. You need to spot when a feature changes the
           q(
             "Why do unit economics matter?",
             [
-              "They show how many staff to hire",
+              "They show how many staff to hire as orders grow each month",
               "They decide the app's colour scheme",
               "They only matter for large banks",
               "If one order loses money, more orders lose more money",
@@ -445,7 +445,7 @@ Strong communication is a habit you can practise daily, in any job, starting now
             "Who counts as a stakeholder?",
             [
               "Anyone who cares about or affects the product",
-              "Only the company's investors",
+              "Only the company's investors and board members",
               "Only paying customers",
               "Only the engineering team",
             ],
@@ -466,7 +466,7 @@ Strong communication is a habit you can practise daily, in any job, starting now
           q(
             "Which is the recommended shape for asking for a decision?",
             [
-              "Facts only, so people decide for themselves",
+              "Facts only, with no recommendation, so people decide for themselves",
               "A long report with every detail",
               "Problem, options, recommendation and why, decision needed",
               "A recommendation with no options",
@@ -480,7 +480,7 @@ Strong communication is a habit you can practise daily, in any job, starting now
               "More field officers",
               "Approval to pilot a duplicate warning with two officers",
               "A new phone for every officer",
-              "Permission to delete all records",
+              "Permission to delete all duplicate records from the system",
             ],
             1,
             "Her update asked for one clear decision: approval for a small pilot.",
@@ -532,8 +532,8 @@ One afternoon of discovery changed what the team should build first. That is the
           q(
             "What is the main purpose of discovery?",
             [
-              "To learn cheaply whether a problem is real and worth solving before building",
-              "To build the full product quickly",
+              "To learn cheaply whether a problem is real and worth solving",
+              "To build the full product quickly so real users can try every feature",
               "To design the company logo",
               "To hire engineers",
             ],
@@ -544,9 +544,9 @@ One afternoon of discovery changed what the team should build first. That is the
             "Which of these is a problem statement rather than a solution?",
             [
               "Farmers need an app",
-              "We should build a dashboard",
+              "We should build a dashboard that shows farmers the best tomato prices in each market",
               "Let us add a map feature",
-              "Farmers sell tomatoes at a loss because they cannot reach buyers before the produce spoils",
+              "Farmers sell tomatoes at a loss because they cannot reach buyers in time",
             ],
             3,
             "A problem statement describes who struggles and what it costs them, without naming a solution.",
@@ -568,7 +568,7 @@ One afternoon of discovery changed what the team should build first. That is the
               "They needed maps",
               "Matching household names spelled differently across villages",
               "They had no phones",
-              "They wanted dashboards",
+              "They wanted dashboards showing registrations for each village",
             ],
             1,
             "Watching officers showed the real problem was duplicate and mismatched names.",
@@ -635,7 +635,7 @@ After six interviews, she looks for patterns that appear again and again, not si
               "Past behaviour is a better guide than predictions people make to be polite",
               "Past events are easier to forget",
               "Future questions take too long",
-              "People do not like talking about the past",
+              "People do not like talking about the past because it brings up old mistakes",
             ],
             0,
             "People are poor at predicting their behaviour and often say what you want to hear.",
@@ -643,7 +643,7 @@ After six interviews, she looks for patterns that appear again and again, not si
           q(
             "Which is the stronger interview question?",
             [
-              "Would you use an app to save daily?",
+              "Would you use an app that reminds you to save a little every day?",
               "Do you like my savings idea?",
               "How much would you pay for my app?",
               "Tell me about the last time you saved money and what went wrong",
@@ -655,7 +655,7 @@ After six interviews, she looks for patterns that appear again and again, not si
             "Why should you avoid pitching your idea during the interview?",
             [
               "It is illegal",
-              "It makes the interview too short",
+              "It makes the interview too short to cover all of your planned questions",
               "People start reacting to your idea instead of describing their lives",
               "People always copy ideas",
             ],
@@ -667,7 +667,7 @@ After six interviews, she looks for patterns that appear again and again, not si
             [
               "Traders want charts",
               "Traders value a commitment that makes money hard to spend",
-              "Traders prefer card payments",
+              "Traders prefer card payments because cash is too easy to lose",
               "Traders do not save at all",
             ],
             1,
@@ -742,7 +742,7 @@ He chose a problem with evidence, checked the competition, and stated what would
             [
               "Is it the most exciting problem?",
               "Can it be solved with AI?",
-              "Will it look good in a pitch deck?",
+              "Will it look good in a pitch deck for investors?",
               "Do people already spend effort or money on it?",
             ],
             3,
@@ -752,7 +752,7 @@ He chose a problem with evidence, checked the competition, and stated what would
             "Why should you list what people use today, including informal methods?",
             [
               "To copy it exactly",
-              "Because informal methods do not count",
+              "Because informal methods do not count as real competition for a product",
               "Because a new product must be clearly better than the current habit",
               "To avoid talking to users",
             ],
@@ -762,7 +762,7 @@ He chose a problem with evidence, checked the competition, and stated what would
           q(
             "What is the purpose of scoring problems in a table?",
             [
-              "The total gives the final answer automatically",
+              "The highest total gives the final answer, so no discussion is needed",
               "To force a discussion of the reasons behind each choice",
               "To impress the manager",
               "To avoid making a decision",
@@ -773,8 +773,8 @@ He chose a problem with evidence, checked the competition, and stated what would
           q(
             "What did Salifu say would show he was wrong?",
             [
-              "If farmers kept selling to middlemen even when buyers offered better prices",
-              "If farmers liked the app's colours",
+              "If farmers kept selling to middlemen even when buyers paid more",
+              "If farmers in his interviews said they did not like the app's colours",
               "If weather forecasts improved",
               "If record keeping became popular",
             ],
@@ -841,7 +841,7 @@ A manual MVP is a test, not a business plan. When the work becomes too much to d
           q(
             "What is a concierge MVP?",
             [
-              "A fully built app with every feature",
+              "A fully built app with every feature, released to a few users to test demand",
               "A hotel booking app",
               "A marketing campaign",
               "A service run by hand that delivers the real benefit to test demand",
@@ -855,7 +855,7 @@ A manual MVP is a test, not a business plan. When the work becomes too much to d
               "Because the law requires it",
               "To make the test longer",
               "To stop you explaining away weak results later",
-              "So customers can see it",
+              "So customers can see the rule before they agree to join",
             ],
             2,
             "Deciding in advance keeps you honest about what the results mean.",
@@ -936,7 +936,7 @@ By the end of this section you will be able to produce each of these pieces your
           q(
             "Why does clear definition matter for a team?",
             [
-              "It makes the product look professional",
+              "It makes the product look more professional to investors and partners from day one",
               "It removes the need for testing",
               "It means users never complain",
               "Engineers build what is written down and discussed, so vagueness causes rework",
@@ -948,7 +948,7 @@ By the end of this section you will be able to produce each of these pieces your
             "Which statement is specific and testable?",
             [
               "The app should be fast",
-              "Users should love the app",
+              "Users should love the app and recommend it to friends and family",
               "The order list loads within three seconds on a 3G connection",
               "Make it modern",
             ],
@@ -960,7 +960,7 @@ By the end of this section you will be able to produce each of these pieces your
             [
               "Head teachers had no phones",
               "Totals were copied by hand three times, adding errors each time",
-              "The district office wanted photos",
+              "The district office wanted photos of every meal served each school day",
               "Meals were not being served",
             ],
             1,
@@ -1033,7 +1033,7 @@ She did not need to code. She needed to look closely, ask why and draw it clearl
             "Why draw a separate column or lane for each role in a process map?",
             [
               "It looks more colourful",
-              "It removes the need for decisions",
+              "It removes the need for decision points in the map",
               "Roles do not matter in processes",
               "It makes handovers between people obvious",
             ],
@@ -1044,7 +1044,7 @@ She did not need to code. She needed to look closely, ask why and draw it clearl
             "Where should you get information for an as is map?",
             [
               "Only from senior managers",
-              "From a competitor's website",
+              "From a competitor's website and the company's old training manual",
               "From people who actually do the process, by watching or asking",
               "From your imagination",
             ],
@@ -1054,7 +1054,7 @@ She did not need to code. She needed to look closely, ask why and draw it clearl
           q(
             "What is a to be map?",
             [
-              "A map of the current process",
+              "A map of the current process as senior managers believe it works",
               "An improved version of the process that removes painful steps",
               "A list of staff names",
               "A financial forecast",
@@ -1150,7 +1150,7 @@ He also adds a non functional requirement: the order screen must work on low cos
           q(
             "Why is the so that part of a user story important?",
             [
-              "It makes the story longer",
+              "It makes the story longer so engineers have more detail to estimate from",
               "It names the engineer",
               "It explains why, so the team can suggest better ways to meet the need",
               "It sets the deadline",
@@ -1185,7 +1185,7 @@ He also adds a non functional requirement: the order screen must work on low cos
             [
               "To make the story fail",
               "Because all items are always unavailable",
-              "To remove the repeat feature",
+              "To remove the repeat order feature from the release",
               "To cover an unhappy path so the team handles it",
             ],
             3,
@@ -1246,9 +1246,9 @@ Her engineer and designer read it in five minutes and start work. When the sales
           q(
             "What is the main purpose of a product spec?",
             [
-              "To replace all conversation with the team",
+              "To replace all conversation with the team so nobody needs meetings",
               "To list every engineer's tasks by hour",
-              "To put the why, who, what and success measure in one place so the team can work without waiting",
+              "To put the why, who, what and success measure in one place",
               "To advertise the product",
             ],
             2,
@@ -1257,7 +1257,7 @@ Her engineer and designer read it in five minutes and start work. When the sales
           q(
             "Why include an Out of scope section?",
             [
-              "It lists features that will never be built",
+              "It lists features that will never be built, so nobody asks about them again",
               "It prevents many arguments by stating what is deliberately not being done",
               "It is required by law",
               "It makes the spec longer",
@@ -1280,9 +1280,9 @@ Her engineer and designer read it in five minutes and start work. When the sales
             "What did Amina do when the sales team asked about group savings?",
             [
               "Added it immediately",
-              "Cancelled the project",
+              "Cancelled the project and started a group savings feature instead",
               "Ignored them",
-              "Pointed to the out of scope section and added it to the list for later",
+              "Pointed to the out of scope section and listed it for later",
             ],
             3,
             "The out of scope section helped her handle the request calmly.",
@@ -1376,7 +1376,7 @@ She shares it in the team WhatsApp group with one line of reasoning for each ite
             "Why write roadmap items as problems or goals rather than features?",
             [
               "It leaves room for the team to find the best solution",
-              "Features are not allowed on roadmaps",
+              "Features are not allowed on roadmaps that stakeholders can see",
               "It hides the plan from stakeholders",
               "Goals never change",
             ],
@@ -1388,7 +1388,7 @@ She shares it in the team WhatsApp group with one line of reasoning for each ite
             [
               "The manager asked for it",
               "It was the newest idea",
-              "It needed a finance partner",
+              "It needed a finance partner, so it had to start before anything else",
               "It caused many support calls and lost trust, and was low effort",
             ],
             3,
@@ -1463,10 +1463,10 @@ Neither action involved code. Both kept the team building the right thing.`,
           q(
             "How did Sumaila answer the question about households without phones?",
             [
-              "He called field officers, then gave a clear answer and updated the spec",
+              "He called field officers, then answered clearly and updated the spec",
               "He guessed",
               "He asked the director",
-              "He told the engineer to decide",
+              "He told the engineer to decide, since it was only a small technical detail",
             ],
             0,
             "He checked with users and recorded the decision.",
@@ -1476,7 +1476,7 @@ Neither action involved code. Both kept the team building the right thing.`,
             [
               "Added it immediately",
               "Refused forever",
-              "Asked the engineer to work overtime",
+              "Asked the engineer to work overtime so both screens shipped this sprint",
               "Explained the current focus and moved it to the next sprint's list",
             ],
             3,
@@ -1536,7 +1536,7 @@ Notice how the short cycle caught a new need quickly.`,
           q(
             "What is the core idea of Agile?",
             [
-              "Plan everything for a year and deliver once",
+              "Plan everything for a year and deliver it all at once at the end",
               "Avoid talking to users",
               "Build in small pieces, show results often and adjust",
               "Skip testing to go faster",
@@ -1559,7 +1559,7 @@ Notice how the short cycle caught a new need quickly.`,
             "What happens in a retrospective?",
             [
               "The team discusses what went well, what did not and what to improve",
-              "The team demos to customers",
+              "The team demos the finished work to customers and collects their feedback",
               "The manager assigns salaries",
               "Engineers write code",
             ],
@@ -1571,7 +1571,7 @@ Notice how the short cycle caught a new need quickly.`,
             [
               "Kanban has no board",
               "Kanban uses yearly plans",
-              "Kanban has no backlog of any kind",
+              "Kanban has no backlog, so work is chosen fresh each morning",
               "Kanban works from a board without fixed sprints",
             ],
             3,
@@ -1646,7 +1646,7 @@ Technical literacy did not make him an engineer. It made him a better partner to
             [
               "A type of phone",
               "A set of agreed requests one system can make to another",
-              "A database table",
+              "A secure database where one system keeps another system's records",
               "A design tool",
             ],
             1,
@@ -1667,7 +1667,7 @@ Technical literacy did not make him an engineer. It made him a better partner to
             "Why can a fix to a mobile app take days to reach everyone?",
             [
               "Engineers work slowly",
-              "Databases are offline at night",
+              "Databases are switched off at night to save server costs",
               "USSD menus block updates",
               "Apps go through store review and users must update",
             ],
@@ -1691,7 +1691,7 @@ Technical literacy did not make him an engineer. It made him a better partner to
               "Cancel the feature",
               "A daily reminder SMS with a one step approval prompt",
               "Use card payments only",
-              "Ask customers to visit a branch",
+              "Ask customers to visit a branch to sign a deduction form",
             ],
             1,
             "Understanding the integration's limits helped him find a cheaper solution.",
@@ -1757,7 +1757,7 @@ Wumpini described problems with evidence. Ayishetu designed the fix. That is goo
             "What is a wireframe?",
             [
               "A rough sketch of a screen showing layout and content",
-              "The final, polished design",
+              "The final, polished design with colours, ready for engineers",
               "A type of cable",
               "A database diagram",
             ],
@@ -1767,7 +1767,7 @@ Wumpini described problems with evidence. Ayishetu designed the fix. That is goo
           q(
             "Which is the most useful design feedback?",
             [
-              "I don't like the blue",
+              "I don't like the blue, so please change it to the green our brand uses",
               "Make it look modern",
               "Copy a competitor",
               "Traders need to see their balance first, but it is below the fold",
@@ -1789,7 +1789,7 @@ Wumpini described problems with evidence. Ayishetu designed the fix. That is goo
           q(
             "What problems did Wumpini find in testing the farmer listing screen?",
             [
-              "Farmers wanted more colours",
+              "Farmers wanted more colours and bigger photos of their crops on screen",
               "Farmers did not understand SKU and struggled with decimal prices",
               "The app was too fast",
               "Farmers had no crops",
@@ -1867,7 +1867,7 @@ Mariama then recommends a pilot with five field officers in one district for two
             "What question does acceptance testing answer?",
             [
               "Does this meet the requirements and work for real users in real conditions?",
-              "Is the code written in the newest language?",
+              "Is the code written in the newest language and reviewed by a senior engineer?",
               "How much did the feature cost?",
               "Which engineer wrote it?",
             ],
@@ -1889,7 +1889,7 @@ Mariama then recommends a pilot with five field officers in one district for two
             "Which detail makes a bug report useful to an engineer?",
             [
               "Only the word broken",
-              "Your opinion of the design",
+              "Your opinion of the design and how it could look better",
               "Steps to reproduce, expected and actual results",
               "The tester's job title",
             ],
@@ -1913,7 +1913,7 @@ Mariama then recommends a pilot with five field officers in one district for two
               "Records appeared twice when the phone reconnected slowly",
               "Records disappeared",
               "The app would not open",
-              "Names were translated wrongly",
+              "Names were translated wrongly when officers switched language",
             ],
             0,
             "Her unhappy path test revealed duplicate records after slow reconnection.",
@@ -1979,9 +1979,9 @@ Within weeks, payout questions drop and the product manager asks Fuseini to join
           q(
             "What is an SOP?",
             [
-              "A type of software bug",
+              "A type of software bug that appears after an update on older phones",
               "A sales target",
-              "A standard operating procedure that keeps answers and processes consistent",
+              "A standard operating procedure that keeps work consistent",
               "A database table",
             ],
             2,
@@ -1992,7 +1992,7 @@ Within weeks, payout questions drop and the product manager asks Fuseini to join
             [
               "It avoids contact with users",
               "It shows where the product confuses people and which requirements were missed",
-              "It replaces the need for engineers",
+              "It replaces the need for engineers, because staff learn to fix problems by hand",
               "It only involves paperwork",
             ],
             1,
@@ -2002,7 +2002,7 @@ Within weeks, payout questions drop and the product manager asks Fuseini to join
             "What did Fuseini discover about farmers asking where their money was?",
             [
               "Payouts were weekly but nobody had told farmers",
-              "The payment system was broken",
+              "The payment system was broken for farmers in some districts",
               "Farmers had no phones",
               "Buyers were not paying",
             ],
@@ -2070,7 +2070,7 @@ A week later, three officers report the app "losing" records. Hawa reproduces it
           q(
             "What is the aim of onboarding?",
             [
-              "To collect as much data as possible",
+              "To collect as much data as possible about each new user",
               "To sell more features",
               "To test the code",
               "To get a new user from signed up to getting value",
@@ -2082,8 +2082,8 @@ A week later, three officers report the app "losing" records. Hawa reproduces it
             "What is the difference between a help guide and an SOP?",
             [
               "They are the same thing",
-              "An SOP is for customers; a help guide is for engineers",
-              "A help guide answers user questions; an SOP tells staff how to handle situations consistently",
+              "An SOP is written for customers, while a help guide is written for the engineers",
+              "Help guides answer user questions; SOPs tell staff how to handle situations",
               "Help guides are only videos",
             ],
             2,
@@ -2095,7 +2095,7 @@ A week later, three officers report the app "losing" records. Hawa reproduces it
               "Whether the engineer is busy",
               "Whether you can reproduce it and how many users it affects",
               "The weather",
-              "Whether a competitor has the same bug",
+              "Whether a competitor's app has the same bug, so you can copy their fix",
             ],
             1,
             "Reproducing and sizing the issue makes escalation useful.",
@@ -2212,7 +2212,7 @@ She discovers that matured savings return to the wallet, but no SMS says so. Her
               "Telling people who reported a problem what you changed",
               "Deleting old feedback",
               "Blocking angry users",
-              "Ending the support line",
+              "Ending the support call once the problem is written down",
             ],
             0,
             "Closing the loop builds trust and encourages more feedback.",
@@ -2265,7 +2265,7 @@ He calls three of them. They explain that the sync often fails, so they go back 
           q(
             "What does data tell you, and what do interviews tell you?",
             [
-              "Data tells you why; interviews tell you what",
+              "Data tells you why people act; interviews tell you what they do",
               "Both tell you only what",
               "Neither is useful",
               "Data tells you what is happening; interviews tell you why",
@@ -2279,7 +2279,7 @@ He calls three of them. They explain that the sync often fails, so they go back 
               "A number about design",
               "A secret number",
               "A number that looks good but does not show real value",
-              "A number that is always accurate",
+              "A number that is always accurate because it comes straight from the database",
             ],
             2,
             "Downloads and sign ups can rise while few people use the product.",
@@ -2287,7 +2287,7 @@ He calls three of them. They explain that the sync often fails, so they go back 
           q(
             "Why might savings rising in December not prove a new feature worked?",
             [
-              "Data is always wrong in December",
+              "December data is always unreliable because many staff are on leave and records lag",
               "Christmas also changes how people earn and spend, so correlation is not cause",
               "Nobody saves in December",
               "Features never affect savings",
@@ -2394,8 +2394,8 @@ Start small with data you understand. The habit of asking a clear question first
             "What does GROUP BY town do in the example query?",
             [
               "Deletes towns",
-              "Makes a group for each town so orders can be counted and summed per town",
-              "Sorts towns alphabetically only",
+              "Makes a group for each town so orders can be counted per town",
+              "Sorts the rows alphabetically by town so the list is easier to read",
               "Joins two tables",
             ],
             1,
@@ -2405,7 +2405,7 @@ Start small with data you understand. The habit of asking a clear question first
             "What did Mariama do before analysing the orders?",
             [
               "Cleaned the data, fixing town spellings and removing test orders",
-              "Deleted half the data",
+              "Deleted half the orders so the spreadsheet would load faster on her phone",
               "Built a new app",
               "Asked buyers for passwords",
             ],
@@ -2415,7 +2415,7 @@ Start small with data you understand. The habit of asking a clear question first
           q(
             "According to the lesson, what habit matters more than any one tool?",
             [
-              "Using the most expensive software",
+              "Using the most powerful paid software your company can afford to buy",
               "Making charts colourful",
               "Writing very long queries",
               "Asking a clear question first, then cleaning, then counting",
@@ -2498,7 +2498,7 @@ Clear metrics told the team exactly where to look.`,
             [
               "Active users",
               "Traders who made at least three deposits in the past seven days",
-              "People who like the app",
+              "People who like the app and say they would recommend it to others",
               "Engagement",
             ],
             1,
@@ -2508,7 +2508,7 @@ Clear metrics told the team exactly where to look.`,
             "What is a guardrail metric?",
             [
               "A metric you do not want to worsen while chasing the main one",
-              "The main metric the team chases",
+              "The main metric the whole team chases and reports on every quarter",
               "A metric about security guards",
               "A secret metric",
             ],
@@ -2519,7 +2519,7 @@ Clear metrics told the team exactly where to look.`,
             "Why did retention fall in Abdul-Rahman's example?",
             [
               "The app was deleted",
-              "Interest rates dropped",
+              "Interest rates dropped, so traders moved their savings to a bank instead",
               "The SMS was too long",
               "Traders set amounts too high and stopped when deductions failed",
             ],
@@ -2604,7 +2604,7 @@ After four weeks, group B places noticeably more Monday orders, and the gap hold
               "To make the test faster",
               "So the groups are similar and differences come from the change",
               "Because managers prefer it",
-              "So only Accra users see the change",
+              "So only Accra users see the change before it reaches other regions",
             ],
             1,
             "Random assignment keeps the groups comparable.",
@@ -2615,7 +2615,7 @@ After four weeks, group B places noticeably more Monday orders, and the gap hold
               "To stop you from picking whichever number looks good",
               "It is a legal rule",
               "So the test can run forever",
-              "It does not matter when you decide",
+              "It does not matter, as long as you decide before sharing results",
             ],
             0,
             "Deciding in advance keeps the analysis honest.",
@@ -2683,9 +2683,9 @@ Think of your first job as a place to practise product skills, not a final desti
           q(
             "What does the lesson say about entry level product manager jobs in Ghana?",
             [
-              "They are very common",
+              "They are very common, since most companies prefer to train new graduates",
               "They require no skills",
-              "They are rare; most product manager roles ask for several years of experience",
+              "They are rare; most product manager roles ask for years of experience",
               "They only exist abroad",
             ],
             2,
@@ -2705,9 +2705,9 @@ Think of your first job as a place to practise product skills, not a final desti
           q(
             "How did Mohammed move toward product work?",
             [
-              "He started in customer support, shared weekly feedback summaries and took on product tasks",
+              "He shared weekly feedback summaries from support and took on product tasks",
               "He waited for a product manager job",
-              "He paid for a certificate",
+              "He paid for a product management certificate and applied for manager jobs straight away",
               "He built a large app alone",
             ],
             0,
@@ -2716,10 +2716,10 @@ Think of your first job as a place to practise product skills, not a final desti
           q(
             "What mindset does the lesson recommend for your first job?",
             [
-              "Treat it as a final destination",
+              "Treat it as a final destination and focus only on the duties in your contract",
               "Avoid extra tasks",
               "Only focus on salary",
-              "Treat it as a place to practise product skills and volunteer for product shaped tasks",
+              "Treat it as a place to practise and volunteer for product shaped tasks",
             ],
             3,
             "Volunteering for product tasks builds the evidence for a later move.",
@@ -2787,8 +2787,8 @@ Here is an illustration. Imagine Hawa, who studied agriculture in Tamale. She co
           q(
             "How can you grow product responsibility once you are in an adjacent role?",
             [
-              "Wait quietly for a promotion",
-              "Ask to help with product shaped tasks and share useful work with the product manager",
+              "Wait quietly for a promotion, because extra tasks outside your role can annoy managers",
+              "Help with product shaped tasks and share useful work with the product manager",
               "Avoid the product team",
               "Change jobs every month",
             ],
@@ -2809,7 +2809,7 @@ Here is an illustration. Imagine Hawa, who studied agriculture in Tamale. She co
           q(
             "How did Hawa build evidence before her M&E role?",
             [
-              "She paid for a course certificate only",
+              "She paid for an online course certificate and listed it on her CV",
               "She built a social media following",
               "She waited for a product manager job",
               "She volunteered to improve an NGO's farmer registration form",
@@ -2883,7 +2883,7 @@ Each is two pages, with photos of her maps and screenshots of her sheets. In an 
           q(
             "What is the main purpose of a product portfolio for a beginner?",
             [
-              "To show off design skills only",
+              "To show off polished screen designs and the tools you used to make them",
               "To list every course taken",
               "To prove how you think when you do not yet have product job experience",
               "To replace a CV entirely",
@@ -2907,7 +2907,7 @@ Each is two pages, with photos of her maps and screenshots of her sheets. In an 
             [
               "Report them honestly and explain what you learned",
               "Invent better numbers",
-              "Leave the project out completely",
+              "Leave the project out completely until you get better numbers",
               "Blame the users",
             ],
             0,
@@ -3017,7 +3017,7 @@ Practise aloud with a friend or record yourself on your phone or computer. Resea
           q(
             "Why did Fuseini choose fixed upfront fares?",
             [
-              "It was the easiest to build",
+              "It was the easiest option for engineers to build quickly in the first release",
               "The interviewer suggested it",
               "Competitors had it",
               "Price arguments came up most in his conversations and fixed fares build trust",
@@ -3028,7 +3028,7 @@ Practise aloud with a friend or record yourself on your phone or computer. Resea
           q(
             "How did Fuseini suggest measuring success?",
             [
-              "Number of app downloads",
+              "Number of app downloads in the first month, with store ratings as a guardrail",
               "Number of drivers hired",
               "Completed rides per rider per week, with cancelled rides as a guardrail",
               "Social media likes",

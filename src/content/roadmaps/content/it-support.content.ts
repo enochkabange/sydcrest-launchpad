@@ -46,7 +46,7 @@ You can learn most of this track on a phone or a computer. Some practice, such a
             options: [
               "Writing new software products for customers",
               "Keeping computers, phones, printers and networks working and helping people when they do not",
-              "Designing the company's logo and website",
+              "Designing the company's logo, website and printed adverts for new products",
               "Selling computers in a shop",
             ],
             answer_index: 1,
@@ -55,7 +55,7 @@ You can learn most of this track on a phone or a computer. Some practice, such a
           {
             prompt: "What does it mean to escalate a support request?",
             options: [
-              "Close it without fixing it",
+              "Close the ticket without fixing it and advise the user to buy a new device",
               "Ask the user to call back tomorrow",
               "Pass it to staff with deeper skills when it is beyond first line",
               "Charge the user extra money",
@@ -67,7 +67,7 @@ You can learn most of this track on a phone or a computer. Some practice, such a
             prompt: "In the Bolgatanga example, what did Hawa do first when the teacher said the computer was not working?",
             options: [
               "Opened the computer case",
-              "Reinstalled Windows",
+              "Reinstalled Windows to clear out any software faults",
               "Ordered a new monitor",
               "Asked exactly what was happening",
             ],
@@ -80,7 +80,7 @@ You can learn most of this track on a phone or a computer. Some practice, such a
               "So nothing is forgotten and the team can see what is happening",
               "Because users enjoy filling in forms",
               "To make the work take longer",
-              "Because tickets fix the problem automatically",
+              "Because the ticket system fixes common problems automatically once logged",
             ],
             answer_index: 0,
             explanation: "Tickets keep a record so requests are not lost and progress is visible.",
@@ -152,7 +152,7 @@ Issahaku reads two adverts. One, at a community bank, asks for a degree, five ye
             options: [
               "It pays the most",
               "You never need to talk to users",
-              "You only work with servers",
+              "You only work with servers and never deal with everyday user problems",
               "You see every kind of problem and learn fast",
             ],
             answer_index: 3,
@@ -162,8 +162,8 @@ Issahaku reads two adverts. One, at a community bank, asks for a degree, five ye
             prompt: "In the example, why did Issahaku apply for the food company role rather than the bank role?",
             options: [
               "The bank was too far away",
-              "It was first line work he could do now, while the bank role needed years of experience",
-              "The food company paid more",
+              "It was first line work he could do now, unlike the bank role",
+              "The food company paid more and offered free training in networking",
               "He did not want to work in finance",
             ],
             answer_index: 1,
@@ -240,7 +240,7 @@ Mariama, a help desk officer at an NGO office in Tamale, gets a call: "I cannot 
             options: [
               "The printer was out of paper",
               "The user had forgotten their password",
-              "The network cable was cut",
+              "The network cable behind the printer had been cut during building work",
               "The laptop's default printer had changed to another office's printer",
             ],
             answer_index: 3,
@@ -252,7 +252,7 @@ Mariama, a help desk officer at an NGO office in Tamale, gets a call: "I cannot 
               "Checking the whole thing works and asking the user to try it",
               "Sending the user a bill",
               "Closing the ticket before testing",
-              "Escalating every problem to the supplier",
+              "Escalating every problem to the supplier so they can confirm the fix",
             ],
             answer_index: 0,
             explanation: "Verifying means confirming full function with the user, and thinking about prevention.",
@@ -317,7 +317,7 @@ Fuseini builds a simple ticket system for a small clinic in Yendi using a free o
             prompt: "What is a service level agreement (SLA)?",
             options: [
               "An agreed target for how quickly tickets get a response and a fix",
-              "A contract to buy new laptops",
+              "A contract with a supplier to deliver and repair all the office laptops",
               "The password policy for staff",
               "A type of network cable",
             ],
@@ -408,7 +408,7 @@ Amina volunteers in the computer lab of a junior high school in Damongo. Three o
           {
             prompt: "Why do you touch a bare metal part of the case before working inside?",
             options: [
-              "To check the temperature",
+              "To check the temperature of the case before you open it up",
               "To release static electricity that can damage chips",
               "To switch the computer on",
               "To clean the case",
@@ -483,7 +483,7 @@ Sumaila is asked why a Wa NGO's reception desktop takes five minutes to start. H
             prompt: "What is the main advantage of an SSD over an HDD?",
             options: [
               "It has spinning platters",
-              "It always stores more data",
+              "It always stores more data for the same price as a hard drive",
               "It is far faster and has no moving parts",
               "It does not need a motherboard",
             ],
@@ -494,7 +494,7 @@ Sumaila is asked why a Wa NGO's reception desktop takes five minutes to start. H
             prompt: "A computer makes clicking noises and files are going missing. What should you do first?",
             options: [
               "Back up the files immediately",
-              "Add more RAM",
+              "Add more RAM so the computer can find the missing files",
               "Change the screen",
               "Install a new browser",
             ],
@@ -505,9 +505,9 @@ Sumaila is asked why a Wa NGO's reception desktop takes five minutes to start. H
             prompt: "What does the BIOS or UEFI firmware do?",
             options: [
               "Prints documents",
-              "Stores all your photos",
+              "Stores all your photos and documents when the computer is switched off",
               "Connects to Wi-Fi only",
-              "Starts the computer and checks hardware before the operating system loads",
+              "Starts the computer and checks hardware before the OS loads",
             ],
             answer_index: 3,
             explanation: "Firmware runs first at start up and hands over to the operating system.",
@@ -575,7 +575,7 @@ Wumpini maintains twelve laptops for a microfinance office in Tamale. After harm
             prompt: "What is preventive maintenance?",
             options: [
               "Looking after equipment before it fails",
-              "Buying new computers every year",
+              "Buying new computers every year so old ones never get the chance to fail",
               "Only fixing things after they break",
               "Installing games on staff computers",
             ],
@@ -596,7 +596,7 @@ Wumpini maintains twelve laptops for a microfinance office in Tamale. After harm
           {
             prompt: "What should you do with a laptop whose battery has swollen?",
             options: [
-              "Keep using it but charge it less",
+              "Keep using it but only charge it to half so it does not swell further",
               "Press the case flat",
               "Leave it in the sun",
               "Stop using the battery and replace it",
@@ -670,7 +670,7 @@ Abdul-Rahman supports a pharmacy in Bolgatanga. After a storm, the router and th
             prompt: "What does a UPS do that a surge protector does not?",
             options: [
               "Keeps equipment running for a short time when power fails",
-              "Makes the internet faster",
+              "Makes the internet faster by cleaning up the power going to the router",
               "Prints documents during an outage",
               "Turns off the lights",
             ],
@@ -679,14 +679,14 @@ Abdul-Rahman supports a pharmacy in Bolgatanga. After a storm, the router and th
           },
           {
             prompt: "Which device corrects voltage that is too low or too high?",
-            options: ["A network switch", "A USB hub", "A voltage stabiliser", "A printer"],
+            options: ["A network switch", "A surge protector strip", "A voltage stabiliser", "A printer"],
             answer_index: 2,
             explanation: "Stabilisers, or AVRs, keep the voltage steady.",
           },
           {
             prompt: "Why should a laser printer not be plugged into a small UPS?",
             options: [
-              "Laser printers cannot use 230 V",
+              "Laser printers cannot use 230 V, so the UPS must convert the power first",
               "The UPS will change the print colour",
               "Laser printers do not work during the day",
               "It draws a lot of power when warming up and can overload the UPS",
@@ -750,7 +750,7 @@ Hawa, at a Bolgatanga school, gets three calls: nobody can print to the staff ro
             prompt: "Nothing is printing and the print queue has a stuck job. What should you try?",
             options: [
               "Buy a new printer",
-              "Reinstall Windows",
+              "Reinstall Windows and then add the printer again from the beginning",
               "Cancel the stuck job, and restart the print spooler if needed",
               "Unplug the router",
             ],
@@ -830,7 +830,7 @@ Mariama joins a district health office in Savelugu as an IT assistant. On day on
             options: [
               "A type of printer cable",
               "The main software that runs a device, manages hardware and runs apps",
-              "A website for buying laptops",
+              "A website where offices buy laptops and download the latest software",
               "A virus scanner only",
             ],
             answer_index: 1,
@@ -848,7 +848,7 @@ Mariama joins a district health office in Savelugu as an IT assistant. On day on
               "A small program that lets the OS use a piece of hardware",
               "The person who delivers computers",
               "A type of password",
-              "A backup of all your files",
+              "A backup copy of all your files stored on another hard drive",
             ],
             answer_index: 0,
             explanation: "Drivers let the operating system talk to printers, screens, Wi-Fi cards and more.",
@@ -856,7 +856,7 @@ Mariama joins a district health office in Savelugu as an IT assistant. On day on
           {
             prompt: "Why is running Linux from a USB stick useful on a borrowed computer?",
             options: [
-              "It makes the computer faster forever",
+              "It makes the computer run faster, even after you remove the USB stick",
               "It deletes viruses automatically",
               "It installs Windows updates",
               "It lets you try Linux without changing what is installed",
@@ -1056,7 +1056,7 @@ Abdul-Rahman starts as a junior technician at an internet provider in Kumasi. Hi
             prompt: "Why should you be careful with the `rm` command?",
             options: [
               "It deletes files without a recycle bin",
-              "It restarts the router",
+              "It restarts the computer without saving open files",
               "It sends email to everyone",
               "It changes the screen colour",
             ],
@@ -1067,7 +1067,7 @@ Abdul-Rahman starts as a junior technician at an internet provider in Kumasi. Hi
             prompt: "What does putting `sudo` in front of a command do?",
             options: [
               "Makes it run faster",
-              "Runs it on another computer",
+              "Runs it on a remote server on the network using your own account",
               "Turns it into a comment",
               "Runs it with administrator rights after you enter your password",
             ],
@@ -1149,7 +1149,7 @@ Amina supports twenty field officers for an NGO in Nalerigu. One officer cannot 
           {
             prompt: "Why are app files sent on WhatsApp (APK files) risky?",
             options: [
-              "They use too much battery",
+              "They use too much battery while they install in the background",
               "They cannot be opened",
               "They are a common way scammers take over phones",
               "They only work on tablets",
@@ -1162,8 +1162,8 @@ Amina supports twenty field officers for an NGO in Nalerigu. One officer cannot 
             options: [
               "Make phone calls cheaper",
               "Charge phones faster",
-              "Increase signal strength",
-              "Push apps and settings, require screen locks and wipe work data from lost phones",
+              "Increase signal strength for staff working in areas with poor coverage",
+              "Push apps and settings, require screen locks and wipe lost phones",
             ],
             answer_index: 3,
             explanation: "MDM tools manage many phones centrally.",
@@ -1243,7 +1243,7 @@ Sumaila is called to a hardware shop in Wa where "the internet is off". He check
           {
             prompt: "What does a switch do?",
             options: [
-              "Turns names into addresses",
+              "Turns website names into the number addresses that computers use to connect",
               "Stores backups",
               "Provides many ports so several wired devices can join the network",
               "Charges laptops",
@@ -1310,7 +1310,7 @@ Issahaku supports a school in Yendi. The office printer keeps disappearing. He r
         questions: [
           {
             prompt: "Which of these is a private IPv4 address?",
-            options: ["8.8.8.8", "192.168.1.25", "300.1.1.1", "203.0.113.5"],
+            options: ["8.8.8.8", "192.168.1.25", "300.1.1.1", "203.0.113.250"],
             answer_index: 1,
             explanation: "Addresses starting 192.168. are in a private range used inside networks.",
           },
@@ -1320,7 +1320,7 @@ Issahaku supports a school in Yendi. The office printer keeps disappearing. He r
               "The router's address, the way out to other networks",
               "The fastest website",
               "The printer's serial number",
-              "The Wi-Fi password",
+              "The Wi-Fi password that new devices type to join the network",
             ],
             answer_index: 0,
             explanation: "Devices send traffic for outside networks to the gateway, usually the router.",
@@ -1331,7 +1331,7 @@ Issahaku supports a school in Yendi. The office printer keeps disappearing. He r
               "Deletes old files",
               "Speeds up printing",
               "Hands out IP settings automatically when devices join",
-              "Encrypts email",
+              "Encrypts email and web traffic as it leaves the office network",
             ],
             answer_index: 2,
             explanation: "DHCP gives each device its address, mask, gateway and DNS settings.",
@@ -1340,7 +1340,7 @@ Issahaku supports a school in Yendi. The office printer keeps disappearing. He r
             prompt: "A Windows computer shows an address starting 169.254. What does this suggest?",
             options: [
               "The computer is very fast",
-              "It has a public address",
+              "It has a public address given directly by the internet provider",
               "It is connected to a printer",
               "It asked for an address and no DHCP server answered",
             ],
@@ -1350,8 +1350,8 @@ Issahaku supports a school in Yendi. The office printer keeps disappearing. He r
           {
             prompt: "In the Yendi example, what fixed the disappearing printer?",
             options: [
-              "A DHCP reservation for the printer instead of a clashing manual address",
-              "Buying a new laptop",
+              "A DHCP reservation instead of a clashing manual address",
+              "Buying a new laptop because the old one could not find the printer",
               "Changing the printer's paper",
               "Turning off the internet",
             ],
@@ -1447,7 +1447,7 @@ Hawa supports an NGO office in Tamale. Staff can use WhatsApp but no websites op
           },
           {
             prompt: "Which Windows command clears the computer's DNS cache?",
-            options: ["`ipconfig /flushdns`", "`ping`", "`mkdir`", "`df -h`"],
+            options: ["`ipconfig /flushdns`", "`ping`", "`nslookup example.com`", "`df -h`"],
             answer_index: 0,
             explanation: "`ipconfig /flushdns` clears stored DNS answers.",
           },
@@ -1501,7 +1501,7 @@ Wumpini sets up Wi-Fi for a guest house in Bolgatanga. Guests complain the signa
             options: [
               "Cables look nicer",
               "Wired connections are faster and more reliable than Wi-Fi",
-              "Wi-Fi cannot reach printers",
+              "Wi-Fi cannot reach printers or servers that sit in a different room",
               "Cables never need a switch",
             ],
             answer_index: 1,
@@ -1597,7 +1597,7 @@ Mariama gets a call from a microfinance branch in Savelugu: no one can reach the
           {
             prompt: "Which step comes first in the near to far routine?",
             options: [
-              "Call the internet provider",
+              "Call the internet provider and ask whether there is an outage in the area",
               "Check physical things like power, cables and Wi-Fi connection",
               "Reinstall the operating system",
               "Run tracert to a website",
@@ -1632,7 +1632,7 @@ Mariama gets a call from a microfinance branch in Savelugu: no one can reach the
             options: [
               "One user's laptop is broken",
               "A single faulty mouse",
-              "A wrong password on one account",
+              "A wrong password typed into one staff member's email account this morning",
               "A shared device such as the router, switch, provider or power",
             ],
             answer_index: 3,
@@ -1703,7 +1703,7 @@ Fuseini is the only IT person at a rural bank branch in the Upper East. He notic
             prompt: "What does giving staff only the access their job needs help prevent?",
             options: [
               "Printer jams",
-              "Misuse and damage if an account is misused or taken over",
+              "Damage if an account is misused or taken over",
               "Slow Wi-Fi",
               "Power surges",
             ],
@@ -1713,7 +1713,7 @@ Fuseini is the only IT person at a rural bank branch in the Upper East. He notic
           {
             prompt: "In the Upper East example, what was risky about the backup drive?",
             options: [
-              "It was too small",
+              "It was too small to hold a full copy of the files from every office computer",
               "It was the wrong colour",
               "It stayed plugged in all the time, so ransomware could reach it",
               "It was stored in a safe",
@@ -1793,7 +1793,7 @@ Amina is first line support at a school in Tamale. A message arrives on WhatsApp
               "A type of printer",
               "Microsoft's cloud directory behind Microsoft 365",
               "A Linux command",
-              "A brand of router",
+              "A brand of router made for offices that use Microsoft 365",
             ],
             answer_index: 1,
             explanation: "Entra ID, earlier called Azure AD, manages cloud identities for Microsoft 365.",
@@ -1804,7 +1804,7 @@ Amina is first line support at a school in Tamale. A message arrives on WhatsApp
               "Giving people only the access their job needs",
               "Giving everyone admin rights to save time",
               "Using the shortest possible passwords",
-              "Letting only managers use computers",
+              "Letting only managers use computers that hold sensitive files",
             ],
             answer_index: 0,
             explanation: "Least privilege limits access to what each role requires.",
@@ -1813,7 +1813,7 @@ Amina is first line support at a school in Tamale. A message arrives on WhatsApp
             prompt: "What should happen to a staff member's account on their last day?",
             options: [
               "Leave it active in case they return",
-              "Share it with their replacement",
+              "Share it with their replacement so customers can still reach them by email",
               "Change its name only",
               "Disable it, and pass files and email to the manager as agreed",
             ],
@@ -1823,7 +1823,7 @@ Amina is first line support at a school in Tamale. A message arrives on WhatsApp
           {
             prompt: "Someone on WhatsApp claims to be a staff member and asks for a password reset. What should you do?",
             options: [
-              "Reset it immediately and send the password",
+              "Reset it immediately and send the new password to the WhatsApp number",
               "Ignore all password requests forever",
               "Confirm identity using contact details already on record",
               "Ask them to send their old password",
@@ -1837,7 +1837,7 @@ Amina is first line support at a school in Tamale. A message arrives on WhatsApp
               "A stolen password alone is not enough to sign in",
               "It makes passwords shorter",
               "It speeds up the internet",
-              "It removes the need for any password",
+              "It removes the need for any password because the phone signs you in",
             ],
             answer_index: 0,
             explanation: "A second proof blocks attackers who only have the password.",
@@ -1908,10 +1908,10 @@ Issahaku supports a clinic in Damongo. A nurse says all her files now end in a s
           {
             prompt: "Which is a common sign of phishing?",
             options: [
-              "Urgent threats and a link that does not match the real organisation",
+              "Urgent threats and a link that does not match the real sender",
               "A message from a colleague about lunch",
               "A calendar invite you expected",
-              "A system update from Settings",
+              "A system update that you started yourself from the Settings app",
             ],
             answer_index: 0,
             explanation: "Urgency and mismatched links are classic phishing signs.",
@@ -1921,7 +1921,7 @@ Issahaku supports a clinic in Damongo. A nurse says all her files now end in a s
             options: [
               "Pay the ransom quickly",
               "Email the file to everyone",
-              "Install a second antivirus program",
+              "Install a second antivirus program and run both scans at once",
               "Disconnect it from the network and report it",
             ],
             answer_index: 3,
@@ -1931,7 +1931,7 @@ Issahaku supports a clinic in Damongo. A nurse says all her files now end in a s
             prompt: "Someone claiming to be IT asks for your verification code. What should you know?",
             options: [
               "Real IT staff never need your password or verification codes",
-              "You must always share codes with IT",
+              "You must always share codes with IT so they can check your account",
               "Codes are not important",
               "Only managers have codes",
             ],
@@ -1992,10 +1992,10 @@ Wumpini supports a private school in Tamale. The bursar keeps fees records only 
           {
             prompt: "What does the three copies rule recommend?",
             options: [
-              "Three copies, on two kinds of storage, with one kept elsewhere or offline",
+              "Three copies, on two kinds of storage, one kept elsewhere or offline",
               "Three passwords for every account",
               "Three printers in every office",
-              "Backing up three times a day to the same drive",
+              "Backing up three times a day to the same external drive kept on your desk",
             ],
             answer_index: 0,
             explanation: "3 2 1 means three copies, two types of storage, one away from the office.",
@@ -2004,7 +2004,7 @@ Wumpini supports a private school in Tamale. The bursar keeps fees records only 
             prompt: "Why is a backup drive that stays plugged in all the time risky?",
             options: [
               "It uses too much paper",
-              "It slows down Wi-Fi",
+              "It slows down Wi-Fi for everyone else in the office",
               "Ransomware can reach and lock it too",
               "It cannot store photos",
             ],
@@ -2016,7 +2016,7 @@ Wumpini supports a private school in Tamale. The bursar keeps fees records only 
             options: [
               "Syncing only works at night",
               "Synced folders also copy deletions and damage everywhere",
-              "Syncing deletes the cloud account",
+              "Syncing deletes the cloud account once your storage becomes full",
               "Syncing is illegal in Ghana",
             ],
             answer_index: 1,
@@ -2096,7 +2096,7 @@ Sumaila, in Wa, has finished senior high school and cannot yet afford a diploma.
             options: [
               "Owning an expensive laptop",
               "Customer service, documentation and explaining things simply",
-              "Knowing many programming languages",
+              "Knowing many programming languages and building your own apps",
               "Living in Accra",
             ],
             answer_index: 1,
@@ -2105,7 +2105,7 @@ Sumaila, in Wa, has finished senior high school and cannot yet afford a diploma.
           {
             prompt: "Before paying for a programme or exam, what should you do?",
             options: [
-              "Pay whoever asks first",
+              "Pay the first agent who offers you a place, before the price goes up again",
               "Borrow money quickly",
               "Check the official website for current fees, dates and requirements",
               "Assume the price never changes",
@@ -2191,7 +2191,7 @@ Hawa, in Tamale, compares options. She already has an HND in another subject. Ad
             prompt: "What does ITIL 4 Foundation cover?",
             options: [
               "Repairing printers",
-              "Programming in Python",
+              "Programming in Python to automate the most common service desk tasks",
               "IT service management ideas such as incidents and service levels",
               "Graphic design",
             ],
@@ -2203,7 +2203,7 @@ Hawa, in Tamale, compares options. She already has an HND in another subject. Ad
             options: [
               "How many likes its page has",
               "Whether it has a nice logo",
-              "Whether friends have heard of it",
+              "Whether friends and family have heard of it or seen its adverts on TV",
               "Who accredits it and whether it includes hands on practice",
             ],
             answer_index: 3,
@@ -2215,7 +2215,7 @@ Hawa, in Tamale, compares options. She already has an HND in another subject. Ad
               "Microsoft retired it; look for current role based certifications",
               "It is the newest Microsoft certification",
               "It is a CompTIA exam",
-              "It is required by every employer",
+              "It is still required by every employer that runs Windows servers today",
             ],
             answer_index: 0,
             explanation: "MCSA was retired, so check Microsoft Learn for current certifications.",
@@ -2281,8 +2281,8 @@ Abdul-Rahman did national service in a district assembly IT unit in the Northern
           {
             prompt: "Which of these counts as experience for IT support?",
             options: [
-              "Only paid jobs at large companies",
-              "Real problems solved for real people, including volunteer work and national service",
+              "Only paid jobs at large companies that have their own IT department",
+              "Real problems solved for real people, including volunteer work",
               "Watching videos without practising",
               "Owning many devices",
             ],
@@ -2303,7 +2303,7 @@ Abdul-Rahman did national service in a district assembly IT unit in the Northern
           {
             prompt: "Which CV line is strongest?",
             options: [
-              "Helped in the lab",
+              "Helped out in the school computer lab whenever the teacher asked me",
               "Good with computers",
               "Maintained 20 lab computers and cut breakdowns during term",
               "Hard working person",
@@ -2315,7 +2315,7 @@ Abdul-Rahman did national service in a district assembly IT unit in the Northern
             prompt: "A recruiter asks you to pay a fee before an interview. What should you do?",
             options: [
               "Pay quickly to secure the job",
-              "Borrow money from friends",
+              "Borrow money from friends so you can pay the fee and keep your place",
               "Send your MoMo PIN instead",
               "Stop and check, because genuine employers do not ask for payment",
             ],
@@ -2385,7 +2385,7 @@ Mariama has worked on a bank's service desk in Tamale for two years. She enjoys 
             options: [
               "Support staff never need training",
               "It shows understanding of how real users, devices and networks behave",
-              "Support work is the same as programming",
+              "Support work is the same as programming, so you can skip learning to code",
               "It means you own a laptop",
             ],
             answer_index: 1,
@@ -2405,9 +2405,9 @@ Mariama has worked on a bank's service desk in Tamale for two years. She enjoys 
           {
             prompt: "Which skills does network engineering add on top of this roadmap?",
             options: [
-              "Video editing and animation",
+              "Video editing, animation and designing graphics for company websites",
               "Bookkeeping",
-              "Subnetting in depth, routing and switching, VLANs and firewalls",
+              "Subnetting in depth, routing, switching, VLANs and firewalls",
               "Social media marketing",
             ],
             answer_index: 2,
@@ -2418,7 +2418,7 @@ Mariama has worked on a bank's service desk in Tamale for two years. She enjoys 
             options: [
               "Stop doing your current job well",
               "Keep it secret from your manager",
-              "Wait until you are sure before studying",
+              "Wait until you are completely sure of your path before you start studying",
               "Volunteer for tasks that touch your target path and study weekly",
             ],
             answer_index: 3,

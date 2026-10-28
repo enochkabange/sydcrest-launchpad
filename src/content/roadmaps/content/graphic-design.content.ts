@@ -47,7 +47,7 @@ After learning a few principles, Napari tries again: one bold heading, one clear
             options: [
               "Learning every feature of one famous design app",
               "Arranging words, pictures, shapes and colour so a message is clear and people act on it",
-              "Adding as many colours and fonts as possible to make work look lively",
+              "Adding as many colours, fonts and effects as you can so every piece looks lively and full",
               "Taking professional photographs for businesses",
             ],
             answer_index: 1,
@@ -67,7 +67,7 @@ After learning a few principles, Napari tries again: one bold heading, one clear
           {
             prompt: "What changed in Napari's second flyer that made more customers call?",
             options: [
-              "She added more photos and colours",
+              "She added more photos and brighter colours so the flyer looked more colourful",
               "She used five different fonts",
               "She hid the phone number so people would look harder",
               "She used one bold heading, one clear photo and made the price easy to see",
@@ -78,9 +78,9 @@ After learning a few principles, Napari tries again: one bold heading, one clear
           {
             prompt: "What does the lesson say about learning graphic design without a laptop?",
             options: [
-              "You can start on a phone, and some later tasks are easier on a laptop or a shared computer",
+              "You can start on a phone; some later tasks are easier on a laptop or shared computer",
               "It is impossible to learn design without an expensive computer",
-              "Phones are better than laptops for every design task",
+              "Phones are better than laptops for every design task, including logos and print files",
               "You must buy paid software before you begin",
             ],
             answer_index: 0,
@@ -163,7 +163,7 @@ He decides to start with what is closest: flyers and social media posts for his 
           {
             prompt: "Which soft skills does the lesson say appear again and again in design adverts?",
             options: [
-              "Selling insurance and managing stock",
+              "Fast typing, owning the newest paid software and knowing every keyboard shortcut by heart",
               "Driving and delivery",
               "Accounting and auditing",
               "Understanding briefs, handling revisions, meeting deadlines and communicating clearly",
@@ -252,7 +252,7 @@ Sumaila designs a logo for a barbering shop in Wa by placing text and a photo of
               "Inkscape runs only on phones",
               "The printer needed a vector file that would print sharp on a big signboard",
               "The owner wanted more colours",
-              "Inkscape makes files smaller for WhatsApp",
+              "Inkscape makes the file small enough to send quickly to the owner on WhatsApp",
             ],
             answer_index: 1,
             explanation: "His small PNG was blurry at signboard size, so he redrew it as vector shapes and exported a PDF.",
@@ -322,7 +322,7 @@ Nothing new was added; things were only rearranged. Yet customers can now find t
             prompt: "How does the three second test work?",
             options: [
               "You design a flyer in three seconds",
-              "You check that a file downloads in three seconds",
+              "You check that the exported file opens on a cheap phone within three seconds",
               "You use only three colours",
               "You show a design for three seconds, hide it and ask what it was about",
             ],
@@ -390,7 +390,7 @@ None of these choices is advanced, but together they make the poster look profes
               "Where things sit on the page and how the eye moves between them",
               "Which font family you choose",
               "The colour of the paper",
-              "Whether you are allowed to use a photo",
+              "Whether you are allowed to use a photo, and how to credit its owner",
             ],
             answer_index: 0,
             explanation: "Layout is where things sit and how the eye moves, using margins, columns and alignment.",
@@ -400,8 +400,8 @@ None of these choices is advanced, but together they make the poster look profes
             options: [
               "There is no difference",
               "Learning means using the same words and photos",
-              "Copying is fine if you change the colours",
-              "Learning means studying why a layout works and making your own design; copying means changing the name on someone's finished design",
+              "Copying is fine as long as you change the colours, fonts and business name, since that makes the design your own",
+              "Learning is studying why a layout works and making your own; copying is renaming someone's finished design",
             ],
             answer_index: 3,
             explanation: "Studying a layout and making your own work is learning; taking a finished design and changing the name is copying.",
@@ -475,10 +475,10 @@ She changes to one strong serif for the heading "Annual Thanksgiving Service" an
           {
             prompt: "Why should you check a WhatsApp flyer on a phone before sending it?",
             options: [
-              "Phones change the fonts automatically",
+              "Phones automatically swap your fonts for the phone's own system fonts when a flyer is sent",
               "WhatsApp only accepts script fonts",
               "To make the file size larger",
-              "Because it will be seen on a small screen, so the smallest text must still be readable there",
+              "It will be seen on a small screen, so the smallest text must still be readable there",
             ],
             answer_index: 3,
             explanation: "A WhatsApp flyer is seen on a small phone, so its smallest text must be readable at that size.",
@@ -573,8 +573,8 @@ Fuseini designs a poster for a shea butter cooperative. He picks a warm brown fr
             options: [
               "Printers only use black ink",
               "Paper absorbs all colour",
-              "Phones hide colours when sending files",
-              "Screens mix light in RGB while printers mix ink in CMYK, which cannot match some bright colours",
+              "Phones strip the brightest colours out of an image when it is forwarded to the printer on WhatsApp",
+              "Screens mix RGB light, while printers mix CMYK ink that cannot match some bright colours",
             ],
             answer_index: 3,
             explanation: "RGB screen colours such as neon greens cannot always be matched by CMYK ink.",
@@ -588,8 +588,8 @@ Fuseini designs a poster for a shea butter cooperative. He picks a warm brown fr
           {
             prompt: "According to the lesson, why should you ask a client about colour meaning?",
             options: [
-              "Meanings depend on culture and context, for example colours linked with mourning or celebration",
-              "All colours mean the same thing everywhere",
+              "Meanings depend on culture and context, such as colours linked with mourning or celebration",
+              "Red and black mean the same thing in every region and religion, so you can choose them without asking",
               "Clients always want red",
               "Colour has no effect on how people feel",
             ],
@@ -645,7 +645,7 @@ Amina sets margins and a two column grid. She puts the event name and date large
           {
             prompt: "Why are margins important in a design for print?",
             options: [
-              "They make the file smaller",
+              "They make the print file smaller so the printer's computer can open it faster",
               "They protect text from being cut off when the paper is trimmed",
               "They change the colour mode",
               "They make the paper thicker",
@@ -674,7 +674,7 @@ Amina sets margins and a two column grid. She puts the event name and date large
             prompt: "What did Amina do with the full school programme that would not fit?",
             options: [
               "Put it in a separate image for the school's WhatsApp group",
-              "Printed it in tiny text across the flyer",
+              "Printed it in tiny text along the bottom of the flyer, under the sponsors",
               "Deleted it without telling anyone",
               "Moved it into the margins",
             ],
@@ -746,7 +746,7 @@ Zuweira runs a small business selling shea soap in Tamale and sends Wumpini a di
             options: [
               "About 300 pixels per inch at the printed size",
               "About 30 pixels per inch",
-              "Whatever WhatsApp sends",
+              "About 1080 pixels wide, the same as a square social media post",
               "Resolution does not matter for print",
             ],
             answer_index: 0,
@@ -822,7 +822,7 @@ Yakubu designs a simple wordmark in a rounded bold font with one warm orange and
           {
             prompt: "According to the lesson, what is a brand?",
             options: [
-              "Only the logo of a business",
+              "Only the logo and colours of a business, as printed on its signboard and receipts",
               "The impression people have of a business: what they remember, expect and trust",
               "The most expensive product a business sells",
               "The signboard outside a shop",
@@ -857,7 +857,7 @@ Yakubu designs a simple wordmark in a rounded bold font with one warm orange and
             options: [
               "He copied a supermarket logo from the internet",
               "He used every colour his cousin suggested",
-              "He designed a shopping trolley straight away",
+              "He designed the shopping trolley and many colours his cousin first asked for",
               "He asked about customers, feelings and where the logo would appear",
             ],
             answer_index: 3,
@@ -921,7 +921,7 @@ Hawa designs a logo for a women's rice processing group in Nyankpala. After aski
             prompt: "Why does the lesson suggest sketching twenty rough ideas on paper?",
             options: [
               "Quantity first helps you find the clear ideas, even though most will be bad",
-              "Clients want to see all twenty",
+              "Clients expect to see all twenty sketches so they can choose the final logo themselves",
               "Paper sketches are the final logo",
               "Printers need sketches before printing",
             ],
@@ -932,7 +932,7 @@ Hawa designs a logo for a women's rice processing group in Nyankpala. After aski
             prompt: "Which three tests does the lesson say a good logo should survive?",
             options: [
               "Being posted, liked and shared",
-              "Being printed on gold, silver and bronze",
+              "Being stretched wide, printed in full colour only and placed on a busy photo",
               "Being animated, filmed and edited",
               "Shrunk very small, printed in black only and placed on a dark background",
             ],
@@ -942,7 +942,7 @@ Hawa designs a logo for a women's rice processing group in Nyankpala. After aski
           {
             prompt: "What should you deliver to the client when the logo is finished?",
             options: [
-              "One small JPG sent on WhatsApp",
+              "A single full colour JPG, sized for a WhatsApp profile picture and a business card",
               "Full colour, one colour and white versions, in vector and in transparent PNG",
               "A screenshot of your phone screen",
               "Only your paper sketches",
@@ -954,8 +954,8 @@ Hawa designs a logo for a women's rice processing group in Nyankpala. After aski
             prompt: "What does the lesson advise if you only have a phone?",
             options: [
               "Do not design logos at all",
-              "Tell clients phone logos always print perfectly on big signboards",
-              "Do the questions, research and sketches on the phone or paper, then finish the vector on a shared laptop and be honest with clients",
+              "Build the whole logo in a phone app, then tell clients it will always print perfectly on large signboards and banners",
+              "Do the questions, research and sketches first, then finish the vector on a shared laptop and be honest with clients",
               "Copy a logo from the internet",
             ],
             answer_index: 2,
@@ -1011,7 +1011,7 @@ Issahaku delivered a logo to a computer training centre in Tamale. He adds a two
             prompt: "What is clear space in a brand guide?",
             options: [
               "The empty area around a logo that nothing else should enter",
-              "A blank page at the end of the guide",
+              "A blank page at the end of the guide where printers write their own notes",
               "The white background of every design",
               "Space left for the printer's name",
             ],
@@ -1043,7 +1043,7 @@ Issahaku delivered a logo to a computer training centre in Tamale. He adds a two
           {
             prompt: "Why did the computer training centre's Accra banners match everything else?",
             options: [
-              "The printer guessed the colours well",
+              "The printer matched the colours by eye from the centre's old signboard",
               "The printer followed Issahaku's brand guide",
               "The centre used a different logo",
               "The banners were printed in black only",
@@ -1113,7 +1113,7 @@ Mahama runs a small design table beside a print shop in Wa. On one Friday he des
           {
             prompt: "According to the lesson, how can you be fast without making careless mistakes?",
             options: [
-              "Skip checking because clients will notice errors",
+              "Skip the checks and let the client and the printer spot any errors in spelling, dates or numbers",
               "Use as many fonts as possible",
               "Use templates, a tidy file system and a checklist for spelling, dates and phone numbers",
               "Print first and check afterwards",
@@ -1205,7 +1205,7 @@ Amina manages graphics for a fabric shop in Tamale. She sets up four templates i
             prompt: "According to the lesson, how many messages should one social graphic carry?",
             options: [
               "As many as possible to save money",
-              "Every detail of the business",
+              "Every detail of the business, so customers never need to read the caption",
               "At least five",
               "One clear message, with longer details in the caption",
             ],
@@ -1276,7 +1276,7 @@ Abdulai designs for a youth association's health screening day in Salaga. For Wh
           {
             prompt: "What does the lesson say about banners read from far away?",
             options: [
-              "They should copy every line from the flyer",
+              "They should copy every line from the flyer so drivers get the full details",
               "They need small, detailed text",
               "They should use only a few words, very large, with strong contrast",
               "They work best in script fonts",
@@ -1309,7 +1309,7 @@ Abdulai designs for a youth association's health screening day in Salaga. For Wh
           {
             prompt: "What does the lesson advise for funeral posters and programmes?",
             options: [
-              "Use bright colours without asking",
+              "Use bright, cheerful colours without asking, so the poster stands out on the wall",
               "Guess the spelling of names to save time",
               "Use any photo found online",
               "Spell names exactly as the family writes them and check dates carefully",
@@ -1382,7 +1382,7 @@ Fuseini designs a calendar for a rural bank branch. He asks the printer for size
               "Extra background past the trim line so no white edges appear when paper is cut",
               "The space between lines of text",
               "A colour that runs when wet",
-              "The empty area around a logo",
+              "The inner margin inside the trim line where all important text and logos must stay",
             ],
             answer_index: 0,
             explanation: "Bleed extends the background past the trim line, commonly about 3 mm.",
@@ -1390,7 +1390,7 @@ Fuseini designs a calendar for a rural bank branch. He asks the printer for size
           {
             prompt: "Where must important text and logos stay?",
             options: [
-              "In the bleed area",
+              "In the bleed area, so the text reaches right to the edge after trimming",
               "Exactly on the trim line",
               "Inside the safe area, a few millimetres inside the trim line",
               "Outside the page",
@@ -1419,7 +1419,7 @@ Fuseini designs a calendar for a rural bank branch. He asks the printer for size
             prompt: "What should you do before printing a large job, according to the lesson?",
             options: [
               "Get written approval of a proof and ask for one printed sample",
-              "Print everything first and check later",
+              "Print the full run first, then check the copies with the client afterwards",
               "Skip the client because they are busy",
               "Send the file as a small WhatsApp image",
             ],
@@ -1471,9 +1471,9 @@ Sumaila makes a weekly price announcement for a cement and building materials sh
           {
             prompt: "What is a keyframe in animation?",
             options: [
-              "A photo frame for a printed poster",
+              "The single best still frame taken from a video, used as the cover image people see on WhatsApp",
               "The first word of a caption",
-              "A setting for how something looks at one moment, with the software filling in movement between keyframes",
+              "How something looks at one moment, with the software filling in movement between keyframes",
               "The border around a video",
             ],
             answer_index: 2,
@@ -1483,7 +1483,7 @@ Sumaila makes a weekly price announcement for a cement and building materials sh
             prompt: "Why does the lesson recommend easing?",
             options: [
               "Movement that speeds up and slows down looks natural",
-              "It makes videos longer",
+              "It keeps everything moving at one steady speed, which looks smooth",
               "It removes the need for colours",
               "It makes files larger",
             ],
@@ -1557,7 +1557,7 @@ The client agrees, pays the deposit by mobile money and sends clear details. Mar
           {
             prompt: "According to the lesson, why do many talented beginners struggle?",
             options: [
-              "Their designs are always weak",
+              "Their designs are always too weak, because they learned on phones instead of laptops",
               "The client relationship goes wrong, such as unclear expectations or unpaid work",
               "They use too few colours",
               "They live too far from Accra",
@@ -1591,7 +1591,7 @@ The client agrees, pays the deposit by mobile money and sends clear details. Mar
             prompt: "What made Mariama's job go smoothly?",
             options: [
               "She used a very unusual design",
-              "She did unlimited changes for free",
+              "She agreed to unlimited free changes so that the client would stay happy and pay the balance quickly",
               "She asked clear questions and confirmed price, deposit, changes and files in writing",
               "She started designing before asking anything",
             ],
@@ -1678,7 +1678,7 @@ A pastor in Bolgatanga asks Issahaku for a crusade poster. Issahaku asks the sev
           {
             prompt: "What should you do when a client says \"I don't like it\"?",
             options: [
-              "Start a completely new design immediately",
+              "Start a completely new design immediately with different colours and photos",
               "Stop replying",
               "Argue that the design is perfect",
               "Ask calm questions about what exactly they want changed",
@@ -1691,7 +1691,7 @@ A pastor in Bolgatanga asks Issahaku for a crusade poster. Issahaku asks the sev
             options: [
               "He ignored them",
               "He collected them into one numbered list, confirmed it and made all the changes at once",
-              "He made each change separately as messages arrived",
+              "He made each change separately as each voice note arrived, sending the pastor a new draft every time",
               "He charged a fee for each voice note",
             ],
             answer_index: 1,
@@ -1776,7 +1776,7 @@ Fatima is asked by a shop owner in Wa to "use the same logo as that big supermar
           {
             prompt: "What should you agree in writing about a client's logo?",
             options: [
-              "That you can resell it to other clients",
+              "That you can resell the same logo to other clients in different towns once it is paid for",
               "Nothing; agreements are unnecessary",
               "That the client must never show it",
               "That the client gets full rights once paid in full, and whether source files are included",
@@ -1789,7 +1789,7 @@ Fatima is asked by a shop owner in Wa to "use the same logo as that big supermar
             options: [
               "Reading the tool's terms on commercial use",
               "Presenting AI images as real photos of a client's product",
-              "Checking AI logos for similarity to existing marks",
+              "Checking AI made logos carefully for similarity to existing trademarks",
               "Using AI to explore early ideas",
             ],
             answer_index: 1,
@@ -1856,7 +1856,7 @@ Salifu designs business cards for a mechanic in Damongo. He sends a quote on Wha
           {
             prompt: "Which pricing method does the lesson say most local clients prefer?",
             options: [
-              "By the minute",
+              "By the hour, counting every minute spent on revisions",
               "Free work in exchange for exposure",
               "Paying only after many months",
               "A fixed price for a defined project",
@@ -1870,7 +1870,7 @@ Salifu designs business cards for a mechanic in Damongo. He sends a quote on Wha
               "To cover her data and transport costs for the job",
               "As a tip for herself",
               "Because the client asked for it",
-              "To pay the printer for 500 copies",
+              "To pay the printer for a sample copy of the flyer before the full run",
             ],
             answer_index: 0,
             explanation: "She added her job costs for data and transport to the value of her time.",
@@ -1880,7 +1880,7 @@ Salifu designs business cards for a mechanic in Damongo. He sends a quote on Wha
             options: [
               "Because it is required by every app",
               "It protects you if the client disappears and shows they are serious",
-              "So you can skip the invoice",
+              "So you can skip sending an invoice when the work is finished and delivered",
               "To make the design faster",
             ],
             answer_index: 1,
@@ -1957,7 +1957,7 @@ Ayishetu in Wa finished the earlier lessons and had ten practice designs. She of
               "You never need to find clients",
               "Money is managed for you",
               "You can start from anywhere, including the northern regions",
-              "It always pays more than employment",
+              "It always pays more than employment, because you set your own prices",
             ],
             answer_index: 2,
             explanation: "Freelancers can start from anywhere but must find clients and manage money.",
@@ -1966,7 +1966,7 @@ Ayishetu in Wa finished the earlier lessons and had ten practice designs. She of
             prompt: "How should you present personal practice projects in a portfolio?",
             options: [
               "Label them honestly as practice or concept work",
-              "Claim they were for famous clients",
+              "Claim they were real jobs for well known Ghanaian brands to impress reviewers",
               "Hide them completely",
               "Put another designer's name on them",
             ],
@@ -2049,7 +2049,7 @@ Alhassan's first portfolio had thirty designs, including some copied from tutori
             options: [
               "Only the final image",
               "A list of every app you know",
-              "Invented sales numbers",
+              "The final image plus sales numbers that make the project look bigger",
               "The brief, your process, the result and an honest outcome",
             ],
             answer_index: 3,
@@ -2058,8 +2058,8 @@ Alhassan's first portfolio had thirty designs, including some copied from tutori
           {
             prompt: "How should you use mock ups in a portfolio?",
             options: [
-              "To show work in context, without suggesting a client or printed job that never existed",
-              "To pretend you worked for a famous brand",
+              "To show work in context, without suggesting clients or print jobs that never existed",
+              "To place your designs on famous brands' signboards so reviewers think you worked for them",
               "Instead of any real designs",
               "Only for photos of yourself",
             ],
@@ -2159,7 +2159,7 @@ Hawa in Tamale started by designing her church's harvest flyer and her aunt's sh
           {
             prompt: "What does the lesson say most remote design roles need?",
             options: [
-              "Nothing but a phone and no portfolio",
+              "Only a phone on prepaid data, since remote clients care about speed more than a portfolio",
               "Payment of a joining fee",
               "A degree from abroad",
               "A laptop, a stable internet connection, a portfolio and good written English",
@@ -2173,7 +2173,7 @@ Hawa in Tamale started by designing her church's harvest flyer and her aunt's sh
               "A client who pays a deposit",
               "Someone who sends more money than agreed and asks you to send back the difference",
               "A client who gives a clear brief",
-              "A short design test for a job",
+              "A short design test from an employer, such as one flyer, before they offer you a paid role",
             ],
             answer_index: 1,
             explanation: "Overpayment with a request to refund the difference is a common scam.",
@@ -2234,8 +2234,8 @@ Sumaila in Tamale saw a junior designer role at a print and branding company. Th
           {
             prompt: "Which job titles does the lesson suggest searching for?",
             options: [
-              "Accountant and Auditor",
-              "Graphic Designer, Junior Graphic Designer, Visual Designer, Multimedia Designer and Creative Designer",
+              "Marketing Manager, Sales Executive, Brand Ambassador and Customer Service Officer",
+              "Graphic Designer, Junior Graphic Designer, Visual Designer and Creative Designer",
               "Driver and Dispatch Rider",
               "Nurse and Pharmacist",
             ],
@@ -2246,7 +2246,7 @@ Sumaila in Tamale saw a junior designer role at a print and branding company. Th
             prompt: "According to the lesson, where does design work in the northern regions more often come from?",
             options: [
               "Print shops, churches, schools, NGOs and freelance clients",
-              "Only large Accra agencies",
+              "Large advertising agencies that open branch offices in the north",
               "Government lotteries",
               "Overseas embassies only",
             ],
