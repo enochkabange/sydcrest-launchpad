@@ -2057,6 +2057,430 @@ Issahaku helps a computer training centre in Tamale. Every registration arrives 
         pass_threshold: 75,
       },
     },
+    "triggers-and-actions": {
+      explanation_md: `Most failed automations fail before anyone opens a tool. Someone automates a process they have not fully understood, the workflow does something slightly wrong, and people stop trusting it. The fix is simple and costs nothing: map the process on paper first. Operations roles that ask for automation skills also ask for written procedures, and mapping is where both start.
+
+## Step 1: watch the manual process
+
+Sit with the person who does the job, or ask them to explain it step by step. Write down every step, in order, including the small ones people forget to mention: "I check that the phone number looks right", "if they paid by mobile money I write the reference".
+
+## Step 2: mark the parts
+
+For each step, ask:
+
+* **Is this the start?** That event becomes the **trigger**.
+* **Is this a clear rule?** "Add the order to the orders sheet" can be an **action**.
+* **Is this a decision?** "Only if the order is over a certain amount" becomes a **condition**. "If delivery, do this; if pick up, do that" becomes a **branch**.
+* **Does it need a person's judgement?** Leave it with a person, perhaps with a notification so they know it is waiting.
+
+## Step 3: list the data
+
+Every action needs data from somewhere. Write which fields move from the trigger to each action: customer name, phone, item, amount. This is called **mapping fields**. If a field the action needs does not exist in the trigger, you must collect it, perhaps by adding a question to the form.
+
+## Step 4: think about what goes wrong
+
+* What if a required field is blank?
+* What if the same person submits twice?
+* What if the email bounces or the phone number is wrong?
+* What happens if the workflow stops for a day? Who notices?
+
+Decide now how each case is handled, even if the answer is "a person checks a list each Friday".
+
+## A worked example
+
+Wumpini maps how a hair salon in Tamale handles bookings. Today: a customer messages, the owner checks her notebook, replies with a time, writes the booking down and sometimes forgets to remind the customer.
+
+Her map:
+
+1. **Trigger:** a customer submits the booking form (name, phone, service, preferred date and time).
+2. **Action:** add a row to the bookings sheet.
+3. **Condition:** if the service is braiding, which takes long, notify the owner to confirm the slot personally.
+4. **Action (other services):** send the customer a confirmation email if they gave one.
+5. **Scheduled trigger (separate workflow):** each morning, find today's bookings and send the owner a list.
+
+She keeps one step human: the owner confirms long braiding bookings herself, because she knows which stylists are free. Field mapping shows the form lacked an email question, so she adds an optional one with a line explaining why it is asked.
+
+## Draw it simply
+
+A map can be a numbered list, boxes and arrows on paper, or a table with columns for step, type (trigger, action, condition, person) and data needed. Keep it; it becomes part of your handover document later.
+
+## Why this matters for your career
+
+Anyone can click buttons in an automation tool. People who can explain a process clearly, find its weak points and decide what should stay human are the ones trusted with real systems.`,
+      practice_task_md: `**Goal:** Map a real manual process ready for automation.
+
+**Steps:**
+1. Choose a process from your own life or a business you know, such as orders, bookings, registrations or reminders.
+2. Write every step in order. If possible, ask the person who does it.
+3. Label each step: trigger, action, condition, branch or person.
+4. List the data fields that move between steps, and mark any that are not collected yet.
+5. Write at least three things that could go wrong and how each would be handled.
+
+**Done looks like:** A one page process map with labelled steps, a list of fields, and three handled problems. Share it with the person who does the job and ask if anything is missing.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What does the lesson say most failed automations have in common?",
+            options: [
+              "They were built with the wrong tool brand",
+              "They were built on a phone instead of a computer",
+              "Someone automated a process they had not fully understood",
+              "They used too few actions, so the workflow could not finish the job it was given",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says most failures happen because the process was not understood before building.",
+          },
+          {
+            prompt: "In a process map, what does a step needing a person's judgement become?",
+            options: [
+              "A step left with a person, perhaps with a notification",
+              "A trigger",
+              "An action the tool must guess",
+              "A step that is deleted from the process because automations cannot include people",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says judgement steps stay with a person, possibly notified by the automation.",
+          },
+          {
+            prompt: "What is mapping fields?",
+            options: [
+              "Drawing a map of where customers live",
+              "Choosing colours for each column in a sheet",
+              "Writing which data moves from the trigger to each action",
+              "Counting how many fields are in a farmer's land so the survey can record the farm size",
+            ],
+            answer_index: 2,
+            explanation: "The lesson defines mapping fields as listing which fields move from the trigger to each action.",
+          },
+          {
+            prompt: "Why did Wumpini keep the braiding confirmation as a human step?",
+            options: [
+              "Braiding customers do not have phones",
+              "The automation tool cannot send emails",
+              "The salon asked for every step to be done by hand",
+              "The owner knows which stylists are free for long bookings",
+            ],
+            answer_index: 3,
+            explanation: "The example says the owner confirms braiding personally because she knows stylist availability.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "automation-tools": {
+      explanation_md: `Once a process is mapped, you choose how to build it. There is no single best tool. Remote operations adverts name Zapier, Make and Power Automate, and some ask candidates to monitor workflows and troubleshoot failures. This lesson compares the main types and shows how to keep automations healthy.
+
+## The main types
+
+**Connector tools.** These connect many apps through a visual editor.
+
+* **Zapier:** a workflow is a Zap, with one trigger and one or more actions, built as a list of steps.
+* **Make:** a workflow is a scenario, built as a diagram of connected modules, which makes branches and loops easy to see.
+* **Power Automate:** a workflow is a flow; it fits organisations already using Microsoft 365.
+* **n8n:** open source; it can be self hosted by teams with technical help, or used as a hosted service.
+
+**Built in automation.** Google Forms, spreadsheets, messaging apps, website builders and app builders often have their own rules, notifications and scheduled actions. These are usually simplest to keep running because there is nothing extra to connect.
+
+**Light scripting.** Google Apps Script can run small programs when a form is submitted or at set times, inside Google tools. It needs some code, which makes it optional here, but it is useful to know it exists.
+
+## Plans and limits
+
+Connector tools measure use in different ways: runs, tasks or operations, the number of steps, how often triggers check for new data, and which apps are available. Some triggers check for new data at intervals rather than instantly. These details differ by tool and plan and change over time, so for each project:
+
+* Estimate how many times the workflow will run each month and how many steps it has.
+* Read the tool's current plans page and note the date.
+* Tell the client what happens if usage grows, and who would pay.
+
+## Watching runs
+
+Every connector tool keeps a record of runs. Zapier calls it Zap history; Make keeps a history for each scenario and stores some failed runs as **incomplete executions** that can be resolved; Power Automate shows run history for each flow. Checking this record is the first step in any problem.
+
+## Why runs fail
+
+* **Expired connection.** A password changed or permission was removed, so the tool can no longer reach an app. Reconnect the account.
+* **Changed structure.** Someone renamed a sheet column or form question that a step depended on. Restore the name or update the step.
+* **Missing or odd data.** A required field was blank, or a date was in the wrong format. Add validation to the form, or a formatting step.
+* **Limits reached.** The plan's monthly usage ran out. Check the plan and usage page.
+
+## A worked example
+
+Every Monday, a workflow emails Sumaila's client in Tamale a list of new orders from a form. One week, nothing arrives. Sumaila opens the run history on his phone and sees the runs failed with an error about a missing column. The owner had renamed "Phone" to "Customer phone" in the sheet. Sumaila updates the step on a computer, replays the failed run, and adds a note to the handover guide: do not rename columns without telling him.
+
+## Choosing well
+
+Prefer built in features when they do the job. Choose a connector tool the client can understand and afford. Keep workflows short; several small workflows are easier to fix than one giant one. Name every workflow clearly, such as "Salon bookings: form to sheet and email", so anyone can find it.`,
+      practice_task_md: `**Goal:** Build, break and fix a simple automation.
+
+**Steps:**
+1. On a computer, sign up for a connector tool such as Zapier, Make or Power Automate, or use a built in option such as a form's email notifications.
+2. Build a two step workflow: when a new form response arrives, add a row to a separate sheet or send yourself an email.
+3. Submit a test response and confirm it worked. Give the workflow a clear name.
+4. Break it on purpose: rename a column or question the workflow uses, then submit again.
+5. Open the run history, find the error and fix it.
+6. Read the tool's current plans page and write down how it measures use.
+
+**Done looks like:** A named working workflow, a screenshot of the failed run and the fix, and a dated note on how the tool measures use.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Where should you look first when an automation stops working?",
+            options: [
+              "The tool's marketing page",
+              "The run history for that workflow",
+              "The client's social media page",
+              "A video about building a new workflow from scratch in a different tool",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says checking the record of runs is the first step in any problem.",
+          },
+          {
+            prompt: "What does Make store some failed runs as?",
+            options: [
+              "Zap history",
+              "Security filters",
+              "Plugins",
+              "Incomplete executions that can be resolved",
+            ],
+            answer_index: 3,
+            explanation: "The lesson notes Make stores some failed runs as incomplete executions.",
+          },
+          {
+            prompt: "In Sumaila's example, why did the Monday workflow fail?",
+            options: [
+              "The owner renamed a sheet column the workflow depended on",
+              "The tool's servers were switched off for the holidays",
+              "The client ran out of airtime on her phone that week",
+              "The form was deleted by a customer",
+            ],
+            answer_index: 0,
+            explanation: "The run history showed a missing column after the owner renamed Phone to Customer phone.",
+          },
+          {
+            prompt: "Why does the lesson tell you to read the current plans page for each project?",
+            options: [
+              "Because every tool measures use the same way",
+              "Because plans pages list job openings",
+              "Usage measures and limits differ by tool and plan and change over time",
+              "Because tools delete any workflow that has not been checked against the plans page that month",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says limits differ by tool and plan and change, so read and date the plans page.",
+          },
+          {
+            prompt: "Which approach to workflow design does the lesson recommend?",
+            options: [
+              "One giant workflow that handles everything",
+              "Leave workflows unnamed so clients cannot change them",
+              "Always choose the tool with the most connections, whatever the client can afford",
+              "Several small, clearly named workflows",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says small workflows are easier to fix and clear names help anyone find them.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "message-automation": {
+      explanation_md: `Many automations end with a message: a booking confirmation, a receipt, a reminder, a reply outside working hours. Done well, automatic messages make a small business feel organised and caring. Done badly, they annoy people, break trust and can break rules. Digital and communications roles in Ghana ask for email marketing and messaging tools, and every small business client will ask you about WhatsApp.
+
+## Helpful, not spammy
+
+Good automatic messages are:
+
+* **Expected.** The person did something that makes the message natural, such as booking, ordering or asking a question.
+* **Useful.** They contain what the person needs: the time, the price, the reference, what happens next.
+* **Short and clear.** Easy to read on a small screen.
+* **Honest.** If it is automatic, it does not pretend to be a personal reply, and it says how to reach a person.
+
+Marketing messages are different from confirmations. Only send them to people who agreed to receive them, include a simple way to stop them, and honour every request to stop. Ghana's Data Protection Act, 2012 (Act 843) sets rules for collecting and using personal data, including phone numbers and emails.
+
+## Email automations
+
+Form tools can send a response receipt; connector tools and email marketing tools can send a confirmation from a template when a form arrives. Use the person's name and booking details from the form, check the spelling of every field you insert, and send tests to yourself first. Keep the sender name recognisable, such as the business name.
+
+## WhatsApp Business app features
+
+The WhatsApp Business app, used by many Ghanaian traders, has built in tools that need no other software:
+
+* **Greeting messages** greet people when they start a conversation.
+* **Away messages** reply when you are not available, for example outside opening hours.
+* **Quick replies** save common answers so you can send them quickly, by typing a slash in a chat or choosing them from the attach menu. The app can also suggest replies based on your business profile, such as your hours or address.
+
+These run on the business owner's own phone and account. Sending automated WhatsApp messages from other tools, such as a form or a sheet, is a different matter: it uses WhatsApp's business platform, usually through an approved provider, with its own rules on consent and message formats. Read the official rules before promising a client this.
+
+## SMS
+
+Some businesses send SMS reminders through bulk SMS providers that connect to sheets or automation tools. The same principles apply: expected, useful, short, with consent.
+
+## A worked example
+
+Mariama sets up messages for a tailoring shop in Tamale. In the WhatsApp Business app, she writes a greeting message introducing the shop and its opening hours, an away message saying replies will come the next morning, and three quick replies: prices for common styles, the shop's location, and "your outfit is ready for pick up". For the online order form, a connector tool emails customers a confirmation with their order number.
+
+She shows the owner how to edit the quick replies herself, and they agree never to add customers to a promotions list without asking first.
+
+## Test like a customer
+
+Before switching anything on, send yourself a message as if you were a customer, at different times of day. Read every automatic reply on a phone. If anything feels cold, confusing or pushy, rewrite it.`,
+      practice_task_md: `**Goal:** Write a set of helpful automatic messages for a small business.
+
+**Steps:**
+1. Choose a real or imagined small business, such as a chop bar, a salon or a phone accessories shop.
+2. Write a greeting message, an away message and three quick replies, each under 50 words.
+3. Write one booking or order confirmation email that uses at least three fields from a form, such as name, date and item.
+4. If you have the WhatsApp Business app, set up your messages on a test account. Otherwise, set up a form's email receipt or a connector tool's confirmation email.
+5. Test as a customer and rewrite anything that feels cold or pushy.
+
+**Done looks like:** Five short messages and one confirmation email, tested, with one improvement noted. Screenshots make good portfolio evidence.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which of these is a sign of a good automatic message?",
+            options: [
+              "It pretends to be a personal reply so the customer feels special",
+              "It is sent to everyone in the phone's contact list",
+              "It contains what the person needs, such as the time, price or reference",
+              "It is as long as possible so that nothing is ever left out of the message, even small details",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says good messages are useful, containing the time, price, reference or next step.",
+          },
+          {
+            prompt: "What does the lesson say about marketing messages?",
+            options: [
+              "Send them only to people who agreed, include a way to stop them, and honour stop requests",
+              "Send them to any number you can find",
+              "They need no consent if they are short",
+              "They are the same as booking confirmations and follow exactly the same rules in every case",
+            ],
+            answer_index: 0,
+            explanation: "The lesson separates marketing from confirmations and lists consent, a way to stop and honouring requests.",
+          },
+          {
+            prompt: "How can you send a saved quick reply in the WhatsApp Business app?",
+            options: [
+              "By shaking the phone",
+              "By typing a slash in a chat or choosing quick replies from the attach menu",
+              "By emailing the reply to WhatsApp",
+              "By setting it as your profile photo so that customers can read it before they send a message",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says quick replies are sent by typing a slash or choosing them from the attach menu.",
+          },
+          {
+            prompt: "What does the lesson say about sending automated WhatsApp messages from a form or sheet?",
+            options: [
+              "It works exactly like greeting messages with no extra rules",
+              "It is impossible in every case",
+              "It only works on computers",
+              "It uses WhatsApp's business platform, usually through a provider, with its own consent and format rules",
+            ],
+            answer_index: 3,
+            explanation: "The lesson distinguishes app features from the business platform and says to read its rules first.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "ai-steps": {
+      explanation_md: `Automation tools increasingly include AI steps: a step that reads a message and sorts it, summarises a long form answer, drafts a reply, or pulls details such as a name and amount out of free text. Some tools also offer agents, which can decide on several steps by themselves to reach a goal. One remote advert in our research asked for AI implementation alongside table and automation tools, so it is worth understanding. This lesson is optional, and the AI Tools for Work track goes deeper.
+
+## Where AI steps help
+
+AI is useful when a step needs to understand messy language, which ordinary rules cannot do well:
+
+* **Sorting.** Is this message a complaint, an order or a question? Send it to the right person.
+* **Summarising.** Turn a long feedback answer into one line for a weekly report.
+* **Extracting.** Pull the item, quantity and delivery town out of a chat style order.
+* **Drafting.** Suggest a reply that a person reviews before sending.
+
+## Where it goes wrong
+
+AI output can be confidently wrong. It may misread Ghanaian names, places and mixed language messages, invent details that were not in the text, or sort a serious complaint as a simple question. It can also produce different answers to the same input on different days. So:
+
+* **Keep a person in the loop** for anything that matters: money, health, complaints, anything sent to a customer.
+* **Use AI to suggest, not to decide.** A drafted reply should wait for approval. A sorted message should be easy to move.
+* **Prefer ordinary rules when they work.** If a dropdown on the form can capture "complaint or order", you do not need AI to guess.
+* **Check a sample regularly.** Look at ten AI results each week and note mistakes.
+
+## Agents need extra care
+
+An agent can take actions on its own, such as looking things up, updating records or sending messages. That power multiplies mistakes. Give an agent the smallest set of tools and permissions it needs, test it with made up data, and require approval before it sends anything or changes important records.
+
+## Privacy comes first
+
+When an AI step runs, the text is usually sent to an AI service outside your client's own tools. Under Ghana's Data Protection Act, 2012 (Act 843), people should know how their personal data is used, and it must be kept safe. Before adding AI to a workflow:
+
+* Check whether the step would send names, phone numbers, health details or other personal data.
+* Read the AI provider's terms on how data is stored and used.
+* Get the client's agreement, and tell the people whose data it is where appropriate.
+* Remove personal details before the AI step when the task does not need them.
+
+## A worked example
+
+Hawa supports an NGO in Wa that receives hundreds of feedback form answers after each community meeting. She adds an AI step that suggests a category (water, health, schools or other) and a one line summary for each answer, written into new sheet columns. Names and phone numbers are not sent to the AI step; only the feedback text is. The programme officer reviews the categories each week and corrects the ones that are wrong. Urgent issues are flagged by a simple rule instead: any answer containing words the team chose, such as "sick" or "danger", notifies the officer immediately.
+
+AI saves her hours, and people still make every decision.`,
+      practice_task_md: `**Goal:** Test an AI step safely and judge its accuracy.
+
+**Steps:**
+1. Write ten short made up customer messages for a small business, mixing orders, questions and complaints. Include Ghanaian names and towns, and do not use real people's data.
+2. Using any AI chat tool or an automation tool's AI step, ask it to sort each message into order, question or complaint and give a one line summary.
+3. Check every result yourself and mark which are wrong.
+4. Write which messages it got wrong and why you think it struggled.
+5. Write two rules for when a person must review this AI step before anything is sent.
+
+**Done looks like:** A table of ten messages with the AI's category, your check, a short note on mistakes and two review rules.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which task is a good use of an AI step, according to the lesson?",
+            options: [
+              "Deciding alone whether to refund a customer's money",
+              "Replacing every rule in a workflow",
+              "Pulling the item, quantity and town out of a chat style order",
+              "Sending replies to customers automatically without anyone ever reading them first",
+            ],
+            answer_index: 2,
+            explanation: "The lesson lists extracting details from messy text as a good use, while decisions stay with people.",
+          },
+          {
+            prompt: "What does the lesson say to prefer when an ordinary rule works?",
+            options: [
+              "The ordinary rule, such as a dropdown on the form",
+              "An agent with full permissions",
+              "Two AI steps that check each other",
+              "A newer AI tool that promises to understand every Ghanaian language without any mistakes",
+            ],
+            answer_index: 0,
+            explanation: "The lesson says if a dropdown can capture the information, you do not need AI to guess.",
+          },
+          {
+            prompt: "Why do agents need extra care?",
+            options: [
+              "They only work in English",
+              "They can take actions on their own, which multiplies mistakes",
+              "They cannot read spreadsheets",
+              "They are always slower than doing the whole job by hand, so they waste the team's time",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says agents can act by themselves, so give them few permissions and require approval.",
+          },
+          {
+            prompt: "In Hawa's example, what was sent to the AI step?",
+            options: [
+              "Names, phone numbers and feedback text",
+              "Only phone numbers",
+              "Every column of the sheet, including the programme officer's private notes",
+              "Only the feedback text",
+            ],
+            answer_index: 3,
+            explanation: "The example says names and phone numbers were not sent; only the feedback text was.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
   },
 };
 
