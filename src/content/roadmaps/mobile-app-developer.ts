@@ -181,7 +181,7 @@ export const mobileAppDeveloper: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 2,
       careerLevel: "junior",
-      jobs: ["Mobile App Developer (Flutter), NSS", "Junior Developer (Flutter/Dart)", "React Native Developer"],
+      jobs: ["Junior Developer", "React Native Developer", "Mobile App Developer"],
       resources: [M.widgetsIntro, M.flutterFundamentals],
     },
     {
@@ -227,7 +227,7 @@ export const mobileAppDeveloper: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 3,
       careerLevel: "junior",
-      jobs: ["Mobile App Developer", "Software Engineer (Mobile Apps Developer)"],
+      jobs: ["Mobile App Developer", "Android Developer"],
       resources: [M.stateIntro, M.offlineFlutter],
     },
     {
@@ -284,7 +284,7 @@ export const mobileAppDeveloper: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 3,
       careerLevel: "mid",
-      jobs: ["Mobile Application Developer (Flutter)", "Android Developer", "Mobile Developer, Flutter"],
+      jobs: ["Mobile Application Developer", "Android Developer", "Mobile Engineer"],
       resources: [M.firebaseSetup],
     },
     {
@@ -376,7 +376,7 @@ export const mobileAppDeveloper: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 2,
       careerLevel: "junior",
-      jobs: ["Junior Developer (Flutter/Dart)", "Mobile App Developer (Flutter), NSS"],
+      jobs: ["Junior Developer", "React Native Developer"],
       resources: [RES.githubDocs],
     },
     {

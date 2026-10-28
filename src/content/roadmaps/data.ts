@@ -274,7 +274,7 @@ export const data: RoadmapDraft = {
       difficulty: "advanced",
       complexity: 2,
       careerLevel: "specialist",
-      jobs: ["Officer, Data Science", "Associate Research Manager"],
+      jobs: ["Associate Research Manager", "Business Intelligence Analyst"],
       resources: [RES.colab],
     },
     {

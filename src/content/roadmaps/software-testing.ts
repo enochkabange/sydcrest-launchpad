@@ -239,7 +239,7 @@ export const softwareTesting: RoadmapDraft = {
       difficulty: "advanced",
       complexity: 3,
       careerLevel: "mid",
-      jobs: ["Software QA / Test Engineer", "QA Engineer (manual, API and automation)"],
+      jobs: ["Software QA / Test Engineer", "QA Engineer"],
       resources: [],
     },
     {

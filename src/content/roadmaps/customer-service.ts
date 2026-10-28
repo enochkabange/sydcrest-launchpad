@@ -320,7 +320,7 @@ export const customerService: RoadmapDraft = {
       difficulty: "beginner",
       complexity: 2,
       careerLevel: "junior",
-      jobs: ["Customer Service Representative, entry level", "Lead Caller", "Customer Service Agent"],
+      jobs: ["Customer Service Representative", "Lead Caller", "Customer Service Agent"],
       resources: [RES.lfJobsearch],
     },
     {

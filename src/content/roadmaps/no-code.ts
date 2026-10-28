@@ -171,7 +171,7 @@ export const noCode: RoadmapDraft = {
       difficulty: "beginner",
       complexity: 1,
       careerLevel: "junior",
-      jobs: ["Enumerator", "Field/Data Collection Officer", "Enumerators, digital data collection"],
+      jobs: ["Enumerator", "Field/Data Collection Officer"],
       resources: [formsHowTo],
     },
     {
@@ -298,7 +298,7 @@ export const noCode: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 2,
       careerLevel: "mid",
-      jobs: ["Automation and Systems Operator", "Power Apps and Power Automate role"],
+      jobs: ["Automation and Systems Operator", "No Code Platform Specialist"],
       resources: [zapierLearn],
     },
     {

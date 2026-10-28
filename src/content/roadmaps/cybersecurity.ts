@@ -248,7 +248,7 @@ export const cybersecurity: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 3,
       careerLevel: "mid",
-      jobs: ["SOC Analyst Level 1", "SOC Analyst Tier 1", "Security Analyst I", "Analyst, Information Security Operations"],
+      jobs: ["SOC Analyst Level 1", "SOC Analyst Tier 1", "Security Analyst I"],
       resources: [ncscIncident, letsdefend],
     },
     {
@@ -305,7 +305,7 @@ export const cybersecurity: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 3,
       careerLevel: "specialist",
-      jobs: ["Analyst, Cybersecurity", "National Service Personnel, Data and Technology Risk"],
+      jobs: ["Cyber Security Analyst", "Application Security Engineer"],
       resources: [csaHome, nistCsf],
     },
     {

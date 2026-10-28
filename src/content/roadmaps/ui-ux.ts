@@ -148,7 +148,7 @@ export const uiUx: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 2,
       careerLevel: "junior",
-      jobs: ["Junior UI/UX Designer", "UI/UX Designer", "Product Designer (UI/UX)"],
+      jobs: ["Junior UI/UX Designer", "UI/UX Designer", "Product Designer"],
       resources: [],
     },
     {
@@ -205,7 +205,7 @@ export const uiUx: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 2,
       careerLevel: "mid",
-      jobs: ["UX Designer", "Product Designer (UX/UI)"],
+      jobs: ["UX Designer", "Product Designer"],
       resources: [],
     },
     {
@@ -262,7 +262,7 @@ export const uiUx: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 2,
       careerLevel: "mid",
-      jobs: ["UX/UI Designer", "UI/UX Designer (contract)"],
+      jobs: ["UX/UI Designer", "UX Researcher"],
       resources: [],
     },
     {
@@ -319,7 +319,7 @@ export const uiUx: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 2,
       careerLevel: "specialist",
-      jobs: ["Product Designer", "Senior Product Designer", "UX Researcher (AI and HCD)"],
+      jobs: ["Product Designer", "Senior Product Designer", "UX Researcher"],
       resources: [],
     },
     {

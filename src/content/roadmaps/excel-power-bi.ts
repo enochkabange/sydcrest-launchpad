@@ -323,7 +323,7 @@ export const excelPowerBi: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 2,
       careerLevel: "specialist",
-      jobs: ["Senior Specialist, Digital Analytics and Reporting", "HR Data Analytics Officer"],
+      jobs: ["HR Data Analytics Officer"],
       resources: [pbiVisualsPath],
     },
     {

@@ -260,7 +260,7 @@ export const product: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 2,
       careerLevel: "mid",
-      jobs: ["Product Operations Officer", "Associate, Product Operations"],
+      jobs: ["Product Operations Officer"],
       resources: [],
     },
     {
@@ -341,7 +341,7 @@ export const product: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 2,
       careerLevel: "specialist",
-      jobs: ["Senior Technical Product Manager", "Product Manager, API Payments", "Senior Product Analyst"],
+      jobs: ["Senior Technical Product Manager", "Product Manager", "Senior Product Analyst"],
       resources: [],
     },
     {

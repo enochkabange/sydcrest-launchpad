@@ -212,7 +212,7 @@ export const graphicDesign: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 2,
       careerLevel: "junior",
-      jobs: ["Junior Graphic Designer (Web and Digital)", "Graphic Designer and Print Production Assistant"],
+      jobs: ["Junior Graphic Designer", "Graphic Designer and Print Production Assistant"],
       resources: [RES.lfCanva],
     },
     {

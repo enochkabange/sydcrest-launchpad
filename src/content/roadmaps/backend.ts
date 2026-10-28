@@ -205,7 +205,7 @@ export const backend: RoadmapDraft = {
       difficulty: "intermediate",
       complexity: 3,
       careerLevel: "mid",
-      jobs: ["Backend Engineer, payment integration", "Full Stack Engineer"],
+      jobs: ["Backend Engineer", "Full Stack Engineer"],
       resources: [],
     },
     {
