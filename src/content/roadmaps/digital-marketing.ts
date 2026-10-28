@@ -24,6 +24,10 @@ export const digitalMarketing: RoadmapDraft = {
         "Marketing is about understanding people before it is about posting. This section gives you the thinking that every channel builds on.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [RES.skillshop],
     },
     {
@@ -33,6 +37,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Follow how a customer moves from first hearing about a business to paying and coming back. In Ghana that journey often runs through a WhatsApp chat and a mobile money payment.",
       parent: "foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.skillshop],
     },
     {
@@ -42,6 +48,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Describe who the customer is, what they need, which language they prefer and which apps they use, then study what similar businesses already do. A post in Dagbani, Twi or Pidgin can reach people an English post misses.",
       parent: "foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfCommunication],
     },
     {
@@ -51,6 +59,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Compare messaging, social media, search, email and paid ads, and what each one is good for. Small budgets mean choosing a few channels and doing them well.",
       parent: "foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.skillshop],
     },
     {
@@ -60,6 +70,10 @@ export const digitalMarketing: RoadmapDraft = {
         "Content is what people see, read and share. You can produce professional work with only a phone and free apps.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "junior",
+      jobs: ["Marketing Assistant", "Digital Marketing Intern", "Content Curator"],
       resources: [RES.lfCanva],
     },
     {
@@ -69,6 +83,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Write short, clear posts, captions and messages in a consistent brand voice that tell people what to do next. Lead with the benefit and include the price and how to pay when you can.",
       parent: "content",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfWriting, RES.lfBizWriting],
     },
     {
@@ -78,6 +94,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Take clean product photos in daylight and design simple branded graphics in a free tool. Keep files small so customers on limited data can still load them.",
       parent: "content",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfCanva, RES.lfDesign],
     },
     {
@@ -87,6 +105,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Shoot and edit short vertical videos on a phone for TikTok, Reels and WhatsApp Status, and learn how businesses sell during live streams. Clear sound, a strong first few seconds and captions matter more than expensive gear.",
       parent: "content",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.tiktokBusiness, RES.metaLearn],
     },
     {
@@ -96,6 +116,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Plan posts a few weeks ahead around market days, holidays and local events. A simple spreadsheet calendar keeps a business consistent.",
       parent: "content",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfSheets],
     },
     {
@@ -105,6 +127,10 @@ export const digitalMarketing: RoadmapDraft = {
         "Many Ghanaian businesses sell directly through chat, social apps and email lists. This section teaches you to run those channels professionally.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Marketing and Social Media Assistant", "Social Media Marketer", "Junior Digital Marketer"],
       resources: [RES.metaLearn],
     },
     {
@@ -114,6 +140,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Set up a business profile, catalogue, quick replies, labels and status updates. Good WhatsApp management is one of the most practical services you can offer a local shop.",
       parent: "social-and-messaging",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.whatsappBusiness, RES.whatsappFaq],
     },
     {
@@ -123,6 +151,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Run a business page, post consistently and use the free insights to learn what works. Learn the platform's own free training before paying for any course.",
       parent: "social-and-messaging",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.metaLearn],
     },
     {
@@ -132,6 +162,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Reply to comments and messages quickly, handle complaints politely in public, and work with trusted local voices who can speak for a brand. Never ask customers to share PINs or codes in comments.",
       parent: "social-and-messaging",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfCommunication],
     },
     {
@@ -141,6 +173,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Build a list of people who agreed to hear from a business and send them short, useful newsletters. Email reaches people without depending on a social app deciding who sees a post.",
       parent: "social-and-messaging",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfGmail, RES.lfBizWriting],
     },
     {
@@ -150,6 +184,10 @@ export const digitalMarketing: RoadmapDraft = {
         "People search for businesses near them on Google and maps. This section makes sure your clients show up when they do.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Digital Marketer", "Content Developer"],
       resources: [RES.lfSearch],
     },
     {
@@ -159,6 +197,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Create and verify a profile with correct hours, location, photos and phone number, then encourage genuine customer reviews. It is free and often the first thing a nearby customer sees.",
       parent: "search-and-local",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.googleBusiness],
     },
     {
@@ -168,6 +208,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Learn how search engines find and rank pages, and how to research the words people actually type. Focus on local searches such as a service plus a town name.",
       parent: "search-and-local",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.seoStarter],
     },
     {
@@ -177,6 +219,10 @@ export const digitalMarketing: RoadmapDraft = {
         "Paid ads reach people beyond a page's followers. Learn to spend small amounts carefully and measure the result.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
+      careerLevel: "mid",
+      jobs: ["Digital Marketer", "Social Media Executive"],
       resources: [RES.skillshop],
     },
     {
@@ -186,6 +232,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Set up a campaign with a clear goal, a target audience by location and interest, and a small daily budget. Start with a test and only increase spend on what works.",
       parent: "paid-ads",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.metaLearn],
     },
     {
@@ -195,6 +243,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Learn how search ads match keywords to what people type and how bidding works. Google's free Skillshop training includes certifications you can add to your CV.",
       parent: "paid-ads",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.skillshop, RES.adsHelp],
     },
     {
@@ -204,6 +254,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Plan budgets in cedis, understand how ad platforms charge and keep a record for the client. Agree clearly who pays the platform and who pays you.",
       parent: "paid-ads",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfMoney],
     },
     {
@@ -213,6 +265,10 @@ export const digitalMarketing: RoadmapDraft = {
         "Clients keep paying marketers who can plan a campaign and show what their money achieved. This section covers planning, tracking and honest reporting.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
+      careerLevel: "mid",
+      jobs: ["Social Media Content and Strategy Executive", "Community Manager"],
       resources: [RES.gaHelp],
     },
     {
@@ -222,6 +278,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Turn a goal into a short plan with an audience, a message, channels, a budget, dates and a number to watch. One clear page keeps you and the client on the same track.",
       parent: "measurement",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfSheets, RES.skillshop],
     },
     {
@@ -231,6 +289,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Read platform insights and website analytics to see reach, clicks, messages and sales. Track the numbers that connect to money, not only likes.",
       parent: "measurement",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.gaHelp, RES.skillshop],
     },
     {
@@ -240,6 +300,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Send a short monthly report covering what you did, what happened and what you will try next. Be honest when something did not work, because trust keeps clients longer than good numbers.",
       parent: "measurement",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfBizWriting],
     },
     {
@@ -249,6 +311,10 @@ export const digitalMarketing: RoadmapDraft = {
         "Digital marketing can lead to agency jobs, in house roles or your own freelance business. This section helps you choose and start.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "specialist",
+      jobs: ["Digital and Social Media Manager", "Digital Manager", "Communications Officer"],
       resources: [RES.lfJobsearch],
     },
     {
@@ -258,6 +324,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Offer a short trial to two or three local businesses and document the before, the work and the results. Real accounts with honest numbers convince employers more than mock projects.",
       parent: "earning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfResume],
     },
     {
@@ -267,6 +335,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Take free platform courses and earn certificates where they are free, write a CV that shows real work, and apply to agencies, companies and NGOs. Never pay anyone to get a job interview.",
       parent: "earning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.skillshop, RES.lfJobsearch, RES.lfInterview],
     },
     {
@@ -276,6 +346,8 @@ export const digitalMarketing: RoadmapDraft = {
         "Package your services with clear monthly prices, write a simple agreement and invoice on time. Ask happy clients for referrals, since many local clients find marketers by word of mouth.",
       parent: "earning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfFreelancing],
     },
     {
@@ -285,6 +357,8 @@ export const digitalMarketing: RoadmapDraft = {
         "SydCrest's Delta Mentoring Program covers this field over twelve weeks with mentors and a capstone project in SEO, social media or Google Ads. Join the waitlist if you want structure, feedback and a certificate alongside this roadmap.",
       parent: "earning",
       optional: true,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [],
     },
   ],

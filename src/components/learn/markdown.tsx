@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { parseMarkdown, type Block, type Inline } from "./markdown-parse";
+import { headingIds, inlineText } from "./lesson-toc";
 
 /**
  * Renders node content from markdown as React elements only (no raw HTML).
@@ -44,12 +45,12 @@ const HEADINGS = {
   3: "h4",
 } as const;
 
-function renderBlock(block: Block, key: number): ReactNode {
+function renderBlock(block: Block, key: number, id?: string): ReactNode {
   switch (block.type) {
     case "heading": {
       const Tag = HEADINGS[block.level];
       return (
-        <Tag key={key} className="pt-2 text-lg font-semibold text-content">
+        <Tag key={key} id={id} className="scroll-mt-24 pt-2 text-lg font-semibold text-content">
           {renderInline(block.children)}
         </Tag>
       );
@@ -81,8 +82,23 @@ function renderBlock(block: Block, key: number): ReactNode {
   }
 }
 
-export function Markdown({ source }: { source: string | null | undefined }) {
+/**
+ * `idPrefix` gives every heading an id (the same ones `lessonToc` links to),
+ * so the lesson's table of contents can jump to it.
+ */
+export function Markdown({ source, idPrefix }: { source: string | null | undefined; idPrefix?: string }) {
   const blocks = parseMarkdown(source);
   if (!blocks.length) return null;
-  return <div className="flex flex-col gap-4 text-base leading-relaxed text-content-2">{blocks.map(renderBlock)}</div>;
+  const ids = idPrefix
+    ? headingIds(
+        blocks.flatMap((b) => (b.type === "heading" ? [inlineText(b.children).trim()] : [])),
+        idPrefix,
+      )
+    : [];
+  let heading = 0;
+  return (
+    <div className="flex flex-col gap-4 text-base leading-relaxed text-content-2">
+      {blocks.map((block, i) => renderBlock(block, i, block.type === "heading" && idPrefix ? ids[heading++] : undefined))}
+    </div>
+  );
 }

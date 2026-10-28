@@ -69,6 +69,10 @@ export const cloudDevops: RoadmapDraft = {
         "Cloud and DevOps work sits on top of other skills, so this section checks you are ready and shows what the jobs look like. Read it first even if you are keen to open a cloud account.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [],
     },
     {
@@ -78,6 +82,8 @@ export const cloudDevops: RoadmapDraft = {
         "You should already be comfortable with networks and operating systems from IT support, or with code, Git and APIs from backend development. You can read the theory on any device, but from the Linux section onwards you will need a laptop or desktop and a steady connection, or a free browser lab.",
       parent: "before-you-start",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.gitBook],
     },
     {
@@ -87,6 +93,8 @@ export const cloudDevops: RoadmapDraft = {
         "Banks, fintechs, telcos and software firms in Accra hire cloud engineers and DevOps engineers, but most adverts ask for a year or more of experience. Junior routes include internships, national service placements, cloud support roles and free employer run cloud training cohorts.",
       parent: "before-you-start",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [awsSkillBuilder],
     },
     {
@@ -96,6 +104,10 @@ export const cloudDevops: RoadmapDraft = {
         "Almost every cloud server runs Linux and talks over networks you have to configure yourself. This section turns basic computer skills into the server skills cloud adverts ask for.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [],
     },
     {
@@ -105,6 +117,8 @@ export const cloudDevops: RoadmapDraft = {
         "Learn to move around the file system, manage files, users and permissions, install packages and read logs from the command line. Practise on a free cloud shell or a Linux machine until these commands feel normal.",
       parent: "linux-and-networking",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [ubuntuCli, carpentryShell],
     },
     {
@@ -114,6 +128,8 @@ export const cloudDevops: RoadmapDraft = {
         "Bash and Python scripts let you repeat a task on ten servers as easily as on one, and adverts ask for them often. Start by automating a small job you do by hand, such as backing up a folder or checking that a website responds.",
       parent: "linux-and-networking",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [carpentryShell, RES.pythonTutorial],
     },
     {
@@ -123,6 +139,8 @@ export const cloudDevops: RoadmapDraft = {
         "Cloud networks use the same ideas as an office network: IP addresses, subnets, DNS, ports, firewalls and load balancers. Learn how a request travels from a phone in Tamale to a server in a cloud region and back.",
       parent: "linux-and-networking",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [mdnDns, awsVpc, RES.mdnHttp],
     },
     {
@@ -132,6 +150,10 @@ export const cloudDevops: RoadmapDraft = {
         "Cloud providers rent out computers, storage and databases by the hour so teams do not have to buy their own. This section covers the ideas that apply across AWS, Azure and Google Cloud.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Junior Cloud Engineer", "DevOps Engineer Internship"],
       resources: [],
     },
     {
@@ -141,6 +163,8 @@ export const cloudDevops: RoadmapDraft = {
         "Understand infrastructure, platform and software as a service, regions and availability zones, and the shared responsibility model that splits security work between you and the provider. These ideas come up in every entry level cloud exam and interview.",
       parent: "cloud-fundamentals",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [azureCloudConcepts, awsShared, az900Guide],
     },
     {
@@ -150,6 +174,8 @@ export const cloudDevops: RoadmapDraft = {
         "Learn the core building blocks: virtual machines, object storage, managed databases and serverless functions. Launch a small server, host a static file and connect a database so you see how the pieces fit.",
       parent: "cloud-fundamentals",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [awsSkillBuilder, azureTraining],
     },
     {
@@ -159,6 +185,8 @@ export const cloudDevops: RoadmapDraft = {
         "Cloud accounts are controlled by users, roles and policies, and a careless permission can expose a whole company. Learn to turn on multifactor sign in, avoid using the main account day to day and give each person only the access they need.",
       parent: "cloud-fundamentals",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [awsIam],
     },
     {
@@ -168,6 +196,8 @@ export const cloudDevops: RoadmapDraft = {
         "On a paid cloud account a forgotten server keeps billing in foreign currency, which can cost far more than you expect in cedis. Practise without entering card details, set a budget alert on any real account and delete what you no longer need.",
       parent: "cloud-fundamentals",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [awsFree, awsBudgets, azureBudgets],
     },
     {
@@ -177,6 +207,10 @@ export const cloudDevops: RoadmapDraft = {
         "DevOps is about getting code from a developer's laptop to users quickly and safely. This section covers the version control, pipelines and containers that make that possible.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Junior Cloud Engineer", "Junior / Associate ICT Operations Engineer"],
       resources: [],
     },
     {
@@ -186,6 +220,8 @@ export const cloudDevops: RoadmapDraft = {
         "Go beyond saving your own work to branches, pull requests, code review and tags that a whole team relies on. Pipelines start from Git events, so a clean history makes everything after it easier.",
       parent: "shipping-software",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.gitBook, RES.githubDocs],
     },
     {
@@ -195,6 +231,8 @@ export const cloudDevops: RoadmapDraft = {
         "A pipeline builds your code, runs the tests and deploys it every time someone pushes a change. Build one for a small project with a free tool such as GitHub Actions and watch it catch a broken change before users do.",
       parent: "shipping-software",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [ghActions, ghActionsQuickstart],
     },
     {
@@ -204,6 +242,8 @@ export const cloudDevops: RoadmapDraft = {
         "A container packages an app with everything it needs so it runs the same on your laptop and on a server. Learn to write a Dockerfile, build an image and run it, on a computer with enough memory or in a free browser lab.",
       parent: "shipping-software",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.docker, RES.twelveFactor],
     },
     {
@@ -213,6 +253,10 @@ export const cloudDevops: RoadmapDraft = {
         "Once an app has real users you need repeatable setups, visibility and a plan for when things break. This section covers the tools that DevOps adverts in Ghana name most after cloud and containers.",
       parent: null,
       optional: false,
+      difficulty: "advanced",
+      complexity: 3,
+      careerLevel: "mid",
+      jobs: ["DevOps Engineer", "Cloud Engineer", "Cloud Delivery Engineer"],
       resources: [],
     },
     {
@@ -222,6 +266,8 @@ export const cloudDevops: RoadmapDraft = {
         "Instead of clicking through a cloud console, you describe servers and networks in files that can be reviewed, versioned and rebuilt. Terraform is a common example, and it lets you tear a practice setup down so it stops costing money.",
       parent: "running-at-scale",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [terraformTutorials],
     },
     {
@@ -231,6 +277,8 @@ export const cloudDevops: RoadmapDraft = {
         "Kubernetes runs many containers across many machines and restarts them when they fail. It appears in many mid level adverts, so learn the main ideas in a free browser lab without paying for a cluster.",
       parent: "running-at-scale",
       optional: true,
+      difficulty: "advanced",
+      complexity: 5,
       resources: [k8sBasics, killercoda],
     },
     {
@@ -240,6 +288,8 @@ export const cloudDevops: RoadmapDraft = {
         "Good teams know a service is down before customers start calling. Learn to collect metrics and logs, build a simple dashboard and set alerts that wake the right person for the right reason.",
       parent: "running-at-scale",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [prometheus, sreBook],
     },
     {
@@ -249,6 +299,8 @@ export const cloudDevops: RoadmapDraft = {
         "Plan for failure with backups you have actually tested, patched systems and secrets kept out of code. When something does break, follow a calm incident process and write up what happened so it does not happen again.",
       parent: "running-at-scale",
       optional: false,
+      difficulty: "advanced",
+      complexity: 5,
       resources: [awsWellArchitected, RES.owasp, sreBook],
     },
     {
@@ -258,6 +310,10 @@ export const cloudDevops: RoadmapDraft = {
         "Cloud employers want proof you can build and run something, not only a list of courses. This section turns your practice into evidence and points you to realistic first roles.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "specialist",
+      jobs: ["Senior DevOps Engineer", "DevOps Engineering Leader", "IT Infrastructure Engineer"],
       resources: [],
     },
     {
@@ -267,6 +323,8 @@ export const cloudDevops: RoadmapDraft = {
         "Some Ghana cloud adverts ask for an AWS or Azure certification, and the fundamentals exams are a common first one. Use the free official study guides and practice questions, and treat the exam as a milestone rather than a substitute for hands on work.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [awsCcp, az900Guide],
     },
     {
@@ -276,6 +334,8 @@ export const cloudDevops: RoadmapDraft = {
         "Build one small app end to end: code in Git, a pipeline that tests and deploys it, a container, infrastructure written as code, monitoring and a budget alert. Write a short readme with a diagram and what you would improve, then tear it down so it costs nothing.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.githubDocs, RES.render],
     },
     {
@@ -285,6 +345,8 @@ export const cloudDevops: RoadmapDraft = {
         "Look for cloud support, junior DevOps, IT infrastructure and internship roles, and for free cloud training cohorts that include placement support. Many people move into DevOps from an IT support or developer job, so the role you have now can be your route in.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [awsSkillBuilder, azureTraining],
     },
   ],

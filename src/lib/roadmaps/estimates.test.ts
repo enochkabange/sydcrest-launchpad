@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { estimateMinutes, formatMinutes, sumEstimates, timeBand, timeLeftCopy, weeksLeft } from "./estimates";
+import { countWords, estimateLessonMinutes, estimateMinutes, formatMinutes, sumEstimates, timeBand, timeLeftCopy, weeksLeft } from "./estimates";
 
 const lesson = (lessonWords: number, practiceWords = 0, quizQuestions = 0) => ({ hasLesson: true, lessonWords, practiceWords, quizQuestions });
 
@@ -56,5 +56,21 @@ describe("totals and copy", () => {
     expect(timeBand(9 * 60)).toBe("short");
     expect(timeBand(10 * 60)).toBe("medium");
     expect(timeBand(12 * 60)).toBe("long");
+  });
+});
+
+describe("estimateLessonMinutes", () => {
+  it("counts words like the database view and adds the worked example", () => {
+    expect(countWords("  Rows run  across.\n\nColumns run down. ")).toBe(6);
+    expect(countWords(null)).toBe(0);
+    const words = (n: number) => Array.from({ length: n }, () => "word").join(" ");
+    // 600 + 300 words = 5 min reading; practice 15 + 1; quiz 3: 24 → 25
+    expect(estimateLessonMinutes({ explanation_md: words(600), workedExample_md: words(300), practice_task_md: words(180), quizQuestions: 3 })).toBe(25);
+    expect(estimateLessonMinutes({ explanation_md: words(900) })).toBe(5);
+  });
+
+  it("is null without an explanation", () => {
+    expect(estimateLessonMinutes({ explanation_md: "  ", practice_task_md: "Do it." })).toBeNull();
+    expect(estimateLessonMinutes({})).toBeNull();
   });
 });

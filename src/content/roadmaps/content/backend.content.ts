@@ -8,6 +8,11 @@ const content: TrackContent = {
   roadmap: "backend-developer",
   nodes: {
     "foundations": {
+      outcomes: [
+        "Picture how a request travels from a phone to a server and back",
+        "Name the everyday tools every backend developer uses",
+        "Set up your tools and watch the client and server loop",
+      ],
       explanation_md: `When you pay for a bundle with mobile money, check a school result online or order food through an app, a lot happens that you never see. A phone sends a message to a computer somewhere, that computer looks something up, saves a record and sends an answer back. That hidden computer is a **server**, and the code running on it is the **backend**. Backend developers build and look after that part.
 
 Ghanaian fintechs, telcos, banks, logistics startups and software agencies all need people who can do this work, and so do remote teams that hire across Africa. When you read their job adverts, a few basics appear again and again, even for junior roles. This first section gives you those basics before you write a single API.
@@ -94,6 +99,12 @@ Take your time here. Learners who are solid on these basics usually move faster 
       },
     },
     "how-servers-work": {
+      outcomes: [
+        "Describe an HTTP request and response",
+        "Read status codes and headers",
+        "Explain why HTTPS matters",
+        "Explain how slow and dropped connections affect a request",
+      ],
       explanation_md: `Every backend job, whether at a bank in Accra, a telco or a remote startup, involves HTTP. When a payment fails or an app shows an error, the first question a senior developer asks is "what request was sent, and what came back?" Being able to answer that makes you useful from your first week.
 
 ### Requests and responses
@@ -215,6 +226,11 @@ Mobile networks can be slow or drop for a few seconds. A request might reach the
       },
     },
     "command-line": {
+      outcomes: [
+        "Move around folders and work with files from a terminal",
+        "Read logs and run programs on the command line",
+        "Use environment variables",
+      ],
       explanation_md: `Backend developers spend a lot of time in a terminal. You use it to start your server, install packages, run tests, connect to a database and read logs when something goes wrong in production. Job adverts rarely say "command line" on its own, but they assume it whenever they mention Linux, deployment, Docker or cloud work.
 
 ### What the command line is
@@ -336,6 +352,12 @@ Practise a little every day. After a week the terminal stops feeling strange and
       },
     },
     "git-and-github": {
+      outcomes: [
+        "Use the everyday Git loop to save your work",
+        "Work on branches and open a pull request",
+        "Keep secrets and junk files out of Git",
+        "Use your GitHub profile as part of your CV",
+      ],
       explanation_md: `Teams expect you to use Git from your first day, whether at a national service placement, a local startup or a remote company. Teams use it to track every change, work on features without breaking each other's code and review work before it goes live. For you as a job seeker, a GitHub profile with real projects is often the first thing an employer looks at.
 
 ### What Git does
@@ -445,6 +467,11 @@ Pin your best projects, give each a clear README that says what it does and how 
       },
     },
     "a-language": {
+      outcomes: [
+        "Explain why one language learned well beats many learned a little",
+        "Compare Node.js and Python for backend work",
+        "Choose a language from the adverts you want to apply for",
+      ],
       explanation_md: `Backend job adverts in Ghana and on remote boards ask for many languages: JavaScript with Node.js, Python, Java, C#, PHP, Go and more. That list can feel overwhelming. The good news is that employers mostly want to see that you can build working things well in **one** language. Once you know one deeply, picking up a second for a new job takes weeks, not years.
 
 ### Why one language, learned well
@@ -540,6 +567,11 @@ Imagine Wumpini, learning in Damongo, sets herself one rule: write some code eve
       },
     },
     "programming-fundamentals": {
+      outcomes: [
+        "Use functions and the data structures you will need daily",
+        "Handle money values with care",
+        "Treat errors as information and debug step by step",
+      ],
       explanation_md: `Graduate programmes and junior roles in Ghana often test data structures, problem solving and clean code before they ask anything about frameworks. Remote employers do the same with short coding exercises. These fundamentals are what let you turn a business need, such as "total today's sales", into code that works.
 
 ### The building blocks
@@ -666,6 +698,12 @@ Print the result of each function with sample data. Then break one input on purp
       },
     },
     "async-programming": {
+      outcomes: [
+        "Explain why a server waits on the network most of the time",
+        "Use promises, async and await",
+        "Handle failed calls and set timeouts",
+        "Run independent tasks at the same time",
+      ],
       explanation_md: `A backend spends most of its time waiting: for the database, for a payment provider, for an SMS service. If it simply stopped and waited each time, one slow request would hold up everyone else. Asynchronous code lets a server start a task, deal with other customers while it waits, and come back when the answer arrives. Some of the remote adverts we read mention asynchronous processing by name.
 
 ### The idea, with a chop bar
@@ -800,6 +838,11 @@ Payments, webhooks, SMS and background jobs all depend on handling slow and fail
       },
     },
     "databases": {
+      outcomes: [
+        "Explain what a database does for a backend",
+        "Explain why relational databases come first",
+        "Think like a database designer before you touch tools",
+      ],
       explanation_md: `Many of the backend job adverts we read mentioned databases: SQL, PostgreSQL, MySQL, SQL Server, and sometimes MongoDB or Redis. That makes sense. An app without stored data forgets every customer, every order and every payment the moment it restarts. The database is the memory of the business, and looking after it well is one of the most trusted jobs a backend developer has.
 
 ### What a database does
@@ -889,6 +932,12 @@ Imagine Abdul-Rahman runs a small shop in Nalerigu that takes orders on WhatsApp
       },
     },
     "sql": {
+      outcomes: [
+        "Read data with SELECT and filter it",
+        "Add, change and remove rows",
+        "Summarise with GROUP BY and join tables",
+        "Keep user input out of hand built SQL",
+      ],
       explanation_md: `SQL showed up in many of the backend, software and graduate adverts we read, whether the employer used PostgreSQL, MySQL or SQL Server. It is also useful in data, product and support roles, so time spent here pays off widely. The good news is that a small set of commands covers most daily work.
 
 ### Tables, rows and columns
@@ -1042,6 +1091,12 @@ Free interactive sites let you type queries in the browser and check results ins
       },
     },
     "database-design": {
+      outcomes: [
+        "Model real things such as customers and orders as tables",
+        "Use primary and foreign keys",
+        "Avoid repeating data and store money and status safely",
+        "Add indexes where they help",
+      ],
       explanation_md: `Several adverts we read asked for database design skills alongside SQL, and an interviewer may ask you to sketch tables for a scenario. Good design is what keeps an app's data trustworthy as it grows. Poor design shows up later as duplicate customers, orders that point to nothing, and totals that never match the mobile money statement.
 
 ### Start from the real world
@@ -1152,6 +1207,11 @@ Sketch boxes for tables and lines for relationships on paper. This kind of diagr
       },
     },
     "migrations-and-orms": {
+      outcomes: [
+        "Explain what a migration is and why teams use them",
+        "Change a database safely over time",
+        "Decide between an ORM and plain SQL",
+      ],
       explanation_md: `Once an app is live, its database keeps changing: a new column for delivery address, a new table for refunds, a rule that phone numbers must be unique. Teams never make these changes by hand on the live server, because one typo can break the app for everyone. They use **migrations**. Adverts we read also named ORMs and query tools such as Entity Framework, Hibernate and Prisma, so it helps to know what they are.
 
 ### What a migration is
@@ -1266,6 +1326,11 @@ Imagine Fuseini runs the backend for a cooperative's savings app in Yendi. Membe
       },
     },
     "caching-and-nosql": {
+      outcomes: [
+        "Explain what a cache does and why staleness is the hard part",
+        "Know when a key value store or a document database helps",
+        "Use HTTP caching",
+      ],
       explanation_md: `Some backend adverts we read, especially from fintechs and remote payment teams, listed Redis, MongoDB or "NoSQL" next to PostgreSQL or MySQL. You do not need these for your first project, which is why this lesson is optional. But knowing what they are for helps you understand adverts and answer interview questions sensibly.
 
 ### What caching is
@@ -1369,6 +1434,11 @@ Start with one relational database. Add a cache when you can see the same slow q
       },
     },
     "apis": {
+      outcomes: [
+        "Describe what an API looks like and what makes one good",
+        "Run a small API built with a framework",
+        "Design with phone users in mind",
+      ],
       explanation_md: `Building RESTful APIs was the most repeated requirement across the adverts we read, from junior roles at Accra startups to remote payment teams. An API (application programming interface) is how a mobile app, a website, a partner company or another service talks to your server. If the database is the memory of a business, the API is its front counter.
 
 ### What an API looks like
@@ -1480,6 +1550,12 @@ Imagine Amina is building an API for a farmers' cooperative in Savelugu. Officer
       },
     },
     "rest-apis": {
+      outcomes: [
+        "Design clear routes with the right HTTP methods",
+        "Return consistent JSON with meaningful status codes",
+        "Add lists, filters, pages and versioning",
+        "Document and test an API as you build it",
+      ],
       explanation_md: `Most of the backend adverts we read asked for REST API experience. REST is a style for designing APIs around **resources** (the things your app deals with, like products, orders and payments) and standard HTTP methods. Following it means other developers can guess how your API works before reading a word of documentation.
 
 ### Resources and routes
@@ -1626,6 +1702,11 @@ Use \`curl\` or a free API client to send requests while you build. Check each s
       },
     },
     "validation-and-errors": {
+      outcomes: [
+        "Validate every input on the server",
+        "Check Ghanaian phone numbers and cedi amounts carefully",
+        "Return helpful errors and handle unexpected ones",
+      ],
       explanation_md: `Every input that reaches your server could be wrong, by accident or on purpose. A missing field, a phone number with a letter in it, a negative amount or a huge block of text can crash your code, corrupt your data or, with payments, cost real money. Adverts mention debugging and security alongside APIs because employers have seen what happens without careful validation.
 
 ### Never trust the client
@@ -1761,6 +1842,12 @@ Hawa's school fees API accepts \`{ phone, amount }\`. A parent types \`+233 24 1
       },
     },
     "auth": {
+      outcomes: [
+        "Explain the difference between authentication and authorisation",
+        "Store passwords properly",
+        "Build a phone number and one time code sign in",
+        "Check permissions on every request",
+      ],
       explanation_md: `Every app that holds personal data or money needs to know **who** is making a request and **what** they are allowed to do. Mistakes here are among the most serious a backend developer can make, which is why adverts list security and data protection, and why broken access control sits at the top of well known security risk lists.
 
 ### Two different questions
@@ -1886,6 +1973,11 @@ Writing your own sign in system from scratch is a good learning exercise, but fo
       },
     },
     "local-integrations": {
+      outcomes: [
+        "Explain why calling another company's API is harder than it looks",
+        "Learn a provider's flow without spending money",
+        "Name the integrations this section covers",
+      ],
       explanation_md: `This section is where backend skills meet the way Ghana actually does business. Customers pay with mobile money, get updates by SMS or WhatsApp, and sometimes use USSD menus on basic phones. Connections drop, prompts time out and the same message can arrive twice. Fintech and payment adverts we read asked for webhooks, retries, idempotency and reconciliation by name. A developer who handles these calmly is useful to Ghanaian startups, fintechs, telcos and agencies very quickly.
 
 ### Talking to other companies' APIs
@@ -1982,6 +2074,11 @@ Imagine Mariama's online store in Tamale. When Fuseini pays for a bag of rice wi
       },
     },
     "payments-and-webhooks": {
+      outcomes: [
+        "Describe the flow of a mobile money payment",
+        "Receive and verify a webhook before trusting it",
+        "Record each payment once and reconcile with the provider",
+      ],
       explanation_md: `Mobile money is an everyday way to pay in Ghana, so payment integration is one of the most practical backend skills you can learn here. Fintech and payment adverts we read mentioned payment APIs, webhooks and reconciliation directly. The details differ between providers, but the shape of the work is the same everywhere.
 
 ### The flow
@@ -2113,6 +2210,11 @@ At the end of each day, compare your \`paid\` payments with the provider's repor
       },
     },
     "idempotency-and-retries": {
+      outcomes: [
+        "Set timeouts for calls to other services",
+        "Retry safely without charging anyone twice",
+        "Use idempotency keys and handle repeated webhooks",
+      ],
       explanation_md: `Fintech adverts we read listed retries, idempotency, failure recovery and reconciliation as core duties. These words sound advanced, but the problem behind them is everyday Ghana: a customer taps "Pay", the network drops, they tap again. Did they just pay twice? A good backend makes sure the answer is no.
 
 ### Timeouts: decide how long to wait
@@ -2238,6 +2340,12 @@ Even with all this, some cases stay unclear. A scheduled job that checks old pen
       },
     },
     "sms-and-whatsapp": {
+      outcomes: [
+        "Send SMS and WhatsApp messages through a provider",
+        "Send messages in the background so users never wait",
+        "Respect consent and opt outs",
+        "Explain how USSD reaches basic phones",
+      ],
       explanation_md: `Order confirmations, delivery updates, fee reminders and sign in codes reach many Ghanaian customers by SMS or WhatsApp rather than email. Building these features well means integrating with a messaging provider's API, keeping your app fast when messages are slow, and respecting people's right to stop receiving them. Adverts we read mentioned integrations, event based communication and asynchronous processing, which is exactly what this work involves.
 
 ### Sending a message through a provider
@@ -2344,6 +2452,11 @@ Imagine Hawa's school in Bolgatanga. Parents get a fee reminder by SMS, can chec
       },
     },
     "production": {
+      outcomes: [
+        "Explain what changes when code meets real users",
+        "Name the topics in this section",
+        "Review one of your projects with production eyes",
+      ],
       explanation_md: `"Production" means the real, live system that real customers use. Code that runs perfectly on your laptop faces new challenges there: many users at once, attackers probing for weaknesses, power cuts at the data centre, a provider going down at month end. The adverts we read asked for testing, deployment, cloud experience, debugging and security awareness, even in junior roles, because these habits are what make a service trustworthy.
 
 ### What changes in production
@@ -2443,6 +2556,11 @@ Imagine Sumaila has built an API for a farmers' cooperative in Yendi. Before tel
       },
     },
     "security": {
+      outcomes: [
+        "Recognise common attacks such as injection and broken access control",
+        "Keep secrets out of your code and limit abuse",
+        "Handle personal data under Ghana's Data Protection Act",
+      ],
       explanation_md: `Banks, fintechs and telcos in Ghana handle money and personal data, so security knowledge appears in their adverts. You do not need to be a security specialist, but you must avoid the common mistakes that let attackers in. A short list of well understood problems is behind many real breaches.
 
 ### Common attacks and how to stop them
@@ -2564,6 +2682,11 @@ The OWASP Top Ten is a free, regularly updated list of the most important web ap
       },
     },
     "testing": {
+      outcomes: [
+        "Explain the kinds of backend tests",
+        "Write a unit test and test an API endpoint",
+        "Decide what to test first and test code you do not control",
+      ],
       explanation_md: `Unit testing, test coverage and quality appeared in several of the backend adverts we read. Tests are small programs that check your code does what you expect. They let you change code without fear, and they show an employer that you care whether things actually work, not just whether they ran once on your laptop.
 
 ### Why tests matter for backend work
@@ -2688,6 +2811,11 @@ Write a test when you write a function, or even before. Run tests before every c
       },
     },
     "deploy-and-monitor": {
+      outcomes: [
+        "Deploy an API and database on a free tier",
+        "Configure secrets with environment variables and run migrations",
+        "Read logs and add health checks",
+      ],
       explanation_md: `A live API with a public link is one of the strongest things you can show an employer. It proves you can take code all the way from your laptop to the internet, which is what adverts mean when they list deployment, cloud platforms and CI/CD. You can do it without paying, using free hosting tiers.
 
 ### What deploying means
@@ -2815,6 +2943,11 @@ Use test keys only, add sample data with made up names, and make sure there is n
       },
     },
     "containers": {
+      outcomes: [
+        "Explain the problem containers solve",
+        "Build an image and run a container",
+        "Run a database alongside your app with containers",
+      ],
       explanation_md: `Docker appeared in several of the backend and remote adverts we read, often alongside cloud platforms and Kubernetes. It is rarely a hard requirement for a first junior role, which is why this lesson is optional, but understanding containers helps you follow team conversations and makes your projects easier for others to run.
 
 ### The problem containers solve
@@ -2925,6 +3058,11 @@ Imagine Issahaku joining a remote team. Their README says "run \`docker compose 
       },
     },
     "getting-hired": {
+      outcomes: [
+        "Explain what employers look for in a junior backend developer",
+        "Find where backend jobs are",
+        "Make invisible backend work visible",
+      ],
       explanation_md: `Backend work is mostly invisible. A frontend developer can show a beautiful screen; you are showing data that saves correctly, payments that never double charge and errors that make sense. So you have to work a little harder to make your skills visible. The good news is that at least one junior advert we read said plainly that personal projects, internships and freelance work count as experience, and a national service advert said GitHub projects give candidates an edge. You can build that proof yourself.
 
 ### What employers look for in a junior
@@ -3029,6 +3167,11 @@ Imagine Abdul-Rahman in Wa with two deployed APIs, a clean GitHub profile and a 
       },
     },
     "portfolio": {
+      outcomes: [
+        "Choose project ideas that fit Ghana",
+        "Give every project tests, a README and a live link",
+        "Record a short demo video",
+      ],
       explanation_md: `A strong backend portfolio is not twenty half finished projects. It is two or three deployed, tested, well explained systems that show the skills employers ask for. When a hiring manager at an Accra fintech or a remote startup opens your GitHub, they should understand in two minutes what you built, why, and how well.
 
 ### Project ideas that fit Ghana
@@ -3129,6 +3272,11 @@ After feedback from your mentor or a reviewer, open issues on your own repositor
       },
     },
     "job-search": {
+      outcomes: [
+        "Find local and remote backend roles",
+        "Apply well and prepare for technical interviews",
+        "Offer small integrations as freelance work",
+      ],
       explanation_md: `You have skills and projects. Now you need someone to hire you, or pay you for a job. Searching takes persistence, and rejections are normal for everyone. Treat it like a project: a plan, steady effort and learning from each attempt.
 
 ### Where to look

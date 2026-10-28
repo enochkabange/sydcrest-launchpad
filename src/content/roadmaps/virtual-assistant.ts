@@ -52,6 +52,10 @@ export const virtualAssistant: RoadmapDraft = {
         "Learn what assistants actually do all day, how remote work is organised and how to work with clients in other time zones. This section sets the habits every later skill depends on.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [VA.lfWorkplace, RES.lfFreelancing],
     },
     {
@@ -61,6 +65,8 @@ export const virtualAssistant: RoadmapDraft = {
         "A virtual assistant handles admin, communication and organising work for a client from a distance. The same skills also open office and front desk jobs in Ghanaian companies.",
       parent: "getting-started",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [VA.lfWorkplace],
     },
     {
@@ -70,6 +76,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Remote teams rely on written updates, agreed hours and shared tools instead of sitting together. Being visible, predictable and quick to flag problems is what makes a remote worker trusted.",
       parent: "getting-started",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [VA.lfTeams, VA.workspaceLearning],
     },
     {
@@ -79,6 +87,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Ghana keeps GMT all year while many client countries move their clocks for summer time. Learn to convert times, state the time zone in every message and plan your day around a client's hours.",
       parent: "getting-started",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [VA.calendarTimeZones],
     },
     {
@@ -88,6 +98,10 @@ export const virtualAssistant: RoadmapDraft = {
         "Clients judge an assistant first by how they write and speak. This section covers clear writing, chat etiquette and running calls and meetings well.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [VA.lfBusinessComm, RES.lfCommunication],
     },
     {
@@ -97,6 +111,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Write short, polite and complete emails and messages in plain English that a busy reader can act on. Learn a simple structure, the right tone and how to check your work before sending.",
       parent: "communication",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [VA.lfBusinessComm, RES.lfWriting, RES.bbcEnglish],
     },
     {
@@ -106,6 +122,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Handle work chat, phone calls and video meetings professionally on a phone or a laptop, even with limited data. Take clear notes and send a short summary with the actions afterwards.",
       parent: "communication",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [VA.meetSchedule, VA.lfTeams],
     },
     {
@@ -115,6 +133,10 @@ export const virtualAssistant: RoadmapDraft = {
         "Looking after someone's inbox and diary comes up again and again in both local and remote adverts. This section teaches a system for each.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Virtual Assistant", "Administrative Secretary", "Personal Assistant and Administrator"],
       resources: [RES.lfGmail, VA.lfOutlook],
     },
     {
@@ -124,6 +146,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Sort incoming email into what needs action, waiting and reference, using labels, filters and saved replies. Agree clear rules with the client about what you may answer on their behalf.",
       parent: "inbox-and-calendar",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [VA.gmailLabels, VA.gmailFilters, VA.gmailSignature],
     },
     {
@@ -133,6 +157,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Schedule meetings, send invitations, protect focus time and handle changes without double bookings. The same care applies when you arrange travel or an event for a client.",
       parent: "inbox-and-calendar",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [VA.calendarBooking, VA.calendarTimeZones],
     },
     {
@@ -142,6 +168,10 @@ export const virtualAssistant: RoadmapDraft = {
         "Assistants produce letters, reports, trackers and research summaries every week. This section covers the free office tools and the habits that keep that work accurate and easy to find.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Virtual Assistant / Admin Assistant", "Administrative and Operations Assistant"],
       resources: [VA.workspaceLearning, RES.lfDrive],
     },
     {
@@ -151,6 +181,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Format clean documents with headings and templates, export PDFs and keep files in a tidy shared folder structure. Share with the right access so nothing private leaks.",
       parent: "documents-and-data",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [VA.lfDocs, VA.driveSharing],
     },
     {
@@ -160,6 +192,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Enter data accurately, keep a tidy table and use sorting, filters and a few simple formulas. Trackers for leads, invoices, stock and tasks are everyday assistant work.",
       parent: "documents-and-data",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfSheets, RES.sheetsHelp],
     },
     {
@@ -169,6 +203,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Find reliable information quickly, check it against a second source and present it as a short summary with links. Clients ask assistants to research suppliers, prices, venues, contacts and competitors.",
       parent: "documents-and-data",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfSearch, RES.lfThinking],
     },
     {
@@ -178,6 +214,10 @@ export const virtualAssistant: RoadmapDraft = {
         "Beyond inbox and documents, clients often hand assistants their customer messages, social media posting and task lists. This section covers each at a beginner level.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Customer Service Representative", "Customer Support", "Office Assistant / Front Desk Executive"],
       resources: [VA.lfWorkplace],
     },
     {
@@ -187,6 +227,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Answer customer questions by email, chat and phone with patience, accuracy and a record of every case. Know when to solve a problem yourself and when to pass it to the client.",
       parent: "client-tasks",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfCommunication, RES.whatsappBusiness],
     },
     {
@@ -196,6 +238,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Plan a simple content calendar and schedule a client's posts in advance with free tools. Report back on what was posted and pass comments and messages to the right person.",
       parent: "client-tasks",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [VA.metaBusinessSuite, RES.lfCanva],
     },
     {
@@ -205,6 +249,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Track your work in a shared task board or list so the client always sees progress. Write simple step by step procedures for repeated tasks so the work is consistent and easy to hand over.",
       parent: "client-tasks",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [VA.workspaceLearning, VA.lfTeams],
     },
     {
@@ -214,6 +260,10 @@ export const virtualAssistant: RoadmapDraft = {
         "Remote clients care most that work arrives on time and their information stays safe. This section covers power and data cuts, devices and account security.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Executive Assistant", "Executive Virtual Assistant and Executive Assistant"],
       resources: [RES.lfSafety],
     },
     {
@@ -223,6 +273,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Plan for power cuts and weak signal with offline tools, charged backups, a second network and early warnings to the client. Being honest about your setup builds more trust than pretending it is perfect.",
       parent: "working-reliably",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [VA.docsOffline],
     },
     {
@@ -232,6 +284,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Protect your own and your client's accounts with strong passwords, two step verification and careful sharing. Treat client information as confidential and spot phishing before it costs anyone money.",
       parent: "working-reliably",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [VA.twoStep, VA.strongPassword, RES.lfSafety],
     },
     {
@@ -241,6 +295,10 @@ export const virtualAssistant: RoadmapDraft = {
         "Skills only pay when someone hires you and the money reaches you safely. This section covers your profile, finding honest clients, avoiding scams and receiving payment.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Office Administrator", "HR and Administration Officer"],
       resources: [RES.lfFreelancing, VA.lfJobSearch],
     },
     {
@@ -250,6 +308,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Build a short profile and a few sample pieces that prove you can do assistant work, even before your first client. Practice tasks from this roadmap make good samples.",
       parent: "getting-work",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfResume, RES.lfLinkedin],
     },
     {
@@ -259,6 +319,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Look for work with local businesses, Ghanaian job boards, remote job boards and freelance platforms, and check every advert's location rules and hours. Start close to home and grow from there.",
       parent: "getting-work",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [VA.lfJobSearch, RES.lfFreelancing],
     },
     {
@@ -268,6 +330,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Fake remote jobs often ask for fees, promise easy money or try to use your accounts. Learn the warning signs and where to report a scam in Ghana.",
       parent: "getting-work",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [VA.csaReport, VA.csa, RES.lfSafety],
     },
     {
@@ -277,6 +341,8 @@ export const virtualAssistant: RoadmapDraft = {
         "Agree the scope, rate and payment terms in writing, send clear invoices and choose a payment route you understand. Compare every fee and exchange rate before you accept a client's payment method.",
       parent: "getting-work",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfMoney, RES.bog],
     },
   ],

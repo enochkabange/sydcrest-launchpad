@@ -10,6 +10,11 @@ const content: TrackContent = {
   roadmap: "digital-skills-bridge",
   nodes: {
     "phone-as-a-tool": {
+      outcomes: [
+        "Explain why your phone or computer is the place to start",
+        "Learn in this section in short steps",
+        "Take a snapshot of your device today",
+      ],
       explanation_md: `Many people think you need a laptop to start learning digital skills. You do not. The phone in your hand can already send emails, join a class, fill in a job application and keep records for a small business. If you have a laptop or desktop computer at home, at school or at work, that works too, and the lessons in this section give the computer version wherever it is different. Shops, offices and NGOs in Ghana look for people who are comfortable with smartphones and computers, because so much daily work now happens on them.
 
 This first section is about turning the device you already have from something you use to chat into a tool you use to learn and work.
@@ -97,6 +102,11 @@ By the end of this section you will know your own phone or computer better, and 
     },
 
     "phone-first-steps": {
+      outcomes: [
+        "Use the basic movements on a phone",
+        "Find the buttons that take you home",
+        "Connect to WiFi and mobile data, and use a computer's basics",
+      ],
       explanation_md: `Every app on a smartphone is controlled with the same few movements, and a computer has its own matching set. Once these feel natural, you can learn any new app quickly, whether it is a work WhatsApp group, a sales app at a shop or a survey app an NGO gives you in the field. Employers notice when someone handles a phone or a computer calmly and confidently.
 
 ## The basic movements on a phone
@@ -207,6 +217,11 @@ On a computer, practise the computer versions instead: zoom a web page in and ou
     },
 
     "phone-settings-and-storage": {
+      outcomes: [
+        "Free up storage space",
+        "Cut distracting notifications",
+        "Make your battery last and keep updates on",
+      ],
       explanation_md: `A phone or computer that is full, slow or always out of battery makes learning and working hard. A front desk assistant who cannot take a photo of a receipt because "storage is full" looks unprepared. Keeping your device tidy is a small, real work skill.
 
 ## Storage: making space
@@ -305,6 +320,11 @@ Check your storage once a week. It takes two minutes and saves a lot of frustrat
     },
 
     "saving-data": {
+      outcomes: [
+        "Use WiFi whenever you can",
+        "Stop apps using data in the background",
+        "Check where your data goes",
+      ],
       explanation_md: `Prepaid data is one of the biggest costs of learning online. If your bundle runs out halfway through a course, you lose time and money. Learning to control data use also helps at work: field staff and sales officers often use their own bundles, and the ones who manage data well stay connected when it matters.
 
 ## Use WiFi whenever you can
@@ -397,6 +417,11 @@ Compare the bundles your network offers before you buy. A bigger bundle that las
     },
 
     "apps-safely": {
+      outcomes: [
+        "Get apps from the official store",
+        "Check an app before you install it",
+        "Review app permissions and clean up",
+      ],
       explanation_md: `At work you may be asked to install an app: a sales app, a delivery tracking app, or a survey app such as Kobo Collect for an NGO field job. Knowing how to install apps safely, and how to spot a bad one, protects your phone or computer, your money and your employer's information.
 
 ## Get apps from the official store
@@ -496,6 +521,11 @@ Safe habits like these are what employers mean when they ask for someone who is 
     },
 
     "communicating-at-work": {
+      outcomes: [
+        "Tell friendly messages at home from professional ones at work",
+        "Explain why this matters for the DMP cohort",
+        "Check how professional your messages are",
+      ],
       explanation_md: `Read entry level job adverts in Ghana for front desk staff, customer service agents, shop attendants or office assistants, and the same skills keep coming up. Answer calls. Reply on WhatsApp. Respond to email. Communicate well in English. These are not "tech" skills in the way coding is, but they are digital skills, and employers look for them first.
 
 The good news is that you already use most of these tools every day. You call family, you chat on WhatsApp and you send voice notes. This section shows you how to use the same tools in a way that makes a manager, a customer or a mentor trust you.
@@ -585,6 +615,11 @@ You do not need a job to practise. Use your church or mosque group, your class g
     },
 
     "phone-calls-at-work": {
+      outcomes: [
+        "Answer a work call properly",
+        "Listen, check and take a message someone can act on",
+        "End a call and follow up",
+      ],
       explanation_md: `Customer service agents, front desk staff, call centre workers and office assistants all spend a lot of their day on the phone. A caller cannot see your face or your office. Your voice and what you say are all they have to judge you and your employer. Good phone habits are simple to learn and very easy for a manager to notice.
 
 ## Answering a call
@@ -688,6 +723,11 @@ Making calls to customers, sometimes called outbound calls, uses the same skills
     },
 
     "whatsapp-for-work": {
+      outcomes: [
+        "Write clear work messages",
+        "Choose between a voice note and text",
+        "Share files and follow group manners",
+      ],
       explanation_md: `In Ghana, a lot of business happens on WhatsApp. Shops take orders on it, offices share schedules in groups, NGOs send field updates, and job adverts for shop attendants and customer service roles often ask for people who are comfortable using it for work. SydCrest itself runs a WhatsApp community. Using WhatsApp well at work is different from chatting with friends.
 
 ## Writing clear work messages
@@ -785,6 +825,11 @@ Amina runs a small fabric shop in Tamale. Her new attendant, Napari, receives an
     },
 
     "video-calls": {
+      outcomes: [
+        "Join a video call from a link",
+        "Use the buttons that matter",
+        "Save data and look ready on a call",
+      ],
       explanation_md: `Online classes, team meetings, some mentoring sessions and some job interviews now happen on video calls. Joining on time, with your microphone and camera under control, shows that you are ready for online work. It is a skill you can learn in one afternoon.
 
 ## Joining from a link
@@ -889,6 +934,11 @@ Rashida in Damongo has been invited to an online interview for an office job. Th
     },
 
     "clear-english": {
+      outcomes: [
+        "Read lessons with confidence",
+        "Write clear messages and emails",
+        "Make reading and writing practice a habit",
+      ],
       explanation_md: `Most free online courses, most job adverts and most office work in Ghana use written English. Job adverts for front desk, call centre and office roles often ask for good spoken and written English. You do not need perfect grammar. You need to understand what you read and write messages that are clear and polite. Both improve quickly with practice.
 
 ## Reading lessons with confidence
@@ -991,6 +1041,11 @@ Spend ten minutes a day reading something in English that interests you: a news 
     },
 
     "accounts-and-safety": {
+      outcomes: [
+        "Think of accounts as keys",
+        "Explain how accounts link to the DMP cohort",
+        "List the accounts you already have",
+      ],
       explanation_md: `Almost everything you will do online needs an account: an email address, a course website, a job portal, a video call app. Each account holds your name, your phone number and sometimes your money. Employers also want staff who will not fall for tricks that put customer information or company money at risk. That is why this section comes before you sign up for anything else.
 
 ## What this section covers
@@ -1077,6 +1132,11 @@ If a message makes you feel rushed, scared or very excited, stop. Scammers want 
     },
 
     "email-account": {
+      outcomes: [
+        "Choose a sensible email address",
+        "Create an account you can always get back into",
+        "Sign in and out safely",
+      ],
       explanation_md: `Every job application, online course, certificate and video call invitation needs an email address. Employers will judge you a little by it, so the name matters. Most importantly, it must be yours: linked to your own phone number, with a password only you know. DMP week 1 uses Gmail, so a Gmail address is a good choice, but any reliable free provider works.
 
 ## Choosing a sensible address
@@ -1179,6 +1239,11 @@ Once your account is ready, DMP week 1 will teach you to use it fully: writing, 
     },
 
     "passwords-and-two-step": {
+      outcomes: [
+        "Make a strong password",
+        "Use one password per important account",
+        "Turn on two step verification and never share codes",
+      ],
       explanation_md: `If someone gets into your email, WhatsApp or MoMo, they can steal money, message your contacts pretending to be you, or lock you out of your own work. At work, a weak password can expose customer records. Two simple habits block most of these problems: strong passwords and two step verification.
 
 ## What makes a password strong
@@ -1272,6 +1337,11 @@ Issahaku received an SMS with a WhatsApp code he had not requested, followed by 
     },
 
     "spotting-scams": {
+      outcomes: [
+        "Recognise common mobile money and online tricks",
+        "Follow simple rules that protect you",
+        "Spot a scam quickly",
+      ],
       explanation_md: `Scammers in Ghana target people through mobile money, SMS, phone calls, WhatsApp and fake job adverts. People looking for work are a favourite target. Learning the common tricks protects your money, and employers value staff who can spot fraud before it costs the business. Some Ghanaian job sites even remind applicants never to pay a fee to get a job.
 
 ## Common tricks to know
@@ -1358,6 +1428,11 @@ If you do lose money, contact your network's official customer care immediately 
     },
 
     "privacy-and-shared-phones": {
+      outcomes: [
+        "Decide what to share and what to keep private",
+        "Check privacy settings",
+        "Use a shared device safely",
+      ],
       explanation_md: `Customer service and front desk jobs often involve customer names, phone numbers and payment details. Adverts for these roles ask for people who keep records confidential and check a caller's identity before sharing information. The habits start with your own information. Many people in Ghana also share a phone with family, or use a shared computer at school, a library or a business centre, which makes privacy a practical daily skill.
 
 ## What to share, and what to keep private
@@ -1453,6 +1528,11 @@ Amina shares a phone with her younger brother. She set a fingerprint lock on Wha
     },
 
     "files-and-forms": {
+      outcomes: [
+        "Use the same file ideas on a phone or a computer",
+        "Name the skills employers mention",
+        "Gather the documents for a job application",
+      ],
       explanation_md: `Applying for a job usually means attaching a CV and a photo of a certificate. Registering for a course means filling in an online form. Field jobs with NGOs often involve entering survey answers into a form on a phone or tablet all day. Office jobs involve looking things up quickly and correctly. All of these come down to three skills: handling files, filling in forms and finding information.
 
 This section teaches those skills on the phone or computer you already have, with tips for both.
@@ -1542,6 +1622,11 @@ Have a real document nearby, such as a certificate, a receipt or a school report
     },
 
     "files-on-your-phone": {
+      outcomes: [
+        "Find where files live and give them clear names",
+        "Make a clear scan of a paper document",
+        "Send files and keep a backup",
+      ],
       explanation_md: `Every job application asks you to attach something: a CV, a certificate, an ID. Office and field jobs involve sending receipts, reports and photos of forms. Knowing where your files are, and how to send a clear copy, saves time and makes you look organised.
 
 ## Where files live
@@ -1645,6 +1730,11 @@ Sumaila needed to send his certificate to an employer in Tamale. He placed it on
     },
 
     "online-forms": {
+      outcomes: [
+        "Name the parts of a form",
+        "Fill in a form accurately",
+        "Explain how forms are used in field work",
+      ],
       explanation_md: `Online forms are everywhere: job applications, course registrations, scholarship applications, NGO surveys and customer orders. Field officer and enumerator jobs with NGOs in northern Ghana often involve collecting survey answers on a phone or tablet using apps such as Google Forms or Kobo Collect. Office and customer service jobs involve entering customer details into systems. In every case, accuracy is the skill employers want.
 
 ## Parts of a form
@@ -1741,6 +1831,11 @@ Careful form filling is a small skill, but it shows exactly what employers mean 
     },
 
     "searching-well": {
+      outcomes: [
+        "Choose good search words",
+        "Judge whether to trust a page",
+        "Find a reliable answer to a real question",
+      ],
       explanation_md: `When an office assistant needs a supplier's phone number, when a customer service agent needs to check a policy, or when you are stuck on a lesson, the skill that helps is the same: searching well. Employers value people who can find answers on their own. It is also how you will keep learning long after any course ends.
 
 ## Choosing good search words
@@ -1837,6 +1932,11 @@ DMP week 3 goes deeper into judging online sources. This lesson gives you the ev
     },
 
     "computer-access": {
+      outcomes: [
+        "Know you do not need to own a computer",
+        "Name the skills that carry over from a phone",
+        "Set a goal for computer practice",
+      ],
       explanation_md: `Your phone can do a lot, but many jobs and courses eventually need a computer. Job adverts in Ghana for office assistants, front desk staff and customer service agents often ask for basic computer skills. The Delta Mentoring Program starts in week 1 with computer hardware, files and folders, and then moves to Google Docs, Sheets and Slides. Getting a little comfortable with a keyboard and mouse before the cohort starts makes that first week much less stressful. If you already have a computer at home or at work, use this section to check your basics and build your typing speed.
 
 ## What this section covers
@@ -1933,6 +2033,11 @@ You do not need to be fast. You need to be comfortable enough that the computer 
     },
 
     "finding-a-computer": {
+      outcomes: [
+        "Find places to ask for computer access",
+        "Ask politely for regular time",
+        "Make the most of each session",
+      ],
       explanation_md: `Many entry level job adverts in Ghana, from office assistants to customer service agents, ask for basic computer skills. You cannot learn a keyboard only by reading about it. You need regular time in front of a real computer. The good news is that you do not have to own one.
 
 ## Places to ask
@@ -2031,6 +2136,11 @@ If you truly cannot find access yet, keep practising the rest of this roadmap on
     },
 
     "mouse-and-keyboard": {
+      outcomes: [
+        "Use a mouse",
+        "Use the most common keys",
+        "Use three shortcuts",
+      ],
       explanation_md: `When a job advert asks for basic computer skills, the very first part is using a mouse and keyboard without struggling. In DMP week 1 you will work with files, folders and a browser on a computer, so being comfortable with these tools lets you follow the mentor instead of hunting for buttons.
 
 ## The mouse
@@ -2137,6 +2247,11 @@ Hawa opens a browser on a library computer. She clicks the address bar, types a 
     },
 
     "typing": {
+      outcomes: [
+        "Start typing from the home row",
+        "Put accuracy before speed",
+        "Build a little and often typing habit",
+      ],
       explanation_md: `Office assistants type letters and records, customer service agents type notes while customers talk, and DMP week 1 ends with writing a short tip sheet in Google Docs. If you type with one finger while searching for every key, these tasks take a long time and tire you out. Learning to touch type, using all your fingers without looking at the keys, is a skill that pays back in every course and job that follows.
 
 ## Start with the home row
@@ -2241,6 +2356,11 @@ Track your progress in your practice log. Seeing improvement week by week keeps 
     },
 
     "learning-and-earning": {
+      outcomes: [
+        "Treat learning as a skill",
+        "Notice where records are used in work",
+        "Connect your learning to a goal you care about",
+      ],
       explanation_md: `Learning digital skills takes time and effort, so it helps to keep the reason in view: these skills can lead to work and income. Job adverts for shop attendants, cashiers, office assistants and field officers in Ghana ask for accurate records and payment handling. Digital careers in marketing, design, data and software start from the same foundations you are building now.
 
 This section connects what you are learning to that bigger picture.
@@ -2328,6 +2448,11 @@ You do not need to choose a career today. But knowing where these skills can lea
     },
 
     "study-habits": {
+      outcomes: [
+        "Set a small daily goal at a regular time",
+        "Take notes in your own words and test yourself",
+        "Learn with others and look after yourself",
+      ],
       explanation_md: `The Delta Mentoring Program runs for twelve weeks, with assignments every week. Employers also want people who keep learning new systems and tools on the job. The skill underneath both is the same: steady study habits. Talent helps, but habits are what get people to the end of a course.
 
 ## Set a small daily goal
@@ -2432,6 +2557,11 @@ Amina and Mariama in Tamale are both preparing to apply for the DMP cohort. They
     },
 
     "money-records": {
+      outcomes: [
+        "Use mobile money confidently",
+        "Read your transaction history",
+        "Keep a simple money record",
+      ],
       explanation_md: `Cashiers, shop attendants and front desk staff in Ghana are asked to process MoMo and card payments, issue receipts and keep accurate records of every transaction. Office assistants keep purchase records. Field officers record activities. If you freelance or run a small business later, you will need records to know whether you are making money at all. This lesson builds those habits with tools you already have.
 
 ## Mobile money confidently
@@ -2537,6 +2667,11 @@ Accurate records build trust with employers, customers and anyone who might one 
     },
 
     "digital-careers": {
+      outcomes: [
+        "Explore some digital career paths",
+        "Ask yourself useful questions about a career",
+        "Talk to people who do the work",
+      ],
       explanation_md: `It is easier to keep practising when you know where the practice can lead. Digital skills open doors to many kinds of work, from entry level office and customer service roles to careers in marketing, design, data, product and software. Some of these jobs exist in Tamale, Bolgatanga and Wa, some in Accra and Kumasi, and some can be done remotely. You do not need to choose now, but exploring the options helps you stay motivated.
 
 ## Some digital career paths
@@ -2630,6 +2765,11 @@ Every path above starts with the foundations in this roadmap: confident use of y
     },
 
     "ready-for-dmp": {
+      outcomes: [
+        "Describe what the Delta Mentoring Program covers",
+        "See how this bridge prepared you",
+        "Map your progress to DMP week 1",
+      ],
       explanation_md: `This is the last section of the Digital Skills Bridge. Its job is to check that you are ready for the first week of the Delta Mentoring Program, SydCrest's twelve week mentored cohort in digital skills and digital marketing, and to help you apply.
 
 ## What the DMP covers
@@ -2727,6 +2867,11 @@ Whatever happens with your application, the skills you built here are yours. The
     },
 
     "readiness-check": {
+      outcomes: [
+        "Use the readiness checklist honestly",
+        "Check your device, communication, accounts and files",
+        "Decide what to do with your results",
+      ],
       explanation_md: `Before you apply to the DMP cohort, or to an entry level job that asks for basic digital skills, it helps to check honestly what you can already do. This checklist covers what DMP week 1 assumes, plus the everyday skills from the rest of this roadmap. It is not an exam. It is a way to find any small gaps so you can fix them before they slow you down.
 
 ## How to use the checklist
@@ -2845,6 +2990,11 @@ Keep your completed checklist. It is useful evidence of your progress when you a
     },
 
     "apply-to-dmp": {
+      outcomes: [
+        "Prepare before you apply",
+        "Write about yourself clearly",
+        "Fill in the form carefully and plan if you are not selected",
+      ],
       explanation_md: `You have built real foundations: confident use of your phone or computer, professional communication, safe accounts, files and forms, and first steps on a computer. The next step is to try for a seat in the Delta Mentoring Program. The first cohort is a free pilot with 25 seats, starting in January 2027. Applying is itself a useful skill, because job applications in Ghana use the same steps: read the instructions, fill in a form, attach documents and write about yourself clearly.
 
 ## Before you apply

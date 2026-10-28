@@ -11,6 +11,11 @@ const content: TrackContent = {
   roadmap: "ai-tools-for-work",
   nodes: {
     "ai-basics": {
+      outcomes: [
+        "Explain what an AI assistant is",
+        "Name the topics in this section",
+        "Start an AI learning journal and try an assistant",
+      ],
       explanation_md: `## Why this matters
 
 Job adverts in Ghana, and some remote adverts that accept applicants from Ghana, now ask for people who are comfortable with AI tools: people who can use an AI assistant to research and draft while keeping their work accurate, or who have experience with a chat assistant. Employers are not asking you to build AI. They want people who can use an AI assistant to get ordinary work done faster and still hand in work that is correct, honest and safe.
@@ -92,6 +97,11 @@ Work through the sections in order. Each lesson has a short practice task you ca
       },
     },
     "what-ai-can-do": {
+      outcomes: [
+        "Explain simply how an AI assistant works",
+        "Tell good jobs for AI from bad ones",
+        "Spot a made up answer",
+      ],
       explanation_md: `## Why this matters
 
 The fastest way to lose a client's trust is to hand in AI work with a confident mistake in it. The fastest way to impress one is to use AI for what it is good at and catch what it gets wrong. Both depend on understanding, in simple terms, how these tools work.
@@ -184,6 +194,11 @@ Issahaku, a teacher in Wa, asks an assistant for a short history of his district
       },
     },
     "choosing-tools": {
+      outcomes: [
+        "Compare free assistants on what matters",
+        "Set up an assistant well",
+        "Choose your main assistant using evidence, not adverts",
+      ],
       explanation_md: `## Why this matters
 
 You do not need to pay for anything to learn this track or to start earning with AI skills. Several companies offer free AI assistants that run in a web browser or an app. But they are not all the same, and the free plans change often: a feature that is free this month may move to a paid plan next month, and limits on how many messages you can send can go up or down. Knowing how to compare tools, rather than memorising one, keeps you ready for those changes.
@@ -272,6 +287,11 @@ Mariama, in Bolgatanga, tests three free assistants with the same request: "Writ
       },
     },
     "privacy-safety": {
+      outcomes: [
+        "Know what must never go into an AI tool",
+        "Check the privacy settings worth changing",
+        "Stay safe under Ghana's data protection law and from AI scams",
+      ],
       explanation_md: `## Why this matters
 
 When you type into an AI assistant, your words travel to the company's computers. Depending on the tool and your settings, they may be stored, used to improve the tool, or read by human reviewers checking quality. Some providers say this openly in their privacy pages. If you paste a client's customer list or a friend's medical details into a chat, you may have shared it with people who were never meant to see it. Employers and clients care about this a lot, and getting it right is part of being trusted with real work.
@@ -380,6 +400,11 @@ Sumaila does admin work for a clinic in Yendi and wants help writing a reminder 
       },
     },
     prompting: {
+      outcomes: [
+        "Explain why a clear prompt changes the answer",
+        "Take the right mindset into prompting",
+        "Practise prompts as you go",
+      ],
       explanation_md: `## Why this matters
 
 Two people can use the same free AI assistant and get very different results. One types "write a CV" and gets something generic that could belong to anyone. The other explains who the CV is for, what job it targets, what experience to include and how long it should be, and gets a strong first draft in one go. The difference is the **prompt**: the request you give the assistant.
@@ -464,6 +489,11 @@ Keep a "prompt notebook" section in your AI learning journal. Every time a promp
       },
     },
     "prompt-basics": {
+      outcomes: [
+        "Write prompts with four strong parts",
+        "Use extra tips that improve answers",
+        "Check a prompt before you send it",
+      ],
       explanation_md: `## Why this matters
 
 Clear prompts save you time, data and frustration. On a limited data bundle, getting a useful answer on the first or second try instead of the fifth matters. It also shows employers that you can communicate clearly, which is a skill in its own right.
@@ -576,6 +606,11 @@ Even with a strong prompt, read the answer as the customer would. Are the facts 
       },
     },
     "improving-answers": {
+      outcomes: [
+        "Improve an answer through rounds of feedback",
+        "Use techniques that work",
+        "Keep your improved prompt for next time",
+      ],
       explanation_md: `## Why this matters
 
 Many beginners give up after one disappointing answer. People who get good results treat the assistant like a conversation: they react to the first draft, say what to change and keep going until it is right. This is faster than writing a perfect prompt from scratch, and it is how real AI assisted work is usually done.
@@ -675,6 +710,11 @@ When a conversation finally gives you what you want, ask: "Write one prompt I co
       },
     },
     "checking-facts": {
+      outcomes: [
+        "Check names, numbers, dates and sources every time",
+        "Follow a simple checking routine",
+        "Spot made up answers",
+      ],
       explanation_md: `## Why this matters
 
 When your work goes to a client, an employer or the public, your name is on it, not the AI's. A wrong price, a made up statistic, a fake quote or a link that leads nowhere can embarrass you, mislead people and cost you the job. Content roles that welcome AI use still expect accuracy; adverts for these roles often ask for AI use and accuracy in the same breath. Checking is the skill that makes AI safe to use at work.
@@ -782,6 +822,11 @@ Wumpini is writing a short article for a farmers' cooperative in Savelugu using 
       },
     },
     "everyday-work": {
+      outcomes: [
+        "Follow one method for any work task with AI",
+        "Name the everyday tasks in this section",
+        "Map AI onto work you could do",
+      ],
       explanation_md: `## Why this matters
 
 When Ghanaian and remote adverts mention AI, the jobs themselves are usually familiar: virtual assistant, content writer, social media officer, admin assistant, customer support, research assistant. What has changed is that employers expect these people to use AI to work faster. A virtual assistant who can turn a messy voice note into a clean email, summarise a long report into five points and fix a broken spreadsheet formula in minutes is worth more than one who cannot.
@@ -880,6 +925,11 @@ Every task here works on a phone or a computer. Google Docs and Sheets, a notes 
       },
     },
     "writing-editing": {
+      outcomes: [
+        "Use AI to draft and edit writing",
+        "Keep writing true and in your own voice",
+        "Use AI as a second reader",
+      ],
       explanation_md: `## Why this matters
 
 Writing is part of almost every job: emails to clients, WhatsApp messages to customers, reports for managers, posts for a business page, applications for jobs. AI can help you write faster and more clearly, especially if English is your second or third language. But clients and employers can often tell when text is lazy AI output: too flowery, too general, and not quite true. The skill is using AI to write **better**, not just more.
@@ -971,6 +1021,11 @@ AI is also a good second reader. Paste your own writing and ask: "Point out uncl
       },
     },
     "summarising-research": {
+      outcomes: [
+        "Ask for the right kind of summary",
+        "Check a summary against the source",
+        "Use AI for research carefully",
+      ],
       explanation_md: `## Why this matters
 
 Managers, NGO officers and business owners are busy. Someone who can read a long report, contract or set of meeting notes and return a clear, accurate summary saves them hours. Research assistants, virtual assistants and project officers do this every week. AI makes summarising much faster, but a summary that leaves out the key risk or adds a point that was never there is worse than none.
@@ -1076,6 +1131,11 @@ Some assistants can transcribe and summarise audio. This is handy for meetings a
       },
     },
     "spreadsheets-data": {
+      outcomes: [
+        "Describe a spreadsheet clearly to an AI assistant",
+        "Build a formula with AI help and test it",
+        "Keep data safe when you ask for help",
+      ],
       explanation_md: `## Why this matters
 
 Spreadsheets appear in adverts for admin, data entry, assistant and NGO roles across Ghana. Many people get stuck on formulas. AI assistants are very good at explaining what a formula does, suggesting one for a task you describe, and walking you through cleaning a messy list. Used well, this turns spreadsheet problems that used to take an afternoon into minutes. Used carelessly, it produces totals that look right and are wrong.
@@ -1175,6 +1235,11 @@ Do not paste real customer names, phone numbers or financial records into public
       },
     },
     "images-visuals": {
+      outcomes: [
+        "Explain what AI image tools do well and where they go wrong",
+        "Follow honesty rules for AI images",
+        "Prompt for a useful image",
+      ],
       explanation_md: `## Why this matters
 
 Social media officers, content creators and small business owners need visuals every day: post graphics, flyer backgrounds, illustrations for a presentation. AI image tools can create pictures from a written description in seconds, and some free design apps now include them. This is optional in this track because image generation can use a lot of data and free limits are often tight, but it is a useful skill for creative roles.
@@ -1270,6 +1335,11 @@ Generate on Wi Fi when you can, make one image at a time, and download only the 
       },
     },
     "translation-local-languages": {
+      outcomes: [
+        "Set realistic expectations for AI translation",
+        "Use AI translation well and check it",
+        "Treat your languages as a strength",
+      ],
       explanation_md: `## Why this matters
 
 Many people in northern Ghana speak one or more local languages, and many businesses, NGOs and health programmes need messages in Dagbani, Gonja, Dagaare, Gurune, Mampruli, Twi, Hausa and more. Being able to produce a good translation quickly is valuable, and it can sometimes lead to remote work: some AI companies hire native speakers to transcribe, translate and check AI output in Ghanaian languages such as Twi and Dagbani.
@@ -1360,6 +1430,11 @@ If you speak a northern Ghanaian language fluently and read and write it, you ha
       },
     },
     automation: {
+      outcomes: [
+        "Tell apart two kinds of time saving",
+        "Follow ground rules for automation",
+        "Spot repetition worth automating",
+      ],
       explanation_md: `## Why this matters
 
 Much of office and small business work is repetition: answering the same customer questions, sending the same kind of reminder, copying details from one place to another, writing a similar post every week. Every minute saved on routine work is a minute for work that needs a person: solving problems, talking to customers, checking quality. Remote assistant roles and some junior operations roles now mention automation tools in their adverts, but you can start with free tools already on your phone or computer.
@@ -1447,6 +1522,11 @@ For one week, keep a note of tasks you do more than three times. Next to each, w
       },
     },
     "prompt-templates": {
+      outcomes: [
+        "Explain what a prompt template looks like",
+        "Build and test a good template",
+        "Keep private templates safe",
+      ],
       explanation_md: `## Why this matters
 
 If you write a good prompt once and then throw it away, you will spend time rebuilding it next week. Professionals who use AI daily keep a small library of tested prompts, often called prompt templates. A template gives steady, predictable results, makes you faster, and can be shared with a team. A well tested set of templates for a specific job can even become a digital product, which you will explore later in this track.
@@ -1551,6 +1631,11 @@ If a template includes a client's details or style rules, treat it as the client
       },
     },
     "automating-tasks": {
+      outcomes: [
+        "Set up automations on a phone or a computer",
+        "Design an automation that is safe",
+        "Document an automation so others can use it",
+      ],
       explanation_md: `## Why this matters
 
 Some remote assistant and junior operations adverts now ask for experience with automation tools, sometimes called no code tools because you connect apps by choosing options rather than writing code. You do not need those to start. The phone or computer you already use has features that automate routine steps, and learning to use them builds the same thinking: notice a repeated task, design a simple flow, and keep a person checking.
@@ -1640,6 +1725,11 @@ Fuseini organises a coding club in Damongo. Sign ups used to arrive in scattered
       },
     },
     earning: {
+      outcomes: [
+        "Name the earning routes in this section",
+        "Set honest expectations about earning",
+        "Choose your route and first step",
+      ],
       explanation_md: `## Why this matters
 
 Learning AI tools is good. Earning with them is better, and for many young people in northern Ghana, earning is the reason to learn. There are three main routes, and this section covers each honestly.
@@ -1728,6 +1818,11 @@ Make sure you have finished the earlier sections, especially privacy, fact check
       },
     },
     "ai-jobs-gigs": {
+      outcomes: [
+        "Explain what AI related adverts ask for",
+        "Know where to look for work",
+        "Avoid job and gig scams",
+      ],
       explanation_md: `## Why this matters
 
 Knowing where AI skills are actually wanted helps you aim your learning and your applications. When we read recent job adverts from Ghana, along with remote adverts (some open to applicants in Africa, some with unclear location rules), AI skills appeared in a few clear patterns. We share the patterns, not promises.
@@ -1835,6 +1930,11 @@ Issahaku reads and writes Dagbani fluently. He finds a transcription project on 
       },
     },
     "digital-products": {
+      outcomes: [
+        "Start a product from a real problem",
+        "Use AI to help you build it",
+        "Decide what makes a product worth paying for",
+      ],
       explanation_md: `## Why this matters
 
 A digital product is something you make once and can sell many times without making it again: a spreadsheet template, a short practical guide, a set of prompt templates, a planner, a set of lesson note templates. There is no stock to buy and nothing to transport. AI can help you plan, draft and polish one far faster than before. This was the theme of SydCrest's "Monetizing Your Skills With AI: Building Digital Products" event in Accra, and it is something you can start on a phone or a computer.
@@ -1933,6 +2033,11 @@ Wumpini notices that women in her savings group in Savelugu keep contributions i
       },
     },
     "selling-products": {
+      outcomes: [
+        "Test demand before you spend time",
+        "Set a price and get paid safely",
+        "Deliver and treat customers well",
+      ],
       explanation_md: `## Why this matters
 
 A useful product nobody buys earns nothing. Selling is a skill of its own: finding the people who need your product, showing them its value, setting a fair price, getting paid safely and treating customers well so they recommend you. You can do all of it from a phone or a computer.
@@ -2035,6 +2140,11 @@ Abdul-Rahman made a CV guide with fill in templates for school leavers in Tamale
       },
     },
     "working-professionally": {
+      outcomes: [
+        "Describe what professional AI use looks like",
+        "Name the topics in this section",
+        "Collect evidence of your work",
+      ],
       explanation_md: `## Why this matters
 
 By now you can prompt well, check facts, protect privacy, handle everyday tasks, automate small jobs and think about earning. The last step is what turns those skills into trust. Employers and clients in Ghana often hire through recommendations: an imam or pastor tells a shop owner, a manager tells a colleague, a happy customer tells a friend. Those recommendations depend on two things. First, that you are honest about how you work. Second, that people can see proof of what you can do.
@@ -2122,6 +2232,11 @@ Gather your AI learning journal, your prompt templates and any practice pieces y
       },
     },
     "client-ethics": {
+      outcomes: [
+        "Be open with clients about how you use AI",
+        "Avoid copying or misleading anyone",
+        "Take responsibility for AI assisted work",
+      ],
       explanation_md: `## Why this matters
 
 Your reputation is the most valuable thing you build as a worker or freelancer. In a city like Tamale or Wa, word travels fast, and online one bad review can follow you. Clients and employers increasingly ask how people use AI. Being honest, careful and fair with AI is what separates professionals from people who will not be hired twice.
@@ -2219,6 +2334,11 @@ Mariama is hired to write website text for a guesthouse in Bolgatanga. At the st
       },
     },
     "ai-portfolio": {
+      outcomes: [
+        "Choose what to include in an AI skills portfolio",
+        "Present it and talk about it",
+        "Keep it growing",
+      ],
       explanation_md: `## Why this matters
 
 Many people now write "skilled in AI tools" on their CV. Few can show it. Employers and clients want **proof**: real examples of how you used AI to do good work, and how you checked it. A small, clear portfolio you can share from any device puts you ahead of people who only make claims.

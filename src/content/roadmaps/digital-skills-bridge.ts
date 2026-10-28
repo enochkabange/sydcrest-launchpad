@@ -33,6 +33,10 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "The phone or computer you already have can take you a long way. This section helps you get comfortable with it and set it up for learning without wasting data or money.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [],
     },
     {
@@ -42,6 +46,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Learn the taps, swipes and buttons that every phone app uses, the clicks and keys that do the same jobs on a computer, and how to switch WiFi and mobile data on and off. Once these feel natural, every other skill gets easier.",
       parent: "phone-as-a-tool",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [RES.lfComputer],
     },
     {
@@ -51,6 +57,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Learn to free up storage, manage notifications and keep your battery going through a study session. A tidy phone or computer runs faster and crashes less.",
       parent: "phone-as-a-tool",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [RES.lfComputer],
     },
     {
@@ -60,6 +68,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Use WiFi when you can, download lessons to watch offline and stop apps from eating your bundle in the background. Small habits make a data bundle last much longer.",
       parent: "phone-as-a-tool",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [RES.lfInternet],
     },
     {
@@ -69,6 +79,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Install apps only from the official app store or the maker's own website, and check what permissions they ask for. Delete apps you do not use, since they take space and data.",
       parent: "phone-as-a-tool",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfSafety],
     },
     {
@@ -78,6 +90,10 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Entry level job adverts in Ghana regularly ask for good phone, WhatsApp and email skills. This section turns the phone habits you already have into professional ones.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "junior",
+      jobs: ["Office assistant and front desk", "Front desk executive", "Customer service agent"],
       resources: [RES.lfCommunication],
     },
     {
@@ -87,6 +103,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Answer politely, take a clear message and follow up when you promised. Good phone manners are one of the first things a customer notices.",
       parent: "communicating-at-work",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfCommunication],
     },
     {
@@ -96,6 +114,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Write clear messages, share photos and documents, and behave well in work and class groups. Many shops, offices and NGOs in Ghana use WhatsApp every day.",
       parent: "communicating-at-work",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.whatsappFaq, RES.whatsappBusiness],
     },
     {
@@ -105,6 +125,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Join a video call from a link, use the mute and camera buttons, and save data while you are on the call. Many online classes, meetings and interviews now happen this way.",
       parent: "communicating-at-work",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [],
     },
     {
@@ -114,6 +136,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Many free courses and most office jobs use written English, so practise reading short lessons and writing short, polite messages. It is fine to read slowly and look up words at first.",
       parent: "communicating-at-work",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.bbcEnglish, RES.lfWriting, RES.lfBizWriting],
     },
     {
@@ -123,6 +147,10 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Online learning and job applications need accounts, and accounts need protecting. This section covers the basics before you sign up for anything else.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [RES.lfSafety],
     },
     {
@@ -132,6 +160,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Create a personal email address with a sensible name and make sure you can recover it with your own phone number. You will use it for every course, job application and certificate.",
       parent: "accounts-and-safety",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [RES.lfGmail],
     },
     {
@@ -141,6 +171,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Use long, different passwords for important accounts and turn on two step verification. Never share a verification code with anyone, even someone claiming to be from a company.",
       parent: "accounts-and-safety",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfSafety],
     },
     {
@@ -150,6 +182,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Learn common tricks such as fake wrong transfer messages, prize calls and fake job offers that ask for a fee. Never give out your mobile money PIN, and check any request by calling the official number yourself.",
       parent: "accounts-and-safety",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfSafety],
     },
     {
@@ -159,6 +193,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Decide what you share about yourself online and keep your accounts private on a phone or computer that others use. Employers trust people who protect their own information and other people's too.",
       parent: "accounts-and-safety",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfSafety],
     },
     {
@@ -168,6 +204,10 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Jobs and courses ask you to send documents, fill in forms and look things up. This section teaches those skills on a phone or a computer, ready for the computer work in the DMP cohort.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "junior",
+      jobs: ["Temporary enumerator", "Administrative and operations assistant"],
       resources: [RES.lfWeb],
     },
     {
@@ -177,6 +217,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Find what you downloaded, take a clear photo or scan of a document, and send it as a file. Job applications and course registrations usually ask you to attach something.",
       parent: "files-and-forms",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfDrive],
     },
     {
@@ -186,6 +228,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Fill in registration, application and survey forms carefully and check them before you press submit. Field and office jobs often involve entering information into forms all day.",
       parent: "files-and-forms",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfWeb],
     },
     {
@@ -195,6 +239,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Use better search words to find answers quickly and check whether a source can be trusted. Being able to look things up is one of the most useful skills in any job.",
       parent: "files-and-forms",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfSearch],
     },
     {
@@ -204,6 +250,10 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Office jobs and tech courses need a keyboard sooner or later. This section helps you find access and build basic comfort before a cohort starts.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [],
     },
     {
@@ -213,6 +263,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Ask about computer access at your school, a library, a community centre or a business centre near you. Plan a regular time slot so practice becomes a habit.",
       parent: "computer-access",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [],
     },
     {
@@ -222,6 +274,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Practise clicking, dragging, scrolling and using common keys such as shift, enter and backspace. A few short sessions make a big difference to your confidence.",
       parent: "computer-access",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [RES.lfMouse],
     },
     {
@@ -231,6 +285,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Learn to type with all your fingers using free online lessons, a little every day. Faster typing makes every later course and office task easier.",
       parent: "computer-access",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfTyping, RES.monkeytype],
     },
     {
@@ -240,6 +296,10 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Digital skills are worth learning because they can lead to income. This section helps you keep learning, keep simple records and see where your skills can take you.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "junior",
+      jobs: ["Customer service associate", "Cashier", "Shop attendant"],
       resources: [],
     },
     {
@@ -249,6 +309,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Set a small daily goal, take notes in your own words and find a study partner or group. Steady practice over weeks matters more than long sessions.",
       parent: "learning-and-earning",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [],
     },
     {
@@ -258,6 +320,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Use mobile money confidently, read your transaction history and keep a simple record of sales or spending. Shop, office and field jobs regularly ask for accurate records.",
       parent: "learning-and-earning",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfMoney, RES.sheetsHelp],
     },
     {
@@ -267,6 +331,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Look at the roadmaps for marketing, design, data, product and software to see what each job involves day to day. You do not need to choose now, but knowing the options helps you stay motivated.",
       parent: "learning-and-earning",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [RES.lfJobsearch],
     },
     {
@@ -276,6 +342,10 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "The Delta Mentoring Program is SydCrest's twelve week mentored cohort in digital skills and digital marketing. It starts with computer basics, safe browsing and Gmail, so this section checks you are ready for that first week.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [],
     },
     {
@@ -285,6 +355,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Confirm you can type a short paragraph, sign in to your email, send a document and join a video call. If anything is missing, revisit that part of this roadmap first.",
       parent: "ready-for-dmp",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [],
     },
     {
@@ -294,6 +366,8 @@ export const digitalSkillsBridge: RoadmapDraft = {
         "Join the waitlist on SydCrest's Programme page for the free pilot cohort and be ready to show the progress you made on this roadmap. If you do not get a seat this time, keep learning on the free roadmaps and apply again if another cohort is announced.",
       parent: "ready-for-dmp",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [],
     },
   ],

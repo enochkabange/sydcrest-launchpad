@@ -42,6 +42,16 @@ ROADMAP_VIEWS: map │ outline │ journey      layer 3  renderers (swappable)
 | `choice_group` | slug style key, 2 to 40 chars | not part of a choice |
 
 Siblings sharing a `choice_group` are "pick one of these" alternatives.
+
+Lesson structure (issue #255, `20261029200000_lesson_structure.sql`, pgTAP in
+`lesson_structure.test.sql`) adds nullable `difficulty`, `complexity`,
+`career_level` and `jobs`. They reach the view model as the optional
+`ViewNode` slots `difficulty`, `complexity`, `careerLevel` and `jobs` (left
+out when null). `CareerLevelSuffix` and `CareerLevelTag`
+(`src/components/roadmaps/career-level.tsx`) put the level on a section
+header; `RoadmapCareerLevels` (`roadmap-career-levels.tsx`) is the Jobs at
+each level panel under the roadmap, drawn from `view.sections` only, so it
+stays in the prerendered shell.
 `is_optional` is unchanged. RLS is unchanged (the table's policies cover the
 new columns).
 
@@ -83,12 +93,11 @@ Each `ViewNode` has `id, slug, title, summary, number` ("2.3"), `depth`,
 `in_progress`, `done`, or `null` when unknown), `sectionId`, `index`,
 `previousId`, `nextId`, `place` (`{ n, of }`, "Topic 2 of 4"), `children`
 (nodes deeper than a topic; empty on sections), `minutes` (null without a
-lesson) and two optional content slots, `difficulty` and `complexity`.
-`ViewSection` also has `estimate`, `requiredEstimate` and the slots
-`careerLevel` and `jobs`. The slots are null (or empty) until a content PR
-adds the fields to `FlatNode` and the cached select; every view already draws
-them when present (`NodeBadges` and `SectionMeta` in `views/node-meta.tsx`),
-so filling them needs no view change.
+lesson) and the lesson structure slots above (`difficulty`, `complexity`,
+`careerLevel`, `jobs`; left out when unrated). Every view draws them when
+present: `NodeBadges` (`views/node-meta.tsx`) for a topic's difficulty, and
+`CareerLevelSuffix` or `CareerLevelTag` for a section's level. `ViewSection`
+also has `estimate` and `requiredEstimate`.
 
 Rules:
 - A top level node is a section. A top level checkpoint closes the section
@@ -233,7 +242,7 @@ Orange (`node-progress`, `checkpoint`) is a fill or border only on light;
 written lesson:
 
 ```
-reading  = lesson words / 180 words a minute
+reading  = lesson words (explanation and worked example) / 180 words a minute
 practice = 15 minutes + practice task words / 180, when there is a task
 quiz     = 1 minute a question
 estimate = reading + practice + quiz, rounded up to the next 5 minutes (at least 5)
@@ -241,7 +250,9 @@ estimate = reading + practice + quiz, rounded up to the next 5 minutes (at least
 
 180 words a minute is a careful study pace for learners reading in a second
 language (adult silent reading is around 240); the 15 minutes is the doing.
-Free resources outside SydCrest are not counted. A node without a lesson has
+Free resources outside SydCrest are not counted. This is the one estimate
+utility: the lesson page uses `estimateLessonMinutes` (same word rule as the
+view) and the topic page reads the node's `minutes` from the view. A node without a lesson has
 no estimate (null), never a guess; totals add the known estimates. Copy always
 says "about": "about 25 min", "about 11 hours". The numbers come from the
 `node_estimate_inputs` view (word counts and quiz size, `security_invoker`,

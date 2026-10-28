@@ -1595,34 +1595,49 @@ export type Database = {
       }
       node_content: {
         Row: {
+          common_mistakes: string[] | null
           content_version: number
           created_at: string
           explanation_md: string
           generated_at: string
           id: string
+          key_terms: Json | null
           node_id: string
+          outcomes: string[] | null
           practice_task_md: string | null
+          self_check: string[] | null
           updated_at: string
+          worked_example_md: string | null
         }
         Insert: {
+          common_mistakes?: string[] | null
           content_version?: number
           created_at?: string
           explanation_md: string
           generated_at?: string
           id?: string
+          key_terms?: Json | null
           node_id: string
+          outcomes?: string[] | null
           practice_task_md?: string | null
+          self_check?: string[] | null
           updated_at?: string
+          worked_example_md?: string | null
         }
         Update: {
+          common_mistakes?: string[] | null
           content_version?: number
           created_at?: string
           explanation_md?: string
           generated_at?: string
           id?: string
+          key_terms?: Json | null
           node_id?: string
+          outcomes?: string[] | null
           practice_task_md?: string | null
+          self_check?: string[] | null
           updated_at?: string
+          worked_example_md?: string | null
         }
         Relationships: [
           {
@@ -2738,10 +2753,14 @@ export type Database = {
       }
       roadmap_nodes: {
         Row: {
+          career_level: string | null
           choice_group: string | null
+          complexity: number | null
           created_at: string
+          difficulty: string | null
           id: string
           is_optional: boolean
+          jobs: string[] | null
           kind: string | null
           parent_id: string | null
           position: number
@@ -2752,10 +2771,14 @@ export type Database = {
           updated_at: string
         }
         Insert: {
+          career_level?: string | null
           choice_group?: string | null
+          complexity?: number | null
           created_at?: string
+          difficulty?: string | null
           id?: string
           is_optional?: boolean
+          jobs?: string[] | null
           kind?: string | null
           parent_id?: string | null
           position?: number
@@ -2766,10 +2789,14 @@ export type Database = {
           updated_at?: string
         }
         Update: {
+          career_level?: string | null
           choice_group?: string | null
+          complexity?: number | null
           created_at?: string
+          difficulty?: string | null
           id?: string
           is_optional?: boolean
+          jobs?: string[] | null
           kind?: string | null
           parent_id?: string | null
           position?: number

@@ -3,6 +3,7 @@ import { createClient } from "@supabase/supabase-js";
 import { cacheLife, cacheTag } from "next/cache";
 import type { Database } from "@/lib/supabase/database.types";
 import { estimateMinutes } from "./estimates";
+import { asCareerLevel, asComplexity, asDifficulty, asJobs } from "./levels";
 import { buildNodeTree, type FlatNode } from "./tree";
 
 /**
@@ -155,7 +156,7 @@ export async function getPublishedRoadmap(slug: string): Promise<PublishedRoadma
     const { data, error } = await anonClient()
       .from("roadmaps")
       .select(
-        "id, slug, title, description, track, leads_to, updated_at, roadmap_nodes(id, parent_id, slug, title, summary, position, is_optional, kind, choice_group)",
+        "id, slug, title, description, track, leads_to, updated_at, roadmap_nodes(id, parent_id, slug, title, summary, position, is_optional, kind, choice_group, difficulty, complexity, career_level, jobs)",
       )
       .eq("slug", slug)
       .eq("is_published", true)
@@ -170,18 +171,31 @@ export async function getPublishedRoadmap(slug: string): Promise<PublishedRoadma
     const { roadmap_nodes, ...roadmap } = data;
     return {
       ...roadmap,
-      nodes: roadmap_nodes.map((n) => ({ ...n, kind: asNodeKind(n.kind) })),
+      nodes: roadmap_nodes.map((n) => ({
+        ...n,
+        kind: asNodeKind(n.kind),
+        difficulty: asDifficulty(n.difficulty),
+        complexity: asComplexity(n.complexity),
+        career_level: asCareerLevel(n.career_level),
+        jobs: asJobs(n.jobs),
+      })),
       minutes: minutesByNode(estimates.data ?? []),
     };
   });
 }
 
 export type NodeDetail = {
-  content: { explanation_md: string; practice_task_md: string | null; content_version: number } | null;
+  content: {
+    explanation_md: string;
+    practice_task_md: string | null;
+    content_version: number;
+    /** "You will be able to" (issue #255); null until imported. */
+    outcomes: string[] | null;
+  } | null;
   resources: { id: string; label: string; url: string; kind: "article" | "video" | "practice"; source: string | null }[];
   /** A quiz exists; passing it is how a topic becomes done. */
   hasQuiz: boolean;
-  /** Questions in the quiz, 0 without one. */
+  /** Questions in that quiz, for the time estimate. */
   quizQuestions: number;
 };
 
@@ -197,7 +211,7 @@ export async function getNodeDetail(roadmapSlug: string, nodeId: string): Promis
     const [content, resources, quiz] = await Promise.all([
       supabase
         .from("node_content")
-        .select("explanation_md, practice_task_md, content_version")
+        .select("explanation_md, practice_task_md, content_version, outcomes")
         .eq("node_id", nodeId)
         .maybeSingle(),
       supabase

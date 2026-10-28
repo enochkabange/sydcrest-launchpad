@@ -1,4 +1,5 @@
 import { Check, Flag } from "lucide-react";
+import { CareerLevelSuffix } from "@/components/roadmaps/career-level";
 import { Suspense } from "react";
 import Link from "@/components/ui/link";
 import { formatEstimate } from "@/lib/roadmaps/estimates";
@@ -8,7 +9,7 @@ import type { RoadmapView, ViewNode, ViewSection } from "@/lib/roadmaps/view-mod
 import { STATUS_LABELS, ViewNodeMark } from "../progress";
 import { liveView } from "./live";
 import { MapCanvas } from "./map-canvas";
-import { choiceLabel, NodeBadges, SectionMeta } from "./node-meta";
+import { choiceLabel, NodeBadges } from "./node-meta";
 import { RoadmapTree, SectionToggle, SectionTreeItem, TreeGroup } from "./tree";
 import type { RoadmapViewProps } from "./types";
 
@@ -112,12 +113,12 @@ function MapSection({ slug, view, section, first }: RoadmapViewProps & { section
           <span className="flex min-w-0 flex-col md:items-center md:gap-1" data-node-id={node.id}>
             <span className="sr-only text-xs font-bold tracking-widest text-roadmap-section-muted uppercase md:not-sr-only md:group-has-[[data-complete]]/section:text-roadmap-section-done-muted">
               Section {number}
+              <CareerLevelSuffix node={node} />
             </span>
             <span className="text-base leading-snug font-bold md:text-xl">
               {node.title}
               {node.optional && <span className="ml-2 align-middle text-xs font-semibold">Optional</span>}
             </span>
-            <SectionMeta section={section} className="text-content-2 md:text-roadmap-section-muted" />
             <span className="flex flex-wrap gap-x-2 md:justify-center">
               <Suspense fallback={<SectionCount section={section} status={null} />}>
                 <LiveSectionCount view={view} section={section} />

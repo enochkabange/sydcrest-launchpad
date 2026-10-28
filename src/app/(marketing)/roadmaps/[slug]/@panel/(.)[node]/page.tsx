@@ -39,19 +39,29 @@ async function PanelContent({ params }: Pick<PageProps<"/roadmaps/[slug]/[node]"
   if (!located) notFound();
   const { node, section, previous, next } = located;
   const detail = await getNodeDetail(slug, node.id);
-  const outcome = practiceOutcome(detail.content?.practice_task_md);
+  // The lesson's own "You will be able to" list when it has one, else what its practice task asks for.
+  const outcomes = detail.content?.outcomes?.length
+    ? detail.content.outcomes
+    : [practiceOutcome(detail.content?.practice_task_md)].filter((o): o is string => !!o);
   const lesson = learnPath(slug, node.slug);
 
   return (
     <>
       <TopicSummary node={node} section={section} sectionCount={view.sections.length} headingLevel={2} headingId={HEADING_ID} />
 
-      {(outcome || node.minutes !== null) && (
+      {(outcomes.length > 0 || node.minutes !== null) && (
         <section aria-labelledby="panel-outcome-heading" className="flex flex-col gap-2">
           <h3 id="panel-outcome-heading" className="text-xs font-bold tracking-widest text-content-3 uppercase">
             What you will be able to show
           </h3>
-          {outcome && <p className="text-content">{outcome}</p>}
+          {outcomes.length === 1 && <p className="text-content">{outcomes[0]}</p>}
+          {outcomes.length > 1 && (
+            <ul className="flex list-disc flex-col gap-1 pl-5 text-content">
+              {outcomes.map((o) => (
+                <li key={o}>{o}</li>
+              ))}
+            </ul>
+          )}
           {node.minutes !== null && (
             <p className="text-sm text-content-2">
               Time: {formatMinutes(node.minutes)} for the lesson, practice task and quiz. An estimate; take the time you need.

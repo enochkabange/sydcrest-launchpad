@@ -12,6 +12,11 @@ const content: TrackContent = {
   roadmap: "ai-machine-learning",
   nodes: {
     "before-you-start": {
+      outcomes: [
+        "Explain what machine learning actually is",
+        "Decide honestly whether you are ready for this track",
+        "Make a plan for working through it",
+      ],
       explanation_md: `## Why this section comes first
 
 Machine learning is one of the most talked about skills in tech, and it is easy to start in the wrong place. People watch a video about chatbots, open a course on neural networks, and give up two weeks later because the maths, the code and the jargon all arrive at once. This section exists so that does not happen to you.
@@ -104,6 +109,11 @@ Go slowly. Run every code example yourself in a notebook. When a topic feels lik
       },
     },
     "what-you-need-first": {
+      outcomes: [
+        "Check your Python, pandas, statistics and SQL skills",
+        "Plan around your computer and your data bundle",
+        "Run a readiness test in a free notebook",
+      ],
       explanation_md: `## Why check first
 
 Machine learning code is mostly ordinary data code with a small model step in the middle. If loading, cleaning and summarising data still feels hard, every lesson in this track will feel twice as hard, and you may decide wrongly that machine learning is not for you. Checking your readiness now saves you weeks.
@@ -199,6 +209,11 @@ Hawa thinks she is ready. She loads a CSV of a shop's sales, removes rows with m
       },
     },
     "ai-work-in-ghana": {
+      outcomes: [
+        "Describe who hires for AI work in Ghana",
+        "Explain what AI adverts ask for",
+        "Map the realistic routes into AI work",
+      ],
       explanation_md: `## Why look at the jobs first
 
 It is better to know the real picture before you invest months of study. AI and machine learning work does exist in Ghana, and the problems it tackles here are interesting: farming advice, credit decisions for people without bank histories, speech tools for local languages, and fraud checks on mobile money. But the way into this work is usually indirect, and you should plan for that.
@@ -293,6 +308,11 @@ Treat machine learning as a skill you grow inside a job, not a ticket to your fi
       },
     },
     "maths-for-ml": {
+      outcomes: [
+        "Explain why models need some maths, but not too much",
+        "Name the three maths ideas behind models",
+        "Connect a straight line from school to a simple model",
+      ],
       explanation_md: `## Why maths, and why not too much
 
 Employers who hire for machine learning roles often list linear algebra, probability and statistics, and skills frameworks for data science put mathematics near the top. The reason is practical. When a model behaves strangely, the person who understands what it is doing inside can find the problem. The person who only knows which buttons to press is stuck.
@@ -388,6 +408,11 @@ Free video courses on linear algebra, calculus and probability are linked as fur
       },
     },
     "vectors-and-matrices": {
+      outcomes: [
+        "Explain vectors and matrices",
+        "Compute predictions by hand and in NumPy",
+        "Recognise where these ideas appear in models",
+      ],
       explanation_md: `## Why this matters
 
 Every model you will build, from a simple price predictor to a language model, stores its data and its learned settings as vectors and matrices. Job adverts for data science roles in Accra name linear algebra for exactly this reason. Once you can read these objects, error messages like "shapes do not match" stop being scary and start being useful clues.
@@ -501,6 +526,11 @@ In neural networks, each layer holds a matrix of weights, and data flows through
       },
     },
     "gradients-and-optimisation": {
+      outcomes: [
+        "Measure how wrong a model is",
+        "Explain a rate of change",
+        "Describe gradient descent and the effect of the learning rate",
+      ],
       explanation_md: `## Why this matters
 
 Training is the word you will hear most in machine learning, and gradient descent is what training actually is for most models, including the largest language models. If you understand it, you can tell why a model is not learning, why it learns too slowly, and what the settings in a training script mean.
@@ -609,6 +639,11 @@ Libraries such as scikit learn and PyTorch compute gradients for you, so you wil
       },
     },
     "probability-for-ml": {
+      outcomes: [
+        "Use conditional probability",
+        "Avoid the base rate trap",
+        "Turn a probability into a decision",
+      ],
       explanation_md: `## Why this matters
 
 Many models used by Ghanaian companies output a probability rather than a plain answer: how likely a loan is to be repaid, how likely a mobile money transfer is fraud, how likely a customer is to stop using a service. Someone must turn that number into a decision, and someone must explain what it means. Data science adverts name probability for this reason.
@@ -693,6 +728,11 @@ A model gives 0.7 for a loan. Approve or not? You choose a **threshold**. At 0.5
       },
     },
     "python-ml-tools": {
+      outcomes: [
+        "Name the Python toolkit for machine learning",
+        "Describe a typical machine learning workflow",
+        "Set up a tidy starter notebook",
+      ],
       explanation_md: `## Why tools come next
 
 Machine learning teams in Ghana and abroad work in Python, and adverts for data science and machine learning roles name the same small set of libraries again and again: NumPy, pandas, scikit learn, and a deep learning library such as PyTorch, TensorFlow or Keras. Learning this toolkit well matters more than chasing every new tool you see online.
@@ -794,6 +834,11 @@ The two topics in this section cover NumPy with pandas, and how to use free note
       },
     },
     "numpy-and-pandas": {
+      outcomes: [
+        "Use pandas for the table and NumPy for the numbers",
+        "Explain why array shape matters",
+        "Turn a messy table into clean inputs and a target",
+      ],
       explanation_md: `## Why this matters
 
 A model never sees a spreadsheet. It sees an array of numbers called **features**, usually written \`X\`, and an array of answers called the **target**, usually written \`y\`. Getting from a messy table to clean \`X\` and \`y\` is the most common task in machine learning work, and adverts that mention pipelines and data preparation are describing exactly this.
@@ -914,6 +959,11 @@ NumPy also lets you do maths on whole columns at once, which is called **vectori
       },
     },
     "notebooks-and-free-compute": {
+      outcomes: [
+        "Explain what a hosted notebook is and its limits",
+        "Keep habits that protect your work",
+        "Protect your data bundle while you work",
+      ],
       explanation_md: `## Why this matters
 
 You do not need an expensive computer to learn machine learning. Free hosted notebooks give you a capable machine in the browser, sometimes with a **GPU** (graphics processing unit), the chip that makes deep learning practical. Using them well, without losing work or burning through your data bundle, is a real skill.
@@ -1007,6 +1057,11 @@ Sumaila is training a small model in a free notebook at a Tamale hub. He saves a
       },
     },
     "classic-ml": {
+      outcomes: [
+        "Explain supervised learning",
+        "Describe the workflow you will learn",
+        "Frame local problems as machine learning tasks",
+      ],
       explanation_md: `## Why classic machine learning first
 
 When people hear "AI" they picture chatbots and image generators. But much of the machine learning that companies actually use runs on ordinary tables of data: credit scoring from mobile money histories, predicting which customers might leave a telecom network, estimating crop yields, flagging unusual transactions. Data science adverts in Accra describe exactly this kind of predictive modelling. Classic models are faster to train, easier to explain and often just as accurate on tabular data as deep learning.
@@ -1111,6 +1166,11 @@ Mariama works for a savings group network in the Upper East Region. Leaders want
       },
     },
     "regression-and-classification": {
+      outcomes: [
+        "Follow the scikit learn pattern",
+        "Compare a regression model with a baseline",
+        "Train a classifier and read its probabilities",
+      ],
       explanation_md: `## Why this matters
 
 Regression and classification are the two everyday tasks of machine learning. A fintech estimating a safe loan size is doing regression; the same company deciding whether to approve the loan is doing classification. scikit learn, named in junior data science adverts, makes both possible in a few lines, and its pattern is the same for every model.
@@ -1233,6 +1293,11 @@ All of them use the same create, fit, predict pattern.`,
       },
     },
     "model-evaluation": {
+      outcomes: [
+        "Recognise overfitting",
+        "Use train, validation and test sets and cross validation",
+        "Choose a measure when accuracy misleads",
+      ],
       explanation_md: `## Why this matters
 
 Anyone can train a model that looks brilliant on the data it learned from. The real question is how it performs on cases it has never seen, because that is what happens once it is in use. Employers list "evaluating models" and "testing and validating models" because a badly evaluated model can approve bad loans, miss sick patients or waste a company's money, while everyone believes it works.
@@ -1351,6 +1416,11 @@ Issahaku's model predicts which motorbike loans will default. Training accuracy 
       },
     },
     "feature-engineering": {
+      outcomes: [
+        "Prepare categories and missing values",
+        "Build a preprocessing pipeline",
+        "Hunt for data leakage",
+      ],
       explanation_md: `## Why this matters
 
 Experienced practitioners often say the data matters more than the model. A simple model with well prepared inputs usually beats a clever model with poor ones. Ghanaian adverts for machine learning roles name feature engineering directly, and real Ghanaian data is messy: district names typed three ways, dates in mixed formats, blank cells from field surveys and amounts recorded in old and new cedis.
@@ -1478,6 +1548,11 @@ Wumpini's first model to predict clinic no shows looks almost perfect. She check
       },
     },
     "unsupervised-learning": {
+      outcomes: [
+        "Explain clustering and why scale matters",
+        "Choose a number of clusters",
+        "Treat cluster results as questions",
+      ],
       explanation_md: `## Why this matters
 
 Sometimes there is no label to predict. A mobile money agent network might want to understand its customers before designing new services, or an NGO might want to see which villages have similar needs. **Unsupervised learning** looks for structure in data without answers to learn from. It is less common in job adverts than prediction, which is why this topic is optional, but it is a useful tool for exploring data and starting conversations.
@@ -1586,6 +1661,11 @@ Clustering always produces groups, even in random data. So treat its output as a
       },
     },
     "deep-learning": {
+      outcomes: [
+        "Explain what makes deep learning deep",
+        "Weigh its trade offs",
+        "Decide when to reuse a trained model",
+      ],
       explanation_md: `## Why deep learning matters
 
 Classic models work well on tables. But some data has no neat columns: a photo of a cassava leaf, a voice note in Dagbani, a paragraph of Twi text, a satellite image of farmland. **Deep learning** is the family of methods that handles this kind of data, and it powers speech recognition, image recognition, translation and the large language models behind modern chat assistants. Ghanaian employers working on speech tools for local languages and on AI products name deep learning libraries such as PyTorch, TensorFlow and Keras in their adverts.
@@ -1676,6 +1756,11 @@ Hawa's team wants to help farmers spot a leaf disease from a photo. They collect
       },
     },
     "neural-networks": {
+      outcomes: [
+        "Explain units, layers and activations",
+        "Describe how a network trains",
+        "Train a small network in PyTorch",
+      ],
       explanation_md: `## Why this matters
 
 Neural networks sit behind speech recognition, image models and language models. You will rarely design a big one from scratch in your first roles, but you must understand what layers, activations, epochs and loss mean, or every training log and fine tuning guide will look like noise. Ghanaian AI adverts name PyTorch, TensorFlow and Keras for this reason.
@@ -1802,6 +1887,11 @@ Reading it: the first layer takes 2 inputs to 16 units, ReLU adds the bend, and 
       },
     },
     "language-and-speech": {
+      outcomes: [
+        "Explain what low resource means for Ghanaian languages",
+        "Describe how text and speech become numbers",
+        "Plan a small, ethical language dataset",
+      ],
       explanation_md: `## Why this matters
 
 Ghanaians speak Dagbani, Twi, Ewe, Ga, Dagaare, Gonja and many other languages every day, yet most language technology works best in English. Speech and text tools in local languages could let a farmer in Karaga ask for weather advice by voice, or let a health worker hear guidance in a patient's own language. At least one Ghanaian agritech employer has advertised for engineers to build speech recognition and language models for exactly these low resource languages. It is hard work, and valuable.
@@ -1912,6 +2002,11 @@ Collect text and voice only with clear consent, explain how it will be used, and
       },
     },
     "llms-and-embeddings": {
+      outcomes: [
+        "Explain what a large language model does",
+        "Explain why LLMs state false things confidently",
+        "Use embeddings to search by meaning",
+      ],
       explanation_md: `## Why this matters
 
 Large language models (LLMs) power the chat assistants many people now use for writing, summarising and answering questions. Ghanaian employers advertise for engineers who can build applications on them, fine tune them, and design prompts. To do that work well, and safely, you need to understand what these models actually do, because it is not what most people assume.
@@ -2015,6 +2110,11 @@ This is **semantic search**. It finds relevant sheets even when the question use
       },
     },
     "building-with-ai": {
+      outcomes: [
+        "Compare two ways to put AI to work",
+        "Explain what changes when a model meets real users",
+        "Design an AI feature on paper first",
+      ],
       explanation_md: `## Why this section matters
 
 A model sitting in a notebook helps nobody. Much of the AI work companies hire for is about putting models to work inside real products: a loan app that gives a decision in seconds, a farm advice line that answers questions, a dashboard that flags unusual transactions for a person to check. Adverts in Accra for AI engineers and AI application engineers describe exactly this, often more than inventing new models. Some of the most employable AI skills are therefore software and judgement skills, not only maths.
@@ -2106,6 +2206,11 @@ The final lesson in this section is not an extra. In Ghana and everywhere else, 
       },
     },
     "ai-apis": {
+      outcomes: [
+        "Explain how an AI API works",
+        "Write and test prompts on real examples",
+        "Control secrets, costs and private data",
+      ],
       explanation_md: `## Why this matters
 
 Adding AI to an app no longer needs a research team. Hosted model APIs let a small Ghanaian startup add summarising, translation, classification or question answering with a few web requests. Adverts for AI engineers and prompt engineers in Accra ask for exactly this: designing prompts, testing outputs and building them safely into products. Doing it well is a real engineering skill.
@@ -2223,6 +2328,11 @@ Amina builds a feature that turns long community meeting notes into short summar
       },
     },
     "serving-models": {
+      outcomes: [
+        "Save a trained model",
+        "Wrap it in a web API and package it",
+        "Watch a model after launch",
+      ],
       explanation_md: `## Why this matters
 
 A model becomes useful when other software can ask it for predictions: a mobile app, a website, a spreadsheet tool or another service. Ghanaian machine learning adverts mention model serving, secure API endpoints, Docker and keeping models working in production. This work sits between data science and software development, and it is a strong skill to show.
@@ -2351,6 +2461,11 @@ Fuseini serves a yield model for a cooperative's field officers. After one seaso
       },
     },
     "responsible-ai": {
+      outcomes: [
+        "Explain where unfairness comes from",
+        "Check results across groups and explain a model's limits",
+        "Protect personal data under Act 843",
+      ],
       explanation_md: `## Why this matters
 
 Models make or shape decisions about people: who gets a loan, which patients get a follow up call, which job applications a recruiter reads first. A model can be accurate on average and still fail one group badly. Ghanaian AI adverts name fairness, explainability and bias mitigation as skills, and every model that touches personal data in Ghana falls under the Data Protection Act, 2012 (Act 843).
@@ -2457,6 +2572,11 @@ Hawa builds a model to predict which pregnant women may miss antenatal visits at
       },
     },
     "getting-hired": {
+      outcomes: [
+        "Explain what AI employers want to see",
+        "Show evidence instead of claims",
+        "Write a realistic plan into AI work",
+      ],
       explanation_md: `## Why this section matters
 
 You now know how models are built, tested, served and checked for fairness. The next challenge is convincing someone to pay you to do it. As the first section said honestly, machine learning adverts in Ghana almost always ask for a degree and experience, and entry level machine learning engineer roles are rare. That does not shut you out. It means your evidence has to work harder, and your route in may go through a neighbouring role first.
@@ -2551,6 +2671,11 @@ Abdul-Rahman finishes this track while working as a research assistant on a farm
       },
     },
     "ml-portfolio": {
+      outcomes: [
+        "Describe what makes a strong project",
+        "Find data for a project",
+        "Present a balanced set of projects well",
+      ],
       explanation_md: `## Why this matters
 
 When you have no machine learning job on your CV yet, your portfolio is your experience. A reviewer at a Ghanaian startup or a remote team will spend a few minutes on it. In that time they want to see that you can frame a problem, handle messy data, evaluate honestly and explain clearly. Two or three strong projects beat ten weak ones.
@@ -2648,6 +2773,11 @@ Mariama's portfolio has three projects: a crop yield model on open agricultural 
       },
     },
     "routes-into-ai": {
+      outcomes: [
+        "Name stepping stone roles in Ghana",
+        "Find remote and contract work",
+        "Keep growing in public and consider further study",
+      ],
       explanation_md: `## Why this matters
 
 You have the skills and a portfolio. Now you need a plan that fits the real job market. In Ghana, machine learning engineer roles mostly ask for degrees and years of experience, and we found no entry level ones. So the smart move is to aim at the roles that are open to you now, and grow into AI work from inside them.

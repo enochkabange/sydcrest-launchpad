@@ -20,6 +20,10 @@ export const uiUx: RoadmapDraft = {
         "UX is about how something works for the person using it, and UI is how it looks and feels. This section explains both and how design teams work.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [RES.nngArticles],
     },
     {
@@ -29,6 +33,8 @@ export const uiUx: RoadmapDraft = {
         "Learn the difference between research, interaction design and visual design, and how they fit together. Read real job adverts to see which mix local and remote employers want.",
       parent: "foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [RES.nngArticles],
     },
     {
@@ -38,6 +44,8 @@ export const uiUx: RoadmapDraft = {
         "Understand the loop of learning about users, defining the problem, sketching ideas, testing and improving. Every project in this roadmap follows that loop.",
       parent: "foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.govService],
     },
     {
@@ -47,6 +55,10 @@ export const uiUx: RoadmapDraft = {
         "Good design starts with understanding people in their real setting. Research in Ghana means meeting users where they are, often in person and in their own language.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Product Design Intern", "UX Researcher", "Product Design Fellow"],
       resources: [RES.govResearch],
     },
     {
@@ -56,6 +68,8 @@ export const uiUx: RoadmapDraft = {
         "Plan a small study, find the right people, ask for consent and watch how they really use their phones at the market, the shop or the clinic. Notice shared phones, small data bundles, noise and bright sun, because these shape every design.",
       parent: "research",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.govResearch, RES.dpc],
     },
     {
@@ -65,6 +79,8 @@ export const uiUx: RoadmapDraft = {
         "Ask open questions about real past behaviour, listen more than you talk and record notes carefully. Use a short survey only when you need to check how common something is.",
       parent: "research",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.govResearch, RES.nngArticles],
     },
     {
@@ -74,6 +90,8 @@ export const uiUx: RoadmapDraft = {
         "Group your notes into patterns, then capture them as simple personas, journey maps and problem statements. This is what you share with the team before anyone designs screens.",
       parent: "research",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 4,
       resources: [RES.nngArticles],
     },
     {
@@ -83,6 +101,10 @@ export const uiUx: RoadmapDraft = {
         "Before colours and fonts, decide what goes where and how people move through the product. Cheap sketches here save expensive changes later.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Junior UX Designer", "Junior Product Designer"],
       resources: [],
     },
     {
@@ -92,6 +114,8 @@ export const uiUx: RoadmapDraft = {
         "Organise content and features so people can find things without thinking hard. Use the words your users use, not internal company terms.",
       parent: "structure",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.nngArticles],
     },
     {
@@ -101,6 +125,8 @@ export const uiUx: RoadmapDraft = {
         "Map every step a user takes to finish a task, such as paying a bill with mobile money, including errors and dead ends. Flows reveal problems that single screens hide.",
       parent: "structure",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.nngArticles],
     },
     {
@@ -110,6 +136,8 @@ export const uiUx: RoadmapDraft = {
         "Sketch screens on paper first, then make simple grey wireframes. Paper sketches cost nothing and are easy to test with users in person.",
       parent: "structure",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.figmaLibrary],
     },
     {
@@ -119,6 +147,10 @@ export const uiUx: RoadmapDraft = {
         "This is where designs become polished, consistent screens. You will learn a design tool and the visual principles behind good interfaces.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Junior UI/UX Designer", "UI/UX Designer", "Product Designer"],
       resources: [],
     },
     {
@@ -128,6 +160,8 @@ export const uiUx: RoadmapDraft = {
         "Learn frames, auto layout, components and prototyping in a browser design tool with a free plan, such as Figma or Penpot. Most design adverts ask for this, and a modest laptop is enough.",
       parent: "interface-design",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.figmaHelp, RES.figmaLibrary],
     },
     {
@@ -137,6 +171,8 @@ export const uiUx: RoadmapDraft = {
         "Use type scale, spacing, contrast and alignment to create clear hierarchy. Check your colours outdoors on a phone, because strong sun washes out weak contrast.",
       parent: "interface-design",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfDesign, RES.lawsOfUx],
     },
     {
@@ -146,6 +182,8 @@ export const uiUx: RoadmapDraft = {
         "Learn platform conventions for navigation, buttons, forms and touch targets, and how one layout adapts from a small phone to a laptop. Design for one handed use, since many people hold their phone that way while busy.",
       parent: "interface-design",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.material, RES.hig],
     },
     {
@@ -155,6 +193,8 @@ export const uiUx: RoadmapDraft = {
         "Build reusable components and styles so a product looks and behaves consistently. Many adverts ask for this, because it makes developers' work easier.",
       parent: "interface-design",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.material, RES.figmaHelp],
     },
     {
@@ -164,6 +204,10 @@ export const uiUx: RoadmapDraft = {
         "A product that works for everyone reaches more customers. This section covers disability, literacy, language, basic phones and patchy connections.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["UX Designer", "Product Designer"],
       resources: [],
     },
     {
@@ -173,6 +217,8 @@ export const uiUx: RoadmapDraft = {
         "Design for people with low vision, colour blindness, motor difficulties or screen readers. Follow the WCAG guidelines and test with real users where you can.",
       parent: "inclusive-design",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.waiFundamentals, RES.wcagQuickref, RES.waiEasyChecks],
     },
     {
@@ -182,6 +228,8 @@ export const uiUx: RoadmapDraft = {
         "Use plain words, familiar icons, clear numbers and voice or local language options where they help. Test whether people understand your labels, rather than assuming they do.",
       parent: "inclusive-design",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.govService],
     },
     {
@@ -191,6 +239,8 @@ export const uiUx: RoadmapDraft = {
         "Design for small screens, little storage, older Android versions and phones without internet, where USSD menus and SMS do the work. Keep every step short, numbered and forgiving.",
       parent: "inclusive-design",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.material],
     },
     {
@@ -200,6 +250,8 @@ export const uiUx: RoadmapDraft = {
         "Keep screens light, show progress clearly and design for the moment the network drops halfway through a task. Users who pay for every megabyte notice heavy designs quickly.",
       parent: "inclusive-design",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 4,
       resources: [RES.webdevPerf, RES.webdevImages],
     },
     {
@@ -209,6 +261,10 @@ export const uiUx: RoadmapDraft = {
         "Testing shows whether a design actually works before and after it is built. This section covers prototypes, usability tests, handoff and measuring results.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["UX/UI Designer", "UX Researcher"],
       resources: [],
     },
     {
@@ -218,6 +274,8 @@ export const uiUx: RoadmapDraft = {
         "Link your screens into a prototype that runs on a phone. Keep it focused on the one task you want to test.",
       parent: "testing",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.figmaHelp],
     },
     {
@@ -227,6 +285,8 @@ export const uiUx: RoadmapDraft = {
         "Give users a task, watch quietly and note where they hesitate or fail, and review screens against common usability heuristics. Sessions in a market, school or office near you are as valid as formal lab tests.",
       parent: "testing",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.nngUsability, RES.nngHeuristics],
     },
     {
@@ -236,6 +296,8 @@ export const uiUx: RoadmapDraft = {
         "Share specs, states and assets clearly and stay involved while the product is built. Learn enough HTML and CSS to understand what is easy and what is costly to build.",
       parent: "testing",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.webdevCss, RES.mdnHtml],
     },
     {
@@ -245,6 +307,8 @@ export const uiUx: RoadmapDraft = {
         "Use simple numbers such as completion and drop off, plus feedback from support and users, to see whether a design works in real life. Compare two versions carefully before deciding which one is better.",
       parent: "testing",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.gaHelp],
     },
     {
@@ -254,6 +318,10 @@ export const uiUx: RoadmapDraft = {
         "Design jobs go to people who can show their thinking, not only nice screens. This section helps you present your work.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "specialist",
+      jobs: ["Product Designer", "Senior Product Designer", "UX Researcher"],
       resources: [],
     },
     {
@@ -263,6 +331,8 @@ export const uiUx: RoadmapDraft = {
         "Write two or three case studies that show the problem, your research, the options you tried, the final design and why you chose it. Redesigning a real local app or service, with real user feedback, makes a strong case study.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.nngArticles],
     },
     {
@@ -272,6 +342,8 @@ export const uiUx: RoadmapDraft = {
         "Offer simple app, website and menu designs to nearby businesses and NGOs. Agree what is included and how many revisions are allowed before you start.",
       parent: "getting-hired",
       optional: true,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfFreelancing, RES.lfCanva],
     },
     {
@@ -281,6 +353,8 @@ export const uiUx: RoadmapDraft = {
         "Apply to agencies, fintechs, startups, NGOs and remote teams, and prepare to walk through a case study in fifteen minutes. Expect a design exercise, and practise explaining your decisions aloud.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfJobsearch, RES.lfInterview, RES.lfLinkedin],
     },
   ],

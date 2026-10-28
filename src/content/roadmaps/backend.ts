@@ -20,6 +20,10 @@ export const backend: RoadmapDraft = {
         "Backend work happens on servers you cannot see, so you need a clear picture of how requests travel. This section also gives you the everyday tools every developer uses.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [RES.cs50],
     },
     {
@@ -29,6 +33,8 @@ export const backend: RoadmapDraft = {
         "Learn how a phone app sends a request, how a server replies, and what status codes and headers mean. Every API you build later is a conversation in HTTP.",
       parent: "foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.mdnHttp],
     },
     {
@@ -38,6 +44,8 @@ export const backend: RoadmapDraft = {
         "Move around files, run programs and read logs from a terminal. Most servers run Linux and have no screen, so this is how you will work with them.",
       parent: "foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.odin],
     },
     {
@@ -47,6 +55,8 @@ export const backend: RoadmapDraft = {
         "Track changes, work on branches and open pull requests. Teams expect you to use Git from your first day.",
       parent: "foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.githubDocs, RES.gitBook],
     },
     {
@@ -56,6 +66,10 @@ export const backend: RoadmapDraft = {
         "Pick one language, such as JavaScript with Node.js or Python, and stay with it until you can build things without a tutorial. Let the local and remote job adverts you would like to apply for guide the choice.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "junior",
+      jobs: ["NSS Backend Developer", "Graduate Trainee", "Junior Software Engineer"],
       resources: [RES.nodeLearn, RES.pythonTutorial],
     },
     {
@@ -65,6 +79,8 @@ export const backend: RoadmapDraft = {
         "Practise functions, data structures, error handling and breaking a problem into steps. Solve small exercises daily, because interviews test this directly.",
       parent: "a-language",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.fccLearn, RES.cs50],
     },
     {
@@ -74,6 +90,8 @@ export const backend: RoadmapDraft = {
         "A server spends most of its time waiting for databases and other services, so learn how promises, async and await let it serve many people at once. Practise handling slow and failed calls, because networks in Ghana are not always steady.",
       parent: "a-language",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 4,
       resources: [RES.nodeLearn, RES.mdnJs],
     },
     {
@@ -83,6 +101,10 @@ export const backend: RoadmapDraft = {
         "Almost every backend stores data, and relational databases such as PostgreSQL are the common starting point. Learn to design tables before you learn any framework.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Junior Backend Engineer", "Back End Developer"],
       resources: [],
     },
     {
@@ -92,6 +114,8 @@ export const backend: RoadmapDraft = {
         "Write queries to select, filter, join and group data. SQL is useful in nearly every tech role, so the time you spend here pays off widely.",
       parent: "databases",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.sqlbolt, RES.khanSql, RES.pgTutorial],
     },
     {
@@ -101,6 +125,8 @@ export const backend: RoadmapDraft = {
         "Model real things such as customers, orders and payments as tables with keys and relationships. Practise by designing the database for a small shop that sells on WhatsApp.",
       parent: "databases",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 4,
       resources: [RES.pgTutorial],
     },
     {
@@ -110,6 +136,8 @@ export const backend: RoadmapDraft = {
         "Change a database safely over time with versioned migrations, and see how an ORM maps tables to code. Teams rely on migrations so nobody edits production data by hand.",
       parent: "databases",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.supabase],
     },
     {
@@ -119,6 +147,8 @@ export const backend: RoadmapDraft = {
         "Learn when a fast key value store or a document database helps, and how caching saves your database from repeating the same work. Many adverts mention these tools, but they come after you are comfortable with SQL.",
       parent: "databases",
       optional: true,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.mdnHttp],
     },
     {
@@ -128,6 +158,10 @@ export const backend: RoadmapDraft = {
         "An API is how apps, websites and partners talk to your server. This section covers building one that is predictable, safe and documented.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
+      careerLevel: "junior",
+      jobs: ["Junior Backend Engineer", "Junior Java Backend Developer", "Backend Developer"],
       resources: [],
     },
     {
@@ -137,6 +171,8 @@ export const backend: RoadmapDraft = {
         "Design clear routes, use the right HTTP methods and return consistent JSON with sensible status codes. Write short documentation so another developer can use your API without asking you.",
       parent: "apis",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.express, RES.mdnHttp],
     },
     {
@@ -146,6 +182,8 @@ export const backend: RoadmapDraft = {
         "Check every input from users and return helpful errors instead of crashing. Validate Ghanaian phone numbers and amounts in cedis carefully, because payments depend on them.",
       parent: "apis",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.owasp],
     },
     {
@@ -155,6 +193,8 @@ export const backend: RoadmapDraft = {
         "Learn how users sign in, how sessions and tokens work, and how to check what each user is allowed to do. Many local apps sign users in with a phone number and a one time code, so understand that flow too.",
       parent: "apis",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.owasp],
     },
     {
@@ -164,6 +204,10 @@ export const backend: RoadmapDraft = {
         "Local products often depend on mobile money, SMS and WhatsApp, over networks that drop and repeat requests. Knowing how to integrate them safely makes you useful to Ghanaian startups, fintechs and telcos quickly.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
+      careerLevel: "mid",
+      jobs: ["Backend Engineer", "Full Stack Engineer"],
       resources: [],
     },
     {
@@ -173,6 +217,8 @@ export const backend: RoadmapDraft = {
         "Learn how a payment provider sends your server a webhook when a mobile money payment succeeds or fails, and why you must verify it before trusting it. Record every payment once and reconcile your records against the provider's.",
       parent: "local-integrations",
       optional: false,
+      difficulty: "advanced",
+      complexity: 5,
       resources: [RES.hubtelDocs, RES.mdnHttp],
     },
     {
@@ -182,6 +228,8 @@ export const backend: RoadmapDraft = {
         "Requests time out, phones lose signal and providers send the same webhook twice, so your server must handle repeats without charging anyone twice. Learn timeouts, safe retries and idempotency keys, which fintech adverts ask for by name.",
       parent: "local-integrations",
       optional: false,
+      difficulty: "advanced",
+      complexity: 5,
       resources: [RES.mdnHttp, RES.twelveFactor],
     },
     {
@@ -191,6 +239,8 @@ export const backend: RoadmapDraft = {
         "Send order updates, reminders and one time codes by SMS or WhatsApp through a provider API, and see how USSD menus reach people on basic phones. Keep messages short, respect opt outs and send them in the background so a delay never blocks your app.",
       parent: "local-integrations",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.twilioSms],
     },
     {
@@ -200,6 +250,10 @@ export const backend: RoadmapDraft = {
         "Code that works on your laptop still has to survive real users and real attackers. This section covers the habits that make a service trustworthy.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Backend Developer", "Full Stack Engineer"],
       resources: [RES.twelveFactor],
     },
     {
@@ -209,6 +263,8 @@ export const backend: RoadmapDraft = {
         "Learn the common attacks such as injection and broken access control, and keep secrets out of your code. Handling personal data also means following Ghana's Data Protection Act.",
       parent: "production",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.owasp, RES.dpc],
     },
     {
@@ -218,6 +274,8 @@ export const backend: RoadmapDraft = {
         "Write tests that check your API behaves correctly, especially around payments and permissions. Tests let you change code with confidence and show employers you care about quality.",
       parent: "production",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.vitest],
     },
     {
@@ -227,6 +285,8 @@ export const backend: RoadmapDraft = {
         "Deploy an API and database on free hosting tiers, use environment variables for secrets and read logs when something breaks. A live API with a public link is a strong portfolio piece.",
       parent: "production",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 4,
       resources: [RES.render, RES.supabase, RES.twelveFactor],
     },
     {
@@ -236,6 +296,8 @@ export const backend: RoadmapDraft = {
         "Package an app and its dependencies so it runs the same everywhere. Useful once you are deploying to larger teams, but not needed for your first role.",
       parent: "production",
       optional: true,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.docker],
     },
     {
@@ -245,6 +307,10 @@ export const backend: RoadmapDraft = {
         "Backend skills are hard to see, so you must make them visible. Show working systems, clear code and good written explanations.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Junior Backend Engineer", "NSS Backend Developer", "Junior Software Engineer"],
       resources: [],
     },
     {
@@ -254,6 +320,8 @@ export const backend: RoadmapDraft = {
         "Build two or three deployed APIs with tests and a README that explains the design, such as an ordering system with mobile money webhooks. Include a short demo video, recorded with a screen recorder or a phone, for people who cannot run the code.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.githubDocs, RES.markdown],
     },
     {
@@ -263,6 +331,8 @@ export const backend: RoadmapDraft = {
         "Apply to local startups, banks, telcos and agencies as well as remote roles, and offer small integrations to businesses near you. Practise explaining a system you built, including what you would do differently.",
       parent: "getting-hired",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfJobsearch, RES.lfInterview, RES.lfFreelancing],
     },
   ],

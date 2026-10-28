@@ -1,4 +1,5 @@
 import { Check, Flag } from "lucide-react";
+import { CareerLevelSuffix } from "@/components/roadmaps/career-level";
 import { Suspense, type ReactNode } from "react";
 import Link from "@/components/ui/link";
 import { formatEstimate } from "@/lib/roadmaps/estimates";
@@ -7,7 +8,7 @@ import type { ProgressStatus } from "@/lib/roadmaps/tree";
 import type { RoadmapView, ViewNode, ViewSection } from "@/lib/roadmaps/view-model";
 import { STATUS_LABELS } from "../progress";
 import { liveView } from "./live";
-import { choiceLabel, Minutes, NodeBadges, SectionMeta } from "./node-meta";
+import { choiceLabel, Minutes, NodeBadges } from "./node-meta";
 import type { RoadmapViewProps } from "./types";
 
 const OPTIONAL_HIDE = "group-data-[hide-optional]/roadmap:hidden";
@@ -59,6 +60,7 @@ function JourneySection({ slug, view, section }: RoadmapViewProps & { section: V
         <header className="sticky top-0 z-10 -mx-4 border-b border-line bg-surface/95 px-4 py-2 backdrop-blur-sm md:mx-0 md:rounded-t-lg">
           <p className="text-xs font-bold tracking-widest text-content-3 uppercase">
             Section {number} of {view.sections.length}
+            <CareerLevelSuffix node={node} />
           </p>
           <h3 id={headingId} className="text-h3 text-content">
             {node.title}
@@ -69,7 +71,6 @@ function JourneySection({ slug, view, section }: RoadmapViewProps & { section: V
             </Suspense>
             {time && <span>· {time}</span>}
           </p>
-          <SectionMeta section={section} className="text-content-2" />
         </header>
 
         <ol className="relative mt-3 flex flex-col gap-2 before:absolute before:inset-y-2 before:left-[21px] before:w-[3px] before:bg-roadmap-spine">

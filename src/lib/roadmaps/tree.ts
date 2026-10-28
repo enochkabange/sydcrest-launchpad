@@ -15,15 +15,13 @@ export type FlatNode = {
   kind?: "section" | "topic" | "checkpoint" | null;
   /** Siblings sharing a value are "pick one of these" alternatives. */
   choice_group?: string | null;
-  /*
-   * Optional content fields a later content PR fills (topic difficulty and
-   * complexity, section career level and jobs). Every view renders them when
-   * present and nothing when absent; see view-model.ts.
-   */
+  /** Lesson structure (issue #255); null or missing when not rated yet. */
   difficulty?: "beginner" | "intermediate" | "advanced" | null;
-  complexity?: number | null;
+  complexity?: 1 | 2 | 3 | 4 | 5 | null;
+  /** Sections only. */
   career_level?: "foundation" | "junior" | "mid" | "specialist" | null;
-  jobs?: readonly string[] | null;
+  /** Sections only: job titles from the track research. Empty or null when none fit. */
+  jobs?: string[] | null;
 };
 
 export type TreeNode = FlatNode & {

@@ -13,7 +13,7 @@
 -- next-step (best after another track). Null: not set, shown under every level.
 --
 -- node_estimate_inputs: the raw numbers behind the time estimates (word
--- counts of the lesson and practice task, quiz question count) so the public
+-- counts of the lesson, its worked example and the practice task, quiz question count) so the public
 -- pages read a few integers per topic instead of every lesson's markdown. The
 -- formula lives in src/lib/roadmaps/estimates.ts. security_invoker, so the
 -- node_content, node_quiz and roadmap_nodes policies apply as they are: anon
@@ -43,7 +43,8 @@ select
   n.id as node_id,
   n.roadmap_id,
   (c.node_id is not null) as has_lesson,
-  coalesce(cardinality(regexp_split_to_array(nullif(btrim(c.explanation_md), ''), '\s+')), 0) as lesson_words,
+  coalesce(cardinality(regexp_split_to_array(nullif(btrim(c.explanation_md), ''), '\s+')), 0)
+    + coalesce(cardinality(regexp_split_to_array(nullif(btrim(c.worked_example_md), ''), '\s+')), 0) as lesson_words,
   coalesce(cardinality(regexp_split_to_array(nullif(btrim(c.practice_task_md), ''), '\s+')), 0) as practice_words,
   coalesce(jsonb_array_length(q.questions), 0) as quiz_questions
 from public.roadmap_nodes n

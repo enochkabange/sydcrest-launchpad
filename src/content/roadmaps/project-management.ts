@@ -60,6 +60,10 @@ export const projectManagement: RoadmapDraft = {
         "Project managers keep work on time, within budget and focused on its goals, from a borehole project to a training programme. This section explains what projects are and who works on them.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [atlassianPm, googlePmFoundations],
     },
     {
@@ -69,6 +73,8 @@ export const projectManagement: RoadmapDraft = {
         "A project has a clear goal, a start and an end, a budget and limited people and time, unlike routine work. You will learn how scope, time and cost pull against each other and why changing one affects the others.",
       parent: "project-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [atlassianPm, googlePmFoundations],
     },
     {
@@ -78,6 +84,8 @@ export const projectManagement: RoadmapDraft = {
         "You will meet the common roles, such as project assistant, project officer, coordinator, manager, M&E officer, finance staff, donors and community partners. A simple RACI chart shows who does, approves, advises and is informed for each task.",
       parent: "project-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [atlassianRaci],
     },
     {
@@ -87,6 +95,8 @@ export const projectManagement: RoadmapDraft = {
         "Most projects move through starting, planning, doing, monitoring and closing, even when the names differ between organisations. Knowing the stage you are in tells you which documents and decisions matter right now.",
       parent: "project-basics",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [projectDpro, googlePm],
     },
     {
@@ -96,6 +106,10 @@ export const projectManagement: RoadmapDraft = {
         "Projects go wrong most often because nobody agreed at the start what success looks like. This section covers goals, people and results frameworks.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Project Assistant", "Office Operational Support Intern"],
       resources: [atlassianKickoff],
     },
     {
@@ -105,6 +119,8 @@ export const projectManagement: RoadmapDraft = {
         "A short charter records why the project exists, what it will and will not deliver, the budget, the dates and who is in charge. You will write one page for a small project, such as a youth skills workshop in Wa.",
       parent: "starting-a-project",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [asanaCharter, asanaScope, atlassianScope],
     },
     {
@@ -114,6 +130,8 @@ export const projectManagement: RoadmapDraft = {
         "Stakeholders include donors, district assemblies, chiefs, community groups and the people the project serves. You will map who has influence and interest and plan how to involve and update each group respectfully.",
       parent: "starting-a-project",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [atlassianKickoff, projectDpro],
     },
     {
@@ -123,6 +141,8 @@ export const projectManagement: RoadmapDraft = {
         "Many donor funded projects are planned with a logframe that links activities to outputs, outcomes and goals, with indicators for each. You will learn to read one and see how it shapes work plans and reports.",
       parent: "starting-a-project",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 4,
       resources: [tools4devLogframe, pm4ngosGuides],
     },
     {
@@ -132,6 +152,10 @@ export const projectManagement: RoadmapDraft = {
         "A plan turns goals into tasks, dates, money and responsibilities. You can build every plan in this section in Google Sheets on a phone or a computer.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Project Assistant", "Programme Support Officer"],
       resources: [RES.lfSheets],
     },
     {
@@ -141,6 +165,8 @@ export const projectManagement: RoadmapDraft = {
         "A work breakdown splits a big goal into deliverables and then into tasks small enough to assign and track. You will break down a real example, such as organising a three day farmer training.",
       parent: "planning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [asanaWbs],
     },
     {
@@ -150,6 +176,8 @@ export const projectManagement: RoadmapDraft = {
         "A schedule puts tasks in order, notes which ones depend on others and sets realistic dates around holidays, market days and the rainy season. You will draw a simple Gantt chart or timeline in a spreadsheet.",
       parent: "planning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [atlassianGantt, sheetsConditional],
     },
     {
@@ -159,6 +187,8 @@ export const projectManagement: RoadmapDraft = {
         "A budget lists every cost line, such as transport, venue, meals, materials and allowances, with quantities and unit costs in cedis. You will build one in a spreadsheet and learn how donors expect spending to match approved lines.",
       parent: "planning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [asanaBudget, RES.lfSheets],
     },
     {
@@ -168,6 +198,8 @@ export const projectManagement: RoadmapDraft = {
         "A risk is something that might go wrong, like flooded roads or late funds, and an issue is something that already has. You will keep a simple risk register with likelihood, impact, owner and a plan for each.",
       parent: "planning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [atlassianRisk],
     },
     {
@@ -177,6 +209,10 @@ export const projectManagement: RoadmapDraft = {
         "Once the plan is agreed, the job is keeping people, tasks and supplies moving. This section covers task tracking, meetings and logistics.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Project Officer", "Project Coordinator"],
       resources: [trelloGuide],
     },
     {
@@ -186,6 +222,8 @@ export const projectManagement: RoadmapDraft = {
         "A task board shows what is to do, in progress and done, so the whole team can see where things stand. You will set one up in a free tool such as Trello, named here as an example, or in a shared spreadsheet.",
       parent: "running-the-work",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [trelloGuide, trelloTemplates, atlassianKanban],
     },
     {
@@ -195,6 +233,8 @@ export const projectManagement: RoadmapDraft = {
         "Good meetings have an agenda, end on time and produce clear action points with names and dates. You will practise taking short minutes and sharing them on email or WhatsApp the same day.",
       parent: "running-the-work",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.lfBizWriting, atlassianKickoff],
     },
     {
@@ -204,6 +244,8 @@ export const projectManagement: RoadmapDraft = {
         "Assistants often arrange venues, transport, materials and payments, following the organisation's procurement rules such as getting several quotes. You will learn to keep receipts, track payment requests and plan field trips so nothing is forgotten.",
       parent: "running-the-work",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [tools4dev, asanaBudget],
     },
     {
@@ -213,6 +255,10 @@ export const projectManagement: RoadmapDraft = {
         "Donors and managers need to know what has been done, what it cost and what changed. This section covers tracking, reports and records.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
+      careerLevel: "mid",
+      jobs: ["Programme Officer", "MERL Associate and Data Analyst"],
       resources: [projectDpro],
     },
     {
@@ -222,6 +268,8 @@ export const projectManagement: RoadmapDraft = {
         "You will compare planned and actual dates, outputs and spending in a spreadsheet and flag anything running late or over budget. Catching problems early is most of the job.",
       parent: "monitoring-and-reporting",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 4,
       resources: [sheetsConditional, RES.lfSheets],
     },
     {
@@ -231,6 +279,8 @@ export const projectManagement: RoadmapDraft = {
         "Reports explain progress against the plan, challenges, spending and next steps, often with a short success story. You will write a one page status update and learn how donor reports follow the logframe and indicators.",
       parent: "monitoring-and-reporting",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfBizWriting, tools4devLogframe],
     },
     {
@@ -240,6 +290,8 @@ export const projectManagement: RoadmapDraft = {
         "Attendance sheets, receipts, photos with consent and signed agreements are the evidence auditors and donors ask for. You will set up a simple folder system in Google Drive and learn to protect personal data.",
       parent: "monitoring-and-reporting",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfDrive, RES.dpc],
     },
     {
@@ -249,6 +301,10 @@ export const projectManagement: RoadmapDraft = {
         "Finishing well is as important as starting well. This section covers closing a project and the agile approach some teams use.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "specialist",
+      jobs: ["Project Manager", "National Project Coordinator"],
       resources: [asanaClosure],
     },
     {
@@ -258,6 +314,8 @@ export const projectManagement: RoadmapDraft = {
         "Closing means handing over results, settling accounts, archiving records and thanking partners. A short lessons learned session helps the next project avoid the same mistakes.",
       parent: "closing-and-other-ways",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [asanaClosure, atlassianRetro],
     },
     {
@@ -267,6 +325,8 @@ export const projectManagement: RoadmapDraft = {
         "Agile teams plan in short cycles, review often and adjust as they learn, which suits software and some business projects. This topic is optional and introduces Scrum and Kanban in plain terms.",
       parent: "closing-and-other-ways",
       optional: true,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [scrumGuide, atlassianScrum, RES.atlassianAgile],
     },
     {
@@ -276,6 +336,10 @@ export const projectManagement: RoadmapDraft = {
         "Most people enter project work as an assistant, intern or national service person and grow from there. This section covers certificates and first roles.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Project Assistant", "Project Officer"],
       resources: [RES.lfJobsearch],
     },
     {
@@ -285,6 +349,8 @@ export const projectManagement: RoadmapDraft = {
         "Recognised entry options include PMI's CAPM, the Project DPro certification exam built on a free guide for development projects, PRINCE2 Foundation and Google's Project Management certificate. The assistant adverts we studied did not ask for one, so check each official page for current rules and costs before deciding.",
       parent: "getting-hired-pm",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [projectDpro, googlePm, peoplecert],
     },
     {
@@ -294,6 +360,8 @@ export const projectManagement: RoadmapDraft = {
         "Run a small real project, such as a church fundraiser or a school cleanup, and keep the charter, plan, budget and report as your portfolio. Then look for project assistant, programme support and internship roles with NGOs and businesses in Tamale, Bolgatanga, Wa and beyond.",
       parent: "getting-hired-pm",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfResume, RES.lfInterview, RES.lfJobsearch],
     },
   ],

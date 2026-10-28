@@ -67,6 +67,10 @@ export const socialMediaManagement: RoadmapDraft = {
         "A social media manager runs a brand's pages day to day so the owner can focus on the business. This section covers the roles you can aim for and how each platform is used in Ghana.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [metaCert, RES.metaLearn],
     },
     {
@@ -76,6 +80,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Shops, agencies, media houses, NGOs and churches hire social media officers, executives, community managers, live selling hosts and freelance page managers. Learn what each one does in a normal week and which skills this track borrows from the Digital Marketer and Video and Content Creation tracks.",
       parent: "the-job",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [metaCert],
     },
     {
@@ -85,6 +91,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Facebook, Instagram, TikTok, WhatsApp channels, X, LinkedIn and YouTube reach different people and reward different kinds of posts. Learn to choose two or three platforms that fit a client's customers instead of trying to be everywhere at once.",
       parent: "the-job",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [RES.metaLearn, RES.tiktokBusiness, RES.whatsappBusiness],
     },
     {
@@ -94,6 +102,10 @@ export const socialMediaManagement: RoadmapDraft = {
         "Before you post anything you need to understand the business, agree on goals and get safe access to its accounts. This section covers onboarding, brand voice, page access and account security.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["SMM Assistant", "Social Media Officer"],
       resources: [RES.metaLearn],
     },
     {
@@ -103,6 +115,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "A short brief tells you who the customers are, what the business wants from social media and who approves posts. Learn to audit the pages a client already has and agree a simple goal, like more WhatsApp orders for a Tamale fabric shop.",
       parent: "taking-on-a-client",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [bufferLibrary, sheetsHowTo],
     },
     {
@@ -112,6 +126,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Every post should sound like the same business, whether it is a friendly chop bar or a serious microfinance company. Learn to write a one page style guide covering tone, words to use and avoid, languages, colours and logo use.",
       parent: "taking-on-a-client",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [nngTone, govukTone],
     },
     {
@@ -121,6 +137,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Business tools like Meta Business Suite let an owner give you a role on their page so nobody has to hand over a password. Learn the difference between full control and partial control, and how the owner removes you cleanly when the work ends.",
       parent: "taking-on-a-client",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.metaLearn, tiktokBcRoles, linkedinRoles],
     },
     {
@@ -130,6 +148,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "A hacked business page can lose years of followers and be used to scam customers. Learn to turn on two step verification, keep recovery details current, spot phishing messages that pretend to be from Meta or TikTok and know what to do if a page is taken over.",
       parent: "taking-on-a-client",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [metaRecovery, tiktokSafety, ghanaCsa],
     },
     {
@@ -139,6 +159,10 @@ export const socialMediaManagement: RoadmapDraft = {
         "Good pages post with a plan rather than whenever someone remembers. This section covers content pillars, getting material from busy clients and scheduling with approvals.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Social Media Executive", "Community Marketer / Social Media Personnel"],
       resources: [bufferCalendar],
     },
     {
@@ -148,6 +172,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Content pillars are three to five themes a brand keeps returning to, such as products, how to use them, customer stories and behind the scenes. Learn to turn pillars into a month of post ideas that also marks Ghanaian moments like Eid, Damba, Independence Day and back to school.",
       parent: "planning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [bufferCalendar, sheetsHowTo],
     },
     {
@@ -157,6 +183,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Most small business owners will not write captions, but they can send photos and voice notes on WhatsApp if you ask clearly. Learn to set up a simple weekly request, reuse one photo shoot across many posts and keep a shared folder so nothing gets lost.",
       parent: "planning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [bufferLibrary],
     },
     {
@@ -166,6 +194,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Scheduling tools, including the free planners built into Meta Business Suite and TikTok, let you prepare a week of posts in one sitting. Learn to share drafts for approval, schedule them from a phone or a computer and check that each post went out correctly.",
       parent: "planning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.metaLearn, bufferLibrary],
     },
     {
@@ -175,6 +205,10 @@ export const socialMediaManagement: RoadmapDraft = {
         "Comments and messages are where followers become customers, so they need fast and polite replies. This section covers the inbox, moderation, complaints and live selling.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Social Media Community Manager", "Community Manager"],
       resources: [RES.whatsappFaq],
     },
     {
@@ -184,6 +218,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Replying quickly and kindly turns a question about price or delivery into a sale. Learn to use saved replies, label conversations, agree reply times with the client and pass real orders or complaints to the right person.",
       parent: "community",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.whatsappBusiness, RES.metaLearn],
     },
     {
@@ -193,6 +229,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Busy pages attract spam, insults and fake accounts that copy the brand and ask followers for MoMo payments. Learn to hide, delete and report harmful comments, warn followers about impostors and write simple house rules for a community.",
       parent: "community",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [metaStandards, cisaPhishing, ghanaCsa],
     },
     {
@@ -202,6 +240,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "An angry customer post or a mistake by the brand can spread fast, and a calm public reply often matters more than the problem itself. Learn when to reply publicly, when to move to private messages and when to stop and call the client before saying anything.",
       parent: "community",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [nngTone],
     },
     {
@@ -211,6 +251,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Some shops and brands in Ghana sell through Facebook and TikTok live streams, and some advertise for hosts just for this. Learn to plan a live session, show products clearly, answer questions as they arrive and follow up every order after the stream ends.",
       parent: "community",
       optional: true,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [tiktokAcademy, RES.tiktokBusiness],
     },
     {
@@ -220,6 +262,10 @@ export const socialMediaManagement: RoadmapDraft = {
         "Breaking platform rules or the law can get a client's page restricted or land them in trouble. This section covers community standards, customer privacy and honest promotion.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Social Media Manager", "Social Media Marketing Specialist"],
       resources: [metaStandards],
     },
     {
@@ -229,6 +275,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Every platform publishes rules on hate, violence, spam, fake accounts and regulated goods like medicine and betting. Learn where to read them, why posts get removed or pages restricted and how to appeal when you think a decision was wrong.",
       parent: "rules-and-ethics",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [metaStandards, tiktokGuidelines, youtubeStrikes],
     },
     {
@@ -238,6 +286,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Messages, phone numbers and photos of customers are personal data, and Ghana's Data Protection Act sets rules for how they are used. Learn to ask before posting a customer's photo or review, never share inbox details and keep client data off your personal phone gallery when the work ends.",
       parent: "rules-and-ethics",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.dpc, ncscSocial],
     },
     {
@@ -247,6 +297,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "When a brand pays an influencer, or a post is an advert, followers should be able to tell. Learn to label sponsored posts with the platform's branded content tools, avoid claims a client cannot back up and brief influencers clearly.",
       parent: "rules-and-ethics",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [tiktokDisclosure, fdaAds, asaAds],
     },
     {
@@ -256,6 +308,10 @@ export const socialMediaManagement: RoadmapDraft = {
         "Clients keep paying when they can see what the work achieved. This section covers platform insights, boosting posts and a monthly review that improves the plan.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Social Media Content and Strategy Executive", "Social Media Manager"],
       resources: [metaCert],
     },
     {
@@ -265,6 +321,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Each platform shows reach, engagement, followers and messages in its own insights screen, all readable on a phone or a computer. Learn which numbers matter for the client's goal and how to record them in a simple sheet every week.",
       parent: "results",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.metaLearn, tiktokAnalytics, sheetsHowTo],
     },
     {
@@ -274,6 +332,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Boosting puts a small budget behind a post that is already doing well, and many page managers are asked to do it. Learn the basics and safe payment habits, then move to the Digital Marketer track when a client needs proper ad campaigns.",
       parent: "results",
       optional: true,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.metaLearn, RES.tiktokBusiness],
     },
     {
@@ -283,6 +343,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "A short monthly report should say what you posted, what worked, what did not and what you will change next month. Learn to present it in plain words a busy owner understands and use it to adjust the content pillars.",
       parent: "results",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [sheetsHowTo, bufferLibrary],
     },
     {
@@ -292,6 +354,10 @@ export const socialMediaManagement: RoadmapDraft = {
         "Employers and clients want proof that you have run real pages, not just a certificate. This section covers your portfolio, applications and handling several clients at once.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "specialist",
+      jobs: ["Digital and Social Media Manager", "Social Media Manager"],
       resources: [metaCert],
     },
     {
@@ -301,6 +367,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Many adverts ask for links to pages you have managed, so start with a church, school, family business or your own project page. Learn to write a short case study for each one showing the goal, what you did and what changed.",
       parent: "working-and-earning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [bufferLibrary],
     },
     {
@@ -310,6 +378,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Applications usually ask for a CV, a few page links and sometimes a sample content plan or test task. Learn to tailor each one to the business, prepare a one week sample plan and handle an interview question about a page that went wrong.",
       parent: "working-and-earning",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [metaCert, RES.skillshop],
     },
     {
@@ -319,6 +389,8 @@ export const socialMediaManagement: RoadmapDraft = {
         "Freelance page managers often look after a few small businesses on monthly retainers, which needs good organisation and clear limits. Learn to keep a separate plan, folder and login record for each client, protect the phone and computer you work on, and use the Freelancing track for pricing, contracts and getting paid.",
       parent: "working-and-earning",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [cisaPasswords, cisaMfa, sheetsHowTo],
     },
   ],

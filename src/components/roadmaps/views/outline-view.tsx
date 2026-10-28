@@ -1,11 +1,12 @@
 import { ChevronRight } from "lucide-react";
+import { CareerLevelTag } from "@/components/roadmaps/career-level";
 import { Suspense } from "react";
 import Link from "@/components/ui/link";
 import { formatEstimate } from "@/lib/roadmaps/estimates";
 import { nodePath } from "@/lib/roadmaps/seo";
 import type { ViewNode } from "@/lib/roadmaps/view-model";
 import { ViewNodeMark } from "../progress";
-import { choiceLabel, Minutes, NodeBadges, SectionMeta } from "./node-meta";
+import { choiceLabel, Minutes, NodeBadges } from "./node-meta";
 import { RoadmapTree, SectionToggle, SectionTreeItem, TreeGroup } from "./tree";
 import type { RoadmapViewProps } from "./types";
 
@@ -45,7 +46,6 @@ export function OutlineView({ slug, view }: RoadmapViewProps) {
                     {section.node.title}
                     {section.node.optional && <OptionalTag />}
                   </span>
-                  <SectionMeta section={section} className="text-content-2" />
                   {time && <span className="text-sm text-content-2">{time}</span>}
                 </span>
                 <Suspense fallback={null}>
@@ -54,6 +54,7 @@ export function OutlineView({ slug, view }: RoadmapViewProps) {
               </SectionTreeItem>
               {items.length > 0 && <SectionToggle id={section.node.id} title={section.node.title} className="mt-1 mr-1" />}
             </div>
+            <CareerLevelTag node={section.node} className="px-4 pb-2" />
             {section.node.summary && <p className="px-4 pb-3 text-sm text-content-2">{section.node.summary}</p>}
             {items.length > 0 && (
               <TreeGroup sectionId={section.node.id} id={groupId} label={`Section ${section.number} topics`} className="border-t border-line py-1">

@@ -12,6 +12,11 @@ const content: TrackContent = {
   roadmap: "social-media-manager",
   nodes: {
     "the-job": {
+      outcomes: [
+        "Describe what a social media manager really does",
+        "Explain why trust matters most",
+        "Spot the work behind a page you follow",
+      ],
       explanation_md: `A shop owner in Tamale knows that customers look at Facebook, Instagram, TikTok and WhatsApp before they walk in. What the owner usually lacks is time. Replying to every comment, posting every week, watching for scam accounts and checking what worked is a job in itself. A social media manager does that job, so the owner can run the business.
 
 ## What the job really is
@@ -100,6 +105,11 @@ By the end of the track you should be able to run a real page for a real organis
       },
     },
     "roles-in-ghana": {
+      outcomes: [
+        "Name the common social media roles in Ghana",
+        "Describe a normal working week",
+        "Match the roles to real adverts",
+      ],
       explanation_md: `When you search Ghanaian job boards for social media work, the titles vary a lot: social media assistant, social media officer, social media executive, community manager, digital and social media manager, and sometimes live streaming sales officer. Knowing what sits behind each title helps you decide what to apply for and what to practise.
 
 ## The common roles
@@ -179,6 +189,11 @@ Abdul-Rahman started by running his mosque's events page and his aunt's provisio
       },
     },
     platforms: {
+      outcomes: [
+        "Explain what each platform is good for",
+        "Choose platforms for a business",
+        "Adapt one message for several platforms",
+      ],
       explanation_md: `A small business cannot be everywhere, and neither can you. Posting on six platforms badly is worse than posting on two well. Part of your job is helping a client choose where to spend effort, based on where their customers actually are and how those customers like to buy.
 
 ## What each platform is good for
@@ -268,6 +283,11 @@ Amina runs a catering service in Wa. Her Facebook page gets orders from office w
       },
     },
     "taking-on-a-client": {
+      outcomes: [
+        "Explain why the beginning of a client relationship matters",
+        "Follow four steps to take on a client",
+        "Build a reusable onboarding checklist",
+      ],
       explanation_md: `The first week with a new client decides a lot. If you rush to post before you understand the business, you will post the wrong things in the wrong voice. If you take a password over WhatsApp, you put the client and yourself at risk. If nobody agrees who approves posts, the first mistake becomes an argument. This section is about doing the beginning properly.
 
 ## Why the beginning matters
@@ -366,6 +386,11 @@ Treat every client account as if it holds money, because in a sense it does. Be 
       },
     },
     "client-onboarding": {
+      outcomes: [
+        "Run an onboarding conversation",
+        "Turn a wish into a clear goal",
+        "Audit existing pages and write a brief",
+      ],
       explanation_md: `A new client usually says something like "I want my page to grow." That is not yet a plan. Onboarding turns a vague wish into a written brief you can work from and be measured against. It also shows the client, from the first meeting, that you are organised.
 
 ## The onboarding conversation
@@ -477,6 +502,11 @@ Mariama owns a fabric shop in Tamale. In onboarding, she says most buyers are wo
       },
     },
     "brand-voice": {
+      outcomes: [
+        "Tell voice from tone",
+        "Read a brand's voice from what already exists",
+        "Write a one page style guide",
+      ],
       explanation_md: `If one post sounds like a cheerful friend, the next sounds like a government notice and a reply to a customer sounds annoyed, followers stop trusting the page. Brand voice is the consistent personality of a business in words. When you manage several clients, or when another person covers for you, a written voice keeps every post and reply sounding like the same business.
 
 ## Voice and tone
@@ -572,6 +602,11 @@ Share the guide with the client for approval and update it when something new co
       },
     },
     "page-access": {
+      outcomes: [
+        "Give page access without sharing passwords",
+        "Follow rules for working on other people's pages",
+        "Practise safe access on each platform",
+      ],
       explanation_md: `"Just send me your password" is the most common mistake in page management. If a client shares a password, they cannot tell what you did, they cannot remove you without changing it, two step codes go to their phone and you get blamed if anything goes wrong. Every major platform has a better way: the owner gives you a role on the page from their own account.
 
 ## How Meta does it
@@ -670,6 +705,11 @@ Hawa owns the shea butter business and has full control of her Facebook Page. Fu
       },
     },
     "account-security": {
+      outcomes: [
+        "Turn on two step verification and set recovery details",
+        "Spot fake security messages",
+        "Act fast if a page is taken over",
+      ],
       explanation_md: `A hacked business page is a disaster. The criminal can lock the owner out, delete years of posts, and worse, use the trusted page to ask followers for MoMo payments for goods that do not exist. As the person managing the page, you are a target too, because your account has access. Security is part of your job, not an extra.
 
 ## Two step verification
@@ -776,6 +816,11 @@ Abdul-Rahman manages pages for a Wa pharmacy. One morning a message from "Meta P
       },
     },
     planning: {
+      outcomes: [
+        "Plan as a page manager with approvals built in",
+        "Keep a weekly rhythm that can flex",
+        "Design your weekly page routine",
+      ],
       explanation_md: `Pages that post only when someone remembers look abandoned between bursts. Followers forget them, and the owner feels social media "does not work". Planning fixes that. It does not mean posting every day; it means knowing in advance what will go out, why, and who has approved it.
 
 ## Planning as a page manager
@@ -875,6 +920,11 @@ By the end of this section you will be able to plan a month of purposeful posts 
       },
     },
     "content-pillars": {
+      outcomes: [
+        "Choose and balance content pillars",
+        "Turn pillars into a month of ideas",
+        "Respect occasions and events",
+      ],
       explanation_md: `"What should I post today?" is the question that kills most business pages. Content pillars answer it in advance. A pillar is a theme the brand returns to again and again, chosen because it supports the goal and suits the audience. With three to five pillars, you never start from a blank page, and every post has a reason to exist.
 
 ## Choosing pillars
@@ -972,6 +1022,11 @@ Sumaila manages the page of a cold store in Damongo. The goal is more orders fro
       },
     },
     "getting-content": {
+      outcomes: [
+        "Ask busy clients for content little and often",
+        "Help owners take usable photos",
+        "Turn one shoot into many posts",
+      ],
       explanation_md: `The biggest practical problem in page management is not ideas. It is material. You plan a post about new stock, but the owner never sends the photo. You plan a customer story, but nobody asks the customer. Most small business owners will not write captions, yet almost all of them can send photos and voice notes on WhatsApp. Your job is to make that easy, regular and organised.
 
 ## Ask small, ask regularly
@@ -1065,6 +1120,11 @@ Amina, who runs the catering service in Wa, is busy with orders all week. Her pa
       },
     },
     "scheduling-and-approvals": {
+      outcomes: [
+        "Schedule posts with free tools",
+        "Get quick approval from a client",
+        "Check posts after they go out",
+      ],
       explanation_md: `Posting live, one post at a time, every day, is tiring and leads to mistakes. Scheduling lets you prepare a week of posts in one sitting and have them go out on time, even when you are busy or offline. Combined with a clear approval step, it is the routine that makes a page manager reliable.
 
 ## Free scheduling tools
@@ -1169,6 +1229,11 @@ Issahaku manages the Tamale school's pages. On Thursday he sends the head teache
       },
     },
     community: {
+      outcomes: [
+        "Speak for someone else with care",
+        "Keep a daily community routine",
+        "Write the routine for a client",
+      ],
       explanation_md: `Posts start conversations, but conversations make sales. A question about price in the comments, a message asking whether delivery reaches Savelugu, a review on a post: each one is a customer deciding whether to trust the business. For many small businesses in Ghana, the inbox is the shop counter. Whoever runs the page is standing behind it.
 
 ## What this section covers
@@ -1266,6 +1331,11 @@ When this section is done well, customers feel answered, scammers find no space,
       },
     },
     "inbox-and-messages": {
+      outcomes: [
+        "Keep messages in one place",
+        "Use tools that save time and agree routes for messages",
+        "Keep a simple log",
+      ],
       explanation_md: `A quick, accurate reply can turn "how much?" into a sale. A slow or wrong reply sends the customer to the next shop. When you manage a client's inbox, you need a system: tools that save time, labels that keep track, and clear routes for orders and complaints.
 
 ## One place for messages
@@ -1370,6 +1440,11 @@ Fuseini sets up Hawa's inbox. He writes six saved replies (price list, delivery 
       },
     },
     moderation: {
+      outcomes: [
+        "Use moderation tools on Facebook and Instagram",
+        "Decide whether to hide, delete or leave a comment",
+        "Deal with impostor pages and set house rules",
+      ],
       explanation_md: `Busy business pages attract trouble: spam links, insults, fake giveaways and, most dangerous of all, impostors. An impostor copies the brand's name and photos, comments under real posts or messages followers, and asks for MoMo payments for goods that will never arrive. Customers who lose money often blame the real business. Moderation protects them and the brand.
 
 ## Tools on Facebook and Instagram
@@ -1481,6 +1556,11 @@ Amina's catering page posts a Christmas menu. Within an hour, an account called 
       },
     },
     "complaints-and-crises": {
+      outcomes: [
+        "Sort problems into three levels",
+        "Follow a first hour checklist",
+        "Recover after a bad day online",
+      ],
       explanation_md: `Every business has bad days online. A customer posts that their order never arrived. A staff member is filmed being rude. A post with a wrong price spreads. Sometimes the problem is small and the reply decides everything; sometimes it is serious and the wrong reply makes it far worse. As a hired page manager, your job is to know which is which and to act in the right order.
 
 The Digital Marketer track covers how to reply to an ordinary complaint: acknowledge, take it private, fix it and follow up. This lesson is about the operating side: how bad it is, who decides, and what you do in the first hour.
@@ -1588,6 +1668,11 @@ A customer posts on the Wa pharmacy's page that a medicine she bought was expire
       },
     },
     "live-selling": {
+      outcomes: [
+        "Prepare before going live",
+        "Share roles during the stream",
+        "Follow up after the stream",
+      ],
       explanation_md: `Some shops and brands in Ghana sell through live streams on Facebook and TikTok. A host shows products one by one, answers questions as they come in and takes orders in real time. Some companies now advertise for live selling hosts or officers. For a page manager, running a live session is a service you can offer, but it only works with careful planning and, above all, careful follow up.
 
 This lesson covers running the live session for a client. For camera, sound and framing skills, see the Video and Content Creation track.
@@ -1685,6 +1770,11 @@ Wumpini hosts a Friday evening Facebook live for Mariama's fabric shop, with her
       },
     },
     "rules-and-ethics": {
+      outcomes: [
+        "Name three kinds of rules for page managers",
+        "Explain why rules matter for you personally",
+        "Use a rules checklist before posting",
+      ],
       explanation_md: `A page can be growing nicely and then, overnight, a post is removed, the page is restricted from going live, or a customer complains that their photo was posted without permission. Most of these problems come from not knowing the rules. When you run a client's pages, you are responsible for keeping them inside three sets of rules: the platforms' own rules, the law on personal data, and basic honesty in promotion.
 
 ## Three kinds of rules
@@ -1773,6 +1863,11 @@ Issahaku takes on a new client: a herbal clinic in Tamale. The owner wants a pos
       },
     },
     "platform-rules": {
+      outcomes: [
+        "Explain what community standards cover",
+        "Avoid breaking rules by accident",
+        "Appeal a decision",
+      ],
       explanation_md: `Every platform has rules about what can be posted. Meta calls them Community Standards, TikTok calls them Community Guidelines, and YouTube has Community Guidelines with a strike system. They are public, and they change. A page manager who has never read them is guessing with the client's page.
 
 ## What the rules cover
@@ -1880,6 +1975,11 @@ Sumaila's client, a Bolgatanga gym, has a Reel removed. The notice says it broke
       },
     },
     "privacy-and-consent": {
+      outcomes: [
+        "Explain Ghana's privacy law for social media",
+        "Get consent before posting people",
+        "Protect inbox details and hand data back when work ends",
+      ],
       explanation_md: `When you manage a client's pages, you see a lot of personal information: customers' names, phone numbers, delivery addresses, payment confirmations, photos and private messages about health, money or family. Customers shared that with the business, not with the whole world, and not with you personally. Handling it carefully is a legal duty and a matter of trust.
 
 ## The law in Ghana
@@ -1983,6 +2083,11 @@ Hawa wants to post a thank you from a customer in Navrongo who loved her shea bu
       },
     },
     "honest-promotion": {
+      outcomes: [
+        "Recognise what counts as paid promotion",
+        "Use platform labelling tools",
+        "Brief a partner in writing and take care with claims",
+      ],
       explanation_md: `When a brand pays someone to praise it, followers have a right to know. When a business claims its product works, the claim should be true. Hidden adverts and exaggerated claims can get posts removed, damage trust and, for some products in Ghana, break the law. As a page manager you are often the person who sets up partnerships and posts the claims, so honesty is part of your job.
 
 The Digital Marketing Specialisations roadmap teaches how to find and work with influencers. This lesson covers the page manager's side: labelling paid content correctly with the platforms' tools, checking claims before they go out and briefing partners in writing.
@@ -2082,6 +2187,11 @@ Mariama's fabric shop agrees to give two outfits to Adiza, a Tamale lifestyle cr
       },
     },
     results: {
+      outcomes: [
+        "Measure what the goal needs",
+        "Collect your own numbers",
+        "Use numbers honestly",
+      ],
       explanation_md: `Owners keep paying for page management when they can see what it achieved. "I posted twenty times" tells them about your effort. "The page brought thirty four WhatsApp enquiries and twelve orders this month" tells them about their business. This section is about measuring the right things, spending small amounts wisely and turning numbers into better plans.
 
 ## What this section covers
@@ -2177,6 +2287,11 @@ Being able to show results turns you from "someone who posts for us" into a prof
       },
     },
     "platform-insights": {
+      outcomes: [
+        "Find platform insights",
+        "Explain what the main numbers mean",
+        "Record numbers weekly and read them sensibly",
+      ],
       explanation_md: `Every major platform gives business accounts free insights: numbers showing who saw the content, what they did and how the audience is changing. You can read them on a phone or a computer. The skill is knowing what each number means, choosing the ones that fit the client's goal and recording them consistently.
 
 ## Where to find them
@@ -2282,6 +2397,11 @@ Hawa's goal is more WhatsApp orders. Each Monday, Fuseini opens Meta Business Su
       },
     },
     "boosting-posts": {
+      outcomes: [
+        "Explain what boosting is good for",
+        "Get approval and use the client's money properly",
+        "Know when to hand over to an ads specialist",
+      ],
       explanation_md: `Sooner or later a client will say, "Boost this post for me." Boosting means paying the platform to show an existing post to more people. It is quick and can help a post that is already working, such as a strong product post or an event announcement. But it involves the client's money, so it needs the same care as any payment.
 
 This lesson covers the page manager's side of boosting: whose account, whose money, approvals and records. Proper ad campaigns, audiences, budgets and testing are taught in the Digital Marketer track's social ads lesson and in the Digital Marketing Specialisations roadmap.
@@ -2386,6 +2506,11 @@ Sumaila's cold store client in Damongo wants more restaurant orders. A post abou
       },
     },
     "monthly-review": {
+      outcomes: [
+        "Keep a review to one page",
+        "Write it for the owner",
+        "Use the review to change the plan",
+      ],
       explanation_md: `At the end of each month, a client deserves to know what their page achieved and what happens next. A short monthly review does this. It also forces you to step back from daily posting and ask whether the plan is working. Done well, it is the single best tool for keeping clients and improving results.
 
 The Digital Marketer track's lesson on reporting to clients covers report structure in general. This lesson focuses on the page manager's version: linking back to the onboarding goal and using the review to change next month's pillars and routine.
@@ -2484,6 +2609,11 @@ Issahaku sends the Tamale school's head teacher a one page review for October. G
       },
     },
     "working-and-earning": {
+      outcomes: [
+        "Compare three routes into paid work",
+        "Explain why evidence beats certificates alone",
+        "Plan your route to paid work",
+      ],
       explanation_md: `You can learn every lesson in this track and still struggle to find work if you cannot show what you have done. Employers and clients hiring a page manager want evidence: pages you have run, problems you have solved and results you can explain. This section turns your practice into proof, helps you apply for roles and shows how to handle several clients without losing control.
 
 ## Three routes into paid work
@@ -2568,6 +2698,11 @@ Never claim results you did not achieve, use other people's work as yours or exa
       },
     },
     portfolio: {
+      outcomes: [
+        "Choose what to include and get permission",
+        "Build a portfolio before you have clients",
+        "Never fake results",
+      ],
       explanation_md: `A portfolio is a small collection of your best work that a hiring manager or client can look through quickly. For a page manager, it is not a gallery of pretty graphics. It is proof that you can run pages: set goals, plan, handle the community and get results. A short, honest portfolio with two or three real case studies beats a long one full of practice designs.
 
 ## What to include
@@ -2675,6 +2810,11 @@ Abdul-Rahman's portfolio has three case studies. The mosque events page: goal, m
       },
     },
     "applying-for-roles": {
+      outcomes: [
+        "Read an advert closely and tailor your CV",
+        "Prepare a sample plan or test task",
+        "Prepare for interview questions",
+      ],
       explanation_md: `Applications for social media roles usually ask for a CV, a short cover letter or message, links to pages you have managed and sometimes a test task, such as a one week content plan for the company or replies to sample customer messages. Each part is a chance to show that you understand their business, not just social media in general.
 
 ## Read the advert closely
@@ -2798,6 +2938,11 @@ Hawa's former page manager, Fuseini, applies for a social media officer role at 
       },
     },
     "several-clients": {
+      outcomes: [
+        "Use one system per client",
+        "Avoid posting to the wrong page",
+        "Set clear limits and know your capacity",
+      ],
       explanation_md: `Once you can run one page well, you may take on two, three or four small clients on monthly fees. This is a common way to earn as a freelance page manager. It is also where people get into trouble: posting the wrong client's content, missing messages, mixing up logins or burning out. Good systems prevent all of these.
 
 ## One system per client, the same shape every time

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { Suspense, type ReactNode } from "react";
 import { Markdown } from "@/components/roadmaps/markdown";
 import { ShareButton } from "@/components/roadmaps/share-button";
+import { LessonMetaStrip, LessonOutcomes } from "@/components/learn/lesson-meta";
 import { TopicStudyBuddy } from "@/components/study-buddy/topic-study-buddy";
 import { ResourceCards, TopicNeighbours, TopicSummary } from "@/components/roadmaps/topic";
 import { buttonClasses } from "@/components/ui/button";
@@ -130,6 +131,14 @@ async function Node({ params }: Pick<Props, "params">) {
       >
         <header className="mt-5">
           <TopicSummary node={inView.node} section={inView.section} sectionCount={view.sections.length} headingLevel={1} />
+          {/* Lesson structure (issue #255): fixed height strip, rendered in the cached shell. */}
+          <div className="mt-4">
+            <LessonMetaStrip
+              difficulty={node.difficulty ?? null}
+              complexity={node.complexity ?? null}
+              minutes={inView.node.minutes}
+            />
+          </div>
 
           <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-start">
             <Link href={learnPath(slug, node.slug)} className={buttonClasses("primary", "w-full sm:w-auto")}>
@@ -141,6 +150,12 @@ async function Node({ params }: Pick<Props, "params">) {
         </header>
 
         <div className="max-w-reading">
+          {!!detail.content?.outcomes?.length && (
+            <div className="mt-10">
+              <LessonOutcomes outcomes={detail.content.outcomes} />
+            </div>
+          )}
+
           <Block title="What you will learn" id="explanation">
             {detail.content ? (
               <Markdown source={detail.content.explanation_md} />

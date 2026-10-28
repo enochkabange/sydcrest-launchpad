@@ -304,7 +304,8 @@ export function moveAmongSiblings<T extends TreeNode>(siblings: T[], id: string,
 
 /**
  * Node rows for one draft roadmap; array order becomes position. Parents are
- * linked in a second pass. A draft without `kind` or `choice_group` writes
+ * linked in a second pass. A draft without `kind`, `choice_group` or the
+ * lesson structure fields (difficulty, complexity, careerLevel, jobs) writes
  * null, so the kind stays derived from the tree (and a rerun clears a value
  * removed from the file).
  */
@@ -318,6 +319,10 @@ export function draftNodeRows(roadmapId: string, nodes: NodeDraft[]) {
     is_optional: node.optional,
     kind: node.kind ?? null,
     choice_group: node.choice_group ?? null,
+    difficulty: node.difficulty ?? null,
+    complexity: node.complexity ?? null,
+    career_level: node.careerLevel ?? null,
+    jobs: node.jobs ?? null,
   }));
 }
 

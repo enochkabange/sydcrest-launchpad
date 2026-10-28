@@ -10,6 +10,11 @@ const content: TrackContent = {
   roadmap: "customer-service",
   nodes: {
     "service-foundations": {
+      outcomes: [
+        "Explain why customer service is a real route to work",
+        "Notice the service you already give and receive",
+        "Plan how to use this track",
+      ],
       explanation_md: `Every business that has customers also has customers with questions. A woman in Wa wants to know why her parcel has not arrived. A trader in Tamale sent money from his wallet and it has not reached his supplier. A student in Bolgatanga cannot log in to an app she paid for. Somebody has to answer them, kindly and correctly. That somebody is a customer service agent, and this track teaches you to be a good one.
 
 ## Why this is a real route to work
@@ -94,6 +99,11 @@ Work through the sections in order. Each lesson ends with a practice task you ca
       },
     },
     "what-support-agents-do": {
+      outcomes: [
+        "Recognise the job titles used in support adverts",
+        "Describe what the work involves on a normal shift",
+        "Tell apart three kinds of support role",
+      ],
       explanation_md: `Before you apply for support work, it helps to know exactly what the job looks like. Adverts use many titles for very similar work, and the interview will go better if you can describe a normal day in your own words.
 
 ## Job titles you will see
@@ -194,6 +204,11 @@ Nothing in Hawa's day needed advanced technology. It needed attention, honesty a
       },
     },
     "listening-and-empathy": {
+      outcomes: [
+        "Listen actively and repeat back what a customer said",
+        "Show empathy without simply agreeing",
+        "Set a warm tone in writing",
+      ],
       explanation_md: `Customers rarely contact support when things are going well. They call because money is missing, a parcel is late or an app has locked them out. They are often worried, and worry can sound like anger. The fastest way to calm a worried person is to show them that you have really heard them. That is why listening and empathy appear in almost every customer service job description.
 
 ## Active listening
@@ -292,6 +307,11 @@ The facts were the same both times. The customer's experience was not.`,
       },
     },
     "typing-and-writing": {
+      outcomes: [
+        "Measure your typing speed and accuracy",
+        "Write clear, short support replies",
+        "Build a daily typing and writing habit",
+      ],
       explanation_md: `If you apply for a chat, email or remote support role, there is a good chance the employer will test your typing and writing before they meet you. Even call centre agents type notes during every call. Fast, accurate typing gives you more time to think about the customer, and clear writing means fewer customers write back confused.
 
 ## Typing: accuracy first, then speed
@@ -391,6 +411,11 @@ Before sending anything, read it once from the customer's point of view. Ask you
       },
     },
     "languages-at-work": {
+      outcomes: [
+        "Speak clear English on calls",
+        "Decide when to switch to a local language",
+        "Switch language politely",
+      ],
       explanation_md: `Most customer service in Ghana is done in English, especially email, chat and anything written into records. But many customers are more comfortable in Dagbani, Hausa, Twi, Ga, Ewe, Dagaare, Gurune or another language. Some employers ask for one or more local languages in their adverts, especially fintechs and companies that serve customers outside big cities. If you speak two or three languages, that is a real strength. This lesson helps you use it well.
 
 ## Clear spoken English
@@ -483,6 +508,11 @@ The next agent who calls her will see that note and can choose the right languag
       },
     },
     "support-channels": {
+      outcomes: [
+        "Name the main support channels and their habits",
+        "Follow one customer across several channels",
+        "See how real businesses use each channel",
+      ],
       explanation_md: `A channel is simply the way a customer reaches a business. Years ago that mostly meant walking into an office or calling a landline. Today a customer in Bolgatanga might call a hotline in the morning, send a WhatsApp message at lunch, write an email in the evening and complain on Facebook at midnight, all about the same problem. Support teams have to be ready on every one of those channels.
 
 ## The main channels
@@ -563,6 +593,11 @@ The next lessons teach phone calls and scripts, live chat and WhatsApp, email re
       },
     },
     "phone-support": {
+      outcomes: [
+        "Follow the five stages of a support call",
+        "Use a script without sounding like a robot",
+        "Put callers on hold and transfer them politely",
+      ],
       explanation_md: `Phone support is the heart of most call centres and many bank, telecom and fintech support teams. A call is personal and fast, but it is also live: you cannot delete what you just said. A clear structure helps you stay calm and sound professional, even on your hundredth call of the day.
 
 ## The five stages of a call
@@ -675,6 +710,11 @@ Smile while you talk; it changes your tone. Sit up, speak a little slower than n
       },
     },
     "chat-and-whatsapp": {
+      outcomes: [
+        "Use a three message pattern for chat replies",
+        "Handle several chats at once",
+        "Set up WhatsApp Business for support safely",
+      ],
       explanation_md: `Many Ghanaian businesses now do much of their support in writing: a chat window on a website or app, or a WhatsApp number printed on receipts and delivery bags. Chat feels casual to customers, but as an agent you still need to be professional, quick and accurate. The big difference from phone work is that you may handle two or three conversations at the same time.
 
 ## Chat manners
@@ -782,6 +822,11 @@ Amina runs support for an invented fabric shop in Tamale on WhatsApp Business. H
       },
     },
     "email-support": {
+      outcomes: [
+        "Write a support email with a clear shape and subject line",
+        "Use templates without sounding cold",
+        "Check an email before you send it",
+      ],
       explanation_md: `Email is slower than chat, but it is where many detailed problems are handled: refund requests, account changes, documents, formal complaints and anything a company needs on record. A good support email solves the problem in one go, so the customer does not have to write back asking what you meant. Remote support roles in particular rely heavily on email, so this skill opens doors.
 
 ## The shape of a good support email
@@ -889,6 +934,11 @@ Check the name, numbers, dates and attachments. Read it once as the customer. If
       },
     },
     "social-media-replies": {
+      outcomes: [
+        "Explain why public replies need extra care",
+        "Follow a calm public reply pattern",
+        "Spot scams in the comments",
+      ],
       explanation_md: `When a customer complains on a company's Facebook page, Instagram post, TikTok video or X account, the conversation is no longer private. Hundreds of other people may read it, and they will judge the company by how it replies. Many brands and small businesses in Ghana need someone who can handle these replies calmly and quickly. This lesson is optional, but it is a useful extra skill, especially for roles at shops, restaurants, schools and growing brands.
 
 ## Why public replies are different
@@ -985,6 +1035,11 @@ Mariama manages the Facebook page for an invented school uniform tailor in Bolga
       },
     },
     "tickets-and-tools": {
+      outcomes: [
+        "Name the three tools you will meet in support",
+        "Use the words support teams use for tickets",
+        "Practise with a simple free ticket tracker",
+      ],
       explanation_md: `Imagine a support team of twenty agents receiving hundreds of calls, chats and emails every day. Without a system, requests would be forgotten, two agents would answer the same customer differently, and nobody would know which problems were still open. Support tools solve this. Help desk and CRM skills are named again and again in Ghanaian and remote support adverts, so this section matters for getting hired.
 
 ## The three tools you will meet
@@ -1075,6 +1130,11 @@ Wumpini starts at an invented solar company that sells lamps on credit across th
       },
     },
     "helpdesk-tickets": {
+      outcomes: [
+        "Write a ticket with everything the next person needs",
+        "Set priority and status correctly",
+        "Use tags to group tickets",
+      ],
       explanation_md: `A ticket is the written story of one customer request from start to finish. If you can create, update and close tickets well, you can slot into almost any support team, whatever tool they use. Interviewers sometimes give candidates a few sample tickets and ask how they would handle them, so this is worth practising.
 
 ## What a good ticket contains
@@ -1191,6 +1251,11 @@ Anyone on the team can read that note and know exactly where things stand.`,
       },
     },
     "crm-records": {
+      outcomes: [
+        "Describe what a customer record holds",
+        "Search, update and add useful notes to records",
+        "Keep customer records clean",
+      ],
       explanation_md: `A ticket tells the story of one request. A CRM record tells the story of one customer across all their requests, purchases and conversations. When a returning customer calls, the CRM is what lets you say "I can see you contacted us last week about your refund" instead of "Please explain from the beginning." Customers notice that difference, and so do employers. CRM experience is named in many support adverts in Ghana and abroad.
 
 ## What a customer record holds
@@ -1293,6 +1358,11 @@ Hawa works for an invented internet provider. A customer, Abdul-Rahman, calls fr
       },
     },
     "knowledge-base": {
+      outcomes: [
+        "Find answers fast in a knowledge base",
+        "Make saved replies sound human",
+        "Write a simple help article",
+      ],
       explanation_md: `No support agent remembers every policy, price and process. The good ones know where to find answers quickly. A knowledge base is a library of help articles: some are public, for customers to read themselves, and some are internal, only for agents. Saved replies, sometimes called canned responses or macros, are ready made answers to common questions. Using both well makes you faster, more accurate and more consistent with the rest of your team.
 
 ## Finding answers fast
@@ -1395,6 +1465,11 @@ Amina, working chat support for an invented school fees platform, notices that m
       },
     },
     "solving-problems": {
+      outcomes: [
+        "Explain what problem solving means in support",
+        "Take ownership of a customer's problem",
+        "Follow a five step problem solving path",
+      ],
       explanation_md: `Answering questions is part of the job. Solving problems is the part that customers remember. A customer who arrives worried and leaves with their problem fixed, or at least with a clear plan, will trust the business again. A customer who is passed around, asked the same questions three times and left without an answer will often leave for good and tell others why.
 
 ## What problem solving means in support
@@ -1482,6 +1557,11 @@ That is the skill this section builds: calm, careful thinking that turns a vague
       },
     },
     "finding-the-real-problem": {
+      outcomes: [
+        "Ask broad questions, then narrow down",
+        "Do first level troubleshooting",
+        "Keep steps simple for the customer",
+      ],
       explanation_md: `"My app is not working." "My money has not reached." "The internet is bad." These are the kinds of messages support agents receive all day. None of them tells you what is actually wrong. Your job is to ask the right questions, in the right order, until you know. Employers and training programmes often call this issue identification, and it is tested in interviews with role plays.
 
 ## Start broad, then narrow down
@@ -1591,6 +1671,11 @@ In her note she writes: "Unable to connect error. Other apps fine. Old app versi
       },
     },
     "complaints-and-upset-customers": {
+      outcomes: [
+        "Use a calm method to handle complaints",
+        "Apologise without blaming anyone",
+        "Respond safely when a customer becomes abusive",
+      ],
       explanation_md: `Every support agent meets upset customers, sometimes several in one shift. It helps to remember that an angry customer is usually a worried or disappointed one. Their money is stuck, their order is late or they feel ignored. They are angry at the situation, not at you personally, even when it sounds personal. Handling complaints well is one of the most valued skills in support, and it can be learned.
 
 ## A calm method: LISTEN
@@ -1688,6 +1773,11 @@ Mariama works for an invented betting and payments company. A customer calls sho
       },
     },
     "escalation-and-handover": {
+      outcomes: [
+        "Decide when to escalate",
+        "Write a handover note that needs no follow up questions",
+        "Tell the customer what happens next",
+      ],
       explanation_md: `No agent can fix everything. Some problems need a supervisor's approval, a technical team's access or another department's knowledge. Passing a case to someone with more authority or skill is called escalation. Escalating at the right time, with the right information, is a mark of a strong agent. Escalating too late leaves customers waiting; escalating badly makes them repeat their whole story.
 
 ## When to escalate
@@ -1790,6 +1880,11 @@ Escalated does not mean forgotten. If you promised to check back, set a reminder
       },
     },
     "payments-and-account-security": {
+      outcomes: [
+        "Recognise common payment problems",
+        "Verify customers without asking for secrets",
+        "Spot fraud and impersonation tricks",
+      ],
       explanation_md: `Many support jobs in Ghana involve money: mobile money wallets, bank apps, card payments, school fees platforms, betting accounts and online shops. Customers contact support about failed transfers, money sent to the wrong number, double charges, reversals and refunds. These conversations matter more than most because real cedis are involved, and because fraudsters target exactly these situations.
 
 ## Common payment problems
@@ -1897,6 +1992,11 @@ Wumpini works for an invented school fees platform. A parent, Amina, calls: she 
       },
     },
     "quality-and-wellbeing": {
+      outcomes: [
+        "Explain how support work is measured",
+        "Protect the customer data you are trusted with",
+        "Look after your wellbeing so you last in the job",
+      ],
       explanation_md: `Doing support well for one day is not hard. Doing it well every day, for months, across hundreds of customers, takes three more things: knowing how your work is measured, protecting the personal data you see, and looking after yourself through long shifts. This section covers all three. Employers ask about them in interviews, and they decide whether a new agent thrives or burns out.
 
 ## Quality: how your work is measured
@@ -1980,6 +2080,11 @@ Amina has been on a chat team in Accra for three months, after growing up in Bol
       },
     },
     "service-metrics": {
+      outcomes: [
+        "Explain the common service measures",
+        "See how measures can pull against each other",
+        "Improve your numbers the right way",
+      ],
       explanation_md: `Support teams cannot see every conversation, so they use measurements to understand how customers are being served. Adverts in Ghana often mention KPIs (key performance indicators) and targets, and interviewers may ask what you know about them. Understanding the common measures helps you meet your targets and, just as important, helps you see when chasing a number would hurt a customer.
 
 ## The common measures
@@ -2083,6 +2188,11 @@ Issahaku works on phone support for an invented internet provider. His handling 
       },
     },
     "protecting-customer-data": {
+      outcomes: [
+        "Explain Ghana's data protection law in simple words",
+        "Follow safe data habits as an agent",
+        "Build a personal data protection checklist",
+      ],
       explanation_md: `Every day, support agents see personal information that customers would never share with a stranger: phone numbers, home areas, account balances, payment history and sometimes ID card numbers. Customers trust the company to keep it safe, and the company trusts you. A single careless moment, such as a screenshot shared in a group chat, can harm a customer and cost you your job. This lesson gives you the safe habits employers expect.
 
 ## The law in simple words
@@ -2174,6 +2284,11 @@ Fuseini was not unhelpful. He protected his customer, his employer and himself.`
       },
     },
     "stress-and-shifts": {
+      outcomes: [
+        "Recover between contacts",
+        "Plan sleep and meals around shifts",
+        "Protect your voice and eyes and ask for help early",
+      ],
       explanation_md: `Support work can be demanding. You may take one call after another, handle upset customers, chase targets and work early mornings, late evenings or nights, especially in call centres and remote teams serving other time zones. Stress is a normal response to pressure, but too much of it for too long wears down your health, your mood and your work. Training programmes for support roles teach stress management for good reason. This lesson gives you practical habits that work.
 
 ## Recover between contacts
@@ -2268,6 +2383,11 @@ Sumaila starts night shifts on a remote chat team serving customers in another t
       },
     },
     "getting-hired-support": {
+      outcomes: [
+        "Explain how support employers usually hire",
+        "Describe what employers look for",
+        "Prepare your story for support interviews",
+      ],
       explanation_md: `Customer service is one of the more open doors into work for young people in Ghana, but it is still competitive. Many applicants say they are "good with people". Employers want to see it. They test how you write, how you speak and how you solve problems, often before they look closely at certificates. The good news is that all three can be shown with practice you do yourself.
 
 ## How support employers usually hire
@@ -2368,6 +2488,11 @@ Hawa from Wa applies for a chat support role. Her CV is short because she has on
       },
     },
     "support-practice-portfolio": {
+      outcomes: [
+        "Choose what to put in a practice portfolio",
+        "Follow the rules for every sample",
+        "Talk about your portfolio in an interview",
+      ],
       explanation_md: `When you have no formal support experience, a small practice portfolio is one of the strongest things you can show. It proves you can write a clear reply, handle a call and keep proper records before anyone has to take a chance on you. Training programmes and employers both respond well to concrete samples, and putting one together also prepares you for written tests and role plays.
 
 ## What to include
@@ -2468,6 +2593,11 @@ Abdul-Rahman from Damongo spends two weekends building his portfolio. He invents
       },
     },
     "finding-support-roles": {
+      outcomes: [
+        "Find where support roles come from",
+        "Read an advert and prepare for tests",
+        "Spot fake job offers",
+      ],
       explanation_md: `You have the skills; now you need the opening. Support roles in Ghana come through several routes, and knowing them helps you apply widely and safely. This lesson covers where to look, how to read an advert, how to prepare for typing and voice tests, and how to spot an offer that is not genuine.
 
 ## Where support roles come from

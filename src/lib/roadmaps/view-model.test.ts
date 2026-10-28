@@ -263,10 +263,10 @@ describe("up next", () => {
 describe("optional content slots", () => {
   it("are empty until content sets them", () => {
     const view = buildRoadmapView(tree());
-    expect(view.byId.notebook.difficulty).toBeNull();
-    expect(view.byId.notebook.complexity).toBeNull();
-    expect(view.sections[0].careerLevel).toBeNull();
-    expect(view.sections[0].jobs).toEqual([]);
+    expect(view.byId.notebook.difficulty).toBeUndefined();
+    expect(view.byId.notebook.complexity).toBeUndefined();
+    expect(view.sections[0].node.careerLevel).toBeUndefined();
+    expect(view.sections[0].node.jobs).toBeUndefined();
   });
 
   it("carry difficulty, complexity, career level and jobs when present", () => {
@@ -275,8 +275,8 @@ describe("optional content slots", () => {
       node("notebook", "foundations", 0, { difficulty: "beginner", complexity: 2 }),
     ];
     const view = buildRoadmapView(buildNodeTree(nodes));
-    expect(view.sections[0].careerLevel).toBe("junior");
-    expect(view.sections[0].jobs).toEqual(["Data clerk"]);
+    expect(view.sections[0].node.careerLevel).toBe("junior");
+    expect(view.sections[0].node.jobs).toEqual(["Data clerk"]);
     expect(view.byId.notebook.difficulty).toBe("beginner");
     expect(view.byId.notebook.complexity).toBe(2);
   });

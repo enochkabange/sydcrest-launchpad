@@ -13,6 +13,11 @@ const content: TrackContent = {
   roadmap: "freelancing",
   nodes: {
     "freelancing-basics": {
+      outcomes: [
+        "Describe how freelancing works",
+        "Picture the freelance work you want to do",
+        "Know what you will be able to do by the end",
+      ],
       explanation_md: `Many of the skills you learn on SydCrest, such as design, social media, data work, writing, virtual assistance and web development, can be sold directly to clients. You do not have to wait for one employer to hire you full time. A shop in Tamale might need a price list designed this week. An NGO in Bolgatanga might need survey data cleaned this month. A small company in another country might need someone to edit short videos every Friday. Each of these is freelance work.
 
 ## What this section covers
@@ -106,6 +111,11 @@ Take the lessons in order the first time. Later you can come back to any lesson 
       },
     },
     "what-freelancing-is": {
+      outcomes: [
+        "Explain what freelancing is and is not",
+        "Compare freelancing with a salaried job",
+        "List the business tasks a freelancer handles",
+      ],
       explanation_md: `Before you look for clients, be clear about what freelancing really involves. People who start with the wrong picture often give up early, or fall for schemes that only look like work.
 
 ## What freelancing is
@@ -197,6 +207,11 @@ Amina offers to run the Instagram page of a hair salon near her house in Tamale 
       },
     },
     "choosing-your-service": {
+      outcomes: [
+        "Describe a service as a result, not a skill",
+        "Choose a service you can already deliver and a niche",
+        "Write your service in one sentence",
+      ],
       explanation_md: `Clients rarely hire "someone who is good with computers". They hire someone to get a specific result: a logo, a month of posts, a cleaned spreadsheet, a working website, a set of typed minutes. The clearer your offer, the easier it is for a client to say yes, and the easier it is for you to price, plan and deliver.
 
 ## A service is a result, not a skill
@@ -302,6 +317,11 @@ Your service can change later as your skill grows. For now, one clear offer beat
       },
     },
     "freelance-toolkit": {
+      outcomes: [
+        "Set up a core freelance toolkit",
+        "Know which services need a laptop",
+        "Plan around data and power",
+      ],
       explanation_md: `Your skill does the work, but a handful of everyday tools keep the business running: talking to clients, tracking deadlines, storing files and sending documents. The good news is that most of these tools are free and work in a browser or an app on any device.
 
 ## The core toolkit
@@ -388,6 +408,11 @@ Mariama manages social media for two shops in Bolgatanga. Every Sunday she check
       },
     },
     "getting-ready": {
+      outcomes: [
+        "Explain why preparation matters before you look for clients",
+        "Be honest about what you can do",
+        "Check your readiness and plan the gaps",
+      ],
       explanation_md: `Before you approach your first client, three things need to be in place: proof that you can do the work, a way for clients to find and check you, and the habit of writing clearly and professionally. This section covers all three.
 
 ## Why preparation matters
@@ -479,6 +504,11 @@ Not long. Getting ready is not an excuse to wait months until everything is perf
       },
     },
     portfolio: {
+      outcomes: [
+        "Decide how many pieces a starter portfolio needs",
+        "Find where samples can come from",
+        "Present each piece as a short story",
+      ],
       explanation_md: `A portfolio is a small collection of your best work that proves you can deliver the service you offer. For a freelancer it often matters more than a CV. Many clients, especially online, look at samples first and only read your message if the samples are good.
 
 ## How many pieces?
@@ -585,6 +615,11 @@ Abdul-Rahman offers simple websites for small businesses. He has no paying clien
       },
     },
     "profiles-and-presence": {
+      outcomes: [
+        "Be found where your clients look",
+        "Write a strong, honest profile",
+        "Keep your profile current",
+      ],
       explanation_md: `When a possible client hears your name, they will look you up. What they find in the first few seconds decides whether they contact you. A clear, honest profile answers three questions at once: what do you do, who do you do it for, and how can they reach you?
 
 ## Be found where your clients look
@@ -679,6 +714,11 @@ Wumpini offers social media management for salons and boutiques in Tamale. Her b
       },
     },
     "client-communication": {
+      outcomes: [
+        "Use five habits of professional client messages",
+        "Match your tone to the client",
+        "Write well when things go wrong",
+      ],
       explanation_md: `Clients judge you by your messages long before they see your work, especially clients abroad who only know you through text. Clear, polite, prompt writing builds trust. Careless or slow writing makes clients nervous, even if your skill is excellent.
 
 ## Five habits of professional client messages
@@ -780,6 +820,11 @@ Read every important message once before sending. Check names, dates, prices and
       },
     },
     "finding-clients": {
+      outcomes: [
+        "Name three sources of clients",
+        "Explain why to start close to home",
+        "Keep a simple client pipeline",
+      ],
       explanation_md: `Finding clients is the part of freelancing that worries most beginners. The skill is learnable, and it gets easier with every client you serve well. Clients usually come from three places, and it makes sense to start with the closest.
 
 ## Three sources of clients
@@ -881,6 +926,11 @@ The next lessons go deeper into finding clients close to home, using marketplace
       },
     },
     "local-clients": {
+      outcomes: [
+        "Start with people who already trust you",
+        "Approach local businesses and organisations with an example",
+        "Turn one client into more",
+      ],
       explanation_md: `Shops, schools, churches, mosques, NGOs, clinics, hotels and small firms in towns such as Tamale, Bolgatanga, Wa and Damongo all need work that freelancers can do: flyers and banners, price lists, social media pages, typed reports, spreadsheets, simple websites, photos and short videos. Many prefer someone they can meet and call.
 
 ## Start with people who already trust you
@@ -974,6 +1024,11 @@ Issahaku notices that several chop bars near the Tamale central market have no p
       },
     },
     "online-marketplaces": {
+      outcomes: [
+        "Tell apart two kinds of platform",
+        "Read the rules before you build a profile",
+        "Expect competition and stay on the platform",
+      ],
       explanation_md: `Freelance marketplaces and remote job boards let clients anywhere in the world post projects and hire freelancers they have never met. They can open doors to clients abroad, but they come with rules, fees and strong competition. Go in with clear eyes so you do not spend weeks of data and effort on the wrong platform.
 
 ## Two kinds of platform
@@ -1068,6 +1123,11 @@ Mariama wants to offer short video captioning to creators abroad. Before signing
       },
     },
     "outreach-and-referrals": {
+      outcomes: [
+        "Write outreach to clients who did not post a job",
+        "Follow up once, politely",
+        "Earn referrals and repeat work",
+      ],
       explanation_md: `Waiting for adverts means competing with everyone who sees the same advert. Writing directly to a business with a specific idea for them, and getting introduced by people who already like your work, often brings better clients with less competition.
 
 ## Outreach: contacting clients who did not post a job
@@ -1164,6 +1224,11 @@ Abdul-Rahman designs simple websites. He finds five guesthouses in Tamale with o
       },
     },
     "staying-safe": {
+      outcomes: [
+        "Explain why freelancers are targeted",
+        "Slow down when you feel pressure",
+        "Build a personal scam checklist",
+      ],
       explanation_md: `Freelancers are a favourite target for scammers. You are looking for work, you are often contacting strangers, and you may be new to online payments. Scammers know this. Learning the warning signs early can save your money, your accounts and your peace of mind.
 
 ## Why freelancers are targeted
@@ -1255,6 +1320,11 @@ Safety is not only about avoiding loss. Clients trust freelancers who handle the
       },
     },
     "spotting-scams": {
+      outcomes: [
+        "Recognise the task scam and other freelance scams",
+        "Check whether an offer is real",
+        "Report a scam",
+      ],
       explanation_md: `Scams change their story often, but the patterns repeat. If you know the patterns, you can spot new versions quickly. Ghana's Cyber Security Authority (CSA) has issued public alerts about fake jobs and recruitment scams, and takes reports.
 
 ## The task scam
@@ -1358,6 +1428,11 @@ Sumaila is offered a data entry job by a "client" who sends a payment alert for 
       },
     },
     "protecting-accounts": {
+      outcomes: [
+        "Use strong, separate passwords and 2 Step Verification",
+        "Never rent, buy or share an account",
+        "Protect your ID and bank details",
+      ],
       explanation_md: `Your email, marketplace, social media and payment accounts are your business. If someone takes over your email, they can reset every other password, message your clients in your name and redirect your payments. Protecting your accounts is basic professional practice.
 
 ## Strong, separate passwords
@@ -1455,6 +1530,11 @@ Fuseini gets a call from someone who says they are from his mobile money provide
       },
     },
     "winning-work": {
+      outcomes: [
+        "Map the steps from enquiry to agreed job",
+        "Name the skills behind winning work",
+        "Be patient with yourself",
+      ],
       explanation_md: `An enquiry is not yet a job. Between "Can you help me?" and "Yes, let's start" there are three steps: understanding what the client really needs, offering a clear solution, and agreeing a price that is fair to both of you. Freelancers who handle these steps well win more of the work they want, and have fewer arguments later.
 
 ## Why this stage matters
@@ -1547,6 +1627,11 @@ You will not win every proposal. Clients choose someone else for many reasons, i
       },
     },
     "reading-a-brief": {
+      outcomes: [
+        "Find the five things a brief must tell you",
+        "Ask a few good questions",
+        "Write the brief back to the client",
+      ],
       explanation_md: `A brief is the client's description of what they want. Sometimes it is a detailed document. Often, especially with local clients, it is one line in a message: "I need a logo" or "Help me with my Facebook page." Most freelance trouble starts with a vague brief, so learning to turn one line into a clear plan is one of the most valuable skills you can have.
 
 ## The five things to find out
@@ -1632,6 +1717,11 @@ A clinic manager in Nalerigu messages Wumpini: "We need something for our Facebo
       },
     },
     "writing-proposals": {
+      outcomes: [
+        "Describe what a good proposal contains",
+        "Answer every question the client asked",
+        "Keep a proposal short, personal and honest",
+      ],
       explanation_md: `A proposal is your offer to the client: what you will do, how, by when and for how much. On marketplaces it is the message you send in reply to a posting. With local clients it may be a short message or a one page document after a conversation. Either way, a good proposal is specific, short and easy to say yes to.
 
 ## What a good proposal contains
@@ -1737,6 +1827,11 @@ If there is no reply, follow up once after a few days. If the client chooses som
       },
     },
     "pricing-in-cedis": {
+      outcomes: [
+        "Price from your time and costs",
+        "Check prices against the market",
+        "Choose a pricing model and handle currency for clients abroad",
+      ],
       explanation_md: `Pricing worries almost every new freelancer. Charge too much and clients say no; charge too little and you work hard for nothing, and clients may doubt your quality. There is no single right price, but there is a sensible way to work one out. This lesson gives you the method; the numbers are yours to fill in.
 
 ## Start with time and costs
@@ -1839,6 +1934,11 @@ State your price clearly, without apologising. If a client says it is too high, 
       },
     },
     "contracts-and-delivery": {
+      outcomes: [
+        "Explain why agreements are put in writing",
+        "Treat delivery as where reputation is made",
+        "Prevent scope creep",
+      ],
       explanation_md: `Once a client says yes, two things protect the relationship: clear written terms, and steady, reliable delivery. Neither needs to be complicated. A short written agreement and a simple system for deadlines and changes prevent most disputes before they start.
 
 ## Why put things in writing
@@ -1928,6 +2028,11 @@ A small job for a neighbour may need only a clear message confirming the work, p
       },
     },
     "simple-contracts": {
+      outcomes: [
+        "Cover the six parts of an agreement",
+        "State who owns the work",
+        "Confirm the agreement before you start",
+      ],
       explanation_md: `A contract is simply an agreement between you and a client about what each side will do. It does not need legal language or a lawyer for everyday freelance jobs. What it needs is to be clear, written down and agreed by both sides before work starts. This lesson is general guidance, not legal advice; for a large or unusual contract, ask someone qualified to check it.
 
 ## The six parts every agreement should cover
@@ -2014,6 +2119,11 @@ Hawa agrees to write five blog articles for a tour company in Mole. Her email li
       },
     },
     "deposits-and-invoices": {
+      outcomes: [
+        "Use deposits and milestones",
+        "Write invoices",
+        "Follow up late payment",
+      ],
       explanation_md: `The biggest money risk for a freelancer is doing all the work and then not being paid. Deposits, milestones and clear invoices reduce that risk and make payment a normal, professional part of the job rather than an awkward favour.
 
 ## Deposits
@@ -2128,6 +2238,11 @@ Sumaila agrees to build a stock spreadsheet for a pharmacy in Bolgatanga in two 
       },
     },
     "managing-projects": {
+      outcomes: [
+        "Track every deadline without overcommitting",
+        "Update clients before they ask",
+        "Handle revisions calmly and deliver professionally",
+      ],
       explanation_md: `Clients judge you on reliability as much as on quality. A freelancer who always delivers on time, keeps the client informed and handles changes calmly becomes the person clients call first. You do not need special software for this, just a few steady habits.
 
 ## Track every deadline
@@ -2223,6 +2338,11 @@ Mariama has three clients in one week. On Monday she lists all deadlines in her 
       },
     },
     "getting-paid": {
+      outcomes: [
+        "Keep money and accounts in your own name",
+        "Start good money habits now",
+        "Check your payment setup is ready",
+      ],
       explanation_md: `Doing good work is only half of freelancing. The other half is making sure the money actually reaches you, safely and legally, and keeping records so you know where you stand. This section covers getting paid by local clients, receiving money from clients abroad, and keeping records and dealing with tax.
 
 ## Why this matters
@@ -2314,6 +2434,11 @@ Nobody legitimate will ask for your mobile money PIN, a verification code or you
       },
     },
     "local-payments": {
+      outcomes: [
+        "Get paid by mobile money, bank transfer or cash",
+        "Give receipts",
+        "Handle wrong transfers and refund requests",
+      ],
       explanation_md: `Most local clients will pay you by mobile money or bank transfer, and some by cash. Each is fine, as long as you confirm the money has really arrived, give a receipt and keep a record.
 
 ## Mobile money
@@ -2413,6 +2538,11 @@ Hawa finishes flyers for a youth programme in Damongo. The organiser messages a 
       },
     },
     "paid-from-abroad": {
+      outcomes: [
+        "Compare routes for receiving money from abroad",
+        "Explain what the Bank of Ghana rules say",
+        "Check a service is legal before you use it",
+      ],
       explanation_md: `Clients abroad usually cannot pay you by Ghanaian mobile money directly, so the money has to travel through an international route. Each route has different fees, speeds and rules, and the Bank of Ghana's rules can change. This lesson names no companies; it explains the kinds of route and how to check that a service is legal.
 
 ## The main kinds of route
@@ -2512,6 +2642,11 @@ Abdul-Rahman agrees to build a website for a small shop abroad. Before quoting, 
       },
     },
     "records-and-tax": {
+      outcomes: [
+        "Keep simple records",
+        "Find what the GRA says about registering and income tax",
+        "Register a business name",
+      ],
       explanation_md: `Freelancing becomes a real business when you know your numbers and deal with tax properly. Good records help you price, settle disputes, apply for loans or contracts, and file tax returns. This lesson explains simple record keeping and what the Ghana Revenue Authority (GRA) says on its website. Tax rules and thresholds change, so always confirm current details on the GRA website or at a GRA office.
 
 ## Keep simple records
@@ -2618,6 +2753,11 @@ Mariama keeps a "Freelance 2026" spreadsheet with an income sheet and a costs sh
       },
     },
     "reputation-and-growth": {
+      outcomes: [
+        "Explain why reputation matters so much",
+        "Name what builds a reputation",
+        "Plan for gradual growth",
+      ],
       explanation_md: `Every freelancer's reputation is built one job at a time. Each finished project, each honest review and each recommendation adds to it, and one broken promise or dishonest act can damage it badly, especially in a close community where people talk. Once you have a few happy clients, the focus shifts from finding any work to keeping good clients and growing steadily.
 
 ## Why reputation matters so much
@@ -2706,6 +2846,11 @@ Wumpini has managed social media for a salon in Tamale for four months. She deli
       },
     },
     "reviews-and-reputation": {
+      outcomes: [
+        "Ask for reviews and recommendations",
+        "Never buy or fake reviews",
+        "Handle complaints and look after client data",
+      ],
       explanation_md: `Honest reviews and recommendations from real clients are one of the strongest things a freelancer can have. They tell a stranger, in someone else's words, that you deliver. This lesson covers how to earn and ask for them, how to handle mistakes, and how to look after client information.
 
 ## Ask for reviews and recommendations
@@ -2816,6 +2961,11 @@ Fuseini cleans survey data for an NGO in Tamale. He keeps the files in a protect
       },
     },
     "growing-income": {
+      outcomes: [
+        "Deepen your main skill and package services",
+        "Raise prices for new work",
+        "Plan for slow months",
+      ],
       explanation_md: `Once you have a few steady clients and reliable habits, you can think about growing. Growth in freelancing is usually gradual and comes from becoming more valuable to clients, not from tricks. This lesson describes common ways freelancers grow. It makes no promises about income; what is possible depends on your skill, your market and your effort.
 
 ## Deepen your main skill

@@ -13,6 +13,11 @@ const content: TrackContent = {
   roadmap: "cybersecurity-analyst",
   nodes: {
     foundations: {
+      outcomes: [
+        "Explain why security matters for organisations in Ghana",
+        "Describe what a junior analyst actually does",
+        "Start a security learning journal",
+      ],
       explanation_md: `## Why this matters
 
 Banks, telcos, fintechs, hospitals and government offices in Ghana all run on computers and phones, and all of them are targets. Mobile money fraud, fake links and stolen WhatsApp accounts are part of daily news. Organisations need people who can notice trouble early, respond calmly and help others stay safe. That is the work of a cybersecurity analyst.
@@ -103,6 +108,11 @@ You can learn all the ideas in this section on a phone or a computer. Later sect
       },
     },
     "cia-and-risk": {
+      outcomes: [
+        "Explain confidentiality, integrity and availability",
+        "Tell apart threats, vulnerabilities and risk",
+        "Build a small risk register for a place you know",
+      ],
       explanation_md: `## Why this matters
 
 Interviewers for security roles in Ghana often ask you to explain the CIA triad, and you will use its words in every incident note you write. Risk is the other half: no organisation can fix everything at once, so analysts help decide what to fix first.
@@ -213,6 +223,11 @@ When you see a security problem, ask: which part of CIA is at risk, what is the 
       },
     },
     "ethics-and-law": {
+      outcomes: [
+        "Explain what the law says about security work",
+        "Behave as a defensive professional",
+        "Write your personal code of conduct",
+      ],
       explanation_md: `## Why this matters
 
 Security skills are powerful, and employers in Ghana hand analysts access to customer data, staff accounts and alerts about weaknesses. They only trust people with sound judgement. One careless "test" of a system you do not own can end a career before it starts and can lead to prosecution.
@@ -297,6 +312,11 @@ Protect what you are responsible for, investigate only within your role, and lea
       },
     },
     systems: {
+      outcomes: [
+        "Look at systems the way a defender does",
+        "Work through this section on modest hardware",
+        "Map your own setup as a defender would",
+      ],
       explanation_md: `## Why this matters
 
 Security adverts from Ghanaian telcos, banks and IT firms keep naming the same foundations: networking, Windows, Linux, firewalls and logs. An alert that says "unusual connection from 10.0.4.17 on port 3389" means nothing unless you know what an IP address, a port and remote desktop are. Your IT support knowledge is the base; this section turns it towards defence.
@@ -383,6 +403,11 @@ By the end of this section you will be able to read a simple connection record, 
       },
     },
     "networking-for-security": {
+      outcomes: [
+        "Read IP addresses, ports and protocols fluently",
+        "Read a connection record",
+        "Explain what network traffic shows a defender",
+      ],
       explanation_md: `## Why this matters
 
 Telco and bank security adverts in Ghana ask for an understanding of networks, firewalls and network traffic. Almost every alert you handle will mention an IP address, a port or a domain name, so this is everyday vocabulary for an analyst.
@@ -487,6 +512,11 @@ Issahaku works on a help desk in Tamale. Staff complain the internet is slow. He
       },
     },
     "windows-security": {
+      outcomes: [
+        "Check Windows accounts and permissions",
+        "Name Windows' built in protection",
+        "Read Windows event logs",
+      ],
       explanation_md: `## Why this matters
 
 Most office computers in Ghanaian banks, schools, hospitals and businesses run Windows. When something goes wrong, the analyst is often asked "what happened on this computer?". The answer usually sits in Windows settings and the Windows event logs.
@@ -598,6 +628,11 @@ Exploring Event Viewer needs a Windows computer. If you do not have one, use a s
       },
     },
     "linux-for-security": {
+      outcomes: [
+        "Move around a Linux system from the command line",
+        "Read and search logs for signs of password guessing",
+        "Read file permissions",
+      ],
       explanation_md: `## Why this matters
 
 Many servers, cloud systems and security tools run on Linux, and adverts for analyst roles name Linux alongside Windows. When an alert points at a Linux server, you will need to read its logs from the command line, often with no mouse and no pictures.
@@ -696,6 +731,11 @@ The best practice is on a computer, using a free Linux virtual machine or a brow
       },
     },
     "ghana-threats": {
+      outcomes: [
+        "Explain why people are targeted before code",
+        "Describe how analysts use knowledge of local threats",
+        "Know where to report scams in Ghana",
+      ],
       explanation_md: `## Why this matters
 
 Ask anyone in Tamale, Wa or Accra about cybercrime and they will tell you a story about a phone call, a fake mobile money message or a friend's hacked WhatsApp. These everyday attacks cost families and businesses real money, and they are exactly what Ghanaian banks, telcos and fintechs hire security staff to fight. An analyst who understands local scams is valuable from day one.
@@ -782,6 +822,11 @@ Wumpini's aunt in Savelugu receives a call from "customer care" saying her mobil
       },
     },
     "momo-fraud-sim-swap": {
+      outcomes: [
+        "Recognise common mobile money tricks",
+        "Explain how SIM swap fraud works",
+        "Explain defences to non technical people",
+      ],
       explanation_md: `## Why this matters
 
 Mobile money is how many Ghanaians save, trade and send money home. That makes wallets and phone numbers prime targets. Telcos, banks and fintechs hire analysts and fraud monitoring staff who understand these schemes, and customer facing staff need to explain them clearly.
@@ -880,6 +925,11 @@ Mariama works in a fintech's fraud team in Accra. She notices several customers 
       },
     },
     "phishing-social-engineering": {
+      outcomes: [
+        "Explain what social engineering is",
+        "Break down a suspicious message like an analyst",
+        "Describe your role as a defender",
+      ],
       explanation_md: `## Why this matters
 
 Phishing and social engineering are among the most common ways attackers get into organisations and personal accounts. Security teams in Ghanaian banks, telcos and fintechs review suspicious emails reported by staff every day, and adverts for analyst roles mention phishing analysis. Being able to break down a suspicious message clearly is a core, practical skill.
@@ -982,6 +1032,11 @@ Never click suspicious links "to see what happens". On real systems, analysts ex
       },
     },
     "malware-ransomware": {
+      outcomes: [
+        "Explain what malware is and how it usually arrives",
+        "Name defences that actually help against ransomware",
+        "Check a suspicious file safely",
+      ],
       explanation_md: `## Why this matters
 
 Malware infects office computers, phones and servers across Ghana, often through files shared in messages or pirated software. Analyst adverts ask for malware awareness and response. Ransomware is especially damaging because it can stop a hospital, school or business from working at all.
@@ -1089,6 +1144,11 @@ You can check a file's reputation on VirusTotal, which compares it against many 
       },
     },
     protect: {
+      outcomes: [
+        "Explain prevention in three layers",
+        "Describe where the analyst fits in prevention",
+        "Audit your own digital protection",
+      ],
       explanation_md: `## Why this matters
 
 Detecting attacks is important, but it is far cheaper to stop them in the first place. Ghanaian employers, especially banks and fintechs that follow regulator directives, expect security staff to help set up and check protective controls: who can log in, what they can reach, how data is protected and whether staff can recognise scams.
@@ -1180,6 +1240,11 @@ The three topics in this section go deeper into each layer: identity and access 
       },
     },
     "identity-access": {
+      outcomes: [
+        "Tell apart authentication and authorisation",
+        "Explain strong passwords and multi factor authentication",
+        "Apply least privilege and review access",
+      ],
       explanation_md: `## Why this matters
 
 Stolen or weak passwords are behind many break ins, and Ghana's SIM swap and WhatsApp takeover scams are attacks on identity. Security adverts list identity management, access controls and multi factor authentication. Getting access right is one of the most useful things an organisation can do.
@@ -1286,6 +1351,11 @@ Abdul-Rahman is doing national service in a bank's IT security unit in Accra. Hi
       },
     },
     "encryption-data-protection": {
+      outcomes: [
+        "Explain encryption in plain words",
+        "Explain how hashing is different",
+        "Handle personal data under Ghana's rules",
+      ],
       explanation_md: `## Why this matters
 
 Banks, hospitals, telcos and NGOs in Ghana hold personal data about many people. Laws and regulators expect it to be protected, and adverts for security roles mention data protection controls and encryption. You need to know what encryption does, what it does not do and how to handle personal data responsibly.
@@ -1390,6 +1460,11 @@ Hawa works for an NGO in Bolgatanga that runs a health survey. A field officer's
       },
     },
     "security-awareness": {
+      outcomes: [
+        "Describe what good security awareness looks like",
+        "Encourage people to report early",
+        "Prepare a short awareness talk",
+      ],
       explanation_md: `## Why this matters
 
 Because so many attacks in Ghana start with persuasion, people are both the most targeted part of any organisation and its best sensors. Security teams in banks, telcos and fintechs run awareness programmes, and adverts mention promoting cyber resilience and security awareness. Junior staff often help deliver them, so being able to teach simply and respectfully is a real job skill.
@@ -1478,6 +1553,11 @@ An awareness session you have actually delivered, with your slides or notes and 
       },
     },
     "detect-respond": {
+      outcomes: [
+        "Explain why prevention is never perfect",
+        "Name the topics in detecting and responding",
+        "Describe what detection work feels like",
+      ],
       explanation_md: `## Why this matters
 
 Most junior security jobs advertised by Ghanaian telcos and banks centre on the same duties: monitor security events and alerts, analyse incidents, respond and escalate, and run vulnerability assessments. Some Ghanaian banks run their own security operations centres and organise analysts in levels, with Level 1 analysts watching alerts and Level 2 analysts handling escalations. This section is the heart of the analyst role.
@@ -1563,6 +1643,11 @@ You can learn the ideas and practise reading logs and alerts on a phone or a com
       },
     },
     "logging-monitoring": {
+      outcomes: [
+        "Explain what a log is and which logs matter most",
+        "Read logs for the unusual",
+        "Write up findings from a log",
+      ],
       explanation_md: `## Why this matters
 
 Logs are the evidence of what happened on a system. Adverts for analyst roles in Ghana list log analysis and monitoring for malicious activity, and O*NET's description of information security analysts includes monitoring and network tools. Without logs, an investigation is guesswork.
@@ -1688,6 +1773,11 @@ Mariama is asked why a shared folder at a Tamale NGO went missing. She checks th
       },
     },
     "soc-alert-triage": {
+      outcomes: [
+        "Explain what a SIEM does",
+        "Triage alerts to decide what is real",
+        "Write a good ticket note",
+      ],
       explanation_md: `## Why this matters
 
 The security operations centre (SOC) is where many analysts start. Ghanaian telcos, banks and fintechs, as well as managed security providers serving clients across Africa, run SOCs. Remote and regional SOC adverts commonly ask for SIEM experience, alert triage, ticketing and clear documentation.
@@ -1804,6 +1894,11 @@ LetsDefend and CyberDefenders offer browser based SOC style practice with free c
       },
     },
     "incident-response": {
+      outcomes: [
+        "Name the stages of incident response",
+        "Describe the junior analyst's part in an incident",
+        "Explain Ghana's reporting duty",
+      ],
       explanation_md: `## Why this matters
 
 When an attack is confirmed, panic causes more damage than the attacker. Ghanaian telco and bank adverts list incident response, containment and escalation as core duties. Ghana's Cybersecurity Act, 2020 also sets a reporting duty, so organisations need staff who know the process.
@@ -1905,6 +2000,11 @@ At a microfinance company in Wa, Abdul-Rahman notices a staff laptop sending lar
       },
     },
     "vulnerability-management": {
+      outcomes: [
+        "Explain the vulnerability management cycle",
+        "Prioritise findings wisely",
+        "Use the key words of vulnerability work",
+      ],
       explanation_md: `## Why this matters
 
 Ghanaian telco and bank adverts list vulnerability scanning, vulnerability assessment and risk based prioritisation among analyst duties. New weaknesses in common software are announced constantly, and attackers move quickly to use them. Organisations need people who can find, rank and track fixes for the systems they own.
@@ -2007,6 +2107,11 @@ Running scanners needs a computer and permission. On a phone, you can still prac
       },
     },
     "rules-frameworks": {
+      outcomes: [
+        "Name three kinds of security rules",
+        "Explain who is who in Ghana's security rules",
+        "Build a simple rules map for an organisation",
+      ],
       explanation_md: `## Why this matters
 
 Security work in Ghana does not happen in a vacuum. Laws set what is a crime and what organisations must do. Regulators such as the Cyber Security Authority and the Bank of Ghana issue directives. International standards give teams a shared checklist. Job adverts in Ghanaian banks and audit firms mention several of these by name, so understanding them helps you read adverts, follow your employer's processes and speak confidently in interviews.
@@ -2094,6 +2199,11 @@ Laws are amended and directives are updated. Always check the official source, s
       },
     },
     "cybersecurity-act-csa": {
+      outcomes: [
+        "Explain what the Cybersecurity Act 2020 does",
+        "Describe licensing and accreditation in practice",
+        "Name the official reporting channels",
+      ],
       explanation_md: `## Why this matters
 
 The **Cybersecurity Act, 2020 (Act 1038)** shapes how security works in Ghana. It created the regulator, set up incident response teams, protects critical systems and regulates the people and companies who sell security services. Employers expect security staff to know its basics, and it may affect your own career if you later offer services to clients.
@@ -2195,6 +2305,11 @@ You do not need to memorise every section. Know what the CSA is, what CII and CE
       },
     },
     "frameworks-standards": {
+      outcomes: [
+        "Describe the NIST Cybersecurity Framework 2.0",
+        "Recognise ISO/IEC 27001, PCI DSS and MITRE ATT&CK",
+        "Map your learning to the NIST functions",
+      ],
       explanation_md: `## Why this matters
 
 Adverts from Ghanaian banks and audit firms mention ISO/IEC 27001, PCI DSS, the Bank of Ghana's Cyber and Information Security Directive, the CSA's CII Directive, NIST frameworks and MITRE ATT&CK. Senior roles ask for deep knowledge, but even juniors are expected to know what each one is for. Understanding them helps you see why your team does what it does.
@@ -2294,6 +2409,11 @@ You do not need to read every standard in full now. Learn what each is for, and 
       },
     },
     "job-ready": {
+      outcomes: [
+        "Describe the honest entry routes into security",
+        "Keep building your learning journal",
+        "Write a plan for getting job ready",
+      ],
       explanation_md: `## Why this matters
 
 Security employers in Ghana and remote employers abroad want evidence that you can do the work: investigate an alert, write a clear note, explain a risk, behave ethically. Certificates can help, but proof of practice and good communication carry great weight. This section helps you get there on modest hardware and a tight budget.
@@ -2385,6 +2505,11 @@ Be careful of offers that promise a guaranteed security job in exchange for a fe
       },
     },
     "home-lab": {
+      outcomes: [
+        "Set up a practice lab on modest hardware",
+        "Save data while you practise",
+        "Write up every lab session",
+      ],
       explanation_md: `## Why this matters
 
 Employers want to hear what you have practised. A lab is a safe, legal place to try tools, break things and learn from mistakes without harming anyone. Remember the rule from the ethics lesson: practise only on systems you own or on platforms built for learning.
@@ -2498,6 +2623,11 @@ For either path, write a lab report with: goal, steps, findings, problems and le
       },
     },
     "entry-certifications": {
+      outcomes: [
+        "Compare common entry certifications",
+        "Choose a certification wisely",
+        "Avoid certification traps",
+      ],
       explanation_md: `## Why this matters
 
 Ghanaian and remote security adverts often name certifications. Senior roles ask for certifications such as CISSP, CISM or CISA, which require years of experience. Junior and mid level adverts mention options such as CompTIA Security+ as an advantage, and remote Level 1 SOC adverts sometimes list Security+ or similar as desirable. A beginner certificate will not replace skills, but it can help a CV get noticed. This topic is optional: you can become job ready without one.
@@ -2589,6 +2719,11 @@ Abdul-Rahman reads ten security adverts and notices that Security+ appears in se
       },
     },
     "portfolio-job-search": {
+      outcomes: [
+        "Build a simple security portfolio",
+        "Write a security focused CV",
+        "Prepare for interviews and watch for fake offers",
+      ],
       explanation_md: `## Why this matters
 
 Security roles in Ghana are concentrated in banks, telcos, fintechs, audit firms, managed security providers and government bodies, mostly in Accra, with some IT roles in regional offices. Remote roles exist, but many are restricted to certain countries. A clear portfolio and a focused search help you stand out wherever you apply.

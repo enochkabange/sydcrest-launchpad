@@ -74,6 +74,10 @@ export const cybersecurity: RoadmapDraft = {
         "Security work starts with a few core ideas and a firm commitment to defend only. This section gives you the language every analyst uses and the legal limits you must never cross.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [netacadIntro, ncscTips],
     },
     {
@@ -83,6 +87,8 @@ export const cybersecurity: RoadmapDraft = {
         "Confidentiality, integrity and availability describe what you are protecting, and risk tells you what to fix first. You will use these words in every report, interview and alert.",
       parent: "foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [netacadIntro, nistCsf],
     },
     {
@@ -92,6 +98,8 @@ export const cybersecurity: RoadmapDraft = {
         "Accessing a system without permission is a crime in Ghana, however curious or well meaning you are. Learn where the line sits, why written permission matters and how professionals behave.",
       parent: "foundations",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [act772, csaHome],
     },
     {
@@ -101,6 +109,10 @@ export const cybersecurity: RoadmapDraft = {
         "You cannot defend what you do not understand. This section revisits networks, Windows and Linux from a defender's point of view, building on your IT support skills.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [netacadNetworking, netacadLinux],
     },
     {
@@ -110,6 +122,8 @@ export const cybersecurity: RoadmapDraft = {
         "Learn how IP addresses, ports, DNS and firewalls look when something goes wrong. Reading network traffic is a core analyst skill named in junior adverts.",
       parent: "systems",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [netacadNetworking, wiresharkGuide, packetTracer],
     },
     {
@@ -119,6 +133,8 @@ export const cybersecurity: RoadmapDraft = {
         "Most offices in Ghana run Windows, so analysts must know its accounts, updates, built in protection and event logs. You will learn where Windows records what happened and how to read it.",
       parent: "systems",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [windowsSecurity],
     },
     {
@@ -128,6 +144,8 @@ export const cybersecurity: RoadmapDraft = {
         "Servers and security tools often run on Linux. Learn to move around, read log files, search them and check file permissions from the command line.",
       parent: "systems",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [ubuntuCli, netacadLinux, bandit],
     },
     {
@@ -137,6 +155,10 @@ export const cybersecurity: RoadmapDraft = {
         "Most attacks people in Ghana face start with a phone call, a message or a fake link rather than clever code. This section studies those threats so you can spot them and protect others.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["ICT Officer", "IT Officer"],
       resources: [bogFraudNotice, csaWhatsappAlert],
     },
     {
@@ -146,6 +168,8 @@ export const cybersecurity: RoadmapDraft = {
         "Learn how fraudsters trick people into revealing PINs and codes, and how a stolen phone number can open a mobile wallet. Telcos, banks and fintechs need staff who understand these patterns.",
       parent: "ghana-threats",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [bogFraudNotice, csaWhatsappAlert, csaReport],
     },
     {
@@ -155,6 +179,8 @@ export const cybersecurity: RoadmapDraft = {
         "Attackers often target people instead of machines, using urgency, fear and fake authority. You will learn to break down a suspicious message and explain the warning signs to others.",
       parent: "ghana-threats",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [ncscPhishing, csaWhatsappAlert],
     },
     {
@@ -164,6 +190,8 @@ export const cybersecurity: RoadmapDraft = {
         "Malware is software built to harm, spy or steal, and ransomware locks files until a payment is made. Learn the common types, how they arrive and the defences that actually help.",
       parent: "ghana-threats",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [cisaRansomware, virustotal],
     },
     {
@@ -173,6 +201,10 @@ export const cybersecurity: RoadmapDraft = {
         "Good defence makes attacks harder before they start. This section covers accounts and access, encryption and training people to be part of the defence.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["IT Security Officer", "Information Security Officer"],
       resources: [ncscTips, cisaMfa],
     },
     {
@@ -182,6 +214,8 @@ export const cybersecurity: RoadmapDraft = {
         "Strong passwords, multi factor authentication and least privilege stop a large share of everyday attacks. Learn how organisations decide who can access what, and how to review it.",
       parent: "protect",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [cisaMfa, hibp],
     },
     {
@@ -191,6 +225,8 @@ export const cybersecurity: RoadmapDraft = {
         "Encryption keeps data private in storage and on the move, and hashing shows whether it has changed. You will also see why Ghana's data protection rules make careful handling a duty.",
       parent: "protect",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 4,
       resources: [dpc, netacadIntro],
     },
     {
@@ -200,6 +236,8 @@ export const cybersecurity: RoadmapDraft = {
         "Many security roles include teaching colleagues and customers to recognise scams. Learn to run short, respectful awareness sessions that change habits.",
       parent: "protect",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [ncscTips, bogFraudNotice],
     },
     {
@@ -209,6 +247,10 @@ export const cybersecurity: RoadmapDraft = {
         "No defence is perfect, so organisations watch for trouble and act fast when it appears. This is the daily work of a junior analyst in a security operations centre.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
+      careerLevel: "mid",
+      jobs: ["SOC Analyst Level 1", "SOC Analyst Tier 1", "Security Analyst I"],
       resources: [ncscIncident, letsdefend],
     },
     {
@@ -218,6 +260,8 @@ export const cybersecurity: RoadmapDraft = {
         "Logs are the records systems keep about logins, changes and connections. Learn which logs matter, how to read them and how to spot something unusual.",
       parent: "detect-respond",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [splunkFree, windowsSecurity],
     },
     {
@@ -227,6 +271,8 @@ export const cybersecurity: RoadmapDraft = {
         "A security operations centre watches alerts from tools such as a SIEM and decides which ones are real. Learn how Level 1 analysts triage, document and escalate.",
       parent: "detect-respond",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [letsdefend, splunkFree, mitreAttack],
     },
     {
@@ -236,6 +282,8 @@ export const cybersecurity: RoadmapDraft = {
         "When an attack is confirmed, a calm, practised process limits the damage. Learn the stages of incident response and what a junior analyst is expected to do in each.",
       parent: "detect-respond",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [nistIr, ncscIncident, csaReport],
     },
     {
@@ -245,6 +293,8 @@ export const cybersecurity: RoadmapDraft = {
         "Weaknesses in software are found every week, and attackers race to use them. Learn how teams find, rank and fix vulnerabilities on systems they own.",
       parent: "detect-respond",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [cisaKev, nvd, cvss],
     },
     {
@@ -254,6 +304,10 @@ export const cybersecurity: RoadmapDraft = {
         "Security in Ghana works within laws, regulators and widely used standards. Knowing them helps you understand why employers ask for certain controls and reports.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
+      careerLevel: "specialist",
+      jobs: ["Cyber Security Analyst", "Application Security Engineer"],
       resources: [csaHome, nistCsf],
     },
     {
@@ -263,6 +317,8 @@ export const cybersecurity: RoadmapDraft = {
         "Act 1038 created the Cyber Security Authority, national and sectoral incident response teams and protections for critical systems. Learn what it means for organisations and for your own career.",
       parent: "rules-frameworks",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [act1038, csaCii, csaReport],
     },
     {
@@ -272,6 +328,8 @@ export const cybersecurity: RoadmapDraft = {
         "Adverts in Ghanaian banks and audit firms name ISO 27001, PCI DSS, the NIST framework and MITRE ATT&CK. Learn what each one is for so the words stop being a mystery.",
       parent: "rules-frameworks",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [nistCsf, mitreAttack],
     },
     {
@@ -281,6 +339,10 @@ export const cybersecurity: RoadmapDraft = {
         "Employers want proof you can do the work, not only certificates. This section helps you practise safely on modest hardware, choose a first certification and present your work.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["SOC Analyst", "Security Analyst I"],
       resources: [tryhackme, cyberdefenders],
     },
     {
@@ -290,6 +352,8 @@ export const cybersecurity: RoadmapDraft = {
         "Safe, legal practice happens in labs built for learning, not on real networks. Learn what you can do on a phone, what needs a computer and how to keep data costs low.",
       parent: "job-ready",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [tryhackme, virtualbox, bandit],
     },
     {
@@ -299,6 +363,8 @@ export const cybersecurity: RoadmapDraft = {
         "A few recognised certificates can help a beginner's CV get noticed. Learn what the common entry options cover so you can choose one that fits your goals and budget.",
       parent: "job-ready",
       optional: true,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [isc2Cc, comptiaSec, googleCyber],
     },
     {
@@ -308,6 +374,8 @@ export const cybersecurity: RoadmapDraft = {
         "Most analysts enter through IT support, a help desk, national service or an internship. Learn where junior security roles sit in Ghana and remotely, and how to show your skills.",
       parent: "job-ready",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.githubDocs, csaHome],
     },
   ],

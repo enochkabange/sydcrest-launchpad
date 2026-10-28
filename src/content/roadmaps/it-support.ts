@@ -116,6 +116,10 @@ export const itSupport: RoadmapDraft = {
         "IT support people keep an organisation's computers, phones and networks working and help staff when something breaks. This section covers the roles, the troubleshooting method and the customer care every role shares.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
       resources: [RES.lfComputer, googleItSupport],
     },
     {
@@ -125,6 +129,8 @@ export const itSupport: RoadmapDraft = {
         "Help desk officers, desktop support technicians, school lab technicians and NOC engineers all start from the same foundations. Learn what each role does day to day and what first line and second line support mean.",
       parent: "it-support-job",
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
       resources: [googleItSupport],
     },
     {
@@ -134,6 +140,8 @@ export const itSupport: RoadmapDraft = {
         "Good technicians fix problems by following steps, not by guessing. Learn to gather facts, form a theory, test it, fix, verify and write down what you did.",
       parent: "it-support-job",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [gcfTroubleshooting, messerAplus],
     },
     {
@@ -143,6 +151,8 @@ export const itSupport: RoadmapDraft = {
         "Every request should become a ticket with a clear description, priority and record of what was done. Learn to talk to stressed users with patience, explain fixes simply and meet agreed response times.",
       parent: "it-support-job",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [googleForms, RES.lfCommunication],
     },
     {
@@ -152,6 +162,10 @@ export const itSupport: RoadmapDraft = {
         "Before you can fix a computer you need to know what is inside it and how the parts work together. This section covers components, maintenance and upgrades, power protection and printers.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "junior",
+      jobs: ["Part Time IT Support Assistant", "IT Operations Assistant", "Temporary IT Support Officer"],
       resources: [gcfInside, messerAplus],
     },
     {
@@ -161,6 +175,8 @@ export const itSupport: RoadmapDraft = {
         "Learn what the processor, memory, storage, motherboard, power supply and ports each do. Knowing the parts lets you read a specification sheet and guess which part is failing.",
       parent: "hardware",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [gcfInside, gcfSetup],
     },
     {
@@ -170,6 +186,8 @@ export const itSupport: RoadmapDraft = {
         "Dust, heat and old hard drives cause many slow or failing computers in Ghanaian offices and labs. Learn safe cleaning, preventive maintenance, and the two upgrades that most often save an old machine.",
       parent: "hardware",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [messerAplus, gcfInside],
     },
     {
@@ -179,6 +197,8 @@ export const itSupport: RoadmapDraft = {
         "Outages and surges when power returns damage equipment and corrupt files. Learn the difference between a surge protector, a voltage stabiliser and a UPS, and how to set up a safe workstation.",
       parent: "hardware",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [wikiSurge, wikiUps],
     },
     {
@@ -188,6 +208,8 @@ export const itSupport: RoadmapDraft = {
         "Printers, scanners and copiers are behind many everyday office support calls. Learn how they connect, how to install and share them, and how to clear the most common faults.",
       parent: "hardware",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [msPrinter],
     },
     {
@@ -197,6 +219,10 @@ export const itSupport: RoadmapDraft = {
         "Most office computers run Windows, servers often run Linux and almost every staff phone runs Android. This section teaches you to support all three.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["IT Support", "Technical Support Executive", "Desktop Support Engineer"],
       resources: [gcfOs],
     },
     {
@@ -206,6 +232,8 @@ export const itSupport: RoadmapDraft = {
         "Learn the Windows tools a technician uses every day: Settings, Task Manager, Device Manager, updates and installing software safely. You will also learn when to repair and when to reinstall.",
       parent: "operating-systems",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [msWindowsHelp, messerAplus],
     },
     {
@@ -215,6 +243,8 @@ export const itSupport: RoadmapDraft = {
         "Linux runs many servers, routers and cloud systems, so support roles increasingly expect the basics. Learn files, folders, users and a handful of commands you will use again and again.",
       parent: "operating-systems",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [ubuntuCli, redhatLinux, ubuntuInstall],
     },
     {
@@ -224,6 +254,8 @@ export const itSupport: RoadmapDraft = {
         "Staff phones carry work email, MoMo, WhatsApp and field data apps, so phone support is part of the job. Learn accounts, storage, updates, backups and what to do when a phone is lost.",
       parent: "operating-systems",
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
       resources: [androidHelp, androidFind],
     },
     {
@@ -233,6 +265,10 @@ export const itSupport: RoadmapDraft = {
         "Almost every complaint that starts with the system is down turns out to be a network question. This section covers addresses, names, wireless, routers and the tools that find faults.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "junior",
+      jobs: ["Local IT Officer", "IT Officer", "ICT Officer"],
       resources: [mdnInternet, khanInternet, netacad],
     },
     {
@@ -242,6 +278,8 @@ export const itSupport: RoadmapDraft = {
         "Every device on a network needs an address, and a router usually hands them out automatically. Learn private and public addresses, the gateway and why two devices with the same address both fail.",
       parent: "networking",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [fccNetworking, msIpconfig],
     },
     {
@@ -251,6 +289,8 @@ export const itSupport: RoadmapDraft = {
         "DNS turns names like a bank's website into the addresses computers use. Learn how it works and how to spot a DNS problem when the internet seems to work for some things but not others.",
       parent: "networking",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [fccDns, mdnInternet],
     },
     {
@@ -260,6 +300,8 @@ export const itSupport: RoadmapDraft = {
         "Learn how a small office network fits together: modem or fibre box, router, switch, access points and cables. You will also learn to secure a wireless network and improve weak coverage.",
       parent: "networking",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [androidWifi, msWifi, gcfConnect],
     },
     {
@@ -269,6 +311,8 @@ export const itSupport: RoadmapDraft = {
         "Work from the cable outwards with a few simple tools to find where a connection breaks. Learn to use ping, ipconfig and a traceroute, and to read what they tell you.",
       parent: "networking",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [msPing, msIpconfig],
     },
     {
@@ -278,6 +322,10 @@ export const itSupport: RoadmapDraft = {
         "Protecting people's accounts and data is now part of every support job. This section covers user accounts and access, everyday security and backups.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "mid",
+      jobs: ["Office IT Support Analyst", "End User Support Systems Analyst", "NOC and IT Support Engineer"],
       resources: [gcfProtect, ghanaCsa],
     },
     {
@@ -287,6 +335,8 @@ export const itSupport: RoadmapDraft = {
         "Learn how organisations manage staff accounts centrally, why each person should have only the access they need, and how to reset passwords safely. Microsoft 365 and directory services appear in many Ghanaian adverts.",
       parent: "accounts-and-security",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [msEntra, googlePassword, google2sv],
     },
     {
@@ -296,6 +346,8 @@ export const itSupport: RoadmapDraft = {
         "Malware, phishing and unpatched software cause most of the incidents a technician sees. Learn to prevent, spot and respond to them, and to teach staff to do the same.",
       parent: "accounts-and-security",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [cisaPhishing, cisaUpdates, cisaPasswords],
     },
     {
@@ -305,6 +357,8 @@ export const itSupport: RoadmapDraft = {
         "Hard drives fail, phones get stolen and ransomware locks files, so a tested backup is what saves the day. Learn the three copies rule and how to back up computers and phones cheaply.",
       parent: "accounts-and-security",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [gcfBackup, androidBackup, msBackup],
     },
     {
@@ -314,6 +368,10 @@ export const itSupport: RoadmapDraft = {
         "Employers want proof you can fix real problems, plus a qualification they recognise. This section covers diplomas and certifications, building experience and where IT support can lead.",
       parent: null,
       optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      careerLevel: "specialist",
+      jobs: ["Systems Administrator / IT Manager", "Server Integration Specialist and Technical Support"],
       resources: [RES.lfJobsearch, RES.lfResume],
     },
     {
@@ -323,6 +381,8 @@ export const itSupport: RoadmapDraft = {
         "Learn the local routes, from technical university diplomas to private hardware and networking courses, and the widely recognised entry certifications. Understand what each one proves so you can choose wisely.",
       parent: "career-routes",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [comptiaAplus, comptiaNetwork, googleItSupport],
     },
     {
@@ -332,6 +392,8 @@ export const itSupport: RoadmapDraft = {
         "Experience can start before your first job: a school lab, a church office, a relative's shop or national service. Learn to keep a fix log, build a small portfolio and handle a technical interview.",
       parent: "career-routes",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfInterview, RES.lfResume],
     },
     {
@@ -341,6 +403,8 @@ export const itSupport: RoadmapDraft = {
         "IT support is a strong base for security, network engineering and cloud careers. Learn what each path adds and how to start moving towards it while you work.",
       parent: "career-routes",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [awsRestart, netacad, msLearn],
     },
   ],

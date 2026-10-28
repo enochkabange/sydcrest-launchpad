@@ -3,7 +3,7 @@
  *
  * The formula, per node with a written lesson:
  *
- *   reading  = lesson words / 180 words a minute
+ *   reading  = lesson words (explanation and worked example) / 180 words a minute
  *   practice = 15 minutes + practice task words / 180, when there is a task
  *   quiz     = 1 minute a question
  *   estimate = reading + practice + quiz, rounded up to the next 5 minutes
@@ -40,6 +40,35 @@ export function estimateMinutes(input: EstimateInputs | null | undefined): numbe
   const quiz = Math.max(0, input.quizQuestions) * ESTIMATE.minutesPerQuestion;
   const total = reading + practice + quiz;
   return Math.max(ESTIMATE.roundTo, Math.ceil(total / ESTIMATE.roundTo) * ESTIMATE.roundTo);
+}
+
+/**
+ * Words the way the estimate counts them: runs of non space characters, the
+ * same rule as the node_estimate_inputs view, so a lesson page and its
+ * roadmap always agree.
+ */
+export function countWords(md: string | null | undefined): number {
+  const text = md?.trim();
+  return text ? text.split(/\s+/).length : 0;
+}
+
+/**
+ * The same estimate from a lesson's markdown, for pages that already hold
+ * it (the lesson page). Null without an explanation.
+ */
+export function estimateLessonMinutes(input: {
+  explanation_md?: string | null;
+  workedExample_md?: string | null;
+  practice_task_md?: string | null;
+  quizQuestions?: number;
+}): number | null {
+  if (!input.explanation_md?.trim()) return null;
+  return estimateMinutes({
+    hasLesson: true,
+    lessonWords: countWords(input.explanation_md) + countWords(input.workedExample_md),
+    practiceWords: countWords(input.practice_task_md),
+    quizQuestions: input.quizQuestions ?? 0,
+  });
 }
 
 /** A sum of estimates: the known minutes and how many nodes had none. */

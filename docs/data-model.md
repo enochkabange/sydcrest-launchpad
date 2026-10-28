@@ -27,10 +27,10 @@ Readable by anyone; feeds public profile pages and the leaderboards. A security_
 **roadmaps**. A learning roadmap with an SEO slug, track, locale, display order and publish flag.
 Anyone reads published ones; admins read drafts and do all writes.
 
-**roadmap_nodes**. A topic in a roadmap; `parent_id` makes a tree (parent must be in the same roadmap), `position` orders siblings, slug unique per roadmap.
+**roadmap_nodes**. A topic in a roadmap; `parent_id` makes a tree (parent must be in the same roadmap), `position` orders siblings, slug unique per roadmap. Lesson structure (#255, `20261029200000_lesson_structure.sql`): every node has nullable `difficulty` (beginner, intermediate, advanced) and `complexity` (1 to 5); sections have `career_level` (foundation, junior, mid, specialist) and `jobs` (text[], job titles from the track research, no salaries).
 Same visibility as the roadmap; admins write.
 
-**node_content**. Pre generated, reviewed explanation and practice task for a node (one current version, `content_version` bumps on regeneration).
+**node_content**. Pre generated, reviewed explanation and practice task for a node (one current version, `content_version` bumps on regeneration). Optional lesson anatomy (#255): `outcomes` (text[], You will be able to), `worked_example_md`, `key_terms` (jsonb `[{term, definition}]`), `common_mistakes` and `self_check` (text[]); null when a lesson leaves a part out.
 Readable when the node's roadmap is published; admins write.
 
 **node_resources**. External links (article, video, practice) for a node; `is_active` is the link health flag.

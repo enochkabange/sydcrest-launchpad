@@ -6,6 +6,13 @@ import Link from "@/components/ui/link";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { Markdown } from "@/components/learn/markdown";
+import { LessonContents } from "@/components/learn/lesson-contents";
+import { LessonMetaStrip, LessonOutcomes } from "@/components/learn/lesson-meta";
+import { asKeyTerms, asStrings, CommonMistakes, KeyTerms, SelfCheck } from "@/components/learn/lesson-anatomy";
+import { LESSON_SECTIONS, lessonToc } from "@/components/learn/lesson-toc";
+import { MainWithRail } from "@/components/ui/layout";
+import { estimateLessonMinutes } from "@/lib/roadmaps/estimates";
+import { asComplexity, asDifficulty } from "@/lib/roadmaps/levels";
 import { byPosition, nextByPosition } from "@/components/learn/next-node";
 import { parseQuestions } from "@/components/learn/quiz-data";
 import { Quiz } from "@/components/learn/quiz";
@@ -32,14 +39,19 @@ const STATUS_LABEL = {
   done: "Completed",
 } as const;
 
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
+/** A titled part of the lesson; `id` is its table of contents anchor. */
+function Section({ part, children }: { part: { id: string; label: string }; children: React.ReactNode }) {
   return (
-    <section className="flex flex-col gap-3">
-      <h2 className="text-subtitle text-content">{title}</h2>
+    <section id={part.id} aria-labelledby={`${part.id}-heading`} className="flex scroll-mt-24 flex-col gap-3">
+      <h2 id={`${part.id}-heading`} className="text-subtitle text-content">
+        {part.label}
+      </h2>
       {children}
     </section>
   );
 }
+
+const BODY_ID = "lesson-body";
 
 async function Study({ params }: { params: Promise<{ slug: string; node: string }> }) {
   const user = await requireUser();
@@ -54,15 +66,20 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
     .maybeSingle();
   if (!roadmap) notFound();
 
-  const { data: nodes } = await supabase
+  const { data: rows } = await supabase
     .from("roadmap_nodes")
-    .select("id, parent_id, slug, title, summary, position, is_optional")
+    .select("id, parent_id, slug, title, summary, position, is_optional, difficulty, complexity")
     .eq("roadmap_id", roadmap.id);
+  const nodes = rows?.map((n) => ({ ...n, difficulty: asDifficulty(n.difficulty), complexity: asComplexity(n.complexity) }));
   const node = nodes?.find((n) => n.slug === nodeSlug);
   if (!nodes || !node) notFound();
 
   const [{ data: content }, { data: resources }, { data: quiz }, { data: progress }, allProgress] = await Promise.all([
-    supabase.from("node_content").select("explanation_md, practice_task_md").eq("node_id", node.id).maybeSingle(),
+    supabase
+      .from("node_content")
+      .select("explanation_md, practice_task_md, outcomes, worked_example_md, key_terms, common_mistakes, self_check")
+      .eq("node_id", node.id)
+      .maybeSingle(),
     supabase
       .from("node_resources")
       .select("id, label, url, kind")
@@ -88,10 +105,47 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
   const done = status === "done";
   const questions = parseQuestions(quiz?.questions);
 
-  // One column on phones. From xl the lesson keeps a readable measure and the topic outline sits beside it.
+  const outcomes = asStrings(content?.outcomes);
+  const keyTerms = asKeyTerms(content?.key_terms);
+  const mistakes = asStrings(content?.common_mistakes);
+  const selfCheck = asStrings(content?.self_check);
+  const workedExample = content?.worked_example_md?.trim() ? content.worked_example_md : null;
+  const minutes = estimateLessonMinutes({
+    explanation_md: content?.explanation_md,
+    workedExample_md: workedExample,
+    practice_task_md: content?.practice_task_md,
+    quizQuestions: questions.length,
+  });
+  const toc = lessonToc({
+    outcomes,
+    explanation_md: content?.explanation_md,
+    workedExample_md: workedExample,
+    keyTerms,
+    commonMistakes: mistakes,
+    practice_task_md: content?.practice_task_md,
+    hasResources: !!resources?.length,
+    selfCheck,
+  });
+  const S = LESSON_SECTIONS;
+
+  // One column on phones, with the contents collapsed under the header. From lg the lesson keeps a
+  // reading measure and a sticky rail holds the contents and the roadmap's topics.
   return (
-    <div className="xl:grid xl:grid-cols-[minmax(0,1fr)_22.5rem] xl:items-start xl:gap-12">
-      <article className="flex max-w-3xl flex-col gap-8">
+    <MainWithRail
+      railLabel="Lesson contents and topics"
+      railFrom="lg"
+      sticky
+      rail={
+        <div className="flex flex-col gap-6 lg:max-h-[calc(100dvh-4rem)]">
+          <LessonContents toc={toc} bodyId={BODY_ID} variant="rail" />
+          {/* A plain wrapper: the outline is already a labelled nav landmark. */}
+          <div className="min-h-0 flex-1">
+            <TopicOutline roadmap={roadmap} nodes={nodes} currentId={node.id} progress={allProgress ?? new Map()} compact />
+          </div>
+        </div>
+      }
+    >
+      <article id={BODY_ID} className="flex max-w-reading flex-col gap-8">
         {status === "not_started" && <StartNode nodeId={node.id} action={startNode} />}
 
         <header className="flex flex-col gap-3">
@@ -115,11 +169,18 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
           >
             {STATUS_LABEL[status === "not_started" ? "in_progress" : status]}
           </p>
+          <LessonMetaStrip difficulty={node.difficulty} complexity={node.complexity} minutes={minutes} />
         </header>
 
-        <Section title="Explanation">
+        <div className="lg:hidden">
+          <LessonContents toc={toc} bodyId={BODY_ID} variant="inline" />
+        </div>
+
+        {outcomes.length > 0 && <LessonOutcomes outcomes={outcomes} id={S.outcomes.id} />}
+
+        <Section part={S.explanation}>
           {content?.explanation_md ? (
-            <Markdown source={content.explanation_md} />
+            <Markdown source={content.explanation_md} idPrefix={S.explanation.id} />
           ) : (
             <p className="text-content-2">
               The explanation for this topic is still being written. The resources below are a good place to start.
@@ -127,8 +188,26 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
           )}
         </Section>
 
+        {workedExample && (
+          <Section part={S.workedExample}>
+            <Markdown source={workedExample} idPrefix={S.workedExample.id} />
+          </Section>
+        )}
+
+        {keyTerms.length > 0 && (
+          <Section part={S.keyTerms}>
+            <KeyTerms terms={keyTerms} />
+          </Section>
+        )}
+
+        {mistakes.length > 0 && (
+          <Section part={S.commonMistakes}>
+            <CommonMistakes items={mistakes} />
+          </Section>
+        )}
+
         {content?.practice_task_md && (
-          <Section title="Practice task">
+          <Section part={S.practice}>
             <div className="rounded-lg border border-line bg-surface-sunken p-4">
               <Markdown source={content.practice_task_md} />
             </div>
@@ -136,7 +215,7 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
         )}
 
         {!!resources?.length && (
-          <Section title="Resources">
+          <Section part={S.resources}>
             <ul className="flex flex-col gap-2">
               {resources.map((r) => {
                 const kind = RESOURCE_KIND[r.kind as keyof typeof RESOURCE_KIND] ?? RESOURCE_KIND.article;
@@ -163,7 +242,13 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
           </Section>
         )}
 
-        <Section title="Checkpoint">
+        {selfCheck.length > 0 && (
+          <Section part={S.selfCheck}>
+            <SelfCheck items={selfCheck} />
+          </Section>
+        )}
+
+        <Section part={S.checkpoint}>
           {quiz ? (
             questions.length ? (
               <Quiz
@@ -195,11 +280,7 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
           <StudyBuddySlot nodeId={node.id} nodeTitle={node.title} />
         </Suspense>
       </article>
-      {/* A plain wrapper: the outline is already a labelled nav landmark. */}
-      <div className="hidden xl:sticky xl:top-8 xl:block">
-        <TopicOutline roadmap={roadmap} nodes={nodes} currentId={node.id} progress={allProgress ?? new Map()} />
-      </div>
-    </div>
+    </MainWithRail>
   );
 }
 

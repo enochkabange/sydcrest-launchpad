@@ -7,11 +7,11 @@
  * (with the learner's progress). See docs/roadmap-views.md for the contract.
  */
 import { sumEstimates, type Estimate } from "./estimates";
+import type { CareerLevel, Complexity, Difficulty } from "./levels";
 import { buildNodeTree, flattenTree, type FlatNode, type ProgressStatus, type TreeNode } from "./tree";
 
 export type NodeKind = "section" | "topic" | "checkpoint";
-export type Difficulty = NonNullable<FlatNode["difficulty"]>;
-export type CareerLevel = NonNullable<FlatNode["career_level"]>;
+export type { CareerLevel, Complexity, Difficulty };
 
 export type ViewNode = {
   id: string;
@@ -41,10 +41,13 @@ export type ViewNode = {
   children: ViewNode[];
   /** Estimated minutes (estimates.ts), or null when the node has no lesson yet. */
   minutes: number | null;
-  /** Optional content slots, null until content carries them; views render them only when set. */
-  difficulty: Difficulty | null;
-  /** 1 to 5. */
-  complexity: number | null;
+  /** Lesson structure (issue #255), present once a roadmap is rated; views render it only when set. */
+  difficulty?: Difficulty;
+  complexity?: Complexity;
+  /** Sections only. */
+  careerLevel?: CareerLevel;
+  /** Sections only: job titles from the track research. */
+  jobs?: string[];
 };
 
 export type Counts = {
@@ -84,9 +87,6 @@ export type ViewSection = {
   estimate: Estimate;
   /** Required nodes only: what finishing the section takes. */
   requiredEstimate: Estimate;
-  /** Optional content slots for the section header; null and empty until content carries them. */
-  careerLevel: CareerLevel | null;
-  jobs: readonly string[];
 };
 
 export type RoadmapView = {
@@ -158,8 +158,10 @@ export function buildRoadmapView(
       place: null,
       children: nest ? node.children.map((child) => toView(child, child.kind === "checkpoint" ? "checkpoint" : "topic", sectionId)) : [],
       minutes: minutes?.get(node.id) ?? null,
-      difficulty: node.difficulty ?? null,
-      complexity: node.complexity ?? null,
+      ...(node.difficulty ? { difficulty: node.difficulty } : {}),
+      ...(node.complexity ? { complexity: node.complexity } : {}),
+      ...(node.career_level ? { careerLevel: node.career_level } : {}),
+      ...(node.jobs?.length ? { jobs: node.jobs } : {}),
     };
     byId[view.id] = view;
     return view;
@@ -190,8 +192,6 @@ export function buildRoadmapView(
       counts: EMPTY,
       estimate: NO_ESTIMATE,
       requiredEstimate: NO_ESTIMATE,
-      careerLevel: root.career_level ?? null,
-      jobs: root.jobs ?? [],
     });
   }
 

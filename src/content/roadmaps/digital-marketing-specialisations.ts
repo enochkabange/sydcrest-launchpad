@@ -60,6 +60,10 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Help a business get found on search engines without paying for each visit. You will research what people search for, improve pages, earn links and plan content that keeps working for months.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "specialist",
+      jobs: ["SEO and Content Marketing Specialist", "SEO Specialist", "Search Engine Optimization Specialist"],
       resources: [RES.seoStarter],
     },
     {
@@ -69,6 +73,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Find the words real customers type when they look for what a business sells. You will use search suggestions, related searches and trend tools that cost nothing.",
       parent: "seo-content",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.seoStarter, RES.googleTrends],
     },
     {
@@ -78,6 +84,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Work out what a searcher actually wants and match each keyword to the one page that answers it best. This stops pages competing with each other and keeps every page focused.",
       parent: "seo-content",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.helpfulContent],
     },
     {
@@ -87,6 +95,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Improve a page so both people and search engines understand it: the title, the main heading, the opening, the links and the images. You will rewrite a real page using your keyword map.",
       parent: "seo-content",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.seoStarter, RES.titleLinks],
     },
     {
@@ -96,6 +106,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Learn why links from other websites help a page and which kinds of links help or harm. You will spot honest ways a Ghanaian business can earn links.",
       parent: "seo-content",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.spamPolicies, RES.qualifyLinks],
     },
     {
@@ -105,6 +117,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Help a business show up when people nearby search for it. You will work on relevance, distance and prominence, and keep its name, address and phone number the same everywhere.",
       parent: "seo-content",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.localRanking, RES.googleBusiness],
     },
     {
@@ -114,6 +128,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Find directories, associations and local blogs where a business can be listed or mentioned. Then write short, polite outreach emails that people want to answer.",
       parent: "seo-content",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.spamPolicies],
     },
     {
@@ -123,6 +139,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Organise content around a few big topics the business knows well, with smaller pages linked to each. This shows search engines and readers that the business is a reliable source.",
       parent: "seo-content",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.helpfulContent],
     },
     {
@@ -132,6 +150,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Turn the questions customers already ask into pages, and make images and videos easy for search engines to find. Good answers to real questions are some of the most useful content a small business can publish.",
       parent: "seo-content",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.imageSeo, RES.videoSeo],
     },
     {
@@ -141,6 +161,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Bring keywords, pages, links and content together in a calendar and a one page strategy. This is the plan you present at the end of the specialisation.",
       parent: "seo-content",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.gscHelp],
     },
 
@@ -152,6 +174,10 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Go beyond posting to run paid campaigns, make short videos that tell a story and grow a loyal community. This specialisation suits people who enjoy people, pictures and quick feedback.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "specialist",
+      jobs: ["Social Media Manager / Digital Marketer", "Digital Ads and Social Media Specialist", "Social Media Team Lead"],
       resources: [RES.metaLearn],
     },
     {
@@ -161,6 +187,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Learn how a social ad campaign is built in three layers and which objective fits which goal. Choosing the right objective is the first decision that shapes everything after it.",
       parent: "social-media-marketing",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.metaLearn, RES.metaObjectives],
     },
     {
@@ -170,6 +198,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Reach the right people with location, interest, custom and lookalike audiences, or let the platform find them. You will learn when to narrow an audience and when to leave it broad.",
       parent: "social-media-marketing",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.metaAdsHelp],
     },
     {
@@ -179,6 +209,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Set a budget and schedule in cedis, then test one change at a time to learn what works. You will plan a full mock campaign with a defined audience and budget.",
       parent: "social-media-marketing",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.metaAdsHelp],
     },
     {
@@ -188,6 +220,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Use a simple story shape so people stop scrolling, care and act. Real customers and real moments from the business make the strongest stories.",
       parent: "social-media-marketing",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.lfCommunication],
     },
     {
@@ -197,6 +231,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Plan a 30 second promo shot by shot, then film it with the camera you already have. Good light, steady shots and clear sound matter more than expensive equipment.",
       parent: "social-media-marketing",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.youtubeShorts],
     },
     {
@@ -206,6 +242,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Cut your clips into a tight video, add captions and text, and publish it in the right shape for each platform. Captions help people who watch without sound and people who read better than they listen.",
       parent: "social-media-marketing",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.lfCanva, RES.youtubeShorts],
     },
     {
@@ -215,6 +253,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Turn followers into a community that talks, helps each other and comes back. You will set a purpose, simple rules and regular rituals for a group or page.",
       parent: "social-media-marketing",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.whatsappFaq],
     },
     {
@@ -224,6 +264,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Find local creators whose audiences trust them and match the business. You will check that their followers are real and that their values fit the brand.",
       parent: "social-media-marketing",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
       resources: [RES.igPaidPartnership],
     },
     {
@@ -233,6 +275,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Write a clear collaboration proposal, agree what each side does, and make sure paid posts are labelled honestly. Then measure what the collaboration brought in.",
       parent: "social-media-marketing",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.igPaidPartnership, RES.tiktokDisclosure],
     },
 
@@ -244,6 +288,10 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Put a business in front of people at the moment they search for what it sells. You will learn how search ads work, build a campaign and manage its budget responsibly.",
       parent: null,
       optional: false,
+      difficulty: "intermediate",
+      complexity: 2,
+      careerLevel: "specialist",
+      jobs: ["Digital Ads and Social Media Specialist", "Social Media Manager / Digital Marketer"],
       resources: [RES.adsHelp, RES.skillshop],
     },
     {
@@ -253,6 +301,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "See what happens in the moment between a search and an ad appearing. You will learn why a relevant ad can beat a bigger bid.",
       parent: "google-ads",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.adRank, RES.qualityScore],
     },
     {
@@ -262,6 +312,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Compare the main campaign types and match each to a business goal. Search campaigns are the best place for a beginner to start.",
       parent: "google-ads",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.campaignTypes],
     },
     {
@@ -271,6 +323,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Organise an account into campaigns, ad groups, keywords and ads so it is easy to manage and measure. A tidy structure makes every later decision easier.",
       parent: "google-ads",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.adsHelp],
     },
     {
@@ -280,6 +334,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Choose keywords that show buying intent and control which searches trigger your ads. Negative keywords stop money being spent on searches that will never buy.",
       parent: "google-ads",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.matchTypes],
     },
     {
@@ -289,6 +345,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Write headlines and descriptions that the system can combine into many versions of an ad. You will write three complete ads for a mock business.",
       parent: "google-ads",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.rsaHelp],
     },
     {
@@ -298,6 +356,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Add extra information such as a phone number or more links, and make sure the page people land on keeps the ad's promise. A great ad that lands on a poor page wastes money.",
       parent: "google-ads",
       optional: false,
+      difficulty: "intermediate",
+      complexity: 3,
       resources: [RES.qualityScore],
     },
     {
@@ -307,6 +367,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Set a daily budget in cedis that the owner can afford and choose a bid strategy that fits the goal. You will understand how daily and monthly spending limits work.",
       parent: "google-ads",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.adsBudget, RES.bidStrategies],
     },
     {
@@ -316,6 +378,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Read the key numbers in a campaign report and what each one tells you. The search terms report shows the real words people typed before they clicked.",
       parent: "google-ads",
       optional: false,
+      difficulty: "advanced",
+      complexity: 4,
       resources: [RES.adsHelp],
     },
     {
@@ -325,6 +389,8 @@ export const digitalMarketingSpecialisations: RoadmapDraft = {
         "Use the data to cut waste, adjust bids and test better ads, one change at a time. You will write clear recommendations an owner can approve.",
       parent: "google-ads",
       optional: false,
+      difficulty: "advanced",
+      complexity: 5,
       resources: [RES.adsHelp],
     },
   ],

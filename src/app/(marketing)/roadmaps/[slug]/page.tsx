@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { SectionAccent } from "@/components/brand/illustrations";
 import { ContinueBar } from "@/components/roadmaps/continue-bar";
 import { RoadmapProgress } from "@/components/roadmaps/progress";
+import { RoadmapCareerLevels } from "@/components/roadmaps/roadmap-career-levels";
 import { ShareButton } from "@/components/roadmaps/share-button";
 import { TrackLinks } from "@/components/roadmaps/track-links";
 import { ROADMAP_VIEWS } from "@/components/roadmaps/views/registry";
@@ -133,6 +134,8 @@ async function Roadmap({ params }: Pick<PageProps<"/roadmaps/[slug]">, "params">
           )}
         </div>
       </section>
+
+      <RoadmapCareerLevels sections={view.sections} trackTitle={roadmap.title} />
 
       <TrackLinks links={links} title={roadmap.title} />
     </Container>
