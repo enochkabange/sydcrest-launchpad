@@ -4,6 +4,9 @@ import { refresh } from "next/cache";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { track } from "@/lib/analytics/track";
+import { achievementShareTarget } from "@/lib/share/card";
+import { biggestMilestone, sectionIdOf } from "@/lib/share/milestones";
+import { SITE_URL } from "@/lib/site";
 import {
   parseAnswers,
   parseQuestions,
@@ -31,20 +34,47 @@ function friendly(code: string | undefined, fallback: string) {
 async function readUnlocked(supabase: Awaited<ReturnType<typeof createClient>>, userId: string, nodeId: string) {
   const { data: node } = await supabase
     .from("roadmap_nodes")
-    .select("roadmap_id, roadmaps(slug)")
+    .select("roadmap_id, roadmaps(slug, title)")
     .eq("id", nodeId)
     .single();
-  const refs = [nodeId, node?.roadmap_id].filter((r): r is string => !!r);
+  const roadmapId = node?.roadmap_id ?? null;
+  const [{ data: tree }, { data: profile }] = await Promise.all([
+    roadmapId
+      ? supabase.from("roadmap_nodes").select("id, parent_id, kind, title").eq("roadmap_id", roadmapId)
+      : Promise.resolve({ data: [] as { id: string; parent_id: string | null; kind: string | null; title: string }[] }),
+    supabase.from("profiles").select("is_public").eq("id", userId).single(),
+  ]);
+  const nodes = tree ?? [];
+  const sectionId = sectionIdOf(nodes, nodeId);
+  const refs = [nodeId, sectionId, roadmapId].filter((r): r is string => !!r);
   const { data } = await supabase
     .from("achievements")
-    .select("type, ref_id")
+    .select("id, type, ref_id, created_at")
     .eq("profile_id", userId)
-    .in("type", ["roadmap_node_completed", "roadmap_completed"])
+    .in("type", ["roadmap_node_completed", "section_completed", "roadmap_completed"])
     .in("ref_id", refs);
+  const rows = data ?? [];
+  const best = biggestMilestone(rows, { nodeId, sectionId, roadmapId });
+  const titleOf = (id: string | null) => nodes.find((n) => n.id === id)?.title ?? null;
+  const roadmapTitle = node?.roadmaps?.title ?? null;
+  const share = best
+    ? achievementShareTarget(
+        best.id,
+        {
+          ...best,
+          title: best.type === "roadmap_completed" ? roadmapTitle : titleOf(best.ref_id),
+          roadmapTitle,
+        },
+        SITE_URL,
+      )
+    : null;
   return {
     unlocked: {
-      node: !!data?.some((a) => a.type === "roadmap_node_completed" && a.ref_id === nodeId),
-      roadmap: !!data?.some((a) => a.type === "roadmap_completed" && a.ref_id === node?.roadmap_id),
+      node: rows.some((a) => a.type === "roadmap_node_completed" && a.ref_id === nodeId),
+      section: rows.some((a) => a.type === "section_completed" && a.ref_id === sectionId),
+      roadmap: rows.some((a) => a.type === "roadmap_completed" && a.ref_id === roadmapId),
+      share,
+      isPublic: profile?.is_public ?? false,
     },
     roadmapSlug: node?.roadmaps?.slug ?? "",
   };
@@ -132,5 +162,6 @@ export async function markComplete(_prev: CompletionState, form: FormData): Prom
     await track("node_completed", { roadmap: roadmapSlug, node_id: nodeId, via: "self" }, { profileId: user.id });
   }
   refresh();
-  return { unlocked, at: Date.now() };
+  // Marking by hand is personal tracking: it never offers a share card.
+  return { unlocked: { ...unlocked, share: null }, at: Date.now() };
 }

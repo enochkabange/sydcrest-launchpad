@@ -5,6 +5,7 @@ import { signOut } from "@/app/(auth)/actions";
 import { ReportOutcomeCard } from "@/components/outcomes/report-outcome-card";
 import { Button } from "@/components/ui/button";
 import { MainWithRail } from "@/components/ui/layout";
+import { MilestonesSection } from "./milestones-section";
 import { ProfileForm } from "./profile-form";
 import { PublicProfilePreview } from "./public-profile-preview";
 import { PublicProfileSection } from "./public-profile-section";
@@ -53,6 +54,9 @@ export default function ProfilePage() {
         </Suspense>
         <Suspense fallback={<div className="h-96 animate-skeleton rounded-lg bg-surface-sunken" />}>
           <PublicProfileSection />
+        </Suspense>
+        <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>
+          <MilestonesSection />
         </Suspense>
         <ReportOutcomeCard />
         {/* Phones have no sidebar, so sign out lives here too. */}

@@ -67,6 +67,7 @@ export function parsePublicProfile(form: FormData) {
 export const ACHIEVEMENT_LABELS: Record<string, string> = {
   roadmap_node_completed: "Completed a topic",
   roadmap_completed: "Completed a roadmap",
+  section_completed: "Completed a section",
   streak: "Learning streak",
   track_chosen: "Chose a track",
   path_personalized: "Got a personal learning plan",
@@ -77,6 +78,7 @@ export function describeAchievement(type: string, refId: string | null, title?: 
   if (type === "streak" && refId) return `${refId} day learning streak`;
   if (type === "roadmap_node_completed" && title) return `Completed ${title}`;
   if (type === "roadmap_completed" && title) return `Completed the ${title} roadmap`;
+  if (type === "section_completed" && title) return `Completed the ${title} section`;
   return ACHIEVEMENT_LABELS[type] ?? "Achievement";
 }
 
