@@ -2386,6 +2386,7 @@ export type Database = {
           headline: string | null
           id: string
           is_public: boolean
+          milestone_posts: boolean
           phone: string | null
           public_slug: string | null
           region: string | null
@@ -2403,6 +2404,7 @@ export type Database = {
           headline?: string | null
           id: string
           is_public?: boolean
+          milestone_posts?: boolean
           phone?: string | null
           public_slug?: string | null
           region?: string | null
@@ -2420,6 +2422,7 @@ export type Database = {
           headline?: string | null
           id?: string
           is_public?: boolean
+          milestone_posts?: boolean
           phone?: string | null
           public_slug?: string | null
           region?: string | null

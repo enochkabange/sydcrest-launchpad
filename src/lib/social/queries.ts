@@ -53,18 +53,35 @@ export const getPublicStats = cache(async (profileId: string): Promise<PublicSta
 
 type AchievementRow = { id: string; profile_id: string; type: string; ref_id: string | null; created_at: string };
 
-/** Titles of the topics and roadmaps achievements point at (published ones only, via RLS). */
+/**
+ * Titles of the topics, sections and roadmaps achievements point at, and the
+ * roadmap a topic or section belongs to (published ones only, via RLS).
+ */
 async function titlesFor(rows: AchievementRow[]) {
   const supabase = await createPublicClient();
-  const ids = (type: string) =>
-    [...new Set(rows.filter((r) => r.type === type && r.ref_id && UUID.test(r.ref_id)).map((r) => r.ref_id!))];
-  const nodeIds = ids("roadmap_node_completed");
+  const ids = (...types: string[]) =>
+    [...new Set(rows.filter((r) => types.includes(r.type) && r.ref_id && UUID.test(r.ref_id)).map((r) => r.ref_id!))];
+  const nodeIds = ids("roadmap_node_completed", "section_completed");
   const roadmapIds = ids("roadmap_completed");
   const [nodes, roadmaps] = await Promise.all([
-    nodeIds.length ? supabase.from("roadmap_nodes").select("id, title").in("id", nodeIds) : { data: [] },
+    nodeIds.length ? supabase.from("roadmap_nodes").select("id, title, roadmaps(title)").in("id", nodeIds) : { data: [] },
     roadmapIds.length ? supabase.from("roadmaps").select("id, title").in("id", roadmapIds) : { data: [] },
   ]);
-  return new Map([...(nodes.data ?? []), ...(roadmaps.data ?? [])].map((r) => [r.id, r.title]));
+  const titles = new Map<string, { title: string; roadmapTitle: string | null }>();
+  for (const n of nodes.data ?? []) titles.set(n.id, { title: n.title, roadmapTitle: n.roadmaps?.title ?? null });
+  for (const r of roadmaps.data ?? []) titles.set(r.id, { title: r.title, roadmapTitle: null });
+  return titles;
+}
+
+function withTitle<T extends AchievementRow>(row: T, titles: Awaited<ReturnType<typeof titlesFor>>) {
+  const found = row.ref_id ? titles.get(row.ref_id) : undefined;
+  return { ...row, title: found?.title ?? null, roadmapTitle: found?.roadmapTitle ?? null };
+}
+
+/** Adds the topic, section or roadmap title (and roadmap) to achievement rows. */
+export async function withAchievementTitles<T extends AchievementRow>(rows: T[]) {
+  const titles = await titlesFor(rows);
+  return rows.map((r) => withTitle(r, titles));
 }
 
 /** Recent achievements of a public profile. RLS returns none for private ones. */
@@ -78,7 +95,7 @@ export async function getPublicAchievements(profileId: string, limit = 12) {
     .limit(limit);
   const rows = data ?? [];
   const titles = await titlesFor(rows);
-  return rows.map((r) => ({ ...r, title: r.ref_id ? (titles.get(r.ref_id) ?? null) : null }));
+  return rows.map((r) => withTitle(r, titles));
 }
 
 /** One achievement with its owner, only when the owner's profile is public. */
@@ -94,5 +111,5 @@ export const getSharedAchievement = cache(async (id: string) => {
   const owner = await getPublicProfileById(data.profile_id);
   if (!owner) return null;
   const titles = await titlesFor([data]);
-  return { achievement: { ...data, title: data.ref_id ? (titles.get(data.ref_id) ?? null) : null }, owner };
+  return { achievement: withTitle(data, titles), owner };
 });

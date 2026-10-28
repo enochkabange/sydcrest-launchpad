@@ -1,22 +1,8 @@
 import { ImageResponse } from "next/og";
 import { Mark } from "@/components/marketing/og-card";
+import { BRAND } from "@/lib/share/brand";
 
-/**
- * Generated images for certificates (next/og). Satori cannot read CSS custom
- * properties, so these are the brand tokens from src/styles/tokens.css by
- * value: keep them in step with --color-blue-*, --color-orange and
- * --color-yellow there.
- */
-export const BRAND = {
-  blue500: "#1C75BB",
-  blue800: "#124E7E",
-  blue900: "#0F406A",
-  blue100: "#E1EDF6",
-  ink: "#211D1D",
-  orange: "#F79020",
-  yellow: "#F1EF1E",
-  white: "#FFFFFF",
-} as const;
+// Generated images for certificates (next/og), in the brand tokens from src/lib/share/brand.ts.
 
 function fit(text: string, max: number) {
   return text.length > max ? `${text.slice(0, max - 1).trimEnd()}…` : text;

@@ -1,3 +1,4 @@
+import type { ShareTarget } from "@/lib/share/card";
 /**
  * Shapes for the checkpoint quiz. Questions come from node_quiz (no answers
  * there); grading is done by the database (submit_node_quiz), which returns a
@@ -54,7 +55,15 @@ export function parseResults(json: unknown): Record<string, boolean> {
 }
 
 /** Which achievements the database holds for a completed node, read back after completion. */
-export type Unlocked = { node: boolean; roadmap: boolean };
+export type Unlocked = {
+  node: boolean;
+  roadmap: boolean;
+  section?: boolean;
+  /** The biggest of them as a share card, when there is one. */
+  share?: ShareTarget | null;
+  /** Cards need a public profile (they show only what it shows). */
+  isPublic?: boolean;
+};
 
 /** State returned by the submit and mark complete server actions. */
 export type CompletionState = {
