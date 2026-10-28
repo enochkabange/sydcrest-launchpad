@@ -161,7 +161,7 @@ A week later, after the other lessons in this section, he checks again. He has m
         "Connect to WiFi and mobile data, and use a computer's basics",
         "Copy and paste text and take a screenshot",
       ],
-      explanation_md: `Every app on a smartphone is controlled with the same few movements, and a computer has its own matching set. Once these feel natural, you can learn any new app quickly, whether it is a work WhatsApp group, a sales app at a shop or a survey app an NGO gives you in the field. Employers notice when someone handles a phone or a computer calmly and confidently.
+      explanation_md: `Every app on a smartphone is controlled with the same few movements, and a computer has its own matching set. Once these feel natural, you can learn any new app quickly, whether it is a work WhatsApp group, a sales app at a shop or a survey app an NGO gives you in the field. Employers notice when someone handles a device calmly.
 
 ## The basic movements on a phone
 
@@ -178,11 +178,13 @@ Most Android phones have three controls at the bottom of the screen, or gestures
 * **Home** takes you to your main screen from anywhere.
 * **Recent apps** shows the apps you have open, so you can switch between them or swipe them away.
 
-If you ever feel lost inside an app, press Home. Nothing is lost, and you can start again.
+On an iPhone, swipe up from the bottom edge to go Home, or swipe up and pause to see recent apps. Many apps have a Back arrow at the top left.
+
+If you ever feel lost inside an app, go Home. Nothing is lost, and you can start again.
 
 ## WiFi and mobile data
 
-Swipe down from the very top of the screen. You will see a panel of quick settings with small icons.
+Swipe down from the very top of the screen. You will see a panel of quick settings with small icons. On an iPhone, swipe down from the top right corner.
 
 * The **WiFi** icon looks like a fan of curved lines. Tap it to turn WiFi on, then choose a network and type its password.
 * The **Mobile data** icon is often two small arrows. Tap it to turn your bundle on or off.
@@ -223,7 +225,7 @@ A screenshot is a picture of exactly what is on your screen. It is useful for sh
 * On Windows, press the **Windows key, Shift and S** together, then drag over the part of the screen you want.
 * On a Mac, press **Command, Shift and 4**, then drag.
 
-The picture goes into your Gallery, Photos or Screenshots folder.
+On a phone, it goes into your Gallery or Photos. On Windows, look in Pictures, then Screenshots. On a Mac, it appears on the desktop.
 
 ## When something goes wrong
 
@@ -442,12 +444,12 @@ She taps the PDF and it downloads. Her phone also opens apps faster than before.
           {
             prompt: "What usually happens when a device's storage is almost full?",
             options: [
+              "The device slows down and new files may not save",
               "The battery lasts longer",
               "Data bundles become cheaper",
-              "The device slows down and new files may not save",
               "WhatsApp deletes your oldest chats to make room automatically",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "A full device slows down, apps crash and new files will not save.",
           },
           {
@@ -476,11 +478,11 @@ She taps the PDF and it downloads. Her phone also opens apps faster than before.
             prompt: "When should you install phone, computer and app updates?",
             options: [
               "Never, because they are risky",
-              "Only when the phone stops working",
               "On WiFi, so they do not finish your bundle",
+              "Only when the phone stops working",
               "Only on mobile data at night",
             ],
-            answer_index: 2,
+            answer_index: 1,
             explanation: "Updates fix problems and security holes, and WiFi stops them using your bundle.",
           },
         ],
@@ -503,7 +505,7 @@ WiFi does not use your bundle. Places that may have WiFi include some schools, l
 
 ## Stop apps eating data in the background
 
-* **Data saver.** In Settings, search for **Data saver** and turn it on. It stops many apps from using data when you are not looking at them.
+* **Data saver.** In Settings, search for **Data saver** and turn it on. It stops many apps from using data when you are not looking at them. On an iPhone, the same idea is called **Low Data Mode**.
 * **App updates.** On an Android phone, open the Play Store and go to its settings. Find the option for updating apps automatically and choose **WiFi only**.
 * **WhatsApp downloads.** In WhatsApp's Settings, look for **Storage and data**. There you can choose when photos, audio, videos and documents download by themselves: only on WiFi, or never. You can still tap any file to download it when you need it.
 * **Computers on a hotspot.** A laptop connected to your phone's hotspot can finish a bundle fast, because computers download large updates. On Windows, open the settings for that WiFi network and turn on **Metered connection**, which holds back many updates and background downloads. On a Mac, look in the WiFi settings for a similar low data option.
@@ -516,7 +518,7 @@ WiFi does not use your bundle. Places that may have WiFi include some schools, l
 
 ## Know where your data goes
 
-In **Settings**, search for **Data usage**. This works on most phones and on Windows computers. You will see which apps used the most data this month. If something surprises you, restrict it or delete it.
+In **Settings**, search for **Data usage**. This works on most Android phones and on Windows computers. On an iPhone, search for **Mobile data** instead. You will see which apps used the most data this month. If something surprises you, restrict it or delete it.
 
 On an Android phone you can usually go one step further. Open Settings, then Apps, choose the app and look for **Mobile data** or **Data usage**. Turn off **Background data** for apps that do not need to work when you are not using them, such as games or shopping apps. Leave it on for WhatsApp and your email, or you may miss messages.
 
@@ -643,7 +645,7 @@ His bundle now lasts much longer. He spends the money he saves on transport to h
         "Check an app before you install it",
         "Review app permissions and clean up",
       ],
-      explanation_md: `At work you may be asked to install an app: a sales app, a delivery tracking app, or a survey app such as Kobo Collect for an NGO field job. Knowing how to install apps safely, and how to spot a bad one, protects your phone or computer, your money and your employer's information.
+      explanation_md: `At work you may be asked to install an app: a sales app, a delivery tracking app, or a survey app such as KoboCollect for an NGO field job. Knowing how to install apps safely, and how to spot a bad one, protects your phone or computer, your money and your employer's information.
 
 ## Get apps from the official store
 
@@ -703,7 +705,7 @@ Android phones have a setting, often called **Install unknown apps**, that allow
 Safe habits like these are what employers mean when they ask for someone who is "comfortable with smartphones".`,
       workedExample_md: `**Hawa installs a survey app for a field job**
 
-Hawa gets work as a temporary enumerator for a household survey near Wa. On her first morning, her supervisor posts in the team WhatsApp group: "Install the survey app from the Play Store before training."
+Hawa gets work as a temporary enumerator, someone who asks survey questions and records the answers, for a household survey near Wa. On her first morning, her supervisor posts in the team WhatsApp group: "Install the survey app from the Play Store before training."
 
 1. Hawa waits until she reaches the district office, which has WiFi.
 2. She opens the Play Store and types the exact app name the supervisor wrote.
@@ -799,7 +801,7 @@ Hawa finishes training with a working app and a phone that is still safe.`,
 
     "communicating-at-work": {
       outcomes: [
-        "Tell a friendly message from a professional one",
+        "Tell the difference between a friendly message and a professional one",
         "Explain why this matters for the DMP cohort",
         "Check how professional your messages are",
         "Use four habits that work on every work tool",
@@ -1169,7 +1171,7 @@ Some shops use **WhatsApp Business**, a separate free app with a business profil
 Many offices keep WhatsApp open on a computer, because typing is faster and files are easier to attach. It is called **WhatsApp Web** in a browser, and there is also a desktop app. Both link to the account on your phone.
 
 1. On the computer, open the official WhatsApp website or desktop app. A square code, called a QR code, appears.
-2. On your phone, open WhatsApp's settings and look for **Linked devices**, then **Link a device**.
+2. On your phone, find **Linked devices** in WhatsApp. On Android it is in the menu (the three dots), and on an iPhone it is in Settings. Tap **Link a device**.
 3. Point your phone's camera at the code on the computer screen. Your chats appear on the computer.
 4. When you finish on a computer that is not yours, log out. You can do it on the computer, or from Linked devices on your phone.
 
@@ -1203,7 +1205,7 @@ Clear, polite and complete. The whole sale took five messages.`,
         { term: "Send as Document", definition: "Attaching a file through the Document option, which keeps it sharp and keeps its file name." },
         { term: "Voice note", definition: "A short recorded audio message. Quick to send, but hard to search later." },
         { term: "WhatsApp Web", definition: "WhatsApp in a computer's browser, linked to your phone by scanning a QR code." },
-        { term: "Linked devices", definition: "The WhatsApp setting that shows every computer logged in to your account, where you can log them out." },
+        { term: "Linked devices", definition: "The WhatsApp page that shows every computer logged in to your account, where you can log them out." },
         { term: "Starred message", definition: "A message you mark so you can find it quickly later." },
         { term: "WhatsApp Business", definition: "A separate free app for businesses, with a business profile, quick replies and labels." },
       ],
@@ -2256,7 +2258,7 @@ Be careful with WhatsApp status and Facebook posts. A photo of a new ID card or 
 
 * **Screen lock.** Use a PIN, pattern, password or fingerprint that only you know, on your phone and on your own computer.
 * **Sign out.** On a shared phone or computer, sign out of email and other accounts when you finish, or use a separate account for yourself if the device allows it. Many Android phones support more than one user profile, and Windows and Mac computers let each person have their own user account.
-* **Private browsing.** In Chrome, an Incognito tab does not keep a record of the sites you visited after you close it. It does not hide what you do from the websites themselves, your network or your employer, but it helps on shared devices.
+* **Private browsing.** Most browsers have a private mode, called Incognito in Chrome. A private or Incognito tab does not keep a record of the sites you visited after you close it. It does not hide what you do from the websites themselves, your network or your employer, but it helps on shared devices.
 * **Do not save passwords** in the browser on a phone or computer that is not yours.
 * **App lock.** Some phones and apps, including WhatsApp, let you lock individual apps with your fingerprint or a PIN.
 
@@ -2556,7 +2558,7 @@ A file called "IMG_20251003_0912" tells nobody anything. A file called "Hawa Iss
 
 A crooked, dark photo of a certificate looks careless. A scan looks neat.
 
-* The **Google Drive** app on Android has a scan tool. Look for the **camera** or **Scan** button in the app. Point the camera at the document, take the photo, and the app helps you crop it and save it as a PDF. Some phone camera apps also have a document scan mode. If you only have a computer, the scanner on a printer at a business centre or office does the same job.
+* The **Google Drive** app on Android has a scan tool. Look for the **camera** or **Scan** button in the app. Point the camera at the document, take the photo, and the app helps you crop it and save it as a PDF. On an iPhone, the Notes app and the Files app can scan documents too. Some phone camera apps also have a document scan mode. If you only have a computer, the scanner on a printer at a business centre or office does the same job.
 * Place the paper on a dark, flat surface in good daylight.
 * Make sure all four corners are visible and the text is sharp.
 * Check the result before you save. Retake it if anything is cut off or blurry.
@@ -2700,7 +2702,7 @@ The employer replies that the copy is very clear. Because it is in Drive, Sumail
         "Explain how forms are used in field work",
         "Write long answers safely and fix a mistake after submitting",
       ],
-      explanation_md: `Online forms are everywhere: job applications, course registrations, scholarship applications, NGO surveys and customer orders. Field officer and enumerator jobs with NGOs in northern Ghana often involve collecting survey answers on a phone or tablet using apps such as Google Forms or Kobo Collect. Office and customer service jobs involve entering customer details into systems. In every case, accuracy is the skill employers want.
+      explanation_md: `Online forms are everywhere: job applications, course registrations, scholarship applications, NGO surveys and customer orders. Field officer and enumerator jobs with NGOs in northern Ghana often involve collecting survey answers on a phone or tablet using apps such as Google Forms or KoboCollect. Office and customer service jobs involve entering customer details into systems. In every case, accuracy is the skill employers want.
 
 ## Parts of a form
 
@@ -2726,7 +2728,7 @@ A small red star (an asterisk) next to a question usually means it is **required
 
 ## Forms in field work
 
-Survey apps like Kobo Collect let field staff fill in forms even without network, then send them later when there is a connection. The rules are the same: ask each question exactly as written, record the answer exactly as given, and check before you send it. A survey with wrong data can lead an NGO to the wrong decisions about a community.
+Survey apps like KoboCollect let field staff fill in forms even without network, then send them later when there is a connection. The rules are the same: ask each question exactly as written, record the answer exactly as given, and check before you send it. A survey with wrong data can lead an NGO to the wrong decisions about a community.
 
 ## Long answers: write them first
 
@@ -2767,7 +2769,7 @@ The next week the programme calls him on the number he checked so carefully.`,
         { term: "Checkbox", definition: "A small square you tick. You can usually tick more than one." },
         { term: "Confirmation message", definition: "The message a form shows after it is submitted. A screenshot of it is your proof." },
         { term: "Autofill", definition: "A browser feature that fills in saved details such as your name and phone number." },
-        { term: "Survey app", definition: "An app such as Kobo Collect used to fill in survey forms in the field, even offline." },
+        { term: "Survey app", definition: "An app such as KoboCollect used to fill in survey forms in the field, even offline." },
       ],
       commonMistakes: [
         "Starting to type before reading the whole form",
@@ -2829,7 +2831,7 @@ The next week the programme calls him on the number he checked so carefully.`,
             explanation: "A single wrong digit makes the number useless.",
           },
           {
-            prompt: "What does the lesson say about survey apps like Kobo Collect?",
+            prompt: "What does the lesson say about survey apps like KoboCollect?",
             options: [
               "They only work in Accra",
               "They replace paper forms but need network for every question",
@@ -4593,7 +4595,7 @@ He applies with confidence, and keeps the checklist as evidence of his progress.
 
 ## Before you apply
 
-* **Use the official page.** On the SydCrest website, open the **Programme** page. It explains the cohort and has a waitlist form. Join the waitlist there. The pilot cohort is free, so be careful of anyone who asks you to pay a fee to "secure" a seat for you. Use your scam spotting skills.
+* **Use the official page.** On the SydCrest website, open the **Programme** page. It explains the cohort and gives you two choices. **Apply for a seat** asks you to create a free SydCrest account, then fill in a short application form. You can follow your application from your account. **Join the waitlist** is for people who are not ready to apply yet. The pilot cohort is free, so be careful of anyone who asks you to pay a fee to "secure" a seat for you. Use your scam spotting skills.
 * **Read all the instructions.** Read the Programme page and any messages SydCrest sends you. Note any deadline and what you need to prepare.
 * **Prepare your details.** Your professional email address, your phone number and any documents asked for, scanned clearly and named properly.
 * **Check your time.** The cohort runs for twelve weeks with weekly assignments. Think honestly about the hours you can give each week, and plan around work, family and farming seasons.
@@ -4611,11 +4613,11 @@ Specific examples are more convincing than big promises. "I practise typing for 
 
 ## Fill in the form carefully
 
-Use everything from the online forms lesson when you fill in the waitlist form and any form that follows. Read the whole form first, check every name and number, review before submitting, and take a screenshot of the confirmation.
+Use everything from the online forms lesson when you fill in the application form, or the waitlist form. Read the whole form first, check every name and number, review before submitting, and take a screenshot of the confirmation.
 
 ## If you do not get a seat this time
 
-The pilot cohort has only 25 seats, so not everyone who joins the waitlist will get one. That does not mean you are not good enough. Keep learning on SydCrest's free roadmaps, keep your practice log going, and watch the Programme page. If another cohort is announced, apply again with even more progress to show. Everything you learn in the meantime makes you more ready for both the cohort and for jobs.
+The pilot cohort has only 25 seats, so not everyone who applies will get one. That does not mean you are not good enough. Keep learning on SydCrest's free roadmaps, keep your practice log going, and watch the Programme page. If another cohort is announced, apply again with even more progress to show. Everything you learn in the meantime makes you more ready for both the cohort and for jobs.
 
 ## After you apply
 
@@ -4636,7 +4638,7 @@ Keep a simple list of everything you apply for: the date, what it was, the link,
 Wumpini sells provisions in Savelugu and wants a seat in the pilot cohort.
 
 1. She opens the SydCrest website herself and goes to the **Programme** page, instead of using a link someone forwarded to her.
-2. She reads the whole page and the form before typing anything, and notes what it asks.
+2. She taps **Apply for a seat** and creates her free account. Then she reads the whole form before typing anything, and notes what it asks.
 3. In her notes app she drafts her answer using the four part structure.
 4. **Who she is:** "My name is Wumpini Alhassan from Savelugu. I sell provisions."
 5. **Why she wants to join:** "I want to learn social media marketing to grow my sales."
@@ -4682,12 +4684,12 @@ Her final answer is four sentences long. It is short, clear and specific, and ev
             prompt: "Where should you sign up for the DMP?",
             options: [
               "From anyone who asks for a small fee to secure your seat early",
-              "The waitlist form on the SydCrest website's Programme page",
+              "The Programme page on the SydCrest website",
               "In a random forwarded WhatsApp message",
               "From an unknown caller",
             ],
             answer_index: 1,
-            explanation: "The official waitlist is on SydCrest's Programme page, and the pilot is free, so a fee request is a warning sign.",
+            explanation: "The application and the waitlist are both on SydCrest's Programme page, and the pilot is free, so a fee request is a warning sign.",
           },
           {
             prompt: "Which sentence is more convincing in an application?",
