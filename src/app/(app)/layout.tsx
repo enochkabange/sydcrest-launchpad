@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { AppSidebar, AppTopBar, PhoneTabBar } from "@/components/app-shell/shell";
 import { LegalLinks } from "@/components/app-shell/legal-links";
+import { SkipLink } from "@/components/app-shell/skip-link";
 import { PageViewTracker } from "@/lib/analytics/page-view-tracker";
 
 /**
@@ -11,9 +12,7 @@ import { PageViewTracker } from "@/lib/analytics/page-view-tracker";
 export default function AppLayout({ children }: LayoutProps<"/">) {
   return (
     <div className="flex flex-1">
-      <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-20 focus:rounded-md focus:bg-surface focus:px-3 focus:py-2">
-        Skip to content
-      </a>
+      <SkipLink />
       <AppSidebar />
       <div className="flex min-w-0 flex-1 flex-col">
         <AppTopBar />

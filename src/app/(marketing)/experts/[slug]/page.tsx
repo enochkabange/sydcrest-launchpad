@@ -266,7 +266,7 @@ function formatDate(iso: string, withDay = true) {
 
 function ProfileSkeleton() {
   return (
-    <div aria-busy="true" className="mt-2 flex animate-pulse flex-col gap-8">
+    <div aria-busy="true" className="mt-2 flex min-h-dvh animate-pulse flex-col gap-8">
       <div className="flex items-center gap-6">
         <div className="size-20 rounded-full bg-surface-sunken lg:size-24" />
         <div className="flex flex-1 flex-col gap-3">

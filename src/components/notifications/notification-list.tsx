@@ -102,7 +102,7 @@ function NotificationRow({ item, now }: { item: NotificationItem; now: Date }) {
         {!item.read && (
           <form action={markNotificationRead}>
             <input type="hidden" name="id" value={item.id} />
-            <Button type="submit" variant="ghost" aria-label={`Mark as read: ${item.title}`}>
+            <Button type="submit" variant="ghost" aria-label={`Mark read: ${item.title}`}>
               Mark read
             </Button>
           </form>

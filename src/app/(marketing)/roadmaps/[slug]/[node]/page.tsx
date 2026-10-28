@@ -220,7 +220,7 @@ function Subtopics({ slug, nodes }: { slug: string; nodes: TreeNode[] }) {
 
 function NodeSkeleton() {
   return (
-    <div className="mx-auto w-full max-w-page animate-pulse px-4 pt-6 pb-16 md:px-8 md:pt-10" aria-busy="true">
+    <div className="mx-auto min-h-dvh w-full max-w-page animate-pulse px-4 pt-6 pb-16 md:px-8 md:pt-10" aria-busy="true">
       <div className="h-4 w-48 rounded bg-surface-sunken" />
       <div className="mt-8 h-10 w-3/4 rounded bg-surface-sunken" />
       <div className="mt-4 h-5 w-full rounded bg-surface-sunken" />

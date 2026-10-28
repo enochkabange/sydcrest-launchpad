@@ -8,25 +8,6 @@ import type { TrackContent } from "./types";
 // parallel authors never conflict. The admin import gets its own index later.
 const files = import.meta.glob<{ default: TrackContent }>("./*.content.ts", { eager: true });
 
-// TODO(#214): the content batch PR rebalances these new tracks and removes this
-// allow-list, so every track is held to the quiz balance rule.
-const QUIZ_BALANCE_ALLOW_LIST = new Set([
-  "customer-service",
-  "excel-power-bi",
-  "digital-marketing-specialisations",
-  "social-media-management",
-  "project-management",
-  "freelancing",
-  "cloud-devops",
-  "software-testing",
-  "ai-ml",
-  "data-science",
-  "digital-sales",
-  "no-code",
-]);
-
-const stemOf = (path: string) => path.replace(/^\.\//, "").replace(/\.content\.ts$/, "");
-
 const contents = Object.entries(files).map(([path, mod]) => ({ path, content: mod.default }));
 
 describe("roadmap lesson content", () => {
@@ -52,14 +33,11 @@ describe("roadmap lesson content", () => {
         for (const slug of Object.keys(content.nodes)) expect(slugs.has(slug), `unknown node ${slug}`).toBe(true);
       });
 
-      it.skipIf(QUIZ_BALANCE_ALLOW_LIST.has(stemOf(path)))(
-        "quiz answers cannot be guessed by length or position (#214)",
-        () => {
-          const b = quizBalance(Object.values(content.nodes).flatMap((n) => n.quiz.questions));
-          expect(b.longestShare, "share of questions whose correct option is strictly the longest").toBeLessThanOrEqual(QUIZ_BALANCE_MAX);
-          expect(b.maxPositionShare, `share of correct answers in one position (${b.positions.join("/")})`).toBeLessThanOrEqual(QUIZ_BALANCE_MAX);
-        },
-      );
+      it("quiz answers cannot be guessed by length or position (#214)", () => {
+        const b = quizBalance(Object.values(content.nodes).flatMap((n) => n.quiz.questions));
+        expect(b.longestShare, "share of questions whose correct option is strictly the longest").toBeLessThanOrEqual(QUIZ_BALANCE_MAX);
+        expect(b.maxPositionShare, `share of correct answers in one position (${b.positions.join("/")})`).toBeLessThanOrEqual(QUIZ_BALANCE_MAX);
+      });
 
       for (const [slug, node] of Object.entries(content.nodes)) {
         it(`${slug} passes the content validator (shape, quiz rules, no dashes)`, () => {

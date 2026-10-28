@@ -43,10 +43,11 @@ async function Week({ params }: { params: Promise<{ n: string }> }) {
       {entry.week ? (
         <>
           <WeekHeader week={entry.week} weekNumber={n} total={home.path.length} state={stateFor(home, n)} />
-          <WeekObjectives week={entry.week} />
-          <WeekLessons week={entry.week} />
-          <WeekResource week={entry.week} />
+          <WeekObjectives week={entry.week} level={2} />
+          <WeekLessons week={entry.week} level={2} />
+          <WeekResource week={entry.week} level={2} />
           <WeekAssignment
+            level={2}
             week={entry.week}
             weekNumber={n}
             startsOn={home.cohort.startsOn}
@@ -54,7 +55,7 @@ async function Week({ params }: { params: Promise<{ n: string }> }) {
           >
             <div className="border-t border-line pt-5">
               <Suspense fallback={<SubmissionSkeleton />}>
-                <WeekSubmission weekId={entry.week.id} layout="stacked" headingLevel={4} />
+                <WeekSubmission weekId={entry.week.id} layout="stacked" headingLevel={3} />
               </Suspense>
             </div>
           </WeekAssignment>

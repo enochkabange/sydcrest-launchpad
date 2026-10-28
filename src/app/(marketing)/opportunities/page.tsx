@@ -11,14 +11,13 @@ import { AutoGrid, Container, MainWithRail } from "@/components/ui/layout";
 import Link from "@/components/ui/link";
 import { getViewer } from "@/lib/opportunities/learner";
 import {
-  accraToday,
   filterOpportunities,
   filtersQuery,
   hasActiveFilters,
   parseFilters,
   type OpportunityFilters,
 } from "@/lib/opportunities/model";
-import { getOpenOpportunities } from "@/lib/opportunities/public";
+import { getAccraToday, getOpenOpportunities } from "@/lib/opportunities/public";
 import { pageMetadata } from "@/lib/page-metadata";
 
 export const metadata = pageMetadata({
@@ -33,7 +32,9 @@ export const metadata = pageMetadata({
  * The public board (issue #159). The header is prerendered; the list reads
  * the filters from the query string inside <Suspense>, from cached open
  * posts (row level security hides drafts, closed posts and anything past its
- * deadline). Signed in extras are their own islands.
+ * deadline). Today's Accra date is cached until midnight with the posts, so
+ * the list stays prerenderable and filters on the right day. Signed in
+ * extras are their own islands.
  */
 export default function OpportunitiesPage({ searchParams }: PageProps<"/opportunities">) {
   return (
@@ -59,8 +60,10 @@ export default function OpportunitiesPage({ searchParams }: PageProps<"/opportun
 
 async function Board({ searchParams }: Pick<PageProps<"/opportunities">, "searchParams">) {
   const filters = parseFilters(await searchParams);
-  const all = await getOpenOpportunities();
-  const today = accraToday();
+  // Today comes from the same Accra midnight cache as the posts: the board
+  // may be prerendered (partial prefetching), where reading the clock
+  // directly is not allowed.
+  const [all, today] = await Promise.all([getOpenOpportunities(), getAccraToday()]);
   const results = filterOpportunities(all, filters, today);
 
   return (
@@ -200,7 +203,7 @@ async function SavedLink() {
 
 function BoardSkeleton() {
   return (
-    <div aria-busy="true" className="flex flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_22.5rem] xl:gap-12">
+    <div aria-busy="true" className="flex min-h-dvh flex-col gap-8 lg:grid lg:grid-cols-[minmax(0,1fr)_20rem] lg:gap-10 xl:grid-cols-[minmax(0,1fr)_22.5rem] xl:gap-12">
       <div className="grid gap-4 sm:grid-cols-2 lg:col-start-1 lg:row-start-1">
         {[0, 1, 2, 3].map((i) => (
           <div key={i} className="h-48 animate-skeleton rounded-lg bg-surface-sunken" />

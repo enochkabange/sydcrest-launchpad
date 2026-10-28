@@ -164,7 +164,7 @@ async function EventDetail({ params }: Pick<PageProps<"/events/[slug]">, "params
 
 function EventSkeleton() {
   return (
-    <div className="mx-auto w-full max-w-page px-4 pt-6 pb-16 md:px-8 md:pt-10" aria-busy="true">
+    <div className="mx-auto min-h-dvh w-full max-w-page px-4 pt-6 pb-16 md:px-8 md:pt-10" aria-busy="true">
       <div className="h-4 w-16 animate-skeleton rounded bg-surface-sunken" />
       <div className="mt-8 h-10 w-2/3 animate-skeleton rounded bg-surface-sunken" />
       <div className="mt-4 h-5 w-full max-w-2xl animate-skeleton rounded bg-surface-sunken" />

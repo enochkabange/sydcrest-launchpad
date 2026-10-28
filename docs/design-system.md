@@ -424,6 +424,9 @@ Non-negotiable for the pilot:
 - One focus treatment everywhere: 2px `--focus-ring` at 2px offset.
 - `prefers-reduced-motion` respected globally.
 - Form errors use `aria-invalid` + `aria-describedby`, not just red borders.
+- A skip link (`src/components/app-shell/skip-link.tsx`) is the first tab stop on every layout with navigation.
+- Loading skeletons that stand in for a whole page reserve at least the viewport height (`min-h-dvh`), so the footer never jumps when content streams in on a slow network.
+- `e2e/a11y.spec.ts` runs axe on every public page and the signed in, mentor, organisation and admin screens in both themes at 390 and 1440. Add new screens to it.
 
 ---
 

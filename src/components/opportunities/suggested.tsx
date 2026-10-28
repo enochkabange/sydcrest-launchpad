@@ -2,8 +2,8 @@ import { Sparkles } from "lucide-react";
 import { buttonClasses } from "@/components/ui/button";
 import Link from "@/components/ui/link";
 import { getMySaveMap, getPathTracks, getViewer } from "@/lib/opportunities/learner";
-import { accraToday, suggestFor, trackLabel } from "@/lib/opportunities/model";
-import { getOpenOpportunities } from "@/lib/opportunities/public";
+import { suggestFor, trackLabel } from "@/lib/opportunities/model";
+import { getAccraToday, getOpenOpportunities } from "@/lib/opportunities/public";
 import { AutoGrid } from "@/components/ui/layout";
 import { OpportunityCard } from "./opportunity-card";
 import { opportunitiesPath } from "./paths";
@@ -38,8 +38,7 @@ export async function SuggestedForYou({ variant = "section" }: { variant?: "sect
     );
   }
 
-  const [all, saves] = await Promise.all([getOpenOpportunities(), getMySaveMap()]);
-  const today = accraToday();
+  const [all, saves, today] = await Promise.all([getOpenOpportunities(), getMySaveMap(), getAccraToday()]);
   const picks = suggestFor(all, tracks, { today, exclude: saves.keys(), limit: variant === "rail" ? 3 : 4 });
   if (!picks.length) {
     if (variant === "section") return null;
