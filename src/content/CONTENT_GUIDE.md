@@ -41,7 +41,7 @@ money and data, not short on ability.
   with little data. Clear goal, steps, and what "done" looks like. Something a
   learner can show a mentor or put in a portfolio.
 - **Quiz:** 4 or 5 questions, 4 options each, exactly one clearly correct,
-  every question answerable from the explanation alone. Plausible wrong options,
+  every question answerable from the lesson text alone (the explanation or the worked example). Plausible wrong options,
   no trick wording, no "all of the above". A one sentence explanation per
   question. `answer_index` is 0 based. `pass_threshold` is a percentage from
   50 to 100: use 75 for 4 questions and 80 for 5.
@@ -84,6 +84,6 @@ phone, many use a laptop or desktop, and most switch between them.
 2. Fits the learner above; localised without being forced.
 3. Readable on any screen; within the word range; device neutral (see Devices).
 4. Practice task is doable with free tools and little data.
-5. Every quiz question answerable from the explanation; one correct answer.
+5. Every quiz question answerable from the lesson text (explanation or worked example); one correct answer.
 6. No dashes, no invented numbers, no endorsements.
 7. Provenance clean: no roadmap.sh, sources listed.
