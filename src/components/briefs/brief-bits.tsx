@@ -112,7 +112,7 @@ export function BriefCard({ brief }: { brief: Brief }) {
       <h3 className="text-h3 text-content">
         <Link
           href={`/briefs/${brief.id}`}
-          className="rounded-sm after:absolute after:inset-0 after:content-[''] focus-visible:outline-none focus-visible:after:rounded-lg focus-visible:after:ring-2 focus-visible:after:ring-blue-600"
+          className="rounded-sm after:absolute after:inset-0 after:content-[''] focus-visible:outline-none focus-visible:after:rounded-lg focus-visible:after:ring-2 focus-visible:after:ring-ring"
         >
           {brief.title}
         </Link>
