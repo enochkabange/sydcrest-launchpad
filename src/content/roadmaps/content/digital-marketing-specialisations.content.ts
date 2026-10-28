@@ -13,34 +13,76 @@ const content: TrackContent = {
     "seo-content": {
       outcomes: [
         "Describe what the SEO and content specialisation covers",
-        "Explain how search engines decide what to show",
+        "Explain how search engines crawl, index and rank pages",
+        "Name what Google Search Console shows a site owner",
         "Choose the business you will work on",
       ],
       explanation_md: `Search engine optimisation, or SEO, is the work of helping a business appear when people search for what it sells. A paid ad stops the moment the money stops. A well made page can keep bringing visitors for months or years. That is why small businesses, schools, hotels and NGOs in Ghana value someone who can make their website easier to find, and why SEO and content skills appear in many junior marketing job descriptions.
 
 ## What this specialisation covers
 
-You already met the basics of search in the Digital Marketer roadmap. Here you go deeper over three weeks, with three lessons in each.
+You already met the basics of search in the Digital Marketer roadmap. Here you go deeper over three weeks, with three or four lessons in each.
 
-* **Week 7, keywords and pages.** Keyword research with free tools, search intent and keyword mapping, and on page SEO.
-* **Week 8, links and local search.** Backlinks and trust, local SEO, and finding local listings with polite outreach.
-* **Week 9, content strategy.** Content pillars and topic clusters, FAQs with images and video, and a content calendar with a one page strategy.
+* **Week 7, keywords and pages.** Keyword research with free tools, search intent and keyword mapping, and on page SEO. The assignment is to optimise the homepage and blog post you drafted in week 4.
+* **Week 8, links and local search.** Backlinks and trust, local SEO, and finding local listings with polite outreach emails.
+* **Week 9, content strategy.** Content pillars and topic clusters, FAQs with images and video, and a content calendar with a one page strategy you present in Google Slides.
 
 ## How search engines decide
 
 A search engine has three jobs. It **crawls** the web by following links to discover pages. It **indexes** those pages by storing what each one is about. When someone searches, it **ranks** the pages it thinks best answer that search. You cannot pay a search engine to rank higher in the normal results. You can only make pages that are easy to discover, easy to understand and genuinely useful.
 
-Google says plainly that its systems try to reward helpful, reliable content written for people, not content made mainly to attract search visits. Keep that idea at the centre of everything in this specialisation. Every technique you learn is a way to make a useful page easier to find, never a trick to fool the system.
+Each job can fail in its own way, and part of your work is spotting which one. A page nobody links to, not even the site's own menu, may never be crawled. A page that is crawled can still be left out of the index if it is a near copy of another page, if it is blocked by a setting the developer added, or if it offers little of value. A page that is indexed can rank poorly because a better answer exists. When a client says "we are not on Google", ask which of the three is the problem before you change anything.
 
-## A small example
+Two simple files help crawling. A **sitemap** lists the pages a site wants found, and most website builders create one automatically. A **robots.txt** file tells crawlers which parts of a site not to visit. You rarely need to edit either at this level, but you should know they exist so you can ask the developer the right questions.
 
-Mariama runs a guesthouse in Tamale with a simple website. Visitors keep asking her on WhatsApp the same things: how far it is from the airport, whether rooms have air conditioning, and whether she accepts mobile money. Her site has a home page with a photo and a phone number, and little else.
+## Helpful content first
 
-Over three weeks, Mariama's nephew Issahaku researches what travellers search for, rewrites her home page around "guesthouse in Tamale", asks the local tourism association to list her, and writes a clear FAQ page answering the questions guests already ask. Nothing here costs money. Each step makes the site more useful to a traveller, which is exactly what search engines want to show.
+Google says plainly that its systems try to reward helpful, reliable content written for people, not content made mainly to attract search visits. Keep that idea at the centre of everything in this specialisation. Every technique you learn is a way to make a useful page easier to find, never a trick to fool the system. Tricks that once worked, such as hiding keywords in white text or copying other sites, now break Google's spam policies and can push a site out of the results.
+
+## Your measuring tool: Google Search Console
+
+**Google Search Console** is a free tool from Google for people who own or manage a website. Once the owner proves the site is theirs, it shows:
+
+* which searches the site appeared for, how often, and how many people clicked, in the Performance report;
+* which pages are in Google's index and which were left out, with a reason;
+* a URL Inspection tool that checks one page and lets you ask Google to crawl it again after you improve it.
+
+You need the owner's permission to be added as a user. You will use Search Console data in week 9 to measure progress, so ask your business early whether they have it.
+
+## How SEO is judged
+
+SEO takes patience. New or improved pages can take weeks to be crawled again and longer to settle in the rankings. Promise a careful process and honest reports, never "first place on Google", which nobody can guarantee.
 
 ## What you will be able to show
 
-By the end you will have a keyword map, an improved page, a short list of local listing opportunities with outreach emails, and a one page SEO strategy. Together they make a strong portfolio piece and the core of your week 12 capstone if you choose this path.`,
+By the end you will have a keyword map, two optimised pages, a short list of local listing opportunities with outreach emails, and a one page SEO strategy. Together they make a strong portfolio piece and the core of your week 12 capstone if you choose this path.`,
+      workedExample_md: `Mariama runs a guesthouse in Tamale with a simple website. Visitors keep asking her on WhatsApp the same things: how far it is from the airport, whether rooms have air conditioning, and whether she accepts mobile money. Her nephew Issahaku is taking the SEO specialisation and offers to help.
+
+1. **He searches her business name.** The site appears, so it is crawled and indexed. Her Google Business Profile has no photos.
+2. **He searches "guesthouse in Tamale".** Her site is nowhere on the first page. The problem is ranking, not crawling.
+3. **He reads her home page.** It has a photo, a phone number and the word "Welcome". Nothing tells a traveller or a search engine what she offers.
+4. **He asks about Search Console.** Mariama has never set it up, so he notes it as a task for the person who built her site.
+5. **He sketches a three week plan.** Week 7: research what travellers search and rewrite the home page around "guesthouse in Tamale". Week 8: ask the local tourism association to list her. Week 9: write an FAQ page answering the questions guests already ask her on WhatsApp.
+
+Nothing here costs money. Each step makes the site more useful to a traveller, which is exactly what search engines want to show.`,
+      keyTerms: [
+        { term: "Crawling", definition: "A search engine following links to discover pages on the web." },
+        { term: "Indexing", definition: "Storing what each discovered page is about so it can be shown for searches." },
+        { term: "Ranking", definition: "Ordering indexed pages for a search by how well they seem to answer it." },
+        { term: "Sitemap", definition: "A file that lists the pages a site wants search engines to find." },
+        { term: "Google Search Console", definition: "Google's free tool that shows a site owner search appearances, clicks and indexing problems." },
+      ],
+      commonMistakes: [
+        "Promising a client first place on Google, which nobody can guarantee",
+        "Changing page text when the real problem is that the page is not indexed at all",
+        "Choosing a business you cannot contact, so you cannot check facts or get approval",
+        "Treating SEO as tricks instead of making pages genuinely useful",
+      ],
+      selfCheck: [
+        "Can you explain the difference between a page that is not indexed and a page that ranks poorly?",
+        "What three things does Search Console show a site owner?",
+        "Why does SEO take longer to show results than a paid ad?",
+      ],
       practice_task_md: `**Goal:** Choose the business you will work on for the whole specialisation.
 
 **Steps:**
@@ -96,42 +138,100 @@ By the end you will have a keyword map, an improved page, a short list of local 
             answer_index: 1,
             explanation: "He answered the questions visitors were already asking Mariama on WhatsApp.",
           },
+          {
+            prompt: "Which tool does the lesson name for checking which searches a site appeared for and which pages are indexed?",
+            options: [
+              "Google Trends",
+              "Google Search Console",
+              "Google Keyword Planner",
+              "Google Analytics",
+            ],
+            answer_index: 1,
+            explanation: "Search Console shows search appearances, clicks and index status for a site the owner has verified.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "keyword-research": {
       outcomes: [
-        "Explain what a keyword is",
-        "Find keywords with free tools",
+        "Explain head and long tail keywords and common modifiers",
+        "Find keywords with free tools and customers' own words",
+        "Prioritise keywords by relevance, intent and competition",
         "Record a keyword shortlist",
       ],
-      explanation_md: `Every search starts with words. If a business describes itself one way and customers search another way, the business stays invisible. A junior SEO or content marketer is often asked first to find out which words real customers use. You can do this well with free tools and a little patience.
+      explanation_md: `Every search starts with words. If a business describes itself one way and customers search another way, the business stays invisible. A junior SEO or content marketer is often asked first to find out which words real customers use. Week 7 asks you to do exactly this for your business, and you can do it well with free tools and a little patience.
 
 ## What a keyword is
 
-A keyword is any word or phrase someone types or speaks into a search box. "Shea butter" is a short, broad keyword. "Where to buy pure shea butter in Tamale" is a longer, more specific one. Longer phrases are searched less often, but the people typing them usually know exactly what they want, and fewer businesses compete for them. For a small local business, these longer phrases are often the best place to start.
+A keyword is any word or phrase someone types or speaks into a search box. "Shea butter" is a short, broad keyword, often called a **head term**. "Where to buy pure shea butter in Tamale" is a longer, more specific one, often called a **long tail keyword**. Longer phrases are searched less often, but the people typing them usually know exactly what they want, and fewer businesses compete for them. For a small local business, these longer phrases are often the best place to start.
+
+## Modifiers tell you a lot
+
+The extra words around a product name show what the searcher wants.
+
+* **Place words:** "in Tamale", "near me", "Bolga". The person wants something nearby.
+* **Buying words:** price, order, buy, delivery, wholesale. The person is close to buying.
+* **Question words:** how, what, why, can I. The person wants to learn first.
+* **Comparison words:** best, cheap, versus, review. The person is choosing.
+* **Language and spelling variety:** Ghanaians search "kenkey" and "dokon", "Bolga" and "Bolgatanga", "chop bar" and "local restaurant". Collect every version you hear.
 
 ## Free ways to find keywords
 
 * **Search suggestions.** Start typing a phrase into a search engine and read the suggestions that drop down. They come from what people actually search. Try adding letters after your phrase, such as "shea butter a", "shea butter b", to see more.
 * **Related searches and questions.** At the bottom of a results page, and in boxes that list common questions, you will find more phrases people use.
-* **Google Trends.** Compare two or three phrases to see which is searched more and how interest changes through the year, for example in the harmattan or before Christmas. You can set the country to Ghana.
+* **Google Trends.** Compare two or three phrases to see which is searched more and how interest changes through the year, for example in the harmattan or before Christmas. You can set the country to Ghana. Trends shows relative interest, not exact numbers, and very small local phrases may show no data at all.
 * **Your customers.** Read WhatsApp chats, comments and reviews. The exact words customers use are often the best keywords of all.
 * **Competitors.** Look at the page titles and headings of businesses that already appear for your phrases.
+* **Search Console,** if the site already has it, lists the real searches the site appeared for. These are gold, because they are your own customers' words.
 
-Keyword Planner inside Google Ads gives search volume estimates, but it needs a Google Ads account with billing details completed, so this lesson does not depend on it.
+Keyword Planner inside Google Ads gives search volume estimates, but it needs a Google Ads account with billing details completed, so this lesson does not depend on it. Never add payment details just to practise.
+
+## Prioritising without exact numbers
+
+You will not have exact search volumes, and you do not need them. Score each keyword on four questions instead.
+
+1. **Relevance.** Does the business truly offer this? If not, drop it.
+2. **Intent.** Is the searcher ready to buy, still learning, or looking for one business?
+3. **Competition.** Search it. If the first page is full of national sites and big brands, a small business will struggle. If it shows small local sites, you have a chance.
+4. **Business value.** Would a visitor from this search be worth a lot to the business? A wholesale buyer of shea butter is worth more than one jar.
+
+Give each a simple high, medium or low and start with keywords that score high on relevance and value and low on competition.
 
 ## Recording what you find
 
-Keep a simple sheet with columns for the keyword, where you found it, how specific it is (broad or specific), and whether it shows someone ready to buy, still learning, or looking for a particular business. Do not chase exact numbers. Your aim is a shortlist of phrases that real customers use and that the business can honestly answer.
+Keep a simple sheet with columns for the keyword, where you found it, head or long tail, intent, competition and value. Do not chase exact numbers. Your aim is a shortlist of phrases that real customers use and that the business can honestly answer.`,
+      workedExample_md: `Fuseini helps a tailor in Wa called Amina. He wants a keyword shortlist for her week 7 pages.
 
-## A worked example
+1. **Seed phrases.** He writes "tailor in Wa", "kaba and slit" and "school uniform".
+2. **Suggestions.** Typing "tailor in Wa" shows "tailor in Wa for kaba" and "school uniform tailor Wa". Related searches show "smock sewing near me".
+3. **Customers' words.** Amina's WhatsApp messages say "sew my kaba and slit" and "batakari for wedding". He adds both.
+4. **Competition check.** "School uniform tailor Wa" shows map listings and two small local pages, so a small business can compete. "Kaba styles" shows big national fashion sites, so he marks it high competition.
+5. **Scoring.** He rates every phrase high, medium or low for relevance, intent, competition and value.
+6. **Shortlist.** He keeps eight phrases. Three show buying intent, such as "school uniform tailor Wa". Three are questions, such as "how much fabric for kaba and slit". Two are about the batakari, a strong local product.
 
-Fuseini helps a tailor in Wa called Amina. He types "tailor in Wa" and sees suggestions like "tailor in Wa for kaba" and "school uniform tailor Wa". Related searches show "smock sewing near me". He reads Amina's WhatsApp messages and finds customers often write "sew my kaba and slit" and "batakari for wedding".
-
-His shortlist has eight phrases. Three show buying intent, such as "school uniform tailor Wa". Three are questions, such as "how much fabric for kaba and slit". Two are about the batakari, a strong local product. He now knows what Amina's pages should talk about.`,
+He now knows what Amina's pages should talk about, without paying for any tool.`,
+      keyTerms: [
+        { term: "Keyword", definition: "A word or phrase someone types or speaks into a search box." },
+        { term: "Head term", definition: "A short, broad keyword such as \"shea butter\", searched often and highly competitive." },
+        { term: "Long tail keyword", definition: "A longer, specific phrase searched less often but showing clearer intent." },
+        { term: "Modifier", definition: "An extra word such as price, near me or how that shows what the searcher wants." },
+        { term: "Seed phrase", definition: "A starting phrase that describes the business, used to find more keywords." },
+        { term: "Google Trends", definition: "A free Google tool showing relative interest in searches over time and by place." },
+      ],
+      commonMistakes: [
+        "Chasing the biggest head term when a small business cannot compete for it",
+        "Ignoring the words customers actually use in messages and reviews",
+        "Treating Google Trends figures as exact search numbers",
+        "Adding payment details to an ads account just to see keyword volumes",
+        "Keeping keywords for things the business does not offer",
+      ],
+      selfCheck: [
+        "Name three modifiers and what each tells you about a searcher.",
+        "How can you judge competition for a keyword without a paid tool?",
+        "Which four questions help you prioritise keywords?",
+      ],
       practice_task_md: `**Goal:** Build a keyword shortlist of 10 to 15 phrases for your chosen business.
 
 **Steps:**
@@ -188,18 +288,30 @@ His shortlist has eight phrases. Three show buying intent, such as "school unifo
             answer_index: 2,
             explanation: "He read Amina's customer messages, which the lesson says are often the best source of keywords.",
           },
+          {
+            prompt: "You search a keyword and the first page shows only small local business sites. What does the lesson say this suggests?",
+            options: [
+              "The keyword has no searches at all",
+              "A small business has a chance to compete for it",
+              "Only big brands can rank for it, so you should drop it from your list",
+              "The keyword must be paid for with ads",
+            ],
+            answer_index: 1,
+            explanation: "The lesson's competition check says a first page of small local sites means a small business has a chance.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "search-intent": {
       outcomes: [
         "Recognise four common kinds of search intent",
-        "Learn from the search results",
+        "Read the results page to confirm intent",
+        "Spot pages competing for the same keyword",
         "Turn a shortlist into a keyword map",
       ],
-      explanation_md: `Two people can type almost the same words and want very different things. Search engines try hard to work out what each searcher wants, and they show the kind of page that fits. If your page does not match that want, it will struggle no matter how many times it uses the keyword. Matching intent is a core skill employers look for in content and SEO roles.
+      explanation_md: `Two people can type almost the same words and want very different things. Search engines try hard to work out what each searcher wants, and they show the kind of page that fits. If your page does not match that want, it will struggle no matter how many times it uses the keyword. Matching intent is a core skill employers look for in content and SEO roles, and it decides which page you optimise in the week 7 assignment.
 
 ## Four common kinds of intent
 
@@ -212,20 +324,60 @@ His shortlist has eight phrases. Three show buying intent, such as "school unifo
 
 The quickest way to check intent is to search the keyword and look at what already ranks. If the top results are all guides, searchers want to learn. If they are all shop pages or maps, searchers want to buy or visit. Search engines have already studied millions of searches, so the results page shows you what people expect.
 
+Look at more than the blue links. The results page often includes extra features, and each one is a clue:
+
+* **A map with local businesses** means people want somewhere nearby. Local SEO and a Business Profile matter most.
+* **A box of common questions** means people are still learning. A guide or FAQ can earn a place.
+* **Videos near the top** mean people want to be shown, not told. A short video could help.
+* **Shopping results with prices** mean people are ready to buy a product.
+
+## Mixed intent
+
+Some searches carry more than one intent. "Shea butter Tamale" might come from a tourist wanting to buy a jar, a trader looking for wholesale supply, or a student researching the shea industry. When the results page mixes guides, shops and maps, the search has mixed intent. Serve the intent that matters most to the business, usually the buying one, and make sure the page also links to a guide for the learners.
+
 ## Keyword mapping
 
-A keyword map is a simple table that gives every important keyword one home page on the site. Each page should have one main keyword plus a few close variations that share the same intent. Two problems disappear when you do this:
+A keyword map gives every important keyword one home page on the site. Each page should have one main keyword plus a few close variations that share the same intent. Two problems disappear when you do this:
 
-* **Pages competing with each other.** If three pages all try to rank for "school uniforms Wa", none of them is clearly the best answer.
+* **Pages competing with each other.** If three pages all try to rank for "school uniforms Wa", none of them is clearly the best answer. SEO people call this cannibalisation. The fix is to choose the strongest page, make it the home for that keyword, and change or merge the others.
 * **Keywords with no home.** If nobody wants a page for "kaba and slit prices", you discover that the site needs a new page.
 
 Your map has columns for the page (existing or new), the main keyword, supporting keywords, intent, and the one action you want the visitor to take.
 
-## A worked example
+## Mapping an existing site
 
-Fuseini takes his shortlist for Amina the tailor. He searches "how much fabric for kaba and slit" and sees guides and videos, so intent is learn. He searches "school uniform tailor Wa" and sees maps and business listings, so intent is buy or visit.
+When a site already exists, start from what is there. List every page with its current title and what it is really about. Then place your keywords against those pages first, and only create new pages for keywords that fit nowhere. This saves the owner work and keeps any page that already ranks. If an old page already gets visits from search, improve it rather than replacing it, because a brand new page starts from nothing.
 
-His map gives the home page the main keyword "tailor in Wa" with "kaba and slit tailor Wa" as support. A new page, "School uniforms", takes "school uniform tailor Wa". A new guide, "How much fabric do I need for kaba and slit?", answers the learning question and links to the order page. Each page now has one clear job.`,
+## Why this matters for the assignment
+
+The week 7 assignment asks you to optimise a homepage and a blog post. Your map tells you which keyword each one should own. The homepage usually takes the main "find" or "buy" keyword, such as "tailor in Wa". A blog post usually takes a "learn" keyword, such as "how much fabric for kaba and slit", and links to the page where people can order.`,
+      workedExample_md: `Fuseini takes his eight keyword shortlist for Amina the tailor in Wa and turns it into a map.
+
+1. **He checks the results for each keyword.** "How much fabric for kaba and slit" shows guides and videos, so intent is learn. "School uniform tailor Wa" shows a map and business listings, so intent is buy or visit.
+2. **He lists Amina's existing pages.** She has a home page and a contact page. Nothing else.
+3. **He finds cannibalisation.** Both existing pages repeat "tailor in Wa" in their titles. He makes the home page the one home for that keyword and retitles the contact page "Visit or call Amina's Tailoring".
+4. **He maps the home page.** Main keyword "tailor in Wa", supporting "kaba and slit tailor Wa". Action: message on WhatsApp.
+5. **He adds two new pages.** "School uniforms" takes "school uniform tailor Wa". A guide, "How much fabric do I need for kaba and slit?", answers the learning question and links to the order page.
+
+Each page now has one clear job, and Fuseini knows that the guide will be the blog post he optimises for the week 7 assignment.`,
+      keyTerms: [
+        { term: "Search intent", definition: "What a searcher actually wants: to learn, find a place, compare or act." },
+        { term: "Results page", definition: "The page of results a search engine shows, including maps, questions and videos." },
+        { term: "Mixed intent", definition: "A search that different people make for different reasons." },
+        { term: "Keyword map", definition: "A plan that gives each important keyword one home page on the site." },
+        { term: "Cannibalisation", definition: "Several pages on one site competing for the same keyword so none clearly wins." },
+      ],
+      commonMistakes: [
+        "Writing a sales page for a keyword where the results show only guides",
+        "Letting several pages target the same keyword",
+        "Replacing an old page that already gets search visits instead of improving it",
+        "Guessing intent instead of searching the keyword and reading the results",
+      ],
+      selfCheck: [
+        "What does a map at the top of the results tell you about a keyword?",
+        "How would you fix two pages that both target \"school uniforms Wa\"?",
+        "Which keyword should a homepage usually own, and which should a blog post own?",
+      ],
       practice_task_md: `**Goal:** Turn your keyword shortlist into a keyword map.
 
 **Steps:**
@@ -290,8 +442,9 @@ His map gives the home page the main keyword "tailor in Wa" with "kaba and slit 
     "on-page-seo": {
       outcomes: [
         "Name the main parts of a page that affect search",
-        "Write for people first",
-        "Optimise one page from a keyword map",
+        "Write titles, headings and openings for people first",
+        "Check a page for speed, mobile use and trust",
+        "Optimise a homepage and a blog post from a keyword map",
       ],
       explanation_md: `On page SEO means improving the page itself so that people and search engines understand it quickly. It is the part of SEO you control completely, and it is the task in the week 7 assignment: optimising the homepage and blog post you drafted in week 4. Employers often test it by asking a candidate to review a page and suggest changes.
 
@@ -308,18 +461,61 @@ His map gives the home page the main keyword "tailor in Wa" with "kaba and slit 
 
 ## Write for people first
 
-Repeating a keyword again and again makes a page worse to read and can count against it. Use the main keyword in the title, heading and opening, then write naturally. Answer the questions a customer would ask, include prices or how to pay where you can, and make the next step obvious.
+Repeating a keyword again and again makes a page worse to read and can count against it. Use the main keyword in the title, heading and opening, then write naturally, using the supporting keywords from your map where they fit. Answer the questions a customer would ask, include prices or how to pay where you can, and make the next step obvious.
 
-## A worked example
+## Depth that matches the intent
 
-Hawa's shea butter site has a home page titled "Home" with the heading "Welcome!!!". Abdul-Rahman rewrites it using the keyword map.
+A homepage for a "find" or "buy" keyword should be short and clear: what, where, how to order. A blog post for a "learn" keyword should fully answer the question, often with steps, a photo and a link onwards. Compare your page with the pages that rank now. If they answer five questions and yours answers one, add the missing answers in your own words. Never copy their text.
 
-* **Title:** "Pure Shea Butter in Tamale | Hawa's Women's Group"
-* **Heading:** "Pure, handmade shea butter from Tamale"
-* **Opening:** "We make unrefined shea butter by hand in Tamale and deliver across Ghana. Order on WhatsApp and pay with mobile money."
-* **Image alt text:** "Hawa scooping fresh shea butter into a jar"
+## Pages that work on any device
 
-He adds a link to the new "How to store shea butter" guide and shrinks the photos. The page now tells a visitor and a search engine exactly what it offers.`,
+Most of your visitors in Ghana will arrive on a phone, often on a slow or expensive connection, so check that:
+
+* text is readable without zooming, and buttons are big enough to tap;
+* the page loads quickly, with compressed images and no autoplaying video;
+* nothing important hides behind a pop up;
+* phone numbers and WhatsApp links work with one tap.
+
+Then check it on a laptop too. A page should feel just as clear on a wide screen.
+
+## Trust on the page
+
+Google's guidance on helpful content stresses trust. On a small business page that means a real address or landmark, a working phone number, real photos rather than stock images, prices that are current, and the name of the person who wrote a guide. These help visitors decide, and they are signs of a genuine business.
+
+## Your before and after table
+
+The most useful way to present on page work, to a mentor or a client, is a before and after table for each page: title, meta description, main heading, opening, subheadings, alt text and links, with your reason for each change. It shows your thinking, not just your result, and it lets the owner approve each change before it goes live.`,
+      workedExample_md: `Hawa's shea butter site has a home page titled "Home" with the heading "Welcome!!!". Abdul-Rahman rewrites it using the keyword map, where the home page owns "pure shea butter Tamale".
+
+1. **Title.** Before: "Home". After: "Pure Shea Butter in Tamale | Hawa's Women's Group". The keyword comes first.
+2. **Heading.** Before: "Welcome!!!". After: "Pure, handmade shea butter from Tamale".
+3. **Opening.** After: "We make unrefined shea butter by hand in Tamale and deliver across Ghana. Order on WhatsApp and pay with mobile money."
+4. **Image alt text.** Before: blank. After: "Hawa scooping fresh shea butter into a jar". He also shrinks the photo so it loads fast.
+5. **Internal link.** He adds "Read how to store shea butter in the harmattan", pointing to the guide.
+6. **Trust.** He adds the group's landmark address and a real photo of the members at work.
+7. **Approval.** He puts every change in a before and after table and asks Hawa to approve it.
+
+The page now tells a visitor and a search engine exactly what it offers.`,
+      keyTerms: [
+        { term: "Title element", definition: "The page title in the code, usually shown as the clickable headline in results." },
+        { term: "Meta description", definition: "A short summary of a page that may be used as the snippet in results." },
+        { term: "Alt text", definition: "A written description of an image for people and tools that cannot see it." },
+        { term: "Internal link", definition: "A link from one page to another page on the same website." },
+        { term: "Keyword stuffing", definition: "Repeating a keyword unnaturally, which harms readers and can count against a page." },
+        { term: "Snippet", definition: "The short text shown under the title in search results." },
+      ],
+      commonMistakes: [
+        "Using the same title on every page, or vague titles such as \"Home\"",
+        "Writing \"click here\" instead of link words that describe the destination",
+        "Uploading huge photos that make the page slow on mobile data",
+        "Copying text from a competitor's page instead of answering in your own words",
+        "Changing a live page without the owner's approval",
+      ],
+      selfCheck: [
+        "Which three places should the main keyword appear, naturally?",
+        "What would you check to make sure a page works well on a phone?",
+        "Why is a before and after table useful when presenting on page work?",
+      ],
       practice_task_md: `**Goal:** Optimise one page using your keyword map. This covers the week 7 assignment.
 
 **Steps:**
@@ -395,7 +591,8 @@ He adds a link to the new "How to store shea butter" guide and shrinks the photo
     backlinks: {
       outcomes: [
         "Explain what a backlink is and why quality beats quantity",
-        "Recognise links that break the rules",
+        "Judge whether a linking site is relevant and trusted",
+        "Recognise links that break Google's spam policies",
         "Find honest ways to earn links",
       ],
       explanation_md: `When another website links to a page, it is a little like a person vouching for it. Search engines use links to discover pages and as one signal of how trusted a page is. Off page SEO, the work that happens away from your own site, is mostly about earning these mentions honestly. It is week 8 of the SEO specialisation and a common topic in SEO job interviews.
@@ -410,9 +607,29 @@ A backlink is a link on someone else's website that points to your site. A link 
 * **Trust.** Links from established, real organisations count for more than links from new, empty sites.
 * **Natural placement.** A link inside a genuine article or listing is better than one buried in a list of hundreds.
 
+One relevant link from the regional farmers' association can do more than fifty links from directories nobody visits.
+
+## Judging a linking site in five minutes
+
+Before you chase a link, look at the site the way a careful visitor would.
+
+1. **Is it real?** Does it have an about page, a contact address and named people?
+2. **Is it active?** Are there recent posts or updates, or was it last touched years ago?
+3. **Is it relevant?** Does it cover the same area, industry or customers as the business?
+4. **Do people use it?** Are there comments, shares or signs that real readers visit?
+5. **Is it clean?** Pages crammed with unrelated links, or adverts for dubious products, are a warning.
+
+If a site fails two or more of these, skip it.
+
+## Anchor text
+
+The clickable words of a link are its **anchor text**. "Hawa's pure shea butter" tells readers and search engines what they will find. "Click here" tells them nothing. When you ask for a link, you can suggest the business name or a plain description, but do not demand exact keywords every time. Many links using the same keyword phrase look unnatural, and Google's spam policies list links with keyword rich anchor text spread across other sites among their examples of link spam.
+
 ## Links that break the rules
 
 Google's spam policies describe link spam as creating links mainly to manipulate rankings. Buying or selling links for ranking, swapping goods or services for links, or sending a free product in exchange for a write up with a link all count, unless the link is marked as paid. When a link is paid or sponsored, websites should add a label in the link code, rel="sponsored", or rel="nofollow". Comments and forum posts can use rel="ugc", for user generated content. If anyone offers to sell you "100 backlinks for 50 cedis", say no. It wastes money and can harm the site.
+
+The same policies warn against large scale link swaps ("link to me and I will link to you") and links hidden in website footers or templates across many sites. A partner linking to a real supplier is normal. A network of sites all linking to each other to look popular is not.
 
 ## Honest ways to earn links
 
@@ -422,9 +639,38 @@ Google's spam policies describe link spam as creating links mainly to manipulate
 * **Useful content.** A clear guide, such as "How to choose a solar system for a shop in the north", is something others want to share.
 * **Unlinked mentions.** If a site already names the business without a link, politely ask them to add one.
 
-## A worked example
+## Measuring links
 
-Sumaila manages marketing for an agro input shop in Damongo. He lists every organisation that already knows the shop: two farmer cooperatives, a seed supplier, an NGO that runs farmer training, and a radio station that once interviewed the owner. He finds that the NGO's website mentions the shop by name with no link. He writes a short, friendly email asking them to add the shop's address. That one link from a relevant, trusted partner is worth more than any paid list.`,
+You do not need a paid tool to start. Google Search Console has a Links report that shows which sites link to the business. Check it each month, along with a simple search of the business name, to see new mentions and whether your outreach worked.`,
+      workedExample_md: `Sumaila manages marketing for an agro input shop in Damongo. He wants links that a farmer, and a search engine, would trust.
+
+1. **He lists who already knows the shop.** Two farmer cooperatives, a seed supplier, an NGO that runs farmer training, and a radio station that once interviewed the owner.
+2. **He checks each site.** The cooperatives share one active Facebook page but no website. The seed supplier has a partner page. The NGO site is active, with recent training reports.
+3. **He finds an unlinked mention.** The NGO's report names the shop as a training venue but has no link.
+4. **He skips a bad offer.** A stranger on WhatsApp offers "200 backlinks for a small fee". Sumaila checks one of the sites: it lists hundreds of unrelated businesses and has no readers. He says no.
+5. **He writes two short requests.** One to the NGO asking them to add a link with the shop's name as the anchor text, and one to the seed supplier asking to be added to its partner page.
+6. **He checks results.** A month later the Search Console Links report shows the NGO link.
+
+One link from a relevant, trusted partner is worth more than any paid list.`,
+      keyTerms: [
+        { term: "Backlink", definition: "A link on another website that points to your site." },
+        { term: "Off page SEO", definition: "Work done away from your own site, mostly earning links and mentions." },
+        { term: "Anchor text", definition: "The clickable words of a link." },
+        { term: "Link spam", definition: "Links created mainly to manipulate rankings, such as bought or swapped links." },
+        { term: "rel=\"sponsored\"", definition: "A label in a link's code that marks it as paid or sponsored." },
+        { term: "Unlinked mention", definition: "A web page that names the business without linking to it." },
+      ],
+      commonMistakes: [
+        "Buying a bundle of backlinks from sites nobody visits",
+        "Asking every site to use the same exact keyword as anchor text",
+        "Chasing links from sites that have nothing to do with the business",
+        "Forgetting to check whether partners already mention the business without a link",
+      ],
+      selfCheck: [
+        "What five questions help you judge a linking site?",
+        "Why is a link from the regional farmers' association better than fifty directory links?",
+        "How should a paid link be marked in its code?",
+      ],
       practice_task_md: `**Goal:** Make a list of honest link opportunities for your chosen business.
 
 **Steps:**
@@ -480,18 +726,30 @@ Sumaila manages marketing for an agro input shop in Damongo. He lists every orga
             answer_index: 3,
             explanation: "The lesson suggests politely asking sites that already name the business to add a link.",
           },
+          {
+            prompt: "What is anchor text?",
+            options: [
+              "The clickable words of a link",
+              "The address of the page a link points to",
+              "A label that marks a link as paid",
+              "The first sentence on a page",
+            ],
+            answer_index: 0,
+            explanation: "The lesson defines anchor text as the clickable words of a link, such as the business name.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "local-seo": {
       outcomes: [
-        "Explain how local ranking works",
+        "Explain the three main local ranking factors",
+        "Complete a Google Business Profile well",
         "Keep name, address and phone the same everywhere",
-        "Use reviews, activity and the website for local search",
+        "Ask for reviews within Google's rules",
       ],
-      explanation_md: `When someone searches "pharmacy near me" or "chop bar in Bolgatanga", search engines show a map with a few local businesses before the normal results. Local SEO is the work of earning a place there. For a pharmacy, chop bar or shop that serves people nearby, appearing there can matter more than any blog post, which makes local SEO a practical skill to offer clients.
+      explanation_md: `When someone searches "pharmacy near me" or "chop bar in Bolgatanga", search engines show a map with a few local businesses before the normal results. Local SEO is the work of earning a place there. For a pharmacy, chop bar or shop that serves people nearby, appearing there can matter more than any blog post, which makes local SEO a practical skill to offer clients and a core part of week 8.
 
 ## How local ranking works
 
@@ -499,27 +757,68 @@ Google's Business Profile help explains that local results are based mainly on t
 
 * **Relevance.** How well the business profile matches what someone searched. A complete profile with the right category and a clear description helps.
 * **Distance.** How far the business is from the searcher, or from the place named in the search. You cannot change this, but an accurate map pin matters.
-* **Prominence.** How well known the business is, which the same help page also calls popularity. This includes links from other sites, mentions across the web, and the number of reviews and ratings.
+* **Prominence.** How well known the business is. This includes links from other sites, mentions across the web, and the number of reviews and ratings.
 
 Google also states that there is no way to request or pay for a better local ranking. Good local SEO is about being accurate, complete and genuinely well regarded.
 
+## A Business Profile done properly
+
+You met Google Business Profile in the Digital Marketer roadmap. Going deeper means filling every part with care.
+
+* **Verification.** Google asks owners to verify a profile and chooses the method itself. Verified profiles are more likely to appear.
+* **Categories.** Choose one primary category that describes the core business as exactly as possible, such as "Pharmacy" rather than "Store". Add a few extra categories only if they are true.
+* **Address or service area.** A shop customers visit shows its address. A business that travels to customers, such as a plumber or a mobile hairdresser, can show the areas it serves instead.
+* **Hours.** Regular hours, plus special hours for public holidays, Eid and Christmas. Wrong hours lose customers and trust fast.
+* **Attributes and description.** Facts such as wheelchair access or parking, and a plain description of what the business offers.
+* **Photos and videos.** The shopfront from the street, the inside, the products and the team.
+* **Updates.** Posts about new stock, offers and events keep the profile fresh.
+
 ## Name, address and phone, everywhere the same
 
-Customers and search engines check that a business's details match across the web. Pick one exact way to write the business name, address and phone number, often shortened to NAP, and use it everywhere: the website, the Google Business Profile, Facebook, WhatsApp Business, directories and association lists. If one site says "Hawa Shea Ltd" with an old phone number and another says "Hawa's Women's Group" with a new one, people and search engines get confused. Many Ghanaian addresses are informal, so add a landmark ("opposite the Central Mosque") and use the GhanaPostGPS digital address if the business has one.
+Customers and search engines check that a business's details match across the web. Pick one exact way to write the business name, address and phone number, often shortened to NAP, and use it everywhere: the website, the Business Profile, Facebook, WhatsApp Business, directories and association lists. If one site says "Hawa Shea Ltd" with an old phone number and another says "Hawa's Women's Group" with a new one, people and search engines get confused. Many Ghanaian addresses are informal, so add a landmark ("opposite the Central Mosque") and use the GhanaPostGPS digital address if the business has one.
 
-## Reviews and activity
+## Reviews within the rules
 
-* **Ask every happy customer for a review,** with a short link sent on WhatsApp after a sale. Never write fake reviews or pay for them.
-* **Reply to every review,** thanking good ones and calmly offering to fix problems in bad ones.
-* **Keep the profile fresh** with photos, opening hours that match reality, and updates about new stock or events.
+Reviews feed prominence and help customers decide. Google's help on getting more reviews suggests sharing a review link or QR code with customers, and notes that people need a Google Account to leave one.
+
+* **Ask every happy customer,** with the short link sent on WhatsApp after a sale or a QR code at the counter.
+* **Never offer anything in return.** Google's policies prohibit giving free or discounted goods or services for reviews, for changing a review, or for removing a bad one.
+* **Never write fake reviews** or ask staff and family to pose as customers.
+* **Reply to every review,** thanking good ones and calmly offering to fix problems in bad ones. A mix of reviews with thoughtful replies looks more trustworthy than a wall of perfect ones.
 
 ## The website's part
 
-Put the full NAP on the website, usually in the footer and on a contact page, with a map and opening hours. If the business serves several towns, a separate, genuinely useful page for each town is better than one page listing every town name.
+Put the full NAP on the website, usually in the footer and on a contact page, with a map and opening hours. If the business serves several towns, a separate, genuinely useful page for each town is better than one page listing every town name.`,
+      workedExample_md: `Wumpini helps a pharmacy in Bolgatanga that rarely appears in the map results.
 
-## A worked example
+1. **She searches the pharmacy's name.** She finds four versions of its name online and two phone numbers.
+2. **She agrees one NAP with the owner.** One name, the current phone number, the street address with the landmark "near the Bolga central market", and the GhanaPostGPS address.
+3. **She updates every place she controls.** The Business Profile, the Facebook page, WhatsApp Business and the website footer.
+4. **She asks two directories to correct their listings,** using the agreed NAP.
+5. **She fixes the profile.** Primary category "Pharmacy", special hours for the Eid holiday, and new photos of the shopfront and counter.
+6. **She sets up honest review requests.** A QR code at the counter and a short WhatsApp message with the review link. No discounts are offered in return.
+7. **She replies to every review,** including one complaint about waiting time, offering a phone number to talk it through.
 
-Wumpini helps a pharmacy in Bolgatanga. She finds four versions of its name online and two phone numbers. She chooses one version, updates the profile, Facebook page and website footer, and asks two directories to correct their listings. She sets the right category, adds photos of the shopfront and a landmark, and starts sending a review link to customers after each visit. Within weeks the profile is complete, consistent and attracting genuine reviews.`,
+Within weeks the profile is complete, consistent and attracting genuine reviews.`,
+      keyTerms: [
+        { term: "Local SEO", definition: "Work that helps a business appear when people nearby search for it." },
+        { term: "Relevance, distance, prominence", definition: "The three main factors Google says decide local results." },
+        { term: "Primary category", definition: "The one Business Profile category that best describes the core business." },
+        { term: "NAP", definition: "Name, address and phone number, which should match everywhere online." },
+        { term: "Service area business", definition: "A business that serves customers at their location and can show its areas instead of an address." },
+      ],
+      commonMistakes: [
+        "Offering a discount or gift in exchange for reviews, which Google's policies prohibit",
+        "Choosing a vague primary category such as \"Store\" instead of an exact one",
+        "Forgetting special hours for public holidays and festivals",
+        "Leaving old phone numbers on directories and social pages",
+        "Ignoring bad reviews instead of replying calmly",
+      ],
+      selfCheck: [
+        "Which of the three local ranking factors can you not change, and what can you still do about it?",
+        "How would you ask for reviews without breaking Google's rules?",
+        "Why does an informal address need a landmark or digital address?",
+      ],
       practice_task_md: `**Goal:** Run a simple local SEO check for your chosen business.
 
 **Steps:**
@@ -576,16 +875,28 @@ Wumpini helps a pharmacy in Bolgatanga. She finds four versions of its name onli
             answer_index: 2,
             explanation: "Ask genuine customers, never fake or pay, and reply to every review.",
           },
+          {
+            prompt: "What does Google's help say about offering a discount in exchange for a review?",
+            options: [
+              "It is allowed if the discount is small",
+              "It is allowed only for new businesses",
+              "It is prohibited by Google's policies",
+              "It is required to get the first ten reviews",
+            ],
+            answer_index: 2,
+            explanation: "Google prohibits giving free or discounted goods or services for reviews.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "listings-and-outreach": {
       outcomes: [
-        "Find local listing opportunities",
-        "Write a good outreach email",
-        "Complete three listings and three outreach emails",
+        "Find and check local listing opportunities",
+        "Write a short outreach email people want to answer",
+        "Track outreach and follow up politely",
+        "Handle contact details with care under Ghana's Data Protection Act",
       ],
       explanation_md: `Knowing where a business should be mentioned is only half the job. Someone still has to ask. The week 8 assignment asks you to find three local directories or blogs where your business could be listed and to draft outreach emails. This lesson teaches both parts, and the outreach skill transfers to influencer work, partnerships and sales.
 
@@ -597,7 +908,13 @@ Wumpini helps a pharmacy in Bolgatanga. She finds four versions of its name onli
 * **Local blogs and news.** Sites that write about food, events, travel or business in your region.
 * **Partners.** Suppliers, NGOs and customers that are organisations.
 
+Useful searches combine the business type or town with words like "directory", "association", "members", "where to stay" or "guide", for example "Tamale hotels guide" or "Upper East association members".
+
 Before you add a site to your list, check three things. Is it real and active, with recent updates? Is it relevant to the business or the area? Does it look trustworthy, without pages full of unrelated links or adverts for dubious products? Skip any site that asks for payment just to add a link with no real audience.
+
+## Find the right person
+
+An email to a named person gets more replies than one to a general address. Look for an editor, a membership officer or the person who writes the blog, on the site's about or contact page. Use the contact details the organisation has published for enquiries. Do not guess personal addresses or hunt for private numbers.
 
 ## The shape of a good outreach email
 
@@ -605,17 +922,39 @@ People are busy, so keep it short and about them.
 
 1. **A clear subject line,** such as "Listing request: Amina's Tailoring, Wa".
 2. **Who you are,** in one sentence.
-3. **Why this fits them,** showing you know their site or audience.
+3. **Why this fits them,** showing you know their site or audience. Mention one specific page or post.
 4. **The exact request,** with everything they need: business name, address, phone, website and a two line description.
 5. **A thank you and an easy way to reply.**
 
-Always use the same NAP you agreed in the local SEO lesson. Follow up once, politely, about a week later if there is no answer, and then stop.
+Always use the same NAP you agreed in the local SEO lesson. Aim for under 120 words. Read it aloud before sending: if it sounds like a template, rewrite the middle so it could only have been sent to this one site.
 
-## A worked example
+## What not to do
 
-Rahinatu helps a guesthouse in Nalerigu. She finds a regional tourism blog that lists places to stay near the Nalerigu Defence Wall, an NGO that hosts visiting researchers, and a church that publishes a list of places for wedding guests to stay.
+* Do not send the same email to fifty sites with only the name changed. People can tell.
+* Do not offer money for a link that is not marked as paid. That breaks the spam policies from the last lesson.
+* Do not exaggerate. If the guesthouse has eight rooms, do not call it a hotel.
+* Do not send anything before the business owner has approved it. You speak in their name.
 
-Her email to the blog reads:
+## Following up and tracking
+
+Follow up once, politely, about a week later if there is no answer, and then stop. Keep a simple tracking sheet with the site, the contact, the date sent, the date of the follow up, the reply and the result. When a listing goes live, check that the details are correct and note the link. This sheet becomes evidence of your work for your mentor and portfolio.
+
+## Contact details and the law
+
+Ghana's Data Protection Act, 2012 (Act 843) protects personal data. Section 40 says a person's details must not be used for direct marketing without their prior written consent, and defines direct marketing as advertising or marketing material directed to particular individuals. Section 20 lets a person object to the processing of their data, and then it must stop. In practice for outreach:
+
+* send one relevant, personal request to a contact address the organisation published for enquiries;
+* never add the people you contact to a newsletter, broadcast list or group;
+* if anyone asks you not to contact them again, stop at once and mark it in your sheet;
+* keep your tracking sheet private.
+
+This is careful practice, not legal advice. If a business plans regular marketing messages, it should take proper advice.`,
+      workedExample_md: `Rahinatu helps a guesthouse in Nalerigu complete the week 8 assignment.
+
+1. **She searches** "Nalerigu places to stay", "Northern Region tourism guide" and "Nalerigu church guests".
+2. **She checks each site.** She keeps a regional tourism blog that lists places to stay near the Nalerigu Defence Wall, an NGO that hosts visiting researchers, and a church that publishes a list of places for wedding guests. She skips a directory that charges a fee and has no recent updates.
+3. **She finds named contacts.** The blog's about page names its writer, Adisa.
+4. **She drafts three emails and the owner approves them.** Her email to the blog reads:
 
 > Subject: Place to stay near the Nalerigu Defence Wall
 >
@@ -623,7 +962,28 @@ Her email to the blog reads:
 >
 > Rahinatu
 
+5. **She tracks replies.** The church replies in two days. She follows up with the NGO once, a week later.
+
 It is short, specific and easy to say yes to.`,
+      keyTerms: [
+        { term: "Outreach", definition: "Contacting other sites or people to ask for a listing, mention or partnership." },
+        { term: "Directory", definition: "A website that lists businesses, often by type or place." },
+        { term: "Follow up", definition: "One polite reminder sent when there is no reply after about a week." },
+        { term: "Tracking sheet", definition: "A record of who you contacted, when, and what happened." },
+        { term: "Act 843", definition: "Ghana's Data Protection Act, 2012, which protects personal data." },
+      ],
+      commonMistakes: [
+        "Sending the same template to many sites with only the name changed",
+        "Following up again and again after one polite reminder",
+        "Adding outreach contacts to a newsletter or broadcast list",
+        "Sending emails before the business owner approves them",
+        "Listing the business on paid directories that nobody visits",
+      ],
+      selfCheck: [
+        "What five parts make up a good outreach email?",
+        "What should you do if someone asks you not to contact them again?",
+        "Which three checks decide whether a listing site is worth adding?",
+      ],
       practice_task_md: `**Goal:** Complete the week 8 assignment: three listing opportunities and three outreach emails.
 
 **Steps:**
@@ -680,16 +1040,28 @@ It is short, specific and easy to say yes to.`,
             answer_index: 1,
             explanation: "The lesson highlights that the email was short, specific and easy to agree to.",
           },
+          {
+            prompt: "Someone you emailed for a listing replies asking you not to contact them again. What does the lesson say to do?",
+            options: [
+              "Send one more email explaining why the listing would help them",
+              "Ask the business owner to call them instead",
+              "Add them to the business newsletter instead",
+              "Stop at once and mark it in your tracking sheet",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says to stop at once and record it, in line with the right to object under Act 843.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "content-pillars": {
       outcomes: [
         "Explain pillars and topic clusters",
-        "Choose content pillars and show experience and trust",
-        "Refresh old content as well as create new",
+        "Choose content pillars that show experience and trust",
+        "Plan internal links between pillar and cluster pages",
+        "Audit existing content and decide what to keep, refresh or merge",
       ],
       explanation_md: `Publishing random posts whenever there is time rarely builds search traffic. Strong sites organise content around a few big topics they know deeply. This is week 9 of the SEO specialisation, advanced content strategy, and it is the thinking content marketers use to plan months of work.
 
@@ -716,17 +1088,66 @@ Good pillars sit where three things meet:
 
 Most small businesses need only two to four pillars. More than that and the work spreads too thin.
 
+## Linking the cluster together
+
+Internal links are what turn separate pages into a cluster.
+
+* The pillar page gives a short summary of each cluster topic and links to the full page.
+* Each cluster page links back to the pillar near the top or bottom, with clear words such as "our full guide to solar for homes".
+* Cluster pages link to each other where it genuinely helps, such as from the battery page to the instalment page.
+* Every page in the cluster links to the page where people can buy, book or ask a question.
+
+Use your keyword map to choose the link words, so each link describes the page it points to.
+
 ## Experience and trust
 
-Google's guidance on helpful content mentions experience, expertise, authoritativeness and trustworthiness, with trust as the most important. In practice for a small Ghanaian business, that means showing real experience: photos of your own installations, the name of the person who wrote the guide and their background, honest prices, and accurate advice. It also means being clear when AI tools helped write something and checking every fact. Content about health, money or safety needs extra care.
+Google's guidance on helpful content mentions experience, expertise, authoritativeness and trustworthiness, with trust as the most important. In practice for a small Ghanaian business, that means showing real experience: photos of your own installations, the name of the person who wrote the guide and their background, honest prices, and accurate advice. It also means being clear when AI tools helped write something and checking every fact. Content about health, money or safety needs extra care. A shea butter seller can explain how the butter is made, but must not claim it cures illnesses.
+
+## Audit before you create
+
+Before planning new pages, look at what the site already has. A simple content audit lists every page with its main topic, the pillar it belongs to, whether it is still accurate, and, if Search Console is set up, how many clicks it got from search. Then decide for each page:
+
+* **Keep** pages that are accurate and useful.
+* **Refresh** pages with old prices, missing questions or broken links.
+* **Merge** two thin pages on the same topic into one stronger page, and point the old address to the new one so visitors are not lost.
+* **Remove** pages that are wrong and cannot be fixed, such as a promotion that ended years ago.
 
 ## Refresh as well as create
 
 Old content does not have to be thrown away. Update prices, add new questions customers ask and fix broken links. A refreshed page that is genuinely improved is often worth more than a new one. Never just change the date to look new.
 
-## A worked example
+## Formats beyond the blog
 
-Zakaria plans content for the Tamale solar installer. His keyword map shows many learning questions about system size, batteries and dust. He picks two pillars: "Solar for homes" and "Solar for shops". Under each he lists six cluster pages, each mapped to one keyword. He notes which installer will provide photos and checks each fact with the technician. The installer now has a clear list of what to publish and why.`,
+A cluster page does not have to be a long article. It can be an FAQ answer, a short how to video embedded on a page with a written summary, a photo guide, or a price list with explanations. The next lesson shows how to make FAQs, images and video work for search, and the lesson after that puts every format into your calendar.`,
+      workedExample_md: `Zakaria plans content for a solar installer in Tamale.
+
+1. **He audits the site.** It has a home page, a contact page and six blog posts. Two posts both cover batteries in a thin way, and one advertises a Christmas promotion from three years ago.
+2. **He decides for each page.** He merges the two battery posts, removes the old promotion, and refreshes a post on panel cleaning with current prices.
+3. **He reads his keyword map.** It shows many learning questions about system size, batteries and dust, and some about paying in instalments.
+4. **He picks two pillars:** "Solar for homes" and "Solar for shops". Both pass the three tests: customers ask about them, the installer has years of experience, and both lead to sales.
+5. **He lists six cluster pages under each pillar,** each mapped to one keyword, including the merged battery page.
+6. **He plans the links.** Every cluster page links to its pillar and to the "Get a quote" page.
+7. **He arranges proof.** The technician, Kwame, will supply photos of real installations and check every fact.
+
+The installer now has a clear list of what to publish and why.`,
+      keyTerms: [
+        { term: "Content pillar", definition: "A broad topic central to the business, covered on one main page." },
+        { term: "Topic cluster", definition: "Smaller pages that each answer one question within a pillar and link to it." },
+        { term: "Content audit", definition: "A review of every existing page to decide whether to keep, refresh, merge or remove it." },
+        { term: "Refresh", definition: "Genuinely improving an existing page with current facts, new questions and fixed links." },
+        { term: "Trustworthiness", definition: "The most important quality in Google's helpful content guidance: accurate, honest and safe content." },
+      ],
+      commonMistakes: [
+        "Choosing more pillars than the business has time to write for",
+        "Publishing cluster pages that never link back to the pillar",
+        "Changing only the date on an old page to make it look new",
+        "Making health or money claims the business cannot prove",
+      ],
+      selfCheck: [
+        "What three tests help you choose a content pillar?",
+        "When would you merge two pages instead of refreshing each one?",
+        "How should a cluster page link to the rest of the cluster?",
+      ],
       practice_task_md: `**Goal:** Design two content pillars with clusters for your business.
 
 **Steps:**
@@ -783,18 +1204,30 @@ Zakaria plans content for the Tamale solar installer. His keyword map shows many
             answer_index: 3,
             explanation: "Refresh by genuinely improving content, never by only changing the date.",
           },
+          {
+            prompt: "A site has two thin pages that both cover the same topic. What does the lesson's content audit suggest?",
+            options: [
+              "Keep both, because more pages always bring more visits",
+              "Merge them into one stronger page and point the old address to it",
+              "Change the date on both so they look new",
+              "Delete both and start again with a new topic",
+            ],
+            answer_index: 1,
+            explanation: "The audit advice is to merge thin pages on one topic and redirect the old address so visitors are not lost.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "faqs-and-multimedia": {
       outcomes: [
-        "Write FAQ pages that work",
-        "Prepare images and video for search",
+        "Write FAQ pages from real customer questions",
+        "Prepare images for search with file names and alt text",
+        "Give videos a page, a title, a description and captions",
         "Use multimedia without heavy data",
       ],
-      explanation_md: `Customers ask the same questions again and again: How much? Do you deliver? Can I pay with mobile money? Is it open on Sunday? Each repeated question is a ready made piece of content. Turning those questions into clear answers, supported by images and short videos, is one of the most useful things a content marketer can do for a small business.
+      explanation_md: `Customers ask the same questions again and again: How much? Do you deliver? Can I pay with mobile money? Is it open on Sunday? Each repeated question is a ready made piece of content. Turning those questions into clear answers, supported by images and short videos, is one of the most useful things a content marketer can do for a small business, and the week 9 calendar must cover FAQs and multimedia as well as blogs.
 
 ## FAQ pages that work
 
@@ -806,6 +1239,8 @@ Zakaria plans content for the Tamale solar installer. His keyword map shows many
 
 If a question needs a long answer, give it its own page and link to it from the FAQ. That longer page can become part of a content cluster.
 
+Write FAQs for customers, not for a special search display. Google used to show some FAQ pages with expandable questions in its results, but it has retired that feature. A clear FAQ page still helps visitors, saves the owner time on WhatsApp, and can rank for the questions it answers.
+
 ## Images for search
 
 Search engines cannot see a picture the way people do, so they rely on clues. Google's image guidance points to things you can control:
@@ -815,21 +1250,57 @@ Search engines cannot see a picture the way people do, so they rely on clues. Go
 * Write alt text that describes the image for someone who cannot see it.
 * Use good quality images, but compress them so they load fast on mobile data.
 
+Use your own photos where you can. Real photos of the product, the team and the place build trust in a way stock images cannot, and they support the experience signals from the last lesson.
+
 ## Video for search
 
-Short videos can appear in search results, especially for "how to" questions. Help them be found:
+Short videos can appear in search results, especially for "how to" questions. Google's video guidance gives clear steps you can follow:
 
-* **Give each video its own clear title and description** using the question it answers.
+* **Give each video a page of its own** on the website, where the video is the main thing, with text around it explaining what it shows.
+* **Give it a clear title and description** using the question it answers.
+* **Choose a clear thumbnail,** the still image people see before they press play.
 * **Add captions or a transcript,** which helps viewers watching without sound and gives search engines text to read.
-* **Embed the video on a relevant page** of the website as well as posting it on a video platform, with text around it explaining what it shows.
+* **Post it on a video platform as well,** such as YouTube, where people also search, using the same title and description.
 
 ## Multimedia without heavy data
 
-Many of your customers pay for data by the bundle. Keep videos short, offer a text summary, and avoid pages that load several videos at once. A thirty second clip that answers one question is often more useful than a long one.
+Many of your customers pay for data by the bundle. Keep videos short, offer a text summary, and avoid pages that load several videos at once. A thirty second clip that answers one question is often more useful than a long one. Let visitors choose to press play rather than starting a video automatically.
 
-## A worked example
+## Turning one question into several pieces
 
-Ayishetu runs a small catering business in Wa. She collects ten questions from her WhatsApp chats about menu prices, minimum orders, delivery and payment. She writes an FAQ page with direct answers and a guide called "How to plan food for a naming ceremony", with a photo of a real event and a short video showing how dishes are packed for transport. Customers start sending her the FAQ link instead of asking, and she spends less time repeating herself.`,
+One good customer question can feed your calendar for weeks. "How do I store shea butter in the harmattan?" can become an FAQ answer, a full guide on the website, a 30 second video embedded on that guide, a photo with a caption on social media, and a WhatsApp Status. Each format reaches different people, and each one links back to the guide. Plan these together so you create once and publish many times.
+
+## Accessibility helps everyone
+
+Alt text, captions and clear headings were designed for people with disabilities, including people who use screen readers. They also help people on slow connections where images fail to load, people in noisy places, and search engines. Doing them well is good marketing and good manners.`,
+      workedExample_md: `Ayishetu runs a small catering business in Wa. Her phone buzzes all day with the same questions.
+
+1. **She collects ten real questions** from her WhatsApp chats, such as "What is the minimum order?" and "Do you deliver to Kperisi?"
+2. **She groups them** under Menu and prices, Ordering and Delivery, and writes a direct one or two sentence answer to each.
+3. **She spots a long answer.** "How much food do I need for a naming ceremony?" deserves its own guide, so the FAQ links to it.
+4. **She adds a real photo** to the guide, named "naming-ceremony-food-packs-wa.jpg", with the alt text "Rows of packed jollof and chicken ready for a naming ceremony in Wa".
+5. **She films a 25 second video** showing how dishes are packed for transport, gives it a page with a short written summary, and adds checked captions.
+6. **She reuses the question.** The same video goes on her WhatsApp Status and Facebook page with a link to the guide.
+
+Customers start sending her the FAQ link instead of asking, and she spends less time repeating herself.`,
+      keyTerms: [
+        { term: "FAQ page", definition: "A page of frequently asked questions answered directly and kept current." },
+        { term: "Alt text", definition: "A written description of an image for people and tools that cannot see it." },
+        { term: "Thumbnail", definition: "The still image people see before they press play on a video." },
+        { term: "Transcript", definition: "The full text of what is said in a video or audio clip." },
+        { term: "Repurposing", definition: "Turning one piece of content into several formats for different channels." },
+      ],
+      commonMistakes: [
+        "Writing FAQ questions the business imagines instead of ones customers really ask",
+        "Uploading images named IMG_2041.jpg with no alt text",
+        "Posting a video only on social media with no page or text on the website",
+        "Adding FAQ code hoping for a special search display that Google has retired",
+      ],
+      selfCheck: [
+        "Where would you find the real questions for an FAQ page?",
+        "What four things help a video be found in search?",
+        "How could one customer question become three pieces of content?",
+      ],
       practice_task_md: `**Goal:** Create an FAQ and one multimedia item for your business.
 
 **Steps:**
@@ -893,9 +1364,10 @@ Ayishetu runs a small catering business in Wa. She collects ten questions from h
 
     "seo-strategy-plan": {
       outcomes: [
-        "Build an SEO content calendar",
-        "Measure SEO progress",
-        "Write a one page SEO strategy",
+        "Build an SEO content calendar covering blogs, FAQs and multimedia",
+        "Read the Search Console Performance report",
+        "Choose realistic measures of SEO progress",
+        "Write and present a one page SEO strategy",
       ],
       explanation_md: `A strategy turns a pile of good ideas into a plan someone can approve and follow. The week 9 assignment asks for a one page SEO strategy presented in Google Slides, built on a content calendar that covers blogs, FAQs and multimedia. This is the kind of document a junior SEO or content marketer hands to a manager or client.
 
@@ -914,6 +1386,8 @@ Your calendar lists what will be published, when, by whom, and why. Use a sheet 
 
 Plan around real life. Shea butter guides make sense before the harmattan; school uniform pages before the new term; catering guides before the wedding and festival seasons. Be realistic: one excellent page a fortnight, kept up, beats ten planned pages that never appear.
 
+Balance the formats. A good eight week calendar for a small business might include two or three guides, an FAQ update each month, one or two short videos, and a photo set, all tied to the same pillars. Put off site work in the calendar too: listing requests, follow ups and review requests are tasks with dates and owners.
+
 ## Measuring progress
 
 You cannot control rankings directly, so measure several signals over time.
@@ -921,6 +1395,27 @@ You cannot control rankings directly, so measure several signals over time.
 * **Google Search Console,** a free tool for site owners, shows which searches the site appeared for, how often, and how many people clicked. You need access to the website to set it up.
 * **Analytics,** such as Google Analytics, shows visits and actions on the site.
 * **Business signals:** WhatsApp enquiries that mention finding the business on search, calls from the profile, and direction requests.
+
+## Reading the Performance report
+
+Search Console's Performance report gives four main numbers:
+
+* **Clicks:** how often people clicked through to the site from Google Search.
+* **Impressions:** how often the site appeared in results.
+* **CTR:** clicks divided by impressions.
+* **Average position:** the average ranking of the site's top result.
+
+You can group them by query, page, country, device, search appearance and date. Three patterns are worth looking for:
+
+1. **Queries with many impressions but few clicks.** The page appears but does not tempt people. Improve its title and opening.
+2. **Pages with no impressions at all.** Check whether they are indexed and whether they match any real search.
+3. **New queries you never planned for.** These are ideas for new cluster pages.
+
+Compare the same length of time, such as this month with last month, and report trends rather than single days.
+
+## Choosing your measures
+
+Pick three to five measures that connect to the business goal. For a guesthouse, they might be clicks from Search Console, the number of queries containing "guesthouse", direct booking enquiries, and new reviews. Write a starting figure for each before work begins, so you can show change later. Never promise a number you cannot control, such as a ranking position.
 
 Give SEO time. New pages can take weeks or months to settle, so report trends, not single days.
 
@@ -934,9 +1429,39 @@ Fit your strategy on one slide or page with five parts:
 4. **Off site work.** Listings, links and reviews you will pursue.
 5. **Content and measurement.** Your pillars, how often you will publish, and the signals you will track.
 
-## A worked example
+## Presenting it
 
-Issahaku's strategy for Mariama's Tamale guesthouse reads, in short: Goal, more direct bookings from travellers. Keywords, guesthouse in Tamale and related phrases. On site, a rewritten home page, a rooms page and an FAQ. Off site, three tourism and NGO listings and a review request after each stay. Content, one guide a fortnight on visiting the north, with photos. Measure, Search Console clicks, direct booking enquiries and new reviews, checked monthly.`,
+Practise a two minute talk: the goal, the three most important actions, and how you will measure them. Keep the slide readable, with large text and few words, and keep the calendar and keyword map ready as backup if someone asks for detail.`,
+      workedExample_md: `Issahaku presents his strategy for Mariama's Tamale guesthouse.
+
+1. **Goal.** More direct bookings from travellers, so Mariama relies less on booking sites.
+2. **Audience and keywords.** Business travellers and NGO visitors. Main keywords: "guesthouse in Tamale", "guesthouse near Tamale airport" and related phrases.
+3. **On site work.** A rewritten home page, a new rooms page with prices, and an FAQ.
+4. **Off site work.** Three tourism and NGO listings from his outreach, and a review request sent after each stay.
+5. **Content.** One guide a fortnight on visiting the north, a monthly FAQ update, and one short room tour video, all in an eight week calendar.
+6. **Measurement.** Search Console clicks and impressions, booking enquiries that mention Google, and new reviews, checked monthly. He records the starting figures before any work begins.
+7. **Presentation.** He practises a two minute talk and keeps the calendar open as backup.
+
+Mariama approves the plan, and Issahaku has a portfolio piece that shows his whole three weeks of work.`,
+      keyTerms: [
+        { term: "Content calendar", definition: "A schedule of what will be published, when, by whom and why." },
+        { term: "Impressions", definition: "How often a site appeared in search results." },
+        { term: "CTR", definition: "Clickthrough rate: clicks divided by impressions." },
+        { term: "Average position", definition: "The average ranking of a site's top result for the searches shown." },
+        { term: "Starting figure", definition: "The value of a measure before work begins, used to show change later." },
+      ],
+      commonMistakes: [
+        "Planning far more content than the business can produce",
+        "Promising a ranking position instead of measures you can influence",
+        "Comparing a week of results with a month and calling it a trend",
+        "Forgetting to record starting figures before the work begins",
+        "Filling the strategy slide with small text nobody can read",
+      ],
+      selfCheck: [
+        "What does a query with many impressions but few clicks tell you?",
+        "What five parts make up the one page strategy?",
+        "Which three to five measures would you choose for your business, and why?",
+      ],
       practice_task_md: `**Goal:** Complete the week 9 assignment: a content calendar and a one page SEO strategy.
 
 **Steps:**
@@ -992,8 +1517,19 @@ Issahaku's strategy for Mariama's Tamale guesthouse reads, in short: Goal, more 
             answer_index: 1,
             explanation: "Be realistic and consistent rather than planning more than you can deliver.",
           },
+          {
+            prompt: "In Search Console, a query shows many impressions but very few clicks. What does the lesson suggest?",
+            options: [
+              "Improve the page's title and opening so it tempts more people",
+              "Delete the page because nobody wants it",
+              "Ask Google to remove the query from the report",
+              "Ignore it, because only clicks matter",
+            ],
+            answer_index: 0,
+            explanation: "Many impressions with few clicks means the page appears but does not tempt people, so improve its title and opening.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
