@@ -68,7 +68,7 @@ Amina works for an NGO in Bolgatanga that runs a nutrition programme. Her manage
           {
             prompt: "What makes \"did the SMS reminder actually raise repayment?\" harder than a describing question?",
             options: [
-              "It needs a bigger spreadsheet",
+              "It needs a much bigger spreadsheet with every member's full loan history",
               "It can only be answered with a neural network",
               "Other things, such as a good harvest, could also explain a rise",
               "It has no data behind it at all",
@@ -92,7 +92,7 @@ Amina works for an NGO in Bolgatanga that runs a nutrition programme. Her manage
             options: [
               "Phones cannot connect to the internet",
               "Notebooks, data files and long code are hard to manage on a small screen",
-              "The lessons cannot be read on a phone",
+              "The lessons and quizzes cannot be opened or read in a phone browser at all",
               "Data science tools are only sold for computers",
             ],
             answer_index: 1,
@@ -163,7 +163,7 @@ If you can predict the output (Tamale 865, Yendi 640) and explain each line, you
             prompt: "What should you do if loading and grouping a CSV in pandas still feels unfamiliar?",
             options: [
               "Go back to the pandas lesson in the Data Analyst track first",
-              "Skip ahead to machine learning, which hides pandas",
+              "Skip ahead to machine learning, where the libraries handle pandas for you",
               "Switch to doing everything in a spreadsheet",
               "Start the AI and Machine Learning track instead",
             ],
@@ -176,7 +176,7 @@ If you can predict the output (Tamale 865, Yendi 640) and explain each line, you
               "It guarantees a fixed amount of memory forever",
               "Sessions never time out",
               "Resources are not guaranteed and idle sessions time out",
-              "It requires a paid plan to run pandas",
+              "It requires a paid plan before you can import and run pandas",
             ],
             answer_index: 2,
             explanation: "Colab's FAQ says free resources are not guaranteed and idle sessions time out.",
@@ -186,7 +186,7 @@ If you can predict the output (Tamale 865, Yendi 640) and explain each line, you
             options: [
               "It removes the need to learn statistics",
               "It makes every model more accurate",
-              "It is the only way to run scikit learn",
+              "It is the only way to run scikit learn, since online notebooks lack it",
               "Once set up, you can work offline, which saves data",
             ],
             answer_index: 3,
@@ -273,8 +273,8 @@ Issahaku is an M&E assistant for an agriculture NGO in Damongo. He already clean
             prompt: "What is a common realistic route into a data scientist role?",
             options: [
               "Waiting until a data scientist post opens in your town",
-              "Learning every tool named in every advert first",
-              "Starting as an analyst, M&E officer, research assistant or intern and taking on modelling work",
+              "Learning every tool named in every advert, including cloud and big data platforms, before applying anywhere",
+              "Starting as an analyst, M&E officer or research assistant and growing into modelling",
               "Applying only to remote employers abroad",
             ],
             answer_index: 2,
@@ -285,7 +285,7 @@ Issahaku is an M&E assistant for an agriculture NGO in Damongo. He already clean
             options: [
               "Every bank headquarters is in the north",
               "Data scientist titles are only used in the north",
-              "Northern employers do not ask for statistics",
+              "Northern employers hire mainly on certificates and rarely ask applicants about statistics or data skills",
               "Many research, health and agriculture projects there need survey and field data analysis",
             ],
             answer_index: 3,
@@ -297,7 +297,7 @@ Issahaku is an M&E assistant for an agriculture NGO in Damongo. He already clean
               "He changed his job title himself",
               "He added confidence intervals and proposed a randomised test of training messages",
               "He stopped writing monthly reports",
-              "He bought a paid analytics tool",
+              "He bought a paid analytics tool and moved all of the NGO's monthly reports into it",
             ],
             answer_index: 1,
             explanation: "Adding inference and proposing a fair experiment moved his work beyond description.",
@@ -354,7 +354,7 @@ These figures are invented for teaching. Real survey reports from bodies such as
               "Judgement about how sure you are and when a difference is real",
               "Typing code faster than an analyst",
               "Owning expensive software",
-              "Producing as many charts as possible",
+              "Producing as many polished charts and dashboards as possible each week",
             ],
             answer_index: 0,
             explanation: "The lesson says running a model is easy; judgement about uncertainty is what employers pay for.",
@@ -375,7 +375,7 @@ These figures are invented for teaching. Real survey reports from bodies such as
             options: [
               "A single number with no context",
               "A number rounded to look more impressive",
-              "A number with the word \"significant\" added",
+              "A single headline number with the word \"significant\" added to show it is definitely real",
               "An estimate with a plausible range, how the sample was drawn and the likely cause",
             ],
             answer_index: 3,
@@ -387,7 +387,7 @@ These figures are invented for teaching. Real survey reports from bodies such as
               "The survey was not about mosquito nets",
               "The figure came from a sample of households, not every household in the district",
               "Percentages are not allowed in health reports",
-              "The district had fewer than 400 households",
+              "The district had fewer than 400 households, so the survey had already covered all of them",
             ],
             answer_index: 1,
             explanation: "Her 61 percent came from a sample, so she reported it as an estimate with a range for the district.",
@@ -477,9 +477,9 @@ Fuseini checks a savings group's records. Weekly deposits are skewed: most membe
             prompt: "What does the central limit theorem say about sample means?",
             options: [
               "They are always exactly equal to the population mean",
-              "They only work when the population is already normal",
+              "They only settle into a bell shape when the population itself is already normally distributed",
               "They become more spread out as samples get bigger",
-              "They form a near normal distribution centred on the true mean, even if the population is skewed",
+              "They form a near normal shape around the true mean, even from a skewed population",
             ],
             answer_index: 3,
             explanation: "Sample means settle into a near normal shape around the true mean, with spread shrinking as sample size grows.",
@@ -499,7 +499,7 @@ Fuseini checks a savings group's records. Weekly deposits are skewed: most membe
             prompt: "In the simulation, why did the sample means centre on 785 kg?",
             options: [
               "Because the mean of many sample means sits at the true population mean",
-              "Because the yields were normally distributed",
+              "Because the 4,000 yields were normally distributed, so every sample matched them",
               "Because the code rounded every value to 785",
               "Because only 100 farms existed",
             ],
@@ -532,7 +532,7 @@ Wider intervals mean more uncertainty. Bigger samples give narrower intervals.
 
 ## Hypothesis tests and p values
 
-A hypothesis test starts from a **null hypothesis**, usually "there is no difference". You then ask: if the null were true, how surprising would data like mine be? The **p value** is that probability. A small p value, conventionally below 0.05, means the data would be unusual if there were no difference, so you reject the null.
+A hypothesis test starts from a **null hypothesis**, usually "there is no difference". You then ask: if the null were true, how surprising would data like mine be? The **p value** is the probability of getting data at least as extreme as yours if the null were true. A small p value, conventionally below 0.05, means the data would be unusual if there were no difference, so you reject the null.
 
 Know what a p value is **not**:
 
@@ -567,7 +567,7 @@ Mariama compares two maize varieties on demonstration plots near Savelugu. Varie
             prompt: "What is the best plain way to report 246 of 300 farmers repaying, with interval 0.773 to 0.859?",
             options: [
               "Exactly 82 percent of all farmers repay",
-              "There is a 0.773 chance a farmer repays",
+              "There is a 0.773 probability that any single farmer chosen at random repays on time",
               "We estimate 82 percent repay on time, plausibly between about 77 and 86 percent",
               "The interval proves the rate is 86 percent",
             ],
@@ -578,7 +578,7 @@ Mariama compares two maize varieties on demonstration plots near Savelugu. Varie
             prompt: "What does a p value measure?",
             options: [
               "The probability that the null hypothesis is true",
-              "How large and important a difference is",
+              "How large and practically important the difference between the groups really is",
               "The share of the sample that was wrong",
               "How surprising data like yours would be if there were no real difference",
             ],
@@ -601,7 +601,7 @@ Mariama compares two maize varieties on demonstration plots near Savelugu. Varie
             options: [
               "With huge samples even very small differences produce small p values",
               "Large datasets always contain errors",
-              "Software rounds p values down for big files",
+              "Statistical software rounds p values down automatically when files have millions of rows",
               "Large datasets are never randomly sampled",
             ],
             answer_index: 0,
@@ -613,7 +613,7 @@ Mariama compares two maize varieties on demonstration plots near Savelugu. Varie
               "Nothing, it is efficient",
               "Statsmodels does not allow it",
               "One in twenty tests on pure noise can fall below 0.05 by chance",
-              "It makes confidence intervals wider",
+              "It makes every confidence interval in the report wider and harder to read",
             ],
             answer_index: 2,
             explanation: "Many tests on noise produce false positives by chance, so the main question should be fixed in advance.",
@@ -689,7 +689,7 @@ Abdul-Rahman at a savings and loans company in Tamale proposed testing two remin
             prompt: "Why does random assignment let you say a change caused a result?",
             options: [
               "It guarantees a large sample",
-              "It removes the need for a main outcome",
+              "It removes the need to choose one main outcome or a sample size before starting",
               "It makes p values smaller",
               "It makes the groups alike on average, including in things you did not measure",
             ],
@@ -711,7 +711,7 @@ Abdul-Rahman at a savings and loans company in Tamale proposed testing two remin
             prompt: "The sample size check says you need about 1,376 people per version but you have 300. What should you do?",
             options: [
               "Recognise the test cannot detect that difference and change the design or scale",
-              "Run it anyway and report any p value",
+              "Run it anyway with the 300 borrowers and report whatever p value comes out as the answer",
               "Stop as soon as the result looks good",
               "Double the result to make up for the small sample",
             ],
@@ -791,9 +791,9 @@ Wumpini studies a microfinance dataset and finds that borrowers who received fin
             prompt: "In the farm model, what does the fertiliser coefficient of 3.68 mean?",
             options: [
               "Every farm produced 3.68 kg of maize",
-              "Fertiliser explains 3.68 percent of yield",
+              "Fertiliser explains 3.68 percent of the variation in maize yield across all 200 farms in the made up dataset",
               "Rainfall has no effect on yield",
-              "Comparing farms with the same rainfall, each extra kilogram of fertiliser went with about 3.7 kg more maize",
+              "Holding rainfall steady, each extra kilogram of fertiliser went with about 3.7 kg more maize",
             ],
             answer_index: 3,
             explanation: "A coefficient is the average change in the outcome per unit of that factor, holding the other factors steady.",
@@ -814,7 +814,7 @@ Wumpini studies a microfinance dataset and finds that borrowers who received fin
             options: [
               "Volunteers may differ in ways not in the model, such as being more organised",
               "Logistic regression cannot handle training data",
-              "Her sample was larger than needed",
+              "Her sample was larger than needed, which makes regression coefficients unreliable",
               "Associations are always stronger than causes",
             ],
             answer_index: 0,
@@ -878,7 +878,7 @@ Salifu joined an agritech company in Tamale and inherited a notebook that produc
             options: [
               "Because notebooks cannot be saved",
               "Because Python only runs once per file",
-              "Because managers read the code instead of reports",
+              "Because managers usually read the code itself instead of the written reports",
               "Because models and analyses are reused, retrained and handed to colleagues",
             ],
             answer_index: 3,
@@ -899,7 +899,7 @@ Salifu joined an agritech company in Tamale and inherited a notebook that produc
             prompt: "When data has millions of rows in a database, what does the lesson recommend?",
             options: [
               "Prepare it with SQL in the database, then pull a manageable table into Python",
-              "Download everything into a spreadsheet first",
+              "Download everything into a spreadsheet first, then filter it there before using Python",
               "Avoid using the database at all",
               "Copy the data into many notebook cells",
             ],
@@ -912,7 +912,7 @@ Salifu joined an agritech company in Tamale and inherited a notebook that produc
               "Keeping the data source a secret",
               "Deleting old versions of the code",
               "Recording data sources and library versions, and using Git",
-              "Writing all code in a single long cell",
+              "Writing all the code in one long cell so the order never gets confused",
             ],
             answer_index: 2,
             explanation: "Recording sources and versions and keeping history in Git lets others repeat the work.",
@@ -993,8 +993,8 @@ Napari has three rounds of a household survey from the Northern Region, each in 
             options: [
               "Loops are not allowed in Python",
               "It changes the data type to text",
-              "It only works on small tables",
-              "NumPy applies the operation to the whole array at once, which is clearer and faster",
+              "It only works on small tables, while loops scale better to millions of rows",
+              "NumPy applies it to the whole array at once, which is clearer and faster",
             ],
             answer_index: 3,
             explanation: "Whole array operations are clearer and much faster than row by row loops.",
@@ -1027,7 +1027,7 @@ Napari has three rounds of a household survey from the Northern Region, each in 
               "Open it in a spreadsheet instead",
               "Buy a new laptop before starting",
               "Read only needed columns with usecols and process in pieces with chunksize",
-              "Delete half the rows at random",
+              "Delete half the rows at random so the remaining file fits comfortably in memory",
             ],
             answer_index: 2,
             explanation: "Reading fewer columns and processing in chunks lets modest machines handle big files.",
@@ -1132,7 +1132,7 @@ Alhassan works with a large table of transactions at a payments company. Instead
             options: [
               "It deletes duplicate rows",
               "It can only be used on dates",
-              "It always returns one row per table",
+              "It always returns exactly one summary row for each table you query",
               "It calculates across related rows but keeps every row",
             ],
             answer_index: 3,
@@ -1166,7 +1166,7 @@ Alhassan works with a large table of transactions at a payments company. Instead
               "Python cannot calculate dates",
               "Exporting is illegal",
               "Only a small, tidy table needs to travel to the notebook, saving time and memory",
-              "SQL results are always more accurate than pandas",
+              "SQL results are always more accurate than the same calculation done later in pandas",
             ],
             answer_index: 2,
             explanation: "Doing the work in the database means only a manageable table comes to Python.",
@@ -1249,7 +1249,7 @@ Zenabu builds a rainfall and yield analysis for a farmer group in Wa. Her reposi
           {
             prompt: "What should you do with files in data/raw?",
             options: [
-              "Edit them by hand to fix errors quickly",
+              "Edit them by hand to fix obvious errors quickly before any code runs",
               "Delete them once cleaning is done",
               "Commit them to a public repository",
               "Keep them exactly as received and make every change in code",
@@ -1262,7 +1262,7 @@ Zenabu builds a rainfall and yield analysis for a farmer group in Wa. Her reposi
             options: [
               "It makes the code run faster",
               "Library updates can change results, so others need the same versions",
-              "It hides your code from others",
+              "It hides your code and data files from other people who open the repository",
               "Git refuses to work without it",
             ],
             answer_index: 1,
@@ -1274,7 +1274,7 @@ Zenabu builds a rainfall and yield analysis for a farmer group in Wa. Her reposi
               "Change the key immediately, because it stays in the history",
               "Delete it in the next commit and carry on",
               "Rename the repository",
-              "Make the repository private and do nothing else",
+              "Make the repository private so nobody can see the key, and do nothing else",
             ],
             answer_index: 0,
             explanation: "A committed secret stays in Git history, so the key must be changed.",
@@ -1341,7 +1341,7 @@ Ayishetu works for a solar home system company that sells on credit in the Upper
             prompt: "A model uses airtime top up frequency to predict loan repayment. What can you fairly claim?",
             options: [
               "Airtime top ups cause people to repay",
-              "The model must be wrong because airtime is unrelated to loans",
+              "The model must be wrong, because airtime spending has nothing at all to do with loans",
               "Prediction and explanation are the same thing",
               "It may predict repayment well, but it does not show that airtime causes repayment",
             ],
@@ -1365,7 +1365,7 @@ Ayishetu works for a solar home system company that sells on credit in the Upper
               "A simple rule or model the new model must beat to be worth using",
               "The first row of the dataset",
               "The most complex model you can build",
-              "The test score you hope to reach",
+              "The test score you hope the final model will reach by the end of the project",
             ],
             answer_index: 0,
             explanation: "A baseline, such as a simple rule, sets the bar the model must clear.",
@@ -1373,9 +1373,9 @@ Ayishetu works for a solar home system company that sells on credit in the Upper
           {
             prompt: "Why did Ayishetu treat the task as ranking customers?",
             options: [
-              "Ranking is the only thing scikit learn can do",
+              "Ranking is the only kind of output that scikit learn models can produce for credit data like this",
               "Her manager asked for a ranking by name",
-              "Agents could make a limited number of visits, so the visits needed to go where they help most",
+              "Agents could make only about 40 visits a week, so visits had to go where they help most",
               "Customers asked to be ranked",
             ],
             answer_index: 2,
@@ -1454,9 +1454,9 @@ Sumaila builds a model to predict which villages will need extra seed stock. A r
             prompt: "A baseline that predicts \"on time\" for everyone scores 83 percent accuracy. What does this show?",
             options: [
               "The baseline is an excellent model",
-              "Logistic regression is not needed for any problem",
+              "Logistic regression adds nothing here, because the baseline already matches its accuracy",
               "The data must be wrong",
-              "Accuracy can look high when one outcome is rare while catching none of the cases that matter",
+              "High accuracy can hide a model that catches none of the rare cases that matter",
             ],
             answer_index: 3,
             explanation: "The baseline caught zero late payers despite high accuracy, which is the accuracy trap.",
@@ -1478,7 +1478,7 @@ Sumaila builds a model to predict which villages will need extra seed stock. A r
               "Complex models do not always win, so you compare against simpler ones",
               "Random forests are always worse",
               "Logistic regression is always best",
-              "The test set must have been too large",
+              "The test set must have been too large for the random forest to learn from",
             ],
             answer_index: 0,
             explanation: "The lesson stresses comparing models because complexity does not guarantee better results.",
@@ -1586,9 +1586,9 @@ Mahama builds features for a pharmacy chain forecasting which branches will run 
             prompt: "Why does the lesson say features often matter more than the algorithm?",
             options: [
               "Algorithms are all identical",
-              "Well built features capture what actually drives the outcome, which any model can then use",
+              "Good features capture what drives the outcome, and any model can then use them",
               "Features are easier to download",
-              "scikit learn chooses the algorithm automatically",
+              "scikit learn picks the best algorithm automatically, so the features are the only part you control",
             ],
             answer_index: 1,
             explanation: "Meaningful features carry the real signal, so they usually matter more than the choice of model.",
@@ -1608,7 +1608,7 @@ Mahama builds features for a pharmacy chain forecasting which branches will run 
             prompt: "What does `handle_unknown=\"ignore\"` do in OneHotEncoder?",
             options: [
               "Deletes rows with unknown districts from training",
-              "Converts unknown categories into the most common one",
+              "Converts any unknown category into the most common category seen in training",
               "Stops the model crashing when a category appears that was not in training",
               "Scales numeric columns",
             ],
@@ -1706,7 +1706,7 @@ Hawa's yield model scored brilliantly until she noticed the training data includ
               "It is too simple to learn anything",
               "It memorises quirks of the training data and does poorly on new data",
               "It was trained on too much data",
-              "It has a perfect test score",
+              "It scores perfectly on both its training data and on new data it has never seen",
             ],
             answer_index: 1,
             explanation: "Overfitting is memorising training quirks instead of general patterns.",
@@ -1716,7 +1716,7 @@ Hawa's yield model scored brilliantly until she noticed the training data includ
             options: [
               "So each fold learns preparation only from its own training part",
               "Because Pipelines run faster on phones",
-              "Because cross validation cannot run without scaling",
+              "Because cross validation in scikit learn cannot run at all without scaling first",
               "So the test set is used during training",
             ],
             answer_index: 0,
@@ -1747,8 +1747,8 @@ Hawa's yield model scored brilliantly until she noticed the training data includ
           {
             prompt: "Upper West scored 0.64 but had only 41 test borrowers. What is the honest report?",
             options: [
-              "Upper West borrowers are riskier",
-              "The score is very uncertain, so more data is needed before relying on the model there",
+              "Upper West borrowers are riskier, so the model should simply be applied more strictly there",
+              "The score is very uncertain, so collect more data there before relying on the model",
               "The model is broken everywhere",
               "Drop Upper West from the report",
             ],
@@ -1850,7 +1850,7 @@ Fuseini helps a grain trader in Tamale plan storage. He gathers three years of w
             options: [
               "Seasonal naive is useless for every series",
               "Holt Winters will always win",
-              "The test period was too short to compare anything",
+              "The twelve month test period was too short to compare the two methods at all",
               "Holt Winters halved the error over a sensible baseline on this series",
             ],
             answer_index: 3,
@@ -1861,7 +1861,7 @@ Fuseini helps a grain trader in Tamale plan storage. He gathers three years of w
             options: [
               "Shuffling deletes the dates",
               "The model would learn from the future it is meant to predict",
-              "statsmodels cannot read shuffled data",
+              "statsmodels refuses to fit a model on data that is not in date order",
               "It makes plots harder to read",
             ],
             answer_index: 1,
@@ -1883,7 +1883,7 @@ Where something happens often explains why. Yields depend on rainfall zones and 
 
 ## Coordinates and projections
 
-Latitude and longitude are angles on a curved Earth, so you cannot measure distance in metres with them directly. A **coordinate reference system** (CRS) describes how coordinates map to the Earth. GPS gives coordinates in the system coded EPSG:4326. To measure distances, convert to a projected system in metres. For most of Ghana, UTM zone 30N (EPSG:32630) works; eastern parts of the country fall in zone 31N.
+Latitude and longitude are angles on a curved Earth, so you cannot measure distance in metres with them directly. A **coordinate reference system** (CRS) describes how coordinates map to the Earth. GPS gives coordinates in the system coded EPSG:4326. To measure distances, convert to a projected system in metres. For most of Ghana, UTM zone 30N (EPSG:32630) works; places east of the Greenwich meridian (0° longitude), including most of the Volta Region, fall in zone 31N (EPSG:32631).
 
 ## Nearest clinic, in code
 
@@ -1938,7 +1938,7 @@ Amina maps a health survey in the Northern Region to see whether distance affect
             options: [
               "Latitude and longitude are angles, so distances in metres need a projected system",
               "GPS coordinates are always wrong",
-              "geopandas cannot read EPSG:4326",
+              "geopandas cannot read, plot or store any coordinates that arrive in the EPSG:4326 system",
               "Projected systems make files smaller",
             ],
             answer_index: 0,
@@ -1958,7 +1958,7 @@ Amina maps a health survey in the Northern Region to see whether distance affect
           {
             prompt: "Why might a clinic 3 km away in a straight line be far in practice?",
             options: [
-              "Straight line distances are always overestimates",
+              "Straight line distances always overestimate travel, so the clinic is probably even closer",
               "Clinics move often",
               "The CRS was wrong",
               "Roads, footpaths and rivers in the rainy season can make real travel much longer",
@@ -1969,7 +1969,7 @@ Amina maps a health survey in the Northern Region to see whether distance affect
           {
             prompt: "How should you share a map from a household health survey?",
             options: [
-              "Publish every household point so it is accurate",
+              "Publish every household point so readers can check the analysis is accurate",
               "Show results by district or a coarse grid, without precise home locations",
               "Share raw coordinates with anyone who asks",
               "Only share the map on WhatsApp",
@@ -2045,7 +2045,7 @@ The board approved early distribution and the test in one meeting. The eight pag
           {
             prompt: "When should communication with the people who will use your results start?",
             options: [
-              "Only when the final report is ready",
+              "Only once the final report is ready, so early results do not confuse anyone",
               "After the model is deployed",
               "Before analysis, when agreeing the question and the decision",
               "Never; the numbers speak for themselves",
@@ -2056,10 +2056,10 @@ The board approved early distribution and the test in one meeting. The eight pag
           {
             prompt: "Why does the lesson place ethics in the communication section?",
             options: [
-              "Ethics only matters for presentations",
+              "Ethics only matters at the presentation stage, once the analysis is finished",
               "The law only applies to dashboards",
               "Ethics replaces the need for evidence",
-              "Data science often uses personal data, and sharing results responsibly includes protecting people in the data",
+              "Sharing results responsibly includes protecting the people in the data",
             ],
             answer_index: 3,
             explanation: "Responsible communication includes protecting people in the data and being honest about unfairness.",
@@ -2154,7 +2154,7 @@ Mariama analysed whether a radio programme in Dagbani changed how farmers in the
           {
             prompt: "How should you present a model's ROC AUC of 0.71 to a manager?",
             options: [
-              "Quote the number and let them look it up",
+              "Quote the exact number and add a link so they can look up what ROC AUC means themselves",
               "Leave it out entirely",
               "Round it up to sound better",
               "Translate it into a consequence, such as how many late borrowers calls would reach",
@@ -2167,7 +2167,7 @@ Mariama analysed whether a radio programme in Dagbani changed how farmers in the
             options: [
               "The message proves repayment always rises",
               "We are fairly confident the message raised repayment by between 2 and 9 points",
-              "The message may possibly suggest some kind of change",
+              "The message may possibly suggest some kind of change, though it is hard to say how much",
               "The results are significant",
             ],
             answer_index: 1,
@@ -2257,7 +2257,7 @@ Hawa built a dashboard for a maternal health project with clinics across the Upp
               "Encrypts the data",
               "Makes the chart colourful",
               "Stops the app reloading the data on every interaction",
-              "Publishes the app online",
+              "Publishes the app online so others can open it in a browser",
             ],
             answer_index: 2,
             explanation: "Caching keeps data loaded so the app does not reload it on every click.",
@@ -2266,7 +2266,7 @@ Hawa built a dashboard for a maternal health project with clinics across the Upp
             prompt: "Hawa's first dashboard was slow on phones. What fixed it?",
             options: [
               "Adding more charts",
-              "Loading every visit record",
+              "Loading every visit record so midwives could check each patient",
               "Removing the explanations",
               "Replacing raw records with a monthly summary per clinic",
             ],
@@ -2295,7 +2295,7 @@ Data science in Ghana often handles some of the most personal data there is: mob
 
 ## Ghana's data protection law
 
-The Data Protection Act, 2012 (Act 843) governs how personal data is processed, and the Data Protection Commission enforces it. The Commission says all data controllers and processors must register with it. The principles it lists include accountability, lawful processing, a specified purpose, quality of information, openness, security safeguards and the participation of the people the data is about. In practice for a data scientist:
+The Data Protection Act, 2012 (Act 843) governs how personal data is processed, and the Data Protection Commission enforces it. The Commission says all data controllers and processors must register with it. The principles it lists include accountability, lawful processing, a specified purpose, using data only for the purpose it was collected for, quality of information, openness, security safeguards and the participation of the people the data is about. In practice for a data scientist:
 
 * **Collect only what you need** for a stated purpose.
 * **Use data only for that purpose,** or one compatible with it.
@@ -2355,7 +2355,7 @@ Wumpini was offered phone metadata to improve a credit model. Before using it, s
             prompt: "Why is removing names not enough to anonymise data?",
             options: [
               "Names are not personal data",
-              "Software always keeps a hidden copy of names",
+              "Data software always keeps a hidden copy of the names, which can be recovered later",
               "Combinations such as village, age, sex and occupation can still identify a person",
               "The law forbids removing names",
             ],
@@ -2376,7 +2376,7 @@ Wumpini was offered phone metadata to improve a credit model. Before using it, s
           {
             prompt: "What did Wumpini do when consent for phone metadata was unclear?",
             options: [
-              "Used the data anyway because it improved accuracy",
+              "Used the data anyway, because better accuracy helps customers get fairer loans",
               "Built the model without it and recommended seeking proper consent first",
               "Shared the data with a partner to test it",
               "Deleted the whole credit model",
@@ -2443,7 +2443,7 @@ Sumaila has a diploma, not a degree, and works as a data clerk for an NGO in Yen
               "Evidence that you can think clearly about real problems with data",
               "Proof that you attended a famous university",
               "A list of every tool you have heard of",
-              "A guarantee that you will never make mistakes",
+              "A guarantee that you will never make mistakes in analysis or reporting work",
             ],
             answer_index: 0,
             explanation: "The lesson says employers want evidence of clear thinking with real data.",
@@ -2452,7 +2452,7 @@ Sumaila has a diploma, not a degree, and works as a data clerk for an NGO in Yen
             prompt: "Which is stronger evidence for an employer?",
             options: [
               "A CV line saying \"strong in machine learning\"",
-              "A certificate with no project attached",
+              "A certificate from a well known online course, with no project or code attached",
               "A linked project with a clear question, baseline, validation and honest summary",
               "A long list of programming languages",
             ],
@@ -2464,8 +2464,8 @@ Sumaila has a diploma, not a degree, and works as a data clerk for an NGO in Yen
             options: [
               "Claim one anyway",
               "Give up on data science",
-              "Only apply to large banks",
-              "Build a strong portfolio and relevant experience, and be honest about your background",
+              "Only apply to large banks, because they run their own training and rarely check degrees",
+              "Build a portfolio and relevant experience, and be honest about your background",
             ],
             answer_index: 3,
             explanation: "The lesson stresses honesty and building evidence through projects and relevant work.",
@@ -2492,7 +2492,7 @@ A portfolio is how you show employers that you can do the work, especially when 
 
 ## Where to find data
 
-* **Ghana Statistical Service (statsghana.gov.gh):** publishes census reports, survey reports and statistical tables free on its website. More detailed microdata are offered through its microdata catalogue, which needs an account and a data request, and comes with terms on how you may use and share it. Read and follow those terms.
+* **Ghana Statistical Service (statsghana.gov.gh):** publishes census reports, survey reports and statistical tables free on its website. More detailed microdata are offered through its microdata catalogue. You register, agree to terms of use (for example, no redistribution and no attempt to identify anyone), and some datasets also need a formal data request. Read and follow those terms.
 * **Open data from public bodies and development partners:** many publish datasets on agriculture, health, education and prices. Always record the source and licence.
 * **Data challenge platforms:** Zindi runs data science challenges focused on Africa, and Kaggle hosts many public datasets and competitions. Check each dataset's licence before publishing work on it.
 * **Your own collection:** a small, consented survey or prices you record yourself at a local market.
@@ -2540,13 +2540,13 @@ Hawa built a project asking whether distance to a health facility is associated 
           {
             prompt: "What do you need before using detailed microdata from the Ghana Statistical Service catalogue?",
             options: [
-              "An account and a data request, then following the terms on use and sharing",
+              "Registering and agreeing to its terms, such as no redistribution",
               "Nothing; you can share it anywhere",
-              "A paid subscription from a private company",
+              "A paid subscription from a private company that resells GSS microdata to the public",
               "Permission from a social media platform",
             ],
             answer_index: 0,
-            explanation: "The lesson says the microdata catalogue needs an account and request, and its terms must be followed.",
+            explanation: "The lesson says you register and agree to the catalogue's terms, such as no redistribution, and must follow them.",
           },
           {
             prompt: "Which data must you never use in a portfolio project?",
@@ -2554,7 +2554,7 @@ Hawa built a project asking whether distance to a health facility is associated 
               "Published census tables",
               "Prices you recorded yourself at a market",
               "Leaked or scraped personal data",
-              "A public challenge dataset with an open licence",
+              "A public challenge dataset released with an open licence that allows reuse",
             ],
             answer_index: 2,
             explanation: "Leaked or scraped personal data must never be used.",
@@ -2650,7 +2650,7 @@ Mariama applied for six analyst and research roles and heard back from two. One 
             prompt: "In a practical test with a deadline, what does the lesson advise?",
             options: [
               "Use the most complex model possible",
-              "Spend all the time on one fancy chart",
+              "Spend most of the time polishing one impressive interactive chart for the summary page",
               "Start with a simple baseline, explain your choices and submit something complete",
               "Skip checking the data to save time",
             ],
@@ -2662,7 +2662,7 @@ Mariama applied for six analyst and research roles and heard back from two. One 
             options: [
               "She did not know how",
               "The test forbade Python",
-              "Machine learning is never used in research",
+              "Machine learning is never used in research roles, so it would have looked out of place",
               "The question was about comparing groups, not predicting, so inference fit better",
             ],
             answer_index: 3,

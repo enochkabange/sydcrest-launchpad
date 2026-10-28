@@ -114,7 +114,7 @@ wave).
   inference and experiments, F1 puts Mathematics first, and it is what distinguishes this track
   from the AI one. The A/B test node uses an SMS reminder example; mobile money and lenders are
   among the employers seen.
-* **Advanced SQL** gets a node because SQL appears in seven adverts and data scientists are
+* **Advanced SQL** gets a node because SQL appears in nine adverts and data scientists are
   expected to go beyond the analyst level.
 * **Reproducible work** reflects A1 software design, A2 Git and clean code, and F1 Git.
 * **Forecasting** gets a node from A4 forecasting plus time based sensor and transaction data in
@@ -142,11 +142,11 @@ wave).
 | `inference-and-hypothesis-tests` | A7 inference; A10 hypothesis testing; C1 foundations for inference |
 | `experiments` | A7 experiment design; A4 multivariate testing |
 | `regression-analysis` | C1 linear and multiple regression; A4 statistical analysis; prerequisite of `machine-learning-basics` |
-| `programming-for-data-science` | Section. Python in 10 adverts; SQL in 7 |
+| `programming-for-data-science` | Section. Python in 14 of 15 adverts; SQL in 9 |
 | `python-data-stack` | A8 A10 pandas and NumPy; A9 strong Python; F1 Python |
 | `advanced-sql` | A3 A4 A5 A6 A7 A8 A10 SQL; A3 PostgreSQL and MySQL |
 | `reproducible-work` | A2 Git and clean code; A1 software design and maintainability; F1 Git |
-| `predictive-modelling` | Section. Machine learning in 7 adverts; F1 predictive models |
+| `predictive-modelling` | Section. Machine learning in 9 adverts; F1 predictive models |
 | `machine-learning-basics` | A8 A10 scikit learn; A1 A5 predictive modelling; C2 regression and classification |
 | `features-for-decisions` | A5 feature engineering; F1 test and validate models; prerequisite of `model-validation` (leakage) |
 | `model-validation` | F1 test and validate models; C2 overfitting; A5 fairness |
@@ -196,3 +196,21 @@ wave).
   no text, examples or ordering adapted, and the book is not quoted.
 * **Quiz answers** are spread evenly across positions 0 to 3 (26 each).
 
+
+## Review (issue #84), 28 October 2026
+
+* **Re run:** the CLT simulation, Wilson interval, power calculation, two proportion z test, self
+  check groupby, `weekly_summary` and feature snippets were re run with pandas 3.1.0, NumPy 2.5.4,
+  statsmodels 0.15.0, scikit learn 1.9.1 and SciPy 1.18.1; every quoted output matched. `ETSModel`
+  `summary_frame` was confirmed to return `pi_lower` and `pi_upper`.
+* **Checked against sources:** Colab FAQ (D1) wording; GSS catalogue entry (D3), which says users
+  must agree to terms (no redistribution, no re identification, aggregated reporting only) and
+  that data beyond the public use file go through a data request, so the portfolio lesson now says
+  "register, agree to terms, some datasets need a request"; DPC home page (D4), whose principle
+  list includes processing only for the purpose of collection, now added to `ethics-and-privacy`.
+* **Geospatial:** the zone 31N sentence now names EPSG:32631 and the Greenwich meridian (Ghana
+  spans roughly 3°W to 1°E; UTM zone 31 starts at 0°).
+* **Python claim:** "Python in nearly every advert" is supported by the frequency table (14 of 15);
+  the coverage table counts were corrected to match the frequency section.
+* **Quizzes:** the correct option was strictly the longest in 84 of 104 questions; distractors
+  were lengthened (still clearly wrong) and some correct options trimmed, now 24 of 104.
