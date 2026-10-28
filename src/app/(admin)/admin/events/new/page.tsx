@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import Link from "@/components/ui/link";
 import { MainWithRail } from "@/components/ui/layout";
+import { requireAdmin } from "@/lib/admin";
 import { EVENT_KINDS } from "@/lib/events/labels";
 import { chapterOptions } from "../chapters";
 import { EventForm } from "../event-form";
@@ -9,10 +10,11 @@ import { EventForm } from "../event-form";
 export const metadata: Metadata = { title: "New event" };
 
 async function Form() {
+  await requireAdmin();
   return <EventForm chapters={await chapterOptions()} />;
 }
 
-/** The layout gate checks the admin role; createEvent checks it again on submit. */
+/** The form checks the admin role (the layout gate does not stop a page rendering); createEvent checks it again. */
 export default function NewEventPage() {
   return (
     <div className="flex flex-col gap-6">
