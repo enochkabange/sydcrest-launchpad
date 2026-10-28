@@ -31,11 +31,14 @@ export async function nodeId(roadmap: SeededRoadmap, slug: string) {
 
 export type Sharer = { learner: Learner; roadmap: SeededRoadmap; topicId: string; roadmapAchievementId: string };
 
-/** A public learner with a topic, a section, a roadmap and a certificate to share, and milestone posts on. */
+/**
+ * A public learner with a topic, a section, a roadmap and a certificate to
+ * share. Milestone posts stay off (the default), so seeding adds nothing to
+ * the shared everyone feed.
+ */
 export async function seedSharer(name = "Wumpini Alhassan"): Promise<Sharer> {
   const [learner, roadmap] = await Promise.all([createLearner(name), seedRoadmap()]);
   await makePublic(learner);
-  await admin(`/rest/v1/profiles?id=eq.${learner.id}`, { method: "PATCH", body: { milestone_posts: true } });
   const quizNode = await nodeId(roadmap, roadmap.quizNode.slug);
   const topicId = await mint(learner, "roadmap_node_completed", quizNode);
   await mint(learner, "section_completed", quizNode);
