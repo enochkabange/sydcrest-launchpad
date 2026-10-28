@@ -49,7 +49,8 @@ Manager track).
 | S15 | jobs.com.gh (formerly ghanacareers.com): Programme Officer, ASERD-GHANA, Tamale (deadline May 2026, closed) | https://jobs.com.gh/?p=41680 | 2026-10-28 | Job board, full listing, skills only |
 | C1b | Coursera: Google Project Management certificate, re-read for the certifications lesson | https://www.coursera.org/professional-certificates/google-project-management | 2026-10-28 | Public catalogue page. Seen: beginner level, no degree or experience required, counts as project management education towards PMI credentials such as CAPM. Hours and discount figures deliberately not used in learner copy |
 | C2b | PM4NGOs: Project DPro page, re-read | https://pm4ngos.org/project-dpro/ | 2026-10-28 | Seen: guide downloadable at no cost, CC BY NC 4.0, exam available in several languages |
-| C6 | Google Docs Editors Help: Timeline view in Sheets | https://support.google.com/docs/answer/12935277 | 2026-10-28 | Official help. Timeline view is listed for Google Workspace editions only, so the schedules lesson teaches coloured cells and mentions timeline view only for paid Workspace accounts |
+| C6 | Google Docs Editors Help: Timeline view in Sheets | https://support.google.com/docs/answer/12935277 | 2026-10-28 | Official help. Timeline view is listed for Google Workspace editions only, so the schedules lesson teaches coloured cells and mentions timeline view only for paid Workspace accounts (superseded by C7 in review) |
+| C7 | Google Docs Editors Help: Use conditional formatting rules in Google Sheets | https://support.google.com/docs/answer/78413 | 2026-10-28 | Official help; no edition restriction stated, works on free accounts. Replaces C6 as the schedules resource (review of PR #206) |
 | P1 | SydCrest Planning/12_TRACK_CATALOGUE.md | (internal) | 2026-10-27 | Internal planning document |
 
 Resource links in the outline returned 200 on 27 October 2026. pmi.org and open.edu returned
@@ -184,3 +185,8 @@ communications; entry level, one year).
 | getting-hired-pm (section) | Groups job readiness |
 | entry-certifications | C1 C2 C3 C4 |
 | first-coordination-roles | A1 A13 A14 entry routes; P1 |
+
+## Review notes (PR #206, 28 October 2026)
+
+* `schedules-and-gantt-charts`: the timeline view resource (C6) was replaced with the conditional formatting help page (C7), because timeline view is limited to paid Google Workspace editions. The lesson now teaches hand coloured cells, with conditional formatting as an optional way to colour them automatically, and no longer mentions timeline view.
+* Certifications re-checked 28 October 2026: Coursera page (offered by Google, beginner level, no degree or experience required, counts as project management education that helps prepare for PMI certifications such as CAPM); PM4NGOs Project DPro page (guide at no cost, CC BY NC 4.0, exam available in eight languages including English and French); PeopleCert PRINCE2 page (offers the PRINCE2 Foundation exam; the claim about where PRINCE2 is used was removed as unsourced); pmi.org still returns 403, so CAPM stays general; dpc.gov.gh names the Data Protection Commission, established under the Data Protection Act, 2012 (Act 843); Scrum Guide terms checked (it sets no typical sprint length, so "often two weeks" became "for example two weeks").

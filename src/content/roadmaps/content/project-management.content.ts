@@ -120,7 +120,7 @@ People often call these the triple constraint, because changing one usually chan
 
 ## A worked example
 
-Hawa plans to open her shop in Bolgatanga in eight weeks with a budget of GHS 6,000. The scope is: paint and shelve the shop, make the first stock of soap and cream, print labels, and hold an opening day.
+Hawa plans to open her shop in Bolgatanga in eight weeks with a budget of GHS 6,000 (an invented figure for practice). The scope is: paint and shelve the shop, make the first stock of soap and cream, print labels, and hold an opening day.
 
 Three weeks in, her cousin Amina suggests also selling online with a small website. That is a change in scope. Hawa now has three choices:
 
@@ -226,7 +226,7 @@ A **RACI chart** is a simple table that lists tasks down the side and people acr
 
 ## A worked example
 
-On the community water project, coordinator Fuseini, assistant Mariama, finance officer Abdul-Rahman and the chief's linguist share the work. Part of their chart looks like this:
+On the community water project, coordinator Fuseini, assistant Mariama, finance officer Abdul-Rahman and the community's chief share the work. Part of their chart looks like this:
 
 | Task | Fuseini | Mariama | Abdul-Rahman | Chief |
 |---|---|---|---|---|
@@ -491,7 +491,7 @@ Sumaila volunteers with a youth association in Wa. The association wants a skill
 * **Goal:** Train 40 members in spreadsheet and email basics over three Saturdays in June; at least 30 complete the final task.
 * **In scope:** Venue, facilitator, practice exercises, snacks, certificates of attendance.
 * **Out of scope:** Buying laptops, job placement, training non members.
-* **Budget:** GHS 3,500 from member dues and a local business sponsor.
+* **Budget:** GHS 3,500 from member dues and a local business sponsor (invented for practice).
 * **Dates:** Venue booked by 20 May; sessions on three Saturdays in June; short report by 10 July.
 * **People:** Association president Amina is accountable; Sumaila coordinates; Fuseini facilitates.
 * **Risks:** Power cuts at the venue; members cannot afford transport.
@@ -579,7 +579,7 @@ A simple tool is a two by two grid. Score each stakeholder as high or low on two
 * **High influence, high interest: work closely.** Involve them in decisions and meet them regularly. Example: the chief and the district water officer.
 * **High influence, low interest: keep satisfied.** Brief them at key moments, keep it short. Example: the district chief executive.
 * **Low influence, high interest: keep informed.** Share regular updates. Example: households that will use the borehole.
-* **Low influence, lower interest: monitor.** Check in from time to time. Example: a nearby community that may want a borehole later.
+* **Low influence, low interest: monitor.** Check in from time to time. Example: a nearby community that may want a borehole later.
 
 The grid is a guide, not a ranking of who matters. People with little formal influence are often the ones the project exists to serve, so their voices need extra care.
 
@@ -995,7 +995,7 @@ Add some buffer time before important milestones. Things will slip; buffer prote
 
 A **Gantt chart** is a timeline that lists tasks down the left and dates across the top, with a bar for each task showing when it starts and ends. In one picture you see what happens when, what overlaps, and where the busy weeks are.
 
-You can make a simple Gantt chart in any spreadsheet: put tasks in column A, weeks across row 1, and colour the cells for the weeks each task runs. Some organisations' paid Google Workspace accounts also offer a timeline view that turns rows with start and end dates into bars, but coloured cells work in any free spreadsheet.
+You can make a simple Gantt chart in any free spreadsheet: put tasks in column A, weeks across row 1, and colour the cells for the weeks each task runs. Colouring by hand is fine. If you want the colours to update themselves, conditional formatting can colour a cell when a rule is true, for example when its week falls between a task's start and end week. You will use conditional formatting again in the tracking lesson.
 
 ## A worked example
 
@@ -1230,7 +1230,7 @@ Here is part of the register for the school feeding programme, kept by Wumpini:
 | If donor funds arrive late, then food cannot be bought | 2 | 3 | 6 | Agree a two week food reserve; alert donor early | Issahaku |
 | If maize prices rise before harvest, then the budget runs short | 3 | 2 | 6 | Buy in bulk after harvest; agree prices with farmer groups | Wumpini |
 | If a cook falls ill, then meals stop at one school | 2 | 2 | 4 | Train one backup cook per school | Head teachers |
-| If pupils' parents are not informed, then attendance is low | 1 | 2 | 2 | Accept; announce at PTA meetings | Wumpini |
+| If pupils' parents are not informed, then attendance is low | 1 | 2 | 2 | Reduce; announce at PTA meetings | Wumpini |
 
 ## Logging issues
 
@@ -2345,7 +2345,7 @@ This works well when the right answer is not clear at the start. Building a farm
 * **Developers:** the people who do the work. In Scrum this means anyone building the product, not only programmers.
 
 **Events**
-* **Sprint:** a fixed cycle of one month or less, often two weeks.
+* **Sprint:** a fixed cycle of one month or less, for example two weeks.
 * **Sprint Planning:** at the start, the team chooses what to deliver in this sprint.
 * **Daily Scrum:** a short daily check in, kept to fifteen minutes, on progress towards the sprint's goal.
 * **Sprint Review:** at the end, the team shows what was built and gets feedback.
@@ -2398,7 +2398,7 @@ Even on a plan driven NGO project, you can borrow agile habits: short regular ch
           {
             prompt: "How long is a sprint, according to the lesson?",
             options: [
-              "A fixed cycle of one month or less, often two weeks",
+              "A fixed cycle of one month or less, for example two weeks",
               "Exactly one day",
               "One full year",
               "As long as the team likes, with no limit",
@@ -2538,8 +2538,8 @@ These are named as examples, not recommendations. Rules, prices and formats chan
 
 * **Project DPro.** A guide to project management written for the development sector, published by the organisation PM4NGOs. The guide itself can be downloaded at no cost under a Creative Commons licence, and a certification exam based on the guide is available in several languages; see the PM4NGOs site for how it works. Because it is written for NGO and development work, its topics match much of this roadmap.
 * **CAPM (Certified Associate in Project Management).** An entry level certification from the Project Management Institute (PMI), a large international professional body. It has eligibility rules, an exam and a fee. Check PMI's official website for the current requirements.
-* **Google Project Management Certificate.** An online programme from Google offered on Coursera. Its page describes it as beginner level, needing no degree or experience, and says completing it counts as project management education towards PMI credentials such as CAPM. Check the Coursera page for current pricing and whether any financial aid is offered.
-* **PRINCE2 Foundation.** An entry level exam in the PRINCE2 method, which is widely used in the United Kingdom and some other countries. Exams are offered through PeopleCert. Check its official site for details.
+* **Google Project Management Certificate.** An online programme from Google offered on Coursera. Its page describes it as beginner level, needing no degree or experience, and says it counts as project management education that helps you prepare for PMI certifications such as CAPM. Check the Coursera page for current pricing and whether any financial aid is offered.
+* **PRINCE2 Foundation.** An entry level exam in PRINCE2, a structured project management method. The exams are offered through PeopleCert. Check its official site for details.
 
 ## How to decide
 
