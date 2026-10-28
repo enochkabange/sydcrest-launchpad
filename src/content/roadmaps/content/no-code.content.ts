@@ -1033,7 +1033,7 @@ A baseline survey might send twenty enumerators to villages across the Savannah 
 5. **Send finalised forms.** Back in network, they send completed forms to the server.
 6. **Download and check.** The data team downloads the data, often as a spreadsheet file, checks it and builds reports.
 
-KoboToolbox also offers **web forms** that open in a browser. Its documentation says these work on Android phones, iPhones, laptops and desktops, and can work offline once the form has been opened and cached while connected. ODK also offers web forms through Central. These help when someone does not have an Android device.
+KoboToolbox also offers **web forms** that open in a browser. Its documentation says these work on Android phones, iPhones, laptops and desktops, and can work offline once the form has been opened and cached while connected. ODK Central also offers web forms in the browser, though the ODK docs say these do not yet work offline. Web forms help when someone does not have an Android device.
 
 ## What a good enumerator does
 
@@ -1165,7 +1165,7 @@ XLSForm sheets grow wide, with many columns and long expressions. Editing them i
 
 ## Pilot before you deploy
 
-Always pilot test: fill in the form yourself with normal answers, odd answers and impossible answers, then with two or three real people. Hawa, a data officer in Wa, pilots every survey with colleagues in Dagbani and English before deployment, and nearly always finds a confusing question or a constraint that is too strict. Fixing it then is far cheaper than cleaning bad data later.`,
+Always pilot test: fill in the form yourself with normal answers, odd answers and impossible answers, then with two or three real people. Hawa, a data officer in Tamale, pilots every survey with colleagues in Dagbani and English before deployment, and nearly always finds a confusing question or a constraint that is too strict. Fixing it then is far cheaper than cleaning bad data later.`,
       practice_task_md: `**Goal:** Write a small XLSForm with logic and test it.
 
 **Steps:**
@@ -1325,15 +1325,15 @@ Collect the content before building: a short description, a few good photos take
       },
     },
     "site-builders": {
-      explanation_md: `There are many ways to build a website without code, and none of them is best for everyone. A good builder for a youth club is a poor builder for a growing online shop. Knowing the trade offs lets you advise clients honestly and avoid sites that get abandoned after a month.
+      explanation_md: `No website builder is best for everyone. A good builder for a youth club is a poor one for a growing online shop. Knowing the trade offs lets you advise clients honestly and avoid sites that get abandoned after a month.
 
 ## The range of builders
 
 Think of builders on a line from simple to powerful.
 
-**Simple page tools.** Google Sites is an example. You drag text boxes, images and embedded items, such as a Google Form or a map, onto pages. There are few design choices, which is a strength: it is hard to make a mess. Good for a school club, a project page, an internal staff site or a first portfolio.
+**Simple page tools.** Google Sites is an example. You drag text boxes, images and embedded items, such as a Google Form or a map, onto pages. There are few design choices, which makes it hard to make a mess but also limits what the site can do, with no built in shop. Good for a school club, a project page, an internal staff site or a first portfolio.
 
-**All in one builders.** Wix and Squarespace are examples. They offer polished templates, drag and drop layout, and add ons for bookings, blogs or small shops, with hosting included. Easy to start, but you depend on one company: moving the site elsewhere later is usually hard, and the most useful features may need a paid plan.
+**All in one builders.** Wix and Squarespace are examples. They offer polished templates, drag and drop layout, and add ons for bookings, blogs or small shops, with hosting and security looked after for you. Easy to start, but you depend on one company: moving the site elsewhere later is usually hard, and the most useful features may need a paid plan.
 
 **WordPress.** The WordPress software is open source and runs many business and NGO sites. It can be run on your own hosting or through hosted services such as WordPress.com. It is the most flexible option, with a large directory of themes and plugins, and the one Ghanaian adverts mention most. It also needs the most care: updates, backups and security. The next lesson covers it.
 
@@ -1363,7 +1363,7 @@ Mariama wants a simple site for her tailoring business in Tamale. She chooses a 
 4. An embedded order request form linked to a sheet.
 5. A phone number and a link to her WhatsApp Business chat.
 
-She checks it on her phone and a friend's computer, asks two customers whether anything is confusing, then publishes. Later, if she needs online payments or a blog, she can move to a more powerful builder, keeping her content and photos.
+She checks it on her phone and a friend's computer, asks two customers for feedback, then publishes. Later, if she needs online payments or a blog, she can move to a more powerful builder, keeping her content and photos.
 
 ## Keep it simple
 
@@ -1560,7 +1560,7 @@ This is where many small organisations get hurt. If the domain is registered in 
 
 ## HTTPS
 
-Visitors' browsers expect a secure connection, shown by **https** and a padlock. This needs a security certificate. Many builders and hosts provide one, but check it is switched on, because browsers warn visitors away from sites without it.
+Visitors' browsers expect a secure connection, shown by **https** in the address bar, and in many browsers a lock icon. This needs a security certificate. Many builders and hosts provide one, but check it is switched on, because browsers warn visitors away from sites without it.
 
 ## Fast on mobile data
 
@@ -1586,7 +1586,7 @@ Many visitors arrive on phones with prepaid data and weak signal.
 
 ## A worked example
 
-Hawa launches a site for a shea butter group in Nalerigu. She registers the domain in the group's name using the group's email, connects it to the builder, checks the padlock appears, compresses six photos, adds alt text and runs a speed test. She writes the renewal date and logins in a handover sheet kept by the group's treasurer.`,
+Hawa launches a site for a shea butter group in Nalerigu. She registers the domain in the group's name using the group's email, connects it to the builder, checks the address starts with https, compresses six photos, adds alt text and runs a speed test. She writes the renewal date and logins in a handover sheet kept by the group's treasurer.`,
       practice_task_md: `**Goal:** Make your one page site ready for real visitors.
 
 **Steps:**
@@ -1788,12 +1788,12 @@ Once an app is live, avoid renaming or deleting columns in the sheet, which can 
       practice_task_md: `**Goal:** Build a working app from a sheet.
 
 **Steps:**
-1. On a computer, prepare a sheet with two tabs, such as products and sales, each with an ID column and five to ten made up rows.
-2. Open an app builder such as AppSheet or Glide and create an app from the sheet.
+1. Prepare a sheet with two tabs, such as products and sales, each with an ID column and five to ten made up rows. Your phone is fine for this.
+2. On a computer if you can, open an app builder such as AppSheet or Glide and create an app from the sheet.
 3. Check and fix column types, especially dates, numbers and choice lists.
 4. Build a list screen with search, a form to add records, and one filtered list such as low stock items.
 5. Link the sales tab to products using the ID.
-6. Preview on a phone: add a record and confirm it appears in the sheet.
+6. Preview the app in the builder, and on a phone if your tool's plan allows: add a record and confirm it appears in the sheet.
 
 **Done looks like:** A working app preview, a sheet that updates when you add a record, and three screenshots: the list, the form and the filtered view. Note one fix you made after testing on a phone.`,
       quiz: {
@@ -2168,7 +2168,7 @@ Anyone can click buttons in an automation tool. People who can explain a process
       },
     },
     "automation-tools": {
-      explanation_md: `Once a process is mapped, you choose how to build it. There is no single best tool. Remote operations adverts name Zapier, Make and Power Automate, and some ask candidates to monitor workflows and troubleshoot failures. This lesson compares the main types and shows how to keep automations healthy.
+      explanation_md: `Once a process is mapped, you choose how to build it. No single tool is best. Remote operations adverts name Zapier, Make and Power Automate, and some ask candidates to monitor workflows and troubleshoot failures. This lesson compares the main types and shows how to keep automations healthy.
 
 ## The main types
 
@@ -2177,15 +2177,15 @@ Anyone can click buttons in an automation tool. People who can explain a process
 * **Zapier:** a workflow is a Zap, with one trigger and one or more actions, built as a list of steps.
 * **Make:** a workflow is a scenario, built as a diagram of connected modules, which makes branches and loops easy to see.
 * **Power Automate:** a workflow is a flow; it fits organisations already using Microsoft 365.
-* **n8n:** open source; it can be self hosted by teams with technical help, or used as a hosted service.
+* **n8n:** its code is publicly available, so teams with technical help can host it themselves, or use it as a hosted service.
 
-**Built in automation.** Google Forms, spreadsheets, messaging apps, website builders and app builders often have their own rules, notifications and scheduled actions. These are usually simplest to keep running because there is nothing extra to connect.
+**Built in automation.** Google Forms, spreadsheets, messaging apps, website builders and app builders often have their own rules, notifications and scheduled actions. These are usually simplest to keep running, with nothing extra to connect.
 
 **Light scripting.** Google Apps Script can run small programs when a form is submitted or at set times, inside Google tools. It needs some code, which makes it optional here, but it is useful to know it exists.
 
 ## Plans and limits
 
-Connector tools measure use in different ways: runs, tasks or operations, the number of steps, how often triggers check for new data, and which apps are available. Some triggers check for new data at intervals rather than instantly. These details differ by tool and plan and change over time, so for each project:
+Connector tools measure use in different ways: runs, tasks or operations, the number of steps, how often triggers check for new data, and which apps are available. Some triggers check for new data at intervals rather than instantly. These details differ by tool and plan and change, so for each project:
 
 * Estimate how many times the workflow will run each month and how many steps it has.
 * Read the tool's current plans page and note the date.
@@ -2193,27 +2193,27 @@ Connector tools measure use in different ways: runs, tasks or operations, the nu
 
 ## Watching runs
 
-Every connector tool keeps a record of runs. Zapier calls it Zap history; Make keeps a history for each scenario and stores some failed runs as **incomplete executions** that can be resolved; Power Automate shows run history for each flow. Checking this record is the first step in any problem.
+Every connector tool keeps a record of runs. Zapier calls it Zap history and lets you replay failed runs from it; Make keeps a history for each scenario and stores some failed runs as **incomplete executions** that can be resolved; Power Automate shows run history for each flow. Checking it is the first step in any problem.
 
 ## Why runs fail
 
-* **Expired connection.** A password changed or permission was removed, so the tool can no longer reach an app. Reconnect the account.
+* **Expired connection.** A password changed or permission was removed, so the tool cannot reach an app. Reconnect the account.
 * **Changed structure.** Someone renamed a sheet column or form question that a step depended on. Restore the name or update the step.
 * **Missing or odd data.** A required field was blank, or a date was in the wrong format. Add validation to the form, or a formatting step.
 * **Limits reached.** The plan's monthly usage ran out. Check the plan and usage page.
 
 ## A worked example
 
-Every Monday, a workflow emails Sumaila's client in Tamale a list of new orders from a form. One week, nothing arrives. Sumaila opens the run history on his phone and sees the runs failed with an error about a missing column. The owner had renamed "Phone" to "Customer phone" in the sheet. Sumaila updates the step on a computer, replays the failed run, and adds a note to the handover guide: do not rename columns without telling him.
+Every Monday, a workflow emails Sumaila's client in Tamale a list of new orders from a form. One week, nothing arrives. Sumaila opens the run history on his phone and sees the runs failed with an error about a missing column. The owner had renamed "Phone" to "Customer phone" in the sheet. Sumaila updates the step on a computer, replays the failed run where the tool allows, and adds a note to the handover guide: do not rename columns without telling him.
 
 ## Choosing well
 
-Prefer built in features when they do the job. Choose a connector tool the client can understand and afford. Keep workflows short; several small workflows are easier to fix than one giant one. Name every workflow clearly, such as "Salon bookings: form to sheet and email", so anyone can find it.`,
+Prefer built in features when they do the job. Choose a tool the client can understand and afford. Keep workflows short; several small ones are easier to fix than one giant one. Name every workflow clearly, such as "Salon bookings: form to sheet and email", so anyone can find it.`,
       practice_task_md: `**Goal:** Build, break and fix a simple automation.
 
 **Steps:**
-1. On a computer, sign up for a connector tool such as Zapier, Make or Power Automate, or use a built in option such as a form's email notifications.
-2. Build a two step workflow: when a new form response arrives, add a row to a separate sheet or send yourself an email.
+1. Sign up for a connector tool such as Zapier, Make or Power Automate, or use a built in option such as a form's email notifications.
+2. On a computer if you can, build a two step workflow: when a new form response arrives, add a row to a separate sheet or send yourself an email.
 3. Submit a test response and confirm it worked. Give the workflow a clear name.
 4. Break it on purpose: rename a column or question the workflow uses, then submit again.
 5. Open the run history, find the error and fix it.
@@ -2282,7 +2282,7 @@ Prefer built in features when they do the job. Choose a connector tool the clien
       },
     },
     "message-automation": {
-      explanation_md: `Many automations end with a message: a booking confirmation, a receipt, a reminder, a reply outside working hours. Done well, automatic messages make a small business feel organised and caring. Done badly, they annoy people, break trust and can break rules. Digital and communications roles in Ghana ask for email marketing and messaging tools, and every small business client will ask you about WhatsApp.
+      explanation_md: `Many automations end with a message: a booking confirmation, a receipt, a reminder, a reply outside working hours. Done well, automatic messages make a small business feel organised and caring. Done badly, they annoy people, break trust and can break rules. Digital and communications roles in Ghana ask for email marketing tools, and many small business clients will ask you about WhatsApp.
 
 ## Helpful, not spammy
 
@@ -2301,10 +2301,10 @@ Form tools can send a response receipt; connector tools and email marketing tool
 
 ## WhatsApp Business app features
 
-The WhatsApp Business app, used by many Ghanaian traders, has built in tools that need no other software:
+The WhatsApp Business app has built in tools that need no other software:
 
-* **Greeting messages** greet people when they start a conversation.
-* **Away messages** reply when you are not available, for example outside opening hours.
+* **Greeting messages** greet people who message you for the first time, or again after a long quiet spell.
+* **Away messages** reply when you are not available, for example outside opening hours. The phone needs an internet connection for them to go out.
 * **Quick replies** save common answers so you can send them quickly, by typing a slash in a chat or choosing them from the attach menu. The app can also suggest replies based on your business profile, such as your hours or address.
 
 These run on the business owner's own phone and account. Sending automated WhatsApp messages from other tools, such as a form or a sheet, is a different matter: it uses WhatsApp's business platform, usually through an approved provider, with its own rules on consent and message formats. Read the official rules before promising a client this.
@@ -2585,14 +2585,15 @@ You do not need to be an expert to start earning trust. You need to be careful, 
 
 ## Ghana's law in plain terms
 
-Ghana's **Data Protection Act, 2012 (Act 843)** sets rules for collecting and using personal data, and the **Data Protection Commission** oversees it. The Commission's website lists principles that include:
+Ghana's **Data Protection Act, 2012 (Act 843)** sets rules for collecting and using personal data, and the **Data Protection Commission** oversees it. The Commission's website lists eight principles:
 
 * **Accountability:** the organisation can show it follows the law.
-* **Lawful processing:** there are proper grounds for using the data, and it is done fairly and openly.
-* **Purpose:** data is collected for a clear, stated purpose and used for that purpose.
-* **Quality:** data is kept accurate and up to date.
+* **Lawfulness of processing:** there are proper grounds for using the data, used fairly.
+* **Specification of purpose:** data is collected for a clear, specific purpose.
+* **Quality of information:** data is kept accurate and up to date.
+* **Purpose of collection:** later uses of the data fit the purpose it was collected for.
 * **Openness:** people are told what happens to their data.
-* **Security safeguards:** suitable technical and organisational protection.
+* **Data security safeguards:** suitable technical and organisational protection.
 * **Data subject participation:** people can exercise their rights over their own data.
 
 The Commission also says organisations that collect and use personal data must register with it. You do not need to be a lawyer. Know the law exists, follow your client's or employer's policy, and ask when unsure. This lesson is general guidance, not legal advice.
@@ -2644,15 +2645,15 @@ Fuseini reviews a training registration form for an NGO in Damongo. He removes "
             explanation: "The lesson names the Data Protection Commission as overseeing the Act.",
           },
           {
-            prompt: "What does the purpose principle mean, as the lesson explains it?",
+            prompt: "What does the specification of purpose principle mean, as the lesson explains it?",
             options: [
-              "Data is collected for a clear, stated purpose and used for that purpose",
+              "Data is collected for a clear, specific purpose",
               "Data can be used for any purpose once it is collected",
               "Every form must have a purpose written in English and Dagbani",
               "Data must be shared with the public so that people can check the purpose for themselves",
             ],
             answer_index: 0,
-            explanation: "The lesson describes the purpose principle as collecting for a stated purpose and using it for that purpose.",
+            explanation: "The lesson describes specification of purpose as collecting data for a clear, specific purpose.",
           },
           {
             prompt: "Why should you avoid anyone with the link sharing for a sheet containing personal data?",

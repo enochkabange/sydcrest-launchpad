@@ -69,6 +69,13 @@ developer" job.
 | D20 | Zapier Help: What is a Zap (trigger and actions) and Make Help: scenarios index (scenarios, modules, incomplete executions for failed runs) | https://help.make.com/scenarios | 2026-10-28 | Official docs; fact check for `automation`, `automation-tools` |
 | D21 | WhatsApp Business: business app page (greeting and away messages) and WhatsApp Help Center: How to use quick replies (type "/" or use Attach; suggestions from the business profile) | https://faq.whatsapp.com/1791149784551042 | 2026-10-28 | Official product page and help article; fact check for `message-automation` |
 | D22 | Data Protection Commission home page, re-read (eight principles; "all data controllers and processors must register") | https://dpc.gov.gh/ | 2026-10-28 | Official regulator site; plain summary in `privacy-and-permissions` |
+| D23 | Data Protection Commission home page, reviewer re-read: the eight principles by name (Accountability, Lawfulness of Processing, Specification of Purpose, Quality of Information, Purpose of Collection, Openness, Data Security Safeguards, Data Subject Participation) | https://dpc.gov.gh/ | 2026-10-28 | Official regulator site; review: `privacy-and-permissions` now lists all eight |
+| D24 | Zapier Help: Zap history (Zap runs and task usage; replay unsuccessful runs) and Replay Zap runs (manual replay of errored runs on every plan, including Free) | https://help.zapier.com/hc/en-us/articles/8496241726989-Replay-Zap-runs | 2026-10-28 | Official docs; review: `automation-tools` |
+| D25 | Glide Docs: data sources (Google Sheets, Excel, Airtable, Glide Tables and others); Glide quick start says publishing needs a paid plan, Free can build and preview | https://www.glideapps.com/docs/essentials/data-sources/glide-tables | 2026-10-28 | Official docs; review: `apps-from-sheets` practice step softened, no plan detail in the lesson |
+| D26 | Softr Docs: data sources (Airtable, Google Sheets, Notion, SQL databases and others, plus Softr Databases) | https://docs.softr.io/data-sources | 2026-10-28 | Official docs; review: `apps-from-sheets` |
+| D27 | ODK Docs: Central submissions (Central bundles ODK Web Forms for filling forms in a browser; web forms do not yet support offline use) | https://docs.getodk.org/central-submissions/ | 2026-10-28 | Official docs; review: `field-surveys` |
+| D28 | WhatsApp Help Center: How to use greeting messages (first message or after 14 days of inactivity) and How to use away messages (the device needs an internet connection) | https://faq.whatsapp.com/2565868990219715/ | 2026-10-28 | Official help articles; review: `message-automation` |
+| D29 | n8n licensing: Sustainable Use License ("fair code"), so it is described as publicly available code that can be self hosted, not as open source | https://docs.n8n.io/privacy-and-security/sustainable-use-license | 2026-10-28 | Official docs; review: `automation-tools` |
 | P1 | SydCrest Planning/12_TRACK_CATALOGUE.md (row 19, no code and automation; row 27, WordPress websites "could sit inside no code"; Moringa "AI Agents and Workflow Automation (No Code)") | (internal) | 2026-10-27 | Internal planning document |
 
 Most closed adverts now 404 or redirect, so many rows rely on search result snippets, which the
@@ -246,3 +253,17 @@ possible, and none is recommended over another.
    learners to read the official rules first; check this is the level of detail you want.
 5. `site-builders`: Google Sites, Wix, Squarespace and WordPress are named only as examples of
    each type, with trade offs stated for each; check the balance reads as neutral.
+
+## Review (28 October 2026, independent reviewer, PR #217)
+
+* Re-checked on official pages: Zap history and replay, Glide data sources, Softr data sources,
+  ODK Central web forms, KoboToolbox web forms and ODK Collect offline behaviour, XLSForm
+  required columns and syntax, Google Forms branching, WordPress roles and Playground, AppSheet
+  sources, views and security filters, WhatsApp greeting, away messages and quick replies, and
+  the DPC principles (D23 to D29).
+* Changes: HTTPS wording softened in `going-live`; ODK web forms marked as not yet offline in
+  `field-surveys`; all eight DPC principles listed in `privacy-and-permissions`; Zapier replay
+  and the n8n licence corrected in `automation-tools`; greeting and away message details in
+  `message-automation`; a Google Sites limit added for balance in `site-builders`; computer
+  notes moved to the steps that need one in `apps-from-sheets` and `automation-tools`;
+  `survey-logic` example moved to Tamale so the Dagbani detail fits.
