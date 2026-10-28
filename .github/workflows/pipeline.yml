@@ -124,8 +124,8 @@ jobs:
         uses: actions/cache@v4
         with:
           path: /tmp/supabase-image-cache
-          key: supabase-images-v2-e2e-${{ hashFiles('supabase/config.toml') }}
-      - run: scripts/ci/supabase-start.sh -x studio,imgproxy,edge-runtime,logflare,vector,realtime,storage-api,postgres-meta,supavisor
+          key: supabase-images-v3-e2e-${{ hashFiles('supabase/config.toml') }}
+      - run: scripts/ci/supabase-start.sh -x studio,imgproxy,edge-runtime,logflare,vector,realtime,postgres-meta,supavisor
         env:
           GITHUB_TOKEN: ${{ github.token }}
       - name: Point the build at the local stack

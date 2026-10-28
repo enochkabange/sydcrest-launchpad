@@ -12,6 +12,9 @@ import { CertificateList } from "@/components/certificates/certificate-list";
 import { getPublicCertificates } from "@/lib/certificates/server";
 import { PublicPortfolio } from "@/components/portfolio/public-portfolio";
 import { getPublicPortfolio } from "@/lib/submissions/public-portfolio";
+import { getPublicExternalCredentials } from "@/lib/credentials/queries";
+import { externalVerification } from "@/lib/credentials/model";
+import { VerificationLabel } from "@/components/credentials/verification-label";
 import { ViewerActions } from "./viewer-actions";
 
 export async function generateMetadata({ params }: PageProps<"/u/[slug]">): Promise<Metadata> {
@@ -38,12 +41,13 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
   const { slug } = await params;
   const profile = await getPublicProfileBySlug(slug);
   if (!profile?.id || !profile.public_slug) notFound();
-  const [stats, achievements, certificates, verifiedSkills, portfolio] = await Promise.all([
+  const [stats, achievements, certificates, verifiedSkills, portfolio, external] = await Promise.all([
     getPublicStats(profile.id),
     getPublicAchievements(profile.id),
     getPublicCertificates(profile.id),
     getPublicVerifiedSkills(profile.id),
     getPublicPortfolio(profile.id),
+    getPublicExternalCredentials(profile.id),
   ]);
   const name = profile.display_name ?? "Launchpad learner";
   const region = regionLabel(profile.region);
@@ -96,6 +100,40 @@ async function PublicProfile({ params }: Pick<PageProps<"/u/[slug]">, "params">)
                 </p>
               </div>
               <VerifiedSkillBadges skills={verifiedSkills} />
+            </section>
+          )}
+
+          {(external.length > 0 || certificates.length > 0 || verifiedSkills.length > 0) && (
+            <section aria-labelledby="wallet-heading" className="flex flex-col gap-3">
+              <div className="flex flex-col gap-1">
+                <h2 id="wallet-heading" className="text-subtitle text-content">
+                  Credentials wallet
+                </h2>
+                <p className="text-sm text-content-2">
+                  {certificates.length + verifiedSkills.length} verified by SydCrest, {external.length} from other issuers.
+                </p>
+              </div>
+              {external.length > 0 && (
+                <ul className="flex flex-col divide-y divide-line rounded-lg border border-line">
+                  {external.slice(0, 3).map((c) => (
+                    <li key={c.id}>
+                      <Link
+                        href={`/u/${profile.public_slug}/credentials#c-${c.id}`}
+                        className="flex min-h-11 flex-col gap-1 px-4 py-3 transition-colors hover:bg-surface-sunken sm:flex-row sm:items-center sm:justify-between"
+                      >
+                        <span className="flex min-w-0 flex-col">
+                          <span className="font-semibold text-content">{c.title}</span>
+                          <span className="text-sm text-content-2">{c.issuer_name}</span>
+                        </span>
+                        <VerificationLabel kind={externalVerification(c)} size="sm" />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+              <Link href={`/u/${profile.public_slug}/credentials`} className="inline-flex min-h-11 items-center self-start font-semibold text-content-link underline">
+                See all credentials
+              </Link>
             </section>
           )}
 

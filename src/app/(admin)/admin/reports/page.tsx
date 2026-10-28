@@ -5,7 +5,7 @@ import Link from "@/components/ui/link";
 import { Button } from "@/components/ui/button";
 import { getMyProfile } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { setReportStatus, unpublishReportedProfile } from "./actions";
+import { setCredentialHidden, setReportStatus, unpublishReportedProfile } from "./actions";
 
 export const metadata: Metadata = { title: "Reports", robots: { index: false } };
 
@@ -40,6 +40,12 @@ async function Queue({ searchParams }: Pick<PageProps<"/admin/reports">, "search
   const { data, error } = await supabase.rpc("admin_reports", filter === "all" ? {} : { p_status: filter });
   if (error) throw new Error(`Could not load reports: ${error.message}`);
   const reports = data ?? [];
+  // Reported credentials (#253): admins read every credential through RLS.
+  const credentialIds = reports.filter((r) => r.target_type === "external_credential" && /^[0-9a-f-]{36}$/i.test(r.target_id)).map((r) => r.target_id);
+  const { data: credentialRows } = credentialIds.length
+    ? await supabase.from("external_credentials").select("id, title, issuer_name, verification, hidden_at, visibility, profile_id").in("id", credentialIds)
+    : { data: [] };
+  const credentials = new Map((credentialRows ?? []).map((c) => [c.id, c]));
 
   return (
     <div className="flex flex-col gap-4">
@@ -78,6 +84,16 @@ async function Queue({ searchParams }: Pick<PageProps<"/admin/reports">, "search
                         <span>{r.target_name ?? r.target_id} (not public)</span>
                       )}
                     </>
+                  ) : r.target_type === "external_credential" ? (
+                    credentials.get(r.target_id) ? (
+                      <>
+                        Credential: {credentials.get(r.target_id)!.title}, {credentials.get(r.target_id)!.issuer_name} (
+                        {credentials.get(r.target_id)!.verification === "issuer" ? "Verified by the issuer" : "Added by the learner"}
+                        {credentials.get(r.target_id)!.hidden_at ? ", hidden" : ""})
+                      </>
+                    ) : (
+                      "Credential: deleted by its owner"
+                    )
                   ) : (
                     `${r.target_type}: ${r.target_id}`
                   )}
@@ -103,6 +119,13 @@ async function Queue({ searchParams }: Pick<PageProps<"/admin/reports">, "search
                   <form action={unpublishReportedProfile.bind(null, r.id, r.target_id)}>
                     <Button type="submit" variant="secondary">
                       Unpublish profile
+                    </Button>
+                  </form>
+                )}
+                {r.target_type === "external_credential" && credentials.get(r.target_id) && (
+                  <form action={setCredentialHidden.bind(null, r.id, r.target_id, !credentials.get(r.target_id)!.hidden_at)}>
+                    <Button type="submit" variant="secondary">
+                      {credentials.get(r.target_id)!.hidden_at ? "Show credential again" : "Hide credential"}
                     </Button>
                   </form>
                 )}
