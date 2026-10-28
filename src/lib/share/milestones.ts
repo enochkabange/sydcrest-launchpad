@@ -1,7 +1,7 @@
 /**
  * Which milestone a learner just reached, for the celebration after a quiz
  * pass. Pure, so the section rule is unit tested; the database has the same
- * rule in private.section_of (supabase/migrations/20261029140000_sharing_loop.sql).
+ * rule in private.section_of (supabase/migrations/20261029160000_sharing_loop.sql).
  */
 
 export type TreeRow = { id: string; parent_id: string | null; kind: string | null };
