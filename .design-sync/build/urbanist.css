@@ -1,0 +1,9 @@
+/* Urbanist, the interim brand face (see src/styles/tokens.css). The app loads it
+   with next/font/local; the design bundle ships it with this @font-face. */
+@font-face {
+  font-family: "Urbanist";
+  src: url("../../src/app/fonts/urbanist-variable.woff2") format("woff2");
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "incremental": false,
+    "rootDir": "../..",
+    "outDir": "../../dist-ds/types",
+    "plugins": []
+  },
+  "files": ["entry.tsx"],
+  "include": []
+}
