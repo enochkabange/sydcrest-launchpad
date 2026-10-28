@@ -2381,6 +2381,7 @@ export type Database = {
           created_at: string
           datacamp_license_slot: string | null
           display_name: string | null
+          display_prefs: Json
           goals: string | null
           headline: string | null
           id: string
@@ -2397,6 +2398,7 @@ export type Database = {
           created_at?: string
           datacamp_license_slot?: string | null
           display_name?: string | null
+          display_prefs?: Json
           goals?: string | null
           headline?: string | null
           id: string
@@ -2413,6 +2415,7 @@ export type Database = {
           created_at?: string
           datacamp_license_slot?: string | null
           display_name?: string | null
+          display_prefs?: Json
           goals?: string | null
           headline?: string | null
           id?: string

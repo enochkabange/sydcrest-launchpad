@@ -1,7 +1,9 @@
 # Research: Project Management track (`project-management`)
 
-Tier B outline (issue #96). Researched and written 27 October 2026. Outline only: lessons are
-marked "coming soon" by the site. Everything in `src/content/roadmaps/project-management.ts`
+Tier B outline (issue #96), researched and written 27 October 2026. Lessons, practice tasks
+and quizzes for every node were written in the content wave C (issue #198) on 27 and 28 October
+2026 in `src/content/roadmaps/content/project-management.content.ts`; two more adverts and the
+certification pages were re-read for that wave. Everything in `src/content/roadmaps/project-management.ts`
 is original. roadmap.sh was not opened, searched or used, and no "<field> roadmap" style
 searches were run. No logins; LinkedIn was not opened. Job adverts were read for which skills
 appear; no advert text is reproduced. Salary figures were ignored.
@@ -43,13 +45,19 @@ Manager track).
 | C3 | PMI: Certified Associate in Project Management (CAPM) | https://www.pmi.org/certifications/certified-associate-capm | 2026-10-27 | Official page; 403 to automated fetch, facts confirmed via search snippets of pmi.org (secondary credential plus 23 hours of project management education). Not linked as a resource |
 | C4 | PeopleCert (PRINCE2 exams) | https://www.peoplecert.org/ | 2026-10-27 | Official site, existence only; content names PRINCE2 Foundation without detail |
 | C5 | Scrum Guide | https://scrumguides.org/scrum-guide.html | 2026-10-27 | Free guide, CC BY SA 4.0; linked as a resource |
+| S14 | JobSearchGH: Project Assistant Consultant, Pure Earth, Tolon and Yendi districts (posted Feb 2025) | https://www.jobsearchgh.com/jobs/23254/project-assistant-consultant-pure-earth | 2026-10-28 | Job board, full listing, skills only |
+| S15 | jobs.com.gh (formerly ghanacareers.com): Programme Officer, ASERD-GHANA, Tamale (deadline May 2026, closed) | https://jobs.com.gh/?p=41680 | 2026-10-28 | Job board, full listing, skills only |
+| C1b | Coursera: Google Project Management certificate, re-read for the certifications lesson | https://www.coursera.org/professional-certificates/google-project-management | 2026-10-28 | Public catalogue page. Seen: beginner level, no degree or experience required, counts as project management education towards PMI credentials such as CAPM. Hours and discount figures deliberately not used in learner copy |
+| C2b | PM4NGOs: Project DPro page, re-read | https://pm4ngos.org/project-dpro/ | 2026-10-28 | Seen: guide downloadable at no cost, CC BY NC 4.0, exam available in several languages |
+| C6 | Google Docs Editors Help: Timeline view in Sheets | https://support.google.com/docs/answer/12935277 | 2026-10-28 | Official help. Timeline view is listed for Google Workspace editions only, so the schedules lesson teaches coloured cells and mentions timeline view only for paid Workspace accounts (superseded by C7 in review) |
+| C7 | Google Docs Editors Help: Use conditional formatting rules in Google Sheets | https://support.google.com/docs/answer/78413 | 2026-10-28 | Official help; no edition restriction stated, works on free accounts. Replaces C6 as the schedules resource (review of PR #206) |
 | P1 | SydCrest Planning/12_TRACK_CATALOGUE.md | (internal) | 2026-10-27 | Internal planning document |
 
 Resource links in the outline returned 200 on 27 October 2026. pmi.org and open.edu returned
 403 to automated requests and were left out as resources. LearnFree `/series/<slug>` returns 200
 even for slugs that do not exist, so no new LearnFree links were used.
 
-## Adverts analysed (14)
+## Adverts analysed (16)
 
 | # | Role | Employer type | Location | Date | Seen as | Skills signalled (keywords) |
 |---|---|---|---|---|---|---|
@@ -67,27 +75,29 @@ even for slugs that do not exist, so no new LearnFree links were used.
 | A12 | Programme Support Officer | International NGO | Tamale | 2026 | Snippet (S11) | Bookkeeping, administrative and programme support; degree, two years |
 | A13 | Office Operational Support Intern | Foundation | Tamale | 2026 | Snippet (S12) | Organisation, communication; degree, national service completed |
 | A14 | Project Assistant | International NGO | Tamale | 2026 | Snippet (S13) | Day to day project administration, communication with team and stakeholders |
+| A15 | Project Assistant Consultant | International NGO | Tolon and Yendi (live in Tamale or Yendi) | Feb 2025 | Full (S14) | Community engagement, household visits, field data collection and documentation, distribution logistics, monitoring, surveys, compiling data for reports, Dagbani and a local language; experience preferred, not required |
+| A16 | Programme Officer | Local NGO | Tamale | May 2026 | Full (S15) | Proposals and concept notes, work plans and budgets, coordinating officers and field teams, tracking against targets, timelines and budgets, MEAL and indicators, KoboToolbox and ODK, partnerships, budget tracking and audits, donor reporting, Word, Excel, PowerPoint; three to five years |
 
 Context only: Jobberman Executive Associate (S10: coordinating schedules, meetings and
 communications; entry level, one year).
 
-## Skills frequency (14 adverts)
+## Skills frequency (16 adverts)
 
 | Skill | Adverts | Count | Full listings only (A1 to A4) |
 |---|---|---|---|
-| Planning and work plans | A2 A3 A4 A5 A9 A11 | 6 | 3 |
-| Reporting (narrative, donor, status) | A1 A2 A4 A8 A10 | 5 | 3 |
-| Budgets and financial tracking | A1 A2 A3 A4 A5 A8 A9 A12 | 8 | 4 |
-| Stakeholder and community engagement | A2 A3 A4 A8 A14 | 5 | 3 |
-| Monitoring and evaluation, data | A1 A3 A4 A7 A11 | 5 | 3 |
-| Logistics, procurement, vendors | A1 A3 A5 | 3 | 2 |
+| Planning and work plans | A2 A3 A4 A5 A9 A11 A16 | 7 | 3 |
+| Reporting (narrative, donor, status) | A1 A2 A4 A8 A10 A15 A16 | 7 | 3 |
+| Budgets and financial tracking | A1 A2 A3 A4 A5 A8 A9 A12 A16 | 9 | 4 |
+| Stakeholder and community engagement | A2 A3 A4 A8 A14 A15 A16 | 7 | 3 |
+| Monitoring and evaluation, data | A1 A3 A4 A7 A11 A15 A16 | 7 | 3 |
+| Logistics, procurement, vendors | A1 A3 A5 A15 | 4 | 2 |
 | Scheduling and coordination | A1 A6 A10 | 3 | 1 |
-| Documentation and filing | A1 A3 A10 | 3 | 2 |
+| Documentation and filing | A1 A3 A10 A15 | 4 | 2 |
 | Risk | A5 | 1 | 0 |
-| Office tools and PM software | A1 A3 A8 | 3 | 2 |
+| Office tools and PM software | A1 A3 A8 A16 | 4 | 2 |
 | Lessons learned | A1 A2 | 2 | 2 |
-| Proposals and concept notes | A4 | 1 | 1 |
-| Local language | A2 A3 | 2 | 2 |
+| Proposals and concept notes | A4 A16 | 2 | 1 |
+| Local language | A2 A3 A15 | 3 | 2 |
 
 ## Frameworks and curricula
 
@@ -121,6 +131,29 @@ communications; entry level, one year).
 * **Certifications are named factually** in one node (CAPM, Project DPro, PRINCE2 Foundation,
   Google certificate) with no endorsement and no cost claims.
 
+## Content wave C (lessons) notes
+
+* **Outline unchanged.** All 27 slugs kept (the roadmap is published). The two extra adverts
+  (A15, A16) confirmed the existing nodes rather than revealing a missing section.
+* **Gaps folded into existing lessons, not new nodes:** proposals and concept notes (A4, A16)
+  are taught in `status-and-donor-reports`; phone based field data tools such as KoboToolbox
+  and ODK (A16), named as examples, are covered in `monitoring-and-reporting` and
+  `tracking-progress-and-spending`; local languages (A2, A3, A15) are named in
+  `getting-hired-pm`; tracking against targets, timelines and budgets (A16) is the core of
+  `tracking-progress-and-spending`.
+* **Certifications wording.** CAPM is described only as PMI's entry level certification with
+  eligibility rules, an exam and a fee, pointing learners to PMI's site (pmi.org blocks
+  automated fetches, so no eligibility hours or prices appear). Project DPro and the Google
+  certificate facts come from C1b and C2b. PRINCE2 Foundation is named with PeopleCert only.
+* **Data protection.** `records-and-documentation` names Ghana's Data Protection Act, 2012
+  (Act 843) and the Data Protection Commission (shared resource `RES.dpc`).
+* **Scrum.** `agile-basics` follows the terms of the Scrum Guide (C5, CC BY SA 4.0) in original
+  wording: three accountabilities, five events, three artifacts, sprint of one month or less,
+  fifteen minute Daily Scrum.
+* **Scenarios.** Three invented examples run through the lessons: a community water project
+  near Tolon, a school feeding programme near Savelugu, and Hawa's shea butter soap shop launch
+  in Bolgatanga. All cedi figures are invented for practice and marked as such.
+
 ## Coverage table
 
 | Node | Justification |
@@ -131,7 +164,7 @@ communications; entry level, one year).
 | project-life-cycle | C1 initiation, planning, execution, closure; C2 |
 | starting-a-project (section) | C1 initiation |
 | goals-scope-charter | F1 stakeholder requirements; C1 |
-| stakeholders-and-communities | A2 A3 A4 A8 A14 |
+| stakeholders-and-communities | A2 A3 A4 A8 A14 A15 A16 |
 | logframes | A3 A4 A9 A11 donor results; C2 |
 | planning (section) | Most common signal: planning |
 | breaking-down-work | F1 planning; A9 activity plans |
@@ -141,10 +174,10 @@ communications; entry level, one year).
 | running-the-work (section) | C1 execution |
 | task-boards | A8 PM tools; F1 Asana and Jira |
 | meetings-and-minutes | A1 report drafting and coordination; S10 |
-| logistics-and-procurement | A1 A3 A5 |
+| logistics-and-procurement | A1 A3 A5 A15 |
 | monitoring-and-reporting (section) | Reporting and M&E signals |
-| tracking-progress-and-spending | A1 A3 budget tracking; F1 monitoring costs and milestones |
-| status-and-donor-reports | A1 A2 A4 A8 A10 |
+| tracking-progress-and-spending | A1 A3 A16 budget and target tracking; F1 monitoring costs and milestones |
+| status-and-donor-reports | A1 A2 A4 A8 A10 A16; concept notes A4 A16 |
 | records-and-documentation | A1 A3 A10 |
 | closing-and-other-ways (section) | C1 closure and agile |
 | closing-and-lessons-learned | A1 A2 lessons learned |
@@ -152,3 +185,8 @@ communications; entry level, one year).
 | getting-hired-pm (section) | Groups job readiness |
 | entry-certifications | C1 C2 C3 C4 |
 | first-coordination-roles | A1 A13 A14 entry routes; P1 |
+
+## Review notes (PR #206, 28 October 2026)
+
+* `schedules-and-gantt-charts`: the timeline view resource (C6) was replaced with the conditional formatting help page (C7), because timeline view is limited to paid Google Workspace editions. The lesson now teaches hand coloured cells, with conditional formatting as an optional way to colour them automatically, and no longer mentions timeline view.
+* Certifications re-checked 28 October 2026: Coursera page (offered by Google, beginner level, no degree or experience required, counts as project management education that helps prepare for PMI certifications such as CAPM); PM4NGOs Project DPro page (guide at no cost, CC BY NC 4.0, exam available in eight languages including English and French); PeopleCert PRINCE2 page (offers the PRINCE2 Foundation exam; the claim about where PRINCE2 is used was removed as unsourced); pmi.org still returns 403, so CAPM stays general; dpc.gov.gh names the Data Protection Commission, established under the Data Protection Act, 2012 (Act 843); Scrum Guide terms checked (it sets no typical sprint length, so "often two weeks" became "for example two weeks").

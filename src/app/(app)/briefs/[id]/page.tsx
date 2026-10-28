@@ -34,10 +34,6 @@ import { PitchForm } from "./pitch-form";
 
 export const metadata: Metadata = { title: "Brief", robots: { index: false } };
 
-// The app shell's nav reads usePathname() outside a Suspense boundary, which
-// a dynamic segment cannot prerender (same as /cohort/week/[n]).
-export const instant = false;
-
 export default function BriefPage({ params, searchParams }: PageProps<"/briefs/[id]">) {
   return (
     <div className="flex flex-col gap-6">

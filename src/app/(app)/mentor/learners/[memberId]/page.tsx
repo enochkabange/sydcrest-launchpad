@@ -14,10 +14,6 @@ import { addNote, deferLearner, deleteNote } from "../../actions";
 
 export const metadata: Metadata = { title: "Learner", robots: { index: false } };
 
-// The app shell's nav reads usePathname() outside Suspense, which a dynamic
-// segment cannot prerender (same as /learn/[slug]/[node]).
-export const instant = false;
-
 export default function LearnerPage({ params }: PageProps<"/mentor/learners/[memberId]">) {
   return (
     <Suspense fallback={<div aria-busy="true" className="h-96 animate-skeleton rounded-lg bg-surface-sunken" />}>

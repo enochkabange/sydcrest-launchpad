@@ -440,7 +440,7 @@ that writes `bg-white` has silently opted out of theming.
 | `surface-sunken` | `#FAFAF9` | `#0E1114` |
 | `content` | `#211D1D` (16.69:1) | `#F4F4F2` (16.31:1) |
 | `content-2` | `#57564F` (7.37:1) | `#A3A29D` (7.02:1) |
-| `content-3` | `#78776F` (4.50:1) | `#83827B` (4.65:1) |
+| `content-3` | `#6B6A63` (5.43:1) | `#8D8C86` (5.62:1) |
 | `line` / `line-strong` | `#E7E6E3` / `#D4D3CF` | `#262B33` / `#333A44` |
 
 Status colours are **fg/bg pairs** (`text-success-fg` on `bg-success-bg`), so a
@@ -453,7 +453,26 @@ corrected: `content-3` was 3.99:1 and the danger red 3.72:1 — both below the
 
 Three theme states, not two: **system** is the default and follows the OS, so a
 learner whose phone is in night mode gets a dark app without touching a setting.
-An explicit choice is remembered and wins over the OS. `useTheme()` handles it.
+An explicit choice is remembered and wins over the OS.
+
+**Display settings (#204).** `/settings` offers theme, text size (100, 112, 125,
+150 percent), reduce motion, higher contrast, underlined links, easier reading
+spacing and the device's own font. Choices live in localStorage
+(`src/lib/display/prefs.ts`) and, for signed in users, on
+`profiles.display_prefs`. An inline script in the root layout
+(`src/lib/display/script.ts`) copies them onto `<html>` as `data-theme`,
+`data-text-size`, `data-contrast`, `data-motion`, `data-underline-links`,
+`data-spacing` and `data-font` before first paint; tokens.css does the rest.
+Client code reads them with `useDisplayPrefs()` and changes them with
+`updateDisplayPrefs()` (`src/lib/display/store.ts`). Higher contrast re-points
+content, line, status, link and action tokens in both themes (AAA text where
+practical). Actions and selection have their own tokens: `bg-action`,
+`text-action-fg`, `hover:bg-action-hover`, `border-line-selected`,
+`accent-line-selected`. ESLint rejects raw palette classes (`bg-blue-600`,
+`text-white`) in `src/app` and `src/components`.
+
+In 2026-10 the light `content-3` moved from `#78776F` (4.31:1 on sunken) and dark
+`content-3`, `danger-fg` and `info-fg` were lifted after axe flagged them.
 
 ---
 

@@ -1,3 +1,4 @@
+import { accessibilityPages } from "./accessibility";
 import { eventEntries } from "./events";
 import { chapterEntries } from "./chapters";
 import { expertEntries } from "./experts";
@@ -23,4 +24,5 @@ export const SITEMAP_SOURCES: SitemapSource[] = [
   eventEntries,
   chapterEntries,
   skillEntries,
+  accessibilityPages,
 ];

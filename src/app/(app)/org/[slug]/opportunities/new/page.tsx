@@ -7,10 +7,6 @@ import { getOrgForMember } from "@/lib/organisations/queries";
 
 export const metadata: Metadata = { title: "Post an opportunity", robots: { index: false } };
 
-// A dynamic segment under the app shell, whose nav reads usePathname() outside
-// Suspense: allow blocking, as /learn/[slug]/[node] does, until the shell wraps it.
-export const instant = false;
-
 /**
  * Placeholder (issue #161): the posting form is OpportunityForm from
  * src/components/opportunities/, built with the opportunities board. Once it

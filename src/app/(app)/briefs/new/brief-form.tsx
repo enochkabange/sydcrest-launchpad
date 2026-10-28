@@ -41,7 +41,7 @@ export function BriefForm({
               <label
                 key={k.kind}
                 className={`flex min-h-11 items-start gap-3 rounded-md border p-4 ${
-                  kind === k.kind ? "border-blue-600 bg-info-bg" : "border-line-strong bg-surface"
+                  kind === k.kind ? "border-line-selected bg-info-bg" : "border-line-strong bg-surface"
                 } ${disabled ? "cursor-not-allowed opacity-60" : "cursor-pointer"}`}
               >
                 <input
@@ -51,7 +51,7 @@ export function BriefForm({
                   checked={kind === k.kind}
                   disabled={disabled}
                   onChange={() => setKind(k.kind)}
-                  className="mt-1 size-5 shrink-0 accent-blue-600"
+                  className="mt-1 size-5 shrink-0 accent-line-selected"
                 />
                 <span className="flex flex-col gap-0.5">
                   <span className="font-semibold text-content">{k.label}</span>
@@ -119,7 +119,7 @@ export function BriefForm({
         <div className="grid gap-x-4 sm:grid-cols-2">
           {categories.map((c) => (
             <label key={c.slug} className="flex min-h-11 items-center gap-3 text-sm text-content">
-              <input type="checkbox" name="categories" value={c.slug} defaultChecked={chosen.has(c.slug)} className="size-5 shrink-0 accent-blue-600" />
+              <input type="checkbox" name="categories" value={c.slug} defaultChecked={chosen.has(c.slug)} className="size-5 shrink-0 accent-line-selected" />
               {c.label}
             </label>
           ))}
@@ -156,7 +156,7 @@ export function BriefForm({
             type="checkbox"
             checked={remote}
             onChange={(ev) => setRemote(ev.target.checked)}
-            className="size-5 shrink-0 accent-blue-600"
+            className="size-5 shrink-0 accent-line-selected"
           />
           This can be done remotely
         </label>

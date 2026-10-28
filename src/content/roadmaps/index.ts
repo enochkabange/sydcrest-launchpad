@@ -1,6 +1,7 @@
 import { backend } from "./backend";
 import { data } from "./data";
 import { digitalMarketing } from "./digital-marketing";
+import { digitalMarketingSpecialisations } from "./digital-marketing-specialisations";
 import { digitalSkillsBridge } from "./digital-skills-bridge";
 import { frontend } from "./frontend";
 import { product } from "./product";
@@ -60,4 +61,5 @@ export const ROADMAP_DRAFTS: RoadmapDraft[] = [
   digitalSales,
   excelPowerBi,
   projectManagement,
+  digitalMarketingSpecialisations,
 ];
