@@ -2536,9 +2536,9 @@ Jobs in this field are competitive and applications often have strict deadlines.
 
 These are named as examples, not recommendations. Rules, prices and formats change, so always check the official page before you decide.
 
-* **Project DPro.** A guide to project management written for the development sector, published by the organisation PM4NGOs. The guide itself can be downloaded at no cost under a Creative Commons licence, and PM4NGOs offers a certification exam based on it, available in several languages. Because it is written for NGO and development work, its topics match much of this roadmap.
+* **Project DPro.** A guide to project management written for the development sector, published by the organisation PM4NGOs. The guide itself can be downloaded at no cost under a Creative Commons licence, and a certification exam based on the guide is available in several languages; see the PM4NGOs site for how it works. Because it is written for NGO and development work, its topics match much of this roadmap.
 * **CAPM (Certified Associate in Project Management).** An entry level certification from the Project Management Institute (PMI), a large international professional body. It has eligibility rules, an exam and a fee. Check PMI's official website for the current requirements.
-* **Google Project Management Certificate.** An online programme from Google offered on Coursera. Its page describes it as beginner level, needing no degree or experience, and says completing it counts as project management education towards PMI credentials such as CAPM. Coursera courses usually charge a subscription, and Coursera has a financial aid process you can apply to; check the current terms.
+* **Google Project Management Certificate.** An online programme from Google offered on Coursera. Its page describes it as beginner level, needing no degree or experience, and says completing it counts as project management education towards PMI credentials such as CAPM. Check the Coursera page for current pricing and whether any financial aid is offered.
 * **PRINCE2 Foundation.** An entry level exam in the PRINCE2 method, which is widely used in the United Kingdom and some other countries. Exams are offered through PeopleCert. Check its official site for details.
 
 ## How to decide
