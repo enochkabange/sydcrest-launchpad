@@ -936,6 +936,430 @@ Hawa tests a savings app. On her laptop browser the website looks perfect. On a 
         pass_threshold: 75,
       },
     },
+    "web-testing": {
+      explanation_md: `## Why this matters
+
+Many Ghanaian businesses, schools and NGOs run websites that customers open on every kind of device. A page that works on the developer's large screen can break on a small phone or an older browser. Web testing adverts ask for cross browser checks and comfort with browser tools, and these are skills you can show quickly in a portfolio.
+
+## What to check on a website
+
+* **Different browsers:** Chrome, Firefox, Edge and Safari can show the same page differently. Opera Mini and other data saving browsers are also used locally.
+* **Different screen sizes:** a small phone, a large phone, a tablet and a computer. Look for text that overflows, buttons hidden off screen and menus that cannot be opened.
+* **Forms:** required fields, error messages, what happens on refresh, and whether your typed data is lost when you press back.
+* **Links and images:** broken links, missing images, pages that never finish loading.
+* **Slow networks:** does the page show something useful quickly, or a blank screen for a long time?
+
+You can check page behaviour on any phone or computer. The developer tools below need a desktop browser on a laptop or desktop computer, because phone browsers do not include them.
+
+## Browser developer tools
+
+Desktop browsers include free developer tools. In Chrome or Edge on Windows, press F12 or Ctrl+Shift+I; on a Mac, press Cmd+Option+I. Three panels matter most for testers:
+
+* **Console:** shows errors from the page's code. A red error that appears when you click a button is valuable evidence for a bug report. Copy the message exactly.
+* **Network:** lists every request the page makes. You can see which request failed, its status code and how long it took. A failed request with a 500 status points to a server problem.
+* **Device mode:** the toolbar icon that looks like a phone and tablet, or Ctrl+Shift+M in Chrome on Windows. It shows the page at phone sizes so you can try many screen widths quickly. It is a simulation, so confirm important findings on a real phone.
+
+The Network panel also has a **throttling** menu where you can choose a slower preset, such as 3G, to feel what users on weak connections experience.
+
+## A small example
+
+Mariama tests a Tamale guesthouse's booking website. On her phone, the Book now button does nothing. On a library computer she opens Chrome's developer tools. The Console shows a red error when she clicks the button, and the Network panel shows no booking request was sent. Using device mode she confirms the problem only appears below a certain screen width. Her bug report includes the exact console message, a screenshot of the Network panel and the widths that fail. The developer fixes it the same day.
+
+## Habits for web testing
+
+* Clear the browser cache or use a private window when retesting, so you are not seeing an old copy of the page.
+* Note the browser name and version in every bug report; you can find it in the browser's About page.
+* Test with images slow to load, because many users have them turned off or on slow data.`,
+      practice_task_md: `**Goal:** use browser tools to inspect a real website.
+
+You need a laptop or desktop computer with Chrome, Edge or Firefox for steps 2 to 5. If you only have a phone today, do step 1 and come back to the rest when you can use a computer at school, a hub or a library.
+
+1. On any device, open a public website you know and check it at your screen size. Note anything broken.
+2. On a computer, open developer tools and look at the Console while you use the site. Write down any red errors.
+3. Open the Network panel, reload the page and find the slowest request.
+4. Use device mode to view the page at two phone sizes. Note any layout problems.
+5. Set throttling to a slow preset and reload. Note how long until something useful appears.
+
+**Done looks like:** a short web test report with findings, screenshots of the tools, and browser versions.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which developer tools panel shows errors from the page's code?",
+            options: ["Network", "Console", "Device mode", "Settings"],
+            answer_index: 1,
+            explanation: "The Console lists code errors, which are useful evidence in bug reports.",
+          },
+          {
+            prompt: "What does a failed request with a 500 status in the Network panel suggest?",
+            options: [
+              "The user typed a wrong password",
+              "A problem on the server",
+              "The screen is too small",
+              "The browser is out of date",
+            ],
+            answer_index: 1,
+            explanation: "A 500 status points to a server side problem.",
+          },
+          {
+            prompt: "Why should you confirm device mode findings on a real phone?",
+            options: [
+              "Device mode is a simulation and may not match a real phone exactly",
+              "Device mode only works at night",
+              "Real phones show the Console",
+              "Developers do not accept screenshots",
+            ],
+            answer_index: 0,
+            explanation: "Device mode simulates screen sizes; important bugs should be confirmed on real devices.",
+          },
+          {
+            prompt: "What does the throttling menu let you do?",
+            options: [
+              "Change the website's colours",
+              "Simulate a slower connection such as 3G",
+              "Delete the browser history",
+              "Translate the page",
+            ],
+            answer_index: 1,
+            explanation: "Throttling simulates slow networks so you can see what users on weak connections experience.",
+          },
+          {
+            prompt: "Why use a private window when retesting a fix?",
+            options: [
+              "It is faster to type in",
+              "So you are not seeing an old cached copy of the page",
+              "Private windows show more errors",
+              "Developers require it",
+            ],
+            answer_index: 1,
+            explanation: "A private window avoids old cached files hiding whether the fix worked.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+
+    "mobile-testing": {
+      explanation_md: `## Why this matters
+
+For many people in Ghana, an Android phone is their main way to use the internet, and many of those phones are budget models with limited storage and older software. Testing adverts in Ghana and on remote boards name Android and mobile testing often. If you own an Android phone, you already have a test lab.
+
+## How mobile users really meet an app
+
+Testing on a new, fast phone over office Wi-Fi hides most real problems. Think about the conditions your users live with:
+
+* **Storage almost full:** the app may fail to install, update or save photos.
+* **Older Android versions:** features that work on new phones may crash on old ones.
+* **Small screens:** buttons hidden under the keyboard, text cut off, dialogs that cannot be closed.
+* **Patchy data:** moving between 3G, 4G, Wi-Fi and no signal, or data running out mid payment.
+* **Interruptions:** an incoming call, an SMS, a low battery warning, switching to WhatsApp and back.
+* **Battery saver and data saver modes:** these can stop background tasks such as notifications.
+* **Shared phones:** another family member signs in, or the phone is restarted halfway through.
+
+## Capturing evidence on a phone
+
+* **Device details:** Settings, then About phone, shows the model and Android version. The exact menu names differ between brands.
+* **App version:** usually in the app's own Settings or About screen, or on its app store page.
+* **Screen recording:** many Android phones have a built in screen recorder in the quick settings panel. A 20 second recording often explains a bug better than paragraphs of text.
+* **Screenshots:** usually the power and volume down buttons pressed together.
+
+## Developer options
+
+Android has a hidden Developer options menu. On most phones you open Settings, then About phone, and tap Build number seven times. Exact steps vary by brand. Two settings are useful for testers:
+
+* **Show taps:** draws a dot where you touch, which makes screen recordings much clearer.
+* **Don't keep activities:** closes each screen as soon as you leave it, which reveals apps that lose your data when you switch away and come back.
+
+Change only settings you understand, and turn them back off when you finish.
+
+## A small example
+
+Fuseini tests a farm inputs ordering app on an older Android phone with little free storage. He fills a long order, switches to WhatsApp to check a price, and returns. With Don't keep activities switched on, the order form is empty. He records the screen with Show taps on, notes the phone model, Android version and app version, and reports it. On the developer's new phone with lots of memory, the bug had never appeared.
+
+## Testing safely
+
+Use your own accounts and small amounts only, never other people's details. If an app involves money, ask the team for a test account or a test environment rather than using real funds.`,
+      practice_task_md: `**Goal:** test an Android app under real world conditions.
+
+You need an Android phone for the developer options steps. If you use an iPhone, do the other steps; iPhones have their own screen recorder in Control Centre.
+
+1. Find your phone's model and software version and write them down.
+2. Choose a free app you can use without spending money, such as a notes, news or weather app.
+3. Try at least four conditions from the lesson: switch off data mid task, take or simulate a call, switch apps and return, rotate the screen, or turn on battery saver.
+4. Turn on Show taps in Developer options and record a short screen recording of anything odd.
+5. Turn off any developer settings you changed.
+
+**Done looks like:** a mobile test note listing device details, conditions tried, results and at least one short recording.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why should mobile testing include phones with nearly full storage?",
+            options: [
+              "Full phones run apps faster",
+              "Apps may fail to install, update or save on them",
+              "Storage does not affect apps",
+              "App stores block full phones",
+            ],
+            answer_index: 1,
+            explanation: "Low storage is common on budget phones and causes install and save failures.",
+          },
+          {
+            prompt: "On most Android phones, how do you unlock Developer options?",
+            options: [
+              "Restart the phone three times",
+              "Tap Build number seven times in About phone",
+              "Download a special app",
+              "Hold the power button for a minute",
+            ],
+            answer_index: 1,
+            explanation: "Tapping Build number seven times reveals Developer options, though steps vary by brand.",
+          },
+          {
+            prompt: "What does the Show taps setting do?",
+            options: [
+              "Counts how many apps are installed",
+              "Draws a dot where you touch, making recordings clearer",
+              "Shows hidden files",
+              "Speeds up the screen",
+            ],
+            answer_index: 1,
+            explanation: "Visible touches help developers follow a screen recording.",
+          },
+          {
+            prompt: "Why did Fuseini's bug never appear on the developer's phone?",
+            options: [
+              "The developer used a different language",
+              "The developer's new phone had plenty of memory, so the screen was not closed",
+              "The developer's phone had no WhatsApp",
+              "The bug only happens on Fridays",
+            ],
+            answer_index: 1,
+            explanation: "Lower memory phones close screens in the background, revealing lost data bugs.",
+          },
+          {
+            prompt: "What is the safe way to test an app that handles money?",
+            options: [
+              "Use a friend's account",
+              "Ask for a test account or test environment instead of using real funds",
+              "Send large amounts to check limits",
+              "Use any account you can find",
+            ],
+            answer_index: 1,
+            explanation: "Test accounts and environments let you test payments without risking real money.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+
+    "api-testing": {
+      explanation_md: `## Why this matters
+
+Apps and websites get their data from servers through APIs. Testing the API directly finds bugs the screen hides, such as a server that accepts a negative amount or confirms the same payment twice. API testing appears in several adverts for testing roles, including remote ones, and Postman is a common tool for it.
+
+## How an API request works
+
+When an app shows your balance, it sends a **request** to the server and receives a **response**. A request has:
+
+* **A method:** what you want to do. GET reads data, POST creates something, PUT or PATCH changes something, DELETE removes something.
+* **A URL:** the address, such as \`https://api.example.com/accounts/42\`.
+* **Headers:** extra information, often including a token that proves who you are.
+* **A body:** for POST and PUT, the data you send, usually written in JSON.
+
+The response has a **status code** and usually a JSON body. Status codes you should know:
+
+* **200** OK, and **201** Created
+* **400** Bad request: the data sent was wrong
+* **401** Unauthorised: not signed in, or **403** Forbidden: signed in but not allowed
+* **404** Not found
+* **500** Server error: something broke on the server
+
+## Testing with Postman
+
+Postman lets you build requests, send them and check responses. It runs in a web browser or as a desktop app, and it is free for individuals. A computer is much easier for this work, because you type URLs and JSON and read long responses. Postman's web version can open on a phone browser, but it is cramped.
+
+To practise safely, use a free public practice API such as JSONPlaceholder, which returns made up data and is built for learning. Try:
+
+* GET \`https://jsonplaceholder.typicode.com/users/1\` and check the status is 200 and the body has a name.
+* GET \`https://jsonplaceholder.typicode.com/users/9999\` and check you receive 404.
+* POST to \`https://jsonplaceholder.typicode.com/posts\` with a small JSON body and check for 201.
+
+Postman lets you save these in a **collection** and add small automatic checks, written in JavaScript, in each request's tests or scripts area. For example:
+
+\`\`\`js
+pm.test("status is 200", () => {
+  pm.response.to.have.status(200);
+});
+\`\`\`
+
+## What to test in an API
+
+* Valid requests return the right data and status.
+* Invalid data returns a clear 400 error, not a 500 crash.
+* Requests without a token are refused.
+* The same request sent twice does not create a duplicate payment or order.
+* Boundary values work just as on screen: zero, maximum and just over.
+
+## A small example
+
+Amina tests a market traders' app. The screen blocks amounts over 2,000 cedis, but in Postman she sends 5,000 to the API and it is accepted. Anyone who bypassed the app could break the rule. Her bug report includes the request, the response and the status code.
+
+Only test APIs you have permission to test: practice APIs, or your employer's test environment.`,
+      practice_task_md: `**Goal:** send and check your first API requests.
+
+A laptop or desktop computer is strongly recommended for this task. The requests use very little data.
+
+1. Open Postman in a browser (create a free account) or install the desktop app.
+2. Create a collection called "Practice API".
+3. Send the three JSONPlaceholder requests from the lesson. Note each status code.
+4. Add the status check script to the first request and confirm it passes.
+5. Add one negative request of your own, such as an unknown post number, and write what you expected and what you got.
+
+**Done looks like:** a saved collection with four requests and a short note of results. Postman can export the collection as a file for your portfolio.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Which HTTP method is used to read data?",
+            options: ["POST", "DELETE", "GET", "PUT"],
+            answer_index: 2,
+            explanation: "GET reads data; POST creates, PUT and PATCH change, DELETE removes.",
+          },
+          {
+            prompt: "What does a 404 status code mean?",
+            options: ["Created", "Not found", "Server error", "OK"],
+            answer_index: 1,
+            explanation: "404 means the requested resource was not found.",
+          },
+          {
+            prompt: "If you send invalid data, which response is better behaviour?",
+            options: [
+              "A clear 400 error",
+              "A 500 server crash",
+              "A 200 OK that saves the bad data",
+              "No response at all",
+            ],
+            answer_index: 0,
+            explanation: "Invalid data should be rejected with a clear 400, not crash the server or be accepted.",
+          },
+          {
+            prompt: "What bug did Amina find by testing the API directly?",
+            options: [
+              "The screen was too small",
+              "The API accepted 5,000 cedis although the screen blocked amounts over 2,000",
+              "The app crashed on start",
+              "The login page was slow",
+            ],
+            answer_index: 1,
+            explanation: "The rule was only enforced on screen, not on the server.",
+          },
+          {
+            prompt: "Which APIs should you test?",
+            options: [
+              "Any company's API you can find",
+              "Practice APIs or your employer's test environment, where you have permission",
+              "Bank APIs using real accounts",
+              "Government systems",
+            ],
+            answer_index: 1,
+            explanation: "Only test APIs you are allowed to test.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+
+    "accessibility-and-usability": {
+      explanation_md: `## Why this matters
+
+Some people who use the products you test have low vision, shaky hands, colour blindness or little experience with apps. Others are reading in bright sunlight on a cracked screen. If a product only works for confident users with perfect eyesight, it fails many real customers. Accessibility and usability checks are quick, need no special equipment, and catch problems that functional tests miss.
+
+## Accessibility: can everyone use it?
+
+A few simple checks, all possible on a phone or computer:
+
+* **Text size:** increase the font size in your device settings, or zoom the browser to 200 percent. Does text still fit, or does it overlap and cut off?
+* **Contrast:** is light grey text on a white background readable outdoors? Low contrast is one of the most common problems.
+* **Colour alone:** if errors are shown only in red, colour blind users may miss them. There should also be text or an icon.
+* **Touch targets:** are buttons big enough and far enough apart to tap without hitting the wrong one?
+* **Screen readers:** Android's TalkBack and Apple's VoiceOver read the screen aloud for blind users. Turn one on briefly and check that buttons are announced with meaningful names, such as "Send money", not just "Button".
+* **Images:** important images on websites should have text alternatives describing them.
+* **Keyboard:** on a computer website, can you reach every link and button using only the Tab key, and can you see where you are?
+
+Screen readers change how your device works. Learn how to turn yours off before you turn it on.
+
+## Usability: does it make sense?
+
+Usability is about whether people can complete tasks easily. Ways to check:
+
+* **First time eyes:** try a task as if you have never seen the app. Where do you hesitate?
+* **Watch someone:** ask a friend or relative to complete a task while you watch quietly. Note where they get stuck, but do not help unless they ask.
+* **Clear words:** are labels and error messages in plain language? "Error 0x45" helps nobody; "Your number is too short" does.
+
+## A small example
+
+Mariama tests a clinic appointment website. Functionally, it works. But when she sets her phone's text to large, the Book button disappears off the screen. With TalkBack on, the date picker is announced only as "Button, button, button". She watches her aunt try to book and sees her give up at a form asking for a "Reference ID" she does not understand. Three findings, all from simple checks.
+
+## Reporting these findings
+
+Write accessibility and usability findings as bug reports with steps, device settings used (such as large text or TalkBack on) and screenshots. Explain who is affected, without exaggerating.`,
+      practice_task_md: `**Goal:** run five quick accessibility and usability checks.
+
+1. Choose a public website or free app.
+2. Increase text size or zoom to 200 percent and note what breaks.
+3. Look for low contrast text and anything shown by colour alone.
+4. Learn how to turn your screen reader off first, then turn it on for two minutes and note how buttons are announced.
+5. Ask one person to complete a simple task on it while you watch quietly, and note where they hesitate.
+
+**Done looks like:** a short report with at least three findings, each with the setting used and a screenshot where possible.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why is showing errors only in red a problem?",
+            options: [
+              "Red uses more battery",
+              "Colour blind users may miss them without text or an icon",
+              "Red is not allowed on websites",
+              "Red text loads slowly",
+            ],
+            answer_index: 1,
+            explanation: "Information should not rely on colour alone.",
+          },
+          {
+            prompt: "What should a screen reader announce for a send money button?",
+            options: [
+              "Just Button",
+              "A meaningful name such as Send money",
+              "Nothing at all",
+              "The colour of the button",
+            ],
+            answer_index: 1,
+            explanation: "Buttons need meaningful labels so blind users know what they do.",
+          },
+          {
+            prompt: "When watching someone use a product for a usability check, what should you do?",
+            options: [
+              "Tell them each step to take",
+              "Watch quietly and note where they get stuck, helping only if asked",
+              "Complete the task for them",
+              "Leave the room",
+            ],
+            answer_index: 1,
+            explanation: "Quiet observation reveals where real users struggle.",
+          },
+          {
+            prompt: "What problem did Mariama find when she set her phone's text to large?",
+            options: [
+              "The website loaded faster",
+              "The Book button disappeared off the screen",
+              "The colours changed",
+              "The date picker was announced correctly",
+            ],
+            answer_index: 1,
+            explanation: "Large text pushed the Book button out of view.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
 //NEXT
   },
 };
