@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { Suspense, type ReactNode } from "react";
 import { Markdown } from "@/components/roadmaps/markdown";
 import { ShareButton } from "@/components/roadmaps/share-button";
-import { StudyBuddyPrompt } from "@/components/study-buddy/study-buddy-prompt";
+import { TopicStudyBuddy } from "@/components/study-buddy/topic-study-buddy";
 import { ResourceCards, TopicNeighbours, TopicSummary } from "@/components/roadmaps/topic";
 import { buttonClasses } from "@/components/ui/button";
 import Link from "@/components/ui/link";
@@ -110,7 +110,7 @@ async function Node({ params }: Pick<Props, "params">) {
               </ul>
             </nav>
             <div className="mt-10 lg:mt-6">
-              <StudyBuddyPrompt nodeTitle={node.title} next={learnPath(slug, node.slug)} />
+              <TopicStudyBuddy nodeTitle={node.title} lessonPath={learnPath(slug, node.slug)} />
             </div>
 
             {node.children.length > 0 && (
