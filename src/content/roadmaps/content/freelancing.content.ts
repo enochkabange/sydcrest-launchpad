@@ -972,6 +972,487 @@ Issahaku notices that several chop bars near the Tamale central market have no p
         pass_threshold: 75,
       },
     },
+    "online-marketplaces": {
+      explanation_md: `Freelance marketplaces and remote job boards let clients anywhere in the world post projects and hire freelancers they have never met. They can open doors to clients abroad, but they come with rules, fees and strong competition. Go in with clear eyes so you do not spend weeks of data and effort on the wrong platform.
+
+## Two kinds of platform
+
+* **Freelance marketplaces.** Clients post projects or browse freelancer profiles. You send proposals, agree terms on the platform, deliver and get paid through it. The platform usually holds the client's payment for a project and releases it when the work is approved, and charges fees.
+* **Remote job boards.** Companies post part time, contract or full time remote roles. You apply more like a normal job. Some roles are open worldwide; others are limited to certain countries.
+
+## Read the rules before you build a profile
+
+Each platform is different, and rules change. Before you sign up, find and read:
+
+* **Who can join.** Some platforms do not accept new freelancers from every country, or limit sign ups when they have too many in a category. Some remote roles say "open to applicants in certain countries only". Respect these limits. Never pretend to live somewhere else or use a tool to hide your location; accounts are closed for this and you may lose money held in them.
+* **Fees.** How much the platform takes from each payment, and whether you pay to send proposals. Some platforms sell credits for applying.
+* **How you withdraw money to Ghana.** Which withdrawal methods work for an account in Ghana, how long they take and what they cost. A later lesson covers this in detail.
+* **Identity checks.** Most platforms ask for an ID document and sometimes a video check. Use your own real details.
+
+## Expect competition
+
+A single posting can attract many proposals from around the world. Beginners often send many general proposals and hear nothing. What helps:
+
+* A complete, honest profile focused on one service.
+* Samples that match the work being posted.
+* Short, specific proposals that answer the client's questions.
+* Applying early to small, clearly described jobs you can do excellently.
+
+Some clients ask for a short paid test before ongoing work, which is normal. An unpaid "test" that is really a full project is not.
+
+## Stay on the platform
+
+The platform's payment protection and dispute process only cover work agreed and paid on the platform. A client who asks you to move to a messaging app and be paid outside "to save fees" removes your protection, and is breaking most platforms' rules. This is also a common scam pattern, covered in the scams lesson.
+
+## A small example
+
+Mariama wants to offer short video captioning to creators abroad. Before signing up anywhere, she reads the joining rules, fees and withdrawal options of three platforms. One does not currently accept new sign ups in her category, so she skips it. On another she builds a profile with three labelled samples and applies to two small, clear jobs a day for a month, each with a short tailored proposal. Her first job is small, but it gives her a real review and a client who returns.`,
+      practice_task_md: `**Goal:** Research one platform properly before joining.
+
+**Steps:**
+1. Choose one freelance marketplace or remote job board where your kind of work appears.
+2. Find and note: who can join, the fees, how money can be withdrawn to Ghana and what identity checks they use. Use the platform's own help pages.
+3. Look at five current postings for your service. Note what the clients ask for: samples, skills, price type, deadlines.
+4. Decide whether this platform is worth your time now, and write why in two sentences.
+
+**Done looks like:** A short note covering joining rules, fees, withdrawals, identity checks and five postings, with your decision and reason. Do not sign up until you have done this.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What should you check before building a profile on a platform?",
+            options: [
+              "Only how many users it has",
+              "Who can join, the fees, how to withdraw money to Ghana and identity checks",
+              "Whether it has a nice logo",
+              "Whether your friends use it",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists joining rules, fees, withdrawals and identity checks as things to read first.",
+          },
+          {
+            prompt: "A remote role says it is open only to applicants in certain countries, and Ghana is not one. What should you do?",
+            options: [
+              "Use a tool to hide your location and apply",
+              "Say you live in one of those countries",
+              "Respect the limit and look for roles open to you",
+              "Apply with a friend's details",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says to respect eligibility limits; faking location can get accounts closed and money lost.",
+          },
+          {
+            prompt: "Why is moving payment off the platform risky?",
+            options: [
+              "Because it is always slower",
+              "Because you lose the platform's payment protection and dispute process, and it is a common scam pattern",
+              "Because local banks refuse such payments",
+              "Because clients pay less tax",
+            ],
+            answer_index: 1,
+            explanation: "Protection only covers work agreed and paid on the platform, and off platform requests are a scam warning sign.",
+          },
+          {
+            prompt: "Which approach helps a beginner against strong competition?",
+            options: [
+              "Sending the same long general proposal to every posting",
+              "A focused profile, matching samples and short tailored proposals to small clear jobs",
+              "Applying only to the biggest, most complex projects",
+              "Leaving the profile empty to save time",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists a focused profile, matching samples and specific proposals as what helps.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "outreach-and-referrals": {
+      explanation_md: `Waiting for adverts means competing with everyone who sees the same advert. Writing directly to a business with a specific idea for them, and getting introduced by people who already like your work, often brings better clients with less competition.
+
+## Outreach: contacting clients who did not post a job
+
+Outreach means you contact a possible client first. It works best when the message is about them, not about you. A good outreach message:
+
+* **Greets them by name** and shows you know their business.
+* **Notices one specific thing** you could improve. "Your Facebook page has great photos of your rooms, but the last post was in March."
+* **Offers a small, clear idea.** "I could plan and post three times a week for a month, starting with your weekend lunch offer."
+* **Shows one relevant sample.**
+* **Asks a simple question** that is easy to answer. "Would you like me to send a price?"
+
+Keep it short enough to read in under a minute. Never send the same copied message to everyone; people can tell.
+
+## Follow up once, politely
+
+Busy owners often miss messages. If there is no reply after about a week, send one short follow up: "Good morning, I wanted to check if you saw my message about your page. Happy to answer any questions." If there is still no reply, stop and move on. Repeated messages damage your name.
+
+Record every contact in your client list with the date and next step, so you follow up at the right time and not too often.
+
+## Referrals: the steadiest source of work
+
+A referral is when someone recommends you to another person. Referred clients already trust you a little, because someone they know does. To earn referrals:
+
+* Do excellent work and be easy to deal with.
+* At the end of a job, ask directly: "Do you know anyone else who might need this?"
+* Thank people who refer you, and tell them how it went.
+
+## Repeat work
+
+A client who was happy once will often hire you again, and repeat clients cost you no time to find. Keep in touch without pestering: share a useful idea before a busy season, such as Ramadan, Christmas or school resumption, or remind a client when their monthly content plan is due. Offer a regular arrangement when it makes sense, such as monthly social media management.
+
+## A small example
+
+Abdul-Rahman designs simple websites. He finds five guesthouses in Tamale with outdated or missing websites. He writes to each with one specific observation and a sample. Two reply. One hires him. After delivering, he asks the owner for referrals, and she introduces him to a friend who runs a guesthouse in Bolgatanga. Six months later, the first owner asks him to add a booking page, which is repeat work he did not have to search for.`,
+      practice_task_md: `**Goal:** Write and send one outreach message, and plan your follow up.
+
+**Steps:**
+1. Choose one business from your client list that has not posted a job.
+2. Study their business or online presence and note one specific thing you could improve.
+3. Write a short message that greets them, mentions that thing, offers a small idea, shows one sample and asks a simple question.
+4. Send it, and record the date and a follow up date one week later in your list.
+5. Write the polite one line follow up you will send if there is no reply.
+
+**Done looks like:** One sent outreach message, a follow up date in your list and your follow up message ready to send.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What makes an outreach message effective, according to the lesson?",
+            options: [
+              "It is long and lists all your skills",
+              "It is about the client, notices one specific improvement, offers a small idea and asks a simple question",
+              "It is the same copied message sent to everyone",
+              "It demands a reply within one hour",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says outreach works best when it is specific to the client and easy to answer.",
+          },
+          {
+            prompt: "There is no reply to your outreach after about a week. What should you do?",
+            options: [
+              "Send a message every day until they reply",
+              "Send one short polite follow up, then move on if there is still no reply",
+              "Post about them on social media",
+              "Call them late at night",
+            ],
+            answer_index: 1,
+            explanation: "The lesson advises one polite follow up, then stopping, because repeated messages damage your name.",
+          },
+          {
+            prompt: "Why are referred clients valuable?",
+            options: [
+              "They always pay more",
+              "They already trust you a little because someone they know recommended you",
+              "They never need contracts",
+              "They are always from abroad",
+            ],
+            answer_index: 1,
+            explanation: "The lesson explains that referrals carry trust from the person who recommends you.",
+          },
+          {
+            prompt: "What is one good way to encourage repeat work without pestering?",
+            options: [
+              "Message the client every day",
+              "Share a useful idea before a busy season or offer a regular arrangement",
+              "Raise your price without telling them",
+              "Refuse new requests so they value you more",
+            ],
+            answer_index: 1,
+            explanation: "The lesson suggests timely ideas before busy seasons and regular arrangements where they make sense.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "staying-safe": {
+      explanation_md: `Freelancers are a favourite target for scammers. You are looking for work, you are often contacting strangers, and you may be new to online payments. Scammers know this. Learning the warning signs early can save your money, your accounts and your peace of mind.
+
+## Why freelancers are targeted
+
+* **You want work.** Scammers pretend to be clients or recruiters offering easy, well paid tasks.
+* **You share contact details publicly.** Your phone number and email are on your profile, so anyone can message you.
+* **You handle payments.** Fake payment screenshots, overpayments and requests to "refund the difference" all target people who receive money.
+* **Your accounts are valuable.** A marketplace, email or payment account with good reviews can be stolen and used by criminals.
+
+## What this section covers
+
+* **Spotting freelance and job scams.** The common patterns, including those Ghana's Cyber Security Authority has warned about, and how to report them.
+* **Protecting your accounts and identity.** Strong passwords, 2 Step Verification, and why you should never rent out, buy or share an account or send your ID documents carelessly.
+
+## One rule to remember
+
+**Real clients pay you to work. They never ask you to pay them to get work.** If anyone asks for a registration fee, a deposit to unlock tasks, money for "training materials" before a job, or a payment to release your earnings, stop. That one rule catches a large share of the scams beginners meet.
+
+## Slow down when you feel pressure
+
+Scammers create urgency: "Only three spots left", "Pay within one hour", "Your account will be closed". Pressure is designed to stop you thinking. A genuine client will wait while you check things. Give yourself time to verify, and talk to someone you trust before sending money or documents.
+
+## A small example
+
+Hawa receives a WhatsApp message from an unknown number: "We saw your profile. Earn daily from home by rating hotels. No experience needed." The link leads to a site that looks professional. She completes a few tasks and receives a small payment, then is told to deposit money to reach the "gold level" and withdraw her balance.
+
+Hawa remembers the rule: she is being asked to pay to work. She stops, does not deposit anything, blocks the number and reports it to the Cyber Security Authority. Later she sees a friend's post about losing money to the same kind of scheme, and shares what she learned.
+
+## Being safe is part of being professional
+
+Safety is not only about avoiding loss. Clients trust freelancers who handle their files, passwords and data carefully. The habits in this section protect your clients as well as you, and that becomes part of your reputation.`,
+      practice_task_md: `**Goal:** Build your personal scam checklist.
+
+**Steps:**
+1. In a note, write the one rule from the lesson in your own words.
+2. List four reasons freelancers are targeted, from the lesson.
+3. Think of any suspicious job or money message you or someone you know has received. Write which warning signs it showed. Do not include anyone's private details.
+4. Write the name of one person you trust whom you will talk to before sending money or documents to someone new.
+
+**Done looks like:** A short checklist with the rule, the four reasons, one real or realistic example and your trusted contact. Keep it where you can find it quickly.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is the one rule the lesson asks you to remember?",
+            options: [
+              "Always pay a small fee to show you are serious",
+              "Real clients pay you to work; they never ask you to pay them to get work",
+              "Only accept work from people abroad",
+              "Never use mobile money",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says any request to pay for work, tasks or withdrawals is a reason to stop.",
+          },
+          {
+            prompt: "Why do scammers often create urgency?",
+            options: [
+              "Because real jobs always close within an hour",
+              "To stop you from thinking and checking",
+              "Because the law requires deadlines",
+              "To help you save data",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says pressure is designed to stop you thinking; genuine clients will wait while you check.",
+          },
+          {
+            prompt: "Which is one reason freelancers are targeted by scammers?",
+            options: [
+              "Freelancers never use passwords",
+              "Their accounts with good reviews are valuable and can be stolen",
+              "Freelancers are not allowed to report crimes",
+              "Freelancers always carry cash",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists valuable accounts as one reason, along with seeking work, public contacts and handling payments.",
+          },
+          {
+            prompt: "In the example, what did Hawa do when asked to deposit money?",
+            options: [
+              "Deposited a small amount to test it",
+              "Asked a friend to deposit for her",
+              "Stopped, blocked the number and reported it",
+              "Recruited friends to reach the gold level",
+            ],
+            answer_index: 2,
+            explanation: "She recognised she was being asked to pay to work and reported it to the Cyber Security Authority.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+    "spotting-scams": {
+      explanation_md: `Scams change their story often, but the patterns repeat. If you know the patterns, you can spot new versions quickly. Ghana's Cyber Security Authority (CSA) has issued public alerts about fake jobs and recruitment scams, and takes reports.
+
+## The task scam
+
+The CSA has described this pattern in its alerts:
+
+* You receive an unsolicited message by SMS, email or a messaging app, from someone posing as a recruiter.
+* They offer remote or part time work doing simple digital tasks, such as liking posts, rating products or referring friends.
+* You are moved to WhatsApp or Telegram and asked to sign up on a website or "portal".
+* Early tasks pay small amounts, to build your trust.
+* Then you are asked to deposit money to unlock better tasks or to release your earnings.
+* After you deposit, you are locked out and the contacts disappear.
+
+## Other common freelance scams
+
+* **Pay to get work.** A "client" or "agency" asks for a registration fee, a fee for training materials, or payment for software before you can start.
+* **The overpayment trick.** A client sends more than the agreed amount, or shows a payment screenshot, then asks you to refund the difference quickly. The original payment later turns out to be fake or reversed, and your refund is gone.
+* **Fake payment alerts.** You receive a message that looks like a mobile money or bank alert, but no money is in your actual balance.
+* **Move off the platform at once.** A new client on a marketplace immediately asks you to continue on a messaging app and be paid outside the platform.
+* **Account rental.** Someone offers to pay you to use your marketplace or payment account, or to "verify" an account in your name. Criminals use such accounts for fraud, and you can be held responsible.
+* **Free work disguised as a test.** A "test" that is really the full project, with no payment.
+* **Cloned websites and impersonation.** Fake pages that copy a real company's name and logo, or messages pretending to be from a well known organisation.
+
+## How to check
+
+* Search the company's name plus words like "scam" or "fraud", and visit its official website by typing the address yourself.
+* Check your actual mobile money or bank balance, never a screenshot or SMS alone.
+* Ask for a video call or official email address. Scammers often refuse.
+* Talk to someone you trust before sending money, documents or codes.
+
+## How to report
+
+The CSA lists these reporting channels in its alert: call or text **292**, WhatsApp **0501603111**, or email **report@csa.gov.gh**. Also report the account to the platform or app where it contacted you. Reporting can protect the next person.
+
+## A small example
+
+Sumaila is offered a data entry job by a "client" who sends a payment alert for more than the agreed fee and asks him to refund the extra by mobile money. Sumaila checks his real balance: nothing has arrived. He declines politely, keeps the messages and reports the number.`,
+      practice_task_md: `**Goal:** Practise spotting scam patterns.
+
+**Steps:**
+1. Write three short made up messages: one genuine client enquiry, one task scam and one overpayment scam. Use made up names.
+2. For each scam message, underline or list the warning signs from the lesson.
+3. Write what you would do in response to each scam, including how you would check and where you would report.
+4. Save the CSA reporting channels in your phone contacts or notes.
+
+**Done looks like:** Three example messages with warning signs marked, your planned responses, and the reporting channels saved where you can find them.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "In the task scam pattern described by the CSA, what usually happens after early small payments?",
+            options: [
+              "You are offered a permanent contract",
+              "You are asked to deposit money to unlock better tasks or release earnings",
+              "You are invited to an office interview",
+              "You receive a certificate",
+            ],
+            answer_index: 1,
+            explanation: "The CSA describes small early payments followed by deposit demands and then a lockout.",
+          },
+          {
+            prompt: "A client sends more than the agreed amount and asks you to refund the difference quickly. What is this likely to be?",
+            options: [
+              "A generous tip",
+              "The overpayment trick",
+              "A normal bank error that you must fix immediately",
+              "A tax refund",
+            ],
+            answer_index: 1,
+            explanation: "The lesson describes the overpayment trick, where the original payment is fake or reversed.",
+          },
+          {
+            prompt: "How should you confirm that a mobile money payment has arrived?",
+            options: [
+              "Trust the screenshot the client sends",
+              "Trust any SMS that looks like an alert",
+              "Check your actual balance",
+              "Ask the client to confirm by voice note",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says to check your real balance, never a screenshot or SMS alone.",
+          },
+          {
+            prompt: "Which of these is a reporting channel the CSA lists in its alert?",
+            options: ["Call or text 292", "Call 911", "Email the platform's marketing team", "Post in a community WhatsApp group only"],
+            answer_index: 0,
+            explanation: "The CSA lists 292 by call or text, WhatsApp 0501603111 and report@csa.gov.gh.",
+          },
+          {
+            prompt: "Someone offers to pay you to use your marketplace account. Why should you refuse?",
+            options: [
+              "Because the payment will be too small",
+              "Because criminals use such accounts for fraud and you can be held responsible",
+              "Because accounts can only be used on weekends",
+              "Because it uses too much data",
+            ],
+            answer_index: 1,
+            explanation: "The lesson lists account rental as a scam that can leave you responsible for fraud.",
+          },
+        ],
+        pass_threshold: 80,
+      },
+    },
+    "protecting-accounts": {
+      explanation_md: `Your email, marketplace, social media and payment accounts are your business. If someone takes over your email, they can reset every other password, message your clients in your name and redirect your payments. Protecting your accounts is basic professional practice.
+
+## Strong, separate passwords
+
+* Use a **long password** for each important account. A phrase of several unrelated words is easier to remember and harder to guess than a short word with a number.
+* Use a **different password** for each account. If one site is breached, the others stay safe.
+* Never use your name, birthday, phone number or "123" patterns.
+* Consider a reputable password manager app to store them, or at least keep them somewhere private and offline, not in a shared notebook or a chat.
+
+## Turn on 2 Step Verification
+
+2 Step Verification (sometimes called two factor authentication) means signing in needs your password plus something else, such as a code sent to your phone or shown in an authenticator app. Even if someone steals your password, they cannot get in without the second step. Turn it on for email first, then for payment, marketplace and social media accounts.
+
+**Never share a verification code.** No genuine bank, platform or mobile money company will ask you for a one time code or your PIN by phone or message. Anyone who asks is trying to take over your account.
+
+## Never rent, buy or share an account
+
+People may offer to buy your account, rent it, or pay you to "verify" an account in your name. Others sell accounts with reviews already on them. Say no to all of these. Platforms close such accounts, often with money still inside, and criminals use rented accounts for fraud that is then traced to the name on the account.
+
+## Be careful with your ID and bank details
+
+You will sometimes need to share your Ghana Card details, for example for a platform's identity check, a bank or the tax office. Share them only with services and clients you have verified, through official channels. Do not post photos of your Ghana Card, send it to strangers for a "job application", or share your mobile money PIN with anyone, including family.
+
+## On shared and public devices
+
+* Use a private or incognito window, and always sign out when you finish.
+* Do not let the browser save your password.
+* Do not download client files onto a shared computer unless you delete them afterwards.
+
+## If something goes wrong
+
+If you think an account is compromised, act quickly: change the password from a safe device, sign out of all other sessions in the account settings, check that the recovery email and phone are still yours, and warn your clients that messages from you may be fake. Report the incident to the platform and, if money is involved, to your bank or mobile money provider and the Cyber Security Authority.
+
+## A small example
+
+Fuseini gets a call from someone who says they are from his mobile money provider and need "the code we just sent" to fix his account. He hangs up, because no real provider asks for a code. His 2 Step Verification and separate passwords mean that even a leaked password would not be enough.`,
+      practice_task_md: `**Goal:** Secure your most important accounts.
+
+**Steps:**
+1. List your business accounts: email, messaging, social media, marketplace, payment.
+2. For your email account, change to a long, unique password and turn on 2 Step Verification.
+3. Repeat for at least two more accounts on your list.
+4. In each account's settings, check that the recovery email and phone number are yours and current.
+5. Write a one line rule for yourself about sharing your Ghana Card and PIN.
+
+**Done looks like:** At least three accounts with unique passwords and 2 Step Verification turned on, recovery details checked and your one line rule written. Do not write your passwords in the task.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why is your email account especially important to protect?",
+            options: [
+              "Because it is the only account with your photo",
+              "Because whoever controls it can reset your other passwords and message clients in your name",
+              "Because email is free",
+              "Because email cannot be used on a phone",
+            ],
+            answer_index: 1,
+            explanation: "The lesson says email takeover lets an attacker reset other passwords and impersonate you.",
+          },
+          {
+            prompt: "What does 2 Step Verification add?",
+            options: [
+              "A second password that is the same as the first",
+              "A second step, such as a code, so a stolen password alone is not enough",
+              "Faster sign in without a password",
+              "A way to share accounts safely",
+            ],
+            answer_index: 1,
+            explanation: "The lesson explains that sign in needs your password plus something else.",
+          },
+          {
+            prompt: "Someone calls saying they are from your mobile money provider and asks for the code just sent to you. What should you do?",
+            options: [
+              "Give them the code so they can fix the account",
+              "Give them half the code",
+              "Refuse and hang up; genuine providers never ask for codes",
+              "Send the code by SMS instead",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says no genuine bank, platform or provider asks for one time codes or PINs.",
+          },
+          {
+            prompt: "What does the lesson advise about renting or buying accounts with reviews?",
+            options: [
+              "It is a good shortcut for beginners",
+              "It is fine if the price is low",
+              "Say no; platforms close such accounts and they are used for fraud",
+              "Only rent accounts from friends",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says never rent, buy or share an account.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
     // @@NEXT@@
   },
 };
