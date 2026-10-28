@@ -12,10 +12,6 @@ import { withdrawContactRequest } from "../actions";
 
 export const metadata: Metadata = { title: "Talent requests", robots: { index: false } };
 
-// A dynamic segment under the app shell, whose nav reads usePathname() outside
-// Suspense: allow blocking, as /learn/[slug]/[node] does, until the shell wraps it.
-export const instant = false;
-
 const STATUS_TONE: Record<string, Tone> = { pending: "info", accepted: "success", declined: "neutral", withdrawn: "neutral" };
 
 async function Requests({ params }: { params: Promise<{ slug: string }> }) {

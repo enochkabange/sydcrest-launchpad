@@ -39,3 +39,10 @@ export const MAX_MESSAGE_CHARS = 4000;
 
 /** Longest node explanation passed as context (characters). */
 export const MAX_CONTEXT_CHARS = 24000;
+
+/**
+ * Tool rounds per turn (each is one more model call). After this many the
+ * model must answer with what it has, so one message never fans out into an
+ * unbounded number of billed calls.
+ */
+export const MAX_TOOL_ROUNDS = 3;
