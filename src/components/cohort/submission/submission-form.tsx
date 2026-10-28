@@ -69,7 +69,7 @@ export function SubmissionForm(props: SubmissionFormProps) {
   }
 
   return (
-    <form action={action} className="flex flex-col gap-5" noValidate aria-busy={pending || upload.busy || undefined}>
+    <form data-analytics-form="submission" action={action} className="flex flex-col gap-5" noValidate aria-busy={pending || upload.busy || undefined}>
       <input type="hidden" name="week_id" value={weekId} />
       <input type="hidden" name="file_path" value={filePath ?? ""} />
 

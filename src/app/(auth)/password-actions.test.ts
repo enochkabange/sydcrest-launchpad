@@ -13,7 +13,12 @@ vi.mock("@/lib/supabase/server", () => ({
 }));
 vi.mock("@/lib/site-url", () => ({ siteOrigin: async () => "https://sydcrest.example" }));
 let requestHeaders = new Headers();
-vi.mock("next/headers", () => ({ headers: async () => requestHeaders }));
+const cookieJar = new Map<string, string>();
+const cookieStore = {
+  get: (name: string) => (cookieJar.has(name) ? { name, value: cookieJar.get(name)! } : undefined),
+  delete: vi.fn((name: string) => cookieJar.delete(name)),
+};
+vi.mock("next/headers", () => ({ headers: async () => requestHeaders, cookies: async () => cookieStore }));
 class Redirect extends Error {
   constructor(readonly to: string) {
     super(`redirect ${to}`);
@@ -90,6 +95,14 @@ describe("updatePassword", () => {
     expect(updateUser).toHaveBeenCalledWith({ password: "Tamale-2027-new" });
   });
 
+  it("accepts the session an emailed link signed in, then retires the reset cookie", async () => {
+    cookieJar.set("sc_recovery", "s1");
+    getClaims.mockResolvedValueOnce({ data: { claims: { sub: "u1", session_id: "s1", amr: [{ method: "otp", timestamp: 1 }] } } });
+    await expect(updatePassword({}, form(good))).rejects.toMatchObject({ to: "/dashboard?notice=password" });
+    expect(cookieStore.delete).toHaveBeenCalledWith("sc_recovery");
+    expect(cookieJar.has("sc_recovery")).toBe(false);
+  });
+
   it("refuses a mismatch or a short password without saving", async () => {
     expect(await updatePassword({}, form({ password: "Tamale-2027-new", confirm_password: "Tamale-2027" }))).toEqual({
       errors: { confirm_password: "The two passwords don't match." },
@@ -111,6 +124,9 @@ describe("updatePassword", () => {
     getClaims.mockResolvedValueOnce({ data: null });
     expect(await updatePassword({}, form(good))).toEqual({ expired: true });
     getClaims.mockResolvedValueOnce({ data: { claims: { sub: "u1", amr: [{ method: "password", timestamp: 1 }] } } });
+    expect(await updatePassword({}, form(good))).toEqual({ expired: true });
+    // A sign up confirmation session ("otp") without the reset cookie.
+    getClaims.mockResolvedValueOnce({ data: { claims: { sub: "u1", session_id: "s1", amr: [{ method: "otp", timestamp: 1 }] } } });
     expect(await updatePassword({}, form(good))).toEqual({ expired: true });
     expect(updateUser).not.toHaveBeenCalled();
   });

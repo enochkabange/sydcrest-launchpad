@@ -14,5 +14,5 @@ export async function recordInviteSent(method: unknown): Promise<void> {
   if (typeof method !== "string" || !(METHODS as readonly string[]).includes(method)) return;
   const user = await getCurrentUser();
   if (!user) return;
-  await track("invite_sent", { method }, { profileId: user.id });
+  await track("invite_sent", { method: method as InviteMethod });
 }

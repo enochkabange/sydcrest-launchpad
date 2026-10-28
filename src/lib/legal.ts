@@ -10,7 +10,7 @@ export const LEGAL_VERSION = "2026-10-draft";
 export const LEGAL_IS_DRAFT = true;
 
 /** Last time the text changed, shown on both pages. */
-export const LEGAL_UPDATED = "25 October 2026";
+export const LEGAL_UPDATED = "28 October 2026";
 
 /**
  * Where people send privacy requests. Left empty on purpose until the founder

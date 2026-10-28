@@ -22,7 +22,7 @@ export function SignupForm() {
   }
 
   return (
-    <form action={action} className="flex flex-col gap-4" noValidate>
+    <form data-analytics-form="sign_up" action={action} className="flex flex-col gap-4" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       <NextField />
       <TextField

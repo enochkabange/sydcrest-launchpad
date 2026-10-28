@@ -25,7 +25,7 @@ export function PortfolioForm({
   }
 
   return (
-    <form action={formAction} className="flex max-w-2xl flex-col gap-4" noValidate>
+    <form data-analytics-form="skill_portfolio" action={formAction} className="flex max-w-2xl flex-col gap-4" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       <TextField
         id="portfolio_url"

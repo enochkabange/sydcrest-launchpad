@@ -28,7 +28,7 @@ export function PostComposer({ scope, scopeId, groupLabel }: { scope: string; sc
   const ref = useResetOnSuccess(state);
   const id = `compose-${scope}-${scopeId ?? "all"}`;
   return (
-    <form ref={ref} action={action} aria-labelledby={`${id}-heading`} className="flex flex-col gap-3 rounded-lg border border-line bg-surface p-4 xl:p-5">
+    <form data-analytics-form="community_post" ref={ref} action={action} aria-labelledby={`${id}-heading`} className="flex flex-col gap-3 rounded-lg border border-line bg-surface p-4 xl:p-5">
       <h2 id={`${id}-heading`} className="text-h3 text-content">
         Post to {groupLabel}
       </h2>

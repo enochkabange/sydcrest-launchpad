@@ -5,7 +5,7 @@
  */
 
 /** Planning/00 and the old About page: the only public contact on record. */
-export const CONTACT_EMAIL = "enochkabange@gmail.com";
+export const CONTACT_EMAIL = "hello@sydcrest.com";
 
 /** Planning/00, "The frame". */
 export const MISSION =

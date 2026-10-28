@@ -1,5 +1,9 @@
 # Founder decisions: access and UX rules
 
+> **Decided 28 October 2026:** the founder accepted every recommendation below
+> (D1 to D9) as written. Build to the recommendation; the options stay for the
+> record.
+
 Rules the code cannot settle on its own, found while writing
 `docs/user-types.md` and `docs/page-guide.md` (issue #240). Each has the
 options, what the code does today, and a recommendation. Answer on #240 or in

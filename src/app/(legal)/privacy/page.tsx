@@ -1,5 +1,6 @@
 import Link from "@/components/ui/link";
 import { pageMetadata } from "@/lib/page-metadata";
+import { AnalyticsChoice } from "@/lib/analytics/analytics-choice";
 import { LegalDocument, PrivacyContact } from "../legal-document";
 
 export const metadata = pageMetadata({
@@ -63,8 +64,10 @@ export default function PrivacyPage() {
           everyone.
         </li>
         <li>
-          Analytics events about which pages and features are used. These are recorded without your
-          name, email address or phone number.
+          Analytics about how the platform is used: which pages are opened, which features are used and
+          whether they worked, how fast pages load, and errors. These never include your name, email
+          address, phone number or anything you type. The <a href="#analytics">Analytics</a> section
+          below explains exactly what we record.
         </li>
       </ul>
       <p>We do not ask for and do not want sensitive data such as your health, religion or finances.</p>
@@ -86,8 +89,10 @@ export default function PrivacyPage() {
           cohorts and events once that feature is switched on. You can ask us to stop at any time.
         </li>
         <li>
-          <strong>To improve SydCrest</strong> using analytics that do not identify you. This is in our
-          legitimate interest in running a useful service.
+          <strong>To improve SydCrest</strong> using analytics: finding what is slow, confusing or
+          broken, and reporting how the programme is going in totals. This is in our legitimate
+          interest in running a useful service, and you can turn it off (see{" "}
+          <a href="#analytics">Analytics</a>).
         </li>
         <li>
           <strong>To keep the community safe</strong> and to comply with the law.
@@ -97,6 +102,74 @@ export default function PrivacyPage() {
         When you create an account you give your consent to this policy. You can withdraw that
         consent at any time by asking us to delete your account.
       </p>
+
+      <h2 id="analytics">Analytics</h2>
+      <p>
+        We run our own analytics. Nothing goes to an advertising network or a third party analytics
+        company, and there are no third party trackers on SydCrest.
+      </p>
+      <h3>What we record</h3>
+      <ul>
+        <li>
+          <strong>What happened:</strong> the name of an event, such as a page being opened, a quiz
+          being passed or a booking being requested, with the time, and simple details such as a score,
+          a count or whether it worked.
+        </li>
+        <li>
+          <strong>Which kind of page:</strong> for example &ldquo;a roadmap topic&rdquo; or &ldquo;a
+          public profile&rdquo;, never which person&rsquo;s profile, and never the rest of the web
+          address.
+        </li>
+        <li>
+          <strong>Your device type:</strong> phone, tablet or computer. We do not keep your internet
+          address or the details of your browser with your analytics.
+        </li>
+        <li>
+          <strong>If you are signed in:</strong> your account number (a random code, not your name), and
+          at the time of the event your role on SydCrest (for example learner, mentor or expert), the
+          track you are following, your region, your chapter and your cohort. This lets us count people
+          rather than clicks and see which groups a change helps.
+        </li>
+        <li>
+          <strong>If you are not signed in:</strong> a random visitor code kept in a cookie on your
+          device, so we can count visits without knowing who you are.
+        </li>
+        <li>
+          <strong>Page speed:</strong> on about a quarter of visits, how quickly pages load and respond.
+        </li>
+        <li>
+          <strong>Forms:</strong> whether a form, such as an application, was started and whether it
+          was sent. Never what you typed into it.
+        </li>
+        <li>
+          <strong>Errors:</strong> when something breaks, a short description of the error with emails,
+          numbers and links removed.
+        </li>
+      </ul>
+      <h3>Who can see it</h3>
+      <p>
+        Analytics are stored in our own database. Only SydCrest administrators can read them, mostly as
+        daily totals. We never sell them or share them with advertisers.
+      </p>
+      <h3>Cookies we use for analytics</h3>
+      <ul>
+        <li>
+          <strong>sc_aid</strong>: the random visitor code, kept for up to a year.
+        </li>
+        <li>
+          <strong>sc_sid</strong> and <strong>sc_route</strong>: a code for this visit and the kind of
+          page you are on. They are deleted when you close your browser.
+        </li>
+        <li>
+          <strong>sc_analytics</strong>: remembers if you turned analytics off.
+        </li>
+      </ul>
+      <h3>Turning analytics off</h3>
+      <p>
+        If your browser sends Do Not Track or Global Privacy Control, we record no analytics from it.
+        You can also turn analytics off for this browser here. Signing in or out does not change it.
+      </p>
+      <AnalyticsChoice />
 
       <h2>Who we share it with</h2>
       <p>
@@ -139,8 +212,8 @@ export default function PrivacyPage() {
           <strong>AI tutor usage counts:</strong> up to 12 months.
         </li>
         <li>
-          <strong>Analytics events:</strong> these do not identify you, so we may keep them in
-          summary form for longer.
+          <strong>Analytics events:</strong> 13 months, then deleted automatically. Daily totals made
+          from them, which do not identify anyone, are kept so we can see trends over time.
         </li>
         <li>
           <strong>Backups:</strong> our hosting provider keeps backups for a limited time, after which

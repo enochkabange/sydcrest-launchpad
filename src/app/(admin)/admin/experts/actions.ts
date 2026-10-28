@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/admin";
 
@@ -28,6 +29,7 @@ export async function decideApplication(applicationId: string, decision: "approv
     p_decision: decision,
     p_note: note(form, "note"),
   });
+  await trackResult("expert_application_decided", error, { decision });
   if (error) throw new Error(`Could not record the decision: ${error.message}`);
   done();
 }
