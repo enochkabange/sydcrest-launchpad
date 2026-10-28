@@ -10,6 +10,15 @@ describe("isRecoverySession", () => {
     expect(isRecoverySession({})).toBe(false);
     expect(isRecoverySession(null)).toBe(false);
   });
+
+  it("counts an emailed link's otp session only when the reset cookie holds its id", () => {
+    const otp = { amr: [{ method: "otp", timestamp: 1 }], session_id: "s1" };
+    expect(isRecoverySession(otp, "s1")).toBe(true);
+    // A sign up confirmation also signs in with "otp": without the cookie it is not a reset.
+    expect(isRecoverySession(otp)).toBe(false);
+    expect(isRecoverySession(otp, "s2")).toBe(false);
+    expect(isRecoverySession({ amr: [{ method: "otp", timestamp: 1 }] }, "s1")).toBe(false);
+  });
 });
 
 describe("reset pages", () => {
