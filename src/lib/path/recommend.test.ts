@@ -6,6 +6,7 @@ import { answersKey, CONFIDENCE, DATA, DEVICES, EXPERIENCE, GOALS, HOURS, INTERE
 import {
   buildPath,
   chooseTrack,
+  COHORT_ONLY_TRACKS,
   FULL_LESSON_TRACKS,
   startingIndex,
   starterFor,
@@ -208,7 +209,8 @@ describe("buildPath", () => {
 });
 
 describe("every track", () => {
-  const ALL_TRACKS = ROADMAP_DRAFTS.map((r) => r.track);
+  // Cohort companions are reached through their program, never the path quiz.
+  const ALL_TRACKS = ROADMAP_DRAFTS.map((r) => r.track).filter((t) => !COHORT_ONLY_TRACKS.has(t));
 
   it("keeps the full lesson list in step with the lesson content", () => {
     const fromContent = TRACK_CONTENT.map((c) => ROADMAP_DRAFTS.find((r) => r.slug === c.roadmap)?.track);

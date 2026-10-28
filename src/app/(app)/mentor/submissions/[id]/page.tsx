@@ -14,10 +14,6 @@ import { assignPeerReview, gradeSubmission } from "../../actions";
 
 export const metadata: Metadata = { title: "Review work", robots: { index: false } };
 
-// The app shell's nav reads usePathname() outside Suspense, which a dynamic
-// segment cannot prerender (same as /learn/[slug]/[node]).
-export const instant = false;
-
 const STATUS_COPY: Record<string, string> = {
   submitted: "Waiting for review",
   ai_reviewed: "AI review ready",

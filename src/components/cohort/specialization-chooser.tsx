@@ -60,7 +60,7 @@ export function SpecializationChooser({
             {options.map((o) => (
               <label
                 key={o.slug}
-                className="flex cursor-pointer gap-3 rounded-md border border-line p-4 transition-colors hover:border-line-strong has-[:checked]:border-blue-600 has-[:checked]:bg-surface-sunken has-[:disabled]:cursor-not-allowed has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring"
+                className="flex cursor-pointer gap-3 rounded-md border border-line p-4 transition-colors hover:border-line-strong has-[:checked]:border-line-selected has-[:checked]:bg-surface-sunken has-[:disabled]:cursor-not-allowed has-[:focus-visible]:ring-2 has-[:focus-visible]:ring-ring"
               >
                 <input
                   type="radio"
@@ -68,7 +68,7 @@ export function SpecializationChooser({
                   value={o.slug}
                   defaultChecked={o.slug === chosen}
                   required
-                  className="mt-1 size-5 shrink-0 accent-blue-600"
+                  className="mt-1 size-5 shrink-0 accent-line-selected"
                 />
                 <span className="flex min-w-0 flex-col gap-2">
                   <span className="font-semibold text-content">{o.label}</span>

@@ -10,6 +10,12 @@ describe("parseStudyBuddyRequest", () => {
     expect(result).toEqual({ ok: true, data: { nodeId, messages: [{ role: "user", content: "What is a mean?" }], latestUserMessage: "What is a mean?" } });
   });
 
+  it("treats a missing or null nodeId as the companion chat", () => {
+    const messages = [{ role: "user", content: "What next?" }];
+    expect(parseStudyBuddyRequest({ messages })).toMatchObject({ ok: true, data: { nodeId: null } });
+    expect(parseStudyBuddyRequest({ nodeId: null, messages })).toMatchObject({ ok: true, data: { nodeId: null } });
+  });
+
   it("rejects bad ids, empty chats and a final assistant turn", () => {
     expect(parseStudyBuddyRequest({ nodeId: "abc", messages: [{ role: "user", content: "hi" }] }).ok).toBe(false);
     expect(parseStudyBuddyRequest({ nodeId, messages: [] }).ok).toBe(false);
