@@ -3,51 +3,11 @@
 import { useActionState, useState } from "react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { SelectField } from "@/components/ui/field";
+import { SelectField, TextAreaField } from "@/components/ui/field";
 import { ANSWER_MAX, type ScreeningQuestion, type Specialization } from "@/lib/programme-apply/screening";
 import { submitApplication, withdrawApplication, type ApplyState, type WithdrawState } from "./actions";
 
 type CohortOption = { id: string; label: string };
-
-/** A multi line answer, styled like the shared text field. */
-function TextAreaField({
-  id,
-  label,
-  error,
-  required,
-  defaultValue,
-}: {
-  id: string;
-  label: string;
-  error?: string;
-  required: boolean;
-  defaultValue?: string;
-}) {
-  return (
-    <div className="flex flex-col gap-1.5">
-      <label htmlFor={id} className="text-sm font-semibold text-content">
-        {label}
-        {!required && <span className="font-normal text-content-3"> (optional)</span>}
-      </label>
-      <textarea
-        id={id}
-        name={id}
-        rows={5}
-        maxLength={ANSWER_MAX}
-        required={required}
-        defaultValue={defaultValue}
-        aria-invalid={error ? true : undefined}
-        aria-describedby={error ? `${id}-error` : undefined}
-        className="min-h-32 w-full rounded-md border border-line-strong bg-surface px-3 py-2 text-base text-content placeholder:text-content-3 aria-invalid:border-danger-fg"
-      />
-      {error && (
-        <p id={`${id}-error`} className="text-sm text-danger-fg">
-          {error}
-        </p>
-      )}
-    </div>
-  );
-}
 
 export function ApplicationForm({
   questions,
@@ -68,7 +28,16 @@ export function ApplicationForm({
       {questions.map((q) => {
         const id = `answer_${q.id}`;
         if (q.kind === "text") {
-          return <TextAreaField key={q.id} id={id} label={q.prompt} required={q.required} error={e[`answer_${q.id}`]} defaultValue={v[id]} />;
+          return <TextAreaField
+              key={q.id}
+              id={id}
+              label={q.required ? q.prompt : `${q.prompt} (optional)`}
+              rows={5}
+              maxLength={ANSWER_MAX}
+              required={q.required}
+              error={e[`answer_${q.id}`]}
+              defaultValue={v[id]}
+            />;
         }
         return (
           <SelectField

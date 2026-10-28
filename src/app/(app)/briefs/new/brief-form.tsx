@@ -3,10 +3,9 @@
 import { useActionState, useState } from "react";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
-import { SelectField, TextField } from "@/components/ui/field";
+import { SelectField, TextAreaField, TextField } from "@/components/ui/field";
 import { BRIEF_KINDS, CATEGORIES_MAX, DESCRIPTION_MAX, LOCATION_MAX, TITLE_MAX } from "@/lib/briefs/briefs";
 import { createBrief, type FormState } from "../actions";
-import { TextArea } from "../text-area";
 
 type Org = { id: string; name: string };
 
@@ -92,7 +91,7 @@ export function BriefForm({
         placeholder="Set up stock records for my Tamale shop"
       />
 
-      <TextArea
+      <TextAreaField
         id="description"
         label="Describe what you need"
         hint="What you have, what you have tried and what a good result looks like."

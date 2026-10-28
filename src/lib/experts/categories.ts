@@ -17,6 +17,9 @@ export const EXPERT_CATEGORIES = [
   { slug: "careers", label: "Careers and job search" },
 ] as const;
 
+/** The list as checkbox options for the expert application and profile forms. */
+export const EXPERT_CATEGORY_OPTIONS = EXPERT_CATEGORIES.map((c) => ({ value: c.slug, label: c.label }));
+
 export type ExpertCategory = (typeof EXPERT_CATEGORIES)[number]["slug"];
 
 export function isExpertCategory(value: string): value is ExpertCategory {
