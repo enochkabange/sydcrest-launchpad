@@ -35,7 +35,7 @@ ROADMAP_VIEWS: map │ outline                layer 3  renderers (swappable)
 
 Siblings sharing a `choice_group` are "pick one of these" alternatives.
 
-Lesson structure (issue #255, `20261029180000_lesson_structure.sql`, pgTAP in
+Lesson structure (issue #255, `20261029200000_lesson_structure.sql`, pgTAP in
 `lesson_structure.test.sql`) adds nullable `difficulty`, `complexity`,
 `career_level` and `jobs`. They reach the view model as the optional
 `ViewNode` slots `difficulty`, `complexity`, `careerLevel` and `jobs` (left
