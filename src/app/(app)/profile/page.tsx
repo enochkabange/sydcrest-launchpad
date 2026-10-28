@@ -10,6 +10,7 @@ import { ProfileForm } from "./profile-form";
 import { PublicProfilePreview } from "./public-profile-preview";
 import { PublicProfileSection } from "./public-profile-section";
 import { VerifiedSkillsSection } from "./verified-skills-section";
+import { CredentialsSection } from "./credentials-section";
 import { WhatsAppConsent } from "./whatsapp-consent";
 
 export const metadata: Metadata = { title: "Profile" };
@@ -51,6 +52,10 @@ export default function ProfilePage() {
         </div>
         <Suspense fallback={<div className="h-48 animate-skeleton rounded-lg bg-surface-sunken" />}>
           <VerifiedSkillsSection />
+        </Suspense>
+        {/* The credentials wallet (#253): every certificate, its label, and sharing. */}
+        <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>
+          <CredentialsSection />
         </Suspense>
         <Suspense fallback={<div className="h-96 animate-skeleton rounded-lg bg-surface-sunken" />}>
           <PublicProfileSection />
