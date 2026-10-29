@@ -2600,9 +2600,10 @@ The video is now ready for his portfolio.`,
 
     "community-building": {
       outcomes: [
-        "Tell an audience from a community",
-        "Set purpose, rules and rituals and get people talking",
-        "Moderate, protect privacy and measure a community",
+        "Explain the difference between an audience and a community",
+        "Set a purpose, rules and rituals for a group",
+        "Use messaging tools to answer customers well",
+        "Run a community with care for members' privacy",
       ],
       explanation_md: `Followers watch. A community talks, helps each other and comes back. Businesses with real communities rely less on paid ads because their customers bring friends and stay loyal. Week 9 of the social media specialisation is community building and influencer outreach, and this lesson covers the first half.
 
@@ -2632,17 +2633,58 @@ Choose one main home first. Running five half empty spaces is worse than one liv
 * Answer every question quickly, and let members answer each other too.
 * Share behind the scenes moments, not only adverts. A useful rule of thumb is to give far more than you sell.
 
+## Messaging tools that build trust
+
+Much of a Ghanaian business's community lives in private chats, so good messaging is community work. The WhatsApp Business app, which you met in the Digital Marketer roadmap, has tools worth using well:
+
+* **Greeting and away messages** tell people you received their message and when you will reply.
+* **Quick replies** store answers to common questions, such as prices or delivery areas, so replies are fast and consistent. Personalise them with the person's name.
+* **Labels** sort chats, such as new order, paid, delivered and follow up, so nobody is forgotten.
+* **A catalogue** shows products with photos and prices inside the chat.
+
+Facebook and Instagram offer similar tools for their inboxes. Speed matters, but so does tone: a warm, accurate reply turns a question into a customer, and a customer into a member.
+
+## Inviting people the right way
+
+Grow a community by invitation, not by force. Share a join link in your posts, on receipts or on a sign at the shop, and let people choose. Do not add people's numbers to a group without asking. Ghana's Data Protection Act, 2012 (Act 843), section 40, says a person's details must not be used for direct marketing without their prior written consent, and lets anyone tell the business in writing to stop at any time. So keep promotional messages for people who agreed, and remove anyone who asks. A community of willing members is also far livelier than one full of people who were added without asking.
+
 ## Moderation and privacy
 
-Remove spam and scams fast, especially fake investment and "send money to win" messages. Handle complaints calmly and move personal details to a private chat. In WhatsApp groups, members can usually see each other's phone numbers, so tell people that before they join, and consider a Channel or Facebook Group where this matters.
+Remove spam and scams fast, especially fake investment and "send money to win" messages. Handle complaints calmly and move personal details to a private chat. In WhatsApp groups, members can usually see each other's phone numbers, so tell people that before they join, and consider a Channel or Facebook Group where this matters. Appoint one or two trusted members as helpers when the group grows, and agree together how to handle problems.
 
 ## Measuring a community
 
-Count what shows health, not just size: how many members post or reply each week, how many questions members answer for each other, repeat purchases, and referrals. A group of fifty active members is worth more than five thousand silent ones.
+Count what shows health, not just size: how many members post or reply each week, how many questions members answer for each other, repeat purchases, and referrals. A group of fifty active members is worth more than five thousand silent ones.`,
+      workedExample_md: `Wumpini manages a Facebook Group for a farm inputs shop in Damongo.
 
-## A worked example
+1. **Purpose.** "Farmers in the Savannah Region sharing advice for better harvests."
+2. **Rules.** Five short rules pinned at the top, including no selling of other products and no sharing other members' numbers.
+3. **Invitations.** A join link on every receipt and a sign at the counter. Nobody is added without asking.
+4. **Rituals.** Every Monday a planting tip, every Thursday members share a photo of their farm, and once a month an extension officer, Mr Dzifa Agbeko, answers questions live.
+5. **Messaging.** On WhatsApp Business she sets an away message for evenings, quick replies for prices and delivery days, and labels for "order", "paid" and "delivered".
+6. **Moderation.** When a fake "fertiliser grant" message appears, she removes it within the hour and warns members.
+7. **Health check.** Each month she counts members who posted, questions answered by other members, and buyers who mention the group.
 
-Wumpini manages a Facebook Group for a farm inputs shop in Damongo. Its purpose is "Farmers in the Savannah Region sharing advice for better harvests". Every Monday she posts a planting tip, every Thursday she asks members to share a photo of their farm, and once a month an extension officer answers questions live. Farmers now answer each other's questions about pests, and many mention the shop when they buy seed.`,
+Farmers now answer each other's questions about pests, and many mention the shop when they buy seed.`,
+      keyTerms: [
+        { term: "Community", definition: "A group where members talk to each other, not only to the business." },
+        { term: "WhatsApp Channel", definition: "A one to many broadcast space where followers react but do not chat." },
+        { term: "Ritual", definition: "A regular moment members look forward to, such as a weekly tip." },
+        { term: "Quick reply", definition: "A saved answer to a common question in a business messaging app." },
+        { term: "Label", definition: "A tag used to sort chats, such as new order or paid." },
+      ],
+      commonMistakes: [
+        "Adding people's numbers to a group without asking them",
+        "Running several half empty spaces instead of one lively home",
+        "Posting only adverts and never giving useful tips or stories",
+        "Leaving scam messages up for hours",
+        "Measuring only member count instead of activity and helpfulness",
+      ],
+      selfCheck: [
+        "What is your community's one sentence purpose?",
+        "Which messaging tools would save the business the most time, and why?",
+        "Why should people join by invitation rather than be added?",
+      ],
       practice_task_md: `**Goal:** Design a community plan for your business.
 
 **Steps:**
@@ -2700,18 +2742,34 @@ Wumpini manages a Facebook Group for a farm inputs shop in Damongo. Its purpose 
             answer_index: 2,
             explanation: "The lesson says to measure activity and helpfulness, not just size.",
           },
+          {
+            prompt: "What does the lesson say about adding customers' numbers to a WhatsApp group?",
+            options: [
+              "Add everyone in the owner's contacts to grow quickly",
+              "Add people first and let them leave if they want",
+              "Do not add people without asking; invite them with a join link",
+              "Only add people who have bought more than once",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says to grow by invitation and never add people's numbers without asking.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "micro-influencers": {
       outcomes: [
-        "Describe what makes a good influencer partner",
-        "Spot fake followers",
-        "Find and assess local micro influencers",
+        "Explain why micro influencers can suit small local businesses",
+        "Judge audience fit, engagement and values",
+        "Spot signs of fake followers",
+        "Record creator research using only public information",
       ],
       explanation_md: `An influencer is a person whose recommendations their followers trust. Big celebrities are expensive and their audiences are spread across the country. **Micro influencers** have smaller, closer audiences, often in one town, language or interest, and their followers tend to listen to them more personally. For a small business in northern Ghana, a well known local creator in Tamale or Wa can be a better partner than a national star. The week 9 assignment asks you to identify two of them.
+
+## Not only influencers by title
+
+Some of the most trusted voices do not call themselves influencers. A popular radio presenter with an active Facebook page, a campus food reviewer, a respected hairdresser in Accra with loyal clients, a church youth leader or a farmer who posts useful videos can all reach exactly the right people. Think about who your customers already listen to.
 
 ## What makes a good partner
 
@@ -2722,6 +2780,10 @@ Follower numbers are the least important factor. Check these instead:
 * **Values fit.** Is their content respectful and consistent with the business's values? Look back several months, not just this week.
 * **Content quality.** Are their videos and photos clear, and do they tell stories well?
 * **Reliability.** Do they post consistently, and have past brand partners looked happy?
+
+## Reading engagement properly
+
+Look at the last ten or so posts, not the best one. Read the comments: are people asking "where can I buy this?" or "what size is that?" Those are signs of an audience that acts on what it sees. Notice how many comments are in the local language, which suggests a local audience. Count how often the creator replies. A creator with a modest following and lively, local comments is often worth more than one with a huge following and silent posts.
 
 ## Spotting fake followers
 
@@ -2734,6 +2796,10 @@ Some accounts buy followers or likes. Warning signs include:
 
 You cannot always prove it, but if several signs appear, move on.
 
+## Brand safety
+
+Before recommending anyone, scroll back through their posts and comments. Look for anything the business would not want to be linked with: insults towards any group, promotion of gambling or dubious money schemes, or health claims that could harm people. Also check who they have promoted before. A creator who promoted a competitor last month may be a poor fit this month.
+
 ## Where to find them
 
 * Search hashtags and locations, such as Tamale food, Wa fashion or Bolga markets.
@@ -2745,9 +2811,40 @@ You cannot always prove it, but if several signs appear, move on.
 
 Keep a sheet with: name and handle, platforms, location, language, typical content, approximate audience size, signs of real engagement, values fit notes, and a score out of five for overall fit. Record only what they share publicly, and keep the sheet private.
 
-## A worked example
+Ghana's Data Protection Act, 2012 (Act 843), section 21, allows personal data to be collected indirectly where the person has deliberately made it public. A creator's public profile and posts fall into that, but their private phone number found through a friend does not. Collect only what you need for the decision, and contact them through the channels they publish for business.
 
-Rahinatu is searching for partners for Hawa's shea butter. She finds three creators. One has a very large following, but comments are mostly the same short phrase repeated and her audience is mostly outside Ghana. One is a Tamale beauty creator with a modest following, who answers every comment in Dagbani and English and whose followers ask where to buy the products she uses. One is a campus student who reviews local food. Rahinatu shortlists the Tamale beauty creator as the strongest fit, with the student as a possible second for a different product line.`,
+## Choosing your two
+
+Rank your list by overall fit, not by size. Your first choice should be the creator whose audience most closely matches the customers and whose comments show real trust. Your second can suit a different product or audience, which gives the business a useful comparison.`,
+      workedExample_md: `Rahinatu is searching for partners for Hawa's shea butter.
+
+1. **She searches** the hashtags Tamale beauty and natural skincare Ghana, and asks three customers which creators they follow.
+2. **She lists five creators** in a private sheet using only their public profiles and posts.
+3. **She reads engagement.** One creator has a very large following, but comments are mostly the same short phrase repeated and her audience appears to be mostly outside Ghana. Rahinatu marks two fake follower warning signs and moves on.
+4. **She finds a strong fit.** Ayishetu, a Tamale beauty creator with a modest following, answers every comment in Dagbani and English, and her followers ask where to buy the products she uses.
+5. **She checks brand safety.** Ayishetu's last six months of posts are respectful, and she has not promoted another shea butter brand.
+6. **She finds a second option.** A campus student who reviews local food could suit Hawa's new shea cooking oil.
+7. **She scores and ranks.** Ayishetu scores five out of five, the student four.
+
+Rahinatu shortlists both, with clear reasons for each.`,
+      keyTerms: [
+        { term: "Micro influencer", definition: "A creator with a smaller, closer audience, often in one town, language or interest." },
+        { term: "Engagement", definition: "How people respond to posts: genuine comments, questions, shares and replies." },
+        { term: "Audience fit", definition: "How closely a creator's followers match the business's customers." },
+        { term: "Brand safety", definition: "Checking a partner's content so the business is not linked with anything harmful." },
+        { term: "Fake followers", definition: "Bought or automated accounts that inflate a follower count." },
+      ],
+      commonMistakes: [
+        "Choosing the creator with the most followers instead of the best fit",
+        "Judging engagement from one viral post instead of recent posts",
+        "Skipping the brand safety scroll through older posts",
+        "Collecting private contact details instead of using published business channels",
+      ],
+      selfCheck: [
+        "Which five factors matter more than follower numbers?",
+        "What signs in the comments show an audience that acts on what it sees?",
+        "Under section 21 of Act 843, why is a creator's public profile different from their private number?",
+      ],
       practice_task_md: `**Goal:** Identify and assess two local micro influencers for your business. This is the first half of the week 9 assignment.
 
 **Steps:**
@@ -2804,16 +2901,28 @@ Rahinatu is searching for partners for Hawa's shea butter. She finds three creat
             answer_index: 1,
             explanation: "Audience fit and real engagement made her the strongest choice.",
           },
+          {
+            prompt: "When reading a creator's engagement, what does the lesson suggest looking at?",
+            options: [
+              "Only their single most popular post",
+              "Their follower count compared with other creators",
+              "How many brands they have worked with",
+              "Their last ten or so posts and what commenters actually say",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says to look at recent posts, not the best one, and read whether comments show trust and buying interest.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "influencer-collaborations": {
       outcomes: [
-        "Compare kinds of collaboration",
-        "Write a collaboration proposal and agree the details",
-        "Disclose honestly and measure results",
+        "Choose a fair type of collaboration",
+        "Write a short, personal collaboration proposal",
+        "Agree deliverables, payment, claims and reuse in writing",
+        "Make sure paid posts are disclosed and results measured",
       ],
       explanation_md: `Finding the right creator is only the start. Next you have to pitch a collaboration they want to accept, agree clearly what happens, make sure the audience knows it is paid, and measure what it brought in. This lesson completes the week 9 assignment.
 
@@ -2825,6 +2934,8 @@ Rahinatu is searching for partners for Hawa's shea butter. She finds three creat
 * **Ongoing ambassador:** a longer partnership over months.
 * **Event or takeover:** the creator hosts a live session or runs the business's account for a day.
 
+For a first collaboration with a small business, a short, clearly defined project is usually best: one or two posts, a clear date and a simple way to count results. If it works, grow it into something longer.
+
 ## Writing the proposal
 
 Keep it short and about the creator.
@@ -2834,6 +2945,8 @@ Keep it short and about the creator.
 3. **The idea:** what you would like them to create, with room for their own style. Creators know their audience best.
 4. **What they get:** product, fee, commission or a mix. Be clear and fair.
 5. **Next step:** a simple question, such as "Would you be open to a short call this week?"
+
+Aim for under 150 words. Send it through the business channel the creator publishes, such as the email in their bio or a business inbox, and get the owner's approval first.
 
 ## Agreeing the details
 
@@ -2845,17 +2958,54 @@ Before anything is made, agree in writing, even a clear WhatsApp message or emai
 * Any claims that must not be made, such as health promises.
 * Who can reuse the content afterwards and for how long.
 
+This short list is often called a brief. A good brief gives the key message and the must haves, then trusts the creator with the style. Too many instructions make the post sound like an advert, which their followers will scroll past.
+
+## Claims and approvals
+
+The creator speaks for themselves, but the business is responsible for what it asks them to say. Products such as food, medicines and cosmetics have advertising rules from Ghana's Food and Drugs Authority, so keep to plain, true descriptions. Shea butter can be described as pure, handmade and moisturising if that is true; it must not be promoted as curing a disease. If the business wants to review a post before it goes live, check facts and claims, not the creator's voice.
+
 ## Honest disclosure
 
-Followers deserve to know when a post is paid or sponsored. Platforms provide tools for this. At the time of writing, Instagram's Help Centre says its Branded Content Policies require creators to use the paid partnership label to tag the brand they work with. TikTok's help says that when you promote a brand, product or service you must turn on the content disclosure setting, and a post made on behalf of another business is then labelled Paid partnership. Labels can change, so check the current screen. Use these tools, and also say it plainly in the caption. Hidden adverts damage trust and can break platform rules.
+Followers deserve to know when a post is paid or sponsored. Platforms provide tools for this. At the time of writing, Instagram's help pages say its Branded Content Policies require creators to use the paid partnership label to tag the brand they work with. TikTok's help says that when you promote a brand, product or service you must turn on the content disclosure setting, and a post made on behalf of another business is then labelled Paid partnership. Labels can change, so check the current screen. Use these tools, and also say it plainly in the caption. Hidden adverts damage trust and can break platform rules. Product for content counts too: a free jar of shea butter is still payment.
 
 ## Measuring results
 
 Give each creator a unique discount code or a WhatsApp message they ask followers to send, such as "I saw Hawa's video". Then count messages, codes used and sales. Also note new followers and comments. Share the results with the creator, which builds a good relationship for next time.
 
-## A worked example
+Write down what success looks like before the post goes live, for example a number of WhatsApp conversations the owner would be pleased with. After the campaign, compare what happened with that expectation, and with what the same money might have done as an advert. That comparison helps the owner decide whether to work with creators again.
 
-Rahinatu writes to the Tamale beauty creator: "Hello Ayishetu, your harmattan skincare video was so practical, and your followers clearly trust you. I work with Hawa's women's group, who make pure shea butter by hand in Tamale. Would you try our butter for two weeks and share an honest video if you like it? We would send products and pay a fee by mobile money. Could we talk this week?" They agree the details by email, Ayishetu uses the paid partnership label, and followers send "Ayishetu sent me" on WhatsApp so Hawa can count orders.`,
+## Your two proposals
+
+The week 9 assignment asks for two collaboration proposals. Each should include the personal pitch, the collaboration type, the brief of details to agree, the disclosure plan and the tracking method. Two different creators, perhaps for two different products, give the owner a real choice.`,
+      workedExample_md: `Rahinatu pitches Ayishetu, the Tamale beauty creator she shortlisted.
+
+1. **Type.** A product for content collaboration plus a small fee: two weeks of using the shea butter, then one honest video.
+2. **Proposal, approved by Hawa first:** "Hello Ayishetu, your harmattan skincare video was so practical, and your followers clearly trust you. I work with Hawa's women's group, who make pure shea butter by hand in Tamale. Would you try our butter for two weeks and share an honest video if you like it? We would send products and pay a fee by mobile money. Could we talk this week?"
+3. **Brief.** One Reel and one Story on Instagram in the first week of December, payment within three days of posting, no health claims, and the business may share the Reel on its own page for three months.
+4. **Disclosure.** Ayishetu agrees to use the paid partnership label and say "Paid partnership with Hawa's women's group" in the caption.
+5. **Tracking.** Followers send "Ayishetu sent me" on WhatsApp. Hawa labels those chats.
+6. **Results.** Rahinatu counts the chats and orders, compares them with the target they set, and shares the numbers with Ayishetu.
+
+Her second proposal, to the campus food reviewer, follows the same shape for the cooking oil.`,
+      keyTerms: [
+        { term: "Collaboration proposal", definition: "A short, personal message inviting a creator to work with the business." },
+        { term: "Brief", definition: "The agreed list of content, dates, payment, claims to avoid and reuse rights." },
+        { term: "Paid partnership label", definition: "A platform tool that shows a post is sponsored by a named brand." },
+        { term: "Usage rights", definition: "Who can reuse a creator's content afterwards, where and for how long." },
+        { term: "Tracking code", definition: "A unique code or phrase that shows which sales came from a creator." },
+      ],
+      commonMistakes: [
+        "Sending the same copied pitch to every creator",
+        "Treating free products as if they did not count as payment",
+        "Writing a brief so strict that the post sounds like an advert",
+        "Asking a creator to make health claims the business cannot prove",
+        "Agreeing only by voice, with nothing in writing",
+      ],
+      selfCheck: [
+        "What five parts make up a collaboration proposal?",
+        "What details belong in a brief before anything is made?",
+        "How will followers know the post is paid, and how will the business count results?",
+      ],
       practice_task_md: `**Goal:** Complete the week 9 assignment: two collaboration proposals.
 
 **Steps:**
