@@ -3694,9 +3694,10 @@ The account is now easy to read, and every cedi has a clear job.`,
 
     "keywords-and-match-types": {
       outcomes: [
-        "Choose keywords with buying intent",
-        "Use match types",
-        "Add negative keywords",
+        "Choose keywords that show buying intent",
+        "Write broad, phrase and exact match keywords correctly",
+        "Explain how negative keywords match searches",
+        "Build a keyword list with negatives for one ad group",
       ],
       explanation_md: `Keywords decide which searches can trigger your ads. Choose them well and your budget reaches people ready to buy. Choose badly and you pay for clicks from people who will never become customers. This is the first half of week 8, campaign setup with keywords and ad copy.
 
@@ -3708,17 +3709,23 @@ For search ads, focus on phrases that show someone is ready to act:
 * **Action words:** buy, order, book, hire, repair, delivery, price.
 * **Specific products:** "solar fridge for shop", "Samsung screen replacement".
 
-Learning phrases, such as "how does a solar panel work", are better served by SEO content than paid clicks. You can find ideas the same way as in SEO: search suggestions, related searches, and customers' own words. Keyword Planner inside Google Ads adds estimates once the account setup, including billing details, is complete.
+Learning phrases, such as "how does a solar panel work", are better served by SEO content than paid clicks. You can find ideas the same way as in SEO: search suggestions, related searches, and customers' own words. Keyword Planner inside Google Ads adds estimates once the account setup, including billing details, is complete, so do not depend on it for practice.
 
 ## Match types
 
 Each keyword has a match type that controls how closely a search must match it. Google Ads Help describes three.
 
-* **Broad match:** the default, written with no symbols, such as car hire Tamale. Ads can show on searches related to the keyword, even ones that do not contain its words. It reaches the most searches. Google recommends using it with Smart Bidding, which uses conversion data to set bids.
-* **Phrase match:** written in quotation marks, such as "car hire Tamale". Ads can show on searches that include the meaning of the keyword. It reaches fewer searches than broad and more than exact.
+* **Broad match:** the default, written with no symbols, such as car hire Tamale. Ads can show on searches related to the keyword, even ones that do not contain its words. Google also uses signals such as the other keywords in the ad group and the landing page to judge what is related. It reaches the most searches. Google recommends using it with Smart Bidding, which uses conversion data to set bids.
+* **Phrase match:** written in quotation marks, such as "car hire Tamale". Ads can show on searches that include the meaning of the keyword, including more specific versions of it. It reaches fewer searches than broad and more than exact.
 * **Exact match:** written in square brackets, such as [car hire Tamale]. Ads can show on searches with the same meaning or intent as the keyword. It gives the most control and reaches the fewest searches.
 
+Broader match types also cover the searches the narrower ones would match. A broad keyword can show on everything its phrase and exact versions would, plus related searches.
+
 For a small budget without much conversion data, many advertisers start with phrase and exact match to keep control, then test broad match once conversion tracking is working.
+
+## Same meaning, not same words
+
+None of the match types requires the exact words any more. Exact match [car hire Tamale] can show for "rent a car in Tamale", because the meaning is the same. That is helpful, but it means you must check what searches really triggered your ads, which you will do in week 9 with the search terms report.
 
 ## Negative keywords
 
@@ -3728,11 +3735,52 @@ A negative keyword stops your ad showing on searches that include it. They are o
 * A new phone shop that does not repair phones adds "repair".
 * A business wanting customers, not learners, may add "free", "course" or "how to".
 
-Negative keywords can be added to a campaign or an ad group, and they behave a little differently from normal match types, so check Google's help when you build.
+Negative keywords can be added to a campaign or an ad group, and they behave differently from normal keywords. Google's help on negative keyword match types explains:
 
-## A worked example
+* **Negatives do not match synonyms or close variants.** If you exclude "job", add "jobs" and "vacancy" yourself. Google does handle misspellings and capital letters for you.
+* **Negative broad match** blocks the ad when the search contains all the negative words, in any order.
+* **Negative phrase match** blocks the ad when the words appear together in that order, even with other words around them.
+* **Negative exact match** blocks the ad only when the search is exactly those words and nothing more.
 
-Abdul-Rahman builds keywords for the car rental business. In the "Airport Car Hire" ad group he uses "car hire Tamale airport", [rent a car Tamale airport] and "airport taxi Tamale". He adds negatives: jobs, driver vacancy, bus, cheap flights and Kumasi, because the business only operates in Tamale. He expects most clicks to come from travellers ready to book.`,
+For most single word negatives, such as "jobs" or "free", the default negative broad match works well.
+
+## Building a list that holds together
+
+A good ad group keyword list has five to fifteen keywords on one theme, a mix of phrase and exact match while you learn, and a set of negatives. Shared negatives that apply to every campaign, such as "jobs" and "free", can sit in a negative keyword list attached to all campaigns, so you do not repeat the work. Keep a note of why each negative was added, so nobody removes it later by mistake.
+
+## Avoid competing with yourself
+
+If the same keyword sits in two ad groups, they compete for the same searches and reports become confusing. Give each keyword one home, exactly as you gave each SEO keyword one page. When two ad groups overlap, add the other group's main keyword as a negative so each search goes to the most relevant ad.`,
+      workedExample_md: `Abdul-Rahman builds keywords for the car rental business in Tamale.
+
+1. **Theme.** The ad group "Airport Car Hire" is for travellers landing at Tamale airport.
+2. **Keywords.** He writes "car hire Tamale airport" and "airport car rental Tamale" in phrase match, and [rent a car Tamale airport] in exact match, with the symbols written correctly.
+3. **Learning phrases out.** "How to drive from Tamale airport to town" goes on his SEO ideas list instead.
+4. **Negatives with variants.** He adds jobs, job, vacancy, salary and driver vacancy, because negatives do not cover variants. He also adds bus and cheap flights.
+5. **Place negative.** He adds Kumasi, because the business only operates in Tamale.
+6. **Shared list.** He puts jobs, job, vacancy and free in a negative keyword list for every campaign, with a note of why.
+7. **Overlap check.** His other ad group, "Car Hire With Driver", also wanted "car hire Tamale". He keeps it in one group only and adds "with driver" as a negative in the airport group.
+
+He expects most clicks to come from travellers ready to book.`,
+      keyTerms: [
+        { term: "Broad match", definition: "The default match type, with no symbols, showing ads on related searches." },
+        { term: "Phrase match", definition: "Written in quotation marks; shows ads on searches that include the keyword's meaning." },
+        { term: "Exact match", definition: "Written in square brackets; shows ads on searches with the same meaning or intent." },
+        { term: "Negative keyword", definition: "A word or phrase that stops your ad showing on searches containing it." },
+        { term: "Close variant", definition: "A plural, synonym or similar form of a keyword, which negatives do not cover." },
+        { term: "Negative keyword list", definition: "A shared set of negatives that can be attached to several campaigns." },
+      ],
+      commonMistakes: [
+        "Adding \"job\" as a negative and forgetting \"jobs\" and \"vacancy\"",
+        "Using broad match on a small budget before conversion tracking works",
+        "Paying for learning searches that SEO content would serve better",
+        "Putting the same keyword in two ad groups",
+      ],
+      selfCheck: [
+        "How do you write the same keyword in broad, phrase and exact match?",
+        "Why must you add plurals and synonyms of negatives yourself?",
+        "Which negatives would every campaign for your business need?",
+      ],
       practice_task_md: `**Goal:** Build the keyword list for one ad group. This is the first half of the week 8 assignment.
 
 **Steps:**
@@ -3807,20 +3855,21 @@ Abdul-Rahman builds keywords for the car rental business. In the "Airport Car Hi
 
     "responsive-search-ads": {
       outcomes: [
-        "Explain the responsive search ad format",
-        "Write headlines and descriptions that follow the rules",
-        "Use pinning carefully",
+        "Explain how responsive search ads combine headlines and descriptions",
+        "Write headlines and descriptions within Google's limits",
+        "Decide when pinning is worth it",
+        "Write three complete ads for a sample campaign",
       ],
       explanation_md: `The ad text is what persuades someone to click. On Google search, the standard format is the **responsive search ad**. You write several headlines and descriptions, and Google combines them into different versions, learning which work best. The week 8 assignment asks for a sample search campaign with three ad copies, and this lesson shows you how to write them.
 
 ## The format
 
-According to Google Ads Help:
+At the time of writing, Google Ads Help gives these limits. Check the help page before you write, because limits can change.
 
 * You can enter up to 15 headlines and 4 descriptions per ad, with a minimum of 3 headlines and 2 descriptions.
 * Each headline can have up to 30 characters, and each description up to 90 characters.
 * The display path has two optional fields of up to 15 characters each, shown after the website address.
-* Google shows a combination: usually Headline 1 and Description 1, with others added when space and predicted performance allow.
+* Each ad shows at least one headline and one description. Up to 3 headlines can appear together. Headline 1 and Description 1 usually show; the others appear when space and predicted performance allow.
 
 Because headlines can appear in any order, each one must make sense on its own and next to any other.
 
@@ -3835,9 +3884,19 @@ Aim for variety, so the system has real choices.
 * **Action headlines:** "Book Your Car Today", "Call or WhatsApp Now".
 * **Descriptions** expand on benefits and end with a clear next step, such as how to book and pay.
 
+Avoid near copies. "Car Hire Tamale" and "Tamale Car Hire" give the system almost nothing new to test.
+
+## Ad Strength
+
+As you write, Google shows an **Ad Strength** rating, from Poor to Excellent, that judges how relevant, varied and complete your headlines and descriptions are. It is a helpful writing check, not a guarantee of results. Google's help suggests having at least two responsive search ads rated Good or Excellent in each ad group. Usually you raise Ad Strength by adding more distinct headlines and using your keywords naturally.
+
 ## Pinning
 
-You can pin a headline or description to a position so it always appears there, for example a required legal line or the business name. Pinning reduces the combinations Google can test, so pin only when you must.
+You can pin a headline or description to a position so it always appears there, for example a required legal line or the business name. A headline pinned to position 1 or 2, or a description pinned to position 1, will always show; one pinned to headline position 3 or description position 2 may not. Pinning reduces the combinations Google can test, so pin only when you must. If you pin, pin two or three different headlines to the same position, so the system still has a choice.
+
+## The display path and final URL
+
+The **final URL** is the page people land on after clicking. It must match what the ad promises, which the next lesson covers. The display path adds readable words after the website address, such as car-hire/airport after the business's web address, to show people where they will land. It does not need to be a real page address.
 
 ## Writing rules
 
@@ -3846,15 +3905,41 @@ You can pin a headline or description to a position so it always appears there, 
 * Match the landing page. If the ad says "Same Day Screen Fix", the page must say so too.
 * Use plain words customers use, not company jargon.
 
-## A worked example
+## Three ads for the assignment
 
-Hawa's niece Rahinatu writes a responsive search ad for shea butter delivery.
+Three ads can mean three ad groups with one ad each, or one ad group with three angles: one led by price, one by convenience, one by trust. Either way, each ad needs at least 8 to 10 distinct headlines and 2 to 4 descriptions, all within the limits, and a final URL. Count characters with a sheet formula such as LEN before you show anyone, because an ad over the limit cannot be saved.`,
+      workedExample_md: `Hawa's niece Rahinatu writes a responsive search ad for shea butter delivery.
 
-Headlines include: "Pure Shea Butter from Tamale", "Handmade by Women in Tamale", "Delivery Across Ghana", "Pay with Mobile Money", "Order on WhatsApp Today", "Unrefined Shea Butter", "Natural Skin and Hair Care".
+1. **Keyword headlines.** "Pure Shea Butter from Tamale" and "Unrefined Shea Butter".
+2. **Benefit and proof headlines.** "Handmade by Women in Tamale", "Natural Skin and Hair Care" and "Delivery Across Ghana".
+3. **Action headlines.** "Pay with Mobile Money" and "Order on WhatsApp Today".
+4. **Descriptions.** "Pure, unrefined shea butter made by hand by our women's group in Tamale. Order today." and "Delivery across Ghana. Pay easily with mobile money. Message us on WhatsApp to order."
+5. **Character check.** She uses LEN in a sheet: every headline is under 30 characters, every description under 90.
+6. **Random pairs.** She reads headlines together at random, such as "Delivery Across Ghana" with "Unrefined Shea Butter". Every pair makes sense.
+7. **Pinning.** She pins nothing, so the system can test every combination.
+8. **Ad Strength.** It shows Average, so she adds three more distinct headlines, including "Wholesale Orders Welcome", and it rises to Good.
 
-Descriptions include: "Pure, unrefined shea butter made by hand by our women's group in Tamale. Order today." and "Delivery across Ghana. Pay easily with mobile money. Message us on WhatsApp to order."
-
-Each headline is under 30 characters and makes sense in any combination.`,
+She repeats the process for two more angles to complete three ads.`,
+      keyTerms: [
+        { term: "Responsive search ad", definition: "A search ad built from several headlines and descriptions that Google combines." },
+        { term: "Headline", definition: "A short line of up to 30 characters, shown at the top of a search ad." },
+        { term: "Description", definition: "A longer line of up to 90 characters that expands on the ad." },
+        { term: "Pinning", definition: "Fixing a headline or description to a position so it always shows there." },
+        { term: "Ad Strength", definition: "Google's rating of how relevant, varied and complete an ad's text is." },
+        { term: "Final URL", definition: "The page people land on after clicking the ad." },
+      ],
+      commonMistakes: [
+        "Writing headlines that only make sense in one order",
+        "Writing near copies such as \"Car Hire Tamale\" and \"Tamale Car Hire\"",
+        "Pinning many headlines so the system has nothing to test",
+        "Promising an offer the landing page does not mention",
+        "Using capitals and \"!!!\" that break Google's policies",
+      ],
+      selfCheck: [
+        "What are the headline and description limits, and where would you check they are current?",
+        "Which pinned positions always show, and which may not?",
+        "How would you raise an ad's Ad Strength from Average to Good?",
+      ],
       practice_task_md: `**Goal:** Write three complete responsive search ads. This completes the week 8 assignment.
 
 **Steps:**
@@ -3912,16 +3997,28 @@ Each headline is under 30 characters and makes sense in any combination.`,
             answer_index: 2,
             explanation: "Pinning limits combinations, so pin only when you must.",
           },
+          {
+            prompt: "What does the lesson say Ad Strength is?",
+            options: [
+              "A guarantee that the ad will win the auction",
+              "The same thing as Quality Score",
+              "A writing check on how relevant, varied and complete the ad text is",
+              "The amount you bid for each click",
+            ],
+            answer_index: 2,
+            explanation: "Ad Strength rates the ad text's relevance, variety and completeness; it is a writing check, not a guarantee.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "assets-and-landing-pages": {
       outcomes: [
-        "Add useful ad assets",
-        "Describe what a good landing page does",
-        "Track the action when there is no website",
+        "Choose assets that make search ads more useful",
+        "Plan a landing page that keeps the ad's promise",
+        "Find options for a business without a website",
+        "Link landing page actions to conversions",
       ],
       explanation_md: `An ad is only the first step. Assets make the ad bigger and more useful, and the landing page decides whether a click becomes a customer. Landing page experience is also one of the three parts of Quality Score, so this lesson directly affects how well your campaign performs.
 
@@ -3935,8 +4032,16 @@ Assets, once called extensions, add extra information to search ads. Common ones
 * **Call asset:** a phone number people can use to call straight from the ad.
 * **Location asset:** the address from a linked Business Profile.
 * **Image asset:** a picture shown with the ad in some placements.
+* **Price and promotion assets:** a short price list or a current offer, where they fit.
 
-Google decides when to show assets, and adding them does not cost extra in itself; you pay for clicks as usual. Add the ones that genuinely help customers. A call asset is often valuable for local businesses, because many customers prefer to call or message.
+Google decides when to show assets, and adding them does not cost extra in itself; you pay for clicks as usual. Assets also feed into Ad Rank, through their expected impact, so good ones help twice. Add the ones that genuinely help customers. A call asset is often valuable for local businesses, because many customers prefer to call or message.
+
+## Writing good assets
+
+* **Sitelinks** should each lead to a different, useful page, with link text of a few words that says exactly what is there.
+* **Callouts** should be short facts not already in the headlines. Repeating "Same Day Fix" in a headline and a callout wastes space.
+* **Call assets** should only run when someone can answer. You can schedule assets to match opening hours.
+* **Everything must be true.** An offer that ended last month must come down today.
 
 ## What a good landing page does
 
@@ -3949,17 +4054,57 @@ The landing page is where people arrive after clicking. It should:
 * **Build trust:** real photos, address, genuine reviews, clear contact details.
 * **Be honest:** prices and offers must match the ad.
 
+## Message match
+
+The simplest landing page test is message match. Read the search, the ad and the page's main heading together. "Laptop screen repair Tamale", then "Same Day Laptop Screen Repair in Tamale", then a page headed "Laptop screen repair in Tamale, same day" is a perfect chain. If the page heading talks about something else, the visitor wonders whether they are in the right place, and many leave.
+
+## A quick landing page check
+
+Open the page on a phone and on a computer and ask:
+
+1. Can I see what is offered and where within a few seconds?
+2. Is the main button visible without scrolling far?
+3. Does the page load quickly on a normal mobile connection?
+4. Are the price, offer and opening hours the same as in the ad?
+5. Would I trust this business with my money?
+
+Any "no" is a fix to make before spending on clicks.
+
 ## When there is no website
 
 Many small businesses do not have a website yet. Options include a simple free site builder page, a Google Business Profile, or a one page site built with a free tool. Some campaigns can use call assets so people can call straight from the ad. Whatever you use, follow Google's policies: the destination must work, be relevant to the ad and be useful.
 
 ## Tracking the action
 
-Link the landing page actions to conversions: a call from the ad, a form, or a click on the WhatsApp button. This lets you see which keywords and ads bring real enquiries, which you need for week 9.
+Link the landing page actions to conversions: a call from the ad, a form, or a click on the WhatsApp button. This lets you see which keywords and ads bring real enquiries, which you need for week 9.`,
+      workedExample_md: `Wumpini's laptop repair ad in Tamale used to send people to the shop's home page, which showed TVs and phone cases first.
 
-## A worked example
+1. **Message match check.** Search "laptop repair Tamale", ad "Laptop Repair in Tamale, Same Day Screen Fix", page heading "Welcome to Our Shop". The chain breaks at the page.
+2. **New page.** She builds a simple page titled "Laptop Repair in Tamale" with a short list of repairs and starting prices, a photo of the technician, Kofi, at work, opening hours, and the address with a landmark.
+3. **Next step.** Large Call and WhatsApp buttons sit at the top.
+4. **Quick check.** She opens the page on a phone using mobile data and on a laptop. It loads quickly and the buttons are visible at once.
+5. **Assets.** Sitelinks for Prices and Location, callouts for "Mobile Money Accepted" and "Open Saturdays" (not repeating the headline), and a call asset scheduled for shop hours only.
+6. **Conversions.** Calls from the ad and clicks on the WhatsApp button are tracked.
 
-Wumpini's laptop repair ad in Tamale used to send people to the shop's home page, which showed TVs and phone cases first. She builds a simple page titled "Laptop Repair in Tamale" with a short list of repairs and starting prices, a photo of the technician at work, opening hours, the address with a landmark, and large Call and WhatsApp buttons at the top. She adds sitelinks for Prices and Location, callouts for "Same Day Screen Fix" and "Mobile Money Accepted", and a call asset. Enquiries become easier to track and more people who click actually get in touch.`,
+Enquiries become easier to track and more people who click actually get in touch.`,
+      keyTerms: [
+        { term: "Asset", definition: "Extra information added to an ad, such as sitelinks, callouts or a phone number." },
+        { term: "Sitelink", definition: "An extra link in an ad that leads to a specific page." },
+        { term: "Callout", definition: "A short phrase in an ad, such as \"Open 7 Days\"." },
+        { term: "Landing page", definition: "The page people arrive at after clicking an ad." },
+        { term: "Message match", definition: "The search, the ad and the landing page heading all saying the same thing." },
+      ],
+      commonMistakes: [
+        "Sending every ad to the home page",
+        "Running a call asset when nobody can answer the phone",
+        "Repeating headline words in callouts instead of adding new facts",
+        "Leaving an expired offer in an ad or on the page",
+      ],
+      selfCheck: [
+        "Read your search, ad and page heading together: do they match?",
+        "Which assets would help your business most, and why?",
+        "What five questions make up the quick landing page check?",
+      ],
       practice_task_md: `**Goal:** Plan assets and a landing page for one ad group.
 
 **Steps:**
@@ -4016,16 +4161,28 @@ Wumpini's laptop repair ad in Tamale used to send people to the shop's home page
             answer_index: 0,
             explanation: "Many customers prefer calling or messaging, so a way to call straight from the ad helps.",
           },
+          {
+            prompt: "What does the lesson call the chain of a search, an ad and a landing page heading all saying the same thing?",
+            options: [
+              "Message match",
+              "Ad Strength",
+              "Quality Score",
+              "Broad match",
+            ],
+            answer_index: 0,
+            explanation: "Message match means the search, the ad and the page heading say the same thing, so visitors know they are in the right place.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "budgets-and-bidding": {
       outcomes: [
-        "Set an average daily budget",
-        "Compare bid strategies",
-        "Plan budget and bidding for a campaign",
+        "Explain how average daily budgets and monthly limits work",
+        "Turn a monthly amount in cedis into a daily budget",
+        "Compare the main bid strategies and what each needs",
+        "Plan a path from simple bidding to Smart Bidding",
       ],
       explanation_md: `Week 9 of the Google Ads specialisation is optimisation and budgeting. Before you can optimise, you need to understand how money moves through a campaign: the budget limits spending, and the bid strategy decides how each auction is approached.
 
@@ -4036,7 +4193,7 @@ In Google Ads, each campaign has an **average daily budget**. Google Ads Help ex
 * On any single day, a campaign can spend up to twice its average daily budget, to take advantage of days with more searches.
 * Over a month, it will not charge more than 30.4 times the average daily budget. That number is roughly the average days in a month.
 
-So if a client can afford a certain amount per month, divide it by 30.4 to find the daily budget. Explain to the client that some days will be higher and some lower, and that the monthly limit protects them.
+So if a client can afford a certain amount per month, divide it by 30.4 to find the daily budget. Explain to the client that some days will be higher and some lower, and that the monthly limit protects them. If you change the budget partway through a month, the limit for that month adjusts, so check Google's help before making big mid month changes.
 
 ## Setting a budget
 
@@ -4045,32 +4202,70 @@ So if a client can afford a certain amount per month, divide it by 30.4 to find 
 * **Avoid spreading a small budget across many campaigns.** One focused campaign learns faster than five starved ones.
 * **Watch whether the budget limits the campaign.** Google Ads shows when a campaign is "limited by budget", which means it could show more often with more money.
 
+A rough sense check helps. If the daily budget only covers two or three clicks at the prices you see in your plan, the campaign will learn very slowly. In that case, narrow the keywords or locations so the money covers the most valuable searches, rather than spreading it thinly.
+
+## Shared budgets
+
+A shared budget lets several campaigns draw from one pot. It can be useful when an owner thinks in one total amount, but it makes it harder to control what each campaign spends. While you are learning, give each campaign its own budget so you can see clearly what each one does.
+
 ## Bid strategies
 
-Google Ads offers several bid strategies. Google Ads Help describes these among others:
+Google Ads offers several bid strategies, grouped by what they aim for. Google Ads Help describes these among others:
 
 * **Manual CPC:** you set the maximum cost per click yourself. Full control, more work.
 * **Maximise clicks:** Google sets bids to get as many clicks as possible within the budget. Useful for new campaigns without conversion data.
 * **Maximise conversions:** Google sets bids to get as many conversions as possible while spending the budget.
-* **Target CPA:** Google aims for as many conversions as possible at a cost per action you set.
+* **Target CPA:** Google aims for as many conversions as possible at a cost per action you set. On some screens this appears as an optional target inside Maximise conversions.
 * **Target ROAS:** Google aims for conversion value at a return on ad spend you set. Useful when sales have different values.
+* **Target impression share:** Google sets bids to show your ad at the top of the page, or anywhere on it, for a share of searches you choose. Useful when being visible matters more than clicks, such as for the business's own name.
 
-Strategies that use conversions are called **Smart Bidding**. They need conversion tracking that works and enough conversions to learn from.
+Strategies that use conversions are called **Smart Bidding**. They set a bid for each auction using signals such as device, location and time of day. They need conversion tracking that works and enough conversions to learn from.
 
 ## Choosing a strategy
 
 A simple path for a small business:
 
 1. Set up conversion tracking first.
-2. Start with Maximise clicks or Manual CPC while you learn which keywords work.
+2. Start with Maximise clicks or Manual CPC while you learn which keywords work. With Maximise clicks, consider a maximum CPC limit so a few expensive clicks cannot use up the day.
 3. Once the campaign records conversions regularly, test Maximise conversions.
-4. When results are steady, consider a target such as Target CPA.
+4. When results are steady, consider a target such as Target CPA, set close to what you have actually been paying, not a wish.
 
-Change strategy rarely, and give each change time, because automated strategies need a learning period.
+Change strategy rarely, and give each change time, because automated strategies need a learning period. Google Ads shows a "learning" status after major changes; judge results after it ends, not during it.
 
-## A worked example
+## Explaining it to the owner
 
-The car rental business in Tamale can afford a certain amount per month for ads. Abdul-Rahman divides it by 30.4 to set the daily budget, and writes to the owner explaining that daily spend can vary up to twice that amount, but the monthly total will not go over the limit. He starts with Maximise clicks, sets up calls and WhatsApp clicks as conversions, and plans to test Maximise conversions after several weeks of data.`,
+Owners do not need the jargon. Say what the budget is per month, what the most it can be in a month is, how the system decides bids, and when you will next review. One short message in plain words builds more trust than a screenshot full of terms.`,
+      workedExample_md: `The car rental business in Tamale can afford a certain amount per month for ads.
+
+1. **Daily budget.** Abdul-Rahman divides the monthly amount by 30.4 and rounds down, writing the calculation in his plan.
+2. **Explaining limits.** He messages the owner, Mr Mensah: "Some days may spend up to twice the daily amount when more people search, but the monthly total will not go over the limit we agreed."
+3. **Sense check.** The daily budget covers a reasonable number of clicks for his two ad groups, so he does not need to cut keywords.
+4. **Starting strategy.** Maximise clicks with a maximum CPC limit, because the campaign has no conversion history yet.
+5. **Tracking first.** He sets up calls from the ad and WhatsApp button clicks as conversions before launch.
+6. **The path.** After several weeks with regular conversions, he plans to test Maximise conversions, and later a Target CPA close to the real cost per enquiry.
+7. **Brand visibility.** He considers Target impression share for searches of the business's own name, but decides to wait until the main campaign is stable.
+
+Every step is written in a short plan that Mr Mensah approves.`,
+      keyTerms: [
+        { term: "Average daily budget", definition: "The amount a campaign aims to spend per day on average." },
+        { term: "Monthly charging limit", definition: "The most a campaign is charged in a month: 30.4 times the average daily budget." },
+        { term: "Bid strategy", definition: "The way bids are set for each auction, manually or automatically." },
+        { term: "Smart Bidding", definition: "Automated bid strategies that use conversion data to set a bid for each auction." },
+        { term: "Target CPA", definition: "A strategy aiming for conversions at a set average cost per action." },
+        { term: "Target impression share", definition: "A strategy aiming to show ads in a chosen position for a share of searches." },
+      ],
+      commonMistakes: [
+        "Panicking when one day spends more than the daily budget",
+        "Switching to Smart Bidding before conversion tracking works",
+        "Setting a target CPA from a wish instead of real results",
+        "Changing bid strategy again during the learning period",
+        "Splitting a small budget across many campaigns",
+      ],
+      selfCheck: [
+        "How do you turn a monthly amount into an average daily budget?",
+        "Which bid strategy would you start with for a new campaign, and why?",
+        "What must be in place before Smart Bidding can work well?",
+      ],
       practice_task_md: `**Goal:** Plan the budget and bidding for your sample campaign.
 
 **Steps:**
@@ -4127,16 +4322,28 @@ The car rental business in Tamale can afford a certain amount per month for ads.
             answer_index: 3,
             explanation: "Smart Bidding uses conversion data, so it needs tracking and enough conversions.",
           },
+          {
+            prompt: "Which bid strategy aims to show your ad at the top of the page for a share of searches you choose?",
+            options: [
+              "Manual CPC",
+              "Maximise clicks",
+              "Target impression share",
+              "Target ROAS",
+            ],
+            answer_index: 2,
+            explanation: "Target impression share sets bids to reach a chosen visibility goal, such as the top of the page.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "reading-campaign-data": {
       outcomes: [
-        "Name and calculate the key campaign numbers",
-        "Read the search terms report",
-        "Read results by segment and avoid mistakes",
+        "Define and calculate the key campaign metrics",
+        "Use the search terms report to find waste and ideas",
+        "Read impression share lost to budget and to rank",
+        "Break results down by segment without being misled by small numbers",
       ],
       explanation_md: `The week 9 objective is to analyse campaign data and suggest bid adjustments. Before you can suggest anything, you need to read a report confidently and know what each number tells you.
 
@@ -4161,7 +4368,20 @@ Practise on small numbers. Suppose an ad group had 2,000 impressions, 80 clicks,
 * Conversion rate = 8 ÷ 80 = 10 percent.
 * Cost per conversion = 400 ÷ 8 = 50 cedis.
 
-These are invented numbers for practice, not benchmarks. What counts as good depends on the business, its prices and its margins.
+These are invented numbers for practice, not benchmarks. What counts as good depends on the business, its prices and its margins. A cost per conversion that would ruin a chop bar could be excellent for a solar installer whose average sale is large.
+
+## Reading numbers as a story
+
+Each number points to a different part of the journey.
+
+* **Low CTR:** the ad does not tempt people, or it shows on the wrong searches. Look at the ad text and the search terms.
+* **Good CTR, low conversion rate:** people like the ad but the page or offer lets them down. Look at the landing page.
+* **Good conversion rate, high cost per conversion:** clicks are expensive. Look at keywords, bids and Quality Score.
+* **Few impressions:** the keywords are too narrow, the bid or quality too low, or the budget too small.
+
+## Impression share lost
+
+Search campaigns can also show impression share lost to **budget** and lost to **rank**. Lost to budget means the money ran out before the searches did: a bigger budget, or fewer keywords, would show the ads more. Lost to rank means the ads did not rank well enough, through a low bid or low quality: better ads, pages or bids would help. Knowing which one is the problem stops you recommending more money when the real fix is relevance.
 
 ## The search terms report
 
@@ -4181,10 +4401,37 @@ Break results down to find patterns.
 * **Small numbers mislead.** Five clicks are not enough to judge a keyword. Wait for more data before big decisions.
 * **Compare like with like:** same period length, same season.
 * **Link to real sales.** Ask the owner how many enquiries became paying customers.
+* **Check conversion tracking first.** If a campaign shows zero conversions but the owner says the phone rings, the tracking may be broken, not the campaign.`,
+      workedExample_md: `Fuseini reviews a month of mock data for a solar shop in Bolgatanga.
 
-## A worked example
+1. **Keyword one.** "Solar panel price Bolgatanga": 1,200 impressions, 60 clicks, 300 cedis, 6 conversions. CTR 5 percent, cost per conversion 50 cedis. Strong.
+2. **Keyword two.** "Solar energy": 3,000 impressions, 90 clicks, 450 cedis, 0 conversions. Many clicks, no enquiries.
+3. **Search terms.** The report shows "solar energy course" and "solar jobs" triggering ads. That explains keyword two.
+4. **Keyword three.** "Solar fridge for shop": 8 clicks, 1 conversion. Too little data to judge yet.
+5. **Impression share.** The campaign lost a large share of impressions to budget, but very little to rank, so the ads are good enough; money runs out by mid afternoon.
+6. **Segments.** Calls come mostly from phones on weekday mornings, and almost none after 6 pm, when the shop is closed.
+7. **Reality check.** The owner, Mrs Atta, confirms four of the six enquiries from keyword one became sales.
 
-Fuseini reviews a month of a mock campaign for a solar shop in Bolgatanga. "Solar panel price Bolgatanga" has a good conversion rate and a reasonable cost per conversion. "Solar energy" has many clicks but no conversions. The search terms report shows "solar energy course" and "solar jobs" triggering ads. Calls come mostly from phones on weekday mornings. He now has clear evidence for his recommendations in the next lesson.`,
+These are invented numbers for practice. Fuseini now has clear evidence for his recommendations in the next lesson.`,
+      keyTerms: [
+        { term: "CTR", definition: "Clickthrough rate: clicks divided by impressions." },
+        { term: "Conversion rate", definition: "Conversions divided by clicks." },
+        { term: "Cost per conversion", definition: "Total cost divided by conversions." },
+        { term: "Impression share", definition: "The share of possible impressions your ads actually received." },
+        { term: "Search terms report", definition: "A report of the real searches that triggered your ads." },
+        { term: "Segment", definition: "A slice of the data, such as by device, location or time of day." },
+      ],
+      commonMistakes: [
+        "Judging a keyword on a handful of clicks",
+        "Recommending a bigger budget when impressions are lost to rank",
+        "Comparing a holiday week with a normal week",
+        "Trusting zero conversions without checking that tracking works",
+      ],
+      selfCheck: [
+        "What does a good CTR with a low conversion rate tell you?",
+        "What is the difference between impression share lost to budget and lost to rank?",
+        "Which segments would you check first for a business that takes orders by phone?",
+      ],
       practice_task_md: `**Goal:** Analyse a small set of mock campaign data.
 
 **Steps:**
@@ -4240,16 +4487,28 @@ Fuseini reviews a month of a mock campaign for a solar shop in Bolgatanga. "Sola
             answer_index: 2,
             explanation: "Small numbers mislead; wait for more data.",
           },
+          {
+            prompt: "A campaign loses most of its impression share to rank, not budget. What does the lesson say this points to?",
+            options: [
+              "The budget should be doubled",
+              "The ads should run only at night",
+              "The campaign should be deleted",
+              "Better ads, pages or bids would help",
+            ],
+            answer_index: 3,
+            explanation: "Lost to rank means the ads did not rank well enough, so relevance and bids are the fix, not more money.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "optimising-campaigns": {
       outcomes: [
-        "Follow the optimisation loop",
-        "Make common improvements and bid adjustments",
-        "Write clear recommendations",
+        "Run a review, decide, change and wait optimisation loop",
+        "Suggest bid adjustments for device, location and schedule",
+        "Judge optimisation score recommendations critically",
+        "Write recommendations and document a demo campaign without spending",
       ],
       explanation_md: `Optimisation is the steady work of using data to spend money better. It is what clients pay for month after month, and it completes the week 9 assignment: analysing campaign data, suggesting bid adjustments, and setting up a demo campaign to show your settings.
 
@@ -4277,7 +4536,15 @@ With Manual CPC, you set bids for keywords and can add **bid adjustments**: perc
 * **Location:** raise bids in a town with cheaper conversions, lower them where results are poor.
 * **Ad schedule:** lower bids, or stop ads, at hours when nobody answers the phone.
 
+A bid adjustment is a percentage. For example, a 20 percent increase on a 5 cedi bid makes it 6 cedis for that condition; a 100 percent decrease on a device stops ads showing on it. Make adjustments in small steps and only when the segment has enough data to trust.
+
 With Smart Bidding, Google sets bids for each auction using many signals, and most manual adjustments are not used. In that case, you optimise through targets, budgets, keywords, ads and landing pages instead. Check Google Ads Help for which adjustments apply to your strategy.
+
+## Optimisation score and recommendations
+
+Google Ads shows an **optimisation score** from 0 to 100 percent, an estimate of how well the account is set to perform, with a list of recommendations such as adding keywords, raising budgets or using broad match. Google's help says applying recommendations raises the score, but you are not required to apply them, and you can dismiss ones that do not fit. The score is not used by Quality Score.
+
+Treat each recommendation as a suggestion to test against the business's goal and budget. "Raise your budget" may be right for a campaign limited by budget with a good cost per conversion, and wrong for one that wastes money. A lower score with sound decisions beats a perfect score reached by accepting everything.
 
 ## Writing recommendations
 
@@ -4287,15 +4554,41 @@ Owners approve changes they understand. For each recommendation, write:
 * **Why:** "These searches cost money last month and brought no enquiries."
 * **Expected effect:** "Less wasted spend; the same or more enquiries."
 
-Keep it to three to five recommendations at a time.
+Keep it to three to five recommendations at a time, with the most valuable first.
 
 ## A safe demo campaign
 
-The week 9 assignment asks you to create a Google Ads account, set up a demo campaign and submit screenshots of the settings. You can build the campaign structure and settings to practise, but make sure nothing goes live and no money is spent: do not add payment details for practice, keep the campaign paused, and stop at the billing step if asked. If the setup will not continue without payment, document your settings in a sheet and screenshots of each screen you completed. Never use someone else's card.
+The week 9 assignment asks you to create a Google Ads account, set up a demo campaign and submit screenshots of the settings. You can build the campaign structure and settings to practise, but make sure nothing goes live and no money is spent: do not add payment details for practice, keep the campaign paused, and stop at the billing step if asked. If the setup will not continue without payment, document your settings in a sheet and screenshots of each screen you completed. Never use someone else's card. Tell your mentor which route you took; a clear settings sheet meets the purpose of the assignment just as well.`,
+      workedExample_md: `From his analysis of the Bolgatanga solar shop campaign, Fuseini prepares recommendations for Mrs Atta.
 
-## A worked example
+1. **Negatives first.** Add "course", "jobs" and "free" as negatives. Why: they cost money and brought no enquiries.
+2. **Pause a weak keyword.** Pause "solar energy", which spent money with no conversions after 90 clicks.
+3. **Device adjustment.** Raise bids on phones by 20 percent, because most calls come from phones.
+4. **Schedule adjustment.** Stop ads after 6 pm, when the shop is closed.
+5. **Budget.** The campaign loses impressions to budget and has a good cost per conversion, so he suggests moving the money saved from negatives into it, rather than asking for more.
+6. **Optimisation score.** One recommendation says to switch every keyword to broad match. He dismisses it for now, because conversion tracking is new.
+7. **Change log and demo.** He logs each change with a date and plans a review in two weeks. His demo campaign is paused, has no payment details, and is documented in a settings sheet with screenshots.
 
-From his analysis of the Bolgatanga solar shop campaign, Fuseini recommends: add "course", "jobs" and "free" as negatives; pause "solar energy", which spent money with no conversions; raise bids on phones, where most calls come from; lower bids after 6 pm, when the shop is closed; and test a new headline mentioning instalment payments. He logs each change with a date, and plans to review again in two weeks.`,
+Mrs Atta approves four of the five recommendations straight away.`,
+      keyTerms: [
+        { term: "Optimisation", definition: "The steady work of using data to spend ad money better." },
+        { term: "Bid adjustment", definition: "A percentage change to bids for a device, location or time." },
+        { term: "Optimisation score", definition: "Google's 0 to 100 percent estimate of how well an account is set to perform." },
+        { term: "Recommendation", definition: "A suggested change from Google Ads that you may apply or dismiss." },
+        { term: "Change log", definition: "A record of every change, with the date, reason and result." },
+      ],
+      commonMistakes: [
+        "Applying every recommendation just to raise the optimisation score",
+        "Making several big changes at once so you cannot tell what worked",
+        "Adding payment details to finish a practice campaign",
+        "Setting bid adjustments from tiny amounts of data",
+        "Sending the owner a long list with no reasons",
+      ],
+      selfCheck: [
+        "What does a 20 percent bid increase do to a 5 cedi bid?",
+        "When would you dismiss an optimisation score recommendation?",
+        "What three parts should every recommendation to an owner include?",
+      ],
       practice_task_md: `**Goal:** Complete the week 9 assignment: recommendations and a demo campaign.
 
 **Steps:**
