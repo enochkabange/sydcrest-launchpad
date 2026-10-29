@@ -6,16 +6,21 @@ import {
   api,
   cleanUp,
   createLearner,
+  deferMember,
+  makePublic,
+  makeSkillReviewer,
   PASSWORD,
   promoteToAdmin,
   seedApplication,
   seedCohort,
   seedExpert,
   seedOrganisation,
+  seedFollow,
   seedPath,
   type ApiResult,
 } from "./access-matrix-seed";
 import { signInAs } from "./nav-seed";
+import { admin } from "./supabase-admin";
 
 /**
  * The access matrix (issue #240, docs/user-types.md): one person per user
@@ -81,7 +86,9 @@ const ADMIN_FORMS: [string, string][] = [
 ];
 
 async function notAdmin(page: Page) {
-  for (const path of ADMIN_ONLY) await notFound(page, path);
+  // The admin header's section list is for admins only (#245): a plain logo header above the 404.
+  for (const path of ADMIN_ONLY) await notFound(page, path, "Admin sections");
+  await notFound(page, "/admin/reports", "Applications");
   for (const [path, secret] of ADMIN_FORMS) await notFound(page, path, secret);
 }
 
@@ -102,6 +109,10 @@ test("signed out visitor: public pages open, signed in areas go to sign in, the 
   refused(await api(null, "GET", "/rest/v1/profiles?select=id,phone"), "visitor reads profiles");
   refused(await api(null, "POST", "/rest/v1/rpc/admin_reports", {}), "visitor reads the report queue");
   refused(await api(null, "GET", "/rest/v1/outcomes?select=id"), "visitor reads outcomes");
+  // #247: the waitlist and analytics take writes only through their rate limited functions.
+  refused(await api(null, "POST", "/rest/v1/waitlist", { email: `script.${crypto.randomUUID().slice(0, 8)}@example.test` }), "visitor inserts into the waitlist directly");
+  refused(await api(null, "POST", "/rest/v1/events", { name: "page_view", anonymous_id: "script" }), "visitor inserts an analytics event directly");
+  refused(await api(null, "GET", "/rest/v1/follows?select=follower_id"), "visitor reads follows");
 });
 
 test("under 18: the sign up form and the Auth API both refuse, and no one can change their age later", async ({ page }) => {
@@ -115,6 +126,7 @@ test("under 18: the sign up form and the Auth API both refuse, and no one can ch
   await page.getByLabel("Password").fill(PASSWORD);
   await page.getByLabel("Date of birth").fill(dob);
   await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
+  await page.getByLabel("I confirm I am 18 or over").check();
   await page.getByRole("button", { name: "Create account" }).click();
   await expect(page.getByText(UNDER_AGE_MESSAGE)).toBeVisible();
 
@@ -152,8 +164,12 @@ test("learner without a path: learning and community open, staff areas are 404, 
     await allowed(page, "/expert", "You are not an expert yet");
     await allowed(page, "/org", "Your organisations");
     await allowed(page, "/briefs", "Open briefs are shared with approved experts");
-    await allowed(page, "/community/moderation", "This queue is for admins, chapter leads and cohort staff");
     await allowed(page, "/talent", undefined, "Show talent");
+    // The market is "Experts" (founder decision D5); "Mentor" is only the programme's mentor.
+    await allowed(page, "/mentors", "Find an expert", "Find experts");
+    await allowed(page, "/learn", undefined, "Portfolio reviews");
+    // Staff tools are a 404 for everyone else (founder decision D6, #252).
+    await notFound(page, "/community/moderation", "Moderation guide");
     await notFound(page, "/mentor");
     await notFound(page, "/skills/reviews");
     await notFound(page, "/certificates/issue");
@@ -165,6 +181,10 @@ test("learner without a path: learning and community open, staff areas are 404, 
     refused(await api(token, "POST", "/rest/v1/rpc/admin_set_expert_status", { p_profile_id: learner.id, p_status: "approved", p_reason: null }), "learner approves an expert");
     refused(await api(token, "POST", "/rest/v1/opportunities", { slug: `fake-${learner.id.slice(0, 6)}`, title: "Fake job", kind: "job", posted_by: learner.id, status: "open" }), "learner posts an opportunity");
     refused(await api(token, "POST", "/rest/v1/expert_profiles", { profile_id: learner.id, slug: `w-${learner.id.slice(0, 6)}`, headline: "Self approved", status: "approved" }), "learner lists themselves as an approved expert");
+    // #249: no expert profile without an application (it would sell and stay out of the admin queue).
+    refused(await api(token, "POST", "/rest/v1/expert_profiles", { profile_id: learner.id, slug: `p-${learner.id.slice(0, 6)}`, headline: "Pending, no application" }), "learner creates an expert profile without applying");
+    refused(await api(token, "PATCH", `/rest/v1/profiles?id=eq.${learner.id}`, { is_skill_reviewer: true }), "learner appoints themselves a skill reviewer");
+    refused(await api(token, "POST", "/rest/v1/rpc/admin_set_skill_reviewer", { p_profile_id: learner.id, p_reviewer: true }), "learner calls the reviewer appointment");
     refused(await api(token, "GET", "/rest/v1/outcomes?select=id&profile_id=neq." + learner.id), "learner reads other people's outcomes");
     refused(await api(token, "GET", "/rest/v1/waitlist?select=email"), "learner reads the waitlist");
   } finally {
@@ -185,10 +205,17 @@ test("learner with a path: the path page shows their plan", async ({ page }) => 
 
 test("cohort member: their cohort opens, the mentor console does not, and they cannot promote themselves", async ({ page }) => {
   const learner = await createLearner("Fuseini Iddrisu");
+  const classmate = await createLearner("Ayishetu Abukari");
+  const deferred = await createLearner("Rahinatu Seidu");
   const other = await createLearner("Sumaila Yakubu");
   let cohorts: string[] = [];
   try {
-    const mine = await seedCohort([{ id: learner.id, role: "learner" }]);
+    const mine = await seedCohort([
+      { id: learner.id, role: "learner" },
+      { id: classmate.id, role: "learner" },
+      { id: deferred.id, role: "learner" },
+    ]);
+    await deferMember(mine.memberIds[2]);
     const theirs = await seedCohort([{ id: other.id, role: "learner" }]);
     cohorts = [mine.id, theirs.id];
     await signInAs(page, learner);
@@ -202,8 +229,19 @@ test("cohort member: their cohort opens, the mentor console does not, and they c
     refused(await api(token, "PATCH", `/rest/v1/cohort_members?id=eq.${mine.memberIds[0]}`, { role: "mentor" }), "learner promotes their membership");
     refused(await api(token, "GET", `/rest/v1/cohort_roster?select=member_id&cohort_id=eq.${theirs.id}`), "learner reads another cohort's roster");
     refused(await api(token, "POST", "/rest/v1/rpc/issue_certificate", { p_cohort_member_id: mine.memberIds[0] }), "learner issues their own certificate");
+
+    // #250: classmates' status and deferral are for staff only, in the view and in the table.
+    refused(await api(token, "GET", `/rest/v1/cohort_members?select=status,deferred_to&cohort_id=eq.${mine.id}&profile_id=neq.${learner.id}`), "learner reads classmates' memberships");
+    const roster = await api(token, "GET", `/rest/v1/cohort_roster?select=profile_id,status,deferred_to&cohort_id=eq.${mine.id}`);
+    expect(roster.status).toBe(200);
+    const rows = roster.body as { profile_id: string; status: string | null; deferred_to: string | null }[];
+    expect(rows.map((r) => r.profile_id).sort(), "the roster names the learner and active classmates, not the deferred one").toEqual(
+      [learner.id, classmate.id].sort(),
+    );
+    expect(rows.find((r) => r.profile_id === classmate.id), "no status or deferral for a classmate").toMatchObject({ status: null, deferred_to: null });
+    expect(rows.find((r) => r.profile_id === learner.id)?.status, "a learner sees their own status").toBe("active");
   } finally {
-    await cleanUp({ people: [learner, other], cohorts });
+    await cleanUp({ people: [learner, classmate, deferred, other], cohorts });
   }
 });
 
@@ -237,12 +275,15 @@ test("cohort mentor: their cohort's learners open, another cohort's learner is a
     await allowed(page, "/mentor", mine.name);
     await allowed(page, `/mentor/learners/${mine.memberIds[1]}`, "Rahinatu");
     await notFound(page, `/mentor/learners/${theirs.memberIds[0]}`, "Abukari");
+    await allowed(page, `/certificates/issue?cohort=${mine.id}`, "Issue certificates");
     await notAdmin(page);
 
     const token = await accessToken(mentor);
     refused(await api(token, "POST", "/rest/v1/cohort_members", { cohort_id: mine.id, profile_id: stranger.id, role: "learner" }), "mentor enrols a learner");
     refused(await api(token, "POST", "/rest/v1/rpc/issue_certificate", { p_cohort_member_id: theirs.memberIds[0] }), "mentor certifies another cohort's learner");
     refused(await api(token, "GET", `/rest/v1/submissions?select=id&profile_id=eq.${stranger.id}`), "mentor reads another cohort's work");
+    const roster = await api(token, "GET", `/rest/v1/cohort_roster?select=status&profile_id=eq.${mentee.id}`);
+    expect(roster.body, "staff still see their learners' status (#250)").toEqual([{ status: "active" }]);
   } finally {
     await cleanUp({ people: [mentor, mentee, stranger], cohorts });
   }
@@ -353,7 +394,7 @@ test("chapter lead: lead tools and the moderation queue open, appointing leads d
     await signInAs(page, lead);
     await allowed(page, `/chapters/${chapter.slug}`, "Edit the chapter page");
     await allowed(page, `/chapters/${other.slug}`, undefined, "Edit the chapter page");
-    await allowed(page, "/community/moderation", undefined, "This queue is for admins, chapter leads and cohort staff");
+    await allowed(page, "/community/moderation", "Reports on posts and replies in the groups you look after");
     await notAdmin(page);
     const token = await accessToken(lead);
     refused(await api(token, "PATCH", `/rest/v1/chapter_members?chapter_id=eq.${chapter.id}&profile_id=eq.${member.id}`, { role: "lead" }), "lead appoints another lead");
@@ -377,9 +418,106 @@ test("platform admin: every admin and staff area opens", async ({ page }) => {
     }
     for (const [path, text] of ADMIN_FORMS) await allowed(page, path, text);
     await allowed(page, "/mentor");
-    await allowed(page, "/skills/reviews");
-    await allowed(page, "/community/moderation", undefined, "This queue is for admins, chapter leads and cohort staff");
+    await allowed(page, "/skills/reviews", "Portfolio reviews");
+    await allowed(page, "/admin/skills/reviewers", "Appoint a reviewer");
+    await allowed(page, "/admin", "Admin sections");
+    // An admin may always issue; with or without cohorts the page opens (no 404, #252).
+    await allowed(page, "/certificates/issue", "Issue certificates");
+    await allowed(page, "/community/moderation", "Reports on posts and replies in the groups you look after");
   } finally {
     await cleanUp({ people: [boss] });
+  }
+});
+
+test("skill reviewer: appointed by an admin, reaches portfolio reviews from the Learn menu", async ({ page }) => {
+  const reviewer = await createLearner("Hawa Mahama");
+  try {
+    await makeSkillReviewer(reviewer);
+    await signInAs(page, reviewer);
+    await allowed(page, "/skills/reviews", "Portfolio reviews");
+    await allowed(page, "/learn", 'href="/skills/reviews"');
+    await notFound(page, "/admin/skills/reviewers", "Appoint a reviewer");
+    await notAdmin(page);
+    const token = await accessToken(reviewer);
+    const other = await createLearner("Mohammed Issah");
+    try {
+      refused(await api(token, "POST", "/rest/v1/rpc/admin_set_skill_reviewer", { p_profile_id: other.id, p_reviewer: true }), "a reviewer appoints another reviewer");
+    } finally {
+      await cleanUp({ people: [other] });
+    }
+  } finally {
+    await cleanUp({ people: [reviewer] });
+  }
+});
+
+test("follow graph: visible between two public profiles, private follows only to the two people (D7)", async () => {
+  const wumpini = await createLearner("Wumpini Alhassan");
+  const mariama = await createLearner("Mariama Seidu");
+  const fuseini = await createLearner("Fuseini Mahama");
+  const ayishetu = await createLearner("Ayishetu Abukari");
+  try {
+    await makePublic(wumpini);
+    await makePublic(mariama);
+    await seedFollow(wumpini, mariama); // both public
+    await seedFollow(fuseini, wumpini); // Fuseini is private
+    const ids = [wumpini.id, mariama.id, fuseini.id].join(",");
+    const graph = `/rest/v1/follows?select=follower_id,following_id&follower_id=in.(${ids})`;
+
+    const bystander = await api(await accessToken(ayishetu), "GET", graph);
+    expect(bystander.body, "a bystander sees only the public follow").toEqual([{ follower_id: wumpini.id, following_id: mariama.id }]);
+    const followed = (await api(await accessToken(wumpini), "GET", graph)).body as unknown[];
+    expect(followed, "the followed person sees the private follower").toHaveLength(2);
+    refused(await api(await accessToken(mariama), "GET", `/rest/v1/follows?select=follower_id&follower_id=eq.${fuseini.id}`), "another public person reads a private person's follows");
+  } finally {
+    await cleanUp({ people: [wumpini, mariama, fuseini, ayishetu] });
+  }
+});
+
+test("re-agreeing after revoking consent: no date of birth asked, the 18 or over tick, then Home (#251, D1)", async ({ page }) => {
+  const learner = await createLearner("Abdul-Rahman Yakubu");
+  try {
+    await signInAs(page, learner);
+    const token = await accessToken(learner);
+    const revoked = await api(token, "POST", "/rest/v1/rpc/revoke_consent", { p_kind: "terms" });
+    expect(revoked.status).toBe(200);
+    await page.goto("/dashboard");
+    await expect(page).toHaveURL(/\/welcome/);
+    await expect(page.getByRole("heading", { name: "One more step" })).toBeVisible();
+    await expect(page.getByLabel("Date of birth")).toHaveCount(0);
+    await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
+    await page.getByRole("button", { name: "Continue" }).click();
+    await expect(page.getByText("Tick the box to confirm you are 18 or over.")).toBeVisible();
+    await page.getByLabel("I confirm I am 18 or over").check();
+    await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
+    await page.getByRole("button", { name: "Continue" }).click();
+    await expect(page).toHaveURL(/\/dashboard$/);
+    const consents = await api(token, "GET", "/rest/v1/consents?select=kind&revoked_at=is.null&order=kind");
+    expect((consents.body as { kind: string }[]).map((c) => c.kind), "the tick is recorded with the consent records").toEqual(
+      expect.arrayContaining(["age_confirmation", "privacy", "terms"]),
+    );
+  } finally {
+    await cleanUp({ people: [learner] });
+  }
+});
+
+test("an email sign up's 18 or over tick lands in the consent records on the first signed in request (D1)", async ({ page }) => {
+  const email = `mariama.age.${crypto.randomUUID().slice(0, 8)}@example.test`;
+  // As signUp leaves it: the ticks wait in metadata until there is a session.
+  const { id } = await admin<{ id: string }>("/auth/v1/admin/users", {
+    method: "POST",
+    body: {
+      email,
+      password: PASSWORD,
+      email_confirm: true,
+      user_metadata: { full_name: "Mariama Abukari", date_of_birth: "2000-03-14", terms_version: "e2e", age_confirmed_at: new Date().toISOString() },
+    },
+  });
+  const person = { id, email, name: "Mariama Abukari" };
+  try {
+    await signInAs(page, person);
+    const consents = await api(await accessToken(person), "GET", "/rest/v1/consents?select=kind&revoked_at=is.null");
+    expect((consents.body as { kind: string }[]).map((c) => c.kind).sort()).toEqual(["age_confirmation", "privacy", "terms"]);
+  } finally {
+    await cleanUp({ people: [person] });
   }
 });

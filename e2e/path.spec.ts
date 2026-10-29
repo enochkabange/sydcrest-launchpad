@@ -49,6 +49,7 @@ test("a visitor takes the quiz signed out, signs up and sees their saved path", 
     await page.getByLabel("Password").fill(PASSWORD);
     await page.getByLabel("Date of birth").fill("1999-08-21");
     await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
+    await page.getByLabel("I confirm I am 18 or over").check();
     await page.getByRole("button", { name: "Create account" }).click();
     await expect(page.getByText(`We sent a confirmation link to ${email}`)).toBeVisible();
   });

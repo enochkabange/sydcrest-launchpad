@@ -15,6 +15,22 @@
 export const LEGAL_CONSENT_KINDS = ["terms", "privacy"] as const;
 export type LegalConsentKind = (typeof LEGAL_CONSENT_KINDS)[number];
 
+/**
+ * "I confirm I am 18 or over" (founder decision D1): ticked at sign up and on
+ * /welcome and recorded beside terms and privacy, as a clearer record for the
+ * Data Protection Act. Not part of the legal gate: accounts made before the
+ * tick existed are not sent back to /welcome for it.
+ */
+export const AGE_CONSENT_KIND = "age_confirmation";
+
+/**
+ * Whether the age confirmation is waiting in metadata (email sign ups have no
+ * session until they confirm) and not yet in the consents table.
+ */
+export function needsAgeConfirmationRecord(rows: ConsentRow[], metadata: unknown): boolean {
+  return metadataString(metadata, "age_confirmed_at") !== null && !rows.some((r) => r.kind === AGE_CONSENT_KIND);
+}
+
 export type ConsentRow = { kind: string; revoked_at: string | null };
 
 export type LegalConsentState = {

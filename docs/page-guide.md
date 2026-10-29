@@ -57,9 +57,11 @@ matters (sign up, first lesson, applying, getting paid work).
    `/mentor` (cohort staff console), `/experts` (the public directory),
    `/expert` (my expert dashboard), `/experts/apply`. The tab is "Mentors" but
    the directory says "Experts", and a cohort "mentor" is a different thing
-   from a marketplace "expert". **Decision:** see founder decision D5. Proposed:
-   the tab becomes "Mentors", the directory "Find a mentor" (`/experts`
-   keeps its URL), the supply side tools move to a "Your work" group.
+   from a marketplace "expert". **Decision (D5, built):** the market is
+   "Experts": the tab, sidebar group and hub title are "Experts" (the hub
+   keeps its `/mentors` address for now), the directory item is "Find an
+   expert". "Mentor" means only the programme's volunteer mentor ("Mentor
+   console"). The supply side tools move to a "Your work" group (D8, design).
 6. **Supply side people have no home.** Mentors, experts, chapter leads,
    event hosts, organisation members and skill reviewers find their tools as
    the fourth to sixth item inside a learner hub, in a rail
@@ -78,10 +80,10 @@ matters (sign up, first lesson, applying, getting paid work).
 8. **Refusals and empty states follow no rule.** Some pages 404 (`/mentor`,
    `/skills/reviews`, `/certificates/issue`, even for an admin with no
    cohort), some explain (`/expert`, `/talent`, `/community/moderation`,
-   `/briefs`), one is an empty column (`/certificates`, #238). **Decision:**
-   staff only tools 404 (unlisted); anything a person could become explains
-   in one card with one action; every empty state fills its slot (#252,
-   founder decision D6).
+   `/briefs`), one is an empty column (`/certificates`, #238). **Decision
+   (D6, built in #252):** staff only tools 404 (unlisted); anything a person
+   could become explains in one card with one action; every empty state fills
+   its slot. The per route rule is in "Refusals" in section 9.
 9. **The same identity is edited in four places.** Headline, skills and
    region are fields on `/profile`, `/talent/me` and `/expert`; display prefs
    live on `/settings`; the public face is `/u/[slug]`. `/talent` (the
@@ -98,9 +100,10 @@ matters (sign up, first lesson, applying, getting paid work).
     each audience to one page, `/partners` asks for support only, `/business`
     sells hiring only.
 
-Also high: ten orphan routes (section "Orphans"), the admin header showing to
-non admins (#245), and `/settings` being reachable signed out but listed only
-in the signed in avatar menu.
+Also high: `/settings` being reachable signed out but listed only in the
+signed in avatar menu. Fixed since: the orphan routes now each have a nav
+entry or a deliberate in page entry point (section 9, #252) and the admin
+header no longer lists its sections to non admins (#245).
 
 ---
 
@@ -119,7 +122,7 @@ in the signed in avatar menu.
   `src/components/ui/layout.tsx` (`SplitHero`, `MainWithRail`, `SectionGrid`,
   `AutoGrid`, `DataTable`) and is never the phone column stretched.
 - **Nav**: where the page sits. Tabs = phone bottom tabs (Home, Learn,
-  Mentors, Community, Earn); Sidebar = desktop app nav (same groups); You =
+  Experts, Community, Earn); Sidebar = desktop app nav (same groups); You =
   avatar menu (Profile, Notifications, Settings, Admin); Header = the public
   site header (`PUBLIC_NAV`); Footer = `FOOTER_NAV`.
 
@@ -128,13 +131,13 @@ in the signed in avatar menu.
 | Type | Tabs and sidebar items they see | Avatar menu |
 |---|---|---|
 | V | Header: Roadmaps, Programme, Experts, Opportunities, Events, Chapters, Skills, Impact, For business. Footer adds Find your path, About, Partners | Sign in / Create account |
-| L, C, Ap | Home; Learn (Roadmaps, Your path, Cohort, Skills, Certificates, 5 minute review, Study Buddy); Mentors (Find experts, Bookings, Briefs, Become an expert); Community (Feed, Events, Chapters, Leaderboards); Earn (Opportunities, Outcomes, Talent profile) | Profile, Notifications, Settings |
-| M | as L plus Mentors → Mentor console | as L |
+| L, C, Ap | Home; Learn (Roadmaps, Your path, Cohort, Skills, Certificates, 5 minute review, Study Buddy); Experts (Find an expert, Bookings, Briefs, Become an expert); Community (Feed, Events, Chapters, Leaderboards); Earn (Opportunities, Outcomes, Talent profile) | Profile, Notifications, Settings |
+| M | as L plus Experts → Mentor console | as L |
 | E (any status) | as L but "Expert dashboard" replaces "Become an expert" | as L |
 | O (active or invited) | as L plus Earn → Organisation | as L |
 | CL | as L (no lead entry; tools are on the chapter page and the moderation link in the community rail) | as L |
-| Skill reviewer | as L (no entry; finding A5, #248) | as L |
-| A | everything above plus Mentor console | plus Admin |
+| Skill reviewer (appointed by an admin) | as L plus Learn → Portfolio reviews (#248) | as L |
+| A | everything above plus Mentor console and Portfolio reviews | plus Admin |
 
 Signed in people keep the app navigation on public pages (`viewer-frame`).
 
@@ -204,7 +207,7 @@ Signed in people keep the app navigation on public pages (`viewer-frame`).
 - **Cut / move / collapse**: the "first experts are being approved" state is honest; keep it. Move "Become an expert" to the bottom.
 - **States**: none approved yet (explain, offer the brief route); a few; many with filters.
 - **Phone**: filters behind a sheet button above results. **Desktop**: `MainWithRail railFirst` with filters in the rail, `AutoGrid` results.
-- **Nav**: Header "Experts"; Mentors → Find experts.
+- **Nav**: Header "Experts"; Experts → Find an expert.
 
 ### `/experts/[slug]` Expert profile
 - **Audience**: everyone. **Job**: decide to request this person.
@@ -289,9 +292,9 @@ Nav: Footer only, correct.
 
 | Route | Audience | Job | Primary | Notes |
 |---|---|---|---|---|
-| `/signup` | V | Create an account (adults) | Create account; Google | Keep `?next` through confirmation. Under 18 sees one sentence, no form reset. Desktop: form plus brand panel (done). |
+| `/signup` | V | Create an account (adults) | Create account; Google | Keep `?next` through confirmation. Under 18 sees one sentence, no form reset. Ticks: "I confirm I am 18 or over" (D1) and the terms. Desktop: form plus brand panel (done). |
 | `/login` | V | Get back in | Sign in; Google | Error states for age, Google, rate limit. |
-| `/welcome` | Google sign ups, re-consent | Give date of birth and agree | Continue | Hide the date of birth when it is already on file (#251). |
+| `/welcome` | Google sign ups, re-consent | Give date of birth (first visit only), confirm 18 or over, agree | Continue | The date of birth is asked only when none is on file: it cannot change, so someone re-agreeing after revoking sees just the two ticks (#251). "I confirm I am 18 or over" is required here and at sign up and recorded with the consents (D1). |
 | `/forgot-password`, `/reset-password` | V | Reset a password | Send link / Save | Public on purpose (see `protected-paths.ts`). |
 | `/auth/callback` (route) | | OAuth return | | No UI. |
 | `/auth/confirm` (route) | | Land auth email links (sign up, reset, email change) | | No UI. Checks the token hash with `verifyOtp`; templates in `supabase/templates/` (`docs/email-templates.md`). |
@@ -344,8 +347,9 @@ Nav: Footer only, correct.
 ### `/certificates`, `/certificates/issue`
 - **Audience**: `/certificates` every learner; `/issue` M and A. **Job**: see and share what I earned; staff: issue earned ones.
 - **Primary**: share (learner); issue (staff). **Secondary**: verify link.
-- **Cut / move / collapse**: fix the empty main column (#238); staff "Issue" should live in the mentor console, not as a card here; an admin with no cohorts gets an empty state, not a 404 (#252).
-- **Nav**: Learn → Certificates; `/issue` orphan (reached from `/certificates` only).
+- **Cut / move / collapse**: fix the empty main column (#238, done); staff "Issue" should live in the mentor console, not as a card here.
+- **States**: `/issue` is a 404 for anyone who is not cohort staff or an admin (a staff tool, D6); an admin with no cohorts gets an empty state pointing to Admin, Cohorts (#252).
+- **Nav**: Learn → Certificates; `/issue` in page entry points: the "For mentors" card on `/certificates` and the "Certificates" card in the mentor console rail.
 
 ### `/review` 5 minute review, `/study-buddy`
 | Route | Job | Primary | Notes |
@@ -358,17 +362,17 @@ Nav: Footer only, correct.
 - **Nav**: from `/skills/[slug]` only; correct (a task page).
 
 ### `/skills/reviews` Portfolio reviews
-- **Audience**: skill reviewers and A. **Job**: approve or return portfolios. **Primary**: decide.
-- **Nav**: orphan (only from an admin assessment page). Add to "Your work" for reviewers (#248).
+- **Audience**: skill reviewers (appointed by an admin on `/admin/skills/reviewers`, D3) and A; a 404 for everyone else (staff tool, D6). **Job**: approve or return portfolios. **Primary**: decide.
+- **Nav**: Learn → Portfolio reviews (audience `reviewer`, #248); moves to "Your work" with D8.
 
 ### `/programme/apply`
 - **Audience**: L, Ap. **Job**: send or follow my application. **Primary**: submit (or withdraw). **Secondary**: edit answers while open.
 - **Cut / move / collapse**: the status card belongs on `/cohort` too.
-- **Nav**: no item of its own (Cohort lights up for it); reached from `/programme`.
+- **Nav**: no item of its own (Cohort lights up for it); in page entry point: the apply button on `/programme`, which the `/cohort` explainer links to.
 
 ---
 
-## 4. Mentors and experts (signed in)
+## 4. Experts and the mentor console (signed in)
 
 ### `/mentor` Mentor console, `/mentor/learners/[memberId]`, `/mentor/submissions/[id]`
 - **Audience**: M, A. **Job**: get through my review queue and keep my learners on track.
@@ -377,17 +381,17 @@ Nav: Footer only, correct.
 - **Cut / move / collapse**: a 376 line page doing five jobs; split into tabs (Queue, Learners, Peer review, Certificates). Bring certificate issuing here.
 - **States**: no cohorts (404 for non staff; explainer for an admin), empty queue, busy.
 - **Phone**: queue first; grid becomes a list. **Desktop**: `DataTable` roster with the cohort switcher in the rail (done).
-- **Nav**: Mentors → Mentor console (staff). Should be "Your work".
+- **Nav**: Experts → Mentor console (staff). Should be "Your work". The rail links to `/certificates/issue` for the cohort.
 
 ### `/expert`, `/expert/offers/new`, `/expert/offers/[id]`
 - **Audience**: E (explainer for others). **Job**: run my expert listing: answer requests, keep offers current.
 - **Primary**: respond to new requests (today requests live in `/bookings`). **Secondary**: edit profile, add offer.
 - **Priority**: 1 status (pending, approved, delisted) and what it means; 2 new requests count with link; 3 offers; 4 profile form.
 - **Cut / move / collapse**: profile fields duplicated with `/profile` (problem 9); `/expert/offers/new` redirects to `/expert`, so the form is inline: keep one pattern.
-- **Nav**: Mentors → Expert dashboard (experts); "Become an expert" for others.
+- **Nav**: Experts → Expert dashboard (experts); "Become an expert" for others.
 
 ### `/experts/apply`
-- **Audience**: adult L. **Job**: apply to be listed. **Primary**: submit. States: draft, submitted, approved (go to dashboard), declined. Fast track note for cohort mentors.
+- **Audience**: adult L. **Job**: apply to be listed. **Primary**: submit. States: draft, submitted, approved (go to dashboard), declined. Fast track note for cohort mentors. Submitting creates the pending expert profile and the application together (`apply_as_expert`, #249): there is no other way to get an expert profile.
 
 ### `/bookings`, `/bookings/[id]`
 - **Audience**: anyone with a booking (requester or expert or organisation). **Job**: see what I asked for or was asked, and act on it.
@@ -395,15 +399,15 @@ Nav: Footer only, correct.
 - **Cut / move / collapse**: split "Requests to you" and "Your requests" as tabs; experts should see their incoming requests on Home and `/expert`.
 - **States**: none, requested, accepted, completed (review), declined, cancelled.
 - **Phone / desktop**: list as `DataTable` with filters in the rail (done); detail thread in main, status and actions in rail.
-- **Nav**: Mentors → Bookings.
+- **Nav**: Experts → Bookings.
 
 ### `/briefs`, `/briefs/new`, `/briefs/mine`, `/briefs/[id]`
 - **Audience**: approved experts (board), anyone adult (post), organisations (job briefs). **Job**: for posters, get pitches; for experts, find work to pitch for.
 - **Primary**: poster: Post a brief; expert: open and pitch.
 - **Cut / move / collapse**: two audiences on one page; a learner sees an explainer and their own briefs. Make `/briefs` the expert board and `/briefs/mine` "Your briefs" a tab; `/briefs/new` a task page.
-- **Nav**: Mentors → Briefs; `/mine` and `/new` orphan.
+- **Nav**: Experts → Briefs; `/mine` and `/new` in page entry points: "Post a brief" and "Your briefs and pitches" on `/briefs`.
 
-### `/mentors` hub
+### `/mentors` hub (titled "Experts", D5)
 See section 3 hubs.
 
 ---
@@ -415,6 +419,7 @@ See section 3 hubs.
 - **Primary**: write a post. **Secondary**: switch scope (everyone, chapter, cohort), react, reply, WhatsApp.
 - **Priority**: 1 composer and scope switcher; 2 pinned; 3 feed; rail: my groups, WhatsApp, moderation link for moderators.
 - **Cut / move / collapse**: moderation queue reached only from the rail; add to "Your work" with a count of open reports.
+- **Refusal**: `/community/moderation` is a 404 for anyone who is not a moderator (staff tool, D6, #252); in page entry point: the "Moderation" link in the community rail, shown to moderators only.
 - **States**: quiet (seed prompt, honest), active, hidden posts for authors and moderators.
 - **Phone / desktop**: `MainWithRail` (done); `HubStrip` on top (done).
 - **Nav**: Community tab lands here (the model for other hubs).
@@ -496,8 +501,8 @@ Orphan; fold into `/opportunities` as a "Saved" filter (section 1).
 
 ## 8. Admin (`/admin/*`, A only)
 
-All admin pages share one header with the section list (it must render only
-for admins, #245), use `DataTable` for lists, and put the form in one column
+All admin pages share one header with the section list (rendered only for
+admins: non admins get a plain logo header above the 404, #245), use `DataTable` for lists, and put the form in one column
 and the record in another from lg. Every page checks `requireAdmin` itself.
 
 | Route | Job | Primary | Notes |
@@ -505,14 +510,15 @@ and the record in another from lg. Every page checks `requireAdmin` itself.
 | `/admin` | Pick a section | open a section | Add counts per section (pending applications, reports, outcomes). |
 | `/admin/applications` | Decide programme applications | accept / waitlist / decline | Highest volume in January; filters by status in the rail. |
 | `/admin/cohorts`, `/[id]` | Create cohorts, add staff | add staff | |
-| `/admin/experts` | Approve, verify, feature experts | decide | Profiles created without an application never show here (#249). |
+| `/admin/experts` | Approve, verify, feature experts | decide | Every pending expert has an application now (#249), so all of them show here. |
 | `/admin/organisations` | Verify organisations | verify / reject | |
 | `/admin/outcomes` | Verify reported outcomes | verify | Feeds `/impact`. |
 | `/admin/insights`, `/funnel`, `/retention`, `/learning`, `/features`, `/cohorts`, `/earn`, `/community`, `/reliability` | Read reporting dashboards | filter, download CSV | Filters in the URL; definitions at the foot of each (#243, `docs/analytics.md` §8). |
 | `/admin/opportunities`, `/new`, `/[id]` | Curate the public board | post | |
 | `/admin/events`, `/new`, `/[id]` | Create events, links, recordings | create | |
 | `/admin/chapters`, `/new`, `/[id]` | Create chapters, appoint leads | appoint | |
-| `/admin/skills`, `/[id]`, `/assessments/[assessmentId]` | Build skills and assessments | publish | Link to `/skills/reviews` belongs in the section list. |
+| `/admin/skills`, `/[id]`, `/assessments/[assessmentId]` | Build skills and assessments | publish | Links to `/admin/skills/reviewers`. |
+| `/admin/skills/reviewers` | Appoint portfolio reviewers (D3, #248) | Make reviewer (by sign in email) | Lists names only; remove with one button. |
 | `/admin/roadmaps`, `/new`, `/[id]`, `/[id]/nodes/[nodeId]`, `/links` | Author roadmaps, nodes, links; link health | publish | |
 | `/admin/content` | Generate and review node content | estimate / submit | Needs the AI key (503 otherwise). |
 | `/admin/certificates` | Find and revoke certificates | revoke | |
@@ -536,22 +542,40 @@ and the record in another from lg. Every page checks `requireAdmin` itself.
 - `/cohort` for a non member: an explainer with no status for applicants.
 - `/talent` for a learner: explains, but offers no route to their own listing.
 - `/briefs` for a learner who is not an expert: explains, little to do but post.
-- Admin with no cohort on `/certificates/issue`: 404.
-- `/welcome` re-consent with a different date of birth: generic error (#251).
+- Fixed: an admin with no cohort on `/certificates/issue` gets an empty state (#252); `/welcome` no longer asks a re-consenting person for their date of birth (#251).
 
-### Orphan routes (no nav entry; #252)
-`/programme/apply`, `/skills/reviews`, `/certificates/issue`, `/briefs/mine`,
-`/briefs/new`, `/opportunities/saved`, `/community/moderation`, `/review`
-(card only), `/events/recordings`, `/outcomes/new`, `/settings` (signed out).
+### Orphan routes: each has a nav entry or a deliberate in page entry point (#252)
+
+| Route | Way in |
+|---|---|
+| `/skills/reviews` | Nav: Learn → Portfolio reviews (reviewers and admins) |
+| `/programme/apply` | The apply button on `/programme` (the `/cohort` explainer links there); Cohort lights up |
+| `/certificates/issue` | "For mentors" card on `/certificates`; "Certificates" card in the mentor console rail |
+| `/briefs/mine`, `/briefs/new` | "Your briefs and pitches" and "Post a brief" on `/briefs` |
+| `/opportunities/saved` | "Your saved opportunities" on `/opportunities` |
+| `/community/moderation` | "Moderation" in the community rail (moderators only) |
+| `/review` | Nav: Learn → 5 minute review, and the "This week" card on Home |
+| `/events/recordings` | Link on `/events` and on past event pages |
+| `/outcomes/new` | "Report an outcome" on `/outcomes` |
+| `/settings` (signed out) | Footer for visitors is still missing (problem list, "Also high") |
+
 `/start` is reachable (footer for visitors; the Home rail and the empty
 `/path` for signed in people) but missing where it matters most: the home
-hero and the Learn group.
+hero and the Learn group (D9, design).
+
+### Refusals (founder decision D6, #252)
+
+| Page kind | What someone it is not for gets | Routes |
+|---|---|---|
+| Staff and admin tools (unlisted) | 404, with nothing of the page in the response | `/admin/*`, `/mentor/*`, `/skills/reviews`, `/certificates/issue`, `/community/moderation`, `/org/[slug]/*` (non members) |
+| Something a person could become | One card that explains, with one action | `/expert` (become an expert), `/talent` (organisations), `/briefs` (approved experts), `/cohort` (apply to the programme), `/talent/me` (eligibility) |
+| Empty states | Fill their slot and say honestly what is coming | `/certificates` (#238), `/certificates/issue` for an admin with no cohorts, every list page |
 
 ### Inconsistent patterns
-- Refusals: 404 vs explainer vs empty (problem 8).
+- Refusals: one rule now (section "Refusals" above).
 - Sub pages vs tabs: `/cohort/*`, `/org/[slug]/*`, `/briefs/*`, `/events/recordings`, `/opportunities/saved` are separate routes for what are tabs of one page.
 - Task pages: `/expert/offers/new` redirects to an inline form, `/outcomes/new` and `/briefs/new` are full pages, the expert request is a full page.
-- Naming: "review" means a 5 minute recap, a peer review, a portfolio review, an expert review and an AI review; "mentor" means cohort staff and the marketplace tab; "talent" means a listing and a directory.
+- Naming: "review" means a 5 minute recap, a peer review, a portfolio review, an expert review and an AI review; "mentor" now means only cohort staff (D5: the marketplace tab is "Experts"); "talent" means a listing and a directory.
 - Lead and host tools live at the bottom of public pages rather than in a place for the role.
 
 ### Phone and desktop
@@ -598,12 +622,13 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/admin/skills/[id]/assessments/[assessmentId]` | page | 8 Admin |
 | `/admin/skills/[id]` | page | 8 Admin |
 | `/admin/skills` | page | 8 Admin |
-| `/bookings/[id]` | page | 4 Mentors |
-| `/bookings` | page | 4 Mentors |
-| `/briefs/[id]` | page | 4 Mentors |
-| `/briefs/mine` | page | 4 Mentors |
-| `/briefs/new` | page | 4 Mentors |
-| `/briefs` | page | 4 Mentors |
+| `/admin/skills/reviewers` | page | 8 Admin |
+| `/bookings/[id]` | page | 4 Experts |
+| `/bookings` | page | 4 Experts |
+| `/briefs/[id]` | page | 4 Experts |
+| `/briefs/mine` | page | 4 Experts |
+| `/briefs/new` | page | 4 Experts |
+| `/briefs` | page | 4 Experts |
 | `/business/new` | page | 6 Earn |
 | `/certificates/issue` | page | 3 Learn |
 | `/certificates` | page | 3 Learn |
@@ -621,17 +646,17 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/events/[slug]/check-in` | page | 5 Community |
 | `/events/[slug]/feedback` | page | 5 Community |
 | `/events/[slug]/host` | page | 5 Community |
-| `/expert/offers/[id]` | page | 4 Mentors |
-| `/expert/offers/new` | page | 4 Mentors |
-| `/expert` | page | 4 Mentors |
-| `/experts/apply` | page | 4 Mentors |
+| `/expert/offers/[id]` | page | 4 Experts |
+| `/expert/offers/new` | page | 4 Experts |
+| `/expert` | page | 4 Experts |
+| `/experts/apply` | page | 4 Experts |
 | `/leaderboards` | page | 5 Community |
 | `/learn/[slug]/[node]` | page | 3 Learn |
 | `/learn` | page | 3 Learn |
-| `/mentor/learners/[memberId]` | page | 4 Mentors |
-| `/mentor` | page | 4 Mentors |
-| `/mentor/submissions/[id]` | page | 4 Mentors |
-| `/mentors` | page | 4 Mentors |
+| `/mentor/learners/[memberId]` | page | 4 Experts |
+| `/mentor` | page | 4 Experts |
+| `/mentor/submissions/[id]` | page | 4 Experts |
+| `/mentors` | page | 4 Experts |
 | `/notifications` | page | 7 Account |
 | `/opportunities/saved` | page | 6 Earn |
 | `/org/[slug]/manage` | page | 6 Earn |

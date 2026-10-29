@@ -6,8 +6,7 @@ import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import type { FieldErrors } from "@/lib/validation";
-import { parseApplication, type ApplicationFields } from "@/lib/market-apply/expert";
-import { ADULTS_ONLY_MESSAGE, PG } from "@/lib/market-apply/data";
+import { applyErrorState, parseApplication, type ApplicationFields } from "@/lib/market-apply/expert";
 
 export type ApplyValues = {
   slug: string;
@@ -37,10 +36,11 @@ function echo(form: FormData): ApplyValues {
 }
 
 /**
- * Creates (or refreshes) the pending expert profile, then the application an
- * admin reviews. The profile must exist first: applications reference it.
- * The database checks the applicant is an adult and keeps one open
- * application per person; fast track for mentors is set there too.
+ * Creates (or refreshes) the pending expert profile and the application an
+ * admin reviews, together, through apply_as_expert (issue #249): a profile
+ * can no longer exist without an application, so every pending expert is in
+ * the admin queue. The database checks the applicant is an adult and keeps
+ * one open application per person; fast track for mentors is set there too.
  */
 export async function applyAsExpert(_prev: ApplyState, form: FormData): Promise<ApplyState> {
   const user = await requireUser();
@@ -59,28 +59,18 @@ export async function applyAsExpert(_prev: ApplyState, form: FormData): Promise<
     .maybeSingle();
   if (existing?.status === "approved") redirect("/expert");
 
-  const profileWrite = existing
-    ? supabase.from("expert_profiles").update(data.profile).eq("profile_id", user.id)
-    : supabase.from("expert_profiles").insert({ profile_id: user.id, ...data.profile });
-  const { error: profileError } = await profileWrite;
-  if (profileError) await trackResult("expert_applied", profileError);
-  if (profileError) {
-    if (profileError.code === PG.uniqueViolation) {
-      return { errors: { slug: "That link name is taken. Try another." }, values };
-    }
-    if (profileError.code === PG.rlsViolation) return { message: ADULTS_ONLY_MESSAGE, values };
-    return { message: "We couldn't save your application. Try again.", values };
-  }
-
-  const { error } = await supabase.from("expert_applications").insert({ profile_id: user.id, ...data.application });
+  const { error } = await supabase.rpc("apply_as_expert", {
+    p_slug: data.profile.slug,
+    p_headline: data.profile.headline,
+    p_skills: data.profile.skills,
+    p_categories: data.profile.categories,
+    p_links: data.profile.links,
+    p_motivation: data.application.motivation,
+    p_experience: data.application.experience ?? "",
+    p_evidence_links: data.application.evidence_links,
+  });
   await trackResult("expert_applied", error);
-  if (error) {
-    if (error.code === PG.uniqueViolation) {
-      return { message: "You already have an application in review. You can see its status on this page.", values };
-    }
-    if (error.code === PG.rlsViolation) return { message: ADULTS_ONLY_MESSAGE, values };
-    return { message: "We couldn't send your application. Try again.", values };
-  }
+  if (error) return { ...applyErrorState(error.code), values };
 
   revalidatePath("/experts/apply");
   redirect("/experts/apply?sent=1");

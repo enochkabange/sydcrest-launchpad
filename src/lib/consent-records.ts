@@ -1,8 +1,8 @@
 import "server-only";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { Database } from "@/lib/supabase/database.types";
-import { hasAgeAndConsent } from "@/lib/legal";
-import { LEGAL_CONSENT_KINDS, decideLegalGate, type LegalConsentKind } from "@/lib/consent";
+import { hasAgeAndConsent, LEGAL_VERSION } from "@/lib/legal";
+import { AGE_CONSENT_KIND, LEGAL_CONSENT_KINDS, decideLegalGate, needsAgeConfirmationRecord, termsVersionFromMetadata, type LegalConsentKind } from "@/lib/consent";
 
 type Client = SupabaseClient<Database>;
 
@@ -15,7 +15,7 @@ type Client = SupabaseClient<Database>;
 export async function recordLegalConsent(
   supabase: Client,
   version: string,
-  kinds: readonly LegalConsentKind[] = LEGAL_CONSENT_KINDS,
+  kinds: readonly (LegalConsentKind | typeof AGE_CONSENT_KIND)[] = LEGAL_CONSENT_KINDS,
 ): Promise<boolean> {
   let ok = true;
   for (const kind of kinds) {
@@ -26,6 +26,11 @@ export async function recordLegalConsent(
     }
   }
   return ok;
+}
+
+/** Terms, privacy and "I confirm I am 18 or over" (D1), as ticked at sign up and on /welcome. */
+export function recordSignUpConsents(supabase: Client, version: string): Promise<boolean> {
+  return recordLegalConsent(supabase, version, [...LEGAL_CONSENT_KINDS, AGE_CONSENT_KIND]);
 }
 
 /**
@@ -44,10 +49,15 @@ export async function hasAgeAndRecordedConsent(
     .from("consents")
     .select("kind, revoked_at")
     .eq("profile_id", userId)
-    .in("kind", [...LEGAL_CONSENT_KINDS]);
+    .in("kind", [...LEGAL_CONSENT_KINDS, AGE_CONSENT_KIND]);
   if (error) {
     console.error("consent lookup failed", { code: error.code, message: error.message });
     return hasAgeAndConsent(metadata);
+  }
+  // An email sign up's age confirmation waits in metadata until there is a
+  // session; copy it over once, like terms and privacy below.
+  if (needsAgeConfirmationRecord(data, metadata)) {
+    await recordLegalConsent(supabase, termsVersionFromMetadata(metadata) ?? LEGAL_VERSION, [AGE_CONSENT_KIND]);
   }
   const decision = decideLegalGate(data, metadata);
   if (decision.action === "backfill") {

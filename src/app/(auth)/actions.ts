@@ -7,7 +7,8 @@ import { siteOrigin } from "@/lib/site-url";
 import { parseAgeAndConsent, parseSignIn, parseSignUp, safeNextPath, type FieldErrors } from "@/lib/validation";
 import { UNDER_AGE_MESSAGE } from "@/lib/legal";
 import { track, trackNow, trackRefusal } from "@/lib/analytics/track";
-import { recordLegalConsent } from "@/lib/consent-records";
+import { recordSignUpConsents } from "@/lib/consent-records";
+import { hasDateOfBirth } from "@/lib/consent";
 import { allowFormSubmission, allowSignIn, FORM_RATE_LIMIT_MESSAGE, recordSignInFailure, SIGN_IN_LIMIT_MESSAGE } from "@/lib/rate-limit";
 
 /** Where to go after auth: the form's `next` field, checked to be a local path. */
@@ -17,10 +18,10 @@ function nextFrom(form: FormData | undefined) {
 }
 
 export type AuthState = {
-  errors?: FieldErrors<"full_name" | "email" | "password" | "date_of_birth" | "terms">;
+  errors?: FieldErrors<"full_name" | "email" | "password" | "date_of_birth" | "terms" | "adult">;
   message?: string;
   sentTo?: string;
-  values?: { full_name?: string; email?: string; date_of_birth?: string; terms?: boolean };
+  values?: { full_name?: string; email?: string; date_of_birth?: string; terms?: boolean; adult?: boolean };
 };
 
 export async function signIn(_prev: AuthState, form: FormData): Promise<AuthState> {
@@ -62,6 +63,7 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
     email: data.email,
     date_of_birth: data.dateOfBirth,
     terms: form.get("terms") === "on",
+    adult: form.get("adult") === "on",
   };
   if (Object.keys(errors).length) {
     await trackRefusal("signup", "validation");
@@ -80,13 +82,15 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
     password: data.password,
     options: {
       // full_name: same key Google uses, so the profile trigger reads one field for both.
-      // terms_version waits here until there is a session: it is copied into
-      // the consents table on the first signed in request (lib/consent-records).
+      // terms_version and age_confirmed_at ("I confirm I am 18 or over")
+      // wait here until there is a session: they are copied into the
+      // consents table on the first signed in request (lib/consent-records).
       data: {
         full_name: data.fullName,
         date_of_birth: data.dateOfBirth,
         terms_version: data.termsVersion,
         terms_accepted_at: new Date().toISOString(),
+        age_confirmed_at: new Date().toISOString(),
       },
       emailRedirectTo: `${await siteOrigin()}/auth/callback?next=${encodeURIComponent(nextFrom(form))}`,
     },
@@ -109,33 +113,38 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
   // request is anonymous: the event carries just the visitor cookie, and
   // the consent rows are written on the first signed in request.
   const signedIn = Boolean(result.session && result.user);
-  if (signedIn) await recordLegalConsent(supabase, data.termsVersion);
+  if (signedIn) await recordSignUpConsents(supabase, data.termsVersion);
   await track("signup", { method: "email" });
   if (signedIn) redirect(nextFrom(form));
   return { sentTo: data.email };
 }
 
 /**
- * The /welcome step for people who signed up with Google, which shares no date
- * of birth. Under 18s are signed out without saving anything.
+ * The /welcome step: Google sign ups (Google shares no date of birth) and
+ * anyone re-agreeing after revoking consent. Under 18s are signed out without
+ * saving anything. A date of birth already on file cannot change (the Auth
+ * layer refuses it, #240), so it is neither asked for nor sent again (#251).
  */
 export async function completeWelcome(_prev: AuthState, form: FormData): Promise<AuthState> {
   const supabase = await createClient();
   const { data: auth } = await supabase.auth.getClaims();
   if (!auth?.claims?.sub) redirect("/login");
 
-  const { data, errors } = parseAgeAndConsent(form);
+  const firstVisit = !hasDateOfBirth(auth.claims.user_metadata);
+  const { data, errors } = parseAgeAndConsent(form, new Date(), { askDateOfBirth: firstVisit });
   if (errors.date_of_birth === UNDER_AGE_MESSAGE) {
     await supabase.auth.signOut();
     redirect("/login?error=age");
   }
   if (Object.keys(errors).length) return { errors, values: { date_of_birth: data.dateOfBirth } };
 
+  const now = new Date().toISOString();
   const { error } = await supabase.auth.updateUser({
     data: {
-      date_of_birth: data.dateOfBirth,
+      ...(firstVisit ? { date_of_birth: data.dateOfBirth } : {}),
       terms_version: data.termsVersion,
-      terms_accepted_at: new Date().toISOString(),
+      terms_accepted_at: now,
+      age_confirmed_at: now,
     },
   });
   if (error) {
@@ -143,10 +152,9 @@ export async function completeWelcome(_prev: AuthState, form: FormData): Promise
     await trackRefusal("welcome_completed", "server_error", error.code);
     return { message: "We couldn't save that. Try again.", values: { date_of_birth: data.dateOfBirth } };
   }
-  await recordLegalConsent(supabase, data.termsVersion);
+  await recordSignUpConsents(supabase, data.termsVersion);
   // First time here without a date of birth means a new Google sign up
   // (not someone re-agreeing after revoking), so count it as their signup.
-  const firstVisit = !(auth.claims.user_metadata as Record<string, unknown> | undefined)?.date_of_birth;
   if (firstVisit) await track("signup", { method: "google" });
   else await track("welcome_completed");
   // updateUser keeps the old access token, whose claims still lack the new

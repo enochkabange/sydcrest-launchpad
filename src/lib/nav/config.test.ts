@@ -15,33 +15,43 @@ import {
 } from "./config";
 import { isSignedInPath } from "@/lib/supabase/protected-paths";
 
-const ALL: NavRoles = { admin: true, staff: true, expert: true, business: true };
+const ALL: NavRoles = { admin: true, staff: true, expert: true, business: true, reviewer: true };
 const labels = (id: Parameters<typeof groupById>[0], roles: NavRoles) => visibleItems(groupById(id), roles).map((i) => i.label);
 
 describe("nav config", () => {
-  it("has the founder's five phone tabs", () => {
-    expect(PHONE_TABS.map((t) => t.label)).toEqual(["Home", "Learn", "Mentors", "Community", "Earn"]);
+  it("has the founder's five phone tabs, the market named Experts (D5)", () => {
+    expect(PHONE_TABS.map((t) => t.label)).toEqual(["Home", "Learn", "Experts", "Community", "Earn"]);
     expect(PHONE_TABS.map((t) => t.href)).toEqual(["/dashboard", "/learn", "/mentors", "/community", "/earn"]);
   });
 
   it("lists the hub contents from the #190 decision", () => {
     expect(labels("learn", NO_ROLES)).toEqual(["Roadmaps", "Your path", "Cohort", "Skills", "Certificates", "5 minute review", "Study Buddy"]);
-    expect(labels("mentors", NO_ROLES)).toEqual(["Find experts", "Bookings", "Briefs", "Become an expert"]);
+    expect(labels("experts", NO_ROLES)).toEqual(["Find an expert", "Bookings", "Briefs", "Become an expert"]);
     expect(labels("community", NO_ROLES)).toEqual(["Feed", "Events", "Chapters", "Leaderboards"]);
     expect(labels("earn", NO_ROLES)).toEqual(["Opportunities", "Outcomes", "Talent profile"]);
     expect(labels("you", NO_ROLES)).toEqual(["Profile", "Notifications", "Settings"]);
   });
 
   it("shows role items only to that role", () => {
-    expect(labels("mentors", { ...NO_ROLES, staff: true })).toContain("Mentor console");
-    expect(labels("mentors", { ...NO_ROLES, admin: true })).toContain("Mentor console");
-    expect(labels("mentors", { ...NO_ROLES, expert: true })).toEqual(["Find experts", "Bookings", "Briefs", "Expert dashboard"]);
+    expect(labels("experts", { ...NO_ROLES, staff: true })).toContain("Mentor console");
+    expect(labels("experts", { ...NO_ROLES, admin: true })).toContain("Mentor console");
+    expect(labels("experts", { ...NO_ROLES, expert: true })).toEqual(["Find an expert", "Bookings", "Briefs", "Expert dashboard"]);
+    expect(labels("learn", { ...NO_ROLES, reviewer: true })).toContain("Portfolio reviews");
+    expect(labels("learn", { ...NO_ROLES, admin: true })).toContain("Portfolio reviews");
+    for (const role of ["staff", "expert", "business"] as const) {
+      expect(labels("learn", { ...NO_ROLES, [role]: true })).not.toContain("Portfolio reviews");
+    }
     expect(labels("earn", { ...NO_ROLES, business: true })).toContain("Organisation");
     expect(labels("you", { ...NO_ROLES, admin: true })).toContain("Admin");
-    for (const role of ["staff", "expert", "business"] as const) {
+    for (const role of ["staff", "expert", "business", "reviewer"] as const) {
       expect(labels("you", { ...NO_ROLES, [role]: true })).not.toContain("Admin");
     }
-    expect(labels("mentors", ALL)).not.toContain("Become an expert");
+    expect(labels("experts", ALL)).not.toContain("Become an expert");
+  });
+
+  it("uses Mentor only for the programme's volunteer mentor (D5)", () => {
+    const all = NAV_GROUPS.flatMap((g) => [g.label, ...g.items.map((i) => i.label)]);
+    expect(all.filter((label) => /mentor/i.test(label))).toEqual(["Mentor console"]);
   });
 
   it("has unique hrefs within each group and no dashes in copy", () => {
@@ -101,6 +111,8 @@ describe("active state", () => {
     expect(activeHref("/talent/me", all)).toBe("/talent/me");
     expect(activeHref("/talent/123", all)).toBe("/org");
     expect(activeHref("/opportunities/saved", all)).toBe("/opportunities");
+    expect(activeHref("/skills/reviews", all)).toBe("/skills/reviews");
+    expect(activeHref("/skills/excel", all)).toBe("/skills");
     expect(activeHref("/profile", all)).toBe("/profile");
     expect(activeHref("/learn/excel/counting-stock", all)).toBe("/roadmaps");
     expect(activeHref("/learn", all)).toBeNull();
@@ -112,9 +124,10 @@ describe("active state", () => {
     expect(activeTab("/learn")).toBe("learn");
     expect(activeTab("/learn/excel/counting-stock")).toBe("learn");
     expect(activeTab("/cohort/week/3")).toBe("learn");
-    expect(activeTab("/mentors")).toBe("mentors");
-    expect(activeTab("/mentor/submissions/1")).toBe("mentors");
-    expect(activeTab("/experts/apply")).toBe("mentors");
+    expect(activeTab("/mentors")).toBe("experts");
+    expect(activeTab("/mentor/submissions/1")).toBe("experts");
+    expect(activeTab("/experts/apply")).toBe("experts");
+    expect(activeTab("/skills/reviews")).toBe("learn");
     expect(activeTab("/community/post/1")).toBe("community");
     expect(activeTab("/events/tamale-meetup")).toBe("community");
     expect(activeTab("/chapters/northern")).toBe("community");

@@ -23,6 +23,7 @@ test("verified skill screens at 390, 1440 and 1920", async ({ page }, testInfo) 
     await signIn(page, founder.email);
     await shoot(page, testInfo, "skills-reviews", "/skills/reviews");
     await shoot(page, testInfo, "admin-skills", "/admin/skills");
+    await shoot(page, testInfo, "admin-skill-reviewers", "/admin/skills/reviewers");
     await shoot(page, testInfo, "admin-skill", `/admin/skills/${skill.id}`);
     await shoot(page, testInfo, "admin-skill-quiz", `/admin/skills/${skill.id}/assessments/${skill.quizId}`);
   } finally {

@@ -3,6 +3,11 @@
 > **Decided 28 October 2026:** the founder accepted every recommendation below
 > (D1 to D9) as written. Build to the recommendation; the options stay for the
 > record.
+>
+> **Built (29 October 2026, access fixes PR, #263):** D1, D3, D4, D5, D6 and D7
+> are in the code, `docs/user-types.md`, `docs/page-guide.md` and
+> `e2e/access-matrix.spec.ts`. D2 needs no change (the full block stays). D8
+> and D9 are design work for the Claude Design implementation (#195).
 
 Rules the code cannot settle on its own, found while writing
 `docs/user-types.md` and `docs/page-guide.md` (issue #240). Each has the
@@ -27,6 +32,12 @@ change, so the only way in for a minor is to lie on the form.
 
 **Recommendation: b now, c when payments go live** (it lines up with the KYC
 tiers in PRODUCT_ENRICHMENT §8, which need ID for payouts anyway).
+
+**Built:** "I confirm I am 18 or over" is a required tick at sign up and on
+`/welcome`, recorded as a `consents` row of kind `age_confirmation` with the
+terms and privacy rows (email sign ups: held in metadata as
+`age_confirmed_at` and copied on the first signed in request). It is not part
+of the legal gate, so accounts made before it are not sent back to `/welcome`.
 
 ### D2. Are under 18s blocked everywhere, or only in the market?
 
@@ -59,6 +70,11 @@ set `mentor`, so only admins review (#248).
 **Recommendation: b now, d later.** Ship the admin action and a "Your work"
 entry; add verified experts once there are enough of them.
 
+**Built (#248):** `profiles.is_skill_reviewer`, set only by
+`admin_set_skill_reviewer` from `/admin/skills/reviewers` ("Make reviewer" by
+sign in email). Reviewers get "Portfolio reviews" in the Learn menu (nav
+audience `reviewer`) until the "Your work" group arrives with D8.
+
 ### D4. Who can issue a certificate when the mentor is away?
 
 **Today.** Cohort staff (mentor or coordinator) of the learner's cohort and
@@ -66,6 +82,9 @@ admins (`issue_certificate`). PRODUCT_ENRICHMENT §4.2 lists this as [OPEN].
 
 **Recommendation: keep today's rule** (coordinator or platform admin as the
 backup) and close the [OPEN] item.
+
+**Built:** no code change; the rule is recorded in `docs/user-types.md` §3.1
+and the [OPEN] item in PRODUCT_ENRICHMENT §4.2 and §9 is closed.
 
 ### D5. What do we call the two kinds of mentor?
 
@@ -85,6 +104,11 @@ mentor, as in the programme name), and the market keeps the word it already
 uses in URLs, pages and the schema. The phone tab label changes from Mentors
 to Experts.
 
+**Built:** the tab, sidebar group and hub are "Experts" (the hub keeps its
+`/mentors` address for now), the directory item is "Find an expert", and the
+Study Buddy and Insights copy say experts. "Mentor console" is the only nav
+label with "mentor" in it (a unit test keeps it so).
+
 ### D6. What does someone see on a page that is not for them?
 
 **Today.** Mixed: 404, an explainer, or an empty page (#252).
@@ -93,6 +117,11 @@ to Experts.
 a person could become (expert, organisation, cohort learner, talent listing)
 explains in one card with one action; empty states always fill their slot
 and say honestly what is coming.
+
+**Built (#252):** `/community/moderation` now 404s for non moderators (it
+explained before), and `/certificates/issue` gives an admin with no cohorts an
+empty state instead of a 404. The full rule per route is in
+`docs/page-guide.md` ("Refusals").
 
 ### D7. Is the follow graph public?
 
@@ -105,6 +134,9 @@ profiles' (#246).
 | b. Follows between two public profiles are visible to signed in users; anything touching a private profile is visible only to the two people | Keeps "who follows whom" for public learners (a growth loop) |
 
 **Recommendation: b.**
+
+**Built (#246):** the `follows` read policy allows your own follows and
+followers, and follows where both ends are public profiles.
 
 ### D8. Does Home adapt to roles, and do supply roles get their own place?
 

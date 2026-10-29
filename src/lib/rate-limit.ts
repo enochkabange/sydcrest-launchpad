@@ -70,6 +70,17 @@ export function addressKey(address: string): Promise<string> {
 }
 
 /**
+ * The key a database side form limit counts this visitor under (the
+ * waitlist's join_waitlist, issue #247): the hashed address, or a fresh
+ * random key on a local run, where every visitor shares one address and
+ * forms are not limited.
+ */
+export async function formKey(headers: HeaderSource): Promise<string> {
+  const address = clientAddress(headers);
+  return isLocalAddress(address) ? sha256Hex(`sydcrest-local:${crypto.randomUUID()}`) : addressKey(address!);
+}
+
+/**
  * A sha256 of the address and the email together: one visitor trying one
  * account. With the address inside, failures from elsewhere never count
  * against the account's owner.

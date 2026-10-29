@@ -6,7 +6,7 @@ import Link from "@/components/ui/link";
 import { DataTable, MainWithRail } from "@/components/ui/layout";
 import { createClient } from "@/lib/supabase/server";
 import { formatWhen } from "@/lib/skills/assessment";
-import { getMyRole, isReviewerRole } from "@/lib/skills/queries";
+import { getMyReviewerStatus } from "@/lib/skills/queries";
 import { reviewPortfolio } from "../actions";
 import { ReviewForm } from "./review-form";
 
@@ -34,10 +34,13 @@ type QueueRow = {
   submitted_at: string;
 };
 
-/** Mentors and admins only; everyone else gets a 404, as in the admin area. */
+/**
+ * Skill reviewers (appointed by an admin) and admins only. A staff tool, so
+ * everyone else gets a 404, as in the admin area (founder decision D6).
+ */
 async function ReviewQueue() {
-  const { userId, role } = await getMyRole();
-  if (!isReviewerRole(role)) notFound();
+  const { userId, reviewer } = await getMyReviewerStatus();
+  if (!reviewer) notFound();
 
   const supabase = await createClient();
   const [pending, reviewed] = await Promise.all([
