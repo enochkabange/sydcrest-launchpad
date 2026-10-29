@@ -1538,18 +1538,19 @@ Mariama approves the plan, and Issahaku has a portfolio piece that shows his who
     "social-media-marketing": {
       outcomes: [
         "Describe what the social media specialisation covers",
-        "Explain how organic and paid work together",
-        "Audit a business's social presence",
+        "Explain how organic and paid social work together",
+        "Name the accounts a business needs before it can advertise on Meta",
+        "Practise in an ads manager without spending money",
       ],
       explanation_md: `Many Ghanaian businesses already post on Facebook, Instagram, TikTok and WhatsApp. Far fewer know how to run a paid campaign that reaches the right people, make a video that people watch to the end, or turn followers into a community that buys again and tells friends. Those three skills are what this specialisation teaches, and they appear again and again in social media and digital marketing job descriptions.
 
 ## What this specialisation covers
 
-You already met social platforms, short video and community management in the Digital Marketer roadmap. Here you go deeper over three weeks, with three lessons in each.
+You already met social platforms, short video, social ads and community management in the Digital Marketer roadmap. Here you go deeper over three weeks.
 
-* **Week 7, advanced ad targeting.** How campaigns are built, how to choose and refine audiences, and how to set budgets and test ads.
-* **Week 8, video and storytelling.** Story structure for social media, scripting and shooting a short promo, and editing with captions.
-* **Week 9, community and influencers.** Building a community, finding micro influencers, and pitching and running a collaboration.
+* **Week 7, advanced ad targeting.** How campaigns are built, how to choose and refine audiences, and how to set budgets and test ads. The assignment is a mock Facebook and Instagram campaign with a defined audience and budget.
+* **Week 8, video and storytelling.** Story structure for social media, scripting and shooting a short promo, and editing with captions. The assignment is a 30 second promo video.
+* **Week 9, community and influencers.** Building a community, finding micro influencers, and pitching and running a collaboration. The assignment is two collaboration proposals.
 
 ## Organic and paid working together
 
@@ -1557,17 +1558,56 @@ You already met social platforms, short video and community management in the Di
 
 The best social marketers use both. They post consistently, notice which organic posts people love, and then put money behind those proven posts to reach new people. A community then keeps those new customers close.
 
+## The accounts behind an advert
+
+Before a business can run ads on Facebook and Instagram, several accounts have to be connected. Meta's names for them change from time to time, but the jobs stay the same.
+
+* **A Facebook Page** for the business, which ads run from.
+* **An Instagram professional account,** linked to the Page if ads will run on Instagram.
+* **A business account** in Meta's business tools that holds the Page, the ad accounts and the people who work on them. Meta currently calls this a business portfolio.
+* **An ad account,** where campaigns are built, the currency and time zone are set, and the payment method lives.
+* **A WhatsApp Business number,** if ads will start WhatsApp conversations.
+
+As a freelancer or junior marketer, ask the owner to add you to their business account with the access you need. Never ask for their password, and never run a client's ads from your own ad account. The business should own its accounts, its data and its history.
+
+## Practising without spending
+
+In Ads Manager, a campaign you build stays as a draft until you publish it. That means you can learn the real screens: choose an objective, build an audience, set a budget and write an ad. For practice, never press Publish and never add a payment method. If a screen asks for payment details before you can continue, stop and finish the plan in a document instead. The free Meta Blueprint courses named in your week 7 resources show the same screens with no spending at all.
+
 ## Responsibility comes with the role
 
-When you run a business's social accounts, you handle its reputation, its money and sometimes its customers' personal details. Follow each platform's advertising rules, never make claims the business cannot prove, label paid partnerships honestly, and keep customers' phone numbers and chats private. In Ghana, the Data Protection Act applies to personal data, and some products, such as food, medicines and cosmetics, have advertising rules from the Food and Drugs Authority.
-
-## A small example
-
-Hawa sells shea butter in Tamale and posts photos most days. One video of her women's group at work gets far more shares than anything else. Her niece Rahinatu, who is learning social media marketing, suggests three things. First, put a small budget behind that video to reach women in Tamale and Accra interested in natural skincare. Second, film a short story about one member of the group and how the work supports her family. Third, start a WhatsApp Channel with weekly tips and new stock alerts. Each idea uses a skill from this specialisation.
+When you run a business's social accounts, you handle its reputation, its money and sometimes its customers' personal details. Follow each platform's advertising rules, never make claims the business cannot prove, label paid partnerships honestly, and keep customers' phone numbers and chats private. In Ghana, the Data Protection Act, 2012 (Act 843) applies to personal data, and some products, such as food, medicines and cosmetics, have advertising rules from the Food and Drugs Authority.
 
 ## What you will be able to show
 
-By the end you will have a mock campaign plan with a defined audience and budget, a 30 second promo video, and two collaboration proposals for local micro influencers.`,
+By the end you will have a mock campaign plan with a defined audience and budget, a 30 second promo video, and two collaboration proposals for local micro influencers. Together they show an employer that you can plan, create and partner, not just post.`,
+      workedExample_md: `Hawa sells shea butter in Tamale and posts photos most days. Her niece Rahinatu, who is learning social media marketing, looks at what is working.
+
+1. **She finds the best organic post.** One video of Hawa's women's group at work got far more shares than anything else.
+2. **She checks the accounts.** Hawa has a Facebook Page and an Instagram account, but they are not linked, and nobody has set up a business account or an ad account.
+3. **She asks to be added properly.** Hawa adds Rahinatu to the new business account with permission to build ads, instead of sharing her password.
+4. **She suggests three ideas.** First, put a small budget behind the popular video to reach women in Tamale and Accra interested in natural skincare. Second, film a short story about one member of the group and how the work supports her family. Third, start a WhatsApp Channel with weekly tips and new stock alerts.
+5. **She practises first.** She builds the first idea as a draft in Ads Manager, adds no payment details, and shows Hawa the plan before anything is published.
+
+Each idea uses a skill from this specialisation.`,
+      keyTerms: [
+        { term: "Organic content", definition: "Posts a business shares for free, seen mostly by followers." },
+        { term: "Paid content", definition: "Adverts the business pays a platform to show to people it chooses." },
+        { term: "Ad account", definition: "The account where campaigns are built and the currency and payment method are set." },
+        { term: "Business portfolio", definition: "Meta's current name for the business account that holds Pages, ad accounts and people." },
+        { term: "Draft", definition: "A campaign built in Ads Manager that does not run or spend until it is published." },
+      ],
+      commonMistakes: [
+        "Asking a client for their Facebook password instead of being added with proper access",
+        "Running a client's ads from your own ad account",
+        "Adding a payment method to practise, then forgetting a campaign is live",
+        "Boosting posts at random instead of putting money behind posts that already work",
+      ],
+      selfCheck: [
+        "Which accounts must be connected before a business can advertise on Facebook and Instagram?",
+        "How can you practise in Ads Manager without spending any money?",
+        "Why should the business, not the marketer, own the ad account?",
+      ],
       practice_task_md: `**Goal:** Choose your business and audit its social presence.
 
 **Steps:**
@@ -1624,16 +1664,28 @@ By the end you will have a mock campaign plan with a defined audience and budget
             answer_index: 3,
             explanation: "She suggested boosting the post that had already proved popular.",
           },
+          {
+            prompt: "You want to practise building a campaign in Ads Manager. What does the lesson say?",
+            options: [
+              "Add a payment method so the screens unlock",
+              "Build it as a draft, never press Publish, and add no payment details",
+              "Publish it with a very small budget",
+              "Use the business owner's password to log in",
+            ],
+            answer_index: 1,
+            explanation: "A campaign stays a draft until published, so you can practise there without payment details.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "social-campaign-structure": {
       outcomes: [
-        "Explain campaigns, ad sets and ads",
-        "Choose a campaign objective",
-        "Name and organise a campaign",
+        "Explain the campaign, ad set and ad layers",
+        "Choose an objective that matches the business goal",
+        "Name the main settings at each layer",
+        "Plan and name a campaign structure clearly",
       ],
       explanation_md: `Pressing "Boost" on a post is the quickest way to advertise, but it hides most of the choices that make ads work. Employers want marketers who can build a full campaign in an ads manager, because that is where you control the goal, audience, budget and creative. This lesson explains the structure that Meta's Ads Manager uses for Facebook and Instagram. Other platforms such as TikTok use a very similar shape.
 
@@ -1647,7 +1699,7 @@ A campaign is organised in three layers, from the big decision down to the detai
 
 ## Choosing an objective
 
-At the time of writing, Meta's Business Help Centre lists six objectives. Platforms change their labels from time to time, so always check the current list on screen.
+At the time of writing, Meta's business help pages list six objectives. Platforms change their labels from time to time, so always check the current list on screen.
 
 * **Awareness:** show the ad to as many relevant people as possible and help them remember it.
 * **Traffic:** send people to a destination such as a website, an app or a Facebook Page.
@@ -1656,17 +1708,59 @@ At the time of writing, Meta's Business Help Centre lists six objectives. Platfo
 * **App promotion:** get people to install or use an app.
 * **Sales:** find people likely to buy, usually measured on a website or in a catalogue.
 
-The platform's system shows ads to the people it predicts are most likely to take the action your objective asks for. If you choose Engagement when you really want WhatsApp orders, you will get likes, not orders. Pick the objective that matches the business goal, not the one that produces the biggest numbers.
+The platform's system shows ads to the people it predicts are most likely to take the action your objective asks for. If you choose Engagement for post reactions when you really want WhatsApp orders, you will get likes, not orders. Pick the objective that matches the business goal, not the one that produces the biggest numbers.
 
 For many Ghanaian small businesses without a website, a campaign that starts conversations in WhatsApp is a practical choice, because that is where customers already ask questions and pay with mobile money.
 
+## Settings at each layer
+
+Going deeper means knowing what lives where, so you can find it quickly and explain it to a client.
+
+* **Campaign settings:** the objective; whether the ads fall into a special category, such as credit, jobs, housing or politics, which Meta requires you to declare and which limits targeting; and whether the budget is set here for the whole campaign.
+* **Ad set settings:** where the result should happen, such as a website, an app or a messaging app like WhatsApp; the performance goal, such as more conversations; the audience; the placements; the budget, if not set at campaign level; and the start and end dates.
+* **Ad settings:** the identity the ad runs from, meaning the Facebook Page and Instagram account; the format, such as a single image, a video or a carousel of several cards; the primary text, headline and button; and the destination.
+
+## Placements
+
+Placements are the places an ad can appear: Facebook Feed, Instagram Feed, Stories, Reels, Messenger and more. Meta can choose placements automatically, spreading the budget where results look best, or you can pick them yourself. Automatic placements are usually a good start. Choose manually only with a reason, such as a vertical video made only for Stories and Reels. Whichever you choose, preview the ad in each placement, because text and buttons can cover the edges of a vertical frame.
+
 ## Naming and organising
 
-Name every layer clearly so anyone can understand it later, for example "Shea Oct Messages", "Tamale Women 25 to 45", "Video Group At Work". Clear names make reports readable and help you compare results.
+Name every layer clearly so anyone can understand it later, for example "Shea Oct Messages", "Tamale Women 25 to 45", "Video Group At Work". Clear names make reports readable and help you compare results. A simple pattern is business, month and objective for campaigns; place and audience for ad sets; and format and idea for ads.
 
-## A worked example
+## How many of each?
 
-Salifu runs ads for a phone accessories shop in Bolgatanga. The owner wants more WhatsApp orders for power banks before the Christmas season. Salifu chooses an objective that drives messages to WhatsApp. He creates two ad sets, one for Bolgatanga and one for Tamale, each with its own small daily budget. In each ad set he places two ads: a photo of the power bank with its price, and a short video showing it charging a phone during a power cut. Now he can see which town and which ad brings more conversations.`,
+With a small budget, keep the structure small: one campaign, one or two ad sets, and two or three ads in each. Every extra ad set splits the money further, and each one needs enough results for the system to learn.`,
+      workedExample_md: `Salifu runs ads for a phone accessories shop in Bolgatanga. The owner, Mr Asante, wants more WhatsApp orders for power banks before the Christmas season.
+
+1. **Objective.** Salifu chooses an objective that drives messages, with WhatsApp as the place conversations happen. He checks the label on screen, because names change.
+2. **Special category.** Power banks are not credit, jobs, housing or politics, so no special category applies.
+3. **Ad sets.** He creates two ad sets, "Bolga All 18 Plus" and "Tamale All 18 Plus", each with its own small daily budget agreed with the owner.
+4. **Placements.** He leaves automatic placements on, then previews each ad in Feed, Stories and Reels.
+5. **Ads.** In each ad set he places two ads: "Photo Price" shows the power bank with its price, and "Video Power Cut" shows it charging a phone during a power cut.
+6. **Names.** The campaign is "Accessories Dec Messages", so the report is easy to read later.
+7. **Draft only.** He saves the whole structure as a draft and sends Mr Asante screenshots to approve before anything is published.
+
+Now he can see which town and which ad brings more conversations.`,
+      keyTerms: [
+        { term: "Campaign", definition: "The top layer, where you choose the objective." },
+        { term: "Ad set", definition: "The middle layer, holding the audience, placements, schedule and usually the budget." },
+        { term: "Ad", definition: "The creative people see: image or video, text, headline and button." },
+        { term: "Objective", definition: "The one result a campaign asks the platform to find." },
+        { term: "Placement", definition: "A place an ad can appear, such as Feed, Stories or Reels." },
+        { term: "Special ad category", definition: "Ads about credit, jobs, housing or politics, which must be declared and have limited targeting." },
+      ],
+      commonMistakes: [
+        "Choosing the objective that gives the biggest numbers instead of the one that matches the goal",
+        "Splitting a small budget across many ad sets so none can learn",
+        "Leaving names such as \"New campaign\" that make reports unreadable",
+        "Not previewing a vertical ad in every placement before approval",
+      ],
+      selfCheck: [
+        "Which settings belong at the campaign, ad set and ad layers?",
+        "Which objective would you choose for a business that wants WhatsApp orders, and why?",
+        "When would you choose placements manually instead of automatically?",
+      ],
       practice_task_md: `**Goal:** Plan the structure of a mock campaign on paper or in a sheet. No money is spent.
 
 **Steps:**
@@ -1723,16 +1817,28 @@ Salifu runs ads for a phone accessories shop in Bolgatanga. The owner wants more
             answer_index: 2,
             explanation: "Platforms update labels, so always check the current list.",
           },
+          {
+            prompt: "According to the lesson, at which layer do you choose the format, such as a single image, a video or a carousel?",
+            options: [
+              "Campaign",
+              "Ad set",
+              "Business portfolio",
+              "Ad",
+            ],
+            answer_index: 3,
+            explanation: "Format, text, headline, button and destination are all ad level settings.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "audience-targeting": {
       outcomes: [
-        "Compare kinds of audience",
-        "Decide between broad and narrow targeting and use exclusions",
-        "Target fairly",
+        "Describe location, interest, custom and lookalike audiences",
+        "Decide when to keep an audience broad and when to narrow it",
+        "Use exclusions to avoid wasted spend",
+        "Use customer data within Act 843 and the platform's rules",
       ],
       explanation_md: `The same advert can succeed or fail depending on who sees it. A good social media marketer knows how to describe the right people to the platform, and when to let the platform's system find them instead. This is the heart of the week 7 theme, advanced ad targeting.
 
@@ -1743,12 +1849,24 @@ Ad platforms such as Meta and TikTok offer similar building blocks.
 * **Location.** Countries, regions, cities, or an area around a point on the map. You can usually choose people who live there, or people recently there. A chop bar in Tamale only needs people nearby; an online shea butter shop that delivers nationwide can go wider.
 * **Age and language.** Useful when the product truly suits an age group or a language, but avoid narrowing for no reason.
 * **Interests and behaviours.** The platform groups people by the pages, topics and activities they engage with, such as natural skincare, football or small business.
-* **Custom audiences.** People who already know the business: those who engaged with the page or Instagram account, watched a video, messaged the business, or visited the website. Some platforms also let you upload a customer list, but only use contact details people agreed to share for this purpose, and follow Ghana's Data Protection Act.
-* **Lookalike audiences.** The platform finds new people who resemble a custom audience, such as people similar to past buyers.
+* **Custom audiences.** People who already know the business: those who engaged with the page or Instagram account, watched a video, messaged the business, or visited the website. Some platforms also let you upload a customer list.
+* **Lookalike audiences.** The platform finds new people who resemble a custom audience, such as people similar to past buyers. You choose the country and a size: smaller lookalikes match the source more closely, larger ones reach more people.
+
+## Cold, warm and hot
+
+A useful way to plan is by how well people know the business.
+
+* **Cold** audiences have never heard of it. Reach them with broad or lookalike audiences and a strong video or story.
+* **Warm** audiences have engaged, for example by watching most of a video or following the page. Reach them with custom audiences and a clearer offer.
+* **Hot** audiences have messaged, visited the price page or bought before. Reach them with a direct offer and an easy next step.
+
+Each stage gets its own ad set and its own message. Showing a "buy now" ad to people who have never heard of the business rarely works; showing a long brand story to someone who asked for the price yesterday wastes their time.
 
 ## Broad or narrow?
 
 Modern ad systems are good at finding likely buyers when you give them room. Meta, for example, offers an automated audience option where your choices act as suggestions and the system can look beyond them. Its name has changed over time, so check the current screen. Very narrow audiences can make ads expensive and slow to learn.
+
+Ads Manager shows an estimated audience size as you build. Treat it as a rough guide, not a count of real people. If it looks tiny, you have probably stacked too many conditions.
 
 A sensible approach for small budgets:
 
@@ -1756,17 +1874,46 @@ A sensible approach for small budgets:
 * Use custom audiences to reach people again who already showed interest, because they are often the most likely to buy.
 * Narrow only when there is a real reason, such as the product only being sold in one town.
 
-## Exclusions
+## Exclusions and overlap
 
-You can exclude people too. For example, exclude people who already messaged the business this week from an ad asking them to message, so you do not pay to reach them again.
+You can exclude people too. For example, exclude people who already messaged the business this week from an ad asking them to message, so you do not pay to reach them again. Exclusions also stop two of your own ad sets competing for the same people: if one ad set targets warm video viewers, exclude them from the cold ad set.
+
+## Customer lists and the law
+
+Uploading a customer list means using people's phone numbers or emails to show them adverts. Ghana's Data Protection Act, 2012 (Act 843), section 40, says a person's details must not be used for direct marketing without their prior written consent, and it defines direct marketing as advertising or marketing material directed to particular individuals. Section 40 also lets a person tell the business in writing, at any time, to stop. So only upload contacts who agreed in writing to receive marketing, keep a record of that agreement, and remove anyone who asks to stop. If in doubt, use engagement based custom audiences instead, which do not need a list. This is careful practice, not legal advice.
 
 ## Targeting fairly
 
-Platforms restrict targeting for sensitive areas such as housing, jobs and credit in some countries, and do not allow ads that discriminate. Always target by genuine relevance to the product.
+Platforms restrict targeting for sensitive areas such as housing, jobs and credit in some countries, and do not allow ads that discriminate. Always target by genuine relevance to the product.`,
+      workedExample_md: `Mariama runs ads for her guesthouse in Tamale and plans audiences by stage.
 
-## A worked example
+1. **Cold ad set.** People in Accra and Kumasi, broad interests, with the automated audience option turned on. The ad is a short video tour of a room.
+2. **Warm ad set.** A custom audience of people who watched most of that video in the last month. The ad is a photo with the price per night and a Send message button.
+3. **Hot ad set.** People who messaged the guesthouse but did not book, shown a reminder about weekday rates.
+4. **Exclusions.** She excludes warm video viewers from the cold ad set, so the two ad sets do not compete.
+5. **Customer list.** Mariama has 200 past guests' numbers in her phone, but she never asked them about marketing. She decides not to upload them. Instead, she starts asking new guests at checkout whether they would like offers by WhatsApp, and keeps their written replies.
+6. **Size check.** The estimated audience size for the hot ad set is small, so she gives it only a small share of the budget.
 
-Mariama runs ads for a guesthouse in Tamale. Her first ad set targets people in Accra and Kumasi, broad interests, with the automated audience option turned on, showing a video of a room. Her second ad set is a custom audience of people who watched most of that video in the last month, shown a photo with the price and a Send message button. The first finds new interest; the second turns interest into bookings.`,
+The cold ad set finds new interest; the warm and hot ones turn interest into bookings.`,
+      keyTerms: [
+        { term: "Custom audience", definition: "People who already interacted with the business, or a list it uploads with consent." },
+        { term: "Lookalike audience", definition: "New people the platform finds who resemble a chosen source audience." },
+        { term: "Cold, warm, hot", definition: "Stages of how well an audience knows the business, from strangers to near buyers." },
+        { term: "Exclusion", definition: "A group of people you choose not to show an ad to." },
+        { term: "Estimated audience size", definition: "A rough guide in Ads Manager to how many people an audience could reach." },
+        { term: "Direct marketing", definition: "Under Act 843, advertising or marketing material directed to particular individuals." },
+      ],
+      commonMistakes: [
+        "Stacking so many conditions that the audience is tiny and expensive",
+        "Uploading phone numbers of customers who never agreed in writing to marketing",
+        "Showing a hard sell to people who have never heard of the business",
+        "Letting cold and warm ad sets compete for the same people",
+      ],
+      selfCheck: [
+        "What message would you show a cold, a warm and a hot audience?",
+        "What does section 40 of Act 843 require before using a person's details for direct marketing?",
+        "How do exclusions save money?",
+      ],
       practice_task_md: `**Goal:** Define the audiences for your mock campaign.
 
 **Steps:**
@@ -1823,33 +1970,51 @@ Mariama runs ads for a guesthouse in Tamale. Her first ad set targets people in 
             answer_index: 1,
             explanation: "Customer lists must use details shared with consent, following Ghana's Data Protection Act.",
           },
+          {
+            prompt: "According to section 40 of Act 843 as described in the lesson, what is needed before using a person's details for direct marketing?",
+            options: [
+              "Their prior written consent",
+              "A follow on the business's Facebook Page",
+              "Payment of a registration fee by the customer",
+              "Nothing, if the number is already in the owner's phone",
+            ],
+            answer_index: 0,
+            explanation: "Section 40 says a person's details must not be used for direct marketing without their prior written consent.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "social-budgets-and-testing": {
       outcomes: [
         "Choose between daily and lifetime budgets",
-        "Schedule ads and test one thing at a time",
-        "Read test results and write a mock campaign plan",
+        "Plan a budget and schedule in cedis with the owner",
+        "Design a fair test that changes one thing",
+        "Judge results by the objective and real sales",
       ],
       explanation_md: `The week 7 assignment asks you to set up a mock campaign with a defined audience and budget. This lesson completes that picture: how to set a budget and schedule in cedis, and how to test ads so each cedi teaches you something.
 
 ## Daily or lifetime budget
 
 * **Daily budget:** an average amount to spend each day. Platforms may spend a little more on some days and less on others while keeping close to the average over time. Check the platform's current rules in its help pages.
-* **Lifetime budget:** a total for the whole campaign, spread across set dates. Useful for a short promotion with a clear end, such as a Ramadan or Christmas offer.
+* **Lifetime budget:** a total for the whole campaign, spread across set dates. Useful for a short promotion with a clear end, such as a Ramadan or Christmas offer. A lifetime budget needs an end date.
 
-Ads are usually paid to the platform by card. Some businesses use a virtual card linked to mobile money or a bank account. Agree the maximum spend in writing with the owner before anything runs. You are spending someone else's money, so treat it with care.
+## Campaign or ad set budget
+
+You met this choice in the campaign structure lesson. With a **campaign budget**, you set one amount and Meta moves money between ad sets towards the ones getting better results. With **ad set budgets**, each ad set gets its own fixed amount. Ad set budgets give you more control and make a fair comparison easier; a campaign budget lets the system shift money quickly. For a test, fixed ad set budgets are usually clearer.
+
+## Who pays, and how
+
+Ads are usually paid to the platform by card. Some businesses use a virtual card linked to mobile money or a bank account. The payment method belongs to the business, in its own ad account. Agree the maximum spend in writing with the owner before anything runs. You are spending someone else's money, so treat it with care.
 
 ## How much is enough?
 
-There is no fixed right number. Begin with an amount the owner can afford to lose while learning. Run it for several days before judging, because one day of results is too little to trust. Platforms also need some time to learn who responds, so constant changes slow them down.
+There is no fixed right number. Begin with an amount the owner can afford to lose while learning. Run it for several days before judging, because one day of results is too little to trust. Platforms also need time to learn who responds. Meta calls the early period the learning phase: results can jump around, and big edits, such as a new audience or a large budget change, can start the learning again. So plan your changes and make them together, rather than adjusting every day.
 
 ## Scheduling
 
-Think about when customers are ready. A lunchtime chop bar offer works in the morning. An offer for church outfits makes sense in the week before a big service. If you run messaging ads, make sure someone can answer WhatsApp quickly during the hours the ads run.
+Think about when customers are ready. A lunchtime chop bar offer works in the morning. An offer for church outfits makes sense in the week before a big service. If you run messaging ads, make sure someone can answer WhatsApp quickly during the hours the ads run. A conversation started at 9 pm that nobody answers until morning is often a lost sale.
 
 ## Testing one thing at a time
 
@@ -1860,15 +2025,49 @@ A test compares two versions that differ in one thing only, so you know what cau
 * **Audience:** Tamale versus Accra.
 * **Button:** Send message versus Learn more.
 
-Change one thing per test, keep the budget the same for both versions, and run them at the same time. Some ad managers have a built in A/B test feature that splits the audience fairly.
+Change one thing per test, keep the budget the same for both versions, and run them at the same time. Ads Manager has a built in A/B test feature that splits the audience into groups that do not overlap, so each person sees only one version. That makes the comparison fairer than running two ads side by side and hoping.
+
+## How long and how sure?
+
+Decide before you start how long the test runs and which number picks the winner. Stopping a test the moment one version looks ahead is a common mistake: early leads often disappear. A test with very few results, such as three conversations against two, tells you almost nothing. If the numbers are that small, run it longer or call it a draw and test something bolder.
 
 ## Reading the results
 
-Judge by the objective. For a messaging campaign, look at the cost per conversation started, then ask the owner how many conversations became sales. Cheap clicks that never buy are not a win.
+Judge by the objective. For a messaging campaign, look at the cost per conversation started, then ask the owner how many conversations became sales. Cheap clicks that never buy are not a win. Write down what you learned in one sentence, such as "Video brought conversations more cheaply than photo for this audience", so the next campaign starts smarter.
 
-## A worked example
+## Your mock campaign
 
-Issahaku plans a mock campaign for a tailor in Wa ahead of the new school term. Lifetime budget: an amount the owner approved in writing, over ten days. Schedule: all day, because the owner's daughter answers WhatsApp in the evening. Test: the same audience sees either a photo of finished uniforms with the price, or a short video of the tailor measuring a child. After the run, he compares cost per conversation for each and notes how many conversations became orders.`,
+Put everything in one document: objective, ad sets, audiences, ads, budget type and amount, dates, hours, who answers messages, and one test with its winning measure. That document, plus draft screenshots if you built it in Ads Manager without publishing, completes the week 7 assignment.`,
+      workedExample_md: `Issahaku plans a mock campaign for a tailor in Wa, Madam Akosua, ahead of the new school term.
+
+1. **Budget type.** A lifetime budget over ten days, because the offer ends when term starts. The amount is one Madam Akosua approved in writing.
+2. **Budget level.** Two ad sets with equal ad set budgets, so the test is fair.
+3. **Schedule.** All day, because her daughter answers WhatsApp in the evening.
+4. **Test.** He uses Ads Manager's A/B test feature in draft. The same audience is split into two groups: one sees a photo of finished uniforms with the price, the other a short video of the tailor measuring a child.
+5. **Winning measure.** Decided in advance: lowest cost per conversation, checked only after the full ten days.
+6. **Reading results.** In his mock data, the video wins clearly. He also notes how many conversations became orders, using Madam Akosua's order book.
+7. **Lesson learned.** He writes one sentence for next time: "For parents in Wa, a video of the tailor at work started conversations more cheaply than a price photo."
+
+Nothing was published and no money was spent.`,
+      keyTerms: [
+        { term: "Daily budget", definition: "An average amount to spend each day, which can vary a little from day to day." },
+        { term: "Lifetime budget", definition: "A total amount spread across a campaign's set dates." },
+        { term: "Campaign budget", definition: "One budget that the platform shares across ad sets towards better results." },
+        { term: "Learning phase", definition: "Meta's early period when delivery is still settling and results jump around." },
+        { term: "A/B test", definition: "A comparison of two versions that differ in one thing, shown to separate groups." },
+      ],
+      commonMistakes: [
+        "Stopping a test the moment one version looks ahead",
+        "Changing the audience, creative and budget all at once",
+        "Running messaging ads when nobody can reply",
+        "Judging a messaging campaign by cheap clicks instead of conversations and sales",
+        "Starting a campaign before the owner has agreed the maximum spend in writing",
+      ],
+      selfCheck: [
+        "When is a lifetime budget a better choice than a daily budget?",
+        "Why can big edits during the learning phase hurt results?",
+        "What should you decide before a test starts?",
+      ],
       practice_task_md: `**Goal:** Complete the week 7 assignment: a full mock campaign plan.
 
 **Steps:**
@@ -1932,9 +2131,10 @@ Issahaku plans a mock campaign for a tailor in Wa ahead of the new school term. 
 
     "social-storytelling": {
       outcomes: [
-        "Use a simple story shape",
-        "Choose the hero of a story",
-        "Tell true stories with care for language and culture",
+        "Use a four beat story shape for short social posts",
+        "Make a real person the hero of a business story",
+        "Write hooks that earn the first seconds",
+        "Tell stories honestly and with consent",
       ],
       explanation_md: `People scroll past adverts but stop for stories. A story gives them someone to care about, a problem they recognise and a moment of change. Week 8 of the social media specialisation is about content creation through video and storytelling, and this lesson gives you the story shape that every good short video uses.
 
@@ -1947,6 +2147,18 @@ You can tell a story in thirty seconds if you keep to four beats.
 3. **Change.** What the product, service or person does about it.
 4. **Result and next step.** Show the outcome and tell people exactly what to do, such as "Send us a message to order".
 
+## Hooks that work
+
+The hook decides whether anyone sees the rest, so spend real effort on it. Some patterns that work well:
+
+* **Start at the end.** Show the finished wedding outfit first, then go back to the plain fabric.
+* **Ask a question your audience is already asking.** "Why does your shea butter go hard in the harmattan?"
+* **Show movement or a surprise.** A basket being lifted from a dye pot, colour dripping.
+* **Name the viewer.** "Traders in Tamale, this one is for you."
+* **Use a strong line of on screen text.** Many people watch with the sound off, so the words on screen are often the hook.
+
+Avoid starting with a logo, a slow greeting or "Hello everyone, welcome to my page". Write three different hooks for every story and pick the strongest.
+
 ## Who is the hero?
 
 Make the customer or a real person the hero, not the business. A tailor's story is stronger when it is about a nervous bride who now looks magnificent at her wedding, than about the tailor's new sewing machine. The business is the helper that makes the change possible.
@@ -1958,24 +2170,59 @@ Make the customer or a real person the hero, not the business. A tailor's story 
 * **The product's journey:** from shea nuts collected in the bush to a jar on a shelf in Accra.
 * **Community moments:** a school sports day the business supported, a festival, Eid or Christmas preparations.
 
+## Story formats for social
+
+The same four beats fit several formats:
+
+* **Before and after:** the problem, then the result, with the change in between.
+* **Behind the scenes:** a process people rarely see, such as weaving a Bolga basket from straw to finished piece.
+* **Customer voice:** a customer telling their own story in a few sentences, filmed with consent.
+* **A day in the life:** one person's day, ending with the product's role in it.
+* **Series:** one story told across several short posts, such as "From nut to jar, part 1, 2 and 3", which brings people back.
+
+Choose the format that suits the story and the platform. Reels, TikTok and Shorts reward quick movement; a Facebook post can carry a longer written story with photos.
+
 ## Telling the truth
 
 Stories persuade, which is why they must be honest. Do not invent customers, results or testimonials. If you dramatise a scene with actors, make that clear. Do not make health or money claims the business cannot prove. A true small story beats a false big one, and Ghanaian audiences spot fakes quickly.
 
+Consent matters beyond honesty. Explain to anyone you feature where the video will appear and for how long the business will use it. Keep their agreement in writing, even a WhatsApp message. Never film children without a parent's permission.
+
 ## Language and culture
 
-Use the language your audience uses. A story in Dagbani, Frafra, Twi or Pidgin with English captions can reach people that an English only video misses. Respect cultural and religious sensitivities, and avoid humour that mocks any group.
+Use the language your audience uses. A story in Dagbani, Frafra, Twi, Ewe or Pidgin with English captions can reach people that an English only video misses. Respect cultural and religious sensitivities, and avoid humour that mocks any group.
 
-## A worked example
+## From story to script
 
-Amina wants to promote her catering business in Wa. Instead of a list of dishes, she tells a story.
+Your story outline becomes the script in the next lesson. Keep each beat to one sentence now, so you can see the whole story at a glance and test it on a friend: if they can retell it in their own words, it works.`,
+      workedExample_md: `Amina wants to promote her catering business in Wa. Instead of a list of dishes, she builds a story.
 
-* **Hook:** a close up of steaming jollof being scooped into a hundred packs.
-* **Problem:** Salifu, a father, was worried about feeding guests at his daughter's naming ceremony.
-* **Change:** Amina's team planned the menu with him and delivered on time.
-* **Result:** guests eating happily, Salifu smiling, and the words "Planning an event? Message us on WhatsApp."
+1. **Finds the hero.** Salifu, a father who was worried about feeding guests at his daughter's naming ceremony. He agrees to appear, and she keeps his WhatsApp reply as a record.
+2. **Writes three hooks.** "Two hundred guests and one day's notice", a close up of steaming jollof being scooped into a hundred packs, and the question "Planning a naming ceremony?" She picks the jollof shot with the first line as on screen text.
+3. **Problem.** Salifu explains, in Waali with English captions, that he had little time and many guests.
+4. **Change.** Amina's team plans the menu with him and delivers on time.
+5. **Result and next step.** Guests eating happily, Salifu smiling, and the words "Planning an event? Message us on WhatsApp."
+6. **Tests it.** She tells the outline to her cousin, who retells it correctly in one breath.
 
-Salifu agreed to appear. The story is true, short and focused on him.`,
+The story is true, short and focused on Salifu, not on Amina's kitchen.`,
+      keyTerms: [
+        { term: "Hook", definition: "The first one or two seconds that make people stop scrolling." },
+        { term: "Four beat story", definition: "Hook, problem, change, then result and next step." },
+        { term: "Hero", definition: "The person the story is about, usually a customer, not the business." },
+        { term: "Call to action", definition: "The clear next step you ask viewers to take." },
+        { term: "Consent", definition: "A person's agreement to appear, ideally kept in writing." },
+      ],
+      commonMistakes: [
+        "Starting with a logo or a slow greeting instead of a hook",
+        "Making the business the hero instead of a real person",
+        "Featuring customers without asking permission",
+        "Inventing testimonials or results to make a story stronger",
+      ],
+      selfCheck: [
+        "Can you name three hook patterns and give an example of each for your business?",
+        "Who is the hero in your strongest story idea?",
+        "What should you tell someone before filming them for a business video?",
+      ],
       practice_task_md: `**Goal:** Write two short story outlines for your business.
 
 **Steps:**
@@ -2032,22 +2279,34 @@ Salifu agreed to appear. The story is true, short and focused on him.`,
             answer_index: 2,
             explanation: "Inventing customers or testimonials is dishonest and not allowed.",
           },
+          {
+            prompt: "Which opening does the lesson say to avoid?",
+            options: [
+              "Showing the finished result first",
+              "Asking a question the audience already asks",
+              "A strong line of on screen text",
+              "A logo or a slow greeting",
+            ],
+            answer_index: 3,
+            explanation: "The lesson warns against starting with a logo, a slow greeting or a long welcome.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "video-scripting-and-shooting": {
       outcomes: [
-        "Turn a story into a script and shot list",
-        "Shoot well with simple gear",
-        "Get permission and stay safe when filming",
+        "Turn a story outline into a timed 30 second script",
+        "Make a shot list with b roll",
+        "Shoot with good light, steady framing and clear sound",
+        "Get the permissions a shoot needs",
       ],
       explanation_md: `The week 8 assignment asks for a 30 second promo video for a small business. Good short videos are planned before anyone presses record. This lesson shows you how to script and shoot one with the camera you already have, whether on a phone, a tablet or a simple camera.
 
 ## From story to script
 
-Start from your four beat story outline. A 30 second script has room for roughly six to eight short shots. Write it as a table with three columns:
+Start from your four beat story outline. A 30 second script has room for roughly six to eight short shots. Write it in three columns:
 
 * **Time:** for example 0 to 3 seconds.
 * **What we see:** the shot, such as a close up of hands shaping shea butter.
@@ -2055,9 +2314,23 @@ Start from your four beat story outline. A 30 second script has room for roughly
 
 Put the hook in the first two or three seconds. Many people decide almost immediately whether to keep watching, so do not start with a logo or a slow greeting. End with a clear next step on screen and spoken.
 
+## Counting words
+
+People speak roughly two to three words a second in a relaxed voice. A 30 second promo with a hook, a closing call to action and some silent shots leaves room for only about 50 to 70 spoken words. Read your script aloud with a timer. If it runs long, cut words, not pace; rushed speech is hard to follow, especially in a second language.
+
 ## A shot list
 
-From the script, make a list of every shot you need, grouped by location so you can film efficiently. Include a few extra shots, called b roll, such as hands, close ups of the product and the shop sign. They make editing easier.
+From the script, make a list of every shot you need, grouped by location so you can film efficiently. Include a few extra shots, called b roll, such as hands, close ups of the product and the shop sign. They make editing easier and cover any moment where the main shot is weak.
+
+## Shot types
+
+Mix shot sizes to keep the eye interested.
+
+* **Wide shot:** shows the whole place, such as the market stall or the workshop.
+* **Medium shot:** a person from the waist up, good for someone talking.
+* **Close up:** a face, hands or the product, full of detail and emotion.
+
+A simple sequence of wide, medium, close up tells a viewer where they are, who is there and what matters. Keep the camera at eye level for people, and place the subject a little off centre, with space in the direction they look.
 
 ## Shooting well with simple gear
 
@@ -2066,27 +2339,49 @@ From the script, make a list of every shot you need, grouped by location so you 
 * **Sound.** Find a quiet spot away from generators, traffic and fans. Get close to the speaker. A cheap clip on microphone helps a lot if you have one.
 * **Framing.** Shoot vertical for Reels, TikTok and Shorts. Keep important things in the centre, because buttons and captions cover the edges.
 * **Clean lens.** Wipe it before every session.
-* **Several takes.** Record each shot at least twice.
+* **Several takes.** Record each shot at least twice, and hold each shot for a few seconds longer than you need.
+
+## Before you go
+
+Check that the device is charged and has storage space, that you have a power bank if the shoot is long, and that the settings record in good quality. Plan the shoot for the best light, often early morning or late afternoon, and around power cuts if you need the shop lights.
 
 ## Length and platforms
 
-Short vertical videos are common on Instagram Reels, TikTok, Facebook and YouTube Shorts. Each platform sets its own maximum length; YouTube Help, for example, says Shorts can be up to three minutes. A 30 second promo fits everywhere, and short videos use less of your audience's data.
+Short vertical videos are common on Instagram Reels, TikTok, Facebook and YouTube Shorts. Each platform sets its own maximum length and changes it from time to time; at the time of writing, YouTube Help says Shorts can be up to three minutes. A 30 second promo fits everywhere, and short videos use less of your audience's data.
 
 ## Permissions and safety
 
-Get permission from everyone who appears, and from the owner of any private place you film. Do not film children without a parent's consent. Avoid copyrighted music unless the platform provides it for that use.
+Get permission from everyone who appears, and from the owner of any private place you film. Do not film children without a parent's consent. In a busy market, film your subject, not strangers' faces, and stop if someone objects. Avoid copyrighted music unless the platform provides it for that use.`,
+      workedExample_md: `Fuseini scripts and shoots a 30 second promo for a basket weaver in Bolgatanga, Sumaila.
 
-## A worked example
+1. **Hook, 0 to 3 seconds.** A finished basket swinging from a hand, with the text "Handwoven in Bolgatanga".
+2. **Problem and change, 3 to 18 seconds.** Close ups of straw being woven, then Sumaila in a medium shot saying "Every basket takes me two days. I learned from my father."
+3. **Result and next step, 18 to 30 seconds.** A customer, Esi, choosing a basket at the stall and smiling, then the basket on a table with the text and voice "Order on WhatsApp" and the number.
+4. **Word count.** About 25 spoken words, well inside the limit. He reads it aloud with a timer.
+5. **Shot list by place.** Workshop: weaving close ups, Sumaila talking, the dye pots as b roll. Stall: Esi, the basket display, the shop sign.
+6. **Permissions.** Sumaila and Esi agree by WhatsApp message.
+7. **The shoot.** Early morning in the shade outside the workshop, device charged, lens wiped, two takes of each shot, all vertical.
 
-Fuseini scripts a 30 second promo for a smock maker in Bolgatanga.
-
-* 0 to 3 seconds: a smock swirling as the wearer turns, text "Handwoven in Bolgatanga".
-* 3 to 10: close ups of strips being woven on the loom.
-* 10 to 18: the weaver Sumaila talking about how each smock is made.
-* 18 to 25: a customer trying one on and smiling.
-* 25 to 30: the smock on a hanger, text "Order on WhatsApp" and the number.
-
-He films in the morning light outside the workshop, two takes of each shot.`,
+He ends the day with a folder of clips and his best takes marked.`,
+      keyTerms: [
+        { term: "Script", definition: "A timed plan of what viewers see and hear in each shot." },
+        { term: "Shot list", definition: "Every shot you need, grouped by location for efficient filming." },
+        { term: "B roll", definition: "Extra supporting shots, such as hands and product close ups, used in editing." },
+        { term: "Close up", definition: "A tight shot of a face, hands or product that shows detail." },
+        { term: "Vertical video", definition: "Video shot taller than it is wide, used for Reels, TikTok and Shorts." },
+      ],
+      commonMistakes: [
+        "Writing more words than fit in 30 seconds and then speaking too fast",
+        "Filming with a bright window behind the person",
+        "Recording each shot only once, with no spare takes or b roll",
+        "Filming strangers' faces in a market without permission",
+        "Placing text or faces at the edges where platform buttons cover them",
+      ],
+      selfCheck: [
+        "About how many spoken words fit in a 30 second promo?",
+        "What does a wide, medium, close up sequence tell the viewer?",
+        "What would you check before leaving for a shoot?",
+      ],
       practice_task_md: `**Goal:** Script and film the raw clips for a 30 second promo.
 
 **Steps:**
@@ -2150,15 +2445,16 @@ He films in the morning light outside the workshop, two takes of each shot.`,
 
     "video-editing-and-captions": {
       outcomes: [
-        "Edit a promo with free tools",
-        "Explain why captions matter",
-        "Publish a finished promo well",
+        "Edit raw clips into a tight 30 second video",
+        "Add and correct captions and on screen text",
+        "Export and publish in the right shape for each platform",
+        "Use music and sound within the platform's rules",
       ],
       explanation_md: `Raw clips become a promo in the edit. Editing is where you cut out everything slow, put the best moments in order, and add the text and captions that make the video work for people scrolling with the sound off. This lesson finishes the week 8 assignment.
 
 ## Free editing tools
 
-Free editors exist for every device. Examples include CapCut and InShot on phones, Canva's video editor in a browser or app, and the editors built into some phones and computers. Each has the same basic tools: trim, split, arrange clips, add text, add music and export. Pick one and learn it well. Check each tool's terms, because some free plans add a watermark or limit features.
+Free editors exist for every device. Examples include CapCut and InShot on phones, Canva's video editor in a browser or app, and the editors built into some phones and computers. Each has the same basic tools: trim, split, arrange clips, add text, add music and export. Pick one and learn it well. Check each tool's terms, because some free plans add a watermark or limit features. Canva is named in your week 8 resources and works on any device, which helps if you start on a phone and finish on a computer.
 
 ## Editing steps
 
@@ -2170,21 +2466,65 @@ Free editors exist for every device. Examples include CapCut and InShot on phone
 6. **Add music or sound** at a low level under the voice. Use music the platform or editor provides for that use.
 7. **Export** in vertical format at a good quality that is not too large for data.
 
+## Pace and rhythm
+
+Short video feels fast because each shot earns its place. Cut on movement, such as a hand reaching or a basket turning, so one shot flows into the next. Change the shot every few seconds unless someone is speaking. Use simple cuts; flashy transitions between every clip look dated and distract from the story. If music has a clear beat, try placing cuts on the beat.
+
 ## Why captions matter
 
 Many people watch videos with the sound off, in a busy trotro, at work or late at night. Captions also help people with hearing loss and people who read a language more easily than they hear it. Many editors and platforms can create automatic captions. Always check them, because automatic captions often get Ghanaian names, places and local language words wrong. Fix "Bolga" if it has become "bulger".
 
+Make captions easy to read: two short lines at most, high contrast, and placed where they do not cover faces or the platform's buttons. If the speaker uses a local language, add English captions so more people can follow, and check the translation with a fluent speaker.
+
+## The safe zone
+
+Each platform places buttons, the account name and the caption over the edges of a vertical video, especially the right side and the bottom. Keep text, faces and the product in the middle of the frame. Most editors show guides; if yours does not, preview the export on a real post screen before publishing.
+
+## Export settings
+
+Vertical video is usually exported at a 9:16 shape, and 1080 by 1920 pixels is a common, sharp size. Higher settings make larger files that take longer to upload and use more of viewers' data without looking much better on a phone. Export once, watch the whole file, and fix any mistake before posting.
+
+## Music and sound rules
+
+Using a popular song without permission can get a video muted, blocked or removed. Use the music library inside the platform or your editor, and check that it is allowed for business use; some platforms offer a separate library for business accounts. Natural sound, such as the loom or the market, can be just as effective.
+
 ## Publishing well
 
-* **Write a short caption** with the key message and next step, such as "Order your smock on WhatsApp".
+* **Write a short caption** with the key message and next step, such as "Order your basket on WhatsApp".
 * **Choose a clear cover image** so the video looks good in a grid.
 * **Upload natively** to each platform rather than sharing a link from another, so it plays smoothly.
 * **Add a few relevant hashtags** and the location where it helps.
-* **Reply to comments quickly** in the first hours after posting.
+* **Reply to comments quickly** in the first hours after posting.`,
+      workedExample_md: `Fuseini edits his basket promo in a free editor and finishes it in Canva on a library computer.
 
-## A worked example
+1. **First cut.** He imports his best takes in script order. The first cut is 48 seconds.
+2. **Trim.** He trims every clip and removes a slow shot of the workshop door. The video is now 33 seconds.
+3. **Hook check.** He watches the first three seconds alone and moves the swinging basket to the very start.
+4. **Pace.** He cuts from the weaving close up to Sumaila's face as Sumaila looks up, so the shots flow.
+5. **Text and captions.** He adds "Handwoven in Bolgatanga" in the safe centre area, captions Sumaila's words, and corrects "Sumaila", which the automatic captions spelled wrongly.
+6. **Sound.** He uses a track from the editor's library that is allowed for business use, placed low under Sumaila's voice. The final video is 30 seconds.
+7. **Export and publish.** Vertical, 1080 by 1920. After the owner approves, he posts it to Reels and TikTok with a caption ending "Order on WhatsApp", then answers every comment that evening.
 
-Fuseini edits his smock promo in a free phone editor. His first cut is 48 seconds, so he trims every clip and removes a slow shot of the workshop door. He moves the swirling smock to the very start. He adds the text "Handwoven in Bolgatanga", captions Sumaila's words, corrects "Sumaila" which the automatic captions spelled wrongly, and lays soft music under the voice. The final video is 30 seconds. He posts it to Reels and TikTok with a caption ending "Order on WhatsApp", then answers every comment that evening.`,
+The video is now ready for his portfolio.`,
+      keyTerms: [
+        { term: "Trim", definition: "Cutting the start and end of a clip so only the important moment remains." },
+        { term: "Captions", definition: "On screen text of the words spoken in a video." },
+        { term: "Safe zone", definition: "The centre of a vertical frame that platform buttons and text do not cover." },
+        { term: "Aspect ratio", definition: "The shape of a video, such as 9:16 for vertical." },
+        { term: "Native upload", definition: "Uploading a video directly to each platform instead of sharing a link." },
+      ],
+      commonMistakes: [
+        "Publishing automatic captions without checking names and local words",
+        "Using a popular song without permission, so the video is muted or removed",
+        "Placing text at the edges where buttons cover it",
+        "Adding a flashy transition between every clip",
+        "Exporting a huge file that is slow to upload and heavy on viewers' data",
+      ],
+      selfCheck: [
+        "What do you check in the first three seconds of your rough edit?",
+        "Where should text and faces sit in a vertical frame, and why?",
+        "How can you add music without breaking the platform's rules?",
+      ],
       practice_task_md: `**Goal:** Complete the week 8 assignment: a finished 30 second promo video.
 
 **Steps:**
@@ -2242,8 +2582,19 @@ Fuseini edits his smock promo in a free phone editor. His first cut is 48 second
             answer_index: 3,
             explanation: "Choose one free tool, learn it, and check its terms.",
           },
+          {
+            prompt: "Why does the lesson warn against using a popular song in a business video without permission?",
+            options: [
+              "It always makes the file too large to upload",
+              "Platforms can mute, block or remove the video",
+              "Songs cannot be added in free editors",
+              "Captions stop working when music plays",
+            ],
+            answer_index: 1,
+            explanation: "Music used without permission can get a video muted, blocked or removed, so use the platform's library.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
