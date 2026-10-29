@@ -114,7 +114,12 @@ export function splitRow(line: string): string[] {
   let row = line.trim();
   if (row.startsWith("|")) row = row.slice(1);
   if (row.endsWith("|") && !row.endsWith("\\|")) row = row.slice(0, -1);
-  return row.split(/(?<!\\)\|/).map((cell) => cell.replace(/\\\|/g, "|").trim());
+  // No lookbehind: this also runs in the browser (community posts), and
+  // older Safari cannot parse it. Park escaped pipes, split, then restore.
+  return row
+    .replace(/\\\|/g, "\u0000")
+    .split("|")
+    .map((cell) => cell.replace(/\u0000/g, "|").trim());
 }
 
 function delimiterAlign(line: string | undefined): Align[] | null {
