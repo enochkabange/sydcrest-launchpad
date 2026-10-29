@@ -469,7 +469,7 @@ A homepage for a "find" or "buy" keyword should be short and clear: what, where,
 
 ## Pages that work on any device
 
-Most of your visitors in Ghana will arrive on a phone, often on a slow or expensive connection, so check that:
+Many of your visitors will arrive on a phone, often on a slow or expensive connection, so check that:
 
 * text is readable without zooming, and buttons are big enough to tap;
 * the page loads quickly, with compressed images and no autoplaying video;
@@ -516,7 +516,7 @@ The page now tells a visitor and a search engine exactly what it offers.`,
         "What would you check to make sure a page works well on a phone?",
         "Why is a before and after table useful when presenting on page work?",
       ],
-      practice_task_md: `**Goal:** Optimise one page using your keyword map. This covers the week 7 assignment.
+      practice_task_md: `**Goal:** Optimise your homepage and one blog post using your keyword map. This covers the week 7 assignment.
 
 **Steps:**
 1. Take the homepage you drafted in week 4, or a real page of your business. A copy in Google Docs or Slides is fine if there is no live site.
@@ -623,7 +623,7 @@ If a site fails two or more of these, skip it.
 
 ## Anchor text
 
-The clickable words of a link are its **anchor text**. "Hawa's pure shea butter" tells readers and search engines what they will find. "Click here" tells them nothing. When you ask for a link, you can suggest the business name or a plain description, but do not demand exact keywords every time. Many links using the same keyword phrase look unnatural, and Google's spam policies list links with keyword rich anchor text spread across other sites among their examples of link spam.
+The clickable words of a link are its **anchor text**. "Hawa's pure shea butter" tells readers and search engines what they will find. "Click here" tells them nothing. When you ask for a link, you can suggest the business name or a plain description, but do not demand exact keywords every time. Many links using the same keyword phrase look unnatural, and Google's spam policies give articles placed across other sites, all linking the same keyword phrases back to one business, as an example of link spam.
 
 ## Links that break the rules
 
@@ -781,10 +781,10 @@ Customers and search engines check that a business's details match across the we
 
 Reviews feed prominence and help customers decide. Google's help on getting more reviews suggests sharing a review link or QR code with customers, and notes that people need a Google Account to leave one.
 
-* **Ask every happy customer,** with the short link sent on WhatsApp after a sale or a QR code at the counter.
+* **Ask every customer, not only the happy ones,** with the short link sent on WhatsApp after a sale or a QR code at the counter. Google's policies forbid asking only satisfied customers, discouraging bad reviews, or pressuring people to review while they are still in the shop.
 * **Never offer anything in return.** Google's policies prohibit giving free or discounted goods or services for reviews, for changing a review, or for removing a bad one.
 * **Never write fake reviews** or ask staff and family to pose as customers.
-* **Reply to every review,** thanking good ones and calmly offering to fix problems in bad ones. A mix of reviews with thoughtful replies looks more trustworthy than a wall of perfect ones.
+* **Reply thoughtfully,** thanking people by name for good reviews and calmly offering to fix problems in bad ones, rather than pasting the same thank you everywhere. A mix of reviews with thoughtful replies looks more trustworthy than a wall of perfect ones.
 
 ## The website's part
 
@@ -796,7 +796,7 @@ Put the full NAP on the website, usually in the footer and on a contact page, wi
 3. **She updates every place she controls.** The Business Profile, the Facebook page, WhatsApp Business and the website footer.
 4. **She asks two directories to correct their listings,** using the agreed NAP.
 5. **She fixes the profile.** Primary category "Pharmacy", special hours for the Eid holiday, and new photos of the shopfront and counter.
-6. **She sets up honest review requests.** A QR code at the counter and a short WhatsApp message with the review link. No discounts are offered in return.
+6. **She sets up honest review requests.** A QR code at the counter and a short WhatsApp message with the review link. Every customer gets the same request, whether or not they seemed happy, and no discounts are offered in return.
 7. **She replies to every review,** including one complaint about waiting time, offering a phone number to talk it through.
 
 Within weeks the profile is complete, consistent and attracting genuine reviews.`,
@@ -812,7 +812,7 @@ Within weeks the profile is complete, consistent and attracting genuine reviews.
         "Choosing a vague primary category such as \"Store\" instead of an exact one",
         "Forgetting special hours for public holidays and festivals",
         "Leaving old phone numbers on directories and social pages",
-        "Ignoring bad reviews instead of replying calmly",
+        "Sending the review link only to customers who seemed happy",
       ],
       selfCheck: [
         "Which of the three local ranking factors can you not change, and what can you still do about it?",
@@ -858,7 +858,7 @@ Within weeks the profile is complete, consistent and attracting genuine reviews.
             options: [
               "Posting at the same time every day",
               "Using the same name, address and phone number everywhere the business appears",
-              "Having a nap in the afternoon to stay creative",
+              "Keeping the same opening hours on every day of the week",
               "Using the same photo and the same opening hours on every platform where you post",
             ],
             answer_index: 1,
@@ -869,11 +869,11 @@ Within weeks the profile is complete, consistent and attracting genuine reviews.
             options: [
               "Write a few good reviews yourself to get started, then ask friends to add more",
               "Pay customers for five star reviews",
-              "Ask happy customers for honest reviews and reply to every review",
+              "Ask every customer for an honest review and reply thoughtfully",
               "Delete the profile if a bad review appears",
             ],
             answer_index: 2,
-            explanation: "Ask genuine customers, never fake or pay, and reply to every review.",
+            explanation: "Ask all genuine customers, never fake, pay for or filter reviews, and reply thoughtfully.",
           },
           {
             prompt: "What does Google's help say about offering a discount in exchange for a review?",
@@ -914,7 +914,7 @@ Before you add a site to your list, check three things. Is it real and active, w
 
 ## Find the right person
 
-An email to a named person gets more replies than one to a general address. Look for an editor, a membership officer or the person who writes the blog, on the site's about or contact page. Use the contact details the organisation has published for enquiries. Do not guess personal addresses or hunt for private numbers.
+An email to a named person is more likely to reach someone who can say yes than one to a general address. Look for an editor, a membership officer or the person who writes the blog, on the site's about or contact page. Use the contact details the organisation has published for enquiries. Do not guess personal addresses or hunt for private numbers.
 
 ## The shape of a good outreach email
 
@@ -941,7 +941,7 @@ Follow up once, politely, about a week later if there is no answer, and then sto
 
 ## Contact details and the law
 
-Ghana's Data Protection Act, 2012 (Act 843) protects personal data. Section 40 says a person's details must not be used for direct marketing without their prior written consent, and defines direct marketing as advertising or marketing material directed to particular individuals. Section 20 lets a person object to the processing of their data, and then it must stop. In practice for outreach:
+Ghana's Data Protection Act, 2012 (Act 843) protects personal data. Section 40 says a person's details must not be used for direct marketing without their prior written consent, and says direct marketing includes advertising or marketing material communicated, by any means, to particular individuals. Section 20 lets a person object to the processing of their data, and then it must stop. In practice for outreach:
 
 * send one relevant, personal request to a contact address the organisation published for enquiries;
 * never add the people you contact to a newsletter, broadcast list or group;
@@ -953,7 +953,7 @@ This is careful practice, not legal advice. If a business plans regular marketin
 
 1. **She searches** "Nalerigu places to stay", "Northern Region tourism guide" and "Nalerigu church guests".
 2. **She checks each site.** She keeps a regional tourism blog that lists places to stay near the Nalerigu Defence Wall, an NGO that hosts visiting researchers, and a church that publishes a list of places for wedding guests. She skips a directory that charges a fee and has no recent updates.
-3. **She finds named contacts.** The blog's about page names its writer, Adisa.
+3. **She finds named contacts.** The blog's about page names its writer, Fatawu.
 4. **She drafts three emails and the owner approves them.**
 5. **She tracks replies.** The church replies in two days. She follows up with the NGO once, a week later.
 
@@ -961,7 +961,7 @@ Her email to the blog reads:
 
 > Subject: Place to stay near the Nalerigu Defence Wall
 >
-> Hello Adisa, I enjoyed your guide to visiting the Nalerigu Defence Wall. I help Napari Guesthouse, a ten minute walk from the wall, with clean rooms and mobile money payment. Would you consider adding it to your list of places to stay? Details: Napari Guesthouse, opposite the district assembly, Nalerigu, 024 000 0000. Thank you for helping visitors find their way.
+> Hello Fatawu, I enjoyed your guide to visiting the Nalerigu Defence Wall. I help Napari Guesthouse, a ten minute walk from the wall, with clean rooms and mobile money payment. Would you consider adding it to your list of places to stay? Details: Napari Guesthouse, opposite the district assembly, Nalerigu, 024 000 0000. Thank you for helping visitors find their way.
 >
 > Rahinatu
 
@@ -1128,7 +1128,7 @@ A cluster page does not have to be a long article. It can be an FAQ answer, a sh
 4. **He picks two pillars:** "Solar for homes" and "Solar for shops". Both pass the three tests: customers ask about them, the installer has years of experience, and both lead to sales.
 5. **He lists six cluster pages under each pillar,** each mapped to one keyword, including the merged battery page.
 6. **He plans the links.** Every cluster page links to its pillar and to the "Get a quote" page.
-7. **He arranges proof.** The technician, Kwame, will supply photos of real installations and check every fact.
+7. **He arranges proof.** The technician, Iddrisu, will supply photos of real installations and check every fact.
 
 The installer now has a clear list of what to publish and why.`,
       keyTerms: [
@@ -1488,7 +1488,7 @@ Mariama approves the plan, and Issahaku has a portfolio piece that shows his who
           {
             prompt: "What does Google Search Console show?",
             options: [
-              "Your competitors' passwords",
+              "Your competitors' website visitor numbers",
               "How much each competitor spends on ads and which keywords they bid on, by month",
               "Only the number of social media followers",
               "Which searches the site appeared for, how often, and how many people clicked",
@@ -1624,7 +1624,7 @@ Each idea uses a skill from this specialisation.`,
           {
             prompt: "What is the difference between organic and paid social content?",
             options: [
-              "Organic content is about farming; paid content is about money",
+              "Organic content reaches only new people; paid content reaches only followers",
               "Organic content is always video; paid content is always photos",
               "There is no difference",
               "Organic content is posted for free; paid content is an advert the business pays to show to chosen people",
@@ -1717,7 +1717,7 @@ For many Ghanaian small businesses without a website, a campaign that starts con
 
 Going deeper means knowing what lives where, so you can find it quickly and explain it to a client.
 
-* **Campaign settings:** the objective; whether the ads fall into a special category, such as credit, jobs, housing or politics, which Meta requires you to declare and which limits targeting; and whether the budget is set here for the whole campaign.
+* **Campaign settings:** the objective; whether the ads fall into a special ad category, such as financial products and services, employment, housing, or social issues, elections or politics, which Meta requires you to declare and which can limit targeting or add checks, depending on the country; and whether the budget is set here for the whole campaign.
 * **Ad set settings:** where the result should happen, such as a website, an app or a messaging app like WhatsApp; the performance goal, such as more conversations; the audience; the placements; the budget, if not set at campaign level; and the start and end dates.
 * **Ad settings:** the identity the ad runs from, meaning the Facebook Page and Instagram account; the format, such as a single image, a video or a carousel of several cards; the primary text, headline and button; and the destination.
 
@@ -1732,15 +1732,15 @@ Name every layer clearly so anyone can understand it later, for example "Shea Oc
 ## How many of each?
 
 With a small budget, keep the structure small: one campaign, one or two ad sets, and two or three ads in each. Every extra ad set splits the money further, and each one needs enough results for the system to learn.`,
-      workedExample_md: `Salifu runs ads for a phone accessories shop in Bolgatanga. The owner, Mr Asante, wants more WhatsApp orders for power banks before the Christmas season.
+      workedExample_md: `Salifu runs ads for a phone accessories shop in Bolgatanga. The owner, Mr Alhassan, wants more WhatsApp orders for power banks before the Christmas season.
 
 1. **Objective.** Salifu chooses an objective that drives messages, with WhatsApp as the place conversations happen. He checks the label on screen, because names change.
-2. **Special category.** Power banks are not credit, jobs, housing or politics, so no special category applies.
+2. **Special category.** Power banks are not financial products, jobs, housing or politics, so no special category applies.
 3. **Ad sets.** He creates two ad sets, "Bolga All 18 Plus" and "Tamale All 18 Plus", each with its own small daily budget agreed with the owner.
 4. **Placements.** He leaves automatic placements on, then previews each ad in Feed, Stories and Reels.
 5. **Ads.** In each ad set he places two ads: "Photo Price" shows the power bank with its price, and "Video Power Cut" shows it charging a phone during a power cut.
 6. **Names.** The campaign is "Accessories Dec Messages", so the report is easy to read later.
-7. **Draft only.** He saves the whole structure as a draft and sends Mr Asante screenshots to approve before anything is published.
+7. **Draft only.** He saves the whole structure as a draft and sends Mr Alhassan screenshots to approve before anything is published.
 
 Now he can see which town and which ad brings more conversations.`,
       keyTerms: [
@@ -1749,7 +1749,7 @@ Now he can see which town and which ad brings more conversations.`,
         { term: "Ad", definition: "The creative people see: image or video, text, headline and button." },
         { term: "Objective", definition: "The one result a campaign asks the platform to find." },
         { term: "Placement", definition: "A place an ad can appear, such as Feed, Stories or Reels." },
-        { term: "Special ad category", definition: "Ads about credit, jobs, housing or politics, which must be declared and have limited targeting." },
+        { term: "Special ad category", definition: "Ads about financial products, jobs, housing, or social issues, elections or politics, which must be declared and may have limited targeting." },
       ],
       commonMistakes: [
         "Choosing the objective that gives the biggest numbers instead of the one that matches the goal",
@@ -1881,11 +1881,11 @@ You can exclude people too. For example, exclude people who already messaged the
 
 ## Customer lists and the law
 
-Uploading a customer list means using people's phone numbers or emails to show them adverts. Ghana's Data Protection Act, 2012 (Act 843), section 40, says a person's details must not be used for direct marketing without their prior written consent, and it defines direct marketing as advertising or marketing material directed to particular individuals. Section 40 also lets a person tell the business in writing, at any time, to stop. So only upload contacts who agreed in writing to receive marketing, keep a record of that agreement, and remove anyone who asks to stop. If in doubt, use engagement based custom audiences instead, which do not need a list. This is careful practice, not legal advice.
+Uploading a customer list means using people's phone numbers or emails to show them adverts. Ghana's Data Protection Act, 2012 (Act 843), section 40, says a person's details must not be used for direct marketing without their prior written consent, and it says direct marketing includes advertising or marketing material communicated, by any means, to particular individuals. Section 40 also lets a person tell the business in writing, at any time, to stop. So only upload contacts who agreed in writing to receive marketing, keep a record of that agreement, and remove anyone who asks to stop. If in doubt, use engagement based custom audiences instead, which do not need a list. This is careful practice, not legal advice.
 
 ## Targeting fairly
 
-Platforms restrict targeting for sensitive areas such as housing, jobs and credit in some countries, and do not allow ads that discriminate. Always target by genuine relevance to the product.`,
+Platforms restrict targeting for sensitive areas such as housing, jobs and financial products in some countries, and do not allow ads that discriminate. Always target by genuine relevance to the product.`,
       workedExample_md: `Mariama runs ads for her guesthouse in Tamale and plans audiences by stage.
 
 1. **Cold ad set.** People in Accra and Kumasi, broad interests, with the automated audience option turned on. The ad is a short video tour of a room.
@@ -1902,7 +1902,7 @@ The cold ad set finds new interest; the warm and hot ones turn interest into boo
         { term: "Cold, warm, hot", definition: "Stages of how well an audience knows the business, from strangers to near buyers." },
         { term: "Exclusion", definition: "A group of people you choose not to show an ad to." },
         { term: "Estimated audience size", definition: "A rough guide in Ads Manager to how many people an audience could reach." },
-        { term: "Direct marketing", definition: "Under Act 843, advertising or marketing material directed to particular individuals." },
+        { term: "Direct marketing", definition: "Under Act 843, this includes advertising or marketing material communicated, by any means, to particular individuals." },
       ],
       commonMistakes: [
         "Stacking so many conditions that the audience is tiny and expensive",
@@ -2039,14 +2039,14 @@ Judge by the objective. For a messaging campaign, look at the cost per conversat
 ## Your mock campaign
 
 Put everything in one document: objective, ad sets, audiences, ads, budget type and amount, dates, hours, who answers messages, and one test with its winning measure. That document, plus draft screenshots if you built it in Ads Manager without publishing, completes the week 7 assignment.`,
-      workedExample_md: `Issahaku plans a mock campaign for a tailor in Wa, Madam Akosua, ahead of the new school term.
+      workedExample_md: `Issahaku plans a mock campaign for a tailor in Wa, Madam Abiba, ahead of the new school term.
 
-1. **Budget type.** A lifetime budget over ten days, because the offer ends when term starts. The amount is one Madam Akosua approved in writing.
+1. **Budget type.** A lifetime budget over ten days, because the offer ends when term starts. The amount is one Madam Abiba approved in writing.
 2. **Budget level.** Two ad sets with equal ad set budgets, so the test is fair.
-3. **Schedule.** All day, because her daughter answers WhatsApp in the evening.
+3. **Schedule.** From 7 am to 9 pm only, the hours when Madam Abiba or her daughter can answer WhatsApp.
 4. **Test.** He uses Ads Manager's A/B test feature in draft. The same audience is split into two groups: one sees a photo of finished uniforms with the price, the other a short video of the tailor measuring a child.
 5. **Winning measure.** Decided in advance: lowest cost per conversation, checked only after the full ten days.
-6. **Reading results.** In his mock data, the video wins clearly. He also notes how many conversations became orders, using Madam Akosua's order book.
+6. **Reading results.** In his mock data, the video wins clearly. He also notes how many conversations became orders, using Madam Abiba's order book.
 7. **Lesson learned.** He writes one sentence for next time: "For parents in Wa, a video of the tailor at work started conversations more cheaply than a price photo."
 
 Nothing was published and no money was spent.`,
@@ -2185,7 +2185,7 @@ Choose the format that suits the story and the platform. Reels, TikTok and Short
 
 ## Telling the truth
 
-Stories persuade, which is why they must be honest. Do not invent customers, results or testimonials. If you dramatise a scene with actors, make that clear. Do not make health or money claims the business cannot prove. A true small story beats a false big one, and Ghanaian audiences spot fakes quickly.
+Stories persuade, which is why they must be honest. Do not invent customers, results or testimonials. If you dramatise a scene with actors, make that clear. Do not make health or money claims the business cannot prove. A true small story beats a false big one, and people who spot a fake stop trusting the business.
 
 Consent matters beyond honesty. Explain to anyone you feature where the video will appear and for how long the business will use it. Keep their agreement in writing, even a WhatsApp message. Never film children without a parent's permission.
 
@@ -2357,10 +2357,10 @@ Get permission from everyone who appears, and from the owner of any private plac
 
 1. **Hook, 0 to 3 seconds.** A finished basket swinging from a hand, with the text "Handwoven in Bolgatanga".
 2. **Problem and change, 3 to 18 seconds.** Close ups of straw being woven, then Sumaila in a medium shot saying "Every basket takes me two days. I learned from my father."
-3. **Result and next step, 18 to 30 seconds.** A customer, Esi, choosing a basket at the stall and smiling, then the basket on a table with the text and voice "Order on WhatsApp" and the number.
+3. **Result and next step, 18 to 30 seconds.** A customer, Memunatu, choosing a basket at the stall and smiling, then the basket on a table with the text and voice "Order on WhatsApp" and the number.
 4. **Word count.** About 25 spoken words, well inside the limit. He reads it aloud with a timer.
-5. **Shot list by place.** Workshop: weaving close ups, Sumaila talking, the dye pots as b roll. Stall: Esi, the basket display, the shop sign.
-6. **Permissions.** Sumaila and Esi agree by WhatsApp message.
+5. **Shot list by place.** Workshop: weaving close ups, Sumaila talking, the dye pots as b roll. Stall: Memunatu, the basket display, the shop sign.
+6. **Permissions.** Sumaila and Memunatu agree by WhatsApp message.
 7. **The shoot.** Early morning in the shade outside the workshop, device charged, lens wiped, two takes of each shot, all vertical.
 
 He ends the day with a folder of clips and his best takes marked.`,
@@ -2661,7 +2661,7 @@ Count what shows health, not just size: how many members post or reply each week
 1. **Purpose.** "Farmers in the Savannah Region sharing advice for better harvests."
 2. **Rules.** Five short rules pinned at the top, including no selling of other products and no sharing other members' numbers.
 3. **Invitations.** A join link on every receipt and a sign at the counter. Nobody is added without asking.
-4. **Rituals.** Every Monday a planting tip, every Thursday members share a photo of their farm, and once a month an extension officer, Mr Dzifa Agbeko, answers questions live.
+4. **Rituals.** Every Monday a planting tip, every Thursday members share a photo of their farm, and once a month an extension officer, Mr Yakubu Dawuda, answers questions live.
 5. **Messaging.** On WhatsApp Business she sets an away message for evenings, quick replies for prices and delivery days, and labels for "order", "paid" and "delivered".
 6. **Moderation.** When a fake "fertiliser grant" message appears, she removes it within the hour and warns members.
 7. **Health check.** Each month she counts members who posted, questions answered by other members, and buyers who mention the group.
@@ -2967,7 +2967,7 @@ The creator speaks for themselves, but the business is responsible for what it a
 
 ## Honest disclosure
 
-Followers deserve to know when a post is paid or sponsored. Platforms provide tools for this. At the time of writing, Instagram's help pages say its Branded Content Policies require creators to use the paid partnership label to tag the brand they work with. TikTok's help says that when you promote a brand, product or service you must turn on the content disclosure setting, and a post made on behalf of another business is then labelled Paid partnership. Labels can change, so check the current screen. Use these tools, and also say it plainly in the caption. Hidden adverts damage trust and can break platform rules. Product for content counts too: a free jar of shea butter is still payment.
+Followers deserve to know when a post is paid or sponsored. Platforms provide tools for this. At the time of writing, Instagram's help pages say its Branded Content Policies require creators to use the paid partnership label to tag the brand they work with. TikTok's help says that when you promote a brand, product or service you must turn on the commercial content disclosure setting, and a post made on behalf of another business is then labelled Paid partnership. Labels can change, so check the current screen. Use these tools, and also say it plainly in the caption. Hidden adverts damage trust and can break platform rules. Product for content counts too: a free jar of shea butter is still payment.
 
 ## Measuring results
 
@@ -3137,7 +3137,7 @@ Google Ads has advertising policies covering what can be advertised and how. Som
 2. **He compares ads and SEO.** The business's website is new and will take months to rank, so a small search campaign can bring calls while the SEO work grows.
 3. **He checks policy.** Car rental is not a restricted category, and every claim he plans, such as airport pickup, is true.
 4. **He plans the campaign in a sheet** following the seven steps: goal, conversions, settings, keywords, ads, budget and bid strategy, then review.
-5. **He agrees the budget in writing** with the owner, Mr Mensah, who creates the account in the business's name and adds Abdul-Rahman as a user.
+5. **He agrees the budget in writing** with the owner, Mr Mahama, who creates the account in the business's name and adds Abdul-Rahman as a user.
 6. **He launches and watches.** Calls begin to come from travellers who had never heard of the business. He checks the campaign each day for the first week, removes searches that waste money, and logs every change.
 7. **He reports honestly** each month, with no promises about rankings.
 
@@ -3591,12 +3591,12 @@ When you inherit an account, look before you change anything.
 ## Naming
 
 Use clear, consistent names, for example "Search Repairs Tamale" for a campaign and "Laptop Screen" for an ad group. Anyone reading a report should understand it without asking you. A pattern such as type, theme and place for campaigns, and theme for ad groups, keeps things readable as the account grows.`,
-      workedExample_md: `Sumaila inherits a Google Ads account for an electronics repair shop in Wa, owned by Mrs Owusu.
+      workedExample_md: `Sumaila inherits a Google Ads account for an electronics repair shop in Wa, owned by Hajia Safura.
 
 1. **He reads the structure.** One campaign called "Campaign 1" and one ad group with forty keywords covering phones, laptops, TVs and solar lights.
 2. **He checks settings.** Locations are set to all of Ghana with the default location option, the Display Network is on, and ads run all night.
 3. **He checks conversions.** Nothing is tracked, so nobody knows which keywords bring calls.
-4. **He writes findings** and agrees a plan with Mrs Owusu before touching anything.
+4. **He writes findings** and agrees a plan with Hajia Safura before touching anything.
 5. **He rebuilds the structure.** One Search campaign called "Search Repairs Wa", with four ad groups: Phone Repair, Laptop Repair, TV Repair and Solar Lights, each with five to ten closely related keywords and its own ads.
 6. **He fixes settings.** Locations: Wa and nearby towns, physical location only, because the shop only serves people who can visit. Display Network off. Schedule: shop hours.
 7. **He tracks calls from ads as conversions** and logs every change with the date.
@@ -4081,7 +4081,7 @@ Link the landing page actions to conversions: a call from the ad, a form, or a c
       workedExample_md: `Wumpini's laptop repair ad in Tamale used to send people to the shop's home page, which showed TVs and phone cases first.
 
 1. **Message match check.** Search "laptop repair Tamale", ad "Laptop Repair in Tamale, Same Day Screen Fix", page heading "Welcome to Our Shop". The chain breaks at the page.
-2. **New page.** She builds a simple page titled "Laptop Repair in Tamale" with a short list of repairs and starting prices, a photo of the technician, Kofi, at work, opening hours, and the address with a landmark.
+2. **New page.** She builds a simple page titled "Laptop Repair in Tamale" with a short list of repairs and starting prices, a photo of the technician, Baba, at work, opening hours, and the address with a landmark.
 3. **Next step.** Large Call and WhatsApp buttons sit at the top.
 4. **Quick check.** She opens the page on a phone using mobile data and on a laptop. It loads quickly and the buttons are visible at once.
 5. **Assets.** Sitelinks for Prices and Location, callouts for "Mobile Money Accepted" and "Open Saturdays" (not repeating the headline), and a call asset scheduled for shop hours only.
@@ -4189,7 +4189,7 @@ Enquiries become easier to track and more people who click actually get in touch
 
 ## Average daily budget
 
-In Google Ads, each campaign has an **average daily budget**. Google Ads Help explains two important rules:
+In Google Ads, each campaign has an **average daily budget**. You met its limits briefly in the Digital Marketer roadmap; here you use them to plan. Google Ads Help explains two rules that apply to most campaigns:
 
 * On any single day, a campaign can spend up to twice its average daily budget, to take advantage of days with more searches.
 * Over a month, it will not charge more than 30.4 times the average daily budget. That number is roughly the average days in a month.
@@ -4239,14 +4239,14 @@ Owners do not need the jargon. Say what the budget is per month, what the most i
       workedExample_md: `The car rental business in Tamale can afford a certain amount per month for ads.
 
 1. **Daily budget.** Abdul-Rahman divides the monthly amount by 30.4 and rounds down, writing the calculation in his plan.
-2. **Explaining limits.** He messages the owner, Mr Mensah: "Some days may spend up to twice the daily amount when more people search, but the monthly total will not go over the limit we agreed."
+2. **Explaining limits.** He messages the owner, Mr Mahama: "Some days may spend up to twice the daily amount when more people search, but the monthly total will not go over the limit we agreed."
 3. **Sense check.** The daily budget covers a reasonable number of clicks for his two ad groups, so he does not need to cut keywords.
 4. **Starting strategy.** Maximise clicks with a maximum CPC limit, because the campaign has no conversion history yet.
 5. **Tracking first.** He sets up calls from the ad and WhatsApp button clicks as conversions before launch.
 6. **The path.** After several weeks with regular conversions, he plans to test Maximise conversions, and later a Target CPA close to the real cost per enquiry.
 7. **Brand visibility.** He considers Target impression share for searches of the business's own name, but decides to wait until the main campaign is stable.
 
-Every step is written in a short plan that Mr Mensah approves.`,
+Every step is written in a short plan that Mr Mahama approves.`,
       keyTerms: [
         { term: "Average daily budget", definition: "The amount a campaign aims to spend per day on average." },
         { term: "Monthly charging limit", definition: "The most a campaign is charged in a month: 30.4 times the average daily budget." },
@@ -4411,7 +4411,7 @@ Break results down to find patterns.
 4. **Keyword three.** "Solar fridge for shop": 8 clicks, 1 conversion. Too little data to judge yet.
 5. **Impression share.** The campaign lost a large share of impressions to budget, but very little to rank, so the ads are good enough; money runs out by mid afternoon.
 6. **Segments.** Calls come mostly from phones on weekday mornings, and almost none after 6 pm, when the shop is closed.
-7. **Reality check.** The owner, Mrs Atta, confirms four of the six enquiries from keyword one became sales.
+7. **Reality check.** The owner, Mrs Lariba, confirms four of the six enquiries from keyword one became sales.
 
 These are invented numbers for practice. Fuseini now has clear evidence for his recommendations in the next lesson.`,
       keyTerms: [
@@ -4543,7 +4543,7 @@ With Smart Bidding, Google sets bids for each auction using many signals, and mo
 
 ## Optimisation score and recommendations
 
-Google Ads shows an **optimisation score** from 0 to 100 percent, an estimate of how well the account is set to perform, with a list of recommendations such as adding keywords, raising budgets or using broad match. Google's help says applying recommendations raises the score, but you are not required to apply them, and you can dismiss ones that do not fit. The score is not used by Quality Score.
+Google Ads shows an **optimisation score** from 0 to 100 percent, an estimate of how well the account is set to perform, with a list of recommendations such as adding keywords, raising budgets or using broad match. Google's help explains that applying or dismissing a recommendation both update the score, so you can dismiss ones that do not fit the business. A dismissed recommendation can come back later if it becomes relevant again. The score is not used by Quality Score.
 
 Treat each recommendation as a suggestion to test against the business's goal and budget. "Raise your budget" may be right for a campaign limited by budget with a good cost per conversion, and wrong for one that wastes money. A lower score with sound decisions beats a perfect score reached by accepting everything.
 
@@ -4560,7 +4560,7 @@ Keep it to three to five recommendations at a time, with the most valuable first
 ## A safe demo campaign
 
 The week 9 assignment asks you to create a Google Ads account, set up a demo campaign and submit screenshots of the settings. You can build the campaign structure and settings to practise, but make sure nothing goes live and no money is spent: do not add payment details for practice, keep the campaign paused, and stop at the billing step if asked. If the setup will not continue without payment, document your settings in a sheet and screenshots of each screen you completed. Never use someone else's card. Tell your mentor which route you took; a clear settings sheet meets the purpose of the assignment just as well.`,
-      workedExample_md: `From his analysis of the Bolgatanga solar shop campaign, Fuseini prepares recommendations for Mrs Atta.
+      workedExample_md: `From his analysis of the Bolgatanga solar shop campaign, Fuseini prepares recommendations for Mrs Lariba.
 
 1. **Negatives first.** Add "course", "jobs" and "free" as negatives. Why: they cost money and brought no enquiries.
 2. **Pause a weak keyword.** Pause "solar energy", which spent money with no conversions after 90 clicks.
@@ -4570,7 +4570,7 @@ The week 9 assignment asks you to create a Google Ads account, set up a demo cam
 6. **Optimisation score.** One recommendation says to switch every keyword to broad match. He dismisses it for now, because conversion tracking is new.
 7. **Change log and demo.** He logs each change with a date and plans a review in two weeks. His demo campaign is paused, has no payment details, and is documented in a settings sheet with screenshots.
 
-Mrs Atta approves four of the five recommendations straight away.`,
+Mrs Lariba approves four of the five recommendations straight away.`,
       keyTerms: [
         { term: "Optimisation", definition: "The steady work of using data to spend ad money better." },
         { term: "Bid adjustment", definition: "A percentage change to bids for a device, location or time." },
