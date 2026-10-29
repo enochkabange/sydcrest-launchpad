@@ -13,34 +13,76 @@ const content: TrackContent = {
     "seo-content": {
       outcomes: [
         "Describe what the SEO and content specialisation covers",
-        "Explain how search engines decide what to show",
+        "Explain how search engines crawl, index and rank pages",
+        "Name what Google Search Console shows a site owner",
         "Choose the business you will work on",
       ],
       explanation_md: `Search engine optimisation, or SEO, is the work of helping a business appear when people search for what it sells. A paid ad stops the moment the money stops. A well made page can keep bringing visitors for months or years. That is why small businesses, schools, hotels and NGOs in Ghana value someone who can make their website easier to find, and why SEO and content skills appear in many junior marketing job descriptions.
 
 ## What this specialisation covers
 
-You already met the basics of search in the Digital Marketer roadmap. Here you go deeper over three weeks, with three lessons in each.
+You already met the basics of search in the Digital Marketer roadmap. Here you go deeper over three weeks, with three or four lessons in each.
 
-* **Week 7, keywords and pages.** Keyword research with free tools, search intent and keyword mapping, and on page SEO.
-* **Week 8, links and local search.** Backlinks and trust, local SEO, and finding local listings with polite outreach.
-* **Week 9, content strategy.** Content pillars and topic clusters, FAQs with images and video, and a content calendar with a one page strategy.
+* **Week 7, keywords and pages.** Keyword research with free tools, search intent and keyword mapping, and on page SEO. The assignment is to optimise the homepage and blog post you drafted in week 4.
+* **Week 8, links and local search.** Backlinks and trust, local SEO, and finding local listings with polite outreach emails.
+* **Week 9, content strategy.** Content pillars and topic clusters, FAQs with images and video, and a content calendar with a one page strategy you present in Google Slides.
 
 ## How search engines decide
 
 A search engine has three jobs. It **crawls** the web by following links to discover pages. It **indexes** those pages by storing what each one is about. When someone searches, it **ranks** the pages it thinks best answer that search. You cannot pay a search engine to rank higher in the normal results. You can only make pages that are easy to discover, easy to understand and genuinely useful.
 
-Google says plainly that its systems try to reward helpful, reliable content written for people, not content made mainly to attract search visits. Keep that idea at the centre of everything in this specialisation. Every technique you learn is a way to make a useful page easier to find, never a trick to fool the system.
+Each job can fail in its own way, and part of your work is spotting which one. A page nobody links to, not even the site's own menu, may never be crawled. A page that is crawled can still be left out of the index if it is a near copy of another page, if it is blocked by a setting the developer added, or if it offers little of value. A page that is indexed can rank poorly because a better answer exists. When a client says "we are not on Google", ask which of the three is the problem before you change anything.
 
-## A small example
+Two simple files help crawling. A **sitemap** lists the pages a site wants found, and most website builders create one automatically. A **robots.txt** file tells crawlers which parts of a site not to visit. You rarely need to edit either at this level, but you should know they exist so you can ask the developer the right questions.
 
-Mariama runs a guesthouse in Tamale with a simple website. Visitors keep asking her on WhatsApp the same things: how far it is from the airport, whether rooms have air conditioning, and whether she accepts mobile money. Her site has a home page with a photo and a phone number, and little else.
+## Helpful content first
 
-Over three weeks, Mariama's nephew Issahaku researches what travellers search for, rewrites her home page around "guesthouse in Tamale", asks the local tourism association to list her, and writes a clear FAQ page answering the questions guests already ask. Nothing here costs money. Each step makes the site more useful to a traveller, which is exactly what search engines want to show.
+Google says plainly that its systems try to reward helpful, reliable content written for people, not content made mainly to attract search visits. Keep that idea at the centre of everything in this specialisation. Every technique you learn is a way to make a useful page easier to find, never a trick to fool the system. Tricks that once worked, such as hiding keywords in white text or copying other sites, now break Google's spam policies and can push a site out of the results.
+
+## Your measuring tool: Google Search Console
+
+**Google Search Console** is a free tool from Google for people who own or manage a website. Once the owner proves the site is theirs, it shows:
+
+* which searches the site appeared for, how often, and how many people clicked, in the Performance report;
+* which pages are in Google's index and which were left out, with a reason;
+* a URL Inspection tool that checks one page and lets you ask Google to crawl it again after you improve it.
+
+You need the owner's permission to be added as a user. You will use Search Console data in week 9 to measure progress, so ask your business early whether they have it.
+
+## How SEO is judged
+
+SEO takes patience. New or improved pages can take weeks to be crawled again and longer to settle in the rankings. Promise a careful process and honest reports, never "first place on Google", which nobody can guarantee.
 
 ## What you will be able to show
 
-By the end you will have a keyword map, an improved page, a short list of local listing opportunities with outreach emails, and a one page SEO strategy. Together they make a strong portfolio piece and the core of your week 12 capstone if you choose this path.`,
+By the end you will have a keyword map, two optimised pages, a short list of local listing opportunities with outreach emails, and a one page SEO strategy. Together they make a strong portfolio piece and the core of your week 12 capstone if you choose this path.`,
+      workedExample_md: `Mariama runs a guesthouse in Tamale with a simple website. Visitors keep asking her on WhatsApp the same things: how far it is from the airport, whether rooms have air conditioning, and whether she accepts mobile money. Her nephew Issahaku is taking the SEO specialisation and offers to help.
+
+1. **He searches her business name.** The site appears, so it is crawled and indexed. Her Google Business Profile has no photos.
+2. **He searches "guesthouse in Tamale".** Her site is nowhere on the first page. The problem is ranking, not crawling.
+3. **He reads her home page.** It has a photo, a phone number and the word "Welcome". Nothing tells a traveller or a search engine what she offers.
+4. **He asks about Search Console.** Mariama has never set it up, so he notes it as a task for the person who built her site.
+5. **He sketches a three week plan.** Week 7: research what travellers search and rewrite the home page around "guesthouse in Tamale". Week 8: ask the local tourism association to list her. Week 9: write an FAQ page answering the questions guests already ask her on WhatsApp.
+
+Nothing here costs money. Each step makes the site more useful to a traveller, which is exactly what search engines want to show.`,
+      keyTerms: [
+        { term: "Crawling", definition: "A search engine following links to discover pages on the web." },
+        { term: "Indexing", definition: "Storing what each discovered page is about so it can be shown for searches." },
+        { term: "Ranking", definition: "Ordering indexed pages for a search by how well they seem to answer it." },
+        { term: "Sitemap", definition: "A file that lists the pages a site wants search engines to find." },
+        { term: "Google Search Console", definition: "Google's free tool that shows a site owner search appearances, clicks and indexing problems." },
+      ],
+      commonMistakes: [
+        "Promising a client first place on Google, which nobody can guarantee",
+        "Changing page text when the real problem is that the page is not indexed at all",
+        "Choosing a business you cannot contact, so you cannot check facts or get approval",
+        "Treating SEO as tricks instead of making pages genuinely useful",
+      ],
+      selfCheck: [
+        "Can you explain the difference between a page that is not indexed and a page that ranks poorly?",
+        "What three things does Search Console show a site owner?",
+        "Why does SEO take longer to show results than a paid ad?",
+      ],
       practice_task_md: `**Goal:** Choose the business you will work on for the whole specialisation.
 
 **Steps:**
@@ -96,42 +138,100 @@ By the end you will have a keyword map, an improved page, a short list of local 
             answer_index: 1,
             explanation: "He answered the questions visitors were already asking Mariama on WhatsApp.",
           },
+          {
+            prompt: "Which tool does the lesson name for checking which searches a site appeared for and which pages are indexed?",
+            options: [
+              "Google Trends",
+              "Google Search Console",
+              "Google Keyword Planner",
+              "Google Analytics",
+            ],
+            answer_index: 1,
+            explanation: "Search Console shows search appearances, clicks and index status for a site the owner has verified.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "keyword-research": {
       outcomes: [
-        "Explain what a keyword is",
-        "Find keywords with free tools",
+        "Explain head and long tail keywords and common modifiers",
+        "Find keywords with free tools and customers' own words",
+        "Prioritise keywords by relevance, intent and competition",
         "Record a keyword shortlist",
       ],
-      explanation_md: `Every search starts with words. If a business describes itself one way and customers search another way, the business stays invisible. A junior SEO or content marketer is often asked first to find out which words real customers use. You can do this well with free tools and a little patience.
+      explanation_md: `Every search starts with words. If a business describes itself one way and customers search another way, the business stays invisible. A junior SEO or content marketer is often asked first to find out which words real customers use. Week 7 asks you to do exactly this for your business, and you can do it well with free tools and a little patience.
 
 ## What a keyword is
 
-A keyword is any word or phrase someone types or speaks into a search box. "Shea butter" is a short, broad keyword. "Where to buy pure shea butter in Tamale" is a longer, more specific one. Longer phrases are searched less often, but the people typing them usually know exactly what they want, and fewer businesses compete for them. For a small local business, these longer phrases are often the best place to start.
+A keyword is any word or phrase someone types or speaks into a search box. "Shea butter" is a short, broad keyword, often called a **head term**. "Where to buy pure shea butter in Tamale" is a longer, more specific one, often called a **long tail keyword**. Longer phrases are searched less often, but the people typing them usually know exactly what they want, and fewer businesses compete for them. For a small local business, these longer phrases are often the best place to start.
+
+## Modifiers tell you a lot
+
+The extra words around a product name show what the searcher wants.
+
+* **Place words:** "in Tamale", "near me", "Bolga". The person wants something nearby.
+* **Buying words:** price, order, buy, delivery, wholesale. The person is close to buying.
+* **Question words:** how, what, why, can I. The person wants to learn first.
+* **Comparison words:** best, cheap, versus, review. The person is choosing.
+* **Language and spelling variety:** Ghanaians search "kenkey" and "dokon", "Bolga" and "Bolgatanga", "chop bar" and "local restaurant". Collect every version you hear.
 
 ## Free ways to find keywords
 
 * **Search suggestions.** Start typing a phrase into a search engine and read the suggestions that drop down. They come from what people actually search. Try adding letters after your phrase, such as "shea butter a", "shea butter b", to see more.
 * **Related searches and questions.** At the bottom of a results page, and in boxes that list common questions, you will find more phrases people use.
-* **Google Trends.** Compare two or three phrases to see which is searched more and how interest changes through the year, for example in the harmattan or before Christmas. You can set the country to Ghana.
+* **Google Trends.** Compare two or three phrases to see which is searched more and how interest changes through the year, for example in the harmattan or before Christmas. You can set the country to Ghana. Trends shows relative interest, not exact numbers, and very small local phrases may show no data at all.
 * **Your customers.** Read WhatsApp chats, comments and reviews. The exact words customers use are often the best keywords of all.
 * **Competitors.** Look at the page titles and headings of businesses that already appear for your phrases.
+* **Search Console,** if the site already has it, lists the real searches the site appeared for. These are gold, because they are your own customers' words.
 
-Keyword Planner inside Google Ads gives search volume estimates, but it needs a Google Ads account with billing details completed, so this lesson does not depend on it.
+Keyword Planner inside Google Ads gives search volume estimates, but it needs a Google Ads account with billing details completed, so this lesson does not depend on it. Never add payment details just to practise.
+
+## Prioritising without exact numbers
+
+You will not have exact search volumes, and you do not need them. Score each keyword on four questions instead.
+
+1. **Relevance.** Does the business truly offer this? If not, drop it.
+2. **Intent.** Is the searcher ready to buy, still learning, or looking for one business?
+3. **Competition.** Search it. If the first page is full of national sites and big brands, a small business will struggle. If it shows small local sites, you have a chance.
+4. **Business value.** Would a visitor from this search be worth a lot to the business? A wholesale buyer of shea butter is worth more than one jar.
+
+Give each a simple high, medium or low and start with keywords that score high on relevance and value and low on competition.
 
 ## Recording what you find
 
-Keep a simple sheet with columns for the keyword, where you found it, how specific it is (broad or specific), and whether it shows someone ready to buy, still learning, or looking for a particular business. Do not chase exact numbers. Your aim is a shortlist of phrases that real customers use and that the business can honestly answer.
+Keep a simple sheet with columns for the keyword, where you found it, head or long tail, intent, competition and value. Do not chase exact numbers. Your aim is a shortlist of phrases that real customers use and that the business can honestly answer.`,
+      workedExample_md: `Fuseini helps a tailor in Wa called Amina. He wants a keyword shortlist for her week 7 pages.
 
-## A worked example
+1. **Seed phrases.** He writes "tailor in Wa", "kaba and slit" and "school uniform".
+2. **Suggestions.** Typing "tailor in Wa" shows "tailor in Wa for kaba" and "school uniform tailor Wa". Related searches show "smock sewing near me".
+3. **Customers' words.** Amina's WhatsApp messages say "sew my kaba and slit" and "batakari for wedding". He adds both.
+4. **Competition check.** "School uniform tailor Wa" shows map listings and two small local pages, so a small business can compete. "Kaba styles" shows big national fashion sites, so he marks it high competition.
+5. **Scoring.** He rates every phrase high, medium or low for relevance, intent, competition and value.
+6. **Shortlist.** He keeps eight phrases. Three show buying intent, such as "school uniform tailor Wa". Three are questions, such as "how much fabric for kaba and slit". Two are about the batakari, a strong local product.
 
-Fuseini helps a tailor in Wa called Amina. He types "tailor in Wa" and sees suggestions like "tailor in Wa for kaba" and "school uniform tailor Wa". Related searches show "smock sewing near me". He reads Amina's WhatsApp messages and finds customers often write "sew my kaba and slit" and "batakari for wedding".
-
-His shortlist has eight phrases. Three show buying intent, such as "school uniform tailor Wa". Three are questions, such as "how much fabric for kaba and slit". Two are about the batakari, a strong local product. He now knows what Amina's pages should talk about.`,
+He now knows what Amina's pages should talk about, without paying for any tool.`,
+      keyTerms: [
+        { term: "Keyword", definition: "A word or phrase someone types or speaks into a search box." },
+        { term: "Head term", definition: "A short, broad keyword such as \"shea butter\", searched often and highly competitive." },
+        { term: "Long tail keyword", definition: "A longer, specific phrase searched less often but showing clearer intent." },
+        { term: "Modifier", definition: "An extra word such as price, near me or how that shows what the searcher wants." },
+        { term: "Seed phrase", definition: "A starting phrase that describes the business, used to find more keywords." },
+        { term: "Google Trends", definition: "A free Google tool showing relative interest in searches over time and by place." },
+      ],
+      commonMistakes: [
+        "Chasing the biggest head term when a small business cannot compete for it",
+        "Ignoring the words customers actually use in messages and reviews",
+        "Treating Google Trends figures as exact search numbers",
+        "Adding payment details to an ads account just to see keyword volumes",
+        "Keeping keywords for things the business does not offer",
+      ],
+      selfCheck: [
+        "Name three modifiers and what each tells you about a searcher.",
+        "How can you judge competition for a keyword without a paid tool?",
+        "Which four questions help you prioritise keywords?",
+      ],
       practice_task_md: `**Goal:** Build a keyword shortlist of 10 to 15 phrases for your chosen business.
 
 **Steps:**
@@ -188,18 +288,30 @@ His shortlist has eight phrases. Three show buying intent, such as "school unifo
             answer_index: 2,
             explanation: "He read Amina's customer messages, which the lesson says are often the best source of keywords.",
           },
+          {
+            prompt: "You search a keyword and the first page shows only small local business sites. What does the lesson say this suggests?",
+            options: [
+              "The keyword has no searches at all",
+              "A small business has a chance to compete for it",
+              "Only big brands can rank for it, so you should drop it from your list",
+              "The keyword must be paid for with ads",
+            ],
+            answer_index: 1,
+            explanation: "The lesson's competition check says a first page of small local sites means a small business has a chance.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "search-intent": {
       outcomes: [
         "Recognise four common kinds of search intent",
-        "Learn from the search results",
+        "Read the results page to confirm intent",
+        "Spot pages competing for the same keyword",
         "Turn a shortlist into a keyword map",
       ],
-      explanation_md: `Two people can type almost the same words and want very different things. Search engines try hard to work out what each searcher wants, and they show the kind of page that fits. If your page does not match that want, it will struggle no matter how many times it uses the keyword. Matching intent is a core skill employers look for in content and SEO roles.
+      explanation_md: `Two people can type almost the same words and want very different things. Search engines try hard to work out what each searcher wants, and they show the kind of page that fits. If your page does not match that want, it will struggle no matter how many times it uses the keyword. Matching intent is a core skill employers look for in content and SEO roles, and it decides which page you optimise in the week 7 assignment.
 
 ## Four common kinds of intent
 
@@ -212,20 +324,60 @@ His shortlist has eight phrases. Three show buying intent, such as "school unifo
 
 The quickest way to check intent is to search the keyword and look at what already ranks. If the top results are all guides, searchers want to learn. If they are all shop pages or maps, searchers want to buy or visit. Search engines have already studied millions of searches, so the results page shows you what people expect.
 
+Look at more than the blue links. The results page often includes extra features, and each one is a clue:
+
+* **A map with local businesses** means people want somewhere nearby. Local SEO and a Business Profile matter most.
+* **A box of common questions** means people are still learning. A guide or FAQ can earn a place.
+* **Videos near the top** mean people want to be shown, not told. A short video could help.
+* **Shopping results with prices** mean people are ready to buy a product.
+
+## Mixed intent
+
+Some searches carry more than one intent. "Shea butter Tamale" might come from a tourist wanting to buy a jar, a trader looking for wholesale supply, or a student researching the shea industry. When the results page mixes guides, shops and maps, the search has mixed intent. Serve the intent that matters most to the business, usually the buying one, and make sure the page also links to a guide for the learners.
+
 ## Keyword mapping
 
-A keyword map is a simple table that gives every important keyword one home page on the site. Each page should have one main keyword plus a few close variations that share the same intent. Two problems disappear when you do this:
+A keyword map gives every important keyword one home page on the site. Each page should have one main keyword plus a few close variations that share the same intent. Two problems disappear when you do this:
 
-* **Pages competing with each other.** If three pages all try to rank for "school uniforms Wa", none of them is clearly the best answer.
+* **Pages competing with each other.** If three pages all try to rank for "school uniforms Wa", none of them is clearly the best answer. SEO people call this cannibalisation. The fix is to choose the strongest page, make it the home for that keyword, and change or merge the others.
 * **Keywords with no home.** If nobody wants a page for "kaba and slit prices", you discover that the site needs a new page.
 
 Your map has columns for the page (existing or new), the main keyword, supporting keywords, intent, and the one action you want the visitor to take.
 
-## A worked example
+## Mapping an existing site
 
-Fuseini takes his shortlist for Amina the tailor. He searches "how much fabric for kaba and slit" and sees guides and videos, so intent is learn. He searches "school uniform tailor Wa" and sees maps and business listings, so intent is buy or visit.
+When a site already exists, start from what is there. List every page with its current title and what it is really about. Then place your keywords against those pages first, and only create new pages for keywords that fit nowhere. This saves the owner work and keeps any page that already ranks. If an old page already gets visits from search, improve it rather than replacing it, because a brand new page starts from nothing.
 
-His map gives the home page the main keyword "tailor in Wa" with "kaba and slit tailor Wa" as support. A new page, "School uniforms", takes "school uniform tailor Wa". A new guide, "How much fabric do I need for kaba and slit?", answers the learning question and links to the order page. Each page now has one clear job.`,
+## Why this matters for the assignment
+
+The week 7 assignment asks you to optimise a homepage and a blog post. Your map tells you which keyword each one should own. The homepage usually takes the main "find" or "buy" keyword, such as "tailor in Wa". A blog post usually takes a "learn" keyword, such as "how much fabric for kaba and slit", and links to the page where people can order.`,
+      workedExample_md: `Fuseini takes his eight keyword shortlist for Amina the tailor in Wa and turns it into a map.
+
+1. **He checks the results for each keyword.** "How much fabric for kaba and slit" shows guides and videos, so intent is learn. "School uniform tailor Wa" shows a map and business listings, so intent is buy or visit.
+2. **He lists Amina's existing pages.** She has a home page and a contact page. Nothing else.
+3. **He finds cannibalisation.** Both existing pages repeat "tailor in Wa" in their titles. He makes the home page the one home for that keyword and retitles the contact page "Visit or call Amina's Tailoring".
+4. **He maps the home page.** Main keyword "tailor in Wa", supporting "kaba and slit tailor Wa". Action: message on WhatsApp.
+5. **He adds two new pages.** "School uniforms" takes "school uniform tailor Wa". A guide, "How much fabric do I need for kaba and slit?", answers the learning question and links to the order page.
+
+Each page now has one clear job, and Fuseini knows that the guide will be the blog post he optimises for the week 7 assignment.`,
+      keyTerms: [
+        { term: "Search intent", definition: "What a searcher actually wants: to learn, find a place, compare or act." },
+        { term: "Results page", definition: "The page of results a search engine shows, including maps, questions and videos." },
+        { term: "Mixed intent", definition: "A search that different people make for different reasons." },
+        { term: "Keyword map", definition: "A plan that gives each important keyword one home page on the site." },
+        { term: "Cannibalisation", definition: "Several pages on one site competing for the same keyword so none clearly wins." },
+      ],
+      commonMistakes: [
+        "Writing a sales page for a keyword where the results show only guides",
+        "Letting several pages target the same keyword",
+        "Replacing an old page that already gets search visits instead of improving it",
+        "Guessing intent instead of searching the keyword and reading the results",
+      ],
+      selfCheck: [
+        "What does a map at the top of the results tell you about a keyword?",
+        "How would you fix two pages that both target \"school uniforms Wa\"?",
+        "Which keyword should a homepage usually own, and which should a blog post own?",
+      ],
       practice_task_md: `**Goal:** Turn your keyword shortlist into a keyword map.
 
 **Steps:**
@@ -290,8 +442,9 @@ His map gives the home page the main keyword "tailor in Wa" with "kaba and slit 
     "on-page-seo": {
       outcomes: [
         "Name the main parts of a page that affect search",
-        "Write for people first",
-        "Optimise one page from a keyword map",
+        "Write titles, headings and openings for people first",
+        "Check a page for speed, mobile use and trust",
+        "Optimise a homepage and a blog post from a keyword map",
       ],
       explanation_md: `On page SEO means improving the page itself so that people and search engines understand it quickly. It is the part of SEO you control completely, and it is the task in the week 7 assignment: optimising the homepage and blog post you drafted in week 4. Employers often test it by asking a candidate to review a page and suggest changes.
 
@@ -308,19 +461,62 @@ His map gives the home page the main keyword "tailor in Wa" with "kaba and slit 
 
 ## Write for people first
 
-Repeating a keyword again and again makes a page worse to read and can count against it. Use the main keyword in the title, heading and opening, then write naturally. Answer the questions a customer would ask, include prices or how to pay where you can, and make the next step obvious.
+Repeating a keyword again and again makes a page worse to read and can count against it. Use the main keyword in the title, heading and opening, then write naturally, using the supporting keywords from your map where they fit. Answer the questions a customer would ask, include prices or how to pay where you can, and make the next step obvious.
 
-## A worked example
+## Depth that matches the intent
 
-Hawa's shea butter site has a home page titled "Home" with the heading "Welcome!!!". Abdul-Rahman rewrites it using the keyword map.
+A homepage for a "find" or "buy" keyword should be short and clear: what, where, how to order. A blog post for a "learn" keyword should fully answer the question, often with steps, a photo and a link onwards. Compare your page with the pages that rank now. If they answer five questions and yours answers one, add the missing answers in your own words. Never copy their text.
 
-* **Title:** "Pure Shea Butter in Tamale | Hawa's Women's Group"
-* **Heading:** "Pure, handmade shea butter from Tamale"
-* **Opening:** "We make unrefined shea butter by hand in Tamale and deliver across Ghana. Order on WhatsApp and pay with mobile money."
-* **Image alt text:** "Hawa scooping fresh shea butter into a jar"
+## Pages that work on any device
 
-He adds a link to the new "How to store shea butter" guide and shrinks the photos. The page now tells a visitor and a search engine exactly what it offers.`,
-      practice_task_md: `**Goal:** Optimise one page using your keyword map. This covers the week 7 assignment.
+Many of your visitors will arrive on a phone, often on a slow or expensive connection, so check that:
+
+* text is readable without zooming, and buttons are big enough to tap;
+* the page loads quickly, with compressed images and no autoplaying video;
+* nothing important hides behind a pop up;
+* phone numbers and WhatsApp links work with one tap.
+
+Then check it on a laptop too. A page should feel just as clear on a wide screen.
+
+## Trust on the page
+
+Google's guidance on helpful content stresses trust. On a small business page that means a real address or landmark, a working phone number, real photos rather than stock images, prices that are current, and the name of the person who wrote a guide. These help visitors decide, and they are signs of a genuine business.
+
+## Your before and after table
+
+The most useful way to present on page work, to a mentor or a client, is a before and after table for each page: title, meta description, main heading, opening, subheadings, alt text and links, with your reason for each change. It shows your thinking, not just your result, and it lets the owner approve each change before it goes live.`,
+      workedExample_md: `Hawa's shea butter site has a home page titled "Home" with the heading "Welcome!!!". Abdul-Rahman rewrites it using the keyword map, where the home page owns "pure shea butter Tamale".
+
+1. **Title.** Before: "Home". After: "Pure Shea Butter in Tamale | Hawa's Women's Group". The keyword comes first.
+2. **Heading.** Before: "Welcome!!!". After: "Pure, handmade shea butter from Tamale".
+3. **Opening.** After: "We make unrefined shea butter by hand in Tamale and deliver across Ghana. Order on WhatsApp and pay with mobile money."
+4. **Image alt text.** Before: blank. After: "Hawa scooping fresh shea butter into a jar". He also shrinks the photo so it loads fast.
+5. **Internal link.** He adds "Read how to store shea butter in the harmattan", pointing to the guide.
+6. **Trust.** He adds the group's landmark address and a real photo of the members at work.
+7. **Approval.** He puts every change in a before and after table and asks Hawa to approve it.
+
+The page now tells a visitor and a search engine exactly what it offers.`,
+      keyTerms: [
+        { term: "Title element", definition: "The page title in the code, usually shown as the clickable headline in results." },
+        { term: "Meta description", definition: "A short summary of a page that may be used as the snippet in results." },
+        { term: "Alt text", definition: "A written description of an image for people and tools that cannot see it." },
+        { term: "Internal link", definition: "A link from one page to another page on the same website." },
+        { term: "Keyword stuffing", definition: "Repeating a keyword unnaturally, which harms readers and can count against a page." },
+        { term: "Snippet", definition: "The short text shown under the title in search results." },
+      ],
+      commonMistakes: [
+        "Using the same title on every page, or vague titles such as \"Home\"",
+        "Writing \"click here\" instead of link words that describe the destination",
+        "Uploading huge photos that make the page slow on mobile data",
+        "Copying text from a competitor's page instead of answering in your own words",
+        "Changing a live page without the owner's approval",
+      ],
+      selfCheck: [
+        "Which three places should the main keyword appear, naturally?",
+        "What would you check to make sure a page works well on a phone?",
+        "Why is a before and after table useful when presenting on page work?",
+      ],
+      practice_task_md: `**Goal:** Optimise your homepage and one blog post using your keyword map. This covers the week 7 assignment.
 
 **Steps:**
 1. Take the homepage you drafted in week 4, or a real page of your business. A copy in Google Docs or Slides is fine if there is no live site.
@@ -395,7 +591,8 @@ He adds a link to the new "How to store shea butter" guide and shrinks the photo
     backlinks: {
       outcomes: [
         "Explain what a backlink is and why quality beats quantity",
-        "Recognise links that break the rules",
+        "Judge whether a linking site is relevant and trusted",
+        "Recognise links that break Google's spam policies",
         "Find honest ways to earn links",
       ],
       explanation_md: `When another website links to a page, it is a little like a person vouching for it. Search engines use links to discover pages and as one signal of how trusted a page is. Off page SEO, the work that happens away from your own site, is mostly about earning these mentions honestly. It is week 8 of the SEO specialisation and a common topic in SEO job interviews.
@@ -410,9 +607,29 @@ A backlink is a link on someone else's website that points to your site. A link 
 * **Trust.** Links from established, real organisations count for more than links from new, empty sites.
 * **Natural placement.** A link inside a genuine article or listing is better than one buried in a list of hundreds.
 
+One relevant link from the regional farmers' association can do more than fifty links from directories nobody visits.
+
+## Judging a linking site in five minutes
+
+Before you chase a link, look at the site the way a careful visitor would.
+
+1. **Is it real?** Does it have an about page, a contact address and named people?
+2. **Is it active?** Are there recent posts or updates, or was it last touched years ago?
+3. **Is it relevant?** Does it cover the same area, industry or customers as the business?
+4. **Do people use it?** Are there comments, shares or signs that real readers visit?
+5. **Is it clean?** Pages crammed with unrelated links, or adverts for dubious products, are a warning.
+
+If a site fails two or more of these, skip it.
+
+## Anchor text
+
+The clickable words of a link are its **anchor text**. "Hawa's pure shea butter" tells readers and search engines what they will find. "Click here" tells them nothing. When you ask for a link, you can suggest the business name or a plain description, but do not demand exact keywords every time. Many links using the same keyword phrase look unnatural, and Google's spam policies give articles placed across other sites, all linking the same keyword phrases back to one business, as an example of link spam.
+
 ## Links that break the rules
 
 Google's spam policies describe link spam as creating links mainly to manipulate rankings. Buying or selling links for ranking, swapping goods or services for links, or sending a free product in exchange for a write up with a link all count, unless the link is marked as paid. When a link is paid or sponsored, websites should add a label in the link code, rel="sponsored", or rel="nofollow". Comments and forum posts can use rel="ugc", for user generated content. If anyone offers to sell you "100 backlinks for 50 cedis", say no. It wastes money and can harm the site.
+
+The same policies warn against large scale link swaps ("link to me and I will link to you") and links hidden in website footers or templates across many sites. A partner linking to a real supplier is normal. A network of sites all linking to each other to look popular is not.
 
 ## Honest ways to earn links
 
@@ -422,9 +639,38 @@ Google's spam policies describe link spam as creating links mainly to manipulate
 * **Useful content.** A clear guide, such as "How to choose a solar system for a shop in the north", is something others want to share.
 * **Unlinked mentions.** If a site already names the business without a link, politely ask them to add one.
 
-## A worked example
+## Measuring links
 
-Sumaila manages marketing for an agro input shop in Damongo. He lists every organisation that already knows the shop: two farmer cooperatives, a seed supplier, an NGO that runs farmer training, and a radio station that once interviewed the owner. He finds that the NGO's website mentions the shop by name with no link. He writes a short, friendly email asking them to add the shop's address. That one link from a relevant, trusted partner is worth more than any paid list.`,
+You do not need a paid tool to start. Google Search Console has a Links report that shows which sites link to the business. Check it each month, along with a simple search of the business name, to see new mentions and whether your outreach worked.`,
+      workedExample_md: `Sumaila manages marketing for an agro input shop in Damongo. He wants links that a farmer, and a search engine, would trust.
+
+1. **He lists who already knows the shop.** Two farmer cooperatives, a seed supplier, an NGO that runs farmer training, and a radio station that once interviewed the owner.
+2. **He checks each site.** The cooperatives share one active Facebook page but no website. The seed supplier has a partner page. The NGO site is active, with recent training reports.
+3. **He finds an unlinked mention.** The NGO's report names the shop as a training venue but has no link.
+4. **He skips a bad offer.** A stranger on WhatsApp offers "200 backlinks for a small fee". Sumaila checks one of the sites: it lists hundreds of unrelated businesses and has no readers. He says no.
+5. **He writes two short requests.** One to the NGO asking them to add a link with the shop's name as the anchor text, and one to the seed supplier asking to be added to its partner page.
+6. **He checks results.** A month later the Search Console Links report shows the NGO link.
+
+One link from a relevant, trusted partner is worth more than any paid list.`,
+      keyTerms: [
+        { term: "Backlink", definition: "A link on another website that points to your site." },
+        { term: "Off page SEO", definition: "Work done away from your own site, mostly earning links and mentions." },
+        { term: "Anchor text", definition: "The clickable words of a link." },
+        { term: "Link spam", definition: "Links created mainly to manipulate rankings, such as bought or swapped links." },
+        { term: "rel=\"sponsored\"", definition: "A label in a link's code that marks it as paid or sponsored." },
+        { term: "Unlinked mention", definition: "A web page that names the business without linking to it." },
+      ],
+      commonMistakes: [
+        "Buying a bundle of backlinks from sites nobody visits",
+        "Asking every site to use the same exact keyword as anchor text",
+        "Chasing links from sites that have nothing to do with the business",
+        "Forgetting to check whether partners already mention the business without a link",
+      ],
+      selfCheck: [
+        "What five questions help you judge a linking site?",
+        "Why is a link from the regional farmers' association better than fifty directory links?",
+        "How should a paid link be marked in its code?",
+      ],
       practice_task_md: `**Goal:** Make a list of honest link opportunities for your chosen business.
 
 **Steps:**
@@ -480,18 +726,30 @@ Sumaila manages marketing for an agro input shop in Damongo. He lists every orga
             answer_index: 3,
             explanation: "The lesson suggests politely asking sites that already name the business to add a link.",
           },
+          {
+            prompt: "What is anchor text?",
+            options: [
+              "The clickable words of a link",
+              "The address of the page a link points to",
+              "A label that marks a link as paid",
+              "The first sentence on a page",
+            ],
+            answer_index: 0,
+            explanation: "The lesson defines anchor text as the clickable words of a link, such as the business name.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "local-seo": {
       outcomes: [
-        "Explain how local ranking works",
+        "Explain the three main local ranking factors",
+        "Complete a Google Business Profile well",
         "Keep name, address and phone the same everywhere",
-        "Use reviews, activity and the website for local search",
+        "Ask for reviews within Google's rules",
       ],
-      explanation_md: `When someone searches "pharmacy near me" or "chop bar in Bolgatanga", search engines show a map with a few local businesses before the normal results. Local SEO is the work of earning a place there. For a pharmacy, chop bar or shop that serves people nearby, appearing there can matter more than any blog post, which makes local SEO a practical skill to offer clients.
+      explanation_md: `When someone searches "pharmacy near me" or "chop bar in Bolgatanga", search engines show a map with a few local businesses before the normal results. Local SEO is the work of earning a place there. For a pharmacy, chop bar or shop that serves people nearby, appearing there can matter more than any blog post, which makes local SEO a practical skill to offer clients and a core part of week 8.
 
 ## How local ranking works
 
@@ -499,27 +757,68 @@ Google's Business Profile help explains that local results are based mainly on t
 
 * **Relevance.** How well the business profile matches what someone searched. A complete profile with the right category and a clear description helps.
 * **Distance.** How far the business is from the searcher, or from the place named in the search. You cannot change this, but an accurate map pin matters.
-* **Prominence.** How well known the business is, which the same help page also calls popularity. This includes links from other sites, mentions across the web, and the number of reviews and ratings.
+* **Prominence.** How well known the business is. This includes links from other sites, mentions across the web, and the number of reviews and ratings.
 
 Google also states that there is no way to request or pay for a better local ranking. Good local SEO is about being accurate, complete and genuinely well regarded.
 
+## A Business Profile done properly
+
+You met Google Business Profile in the Digital Marketer roadmap. Going deeper means filling every part with care.
+
+* **Verification.** Google asks owners to verify a profile and chooses the method itself. Verified profiles are more likely to appear.
+* **Categories.** Choose one primary category that describes the core business as exactly as possible, such as "Pharmacy" rather than "Store". Add a few extra categories only if they are true.
+* **Address or service area.** A shop customers visit shows its address. A business that travels to customers, such as a plumber or a mobile hairdresser, can show the areas it serves instead.
+* **Hours.** Regular hours, plus special hours for public holidays, Eid and Christmas. Wrong hours lose customers and trust fast.
+* **Attributes and description.** Facts such as wheelchair access or parking, and a plain description of what the business offers.
+* **Photos and videos.** The shopfront from the street, the inside, the products and the team.
+* **Updates.** Posts about new stock, offers and events keep the profile fresh.
+
 ## Name, address and phone, everywhere the same
 
-Customers and search engines check that a business's details match across the web. Pick one exact way to write the business name, address and phone number, often shortened to NAP, and use it everywhere: the website, the Google Business Profile, Facebook, WhatsApp Business, directories and association lists. If one site says "Hawa Shea Ltd" with an old phone number and another says "Hawa's Women's Group" with a new one, people and search engines get confused. Many Ghanaian addresses are informal, so add a landmark ("opposite the Central Mosque") and use the GhanaPostGPS digital address if the business has one.
+Customers and search engines check that a business's details match across the web. Pick one exact way to write the business name, address and phone number, often shortened to NAP, and use it everywhere: the website, the Business Profile, Facebook, WhatsApp Business, directories and association lists. If one site says "Hawa Shea Ltd" with an old phone number and another says "Hawa's Women's Group" with a new one, people and search engines get confused. Many Ghanaian addresses are informal, so add a landmark ("opposite the Central Mosque") and use the GhanaPostGPS digital address if the business has one.
 
-## Reviews and activity
+## Reviews within the rules
 
-* **Ask every happy customer for a review,** with a short link sent on WhatsApp after a sale. Never write fake reviews or pay for them.
-* **Reply to every review,** thanking good ones and calmly offering to fix problems in bad ones.
-* **Keep the profile fresh** with photos, opening hours that match reality, and updates about new stock or events.
+Reviews feed prominence and help customers decide. Google's help on getting more reviews suggests sharing a review link or QR code with customers, and notes that people need a Google Account to leave one.
+
+* **Ask every customer, not only the happy ones,** with the short link sent on WhatsApp after a sale or a QR code at the counter. Google's policies forbid asking only satisfied customers, or discouraging bad reviews. Offering a link or QR code people can use when they choose is fine; pressuring someone to review before they leave the shop is not.
+* **Never offer anything in return.** Google's policies prohibit giving free or discounted goods or services for reviews, for changing a review, or for removing a bad one.
+* **Never write fake reviews** or ask staff and family to pose as customers.
+* **Reply thoughtfully,** thanking people by name for good reviews and calmly offering to fix problems in bad ones, rather than pasting the same thank you everywhere. A mix of reviews with thoughtful replies looks more trustworthy than a wall of perfect ones.
 
 ## The website's part
 
-Put the full NAP on the website, usually in the footer and on a contact page, with a map and opening hours. If the business serves several towns, a separate, genuinely useful page for each town is better than one page listing every town name.
+Put the full NAP on the website, usually in the footer and on a contact page, with a map and opening hours. If the business serves several towns, a separate, genuinely useful page for each town is better than one page listing every town name.`,
+      workedExample_md: `Wumpini helps a pharmacy in Bolgatanga that rarely appears in the map results.
 
-## A worked example
+1. **She searches the pharmacy's name.** She finds four versions of its name online and two phone numbers.
+2. **She agrees one NAP with the owner.** One name, the current phone number, the street address with the landmark "near the Bolga central market", and the GhanaPostGPS address.
+3. **She updates every place she controls.** The Business Profile, the Facebook page, WhatsApp Business and the website footer.
+4. **She asks two directories to correct their listings,** using the agreed NAP.
+5. **She fixes the profile.** Primary category "Pharmacy", special hours for the Eid holiday, and new photos of the shopfront and counter.
+6. **She sets up honest review requests.** A QR code at the counter and a short WhatsApp message with the review link. Every customer gets the same request, whether or not they seemed happy, and no discounts are offered in return.
+7. **She replies to every review,** including one complaint about waiting time, offering a phone number to talk it through.
 
-Wumpini helps a pharmacy in Bolgatanga. She finds four versions of its name online and two phone numbers. She chooses one version, updates the profile, Facebook page and website footer, and asks two directories to correct their listings. She sets the right category, adds photos of the shopfront and a landmark, and starts sending a review link to customers after each visit. Within weeks the profile is complete, consistent and attracting genuine reviews.`,
+Within weeks the profile is complete, consistent and attracting genuine reviews.`,
+      keyTerms: [
+        { term: "Local SEO", definition: "Work that helps a business appear when people nearby search for it." },
+        { term: "Relevance, distance, prominence", definition: "The three main factors Google says decide local results." },
+        { term: "Primary category", definition: "The one Business Profile category that best describes the core business." },
+        { term: "NAP", definition: "Name, address and phone number, which should match everywhere online." },
+        { term: "Service area business", definition: "A business that serves customers at their location and can show its areas instead of an address." },
+      ],
+      commonMistakes: [
+        "Offering a discount or gift in exchange for reviews, which Google's policies prohibit",
+        "Choosing a vague primary category such as \"Store\" instead of an exact one",
+        "Forgetting special hours for public holidays and festivals",
+        "Leaving old phone numbers on directories and social pages",
+        "Sending the review link only to customers who seemed happy",
+      ],
+      selfCheck: [
+        "Which of the three local ranking factors can you not change, and what can you still do about it?",
+        "How would you ask for reviews without breaking Google's rules?",
+        "Why does an informal address need a landmark or digital address?",
+      ],
       practice_task_md: `**Goal:** Run a simple local SEO check for your chosen business.
 
 **Steps:**
@@ -559,7 +858,7 @@ Wumpini helps a pharmacy in Bolgatanga. She finds four versions of its name onli
             options: [
               "Posting at the same time every day",
               "Using the same name, address and phone number everywhere the business appears",
-              "Having a nap in the afternoon to stay creative",
+              "Keeping the same opening hours on every day of the week",
               "Using the same photo and the same opening hours on every platform where you post",
             ],
             answer_index: 1,
@@ -570,22 +869,34 @@ Wumpini helps a pharmacy in Bolgatanga. She finds four versions of its name onli
             options: [
               "Write a few good reviews yourself to get started, then ask friends to add more",
               "Pay customers for five star reviews",
-              "Ask happy customers for honest reviews and reply to every review",
+              "Ask every customer for an honest review and reply thoughtfully",
               "Delete the profile if a bad review appears",
             ],
             answer_index: 2,
-            explanation: "Ask genuine customers, never fake or pay, and reply to every review.",
+            explanation: "Ask all genuine customers, never fake, pay for or filter reviews, and reply thoughtfully.",
+          },
+          {
+            prompt: "What does Google's help say about offering a discount in exchange for a review?",
+            options: [
+              "It is allowed if the discount is small",
+              "It is allowed only for new businesses",
+              "It is prohibited by Google's policies",
+              "It is required to get the first ten reviews",
+            ],
+            answer_index: 2,
+            explanation: "Google prohibits giving free or discounted goods or services for reviews.",
           },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "listings-and-outreach": {
       outcomes: [
-        "Find local listing opportunities",
-        "Write a good outreach email",
-        "Complete three listings and three outreach emails",
+        "Find and check local listing opportunities",
+        "Write a short outreach email people want to answer",
+        "Track outreach and follow up politely",
+        "Handle contact details with care under Ghana's Data Protection Act",
       ],
       explanation_md: `Knowing where a business should be mentioned is only half the job. Someone still has to ask. The week 8 assignment asks you to find three local directories or blogs where your business could be listed and to draft outreach emails. This lesson teaches both parts, and the outreach skill transfers to influencer work, partnerships and sales.
 
@@ -597,7 +908,13 @@ Wumpini helps a pharmacy in Bolgatanga. She finds four versions of its name onli
 * **Local blogs and news.** Sites that write about food, events, travel or business in your region.
 * **Partners.** Suppliers, NGOs and customers that are organisations.
 
+Useful searches combine the business type or town with words like "directory", "association", "members", "where to stay" or "guide", for example "Tamale hotels guide" or "Upper East association members".
+
 Before you add a site to your list, check three things. Is it real and active, with recent updates? Is it relevant to the business or the area? Does it look trustworthy, without pages full of unrelated links or adverts for dubious products? Skip any site that asks for payment just to add a link with no real audience.
+
+## Find the right person
+
+An email to a named person is more likely to reach someone who can say yes than one to a general address. Look for an editor, a membership officer or the person who writes the blog, on the site's about or contact page. Use the contact details the organisation has published for enquiries. Do not guess personal addresses or hunt for private numbers.
 
 ## The shape of a good outreach email
 
@@ -605,25 +922,69 @@ People are busy, so keep it short and about them.
 
 1. **A clear subject line,** such as "Listing request: Amina's Tailoring, Wa".
 2. **Who you are,** in one sentence.
-3. **Why this fits them,** showing you know their site or audience.
+3. **Why this fits them,** showing you know their site or audience. Mention one specific page or post.
 4. **The exact request,** with everything they need: business name, address, phone, website and a two line description.
 5. **A thank you and an easy way to reply.**
 
-Always use the same NAP you agreed in the local SEO lesson. Follow up once, politely, about a week later if there is no answer, and then stop.
+Always use the same NAP you agreed in the local SEO lesson. Aim for under 120 words. Read it aloud before sending: if it sounds like a template, rewrite the middle so it could only have been sent to this one site.
 
-## A worked example
+## What not to do
 
-Rahinatu helps a guesthouse in Nalerigu. She finds a regional tourism blog that lists places to stay near the Nalerigu Defence Wall, an NGO that hosts visiting researchers, and a church that publishes a list of places for wedding guests to stay.
+* Do not send the same email to fifty sites with only the name changed. People can tell.
+* Do not offer money for a link that is not marked as paid. That breaks the spam policies from the last lesson.
+* Do not exaggerate. If the guesthouse has eight rooms, do not call it a hotel.
+* Do not send anything before the business owner has approved it. You speak in their name.
+
+## Following up and tracking
+
+Follow up once, politely, about a week later if there is no answer, and then stop. Keep a simple tracking sheet with the site, the contact, the date sent, the date of the follow up, the reply and the result. When a listing goes live, check that the details are correct and note the link. This sheet becomes evidence of your work for your mentor and portfolio.
+
+## Contact details and the law
+
+Ghana's Data Protection Act, 2012 (Act 843) protects personal data. Section 40 says a person's details must not be used for direct marketing without their prior written consent, and says direct marketing includes advertising or marketing material communicated, by any means, to particular individuals. Section 20 lets a person object to the processing of their data, and then it must stop. In practice for outreach:
+
+* send one relevant, personal request to a contact address the organisation published for enquiries;
+* never add the people you contact to a newsletter, broadcast list or group;
+* if anyone asks you not to contact them again, stop at once and mark it in your sheet;
+* keep your tracking sheet private.
+
+This is careful practice, not legal advice. If a business plans regular marketing messages, it should take proper advice.`,
+      workedExample_md: `Rahinatu helps a guesthouse in Nalerigu complete the week 8 assignment.
+
+1. **She searches** "Nalerigu places to stay", "Northern Region tourism guide" and "Nalerigu church guests".
+2. **She checks each site.** She keeps a regional tourism blog that lists places to stay near the Nalerigu Defence Wall, an NGO that hosts visiting researchers, and a church that publishes a list of places for wedding guests. She skips a directory that charges a fee and has no recent updates.
+3. **She finds named contacts.** The blog's about page names its writer, Fatawu.
+4. **She drafts three emails and the owner approves them.**
+5. **She tracks replies.** The church replies in two days. She follows up with the NGO once, a week later.
 
 Her email to the blog reads:
 
 > Subject: Place to stay near the Nalerigu Defence Wall
 >
-> Hello Adisa, I enjoyed your guide to visiting the Nalerigu Defence Wall. I help Napari Guesthouse, a ten minute walk from the wall, with clean rooms and mobile money payment. Would you consider adding it to your list of places to stay? Details: Napari Guesthouse, opposite the district assembly, Nalerigu, 024 000 0000. Thank you for helping visitors find their way.
+> Hello Fatawu, I enjoyed your guide to visiting the Nalerigu Defence Wall. I help Napari Guesthouse, a ten minute walk from the wall, with clean rooms and mobile money payment. Would you consider adding it to your list of places to stay? Details: Napari Guesthouse, opposite the district assembly, Nalerigu, 024 000 0000. Thank you for helping visitors find their way.
 >
 > Rahinatu
 
 It is short, specific and easy to say yes to.`,
+      keyTerms: [
+        { term: "Outreach", definition: "Contacting other sites or people to ask for a listing, mention or partnership." },
+        { term: "Directory", definition: "A website that lists businesses, often by type or place." },
+        { term: "Follow up", definition: "One polite reminder sent when there is no reply after about a week." },
+        { term: "Tracking sheet", definition: "A record of who you contacted, when, and what happened." },
+        { term: "Act 843", definition: "Ghana's Data Protection Act, 2012, which protects personal data." },
+      ],
+      commonMistakes: [
+        "Sending the same template to many sites with only the name changed",
+        "Following up again and again after one polite reminder",
+        "Adding outreach contacts to a newsletter or broadcast list",
+        "Sending emails before the business owner approves them",
+        "Listing the business on paid directories that nobody visits",
+      ],
+      selfCheck: [
+        "What five parts make up a good outreach email?",
+        "What should you do if someone asks you not to contact them again?",
+        "Which three checks decide whether a listing site is worth adding?",
+      ],
       practice_task_md: `**Goal:** Complete the week 8 assignment: three listing opportunities and three outreach emails.
 
 **Steps:**
@@ -680,16 +1041,28 @@ It is short, specific and easy to say yes to.`,
             answer_index: 1,
             explanation: "The lesson highlights that the email was short, specific and easy to agree to.",
           },
+          {
+            prompt: "Someone you emailed for a listing replies asking you not to contact them again. What does the lesson say to do?",
+            options: [
+              "Send one more email explaining why the listing would help them",
+              "Ask the business owner to call them instead",
+              "Add them to the business newsletter instead",
+              "Stop at once and mark it in your tracking sheet",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says to stop at once and record it, in line with the right to object under Act 843.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "content-pillars": {
       outcomes: [
         "Explain pillars and topic clusters",
-        "Choose content pillars and show experience and trust",
-        "Refresh old content as well as create new",
+        "Choose content pillars that show experience and trust",
+        "Plan internal links between pillar and cluster pages",
+        "Audit existing content and decide what to keep, refresh or merge",
       ],
       explanation_md: `Publishing random posts whenever there is time rarely builds search traffic. Strong sites organise content around a few big topics they know deeply. This is week 9 of the SEO specialisation, advanced content strategy, and it is the thinking content marketers use to plan months of work.
 
@@ -716,17 +1089,66 @@ Good pillars sit where three things meet:
 
 Most small businesses need only two to four pillars. More than that and the work spreads too thin.
 
+## Linking the cluster together
+
+Internal links are what turn separate pages into a cluster.
+
+* The pillar page gives a short summary of each cluster topic and links to the full page.
+* Each cluster page links back to the pillar near the top or bottom, with clear words such as "our full guide to solar for homes".
+* Cluster pages link to each other where it genuinely helps, such as from the battery page to the instalment page.
+* Every page in the cluster links to the page where people can buy, book or ask a question.
+
+Use your keyword map to choose the link words, so each link describes the page it points to.
+
 ## Experience and trust
 
-Google's guidance on helpful content mentions experience, expertise, authoritativeness and trustworthiness, with trust as the most important. In practice for a small Ghanaian business, that means showing real experience: photos of your own installations, the name of the person who wrote the guide and their background, honest prices, and accurate advice. It also means being clear when AI tools helped write something and checking every fact. Content about health, money or safety needs extra care.
+Google's guidance on helpful content mentions experience, expertise, authoritativeness and trustworthiness, with trust as the most important. In practice for a small Ghanaian business, that means showing real experience: photos of your own installations, the name of the person who wrote the guide and their background, honest prices, and accurate advice. It also means being clear when AI tools helped write something and checking every fact. Content about health, money or safety needs extra care. A shea butter seller can explain how the butter is made, but must not claim it cures illnesses.
+
+## Audit before you create
+
+Before planning new pages, look at what the site already has. A simple content audit lists every page with its main topic, the pillar it belongs to, whether it is still accurate, and, if Search Console is set up, how many clicks it got from search. Then decide for each page:
+
+* **Keep** pages that are accurate and useful.
+* **Refresh** pages with old prices, missing questions or broken links.
+* **Merge** two thin pages on the same topic into one stronger page, and point the old address to the new one so visitors are not lost.
+* **Remove** pages that are wrong and cannot be fixed, such as a promotion that ended years ago.
 
 ## Refresh as well as create
 
 Old content does not have to be thrown away. Update prices, add new questions customers ask and fix broken links. A refreshed page that is genuinely improved is often worth more than a new one. Never just change the date to look new.
 
-## A worked example
+## Formats beyond the blog
 
-Zakaria plans content for the Tamale solar installer. His keyword map shows many learning questions about system size, batteries and dust. He picks two pillars: "Solar for homes" and "Solar for shops". Under each he lists six cluster pages, each mapped to one keyword. He notes which installer will provide photos and checks each fact with the technician. The installer now has a clear list of what to publish and why.`,
+A cluster page does not have to be a long article. It can be an FAQ answer, a short how to video embedded on a page with a written summary, a photo guide, or a price list with explanations. The next lesson shows how to make FAQs, images and video work for search, and the lesson after that puts every format into your calendar.`,
+      workedExample_md: `Zakaria plans content for a solar installer in Tamale.
+
+1. **He audits the site.** It has a home page, a contact page and six blog posts. Two posts both cover batteries in a thin way, and one advertises a Christmas promotion from three years ago.
+2. **He decides for each page.** He merges the two battery posts, removes the old promotion, and refreshes a post on panel cleaning with current prices.
+3. **He reads his keyword map.** It shows many learning questions about system size, batteries and dust, and some about paying in instalments.
+4. **He picks two pillars:** "Solar for homes" and "Solar for shops". Both pass the three tests: customers ask about them, the installer has years of experience, and both lead to sales.
+5. **He lists six cluster pages under each pillar,** each mapped to one keyword, including the merged battery page.
+6. **He plans the links.** Every cluster page links to its pillar and to the "Get a quote" page.
+7. **He arranges proof.** The technician, Iddrisu, will supply photos of real installations and check every fact.
+
+The installer now has a clear list of what to publish and why.`,
+      keyTerms: [
+        { term: "Content pillar", definition: "A broad topic central to the business, covered on one main page." },
+        { term: "Topic cluster", definition: "Smaller pages that each answer one question within a pillar and link to it." },
+        { term: "Content audit", definition: "A review of every existing page to decide whether to keep, refresh, merge or remove it." },
+        { term: "Refresh", definition: "Genuinely improving an existing page with current facts, new questions and fixed links." },
+        { term: "Trustworthiness", definition: "The most important quality in Google's helpful content guidance: accurate, honest and safe content." },
+      ],
+      commonMistakes: [
+        "Choosing more pillars than the business has time to write for",
+        "Publishing cluster pages that never link back to the pillar",
+        "Changing only the date on an old page to make it look new",
+        "Making health or money claims the business cannot prove",
+      ],
+      selfCheck: [
+        "What three tests help you choose a content pillar?",
+        "When would you merge two pages instead of refreshing each one?",
+        "How should a cluster page link to the rest of the cluster?",
+      ],
       practice_task_md: `**Goal:** Design two content pillars with clusters for your business.
 
 **Steps:**
@@ -783,18 +1205,30 @@ Zakaria plans content for the Tamale solar installer. His keyword map shows many
             answer_index: 3,
             explanation: "Refresh by genuinely improving content, never by only changing the date.",
           },
+          {
+            prompt: "A site has two thin pages that both cover the same topic. What does the lesson's content audit suggest?",
+            options: [
+              "Keep both, because more pages always bring more visits",
+              "Merge them into one stronger page and point the old address to it",
+              "Change the date on both so they look new",
+              "Delete both and start again with a new topic",
+            ],
+            answer_index: 1,
+            explanation: "The audit advice is to merge thin pages on one topic and redirect the old address so visitors are not lost.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "faqs-and-multimedia": {
       outcomes: [
-        "Write FAQ pages that work",
-        "Prepare images and video for search",
+        "Write FAQ pages from real customer questions",
+        "Prepare images for search with file names and alt text",
+        "Give videos a page, a title, a description and captions",
         "Use multimedia without heavy data",
       ],
-      explanation_md: `Customers ask the same questions again and again: How much? Do you deliver? Can I pay with mobile money? Is it open on Sunday? Each repeated question is a ready made piece of content. Turning those questions into clear answers, supported by images and short videos, is one of the most useful things a content marketer can do for a small business.
+      explanation_md: `Customers ask the same questions again and again: How much? Do you deliver? Can I pay with mobile money? Is it open on Sunday? Each repeated question is a ready made piece of content. Turning those questions into clear answers, supported by images and short videos, is one of the most useful things a content marketer can do for a small business, and the week 9 calendar must cover FAQs and multimedia as well as blogs.
 
 ## FAQ pages that work
 
@@ -806,6 +1240,8 @@ Zakaria plans content for the Tamale solar installer. His keyword map shows many
 
 If a question needs a long answer, give it its own page and link to it from the FAQ. That longer page can become part of a content cluster.
 
+Write FAQs for customers, not for a special search display. Google used to show some FAQ pages with expandable questions in its results, but it has retired that feature. A clear FAQ page still helps visitors, saves the owner time on WhatsApp, and can rank for the questions it answers.
+
 ## Images for search
 
 Search engines cannot see a picture the way people do, so they rely on clues. Google's image guidance points to things you can control:
@@ -815,21 +1251,57 @@ Search engines cannot see a picture the way people do, so they rely on clues. Go
 * Write alt text that describes the image for someone who cannot see it.
 * Use good quality images, but compress them so they load fast on mobile data.
 
+Use your own photos where you can. Real photos of the product, the team and the place build trust in a way stock images cannot, and they support the experience signals from the last lesson.
+
 ## Video for search
 
-Short videos can appear in search results, especially for "how to" questions. Help them be found:
+Short videos can appear in search results, especially for "how to" questions. Google's video guidance gives clear steps you can follow:
 
-* **Give each video its own clear title and description** using the question it answers.
+* **Give each video a page of its own** on the website, where the video is the main thing, with text around it explaining what it shows.
+* **Give it a clear title and description** using the question it answers.
+* **Choose a clear thumbnail,** the still image people see before they press play.
 * **Add captions or a transcript,** which helps viewers watching without sound and gives search engines text to read.
-* **Embed the video on a relevant page** of the website as well as posting it on a video platform, with text around it explaining what it shows.
+* **Post it on a video platform as well,** such as YouTube, where people also search, using the same title and description.
 
 ## Multimedia without heavy data
 
-Many of your customers pay for data by the bundle. Keep videos short, offer a text summary, and avoid pages that load several videos at once. A thirty second clip that answers one question is often more useful than a long one.
+Many of your customers pay for data by the bundle. Keep videos short, offer a text summary, and avoid pages that load several videos at once. A thirty second clip that answers one question is often more useful than a long one. Let visitors choose to press play rather than starting a video automatically.
 
-## A worked example
+## Turning one question into several pieces
 
-Ayishetu runs a small catering business in Wa. She collects ten questions from her WhatsApp chats about menu prices, minimum orders, delivery and payment. She writes an FAQ page with direct answers and a guide called "How to plan food for a naming ceremony", with a photo of a real event and a short video showing how dishes are packed for transport. Customers start sending her the FAQ link instead of asking, and she spends less time repeating herself.`,
+One good customer question can feed your calendar for weeks. "How do I store shea butter in the harmattan?" can become an FAQ answer, a full guide on the website, a 30 second video embedded on that guide, a photo with a caption on social media, and a WhatsApp Status. Each format reaches different people, and each one links back to the guide. Plan these together so you create once and publish many times.
+
+## Accessibility helps everyone
+
+Alt text, captions and clear headings were designed for people with disabilities, including people who use screen readers. They also help people on slow connections where images fail to load, people in noisy places, and search engines. Doing them well is good marketing and good manners.`,
+      workedExample_md: `Ayishetu runs a small catering business in Wa. Her phone buzzes all day with the same questions.
+
+1. **She collects ten real questions** from her WhatsApp chats, such as "What is the minimum order?" and "Do you deliver to Kperisi?"
+2. **She groups them** under Menu and prices, Ordering and Delivery, and writes a direct one or two sentence answer to each.
+3. **She spots a long answer.** "How much food do I need for a naming ceremony?" deserves its own guide, so the FAQ links to it.
+4. **She adds a real photo** to the guide, named "naming-ceremony-food-packs-wa.jpg", with the alt text "Rows of packed jollof and chicken ready for a naming ceremony in Wa".
+5. **She films a 25 second video** showing how dishes are packed for transport, gives it a page with a short written summary, and adds checked captions.
+6. **She reuses the question.** The same video goes on her WhatsApp Status and Facebook page with a link to the guide.
+
+Customers start sending her the FAQ link instead of asking, and she spends less time repeating herself.`,
+      keyTerms: [
+        { term: "FAQ page", definition: "A page of frequently asked questions answered directly and kept current." },
+        { term: "Alt text", definition: "A written description of an image for people and tools that cannot see it." },
+        { term: "Thumbnail", definition: "The still image people see before they press play on a video." },
+        { term: "Transcript", definition: "The full text of what is said in a video or audio clip." },
+        { term: "Repurposing", definition: "Turning one piece of content into several formats for different channels." },
+      ],
+      commonMistakes: [
+        "Writing FAQ questions the business imagines instead of ones customers really ask",
+        "Uploading images named IMG_2041.jpg with no alt text",
+        "Posting a video only on social media with no page or text on the website",
+        "Adding FAQ code hoping for a special search display that Google has retired",
+      ],
+      selfCheck: [
+        "Where would you find the real questions for an FAQ page?",
+        "What four things help a video be found in search?",
+        "How could one customer question become three pieces of content?",
+      ],
       practice_task_md: `**Goal:** Create an FAQ and one multimedia item for your business.
 
 **Steps:**
@@ -893,9 +1365,10 @@ Ayishetu runs a small catering business in Wa. She collects ten questions from h
 
     "seo-strategy-plan": {
       outcomes: [
-        "Build an SEO content calendar",
-        "Measure SEO progress",
-        "Write a one page SEO strategy",
+        "Build an SEO content calendar covering blogs, FAQs and multimedia",
+        "Read the Search Console Performance report",
+        "Choose realistic measures of SEO progress",
+        "Write and present a one page SEO strategy",
       ],
       explanation_md: `A strategy turns a pile of good ideas into a plan someone can approve and follow. The week 9 assignment asks for a one page SEO strategy presented in Google Slides, built on a content calendar that covers blogs, FAQs and multimedia. This is the kind of document a junior SEO or content marketer hands to a manager or client.
 
@@ -914,6 +1387,8 @@ Your calendar lists what will be published, when, by whom, and why. Use a sheet 
 
 Plan around real life. Shea butter guides make sense before the harmattan; school uniform pages before the new term; catering guides before the wedding and festival seasons. Be realistic: one excellent page a fortnight, kept up, beats ten planned pages that never appear.
 
+Balance the formats. A good eight week calendar for a small business might include two or three guides, an FAQ update each month, one or two short videos, and a photo set, all tied to the same pillars. Put off site work in the calendar too: listing requests, follow ups and review requests are tasks with dates and owners.
+
 ## Measuring progress
 
 You cannot control rankings directly, so measure several signals over time.
@@ -921,6 +1396,27 @@ You cannot control rankings directly, so measure several signals over time.
 * **Google Search Console,** a free tool for site owners, shows which searches the site appeared for, how often, and how many people clicked. You need access to the website to set it up.
 * **Analytics,** such as Google Analytics, shows visits and actions on the site.
 * **Business signals:** WhatsApp enquiries that mention finding the business on search, calls from the profile, and direction requests.
+
+## Reading the Performance report
+
+Search Console's Performance report gives four main numbers:
+
+* **Clicks:** how often people clicked through to the site from Google Search.
+* **Impressions:** how often the site appeared in results.
+* **CTR:** clicks divided by impressions.
+* **Average position:** the average ranking of the site's top result.
+
+You can group them by query, page, country, device, search appearance and date. Three patterns are worth looking for:
+
+1. **Queries with many impressions but few clicks.** The page appears but does not tempt people. Improve its title and opening.
+2. **Pages with no impressions at all.** Check whether they are indexed and whether they match any real search.
+3. **New queries you never planned for.** These are ideas for new cluster pages.
+
+Compare the same length of time, such as this month with last month, and report trends rather than single days.
+
+## Choosing your measures
+
+Pick three to five measures that connect to the business goal. For a guesthouse, they might be clicks from Search Console, the number of queries containing "guesthouse", direct booking enquiries, and new reviews. Write a starting figure for each before work begins, so you can show change later. Never promise a number you cannot control, such as a ranking position.
 
 Give SEO time. New pages can take weeks or months to settle, so report trends, not single days.
 
@@ -934,9 +1430,39 @@ Fit your strategy on one slide or page with five parts:
 4. **Off site work.** Listings, links and reviews you will pursue.
 5. **Content and measurement.** Your pillars, how often you will publish, and the signals you will track.
 
-## A worked example
+## Presenting it
 
-Issahaku's strategy for Mariama's Tamale guesthouse reads, in short: Goal, more direct bookings from travellers. Keywords, guesthouse in Tamale and related phrases. On site, a rewritten home page, a rooms page and an FAQ. Off site, three tourism and NGO listings and a review request after each stay. Content, one guide a fortnight on visiting the north, with photos. Measure, Search Console clicks, direct booking enquiries and new reviews, checked monthly.`,
+Practise a two minute talk: the goal, the three most important actions, and how you will measure them. Keep the slide readable, with large text and few words, and keep the calendar and keyword map ready as backup if someone asks for detail.`,
+      workedExample_md: `Issahaku presents his strategy for Mariama's Tamale guesthouse.
+
+1. **Goal.** More direct bookings from travellers, so Mariama relies less on booking sites.
+2. **Audience and keywords.** Business travellers and NGO visitors. Main keywords: "guesthouse in Tamale", "guesthouse near Tamale airport" and related phrases.
+3. **On site work.** A rewritten home page, a new rooms page with prices, and an FAQ.
+4. **Off site work.** Three tourism and NGO listings from his outreach, and a review request sent after each stay.
+5. **Content.** One guide a fortnight on visiting the north, a monthly FAQ update, and one short room tour video, all in an eight week calendar.
+6. **Measurement.** Search Console clicks and impressions, booking enquiries that mention Google, and new reviews, checked monthly. He records the starting figures before any work begins.
+7. **Presentation.** He practises a two minute talk and keeps the calendar open as backup.
+
+Mariama approves the plan, and Issahaku has a portfolio piece that shows his whole three weeks of work.`,
+      keyTerms: [
+        { term: "Content calendar", definition: "A schedule of what will be published, when, by whom and why." },
+        { term: "Impressions", definition: "How often a site appeared in search results." },
+        { term: "CTR", definition: "Clickthrough rate: clicks divided by impressions." },
+        { term: "Average position", definition: "The average ranking of a site's top result for the searches shown." },
+        { term: "Starting figure", definition: "The value of a measure before work begins, used to show change later." },
+      ],
+      commonMistakes: [
+        "Planning far more content than the business can produce",
+        "Promising a ranking position instead of measures you can influence",
+        "Comparing a week of results with a month and calling it a trend",
+        "Forgetting to record starting figures before the work begins",
+        "Filling the strategy slide with small text nobody can read",
+      ],
+      selfCheck: [
+        "What does a query with many impressions but few clicks tell you?",
+        "What five parts make up the one page strategy?",
+        "Which three to five measures would you choose for your business, and why?",
+      ],
       practice_task_md: `**Goal:** Complete the week 9 assignment: a content calendar and a one page SEO strategy.
 
 **Steps:**
@@ -962,7 +1488,7 @@ Issahaku's strategy for Mariama's Tamale guesthouse reads, in short: Goal, more 
           {
             prompt: "What does Google Search Console show?",
             options: [
-              "Your competitors' passwords",
+              "Your competitors' website visitor numbers",
               "How much each competitor spends on ads and which keywords they bid on, by month",
               "Only the number of social media followers",
               "Which searches the site appeared for, how often, and how many people clicked",
@@ -992,8 +1518,19 @@ Issahaku's strategy for Mariama's Tamale guesthouse reads, in short: Goal, more 
             answer_index: 1,
             explanation: "Be realistic and consistent rather than planning more than you can deliver.",
           },
+          {
+            prompt: "In Search Console, a query shows many impressions but very few clicks. What does the lesson suggest?",
+            options: [
+              "Improve the page's title and opening so it tempts more people",
+              "Delete the page because nobody wants it",
+              "Ask Google to remove the query from the report",
+              "Ignore it, because only clicks matter",
+            ],
+            answer_index: 0,
+            explanation: "Many impressions with few clicks means the page appears but does not tempt people, so improve its title and opening.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
@@ -1002,18 +1539,19 @@ Issahaku's strategy for Mariama's Tamale guesthouse reads, in short: Goal, more 
     "social-media-marketing": {
       outcomes: [
         "Describe what the social media specialisation covers",
-        "Explain how organic and paid work together",
-        "Audit a business's social presence",
+        "Explain how organic and paid social work together",
+        "Name the accounts a business needs before it can advertise on Meta",
+        "Practise in an ads manager without spending money",
       ],
       explanation_md: `Many Ghanaian businesses already post on Facebook, Instagram, TikTok and WhatsApp. Far fewer know how to run a paid campaign that reaches the right people, make a video that people watch to the end, or turn followers into a community that buys again and tells friends. Those three skills are what this specialisation teaches, and they appear again and again in social media and digital marketing job descriptions.
 
 ## What this specialisation covers
 
-You already met social platforms, short video and community management in the Digital Marketer roadmap. Here you go deeper over three weeks, with three lessons in each.
+You already met social platforms, short video, social ads and community management in the Digital Marketer roadmap. Here you go deeper over three weeks.
 
-* **Week 7, advanced ad targeting.** How campaigns are built, how to choose and refine audiences, and how to set budgets and test ads.
-* **Week 8, video and storytelling.** Story structure for social media, scripting and shooting a short promo, and editing with captions.
-* **Week 9, community and influencers.** Building a community, finding micro influencers, and pitching and running a collaboration.
+* **Week 7, advanced ad targeting.** How campaigns are built, how to choose and refine audiences, and how to set budgets and test ads. The assignment is a mock Facebook and Instagram campaign with a defined audience and budget.
+* **Week 8, video and storytelling.** Story structure for social media, scripting and shooting a short promo, and editing with captions. The assignment is a 30 second promo video.
+* **Week 9, community and influencers.** Building a community, finding micro influencers, and pitching and running a collaboration. The assignment is two collaboration proposals.
 
 ## Organic and paid working together
 
@@ -1021,17 +1559,56 @@ You already met social platforms, short video and community management in the Di
 
 The best social marketers use both. They post consistently, notice which organic posts people love, and then put money behind those proven posts to reach new people. A community then keeps those new customers close.
 
+## The accounts behind an advert
+
+Before a business can run ads on Facebook and Instagram, several accounts have to be connected. Meta's names for them change from time to time, but the jobs stay the same.
+
+* **A Facebook Page** for the business, which ads run from.
+* **An Instagram professional account,** linked to the Page if ads will run on Instagram.
+* **A business account** in Meta's business tools that holds the Page, the ad accounts and the people who work on them. Meta currently calls this a business portfolio.
+* **An ad account,** where campaigns are built, the currency and time zone are set, and the payment method lives.
+* **A WhatsApp Business number,** if ads will start WhatsApp conversations.
+
+As a freelancer or junior marketer, ask the owner to add you to their business account with the access you need. Never ask for their password, and never run a client's ads from your own ad account. The business should own its accounts, its data and its history.
+
+## Practising without spending
+
+In Ads Manager, a campaign you build stays as a draft until you publish it. That means you can learn the real screens: choose an objective, build an audience, set a budget and write an ad. For practice, never press Publish and never add a payment method. If a screen asks for payment details before you can continue, stop and finish the plan in a document instead. The free Meta Blueprint courses named in your week 7 resources show the same screens with no spending at all.
+
 ## Responsibility comes with the role
 
-When you run a business's social accounts, you handle its reputation, its money and sometimes its customers' personal details. Follow each platform's advertising rules, never make claims the business cannot prove, label paid partnerships honestly, and keep customers' phone numbers and chats private. In Ghana, the Data Protection Act applies to personal data, and some products, such as food, medicines and cosmetics, have advertising rules from the Food and Drugs Authority.
-
-## A small example
-
-Hawa sells shea butter in Tamale and posts photos most days. One video of her women's group at work gets far more shares than anything else. Her niece Rahinatu, who is learning social media marketing, suggests three things. First, put a small budget behind that video to reach women in Tamale and Accra interested in natural skincare. Second, film a short story about one member of the group and how the work supports her family. Third, start a WhatsApp Channel with weekly tips and new stock alerts. Each idea uses a skill from this specialisation.
+When you run a business's social accounts, you handle its reputation, its money and sometimes its customers' personal details. Follow each platform's advertising rules, never make claims the business cannot prove, label paid partnerships honestly, and keep customers' phone numbers and chats private. In Ghana, the Data Protection Act, 2012 (Act 843) applies to personal data, and some products, such as food, medicines and cosmetics, have advertising rules from the Food and Drugs Authority.
 
 ## What you will be able to show
 
-By the end you will have a mock campaign plan with a defined audience and budget, a 30 second promo video, and two collaboration proposals for local micro influencers.`,
+By the end you will have a mock campaign plan with a defined audience and budget, a 30 second promo video, and two collaboration proposals for local micro influencers. Together they show an employer that you can plan, create and partner, not just post.`,
+      workedExample_md: `Hawa sells shea butter in Tamale and posts photos most days. Her niece Rahinatu, who is learning social media marketing, looks at what is working.
+
+1. **She finds the best organic post.** One video of Hawa's women's group at work got far more shares than anything else.
+2. **She checks the accounts.** Hawa has a Facebook Page and an Instagram account, but they are not linked, and nobody has set up a business account or an ad account.
+3. **She asks to be added properly.** Hawa adds Rahinatu to the new business account with permission to build ads, instead of sharing her password.
+4. **She suggests three ideas.** First, put a small budget behind the popular video to reach women in Tamale and Accra interested in natural skincare. Second, film a short story about one member of the group and how the work supports her family. Third, start a WhatsApp Channel with weekly tips and new stock alerts.
+5. **She practises first.** She builds the first idea as a draft in Ads Manager, adds no payment details, and shows Hawa the plan before anything is published.
+
+Each idea uses a skill from this specialisation.`,
+      keyTerms: [
+        { term: "Organic content", definition: "Posts a business shares for free, seen mostly by followers." },
+        { term: "Paid content", definition: "Adverts the business pays a platform to show to people it chooses." },
+        { term: "Ad account", definition: "The account where campaigns are built and the currency and payment method are set." },
+        { term: "Business portfolio", definition: "Meta's current name for the business account that holds Pages, ad accounts and people." },
+        { term: "Draft", definition: "A campaign built in Ads Manager that does not run or spend until it is published." },
+      ],
+      commonMistakes: [
+        "Asking a client for their Facebook password instead of being added with proper access",
+        "Running a client's ads from your own ad account",
+        "Adding a payment method to practise, then forgetting a campaign is live",
+        "Boosting posts at random instead of putting money behind posts that already work",
+      ],
+      selfCheck: [
+        "Which accounts must be connected before a business can advertise on Facebook and Instagram?",
+        "How can you practise in Ads Manager without spending any money?",
+        "Why should the business, not the marketer, own the ad account?",
+      ],
       practice_task_md: `**Goal:** Choose your business and audit its social presence.
 
 **Steps:**
@@ -1047,7 +1624,7 @@ By the end you will have a mock campaign plan with a defined audience and budget
           {
             prompt: "What is the difference between organic and paid social content?",
             options: [
-              "Organic content is about farming; paid content is about money",
+              "Organic content reaches only new people; paid content reaches only followers",
               "Organic content is always video; paid content is always photos",
               "There is no difference",
               "Organic content is posted for free; paid content is an advert the business pays to show to chosen people",
@@ -1088,16 +1665,28 @@ By the end you will have a mock campaign plan with a defined audience and budget
             answer_index: 3,
             explanation: "She suggested boosting the post that had already proved popular.",
           },
+          {
+            prompt: "You want to practise building a campaign in Ads Manager. What does the lesson say?",
+            options: [
+              "Add a payment method so the screens unlock",
+              "Build it as a draft, never press Publish, and add no payment details",
+              "Publish it with a very small budget",
+              "Use the business owner's password to log in",
+            ],
+            answer_index: 1,
+            explanation: "A campaign stays a draft until published, so you can practise there without payment details.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "social-campaign-structure": {
       outcomes: [
-        "Explain campaigns, ad sets and ads",
-        "Choose a campaign objective",
-        "Name and organise a campaign",
+        "Explain the campaign, ad set and ad layers",
+        "Choose an objective that matches the business goal",
+        "Name the main settings at each layer",
+        "Plan and name a campaign structure clearly",
       ],
       explanation_md: `Pressing "Boost" on a post is the quickest way to advertise, but it hides most of the choices that make ads work. Employers want marketers who can build a full campaign in an ads manager, because that is where you control the goal, audience, budget and creative. This lesson explains the structure that Meta's Ads Manager uses for Facebook and Instagram. Other platforms such as TikTok use a very similar shape.
 
@@ -1111,7 +1700,7 @@ A campaign is organised in three layers, from the big decision down to the detai
 
 ## Choosing an objective
 
-At the time of writing, Meta's Business Help Centre lists six objectives. Platforms change their labels from time to time, so always check the current list on screen.
+At the time of writing, Meta's business help pages list six objectives. Platforms change their labels from time to time, so always check the current list on screen.
 
 * **Awareness:** show the ad to as many relevant people as possible and help them remember it.
 * **Traffic:** send people to a destination such as a website, an app or a Facebook Page.
@@ -1120,17 +1709,59 @@ At the time of writing, Meta's Business Help Centre lists six objectives. Platfo
 * **App promotion:** get people to install or use an app.
 * **Sales:** find people likely to buy, usually measured on a website or in a catalogue.
 
-The platform's system shows ads to the people it predicts are most likely to take the action your objective asks for. If you choose Engagement when you really want WhatsApp orders, you will get likes, not orders. Pick the objective that matches the business goal, not the one that produces the biggest numbers.
+The platform's system shows ads to the people it predicts are most likely to take the action your objective asks for. If you choose Engagement for post reactions when you really want WhatsApp orders, you will get likes, not orders. Pick the objective that matches the business goal, not the one that produces the biggest numbers.
 
 For many Ghanaian small businesses without a website, a campaign that starts conversations in WhatsApp is a practical choice, because that is where customers already ask questions and pay with mobile money.
 
+## Settings at each layer
+
+Going deeper means knowing what lives where, so you can find it quickly and explain it to a client.
+
+* **Campaign settings:** the objective; whether the ads fall into a special ad category, such as financial products and services, employment, housing, or social issues, elections or politics, which Meta requires you to declare and which can limit targeting or add checks, depending on the country; and whether the budget is set here for the whole campaign.
+* **Ad set settings:** where the result should happen, such as a website, an app or a messaging app like WhatsApp; the performance goal, such as more conversations; the audience; the placements; the budget, if not set at campaign level; and the start and end dates.
+* **Ad settings:** the identity the ad runs from, meaning the Facebook Page and Instagram account; the format, such as a single image, a video or a carousel of several cards; the primary text, headline and button; and the destination.
+
+## Placements
+
+Placements are the places an ad can appear: Facebook Feed, Instagram Feed, Stories, Reels, Messenger and more. Meta can choose placements automatically, spreading the budget where results look best, or you can pick them yourself. Automatic placements are usually a good start. Choose manually only with a reason, such as a vertical video made only for Stories and Reels. Whichever you choose, preview the ad in each placement, because text and buttons can cover the edges of a vertical frame.
+
 ## Naming and organising
 
-Name every layer clearly so anyone can understand it later, for example "Shea Oct Messages", "Tamale Women 25 to 45", "Video Group At Work". Clear names make reports readable and help you compare results.
+Name every layer clearly so anyone can understand it later, for example "Shea Oct Messages", "Tamale Women 25 to 45", "Video Group At Work". Clear names make reports readable and help you compare results. A simple pattern is business, month and objective for campaigns; place and audience for ad sets; and format and idea for ads.
 
-## A worked example
+## How many of each?
 
-Salifu runs ads for a phone accessories shop in Bolgatanga. The owner wants more WhatsApp orders for power banks before the Christmas season. Salifu chooses an objective that drives messages to WhatsApp. He creates two ad sets, one for Bolgatanga and one for Tamale, each with its own small daily budget. In each ad set he places two ads: a photo of the power bank with its price, and a short video showing it charging a phone during a power cut. Now he can see which town and which ad brings more conversations.`,
+With a small budget, keep the structure small: one campaign, one or two ad sets, and two or three ads in each. Every extra ad set splits the money further, and each one needs enough results for the system to learn.`,
+      workedExample_md: `Salifu runs ads for a phone accessories shop in Bolgatanga. The owner, Mr Alhassan, wants more WhatsApp orders for power banks before the Christmas season.
+
+1. **Objective.** Salifu chooses an objective that drives messages, with WhatsApp as the place conversations happen. He checks the label on screen, because names change.
+2. **Special category.** Power banks are not financial products, jobs, housing or politics, so no special category applies.
+3. **Ad sets.** He creates two ad sets, "Bolga All 18 Plus" and "Tamale All 18 Plus", each with its own small daily budget agreed with the owner.
+4. **Placements.** He leaves automatic placements on, then previews each ad in Feed, Stories and Reels.
+5. **Ads.** In each ad set he places two ads: "Photo Price" shows the power bank with its price, and "Video Power Cut" shows it charging a phone during a power cut.
+6. **Names.** The campaign is "Accessories Dec Messages", so the report is easy to read later.
+7. **Draft only.** He saves the whole structure as a draft and sends Mr Alhassan screenshots to approve before anything is published.
+
+Now he can see which town and which ad brings more conversations.`,
+      keyTerms: [
+        { term: "Campaign", definition: "The top layer, where you choose the objective." },
+        { term: "Ad set", definition: "The middle layer, holding the audience, placements, schedule and usually the budget." },
+        { term: "Ad", definition: "The creative people see: image or video, text, headline and button." },
+        { term: "Objective", definition: "The one result a campaign asks the platform to find." },
+        { term: "Placement", definition: "A place an ad can appear, such as Feed, Stories or Reels." },
+        { term: "Special ad category", definition: "Ads about financial products, jobs, housing, or social issues, elections or politics, which must be declared and may have limited targeting." },
+      ],
+      commonMistakes: [
+        "Choosing the objective that gives the biggest numbers instead of the one that matches the goal",
+        "Splitting a small budget across many ad sets so none can learn",
+        "Leaving names such as \"New campaign\" that make reports unreadable",
+        "Not previewing a vertical ad in every placement before approval",
+      ],
+      selfCheck: [
+        "Which settings belong at the campaign, ad set and ad layers?",
+        "Which objective would you choose for a business that wants WhatsApp orders, and why?",
+        "When would you choose placements manually instead of automatically?",
+      ],
       practice_task_md: `**Goal:** Plan the structure of a mock campaign on paper or in a sheet. No money is spent.
 
 **Steps:**
@@ -1187,16 +1818,28 @@ Salifu runs ads for a phone accessories shop in Bolgatanga. The owner wants more
             answer_index: 2,
             explanation: "Platforms update labels, so always check the current list.",
           },
+          {
+            prompt: "According to the lesson, at which layer do you choose the format, such as a single image, a video or a carousel?",
+            options: [
+              "Campaign",
+              "Ad set",
+              "Business portfolio",
+              "Ad",
+            ],
+            answer_index: 3,
+            explanation: "Format, text, headline, button and destination are all ad level settings.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "audience-targeting": {
       outcomes: [
-        "Compare kinds of audience",
-        "Decide between broad and narrow targeting and use exclusions",
-        "Target fairly",
+        "Describe location, interest, custom and lookalike audiences",
+        "Decide when to keep an audience broad and when to narrow it",
+        "Use exclusions to avoid wasted spend",
+        "Use customer data within Act 843 and the platform's rules",
       ],
       explanation_md: `The same advert can succeed or fail depending on who sees it. A good social media marketer knows how to describe the right people to the platform, and when to let the platform's system find them instead. This is the heart of the week 7 theme, advanced ad targeting.
 
@@ -1207,12 +1850,24 @@ Ad platforms such as Meta and TikTok offer similar building blocks.
 * **Location.** Countries, regions, cities, or an area around a point on the map. You can usually choose people who live there, or people recently there. A chop bar in Tamale only needs people nearby; an online shea butter shop that delivers nationwide can go wider.
 * **Age and language.** Useful when the product truly suits an age group or a language, but avoid narrowing for no reason.
 * **Interests and behaviours.** The platform groups people by the pages, topics and activities they engage with, such as natural skincare, football or small business.
-* **Custom audiences.** People who already know the business: those who engaged with the page or Instagram account, watched a video, messaged the business, or visited the website. Some platforms also let you upload a customer list, but only use contact details people agreed to share for this purpose, and follow Ghana's Data Protection Act.
-* **Lookalike audiences.** The platform finds new people who resemble a custom audience, such as people similar to past buyers.
+* **Custom audiences.** People who already know the business: those who engaged with the page or Instagram account, watched a video, messaged the business, or visited the website. Some platforms also let you upload a customer list.
+* **Lookalike audiences.** The platform finds new people who resemble a custom audience, such as people similar to past buyers. You choose the country and a size: smaller lookalikes match the source more closely, larger ones reach more people.
+
+## Cold, warm and hot
+
+A useful way to plan is by how well people know the business.
+
+* **Cold** audiences have never heard of it. Reach them with broad or lookalike audiences and a strong video or story.
+* **Warm** audiences have engaged, for example by watching most of a video or following the page. Reach them with custom audiences and a clearer offer.
+* **Hot** audiences have messaged, visited the price page or bought before. Reach them with a direct offer and an easy next step.
+
+Each stage gets its own ad set and its own message. Showing a "buy now" ad to people who have never heard of the business rarely works; showing a long brand story to someone who asked for the price yesterday wastes their time.
 
 ## Broad or narrow?
 
 Modern ad systems are good at finding likely buyers when you give them room. Meta, for example, offers an automated audience option where your choices act as suggestions and the system can look beyond them. Its name has changed over time, so check the current screen. Very narrow audiences can make ads expensive and slow to learn.
+
+Ads Manager shows an estimated audience size as you build. Treat it as a rough guide, not a count of real people. If it looks tiny, you have probably stacked too many conditions.
 
 A sensible approach for small budgets:
 
@@ -1220,17 +1875,46 @@ A sensible approach for small budgets:
 * Use custom audiences to reach people again who already showed interest, because they are often the most likely to buy.
 * Narrow only when there is a real reason, such as the product only being sold in one town.
 
-## Exclusions
+## Exclusions and overlap
 
-You can exclude people too. For example, exclude people who already messaged the business this week from an ad asking them to message, so you do not pay to reach them again.
+You can exclude people too. For example, exclude people who already messaged the business this week from an ad asking them to message, so you do not pay to reach them again. Exclusions also stop two of your own ad sets competing for the same people: if one ad set targets warm video viewers, exclude them from the cold ad set.
+
+## Customer lists and the law
+
+Uploading a customer list means using people's phone numbers or emails to show them adverts. Ghana's Data Protection Act, 2012 (Act 843), section 40, says a person's details must not be used for direct marketing without their prior written consent, and it says direct marketing includes advertising or marketing material communicated, by any means, to particular individuals. Section 40 also lets a person tell the business in writing, at any time, to stop. So only upload contacts who agreed in writing to receive marketing, keep a record of that agreement, and remove anyone who asks to stop. If in doubt, use engagement based custom audiences instead, which do not need a list. This is careful practice, not legal advice.
 
 ## Targeting fairly
 
-Platforms restrict targeting for sensitive areas such as housing, jobs and credit in some countries, and do not allow ads that discriminate. Always target by genuine relevance to the product.
+Platforms restrict targeting for sensitive areas such as housing, jobs and financial products in some countries, and do not allow ads that discriminate. Always target by genuine relevance to the product.`,
+      workedExample_md: `Mariama runs ads for her guesthouse in Tamale and plans audiences by stage.
 
-## A worked example
+1. **Cold ad set.** People in Accra and Kumasi, broad interests, with the automated audience option turned on. The ad is a short video tour of a room.
+2. **Warm ad set.** A custom audience of people who watched most of that video in the last month. The ad is a photo with the price per night and a Send message button.
+3. **Hot ad set.** People who messaged the guesthouse but did not book, shown a reminder about weekday rates.
+4. **Exclusions.** She excludes warm video viewers from the cold ad set, so the two ad sets do not compete.
+5. **Customer list.** Mariama has 200 past guests' numbers in her phone, but she never asked them about marketing. She decides not to upload them. Instead, she starts asking new guests at checkout whether they would like offers by WhatsApp, and keeps their written replies.
+6. **Size check.** The estimated audience size for the hot ad set is small, so she gives it only a small share of the budget.
 
-Mariama runs ads for a guesthouse in Tamale. Her first ad set targets people in Accra and Kumasi, broad interests, with the automated audience option turned on, showing a video of a room. Her second ad set is a custom audience of people who watched most of that video in the last month, shown a photo with the price and a Send message button. The first finds new interest; the second turns interest into bookings.`,
+The cold ad set finds new interest; the warm and hot ones turn interest into bookings.`,
+      keyTerms: [
+        { term: "Custom audience", definition: "People who already interacted with the business, or a list it uploads with consent." },
+        { term: "Lookalike audience", definition: "New people the platform finds who resemble a chosen source audience." },
+        { term: "Cold, warm, hot", definition: "Stages of how well an audience knows the business, from strangers to near buyers." },
+        { term: "Exclusion", definition: "A group of people you choose not to show an ad to." },
+        { term: "Estimated audience size", definition: "A rough guide in Ads Manager to how many people an audience could reach." },
+        { term: "Direct marketing", definition: "Under Act 843, this includes advertising or marketing material communicated, by any means, to particular individuals." },
+      ],
+      commonMistakes: [
+        "Stacking so many conditions that the audience is tiny and expensive",
+        "Uploading phone numbers of customers who never agreed in writing to marketing",
+        "Showing a hard sell to people who have never heard of the business",
+        "Letting cold and warm ad sets compete for the same people",
+      ],
+      selfCheck: [
+        "What message would you show a cold, a warm and a hot audience?",
+        "What does section 40 of Act 843 require before using a person's details for direct marketing?",
+        "How do exclusions save money?",
+      ],
       practice_task_md: `**Goal:** Define the audiences for your mock campaign.
 
 **Steps:**
@@ -1280,40 +1964,58 @@ Mariama runs ads for a guesthouse in Tamale. Her first ad set targets people in 
             prompt: "When uploading a customer list, what rule does the lesson stress?",
             options: [
               "Use any numbers you can find online",
-              "Only use contact details people agreed to share for this purpose, and follow the Data Protection Act",
+              "Only upload contacts who gave prior written consent to marketing, and remove anyone who asks to stop",
               "Buy lists from other businesses",
               "Upload every number in your phone",
             ],
             answer_index: 1,
-            explanation: "Customer lists must use details shared with consent, following Ghana's Data Protection Act.",
+            explanation: "Section 40 of Act 843 requires prior written consent for direct marketing and lets people ask the business to stop.",
+          },
+          {
+            prompt: "According to section 40 of Act 843 as described in the lesson, what is needed before using a person's details for direct marketing?",
+            options: [
+              "Their prior written consent",
+              "A follow on the business's Facebook Page",
+              "Payment of a registration fee by the customer",
+              "Nothing, if the number is already in the owner's phone",
+            ],
+            answer_index: 0,
+            explanation: "Section 40 says a person's details must not be used for direct marketing without their prior written consent.",
           },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "social-budgets-and-testing": {
       outcomes: [
         "Choose between daily and lifetime budgets",
-        "Schedule ads and test one thing at a time",
-        "Read test results and write a mock campaign plan",
+        "Plan a budget and schedule in cedis with the owner",
+        "Design a fair test that changes one thing",
+        "Judge results by the objective and real sales",
       ],
       explanation_md: `The week 7 assignment asks you to set up a mock campaign with a defined audience and budget. This lesson completes that picture: how to set a budget and schedule in cedis, and how to test ads so each cedi teaches you something.
 
 ## Daily or lifetime budget
 
 * **Daily budget:** an average amount to spend each day. Platforms may spend a little more on some days and less on others while keeping close to the average over time. Check the platform's current rules in its help pages.
-* **Lifetime budget:** a total for the whole campaign, spread across set dates. Useful for a short promotion with a clear end, such as a Ramadan or Christmas offer.
+* **Lifetime budget:** a total for the whole campaign, spread across set dates. Useful for a short promotion with a clear end, such as a Ramadan or Christmas offer. A lifetime budget needs an end date.
 
-Ads are usually paid to the platform by card. Some businesses use a virtual card linked to mobile money or a bank account. Agree the maximum spend in writing with the owner before anything runs. You are spending someone else's money, so treat it with care.
+## Campaign or ad set budget
+
+You met this choice in the campaign structure lesson. With a **campaign budget**, you set one amount and Meta moves money between ad sets towards the ones getting better results. With **ad set budgets**, each ad set gets its own fixed amount. Ad set budgets give you more control and make a fair comparison easier; a campaign budget lets the system shift money quickly. For a test, fixed ad set budgets are usually clearer.
+
+## Who pays, and how
+
+Ads are usually paid to the platform by card. Some businesses use a virtual card linked to mobile money or a bank account. The payment method belongs to the business, in its own ad account. Agree the maximum spend in writing with the owner before anything runs. You are spending someone else's money, so treat it with care.
 
 ## How much is enough?
 
-There is no fixed right number. Begin with an amount the owner can afford to lose while learning. Run it for several days before judging, because one day of results is too little to trust. Platforms also need some time to learn who responds, so constant changes slow them down.
+There is no fixed right number. Begin with an amount the owner can afford to lose while learning. Run it for several days before judging, because one day of results is too little to trust. Platforms also need time to learn who responds. Meta calls the early period the learning phase: results can jump around, and big edits, such as a new audience or a large budget change, can start the learning again. So plan your changes and make them together, rather than adjusting every day.
 
 ## Scheduling
 
-Think about when customers are ready. A lunchtime chop bar offer works in the morning. An offer for church outfits makes sense in the week before a big service. If you run messaging ads, make sure someone can answer WhatsApp quickly during the hours the ads run.
+Think about when customers are ready. A lunchtime chop bar offer works in the morning. An offer for church outfits makes sense in the week before a big service. If you run messaging ads, make sure someone can answer WhatsApp quickly during the hours the ads run. A conversation started at 9 pm that nobody answers until morning is often a lost sale.
 
 ## Testing one thing at a time
 
@@ -1324,15 +2026,49 @@ A test compares two versions that differ in one thing only, so you know what cau
 * **Audience:** Tamale versus Accra.
 * **Button:** Send message versus Learn more.
 
-Change one thing per test, keep the budget the same for both versions, and run them at the same time. Some ad managers have a built in A/B test feature that splits the audience fairly.
+Change one thing per test, keep the budget the same for both versions, and run them at the same time. Ads Manager has a built in A/B test feature that splits the audience into groups that do not overlap, so each person sees only one version. That makes the comparison fairer than running two ads side by side and hoping.
+
+## How long and how sure?
+
+Decide before you start how long the test runs and which number picks the winner. Stopping a test the moment one version looks ahead is a common mistake: early leads often disappear. A test with very few results, such as three conversations against two, tells you almost nothing. If the numbers are that small, run it longer or call it a draw and test something bolder.
 
 ## Reading the results
 
-Judge by the objective. For a messaging campaign, look at the cost per conversation started, then ask the owner how many conversations became sales. Cheap clicks that never buy are not a win.
+Judge by the objective. For a messaging campaign, look at the cost per conversation started, then ask the owner how many conversations became sales. Cheap clicks that never buy are not a win. Write down what you learned in one sentence, such as "Video brought conversations more cheaply than photo for this audience", so the next campaign starts smarter.
 
-## A worked example
+## Your mock campaign
 
-Issahaku plans a mock campaign for a tailor in Wa ahead of the new school term. Lifetime budget: an amount the owner approved in writing, over ten days. Schedule: all day, because the owner's daughter answers WhatsApp in the evening. Test: the same audience sees either a photo of finished uniforms with the price, or a short video of the tailor measuring a child. After the run, he compares cost per conversation for each and notes how many conversations became orders.`,
+Put everything in one document: objective, ad sets, audiences, ads, budget type and amount, dates, hours, who answers messages, and one test with its winning measure. That document, plus draft screenshots if you built it in Ads Manager without publishing, completes the week 7 assignment.`,
+      workedExample_md: `Issahaku plans a mock campaign for a tailor in Wa, Madam Abiba, ahead of the new school term.
+
+1. **Budget type.** A lifetime budget over ten days, because the offer ends when term starts. The amount is one Madam Abiba approved in writing.
+2. **Budget level.** Two ad sets with equal ad set budgets, so the test is fair.
+3. **Schedule.** From 7 am to 9 pm only, the hours when Madam Abiba or her daughter can answer WhatsApp.
+4. **Test.** He uses Ads Manager's A/B test feature in draft. The same audience is split into two groups: one sees a photo of finished uniforms with the price, the other a short video of the tailor measuring a child.
+5. **Winning measure.** Decided in advance: lowest cost per conversation, checked only after the full ten days.
+6. **Reading results.** In his mock data, the video wins clearly. He also notes how many conversations became orders, using Madam Abiba's order book.
+7. **Lesson learned.** He writes one sentence for next time: "For parents in Wa, a video of the tailor at work started conversations more cheaply than a price photo."
+
+Nothing was published and no money was spent.`,
+      keyTerms: [
+        { term: "Daily budget", definition: "An average amount to spend each day, which can vary a little from day to day." },
+        { term: "Lifetime budget", definition: "A total amount spread across a campaign's set dates." },
+        { term: "Campaign budget", definition: "One budget that the platform shares across ad sets towards better results." },
+        { term: "Learning phase", definition: "Meta's early period when delivery is still settling and results jump around." },
+        { term: "A/B test", definition: "A comparison of two versions that differ in one thing, shown to separate groups." },
+      ],
+      commonMistakes: [
+        "Stopping a test the moment one version looks ahead",
+        "Changing the audience, creative and budget all at once",
+        "Running messaging ads when nobody can reply",
+        "Judging a messaging campaign by cheap clicks instead of conversations and sales",
+        "Starting a campaign before the owner has agreed the maximum spend in writing",
+      ],
+      selfCheck: [
+        "When is a lifetime budget a better choice than a daily budget?",
+        "Why can big edits during the learning phase hurt results?",
+        "What should you decide before a test starts?",
+      ],
       practice_task_md: `**Goal:** Complete the week 7 assignment: a full mock campaign plan.
 
 **Steps:**
@@ -1396,9 +2132,10 @@ Issahaku plans a mock campaign for a tailor in Wa ahead of the new school term. 
 
     "social-storytelling": {
       outcomes: [
-        "Use a simple story shape",
-        "Choose the hero of a story",
-        "Tell true stories with care for language and culture",
+        "Use a four beat story shape for short social posts",
+        "Make a real person the hero of a business story",
+        "Write hooks that earn the first seconds",
+        "Tell stories honestly and with consent",
       ],
       explanation_md: `People scroll past adverts but stop for stories. A story gives them someone to care about, a problem they recognise and a moment of change. Week 8 of the social media specialisation is about content creation through video and storytelling, and this lesson gives you the story shape that every good short video uses.
 
@@ -1411,6 +2148,18 @@ You can tell a story in thirty seconds if you keep to four beats.
 3. **Change.** What the product, service or person does about it.
 4. **Result and next step.** Show the outcome and tell people exactly what to do, such as "Send us a message to order".
 
+## Hooks that work
+
+The hook decides whether anyone sees the rest, so spend real effort on it. Some patterns that work well:
+
+* **Start at the end.** Show the finished wedding outfit first, then go back to the plain fabric.
+* **Ask a question your audience is already asking.** "Why does your shea butter go hard in the harmattan?"
+* **Show movement or a surprise.** A basket being lifted from a dye pot, colour dripping.
+* **Name the viewer.** "Traders in Tamale, this one is for you."
+* **Use a strong line of on screen text.** Many people watch with the sound off, so the words on screen are often the hook.
+
+Avoid starting with a logo, a slow greeting or "Hello everyone, welcome to my page". Write three different hooks for every story and pick the strongest.
+
 ## Who is the hero?
 
 Make the customer or a real person the hero, not the business. A tailor's story is stronger when it is about a nervous bride who now looks magnificent at her wedding, than about the tailor's new sewing machine. The business is the helper that makes the change possible.
@@ -1422,24 +2171,59 @@ Make the customer or a real person the hero, not the business. A tailor's story 
 * **The product's journey:** from shea nuts collected in the bush to a jar on a shelf in Accra.
 * **Community moments:** a school sports day the business supported, a festival, Eid or Christmas preparations.
 
+## Story formats for social
+
+The same four beats fit several formats:
+
+* **Before and after:** the problem, then the result, with the change in between.
+* **Behind the scenes:** a process people rarely see, such as weaving a Bolga basket from straw to finished piece.
+* **Customer voice:** a customer telling their own story in a few sentences, filmed with consent.
+* **A day in the life:** one person's day, ending with the product's role in it.
+* **Series:** one story told across several short posts, such as "From nut to jar, part 1, 2 and 3", which brings people back.
+
+Choose the format that suits the story and the platform. Reels, TikTok and Shorts reward quick movement; a Facebook post can carry a longer written story with photos.
+
 ## Telling the truth
 
-Stories persuade, which is why they must be honest. Do not invent customers, results or testimonials. If you dramatise a scene with actors, make that clear. Do not make health or money claims the business cannot prove. A true small story beats a false big one, and Ghanaian audiences spot fakes quickly.
+Stories persuade, which is why they must be honest. Do not invent customers, results or testimonials. If you dramatise a scene with actors, make that clear. Do not make health or money claims the business cannot prove. A true small story beats a false big one, and people who spot a fake stop trusting the business.
+
+Consent matters beyond honesty. Explain to anyone you feature where the video will appear and for how long the business will use it. Keep their agreement in writing, even a WhatsApp message. Never film children without a parent's permission.
 
 ## Language and culture
 
-Use the language your audience uses. A story in Dagbani, Frafra, Twi or Pidgin with English captions can reach people that an English only video misses. Respect cultural and religious sensitivities, and avoid humour that mocks any group.
+Use the language your audience uses. A story in Dagbani, Frafra, Twi, Ewe or Pidgin with English captions can reach people that an English only video misses. Respect cultural and religious sensitivities, and avoid humour that mocks any group.
 
-## A worked example
+## From story to script
 
-Amina wants to promote her catering business in Wa. Instead of a list of dishes, she tells a story.
+Your story outline becomes the script in the next lesson. Keep each beat to one sentence now, so you can see the whole story at a glance and test it on a friend: if they can retell it in their own words, it works.`,
+      workedExample_md: `Amina wants to promote her catering business in Wa. Instead of a list of dishes, she builds a story.
 
-* **Hook:** a close up of steaming jollof being scooped into a hundred packs.
-* **Problem:** Salifu, a father, was worried about feeding guests at his daughter's naming ceremony.
-* **Change:** Amina's team planned the menu with him and delivered on time.
-* **Result:** guests eating happily, Salifu smiling, and the words "Planning an event? Message us on WhatsApp."
+1. **Finds the hero.** Salifu, a father who was worried about feeding guests at his daughter's naming ceremony. He agrees to appear, and she keeps his WhatsApp reply as a record.
+2. **Writes three hooks.** "Two hundred guests and one day's notice", a close up of steaming jollof being scooped into a hundred packs, and the question "Planning a naming ceremony?" She picks the jollof shot with the first line as on screen text.
+3. **Problem.** Salifu explains, in Waali with English captions, that he had little time and many guests.
+4. **Change.** Amina's team plans the menu with him and delivers on time.
+5. **Result and next step.** Guests eating happily, Salifu smiling, and the words "Planning an event? Message us on WhatsApp."
+6. **Tests it.** She tells the outline to her cousin, who retells it correctly in one breath.
 
-Salifu agreed to appear. The story is true, short and focused on him.`,
+The story is true, short and focused on Salifu, not on Amina's kitchen.`,
+      keyTerms: [
+        { term: "Hook", definition: "The first one or two seconds that make people stop scrolling." },
+        { term: "Four beat story", definition: "Hook, problem, change, then result and next step." },
+        { term: "Hero", definition: "The person the story is about, usually a customer, not the business." },
+        { term: "Call to action", definition: "The clear next step you ask viewers to take." },
+        { term: "Consent", definition: "A person's agreement to appear, ideally kept in writing." },
+      ],
+      commonMistakes: [
+        "Starting with a logo or a slow greeting instead of a hook",
+        "Making the business the hero instead of a real person",
+        "Featuring customers without asking permission",
+        "Inventing testimonials or results to make a story stronger",
+      ],
+      selfCheck: [
+        "Can you name three hook patterns and give an example of each for your business?",
+        "Who is the hero in your strongest story idea?",
+        "What should you tell someone before filming them for a business video?",
+      ],
       practice_task_md: `**Goal:** Write two short story outlines for your business.
 
 **Steps:**
@@ -1496,22 +2280,34 @@ Salifu agreed to appear. The story is true, short and focused on him.`,
             answer_index: 2,
             explanation: "Inventing customers or testimonials is dishonest and not allowed.",
           },
+          {
+            prompt: "Which opening does the lesson say to avoid?",
+            options: [
+              "Showing the finished result first",
+              "Asking a question the audience already asks",
+              "A strong line of on screen text",
+              "A logo or a slow greeting",
+            ],
+            answer_index: 3,
+            explanation: "The lesson warns against starting with a logo, a slow greeting or a long welcome.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "video-scripting-and-shooting": {
       outcomes: [
-        "Turn a story into a script and shot list",
-        "Shoot well with simple gear",
-        "Get permission and stay safe when filming",
+        "Turn a story outline into a timed 30 second script",
+        "Make a shot list with b roll",
+        "Shoot with good light, steady framing and clear sound",
+        "Get the permissions a shoot needs",
       ],
       explanation_md: `The week 8 assignment asks for a 30 second promo video for a small business. Good short videos are planned before anyone presses record. This lesson shows you how to script and shoot one with the camera you already have, whether on a phone, a tablet or a simple camera.
 
 ## From story to script
 
-Start from your four beat story outline. A 30 second script has room for roughly six to eight short shots. Write it as a table with three columns:
+Start from your four beat story outline. A 30 second script has room for roughly six to eight short shots. Write it in three columns:
 
 * **Time:** for example 0 to 3 seconds.
 * **What we see:** the shot, such as a close up of hands shaping shea butter.
@@ -1519,9 +2315,23 @@ Start from your four beat story outline. A 30 second script has room for roughly
 
 Put the hook in the first two or three seconds. Many people decide almost immediately whether to keep watching, so do not start with a logo or a slow greeting. End with a clear next step on screen and spoken.
 
+## Counting words
+
+People speak roughly two to three words a second in a relaxed voice. A 30 second promo with a hook, a closing call to action and some silent shots leaves room for only about 50 to 70 spoken words. Read your script aloud with a timer. If it runs long, cut words, not pace; rushed speech is hard to follow, especially in a second language.
+
 ## A shot list
 
-From the script, make a list of every shot you need, grouped by location so you can film efficiently. Include a few extra shots, called b roll, such as hands, close ups of the product and the shop sign. They make editing easier.
+From the script, make a list of every shot you need, grouped by location so you can film efficiently. Include a few extra shots, called b roll, such as hands, close ups of the product and the shop sign. They make editing easier and cover any moment where the main shot is weak.
+
+## Shot types
+
+Mix shot sizes to keep the eye interested.
+
+* **Wide shot:** shows the whole place, such as the market stall or the workshop.
+* **Medium shot:** a person from the waist up, good for someone talking.
+* **Close up:** a face, hands or the product, full of detail and emotion.
+
+A simple sequence of wide, medium, close up tells a viewer where they are, who is there and what matters. Keep the camera at eye level for people, and place the subject a little off centre, with space in the direction they look.
 
 ## Shooting well with simple gear
 
@@ -1530,27 +2340,49 @@ From the script, make a list of every shot you need, grouped by location so you 
 * **Sound.** Find a quiet spot away from generators, traffic and fans. Get close to the speaker. A cheap clip on microphone helps a lot if you have one.
 * **Framing.** Shoot vertical for Reels, TikTok and Shorts. Keep important things in the centre, because buttons and captions cover the edges.
 * **Clean lens.** Wipe it before every session.
-* **Several takes.** Record each shot at least twice.
+* **Several takes.** Record each shot at least twice, and hold each shot for a few seconds longer than you need.
+
+## Before you go
+
+Check that the device is charged and has storage space, that you have a power bank if the shoot is long, and that the settings record in good quality. Plan the shoot for the best light, often early morning or late afternoon, and around power cuts if you need the shop lights.
 
 ## Length and platforms
 
-Short vertical videos are common on Instagram Reels, TikTok, Facebook and YouTube Shorts. Each platform sets its own maximum length; YouTube Help, for example, says Shorts can be up to three minutes. A 30 second promo fits everywhere, and short videos use less of your audience's data.
+Short vertical videos are common on Instagram Reels, TikTok, Facebook and YouTube Shorts. Each platform sets its own maximum length and changes it from time to time; at the time of writing, YouTube Help says Shorts can be up to three minutes. A 30 second promo fits everywhere, and short videos use less of your audience's data.
 
 ## Permissions and safety
 
-Get permission from everyone who appears, and from the owner of any private place you film. Do not film children without a parent's consent. Avoid copyrighted music unless the platform provides it for that use.
+Get permission from everyone who appears, and from the owner of any private place you film. Do not film children without a parent's consent. In a busy market, film your subject, not strangers' faces, and stop if someone objects. Avoid copyrighted music unless the platform provides it for that use.`,
+      workedExample_md: `Fuseini scripts and shoots a 30 second promo for a basket weaver in Bolgatanga, Sumaila.
 
-## A worked example
+1. **Hook, 0 to 3 seconds.** A finished basket swinging from a hand, with the text "Handwoven in Bolgatanga".
+2. **Problem and change, 3 to 18 seconds.** Close ups of straw being woven, then Sumaila in a medium shot saying "Every basket takes me two days. I learned from my father."
+3. **Result and next step, 18 to 30 seconds.** A customer, Memunatu, choosing a basket at the stall and smiling, then the basket on a table with the text and voice "Order on WhatsApp" and the number.
+4. **Word count.** About 25 spoken words, well inside the limit. He reads it aloud with a timer.
+5. **Shot list by place.** Workshop: weaving close ups, Sumaila talking, the dye pots as b roll. Stall: Memunatu, the basket display, the shop sign.
+6. **Permissions.** Sumaila and Memunatu agree by WhatsApp message.
+7. **The shoot.** Early morning in the shade outside the workshop, device charged, lens wiped, two takes of each shot, all vertical.
 
-Fuseini scripts a 30 second promo for a smock maker in Bolgatanga.
-
-* 0 to 3 seconds: a smock swirling as the wearer turns, text "Handwoven in Bolgatanga".
-* 3 to 10: close ups of strips being woven on the loom.
-* 10 to 18: the weaver Sumaila talking about how each smock is made.
-* 18 to 25: a customer trying one on and smiling.
-* 25 to 30: the smock on a hanger, text "Order on WhatsApp" and the number.
-
-He films in the morning light outside the workshop, two takes of each shot.`,
+He ends the day with a folder of clips and his best takes marked.`,
+      keyTerms: [
+        { term: "Script", definition: "A timed plan of what viewers see and hear in each shot." },
+        { term: "Shot list", definition: "Every shot you need, grouped by location for efficient filming." },
+        { term: "B roll", definition: "Extra supporting shots, such as hands and product close ups, used in editing." },
+        { term: "Close up", definition: "A tight shot of a face, hands or product that shows detail." },
+        { term: "Vertical video", definition: "Video shot taller than it is wide, used for Reels, TikTok and Shorts." },
+      ],
+      commonMistakes: [
+        "Writing more words than fit in 30 seconds and then speaking too fast",
+        "Filming with a bright window behind the person",
+        "Recording each shot only once, with no spare takes or b roll",
+        "Filming strangers' faces in a market without permission",
+        "Placing text or faces at the edges where platform buttons cover them",
+      ],
+      selfCheck: [
+        "About how many spoken words fit in a 30 second promo?",
+        "What does a wide, medium, close up sequence tell the viewer?",
+        "What would you check before leaving for a shoot?",
+      ],
       practice_task_md: `**Goal:** Script and film the raw clips for a 30 second promo.
 
 **Steps:**
@@ -1614,15 +2446,16 @@ He films in the morning light outside the workshop, two takes of each shot.`,
 
     "video-editing-and-captions": {
       outcomes: [
-        "Edit a promo with free tools",
-        "Explain why captions matter",
-        "Publish a finished promo well",
+        "Edit raw clips into a tight 30 second video",
+        "Add and correct captions and on screen text",
+        "Export and publish in the right shape for each platform",
+        "Use music and sound within the platform's rules",
       ],
       explanation_md: `Raw clips become a promo in the edit. Editing is where you cut out everything slow, put the best moments in order, and add the text and captions that make the video work for people scrolling with the sound off. This lesson finishes the week 8 assignment.
 
 ## Free editing tools
 
-Free editors exist for every device. Examples include CapCut and InShot on phones, Canva's video editor in a browser or app, and the editors built into some phones and computers. Each has the same basic tools: trim, split, arrange clips, add text, add music and export. Pick one and learn it well. Check each tool's terms, because some free plans add a watermark or limit features.
+Free editors exist for every device. Examples include CapCut and InShot on phones, Canva's video editor in a browser or app, and the editors built into some phones and computers. Each has the same basic tools: trim, split, arrange clips, add text, add music and export. Pick one and learn it well. Check each tool's terms, because some free plans add a watermark or limit features. Canva is named in your week 8 resources and works on any device, which helps if you start on a phone and finish on a computer.
 
 ## Editing steps
 
@@ -1634,21 +2467,65 @@ Free editors exist for every device. Examples include CapCut and InShot on phone
 6. **Add music or sound** at a low level under the voice. Use music the platform or editor provides for that use.
 7. **Export** in vertical format at a good quality that is not too large for data.
 
+## Pace and rhythm
+
+Short video feels fast because each shot earns its place. Cut on movement, such as a hand reaching or a basket turning, so one shot flows into the next. Change the shot every few seconds unless someone is speaking. Use simple cuts; flashy transitions between every clip look dated and distract from the story. If music has a clear beat, try placing cuts on the beat.
+
 ## Why captions matter
 
 Many people watch videos with the sound off, in a busy trotro, at work or late at night. Captions also help people with hearing loss and people who read a language more easily than they hear it. Many editors and platforms can create automatic captions. Always check them, because automatic captions often get Ghanaian names, places and local language words wrong. Fix "Bolga" if it has become "bulger".
 
+Make captions easy to read: two short lines at most, high contrast, and placed where they do not cover faces or the platform's buttons. If the speaker uses a local language, add English captions so more people can follow, and check the translation with a fluent speaker.
+
+## The safe zone
+
+Each platform places buttons, the account name and the caption over the edges of a vertical video, especially the right side and the bottom. Keep text, faces and the product in the middle of the frame. Most editors show guides; if yours does not, preview the export on a real post screen before publishing.
+
+## Export settings
+
+Vertical video is usually exported at a 9:16 shape, and 1080 by 1920 pixels is a common, sharp size. Higher settings make larger files that take longer to upload and use more of viewers' data without looking much better on a phone. Export once, watch the whole file, and fix any mistake before posting.
+
+## Music and sound rules
+
+Using a popular song without permission can get a video muted, blocked or removed. Use the music library inside the platform or your editor, and check that it is allowed for business use; some platforms offer a separate library for business accounts. Natural sound, such as the loom or the market, can be just as effective.
+
 ## Publishing well
 
-* **Write a short caption** with the key message and next step, such as "Order your smock on WhatsApp".
+* **Write a short caption** with the key message and next step, such as "Order your basket on WhatsApp".
 * **Choose a clear cover image** so the video looks good in a grid.
 * **Upload natively** to each platform rather than sharing a link from another, so it plays smoothly.
 * **Add a few relevant hashtags** and the location where it helps.
-* **Reply to comments quickly** in the first hours after posting.
+* **Reply to comments quickly** in the first hours after posting.`,
+      workedExample_md: `Fuseini edits his basket promo in a free editor and finishes it in Canva on a library computer.
 
-## A worked example
+1. **First cut.** He imports his best takes in script order. The first cut is 48 seconds.
+2. **Trim.** He trims every clip and removes a slow shot of the workshop door. The video is now 33 seconds.
+3. **Hook check.** He watches the first three seconds alone and moves the swinging basket to the very start.
+4. **Pace.** He cuts from the weaving close up to Sumaila's face as Sumaila looks up, so the shots flow.
+5. **Text and captions.** He adds "Handwoven in Bolgatanga" in the safe centre area, captions Sumaila's words, and corrects "Sumaila", which the automatic captions spelled wrongly.
+6. **Sound.** He uses a track from the editor's library that is allowed for business use, placed low under Sumaila's voice. The final video is 30 seconds.
+7. **Export and publish.** Vertical, 1080 by 1920. After the owner approves, he posts it to Reels and TikTok with a caption ending "Order on WhatsApp", then answers every comment that evening.
 
-Fuseini edits his smock promo in a free phone editor. His first cut is 48 seconds, so he trims every clip and removes a slow shot of the workshop door. He moves the swirling smock to the very start. He adds the text "Handwoven in Bolgatanga", captions Sumaila's words, corrects "Sumaila" which the automatic captions spelled wrongly, and lays soft music under the voice. The final video is 30 seconds. He posts it to Reels and TikTok with a caption ending "Order on WhatsApp", then answers every comment that evening.`,
+The video is now ready for his portfolio.`,
+      keyTerms: [
+        { term: "Trim", definition: "Cutting the start and end of a clip so only the important moment remains." },
+        { term: "Captions", definition: "On screen text of the words spoken in a video." },
+        { term: "Safe zone", definition: "The centre of a vertical frame that platform buttons and text do not cover." },
+        { term: "Aspect ratio", definition: "The shape of a video, such as 9:16 for vertical." },
+        { term: "Native upload", definition: "Uploading a video directly to each platform instead of sharing a link." },
+      ],
+      commonMistakes: [
+        "Publishing automatic captions without checking names and local words",
+        "Using a popular song without permission, so the video is muted or removed",
+        "Placing text at the edges where buttons cover it",
+        "Adding a flashy transition between every clip",
+        "Exporting a huge file that is slow to upload and heavy on viewers' data",
+      ],
+      selfCheck: [
+        "What do you check in the first three seconds of your rough edit?",
+        "Where should text and faces sit in a vertical frame, and why?",
+        "How can you add music without breaking the platform's rules?",
+      ],
       practice_task_md: `**Goal:** Complete the week 8 assignment: a finished 30 second promo video.
 
 **Steps:**
@@ -1706,16 +2583,28 @@ Fuseini edits his smock promo in a free phone editor. His first cut is 48 second
             answer_index: 3,
             explanation: "Choose one free tool, learn it, and check its terms.",
           },
+          {
+            prompt: "Why does the lesson warn against using a popular song in a business video without permission?",
+            options: [
+              "It always makes the file too large to upload",
+              "Platforms can mute, block or remove the video",
+              "Songs cannot be added in free editors",
+              "Captions stop working when music plays",
+            ],
+            answer_index: 1,
+            explanation: "Music used without permission can get a video muted, blocked or removed, so use the platform's library.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "community-building": {
       outcomes: [
-        "Tell an audience from a community",
-        "Set purpose, rules and rituals and get people talking",
-        "Moderate, protect privacy and measure a community",
+        "Explain the difference between an audience and a community",
+        "Set a purpose, rules and rituals for a group",
+        "Use messaging tools to answer customers well",
+        "Run a community with care for members' privacy",
       ],
       explanation_md: `Followers watch. A community talks, helps each other and comes back. Businesses with real communities rely less on paid ads because their customers bring friends and stay loyal. Week 9 of the social media specialisation is community building and influencer outreach, and this lesson covers the first half.
 
@@ -1745,17 +2634,58 @@ Choose one main home first. Running five half empty spaces is worse than one liv
 * Answer every question quickly, and let members answer each other too.
 * Share behind the scenes moments, not only adverts. A useful rule of thumb is to give far more than you sell.
 
+## Messaging tools that build trust
+
+Much of a Ghanaian business's community lives in private chats, so good messaging is community work. The WhatsApp Business app, which you met in the Digital Marketer roadmap, has tools worth using well:
+
+* **Greeting and away messages** tell people you received their message and when you will reply.
+* **Quick replies** store answers to common questions, such as prices or delivery areas, so replies are fast and consistent. Personalise them with the person's name.
+* **Labels** sort chats, such as new order, paid, delivered and follow up, so nobody is forgotten.
+* **A catalogue** shows products with photos and prices inside the chat.
+
+Facebook and Instagram offer similar tools for their inboxes. Speed matters, but so does tone: a warm, accurate reply turns a question into a customer, and a customer into a member.
+
+## Inviting people the right way
+
+Grow a community by invitation, not by force. Share a join link in your posts, on receipts or on a sign at the shop, and let people choose. Do not add people's numbers to a group without asking. Ghana's Data Protection Act, 2012 (Act 843), section 40, says a person's details must not be used for direct marketing without their prior written consent, and lets anyone tell the business in writing to stop at any time. So keep promotional messages for people who agreed, and remove anyone who asks. A community of willing members is also far livelier than one full of people who were added without asking.
+
 ## Moderation and privacy
 
-Remove spam and scams fast, especially fake investment and "send money to win" messages. Handle complaints calmly and move personal details to a private chat. In WhatsApp groups, members can usually see each other's phone numbers, so tell people that before they join, and consider a Channel or Facebook Group where this matters.
+Remove spam and scams fast, especially fake investment and "send money to win" messages. Handle complaints calmly and move personal details to a private chat. In WhatsApp groups, members can usually see each other's phone numbers, so tell people that before they join, and consider a Channel or Facebook Group where this matters. Appoint one or two trusted members as helpers when the group grows, and agree together how to handle problems.
 
 ## Measuring a community
 
-Count what shows health, not just size: how many members post or reply each week, how many questions members answer for each other, repeat purchases, and referrals. A group of fifty active members is worth more than five thousand silent ones.
+Count what shows health, not just size: how many members post or reply each week, how many questions members answer for each other, repeat purchases, and referrals. A group of fifty active members is worth more than five thousand silent ones.`,
+      workedExample_md: `Wumpini manages a Facebook Group for a farm inputs shop in Damongo.
 
-## A worked example
+1. **Purpose.** "Farmers in the Savannah Region sharing advice for better harvests."
+2. **Rules.** Five short rules pinned at the top, including no selling of other products and no sharing other members' numbers.
+3. **Invitations.** A join link on every receipt and a sign at the counter. Nobody is added without asking.
+4. **Rituals.** Every Monday a planting tip, every Thursday members share a photo of their farm, and once a month an extension officer, Mr Yakubu Dawuda, answers questions live.
+5. **Messaging.** On WhatsApp Business she sets an away message for evenings, quick replies for prices and delivery days, and labels for "order", "paid" and "delivered".
+6. **Moderation.** When a fake "fertiliser grant" message appears, she removes it within the hour and warns members.
+7. **Health check.** Each month she counts members who posted, questions answered by other members, and buyers who mention the group.
 
-Wumpini manages a Facebook Group for a farm inputs shop in Damongo. Its purpose is "Farmers in the Savannah Region sharing advice for better harvests". Every Monday she posts a planting tip, every Thursday she asks members to share a photo of their farm, and once a month an extension officer answers questions live. Farmers now answer each other's questions about pests, and many mention the shop when they buy seed.`,
+Farmers now answer each other's questions about pests, and many mention the shop when they buy seed.`,
+      keyTerms: [
+        { term: "Community", definition: "A group where members talk to each other, not only to the business." },
+        { term: "WhatsApp Channel", definition: "A one to many broadcast space where followers react but do not chat." },
+        { term: "Ritual", definition: "A regular moment members look forward to, such as a weekly tip." },
+        { term: "Quick reply", definition: "A saved answer to a common question in a business messaging app." },
+        { term: "Label", definition: "A tag used to sort chats, such as new order or paid." },
+      ],
+      commonMistakes: [
+        "Adding people's numbers to a group without asking them",
+        "Running several half empty spaces instead of one lively home",
+        "Posting only adverts and never giving useful tips or stories",
+        "Leaving scam messages up for hours",
+        "Measuring only member count instead of activity and helpfulness",
+      ],
+      selfCheck: [
+        "What is your community's one sentence purpose?",
+        "Which messaging tools would save the business the most time, and why?",
+        "Why should people join by invitation rather than be added?",
+      ],
       practice_task_md: `**Goal:** Design a community plan for your business.
 
 **Steps:**
@@ -1813,18 +2743,34 @@ Wumpini manages a Facebook Group for a farm inputs shop in Damongo. Its purpose 
             answer_index: 2,
             explanation: "The lesson says to measure activity and helpfulness, not just size.",
           },
+          {
+            prompt: "What does the lesson say about adding customers' numbers to a WhatsApp group?",
+            options: [
+              "Add everyone in the owner's contacts to grow quickly",
+              "Add people first and let them leave if they want",
+              "Do not add people without asking; invite them with a join link",
+              "Only add people who have bought more than once",
+            ],
+            answer_index: 2,
+            explanation: "The lesson says to grow by invitation and never add people's numbers without asking.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "micro-influencers": {
       outcomes: [
-        "Describe what makes a good influencer partner",
-        "Spot fake followers",
-        "Find and assess local micro influencers",
+        "Explain why micro influencers can suit small local businesses",
+        "Judge audience fit, engagement and values",
+        "Spot signs of fake followers",
+        "Record creator research using only public information",
       ],
       explanation_md: `An influencer is a person whose recommendations their followers trust. Big celebrities are expensive and their audiences are spread across the country. **Micro influencers** have smaller, closer audiences, often in one town, language or interest, and their followers tend to listen to them more personally. For a small business in northern Ghana, a well known local creator in Tamale or Wa can be a better partner than a national star. The week 9 assignment asks you to identify two of them.
+
+## Not only influencers by title
+
+Some of the most trusted voices do not call themselves influencers. A popular radio presenter with an active Facebook page, a campus food reviewer, a respected hairdresser in Accra with loyal clients, a church youth leader or a farmer who posts useful videos can all reach exactly the right people. Think about who your customers already listen to.
 
 ## What makes a good partner
 
@@ -1835,6 +2781,10 @@ Follower numbers are the least important factor. Check these instead:
 * **Values fit.** Is their content respectful and consistent with the business's values? Look back several months, not just this week.
 * **Content quality.** Are their videos and photos clear, and do they tell stories well?
 * **Reliability.** Do they post consistently, and have past brand partners looked happy?
+
+## Reading engagement properly
+
+Look at the last ten or so posts, not the best one. Read the comments: are people asking "where can I buy this?" or "what size is that?" Those are signs of an audience that acts on what it sees. Notice how many comments are in the local language, which suggests a local audience. Count how often the creator replies. A creator with a modest following and lively, local comments is often worth more than one with a huge following and silent posts.
 
 ## Spotting fake followers
 
@@ -1847,6 +2797,10 @@ Some accounts buy followers or likes. Warning signs include:
 
 You cannot always prove it, but if several signs appear, move on.
 
+## Brand safety
+
+Before recommending anyone, scroll back through their posts and comments. Look for anything the business would not want to be linked with: insults towards any group, promotion of gambling or dubious money schemes, or health claims that could harm people. Also check who they have promoted before. A creator who promoted a competitor last month may be a poor fit this month.
+
 ## Where to find them
 
 * Search hashtags and locations, such as Tamale food, Wa fashion or Bolga markets.
@@ -1858,9 +2812,40 @@ You cannot always prove it, but if several signs appear, move on.
 
 Keep a sheet with: name and handle, platforms, location, language, typical content, approximate audience size, signs of real engagement, values fit notes, and a score out of five for overall fit. Record only what they share publicly, and keep the sheet private.
 
-## A worked example
+Ghana's Data Protection Act, 2012 (Act 843), section 21, allows personal data to be collected indirectly where the person has deliberately made it public. A creator's public profile and posts fall into that, but their private phone number found through a friend does not. Collect only what you need for the decision, and contact them through the channels they publish for business.
 
-Rahinatu is searching for partners for Hawa's shea butter. She finds three creators. One has a very large following, but comments are mostly the same short phrase repeated and her audience is mostly outside Ghana. One is a Tamale beauty creator with a modest following, who answers every comment in Dagbani and English and whose followers ask where to buy the products she uses. One is a campus student who reviews local food. Rahinatu shortlists the Tamale beauty creator as the strongest fit, with the student as a possible second for a different product line.`,
+## Choosing your two
+
+Rank your list by overall fit, not by size. Your first choice should be the creator whose audience most closely matches the customers and whose comments show real trust. Your second can suit a different product or audience, which gives the business a useful comparison.`,
+      workedExample_md: `Rahinatu is searching for partners for Hawa's shea butter.
+
+1. **She searches** the hashtags Tamale beauty and natural skincare Ghana, and asks three customers which creators they follow.
+2. **She lists five creators** in a private sheet using only their public profiles and posts.
+3. **She reads engagement.** One creator has a very large following, but comments are mostly the same short phrase repeated and her audience appears to be mostly outside Ghana. Rahinatu marks two fake follower warning signs and moves on.
+4. **She finds a strong fit.** Ayishetu, a Tamale beauty creator with a modest following, answers every comment in Dagbani and English, and her followers ask where to buy the products she uses.
+5. **She checks brand safety.** Ayishetu's last six months of posts are respectful, and she has not promoted another shea butter brand.
+6. **She finds a second option.** A campus student who reviews local food could suit Hawa's new shea cooking oil.
+7. **She scores and ranks.** Ayishetu scores five out of five, the student four.
+
+Rahinatu shortlists both, with clear reasons for each.`,
+      keyTerms: [
+        { term: "Micro influencer", definition: "A creator with a smaller, closer audience, often in one town, language or interest." },
+        { term: "Engagement", definition: "How people respond to posts: genuine comments, questions, shares and replies." },
+        { term: "Audience fit", definition: "How closely a creator's followers match the business's customers." },
+        { term: "Brand safety", definition: "Checking a partner's content so the business is not linked with anything harmful." },
+        { term: "Fake followers", definition: "Bought or automated accounts that inflate a follower count." },
+      ],
+      commonMistakes: [
+        "Choosing the creator with the most followers instead of the best fit",
+        "Judging engagement from one viral post instead of recent posts",
+        "Skipping the brand safety scroll through older posts",
+        "Collecting private contact details instead of using published business channels",
+      ],
+      selfCheck: [
+        "Which five factors matter more than follower numbers?",
+        "What signs in the comments show an audience that acts on what it sees?",
+        "Under section 21 of Act 843, why is a creator's public profile different from their private number?",
+      ],
       practice_task_md: `**Goal:** Identify and assess two local micro influencers for your business. This is the first half of the week 9 assignment.
 
 **Steps:**
@@ -1917,16 +2902,28 @@ Rahinatu is searching for partners for Hawa's shea butter. She finds three creat
             answer_index: 1,
             explanation: "Audience fit and real engagement made her the strongest choice.",
           },
+          {
+            prompt: "When reading a creator's engagement, what does the lesson suggest looking at?",
+            options: [
+              "Only their single most popular post",
+              "Their follower count compared with other creators",
+              "How many brands they have worked with",
+              "Their last ten or so posts and what commenters actually say",
+            ],
+            answer_index: 3,
+            explanation: "The lesson says to look at recent posts, not the best one, and read whether comments show trust and buying interest.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "influencer-collaborations": {
       outcomes: [
-        "Compare kinds of collaboration",
-        "Write a collaboration proposal and agree the details",
-        "Disclose honestly and measure results",
+        "Choose a fair type of collaboration",
+        "Write a short, personal collaboration proposal",
+        "Agree deliverables, payment, claims and reuse in writing",
+        "Make sure paid posts are disclosed and results measured",
       ],
       explanation_md: `Finding the right creator is only the start. Next you have to pitch a collaboration they want to accept, agree clearly what happens, make sure the audience knows it is paid, and measure what it brought in. This lesson completes the week 9 assignment.
 
@@ -1938,6 +2935,8 @@ Rahinatu is searching for partners for Hawa's shea butter. She finds three creat
 * **Ongoing ambassador:** a longer partnership over months.
 * **Event or takeover:** the creator hosts a live session or runs the business's account for a day.
 
+For a first collaboration with a small business, a short, clearly defined project is usually best: one or two posts, a clear date and a simple way to count results. If it works, grow it into something longer.
+
 ## Writing the proposal
 
 Keep it short and about the creator.
@@ -1947,6 +2946,8 @@ Keep it short and about the creator.
 3. **The idea:** what you would like them to create, with room for their own style. Creators know their audience best.
 4. **What they get:** product, fee, commission or a mix. Be clear and fair.
 5. **Next step:** a simple question, such as "Would you be open to a short call this week?"
+
+Aim for under 150 words. Send it through the business channel the creator publishes, such as the email in their bio or a business inbox, and get the owner's approval first.
 
 ## Agreeing the details
 
@@ -1958,17 +2959,54 @@ Before anything is made, agree in writing, even a clear WhatsApp message or emai
 * Any claims that must not be made, such as health promises.
 * Who can reuse the content afterwards and for how long.
 
+This short list is often called a brief. A good brief gives the key message and the must haves, then trusts the creator with the style. Too many instructions make the post sound like an advert, which their followers will scroll past.
+
+## Claims and approvals
+
+The creator speaks for themselves, but the business is responsible for what it asks them to say. Products such as food, medicines and cosmetics have advertising rules from Ghana's Food and Drugs Authority, so keep to plain, true descriptions. Shea butter can be described as pure, handmade and moisturising if that is true; it must not be promoted as curing a disease. If the business wants to review a post before it goes live, check facts and claims, not the creator's voice.
+
 ## Honest disclosure
 
-Followers deserve to know when a post is paid or sponsored. Platforms provide tools for this. At the time of writing, Instagram's Help Centre says its Branded Content Policies require creators to use the paid partnership label to tag the brand they work with. TikTok's help says that when you promote a brand, product or service you must turn on the content disclosure setting, and a post made on behalf of another business is then labelled Paid partnership. Labels can change, so check the current screen. Use these tools, and also say it plainly in the caption. Hidden adverts damage trust and can break platform rules.
+Followers deserve to know when a post is paid or sponsored. Platforms provide tools for this. At the time of writing, Instagram's help pages say its Branded Content Policies require creators to use the paid partnership label to tag the brand they work with. TikTok's help says that when you promote a brand, product or service you must turn on the commercial content disclosure setting, and a post made on behalf of another business is then labelled Paid partnership. Labels can change, so check the current screen. Use these tools, and also say it plainly in the caption. Hidden adverts damage trust and can break platform rules. Product for content counts too: a free jar of shea butter is still payment.
 
 ## Measuring results
 
 Give each creator a unique discount code or a WhatsApp message they ask followers to send, such as "I saw Hawa's video". Then count messages, codes used and sales. Also note new followers and comments. Share the results with the creator, which builds a good relationship for next time.
 
-## A worked example
+Write down what success looks like before the post goes live, for example a number of WhatsApp conversations the owner would be pleased with. After the campaign, compare what happened with that expectation, and with what the same money might have done as an advert. That comparison helps the owner decide whether to work with creators again.
 
-Rahinatu writes to the Tamale beauty creator: "Hello Ayishetu, your harmattan skincare video was so practical, and your followers clearly trust you. I work with Hawa's women's group, who make pure shea butter by hand in Tamale. Would you try our butter for two weeks and share an honest video if you like it? We would send products and pay a fee by mobile money. Could we talk this week?" They agree the details by email, Ayishetu uses the paid partnership label, and followers send "Ayishetu sent me" on WhatsApp so Hawa can count orders.`,
+## Your two proposals
+
+The week 9 assignment asks for two collaboration proposals. Each should include the personal pitch, the collaboration type, the brief of details to agree, the disclosure plan and the tracking method. Two different creators, perhaps for two different products, give the owner a real choice.`,
+      workedExample_md: `Rahinatu pitches Ayishetu, the Tamale beauty creator she shortlisted.
+
+1. **Type.** A product for content collaboration plus a small fee: two weeks of using the shea butter, then one honest video.
+2. **Proposal, approved by Hawa first:** "Hello Ayishetu, your harmattan skincare video was so practical, and your followers clearly trust you. I work with Hawa's women's group, who make pure shea butter by hand in Tamale. Would you try our butter for two weeks and share an honest video if you like it? We would send products and pay a fee by mobile money. Could we talk this week?"
+3. **Brief.** One Reel and one Story on Instagram in the first week of December, payment within three days of posting, no health claims, and the business may share the Reel on its own page for three months.
+4. **Disclosure.** Ayishetu agrees to use the paid partnership label and say "Paid partnership with Hawa's women's group" in the caption.
+5. **Tracking.** Followers send "Ayishetu sent me" on WhatsApp. Hawa labels those chats.
+6. **Results.** Rahinatu counts the chats and orders, compares them with the target they set, and shares the numbers with Ayishetu.
+
+Her second proposal, to the campus food reviewer, follows the same shape for the cooking oil.`,
+      keyTerms: [
+        { term: "Collaboration proposal", definition: "A short, personal message inviting a creator to work with the business." },
+        { term: "Brief", definition: "The agreed list of content, dates, payment, claims to avoid and reuse rights." },
+        { term: "Paid partnership label", definition: "A platform tool that shows a post is sponsored by a named brand." },
+        { term: "Usage rights", definition: "Who can reuse a creator's content afterwards, where and for how long." },
+        { term: "Tracking code", definition: "A unique code or phrase that shows which sales came from a creator." },
+      ],
+      commonMistakes: [
+        "Sending the same copied pitch to every creator",
+        "Treating free products as if they did not count as payment",
+        "Writing a brief so strict that the post sounds like an advert",
+        "Asking a creator to make health claims the business cannot prove",
+        "Agreeing only by voice, with nothing in writing",
+      ],
+      selfCheck: [
+        "What five parts make up a collaboration proposal?",
+        "What details belong in a brief before anything is made?",
+        "How will followers know the post is paid, and how will the business count results?",
+      ],
       practice_task_md: `**Goal:** Complete the week 9 assignment: two collaboration proposals.
 
 **Steps:**
@@ -2035,8 +3073,9 @@ Rahinatu writes to the Tamale beauty creator: "Hello Ayishetu, your harmattan sk
     "google-ads": {
       outcomes: [
         "Describe what the Google Ads specialisation covers",
-        "Explain how search ads and SEO work together",
-        "Use free training and handle money responsibly",
+        "Compare search ads with SEO",
+        "Explain the main steps of building a Search campaign",
+        "Handle a client's ad money and accounts responsibly",
       ],
       explanation_md: `Search marketing puts a business in front of people at the exact moment they look for what it sells. Someone typing "car rental Tamale airport" is not idly scrolling; they need a car. That is what makes search ads powerful, and why businesses look for people who can run them carefully. This specialisation uses Google Ads, a widely used search ads platform, as the example. Microsoft Advertising and others work on similar ideas.
 
@@ -2044,9 +3083,9 @@ Rahinatu writes to the Tamale beauty creator: "Hello Ayishetu, your harmattan sk
 
 You met search ads briefly in the Digital Marketer roadmap. Here you go deeper over three weeks.
 
-* **Week 7, fundamentals.** How the auction works, campaign types and goals, and account structure.
-* **Week 8, keywords and ad copy.** Keywords and match types, writing responsive search ads, and assets with landing pages.
-* **Week 9, optimisation and budgeting.** Budgets and bid strategies, reading campaign data, and optimising a campaign.
+* **Week 7, fundamentals.** How the auction works, campaign types and goals, and account structure. The assignment is Google's Skillshop module "Get Search Ad Campaign Ready".
+* **Week 8, keywords and ad copy.** Keywords and match types, writing responsive search ads, and assets with landing pages. The assignment is a sample search campaign with three ad copies.
+* **Week 9, optimisation and budgeting.** Budgets and bid strategies, reading campaign data, and optimising a campaign, ending with recommendations and a demo campaign.
 
 ## Search ads and SEO
 
@@ -2055,26 +3094,73 @@ Search ads and SEO both aim at search results, but they work differently.
 * **Ads** appear quickly once a campaign is approved, and you pay when someone clicks (for most search campaigns). They stop when the budget stops.
 * **SEO** costs time rather than a fee per click, takes longer to work, and keeps working once pages rank.
 
-Many businesses use both: ads for quick results and to test which keywords bring customers, SEO for lasting visibility.
+Many businesses use both: ads for quick results and to test which keywords bring customers, SEO for lasting visibility. Ads are labelled as sponsored on the results page, and they sit apart from the normal results; buying ads does not change a site's normal ranking.
 
-## Free training and certification
+## The steps of a Search campaign
 
-Google offers free online training on Skillshop, including the "Get Search Ad Campaign Ready" material mentioned in the DMP curriculum, and Google Ads certifications. Some employers ask for them, but they are not a substitute for being able to explain your decisions. This specialisation gives you that understanding in plain language.
+Google's help on creating a Search campaign walks through a sequence you will learn lesson by lesson. In plain terms:
+
+1. **Choose a goal,** such as leads or website traffic, and the campaign type, Search.
+2. **Set up how results are measured,** called conversions, such as calls or form submissions.
+3. **Choose settings:** locations, languages, networks and an ad schedule.
+4. **Choose keywords** grouped into themed ad groups.
+5. **Write ads** with headlines, descriptions and assets.
+6. **Set a budget and a bid strategy.**
+7. **Review and publish,** which is where billing comes in.
+
+The menus and wording change from time to time, but these decisions stay the same. This specialisation teaches the decisions, so you can find them on any version of the screens.
+
+## Free training
+
+Google offers free online training on Skillshop, including the "Get Search Ad Campaign Ready" material in your week 7 assignment, and Google Ads certifications. Check whether any assessment has a cost before you start. Some employers ask for certifications, but they are not a substitute for being able to explain your decisions. This specialisation gives you that understanding in plain language, and Skillshop then shows you Google's own screens and terms.
 
 ## Handling money responsibly
 
 A Google Ads account spends the client's money, often charged to a card. Some important habits:
 
 * **Agree the budget in writing** before anything runs.
-* **Use the client's own account and payment method,** or give them full access, so they always own their data and history.
+* **Use the client's own account and payment method,** and ask them to give you access as a user, so they always own their data and history.
 * **Check daily for the first week** of any new campaign.
 * **Never promise rankings or sales numbers.** Promise a careful process and honest reports.
+* **Keep a change log,** so anyone can see what was changed, when and why.
 
-You do not need to spend money to learn. Every lesson's practice can be done as a plan in a sheet. If a practice step asks you to open an account and the setup asks for payment details, stop there and continue the plan in a sheet.
+## Practising without spending
 
-## A small example
+You do not need to spend money to learn. Every lesson's practice can be done as a plan in a sheet. Never add payment details for practice, and never use someone else's card. If a practice step asks you to open an account and the setup asks for payment details, stop there and continue the plan in a sheet. A well organised plan with clear reasons shows a mentor or employer more than a live campaign you cannot explain.
 
-Abdul-Rahman manages a car rental business in Tamale. Most customers arrive by air and search on their phones as they land. He creates a small search campaign around keywords such as "car hire Tamale airport" and "rent a car Tamale", with ads mentioning airport pickup and mobile money payment. Calls begin to come in from travellers who had never heard of the business. He checks the campaign each day for the first week, removes searches that waste money, and reports honestly to the owner each month.`,
+## Policies
+
+Google Ads has advertising policies covering what can be advertised and how. Some things are banned, such as counterfeit goods, and some are restricted, such as financial services, health products and alcohol, which may need extra checks or may be limited by country. Before you plan a campaign, check that the product and the claims are allowed. An ad that breaks policy will be disapproved, and repeated breaches can suspend an account.`,
+      workedExample_md: `Abdul-Rahman manages a car rental business in Tamale. Most customers arrive by air and search as they land.
+
+1. **He tests what appears.** He searches "car hire Tamale airport" and sees two sponsored results from Accra firms and none from Tamale.
+2. **He compares ads and SEO.** The business's website is new and will take months to rank, so a small search campaign can bring calls while the SEO work grows.
+3. **He checks policy.** Car rental is not a restricted category, and every claim he plans, such as airport pickup, is true.
+4. **He plans the campaign in a sheet** following the seven steps: goal, conversions, settings, keywords, ads, budget and bid strategy, then review.
+5. **He agrees the budget in writing** with the owner, Mr Mahama, who creates the account in the business's name and adds Abdul-Rahman as a user.
+6. **He launches and watches.** Calls begin to come from travellers who had never heard of the business. He checks the campaign each day for the first week, removes searches that waste money, and logs every change.
+7. **He reports honestly** each month, with no promises about rankings.
+
+He completed the Skillshop module first, so he recognised every screen.`,
+      keyTerms: [
+        { term: "Search ads", definition: "Paid text ads shown on search results for chosen keywords." },
+        { term: "SEO", definition: "Earning places in the normal, unpaid search results through useful pages." },
+        { term: "Conversion", definition: "An action you count as valuable, such as a call or form submission." },
+        { term: "Skillshop", definition: "Google's online training site for its advertising tools." },
+        { term: "Advertising policies", definition: "Google's rules on what can be advertised and how." },
+        { term: "Change log", definition: "A record of every change made to an account, with the date and reason." },
+      ],
+      commonMistakes: [
+        "Adding your own payment details just to practise",
+        "Running a client's ads from an account the client does not own",
+        "Promising a top position or a number of sales",
+        "Planning a campaign before checking that the product and claims are allowed",
+      ],
+      selfCheck: [
+        "What are the seven steps of building a Search campaign?",
+        "How do search ads and SEO differ in cost and speed?",
+        "What would you do if an account setup asks for payment details during practice?",
+      ],
       practice_task_md: `**Goal:** Choose your business and test what appears for its searches.
 
 **Steps:**
@@ -2131,16 +3217,28 @@ Abdul-Rahman manages a car rental business in Tamale. Most customers arrive by a
             answer_index: 2,
             explanation: "The lesson says you can learn everything as a plan without spending money.",
           },
+          {
+            prompt: "According to the lesson, at which step of building a Search campaign does billing come in?",
+            options: [
+              "Choosing a goal",
+              "Choosing keywords",
+              "Writing ads",
+              "Review and publish",
+            ],
+            answer_index: 3,
+            explanation: "The lesson's seven steps end with review and publish, which is where billing comes in.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "google-ads-auction": {
       outcomes: [
-        "Describe what happens in a search auction",
-        "Explain Ad Rank and Quality Score",
-        "Explain how paying per click works",
+        "Describe what happens between a search and an ad appearing",
+        "List the factors Google says go into Ad Rank",
+        "Explain the three Quality Score components and what the score is for",
+        "Explain why a relevant ad can beat a higher bid",
       ],
       explanation_md: `Every time someone searches, Google Ads runs an auction in a fraction of a second to decide which ads appear, in what order, and whether any appear at all. Understanding this auction is the foundation of week 7 and the reason a well run small campaign can beat a bigger budget.
 
@@ -2151,6 +3249,8 @@ Abdul-Rahman manages a car rental business in Tamale. Most customers arrive by a
 3. For each, it works out the **Ad Rank**, a set of values that decides whether the ad can show and where.
 4. Ads that meet the minimum standards show, highest Ad Rank first.
 
+This happens again for every single search. Your ad might win the top spot on one search, show lower on the next, and not show at all on a third, because the context and the competition change each time.
+
 ## What goes into Ad Rank
 
 Google Ads Help lists several factors:
@@ -2159,28 +3259,68 @@ Google Ads Help lists several factors:
 * **The quality of your ads and landing page,** how relevant and useful they are.
 * **Ad Rank thresholds,** minimum standards an ad must meet to show at all.
 * **How competitive the auction is.**
-* **The context of the search,** such as location, device, time and the words used.
-* **The expected impact of assets,** such as a phone number or extra links.
+* **The context of the search,** such as the person's location, device, time of the search, the words used, and the other ads and results on the page.
+* **The expected impact of assets,** such as a phone number or extra links, judged by their relevance, clickthrough rate and prominence.
 
 Google notes that relevance can make up for a lower bid. An advertiser with highly relevant keywords and ads can win a higher position at a lower price than a competitor bidding more.
 
+## Thresholds explained
+
+Ad Rank thresholds are the minimum quality an ad needs to appear in a position. A poor ad cannot simply buy its way onto the page with a high bid. Thresholds are not fixed: they change with the position, the topic of the search and other context. In practice this means a weak, irrelevant ad may not show at all, even with plenty of budget.
+
 ## Quality Score
 
-Google Ads gives each keyword a **Quality Score** from 1 to 10. It is based on three parts, each rated above average, average or below average:
+Google Ads gives each keyword a **Quality Score** from 1 to 10. It is based on three parts, each rated above average, average or below average, compared with other advertisers whose ads showed for the same search over the last 90 days:
 
 * **Expected clickthrough rate:** how likely people are to click your ad.
 * **Ad relevance:** how closely the ad matches the intent of the search.
 * **Landing page experience:** how useful and relevant the page is after the click.
 
-Google says Quality Score is a diagnostic tool and is not itself an input in the auction. It is a helpful summary of whether your ads and pages are relevant, and improving those things helps your Ad Rank.
+Google says Quality Score is a diagnostic tool and is not itself an input in the auction. Think of it like a report card rather than the exam: it tells you which part needs work. Improving the things it measures, relevant ads, appealing text and useful pages, is what helps your Ad Rank.
+
+## Reading the three ratings
+
+Each below average rating points to a different fix.
+
+* **Expected clickthrough rate below average:** the ad does not tempt searchers. Use the keyword's words in a headline and make the benefit clearer.
+* **Ad relevance below average:** the ad group is probably too broad. Split it so each ad speaks directly to its keywords.
+* **Landing page experience below average:** the page does not deliver what the ad promised, loads slowly, or is hard to use. Send the click to a page about exactly that service.
 
 ## Paying per click
 
-On most search campaigns you pay only when someone clicks. You set a maximum, but you often pay less than your maximum, depending on the auction. You never pay just because your ad was shown on a search campaign charged per click.
+On most search campaigns you pay only when someone clicks. You set a maximum, but you often pay less than your maximum, depending on the auction. You never pay just because your ad was shown on a search campaign charged per click. The amount you actually pay is called the actual cost per click.
 
-## A worked example
+## What this means for a small business
 
-Two shops in Tamale advertise for "laptop repair Tamale". Shop A bids more but its ad says only "Electronics and More" and sends people to a general home page. Shop B, run by Wumpini, bids less, but its ad says "Laptop Repair in Tamale, Same Day Screen Fix" and lands on a page about laptop repairs with prices and a WhatsApp button. Because Wumpini's ad and page are far more relevant to the search, her ad can appear above Shop A while she pays less per click.`,
+You rarely win by outbidding big companies. You win by being the most relevant answer: tightly themed ad groups, ads that repeat the searcher's words and promise, and a landing page that keeps that promise. The next lessons build each of those.`,
+      workedExample_md: `Two shops in Tamale advertise for "laptop repair Tamale".
+
+1. **Shop A bids more.** Its ad says only "Electronics and More" and sends people to a general home page showing televisions and phone cases.
+2. **Shop B bids less.** It is run by Wumpini. Her ad says "Laptop Repair in Tamale, Same Day Screen Fix" and lands on a page about laptop repairs with prices and a WhatsApp button.
+3. **The auction compares them.** Wumpini's ad matches the search closely, people are more likely to click it, and her page delivers what the ad promises.
+4. **The result.** Her ad can appear above Shop A while she pays less per click.
+5. **Shop A checks its Quality Score.** The keyword shows ad relevance below average and landing page experience below average.
+6. **Shop A's fixes.** It splits its single ad group into laptop, phone and TV repair groups, writes an ad for each, and builds a laptop repair page.
+
+Within a month the two shops compete on relevance, not just money, and searchers get better answers from both.`,
+      keyTerms: [
+        { term: "Ad auction", definition: "The process run on every search to decide which ads show and in what order." },
+        { term: "Ad Rank", definition: "The values that decide whether an ad can show and where." },
+        { term: "Ad Rank threshold", definition: "The minimum quality an ad needs to appear in a position." },
+        { term: "Quality Score", definition: "A 1 to 10 keyword diagnostic based on expected clickthrough rate, ad relevance and landing page experience." },
+        { term: "Actual cost per click", definition: "What you really pay for a click, often less than your maximum bid." },
+      ],
+      commonMistakes: [
+        "Thinking the highest bid always wins the top position",
+        "Treating Quality Score as an input in the auction rather than a diagnostic",
+        "Sending every ad to the home page",
+        "Ignoring which of the three ratings is below average",
+      ],
+      selfCheck: [
+        "Which factors does Google say go into Ad Rank?",
+        "What fix would you try for a below average ad relevance rating?",
+        "Why can a smaller business win a higher position at a lower price?",
+      ],
       practice_task_md: `**Goal:** Analyse real ads through the lens of Ad Rank.
 
 **Steps:**
@@ -2237,16 +3377,28 @@ Two shops in Tamale advertise for "laptop repair Tamale". Shop A bids more but i
             answer_index: 1,
             explanation: "Relevance can make up for a lower bid in the auction.",
           },
+          {
+            prompt: "A keyword shows landing page experience as below average. Which fix does the lesson suggest?",
+            options: [
+              "Raise the maximum bid",
+              "Send the click to a page about exactly that service",
+              "Add more keywords to the ad group",
+              "Pin the business name to Headline 1",
+            ],
+            answer_index: 1,
+            explanation: "A below average landing page rating means the page does not deliver what the ad promised, so send clicks to a page about that exact service.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "campaign-types-and-goals": {
       outcomes: [
-        "Start a campaign from its goal",
-        "Compare the main campaign types",
-        "Choose a type and define success",
+        "Match business goals to Google Ads campaign types",
+        "Explain why beginners start with Search campaigns",
+        "Define conversions, including for a business without a website",
+        "Write a short campaign brief",
       ],
       explanation_md: `Google Ads offers several kinds of campaign, each built for a different goal and showing ads in different places. Choosing the right type is one of the first questions in the "Get Search Ad Campaign Ready" training and in junior job interviews.
 
@@ -2260,6 +3412,8 @@ Before choosing a type, write the business goal in one sentence. Typical goals a
 * **Awareness:** more people know the brand.
 * **App installs:** people download an app.
 
+A good goal is specific: "More calls from people in Tamale who need a laptop repaired" is far more useful than "more customers".
+
 ## The main campaign types
 
 Google Ads Help describes these main types. Names and options change over time, so check the current list when you build.
@@ -2271,6 +3425,10 @@ Google Ads Help describes these main types. Names and options change over time, 
 * **Demand Gen:** visual ads in places such as YouTube and Gmail, aimed at creating interest.
 * **Shopping:** product listings with images and prices. You need an online shop and a product feed in Google Merchant Center.
 * **App:** promotes an app across Google's services.
+
+## Demand capture and demand creation
+
+A useful way to sort the types is by whether people are already looking. **Search** and **Shopping** capture demand: the person typed what they want. **Display**, **Video** and **Demand Gen** mostly create demand: they show the business to people who were doing something else, such as watching a video. Capturing demand usually turns into enquiries faster; creating demand builds awareness that pays off later. A small business with a tight budget normally captures existing demand first.
 
 ## Why beginners start with Search
 
@@ -2287,9 +3445,39 @@ Search campaigns are the clearest place to learn. You choose the keywords, write
 
 Whatever the type, decide what counts as success. Google Ads calls important actions **conversions**: a purchase, a form, a call from an ad, or a click on a WhatsApp button. Without conversions set up, you can only measure clicks, which tells you little about sales. For a business without a website, calls from ads and a simple question to every new customer, "How did you hear about us?", still give useful evidence.
 
-## A worked example
+Choose one primary conversion that matches the goal, such as calls of a reasonable length for the plumber. Other actions, such as visits to the contact page, can be tracked as secondary signals but should not be treated as sales. Counting the wrong thing makes a campaign look successful while the phone stays silent.
 
-Mariama's guesthouse in Tamale wants direct bookings. She has a simple website with a phone number and a booking form. Issahaku recommends a Search campaign targeting travellers searching for places to stay in Tamale, with a call asset, and sets the booking form and calls as conversions. Later, once there is enough booking data, they can test other campaign types.`,
+## The campaign brief
+
+Before building, write a short brief: the goal in one sentence, the chosen campaign type and why, the main conversion and how it will be counted, the area to target, and the budget the owner has approved. Share it with the owner and your mentor. It keeps everyone agreed on what success means before money is spent.`,
+      workedExample_md: `Mariama's guesthouse in Tamale wants more direct bookings. She has a simple website with a phone number and a booking form.
+
+1. **Goal.** Issahaku writes: "More direct bookings from travellers searching for a place to stay in Tamale."
+2. **Demand.** Travellers already search for guesthouses before a trip, so this is demand capture.
+3. **Type.** He recommends a Search campaign with a call asset. He considers Performance Max but rules it out for now, because there is no conversion history for it to learn from.
+4. **Conversions.** The booking form submission is the primary conversion, and calls from the ad are counted too. Visits to the rooms page are tracked only as a secondary signal.
+5. **No website fallback.** For walk in guests, Mariama will ask "How did you hear about us?" and note the answer.
+6. **Brief.** He writes all of this on one page, with the area, Tamale and travellers searching for it, and the budget Mariama approved, and shares it with her.
+
+Later, once there is enough booking data, they can test other campaign types.`,
+      keyTerms: [
+        { term: "Campaign type", definition: "The kind of Google Ads campaign, such as Search, Display or Performance Max." },
+        { term: "Demand capture", definition: "Reaching people who are already searching for what you offer." },
+        { term: "Demand creation", definition: "Showing a business to people who were not yet looking for it." },
+        { term: "Performance Max", definition: "A goal based campaign type that uses automation across Google's channels." },
+        { term: "Primary conversion", definition: "The main action a campaign is judged on, chosen to match the goal." },
+      ],
+      commonMistakes: [
+        "Choosing an automated campaign type before conversion tracking works",
+        "Counting page visits as if they were sales",
+        "Writing a vague goal such as \"more customers\"",
+        "Running a Shopping campaign without an online shop and product feed",
+      ],
+      selfCheck: [
+        "Which campaign types capture demand and which create it?",
+        "Why do beginners usually start with Search?",
+        "What would count as a conversion for a business with no website?",
+      ],
       practice_task_md: `**Goal:** Choose the right campaign type for your business and define success.
 
 **Steps:**
@@ -2352,9 +3540,10 @@ Mariama's guesthouse in Tamale wants direct bookings. She has a simple website w
 
     "account-structure": {
       outcomes: [
-        "Explain the layers of an ads account",
-        "Organise campaigns into tight ad groups",
-        "Check campaign settings and name things clearly",
+        "Describe the layers of a Google Ads account",
+        "Organise campaigns and tightly themed ad groups",
+        "Choose location, language, network and schedule settings",
+        "Audit and rebuild a messy account",
       ],
       explanation_md: `A messy Google Ads account wastes money and makes reports confusing. A tidy one makes every decision easier. Employers often hand a junior an existing account and ask, "What would you change?" Understanding structure is how you answer.
 
@@ -2370,6 +3559,8 @@ Mariama's guesthouse in Tamale wants direct bookings. She has a simple website w
 
 Create separate campaigns when you need different budgets, locations or goals. For example, a hotel might have one campaign for rooms and another for its conference hall, because they have different budgets and customers. A business serving Tamale and Accra might split by location if it wants to control spending in each.
 
+Keep the number of campaigns small for a small budget. Every campaign needs its own budget, and many tiny budgets mean none gets enough clicks to learn from.
+
 ## Tight ad groups
 
 Each ad group should cover one theme, so the ad can speak directly to every keyword in it. If an ad group mixes "laptop repair", "phone screen repair" and "printer ink", no single ad can be relevant to all three. Split them into three ad groups, each with its own ads.
@@ -2378,18 +3569,58 @@ A simple test: could you write one headline that perfectly answers every keyword
 
 ## Campaign settings worth checking
 
-* **Locations:** target where customers actually are. Check whether the setting includes people located in, or merely interested in, a place, and choose what fits.
+* **Locations:** target where customers actually are. Google's location options can use people's physical location, meaning people who are in or regularly in the place, and their location of interest, meaning people who have shown interest in it, for example by searching for it. The default uses both. A Tamale guesthouse may want both, because travellers in Accra search for Tamale before they arrive. A plumber who only works in Tamale may choose physical location only, so the budget is not spent on people elsewhere.
 * **Languages:** usually English for Ghana, plus any other language your ads use.
-* **Networks:** Search campaigns can include partner sites and the Display Network. Many beginners turn off the Display Network in a Search campaign so they can see search results clearly.
+* **Networks:** Search campaigns can include search partner sites and the Display Network. Many beginners turn off the Display Network in a Search campaign so they can see search results clearly.
 * **Ad schedule:** limit hours if nobody answers the phone at night.
+
+## Who has access
+
+The business owns the account. Marketers are added as users with the access level they need, and removed when the work ends. Google Ads also lets an agency or freelancer manage several client accounts from one manager account, without ever sharing passwords. Never create a client's account in your own name, because they would lose their history if you part ways.
+
+## Auditing an existing account
+
+When you inherit an account, look before you change anything.
+
+1. **Read the structure.** List campaigns and ad groups. Do names make sense? Does each ad group have one theme?
+2. **Check settings.** Locations, location options, languages, networks and schedule. Many problems hide here.
+3. **Check conversions.** Is anything being counted, and is it the right action?
+4. **Look at spend.** Which campaigns and ad groups use most of the money, and what do they bring?
+5. **Write findings before acting.** Agree changes with the owner, then make them one at a time and log them.
 
 ## Naming
 
-Use clear, consistent names, for example "Search Repairs Tamale" for a campaign and "Laptop Screen" for an ad group. Anyone reading a report should understand it without asking you.
+Use clear, consistent names, for example "Search Repairs Tamale" for a campaign and "Laptop Screen" for an ad group. Anyone reading a report should understand it without asking you. A pattern such as type, theme and place for campaigns, and theme for ad groups, keeps things readable as the account grows.`,
+      workedExample_md: `Sumaila inherits a Google Ads account for an electronics repair shop in Wa, owned by Hajia Safura.
 
-## A worked example
+1. **He reads the structure.** One campaign called "Campaign 1" and one ad group with forty keywords covering phones, laptops, TVs and solar lights.
+2. **He checks settings.** Locations are set to all of Ghana with the default location option, the Display Network is on, and ads run all night.
+3. **He checks conversions.** Nothing is tracked, so nobody knows which keywords bring calls.
+4. **He writes findings** and agrees a plan with Hajia Safura before touching anything.
+5. **He rebuilds the structure.** One Search campaign called "Search Repairs Wa", with four ad groups: Phone Repair, Laptop Repair, TV Repair and Solar Lights, each with five to ten closely related keywords and its own ads.
+6. **He fixes settings.** Locations: Wa and nearby towns, physical location only, because the shop only serves people who can visit. Display Network off. Schedule: shop hours.
+7. **He tracks calls from ads as conversions** and logs every change with the date.
 
-Sumaila inherits an account for an electronics shop in Wa. It has one campaign called "Campaign 1" and one ad group with forty keywords covering phones, laptops, TVs and solar lights. He rebuilds it as one Search campaign called "Search Repairs Wa", with four ad groups: Phone Repair, Laptop Repair, TV Repair and Solar Lights. Each has five to ten closely related keywords and ads written for that theme. He limits locations to Wa and nearby towns, turns off the Display Network, and sets the schedule to shop hours.`,
+The account is now easy to read, and every cedi has a clear job.`,
+      keyTerms: [
+        { term: "Ad group", definition: "A set of closely related keywords and the ads written for them." },
+        { term: "Location of interest", definition: "A location people have shown interest in, for example by searching for it." },
+        { term: "Physical location", definition: "Where people are, or regularly are, when they search." },
+        { term: "Display Network", definition: "Websites and apps where Google can show ads, separate from search results." },
+        { term: "Manager account", definition: "A Google Ads account that lets an agency or freelancer manage several client accounts." },
+      ],
+      commonMistakes: [
+        "Mixing unrelated services in one ad group",
+        "Leaving location options on the default without thinking about who should see the ads",
+        "Creating a client's account in your own name",
+        "Changing many settings at once before writing down what you found",
+        "Leaving ads running at night when nobody answers the phone",
+      ],
+      selfCheck: [
+        "What is the one headline test for an ad group?",
+        "When would you choose physical location only instead of the default?",
+        "What five things would you check when auditing an inherited account?",
+      ],
       practice_task_md: `**Goal:** Design the account structure for your business on paper or in a sheet.
 
 **Steps:**
@@ -2446,16 +3677,28 @@ Sumaila inherits an account for an electronics shop in Wa. It has one campaign c
             answer_index: 2,
             explanation: "Separate campaigns are useful when budgets, locations or goals differ.",
           },
+          {
+            prompt: "A plumber only works in Tamale. Which location option does the lesson suggest?",
+            options: [
+              "Location of interest only",
+              "All of Ghana with the default option",
+              "Physical location only",
+              "No location targeting at all",
+            ],
+            answer_index: 2,
+            explanation: "Physical location only keeps the budget on people who are, or regularly are, in Tamale.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "keywords-and-match-types": {
       outcomes: [
-        "Choose keywords with buying intent",
-        "Use match types",
-        "Add negative keywords",
+        "Choose keywords that show buying intent",
+        "Write broad, phrase and exact match keywords correctly",
+        "Explain how negative keywords match searches",
+        "Build a keyword list with negatives for one ad group",
       ],
       explanation_md: `Keywords decide which searches can trigger your ads. Choose them well and your budget reaches people ready to buy. Choose badly and you pay for clicks from people who will never become customers. This is the first half of week 8, campaign setup with keywords and ad copy.
 
@@ -2467,17 +3710,23 @@ For search ads, focus on phrases that show someone is ready to act:
 * **Action words:** buy, order, book, hire, repair, delivery, price.
 * **Specific products:** "solar fridge for shop", "Samsung screen replacement".
 
-Learning phrases, such as "how does a solar panel work", are better served by SEO content than paid clicks. You can find ideas the same way as in SEO: search suggestions, related searches, and customers' own words. Keyword Planner inside Google Ads adds estimates once the account setup, including billing details, is complete.
+Learning phrases, such as "how does a solar panel work", are better served by SEO content than paid clicks. You can find ideas the same way as in SEO: search suggestions, related searches, and customers' own words. Keyword Planner inside Google Ads adds estimates once the account setup, including billing details, is complete, so do not depend on it for practice.
 
 ## Match types
 
 Each keyword has a match type that controls how closely a search must match it. Google Ads Help describes three.
 
-* **Broad match:** the default, written with no symbols, such as car hire Tamale. Ads can show on searches related to the keyword, even ones that do not contain its words. It reaches the most searches. Google recommends using it with Smart Bidding, which uses conversion data to set bids.
-* **Phrase match:** written in quotation marks, such as "car hire Tamale". Ads can show on searches that include the meaning of the keyword. It reaches fewer searches than broad and more than exact.
+* **Broad match:** the default, written with no symbols, such as car hire Tamale. Ads can show on searches related to the keyword, even ones that do not contain its words. Google also uses signals such as the other keywords in the ad group and the landing page to judge what is related. It reaches the most searches. Google recommends using it with Smart Bidding, which uses conversion data to set bids.
+* **Phrase match:** written in quotation marks, such as "car hire Tamale". Ads can show on searches that include the meaning of the keyword, including more specific versions of it. It reaches fewer searches than broad and more than exact.
 * **Exact match:** written in square brackets, such as [car hire Tamale]. Ads can show on searches with the same meaning or intent as the keyword. It gives the most control and reaches the fewest searches.
 
+Broader match types also cover the searches the narrower ones would match. A broad keyword can show on everything its phrase and exact versions would, plus related searches.
+
 For a small budget without much conversion data, many advertisers start with phrase and exact match to keep control, then test broad match once conversion tracking is working.
+
+## Same meaning, not same words
+
+None of the match types requires the exact words any more. Exact match [car hire Tamale] can show for "rent a car in Tamale", because the meaning is the same. That is helpful, but it means you must check what searches really triggered your ads, which you will do in week 9 with the search terms report.
 
 ## Negative keywords
 
@@ -2487,11 +3736,52 @@ A negative keyword stops your ad showing on searches that include it. They are o
 * A new phone shop that does not repair phones adds "repair".
 * A business wanting customers, not learners, may add "free", "course" or "how to".
 
-Negative keywords can be added to a campaign or an ad group, and they behave a little differently from normal match types, so check Google's help when you build.
+Negative keywords can be added to a campaign or an ad group, and they behave differently from normal keywords. Google's help on negative keyword match types explains:
 
-## A worked example
+* **Negatives do not match synonyms or close variants.** If you exclude "job", add "jobs" and "vacancy" yourself. Google does handle misspellings and capital letters for you.
+* **Negative broad match** blocks the ad when the search contains all the negative words, in any order.
+* **Negative phrase match** blocks the ad when the words appear together in that order, even with other words around them.
+* **Negative exact match** blocks the ad only when the search is exactly those words and nothing more.
 
-Abdul-Rahman builds keywords for the car rental business. In the "Airport Car Hire" ad group he uses "car hire Tamale airport", [rent a car Tamale airport] and "airport taxi Tamale". He adds negatives: jobs, driver vacancy, bus, cheap flights and Kumasi, because the business only operates in Tamale. He expects most clicks to come from travellers ready to book.`,
+For most single word negatives, such as "jobs" or "free", the default negative broad match works well.
+
+## Building a list that holds together
+
+A good ad group keyword list has five to fifteen keywords on one theme, a mix of phrase and exact match while you learn, and a set of negatives. Shared negatives that apply to every campaign, such as "jobs" and "free", can sit in a negative keyword list attached to all campaigns, so you do not repeat the work. Keep a note of why each negative was added, so nobody removes it later by mistake.
+
+## Avoid competing with yourself
+
+If the same keyword sits in two ad groups, they compete for the same searches and reports become confusing. Give each keyword one home, exactly as you gave each SEO keyword one page. When two ad groups overlap, add the other group's main keyword as a negative so each search goes to the most relevant ad.`,
+      workedExample_md: `Abdul-Rahman builds keywords for the car rental business in Tamale.
+
+1. **Theme.** The ad group "Airport Car Hire" is for travellers landing at Tamale airport.
+2. **Keywords.** He writes "car hire Tamale airport" and "airport car rental Tamale" in phrase match, and [rent a car Tamale airport] in exact match, with the symbols written correctly.
+3. **Learning phrases out.** "How to drive from Tamale airport to town" goes on his SEO ideas list instead.
+4. **Negatives with variants.** He adds jobs, job, vacancy, salary and driver vacancy, because negatives do not cover variants. He also adds bus and cheap flights.
+5. **Place negative.** He adds Kumasi, because the business only operates in Tamale.
+6. **Shared list.** He puts jobs, job, vacancy and free in a negative keyword list for every campaign, with a note of why.
+7. **Overlap check.** His other ad group, "Car Hire With Driver", also wanted "car hire Tamale". He keeps it in one group only and adds "with driver" as a negative in the airport group.
+
+He expects most clicks to come from travellers ready to book.`,
+      keyTerms: [
+        { term: "Broad match", definition: "The default match type, with no symbols, showing ads on related searches." },
+        { term: "Phrase match", definition: "Written in quotation marks; shows ads on searches that include the keyword's meaning." },
+        { term: "Exact match", definition: "Written in square brackets; shows ads on searches with the same meaning or intent." },
+        { term: "Negative keyword", definition: "A word or phrase that stops your ad showing on searches containing it." },
+        { term: "Close variant", definition: "A plural, synonym or similar form of a keyword, which negatives do not cover." },
+        { term: "Negative keyword list", definition: "A shared set of negatives that can be attached to several campaigns." },
+      ],
+      commonMistakes: [
+        "Adding \"job\" as a negative and forgetting \"jobs\" and \"vacancy\"",
+        "Using broad match on a small budget before conversion tracking works",
+        "Paying for learning searches that SEO content would serve better",
+        "Putting the same keyword in two ad groups",
+      ],
+      selfCheck: [
+        "How do you write the same keyword in broad, phrase and exact match?",
+        "Why must you add plurals and synonyms of negatives yourself?",
+        "Which negatives would every campaign for your business need?",
+      ],
       practice_task_md: `**Goal:** Build the keyword list for one ad group. This is the first half of the week 8 assignment.
 
 **Steps:**
@@ -2566,20 +3856,21 @@ Abdul-Rahman builds keywords for the car rental business. In the "Airport Car Hi
 
     "responsive-search-ads": {
       outcomes: [
-        "Explain the responsive search ad format",
-        "Write headlines and descriptions that follow the rules",
-        "Use pinning carefully",
+        "Explain how responsive search ads combine headlines and descriptions",
+        "Write headlines and descriptions within Google's limits",
+        "Decide when pinning is worth it",
+        "Write three complete ads for a sample campaign",
       ],
       explanation_md: `The ad text is what persuades someone to click. On Google search, the standard format is the **responsive search ad**. You write several headlines and descriptions, and Google combines them into different versions, learning which work best. The week 8 assignment asks for a sample search campaign with three ad copies, and this lesson shows you how to write them.
 
 ## The format
 
-According to Google Ads Help:
+At the time of writing, Google Ads Help gives these limits. Check the help page before you write, because limits can change.
 
 * You can enter up to 15 headlines and 4 descriptions per ad, with a minimum of 3 headlines and 2 descriptions.
 * Each headline can have up to 30 characters, and each description up to 90 characters.
 * The display path has two optional fields of up to 15 characters each, shown after the website address.
-* Google shows a combination: usually Headline 1 and Description 1, with others added when space and predicted performance allow.
+* Each ad shows at least one headline and one description. Up to 3 headlines can appear together. Headline 1 and Description 1 usually show; the others appear when space and predicted performance allow.
 
 Because headlines can appear in any order, each one must make sense on its own and next to any other.
 
@@ -2594,9 +3885,19 @@ Aim for variety, so the system has real choices.
 * **Action headlines:** "Book Your Car Today", "Call or WhatsApp Now".
 * **Descriptions** expand on benefits and end with a clear next step, such as how to book and pay.
 
+Avoid near copies. "Car Hire Tamale" and "Tamale Car Hire" give the system almost nothing new to test.
+
+## Ad Strength
+
+As you write, Google shows an **Ad Strength** rating, from Poor to Excellent, that judges how relevant, varied and complete your headlines and descriptions are. It is a helpful writing check, not a guarantee of results. Google's help suggests having at least two responsive search ads rated Good or Excellent in each ad group. Usually you raise Ad Strength by adding more distinct headlines and using your keywords naturally.
+
 ## Pinning
 
-You can pin a headline or description to a position so it always appears there, for example a required legal line or the business name. Pinning reduces the combinations Google can test, so pin only when you must.
+You can pin a headline or description to a position so it always appears there, for example a required legal line or the business name. A headline pinned to position 1 or 2, or a description pinned to position 1, will always show; one pinned to headline position 3 or description position 2 may not. Pinning reduces the combinations Google can test, so pin only when you must. If you pin, pin two or three different headlines to the same position, so the system still has a choice.
+
+## The display path and final URL
+
+The **final URL** is the page people land on after clicking. It must match what the ad promises, which the next lesson covers. The display path adds readable words after the website address, such as car-hire/airport after the business's web address, to show people where they will land. It does not need to be a real page address.
 
 ## Writing rules
 
@@ -2605,15 +3906,41 @@ You can pin a headline or description to a position so it always appears there, 
 * Match the landing page. If the ad says "Same Day Screen Fix", the page must say so too.
 * Use plain words customers use, not company jargon.
 
-## A worked example
+## Three ads for the assignment
 
-Hawa's niece Rahinatu writes a responsive search ad for shea butter delivery.
+Three ads can mean three ad groups with one ad each, or one ad group with three angles: one led by price, one by convenience, one by trust. Either way, each ad needs at least 8 to 10 distinct headlines and 2 to 4 descriptions, all within the limits, and a final URL. Count characters with a sheet formula such as LEN before you show anyone, because an ad over the limit cannot be saved.`,
+      workedExample_md: `Hawa's niece Rahinatu writes a responsive search ad for shea butter delivery.
 
-Headlines include: "Pure Shea Butter from Tamale", "Handmade by Women in Tamale", "Delivery Across Ghana", "Pay with Mobile Money", "Order on WhatsApp Today", "Unrefined Shea Butter", "Natural Skin and Hair Care".
+1. **Keyword headlines.** "Pure Shea Butter from Tamale" and "Unrefined Shea Butter".
+2. **Benefit and proof headlines.** "Handmade by Women in Tamale", "Natural Skin and Hair Care" and "Delivery Across Ghana".
+3. **Action headlines.** "Pay with Mobile Money" and "Order on WhatsApp Today".
+4. **Descriptions.** "Pure, unrefined shea butter made by hand by our women's group in Tamale. Order today." and "Delivery across Ghana. Pay easily with mobile money. Message us on WhatsApp to order."
+5. **Character check.** She uses LEN in a sheet: every headline is under 30 characters, every description under 90.
+6. **Random pairs.** She reads headlines together at random, such as "Delivery Across Ghana" with "Unrefined Shea Butter". Every pair makes sense.
+7. **Pinning.** She pins nothing, so the system can test every combination.
+8. **Ad Strength.** It shows Average, so she adds three more distinct headlines, including "Wholesale Orders Welcome", and it rises to Good.
 
-Descriptions include: "Pure, unrefined shea butter made by hand by our women's group in Tamale. Order today." and "Delivery across Ghana. Pay easily with mobile money. Message us on WhatsApp to order."
-
-Each headline is under 30 characters and makes sense in any combination.`,
+She repeats the process for two more angles to complete three ads.`,
+      keyTerms: [
+        { term: "Responsive search ad", definition: "A search ad built from several headlines and descriptions that Google combines." },
+        { term: "Headline", definition: "A short line of up to 30 characters, shown at the top of a search ad." },
+        { term: "Description", definition: "A longer line of up to 90 characters that expands on the ad." },
+        { term: "Pinning", definition: "Fixing a headline or description to a position so it always shows there." },
+        { term: "Ad Strength", definition: "Google's rating of how relevant, varied and complete an ad's text is." },
+        { term: "Final URL", definition: "The page people land on after clicking the ad." },
+      ],
+      commonMistakes: [
+        "Writing headlines that only make sense in one order",
+        "Writing near copies such as \"Car Hire Tamale\" and \"Tamale Car Hire\"",
+        "Pinning many headlines so the system has nothing to test",
+        "Promising an offer the landing page does not mention",
+        "Using capitals and \"!!!\" that break Google's policies",
+      ],
+      selfCheck: [
+        "What are the headline and description limits, and where would you check they are current?",
+        "Which pinned positions always show, and which may not?",
+        "How would you raise an ad's Ad Strength from Average to Good?",
+      ],
       practice_task_md: `**Goal:** Write three complete responsive search ads. This completes the week 8 assignment.
 
 **Steps:**
@@ -2671,16 +3998,28 @@ Each headline is under 30 characters and makes sense in any combination.`,
             answer_index: 2,
             explanation: "Pinning limits combinations, so pin only when you must.",
           },
+          {
+            prompt: "What does the lesson say Ad Strength is?",
+            options: [
+              "A guarantee that the ad will win the auction",
+              "The same thing as Quality Score",
+              "A writing check on how relevant, varied and complete the ad text is",
+              "The amount you bid for each click",
+            ],
+            answer_index: 2,
+            explanation: "Ad Strength rates the ad text's relevance, variety and completeness; it is a writing check, not a guarantee.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "assets-and-landing-pages": {
       outcomes: [
-        "Add useful ad assets",
-        "Describe what a good landing page does",
-        "Track the action when there is no website",
+        "Choose assets that make search ads more useful",
+        "Plan a landing page that keeps the ad's promise",
+        "Find options for a business without a website",
+        "Link landing page actions to conversions",
       ],
       explanation_md: `An ad is only the first step. Assets make the ad bigger and more useful, and the landing page decides whether a click becomes a customer. Landing page experience is also one of the three parts of Quality Score, so this lesson directly affects how well your campaign performs.
 
@@ -2694,8 +4033,16 @@ Assets, once called extensions, add extra information to search ads. Common ones
 * **Call asset:** a phone number people can use to call straight from the ad.
 * **Location asset:** the address from a linked Business Profile.
 * **Image asset:** a picture shown with the ad in some placements.
+* **Price and promotion assets:** a short price list or a current offer, where they fit.
 
-Google decides when to show assets, and adding them does not cost extra in itself; you pay for clicks as usual. Add the ones that genuinely help customers. A call asset is often valuable for local businesses, because many customers prefer to call or message.
+Google decides when to show assets, and adding them does not cost extra in itself; you pay for clicks as usual. Assets also feed into Ad Rank, through their expected impact, so good ones help twice. Add the ones that genuinely help customers. A call asset is often valuable for local businesses, because many customers prefer to call or message.
+
+## Writing good assets
+
+* **Sitelinks** should each lead to a different, useful page, with link text of a few words that says exactly what is there.
+* **Callouts** should be short facts not already in the headlines. Repeating "Same Day Fix" in a headline and a callout wastes space.
+* **Call assets** should only run when someone can answer. You can schedule assets to match opening hours.
+* **Everything must be true.** An offer that ended last month must come down today.
 
 ## What a good landing page does
 
@@ -2708,17 +4055,57 @@ The landing page is where people arrive after clicking. It should:
 * **Build trust:** real photos, address, genuine reviews, clear contact details.
 * **Be honest:** prices and offers must match the ad.
 
+## Message match
+
+The simplest landing page test is message match. Read the search, the ad and the page's main heading together. "Laptop screen repair Tamale", then "Same Day Laptop Screen Repair in Tamale", then a page headed "Laptop screen repair in Tamale, same day" is a perfect chain. If the page heading talks about something else, the visitor wonders whether they are in the right place, and many leave.
+
+## A quick landing page check
+
+Open the page on a phone and on a computer and ask:
+
+1. Can I see what is offered and where within a few seconds?
+2. Is the main button visible without scrolling far?
+3. Does the page load quickly on a normal mobile connection?
+4. Are the price, offer and opening hours the same as in the ad?
+5. Would I trust this business with my money?
+
+Any "no" is a fix to make before spending on clicks.
+
 ## When there is no website
 
 Many small businesses do not have a website yet. Options include a simple free site builder page, a Google Business Profile, or a one page site built with a free tool. Some campaigns can use call assets so people can call straight from the ad. Whatever you use, follow Google's policies: the destination must work, be relevant to the ad and be useful.
 
 ## Tracking the action
 
-Link the landing page actions to conversions: a call from the ad, a form, or a click on the WhatsApp button. This lets you see which keywords and ads bring real enquiries, which you need for week 9.
+Link the landing page actions to conversions: a call from the ad, a form, or a click on the WhatsApp button. This lets you see which keywords and ads bring real enquiries, which you need for week 9.`,
+      workedExample_md: `Wumpini's laptop repair ad in Tamale used to send people to the shop's home page, which showed TVs and phone cases first.
 
-## A worked example
+1. **Message match check.** Search "laptop repair Tamale", ad "Laptop Repair in Tamale, Same Day Screen Fix", page heading "Welcome to Our Shop". The chain breaks at the page.
+2. **New page.** She builds a simple page titled "Laptop Repair in Tamale" with a short list of repairs and starting prices, a photo of the technician, Baba, at work, opening hours, and the address with a landmark.
+3. **Next step.** Large Call and WhatsApp buttons sit at the top.
+4. **Quick check.** She opens the page on a phone using mobile data and on a laptop. It loads quickly and the buttons are visible at once.
+5. **Assets.** Sitelinks for Prices and Location, callouts for "Mobile Money Accepted" and "Open Saturdays" (not repeating the headline), and a call asset scheduled for shop hours only.
+6. **Conversions.** Calls from the ad and clicks on the WhatsApp button are tracked.
 
-Wumpini's laptop repair ad in Tamale used to send people to the shop's home page, which showed TVs and phone cases first. She builds a simple page titled "Laptop Repair in Tamale" with a short list of repairs and starting prices, a photo of the technician at work, opening hours, the address with a landmark, and large Call and WhatsApp buttons at the top. She adds sitelinks for Prices and Location, callouts for "Same Day Screen Fix" and "Mobile Money Accepted", and a call asset. Enquiries become easier to track and more people who click actually get in touch.`,
+Enquiries become easier to track and more people who click actually get in touch.`,
+      keyTerms: [
+        { term: "Asset", definition: "Extra information added to an ad, such as sitelinks, callouts or a phone number." },
+        { term: "Sitelink", definition: "An extra link in an ad that leads to a specific page." },
+        { term: "Callout", definition: "A short phrase in an ad, such as \"Open 7 Days\"." },
+        { term: "Landing page", definition: "The page people arrive at after clicking an ad." },
+        { term: "Message match", definition: "The search, the ad and the landing page heading all saying the same thing." },
+      ],
+      commonMistakes: [
+        "Sending every ad to the home page",
+        "Running a call asset when nobody can answer the phone",
+        "Repeating headline words in callouts instead of adding new facts",
+        "Leaving an expired offer in an ad or on the page",
+      ],
+      selfCheck: [
+        "Read your search, ad and page heading together: do they match?",
+        "Which assets would help your business most, and why?",
+        "What five questions make up the quick landing page check?",
+      ],
       practice_task_md: `**Goal:** Plan assets and a landing page for one ad group.
 
 **Steps:**
@@ -2775,27 +4162,39 @@ Wumpini's laptop repair ad in Tamale used to send people to the shop's home page
             answer_index: 0,
             explanation: "Many customers prefer calling or messaging, so a way to call straight from the ad helps.",
           },
+          {
+            prompt: "What does the lesson call the chain of a search, an ad and a landing page heading all saying the same thing?",
+            options: [
+              "Message match",
+              "Ad Strength",
+              "Quality Score",
+              "Broad match",
+            ],
+            answer_index: 0,
+            explanation: "Message match means the search, the ad and the page heading say the same thing, so visitors know they are in the right place.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "budgets-and-bidding": {
       outcomes: [
-        "Set an average daily budget",
-        "Compare bid strategies",
-        "Plan budget and bidding for a campaign",
+        "Explain how average daily budgets and monthly limits work",
+        "Turn a monthly amount in cedis into a daily budget",
+        "Compare the main bid strategies and what each needs",
+        "Plan a path from simple bidding to Smart Bidding",
       ],
       explanation_md: `Week 9 of the Google Ads specialisation is optimisation and budgeting. Before you can optimise, you need to understand how money moves through a campaign: the budget limits spending, and the bid strategy decides how each auction is approached.
 
 ## Average daily budget
 
-In Google Ads, each campaign has an **average daily budget**. Google Ads Help explains two important rules:
+In Google Ads, each campaign has an **average daily budget**. You met its limits briefly in the Digital Marketer roadmap; here you use them to plan. Google Ads Help explains two rules that apply to most campaigns:
 
 * On any single day, a campaign can spend up to twice its average daily budget, to take advantage of days with more searches.
 * Over a month, it will not charge more than 30.4 times the average daily budget. That number is roughly the average days in a month.
 
-So if a client can afford a certain amount per month, divide it by 30.4 to find the daily budget. Explain to the client that some days will be higher and some lower, and that the monthly limit protects them.
+So if a client can afford a certain amount per month, divide it by 30.4 to find the daily budget. Explain to the client that some days will be higher and some lower, and that the monthly limit protects them. If you change the budget partway through a month, the limit for that month adjusts, so check Google's help before making big mid month changes.
 
 ## Setting a budget
 
@@ -2804,32 +4203,70 @@ So if a client can afford a certain amount per month, divide it by 30.4 to find 
 * **Avoid spreading a small budget across many campaigns.** One focused campaign learns faster than five starved ones.
 * **Watch whether the budget limits the campaign.** Google Ads shows when a campaign is "limited by budget", which means it could show more often with more money.
 
+A rough sense check helps. If the daily budget only covers two or three clicks at the prices you see in your plan, the campaign will learn very slowly. In that case, narrow the keywords or locations so the money covers the most valuable searches, rather than spreading it thinly.
+
+## Shared budgets
+
+A shared budget lets several campaigns draw from one pot. It can be useful when an owner thinks in one total amount, but it makes it harder to control what each campaign spends. While you are learning, give each campaign its own budget so you can see clearly what each one does.
+
 ## Bid strategies
 
-Google Ads offers several bid strategies. Google Ads Help describes these among others:
+Google Ads offers several bid strategies, grouped by what they aim for. Google Ads Help describes these among others:
 
 * **Manual CPC:** you set the maximum cost per click yourself. Full control, more work.
 * **Maximise clicks:** Google sets bids to get as many clicks as possible within the budget. Useful for new campaigns without conversion data.
 * **Maximise conversions:** Google sets bids to get as many conversions as possible while spending the budget.
-* **Target CPA:** Google aims for as many conversions as possible at a cost per action you set.
+* **Target CPA:** Google aims for as many conversions as possible at a cost per action you set. On some screens this appears as an optional target inside Maximise conversions.
 * **Target ROAS:** Google aims for conversion value at a return on ad spend you set. Useful when sales have different values.
+* **Target impression share:** Google sets bids to show your ad at the top of the page, or anywhere on it, for a share of searches you choose. Useful when being visible matters more than clicks, such as for the business's own name.
 
-Strategies that use conversions are called **Smart Bidding**. They need conversion tracking that works and enough conversions to learn from.
+Strategies that use conversions are called **Smart Bidding**. They set a bid for each auction using signals such as device, location and time of day. They need conversion tracking that works and enough conversions to learn from.
 
 ## Choosing a strategy
 
 A simple path for a small business:
 
 1. Set up conversion tracking first.
-2. Start with Maximise clicks or Manual CPC while you learn which keywords work.
+2. Start with Maximise clicks or Manual CPC while you learn which keywords work. With Maximise clicks, consider a maximum CPC limit so a few expensive clicks cannot use up the day.
 3. Once the campaign records conversions regularly, test Maximise conversions.
-4. When results are steady, consider a target such as Target CPA.
+4. When results are steady, consider a target such as Target CPA, set close to what you have actually been paying, not a wish.
 
-Change strategy rarely, and give each change time, because automated strategies need a learning period.
+Change strategy rarely, and give each change time, because automated strategies need a learning period. Google Ads shows a "learning" status after major changes; judge results after it ends, not during it.
 
-## A worked example
+## Explaining it to the owner
 
-The car rental business in Tamale can afford a certain amount per month for ads. Abdul-Rahman divides it by 30.4 to set the daily budget, and writes to the owner explaining that daily spend can vary up to twice that amount, but the monthly total will not go over the limit. He starts with Maximise clicks, sets up calls and WhatsApp clicks as conversions, and plans to test Maximise conversions after several weeks of data.`,
+Owners do not need the jargon. Say what the budget is per month, what the most it can be in a month is, how the system decides bids, and when you will next review. One short message in plain words builds more trust than a screenshot full of terms.`,
+      workedExample_md: `The car rental business in Tamale can afford a certain amount per month for ads.
+
+1. **Daily budget.** Abdul-Rahman divides the monthly amount by 30.4 and rounds down, writing the calculation in his plan.
+2. **Explaining limits.** He messages the owner, Mr Mahama: "Some days may spend up to twice the daily amount when more people search, but the monthly total will not go over the limit we agreed."
+3. **Sense check.** The daily budget covers a reasonable number of clicks for his two ad groups, so he does not need to cut keywords.
+4. **Starting strategy.** Maximise clicks with a maximum CPC limit, because the campaign has no conversion history yet.
+5. **Tracking first.** He sets up calls from the ad and WhatsApp button clicks as conversions before launch.
+6. **The path.** After several weeks with regular conversions, he plans to test Maximise conversions, and later a Target CPA close to the real cost per enquiry.
+7. **Brand visibility.** He considers Target impression share for searches of the business's own name, but decides to wait until the main campaign is stable.
+
+Every step is written in a short plan that Mr Mahama approves.`,
+      keyTerms: [
+        { term: "Average daily budget", definition: "The amount a campaign aims to spend per day on average." },
+        { term: "Monthly charging limit", definition: "The most a campaign is charged in a month: 30.4 times the average daily budget." },
+        { term: "Bid strategy", definition: "The way bids are set for each auction, manually or automatically." },
+        { term: "Smart Bidding", definition: "Automated bid strategies that use conversion data to set a bid for each auction." },
+        { term: "Target CPA", definition: "A strategy aiming for conversions at a set average cost per action." },
+        { term: "Target impression share", definition: "A strategy aiming to show ads in a chosen position for a share of searches." },
+      ],
+      commonMistakes: [
+        "Panicking when one day spends more than the daily budget",
+        "Switching to Smart Bidding before conversion tracking works",
+        "Setting a target CPA from a wish instead of real results",
+        "Changing bid strategy again during the learning period",
+        "Splitting a small budget across many campaigns",
+      ],
+      selfCheck: [
+        "How do you turn a monthly amount into an average daily budget?",
+        "Which bid strategy would you start with for a new campaign, and why?",
+        "What must be in place before Smart Bidding can work well?",
+      ],
       practice_task_md: `**Goal:** Plan the budget and bidding for your sample campaign.
 
 **Steps:**
@@ -2886,16 +4323,28 @@ The car rental business in Tamale can afford a certain amount per month for ads.
             answer_index: 3,
             explanation: "Smart Bidding uses conversion data, so it needs tracking and enough conversions.",
           },
+          {
+            prompt: "Which bid strategy aims to show your ad at the top of the page for a share of searches you choose?",
+            options: [
+              "Manual CPC",
+              "Maximise clicks",
+              "Target impression share",
+              "Target ROAS",
+            ],
+            answer_index: 2,
+            explanation: "Target impression share sets bids to reach a chosen visibility goal, such as the top of the page.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "reading-campaign-data": {
       outcomes: [
-        "Name and calculate the key campaign numbers",
-        "Read the search terms report",
-        "Read results by segment and avoid mistakes",
+        "Define and calculate the key campaign metrics",
+        "Use the search terms report to find waste and ideas",
+        "Read impression share lost to budget and to rank",
+        "Break results down by segment without being misled by small numbers",
       ],
       explanation_md: `The week 9 objective is to analyse campaign data and suggest bid adjustments. Before you can suggest anything, you need to read a report confidently and know what each number tells you.
 
@@ -2920,7 +4369,20 @@ Practise on small numbers. Suppose an ad group had 2,000 impressions, 80 clicks,
 * Conversion rate = 8 ÷ 80 = 10 percent.
 * Cost per conversion = 400 ÷ 8 = 50 cedis.
 
-These are invented numbers for practice, not benchmarks. What counts as good depends on the business, its prices and its margins.
+These are invented numbers for practice, not benchmarks. What counts as good depends on the business, its prices and its margins. A cost per conversion that would ruin a chop bar could be excellent for a solar installer whose average sale is large.
+
+## Reading numbers as a story
+
+Each number points to a different part of the journey.
+
+* **Low CTR:** the ad does not tempt people, or it shows on the wrong searches. Look at the ad text and the search terms.
+* **Good CTR, low conversion rate:** people like the ad but the page or offer lets them down. Look at the landing page.
+* **Good conversion rate, high cost per conversion:** clicks are expensive. Look at keywords, bids and Quality Score.
+* **Few impressions:** the keywords are too narrow, the bid or quality too low, or the budget too small.
+
+## Impression share lost
+
+Search campaigns can also show impression share lost to **budget** and lost to **rank**. Lost to budget means the money ran out before the searches did: a bigger budget, or fewer keywords, would show the ads more. Lost to rank means the ads did not rank well enough, through a low bid or low quality: better ads, pages or bids would help. Knowing which one is the problem stops you recommending more money when the real fix is relevance.
 
 ## The search terms report
 
@@ -2940,10 +4402,37 @@ Break results down to find patterns.
 * **Small numbers mislead.** Five clicks are not enough to judge a keyword. Wait for more data before big decisions.
 * **Compare like with like:** same period length, same season.
 * **Link to real sales.** Ask the owner how many enquiries became paying customers.
+* **Check conversion tracking first.** If a campaign shows zero conversions but the owner says the phone rings, the tracking may be broken, not the campaign.`,
+      workedExample_md: `Fuseini reviews a month of mock data for a solar shop in Bolgatanga.
 
-## A worked example
+1. **Keyword one.** "Solar panel price Bolgatanga": 1,200 impressions, 60 clicks, 300 cedis, 6 conversions. CTR 5 percent, cost per conversion 50 cedis. Strong.
+2. **Keyword two.** "Solar energy": 3,000 impressions, 90 clicks, 450 cedis, 0 conversions. Many clicks, no enquiries.
+3. **Search terms.** The report shows "solar energy course" and "solar jobs" triggering ads. That explains keyword two.
+4. **Keyword three.** "Solar fridge for shop": 8 clicks, 1 conversion. Too little data to judge yet.
+5. **Impression share.** The campaign lost a large share of impressions to budget, but very little to rank, so the ads are good enough; money runs out by mid afternoon.
+6. **Segments.** Calls come mostly from phones on weekday mornings, and almost none after 6 pm, when the shop is closed.
+7. **Reality check.** The owner, Mrs Lariba, confirms four of the six enquiries from keyword one became sales.
 
-Fuseini reviews a month of a mock campaign for a solar shop in Bolgatanga. "Solar panel price Bolgatanga" has a good conversion rate and a reasonable cost per conversion. "Solar energy" has many clicks but no conversions. The search terms report shows "solar energy course" and "solar jobs" triggering ads. Calls come mostly from phones on weekday mornings. He now has clear evidence for his recommendations in the next lesson.`,
+These are invented numbers for practice. Fuseini now has clear evidence for his recommendations in the next lesson.`,
+      keyTerms: [
+        { term: "CTR", definition: "Clickthrough rate: clicks divided by impressions." },
+        { term: "Conversion rate", definition: "Conversions divided by clicks." },
+        { term: "Cost per conversion", definition: "Total cost divided by conversions." },
+        { term: "Impression share", definition: "The share of possible impressions your ads actually received." },
+        { term: "Search terms report", definition: "A report of the real searches that triggered your ads." },
+        { term: "Segment", definition: "A slice of the data, such as by device, location or time of day." },
+      ],
+      commonMistakes: [
+        "Judging a keyword on a handful of clicks",
+        "Recommending a bigger budget when impressions are lost to rank",
+        "Comparing a holiday week with a normal week",
+        "Trusting zero conversions without checking that tracking works",
+      ],
+      selfCheck: [
+        "What does a good CTR with a low conversion rate tell you?",
+        "What is the difference between impression share lost to budget and lost to rank?",
+        "Which segments would you check first for a business that takes orders by phone?",
+      ],
       practice_task_md: `**Goal:** Analyse a small set of mock campaign data.
 
 **Steps:**
@@ -2999,16 +4488,28 @@ Fuseini reviews a month of a mock campaign for a solar shop in Bolgatanga. "Sola
             answer_index: 2,
             explanation: "Small numbers mislead; wait for more data.",
           },
+          {
+            prompt: "A campaign loses most of its impression share to rank, not budget. What does the lesson say this points to?",
+            options: [
+              "The budget should be doubled",
+              "The ads should run only at night",
+              "The campaign should be deleted",
+              "Better ads, pages or bids would help",
+            ],
+            answer_index: 3,
+            explanation: "Lost to rank means the ads did not rank well enough, so relevance and bids are the fix, not more money.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "optimising-campaigns": {
       outcomes: [
-        "Follow the optimisation loop",
-        "Make common improvements and bid adjustments",
-        "Write clear recommendations",
+        "Run a review, decide, change and wait optimisation loop",
+        "Suggest bid adjustments for device, location and schedule",
+        "Judge optimisation score recommendations critically",
+        "Write recommendations and document a demo campaign without spending",
       ],
       explanation_md: `Optimisation is the steady work of using data to spend money better. It is what clients pay for month after month, and it completes the week 9 assignment: analysing campaign data, suggesting bid adjustments, and setting up a demo campaign to show your settings.
 
@@ -3036,7 +4537,15 @@ With Manual CPC, you set bids for keywords and can add **bid adjustments**: perc
 * **Location:** raise bids in a town with cheaper conversions, lower them where results are poor.
 * **Ad schedule:** lower bids, or stop ads, at hours when nobody answers the phone.
 
+A bid adjustment is a percentage. For example, a 20 percent increase on a 5 cedi bid makes it 6 cedis for that condition; a 100 percent decrease on a device stops ads showing on it. Make adjustments in small steps and only when the segment has enough data to trust.
+
 With Smart Bidding, Google sets bids for each auction using many signals, and most manual adjustments are not used. In that case, you optimise through targets, budgets, keywords, ads and landing pages instead. Check Google Ads Help for which adjustments apply to your strategy.
+
+## Optimisation score and recommendations
+
+Google Ads shows an **optimisation score** from 0 to 100 percent, an estimate of how well the account is set to perform, with a list of recommendations such as adding keywords, raising budgets or using broad match. Google's help explains that applying or dismissing a recommendation both update the score, so you can dismiss ones that do not fit the business. A dismissed recommendation can come back later if it becomes relevant again. The score is not used by Quality Score.
+
+Treat each recommendation as a suggestion to test against the business's goal and budget. "Raise your budget" may be right for a campaign limited by budget with a good cost per conversion, and wrong for one that wastes money. A lower score with sound decisions beats a perfect score reached by accepting everything.
 
 ## Writing recommendations
 
@@ -3046,15 +4555,41 @@ Owners approve changes they understand. For each recommendation, write:
 * **Why:** "These searches cost money last month and brought no enquiries."
 * **Expected effect:** "Less wasted spend; the same or more enquiries."
 
-Keep it to three to five recommendations at a time.
+Keep it to three to five recommendations at a time, with the most valuable first.
 
 ## A safe demo campaign
 
-The week 9 assignment asks you to create a Google Ads account, set up a demo campaign and submit screenshots of the settings. You can build the campaign structure and settings to practise, but make sure nothing goes live and no money is spent: do not add payment details for practice, keep the campaign paused, and stop at the billing step if asked. If the setup will not continue without payment, document your settings in a sheet and screenshots of each screen you completed. Never use someone else's card.
+The week 9 assignment asks you to create a Google Ads account, set up a demo campaign and submit screenshots of the settings. You can build the campaign structure and settings to practise, but make sure nothing goes live and no money is spent: do not add payment details for practice, keep the campaign paused, and stop at the billing step if asked. If the setup will not continue without payment, document your settings in a sheet and screenshots of each screen you completed. Never use someone else's card. Tell your mentor which route you took; a clear settings sheet meets the purpose of the assignment just as well.`,
+      workedExample_md: `From his analysis of the Bolgatanga solar shop campaign, Fuseini prepares recommendations for Mrs Lariba.
 
-## A worked example
+1. **Negatives first.** Add "course", "jobs" and "free" as negatives. Why: they cost money and brought no enquiries.
+2. **Pause a weak keyword.** Pause "solar energy", which spent money with no conversions after 90 clicks.
+3. **Device adjustment.** Raise bids on phones by 20 percent, because most calls come from phones.
+4. **Schedule adjustment.** Stop ads after 6 pm, when the shop is closed.
+5. **Budget.** The campaign loses impressions to budget and has a good cost per conversion, so he suggests moving the money saved from negatives into it, rather than asking for more.
+6. **Optimisation score.** One recommendation says to switch every keyword to broad match. He dismisses it for now, because conversion tracking is new.
+7. **Change log and demo.** He logs each change with a date and plans a review in two weeks. His demo campaign is paused, has no payment details, and is documented in a settings sheet with screenshots.
 
-From his analysis of the Bolgatanga solar shop campaign, Fuseini recommends: add "course", "jobs" and "free" as negatives; pause "solar energy", which spent money with no conversions; raise bids on phones, where most calls come from; lower bids after 6 pm, when the shop is closed; and test a new headline mentioning instalment payments. He logs each change with a date, and plans to review again in two weeks.`,
+Mrs Lariba approves four of the five recommendations straight away.`,
+      keyTerms: [
+        { term: "Optimisation", definition: "The steady work of using data to spend ad money better." },
+        { term: "Bid adjustment", definition: "A percentage change to bids for a device, location or time." },
+        { term: "Optimisation score", definition: "Google's 0 to 100 percent estimate of how well an account is set to perform." },
+        { term: "Recommendation", definition: "A suggested change from Google Ads that you may apply or dismiss." },
+        { term: "Change log", definition: "A record of every change, with the date, reason and result." },
+      ],
+      commonMistakes: [
+        "Applying every recommendation just to raise the optimisation score",
+        "Making several big changes at once so you cannot tell what worked",
+        "Adding payment details to finish a practice campaign",
+        "Setting bid adjustments from tiny amounts of data",
+        "Sending the owner a long list with no reasons",
+      ],
+      selfCheck: [
+        "What does a 20 percent bid increase do to a 5 cedi bid?",
+        "When would you dismiss an optimisation score recommendation?",
+        "What three parts should every recommendation to an owner include?",
+      ],
       practice_task_md: `**Goal:** Complete the week 9 assignment: recommendations and a demo campaign.
 
 **Steps:**
