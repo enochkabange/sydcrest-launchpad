@@ -20,6 +20,7 @@ import {
   type ApiResult,
 } from "./access-matrix-seed";
 import { signInAs } from "./nav-seed";
+import { admin } from "./supabase-admin";
 
 /**
  * The access matrix (issue #240, docs/user-types.md): one person per user
@@ -496,5 +497,27 @@ test("re-agreeing after revoking consent: no date of birth asked, the 18 or over
     );
   } finally {
     await cleanUp({ people: [learner] });
+  }
+});
+
+test("an email sign up's 18 or over tick lands in the consent records on the first signed in request (D1)", async ({ page }) => {
+  const email = `mariama.age.${crypto.randomUUID().slice(0, 8)}@example.test`;
+  // As signUp leaves it: the ticks wait in metadata until there is a session.
+  const { id } = await admin<{ id: string }>("/auth/v1/admin/users", {
+    method: "POST",
+    body: {
+      email,
+      password: PASSWORD,
+      email_confirm: true,
+      user_metadata: { full_name: "Mariama Abukari", date_of_birth: "2000-03-14", terms_version: "e2e", age_confirmed_at: new Date().toISOString() },
+    },
+  });
+  const person = { id, email, name: "Mariama Abukari" };
+  try {
+    await signInAs(page, person);
+    const consents = await api(await accessToken(person), "GET", "/rest/v1/consents?select=kind&revoked_at=is.null");
+    expect((consents.body as { kind: string }[]).map((c) => c.kind).sort()).toEqual(["age_confirmation", "privacy", "terms"]);
+  } finally {
+    await cleanUp({ people: [person] });
   }
 });
