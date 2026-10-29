@@ -109,8 +109,11 @@ test("a learner sees the lesson's difficulty, outcomes, anatomy and contents, an
       region: el.scrollWidth > el.clientWidth,
       page: document.documentElement.scrollWidth <= window.innerWidth,
     }));
-    // A phone scrolls the table inside its box; the page itself never scrolls sideways.
-    expect(widths).toEqual({ region: phone, page: true });
+    // A phone scrolls the table inside its box; the page itself never scrolls
+    // sideways. On desktop whether five columns fit depends on the font, so
+    // only the page is checked there.
+    expect(widths.page).toBe(true);
+    if (phone) expect(widths.region).toBe(true);
     await region.scrollIntoViewIfNeeded();
     await testInfo.attach(`lesson-table-${testInfo.project.name}`, { body: await region.screenshot(), contentType: "image/png" });
 
