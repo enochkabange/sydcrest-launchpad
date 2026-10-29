@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
@@ -43,6 +44,7 @@ export async function setOpportunityStatus(_prev: SaveActionState, form: FormDat
     // Saved in another tab a moment ago: change that row instead.
     if (error?.code === "23505") ({ data, error } = await update());
   }
+  await trackResult("opportunity_saved", error, { status });
   if (error) {
     console.error("setOpportunityStatus failed", { code: error.code, message: error.message });
     return { error: "We couldn't save that. Try again." };
@@ -56,6 +58,7 @@ export async function removeOpportunitySave(_prev: SaveActionState, form: FormDa
   const ctx = await learner(form);
   if (!ctx) return { error: "We couldn't find that opportunity." };
   const { error } = await ctx.supabase.from("opportunity_saves").delete().eq("profile_id", ctx.user.id).eq("opportunity_id", ctx.id);
+  await trackResult("opportunity_unsaved", error);
   if (error) {
     console.error("removeOpportunitySave failed", { code: error.code, message: error.message });
     return { error: "We couldn't remove that. Try again." };
@@ -81,6 +84,7 @@ export async function reportOpportunity(_prev: ReportState, form: FormData): Pro
     target_id: ctx.id,
     reason: details ? `${reason}: ${details}` : reason,
   });
+  await trackResult("opportunity_reported", error);
   if (error) {
     console.error("reportOpportunity failed", { code: error.code, message: error.message });
     return { error: isRateLimited(error) ? RATE_LIMIT_MESSAGE : "We couldn't send your report. Try again." };

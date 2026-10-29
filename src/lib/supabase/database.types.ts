@@ -34,6 +34,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      abandonment_daily: {
+        Row: {
+          day: string
+          finished: number
+          id: number
+          kind: string
+          started: number
+          subject: string
+        }
+        Insert: {
+          day: string
+          finished: number
+          id?: never
+          kind: string
+          started: number
+          subject?: string
+        }
+        Update: {
+          day?: string
+          finished?: number
+          id?: never
+          kind?: string
+          started?: number
+          subject?: string
+        }
+        Relationships: []
+      }
       achievements: {
         Row: {
           created_at: string
@@ -1112,6 +1139,75 @@ export type Database = {
           },
         ]
       }
+      durations_daily: {
+        Row: {
+          day: string
+          id: number
+          mean_seconds: number | null
+          metric: string
+          p50_seconds: number | null
+          p90_seconds: number | null
+          samples: number
+        }
+        Insert: {
+          day: string
+          id?: never
+          mean_seconds?: number | null
+          metric: string
+          p50_seconds?: number | null
+          p90_seconds?: number | null
+          samples: number
+        }
+        Update: {
+          day?: string
+          id?: never
+          mean_seconds?: number | null
+          metric?: string
+          p50_seconds?: number | null
+          p90_seconds?: number | null
+          samples?: number
+        }
+        Relationships: []
+      }
+      errors_daily: {
+        Row: {
+          actors: number
+          code: string
+          day: string
+          device_class: string
+          id: number
+          name: string
+          occurrences: number
+          refusal: string
+          route: string
+          subject: string
+        }
+        Insert: {
+          actors: number
+          code?: string
+          day: string
+          device_class?: string
+          id?: never
+          name: string
+          occurrences: number
+          refusal?: string
+          route?: string
+          subject?: string
+        }
+        Update: {
+          actors?: number
+          code?: string
+          day?: string
+          device_class?: string
+          id?: never
+          name?: string
+          occurrences?: number
+          refusal?: string
+          route?: string
+          subject?: string
+        }
+        Relationships: []
+      }
       event_access: {
         Row: {
           checkin_code: string
@@ -1333,29 +1429,76 @@ export type Database = {
       events: {
         Row: {
           anonymous_id: string | null
+          chapter_id: string | null
+          cohort_id: string | null
           created_at: string
+          device_class: string | null
           id: number
           name: string
+          primary_role: string | null
           profile_id: string | null
           props: Json
+          region: string | null
+          roles: string[] | null
+          route: string | null
+          session_id: string | null
+          signed_in: boolean | null
+          source: string | null
+          track: string | null
         }
         Insert: {
           anonymous_id?: string | null
+          chapter_id?: string | null
+          cohort_id?: string | null
           created_at?: string
+          device_class?: string | null
           id?: never
           name: string
+          primary_role?: string | null
           profile_id?: string | null
           props?: Json
+          region?: string | null
+          roles?: string[] | null
+          route?: string | null
+          session_id?: string | null
+          signed_in?: boolean | null
+          source?: string | null
+          track?: string | null
         }
         Update: {
           anonymous_id?: string | null
+          chapter_id?: string | null
+          cohort_id?: string | null
           created_at?: string
+          device_class?: string | null
           id?: never
           name?: string
+          primary_role?: string | null
           profile_id?: string | null
           props?: Json
+          region?: string | null
+          roles?: string[] | null
+          route?: string | null
+          session_id?: string | null
+          signed_in?: boolean | null
+          source?: string | null
+          track?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "events_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "events_cohort_id_fkey"
+            columns: ["cohort_id"]
+            isOneToOne: false
+            referencedRelation: "cohorts"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "events_profile_id_fkey"
             columns: ["profile_id"]
@@ -1364,6 +1507,54 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      events_daily: {
+        Row: {
+          actors: number
+          chapter_id: string | null
+          cohort_id: string | null
+          day: string
+          device_class: string
+          events: number
+          id: number
+          name: string
+          primary_role: string
+          region: string
+          route: string
+          signed_in: boolean
+          track: string
+        }
+        Insert: {
+          actors: number
+          chapter_id?: string | null
+          cohort_id?: string | null
+          day: string
+          device_class?: string
+          events: number
+          id?: never
+          name: string
+          primary_role?: string
+          region?: string
+          route?: string
+          signed_in: boolean
+          track?: string
+        }
+        Update: {
+          actors?: number
+          chapter_id?: string | null
+          cohort_id?: string | null
+          day?: string
+          device_class?: string
+          events?: number
+          id?: never
+          name?: string
+          primary_role?: string
+          region?: string
+          route?: string
+          signed_in?: boolean
+          track?: string
+        }
+        Relationships: []
       }
       expert_applications: {
         Row: {
@@ -1554,6 +1745,93 @@ export type Database = {
           {
             foreignKeyName: "expert_reviews_reviewer_id_fkey"
             columns: ["reviewer_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      external_credentials: {
+        Row: {
+          created_at: string
+          credential_id: string | null
+          expires_on: string | null
+          file_path: string | null
+          hidden_at: string | null
+          hidden_by: string | null
+          id: string
+          issued_on: string | null
+          issuer_name: string
+          ob_document: Json | null
+          ob_version: string | null
+          profile_id: string
+          source: string
+          title: string
+          updated_at: string
+          verification: string
+          verification_method: string | null
+          verification_note: string | null
+          verification_url: string | null
+          verified_at: string | null
+          visibility: string
+        }
+        Insert: {
+          created_at?: string
+          credential_id?: string | null
+          expires_on?: string | null
+          file_path?: string | null
+          hidden_at?: string | null
+          hidden_by?: string | null
+          id?: string
+          issued_on?: string | null
+          issuer_name: string
+          ob_document?: Json | null
+          ob_version?: string | null
+          profile_id?: string
+          source?: string
+          title: string
+          updated_at?: string
+          verification?: string
+          verification_method?: string | null
+          verification_note?: string | null
+          verification_url?: string | null
+          verified_at?: string | null
+          visibility?: string
+        }
+        Update: {
+          created_at?: string
+          credential_id?: string | null
+          expires_on?: string | null
+          file_path?: string | null
+          hidden_at?: string | null
+          hidden_by?: string | null
+          id?: string
+          issued_on?: string | null
+          issuer_name?: string
+          ob_document?: Json | null
+          ob_version?: string | null
+          profile_id?: string
+          source?: string
+          title?: string
+          updated_at?: string
+          verification?: string
+          verification_method?: string | null
+          verification_note?: string | null
+          verification_url?: string | null
+          verified_at?: string | null
+          visibility?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "external_credentials_hidden_by_fkey"
+            columns: ["hidden_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "external_credentials_profile_id_fkey"
+            columns: ["profile_id"]
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
@@ -3526,6 +3804,51 @@ export type Database = {
         }
         Relationships: []
       }
+      web_vitals_daily: {
+        Row: {
+          day: string
+          device_class: string
+          good: number
+          id: number
+          metric: string
+          needs_improvement: number
+          p50: number | null
+          p75: number | null
+          p95: number | null
+          poor: number
+          route: string
+          samples: number
+        }
+        Insert: {
+          day: string
+          device_class?: string
+          good?: number
+          id?: never
+          metric: string
+          needs_improvement?: number
+          p50?: number | null
+          p75?: number | null
+          p95?: number | null
+          poor?: number
+          route?: string
+          samples: number
+        }
+        Update: {
+          day?: string
+          device_class?: string
+          good?: number
+          id?: never
+          metric?: string
+          needs_improvement?: number
+          p50?: number | null
+          p75?: number | null
+          p95?: number | null
+          poor?: number
+          route?: string
+          samples?: number
+        }
+        Relationships: []
+      }
       weekly_goals: {
         Row: {
           created_at: string
@@ -3925,6 +4248,7 @@ export type Database = {
           avatar_url: string | null
           certificates: Json | null
           display_name: string | null
+          external_credentials: Json | null
           headline: string | null
           open_to_remote: boolean | null
           portfolio_url: string | null
@@ -4026,6 +4350,10 @@ export type Database = {
           target_type: string
           updated_at: string
         }[]
+      }
+      admin_set_credential_hidden: {
+        Args: { p_credential_id: string; p_hidden: boolean }
+        Returns: undefined
       }
       admin_set_expert_flags: {
         Args: {
@@ -4555,6 +4883,21 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      record_credential_import: {
+        Args: {
+          p_credential_id: string
+          p_document: Json
+          p_method: string
+          p_note: string
+          p_ob_version: string
+          p_verified: boolean
+        }
+        Returns: undefined
+      }
+      record_events: {
+        Args: { p_context?: Json; p_events: Json }
+        Returns: number
+      }
       record_sign_in_failure: {
         Args: { p_address_key: string; p_pair_key: string }
         Returns: undefined
@@ -4654,6 +4997,7 @@ export type Database = {
         Returns: string
       }
       rsvp_event: { Args: { p_event_id: string }; Returns: string }
+      run_analytics_maintenance: { Args: { p_days?: number }; Returns: Json }
       save_submission: {
         Args: {
           p_body_text?: string
@@ -4815,6 +5159,7 @@ export type Database = {
           verified_skill_id: string
         }[]
       }
+      take_credential_import_limit: { Args: never; Returns: boolean }
       take_form_rate_limit: {
         Args: { p_bucket: string; p_key: string }
         Returns: boolean

@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
@@ -26,6 +27,7 @@ export async function assignPeerReview(submissionId: string, _prev: FormState, f
   if (!reviewer) return { errors: { reviewer_id: "Choose a learner to review this work." } };
   const supabase = await createClient();
   const { error } = await supabase.rpc("assign_peer_review", { p_submission_id: submissionId, p_reviewer_id: reviewer });
+  await trackResult("peer_review_assigned", error);
   if (error) return { message: friendlyDbError(error, "We could not assign the review. Try again.") };
   refresh();
   return { ok: "Peer review assigned.", at: Date.now() };
@@ -68,6 +70,7 @@ export async function deferLearner(memberId: string, _prev: FormState, form: For
     p_cohort_member_id: memberId,
     p_to_cohort_id: target || undefined,
   });
+  await trackResult("learner_deferred", error);
   if (error) return { message: friendlyDbError(error, "We could not defer this learner. Try again.") };
   const { error: noteError } = await supabase
     .from("cohort_notes")

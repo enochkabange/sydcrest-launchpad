@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 import { requireAdmin } from "@/lib/admin";
@@ -33,6 +34,7 @@ export async function createOpportunity(_prev: OpportunityFormState, form: FormD
     .insert({ ...data, organisation_name: data.organisation_name ?? "" })
     .select("id")
     .single();
+  await trackResult("opportunity_created", error, { by: "admin" });
   if (error?.code === UNIQUE_VIOLATION) return rejected(data, form, SLUG_TAKEN);
   if (error) {
     console.error("createOpportunity failed", { code: error.code, message: error.message });

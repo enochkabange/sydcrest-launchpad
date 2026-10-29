@@ -363,7 +363,7 @@ export const digitalSkillsBridge: RoadmapDraft = {
       slug: "apply-to-dmp",
       title: "Apply to the DMP cohort",
       summary:
-        "Join the waitlist on SydCrest's Programme page for the free pilot cohort and be ready to show the progress you made on this roadmap. If you do not get a seat this time, keep learning on the free roadmaps and apply again if another cohort is announced.",
+        "Apply for a seat, or join the waitlist, on SydCrest's Programme page for the free pilot cohort, and be ready to show the progress you made on this roadmap. If you do not get a seat this time, keep learning on the free roadmaps and apply again if another cohort is announced.",
       parent: "ready-for-dmp",
       optional: false,
       difficulty: "beginner",

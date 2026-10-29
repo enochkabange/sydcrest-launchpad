@@ -5,6 +5,8 @@ import {
   cardFileName,
   certificateCard,
   certificateShareTarget,
+  credentialCard,
+  credentialShareTarget,
   fitText,
   isCardFormat,
   shareMode,
@@ -148,5 +150,28 @@ describe("shareMode", () => {
   });
   it("falls back to copy and download without a share sheet", () => {
     expect(shareMode({}, probe)).toBe("none");
+  });
+});
+
+describe("credentialCard (issue #253)", () => {
+  const base = { title: "CCNA", issuer_name: "Cisco", issued_on: "2026-05-14", created_at: "2026-10-01T09:00:00Z" };
+
+  it("labels a learner's own entry honestly and never as a SydCrest certificate", () => {
+    const card = credentialCard({ ...base, verification: "learner" }, "Hawa Abubakari");
+    expect(card).toMatchObject({ kind: "credential", label: "Added by the learner", headline: "CCNA", context: "Issued by Cisco", name: "Hawa Abubakari" });
+    expect(card.proof).toContain("Not checked by SydCrest");
+    expect(JSON.stringify(card)).not.toMatch(/Verified certificate|[–—]/);
+  });
+
+  it("says verified by the issuer only for an issuer checked badge", () => {
+    expect(credentialCard({ ...base, verification: "issuer" }, null).label).toBe("Verified by the issuer");
+    expect(credentialCard({ ...base, verification: "anything else" }, null).label).toBe("Added by the learner");
+  });
+
+  it("uses the issue date, and shares the wallet page", () => {
+    expect(credentialCard({ ...base, verification: "learner" }, null).date).toBe("14 May 2026");
+    const target = credentialShareTarget("c1", { ...base, verification: "learner" }, "hawa", "https://sydcrest.example");
+    expect(target).toMatchObject({ imageBase: "/og/credentials/c1", pageUrl: "https://sydcrest.example/u/hawa/credentials#c-c1" });
+    expect(target.text).toBe("CCNA, issued by Cisco. In my wallet on SydCrest Launchpad.");
   });
 });

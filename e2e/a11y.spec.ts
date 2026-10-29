@@ -210,6 +210,23 @@ test.describe("axe sweep", () => {
     expect(failures, failures.join("\n")).toEqual([]);
   });
 
+  test("credentials wallet: public wallet and the profile section", async ({ page }) => {
+    const sharer = await seedSharer("Amina Iddrisu");
+    removeUser(sharer.learner);
+    cleanup.push(() => deleteRoadmap(sharer.roadmap.id));
+    await admin("/rest/v1/external_credentials", {
+      method: "POST",
+      body: { profile_id: sharer.learner.id, title: "CCNA: Introduction to Networks", issuer_name: "Cisco", issued_on: "2026-01-10", verification_url: "https://www.credly.com/badges/example", visibility: "public" },
+    });
+    const [{ public_slug: slug }] = await admin<{ public_slug: string }[]>(`/rest/v1/profiles?select=public_slug&id=eq.${sharer.learner.id}`);
+    const failures: string[] = [];
+    await page.goto("/");
+    await sweep(page, [`/u/${slug}/credentials`, `/u/${slug}`], failures, "visitor");
+    await signIn(page, sharer.learner);
+    await sweep(page, ["/profile"], failures, "wallet owner");
+    expect(failures, failures.join("\n")).toEqual([]);
+  });
+
   test("mentor console", async ({ page }) => {
     const seed: MentorSeed = await seedMentorCohort();
     cleanup.push(() => deleteMentorCohort(seed));

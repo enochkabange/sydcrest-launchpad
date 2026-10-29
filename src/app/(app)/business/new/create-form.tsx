@@ -10,7 +10,7 @@ import { createOrganisation, type CreateOrganisationState } from "./actions";
 export function CreateOrganisationForm() {
   const [state, action, pending] = useActionState<CreateOrganisationState, FormData>(createOrganisation, {});
   return (
-    <form key={JSON.stringify(state.values ?? {})} action={action} className="flex flex-col gap-4" noValidate>
+    <form data-analytics-form="organisation" key={JSON.stringify(state.values ?? {})} action={action} className="flex flex-col gap-4" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       <OrganisationFieldset
         values={state.values}

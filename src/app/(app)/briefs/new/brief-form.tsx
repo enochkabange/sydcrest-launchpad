@@ -28,7 +28,7 @@ export function BriefForm({
   const canPostJobs = orgs.length > 0;
 
   return (
-    <form action={action} className="flex flex-col gap-6" noValidate>
+    <form data-analytics-form="brief" action={action} className="flex flex-col gap-6" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
 
       <fieldset className="flex flex-col gap-2">
