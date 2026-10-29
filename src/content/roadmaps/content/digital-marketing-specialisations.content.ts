@@ -954,15 +954,16 @@ This is careful practice, not legal advice. If a business plans regular marketin
 1. **She searches** "Nalerigu places to stay", "Northern Region tourism guide" and "Nalerigu church guests".
 2. **She checks each site.** She keeps a regional tourism blog that lists places to stay near the Nalerigu Defence Wall, an NGO that hosts visiting researchers, and a church that publishes a list of places for wedding guests. She skips a directory that charges a fee and has no recent updates.
 3. **She finds named contacts.** The blog's about page names its writer, Adisa.
-4. **She drafts three emails and the owner approves them.** Her email to the blog reads:
+4. **She drafts three emails and the owner approves them.**
+5. **She tracks replies.** The church replies in two days. She follows up with the NGO once, a week later.
+
+Her email to the blog reads:
 
 > Subject: Place to stay near the Nalerigu Defence Wall
 >
 > Hello Adisa, I enjoyed your guide to visiting the Nalerigu Defence Wall. I help Napari Guesthouse, a ten minute walk from the wall, with clean rooms and mobile money payment. Would you consider adding it to your list of places to stay? Details: Napari Guesthouse, opposite the district assembly, Nalerigu, 024 000 0000. Thank you for helping visitors find their way.
 >
 > Rahinatu
-
-5. **She tracks replies.** The church replies in two days. She follows up with the NGO once, a week later.
 
 It is short, specific and easy to say yes to.`,
       keyTerms: [
@@ -1963,12 +1964,12 @@ The cold ad set finds new interest; the warm and hot ones turn interest into boo
             prompt: "When uploading a customer list, what rule does the lesson stress?",
             options: [
               "Use any numbers you can find online",
-              "Only use contact details people agreed to share for this purpose, and follow the Data Protection Act",
+              "Only upload contacts who gave prior written consent to marketing, and remove anyone who asks to stop",
               "Buy lists from other businesses",
               "Upload every number in your phone",
             ],
             answer_index: 1,
-            explanation: "Customer lists must use details shared with consent, following Ghana's Data Protection Act.",
+            explanation: "Section 40 of Act 843 requires prior written consent for direct marketing and lets people ask the business to stop.",
           },
           {
             prompt: "According to section 40 of Act 843 as described in the lesson, what is needed before using a person's details for direct marketing?",
