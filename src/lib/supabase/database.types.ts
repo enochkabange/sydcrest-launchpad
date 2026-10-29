@@ -4335,6 +4335,477 @@ export type Database = {
           id: string
         }[]
       }
+      admin_insights_at_risk: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          below_pass: number
+          cohort_name: string
+          last_submitted: string
+          late_weeks: number
+          learner_name: string
+          missing_weeks: number
+          specialization: string
+        }[]
+      }
+      admin_insights_chapters: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          chapter_id: string
+          chapter_name: string
+          checkins: number
+          events: number
+          members: number
+          new_members: number
+          posts: number
+          region: string
+          rsvps: number
+          status: string
+        }[]
+      }
+      admin_insights_cohorts: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          active_7d: number
+          at_risk: number
+          cohort_id: string
+          cohort_name: string
+          completed: number
+          deferred: number
+          graded: number
+          grading_hours_median: number
+          late: number
+          learners: number
+          missing: number
+          on_time: number
+          program_title: string
+          starts_on: string
+          status: string
+          weeks_due: number
+        }[]
+      }
+      admin_insights_community: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          chapter_joins: number
+          checkins: number
+          events_held: number
+          hidden: number
+          posters: number
+          posts: number
+          reactions: number
+          replies: number
+          rsvps_going: number
+        }[]
+      }
+      admin_insights_community_daily: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          checkins: number
+          day: string
+          posts: number
+          replies: number
+          rsvps: number
+        }[]
+      }
+      admin_insights_daily: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          active_people: number
+          day: string
+          signups: number
+          topics_completed: number
+          visitors: number
+        }[]
+      }
+      admin_insights_earn: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          booking_response_hours: number
+          booking_responses: number
+          bookings_accepted: number
+          bookings_cancelled: number
+          bookings_completed: number
+          bookings_declined: number
+          bookings_requested: number
+          briefs_awarded: number
+          briefs_posted: number
+          experts_approved: number
+          experts_listed: number
+          outcomes_reported: number
+          outcomes_verified: number
+          pitch_decision_hours: number
+          pitches_accepted: number
+          pitches_decided: number
+          pitches_submitted: number
+        }[]
+      }
+      admin_insights_earn_daily: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          bookings: number
+          briefs: number
+          day: string
+          pitches: number
+        }[]
+      }
+      admin_insights_error_daily: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          client_errors: number
+          day: string
+          failed_actions: number
+          page_views: number
+          server_errors: number
+        }[]
+      }
+      admin_insights_errors: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          days: number
+          name: string
+          occurrences: number
+          route: string
+          subject: string
+        }[]
+      }
+      admin_insights_failures: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          action: string
+          failures: number
+          forbidden: number
+          rate_limited: number
+          server_error: number
+          successes: number
+          validation: number
+        }[]
+      }
+      admin_insights_features: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          active_days: number
+          events: number
+          name: string
+          previous_events: number
+          users: number
+        }[]
+      }
+      admin_insights_forms: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          finished: number
+          form: string
+          started: number
+        }[]
+      }
+      admin_insights_funnel: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          device_class: string
+          first_pass: number
+          first_topic: number
+          saved_path: number
+          signed_up: number
+          visited: number
+        }[]
+      }
+      admin_insights_outcomes: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          rejected: number
+          reported: number
+          type: string
+          verified: number
+        }[]
+      }
+      admin_insights_overview: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          active_people: number
+          dau: number
+          mau: number
+          signups: number
+          topics_completed: number
+          visitors: number
+          wau: number
+        }[]
+      }
+      admin_insights_questions: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          answers: number
+          correct: number
+          prompt: string
+          question_id: string
+          roadmap_slug: string
+          topic_title: string
+        }[]
+      }
+      admin_insights_retention: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          active: number
+          cohort_size: number
+          cohort_week: string
+          week_offset: number
+        }[]
+      }
+      admin_insights_retention_cohorts: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          cohort_size: number
+          cohort_week: string
+        }[]
+      }
+      admin_insights_reviews: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          correct: number
+          day: string
+          learners: number
+          questions: number
+          sessions: number
+        }[]
+      }
+      admin_insights_roadmaps: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          learners: number
+          lessons_finished: number
+          lessons_opened: number
+          quiz_attempted: number
+          quiz_passed: number
+          roadmap_slug: string
+          roadmap_title: string
+          topics_done: number
+          topics_started: number
+        }[]
+      }
+      admin_insights_rollups_to: { Args: never; Returns: string }
+      admin_insights_signup_methods: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          method: string
+          signups: number
+        }[]
+      }
+      admin_insights_topics: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          done: number
+          quiz_attempted: number
+          quiz_passed: number
+          roadmap_slug: string
+          stalled: number
+          started: number
+          topic_title: string
+        }[]
+      }
+      admin_insights_vitals: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          device_class: string
+          good: number
+          metric: string
+          needs_improvement: number
+          p75: number
+          poor: number
+          route: string
+          samples: number
+        }[]
+      }
       admin_reports: {
         Args: { p_status?: string }
         Returns: {
