@@ -37,6 +37,24 @@ money and data, not short on ability.
   Start with why it matters for a job in Ghana, then the idea, then a small
   worked example. Headings only if they help on a small screen. Code blocks
   short enough to read on a small screen.
+- **Markdown you can use (issue #267):** `##` and `###` headings, paragraphs,
+  bullet and numbered lists, tables, fenced code, block quotes, **bold**,
+  *italic*, `code` and https links. No raw HTML (it shows as plain text).
+  - **Lists may nest two levels.** Indent a sub item by two spaces under a
+    bullet, or three under a number; bullets and numbers can mix. A third
+    level is shown as the second, so restructure instead.
+  - **Numbered lists keep your number.** A list that starts `3.` starts at 3,
+    so after a paragraph or code block, continue with the real next number
+    rather than starting again at `1.`.
+  - **Tables are for small comparisons:** a header row, then a delimiter row
+    of `---` per column (`:---` left, `:---:` centre, `---:` right, good for
+    cedi amounts), then the rows. Keep to two to four short columns and about
+    eight rows; a phone scrolls a wider table sideways inside its own box,
+    which works but is slower to read. Put the caption on a `Table: ...` line
+    directly above the header if the table needs a name. Bold, italic, code
+    and links work in cells; write `\|` for a literal pipe. Leave a cell
+    empty or write "None", never a lone hyphen (the no dashes rule). Never
+    use a table for layout or for prose that reads better as a list.
 - **Practice task:** doable with free tools on a phone or a computer,
   with little data. Clear goal, steps, and what "done" looks like. Something a
   learner can show a mentor or put in a portfolio.

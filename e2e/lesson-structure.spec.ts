@@ -97,6 +97,34 @@ test("a learner sees the lesson's difficulty, outcomes, anatomy and contents, an
       .toBeGreaterThan(0);
   });
 
+  await test.step("tables scroll inside their own box and lists nest and keep numbering (#267)", async () => {
+    const region = page.getByRole("region", { name: "Monday count at the shop" });
+    await expect(region).toBeVisible();
+    await expect(region).toHaveAttribute("tabindex", "0");
+    const table = region.getByRole("table", { name: "Monday count at the shop" });
+    await expect(table.getByRole("columnheader")).toHaveText(["Item", "On the list", "Counted", "Variance (GHS)", "Fix"]);
+    await expect(table.getByRole("row")).toHaveCount(4);
+    await expect(table.getByRole("cell", { name: "Record two unrecorded sales" }).locator("strong")).toHaveText("unrecorded sales");
+    const widths = await region.evaluate((el) => ({
+      region: el.scrollWidth > el.clientWidth,
+      page: document.documentElement.scrollWidth <= window.innerWidth,
+    }));
+    // A phone scrolls the table inside its box; the page itself never scrolls
+    // sideways. On desktop whether five columns fit depends on the font, so
+    // only the page is checked there.
+    expect(widths.page).toBe(true);
+    if (phone) expect(widths.region).toBe(true);
+    await region.scrollIntoViewIfNeeded();
+    await testInfo.attach(`lesson-table-${testInfo.project.name}`, { body: await region.screenshot(), contentType: "image/png" });
+
+    const explanation = page.locator("section#explanation");
+    const first = explanation.locator("ol").filter({ hasText: "Count the shelf" }).first();
+    await expect(first.locator("> li")).toHaveText([/^Count the shelf/, "Write each number down"]);
+    await expect(first.locator("> li").first().locator("ul > li")).toHaveText(["Tins first", "Then bags"]);
+    const continued = explanation.locator('ol[start="3"]');
+    await expect(continued.locator("> li")).toHaveText(["Mark every gap", "Tell the owner"]);
+  });
+
   await test.step("no serious accessibility problems", async () => {
     await page.evaluate(() => window.scrollTo(0, 0));
     expect(await axe(page)).toEqual([]);

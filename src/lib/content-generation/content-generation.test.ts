@@ -180,6 +180,10 @@ describe("result parsing", () => {
   it("rejects dashes in prose but allows bullets, hyphenated words and code", () => {
     expect(findDashes("Abdul-Rahman uses a step-by-step plan.")).toEqual([]);
     expect(findDashes("- a list item\n  - nested")).toEqual([]);
+    expect(findDashes("1. Step\n   - detail\n2. Next")).toEqual([]);
+    // Tables (#267): delimiter rows are not dashes, but a dash in a cell still is.
+    expect(findDashes("| Item | Price |\n| - | -- |\n|:---|---:|\n| Rice | 45 |")).toEqual([]);
+    expect(findDashes("| Item | Note |\n| --- | --- |\n| Rice | cheap - for now |")).toHaveLength(1);
     expect(findDashes("Run `ls -la` or\n```\nSELECT a - b -- comment\n```")).toEqual([]);
     expect(findDashes("Sorting — the basics")).toHaveLength(1);
     expect(findDashes("Pages 1–5")).toHaveLength(1);
