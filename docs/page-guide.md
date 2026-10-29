@@ -508,6 +508,7 @@ and the record in another from lg. Every page checks `requireAdmin` itself.
 | `/admin/experts` | Approve, verify, feature experts | decide | Profiles created without an application never show here (#249). |
 | `/admin/organisations` | Verify organisations | verify / reject | |
 | `/admin/outcomes` | Verify reported outcomes | verify | Feeds `/impact`. |
+| `/admin/insights`, `/funnel`, `/retention`, `/learning`, `/features`, `/cohorts`, `/earn`, `/community`, `/reliability` | Read reporting dashboards | filter, download CSV | Filters in the URL; definitions at the foot of each (#243, `docs/analytics.md` §8). |
 | `/admin/opportunities`, `/new`, `/[id]` | Curate the public board | post | |
 | `/admin/events`, `/new`, `/[id]` | Create events, links, recordings | create | |
 | `/admin/chapters`, `/new`, `/[id]` | Create chapters, appoint leads | appoint | |
