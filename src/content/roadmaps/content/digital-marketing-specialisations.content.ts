@@ -781,7 +781,7 @@ Customers and search engines check that a business's details match across the we
 
 Reviews feed prominence and help customers decide. Google's help on getting more reviews suggests sharing a review link or QR code with customers, and notes that people need a Google Account to leave one.
 
-* **Ask every customer, not only the happy ones,** with the short link sent on WhatsApp after a sale or a QR code at the counter. Google's policies forbid asking only satisfied customers, discouraging bad reviews, or pressuring people to review while they are still in the shop.
+* **Ask every customer, not only the happy ones,** with the short link sent on WhatsApp after a sale or a QR code at the counter. Google's policies forbid asking only satisfied customers, or discouraging bad reviews. Offering a link or QR code people can use when they choose is fine; pressuring someone to review before they leave the shop is not.
 * **Never offer anything in return.** Google's policies prohibit giving free or discounted goods or services for reviews, for changing a review, or for removing a bad one.
 * **Never write fake reviews** or ask staff and family to pose as customers.
 * **Reply thoughtfully,** thanking people by name for good reviews and calmly offering to fix problems in bad ones, rather than pasting the same thank you everywhere. A mix of reviews with thoughtful replies looks more trustworthy than a wall of perfect ones.
