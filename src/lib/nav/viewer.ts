@@ -25,7 +25,7 @@ export const getNavViewer = cache(async (): Promise<NavViewer | null> => {
   if (!user) return null;
   const supabase = await createClient();
   const [profile, staff, expert, business] = await Promise.all([
-    supabase.from("profiles").select("display_name, role, display_prefs").eq("id", user.id).maybeSingle(),
+    supabase.from("profiles").select("display_name, role, is_skill_reviewer, display_prefs").eq("id", user.id).maybeSingle(),
     supabase
       .from("cohort_members")
       .select("cohort_id", { count: "exact", head: true })
@@ -43,7 +43,13 @@ export const getNavViewer = cache(async (): Promise<NavViewer | null> => {
   return {
     name: profile.data?.display_name ?? null,
     email: user.email,
-    roles: { admin, staff: admin || has(staff), expert: has(expert), business: has(business) },
+    roles: {
+      admin,
+      staff: admin || has(staff),
+      expert: has(expert),
+      business: has(business),
+      reviewer: admin || profile.data?.is_skill_reviewer === true,
+    },
     displayPrefs: profile.data?.display_prefs ?? null,
   };
 });

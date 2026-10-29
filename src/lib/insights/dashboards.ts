@@ -37,7 +37,7 @@ export const DASHBOARDS: Dashboard[] = [
   { slug: "learning", href: "/admin/insights/learning", title: "Learning", description: "Pass rates and drop off per roadmap and topic, hardest questions and reviews.", filters: PEOPLE, events: false },
   { slug: "features", href: "/admin/insights/features", title: "Feature use", description: "Every feature: how many people, how often, and the trend.", filters: ALL, events: true },
   { slug: "cohorts", href: "/admin/insights/cohorts", title: "DMP cohorts", description: "On time submissions, grading turnaround and learners at risk.", filters: PEOPLE, events: false },
-  { slug: "earn", href: "/admin/insights/earn", title: "Mentors and Earn", description: "Bookings, briefs, pitches, response times and outcomes.", filters: PEOPLE, events: false },
+  { slug: "earn", href: "/admin/insights/earn", title: "Experts and Earn", description: "Bookings, briefs, pitches, response times and outcomes.", filters: PEOPLE, events: false },
   { slug: "community", href: "/admin/insights/community", title: "Community", description: "Posts, replies, RSVPs, check ins and chapters.", filters: ["region", "chapter"], events: false },
   { slug: "reliability", href: "/admin/insights/reliability", title: "Reliability", description: "Errors by page and action, failure rates and Web Vitals.", filters: ["device"], events: true },
 ];

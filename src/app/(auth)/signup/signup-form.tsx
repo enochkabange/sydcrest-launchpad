@@ -55,6 +55,7 @@ export function SignupForm() {
       <AgeConsentFields
         defaultDateOfBirth={state.values?.date_of_birth}
         defaultTerms={state.values?.terms}
+        defaultAdult={state.values?.adult}
         errors={state.errors}
       />
       <Button type="submit" disabled={pending} className="w-full">

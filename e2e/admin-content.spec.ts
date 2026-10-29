@@ -14,6 +14,7 @@ test("a learner who is not an admin cannot see the content generator", async ({ 
   await page.getByLabel("Password").fill("Tamale-2027-pilot");
   await page.getByLabel("Date of birth").fill("1999-07-02");
   await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
+  await page.getByLabel("I confirm I am 18 or over").check();
   await page.getByRole("button", { name: "Create account" }).click();
   await expect(page.getByText(`We sent a confirmation link to ${email}`)).toBeVisible();
   await page.goto(await confirmationLink(email));

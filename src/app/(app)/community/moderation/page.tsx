@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { notFound } from "next/navigation";
 import Link from "@/components/ui/link";
 import { MainWithRail } from "@/components/ui/layout";
 import { Markdown } from "@/components/learn/markdown";
@@ -61,21 +62,8 @@ function StatusNav({ current }: { current: ReportStatus }) {
   );
 }
 
-async function Queue({ searchParams }: Params) {
-  const [status, me] = await Promise.all([statusFrom(searchParams), getMyCommunity()]);
-  if (!me.isModerator) {
-    return (
-      <div className="flex flex-col gap-2 rounded-lg border border-line bg-surface-sunken p-5 xl:p-6">
-        <h2 className="text-h3 text-content">For moderators</h2>
-        <p className="text-content-2">
-          This queue is for admins, chapter leads and cohort staff. To flag a post, use Report on the post itself.
-        </p>
-        <Link href="/community" className="self-start text-content-link underline">
-          Back to the community
-        </Link>
-      </div>
-    );
-  }
+async function Queue({ searchParams, me }: Params & { me: MyCommunity }) {
+  const status = await statusFrom(searchParams);
   const items = await loadReportQueue(status);
   const groupOf = await groupNames(me, items);
 
@@ -164,7 +152,23 @@ function ModeratorGuide() {
 }
 
 /** Reports on posts and replies for admins, chapter leads and cohort staff (#162). */
+/**
+ * A staff tool (admins, chapter leads, cohort staff), so everyone else gets a
+ * 404 and the page stays unlisted (founder decision D6, #252). The whole page
+ * sits behind the check, guide included: a layout or sibling gate would not
+ * stop this markup reaching the response.
+ */
 export default function ModerationPage({ searchParams }: PageProps<"/community/moderation">) {
+  return (
+    <Suspense fallback={<div className="h-96 animate-skeleton rounded-lg bg-surface-sunken" aria-busy="true" />}>
+      <ModeratorsOnly searchParams={searchParams} />
+    </Suspense>
+  );
+}
+
+async function ModeratorsOnly({ searchParams }: Params) {
+  const me = await getMyCommunity();
+  if (!me.isModerator) notFound();
   return (
     <MainWithRail
       railLabel="Moderation guide"
@@ -178,7 +182,7 @@ export default function ModerationPage({ searchParams }: PageProps<"/community/m
         <p className="max-w-reading text-lead text-content-2">Reports on posts and replies in the groups you look after.</p>
       </header>
       <Suspense fallback={<div className="h-96 animate-skeleton rounded-lg bg-surface-sunken" aria-busy="true" />}>
-        <Queue searchParams={searchParams} />
+        <Queue searchParams={searchParams} me={me} />
       </Suspense>
     </MainWithRail>
   );

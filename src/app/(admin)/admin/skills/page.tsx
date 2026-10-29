@@ -17,6 +17,13 @@ export default function AdminSkillsPage() {
           The verified skill catalogue. People earn a skill by completing a mapped roadmap, passing its quiz or having their
           portfolio approved. Nobody can be given one by hand.
         </p>
+        <p className="text-content-2">
+          Portfolios are reviewed by admins and by the{" "}
+          <Link href="/admin/skills/reviewers" className="font-semibold text-content-link underline">
+            portfolio reviewers
+          </Link>{" "}
+          you appoint.
+        </p>
       </header>
       <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>
         <Catalogue />

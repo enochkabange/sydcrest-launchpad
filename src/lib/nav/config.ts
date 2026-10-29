@@ -9,6 +9,7 @@ import {
   ClipboardCheck,
   ClipboardList,
   Compass,
+  FileCheck,
   GraduationCap,
   Handshake,
   House,
@@ -50,16 +51,18 @@ export type NavRoles = {
   expert: boolean;
   /** Active or invited member of an organisation. */
   business: boolean;
+  /** Reviews verified skill portfolios: appointed by an admin (profiles.is_skill_reviewer), or an admin. */
+  reviewer: boolean;
 };
 
 /** A signed in learner with no extra roles; also the shape rendered before roles stream in. */
-export const NO_ROLES: NavRoles = { admin: false, staff: false, expert: false, business: false };
+export const NO_ROLES: NavRoles = { admin: false, staff: false, expert: false, business: false, reviewer: false };
 
 /**
  * Who sees an item. `everyone` is every signed in user; the rest need the
  * role. `notExpert` is the way in for people who are not experts yet.
  */
-export type Audience = "everyone" | "staff" | "expert" | "notExpert" | "business" | "admin";
+export type Audience = "everyone" | "staff" | "expert" | "notExpert" | "business" | "reviewer" | "admin";
 
 export type NavItem = {
   href: string;
@@ -76,7 +79,7 @@ export type NavItem = {
   match?: string[];
 };
 
-export type GroupId = "learn" | "mentors" | "community" | "earn" | "you";
+export type GroupId = "learn" | "experts" | "community" | "earn" | "you";
 
 export type NavGroup = {
   id: GroupId;
@@ -119,19 +122,29 @@ export const NAV_GROUPS: NavGroup[] = [
         match: ["/programme/apply"],
       },
       { href: "/skills", label: "Skills", icon: BadgeCheck, description: "Earn verified skill badges employers can check." },
+      {
+        href: "/skills/reviews",
+        label: "Portfolio reviews",
+        icon: FileCheck,
+        description: "Approve or send back the work people send for a verified skill.",
+        audience: "reviewer",
+      },
       { href: "/certificates", label: "Certificates", icon: Award, description: "Certificates you have earned, ready to share." },
       { href: "/review", label: "5 minute review", icon: RotateCcw, description: "Five quick questions from topics you have passed." },
       { href: "/study-buddy", label: "Study Buddy", icon: Sparkles, description: "Ask questions and plan your next step." },
     ],
   },
   {
-    id: "mentors",
-    label: "Mentors",
+    // The market (founder decision D5): "Experts" everywhere it means the
+    // marketplace. "Mentor" means only the programme's volunteer mentor (the
+    // Mentor console below). The hub keeps its /mentors address.
+    id: "experts",
+    label: "Experts",
     hub: "/mentors",
     icon: Handshake,
     description: "Find an expert, book time with them and work on briefs.",
     items: [
-      { href: "/experts", label: "Find experts", icon: Search, description: "People in the industry who offer sessions and reviews." },
+      { href: "/experts", label: "Find an expert", icon: Search, description: "People in the industry who offer sessions and reviews." },
       { href: "/bookings", label: "Bookings", icon: CalendarCheck, description: "Requests you sent or received, and their messages." },
       { href: "/briefs", label: "Briefs", icon: ClipboardList, description: "Paid and practice briefs to pitch for." },
       {
@@ -246,6 +259,8 @@ export function canSee(item: NavItem, roles: NavRoles): boolean {
       return !roles.expert;
     case "business":
       return roles.business;
+    case "reviewer":
+      return roles.reviewer || roles.admin;
     case "admin":
       return roles.admin;
   }

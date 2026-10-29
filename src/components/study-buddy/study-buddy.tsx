@@ -31,7 +31,7 @@ const STARTERS = ["Can you explain this topic simply?", "Give me a question to c
 /** Companion chat starters: each one leads to a tool over the learner's own data. */
 export const COMPANION_STARTERS = [
   "What should I do next?",
-  "Who could mentor me?",
+  "Which expert could help me?",
   "Any opportunities for me?",
   "What events are coming up?",
 ];
@@ -212,7 +212,7 @@ function ChatPanel({
           <div className="flex flex-col gap-3">
             <p className="text-content-2">
               {companion
-                ? "Ask me what to learn next, who could mentor you, or which opportunities and events suit your path. I look at your own progress on SydCrest to answer."
+                ? "Ask me what to learn next, which expert could help you, or which opportunities and events suit your path. I look at your own progress on SydCrest to answer."
                 : `Ask anything about ${nodeTitle}. I will help you work it out step by step rather than just give you the answer.`}
             </p>
             {!blocked && (

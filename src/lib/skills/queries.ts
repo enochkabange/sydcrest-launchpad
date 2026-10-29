@@ -71,12 +71,17 @@ export const getMyPendingPortfolios = cache(async () => {
   return (data ?? []).flatMap((r) => (r.skill ? [{ id: r.id, submittedAt: r.submitted_at, skill: r.skill }] : []));
 });
 
-/** The signed in person's role, for the review queue (mentors and admins). */
-export const getMyRole = cache(async () => {
+/**
+ * Whether the signed in person reviews skill portfolios: an admin, or someone
+ * an admin appointed (profiles.is_skill_reviewer, issue #248). The legacy
+ * profiles.role 'mentor' still counts, as in private.is_skill_reviewer.
+ */
+export const getMyReviewerStatus = cache(async () => {
   const user = await requireUser();
   const supabase = await createClient();
-  const { data } = await supabase.from("profiles").select("role").eq("id", user.id).single();
-  return { userId: user.id, role: data?.role ?? "learner" };
+  const { data } = await supabase.from("profiles").select("role, is_skill_reviewer").eq("id", user.id).single();
+  return { userId: user.id, reviewer: isSkillReviewer(data) };
 });
 
-export const isReviewerRole = (role: string) => role === "mentor" || role === "admin";
+export const isSkillReviewer = (profile: { role: string; is_skill_reviewer: boolean } | null | undefined) =>
+  Boolean(profile && (profile.is_skill_reviewer || profile.role === "mentor" || profile.role === "admin"));

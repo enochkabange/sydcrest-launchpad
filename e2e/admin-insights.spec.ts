@@ -120,7 +120,7 @@ test("admins read every dashboard with exact numbers and download CSV; learners 
         ["retention", "Retention"],
         ["learning", "Learning"],
         ["features", "Feature use"],
-        ["earn", "Mentors and Earn"],
+        ["earn", "Experts and Earn"],
         ["community", "Community"],
       ]) {
         await page.goto(`/admin/insights/${path}?${range}`);

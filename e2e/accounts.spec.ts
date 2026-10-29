@@ -20,6 +20,7 @@ test("a learner signs up, confirms, edits their profile, signs out and back in",
     await page.getByLabel("Password").fill(PASSWORD);
     await page.getByLabel("Date of birth").fill(ADULT_DOB);
     await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
+    await page.getByLabel("I confirm I am 18 or over").check();
     await page.getByRole("button", { name: "Create account" }).click();
     await expect(page.getByText(`We sent a confirmation link to ${email}`)).toBeVisible();
   });
@@ -69,6 +70,7 @@ test("someone under 18 is refused at sign up", async ({ page }) => {
   await page.getByLabel("Password").fill(PASSWORD);
   await page.getByLabel("Date of birth").fill(under18Dob());
   await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
+  await page.getByLabel("I confirm I am 18 or over").check();
   await page.getByRole("button", { name: "Create account" }).click();
   await expect(page.getByText("SydCrest accounts are for people aged 18 and over for now.")).toBeVisible();
   await expect(page.getByText("We sent a confirmation link")).toHaveCount(0);
@@ -82,6 +84,9 @@ test("sign up needs the terms box ticked", async ({ page }) => {
   await page.getByLabel("Date of birth").fill(ADULT_DOB);
   await page.getByRole("button", { name: "Create account" }).click();
   await expect(page.getByText("Tick the box to agree to the Terms and Privacy Policy.")).toBeVisible();
+  // "I confirm I am 18 or over" is its own tick (founder decision D1).
+  await expect(page.getByText("Tick the box to confirm you are 18 or over.")).toBeVisible();
+  await expect(page.getByText("We sent a confirmation link")).toHaveCount(0);
 });
 
 test("privacy policy and terms are readable signed out", async ({ page }) => {

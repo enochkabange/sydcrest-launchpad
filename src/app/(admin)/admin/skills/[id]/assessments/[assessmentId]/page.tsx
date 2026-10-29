@@ -81,7 +81,7 @@ async function Editor({ params }: Pick<PageProps<"/admin/skills/[id]/assessments
                 How portfolios are reviewed
               </h2>
               <p className="text-content-2">
-                People send a https link and an optional note. Mentors and admins see it at{" "}
+                People send a https link and an optional note. Skill reviewers and admins see it at{" "}
                 <Link href="/skills/reviews" className="text-content-link underline">
                   /skills/reviews
                 </Link>
