@@ -3072,8 +3072,9 @@ Her second proposal, to the campus food reviewer, follows the same shape for the
     "google-ads": {
       outcomes: [
         "Describe what the Google Ads specialisation covers",
-        "Explain how search ads and SEO work together",
-        "Use free training and handle money responsibly",
+        "Compare search ads with SEO",
+        "Explain the main steps of building a Search campaign",
+        "Handle a client's ad money and accounts responsibly",
       ],
       explanation_md: `Search marketing puts a business in front of people at the exact moment they look for what it sells. Someone typing "car rental Tamale airport" is not idly scrolling; they need a car. That is what makes search ads powerful, and why businesses look for people who can run them carefully. This specialisation uses Google Ads, a widely used search ads platform, as the example. Microsoft Advertising and others work on similar ideas.
 
@@ -3081,9 +3082,9 @@ Her second proposal, to the campus food reviewer, follows the same shape for the
 
 You met search ads briefly in the Digital Marketer roadmap. Here you go deeper over three weeks.
 
-* **Week 7, fundamentals.** How the auction works, campaign types and goals, and account structure.
-* **Week 8, keywords and ad copy.** Keywords and match types, writing responsive search ads, and assets with landing pages.
-* **Week 9, optimisation and budgeting.** Budgets and bid strategies, reading campaign data, and optimising a campaign.
+* **Week 7, fundamentals.** How the auction works, campaign types and goals, and account structure. The assignment is Google's Skillshop module "Get Search Ad Campaign Ready".
+* **Week 8, keywords and ad copy.** Keywords and match types, writing responsive search ads, and assets with landing pages. The assignment is a sample search campaign with three ad copies.
+* **Week 9, optimisation and budgeting.** Budgets and bid strategies, reading campaign data, and optimising a campaign, ending with recommendations and a demo campaign.
 
 ## Search ads and SEO
 
@@ -3092,26 +3093,73 @@ Search ads and SEO both aim at search results, but they work differently.
 * **Ads** appear quickly once a campaign is approved, and you pay when someone clicks (for most search campaigns). They stop when the budget stops.
 * **SEO** costs time rather than a fee per click, takes longer to work, and keeps working once pages rank.
 
-Many businesses use both: ads for quick results and to test which keywords bring customers, SEO for lasting visibility.
+Many businesses use both: ads for quick results and to test which keywords bring customers, SEO for lasting visibility. Ads are labelled as sponsored on the results page, and they sit apart from the normal results; buying ads does not change a site's normal ranking.
 
-## Free training and certification
+## The steps of a Search campaign
 
-Google offers free online training on Skillshop, including the "Get Search Ad Campaign Ready" material mentioned in the DMP curriculum, and Google Ads certifications. Some employers ask for them, but they are not a substitute for being able to explain your decisions. This specialisation gives you that understanding in plain language.
+Google's help on creating a Search campaign walks through a sequence you will learn lesson by lesson. In plain terms:
+
+1. **Choose a goal,** such as leads or website traffic, and the campaign type, Search.
+2. **Set up how results are measured,** called conversions, such as calls or form submissions.
+3. **Choose settings:** locations, languages, networks and an ad schedule.
+4. **Choose keywords** grouped into themed ad groups.
+5. **Write ads** with headlines, descriptions and assets.
+6. **Set a budget and a bid strategy.**
+7. **Review and publish,** which is where billing comes in.
+
+The menus and wording change from time to time, but these decisions stay the same. This specialisation teaches the decisions, so you can find them on any version of the screens.
+
+## Free training
+
+Google offers free online training on Skillshop, including the "Get Search Ad Campaign Ready" material in your week 7 assignment, and Google Ads certifications. Check whether any assessment has a cost before you start. Some employers ask for certifications, but they are not a substitute for being able to explain your decisions. This specialisation gives you that understanding in plain language, and Skillshop then shows you Google's own screens and terms.
 
 ## Handling money responsibly
 
 A Google Ads account spends the client's money, often charged to a card. Some important habits:
 
 * **Agree the budget in writing** before anything runs.
-* **Use the client's own account and payment method,** or give them full access, so they always own their data and history.
+* **Use the client's own account and payment method,** and ask them to give you access as a user, so they always own their data and history.
 * **Check daily for the first week** of any new campaign.
 * **Never promise rankings or sales numbers.** Promise a careful process and honest reports.
+* **Keep a change log,** so anyone can see what was changed, when and why.
 
-You do not need to spend money to learn. Every lesson's practice can be done as a plan in a sheet. If a practice step asks you to open an account and the setup asks for payment details, stop there and continue the plan in a sheet.
+## Practising without spending
 
-## A small example
+You do not need to spend money to learn. Every lesson's practice can be done as a plan in a sheet. Never add payment details for practice, and never use someone else's card. If a practice step asks you to open an account and the setup asks for payment details, stop there and continue the plan in a sheet. A well organised plan with clear reasons shows a mentor or employer more than a live campaign you cannot explain.
 
-Abdul-Rahman manages a car rental business in Tamale. Most customers arrive by air and search on their phones as they land. He creates a small search campaign around keywords such as "car hire Tamale airport" and "rent a car Tamale", with ads mentioning airport pickup and mobile money payment. Calls begin to come in from travellers who had never heard of the business. He checks the campaign each day for the first week, removes searches that waste money, and reports honestly to the owner each month.`,
+## Policies
+
+Google Ads has advertising policies covering what can be advertised and how. Some things are banned, such as counterfeit goods, and some are restricted, such as financial services, health products and alcohol, which may need extra checks or may be limited by country. Before you plan a campaign, check that the product and the claims are allowed. An ad that breaks policy will be disapproved, and repeated breaches can suspend an account.`,
+      workedExample_md: `Abdul-Rahman manages a car rental business in Tamale. Most customers arrive by air and search as they land.
+
+1. **He tests what appears.** He searches "car hire Tamale airport" and sees two sponsored results from Accra firms and none from Tamale.
+2. **He compares ads and SEO.** The business's website is new and will take months to rank, so a small search campaign can bring calls while the SEO work grows.
+3. **He checks policy.** Car rental is not a restricted category, and every claim he plans, such as airport pickup, is true.
+4. **He plans the campaign in a sheet** following the seven steps: goal, conversions, settings, keywords, ads, budget and bid strategy, then review.
+5. **He agrees the budget in writing** with the owner, Mr Mensah, who creates the account in the business's name and adds Abdul-Rahman as a user.
+6. **He launches and watches.** Calls begin to come from travellers who had never heard of the business. He checks the campaign each day for the first week, removes searches that waste money, and logs every change.
+7. **He reports honestly** each month, with no promises about rankings.
+
+He completed the Skillshop module first, so he recognised every screen.`,
+      keyTerms: [
+        { term: "Search ads", definition: "Paid text ads shown on search results for chosen keywords." },
+        { term: "SEO", definition: "Earning places in the normal, unpaid search results through useful pages." },
+        { term: "Conversion", definition: "An action you count as valuable, such as a call or form submission." },
+        { term: "Skillshop", definition: "Google's online training site for its advertising tools." },
+        { term: "Advertising policies", definition: "Google's rules on what can be advertised and how." },
+        { term: "Change log", definition: "A record of every change made to an account, with the date and reason." },
+      ],
+      commonMistakes: [
+        "Adding your own payment details just to practise",
+        "Running a client's ads from an account the client does not own",
+        "Promising a top position or a number of sales",
+        "Planning a campaign before checking that the product and claims are allowed",
+      ],
+      selfCheck: [
+        "What are the seven steps of building a Search campaign?",
+        "How do search ads and SEO differ in cost and speed?",
+        "What would you do if an account setup asks for payment details during practice?",
+      ],
       practice_task_md: `**Goal:** Choose your business and test what appears for its searches.
 
 **Steps:**
@@ -3168,16 +3216,28 @@ Abdul-Rahman manages a car rental business in Tamale. Most customers arrive by a
             answer_index: 2,
             explanation: "The lesson says you can learn everything as a plan without spending money.",
           },
+          {
+            prompt: "According to the lesson, at which step of building a Search campaign does billing come in?",
+            options: [
+              "Choosing a goal",
+              "Choosing keywords",
+              "Writing ads",
+              "Review and publish",
+            ],
+            answer_index: 3,
+            explanation: "The lesson's seven steps end with review and publish, which is where billing comes in.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "google-ads-auction": {
       outcomes: [
-        "Describe what happens in a search auction",
-        "Explain Ad Rank and Quality Score",
-        "Explain how paying per click works",
+        "Describe what happens between a search and an ad appearing",
+        "List the factors Google says go into Ad Rank",
+        "Explain the three Quality Score components and what the score is for",
+        "Explain why a relevant ad can beat a higher bid",
       ],
       explanation_md: `Every time someone searches, Google Ads runs an auction in a fraction of a second to decide which ads appear, in what order, and whether any appear at all. Understanding this auction is the foundation of week 7 and the reason a well run small campaign can beat a bigger budget.
 
@@ -3188,6 +3248,8 @@ Abdul-Rahman manages a car rental business in Tamale. Most customers arrive by a
 3. For each, it works out the **Ad Rank**, a set of values that decides whether the ad can show and where.
 4. Ads that meet the minimum standards show, highest Ad Rank first.
 
+This happens again for every single search. Your ad might win the top spot on one search, show lower on the next, and not show at all on a third, because the context and the competition change each time.
+
 ## What goes into Ad Rank
 
 Google Ads Help lists several factors:
@@ -3196,28 +3258,68 @@ Google Ads Help lists several factors:
 * **The quality of your ads and landing page,** how relevant and useful they are.
 * **Ad Rank thresholds,** minimum standards an ad must meet to show at all.
 * **How competitive the auction is.**
-* **The context of the search,** such as location, device, time and the words used.
-* **The expected impact of assets,** such as a phone number or extra links.
+* **The context of the search,** such as the person's location, device, time of the search, the words used, and the other ads and results on the page.
+* **The expected impact of assets,** such as a phone number or extra links, judged by their relevance, clickthrough rate and prominence.
 
 Google notes that relevance can make up for a lower bid. An advertiser with highly relevant keywords and ads can win a higher position at a lower price than a competitor bidding more.
 
+## Thresholds explained
+
+Ad Rank thresholds are the minimum quality an ad needs to appear in a position. A poor ad cannot simply buy its way onto the page with a high bid. Thresholds are not fixed: they change with the position, the topic of the search and other context. In practice this means a weak, irrelevant ad may not show at all, even with plenty of budget.
+
 ## Quality Score
 
-Google Ads gives each keyword a **Quality Score** from 1 to 10. It is based on three parts, each rated above average, average or below average:
+Google Ads gives each keyword a **Quality Score** from 1 to 10. It is based on three parts, each rated above average, average or below average, compared with other advertisers whose ads showed for the same search over the last 90 days:
 
 * **Expected clickthrough rate:** how likely people are to click your ad.
 * **Ad relevance:** how closely the ad matches the intent of the search.
 * **Landing page experience:** how useful and relevant the page is after the click.
 
-Google says Quality Score is a diagnostic tool and is not itself an input in the auction. It is a helpful summary of whether your ads and pages are relevant, and improving those things helps your Ad Rank.
+Google says Quality Score is a diagnostic tool and is not itself an input in the auction. Think of it like a report card rather than the exam: it tells you which part needs work. Improving the things it measures, relevant ads, appealing text and useful pages, is what helps your Ad Rank.
+
+## Reading the three ratings
+
+Each below average rating points to a different fix.
+
+* **Expected clickthrough rate below average:** the ad does not tempt searchers. Use the keyword's words in a headline and make the benefit clearer.
+* **Ad relevance below average:** the ad group is probably too broad. Split it so each ad speaks directly to its keywords.
+* **Landing page experience below average:** the page does not deliver what the ad promised, loads slowly, or is hard to use. Send the click to a page about exactly that service.
 
 ## Paying per click
 
-On most search campaigns you pay only when someone clicks. You set a maximum, but you often pay less than your maximum, depending on the auction. You never pay just because your ad was shown on a search campaign charged per click.
+On most search campaigns you pay only when someone clicks. You set a maximum, but you often pay less than your maximum, depending on the auction. You never pay just because your ad was shown on a search campaign charged per click. The amount you actually pay is called the actual cost per click.
 
-## A worked example
+## What this means for a small business
 
-Two shops in Tamale advertise for "laptop repair Tamale". Shop A bids more but its ad says only "Electronics and More" and sends people to a general home page. Shop B, run by Wumpini, bids less, but its ad says "Laptop Repair in Tamale, Same Day Screen Fix" and lands on a page about laptop repairs with prices and a WhatsApp button. Because Wumpini's ad and page are far more relevant to the search, her ad can appear above Shop A while she pays less per click.`,
+You rarely win by outbidding big companies. You win by being the most relevant answer: tightly themed ad groups, ads that repeat the searcher's words and promise, and a landing page that keeps that promise. The next lessons build each of those.`,
+      workedExample_md: `Two shops in Tamale advertise for "laptop repair Tamale".
+
+1. **Shop A bids more.** Its ad says only "Electronics and More" and sends people to a general home page showing televisions and phone cases.
+2. **Shop B bids less.** It is run by Wumpini. Her ad says "Laptop Repair in Tamale, Same Day Screen Fix" and lands on a page about laptop repairs with prices and a WhatsApp button.
+3. **The auction compares them.** Wumpini's ad matches the search closely, people are more likely to click it, and her page delivers what the ad promises.
+4. **The result.** Her ad can appear above Shop A while she pays less per click.
+5. **Shop A checks its Quality Score.** The keyword shows ad relevance below average and landing page experience below average.
+6. **Shop A's fixes.** It splits its single ad group into laptop, phone and TV repair groups, writes an ad for each, and builds a laptop repair page.
+
+Within a month the two shops compete on relevance, not just money, and searchers get better answers from both.`,
+      keyTerms: [
+        { term: "Ad auction", definition: "The process run on every search to decide which ads show and in what order." },
+        { term: "Ad Rank", definition: "The values that decide whether an ad can show and where." },
+        { term: "Ad Rank threshold", definition: "The minimum quality an ad needs to appear in a position." },
+        { term: "Quality Score", definition: "A 1 to 10 keyword diagnostic based on expected clickthrough rate, ad relevance and landing page experience." },
+        { term: "Actual cost per click", definition: "What you really pay for a click, often less than your maximum bid." },
+      ],
+      commonMistakes: [
+        "Thinking the highest bid always wins the top position",
+        "Treating Quality Score as an input in the auction rather than a diagnostic",
+        "Sending every ad to the home page",
+        "Ignoring which of the three ratings is below average",
+      ],
+      selfCheck: [
+        "Which factors does Google say go into Ad Rank?",
+        "What fix would you try for a below average ad relevance rating?",
+        "Why can a smaller business win a higher position at a lower price?",
+      ],
       practice_task_md: `**Goal:** Analyse real ads through the lens of Ad Rank.
 
 **Steps:**
@@ -3274,16 +3376,28 @@ Two shops in Tamale advertise for "laptop repair Tamale". Shop A bids more but i
             answer_index: 1,
             explanation: "Relevance can make up for a lower bid in the auction.",
           },
+          {
+            prompt: "A keyword shows landing page experience as below average. Which fix does the lesson suggest?",
+            options: [
+              "Raise the maximum bid",
+              "Send the click to a page about exactly that service",
+              "Add more keywords to the ad group",
+              "Pin the business name to Headline 1",
+            ],
+            answer_index: 1,
+            explanation: "A below average landing page rating means the page does not deliver what the ad promised, so send clicks to a page about that exact service.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
     "campaign-types-and-goals": {
       outcomes: [
-        "Start a campaign from its goal",
-        "Compare the main campaign types",
-        "Choose a type and define success",
+        "Match business goals to Google Ads campaign types",
+        "Explain why beginners start with Search campaigns",
+        "Define conversions, including for a business without a website",
+        "Write a short campaign brief",
       ],
       explanation_md: `Google Ads offers several kinds of campaign, each built for a different goal and showing ads in different places. Choosing the right type is one of the first questions in the "Get Search Ad Campaign Ready" training and in junior job interviews.
 
@@ -3297,6 +3411,8 @@ Before choosing a type, write the business goal in one sentence. Typical goals a
 * **Awareness:** more people know the brand.
 * **App installs:** people download an app.
 
+A good goal is specific: "More calls from people in Tamale who need a laptop repaired" is far more useful than "more customers".
+
 ## The main campaign types
 
 Google Ads Help describes these main types. Names and options change over time, so check the current list when you build.
@@ -3308,6 +3424,10 @@ Google Ads Help describes these main types. Names and options change over time, 
 * **Demand Gen:** visual ads in places such as YouTube and Gmail, aimed at creating interest.
 * **Shopping:** product listings with images and prices. You need an online shop and a product feed in Google Merchant Center.
 * **App:** promotes an app across Google's services.
+
+## Demand capture and demand creation
+
+A useful way to sort the types is by whether people are already looking. **Search** and **Shopping** capture demand: the person typed what they want. **Display**, **Video** and **Demand Gen** mostly create demand: they show the business to people who were doing something else, such as watching a video. Capturing demand usually turns into enquiries faster; creating demand builds awareness that pays off later. A small business with a tight budget normally captures existing demand first.
 
 ## Why beginners start with Search
 
@@ -3324,9 +3444,39 @@ Search campaigns are the clearest place to learn. You choose the keywords, write
 
 Whatever the type, decide what counts as success. Google Ads calls important actions **conversions**: a purchase, a form, a call from an ad, or a click on a WhatsApp button. Without conversions set up, you can only measure clicks, which tells you little about sales. For a business without a website, calls from ads and a simple question to every new customer, "How did you hear about us?", still give useful evidence.
 
-## A worked example
+Choose one primary conversion that matches the goal, such as calls of a reasonable length for the plumber. Other actions, such as visits to the contact page, can be tracked as secondary signals but should not be treated as sales. Counting the wrong thing makes a campaign look successful while the phone stays silent.
 
-Mariama's guesthouse in Tamale wants direct bookings. She has a simple website with a phone number and a booking form. Issahaku recommends a Search campaign targeting travellers searching for places to stay in Tamale, with a call asset, and sets the booking form and calls as conversions. Later, once there is enough booking data, they can test other campaign types.`,
+## The campaign brief
+
+Before building, write a short brief: the goal in one sentence, the chosen campaign type and why, the main conversion and how it will be counted, the area to target, and the budget the owner has approved. Share it with the owner and your mentor. It keeps everyone agreed on what success means before money is spent.`,
+      workedExample_md: `Mariama's guesthouse in Tamale wants more direct bookings. She has a simple website with a phone number and a booking form.
+
+1. **Goal.** Issahaku writes: "More direct bookings from travellers searching for a place to stay in Tamale."
+2. **Demand.** Travellers already search for guesthouses before a trip, so this is demand capture.
+3. **Type.** He recommends a Search campaign with a call asset. He considers Performance Max but rules it out for now, because there is no conversion history for it to learn from.
+4. **Conversions.** The booking form submission is the primary conversion, and calls from the ad are counted too. Visits to the rooms page are tracked only as a secondary signal.
+5. **No website fallback.** For walk in guests, Mariama will ask "How did you hear about us?" and note the answer.
+6. **Brief.** He writes all of this on one page, with the area, Tamale and travellers searching for it, and the budget Mariama approved, and shares it with her.
+
+Later, once there is enough booking data, they can test other campaign types.`,
+      keyTerms: [
+        { term: "Campaign type", definition: "The kind of Google Ads campaign, such as Search, Display or Performance Max." },
+        { term: "Demand capture", definition: "Reaching people who are already searching for what you offer." },
+        { term: "Demand creation", definition: "Showing a business to people who were not yet looking for it." },
+        { term: "Performance Max", definition: "A goal based campaign type that uses automation across Google's channels." },
+        { term: "Primary conversion", definition: "The main action a campaign is judged on, chosen to match the goal." },
+      ],
+      commonMistakes: [
+        "Choosing an automated campaign type before conversion tracking works",
+        "Counting page visits as if they were sales",
+        "Writing a vague goal such as \"more customers\"",
+        "Running a Shopping campaign without an online shop and product feed",
+      ],
+      selfCheck: [
+        "Which campaign types capture demand and which create it?",
+        "Why do beginners usually start with Search?",
+        "What would count as a conversion for a business with no website?",
+      ],
       practice_task_md: `**Goal:** Choose the right campaign type for your business and define success.
 
 **Steps:**
@@ -3389,9 +3539,10 @@ Mariama's guesthouse in Tamale wants direct bookings. She has a simple website w
 
     "account-structure": {
       outcomes: [
-        "Explain the layers of an ads account",
-        "Organise campaigns into tight ad groups",
-        "Check campaign settings and name things clearly",
+        "Describe the layers of a Google Ads account",
+        "Organise campaigns and tightly themed ad groups",
+        "Choose location, language, network and schedule settings",
+        "Audit and rebuild a messy account",
       ],
       explanation_md: `A messy Google Ads account wastes money and makes reports confusing. A tidy one makes every decision easier. Employers often hand a junior an existing account and ask, "What would you change?" Understanding structure is how you answer.
 
@@ -3407,6 +3558,8 @@ Mariama's guesthouse in Tamale wants direct bookings. She has a simple website w
 
 Create separate campaigns when you need different budgets, locations or goals. For example, a hotel might have one campaign for rooms and another for its conference hall, because they have different budgets and customers. A business serving Tamale and Accra might split by location if it wants to control spending in each.
 
+Keep the number of campaigns small for a small budget. Every campaign needs its own budget, and many tiny budgets mean none gets enough clicks to learn from.
+
 ## Tight ad groups
 
 Each ad group should cover one theme, so the ad can speak directly to every keyword in it. If an ad group mixes "laptop repair", "phone screen repair" and "printer ink", no single ad can be relevant to all three. Split them into three ad groups, each with its own ads.
@@ -3415,18 +3568,58 @@ A simple test: could you write one headline that perfectly answers every keyword
 
 ## Campaign settings worth checking
 
-* **Locations:** target where customers actually are. Check whether the setting includes people located in, or merely interested in, a place, and choose what fits.
+* **Locations:** target where customers actually are. Google's location options can use people's physical location, meaning people who are in or regularly in the place, and their location of interest, meaning people who have shown interest in it, for example by searching for it. The default uses both. A Tamale guesthouse may want both, because travellers in Accra search for Tamale before they arrive. A plumber who only works in Tamale may choose physical location only, so the budget is not spent on people elsewhere.
 * **Languages:** usually English for Ghana, plus any other language your ads use.
-* **Networks:** Search campaigns can include partner sites and the Display Network. Many beginners turn off the Display Network in a Search campaign so they can see search results clearly.
+* **Networks:** Search campaigns can include search partner sites and the Display Network. Many beginners turn off the Display Network in a Search campaign so they can see search results clearly.
 * **Ad schedule:** limit hours if nobody answers the phone at night.
+
+## Who has access
+
+The business owns the account. Marketers are added as users with the access level they need, and removed when the work ends. Google Ads also lets an agency or freelancer manage several client accounts from one manager account, without ever sharing passwords. Never create a client's account in your own name, because they would lose their history if you part ways.
+
+## Auditing an existing account
+
+When you inherit an account, look before you change anything.
+
+1. **Read the structure.** List campaigns and ad groups. Do names make sense? Does each ad group have one theme?
+2. **Check settings.** Locations, location options, languages, networks and schedule. Many problems hide here.
+3. **Check conversions.** Is anything being counted, and is it the right action?
+4. **Look at spend.** Which campaigns and ad groups use most of the money, and what do they bring?
+5. **Write findings before acting.** Agree changes with the owner, then make them one at a time and log them.
 
 ## Naming
 
-Use clear, consistent names, for example "Search Repairs Tamale" for a campaign and "Laptop Screen" for an ad group. Anyone reading a report should understand it without asking you.
+Use clear, consistent names, for example "Search Repairs Tamale" for a campaign and "Laptop Screen" for an ad group. Anyone reading a report should understand it without asking you. A pattern such as type, theme and place for campaigns, and theme for ad groups, keeps things readable as the account grows.`,
+      workedExample_md: `Sumaila inherits a Google Ads account for an electronics repair shop in Wa, owned by Mrs Owusu.
 
-## A worked example
+1. **He reads the structure.** One campaign called "Campaign 1" and one ad group with forty keywords covering phones, laptops, TVs and solar lights.
+2. **He checks settings.** Locations are set to all of Ghana with the default location option, the Display Network is on, and ads run all night.
+3. **He checks conversions.** Nothing is tracked, so nobody knows which keywords bring calls.
+4. **He writes findings** and agrees a plan with Mrs Owusu before touching anything.
+5. **He rebuilds the structure.** One Search campaign called "Search Repairs Wa", with four ad groups: Phone Repair, Laptop Repair, TV Repair and Solar Lights, each with five to ten closely related keywords and its own ads.
+6. **He fixes settings.** Locations: Wa and nearby towns, physical location only, because the shop only serves people who can visit. Display Network off. Schedule: shop hours.
+7. **He tracks calls from ads as conversions** and logs every change with the date.
 
-Sumaila inherits an account for an electronics shop in Wa. It has one campaign called "Campaign 1" and one ad group with forty keywords covering phones, laptops, TVs and solar lights. He rebuilds it as one Search campaign called "Search Repairs Wa", with four ad groups: Phone Repair, Laptop Repair, TV Repair and Solar Lights. Each has five to ten closely related keywords and ads written for that theme. He limits locations to Wa and nearby towns, turns off the Display Network, and sets the schedule to shop hours.`,
+The account is now easy to read, and every cedi has a clear job.`,
+      keyTerms: [
+        { term: "Ad group", definition: "A set of closely related keywords and the ads written for them." },
+        { term: "Location of interest", definition: "A location people have shown interest in, for example by searching for it." },
+        { term: "Physical location", definition: "Where people are, or regularly are, when they search." },
+        { term: "Display Network", definition: "Websites and apps where Google can show ads, separate from search results." },
+        { term: "Manager account", definition: "A Google Ads account that lets an agency or freelancer manage several client accounts." },
+      ],
+      commonMistakes: [
+        "Mixing unrelated services in one ad group",
+        "Leaving location options on the default without thinking about who should see the ads",
+        "Creating a client's account in your own name",
+        "Changing many settings at once before writing down what you found",
+        "Leaving ads running at night when nobody answers the phone",
+      ],
+      selfCheck: [
+        "What is the one headline test for an ad group?",
+        "When would you choose physical location only instead of the default?",
+        "What five things would you check when auditing an inherited account?",
+      ],
       practice_task_md: `**Goal:** Design the account structure for your business on paper or in a sheet.
 
 **Steps:**
@@ -3483,8 +3676,19 @@ Sumaila inherits an account for an electronics shop in Wa. It has one campaign c
             answer_index: 2,
             explanation: "Separate campaigns are useful when budgets, locations or goals differ.",
           },
+          {
+            prompt: "A plumber only works in Tamale. Which location option does the lesson suggest?",
+            options: [
+              "Location of interest only",
+              "All of Ghana with the default option",
+              "Physical location only",
+              "No location targeting at all",
+            ],
+            answer_index: 2,
+            explanation: "Physical location only keeps the budget on people who are, or regularly are, in Tamale.",
+          },
         ],
-        pass_threshold: 75,
+        pass_threshold: 80,
       },
     },
 
