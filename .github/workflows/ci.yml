@@ -62,7 +62,7 @@ jobs:
           version: 2.114.0 # keep in step with the local CLI; generated types depend on it
       # Local Supabase in Docker, trimmed to what migrations and tests need.
       - name: Cache Supabase images
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: /tmp/supabase-image-cache
           key: supabase-images-v2-db-${{ hashFiles('supabase/config.toml') }}
@@ -105,7 +105,7 @@ jobs:
       # confirmation emails from it) and Storage (credential uploads, #253).
       # Never run these against hosted projects.
       - name: Cache Supabase images
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: /tmp/supabase-image-cache
           key: supabase-images-v3-e2e-${{ hashFiles('supabase/config.toml') }}
