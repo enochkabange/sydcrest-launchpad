@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { decideLegalGate, legalConsentState, termsVersionFromMetadata } from "./consent";
+import { AGE_CONSENT_KIND, decideLegalGate, legalConsentState, needsAgeConfirmationRecord, termsVersionFromMetadata } from "./consent";
 
 const live = (kind: string) => ({ kind, revoked_at: null });
 const revoked = (kind: string) => ({ kind, revoked_at: "2026-10-20T10:00:00Z" });
@@ -59,5 +59,26 @@ describe("termsVersionFromMetadata", () => {
     expect(termsVersionFromMetadata({ terms_version: "" })).toBeNull();
     expect(termsVersionFromMetadata({ terms_version: "x".repeat(41) })).toBeNull();
     expect(termsVersionFromMetadata(null)).toBeNull();
+  });
+});
+
+describe("needsAgeConfirmationRecord (founder decision D1)", () => {
+  const ticked = { date_of_birth: "2000-03-14", terms_version: "v1", age_confirmed_at: "2026-10-29T10:00:00Z" };
+
+  it("copies a sign up's 18 or over tick from metadata once", () => {
+    expect(needsAgeConfirmationRecord([{ kind: "terms", revoked_at: null }], ticked)).toBe(true);
+    expect(needsAgeConfirmationRecord([{ kind: AGE_CONSENT_KIND, revoked_at: null }], ticked)).toBe(false);
+  });
+
+  it("never invents a tick for accounts made before it existed", () => {
+    expect(needsAgeConfirmationRecord([], { date_of_birth: "2000-03-14", terms_version: "v1" })).toBe(false);
+  });
+
+  it("is not part of the legal gate", () => {
+    const rows = [
+      { kind: "terms", revoked_at: null },
+      { kind: "privacy", revoked_at: null },
+    ];
+    expect(decideLegalGate(rows, { date_of_birth: "2000-03-14", terms_version: "v1" })).toEqual({ action: "allow" });
   });
 });

@@ -34,6 +34,7 @@ test("a sign up confirmation link opens our own site and signs the learner in on
     await page.getByLabel("Password").fill(PASSWORD);
     await page.getByLabel("Date of birth").fill(ADULT_DOB);
     await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
+    await page.getByLabel("I confirm I am 18 or over").check();
     await page.getByRole("button", { name: "Create account" }).click();
     await expect(page.getByText(`We sent a confirmation link to ${email}`)).toBeVisible();
   });

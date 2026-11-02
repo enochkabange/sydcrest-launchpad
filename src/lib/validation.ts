@@ -52,18 +52,25 @@ export function ageOn(dob: CalendarDate, today: CalendarDate) {
 /**
  * The date of birth and consent checks shared by email sign up and the
  * /welcome step for Google sign ups, so the two paths can't drift apart.
+ * Date of birth (unless it is already on file: it cannot change once set),
+ * the terms tick and the "I confirm I am 18 or over" tick (founder decision
+ * D1). Shared by sign up and /welcome.
  */
-export function parseAgeAndConsent(form: FormData, now: Date = new Date()) {
-  const dateOfBirth = text(form, "date_of_birth");
+export function parseAgeAndConsent(form: FormData, now: Date = new Date(), { askDateOfBirth = true }: { askDateOfBirth?: boolean } = {}) {
+  const dateOfBirth = askDateOfBirth ? text(form, "date_of_birth") : "";
   const agreed = form.get("terms") === "on";
-  const errors: FieldErrors<"date_of_birth" | "terms"> = {};
+  const adult = form.get("adult") === "on";
+  const errors: FieldErrors<"date_of_birth" | "terms" | "adult"> = {};
 
-  const dob = parseIsoDate(dateOfBirth);
-  const today = todayInAccra(now);
-  if (!dateOfBirth) errors.date_of_birth = "Enter your date of birth.";
-  else if (!dob || dob.year < 1900) errors.date_of_birth = "Enter a real date of birth.";
-  else if (compareDates(dob, today) > 0) errors.date_of_birth = "Your date of birth can't be in the future.";
-  else if (ageOn(dob, today) < MINIMUM_AGE) errors.date_of_birth = UNDER_AGE_MESSAGE;
+  if (askDateOfBirth) {
+    const dob = parseIsoDate(dateOfBirth);
+    const today = todayInAccra(now);
+    if (!dateOfBirth) errors.date_of_birth = "Enter your date of birth.";
+    else if (!dob || dob.year < 1900) errors.date_of_birth = "Enter a real date of birth.";
+    else if (compareDates(dob, today) > 0) errors.date_of_birth = "Your date of birth can't be in the future.";
+    else if (ageOn(dob, today) < MINIMUM_AGE) errors.date_of_birth = UNDER_AGE_MESSAGE;
+  }
+  if (!adult && errors.date_of_birth !== UNDER_AGE_MESSAGE) errors.adult = "Tick the box to confirm you are 18 or over.";
   if (!agreed) errors.terms = "Tick the box to agree to the Terms and Privacy Policy.";
 
   return { data: { dateOfBirth, termsVersion: LEGAL_VERSION }, errors };
@@ -74,7 +81,7 @@ export function parseSignUp(form: FormData, now: Date = new Date()) {
   const email = text(form, "email").toLowerCase();
   const password = typeof form.get("password") === "string" ? (form.get("password") as string) : "";
   const age = parseAgeAndConsent(form, now);
-  const errors: FieldErrors<"full_name" | "email" | "password" | "date_of_birth" | "terms"> = { ...age.errors };
+  const errors: FieldErrors<"full_name" | "email" | "password" | "date_of_birth" | "terms" | "adult"> = { ...age.errors };
 
   if (!fullName) errors.full_name = "Tell us your name.";
   else if (fullName.length > 80) errors.full_name = "Keep your name under 80 characters.";

@@ -14,6 +14,7 @@ export async function signUpAndConfirm(page: Page, testInfo: TestInfo, name: str
   await page.getByLabel("Password").fill(PASSWORD);
   await page.getByLabel("Date of birth").fill(ADULT_DOB);
   await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
+  await page.getByLabel("I confirm I am 18 or over").check();
   await page.getByRole("button", { name: "Create account" }).click();
   await expect(page.getByText(`We sent a confirmation link to ${email}`)).toBeVisible();
   await page.goto(await confirmationLink(email));

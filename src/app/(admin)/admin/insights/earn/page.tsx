@@ -6,7 +6,7 @@ import { loadRow, loadTable } from "@/lib/insights/data";
 import { formatCount, formatHours, formatRate } from "@/lib/insights/metrics";
 import { Definitions, ExportLink, InsightsPage, Section, type InsightsContext } from "../shell";
 
-export const metadata: Metadata = { title: "Mentors and Earn", robots: { index: false } };
+export const metadata: Metadata = { title: "Experts and Earn", robots: { index: false } };
 
 const OUTCOME_LABELS: Record<string, string> = {
   job: "Job",
@@ -38,7 +38,7 @@ async function Earn({ supabase, filters }: InsightsContext) {
     <>
       <section aria-labelledby="mentors-heading" className="flex flex-col gap-3">
         <h2 id="mentors-heading" className="text-subtitle text-content">
-          Mentors and bookings
+          Experts and bookings
         </h2>
         <StatGrid>
           <StatTile value={formatCount(e.bookings_requested)} label="Booking requests" detail={`${formatCount(e.bookings_completed)} completed so far`} />

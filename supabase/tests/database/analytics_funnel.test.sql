@@ -25,16 +25,17 @@ insert into public.roadmap_progress (profile_id, node_id, status, completed_at) 
   ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-0000-0000-0000-000000000002', 'done', now()),
   ('22222222-2222-2222-2222-222222222222', 'bbbbbbbb-0000-0000-0000-000000000001', 'done', now() - interval '21 days');
 
--- Signed out visitor: every taxonomy name is accepted
+-- Signed out visitor: every taxonomy name is accepted (through record_events,
+-- the only write path since #247)
 set local role anon;
 select set_config('request.jwt.claims', '{"role":"anon"}', true);
 
-select lives_ok($$ insert into public.events (name, anonymous_id) values ('page_view', 'visitor-a') $$, 'page_view is valid');
-select lives_ok($$ insert into public.events (name, anonymous_id) values ('page_view', 'visitor-a') $$, 'a repeat page_view is fine');
-select lives_ok($$ insert into public.events (name, anonymous_id) values ('page_view', 'visitor-b') $$, 'a second visitor');
-select lives_ok($$ insert into public.events (name, anonymous_id, props) values ('signup', 'visitor-a', '{"method":"email"}') $$, 'signup is valid');
-select lives_ok($$ insert into public.events (name, anonymous_id) values ('quiz_run', 'visitor-b') $$, 'quiz_run is valid');
-select lives_ok($$ insert into public.events (name, anonymous_id) values ('path_viewed', 'visitor-b') $$, 'path_viewed is valid');
+select is(public.record_events('[{"name":"page_view"}]', '{"anonymous_id":"a0000000-0000-4000-8000-00000000000a"}'), 1, 'page_view is valid');
+select is(public.record_events('[{"name":"page_view"}]', '{"anonymous_id":"a0000000-0000-4000-8000-00000000000a"}'), 1, 'a repeat page_view is fine');
+select is(public.record_events('[{"name":"page_view"}]', '{"anonymous_id":"b0000000-0000-4000-8000-00000000000b"}'), 1, 'a second visitor');
+select is(public.record_events('[{"name":"signup", "props":{"method":"email"}}]', '{"anonymous_id":"a0000000-0000-4000-8000-00000000000a"}'), 1, 'signup is valid');
+select is(public.record_events('[{"name":"quiz_run"}]', '{"anonymous_id":"b0000000-0000-4000-8000-00000000000b"}'), 1, 'quiz_run is valid');
+select is(public.record_events('[{"name":"path_viewed"}]', '{"anonymous_id":"b0000000-0000-4000-8000-00000000000b"}'), 1, 'path_viewed is valid');
 select throws_ok($$ select * from public.funnel_by_week() $$, '42501', null, 'anon cannot read the funnel');
 reset role;
 
@@ -42,9 +43,9 @@ reset role;
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"11111111-1111-1111-1111-111111111111","role":"authenticated"}', true);
 
-select lives_ok($$ insert into public.events (name, profile_id) values ('node_started', '11111111-1111-1111-1111-111111111111') $$, 'node_started is valid');
-select lives_ok($$ insert into public.events (name, profile_id) values ('node_completed', '11111111-1111-1111-1111-111111111111') $$, 'node_completed is valid');
-select lives_ok($$ insert into public.events (name, profile_id) values ('invite_sent', '11111111-1111-1111-1111-111111111111') $$, 'invite_sent is valid');
+select is(public.record_events('[{"name":"node_started"}]'), 1, 'node_started is valid');
+select is(public.record_events('[{"name":"node_completed"}]'), 1, 'node_completed is valid');
+select is(public.record_events('[{"name":"invite_sent"}]'), 1, 'invite_sent is valid');
 select throws_ok($$ select * from public.funnel_by_week() $$, '42501', null, 'a learner cannot read the funnel');
 reset role;
 

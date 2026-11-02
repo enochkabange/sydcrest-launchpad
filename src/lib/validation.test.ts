@@ -27,7 +27,7 @@ function accraNoon(iso: string) {
 }
 
 const NOW = accraNoon("2026-10-25");
-const ADULT = { date_of_birth: "2000-03-14", terms: "on" };
+const ADULT = { date_of_birth: "2000-03-14", terms: "on", adult: "on" };
 
 describe("parseSignUp", () => {
   it("accepts a valid sign up and normalises the email", () => {
@@ -47,7 +47,7 @@ describe("parseSignUp", () => {
 
   it("flags every missing or invalid field", () => {
     const { errors } = parseSignUp(form({ full_name: "", email: "not-an-email", password: "short" }), NOW);
-    expect(Object.keys(errors).sort()).toEqual(["date_of_birth", "email", "full_name", "password", "terms"]);
+    expect(Object.keys(errors).sort()).toEqual(["adult", "date_of_birth", "email", "full_name", "password", "terms"]);
   });
 
   it("rejects names over 80 characters", () => {
@@ -69,7 +69,7 @@ describe("parseSignUp", () => {
 
 describe("parseAgeAndConsent", () => {
   const dob = (date_of_birth: string, now = NOW) =>
-    parseAgeAndConsent(form({ date_of_birth, terms: "on" }), now).errors.date_of_birth;
+    parseAgeAndConsent(form({ date_of_birth, terms: "on", adult: "on" }), now).errors.date_of_birth;
 
   it("refuses someone who is 17 years and 364 days old", () => {
     expect(dob("2008-10-26")).toBe(UNDER_AGE_MESSAGE);
@@ -107,9 +107,31 @@ describe("parseAgeAndConsent", () => {
   });
 
   it("requires the consent box and records the current terms version", () => {
-    const { data, errors } = parseAgeAndConsent(form({ date_of_birth: "2000-03-14" }), NOW);
+    const { data, errors } = parseAgeAndConsent(form({ date_of_birth: "2000-03-14", adult: "on" }), NOW);
     expect(errors).toEqual({ terms: expect.any(String) });
     expect(data.termsVersion).toBe(LEGAL_VERSION);
+  });
+
+  it("requires the 18 or over tick (founder decision D1)", () => {
+    const { errors } = parseAgeAndConsent(form({ date_of_birth: "2000-03-14", terms: "on" }), NOW);
+    expect(errors).toEqual({ adult: "Tick the box to confirm you are 18 or over." });
+  });
+
+  it("says only the under 18 message when the date of birth is under 18, ticked or not", () => {
+    const { errors } = parseAgeAndConsent(form({ date_of_birth: "2010-06-01", terms: "on" }), NOW);
+    expect(errors).toEqual({ date_of_birth: UNDER_AGE_MESSAGE });
+  });
+
+  it("skips the date of birth when it is already on file (it cannot change, #251)", () => {
+    const { data, errors } = parseAgeAndConsent(form({ date_of_birth: "1990-01-01", terms: "on", adult: "on" }), NOW, {
+      askDateOfBirth: false,
+    });
+    expect(errors).toEqual({});
+    expect(data.dateOfBirth).toBe("");
+    expect(parseAgeAndConsent(form({}), NOW, { askDateOfBirth: false }).errors).toEqual({
+      terms: expect.any(String),
+      adult: expect.any(String),
+    });
   });
 });
 
