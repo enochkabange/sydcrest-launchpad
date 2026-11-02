@@ -21,7 +21,7 @@ export default function StudyBuddyPage() {
       <header className="flex max-w-reading flex-col gap-2">
         <h1 className="text-title text-content">Study Buddy</h1>
         <p className="text-lead text-content-2">
-          Your companion on SydCrest. Ask what to learn next, who could mentor you, or which opportunities and events
+          Your companion on SydCrest. Ask what to learn next, which expert could help you, or which opportunities and events
           fit your path.
         </p>
       </header>
@@ -52,7 +52,7 @@ async function CompanionChat() {
 
 const CAN_DO = [
   { icon: Compass, title: "Your next steps", text: "Where you are on your path and which topic to open next." },
-  { icon: Users, title: "Mentors", text: "Approved experts whose skills match your track." },
+  { icon: Users, title: "Experts", text: "Approved experts whose skills match your track." },
   { icon: Briefcase, title: "Opportunities", text: "Open jobs, internships, scholarships and gigs that suit your path." },
   { icon: CalendarDays, title: "Events", text: "Upcoming skillshops and meetups, your chapter first." },
 ] as const;

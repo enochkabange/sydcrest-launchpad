@@ -30,12 +30,4 @@ export const getMyExpertState = cache(async () => {
   };
 });
 
-/** Postgres error codes the expert forms turn into plain words. */
-export const PG = {
-  uniqueViolation: "23505",
-  checkViolation: "23514",
-  rlsViolation: "42501",
-} as const;
-
-export const ADULTS_ONLY_MESSAGE =
-  "The expert market is for adults aged 18 and over. If you are 18 or over, check the date of birth on your account and try again.";
+export { ADULTS_ONLY_MESSAGE, PG } from "./expert";

@@ -16,21 +16,19 @@ update public.profiles set role = 'admin' where id = '44444444-4444-4444-4444-44
 set local role anon;
 select set_config('request.jwt.claims', '{"role":"anon"}', true);
 
-select lives_ok($$ insert into public.events (name, anonymous_id, props) values ('page_view', 'anon-1', '{"path":"/"}') $$,
-  'anon records an event');
-select throws_ok($$ insert into public.events (name) values ('made_up_event') $$, '23514', null,
-  'event names come from the fixed list');
+select is(public.record_events('[{"name":"page_view","props":{"path":"/"}}]', '{"anonymous_id":"a0000000-0000-4000-8000-000000000001"}'), 1,
+  'anon records an event through record_events');
+select is(public.record_events('[{"name":"made_up_event"}]'), 0, 'event names come from the fixed list');
 select throws_ok(
   $$ insert into public.events (name, profile_id) values ('page_view', '11111111-1111-1111-1111-111111111111') $$,
   '42501', null, 'anon cannot attribute events to a user');
 select throws_ok($$ select * from public.events $$, '42501', null, 'anon cannot read events');
-select lives_ok(
-  $$ insert into public.waitlist (email, name, region, interest) values ('abdul.rahman@example.test', 'Abdul-Rahman Issah', 'northern', 'Data') $$,
+select is(public.join_waitlist(repeat('a', 64), 'abdul.rahman@example.test', 'Abdul-Rahman Issah', 'northern', 'Data'), true,
   'anon joins the waitlist');
-select throws_ok($$ insert into public.waitlist (email) values ('not-an-email') $$, '23514', null,
+select throws_ok($$ select public.join_waitlist(repeat('a', 64), 'not-an-email') $$, '23514', null,
   'waitlist emails must look like emails');
-select throws_ok($$ insert into public.waitlist (email) values ('Abdul.Rahman@Example.test') $$, '23505', null,
-  'one waitlist entry per address, ignoring case');
+select is(public.join_waitlist(repeat('a', 64), 'Abdul.Rahman@Example.test'), true,
+  'a repeat address (any case) answers like a new one and adds no row');
 select throws_ok($$ select * from public.waitlist $$, '42501', null, 'anon cannot read the waitlist');
 select throws_ok($$ select * from public.follows $$, '42501', null, 'anon cannot read follows');
 select throws_ok(
@@ -49,9 +47,7 @@ select throws_ok($$ insert into public.follows (following_id) values ('11111111-
 select throws_ok(
   $$ insert into public.follows (follower_id, following_id) values ('22222222-2222-2222-2222-222222222222', '44444444-4444-4444-4444-444444444444') $$,
   '42501', null, 'a user cannot create follows for someone else');
-select lives_ok(
-  $$ insert into public.events (name, profile_id) values ('node_opened', '11111111-1111-1111-1111-111111111111') $$,
-  'a user records their own event');
+select is(public.record_events('[{"name":"node_started"}]'), 1, 'a user records their own event');
 select throws_ok(
   $$ insert into public.events (name, profile_id) values ('node_opened', '22222222-2222-2222-2222-222222222222') $$,
   '42501', null, 'a user cannot record events as someone else');
@@ -69,7 +65,7 @@ reset role;
 -- Mariama sees the graph and cannot remove Wumpini's follow
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"22222222-2222-2222-2222-222222222222","role":"authenticated"}', true);
-select is((select count(*)::int from public.follows), 1, 'signed in users can see follows');
+select is((select count(*)::int from public.follows), 1, 'the followed person sees the follow');
 delete from public.follows where follower_id = '11111111-1111-1111-1111-111111111111';
 select is((select count(*)::int from public.follows), 1, 'a user cannot delete someone else''s follow');
 reset role;

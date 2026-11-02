@@ -5,8 +5,9 @@ import Link from "@/components/ui/link";
 import Logo from "@/components/brand/Logo";
 import { LegalLinks } from "@/components/app-shell/legal-links";
 import { SkipLink } from "@/components/app-shell/skip-link";
+import { getMyProfile } from "@/lib/auth";
 import { requireAdmin } from "@/lib/admin";
-import { AdminNav, AdminNavLinks } from "./admin-nav";
+import { AdminNav } from "./admin-nav";
 
 export const metadata: Metadata = {
   title: { default: "Admin", template: "%s · Admin · SydCrest Launchpad" },
@@ -24,6 +25,16 @@ async function AdminGate({ children }: { children: ReactNode }) {
   return children;
 }
 
+/**
+ * The admin header's "Admin" link and section list, for admins only (issue
+ * #245). Everyone else gets a plain logo header above the 404: the section
+ * names are not shipped to them, not even as a loading fallback.
+ */
+async function AdminsOnly({ children }: { children: ReactNode }) {
+  const profile = await getMyProfile();
+  return profile.role === "admin" ? children : null;
+}
+
 /** Frame for the admin area. The session is read inside Suspense, never at the top. */
 export default function AdminLayout({ children }: LayoutProps<"/admin">) {
   return (
@@ -35,12 +46,18 @@ export default function AdminLayout({ children }: LayoutProps<"/admin">) {
             <Link href="/dashboard" aria-label="SydCrest Launchpad home">
               <Logo size={28} />
             </Link>
-            <Link href="/admin" className="inline-flex min-h-11 items-center text-sm font-semibold text-content-2 hover:text-content">
-              Admin
-            </Link>
+            <Suspense fallback={null}>
+              <AdminsOnly>
+                <Link href="/admin" className="inline-flex min-h-11 items-center text-sm font-semibold text-content-2 hover:text-content">
+                  Admin
+                </Link>
+              </AdminsOnly>
+            </Suspense>
           </div>
-          <Suspense fallback={<AdminNavLinks />}>
-            <AdminNav />
+          <Suspense fallback={null}>
+            <AdminsOnly>
+              <AdminNav />
+            </AdminsOnly>
           </Suspense>
         </div>
       </header>

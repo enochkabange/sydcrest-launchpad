@@ -24,6 +24,32 @@ export const LIMITS = {
   url: 2000,
 } as const;
 
+/** Postgres error codes the expert forms turn into plain words. */
+export const PG = {
+  uniqueViolation: "23505",
+  checkViolation: "23514",
+  rlsViolation: "42501",
+  /** apply_as_expert: an application is already in review, or the person is already approved. */
+  notInPrerequisiteState: "55000",
+} as const;
+
+export const ADULTS_ONLY_MESSAGE =
+  "The expert market is for adults aged 18 and over. If you are 18 or over, check the date of birth on your account and try again.";
+
+/** What the /experts/apply form shows when apply_as_expert refuses (issue #249). */
+export function applyErrorState(code: string | null | undefined): { errors?: { slug: string }; message?: string } {
+  switch (code) {
+    case PG.uniqueViolation:
+      return { errors: { slug: "That link name is taken. Try another." } };
+    case PG.rlsViolation:
+      return { message: ADULTS_ONLY_MESSAGE };
+    case PG.notInPrerequisiteState:
+      return { message: "You already have an application in review. You can see its status on this page." };
+    default:
+      return { message: "We couldn't send your application. Try again." };
+  }
+}
+
 export type ApplicationFields = "slug" | "headline" | "skills" | "categories" | "links" | "evidence_links" | "experience" | "motivation";
 export type ProfileFields =
   | "slug"

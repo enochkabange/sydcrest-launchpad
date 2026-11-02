@@ -2,10 +2,8 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 
 vi.mock("server-only", () => ({}));
 
-const insert = vi.fn();
-const from = vi.fn(() => ({ insert }));
 const rpc = vi.fn();
-const createPublicClient = vi.fn(async () => ({ from, rpc }));
+const createPublicClient = vi.fn(async () => ({ rpc }));
 vi.mock("@/lib/supabase/public", () => ({ createPublicClient: () => createPublicClient() }));
 let requestHeaders = new Headers();
 vi.mock("next/headers", () => ({ headers: async () => requestHeaders }));
@@ -33,22 +31,20 @@ describe("joinWaitlist", () => {
     rpc.mockResolvedValue({ data: true, error: null });
   });
 
-  it("saves a valid sign up, with the email lower cased", async () => {
-    insert.mockResolvedValue({ error: null });
+  it("saves a valid sign up through join_waitlist, with the email lower cased", async () => {
     expect(await joinWaitlist({}, form())).toEqual({ done: true });
-    expect(from).toHaveBeenCalledWith("waitlist");
-    expect(insert).toHaveBeenCalledWith({
-      name: "Wumpini Alhassan",
-      email: "wumpini@example.com",
-      region: "northern",
-      interest: "dmp_cohort",
+    expect(rpc).toHaveBeenCalledWith("join_waitlist", {
+      p_key: expect.stringMatching(/^[0-9a-f]{64}$/),
+      p_name: "Wumpini Alhassan",
+      p_email: "wumpini@example.com",
+      p_region: "northern",
+      p_interest: "dmp_cohort",
     });
   });
 
   it("answers a repeat address exactly like a new one", async () => {
-    insert.mockResolvedValue({ error: null });
+    // join_waitlist itself answers true for an address already on the list.
     const fresh = await joinWaitlist({}, form());
-    insert.mockResolvedValue({ error: { code: "23505", message: "duplicate key value" } });
     const repeat = await joinWaitlist({}, form());
     expect(repeat).toEqual(fresh);
   });
@@ -60,8 +56,8 @@ describe("joinWaitlist", () => {
     expect(createPublicClient).not.toHaveBeenCalled();
   });
 
-  it("says try again, keeping the values, when the insert fails for another reason", async () => {
-    insert.mockResolvedValue({ error: { code: "42501", message: "permission denied" } });
+  it("says try again, keeping the values, when the database refuses for another reason", async () => {
+    rpc.mockResolvedValue({ data: null, error: { code: "42501", message: "permission denied" } });
     const state = await joinWaitlist({}, form());
     expect(state.done).toBeUndefined();
     expect(state.message).toMatch(/Try again/);
@@ -75,18 +71,27 @@ describe("joinWaitlist", () => {
     expect(state.message).toMatch(/Try again/);
   });
 
-  it("counts each visitor address and refuses one over the limit, saving nothing", async () => {
+  it("keys the limit on the hashed visitor address and refuses one over it", async () => {
     requestHeaders = new Headers({ "x-forwarded-for": "41.66.200.10" });
     rpc.mockResolvedValue({ data: false, error: null });
     const state = await joinWaitlist({}, form());
-    expect(rpc).toHaveBeenCalledWith("take_form_rate_limit", expect.objectContaining({ p_bucket: "waitlist" }));
+    const { p_key } = rpc.mock.calls[0][1] as { p_key: string };
+    rpc.mockClear();
+    await joinWaitlist({}, form({ email: "mariama@example.com" }));
+    expect((rpc.mock.calls[0][1] as { p_key: string }).p_key).toBe(p_key);
     expect(state.done).toBeUndefined();
     expect(state.message).toMatch(/many times from your connection/);
-    expect(insert).not.toHaveBeenCalled();
+  });
+
+  it("gives each local visitor a fresh key, so local runs are not limited", async () => {
+    await joinWaitlist({}, form());
+    await joinWaitlist({}, form());
+    const [a, b] = rpc.mock.calls.map((c) => (c[1] as { p_key: string }).p_key);
+    expect(a).not.toBe(b);
   });
 
   it("says so plainly when the waitlist as a whole is taking too many sign ups", async () => {
-    insert.mockResolvedValue({ error: { code: "54000", message: "Slow down" } });
+    rpc.mockResolvedValue({ data: null, error: { code: "54000", message: "Slow down" } });
     const state = await joinWaitlist({}, form());
     expect(state.done).toBeUndefined();
     expect(state.message).toMatch(/Wait a while/);

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { HubPage } from "@/components/app-shell/hub";
 
-export const metadata: Metadata = { title: "Mentors" };
+export const metadata: Metadata = { title: "Experts" };
 
-/** The Mentors tab's hub (issue #190): every Mentors destination, from src/lib/nav/config.ts. */
-export default function MentorsHub() {
-  return <HubPage id="mentors" />;
+/** The Experts tab's hub (issue #190, founder decision D5): every market destination, from src/lib/nav/config.ts. */
+export default function ExpertsHub() {
+  return <HubPage id="experts" />;
 }
