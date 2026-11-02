@@ -2700,6 +2700,7 @@ export type Database = {
           headline: string | null
           id: string
           is_public: boolean
+          is_skill_reviewer: boolean
           milestone_posts: boolean
           phone: string | null
           public_slug: string | null
@@ -2718,6 +2719,7 @@ export type Database = {
           headline?: string | null
           id: string
           is_public?: boolean
+          is_skill_reviewer?: boolean
           milestone_posts?: boolean
           phone?: string | null
           public_slug?: string | null
@@ -2736,6 +2738,7 @@ export type Database = {
           headline?: string | null
           id?: string
           is_public?: boolean
+          is_skill_reviewer?: boolean
           milestone_posts?: boolean
           phone?: string | null
           public_slug?: string | null
@@ -4919,6 +4922,18 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      admin_set_skill_reviewer: {
+        Args: { p_profile_id: string; p_reviewer: boolean }
+        Returns: undefined
+      }
+      admin_skill_reviewers: {
+        Args: never
+        Returns: {
+          display_name: string
+          profile_id: string
+          public_slug: string
+        }[]
+      }
       admin_unpublish_profile: {
         Args: { p_profile_id: string }
         Returns: undefined
@@ -4950,6 +4965,19 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      apply_as_expert: {
+        Args: {
+          p_categories: string[]
+          p_evidence_links: string[]
+          p_experience: string
+          p_headline: string
+          p_links: string[]
+          p_motivation: string
+          p_skills: string[]
+          p_slug: string
+        }
+        Returns: string
       }
       assign_peer_review: {
         Args: { p_reviewer_id: string; p_submission_id: string }
@@ -5282,6 +5310,16 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      join_waitlist: {
+        Args: {
+          p_email: string
+          p_interest?: string
+          p_key: string
+          p_name?: string
+          p_region?: string
+        }
+        Returns: boolean
       }
       mark_notifications_read: { Args: { p_ids?: string[] }; Returns: number }
       mint_achievement: {

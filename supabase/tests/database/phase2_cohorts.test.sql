@@ -2,7 +2,7 @@
 -- notes, and the functions that accept, defer and set specializations.
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(56);
+select plan(61);
 
 -- People: Wumpini, Abdul-Rahman and Adisa apply; Mariama mentors cohort A,
 -- Ayishetu coordinates it; Sumaila is a learner in cohort B; Fuseini is an admin.
@@ -151,7 +151,9 @@ select throws_ok(
 
 -- Learners in a cohort ------------------------------------------------------
 select set_config('request.jwt.claims', '{"sub":"11111111-1111-1111-1111-111111111111","role":"authenticated"}', true);
-select is((select count(*)::int from public.cohort_members), 4, 'a learner sees their own cohort''s members');
+select is((select count(*)::int from public.cohort_members), 1, 'a learner reads only their own membership row (#250)');
+select is((select count(*)::int from public.cohort_members where profile_id = '22222222-2222-2222-2222-222222222222'), 0,
+  'a learner cannot read a classmate''s membership (status, deferral)');
 select is((select count(*)::int from public.cohort_members where profile_id = '55555555-5555-5555-5555-555555555555'), 0,
   'a learner cannot read another cohort''s members');
 select results_eq(
@@ -169,13 +171,13 @@ select results_eq(
   $$ values ('ads') $$, 'a learner chooses their own specialization');
 select throws_ok(
   $$ select public.choose_specialization(
-       (select id from public.cohort_members where profile_id = '22222222-2222-2222-2222-222222222222'), 'ads') $$,
+       (select member_id from public.cohort_roster where profile_id = '22222222-2222-2222-2222-222222222222'), 'ads') $$,
   '42501', null, 'a learner cannot choose for a classmate');
 select throws_ok(
   $$ select public.withdraw_application((select id from public.cohort_applications where profile_id = '11111111-1111-1111-1111-111111111111')) $$,
   'P0002', null, 'an accepted application cannot be withdrawn');
 select throws_ok(
-  $$ select public.defer_learner((select id from public.cohort_members where profile_id = '22222222-2222-2222-2222-222222222222'),
+  $$ select public.defer_learner((select member_id from public.cohort_roster where profile_id = '22222222-2222-2222-2222-222222222222'),
        'c0000000-0000-0000-0000-00000000000b') $$,
   '42501', null, 'a learner cannot defer anyone');
 
@@ -222,12 +224,21 @@ select throws_ok(
 
 select set_config('request.jwt.claims', '{"sub":"66666666-6666-6666-6666-666666666666","role":"authenticated"}', true);
 select is((select count(*)::int from public.cohort_notes), 1, 'the coordinator reads the cohort''s notes');
+select is((select status from public.cohort_roster where profile_id = '22222222-2222-2222-2222-222222222222' and cohort_id = 'c0000000-0000-0000-0000-00000000000a'),
+  'deferred', 'staff see a learner''s deferral on the roster');
 
 select set_config('request.jwt.claims', '{"sub":"11111111-1111-1111-1111-111111111111","role":"authenticated"}', true);
 select is((select count(*)::int from public.cohort_notes), 0, 'a learner never sees notes about them');
 select is(
   (select count(*)::int from public.cohort_roster where cohort_id = 'c0000000-0000-0000-0000-00000000000b'), 2,
   'after deferral the learner sees their new cohort');
+select is((select status from public.cohort_roster where profile_id = '11111111-1111-1111-1111-111111111111' and cohort_id = 'c0000000-0000-0000-0000-00000000000a'),
+  'deferred', 'a learner sees their own deferral');
+select is((select count(*)::int from public.cohort_roster where profile_id = '22222222-2222-2222-2222-222222222222' and cohort_id = 'c0000000-0000-0000-0000-00000000000a'), 0,
+  'a learner does not see a deferred classmate (#250)');
+select is((select count(*)::int from public.cohort_roster
+           where profile_id <> '11111111-1111-1111-1111-111111111111' and (status is not null or deferred_to is not null)), 0,
+  'a learner never sees a classmate''s status or deferral');
 
 -- Admin places the waiting learner
 select set_config('request.jwt.claims', '{"sub":"44444444-4444-4444-4444-444444444444","role":"authenticated"}', true);

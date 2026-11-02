@@ -30,25 +30,25 @@ real boundary: everything above it is for a good experience, not security.
 
 Everyone signed in is a learner first; the other types are extra rows on top,
 and one person can be several at once (an expert who mentors a cohort and
-owns an organisation). `src/lib/nav/viewer.ts` derives the four nav roles
-(`admin`, `staff`, `expert`, `business`) the same way.
+owns an organisation). `src/lib/nav/viewer.ts` derives the five nav roles
+(`admin`, `staff`, `expert`, `business`, `reviewer`) the same way.
 
 | # | Type | How the code knows | Source of truth |
 |---|---|---|---|
 | T1 | **Signed out visitor** | No verified JWT (`getClaims` returns no `sub`) | Supabase Auth |
-| T2 | **Learner without a path** | Signed in, adult, terms agreed; no `personalized_paths` row | `auth.users.raw_user_meta_data` (`date_of_birth`, `terms_version`), `consents`, `profiles` (created by `private.handle_new_user`, `20261025100410_profiles.sql:61`) |
+| T2 | **Learner without a path** | Signed in, adult, terms agreed; no `personalized_paths` row | `auth.users.raw_user_meta_data` (`date_of_birth`, `terms_version`, `age_confirmed_at`), `consents` (`terms`, `privacy`, and `age_confirmation` for the "I confirm I am 18 or over" tick, D1), `profiles` (created by `private.handle_new_user`, `20261025100410_profiles.sql:61`) |
 | T3 | **Learner with a path** | As T2 plus a `personalized_paths` row (saved by the service role after the `/start` quiz) | `personalized_paths` |
 | T4 | **Under 18 (blocked)** | Date of birth less than 18 years ago (Africa/Accra). Never gets an account: the sign up form and `/welcome` refuse; since this PR the Auth layer refuses too | `src/lib/legal.ts` (`MINIMUM_AGE`), `src/app/(auth)/actions.ts:108`, `private.check_date_of_birth` (`20261029190000_age_gate_auth_users.sql`) |
 | T5 | **Cohort member** | `cohort_members` row with `role = 'learner'` (status active, deferred or completed) | `cohort_members`; created only by `decide_application` (admin) |
 | T6 | **DMP applicant** | `cohort_applications` row (submitted, waitlisted, accepted, declined, withdrawn) | `cohort_applications` |
 | T7 | **Cohort mentor / coordinator** ("staff") | `cohort_members.role in ('mentor','coordinator')`; admins count as staff everywhere (`requireStaff`) | `cohort_members` (admins add staff) |
-| T8 | **Expert, pending** | `expert_profiles.status = 'pending'` (usually with a submitted `expert_applications` row) | `expert_profiles`, `expert_applications` |
+| T8 | **Expert, pending** | `expert_profiles.status = 'pending'`, always with an `expert_applications` row: both are created together by `apply_as_expert` and nothing else can insert a profile (#249) | `expert_profiles`, `expert_applications` |
 | T9 | **Expert, approved** | `expert_profiles.status = 'approved'` (public, can pitch, can be booked) | `admin_set_expert_status`, `decide_expert_application` |
 | T10 | **Expert, verified** | Approved and `expert_profiles.is_verified` (the "Verified by SydCrest" badge) | `admin_set_expert_flags` |
 | T11 | **Organisation owner / admin / recruiter** | `organisation_members` row, `status = 'active'`, `role` owner, admin or recruiter. `private.org_role(org)` returns the role for active members only (`20261027151800_earn_organisations.sql:157`). Posting and the talent directory also need the organisation `verification_status = 'verified'` | `organisation_members`, `organisations` |
 | T12 | **Organisation invitee** | `organisation_members.status = 'invited'`; becomes active through `accept_organisation_invite` | `organisation_members` |
 | T13 | **Chapter lead** (and chapter member) | `chapter_members.role = 'lead'` (`'member'` for members) | `chapter_members`; only admins appoint leads |
-| T14 | **Skill reviewer** | `profiles.role in ('mentor','admin')` (`private.is_skill_reviewer`, `20261028100300_skills_verified.sql:182`) | `profiles.role`. Nothing in the app can set `'mentor'` (finding A5, #248), so today this is admins only |
+| T14 | **Skill reviewer** | `profiles.is_skill_reviewer`, or an admin (`private.is_skill_reviewer`, `20261029260000_access_fixes.sql`; the legacy `profiles.role = 'mentor'` still counts, but nothing sets it) | Appointed and removed by admins only, with `admin_set_skill_reviewer` from `/admin/skills/reviewers` (D3, #248); the column is not granted to users |
 | T15 | **Platform admin** | `profiles.role = 'admin'` (`private.is_admin`, `20261025123340_phase1_profiles_public.sql:22`) | `profiles.role`, set only through SQL or the service role (the column is not granted to users) |
 | T16 | **Event host** (derived) | Admin, or lead of the event's chapter (`private.hosts_chapter_event`, `20261028100200_community_events.sql:73`) | `community_events.chapter_id`, `chapter_members` |
 | T17 | **Booking party** (derived) | Requester or expert on a `booking_requests` row (or a member of its organisation) | `booking_requests` |
@@ -89,21 +89,23 @@ older feature spec or not yet tested).
 | Read sent work | no | no | own | no | own cohort's learners | | | | all | R `submissions` (`20261028120100_advisor_fk_indexes_policies.sql:46`), storage `can_read_submission_file` | mentor (refused other cohort) |
 | Peer review a capstone | no | no | assigned only | no | assign | | | | assign | R `peer_reviews`, `peer_review_submissions` view hides author | |
 | Grade, defer, notes | no | no | no | no | own cohort | | | | yes | Pg `requireStaff`, R `grade_submission`/`defer_learner`/`cohort_notes` | |
-| Issue a certificate | no | no | no | no | own cohort | | | | yes | Pg (`certificates/issue`), R `issue_certificate` (criteria + staff) | cohort, mentor |
+| Issue a certificate | no | no | no | no | own cohort (mentor or coordinator) | | | | yes | Pg (`certificates/issue`; an admin with no cohorts gets an empty state), R `issue_certificate` (criteria + staff). Backup issuer when the mentor is away: the cohort's coordinator or a platform admin (founder decision D4, decided; PRODUCT_ENRICHMENT §4.2 closed) | cohort, mentor, admin |
 | Join a cohort / change own role | no | no | no (admin only) | no | no | | | | yes | R `cohort_members` insert/update admin only (`...programs_cohorts.sql:309`) | cohort, mentor |
 | Read another cohort's roster | no | no | no | no | no | | | | yes | R `cohort_roster_rows` member of that cohort | cohort |
+| Read classmates' status and deferral | no | no | no (own only; deferred classmates are left out) | no | own cohort | | | | yes | R `cohort_members` select own row, cohort staff or admin; `cohort_roster_rows` nulls `status`/`deferred_to` for non staff (#250) | cohort, mentor |
 | Apply to the programme | sign in | yes | yes | edit while open | yes | yes | yes | yes | yes | P, SA, R `cohort_applications` insert own, update answers only (status not granted) | applicant |
 | Decide applications | no | no | no | no | no | | | | yes | Pg, SA `requireAdmin`, R `decide_application` | applicant |
 | Take a skill quiz / send a portfolio | sign in | yes | yes | yes | yes | yes | yes | yes | yes | P, Pg, R `submit_skill_quiz`/`submit_skill_portfolio` (retry window) | |
-| Review skill portfolios (`/skills/reviews`) | no | no | no | no | **no** (A5) | | | | yes | Pg `isReviewerRole`, R `review_skill_portfolio` (`is_skill_reviewer`) | learner, admin |
+| Review skill portfolios (`/skills/reviews`) | no | 404 unless appointed | 404 unless appointed | 404 unless appointed | 404 unless appointed | | | | yes | Pg `getMyReviewerStatus` (404), nav Learn → Portfolio reviews (audience `reviewer`), R `review_skill_portfolio` (`is_skill_reviewer`) | learner, skill reviewer, admin |
+| Appoint skill reviewers | no | no | no | no | no | | | | yes | Pg, SA `requireAdmin` (`/admin/skills/reviewers`), R `admin_set_skill_reviewer`; `is_skill_reviewer` not granted | learner, skill reviewer, admin |
 
-### 3.2 Mentors and experts
+### 3.2 Experts and the mentor console
 
 | Feature / action | V | L | C | Ap | M | E | O | CL | A | Enforced | e2e |
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | Browse experts, offers, reviews | approved only | approved + own | | | | p: own only; a, v: public | | | all | R `expert_profiles`/`offers` approved or own (`20261027151801_earn_experts.sql`) | expert pending (own page 404 publicly) |
 | Apply to be an expert | sign in | adult | adult | adult | fast tracked | | | | | P, SA, R `expert_applications` adult (`...experts.sql:193`) | |
-| Create an expert profile directly | no | **yes, via API** (A6) | | | | | | | | R `Adults create their own expert profile` (`...experts.sql:109`) | |
+| Create an expert profile | no | only by applying (adult) | | | | | | | | R `apply_as_expert` creates the profile and the application together; the direct insert grant is revoked (#249) | learner (refused direct insert) |
 | Approve, verify, feature experts | no | no | no | no | no | no (self refused) | | | yes | Pg, SA `requireAdmin`, R `admin_set_expert_status`/`_flags`, column grants exclude `status`/`is_verified` | expert pending, approved |
 | Create and edit offers | no | no | | | | p, a, v own (`can_sell`: not delisted) | | | edit any | R `offers` (`...experts.sql:264`) | |
 | Request a booking | sign in | adult | adult | adult | adult | adult (not own) | org on behalf | | | P, SA, R `booking_requests` adult (`20261027151802_earn_bookings_briefs.sql:361`), `validate_booking_request` | |
@@ -121,7 +123,7 @@ older feature spec or not yet tested).
 |---|---|---|---|---|---|---|---|---|---|---|---|
 | Feed: read and post (everyone scope) | sign in | yes | yes | yes | yes | yes | yes | yes | yes | P, R `in_community_scope` (`20261028100100_chapters_community.sql:294`) | visitor |
 | Chapter and cohort scopes | no | member of it | own cohort | | own cohort | | | own chapter | all | R `in_community_scope` | |
-| Hide, pin, resolve reports | no | no (explainer) | no | | own cohort | | | own chapter | yes | Pg `getMyCommunity().isModerator`, R `moderate_community_content`, `pin_community_post`, `set_community_report_status` | learner, lead, admin |
+| Hide, pin, resolve reports (`/community/moderation`) | no | 404 | 404 | | own cohort | | | own chapter | yes | Pg `getMyCommunity().isModerator` (404 for everyone else, D6), R `moderate_community_content`, `pin_community_post`, `set_community_report_status` | learner, lead, admin |
 | Browse chapters and chapter pages | yes (not drafts) | yes | | | | | | | + drafts | R `chapters` | |
 | Join or leave a chapter | sign in | member | | | | | | | add anyone | SA, R `chapter_members` (`...chapters_community.sql:147`) | |
 | Edit chapter summary and WhatsApp link | no | no | | | | | | own chapter | yes | Pg `canManage` (`chapters/[slug]/page.tsx:252`), R `set_chapter_details` | lead (refused on another chapter) |
@@ -130,7 +132,7 @@ older feature spec or not yet tested).
 | Host tools, create and edit events | no | no | | | | | | own chapter's | yes | Pg `requireEventPage` + host check, R `hosts_chapter_event` | |
 | Leaderboards | sign in | yes | | | | | | | | P, Pg | |
 | Follow, report a profile | sign in | yes | | | | | | | | R `follows`, `reports` own | |
-| Read who follows whom | no | **everyone's** (A3) | | | | | | | | R `Signed in users can see follows` `true` (`20261025123346_phase1_social_safety.sql:21`) | |
+| Read who follows whom | no | own follows and followers, and follows between two public profiles | | | | | | | | R `Signed in users can see follows`: follower or followed, or both ends `private.is_public_profile` (D7, #246). Public counts come from `public_profile_stats` | visitor, follow graph |
 
 ### 3.4 Earn and organisations
 
@@ -153,13 +155,15 @@ older feature spec or not yet tested).
 
 | Feature / action | V | L … A | Enforced | e2e |
 |---|---|---|---|---|
-| Sign up | adults only | | SA `signUp` (`(auth)/actions.ts`), Auth trigger `guard_date_of_birth` (this PR) | under 18 |
+| Sign up | adults only, with "I confirm I am 18 or over" ticked | | SA `signUp` (`(auth)/actions.ts`), Auth trigger `guard_date_of_birth`; the tick is a `consents` row `age_confirmation` (D1) | under 18 |
+| Re-agree on `/welcome` after revoking consent | | own; the date of birth is not asked again | SA `completeWelcome` never sends `date_of_birth` once one is on file (#251) | re-agreeing |
+| Join the waitlist, record analytics | through `join_waitlist` / `record_events` only | same | R direct inserts revoked; `join_waitlist` counts the per address form limit in the same transaction, `record_events` limits per person, per visitor and overall (#247) | visitor |
 | Change date of birth after it is set | | **refused for everyone** | Auth trigger (this PR); support fixes it in SQL | under 18 |
 | Profile: own display name, region, headline, phone, public toggle | | own | P, SA, R `profiles` update own; `role` not granted (`20261025100410_profiles.sql:32`) | learner (refused role) |
 | Read other people's profiles | public profiles only | public view only | R `profiles` own only; `public_profiles` view (no email or phone) | visitor, learner |
 | Settings `/settings` | yes (device only) | yes (saved to profile) | none needed | visitor |
 | Notifications | sign in | own | P, R own | |
-| Admin area `/admin/*` | sign in | 404 for all but A | P, layout gate, Pg `requireAdmin` on every page (four pages fixed in this PR), SA `requireAdmin`, R `is_admin` | every signed in test |
+| Admin area `/admin/*` | sign in | 404 for all but A, under a plain logo header (no section list, #245) | P, layout gate, Pg `requireAdmin` on every page, SA `requireAdmin`, R `is_admin` | every signed in test |
 
 ---
 
@@ -175,18 +179,18 @@ milestone "Sprint 3c: Integrate, design, release".
 | **S1** | **The age gate trusted user writable metadata.** `private.is_adult` and the proxy read `date_of_birth` from Auth `user_metadata`, which any signed in user can rewrite with `PUT /auth/v1/user` (`supabase.auth.updateUser({ data })`). Verified on the local stack: a 14 year old's account changed its date of birth to 1990 with one call and could then create an organisation (RLS `is_adult` passed). `POST /auth/v1/signup` also accepted an under 18 date of birth directly, skipping the form's check. Violates the hard constraint "under 18s are blocked at sign up" and the adult only market. | Refused in UI, allowed by the Auth API (security hole) | `20261029190000_age_gate_auth_users.sql`: a trigger on `auth.users` for writes made by the Auth server refuses an under 18 or impossible date of birth and any change or removal once one is set. pgTAP `age_gate.test.sql`; e2e "under 18" asserts the form, the direct API sign up and the metadata rewrite are all refused. |
 | **S2** | **Layout gates do not stop a page rendering.** `/admin`, `/admin/roadmaps/new`, `/admin/opportunities/new` and `/admin/events/new` relied on the admin layout's gate; Next renders layouts and pages in parallel, so a learner's 404 response still carried those pages' forms. Only static forms (no data), and every action re-checks, so low impact, but it breaks the stated rule that every page checks for itself. | Unprotected admin route (markup only) | Each page now wraps its content in `AdminOnly` (`src/app/(admin)/admin/admin-only.tsx`) or calls `requireAdmin`. e2e asserts the form text is absent for every non admin type. |
 
-### Filed
+### Fixed by the access fixes PR (29 Oct 2026, migration `20261029260000_access_fixes.sql`)
 
-| # | Finding | Kind | Issue |
+| # | Finding | Fix | Issue |
 |---|---|---|---|
-| A2 | Admin header lists every admin section to non admins above the 404 (`admin/layout.tsx` renders `AdminNav` outside the gate). | Over-exposure (names only), looks broken | #245 |
-| A3 | `follows` readable in full by every signed in user, including private profiles' follow edges. | Data over-exposure | #246 |
-| A4 | Waitlist and analytics `events` inserts are open to the publishable key; the rate limit lives only in the Server Action, so scripts bypass it. | Missing server side re-check | #247 |
-| A5 | Skill reviewers (`profiles.role = 'mentor'`) cannot be appointed in the app and `/skills/reviews` has no way in; only admins can review portfolios. | Allowed by RLS, unreachable in UI (broken UX) | #248 |
-| A6 | An expert profile can be inserted directly without an application: it can create offers, flips the nav to "Expert dashboard", and never appears in the admin queue. | Refused in UI flow, allowed by RLS | #249 |
-| A7 | `cohort_roster` shows classmates' `status` and `deferred_to` to every learner. | Data over-exposure | #250 |
-| A8 | `/welcome` re-consent with a different date of birth now fails with a generic error (consequence of S1). | Broken UX | #251 |
-| A9 | Refusals are inconsistent (404 vs explainer vs empty page); `/certificates/issue` is a 404 even for an admin when no cohort exists; ten routes have no nav entry. | Inconsistent pattern, orphan routes | #252 |
+| A2 | Admin header listed every admin section to non admins above the 404. | The header's "Admin" link and section list render only for admins, with no static fallback; non admins get a plain logo header. e2e: every non admin's `/admin/*` response lacks the section list. | #245 |
+| A3 | `follows` readable in full by every signed in user. | Read policy: own follows and followers, or both ends public (D7). pgTAP `access_fixes.test.sql`; e2e "follow graph". | #246 |
+| A4 | Waitlist and analytics inserts open to the publishable key, rate limit only in the action. | Direct inserts revoked. `join_waitlist(p_key, ...)` takes the form limit and inserts in one transaction (repeat address answers like a new one); `record_events` was already limited. A script can still rotate keys, so the global waitlist ceiling (300 per 10 minutes) remains the bound for direct callers. | #247 |
+| A5 | Skill reviewers could not be appointed; `/skills/reviews` had no way in. | `profiles.is_skill_reviewer`, `admin_set_skill_reviewer`, `/admin/skills/reviewers`, nav Learn → Portfolio reviews (D3). | #248 |
+| A6 | An expert profile could be created without an application. | `apply_as_expert` creates both together; direct insert revoked. | #249 |
+| A7 | `cohort_roster` (and the `cohort_members` table itself) showed classmates' status and deferral. | `cohort_members` select: own row, cohort staff, admin. The roster nulls `status`/`deferred_to` for non staff and leaves deferred classmates out. | #250 |
+| A8 | `/welcome` re-consent with a different date of birth failed. | `/welcome` asks for the date only when none is on file; `completeWelcome` never resends it. | #251 |
+| A9 | Refusals inconsistent; orphan routes. | One rule (D6): staff tools 404 (`/community/moderation` now too), "could become" pages explain, empty states fill their slot; an admin with no cohort gets an empty state on `/certificates/issue`. Every orphan route has a nav entry or a listed in page entry point (`docs/page-guide.md` section 9). | #252 |
 
 ### Checked and fine
 
@@ -222,8 +226,10 @@ milestone "Sprint 3c: Integrate, design, release".
 
 The date of birth is still **self declared** once: a minor who types a false
 date at sign up gets in, as on any site without ID checks. The fix above
-stops changes after the fact and API bypasses, not lying. Stronger options
-are in `docs/founder-decisions.md` (D1).
+stops changes after the fact and API bypasses, not lying. Since D1 the
+person also ticks "I confirm I am 18 or over", recorded in `consents` (a
+clearer record, same strength); an ID check before the market is planned for
+when payments go live (`docs/founder-decisions.md` D1).
 
 ---
 

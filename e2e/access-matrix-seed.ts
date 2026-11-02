@@ -107,6 +107,31 @@ export async function seedPath(profileId: string) {
   ]);
 }
 
+/** A public profile page for this person (is_public with a slug), for the follow graph checks. */
+export async function makePublic(person: Learner) {
+  const slug = `${person.name.split(" ")[0].toLowerCase()}-access-${tag()}`;
+  await admin(`/rest/v1/profiles?id=eq.${person.id}`, { method: "PATCH", body: { is_public: true, public_slug: slug } });
+  return slug;
+}
+
+/** follower follows following, written with the secret key. */
+export async function seedFollow(follower: Learner, following: Learner) {
+  await admin("/rest/v1/follows", { method: "POST", body: { follower_id: follower.id, following_id: following.id } });
+}
+
+/** A skill portfolio reviewer, as an admin appoints one on /admin/skills/reviewers (issue #248). */
+export async function makeSkillReviewer(person: Learner) {
+  await admin(`/rest/v1/profiles?id=eq.${person.id}`, { method: "PATCH", body: { is_skill_reviewer: true } });
+}
+
+/** Marks a learner's membership deferred (no next cohort yet), as defer_learner does. */
+export async function deferMember(memberId: string) {
+  await admin(`/rest/v1/cohort_members?id=eq.${memberId}`, {
+    method: "PATCH",
+    body: { status: "deferred", deferred_at: new Date().toISOString() },
+  });
+}
+
 /** Best effort clean up: organisations and cohorts first (they reference people), then the people. */
 export async function cleanUp(opts: { people?: (Learner | undefined)[]; orgs?: string[]; cohorts?: string[]; chapters?: string[] }) {
   for (const id of opts.orgs ?? []) await admin(`/rest/v1/organisations?id=eq.${id}`, { method: "DELETE" }).catch(() => undefined);

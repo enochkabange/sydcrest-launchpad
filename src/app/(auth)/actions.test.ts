@@ -5,13 +5,18 @@ vi.mock("server-only", () => ({}));
 
 const signInWithPassword = vi.fn();
 const signInWithOAuth = vi.fn();
+const getClaims = vi.fn();
+const updateUser = vi.fn();
+const refreshSession = vi.fn();
+const signOut = vi.fn();
 const rpc = vi.fn();
 vi.mock("@/lib/supabase/server", () => ({
-  createClient: async () => ({ auth: { signInWithPassword, signInWithOAuth }, rpc }),
+  createClient: async () => ({ auth: { signInWithPassword, signInWithOAuth, getClaims, updateUser, refreshSession, signOut }, rpc }),
 }));
 vi.mock("@/lib/site-url", () => ({ siteOrigin: async () => "https://sydcrest.example" }));
 vi.mock("@/lib/analytics/track", () => ({ track: vi.fn(), trackNow: vi.fn(), trackRefusal: vi.fn() }));
-vi.mock("@/lib/consent-records", () => ({ recordLegalConsent: vi.fn() }));
+const recordSignUpConsents = vi.fn();
+vi.mock("@/lib/consent-records", () => ({ recordSignUpConsents: (...args: unknown[]) => recordSignUpConsents(...args) }));
 let requestHeaders = new Headers();
 vi.mock("next/headers", () => ({ headers: async () => requestHeaders }));
 class Redirect extends Error {
@@ -25,7 +30,7 @@ vi.mock("next/navigation", () => ({
   },
 }));
 
-const { signIn, signInWithGoogle } = await import("./actions");
+const { completeWelcome, signIn, signInWithGoogle } = await import("./actions");
 
 function form(fields: Record<string, string>) {
   const f = new FormData();
@@ -123,5 +128,53 @@ describe("signInWithGoogle", () => {
   it("is not limited", async () => {
     await expect(signInWithGoogle()).rejects.toMatchObject({ to: "https://accounts.google.example/o" });
     expect(rpc).not.toHaveBeenCalled();
+  });
+});
+
+describe("completeWelcome", () => {
+  const claims = (user_metadata: Record<string, unknown>) => ({ data: { claims: { sub: "wumpini-id", user_metadata } } });
+
+  beforeEach(() => {
+    updateUser.mockResolvedValue({ data: {}, error: null });
+    refreshSession.mockResolvedValue({ data: {}, error: null });
+  });
+
+  it("re-agreeing keeps the date of birth on file and never sends another one (#251)", async () => {
+    getClaims.mockResolvedValue(claims({ date_of_birth: "1999-03-14", terms_version: "old" }));
+    await expect(
+      completeWelcome({}, form({ date_of_birth: "1990-01-01", terms: "on", adult: "on", next: "/dashboard" })),
+    ).rejects.toMatchObject({ to: "/dashboard" });
+    const sent = updateUser.mock.calls[0][0].data as Record<string, unknown>;
+    expect(sent).not.toHaveProperty("date_of_birth");
+    expect(sent).toMatchObject({ terms_version: expect.any(String), age_confirmed_at: expect.any(String) });
+    expect(recordSignUpConsents).toHaveBeenCalledTimes(1);
+  });
+
+  it("asks a first time Google sign up for their date of birth and saves it", async () => {
+    getClaims.mockResolvedValue(claims({ full_name: "Mariama Seidu" }));
+    const missing = await completeWelcome({}, form({ terms: "on", adult: "on" }));
+    expect(missing.errors?.date_of_birth).toBe("Enter your date of birth.");
+    expect(updateUser).not.toHaveBeenCalled();
+
+    await expect(completeWelcome({}, form({ date_of_birth: "2000-03-14", terms: "on", adult: "on" }))).rejects.toMatchObject({
+      to: "/dashboard",
+    });
+    expect(updateUser.mock.calls[0][0].data).toMatchObject({ date_of_birth: "2000-03-14" });
+  });
+
+  it("needs the 18 or over tick (D1)", async () => {
+    getClaims.mockResolvedValue(claims({ date_of_birth: "1999-03-14" }));
+    const state = await completeWelcome({}, form({ terms: "on" }));
+    expect(state.errors?.adult).toBe("Tick the box to confirm you are 18 or over.");
+    expect(updateUser).not.toHaveBeenCalled();
+  });
+
+  it("signs an under 18 out without saving anything", async () => {
+    getClaims.mockResolvedValue(claims({}));
+    await expect(completeWelcome({}, form({ date_of_birth: "2015-01-01", terms: "on", adult: "on" }))).rejects.toMatchObject({
+      to: "/login?error=age",
+    });
+    expect(signOut).toHaveBeenCalled();
+    expect(updateUser).not.toHaveBeenCalled();
   });
 });
