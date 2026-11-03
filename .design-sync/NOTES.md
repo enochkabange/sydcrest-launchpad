@@ -1,3 +1,8 @@
+> **Paused 3 Nov 2026.** This setup targets the legacy Claude Design project
+> (the current UI). The founder is building **Orbit**, a new design system, on a
+> clean slate (see docs/orbit.md). Do not re-sync the legacy project; repoint
+> config.json at Orbit once Orbit is implemented in code.
+
 # design-sync notes (SydCrest Launchpad)
 
 Target: Claude Design project `094f71d0-381c-4905-9ee6-69fda04c7e73` (https://claude.ai/design/p/094f71d0-381c-4905-9ee6-69fda04c7e73). Shape: package (no Storybook).
