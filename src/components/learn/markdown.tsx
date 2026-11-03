@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { parseMarkdown, type Block, type Inline } from "./markdown-parse";
+import { parseMarkdown, type Block, type Inline, type ListBlock, type TableBlock } from "./markdown-parse";
 import { headingIds, inlineText } from "./lesson-toc";
 
 /**
@@ -45,6 +45,67 @@ const HEADINGS = {
   3: "h4",
 } as const;
 
+function renderList(list: ListBlock, key: number, nested = false): ReactNode {
+  const Tag = list.ordered ? "ol" : "ul";
+  const marker = list.ordered ? "list-decimal" : nested ? "list-[circle]" : "list-disc";
+  return (
+    <Tag key={key} start={list.start} className={`flex flex-col gap-1.5 pl-5 ${marker} ${nested ? "mt-1.5" : ""}`}>
+      {list.items.map((item, i) => (
+        <li key={i}>
+          {renderInline(item.children)}
+          {item.sublist && renderList(item.sublist, 0, true)}
+        </li>
+      ))}
+    </Tag>
+  );
+}
+
+// Literal class names so Tailwind sees every one.
+const ALIGN = { left: "text-left", center: "text-center", right: "text-right" } as const;
+
+/**
+ * A table in its own scrolling region (issue #267): on a phone a wide table
+ * scrolls sideways inside the box, never the page. The region is focusable
+ * so keyboard users can scroll it too, and named so screen readers find it.
+ */
+function renderTable(table: TableBlock, key: number): ReactNode {
+  const caption = table.caption && inlineText(table.caption).trim();
+  const columns = table.header.map((cell) => inlineText(cell).trim()).filter(Boolean);
+  const label = caption || (columns.length ? `Table: ${columns.join(", ")}` : "Table");
+  const align = (i: number) => ALIGN[table.align[i] ?? "left"];
+  return (
+    <div key={key} role="region" aria-label={label} tabIndex={0} className="max-w-full overflow-x-auto rounded-md border border-line">
+      <table className="w-full border-collapse text-sm">
+        {table.caption && (
+          <caption className="border-b border-line px-3 py-2 text-left font-semibold text-content">
+            {renderInline(table.caption)}
+          </caption>
+        )}
+        <thead className="bg-surface-sunken">
+          <tr>
+            {table.header.map((cell, i) => (
+              <th key={i} scope="col" className={`px-3 py-2 align-bottom font-semibold text-content ${align(i)}`}>
+                {renderInline(cell)}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody className="divide-y divide-line border-t border-line">
+          {table.rows.map((row, r) => (
+            <tr key={r}>
+              {row.map((cell, i) => (
+                <td key={i} className={`min-w-32 px-3 py-2 align-top ${align(i)}`}>
+                  {renderInline(cell)}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
 function renderBlock(block: Block, key: number, id?: string): ReactNode {
   switch (block.type) {
     case "heading": {
@@ -57,16 +118,10 @@ function renderBlock(block: Block, key: number, id?: string): ReactNode {
     }
     case "paragraph":
       return <p key={key}>{renderInline(block.children)}</p>;
-    case "list": {
-      const Tag = block.ordered ? "ol" : "ul";
-      return (
-        <Tag key={key} className={`flex flex-col gap-1.5 pl-5 ${block.ordered ? "list-decimal" : "list-disc"}`}>
-          {block.items.map((item, i) => (
-            <li key={i}>{renderInline(item)}</li>
-          ))}
-        </Tag>
-      );
-    }
+    case "list":
+      return renderList(block, key);
+    case "table":
+      return renderTable(block, key);
     case "code":
       return (
         <pre key={key} tabIndex={0} className="overflow-x-auto rounded-md border border-line bg-surface-sunken p-3 text-sm">
