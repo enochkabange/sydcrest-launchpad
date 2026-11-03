@@ -1,3 +1,5 @@
+> **Detached 3 Nov 2026: Claude Design owns project 094f71d0-381c-4905-9ee6-69fda04c7e73.** `projectId` was removed from config.json; `_ds_sync.json` and the app's `_adherence.oxlintrc.json` were deleted; README.md now says Orbit is the system and legacy parts may be replaced or removed; styles.css loads fonts plus `orbit/orbit.css` (legacy cards still link `_ds_bundle.css` directly). Never run `/design-sync` against that project again. Design flows one way: Claude Design handoff, then code. The refresh rule below is retired.
+
 > **Refresh rule (3 Nov 2026).** This project is Orbit's base. Claude Design
 > adds new files alongside the synced ones and lists them in `ORBIT_NEW.md`.
 > A refresh may only replace or delete paths recorded in the previous

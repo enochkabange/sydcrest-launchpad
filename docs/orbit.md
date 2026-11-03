@@ -1,35 +1,18 @@
 # Orbit: SydCrest's design system
 
-**Orbit** is SydCrest Launchpad's design system. It builds on the current
-UI: the Claude Design project synced from this repo on 28 October 2026
-(`094f71d0-381c-4905-9ee6-69fda04c7e73`, 85 components). The founder guides
-Claude Design to add new elements alongside the synced ones; Claude
-implements what it produces in this codebase.
+**Orbit** is SydCrest Launchpad's design system. It lives in the Claude
+Design project `094f71d0-381c-4905-9ee6-69fda04c7e73`, which started as a
+sync of this repo on 28 October 2026 (85 components, now shown as
+"Legacy / ..."). Since 3 November 2026 Claude Design owns that project: the
+founder guides it, and Claude builds what it produces into this codebase.
 
-## Two kinds of files in the Claude Design project
+## No code sync
 
-1. **Synced from code.** Everything the `/design-sync` run uploaded. The exact
-   list is the anchor file `_ds_sync.json` in the project (and `ds-bundle/`
-   locally). These mirror the code; a refresh may replace or delete them.
-2. **New from Claude Design.** Anything Claude Design creates. Claude Design
-   keeps them clearly apart so a refresh can tell them from synced files:
-   - put new components in their own group, `@dsCard group="Orbit new"`, or
-     under a path such as `components/orbit-new/<Name>/`;
-   - list every new or changed file in `ORBIT_NEW.md` at the project root
-     (path, what it is, which synced component it replaces, if any).
-
-## The refresh rule
-
-A `/design-sync` refresh may only replace or delete files listed in the
-previous `_ds_sync.json` anchor. It never deletes, overwrites or moves a file
-the anchor does not list, and never touches `ORBIT_NEW.md`. Before a
-refresh, read `ORBIT_NEW.md` and the remote file list, and stop if a planned
-delete or write would hit a non-anchored path.
-
-When a new Orbit element is built into the code, the next refresh syncs the
-coded version under its real name; then mark it as "in code" in
-`ORBIT_NEW.md` so the designed draft and the synced component aren't
-confused.
+Design flows one way: Claude Design, then a handoff, then code. Never run
+`/design-sync` against the Orbit project; the sync anchor, the adherence
+linter and the local `projectId` pin were removed on purpose. Claude Design
+may replace, restyle or remove the legacy parts. `ORBIT_NEW.md` in the
+project lists the Orbit files and the legacy parts they replace.
 
 ## What Claude Design must respect
 
@@ -54,4 +37,5 @@ Claude then:
 3. Keeps behaviour, data loading, access rules and tests unchanged; updates
    e2e selectors and screenshots; runs the a11y sweep in both themes.
 4. Implements D8 (role aware home) and D9 (lead with the path quiz).
-5. Runs a `/design-sync` refresh under the refresh rule above.
+5. Marks the built items as "in code" in `ORBIT_NEW.md` (the founder or
+   Claude Design updates it in the project).
