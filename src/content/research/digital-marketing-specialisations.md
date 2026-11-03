@@ -133,18 +133,18 @@ Pages that could not be used: a Careerjet PPC Specialist advert (verification wa
 | google-ads | Section, Ads week 7 | DMP Google Ads track; S1, S3, DM#14, DM#18 |
 | google-ads-auction | Ads 7 | DMP week 7 theme (fundamentals); Google Ad Rank and Quality Score help |
 | campaign-types-and-goals | Ads 7 | DMP week 7 (Search Ads readiness unit); Google campaign types help; S1 (lead generation) |
-| account-structure | Ads 7 | DMP week 7 and week 9 assignment (demo campaign settings); S3 |
+| account-structure | Ads 7 | DMP week 7 and week 9 assignment (campaign settings sheet); S3 |
 | keywords-and-match-types | Ads 8 | DMP week 8 objective (choose keywords); S2 (Keyword Planner), S3; Google match types help |
 | responsive-search-ads | Ads 8 | DMP week 8 objective and assignment (three ad copies); S3 (copywriting); Google RSA help |
 | assets-and-landing-pages | Ads 8 | DMP week 8 assignment (sample campaign); Quality Score landing page component; S1 (conversion rates) |
 | budgets-and-bidding | Ads 9 | DMP week 9 theme (budgeting) and objective (bid adjustments); S1 (budgets, ROAS); Google budget and bid strategy help |
 | reading-campaign-data | Ads 9 | DMP week 9 objective (analyse campaign data); S1 (CTR, conversion rate); O*NET web metrics |
-| optimising-campaigns | Ads 9 | DMP week 9 objective and assignment (bid adjustments, demo campaign); S1 (campaign optimisation) |
+| optimising-campaigns | Ads 9 | DMP week 9 objective and assignment (bid adjustments, campaign settings sheet); S1 (campaign optimisation) |
 
 ## Gaps and choices
 
 * **Technical SEO** (S3, HTML and site audits in S2) is not a separate node: the DMP weeks do not cover it and most learners will not control site code. On page SEO covers speed, image size and readable addresses at a beginner level.
 * **Paid SEO tools** (SEMrush, Ahrefs in S2, S3) are not taught; lessons use free tools only. They are named nowhere in learner copy.
 * **Keyword Planner** needs a Google Ads account with billing completed, so lessons teach free keyword methods and mention it only as optional.
-* **Week 9 Google Ads assignment** asks learners to create a Google Ads account. The lessons tell learners never to add payment details for practice and to document settings in a sheet if setup cannot continue without them.
+* **Week 9 Google Ads assignment** (founder decision, 2 Nov 2026): every learner plans the campaign in a settings sheet (budget, bidding, keywords, ads); only learners who already have a Google Ads account also screenshot those settings with the campaign paused; nobody adds payment details.
 * **Meta objective names, Instagram and TikTok disclosure wording** were confirmed by the reviewer on the official help pages, read in a browser on 27 Oct 2026. The lessons keep "at the time of writing, check the screen" because platform labels change.

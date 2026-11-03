@@ -4509,9 +4509,9 @@ These are invented numbers for practice. Fuseini now has clear evidence for his 
         "Run a review, decide, change and wait optimisation loop",
         "Suggest bid adjustments for device, location and schedule",
         "Judge optimisation score recommendations critically",
-        "Write recommendations and document a demo campaign without spending",
+        "Write recommendations and plan campaign settings in a sheet without spending",
       ],
-      explanation_md: `Optimisation is the steady work of using data to spend money better. It is what clients pay for month after month, and it completes the week 9 assignment: analysing campaign data, suggesting bid adjustments, and setting up a demo campaign to show your settings.
+      explanation_md: `Optimisation is the steady work of using data to spend money better. It is what clients pay for month after month, and it completes the week 9 assignment: analysing campaign data, suggesting bid adjustments, and planning your campaign settings in a sheet.
 
 ## The optimisation loop
 
@@ -4557,9 +4557,9 @@ Owners approve changes they understand. For each recommendation, write:
 
 Keep it to three to five recommendations at a time, with the most valuable first.
 
-## A safe demo campaign
+## Your campaign settings sheet
 
-The week 9 assignment asks you to create a Google Ads account, set up a demo campaign and submit screenshots of the settings. You can build the campaign structure and settings to practise, but make sure nothing goes live and no money is spent: do not add payment details for practice, keep the campaign paused, and stop at the billing step if asked. If the setup will not continue without payment, document your settings in a sheet and screenshots of each screen you completed. Never use someone else's card. Tell your mentor which route you took; a clear settings sheet meets the purpose of the assignment just as well.`,
+The week 9 assignment asks you to plan a search campaign in a settings sheet: the budget, the bid strategy, the keywords with their match types, and the ads. Everyone does the sheet, and it is the main piece of work. If you already have a Google Ads account, also build the same settings there and screenshot them, with the campaign paused so nothing goes live. Do not open a new account just for this assignment. Nobody adds payment details: if a screen asks for billing, stop there and keep your settings in the sheet. Never use someone else's card.`,
       workedExample_md: `From his analysis of the Bolgatanga solar shop campaign, Fuseini prepares recommendations for Mrs Lariba.
 
 1. **Negatives first.** Add "course", "jobs" and "free" as negatives. Why: they cost money and brought no enquiries.
@@ -4568,7 +4568,7 @@ The week 9 assignment asks you to create a Google Ads account, set up a demo cam
 4. **Schedule adjustment.** Stop ads after 6 pm, when the shop is closed.
 5. **Budget.** The campaign loses impressions to budget and has a good cost per conversion, so he suggests moving the money saved from negatives into it, rather than asking for more.
 6. **Optimisation score.** One recommendation says to switch every keyword to broad match. He dismisses it for now, because conversion tracking is new.
-7. **Change log and demo.** He logs each change with a date and plans a review in two weeks. His demo campaign is paused, has no payment details, and is documented in a settings sheet with screenshots.
+7. **Change log and demo.** He logs each change with a date and plans a review in two weeks. His campaign plan is in a settings sheet. He already has a Google Ads account, so he also screenshots the same settings with the campaign paused and no payment details.
 
 Mrs Lariba approves four of the five recommendations straight away.`,
       keyTerms: [
@@ -4590,15 +4590,15 @@ Mrs Lariba approves four of the five recommendations straight away.`,
         "When would you dismiss an optimisation score recommendation?",
         "What three parts should every recommendation to an owner include?",
       ],
-      practice_task_md: `**Goal:** Complete the week 9 assignment: recommendations and a demo campaign.
+      practice_task_md: `**Goal:** Complete the week 9 assignment: recommendations and a campaign settings sheet.
 
 **Steps:**
 1. Using your mock data from the last lesson, write three to five recommendations, each with what, why and expected effect. Include at least one bid adjustment for device, location or schedule.
 2. Start a change log in a sheet with columns for date, change, reason and result.
-3. Optional and only if no payment is needed: open a Google Ads account, build your campaign structure as a paused campaign, and screenshot each settings screen. Stop at any billing step.
-4. If you cannot continue without payment, record your settings in a sheet instead.
+3. In the same sheet, record your campaign settings: daily budget in cedis, bid strategy, keywords with match types, negative keywords, and your ad headlines and descriptions.
+4. Only if you already have a Google Ads account: build the same settings as a paused campaign and screenshot each settings screen. Stop at any billing step and add no payment details.
 
-**Done looks like:** A recommendation list with bid adjustments, a change log, and screenshots or a settings sheet for your demo campaign. No money spent.`,
+**Done looks like:** A recommendation list with bid adjustments, a change log, and a settings sheet for your campaign, plus screenshots if you already have an account. No money spent.`,
       quiz: {
         questions: [
           {
@@ -4646,15 +4646,15 @@ Mrs Lariba approves four of the five recommendations straight away.`,
             explanation: "Clear what, why and expected effect help owners approve changes.",
           },
           {
-            prompt: "What should you do if a demo account asks for payment details?",
+            prompt: "What should you do if Google Ads asks for payment details while you practise?",
             options: [
               "Use someone else's card",
               "Launch the campaign anyway",
               "Enter fake details",
-              "Stop at the billing step and document your settings instead",
+              "Stop at the billing step and keep your settings in the sheet",
             ],
             answer_index: 3,
-            explanation: "Practice must spend no money; stop and document settings.",
+            explanation: "Nobody adds payment details for practice, so stop there and keep your settings in the sheet.",
           },
         ],
         pass_threshold: 80,
