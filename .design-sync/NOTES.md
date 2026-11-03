@@ -1,7 +1,9 @@
-> **Paused 3 Nov 2026.** This setup targets the legacy Claude Design project
-> (the current UI). The founder is building **Orbit**, a new design system, on a
-> clean slate (see docs/orbit.md). Do not re-sync the legacy project; repoint
-> config.json at Orbit once Orbit is implemented in code.
+> **Refresh rule (3 Nov 2026).** This project is Orbit's base. Claude Design
+> adds new files alongside the synced ones and lists them in `ORBIT_NEW.md`.
+> A refresh may only replace or delete paths recorded in the previous
+> `_ds_sync.json` anchor; never delete or overwrite a non-anchored path or
+> `ORBIT_NEW.md`. Check the remote file list against the anchor before any
+> finalize_plan, and stop on a conflict. See docs/orbit.md.
 
 # design-sync notes (SydCrest Launchpad)
 
