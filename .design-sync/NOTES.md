@@ -4,6 +4,12 @@
 > `_ds_sync.json` anchor; never delete or overwrite a non-anchored path or
 > `ORBIT_NEW.md`. Check the remote file list against the anchor before any
 > finalize_plan, and stop on a conflict. See docs/orbit.md.
+>
+> **Legacy tags applied 3 Nov 2026.** All 85 synced cards were relabelled
+> `@dsCard group="Legacy / <group>"` and README.md gained a legacy banner
+> (source: ds-legacy/, built from ds-bundle/). The `_ds_sync.json` anchor was
+> not rewritten, so the next refresh will see those 86 files as changed; keep
+> the Legacy prefix and banner in any refresh until Orbit replaces them.
 
 # design-sync notes (SydCrest Launchpad)
 
