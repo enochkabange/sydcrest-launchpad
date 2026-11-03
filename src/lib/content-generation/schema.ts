@@ -90,13 +90,19 @@ function stripCode(md: string): string {
 /**
  * Finds dash punctuation: em or en dashes anywhere outside code, or a hyphen
  * used as a spaced pause in prose. A hyphen that starts a Markdown list item
- * ("- item") and hyphens inside words are fine.
+ * ("- item", nested or not), a table's delimiter row ("| --- | :-: |") and
+ * hyphens inside words are fine.
  */
+const TABLE_DELIMITER_ROW = /^\s*\|?\s*:?-+:?\s*(\|\s*:?-+:?\s*)*\|?\s*$/;
+
 export function findDashes(text: string): string[] {
   const prose = stripCode(text);
   const problems: string[] = [];
   if (/[—–]/.test(prose)) problems.push("contains an em or en dash");
-  const spaced = prose.split("\n").some((line) => / -{1,2} /.test(line.replace(/^\s*[-*+]\s+/, "")));
+  const spaced = prose
+    .split("\n")
+    .filter((line) => !(line.includes("|") && TABLE_DELIMITER_ROW.test(line)))
+    .some((line) => / -{1,2} /.test(line.replace(/^\s*[-*+]\s+/, "")));
   if (spaced) problems.push("uses a spaced hyphen as a dash");
   return problems;
 }
