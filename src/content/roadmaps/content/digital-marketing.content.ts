@@ -2174,7 +2174,7 @@ Google asks the owner to prove they really run the business. According to Google
 
 Reviews strongly influence whether people trust a business. Good practice:
 
-* Ask happy customers to leave an honest review, for example with the review link from the profile or a QR code at the counter.
+* Ask every customer, not only the happy ones, to leave an honest review, for example with the review link from the profile or a QR code at the counter. Google's policies forbid asking only satisfied customers, or discouraging bad reviews.
 * Never pay or reward people for reviews, never write reviews for your own client, and never post fake ones. Google's policies forbid this and Google can remove reviews or restrict the profile.
 * Reply to every review politely. Thank people for good ones. For bad ones, apologise, explain what you will do and invite them to contact the business privately.
 
@@ -2207,6 +2207,7 @@ After three months, the profile's numbers show more requests for directions, and
         "Adding keywords like \"best\" or a town name to the business name",
         "Creating the profile under your own account instead of the owner's",
         "Offering discounts or gifts in exchange for reviews",
+        "Asking only happy customers for reviews",
         "Forgetting to set special hours for holidays",
         "Never checking the profile again after setting it up",
       ],
@@ -2221,7 +2222,7 @@ After three months, the profile's numbers show more requests for directions, and
 1. Choose a shop near you, or a mock shop if you cannot work with a real owner.
 2. Gather the facts: name, category, location or service area, hours, phone, link and at least four photos.
 3. If the owner agrees, create or update the profile from their account and add yourself as a manager. Otherwise, write every field in a document as if you were filling it in.
-4. Write a short, honest review request card with no reward offered.
+4. Write a short, honest review request card for every customer, with no reward offered.
 5. Write a polite reply to one good and one bad sample review.
 
 **Done looks like:** A live profile or a complete written plan, photos, a review request card and two sample replies.`,
@@ -2258,7 +2259,7 @@ After three months, the profile's numbers show more requests for directions, and
           {
             prompt: "Which of these breaks Google's rules on reviews?",
             options: [
-              "Asking happy customers for an honest review",
+              "Asking every customer for an honest review",
               "Replying politely to a negative review",
               "Putting a QR code linking to the review page at the counter",
               "Giving a discount to customers who leave five stars",
