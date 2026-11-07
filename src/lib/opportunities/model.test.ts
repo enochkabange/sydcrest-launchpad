@@ -27,6 +27,7 @@ function opp(over: Partial<Opportunity> = {}): Opportunity {
     organisation_name: "Savannah Data Hub",
     apply_url: "https://example.org/apply",
     apply_instructions: null,
+    apply_on_sydcrest: false,
     location: "Tamale",
     region: "northern",
     is_remote: false,

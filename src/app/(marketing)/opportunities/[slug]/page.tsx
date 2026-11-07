@@ -116,8 +116,18 @@ function ApplyCard({ o, today, path }: { o: Opportunity; today: string; path: st
         </h2>
         <WhereAndWhen o={o} today={today} />
         {o.compensation_note && <p className="text-sm font-semibold text-content">{o.compensation_note}</p>}
+        {o.apply_on_sydcrest && (
+          <Link href={`/opportunities/${o.slug}/apply`} className={buttonClasses("primary", "w-full")}>
+            Apply on SydCrest
+          </Link>
+        )}
         {o.apply_url && (
-          <a href={o.apply_url} target="_blank" rel="noopener noreferrer nofollow" className={buttonClasses("primary", "w-full")}>
+          <a
+            href={o.apply_url}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
+            className={buttonClasses(o.apply_on_sydcrest ? "secondary" : "primary", "w-full")}
+          >
             Apply with {truncate(o.organisation_name, 40)}
             <ExternalLink aria-hidden className="size-4" />
             <span className="sr-only">(opens in a new tab)</span>
