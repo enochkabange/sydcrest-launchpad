@@ -5075,6 +5075,13 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      claim_error_alert: {
+        Args: { p_fingerprint: string; p_window?: string }
+        Returns: {
+          held_back: number
+          send: boolean
+        }[]
+      }
       claim_path_skills: { Args: never; Returns: number }
       community_feed: {
         Args: {
