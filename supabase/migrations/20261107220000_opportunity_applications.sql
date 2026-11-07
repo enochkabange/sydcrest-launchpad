@@ -112,6 +112,8 @@ begin
 end;
 $$;
 
+revoke execute on function private.stamp_application_stage() from public, anon, authenticated;
+
 create trigger opportunity_applications_stamp_stage
   before update on public.opportunity_applications
   for each row execute function private.stamp_application_stage();
