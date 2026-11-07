@@ -64,8 +64,8 @@ own node so they are taught once.
 | O10 | Google Drive Help: Share and manage access to files and folders (Viewer, Commenter, Editor; Restricted or Anyone with the link; editors can reshare by default) | https://support.google.com/drive/answer/2494822 | 2026-11-07 | Official docs; fact check, resource |
 | O11 | Google Drive Help: Use Google Drive files offline (computer needs Chrome or Edge and the Google Docs Offline extension) | https://support.google.com/drive/answer/2375012 | 2026-11-07 | Official docs; fact check, resource |
 | O12 | Google Drive Help: Upload files and folders to Google Drive | https://support.google.com/drive/answer/2424368 | 2026-11-07 | Official docs; resource |
-| O13 | Microsoft Support: Share files and folders in Microsoft OneDrive | https://support.microsoft.com/en-us/office/share-onedrive-files-and-folders-9fcc2f7d-de0c-4cec-93b0-a82024800c07 | 2026-11-07 | Official docs; fact check, resource |
-| O14 | Microsoft Tech Community: OneDrive security and mobile features now available for Microsoft 365 Basic (offline folders, password protected and expiring links listed as paid plan features) | https://techcommunity.microsoft.com/t5/microsoft-onedrive-blog/onedrive-security-and-mobile-features-now-available-for/ba-p/4096285 | 2026-11-07 | Official product blog; search snippet; fact check |
+| O13 | Microsoft Support: Share files and folders in Microsoft OneDrive (Set expiration date and Set password each "Only available to Microsoft 365 subscribers"; Can review for Word files; Manage access to remove links) | https://support.microsoft.com/en-us/office/share-onedrive-files-and-folders-9fcc2f7d-de0c-4cec-93b0-a82024800c07 | 2026-11-07 | Official docs; fact check, resource |
+| O14 | Microsoft Tech Community: OneDrive security and mobile features now available for Microsoft 365 Basic (announces offline folders and password protected and expiring links for Basic subscribers; does not itself say free accounts lack them, so O13 and O33 are the sources for that) | https://techcommunity.microsoft.com/t5/microsoft-onedrive-blog/onedrive-security-and-mobile-features-now-available-for/ba-p/4096285 | 2026-11-07 | Official product blog; context only |
 | O15 | Google Docs Editors Help: Suggest edits in Google Docs | https://support.google.com/docs/answer/6033474 | 2026-11-07 | Official docs; fact check, resource |
 | O16 | Google Docs Editors Help: Add a title, heading or table of contents | https://support.google.com/docs/answer/116338 | 2026-11-07 | Official docs; resource |
 | O17 | Google Docs Editors Help: Use comments, action items and emoji reactions | https://support.google.com/docs/answer/65129 | 2026-11-07 | Official docs; resource |
@@ -80,8 +80,16 @@ own node so they are taught once.
 | O26 | Google Calendar Help: Create an event | https://support.google.com/calendar/answer/72143 | 2026-11-07 | Official docs; resource |
 | O27 | Google Meet Help: Start or schedule a Google Meet video meeting | https://support.google.com/meet/answer/9302870 | 2026-11-07 | Official docs; resource |
 | O28 | Google Workspace: Google Meet product page FAQ (free: up to 100 participants, up to 60 minutes per meeting; no time limit for one to one and mobile calls) | https://workspace.google.com/products/meet/ | 2026-11-07 | Official product page; fact check |
-| O29 | Microsoft Support: Connect over audio or video in Microsoft Teams (free): group meetings up to 60 minutes and 100 participants, one to one up to 30 hours | https://support.microsoft.com/en-au/office/connect-over-audio-or-video-ce0e30dd-604c-4c2d-ace6-f119ebaccf84 | 2026-11-07 | Official docs; fact check |
+| O29 | Microsoft Support: Connect over audio or video in Microsoft Teams (free). Rechecked in review: this page lists recording under premium features but does not state meeting limits, so the limits are sourced to O31 and O32 instead | https://support.microsoft.com/en-au/office/connect-over-audio-or-video-ce0e30dd-604c-4c2d-ace6-f119ebaccf84 | 2026-11-07 | Official docs; context only |
 | O30 | GCFGlobal LearnFree sitemap (series used: Gmail, Google Drive, Google Docs, Google Sheets, Google Slides, Introduction to Microsoft Outlook, Word, PowerPoint, Teams, OneDrive and Office Online, Workplace Basics) | https://learnfree.org/sitemap.xml | 2026-11-07 | Free training (Goodwill Community Foundation); series titles only, used for resource links |
+| O31 | Microsoft Support: Create a meeting in Microsoft Teams Free ("meetings of up to one hundred participants for up to 60 minutes"; create a meeting link from the Meet tab) | https://support.microsoft.com/en-us/teams/free/meetings/create-a-meeting-in-microsoft-teams-free | 2026-11-07 | Official docs; fact check, resource (added in review) |
+| O32 | Microsoft: Microsoft Teams (free) product page (one to one meetings up to 30 hours, group meetings up to 60 minutes, up to 100 participants); read through a search result snippet because the page timed out when fetched | https://www.microsoft.com/en-us/microsoft-teams/free | 2026-11-07 | Official product page; search snippet; fact check (added in review) |
+| O33 | Microsoft Support: Read files or folders offline in OneDrive for Android ("Taking folders offline is available for Premium OneDrive with an Microsoft 365 subscription"; offline files are read only) | https://support.microsoft.com/en-US/onedrive/read-files-or-folders-offline-in-onedrive-for-android | 2026-11-07 | Official docs; fact check (added in review) |
+| O34 | Microsoft Support: Manage meeting and call recordings in Microsoft Teams Free (recording "available for Microsoft 365 Personal, Family, or Premium subscribers") | https://support.microsoft.com/en-US/teams/free/meetings/manage-meeting-and-call-recordings-in-microsoft-teams-free | 2026-11-07 | Official docs; fact check (added in review) |
+| O35 | Google Meet Help: Record a video meeting (eligible: listed Google Workspace editions and Google One plans with 2 TB or more; free personal accounts not listed) | https://support.google.com/meet/answer/9308681 | 2026-11-07 | Official docs; fact check (added in review) |
+| O36 | Google Meet Help: Join a video meeting (without a Google Account you enter your name and ask to join; for personal account hosts, signed out users must request to join) | https://support.google.com/meet/answer/9303069 | 2026-11-07 | Official docs; fact check (added in review) |
+| O37 | Microsoft Support: Schedule a Microsoft Teams meeting from Outlook ("The Outlook add-in doesn't support creating meetings with a personal account"; Teams meeting switch steps for business accounts) and Microsoft Support: Why can't I use the Teams Meeting add-in with my Microsoft Teams Free account? | https://support.microsoft.com/office/883cc15c-580f-441a-92ea-0992c00a9b0f | 2026-11-07 | Official docs; fact check (added in review) |
+| O38 | Microsoft Support: Schedule a meeting in Microsoft Teams Free (Meet tab, Schedule a meeting, add participants, Copy invite) | https://support.microsoft.com/en-us/teams/free/meetings/schedule-a-meeting-in-microsoft-teams-free | 2026-11-07 | Official docs; fact check (added in review) |
 | N1 | Not used: Google Meet help answer 10317117 and Google Docs help answer 6283888 returned 404 when fetched | https://support.google.com/meet/answer/10317117 | 2026-11-07 | Not used |
 
 ## Adverts analysed (12 new, plus the virtual assistant set)
@@ -161,8 +169,8 @@ same parent: `email-tool`, `file-tool`, `doc-tool`, `sheet-tool`, `slide-tool`, 
 | outlook | A1 A2 Outlook; VA Office Administrator; O8 O9 |
 | cloud-files (section) | F1 F2 files and records; VA record keeping |
 | google-drive | A5 A8 Google Workspace; O1 O11 O12 |
-| onedrive | O2 O20; prerequisite of Word, Excel and PowerPoint for the web |
-| sharing-safely | O10 O13 O14; data protection for office records |
+| onedrive | O2 O20 O33; prerequisite of Word, Excel and PowerPoint for the web |
+| sharing-safely | O10 O13; data protection for office records |
 | documents (section) | Word processing in A1 A2 A3 A9; F1 |
 | google-docs | A5 A8 A9 Google Workspace; O16 |
 | word | A1 A2 Word; O20 O21 |
@@ -175,8 +183,58 @@ same parent: `email-tool`, `file-tool`, `doc-tool`, `sheet-tool`, `slide-tool`, 
 | working-together (section) | A8 calendars and meetings; F1 scheduling |
 | google-forms | O23; data collection for offices and NGOs, prerequisite of the practical |
 | microsoft-forms | O24 O25; same reason |
-| google-calendar-meet | A8 Google Calendar and Meet; O26 O27 O28 |
-| outlook-calendar-teams | VA Office Administrator calendars; O29 |
+| google-calendar-meet | A8 Google Calendar and Meet; O26 O27 O28 O35 O36 |
+| outlook-calendar-teams | VA Office Administrator calendars; O31 O32 O34 O37 O38 |
 | office-practical (section) | Groups the end to end task |
 | office-task-project | F1 F2 tasks combined; portfolio evidence for A1 to A12 |
 | next-steps | Leads to `excel-power-bi` and `virtual-assistant` (VA research) |
+
+## Review
+
+Independent review, 7 November 2026, by a reviewer agent that did not write the track. Every one of the
+25 lessons was read in full against the CONTENT_GUIDE rubric (accuracy, fit, readability, word range,
+device neutral wording, practice tasks, quiz answerability and balance, no dashes, no invented numbers,
+no endorsements, provenance).
+
+### What was checked on official pages
+
+| Claim | Result | Source |
+| --- | --- | --- |
+| Google: 15 GB shared by Gmail, Drive and Photos | Confirmed | O1 |
+| Microsoft: 5 GB cloud storage shared by OneDrive, Outlook.com attachments and Microsoft 365 apps; mailbox storage separate | Confirmed | O2 |
+| Google Meet free: up to 100 participants, 60 minutes per group meeting, no limit for one to one | Confirmed on the product page FAQ | O28 |
+| Teams free: 100 participants, 60 minutes per group meeting | Confirmed on a support page | O31 |
+| Teams free: one to one calls up to 30 hours | Seen only in a search snippet of the product page (page timed out), so the lesson now says "much longer one to one calls" with no number | O32 |
+| Recording not on free Meet | Confirmed: free personal accounts are not in the eligible list | O35 |
+| Recording not on free Teams | Confirmed: needs Microsoft 365 Personal, Family or Premium | O34 |
+| OneDrive link passwords and expiry are paid only | Confirmed ("Only available to Microsoft 365 subscribers"); O14 alone did not establish this | O13 |
+| Whole folders offline in the OneDrive phone app are paid only | Confirmed, and the same page says offline files in the app are read only | O33 |
+| Teams meeting from Outlook.com | Not available: Microsoft says the Outlook Teams option does not support personal accounts and free Teams has no add-in; free users schedule in Teams | O37 O38 |
+| Joining a Meet without a Google account | Possible: enter a name and ask to join; someone must let you in | O36 |
+| Google Drive expiry dates on access are work and school only; download, print and copy can be blocked for viewers and commenters | Confirmed | O10 |
+| Spot checks of menu paths: Gmail signature and filters, Outlook Settings > Mail > Rules and Settings > Account > Signatures, Docs Page setup and Pageless, Docs version history, Sheets Freeze and Create a filter, Slides Presenter view and From Sheets charts, Forms Link to Sheets | Consistent with current help pages; lessons already say "at the time of writing" and name features rather than exact clicks where menus vary | O4 O5 O7 O8 O16 and product help |
+
+### What changed
+
+* **outlook-calendar-teams:** rewrote "Adding a Teams meeting" so free accounts schedule in Teams (or paste a Teams link into the Outlook event), with the Outlook Teams meeting switch described as a work account feature; changed the worked example (Amina now pastes a Teams link), practice step 3 and the quiz explanation to match; removed the unconfirmed "30 hours" figure; said plainly that recording needs a paid Microsoft 365 plan; the "Joining a Google Meet" note now says someone must let you in.
+* **google-calendar-meet:** guests without a Google account ask to join and are let in; "Meet warns you" softened to "may warn you".
+* **onedrive:** offline files in the phone app are read only (O33); edits made offline upload later only on Windows. Worked example step 5 updated.
+* **sharing-safely:** replaced a vague line about commenting in OneDrive with the documented **Can review** option for Word files.
+* **excel:** worked example date changed from "2026 11 03" (which Excel would not read as a date) to "03/11/2026", matching the lesson's day first advice.
+* **word, excel, documents, next-steps:** softened unsourced frequency claims ("a large share", "one of the most requested", "Many ... roles ask for", a quoted phrase presented as advert text).
+* **Track file:** the Teams resource now points to the support page that states the free limits (O31).
+* **Sources:** O13, O14 and O29 descriptions corrected; O31 to O38 added; coverage table updated.
+* **Tests:** `src/lib/roadmaps/links.test.ts` expected 27 tracks; adding this track makes 28, so the count was updated (the writer's branch failed this test).
+
+Quiz balance after the edits: 103 questions, longest option correct 26%, shortest 11%, positions 25/25/27/26 (ok under `--strict`).
+
+### Registration changes reviewed
+
+* `roadmap-admin.test.ts`: the test now checks that each imported row carries the draft's own `choice_group` (null for every older draft), which is stricter than before, not looser. Sound.
+* `recommend.ts`: `office-tools` placed first in the office interest list. It wins only when no goal prefers another office track (goal "explore", or a tie on phone fit); "first-job" and "business" still pick Excel and Power BI, "freelance" picks Virtual Assistant, "switch" picks Project Management. A beginner exploring office work starting on the foundations track is sensible.
+
+### Left for the founder
+
+* Consider adding `office-tools` to the Digital Skills Bridge `leads_to`, since this track is meant to sit between the bridge and the VA and Excel tracks; not changed here to keep the review to this track.
+* Microsoft Forms response limits are left without a number (only third party pages give one).
+* Free limits and menus change; recheck the Meet and Teams limits and the Outlook Teams switch before publishing if this sits as a draft for long.

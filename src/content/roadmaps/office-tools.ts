@@ -75,8 +75,8 @@ const msFormsHelp = r("Microsoft Support: Forms help and learning", "https://sup
 const calendarEvent = g("Create an event in Google Calendar", "https://support.google.com/calendar/answer/72143");
 const meetStart = g("Start or schedule a Google Meet meeting", "https://support.google.com/meet/answer/9302870");
 const teamsFree = ms(
-  "Audio and video calls in Microsoft Teams (free)",
-  "https://support.microsoft.com/en-au/office/connect-over-audio-or-video-ce0e30dd-604c-4c2d-ace6-f119ebaccf84",
+  "Create a meeting in Microsoft Teams (free)",
+  "https://support.microsoft.com/en-us/teams/free/meetings/create-a-meeting-in-microsoft-teams-free",
 );
 const lfTeams = lf("Introduction to Microsoft Teams", "introduction-to-microsoft-teams");
 

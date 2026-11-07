@@ -931,7 +931,7 @@ OneDrive keeps copies on your device in different ways depending on the device:
 * **On a Windows computer:** files in the OneDrive folder can be **online only** (they download when you open them) or **always kept on this device**. Right click a file or folder in File Explorer and choose **Always keep on this device** for the ones you need without a connection.
 * **In the OneDrive app:** open the three dot menu on a file and choose **Make available offline**. At the time of writing, Microsoft lists making whole folders available offline in the app as a feature of paid Microsoft 365 plans, so on a free account do it file by file.
 
-Your edits to offline files upload when you are back online. Offline copies use space on your device, so keep this for the files you really need.
+On Windows, edits you make offline upload when you are back online. In the phone app, Microsoft says offline files are for reading only; you edit them when you are connected again. Offline copies use space on your device, so keep this for the files you really need.
 
 ## Storage and data
 
@@ -954,7 +954,7 @@ Sumaila manages records for a phone accessories shop in Tamale. Receipts and sto
 2. He saves the stock list from Excel for the web as "Stock list Tamale shop 2026 11" in Stock and marks it as a favourite.
 3. He uploads receipt photos from his phone in the OneDrive app, renaming each, such as "Receipt chargers 2026 11 03".
 4. On the laptop he right clicks the stock list in File Explorer and chooses **Always keep on this device**, because the shop's internet often drops.
-5. In the app he makes the supplier contacts file available offline, one file at a time, since his free account cannot make whole folders offline.
+5. In the app he makes the supplier contacts file available offline, one file at a time, since his free account cannot make whole folders offline. He can read it with no signal and makes changes once he is connected.
 6. He checks storage: 1.2 GB used of 5 GB. He leaves camera upload off on the shop account.`,
       keyTerms: [
         { term: "My files", definition: "The part of OneDrive that holds the files and folders you own." },
@@ -1056,7 +1056,7 @@ In Google Drive these settings appear under **General access** (Restricted or An
 ### What: view, comment or edit
 
 * **View (Viewer):** can read and usually download, but not change anything.
-* **Comment (Commenter):** can read and add comments or suggestions, but not change the text directly. Google Drive has this role; in OneDrive, people with view access to an Office file may be able to comment in the web app depending on the file type.
+* **Comment (Commenter):** can read and add comments or suggestions, but not change the text directly. Google Drive has this role. OneDrive has no general comment role; for Word files, a **Can review** option lets people comment and suggest changes without editing directly.
 * **Edit (Editor):** can change, delete and, by default in Google Drive, share the file with others.
 
 Give the lowest level that lets the person do their job. A manager reviewing a report needs comment access. A colleague co-writing it needs edit. Workshop participants receiving the programme need view.
@@ -1185,7 +1185,7 @@ Mariama works with a health NGO in Navrongo. A colleague shared the outreach reg
       ],
       explanation_md: `## Why this matters
 
-Letters to the district assembly, minutes of a staff meeting, a monthly activity report for a donor, a memo about new office hours, a CV: most office jobs produce documents every day. Adverts for administrative assistants and secretaries list "preparing correspondence, reports and minutes" again and again. A document that looks tidy, reads clearly and prints properly makes your organisation look professional. One full of odd spacing and random fonts does the opposite, even if the words are good.
+Letters to the district assembly, minutes of a staff meeting, a monthly activity report for a donor, a memo about new office hours, a CV: most office jobs produce documents every day. Adverts for administrative assistants and secretaries often ask for help preparing correspondence, reports and minutes. A document that looks tidy, reads clearly and prints properly makes your organisation look professional. One full of odd spacing and random fonts does the opposite, even if the words are good.
 
 ## The documents you will meet
 
@@ -1471,7 +1471,7 @@ Wumpini is secretary of a women's savings group in Walewale. After the monthly m
       ],
       explanation_md: `## Why this matters
 
-"Proficiency in Microsoft Word" appears in a large share of Ghanaian admin, secretary and office assistant adverts. Letters, minutes, memos and reports in many offices, schools and NGOs are written in Word. The good news is that the skills employers mean, such as headings, lists, tables, page layout and PDFs, all work in free Word for the web.
+"Proficiency in Microsoft Word" appears in many Ghanaian admin, secretary and office assistant adverts. Letters, minutes, memos and reports in many offices, schools and NGOs are written in Word. The good news is that the skills employers mean, such as headings, lists, tables, page layout and PDFs, all work in free Word for the web.
 
 ## Which Word you can use for free
 
@@ -2068,7 +2068,7 @@ Amina helps run a computer class at a youth centre in Wa. Students pay a small f
       ],
       explanation_md: `## Why this matters
 
-"Excel" is one of the most requested skills in Ghanaian office adverts, from administrative assistants to accounts staff. Offices keep registers, stock lists, petty cash records and simple budgets in it. You can practise for free: Excel for the web works in any browser with a free Microsoft account, and the Excel app on a phone allows free editing on screens of 10.1 inches or smaller at the time of writing. This lesson covers the everyday basics. The **Excel and Power BI** track takes you much further, into lookups, PivotTables and dashboards.
+"Excel" is often named in Ghanaian office adverts, from administrative assistants to accounts staff. Offices keep registers, stock lists, petty cash records and simple budgets in it. You can practise for free: Excel for the web works in any browser with a free Microsoft account, and the Excel app on a phone allows free editing on screens of 10.1 inches or smaller at the time of writing. This lesson covers the everyday basics. The **Excel and Power BI** track takes you much further, into lookups, PivotTables and dashboards.
 
 ## Starting a workbook
 
@@ -2133,7 +2133,7 @@ Issahaku is an office assistant at an NGO in Tamale and keeps the petty cash rec
 
 1. In Excel for the web he creates "Petty cash Tamale office 2026 11" with headers Date, Item, Amount (GHS), Approved by.
 2. He freezes the top row and formats Amount as a number with two decimals.
-3. He enters the month's 18 payments, one per row, such as "2026 11 03, Printer paper, 85.00, Mariama".
+3. He enters the month's 18 payments, one per row, typing dates day first, such as "03/11/2026, Printer paper, 85.00, Mariama".
 4. He uses **Format as Table** so each header has a filter button.
 5. Below the table he clicks **AutoSum** to total the Amount column, and types =COUNTA(B2:B19) to count the payments.
 6. When the accountant asks what Mariama approved, he filters "Approved by" to show only her name, then clears the filter.`,
@@ -2956,7 +2956,7 @@ Under **Add guests**, type each person's email address. On a computer, **Find a 
 
 Choose **Add Google Meet video conferencing**. A meeting link and dial in details where available appear in the event. When you save, Calendar asks whether to **send invitation emails** to guests; choose to send.
 
-Guests reply **Yes**, **No** or **Maybe** from the email or their calendar, and you can see the replies in the event. Guests without Google accounts can still reply from the email and join with the link.
+Guests reply **Yes**, **No** or **Maybe** from the email or their calendar, and you can see the replies in the event. Guests without Google accounts can still reply from the email and join with the link: they type their name and ask to join, and you let them in.
 
 ## Starting and joining a meeting
 
@@ -2966,7 +2966,7 @@ Guests reply **Yes**, **No** or **Maybe** from the email or their calendar, and 
 
 ## Free limits
 
-At the time of writing, Google says a free account can hold meetings with up to 100 participants for up to 60 minutes each, and one to one calls are not limited in the same way. A few minutes before the limit, Meet warns you. Plan group meetings to fit, or agree to start a second meeting if you must continue. Recording and some other features belong to paid plans, so do not promise a recording on a free account.
+At the time of writing, Google says a free account can hold meetings with up to 100 participants for up to 60 minutes each, and one to one calls are not limited in the same way. Meet may warn you shortly before the limit. Plan group meetings to fit, or agree to start a second meeting if you must continue. Recording and some other features belong to paid plans, so do not promise a recording on a free account.
 
 ## Running a good call
 
@@ -3102,16 +3102,16 @@ Under **Invite attendees**, type each person's email address. When you choose **
 
 ## Adding a Teams meeting
 
-There are two common ways, depending on what your version shows:
+There are two common ways, depending on your account:
 
-1. **From Outlook:** if the new event shows a **Teams meeting** switch, turn it on. A join link is added to the invite.
-2. **From Teams:** open Teams, go to the meeting or calendar area and schedule a meeting, or choose to meet now and copy the meeting link. Paste the link into the Outlook event's location or description, then send the invite.
+1. **From Teams (free accounts):** open Teams and go to the meetings area (called **Meet** at the time of writing). Choose to schedule a meeting, add a title, the time and your attendees, and save; Teams sends the invite with the join link. Or create a meeting link there, copy it, paste it into your Outlook event's location or description, and send the invite.
+2. **From Outlook (work accounts):** on a work or school account, a new event usually shows a **Teams meeting** switch; turn it on and a join link is added. At the time of writing, Microsoft says this switch does not work with free personal accounts, so on a free account use the first way.
 
 Either way, attendees join by clicking the link. They can join in a browser without installing anything, or in the Teams app on a phone or computer. People without a Microsoft account can usually join as guests by typing their name.
 
 ## Free limits
 
-At the time of writing, Microsoft's page for Teams (free) lists group meetings of up to 60 minutes with up to 100 participants, and one to one calls of up to 30 hours. Plan group meetings to fit, or agree to start a second meeting if you must go on. Paid plans allow longer group meetings and more features, so do not promise a recording or a long workshop on a free account.
+At the time of writing, Microsoft lists group meetings of up to 60 minutes with up to 100 participants for Teams (free), and much longer one to one calls. Plan group meetings to fit, or agree to start a second meeting if you must go on. Paid plans allow longer group meetings and more features; recording a meeting, for example, needs a paid Microsoft 365 plan, so do not promise a recording or a long workshop on a free account.
 
 ## Running a good call
 
@@ -3139,14 +3139,14 @@ Creating events and joining calls works well in the Outlook and Teams apps. Shar
 
 ## Joining a Google Meet
 
-You will sometimes be invited to a Google Meet by a partner. You do not need a Google account to join: click the link, type your name and ask to join. The meeting skills are the same.`,
+You will sometimes be invited to a Google Meet by a partner. You do not need a Google account to join: click the link, type your name and ask to join, then wait for someone in the meeting to let you in. The meeting skills are the same.`,
       workedExample_md: `**Amina sets up a partners' call**
 
 Amina is an administrative assistant for a literacy project in Bolgatanga. Her manager wants a call with three partner schools.
 
 1. In Outlook on the web she creates "Partners call: term 2 reading plan" on Thursday from 2pm to 2.45pm, repeating monthly.
 2. She invites the three headteachers and her manager by email.
-3. Her event form shows a **Teams meeting** switch, so she turns it on and the join link appears. (If it had not, she would create the meeting in Teams and paste the link.)
+3. The project uses free accounts, so she opens Teams, creates a meeting link, copies it and pastes it into the event's location and description. (On her manager's work account, the **Teams meeting** switch in the event would add the link for her.)
 4. In the description she writes a three point agenda, links the reading plan in OneDrive (shared with the attendees) and asks people to keep cameras off to save data.
 5. She sends the invite, sees three accepts and one tentative, and follows up with the tentative headteacher by phone.
 6. The call ends at 2.45pm, inside the 60 minute limit, and she emails minutes that evening.`,
@@ -3172,7 +3172,7 @@ Amina is an administrative assistant for a literacy project in Bolgatanga. Her m
 
 1. Create an Outlook calendar event for the planning meeting you wrote in the section lesson, with a clear title, start and end time and a reminder.
 2. Invite at least two attendees (friends, a mentor or your second email address).
-3. Add a Teams meeting link, from the switch in Outlook or by creating the meeting in Teams and pasting the link.
+3. Add a Teams meeting link: on a free account, create the meeting in Teams and paste the link into the event (or schedule it in Teams directly); on a work account you may see a Teams meeting switch in Outlook instead.
 4. Write a three point agenda with one OneDrive document link in the description, then send it. Check the replies.
 5. Hold a call of 15 minutes or less: start on time, share a link in the chat, and ask people to mute when not speaking.
 6. Send short minutes by email afterwards.
@@ -3200,7 +3200,7 @@ Amina is an administrative assistant for a literacy project in Bolgatanga. Her m
               "Create the meeting in Teams and paste its link into the invite",
             ],
             answer_index: 3,
-            explanation: "The lesson gives two routes; creating it in Teams and pasting the link always works.",
+            explanation: "The switch is for work accounts; on a free account you create the meeting in Teams and paste its link.",
           },
           {
             prompt: "What does a Tentative reply mean?",
@@ -3567,7 +3567,7 @@ You can now handle the everyday software that keeps an office running: professio
 
 Three directions build naturally on this track:
 
-**Excel and Power BI.** If you enjoyed the spreadsheet lessons, or the adverts you want mention "advanced Excel", "reports" or "dashboards", this is the next step. It starts where Excel basics stopped: tidy tables, everyday functions, XLOOKUP, PivotTables, charts and then Power BI dashboards. Many accounts, MIS and monitoring and evaluation roles ask for these skills. Most of it works on a phone or computer; Power BI Desktop needs a Windows computer.
+**Excel and Power BI.** If you enjoyed the spreadsheet lessons, or the adverts you want mention "advanced Excel", "reports" or "dashboards", this is the next step. It starts where Excel basics stopped: tidy tables, everyday functions, XLOOKUP, PivotTables, charts and then Power BI dashboards. Reporting roles in accounts, MIS and monitoring and evaluation often use these skills. Most of it works on a phone or computer; Power BI Desktop needs a Windows computer.
 
 **Virtual assistant and remote work.** If you liked organising inboxes, calendars and the workshop project, this track turns those skills into a service. It covers managing a client's email and diary, documents and spreadsheets for clients, online research, communication across time zones, getting paid safely and avoiding scams. It suits people who want remote or freelance work.
 
