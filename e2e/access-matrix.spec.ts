@@ -1,5 +1,5 @@
 import { expect, test, type Page } from "@playwright/test";
-import { UNDER_AGE_MESSAGE } from "../src/lib/legal";
+import { LEGAL_VERSION, UNDER_AGE_MESSAGE } from "../src/lib/legal";
 import { deleteChapter, seedChapter } from "./chapters-seed";
 import {
   accessToken,
@@ -511,7 +511,7 @@ test("an email sign up's 18 or over tick lands in the consent records on the fir
       email,
       password: PASSWORD,
       email_confirm: true,
-      user_metadata: { full_name: "Mariama Abukari", date_of_birth: "2000-03-14", terms_version: "e2e", age_confirmed_at: new Date().toISOString(), phone: testPhoneE164() },
+      user_metadata: { full_name: "Mariama Abukari", date_of_birth: "2000-03-14", terms_version: LEGAL_VERSION, age_confirmed_at: new Date().toISOString(), phone: testPhoneE164() },
     },
   });
   const person = { id, email, name: "Mariama Abukari" };

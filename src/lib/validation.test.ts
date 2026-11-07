@@ -168,6 +168,8 @@ describe("hasAgeAndConsent", () => {
     expect(hasAgeAndConsent({ date_of_birth: "2000-03-14", terms_version: LEGAL_VERSION })).toBe(true);
     expect(hasAgeAndConsent({ full_name: "Abdul-Rahman Seidu" })).toBe(false);
     expect(hasAgeAndConsent({ date_of_birth: "2000-03-14" })).toBe(false);
+    // Agreed only to an earlier version (#60).
+    expect(hasAgeAndConsent({ date_of_birth: "2000-03-14", terms_version: "2026-10-draft" })).toBe(false);
     expect(hasAgeAndConsent(undefined)).toBe(false);
   });
 });

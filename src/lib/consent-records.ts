@@ -35,10 +35,11 @@ export function recordSignUpConsents(supabase: Client, version: string): Promise
 
 /**
  * The authoritative age and consent check for a signed in user: date of birth
- * from metadata, terms and privacy from the consents table. Backfills the
- * table from metadata the first time it runs for someone who agreed before
- * consents were recorded. If the table cannot be read, falls back to the
- * metadata check so nobody is locked out by an outage.
+ * from metadata, terms and privacy for the current version from the consents
+ * table. Backfills the table from metadata the first time it runs for someone
+ * who agreed to this version before there was a session to record it. If
+ * the table cannot be read, falls back to the metadata check so nobody is
+ * locked out by an outage.
  */
 export async function hasAgeAndRecordedConsent(
   supabase: Client,
@@ -47,7 +48,7 @@ export async function hasAgeAndRecordedConsent(
 ): Promise<boolean> {
   const { data, error } = await supabase
     .from("consents")
-    .select("kind, revoked_at")
+    .select("kind, version, revoked_at")
     .eq("profile_id", userId)
     .in("kind", [...LEGAL_CONSENT_KINDS, AGE_CONSENT_KIND]);
   if (error) {
@@ -59,7 +60,7 @@ export async function hasAgeAndRecordedConsent(
   if (needsAgeConfirmationRecord(data, metadata)) {
     await recordLegalConsent(supabase, termsVersionFromMetadata(metadata) ?? LEGAL_VERSION, [AGE_CONSENT_KIND]);
   }
-  const decision = decideLegalGate(data, metadata);
+  const decision = decideLegalGate(data, metadata, LEGAL_VERSION);
   if (decision.action === "backfill") {
     await recordLegalConsent(supabase, decision.version, decision.kinds);
     return true;

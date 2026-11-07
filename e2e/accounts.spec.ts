@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 import { confirmationLink } from "./mailpit";
 import { createLearner, testPhone, testPhoneE164 } from "./learners";
 import { admin } from "./supabase-admin";
+import { LEGAL_VERSION, PRIVACY_CONTACT_EMAIL } from "../src/lib/legal";
 
 const PASSWORD = "Tamale-2027-pilot";
 const ADULT_DOB = "2000-03-14";
@@ -138,10 +139,43 @@ test("an account without a phone number adds one before going on, and cannot tak
   }
 });
 
+test("someone who agreed to earlier terms agrees again before going on (#60)", async ({ page }) => {
+  const learner = await createLearner("Rahinatu Iddrisu", { termsVersion: "2026-10-draft" });
+  // As if Rahinatu had signed in before: her agreement to the draft is on record.
+  await Promise.all(
+    ["terms", "privacy"].map((kind) =>
+      admin("/rest/v1/consents", { method: "POST", body: { profile_id: learner.id, kind, version: "2026-10-draft" } }),
+    ),
+  );
+  try {
+    await page.goto("/login");
+    await page.getByLabel("Email").fill(learner.email);
+    await page.getByLabel("Password").fill(PASSWORD);
+    await page.getByRole("button", { name: "Sign in" }).click();
+    // The proxy sends her to /welcome during the sign in redirect, so check the page, not the address.
+    await expect(page.getByRole("heading", { name: "One more step" })).toBeVisible();
+    await expect(page.getByText("We've updated our Privacy Policy and Terms.")).toBeVisible();
+    // Her date of birth and phone number are on file, so only the agreement is asked for.
+    await expect(page.getByLabel("Date of birth")).toHaveCount(0);
+    await expect(page.getByLabel("Phone number")).toHaveCount(0);
+
+    await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
+    await page.getByLabel("I confirm I am 18 or over").check();
+    await page.getByRole("button", { name: "Continue" }).click();
+    await expect(page.getByRole("heading", { name: "Welcome, Rahinatu" })).toBeVisible();
+
+    const rows = (await admin(`/rest/v1/consents?profile_id=eq.${learner.id}&version=eq.${LEGAL_VERSION}&select=kind`)) as { kind: string }[];
+    expect(rows.map((r) => r.kind).sort()).toEqual(["age_confirmation", "privacy", "terms"]);
+  } finally {
+    await admin(`/auth/v1/admin/users/${learner.id}`, { method: "DELETE" }).catch(() => undefined);
+  }
+});
+
 test("privacy policy and terms are readable signed out", async ({ page }) => {
   await page.goto("/privacy");
   await expect(page.getByRole("heading", { name: "Privacy Policy", level: 1 })).toBeVisible();
-  await expect(page.getByText("Draft for review.")).toBeVisible();
+  await expect(page.getByText("Draft for review.")).toHaveCount(0);
+  await expect(page.getByRole("link", { name: PRIVACY_CONTACT_EMAIL! }).first()).toBeVisible();
   await page.goto("/terms");
   await expect(page.getByRole("heading", { name: "Terms", level: 1 })).toBeVisible();
 });
