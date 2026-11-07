@@ -14,8 +14,8 @@ export const MISSION =
 /** Planning/00 Q1 2027 (first free DMP cohort, ~25 seats) and Planning/03 §5 ("Apply for 25 free seats"). */
 export const PILOT = { seats: 25, weeks: 12, starts: "January 2027" } as const;
 
-/** Planning/02 §3 and Planning/03 §3. Confirm the current count before launch. */
-export const COMMUNITY_SIZE = "500+";
+/** Founder count, 7 Nov 2026: 844 members. Update as it grows. */
+export const COMMUNITY_SIZE = "800+";
 
 /** Planning/04 §2: the delivered Bolgatanga Skillshop and its feedback form results. */
 export const BOLGATANGA = {
