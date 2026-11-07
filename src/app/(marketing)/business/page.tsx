@@ -24,7 +24,7 @@ const OFFER = [
   },
   {
     title: "Talent from the north",
-    body: "Our learners start in the northern regional capitals, places most hiring pipelines never reach.",
+    body: "Our chapters start in Tamale, Wa, Navrongo, Bolgatanga and the North East, places most hiring pipelines never reach.",
   },
 ];
 

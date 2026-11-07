@@ -56,6 +56,8 @@ insert into public.outcomes (id, profile_id, type, title, organisation_name, sta
   ('0c000000-0000-0000-0000-000000000001', '11111111-1111-1111-1111-111111111111', 'job',
    'Sales assistant', 'Tamale Shea Collective', current_date);
 
+-- Start from no chapters: the six seeded ones (#300) share these slugs.
+delete from public.chapters;
 insert into public.chapters (id, slug, name, region, city, status) values
   ('c1000000-0000-0000-0000-000000000001', 'tamale', 'Tamale', 'northern', 'Tamale', 'active');
 insert into public.chapter_members (chapter_id, profile_id) values

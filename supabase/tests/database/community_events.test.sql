@@ -19,6 +19,8 @@ from (values
 ) as u(id, email, name);
 update public.profiles set role = 'admin' where id = '44444444-4444-4444-4444-444444444444';
 
+-- Start from no chapters: the six seeded ones (#300) share these slugs.
+delete from public.chapters;
 insert into public.chapters (id, slug, name, region, city, status) values
   ('c1000000-0000-0000-0000-000000000001', 'tamale', 'Tamale', 'northern', 'Tamale', 'active'),
   ('c1000000-0000-0000-0000-000000000002', 'bolgatanga', 'Bolgatanga', 'upper_east', 'Bolgatanga', 'active');

@@ -162,8 +162,8 @@ export async function CommunityCard() {
     link = { href: `/chapters/${suggested.slug}`, label: `See the ${suggested.city} chapter` };
   } else {
     text = planned
-      ? `Your local chapter will be ${planned.city}. It is being set up${planned.city === "Tamale" ? " now" : ", after Tamale"}.`
-      : "Chapters start in the five northern regional capitals, beginning with Tamale.";
+      ? `Your local chapter will be ${planned.city}. It is being set up now.`
+      : "There is no chapter in your area yet. You can join any of ours.";
     link = { href: "/chapters", label: "See all chapters" };
   }
 

@@ -54,6 +54,8 @@ insert into public.submissions (id, profile_id, program_id, program_week_id, coh
    'b0000000-0000-0000-0000-000000000001', 'c0000000-0000-0000-0000-00000000000a', 'graded',
    'Abdul tips', null, null, null, null, null, 90, now(), now(), true);
 
+-- Start from no chapters: the six seeded ones (#300) share these slugs.
+delete from public.chapters;
 insert into public.chapters (id, slug, name, region, city, status) values
   ('c1000000-0000-0000-0000-000000000001', 'tamale', 'Tamale', 'northern', 'Tamale', 'active');
 insert into public.chapter_members (chapter_id, profile_id, role) values
