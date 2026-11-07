@@ -90,18 +90,18 @@ Depth: S = search snippet. All are entry or junior level unless marked.
 
 | # | Role | Location | Date | Depth | Software and task keywords |
 | --- | --- | --- | --- | --- | --- |
-| A1 | Administrative Assistant (secretarial duties) | Accra | Feb 2026 | S | Microsoft Office: Word, Excel, PowerPoint, Outlook; correspondence, minutes, filing |
+| A1 | Administrative Assistant (secretarial duties) | Accra | Feb 2026 | S | Microsoft Office: Word, Excel, PowerPoint, Outlook; secretarial duties (from the title) |
 | A2 | Administrative Assistant | Accra | 2026 | S | Word, PowerPoint, Outlook; two years experience |
 | A3 | Administrative Assistant | Kasoa, Winneba, Cape Coast | Mar 2026 | S | Microsoft Office Suite and other office software |
 | A4 | Administrative Assistant | Adenta, Accra | Feb 2026 | S | Microsoft Office Suite, especially Excel |
 | A5 | Administrative Assistant | North Kaneshie, Accra | Dec 2025 | S | Google Workspace tools |
-| A6 | Office Assistant | Ghana | 2026 | S | Microsoft Office, documents, filing |
-| A7 | Administration Officer | Ghana | 2026 | S | Microsoft Office, reports |
-| A8 | Secretary | Ghana | 2026 | S | Google Workspace, Google Calendar and Meet for meetings; minutes (mid level, two to three years) |
+| A6 | Office Assistant | Ghana | 2026 | S | Title and location only; skills not shown in the snippet |
+| A7 | Administration Officer | Ghana | 2026 | S | Title and location only; skills not shown in the snippet |
+| A8 | Secretary | Ghana | 2026 | S | Google Workspace, Google Calendar and Meet for meetings (mid level, two to three years) |
 | A9 | Secretary | Lapaz, Accra | Sep 2026 | S | Microsoft Office, Google Workspace, typing |
-| A10 | Digital Admin Assistant | Spintex, Accra | 2026 | S | digital records, email, documents |
-| A11 | Office Assistant | Accra | Undated | S | office support, documents |
-| A12 | Office Assistant | East Legon, Accra | 2026 | S | office support |
+| A10 | Digital Admin Assistant | Spintex, Accra | 2026 | S | Title and location only; skills not shown in the snippet |
+| A11 | Office Assistant | Accra | Undated | S | Title and location only; skills not shown in the snippet |
+| A12 | Office Assistant | East Legon, Accra | 2026 | S | Title and location only; skills not shown in the snippet |
 
 Reused from the virtual assistant research (VA): Office Administrator (Word, Excel, PowerPoint,
 Outlook, calendars, appointments), Office Assistant / Front Desk Executive (record keeping),
@@ -112,13 +112,13 @@ roles (Google Sheets, Google Workspace, calendar, inbox).
 
 | Skill | Signals |
 | --- | --- |
-| Word processing (Word or Google Docs) | A1 A2 A3 A6 A7 A9, VA Office Administrator, F1 |
-| Email (Outlook or Gmail) | A1 A2 A10, VA Office Administrator, VA Executive Assistant, F1 |
+| Word processing (Word or Google Docs) | A1 A2 A3 A9, VA Office Administrator, F1 |
+| Email (Outlook or Gmail) | A1 A2, VA Office Administrator, VA Executive Assistant, F1 |
 | Spreadsheets (Excel or Google Sheets) | A1 A3 A4 A9, VA remote VA, F1 F2 |
 | Presentations (PowerPoint or Slides) | A1 A2, VA Office Administrator, F1 |
 | Google Workspace named | A5 A8 A9, VA remote VA |
 | Calendars and meetings | A8, VA Office Administrator, VA Executive Assistant, F1 |
-| Records, filing, documents | A1 A6 A10, VA Front Desk Executive, F2 |
+| Records, filing, documents | VA Front Desk Executive, F2 |
 | Typing | A9 (covered by the Digital Skills Bridge, not repeated here) |
 
 ## Frameworks
@@ -149,21 +149,21 @@ same parent: `email-tool`, `file-tool`, `doc-tool`, `sheet-tool`, `slide-tool`, 
   meetings, more form responses).
 * **Data honesty:** video meetings use much more data than documents; lessons give camera off and
   audio only tips rather than figures.
-* **Job titles in sections** come only from the adverts above.
+* **Job titles in sections** come only from the adverts above. Rows marked "title and location only" count for job titles, never for skills.
 
 ## Coverage table
 
 | Node | Justification |
 | --- | --- |
 | office-suites (section) | A1 to A9 name Microsoft Office or Google Workspace; prerequisite of every node |
-| professional-email | A1 correspondence; F1 prepare correspondence; O6 O9 phishing |
+| professional-email | A1 A2 Outlook; F1 prepare correspondence; O6 O9 phishing |
 | gmail | A5 A8 Google Workspace; VA remote VA; O4 O5 O7 |
 | outlook | A1 A2 Outlook; VA Office Administrator; O8 O9 |
-| cloud-files (section) | F1 F2 files and records; A10 digital records |
+| cloud-files (section) | F1 F2 files and records; VA record keeping |
 | google-drive | A5 A8 Google Workspace; O1 O11 O12 |
 | onedrive | O2 O20; prerequisite of Word, Excel and PowerPoint for the web |
 | sharing-safely | O10 O13 O14; data protection for office records |
-| documents (section) | Word processing in A1 A2 A3 A6 A7 A9; F1 |
+| documents (section) | Word processing in A1 A2 A3 A9; F1 |
 | google-docs | A5 A8 A9 Google Workspace; O16 |
 | word | A1 A2 Word; O20 O21 |
 | reviewing-documents | F1 prepare documents with others; O15 O17 O18 O19 |
