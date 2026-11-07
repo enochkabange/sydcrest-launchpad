@@ -25,7 +25,7 @@ async function learner(form: FormData) {
     const back = form.get("back");
     redirect(`/login${typeof back === "string" && back.startsWith("/") ? `?next=${encodeURIComponent(back)}` : ""}`);
   }
-  if (!user.hasAgeAndConsent) redirect("/welcome");
+  if (!user.isSetUp) redirect("/welcome");
   if (typeof id !== "string" || !UUID.test(id)) return null;
   return { user, id, supabase: await createClient() };
 }

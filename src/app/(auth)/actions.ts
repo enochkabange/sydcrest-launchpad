@@ -5,10 +5,12 @@ import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { siteOrigin } from "@/lib/site-url";
 import { googleSignInEnabled } from "@/lib/google-sign-in";
-import { parseAgeAndConsent, parseSignIn, parseSignUp, safeNextPath, type FieldErrors } from "@/lib/validation";
+import { parseAgeAndConsent, parseRequiredPhone, parseSignIn, parseSignUp, PHONE_TAKEN, safeNextPath, type FieldErrors } from "@/lib/validation";
 import { UNDER_AGE_MESSAGE } from "@/lib/legal";
 import { track, trackNow, trackRefusal } from "@/lib/analytics/track";
 import { recordSignUpConsents } from "@/lib/consent-records";
+import { savePhone } from "@/lib/phone-records";
+import { getCurrentUser } from "@/lib/auth";
 import { hasDateOfBirth } from "@/lib/consent";
 import { allowFormSubmission, allowSignIn, FORM_RATE_LIMIT_MESSAGE, recordSignInFailure, SIGN_IN_LIMIT_MESSAGE } from "@/lib/rate-limit";
 
@@ -19,10 +21,10 @@ function nextFrom(form: FormData | undefined) {
 }
 
 export type AuthState = {
-  errors?: FieldErrors<"full_name" | "email" | "password" | "date_of_birth" | "terms" | "adult">;
+  errors?: FieldErrors<"full_name" | "email" | "password" | "phone" | "date_of_birth" | "terms" | "adult">;
   message?: string;
   sentTo?: string;
-  values?: { full_name?: string; email?: string; date_of_birth?: string; terms?: boolean; adult?: boolean };
+  values?: { full_name?: string; email?: string; phone?: string; date_of_birth?: string; terms?: boolean; adult?: boolean };
 };
 
 export async function signIn(_prev: AuthState, form: FormData): Promise<AuthState> {
@@ -62,6 +64,7 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
   const values = {
     full_name: data.fullName,
     email: data.email,
+    phone: typeof form.get("phone") === "string" ? (form.get("phone") as string) : "",
     date_of_birth: data.dateOfBirth,
     terms: form.get("terms") === "on",
     adult: form.get("adult") === "on",
@@ -86,8 +89,10 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
       // terms_version and age_confirmed_at ("I confirm I am 18 or over")
       // wait here until there is a session: they are copied into the
       // consents table on the first signed in request (lib/consent-records).
+      // The phone number waits the same way for profiles.phone (lib/phone-records, #285).
       data: {
         full_name: data.fullName,
+        phone: data.phone,
         date_of_birth: data.dateOfBirth,
         terms_version: data.termsVersion,
         terms_accepted_at: new Date().toISOString(),
@@ -121,47 +126,63 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
 }
 
 /**
- * The /welcome step: Google sign ups (Google shares no date of birth) and
- * anyone re-agreeing after revoking consent. Under 18s are signed out without
+ * The /welcome step: Google sign ups (Google shares no date of birth), anyone
+ * re-agreeing after revoking consent, and accounts without a phone number
+ * (#285). It asks only for what is missing. Under 18s are signed out without
  * saving anything. A date of birth already on file cannot change (the Auth
  * layer refuses it, #240), so it is neither asked for nor sent again (#251).
  */
 export async function completeWelcome(_prev: AuthState, form: FormData): Promise<AuthState> {
+  const user = await getCurrentUser();
+  if (!user) redirect("/login");
   const supabase = await createClient();
   const { data: auth } = await supabase.auth.getClaims();
-  if (!auth?.claims?.sub) redirect("/login");
+  const needsConsent = !user.hasAgeAndConsent;
+  const needsPhone = !user.hasPhone;
 
-  const firstVisit = !hasDateOfBirth(auth.claims.user_metadata);
-  const { data, errors } = parseAgeAndConsent(form, new Date(), { askDateOfBirth: firstVisit });
-  if (errors.date_of_birth === UNDER_AGE_MESSAGE) {
+  const firstVisit = !hasDateOfBirth(auth?.claims?.user_metadata);
+  const age = needsConsent ? parseAgeAndConsent(form, new Date(), { askDateOfBirth: firstVisit }) : null;
+  if (age?.errors.date_of_birth === UNDER_AGE_MESSAGE) {
     await supabase.auth.signOut();
     redirect("/login?error=age");
   }
-  if (Object.keys(errors).length) return { errors, values: { date_of_birth: data.dateOfBirth } };
+  const phone = needsPhone ? parseRequiredPhone(form) : null;
+  const errors = { ...age?.errors, ...phone?.errors };
+  const values = { date_of_birth: age?.data.dateOfBirth, phone: typeof form.get("phone") === "string" ? (form.get("phone") as string) : "" };
+  if (Object.keys(errors).length) return { errors, values };
 
-  const now = new Date().toISOString();
-  const { error } = await supabase.auth.updateUser({
-    data: {
-      ...(firstVisit ? { date_of_birth: data.dateOfBirth } : {}),
-      terms_version: data.termsVersion,
-      terms_accepted_at: now,
-      age_confirmed_at: now,
-    },
-  });
-  if (error) {
-    console.error("completeWelcome failed", { code: error.code, status: error.status, message: error.message });
-    await trackRefusal("welcome_completed", "server_error", error.code);
-    return { message: "We couldn't save that. Try again.", values: { date_of_birth: data.dateOfBirth } };
+  if (age) {
+    const now = new Date().toISOString();
+    const { error } = await supabase.auth.updateUser({
+      data: {
+        ...(firstVisit ? { date_of_birth: age.data.dateOfBirth } : {}),
+        terms_version: age.data.termsVersion,
+        terms_accepted_at: now,
+        age_confirmed_at: now,
+      },
+    });
+    if (error) {
+      console.error("completeWelcome failed", { code: error.code, status: error.status, message: error.message });
+      await trackRefusal("welcome_completed", "server_error", error.code);
+      return { message: "We couldn't save that. Try again.", values };
+    }
+    await recordSignUpConsents(supabase, age.data.termsVersion);
+    // First time here without a date of birth means a new Google sign up
+    // (not someone re-agreeing after revoking), so count it as their signup.
+    if (firstVisit) await track("signup", { method: "google" });
+    else await track("welcome_completed");
+    // updateUser keeps the old access token, whose claims still lack the new
+    // metadata. Refresh so the proxy and getClaims see it, or /dashboard
+    // would bounce straight back here.
+    await supabase.auth.refreshSession();
   }
-  await recordSignUpConsents(supabase, data.termsVersion);
-  // First time here without a date of birth means a new Google sign up
-  // (not someone re-agreeing after revoking), so count it as their signup.
-  if (firstVisit) await track("signup", { method: "google" });
-  else await track("welcome_completed");
-  // updateUser keeps the old access token, whose claims still lack the new
-  // metadata. Refresh so the proxy and getClaims see it, or /dashboard
-  // would bounce straight back here.
-  await supabase.auth.refreshSession();
+
+  if (phone) {
+    const saved = await savePhone(supabase, user.id, phone.data.phone);
+    if (saved === "taken") return { errors: { phone: PHONE_TAKEN }, values };
+    if (saved === "failed") return { message: "We couldn't save your phone number. Try again.", values };
+    if (!age) await track("welcome_completed");
+  }
   redirect(nextFrom(form));
 }
 

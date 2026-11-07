@@ -43,6 +43,17 @@ export function SignupForm() {
         required
       />
       <TextField
+        id="phone"
+        label="Phone number"
+        type="tel"
+        inputMode="tel"
+        autoComplete="tel"
+        hint="So your cohort and mentors can reach you. We won't message you without asking first."
+        defaultValue={state.values?.phone}
+        error={state.errors?.phone}
+        required
+      />
+      <TextField
         id="password"
         label="Password"
         type="password"

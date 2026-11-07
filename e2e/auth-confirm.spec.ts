@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 import { confirmationLink } from "./mailpit";
-import { createLearner, PASSWORD, type Learner } from "./learners";
+import { createLearner, PASSWORD, type Learner, testPhone } from "./learners";
 import { admin } from "./supabase-admin";
 
 /**
@@ -31,6 +31,7 @@ test("a sign up confirmation link opens our own site and signs the learner in on
     await page.goto("/signup");
     await page.getByLabel("Your name").fill("Mariama Issah");
     await page.getByLabel("Email").fill(email);
+    await page.getByLabel("Phone number").fill(testPhone());
     await page.getByLabel("Password").fill(PASSWORD);
     await page.getByLabel("Date of birth").fill(ADULT_DOB);
     await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();

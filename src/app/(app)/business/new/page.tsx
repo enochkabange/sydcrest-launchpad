@@ -15,7 +15,7 @@ const NEXT = "/business/new";
 async function Gate() {
   const user = await getCurrentUser();
   if (!user) redirect(`/signup?next=${encodeURIComponent(NEXT)}`);
-  if (!user.hasAgeAndConsent) redirect(`/welcome?next=${encodeURIComponent(NEXT)}`);
+  if (!user.isSetUp) redirect(`/welcome?next=${encodeURIComponent(NEXT)}`);
   return <CreateOrganisationForm />;
 }
 

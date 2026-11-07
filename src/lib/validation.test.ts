@@ -7,7 +7,10 @@ import {
   parseIsoDate,
   parseNewPassword,
   parseProfile,
+  parseRequiredPhone,
   parseResetRequest,
+  PHONE_INVALID,
+  PHONE_REQUIRED,
   parseSignIn,
   parseSignUp,
   safeNextPath,
@@ -28,11 +31,12 @@ function accraNoon(iso: string) {
 
 const NOW = accraNoon("2026-10-25");
 const ADULT = { date_of_birth: "2000-03-14", terms: "on", adult: "on" };
+const PHONE = { phone: "024 123 4567" };
 
 describe("parseSignUp", () => {
   it("accepts a valid sign up and normalises the email", () => {
     const { data, errors } = parseSignUp(
-      form({ full_name: "  Fuseini Alhassan ", email: "Fuseini@Example.com", password: "kpakpa123", ...ADULT }),
+      form({ full_name: "  Fuseini Alhassan ", email: "Fuseini@Example.com", password: "kpakpa123", ...PHONE, ...ADULT }),
       NOW,
     );
     expect(errors).toEqual({});
@@ -40,6 +44,7 @@ describe("parseSignUp", () => {
       fullName: "Fuseini Alhassan",
       email: "fuseini@example.com",
       password: "kpakpa123",
+      phone: "+233241234567",
       dateOfBirth: "2000-03-14",
       termsVersion: LEGAL_VERSION,
     });
@@ -47,7 +52,7 @@ describe("parseSignUp", () => {
 
   it("flags every missing or invalid field", () => {
     const { errors } = parseSignUp(form({ full_name: "", email: "not-an-email", password: "short" }), NOW);
-    expect(Object.keys(errors).sort()).toEqual(["adult", "date_of_birth", "email", "full_name", "password", "terms"]);
+    expect(Object.keys(errors).sort()).toEqual(["adult", "date_of_birth", "email", "full_name", "password", "phone", "terms"]);
   });
 
   it("rejects names over 80 characters", () => {
@@ -58,9 +63,16 @@ describe("parseSignUp", () => {
     expect(errors.full_name).toBeDefined();
   });
 
+  it("requires a phone number and normalises it (#285)", () => {
+    const base = { full_name: "Fuseini Alhassan", email: "f@b.co", password: "longenough", ...ADULT };
+    expect(parseSignUp(form(base), NOW).errors.phone).toBe(PHONE_REQUIRED);
+    expect(parseSignUp(form({ ...base, phone: "123" }), NOW).errors.phone).toBe(PHONE_INVALID);
+    expect(parseSignUp(form({ ...base, phone: "+233 20 123 4567" }), NOW).data.phone).toBe("+233201234567");
+  });
+
   it("refuses under 18s with the friendly message", () => {
     const { errors } = parseSignUp(
-      form({ full_name: "Mariama Iddrisu", email: "m@b.co", password: "longenough", terms: "on", date_of_birth: "2010-06-01" }),
+      form({ full_name: "Mariama Iddrisu", email: "m@b.co", password: "longenough", ...PHONE, terms: "on", date_of_birth: "2010-06-01" }),
       NOW,
     );
     expect(errors).toEqual({ date_of_birth: UNDER_AGE_MESSAGE });
@@ -247,9 +259,17 @@ describe("normalizePhone", () => {
 });
 
 describe("parseProfile phone", () => {
-  it("treats an empty phone as no phone and flags a bad one", () => {
-    expect(parseProfile(form({ display_name: "Wumpini", phone: "" })).data.phone).toBeNull();
+  it("requires a phone, normalises it and flags a bad one (#285)", () => {
+    expect(parseProfile(form({ display_name: "Wumpini", phone: "" })).errors.phone).toBe(PHONE_REQUIRED);
     expect(parseProfile(form({ display_name: "Wumpini", phone: "0241234567" })).data.phone).toBe("+233241234567");
     expect(parseProfile(form({ display_name: "Wumpini", phone: "123" })).errors.phone).toBeDefined();
+  });
+});
+
+describe("parseRequiredPhone", () => {
+  it("returns E.164 for a valid number and an error otherwise", () => {
+    expect(parseRequiredPhone(form({ phone: "0241234567" }))).toEqual({ data: { phone: "+233241234567" }, errors: {} });
+    expect(parseRequiredPhone(form({})).errors).toEqual({ phone: PHONE_REQUIRED });
+    expect(parseRequiredPhone(form({ phone: "phone" })).errors).toEqual({ phone: PHONE_INVALID });
   });
 });
