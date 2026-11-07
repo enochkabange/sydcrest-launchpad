@@ -1,5 +1,5 @@
 /**
- * A deliberately small Markdown parser for reviewed node content.
+ * A deliberately small Markdown parser, now for Study Buddy replies.
  *
  * It produces a plain data tree that React renders as elements, so text is
  * always escaped by React and raw HTML in the source shows up as literal
@@ -8,7 +8,11 @@
  *
  * Supported: headings, paragraphs, bullet and numbered lists, fenced code,
  * block quotes, horizontal rules, and inline bold, italic, code and links.
+ * Study Buddy replies render with it; lesson content (the lesson page and the
+ * public topic page) uses components/learn/markdown-parse instead.
  */
+
+import { parseMarkdown as parseLessonMarkdown, type Inline as LessonInline, type ListBlock } from "@/components/learn/markdown-parse";
 
 export type Inline =
   | { type: "text"; text: string }
@@ -170,15 +174,21 @@ function pushText(out: Inline[], text: string) {
   else out.push({ type: "text", text });
 }
 
-/** Plain text of a Markdown string, for meta descriptions. */
+/**
+ * Plain text of lesson Markdown, for meta descriptions. Uses the lesson
+ * parser, which the topic page renders with, so tables give their cell text
+ * rather than pipes (#271).
+ */
 export function markdownToText(source: string): string {
-  const flatten = (nodes: Inline[]): string =>
+  const flatten = (nodes: LessonInline[]): string =>
     nodes.map((n) => (n.type === "text" || n.type === "code" ? n.text : flatten(n.children))).join("");
-  return parseMarkdown(source)
+  const listText = (list: ListBlock): string =>
+    list.items.map((item) => [flatten(item.children), item.sublist ? listText(item.sublist) : ""].filter(Boolean).join(" ")).join(" ");
+  return parseLessonMarkdown(source)
     .map((b) => {
-      if (b.type === "list") return b.items.map(flatten).join(" ");
+      if (b.type === "list") return listText(b);
+      if (b.type === "table") return [b.caption ?? [], ...b.header, ...b.rows.flat()].map(flatten).filter(Boolean).join(" ");
       if (b.type === "code") return b.text;
-      if (b.type === "rule") return "";
       return flatten(b.children);
     })
     .filter(Boolean)

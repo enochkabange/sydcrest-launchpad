@@ -7,11 +7,18 @@ describe("safeHref", () => {
     expect(safeHref("http://example.com")).toBe("http://example.com");
   });
 
-  it("refuses script, data and relative links", () => {
+  it("refuses script, data and other-host links", () => {
     expect(safeHref("javascript:alert(1)")).toBeNull();
     expect(safeHref("JavaScript:alert(1)")).toBeNull();
     expect(safeHref("data:text/html,<script>alert(1)</script>")).toBeNull();
-    expect(safeHref("/dashboard")).toBeNull();
+    expect(safeHref("//evil.example/x")).toBeNull();
+  });
+
+  it("keeps site paths, which lessons use to link topics (#271)", () => {
+    expect(safeHref("/roadmaps/it-support/dns")).toBe("/roadmaps/it-support/dns");
+    expect(parseInline("[DNS](/roadmaps/it-support/dns)")).toEqual([
+      { type: "link", href: "/roadmaps/it-support/dns", children: [{ type: "text", text: "DNS" }] },
+    ]);
   });
 });
 

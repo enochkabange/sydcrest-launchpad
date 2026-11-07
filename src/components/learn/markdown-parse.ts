@@ -6,7 +6,8 @@
  * Supported: headings (#, ##, ###), paragraphs, bullet and numbered lists
  * (two levels, mixed, numbered lists keep their start number), GFM tables
  * (issue #267), fenced code blocks, block quotes, **bold**, *italic*, `code`
- * and [links](https://...). Links that are not http or https render as text.
+ * and [links](https://...) or site paths ([DNS](/roadmaps/it-support/dns)).
+ * Any other link (javascript:, data:, //host) renders as its text.
  */
 
 export type Inline =
@@ -42,9 +43,14 @@ export type TableBlock = {
 
 const SAFE_HREF = /^https?:\/\/[^\s]+$/i;
 
+/**
+ * http(s) URLs and site paths ("/roadmaps/it-support/dns", which lessons use
+ * to link topics, #271). "//host" would leave the site, so it is refused.
+ */
 export function safeHref(href: string): string | null {
   const trimmed = href.trim();
-  return SAFE_HREF.test(trimmed) ? trimmed : null;
+  if (SAFE_HREF.test(trimmed)) return trimmed;
+  return /^\/(?!\/)\S*$/.test(trimmed) ? trimmed : null;
 }
 
 // Order matters: code first so its contents are never read as emphasis.

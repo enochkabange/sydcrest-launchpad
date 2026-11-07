@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Suspense, type ReactNode } from "react";
-import { Markdown } from "@/components/roadmaps/markdown";
+import { Markdown } from "@/components/learn/markdown";
 import { ShareButton } from "@/components/roadmaps/share-button";
 import { LessonMetaStrip, LessonOutcomes } from "@/components/learn/lesson-meta";
 import { TopicStudyBuddy } from "@/components/study-buddy/topic-study-buddy";
