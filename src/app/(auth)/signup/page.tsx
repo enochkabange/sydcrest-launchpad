@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { KeepNextLink } from "../next-field";
 import { SignupForm } from "./signup-form";
-import { GoogleButton, OrDivider } from "../google-button";
+import { GoogleSignIn } from "../google-button";
 
 export const metadata: Metadata = { title: "Create your account" };
 
@@ -12,8 +12,7 @@ export default function SignupPage() {
         <h1 className="text-title text-content">Start your path into tech</h1>
         <p className="text-content-2">Free to join. One account for roadmaps, cohorts and mentors as each one opens.</p>
       </div>
-      <GoogleButton />
-      <OrDivider />
+      <GoogleSignIn />
       <SignupForm />
       <p className="text-sm text-content-2">
         Already have an account?{" "}
