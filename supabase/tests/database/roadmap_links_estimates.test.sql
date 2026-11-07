@@ -3,7 +3,7 @@
 -- write them, and the view counts words and questions under base table RLS.
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(13);
+select plan(17);
 
 select has_column('public', 'roadmaps', 'leads_to', 'roadmaps has leads_to');
 select col_default_is('public', 'roadmaps', 'leads_to', '{}'::text[], 'leads_to defaults to an empty list');
@@ -71,6 +71,29 @@ select is(
   (select level from public.roadmaps where slug = 'data-analyst'),
   'beginner',
   'a learner cannot change level');
+
+-- Issue #281: the counts are stored when a lesson is written and follow edits.
+update public.node_content
+  set explanation_md = 'One two three.', worked_example_md = 'Four five.', practice_task_md = ''
+  where node_id = 'bbbbbbbb-0000-0000-0000-000000000001';
+update public.node_quiz set questions = '[{"id":"q1","prompt":"A","options":["x","y"]}]'
+  where node_id = 'bbbbbbbb-0000-0000-0000-000000000001';
+select results_eq(
+  $$ select lesson_words, practice_words, quiz_questions from public.node_estimate_inputs
+       where node_id = 'bbbbbbbb-0000-0000-0000-000000000001' $$,
+  $$ values (5, 0, 1) $$,
+  'the view follows lesson and quiz edits');
+select throws_ok(
+  $$ update public.node_content set lesson_words = 1 where node_id = 'bbbbbbbb-0000-0000-0000-000000000001' $$,
+  '428C9', null, 'the stored counts cannot be written directly');
+select is(
+  (select count(*)::int from public.node_estimate_inputs),
+  2,
+  'the view shows published roadmaps only, even to the owner role');
+select is(
+  (select count(*)::int from public.node_estimate_inputs where roadmap_id = 'aaaaaaaa-0000-0000-0000-000000000001'),
+  2,
+  'the view filters by roadmap');
 
 select * from finish();
 rollback;
