@@ -8,7 +8,7 @@
  * someone agrees. Bump it when the text changes in a way people should agree
  * to again: signed in learners are then sent to /welcome to agree (#60).
  */
-export const LEGAL_VERSION = "2026-11";
+export const LEGAL_VERSION = "2026-12";
 
 /** Shows the draft banner. False since the founder approved the text on 7 November 2026 (#60). */
 export const LEGAL_IS_DRAFT = false;
