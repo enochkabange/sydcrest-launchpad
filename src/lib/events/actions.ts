@@ -24,7 +24,7 @@ function field(form: FormData, key: string) {
 
 async function signedIn() {
   const user = await getCurrentUser();
-  if (!user || !user.hasAgeAndConsent) return null;
+  if (!user || !user.isSetUp) return null;
   return { user, supabase: await createClient() };
 }
 

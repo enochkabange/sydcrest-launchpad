@@ -2,6 +2,7 @@ import { expect, test, type Page } from "@playwright/test";
 import { createClient } from "@supabase/supabase-js";
 import { LEGAL_VERSION } from "../src/lib/legal";
 import { ROADMAP_DRAFTS } from "../src/content/roadmaps";
+import { testPhoneE164 } from "./learners";
 
 /**
  * Admin roadmap editor (issue #44). The test user is created and promoted
@@ -25,7 +26,7 @@ async function signInNewUser(page: Page, label: string) {
     email,
     password: PASSWORD,
     email_confirm: true,
-    user_metadata: { full_name: "Fuseini Alhassan", date_of_birth: "1998-06-02", terms_version: LEGAL_VERSION },
+    user_metadata: { full_name: "Fuseini Alhassan", date_of_birth: "1998-06-02", terms_version: LEGAL_VERSION, phone: testPhoneE164() },
   });
   if (error) throw error;
   await page.goto("/login");

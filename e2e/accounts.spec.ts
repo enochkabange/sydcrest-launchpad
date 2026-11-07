@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { confirmationLink } from "./mailpit";
+import { createLearner, testPhone, testPhoneE164 } from "./learners";
+import { admin } from "./supabase-admin";
 
 const PASSWORD = "Tamale-2027-pilot";
 const ADULT_DOB = "2000-03-14";
@@ -17,6 +19,7 @@ test("a learner signs up, confirms, edits their profile, signs out and back in",
     await page.goto("/signup");
     await page.getByLabel("Your name").fill("Wumpini Alhassan");
     await page.getByLabel("Email").fill(email);
+    await page.getByLabel("Phone number").fill(testPhone());
     await page.getByLabel("Password").fill(PASSWORD);
     await page.getByLabel("Date of birth").fill(ADULT_DOB);
     await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
@@ -31,17 +34,18 @@ test("a learner signs up, confirms, edits their profile, signs out and back in",
     await expect(page.getByRole("heading", { name: "Welcome, Wumpini" })).toBeVisible();
   });
 
-  await test.step("set region and phone", async () => {
+  await test.step("set region and change phone", async () => {
     await page.getByRole("link", { name: "Add your region" }).click();
     await expect(page).toHaveURL(/\/profile$/);
     await page.getByLabel("Region").selectOption("northern");
-    await page.getByLabel("Phone number (optional)").fill("024 123 4567");
+    const phone = testPhone();
+    await page.getByLabel("Phone number").fill(phone);
     await page.getByRole("button", { name: "Save changes" }).click();
     await expect(page.getByText("Saved.")).toBeVisible();
     // Stored as E.164, shown back in the local format.
     await page.reload();
     await expect(page.getByLabel("Region")).toHaveValue("northern");
-    await expect(page.getByLabel("Phone number (optional)")).toHaveValue("024 123 4567");
+    await expect(page.getByLabel("Phone number")).toHaveValue(`${phone.slice(0, 3)} ${phone.slice(3, 6)} ${phone.slice(6)}`);
   });
 
   await test.step("sign out from the visible control for this layout", async () => {
@@ -67,6 +71,7 @@ test("someone under 18 is refused at sign up", async ({ page }) => {
   await page.goto("/signup");
   await page.getByLabel("Your name").fill("Mariama Iddrisu");
   await page.getByLabel("Email").fill(`mariama.${crypto.randomUUID().slice(0, 8)}@example.test`);
+  await page.getByLabel("Phone number").fill(testPhone());
   await page.getByLabel("Password").fill(PASSWORD);
   await page.getByLabel("Date of birth").fill(under18Dob());
   await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
@@ -87,6 +92,50 @@ test("sign up needs the terms box ticked", async ({ page }) => {
   // "I confirm I am 18 or over" is its own tick (founder decision D1).
   await expect(page.getByText("Tick the box to confirm you are 18 or over.")).toBeVisible();
   await expect(page.getByText("We sent a confirmation link")).toHaveCount(0);
+});
+
+test("sign up needs a phone number (#285)", async ({ page }) => {
+  await page.goto("/signup");
+  await page.getByLabel("Your name").fill("Fuseini Alhassan");
+  await page.getByLabel("Email").fill(`fuseini.${crypto.randomUUID().slice(0, 8)}@example.test`);
+  await page.getByLabel("Password").fill(PASSWORD);
+  await page.getByLabel("Date of birth").fill(ADULT_DOB);
+  await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
+  await page.getByLabel("I confirm I am 18 or over").check();
+  await page.getByRole("button", { name: "Create account" }).click();
+  await expect(page.getByText("Enter your phone number.")).toBeVisible();
+  await page.getByLabel("Phone number").fill("12345");
+  await page.getByRole("button", { name: "Create account" }).click();
+  await expect(page.getByText("Enter a Ghana number like 024 123 4567")).toBeVisible();
+  await expect(page.getByText("We sent a confirmation link")).toHaveCount(0);
+});
+
+test("an account without a phone number adds one before going on, and cannot take another account's (#285)", async ({ page }) => {
+  const taken = testPhoneE164();
+  const [owner, learner] = await Promise.all([createLearner("Abiba Mahama", { phone: null }), createLearner("Sumaila Iddrisu", { phone: null })]);
+  // As if Abiba had already signed in once: her number is on her profile.
+  await admin(`/rest/v1/profiles?id=eq.${owner.id}`, { method: "PATCH", body: { phone: taken } });
+  try {
+    await page.goto("/login");
+    await page.getByLabel("Email").fill(learner.email);
+    await page.getByLabel("Password").fill(PASSWORD);
+    await page.getByRole("button", { name: "Sign in" }).click();
+    await expect(page).toHaveURL(/\/welcome/);
+    await expect(page.getByText("Add your phone number to keep using SydCrest.")).toBeVisible();
+    // Only the missing detail is asked for.
+    await expect(page.getByLabel("Date of birth")).toHaveCount(0);
+
+    await page.getByLabel("Phone number").fill(`0${taken.slice(4)}`);
+    await page.getByRole("button", { name: "Continue" }).click();
+    await expect(page.getByText("That number is already on another SydCrest account.")).toBeVisible();
+
+    await page.getByLabel("Phone number").fill(testPhone());
+    await page.getByRole("button", { name: "Continue" }).click();
+    await expect(page).toHaveURL(/\/dashboard$/);
+    await expect(page.getByRole("heading", { name: "Welcome, Sumaila" })).toBeVisible();
+  } finally {
+    await Promise.all([owner, learner].map((p) => admin(`/auth/v1/admin/users/${p.id}`, { method: "DELETE" }).catch(() => undefined)));
+  }
 });
 
 test("privacy policy and terms are readable signed out", async ({ page }) => {

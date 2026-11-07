@@ -28,7 +28,7 @@ async function PortfolioScreen({ params }: Pick<PageProps<"/skills/[slug]/portfo
   const here = encodeURIComponent(`/skills/${slug}/portfolio`);
   const user = await getCurrentUser();
   if (!user) redirect(`/login?next=${here}`);
-  if (!user.hasAgeAndConsent) redirect(`/welcome?next=${here}`);
+  if (!user.isSetUp) redirect(`/welcome?next=${here}`);
 
   const skill = await getPublishedSkill(slug);
   const portfolio = skill?.assessments.find((a) => a.kind === "portfolio");

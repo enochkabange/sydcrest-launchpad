@@ -21,6 +21,7 @@ import {
 } from "./access-matrix-seed";
 import { signInAs } from "./nav-seed";
 import { admin } from "./supabase-admin";
+import { testPhone, testPhoneE164 } from "./learners";
 
 /**
  * The access matrix (issue #240, docs/user-types.md): one person per user
@@ -123,6 +124,7 @@ test("under 18: the sign up form and the Auth API both refuse, and no one can ch
   await page.goto("/signup");
   await page.getByLabel("Your name").fill("Fuseini Mahama");
   await page.getByLabel("Email").fill(`fuseini.minor.${crypto.randomUUID().slice(0, 8)}@example.test`);
+  await page.getByLabel("Phone number").fill(testPhone());
   await page.getByLabel("Password").fill(PASSWORD);
   await page.getByLabel("Date of birth").fill(dob);
   await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
@@ -509,7 +511,7 @@ test("an email sign up's 18 or over tick lands in the consent records on the fir
       email,
       password: PASSWORD,
       email_confirm: true,
-      user_metadata: { full_name: "Mariama Abukari", date_of_birth: "2000-03-14", terms_version: "e2e", age_confirmed_at: new Date().toISOString() },
+      user_metadata: { full_name: "Mariama Abukari", date_of_birth: "2000-03-14", terms_version: "e2e", age_confirmed_at: new Date().toISOString(), phone: testPhoneE164() },
     },
   });
   const person = { id, email, name: "Mariama Abukari" };

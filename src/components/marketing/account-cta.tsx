@@ -27,7 +27,7 @@ async function AccountCtaForViewer({ signedOut, signedInLabel }: Props) {
   const user = await getCurrentUser();
   if (!user) return signedOut;
   // Google sign ups confirm their age and the terms on /welcome first.
-  const [href, label] = user.hasAgeAndConsent ? ["/dashboard", signedInLabel] : ["/welcome", "Finish setting up"];
+  const [href, label] = user.isSetUp ? ["/dashboard", signedInLabel] : ["/welcome", "Finish setting up"];
   return (
     <div className="flex flex-wrap gap-3">
       <Link href={href} className={buttonClasses("primary")}>

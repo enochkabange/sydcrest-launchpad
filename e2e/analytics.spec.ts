@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
 import { confirmationLink } from "./mailpit";
+import { testPhone } from "./learners";
 
 test("visitors get a first party anonymous id and no third party trackers", async ({ page, context, baseURL }) => {
   const origin = new URL(baseURL!).origin;
@@ -28,6 +29,7 @@ test("the funnel is for admins only", async ({ page }, testInfo) => {
   await page.goto("/signup");
   await page.getByLabel("Your name").fill("Abdul-Rahman Issah");
   await page.getByLabel("Email").fill(email);
+  await page.getByLabel("Phone number").fill(testPhone());
   await page.getByLabel("Password").fill("Tamale-2027-pilot");
   await page.getByLabel("Date of birth").fill("1999-07-02");
   await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();

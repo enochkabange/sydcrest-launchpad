@@ -56,7 +56,7 @@ function fakeAnthropic() {
   return stream;
 }
 
-const learner = { id: "1b4e28ba-2fa1-41d2-883f-0016d3cca427", email: "mariama@example.com", hasAgeAndConsent: true };
+const learner = { id: "1b4e28ba-2fa1-41d2-883f-0016d3cca427", email: "mariama@example.com", hasAgeAndConsent: true, hasPhone: true, isSetUp: true };
 
 describe("POST /api/study-buddy", () => {
   beforeEach(() => {

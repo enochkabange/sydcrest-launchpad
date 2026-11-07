@@ -20,7 +20,7 @@ export const metadata: Metadata = { title: "Your path" };
 async function PathContent() {
   const user = await getCurrentUser();
   if (!user) redirect("/signup?next=/path");
-  if (!user.hasAgeAndConsent) redirect("/welcome?next=/path");
+  if (!user.isSetUp) redirect("/welcome?next=/path");
 
   const [saved, pending] = await Promise.all([latestSavedAnswers(user.id), readAnswersCookie()]);
   const savedKey = saved ? answersKey(saved) : null;
