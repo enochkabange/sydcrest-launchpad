@@ -14,13 +14,13 @@ import { createClient } from "@/lib/supabase/server";
 export const metadata: Metadata = {
   title: "Chapters",
   description:
-    "Launchpad chapters bring learners together in their city, starting with Tamale and the northern regional capitals.",
+    "Launchpad chapters bring learners together in their city: Tamale, Accra, Wa, Navrongo, Bolgatanga and the North East.",
   alternates: { canonical: "/chapters" },
 };
 
 /**
- * Every visible chapter, plus the northern capitals that do not have one yet
- * (honest "planned" cards). The list is cached and prerendered; the "your
+ * Every visible chapter, plus any of ours that does not exist yet (honest
+ * "planned" cards). The list is cached and prerendered; the "your
  * chapter" card reads the session, so it streams in its own <Suspense>.
  */
 export default function ChaptersPage() {
@@ -30,7 +30,7 @@ export default function ChaptersPage() {
         <h1 className="text-title text-content">Chapters</h1>
         <p className="max-w-reading text-lead text-content-2">
           A chapter is Launchpad in your city: a volunteer lead, a WhatsApp group, meetups and Skillshops. We are starting
-          in the five northern regional capitals, beginning with Tamale.
+          with six: Tamale, Accra, Wa, Navrongo, Bolgatanga and the North East (Nalerigu and Walewale).
         </p>
       </header>
       <MainWithRail
@@ -64,7 +64,7 @@ async function ChapterList() {
           <ChapterCard key={c.id} chapter={c} leads={leads[i]} />
         ))}
         {planned.map((p) => (
-          <PlannedCard key={p.region} city={p.city} regionLabel={p.regionLabel} first={chapters.length === 0 && p.city === "Tamale"} />
+          <PlannedCard key={p.slug} city={p.city} regionLabel={p.regionLabel} first={chapters.length === 0 && p.city === "Tamale"} />
         ))}
       </AutoGrid>
     </section>
