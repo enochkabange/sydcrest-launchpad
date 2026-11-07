@@ -27,7 +27,8 @@ money and data, not short on ability.
 
 ## Roadmap structure
 - 15 to 30 nodes, a shallow tree of sections with 2 to 4 topics each, beginner
-  to job ready.
+  to job ready. (The Digital Skills Bridge may hold up to 34, because its
+  published slugs stay and issue #294 added a section.)
 - Every node is justified in the research file's coverage table by at least one
   signal: job adverts, a skills framework, or a prerequisite of another node.
 - Slugs are lowercase, hyphenated, stable. Change them only before publishing.

@@ -34,9 +34,13 @@ const INTEREST_TRACKS: Record<Exclude<Interest, "unsure">, readonly Track[]> = {
 
 /**
  * Tracks the path quiz never recommends. They are companions taught inside a
- * cohort (the DMP specialisation weeks link to them), not starting points.
+ * cohort (the DMP specialisation weeks link to them) or foundations reached
+ * from another track (the bridge leads to learning online), not starting points.
  */
-export const COHORT_ONLY_TRACKS: ReadonlySet<Track> = new Set<Track>(["digital-marketing-specialisations"]);
+export const COHORT_ONLY_TRACKS: ReadonlySet<Track> = new Set<Track>([
+  "digital-marketing-specialisations",
+  "learning-online",
+]);
 
 /**
  * Tracks with full lessons, matching src/content/roadmaps/content/index.ts
@@ -71,6 +75,7 @@ export const FULL_LESSON_TRACKS: ReadonlySet<Track> = new Set<Track>([
   "data-science",
   "digital-sales",
   "no-code",
+  "learning-online",
 ]);
 
 /** Tracks whose early sections work on a phone. The others need a computer for practice. */
@@ -90,6 +95,7 @@ export const PHONE_FRIENDLY: ReadonlySet<Track> = new Set<Track>([
   "project-management",
   "freelancing",
   "software-testing",
+  "learning-online",
 ]);
 
 const GOAL_AFFINITY: Record<Goal, Track[]> = {

@@ -37,6 +37,7 @@ export const TRACKS = [
   { value: "project-management", label: "Project management" },
   { value: "data-science", label: "Data science" },
   { value: "digital-marketing-specialisations", label: "Digital marketing specialisations" },
+  { value: "learning-online", label: "Learning online" },
 ] as const;
 
 export const FIELD_CATEGORIES = [

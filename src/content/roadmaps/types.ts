@@ -95,7 +95,8 @@ export type RoadmapTrack =
   | "freelancing"
   | "project-management"
   | "data-science"
-  | "digital-marketing-specialisations";
+  | "digital-marketing-specialisations"
+  | "learning-online";
 
 /** Coarse grouping for browsing; not yet fixed in the schema, founder to confirm. */
 export type FieldCategory =

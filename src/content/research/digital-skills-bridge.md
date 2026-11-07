@@ -52,6 +52,10 @@ does not re teach them.
 | D1 | Google Account Help: Turn on 2-Step Verification (reviewer check; menu now "Security & sign-in", so lessons phrase it generally) | https://support.google.com/accounts/answer/185839 | 2026-10-25 | Official documentation, read for accuracy only |
 | D2 | Google Drive Help: Scan documents on Android (reviewer check; scan starts from a Camera button) | https://support.google.com/drive/answer/3145835 | 2026-10-25 | Official documentation, read for accuracy only |
 | D3 | Google Chrome Help: Browse in Incognito mode (reviewer check; what is and is not kept, network and employer can still see activity) | https://support.google.com/chrome/answer/95464 | 2026-10-25 | Official documentation, read for accuracy only |
+| D4 | Google Chrome Help: Create, view and edit bookmarks (bookmark icon, bookmarks bar, Bookmark Manager, sync across devices when signed in) | https://support.google.com/chrome/answer/188842 | 2026-11-07 | Official documentation, read for accuracy only (issue #294) |
+| D5 | Google Chrome Help: Download a file (download tray, More then Downloads, default Downloads folder on Windows, Mac and Linux) | https://support.google.com/chrome/answer/95759 | 2026-11-07 | Official documentation, read for accuracy only (issue #294) |
+| D6 | Google Chrome Help: Check if a site's connection is secure (security icon and site controls, Not secure, Dangerous, Safe Browsing warnings, a secure connection is private but says nothing about honesty) | https://support.google.com/chrome/answer/95617 | 2026-11-07 | Official documentation, read for accuracy only (issue #294) |
+| I1 | Issue #294 (founder ask, 7 November 2026): add "Using the internet" topics to the Bridge: browsers, tabs and bookmarks, downloads, data saving settings, safe sites and links | GitHub issue #294 | 2026-11-07 | Internal |
 
 Searches that found nothing usable (recorded so the gap is honest): several Jobberman
 listings for northern Ghana enumerator, field officer and programme support roles now
@@ -165,6 +169,17 @@ Word, Excel and Sheets (13) are taught in DMP weeks 1 and 2 or later tracks, so 
 only gets learners to the keyboard and the email account those weeks assume. Social media
 responses (3) are covered in DMP weeks 3 and 5. Node count went from 22 to 30.
 
+**Issue #294 (7 November 2026): Using the internet.** The founder asked for browser skills
+in the Bridge. A new section `using-the-internet` sits between `accounts-and-safety` and
+`files-and-forms`, with three topics. Browser data saving settings are taught in the
+section lesson itself, so the four requested topics fit in four nodes and no published
+slug moved or changed. `browsers-tabs-and-bookmarks` builds on the bookmark paragraph in
+`searching-well` rather than repeating it; `browser-downloads` builds on the Downloads
+folder in `files-on-your-phone`; `safe-sites-and-links` stays at everyday checks (reading
+a domain, the security icon, previewing links) and leaves phishing in depth to DMP week 1,
+as `searching-well` leaves judging sources to week 3. Node count went from 30 to 34, so the
+outline test allows the Bridge up to 34 nodes (other tracks stay at 30).
+
 ## Coverage table
 
 Signals: advert numbers (S), framework (F1 DigComp, F3 O*NET, F4 LearnFree topics), or
@@ -191,6 +206,10 @@ prerequisite (P) of another node or of DMP week 1.
 | `files-on-your-phone` | F1 managing information, sharing; S18 (Google Forms, field data); P: job applications need attachments, DMP week 1 files and folders build on it |
 | `online-forms` | S18 S19 (Google Forms, Kobo Collect, mobile data collection); S6 (accurate data capture); F3 entering data; F1 developing simple content |
 | `searching-well` | S3 (online research); F1 browsing, searching, evaluating; F4 Search Better; P for self study in every later node; DMP week 3 goes deeper on judging sources |
+| `using-the-internet` | Section. I1; S1 S2 S4 S6 S9 S10 S13 S14 (basic computer and internet skills); S3 (online research); F1 browsing, searching and filtering, protecting devices; F4 Internet Basics; P for `searching-well`, `online-forms` and DMP week 1 safe browsing. The lesson also covers browser data saving (I1, F1 solving technical problems) |
+| `browsers-tabs-and-bookmarks` | I1; F1 browsing, searching and filtering, managing information; F4 Internet Basics; D4; P for `online-forms` (working across tabs) and `searching-well` |
+| `browser-downloads` | I1; F1 managing information, protecting devices; D5; P for `files-on-your-phone` (job application forms are often downloads) |
+| `safe-sites-and-links` | I1; F1 protecting devices and personal data, evaluating information; F4 Internet Safety; D6; S6 S10 S11 (confidential information); P for DMP week 1 safe browsing and phishing |
 | `computer-access` | Section. 13 adverts ask for basic computer skills; P: DMP week 1 needs a computer |
 | `finding-a-computer` | P for `mouse-and-keyboard`, `typing` and DMP week 1; learners in the north often have no home computer |
 | `mouse-and-keyboard` | S1 S2 S4 S6 S9 S10 S13 S14 (basic computer skills); F4 Mouse Tutorial; P for DMP week 1 hardware |

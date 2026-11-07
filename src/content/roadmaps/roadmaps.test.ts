@@ -31,9 +31,11 @@ describe("roadmap drafts", () => {
         expect(roadmap.description).not.toMatch(DASHES);
       });
 
-      it("has 15 to 30 nodes", () => {
+      // 15 to 30 per the content guide; the bridge may hold 34 because its
+      // published slugs cannot be removed and issue #294 added a section.
+      it("has 15 to 30 nodes (34 for the bridge)", () => {
         expect(roadmap.nodes.length).toBeGreaterThanOrEqual(15);
-        expect(roadmap.nodes.length).toBeLessThanOrEqual(30);
+        expect(roadmap.nodes.length).toBeLessThanOrEqual(roadmap.track === "digital-skills-bridge" ? 34 : 30);
       });
 
       it("has unique node slugs", () => {
