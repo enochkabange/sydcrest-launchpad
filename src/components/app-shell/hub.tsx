@@ -49,7 +49,7 @@ async function GatedCards({ id }: { id: GroupId }) {
 }
 
 /**
- * True when every viewer gets at least one role card (Mentors: Expert
+ * True when every viewer gets at least one role card (Experts: Expert
  * dashboard or Become an expert), so a placeholder card holds its place
  * without ever vanishing. Otherwise the cards appear without one.
  */

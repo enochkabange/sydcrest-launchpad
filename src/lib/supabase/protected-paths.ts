@@ -35,6 +35,7 @@ export const SIGNED_IN_PREFIXES = [
   "/briefs",
   // Community
   "/community",
+  "/chapters/start",
   "/leaderboards",
   // Earn
   "/earn",

@@ -20,7 +20,6 @@ export const metadata = pageMetadata({
 });
 
 const CHAPTER_NOTES: Record<string, string> = {
-  Tamale: "First chapter, being set up now",
   Bolgatanga: "Our first Skillshop ran here in December 2025",
 };
 
@@ -111,20 +110,21 @@ export default function AboutPage() {
 
       <Section
         tone="sunken"
-        title="Regional chapters, starting in Tamale"
+        title="Community led, city by city"
         intro={
           <p>
-            We grow as regional chapters, not one central team. Each chapter has a local volunteer lead
-            who runs the community, events and partnerships in that city. We start in the five northern
-            regional capitals.
+            We grow as chapters, not one central team. Each chapter has a local volunteer lead who runs the
+            community, events and partnerships in that city. We are starting with six, and anyone can apply to start
+            one where they live.
           </p>
         }
       >
-        <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-          {CHAPTERS.map((c, i) => (
+        <ol className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {CHAPTERS.map((c) => (
             <li key={c.city} className="flex flex-col gap-1 rounded-lg border border-line bg-surface p-4">
-              <span className="text-xs font-semibold text-content-3">{i === 0 ? "First" : "Planned"}</span>
-              <span className="text-lg font-bold text-content">{c.city}</span>
+              <span className="text-xs font-semibold text-content-3">Being set up</span>
+              <span className="text-lg font-bold text-content">{c.region === "North East" ? "North East" : c.city}</span>
+              {c.region === "North East" && <span className="text-sm text-content-2">{c.city}</span>}
               <span className="text-sm text-content-2">{c.region} Region</span>
               {CHAPTER_NOTES[c.city] && <span className="text-sm text-content-2">{CHAPTER_NOTES[c.city]}</span>}
             </li>

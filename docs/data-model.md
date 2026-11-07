@@ -16,7 +16,7 @@ is not `security_invoker`, or any private function is executable by everyone.
 ## Tables
 
 **profiles** (extended). One row per auth user, created by the sign up trigger.
-Owner reads and edits name, region, avatar, phone, slug, is_public, headline, skills, goals, display_prefs and milestone_posts (off by default: automatic community posts for finished sections, roadmaps and certificates); role and datacamp_license_slot are staff only.
+Owner reads and edits name, region, avatar, phone, slug, is_public, headline, skills, goals, display_prefs and milestone_posts (off by default: automatic community posts for finished sections, roadmaps and certificates); role, datacamp_license_slot and is_skill_reviewer are staff only (`is_skill_reviewer`: appointed by an admin with `admin_set_skill_reviewer` to review verified skill portfolios, #248).
 
 **public_profiles** (view). Public columns of profiles where `is_public`: id, slug, name, headline, region, avatar, skills, goals.
 Readable by anyone; the only public path to profile data. Never carries phone, role or email.
@@ -55,13 +55,13 @@ Visible to the owner, and to everyone when the owner's profile is public. Minted
 No policies or grants: only the definer triggers on achievements and certificates write it. A milestone post is skipped when the feed's rate limit refuses it or a moderator hid the learner's content in the last 30 days.
 
 **follows**. `(follower_id, following_id)` pairs; no self follow.
-Signed in users read the graph and insert or delete only rows where they are the follower.
+Signed in users read their own follows and followers, and follows between two public profiles (D7, #246); they insert or delete only rows where they are the follower.
 
-**consents**. Append only log of terms, privacy and WhatsApp consent by version, with `granted_at` from the server clock.
+**consents**. Append only log of terms, privacy, WhatsApp and `age_confirmation` ("I confirm I am 18 or over", D1) consent by version, with `granted_at` from the server clock.
 Owner inserts and reads their own; revoking goes through `revoke_consent(kind)`, which stamps `revoked_at`.
 
 **events**. First party analytics: name from a fixed list, optional profile_id, anonymous_id, small props object.
-Anyone may insert (profile_id must be null or their own); only admins read.
+Written only through `record_events` (the direct insert grant was revoked in #247); only admins read.
 The app writes the funnel taxonomy (page_view, signup, quiz_run, path_viewed, node_started, node_completed, invite_sent)
 through `track()` in `src/lib/analytics`; older Phase 1 names stay valid until a contract migration.
 
@@ -72,7 +72,7 @@ Owner reads; only `record_ai_usage` writes, and it can only increase the counter
 Signed in users file as themselves; admins read and change status only.
 
 **waitlist**. Marketing site sign ups: email (format checked, unique ignoring case), name, region, interest.
-Anyone inserts; only admins read. A repeat email returns `23505`; treat it as success.
+Added only through `join_waitlist(p_key, email, name, region, interest)`, which counts the per address form limit in the same transaction (false when over it) and answers a repeat email like a new one (#247). Only admins read.
 
 ## Phase 2 tables (issue #142)
 
@@ -87,9 +87,9 @@ Anyone reads published ones; admins read drafts and do all writes.
 Anyone reads cohorts of published programmes; admins write.
 
 **cohort_members**. `(cohort, profile)` with role, learner `specialization`, status active, deferred (with `deferred_to`) or completed.
-Members read their cohort's rows; admins read all and add, change or remove staff directly. Learners join only through `decide_application` or `defer_learner` (size cap); status, deferral and specialization are never written directly.
+Members read their own rows; cohort staff read their cohort's rows; admins read all and add, change or remove staff directly (#250). Learners join only through `decide_application` or `defer_learner` (size cap); status, deferral and specialization are never written directly.
 
-**cohort_roster** (view). Members of the caller's cohorts with display name, avatar, public slug (if public), role, specialization and status; admins see every cohort.
+**cohort_roster** (view). Members of the caller's cohorts with display name, avatar, public slug (if public), role, specialization, status and deferral; admins see every cohort. Status and `deferred_to` only for staff, admins and the member themselves; learners do not see deferred classmates (#250).
 Signed in only. Never carries phone or email. A security_invoker view over `private.cohort_roster_rows()`.
 
 **cohort_applications**. An application to a programme: preferred cohort, preferred specialization, `screening_answers` (object keyed by question id), status submitted, waitlisted, accepted, declined or withdrawn, and the decision.
@@ -488,6 +488,7 @@ rows carry no user facing text from the database.
 | `submit_skill_quiz(assessment_id, answers)` | signed in | `score`, `passed`, `verified_skill_id`. Does not reveal which answers were right. After a fail, `22023 Try again later` until `retry_after_hours` pass. |
 | `submit_skill_portfolio(assessment_id, portfolio_url, note)` | signed in | Sends work for review; one pending at a time, retry wait after a rejection. |
 | `review_skill_portfolio(attempt_id, approve, note)` | reviewers (never their own) | Approve issues the verified skill; reject needs a note. Notifies either way. |
+| `admin_set_skill_reviewer(profile_id, reviewer)` | admins | Appoints or removes a portfolio reviewer (`profiles.is_skill_reviewer`, #248). `admin_skill_reviewers()` lists them (names only). |
 | `claim_path_skills()` | signed in | Issues skills mapped after the caller completed a roadmap. Completion itself issues them automatically. |
 | `revoke_verified_skill(id, reason)` | admins | Revokes with a reason; the badge leaves public profiles and the talent directory. |
 | `mark_notifications_read(ids)` | signed in | Marks the given (or, with null, all) of the caller's notifications read; returns the count. |
@@ -586,7 +587,7 @@ Owners invite at any role, admins invite admins and recruiters; the invitee acce
 **organisation_roster** (view). Members with name and avatar, for active members of that organisation and admins.
 
 **expert_profiles**. Seller mode, one per account: slug, headline, bio, skills, categories, links (http only), languages, region, availability note, `accepting_requests`, `offers_free_intro`, status pending, approved or delisted, `is_verified`, `is_featured`.
-Anyone reads approved ones; owners and admins read all. The owner edits the content columns; status, verified and featured change only through admin functions. `is_verified` is the admin identity check badge (§5.5), not the verified SydCrest skill badge, which is `verified_skills` (#158).
+Anyone reads approved ones; owners and admins read all. Created only by `apply_as_expert` together with the application (#249). The owner edits the content columns; status, verified and featured change only through admin functions. `is_verified` is the admin identity check badge (§5.5), not the verified SydCrest skill badge, which is `verified_skills` (#158).
 
 **expert_applications**. The review record for becoming an expert: motivation, experience, evidence links, `fast_track` (set by the database for mentors and cohort mentors or coordinators), status submitted, approved, rejected or withdrawn, decision. One open application per person. Create the expert profile first, then apply.
 The applicant and admins read it; the applicant can only withdraw it.
@@ -646,6 +647,7 @@ Writable only while the learner is an adult and `private.talent_eligible`; switc
 | `accept_organisation_invite(organisation_id)` | the invitee (adult) | Activates the caller's invitation. |
 | `request_organisation_verification(organisation_id)` | owners and admins of it | unverified or rejected to pending. |
 | `admin_set_organisation_verification(organisation_id, status, note)` | admins | Any status; `verified` stamps who and when. |
+| `apply_as_expert(slug, headline, skills, categories, links, motivation, experience, evidence_links)` | adults | Creates (or refreshes a pending or delisted) expert profile and submits the application in one go. `42501` under 18, `23505` slug taken, `55000` already applied or approved. |
 | `decide_expert_application(application_id, decision, note)` | admins | `approved` (lists the expert) or `rejected`, for an open application. |
 | `admin_set_expert_status(profile_id, status, reason)` | admins | `pending`, `approved` (list again) or `delisted`. |
 | `admin_set_expert_flags(profile_id, is_verified, is_featured)` | admins | Null leaves a flag as it is. |

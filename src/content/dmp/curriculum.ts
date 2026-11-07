@@ -227,7 +227,7 @@ const SPECIALIZATION_WEEKS_7_TO_9: Record<DmpTrack, AuthoredWeek[]> = {
         { name: 'Google Ads Help: Understanding bidding basics', url: 'https://support.google.com/google-ads/answer/2459326' },
         { name: 'Google Ads Help: About optimisation score', url: 'https://support.google.com/google-ads/answer/9061546' },
       ],
-      assignment: 'Create a Google Ads account, set up a demo campaign, and submit screenshots of the settings.',
+      assignment: 'Plan a search campaign for a mock business in a settings sheet: budget, bidding, keywords and ads. Only if you already have a Google Ads account, also screenshot those settings with the campaign paused. Do not add payment details.',
     },
   ],
 };

@@ -52,18 +52,25 @@ export function ageOn(dob: CalendarDate, today: CalendarDate) {
 /**
  * The date of birth and consent checks shared by email sign up and the
  * /welcome step for Google sign ups, so the two paths can't drift apart.
+ * Date of birth (unless it is already on file: it cannot change once set),
+ * the terms tick and the "I confirm I am 18 or over" tick (founder decision
+ * D1). Shared by sign up and /welcome.
  */
-export function parseAgeAndConsent(form: FormData, now: Date = new Date()) {
-  const dateOfBirth = text(form, "date_of_birth");
+export function parseAgeAndConsent(form: FormData, now: Date = new Date(), { askDateOfBirth = true }: { askDateOfBirth?: boolean } = {}) {
+  const dateOfBirth = askDateOfBirth ? text(form, "date_of_birth") : "";
   const agreed = form.get("terms") === "on";
-  const errors: FieldErrors<"date_of_birth" | "terms"> = {};
+  const adult = form.get("adult") === "on";
+  const errors: FieldErrors<"date_of_birth" | "terms" | "adult"> = {};
 
-  const dob = parseIsoDate(dateOfBirth);
-  const today = todayInAccra(now);
-  if (!dateOfBirth) errors.date_of_birth = "Enter your date of birth.";
-  else if (!dob || dob.year < 1900) errors.date_of_birth = "Enter a real date of birth.";
-  else if (compareDates(dob, today) > 0) errors.date_of_birth = "Your date of birth can't be in the future.";
-  else if (ageOn(dob, today) < MINIMUM_AGE) errors.date_of_birth = UNDER_AGE_MESSAGE;
+  if (askDateOfBirth) {
+    const dob = parseIsoDate(dateOfBirth);
+    const today = todayInAccra(now);
+    if (!dateOfBirth) errors.date_of_birth = "Enter your date of birth.";
+    else if (!dob || dob.year < 1900) errors.date_of_birth = "Enter a real date of birth.";
+    else if (compareDates(dob, today) > 0) errors.date_of_birth = "Your date of birth can't be in the future.";
+    else if (ageOn(dob, today) < MINIMUM_AGE) errors.date_of_birth = UNDER_AGE_MESSAGE;
+  }
+  if (!adult && errors.date_of_birth !== UNDER_AGE_MESSAGE) errors.adult = "Tick the box to confirm you are 18 or over.";
   if (!agreed) errors.terms = "Tick the box to agree to the Terms and Privacy Policy.";
 
   return { data: { dateOfBirth, termsVersion: LEGAL_VERSION }, errors };
@@ -74,7 +81,11 @@ export function parseSignUp(form: FormData, now: Date = new Date()) {
   const email = text(form, "email").toLowerCase();
   const password = typeof form.get("password") === "string" ? (form.get("password") as string) : "";
   const age = parseAgeAndConsent(form, now);
-  const errors: FieldErrors<"full_name" | "email" | "password" | "date_of_birth" | "terms"> = { ...age.errors };
+  const phone = parseRequiredPhone(form);
+  const errors: FieldErrors<"full_name" | "email" | "password" | "phone" | "date_of_birth" | "terms" | "adult"> = {
+    ...age.errors,
+    ...phone.errors,
+  };
 
   if (!fullName) errors.full_name = "Tell us your name.";
   else if (fullName.length > 80) errors.full_name = "Keep your name under 80 characters.";
@@ -82,7 +93,7 @@ export function parseSignUp(form: FormData, now: Date = new Date()) {
   const weak = passwordError(password);
   if (weak) errors.password = weak;
 
-  return { data: { fullName, email, password, ...age.data }, errors };
+  return { data: { fullName, email, password, ...phone.data, ...age.data }, errors };
 }
 
 /** The password rule for sign up and for setting a new one after a reset. */
@@ -146,17 +157,33 @@ export function formatPhone(e164: string | null) {
   return m ? `0${m[1]} ${m[2]} ${m[3]}` : e164;
 }
 
+export const PHONE_REQUIRED = "Enter your phone number.";
+export const PHONE_INVALID = "Enter a Ghana number like 024 123 4567, or start with + for another country.";
+export const PHONE_TAKEN = "That number is already on another SydCrest account. Use a different number.";
+
+/**
+ * The phone number every account needs (issue #285): asked at sign up, on
+ * /welcome for accounts without one, and kept on /profile. Returned in E.164.
+ */
+export function parseRequiredPhone(form: FormData) {
+  const input = text(form, "phone");
+  const phone = input ? normalizePhone(input) : null;
+  const errors: FieldErrors<"phone"> = {};
+  if (!input) errors.phone = PHONE_REQUIRED;
+  else if (!phone) errors.phone = PHONE_INVALID;
+  return { data: { phone: phone ?? "" }, errors };
+}
+
 export function parseProfile(form: FormData) {
   const displayName = text(form, "display_name");
   const region = text(form, "region");
-  const phoneInput = text(form, "phone");
-  const phone = phoneInput ? normalizePhone(phoneInput) : null;
-  const errors: FieldErrors<"display_name" | "region" | "phone"> = {};
+  const { data: phoneData, errors: phoneErrors } = parseRequiredPhone(form);
+  const phone = phoneData.phone;
+  const errors: FieldErrors<"display_name" | "region" | "phone"> = { ...phoneErrors };
 
   if (!displayName) errors.display_name = "Your name can't be empty.";
   else if (displayName.length > 80) errors.display_name = "Keep your name under 80 characters.";
   if (region && !isRegionSlug(region)) errors.region = "Choose a region from the list.";
-  if (phoneInput && !phone) errors.phone = "Enter a Ghana number like 024 123 4567, or start with + for another country.";
 
   return {
     data: { display_name: displayName, region: (region || null) as RegionSlug | null, phone },

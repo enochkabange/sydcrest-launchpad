@@ -92,7 +92,7 @@ async function RequestArea({ expert, offer }: { expert: DirectoryExpert; offer: 
   const here = requestPath(expert.slug, offer.id);
   const user = await getCurrentUser();
   if (!user) redirect(`/login?next=${encodeURIComponent(here)}`);
-  if (!user.hasAgeAndConsent) redirect(`/welcome?next=${encodeURIComponent(here)}`);
+  if (!user.isSetUp) redirect(`/welcome?next=${encodeURIComponent(here)}`);
   const first = expert.name.split(" ")[0];
 
   if (user.id === expert.profileId) {

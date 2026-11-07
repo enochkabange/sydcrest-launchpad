@@ -1,5 +1,6 @@
 "use server";
 
+import { track, trackRefusal } from "@/lib/analytics/track";
 import { requireUser } from "@/lib/auth";
 import { clearAnswersCookie, readAnswersCookie } from "@/lib/path/cookie";
 import { parseAnswers } from "@/lib/path/quiz";
@@ -23,7 +24,11 @@ export async function savePendingPath(localAnswers: unknown): Promise<SaveState>
     return { status: "none" };
   }
   const outcome = await savePath(user.id, answers);
-  if (!outcome.saved) return { status: "unsaved", result: outcome.result, reason: outcome.reason };
+  if (!outcome.saved) {
+    await trackRefusal("path_saved", "server_error", outcome.reason);
+    return { status: "unsaved", result: outcome.result, reason: outcome.reason };
+  }
   await clearAnswersCookie();
+  await track("path_saved");
   return { status: "saved" };
 }

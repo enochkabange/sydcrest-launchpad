@@ -53,10 +53,10 @@ describe("roadmap lesson content", () => {
           }
         });
 
-        it(`${slug} explanation is 300 to 600 words`, () => {
+        it(`${slug} explanation is 300 to 900 words (denser lessons, #256)`, () => {
           const words = node.explanation_md.split(/\s+/).filter(Boolean).length;
           expect(words).toBeGreaterThanOrEqual(300);
-          expect(words).toBeLessThanOrEqual(600);
+          expect(words).toBeLessThanOrEqual(900);
         });
       }
     });

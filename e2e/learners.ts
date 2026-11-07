@@ -2,6 +2,7 @@
  * Test setup through the LOCAL Supabase stack with the secret key: create
  * confirmed learners and promote admins. Never point this at hosted projects.
  */
+import { LEGAL_VERSION } from "../src/lib/legal";
 const URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "http://127.0.0.1:54321";
 const KEY = process.env.SUPABASE_SECRET_KEY ?? "";
 
@@ -14,8 +15,29 @@ function headers() {
 
 export type Learner = { id: string; email: string; name: string };
 
-/** A confirmed adult learner who has agreed to the terms, ready to sign in. */
-export async function createLearner(name: string): Promise<Learner> {
+/**
+ * A random Ghana mobile number, as a learner would type it (024 plus seven
+ * digits). Every account needs a different one (#285), and the phone and
+ * desktop projects run the same specs, so tests never share a fixed number.
+ */
+export function testPhone(): string {
+  return `024${String(Math.floor(Math.random() * 1e7)).padStart(7, "0")}`;
+}
+
+/** testPhone in E.164, for metadata and direct database writes. */
+export function testPhoneE164(): string {
+  return `+233${testPhone().slice(1)}`;
+}
+
+/**
+ * A confirmed adult learner who has agreed to the terms and given a phone
+ * number, ready to sign in. `phone: null` makes an account from before #285;
+ * an earlier `termsVersion` makes one that agreed before the terms changed (#60).
+ */
+export async function createLearner(
+  name: string,
+  { phone = testPhoneE164(), termsVersion = LEGAL_VERSION }: { phone?: string | null; termsVersion?: string } = {},
+): Promise<Learner> {
   const email = `${name.split(" ")[0].toLowerCase()}.${crypto.randomUUID().slice(0, 8)}@example.test`;
   const res = await fetch(`${URL}/auth/v1/admin/users`, {
     method: "POST",
@@ -24,7 +46,7 @@ export async function createLearner(name: string): Promise<Learner> {
       email,
       password: PASSWORD,
       email_confirm: true,
-      user_metadata: { full_name: name, date_of_birth: "2000-03-14", terms_version: "e2e" },
+      user_metadata: { full_name: name, date_of_birth: "2000-03-14", terms_version: termsVersion, ...(phone ? { phone } : {}) },
     }),
   });
   if (!res.ok) throw new Error(`createLearner failed: ${res.status} ${await res.text()}`);

@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
@@ -64,6 +65,7 @@ export async function createPost(scope: string, scopeId: string | null, _prev: F
     body: body.body,
     link_url: link.link,
   });
+  await trackResult("post_created", error, { scope: ref.scope });
   if (error) return { error: communityErrorMessage(error.code) };
   refresh();
   return { ok: true };
@@ -76,6 +78,7 @@ export async function createReply(postId: string, _prev: FormState, form: FormDa
   if ("error" in body) return { error: body.error };
   const supabase = await createClient();
   const { error } = await supabase.from("community_replies").insert({ post_id: postId, author_id: user.id, body: body.body });
+  await trackResult("reply_created", error);
   if (error) {
     // RLS refuses replies to hidden posts or outside the group.
     return { error: error.code === "42501" ? "You can't reply to this post." : communityErrorMessage(error.code) };
@@ -100,6 +103,7 @@ export async function setReaction(
       .from("community_reactions")
       .insert(target === "post" ? { profile_id: user.id, kind, post_id: targetId } : { profile_id: user.id, kind, reply_id: targetId });
     // A repeat is fine: one per kind per target.
+    await trackResult("reaction_set", error && error.code !== "23505" ? error : null, { on: true });
     if (error && error.code !== "23505") return { error: communityErrorMessage(error.code) };
   } else {
     const { error } = await supabase
@@ -108,6 +112,7 @@ export async function setReaction(
       .eq("profile_id", user.id)
       .eq(column, targetId)
       .eq("kind", kind);
+    await trackResult("reaction_set", error, { on: false });
     if (error) return { error: communityErrorMessage(error.code) };
   }
   return {};
@@ -148,6 +153,7 @@ export async function reportContent(
     target_id: id,
     reason: details ? `${reason}: ${details}` : reason,
   });
+  await trackResult("content_reported", error);
   if (error) return { error: isRateLimited(error) ? RATE_LIMIT_MESSAGE : "We couldn't send your report. Try again." };
   return { ok: true };
 }
@@ -172,6 +178,7 @@ export async function moderateContent(
     p_hide: hide,
     ...(hide ? { p_reason: reason } : {}),
   });
+  await trackResult("content_moderated", error, { hide });
   if (error) return { error: error.code === "42501" ? "Only moderators of this group can do that." : communityErrorMessage(error.code) };
   refresh();
   return { ok: true };

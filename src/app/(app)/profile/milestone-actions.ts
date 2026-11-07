@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 
@@ -12,6 +13,7 @@ export async function setMilestonePosts(_prev: MilestonePostsState, form: FormDa
   const want = form.get("milestone_posts") === "on";
   const supabase = await createClient();
   const { error } = await supabase.from("profiles").update({ milestone_posts: want }).eq("id", user.id);
+  await trackResult("milestone_posts_set", error, { on: want });
   if (error) return { enabled: !want, message: "We couldn't save your choice. Try again." };
   return { enabled: want, saved: Date.now() };
 }

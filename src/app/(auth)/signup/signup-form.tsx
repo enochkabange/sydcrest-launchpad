@@ -22,7 +22,7 @@ export function SignupForm() {
   }
 
   return (
-    <form action={action} className="flex flex-col gap-4" noValidate>
+    <form data-analytics-form="sign_up" action={action} className="flex flex-col gap-4" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       <NextField />
       <TextField
@@ -43,6 +43,17 @@ export function SignupForm() {
         required
       />
       <TextField
+        id="phone"
+        label="Phone number"
+        type="tel"
+        inputMode="tel"
+        autoComplete="tel"
+        hint="So your cohort and mentors can reach you. We won't message you without asking first."
+        defaultValue={state.values?.phone}
+        error={state.errors?.phone}
+        required
+      />
+      <TextField
         id="password"
         label="Password"
         type="password"
@@ -55,6 +66,7 @@ export function SignupForm() {
       <AgeConsentFields
         defaultDateOfBirth={state.values?.date_of_birth}
         defaultTerms={state.values?.terms}
+        defaultAdult={state.values?.adult}
         errors={state.errors}
       />
       <Button type="submit" disabled={pending} className="w-full">

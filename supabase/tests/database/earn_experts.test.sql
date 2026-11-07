@@ -2,7 +2,7 @@
 -- the admin functions that approve, flag and delist.
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(43);
+select plan(46);
 
 -- Abdul-Rahman and Adisa (a mentor) apply to sell; Wumpini is a learner;
 -- Fuseini is 16; Mariama is an admin.
@@ -24,10 +24,13 @@ update public.profiles set role = 'mentor' where id = '77777777-7777-7777-7777-7
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"22222222-2222-2222-2222-222222222222","role":"authenticated"}', true);
 
+select throws_ok(
+  $$ insert into public.expert_profiles (slug, headline) values ('abdul-direct', 'Facebook ads for Tamale shops') $$,
+  '42501', null, 'an expert profile cannot be created without an application (#249)');
 select lives_ok(
-  $$ insert into public.expert_profiles (slug, headline, skills, links)
-     values ('abdul-rahman', 'Facebook ads for Tamale shops', '{facebook ads,copywriting}', '{https://abdul.example.test}') $$,
-  'an adult creates an expert profile');
+  $$ select public.apply_as_expert('abdul-rahman', 'Facebook ads for Tamale shops', '{facebook ads,copywriting}', '{}',
+       '{https://abdul.example.test}', 'I run ads for six shops in Tamale', null, '{https://abdul.example.test/work}') $$,
+  'an adult applies: the profile and the application go in together');
 select is((select status from public.expert_profiles where profile_id = '22222222-2222-2222-2222-222222222222'),
   'pending', 'a new expert profile is pending');
 select throws_ok(
@@ -46,14 +49,12 @@ select throws_ok(
   $$ update public.expert_profiles set links = '{javascript:alert(1)}' $$,
   '23514', null, 'links must be http links');
 
-select lives_ok(
-  $$ insert into public.expert_applications (motivation, evidence_links)
-     values ('I run ads for six shops in Tamale', '{https://abdul.example.test/work}') $$,
-  'the expert applies');
+select is((select count(*)::int from public.expert_applications where status = 'submitted'), 1,
+  'the application is in the admin queue');
 select is((select fast_track from public.expert_applications), false, 'an outside expert is not fast tracked');
 select throws_ok(
-  $$ insert into public.expert_applications (motivation) values ('Again') $$,
-  '23505', null, 'one open application at a time');
+  $$ select public.apply_as_expert('abdul-rahman', 'Again', null, null, null, 'Again', null, null) $$,
+  '55000', null, 'one open application at a time');
 select throws_ok(
   $$ update public.expert_applications set status = 'approved' $$,
   '42501', null, 'applicants cannot approve themselves');
@@ -81,13 +82,18 @@ select throws_ok(
 -- Others ---------------------------------------------------------------------------------
 select set_config('request.jwt.claims', '{"sub":"44444444-4444-4444-4444-444444444444","role":"authenticated"}', true);
 select throws_ok(
-  $$ insert into public.expert_profiles (slug, headline) values ('fuseini', 'Young seller') $$,
+  $$ select public.apply_as_expert('fuseini', 'Young seller', null, null, null, 'I want to sell', null, null) $$,
   '42501', null, 'under 18s cannot become experts');
 
 select set_config('request.jwt.claims', '{"sub":"11111111-1111-1111-1111-111111111111","role":"authenticated"}', true);
 select throws_ok(
   $$ insert into public.offers (kind, title, description, scope, delivery_days) values ('gig', 'Mine', 'Mine', 'x', 1) $$,
   '42501', null, 'people without an expert profile cannot create offers');
+select throws_ok(
+  $$ select public.apply_as_expert('abdul-rahman', 'Spreadsheets', null, null, null, 'I teach Excel', null, null) $$,
+  '23505', null, 'a taken link name is refused');
+select is((select count(*)::int from public.expert_profiles where profile_id = '11111111-1111-1111-1111-111111111111'), 0,
+  'a refused application leaves no profile behind');
 select is((select count(*)::int from public.expert_profiles), 0, 'pending experts are hidden from other learners');
 select is((select count(*)::int from public.expert_applications), 0, 'learners cannot read others'' applications');
 select is((select count(*)::int from public.expert_application_queue), 0, 'learners get nothing from the admin queue');
@@ -97,8 +103,7 @@ select throws_ok(
 
 -- A mentor is fast tracked and can withdraw.
 select set_config('request.jwt.claims', '{"sub":"77777777-7777-7777-7777-777777777777","role":"authenticated"}', true);
-insert into public.expert_profiles (slug, headline) values ('adisa', 'Digital marketing mentor');
-insert into public.expert_applications (motivation) values ('I mentor the DMP cohort');
+select public.apply_as_expert('adisa', 'Digital marketing mentor', null, null, null, 'I mentor the DMP cohort', null, null);
 select is((select fast_track from public.expert_applications), true, 'mentors are fast tracked');
 update public.expert_applications set status = 'withdrawn';
 select is((select status from public.expert_applications), 'withdrawn', 'an applicant withdraws');

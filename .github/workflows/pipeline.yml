@@ -88,7 +88,7 @@ jobs:
         with:
           version: 2.114.0 # keep in step with the local CLI; generated types depend on it
       - name: Cache Supabase images
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: /tmp/supabase-image-cache
           key: supabase-images-v2-db-${{ hashFiles('supabase/config.toml') }}
@@ -121,7 +121,7 @@ jobs:
         with:
           version: 2.114.0
       - name: Cache Supabase images
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: /tmp/supabase-image-cache
           key: supabase-images-v3-e2e-${{ hashFiles('supabase/config.toml') }}

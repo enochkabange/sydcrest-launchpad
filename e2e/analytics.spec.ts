@@ -1,5 +1,6 @@
 import { expect, test } from "@playwright/test";
 import { confirmationLink } from "./mailpit";
+import { testPhone } from "./learners";
 
 test("visitors get a first party anonymous id and no third party trackers", async ({ page, context, baseURL }) => {
   const origin = new URL(baseURL!).origin;
@@ -9,8 +10,10 @@ test("visitors get a first party anonymous id and no third party trackers", asyn
     if (url.protocol.startsWith("http") && url.origin !== origin) thirdParty.push(url.origin);
   });
 
-  // The page_view Server Action posts back to the page itself.
-  const pageView = page.waitForRequest((r) => r.method() === "POST" && new URL(r.url()).pathname === "/about");
+  // Page views go out through the first party beacon (issue #242).
+  const pageView = page.waitForRequest((r) => r.method() === "POST" && new URL(r.url()).pathname === "/api/analytics", {
+    timeout: 20_000,
+  });
   await page.goto("/about");
   await pageView;
 
@@ -26,9 +29,11 @@ test("the funnel is for admins only", async ({ page }, testInfo) => {
   await page.goto("/signup");
   await page.getByLabel("Your name").fill("Abdul-Rahman Issah");
   await page.getByLabel("Email").fill(email);
+  await page.getByLabel("Phone number").fill(testPhone());
   await page.getByLabel("Password").fill("Tamale-2027-pilot");
   await page.getByLabel("Date of birth").fill("1999-07-02");
   await page.getByLabel(/I agree to the Terms and Privacy Policy/).check();
+  await page.getByLabel("I confirm I am 18 or over").check();
   await page.getByRole("button", { name: "Create account" }).click();
   await expect(page.getByText(`We sent a confirmation link to ${email}`)).toBeVisible();
 
@@ -42,7 +47,9 @@ test("the funnel is for admins only", async ({ page }, testInfo) => {
 });
 
 test("the privacy policy counts a page view too", async ({ page }) => {
-  const pageView = page.waitForRequest((r) => r.method() === "POST" && new URL(r.url()).pathname === "/privacy");
+  const pageView = page.waitForRequest((r) => r.method() === "POST" && new URL(r.url()).pathname === "/api/analytics", {
+    timeout: 20_000,
+  });
   await page.goto("/privacy");
   await pageView;
 });

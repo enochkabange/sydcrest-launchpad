@@ -1,5 +1,6 @@
 "use server";
 
+import { trackRefusal, trackResult } from "@/lib/analytics/track";
 import { redirect } from "next/navigation";
 import { getMyProfile, requireUser } from "@/lib/auth";
 import { notifyBookingEvent } from "@/lib/bookings/notify";
@@ -22,7 +23,10 @@ export async function submitRequest(slug: string, offerId: string, _prev: Reques
   const user = await requireUser();
   const { data, errors } = parseRequest(form);
   const values = { message: data.message, preferred_times: data.preferred_times ?? "" };
-  if (Object.keys(errors).length) return { errors, values };
+  if (Object.keys(errors).length) {
+    await trackRefusal("booking_requested", "validation");
+    return { errors, values };
+  }
 
   const found = await getOffer(slug, offerId);
   if (!found || !found.expert.acceptingRequests) return { message: requestErrorMessage({ code: "22023" }), values };
@@ -34,6 +38,7 @@ export async function submitRequest(slug: string, offerId: string, _prev: Reques
     .insert({ requester_id: user.id, expert_id: expert.profileId, offer_id: offer.id, ...data })
     .select("id")
     .single();
+  await trackResult("booking_requested", error ?? (booking ? null : { code: "P0002" }));
   if (error || !booking) return { message: requestErrorMessage(error), values };
 
   const me = await getMyProfile();

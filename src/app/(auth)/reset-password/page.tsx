@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
+import { cookies } from "next/headers";
 import { createClient } from "@/lib/supabase/server";
-import { isRecoverySession } from "@/lib/password-reset";
+import { isRecoverySession, RECOVERY_COOKIE } from "@/lib/password-reset";
 import { ResetPasswordForm } from "./reset-password-form";
 import { LinkExpired } from "./link-expired";
 
@@ -14,8 +15,8 @@ export const metadata: Metadata = { title: "Choose a new password" };
  */
 async function ResetOrExpired() {
   const supabase = await createClient();
-  const { data } = await supabase.auth.getClaims();
-  return data?.claims?.sub && isRecoverySession(data.claims) ? <ResetPasswordForm /> : <LinkExpired />;
+  const [{ data }, cookieStore] = await Promise.all([supabase.auth.getClaims(), cookies()]);
+  return data?.claims?.sub && isRecoverySession(data.claims, cookieStore.get(RECOVERY_COOKIE)?.value) ? <ResetPasswordForm /> : <LinkExpired />;
 }
 
 export default function ResetPasswordPage() {

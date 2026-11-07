@@ -4,9 +4,12 @@ import { safeNextPath } from "@/lib/validation";
 import { RESET_PASSWORD_PATH } from "@/lib/password-reset";
 
 /**
- * Lands Google sign in, email confirmation and password reset links (PKCE
- * code exchange). `next` is only ever a local path (safeNextPath). A reset
- * link that no longer works goes back to the forgot password form.
+ * Lands Google sign in (PKCE code exchange). Our auth emails link to
+ * /auth/confirm instead (supabase/templates); this route still lands any
+ * email sent with Supabase's default template, whose link verifies on
+ * Supabase and then comes back here with a code. `next` is only ever a local
+ * path (safeNextPath). A reset link that no longer works goes back to the
+ * forgot password form.
  */
 export async function GET(request: NextRequest) {
   const { searchParams, origin } = request.nextUrl;

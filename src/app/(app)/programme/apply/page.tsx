@@ -52,7 +52,7 @@ export default function ApplyPage() {
 async function requireApplicant() {
   const user = await getCurrentUser();
   if (!user) redirect(`/login?next=${encodeURIComponent(APPLY_PATH)}`);
-  if (!user.hasAgeAndConsent) redirect(`/welcome?next=${encodeURIComponent(APPLY_PATH)}`);
+  if (!user.isSetUp) redirect(`/welcome?next=${encodeURIComponent(APPLY_PATH)}`);
   return user;
 }
 

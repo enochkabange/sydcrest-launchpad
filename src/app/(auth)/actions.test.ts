@@ -1,17 +1,27 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { addressKey, signInPairKey, SIGN_IN_LIMIT_MESSAGE } from "@/lib/rate-limit";
 
 vi.mock("server-only", () => ({}));
 
 const signInWithPassword = vi.fn();
 const signInWithOAuth = vi.fn();
+const signUpAuth = vi.fn();
+const getClaims = vi.fn();
+const updateUser = vi.fn();
+const refreshSession = vi.fn();
+const signOut = vi.fn();
 const rpc = vi.fn();
 vi.mock("@/lib/supabase/server", () => ({
-  createClient: async () => ({ auth: { signInWithPassword, signInWithOAuth }, rpc }),
+  createClient: async () => ({ auth: { signInWithPassword, signInWithOAuth, signUp: signUpAuth, getClaims, updateUser, refreshSession, signOut }, rpc }),
 }));
 vi.mock("@/lib/site-url", () => ({ siteOrigin: async () => "https://sydcrest.example" }));
-vi.mock("@/lib/analytics/track", () => ({ track: vi.fn() }));
-vi.mock("@/lib/consent-records", () => ({ recordLegalConsent: vi.fn() }));
+vi.mock("@/lib/analytics/track", () => ({ track: vi.fn(), trackNow: vi.fn(), trackRefusal: vi.fn() }));
+const recordSignUpConsents = vi.fn();
+vi.mock("@/lib/consent-records", () => ({ recordSignUpConsents: (...args: unknown[]) => recordSignUpConsents(...args) }));
+const getCurrentUser = vi.fn();
+vi.mock("@/lib/auth", () => ({ getCurrentUser: () => getCurrentUser() }));
+const savePhone = vi.fn();
+vi.mock("@/lib/phone-records", () => ({ savePhone: (...args: unknown[]) => savePhone(...args) }));
 let requestHeaders = new Headers();
 vi.mock("next/headers", () => ({ headers: async () => requestHeaders }));
 class Redirect extends Error {
@@ -25,7 +35,7 @@ vi.mock("next/navigation", () => ({
   },
 }));
 
-const { signIn, signInWithGoogle } = await import("./actions");
+const { completeWelcome, signIn, signInWithGoogle, signUp } = await import("./actions");
 
 function form(fields: Record<string, string>) {
   const f = new FormData();
@@ -119,9 +129,119 @@ describe("signIn", () => {
   });
 });
 
+describe("signUp", () => {
+  const fields = { full_name: "Fuseini Alhassan", email: "fuseini@example.test", password: "longenough", date_of_birth: "2000-03-14", terms: "on", adult: "on" };
+
+  it("needs a phone number before asking Supabase (#285)", async () => {
+    const state = await signUp({}, form(fields));
+    expect(state.errors?.phone).toBe("Enter your phone number.");
+    expect(signUpAuth).not.toHaveBeenCalled();
+  });
+
+  it("keeps the number, in E.164, in metadata until there is a session (#285)", async () => {
+    signUpAuth.mockResolvedValue({ data: { session: null, user: null }, error: null });
+    const state = await signUp({}, form({ ...fields, phone: "024 123 4567" }));
+    expect(state.sentTo).toBe("fuseini@example.test");
+    expect(signUpAuth.mock.calls[0][0].options.data).toMatchObject({ full_name: "Fuseini Alhassan", phone: "+233241234567" });
+  });
+});
+
 describe("signInWithGoogle", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
+
   it("is not limited", async () => {
+    vi.stubEnv("AUTH_GOOGLE_ENABLED", "true");
     await expect(signInWithGoogle()).rejects.toMatchObject({ to: "https://accounts.google.example/o" });
     expect(rpc).not.toHaveBeenCalled();
+  });
+
+  it("sends the visitor back to sign in without asking Supabase while Google is off", async () => {
+    vi.stubEnv("AUTH_GOOGLE_ENABLED", "");
+    await expect(signInWithGoogle()).rejects.toMatchObject({ to: "/login" });
+    expect(signInWithOAuth).not.toHaveBeenCalled();
+  });
+});
+
+describe("completeWelcome", () => {
+  const claims = (user_metadata: Record<string, unknown>) => ({ data: { claims: { sub: "wumpini-id", user_metadata } } });
+
+  const user = (setup: { hasAgeAndConsent: boolean; hasPhone: boolean }) => ({ id: "wumpini-id", email: null, ...setup, isSetUp: false });
+
+  beforeEach(() => {
+    updateUser.mockResolvedValue({ data: {}, error: null });
+    refreshSession.mockResolvedValue({ data: {}, error: null });
+    getCurrentUser.mockResolvedValue(user({ hasAgeAndConsent: false, hasPhone: true }));
+    savePhone.mockResolvedValue("saved");
+  });
+
+  it("asks an account without a phone for one and saves it, without touching consent (#285)", async () => {
+    getCurrentUser.mockResolvedValue(user({ hasAgeAndConsent: true, hasPhone: false }));
+    getClaims.mockResolvedValue(claims({ date_of_birth: "1999-03-14", terms_version: "v1" }));
+    expect((await completeWelcome({}, form({}))).errors).toEqual({ phone: "Enter your phone number." });
+    await expect(completeWelcome({}, form({ phone: "024 123 4567", next: "/learn" }))).rejects.toMatchObject({ to: "/learn" });
+    expect(savePhone).toHaveBeenCalledWith(expect.anything(), "wumpini-id", "+233241234567");
+    expect(updateUser).not.toHaveBeenCalled();
+  });
+
+  it("refuses a number that is on another account (#285)", async () => {
+    getCurrentUser.mockResolvedValue(user({ hasAgeAndConsent: true, hasPhone: false }));
+    getClaims.mockResolvedValue(claims({ date_of_birth: "1999-03-14", terms_version: "v1" }));
+    savePhone.mockResolvedValue("taken");
+    const state = await completeWelcome({}, form({ phone: "0241234567" }));
+    expect(state.errors?.phone).toBe("That number is already on another SydCrest account. Use a different number.");
+    expect(state.values?.phone).toBe("0241234567");
+  });
+
+  it("asks for consent and phone together when both are missing", async () => {
+    getCurrentUser.mockResolvedValue(user({ hasAgeAndConsent: false, hasPhone: false }));
+    getClaims.mockResolvedValue(claims({ full_name: "Mariama Seidu" }));
+    const missing = await completeWelcome({}, form({ terms: "on", adult: "on" }));
+    expect(Object.keys(missing.errors ?? {}).sort()).toEqual(["date_of_birth", "phone"]);
+    await expect(
+      completeWelcome({}, form({ date_of_birth: "2000-03-14", terms: "on", adult: "on", phone: "0201234567" })),
+    ).rejects.toMatchObject({ to: "/dashboard" });
+    expect(updateUser).toHaveBeenCalledTimes(1);
+    expect(savePhone).toHaveBeenCalledWith(expect.anything(), "wumpini-id", "+233201234567");
+  });
+
+  it("re-agreeing keeps the date of birth on file and never sends another one (#251)", async () => {
+    getClaims.mockResolvedValue(claims({ date_of_birth: "1999-03-14", terms_version: "old" }));
+    await expect(
+      completeWelcome({}, form({ date_of_birth: "1990-01-01", terms: "on", adult: "on", next: "/dashboard" })),
+    ).rejects.toMatchObject({ to: "/dashboard" });
+    const sent = updateUser.mock.calls[0][0].data as Record<string, unknown>;
+    expect(sent).not.toHaveProperty("date_of_birth");
+    expect(sent).toMatchObject({ terms_version: expect.any(String), age_confirmed_at: expect.any(String) });
+    expect(recordSignUpConsents).toHaveBeenCalledTimes(1);
+  });
+
+  it("asks a first time Google sign up for their date of birth and saves it", async () => {
+    getClaims.mockResolvedValue(claims({ full_name: "Mariama Seidu" }));
+    const missing = await completeWelcome({}, form({ terms: "on", adult: "on" }));
+    expect(missing.errors?.date_of_birth).toBe("Enter your date of birth.");
+    expect(updateUser).not.toHaveBeenCalled();
+
+    await expect(completeWelcome({}, form({ date_of_birth: "2000-03-14", terms: "on", adult: "on" }))).rejects.toMatchObject({
+      to: "/dashboard",
+    });
+    expect(updateUser.mock.calls[0][0].data).toMatchObject({ date_of_birth: "2000-03-14" });
+  });
+
+  it("needs the 18 or over tick (D1)", async () => {
+    getClaims.mockResolvedValue(claims({ date_of_birth: "1999-03-14" }));
+    const state = await completeWelcome({}, form({ terms: "on" }));
+    expect(state.errors?.adult).toBe("Tick the box to confirm you are 18 or over.");
+    expect(updateUser).not.toHaveBeenCalled();
+  });
+
+  it("signs an under 18 out without saving anything", async () => {
+    getClaims.mockResolvedValue(claims({}));
+    await expect(completeWelcome({}, form({ date_of_birth: "2015-01-01", terms: "on", adult: "on" }))).rejects.toMatchObject({
+      to: "/login?error=age",
+    });
+    expect(signOut).toHaveBeenCalled();
+    expect(updateUser).not.toHaveBeenCalled();
   });
 });

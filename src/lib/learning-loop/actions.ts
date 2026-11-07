@@ -1,5 +1,6 @@
 "use server";
 
+import { trackRefusal, trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
@@ -32,6 +33,7 @@ export async function setWeeklyGoal(_prev: GoalState, form: FormData): Promise<G
       { profile_id: user.id, week_start: weekStart(accraDay(new Date())), topics_target: target },
       { onConflict: "profile_id,week_start" },
     );
+  await trackResult("weekly_goal_set", error, { goal: target });
   if (error) return { message: "We couldn't save your goal. Try again." };
   refresh();
   return { saved: target };
@@ -42,10 +44,17 @@ export async function submitReview(_prev: ReviewState, form: FormData): Promise<
   const refs = parseReviewRefs(form.get("items"));
   if (!refs) return { message: "This review could not be read. Start a new one." };
   const answers = parseReviewAnswers(form, refs);
-  if (!answers) return { message: "Choose an answer for every question, then check again." };
+  if (!answers) {
+    await trackRefusal("review_completed", "validation", "unanswered");
+    return { message: "Choose an answer for every question, then check again." };
+  }
 
   const supabase = await createClient();
   const { data, error } = await supabase.rpc("submit_review", { p_answers: answers }).single();
+  await trackResult("review_completed", error ?? (data ? null : { code: "P0002" }), {
+    items: data?.question_count,
+    correct: data?.correct_count,
+  });
   if (error || !data) {
     if (error?.code === "22023" || error?.code === "42501" || error?.code === "P0002") {
       return { message: "Your topics changed since this review started. Start a new one." };

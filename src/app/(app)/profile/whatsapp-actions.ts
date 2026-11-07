@@ -1,5 +1,6 @@
 "use server";
 
+import { track, trackResult } from "@/lib/analytics/track";
 import { createClient } from "@/lib/supabase/server";
 import { requireUser } from "@/lib/auth";
 import { shouldSendWelcome, WHATSAPP_CONSENT_KIND, WHATSAPP_CONSENT_VERSION } from "@/lib/messaging/consent";
@@ -16,6 +17,7 @@ export async function setWhatsAppConsent(_prev: WhatsAppState, form: FormData): 
 
   if (!want) {
     const { error } = await supabase.rpc("revoke_consent", { p_kind: WHATSAPP_CONSENT_KIND });
+    await trackResult("whatsapp_consent_set", error, { on: false });
     if (error) return { enabled: true, message: "We couldn't save your choice. Try again." };
     return { enabled: false, saved: Date.now() };
   }
@@ -51,5 +53,6 @@ export async function setWhatsAppConsent(_prev: WhatsAppState, form: FormData): 
   if (shouldSendWelcome(existing, profile.phone)) {
     await sendWhatsApp(profile.phone, "welcome", { name: firstName(profile.display_name) });
   }
+  await track("whatsapp_consent_set", { on: true });
   return { enabled: true, saved: Date.now() };
 }

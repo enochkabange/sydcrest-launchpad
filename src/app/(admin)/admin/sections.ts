@@ -10,6 +10,7 @@ export const ADMIN_SECTIONS: { href: string; label: string; description: string 
   { href: "/admin/opportunities", label: "Opportunities", description: "Post and edit jobs, internships, scholarships, grants and gigs for the public board." },
   { href: "/admin/events", label: "Events", description: "Create events, add joining links and recordings, and open host tools." },
   { href: "/admin/chapters", label: "Chapters", description: "Create regional chapters, set their status and appoint leads." },
+  { href: "/admin/chapters/applications", label: "Chapter applications", description: "Approve people who want to start a chapter where they live." },
   { href: "/admin/skills", label: "Skills", description: "Build the verified skill catalogue: map skills to roadmaps and write assessments." },
   { href: "/admin/reports", label: "Reports", description: "Triage safety reports from learners." },
   { href: "/admin/experts", label: "Experts", description: "Review expert applications, approve, delist, verify and feature experts." },
@@ -18,5 +19,6 @@ export const ADMIN_SECTIONS: { href: string; label: string; description: string 
   { href: "/admin/outcomes", label: "Outcomes", description: "Verify the jobs, internships, contracts and awards learners report." },
   { href: "/admin/impact", label: "North Star", description: "Completion and verified placements by cohort, within six months of the end." },
   { href: "/admin/organisations", label: "Organisations", description: "Verify business accounts before they post or browse talent." },
+  { href: "/admin/insights", label: "Insights", description: "Reporting dashboards: active people, funnel, retention, learning, features, cohorts, Earn, community and reliability." },
   { href: "/admin/funnel", label: "Funnel", description: "See how visitors move from sign up to their first completed node." },
 ];

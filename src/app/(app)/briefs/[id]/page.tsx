@@ -57,7 +57,7 @@ async function BriefArea({ params, searchParams }: PageProps<"/briefs/[id]">) {
   const [{ id }, query] = await Promise.all([params, searchParams]);
   const user = await getCurrentUser();
   if (!user) redirect(`/login?next=${encodeURIComponent(`/briefs/${id}`)}`);
-  if (!user.hasAgeAndConsent) redirect(`/welcome?next=${encodeURIComponent(`/briefs/${id}`)}`);
+  if (!user.isSetUp) redirect(`/welcome?next=${encodeURIComponent(`/briefs/${id}`)}`);
 
   const [brief, viewer] = await Promise.all([getBrief(id), getViewer(user.id)]);
   if (!brief) notFound();

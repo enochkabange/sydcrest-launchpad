@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { refresh, revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
@@ -65,6 +66,7 @@ export async function createOffer(_prev: OfferFormState, form: FormData): Promis
   const supabase = await createClient();
   const { count } = await supabase.from("offers").select("id", { count: "exact", head: true }).eq("expert_id", user.id);
   const { error } = await supabase.from("offers").insert({ ...data, expert_id: user.id, position: count ?? 0 });
+  await trackResult("offer_created", error);
   if (error) return { ...offerError(error), values };
 
   revalidatePath("/expert");
@@ -84,6 +86,7 @@ export async function updateOffer(offerId: string, _prev: OfferFormState, form: 
     .eq("expert_id", user.id)
     .select("id")
     .maybeSingle();
+  await trackResult("offer_updated", error);
   if (error) return { ...offerError(error), values };
   if (!row) return { message: "That offer no longer exists.", values };
 

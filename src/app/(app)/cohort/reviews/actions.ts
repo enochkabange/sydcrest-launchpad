@@ -1,5 +1,6 @@
 "use server";
 
+import { trackRefusal, trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
@@ -29,13 +30,17 @@ export async function submitPeerReview(reviewId: string, _prev: ReviewState, for
   const { data: rubrics } = await supabase.from("rubrics").select("program_week_id, criteria").eq("program_id", row.program_id);
   const criteria = parseCriteria(rubricForWeek(rubrics ?? [], row.program_week_id)?.criteria);
   const { data, errors } = parseReviewForm(form, criteria);
-  if (Object.keys(errors).length) return { errors };
+  if (Object.keys(errors).length) {
+    await trackRefusal("peer_review_submitted", "validation");
+    return { errors };
+  }
 
   const { error } = await supabase.rpc("submit_peer_review", {
     p_review_id: reviewId,
     p_rubric_scores: data.scores,
     p_comment: data.comment,
   });
+  await trackResult("peer_review_submitted", error);
   if (error) return { message: friendlyDbError(error, "We could not send your review. Try again.") };
   refresh();
   return { ok: "Review sent. Thank you. You can update it at any time.", at: Date.now() };

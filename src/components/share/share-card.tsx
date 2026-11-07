@@ -1,5 +1,6 @@
 "use client";
 
+import { clientTrack } from "@/lib/analytics/client/analytics";
 import { Check, Download, Link2, Share2 } from "lucide-react";
 import { useEffect, useId, useState, useSyncExternalStore } from "react";
 import { Button, buttonClasses } from "@/components/ui/button";
@@ -51,6 +52,7 @@ export function ShareCard({
   );
   const src = `${imageBase}/${format}`;
   const fileName = cardFileName(headline, format);
+  const sharedTarget = imageBase.includes("certificate") ? "certificate" : "achievement";
 
   // Fetch the image ahead of the tap: share sheets need the file ready the
   // moment the button is pressed, or some browsers refuse to open.
@@ -75,6 +77,7 @@ export function ShareCard({
     if (!file) return;
     try {
       await navigator.share({ files: [file], title: headline, text: `${text} ${pageUrl}` });
+      clientTrack("share_clicked", { target: sharedTarget, channel: "share" });
       setStatus("Shared.");
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") return;
@@ -85,6 +88,7 @@ export function ShareCard({
   async function shareLink() {
     try {
       await navigator.share({ title: headline, text, url: pageUrl });
+      clientTrack("share_clicked", { target: sharedTarget, channel: "share" });
       setStatus("Shared.");
     } catch (error) {
       if (error instanceof DOMException && error.name === "AbortError") return;
@@ -95,6 +99,7 @@ export function ShareCard({
   async function copy() {
     try {
       await navigator.clipboard.writeText(pageUrl);
+      clientTrack("share_clicked", { target: sharedTarget, channel: "copy" });
       setStatus("Link copied.");
     } catch {
       setStatus("Copy failed. The link is " + pageUrl);
@@ -164,7 +169,12 @@ export function ShareCard({
                   Share link
                 </Button>
               )}
-              <a href={src} download={fileName} className={buttonClasses(mode === "none" ? "primary" : "secondary")}>
+              <a
+                href={src}
+                download={fileName}
+                onClick={() => clientTrack("share_clicked", { target: sharedTarget, channel: "download" })}
+                className={buttonClasses(mode === "none" ? "primary" : "secondary")}
+              >
                 <Download aria-hidden="true" className="size-4" />
                 Download image
               </a>

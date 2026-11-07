@@ -1,5 +1,6 @@
 "use server";
 
+import { trackRefusal, trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
@@ -32,11 +33,15 @@ export async function submitApplication(_prev: ApplyState, form: FormData): Prom
     programme.specializations,
     cohorts.map((c) => c.id),
   );
-  if (Object.keys(errors).length) return { errors, values: formValues(form) };
+  if (Object.keys(errors).length) {
+    await trackRefusal("application_submitted", "validation");
+    return { errors, values: formValues(form) };
+  }
 
   const { error } = await supabase
     .from("cohort_applications")
     .insert({ program_id: programme.id, profile_id: user.id, ...data });
+  await trackResult("application_submitted", error);
   if (error) {
     if (error.code === "23505") {
       refresh();
@@ -57,6 +62,7 @@ export async function withdrawApplication(applicationId: string): Promise<Withdr
   await requireUser();
   const supabase = await createClient();
   const { error } = await supabase.rpc("withdraw_application", { p_application_id: applicationId });
+  await trackResult("application_withdrawn", error);
   if (error) {
     refresh();
     return { message: "This application can no longer be withdrawn. It may already have a decision." };

@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { getCurrentUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { parseDisplayPrefs } from "./prefs";
@@ -16,5 +17,6 @@ export async function saveDisplayPrefsToProfile(input: unknown): Promise<{ ok: b
   const prefs = parseDisplayPrefs(input);
   const supabase = await createClient();
   const { error } = await supabase.from("profiles").update({ display_prefs: prefs }).eq("id", user.id);
+  await trackResult("display_prefs_saved", error);
   return { ok: !error };
 }

@@ -1,5 +1,6 @@
 "use server";
 
+import { track, trackRefusal, trackResult } from "@/lib/analytics/track";
 import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
@@ -27,7 +28,10 @@ export async function createOrganisation(_prev: CreateOrganisationState, form: F
   const user = await requireUser();
   const { data, errors } = parseOrganisation(form);
   const values = { ...data, slug: typeof form.get("slug") === "string" ? String(form.get("slug")) : "" };
-  if (Object.keys(errors).length) return { errors, values };
+  if (Object.keys(errors).length) {
+    await trackRefusal("organisation_created", "validation");
+    return { errors, values };
+  }
   if (form.get("acts_for") !== "on") {
     return { message: "Confirm that you are allowed to act for this organisation.", values };
   }
@@ -37,12 +41,16 @@ export async function createOrganisation(_prev: CreateOrganisationState, form: F
   let slug = data.slug;
   for (let attempt = 0; attempt < 3; attempt++) {
     const { error } = await supabase.from("organisations").insert({ ...data, slug, created_by: user.id });
-    if (!error) redirect(`/org/${slug}/manage?created=1`);
+    if (!error) {
+      await track("organisation_created");
+      redirect(`/org/${slug}/manage?created=1`);
+    }
     if (error.code === "23505" && !slugTyped) {
       // The address made from the name is taken; add a short random tail and try again.
       slug = slugWithSuffix(data.slug, crypto.randomUUID().slice(0, 6));
       continue;
     }
+    await trackResult("organisation_created", error);
     if (error.code === "23505") return { errors: { slug: organisationErrorMessage("23505", "") }, values };
     return { message: organisationErrorMessage(error.code, "We couldn't create the organisation. Try again."), values };
   }

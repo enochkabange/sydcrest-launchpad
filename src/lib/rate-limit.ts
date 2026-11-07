@@ -33,7 +33,7 @@ export const FORM_RATE_LIMIT_MESSAGE =
 export const SIGN_IN_LIMIT_MESSAGE =
   "Too many attempts. Please wait a few minutes and try again, or reset your password.";
 
-export type FormBucket = "waitlist" | "sign_up" | "password_reset";
+export type FormBucket = "waitlist" | "sign_up" | "password_reset" | "beacon";
 
 /** True when a Supabase error is the rate limiter refusing the write. */
 export function isRateLimited(error: { code?: string | null } | null | undefined): boolean {
@@ -67,6 +67,17 @@ async function sha256Hex(text: string): Promise<string> {
 /** A sha256 of the address, the only form of it the database sees. */
 export function addressKey(address: string): Promise<string> {
   return sha256Hex(`sydcrest-rate-limit:${address.toLowerCase()}`);
+}
+
+/**
+ * The key a database side form limit counts this visitor under (the
+ * waitlist's join_waitlist, issue #247): the hashed address, or a fresh
+ * random key on a local run, where every visitor shares one address and
+ * forms are not limited.
+ */
+export async function formKey(headers: HeaderSource): Promise<string> {
+  const address = clientAddress(headers);
+  return isLocalAddress(address) ? sha256Hex(`sydcrest-local:${crypto.randomUUID()}`) : addressKey(address!);
 }
 
 /**

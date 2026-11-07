@@ -14,7 +14,7 @@ export function PitchForm({ briefId, offers }: { briefId: string; offers: { id: 
   const str = (key: string) => (typeof v[key] === "string" ? (v[key] as string) : undefined);
 
   return (
-    <form action={action} className="flex flex-col gap-5" noValidate>
+    <form data-analytics-form="pitch" action={action} className="flex flex-col gap-5" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       <TextAreaField
         id="message"

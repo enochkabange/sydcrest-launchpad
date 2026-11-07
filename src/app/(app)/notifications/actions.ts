@@ -1,5 +1,6 @@
 "use server";
 
+import { track, trackResult } from "@/lib/analytics/track";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
@@ -23,6 +24,7 @@ export async function markAllNotificationsRead() {
   await requireUser();
   const supabase = await createClient();
   const { error } = await supabase.rpc("mark_notifications_read", {});
+  await trackResult("notifications_read_all", error);
   if (error) console.error("notifications: mark all read failed", error.message);
   revalidatePath("/notifications");
 }
@@ -63,6 +65,7 @@ export async function openNotification(formData: FormData) {
     .eq("recipient_id", user.id)
     .maybeSingle();
   if (!data) redirect("/notifications");
+  await track("notification_opened");
   if (!data.read_at) {
     const { error } = await supabase.rpc("mark_notifications_read", { p_ids: [id] });
     if (error) console.error("notifications: mark read on open failed", error.message);

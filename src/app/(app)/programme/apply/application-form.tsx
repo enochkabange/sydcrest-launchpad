@@ -23,7 +23,7 @@ export function ApplicationForm({
   const e = state.errors ?? {};
 
   return (
-    <form action={action} className="flex flex-col gap-5" noValidate>
+    <form data-analytics-form="programme_apply" action={action} className="flex flex-col gap-5" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       {questions.map((q) => {
         const id = `answer_${q.id}`;

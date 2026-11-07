@@ -1,4 +1,5 @@
 import { connection } from "next/server";
+import { runAnalyticsMaintenance } from "@/lib/analytics/maintenance";
 import { createAdminClient } from "@/lib/messaging/admin";
 import { WHATSAPP_CONSENT_VERSION } from "@/lib/messaging/consent";
 import { isAuthorizedCron } from "@/lib/messaging/cron-auth";
@@ -11,6 +12,9 @@ import { SITE_URL } from "@/lib/site";
 /**
  * Daily re engagement nudge (scheduled in vercel.json). Messages consenting
  * learners who have been inactive for a week, at most once a week each.
+ * Then runs analytics maintenance (rollups and 13 month retention, issue
+ * #242), here because the plan allows two crons. Each step is isolated: one
+ * failing does not stop the other.
  */
 export async function GET(request: Request) {
   await connection();
@@ -25,11 +29,19 @@ export async function GET(request: Request) {
   }
 
   const url = `${SITE_URL.replace(/^https?:\/\//, "")}/dashboard`;
-  const summary = await runReengage({
-    store: supabaseReengageStore(admin),
-    version: WHATSAPP_CONSENT_VERSION,
-    send: (learner) => sendWhatsApp(learner.phone, "reengage", { name: firstName(learner.displayName), url }),
-  });
-  console.info(`[messaging] reengage ${JSON.stringify(summary)}`);
-  return Response.json(summary);
+  let summary: Awaited<ReturnType<typeof runReengage>> | { error: string };
+  try {
+    summary = await runReengage({
+      store: supabaseReengageStore(admin),
+      version: WHATSAPP_CONSENT_VERSION,
+      send: (learner) => sendWhatsApp(learner.phone, "reengage", { name: firstName(learner.displayName), url }),
+    });
+    console.info(`[messaging] reengage ${JSON.stringify(summary)}`);
+  } catch (cause) {
+    console.error("[messaging] reengage failed", { message: cause instanceof Error ? cause.message : String(cause) });
+    summary = { error: "reengage failed" };
+  }
+  const analytics = await runAnalyticsMaintenance(admin);
+  const failed = "error" in summary || !analytics.ok;
+  return Response.json({ ...summary, analytics }, { status: failed ? 500 : 200 });
 }

@@ -26,7 +26,7 @@ async function QuizScreen({ params }: Pick<PageProps<"/skills/[slug]/quiz">, "pa
   const { slug } = await params;
   const user = await getCurrentUser();
   if (!user) redirect(`/login?next=${encodeURIComponent(`/skills/${slug}/quiz`)}`);
-  if (!user.hasAgeAndConsent) redirect(`/welcome?next=${encodeURIComponent(`/skills/${slug}/quiz`)}`);
+  if (!user.isSetUp) redirect(`/welcome?next=${encodeURIComponent(`/skills/${slug}/quiz`)}`);
 
   const skill = await getPublishedSkill(slug);
   const quiz = skill?.assessments.find((a) => a.kind === "quiz");

@@ -1,5 +1,6 @@
 "use server";
 
+import { trackRefusal, trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { redirect } from "next/navigation";
 import { after } from "next/server";
@@ -35,7 +36,10 @@ export async function createBrief(_prev: FormState, form: FormData): Promise<For
   const user = await requireUser();
   const viewer = await getViewer(user.id);
   const { data, errors } = parseBrief(form, viewer.postableOrgs.map((o) => o.id));
-  if (!data) return { errors, values: formValues(form) };
+  if (!data) {
+    await trackRefusal("brief_created", "validation");
+    return { errors, values: formValues(form) };
+  }
 
   const supabase = await createClient();
   // No RETURNING: the read policy checks the row through a function that
@@ -51,6 +55,7 @@ export async function createBrief(_prev: FormState, form: FormData): Promise<For
         .order("created_at", { ascending: false })
         .limit(1)
         .maybeSingle();
+  await trackResult("brief_created", error ?? (brief ? null : { code: "P0002" }));
   if (error || !brief) {
     const message = isRateLimited(error)
       ? RATE_LIMIT_MESSAGE
@@ -82,10 +87,14 @@ export async function submitPitch(briefId: string, _prev: FormState, form: FormD
   if (!isUuid(briefId)) return { message: "This brief is not available." };
   const offers = await getMyActiveOffers(user.id);
   const { data, errors } = parsePitch(form, offers.map((o) => o.id));
-  if (!data) return { errors, values: formValues(form) };
+  if (!data) {
+    await trackRefusal("pitch_submitted", "validation");
+    return { errors, values: formValues(form) };
+  }
 
   const supabase = await createClient();
   const { error } = await supabase.from("pitches").insert({ ...data, brief_id: briefId, expert_id: user.id });
+  await trackResult("pitch_submitted", error);
   if (error) {
     refresh();
     if (error.code === "23505") return { message: "You have already pitched on this brief." };
@@ -125,6 +134,7 @@ export async function withdrawPitch(pitchId: string): Promise<{ message?: string
     .eq("status", "submitted")
     .select("id");
   refresh();
+  await trackResult("pitch_withdrawn", error ?? (data?.length ? null : { code: "P0002" }));
   if (error || !data?.length) return { message: "This pitch can no longer be withdrawn." };
   return {};
 }
@@ -145,6 +155,7 @@ export async function acceptPitch(pitchId: string): Promise<{ message?: string }
     : { data: [] };
 
   const { data: booking, error } = await supabase.rpc("accept_pitch", { p_pitch_id: pitchId });
+  await trackResult("pitch_decided", error ?? (booking ? null : { code: "P0002" }), { decision: "accepted" });
   if (error || !booking) {
     refresh();
     if (error?.code === "42501") return { message: "Only the people who posted this brief can accept a pitch." };
@@ -166,6 +177,7 @@ export async function declinePitch(pitchId: string): Promise<{ message?: string 
   if (!isUuid(pitchId)) return { message: "That pitch is not available." };
   const supabase = await createClient();
   const { data, error } = await supabase.rpc("decline_pitch", { p_pitch_id: pitchId });
+  await trackResult("pitch_decided", error ?? (data ? null : { code: "P0002" }), { decision: "declined" });
   refresh();
   if (error || !data) return { message: "This pitch can no longer be declined." };
   const { data: brief } = await supabase.from("briefs").select("title").eq("id", data.brief_id).maybeSingle();

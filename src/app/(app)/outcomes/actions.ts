@@ -1,5 +1,6 @@
 "use server";
 
+import { trackRefusal, trackResult } from "@/lib/analytics/track";
 import { redirect } from "next/navigation";
 import { revalidatePath } from "next/cache";
 import { requireUser } from "@/lib/auth";
@@ -25,10 +26,14 @@ export async function reportOutcome(_prev: OutcomeFormState, form: FormData): Pr
   // Identity comes from the session, never the form.
   const user = await requireUser();
   const parsed = parseOutcome(form);
-  if (!parsed.data) return { errors: parsed.errors, values: submitted(form) };
+  if (!parsed.data) {
+    await trackRefusal("outcome_reported", "validation");
+    return { errors: parsed.errors, values: submitted(form) };
+  }
 
   const supabase = await createClient();
   const { error } = await supabase.from("outcomes").insert({ ...parsed.data, profile_id: user.id });
+  await trackResult("outcome_reported", error);
   if (error) {
     const message = isRateLimited(error) ? RATE_LIMIT_MESSAGE : "We couldn't save your outcome. Try again.";
     return { message, values: submitted(form) };

@@ -18,7 +18,7 @@ export type SavedOpportunity = { status: SaveStatus; applied_at: string | null; 
 /** The viewer, or null when signed out or still to finish the age and terms step. */
 export const getViewer = cache(async () => {
   const user = await getCurrentUser();
-  return user?.hasAgeAndConsent ? user : null;
+  return user?.isSetUp ? user : null;
 });
 
 /** opportunity id to status, for marking cards and the detail page. */

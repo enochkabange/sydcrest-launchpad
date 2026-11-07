@@ -33,15 +33,33 @@ money and data, not short on ability.
 - Slugs are lowercase, hyphenated, stable. Change them only before publishing.
 
 ## Node content
-- **Explanation:** 300 to 600 words, markdown, short paragraphs, plain English.
+- **Explanation:** 300 to 600 words, markdown, short paragraphs, plain English. Denser lessons (issue #256) go up to 900 words, about 650 to 850, plus the anatomy below.
   Start with why it matters for a job in Ghana, then the idea, then a small
   worked example. Headings only if they help on a small screen. Code blocks
   short enough to read on a small screen.
+- **Markdown you can use (issue #267):** `##` and `###` headings, paragraphs,
+  bullet and numbered lists, tables, fenced code, block quotes, **bold**,
+  *italic*, `code` and https links. No raw HTML (it shows as plain text).
+  - **Lists may nest two levels.** Indent a sub item by two spaces under a
+    bullet, or three under a number; bullets and numbers can mix. A third
+    level is shown as the second, so restructure instead.
+  - **Numbered lists keep your number.** A list that starts `3.` starts at 3,
+    so after a paragraph or code block, continue with the real next number
+    rather than starting again at `1.`.
+  - **Tables are for small comparisons:** a header row, then a delimiter row
+    of `---` per column (`:---` left, `:---:` centre, `---:` right, good for
+    cedi amounts), then the rows. Keep to two to four short columns and about
+    eight rows; a phone scrolls a wider table sideways inside its own box,
+    which works but is slower to read. Put the caption on a `Table: ...` line
+    directly above the header if the table needs a name. Bold, italic, code
+    and links work in cells; write `\|` for a literal pipe. Leave a cell
+    empty or write "None", never a lone hyphen (the no dashes rule). Never
+    use a table for layout or for prose that reads better as a list.
 - **Practice task:** doable with free tools on a phone or a computer,
   with little data. Clear goal, steps, and what "done" looks like. Something a
   learner can show a mentor or put in a portfolio.
 - **Quiz:** 4 or 5 questions, 4 options each, exactly one clearly correct,
-  every question answerable from the explanation alone. Plausible wrong options,
+  every question answerable from the lesson text alone (the explanation or the worked example). Plausible wrong options,
   no trick wording, no "all of the above". A one sentence explanation per
   question. `answer_index` is 0 based. `pass_threshold` is a percentage from
   50 to 100: use 75 for 4 questions and 80 for 5.
@@ -84,6 +102,6 @@ phone, many use a laptop or desktop, and most switch between them.
 2. Fits the learner above; localised without being forced.
 3. Readable on any screen; within the word range; device neutral (see Devices).
 4. Practice task is doable with free tools and little data.
-5. Every quiz question answerable from the explanation; one correct answer.
+5. Every quiz question answerable from the lesson text (explanation or worked example); one correct answer.
 6. No dashes, no invented numbers, no endorsements.
 7. Provenance clean: no roadmap.sh, sources listed.

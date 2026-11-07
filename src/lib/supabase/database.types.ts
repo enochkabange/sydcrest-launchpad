@@ -34,6 +34,33 @@ export type Database = {
   }
   public: {
     Tables: {
+      abandonment_daily: {
+        Row: {
+          day: string
+          finished: number
+          id: number
+          kind: string
+          started: number
+          subject: string
+        }
+        Insert: {
+          day: string
+          finished: number
+          id?: never
+          kind: string
+          started: number
+          subject?: string
+        }
+        Update: {
+          day?: string
+          finished?: number
+          id?: never
+          kind?: string
+          started?: number
+          subject?: string
+        }
+        Relationships: []
+      }
       achievements: {
         Row: {
           created_at: string
@@ -462,6 +489,76 @@ export type Database = {
           {
             foreignKeyName: "certificates_revoked_by_fkey"
             columns: ["revoked_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      chapter_applications: {
+        Row: {
+          chapter_id: string | null
+          created_at: string
+          decided_at: string | null
+          decided_by: string | null
+          decision_note: string | null
+          id: string
+          motivation: string
+          plan: string
+          profile_id: string
+          region: string
+          status: string
+          town: string
+          updated_at: string
+        }
+        Insert: {
+          chapter_id?: string | null
+          created_at?: string
+          decided_at?: string | null
+          decided_by?: string | null
+          decision_note?: string | null
+          id?: string
+          motivation: string
+          plan: string
+          profile_id?: string
+          region: string
+          status?: string
+          town: string
+          updated_at?: string
+        }
+        Update: {
+          chapter_id?: string | null
+          created_at?: string
+          decided_at?: string | null
+          decided_by?: string | null
+          decision_note?: string | null
+          id?: string
+          motivation?: string
+          plan?: string
+          profile_id?: string
+          region?: string
+          status?: string
+          town?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chapter_applications_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "chapter_applications_decided_by_fkey"
+            columns: ["decided_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "chapter_applications_profile_id_fkey"
+            columns: ["profile_id"]
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
@@ -1112,6 +1209,75 @@ export type Database = {
           },
         ]
       }
+      durations_daily: {
+        Row: {
+          day: string
+          id: number
+          mean_seconds: number | null
+          metric: string
+          p50_seconds: number | null
+          p90_seconds: number | null
+          samples: number
+        }
+        Insert: {
+          day: string
+          id?: never
+          mean_seconds?: number | null
+          metric: string
+          p50_seconds?: number | null
+          p90_seconds?: number | null
+          samples: number
+        }
+        Update: {
+          day?: string
+          id?: never
+          mean_seconds?: number | null
+          metric?: string
+          p50_seconds?: number | null
+          p90_seconds?: number | null
+          samples?: number
+        }
+        Relationships: []
+      }
+      errors_daily: {
+        Row: {
+          actors: number
+          code: string
+          day: string
+          device_class: string
+          id: number
+          name: string
+          occurrences: number
+          refusal: string
+          route: string
+          subject: string
+        }
+        Insert: {
+          actors: number
+          code?: string
+          day: string
+          device_class?: string
+          id?: never
+          name: string
+          occurrences: number
+          refusal?: string
+          route?: string
+          subject?: string
+        }
+        Update: {
+          actors?: number
+          code?: string
+          day?: string
+          device_class?: string
+          id?: never
+          name?: string
+          occurrences?: number
+          refusal?: string
+          route?: string
+          subject?: string
+        }
+        Relationships: []
+      }
       event_access: {
         Row: {
           checkin_code: string
@@ -1333,29 +1499,76 @@ export type Database = {
       events: {
         Row: {
           anonymous_id: string | null
+          chapter_id: string | null
+          cohort_id: string | null
           created_at: string
+          device_class: string | null
           id: number
           name: string
+          primary_role: string | null
           profile_id: string | null
           props: Json
+          region: string | null
+          roles: string[] | null
+          route: string | null
+          session_id: string | null
+          signed_in: boolean | null
+          source: string | null
+          track: string | null
         }
         Insert: {
           anonymous_id?: string | null
+          chapter_id?: string | null
+          cohort_id?: string | null
           created_at?: string
+          device_class?: string | null
           id?: never
           name: string
+          primary_role?: string | null
           profile_id?: string | null
           props?: Json
+          region?: string | null
+          roles?: string[] | null
+          route?: string | null
+          session_id?: string | null
+          signed_in?: boolean | null
+          source?: string | null
+          track?: string | null
         }
         Update: {
           anonymous_id?: string | null
+          chapter_id?: string | null
+          cohort_id?: string | null
           created_at?: string
+          device_class?: string | null
           id?: never
           name?: string
+          primary_role?: string | null
           profile_id?: string | null
           props?: Json
+          region?: string | null
+          roles?: string[] | null
+          route?: string | null
+          session_id?: string | null
+          signed_in?: boolean | null
+          source?: string | null
+          track?: string | null
         }
         Relationships: [
+          {
+            foreignKeyName: "events_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "events_cohort_id_fkey"
+            columns: ["cohort_id"]
+            isOneToOne: false
+            referencedRelation: "cohorts"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "events_profile_id_fkey"
             columns: ["profile_id"]
@@ -1364,6 +1577,54 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      events_daily: {
+        Row: {
+          actors: number
+          chapter_id: string | null
+          cohort_id: string | null
+          day: string
+          device_class: string
+          events: number
+          id: number
+          name: string
+          primary_role: string
+          region: string
+          route: string
+          signed_in: boolean
+          track: string
+        }
+        Insert: {
+          actors: number
+          chapter_id?: string | null
+          cohort_id?: string | null
+          day: string
+          device_class?: string
+          events: number
+          id?: never
+          name: string
+          primary_role?: string
+          region?: string
+          route?: string
+          signed_in: boolean
+          track?: string
+        }
+        Update: {
+          actors?: number
+          chapter_id?: string | null
+          cohort_id?: string | null
+          day?: string
+          device_class?: string
+          events?: number
+          id?: never
+          name?: string
+          primary_role?: string
+          region?: string
+          route?: string
+          signed_in?: boolean
+          track?: string
+        }
+        Relationships: []
       }
       expert_applications: {
         Row: {
@@ -1689,9 +1950,11 @@ export type Database = {
           generated_at: string
           id: string
           key_terms: Json | null
+          lesson_words: number
           node_id: string
           outcomes: string[] | null
           practice_task_md: string | null
+          practice_words: number
           self_check: string[] | null
           updated_at: string
           worked_example_md: string | null
@@ -1704,9 +1967,11 @@ export type Database = {
           generated_at?: string
           id?: string
           key_terms?: Json | null
+          lesson_words?: number
           node_id: string
           outcomes?: string[] | null
           practice_task_md?: string | null
+          practice_words?: number
           self_check?: string[] | null
           updated_at?: string
           worked_example_md?: string | null
@@ -1719,21 +1984,16 @@ export type Database = {
           generated_at?: string
           id?: string
           key_terms?: Json | null
+          lesson_words?: number
           node_id?: string
           outcomes?: string[] | null
           practice_task_md?: string | null
+          practice_words?: number
           self_check?: string[] | null
           updated_at?: string
           worked_example_md?: string | null
         }
         Relationships: [
-          {
-            foreignKeyName: "node_content_node_id_fkey"
-            columns: ["node_id"]
-            isOneToOne: true
-            referencedRelation: "node_estimate_inputs"
-            referencedColumns: ["node_id"]
-          },
           {
             foreignKeyName: "node_content_node_id_fkey"
             columns: ["node_id"]
@@ -1749,6 +2009,7 @@ export type Database = {
           id: string
           node_id: string
           pass_threshold: number
+          question_count: number
           questions: Json
           updated_at: string
         }
@@ -1757,6 +2018,7 @@ export type Database = {
           id?: string
           node_id: string
           pass_threshold?: number
+          question_count?: number
           questions: Json
           updated_at?: string
         }
@@ -1765,17 +2027,11 @@ export type Database = {
           id?: string
           node_id?: string
           pass_threshold?: number
+          question_count?: number
           questions?: Json
           updated_at?: string
         }
         Relationships: [
-          {
-            foreignKeyName: "node_quiz_node_id_fkey"
-            columns: ["node_id"]
-            isOneToOne: true
-            referencedRelation: "node_estimate_inputs"
-            referencedColumns: ["node_id"]
-          },
           {
             foreignKeyName: "node_quiz_node_id_fkey"
             columns: ["node_id"]
@@ -1849,13 +2105,6 @@ export type Database = {
           url?: string
         }
         Relationships: [
-          {
-            foreignKeyName: "node_resources_node_id_fkey"
-            columns: ["node_id"]
-            isOneToOne: false
-            referencedRelation: "node_estimate_inputs"
-            referencedColumns: ["node_id"]
-          },
           {
             foreignKeyName: "node_resources_node_id_fkey"
             columns: ["node_id"]
@@ -2509,6 +2758,7 @@ export type Database = {
           headline: string | null
           id: string
           is_public: boolean
+          is_skill_reviewer: boolean
           milestone_posts: boolean
           phone: string | null
           public_slug: string | null
@@ -2527,6 +2777,7 @@ export type Database = {
           headline?: string | null
           id: string
           is_public?: boolean
+          is_skill_reviewer?: boolean
           milestone_posts?: boolean
           phone?: string | null
           public_slug?: string | null
@@ -2545,6 +2796,7 @@ export type Database = {
           headline?: string | null
           id?: string
           is_public?: boolean
+          is_skill_reviewer?: boolean
           milestone_posts?: boolean
           phone?: string | null
           public_slug?: string | null
@@ -2780,13 +3032,6 @@ export type Database = {
             foreignKeyName: "review_answers_node_id_fkey"
             columns: ["node_id"]
             isOneToOne: false
-            referencedRelation: "node_estimate_inputs"
-            referencedColumns: ["node_id"]
-          },
-          {
-            foreignKeyName: "review_answers_node_id_fkey"
-            columns: ["node_id"]
-            isOneToOne: false
             referencedRelation: "roadmap_nodes"
             referencedColumns: ["id"]
           },
@@ -2905,13 +3150,6 @@ export type Database = {
             foreignKeyName: "roadmap_nodes_roadmap_id_parent_id_fkey"
             columns: ["roadmap_id", "parent_id"]
             isOneToOne: false
-            referencedRelation: "node_estimate_inputs"
-            referencedColumns: ["roadmap_id", "node_id"]
-          },
-          {
-            foreignKeyName: "roadmap_nodes_roadmap_id_parent_id_fkey"
-            columns: ["roadmap_id", "parent_id"]
-            isOneToOne: false
             referencedRelation: "roadmap_nodes"
             referencedColumns: ["roadmap_id", "id"]
           },
@@ -2952,13 +3190,6 @@ export type Database = {
           verified_at?: string | null
         }
         Relationships: [
-          {
-            foreignKeyName: "roadmap_progress_node_id_fkey"
-            columns: ["node_id"]
-            isOneToOne: false
-            referencedRelation: "node_estimate_inputs"
-            referencedColumns: ["node_id"]
-          },
           {
             foreignKeyName: "roadmap_progress_node_id_fkey"
             columns: ["node_id"]
@@ -3613,6 +3844,51 @@ export type Database = {
         }
         Relationships: []
       }
+      web_vitals_daily: {
+        Row: {
+          day: string
+          device_class: string
+          good: number
+          id: number
+          metric: string
+          needs_improvement: number
+          p50: number | null
+          p75: number | null
+          p95: number | null
+          poor: number
+          route: string
+          samples: number
+        }
+        Insert: {
+          day: string
+          device_class?: string
+          good?: number
+          id?: never
+          metric: string
+          needs_improvement?: number
+          p50?: number | null
+          p75?: number | null
+          p95?: number | null
+          poor?: number
+          route?: string
+          samples: number
+        }
+        Update: {
+          day?: string
+          device_class?: string
+          good?: number
+          id?: never
+          metric?: string
+          needs_improvement?: number
+          p50?: number | null
+          p75?: number | null
+          p95?: number | null
+          poor?: number
+          route?: string
+          samples?: number
+        }
+        Relationships: []
+      }
       weekly_goals: {
         Row: {
           created_at: string
@@ -3724,6 +4000,20 @@ export type Database = {
         }
         Relationships: []
       }
+      chapter_application_queue: {
+        Row: {
+          application_id: string | null
+          created_at: string | null
+          display_name: string | null
+          motivation: string | null
+          plan: string | null
+          profile_id: string | null
+          region: string | null
+          status: string | null
+          town: string | null
+        }
+        Relationships: []
+      }
       chapter_roster: {
         Row: {
           avatar_url: string | null
@@ -3804,15 +4094,7 @@ export type Database = {
           quiz_questions: number | null
           roadmap_id: string | null
         }
-        Relationships: [
-          {
-            foreignKeyName: "roadmap_nodes_roadmap_id_fkey"
-            columns: ["roadmap_id"]
-            isOneToOne: false
-            referencedRelation: "roadmaps"
-            referencedColumns: ["id"]
-          },
-        ]
+        Relationships: []
       }
       organisation_roster: {
         Row: {
@@ -4099,6 +4381,477 @@ export type Database = {
           id: string
         }[]
       }
+      admin_insights_at_risk: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          below_pass: number
+          cohort_name: string
+          last_submitted: string
+          late_weeks: number
+          learner_name: string
+          missing_weeks: number
+          specialization: string
+        }[]
+      }
+      admin_insights_chapters: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          chapter_id: string
+          chapter_name: string
+          checkins: number
+          events: number
+          members: number
+          new_members: number
+          posts: number
+          region: string
+          rsvps: number
+          status: string
+        }[]
+      }
+      admin_insights_cohorts: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          active_7d: number
+          at_risk: number
+          cohort_id: string
+          cohort_name: string
+          completed: number
+          deferred: number
+          graded: number
+          grading_hours_median: number
+          late: number
+          learners: number
+          missing: number
+          on_time: number
+          program_title: string
+          starts_on: string
+          status: string
+          weeks_due: number
+        }[]
+      }
+      admin_insights_community: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          chapter_joins: number
+          checkins: number
+          events_held: number
+          hidden: number
+          posters: number
+          posts: number
+          reactions: number
+          replies: number
+          rsvps_going: number
+        }[]
+      }
+      admin_insights_community_daily: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          checkins: number
+          day: string
+          posts: number
+          replies: number
+          rsvps: number
+        }[]
+      }
+      admin_insights_daily: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          active_people: number
+          day: string
+          signups: number
+          topics_completed: number
+          visitors: number
+        }[]
+      }
+      admin_insights_earn: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          booking_response_hours: number
+          booking_responses: number
+          bookings_accepted: number
+          bookings_cancelled: number
+          bookings_completed: number
+          bookings_declined: number
+          bookings_requested: number
+          briefs_awarded: number
+          briefs_posted: number
+          experts_approved: number
+          experts_listed: number
+          outcomes_reported: number
+          outcomes_verified: number
+          pitch_decision_hours: number
+          pitches_accepted: number
+          pitches_decided: number
+          pitches_submitted: number
+        }[]
+      }
+      admin_insights_earn_daily: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          bookings: number
+          briefs: number
+          day: string
+          pitches: number
+        }[]
+      }
+      admin_insights_error_daily: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          client_errors: number
+          day: string
+          failed_actions: number
+          page_views: number
+          server_errors: number
+        }[]
+      }
+      admin_insights_errors: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          days: number
+          name: string
+          occurrences: number
+          route: string
+          subject: string
+        }[]
+      }
+      admin_insights_failures: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          action: string
+          failures: number
+          forbidden: number
+          rate_limited: number
+          server_error: number
+          successes: number
+          validation: number
+        }[]
+      }
+      admin_insights_features: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          active_days: number
+          events: number
+          name: string
+          previous_events: number
+          users: number
+        }[]
+      }
+      admin_insights_forms: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          finished: number
+          form: string
+          started: number
+        }[]
+      }
+      admin_insights_funnel: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          device_class: string
+          first_pass: number
+          first_topic: number
+          saved_path: number
+          signed_up: number
+          visited: number
+        }[]
+      }
+      admin_insights_outcomes: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          rejected: number
+          reported: number
+          type: string
+          verified: number
+        }[]
+      }
+      admin_insights_overview: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          active_people: number
+          dau: number
+          mau: number
+          signups: number
+          topics_completed: number
+          visitors: number
+          wau: number
+        }[]
+      }
+      admin_insights_questions: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          answers: number
+          correct: number
+          prompt: string
+          question_id: string
+          roadmap_slug: string
+          topic_title: string
+        }[]
+      }
+      admin_insights_retention: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          active: number
+          cohort_size: number
+          cohort_week: string
+          week_offset: number
+        }[]
+      }
+      admin_insights_retention_cohorts: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          cohort_size: number
+          cohort_week: string
+        }[]
+      }
+      admin_insights_reviews: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          correct: number
+          day: string
+          learners: number
+          questions: number
+          sessions: number
+        }[]
+      }
+      admin_insights_roadmaps: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          learners: number
+          lessons_finished: number
+          lessons_opened: number
+          quiz_attempted: number
+          quiz_passed: number
+          roadmap_slug: string
+          roadmap_title: string
+          topics_done: number
+          topics_started: number
+        }[]
+      }
+      admin_insights_rollups_to: { Args: never; Returns: string }
+      admin_insights_signup_methods: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          method: string
+          signups: number
+        }[]
+      }
+      admin_insights_topics: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          done: number
+          quiz_attempted: number
+          quiz_passed: number
+          roadmap_slug: string
+          stalled: number
+          started: number
+          topic_title: string
+        }[]
+      }
+      admin_insights_vitals: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          device_class: string
+          good: number
+          metric: string
+          needs_improvement: number
+          p75: number
+          poor: number
+          route: string
+          samples: number
+        }[]
+      }
       admin_reports: {
         Args: { p_status?: string }
         Returns: {
@@ -4212,6 +4965,18 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      admin_set_skill_reviewer: {
+        Args: { p_profile_id: string; p_reviewer: boolean }
+        Returns: undefined
+      }
+      admin_skill_reviewers: {
+        Args: never
+        Returns: {
+          display_name: string
+          profile_id: string
+          public_slug: string
+        }[]
+      }
       admin_unpublish_profile: {
         Args: { p_profile_id: string }
         Returns: undefined
@@ -4243,6 +5008,19 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      apply_as_expert: {
+        Args: {
+          p_categories: string[]
+          p_evidence_links: string[]
+          p_experience: string
+          p_headline: string
+          p_links: string[]
+          p_motivation: string
+          p_skills: string[]
+          p_slug: string
+        }
+        Returns: string
       }
       assign_peer_review: {
         Args: { p_reviewer_id: string; p_submission_id: string }
@@ -4296,6 +5074,13 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      claim_error_alert: {
+        Args: { p_fingerprint: string; p_window?: string }
+        Returns: {
+          held_back: number
+          send: boolean
+        }[]
       }
       claim_path_skills: { Args: never; Returns: number }
       community_feed: {
@@ -4411,6 +5196,36 @@ export type Database = {
         SetofOptions: {
           from: "*"
           to: "cohort_applications"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      decide_chapter_application: {
+        Args: {
+          p_application_id: string
+          p_decision: string
+          p_name?: string
+          p_note?: string
+          p_slug?: string
+        }
+        Returns: {
+          chapter_id: string | null
+          created_at: string
+          decided_at: string | null
+          decided_by: string | null
+          decision_note: string | null
+          id: string
+          motivation: string
+          plan: string
+          profile_id: string
+          region: string
+          status: string
+          town: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "chapter_applications"
           isOneToOne: true
           isSetofReturn: false
         }
@@ -4576,6 +5391,16 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      join_waitlist: {
+        Args: {
+          p_email: string
+          p_interest?: string
+          p_key: string
+          p_name?: string
+          p_region?: string
+        }
+        Returns: boolean
+      }
       mark_notifications_read: { Args: { p_ids?: string[] }; Returns: number }
       mint_achievement: {
         Args: {
@@ -4657,6 +5482,10 @@ export type Database = {
           p_verified: boolean
         }
         Returns: undefined
+      }
+      record_events: {
+        Args: { p_context?: Json; p_events: Json }
+        Returns: number
       }
       record_sign_in_failure: {
         Args: { p_address_key: string; p_pair_key: string }
@@ -4757,6 +5586,7 @@ export type Database = {
         Returns: string
       }
       rsvp_event: { Args: { p_event_id: string }; Returns: string }
+      run_analytics_maintenance: { Args: { p_days?: number }; Returns: Json }
       save_submission: {
         Args: {
           p_body_text?: string

@@ -14,7 +14,7 @@ const KNOWN: Record<string, string> = {
   "Say what to improve": "Say what to improve before you send the work back.",
   "Already reviewed": "Someone already reviewed this submission.",
   "You cannot review your own work": "You cannot review your own work.",
-  "Mentors and admins only": "Only mentors and admins can review portfolios.",
+  "Mentors and admins only": "Only skill reviewers and admins can review portfolios.",
   "Admins only": "Only admins can do that.",
   "Give a reason": "Give a reason.",
   "Sign in first": "Sign in first.",

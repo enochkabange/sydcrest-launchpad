@@ -1,5 +1,6 @@
 "use server";
 
+import { trackRefusal, trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
@@ -26,13 +27,17 @@ export type ListingState = { errors?: FieldErrors<ListingFields>; message?: stri
 export async function saveListing(_prev: ListingState, form: FormData): Promise<ListingState> {
   const user = await requireUser();
   const { data, errors } = parseListing(form);
-  if (Object.keys(errors).length) return { errors };
+  if (Object.keys(errors).length) {
+    await trackRefusal("talent_listing_saved", "validation");
+    return { errors };
+  }
   const supabase = await createClient();
   // Insert or update, not upsert: profile_id is insert only (column grants), and an upsert updates every column it sends.
   const { data: existing } = await supabase.from("talent_listings").select("profile_id").eq("profile_id", user.id).maybeSingle();
   const { error } = existing
     ? await supabase.from("talent_listings").update(data).eq("profile_id", user.id)
     : await supabase.from("talent_listings").insert({ ...data, profile_id: user.id });
+  await trackResult("talent_listing_saved", error);
   if (error) {
     return {
       message:
@@ -81,6 +86,7 @@ export async function respondToRequest(requestId: string, _prev: RespondState, f
     p_accept: accept,
     ...(accept && contact ? { p_shared_contact: contact } : {}),
   });
+  await trackResult("talent_contact_responded", error, { accepted: accept });
   if (error) return { message: "This request was withdrawn or already answered." };
   refresh();
   return {};
@@ -105,6 +111,7 @@ export async function requestContact(profileId: string, _prev: ContactState, for
     requested_by: user.id,
     message,
   });
+  await trackResult("talent_contact_requested", error);
   if (error) {
     if (error.code === "23505") return { message: "Your organisation already has a request waiting for their reply." };
     if (isRateLimited(error)) return { message: RATE_LIMIT_MESSAGE };

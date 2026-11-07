@@ -20,7 +20,7 @@ export function ApplyForm({ initial, origin }: { initial: ApplyValues; origin: s
   const e = state.errors ?? {};
 
   return (
-    <form key={state.at ?? 0} action={action} className="flex flex-col gap-8" noValidate>
+    <form data-analytics-form="expert_apply" key={state.at ?? 0} action={action} className="flex flex-col gap-8" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       {Object.keys(e).length > 0 && <Alert tone="danger">Check the highlighted fields and try again.</Alert>}
 

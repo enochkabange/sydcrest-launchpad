@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { revalidatePath } from "next/cache";
 import { requireAdmin } from "@/lib/admin";
 import { isVerificationStatus } from "@/lib/outcomes/labels";
@@ -20,6 +21,7 @@ export async function decideOutcome(outcomeId: string, status: string, form: For
     p_status: status,
     ...(note ? { p_note: note } : {}),
   });
+  await trackResult("outcome_decided", error, { decision: status as "verified" | "rejected" });
   if (error) throw new Error(`Could not update the outcome: ${error.message}`);
   revalidateOutcomeStats();
   revalidatePath("/admin/outcomes");

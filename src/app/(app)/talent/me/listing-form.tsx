@@ -24,7 +24,7 @@ export type ListingValues = {
 export function ListingForm({ values, isNew }: { values: ListingValues; isNew: boolean }) {
   const [state, action, pending] = useActionState<ListingState, FormData>(saveListing, {});
   return (
-    <form key={state.saved ?? 0} action={action} className="flex flex-col gap-4" noValidate>
+    <form data-analytics-form="talent_listing" key={state.saved ?? 0} action={action} className="flex flex-col gap-4" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       {state.saved && <Alert tone="success">Saved. {values.is_active ? "Verified organisations can find you." : "Your listing is hidden."}</Alert>}
       <TextField

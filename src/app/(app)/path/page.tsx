@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import Link from "@/components/ui/link";
 import { buttonClasses } from "@/components/ui/button";
-import { track } from "@/lib/analytics/track";
+import { trackNow } from "@/lib/analytics/track";
 import { getCurrentUser } from "@/lib/auth";
 import { readAnswersCookie } from "@/lib/path/cookie";
 import { answersKey } from "@/lib/path/quiz";
@@ -20,7 +20,7 @@ export const metadata: Metadata = { title: "Your path" };
 async function PathContent() {
   const user = await getCurrentUser();
   if (!user) redirect("/signup?next=/path");
-  if (!user.hasAgeAndConsent) redirect("/welcome?next=/path");
+  if (!user.isSetUp) redirect("/welcome?next=/path");
 
   const [saved, pending] = await Promise.all([latestSavedAnswers(user.id), readAnswersCookie()]);
   const savedKey = saved ? answersKey(saved) : null;
@@ -30,7 +30,7 @@ async function PathContent() {
   if (hasPendingCookie) body = <SavingPath />;
   else if (saved) {
     body = <PathResultView result={await resultFor(saved)} />;
-    await track("path_viewed", {}, { profileId: user.id });
+    await trackNow("path_viewed");
   }
   else body = <NoPathYet />;
 

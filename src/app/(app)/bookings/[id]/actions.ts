@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { getMyProfile, requireUser } from "@/lib/auth";
 import { loadThread } from "@/lib/bookings/data";
@@ -55,6 +56,7 @@ export async function changeStatus(bookingId: string, _prev: FormState, form: Fo
     ...(action !== "complete" && data.reason ? { p_reason: data.reason } : {}),
   });
   refresh();
+  await trackResult("booking_status_changed", error, { status: status as "accepted" | "declined" | "cancelled" | "completed" });
   if (error) return { message: statusErrorMessage(error) };
   await tellOtherParty(thread, user.id, status as "accepted" | "declined" | "cancelled" | "completed");
   return { ok: true };
@@ -69,6 +71,7 @@ export async function sendMessage(bookingId: string, _prev: FormState, form: For
   if (!thread) return { message: messageErrorMessage(null) };
 
   const { error } = await supabase.from("booking_messages").insert({ booking_id: bookingId, sender_id: user.id, body: data.body });
+  await trackResult("booking_message_sent", error);
   if (error) {
     refresh();
     return { message: messageErrorMessage(error), values: { body: data.body } };
@@ -91,6 +94,7 @@ export async function leaveReview(bookingId: string, _prev: FormState, form: For
     // expert_id is copied from the booking by a trigger; the column grant does not let us send it.
     .insert({ booking_id: bookingId, reviewer_id: user.id, rating: data.rating, body: data.body } as ReviewInsert);
   refresh();
+  await trackResult("booking_reviewed", error, { rating: data.rating });
   if (error) return { message: reviewErrorMessage(error), values: { rating: String(data.rating), review: data.body ?? "" } };
   await tellOtherParty(thread, user.id, "review");
   return { ok: true };

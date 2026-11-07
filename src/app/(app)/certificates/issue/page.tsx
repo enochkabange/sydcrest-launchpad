@@ -37,10 +37,32 @@ export default function IssueCertificatesPage({ searchParams }: PageProps<"/cert
   );
 }
 
+function NoCohortsYet() {
+  return (
+    <section aria-labelledby="no-cohorts-heading" className="flex flex-col gap-3 rounded-lg border border-line bg-surface-sunken p-6 xl:p-8">
+      <h2 id="no-cohorts-heading" className="text-h3 text-content">
+        No cohorts yet
+      </h2>
+      <p className="max-w-reading text-content-2">
+        Certificates are issued to learners of a cohort. Once a cohort exists and its learners finish every week, they appear
+        here ready for your final review.
+      </p>
+      <Link href="/admin/cohorts" className="inline-flex min-h-11 items-center self-start font-semibold text-content-link underline">
+        Create a cohort
+      </Link>
+    </section>
+  );
+}
+
 async function Roster({ searchParams }: Pick<PageProps<"/certificates/issue">, "searchParams">) {
   const [user, profile] = await Promise.all([requireUser(), getMyProfile()]);
-  const cohorts = await getStaffCohorts(user.id, profile.role === "admin");
-  if (cohorts.length === 0) notFound();
+  const isAdmin = profile.role === "admin";
+  const cohorts = await getStaffCohorts(user.id, isAdmin);
+  // A staff tool: anyone who is not cohort staff gets a 404 (founder decision
+  // D6). An admin always may issue, so before any cohort exists they get an
+  // honest empty state instead (#252).
+  if (cohorts.length === 0 && !isAdmin) notFound();
+  if (cohorts.length === 0) return <NoCohortsYet />;
 
   const params = await searchParams;
   const wanted = Array.isArray(params.cohort) ? params.cohort[0] : params.cohort;

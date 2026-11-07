@@ -12,7 +12,7 @@ const content: TrackContent = {
     "phone-as-a-tool": {
       outcomes: [
         "Explain why your phone or computer is the place to start",
-        "Learn in this section in short steps",
+        "Plan a week of short lessons for this section",
         "Take a snapshot of your device today",
       ],
       explanation_md: `Many people think you need a laptop to start learning digital skills. You do not. The phone in your hand can already send emails, join a class, fill in a job application and keep records for a small business. If you have a laptop or desktop computer at home, at school or at work, that works too, and the lessons in this section give the computer version wherever it is different. Shops, offices and NGOs in Ghana look for people who are comfortable with smartphones and computers, because so much daily work now happens on them.
@@ -38,7 +38,60 @@ You might already know some of this. That is good. Go through each lesson anyway
 * Do not worry about breaking anything. The settings in this section are safe, and you can always change them back.
 * Phones and computers look a little different from brand to brand. If a menu has a slightly different name on your device, look for the closest match, or type what you want into the search box in Settings. Phones and computers both have one.
 
+## A plan for your first week
+
+You do not need to finish this section in one sitting. Short, regular steps work better. Here is one way to do it:
+
+1. **Day 1.** Read this page and do the snapshot task below. It takes about ten minutes.
+2. **Day 2.** Do the lesson on first steps. Practise each movement or click until you can do it without looking at the notes.
+3. **Day 3.** Do the lesson on settings, storage and battery. Free up some space.
+4. **Day 4.** Do the lesson on saving data. Change at least two settings.
+5. **Day 5.** Do the lesson on installing apps safely. Check the permissions of three apps.
+6. **Day 6 or 7.** Repeat the snapshot and compare it with day 1.
+
+If a day goes wrong, that is fine. Pick up where you stopped. Nothing in this roadmap has a deadline.
+
+## If you share a device
+
+Many people share a phone or computer with family, or use one at school or a hub. You can still do this section. Ask the owner before you change settings, and explain what you want to change and why. On a computer that belongs to a school or office, some settings may be locked. That is normal. Just read the lesson, note what you would change, and practise the parts you are allowed to.
+
+## What success looks like
+
+At the end of this section you should be able to open any setting by searching for it, keep enough free space to save new files, make a bundle last noticeably longer than before, and say why you trust each app on your device. Those four habits are small, but they are the base for everything that follows.
+
 By the end of this section you will know your own phone or computer better, and you will feel more in control of it. That confidence matters, because every other part of this roadmap builds on it.`,
+      workedExample_md: `**Kwabena takes his first snapshot**
+
+Kwabena is studying in Tamale and shares a laptop with his brother, but he mostly uses his own Android phone. He wants to know where he is starting from, so he follows the snapshot task.
+
+1. He opens **Settings** and searches for "About". He finds the phone's model name and writes it in his notebook.
+2. He searches Settings for **Storage**. The screen shows the storage is nearly full, with only a small amount of space free. He writes down the exact figure.
+3. He checks the battery. It is 9am and the phone shows 64%. He writes down the time and the level, so later he can see how fast it drops.
+4. He thinks about data. His last bundle lasted four days. He writes "4 days".
+5. He writes one sentence: "My phone says storage is full when I try to download a PDF."
+6. On the shared laptop, he asks his brother first, then searches Settings for "About" and "Storage" there too, and adds those answers on a second line.
+
+A week later, after the other lessons in this section, he checks again. He has more free space, his bundle lasted six days, and the PDF downloads. The notes prove his progress, and he can show them to a mentor.`,
+      keyTerms: [
+        { term: "Device", definition: "Any phone, tablet, laptop or desktop computer you use. Lessons say device when the idea works on all of them." },
+        { term: "Settings", definition: "The app or page where you control how your device works. Phones and computers both have a search box inside Settings." },
+        { term: "Storage", definition: "The space on your device that holds apps, photos, videos, documents and messages." },
+        { term: "Data bundle", definition: "Prepaid internet data you buy from your mobile network. It runs out when you use it up or when it expires." },
+        { term: "WiFi", definition: "A wireless internet connection from a router at a home, school, office or hub. It does not use your data bundle." },
+        { term: "App", definition: "A program you install on a phone or computer to do one job, such as messaging, video calls or taking notes." },
+      ],
+      commonMistakes: [
+        "Thinking you must buy a laptop before you can start learning",
+        "Skipping a lesson because you think you already know it, and missing the one setting that would save you data",
+        "Changing settings on someone else's phone or a school computer without asking first",
+        "Trying to do the whole section in one long session instead of a little each day",
+      ],
+      selfCheck: [
+        "What is the one thing that annoys you most about your device, and which lesson in this section will help with it?",
+        "Can you find the search box in Settings on your own phone or computer without help?",
+        "When during the week can you set aside ten or fifteen minutes for each lesson?",
+        "If you share a device, who do you need to ask before you change its settings?",
+      ],
       practice_task_md: `**Goal:** Take a snapshot of your phone or computer today, so you can see your progress later.
 
 **Steps**
@@ -106,8 +159,9 @@ By the end of this section you will know your own phone or computer better, and 
         "Use the basic movements on a phone",
         "Find the buttons that take you home",
         "Connect to WiFi and mobile data, and use a computer's basics",
+        "Copy and paste text and take a screenshot",
       ],
-      explanation_md: `Every app on a smartphone is controlled with the same few movements, and a computer has its own matching set. Once these feel natural, you can learn any new app quickly, whether it is a work WhatsApp group, a sales app at a shop or a survey app an NGO gives you in the field. Employers notice when someone handles a phone or a computer calmly and confidently.
+      explanation_md: `Every app on a smartphone is controlled with the same few movements, and a computer has its own matching set. Once these feel natural, you can learn any new app quickly, whether it is a work WhatsApp group, a sales app at a shop or a survey app an NGO gives you in the field. Employers notice when someone handles a device calmly.
 
 ## The basic movements on a phone
 
@@ -124,11 +178,13 @@ Most Android phones have three controls at the bottom of the screen, or gestures
 * **Home** takes you to your main screen from anywhere.
 * **Recent apps** shows the apps you have open, so you can switch between them or swipe them away.
 
-If you ever feel lost inside an app, press Home. Nothing is lost, and you can start again.
+On an iPhone, swipe up from the bottom edge to go Home, or swipe up and pause to see recent apps. Many apps have a Back arrow at the top left.
+
+If you ever feel lost inside an app, go Home. Nothing is lost, and you can start again.
 
 ## WiFi and mobile data
 
-Swipe down from the very top of the screen. You will see a panel of quick settings with small icons.
+Swipe down from the very top of the screen. You will see a panel of quick settings with small icons. On an iPhone, swipe down from the top right corner.
 
 * The **WiFi** icon looks like a fan of curved lines. Tap it to turn WiFi on, then choose a network and type its password.
 * The **Mobile data** icon is often two small arrows. Tap it to turn your bundle on or off.
@@ -147,11 +203,72 @@ The same jobs have computer versions:
 
 If you have never used a mouse, the lesson on mouse and keyboard basics later in this roadmap goes step by step.
 
-## A worked example
+## Copy and paste
 
-Fuseini works at a provisions shop in Tamale. His manager sends the price list as a photo on WhatsApp. The numbers are small, so Fuseini taps the photo to open it, then pinches outward to zoom in on the price of rice. He swipes down from the top to check he is on the shop's WiFi, so the photos do not use his own data. When a customer calls, he presses Home, answers, then uses Recent apps to jump straight back to the price list.
+Copying saves you from typing the same thing twice, and it stops mistakes in long numbers such as an account or reference number.
 
-That is four simple movements and two buttons, used together. Practise them every day and soon you will stop thinking about them at all.`,
+On a phone:
+
+1. Long press on a word. It turns blue, with small handles at each end.
+2. Drag the handles to cover all the text you want.
+3. Tap **Copy** in the small menu that appears.
+4. Go to where you want the text, long press in the empty box and tap **Paste**.
+
+On a computer, drag across the text with the mouse to select it, then press **Ctrl and C** to copy and **Ctrl and V** to paste. On a Mac, use Command instead of Ctrl. You can also right click and choose Copy or Paste.
+
+## Taking a screenshot
+
+A screenshot is a picture of exactly what is on your screen. It is useful for showing a mentor an error message, or keeping proof that a payment or form went through.
+
+* On most Android phones, press the **Power** and **Volume down** buttons together for a moment. Some phones also let you swipe down with three fingers.
+* On an iPhone, the buttons depend on the model, so search "screenshot" in the phone's help or in Settings.
+* On Windows, press the **Windows key, Shift and S** together, then drag over the part of the screen you want.
+* On a Mac, press **Command, Shift and 4**, then drag.
+
+On a phone, it goes into your Gallery or Photos. On Windows, look in Pictures, then Screenshots. On a Mac, it appears on the desktop.
+
+## When something goes wrong
+
+Everyone taps the wrong thing sometimes. Try these steps in order:
+
+1. Press **Back** once, or press Esc on a computer.
+2. If that does not help, press **Home** and open the app again.
+3. If the app is frozen, close it from Recent apps, or on a computer close the window, and open it again.
+4. If the whole device is stuck, restart it.
+
+Most problems end at step 1 or 2. Staying calm is part of the skill.`,
+      workedExample_md: `**Fuseini checks a price list at work**
+
+Fuseini works at a provisions shop in Tamale. His manager sends the new price list as a photo on WhatsApp, and a customer wants to know the price of a bag of rice.
+
+1. Fuseini swipes down from the top of the screen and checks that the WiFi icon is on and connected to the shop's network. Now the photo will not use his own bundle.
+2. He opens the chat and taps the photo to open it full screen.
+3. The numbers are small, so he pinches outward with two fingers to zoom in on the rice row. He reads the price to the customer.
+4. His phone rings. He presses **Home**, answers the call and takes the message.
+5. After the call he opens **Recent apps** and taps WhatsApp to jump straight back to the price list, still zoomed in.
+6. The customer wants the price in writing. Fuseini takes a screenshot of the zoomed price list and sends it to the customer.
+
+That is four movements, two buttons and one screenshot, used together in under two minutes. On the shop's computer the same job would be clicking the photo, pressing Ctrl and the plus key to zoom, and using the taskbar to switch windows.`,
+      keyTerms: [
+        { term: "Tap", definition: "Touching the screen once, lightly, to open or press something." },
+        { term: "Long press", definition: "Holding your finger on something for about a second to see extra options. A right click does the same job on a computer." },
+        { term: "Pinch", definition: "Moving two fingers apart to zoom in, or together to zoom out." },
+        { term: "Recent apps", definition: "The control that shows the apps you have open so you can switch between them." },
+        { term: "Taskbar", definition: "The bar along the bottom of a Windows screen showing open programs. On a Mac it is called the Dock." },
+        { term: "Screenshot", definition: "A picture of exactly what is on your screen, saved to your photos or a Screenshots folder." },
+      ],
+      commonMistakes: [
+        "Pressing too hard or too long when you only need a light tap",
+        "Turning the device off whenever you feel lost, instead of pressing Back or Home",
+        "Leaving mobile data on while connected to WiFi and not checking which one is in use",
+        "Typing long numbers by hand instead of copying and pasting them, which leads to mistakes",
+      ],
+      selfCheck: [
+        "Can you zoom in, switch apps and go Home without looking at the notes?",
+        "How would you copy a long reference number from one app into another on your own device?",
+        "Which buttons take a screenshot on the device you use most?",
+        "What are the first two things you would try if an app stopped responding?",
+      ],
       practice_task_md: `**Goal:** Practise every movement and control from this lesson in five minutes.
 
 **Steps**
@@ -221,6 +338,7 @@ On a computer, practise the computer versions instead: zoom a web page in and ou
         "Free up storage space",
         "Cut distracting notifications",
         "Make your battery last and keep updates on",
+        "Back up files before you delete them",
       ],
       explanation_md: `A phone or computer that is full, slow or always out of battery makes learning and working hard. A front desk assistant who cannot take a photo of a receipt because "storage is full" looks unprepared. Keeping your device tidy is a small, real work skill.
 
@@ -250,13 +368,66 @@ Every buzz pulls you away from your lesson. In **Settings**, find **Notification
 
 ## Updates
 
-Phone, computer and app updates fix problems and close security holes. Install them, but do it on WiFi so they do not finish your bundle.
+Phone, computer and app updates fix problems and close security holes. Install them, but do it on WiFi so they do not finish your bundle. A big update can take a while, so start it when the battery is well charged or the device is plugged in.
 
-## A worked example
+## Save before you delete
 
-Mariama in Bolgatanga could not download a course PDF because her phone was full. She opened WhatsApp's storage tool and found one church group had saved hundreds of forwarded videos. She deleted them, removed two old games and turned off game notifications. The PDF downloaded, and her phone felt faster too.
+Before you delete photos, videos or documents, ask yourself: will I need this again? If yes, keep a copy somewhere else first.
 
-Check your storage once a week. It takes two minutes and saves a lot of frustration.`,
+* **A cloud service.** Google Drive, Google Photos, OneDrive and iCloud store copies online, so you can get them back on another device. Free space on these services is limited, and the rules change, so check how much you have before you rely on it. Uploading uses data, so do it on WiFi.
+* **A computer or memory card.** Copy files across with a cable or card reader. This uses no data at all.
+* **Send it to yourself.** For one or two important documents, email them to your own address. Then they are safe in your inbox.
+
+Once a copy is safe, delete the file from the device.
+
+## Cache and app data
+
+Apps keep small temporary files called a **cache** so they open faster. Over time a cache can grow large. On an Android phone, open Settings, then Apps, choose an app and look for **Storage**, then **Clear cache**. This is safe. Your account and messages stay. Do not tap **Clear storage** or **Clear data** unless you mean it, because that can sign you out and remove the app's saved files. A web browser on a computer has a similar option in its settings, often called clearing browsing data.
+
+## A weekly two minute routine
+
+Pick one day, maybe Sunday evening, and do this:
+
+1. Open Settings and check Storage. If free space is low, act now, not when it is full.
+2. Clear out large WhatsApp videos you no longer need, or the Downloads folder on a computer.
+3. Check for updates and install them on WiFi.
+4. Look at your notifications. If one app keeps disturbing you, turn it off.
+5. Charge your device fully before the new week of study.
+
+Doing a little every week means you never face a full device in the middle of a job application or a lesson.`,
+      workedExample_md: `**Mariama makes room for a course PDF**
+
+Mariama lives in Bolgatanga. Her tutor shares a course PDF in the class WhatsApp group, but when she taps it her phone says storage is full. Here is what she does.
+
+1. She opens **Settings**, searches for Storage and sees that most of the space is used by WhatsApp and Photos.
+2. In WhatsApp's Settings she opens **Storage and data**, then **Manage storage**. The list shows that one church group has saved hundreds of forwarded videos.
+3. She opens that chat in the list, sorts by size, selects the largest videos and deletes them. She keeps the few she cares about.
+4. In her Gallery she finds two long videos of a family wedding. On her cousin's WiFi she uploads them to Google Photos, checks they play there, then deletes them from the phone.
+5. She uninstalls two games she has not opened in months and turns off notifications for a shopping app.
+6. She checks Storage again. There is now plenty of space free.
+
+She taps the PDF and it downloads. Her phone also opens apps faster than before. She writes "Sunday: storage check" in her calendar so it never gets that full again.`,
+      keyTerms: [
+        { term: "Storage", definition: "The space on your device for apps, photos, videos and files. When it is nearly full, the device slows down." },
+        { term: "Cache", definition: "Temporary files an app keeps so it opens faster. Clearing it is safe and frees space." },
+        { term: "Notification", definition: "An alert, sound or banner an app shows to get your attention." },
+        { term: "Battery saver", definition: "A setting that reduces background activity so the battery lasts longer. Computers may call it energy saver or Low Power Mode." },
+        { term: "Update", definition: "A new version of the system or an app that fixes problems and closes security holes." },
+        { term: "Cloud storage", definition: "Space on a company's computers, reached over the internet, where you can keep copies of your files." },
+      ],
+      commonMistakes: [
+        "Waiting until the device says storage is full before cleaning it",
+        "Deleting photos or documents you need without saving a copy first",
+        "Tapping Clear data or Clear storage instead of Clear cache, and losing an app's saved files",
+        "Ignoring updates for months because they seem like a nuisance",
+        "Starting a large update on mobile data and using up the whole bundle",
+      ],
+      selfCheck: [
+        "How much free space does your device have right now, and what is using the most?",
+        "Where would you keep a copy of an important file before deleting it from your device?",
+        "Which two apps send you notifications you could turn off today?",
+        "Which day of the week will you do your two minute routine?",
+      ],
       practice_task_md: `**Goal:** Free up space and cut distractions on your own phone or computer.
 
 **Steps**
@@ -273,12 +444,12 @@ Check your storage once a week. It takes two minutes and saves a lot of frustrat
           {
             prompt: "What usually happens when a device's storage is almost full?",
             options: [
+              "The device slows down and new files may not save",
               "The battery lasts longer",
               "Data bundles become cheaper",
-              "The device slows down and new files may not save",
               "WhatsApp deletes your oldest chats to make room automatically",
             ],
-            answer_index: 2,
+            answer_index: 0,
             explanation: "A full device slows down, apps crash and new files will not save.",
           },
           {
@@ -307,11 +478,11 @@ Check your storage once a week. It takes two minutes and saves a lot of frustrat
             prompt: "When should you install phone, computer and app updates?",
             options: [
               "Never, because they are risky",
-              "Only when the phone stops working",
               "On WiFi, so they do not finish your bundle",
+              "Only when the phone stops working",
               "Only on mobile data at night",
             ],
-            answer_index: 2,
+            answer_index: 1,
             explanation: "Updates fix problems and security holes, and WiFi stops them using your bundle.",
           },
         ],
@@ -324,6 +495,7 @@ Check your storage once a week. It takes two minutes and saves a lot of frustrat
         "Use WiFi whenever you can",
         "Stop apps using data in the background",
         "Check where your data goes",
+        "Plan a week of offline learning",
       ],
       explanation_md: `Prepaid data is one of the biggest costs of learning online. If your bundle runs out halfway through a course, you lose time and money. Learning to control data use also helps at work: field staff and sales officers often use their own bundles, and the ones who manage data well stay connected when it matters.
 
@@ -333,7 +505,7 @@ WiFi does not use your bundle. Places that may have WiFi include some schools, l
 
 ## Stop apps eating data in the background
 
-* **Data saver.** In Settings, search for **Data saver** and turn it on. It stops many apps from using data when you are not looking at them.
+* **Data saver.** In Settings, search for **Data saver** and turn it on. It stops many apps from using data when you are not looking at them. On an iPhone, the same idea is called **Low Data Mode**.
 * **App updates.** On an Android phone, open the Play Store and go to its settings. Find the option for updating apps automatically and choose **WiFi only**.
 * **WhatsApp downloads.** In WhatsApp's Settings, look for **Storage and data**. There you can choose when photos, audio, videos and documents download by themselves: only on WiFi, or never. You can still tap any file to download it when you need it.
 * **Computers on a hotspot.** A laptop connected to your phone's hotspot can finish a bundle fast, because computers download large updates. On Windows, open the settings for that WiFi network and turn on **Metered connection**, which holds back many updates and background downloads. On a Mac, look in the WiFi settings for a similar low data option.
@@ -346,13 +518,64 @@ WiFi does not use your bundle. Places that may have WiFi include some schools, l
 
 ## Know where your data goes
 
-In **Settings**, search for **Data usage**. This works on most phones and on Windows computers. You will see which apps used the most data this month. If something surprises you, restrict it or delete it.
+In **Settings**, search for **Data usage**. This works on most Android phones and on Windows computers. On an iPhone, search for **Mobile data** instead. You will see which apps used the most data this month. If something surprises you, restrict it or delete it.
 
-## A worked example
+On an Android phone you can usually go one step further. Open Settings, then Apps, choose the app and look for **Mobile data** or **Data usage**. Turn off **Background data** for apps that do not need to work when you are not using them, such as games or shopping apps. Leave it on for WhatsApp and your email, or you may miss messages.
 
-Issahaku in Yendi used to buy a bundle every few days. He checked Data usage and found that WhatsApp videos and a video app were using most of it. He set WhatsApp media to download on WiFi only, lowered his video quality and turned off autoplay. On Saturdays he downloads the week's notes at the community library's WiFi. Now one bundle lasts him much longer, and he spends that money on transport to his study group instead.
+## Check your balance before it surprises you
+
+Every network lets you check your remaining data, either by dialling a short code or through its own app. The codes change from time to time, so get the current one from your network's official app, website or a shop, not from a random message. Check your balance at the start of a study session. If it is low, choose reading over video that day.
+
+Many phones also let you set a **data warning** in the Data usage settings. You choose an amount, and the phone warns you when you reach it.
+
+## Plan a week of offline learning
+
+Offline means using something without the internet. With a little planning you can do most of your study offline:
+
+1. When you have WiFi, open the lessons you plan to study this week.
+2. Download any PDFs or notes, and save any videos the app allows you to keep for offline use.
+3. Check they open with mobile data and WiFi turned off.
+4. During the week, study from the downloads. Use your bundle only for quizzes, messages to your mentor, or things that must be live.
+
+## Be careful with hotspots
+
+A **hotspot** shares your phone's data with another device, such as a laptop or a friend's phone. It is useful, but the other device can use a lot of data quickly. Only share with people you trust, set a password on the hotspot, and turn it off when you finish.
 
 Compare the bundles your network offers before you buy. A bigger bundle that lasts longer is sometimes better value than many small ones, but check the expiry date.`,
+      workedExample_md: `**Issahaku makes his bundle last longer**
+
+Issahaku lives in Yendi and used to buy a new bundle every few days. He decided to find out where the data was going.
+
+1. He opened **Settings**, searched for **Data usage** and looked at the list for the past month. A video app and WhatsApp were at the top.
+2. In WhatsApp's **Storage and data** settings, he set photos, videos and documents to download automatically only on WiFi. Now he taps a file when he actually wants it.
+3. In his video app he turned off **autoplay** and set the quality to a lower level. He tested a lesson video and could still read the writing on screen.
+4. In Settings, under Apps, he turned off background data for two games.
+5. He turned on **Data saver** and set a data warning a little below the size of his usual bundle.
+6. On Saturday he went to the community library, which has WiFi, and downloaded the week's notes and two lesson videos.
+7. Seven days later he opened Data usage again and compared it with his notes.
+
+His bundle now lasts much longer. He spends the money he saves on transport to his study group.`,
+      keyTerms: [
+        { term: "Data saver", definition: "A setting that stops many apps using data in the background." },
+        { term: "Background data", definition: "Data an app uses when you are not looking at it, for example to update or download." },
+        { term: "Autoplay", definition: "A feature that starts the next video by itself when one finishes." },
+        { term: "Offline", definition: "Using something without an internet connection, such as a downloaded PDF or video." },
+        { term: "Hotspot", definition: "A setting that shares your phone's internet with another device nearby." },
+        { term: "Metered connection", definition: "A Windows setting that tells the computer to hold back large downloads on that network." },
+      ],
+      commonMistakes: [
+        "Watching lesson videos on the highest quality when a lower one is clear enough",
+        "Letting WhatsApp download every video from every group automatically",
+        "Turning off background data for WhatsApp or email and then missing important messages",
+        "Sharing a hotspot with a laptop without setting it as metered, so updates use the whole bundle",
+        "Trusting a balance code from a forwarded message instead of the network's official source",
+      ],
+      selfCheck: [
+        "Which three apps used the most data on your device last month?",
+        "What will you download the next time you have WiFi, so you can study offline?",
+        "How do you check your remaining data on your own network?",
+        "Which apps on your device should keep background data, and which do not need it?",
+      ],
       practice_task_md: `**Goal:** Cut your data use for the next week.
 
 **Steps**
@@ -422,7 +645,7 @@ Compare the bundles your network offers before you buy. A bigger bundle that las
         "Check an app before you install it",
         "Review app permissions and clean up",
       ],
-      explanation_md: `At work you may be asked to install an app: a sales app, a delivery tracking app, or a survey app such as Kobo Collect for an NGO field job. Knowing how to install apps safely, and how to spot a bad one, protects your phone or computer, your money and your employer's information.
+      explanation_md: `At work you may be asked to install an app: a sales app, a delivery tracking app, or a survey app such as KoboCollect for an NGO field job. Knowing how to install apps safely, and how to spot a bad one, protects your phone or computer, your money and your employer's information.
 
 ## Get apps from the official store
 
@@ -453,11 +676,67 @@ You can change permissions later. On a phone, open **Settings**, find **Apps**, 
 
 Apps you do not use still take space, may use data and may keep permissions they no longer need. Delete them. On a Windows computer, uninstall programs from Settings, under Apps. On a Mac, drag them from Applications to the Bin. You can always install them again from the store.
 
-## A worked example
+## Installing an app, step by step
 
-Hawa got a job as a temporary enumerator for a household survey near Wa. Her supervisor told her to install the survey app from the Play Store. She searched for it, checked that the developer name matched what her supervisor wrote in the WhatsApp group, and installed it. The app asked for camera and location access, which made sense for photos and survey locations, so she allowed them. When a stranger later sent her a "faster version" of the app as a file, she ignored it and told her supervisor.
+On a phone:
+
+1. Connect to WiFi if you can, because apps can be large.
+2. Open the Play Store or App Store and type the exact name of the app in the search box.
+3. Before you tap Install, open the app's page and check the developer name, the reviews and the data safety section.
+4. Tap **Install**. Wait for it to finish, then tap **Open**.
+5. Read each permission request as it appears. Allow only what makes sense.
+
+On a computer, open the Microsoft Store or the Mac App Store and follow the same steps. If the program is not in the store, type the company's official web address yourself rather than clicking an advert or a link from a message, then download from that site.
+
+## Signs of a fake or harmful app
+
+* The name or logo is almost right, but with a small spelling change.
+* The developer name does not match the company you expected.
+* It has very few downloads, or many reviews that sound the same.
+* It asks for permissions that have nothing to do with its job, such as a calculator wanting your messages.
+* Someone sends it to you as a file and says it is a "special" or "faster" version.
+
+If you see even one of these, stop and ask someone you trust before you install.
+
+## Keep unknown apps blocked
+
+Android phones have a setting, often called **Install unknown apps**, that allows apps from outside the Play Store. Leave it switched off for every app, including your browser and WhatsApp. If an employer truly needs you to install something from outside the store, ask a supervisor or IT person to show you, and switch the setting off again afterwards.
 
 Safe habits like these are what employers mean when they ask for someone who is "comfortable with smartphones".`,
+      workedExample_md: `**Hawa installs a survey app for a field job**
+
+Hawa gets work as a temporary enumerator, someone who asks survey questions and records the answers, for a household survey near Wa. On her first morning, her supervisor posts in the team WhatsApp group: "Install the survey app from the Play Store before training."
+
+1. Hawa waits until she reaches the district office, which has WiFi.
+2. She opens the Play Store and types the exact app name the supervisor wrote.
+3. Two apps with similar names appear. She opens each page and compares the developer name with the one in the supervisor's message. Only one matches.
+4. She reads a few recent reviews and the data safety section, then taps **Install**.
+5. When she opens the app, it asks for the camera and location. Photos and survey locations are part of the job, so she allows both.
+6. It also asks for her contacts. The survey does not need them, so she taps **Don't allow**. The app still works.
+7. That evening a stranger sends her a "faster version" of the app as a file. She does not open it. She deletes the message and tells her supervisor, who warns the rest of the team.
+
+Hawa finishes training with a working app and a phone that is still safe.`,
+      keyTerms: [
+        { term: "App store", definition: "The official place to get apps, such as the Google Play Store, the Apple App Store or the Microsoft Store. Apps there are checked before listing." },
+        { term: "Developer", definition: "The person or company that made an app. Their name is shown on the app's store page." },
+        { term: "Permission", definition: "Your agreement for an app to use something on your device, such as the camera, microphone, location or contacts." },
+        { term: "Harmful software", definition: "A program made to steal information, show unwanted adverts or damage a device. It often hides inside fake apps." },
+        { term: "Install unknown apps", definition: "An Android setting that allows apps from outside the Play Store. It is safest left off." },
+        { term: "Uninstall", definition: "Removing an app or program from your device completely." },
+      ],
+      commonMistakes: [
+        "Installing an app sent as a file on WhatsApp because a friend said it was fine",
+        "Tapping Allow on every permission request without reading it",
+        "Choosing the first search result without checking the developer name",
+        "Downloading free copies of paid computer software from random websites",
+        "Keeping apps you never use, which still take space, data and permissions",
+      ],
+      selfCheck: [
+        "How would you tell the real version of an app from a copy with a similar name?",
+        "Which app on your device has a permission that does not match its job?",
+        "Is the setting that allows unknown apps switched off on your phone?",
+        "What would you do if a stranger sent you an app file with a tempting message?",
+      ],
       practice_task_md: `**Goal:** Check the apps and permissions on your own phone or computer.
 
 **Steps**
@@ -522,9 +801,10 @@ Safe habits like these are what employers mean when they ask for someone who is 
 
     "communicating-at-work": {
       outcomes: [
-        "Tell friendly messages at home from professional ones at work",
+        "Tell the difference between a friendly message and a professional one",
         "Explain why this matters for the DMP cohort",
         "Check how professional your messages are",
+        "Use four habits that work on every work tool",
       ],
       explanation_md: `Read entry level job adverts in Ghana for front desk staff, customer service agents, shop attendants or office assistants, and the same skills keep coming up. Answer calls. Reply on WhatsApp. Respond to email. Communicate well in English. These are not "tech" skills in the way coding is, but they are digital skills, and employers look for them first.
 
@@ -553,7 +833,74 @@ SydCrest's Delta Mentoring Program is a twelve week cohort with a mentor. In wee
 
 ## How to practise
 
-You do not need a job to practise. Use your church or mosque group, your class group, or a family member who runs a business. Each lesson ends with a task you can do with people you already know. Small, daily practice builds the habit faster than you might expect.`,
+You do not need a job to practise. Use your church or mosque group, your class group, or a family member who runs a business. Each lesson ends with a task you can do with people you already know. Small, daily practice builds the habit faster than you might expect.
+
+## Four habits that work on every tool
+
+Calls, WhatsApp, email and video calls look different, but good communication follows the same four habits on all of them:
+
+1. **Greet and name.** Start with a greeting and the person's name if you know it. Say who you are if they may not know you.
+2. **Main point first.** Say what the message is about in the first sentence, not the last.
+3. **Make the next step clear.** End with a question, a request or what you will do next, and when.
+4. **Check before you send or hang up.** Look again at names, dates, prices and numbers. A wrong number can cost a sale.
+
+If you remember only these four steps, you will already sound more professional than many people.
+
+## Choosing the right tool
+
+Each tool suits a different job:
+
+* **A phone call** is best when something is urgent or needs a quick discussion.
+* **A WhatsApp message** suits short updates, orders and questions that can wait a little.
+* **An email** suits anything formal or anything that needs a record, such as a job application, a complaint or a document.
+* **A video call** suits meetings, classes and interviews where seeing each other helps.
+
+When you are not sure, ask your manager or mentor which tool they prefer.
+
+## Phone or computer
+
+You can do all of this on a phone. Many offices also use the same tools on a computer: WhatsApp has a web and desktop version that links to your phone, and email and video calls work in a web browser. The habits do not change. A computer just makes typing longer messages easier.
+
+## Replying on time
+
+At work, a fast and short reply is often better than a slow and perfect one. If you need time to find an answer, send a quick note such as "Thank you, I will check and reply by 2pm," then keep that promise.`,
+      workedExample_md: `**Akosua fixes a message to her manager**
+
+Akosua has just started as a sales assistant at a phone accessories shop in Wa. Her manager, Mr Sumaila, is at the bank. A customer wants ten chargers, but there are only six on the shelf. Her first draft on WhatsApp says:
+
+"sir the charger finish"
+
+Before sending, she uses the four habits.
+
+1. **Greet and name.** She starts: "Good afternoon Mr Sumaila."
+2. **Main point first.** "A customer wants 10 chargers of the white type, but we have only 6 in the shop."
+3. **Make the next step clear.** "Should I sell the 6 now and take her number for the other 4, or is there more stock in the store room?"
+4. **Check before sending.** She counts the shelf again to be sure the number 6 is right, and checks she has written 10, not 100.
+
+She adds her name at the end because he may read it on the shared shop phone. Her final message:
+
+"Good afternoon Mr Sumaila. A customer wants 10 chargers of the white type, but we have only 6 in the shop. Should I sell the 6 now and take her number for the other 4, or is there more stock in the store room? Akosua."
+
+Mr Sumaila replies within a minute: "Sell the 6, take her number. More stock tomorrow." The customer leaves happy.`,
+      keyTerms: [
+        { term: "Professional communication", definition: "Messages and calls that are polite, clear and easy for the other person to act on." },
+        { term: "Main point", definition: "The most important thing you want the other person to know, placed in the first sentence." },
+        { term: "Next step", definition: "What should happen after the message, such as a reply, a decision or a callback, and when." },
+        { term: "Short forms", definition: "Shortened spellings like hw, pls or u. Fine with friends, unclear at work." },
+        { term: "WhatsApp Web", definition: "A version of WhatsApp that runs in a computer's browser and links to the account on your phone." },
+      ],
+      commonMistakes: [
+        "Using the same short forms and slang with a manager or customer that you use with friends",
+        "Putting the main point at the end of a long message",
+        "Forgetting to say what you need, so the other person does not know how to reply",
+        "Sending without checking names, prices and numbers",
+      ],
+      selfCheck: [
+        "Can you name the four habits that work on every tool?",
+        "Which tool would you choose to send a job application, and why?",
+        "Look at your last work or class message. Was the main point in the first sentence?",
+        "How would you reply if someone asks a question you cannot answer straight away?",
+      ],
       practice_task_md: `**Goal:** See how professional your messages already are.
 
 **Steps**
@@ -619,6 +966,7 @@ You do not need a job to practise. Use your church or mosque group, your class g
         "Answer a work call properly",
         "Listen, check and take a message someone can act on",
         "End a call and follow up",
+        "Stay calm and helpful with an upset caller",
       ],
       explanation_md: `Customer service agents, front desk staff, call centre workers and office assistants all spend a lot of their day on the phone. A caller cannot see your face or your office. Your voice and what you say are all they have to judge you and your employer. Good phone habits are simple to learn and very easy for a manager to notice.
 
@@ -655,11 +1003,69 @@ Write it down straight away in a notebook or a notes app, then pass it on. Some 
 
 Summarise what will happen next, thank them and let them hang up first. If you promised a callback, keep that promise even if you only have a partial answer.
 
-## A worked example
+## Making calls to customers
 
-Sumaila works at the front desk of a small hotel in Tamale. A caller asks for the manager, who is out. Sumaila writes: "Tuesday 10:15am. Mr Alhassan, 024 000 0000. Wants to book the hall for a naming ceremony on 14th. Promised manager will call back before 2pm." He sends this to the manager on WhatsApp. The manager calls back on time, and the booking is made. A two minute habit helped win a customer.
+Calls you make to customers are sometimes called **outbound calls**. They use the same skills, with a little preparation first:
 
-Making calls to customers, sometimes called outbound calls, uses the same skills: greet, say who you are and why you are calling, listen, and record what was agreed.`,
+1. Write down why you are calling and what you need to find out.
+2. Have any details ready: the order, the price, the date.
+3. Greet, say your name, the business and why you are calling: "Good morning, this is Kojo from Zaa Prints. I am calling about your wedding invitations."
+4. Ask whether it is a good time to talk. If not, agree a better time.
+5. Listen, and record what was agreed before you forget.
+
+## When a caller is upset
+
+Sometimes a caller is angry about a late delivery or a wrong order. Stay calm and do not argue.
+
+* Let them explain without interrupting.
+* Say you understand: "I am sorry this has happened."
+* Repeat the problem back so they know you listened.
+* Say clearly what you will do, and when. If you cannot fix it yourself, say who will.
+* Write it down and pass it on straight away.
+
+You do not have to accept rude language. If a caller becomes abusive, say politely that you will end the call, and tell your manager.
+
+## Missed calls and voice messages
+
+If you miss a work call, return it as soon as you can, and start by saying who you are: "Good afternoon, this is Mariama from Zaa Prints. I missed a call from this number." If you reach a voicemail, leave a short message with your name, the business, why you called and a number to call back. Speak the number slowly.
+
+## Keeping a call log
+
+A call log is a simple list of calls and what happened. You can keep one in a notebook, a notes app on your phone, or a spreadsheet on a computer with columns for date, time, name, number, request and action. Some offices use a computer system for this. Whatever the tool, a log means nothing is forgotten when you are busy or when someone else takes over your desk.`,
+      workedExample_md: `**Sumaila takes a booking message at a hotel**
+
+Sumaila works at the front desk of a small hotel in Tamale. The phone rings at 10:15 on a Tuesday morning.
+
+1. He answers within three rings: "Good morning, Sunrise Guest House, this is Sumaila speaking. How can I help you?"
+2. The caller, Mr Alhassan, wants to book the hall for a naming ceremony. He asks for the manager, who is out.
+3. Sumaila listens without interrupting, then checks: "So you would like the hall on Saturday the 14th, for the morning, is that right?" Mr Alhassan corrects him: it is the afternoon. Checking caught a mistake.
+4. Sumaila does not guess the price. He says: "The manager handles bookings. Can she call you back before 2pm today?" Mr Alhassan agrees.
+5. He takes the number, reads it back digit by digit, and writes the message:
+"Tuesday 10:15am. Mr Alhassan, 024 000 0000. Wants the hall for a naming ceremony, Saturday 14th, afternoon. Promised manager will call back before 2pm."
+6. He thanks Mr Alhassan and waits for him to hang up first.
+7. He sends the message to the manager on WhatsApp and adds it to the call log.
+
+The manager calls back at 1pm and the booking is made. A two minute habit helped win a customer.`,
+      keyTerms: [
+        { term: "Outbound call", definition: "A call you make to a customer or supplier, rather than one you receive." },
+        { term: "Callback", definition: "A promise to phone someone back later, usually by a set time." },
+        { term: "Phone message", definition: "A written note of a call for someone who was not there: name, number, time, request and promise." },
+        { term: "Call log", definition: "A simple list of calls with the date, caller and what happened, kept on paper, in an app or in a spreadsheet." },
+        { term: "Voicemail", definition: "A recorded message left when someone does not answer the phone." },
+      ],
+      commonMistakes: [
+        "Answering a work call with just hello, so the caller is not sure they reached the right place",
+        "Guessing a price or date instead of checking and calling back",
+        "Taking a message without the caller's number, or writing the number down wrongly",
+        "Promising a callback and then forgetting it",
+        "Arguing with an upset caller instead of listening and saying what you will do",
+      ],
+      selfCheck: [
+        "What would you say in the first five seconds of answering a call for a business you know?",
+        "Which five details belong in a phone message someone else can act on?",
+        "How would you calm an upset caller whose order is late?",
+        "Where will you keep your call log: in a notebook, an app or a spreadsheet?",
+      ],
       practice_task_md: `**Goal:** Practise answering a work call and taking a clear message.
 
 **Steps**
@@ -727,6 +1133,7 @@ Making calls to customers, sometimes called outbound calls, uses the same skills
         "Write clear work messages",
         "Choose between a voice note and text",
         "Share files and follow group manners",
+        "Use WhatsApp on a computer and log out safely",
       ],
       explanation_md: `In Ghana, a lot of business happens on WhatsApp. Shops take orders on it, offices share schedules in groups, NGOs send field updates, and job adverts for shop attendants and customer service roles often ask for people who are comfortable using it for work. SydCrest itself runs a WhatsApp community. Using WhatsApp well at work is different from chatting with friends.
 
@@ -759,9 +1166,62 @@ Voice notes are quick, but the listener must find a quiet place to play them, an
 
 Some shops use **WhatsApp Business**, a separate free app with a business profile, quick replies for common questions and labels to organise chats. If a job uses it, the skills above still apply.
 
-## A worked example
+## Using WhatsApp on a computer
 
-Amina runs a small fabric shop in Tamale. Her new attendant, Napari, receives an order on WhatsApp. Napari replies (the price here is only an example): "Good afternoon. Thank you for your order. We have the blue wax print, 6 yards, for 180 cedis. Delivery to Lamashegu is possible tomorrow. Please confirm and we will send the MoMo details." Clear, polite and complete. The customer confirms in one reply.`,
+Many offices keep WhatsApp open on a computer, because typing is faster and files are easier to attach. It is called **WhatsApp Web** in a browser, and there is also a desktop app. Both link to the account on your phone.
+
+1. On the computer, open the official WhatsApp website or desktop app. A square code, called a QR code, appears.
+2. On your phone, find **Linked devices** in WhatsApp. On Android it is in the menu (the three dots), and on an iPhone it is in Settings. Tap **Link a device**.
+3. Point your phone's camera at the code on the computer screen. Your chats appear on the computer.
+4. When you finish on a computer that is not yours, log out. You can do it on the computer, or from Linked devices on your phone.
+
+That last step matters. Anyone who sits at a shared computer where you stayed logged in can read and send your messages.
+
+## Finding things later
+
+Work chats get long. Two tools help:
+
+* **Search.** Tap or click the magnifying glass and type a word such as "invoice" or a customer's name.
+* **Starred messages.** Long press a message on a phone, or hover and open the menu on a computer, and choose **Star**. Important messages such as an address or a price list are then saved in one place.
+
+## Keeping work and personal apart
+
+Your profile photo, name and About line are seen by customers and managers. Use a clear photo of yourself and your real name. If your status updates are personal, check your privacy settings so only your contacts see them. Some people keep a second number with WhatsApp Business only for work. That is a choice, not a rule.`,
+      workedExample_md: `**Napari answers a fabric order**
+
+Amina runs a small fabric shop in Tamale. Her new attendant, Napari, handles the shop's WhatsApp. A customer, Mrs Owusu, sends a photo of a blue wax print and asks: "Do you have this? I need 6 yards, delivered to Lamashegu."
+
+1. Napari checks the shelf first, so she does not promise something the shop does not have. There are 8 yards.
+2. She checks the price list Amina starred in the chat, so the price is correct.
+3. She writes one complete message instead of sending "Hello" and waiting:
+"Good afternoon Mrs Owusu. Thank you for your order. We have the blue wax print, 6 yards, for 180 cedis. Delivery to Lamashegu is possible tomorrow. Please confirm and we will send the MoMo details."
+(The price here is only an example.)
+4. She reads it once more and checks the yards, the price and the area.
+5. Mrs Owusu confirms in one reply. Napari sends the payment details as text, not a voice note, so they are easy to copy.
+6. When the payment arrives, she sends a short thank you and the delivery time, and stars the order so Amina can find it later.
+
+Clear, polite and complete. The whole sale took five messages.`,
+      keyTerms: [
+        { term: "Send as Document", definition: "Attaching a file through the Document option, which keeps it sharp and keeps its file name." },
+        { term: "Voice note", definition: "A short recorded audio message. Quick to send, but hard to search later." },
+        { term: "WhatsApp Web", definition: "WhatsApp in a computer's browser, linked to your phone by scanning a QR code." },
+        { term: "Linked devices", definition: "The WhatsApp page that shows every computer logged in to your account, where you can log them out." },
+        { term: "Starred message", definition: "A message you mark so you can find it quickly later." },
+        { term: "WhatsApp Business", definition: "A separate free app for businesses, with a business profile, quick replies and labels." },
+      ],
+      commonMistakes: [
+        "Sending Hello and waiting, instead of the full message in one go",
+        "Sending a CV or price list through the gallery, so it arrives blurry",
+        "Giving prices, addresses or account details in a voice note",
+        "Forwarding jokes, chain messages or political posts in a work group",
+        "Staying logged in to WhatsApp Web on a shared computer",
+      ],
+      selfCheck: [
+        "What are the parts of a clear work message on WhatsApp?",
+        "When would you choose a voice note, and when would you type?",
+        "How do you check which computers are logged in to your WhatsApp?",
+        "Would you be happy for an employer to see your WhatsApp profile as it is today?",
+      ],
       practice_task_md: `**Goal:** Use WhatsApp the way a professional would.
 
 **Steps**
@@ -829,6 +1289,7 @@ Amina runs a small fabric shop in Tamale. Her new attendant, Napari, receives an
         "Join a video call from a link",
         "Use the buttons that matter",
         "Save data and look ready on a call",
+        "Recover calmly when a call drops",
       ],
       explanation_md: `Online classes, team meetings, some mentoring sessions and some job interviews now happen on video calls. Joining on time, with your microphone and camera under control, shows that you are ready for online work. It is a skill you can learn in one afternoon.
 
@@ -867,10 +1328,69 @@ Video calls use a lot of data. To use less:
 * Prop your phone or laptop up so the camera is steady and at eye level.
 * Use earphones if you have them. They cut echo and noise.
 * Use your real name as your display name, so the host knows who you are.
+* Choose the quietest place you can, and tell people nearby that you will be on a call.
 
-## A worked example
+## Test before the real call
 
-Rashida in Damongo has been invited to an online interview for an office job. The interviewer sends her a Google Meet link. The day before, on her school's WiFi, she installs the Meet app and signs in with her email. On the day she joins five minutes early, greets the interviewer and keeps her camera on so they can see her. She sits facing the window and uses earphones, so her voice is clear. When the interviewer shares a slide about the job, she asks if she may turn her camera off for a moment to save data, and the interviewer agrees. She leaves the call feeling prepared, not stressed.`,
+Never let an important call be your first time using the app. A day or two before:
+
+1. Open the link, or the app, and check you can sign in.
+2. Most apps show a preview screen before you join. Use it to check that your camera shows your face and that the microphone moves when you speak.
+3. Find the mute, camera, chat and leave buttons, so you are not searching for them later.
+4. Charge your device fully, and plan where you will sit.
+
+## Good manners on a call
+
+* Greet everyone when you join, then mute if it is a group.
+* Speak one at a time. If two people start together, stop and say "Please go ahead."
+* Use the chat or raise hand in a big class, rather than talking over the teacher.
+* Look at the camera, not only the screen, when you speak, so it feels like eye contact.
+* Do not eat, walk around the market or have side conversations while your camera is on.
+
+## If something goes wrong
+
+Problems happen to everyone on video calls. What matters is how calmly you deal with them.
+
+* **Nobody can hear you.** Check the microphone is not muted. If you use earphones, check they are connected.
+* **The picture freezes.** Turn your camera off to give your sound more of the connection.
+* **The call drops.** Open the same link again. It usually lets you back in.
+* **You cannot rejoin.** Send a short message to the host on WhatsApp or by email: "My connection dropped. I am trying to rejoin now."
+
+Saying what happened, briefly and politely, is professional. Disappearing without a word is not.`,
+      workedExample_md: `**Rashida prepares for an online interview**
+
+Rashida lives in Damongo and has been invited to an online interview for an office job. The interviewer sends a Google Meet link by email for Thursday at 10am.
+
+1. **Two days before**, on her school's WiFi, she installs the Meet app from the Play Store and signs in with the same email she used to apply.
+2. She opens the link early to see the preview screen. Her face is dark because the window is behind her, so she turns her chair round to face it.
+3. She asks a friend to join a short test call. They practise muting, turning the camera off and on, and using the chat.
+4. **On the morning**, she charges her phone fully, props it on a pile of books at eye level and plugs in her earphones.
+5. She joins five minutes early, with her camera on and her real name showing.
+6. When the interviewer shares a slide about the job, she asks: "May I turn my camera off for a moment to save data?" The interviewer agrees.
+7. Halfway through, the call drops. She opens the link again and is back in within a minute. She says: "Sorry, my connection dropped. Could you repeat the last question?"
+
+She leaves the call feeling prepared, not stressed.`,
+      keyTerms: [
+        { term: "Video call", definition: "A live call where people can see and hear each other through a camera and microphone." },
+        { term: "Meeting link", definition: "A web address that opens a particular video call in an app or browser." },
+        { term: "Mute", definition: "Turning off your microphone so others cannot hear you." },
+        { term: "Preview screen", definition: "The screen before you join a call, where you can check your camera and microphone." },
+        { term: "Display name", definition: "The name others see on a call. Use your real name." },
+        { term: "Host", definition: "The person who set up the call and can admit or remove people." },
+      ],
+      commonMistakes: [
+        "Installing the app for the first time a few minutes before an important call",
+        "Leaving the microphone on in a noisy place",
+        "Sitting with a bright window or bulb behind you, so your face is dark",
+        "Using a nickname as your display name",
+        "Disappearing when the call drops, instead of rejoining or sending a message",
+      ],
+      selfCheck: [
+        "Which video call apps are already installed on your device, and can you sign in to them?",
+        "Where in your home or school could you sit for a quiet call with good light?",
+        "What would you do first if people said they could not hear you?",
+        "How would you tell the host that your connection dropped?",
+      ],
       practice_task_md: `**Goal:** Join and control a video call confidently before you need to.
 
 **Steps**
@@ -938,6 +1458,7 @@ Rashida in Damongo has been invited to an online interview for an office job. Th
         "Read lessons with confidence",
         "Write clear messages and emails",
         "Make reading and writing practice a habit",
+        "Use polite phrases and check your own writing",
       ],
       explanation_md: `Most free online courses, most job adverts and most office work in Ghana use written English. Job adverts for front desk, call centre and office roles often ask for good spoken and written English. You do not need perfect grammar. You need to understand what you read and write messages that are clear and polite. Both improve quickly with practice.
 
@@ -963,21 +1484,75 @@ Short and simple is professional. A good work message or email has:
 
 Before you send anything important, read it once more. Check names, dates and numbers. Your phone keyboard, and most browsers and writing apps on a computer, underline spelling mistakes in red. Tap or right click the word to see suggestions.
 
-## A worked example
+## Polite phrases that help
 
-Here is a first draft from Baba, who wants to ask about a course:
+A few phrases make almost any work message sound polite and clear. Keep them in a note and use them until they feel natural:
 
-"pls i want to no about the course when it start and the price thank u"
+* "I would like to ask about..." to start a question.
+* "Could you please..." to make a request.
+* "Thank you for letting me know." to reply to news or an update.
+* "I am sorry for the delay." when you reply late.
+* "Please let me know if you need anything else." to close.
 
-Here is his improved version:
+Avoid writing a whole message in capital letters. Online, capitals read like shouting.
 
-"Good morning. My name is Baba Salifu. I would like to know when the next digital skills course starts and how much it costs. Thank you."
+## Making reading easier on your device
 
-The second version is still short. It is clearer because it uses full words, full sentences and one idea at a time.
+* **Make the text bigger.** On a phone, search Settings for **Font size**. In a computer's browser, hold Ctrl and press the plus key, or Command and plus on a Mac.
+* **Use reading mode.** Many browsers have a simple reading view that hides adverts and menus. Look for it in the browser menu.
+* **Listen as you read.** Many phones and computers can read text aloud. Search Settings for **Text to speech** or **Read aloud**. Hearing and reading together helps with new words.
+
+## Translation and spell check tools
+
+Translation apps and spell checkers are useful helpers, but they make mistakes. Use a translator to understand a hard sentence, not to write a whole message for you. A spell checker will not notice when you type "form" instead of "from", because both are real words. Always read your message yourself before you send it.
+
+## Reading instructions carefully
+
+At work and in a course, many mistakes come from reading instructions too fast. When you get a task, an assignment or a job advert, read it twice. The second time, underline or copy out each thing it asks for: the deadline, the format, the documents to attach. Then tick each one off before you submit. If something is unclear, ask a short, polite question rather than guessing.
 
 ## Making practice a habit
 
 Spend ten minutes a day reading something in English that interests you: a news article, a lesson, or a story. Then write two or three sentences about it. Free websites such as BBC Learning English have short lessons made for learners. Over a few weeks, reading gets faster and writing feels natural.`,
+      workedExample_md: `**Baba rewrites a message about a course**
+
+Baba Salifu lives in Gushegu and wants to ask a training centre about its next course. His first draft is:
+
+"pls i want to no about the course when it start and the price thank u"
+
+He improves it step by step.
+
+1. **Add a greeting.** "Good morning."
+2. **Say who he is.** "My name is Baba Salifu." The centre does not have his number saved.
+3. **Put the main point first, in full words.** "pls i want to no" becomes "I would like to know". Spell check did not catch "no" instead of "know", because both are real words. Baba spotted it by reading aloud.
+4. **One idea at a time.** "when it start and the price" becomes "when the next digital skills course starts and how much it costs."
+5. **Polite close.** "Thank you."
+6. **Check once more.** He reads the whole message slowly and checks the spelling of his name.
+
+His improved version:
+
+"Good morning. My name is Baba Salifu. I would like to know when the next digital skills course starts and how much it costs. Thank you."
+
+The second version is still short. It is clearer because it uses full words, full sentences and one idea at a time. The centre replies the same day with the dates.`,
+      keyTerms: [
+        { term: "Heading", definition: "A short title above a part of a page that tells you what that part is about." },
+        { term: "Spell check", definition: "A tool that underlines misspelt words, usually in red. It cannot catch a real word used in the wrong place." },
+        { term: "Polite close", definition: "The ending of a message, such as Thank you, followed by your name." },
+        { term: "Reading mode", definition: "A simple view in a browser that shows the main text without adverts or menus." },
+        { term: "Text to speech", definition: "A setting that reads text on your screen aloud." },
+      ],
+      commonMistakes: [
+        "Stopping a lesson because you do not know every word",
+        "Using short forms such as pls and u in messages to people you do not know well",
+        "Copying a whole message from a translation app without checking it",
+        "Trusting spell check to catch every mistake",
+        "Writing in capital letters, which reads like shouting",
+      ],
+      selfCheck: [
+        "What do you look at first when you open a new lesson page?",
+        "Can you write a three sentence message asking about a course, with a greeting, main point and polite close?",
+        "Which polite phrases from this lesson will you start using this week?",
+        "Could you explain this lesson to a friend in a language you speak?",
+      ],
       practice_task_md: `**Goal:** Read one short lesson and write a clear message about it.
 
 **Steps**
@@ -1045,6 +1620,7 @@ Spend ten minutes a day reading something in English that interests you: a news 
         "Think of accounts as keys",
         "Explain how accounts link to the DMP cohort",
         "List the accounts you already have",
+        "Decide which accounts need the most protection",
       ],
       explanation_md: `Almost everything you will do online needs an account: an email address, a course website, a job portal, a video call app. Each account holds your name, your phone number and sometimes your money. Employers also want staff who will not fall for tricks that put customer information or company money at risk. That is why this section comes before you sign up for anything else.
 
@@ -1067,9 +1643,68 @@ Abdul-Rahman in Walewale created an email address in a hurry at a business centr
 
 In week 1 of the Delta Mentoring Program you will use Gmail to send emails with attachments and learn to recognise phishing emails. Later weeks go deeper into privacy settings and judging online sources. This section gives you the foundation: an account that is yours, protected properly, and the habit of pausing before you trust a message.
 
+## Which accounts matter most
+
+Not every account needs the same care. Put your effort where the damage would be worst:
+
+1. **Your main email.** It can reset almost everything else.
+2. **Your mobile money wallet.** It holds real money.
+3. **Your phone's own account.** On Android this is your Google account, and on an iPhone your Apple account. It controls your backups, your app store and often your photos.
+4. **WhatsApp.** People trust messages from your number, so a stolen WhatsApp can be used to trick your friends and family.
+
+Course sites, job portals and social media come after these. They still matter, but if the top four are safe, you can usually recover the rest.
+
+## Three questions before you sign up
+
+Every new account is one more key to look after. Before you create one, ask:
+
+* **Do I really need this account?** If you can do the job without signing up, skip it.
+* **Is this the real site or app?** Type the address yourself or get the app from the official store.
+* **Which email and number am I using?** Always use your own email and your own phone number, so you can get back in later.
+
+## An account map
+
+An account map is a private list of your important accounts and what each one is linked to. It does not contain passwords. It helps you see problems, such as an old SIM or a shared password, before they lock you out. The practice task below helps you start one. Keep it on paper somewhere private, or in a locked note, and update it whenever you change your number.
+
+## Phone or computer
+
+Accounts follow you, not the device. The same email works in the Gmail app on a phone and in a browser on a computer. That is useful, but it also means a library computer where you forgot to sign out gives a stranger the same access as your own phone. Later lessons show how to sign out properly and lock down a shared device.
+
 ## A rule to remember
 
 If a message makes you feel rushed, scared or very excited, stop. Scammers want you to act before you think. A real bank, network or employer will still be there in ten minutes, after you have checked.`,
+      workedExample_md: `**Abdul-Rahman builds his account map**
+
+After losing his old email, Abdul-Rahman in Walewale decides it will never happen again. He sits down with a notebook for twenty minutes.
+
+1. He writes every account he can remember: his new Gmail, his MoMo wallet, WhatsApp, Facebook, a job portal and a free course site.
+2. Next to each one he writes the phone number it is linked to. Two are still linked to his sister's old number.
+3. He writes which email each account uses. The job portal still uses his lost address, so he cannot reset its password.
+4. He puts a star next to accounts that share the same password. Three of them do.
+5. He numbers the problems in order of danger: email first, then MoMo, then WhatsApp, then the rest.
+6. Over the next week, using the lessons in this section, he links every account to his own number, changes the shared passwords and contacts the job portal's help page to move his profile to his new email.
+7. He keeps the notebook page in a drawer at home, not in his bag, and writes the date at the top.
+
+Now, if he changes his SIM, he knows exactly which accounts to update.`,
+      keyTerms: [
+        { term: "Account", definition: "Your personal space on a website or app, protected by a sign in such as an email and password." },
+        { term: "Recovery number", definition: "The phone number an account uses to send you a code if you forget your password." },
+        { term: "Account map", definition: "A private list of your accounts and the email and number each is linked to, without any passwords." },
+        { term: "Phishing", definition: "A trick message or website that pretends to be a real company to steal your details." },
+        { term: "Scammer", definition: "Someone who uses lies to take your money, your details or your accounts." },
+      ],
+      commonMistakes: [
+        "Creating accounts with a friend's, a relative's or a business centre's phone number",
+        "Using the same password for email, MoMo and social media",
+        "Signing up for every new site or app without asking whether you need it",
+        "Acting on a message that makes you feel rushed, before checking it",
+      ],
+      selfCheck: [
+        "Which of your accounts would cause the most harm if a stranger got into it?",
+        "Is every important account linked to a phone number you own and will keep?",
+        "Where will you keep your account map so that only you can see it?",
+        "What will you do the next time a message makes you feel rushed or scared?",
+      ],
       practice_task_md: `**Goal:** Make a list of the accounts you already have.
 
 **Steps**
@@ -1136,6 +1771,7 @@ If a message makes you feel rushed, scared or very excited, stop. Scammers want 
         "Choose a sensible email address",
         "Create an account you can always get back into",
         "Sign in and out safely",
+        "Check your inbox and spam folder properly",
       ],
       explanation_md: `Every job application, online course, certificate and video call invitation needs an email address. Employers will judge you a little by it, so the name matters. Most importantly, it must be yours: linked to your own phone number, with a password only you know. DMP week 1 uses Gmail, so a Gmail address is a good choice, but any reliable free provider works.
 
@@ -1171,11 +1807,67 @@ If you ever change your SIM, update the recovery number straight away.
 
 If you use a shared phone or a computer at a library or business centre, always **sign out** when you finish. Do not tick "remember me" or save the password on a device that is not yours.
 
-## A worked example
+## One address for everything important
 
-Fuseini used to apply for jobs with an address his cousin made for him years ago. He did not know the password and it was linked to his cousin's old number. He created a new address, fuseini.issahaku, linked it to his own MTN number, and wrote down where to find the recovery settings. When he forgot his password two months later, Google sent a code to his phone and he was back in within a minute.
+Use this one address for every job application, course, certificate and work account. If you spread them across several old addresses, you will forget which one holds what, and a certificate or interview invitation can be lost in an inbox you no longer open. If you have old addresses, sign in to them once, tell important contacts your new address, and then stop using them.
 
-Once your account is ready, DMP week 1 will teach you to use it fully: writing, replying and sending attachments.`,
+## Using email on a phone and a computer
+
+The same account works everywhere. On a phone, the Gmail app keeps you signed in and shows new messages. On a computer, open a web browser and go to the Gmail website, then sign in. Your messages are the same in both places, because they are stored online, not on the device.
+
+On your own phone it is fine to stay signed in, as long as the phone has a screen lock. On any computer that is not yours, sign out when you finish.
+
+## Checking your inbox properly
+
+Your **inbox** is where new emails arrive. Check it at least once a day while you are applying for jobs or courses, because replies can come at any time and some have deadlines.
+
+Also check the **Spam** folder now and then. Sometimes a real email, such as an interview invitation or a course confirmation, lands there by mistake. If you find one, open it and mark it as **Not spam**, so the next one arrives in your inbox. In the Gmail app, Spam is in the menu on the left. On a computer, it is in the list on the left, sometimes under **More**.
+
+## Your first professional email
+
+When you write to an employer or a course for the first time:
+
+1. Write a short, clear **subject**, such as "Application for front desk assistant" or "Question about the January course".
+2. Start with a greeting: "Dear Sir or Madam," or the person's name if you know it.
+3. Say who you are and why you are writing in the first two sentences.
+4. Close politely with your full name and phone number.
+
+DMP week 1 goes further, with replies, attachments and folders.`,
+      workedExample_md: `**Fuseini gets an email address he controls**
+
+Fuseini used to apply for jobs with an address his cousin made for him years ago. He did not know the password, and it was linked to his cousin's old number. Here is how he fixed it.
+
+1. He wrote three possible addresses in his notebook: fuseini.issahaku, issahaku.fuseini and fuseini.issahaku1.
+2. He opened the Gmail app, chose **Create account**, then **For my personal use**, and entered his real name and date of birth.
+3. His first choice was taken, so he used the second one.
+4. He made a long password, following the next lesson, and wrote down only a hint, not the password itself.
+5. When asked for a phone number he entered his own MTN number, the one he has had for years.
+6. In his Google Account he opened the security section and checked that the recovery phone was correct. He also added his school email as a recovery email.
+7. He sent a test email with the subject "Test from Fuseini" to his friend Selorm, who replied.
+8. He signed out and back in, to prove he knew the password.
+
+Two months later he forgot his password. Google sent a code to his phone, and he was back in within a minute.`,
+      keyTerms: [
+        { term: "Email address", definition: "Your unique address for sending and receiving email, such as a name followed by @gmail.com." },
+        { term: "Recovery phone", definition: "Your own phone number, saved in the account, used to send a code if you are locked out." },
+        { term: "Recovery email", definition: "A second email address the account can use to help you get back in." },
+        { term: "Inbox", definition: "The folder where new emails arrive." },
+        { term: "Spam folder", definition: "A folder where the email service puts messages it thinks are unwanted. Real emails sometimes land there by mistake." },
+        { term: "Subject line", definition: "The short title of an email that tells the reader what it is about before they open it." },
+      ],
+      commonMistakes: [
+        "Using a nickname or joke as your email address for job applications",
+        "Letting someone else create your account and keep the password",
+        "Using a friend's or a business centre's number for recovery",
+        "Forgetting to update the recovery number after changing your SIM",
+        "Never checking the Spam folder and missing a real interview invitation",
+      ],
+      selfCheck: [
+        "Would you be comfortable putting your current email address at the top of a CV?",
+        "Is the recovery phone on your email account a number you own today?",
+        "When did you last look in your Spam folder?",
+        "What subject line would you write for an email asking about a job?",
+      ],
       practice_task_md: `**Goal:** Have one professional email address that you fully control.
 
 **Steps**
@@ -1243,6 +1935,7 @@ Once your account is ready, DMP week 1 will teach you to use it fully: writing, 
         "Make a strong password",
         "Use one password per important account",
         "Turn on two step verification and never share codes",
+        "Act quickly if an account is hacked",
       ],
       explanation_md: `If someone gets into your email, WhatsApp or MoMo, they can steal money, message your contacts pretending to be you, or lock you out of your own work. At work, a weak password can expose customer records. Two simple habits block most of these problems: strong passwords and two step verification.
 
@@ -1271,9 +1964,63 @@ Two step verification adds a second lock. After your password, the account asks 
 
 **Never share a verification code with anyone.** Not a caller saying they are from your network, not a "Google agent", not a friend who says they sent it to you by mistake. Real companies do not ask you for these codes. If someone asks, it is a scam.
 
-## A worked example
+## Changing a password, step by step
 
-Issahaku received an SMS with a WhatsApp code he had not requested, followed by a message from an unknown number: "Sorry, I sent my code to you by mistake, please send it back." He ignored it. Because he had already set a WhatsApp two step PIN, his account stayed safe. Later he heard that a friend had sent a code like this to a stranger and lost his WhatsApp account for a week.`,
+You can change your Google password on a phone or a computer:
+
+1. Open your Google Account settings. On a phone, this is often in the Settings app under Google, or from your photo in the Gmail app. On a computer, sign in to Gmail in a browser and click your photo.
+2. Go to the security section and choose **Password**.
+3. Type your current password to prove it is you.
+4. Type your new passphrase twice, then save.
+
+Other accounts work the same way. Look for **Security**, **Account** or **Password** in their settings.
+
+## If you think an account has been hacked
+
+Signs include messages you did not send, a password that suddenly stops working, or an alert about a sign in you do not recognise. Act quickly:
+
+1. If you can still get in, change the password straight away, from a device you trust.
+2. In your Google Account security section, look at the list of devices signed in to your account. Sign out any device you do not recognise.
+3. Turn on two step verification if it was off.
+4. If you cannot get in, use the **Forgot password** link. A code will go to your recovery phone.
+5. Warn your contacts that messages from you may be fake.
+
+## Passkeys
+
+Some services now offer **passkeys**. A passkey lets you sign in using your phone or computer's own screen lock, such as your fingerprint or PIN, instead of typing a password. It cannot be guessed and cannot be typed into a fake website. If a service you use offers one, it is a safe choice. If you are not sure, a strong passphrase with two step verification is still very good protection.`,
+      workedExample_md: `**Issahaku protects his WhatsApp before it is too late**
+
+Issahaku lives in Yendi. One evening he gets an SMS with a six digit WhatsApp code he did not ask for. A minute later, an unknown number sends a WhatsApp message: "Sorry, I sent my code to you by mistake, please send it back."
+
+1. He stops and thinks. He did not request a code, so someone else is trying to register his number on their phone.
+2. He does not reply and does not share the code. He blocks the unknown number.
+3. He opens WhatsApp's Settings, goes to **Account**, then **Two step verification**, and checks that his six digit PIN is on. He set it up last month, so it is.
+4. Because the PIN is on, even if the stranger had the code, they would also need his PIN to take over the account.
+5. He changes his email password to a new passphrase, just in case, and checks the list of devices signed in to his Google account. Only his own phone is there.
+6. He posts a short warning in his family WhatsApp group: "If anyone asks you for a code they sent by mistake, do not send it. It is a trick."
+
+Later he hears that a friend sent a code like this to a stranger and lost his WhatsApp account for a week.`,
+      keyTerms: [
+        { term: "Password", definition: "A secret word or phrase that proves you are the owner of an account." },
+        { term: "Passphrase", definition: "A password made of three or four random words joined together. Long, memorable and hard to guess." },
+        { term: "Two step verification", definition: "A second check after your password, such as a code or a prompt on your phone." },
+        { term: "Verification code", definition: "A short number sent to your phone to prove it is you. Never share it with anyone." },
+        { term: "Backup codes", definition: "One time codes from Google you can use to sign in if you lose your phone. Keep them private." },
+        { term: "Passkey", definition: "A way to sign in using your device's screen lock instead of typing a password." },
+      ],
+      commonMistakes: [
+        "Using your name, birthday or phone number as a password",
+        "Using the same password for email, MoMo and social media",
+        "Sharing a verification code with someone who says they sent it by mistake",
+        "Writing passwords on paper kept in a phone case or wallet",
+        "Waiting until after an account is stolen to turn on two step verification",
+      ],
+      selfCheck: [
+        "Which of your accounts still share a password, and when will you change them?",
+        "Is two step verification switched on for your email and for WhatsApp?",
+        "What would you do in the first five minutes if you saw a message you did not send?",
+        "Why would a real company never need your verification code?",
+      ],
       practice_task_md: `**Goal:** Protect your two most important accounts.
 
 **Steps**
@@ -1341,6 +2088,7 @@ Issahaku received an SMS with a WhatsApp code he had not requested, followed by 
         "Recognise common mobile money and online tricks",
         "Follow simple rules that protect you",
         "Spot a scam quickly",
+        "Check a job offer or a link before you trust it",
       ],
       explanation_md: `Scammers in Ghana target people through mobile money, SMS, phone calls, WhatsApp and fake job adverts. People looking for work are a favourite target. Learning the common tricks protects your money, and employers value staff who can spot fraud before it costs the business. Some Ghanaian job sites even remind applicants never to pay a fee to get a job.
 
@@ -1361,11 +2109,66 @@ Issahaku received an SMS with a WhatsApp code he had not requested, followed by 
 * **Slow down.** Pressure and urgency are warning signs.
 * **Verify family requests** by calling the person's old number or asking a question only they would know.
 
-## A worked example
+## Checking a job offer
 
-Mariama, a shop attendant in Tamale, receives an SMS: "You have received 500 cedis from Issah Abu." (The name and amount are only an example.) A few minutes later a man calls, crying, asking her to send it back. She checks her MoMo balance through the official menu. No money has arrived. She tells him she will report it to her network, and he hangs up. She warns her colleagues in the shop's WhatsApp group so nobody else falls for it.
+Because people looking for work are a target, check every offer that comes by message or from a site you do not know:
 
-If you do lose money, contact your network's official customer care immediately and report it. Acting fast gives the best chance of help.`,
+1. Search the company name online. Does it have a real website, a real address and a phone number that answers?
+2. Compare the offer with the job. Very high pay for very easy work, or a job given without any interview, is a warning sign.
+3. Look at the email address. A real company usually writes from its own web address, not a free personal account, although small Ghanaian businesses sometimes use free accounts too, so treat this as one clue, not proof.
+4. Never pay a fee, send your PIN or share a code to "secure" a job.
+5. Ask someone you trust, such as a mentor, teacher or relative in work, before you send any documents.
+
+## Checking a link before you tap
+
+Scam messages often contain links to fake websites that look real. Before you tap or click:
+
+* Read the web address carefully. Fake sites change one letter or add extra words to a real name.
+* On a computer, rest the mouse on a link without clicking to see the real address. On a phone, a long press on a link often shows it.
+* If in doubt, do not use the link. Type the company's address yourself, or open its official app.
+
+## If you have been scammed
+
+Anyone can be tricked. Being scammed is not a reason for shame, and acting fast matters more than anything else.
+
+1. Call your network's official customer care number straight away, report the transaction and ask whether it can be stopped.
+2. Change your MoMo PIN and any password you shared.
+3. Keep evidence: take screenshots of the messages and note the numbers, dates and amounts.
+4. Report it. Ghana's Cyber Security Authority and the police both accept reports of online fraud. Check their official websites for current contact details.
+5. Warn your family and colleagues, so the same trick does not work twice.`,
+      workedExample_md: `**Mariama spots a fake wrong transfer**
+
+Mariama is a shop attendant in Tamale. During a busy afternoon her phone buzzes with an SMS: "You have received 500 cedis from Issah Abu." (The name and amount are only an example.)
+
+1. She notices the message came from an ordinary phone number, not the usual sender name her network uses for MoMo alerts.
+2. A few minutes later a man calls, crying. He says he sent the money by mistake and begs her to send it back quickly.
+3. Mariama stays calm. She says: "Let me check first." She does not send anything.
+4. She checks her MoMo balance through the official menu. No money has arrived.
+5. She tells the caller she will report the matter to her network. He hangs up at once.
+6. She takes a screenshot of the SMS and writes down the caller's number and the time.
+7. She calls her network's official customer care number, which she saved from its website, and reports the number.
+8. She posts a short warning in the shop's WhatsApp group so nobody else falls for it.
+
+The whole check took two minutes, and she lost nothing.`,
+      keyTerms: [
+        { term: "Scam", definition: "A trick that uses lies to take your money, details or accounts." },
+        { term: "MoMo PIN", definition: "The secret number that approves mobile money payments. Nobody else ever needs it." },
+        { term: "Official number", definition: "A customer care number taken from the company's official website, your SIM pack or your card, not from a message." },
+        { term: "Fake wrong transfer", definition: "A trick where a fake alert says money arrived, then someone asks you to send it back." },
+        { term: "Fake link", definition: "A web address made to look like a real company's site, used to steal details." },
+      ],
+      commonMistakes: [
+        "Trusting an SMS alert instead of checking your real balance yourself",
+        "Calling back a number given in a suspicious message instead of the official number",
+        "Paying a registration, training or medical fee to get a job",
+        "Feeling ashamed after a scam and waiting, instead of reporting it straight away",
+      ],
+      selfCheck: [
+        "Can you name the five common tricks from this lesson without looking?",
+        "Is your network's official customer care number saved in your contacts?",
+        "What three checks would you do before replying to a job offer from a number you do not know?",
+        "Who in your family would you warn about the fake wrong transfer trick?",
+      ],
       practice_task_md: `**Goal:** Learn to recognise scams quickly.
 
 **Steps**
@@ -1432,6 +2235,7 @@ If you do lose money, contact your network's official customer care immediately 
         "Decide what to share and what to keep private",
         "Check privacy settings",
         "Use a shared device safely",
+        "Check who you are talking to before sharing details",
       ],
       explanation_md: `Customer service and front desk jobs often involve customer names, phone numbers and payment details. Adverts for these roles ask for people who keep records confidential and check a caller's identity before sharing information. The habits start with your own information. Many people in Ghana also share a phone with family, or use a shared computer at school, a library or a business centre, which makes privacy a practical daily skill.
 
@@ -1454,7 +2258,7 @@ Be careful with WhatsApp status and Facebook posts. A photo of a new ID card or 
 
 * **Screen lock.** Use a PIN, pattern, password or fingerprint that only you know, on your phone and on your own computer.
 * **Sign out.** On a shared phone or computer, sign out of email and other accounts when you finish, or use a separate account for yourself if the device allows it. Many Android phones support more than one user profile, and Windows and Mac computers let each person have their own user account.
-* **Private browsing.** In Chrome, an Incognito tab does not keep a record of the sites you visited after you close it. It does not hide what you do from the websites themselves, your network or your employer, but it helps on shared devices.
+* **Private browsing.** Most browsers have a private mode, called Incognito in Chrome. A private or Incognito tab does not keep a record of the sites you visited after you close it. It does not hide what you do from the websites themselves, your network or your employer, but it helps on shared devices.
 * **Do not save passwords** in the browser on a phone or computer that is not yours.
 * **App lock.** Some phones and apps, including WhatsApp, let you lock individual apps with your fingerprint or a PIN.
 
@@ -1462,9 +2266,59 @@ Be careful with WhatsApp status and Facebook posts. A photo of a new ID card or 
 
 At work you will see other people's details. Treat them as you want yours treated. Do not share a customer's number, photos or problems with friends. Ghana has a data protection law, and many employers have rules about customer information. Before giving account details over the phone, a good organisation checks who is calling.
 
-## A worked example
+## Checking who you are talking to at work
 
-Amina shares a phone with her younger brother. She set a fingerprint lock on WhatsApp, made her profile photo visible only to contacts, and signs out of her email after each study session. When she starts work as a customer service agent, verifying a caller's identity before discussing their parcel feels natural, because she already protects her own information the same way.`,
+When someone calls or messages about an account, an order or a parcel, follow your employer's rules. A common pattern is:
+
+1. Ask for details only the real customer would know, such as the order number and the name it was booked under.
+2. Compare them with your records before you share anything.
+3. If they cannot answer, politely say you cannot discuss the account, and offer another way, such as visiting the office with ID.
+4. Never read out a full card number, PIN or password, even to a customer who sounds genuine.
+
+## Lock the screen every time you step away
+
+A screen lock only helps if it is on. Get into the habit of locking your device whenever you leave it, even for a minute.
+
+* **Phone:** press the power button once. Set the screen to lock itself after a short time in Settings, under Display or Security.
+* **Windows computer:** press the **Windows key and L** together.
+* **Mac:** press **Control, Command and Q** together, or choose Lock Screen from the Apple menu.
+
+## Photos and location
+
+Photos can share more than you think. A picture of your new house, your school uniform or a street sign tells strangers where to find you. Some apps also add your location to posts. Before you post, look at the background of the photo and check whether the app is adding a location. In your phone's camera settings you can usually turn off saving the location in photos.`,
+      workedExample_md: `**Amina keeps her accounts private on a shared phone**
+
+Amina shares a phone with her younger brother, Kofi, who uses it for games in the evening. She wants her study and job search to stay private.
+
+1. **WhatsApp lock.** In WhatsApp's Privacy settings she turns on the app lock, so WhatsApp opens only with her fingerprint.
+2. **Who sees what.** In the same Privacy menu she sets profile photo, last seen and status to My contacts, and chooses who can add her to groups.
+3. **Email.** She signs out of Gmail after each study session, and does not let the browser save her password.
+4. **Browser.** When she searches for jobs, she uses an Incognito tab in Chrome, so her brother does not see the list of sites when he opens the browser.
+5. **Photos.** She deletes a status photo that showed her Ghana Card on the table behind her.
+6. **Computer.** At the community library she uses her own user account on the computer, and presses the Windows key and L whenever she leaves the desk.
+
+When she starts work as a customer service agent, checking a caller's order number before discussing a parcel feels natural, because she already protects her own information the same way.`,
+      keyTerms: [
+        { term: "Privacy setting", definition: "A setting that controls who can see your profile, posts or details." },
+        { term: "Screen lock", definition: "A PIN, pattern, password or fingerprint needed to open your device." },
+        { term: "Incognito tab", definition: "A Chrome browser tab that does not keep your history after you close it. It does not hide you from websites or your network." },
+        { term: "User account", definition: "A separate sign in on a shared computer or phone, so each person has their own files and settings." },
+        { term: "Confidential", definition: "Information that must be kept private and shared only with people who are allowed to see it." },
+        { term: "Identity check", definition: "Asking for details only the real person would know before discussing their account." },
+      ],
+      commonMistakes: [
+        "Posting a photo with an ID card, bank card or PIN visible in the background",
+        "Leaving email signed in on a shared phone or library computer",
+        "Thinking Incognito hides everything from your network or employer",
+        "Walking away from a work computer without locking the screen",
+        "Sharing a customer's number or story with friends",
+      ],
+      selfCheck: [
+        "What three pieces of information will you never post or send?",
+        "Who can see your WhatsApp profile photo and status right now?",
+        "How do you lock the screen on the devices you use?",
+        "How would you check that a caller is the real customer before discussing their order?",
+      ],
       practice_task_md: `**Goal:** Tighten your privacy in ten minutes.
 
 **Steps**
@@ -1532,6 +2386,7 @@ Amina shares a phone with her younger brother. She set a fingerprint lock on Wha
         "Use the same file ideas on a phone or a computer",
         "Name the skills employers mention",
         "Gather the documents for a job application",
+        "Set up one folder for your job documents",
       ],
       explanation_md: `Applying for a job usually means attaching a CV and a photo of a certificate. Registering for a course means filling in an online form. Field jobs with NGOs often involve entering survey answers into a form on a phone or tablet all day. Office jobs involve looking things up quickly and correctly. All of these come down to three skills: handling files, filling in forms and finding information.
 
@@ -1559,7 +2414,62 @@ Adverts for office assistants, customer service agents and NGO field officers in
 
 ## How to work through this section
 
-Have a real document nearby, such as a certificate, a receipt or a school report, so you can practise scanning and sending it. If you can, also ask a friend to share a simple online form with you, or use one from a church, school or youth group.`,
+Have a real document nearby, such as a certificate, a receipt or a school report, so you can practise scanning and sending it. If you can, also ask a friend to share a simple online form with you, or use one from a church, school or youth group.
+
+## A simple system for your documents
+
+By the end of this section you will have one place for every document a job or course might ask for. The system is simple:
+
+1. **One folder.** Make a folder called "Job documents", in Google Drive or on your device, or both.
+2. **One clear name for each file.** Your name and the document type, such as "Hawa Issah CV".
+3. **One format.** Save documents as PDF where you can, because a PDF looks the same on every phone and computer.
+4. **One checklist.** Keep a short list of what is in the folder and what is still missing.
+
+When an advert arrives with a deadline, you open the folder, pick the files and send them. No searching through hundreds of WhatsApp pictures.
+
+## Three accuracy habits
+
+Files, forms and searches all reward the same careful habits:
+
+* **Check before you send.** Open the file you are about to attach and make sure it is the right one, and that it is clear.
+* **Copy exactly.** When you enter a name, number or date, copy it exactly as it is on the document. Do not guess or shorten.
+* **Keep proof.** Take a screenshot of a form's confirmation message or keep the email you sent. If something goes wrong, you can show what you did.
+
+## What you need for this section
+
+You do not need special software. A phone or computer with a web browser, a free Google account and a little data or WiFi are enough. Every tool used in these lessons is free.`,
+      workedExample_md: `**Hawa applies again, in twenty minutes**
+
+After the section, Hawa from Bawku sees a new advert for an NGO field assistant. It asks for a CV and a copy of her SHS certificate by email, and a short online form. This time she is ready.
+
+1. She opens her "Job documents" folder in Google Drive. Inside are "Hawa Issah CV" and "Hawa Issah SHS Certificate", both PDFs.
+2. She reads the advert twice and writes a small checklist: CV, certificate, form, deadline Friday.
+3. She opens the online form and scrolls to the end before typing anything. It needs her Ghana Card number, so she gets the card out.
+4. She fills in every question, checking her phone number digit by digit. A question marked with a red star is near the bottom, and this time she answers it.
+5. She submits the form and takes a screenshot of the confirmation message.
+6. She writes the email with a clear subject, attaches both PDFs, opens each attachment once to check it is the right file, and sends it.
+7. She ticks off her checklist.
+
+The task that once took two frustrating days now takes twenty minutes.`,
+      keyTerms: [
+        { term: "File", definition: "A single saved item on a device, such as a photo, a document or a PDF, with its own name." },
+        { term: "Folder", definition: "A container that holds files so you can keep related things together." },
+        { term: "PDF", definition: "A file type that looks the same on every phone and computer. Common for CVs and certificates." },
+        { term: "Online form", definition: "A web page with questions you answer and submit, such as a job application or survey." },
+        { term: "Attachment", definition: "A file sent along with an email or message." },
+      ],
+      commonMistakes: [
+        "Keeping important documents scattered among hundreds of WhatsApp photos",
+        "Attaching the wrong file because you did not open it to check",
+        "Starting a form without reading to the end, then missing a required question",
+        "Rushing for speed and making mistakes in names and numbers",
+      ],
+      selfCheck: [
+        "Which documents for a job application do you already have as clear digital copies?",
+        "Where will your Job documents folder live?",
+        "What do you check before you attach a file to an email?",
+        "Which of the three accuracy habits do you find hardest?",
+      ],
       practice_task_md: `**Goal:** Gather the documents you would need for a job application.
 
 **Steps**
@@ -1626,6 +2536,7 @@ Have a real document nearby, such as a certificate, a receipt or a school report
         "Find where files live and give them clear names",
         "Make a clear scan of a paper document",
         "Send files and keep a backup",
+        "Find a lost file and handle large files sensibly",
       ],
       explanation_md: `Every job application asks you to attach something: a CV, a certificate, an ID. Office and field jobs involve sending receipts, reports and photos of forms. Knowing where your files are, and how to send a clear copy, saves time and makes you look organised.
 
@@ -1647,7 +2558,7 @@ A file called "IMG_20251003_0912" tells nobody anything. A file called "Hawa Iss
 
 A crooked, dark photo of a certificate looks careless. A scan looks neat.
 
-* The **Google Drive** app on Android has a scan tool. Look for the **camera** or **Scan** button in the app. Point the camera at the document, take the photo, and the app helps you crop it and save it as a PDF. Some phone camera apps also have a document scan mode. If you only have a computer, the scanner on a printer at a business centre or office does the same job.
+* The **Google Drive** app on Android has a scan tool. Look for the **camera** or **Scan** button in the app. Point the camera at the document, take the photo, and the app helps you crop it and save it as a PDF. On an iPhone, the Notes app and the Files app can scan documents too. Some phone camera apps also have a document scan mode. If you only have a computer, the scanner on a printer at a business centre or office does the same job.
 * Place the paper on a dark, flat surface in good daylight.
 * Make sure all four corners are visible and the text is sharp.
 * Check the result before you save. Retake it if anything is cut off or blurry.
@@ -1664,9 +2575,64 @@ A **PDF** is a file type that looks the same on every phone and computer. It is 
 
 Phones and computers get lost, stolen or broken. Keep copies of important documents in Google Drive, which you get free with a Google account. Upload them on WiFi.
 
-## A worked example
+## Finding a file you lost
 
-Sumaila needed to send his certificate to an employer in Tamale. He placed it on a dark table near a window, used the Drive scan tool, renamed the file "Sumaila Mahama WASSCE Certificate", and saved it in a Drive folder called "Job documents". When the employer asked for it, he sent it as a Document on WhatsApp in under a minute.`,
+Everyone loses a file sometimes. Try these steps:
+
+1. Open the file manager, or File Explorer or Finder on a computer, and look at **Recent**. Files you opened lately appear there.
+2. Use the **search** box and type part of the name, or the type of file, such as "pdf" or "cv".
+3. Check **Downloads** and the **WhatsApp** documents folder.
+4. If someone sent it to you, search the chat or email for it and download it again.
+
+## Making folders and moving files
+
+Folders keep things tidy. In a phone's file manager, open the place you want the folder, look for a **New folder** or plus option, and name it. To move a file, long press it and choose **Move**, then pick the folder. On a computer, right click an empty space and choose **New folder**, then drag files into it.
+
+## When a file is too big to send
+
+Videos and high quality photos can be large. Email services and some forms limit how big an attachment can be, and big files also use a lot of data.
+
+* A scanned PDF is usually much smaller than a photo of the same page.
+* If you scanned several pages, check the file size in the file manager's details before you send it.
+* For very large files, upload them to Google Drive and share a link instead of the file itself.
+
+## Delete with care
+
+Delete only what you are sure you do not need. On many phones and computers, deleted files go to a **Bin** or **Trash** first, where you can restore them for a short time. Check there before you panic about a missing file.`,
+      workedExample_md: `**Sumaila scans and sends his certificate**
+
+Sumaila lives in Tamale. An employer calls him for an interview and asks him to send a copy of his WASSCE certificate on WhatsApp before the day.
+
+1. He places the certificate on a dark, flat table near a window, in morning daylight.
+2. He opens the Google Drive app and taps the **Scan** button. He holds his phone straight above the paper so all four corners show.
+3. He takes the picture. The app finds the edges and crops it. The text is sharp, so he keeps it. (If it were blurry, he would retake it.)
+4. He saves it as a PDF and names it "Sumaila Mahama WASSCE Certificate".
+5. In Drive he makes a folder called "Job documents" and moves the file into it.
+6. He checks the file size in the details. It is small, so it will send quickly.
+7. In WhatsApp he opens the employer's chat, taps the attach button, chooses **Document**, finds the file and sends it with the message: "Good morning. Please find my WASSCE certificate attached. Sumaila Mahama."
+
+The employer replies that the copy is very clear. Because it is in Drive, Sumaila can send it again from any phone or computer.`,
+      keyTerms: [
+        { term: "File manager", definition: "The app on a phone for browsing files and folders. It may be called Files, My Files or File Manager." },
+        { term: "File Explorer and Finder", definition: "The programs for browsing files on a Windows computer and a Mac." },
+        { term: "Downloads folder", definition: "The folder where files you download from a browser or email usually go." },
+        { term: "Scan", definition: "A flat, cropped, clear copy of a paper document, often saved as a PDF." },
+        { term: "Backup", definition: "A copy of your files kept somewhere else, such as Google Drive, in case your device is lost." },
+        { term: "Bin or Trash", definition: "Where deleted files often go first, so you can restore them for a short time." },
+      ],
+      commonMistakes: [
+        "Sending a dark, crooked photo of a certificate instead of a clear scan",
+        "Leaving files with camera names like IMG_2025 that tell nobody anything",
+        "Sending a document through the gallery so it arrives blurry, instead of as a Document",
+        "Keeping the only copy of important documents on one phone",
+        "Attaching a huge video or photo when a link or a PDF would do",
+      ],
+      selfCheck: [
+        "Can you find your Downloads folder on each device you use?",
+        "What would you name the scan of your highest certificate?",
+        "Where is your backup of important documents kept today?",
+        "How would you send a file that is too large to attach?",
+      ],
       practice_task_md: `**Goal:** Create a neat set of job documents.
 
 **Steps**
@@ -1734,8 +2700,9 @@ Sumaila needed to send his certificate to an employer in Tamale. He placed it on
         "Name the parts of a form",
         "Fill in a form accurately",
         "Explain how forms are used in field work",
+        "Write long answers safely and fix a mistake after submitting",
       ],
-      explanation_md: `Online forms are everywhere: job applications, course registrations, scholarship applications, NGO surveys and customer orders. Field officer and enumerator jobs with NGOs in northern Ghana often involve collecting survey answers on a phone or tablet using apps such as Google Forms or Kobo Collect. Office and customer service jobs involve entering customer details into systems. In every case, accuracy is the skill employers want.
+      explanation_md: `Online forms are everywhere: job applications, course registrations, scholarship applications, NGO surveys and customer orders. Field officer and enumerator jobs with NGOs in northern Ghana often involve collecting survey answers on a phone or tablet using apps such as Google Forms or KoboCollect. Office and customer service jobs involve entering customer details into systems. In every case, accuracy is the skill employers want.
 
 ## Parts of a form
 
@@ -1761,13 +2728,62 @@ A small red star (an asterisk) next to a question usually means it is **required
 
 ## Forms in field work
 
-Survey apps like Kobo Collect let field staff fill in forms even without network, then send them later when there is a connection. The rules are the same: ask each question exactly as written, record the answer exactly as given, and check before you send it. A survey with wrong data can lead an NGO to the wrong decisions about a community.
+Survey apps like KoboCollect let field staff fill in forms even without network, then send them later when there is a connection. The rules are the same: ask each question exactly as written, record the answer exactly as given, and check before you send it. A survey with wrong data can lead an NGO to the wrong decisions about a community.
 
-## A worked example
+## Long answers: write them first
 
-Alhassan is applying for a youth skills programme through a Google Form. He reads the whole form first and sees it needs a scan of his certificate, so he prepares it. He fills in his details carefully, notices he typed his phone number with a missing digit and fixes it. The form will not submit because he missed a required question marked with a red star. He goes back, answers it, submits, and takes a screenshot of the confirmation page.
+Some forms ask for a paragraph, such as "Why do you want to join this programme?" Many forms do not save your answers if the page closes or the network drops. Write long answers first in a notes app or a document, check them, then copy and paste them into the form. If anything goes wrong, your writing is safe.
+
+## Phone or computer
+
+Forms work on both. On a phone, the keyboard changes for different boxes: a number pad for phone numbers, an @ key for email. Turn your phone sideways if the boxes are small. On a computer, press the **Tab** key to jump to the next box, which is faster than clicking each one.
+
+Browsers on both can **autofill** your name, email and phone number. That saves time, but check what it fills in. It may use an old number or the wrong email.
+
+## If you notice a mistake after submitting
+
+Do not submit the whole form again, because that can create a confusing second entry. Some forms show a link such as **Edit your response** on the confirmation page or in a confirmation email. If not, contact the organiser by email or phone, say exactly what was wrong and give the correct detail.
+
+## Making your own form
+
+Building a simple form is a useful skill for any small business or group. In Google Forms, which is free with a Google account, you add a question, choose its type, and switch on **Required** for answers you must have. The answers collect in one place, and can be shown as a spreadsheet. A chop bar could use one for orders, and a youth group for registrations.
 
 Careful form filling is a small skill, but it shows exactly what employers mean by "attention to detail".`,
+      workedExample_md: `**Alhassan applies to a youth skills programme**
+
+Alhassan lives in Savelugu. A youth skills programme opens applications through a Google Form, and the deadline is in three days.
+
+1. He opens the form and scrolls all the way to the end before typing. He sees it needs a scan of his certificate and a short paragraph about his goals.
+2. He finds his certificate scan in his Job documents folder, so it is ready.
+3. In his notes app he writes the paragraph about his goals, reads it twice and fixes two spelling mistakes.
+4. He goes back to the form and fills in his name, email and phone number. Reading them back, he notices he typed his phone number with a missing digit and fixes it.
+5. He pastes his paragraph into the long answer box and uploads the certificate.
+6. He taps **Submit**. The form will not go through. A required question, marked with a red star, is still empty. He answers it.
+7. He reviews each page using Back, then submits.
+8. A confirmation message appears. He takes a screenshot and saves it in his Job documents folder.
+
+The next week the programme calls him on the number he checked so carefully.`,
+      keyTerms: [
+        { term: "Required question", definition: "A question you must answer before a form will submit, often marked with a red star." },
+        { term: "Dropdown", definition: "A box you tap or click to choose one answer from a list." },
+        { term: "Checkbox", definition: "A small square you tick. You can usually tick more than one." },
+        { term: "Confirmation message", definition: "The message a form shows after it is submitted. A screenshot of it is your proof." },
+        { term: "Autofill", definition: "A browser feature that fills in saved details such as your name and phone number." },
+        { term: "Survey app", definition: "An app such as KoboCollect used to fill in survey forms in the field, even offline." },
+      ],
+      commonMistakes: [
+        "Starting to type before reading the whole form",
+        "Mistyping one digit of a phone number, so nobody can reach you",
+        "Writing a long answer straight into the form and losing it when the network drops",
+        "Submitting a second time to fix a mistake, instead of editing or contacting the organiser",
+        "Trusting autofill without checking it",
+      ],
+      selfCheck: [
+        "What do you check before you press Submit on any form?",
+        "Where would you write a long answer before pasting it into a form?",
+        "What would you do if you spotted a wrong phone number after submitting?",
+        "How could a small business you know use a simple form?",
+      ],
       practice_task_md: `**Goal:** Fill in a form accurately, then build one of your own.
 
 **Steps**
@@ -1815,7 +2831,7 @@ Careful form filling is a small skill, but it shows exactly what employers mean 
             explanation: "A single wrong digit makes the number useless.",
           },
           {
-            prompt: "What does the lesson say about survey apps like Kobo Collect?",
+            prompt: "What does the lesson say about survey apps like KoboCollect?",
             options: [
               "They only work in Accra",
               "They replace paper forms but need network for every question",
@@ -1835,6 +2851,7 @@ Careful form filling is a small skill, but it shows exactly what employers mean 
         "Choose good search words",
         "Judge whether to trust a page",
         "Find a reliable answer to a real question",
+        "Find words on a long page and check AI answers",
       ],
       explanation_md: `When an office assistant needs a supplier's phone number, when a customer service agent needs to check a policy, or when you are stuck on a lesson, the skill that helps is the same: searching well. Employers value people who can find answers on their own. It is also how you will keep learning long after any course ends.
 
@@ -1860,15 +2877,64 @@ Anyone can put anything on the internet. Before you trust or share information, 
 
 Be careful with forwarded WhatsApp messages. If a message says "forward to everyone", check it before you pass it on.
 
-## A worked example
+## Finding words on a long page
 
-Wumpini's manager asks her to find out how to register a small business name. She first types "how do I register my business I am in Tamale". The results are messy. She tries "register business name Ghana" and then adds site:gov.gh. Now she finds the official government registration page. She checks the page date, then compares with a well known Ghanaian news article. She sends her manager the official link and a two line summary.
+Sometimes the right page is very long. Instead of scrolling, search inside it.
+
+* **On a computer:** press **Ctrl and F**, or Command and F on a Mac, and type the word. The browser jumps to each place it appears.
+* **On a phone:** open the browser's menu, often three dots, and choose **Find in page**.
+
+## Answers from AI chat tools
+
+Search engines and apps now often show answers written by AI, and many people ask AI chat tools directly. These can be helpful for explaining an idea in simple words. But they can also be wrong while sounding very sure, and they may not know about recent changes. For anything that matters, such as fees, deadlines, rules or health, find the official page and check the answer there.
+
+## Saving and sharing what you find
+
+When you find a good page, save it so you do not have to search again. In a browser, tap or click the star or **Bookmark** option. To share it, copy the address from the top of the browser, or use the share button, and send it with a short summary. A link plus two lines is more helpful to a manager than a long forwarded message.
+
+## Searching for jobs and courses
+
+The same skills help you find opportunities. Combine a job title, a place and a type: "office assistant Tamale", "free digital skills course Ghana" or "NGO field assistant northern region". Then judge each result with the five questions above. Look for the employer's own website or a known job site, and remember the rule from the scams lesson: a real job never asks you to pay a fee. When you find a good job site, bookmark it and check it once or twice a week.
 
 ## Searching while you learn
 
 When a lesson uses a word you do not know, search "what is" followed by the word. When an error appears on your phone or computer, search the exact error message in quotation marks. These two habits alone will solve many problems.
 
 DMP week 3 goes deeper into judging online sources. This lesson gives you the everyday habits first.`,
+      workedExample_md: `**Wumpini finds out how to register a business name**
+
+Wumpini works as an office assistant in Tamale. Her manager asks her to find out how to register a small business name.
+
+1. Her first search is a full sentence: "how do I register my business I am in Tamale". The results are a mix of adverts, old forum posts and agents offering to do it for a fee.
+2. She cuts it to key words: "register business name Ghana". The results are better.
+3. She adds site:gov.gh before the words. Now the results come only from Ghana government websites, and she finds the official registration page.
+4. The page is long, so she presses Ctrl and F on the office computer and types "fee" to jump to the part about costs.
+5. She checks when the page was last updated, then opens a well known Ghanaian news article on the same topic to see whether it agrees.
+6. She notices an AI summary at the top of her first search gave a different step. She trusts the official page instead.
+7. She bookmarks the official page and sends her manager the link with two lines: what the process is, and where to start.
+
+Her manager has a reliable answer in fifteen minutes, from the right source.`,
+      keyTerms: [
+        { term: "Search engine", definition: "A website such as Google that finds pages matching the words you type." },
+        { term: "Key words", definition: "The few most important words in your question, used instead of a full sentence." },
+        { term: "Quotation marks", definition: "Putting words inside quotation marks to search for that exact phrase." },
+        { term: "site:", definition: "Typed before your words to search only one website or type of site, such as site:gov.gh." },
+        { term: "Source", definition: "Where a piece of information comes from, such as an official website or a news outlet." },
+        { term: "Bookmark", definition: "A saved link in your browser so you can open a page again quickly." },
+      ],
+      commonMistakes: [
+        "Typing a long story instead of a few key words",
+        "Trusting the first result just because it appears at the top",
+        "Believing an AI answer about fees or deadlines without checking the official page",
+        "Forwarding a WhatsApp message that says forward to everyone without checking it",
+        "Using an old page when prices, rules or app menus may have changed",
+      ],
+      selfCheck: [
+        "What key words would you use to search for your nearest public library's opening hours?",
+        "Which five questions help you decide whether to trust a page?",
+        "When would you add site:gov.gh to a search?",
+        "How do you find one word on a long page on the device you use most?",
+      ],
       practice_task_md: `**Goal:** Find a reliable answer to a real question.
 
 **Steps**
@@ -1936,6 +3002,7 @@ DMP week 3 goes deeper into judging online sources. This lesson gives you the ev
         "Know you do not need to own a computer",
         "Name the skills that carry over from a phone",
         "Set a goal for computer practice",
+        "Start and shut down a shared computer properly",
       ],
       explanation_md: `Your phone can do a lot, but many jobs and courses eventually need a computer. Job adverts in Ghana for office assistants, front desk staff and customer service agents often ask for basic computer skills. The Delta Mentoring Program starts in week 1 with computer hardware, files and folders, and then moves to Google Docs, Sheets and Slides. Getting a little comfortable with a keyboard and mouse before the cohort starts makes that first week much less stressful. If you already have a computer at home or at work, use this section to check your basics and build your typing speed.
 
@@ -1953,13 +3020,28 @@ Plenty of people learn their first computer skills on shared machines at school,
 
 If you have never used a computer, the first session can feel strange. The mouse moves too fast, the keyboard letters are not in alphabetical order and you are not sure what to click. That is normal for everyone. After a few sessions your hands learn the movements, and you stop thinking about them.
 
-## A worked example
-
-Napari in Gushegu had only ever used a phone. She asked her former school's ICT teacher if she could use the computer lab on Saturday mornings, and offered to help tidy the lab in return. In her first session she practised moving the mouse and opening a browser. By her fourth session she could type a short paragraph about herself, slowly but correctly. When she joined a digital skills cohort later, she was not afraid of the computer, so she could focus on learning Google Docs.
-
 ## Skills that carry over
 
 If you did the earlier lessons on a phone, much of what you learned carries over. Sending a document, filling in a form and searching work the same way on a computer. You simply click with a mouse instead of tapping, and type on a bigger keyboard instead of a screen.
+
+## The parts you will see
+
+A **desktop** computer has separate parts: a screen, called a monitor, a keyboard, a mouse and a box or tower that holds the computer itself. A **laptop** has all of these joined together, with a touchpad instead of a mouse, and a battery. DMP week 1 explains the parts in more detail. For now, it is enough to know which is which, and where the power button is.
+
+## Starting and finishing a session
+
+Most shared computers follow the same pattern:
+
+1. **Turn it on.** Press the power button once and wait. Starting up can take a minute.
+2. **Sign in.** Choose the user account you were given and type its password. On a library or school computer, ask the person in charge which account to use.
+3. **Open what you need.** Click the browser or app on the taskbar, or search for it from the Start menu on Windows.
+4. **Save your work.** If you type a document, save it to your Google Drive or email it to yourself, because a shared computer may be cleaned.
+5. **Sign out of your accounts** in the browser, then close it.
+6. **Shut down properly** if you are asked to. On Windows, open the Start menu, click the power icon and choose Shut down. On a Mac, open the Apple menu and choose Shut Down. Do not just switch it off at the wall, because that can damage files.
+
+## A tablet or phone with a keyboard
+
+Some people practise with a cheap keyboard plugged into a phone or tablet. That is good for typing practice, but it is not quite the same as a computer, because files, windows and menus work differently. Use it if it is all you have, and look for time on a real computer too.
 
 ## Set a goal for this section
 
@@ -1971,6 +3053,37 @@ A good goal before joining the DMP cohort is to be able to:
 * Type a short paragraph without looking for every key.
 
 You do not need to be fast. You need to be comfortable enough that the computer does not stop you from learning.`,
+      workedExample_md: `**Napari takes her first steps on a computer**
+
+Napari in Gushegu had only ever used a phone. She wanted to join a digital skills cohort, so she made a plan.
+
+1. She asked her former school's ICT teacher if she could use the computer lab on Saturday mornings, and offered to help tidy the lab in return. He agreed.
+2. **Session 1.** The teacher showed her the power button and the user account to sign in with. She practised moving the mouse until she could point at an icon without overshooting it, then opened a browser.
+3. **Session 2.** She visited a website by typing its address and pressing Enter, then practised scrolling and clicking links.
+4. **Session 3.** She did fifteen minutes of a free typing lesson, then typed her name and town in a blank document and saved it to her Google Drive.
+5. **Session 4.** She typed a short paragraph about herself, slowly but correctly, without looking for every key.
+6. At the end of each session she signed out of her email and shut the computer down from the Start menu.
+
+When she joined the cohort later, she was not afraid of the computer, so she could focus on learning Google Docs.`,
+      keyTerms: [
+        { term: "Desktop computer", definition: "A computer with a separate screen, keyboard, mouse and tower, used at a desk." },
+        { term: "Laptop", definition: "A portable computer with the screen, keyboard, touchpad and battery joined together." },
+        { term: "Touchpad", definition: "The flat area on a laptop you slide a finger across to move the pointer." },
+        { term: "User account", definition: "Your own sign in on a computer, with its own files and settings." },
+        { term: "Shut down", definition: "Turning a computer off properly from its menu so files are not damaged." },
+      ],
+      commonMistakes: [
+        "Waiting until you can buy a computer before you start practising",
+        "Giving up after the first session because the mouse and keyboard feel strange",
+        "Saving your work only on a shared computer, where it may be deleted",
+        "Switching a computer off at the wall instead of shutting it down",
+      ],
+      selfCheck: [
+        "Which of the four goals for this section can you already do?",
+        "Can you point to the monitor, keyboard, mouse and tower on a desktop computer?",
+        "Where will you save your work when you use a shared computer?",
+        "What steps do you take before you leave a shared computer?",
+      ],
       practice_task_md: `**Goal:** Plan your computer practice.
 
 **Steps**
@@ -2037,6 +3150,7 @@ You do not need to be fast. You need to be comfortable enough that the computer 
         "Find places to ask for computer access",
         "Ask politely for regular time",
         "Make the most of each session",
+        "Plan your first five sessions and keep a practice log",
       ],
       explanation_md: `Many entry level job adverts in Ghana, from office assistants to customer service agents, ask for basic computer skills. You cannot learn a keyboard only by reading about it. You need regular time in front of a real computer. The good news is that you do not have to own one.
 
@@ -2068,11 +3182,58 @@ If someone says no, thank them and try the next place. One yes is enough.
 
 One hour every week for two months builds more skill than one long day. Your hands need repeated practice to remember the keyboard. Put your time slot in your calendar as a reminder.
 
-## A worked example
+## A plan for your first five sessions
 
-Abdul-Rahman lives in Tolon and has no computer at home. He asked a youth centre in his area and was told the computers were busy on weekdays. He asked again about Saturday afternoons, and they agreed. He now goes every Saturday with a written plan. In his notebook he keeps a short log: date, what he practised, and one thing he found hard. After a month he can see clear progress.
+If you are not sure what to practise, follow this order. Spend about an hour on each:
+
+1. **Session 1.** Turn the computer on, sign in, and practise the mouse: pointing, clicking, double clicking and scrolling. Open a browser and visit one website.
+2. **Session 2.** Practise dragging and right clicking. Make a folder and move a file into it.
+3. **Session 3.** Start typing lessons on the home row. Then type your name, town and phone number in a blank document.
+4. **Session 4.** Sign in to your email in the browser, read a message, write a short reply, then sign out.
+5. **Session 5.** Fill in a simple online form, and use copy and paste to move text from one place to another.
+
+After that, keep going with typing practice every time, plus one new task each session.
+
+## Keep a practice log
+
+A practice log is a page in your notebook with three columns: the date, what you practised, and one thing you found hard. It takes one minute at the end of each session. It shows you what to work on next time, and after a few weeks it shows how far you have come. A mentor can also look at it and give advice.
+
+## When you pay for time
+
+At a business centre or internet cafe, every minute costs money. Arrive with your plan written down, your email password remembered, and any files already saved in Google Drive so you can open them quickly. Ask the attendant whether there is a cheaper rate at quieter times of day. Rates and opening hours vary from place to place, so ask before you start.
 
 If you truly cannot find access yet, keep practising the rest of this roadmap on your phone and keep asking. Access often appears once people know you are serious.`,
+      workedExample_md: `**Abdul-Rahman finds a Saturday slot**
+
+Abdul-Rahman lives in Tolon and has no computer at home. He wants regular practice before the next cohort starts.
+
+1. He lists places nearby: his old JHS, a youth centre and a business centre in town.
+2. He writes a short request in his notebook: "Good afternoon. I am preparing for a digital skills programme and need to practise using a computer. Could I use one for an hour each week? I am happy to help in return."
+3. He visits the youth centre first. The staff say the computers are busy on weekdays.
+4. He does not give up. He asks politely: "Would Saturday afternoon be possible?" They agree, as long as he helps arrange the chairs afterwards.
+5. He puts "Saturday 2pm: youth centre" in his phone calendar with a reminder.
+6. Each Saturday he arrives with a written plan, using the five session order from the lesson.
+7. At the end of every session he signs out of his accounts and fills in his practice log: date, what he practised, one thing he found hard.
+
+After a month he can see clear progress in his log. Dragging was hard in week one; by week four he does it without thinking.`,
+      keyTerms: [
+        { term: "ICT lab", definition: "A room of computers at a school or centre, used for information and communication technology lessons." },
+        { term: "Business centre", definition: "A shop that offers computers, printing and internet, usually paid by the hour or page." },
+        { term: "Time slot", definition: "A regular, agreed time when you can use a computer, such as Saturday at 2pm." },
+        { term: "Practice log", definition: "A simple record of each session: date, what you practised and what was hard." },
+      ],
+      commonMistakes: [
+        "Asking once, hearing no, and giving up instead of trying another place or time",
+        "Arriving at a paid computer without a plan and wasting the time",
+        "Leaving your email signed in on a shared computer",
+        "Practising for one long day instead of a little every week",
+      ],
+      selfCheck: [
+        "Which two places near you could you ask for computer time this week?",
+        "What would you offer in return for regular access?",
+        "What will you practise in your first session?",
+        "Where will you keep your practice log?",
+      ],
       practice_task_md: `**Goal:** Secure a regular time to practise on a computer.
 
 **Steps**
@@ -2137,9 +3298,10 @@ If you truly cannot find access yet, keep practising the rest of this roadmap on
 
     "mouse-and-keyboard": {
       outcomes: [
-        "Use a mouse",
-        "Use the most common keys",
-        "Use three shortcuts",
+        "Use a mouse or touchpad confidently",
+        "Use the most common keys and shortcuts",
+        "Select text quickly",
+        "Minimise, maximise, close and switch windows",
       ],
       explanation_md: `When a job advert asks for basic computer skills, the very first part is using a mouse and keyboard without struggling. In DMP week 1 you will work with files, folders and a browser on a computer, so being comfortable with these tools lets you follow the mentor instead of hunting for buttons.
 
@@ -2181,9 +3343,73 @@ On Windows computers, hold **Ctrl** and press a letter:
 
 On a Mac, use the **Command** key instead of Ctrl.
 
-## A worked example
+A few more are worth knowing once those three feel easy: **Ctrl and A** selects everything, **Ctrl and S** saves, and **Ctrl and F** finds a word on the page.
 
-Hawa opens a browser on a library computer. She clicks the address bar, types a website address, and presses Enter. On the page, she scrolls down with the wheel, then drags across a sentence to select it, presses Ctrl and C, opens a blank document and presses Ctrl and V. She accidentally deletes a word, so she presses Ctrl and Z and it comes back. Five basic actions, and she has copied information from one place to another, a task office workers do every day.`,
+## Selecting text quickly
+
+Dragging works, but there are faster ways:
+
+* **Double click** a word to select just that word.
+* **Triple click**, three quick clicks, to select a whole paragraph in most programs.
+* Click at the start, then hold **Shift** and click at the end, to select everything in between.
+* Hold **Shift** and press the arrow keys to select a letter or line at a time.
+
+Once text is selected, typing replaces it, and Backspace deletes it all.
+
+## Working with windows
+
+Every program opens in a **window**. On Windows, three small buttons sit at the top right of each window:
+
+* **Minimise**, a short line, hides the window to the taskbar without closing it.
+* **Maximise**, a square, makes it fill the screen.
+* **Close**, an X, closes it.
+
+On a Mac, the same three buttons are coloured circles at the top left, and the close button is red. To switch between open windows, click them on the taskbar or Dock, or hold **Alt** and press **Tab** on Windows, or **Command** and **Tab** on a Mac.
+
+## Two other useful keys
+
+* **Tab** moves to the next box in a form, or makes an indent in a document.
+* **Esc**, short for escape, closes a menu or cancels what you just started.
+
+## Practise in short bursts
+
+Your hand and eyes need time to work together. Twenty minutes of mouse practice and twenty minutes of keys is better than an hour of one. Free online tutorials, such as the GCFGlobal LearnFree mouse lesson, give you targets to click and drag.`,
+      workedExample_md: `**Hawa copies information on a library computer**
+
+Hawa is at the community library in Wa. Her mentor has asked her to copy the opening hours of a free course centre into a document, so she can print them.
+
+1. She clicks the browser on the taskbar to open it.
+2. She clicks once in the address bar at the top, types the website address and presses **Enter**.
+3. She rolls the mouse wheel to scroll down until she sees the opening hours.
+4. She clicks at the start of the first line, holds **Shift** and clicks at the end of the last line. The text turns blue.
+5. She presses **Ctrl and C** to copy.
+6. She opens a blank document, clicks inside it and presses **Ctrl and V**. The hours appear.
+7. She means to delete one extra word but deletes a whole line by mistake. She presses **Ctrl and Z** and the line comes back.
+8. She types a heading at the top, using **Shift** for the capital letters, and presses **Ctrl and S** to save.
+9. She uses **Alt and Tab** to switch back to the browser and check her copy is complete.
+
+A few basic actions, and she has moved information from one place to another, a task office workers do every day.`,
+      keyTerms: [
+        { term: "Pointer or cursor", definition: "The small arrow you move with the mouse. In text, the cursor is also the flashing line where your typing appears." },
+        { term: "Double click", definition: "Two quick presses of the left mouse button, used to open files or select a word." },
+        { term: "Drag", definition: "Holding the left button down while moving the mouse, to move something or select text." },
+        { term: "Shortcut", definition: "A key combination that does a job quickly, such as Ctrl and C to copy." },
+        { term: "Window", definition: "The box a program opens in, with buttons to minimise, maximise and close it." },
+        { term: "QWERTY", definition: "The usual keyboard layout, named after the first six letters on the top row." },
+      ],
+      commonMistakes: [
+        "Gripping the mouse tightly, which makes the pointer jump",
+        "Leaving Caps Lock on and typing everything in capitals",
+        "Clicking Close when you only meant to hide a window with Minimise",
+        "Panicking after deleting something, instead of pressing Ctrl and Z",
+        "Mixing up Backspace, which deletes to the left, and Delete, which deletes to the right",
+      ],
+      selfCheck: [
+        "Can you double click, right click, scroll and drag without thinking about it?",
+        "Which shortcut would you use straight away after deleting a paragraph by mistake?",
+        "How do you switch between two open windows on the computer you use?",
+        "Which key or shortcut from this lesson do you still need to practise?",
+      ],
       practice_task_md: `**Goal:** Use the mouse and the most common keys without help.
 
 **Steps**
@@ -2251,6 +3477,7 @@ Hawa opens a browser on a library computer. She clicks the address bar, types a 
         "Start typing from the home row",
         "Put accuracy before speed",
         "Build a little and often typing habit",
+        "Measure your speed and accuracy",
       ],
       explanation_md: `Office assistants type letters and records, customer service agents type notes while customers talk, and DMP week 1 ends with writing a short tip sheet in Google Docs. If you type with one finger while searching for every key, these tasks take a long time and tire you out. Learning to touch type, using all your fingers without looking at the keys, is a skill that pays back in every course and job that follows.
 
@@ -2288,11 +3515,68 @@ Both run in a web browser and use very little data once a page has loaded.
 
 You will still type a lot on your phone. Turn on your keyboard's spell check and suggestions, and learn to long press keys for extra characters. But phone typing does not replace keyboard practice, because the finger movements are different.
 
-## A worked example
+## Which finger presses which key
 
-Issahaku started typing practice at his community library. In week one he could only type slowly, looking at the keys. He did fifteen minutes of the LearnFree typing lessons at each visit and practised the home row on a printed keyboard picture at home. After a month he could type a short paragraph about himself without looking down most of the time. His speed was still modest, but his accuracy was good, and he no longer felt nervous in front of a keyboard.
+Each finger looks after a column of keys, going up and down from its home key:
+
+* Your left first finger covers **F** and its neighbours **G**, **R**, **T**, **V** and **B**.
+* Your right first finger covers **J** and its neighbours **H**, **U**, **Y**, **N** and **M**.
+* Each other finger covers the keys straight above and below its home key.
+* Either thumb presses the space bar.
+
+At first, reaching for the right key with the right finger feels slower than using one finger. Keep going. Within a couple of weeks it becomes faster, and much less tiring.
+
+## Measuring your progress
+
+Typing tests give you two numbers:
+
+* **Speed**, in **words per minute**, often written WPM. It counts how many words you typed in one minute.
+* **Accuracy**, as a percentage. It shows how many of your key presses were correct.
+
+Watch accuracy first. If it drops, slow down. A slower typist who makes few mistakes is more useful at work than a fast one who has to fix every line.
+
+## A two week starter plan
+
+1. **Days 1 to 3.** Home row only: A, S, D, F, J, K, L. Ten minutes a day.
+2. **Days 4 to 7.** Add the top row, one finger at a time, with a free online lesson.
+3. **Days 8 to 10.** Add the bottom row and capital letters with Shift.
+4. **Days 11 to 14.** Type real sentences: your name, your town, a short message. Take your first one minute test and write down both numbers.
+
+If you can only reach a computer once a week, practise the finger positions on a printed or drawn keyboard at home in between. It helps your fingers remember.
 
 Track your progress in your practice log. Seeing improvement week by week keeps you motivated.`,
+      workedExample_md: `**Issahaku's first month of typing**
+
+Issahaku can use the computers at his community library in Yendi twice a week. In his first session he typed slowly with one finger, looking down at every key.
+
+1. **Week 1.** He placed his fingers on the home row and found the bumps on F and J with his eyes closed. He did fifteen minutes of the LearnFree typing lessons at each visit.
+2. At home he drew a keyboard on a sheet of paper and practised the finger positions for five minutes each evening.
+3. **Week 2.** He added the top and bottom rows. When he kept hitting the wrong keys, he slowed down instead of rushing.
+4. **Week 3.** He typed real sentences, such as his name and town, and short messages to his study group, without looking at his hands.
+5. **Week 4.** He took his first one minute test on Monkeytype. He wrote both numbers in his practice log, and paid most attention to accuracy.
+6. He took the same test each week after that and wrote down the results.
+
+After a month he could type a short paragraph about himself without looking down most of the time. His speed was still modest, but his accuracy was good, and he no longer felt nervous in front of a keyboard.`,
+      keyTerms: [
+        { term: "Touch typing", definition: "Typing with all your fingers without looking at the keys." },
+        { term: "Home row", definition: "The middle row of letter keys where your fingers rest: A, S, D, F and J, K, L." },
+        { term: "Words per minute", definition: "A measure of typing speed, often written WPM." },
+        { term: "Accuracy", definition: "The share of your key presses that were correct, shown as a percentage." },
+        { term: "Posture", definition: "How you sit: back straight, feet flat, wrists relaxed." },
+      ],
+      commonMistakes: [
+        "Rushing for speed and making so many mistakes that you have to retype",
+        "Looking down at the keys instead of at the screen",
+        "Practising for two hours once a week instead of a little every day",
+        "Resting your wrists hard on the table edge",
+        "Thinking phone typing practice is enough for a keyboard",
+      ],
+      selfCheck: [
+        "Can you place your fingers on the home row without looking?",
+        "What was your speed and accuracy on your last typing test?",
+        "When in your day can you fit ten to fifteen minutes of typing?",
+        "Which keys do you still look for most often?",
+      ],
       practice_task_md: `**Goal:** Start a daily typing habit and measure your progress.
 
 **Steps**
@@ -2360,6 +3644,7 @@ Track your progress in your practice log. Seeing improvement week by week keeps 
         "Treat learning as a skill",
         "Notice where records are used in work",
         "Connect your learning to a goal you care about",
+        "Turn a big wish into a clear goal you can measure",
       ],
       explanation_md: `Learning digital skills takes time and effort, so it helps to keep the reason in view: these skills can lead to work and income. Job adverts for shop attendants, cashiers, office assistants and field officers in Ghana ask for accurate records and payment handling. Digital careers in marketing, design, data and software start from the same foundations you are building now.
 
@@ -2379,13 +3664,66 @@ Many people start an online course full of energy and stop after two weeks. That
 
 Think about the jobs around you. A chop bar owner tracks what she spends on ingredients and what she sells. A market trader in Bolgatanga writes down who owes him money. An NGO field officer records how many households were visited. A shop attendant checks at the end of the day that the MoMo payments match the sales. Each one needs accurate, simple records, often on a phone. This habit is useful in any job and in your own business.
 
-## A worked example
+## Turning a big wish into a clear goal
 
-Zuweira from Savelugu wanted to work in digital marketing but felt it was far away. She set herself one small goal each day: one lesson, or twenty minutes of typing. She started keeping a simple record of the money she earned plaiting hair, using a notebook and later a simple table on her phone. She then looked at what a social media marketing role involves and realised she already took good photos of her clients' hairstyles and posted them. Her small business suddenly looked like a first portfolio.
+"I want a good job" is a wish. A goal is clearer. Try writing yours in four steps:
+
+1. **What exactly?** "Get an office assistant job" or "start taking orders for my snacks on WhatsApp".
+2. **Which skills does it need?** Look at two or three adverts or ask someone who does that work. Write down the skills that appear again and again.
+3. **What will I do this week?** One small action, such as finishing two lessons or practising typing three times.
+4. **How will I know I am moving?** Something you can see: a ticked list, a typing score, a finished practice task.
+
+Read your goal once a week and change it when you learn more. Goals are allowed to grow.
+
+## Your own small business counts
+
+Not every path starts with an employer. Many young people in Ghana sell, cook, plait hair, repair phones or tailor. The skills in this roadmap help there too: clear WhatsApp messages win customers, records show whether you are making money, and good photos show your work. What you build now can later become proof of your skills for an employer.
+
+## Be careful with promises
+
+Online you will see adverts promising quick money from digital skills. Real progress takes steady practice, and nobody can promise you a job or an income. Be wary of anyone who asks you to pay to "unlock" earnings. The scams lesson explains why.
+
+## Using what you have
+
+You can start building useful skills today with the device and data you already have. Every lesson in this roadmap uses free tools, and most practice tasks can be done in under an hour. If a course, app or person says you must pay first before you can start learning the basics, look for a free option. There usually is one.
 
 ## Keep the bigger picture
 
 You do not need to choose a career today. But knowing where these skills can lead makes the daily practice easier. When a lesson feels hard, remember that every skill in this roadmap appears in real job adverts or in the DMP cohort.`,
+      workedExample_md: `**Zuweira finds a first portfolio in her own work**
+
+Zuweira from Savelugu wanted to work in digital marketing but felt it was far away. She followed the four steps for a clear goal.
+
+1. **What exactly?** She wrote: "Get a place on the DMP cohort and aim for the social media specialisation."
+2. **Which skills?** She read the social media roadmap on SydCrest and two adverts for social media assistants. Writing posts, taking good photos and keeping records came up again and again.
+3. **What this week?** She set one small goal each day: one lesson, or twenty minutes of typing.
+4. **How will I know?** She ticked each day in her notebook.
+
+Then she looked at what she already did. She plaits hair and takes photos of her clients' styles to post on her WhatsApp status.
+
+5. She started keeping a simple record of the money she earned from plaiting, first in a notebook and later in a table on her phone.
+6. She chose her ten best client photos, with each client's permission, and wrote a short, clear caption for each.
+
+Her small business suddenly looked like a first portfolio: real photos, real captions and real records. She now had something to show a mentor.`,
+      keyTerms: [
+        { term: "Goal", definition: "A clear thing you want to achieve, with actions you can take and a way to see progress." },
+        { term: "Record", definition: "A written note of what happened, such as money in and out or tasks done." },
+        { term: "Portfolio", definition: "A collection of real work that shows what you can do." },
+        { term: "Digital career", definition: "Work that mainly uses digital tools, such as marketing, design, data, product or software." },
+        { term: "Specialisation", definition: "A focused area you study in depth, such as social media marketing in the DMP cohort." },
+      ],
+      commonMistakes: [
+        "Trying to learn everything at once and giving up after two weeks",
+        "Studying alone with nobody to check in with",
+        "Thinking your own small business does not count as experience",
+        "Believing adverts that promise quick money from digital skills",
+      ],
+      selfCheck: [
+        "Can you write your goal in the four steps from this lesson?",
+        "Which records do you, or someone you know, already keep?",
+        "What work have you already done that could become part of a portfolio?",
+        "Who could you check in with each week about your learning?",
+      ],
       practice_task_md: `**Goal:** Connect your learning to a goal you care about.
 
 **Steps**
@@ -2452,6 +3790,7 @@ You do not need to choose a career today. But knowing where these skills can lea
         "Set a small daily goal at a regular time",
         "Take notes in your own words and test yourself",
         "Learn with others and look after yourself",
+        "Review old lessons and keep going when motivation drops",
       ],
       explanation_md: `The Delta Mentoring Program runs for twelve weeks, with assignments every week. Employers also want people who keep learning new systems and tools on the job. The skill underneath both is the same: steady study habits. Talent helps, but habits are what get people to the end of a course.
 
@@ -2489,11 +3828,65 @@ Find a study partner or a small group. You can meet in person or create a WhatsA
 
 ## Look after yourself
 
-Sleep, food and short breaks matter. Studying for twenty five minutes, then resting for five, is a simple pattern many people find helpful. Long screen sessions tire your eyes, so look away from the screen now and then.
+Sleep, food and short breaks matter. Studying for twenty five minutes, then resting for five, is a simple pattern many people find helpful. Long screen sessions tire your eyes, so look away from the screen now and then. Drink water, stretch your back and hands between sessions, and try not to study late into the night before an early start. A rested mind learns faster than a tired one.
 
-## A worked example
+## Studying on your device without distractions
 
-Amina and Mariama in Tamale are both preparing to apply for the DMP cohort. They agreed to study for thirty minutes each evening after supper and send each other one sentence about what they learned. When Mariama missed three days because of a family funeral, Amina sent her the lessons she had missed and a short summary. Mariama caught up in a weekend. Neither of them studied for long hours, but they kept going, and that made the difference.`,
+The device you learn on is also full of things that pull you away. A few settings help:
+
+* Turn on **Do not disturb** or **Focus** mode for your study time, on a phone or a computer.
+* Close WhatsApp and social media before you start. On a computer, keep only the lesson tab open.
+* Put the phone face down, or in another room, if you are studying on a computer.
+* Download the lesson first if your connection is slow, so you are not waiting and tempted to wander off.
+
+## Come back to old lessons
+
+People forget most of what they learn unless they meet it again. A simple fix: each week, spend ten minutes on lessons from one or two weeks ago. Read your notes, then redo the quiz without looking. If you get something wrong, read that part of the lesson again. This spaced review makes learning stick far better than reading everything once.
+
+## When motivation drops
+
+Every learner has weeks when it feels hard. That is normal, not a sign you should stop. When it happens:
+
+1. Make the goal even smaller, such as five minutes instead of thirty.
+2. Look back at your notes from the first week and see how far you have come.
+3. Tell your study partner or mentor you are struggling. Saying it out loud often helps.
+4. Remind yourself of your reason for learning. Keep it written at the front of your notebook.
+
+Missing a few days does not erase what you have learned. Starting again is the habit that matters.`,
+      workedExample_md: `**Amina and Mariama keep each other going**
+
+Amina and Mariama in Tamale are both preparing to apply for the DMP cohort. Here is the routine they set up.
+
+1. **Time and place.** They agree to study for thirty minutes each evening after supper. Amina uses the kitchen table; Mariama uses her room with the door closed.
+2. **Small goal.** Each evening's goal is one lesson, or one practice task.
+3. **Focus.** They both turn on Do not disturb and close WhatsApp until the thirty minutes are up.
+4. **Notes.** After each lesson they write the main idea, one example and one question in their notebooks.
+5. **Check in.** At the end, each sends the other one sentence about what she learned, in their two person WhatsApp group.
+6. **Review.** On Sundays they quiz each other on the previous week's lessons.
+
+When Mariama misses three days because of a family funeral, Amina sends her the lessons she missed and a short summary. Mariama makes her goal smaller for a few days, then catches up over a weekend.
+
+Neither of them studies for long hours, but they keep going, and that makes the difference.`,
+      keyTerms: [
+        { term: "Daily goal", definition: "A small, specific task you can finish in one study session." },
+        { term: "Self testing", definition: "Checking what you remember without looking, for example by doing a quiz or explaining an idea aloud." },
+        { term: "Spaced review", definition: "Returning to old lessons after a few days or weeks so you remember them longer." },
+        { term: "Study partner", definition: "Someone who learns alongside you, so you can share progress and help each other." },
+        { term: "Focus mode", definition: "A device setting that silences notifications for a set time." },
+      ],
+      commonMistakes: [
+        "Setting a huge goal, such as learning digital marketing this week",
+        "Copying lessons word for word instead of writing notes in your own words",
+        "Reading notes again and again instead of testing yourself",
+        "Studying with WhatsApp and social media open",
+        "Giving up completely after missing a few days",
+      ],
+      selfCheck: [
+        "What is your study time and place, and what will your goal be tomorrow?",
+        "Who could be your study partner, and how will you check in?",
+        "When will you do your weekly review of older lessons?",
+        "What will you do the next time your motivation drops?",
+      ],
       practice_task_md: `**Goal:** Build a study routine you can keep for two weeks.
 
 **Steps**
@@ -2561,6 +3954,7 @@ Amina and Mariama in Tamale are both preparing to apply for the DMP cohort. They
         "Use mobile money confidently",
         "Read your transaction history",
         "Keep a simple money record",
+        "Balance the day's takings and keep receipts",
       ],
       explanation_md: `Cashiers, shop attendants and front desk staff in Ghana are asked to process MoMo and card payments, issue receipts and keep accurate records of every transaction. Office assistants keep purchase records. Field officers record activities. If you freelance or run a small business later, you will need records to know whether you are making money at all. This lesson builds those habits with tools you already have.
 
@@ -2577,6 +3971,8 @@ You may already send and receive MoMo. At work, the extra skills are:
 
 Your MoMo app or menu shows recent transactions: date, amount, who sent or received, and your balance. Look at it once a week. You will spot mistakes, unknown deductions or a payment you forgot.
 
+If you see a transaction you do not recognise, write down its date, amount and transaction ID, then call your network's official customer care number to ask about it. Do not call a number from a message. Acting quickly gives the best chance of sorting it out.
+
 ## A simple record
 
 A record does not need to be complicated. In a notebook, or a simple table on your phone or computer, use these columns:
@@ -2589,21 +3985,59 @@ A record does not need to be complicated. In a notebook, or a simple table on yo
 
 At the end of each day or week, add up money in and money out. The difference shows whether you gained or lost.
 
-## A worked example
+## Keep business money and personal money apart
 
-Fuseini sells phone accessories in Tamale. Here is part of his record for Monday. The prices are only examples to show how the record works:
+If you sell anything, even part time, try not to mix the business money with your own spending. Mixing makes it impossible to see whether the business is doing well. Some traders keep a separate MoMo number or wallet for the business. Others simply record every time they take money out for themselves, as "money out: personal". Either way, the record stays honest.
 
-* Monday, sold 3 chargers, money in 90 cedis, MoMo, ID noted.
-* Monday, sold 1 earphone, money in 25 cedis, cash.
-* Monday, bought transport to market, money out 10 cedis, cash.
+## Receipts
 
-At the end of the day, money in is 115 cedis and money out is 10 cedis, so he is up 105 cedis before stock costs. When a customer later claimed to have paid twice, Fuseini checked his record and the transaction IDs in his MoMo history and settled it calmly.
+A **receipt** is proof that a payment happened. At work you may write receipts in a book, print them from a machine, or send them as a message. A clear receipt has the date, what was bought, the amount, how it was paid and the business name. When you pay for something for work, ask for a receipt and keep it with your records, or take a photo of it and save it in a folder.
+
+## Checking at the end of the day
+
+In many shops, the last job of the day is to **balance** the takings:
+
+1. Count the cash in the drawer.
+2. Add up the MoMo payments in the business account's history.
+3. Add the two together and compare with the total sales in your record.
+4. If they do not match, check each line again before you assume anything is missing. Often it is a sale that was not written down.
 
 ## From notebook to spreadsheet
 
 In DMP week 2 you will learn Google Sheets, which can add up these columns for you. If you start a record on paper, a phone or a computer now, you will already understand what a spreadsheet is for when you get there.
 
 Accurate records build trust with employers, customers and anyone who might one day lend to or invest in your business.`,
+      workedExample_md: `**Fuseini records a Monday and settles a dispute**
+
+Fuseini sells phone accessories in Tamale. He keeps his record as a simple table in a notes app on his phone. The prices below are only examples to show how the record works.
+
+1. A customer buys 3 chargers and pays by MoMo. Before handing them over, Fuseini checks the business MoMo history and sees the payment. He writes: "Monday, sold 3 chargers, money in 90 cedis, MoMo, ID noted."
+2. Another customer pays cash for an earphone. He writes: "Monday, sold 1 earphone, money in 25 cedis, cash."
+3. He pays for transport to the market. He writes: "Monday, transport to market, money out 10 cedis, cash."
+4. At closing time he counts the cash and checks the MoMo history. Together they match his record.
+5. He adds up: money in is 115 cedis, money out is 10 cedis. He is up 105 cedis for the day, before the cost of his stock.
+
+On Wednesday the first customer returns and says she paid twice. Fuseini stays calm. He opens his record, finds Monday's line and the transaction ID, then checks his MoMo history with her. There is only one payment. She checks her own history and agrees. A clear record turned a possible argument into a two minute check.`,
+      keyTerms: [
+        { term: "Transaction", definition: "One payment or transfer of money, in or out." },
+        { term: "Transaction ID", definition: "The reference number for a mobile money payment. It helps prove and settle disputes." },
+        { term: "Transaction history", definition: "The list of recent payments in your MoMo app or menu, with dates and amounts." },
+        { term: "Money in and money out", definition: "Money you receive and money you spend. The difference shows whether you gained or lost." },
+        { term: "Receipt", definition: "Proof of a payment, showing the date, items, amount, how it was paid and who was paid." },
+        { term: "Balancing", definition: "Checking that the cash and MoMo you hold match the sales in your record." },
+      ],
+      commonMistakes: [
+        "Handing over goods because of a screenshot or SMS instead of checking the payment yourself",
+        "Entering your PIN before reading the receiver's name on the confirmation screen",
+        "Mixing business money and personal money with no record of either",
+        "Not writing down small amounts, so the totals never match",
+      ],
+      selfCheck: [
+        "How do you confirm that a MoMo payment really arrived?",
+        "Where will you keep your money record: a notebook, a phone or a computer?",
+        "What would you do if the day's cash and MoMo did not match your record?",
+        "What did your last week of records show about where your money goes?",
+      ],
       practice_task_md: `**Goal:** Keep a simple money record for one week.
 
 **Steps**
@@ -2671,6 +4105,7 @@ Accurate records build trust with employers, customers and anyone who might one 
         "Explore some digital career paths",
         "Ask yourself useful questions about a career",
         "Talk to people who do the work",
+        "Name first roles and check remote offers safely",
       ],
       explanation_md: `It is easier to keep practising when you know where the practice can lead. Digital skills open doors to many kinds of work, from entry level office and customer service roles to careers in marketing, design, data, product and software. Some of these jobs exist in Tamale, Bolgatanga and Wa, some in Accra and Kumasi, and some can be done remotely. You do not need to choose now, but exploring the options helps you stay motivated.
 
@@ -2698,11 +4133,61 @@ There are no wrong answers. Many people try one path and move to another later.
 
 If you know anyone who works with computers, at an NGO, a bank, a telecom shop or a business centre, ask them what they do all day. Most people are happy to talk about their work for ten minutes. Write down what surprised you.
 
-## A worked example
+Good questions to ask:
 
-Sumaila thought tech only meant coding, which worried him because he disliked maths. He read the digital marketing and UI design roadmaps on SydCrest and spoke to a cousin who manages social media pages for shops in Tamale. He realised he enjoyed writing short, catchy messages and taking product photos. He decided to aim for the social media specialisation in the DMP cohort. Knowing his direction made his typing and English practice feel worthwhile.
+1. What does a normal day look like for you?
+2. Which tools or apps do you use most?
+3. What did you have to learn when you started?
+4. What do you wish you had known earlier?
+5. What would you practise if you were starting now?
+
+Thank them afterwards with a short message. If they offered to help again, keep in touch, but do not ask them for a job in the first conversation.
+
+## First steps into the work
+
+Most people do not start with a big title. Common first roles that use the skills in this roadmap include front desk or office assistant, customer service agent, shop attendant who handles MoMo and records, data entry or field survey work for an NGO, and social media assistant for a small business. These roles build experience, and many people move from them into the paths above.
+
+## Working remotely
+
+Some digital work can be done from anywhere with a reliable connection, for employers in other towns or other countries. It is a real option, but it needs care. Remote jobs usually expect strong written English, reliable internet and a computer, and they attract many scams. Use the checks from the scams lesson: research the company, never pay a fee, and never share codes or PINs.
+
+## You do not have to decide alone
+
+Choosing a direction is easier with help. A mentor, a teacher or someone already doing the work can tell you what a path is really like. SydCrest's mentors in the DMP cohort can help too. Try one path, see how it feels, and adjust. Changing direction after learning something new is a sign of good judgement, not failure.
 
 Every path above starts with the foundations in this roadmap: confident use of your phone or computer, clear communication, safe accounts, files and forms, and basic computer skills.`,
+      workedExample_md: `**Sumaila discovers a path that suits him**
+
+Sumaila from Tamale thought tech only meant coding, which worried him because he disliked maths. He decided to explore properly before giving up.
+
+1. He answered the five questions in the lesson in his notebook. He wrote "yes" next to enjoying writing and talking to people, and next to drawing and noticing what is confusing.
+2. He opened two SydCrest roadmaps, digital marketing and UI and UX design, and read the first five topics of each.
+3. He messaged his cousin, Kwame, who manages social media pages for shops in Tamale, and asked for ten minutes.
+4. On the call he asked the five questions from the lesson. Kwame said most of his day is writing short posts, taking product photos, replying to customers and checking which posts got the most response.
+5. Sumaila wrote down what surprised him: very little maths, and a lot of clear writing.
+6. He thanked Kwame with a short message.
+7. He wrote three sentences: "Social media marketing interests me most. I like writing short, catchy messages and taking photos. I need typing and clear English from this roadmap."
+
+He decided to aim for the social media specialisation in the DMP cohort. Knowing his direction made his typing and English practice feel worthwhile.`,
+      keyTerms: [
+        { term: "Career path", definition: "A direction of work you can grow in over time, such as data or digital marketing." },
+        { term: "Digital marketing", definition: "Helping businesses reach customers online through social media, search, email and adverts." },
+        { term: "UI and UX design", definition: "Designing how apps and websites look and how easy they are to use." },
+        { term: "Entry level role", definition: "A first job that needs little or no previous work experience." },
+        { term: "Remote work", definition: "Work done away from the employer's office, usually online." },
+      ],
+      commonMistakes: [
+        "Thinking tech only means coding and giving up before exploring",
+        "Choosing a path only because a friend chose it",
+        "Asking a contact for a job in your first conversation",
+        "Trusting remote job offers without checking the company",
+      ],
+      selfCheck: [
+        "Which two paths from this lesson match your answers to the five questions?",
+        "Who do you know who uses a computer or smartphone for work?",
+        "What would you ask them first?",
+        "Which skill from this roadmap does your chosen path need most?",
+      ],
       practice_task_md: `**Goal:** Explore at least two digital career paths.
 
 **Steps**
@@ -2769,6 +4254,7 @@ Every path above starts with the foundations in this roadmap: confident use of y
         "Describe what the Delta Mentoring Program covers",
         "See how this bridge prepared you",
         "Map your progress to DMP week 1",
+        "Get your study setup ready before the cohort",
       ],
       explanation_md: `This is the last section of the Digital Skills Bridge. Its job is to check that you are ready for the first week of the Delta Mentoring Program, SydCrest's twelve week mentored cohort in digital skills and digital marketing, and to help you apply.
 
@@ -2800,11 +4286,68 @@ You are not expected to be an expert. The cohort will teach you. But arriving wi
 * **Readiness checklist.** A practical check of the skills week 1 assumes, with a link back to any lesson you should revisit.
 * **Apply to the DMP cohort.** Where to sign up, what to mention about your progress, and what to do if you do not get a seat this time.
 
-## A worked example
+## What a cohort week asks of you
 
-Hawa finished the bridge over two months. Before applying, she went through the readiness checklist. She could do everything except join a video call confidently, so she spent one more evening practising with a friend. When the cohort began, she followed along as her mentor explained files and folders, and she already knew where her own files lived. It felt like the next step, not a jump into the unknown.
+Every week of the cohort has goals and an assignment. Week 1's assignment, for example, is a short tip sheet written in Google Docs. Later weeks ask for things such as a short presentation, a content plan and, near the end, a portfolio with several pieces of work. Your mentor will explain how sessions run and when work is due.
+
+That means you need three things in place before you start:
+
+1. **Regular time.** Set aside study time on several days each week, not just one long session.
+2. **Regular computer access.** Some tasks are much easier on a computer: writing documents, building slides, working in a spreadsheet. Your time slot from the computer section matters here.
+3. **A way to stay connected.** Enough data or WiFi for messages, the occasional video call and opening shared documents.
+
+## Getting your setup ready
+
+Before you apply, check that these are in place:
+
+* Your own email address, with your own recovery number and two step verification on.
+* A Google Drive folder for your coursework, separate from your Job documents folder.
+* Your study routine and study partner from the study habits lesson.
+* A practice log showing your typing progress.
+* Your network's official customer care number saved, and your WhatsApp privacy set.
+
+None of this needs money beyond data. It just needs a little time.
+
+## If some parts still feel shaky
+
+That is fine. The bridge is not a test you pass or fail. Use the readiness checklist in the next lesson to find the exact gaps, revisit those lessons, and practise once more. Many people find that one or two extra sessions are enough.
+
+## Telling people at home
+
+A twelve week cohort is easier when the people around you understand it. Tell your family or employer what you are doing, which days you will study, and why it matters to you. Ask for the quiet time and the device access you need. Support at home often makes the difference between finishing and dropping out.
 
 Whatever happens with your application, the skills you built here are yours. They already make you more ready for many entry level jobs.`,
+      workedExample_md: `**Hawa checks she is ready for week 1**
+
+Hawa finished the bridge over two months. Before applying, she used the practice task for this lesson.
+
+1. She wrote the four parts of DMP week 1 in her notebook: computer hardware, files and folders, safe browsing and phishing, Gmail with attachments.
+2. Next to each she wrote the bridge lessons that prepared her. For files and folders she wrote "Photos, documents and files" and "Files, forms and finding things".
+3. She scored herself from 1 to 3. Files, email and scams were all 3. Computer hardware was 2, because she knew the parts but had only used a desktop.
+4. Then she went through the readiness checklist. Everything was a yes, except joining a video call confidently, which was "nearly".
+5. She spent one more evening practising a video call with a friend: muting, turning the camera off and on, and rejoining after leaving.
+6. She made a "DMP coursework" folder in Google Drive and confirmed her Saturday slot at the library computer.
+
+When the cohort began, she followed along as her mentor explained files and folders, and she already knew where her own files lived. It felt like the next step, not a jump into the unknown.`,
+      keyTerms: [
+        { term: "Delta Mentoring Program", definition: "SydCrest's twelve week mentored cohort in digital skills and digital marketing, often called the DMP." },
+        { term: "Cohort", definition: "A group of learners who start and move through a programme together." },
+        { term: "Mentor", definition: "An experienced person who guides you, answers questions and gives feedback on your work." },
+        { term: "Assignment", definition: "A task you complete and submit each week to show what you have learned." },
+        { term: "Specialisation", definition: "The focused area you choose in weeks 7 to 9: SEO and content, social media, or Google Ads." },
+      ],
+      commonMistakes: [
+        "Applying without checking which week 1 skills still feel shaky",
+        "Planning to study only on one day a week",
+        "Having no regular computer access arranged before the cohort starts",
+        "Thinking you must be an expert before you apply",
+      ],
+      selfCheck: [
+        "Which part of DMP week 1 do you feel least ready for, and which lesson will help?",
+        "Where and when will you have regular computer access during the cohort?",
+        "Is your email protected with your own recovery number and two step verification?",
+        "How many days a week can you set aside for study?",
+      ],
       practice_task_md: `**Goal:** Map your bridge progress to DMP week 1.
 
 **Steps**
@@ -2871,6 +4414,7 @@ Whatever happens with your application, the skills you built here are yours. The
         "Use the readiness checklist honestly",
         "Check your device, communication, accounts and files",
         "Decide what to do with your results",
+        "Turn your gaps into a short plan",
       ],
       explanation_md: `Before you apply to the DMP cohort, or to an entry level job that asks for basic digital skills, it helps to check honestly what you can already do. This checklist covers what DMP week 1 assumes, plus the everyday skills from the rest of this roadmap. It is not an exam. It is a way to find any small gaps so you can fix them before they slow you down.
 
@@ -2922,11 +4466,62 @@ For each item, do it for real, right now if you can, rather than just thinking "
 * **Some Nearly:** practise those items once more this week. You can still apply.
 * **Any Not yet:** go back to that lesson in this roadmap. Each item above matches a lesson by name.
 
-## A worked example
+## Turn gaps into a short plan
 
-Issahaku went through the list. He had Yes for most items, Nearly for scanning a document and Not yet for two step verification. He spent twenty minutes that evening turning on two step verification for Gmail and WhatsApp, and scanned his certificate with Google Drive. The next day every item was Yes or Nearly, and he applied with confidence.
+A list of Not yet items can feel heavy. Turn it into a plan instead:
+
+1. Write each Not yet or Nearly item on its own line.
+2. Next to it, write the lesson name. The checklist headings match the sections of this roadmap, so it is easy to find.
+3. Give each item a day this week. Most take less than half an hour.
+4. When you have practised, do the item for real again and update the mark.
+
+Fix safety items first, such as two step verification and recovery numbers, because they protect everything else.
+
+## Ask someone to watch
+
+It is easy to be too kind or too hard on yourself. Ask a friend, family member or mentor to watch you do three items, such as joining a video call, sending a PDF as a Document and typing a short paragraph. They do not need to be experts. They just tell you what they saw: did you do it without help, and did it work?
+
+## Ready for jobs too
+
+The same checklist describes what many entry level employers mean by basic digital skills: answering calls well, clear messages and email, safe accounts, sending documents, filling in forms, finding information and basic computer use. If an advert asks for these, you can now point to real things you have done, rather than just saying "I am good with computers".
+
+## Repeat the check later
+
+Skills fade if you stop using them. Do the checklist again a month from now, or just before the cohort starts. It takes about an hour, and it shows you what to refresh.
 
 Keep your completed checklist. It is useful evidence of your progress when you apply.`,
+      workedExample_md: `**Issahaku works through the checklist**
+
+Issahaku from Yendi sets aside one evening to do the readiness checklist properly.
+
+1. He copies the headings and items into his notebook.
+2. He does each item for real. He connects to WiFi, sends a PDF to his sister as a Document, joins a short WhatsApp video call with a friend and types a paragraph on the library computer the next morning.
+3. He marks each one. Most are Yes. Scanning a document is Nearly, because he had to look up where the scan button is. Two step verification is Not yet.
+4. He turns his gaps into a plan. Two step verification goes first, because it is a safety item. Scanning goes second.
+5. That evening he spends twenty minutes turning on two step verification for Gmail and WhatsApp, and saves his Google backup codes somewhere private at home.
+6. Then he scans his certificate with Google Drive, names it properly and saves it to his Job documents folder.
+7. He asks his friend Selorm to watch him send the PDF, join a video call and type a paragraph. Selorm says all three worked without help.
+8. He updates his marks. Every item is now Yes or Nearly.
+
+He applies with confidence, and keeps the checklist as evidence of his progress.`,
+      keyTerms: [
+        { term: "Readiness checklist", definition: "A list of skills you check by doing each one for real before applying." },
+        { term: "Yes, Nearly, Not yet", definition: "The three marks: did it without help, did it with a little help, could not do it yet." },
+        { term: "Gap", definition: "A skill you cannot do yet, or not without help." },
+        { term: "Evidence", definition: "Something you can show to prove a skill, such as a completed checklist or a practice log." },
+      ],
+      commonMistakes: [
+        "Ticking items from memory instead of doing them for real",
+        "Marking everything Yes to feel good, then struggling in week 1",
+        "Feeling discouraged by Not yet items instead of turning them into a plan",
+        "Leaving safety items until last",
+      ],
+      selfCheck: [
+        "Which items on the checklist did you mark Nearly or Not yet?",
+        "Which lesson will you revisit first, and on which day?",
+        "Who could watch you do three items and tell you honestly how it went?",
+        "Which items could you point to when an advert asks for basic digital skills?",
+      ],
       practice_task_md: `**Goal:** Complete the readiness checklist honestly.
 
 **Steps**
@@ -2994,12 +4589,13 @@ Keep your completed checklist. It is useful evidence of your progress when you a
         "Prepare before you apply",
         "Write about yourself clearly",
         "Fill in the form carefully and plan if you are not selected",
+        "Follow up after you apply",
       ],
       explanation_md: `You have built real foundations: confident use of your phone or computer, professional communication, safe accounts, files and forms, and first steps on a computer. The next step is to try for a seat in the Delta Mentoring Program. The first cohort is a free pilot with 25 seats, starting in January 2027. Applying is itself a useful skill, because job applications in Ghana use the same steps: read the instructions, fill in a form, attach documents and write about yourself clearly.
 
 ## Before you apply
 
-* **Use the official page.** On the SydCrest website, open the **Programme** page. It explains the cohort and has a waitlist form. Join the waitlist there. The pilot cohort is free, so be careful of anyone who asks you to pay a fee to "secure" a seat for you. Use your scam spotting skills.
+* **Use the official page.** On the SydCrest website, open the **Programme** page. It explains the cohort and gives you two choices. **Apply for a seat** asks you to create a free SydCrest account, then fill in a short application form. You can follow your application from your account. **Join the waitlist** is for people who are not ready to apply yet. The pilot cohort is free, so be careful of anyone who asks you to pay a fee to "secure" a seat for you. Use your scam spotting skills.
 * **Read all the instructions.** Read the Programme page and any messages SydCrest sends you. Note any deadline and what you need to prepare.
 * **Prepare your details.** Your professional email address, your phone number and any documents asked for, scanned clearly and named properly.
 * **Check your time.** The cohort runs for twelve weeks with weekly assignments. Think honestly about the hours you can give each week, and plan around work, family and farming seasons.
@@ -3017,15 +4613,60 @@ Specific examples are more convincing than big promises. "I practise typing for 
 
 ## Fill in the form carefully
 
-Use everything from the online forms lesson when you fill in the waitlist form and any form that follows. Read the whole form first, check every name and number, review before submitting, and take a screenshot of the confirmation.
+Use everything from the online forms lesson when you fill in the application form, or the waitlist form. Read the whole form first, check every name and number, review before submitting, and take a screenshot of the confirmation.
 
 ## If you do not get a seat this time
 
-The pilot cohort has only 25 seats, so not everyone who joins the waitlist will get one. That does not mean you are not good enough. Keep learning on SydCrest's free roadmaps, keep your practice log going, and watch the Programme page. If another cohort is announced, apply again with even more progress to show. Everything you learn in the meantime makes you more ready for both the cohort and for jobs.
+The pilot cohort has only 25 seats, so not everyone who applies will get one. That does not mean you are not good enough. Keep learning on SydCrest's free roadmaps, keep your practice log going, and watch the Programme page. If another cohort is announced, apply again with even more progress to show. Everything you learn in the meantime makes you more ready for both the cohort and for jobs.
 
-## A worked example
+## After you apply
 
-Wumpini wrote: "My name is Wumpini Alhassan from Savelugu. I sell provisions and want to learn social media marketing to grow sales. I completed the Digital Skills Bridge, I now type a paragraph without looking at the keys, and I keep weekly sales records. I can study for six hours each week in the evenings." It is short, clear and specific.`,
+Applying is not the end of the job. Keep an eye out for a reply:
+
+* Check your email inbox, and your Spam folder, every day or two.
+* Keep your phone charged and answer unknown numbers politely, in case it is SydCrest calling. Remember your scam checks: the real team will not ask for a fee, a PIN or a code.
+* Reply quickly and clearly to any message, using the habits from the communication lessons.
+* Keep studying. Progress you make now is something you can mention later.
+
+## The same steps work for jobs
+
+Everything in this lesson also works for job applications: use the official source, read all the instructions, prepare your documents, write about yourself with specific examples, fill in the form carefully and follow up. Each application you make gets easier.
+
+Keep a simple list of everything you apply for: the date, what it was, the link, and any reply. It stops you missing a follow up, and it shows you how much you are doing even when replies are slow.`,
+      workedExample_md: `**Wumpini writes her application**
+
+Wumpini sells provisions in Savelugu and wants a seat in the pilot cohort.
+
+1. She opens the SydCrest website herself and goes to the **Programme** page, instead of using a link someone forwarded to her.
+2. She taps **Apply for a seat** and creates her free account. Then she reads the whole form before typing anything, and notes what it asks.
+3. In her notes app she drafts her answer using the four part structure.
+4. **Who she is:** "My name is Wumpini Alhassan from Savelugu. I sell provisions."
+5. **Why she wants to join:** "I want to learn social media marketing to grow my sales."
+6. **What she has done:** "I completed the Digital Skills Bridge, I now type a paragraph without looking at the keys, and I keep weekly sales records."
+7. **Her commitment:** "I can study for six hours each week in the evenings."
+8. She reads it aloud and asks her study partner to read it. Her partner suggests nothing more, because it is already short.
+9. She pastes it into the form, checks her email address and phone number digit by digit, submits, and takes a screenshot of the confirmation.
+
+Her final answer is four sentences long. It is short, clear and specific, and every claim in it is something she has really done.`,
+      keyTerms: [
+        { term: "Waitlist", definition: "A list of people who want a place, used when there are fewer seats than applicants." },
+        { term: "Pilot", definition: "A first, smaller run of a programme used to test and improve it." },
+        { term: "Application", definition: "The form and information you send to ask for a place in a programme or a job." },
+        { term: "Commitment", definition: "The time and effort you promise to give, stated honestly." },
+        { term: "Specific example", definition: "A real, checkable detail, such as practising typing for fifteen minutes a day, instead of a general claim." },
+      ],
+      commonMistakes: [
+        "Using a forwarded link or paying someone who promises to secure a seat",
+        "Writing big promises instead of specific examples",
+        "Promising more weekly hours than you can really give",
+        "Not checking your inbox or Spam folder after applying",
+      ],
+      selfCheck: [
+        "What would you write for each of the four parts about yourself?",
+        "Which two specific examples of progress from this roadmap will you mention?",
+        "How many hours a week can you honestly give to the cohort?",
+        "What will you keep doing if you do not get a seat this time?",
+      ],
       practice_task_md: `**Goal:** Prepare a strong application.
 
 **Steps**
@@ -3043,12 +4684,12 @@ Wumpini wrote: "My name is Wumpini Alhassan from Savelugu. I sell provisions and
             prompt: "Where should you sign up for the DMP?",
             options: [
               "From anyone who asks for a small fee to secure your seat early",
-              "The waitlist form on the SydCrest website's Programme page",
+              "The Programme page on the SydCrest website",
               "In a random forwarded WhatsApp message",
               "From an unknown caller",
             ],
             answer_index: 1,
-            explanation: "The official waitlist is on SydCrest's Programme page, and the pilot is free, so a fee request is a warning sign.",
+            explanation: "The application and the waitlist are both on SydCrest's Programme page, and the pilot is free, so a fee request is a warning sign.",
           },
           {
             prompt: "Which sentence is more convincing in an application?",
@@ -3065,22 +4706,22 @@ Wumpini wrote: "My name is Wumpini Alhassan from Savelugu. I sell provisions and
             prompt: "Which of these belongs in the four part structure for writing about yourself?",
             options: [
               "Your favourite food",
-              "What you have already done on this roadmap",
               "The phone numbers of two friends who can vouch for you",
               "Your MoMo PIN",
+              "What you have already done on this roadmap",
             ],
-            answer_index: 1,
+            answer_index: 3,
             explanation: "The structure includes who you are, why, what you have done and your commitment.",
           },
           {
             prompt: "What should you do if you do not get a seat this time?",
             options: [
               "Stop learning completely",
-              "Keep learning on the free roadmaps and apply again",
               "Pay someone who says they can get you a seat next time",
+              "Keep learning on the free roadmaps and apply again",
               "Delete your email account",
             ],
-            answer_index: 1,
+            answer_index: 2,
             explanation: "The pilot has only 25 seats, so keep learning and apply again with more progress if another cohort opens.",
           },
         ],

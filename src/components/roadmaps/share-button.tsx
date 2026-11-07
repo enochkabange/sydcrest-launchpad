@@ -3,6 +3,7 @@
 import { Check, Share2 } from "lucide-react";
 import { useState } from "react";
 import { buttonClasses } from "@/components/ui/button";
+import { clientTrack } from "@/lib/analytics/client/analytics";
 
 /**
  * Native share sheet on phones (WhatsApp, SMS and the rest), copy link
@@ -16,6 +17,7 @@ export function ShareButton({ path, title, text }: { path: string; title: string
     if (typeof navigator.share === "function") {
       try {
         await navigator.share({ title, text, url });
+        clientTrack("share_clicked", { target: "roadmap", channel: "share" });
         return;
       } catch (error) {
         // The learner closed the share sheet; nothing to do.
@@ -24,6 +26,7 @@ export function ShareButton({ path, title, text }: { path: string; title: string
     }
     try {
       await navigator.clipboard.writeText(url);
+      clientTrack("share_clicked", { target: "roadmap", channel: "copy" });
       setStatus("copied");
     } catch {
       setStatus("failed");

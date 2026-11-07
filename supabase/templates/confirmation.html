@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Confirm your email for SydCrest</title>
+</head>
+<body style="margin:0;padding:0;background-color:#f4f4f2;">
+<div style="display:none;max-height:0;overflow:hidden;opacity:0;">Confirm your email to finish creating your SydCrest account.</div>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#f4f4f2;">
+<tr>
+<td align="center" style="padding:24px 16px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;">
+<tr>
+<td style="padding:0 0 16px 0;">
+<table role="presentation" cellpadding="0" cellspacing="0" border="0">
+<tr>
+<td style="padding:0 12px 0 0;vertical-align:middle;"><img src="https://sydcrest.com/icons/icon-192.png" width="40" height="40" alt="" style="display:block;border:0;width:40px;height:40px;"></td>
+<td style="vertical-align:middle;font-family:Urbanist, Arial, Helvetica, sans-serif;font-size:22px;font-weight:700;color:#211d1d;">SydCrest</td>
+</tr>
+</table>
+</td>
+</tr>
+<tr>
+<td style="background-color:#ffffff;border:1px solid #e7e6e3;border-radius:12px;padding:32px 28px;font-family:Urbanist, Arial, Helvetica, sans-serif;color:#211d1d;">
+<h1 style="margin:0 0 16px 0;font-family:Urbanist, Arial, Helvetica, sans-serif;font-size:24px;line-height:32px;font-weight:700;color:#211d1d;">Confirm your email</h1>
+<p style="margin:0 0 16px 0;font-size:16px;line-height:24px;color:#211d1d;">{{ if .Data.full_name }}Hello {{ .Data.full_name }},{{ else }}Hello,{{ end }}</p>
+<p style="margin:0 0 24px 0;font-size:16px;line-height:24px;color:#211d1d;">You created a SydCrest account with this email address. Confirm it to finish setting up your account and start learning.</p>
+<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px 0;">
+<tr>
+<td align="center" style="background-color:#1c75bb;border-radius:8px;">
+<a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email&next={{ .RedirectTo }}" style="display:inline-block;padding:14px 28px;font-family:Urbanist, Arial, Helvetica, sans-serif;font-size:16px;line-height:20px;font-weight:700;color:#ffffff;text-decoration:none;border-radius:8px;">Confirm my email</a>
+</td>
+</tr>
+</table>
+<p style="margin:0 0 8px 0;font-size:14px;line-height:20px;color:#57564f;">If the button does not work, copy this link into your browser:</p>
+<p style="margin:0 0 24px 0;font-size:14px;line-height:20px;word-break:break-all;"><a href="{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email&next={{ .RedirectTo }}" style="color:#165b93;text-decoration:underline;">{{ .SiteURL }}/auth/confirm?token_hash={{ .TokenHash }}&type=email&next={{ .RedirectTo }}</a></p>
+<p style="margin:0 0 16px 0;font-size:14px;line-height:20px;color:#57564f;">This link works once and stops working after 1 hour. If it has stopped working, sign up again with the same email and we will send a new one.</p>
+<p style="margin:0;font-size:14px;line-height:20px;color:#57564f;">If you did not create a SydCrest account, you can ignore this email; no account will be set up for you.</p>
+</td>
+</tr>
+<tr>
+<td style="padding:24px 4px 0 4px;font-family:Urbanist, Arial, Helvetica, sans-serif;font-size:13px;line-height:20px;color:#57564f;">
+<p style="margin:0 0 4px 0;font-weight:700;color:#211d1d;">SydCrest Launchpad</p>
+<p style="margin:0;"><a href="https://sydcrest.com" style="color:#165b93;text-decoration:underline;">sydcrest.com</a> &middot; <a href="mailto:hello@sydcrest.com" style="color:#165b93;text-decoration:underline;">hello@sydcrest.com</a></p>
+<p style="margin:8px 0 0 0;">You are getting this email because someone used this address on SydCrest.</p>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

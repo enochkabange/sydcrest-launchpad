@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { KeepNextLink } from "../next-field";
 import { Suspense } from "react";
 import { LoginForm } from "./login-form";
-import { GoogleButton, OrDivider } from "../google-button";
+import { GoogleSignIn } from "../google-button";
 import { Alert } from "@/components/ui/alert";
 import { UNDER_AGE_MESSAGE } from "@/lib/legal";
 
@@ -30,8 +30,7 @@ export default function LoginPage({ searchParams }: PageProps<"/login">) {
       <Suspense>
         <CallbackError searchParams={searchParams} />
       </Suspense>
-      <GoogleButton />
-      <OrDivider />
+      <GoogleSignIn />
       <LoginForm />
       <p className="text-sm text-content-2">
         New to SydCrest?{" "}

@@ -92,7 +92,7 @@ select lives_ok(
 insert into private.rate_limit_hits (bucket, subject) select 'waitlist_all', 'all' from generate_series(1, 300);
 set local role anon;
 select throws_ok(
-  $$ insert into public.waitlist (email, name) values ('mariama.seidu@example.test', 'Mariama Seidu') $$,
+  $$ select public.join_waitlist(repeat('c', 64), 'mariama.seidu@example.test', 'Mariama Seidu') $$,
   '54000', 'Slow down', 'the waitlist stops taking sign ups past the ceiling');
 
 -- Signed out forms --------------------------------------------------------------

@@ -131,6 +131,14 @@ async function Console({ searchParams }: Pick<PageProps<"/mentor">, "searchParam
                 </Link>
               )}
             </Card>
+            <Card title="Certificates">
+              <p className="text-sm text-content-2">
+                Your final review: issue a certificate once a learner has passed every week and reviewed a classmate&apos;s capstone.
+              </p>
+              <Link href={`/certificates/issue?cohort=${cohort.id}`} className={buttonClasses("secondary", "self-start")}>
+                Issue certificates
+              </Link>
+            </Card>
           </>
         }
       >

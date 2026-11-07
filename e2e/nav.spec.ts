@@ -123,10 +123,10 @@ test("signed in users keep the app navigation on public pages", async ({ page },
     await expect(page.getByRole("navigation", { name: "Site" })).toHaveCount(0);
     await expect(page.getByTestId("notification-bell").filter({ visible: true })).toHaveCount(1);
   }
-  // The Mentors destination is current on the expert directory.
+  // The Experts destination (founder decision D5) is current on the expert directory.
   await page.goto("/experts");
   const nav = page.getByRole("navigation", { name: phone ? "Primary" : "App" });
-  await expect(nav.getByRole("link", { name: "Mentors", exact: true })).toHaveAttribute("aria-current", "page");
+  await expect(nav.getByRole("link", { name: "Experts", exact: true })).toHaveAttribute("aria-current", "page");
 });
 
 test("the visitor header lists every public area", async ({ page }) => {

@@ -17,6 +17,29 @@ const para = (topic: string) =>
     3,
   );
 
+// Lesson Markdown (issue #267): a table wide enough to scroll on a phone,
+// two level lists, and a numbered list that continues at 3.
+const COUNT_TABLE = [
+  "Table: Monday count at the shop",
+  "| Item | On the list | Counted | Variance (GHS) | Fix |",
+  "| :--- | ---: | ---: | ---: | :--- |",
+  "| Tins of milk | 50 | 48 | 24 | Record two **unrecorded sales** |",
+  "| Bags of rice | 12 | 12 | 0 | None |",
+  "| Bottles of oil | 8 | 7 | 60 | Check the delivery note |",
+].join("\n");
+
+const COUNT_STEPS = [
+  "1. Count the shelf",
+  "   - Tins first",
+  "   - Then bags",
+  "2. Write each number down",
+  "",
+  "Compare with the list before you go on.",
+  "",
+  "3. Mark every gap",
+  "4. Tell the owner",
+].join("\n");
+
 export async function seedRatedRoadmap(): Promise<SeededRatedRoadmap> {
   const suffix = crypto.randomUUID().slice(0, 8);
   const title = `Stock Keeping ${suffix}`;
@@ -77,7 +100,7 @@ export async function seedRatedRoadmap(): Promise<SeededRatedRoadmap> {
       node_id: lesson.id,
       explanation_md: [
         `## Why counting matters\n\n${para("Counting")}`,
-        `## Count and compare\n\n${para("Comparing")}`,
+        `## Count and compare\n\n${para("Comparing")}\n\n${COUNT_TABLE}\n\n${COUNT_STEPS}`,
         `## Fix the gaps\n\n${para("Fixing gaps")}`,
       ].join("\n\n"),
       practice_task_md: "**Goal:** count ten items on a shelf and compare them with your list.",

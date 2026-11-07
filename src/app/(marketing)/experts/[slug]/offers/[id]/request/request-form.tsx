@@ -13,7 +13,7 @@ export function RequestForm({ slug, offerId, expertFirstName }: { slug: string; 
   const e = state.errors ?? {};
 
   return (
-    <form action={action} className="flex flex-col gap-5" noValidate>
+    <form data-analytics-form="booking_request" action={action} className="flex flex-col gap-5" noValidate>
       {state.message && <Alert tone="danger">{state.message}</Alert>}
       <TextAreaField
         id="message"

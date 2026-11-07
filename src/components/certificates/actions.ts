@@ -1,5 +1,6 @@
 "use server";
 
+import { trackResult } from "@/lib/analytics/track";
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { getMyProfile } from "@/lib/auth";
@@ -24,6 +25,7 @@ export async function issueCertificate(_prev: CertificateActionState, form: Form
 
   const supabase = await createClient();
   const { data: cert, error } = await supabase.rpc("issue_certificate", { p_cohort_member_id: memberId });
+  await trackResult("certificate_issued", error ?? (cert ? null : { code: "P0002" }));
   if (error || !cert) return { error: issueErrorMessage(error?.code, error?.message) };
 
   await storeBadge(cert.id, cert, cert.program_id);
@@ -43,6 +45,7 @@ export async function revokeCertificate(_prev: CertificateActionState, form: For
 
   const supabase = await createClient();
   const { error } = await supabase.rpc("revoke_certificate", { p_certificate_id: id, p_reason: reason.trim() });
+  await trackResult("certificate_revoked", error);
   if (error) return { error: revokeErrorMessage(error.code) };
   revalidatePath("/admin/certificates");
   revalidatePath("/certificates", "layout");

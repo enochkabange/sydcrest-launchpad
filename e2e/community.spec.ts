@@ -78,9 +78,9 @@ test("a member reads the chapter feed, posts, reacts, replies and reports; the l
   await thread.getByRole("button", { name: "Report this post" }).click();
   await expect(page.getByText("Thanks. The moderators of this group will review it.")).toBeVisible();
 
-  // Members cannot open the moderation queue.
+  // Members cannot open the moderation queue: a staff tool is a 404 (founder decision D6).
   await page.goto("/community/moderation");
-  await expect(page.getByRole("heading", { name: "For moderators" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Moderation", exact: true })).toHaveCount(0);
 
   // The lead sees the report, hides the post with a reason and closes the report.
   await signIn(page, seeded.lead);

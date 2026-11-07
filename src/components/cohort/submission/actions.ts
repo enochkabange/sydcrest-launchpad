@@ -1,5 +1,6 @@
 "use server";
 
+import { trackRefusal, trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { after } from "next/server";
 import { requireUser } from "@/lib/auth";
@@ -24,7 +25,10 @@ export type SubmissionFormState = {
 export async function saveSubmission(_prev: SubmissionFormState, form: FormData): Promise<SubmissionFormState> {
   const user = await requireUser();
   const parsed = parseSubmissionForm(form, user.id);
-  if (!parsed.ok) return { errors: parsed.errors };
+  if (!parsed.ok) {
+    await trackRefusal("submission_saved", "validation");
+    return { errors: parsed.errors };
+  }
   const { weekId, bodyText, linkUrl, filePath, submit } = parsed.data;
 
   const supabase = await createClient();
@@ -35,6 +39,7 @@ export async function saveSubmission(_prev: SubmissionFormState, form: FormData)
       p_file_path: filePath ?? undefined,
       p_submit: submit,
     });
+  await trackResult("submission_saved", error ?? (row ? null : { code: "P0002" }), { sent: submit });
   if (error || !row) {
     return { message: friendlyError(error?.code, "We couldn't save your work. Try again in a moment.") };
   }
@@ -107,7 +112,10 @@ export type GradeFormState = {
 export async function gradeSubmission(_prev: GradeFormState, form: FormData): Promise<GradeFormState> {
   await requireUser();
   const parsed = parseGradeForm(form);
-  if (!parsed.ok) return { errors: parsed.errors };
+  if (!parsed.ok) {
+    await trackRefusal("submission_graded", "validation");
+    return { errors: parsed.errors };
+  }
   const { submissionId, finalScore, feedback, returnWork } = parsed.data;
 
   const supabase = await createClient();
@@ -118,6 +126,7 @@ export async function gradeSubmission(_prev: GradeFormState, form: FormData): Pr
       p_mentor_feedback: feedback ?? undefined,
       p_return: returnWork,
     });
+  await trackResult("submission_graded", error ?? (data ? null : { code: "P0002" }), { passed: !returnWork });
   if (error || !data) return { message: friendlyError(error?.code, "We couldn't save the grade. Try again.") };
   refresh();
   return { saved: { status: data.status, at: Date.now() } };

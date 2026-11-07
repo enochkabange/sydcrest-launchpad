@@ -2855,7 +2855,7 @@ Wumpini has managed social media for a salon in Tamale for four months. She deli
 
 ## Ask for reviews and recommendations
 
-Clients who are happy often do not think to leave a review, so ask, at the right moment: just after you deliver work the client is pleased with. Make it easy:
+Most clients do not think to leave a review, so ask every client, not only the ones you expect to be pleased, at the right moment: just after you deliver the finished work. Ask for an honest review, never a good one. Make it easy:
 
 * On a marketplace, politely remind the client that a review on the platform helps you.
 * For local clients, ask if they would write two or three sentences you can share, or record a short voice note, and whether you may use their name and business name.
@@ -2893,10 +2893,10 @@ Fuseini cleans survey data for an NGO in Tamale. He keeps the files in a protect
       practice_task_md: `**Goal:** Prepare your review and data care routines.
 
 **Steps:**
-1. Write a short, polite message asking a happy client for a review or recommendation, including a request for permission to share their name.
+1. Write a short, polite message asking a client for an honest review or recommendation, including a request for permission to share their name.
 2. Write the three steps you would follow if you made a mistake on a client's work.
 3. Write a five point data care checklist for your service, based on the lesson.
-4. If you have a past client who was happy, send them your review request.
+4. If you have a past client, send them your review request.
 
 **Done looks like:** A review request message, your three step mistake plan and a data care checklist. If you sent a real request, note the reply.`,
       quiz: {
@@ -2905,12 +2905,12 @@ Fuseini cleans survey data for an NGO in Tamale. He keeps the files in a protect
             prompt: "When is a good moment to ask a client for a review?",
             options: [
               "Before you start the work",
-              "Just after you deliver work the client is pleased with",
+              "Just after you deliver the finished work",
               "During an argument about payment",
               "A year after the job ends",
             ],
             answer_index: 1,
-            explanation: "The lesson says to ask just after delivering work the client is happy with.",
+            explanation: "The lesson says to ask every client just after delivering the finished work.",
           },
           {
             prompt: "What does the lesson say about fake or paid reviews?",

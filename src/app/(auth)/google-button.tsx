@@ -1,6 +1,18 @@
 import { signInWithGoogle } from "./actions";
 import { buttonClasses } from "@/components/ui/button";
 import { NextField } from "./next-field";
+import { googleSignInEnabled } from "@/lib/google-sign-in";
+
+/** The Google button and the "or" divider under it, or nothing while Google is off. */
+export function GoogleSignIn() {
+  if (!googleSignInEnabled()) return null;
+  return (
+    <>
+      <GoogleButton />
+      <OrDivider />
+    </>
+  );
+}
 
 export function GoogleButton() {
   return (
