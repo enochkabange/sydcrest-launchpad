@@ -592,7 +592,7 @@ Course B covers more, but it is not built for a beginner, has no practice and wo
       ],
       explanation_md: `You do not need money to start learning digital skills. Some of the clearest, most up to date lessons on the internet are free, made by large companies that want people to use their software, by universities, and by nonprofits whose whole purpose is free education. Knowing where to look saves you from paying for something you could have learned for nothing, and from wasting data on poor quality videos.
 
-This section introduces well known free platforms as **examples**. SydCrest is not paid by any of them and does not endorse one over another. Other good options exist, and new ones appear every year. What matters is that you learn to judge a platform yourself.
+This section introduces well known free platforms as **examples**. SydCrest names them to help you look and does not endorse one over another. Other good options exist, and new ones appear every year. What matters is that you learn to judge a platform yourself.
 
 ## Why something good can be free
 
@@ -738,7 +738,7 @@ She decides this is a free trial of a paid course, not a free course. Instead, s
 
 **What it is.** Google's training site for its business products, such as Google Ads, Google Analytics and Google Workspace. Courses are self paced, written and filmed by Google, and organised into short modules.
 
-**What you can earn.** Skillshop offers certifications for some products, such as Google Ads. You study the course, then take an online assessment. At the time of writing, the courses and these assessments do not charge a fee, and some certifications have to be renewed after a period. Check Skillshop's own pages for the current rules.
+**What you can earn.** Skillshop offers certifications for some products, such as Google Ads. You study the course, then take an online assessment. Google's Skillshop help pages say its certifications are valid for a limited time, so you renew them by passing the assessment again. Many people take Skillshop courses without paying, but check Skillshop's own pages for any fee and the current rules before you start.
 
 **Who it suits.** People heading towards digital marketing, online advertising or office roles that use Google tools. Some courses assume you already understand basic marketing, so start with the beginner ones.
 
@@ -746,7 +746,7 @@ She decides this is a free trial of a paid course, not a free course. Instead, s
 
 **What it is.** Google's site for free and low cost training for careers and small businesses. It points to beginner digital skills courses, digital marketing basics, tools for practising job interviews and resources for small businesses.
 
-**A note on certificates.** Grow with Google also promotes longer Google Career Certificates in areas such as IT support, data analytics and UX design. These are delivered on Coursera and usually cost money, although funded places are sometimes offered. Read the details carefully on the official page before you commit.
+**A note on certificates.** Grow with Google also promotes longer Google Career Certificates in areas such as IT support, data analytics and UX design. These are delivered on Coursera, which is a different arrangement from free Skillshop training. The official page shows whether they cost money and whether any funded places exist, so read the details carefully before you commit.
 
 ## Microsoft Learn
 
@@ -802,7 +802,7 @@ Sumaila, a national service person at a district office in Bolgatanga, is asked 
       selfCheck: [
         "How do you earn a freeCodeCamp certification?",
         "What is the difference between a Microsoft Learn module and a learning path?",
-        "Where are Google Career Certificates delivered, and do they usually cost money?",
+        "Where are Google Career Certificates delivered, and where do you check their cost?",
         "Why should you keep a piece of work as well as a badge?",
       ],
       practice_task_md: `**Goal:** Find one beginner course on a work skills platform.
@@ -857,10 +857,10 @@ Sumaila, a national service person at a district office in Bolgatanga, is asked 
               "They are always free for anyone in Ghana",
               "They are taught in person at Google offices",
               "They replace the need to show any practical work to an employer",
-              "They are delivered on Coursera and usually cost money",
+              "They are delivered on Coursera, so check the official page for cost",
             ],
             answer_index: 3,
-            explanation: "The lesson says they are on Coursera and usually paid, so check the details first.",
+            explanation: "The lesson says they are delivered on Coursera and the official page shows the cost and any funded places.",
           },
         ],
         pass_threshold: 75,
@@ -1041,7 +1041,7 @@ Often, yes. You get lectures and reading from well known universities and compan
 * You will prove the skill another way, such as a project.
 * You want to try a subject before deciding whether to pay for anything.
 
-It makes less sense when the graded projects are the most useful part of the course, or when an employer specifically asks for that course's certificate. In that case, look for financial aid. Both sites have offered help with fees to learners who apply, but the rules change; check the official pages.
+It makes less sense when the graded projects are the most useful part of the course, or when an employer specifically asks for that course's certificate. In that case, look for financial aid. Some course sites, edX for example, have offered help with fees to learners who apply, but the rules change; check the official pages.
 
 ## Watch the data
 
@@ -1753,7 +1753,7 @@ Sumaila, in Walewale, has a small weekly bundle and WiFi at a community centre o
 Many learning and video apps have their own download feature. You download inside the app, and the lesson plays later inside the same app, even without a connection.
 
 * Look for a **download icon**, often a downward arrow, next to a video or lesson.
-* Some course apps, such as Coursera's, let you download lecture videos for offline viewing.
+* Some course apps let you download lecture videos for offline viewing. Look for the download icon on a lesson, or the word offline in the app's settings.
 * The **YouTube** app lets you download some videos in some countries. At the time of writing, YouTube's help page lists Ghana among them; in many other places downloads need a paid YouTube Premium membership. Not every video can be downloaded, and the button only appears when it is allowed.
 * Downloads inside an app usually stay inside that app. You cannot always find them in your file manager, and some apps need you to reconnect from time to time to keep them working.
 
