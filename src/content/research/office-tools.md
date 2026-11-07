@@ -88,8 +88,9 @@ own node so they are taught once.
 | O34 | Microsoft Support: Manage meeting and call recordings in Microsoft Teams Free (recording "available for Microsoft 365 Personal, Family, or Premium subscribers") | https://support.microsoft.com/en-US/teams/free/meetings/manage-meeting-and-call-recordings-in-microsoft-teams-free | 2026-11-07 | Official docs; fact check (added in review) |
 | O35 | Google Meet Help: Record a video meeting (eligible: listed Google Workspace editions and Google One plans with 2 TB or more; free personal accounts not listed) | https://support.google.com/meet/answer/9308681 | 2026-11-07 | Official docs; fact check (added in review) |
 | O36 | Google Meet Help: Join a video meeting (without a Google Account you enter your name and ask to join; for personal account hosts, signed out users must request to join) | https://support.google.com/meet/answer/9303069 | 2026-11-07 | Official docs; fact check (added in review) |
-| O37 | Microsoft Support: Schedule a Microsoft Teams meeting from Outlook ("The Outlook add-in doesn't support creating meetings with a personal account"; Teams meeting switch steps for business accounts) and Microsoft Support: Why can't I use the Teams Meeting add-in with my Microsoft Teams Free account? | https://support.microsoft.com/office/883cc15c-580f-441a-92ea-0992c00a9b0f | 2026-11-07 | Official docs; fact check (added in review) |
+| O37 | Microsoft Support: Schedule a Microsoft Teams meeting from Outlook ("The Outlook add-in doesn't support creating meetings with a personal account"; Teams meeting switch steps for business accounts) and Microsoft Support: Why can't I use the Teams Meeting add-in with my Microsoft Teams Free account? ("not available in Outlook with your Microsoft Teams for personal use account") | https://support.microsoft.com/office/883cc15c-580f-441a-92ea-0992c00a9b0f and https://support.microsoft.com/en-US/teams/free/settings/why-can-t-i-use-the-teams-meeting-add-in-with-my-microsoft-teams-free-account | 2026-11-07 | Official docs; fact check (added in review) |
 | O38 | Microsoft Support: Schedule a meeting in Microsoft Teams Free (Meet tab, Schedule a meeting, add participants, Copy invite) | https://support.microsoft.com/en-us/teams/free/meetings/schedule-a-meeting-in-microsoft-teams-free | 2026-11-07 | Official docs; fact check (added in review) |
+| O39 | Gmail Help: Send attachments with your Gmail message ("For personal Gmail accounts, the limit is 25 MB"; larger attachments become a Google Drive link) | https://support.google.com/mail/answer/6584 | 2026-11-07 | Official docs; fact check (added in review) |
 | N1 | Not used: Google Meet help answer 10317117 and Google Docs help answer 6283888 returned 404 when fetched | https://support.google.com/meet/answer/10317117 | 2026-11-07 | Not used |
 
 ## Adverts analysed (12 new, plus the virtual assistant set)
@@ -165,7 +166,7 @@ same parent: `email-tool`, `file-tool`, `doc-tool`, `sheet-tool`, `slide-tool`, 
 | --- | --- |
 | office-suites (section) | A1 to A9 name Microsoft Office or Google Workspace; prerequisite of every node |
 | professional-email | A1 A2 Outlook; F1 prepare correspondence; O6 O9 phishing |
-| gmail | A5 A8 Google Workspace; VA remote VA; O4 O5 O7 |
+| gmail | A5 A8 Google Workspace; VA remote VA; O4 O5 O7 O39 |
 | outlook | A1 A2 Outlook; VA Office Administrator; O8 O9 |
 | cloud-files (section) | F1 F2 files and records; VA record keeping |
 | google-drive | A5 A8 Google Workspace; O1 O11 O12 |
@@ -212,7 +213,10 @@ no endorsements, provenance).
 | Teams meeting from Outlook.com | Not available: Microsoft says the Outlook Teams option does not support personal accounts and free Teams has no add-in; free users schedule in Teams | O37 O38 |
 | Joining a Meet without a Google account | Possible: enter a name and ask to join; someone must let you in | O36 |
 | Google Drive expiry dates on access are work and school only; download, print and copy can be blocked for viewers and commenters | Confirmed | O10 |
-| Spot checks of menu paths: Gmail signature and filters, Outlook Settings > Mail > Rules and Settings > Account > Signatures, Docs Page setup and Pageless, Docs version history, Sheets Freeze and Create a filter, Slides Presenter view and From Sheets charts, Forms Link to Sheets | Consistent with current help pages; lessons already say "at the time of writing" and name features rather than exact clicks where menus vary | O4 O5 O7 O8 O16 and product help |
+| Gmail attachments up to 25 MB, larger files sent as a Drive link | Confirmed; lesson now says Gmail "sends" rather than "offers" a Drive link | O39 |
+| Gmail filters: Show search options, then Create filter, in a browser on a computer | Confirmed; the help page gives computer steps only (it does not say the app lacks filters, which the lesson states from the app itself) | O7 |
+| Gmail signature: Settings, See all settings, Signature, Save Changes | Confirmed for the computer; the mobile signature steps were not on the fetched page | O5 |
+| Other menu paths (Outlook Settings, Mail, Rules and Settings, Account, Signatures; Docs Page setup and Pageless; Sheets Freeze and Create a filter; Slides Presenter view; Forms Link to Sheets; Word and PowerPoint for the web Download as PDF) | Read for plausibility against the reviewer's knowledge of the current apps, not fetched one by one; the lessons already hedge with "at the time of writing" or "where your version offers it" | None |
 
 ### What changed
 
@@ -223,8 +227,9 @@ no endorsements, provenance).
 * **excel:** worked example date changed from "2026 11 03" (which Excel would not read as a date) to "03/11/2026", matching the lesson's day first advice.
 * **word, excel, documents, next-steps:** softened unsourced frequency claims ("a large share", "one of the most requested", "Many ... roles ask for", a quoted phrase presented as advert text).
 * **Track file:** the Teams resource now points to the support page that states the free limits (O31).
-* **Sources:** O13, O14 and O29 descriptions corrected; O31 to O38 added; coverage table updated.
-* **Tests:** `src/lib/roadmaps/links.test.ts` expected 27 tracks; adding this track makes 28, so the count was updated (the writer's branch failed this test).
+* **gmail:** large attachments: Gmail "sends" (not "offers") a Drive link, matching O39.
+* **Sources:** O13, O14, O29 and O37 descriptions corrected; O31 to O39 added; coverage table updated.
+* **Tests:** `src/lib/roadmaps/links.test.ts` expected 27 tracks; adding this track makes 28, so the count was updated. The writer's branch failed this test before the review.
 
 Quiz balance after the edits: 103 questions, longest option correct 26%, shortest 11%, positions 25/25/27/26 (ok under `--strict`).
 
@@ -232,6 +237,7 @@ Quiz balance after the edits: 103 questions, longest option correct 26%, shortes
 
 * `roadmap-admin.test.ts`: the test now checks that each imported row carries the draft's own `choice_group` (null for every older draft), which is stricter than before, not looser. Sound.
 * `recommend.ts`: `office-tools` placed first in the office interest list. It wins only when no goal prefers another office track (goal "explore", or a tie on phone fit); "first-job" and "business" still pick Excel and Power BI, "freelance" picks Virtual Assistant, "switch" picks Project Management. A beginner exploring office work starting on the foundations track is sensible.
+* `study-buddy/tools/run.ts` maps `office-tools` to `product-business`, the same bucket as `virtual-assistant`; `roadmap-admin.ts` adds the label "Office tools: Google and Microsoft", matching the track title. Both consistent.
 
 ### Left for the founder
 

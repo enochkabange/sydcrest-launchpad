@@ -354,7 +354,7 @@ The Gmail app has its own **mobile signature** setting under your account in the
 
 ## Attachments and large files
 
-Use the paper clip icon to attach a file. At the time of writing Gmail allows attachments up to 25 MB in total per email. If you attach something bigger, Gmail offers to send it as a **Google Drive link** instead, and you can choose the Drive icon yourself to share any file from Drive. A link is better for large files and for people on small data bundles: they decide whether and when to download. Check the sharing setting Gmail asks about; the cloud files section explains it.
+Use the paper clip icon to attach a file. At the time of writing Gmail allows attachments up to 25 MB in total per email. If you attach something bigger, Gmail sends it as a **Google Drive link** instead, and you can choose the Drive icon yourself to share any file from Drive. A link is better for large files and for people on small data bundles: they decide whether and when to download. Check the sharing setting Gmail asks about; the cloud files section explains it.
 
 ## Undo send and scheduling
 
