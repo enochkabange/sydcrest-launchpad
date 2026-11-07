@@ -1880,9 +1880,11 @@ export type Database = {
           generated_at: string
           id: string
           key_terms: Json | null
+          lesson_words: number
           node_id: string
           outcomes: string[] | null
           practice_task_md: string | null
+          practice_words: number
           self_check: string[] | null
           updated_at: string
           worked_example_md: string | null
@@ -1895,9 +1897,11 @@ export type Database = {
           generated_at?: string
           id?: string
           key_terms?: Json | null
+          lesson_words?: number
           node_id: string
           outcomes?: string[] | null
           practice_task_md?: string | null
+          practice_words?: number
           self_check?: string[] | null
           updated_at?: string
           worked_example_md?: string | null
@@ -1910,21 +1914,16 @@ export type Database = {
           generated_at?: string
           id?: string
           key_terms?: Json | null
+          lesson_words?: number
           node_id?: string
           outcomes?: string[] | null
           practice_task_md?: string | null
+          practice_words?: number
           self_check?: string[] | null
           updated_at?: string
           worked_example_md?: string | null
         }
         Relationships: [
-          {
-            foreignKeyName: "node_content_node_id_fkey"
-            columns: ["node_id"]
-            isOneToOne: true
-            referencedRelation: "node_estimate_inputs"
-            referencedColumns: ["node_id"]
-          },
           {
             foreignKeyName: "node_content_node_id_fkey"
             columns: ["node_id"]
@@ -1940,6 +1939,7 @@ export type Database = {
           id: string
           node_id: string
           pass_threshold: number
+          question_count: number
           questions: Json
           updated_at: string
         }
@@ -1948,6 +1948,7 @@ export type Database = {
           id?: string
           node_id: string
           pass_threshold?: number
+          question_count?: number
           questions: Json
           updated_at?: string
         }
@@ -1956,17 +1957,11 @@ export type Database = {
           id?: string
           node_id?: string
           pass_threshold?: number
+          question_count?: number
           questions?: Json
           updated_at?: string
         }
         Relationships: [
-          {
-            foreignKeyName: "node_quiz_node_id_fkey"
-            columns: ["node_id"]
-            isOneToOne: true
-            referencedRelation: "node_estimate_inputs"
-            referencedColumns: ["node_id"]
-          },
           {
             foreignKeyName: "node_quiz_node_id_fkey"
             columns: ["node_id"]
@@ -2040,13 +2035,6 @@ export type Database = {
           url?: string
         }
         Relationships: [
-          {
-            foreignKeyName: "node_resources_node_id_fkey"
-            columns: ["node_id"]
-            isOneToOne: false
-            referencedRelation: "node_estimate_inputs"
-            referencedColumns: ["node_id"]
-          },
           {
             foreignKeyName: "node_resources_node_id_fkey"
             columns: ["node_id"]
@@ -2974,13 +2962,6 @@ export type Database = {
             foreignKeyName: "review_answers_node_id_fkey"
             columns: ["node_id"]
             isOneToOne: false
-            referencedRelation: "node_estimate_inputs"
-            referencedColumns: ["node_id"]
-          },
-          {
-            foreignKeyName: "review_answers_node_id_fkey"
-            columns: ["node_id"]
-            isOneToOne: false
             referencedRelation: "roadmap_nodes"
             referencedColumns: ["id"]
           },
@@ -3099,13 +3080,6 @@ export type Database = {
             foreignKeyName: "roadmap_nodes_roadmap_id_parent_id_fkey"
             columns: ["roadmap_id", "parent_id"]
             isOneToOne: false
-            referencedRelation: "node_estimate_inputs"
-            referencedColumns: ["roadmap_id", "node_id"]
-          },
-          {
-            foreignKeyName: "roadmap_nodes_roadmap_id_parent_id_fkey"
-            columns: ["roadmap_id", "parent_id"]
-            isOneToOne: false
             referencedRelation: "roadmap_nodes"
             referencedColumns: ["roadmap_id", "id"]
           },
@@ -3146,13 +3120,6 @@ export type Database = {
           verified_at?: string | null
         }
         Relationships: [
-          {
-            foreignKeyName: "roadmap_progress_node_id_fkey"
-            columns: ["node_id"]
-            isOneToOne: false
-            referencedRelation: "node_estimate_inputs"
-            referencedColumns: ["node_id"]
-          },
           {
             foreignKeyName: "roadmap_progress_node_id_fkey"
             columns: ["node_id"]
@@ -4043,15 +4010,7 @@ export type Database = {
           quiz_questions: number | null
           roadmap_id: string | null
         }
-        Relationships: [
-          {
-            foreignKeyName: "roadmap_nodes_roadmap_id_fkey"
-            columns: ["roadmap_id"]
-            isOneToOne: false
-            referencedRelation: "roadmaps"
-            referencedColumns: ["id"]
-          },
-        ]
+        Relationships: []
       }
       organisation_roster: {
         Row: {
