@@ -27,6 +27,7 @@ import { socialMediaManagement } from "./social-media-management";
 import { noCode } from "./no-code";
 import { freelancing } from "./freelancing";
 import { officeTools } from "./office-tools";
+import { learningOnline } from "./learning-online";
 
 export type { NodeDraft, ResourceDraft, RoadmapDraft } from "./types";
 
@@ -64,4 +65,5 @@ export const ROADMAP_DRAFTS: RoadmapDraft[] = [
   projectManagement,
   digitalMarketingSpecialisations,
   officeTools,
+  learningOnline,
 ];

@@ -27,6 +27,7 @@ import dataScience from "./data-science.content";
 import digitalSales from "./digital-sales.content";
 import noCode from "./no-code.content";
 import officeTools from "./office-tools.content";
+import learningOnline from "./learning-online.content";
 
 /**
  * Lesson content imported by /admin/roadmaps "Import draft roadmaps". Every
@@ -63,4 +64,5 @@ export const TRACK_CONTENT: TrackContent[] = [
   digitalSales,
   noCode,
   officeTools,
+  learningOnline,
 ];

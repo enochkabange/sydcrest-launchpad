@@ -38,6 +38,7 @@ export const TRACKS = [
   { value: "data-science", label: "Data science" },
   { value: "digital-marketing-specialisations", label: "Digital marketing specialisations" },
   { value: "office-tools", label: "Office tools: Google and Microsoft" },
+  { value: "learning-online", label: "Learning online" },
 ] as const;
 
 export const FIELD_CATEGORIES = [
