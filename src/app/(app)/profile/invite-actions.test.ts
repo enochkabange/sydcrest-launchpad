@@ -10,7 +10,7 @@ vi.mock("@/lib/auth", () => ({ getCurrentUser: () => getCurrentUser() }));
 
 const { recordInviteSent } = await import("./invite-actions");
 
-const WUMPINI = { id: "aaaaaaaa-0000-0000-0000-000000000001", email: "wumpini@example.test", hasAgeAndConsent: true };
+const WUMPINI = { id: "aaaaaaaa-0000-0000-0000-000000000001", email: "wumpini@example.test", hasAgeAndConsent: true, hasPhone: true, isSetUp: true };
 
 describe("recordInviteSent", () => {
   beforeEach(() => vi.clearAllMocks());

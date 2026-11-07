@@ -31,10 +31,10 @@ export async function SkillViewerStatus({ skill }: { skill: PublishedSkill }) {
       </Card>
     );
   }
-  if (!user.hasAgeAndConsent) {
+  if (!user.isSetUp) {
     return (
       <Card title="Finish setting up">
-        <p>Confirm your age and agree to the terms to earn verified skills.</p>
+        <p>Finish setting up your account to earn verified skills.</p>
         <Link href={`/welcome?next=${next}`} className={buttonClasses("primary", "self-start")}>
           Continue
         </Link>

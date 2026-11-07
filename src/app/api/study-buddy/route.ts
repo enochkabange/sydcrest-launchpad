@@ -37,7 +37,7 @@ function fail(status: number, error: string, message: string, extra: Record<stri
 export async function POST(request: Request) {
   const user = await getCurrentUser();
   if (!user) return fail(401, "signed_out", "Sign in to chat with Study Buddy.");
-  if (!user.hasAgeAndConsent) return fail(403, "setup_incomplete", "Finish setting up your account first.");
+  if (!user.isSetUp) return fail(403, "setup_incomplete", "Finish setting up your account first.");
 
   const client = createStudyBuddyClient();
   if (!client) {

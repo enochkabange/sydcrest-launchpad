@@ -49,7 +49,7 @@ export default function MyBriefsPage() {
 async function Lists() {
   const user = await getCurrentUser();
   if (!user) redirect(`/login?next=${encodeURIComponent("/briefs/mine")}`);
-  if (!user.hasAgeAndConsent) redirect(`/welcome?next=${encodeURIComponent("/briefs/mine")}`);
+  if (!user.isSetUp) redirect(`/welcome?next=${encodeURIComponent("/briefs/mine")}`);
   const [viewer, briefs, pitches] = await Promise.all([getViewer(user.id), getMyBriefs(), getMyPitches(user.id)]);
   const showPitches = viewer.isApprovedExpert || pitches.length > 0;
 

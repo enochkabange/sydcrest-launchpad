@@ -38,6 +38,10 @@ export default function PrivacyPage() {
       <ul>
         <li>Your name and email address.</li>
         <li>
+          Your phone number, so your cohort, mentors and our team can reach you. Each number can be
+          on one account only. We do not message you without asking first.
+        </li>
+        <li>
           Your password. Our sign in provider stores it only in a scrambled (hashed) form that no one
           at SydCrest can read.
         </li>
@@ -51,9 +55,8 @@ export default function PrivacyPage() {
           us. Google does not share your date of birth, so we ask for it separately.
         </li>
       </ul>
-      <h3>If you choose to add them</h3>
+      <h3>If you choose to add it</h3>
       <ul>
-        <li>Your phone number.</li>
         <li>Your region in Ghana, so we can connect you with your local chapter and events.</li>
       </ul>
       <h3>When you use the platform</h3>
@@ -85,8 +88,8 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>To send you messages about your account</strong>, such as confirming your email
-          address. If you give us your phone number, we may send text message reminders about
-          cohorts and events once that feature is switched on. You can ask us to stop at any time.
+          address. We may send text message reminders about cohorts and events to your phone
+          number once that feature is switched on. You can ask us to stop at any time.
         </li>
         <li>
           <strong>To improve SydCrest</strong> using analytics: finding what is slow, confusing or
@@ -189,7 +192,7 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>Twilio</strong> sends text messages, only once text reminders are switched on and
-          only if you have given us your phone number.
+          only to the number on your account.
         </li>
         <li>
           <strong>Google</strong>, only if you choose to sign in with Google.

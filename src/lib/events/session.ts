@@ -12,7 +12,7 @@ import { getViewerEvent } from "./viewer";
 export async function requireEventPage(slug: string, subpath: "check-in" | "feedback" | "host") {
   const user = await getCurrentUser();
   if (!user) redirect(`/login?next=${encodeURIComponent(`/events/${slug}/${subpath}`)}`);
-  if (!user.hasAgeAndConsent) redirect("/welcome");
+  if (!user.isSetUp) redirect("/welcome");
   const event = await getViewerEvent(slug);
   if (!event) notFound();
   return { user, event };

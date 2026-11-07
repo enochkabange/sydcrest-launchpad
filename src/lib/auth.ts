@@ -3,6 +3,7 @@ import { cache } from "react";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { hasAgeAndRecordedConsent } from "@/lib/consent-records";
+import { hasRecordedPhone } from "@/lib/phone-records";
 
 /**
  * The one place that decides who is signed in (the Data Access Layer).
@@ -14,25 +15,32 @@ export const getCurrentUser = cache(async () => {
   const { data } = await supabase.auth.getClaims();
   const claims = data?.claims;
   if (!claims?.sub) return null;
+  // Google sign ups arrive without these until they finish /welcome.
+  // Terms and privacy come from the consents table (backfilled from
+  // metadata on first use); the metadata check is the fallback.
+  const hasAgeAndConsent = await hasAgeAndRecordedConsent(supabase, claims.sub, claims.user_metadata);
+  // Every account needs a phone number (#285); accounts without one go to /welcome.
+  const hasPhone = await hasRecordedPhone(supabase, claims.sub, claims.user_metadata);
   return {
     id: claims.sub,
     email: typeof claims.email === "string" ? claims.email : null,
-    // Google sign ups arrive without these until they finish /welcome.
-    // Terms and privacy come from the consents table (backfilled from
-    // metadata on first use); the metadata check is the fallback.
-    hasAgeAndConsent: await hasAgeAndRecordedConsent(supabase, claims.sub, claims.user_metadata),
+    hasAgeAndConsent,
+    hasPhone,
+    /** Age, terms and phone all done: what every signed in feature checks. */
+    isSetUp: hasAgeAndConsent && hasPhone,
   };
 });
 
 /**
- * A signed in user who has passed the age check and agreed to the terms.
- * Anyone missing those (Google sign ups on first visit) goes to /welcome.
+ * A signed in user who has passed the age check, agreed to the terms and
+ * given a phone number. Anyone missing those (Google sign ups on first visit,
+ * accounts from before #285) goes to /welcome.
  * The proxy does the same redirect earlier; this is the authoritative check.
  */
 export async function requireUser() {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
-  if (!user.hasAgeAndConsent) redirect("/welcome");
+  if (!user.isSetUp) redirect("/welcome");
   return user;
 }
 

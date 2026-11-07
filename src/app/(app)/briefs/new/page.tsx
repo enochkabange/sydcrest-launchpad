@@ -31,7 +31,7 @@ export default function NewBriefPage() {
 async function FormArea() {
   const user = await getCurrentUser();
   if (!user) redirect(`/login?next=${encodeURIComponent("/briefs/new")}`);
-  if (!user.hasAgeAndConsent) redirect(`/welcome?next=${encodeURIComponent("/briefs/new")}`);
+  if (!user.isSetUp) redirect(`/welcome?next=${encodeURIComponent("/briefs/new")}`);
   const viewer = await getViewer(user.id);
   return (
     <section aria-label="Brief form" className="rounded-lg border border-line bg-surface p-5 lg:p-8">
