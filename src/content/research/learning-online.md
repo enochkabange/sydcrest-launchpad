@@ -30,7 +30,7 @@ and a choice of the SydCrest track to take next.
 | P5 | freeCodeCamp curriculum page (did not render for the reader tool) plus a search across several descriptions: a donor supported charity, free curriculum, projects and certifications | https://www.freecodecamp.org/learn/ | 2026-11-07 | Official page plus search snippets; already in the shared resource pool (`RES.fccLearn`) and openly licensed curriculum (CONTENT_GUIDE) |
 | P6 | GCFGlobal LearnFree home and series names (Internet Basics, Internet Safety, Resume Writing, Communication Skills) | https://www.learnfree.org/ | 2026-11-07 | Copyright Learnfree, Inc.; limited not for profit educational licence, scraping prohibited. Only series names read (as in the Bridge research, F4 and F5) |
 | P7 | Khan Academy: About (a nonprofit with a mission of free education; free courses) | https://www.khanacademy.org/about | 2026-11-07 | Official page, read for facts only |
-| P8 | Coursera home page; Coursera help article on enrolment options did not render | https://www.coursera.org/ | 2026-11-07 | Official page. Audit details come only from P9 search results, so the lessons say auditing is offered on some courses, may not appear, and can change |
+| P8 | Coursera home page; Coursera help article on enrolment options did not render | https://www.coursera.org/ | 2026-11-07 | Official page. Audit details come only from P9 search results, so the lessons say auditing is offered on some courses, may not appear, and can change | **Superseded by P20 in review: Coursera now gives a first module preview, not audit.**
 | P9 | Search results on Coursera auditing (third party guides and a community thread): audit is per course, not on every course or professional certificate, gives content without graded work or a certificate, and the main button often starts a paid trial | Web search "Coursera audit course free option help center" | 2026-11-07 | Search snippets only, used to phrase the lesson cautiously | **Superseded by P20 in review (7 November 2026): Coursera replaced audit with a first module preview in August 2025.**
 | P10 | edX Help (search result text also mentioned edX financial assistance for the verified fee; percentages not used): What is the audit track, and How can I get access after a course expires (via search result text; the pages returned 403 to the reader tool): audit access lasts the weeks shown on the enrolment page, no certificate on the audit track | https://support.edx.org/hc/en-us/articles/1500003964681 | 2026-11-07 | Official help centre, search result text only |
 | P11 | DataCamp Donates: free access given through partner organisations (nonprofits, student clubs, CSR programmes) for one year, not to individuals directly | https://www.datacamp.com/donates | 2026-11-07 | Official page. The dollar value on the page is not used |
@@ -51,8 +51,9 @@ and a choice of the SydCrest track to take next.
 | I2 | SydCrest programme fact for this track (from the issue brief): SydCrest programme learners get DataCamp Donates access from February 2027. Not everyone gets it | Issue #294 brief | 2026-11-07 | Internal; lessons state it only in this form |
 
 Searches that found nothing usable: the Coursera help article on enrolment options did not
-render, and the edX help pages refused the reader tool, so both are used only through
-search result text and the lessons phrase them cautiously. No current source showed which
+render, and the edX help pages refused the reader tool, so edX is used only through
+search result text and the lessons phrase it cautiously. Coursera's current options come
+from its official blog (P20, added in review). No current source showed which
 libraries in the three northern regions offer free computers or WiFi, so the lessons ask
 the learner to check locally.
 
@@ -99,7 +100,7 @@ Signals: platform or documentation sources (P), framework (F1 DigComp), the foun
 | `everyday-skills-platforms` | I1 names YouTube; P6 P7 P12; Pre: the Bridge already links GCFGlobal, so learners meet it again here as a self study tool |
 | `course-sites-and-auditing` | I1 (DataCamp from February 2027; Coursera and edX audit in the brief); P8 P10 P11 P20 P22 I2 |
 | `certificates` | Section. I1 (which certificates carry weight); P2 P4 P5 |
-| `choosing-certificates` | I1; P4 (exam and lab based credentials, free renewal), P2 (product certifications), P5 (project based certifications), P9 P10 (no certificate on audit) |
+| `choosing-certificates` | I1; P4 (exam and lab based credentials, free renewal), P2 (product certifications), P5 (project based certifications), P10 P22 (no certificate on audit) |
 | `showing-certificates` | I1; P4 (credentials are shareable); F2 (adverts ask for proof of skills); Pre for applying to any job in later tracks |
 | `learning-on-limited-data` | Section. I1 (planning study on limited data, downloads, offline mode); CONTENT_GUIDE learner profile (prepaid bundles, shared devices) |
 | `downloading-lessons` | I1; P12 P13 P16; F1 solving technical problems |
