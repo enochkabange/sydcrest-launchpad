@@ -517,6 +517,7 @@ and the record in another from lg. Every page checks `requireAdmin` itself.
 | `/admin/opportunities`, `/new`, `/[id]` | Curate the public board | post | |
 | `/admin/events`, `/new`, `/[id]` | Create events, links, recordings | create | |
 | `/admin/chapters`, `/new`, `/[id]` | Create chapters, appoint leads | appoint | |
+| `/admin/sponsorships` | Record sponsorships; hide learner stories (#307) | record | Sponsors are verified organisations; they see totals and opted in stories under Impact. |
 | `/admin/skills`, `/[id]`, `/assessments/[assessmentId]` | Build skills and assessments | publish | Links to `/admin/skills/reviewers`. |
 | `/admin/skills/reviewers` | Appoint portfolio reviewers (D3, #248) | Make reviewer (by sign in email) | Lists names only; remove with one button. |
 | `/admin/roadmaps`, `/new`, `/[id]`, `/[id]/nodes/[nodeId]`, `/links` | Author roadmaps, nodes, links; link health | publish | |
@@ -598,6 +599,7 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/admin/chapters/[id]` | page | 8 Admin |
 | `/admin/chapters/new` | page | 8 Admin |
 | `/admin/chapters` | page | 8 Admin |
+| `/admin/sponsorships` | page | 8 Admin |
 | `/admin/cohorts/[id]` | page | 8 Admin |
 | `/admin/cohorts` | page | 8 Admin |
 | `/admin/content` | page | 8 Admin |
@@ -715,6 +717,7 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/a/[id]` | page | 7 Account |
 | `/chapters/[slug]` | page | 1 Public marketing |
 | `/chapters` | page | 1 Public marketing |
+| `/org/[slug]/impact` | page | 6 Earn |
 | `/org/[slug]` | page | 6 Earn |
 | `/settings` | page | 7 Account |
 | `/u/[slug]` | page | 7 Account |
