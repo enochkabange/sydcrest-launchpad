@@ -245,6 +245,7 @@ describe("every track", () => {
     ["content-creation", { interests: ["creative"], goal: "business" }],
     ["social-media-management", { interests: ["creative"], goal: "first-job" }],
     ["product", { interests: ["product"] }],
+    ["office-tools", { interests: ["office"], goal: "explore" }],
   ])("reaches %s", (track, over) => {
     const result = buildPath(answers({ experience: "tried", ...over }), null);
     expect(result.track).toBe(track);

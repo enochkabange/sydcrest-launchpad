@@ -160,12 +160,13 @@ describe("draft import plan", () => {
     ]);
   });
 
-  it("the existing drafts import unchanged: no kinds or choice groups yet", () => {
+  it("the existing drafts import unchanged: no kinds yet, choice groups only where a draft sets them", () => {
     for (const draft of ROADMAP_DRAFTS) {
       const ids = new Map(draft.nodes.map((n) => [n.slug, `id-${n.slug}`]));
+      const groups = new Map(draft.nodes.map((n) => [n.slug, n.choice_group ?? null]));
       for (const row of draftNodeRowsWithParents("r1", draft.nodes, ids)) {
         expect(row.kind).toBeNull();
-        expect(row.choice_group).toBeNull();
+        expect(row.choice_group, row.slug).toBe(groups.get(row.slug));
       }
     }
   });
