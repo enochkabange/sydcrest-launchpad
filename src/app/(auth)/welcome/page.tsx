@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
-import { hasDateOfBirth } from "@/lib/consent";
+import { LEGAL_VERSION } from "@/lib/legal";
+import { hasDateOfBirth, termsVersionFromMetadata } from "@/lib/consent";
 import { createClient } from "@/lib/supabase/server";
 import { signOut } from "../actions";
 import { Button } from "@/components/ui/button";
@@ -18,16 +19,22 @@ async function WelcomeGate() {
   const askConsent = !user.hasAgeAndConsent;
   // A date of birth on file cannot change, so someone re-agreeing is not asked again (#251).
   const { data } = await (await createClient()).auth.getClaims();
+  const metadata = data?.claims?.user_metadata;
+  // Agreed to an earlier version: the terms have changed since (#60).
+  const agreedTo = termsVersionFromMetadata(metadata);
+  const termsUpdated = askConsent && agreedTo !== null && agreedTo !== LEGAL_VERSION;
   return (
     <>
       <p className="text-content-2">
-        {askConsent
-          ? "Before you start, confirm your age and agree to our terms. SydCrest accounts are for people aged 18 and over."
-          : "Add your phone number to keep using SydCrest. Every account needs one."}
+        {termsUpdated
+          ? "We've updated our Privacy Policy and Terms. Read them and agree to keep using SydCrest."
+          : askConsent
+            ? "Before you start, confirm your age and agree to our terms. SydCrest accounts are for people aged 18 and over."
+            : "Add your phone number to keep using SydCrest. Every account needs one."}
       </p>
       <WelcomeForm
         askConsent={askConsent}
-        askDateOfBirth={askConsent && !hasDateOfBirth(data?.claims?.user_metadata)}
+        askDateOfBirth={askConsent && !hasDateOfBirth(metadata)}
         askPhone={!user.hasPhone}
       />
     </>
@@ -36,8 +43,8 @@ async function WelcomeGate() {
 
 /**
  * First stop for Google sign ups (Google shares no date of birth), for
- * anyone whose account predates the age check, and for accounts without a
- * phone number (#285). Asks only for what is missing.
+ * anyone whose account predates the age check or who agreed to an earlier
+ * version of the terms (#60), and for accounts without a phone number (#285). Asks only for what is missing.
  */
 export default function WelcomePage() {
   return (

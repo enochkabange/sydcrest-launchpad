@@ -127,7 +127,8 @@ export async function signUp(_prev: AuthState, form: FormData): Promise<AuthStat
 
 /**
  * The /welcome step: Google sign ups (Google shares no date of birth), anyone
- * re-agreeing after revoking consent, and accounts without a phone number
+ * re-agreeing after revoking consent or after the terms changed (#60), and
+ * accounts without a phone number
  * (#285). It asks only for what is missing. Under 18s are signed out without
  * saving anything. A date of birth already on file cannot change (the Auth
  * layer refuses it, #240), so it is neither asked for nor sent again (#251).
@@ -168,7 +169,7 @@ export async function completeWelcome(_prev: AuthState, form: FormData): Promise
     }
     await recordSignUpConsents(supabase, age.data.termsVersion);
     // First time here without a date of birth means a new Google sign up
-    // (not someone re-agreeing after revoking), so count it as their signup.
+    // (not someone re-agreeing), so count it as their signup.
     if (firstVisit) await track("signup", { method: "google" });
     else await track("welcome_completed");
     // updateUser keeps the old access token, whose claims still lack the new

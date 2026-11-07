@@ -2,6 +2,7 @@
  * Test setup through the LOCAL Supabase stack with the secret key: create
  * confirmed learners and promote admins. Never point this at hosted projects.
  */
+import { LEGAL_VERSION } from "../src/lib/legal";
 const URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "http://127.0.0.1:54321";
 const KEY = process.env.SUPABASE_SECRET_KEY ?? "";
 
@@ -30,9 +31,13 @@ export function testPhoneE164(): string {
 
 /**
  * A confirmed adult learner who has agreed to the terms and given a phone
- * number, ready to sign in. `phone: null` makes an account from before #285.
+ * number, ready to sign in. `phone: null` makes an account from before #285;
+ * an earlier `termsVersion` makes one that agreed before the terms changed (#60).
  */
-export async function createLearner(name: string, { phone = testPhoneE164() }: { phone?: string | null } = {}): Promise<Learner> {
+export async function createLearner(
+  name: string,
+  { phone = testPhoneE164(), termsVersion = LEGAL_VERSION }: { phone?: string | null; termsVersion?: string } = {},
+): Promise<Learner> {
   const email = `${name.split(" ")[0].toLowerCase()}.${crypto.randomUUID().slice(0, 8)}@example.test`;
   const res = await fetch(`${URL}/auth/v1/admin/users`, {
     method: "POST",
@@ -41,7 +46,7 @@ export async function createLearner(name: string, { phone = testPhoneE164() }: {
       email,
       password: PASSWORD,
       email_confirm: true,
-      user_metadata: { full_name: name, date_of_birth: "2000-03-14", terms_version: "e2e", ...(phone ? { phone } : {}) },
+      user_metadata: { full_name: name, date_of_birth: "2000-03-14", terms_version: termsVersion, ...(phone ? { phone } : {}) },
     }),
   });
   if (!res.ok) throw new Error(`createLearner failed: ${res.status} ${await res.text()}`);

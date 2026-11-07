@@ -1,6 +1,7 @@
 import { expect, test, type Page } from "@playwright/test";
 import { admin, insert } from "./supabase-admin";
 import { testPhoneE164 } from "./learners";
+import { LEGAL_VERSION } from "../src/lib/legal";
 
 /**
  * Public roadmap pages against a roadmap seeded through the local service
@@ -236,7 +237,7 @@ test("a signed in learner sees their progress marks", async ({ page }, testInfo)
       email,
       password: PASSWORD,
       email_confirm: true,
-      user_metadata: { display_name: "Mariama Seidu", date_of_birth: "2000-03-14", terms_version: "e2e", phone: testPhoneE164() },
+      user_metadata: { display_name: "Mariama Seidu", date_of_birth: "2000-03-14", terms_version: LEGAL_VERSION, phone: testPhoneE164() },
     },
   });
 
