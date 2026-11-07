@@ -160,11 +160,14 @@ describe("draft import plan", () => {
     ]);
   });
 
-  it("the existing drafts import unchanged: no kinds or choice groups yet", () => {
+  // Kinds pass through as written (learning-online's final practical is the
+  // first checkpoint); every other node stays null. No choice groups yet.
+  it("the existing drafts import unchanged: kinds only where set, no choice groups yet", () => {
     for (const draft of ROADMAP_DRAFTS) {
       const ids = new Map(draft.nodes.map((n) => [n.slug, `id-${n.slug}`]));
+      const kinds = new Map(draft.nodes.map((n) => [n.slug, n.kind ?? null]));
       for (const row of draftNodeRowsWithParents("r1", draft.nodes, ids)) {
-        expect(row.kind).toBeNull();
+        expect(row.kind).toBe(kinds.get(row.slug) ?? null);
         expect(row.choice_group).toBeNull();
       }
     }

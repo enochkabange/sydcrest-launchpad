@@ -2492,8 +2492,8 @@ His phone has more space, his browser is safer, and his bundle lasts longer.`,
           {
             prompt: "Your phone is almost full and you use a shopping service once a month. What does the lesson suggest?",
             options: [
-              "Install the app and turn on its notifications so you never miss a sale",
-              "Use the website in your browser instead of the app",
+              "Install the app and turn on its notifications",
+              "Use the website in your browser instead",
               "Buy a new phone with more storage",
               "Keep the app and delete your photos instead",
             ],
@@ -2514,10 +2514,10 @@ His phone has more space, his browser is safer, and his bundle lasts longer.`,
           {
             prompt: "Your browser has no option called data saver. What does the lesson say?",
             options: [
-              "Your browser is broken and must be replaced with a different one before you can save any data at all",
+              "Your browser is broken and must be replaced",
               "Data saving is only possible on a computer",
               "You must install a separate data saving app from a website",
-              "Not every browser has one, so use other habits such as closing tabs and avoiding autoplay",
+              "Not every browser has one, so use other habits",
             ],
             answer_index: 3,
             explanation: "Options vary; closing tabs, avoiding autoplay and waiting for WiFi still help.",
@@ -2543,7 +2543,7 @@ At the top of the browser (or at the bottom on some phones) is the **address bar
 * **Type a web address** to go straight to a site, for example learnfree.org or gmail.com. This is the safest way to open a site you know, because you choose exactly where you go.
 * **Type search words** and the browser searches the web for you, using its default search engine.
 
-The **web address**, also called a URL, is the site's exact location. The important part is the **domain**, the name just before the first single slash, such as gmail.com or ghana.gov.gh. The lesson on safe sites shows why this matters.
+The **web address**, also called a URL, is the site's exact location. The important part is the **domain**, which tells you whose site it is. Look at the part before the first single slash and read it from the right: the ending, such as .com, .org or .gov.gh, and the name just before it, such as gmail.com or ghana.gov.gh. The lesson on safe sites shows why this matters.
 
 ## Back, refresh and home
 
@@ -2565,7 +2565,7 @@ To open a link in a new tab, so you do not lose the page you are on, long press 
 
 ## Bookmarks
 
-The searching lesson showed you how to save a page as a bookmark with the star or **Bookmark** option. Here is how to keep bookmarks useful as the list grows.
+A **bookmark** saves a page so you can open it again without searching. On a computer, click the star or bookmark icon at the right of the address bar. On a phone, open the browser menu and tap the star or **Bookmark** option. The searching lesson later in this roadmap uses bookmarks too. Here is how to keep them useful as the list grows.
 
 * **Make folders.** In the bookmark manager, create folders such as "Jobs", "Learning" and "Government services".
 * **Rename bookmarks** with short clear names, such as "Course: Excel basics" instead of a long page title.
@@ -2593,7 +2593,7 @@ Amina, in Bolgatanga, is applying for a front desk job on her phone.
       keyTerms: [
         { term: "Address bar", definition: "The box at the top or bottom of the browser where you type a web address or search words." },
         { term: "Web address (URL)", definition: "The exact location of a page, such as learnfree.org." },
-        { term: "Domain", definition: "The main name in a web address, just before the first single slash, such as gmail.com." },
+        { term: "Domain", definition: "The name and ending at the right hand end of a web address, before the first single slash, such as gmail.com." },
         { term: "Tab", definition: "One open page in your browser. You can have several open and switch between them." },
         { term: "History", definition: "The browser's list of pages you visited, which you can use to find a page again." },
       ],
@@ -2627,9 +2627,9 @@ Amina, in Bolgatanga, is applying for a front desk job on her phone.
             prompt: "Why is typing a web address you know safer than searching for the site's name?",
             options: [
               "Typing the address costs no data at all",
-              "You choose exactly where you go instead of clicking a search result or advert",
+              "You go exactly where you chose to go",
               "Search engines are not allowed in Ghana",
-              "Typed addresses always open faster and load cleaner pages than any search result",
+              "Typed addresses always load faster",
             ],
             answer_index: 1,
             explanation: "Typing the address takes you straight to the site you know.",
@@ -2720,7 +2720,7 @@ If a file will not open, your device may need a free app for that type. For docu
 
 Some downloads are programs, not documents. They can install software, including harmful software.
 
-* **.apk** files install apps on Android. Only install apps from the Play Store or the maker's official website, as the apps lesson explained. An .apk from a random site or a WhatsApp message can contain malware.
+* **.apk** files install apps on Android. Only install apps from the Play Store, as the apps lesson explained. An .apk from a random site or a WhatsApp message can contain malware.
 * **.exe** and **.msi** files install programs on Windows. Only run them from the official website of software you chose.
 * **A document that asks you to "enable" something** before you can read it, such as macros or editing, deserves suspicion if you were not expecting it.
 
@@ -2782,9 +2782,9 @@ Abdul-Rahman, in Tamale, sees an NGO advert that asks applicants to download and
             prompt: "A page has several Download buttons. Which should you choose?",
             options: [
               "The biggest, brightest button on the page",
-              "The link that names the file you expect, such as Application form (PDF)",
+              "The link that names the exact file you expect",
               "Every button, to be sure you get the file",
-              "Whichever button asks you to install a helper app first, since that is faster",
+              "The one that asks you to install a helper app",
             ],
             answer_index: 1,
             explanation: "Some download buttons are adverts; pick the link that names your file.",
@@ -2803,10 +2803,10 @@ Abdul-Rahman, in Tamale, sees an NGO advert that asks applicants to download and
           {
             prompt: "A friend sends you an .apk file that promises a free PDF tool. What should you do?",
             options: [
-              "Install it quickly before the offer ends, then delete it once your PDF is finished",
+              "Install it now and delete it after your PDF is done",
               "Forward it to your study group",
               "Rename it to .pdf and open it",
-              "Delete it, and only install apps from the Play Store or the maker's official site",
+              "Delete it; install apps only from the Play Store",
             ],
             answer_index: 3,
             explanation: "An .apk from a message can contain malware.",
@@ -2840,7 +2840,7 @@ Abdul-Rahman, in Tamale, sees an NGO advert that asks applicants to download and
 
 Before you trust a page, especially before typing a password, a PIN or personal details, read its address.
 
-The most important part is the **domain**: the name just before the first single slash. In the address learnfree.org/series/internet-basics, the domain is **learnfree.org**. Everything after the slash is just a page on that site.
+The most important part is the **domain**. Look at the part of the address before the first single slash and read it from the right: the ending, such as .com, .org or .gov.gh, and the name just before it. In the address learnfree.org/series/internet-basics, the domain is **learnfree.org**. Everything after the slash is just a page on that site, and anything further to the left of the domain is a label its owner chose.
 
 Fake sites use tricks to look real:
 
@@ -2895,7 +2895,7 @@ Hawa, in Wa, receives a WhatsApp message from an unknown number: "Congratulation
 
 A week later she opens a course site she uses often. The address shows the real domain and the security icon looks normal, so she signs in.`,
       keyTerms: [
-        { term: "Domain", definition: "The name just before the first single slash in a web address, which tells you whose site it really is." },
+        { term: "Domain", definition: "The name and ending at the right hand end of a web address, before the first single slash, which tell you whose site it really is." },
         { term: "https", definition: "A secure connection that keeps information private between you and the site. It does not prove the site is honest." },
         { term: "Look alike domain", definition: "A web address spelled to look like a real one, used by fake sites." },
         { term: "Short link", definition: "A shortened web address that hides where it really goes." },
@@ -2940,10 +2940,10 @@ A week later she opens a course site she uses often. The address shows the real 
           {
             prompt: "What does a secure https connection prove?",
             options: [
-              "That the site belongs to a real company",
+              "That the site belongs to a registered company",
               "That the site has no viruses",
-              "That the government of Ghana has checked the site and approved it for use",
-              "That information is private on its way between you and the site",
+              "That the government has approved the site",
+              "That information is kept private on the way",
             ],
             answer_index: 3,
             explanation: "https protects information in transit; fake sites can use it too.",

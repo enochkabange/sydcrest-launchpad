@@ -20,6 +20,7 @@ const L = {
   learnfree: r("GCFGlobal LearnFree", "https://www.learnfree.org/"),
   coursera: r("Coursera", "https://www.coursera.org/"),
   edxAudit: r("edX Help: What is the audit track", "https://support.edx.org/hc/en-us/articles/1500003964681"),
+  courseraPreview: r("Coursera Blog: The new course preview", "https://blog.coursera.org/introducing-courseras-new-course-preview-experience/"),
   datacampDonates: r("DataCamp Donates", "https://www.datacamp.com/donates"),
   ytOffline: r("YouTube Help: Watch videos offline", "https://support.google.com/youtube/answer/6141269"),
   ytQuality: r("YouTube Help: Change video quality", "https://support.google.com/youtube/answer/91449"),
@@ -36,7 +37,7 @@ export const learningOnline: RoadmapDraft = {
   track: "learning-online",
   field_category: "foundations",
   level: "beginner",
-  leads_to: ["ai-tools-for-work", "virtual-assistant", "excel-power-bi", "digital-marketing", "data", "frontend", "it-support"],
+  leads_to: ["ai-tools-for-work", "virtual-assistant", "excel-power-bi", "customer-service", "digital-marketing", "data", "frontend", "it-support"],
   locale: "en-GH",
   status: "draft",
   nodes: [
@@ -123,14 +124,14 @@ export const learningOnline: RoadmapDraft = {
     },
     {
       slug: "course-sites-and-auditing",
-      title: "Coursera, edX and free audit options",
+      title: "Coursera, edX and their free options",
       summary:
-        "Coursera and edX host courses from universities and companies, and many can be studied free through an audit option. Learn what auditing gives you and what it leaves out.",
+        "Coursera and edX host courses from universities and companies, with a free first module preview on Coursera and a time limited free audit on many edX courses. Learn what each free option gives you and what it leaves out.",
       parent: "free-places-to-learn",
       optional: false,
       difficulty: "beginner",
       complexity: 2,
-      resources: [L.coursera, L.edxAudit, L.datacampDonates],
+      resources: [L.courseraPreview, L.edxAudit, L.datacampDonates],
     },
     {
       slug: "certificates",

@@ -408,9 +408,9 @@ Her new goal is small, linked to a real need, and she will know exactly when she
             prompt: "What does the lesson suggest as a good size for a first goal?",
             options: [
               "One single study session",
-              "Four to eight weeks",
+              "About four to eight weeks",
               "One full year of study",
-              "As long as the full course takes, however long that is",
+              "As long as the full course takes",
             ],
             answer_index: 1,
             explanation: "A first goal you can finish in a month or two lets you feel the success of finishing.",
@@ -539,8 +539,8 @@ Course B covers more, but it is not built for a beginner, has no practice and wo
           {
             prompt: "A course says \"four weeks, five hours a week\". You can study two hours a week. About how long will it take you?",
             options: [
-              "About ten weeks",
-              "Exactly four weeks, since that is the stated length",
+              "About ten weeks of steady study",
+              "Exactly four weeks, as stated",
               "About two weeks if you skip the practice",
               "About five weeks, one for each weekly hour",
             ],
@@ -600,7 +600,7 @@ It is fair to ask why anyone would teach you for free. There are a few honest re
 
 * **Software companies** such as Google and Microsoft want more people to know their tools well, so they publish free training for them.
 * **Nonprofits** such as Khan Academy, freeCodeCamp and GCFGlobal exist to give free education, and are funded by donations and grants.
-* **Universities and companies on course sites** such as Coursera and edX often let you study the lessons free, and charge only for extras such as graded tests and a certificate.
+* **Universities and companies on course sites** such as Coursera and edX let you study part of many courses free, through a preview or an audit option, and charge for full access or the certificate.
 * **Video creators** on YouTube earn from adverts, so the video is free to you.
 
 Knowing the reason helps you understand what is free and what is not. A software company's training will be very good on its own products, but it will not compare them fairly with a competitor's. A course site may keep the certificate behind a payment.
@@ -611,9 +611,9 @@ Knowing the reason helps you understand what is free and what is not. A software
 
 **Work tools from the companies that make them.** Google Skillshop and Grow with Google, and Microsoft Learn, teach the tools many offices and businesses use, often with a free badge or certificate.
 
-**Coding and data.** freeCodeCamp teaches web development and more through practice in the browser, with free certifications earned by building projects.
+**Coding and data.** freeCodeCamp teaches web development and more through practice in the browser, with free certifications earned by building projects and, for the newer ones, passing an online exam.
 
-**Courses from universities and companies.** Coursera and edX host full courses. Many can be studied free through an option often called auditing.
+**Courses from universities and companies.** Coursera and edX host full courses. Coursera lets you preview the first module of most courses free, and many edX courses can be audited free for a limited time.
 
 **Video.** YouTube has lessons on almost anything, from very good to very poor.
 
@@ -650,7 +650,7 @@ She decides this is a free trial of a paid course, not a free course. Instead, s
       keyTerms: [
         { term: "Nonprofit", definition: "An organisation that does not exist to make a profit, often funded by donations and grants." },
         { term: "Free to study", definition: "You can keep using the lessons without paying, although extras may cost money." },
-        { term: "Auditing", definition: "Studying a course's lessons for free without the graded tests or certificate." },
+        { term: "Auditing", definition: "Studying a course's lessons free, usually for a limited time and without the graded tests or certificate." },
         { term: "Endorsement", definition: "Saying one product or company is the one to choose. SydCrest names platforms only as examples." },
       ],
       commonMistakes: [
@@ -680,10 +680,10 @@ She decides this is a free trial of a paid course, not a free course. Instead, s
           {
             prompt: "Why does a software company such as Google or Microsoft publish free training?",
             options: [
-              "Ghanaian law requires every software company to train users for free",
-              "It wants more people to know its own tools well",
+              "Ghanaian law makes software companies train users",
+              "It wants many more people to know its own tools well",
               "It is paid by universities to send them new students",
-              "It wants to compare its tools fairly with its competitors' tools",
+              "It wants to compare its tools fairly with rivals",
             ],
             answer_index: 1,
             explanation: "Software companies train people on their own products so more people use them well.",
@@ -736,7 +736,7 @@ She decides this is a free trial of a paid course, not a free course. Instead, s
 
 ## Google Skillshop
 
-**What it is.** Google's training site for its business products, such as Google Ads, Google Analytics and Google Workspace. Courses are self paced, written and filmed by Google, and organised into short modules.
+**What it is.** Google's training site for its business products, such as Google Ads and Google Analytics. Courses are self paced, written and filmed by Google, and organised into short modules.
 
 **What you can earn.** Skillshop offers certifications for some products, such as Google Ads. You study the course, then take an online assessment. Google's Skillshop help pages say its certifications are valid for a limited time, so you renew them by passing the assessment again. Many people take Skillshop courses without paying, but check Skillshop's own pages for any fee and the current rules before you start.
 
@@ -746,7 +746,7 @@ She decides this is a free trial of a paid course, not a free course. Instead, s
 
 **What it is.** Google's site for free and low cost training for careers and small businesses. It points to beginner digital skills courses, digital marketing basics, tools for practising job interviews and resources for small businesses.
 
-**A note on certificates.** Grow with Google also promotes longer Google Career Certificates in areas such as IT support, data analytics and UX design. These are delivered on Coursera, which is a different arrangement from free Skillshop training. The official page shows whether they cost money and whether any funded places exist, so read the details carefully before you commit.
+**A note on certificates.** Grow with Google also promotes longer Google Career Certificates in areas such as IT support, data analytics and UX design, and some of the certificates it lists are taken on a partner course site such as Coursera. These are a different arrangement from Skillshop training, and they may cost money. The official page shows where each one is taken, what it costs and whether any funded places exist, so read the details carefully before you commit.
 
 ## Microsoft Learn
 
@@ -760,7 +760,7 @@ She decides this is a free trial of a paid course, not a free course. Instead, s
 
 **What it is.** A nonprofit that teaches coding and related skills for free, funded by donations. You learn by writing small pieces of code in the browser and checking them straight away.
 
-**What you can earn.** freeCodeCamp's certifications are free. To earn one, you build a set of required projects that show you can apply what you learned. This is why many people respect them: you cannot get one without building things.
+**What you can earn.** freeCodeCamp's certifications are free. To earn one, you build a set of required projects that show you can apply what you learned, and for the newer certifications you also pass a final online exam. This is why many people respect them: you cannot get one without building things and being tested.
 
 **Who it suits.** Anyone curious about building websites or working with data. A computer makes the practice much easier, although you can read and try small exercises on a phone.
 
@@ -802,7 +802,7 @@ Sumaila, a national service person at a district office in Bolgatanga, is asked 
       selfCheck: [
         "How do you earn a freeCodeCamp certification?",
         "What is the difference between a Microsoft Learn module and a learning path?",
-        "Where are Google Career Certificates delivered, and where do you check their cost?",
+        "Where do you check what a Google Career Certificate costs?",
         "Why should you keep a piece of work as well as a badge?",
       ],
       practice_task_md: `**Goal:** Find one beginner course on a work skills platform.
@@ -821,13 +821,13 @@ Sumaila, a national service person at a district office in Bolgatanga, is asked 
           {
             prompt: "How do you earn a freeCodeCamp certification, according to the lesson?",
             options: [
-              "By paying a fee after you finish the videos",
-              "By watching every lesson in the curriculum",
-              "By building a set of required projects",
-              "By passing a timed exam at a test centre",
+              "By paying a fee once you have watched all the videos",
+              "By watching every lesson in the curriculum and ticking it off",
+              "By building required projects, plus an exam for newer ones",
+              "By getting a letter from an employer who saw your code",
             ],
             answer_index: 2,
-            explanation: "freeCodeCamp certifications are free and need required projects to be built.",
+            explanation: "freeCodeCamp certifications are free and need required projects, and the newer ones also a final online exam.",
           },
           {
             prompt: "On Microsoft Learn, what is a learning path?",
@@ -857,10 +857,10 @@ Sumaila, a national service person at a district office in Bolgatanga, is asked 
               "They are always free for anyone in Ghana",
               "They are taught in person at Google offices",
               "They replace the need to show any practical work to an employer",
-              "They are delivered on Coursera, so check the official page for cost",
+              "They may cost money, so check the official page first",
             ],
             answer_index: 3,
-            explanation: "The lesson says they are delivered on Coursera and the official page shows the cost and any funded places.",
+            explanation: "The official page shows where each certificate is taken, what it costs and any funded places.",
           },
         ],
         pass_threshold: 75,
@@ -877,7 +877,7 @@ Sumaila, a national service person at a district office in Bolgatanga, is asked 
 
 ## GCFGlobal LearnFree
 
-**What it is.** A free learning site run by a nonprofit, with short tutorial series on computer basics, internet safety, email, Google tools, Microsoft Office, job search, CVs, money and more. GCFGlobal tutorials are now served from learnfree.org.
+**What it is.** A free learning site run by a nonprofit, with short tutorial series on computer basics, internet safety, email, Google tools, Microsoft Office, job search, CVs, money and more. The GCFGlobal address now takes you to learnfree.org.
 
 **Why it is useful.** Lessons are short, mostly text and pictures with some short videos, and written for complete beginners. That makes them light on data and easy to follow on any device.
 
@@ -893,7 +893,7 @@ Sumaila, a national service person at a district office in Bolgatanga, is asked 
 
 ## YouTube
 
-**What it is.** The largest free video library in the world, including lessons from universities, companies, nonprofits and individual teachers.
+**What it is.** A huge free video library, including lessons from universities, companies, nonprofits and individual teachers.
 
 **Why it is useful.** Almost any question has a video answer, and seeing someone do a task step by step can be clearer than reading about it.
 
@@ -1006,42 +1006,48 @@ Wumpini, in Tamale, is about to start a beginner data course. The first quiz ask
 
     "course-sites-and-auditing": {
       outcomes: [
-        "Explain what auditing a course gives you and what it leaves out",
+        "Explain what a free preview and an audit give you and what they leave out",
         "Find the free option on a course enrolment page",
         "Avoid signing up for a paid trial by mistake",
         "Explain who can get DataCamp access through SydCrest",
       ],
-      explanation_md: `Coursera and edX are large course sites. Universities and companies from around the world put full courses on them, with video lectures, readings, quizzes and assignments. Many of these courses can be studied for free through an option usually called **auditing**. Understanding how auditing works lets you learn from strong courses without paying, and stops you from signing up for a payment you did not intend.
+      explanation_md: `Coursera and edX are large course sites. Universities and companies from around the world put full courses on them, with video lectures, readings, quizzes and assignments. Both let you study some of their courses without paying, but the two sites do it differently, and their rules change from time to time. Knowing how the free options work lets you learn from strong courses for the cost of your data, and stops you from signing up for a payment you did not intend.
 
-## What auditing means
+## Coursera: a free preview
 
-When you **audit** a course, you can usually watch the lectures and read the materials for free. What you normally do **not** get:
+In August 2025 Coursera replaced its old free "audit" option with a **free preview**. On most courses you can now study the **first module** for free, including its videos and, where the module has them, its graded quizzes. To go beyond the first module, you pay, for example through a subscription or by paying for the course and its certificate.
 
-* **Graded assignments.** Some quizzes and projects may be locked, or you can try them but they are not marked.
-* **A certificate.** The certificate is normally kept for learners who pay for the course.
-* **Unlimited time,** on some sites. On edX, for example, the audit track gives access for a limited number of weeks, and a banner in the course shows when your access ends. Check the enrolment page for each course.
+Coursera also offers **financial aid**. Learners who apply and are accepted can get full access and the certificate at no cost or a reduced cost. The course page and Coursera's help pages explain how to apply, and the rules can change.
 
-Auditing is not available on every course. Some programmes, especially longer professional certificates, may have no free option at all. And these rules change from time to time. Always read the course's own enrolment page on the day.
+Many older guides and videos still tell you to look for an "audit" link on Coursera. If you cannot find one, that is why.
+
+A preview is still useful. It lets you try a course's teaching, level and data use before you spend anything.
+
+## edX: the audit track
+
+On edX, many courses still offer a free **audit track**. When you audit, you can usually watch the lectures and read the materials for free. What you normally do **not** get:
+
+* **Graded assignments.** Most graded work is locked for auditors.
+* **A certificate.** That comes with the paid **verified track**.
+* **Unlimited time.** Audit access lasts a limited number of weeks, based on the course length shown on the enrolment page, and the clock starts when you enrol.
+
+Some edX programmes, such as boot camps and executive education courses, have no audit track at all. edX has also offered help with the verified fee to learners who apply; check its help pages for the current rules.
 
 ## Finding the free option
 
-Course sites are businesses, so the biggest button on a course page usually leads to the paid option or a free trial. The free option is often smaller.
+Course sites are businesses, so the biggest button on a course page usually leads to the paid option or a free trial. The free option, if there is one, is often smaller.
 
-* **On Coursera,** the large enrol button often starts a free trial of a paid subscription, which charges you unless you cancel. Look in the enrolment window for a smaller link, often worded along the lines of "audit the course" or "full course, no certificate". If you cannot find it, the course may not offer auditing.
-* **On edX,** the enrolment page usually shows a choice between a paid verified track with a certificate and a free audit track. Read the audit details, including how long your access lasts.
+* **Read every option** in the enrolment window before you click. Look for words such as "preview", "audit" or "free".
+* **A free trial is not a free course.** A trial of a paid subscription charges you when it ends unless you cancel.
 * **If a card is requested** before you have seen any free option, stop and read the page again.
 
 Both sites have help pages explaining their current options. If anything is unclear, read those before entering any payment details.
 
-## Is auditing worth it?
+## Is a free option worth it?
 
-Often, yes. You get lectures and reading from well known universities and companies, for the cost of your data. Auditing makes most sense when:
+Often, yes. A free option makes most sense when you want to try a subject before deciding whether to pay, when you want the knowledge more than the certificate, or when you will prove the skill another way, such as a project.
 
-* You want the knowledge, not the certificate.
-* You will prove the skill another way, such as a project.
-* You want to try a subject before deciding whether to pay for anything.
-
-It makes less sense when the graded projects are the most useful part of the course, or when an employer specifically asks for that course's certificate. In that case, look for financial aid. Some course sites, edX for example, have offered help with fees to learners who apply, but the rules change; check the official pages.
+It makes less sense when the graded projects or the certificate are the part you need, for example when an employer asks for that course's certificate. Then look at financial aid, or at a free platform from the last two lessons that teaches the same skill.
 
 ## Watch the data
 
@@ -1053,36 +1059,37 @@ DataCamp is a paid platform for data and AI skills, with short interactive lesso
 
 SydCrest programme learners get DataCamp Donates access from February 2027. This is for people enrolled in a SydCrest programme, not for everyone who uses this site. If you are not in a programme, the free platforms in this section teach many of the same data skills.
 
-## Treat audited courses like real ones
+## Treat free courses like real ones
 
-A free course is easy to drop, because nothing is lost. Give an audited course the same plan you would give a paid one: a goal, study times and a finish line.`,
-      workedExample_md: `**Abdul-Rahman audits a course**
+A free course is easy to drop, because nothing is lost. Give a previewed or audited course the same plan you would give a paid one: a goal, study times and a finish line.`,
+      workedExample_md: `**Abdul-Rahman finds the free options**
 
-Abdul-Rahman, in Bolgatanga, finds a university course on Coursera about writing for business. He wants the skill, not the certificate.
+Abdul-Rahman, in Bolgatanga, wants to learn business writing. He wants the skill, not the certificate.
 
-1. He clicks the large enrol button. A window offers a seven day free trial and asks for card details. He closes it without entering anything.
-2. He opens the enrolment window again and reads every option. Near the bottom is a smaller link to audit the course, with no certificate.
-3. He chooses it. The lectures and readings open; the graded assignments are marked as unavailable for auditors.
-4. He checks the first video's settings and finds a transcript. He reads transcripts on mobile data and saves videos for WiFi.
-5. To prove the skill, he rewrites three real letters from his workplace using what he learned and keeps them as examples.`,
+1. On Coursera he finds a university course on the subject. The first module is open as a free preview, so he studies it to see whether the teaching suits him. To continue he would need to pay or apply for financial aid.
+2. On edX he finds a similar course. The large button offers the verified track with a certificate for a fee. He does not click it. He reads every option on the page and finds the free audit track.
+3. The enrolment page says the course takes six weeks, so he writes down the date his audit access will end and plans to finish before then.
+4. He enrols on the audit track. The lectures and readings open; the graded assignments are marked as unavailable to auditors.
+5. He finds transcripts under the videos. He reads transcripts on mobile data and saves the videos for WiFi.
+6. To prove the skill, he rewrites three real letters from his workplace using what he learned and keeps them as examples.`,
       keyTerms: [
-        { term: "Audit", definition: "To study a course's lectures and materials for free, usually without graded work or a certificate." },
+        { term: "Free preview", definition: "On Coursera, free access to the first module of most courses, including its graded quizzes where there are any." },
+        { term: "Audit", definition: "On edX, studying a course's lectures and materials free for a limited time, usually without graded work or a certificate." },
         { term: "Verified track", definition: "On edX, the paid option that includes graded work and a certificate." },
-        { term: "Subscription", definition: "A regular payment, often monthly, for access to many courses." },
         { term: "Financial aid", definition: "Help with course fees that some sites offer to learners who apply." },
         { term: "DataCamp Donates", definition: "A DataCamp programme that gives free access through partner organisations, not to individuals directly." },
       ],
       commonMistakes: [
         "Clicking the biggest button and starting a paid trial by accident",
-        "Entering card details before looking for the free option",
-        "Assuming every course can be audited",
-        "Forgetting that edX audit access can end after a set number of weeks",
+        "Entering card details before reading every enrolment option",
+        "Following an old guide that says any Coursera course can be audited",
+        "Forgetting that edX audit access ends after a set number of weeks",
         "Believing anyone can get DataCamp through SydCrest",
       ],
       selfCheck: [
-        "What do you usually get, and not get, when you audit a course?",
-        "Where should you look for the audit option on a course page?",
-        "When does auditing make less sense?",
+        "What does Coursera's free preview give you?",
+        "What do you usually get, and not get, when you audit an edX course?",
+        "When does a free option make less sense?",
         "Who gets DataCamp Donates access through SydCrest, and from when?",
       ],
       practice_task_md: `**Goal:** Find the free option on a real course page without paying.
@@ -1091,15 +1098,15 @@ Abdul-Rahman, in Bolgatanga, finds a university course on Coursera about writing
 
 1. Search Coursera or edX for a beginner course related to your goal.
 2. Open the course page and read the enrolment options carefully. Do not enter card details.
-3. Write down: is there an audit or free option, what it includes, what it leaves out, and whether access ends after a time.
+3. Write down: what the free option is (a preview, an audit or none), what it includes, what it leaves out, and whether access ends after a time.
 4. Check how the videos are delivered: transcripts, downloads, quality settings.
-5. Decide whether auditing this course fits your goal, and write one sentence explaining why.
+5. Decide whether the free option fits your goal, and write one sentence explaining why.
 
 **Done looks like:** Notes on one real course's free option, its limits and its data needs, plus your decision.`,
       quiz: {
         questions: [
           {
-            prompt: "What do you normally NOT get when you audit a course?",
+            prompt: "What do you normally NOT get when you audit an edX course?",
             options: [
               "Access to the video lectures",
               "The reading materials",
@@ -1107,40 +1114,40 @@ Abdul-Rahman, in Bolgatanga, finds a university course on Coursera about writing
               "The course outline",
             ],
             answer_index: 2,
-            explanation: "The certificate is normally kept for learners who pay.",
+            explanation: "The certificate comes with the paid verified track, not the audit track.",
           },
           {
-            prompt: "Abdul-Rahman clicked the large enrol button and was asked for card details. What did he do?",
+            prompt: "According to the lesson, what did Coursera put in place of its old free audit option?",
             options: [
-              "Entered his card and planned to cancel within the week",
-              "Closed it and looked again for the smaller audit link",
-              "Gave up on the course and searched YouTube instead",
-              "Asked a friend to pay for the course on his behalf",
+              "A free certificate for every learner who finishes",
+              "A free preview of most courses' first module",
+              "Free access to every course for a whole year",
+              "A small audit link at the bottom of each page",
             ],
             answer_index: 1,
-            explanation: "He closed the window without paying and found the audit option.",
+            explanation: "Since August 2025, Coursera gives a free preview of the first module of most courses.",
           },
           {
             prompt: "Which statement about DataCamp access matches the lesson?",
             options: [
-              "Anyone who creates a free SydCrest account gets full DataCamp access straight away",
+              "Anyone with a free SydCrest account gets DataCamp straight away",
               "DataCamp is a free platform for everyone in Ghana",
               "Individuals can apply to DataCamp Donates on their own",
-              "SydCrest programme learners get DataCamp Donates access from February 2027",
+              "SydCrest programme learners get access from February 2027",
             ],
             answer_index: 3,
             explanation: "Access is through SydCrest's programme, from February 2027, not for everyone.",
           },
           {
-            prompt: "When does the lesson say auditing makes less sense?",
+            prompt: "When does the lesson say a free option makes less sense?",
             options: [
-              "When the graded projects are the most useful part of the course",
+              "When the graded projects or the certificate are what you need",
               "When you want the knowledge and not the certificate",
               "When you want to try a subject before paying",
-              "When you will prove the skill to employers with a project of your own",
+              "When you will prove the skill with a project of your own",
             ],
             answer_index: 0,
-            explanation: "If the graded projects matter most, the audit option may leave out what you need.",
+            explanation: "A preview or audit leaves out graded work and the certificate, so it may not give you what you need.",
           },
         ],
         pass_threshold: 75,
@@ -1255,8 +1262,8 @@ Certificate 2 carries more weight, so he lists it first with its link. He also a
           {
             prompt: "What does a certificate of completion mainly show?",
             options: [
-              "That you passed a strict test set by a professional body",
-              "That you finished a course",
+              "That you passed a strict professional exam",
+              "That you reached the end of a particular course",
               "That you have worked in the job for a year",
               "That an employer has already approved your skills",
             ],
@@ -1277,9 +1284,9 @@ Certificate 2 carries more weight, so he lists it first with its link. He also a
           {
             prompt: "Why are some certifications set to expire and need renewing?",
             options: [
-              "Because the tools they cover change over time",
+              "Because the tools and skills they cover change over time",
               "Because the issuer wants to stop old learners applying for jobs",
-              "Because certificates are only legal in Ghana for one year",
+              "Because certificates are legal for one year only",
               "Because employers ignore any certificate older than a month",
             ],
             answer_index: 0,
@@ -1328,7 +1335,7 @@ Several respected issuers give free certificates or badges, though offers change
 
 * **Google Skillshop** product certifications, such as for Google Ads, earned by an online assessment.
 * **Microsoft Learn** badges and trophies for modules and learning paths, shown on your profile.
-* **freeCodeCamp** certifications, earned by building required projects.
+* **freeCodeCamp** certifications, earned by building required projects and, for the newer ones, passing an online exam.
 
 These are a strong start, especially when paired with your own work.
 
@@ -1363,7 +1370,7 @@ Hawa, in Wa, wants a customer service job and sees an advert for a paid "Custome
 3. **How earned:** A ten question quiz after some videos.
 4. **Pressure:** "Price goes up tomorrow!"
 
-She decides not to pay. Instead she studies a free GCFGlobal series on business communication, practises writing polite replies to complaints, and earns a free Microsoft Learn badge for a module on Outlook. She puts her best written replies in a folder to show employers.`,
+She decides not to pay. Instead she studies a free GCFGlobal series on communication skills, practises writing polite replies to complaints, and earns a free Microsoft Learn badge for a module on Outlook. She puts her best written replies in a folder to show employers.`,
       keyTerms: [
         { term: "Proctored exam", definition: "An exam watched by a supervisor, in person or through a webcam, to stop cheating." },
         { term: "Practice test", definition: "A free sample of an exam that shows whether you are ready." },
@@ -1513,7 +1520,7 @@ If you do not have a CV yet, start a simple one now with your name, contact deta
 Mariama, in Tamale, is applying for a records assistant job. She has five certificates, saved in different places.
 
 1. She finds them in her email, gallery and WhatsApp chats and saves each as a PDF in a "Certificates" folder, with copies in her cloud storage.
-2. She renames them clearly, such as "Mariama Iddrisu GCFGlobal Excel 2027".
+2. She renames them clearly, such as "Mariama Iddrisu Microsoft Learn Excel 2027".
 3. She chooses the three most relevant for the job and lists them on her CV with issuer, date and link.
 4. She attaches the stock record she built for her kiosk as proof, and writes one sentence about it in her email.
 5. She leaves out an unrelated photography certificate, keeping her CV focused.`,
@@ -1585,9 +1592,9 @@ Mariama, in Tamale, is applying for a records assistant job. She has five certif
           {
             prompt: "A form allows only one file but you have three certificates. What does the lesson suggest?",
             options: [
-              "Send only the newest one and forget the others",
+              "Send only the newest one and skip the rest",
               "Take photos of your screen and send the clearest",
-              "Combine them into one PDF",
+              "Combine them into one PDF file and send that",
               "Put them in a WhatsApp chat and send the link",
             ],
             answer_index: 2,
@@ -2146,9 +2153,9 @@ Wumpini, in Tamale, shares a laptop with her brother, who uses it for his own wo
             prompt: "On a shared device, the browser asks to save your password. What should you choose?",
             options: [
               "Save, so you can sign in faster next time",
-              "Never or Not now",
+              "Never or Not now, so it is not kept",
               "Save, but change the password every week",
-              "Save, then tell the others not to use your account",
+              "Save, and ask the others to stay out",
             ],
             answer_index: 1,
             explanation: "On a shared device, a saved password lets anyone open your account.",
@@ -2293,7 +2300,7 @@ Issahaku, in Navrongo, watched every video of a typing and Word course twice, bu
             prompt: "Issahaku switched from one long Saturday session to short sessions on four days. Which habit is that?",
             options: [
               "Mixing different skills together",
-              "Spacing out practice",
+              "Spacing out practice over days",
               "Using words and pictures together",
               "Taking notes in your own words",
             ],
@@ -3042,7 +3049,7 @@ He does not pay, blocks the sender and warns his church youth group.`,
               "A free freeCodeCamp certification earned by building projects",
               "A fee to unlock a certificate from a free course that never arrives",
               "A Microsoft Learn badge for finishing a module",
-              "A completion certificate from a free GCFGlobal series",
+              "A Skillshop certification earned by passing an assessment",
             ],
             answer_index: 1,
             explanation: "Paying to unlock something that never comes is a common certificate scam.",
@@ -3196,10 +3203,10 @@ She does not pay. She starts the free Microsoft Learn training instead, and post
           {
             prompt: "A scammer says you can get your money back if you pay one more small fee. What does the lesson advise?",
             options: [
-              "Stop all further payments",
+              "Stop all further payments and report it",
               "Pay quickly before the refund offer ends",
-              "Pay half the fee and keep the rest until you get the refund",
-              "Ask a friend to pay it for you so your number is not used",
+              "Pay half now and half after the refund",
+              "Ask a friend to pay it from their number",
             ],
             answer_index: 0,
             explanation: "Refund fees are another trick; stop paying and report it.",
@@ -3209,7 +3216,7 @@ She does not pay. She starts the free Microsoft Learn training instead, and post
             options: [
               "Only to the seller who scammed you",
               "To any WhatsApp group you belong to",
-              "To Ghana's Cyber Security Authority, through its official website",
+              "To Ghana's Cyber Security Authority, on its website",
               "Only to the course platform that the scammer copied",
             ],
             answer_index: 2,
@@ -3337,7 +3344,7 @@ Issahaku, in Navrongo, uses one Gmail address for Microsoft Learn, Khan Academy 
             options: [
               "Your name followed by your year of birth",
               "123456, because it is easy to remember",
-              "A phrase of four or five unrelated words used only for this account",
+              "Four or five unrelated words, used only here",
               "The same strong password you use for all your accounts",
             ],
             answer_index: 2,
@@ -3520,7 +3527,7 @@ Mariama, in Tamale, wants to keep her kiosk's stock and sales on a spreadsheet.
               "A failure that means online learning does not work for you",
               "A reason to pay for a different certificate straight away",
               "Something to hide from your study partner",
-              "Useful knowledge, not wasted time",
+              "Useful knowledge about what suits you, not wasted time",
             ],
             answer_index: 3,
             explanation: "Discovering what does not suit you is part of learning.",

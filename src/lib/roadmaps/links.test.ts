@@ -40,8 +40,8 @@ describe("the draft roadmaps' links", () => {
     }
   });
 
-  it("connect every one of the 27 tracks", () => {
-    expect(tracks.size).toBe(27);
+  it("connect every one of the 28 tracks", () => {
+    expect(tracks.size).toBe(28);
     const linked = new Set(ROADMAP_DRAFTS.flatMap((d) => (d.leads_to.length ? [d.track, ...d.leads_to] : [...d.leads_to])));
     expect([...tracks].filter((t) => !linked.has(t))).toEqual([]);
   });

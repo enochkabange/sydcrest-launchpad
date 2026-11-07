@@ -221,3 +221,26 @@ prerequisite (P) of another node or of DMP week 1.
 | `ready-for-dmp` | Section. P: DMP week 1 objectives (F6) |
 | `readiness-check` | P: DMP week 1 assumes typing, an email account, sending a file and joining sessions (F6) |
 | `apply-to-dmp` | P: the track's stated end point (F6) |
+
+## Review of the Using the internet section (issue #294)
+
+Independent review, 7 November 2026. The four new nodes were read against the
+CONTENT_GUIDE rubric; all sit between 656 and 758 words. Chrome Help 95617 (Not secure,
+Dangerous, a secure connection does not prove a site is honest, site controls on
+Android) and 188842 (bookmark icon, bookmarks bar, Bookmark Manager folders, sync) were
+checked. No published slug changed and no existing Bridge line was edited.
+
+Changed: the domain is now defined as the name and ending at the right hand end of the
+host (read from the right), in `browsers-tabs-and-bookmarks` and `safe-sites-and-links`
+and both key terms, because "the name just before the first single slash" contradicted
+the mtnghana.bonus-offer.xyz example; `browsers-tabs-and-bookmarks` teaches the bookmark
+step itself instead of saying the searching lesson already did (that lesson comes later);
+`browser-downloads` now says to install apps only from the Play Store, matching the apps
+lesson. Padded distractors were trimmed in `using-the-internet` q2 and q4,
+`browsers-tabs-and-bookmarks` q1, `browser-downloads` q1 and q3 and `safe-sites-and-links`
+q2, where the correct option was never the shortest or longest and one distractor was
+much longer than the rest.
+
+For the founder: the node cap of 34 applies to the Bridge only. Inserting a section in
+the middle renumbers the later sections when the roadmap is imported again, although
+every slug is unchanged.

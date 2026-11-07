@@ -31,7 +31,7 @@ and a choice of the SydCrest track to take next.
 | P6 | GCFGlobal LearnFree home and series names (Internet Basics, Internet Safety, Resume Writing, Communication Skills) | https://www.learnfree.org/ | 2026-11-07 | Copyright Learnfree, Inc.; limited not for profit educational licence, scraping prohibited. Only series names read (as in the Bridge research, F4 and F5) |
 | P7 | Khan Academy: About (a nonprofit with a mission of free education; free courses) | https://www.khanacademy.org/about | 2026-11-07 | Official page, read for facts only |
 | P8 | Coursera home page; Coursera help article on enrolment options did not render | https://www.coursera.org/ | 2026-11-07 | Official page. Audit details come only from P9 search results, so the lessons say auditing is offered on some courses, may not appear, and can change |
-| P9 | Search results on Coursera auditing (third party guides and a community thread): audit is per course, not on every course or professional certificate, gives content without graded work or a certificate, and the main button often starts a paid trial | Web search "Coursera audit course free option help center" | 2026-11-07 | Search snippets only, used to phrase the lesson cautiously |
+| P9 | Search results on Coursera auditing (third party guides and a community thread): audit is per course, not on every course or professional certificate, gives content without graded work or a certificate, and the main button often starts a paid trial | Web search "Coursera audit course free option help center" | 2026-11-07 | Search snippets only, used to phrase the lesson cautiously | **Superseded by P20 in review (7 November 2026): Coursera replaced audit with a first module preview in August 2025.**
 | P10 | edX Help (search result text also mentioned edX financial assistance for the verified fee; percentages not used): What is the audit track, and How can I get access after a course expires (via search result text; the pages returned 403 to the reader tool): audit access lasts the weeks shown on the enrolment page, no certificate on the audit track | https://support.edx.org/hc/en-us/articles/1500003964681 | 2026-11-07 | Official help centre, search result text only |
 | P11 | DataCamp Donates: free access given through partner organisations (nonprofits, student clubs, CSR programmes) for one year, not to individuals directly | https://www.datacamp.com/donates | 2026-11-07 | Official page. The dollar value on the page is not used |
 | P12 | YouTube Help: Watch videos offline on mobile in select countries and regions (Ghana is on the list; Download quality and Download over WiFi only settings) | https://support.google.com/youtube/answer/6141269 | 2026-11-07 | Official documentation |
@@ -42,6 +42,9 @@ and a choice of the SydCrest track to take next.
 | P17 | Search results on Ghana Library Authority internet access: free WiFi was announced for registered members in some libraries; no current evidence for the north | Web search "Ghana Library Authority free internet access libraries northern region Tamale" | 2026-11-07 | News search snippets only; the lesson therefore says "ask your local library" and promises nothing |
 | P18 | Cyber Security Authority Ghana: home page with a Report An Incident link and contact numbers | https://www.csa.gov.gh/ | 2026-11-07 | Official government page; the lesson names the authority and its website only, not a short code |
 | P19 | Google Account Help: Turn on 2 Step Verification (also D1 in the Bridge research) | https://support.google.com/accounts/answer/185839 | 2026-11-07 | Official documentation, read for accuracy only |
+| P20 | Coursera Blog: Introducing Coursera's new course preview experience (8 August 2025): the preview "replaces our audit experience"; the first module of most courses is free, including graded assignments and Coach where available; financial aid still gives full access and the certificate at no or reduced cost | https://blog.coursera.org/introducing-courseras-new-course-preview-experience/ | 2026-11-07 | Official company blog, read for facts only (added in review) |
+| P21 | freeCodeCamp News: freeCodeCamp Turns 10 + Major Certification Updates (28 October 2024): new certifications need the coursework, a reviewed capstone project and a proctored final exam taken in freeCodeCamp's exam environment, and remain free; legacy certifications stay available for a time. Search results (September to December 2025) describe the newer certifications as requiring projects and an exam | https://www.freecodecamp.org/news/freecodecamp-turns-10-major-curriculum-updates | 2026-11-07 | Official news post, read for facts only (added in review) |
+| P22 | edX Help: What are the differences between audit (free) and verified (paid) courses (search result text): audit access lasts the expected course length in weeks from enrolment, no graded work or certificate on audit, Boot Camps and Executive Education have no audit track | https://support.edx.org/hc/en-us/articles/360013426573 | 2026-11-07 | Official help centre, search result text only (added in review) |
 | F1 | European Commission JRC: DigComp framework (DigComp 3.0). Used competences: browsing, searching and filtering; evaluating information; protecting devices and personal data; identifying digital competence gaps (keep learning); solving technical problems | https://joint-research-centre.ec.europa.eu/digcomp/digcomp-framework_en | 2026-10-25 (re used from the Bridge research) | Public framework; only area and competence titles used |
 | F2 | Digital Skills Bridge research: 13 of 20 entry level Ghanaian adverts ask for basic computer skills or office software, and the Bridge points learners to free courses | src/content/research/digital-skills-bridge.md | 2026-11-07 | Internal; the adverts that justify learning digital skills at all |
 | I1 | Issue #294 (founder ask, 7 November 2026): learning online track, free platforms, DataCamp from February 2027, certificates, limited data, notes and spaced review, fake paid courses | GitHub issue #294 | 2026-11-07 | Internal |
@@ -63,13 +66,14 @@ never as a guarantee of one.
 ## What the platforms showed
 
 * **Free to study, sometimes paid to certify.** Microsoft Learn modules (P3), freeCodeCamp
-  (P5), GCFGlobal (P6) and Khan Academy (P7) are free to study. Coursera and edX (P8 to
-  P10) usually let you study many courses free through an audit option, with graded work
-  and the certificate kept for paying learners. Microsoft Certifications are earned by exam
+  (P5), GCFGlobal (P6) and Khan Academy (P7) are free to study. Coursera gives a free
+  preview of the first module of most courses (P20) and edX a time limited audit track on
+  many courses (P10, P22), with full access, graded work and the certificate kept for paying
+  learners or those granted financial aid. Microsoft Certifications are earned by exam
   (P4); the lessons do not state exam prices and send learners to the official page.
 * **How a credential is earned matters.** Microsoft separates exam based Certifications
   from lab based Applied Skills (P4); Skillshop has product certifications such as Google
-  Ads (P2); freeCodeCamp certifications need projects (P5). The certificates lesson turns
+  Ads (P2); freeCodeCamp certifications need projects, and the newer ones a final exam (P5, P21). The certificates lesson turns
   this into one test: was it earned by passing something that checked the skill?
 * **Offline and low data options exist but vary.** YouTube allows downloads in Ghana in its
   app (P12), with download quality and WiFi only settings, while in most places downloads
@@ -93,7 +97,7 @@ Signals: platform or documentation sources (P), framework (F1 DigComp), the foun
 | `free-places-to-learn` | Section. I1 (free platforms); P1 to P11 |
 | `work-skills-platforms` | I1 names Skillshop, Microsoft Learn and freeCodeCamp; P1 P2 P3 P5 |
 | `everyday-skills-platforms` | I1 names YouTube; P6 P7 P12; Pre: the Bridge already links GCFGlobal, so learners meet it again here as a self study tool |
-| `course-sites-and-auditing` | I1 (DataCamp from February 2027; Coursera and edX audit in the brief); P8 P9 P10 P11 I2 |
+| `course-sites-and-auditing` | I1 (DataCamp from February 2027; Coursera and edX audit in the brief); P8 P10 P11 P20 P22 I2 |
 | `certificates` | Section. I1 (which certificates carry weight); P2 P4 P5 |
 | `choosing-certificates` | I1; P4 (exam and lab based credentials, free renewal), P2 (product certifications), P5 (project based certifications), P9 P10 (no certificate on audit) |
 | `showing-certificates` | I1; P4 (credentials are shareable); F2 (adverts ask for proof of skills); Pre for applying to any job in later tracks |
@@ -110,3 +114,72 @@ Signals: platform or documentation sources (P), framework (F1 DigComp), the foun
 | `fake-courses-and-scams` | I1; P18 (where to report); F1 protecting personal data, evaluating information; the Bridge's `spotting-scams` covers MoMo tricks, this node covers courses and certificates |
 | `protecting-learning-accounts` | P19; F1 protecting personal data; Pre: certificates and progress live in these accounts |
 | `four-week-plan` | I1 (the final practical); Pre: every node above feeds it; leads into the SydCrest tracks in `leads_to` |
+
+## Review
+
+Independent review, 7 November 2026, by a reviewer agent that did not write the track.
+Every node was read against the CONTENT_GUIDE rubric (accuracy, fit, readability and word
+range, device neutral copy, practice tasks, quiz answerability, no dashes, no invented
+numbers, no endorsements, provenance). All 24 explanations sit between 653 and 773 words,
+inside the denser lesson range. No roadmap.sh page was opened.
+
+**Checked on official pages:** YouTube Help 6141269 (Ghana is listed for mobile downloads;
+Download quality and Download over WiFi only settings confirmed); DataCamp Donates (given
+to nonprofits, student clubs and CSR programmes for one year, individuals only through a
+partner); Microsoft Learn Credentials (Certifications by exam, Applied Skills by lab based
+assessment, eligible Certifications renewed annually at no cost); Skillshop home (product
+list); Coursera Blog (P20); freeCodeCamp News (P21); edX Help (P22, search text); Cyber
+Security Authority home page (Report An Incident link); gcfglobal.org redirects to
+learnfree.org; Chrome Help 95617 and 188842 (D6, D4 in the Bridge research).
+
+**Changed:**
+* `course-sites-and-auditing`: rewritten. Coursera replaced audit with a free first module
+  preview in August 2025 (P20), so the old advice to look for a Coursera audit link was
+  wrong. The lesson now teaches Coursera's preview and financial aid separately from edX's
+  time limited audit track (which still exists, P22), with a new worked example, key terms,
+  mistakes, self check, practice step and quiz questions 1, 2 and 4. Node title is now
+  "Coursera, edX and their free options" (slug unchanged); summary and resources updated
+  (Coursera blog link added, plain Coursera home link dropped to stay within three links).
+* `free-places-to-learn`: Coursera and edX free options and the Auditing key term brought
+  in line with P20 and P22; freeCodeCamp now says newer certifications also need an exam.
+* `work-skills-platforms`: Google Workspace removed from Skillshop's product list (not on
+  the Skillshop page); Grow with Google paragraph no longer states that Career Certificates
+  are "delivered on Coursera" (the Africa page did not say so; only the AI certificate
+  links there) and now says where taken and cost are on the official page; freeCodeCamp
+  certifications now projects plus, for newer ones, a final exam (P21); quiz 1 and 4 and a
+  self check rewritten to match.
+* `choosing-certificates`: freeCodeCamp line updated as above; Hawa's GCFGlobal series is
+  now "communication skills" (a series name recorded in P6).
+* `everyday-skills-platforms`: "the largest free video library in the world" (unsourced
+  superlative) softened; GCFGlobal redirect wording made precise.
+* `showing-certificates`: example file name no longer implies GCFGlobal issues a
+  certificate (the track says it does not).
+* `stay-safe-and-start`: a quiz distractor that implied GCFGlobal completion certificates
+  replaced.
+* Quiz rebalance: correct options that were far shorter than every distractor were evened
+  out in `setting-a-learning-goal` q2, `choosing-a-course` q1, `free-places-to-learn` q1,
+  `certificates` q2 and q4, `showing-certificates` q4, `shared-devices-and-hubs` q2,
+  `learning-well` q3, `fake-courses-and-scams` q3 and q4, `protecting-learning-accounts` q2,
+  `four-week-plan` q3. Shortest share went from 17% to 6%; longest is 8%; positions
+  unchanged at 24/24/25/23.
+* `learning-online.ts`: `customer-service` added to `leads_to`, because `four-week-plan`
+  names Digital Customer Service as a next track.
+* Tests: `links.test.ts` now expects 28 tracks, and the `roadmap-admin.test.ts` import
+  guard now lets a node's `kind` pass through as written. Both failed on the branch before
+  review.
+
+**Kind checkpoint:** `four-week-plan` is the first draft node with `kind: "checkpoint"`.
+`buildRoadmapView` lists a checkpoint child after its section's topics, without a "Topic
+n of m" place, and it keeps its lesson page and quiz. A capstone practical that closes the
+last section suits that kind.
+
+**For the founder:**
+* Coursera's paid route is now the norm past the first module; financial aid is the free
+  route. Recheck P20 before publishing and whenever Coursera changes its options again.
+* Skillshop pricing and certification validity come only from third party pages and
+  search text; the lessons tell learners to check Skillshop for any fee.
+* `COHORT_ONLY_TRACKS` now holds learning-online. It is only read by a test, and the
+  path quiz could not reach learning-online anyway, so this is harmless, but the name no
+  longer says what the set means. A rename (for example `NOT_RECOMMENDED_BY_QUIZ`) or a
+  separate `FOLLOW_ON_TRACKS` set would be clearer; not done here to keep the diff to
+  content.
