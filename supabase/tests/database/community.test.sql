@@ -23,6 +23,8 @@ from (values
 update public.profiles set role = 'admin' where id = '44444444-4444-4444-4444-444444444444';
 update public.profiles set public_slug = 'mariama', is_public = true where id = '33333333-3333-3333-3333-333333333333';
 
+-- Start from no chapters: the six seeded ones (#300) share these slugs.
+delete from public.chapters;
 insert into public.chapters (id, slug, name, region, city, status, whatsapp_url) values
   ('c1000000-0000-0000-0000-000000000001', 'tamale', 'Tamale', 'northern', 'Tamale', 'active', 'https://chat.whatsapp.com/TamaleInvite1'),
   ('c1000000-0000-0000-0000-000000000002', 'bolgatanga', 'Bolgatanga', 'upper_east', 'Bolgatanga', 'launching', null),

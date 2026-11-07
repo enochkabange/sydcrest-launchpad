@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DataTable, type Column } from "@/components/ui/layout";
 import { ColumnChart, NothingYet, StatTile, StatGrid } from "@/components/insights/charts";
+import { alertChannels } from "@/lib/alerts/error-alerts";
 import type { RowOf } from "@/lib/insights/dashboards";
 import { loadTable } from "@/lib/insights/data";
 import { DEVICES } from "@/lib/insights/filters";
@@ -115,8 +116,16 @@ async function Reliability({ supabase, filters }: InsightsContext) {
     { header: "Rated poor", cell: (r) => formatRate(r.poor, r.samples), align: "end", phone: "hide" },
   ];
 
+  const channels = alertChannels();
+  const alerts = [channels.slack && "Slack", channels.email && `email to ${channels.email}`].filter(Boolean).join(" and ");
+
   return (
     <>
+      <p role="note" className="text-sm text-content-2">
+        {alerts
+          ? `Error alerts go to ${alerts}, at most once an hour for each kind of error.`
+          : "Error alerts are off. Add SLACK_ALERT_WEBHOOK_URL, or ALERT_EMAIL with RESEND_API_KEY, in Vercel to get them."}
+      </p>
       <StatGrid>
         <StatTile value={formatCount(t.views)} label="Page views" />
         <StatTile value={formatCount(t.server)} label="Server errors" detail={perThousand(t.server, t.views)} />

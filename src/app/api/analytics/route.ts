@@ -1,4 +1,6 @@
+import { after } from "next/server";
 import { cookies } from "next/headers";
+import { alertError } from "@/lib/alerts/error-alerts";
 import { ANONYMOUS_ID_COOKIE, isAnonymousId } from "@/lib/analytics/anonymous-id";
 import { BEACON_MAX_BYTES, parseBeacon, sameOrigin } from "@/lib/analytics/beacon";
 import { OPT_OUT_COOKIE, deviceClass, optedOutRequest } from "@/lib/analytics/context";
@@ -52,5 +54,15 @@ export async function POST(request: Request) {
     source: "client",
     route: null,
   });
+  // Founder alerts for browser errors (#304), after the response is sent.
+  const errors = beacon.events.filter((e) => e.name === "client_error");
+  if (errors.length) {
+    after(async () => {
+      for (const e of errors) {
+        const props = (e.props ?? {}) as { digest?: string; error?: string };
+        await alertError({ source: "client", route: e.route ?? null, error: props.error, digest: props.digest });
+      }
+    });
+  }
   return respond(204);
 }

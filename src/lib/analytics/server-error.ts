@@ -1,4 +1,5 @@
 import "server-only";
+import { alertError, type ErrorAlert } from "@/lib/alerts/error-alerts";
 import { createAdminClient } from "@/lib/messaging/admin";
 import { OPT_OUT_COOKIE, deviceClass, optedOutRequest, routeFromFilePath } from "./context";
 import { validateProps } from "./events";
@@ -21,6 +22,23 @@ function headerSource(headers: RequestInfo["headers"]) {
 
 function cookieValue(cookieHeader: string | null, name: string) {
   return cookieHeader?.split(/;\s*/).find((c) => c.startsWith(`${name}=`))?.slice(name.length + 1) ?? null;
+}
+
+/**
+ * The founder alert for an error Next caught (#304), or null for Next's own
+ * control flow. Unlike the event, it ignores the visitor's analytics choice:
+ * it says nothing about who the visitor is. Pure.
+ */
+export function serverErrorAlert(error: unknown, context: ContextInfo): ErrorAlert | null {
+  const err = error as { digest?: unknown; name?: unknown } | null;
+  const digest = typeof err?.digest === "string" ? err.digest : undefined;
+  if (digest && CONTROL_FLOW.test(digest)) return null;
+  return {
+    source: "server",
+    route: routeFromFilePath(context.routePath),
+    error: typeof err?.name === "string" ? err.name.slice(0, 60) : undefined,
+    digest,
+  };
 }
 
 /** The server_error event for an error Next caught, or null when it is not one to record. Pure. */
@@ -49,9 +67,15 @@ export function serverErrorEvent(error: unknown, request: RequestInfo, context: 
  * Server Action errors, Route Handler errors (which answer 500) and render
  * errors. Written with the service role (there is no user session here), so
  * it is anonymous. Never the message or the stack. Without
- * SUPABASE_SECRET_KEY it only logs.
+ * SUPABASE_SECRET_KEY it only logs. Then alerts the founder (#304).
  */
 export async function reportServerError(error: unknown, request: RequestInfo, context: ContextInfo) {
+  await recordServerError(error, request, context);
+  const alert = serverErrorAlert(error, context);
+  if (alert) await alertError(alert);
+}
+
+async function recordServerError(error: unknown, request: RequestInfo, context: ContextInfo) {
   try {
     const found = serverErrorEvent(error, request, context);
     if (!found) return;

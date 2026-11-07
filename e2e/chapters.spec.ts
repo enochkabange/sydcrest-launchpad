@@ -172,3 +172,56 @@ test("an admin creates a chapter and appoints its lead", async ({ page }) => {
   await expect(page.getByRole("region", { name: "Leads" }).getByText("Mariama Seidu", { exact: true })).toBeVisible();
   await expect(page.getByText("Nobody has joined yet.")).toBeVisible();
 });
+
+test("someone with no chapter nearby applies to start one, and an admin approves it (#301)", async ({ page }, testInfo) => {
+  // Phone and desktop run at once, so each uses a region with no chapter of its own.
+  const [region, regionName] = testInfo.project.name === "phone" ? ["volta", "Volta"] : ["oti", "Oti"];
+  const applicant = await createLearner("Hawa Mumuni");
+  await setRegion(applicant.id, region);
+  const adminUser = await createLearner("Issahaku Alhassan");
+  await promoteToAdmin(adminUser.id);
+  const town = `Ho ${crypto.randomUUID().slice(0, 6)}`;
+  const slug = town.toLowerCase().replace(/\s+/g, "-");
+  const { admin } = await import("./supabase-admin");
+  // Remove the chapter even if a step fails, so a rerun starts with no chapter in the region.
+  try {
+
+  // The nudge: no chapter in Volta, so the chapters page offers to start one.
+  await signIn(page, applicant);
+  await page.goto("/chapters");
+  await expect(page.getByText(`There is no chapter in ${regionName} Region yet.`)).toBeVisible();
+  await page.getByRole("link", { name: "Start a chapter", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "Start a chapter", level: 1 })).toBeVisible();
+
+  await page.getByRole("button", { name: "Send application" }).click();
+  await expect(page.getByText("Enter the town or city.")).toBeVisible();
+  await page.getByLabel("Town or city").fill(town);
+  await expect(page.getByLabel("Region")).toHaveValue(region);
+  await page.getByLabel("Why do you want to start a chapter there?").fill("Many graduates here want digital skills and a place to meet.");
+  await page.getByLabel("How would you run it?").fill("Monthly meetups at the town library, with two friends helping me.");
+  await page.getByRole("button", { name: "Send application" }).click();
+  await expect(page.getByText("Application sent.")).toBeVisible();
+  await expect(page.getByRole("heading", { name: "Your application is in review" })).toBeVisible();
+
+  // The admin approves from the queue, keeping the suggested address.
+  await page.context().clearCookies();
+  await signIn(page, adminUser);
+  await page.goto("/admin/chapters/applications");
+  const card = page.getByRole("listitem").filter({ has: page.getByRole("heading", { name: `${town}, ${regionName} Region` }) });
+  await expect(card.getByText("Hawa Mumuni")).toBeVisible();
+  await expect(card.getByLabel("Address")).toHaveValue(slug);
+  await card.getByRole("button", { name: "Approve and open the chapter" }).click();
+  await expect(page.getByText(`The ${town} chapter is open and the applicant leads it.`)).toBeVisible();
+  await expect(card).toHaveCount(0);
+
+  // The applicant leads the new chapter, which is open to join.
+  await page.context().clearCookies();
+  await signIn(page, applicant);
+  await page.goto("/chapters/start");
+  await expect(page.getByRole("heading", { name: `You lead the ${town} chapter` })).toBeVisible();
+  await page.getByRole("link", { name: "Open your chapter" }).click();
+  await expect(page).toHaveURL(new RegExp(`/chapters/${slug}$`));
+  } finally {
+    await admin(`/rest/v1/chapters?slug=eq.${slug}`, { method: "DELETE" }).catch(() => undefined);
+  }
+});
