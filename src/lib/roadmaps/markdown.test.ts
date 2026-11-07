@@ -88,6 +88,11 @@ describe("markdownToText", () => {
   it("strips formatting for descriptions", () => {
     expect(markdownToText("# Title\n\nUse **pivot** tables.\n\n- one\n- two")).toBe("Title Use pivot tables. one two");
   });
+
+  it("gives a table's cell text, not its pipes, and keeps nested items (#271)", () => {
+    const md = "Compare them.\n\n| Tool | Cost |\n| --- | ---: |\n| Sheets | Free |\n\n1. First\n   - inner";
+    expect(markdownToText(md)).toBe("Compare them. Tool Cost Sheets Free First inner");
+  });
 });
 
 describe("practiceOutcome", () => {

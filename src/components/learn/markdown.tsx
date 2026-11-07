@@ -21,18 +21,20 @@ function renderInline(nodes: Inline[]): ReactNode {
             {node.text}
           </code>
         );
-      case "link":
+      case "link": {
+        // Site paths stay in the tab; other sites open in a new one.
+        const external = /^https?:/i.test(node.href);
         return (
           <a
             key={i}
             href={node.href}
-            target="_blank"
-            rel="noopener noreferrer"
             className="text-content-link underline underline-offset-2"
+            {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           >
             {renderInline(node.children)}
           </a>
         );
+      }
     }
   });
 }

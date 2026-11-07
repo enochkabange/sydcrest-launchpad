@@ -66,6 +66,12 @@ test.beforeAll(async ({}, testInfo) => {
         'Raw markup stays text: <img src="x" onerror="alert(1)">',
         "",
         "Read the [Sheets help centre](https://support.google.com/docs) when you get stuck.",
+        "",
+        "| Item | Sold today |",
+        "| --- | ---: |",
+        "| Rice | 12 |",
+        "",
+        `Next, try [Counting stock](/roadmaps/${slug}/counting).`,
       ].join("\n"),
       practice_task_md: "Ask Fuseini for one week of his sales and put them in a sheet with a total for each day.",
     },
@@ -151,12 +157,20 @@ test("a node page renders reviewed content safely with its resources", async ({ 
 
   // Markdown: a heading, bold text, a list and a safe link; raw HTML shows as text.
   const article = page.locator("article");
-  await expect(article.getByRole("heading", { level: 2, name: "Why records matter" })).toBeVisible();
+  await expect(article.getByRole("heading", { level: 3, name: "Why records matter" })).toBeVisible();
   await expect(article.locator("strong", { hasText: "Good records" })).toBeVisible();
   await expect(article.getByRole("listitem").filter({ hasText: "Write each sale on one row" })).toBeVisible();
   await expect(article.getByRole("link", { name: "Sheets help centre" })).toHaveAttribute("href", "https://support.google.com/docs");
   await expect(article.getByText('<img src="x" onerror="alert(1)">', { exact: false })).toBeVisible();
   await expect(article.locator("img")).toHaveCount(0);
+  // Tables and site links render as on the lesson page (#271).
+  const table = article.getByRole("region", { name: "Table: Item, Sold today" });
+  await expect(table.getByRole("columnheader", { name: "Sold today" })).toBeVisible();
+  await expect(table.getByRole("cell", { name: "Rice" })).toBeVisible();
+  await expect(article.getByText("| Item |")).toHaveCount(0);
+  const next = article.getByRole("link", { name: "Counting stock", exact: true });
+  await expect(next).toHaveAttribute("href", `/roadmaps/${seed.slug}/counting`);
+  await expect(next).not.toHaveAttribute("target", "_blank");
 
   await expect(page.getByText("Ask Fuseini for one week of his sales")).toBeVisible();
   await expect(page.getByRole("link", { name: /Google Sheets training/ })).toHaveAttribute(
