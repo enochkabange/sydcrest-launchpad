@@ -1,4 +1,4 @@
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { addressKey, signInPairKey, SIGN_IN_LIMIT_MESSAGE } from "@/lib/rate-limit";
 
 vi.mock("server-only", () => ({}));
@@ -125,9 +125,20 @@ describe("signIn", () => {
 });
 
 describe("signInWithGoogle", () => {
+  afterEach(() => {
+    vi.unstubAllEnvs();
+  });
+
   it("is not limited", async () => {
+    vi.stubEnv("AUTH_GOOGLE_ENABLED", "true");
     await expect(signInWithGoogle()).rejects.toMatchObject({ to: "https://accounts.google.example/o" });
     expect(rpc).not.toHaveBeenCalled();
+  });
+
+  it("sends the visitor back to sign in without asking Supabase while Google is off", async () => {
+    vi.stubEnv("AUTH_GOOGLE_ENABLED", "");
+    await expect(signInWithGoogle()).rejects.toMatchObject({ to: "/login" });
+    expect(signInWithOAuth).not.toHaveBeenCalled();
   });
 });
 

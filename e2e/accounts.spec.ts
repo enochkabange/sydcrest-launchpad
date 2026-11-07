@@ -108,12 +108,13 @@ test("wrong password shows an error without revealing which field was wrong", as
   );
 });
 
-test("the Google button hands off to Google", async ({ page }) => {
-  // Google blocks automated sign in, so only the redirect is checked.
-  await page.goto("/login");
-  const [request] = await Promise.all([
-    page.waitForRequest((r) => r.url().includes("/auth/v1/authorize") && r.url().includes("provider=google")),
-    page.getByRole("button", { name: "Continue with Google" }).click(),
-  ]);
-  expect(request.url()).toContain("provider=google");
+test("sign in and sign up hide Google until it is switched on", async ({ page }) => {
+  // AUTH_GOOGLE_ENABLED is unset here, as in production until issue #34.
+  // The switched on state is covered by the unit tests.
+  for (const path of ["/login", "/signup"]) {
+    await page.goto(path);
+    await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
+    await expect(page.getByRole("button", { name: "Continue with Google" })).toHaveCount(0);
+    await expect(page.getByText("or", { exact: true })).toHaveCount(0);
+  }
 });

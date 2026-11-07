@@ -4,6 +4,7 @@ import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { siteOrigin } from "@/lib/site-url";
+import { googleSignInEnabled } from "@/lib/google-sign-in";
 import { parseAgeAndConsent, parseSignIn, parseSignUp, safeNextPath, type FieldErrors } from "@/lib/validation";
 import { UNDER_AGE_MESSAGE } from "@/lib/legal";
 import { track, trackNow, trackRefusal } from "@/lib/analytics/track";
@@ -165,6 +166,7 @@ export async function completeWelcome(_prev: AuthState, form: FormData): Promise
 }
 
 export async function signInWithGoogle(form?: FormData) {
+  if (!googleSignInEnabled()) redirect("/login");
   const supabase = await createClient();
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: "google",
