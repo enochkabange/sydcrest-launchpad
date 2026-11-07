@@ -26,7 +26,7 @@ const INTEREST_TRACKS: Record<Exclude<Interest, "unsure">, readonly Track[]> = {
   marketing: ["digital-marketing"],
   business: ["digital-business", "freelancing"],
   customers: ["customer-service", "digital-sales"],
-  office: ["virtual-assistant", "excel-power-bi", "project-management"],
+  office: ["office-tools", "virtual-assistant", "excel-power-bi", "project-management"],
   design: ["ui-ux"],
   creative: ["graphic-design", "content-creation", "social-media-management"],
   product: ["product"],
@@ -71,6 +71,7 @@ export const FULL_LESSON_TRACKS: ReadonlySet<Track> = new Set<Track>([
   "data-science",
   "digital-sales",
   "no-code",
+  "office-tools",
 ]);
 
 /** Tracks whose early sections work on a phone. The others need a computer for practice. */
@@ -90,6 +91,7 @@ export const PHONE_FRIENDLY: ReadonlySet<Track> = new Set<Track>([
   "project-management",
   "freelancing",
   "software-testing",
+  "office-tools",
 ]);
 
 const GOAL_AFFINITY: Record<Goal, Track[]> = {
