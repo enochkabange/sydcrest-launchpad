@@ -36,33 +36,44 @@ export function statusCopy(status: string) {
   return isChapterStatus(status) ? STATUS_COPY[status] : STATUS_COPY.closed;
 }
 
-/** The five northern capitals in launch order, with the region slug profiles use. */
-export const PLANNED_CHAPTERS: { city: string; region: RegionSlug; regionLabel: string }[] = CHAPTERS.map((c) => {
-  const region = REGIONS.find((r) => r.label === c.region);
-  if (!region) throw new Error(`Unknown chapter region ${c.region}`);
-  return { city: c.city, region: region.slug, regionLabel: c.region };
-});
+/**
+ * The chapters SydCrest runs for now, in launch order, with the region slug
+ * profiles use. Upper East has two (Navrongo and Bolgatanga), so match on
+ * region and city, never region alone.
+ */
+export const PLANNED_CHAPTERS: { slug: string; name: string; city: string; region: RegionSlug; regionLabel: string }[] = CHAPTERS.map(
+  (c) => {
+    const region = REGIONS.find((r) => r.label === c.region);
+    if (!region) throw new Error(`Unknown chapter region ${c.region}`);
+    return { slug: c.slug, name: c.name, city: c.city, region: region.slug, regionLabel: c.region };
+  },
+);
+
+/** Position in launch order, or -1 for a chapter that is not one of ours. */
+function plannedIndex(c: { region: string; city: string }) {
+  return PLANNED_CHAPTERS.findIndex((p) => p.region === c.region && p.city.toLowerCase() === c.city.toLowerCase());
+}
 
 export type ChapterLike = { slug: string; name: string; region: string; city: string; status: string };
 
 /**
- * Orders chapters for the list: the northern capitals in launch order (Tamale
- * first), then any other chapter by name. Closed chapters go last.
+ * Orders chapters for the list: ours in launch order (Tamale first), then any
+ * other chapter by name. Closed chapters go last.
  */
 export function sortChapters<T extends ChapterLike>(chapters: T[]): T[] {
   const rank = (c: T) => {
-    const i = PLANNED_CHAPTERS.findIndex((p) => p.region === c.region && p.city.toLowerCase() === c.city.toLowerCase());
+    const i = plannedIndex(c);
     return (c.status === "closed" ? 100 : 0) + (i >= 0 ? i : 50);
   };
   return [...chapters].sort((a, b) => rank(a) - rank(b) || a.name.localeCompare(b.name));
 }
 
 /**
- * Planned capitals that have no chapter yet, for the honest "being set up"
- * cards. A chapter in the same region counts as covering it.
+ * Planned chapters that do not exist yet, for the honest "planned" cards. A
+ * chapter with the same region and city counts as covering one.
  */
 export function plannedWithoutChapter(chapters: ChapterLike[]) {
-  return PLANNED_CHAPTERS.filter((p) => !chapters.some((c) => c.region === p.region));
+  return PLANNED_CHAPTERS.filter((p) => !chapters.some((c) => plannedIndex(c) === PLANNED_CHAPTERS.indexOf(p)));
 }
 
 /**
@@ -73,13 +84,15 @@ export function plannedWithoutChapter(chapters: ChapterLike[]) {
 export function suggestChapter<T extends ChapterLike>(chapters: T[], region: string | null): T | null {
   if (!region) return null;
   const order = ["active", "launching", "paused", "closed"];
-  const inRegion = chapters
-    .filter((c) => c.region === region && order.includes(c.status))
-    .sort((a, b) => order.indexOf(a.status) - order.indexOf(b.status));
+  // Ties (Upper East has two chapters) go to launch order, then name, so the
+  // suggestion never depends on the order rows came back in.
+  const inRegion = sortChapters(chapters.filter((c) => c.region === region && order.includes(c.status))).sort(
+    (a, b) => order.indexOf(a.status) - order.indexOf(b.status),
+  );
   return inRegion[0] ?? null;
 }
 
-/** The planned capital for a region, if it is one of the five. */
+/** The first planned chapter for a region, if it has one. */
 export function plannedFor(region: string | null) {
   return PLANNED_CHAPTERS.find((p) => p.region === region) ?? null;
 }
