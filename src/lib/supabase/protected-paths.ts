@@ -51,7 +51,7 @@ export const SIGNED_IN_PREFIXES = [
 export const SIGNED_IN_PATTERNS: RegExp[] = [
   // /org lists your organisations; /org/[slug] is the public organisation page.
   /^\/org\/?$/,
-  /^\/org\/[^/]+\/(manage|team|requests|opportunities)(\/|$)/,
+  /^\/org\/[^/]+\/(manage|team|requests|opportunities|impact)(\/|$)/,
   /^\/events\/[^/]+\/(check-in|feedback|host)(\/|$)/,
   /^\/skills\/[^/]+\/(quiz|portfolio)(\/|$)/,
   /^\/experts\/[^/]+\/offers\/[^/]+\/request(\/|$)/,

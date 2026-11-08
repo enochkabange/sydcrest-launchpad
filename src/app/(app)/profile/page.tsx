@@ -12,6 +12,7 @@ import { PublicProfileSection } from "./public-profile-section";
 import { VerifiedSkillsSection } from "./verified-skills-section";
 import { CredentialsSection } from "./credentials-section";
 import { WhatsAppConsent } from "./whatsapp-consent";
+import { StorySection } from "./story-section";
 
 export const metadata: Metadata = { title: "Profile" };
 
@@ -62,6 +63,9 @@ export default function ProfilePage() {
         </Suspense>
         <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>
           <MilestonesSection />
+        </Suspense>
+        <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>
+          <StorySection />
         </Suspense>
         <ReportOutcomeCard />
         {/* Phones have no sidebar, so sign out lives here too. */}

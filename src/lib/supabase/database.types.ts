@@ -1941,6 +1941,51 @@ export type Database = {
           },
         ]
       }
+      learner_stories: {
+        Row: {
+          created_at: string
+          hidden_at: string | null
+          hidden_by: string | null
+          profile_id: string
+          show_name: boolean
+          story: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          hidden_at?: string | null
+          hidden_by?: string | null
+          profile_id?: string
+          show_name?: boolean
+          story: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          hidden_at?: string | null
+          hidden_by?: string | null
+          profile_id?: string
+          show_name?: boolean
+          story?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "learner_stories_hidden_by_fkey"
+            columns: ["hidden_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "learner_stories_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       node_content: {
         Row: {
           common_mistakes: string[] | null
@@ -3570,6 +3615,93 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      }
+      sponsorships: {
+        Row: {
+          chapter_id: string | null
+          cohort_id: string | null
+          created_at: string
+          created_by: string | null
+          ends_on: string | null
+          id: string
+          note: string | null
+          organisation_id: string
+          program_id: string | null
+          scope: string
+          seats: number | null
+          starts_on: string
+          tier: string
+          updated_at: string
+        }
+        Insert: {
+          chapter_id?: string | null
+          cohort_id?: string | null
+          created_at?: string
+          created_by?: string | null
+          ends_on?: string | null
+          id?: string
+          note?: string | null
+          organisation_id: string
+          program_id?: string | null
+          scope: string
+          seats?: number | null
+          starts_on: string
+          tier: string
+          updated_at?: string
+        }
+        Update: {
+          chapter_id?: string | null
+          cohort_id?: string | null
+          created_at?: string
+          created_by?: string | null
+          ends_on?: string | null
+          id?: string
+          note?: string | null
+          organisation_id?: string
+          program_id?: string | null
+          scope?: string
+          seats?: number | null
+          starts_on?: string
+          tier?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "sponsorships_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "sponsorships_cohort_id_fkey"
+            columns: ["cohort_id"]
+            isOneToOne: false
+            referencedRelation: "cohorts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "sponsorships_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "sponsorships_organisation_id_fkey"
+            columns: ["organisation_id"]
+            isOneToOne: false
+            referencedRelation: "organisations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "sponsorships_program_id_fkey"
+            columns: ["program_id"]
+            isOneToOne: false
+            referencedRelation: "programs"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       submissions: {
         Row: {
@@ -5787,6 +5919,25 @@ export type Database = {
       sign_in_allowed: {
         Args: { p_address_key: string; p_pair_key: string }
         Returns: boolean
+      }
+      sponsorship_impact: {
+        Args: { p_sponsorship_id: string }
+        Returns: {
+          active: number
+          certificates: number
+          finished: number
+          learners: number
+          stories: number
+          verified_outcomes: number
+        }[]
+      }
+      sponsorship_stories: {
+        Args: { p_sponsorship_id: string }
+        Returns: {
+          display_name: string
+          story: string
+          updated_at: string
+        }[]
       }
       submit_node_quiz: {
         Args: { p_answers: Json; p_node_id: string }
