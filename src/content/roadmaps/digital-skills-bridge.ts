@@ -1,6 +1,13 @@
 import { RES } from "./resources";
 import type { RoadmapDraft } from "./types";
 
+/** Official browser help pages for the Using the internet section (issue #294). */
+const BRIDGE_WEB = {
+  chromeBookmarks: { label: "Chrome Help: Create and manage bookmarks", url: "https://support.google.com/chrome/answer/188842", kind: "article" },
+  chromeDownloads: { label: "Chrome Help: Download a file", url: "https://support.google.com/chrome/answer/95759", kind: "article" },
+  chromeSecure: { label: "Chrome Help: Check if a site is secure", url: "https://support.google.com/chrome/answer/95617", kind: "article" },
+} as const;
+
 /**
  * The on ramp into the Delta Mentoring Program (src/content/dmp/curriculum.ts).
  * DMP week 1 starts with computer hardware, files and folders, safe browsing,
@@ -9,6 +16,8 @@ import type { RoadmapDraft } from "./types";
  * calls and WhatsApp used professionally, an email account you can recover,
  * files and forms on a phone, first keyboard practice and study habits.
  * It deliberately does not re teach DMP weeks 1 to 6.
+ * Issue #294 added a Using the internet section (browsers, downloads, data
+ * saving, safe sites and links) at everyday level; DMP week 1 goes deeper.
  *
  * Revised for issue #84 against entry level Ghanaian adverts (office,
  * customer service, sales, NGO field roles) and DigComp 3.0. Evidence and the
@@ -22,7 +31,7 @@ export const digitalSkillsBridge: RoadmapDraft = {
   track: "digital-skills-bridge",
   field_category: "foundations",
   level: "first-steps",
-  leads_to: ["ai-tools-for-work", "virtual-assistant", "customer-service", "digital-marketing", "excel-power-bi", "it-support", "graphic-design", "frontend", "data"],
+  leads_to: ["learning-online", "office-tools", "ai-tools-for-work", "virtual-assistant", "customer-service", "digital-marketing", "excel-power-bi", "it-support", "graphic-design", "frontend", "data"],
   locale: "en-GH",
   status: "draft",
   nodes: [
@@ -196,6 +205,52 @@ export const digitalSkillsBridge: RoadmapDraft = {
       difficulty: "beginner",
       complexity: 2,
       resources: [RES.lfSafety],
+    },
+    {
+      slug: "using-the-internet",
+      title: "Using the internet",
+      summary:
+        "Courses, job sites and forms all open in a web browser. This section shows you how to use a browser well, keep its data use low and tell a safe site or link from a risky one.",
+      parent: null,
+      optional: false,
+      difficulty: "beginner",
+      complexity: 1,
+      careerLevel: "foundation",
+      jobs: [],
+      resources: [RES.lfInternet],
+    },
+    {
+      slug: "browsers-tabs-and-bookmarks",
+      title: "Browsers, tabs and bookmarks",
+      summary:
+        "Use the address bar, open and close tabs and bookmark the pages you return to. A tidy browser saves time, memory and data.",
+      parent: "using-the-internet",
+      optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      resources: [RES.lfInternet, BRIDGE_WEB.chromeBookmarks],
+    },
+    {
+      slug: "browser-downloads",
+      title: "Downloads and where files go",
+      summary:
+        "Download a file on purpose, find it afterwards and open it with the right app. Know which kinds of file are safe to open and which to leave alone.",
+      parent: "using-the-internet",
+      optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      resources: [BRIDGE_WEB.chromeDownloads],
+    },
+    {
+      slug: "safe-sites-and-links",
+      title: "Safe sites and links",
+      summary:
+        "Read a web address before you trust it, check the security icon and think before you tap a link in a message. These habits protect your money, your accounts and your phone or computer.",
+      parent: "using-the-internet",
+      optional: false,
+      difficulty: "beginner",
+      complexity: 2,
+      resources: [RES.lfSafety, BRIDGE_WEB.chromeSecure],
     },
     {
       slug: "files-and-forms",

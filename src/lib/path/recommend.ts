@@ -26,17 +26,23 @@ const INTEREST_TRACKS: Record<Exclude<Interest, "unsure">, readonly Track[]> = {
   marketing: ["digital-marketing"],
   business: ["digital-business", "freelancing"],
   customers: ["customer-service", "digital-sales"],
-  office: ["virtual-assistant", "excel-power-bi", "project-management"],
+  office: ["office-tools", "virtual-assistant", "excel-power-bi", "project-management"],
   design: ["ui-ux"],
   creative: ["graphic-design", "content-creation", "social-media-management"],
   product: ["product"],
 };
 
 /**
- * Tracks the path quiz never recommends. They are companions taught inside a
- * cohort (the DMP specialisation weeks link to them), not starting points.
+ * Tracks only cohort members start (the DMP specialisations); the path quiz
+ * never recommends them.
  */
 export const COHORT_ONLY_TRACKS: ReadonlySet<Track> = new Set<Track>(["digital-marketing-specialisations"]);
+
+/**
+ * Follow on tracks reached from another track rather than recommended by the
+ * quiz: the Digital Skills Bridge leads to Learning online (#294).
+ */
+export const FOLLOW_ON_TRACKS: ReadonlySet<Track> = new Set<Track>(["learning-online"]);
 
 /**
  * Tracks with full lessons, matching src/content/roadmaps/content/index.ts
@@ -71,6 +77,8 @@ export const FULL_LESSON_TRACKS: ReadonlySet<Track> = new Set<Track>([
   "data-science",
   "digital-sales",
   "no-code",
+  "office-tools",
+  "learning-online",
 ]);
 
 /** Tracks whose early sections work on a phone. The others need a computer for practice. */
@@ -90,6 +98,8 @@ export const PHONE_FRIENDLY: ReadonlySet<Track> = new Set<Track>([
   "project-management",
   "freelancing",
   "software-testing",
+  "office-tools",
+  "learning-online",
 ]);
 
 const GOAL_AFFINITY: Record<Goal, Track[]> = {

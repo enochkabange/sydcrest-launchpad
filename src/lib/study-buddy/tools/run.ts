@@ -43,6 +43,8 @@ export const TRACK_CATEGORIES: Record<string, string[]> = {
   "ai-tools-for-work": ["ai-tools"],
   "no-code": ["ai-tools"],
   "digital-skills-bridge": ["careers"],
+  "office-tools": ["product-business"],
+  "learning-online": ["careers"],
 };
 
 function norm(text: string) {
