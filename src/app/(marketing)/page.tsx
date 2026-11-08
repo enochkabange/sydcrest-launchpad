@@ -94,7 +94,7 @@ export default function Home() {
       <Section
         layout="split"
         title="We start where others skip"
-        intro="Most tech programmes in Ghana begin in Accra. We begin in the northern regional capitals, with a volunteer led chapter in each one, starting in Tamale. Digital skills are a national conversation, and the north belongs in it."
+        intro="Most tech programmes in Ghana begin in Accra. We begin in the north, with volunteer led chapters in Tamale, Wa, Navrongo, Bolgatanga and the North East, and one in Accra too. Digital skills are a national conversation, and the north belongs in it."
       >
         <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
           <Stat value={String(BOLGATANGA.participants)} label="people at our Bolgatanga Skillshop, December 2025" />

@@ -495,6 +495,76 @@ export type Database = {
           },
         ]
       }
+      chapter_applications: {
+        Row: {
+          chapter_id: string | null
+          created_at: string
+          decided_at: string | null
+          decided_by: string | null
+          decision_note: string | null
+          id: string
+          motivation: string
+          plan: string
+          profile_id: string
+          region: string
+          status: string
+          town: string
+          updated_at: string
+        }
+        Insert: {
+          chapter_id?: string | null
+          created_at?: string
+          decided_at?: string | null
+          decided_by?: string | null
+          decision_note?: string | null
+          id?: string
+          motivation: string
+          plan: string
+          profile_id?: string
+          region: string
+          status?: string
+          town: string
+          updated_at?: string
+        }
+        Update: {
+          chapter_id?: string | null
+          created_at?: string
+          decided_at?: string | null
+          decided_by?: string | null
+          decision_note?: string | null
+          id?: string
+          motivation?: string
+          plan?: string
+          profile_id?: string
+          region?: string
+          status?: string
+          town?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chapter_applications_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "chapter_applications_decided_by_fkey"
+            columns: ["decided_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "chapter_applications_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       chapter_members: {
         Row: {
           chapter_id: string
@@ -3987,6 +4057,20 @@ export type Database = {
         }
         Relationships: []
       }
+      chapter_application_queue: {
+        Row: {
+          application_id: string | null
+          created_at: string | null
+          display_name: string | null
+          motivation: string | null
+          plan: string | null
+          profile_id: string | null
+          region: string | null
+          status: string | null
+          town: string | null
+        }
+        Relationships: []
+      }
       chapter_roster: {
         Row: {
           avatar_url: string | null
@@ -5048,6 +5132,13 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      claim_error_alert: {
+        Args: { p_fingerprint: string; p_window?: string }
+        Returns: {
+          held_back: number
+          send: boolean
+        }[]
+      }
       claim_path_skills: { Args: never; Returns: number }
       community_feed: {
         Args: {
@@ -5162,6 +5253,36 @@ export type Database = {
         SetofOptions: {
           from: "*"
           to: "cohort_applications"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      decide_chapter_application: {
+        Args: {
+          p_application_id: string
+          p_decision: string
+          p_name?: string
+          p_note?: string
+          p_slug?: string
+        }
+        Returns: {
+          chapter_id: string | null
+          created_at: string
+          decided_at: string | null
+          decided_by: string | null
+          decision_note: string | null
+          id: string
+          motivation: string
+          plan: string
+          profile_id: string
+          region: string
+          status: string
+          town: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "chapter_applications"
           isOneToOne: true
           isSetofReturn: false
         }

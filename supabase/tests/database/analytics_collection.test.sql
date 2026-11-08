@@ -27,6 +27,8 @@ insert into public.cohorts (id, program_id, name, starts_on) values
   ('c0000000-0000-0000-0000-00000000000a', 'a0000000-0000-0000-0000-000000000001', 'Cohort A', '2027-01-11');
 insert into public.cohort_members (cohort_id, profile_id, role) values
   ('c0000000-0000-0000-0000-00000000000a', '11111111-1111-1111-1111-111111111111', 'learner');
+-- Start from no chapters: the six seeded ones (#300) share these slugs.
+delete from public.chapters;
 insert into public.chapters (id, slug, name, region, city, status) values
   ('c1000000-0000-0000-0000-000000000001', 'tamale', 'Tamale', 'northern', 'Tamale', 'active');
 insert into public.chapter_members (chapter_id, profile_id, role) values

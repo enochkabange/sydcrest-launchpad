@@ -259,6 +259,9 @@ Signed in people keep the app navigation on public pages (`viewer-frame`).
 - **Phone / desktop**: list; desktop `AutoGrid` with "Your chapter" rail.
 - **Nav**: Header; Community → Chapters.
 
+
+### `/chapters/start`
+- **Audience**: signed in, set up adults with no chapter where they live (#301). **Job**: apply to start and lead one. **Primary**: send the application. States: form, in review (withdraw), approved (open your chapter), declined (note, apply again). Nudged from `/chapters` and the Home community card when the viewer's region has no chapter.
 ### `/skills` and `/skills/[slug]`
 - **Audience**: everyone. **Job**: see which skills I can prove and how.
 - **Primary**: take the assessment or send a portfolio. **Secondary**: roadmaps that lead to it.
@@ -523,6 +526,7 @@ and the record in another from lg. Every page checks `requireAdmin` itself.
 | `/admin/opportunities`, `/new`, `/[id]` | Curate the public board | post | |
 | `/admin/events`, `/new`, `/[id]` | Create events, links, recordings | create | |
 | `/admin/chapters`, `/new`, `/[id]` | Create chapters, appoint leads | appoint | |
+| `/admin/chapters/applications` | Approve or decline people who want to start a chapter (#301) | decide | Approving opens the chapter as Being set up with the applicant as lead. |
 | `/admin/skills`, `/[id]`, `/assessments/[assessmentId]` | Build skills and assessments | publish | Links to `/admin/skills/reviewers`. |
 | `/admin/skills/reviewers` | Appoint portfolio reviewers (D3, #248) | Make reviewer (by sign in email) | Lists names only; remove with one button. |
 | `/admin/roadmaps`, `/new`, `/[id]`, `/[id]/nodes/[nodeId]`, `/links` | Author roadmaps, nodes, links; link health | publish | |
@@ -604,6 +608,7 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/admin/chapters/[id]` | page | 8 Admin |
 | `/admin/chapters/new` | page | 8 Admin |
 | `/admin/chapters` | page | 8 Admin |
+| `/admin/chapters/applications` | page | 8 Admin |
 | `/admin/cohorts/[id]` | page | 8 Admin |
 | `/admin/cohorts` | page | 8 Admin |
 | `/admin/content` | page | 8 Admin |
@@ -724,6 +729,7 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/opportunities/[slug]/apply` | page | 6 Earn |
 | `/opportunities/applications` | page | 6 Earn |
 | `/org/[slug]/opportunities/[id]/applicants` | page | 6 Earn |
+| `/chapters/start` | page | 5 Community |
 | `/org/[slug]` | page | 6 Earn |
 | `/settings` | page | 7 Account |
 | `/u/[slug]` | page | 7 Account |
