@@ -58,6 +58,14 @@ export default function PrivacyPage() {
       <h3>If you choose to add it</h3>
       <ul>
         <li>Your region in Ghana, so we can connect you with your local chapter and events.</li>
+        <li>
+          When you apply for an opportunity on SydCrest: a note about why you fit, and a link to your
+          portfolio if you add one.
+        </li>
+        <li>
+          A story for sponsors about what you learned, and whether to show your name with it. You can
+          change or remove it at any time from your profile.
+        </li>
       </ul>
       <h3>When you use the platform</h3>
       <ul>
@@ -175,16 +183,32 @@ export default function PrivacyPage() {
       <AnalyticsChoice />
 
       <h2>Who we share it with</h2>
+      <p>We never sell your personal data.</p>
+      <h3>Employers you apply to</h3>
       <p>
-        We never sell your personal data. We share it only with service providers who help us run
-        SydCrest, and only what each one needs:
+        When you apply for an opportunity on SydCrest, the organisation that posted it sees your name,
+        region, verified skills, public profile if you have one, your note and your portfolio link. They
+        see your phone number and email only if they shortlist you, and you agree to that when you
+        apply. You can withdraw an application until you are hired.
       </p>
+      <h3>Sponsors</h3>
+      <p>
+        Organisations that fund free seats, cohorts or chapters see totals for the learners they
+        support, such as how many finished or earned a certificate. Any number under five is hidden so
+        nobody can be identified. They see your story only if you write one, and your name with it only
+        if you choose to show it.
+      </p>
+      <h3>Service providers</h3>
+      <p>We share data with service providers who help us run SydCrest, and only what each one needs:</p>
       <ul>
         <li>
           <strong>Supabase</strong> hosts our database and handles sign in.
         </li>
         <li>
           <strong>Vercel</strong> hosts the website and app.
+        </li>
+        <li>
+          <strong>Resend</strong> sends our emails, such as the link to confirm your account.
         </li>
         <li>
           <strong>Anthropic</strong> provides the AI behind the AI tutor. The questions you type are

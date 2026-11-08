@@ -8,13 +8,13 @@
  * someone agrees. Bump it when the text changes in a way people should agree
  * to again: signed in learners are then sent to /welcome to agree (#60).
  */
-export const LEGAL_VERSION = "2026-11";
+export const LEGAL_VERSION = "2026-12";
 
 /** Shows the draft banner. False since the founder approved the text on 7 November 2026 (#60). */
 export const LEGAL_IS_DRAFT = false;
 
 /** Last time the text changed, shown on both pages. */
-export const LEGAL_UPDATED = "7 November 2026";
+export const LEGAL_UPDATED = "8 November 2026";
 
 /** Where people send privacy requests (founder, 7 November 2026). */
 export const PRIVACY_CONTACT_EMAIL: string | null = "privacy@sydcrest.com";
