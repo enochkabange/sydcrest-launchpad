@@ -14,7 +14,7 @@ export const LEGAL_VERSION = "2026-12";
 export const LEGAL_IS_DRAFT = false;
 
 /** Last time the text changed, shown on both pages. */
-export const LEGAL_UPDATED = "7 November 2026";
+export const LEGAL_UPDATED = "8 November 2026";
 
 /** Where people send privacy requests (founder, 7 November 2026). */
 export const PRIVACY_CONTACT_EMAIL: string | null = "privacy@sydcrest.com";
