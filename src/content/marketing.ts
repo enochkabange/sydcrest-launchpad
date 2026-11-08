@@ -34,13 +34,18 @@ export const ACCRA_EVENT = {
   venue: "ALX Hub, Accra",
 } as const;
 
-/** Planning/01 §3, priority order. Tamale is the first chapter. */
+/**
+ * The chapters SydCrest runs for now (founder, 7 Nov 2026), in launch order.
+ * Seeded by migration 20261107190000_six_chapters as "Being set up"; anyone
+ * elsewhere can join one of these and is nudged to start their own (#301).
+ */
 export const CHAPTERS = [
-  { city: "Tamale", region: "Northern" },
-  { city: "Bolgatanga", region: "Upper East" },
-  { city: "Wa", region: "Upper West" },
-  { city: "Damongo", region: "Savannah" },
-  { city: "Nalerigu", region: "North East" },
+  { slug: "tamale", name: "Tamale chapter", city: "Tamale", region: "Northern" },
+  { slug: "accra", name: "Accra chapter", city: "Accra", region: "Greater Accra" },
+  { slug: "wa", name: "Wa chapter", city: "Wa", region: "Upper West" },
+  { slug: "navrongo", name: "Navrongo chapter", city: "Navrongo", region: "Upper East" },
+  { slug: "bolgatanga", name: "Bolgatanga chapter", city: "Bolgatanga", region: "Upper East" },
+  { slug: "north-east", name: "North East chapter", city: "Nalerigu and Walewale", region: "North East" },
 ] as const;
 
 /** Planning/05 §5. */

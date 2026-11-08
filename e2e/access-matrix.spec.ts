@@ -100,7 +100,7 @@ test("signed out visitor: public pages open, signed in areas go to sign in, the 
   for (const path of [
     "/dashboard", "/learn", "/cohort", "/mentor", "/expert", "/admin", "/admin/roadmaps/new", "/org", "/org/any-org/manage",
     "/talent", "/bookings", "/briefs", "/community", "/notifications", "/certificates/issue", "/programme/apply",
-    "/experts/apply", "/skills/reviews", "/outcomes", "/study-buddy", "/org/any-org/impact",
+    "/experts/apply", "/skills/reviews", "/outcomes", "/study-buddy", "/opportunities/applications", "/opportunities/any-job/apply", "/chapters/start", "/org/any-org/impact",
   ]) {
     await redirected(page, path);
   }
@@ -415,7 +415,7 @@ test("platform admin: every admin and staff area opens", async ({ page }) => {
     await promoteToAdmin(boss.id);
     await signInAs(page, boss);
     await allowed(page, "/admin", "Review programme applications and accept");
-    for (const path of ["/admin/roadmaps", "/admin/applications", "/admin/funnel", "/admin/reports", "/admin/experts", "/admin/organisations", "/admin/sponsorships"]) {
+    for (const path of ["/admin/roadmaps", "/admin/applications", "/admin/funnel", "/admin/reports", "/admin/experts", "/admin/organisations", "/admin/chapters/applications", "/admin/sponsorships"]) {
       await allowed(page, path);
     }
     for (const [path, text] of ADMIN_FORMS) await allowed(page, path, text);

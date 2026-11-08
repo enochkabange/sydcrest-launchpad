@@ -10,6 +10,7 @@ export const ADMIN_SECTIONS: { href: string; label: string; description: string 
   { href: "/admin/opportunities", label: "Opportunities", description: "Post and edit jobs, internships, scholarships, grants and gigs for the public board." },
   { href: "/admin/events", label: "Events", description: "Create events, add joining links and recordings, and open host tools." },
   { href: "/admin/chapters", label: "Chapters", description: "Create regional chapters, set their status and appoint leads." },
+  { href: "/admin/chapters/applications", label: "Chapter applications", description: "Approve people who want to start a chapter where they live." },
   { href: "/admin/sponsorships", label: "Sponsorships", description: "Record who sponsors what, and look after the stories sponsors see." },
   { href: "/admin/skills", label: "Skills", description: "Build the verified skill catalogue: map skills to roadmaps and write assessments." },
   { href: "/admin/reports", label: "Reports", description: "Triage safety reports from learners." },

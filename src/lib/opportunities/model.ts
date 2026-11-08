@@ -48,6 +48,8 @@ export type Opportunity = {
   organisation_name: string;
   apply_url: string | null;
   apply_instructions: string | null;
+  /** Takes applications on SydCrest (#306). */
+  apply_on_sydcrest: boolean;
   location: string | null;
   region: string | null;
   is_remote: boolean;
@@ -62,7 +64,7 @@ export type Opportunity = {
 };
 
 export const OPPORTUNITY_COLUMNS =
-  "id, slug, kind, title, summary, description, organisation_name, apply_url, apply_instructions, location, region, is_remote, deadline, eligibility, fields, skills, tracks, compensation_note, published_at, updated_at";
+  "id, slug, kind, title, summary, description, organisation_name, apply_url, apply_instructions, apply_on_sydcrest, location, region, is_remote, deadline, eligibility, fields, skills, tracks, compensation_note, published_at, updated_at";
 
 /** Reasons a learner can give when reporting a post. */
 export const OPPORTUNITY_REPORT_REASONS = [

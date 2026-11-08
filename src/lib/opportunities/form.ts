@@ -16,7 +16,7 @@ import { OPPORTUNITY_KINDS, OPPORTUNITY_STATUSES, accraToday, type OpportunityKi
 /** Same rule as the opportunities.slug check constraint (3 to 80 characters). */
 export const OPPORTUNITY_SLUG = /^[a-z0-9][a-z0-9-]{1,78}[a-z0-9]$/;
 /** Static paths beside /opportunities/[slug]. */
-export const RESERVED_SLUGS = new Set(["saved", "new"]);
+export const RESERVED_SLUGS = new Set(["saved", "new", "applications"]);
 
 export const LIMITS = {
   title: 140,
@@ -43,6 +43,8 @@ export type OpportunityFields = {
   description: string;
   apply_url: string | null;
   apply_instructions: string | null;
+  /** Take applications on SydCrest (#306). */
+  apply_on_sydcrest: boolean;
   location: string | null;
   region: string | null;
   is_remote: boolean;
@@ -132,7 +134,10 @@ export function parseOpportunityForm(
 
   if (applyUrl && !isUrl(applyUrl)) errors.apply_url = "Enter a full link starting with https://";
   checkLength(errors, "apply_instructions", applyInstructions, LIMITS.apply_instructions);
-  if (!applyUrl && !applyInstructions) errors.apply = "Add an application link or instructions, so people know how to apply.";
+  const applyOnSydcrest = form.get("apply_on_sydcrest") === "on";
+  if (!applyOnSydcrest && !applyUrl && !applyInstructions) {
+    errors.apply = "Take applications on SydCrest, or add an application link or instructions, so people know how to apply.";
+  }
 
   checkLength(errors, "location", location, LIMITS.location);
   if (region && !isRegionSlug(region)) errors.region = "Choose a region from the list.";
@@ -160,6 +165,7 @@ export function parseOpportunityForm(
     description,
     apply_url: applyUrl || null,
     apply_instructions: applyInstructions || null,
+    apply_on_sydcrest: applyOnSydcrest,
     location: location || null,
     region: region || null,
     is_remote: form.get("is_remote") === "on",

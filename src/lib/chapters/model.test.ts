@@ -23,20 +23,25 @@ function form(values: Record<string, string>) {
 const chapter = (slug: string, region: string, city: string, status: string) => ({ slug, name: `${city} chapter`, region, city, status });
 
 describe("planned chapters", () => {
-  it("are the five northern capitals, Tamale first", () => {
-    expect(PLANNED_CHAPTERS.map((p) => p.city)).toEqual(["Tamale", "Bolgatanga", "Wa", "Damongo", "Nalerigu"]);
+  it("are the six chapters, Tamale first, matching the seed migration", () => {
+    expect(PLANNED_CHAPTERS.map((p) => p.slug)).toEqual(["tamale", "accra", "wa", "navrongo", "bolgatanga", "north-east"]);
     expect(PLANNED_CHAPTERS[0].region).toBe("northern");
-    expect(PLANNED_CHAPTERS[4].region).toBe("north_east");
+    expect(PLANNED_CHAPTERS.find((p) => p.slug === "north-east")).toMatchObject({ region: "north_east", city: "Nalerigu and Walewale" });
   });
 
-  it("drop out once their region has a chapter", () => {
-    const left = plannedWithoutChapter([chapter("tamale", "northern", "Tamale", "launching")]);
-    expect(left.map((p) => p.city)).toEqual(["Bolgatanga", "Wa", "Damongo", "Nalerigu"]);
+  it("drop out once a chapter exists for the same region and city", () => {
+    // Upper East has two: Bolgatanga existing must not cover Navrongo.
+    const left = plannedWithoutChapter([
+      chapter("tamale-hand-made", "northern", "Tamale", "launching"),
+      chapter("bolga", "upper_east", "bolgatanga", "launching"),
+    ]);
+    expect(left.map((p) => p.city)).toEqual(["Accra", "Wa", "Navrongo", "Nalerigu and Walewale"]);
   });
 
   it("are found by region", () => {
     expect(plannedFor("upper_west")?.city).toBe("Wa");
-    expect(plannedFor("greater_accra")).toBeNull();
+    expect(plannedFor("upper_east")?.city).toBe("Navrongo");
+    expect(plannedFor("volta")).toBeNull();
     expect(plannedFor(null)).toBeNull();
   });
 });
@@ -58,14 +63,15 @@ describe("status", () => {
 });
 
 describe("sortChapters", () => {
-  it("puts the capitals in launch order, others by name, closed last", () => {
+  it("puts ours in launch order, others by name, closed last", () => {
     const sorted = sortChapters([
-      chapter("accra", "greater_accra", "Accra", "active"),
+      chapter("ho", "volta", "Ho", "active"),
       chapter("wa", "upper_west", "Wa", "launching"),
       chapter("old", "northern", "Yendi", "closed"),
+      chapter("accra", "greater_accra", "Accra", "launching"),
       chapter("tamale", "northern", "Tamale", "active"),
     ]);
-    expect(sorted.map((c) => c.slug)).toEqual(["tamale", "wa", "accra", "old"]);
+    expect(sorted.map((c) => c.slug)).toEqual(["tamale", "accra", "wa", "ho", "old"]);
   });
 });
 
@@ -82,6 +88,12 @@ describe("suggestChapter", () => {
 
   it("still suggests a paused chapter so the learner can see it", () => {
     expect(suggestChapter(list, "upper_east")?.slug).toBe("bolga");
+  });
+
+  it("breaks a tie between two chapters in one region by launch order, whatever the row order", () => {
+    const upperEast = [chapter("bolgatanga", "upper_east", "Bolgatanga", "launching"), chapter("navrongo", "upper_east", "Navrongo", "launching")];
+    expect(suggestChapter(upperEast, "upper_east")?.slug).toBe("navrongo");
+    expect(suggestChapter([...upperEast].reverse(), "upper_east")?.slug).toBe("navrongo");
   });
 
   it("returns null without a region or a chapter there", () => {

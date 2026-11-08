@@ -495,6 +495,76 @@ export type Database = {
           },
         ]
       }
+      chapter_applications: {
+        Row: {
+          chapter_id: string | null
+          created_at: string
+          decided_at: string | null
+          decided_by: string | null
+          decision_note: string | null
+          id: string
+          motivation: string
+          plan: string
+          profile_id: string
+          region: string
+          status: string
+          town: string
+          updated_at: string
+        }
+        Insert: {
+          chapter_id?: string | null
+          created_at?: string
+          decided_at?: string | null
+          decided_by?: string | null
+          decision_note?: string | null
+          id?: string
+          motivation: string
+          plan: string
+          profile_id?: string
+          region: string
+          status?: string
+          town: string
+          updated_at?: string
+        }
+        Update: {
+          chapter_id?: string | null
+          created_at?: string
+          decided_at?: string | null
+          decided_by?: string | null
+          decision_note?: string | null
+          id?: string
+          motivation?: string
+          plan?: string
+          profile_id?: string
+          region?: string
+          status?: string
+          town?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chapter_applications_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "chapter_applications_decided_by_fkey"
+            columns: ["decided_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "chapter_applications_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       chapter_members: {
         Row: {
           chapter_id: string
@@ -2195,6 +2265,7 @@ export type Database = {
       opportunities: {
         Row: {
           apply_instructions: string | null
+          apply_on_sydcrest: boolean
           apply_url: string | null
           compensation_note: string | null
           created_at: string
@@ -2222,6 +2293,7 @@ export type Database = {
         }
         Insert: {
           apply_instructions?: string | null
+          apply_on_sydcrest?: boolean
           apply_url?: string | null
           compensation_note?: string | null
           created_at?: string
@@ -2249,6 +2321,7 @@ export type Database = {
         }
         Update: {
           apply_instructions?: string | null
+          apply_on_sydcrest?: boolean
           apply_url?: string | null
           compensation_note?: string | null
           created_at?: string
@@ -2285,6 +2358,60 @@ export type Database = {
           {
             foreignKeyName: "opportunities_posted_by_fkey"
             columns: ["posted_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      opportunity_applications: {
+        Row: {
+          contact_consent: boolean
+          created_at: string
+          id: string
+          note: string
+          opportunity_id: string
+          portfolio_url: string | null
+          profile_id: string
+          stage: string
+          stage_changed_at: string
+          updated_at: string
+        }
+        Insert: {
+          contact_consent: boolean
+          created_at?: string
+          id?: string
+          note: string
+          opportunity_id: string
+          portfolio_url?: string | null
+          profile_id?: string
+          stage?: string
+          stage_changed_at?: string
+          updated_at?: string
+        }
+        Update: {
+          contact_consent?: boolean
+          created_at?: string
+          id?: string
+          note?: string
+          opportunity_id?: string
+          portfolio_url?: string | null
+          profile_id?: string
+          stage?: string
+          stage_changed_at?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "opportunity_applications_opportunity_id_fkey"
+            columns: ["opportunity_id"]
+            isOneToOne: false
+            referencedRelation: "opportunities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "opportunity_applications_profile_id_fkey"
+            columns: ["profile_id"]
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
@@ -4062,6 +4189,20 @@ export type Database = {
         }
         Relationships: []
       }
+      chapter_application_queue: {
+        Row: {
+          application_id: string | null
+          created_at: string | null
+          display_name: string | null
+          motivation: string | null
+          plan: string | null
+          profile_id: string | null
+          region: string | null
+          status: string | null
+          town: string | null
+        }
+        Relationships: []
+      }
       chapter_roster: {
         Row: {
           avatar_url: string | null
@@ -5123,6 +5264,13 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      claim_error_alert: {
+        Args: { p_fingerprint: string; p_window?: string }
+        Returns: {
+          held_back: number
+          send: boolean
+        }[]
+      }
       claim_path_skills: { Args: never; Returns: number }
       community_feed: {
         Args: {
@@ -5237,6 +5385,36 @@ export type Database = {
         SetofOptions: {
           from: "*"
           to: "cohort_applications"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      decide_chapter_application: {
+        Args: {
+          p_application_id: string
+          p_decision: string
+          p_name?: string
+          p_note?: string
+          p_slug?: string
+        }
+        Returns: {
+          chapter_id: string | null
+          created_at: string
+          decided_at: string | null
+          decided_by: string | null
+          decision_note: string | null
+          id: string
+          motivation: string
+          plan: string
+          profile_id: string
+          region: string
+          status: string
+          town: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "chapter_applications"
           isOneToOne: true
           isSetofReturn: false
         }
@@ -5434,6 +5612,23 @@ export type Database = {
       notify_user: {
         Args: { p_kind: string; p_payload?: Json; p_recipient_id: string }
         Returns: string
+      }
+      org_opportunity_applicants: {
+        Args: { p_opportunity_id: string }
+        Returns: {
+          application_id: string
+          applied_at: string
+          display_name: string
+          email: string
+          note: string
+          phone: string
+          portfolio_url: string
+          public_slug: string
+          region: string
+          stage: string
+          stage_changed_at: string
+          verified_skills: string[]
+        }[]
       }
       pin_community_post: {
         Args: { p_pinned: boolean; p_post_id: string }
@@ -5633,6 +5828,27 @@ export type Database = {
         SetofOptions: {
           from: "*"
           to: "submissions"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
+      set_application_stage: {
+        Args: { p_application_id: string; p_stage: string }
+        Returns: {
+          contact_consent: boolean
+          created_at: string
+          id: string
+          note: string
+          opportunity_id: string
+          portfolio_url: string | null
+          profile_id: string
+          stage: string
+          stage_changed_at: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "opportunity_applications"
           isOneToOne: true
           isSetofReturn: false
         }

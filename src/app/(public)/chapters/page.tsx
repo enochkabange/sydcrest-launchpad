@@ -14,13 +14,13 @@ import { createClient } from "@/lib/supabase/server";
 export const metadata: Metadata = {
   title: "Chapters",
   description:
-    "Launchpad chapters bring learners together in their city, starting with Tamale and the northern regional capitals.",
+    "Launchpad chapters bring learners together in their city: Tamale, Accra, Wa, Navrongo, Bolgatanga and the North East.",
   alternates: { canonical: "/chapters" },
 };
 
 /**
- * Every visible chapter, plus the northern capitals that do not have one yet
- * (honest "planned" cards). The list is cached and prerendered; the "your
+ * Every visible chapter, plus any of ours that does not exist yet (honest
+ * "planned" cards). The list is cached and prerendered; the "your
  * chapter" card reads the session, so it streams in its own <Suspense>.
  */
 export default function ChaptersPage() {
@@ -30,7 +30,7 @@ export default function ChaptersPage() {
         <h1 className="text-title text-content">Chapters</h1>
         <p className="max-w-reading text-lead text-content-2">
           A chapter is Launchpad in your city: a volunteer lead, a WhatsApp group, meetups and Skillshops. We are starting
-          in the five northern regional capitals, beginning with Tamale.
+          with six: Tamale, Accra, Wa, Navrongo, Bolgatanga and the North East (Nalerigu and Walewale).
         </p>
       </header>
       <MainWithRail
@@ -64,7 +64,7 @@ async function ChapterList() {
           <ChapterCard key={c.id} chapter={c} leads={leads[i]} />
         ))}
         {planned.map((p) => (
-          <PlannedCard key={p.region} city={p.city} regionLabel={p.regionLabel} first={chapters.length === 0 && p.city === "Tamale"} />
+          <PlannedCard key={p.slug} city={p.city} regionLabel={p.regionLabel} first={chapters.length === 0 && p.city === "Tamale"} />
         ))}
       </AutoGrid>
     </section>
@@ -139,12 +139,17 @@ async function YourChapter() {
         {planned
           ? `The ${planned.city} chapter for ${planned.regionLabel} Region is being set up. Check back here, and keep an eye on the WhatsApp community for news.`
           : region
-            ? `There is no chapter in ${regionLabel(region)} Region yet. You can still join any open chapter.`
+            ? `There is no chapter in ${regionLabel(region)} Region yet. Join any of ours, or start one where you live: SydCrest is community led.`
             : "Add your region to your profile and we will point you to the chapter near you."}
       </p>
       {!region && (
         <Link href="/profile" className={buttonClasses("secondary", "self-start")}>
           Add your region
+        </Link>
+      )}
+      {region && !planned && (
+        <Link href="/chapters/start" className={buttonClasses("primary", "self-start")}>
+          Start a chapter
         </Link>
       )}
     </RailCard>
@@ -159,6 +164,10 @@ function HowChaptersWork() {
         <li>Members meet at Skillshops and talk in the chapter WhatsApp group.</li>
         <li>Every chapter shares one platform and one community, with local events.</li>
       </ul>
+      <p className="text-sm text-content-2">
+        No chapter where you live? <Link href="/chapters/start">Start one</Link>. We are community led, so new chapters
+        come from people like you.
+      </p>
     </RailCard>
   );
 }

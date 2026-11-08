@@ -88,7 +88,7 @@ export function PlannedCard({ city, regionLabel: region, first }: { city: string
       <p className="text-sm text-content-2">
         {first
           ? "The first chapter is being set up here. Its page opens once the team and a lead are in place."
-          : "Planned after Tamale. Its page opens once a lead is in place."}
+          : "Planned. Its page opens once the team has set it up."}
       </p>
     </li>
   );
