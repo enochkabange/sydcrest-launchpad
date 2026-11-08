@@ -163,8 +163,8 @@ export async function CommunityCard() {
   } else {
     text = planned
       ? `Your local chapter will be ${planned.city}. It is being set up now.`
-      : "There is no chapter in your area yet. You can join any of ours.";
-    link = { href: "/chapters", label: "See all chapters" };
+      : "There is no chapter in your area yet. Join any of ours, or start one where you live.";
+    link = planned ? { href: "/chapters", label: "See all chapters" } : { href: "/chapters/start", label: "Start a chapter" };
   }
 
   return (

@@ -35,10 +35,12 @@ export const SIGNED_IN_PREFIXES = [
   "/briefs",
   // Community
   "/community",
+  "/chapters/start",
   "/leaderboards",
   // Earn
   "/earn",
   "/opportunities/saved",
+  "/opportunities/applications",
   "/outcomes",
   "/talent",
   "/business/new",
@@ -49,10 +51,11 @@ export const SIGNED_IN_PREFIXES = [
 export const SIGNED_IN_PATTERNS: RegExp[] = [
   // /org lists your organisations; /org/[slug] is the public organisation page.
   /^\/org\/?$/,
-  /^\/org\/[^/]+\/(manage|team|requests|opportunities)(\/|$)/,
+  /^\/org\/[^/]+\/(manage|team|requests|opportunities|impact)(\/|$)/,
   /^\/events\/[^/]+\/(check-in|feedback|host)(\/|$)/,
   /^\/skills\/[^/]+\/(quiz|portfolio)(\/|$)/,
   /^\/experts\/[^/]+\/offers\/[^/]+\/request(\/|$)/,
+  /^\/opportunities\/[^/]+\/apply(\/|$)/,
 ];
 
 export function matchesPrefix(path: string, prefixes: string[]): boolean {

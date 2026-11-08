@@ -3,8 +3,9 @@ import { describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 vi.mock("./track", () => ({ recordEvents: vi.fn() }));
 vi.mock("@/lib/messaging/admin", () => ({ createAdminClient: () => null }));
+vi.mock("@/lib/alerts/error-alerts", () => ({ alertError: vi.fn() }));
 
-const { serverErrorEvent } = await import("./server-error");
+const { serverErrorAlert, serverErrorEvent } = await import("./server-error");
 
 const request = (headers: Record<string, string> = {}) => ({
   path: "/learn/data-analyst/x?email=wumpini@example.test",
@@ -30,5 +31,21 @@ describe("serverErrorEvent", () => {
   it("skips visitors who opted out", () => {
     expect(serverErrorEvent(new Error("x"), request({ dnt: "1" }), { routeType: "route" })).toBeNull();
     expect(serverErrorEvent(new Error("x"), request({ cookie: "a=b; sc_analytics=off" }), { routeType: "route" })).toBeNull();
+  });
+});
+
+describe("serverErrorAlert (#304)", () => {
+  it("alerts with the route pattern, error class and digest, never the message", () => {
+    const error = Object.assign(new TypeError("boom for wumpini@example.test"), { digest: "1234567890" });
+    expect(serverErrorAlert(error, { routePath: "/(app)/learn/[slug]/[node]/page", routeType: "action" })).toEqual({
+      source: "server",
+      route: "/learn/[slug]/[node]",
+      error: "TypeError",
+      digest: "1234567890",
+    });
+  });
+
+  it("skips Next's own redirects and not found", () => {
+    expect(serverErrorAlert({ digest: "NEXT_REDIRECT;replace;/login;307;" }, { routeType: "render" })).toBeNull();
   });
 });

@@ -7,6 +7,7 @@ import {
   buildPath,
   chooseTrack,
   COHORT_ONLY_TRACKS,
+  FOLLOW_ON_TRACKS,
   FULL_LESSON_TRACKS,
   startingIndex,
   starterFor,
@@ -210,7 +211,7 @@ describe("buildPath", () => {
 
 describe("every track", () => {
   // Cohort companions are reached through their program, never the path quiz.
-  const ALL_TRACKS = ROADMAP_DRAFTS.map((r) => r.track).filter((t) => !COHORT_ONLY_TRACKS.has(t));
+  const ALL_TRACKS = ROADMAP_DRAFTS.map((r) => r.track).filter((t) => !COHORT_ONLY_TRACKS.has(t) && !FOLLOW_ON_TRACKS.has(t));
 
   it("keeps the full lesson list in step with the lesson content", () => {
     const fromContent = TRACK_CONTENT.map((c) => ROADMAP_DRAFTS.find((r) => r.slug === c.roadmap)?.track);
@@ -245,6 +246,7 @@ describe("every track", () => {
     ["content-creation", { interests: ["creative"], goal: "business" }],
     ["social-media-management", { interests: ["creative"], goal: "first-job" }],
     ["product", { interests: ["product"] }],
+    ["office-tools", { interests: ["office"], goal: "explore" }],
   ])("reaches %s", (track, over) => {
     const result = buildPath(answers({ experience: "tried", ...over }), null);
     expect(result.track).toBe(track);

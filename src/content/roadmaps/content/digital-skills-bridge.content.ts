@@ -2381,6 +2381,600 @@ When she starts work as a customer service agent, checking a caller's order numb
       },
     },
 
+    "using-the-internet": {
+      outcomes: [
+        "Explain what a web browser does",
+        "Tell an app from a website and choose between them",
+        "Keep your browser up to date",
+        "Find data saving options in your browser",
+      ],
+      explanation_md: `Almost everything in a job search or an online course happens in a **web browser**: reading a job advert, filling in an application form, opening a free lesson, checking your email on a computer. Employers asking for "basic computer skills" or "internet skills" expect you to use a browser confidently. This section makes sure you can.
+
+## The internet, the web and your browser
+
+* **The internet** is the huge network that connects phones and computers around the world.
+* **The web** is all the websites on it, from a government service page to a chop bar's Facebook page.
+* **A browser** is the app you use to open websites. Common examples are Chrome, Safari, Firefox, Edge, Samsung Internet and Opera. Most phones and computers come with one already.
+
+You do not need a particular browser. They all open the same websites. Use the one on your device unless you have a reason to change.
+
+## App or website?
+
+Many services have both an app and a website: Gmail, Facebook, YouTube, your bank, many course platforms.
+
+* **An app** is installed on your phone. It can be quicker and can send notifications, but it takes storage and can use data in the background.
+* **The website** opens in your browser. It takes no storage and nothing runs when you close it.
+
+If your phone is full, or you use a service only now and then, the website is often the better choice. A computer usually uses the website anyway.
+
+## Keep your browser updated
+
+Browser updates fix security problems and keep websites working properly. On a phone, browsers update through the Play Store or App Store, along with your other apps. On a computer, most browsers update themselves, and may ask you to restart them. If a site suddenly looks broken, an update is worth trying.
+
+## Data saving in the browser
+
+The saving data lesson earlier in this roadmap showed you data saver for your whole phone. Browsers have their own habits that use data, and some have their own settings.
+
+* **Data saving mode.** Some browsers have a data saving or lite mode in their settings that makes pages smaller. Not every browser has one, and these options come and go, so open your browser's **Settings** and look for words such as "data saver", "lite" or "reduce data".
+* **Autoplay videos.** Many news and social sites start videos by themselves. Scroll past quickly, and in your browser's site settings look for options about sound, video or autoplay.
+* **Pictures.** Some browsers let you stop pictures loading on websites. Text only pages are much smaller. Turn it back on when you need to see the pictures.
+* **Reader or simplified view.** Some browsers offer a view that shows only the article text. It is easier to read on a small screen and loads less.
+* **Close tabs you are not using.** Some pages keep refreshing in the background, such as live news or sports scores.
+* **Large downloads on WiFi.** Wait for WiFi before downloading big files such as videos or software.
+
+Menu names differ between browsers and versions, so if you cannot find an option, use the search box at the top of Settings, or search the web for your browser's name and the setting you want.
+
+## What this section covers
+
+* **Browsers, tabs and bookmarks.** Typing an address, searching from the address bar, working with tabs, and organising bookmarks.
+* **Downloads and where files go.** Downloading on purpose, finding files afterwards, opening them, and knowing which files to avoid.
+* **Safe sites and links.** Reading a web address, checking the security icon and thinking before you tap a link in a message.
+
+These skills lead straight into the Delta Mentoring Program, where week 1 covers safe browsing and phishing on a computer in more depth.
+
+## How to learn in this section
+
+Keep your browser open while you read and try each step. Most of these skills take a minute to try and a week of use to feel natural. If you use both a phone and a computer, try the steps on both: the ideas are the same, but the buttons are in different places.`,
+      workedExample_md: `**Sumaila sets up his browser**
+
+Sumaila lives in Walewale and is about to start looking for jobs online on his Android phone. His phone storage is almost full.
+
+1. He has three shopping apps he uses once a month. He deletes them and bookmarks their websites instead.
+2. He opens the Play Store and updates his browser.
+3. In the browser's Settings, he searches for "data". His browser has a data saving option, so he turns it on.
+4. He opens a news site and a video starts by itself. In the browser's site settings he finds a sound and media option and turns off autoplay.
+5. He closes the eleven old tabs he never looks at.
+
+His phone has more space, his browser is safer, and his bundle lasts longer.`,
+      keyTerms: [
+        { term: "Internet", definition: "The worldwide network that connects phones and computers." },
+        { term: "Website", definition: "A set of pages on the web, such as a job site or a course platform." },
+        { term: "Browser", definition: "The app you use to open websites, such as Chrome, Safari, Firefox or Edge." },
+        { term: "Data saving mode", definition: "A browser setting, where available, that makes pages smaller so they use less data." },
+        { term: "Reader view", definition: "A browser view that shows only the main text of a page, without adverts and extras." },
+      ],
+      commonMistakes: [
+        "Installing an app for every service when the website would do",
+        "Ignoring browser updates for months",
+        "Leaving many tabs open that keep loading in the background",
+        "Downloading large files on mobile data instead of waiting for WiFi",
+      ],
+      selfCheck: [
+        "What is the difference between the internet, the web and a browser?",
+        "When is a website a better choice than an app?",
+        "How do you update the browser on the device you use most?",
+        "Name two ways to make your browser use less data.",
+      ],
+      practice_task_md: `**Goal:** Set up your browser for safe, low data use.
+
+**Steps**
+
+1. Find out which browser you use and check that it is up to date.
+2. Open its Settings and search for data saving, autoplay and site settings. Write down which options your browser has.
+3. Turn on any data saving option it offers, and turn off autoplay where you can.
+4. Close every tab you do not need.
+5. Pick one app you rarely use and try its website instead.
+
+**Done looks like:** An updated browser, a short note of its data options with the ones you turned on, and one app replaced by its website.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "What is a web browser?",
+            options: [
+              "The worldwide network that connects phones and computers",
+              "A shop that sells data bundles",
+              "The app you use to open websites",
+              "A type of email account",
+            ],
+            answer_index: 2,
+            explanation: "A browser, such as Chrome or Safari, opens websites.",
+          },
+          {
+            prompt: "Your phone is almost full and you use a shopping service once a month. What does the lesson suggest?",
+            options: [
+              "Install the app and turn on its notifications",
+              "Use the website in your browser instead",
+              "Buy a new phone with more storage",
+              "Keep the app and delete your photos instead",
+            ],
+            answer_index: 1,
+            explanation: "A website takes no storage and runs nothing in the background.",
+          },
+          {
+            prompt: "Why should you keep your browser updated?",
+            options: [
+              "Updates fix security problems and keep websites working",
+              "Updates give you free data every month",
+              "Old browsers cannot open any website at all",
+              "Updates delete your bookmarks so the browser runs faster",
+            ],
+            answer_index: 0,
+            explanation: "Updates close security holes and keep sites displaying properly.",
+          },
+          {
+            prompt: "Your browser has no option called data saver. What does the lesson say?",
+            options: [
+              "Your browser is broken and must be replaced",
+              "Data saving is only possible on a computer",
+              "You must install a separate data saving app from a website",
+              "Not every browser has one, so use other habits",
+            ],
+            answer_index: 3,
+            explanation: "Options vary; closing tabs, avoiding autoplay and waiting for WiFi still help.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "browsers-tabs-and-bookmarks": {
+      outcomes: [
+        "Type a web address or a search into the address bar",
+        "Open, switch between and close tabs on a phone or computer",
+        "Organise bookmarks into folders",
+        "Use back, refresh and history to find your way",
+      ],
+      explanation_md: `Office work and online study often mean having a few pages open at once: a job advert, the application form and your email, or a lesson, the course forum and a dictionary. Knowing how to move between pages quickly, and get back to them later, saves time and stops you from losing your place in the middle of a form.
+
+## The address bar
+
+At the top of the browser (or at the bottom on some phones) is the **address bar**. It does two jobs.
+
+* **Type a web address** to go straight to a site, for example learnfree.org or gmail.com. This is the safest way to open a site you know, because you choose exactly where you go.
+* **Type search words** and the browser searches the web for you, using its default search engine.
+
+The **web address**, also called a URL, is the site's exact location. The important part is the **domain**, which tells you whose site it is. Look at the part before the first single slash and read it from the right: the ending, such as .com, .org or .gov.gh, and the name just before it, such as gmail.com or ghana.gov.gh. The lesson on safe sites shows why this matters.
+
+## Back, refresh and home
+
+* **Back** (an arrow pointing left) returns to the previous page. On an Android phone, the phone's own back gesture or button usually does the same. Be careful on forms: going back can sometimes clear what you typed.
+* **Refresh** or **reload** (a circular arrow) loads the page again. Use it if a page is stuck or did not load fully. On a phone it may be in the menu, or you can pull the page down from the top.
+* **Stop** appears while a page is loading. Tap it if you opened the wrong page, to save data.
+
+## Tabs
+
+A **tab** is one open page. You can have several tabs at once and switch between them.
+
+**On a computer:** tabs sit in a row along the top of the window. Click **+** to open a new one, click a tab to switch to it and click its small **x** to close it. Ctrl and T (Command and T on a Mac) opens a new tab; Ctrl and W closes the current one.
+
+**On a phone:** tap the **tabs button**, usually a small square with a number in it showing how many tabs are open. You will see all your tabs as cards. Tap one to open it, swipe it away or tap its x to close it, and tap **+** for a new tab.
+
+To open a link in a new tab, so you do not lose the page you are on, long press the link on a phone and choose **Open in new tab**, or right click it on a computer and choose the same.
+
+**Keep tabs tidy.** Many phones end up with dozens of forgotten tabs. They take memory, can slow the browser and some keep using data. Close what you do not need at the end of each session.
+
+## Bookmarks
+
+A **bookmark** saves a page so you can open it again without searching. On a computer, click the star or bookmark icon at the right of the address bar. On a phone, open the browser menu and tap the star or **Bookmark** option. The searching lesson later in this roadmap uses bookmarks too. Here is how to keep them useful as the list grows.
+
+* **Make folders.** In the bookmark manager, create folders such as "Jobs", "Learning" and "Government services".
+* **Rename bookmarks** with short clear names, such as "Course: Excel basics" instead of a long page title.
+* **Delete old ones** you no longer use.
+* **Bookmarks bar on a computer.** Turn on the bookmarks bar from the browser menu, and your most used sites appear as one click buttons under the address bar.
+* **Sync with care.** If you sign in to your browser with your account, your bookmarks can appear on your other devices. Do not do this on a shared device.
+
+## History
+
+Your browser keeps a **history** of pages you visited. If you closed a page by mistake, open the menu, choose **History** and find it. On a shared device, you can clear your history, or use a private window so nothing is saved.
+
+## Practise until it is quick
+
+Moving between tabs, bookmarks and history quickly is what makes someone look confident on a computer. A few minutes of practice each day for a week is enough.`,
+      workedExample_md: `**Amina applies for a job with three tabs**
+
+Amina, in Bolgatanga, is applying for a front desk job on her phone.
+
+1. She types the job site's address in the address bar instead of searching, because she knows the site.
+2. She opens the advert. She long presses the "Apply" link and chooses **Open in new tab**, so the advert stays open.
+3. She opens a third tab for her email, to copy her reference's contact details.
+4. She switches between the three tabs using the tabs button, filling in the form without losing the advert.
+5. After submitting, she bookmarks the job site in a "Jobs" folder and closes all three tabs.
+6. Later she wants to reread the advert. She opens **History** and finds it in seconds.`,
+      keyTerms: [
+        { term: "Address bar", definition: "The box at the top or bottom of the browser where you type a web address or search words." },
+        { term: "Web address (URL)", definition: "The exact location of a page, such as learnfree.org." },
+        { term: "Domain", definition: "The name and ending at the right hand end of a web address, before the first single slash, such as gmail.com." },
+        { term: "Tab", definition: "One open page in your browser. You can have several open and switch between them." },
+        { term: "History", definition: "The browser's list of pages you visited, which you can use to find a page again." },
+      ],
+      commonMistakes: [
+        "Searching for a site's name and clicking an advert instead of typing the address you know",
+        "Pressing back on a half filled form and losing what you typed",
+        "Keeping dozens of old tabs open",
+        "Letting bookmarks pile up with long, unclear names",
+        "Syncing bookmarks to a shared device",
+      ],
+      selfCheck: [
+        "What two jobs does the address bar do?",
+        "How do you open a link in a new tab on the device you use most?",
+        "How do you close all tabs you do not need?",
+        "Where would you look for a page you closed by mistake?",
+      ],
+      practice_task_md: `**Goal:** Move confidently between pages and organise your bookmarks.
+
+**Steps**
+
+1. Type the address of a site you know, such as learnfree.org, into the address bar.
+2. Open one link from that page in a new tab, then switch between the two tabs.
+3. Open a third tab and search for a job title and your town.
+4. Bookmark one useful page into a new folder called "Jobs" or "Learning", with a short clear name.
+5. Close all three tabs, then find one of the pages again using History.
+
+**Done looks like:** A new bookmark folder with one clearly named bookmark, and a page found again from History.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "Why is typing a web address you know safer than searching for the site's name?",
+            options: [
+              "Typing the address costs no data at all",
+              "You go exactly where you chose to go",
+              "Search engines are not allowed in Ghana",
+              "Typed addresses always load faster",
+            ],
+            answer_index: 1,
+            explanation: "Typing the address takes you straight to the site you know.",
+          },
+          {
+            prompt: "On a phone, how do you usually see all your open tabs?",
+            options: [
+              "Press the volume button twice",
+              "Restart the phone",
+              "Open the phone's gallery and look for a picture of each page",
+              "Tap the tabs button, often a square with a number in it",
+            ],
+            answer_index: 3,
+            explanation: "The tabs button shows every open tab as a card.",
+          },
+          {
+            prompt: "You are filling in a long form. Why should you be careful with the back button?",
+            options: [
+              "Going back can clear what you typed",
+              "The back button sends the form before it is finished",
+              "Back deletes your browser history",
+              "The back button only works on computers",
+            ],
+            answer_index: 0,
+            explanation: "Moving back from a form can lose the answers you entered.",
+          },
+          {
+            prompt: "You closed a page by mistake and cannot remember the address. Where should you look?",
+            options: [
+              "Your phone's Downloads folder",
+              "Your WhatsApp chats",
+              "The browser's History",
+              "The address of your email account",
+            ],
+            answer_index: 2,
+            explanation: "History lists the pages you visited.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "browser-downloads": {
+      outcomes: [
+        "Download a file from a website on purpose",
+        "Find a downloaded file on a phone or computer",
+        "Recognise common file types and open them with the right app",
+        "Avoid downloads that could harm your device",
+      ],
+      explanation_md: `Job adverts often come with an application form to download. Courses give you worksheets and notes. Government and school sites share PDFs. Downloading a file, finding it again and opening it is a basic skill employers expect, and doing it carefully keeps your phone or computer safe.
+
+## Downloading on purpose
+
+A **download** saves a copy of a file from a website onto your device.
+
+* Tap or click a **Download** button or a link to the file, such as "Application form (PDF)".
+* **On a computer,** the browser may ask where to save. Choose a folder you will remember, or let it go to **Downloads**. A small download icon or bar appears near the top or bottom of the browser, and you can click the finished file there to open it.
+* **On a phone,** a message usually appears at the bottom saying the download has started or finished, with an **Open** button.
+
+Some pages have several "Download" buttons, and some are adverts dressed up as download buttons. Look for the link that names the file you expect. If clicking it opens a new page full of adverts or asks you to install something, close it.
+
+## Where files go
+
+Most browsers save downloads in a folder called **Downloads**.
+
+* **Android phone:** open your file manager app (often called **Files** or **My Files**) and tap **Downloads**. In Chrome, you can also open the menu and choose **Downloads**.
+* **iPhone:** downloads from Safari usually go to the **Downloads** folder in the **Files** app. You can see recent ones from the downloads arrow in Safari.
+* **Windows computer:** open **File Explorer** and click **Downloads** on the left. The browser's menu also has a **Downloads** list.
+* **Mac:** open **Finder** and click **Downloads**.
+
+If you cannot find a file, open the browser's downloads list. It shows every recent download and lets you open the folder it is in.
+
+## Common file types
+
+The letters after the dot in a file name tell you what kind of file it is.
+
+| Ending | What it is | Opens with |
+|:---|:---|:---|
+| .pdf | A document that looks the same everywhere | Browser or PDF reader |
+| .docx | A Word document | Word, Google Docs or WPS |
+| .xlsx | A spreadsheet | Excel or Google Sheets |
+| .jpg or .png | A picture | Gallery or Photos |
+| .zip | Several files packed together | File manager (extract first) |
+
+If a file will not open, your device may need a free app for that type. For documents and spreadsheets, Google Docs and Sheets, or the free Microsoft apps, can usually open them.
+
+## Files to be careful with
+
+Some downloads are programs, not documents. They can install software, including harmful software.
+
+* **.apk** files install apps on Android. Only install apps from the Play Store, as the apps lesson explained. An .apk from a random site or a WhatsApp message can contain malware.
+* **.exe** and **.msi** files install programs on Windows. Only run them from the official website of software you chose.
+* **A document that asks you to "enable" something** before you can read it, such as macros or editing, deserves suspicion if you were not expecting it.
+
+If the browser warns that a file may be harmful, believe it and delete the file.
+
+## Tidy your Downloads folder
+
+Downloads fill up quickly.
+
+* **Rename** files you keep, such as "Fuseini Alhassan application form".
+* **Watch for duplicates.** Downloading the same file twice often creates "form (1).pdf". Delete the extra copy.
+* **Delete** files you no longer need, especially copies of your ID or CV on a shared device.
+* **Use WiFi** for big files, so they do not finish your bundle halfway and leave a broken, half downloaded file.
+
+The files lesson in this roadmap shows how to name and send files. Downloads are often where those files start.`,
+      workedExample_md: `**Abdul-Rahman downloads an application form**
+
+Abdul-Rahman, in Tamale, sees an NGO advert that asks applicants to download and fill in a form.
+
+1. On the advert page there are two green "Download" buttons. One is an advert for a "PDF converter" app. He ignores it and taps the link that says "Application form (PDF)".
+2. A message at the bottom of his phone says the download has finished. He taps **Open** and the form opens in his PDF reader.
+3. Later he cannot remember where it went. He opens his **Files** app, taps **Downloads**, and finds it.
+4. He sees "application form.pdf" and "application form (1).pdf" because he tapped twice. He deletes the extra one and renames the other "Abdul-Rahman Yakubu NGO application form".
+5. A friend sends him an .apk file that "fills PDF forms for free". He deletes it without opening it.`,
+      keyTerms: [
+        { term: "Download", definition: "Saving a copy of a file from a website onto your device." },
+        { term: "Downloads folder", definition: "The folder where most browsers save downloaded files." },
+        { term: "File type", definition: "The kind of file, shown by the letters after the dot, such as .pdf or .docx." },
+        { term: ".apk", definition: "A file that installs an app on Android. Only trust ones from official sources." },
+        { term: "Malware", definition: "Harmful software that can steal information or damage a device." },
+      ],
+      commonMistakes: [
+        "Tapping an advert that looks like a download button",
+        "Not knowing where downloaded files go",
+        "Installing an .apk from a message or unknown site",
+        "Ignoring the browser's warning that a file may be harmful",
+        "Leaving copies of your ID in the Downloads folder of a shared device",
+      ],
+      selfCheck: [
+        "Where does your device save downloads, and how do you open that folder?",
+        "What do .pdf, .docx and .xlsx files contain?",
+        "Why should you be careful with .apk and .exe files?",
+        "What should you do with duplicate downloads?",
+      ],
+      practice_task_md: `**Goal:** Download a file, find it and tidy it.
+
+**Steps**
+
+1. Download a free PDF from a trusted site, such as a lesson or form from an official or course website.
+2. Open it from the download message or the browser's downloads list.
+3. Close it, then find it again in your file manager or File Explorer, in the Downloads folder.
+4. Rename it with a clear name.
+5. Look through your Downloads folder. Delete duplicates and anything you no longer need, and note any .apk or .exe files you did not expect.
+
+**Done looks like:** One downloaded, renamed PDF you can find in seconds, and a tidier Downloads folder.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "A page has several Download buttons. Which should you choose?",
+            options: [
+              "The biggest, brightest button on the page",
+              "The link that names the exact file you expect",
+              "Every button, to be sure you get the file",
+              "The one that asks you to install a helper app",
+            ],
+            answer_index: 1,
+            explanation: "Some download buttons are adverts; pick the link that names your file.",
+          },
+          {
+            prompt: "Where do most browsers save downloaded files?",
+            options: [
+              "In the Downloads folder",
+              "In your email inbox",
+              "In the browser's bookmarks",
+              "In your WhatsApp chats",
+            ],
+            answer_index: 0,
+            explanation: "Downloads usually go to a folder called Downloads.",
+          },
+          {
+            prompt: "A friend sends you an .apk file that promises a free PDF tool. What should you do?",
+            options: [
+              "Install it now and delete it after your PDF is done",
+              "Forward it to your study group",
+              "Rename it to .pdf and open it",
+              "Delete it; install apps only from the Play Store",
+            ],
+            answer_index: 3,
+            explanation: "An .apk from a message can contain malware.",
+          },
+          {
+            prompt: "What does a file ending in .xlsx usually contain?",
+            options: [
+              "A picture",
+              "A program for Windows",
+              "A spreadsheet",
+              "Several files packed together",
+            ],
+            answer_index: 2,
+            explanation: ".xlsx is a spreadsheet, opened with Excel or Google Sheets.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
+    "safe-sites-and-links": {
+      outcomes: [
+        "Read a web address and find its real domain",
+        "Check the security icon and understand what it does and does not prove",
+        "Think before you tap a link in a message",
+        "Leave a page that shows warnings or pop ups",
+      ],
+      explanation_md: `Fake websites and dangerous links are one of the most common ways people lose money, accounts and personal information. They arrive in WhatsApp messages, texts, emails and adverts. Employers trust staff who can tell a real site from a fake one, because one careless click at work can expose customer information. A few simple checks protect you almost every time.
+
+## Read the web address
+
+Before you trust a page, especially before typing a password, a PIN or personal details, read its address.
+
+The most important part is the **domain**. Look at the part of the address before the first single slash and read it from the right: the ending, such as .com, .org or .gov.gh, and the name just before it. In the address learnfree.org/series/internet-basics, the domain is **learnfree.org**. Everything after the slash is just a page on that site, and anything further to the left of the domain is a label its owner chose.
+
+Fake sites use tricks to look real:
+
+* **Look alike spellings,** such as gmial.com instead of gmail.com, or a zero instead of the letter o.
+* **Real names in the wrong place.** In mtnghana.bonus-offer.xyz, the domain is really bonus-offer.xyz, not MTN. The real name has just been placed in front.
+* **Extra words,** such as microsoft-certificate-ghana.com, which Microsoft does not own.
+
+Government sites in Ghana usually end in **.gov.gh**. Large companies usually use one short, familiar domain. When unsure, search for the organisation's official site separately and compare.
+
+On a phone the address bar may show only part of the address. Tap it to see the whole thing.
+
+## The security icon
+
+Next to the address, your browser shows a small icon. In Chrome on a phone you can tap it to see the site's security details.
+
+* A normal secure site uses **https**, which means information between you and the site is private on its way there.
+* A **"Not secure"** label means the connection is not private. Do not type passwords, PINs or personal details there.
+* A red **"Dangerous"** or **deceptive site** warning page means the browser has flagged the site as harmful. Go back. Do not continue.
+
+Important: a secure connection only means nobody can read your information on the way. It does **not** mean the site is honest. Many fake sites use https too. Always check the domain as well.
+
+## Think before you tap a link
+
+Links in messages are the biggest risk, because you cannot see where they really go.
+
+* **Who sent it, and were you expecting it?** A link from an unknown number, or an unexpected one from a friend whose account may have been taken over, deserves suspicion.
+* **Does it create pressure or excitement?** "You have won", "your account will be blocked", "claim your bonus today" are classic tricks.
+* **Preview first.** On a computer, hover the mouse over a link to see its address at the bottom of the window. On a phone, long press the link to see the address before opening it.
+* **Short links** hide the real address. Be extra careful with them.
+* **Go to the site yourself.** If a message says your bank or course account needs attention, open the official app or type the address you know, rather than using the link.
+
+## Pop ups, prize pages and fake warnings
+
+* **"Your phone has a virus!"** pages are fake. A website cannot scan your phone. Close the tab.
+* **"Allow notifications?"** Only allow it for sites you really want to hear from. Many spam sites use notifications to send adverts and scam links.
+* **Prize pages and surveys** asking for your number or MoMo details are scams.
+* If a page will not let you leave, close the tab or the whole browser.
+
+## If you made a mistake
+
+If you typed a password on a site you now think is fake, change that password straight away on the real site and turn on two step verification. If you shared a MoMo PIN or sent money, contact your provider through its official number immediately.
+
+DMP week 1 goes deeper into safe browsing and phishing. This lesson gives you the everyday checks first.`,
+      workedExample_md: `**Hawa checks a link before tapping**
+
+Hawa, in Wa, receives a WhatsApp message from an unknown number: "Congratulations! You have been selected for a free laptop from the Ministry. Claim here before midnight." There is a link.
+
+1. **Sender and pressure:** An unknown number and "before midnight". Two warning signs.
+2. **Preview:** She long presses the link. The address is gov-gh-laptops.claim-now.top. The domain is claim-now.top, not a .gov.gh site.
+3. **Go to the site herself:** She searches for the ministry's official website separately. There is no laptop offer on it.
+4. She does not tap the link, blocks the number and warns her youth group.
+
+A week later she opens a course site she uses often. The address shows the real domain and the security icon looks normal, so she signs in.`,
+      keyTerms: [
+        { term: "Domain", definition: "The name and ending at the right hand end of a web address, before the first single slash, which tell you whose site it really is." },
+        { term: "https", definition: "A secure connection that keeps information private between you and the site. It does not prove the site is honest." },
+        { term: "Look alike domain", definition: "A web address spelled to look like a real one, used by fake sites." },
+        { term: "Short link", definition: "A shortened web address that hides where it really goes." },
+        { term: "Pop up", definition: "A box or page that appears on its own, often an advert or a fake warning." },
+      ],
+      commonMistakes: [
+        "Trusting a site because a real company name appears somewhere in the address",
+        "Thinking https or a normal security icon means a site is honest",
+        "Tapping links in unexpected messages without previewing them",
+        "Believing a web page that says your phone has a virus",
+        "Allowing notifications on every site that asks",
+      ],
+      selfCheck: [
+        "In the address mtnghana.bonus-offer.xyz, what is the real domain?",
+        "What does https prove, and what does it not prove?",
+        "How do you preview a link on the device you use most?",
+        "What should you do if you typed a password on a fake site?",
+      ],
+      practice_task_md: `**Goal:** Practise reading addresses and checking links.
+
+**Steps**
+
+1. Open three sites you use, such as your email, a course site and a government site. For each, write down the domain and check the security icon.
+2. Find one link in an old message or email. Preview it without opening it, and write down its domain.
+3. Write three made up look alike addresses for a real site you use, to train your eye. Do not visit them.
+4. Check your browser's notification settings and remove any site you do not want to hear from.
+
+**Done looks like:** Three real domains noted with their security icons, one previewed link, three look alike examples and a cleaned notification list.`,
+      quiz: {
+        questions: [
+          {
+            prompt: "In the address mtnghana.bonus-offer.xyz, which part is the real domain?",
+            options: [
+              "mtnghana",
+              "mtnghana.bonus-offer",
+              "bonus-offer.xyz",
+              "xyz",
+            ],
+            answer_index: 2,
+            explanation: "The real name is placed in front, but the domain is bonus-offer.xyz.",
+          },
+          {
+            prompt: "What does a secure https connection prove?",
+            options: [
+              "That the site belongs to a registered company",
+              "That the site has no viruses",
+              "That the government has approved the site",
+              "That information is kept private on the way",
+            ],
+            answer_index: 3,
+            explanation: "https protects information in transit; fake sites can use it too.",
+          },
+          {
+            prompt: "How can you see where a link goes on a phone before opening it?",
+            options: [
+              "Long press the link to see its address",
+              "Forward it to a friend first",
+              "Turn off mobile data and tap it",
+              "Take a screenshot of the message and zoom in on it",
+            ],
+            answer_index: 0,
+            explanation: "A long press shows the address without opening the page.",
+          },
+          {
+            prompt: "A web page says \"Your phone has a virus! Tap here to clean it.\" What should you do?",
+            options: [
+              "Tap it quickly to protect your phone",
+              "Close the tab, because a website cannot scan your phone",
+              "Enter your phone number so they can call you",
+              "Allow notifications so the site can warn you again next time",
+            ],
+            answer_index: 1,
+            explanation: "These warnings are fake; close the tab.",
+          },
+        ],
+        pass_threshold: 75,
+      },
+    },
+
     "files-and-forms": {
       outcomes: [
         "Use the same file ideas on a phone or a computer",
