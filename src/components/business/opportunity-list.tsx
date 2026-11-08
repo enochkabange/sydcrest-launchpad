@@ -1,3 +1,4 @@
+import Link from "@/components/ui/link";
 import { Badge, formatDate } from "./bits";
 
 const KIND_LABELS: Record<string, string> = {
@@ -14,10 +15,23 @@ export function opportunityKindLabel(kind: string) {
 
 const STATUS = { draft: "Draft", open: "Open", closed: "Closed" } as const;
 
-export type OpportunityRow = { id: string; title: string; kind: string; status: string; deadline: string | null; location: string | null; is_remote: boolean };
+export type OpportunityRow = {
+  id: string;
+  title: string;
+  kind: string;
+  status: string;
+  deadline: string | null;
+  location: string | null;
+  is_remote: boolean;
+  apply_on_sydcrest?: boolean;
+};
 
-/** An organisation's opportunities as a plain list (member view shows drafts and status too). */
-export function OpportunityList({ rows, showStatus }: { rows: OpportunityRow[]; showStatus: boolean }) {
+/**
+ * An organisation's opportunities as a plain list (member view shows drafts
+ * and status too). With `orgSlug`, posts that take applications on SydCrest
+ * link to their applicants (#306).
+ */
+export function OpportunityList({ rows, showStatus, orgSlug }: { rows: OpportunityRow[]; showStatus: boolean; orgSlug?: string }) {
   return (
     <ul className="flex flex-col divide-y divide-line rounded-lg border border-line">
       {rows.map((o) => (
@@ -31,6 +45,11 @@ export function OpportunityList({ rows, showStatus }: { rows: OpportunityRow[]; 
           <div className="flex shrink-0 flex-wrap items-center gap-2">
             {o.deadline && <span className="text-sm text-content-3">Closes {formatDate(o.deadline)}</span>}
             {showStatus && <Badge tone={o.status === "open" ? "success" : "neutral"}>{STATUS[o.status as keyof typeof STATUS] ?? o.status}</Badge>}
+            {orgSlug && o.apply_on_sydcrest && (
+              <Link href={`/org/${orgSlug}/opportunities/${o.id}/applicants`} className="min-h-11 content-center text-sm font-semibold">
+                Applicants<span className="sr-only"> for {o.title}</span>
+              </Link>
+            )}
           </div>
         </li>
       ))}

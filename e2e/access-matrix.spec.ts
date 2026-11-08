@@ -100,7 +100,7 @@ test("signed out visitor: public pages open, signed in areas go to sign in, the 
   for (const path of [
     "/dashboard", "/learn", "/cohort", "/mentor", "/expert", "/admin", "/admin/roadmaps/new", "/org", "/org/any-org/manage",
     "/talent", "/bookings", "/briefs", "/community", "/notifications", "/certificates/issue", "/programme/apply",
-    "/experts/apply", "/skills/reviews", "/outcomes", "/study-buddy", "/chapters/start",
+    "/experts/apply", "/skills/reviews", "/outcomes", "/study-buddy", "/opportunities/applications", "/opportunities/any-job/apply", "/chapters/start",
   ]) {
     await redirected(page, path);
   }

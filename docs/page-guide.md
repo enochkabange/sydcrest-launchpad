@@ -235,6 +235,12 @@ Signed in people keep the app navigation on public pages (`viewer-frame`).
 - **Phone / desktop**: as `/experts` (rail filters, grid). Detail: `MainWithRail` with apply box and deadline in the rail.
 - **Nav**: Header; Earn → Opportunities.
 
+
+### `/opportunities/[slug]/apply` and `/opportunities/applications`
+- **Audience**: set up adults; only for listings that take applications on SydCrest (#306). **Job**: apply with a note and portfolio, then follow where each application stands. **Primary**: send; withdraw until hired. States per application: New, Shortlisted, Interview, Offer, Hired, Not this time, Withdrawn. The learner agrees that the employer sees their phone and email from Shortlisted on.
+
+### `/org/[slug]/opportunities/[id]/applicants`
+- **Audience**: the organisation's owners, admins and recruiters (and platform admins). **Job**: review applicants and move them through the stages. **Primary**: change stage (each change notifies the learner). Name, region, verified skills, public profile, note and portfolio always; phone and email from Shortlisted on. Hired is final and files a pending job outcome for an admin to verify.
 ### `/events`, `/events/[slug]`, `/events/recordings`
 - **Audience**: everyone; RSVP signed in. **Job**: find the next event near me and say I am going.
 - **Primary**: RSVP. **Secondary**: add to calendar (`calendar.ics`), recordings.
@@ -720,6 +726,9 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/a/[id]` | page | 7 Account |
 | `/chapters/[slug]` | page | 1 Public marketing |
 | `/chapters` | page | 1 Public marketing |
+| `/opportunities/[slug]/apply` | page | 6 Earn |
+| `/opportunities/applications` | page | 6 Earn |
+| `/org/[slug]/opportunities/[id]/applicants` | page | 6 Earn |
 | `/chapters/start` | page | 5 Community |
 | `/org/[slug]` | page | 6 Earn |
 | `/settings` | page | 7 Account |

@@ -30,7 +30,8 @@ export default function SavedOpportunitiesPage() {
       <div className="flex flex-col gap-2">
         <h1 className="text-title text-content">Saved opportunities</h1>
         <p className="max-w-reading text-lead text-content-2">
-          Keep track of what you want to apply for and what you have applied for. Only you can see this list.
+          Keep track of what you want to apply for and what you have applied for. Only you can see this list. Applications
+          you sent on SydCrest are in <Link href="/opportunities/applications">My applications</Link>.
         </p>
       </div>
       <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>

@@ -129,6 +129,23 @@ export function OpportunityForm({
                 {e.apply}
               </p>
             )}
+            <label htmlFor="apply_on_sydcrest" className="flex min-h-11 items-start gap-3 text-sm text-content">
+              <input
+                id="apply_on_sydcrest"
+                name="apply_on_sydcrest"
+                type="checkbox"
+                defaultChecked={o.apply_on_sydcrest ?? false}
+                aria-describedby="apply_on_sydcrest-hint"
+                className="mt-0.5 size-5 shrink-0 accent-line-selected"
+              />
+              <span className="flex flex-col gap-1">
+                <span className="font-semibold">Take applications on SydCrest</span>
+                <span id="apply_on_sydcrest-hint" className="text-content-2">
+                  Applicants send their profile, verified skills and a short note, and you move them through the stages
+                  from your organisation page. Their phone and email show once you shortlist them.
+                </span>
+              </span>
+            </label>
             <TextField
               id="apply_url"
               label="Application link"
