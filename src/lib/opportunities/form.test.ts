@@ -112,3 +112,18 @@ describe("helpers", () => {
     expect(autoSlug("!!!", "zz11")).toBe("opportunity-zz11");
   });
 });
+
+describe("applying on SydCrest (#306)", () => {
+  it("is enough on its own: no link or instructions needed", () => {
+    const f = form({ ...valid, apply_url: "", apply_instructions: "", apply_on_sydcrest: "on" });
+    const { data, errors } = parseOpportunityForm(f, { mode: "admin", now: NOW });
+    expect(errors.apply).toBeUndefined();
+    expect(data.apply_on_sydcrest).toBe(true);
+  });
+
+  it("still needs some way to apply", () => {
+    const f = form({ ...valid, apply_url: "", apply_instructions: "" });
+    expect(parseOpportunityForm(f, { mode: "admin", now: NOW }).errors.apply).toMatch(/^Take applications on SydCrest, or add/);
+  });
+});
+

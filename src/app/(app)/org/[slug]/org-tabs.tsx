@@ -11,6 +11,7 @@ export function OrgTabs({ slug, publicHref }: { slug: string; publicHref: string
     { href: `/org/${slug}/team`, label: "Team" },
     { href: `/org/${slug}/opportunities`, label: "Opportunities" },
     { href: `/org/${slug}/requests`, label: "Talent requests" },
+    { href: `/org/${slug}/impact`, label: "Impact" },
   ];
   return (
     <nav aria-label="Organisation" className="flex flex-wrap gap-1 border-b border-line">

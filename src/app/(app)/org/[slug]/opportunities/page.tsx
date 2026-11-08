@@ -17,7 +17,7 @@ async function Opportunities({ params }: { params: Promise<{ slug: string }> }) 
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("opportunities")
-    .select("id, title, kind, status, deadline, location, is_remote")
+    .select("id, title, kind, status, deadline, location, is_remote, apply_on_sydcrest")
     .eq("organisation_id", org.id)
     .order("created_at", { ascending: false });
   if (error) throw new Error(`Could not load opportunities: ${error.message}`);
@@ -31,8 +31,8 @@ async function Opportunities({ params }: { params: Promise<{ slug: string }> }) 
           {verified ? (
             <>
               <p className="text-sm text-content-2">
-                Post jobs, internships, gigs, scholarships and grants under {org.name}. Learners apply the way you say: a
-                link or instructions.
+                Post jobs, internships, gigs, scholarships and grants under {org.name}. Learners apply the way you say: on
+                SydCrest, where you move applicants through the stages here, or by a link or instructions.
               </p>
               <Link href={`/org/${org.slug}/opportunities/new`} className={buttonClasses("primary", "self-start")}>
                 Post an opportunity
@@ -61,7 +61,7 @@ async function Opportunities({ params }: { params: Promise<{ slug: string }> }) 
             </p>
           </Panel>
         ) : (
-          <OpportunityList rows={rows} showStatus />
+          <OpportunityList rows={rows} showStatus orgSlug={org.slug} />
         )}
       </section>
     </MainWithRail>

@@ -59,6 +59,11 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // /design-sync inputs (preview fixtures for Claude Design) and its local build output.
+    ".design-sync/**",
+    ".ds-sync/**",
+    "dist-ds/**",
+    "ds-bundle/**",
   ]),
 ]);
 

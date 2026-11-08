@@ -114,8 +114,8 @@ export default function AboutPage() {
         intro={
           <p>
             We grow as chapters, not one central team. Each chapter has a local volunteer lead who runs the
-            community, events and partnerships in that city. We are starting with six, and more will follow as people
-            step up to lead them.
+            community, events and partnerships in that city. We are starting with six, and anyone can apply to start
+            one where they live.
           </p>
         }
       >

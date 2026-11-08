@@ -495,6 +495,76 @@ export type Database = {
           },
         ]
       }
+      chapter_applications: {
+        Row: {
+          chapter_id: string | null
+          created_at: string
+          decided_at: string | null
+          decided_by: string | null
+          decision_note: string | null
+          id: string
+          motivation: string
+          plan: string
+          profile_id: string
+          region: string
+          status: string
+          town: string
+          updated_at: string
+        }
+        Insert: {
+          chapter_id?: string | null
+          created_at?: string
+          decided_at?: string | null
+          decided_by?: string | null
+          decision_note?: string | null
+          id?: string
+          motivation: string
+          plan: string
+          profile_id?: string
+          region: string
+          status?: string
+          town: string
+          updated_at?: string
+        }
+        Update: {
+          chapter_id?: string | null
+          created_at?: string
+          decided_at?: string | null
+          decided_by?: string | null
+          decision_note?: string | null
+          id?: string
+          motivation?: string
+          plan?: string
+          profile_id?: string
+          region?: string
+          status?: string
+          town?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "chapter_applications_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "chapter_applications_decided_by_fkey"
+            columns: ["decided_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "chapter_applications_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       chapter_members: {
         Row: {
           chapter_id: string
@@ -1871,6 +1941,51 @@ export type Database = {
           },
         ]
       }
+      learner_stories: {
+        Row: {
+          created_at: string
+          hidden_at: string | null
+          hidden_by: string | null
+          profile_id: string
+          show_name: boolean
+          story: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          hidden_at?: string | null
+          hidden_by?: string | null
+          profile_id?: string
+          show_name?: boolean
+          story: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          hidden_at?: string | null
+          hidden_by?: string | null
+          profile_id?: string
+          show_name?: boolean
+          story?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "learner_stories_hidden_by_fkey"
+            columns: ["hidden_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "learner_stories_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       node_content: {
         Row: {
           common_mistakes: string[] | null
@@ -2150,6 +2265,7 @@ export type Database = {
       opportunities: {
         Row: {
           apply_instructions: string | null
+          apply_on_sydcrest: boolean
           apply_url: string | null
           compensation_note: string | null
           created_at: string
@@ -2177,6 +2293,7 @@ export type Database = {
         }
         Insert: {
           apply_instructions?: string | null
+          apply_on_sydcrest?: boolean
           apply_url?: string | null
           compensation_note?: string | null
           created_at?: string
@@ -2204,6 +2321,7 @@ export type Database = {
         }
         Update: {
           apply_instructions?: string | null
+          apply_on_sydcrest?: boolean
           apply_url?: string | null
           compensation_note?: string | null
           created_at?: string
@@ -2240,6 +2358,60 @@ export type Database = {
           {
             foreignKeyName: "opportunities_posted_by_fkey"
             columns: ["posted_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      opportunity_applications: {
+        Row: {
+          contact_consent: boolean
+          created_at: string
+          id: string
+          note: string
+          opportunity_id: string
+          portfolio_url: string | null
+          profile_id: string
+          stage: string
+          stage_changed_at: string
+          updated_at: string
+        }
+        Insert: {
+          contact_consent: boolean
+          created_at?: string
+          id?: string
+          note: string
+          opportunity_id: string
+          portfolio_url?: string | null
+          profile_id?: string
+          stage?: string
+          stage_changed_at?: string
+          updated_at?: string
+        }
+        Update: {
+          contact_consent?: boolean
+          created_at?: string
+          id?: string
+          note?: string
+          opportunity_id?: string
+          portfolio_url?: string | null
+          profile_id?: string
+          stage?: string
+          stage_changed_at?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "opportunity_applications_opportunity_id_fkey"
+            columns: ["opportunity_id"]
+            isOneToOne: false
+            referencedRelation: "opportunities"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "opportunity_applications_profile_id_fkey"
+            columns: ["profile_id"]
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
@@ -3444,6 +3616,93 @@ export type Database = {
         }
         Relationships: []
       }
+      sponsorships: {
+        Row: {
+          chapter_id: string | null
+          cohort_id: string | null
+          created_at: string
+          created_by: string | null
+          ends_on: string | null
+          id: string
+          note: string | null
+          organisation_id: string
+          program_id: string | null
+          scope: string
+          seats: number | null
+          starts_on: string
+          tier: string
+          updated_at: string
+        }
+        Insert: {
+          chapter_id?: string | null
+          cohort_id?: string | null
+          created_at?: string
+          created_by?: string | null
+          ends_on?: string | null
+          id?: string
+          note?: string | null
+          organisation_id: string
+          program_id?: string | null
+          scope: string
+          seats?: number | null
+          starts_on: string
+          tier: string
+          updated_at?: string
+        }
+        Update: {
+          chapter_id?: string | null
+          cohort_id?: string | null
+          created_at?: string
+          created_by?: string | null
+          ends_on?: string | null
+          id?: string
+          note?: string | null
+          organisation_id?: string
+          program_id?: string | null
+          scope?: string
+          seats?: number | null
+          starts_on?: string
+          tier?: string
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "sponsorships_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "sponsorships_cohort_id_fkey"
+            columns: ["cohort_id"]
+            isOneToOne: false
+            referencedRelation: "cohorts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "sponsorships_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "sponsorships_organisation_id_fkey"
+            columns: ["organisation_id"]
+            isOneToOne: false
+            referencedRelation: "organisations"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "sponsorships_program_id_fkey"
+            columns: ["program_id"]
+            isOneToOne: false
+            referencedRelation: "programs"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       submissions: {
         Row: {
           ai_feedback: Json | null
@@ -3927,6 +4186,20 @@ export type Database = {
           skills: string[] | null
           status: string | null
           title: string | null
+        }
+        Relationships: []
+      }
+      chapter_application_queue: {
+        Row: {
+          application_id: string | null
+          created_at: string | null
+          display_name: string | null
+          motivation: string | null
+          plan: string | null
+          profile_id: string | null
+          region: string | null
+          status: string | null
+          town: string | null
         }
         Relationships: []
       }
@@ -5116,6 +5389,36 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      decide_chapter_application: {
+        Args: {
+          p_application_id: string
+          p_decision: string
+          p_name?: string
+          p_note?: string
+          p_slug?: string
+        }
+        Returns: {
+          chapter_id: string | null
+          created_at: string
+          decided_at: string | null
+          decided_by: string | null
+          decision_note: string | null
+          id: string
+          motivation: string
+          plan: string
+          profile_id: string
+          region: string
+          status: string
+          town: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "chapter_applications"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
       decide_expert_application: {
         Args: { p_application_id: string; p_decision: string; p_note?: string }
         Returns: {
@@ -5309,6 +5612,23 @@ export type Database = {
       notify_user: {
         Args: { p_kind: string; p_payload?: Json; p_recipient_id: string }
         Returns: string
+      }
+      org_opportunity_applicants: {
+        Args: { p_opportunity_id: string }
+        Returns: {
+          application_id: string
+          applied_at: string
+          display_name: string
+          email: string
+          note: string
+          phone: string
+          portfolio_url: string
+          public_slug: string
+          region: string
+          stage: string
+          stage_changed_at: string
+          verified_skills: string[]
+        }[]
       }
       pin_community_post: {
         Args: { p_pinned: boolean; p_post_id: string }
@@ -5512,6 +5832,27 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      set_application_stage: {
+        Args: { p_application_id: string; p_stage: string }
+        Returns: {
+          contact_consent: boolean
+          created_at: string
+          id: string
+          note: string
+          opportunity_id: string
+          portfolio_url: string | null
+          profile_id: string
+          stage: string
+          stage_changed_at: string
+          updated_at: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "opportunity_applications"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
       set_booking_status: {
         Args: { p_booking_id: string; p_reason?: string; p_status: string }
         Returns: {
@@ -5578,6 +5919,25 @@ export type Database = {
       sign_in_allowed: {
         Args: { p_address_key: string; p_pair_key: string }
         Returns: boolean
+      }
+      sponsorship_impact: {
+        Args: { p_sponsorship_id: string }
+        Returns: {
+          active: number
+          certificates: number
+          finished: number
+          learners: number
+          stories: number
+          verified_outcomes: number
+        }[]
+      }
+      sponsorship_stories: {
+        Args: { p_sponsorship_id: string }
+        Returns: {
+          display_name: string
+          story: string
+          updated_at: string
+        }[]
       }
       submit_node_quiz: {
         Args: { p_answers: Json; p_node_id: string }
