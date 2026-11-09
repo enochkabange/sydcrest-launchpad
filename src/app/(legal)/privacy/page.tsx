@@ -1,5 +1,6 @@
 import Link from "@/components/ui/link";
 import { pageMetadata } from "@/lib/page-metadata";
+import { LEGAL_ENTITY } from "@/content/marketing";
 import { AnalyticsChoice } from "@/lib/analytics/analytics-choice";
 import { LegalDocument, PrivacyContact } from "../legal-document";
 
@@ -22,7 +23,8 @@ export default function PrivacyPage() {
 
       <h2>Who we are</h2>
       <p>
-        SydCrest Launchpad is run by SydCrest, a company limited by guarantee registered in Ghana. We
+        SydCrest Launchpad is run by {LEGAL_ENTITY.name} (&ldquo;SydCrest&rdquo;), a company limited by
+        guarantee registered in Ghana under registration number {LEGAL_ENTITY.regNo}. We
         are a social enterprise that helps people in Ghana find a path into tech through free
         roadmaps, a learning community and mentors. In this policy, &ldquo;SydCrest&rdquo;,
         &ldquo;we&rdquo; and &ldquo;us&rdquo; mean SydCrest. For the purposes of Act 843, SydCrest is

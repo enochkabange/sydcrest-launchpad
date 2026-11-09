@@ -1,5 +1,6 @@
 import Link from "@/components/ui/link";
 import { pageMetadata } from "@/lib/page-metadata";
+import { LEGAL_ENTITY } from "@/content/marketing";
 import { LegalDocument, PrivacyContact } from "../legal-document";
 
 export const metadata = pageMetadata({
@@ -13,8 +14,9 @@ export default function TermsPage() {
   return (
     <LegalDocument title="Terms">
       <p>
-        These terms are the agreement between you and SydCrest, a company limited by guarantee
-        registered in Ghana, for using SydCrest Launchpad. By creating an account you agree to them
+        These terms are the agreement between you and {LEGAL_ENTITY.name} (&ldquo;SydCrest&rdquo;), a
+        company limited by guarantee registered in Ghana under registration number{" "}
+        {LEGAL_ENTITY.regNo}, for using SydCrest Launchpad. By creating an account you agree to them
         and to our <Link href="/privacy">Privacy Policy</Link>. Please read them. If you do not
         agree, do not create an account.
       </p>

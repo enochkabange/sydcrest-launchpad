@@ -7,6 +7,20 @@
 /** Planning/00 and the old About page: the only public contact on record. */
 export const CONTACT_EMAIL = "hello@sydcrest.com";
 
+/**
+ * Certificate of Incorporation (SYDCREST LBG.pdf in the Sydcrest folder), Office of the
+ * Registrar of Companies, Tamale, 11 September 2026. Google for Nonprofits checks that this
+ * exact name appears on sydcrest.com, so keep it visible on every page (site and legal footers).
+ */
+export const LEGAL_ENTITY = {
+  name: "Sydcrest LBG",
+  regNo: "CG059060926",
+  incorporated: "11 September 2026",
+} as const;
+
+/** One line naming the legal entity, shown in the site and legal footers. */
+export const LEGAL_LINE = `SydCrest Launchpad is run by ${LEGAL_ENTITY.name}, a company limited by guarantee registered in Ghana (registration number ${LEGAL_ENTITY.regNo}).`;
+
 /** Planning/00, "The frame". */
 export const MISSION =
   "Take motivated Ghanaians, starting in the underserved north, from beginner to employable tech talent, then on to earning from those skills.";
