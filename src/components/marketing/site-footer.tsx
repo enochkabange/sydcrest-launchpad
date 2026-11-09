@@ -1,6 +1,6 @@
 import Link from "@/components/ui/link";
 import { LogoMark } from "@/components/brand/Logo";
-import { CONTACT_EMAIL } from "@/content/marketing";
+import { CONTACT_EMAIL, LEGAL_LINE } from "@/content/marketing";
 import { FOOTER_NAV } from "@/lib/nav/config";
 
 const LEGAL = [
@@ -45,6 +45,7 @@ export function SiteFooter() {
           </ul>
         </nav>
       </div>
+      <p className="mx-auto w-full max-w-page px-4 pb-8 text-xs text-content-3 md:px-8">{LEGAL_LINE}</p>
     </footer>
   );
 }

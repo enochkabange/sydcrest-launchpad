@@ -6,6 +6,7 @@ import {
   CHAPTERS,
   COMMUNITY_SIZE,
   CONTACT_EMAIL,
+  LEGAL_ENTITY,
   MISSION,
   PILOT,
 } from "@/content/marketing";
@@ -101,7 +102,8 @@ export default function AboutPage() {
         title="Every cedi goes back in"
         intro={
           <p>
-            SydCrest is a social enterprise being registered as a Company Limited by Guarantee in Ghana.
+            SydCrest is a social enterprise. It is run by {LEGAL_ENTITY.name}, a company limited by guarantee
+            registered in Ghana on {LEGAL_ENTITY.incorporated} (registration number {LEGAL_ENTITY.regNo}).
             There are no shareholders and no one takes a profit out. Whatever we earn, from sponsors,
             events or the marketplace, is reinvested in free seats, the platform and the community.
           </p>

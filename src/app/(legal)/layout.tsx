@@ -2,6 +2,7 @@ import { Suspense } from "react";
 import Link from "@/components/ui/link";
 import Logo from "@/components/brand/Logo";
 import { LegalLinks } from "@/components/app-shell/legal-links";
+import { LEGAL_LINE } from "@/content/marketing";
 import { PageViewTracker } from "@/lib/analytics/page-view-tracker";
 
 /** Plain reading layout for the privacy policy and terms. Fully static: no session reads. */
@@ -18,6 +19,7 @@ export default function LegalLayout({ children }: LayoutProps<"/">) {
       </main>
       <footer className="border-t border-line px-4 py-2 md:px-8">
         <LegalLinks className="mx-auto w-full max-w-reading" />
+        <p className="mx-auto w-full max-w-reading pb-2 text-xs text-content-3">{LEGAL_LINE}</p>
       </footer>
       {/* First party page views for the funnel; renders nothing. */}
       <Suspense fallback={null}>
