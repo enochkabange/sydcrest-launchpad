@@ -45,7 +45,7 @@ export function CohortForm({
           ))}
         </SelectField>
       )}
-      <TextField id="name" label="Name" hint="For example, Tamale pilot, January 2027." defaultValue={cohort?.name ?? ""} maxLength={80} error={state.errors?.name} />
+      <TextField id="name" label="Name" hint="For example, Tamale pilot, March 2027." defaultValue={cohort?.name ?? ""} maxLength={80} error={state.errors?.name} />
       <div className="grid gap-4 sm:grid-cols-2">
         <TextField id="starts_on" label="Starts on" type="date" defaultValue={cohort?.starts_on ?? ""} error={state.errors?.starts_on} />
         <TextField

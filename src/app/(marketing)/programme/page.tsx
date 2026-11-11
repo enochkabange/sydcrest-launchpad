@@ -20,7 +20,7 @@ const FACTS = [
   { value: `${PILOT.weeks} weeks`, label: "guided, with weekly assignments" },
   { value: `${PILOT.seats} seats`, label: "in the pilot cohort" },
   { value: "Free", label: "for the pilot cohort" },
-  { value: PILOT.starts, label: "first cohort starts" },
+  { value: PILOT.startsLabel, label: "first cohort starts" },
 ];
 
 export default function ProgrammePage() {

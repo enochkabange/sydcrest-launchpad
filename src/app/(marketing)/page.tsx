@@ -60,7 +60,7 @@ export default function Home() {
             }
           />
           <Link href="/programme" className="flex min-h-11 items-center self-start font-semibold">
-            {PILOT.seats} free seats in the January cohort. See the programme
+            {PILOT.seats} free seats in the first cohort. See the programme
           </Link>
         </SplitHero>
       </Container>

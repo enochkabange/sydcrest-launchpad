@@ -4260,7 +4260,7 @@ Mentors are most helpful when you come prepared. Bring specific questions, share
 
 The DMP suits you if you want deadlines, feedback from mentors, a group to learn with and a structured capstone. It asks for regular time each week, so check that you can commit before applying. If you prefer to learn at your own pace, keep going with this roadmap; it stands on its own. Either way, the portfolio you build is what shows employers and clients what you can do.
 
-The first DMP cohort is planned as a free pilot with 25 seats, starting in January 2027. Plans can change, so check the Programme page on SydCrest's site for the latest details. You can join the waitlist there; joining the waitlist is not a confirmed place. If you apply, mention the roadmap lessons you have completed and link any work you have done.`,
+The first DMP cohort is planned as a free pilot with 25 seats, starting in early 2027. Plans can change, so check the Programme page on SydCrest's site for the latest details. You can join the waitlist there; joining the waitlist is not a confirmed place. If you apply, mention the roadmap lessons you have completed and link any work you have done.`,
       workedExample_md: `Hawa has completed most of this roadmap, studying on her phone during the week and on a library computer at weekends. She is deciding about the DMP.
 
 1. **Check commitment.** She looks at her week and finds she can reliably give time on weekday evenings and Saturday mornings.
