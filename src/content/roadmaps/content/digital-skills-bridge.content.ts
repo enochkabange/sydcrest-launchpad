@@ -5185,7 +5185,7 @@ He applies with confidence, and keeps the checklist as evidence of his progress.
         "Fill in the form carefully and plan if you are not selected",
         "Follow up after you apply",
       ],
-      explanation_md: `You have built real foundations: confident use of your phone or computer, professional communication, safe accounts, files and forms, and first steps on a computer. The next step is to try for a seat in the Delta Mentoring Program. The first cohort is a free pilot with 25 seats, starting in January 2027. Applying is itself a useful skill, because job applications in Ghana use the same steps: read the instructions, fill in a form, attach documents and write about yourself clearly.
+      explanation_md: `You have built real foundations: confident use of your phone or computer, professional communication, safe accounts, files and forms, and first steps on a computer. The next step is to try for a seat in the Delta Mentoring Program. The first cohort is a free pilot with 25 seats, starting in early 2027. Applying is itself a useful skill, because job applications in Ghana use the same steps: read the instructions, fill in a form, attach documents and write about yourself clearly.
 
 ## Before you apply
 

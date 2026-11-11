@@ -25,8 +25,13 @@ export const LEGAL_LINE = `SydCrest Launchpad is run by ${LEGAL_ENTITY.name}, a 
 export const MISSION =
   "Take motivated Ghanaians, starting in the underserved north, from beginner to employable tech talent, then on to earning from those skills.";
 
-/** Planning/00 Q1 2027 (first free DMP cohort, ~25 seats) and Planning/03 §5 ("Apply for 25 free seats"). */
-export const PILOT = { seats: 25, weeks: 12, starts: "January 2027" } as const;
+/**
+ * Planning/00 Q1 2027 (first free DMP cohort, ~25 seats) and Planning/03 §5 ("Apply for 25 free seats").
+ * Founder, 11 Nov 2026: the DMP starts later in Q1, after the launch and the start of the
+ * SydCrest x DataCamp scholars programme (DataCamp access opens 6 Feb 2027), so no fixed month yet.
+ * `starts` reads mid sentence ("starting early 2027"); `startsLabel` stands alone.
+ */
+export const PILOT = { seats: 25, weeks: 12, starts: "early 2027", startsLabel: "Early 2027" } as const;
 
 /** Founder count, 7 Nov 2026: 844 members. Update as it grows. */
 export const COMMUNITY_SIZE = "800+";

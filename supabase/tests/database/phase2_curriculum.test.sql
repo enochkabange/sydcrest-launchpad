@@ -24,8 +24,8 @@ insert into public.rubrics (program_id, title, criteria) values
 select results_eq(
   $$ select title, duration_weeks, min_age, default_cohort_size, grace_days, min_peer_reviews, is_published
      from public.programs where slug = 'dmp' $$,
-  $$ values ('Delta Mentoring Program', 12::smallint, 18::smallint, 20::smallint, 7::smallint, 1::smallint, true) $$,
-  'the DMP is seeded: 12 weeks, adults, 20 per cohort, 7 days grace, peer review required');
+  $$ values ('Delta Mentoring Program', 12::smallint, 18::smallint, 25::smallint, 7::smallint, 1::smallint, true) $$,
+  'the DMP is seeded: 12 weeks, adults, 25 per cohort, 7 days grace, peer review required');
 select is(
   (select jsonb_agg(e ->> 'slug' order by e ->> 'slug') from public.programs p, jsonb_array_elements(p.specializations) e where p.slug = 'dmp'),
   '["google_ads", "seo", "social_media"]'::jsonb, 'the DMP offers the three specializations');
