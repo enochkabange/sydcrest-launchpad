@@ -81,7 +81,7 @@ async function FunnelTable() {
 
 /**
  * Admin only: visit to sign up to activation (first node completed), by week.
- * First party events only; no third party trackers.
+ * First party events only (Google Analytics is separate).
  */
 export default function FunnelPage() {
   return (

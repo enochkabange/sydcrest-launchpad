@@ -79,8 +79,9 @@ export default function PrivacyPage() {
         <li>
           Analytics about how the platform is used: which pages are opened, which features are used and
           whether they worked, how fast pages load, and errors. These never include your name, email
-          address, phone number or anything you type. The <a href="#analytics">Analytics</a> section
-          below explains exactly what we record.
+          address, phone number or anything you type. We record these ourselves and also use Google
+          Analytics. The <a href="#analytics">Analytics</a> section below explains exactly what is
+          recorded and how to turn it off.
         </li>
       </ul>
       <p>We do not ask for and do not want sensitive data such as your health, religion or finances.</p>
@@ -118,8 +119,9 @@ export default function PrivacyPage() {
 
       <h2 id="analytics">Analytics</h2>
       <p>
-        We run our own analytics. Nothing goes to an advertising network or a third party analytics
-        company, and there are no third party trackers on SydCrest.
+        We run our own analytics, and we also use Google Analytics to understand how people find and
+        use SydCrest, for example which links and campaigns bring visitors. We do not use advertising
+        cookies, and nothing is used to show you personalised adverts.
       </p>
       <h3>What we record</h3>
       <ul>
@@ -161,8 +163,20 @@ export default function PrivacyPage() {
       </ul>
       <h3>Who can see it</h3>
       <p>
-        Analytics are stored in our own database. Only SydCrest administrators can read them, mostly as
-        daily totals. We never sell them or share them with advertisers.
+        Our own analytics are stored in our own database. Only SydCrest administrators can read them,
+        mostly as daily totals. We never sell them or share them with advertisers.
+      </p>
+      <h3>Google Analytics</h3>
+      <p>
+        Google Analytics receives, from each page you open: the kind of page (the same pattern as
+        above, never which person&rsquo;s profile), the campaign tags in the link you arrived from
+        (such as &ldquo;utm_source=whatsapp&rdquo;), your device and browser type, your approximate
+        location (country or city) and a random code kept in a Google Analytics cookie. Google
+        processes this for us under its{" "}
+        <a href="https://business.safety.google/adsprocessorterms/">data processing terms</a> and its{" "}
+        <a href="https://policies.google.com/privacy">privacy policy</a>. Advertising storage, advert
+        personalisation and Google signals are switched off. Google Analytics data is kept for 14
+        months.
       </p>
       <h3>Cookies we use for analytics</h3>
       <ul>
@@ -176,11 +190,16 @@ export default function PrivacyPage() {
         <li>
           <strong>sc_analytics</strong>: remembers if you turned analytics off.
         </li>
+        <li>
+          <strong>_ga</strong> and <strong>_ga_</strong> followed by a code: Google Analytics cookies
+          holding a random visitor code, kept for up to 2 years.
+        </li>
       </ul>
       <h3>Turning analytics off</h3>
       <p>
-        If your browser sends Do Not Track or Global Privacy Control, we record no analytics from it.
-        You can also turn analytics off for this browser here. Signing in or out does not change it.
+        If your browser sends Do Not Track or Global Privacy Control, we record no analytics from it
+        and Google Analytics is not loaded. You can also turn analytics off for this browser here; that
+        turns off Google Analytics too. Signing in or out does not change it.
       </p>
       <AnalyticsChoice />
 
@@ -221,7 +240,8 @@ export default function PrivacyPage() {
           only to the number on your account.
         </li>
         <li>
-          <strong>Google</strong>, only if you choose to sign in with Google.
+          <strong>Google</strong>, if you choose to sign in with Google, and for Google Analytics as
+          described in <a href="#analytics">Analytics</a>.
         </li>
       </ul>
       <p>
