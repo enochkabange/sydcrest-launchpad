@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { gaPageLocation, gaPageTitle, measurementId } from "./google";
+import { gaPageLocation, gaPageTitle, gaReferrer, measurementId } from "./google";
 
 describe("measurementId", () => {
   it("accepts a GA4 id and trims it", () => {
@@ -44,5 +44,25 @@ describe("gaPageTitle", () => {
 
   it("uses the route on pages that may name a person", () => {
     expect(gaPageTitle("/u/[slug]", "Abdul-Rahman Iddrisu · SydCrest")).toBe("/u/[slug]");
+  });
+});
+
+describe("gaReferrer", () => {
+  const origin = "https://sydcrest.com";
+
+  it("uses our previous cleaned address when there is one", () => {
+    expect(gaReferrer("https://sydcrest.com/u/[slug]", "https://sydcrest.com/u/amina-seidu", origin)).toBe(
+      "https://sydcrest.com/u/[slug]",
+    );
+  });
+
+  it("keeps only the origin of another site, or of our own on first load", () => {
+    expect(gaReferrer(null, "https://www.google.com/search?q=sydcrest", origin)).toBe("https://www.google.com/");
+    expect(gaReferrer(null, "https://sydcrest.com/u/amina-seidu", origin)).toBe("https://sydcrest.com/");
+  });
+
+  it("is empty with no referrer or a broken one", () => {
+    expect(gaReferrer(null, "", origin)).toBeUndefined();
+    expect(gaReferrer(null, "not a url", origin)).toBeUndefined();
   });
 });

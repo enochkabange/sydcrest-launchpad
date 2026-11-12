@@ -62,6 +62,7 @@ function ensureLoaded(id: string): GtagWindow["gtag"] {
   w.gtag("js", new Date());
   w.gtag("config", id, {
     send_page_view: false,
+    page_location: `${location.origin}/`,
     allow_google_signals: false,
     allow_ad_personalization_signals: false,
   });
@@ -73,13 +74,40 @@ function ensureLoaded(id: string): GtagWindow["gtag"] {
   return w.gtag;
 }
 
-/** Browser only. Records a GA4 page view for a route pattern; does nothing without a measurement id. */
+/**
+ * The referrer Google receives: our own previous page as its cleaned address,
+ * or only the origin of another site (enough to attribute the visit).
+ */
+export function gaReferrer(previous: string | null, documentReferrer: string, origin: string): string | undefined {
+  if (previous) return previous;
+  if (!documentReferrer) return undefined;
+  try {
+    const ref = new URL(documentReferrer);
+    return ref.origin === origin ? `${origin}/` : `${ref.origin}/`;
+  } catch {
+    return undefined;
+  }
+}
+
+let previousLocation: string | null = null;
+
+/**
+ * Browser only. Records a GA4 page view for a route pattern; does nothing
+ * without a measurement id. The cleaned address, referrer and title are
+ * set on the tag itself (not just on this event), so every later hit,
+ * including GA4's automatic enhanced measurement events, carries them
+ * instead of the real address.
+ */
 export function gaPageView(route: string) {
   const id = measurementId();
   if (!id) return;
   const gtag = ensureLoaded(id);
-  gtag?.("event", "page_view", {
-    page_location: gaPageLocation(location.origin, route, location.search),
+  const pageLocation = gaPageLocation(location.origin, route, location.search);
+  gtag?.("set", {
+    page_location: pageLocation,
+    page_referrer: gaReferrer(previousLocation, document.referrer, location.origin),
     page_title: gaPageTitle(route, document.title),
   });
+  gtag?.("event", "page_view");
+  previousLocation = pageLocation;
 }
