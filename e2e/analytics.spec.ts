@@ -2,6 +2,7 @@ import { expect, test } from "@playwright/test";
 import { confirmationLink } from "./mailpit";
 import { testPhone } from "./learners";
 
+// CI builds without NEXT_PUBLIC_GA_MEASUREMENT_ID, so Google Analytics stays off here (src/lib/analytics/google.ts).
 test("visitors get a first party anonymous id and no third party trackers", async ({ page, context, baseURL }) => {
   const origin = new URL(baseURL!).origin;
   const thirdParty: string[] = [];
