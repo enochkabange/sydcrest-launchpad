@@ -7,9 +7,13 @@ attributes, failures, UX signals, retention and daily rollups. Admin
 dashboards (issue #243) read the rollups described in section 5.
 
 Google Analytics 4 runs alongside it when `NEXT_PUBLIC_GA_MEASUREMENT_ID` is
-set (`src/lib/analytics/google.ts`, epic #320). It is fed by the same page
-view tracker, so it sees only route patterns and campaign tags, and the same
-opt outs turn it off. Everything else stays first party. The privacy page
+set (`src/lib/analytics/google.ts`, epic #320). The page view tracker loads
+the Google tag after the same opt out check, so Do Not Track, GPC and the
+`/privacy` switch keep it off. Once loaded, the tag follows the GA4
+property's settings: page views with the full address and title, and
+enhanced measurement. Founder decision, 12 November 2026. If those settings
+change, update `/privacy#google-analytics`. Everything else stays first
+party. The privacy page
 (`/privacy#analytics`) is the public description of all of this; keep it in
 step.
 

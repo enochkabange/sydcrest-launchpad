@@ -78,10 +78,11 @@ export default function PrivacyPage() {
         </li>
         <li>
           Analytics about how the platform is used: which pages are opened, which features are used and
-          whether they worked, how fast pages load, and errors. These never include your name, email
-          address, phone number or anything you type. We record these ourselves and also use Google
-          Analytics. The <a href="#analytics">Analytics</a> section below explains exactly what is
-          recorded and how to turn it off.
+          whether they worked, how fast pages load, and errors. Our own analytics never include your
+          name, email address, phone number or anything you type. We also use Google Analytics, which
+          records more, including the full address and title of each page. The{" "}
+          <a href="#analytics">Analytics</a> section below explains exactly what is recorded and how to
+          turn it off.
         </li>
       </ul>
       <p>We do not ask for and do not want sensitive data such as your health, religion or finances.</p>
@@ -121,7 +122,9 @@ export default function PrivacyPage() {
       <p>
         We run our own analytics, and we also use Google Analytics to understand how people find and
         use SydCrest, for example which links and campaigns bring visitors. We do not use advertising
-        cookies, and nothing is used to show you personalised adverts.
+        cookies, and nothing is used to show you personalised adverts. What follows under &ldquo;What
+        we record&rdquo; is our own analytics; <a href="#google-analytics">Google Analytics</a> is
+        described separately below.
       </p>
       <h3>What we record</h3>
       <ul>
@@ -166,17 +169,42 @@ export default function PrivacyPage() {
         Our own analytics are stored in our own database. Only SydCrest administrators can read them,
         mostly as daily totals. We never sell them or share them with advertisers.
       </p>
-      <h3>Google Analytics</h3>
+      <h3 id="google-analytics">Google Analytics</h3>
       <p>
-        Google Analytics receives, from each page you open: the kind of page (the same pattern as
-        above, never which person&rsquo;s profile), the campaign tags in the link you arrived from
-        (such as &ldquo;utm_source=whatsapp&rdquo;), your device and browser type, your approximate
-        location (country or city) and a random code kept in a Google Analytics cookie. Google
-        processes this for us under its{" "}
+        Google Analytics runs on every page of SydCrest except the administrators&rsquo; pages. It
+        collects more than our own analytics. From each visit, Google receives:
+      </p>
+      <ul>
+        <li>
+          <strong>The pages you open:</strong> the full web address, including the address of a public
+          profile, and the page title, which on a public profile includes that person&rsquo;s name. Email
+          addresses in a web address are removed by Google before they are stored.
+        </li>
+        <li>
+          <strong>Where you came from:</strong> the previous page or site, and campaign tags in the link
+          (such as &ldquo;utm_source=whatsapp&rdquo;).
+        </li>
+        <li>
+          <strong>What you do on a page:</strong> how far you scroll, links you click that leave
+          SydCrest, files you download, videos you play, searches on the site, and when you start or send
+          a form. Not what you type into a form.
+        </li>
+        <li>
+          <strong>Your device:</strong> device and browser type, screen size, language, and approximate
+          location (country or city) worked out from your internet address. Google does not give us your
+          internet address.
+        </li>
+        <li>
+          <strong>A random code</strong> kept in Google Analytics cookies, so visits from the same
+          browser can be counted together.
+        </li>
+      </ul>
+      <p>
+        Google processes this for us under its{" "}
         <a href="https://business.safety.google/adsprocessorterms/">data processing terms</a> and its{" "}
-        <a href="https://policies.google.com/privacy">privacy policy</a>. Advertising storage, advert
-        personalisation and Google signals are switched off. Google Analytics data is kept for 14
-        months.
+        <a href="https://policies.google.com/privacy">privacy policy</a>, and may store it outside
+        Ghana. Advertising storage, advert personalisation and Google signals are switched off, so it is
+        not used to show you adverts. Google Analytics data is kept for 14 months.
       </p>
       <h3>Cookies we use for analytics</h3>
       <ul>
