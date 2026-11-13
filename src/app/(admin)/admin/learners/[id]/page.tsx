@@ -6,6 +6,7 @@ import { requireAdmin } from "@/lib/admin";
 import { eventLabel } from "@/lib/insights/metrics";
 import { daysAgo, deviceLabel, hourBandLabel, percent, stageLabel, turnUpRate } from "@/lib/learners/attributes";
 import { MULTI, SINGLE, fromRow, type MultiKey, type SingleKey } from "@/lib/learner-profile";
+import { bandLabel, biggestGap, PARTS, WEIGHTS } from "@/lib/readiness/score";
 import { regionLabel } from "@/lib/regions";
 
 export const metadata: Metadata = { title: "Learner", robots: { index: false } };
@@ -60,13 +61,14 @@ async function Learner({ params }: Pick<PageProps<"/admin/learners/[id]">, "para
   const { id } = await params;
   if (!UUID.test(id)) notFound();
   const { supabase } = await requireAdmin();
-  const [head, attrs, about, touch, progress, timeline] = await Promise.all([
+  const [head, attrs, about, touch, progress, timeline, readiness] = await Promise.all([
     supabase.rpc("admin_learner", { p_profile_id: id }),
     supabase.from("learner_attributes").select("*").eq("profile_id", id).maybeSingle(),
     supabase.from("learner_profiles").select("*").eq("profile_id", id).maybeSingle(),
     supabase.from("profile_first_touch").select("*").eq("profile_id", id).maybeSingle(),
     supabase.rpc("admin_learner_progress", { p_profile_id: id }),
     supabase.from("events").select("id, name, route, props, created_at").eq("profile_id", id).order("created_at", { ascending: false }).limit(60),
+    supabase.rpc("admin_learner_readiness", { p_profile_id: id }),
   ]);
   const person = head.data?.[0];
   if (!person) notFound();
@@ -152,6 +154,67 @@ async function Learner({ params }: Pick<PageProps<"/admin/learners/[id]">, "para
           }
         />
       </div>
+
+      <section aria-labelledby="readiness-heading" className="flex flex-col gap-3">
+        <div className="flex flex-col gap-1">
+          <h2 id="readiness-heading" className="text-h2 text-content">
+            Readiness
+          </h2>
+          <p className="max-w-reading text-sm text-content-2">
+            Per track, from verified skills, progress, approved work, recent learning and profile. Staff only; the weights are a
+            proposal. <Link href="/admin/readiness" className="text-content-link underline">How it works and the fairness check</Link>
+          </p>
+        </div>
+        {readiness.data?.length ? (
+          <ul className="grid gap-3 lg:grid-cols-2">
+            {readiness.data.map((r) => {
+              const gap = biggestGap(r);
+              return (
+                <li key={r.roadmap_slug} data-testid="readiness-row" className="flex flex-col gap-2 rounded-lg border border-line bg-surface p-4">
+                  <div className="flex flex-wrap items-baseline justify-between gap-2">
+                    <span className="font-semibold text-content">{r.roadmap_title}</span>
+                    <span className="text-content tabular-nums">
+                      <strong>{bandLabel(r.band)}</strong> · {r.score} of 100
+                    </span>
+                  </div>
+                  <dl className="grid grid-cols-[minmax(0,1fr)_auto] gap-x-4 gap-y-1 text-sm">
+                    {PARTS.map((part) => {
+                      const off = (part.key === "skills" && r.skills_total === 0) || (part.key === "progress" && r.topics_total === 0);
+                      const detail =
+                        part.key === "skills"
+                          ? `${r.skills_verified} of ${r.skills_total} skills`
+                          : part.key === "progress"
+                            ? `${r.topics_done} of ${r.topics_total} topics`
+                            : part.key === "portfolio"
+                              ? `${r.portfolio_pieces} approved`
+                              : part.key === "activity"
+                                ? `${r.active_days_30} days`
+                                : [r.about_complete && "About you", r.profile_public && "public"].filter(Boolean).join(", ") || "not yet";
+                      return (
+                        <div key={part.key} className="contents">
+                          <dt className="text-content-2">
+                            {part.label} <span className="text-content-3">({detail})</span>
+                          </dt>
+                          <dd className="text-end font-semibold text-content tabular-nums">
+                            {off ? "Not counted" : `${Number(r[`${part.key}_points`])} / ${WEIGHTS[part.key]}`}
+                          </dd>
+                        </div>
+                      );
+                    })}
+                  </dl>
+                  <p className="text-sm text-content-2">
+                    {gap ? `Biggest gain: ${PARTS.find((p) => p.key === gap)?.label.toLowerCase()}.` : "Every part is complete."}
+                    {r.points_available < 100 && ` Scored out of ${r.points_available} points this track can give.`} Worked out{" "}
+                    {r.computed_at.slice(0, 10)}.
+                  </p>
+                </li>
+              );
+            })}
+          </ul>
+        ) : (
+          <p className="text-content-2">No readiness yet: it is worked out daily once a learner starts or chooses a track.</p>
+        )}
+      </section>
 
       <section className="flex flex-col gap-3">
         <h2 className="text-h2 text-content">Roadmaps</h2>

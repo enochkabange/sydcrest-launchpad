@@ -212,6 +212,16 @@ export default function PrivacyPage() {
         administrators can see it; employers cannot. You can see your own, and it is deleted with your
         account.
       </p>
+      <h3 id="readiness-score">Readiness score</h3>
+      <p>
+        Once a day we also work out a readiness score from 0 to 100 for each track you follow or chose
+        in About you. It counts the skills you have verified for the track, the topics you have
+        finished, your approved portfolio work, the days you learned in the last 30, and whether your
+        About you goal and public profile are filled in. It never uses your region, device, internet,
+        study times, age, education or work preferences. For now only our staff can see it, while we
+        check that it is fair to every group of learners; it is not shown to you or to employers yet,
+        and we will ask your consent before any employer sees it. It is deleted with your account.
+      </p>
       <h3>Who can see it</h3>
       <p>
         Our own analytics are stored in our own database. Only SydCrest administrators can read them,

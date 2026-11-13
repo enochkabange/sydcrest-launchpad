@@ -420,3 +420,16 @@ each route's first load chunks and fails when a page in `perf-budget.json`
 is over its budget or missing from the build. Budgets started about 10%
 above the 14 Nov 2026 sizes; `--suggest` prints fresh numbers. Raise a
 budget only on purpose, and say why in the PR.
+## 13. Readiness score v1 and the fairness report (epic #320, step 5; #328)
+
+`public.readiness_scores`: one row per learner per track (a published roadmap
+they started a topic in, or listed in About you), with the score, band and
+every part. Rebuilt by `private.refresh_readiness()` inside the daily
+`run_analytics_maintenance` (its result gains a `readiness` count). Weights
+live in `private.readiness_weights()`, mirrored in
+`src/lib/readiness/score.ts` (a unit test keeps them equal and checks the
+refresh never reads a Never attribute). Admin only: `/admin/readiness`
+(`admin_readiness_report`, the fairness check) and a Readiness block on
+`/admin/learners/[id]` (`admin_learner_readiness`). Not shown to learners
+(#337) or employers, and not used for matching (#336) yet. No events.
+Model card, inputs, limits and the fairness review: `docs/readiness.md`.
