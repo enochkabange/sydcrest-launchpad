@@ -291,6 +291,9 @@ export const EVENTS = {
   invite_sent: { feature: "sharing", source: "server", props: { method: oneOf(["copy", "share"]) } },
   notification_opened: { feature: "notifications", source: "server", props: {} },
   notifications_read_all: { feature: "notifications", source: "server", props: {} },
+
+  // Experiments (issue #327): written by public.record_experiment_exposure, once per person per experiment
+  experiment_exposed: { feature: "experiments", source: "server", props: { experiment: slug(), variant: slug() } },
 } as const satisfies Record<string, Spec>;
 
 export type EventName = keyof typeof EVENTS;

@@ -209,6 +209,22 @@ export default function PrivacyPage() {
         administrators can see it; employers cannot. You can see your own, and it is deleted with your
         account.
       </p>
+      <h3 id="experiments">Testing changes</h3>
+      <p>
+        Sometimes we try a change, such as a new welcome page or a reminder message, on a random share
+        of people and compare it with everyone else, to learn whether it really helps. The share is
+        picked by chance from your account (or, if you are signed out, from a random code on your
+        device), so you always see the same version. We note which version you got and whether you came
+        back in the following week; nothing else is collected for a test. We never test prices or
+        access to learning: everyone can always reach every lesson.
+      </p>
+      <p>
+        One test runs now: a weekly WhatsApp reminder goes to members who said yes to messages and went
+        quiet, and one in ten of them, picked by chance, do not get it, so we can tell whether it helps.
+        Because this happens on our side and not in your browser, the choice of who gets the reminder is
+        noted even if you turned analytics off. If you turned analytics off, the website shows you the
+        usual version of anything we are testing and records nothing about it.
+      </p>
       <h3>Who can see it</h3>
       <p>
         Our own analytics are stored in our own database. Only SydCrest administrators can read them,
@@ -340,6 +356,10 @@ export default function PrivacyPage() {
         <li>
           <strong>Analytics events:</strong> 13 months, then deleted automatically. Daily totals made
           from them, which do not identify anyone, are kept so we can see trends over time.
+        </li>
+        <li>
+          <strong>Which version of a test you got:</strong> kept with your account while we look at the
+          results, and deleted with your account.
         </li>
         <li>
           <strong>Backups:</strong> our hosting provider keeps backups for a limited time, after which

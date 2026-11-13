@@ -389,3 +389,56 @@ exact email; `admin_learners`) and `/admin/learners/[id]` (`admin_learner`,
 first touch and last 60 events, which admins read under RLS). Admin only;
 everyone else gets a 404. Support actions and an audit log of who opened
 which learner come with the People console (#332).
+
+## 13. Experiments, holdouts and feature flags (issue #327)
+
+One first party mechanism, no outside service. `public.experiments` holds a
+`key` (lower case words), 2 to 6 `variants` (`[{code, weight}]`, whole number
+weights), a `status` (`draft`, then `running`, then `stopped`; never back,
+enforced by a trigger, and variants are fixed once started) and a `metric`.
+The **first variant is the control**: what everyone gets while the
+experiment is not running, and what anyone who turned analytics off gets.
+
+| Kind | How |
+|---|---|
+| A/B test | `control:50, change:50` (or three ways) |
+| Holdout | the change first, then a held out share, e.g. `nudge:90, holdout:10` |
+| Feature flag | `off:90, on:10`; the `on` weight is the rollout percent. Widening it keeps everyone who was already on |
+
+**Assignment** (`src/lib/experiments/assign.ts`): the first 32 bits of
+`sha256("<key>:<subject>")` scaled to a bucket 0 to 9999, then the weights in
+order. The subject is the profile id when signed in, else the `sc_aid`
+anonymous id, so a visitor who signs up may move variant once. No SQL copy of
+the hash: nothing in the database assigns.
+
+**In code:** `variant(key)` from `src/lib/experiments/server.ts` in a Server
+Component or Server Action. It returns `null` when no such experiment is
+running, so test for the change (`(await variant("new_welcome")) === "on"`).
+Opted out (DNT, GPC, `sc_analytics=off`) or no subject yet (first visit):
+the control, nothing recorded. Otherwise the variant, and the first
+exposure is recorded after the response through
+`public.record_experiment_exposure`: one `experiment_assignments` row per
+person per experiment and one `experiment_exposed` event (`experiment`,
+`variant`), so any dashboard can split by variant. The service role (the
+re-engagement job) may name the profile; a signed in caller is always
+themselves.
+
+**Re-engagement holdout:** `reengage_holdout` is seeded running with
+`nudge:90, holdout:10` and metric `active_7d`. `/api/cron/reengage` assigns
+each learner due a nudge; the holdout gets no message (`heldOut` in the job's
+summary) and is recorded; the nudge arm is recorded once a message was sent.
+The job has no browser, so it cannot see a device's analytics switch; the
+privacy page says so. Stop the experiment at `/admin/experiments` to nudge
+everyone again.
+
+**Dashboard** (`/admin/insights/experiments`, `admin_insights_experiments`,
+CSV `experiments`): every experiment that is not a draft, per variant: people
+first exposed in the range; *seven days passed* (exposed at least 7 days
+ago); *came back* among those. `came_back_7d` = any event of theirs on a later
+UTC day within 7 days of exposure (for changes people meet while using the
+platform); `active_7d` = any event in the 7 days after exposure (for messages
+to people who are away). The exposure event and bot traffic never count.
+Shares show from `MIN_SAMPLE` measured people; the difference from the
+control shows in percentage points with a two proportion z test ("unlikely
+to be chance" under p 0.05). Admins create, start and stop experiments at
+`/admin/experiments`. Never test prices or access to learning.

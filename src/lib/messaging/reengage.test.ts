@@ -71,7 +71,7 @@ describe("runReengage", () => {
       send: (c) => sendWhatsApp(c.phone, "reengage", { name: "x", url: "y" }, { client, env: ENV }),
     });
     expect(store.consentingLearners).toHaveBeenCalledWith("2026-10");
-    expect(summary).toEqual({ considered: 2, sent: 1, skipped: 1, failed: 0 });
+    expect(summary).toEqual({ considered: 2, sent: 1, skipped: 1, failed: 0, heldOut: 0 });
     expect(client.sent.map((m) => m.to)).toEqual(["whatsapp:+233241234567"]);
     expect(marked).toEqual(["u1"]);
   });
@@ -89,7 +89,7 @@ describe("runReengage", () => {
     vi.spyOn(console, "warn").mockImplementation(() => {});
     const { store, marked } = fakeStore([wumpini, mariama], { u1: { ...quiet }, u2: { ...quiet } });
     const summary = await runReengage({ store, version: "v", now: NOW, send: (c) => sendWhatsApp(c.phone, "reengage", {}, { env: {} }) });
-    expect(summary).toEqual({ considered: 2, sent: 0, skipped: 2, failed: 0 });
+    expect(summary).toEqual({ considered: 2, sent: 0, skipped: 2, failed: 0, heldOut: 0 });
     expect(marked).toEqual([]);
   });
 
@@ -104,5 +104,27 @@ describe("runReengage", () => {
     });
     expect(summary.failed).toBe(1);
     expect(marked).toEqual([]);
+  });
+
+  it("holds out the holdout arm: no message, no nudge mark, the arm noted", async () => {
+    const client = createFakeClient();
+    const { store, marked } = fakeStore([wumpini, mariama], { u1: { ...quiet }, u2: { ...quiet } });
+    const noted: string[] = [];
+    const summary = await runReengage({
+      store,
+      version: "v",
+      now: NOW,
+      send: (c) => sendWhatsApp(c.phone, "reengage", {}, { client, env: ENV }),
+      experiment: {
+        arm: (c) => (c.profileId === "u2" ? "holdout" : "nudge"),
+        record: async (c, arm) => {
+          noted.push(`${c.profileId}:${arm}`);
+        },
+      },
+    });
+    expect(summary).toEqual({ considered: 2, sent: 1, skipped: 0, failed: 0, heldOut: 1 });
+    expect(client.sent.map((m) => m.to)).toEqual(["whatsapp:+233241234567"]);
+    expect(marked).toEqual(["u1"]);
+    expect(noted).toEqual(["u1:nudge", "u2:holdout"]);
   });
 });
