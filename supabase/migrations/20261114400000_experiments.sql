@@ -170,8 +170,6 @@ create unique index experiment_assignments_anonymous_key
   on public.experiment_assignments (experiment_id, anonymous_id) where anonymous_id is not null;
 create index experiment_assignments_profile_idx on public.experiment_assignments (profile_id);
 create index experiment_assignments_exposed_idx on public.experiment_assignments (experiment_id, exposed_at);
--- The dashboard looks up a visitor's later events by their anonymous id.
-create index events_anonymous_created_idx on public.events (anonymous_id, created_at) where anonymous_id is not null;
 
 alter table public.experiment_assignments enable row level security;
 
