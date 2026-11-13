@@ -2,7 +2,7 @@
 -- admin, and the admin numbers come out right on a small seeded set.
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(45);
+select plan(49);
 
 insert into auth.users (id, instance_id, aud, role, email, raw_user_meta_data, created_at, updated_at)
 values ('11111111-1111-1111-1111-111111111111', '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated',
@@ -82,7 +82,7 @@ select ok(
 select is(
   (select count(*)::int from pg_proc p join pg_namespace n on n.oid = p.pronamespace
     where n.nspname = 'public' and p.proname like 'admin\_insights\_%'),
-  27, 'twenty seven report functions');
+  31, 'thirty one report functions');
 select ok(
   not has_function_privilege('anon', 'public.admin_insights_overview(date, date, text, text, uuid, uuid, text)', 'execute'),
   'signed out visitors cannot call a report function');
@@ -99,7 +99,9 @@ select throws_ok(format('select * from public.%I(current_date - 7, current_date)
     'admin_insights_topics', 'admin_insights_questions', 'admin_insights_reviews', 'admin_insights_features',
     'admin_insights_cohorts', 'admin_insights_at_risk', 'admin_insights_earn', 'admin_insights_earn_daily',
     'admin_insights_outcomes', 'admin_insights_community', 'admin_insights_community_daily', 'admin_insights_chapters',
-    'admin_insights_error_daily', 'admin_insights_errors', 'admin_insights_failures', 'admin_insights_vitals'
+    'admin_insights_error_daily', 'admin_insights_errors', 'admin_insights_failures', 'admin_insights_vitals',
+    'admin_insights_vitals_connection', 'admin_insights_loads_connection', 'admin_insights_slow_routes',
+    'admin_insights_learn_connection'
   ]) as f;
 select throws_ok($$ select public.admin_insights_rollups_to() $$, '42501', null, 'rollups_to refuses a learner');
 reset role;

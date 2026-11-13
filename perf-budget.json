@@ -1,0 +1,19 @@
+{
+  "$comment": "First load JavaScript per key page, gzip bytes, about 10% above the sizes on 14 Nov 2026 (issue #331). Checked in CI after pnpm build by scripts/perf-budget-cli.ts; --suggest prints new numbers.",
+  "unit": "gzip_bytes",
+  "routes": {
+    "/": 188416,
+    "/login": 180224,
+    "/signup": 181248,
+    "/start": 192512,
+    "/path": 192512,
+    "/dashboard": 189440,
+    "/learn": 188416,
+    "/learn/[slug]/[node]": 199680,
+    "/roadmaps": 189440,
+    "/roadmaps/[slug]": 196608,
+    "/roadmaps/[slug]/[node]": 189440,
+    "/skills/[slug]/quiz": 190464,
+    "/opportunities": 189440
+  }
+}

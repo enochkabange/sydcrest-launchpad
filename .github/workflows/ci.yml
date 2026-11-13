@@ -57,6 +57,8 @@ jobs:
           # Public values only; placeholders are enough for a build check.
           NEXT_PUBLIC_SUPABASE_URL: http://localhost:54321
           NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ci-placeholder
+      - name: Page weight budget (first load JavaScript of key pages, perf-budget.json)
+        run: pnpm tsx scripts/perf-budget-cli.ts
 
   migrations:
     name: Migrations

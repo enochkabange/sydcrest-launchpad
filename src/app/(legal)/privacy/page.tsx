@@ -187,7 +187,10 @@ export default function PrivacyPage() {
           device, so we can count visits without knowing who you are.
         </li>
         <li>
-          <strong>Page speed:</strong> on about a quarter of visits, how quickly pages load and respond.
+          <strong>Page speed:</strong> on about a quarter of visits, how quickly pages load and respond,
+          with your connection speed type as your browser reports it (such as 2G, 3G or 4G) and whether
+          data saver is on. The connection speed type is also noted when each visit starts. We use it
+          only to find pages that are slow on weak connections, never to judge you.
         </li>
         <li>
           <strong>Forms:</strong> whether a form, such as an application, was started and whether it

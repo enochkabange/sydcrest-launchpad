@@ -101,8 +101,8 @@ recorded by the server; browser events come through the beacon.
 |---|---|---|---|
 | `page_view` | browser | none | Route in the `route` column. |
 | `visit_started` | browser | `utm_source`, `utm_medium`, `utm_campaign`, `utm_content` (slugs), `referrer` (direct, internal, search, whatsapp, facebook, instagram, linkedin, x, tiktok, youtube, telegram, email, other), `deep_link` | Once per tab session, before its first `page_view`; the landing route is in `route`. See section 9. |
-| `session_started` | browser | `hour_band` (night, morning, afternoon, evening, late; local clock), `weekday`, `days_since_last` (count; absent on a browser's first session), `returning` | Once per tab session with `visit_started`; the last session's date is kept in localStorage (`sc_last_day`). See section 11. |
-| `web_vital` | browser | `metric` (LCP, INP, CLS, FCP, TTFB), `value` (ms; CLS unitless), `rating`, `navigation` | 25% of sessions. |
+| `session_started` | browser | `hour_band` (night, morning, afternoon, evening, late; local clock), `weekday`, `days_since_last` (count; absent on a browser's first session), `returning`, `connection`, `save_data` (section 13) | Once per tab session with `visit_started`; the last session's date is kept in localStorage (`sc_last_day`). See section 11. |
+| `web_vital` | browser | `metric` (LCP, INP, CLS, FCP, TTFB), `value` (ms; CLS unitless), `rating`, `navigation`, `connection`, `save_data` (section 13) | 25% of sessions. |
 | `form_started` / `form_submitted` | browser | `form` | First input in a tagged form, and its submit. |
 | `share_clicked` | browser | `target` (achievement, certificate, roadmap, ...), `channel` (share, copy, download, ...) | |
 | `client_error` | browser | `kind` (boundary, error, rejection), `message` (scrubbed, 120 chars), `error` (class), `digest` | |
@@ -390,7 +390,38 @@ first touch and last 60 events, which admins read under RLS). Admin only;
 everyone else gets a 404. Support actions and an audit log of who opened
 which learner come with the People console (#332).
 
-## 13. Audience messaging and the chapter lead toolkit (epic #320, #334 and #335)
+## 13. Low bandwidth and low end devices (issue #331)
+
+**Connection class.** `web_vital` and `session_started` carry
+`connection` (`slow-2g`, `2g`, `3g`, `4g` or `unknown`) from
+`navigator.connection.effectiveType` and `save_data` (flag, absent when the
+browser does not say) from `navigator.connection.saveData`
+(`src/lib/analytics/connection.ts`). Only Chromium browsers expose the
+Network Information API; Safari and Firefox are `unknown`. Other events take
+the connection of their tab session's `session_started` (joined on
+`session_id`). Slow means `slow-2g`, `2g` or `3g`; fast means `4g` (which
+the browser also reports for wifi). Connection is report only: it never
+enters `learner_attributes` or any score.
+
+**Reports** (Reliability dashboard, migration `20261114600000_low_bandwidth.sql`,
+all with the usual seven argument signature; only the device filter applies):
+
+| Function | What |
+|---|---|
+| `admin_insights_slow_routes` | The five pages with the widest LCP p75 gap between slow and fast connections (five LCP samples each side at least), with the INP gap |
+| `admin_insights_vitals_connection` | Web Vitals p75 and ratings by connection type and device |
+| `admin_insights_loads_connection` | Sessions, page views, browser errors and server render errors by session connection and device |
+| `admin_insights_learn_connection` | Lessons opened and left, read to the end (scroll at least 90%), median time and scroll, quizzes sent and passed, by connection class |
+
+**Page weight budget.** After `pnpm build`, CI runs
+`pnpm tsx scripts/perf-budget-cli.ts`: it reads
+`.next/diagnostics/route-bundle-stats.json` (written by `next build`), gzips
+each route's first load chunks and fails when a page in `perf-budget.json`
+is over its budget or missing from the build. Budgets started about 10%
+above the 14 Nov 2026 sizes; `--suggest` prints fresh numbers. Raise a
+budget only on purpose, and say why in the PR.
+
+## 14. Audience messaging and the chapter lead toolkit (epic #320, #334 and #335)
 
 Staff send from `/admin/messages`; a chapter's leads send from
 `/chapters/[slug]/lead`. Everything goes through definer functions
