@@ -421,7 +421,7 @@ each route's first load chunks and fails when a page in `perf-budget.json`
 is over its budget or missing from the build. Budgets started about 10%
 above the 14 Nov 2026 sizes; `--suggest` prints fresh numbers. Raise a
 budget only on purpose, and say why in the PR.
-## 13. Readiness score v1 and the fairness report (epic #320, step 5; #328)
+## 14. Readiness score v1 and the fairness report (epic #320, step 5; #328)
 
 `public.readiness_scores`: one row per learner per track (a published roadmap
 they started a topic in, or listed in About you), with the score, band and
@@ -434,7 +434,7 @@ refresh never reads a Never attribute). Admin only: `/admin/readiness`
 `/admin/learners/[id]` (`admin_learner_readiness`). Not shown to learners
 (#337) or employers, and not used for matching (#336) yet. No events.
 Model card, inputs, limits and the fairness review: `docs/readiness.md`.
-## 13. Early warning and the mentor caseload (#325, #330)
+## 15. Early warning and the mentor caseload (#325, #330)
 
 `private.refresh_learner_risk()` runs inside `run_analytics_maintenance`
 right after the learner attributes (result key `risk`). It writes one row
@@ -481,7 +481,7 @@ Early warning, Mentors and Learners flagged now on `/admin/insights/cohorts`
 `admin_insights_risk_learners`). "Came back" counts alerts for going quiet
 raised at least 14 days ago, split by whether a contact was logged first. It
 is a plain comparison, not an experiment.
-## 13. Content quality and the rewrite queue (epic #320, issue #326)
+## 16. Content quality and the rewrite queue (epic #320, issue #326)
 
 Which lessons and quiz questions confuse learners, and why. Admin only:
 `/admin/content/quality` (linked from `/admin/content`).
@@ -522,7 +522,7 @@ least 5 attempts), read before 3 or more fails, skimmed (median scroll under
 half over 10 visits), many Study Buddy questions (half a question per visit,
 5 or more). Nothing is flagged below its minimum sample. The queue is the ten
 flagged items with the highest score, lessons and questions together.
-## 13. Experiments, holdouts and feature flags (issue #327)
+## 17. Experiments, holdouts and feature flags (issue #327)
 
 One first party mechanism, no outside service. `public.experiments` holds a
 `key` (lower case words), 2 to 6 `variants` (`[{code, weight}]`, whole number
@@ -576,7 +576,7 @@ control shows in percentage points, and from `COMPARE_MIN` (30) measured
 people in both arms a two proportion z test says "unlikely to be chance"
 (p under 0.05) or "could still be chance"; below that, "too early to tell". Admins create, start and stop experiments at
 `/admin/experiments`. Never test prices or access to learning.
-## 13. Outcome check ins and impact reports (epic #320, #329)
+## 18. Outcome check ins and impact reports (epic #320, #329)
 
 `public.outcome_checkins`: one row per learner, finish and milestone (3, 6 or
 12 months). A finish is a cohort ending (start plus seven days per programme
