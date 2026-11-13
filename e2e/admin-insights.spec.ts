@@ -103,7 +103,7 @@ test("admins read every dashboard with exact numbers and download CSV; learners 
       await expect(page.getByRole("region", { name: "By cohort" }).locator("tr").filter({ hasText: `Insights cohort ${tag}` })).toBeVisible();
       await expect(page.getByRole("region", { name: "Learners at risk" }).locator("tr").filter({ hasText: learner.name })).toBeVisible();
 
-      const href = await page.getByRole("link", { name: "Download CSV" }).last().getAttribute("href");
+      const href = await page.getByRole("region", { name: "Learners at risk" }).getByRole("link", { name: "Download CSV" }).getAttribute("href");
       expect(href).toContain("table=at_risk");
       const res = await page.request.get(href!);
       expect(res.status()).toBe(200);
