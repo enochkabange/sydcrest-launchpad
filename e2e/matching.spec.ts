@@ -50,7 +50,8 @@ test("a learner sees why an opportunity fits them and what would improve the fit
     await expect(page.getByRole("heading", { name: "Why this fits you" })).toBeVisible();
     await expect(page.getByText(`Your readiness for ${roadmap.title} (Data): Getting started.`)).toBeVisible();
     await expect(page.getByRole("heading", { name: "What would improve your fit" })).toBeVisible();
-    await expect(page.getByText(`Finish the next topic in ${roadmap.title}.`)).toBeVisible();
+    // The next step depends on the shared skill catalogue: a Data skill to verify, else the next topic.
+    await expect(page.getByText(new RegExp(`^(Finish the next topic in ${roadmap.title}\\.|Verify .+: take its quiz)`))).toBeVisible();
 
     // Visitors see the listing without any of it.
     await page.context().clearCookies();

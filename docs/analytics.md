@@ -401,7 +401,7 @@ live in `private.readiness_weights()`, mirrored in
 refresh never reads a Never attribute). Admin only: `/admin/readiness`
 (`admin_readiness_report`, the fairness check) and a Readiness block on
 `/admin/learners/[id]` (`admin_learner_readiness`). Not shown to learners
-(#337) or employers, and not used for matching (#336) yet. No events.
+(#337) or employers, except through matching (section 14). No events.
 Model card, inputs, limits and the fairness review: `docs/readiness.md`.
 
 ## 14. Matching explanations (epic #320; #336)
