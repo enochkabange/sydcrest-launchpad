@@ -5,6 +5,7 @@ import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { track, trackMany, trackRefusal } from "@/lib/analytics/track";
 import { classifyError, errorCode } from "@/lib/analytics/refusal";
+import { LESSON_FEEDBACK_REASONS, type LessonFeedbackReason } from "@/lib/analytics/events";
 import { achievementShareTarget } from "@/lib/share/card";
 import { biggestMilestone, sectionIdOf } from "@/lib/share/milestones";
 import { SITE_URL } from "@/lib/site";
@@ -151,7 +152,8 @@ export async function submitQuiz(_prev: CompletionState, form: FormData): Promis
       : []),
     ...Object.entries(outcome.results).map(([questionId, correct]) => ({
       name: "quiz_question_answered" as const,
-      props: { node_id: nodeId, question_id: questionId, correct },
+      // The option picked and the attempt's result: which wrong answers tempt, and whether strong learners miss it (#326).
+      props: { node_id: nodeId, question_id: questionId, correct, choice: answers[questionId], passed: data.passed },
     })),
   ]);
   if (!outcome.passed) return { outcome, at: Date.now() };
@@ -190,4 +192,43 @@ export async function markComplete(_prev: CompletionState, form: FormData): Prom
   refresh();
   // Marking by hand is personal tracking: it never offers a share card.
   return { unlocked: { ...unlocked, share: null }, at: Date.now() };
+}
+
+export type LessonFeedbackState = { clear?: boolean; reason?: LessonFeedbackReason | null; message?: string };
+
+function asReason(value: unknown): LessonFeedbackReason | null {
+  return typeof value === "string" && (LESSON_FEEDBACK_REASONS as readonly string[]).includes(value)
+    ? (value as LessonFeedbackReason)
+    : null;
+}
+
+/**
+ * "Was this lesson clear?" (#326): yes, or not really with an optional reason
+ * from a fixed list. One answer per lesson; tapping again replaces it. The
+ * database takes identity from auth.uid().
+ */
+export async function giveLessonFeedback(_prev: LessonFeedbackState, form: FormData): Promise<LessonFeedbackState> {
+  await requireUser();
+  const nodeId = String(form.get("node_id") ?? "");
+  const picked = asReason(form.get("reason"));
+  // A reason tapped on its own is a "not really" answer.
+  const answer = form.get("clear") ?? (picked ? "no" : null);
+  if (!UUID.test(nodeId) || (answer !== "yes" && answer !== "no")) {
+    await trackRefusal("lesson_feedback_given", "validation", "bad_input");
+    return { message: "We couldn't save that. Try again." };
+  }
+  const clear = answer === "yes";
+  const reason = clear ? null : picked;
+  const supabase = await createClient();
+  const { error } = await supabase.rpc("give_lesson_feedback", {
+    p_node_id: nodeId,
+    p_clear: clear,
+    ...(reason ? { p_reason: reason } : {}),
+  });
+  if (error) {
+    await trackRefusal("lesson_feedback_given", classifyError(error), errorCode(error));
+    return { message: friendly(error.code, "We couldn't save that. Try again.") };
+  }
+  await track("lesson_feedback_given", { node_id: nodeId, clear, ...(reason ? { reason } : {}) });
+  return { clear, reason };
 }

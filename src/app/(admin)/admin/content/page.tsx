@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { getMyProfile } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { Alert } from "@/components/ui/alert";
+import Link from "@/components/ui/link";
 import { contentModel } from "@/lib/content-generation/config";
 import { createAnthropic } from "@/lib/content-generation/server";
 import { CollectForm, GenerateForm, type BatchOption } from "./content-forms";
@@ -42,6 +43,12 @@ async function ContentAdmin() {
   return (
     <>
       <h1 className="text-title text-content">Node content</h1>
+      <p className="text-content-2">
+        Which lessons and questions confuse learners?{" "}
+        <Link href="/admin/content/quality" className="font-semibold text-content-link hover:underline">
+          Open the rewrite queue
+        </Link>
+      </p>
       {!hasKey && (
         <Alert tone="info">AI generation is off: ANTHROPIC_API_KEY is not set. You can still estimate costs.</Alert>
       )}

@@ -6,6 +6,7 @@
 export const ADMIN_SECTIONS: { href: string; label: string; description: string }[] = [
   { href: "/admin/roadmaps", label: "Roadmaps", description: "Create and edit roadmaps, their nodes and links, and publish them." },
   { href: "/admin/content", label: "Content", description: "Review explanations and practice tasks for roadmap nodes." },
+  { href: "/admin/content/quality", label: "Rewrite queue", description: "Lessons and quiz questions most worth fixing, with the evidence: answers, wrong answers, lesson feedback and Study Buddy questions." },
   { href: "/admin/applications", label: "Applications", description: "Review programme applications and accept, waitlist or decline them." },
   { href: "/admin/opportunities", label: "Opportunities", description: "Post and edit jobs, internships, scholarships, grants and gigs for the public board." },
   { href: "/admin/events", label: "Events", description: "Create events, add joining links and recordings, and open host tools." },

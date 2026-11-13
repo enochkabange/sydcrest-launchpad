@@ -540,6 +540,7 @@ and the record in another from lg. Every page checks `requireAdmin` itself.
 | `/admin/skills/reviewers` | Appoint portfolio reviewers (D3, #248) | Make reviewer (by sign in email) | Lists names only; remove with one button. |
 | `/admin/roadmaps`, `/new`, `/[id]`, `/[id]/nodes/[nodeId]`, `/links` | Author roadmaps, nodes, links; link health | publish | |
 | `/admin/content` | Generate and review node content | estimate / submit | Needs the AI key (503 otherwise). |
+| `/admin/content/quality` | Rewrite queue: lessons and questions most worth fixing, with the evidence | change window | Counts only (#326, `docs/analytics.md` §13). |
 | `/admin/certificates` | Find and revoke certificates | revoke | |
 | `/admin/reports` | Act on profile and post reports | resolve / unpublish | |
 | `/admin/funnel`, `/admin/impact` | Read the funnel and the North Star | none | Dashboards are #243. |
@@ -621,6 +622,7 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/admin/sponsorships` | page | 8 Admin |
 | `/admin/cohorts/[id]` | page | 8 Admin |
 | `/admin/cohorts` | page | 8 Admin |
+| `/admin/content/quality` | page | 8 Admin |
 | `/admin/content` | page | 8 Admin |
 | `/admin/events/[id]` | page | 8 Admin |
 | `/admin/events/new` | page | 8 Admin |

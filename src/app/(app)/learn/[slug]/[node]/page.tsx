@@ -22,7 +22,9 @@ import { getMyProgress } from "@/lib/roadmaps/progress";
 import { StudyBuddy } from "@/components/study-buddy/study-buddy";
 import { isStudyBuddyConfigured } from "@/lib/study-buddy/chat";
 import { getStudyBuddyAllowance } from "@/lib/study-buddy/data";
-import { markComplete, startNode, submitQuiz } from "./actions";
+import { giveLessonFeedback, markComplete, startNode, submitQuiz } from "./actions";
+import { LessonFeedback } from "@/components/learn/lesson-feedback";
+import { reasonOf } from "@/lib/content-quality/reasons";
 import { TopicOutline } from "./topic-outline";
 import { TrackedLink } from "@/components/analytics/track";
 import { LessonReading } from "@/components/learn/lesson-reading";
@@ -80,7 +82,7 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
   const node = nodes?.find((n) => n.slug === nodeSlug);
   if (!nodes || !node) notFound();
 
-  const [{ data: content }, { data: resources }, { data: quiz }, { data: progress }, allProgress] = await Promise.all([
+  const [{ data: content }, { data: resources }, { data: quiz }, { data: progress }, allProgress, { data: feedback }] = await Promise.all([
     supabase
       .from("node_content")
       .select("explanation_md, practice_task_md, outcomes, worked_example_md, key_terms, common_mistakes, self_check")
@@ -101,6 +103,8 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
       .maybeSingle(),
     // Every status for the outline beside the lesson; one cached query shared with its progress marks.
     getMyProgress(),
+    // The learner's answer to "Was this lesson clear?", so a reload shows it (#326).
+    supabase.from("lesson_feedback").select("clear, reason").eq("profile_id", user.id).eq("node_id", node.id).maybeSingle(),
   ]);
 
   const ordered = byPosition(nodes);
@@ -281,6 +285,12 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
             />
           )}
         </Section>
+
+        <LessonFeedback
+          nodeId={node.id}
+          initial={feedback ? { clear: feedback.clear, reason: reasonOf(feedback.reason) } : null}
+          action={giveLessonFeedback}
+        />
 
         <LessonReading roadmap={roadmap.slug} nodeId={node.id} done={done} />
 

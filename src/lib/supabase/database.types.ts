@@ -2304,6 +2304,51 @@ export type Database = {
           },
         ]
       }
+      lesson_feedback: {
+        Row: {
+          clear: boolean
+          created_at: string
+          id: string
+          node_id: string
+          profile_id: string
+          reason: string | null
+          updated_at: string
+        }
+        Insert: {
+          clear: boolean
+          created_at?: string
+          id?: string
+          node_id: string
+          profile_id: string
+          reason?: string | null
+          updated_at?: string
+        }
+        Update: {
+          clear?: boolean
+          created_at?: string
+          id?: string
+          node_id?: string
+          profile_id?: string
+          reason?: string | null
+          updated_at?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "lesson_feedback_node_id_fkey"
+            columns: ["node_id"]
+            isOneToOne: false
+            referencedRelation: "roadmap_nodes"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "lesson_feedback_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       mentor_contacts: {
         Row: {
           created_at: string
@@ -5041,6 +5086,49 @@ export type Database = {
           window_ends_on: string
         }[]
       }
+      admin_content_lessons: {
+        Args: { p_days?: number }
+        Returns: {
+          buddy_chats: number
+          buddy_code: number
+          buddy_deep: number
+          buddy_long: number
+          buddy_messages: number
+          buddy_why: number
+          clear_no: number
+          clear_yes: number
+          left_before_fail: number
+          median_ms: number
+          median_scroll: number
+          node_id: string
+          quiz_attempts: number
+          quiz_fails: number
+          roadmap_slug: string
+          top_reason: string
+          topic_title: string
+          visits: number
+        }[]
+      }
+      admin_content_questions: {
+        Args: { p_days?: number }
+        Returns: {
+          answers: number
+          correct: number
+          failed_answers: number
+          failed_correct: number
+          node_id: string
+          passed_answers: number
+          passed_correct: number
+          prompt: string
+          question_id: string
+          roadmap_slug: string
+          topic_title: string
+          wrong_choice: number
+          wrong_choice_count: number
+          wrong_option: string
+          wrong_with_choice: number
+        }[]
+      }
       admin_find_profile_by_email: {
         Args: { p_email: string }
         Returns: {
@@ -6268,6 +6356,10 @@ export type Database = {
           visits: number
           week_start: string
         }[]
+      }
+      give_lesson_feedback: {
+        Args: { p_clear: boolean; p_node_id: string; p_reason?: string }
+        Returns: undefined
       }
       grade_submission: {
         Args: {

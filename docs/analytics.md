@@ -116,9 +116,9 @@ recorded by the server; browser events come through the beacon.
 | Auth | `signup` (method), `sign_in` (method), `sign_out`, `welcome_completed`, `password_reset_requested`, `password_updated` |
 | Settings | `profile_updated` (has_region), `public_profile_updated` (is_public), `learner_profile_saved` (answered, changed), `profile_field_updated` (field), `profile_published`, `whatsapp_consent_set` (on), `display_prefs_saved`, `milestone_posts_set` (on) |
 | Onboarding and path | `waitlist_joined`, `quiz_run` (signed_in), `path_saved`, `path_viewed` |
-| Learn | `lesson_opened` (roadmap, node_id; every open), `node_started` (first open), `quiz_submitted` (node_id, score, passed), `node_completed` (roadmap, node_id, via), `lesson_left` (browser: roadmap, node_id, time_spent_ms visible, scroll_percent, done_before), `resource_opened` (browser: node_id, kind), `quiz_question_answered` (node_id, question_id, correct; one per question), `quiz_retried` (node_id, passed, passed_before) |
+| Learn | `lesson_opened` (roadmap, node_id; every open), `node_started` (first open), `quiz_submitted` (node_id, score, passed), `node_completed` (roadmap, node_id, via), `lesson_left` (browser: roadmap, node_id, time_spent_ms visible, scroll_percent, done_before), `resource_opened` (browser: node_id, kind), `quiz_question_answered` (node_id, question_id, correct, choice, passed; one per question), `quiz_retried` (node_id, passed, passed_before) |
 | Discovery | `search_performed` (browser: scope topics, results; never the words), `filter_applied` (browser: scope roadmaps or opportunities, filter, results) |
-| Review and Study Buddy | `review_completed` (items, correct), `weekly_goal_set` (goal), `study_buddy_message` (turn) |
+| Review and Study Buddy | `review_completed` (items, correct), `weekly_goal_set` (goal), `study_buddy_message` (turn, node_id, kind), `lesson_feedback_given` (node_id, clear, reason) |
 | Skills | `skill_quiz_submitted` (passed, score), `skill_portfolio_submitted`, `skill_portfolio_reviewed` (decision), `path_skills_claimed` (claimed) |
 | Programme and cohort | `application_submitted`, `application_withdrawn`, `application_decided` (decision), `specialisation_chosen` (specialisation), `submission_saved` (sent), `submission_graded` (passed), `deadline_met` (kind cohort_task, hours_early), `deadline_missed` (kind, hours_late), `submission_resubmitted` (attempt), `peer_review_assigned`, `peer_review_submitted`, `learner_deferred`, `certificate_issued`, `certificate_revoked` |
 | Mentoring | `mentor_contact_logged` (kind: message, call or session; logged from the caseload) |
@@ -361,7 +361,7 @@ check-ins in the computed attributes step), `message_replied`,
 `mentor_feedback_given`, `cv_updated`, `mock_interview_rated`,
 `interview_reported` / `offer_reported` / `hired_reported` (outcomes cover part
 of this), `employer_feedback_given`, `still_employed_checked` (#329),
-`feedback_given` (#326), `app_installed` / `offline_used`.
+`app_installed` / `offline_used`.
 
 ## 12. Learner attributes and the learner view (epic #320, step 4)
 
@@ -481,3 +481,44 @@ Early warning, Mentors and Learners flagged now on `/admin/insights/cohorts`
 `admin_insights_risk_learners`). "Came back" counts alerts for going quiet
 raised at least 14 days ago, split by whether a contact was logged first. It
 is a plain comparison, not an experiment.
+## 13. Content quality and the rewrite queue (epic #320, issue #326)
+
+Which lessons and quiz questions confuse learners, and why. Admin only:
+`/admin/content/quality` (linked from `/admin/content`).
+
+**New and changed events** (from 14 Nov 2026; older rows lack the new props
+and count only where they can):
+
+| Event | Props | Notes |
+|---|---|---|
+| `quiz_question_answered` | adds `choice` (option index picked), `passed` (the attempt's result) | Makes discrimination a filtered count and shows the most chosen wrong answer. |
+| `study_buddy_message` | adds `node_id` (the topic, when the chat is about one), `kind` (`routine`, `long`, `intent` for why or compare, `code`) | `kind` is the model router's reason. The message text is never recorded. |
+| `lesson_feedback_given` | `node_id`, `clear`, `reason` (`confusing`, `too_long`, `too_short`, `missing_example`, `broken_link`) | Server. The answer itself lives in `public.lesson_feedback`. |
+
+**Table:** `public.lesson_feedback` (profile_id, node_id, clear, reason), one
+row per learner per lesson, written only by `give_lesson_feedback` (identity
+from `auth.uid()`, published topics only, 60 taps per 10 minutes). Learners
+read their own; deleted with the account. On `/privacy#lesson-feedback`.
+
+**Functions** (security definer, `private.is_admin()` or 42501; counts only):
+- `admin_content_questions(p_days)`: per question, answers and right overall,
+  in passed and in failed attempts, and the most chosen wrong option with its
+  current text.
+- `admin_content_lessons(p_days)`: per topic, `lesson_left` visits with median
+  visible time and scroll; quiz attempts and fails; `left_before_fail` (failed
+  quizzes whose learner's most recent `lesson_left` in the 24 hours before was
+  this topic; the quiz sits on the lesson page and `lesson_left` fires on
+  leaving, so this is the lesson read just before going on to fail); feedback
+  yes, not really and the top reason; Study Buddy messages, chats begun, deep
+  turns (fifth message on) and kinds.
+
+**Scoring** (`src/lib/content-quality/rank.ts`, unit tested): difficulty =
+share right; discrimination = share right in passed attempts minus share
+right in failed ones. Flags: confuses strong learners (passed attempts right
+under 60%), does not separate (gap under 10 points), hard (under 40% right),
+common wrong answer (one option draws 60% of wrong answers). Lessons: not
+clear (30% or more of at least 3 answers), quiz often failed (half of at
+least 5 attempts), read before 3 or more fails, skimmed (median scroll under
+half over 10 visits), many Study Buddy questions (half a question per visit,
+5 or more). Nothing is flagged below its minimum sample. The queue is the ten
+flagged items with the highest score, lessons and questions together.
