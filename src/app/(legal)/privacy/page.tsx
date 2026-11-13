@@ -466,7 +466,8 @@ export default function PrivacyPage() {
       <ul>
         <li>
           <strong>Account details, date of birth, consent record and progress:</strong> for as long
-          as your account is open. When you delete your account we delete it straight away, apart from what is listed under{" "}
+          as your account is open. When you delete your account we wait 30 days, in case you change
+          your mind, and then delete it, apart from what is listed under{" "}
           <a href="#your-rights">Your rights</a> and anything the law requires us to keep.
         </li>
         <li>
@@ -505,9 +506,9 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>Delete</strong> your account and personal data. You can do this yourself:{" "}
-          <strong>Delete my account</strong> on your profile. We delete your account, your personal
-          data and the files you uploaded straight away; it cannot be undone, so download your data
-          first if you want a copy. We keep only the certificates we issued you, so anyone you shared one
+          <strong>Delete my account</strong> on your profile. We wait 30 days, and you can cancel
+          from your profile until then. After that we delete your account, your personal data and the
+          files you uploaded. We keep only the certificates we issued you, so anyone you shared one
           with can still check it is real (they show the name and programme on the certificate, and
           are no longer linked to an account), daily totals that never identify anyone, and a record
           that an account was deleted on that date, without your name or details.

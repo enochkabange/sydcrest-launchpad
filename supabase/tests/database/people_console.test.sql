@@ -57,8 +57,9 @@ select throws_ok(
 
 select is((public.request_account_deletion()).status, 'pending', 'a member asks to delete their account');
 select ok(
-  (select delete_after <= now() + interval '1 minute' from public.deletion_requests where status = 'pending'),
-  'due at once: no grace period (founder decision)');
+  (select delete_after between now() + interval '30 days' - interval '1 minute' and now() + interval '30 days' + interval '1 minute'
+     from public.deletion_requests where status = 'pending'),
+  'with 30 days to change their mind');
 select is((select count(*)::int from public.deletion_requests), 1, 'and reads their own request');
 select is(
   (public.request_account_deletion()).id,
@@ -112,7 +113,7 @@ reset role;
 
 update public.deletion_requests set delete_after = now() - interval '1 minute' where status = 'pending';
 insert into public.deletion_requests (profile_id, delete_after) values ('22222222-2222-2222-2222-222222222222', now() - interval '1 minute');
-select is((select count(*)::int from public.due_deletion_requests()), 2, 'the job finds requests past their seven days');
+select is((select count(*)::int from public.due_deletion_requests()), 2, 'the job finds requests past their 30 days');
 
 -- What the job does after the Auth API deletes the user.
 delete from auth.users where id = '22222222-2222-2222-2222-222222222222';

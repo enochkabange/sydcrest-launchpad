@@ -9,8 +9,7 @@ type Step = { error: { message: string } | null };
 
 /**
  * Daily step of /api/cron/reengage (issue #333): deletes the accounts whose
- * deletion is due (at once: no grace period, founder decision 13 Nov 2026)
- * and was not finished by the delete action. For each: remove their uploaded files
+ * 30 day grace period has passed. For each: remove their uploaded files
  * (submissions and credentials buckets; a failure here does not block the
  * deletion), delete the Auth user (the profile and everything personal
  * cascades; certificates stay verifiable with no holder), then stamp the

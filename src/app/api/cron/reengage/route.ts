@@ -22,8 +22,8 @@ import { SITE_URL } from "@/lib/site";
  * except the reengage_holdout share, who get none (issue #327).
  * Then runs analytics maintenance (rollups and 13 month retention, issue
  * #242), here because the plan allows two crons, the outcome check ins
- * due today (#329), and any account deletions the delete action could not
- * finish (issue #333; no grace period). Each step is isolated: one failing does not stop the
+ * due today (#329), and deletes accounts whose 30 day grace period has
+ * passed (issue #333). Each step is isolated: one failing does not stop the
  * others.
  */
 export async function GET(request: Request) {
