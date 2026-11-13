@@ -5120,6 +5120,46 @@ export type Database = {
           visits: number
         }[]
       }
+      admin_insights_learn_connection: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          connection: string
+          lessons_left: number
+          lessons_opened: number
+          median_scroll: number
+          median_time_ms: number
+          quizzes: number
+          quizzes_passed: number
+          read_to_end: number
+        }[]
+      }
+      admin_insights_loads_connection: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          client_errors: number
+          connection: string
+          device_class: string
+          page_views: number
+          server_errors: number
+          sessions: number
+        }[]
+      }
       admin_insights_outcomes: {
         Args: {
           p_chapter?: string
@@ -5264,6 +5304,28 @@ export type Database = {
           signups: number
         }[]
       }
+      admin_insights_slow_routes: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          fast_inp: number
+          fast_lcp: number
+          fast_samples: number
+          inp_gap: number
+          lcp_gap: number
+          route: string
+          slow_inp: number
+          slow_lcp: number
+          slow_samples: number
+        }[]
+      }
       admin_insights_topics: {
         Args: {
           p_chapter?: string
@@ -5302,6 +5364,27 @@ export type Database = {
           p75: number
           poor: number
           route: string
+          samples: number
+        }[]
+      }
+      admin_insights_vitals_connection: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          connection: string
+          device_class: string
+          good: number
+          metric: string
+          needs_improvement: number
+          p75: number
+          poor: number
           samples: number
         }[]
       }
