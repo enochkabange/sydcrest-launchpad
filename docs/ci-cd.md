@@ -10,13 +10,17 @@ to production, plus a staging database that Vercel previews read from.
 
 ## 1. How it flows
 
-1. Open a PR. `ci.yml` runs **Checks** (lint, typecheck, unit tests, build) and
+1. Open a PR. `ci.yml` runs **Checks** (lint, typecheck, unit tests with a
+   coverage report in the job summary, build) and
    **Migrations** (every migration applied from scratch on a throwaway local
    Supabase, database linter, pgTAP security tests, generated types up to date)
    and **E2E** (Playwright drives a production build against a local Supabase
    at phone and desktop widths; confirmation emails are read from Mailpit).
+   `test-guard.yml` runs the **Test guard**: a PR that changes app code or adds
+   a migration must change a test too, or carry the `no-tests-needed` label.
 2. If the PR touches `supabase/migrations`, `staging-db.yml` pushes them to the
-   staging project so the PR's Vercel preview works.
+   staging project so the PR's Vercel preview works (`--include-all`, so a
+   migration staging missed is applied too).
 3. Vercel builds a preview for the PR (against staging, behind Vercel login).
 4. Merge to `main`. `pipeline.yml` re-runs the checks, then deploys in order:
    1. Database migrations to production.
@@ -83,8 +87,9 @@ and live in the workflow files.
 
 | File | Trigger | What it does |
 | --- | --- | --- |
-| `ci.yml` | PR to `main` | Checks + Migrations (required to merge), E2E (reporting; required once stable) |
-| `staging-db.yml` | PR touching migrations | `supabase db push` to staging |
+| `ci.yml` | PR to `main` | Checks + Migrations (required to merge), E2E (reporting; required once stable). Checks writes a unit test coverage report to the job summary |
+| `test-guard.yml` | PR opened, pushed or labelled | Fails when app code (`src/`, not content or generated types) or a migration changes and no test file does; the `no-tests-needed` label allows it |
+| `staging-db.yml` | PR touching migrations, or run by hand | `supabase db push --include-all` to staging |
 | `pipeline.yml` | push to `main` | verify, migrate prod, deploy Vercel, version check |
 | `uptime.yml` | every 30 minutes | fails (and emails) if the live site is down |
 | `dependabot.yml` | weekly / monthly | dependency and Actions update PRs |
@@ -95,6 +100,7 @@ and live in the workflow files.
 | --- | --- | --- |
 | Merged PR only | `pipeline.yml` gate | Any commit on `main` that did not come from a merged PR is not deployed, and an issue is opened |
 | Full suite before deploy | `pipeline.yml` | Production deploys only after lint, types, unit tests, audit, build, database tests (pgTAP, types in sync) and e2e all pass |
+| Test guard | `test-guard.yml` | Code changes, from people or agents, arriving without a unit, database or end to end test |
 | Migration guard | CI, staging push, pipeline | Editing or deleting a shipped migration; destructive SQL (drop, rename, type change, truncate, delete) without `-- allow-destructive: <reason>` on that line |
 | Secret scan before commit | `.husky/pre-commit` (secretlint via lint-staged) | Keys or passwords reaching a commit at all; the repo is public, so CI scanning alone is too late |
 | Secret scan | CI (gitleaks) | Keys or passwords committed in a PR |

@@ -1,0 +1,38 @@
+name: Test guard
+
+# A PR that changes app code (src/) or adds a migration must change a test
+# too: a unit test, a database test or an end to end test. Agents' PRs are
+# checked the same way as anyone's. When no test makes sense (copy, styling),
+# add the "no-tests-needed" label and say why; the label re-runs this check.
+# Rules: scripts/test-guard.ts.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, labeled, unlabeled]
+
+concurrency:
+  group: test-guard-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    name: Test guard
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Code changes come with a test
+        env:
+          # Through env, never interpolated into the script: label names are user text.
+          LABELS: ${{ toJSON(github.event.pull_request.labels.*.name) }}
+          BASE: origin/${{ github.base_ref }}
+        run: pnpm tsx scripts/test-guard-cli.ts "$BASE" "$LABELS"
