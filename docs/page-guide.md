@@ -531,6 +531,8 @@ and the record in another from lg. Every page checks `requireAdmin` itself.
 | `/admin/organisations` | Verify organisations | verify / reject | |
 | `/admin/outcomes` | Verify reported outcomes | verify | Feeds `/impact`. |
 | `/admin/insights`, `/funnel`, `/retention`, `/learning`, `/features`, `/cohorts`, `/earn`, `/community`, `/reliability` | Read reporting dashboards | filter, download CSV | Filters in the URL; definitions at the foot of each (#243, `docs/analytics.md` §8). |
+| `/admin/insights/experiments` | Read each experiment's variants and how many came back | download CSV | "Not enough data yet" until a variant has enough measured people (#327, `docs/analytics.md` §13). |
+| `/admin/experiments` | Create, start and stop experiments, holdouts and flags | save as draft, start, stop | Draft to running to stopped, never back; the split is fixed once started. |
 | `/admin/opportunities`, `/new`, `/[id]` | Curate the public board | post | |
 | `/admin/events`, `/new`, `/[id]` | Create events, links, recordings | create | |
 | `/admin/chapters`, `/new`, `/[id]` | Create chapters, appoint leads | appoint | |

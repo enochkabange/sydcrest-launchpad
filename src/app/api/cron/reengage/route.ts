@@ -1,5 +1,6 @@
 import { connection } from "next/server";
 import { runAnalyticsMaintenance } from "@/lib/analytics/maintenance";
+import { reengageHoldout } from "@/lib/experiments/reengage";
 import { createAdminClient } from "@/lib/messaging/admin";
 import { WHATSAPP_CONSENT_VERSION } from "@/lib/messaging/consent";
 import { isAuthorizedCron } from "@/lib/messaging/cron-auth";
@@ -11,7 +12,8 @@ import { SITE_URL } from "@/lib/site";
 
 /**
  * Daily re engagement nudge (scheduled in vercel.json). Messages consenting
- * learners who have been inactive for a week, at most once a week each.
+ * learners who have been inactive for a week, at most once a week each,
+ * except the reengage_holdout share, who get none (issue #327).
  * Then runs analytics maintenance (rollups and 13 month retention, issue
  * #242), here because the plan allows two crons. Each step is isolated: one
  * failing does not stop the other.
@@ -34,6 +36,7 @@ export async function GET(request: Request) {
     summary = await runReengage({
       store: supabaseReengageStore(admin),
       version: WHATSAPP_CONSENT_VERSION,
+      experiment: await reengageHoldout(admin),
       send: (learner) => sendWhatsApp(learner.phone, "reengage", { name: firstName(learner.displayName), url }),
     });
     console.info(`[messaging] reengage ${JSON.stringify(summary)}`);

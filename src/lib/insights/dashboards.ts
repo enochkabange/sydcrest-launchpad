@@ -18,7 +18,8 @@ export type DashboardSlug =
   | "cohorts"
   | "earn"
   | "community"
-  | "reliability";
+  | "reliability"
+  | "experiments";
 
 export type Dashboard = {
   slug: DashboardSlug;
@@ -40,6 +41,7 @@ export const DASHBOARDS: Dashboard[] = [
   { slug: "earn", href: "/admin/insights/earn", title: "Experts and Earn", description: "Bookings, briefs, pitches, response times and outcomes.", filters: PEOPLE, events: false },
   { slug: "community", href: "/admin/insights/community", title: "Community", description: "Posts, replies, RSVPs, check ins and chapters.", filters: ["region", "chapter"], events: false },
   { slug: "reliability", href: "/admin/insights/reliability", title: "Reliability", description: "Errors by page and action, failure rates, Web Vitals, and where slow connections hurt.", filters: ["device"], events: true },
+  { slug: "experiments", href: "/admin/insights/experiments", title: "Experiments", description: "Each experiment's variants, how many people met each, and how many came back.", filters: [], events: false },
 ];
 
 export function dashboard(slug: DashboardSlug): Dashboard {
@@ -264,6 +266,15 @@ export const TABLES = {
     columns: [
       ["connection", "Connection"], ["lessons_opened", "Lessons opened"], ["lessons_left", "Lessons left"], ["read_to_end", "Read to the end"],
       ["median_time_ms", "Median time (ms)"], ["median_scroll", "Median scroll (%)"], ["quizzes", "Quizzes sent"], ["quizzes_passed", "Quizzes passed"],
+    ],
+  },
+  experiments: {
+    dashboard: "experiments",
+    rpc: "admin_insights_experiments",
+    title: "Experiments by variant",
+    columns: [
+      ["experiment_key", "Experiment"], ["status", "Status"], ["metric", "Measure"], ["variant", "Variant"], ["weight", "Weight"],
+      ["people", "People"], ["measured", "Seven days passed"], ["came_back", "Came back"],
     ],
   },
 } satisfies Record<string, TableSpec>;

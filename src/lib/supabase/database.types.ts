@@ -1626,6 +1626,95 @@ export type Database = {
         }
         Relationships: []
       }
+      experiment_assignments: {
+        Row: {
+          anonymous_id: string | null
+          experiment_id: string
+          exposed_at: string
+          id: number
+          profile_id: string | null
+          variant: string
+        }
+        Insert: {
+          anonymous_id?: string | null
+          experiment_id: string
+          exposed_at?: string
+          id?: never
+          profile_id?: string | null
+          variant: string
+        }
+        Update: {
+          anonymous_id?: string | null
+          experiment_id?: string
+          exposed_at?: string
+          id?: never
+          profile_id?: string | null
+          variant?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "experiment_assignments_experiment_id_fkey"
+            columns: ["experiment_id"]
+            isOneToOne: false
+            referencedRelation: "experiments"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "experiment_assignments_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      experiments: {
+        Row: {
+          created_at: string
+          created_by: string | null
+          description: string
+          id: string
+          key: string
+          metric: string
+          started_at: string | null
+          status: string
+          stopped_at: string | null
+          variants: Json
+        }
+        Insert: {
+          created_at?: string
+          created_by?: string | null
+          description?: string
+          id?: string
+          key: string
+          metric?: string
+          started_at?: string | null
+          status?: string
+          stopped_at?: string | null
+          variants: Json
+        }
+        Update: {
+          created_at?: string
+          created_by?: string | null
+          description?: string
+          id?: string
+          key?: string
+          metric?: string
+          started_at?: string | null
+          status?: string
+          stopped_at?: string | null
+          variants?: Json
+        }
+        Relationships: [
+          {
+            foreignKeyName: "experiments_created_by_fkey"
+            columns: ["created_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       expert_applications: {
         Row: {
           created_at: string
@@ -5388,6 +5477,30 @@ export type Database = {
           subject: string
         }[]
       }
+      admin_insights_experiments: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          came_back: number
+          experiment_key: string
+          measured: number
+          metric: string
+          people: number
+          started_at: string
+          status: string
+          stopped_at: string
+          variant: string
+          variant_order: number
+          weight: number
+        }[]
+      }
       admin_insights_failures: {
         Args: {
           p_chapter?: string
@@ -6565,6 +6678,15 @@ export type Database = {
         Args: { p_context?: Json; p_events: Json }
         Returns: number
       }
+      record_experiment_exposure: {
+        Args: {
+          p_context?: Json
+          p_key: string
+          p_profile_id?: string
+          p_variant: string
+        }
+        Returns: boolean
+      }
       record_sign_in_failure: {
         Args: { p_address_key: string; p_pair_key: string }
         Returns: undefined
@@ -6665,6 +6787,7 @@ export type Database = {
       }
       rsvp_event: { Args: { p_event_id: string }; Returns: string }
       run_analytics_maintenance: { Args: { p_days?: number }; Returns: Json }
+      running_experiment: { Args: { p_key: string }; Returns: Json }
       save_submission: {
         Args: {
           p_body_text?: string

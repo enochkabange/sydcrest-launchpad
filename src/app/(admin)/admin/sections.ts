@@ -23,6 +23,7 @@ export const ADMIN_SECTIONS: { href: string; label: string; description: string 
   { href: "/admin/organisations", label: "Organisations", description: "Verify business accounts before they post or browse talent." },
   { href: "/admin/learners", label: "Learners", description: "Every learner by stage (active, slipping, dormant), and one page each: activity, progress, reliability, answers and recent activity." },
   { href: "/admin/readiness", label: "Readiness", description: "Readiness score v1 for staff: how it is worked out, how scores spread, and the fairness check by group." },
-  { href: "/admin/insights", label: "Insights", description: "Reporting dashboards: active people, funnel, retention, learning, features, cohorts, Earn, community and reliability." },
+  { href: "/admin/insights", label: "Insights", description: "Reporting dashboards: active people, funnel, retention, learning, features, cohorts, Earn, community, reliability and experiments." },
+  { href: "/admin/experiments", label: "Experiments", description: "Create, start and stop experiments, holdouts and feature flags; results are on the Experiments dashboard." },
   { href: "/admin/funnel", label: "Funnel", description: "See how visitors move from sign up to their first completed node." },
 ];
