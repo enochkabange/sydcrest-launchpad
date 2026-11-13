@@ -37,7 +37,13 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm lint
       - run: pnpm typecheck
-      - run: pnpm test
+      - run: pnpm test --coverage
+      - name: Coverage report (job summary; a report, not a gate)
+        if: always()
+        run: |
+          if [ -f coverage/coverage-summary.json ]; then
+            pnpm tsx scripts/coverage-summary.ts >> "$GITHUB_STEP_SUMMARY"
+          fi
       - name: Dependency audit (high and critical, production deps)
         run: pnpm audit --prod --audit-level high
       - name: Migration guard (shipped migrations untouched, new ones expand only)

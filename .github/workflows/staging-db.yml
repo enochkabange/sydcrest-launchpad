@@ -3,10 +3,15 @@ name: Staging database
 # Vercel previews read the staging project, so a PR that adds a migration
 # needs it applied there before its preview works. An abandoned PR can leave a
 # migration behind on staging; that is acceptable for a test database.
+#
+# --include-all: migrations from PRs merged in another order (or abandoned)
+# can leave staging missing an older file; plain `db push` then refuses to
+# apply anything. Staging is a test database, so apply them in file order.
 on:
   pull_request:
     branches: [main]
-    paths: [supabase/migrations/**]
+    paths: [supabase/migrations/**, .github/workflows/staging-db.yml]
+  workflow_dispatch:
 
 concurrency:
   group: staging-db
@@ -35,9 +40,10 @@ jobs:
           node-version: 24
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm tsx scripts/migration-guard-cli.ts "origin/${{ github.base_ref }}"
+      - if: github.event_name == 'pull_request'
+        run: pnpm tsx scripts/migration-guard-cli.ts "origin/${{ github.base_ref }}"
       - uses: supabase/setup-cli@v3
         with:
           version: 2.114.0 # keep in step with the local CLI; generated types depend on it
       - run: supabase link --project-ref "$STAGING_REF"
-      - run: supabase db push
+      - run: supabase db push --include-all
