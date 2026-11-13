@@ -32,7 +32,7 @@ test("admins find a learner and open their view; learners get a 404", async ({ p
   await page.getByRole("link", { name: "Salamatu Abdulai" }).click();
 
   await expect(page.getByRole("heading", { name: "Salamatu Abdulai", level: 1 })).toBeVisible();
-  await expect(page.getByText(/^New ·/)).toBeVisible();
+  await expect(page.getByText(/^New · .* · learner · joined /).first()).toBeVisible();
   await expect(page.getByRole("heading", { name: "Reliability and work" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "Recent activity" })).toBeVisible();
 });

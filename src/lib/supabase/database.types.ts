@@ -5306,9 +5306,7 @@ export type Database = {
         }[]
       }
       admin_learner: {
-        Args: {
-          p_profile_id: string
-        }
+        Args: { p_profile_id: string }
         Returns: {
           created_at: string
           display_name: string
@@ -5319,9 +5317,7 @@ export type Database = {
         }[]
       }
       admin_learner_progress: {
-        Args: {
-          p_profile_id: string
-        }
+        Args: { p_profile_id: string }
         Returns: {
           completed: number
           last_at: string
@@ -5333,11 +5329,7 @@ export type Database = {
         }[]
       }
       admin_learners: {
-        Args: {
-          p_limit?: number
-          p_search?: string
-          p_stage?: string
-        }
+        Args: { p_limit?: number; p_search?: string; p_stage?: string }
         Returns: {
           active_days_30: number
           display_name: string
