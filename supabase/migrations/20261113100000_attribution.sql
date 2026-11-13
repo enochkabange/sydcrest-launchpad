@@ -265,8 +265,9 @@ begin
      where v.name = 'visit_started'
        and coalesce(v.props ->> 'referrer', 'direct') <> 'internal'
     union all
-    select coalesce(private.visit_source(f.props), 'unknown'),
-           coalesce(private.visit_medium(f.props), 'unknown'),
+    -- No first touch: unknown (visit_source would read a missing visit as direct).
+    select case when f.props is null then 'unknown' else private.visit_source(f.props) end,
+           case when f.props is null then 'unknown' else private.visit_medium(f.props) end,
            f.props ->> 'utm_campaign',
            0,
            null,

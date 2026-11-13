@@ -203,7 +203,10 @@ test("share copies the link when the native share sheet is not available", async
   await page.goto(path);
   await page.getByRole("button", { name: "Share" }).click();
   await expect(page.getByText("Link copied.")).toBeVisible();
-  expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(new URL(path, baseURL).toString());
+  // Shared links carry campaign tags so visits from them count under the share (lib/analytics/attribution).
+  expect(await page.evaluate(() => navigator.clipboard.readText())).toBe(
+    `${new URL(path, baseURL).toString()}?utm_source=copy&utm_medium=share&utm_campaign=roadmap`,
+  );
 });
 
 // Issue #136: the marketing header pushed the page sideways at 768. Phone
