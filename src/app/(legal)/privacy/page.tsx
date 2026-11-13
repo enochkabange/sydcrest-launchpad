@@ -148,7 +148,8 @@ export default function PrivacyPage() {
       </ul>
       <p>
         When you create an account you give your consent to this policy. You can withdraw that
-        consent at any time by asking us to delete your account.
+        consent at any time by deleting your account from your profile (see{" "}
+        <a href="#your-rights">Your rights</a>).
       </p>
 
       <h2 id="analytics">Analytics</h2>
@@ -398,8 +399,9 @@ export default function PrivacyPage() {
       <ul>
         <li>
           <strong>Account details, date of birth, consent record and progress:</strong> for as long
-          as your account is open. When you ask us to delete your account, we delete this data within
-          30 days, apart from anything the law requires us to keep.
+          as your account is open. When you delete your account we wait 7 days, in case you change
+          your mind, and then delete it, apart from what is listed under{" "}
+          <a href="#your-rights">Your rights</a> and anything the law requires us to keep.
         </li>
         <li>
           <strong>AI tutor usage counts:</strong> up to 12 months.
@@ -422,18 +424,27 @@ export default function PrivacyPage() {
         </li>
       </ul>
 
-      <h2>Your rights</h2>
+      <h2 id="your-rights">Your rights</h2>
       <p>Under Act 843 you have the right to:</p>
       <ul>
         <li>
-          <strong>Access</strong> the personal data we hold about you and get a copy.
+          <strong>Access</strong> the personal data we hold about you and get a copy. You can do
+          this yourself: <strong>Download my data</strong> on your profile gives you a file with your
+          profile, About you answers, learner attributes, where you first came from, progress, a list
+          of your submissions, certificates, applications, outcomes and consents.
         </li>
         <li>
           <strong>Correct</strong> data that is wrong or out of date. You can change your name,
           region and phone number yourself on your profile page.
         </li>
         <li>
-          <strong>Delete</strong> your account and personal data.
+          <strong>Delete</strong> your account and personal data. You can do this yourself:{" "}
+          <strong>Delete my account</strong> on your profile. We wait 7 days, and you can cancel
+          from your profile until then. After that we delete your account, your personal data and the
+          files you uploaded. We keep only the certificates we issued you, so anyone you shared one
+          with can still check it is real (they show the name and programme on the certificate, and
+          are no longer linked to an account), daily totals that never identify anyone, and a record
+          that an account was deleted on that date, without your name or details.
         </li>
         <li>
           <strong>Object</strong> to how we use your data, or withdraw your consent.
@@ -447,8 +458,8 @@ export default function PrivacyPage() {
         </li>
       </ul>
       <p>
-        To use any of these rights, contact us at <PrivacyContact />. We may ask you to confirm who
-        you are before we act. We aim to reply within 21 days.
+        For anything you cannot do from your profile, contact us at <PrivacyContact />. We may ask
+        you to confirm who you are before we act. We aim to reply within 21 days.
       </p>
 
       <h2>Children</h2>
@@ -464,6 +475,14 @@ export default function PrivacyPage() {
         Data travels between your device and SydCrest over encrypted connections. Access to our
         database is limited by rules that only let each person see their own private data, and only
         a small number of SydCrest staff can reach it, for running the service.
+      </p>
+      <p id="audit-log">
+        When a SydCrest admin helps you, for example by finding your account, opening your page,
+        resending your confirmation email, changing your role, pausing your account or writing a
+        support note about what you asked, it is written to an audit log: which admin, what they
+        did, to whose account and when. The log cannot be edited, only admins can read it, and the
+        notes about you are cleared when your account is deleted. If your account is paused you
+        cannot sign in until an admin reactivates it.
       </p>
 
       <h2>Changes to this policy</h2>

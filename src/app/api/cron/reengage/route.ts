@@ -1,6 +1,7 @@
 import { connection } from "next/server";
 import { runAnalyticsMaintenance } from "@/lib/analytics/maintenance";
 import { reengageHoldout } from "@/lib/experiments/reengage";
+import { runAccountDeletions } from "@/lib/data-rights/deletion";
 import { createAdminClient } from "@/lib/messaging/admin";
 import { WHATSAPP_CONSENT_VERSION } from "@/lib/messaging/consent";
 import { isAuthorizedCron } from "@/lib/messaging/cron-auth";
@@ -19,8 +20,9 @@ import { SITE_URL } from "@/lib/site";
  * learners who have been inactive for a week, at most once a week each,
  * except the reengage_holdout share, who get none (issue #327).
  * Then runs analytics maintenance (rollups and 13 month retention, issue
- * #242), here because the plan allows two crons, and the outcome check ins
- * due today (#329). Each step is isolated: one failing does not stop the
+ * #242), here because the plan allows two crons, the outcome check ins
+ * due today (#329), and deletes accounts whose seven day grace period has
+ * passed (issue #333). Each step is isolated: one failing does not stop the
  * others.
  */
 export async function GET(request: Request) {
@@ -69,6 +71,8 @@ export async function GET(request: Request) {
     checkins = { error: "check ins failed" };
   }
 
-  const failed = "error" in summary || !analytics.ok || "error" in checkins;
-  return Response.json({ ...summary, analytics, checkins }, { status: failed ? 500 : 200 });
+
+  const deletions = await runAccountDeletions(admin);
+  const failed = "error" in summary || !analytics.ok || "error" in checkins || !deletions.ok;
+  return Response.json({ ...summary, analytics, checkins, deletions }, { status: failed ? 500 : 200 });
 }
