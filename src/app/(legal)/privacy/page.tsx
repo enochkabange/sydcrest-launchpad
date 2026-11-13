@@ -198,6 +198,17 @@ export default function PrivacyPage() {
           numbers and links removed.
         </li>
       </ul>
+      <h3 id="learner-summary">Your learning summary</h3>
+      <p>
+        Once a day we work out a short summary of each member&rsquo;s learning from the above and from
+        your progress, cohort work, event check ins and applications: when you were last active and how
+        often, the topics and quizzes you have finished, the part of the day you usually study, the
+        share of cohort work sent on time, events you went to or missed after saying yes, how many
+        opportunities you viewed and applied to, and where you first came from. We use it to support you
+        (for example, so a mentor can check in when you go quiet) and to improve SydCrest. Our
+        administrators can see it; employers cannot. You can see your own, and it is deleted with your
+        account.
+      </p>
       <h3>Who can see it</h3>
       <p>
         Our own analytics are stored in our own database. Only SydCrest administrators can read them,

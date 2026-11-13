@@ -361,3 +361,31 @@ check-ins in the computed attributes step), `message_replied`,
 `interview_reported` / `offer_reported` / `hired_reported` (outcomes cover part
 of this), `employer_feedback_given`, `still_employed_checked` (#329),
 `feedback_given` (#326), `app_installed` / `offline_used`.
+
+## 12. Learner attributes and the learner view (epic #320, step 4)
+
+`public.learner_attributes`: one row per member, rebuilt by
+`private.refresh_learner_attributes()` inside the daily
+`run_analytics_maintenance` (after first touches are linked, before the
+purge). Read by admins and by the member (own row); never by employers.
+
+| Group | Columns | From |
+|---|---|---|
+| Activity | `first_active_on`, `last_active_on`, `active_days_30`, `active_weeks_8`, `stage` | Signed in events (bots left out) |
+| Learning | `topics_started`, `topics_completed`, `quizzes_passed`, `avg_quiz_score`, `days_to_first_topic`, `quiz_retries_90` | `roadmap_progress`, `quiz_retried` |
+| Rhythm | `usual_hour_band` (last 60 days), `usual_device` (last 30 days) | `session_started`, events' device class |
+| Reliability | `deadlines_met`, `deadlines_missed`, `on_time_rate`, `resubmissions`, `events_going`, `events_attended`, `event_no_shows` | Step 3 events, `event_rsvps`, `event_checkins` |
+| Work | `opportunities_viewed_90`, `opportunities_applied` | `opportunity_viewed`, `opportunity_applications` (not withdrawn) |
+| Origin | `first_touch_source`, `first_touch_campaign` | `profile_first_touch` |
+
+**Stage** (UTC day of the refresh): `new` joined in the last 14 days;
+`not_started` older and never opened a topic; `active` active in the last 7
+days; `slipping` 8 to 21 days; `dormant` over 21 days. A no show is an
+event that has ended where the member said going and did not check in.
+
+**Learner view:** `/admin/learners` (by stage, search by part of a name or an
+exact email; `admin_learners`) and `/admin/learners/[id]` (`admin_learner`,
+`admin_learner_progress`, plus the member's attributes, About you answers,
+first touch and last 60 events, which admins read under RLS). Admin only;
+everyone else gets a 404. Support actions and an audit log of who opened
+which learner come with the People console (#332).
