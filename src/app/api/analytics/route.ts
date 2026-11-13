@@ -17,8 +17,8 @@ import { createClient } from "@/lib/supabase/server";
  * Refused: another site (Origin or Sec-Fetch-Site), bodies over 16 KB, and
  * more than the per address limit. Dropped without a write: Do Not Track,
  * Global Privacy Control and the visitor's own switch. Only browser events
- * (page_view, web_vital, form_started, form_submitted, share_clicked,
- * client_error) are accepted, each with its props checked; the database adds
+ * (page_view, visit_started, web_vital, form_started, form_submitted,
+ * share_clicked, client_error) are accepted, each with its props checked; the database adds
  * who the person is from the session.
  */
 

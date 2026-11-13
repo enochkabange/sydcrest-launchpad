@@ -184,7 +184,7 @@ export const FEATURE_LABELS: Record<string, string> = {
   social: "Following",
   sharing: "Sharing",
   notifications: "Notifications",
-  navigation: "Page views",
+  navigation: "Visits and page views",
   experience: "Forms and Web Vitals",
   failures: "Failures",
 };

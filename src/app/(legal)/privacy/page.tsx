@@ -139,6 +139,12 @@ export default function PrivacyPage() {
           address.
         </li>
         <li>
+          <strong>Where your visit came from:</strong> once per visit, the campaign tags in the link you
+          opened (such as &ldquo;utm_source=whatsapp&rdquo;; links shared from SydCrest carry them),
+          the kind of site that sent you (for example a search engine, WhatsApp or Facebook, never the
+          page itself), and the kind of page you landed on.
+        </li>
+        <li>
           <strong>Your device type:</strong> phone, tablet or computer. We do not keep your internet
           address or the details of your browser with your analytics.
         </li>
@@ -147,6 +153,11 @@ export default function PrivacyPage() {
           at the time of the event your role on SydCrest (for example learner, mentor or expert), the
           track you are following, your region, your chapter and your cohort. This lets us count people
           rather than clicks and see which groups a change helps.
+        </li>
+        <li>
+          <strong>When you create an account:</strong> where your first visit in the 30 days before came
+          from, as above, is kept with your account until you delete it, so we can see which chapters,
+          partners and shared links bring people who go on to learn and find work.
         </li>
         <li>
           <strong>If you are not signed in:</strong> a random visitor code kept in a cookie on your

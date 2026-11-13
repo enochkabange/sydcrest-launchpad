@@ -12,6 +12,7 @@
  * Must match private.is_event_name() in supabase/migrations (a unit test
  * checks), and docs/analytics.md describes each event.
  */
+import { REFERRERS } from "./attribution";
 
 // Field kinds ---------------------------------------------------------------------
 
@@ -99,6 +100,18 @@ type Spec = {
 export const EVENTS = {
   // Navigation and experience (browser)
   page_view: { feature: "navigation", source: "client", props: {} },
+  visit_started: {
+    feature: "navigation",
+    source: "client",
+    props: {
+      utm_source: slug(),
+      utm_medium: slug(),
+      utm_campaign: slug(),
+      utm_content: slug(),
+      referrer: oneOf(REFERRERS),
+      deep_link: flag(),
+    },
+  },
   web_vital: {
     feature: "experience",
     source: "client",

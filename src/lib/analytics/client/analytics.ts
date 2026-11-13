@@ -4,6 +4,7 @@
  * starts and submits, and browser errors. Everything checks the opt out
  * first, never throws and never blocks the page.
  */
+import { visitProps } from "../attribution";
 import { BEACON_PATH, type WireEvent } from "../beacon";
 import { ROUTE_COOKIE, SESSION_COOKIE, isSessionId } from "../context";
 import { FORM_NAMES, scrubMessage, type EventName, type FormName, type PropsOf } from "../events";
@@ -75,6 +76,26 @@ export function clientTrack<N extends EventName>(name: N, props?: PropsOf<N>) {
   try {
     if (optedOut()) return;
     getQueue().push({ n: name, p: props as WireEvent["p"], r: currentRoute });
+  } catch {
+    // Analytics never breaks the page.
+  }
+}
+
+const VISIT_KEY = "sc_visit";
+
+/**
+ * Records where this tab session came from (visit_started), once per tab
+ * session, before its first page view. The address and document.referrer
+ * are read on the landing page only: the referrer does not change on later
+ * client side navigations.
+ */
+export function trackVisitStart() {
+  try {
+    if (optedOut()) return;
+    const store = sessionStore();
+    if (store?.getItem(VISIT_KEY)) return;
+    store?.setItem(VISIT_KEY, "1");
+    clientTrack("visit_started", visitProps(window.location, document.referrer));
   } catch {
     // Analytics never breaks the page.
   }
