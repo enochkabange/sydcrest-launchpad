@@ -32,7 +32,7 @@ export type Arm = {
   rate: number | null;
   /** rate minus the control's rate, or null when either is null. */
   difference: number | null;
-  /** Whether the difference is unlikely to be chance (two sided, 95%). Null when there is nothing to compare. */
+  /** Whether the difference is unlikely to be chance (two sided, 95%). Null under COMPARE_MIN measured in either arm. */
   clear: boolean | null;
 };
 
@@ -50,6 +50,13 @@ export const METRIC_LABELS: Record<string, string> = {
   came_back_7d: "Came back on a later day within 7 days",
   active_7d: "Active within 7 days",
 };
+
+/**
+ * Measured people needed in both arms before the dashboard says whether a
+ * difference could be chance. Above MIN_SAMPLE on purpose: 5 against 5 can
+ * look "significant" and mean nothing.
+ */
+export const COMPARE_MIN = 30;
 
 export const STATUS_LABELS: Record<string, string> = {
   draft: "Draft",
@@ -109,9 +116,10 @@ export function experimentReports(
     const arms: Arm[] = sorted.map((r, i) => {
       const rate = enough(r.measured) ? r.came_back / r.measured : null;
       const comparable = i > 0 && rate !== null && controlRate !== null;
-      const p = comparable
-        ? pValue(control.came_back, control.measured, r.came_back, r.measured)
-        : null;
+      const p =
+        comparable && control.measured >= COMPARE_MIN && r.measured >= COMPARE_MIN
+          ? pValue(control.came_back, control.measured, r.came_back, r.measured)
+          : null;
       return {
         variant: r.variant,
         control: i === 0,
@@ -136,11 +144,11 @@ export function experimentReports(
   });
 }
 
-/** "+4 points" or "-2.5 points". */
+/** "4 points higher", "2.5 points lower" or "no different". */
 export function formatPoints(difference: number): string {
-  const pts = Math.round(difference * 1000) / 10;
-  const sign = pts > 0 ? "+" : pts < 0 ? "-" : "";
-  return `${sign}${Math.abs(pts)} points`;
+  const pts = Math.round(Math.abs(difference) * 1000) / 10;
+  if (pts === 0) return "no different";
+  return `${pts} ${pts === 1 ? "point" : "points"} ${difference > 0 ? "higher" : "lower"}`;
 }
 
 export { MIN_SAMPLE };

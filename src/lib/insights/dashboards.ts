@@ -41,7 +41,7 @@ export const DASHBOARDS: Dashboard[] = [
   { slug: "earn", href: "/admin/insights/earn", title: "Experts and Earn", description: "Bookings, briefs, pitches, response times and outcomes.", filters: PEOPLE, events: false },
   { slug: "community", href: "/admin/insights/community", title: "Community", description: "Posts, replies, RSVPs, check ins and chapters.", filters: ["region", "chapter"], events: false },
   { slug: "reliability", href: "/admin/insights/reliability", title: "Reliability", description: "Errors by page and action, failure rates and Web Vitals.", filters: ["device"], events: true },
-  { slug: "experiments", href: "/admin/insights/experiments", title: "Experiments", description: "Each experiment's variants, how many people met each, and how many came back.", filters: [], events: true },
+  { slug: "experiments", href: "/admin/insights/experiments", title: "Experiments", description: "Each experiment's variants, how many people met each, and how many came back.", filters: [], events: false },
 ];
 
 export function dashboard(slug: DashboardSlug): Dashboard {

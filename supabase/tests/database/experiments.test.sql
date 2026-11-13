@@ -1,7 +1,7 @@
 -- Experiments, holdouts and feature flags (issue #327).
 begin;
 create extension if not exists pgtap with schema extensions;
-select plan(31);
+select plan(32);
 
 insert into auth.users (id, instance_id, aud, role, email, raw_user_meta_data, created_at, updated_at)
 select id::uuid, '00000000-0000-0000-0000-000000000000', 'authenticated', 'authenticated', email, jsonb_build_object('full_name', name), now(), now()
@@ -93,6 +93,9 @@ reset role;
 select is(
   (select variant from public.experiment_assignments where profile_id = '33333333-3333-3333-3333-333333333333'),
   'holdout', 'held out');
+select is(
+  (select count(*)::int from public.events where name = 'experiment_exposed' and profile_id = '33333333-3333-3333-3333-333333333333'),
+  0, 'the job writes no event under an away learner''s profile, so they do not look active');
 
 -- An admin --------------------------------------------------------------------------------
 

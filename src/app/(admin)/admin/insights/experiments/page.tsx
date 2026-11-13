@@ -11,6 +11,7 @@ import {
   formatShare,
 } from "@/lib/insights/metrics";
 import {
+  COMPARE_MIN,
   METRIC_LABELS,
   STATUS_LABELS,
   experimentReports,
@@ -36,10 +37,10 @@ function verdict(arm: Arm, control: string) {
   return (
     <span className="flex flex-col">
       <span className="font-semibold text-content">
-        {formatPoints(arm.difference)} vs {control}
+        {formatPoints(arm.difference)} {arm.difference === 0 ? "from" : "than"} {control}
       </span>
       <span className="text-sm text-content-2">
-        {arm.clear ? "Unlikely to be chance" : "Could still be chance"}
+        {arm.clear === null ? "Too early to tell if it is chance" : arm.clear ? "Unlikely to be chance" : "Could still be chance"}
       </span>
     </span>
   );
@@ -169,7 +170,7 @@ async function Experiments({ supabase, filters }: InsightsContext) {
           ],
           [
             "Difference",
-            `The variant's share minus the baseline's, in percentage points. Shown once both have ${MIN_SAMPLE} people measured. "Unlikely to be chance" means a two proportion test gives under a 5% chance of a gap this big if the variants were the same.`,
+            `The variant's share minus the baseline's, in percentage points. Shown once both have ${MIN_SAMPLE} people measured. Whether it could be chance is only judged once both have ${COMPARE_MIN}: "Unlikely to be chance" means a two proportion test gives under a 5% chance of a gap this big if the variants were the same.`,
           ],
           [
             "reengage_holdout",

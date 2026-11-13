@@ -421,7 +421,9 @@ exposure is recorded after the response through
 person per experiment and one `experiment_exposed` event (`experiment`,
 `variant`), so any dashboard can split by variant. The service role (the
 re-engagement job) may name the profile; a signed in caller is always
-themselves.
+themselves. For the job only the assignment row is written, no event: the
+person is away, and an event under their profile would count as activity
+(learner stage, retention).
 
 **Re-engagement holdout:** `reengage_holdout` is seeded running with
 `nudge:90, holdout:10` and metric `active_7d`. `/api/cron/reengage` assigns
@@ -439,6 +441,7 @@ UTC day within 7 days of exposure (for changes people meet while using the
 platform); `active_7d` = any event in the 7 days after exposure (for messages
 to people who are away). The exposure event and bot traffic never count.
 Shares show from `MIN_SAMPLE` measured people; the difference from the
-control shows in percentage points with a two proportion z test ("unlikely
-to be chance" under p 0.05). Admins create, start and stop experiments at
+control shows in percentage points, and from `COMPARE_MIN` (30) measured
+people in both arms a two proportion z test says "unlikely to be chance"
+(p under 0.05) or "could still be chance"; below that, "too early to tell". Admins create, start and stop experiments at
 `/admin/experiments`. Never test prices or access to learning.

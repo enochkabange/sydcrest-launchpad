@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { NOT_ENOUGH } from "@/lib/insights/metrics";
-import { experimentReports, formatPoints, pValue, type ExperimentRow } from "./report";
+import { COMPARE_MIN, experimentReports, formatPoints, pValue, type ExperimentRow } from "./report";
 
 const row = (variant: string, order: number, weight: number, people: number, measured: number, came_back: number): ExperimentRow => ({
   experiment_key: "reengage_holdout",
@@ -40,8 +40,15 @@ describe("experimentReports", () => {
   });
 
   it("does not call a small gap clear", () => {
-    const [report] = experimentReports([row("nudge", 1, 50, 20, 20, 10), row("holdout", 2, 50, 20, 20, 9)]);
+    const [report] = experimentReports([row("nudge", 1, 50, 40, 40, 20), row("holdout", 2, 50, 40, 40, 18)]);
     expect(report.arms[1].clear).toBe(false);
+  });
+
+  it("is too early to tell under COMPARE_MIN, however big the gap", () => {
+    const [report] = experimentReports([row("nudge", 1, 50, 5, 5, 5), row("holdout", 2, 50, 5, 5, 0)]);
+    expect(report.arms[1].difference).toBeCloseTo(-1);
+    expect(report.arms[1].clear).toBeNull();
+    expect(COMPARE_MIN).toBe(30);
   });
 
   it("lists an experiment nobody has met yet with zeros", () => {
@@ -61,7 +68,8 @@ describe("pValue", () => {
 });
 
 it("formats percentage points", () => {
-  expect(formatPoints(-0.15)).toBe("-15 points");
-  expect(formatPoints(0.025)).toBe("+2.5 points");
-  expect(formatPoints(0)).toBe("0 points");
+  expect(formatPoints(-0.15)).toBe("15 points lower");
+  expect(formatPoints(0.025)).toBe("2.5 points higher");
+  expect(formatPoints(0.01)).toBe("1 point higher");
+  expect(formatPoints(0)).toBe("no different");
 });

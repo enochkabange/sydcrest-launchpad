@@ -19,7 +19,9 @@
 -- The first time a person meets a running experiment the app records an
 -- exposure: one row in experiment_assignments (once per person per
 -- experiment) and one experiment_exposed event, so any dashboard can split
--- by variant. The Experiments dashboard compares each variant's share of
+-- by variant. Exposures the re-engagement job records for people who are
+-- away live in experiment_assignments only: an event under their profile
+-- would count as activity and mark a dormant learner active. The Experiments dashboard compares each variant's share of
 -- people who came back afterwards (docs/analytics.md, section 13).
 
 -- 1. Experiments ------------------------------------------------------------------------
@@ -120,6 +122,8 @@ begin
 end;
 $$;
 
+revoke execute on function private.experiments_guard() from public, anon, authenticated;
+
 create trigger experiments_guard
   before insert or update on public.experiments
   for each row execute function private.experiments_guard();
@@ -166,6 +170,8 @@ create unique index experiment_assignments_anonymous_key
   on public.experiment_assignments (experiment_id, anonymous_id) where anonymous_id is not null;
 create index experiment_assignments_profile_idx on public.experiment_assignments (profile_id);
 create index experiment_assignments_exposed_idx on public.experiment_assignments (experiment_id, exposed_at);
+-- The dashboard looks up a visitor's later events by their anonymous id.
+create index events_anonymous_created_idx on public.events (anonymous_id, created_at) where anonymous_id is not null;
 
 alter table public.experiment_assignments enable row level security;
 
@@ -215,7 +221,9 @@ grant execute on function public.running_experiment(text) to anon, authenticated
 -- The subject is the signed in person; else, for the service role (the
 -- re-engagement job), p_profile_id; else the anonymous visitor id from the
 -- context. Records the assignment and an experiment_exposed event the first
--- time only. Returns true when this call recorded it.
+-- time only; for the job, the assignment only (the person is away, and an
+-- event under their profile would count as them being active). Returns true
+-- when this call recorded it.
 create function private.record_experiment_exposure(
   p_key text, p_variant text, p_profile_id uuid default null, p_context jsonb default '{}'::jsonb)
 returns boolean
@@ -274,6 +282,9 @@ begin
   get diagnostics v_count = row_count;
   if v_count = 0 then
     return false;
+  end if;
+  if v_uid is null and v_anon is null then
+    return true;
   end if;
 
   if v_session !~ '^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$' then v_session := null; end if;
