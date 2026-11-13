@@ -89,7 +89,8 @@ select results_eq(
   $$ select roadmap_slug, track from public.my_match_readiness() $$,
   $$ values ('data-analyst', 'data') $$,
   'a learner reads their own readiness per track');
-select is((select count(*)::int from public.readiness_scores), 0, 'but still cannot select the scores table');
+select is((select count(*)::int from public.readiness_scores where profile_id <> (select auth.uid())), 0,
+  'and reads only their own rows of the scores table (My progress, #337)');
 
 select lives_ok(
   $$ insert into public.opportunity_applications (opportunity_id, note, contact_consent, share_readiness)
