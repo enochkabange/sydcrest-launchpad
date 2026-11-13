@@ -413,7 +413,8 @@ updates and reviews, Accra days), the usual study time
 score trend, the pace (topics done a week over the last four) and the time to
 finish their current roadmap at that pace; then their readiness per track
 (band, each part's points, and the one or two steps with the biggest gain)
-and up to three gentle suggestions. Helpers: `src/lib/progress/insights.ts`
+and up to three gentle suggestions. The readiness block shows only when
+`READINESS_FOR_LEARNERS=on` (off by default; `src/lib/progress/flags.ts`). Helpers: `src/lib/progress/insights.ts`
 (pure, unit tested); reads: `src/lib/progress/server.ts`.
 
 Access: members read their own `readiness_scores` rows (policy "Members read

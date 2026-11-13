@@ -21,6 +21,7 @@ import {
   suggestions,
   topicsPerWeek,
 } from "@/lib/progress/insights";
+import { readinessForLearners } from "@/lib/progress/flags";
 import { getMyProgress, getMyReadiness, type MyReadiness } from "@/lib/progress/server";
 
 export const metadata: Metadata = { title: "My progress" };
@@ -49,10 +50,10 @@ export default function ProgressPage() {
             <h2 className="text-h3 text-content">About this page</h2>
             <ul className="flex list-disc flex-col gap-2 pl-5 text-sm text-content-2">
               <li>Only you and SydCrest staff can see it. Employers cannot.</li>
-              <li>Readiness is worked out once a day from your own learning, never from where you live, your device or your connection.</li>
-              <li>It shows how far along a track you are on SydCrest. It is not a test of you.</li>
+              <li>It is worked out from your own learning, never from where you live, your device or your connection.</li>
+              <li>It shows how you are getting on at SydCrest. It is not a test of you.</li>
             </ul>
-            <Link href="/privacy#readiness-score" className="text-sm font-semibold text-content-link hover:underline">
+            <Link href="/privacy#my-progress" className="text-sm font-semibold text-content-link hover:underline">
               How we use your data
             </Link>
           </section>
@@ -62,13 +63,13 @@ export default function ProgressPage() {
       <div className="flex flex-col gap-2">
         <h1 className="text-title text-content">My progress</h1>
         <p className="max-w-reading text-lead text-content-2">
-          How you have been learning, how ready you are for each track, and the steps that would help most.
+          How you have been learning, how your current roadmap is going, and ideas for what to do next.
         </p>
       </div>
       <Suspense fallback={skeleton("h-64")}>
         <Rhythm />
       </Suspense>
-      <Suspense fallback={skeleton("h-96")}>
+      <Suspense fallback={null}>
         <Readiness />
       </Suspense>
     </MainWithRail>
@@ -177,8 +178,10 @@ async function Rhythm() {
 
 const capitalise = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
+/** Off until READINESS_FOR_LEARNERS=on (founder approval and a fairness review first). */
 async function Readiness() {
   const user = await requireUser();
+  if (!readinessForLearners()) return null;
   const tracks = await getMyReadiness(user.id);
 
   return (

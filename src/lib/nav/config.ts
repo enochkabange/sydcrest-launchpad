@@ -136,7 +136,7 @@ export const NAV_GROUPS: NavGroup[] = [
         href: "/progress",
         label: "My progress",
         icon: ChartLine,
-        description: "Your study rhythm, readiness for each track and what to do next.",
+        description: "Your study rhythm, quiz scores and ideas for what to do next.",
       },
       { href: "/study-buddy", label: "Study Buddy", icon: Sparkles, description: "Ask questions and plan your next step." },
     ],

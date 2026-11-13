@@ -215,18 +215,18 @@ export default function PrivacyPage() {
         in About you. It counts the skills you have verified for the track, the topics you have
         finished, your approved portfolio work, the days you learned in the last 30, and whether your
         About you goal and public profile are filled in. It never uses your region, device, internet,
-        study times, age, education or work preferences. You can see your own, with what each part is
-        worth, on your My progress page; our staff can see it too, and check that it is fair to every
-        group of learners. It is not shown to employers, and we will ask your consent before any
-        employer sees it. It is deleted with your account.
+        study times, age, education or work preferences. For now only our staff can see it, while we
+        check that it is fair to every group of learners. Once we switch it on, you will see your own,
+        with what each part is worth, on your My progress page. It is not shown to employers, and we
+        will ask your consent before any employer sees it. It is deleted with your account.
       </p>
       <h3 id="my-progress">My progress</h3>
       <p>
-        Your <Link href="/progress">My progress</Link> page shows you your own learning summary and
-        readiness: your streak, the days you learned, the part of the day you usually study, your quiz
-        scores, how long your current roadmap could take at your pace, your readiness band for each
-        track and the steps that would raise it most. It is worked out from the information above; it
-        adds nothing new about you. Only you and our staff can see it. We record that you opened the
+        Your <Link href="/progress">My progress</Link> page shows you your own learning summary: your
+        streak, the days you learned, the part of the day you usually study, your quiz scores and how
+        long your current roadmap could take at your pace. Once we switch it on, it will also show your
+        readiness band for each track and the steps that would raise it most. It is worked out from the
+        information above; it adds nothing new about you. Only you and our staff can see it. We record that you opened the
         page, and nothing about what it shows.
       </p>
       <h3>Who can see it</h3>
