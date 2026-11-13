@@ -118,7 +118,7 @@ recorded by the server; browser events come through the beacon.
 | Onboarding and path | `waitlist_joined`, `quiz_run` (signed_in), `path_saved`, `path_viewed` |
 | Learn | `lesson_opened` (roadmap, node_id; every open), `node_started` (first open), `quiz_submitted` (node_id, score, passed), `node_completed` (roadmap, node_id, via), `lesson_left` (browser: roadmap, node_id, time_spent_ms visible, scroll_percent, done_before), `resource_opened` (browser: node_id, kind), `quiz_question_answered` (node_id, question_id, correct; one per question), `quiz_retried` (node_id, passed, passed_before) |
 | Discovery | `search_performed` (browser: scope topics, results; never the words), `filter_applied` (browser: scope roadmaps or opportunities, filter, results) |
-| Review and Study Buddy | `review_completed` (items, correct), `weekly_goal_set` (goal), `study_buddy_message` (turn) |
+| Review and Study Buddy | `review_completed` (items, correct), `weekly_goal_set` (goal), `study_buddy_message` (turn), `progress_viewed` (My progress, #337) |
 | Skills | `skill_quiz_submitted` (passed, score), `skill_portfolio_submitted`, `skill_portfolio_reviewed` (decision), `path_skills_claimed` (claimed) |
 | Programme and cohort | `application_submitted`, `application_withdrawn`, `application_decided` (decision), `specialisation_chosen` (specialisation), `submission_saved` (sent), `submission_graded` (passed), `deadline_met` (kind cohort_task, hours_early), `deadline_missed` (kind, hours_late), `submission_resubmitted` (attempt), `peer_review_assigned`, `peer_review_submitted`, `learner_deferred`, `certificate_issued`, `certificate_revoked` |
 | Experts and bookings | `expert_applied`, `expert_application_decided` (decision), `offer_created`, `offer_updated`, `booking_requested`, `booking_status_changed` (status), `booking_message_sent`, `booking_reviewed` (rating) |
@@ -403,3 +403,22 @@ refresh never reads a Never attribute). Admin only: `/admin/readiness`
 `/admin/learners/[id]` (`admin_learner_readiness`). Not shown to learners
 (#337) or employers, and not used for matching (#336) yet. No events.
 Model card, inputs, limits and the fairness review: `docs/readiness.md`.
+
+## 14. My progress (epic #320, #337)
+
+`/progress` (Learn hub, "My progress") shows a learner their own summary:
+the kind streak from the learning loop, days learned in the last 30 (topic
+updates and reviews, Accra days), the usual study time
+(`learner_attributes.usual_hour_band`), topics done, quizzes passed, the quiz
+score trend, the pace (topics done a week over the last four) and the time to
+finish their current roadmap at that pace; then their readiness per track
+(band, each part's points, and the one or two steps with the biggest gain)
+and up to three gentle suggestions. Helpers: `src/lib/progress/insights.ts`
+(pure, unit tested); reads: `src/lib/progress/server.ts`.
+
+Access: members read their own `readiness_scores` rows (policy "Members read
+their own readiness scores", `20261114800000_my_progress.sql`) and their own
+`learner_attributes` row. Suggestions use study hour, never device, region
+or connection, and never compare a learner with anyone else.
+
+Event: `progress_viewed` (server, no props), once per page render.

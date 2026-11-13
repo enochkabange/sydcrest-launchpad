@@ -208,6 +208,8 @@ export const EVENTS = {
   review_completed: { feature: "review", source: "server", props: { items: count(), correct: count() } },
   weekly_goal_set: { feature: "review", source: "server", props: { goal: count() } },
   study_buddy_message: { feature: "study_buddy", source: "server", props: { turn: count() } },
+  // My progress (issue #337): the learner opened their own progress page.
+  progress_viewed: { feature: "review", source: "server", props: {} },
 
   // Skills
   skill_quiz_submitted: { feature: "skills", source: "server", props: { passed: flag(), score: count() } },
