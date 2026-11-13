@@ -608,7 +608,7 @@ counts (`admin_outcome_report`, `/admin/check-ins`); sponsors read
 `sponsorship_outcome_report` under Impact, every count under five held back.
 `/print/outcomes` is the printable version for both.
 
-## 14. My progress (epic #320, #337)
+## 19. My progress (epic #320, #337)
 
 `/progress` (Learn hub, "My progress") shows a learner their own summary:
 the kind streak from the learning loop, days learned in the last 30 (topic
@@ -622,13 +622,13 @@ and up to three gentle suggestions. The readiness block shows only when
 (pure, unit tested); reads: `src/lib/progress/server.ts`.
 
 Access: members read their own `readiness_scores` rows (policy "Members read
-their own readiness scores", `20261114800000_my_progress.sql`) and their own
+their own readiness scores", `20261115000200_my_progress.sql`) and their own
 `learner_attributes` row. Suggestions use study hour, never device, region
 or connection, and never compare a learner with anyone else.
 
 Event: `progress_viewed` (server, no props), once per page render.
 
-## 14. Matching explanations (epic #320; #336)
+## 20. Matching explanations (epic #320; #336)
 
 Match score per learner per opportunity: readiness for its track plus a
 bonus per required skill verified (`private.opportunity_match`,

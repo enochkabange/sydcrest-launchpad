@@ -143,7 +143,7 @@ The columns and database functions exist regardless; only the UI is gated.
 score among the roadmaps of the opportunity's tracks (`roadmaps.track`, or a
 roadmap slug), plus **5 points for each required skill they have verified**,
 capped at 100. The bonus lives in `private.match_weights()` in
-`supabase/migrations/20261114900000_matching.sql`, mirrored in
+`supabase/migrations/20261115000300_matching.sql`, mirrored in
 `src/lib/matching/match.ts` (a unit test keeps them equal).
 
 **Required skills** (`private.opportunity_required_skills`): the skills the

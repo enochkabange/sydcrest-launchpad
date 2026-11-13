@@ -3,7 +3,7 @@
  * for a learner, the plain words that explain it, and the admin audit's
  * rates by group. Mirrors private.match_weights(),
  * private.opportunity_required_skills() and private.opportunity_match() in
- * supabase/migrations/20261114900000_matching.sql (a unit test keeps the
+ * supabase/migrations/20261115000300_matching.sql (a unit test keeps the
  * bonus equal). Model card: docs/readiness.md, "Matching". Pure.
  *
  * Match score = the learner's best readiness score among the roadmaps of

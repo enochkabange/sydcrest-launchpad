@@ -9,7 +9,7 @@ import type { ReadinessRow } from "./insights";
  * Reads for My progress (issue #337). Request time: callers sit inside
  * <Suspense>. RLS returns only the learner's own rows (roadmap_progress,
  * review_sessions, learner_attributes, and readiness_scores since
- * 20261114800000_my_progress.sql).
+ * 20261115000200_my_progress.sql).
  */
 
 export type CurrentRoadmap = {
