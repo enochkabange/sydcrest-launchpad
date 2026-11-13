@@ -30,7 +30,7 @@ async function List({ searchParams }: Pick<PageProps<"/admin/learners">, "search
       header: "Learner",
       cell: (r) => (
         <span className="flex min-w-0 flex-col">
-          <Link href={`/admin/learners/${r.profile_id}`} className={`font-semibold text-content ${rowLinkClass}`}>
+          <Link href={`/admin/learners/${r.profile_id}`} prefetch={false} className={`font-semibold text-content ${rowLinkClass}`}>
             {r.display_name || "No name yet"}
           </Link>
           <span className="text-sm text-content-2">
@@ -41,8 +41,8 @@ async function List({ searchParams }: Pick<PageProps<"/admin/learners">, "search
       className: "min-w-0 flex-1",
     },
     { header: "Last active", cell: (r) => daysAgo(r.last_active_on, today), align: "end", phone: "hide" },
-    { header: "Active days (30)", cell: (r) => r.active_days_30, align: "end", phone: "hide" },
-    { header: "Topics done", cell: (r) => r.topics_completed, align: "end", phone: "hide" },
+    { header: "Active days (30)", cell: (r) => r.active_days_30 ?? "–", align: "end", phone: "hide" },
+    { header: "Topics done", cell: (r) => r.topics_completed ?? "–", align: "end", phone: "hide" },
     { header: "On time", cell: (r) => percent(r.on_time_rate), align: "end", phone: "hide" },
     { header: "First came from", cell: (r) => r.first_touch_source ?? "–", align: "end", phone: "hide", className: "text-content-2" },
   ];
@@ -70,7 +70,7 @@ async function List({ searchParams }: Pick<PageProps<"/admin/learners">, "search
       <form role="search" action="/admin/learners" className="flex flex-wrap items-end gap-2">
         {stage && <input type="hidden" name="stage" value={stage} />}
         <label htmlFor="q" className="flex min-w-0 flex-1 flex-col gap-1 text-sm font-semibold text-content-2">
-          Name or exact email
+          Name, exact email or phone
           <input
             id="q"
             name="q"
@@ -84,7 +84,7 @@ async function List({ searchParams }: Pick<PageProps<"/admin/learners">, "search
         </button>
       </form>
       {rows.length === 0 ? (
-        <p className="text-content-2">No learners match. Attributes are computed daily, so someone who joined today appears tomorrow.</p>
+        <p className="text-content-2">No learners match. Stages are computed daily, so someone who joined today shows under Everyone until tomorrow.</p>
       ) : (
         <DataTable caption="Learners" columns={columns} rows={rows} rowKey={(r) => r.profile_id} />
       )}
@@ -99,8 +99,13 @@ export default function LearnersPage({ searchParams }: PageProps<"/admin/learner
       <div className="flex flex-col gap-2">
         <h1 className="text-title text-content">Learners</h1>
         <p className="max-w-reading text-content-2">
-          Computed once a day from progress, submissions, events and applications. Open a learner to see their timeline.
+          Computed once a day from progress, submissions, events and applications. Open a learner to see their account,
+          help them, and see their timeline. Every search and every page opened is written to the audit log.
           Stages: {STAGES.map((s) => `${s.label.toLowerCase()} (${s.hint.toLowerCase()})`).join("; ")}.
+        </p>
+        <p className="flex flex-wrap gap-x-4 gap-y-1 text-sm">
+          <Link href="/admin/learners/audit">Audit log</Link>
+          <Link href="/admin/learners/deletions">Deletion requests</Link>
         </p>
       </div>
       <Suspense fallback={<div className="h-96 animate-skeleton rounded-lg bg-surface-sunken" />}>

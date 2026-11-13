@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import Link from "@/components/ui/link";
 import { Panel, Skeleton } from "@/components/business/bits";
 import { regionLabel } from "@/lib/regions";
+import { employerReasons } from "@/lib/matching/match";
+import { matchingForEmployers } from "@/lib/matching/flags";
 import { sharesContact, stageCopy } from "@/lib/opportunities/applications";
 import { getOrgForMember } from "@/lib/organisations/queries";
 import { createClient } from "@/lib/supabase/server";
@@ -29,8 +31,14 @@ async function Applicants({ params }: { params: PageProps<"/org/[slug]/opportuni
     .eq("organisation_id", org.id)
     .maybeSingle();
   if (!o) notFound();
-  const { data: rows, error } = await supabase.rpc("org_opportunity_applicants", { p_opportunity_id: o.id });
+  const [{ data: rows, error }, shared] = await Promise.all([
+    supabase.rpc("org_opportunity_applicants", { p_opportunity_id: o.id }),
+    // Only applicants who chose to share their band (#336); never a score. Not called until READINESS_FOR_EMPLOYERS=on.
+    matchingForEmployers() ? supabase.rpc("org_applicant_readiness", { p_opportunity_id: o.id }) : { data: [], error: null },
+  ]);
   if (error) throw new Error(`Could not load applicants: ${error.message}`);
+  if (shared.error) console.error("org_applicant_readiness failed", { message: shared.error.message });
+  const readiness = new Map((shared.data ?? []).map((r) => [r.application_id, r]));
   const path = `/org/${org.slug}/opportunities/${o.id}/applicants`;
 
   return (
@@ -71,6 +79,16 @@ async function Applicants({ params }: { params: PageProps<"/org/[slug]/opportuni
                 </div>
                 <span className="rounded-full bg-surface-sunken px-3 py-1 text-sm font-semibold text-content">{stageCopy(a.stage).label}</span>
               </div>
+              {readiness.has(a.application_id) && (
+                <div data-testid="applicant-readiness" className="flex flex-col gap-1 rounded-md bg-surface-sunken px-3 py-2 text-sm">
+                  <p className="font-semibold text-content">Readiness, shared by the applicant</p>
+                  <ul className="flex flex-col gap-0.5 text-content-2">
+                    {employerReasons(readiness.get(a.application_id)!).map((line) => (
+                      <li key={line}>{line}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               {a.verified_skills.length > 0 && (
                 <p className="text-sm text-content-2">
                   <span className="font-semibold text-content">Verified skills:</span> {a.verified_skills.join(", ")}

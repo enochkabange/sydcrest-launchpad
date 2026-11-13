@@ -22,9 +22,10 @@ export const ADMIN_SECTIONS: { href: string; label: string; description: string 
   { href: "/admin/check-ins", label: "Check ins", description: "Outcome check ins 3, 6 and 12 months after learners finish, and before and after impact reports per cohort, programme or chapter." },
   { href: "/admin/impact", label: "North Star", description: "Completion and verified placements by cohort, within six months of the end." },
   { href: "/admin/organisations", label: "Organisations", description: "Verify business accounts before they post or browse talent." },
-  { href: "/admin/learners", label: "Learners", description: "Every learner by stage (active, slipping, dormant), and one page each: activity, progress, reliability, answers and recent activity." },
+  { href: "/admin/learners", label: "Learners", description: "Find anyone by name, email or phone. One page each: account, consents, programmes, safe actions and the audit log, plus activity, progress and answers. Deletion requests too." },
   { href: "/admin/readiness", label: "Readiness", description: "Readiness score v1 for staff: how it is worked out, how scores spread, and the fairness check by group." },
   { href: "/admin/insights", label: "Insights", description: "Reporting dashboards: active people, funnel, retention, learning, features, cohorts, Earn, community, reliability and experiments." },
+  { href: "/admin/matching", label: "Matching", description: "Match audit: who was shown, applied, shortlisted and hired per opportunity by band, and match rates by group." },
   { href: "/admin/experiments", label: "Experiments", description: "Create, start and stop experiments, holdouts and feature flags; results are on the Experiments dashboard." },
   { href: "/admin/funnel", label: "Funnel", description: "See how visitors move from sign up to their first completed node." },
 ];

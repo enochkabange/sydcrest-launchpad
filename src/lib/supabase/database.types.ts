@@ -96,6 +96,48 @@ export type Database = {
           },
         ]
       }
+      admin_audit_log: {
+        Row: {
+          action: string
+          admin_id: string | null
+          at: string
+          id: string
+          note: string | null
+          target_profile_id: string | null
+        }
+        Insert: {
+          action: string
+          admin_id?: string | null
+          at?: string
+          id?: string
+          note?: string | null
+          target_profile_id?: string | null
+        }
+        Update: {
+          action?: string
+          admin_id?: string | null
+          at?: string
+          id?: string
+          note?: string | null
+          target_profile_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "admin_audit_log_admin_id_fkey"
+            columns: ["admin_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "admin_audit_log_target_profile_id_fkey"
+            columns: ["target_profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       ai_review_usage: {
         Row: {
           attempt: number
@@ -407,7 +449,7 @@ export type Database = {
           id: string
           issued_at: string
           issued_by: string | null
-          profile_id: string
+          profile_id: string | null
           program_id: string
           program_title: string
           recipient_name: string
@@ -426,7 +468,7 @@ export type Database = {
           id?: string
           issued_at?: string
           issued_by?: string | null
-          profile_id: string
+          profile_id?: string | null
           program_id: string
           program_title: string
           recipient_name: string
@@ -445,7 +487,7 @@ export type Database = {
           id?: string
           issued_at?: string
           issued_by?: string | null
-          profile_id?: string
+          profile_id?: string | null
           program_id?: string
           program_title?: string
           recipient_name?: string
@@ -1202,6 +1244,47 @@ export type Database = {
         Relationships: [
           {
             foreignKeyName: "consents_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      deletion_requests: {
+        Row: {
+          cancelled_at: string | null
+          completed_at: string | null
+          delete_after: string
+          id: string
+          last_error: string | null
+          profile_id: string | null
+          requested_at: string
+          status: string
+        }
+        Insert: {
+          cancelled_at?: string | null
+          completed_at?: string | null
+          delete_after?: string
+          id?: string
+          last_error?: string | null
+          profile_id?: string | null
+          requested_at?: string
+          status?: string
+        }
+        Update: {
+          cancelled_at?: string | null
+          completed_at?: string | null
+          delete_after?: string
+          id?: string
+          last_error?: string | null
+          profile_id?: string | null
+          requested_at?: string
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "deletion_requests_profile_id_fkey"
             columns: ["profile_id"]
             isOneToOne: false
             referencedRelation: "profiles"
@@ -2867,6 +2950,7 @@ export type Database = {
           opportunity_id: string
           portfolio_url: string | null
           profile_id: string
+          share_readiness: boolean
           stage: string
           stage_changed_at: string
           updated_at: string
@@ -2879,6 +2963,7 @@ export type Database = {
           opportunity_id: string
           portfolio_url?: string | null
           profile_id?: string
+          share_readiness?: boolean
           stage?: string
           stage_changed_at?: string
           updated_at?: string
@@ -2891,6 +2976,7 @@ export type Database = {
           opportunity_id?: string
           portfolio_url?: string | null
           profile_id?: string
+          share_readiness?: boolean
           stage?: string
           stage_changed_at?: string
           updated_at?: string
@@ -3493,6 +3579,8 @@ export type Database = {
           region: string | null
           role: string
           skills: string[]
+          suspended_at: string | null
+          suspended_by: string | null
           updated_at: string
         }
         Insert: {
@@ -3512,6 +3600,8 @@ export type Database = {
           region?: string | null
           role?: string
           skills?: string[]
+          suspended_at?: string | null
+          suspended_by?: string | null
           updated_at?: string
         }
         Update: {
@@ -3531,9 +3621,19 @@ export type Database = {
           region?: string | null
           role?: string
           skills?: string[]
+          suspended_at?: string | null
+          suspended_by?: string | null
           updated_at?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "profiles_suspended_by_fkey"
+            columns: ["suspended_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       program_week_nodes: {
         Row: {
@@ -4595,6 +4695,7 @@ export type Database = {
           portfolio_url: string | null
           profile_id: string
           region: string | null
+          share_readiness: boolean
           skills: string[]
           summary: string | null
           tracks: string[]
@@ -4609,6 +4710,7 @@ export type Database = {
           portfolio_url?: string | null
           profile_id?: string
           region?: string | null
+          share_readiness?: boolean
           skills?: string[]
           summary?: string | null
           tracks?: string[]
@@ -4623,6 +4725,7 @@ export type Database = {
           portfolio_url?: string | null
           profile_id?: string
           region?: string | null
+          share_readiness?: boolean
           skills?: string[]
           summary?: string | null
           tracks?: string[]
@@ -5189,6 +5292,7 @@ export type Database = {
           portfolio_url: string | null
           profile_id: string | null
           public_slug: string | null
+          readiness: Json | null
           region: string | null
           skills: string[] | null
           summary: string | null
@@ -5245,6 +5349,23 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      admin_add_support_note: {
+        Args: { p_note: string; p_profile_id: string }
+        Returns: undefined
+      }
+      admin_audit_entries: {
+        Args: { p_limit?: number; p_profile_id?: string }
+        Returns: {
+          action: string
+          admin_id: string
+          admin_name: string
+          at: string
+          id: string
+          note: string
+          target_name: string
+          target_profile_id: string
+        }[]
       }
       admin_cohort_outcomes: {
         Args: { p_months?: number }
@@ -5304,6 +5425,20 @@ export type Database = {
           wrong_choice_count: number
           wrong_option: string
           wrong_with_choice: number
+        }[]
+      }
+      admin_deletion_requests: {
+        Args: { p_limit?: number }
+        Returns: {
+          cancelled_at: string
+          completed_at: string
+          delete_after: string
+          display_name: string
+          id: string
+          last_error: string
+          profile_id: string
+          requested_at: string
+          status: string
         }[]
       }
       admin_find_profile_by_email: {
@@ -6006,6 +6141,23 @@ export type Database = {
           role: string
         }[]
       }
+      admin_learner_account: {
+        Args: { p_profile_id: string }
+        Returns: {
+          consents: Json
+          deletion_after: string
+          email: string
+          email_confirmed_at: string
+          is_skill_reviewer: boolean
+          last_sign_in_at: string
+          memberships: Json
+          phone: string
+          profile_id: string
+          providers: string[]
+          role: string
+          suspended_at: string
+        }[]
+      }
       admin_learner_progress: {
         Args: { p_profile_id: string }
         Returns: {
@@ -6056,6 +6208,34 @@ export type Database = {
           role: string
           stage: string
           topics_completed: number
+        }[]
+      }
+      admin_log_confirmation_resent: {
+        Args: { p_profile_id: string }
+        Returns: undefined
+      }
+      admin_match_audit: {
+        Args: never
+        Returns: {
+          applied: number
+          band: string
+          hired: number
+          opportunity_id: string
+          organisation_name: string
+          shortlisted: number
+          shown: number
+          title: string
+        }[]
+      }
+      admin_match_fairness: {
+        Args: never
+        Returns: {
+          applied: number
+          dimension: string
+          grp: string
+          hired: number
+          shortlisted: number
+          shown: number
         }[]
       }
       admin_outcome_checkin_totals: {
@@ -6210,8 +6390,16 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      admin_set_role: {
+        Args: { p_note?: string; p_profile_id: string; p_role: string }
+        Returns: undefined
+      }
       admin_set_skill_reviewer: {
         Args: { p_profile_id: string; p_reviewer: boolean }
+        Returns: undefined
+      }
+      admin_set_suspended: {
+        Args: { p_note?: string; p_profile_id: string; p_suspended: boolean }
         Returns: undefined
       }
       admin_skill_reviewers: {
@@ -6300,6 +6488,7 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      cancel_account_deletion: { Args: never; Returns: boolean }
       cancel_rsvp: { Args: { p_event_id: string }; Returns: undefined }
       certification_status: {
         Args: { p_profile_id?: string; p_program_id: string }
@@ -6446,6 +6635,10 @@ export type Database = {
           reaction_counts: Json
         }[]
       }
+      complete_deletion_request: {
+        Args: { p_error?: string; p_id: string }
+        Returns: undefined
+      }
       create_outcome_checkins: {
         Args: { p_rows: Json }
         Returns: {
@@ -6581,6 +6774,13 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      due_deletion_requests: {
+        Args: { p_limit?: number }
+        Returns: {
+          id: string
+          profile_id: string
+        }[]
+      }
       event_feedback_summary: {
         Args: { p_event_id: string }
         Returns: {
@@ -6660,7 +6860,7 @@ export type Database = {
           id: string
           issued_at: string
           issued_by: string | null
-          profile_id: string
+          profile_id: string | null
           program_id: string
           program_title: string
           recipient_name: string
@@ -6729,9 +6929,32 @@ export type Database = {
         }
         Returns: undefined
       }
+      my_match_readiness: {
+        Args: never
+        Returns: {
+          band: string
+          roadmap_slug: string
+          roadmap_title: string
+          score: number
+          topics_done: number
+          topics_total: number
+          track: string
+        }[]
+      }
       notify_user: {
         Args: { p_kind: string; p_payload?: Json; p_recipient_id: string }
         Returns: string
+      }
+      org_applicant_readiness: {
+        Args: { p_opportunity_id: string }
+        Returns: {
+          application_id: string
+          band: string
+          portfolio_pieces: number
+          roadmap_slug: string
+          roadmap_title: string
+          verified_skills: string[]
+        }[]
       }
       org_opportunity_applicants: {
         Args: { p_opportunity_id: string }
@@ -6837,6 +7060,25 @@ export type Database = {
         Args: { p_address_key: string; p_pair_key: string }
         Returns: undefined
       }
+      request_account_deletion: {
+        Args: never
+        Returns: {
+          cancelled_at: string | null
+          completed_at: string | null
+          delete_after: string
+          id: string
+          last_error: string | null
+          profile_id: string | null
+          requested_at: string
+          status: string
+        }
+        SetofOptions: {
+          from: "*"
+          to: "deletion_requests"
+          isOneToOne: true
+          isSetofReturn: false
+        }
+      }
       request_organisation_verification: {
         Args: { p_organisation_id: string }
         Returns: {
@@ -6903,7 +7145,7 @@ export type Database = {
           id: string
           issued_at: string
           issued_by: string | null
-          profile_id: string
+          profile_id: string | null
           program_id: string
           program_title: string
           recipient_name: string
@@ -6973,6 +7215,10 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      set_application_readiness_sharing: {
+        Args: { p_application_id: string; p_share: boolean }
+        Returns: boolean
+      }
       set_application_stage: {
         Args: { p_application_id: string; p_stage: string }
         Returns: {
@@ -6983,6 +7229,7 @@ export type Database = {
           opportunity_id: string
           portfolio_url: string | null
           profile_id: string
+          share_readiness: boolean
           stage: string
           stage_changed_at: string
           updated_at: string

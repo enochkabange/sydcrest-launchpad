@@ -64,6 +64,8 @@ export type ListingInput = {
   open_to_remote: boolean;
   portfolio_url: string | null;
   is_active: boolean;
+  /** Organisations see the readiness band per track (#336). Off unless ticked. */
+  share_readiness: boolean;
 };
 
 export function parseListing(form: FormData): { data: ListingInput; errors: FieldErrors<ListingFields> } {
@@ -105,6 +107,7 @@ export function parseListing(form: FormData): { data: ListingInput; errors: Fiel
       open_to_remote: form.get("open_to_remote") === "on",
       portfolio_url: portfolio ?? null,
       is_active: form.get("is_active") !== "off",
+      share_readiness: form.get("share_readiness") === "on",
     },
     errors,
   };

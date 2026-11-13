@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { matchingForEmployers } from "@/lib/matching/flags";
 import { Suspense } from "react";
 import Link from "@/components/ui/link";
 import { buttonClasses } from "@/components/ui/button";
@@ -30,7 +31,7 @@ async function Listing() {
     supabase.rpc("talent_eligibility"),
     supabase
       .from("talent_listings")
-      .select("headline, summary, skills, tracks, region, availability, open_to_remote, portfolio_url, is_active")
+      .select("headline, summary, skills, tracks, region, availability, open_to_remote, portfolio_url, is_active, share_readiness")
       .eq("profile_id", user.id)
       .maybeSingle(),
   ]);
@@ -76,6 +77,7 @@ async function Listing() {
           </div>
           <ListingForm
             isNew={!listing}
+            canShareReadiness={matchingForEmployers()}
             values={{
               headline: listing?.headline ?? "",
               summary: listing?.summary ?? null,
@@ -86,6 +88,7 @@ async function Listing() {
               open_to_remote: listing?.open_to_remote ?? true,
               portfolio_url: listing?.portfolio_url ?? null,
               is_active: listing?.is_active ?? true,
+              share_readiness: listing?.share_readiness ?? false,
             }}
           />
           {listing && (
@@ -169,7 +172,7 @@ async function Preview() {
       <h2 id="preview-heading" className="text-h3 text-content">
         What organisations see
       </h2>
-      <TalentCard row={data} full />
+      <TalentCard row={data} full showReadiness={matchingForEmployers()} />
       <p className="text-sm text-content-3">Never your email or phone number. You choose what to share when you accept a request.</p>
     </section>
   );
