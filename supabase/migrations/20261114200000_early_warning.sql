@@ -264,7 +264,7 @@ declare
   v_count integer;
 begin
   -- Only learners: admins and cohort staff are not followed up.
-  delete from public.learner_risk r
+  delete from public.learner_risk r -- allow-destructive: drops rows of people who are no longer learners; rebuilt daily
    where not exists (
      select 1 from public.profiles p
        join public.learner_attributes la on la.profile_id = p.id
