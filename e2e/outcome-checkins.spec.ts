@@ -64,7 +64,7 @@ test("a learner answers a check in and an admin sees the report (#329)", async (
     await signIn(page, boss);
     await page.goto("/admin/check-ins");
     await page.getByLabel("Report for").selectOption({ label: `Savannah Data Test ${tag}, ${cohortName}` });
-    await page.getByLabel("Check in").selectOption("6");
+    await page.getByLabel("Check in", { exact: true }).selectOption("6");
     await page.getByRole("button", { name: "Show report" }).click();
     const tile = (label: string) => page.getByText(label, { exact: true }).locator("xpath=following-sibling::dd[1]");
     await expect(tile("Learners covered")).toHaveText("1");
