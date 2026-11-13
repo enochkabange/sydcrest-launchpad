@@ -93,6 +93,7 @@ describe("event taxonomy", () => {
   it("lets the browser send only browser events", () => {
     expect([...CLIENT_EVENT_NAMES].sort()).toEqual(
       [
+        "campaign_link_copied",
         "client_error",
         "filter_applied",
         "form_started",

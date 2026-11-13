@@ -338,6 +338,17 @@ export const EVENTS = {
 
   // Experiments (issue #327): written by public.record_experiment_exposure, once per person per experiment
   experiment_exposed: { feature: "experiments", source: "server", props: { experiment: slug(), variant: slug() } },
+  // Audience messaging and the chapter lead toolkit (epic #320, #334 and #335)
+  message_sent: {
+    feature: "messaging",
+    source: "server",
+    props: { channel: oneOf(["in_app", "whatsapp"]), scope: oneOf(["staff", "chapter"]), audience: count(), holdout: count() },
+  },
+  campaign_link_copied: {
+    feature: "chapters",
+    source: "client",
+    props: { action: oneOf(["copy", "download", "print"]) },
+  },
 } as const satisfies Record<string, Spec>;
 
 export type EventName = keyof typeof EVENTS;

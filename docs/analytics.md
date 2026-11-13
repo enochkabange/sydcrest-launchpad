@@ -422,6 +422,7 @@ each route's first load chunks and fails when a page in `perf-budget.json`
 is over its budget or missing from the build. Budgets started about 10%
 above the 14 Nov 2026 sizes; `--suggest` prints fresh numbers. Raise a
 budget only on purpose, and say why in the PR.
+
 ## 14. Readiness score v1 and the fairness report (epic #320, step 5; #328)
 
 `public.readiness_scores`: one row per learner per track (a published roadmap
@@ -640,3 +641,40 @@ default; employers see a band and plain reasons only when it is on
 `opportunity_viewed` events with a `profile_id` as "shown". No new events.
 Learner and employer parts are off until `READINESS_FOR_LEARNERS=on` and
 `READINESS_FOR_EMPLOYERS=on`. Details and limits: `docs/readiness.md`, "Matching".
+
+## 21. Audience messaging and the chapter lead toolkit (epic #320, #334 and #335)
+
+Staff send from `/admin/messages`; a chapter's leads send from
+`/chapters/[slug]/lead`. Everything goes through definer functions
+(`supabase/migrations/20261115100000_audience_messaging.sql`):
+
+| Function | Who | Does |
+|---|---|---|
+| `message_audience_size(p_filters, p_channel, p_chapter_id)` | staff; a lead for their chapter | Counts the audience before sending |
+| `send_message(...)` | same | Records the send, holds out a random share, writes in app notifications (kind `system`, payload `message_id`) or queues WhatsApp |
+| `message_results(p_message_id)` | staff; the chapter's leads | Delivered, opened, came back within 7 days, for those sent and the holdout |
+| `chapter_dashboard(p_chapter_id)` | staff; the chapter's leads | Members, joins by first touch source, members by stage, events with going and checked in. Counts only |
+
+- **Filters** (`message_sends.filters`): `track`, `region`, `chapter_id`,
+  `cohort_id`, `stages` (learner_attributes), `inactive_days` (from
+  `last_active_on`, else the join date), `campaign` (first touch). A lead's
+  chapter always wins over any chapter in the filters.
+- **Limits**: 1000 people a send; 5 sends a day for a lead, 20 for staff
+  (`private.take_rate_limit`, bucket `message_send`); nobody gets more than one
+  message in 2 days (held out people are not counted).
+- **Channels**: in app always; WhatsApp only for live consent on the profile's
+  number, sent after the response with the service role and the approved
+  `alert` template, rechecked against the current consent wording. No email:
+  there is no email consent kind.
+- **Holdout**: 0 to 50 percent, `round(n * share / 100)` picked at random.
+  Experiments (#327) can take over the split later.
+- **Results**: delivered is `status = 'sent'`; opened is `opened_at`, set when
+  the notification is opened or marked read; came back is any non bot event in
+  the 7 days after sending, so members who turned analytics off never count as
+  came back (in either group).
+- **Chapter links**: `?utm_source=whatsapp&utm_medium=chapter&utm_campaign=<chapter slug>`
+  plus optional `utm_content` (posters default to `poster`), built by `chapterCampaignLink`
+  (`src/lib/chapters/campaign-link.ts`); the QR code is drawn on the device.
+- **Events**: `message_sent` (`channel`, `scope` staff or chapter,
+  `audience`, `holdout` counts); `campaign_link_copied` (browser; `action`
+  copy, download or print).

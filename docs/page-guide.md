@@ -260,6 +260,14 @@ Signed in people keep the app navigation on public pages (`viewer-frame`).
 - **Nav**: Header; Community → Chapters.
 
 
+### `/chapters/[slug]/lead` and `/chapters/[slug]/poster` (#335)
+- **Audience**: the chapter's leads and staff (everyone else gets a 404). **Job**: see how the chapter is doing and reach its members.
+- **Primary**: copy the tagged chapter link or message the chapter. **Secondary**: make a QR poster, open an event's host tools for check ins.
+- **Priority**: 1 counts (members, joined in 30 days, active this week, came through chapter links); 2 new joins by source, members by stage, events and check ins; 3 link and poster builder; 4 composer and sent messages.
+- **States**: no new members, no events, no messages yet (honest empty states).
+- **Phone / desktop**: one column on phones; three cards from lg; composer with the sent list in a rail from xl. The poster has no site frame and prints on one A4 page.
+- **Nav**: from the chapter page ("Lead tools" for leads).
+
 ### `/chapters/start`
 - **Audience**: signed in, set up adults with no chapter where they live (#301). **Job**: apply to start and lead one. **Primary**: send the application. States: form, in review (withdraw), approved (open your chapter), declined (note, apply again). Nudged from `/chapters` and the Home community card when the viewer's region has no chapter.
 ### `/skills` and `/skills/[slug]`
@@ -559,6 +567,7 @@ and the record in another from lg. Every page checks `requireAdmin` itself.
 | `/admin/events`, `/new`, `/[id]` | Create events, links, recordings | create | |
 | `/admin/chapters`, `/new`, `/[id]` | Create chapters, appoint leads | appoint | |
 | `/admin/chapters/applications` | Approve or decline people who want to start a chapter (#301) | decide | Approving opens the chapter as Being set up with the applicant as lead. |
+| `/admin/messages`, `/[id]` | Message an audience of members and read the results (#334) | send | Filters, size check before sending, in app or WhatsApp (consented only), holdout; results against the holdout. |
 | `/admin/sponsorships` | Record sponsorships; hide learner stories (#307) | record | Sponsors are verified organisations; they see totals and opted in stories under Impact. |
 | `/admin/skills`, `/[id]`, `/assessments/[assessmentId]` | Build skills and assessments | publish | Links to `/admin/skills/reviewers`. |
 | `/admin/skills/reviewers` | Appoint portfolio reviewers (D3, #248) | Make reviewer (by sign in email) | Lists names only; remove with one button. |
@@ -672,6 +681,8 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/admin/skills/[id]` | page | 8 Admin |
 | `/admin/skills` | page | 8 Admin |
 | `/admin/skills/reviewers` | page | 8 Admin |
+| `/admin/messages` | page | 8 Admin |
+| `/admin/messages/[id]` | page | 8 Admin |
 | `/bookings/[id]` | page | 4 Experts |
 | `/bookings` | page | 4 Experts |
 | `/briefs/[id]` | page | 4 Experts |
@@ -695,6 +706,9 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/events/[slug]/check-in` | page | 5 Community |
 | `/events/[slug]/feedback` | page | 5 Community |
 | `/events/[slug]/host` | page | 5 Community |
+| `/chapters/[slug]/lead` | page | 5 Community |
+| `/chapters/[slug]/lead/messages/[id]` | page | 5 Community |
+| `/chapters/[slug]/poster` | page (print) | 5 Community |
 | `/expert/offers/[id]` | page | 4 Experts |
 | `/expert/offers/new` | page | 4 Experts |
 | `/expert` | page | 4 Experts |
