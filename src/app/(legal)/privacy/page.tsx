@@ -79,6 +79,18 @@ export default function PrivacyPage() {
           a filter on which opportunities we suggest. Our administrators can read them to help you. They
           are deleted with your account.
         </li>
+        <li id="outcome-check-ins">
+          Your answers to <strong>check ins</strong>. About 3, 6 and 12 months after you finish a cohort or
+          a track, we ask how things are going: what you are doing now (working, running a business,
+          freelancing, studying, looking for work or something else), where (optional), your monthly
+          earnings as a band in cedis (optional, and you can choose not to say), which of your skills you
+          use, and whether your answers may count in sponsor reports. We send the question in the app, and
+          on WhatsApp only if you turned WhatsApp updates on. You do not have to answer. We use the answers
+          to learn what helps people into work and to report our impact. Reports for sponsors show totals
+          only, any number under five is hidden, and your answers are counted only if you agreed; your
+          name never appears. Our administrators can read your answers. They are deleted with your
+          account.
+        </li>
       </ul>
       <h3>When you use the platform</h3>
       <ul>
@@ -104,7 +116,8 @@ export default function PrivacyPage() {
       <p>
         We do not ask for and do not want sensitive data such as your health, religion, ethnicity, gender,
         marital status or finances. (The lowest pay you would accept, if you choose to say, is a job
-        filter, not a question about your money.)
+        filter, not a question about your money. The earnings band in a check in is optional and only
+        ever counted in totals.)
       </p>
 
       <h2>Why we use it, and our legal basis</h2>
@@ -347,7 +360,8 @@ export default function PrivacyPage() {
         Organisations that fund free seats, cohorts or chapters see totals for the learners they
         support, such as how many finished or earned a certificate. Any number under five is hidden so
         nobody can be identified. They see your story only if you write one, and your name with it only
-        if you choose to show it.
+        if you choose to show it. Their reports also show totals from <a href="#outcome-check-ins">check
+        ins</a>, such as how many learners are working now, counting only learners who agreed.
       </p>
       <h3>Service providers</h3>
       <p>We share data with service providers who help us run SydCrest, and only what each one needs:</p>

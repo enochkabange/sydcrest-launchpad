@@ -3081,6 +3081,94 @@ export type Database = {
           },
         ]
       }
+      outcome_checkins: {
+        Row: {
+          answered_at: string | null
+          baseline_status: string | null
+          cohort_id: string | null
+          created_at: string
+          due_on: string
+          earnings_band: string | null
+          finished_on: string
+          id: string
+          months: number
+          organisation: string | null
+          profile_id: string
+          roadmap_id: string | null
+          sent_at: string | null
+          share_in_reports: boolean
+          skills: string[]
+          skipped_at: string | null
+          source: string
+          updated_at: string
+          work_status: string | null
+        }
+        Insert: {
+          answered_at?: string | null
+          baseline_status?: string | null
+          cohort_id?: string | null
+          created_at?: string
+          due_on: string
+          earnings_band?: string | null
+          finished_on: string
+          id?: string
+          months: number
+          organisation?: string | null
+          profile_id: string
+          roadmap_id?: string | null
+          sent_at?: string | null
+          share_in_reports?: boolean
+          skills?: string[]
+          skipped_at?: string | null
+          source: string
+          updated_at?: string
+          work_status?: string | null
+        }
+        Update: {
+          answered_at?: string | null
+          baseline_status?: string | null
+          cohort_id?: string | null
+          created_at?: string
+          due_on?: string
+          earnings_band?: string | null
+          finished_on?: string
+          id?: string
+          months?: number
+          organisation?: string | null
+          profile_id?: string
+          roadmap_id?: string | null
+          sent_at?: string | null
+          share_in_reports?: boolean
+          skills?: string[]
+          skipped_at?: string | null
+          source?: string
+          updated_at?: string
+          work_status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "outcome_checkins_cohort_id_fkey"
+            columns: ["cohort_id"]
+            isOneToOne: false
+            referencedRelation: "cohorts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "outcome_checkins_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "outcome_checkins_roadmap_id_fkey"
+            columns: ["roadmap_id"]
+            isOneToOne: false
+            referencedRelation: "roadmaps"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       outcomes: {
         Row: {
           created_at: string
@@ -5970,6 +6058,33 @@ export type Database = {
           topics_completed: number
         }[]
       }
+      admin_outcome_checkin_totals: {
+        Args: never
+        Returns: {
+          answered: number
+          created: number
+          months: number
+          sent: number
+          shared: number
+          skipped: number
+        }[]
+      }
+      admin_outcome_report: {
+        Args: { p_id: string; p_months: number; p_scope: string }
+        Returns: {
+          bucket: string
+          metric: string
+          people: number
+        }[]
+      }
+      admin_outcome_stories: {
+        Args: { p_id: string; p_scope: string }
+        Returns: {
+          display_name: string
+          story: string
+          updated_at: string
+        }[]
+      }
       admin_readiness_report: {
         Args: never
         Returns: {
@@ -6138,6 +6253,17 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      answer_outcome_checkin: {
+        Args: {
+          p_earnings_band?: string
+          p_id: string
+          p_organisation?: string
+          p_share?: boolean
+          p_skills?: string[]
+          p_work_status: string
+        }
+        Returns: number
       }
       apply_as_expert: {
         Args: {
@@ -6318,6 +6444,15 @@ export type Database = {
           my_reactions: string[]
           post_id: string
           reaction_counts: Json
+        }[]
+      }
+      create_outcome_checkins: {
+        Args: { p_rows: Json }
+        Returns: {
+          due_on: string
+          id: string
+          months: number
+          profile_id: string
         }[]
       }
       decide_application: {
@@ -6613,6 +6748,17 @@ export type Database = {
           stage: string
           stage_changed_at: string
           verified_skills: string[]
+        }[]
+      }
+      outcome_checkin_finishes: {
+        Args: { p_from: string; p_to: string }
+        Returns: {
+          baseline_status: string
+          cohort_id: string
+          finished_on: string
+          profile_id: string
+          roadmap_id: string
+          source: string
         }[]
       }
       pin_community_post: {
@@ -6924,6 +7070,14 @@ export type Database = {
           learners: number
           stories: number
           verified_outcomes: number
+        }[]
+      }
+      sponsorship_outcome_report: {
+        Args: { p_months: number; p_sponsorship_id: string }
+        Returns: {
+          bucket: string
+          metric: string
+          people: number
         }[]
       }
       sponsorship_stories: {

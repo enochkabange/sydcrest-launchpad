@@ -453,6 +453,13 @@ See section 3 hubs.
 - **Cut / move / collapse**: `/profile` also has a "Report outcome" card; keep one entry (this page) and link to it.
 - **Nav**: Earn → Outcomes.
 
+### `/outcomes/check-in/[id]` Outcome check in (#329)
+- **Audience**: L who finished a cohort or a track 3, 6 or 12 months ago. **Job**: say what they are doing now in two minutes. **Primary**: send answers (only the status is required; place, earnings band, skills and the consent to be counted in sponsor reports are optional).
+- **Entry**: the in app notification (and WhatsApp with consent) from the daily job, and the "How are things going?" panel on `/outcomes`.
+
+### `/print/outcomes` Printable impact report (#329)
+- **Audience**: sponsors (`?sponsorship=`) and admins (`?scope=&id=`). **Job**: print or save as PDF a 3, 6 or 12 month report. No app chrome; the browser's print dialog makes the PDF.
+
 ### `/talent/me` Your talent listing
 - **Audience**: adult L who are eligible (certificate or verified skill). **Job**: be findable by verified organisations and answer contact requests.
 - **Primary**: turn the listing on. **Secondary**: answer requests, edit summary.
@@ -546,6 +553,7 @@ and the record in another from lg. Every page checks `requireAdmin` itself.
 | `/admin/certificates` | Find and revoke certificates | revoke | |
 | `/admin/reports` | Act on profile and post reports | resolve / unpublish | |
 | `/admin/funnel`, `/admin/impact` | Read the funnel and the North Star | none | Dashboards are #243. |
+| `/admin/check-ins` | Check in totals and impact reports by cohort, programme or chapter | show report | Printable version at `/print/outcomes`. |
 
 ---
 
@@ -617,6 +625,7 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 |---|---|---|
 | `/admin/applications` | page | 8 Admin |
 | `/admin/certificates` | page | 8 Admin |
+| `/admin/check-ins` | page | 8 Admin |
 | `/admin/chapters/[id]` | page | 8 Admin |
 | `/admin/chapters/new` | page | 8 Admin |
 | `/admin/chapters` | page | 8 Admin |
@@ -692,6 +701,8 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/org` | page | 6 Earn |
 | `/outcomes/[id]/edit` | page | 6 Earn |
 | `/outcomes/new` | page | 6 Earn |
+| `/outcomes/check-in/[id]` | page | 6 Earn |
+| `/print/outcomes` | page | 6 Earn |
 | `/outcomes` | page | 6 Earn |
 | `/path` | page | 3 Learn |
 | `/profile` | page | 7 Account |

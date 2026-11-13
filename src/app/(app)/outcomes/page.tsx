@@ -15,6 +15,7 @@ const NOTICES = {
   reported: "Thanks. Your outcome is in. Our team will check the evidence and let it count once it is verified.",
   updated: "Saved. Your outcome is back with our team for review.",
   deleted: "Outcome removed.",
+  checked_in: "Thanks for checking in. Your answers are saved.",
 } as const;
 
 async function Notice({ searchParams }: Pick<PageProps<"/outcomes">, "searchParams">) {
@@ -102,6 +103,36 @@ async function OutcomeList() {
   );
 }
 
+/** Check ins waiting for an answer (#329), newest first. Nothing when there are none. */
+async function OpenCheckins() {
+  const user = await requireUser();
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("outcome_checkins")
+    .select("id, months, due_on")
+    .eq("profile_id", user.id)
+    .is("answered_at", null)
+    .or("sent_at.not.is.null,skipped_at.not.is.null")
+    .order("due_on", { ascending: false })
+    .limit(3);
+  if (!data?.length) return null;
+  return (
+    <section aria-labelledby="checkins-heading" className="flex flex-col gap-3 rounded-lg border border-line bg-surface-sunken p-5 xl:p-6">
+      <h2 id="checkins-heading" className="text-h3 text-content">
+        How are things going?
+      </h2>
+      <p className="max-w-reading text-content-2">Two minutes: tell us what you are doing since you finished.</p>
+      <div className="flex flex-wrap gap-2">
+        {data.map((c) => (
+          <Link key={c.id} href={`/outcomes/check-in/${c.id}`} className={buttonClasses("primary")}>
+            Answer your {c.months} month check in
+          </Link>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function HowItWorks() {
   return (
     <section className="flex flex-col gap-3 rounded-lg border border-line bg-surface-sunken p-5 xl:p-6">
@@ -146,6 +177,9 @@ export default function OutcomesPage({ searchParams }: PageProps<"/outcomes">) {
           <Notice searchParams={searchParams} />
         </Suspense>
       </div>
+      <Suspense fallback={null}>
+        <OpenCheckins />
+      </Suspense>
       <Suspense fallback={<div className="h-40 animate-skeleton rounded-lg bg-surface-sunken" />}>
         <OutcomeList />
       </Suspense>

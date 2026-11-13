@@ -576,3 +576,33 @@ control shows in percentage points, and from `COMPARE_MIN` (30) measured
 people in both arms a two proportion z test says "unlikely to be chance"
 (p under 0.05) or "could still be chance"; below that, "too early to tell". Admins create, start and stop experiments at
 `/admin/experiments`. Never test prices or access to learning.
+## 13. Outcome check ins and impact reports (epic #320, #329)
+
+`public.outcome_checkins`: one row per learner, finish and milestone (3, 6 or
+12 months). A finish is a cohort ending (start plus seven days per programme
+week) for a learner whose place is active or completed, or every topic of a
+published roadmap done. The daily `/api/cron/reengage` job (third isolated
+step) asks `outcome_checkin_finishes` for finishes, plans the due milestone
+in `src/lib/outcomes/checkins.ts` (the latest one passed, created at most 30
+days late, so old finishes never set off a burst), creates rows with
+`create_outcome_checkins`, then sends each one as an in app notification
+(kind `system`) and on WhatsApp with a live consent. A learner sent a check
+in within 60 days gets the new one marked skipped instead. No email yet:
+there is no email consent.
+
+`baseline_status` snapshots the About you employment status when the row is
+created (the "before"). The learner answers through `answer_outcome_checkin`
+on `/outcomes/check-in/[id]`.
+
+| Event | Props | Sent by |
+| `outcome_checkin_sent` | `months` | The cron, without a person (service role) |
+| `outcome_checkin_answered` | `months`, `status`, `shared` | The answer action |
+
+**Reports** (`private.outcome_report`): per learner, their check in at the
+chosen milestone for that programme or cohort (any of theirs for a chapter).
+Learners covered, sent, answered (the response rate, every answer) and
+agreed to be counted; then, from agreeing answers only: in work before and
+now, moved into work, status before and now, earnings bands. Admins read raw
+counts (`admin_outcome_report`, `/admin/check-ins`); sponsors read
+`sponsorship_outcome_report` under Impact, every count under five held back.
+`/print/outcomes` is the printable version for both.
