@@ -7,6 +7,7 @@ import { loadTable } from "@/lib/insights/data";
 import { formatDay } from "@/lib/insights/filters";
 import { formatCount, formatHours, formatRate } from "@/lib/insights/metrics";
 import { Definitions, InsightsPage, Section, type InsightsContext } from "../shell";
+import { EARLY_WARNING_DEFINITIONS, MentorsAndEarlyWarning } from "./early-warning";
 
 export const metadata: Metadata = { title: "DMP cohorts", robots: { index: false } };
 
@@ -109,6 +110,8 @@ async function Cohorts({ supabase, filters }: InsightsContext) {
         )}
       </Section>
 
+      <MentorsAndEarlyWarning supabase={supabase} filters={filters} />
+
       <Definitions
         items={[
           ["Cohorts in range", "Cohorts (not cancelled) running at some point in the range: from the start date to the due date of their last week."],
@@ -118,6 +121,7 @@ async function Cohorts({ supabase, filters }: InsightsContext) {
           ["Median time to grade", "From submission to grade, for work graded in the range. Shown from five graded pieces."],
           ["Active in 7 days", "Learners who did anything on the platform in the last 7 days. Attendance at live sessions is not recorded on the platform yet, so this is not attendance."],
           ["At risk", "An active learner with two or more missing weeks, or two or more weeks graded below the pass mark."],
+          ...EARLY_WARNING_DEFINITIONS,
         ]}
       />
     </>

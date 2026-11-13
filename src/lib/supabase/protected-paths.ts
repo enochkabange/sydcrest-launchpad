@@ -46,6 +46,8 @@ export const SIGNED_IN_PREFIXES = [
   "/business/new",
   // Staff
   "/admin",
+  // Printable reports (#329)
+  "/print",
 ];
 
 export const SIGNED_IN_PATTERNS: RegExp[] = [

@@ -88,8 +88,8 @@ describe("csv", () => {
 });
 
 describe("dashboard registry", () => {
-  it("has nine dashboards, each table belonging to one", () => {
-    expect(DASHBOARDS).toHaveLength(9);
+  it("has ten dashboards, each table belonging to one", () => {
+    expect(DASHBOARDS).toHaveLength(10);
     const slugs = new Set(DASHBOARDS.map((d) => d.slug));
     for (const t of Object.values(TABLES)) expect(slugs.has(t.dashboard)).toBe(true);
   });

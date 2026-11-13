@@ -79,10 +79,27 @@ export default function PrivacyPage() {
           a filter on which opportunities we suggest. Our administrators can read them to help you. They
           are deleted with your account.
         </li>
+        <li id="outcome-check-ins">
+          Your answers to <strong>check ins</strong>. About 3, 6 and 12 months after you finish a cohort or
+          a track, we ask how things are going: what you are doing now (working, running a business,
+          freelancing, studying, looking for work or something else), where (optional), your monthly
+          earnings as a band in cedis (optional, and you can choose not to say), which of your skills you
+          use, and whether your answers may count in sponsor reports. We send the question in the app, and
+          on WhatsApp only if you turned WhatsApp updates on. You do not have to answer. We use the answers
+          to learn what helps people into work and to report our impact. Reports for sponsors show totals
+          only, any number under five is hidden, and your answers are counted only if you agreed; your
+          name never appears. Our administrators can read your answers. They are deleted with your
+          account.
+        </li>
       </ul>
       <h3>When you use the platform</h3>
       <ul>
         <li>Your learning progress, such as the roadmap steps you have completed.</li>
+        <li id="lesson-feedback">
+          Your answer to &ldquo;Was this lesson clear?&rdquo; at the end of a lesson (yes or not really, and the
+          reason you tapped, if any), so we can improve the lessons. You can change it at any time; it is deleted
+          with your account.
+        </li>
         <li>
           How many questions you ask the AI tutor each day, so we can keep it free and fair for
           everyone.
@@ -99,7 +116,8 @@ export default function PrivacyPage() {
       <p>
         We do not ask for and do not want sensitive data such as your health, religion, ethnicity, gender,
         marital status or finances. (The lowest pay you would accept, if you choose to say, is a job
-        filter, not a question about your money.)
+        filter, not a question about your money. The earnings band in a check in is optional and only
+        ever counted in totals.)
       </p>
 
       <h2>Why we use it, and our legal basis</h2>
@@ -162,6 +180,13 @@ export default function PrivacyPage() {
           and whether cohort work was sent by its due date.
         </li>
         <li>
+          <strong>How clear lessons are:</strong> which answer you picked on each checkpoint question and
+          whether that attempt passed; which topic you asked the AI tutor about, which message in the chat
+          it was and a rough kind of question (for example &ldquo;why&rdquo; or &ldquo;about code&rdquo;),
+          never the words; and your answer to &ldquo;Was this lesson clear?&rdquo;. Our content team sees
+          these only as totals per lesson and question.
+        </li>
+        <li>
           <strong>Where your visit came from:</strong> once per visit, the campaign tags in the link you
           opened (such as &ldquo;utm_source=whatsapp&rdquo;; links shared from SydCrest carry them),
           the kind of site that sent you (for example a search engine, WhatsApp or Facebook, never the
@@ -211,6 +236,44 @@ export default function PrivacyPage() {
         (for example, so a mentor can check in when you go quiet) and to improve SydCrest. Our
         administrators can see it; employers cannot. You can see your own, and it is deleted with your
         account.
+      </p>
+      <h3 id="readiness-score">Readiness score</h3>
+      <p>
+        Once a day we also work out a readiness score from 0 to 100 for each track you follow or chose
+        in About you. It counts the skills you have verified for the track, the topics you have
+        finished, your approved portfolio work, the days you learned in the last 30, and whether your
+        About you goal and public profile are filled in. It never uses your region, device, internet,
+        study times, age, education or work preferences. For now only our staff can see it, while we
+        check that it is fair to every group of learners; it is not shown to you or to employers yet,
+        and we will ask your consent before any employer sees it. It is deleted with your account.
+      </p>
+      <h3 id="check-ins">Check ins from mentors and chapter leads</h3>
+      <p>
+        Once a day we also check that summary for signs that someone may need a hand: going quiet
+        compared with how often they usually come, a slower pace, failing the same quiz again and
+        again, saving a path but not starting, or missing cohort deadlines. Each flag comes with its
+        reasons in plain words, never a hidden score. It goes to your cohort mentors if you are in a
+        cohort, otherwise to your chapter lead, otherwise to our administrators, so they can check in
+        with you. When they do, they note that they sent a message, called or met you, with an
+        optional short note, so we can learn which support helps. Only they and our administrators
+        see flags and these notes; employers never do. They are kept while your account is open and
+        deleted with it.
+      </p>
+      <h3 id="experiments">Testing changes</h3>
+      <p>
+        Sometimes we try a change, such as a new welcome page or a reminder message, on a random share
+        of people and compare it with everyone else, to learn whether it really helps. The share is
+        picked by chance from your account (or, if you are signed out, from a random code on your
+        device), so you always see the same version. We note which version you got and whether you came
+        back in the following week; nothing else is collected for a test. We never test prices or
+        access to learning: everyone can always reach every lesson.
+      </p>
+      <p>
+        One test runs now: a weekly WhatsApp reminder goes to members who said yes to messages and went
+        quiet, and one in ten of them, picked by chance, do not get it, so we can tell whether it helps.
+        Because this happens on our side and not in your browser, the choice of who gets the reminder is
+        noted even if you turned analytics off. If you turned analytics off, the website shows you the
+        usual version of anything we are testing and records nothing about it.
       </p>
       <h3>Who can see it</h3>
       <p>
@@ -297,7 +360,8 @@ export default function PrivacyPage() {
         Organisations that fund free seats, cohorts or chapters see totals for the learners they
         support, such as how many finished or earned a certificate. Any number under five is hidden so
         nobody can be identified. They see your story only if you write one, and your name with it only
-        if you choose to show it.
+        if you choose to show it. Their reports also show totals from <a href="#outcome-check-ins">check
+        ins</a>, such as how many learners are working now, counting only learners who agreed.
       </p>
       <h3>Service providers</h3>
       <p>We share data with service providers who help us run SydCrest, and only what each one needs:</p>
@@ -343,6 +407,10 @@ export default function PrivacyPage() {
         <li>
           <strong>Analytics events:</strong> 13 months, then deleted automatically. Daily totals made
           from them, which do not identify anyone, are kept so we can see trends over time.
+        </li>
+        <li>
+          <strong>Which version of a test you got:</strong> kept with your account while we look at the
+          results, and deleted with your account.
         </li>
         <li>
           <strong>Backups:</strong> our hosting provider keeps backups for a limited time, after which

@@ -391,6 +391,7 @@ Nav: Footer only, correct.
 - **States**: no cohorts (404 for non staff; explainer for an admin), empty queue, busy.
 - **Phone**: queue first; grid becomes a list. **Desktop**: `DataTable` roster with the cohort switcher in the rail (done).
 - **Nav**: Experts → Mentor console (staff). Should be "Your work". The rail links to `/certificates/issue` for the cohort.
+- **Caseload (#325, #330)**: the console opens on the Caseload, the week's starting list: learners sorted by early warning risk, then longest since contact, then nearest deadline, each with reasons in plain words and one tap Message, Call or Session logging. Chapter leads get the same list for their members on `/chapters/[slug]`.
 
 ### `/expert`, `/expert/offers/new`, `/expert/offers/[id]`
 - **Audience**: E (explainer for others). **Job**: run my expert listing: answer requests, keep offers current.
@@ -451,6 +452,13 @@ See section 3 hubs.
 - **Audience**: L. **Job**: report a job, gig or promotion so it can be verified. **Primary**: report an outcome. States: none, pending, verified, rejected (edit and resend).
 - **Cut / move / collapse**: `/profile` also has a "Report outcome" card; keep one entry (this page) and link to it.
 - **Nav**: Earn → Outcomes.
+
+### `/outcomes/check-in/[id]` Outcome check in (#329)
+- **Audience**: L who finished a cohort or a track 3, 6 or 12 months ago. **Job**: say what they are doing now in two minutes. **Primary**: send answers (only the status is required; place, earnings band, skills and the consent to be counted in sponsor reports are optional).
+- **Entry**: the in app notification (and WhatsApp with consent) from the daily job, and the "How are things going?" panel on `/outcomes`.
+
+### `/print/outcomes` Printable impact report (#329)
+- **Audience**: sponsors (`?sponsorship=`) and admins (`?scope=&id=`). **Job**: print or save as PDF a 3, 6 or 12 month report. No app chrome; the browser's print dialog makes the PDF.
 
 ### `/talent/me` Your talent listing
 - **Audience**: adult L who are eligible (certificate or verified skill). **Job**: be findable by verified organisations and answer contact requests.
@@ -530,6 +538,8 @@ and the record in another from lg. Every page checks `requireAdmin` itself.
 | `/admin/organisations` | Verify organisations | verify / reject | |
 | `/admin/outcomes` | Verify reported outcomes | verify | Feeds `/impact`. |
 | `/admin/insights`, `/funnel`, `/retention`, `/learning`, `/features`, `/cohorts`, `/earn`, `/community`, `/reliability` | Read reporting dashboards | filter, download CSV | Filters in the URL; definitions at the foot of each (#243, `docs/analytics.md` §8). |
+| `/admin/insights/experiments` | Read each experiment's variants and how many came back | download CSV | "Not enough data yet" until a variant has enough measured people (#327, `docs/analytics.md` §13). |
+| `/admin/experiments` | Create, start and stop experiments, holdouts and flags | save as draft, start, stop | Draft to running to stopped, never back; the split is fixed once started. |
 | `/admin/opportunities`, `/new`, `/[id]` | Curate the public board | post | |
 | `/admin/events`, `/new`, `/[id]` | Create events, links, recordings | create | |
 | `/admin/chapters`, `/new`, `/[id]` | Create chapters, appoint leads | appoint | |
@@ -539,9 +549,11 @@ and the record in another from lg. Every page checks `requireAdmin` itself.
 | `/admin/skills/reviewers` | Appoint portfolio reviewers (D3, #248) | Make reviewer (by sign in email) | Lists names only; remove with one button. |
 | `/admin/roadmaps`, `/new`, `/[id]`, `/[id]/nodes/[nodeId]`, `/links` | Author roadmaps, nodes, links; link health | publish | |
 | `/admin/content` | Generate and review node content | estimate / submit | Needs the AI key (503 otherwise). |
+| `/admin/content/quality` | Rewrite queue: lessons and questions most worth fixing, with the evidence | change window | Counts only (#326, `docs/analytics.md` §13). |
 | `/admin/certificates` | Find and revoke certificates | revoke | |
 | `/admin/reports` | Act on profile and post reports | resolve / unpublish | |
 | `/admin/funnel`, `/admin/impact` | Read the funnel and the North Star | none | Dashboards are #243. |
+| `/admin/check-ins` | Check in totals and impact reports by cohort, programme or chapter | show report | Printable version at `/print/outcomes`. |
 
 ---
 
@@ -613,6 +625,7 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 |---|---|---|
 | `/admin/applications` | page | 8 Admin |
 | `/admin/certificates` | page | 8 Admin |
+| `/admin/check-ins` | page | 8 Admin |
 | `/admin/chapters/[id]` | page | 8 Admin |
 | `/admin/chapters/new` | page | 8 Admin |
 | `/admin/chapters` | page | 8 Admin |
@@ -620,6 +633,7 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/admin/sponsorships` | page | 8 Admin |
 | `/admin/cohorts/[id]` | page | 8 Admin |
 | `/admin/cohorts` | page | 8 Admin |
+| `/admin/content/quality` | page | 8 Admin |
 | `/admin/content` | page | 8 Admin |
 | `/admin/events/[id]` | page | 8 Admin |
 | `/admin/events/new` | page | 8 Admin |
@@ -687,6 +701,8 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/org` | page | 6 Earn |
 | `/outcomes/[id]/edit` | page | 6 Earn |
 | `/outcomes/new` | page | 6 Earn |
+| `/outcomes/check-in/[id]` | page | 6 Earn |
+| `/print/outcomes` | page | 6 Earn |
 | `/outcomes` | page | 6 Earn |
 | `/path` | page | 3 Learn |
 | `/profile` | page | 7 Account |

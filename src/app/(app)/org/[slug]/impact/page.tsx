@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Panel, Skeleton } from "@/components/business/bits";
+import Link from "@/components/ui/link";
+import { buttonClasses } from "@/components/ui/button";
+import { ImpactReport } from "@/components/outcomes/impact-report";
+import { CHECKIN_MONTHS, parseCheckinMonths } from "@/lib/outcomes/checkins";
+import { sponsorReport } from "@/lib/outcomes/reports";
 import { getOrgForMember } from "@/lib/organisations/queries";
 import { CONTACT_EMAIL } from "@/content/marketing";
 import { impactCount, tierLabel } from "@/lib/sponsorships";
@@ -16,8 +21,9 @@ const dateFormat = new Intl.DateTimeFormat("en-GB", { dateStyle: "medium", timeZ
  * stories learners chose to share. Owners and admins of the organisation only;
  * the database returns nothing to anyone else.
  */
-async function Impact({ params }: { params: PageProps<"/org/[slug]/impact">["params"] }) {
+async function Impact({ params, searchParams }: Pick<PageProps<"/org/[slug]/impact">, "params" | "searchParams">) {
   const { slug } = await params;
+  const months = parseCheckinMonths((await searchParams).months);
   const { org } = await getOrgForMember(slug);
   const supabase = await createClient();
   const { data: sponsorships, error } = await supabase
@@ -41,11 +47,12 @@ async function Impact({ params }: { params: PageProps<"/org/[slug]/impact">["par
 
   const details = await Promise.all(
     sponsorships.map(async (s) => {
-      const [impact, stories] = await Promise.all([
+      const [impact, stories, outcomes] = await Promise.all([
         supabase.rpc("sponsorship_impact", { p_sponsorship_id: s.id }),
         supabase.rpc("sponsorship_stories", { p_sponsorship_id: s.id }),
+        sponsorReport(supabase, s.id, months),
       ]);
-      return { s, impact: impact.data?.[0] ?? null, stories: stories.data ?? [] };
+      return { s, impact: impact.data?.[0] ?? null, stories: stories.data ?? [], outcomes };
     }),
   );
 
@@ -55,7 +62,7 @@ async function Impact({ params }: { params: PageProps<"/org/[slug]/impact">["par
         Totals only. Any number under five shows as fewer than five, so no learner can be identified. Names appear only with
         stories learners chose to share by name.
       </p>
-      {details.map(({ s, impact, stories }) => {
+      {details.map(({ s, impact, stories, outcomes }) => {
         const what =
           s.scope === "cohort"
             ? `${s.cohorts?.programs?.title ?? "Programme"}, ${s.cohorts?.name ?? "cohort"}`
@@ -88,6 +95,31 @@ async function Impact({ params }: { params: PageProps<"/org/[slug]/impact">["par
                 </div>
               ))}
             </dl>
+            {outcomes && (
+              <section aria-labelledby={`o-${s.id}`} className="flex flex-col gap-4 border-t border-line pt-4">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <h3 id={`o-${s.id}`} className="text-h3 text-content">
+                    After they finish
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {CHECKIN_MONTHS.map((m) => (
+                      <Link
+                        key={m}
+                        href={`/org/${org.slug}/impact?months=${m}`}
+                        aria-current={m === months ? "page" : undefined}
+                        className={buttonClasses(m === months ? "primary" : "ghost")}
+                      >
+                        {m} months
+                      </Link>
+                    ))}
+                    <Link href={`/print/outcomes?sponsorship=${s.id}&months=${months}`} className={buttonClasses("secondary")}>
+                      Printable report
+                    </Link>
+                  </div>
+                </div>
+                <ImpactReport report={outcomes.report} months={months} stories={[]} showStories={false} idPrefix={`o-${s.id}`} />
+              </section>
+            )}
             <div className="flex flex-col gap-3">
               <h3 className="text-h3 text-content">Stories</h3>
               {stories.length === 0 ? (
@@ -110,10 +142,10 @@ async function Impact({ params }: { params: PageProps<"/org/[slug]/impact">["par
   );
 }
 
-export default function OrgImpactPage({ params }: PageProps<"/org/[slug]/impact">) {
+export default function OrgImpactPage({ params, searchParams }: PageProps<"/org/[slug]/impact">) {
   return (
     <Suspense fallback={<Skeleton className="h-80" />}>
-      <Impact params={params} />
+      <Impact params={params} searchParams={searchParams} />
     </Suspense>
   );
 }

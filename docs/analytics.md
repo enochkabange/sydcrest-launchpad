@@ -116,11 +116,12 @@ recorded by the server; browser events come through the beacon.
 | Auth | `signup` (method), `sign_in` (method), `sign_out`, `welcome_completed`, `password_reset_requested`, `password_updated` |
 | Settings | `profile_updated` (has_region), `public_profile_updated` (is_public), `learner_profile_saved` (answered, changed), `profile_field_updated` (field), `profile_published`, `whatsapp_consent_set` (on), `display_prefs_saved`, `milestone_posts_set` (on) |
 | Onboarding and path | `waitlist_joined`, `quiz_run` (signed_in), `path_saved`, `path_viewed` |
-| Learn | `lesson_opened` (roadmap, node_id; every open), `node_started` (first open), `quiz_submitted` (node_id, score, passed), `node_completed` (roadmap, node_id, via), `lesson_left` (browser: roadmap, node_id, time_spent_ms visible, scroll_percent, done_before), `resource_opened` (browser: node_id, kind), `quiz_question_answered` (node_id, question_id, correct; one per question), `quiz_retried` (node_id, passed, passed_before) |
+| Learn | `lesson_opened` (roadmap, node_id; every open), `node_started` (first open), `quiz_submitted` (node_id, score, passed), `node_completed` (roadmap, node_id, via), `lesson_left` (browser: roadmap, node_id, time_spent_ms visible, scroll_percent, done_before), `resource_opened` (browser: node_id, kind), `quiz_question_answered` (node_id, question_id, correct, choice, passed; one per question), `quiz_retried` (node_id, passed, passed_before) |
 | Discovery | `search_performed` (browser: scope topics, results; never the words), `filter_applied` (browser: scope roadmaps or opportunities, filter, results) |
-| Review and Study Buddy | `review_completed` (items, correct), `weekly_goal_set` (goal), `study_buddy_message` (turn) |
+| Review and Study Buddy | `review_completed` (items, correct), `weekly_goal_set` (goal), `study_buddy_message` (turn, node_id, kind), `lesson_feedback_given` (node_id, clear, reason) |
 | Skills | `skill_quiz_submitted` (passed, score), `skill_portfolio_submitted`, `skill_portfolio_reviewed` (decision), `path_skills_claimed` (claimed) |
 | Programme and cohort | `application_submitted`, `application_withdrawn`, `application_decided` (decision), `specialisation_chosen` (specialisation), `submission_saved` (sent), `submission_graded` (passed), `deadline_met` (kind cohort_task, hours_early), `deadline_missed` (kind, hours_late), `submission_resubmitted` (attempt), `peer_review_assigned`, `peer_review_submitted`, `learner_deferred`, `certificate_issued`, `certificate_revoked` |
+| Mentoring | `mentor_contact_logged` (kind: message, call or session; logged from the caseload) |
 | Experts and bookings | `expert_applied`, `expert_application_decided` (decision), `offer_created`, `offer_updated`, `booking_requested`, `booking_status_changed` (status), `booking_message_sent`, `booking_reviewed` (rating) |
 | Briefs | `brief_created`, `pitch_submitted`, `pitch_withdrawn`, `pitch_decided` (decision) |
 | Opportunities, outcomes, talent | `opportunity_created` (by), `opportunity_saved` (status), `opportunity_unsaved`, `opportunity_reported`, `opportunity_viewed` (browser: opportunity_id), `opportunity_apply_opened` (browser: opportunity_id, on_sydcrest; the employer's own link), `opportunity_applied` (opportunity_id), `opportunity_application_withdrawn`, `opportunity_applicant_moved` (stage), `outcome_reported`, `outcome_decided` (decision), `talent_listing_saved`, `talent_contact_requested`, `talent_contact_responded` (accepted) |
@@ -360,7 +361,7 @@ check-ins in the computed attributes step), `message_replied`,
 `mentor_feedback_given`, `cv_updated`, `mock_interview_rated`,
 `interview_reported` / `offer_reported` / `hired_reported` (outcomes cover part
 of this), `employer_feedback_given`, `still_employed_checked` (#329),
-`feedback_given` (#326), `app_installed` / `offline_used`.
+`app_installed` / `offline_used`.
 
 ## 12. Learner attributes and the learner view (epic #320, step 4)
 
@@ -420,3 +421,188 @@ each route's first load chunks and fails when a page in `perf-budget.json`
 is over its budget or missing from the build. Budgets started about 10%
 above the 14 Nov 2026 sizes; `--suggest` prints fresh numbers. Raise a
 budget only on purpose, and say why in the PR.
+## 14. Readiness score v1 and the fairness report (epic #320, step 5; #328)
+
+`public.readiness_scores`: one row per learner per track (a published roadmap
+they started a topic in, or listed in About you), with the score, band and
+every part. Rebuilt by `private.refresh_readiness()` inside the daily
+`run_analytics_maintenance` (its result gains a `readiness` count). Weights
+live in `private.readiness_weights()`, mirrored in
+`src/lib/readiness/score.ts` (a unit test keeps them equal and checks the
+refresh never reads a Never attribute). Admin only: `/admin/readiness`
+(`admin_readiness_report`, the fairness check) and a Readiness block on
+`/admin/learners/[id]` (`admin_learner_readiness`). Not shown to learners
+(#337) or employers, and not used for matching (#336) yet. No events.
+Model card, inputs, limits and the fairness review: `docs/readiness.md`.
+## 15. Early warning and the mentor caseload (#325, #330)
+
+`private.refresh_learner_risk()` runs inside `run_analytics_maintenance`
+right after the learner attributes (result key `risk`). It writes one row
+per learner (not admins, not cohort staff) to `public.learner_risk`: a
+`level` (`none`, `watch`, `at_risk`), the `reasons` (codes below) and the
+numbers behind them, and a `route` for who acts.
+
+| Reason | Rule (UTC days) |
+| `went_quiet` | Quiet for at least twice their usual gap between active days (and at least 7), up to 60. Usual gap: 56 over their active days in the 56 days up to their last active day, when there were 3 or more |
+| `dormant` | Stage dormant, up to 60 days quiet |
+| `missed_deadlines` | Two or more `deadline_missed` in 28 days |
+| `streak_broken` | Active on 5 or more of the 14 days up to their last active day, now quiet 3 or more days (not yet `went_quiet`) |
+| `slipping` | Stage slipping |
+| `pace_slowing` | 4 or more topics done in the 56 days before the last 14, and the last 14 at most half that pace |
+| `quiz_stuck` | 3 or more failed `quiz_submitted` on one topic in 30 days, topic not passed |
+| `no_first_topic` | Saved a path 7 or more days ago, no topic started |
+
+Level: `at_risk` with `went_quiet`, `dormant` or `missed_deadlines`, or two
+or more reasons; `watch` with one. The rules are pure SQL
+(`private.risk_reasons`, `private.risk_level`) mirrored in
+`src/lib/early-warning/rules.ts`, which also words each reason for people.
+Device, connection, region and study hour never enter them.
+
+**Routing:** `mentor` when the learner is active in an enrolling or running
+cohort that has staff (`cohort_id`; every mentor and coordinator of the
+cohort sees them, as there is no per learner mentor yet); else
+`chapter_lead` for the chapter they joined last, if open and led
+(`chapter_id`); else `admin`.
+
+**Alerts:** `public.learner_risk_alerts` keeps one row per flagged stretch
+(`raised_on`, reasons at the time, `came_back_on` the first active day after,
+`closed_on` when back to `none`). Admins only.
+
+**Contacts:** `public.mentor_contacts` (staff, learner, `kind` message, call
+or session, optional `note` up to 280 characters). Logged from the caseload;
+event `mentor_contact_logged` (`kind`). Readable by whoever may contact that
+learner (`private.can_contact_learner`) and admins; never by the learner.
+
+**Pages:** `/mentor` Caseload (`mentor_caseload`: risk, last contact, next
+unsent deadline; sorted by `sortCaseload`); chapter leads see "Members to
+check in with" on their chapter page (`chapter_check_ins`); admins see
+Early warning, Mentors and Learners flagged now on `/admin/insights/cohorts`
+(`admin_insights_early_warning`, `admin_insights_mentors`,
+`admin_insights_risk_learners`). "Came back" counts alerts for going quiet
+raised at least 14 days ago, split by whether a contact was logged first. It
+is a plain comparison, not an experiment.
+## 16. Content quality and the rewrite queue (epic #320, issue #326)
+
+Which lessons and quiz questions confuse learners, and why. Admin only:
+`/admin/content/quality` (linked from `/admin/content`).
+
+**New and changed events** (from 14 Nov 2026; older rows lack the new props
+and count only where they can):
+
+| Event | Props | Notes |
+|---|---|---|
+| `quiz_question_answered` | adds `choice` (option index picked), `passed` (the attempt's result) | Makes discrimination a filtered count and shows the most chosen wrong answer. |
+| `study_buddy_message` | adds `node_id` (the topic, when the chat is about one), `kind` (`routine`, `long`, `intent` for why or compare, `code`) | `kind` is the model router's reason. The message text is never recorded. |
+| `lesson_feedback_given` | `node_id`, `clear`, `reason` (`confusing`, `too_long`, `too_short`, `missing_example`, `broken_link`) | Server. The answer itself lives in `public.lesson_feedback`. |
+
+**Table:** `public.lesson_feedback` (profile_id, node_id, clear, reason), one
+row per learner per lesson, written only by `give_lesson_feedback` (identity
+from `auth.uid()`, published topics only, 60 taps per 10 minutes). Learners
+read their own; deleted with the account. On `/privacy#lesson-feedback`.
+
+**Functions** (security definer, `private.is_admin()` or 42501; counts only):
+- `admin_content_questions(p_days)`: per question, answers and right overall,
+  in passed and in failed attempts, and the most chosen wrong option with its
+  current text.
+- `admin_content_lessons(p_days)`: per topic, `lesson_left` visits with median
+  visible time and scroll; quiz attempts and fails; `left_before_fail` (failed
+  quizzes whose learner's most recent `lesson_left` in the 24 hours before was
+  this topic; the quiz sits on the lesson page and `lesson_left` fires on
+  leaving, so this is the lesson read just before going on to fail); feedback
+  yes, not really and the top reason; Study Buddy messages, chats begun, deep
+  turns (fifth message on) and kinds.
+
+**Scoring** (`src/lib/content-quality/rank.ts`, unit tested): difficulty =
+share right; discrimination = share right in passed attempts minus share
+right in failed ones. Flags: confuses strong learners (passed attempts right
+under 60%), does not separate (gap under 10 points), hard (under 40% right),
+common wrong answer (one option draws 60% of wrong answers). Lessons: not
+clear (30% or more of at least 3 answers), quiz often failed (half of at
+least 5 attempts), read before 3 or more fails, skimmed (median scroll under
+half over 10 visits), many Study Buddy questions (half a question per visit,
+5 or more). Nothing is flagged below its minimum sample. The queue is the ten
+flagged items with the highest score, lessons and questions together.
+## 17. Experiments, holdouts and feature flags (issue #327)
+
+One first party mechanism, no outside service. `public.experiments` holds a
+`key` (lower case words), 2 to 6 `variants` (`[{code, weight}]`, whole number
+weights), a `status` (`draft`, then `running`, then `stopped`; never back,
+enforced by a trigger, and variants are fixed once started) and a `metric`.
+The **first variant is the control**: what everyone gets while the
+experiment is not running, and what anyone who turned analytics off gets.
+
+| Kind | How |
+| A/B test | `control:50, change:50` (or three ways) |
+| Holdout | the change first, then a held out share, e.g. `nudge:90, holdout:10` |
+| Feature flag | `off:90, on:10`; the `on` weight is the rollout percent. Widening it keeps everyone who was already on |
+
+**Assignment** (`src/lib/experiments/assign.ts`): the first 32 bits of
+`sha256("<key>:<subject>")` scaled to a bucket 0 to 9999, then the weights in
+order. The subject is the profile id when signed in, else the `sc_aid`
+anonymous id, so a visitor who signs up may move variant once. No SQL copy of
+the hash: nothing in the database assigns.
+
+**In code:** `variant(key)` from `src/lib/experiments/server.ts` in a Server
+Component or Server Action. It returns `null` when no such experiment is
+running, so test for the change (`(await variant("new_welcome")) === "on"`).
+Opted out (DNT, GPC, `sc_analytics=off`) or no subject yet (first visit):
+the control, nothing recorded. Otherwise the variant, and the first
+exposure is recorded after the response through
+`public.record_experiment_exposure`: one `experiment_assignments` row per
+person per experiment and one `experiment_exposed` event (`experiment`,
+`variant`), so any dashboard can split by variant. The service role (the
+re-engagement job) may name the profile; a signed in caller is always
+themselves. For the job only the assignment row is written, no event: the
+person is away, and an event under their profile would count as activity
+(learner stage, retention).
+
+**Re-engagement holdout:** `reengage_holdout` is seeded running with
+`nudge:90, holdout:10` and metric `active_7d`. `/api/cron/reengage` assigns
+each learner due a nudge; the holdout gets no message (`heldOut` in the job's
+summary) and is recorded; the nudge arm is recorded once a message was sent.
+The job has no browser, so it cannot see a device's analytics switch; the
+privacy page says so. Stop the experiment at `/admin/experiments` to nudge
+everyone again.
+
+**Dashboard** (`/admin/insights/experiments`, `admin_insights_experiments`,
+CSV `experiments`): every experiment that is not a draft, per variant: people
+first exposed in the range; *seven days passed* (exposed at least 7 days
+ago); *came back* among those. `came_back_7d` = any event of theirs on a later
+UTC day within 7 days of exposure (for changes people meet while using the
+platform); `active_7d` = any event in the 7 days after exposure (for messages
+to people who are away). The exposure event and bot traffic never count.
+Shares show from `MIN_SAMPLE` measured people; the difference from the
+control shows in percentage points, and from `COMPARE_MIN` (30) measured
+people in both arms a two proportion z test says "unlikely to be chance"
+(p under 0.05) or "could still be chance"; below that, "too early to tell". Admins create, start and stop experiments at
+`/admin/experiments`. Never test prices or access to learning.
+## 18. Outcome check ins and impact reports (epic #320, #329)
+
+`public.outcome_checkins`: one row per learner, finish and milestone (3, 6 or
+12 months). A finish is a cohort ending (start plus seven days per programme
+week) for a learner whose place is active or completed, or every topic of a
+published roadmap done. The daily `/api/cron/reengage` job (third isolated
+step) asks `outcome_checkin_finishes` for finishes, plans the due milestone
+in `src/lib/outcomes/checkins.ts` (the latest one passed, created at most 30
+days late, so old finishes never set off a burst), creates rows with
+`create_outcome_checkins`, then sends each one as an in app notification
+(kind `system`) and on WhatsApp with a live consent. A learner sent a check
+in within 60 days gets the new one marked skipped instead. No email yet:
+there is no email consent.
+
+`baseline_status` snapshots the About you employment status when the row is
+created (the "before"). The learner answers through `answer_outcome_checkin`
+on `/outcomes/check-in/[id]`.
+
+| Event | Props | Sent by |
+| `outcome_checkin_sent` | `months` | The cron, without a person (service role) |
+| `outcome_checkin_answered` | `months`, `status`, `shared` | The answer action |
+
+**Reports** (`private.outcome_report`): per learner, their check in at the
+chosen milestone for that programme or cohort (any of theirs for a chapter).
+Learners covered, sent, answered (the response rate, every answer) and
+agreed to be counted; then, from agreeing answers only: in work before and
+now, moved into work, status before and now, earnings bands. Admins read raw
+counts (`admin_outcome_report`, `/admin/check-ins`); sponsors read
+`sponsorship_outcome_report` under Impact, every count under five held back.
+`/print/outcomes` is the printable version for both.
