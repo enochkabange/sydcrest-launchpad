@@ -43,6 +43,20 @@ export function dueDate(startsOn: string, week: number): string {
   return addDays(startsOn, 7 * week);
 }
 
+/**
+ * How a submission sat against its week's due date (the end of that day,
+ * Accra time, which is UTC): met with whole hours to spare, or missed by
+ * whole hours (rounded up, so one minute late is 1). Grace days are not
+ * counted: this measures punctuality, not whether the work was accepted.
+ */
+export function deadlineHours(startsOn: string, week: number, submittedAt: string): { met: boolean; hours: number } | null {
+  const sent = Date.parse(submittedAt);
+  const due = Date.parse(`${dueDate(startsOn, week)}T23:59:59.999Z`);
+  if (!Number.isFinite(sent) || !Number.isFinite(due)) return null;
+  const diff = due - sent;
+  return diff >= 0 ? { met: true, hours: Math.floor(diff / 3_600_000) } : { met: false, hours: Math.ceil(-diff / 3_600_000) };
+}
+
 /** Work sent after this day is late: the due date plus the programme's grace days. */
 export function lateAfter(startsOn: string, week: number, graceDays: number): string {
   return addDays(dueDate(startsOn, week), graceDays);

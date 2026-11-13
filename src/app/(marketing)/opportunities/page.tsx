@@ -1,3 +1,4 @@
+import { TrackOnView } from "@/components/analytics/track";
 import { Bookmark, LayoutGrid, Rows3 } from "lucide-react";
 import { Suspense } from "react";
 import { PageHeader } from "@/components/marketing/section";
@@ -13,6 +14,7 @@ import { getViewer } from "@/lib/opportunities/learner";
 import {
   filterOpportunities,
   filtersQuery,
+  activeFilterNames,
   hasActiveFilters,
   parseFilters,
   type OpportunityFilters,
@@ -79,6 +81,9 @@ async function Board({ searchParams }: Pick<PageProps<"/opportunities">, "search
         </>
       }
     >
+      {activeFilterNames(filters).map((filter) => (
+        <TrackOnView key={filter} track={{ name: "filter_applied", props: { scope: "opportunities", filter, results: results.length } }} />
+      ))}
       {!hasActiveFilters(filters) && all.length > 0 && (
         <Suspense fallback={null}>
           <SuggestedForYou />

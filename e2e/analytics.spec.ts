@@ -70,6 +70,10 @@ test("a tagged link records where the visit came from, once per tab session", as
   const visit = beacons.find((e) => e.n === "visit_started");
   expect(visit?.p).toEqual({ utm_source: "whatsapp", utm_medium: "chapter", utm_campaign: "tamale", referrer: "direct", deep_link: true });
   expect(visit?.r).toBe("/programme");
+  // The same tab session also records when it started (study habits, epic #320).
+  const session = beacons.find((e) => e.n === "session_started");
+  expect(session?.p).toMatchObject({ returning: false });
+  expect(["night", "morning", "afternoon", "evening", "late"]).toContain(session?.p?.hour_band);
 
   // A second page in the same tab is a page view, not a new visit.
   const second = page.waitForRequest((r) => r.method() === "POST" && new URL(r.url()).pathname === "/api/analytics", {
@@ -78,4 +82,26 @@ test("a tagged link records where the visit came from, once per tab session", as
   await page.goto("/about");
   await second;
   expect(beacons.filter((e) => e.n === "visit_started")).toHaveLength(1);
+  expect(beacons.filter((e) => e.n === "session_started")).toHaveLength(1);
+});
+
+test("opportunity filters are counted by name, with how many results they leave", async ({ page }) => {
+  const beacons: { n: string; p?: Record<string, unknown> }[] = [];
+  page.on("request", (r) => {
+    if (r.method() !== "POST" || new URL(r.url()).pathname !== "/api/analytics") return;
+    beacons.push(...((JSON.parse(r.postData() ?? "{}").events ?? []) as typeof beacons));
+  });
+  const sent = page.waitForRequest((r) => r.method() === "POST" && new URL(r.url()).pathname === "/api/analytics", {
+    timeout: 20_000,
+  });
+  await page.goto("/opportunities?type=job&location=remote");
+  await sent;
+  const filters = beacons.filter((e) => e.n === "filter_applied").map((e) => e.p);
+  expect(filters).toEqual(
+    expect.arrayContaining([
+      expect.objectContaining({ scope: "opportunities", filter: "type" }),
+      expect.objectContaining({ scope: "opportunities", filter: "location" }),
+    ]),
+  );
+  for (const f of filters) expect(typeof f?.results).toBe("number");
 });

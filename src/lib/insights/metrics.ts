@@ -162,6 +162,8 @@ export function retentionAverage(lines: RetentionLine[]): (number | null)[] {
 export const FEATURE_LABELS: Record<string, string> = {
   auth: "Accounts and sign in",
   settings: "Settings",
+  habits: "Study sessions",
+  discovery: "Search and filters",
   onboarding: "Waitlist",
   path: "Path quiz",
   learn: "Learning",

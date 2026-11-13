@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
+  activeFilterNames,
   accraToday,
   addDays,
   deadlineLabel,
@@ -172,5 +173,12 @@ describe("jobPostingJsonLd", () => {
 
   it("escapes a closing script tag", () => {
     expect(jsonLdScript({ description: "</script><script>alert(1)</script>" })).not.toContain("</script>");
+  });
+});
+
+describe("activeFilterNames", () => {
+  it("names the filters in use, for analytics", () => {
+    expect(activeFilterNames(parseFilters({ type: "job", location: "remote" }))).toEqual(["type", "location"]);
+    expect(activeFilterNames(parseFilters({ type: "nonsense" }))).toEqual([]);
   });
 });

@@ -154,6 +154,14 @@ export default function PrivacyPage() {
           address.
         </li>
         <li>
+          <strong>How you study:</strong> when each visit starts (the part of the day and the weekday on
+          your device) and how many days since your last visit on this device; how long a lesson was
+          open on your screen and how far you scrolled; which outside resources you opened; which quiz
+          questions you got right or wrong and whether you tried again; how many results a search or
+          filter gave you (never the words you typed); which opportunities you viewed and applied to;
+          and whether cohort work was sent by its due date.
+        </li>
+        <li>
           <strong>Where your visit came from:</strong> once per visit, the campaign tags in the link you
           opened (such as &ldquo;utm_source=whatsapp&rdquo;; links shared from SydCrest carry them),
           the kind of site that sent you (for example a search engine, WhatsApp or Facebook, never the
@@ -243,6 +251,10 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>sc_analytics</strong>: remembers if you turned analytics off.
+        </li>
+        <li>
+          <strong>sc_last_day</strong> (stored on your device, not a cookie): the date of your last
+          visit, so we can count the days between visits.
         </li>
         <li>
           <strong>_ga</strong> and <strong>_ga_</strong> followed by a code: Google Analytics cookies

@@ -78,7 +78,22 @@ describe("event taxonomy", () => {
 
   it("lets the browser send only browser events", () => {
     expect([...CLIENT_EVENT_NAMES].sort()).toEqual(
-      ["client_error", "form_started", "form_submitted", "page_view", "share_clicked", "visit_started", "web_vital"].sort(),
+      [
+        "client_error",
+        "filter_applied",
+        "form_started",
+        "form_submitted",
+        "lesson_left",
+        "opportunity_apply_opened",
+        "opportunity_viewed",
+        "page_view",
+        "resource_opened",
+        "search_performed",
+        "session_started",
+        "share_clicked",
+        "visit_started",
+        "web_vital",
+      ].sort(),
     );
     expect(isClientEventName("page_view")).toBe(true);
     expect(isClientEventName("booking_requested")).toBe(false);

@@ -5,6 +5,7 @@
  * first, never throws and never blocks the page.
  */
 import { visitProps } from "../attribution";
+import { localDay, sessionProps } from "../habits";
 import { BEACON_PATH, type WireEvent } from "../beacon";
 import { ROUTE_COOKIE, SESSION_COOKIE, isSessionId } from "../context";
 import { FORM_NAMES, scrubMessage, type EventName, type FormName, type PropsOf } from "../events";
@@ -82,10 +83,20 @@ export function clientTrack<N extends EventName>(name: N, props?: PropsOf<N>) {
 }
 
 const VISIT_KEY = "sc_visit";
+/** The local date of this browser's last session (YYYY-MM-DD), for session_started.days_since_last. */
+const LAST_DAY_KEY = "sc_last_day";
+
+function localStore(): Storage | null {
+  try {
+    return window.localStorage;
+  } catch {
+    return null;
+  }
+}
 
 /**
- * Records where this tab session came from (visit_started), once per tab
- * session, before its first page view. The address and document.referrer
+ * Records where this tab session came from (visit_started) and when it
+ * started (session_started), once per tab session, before its first page view. The address and document.referrer
  * are read on the landing page only: the referrer does not change on later
  * client side navigations.
  */
@@ -96,6 +107,11 @@ export function trackVisitStart() {
     if (store?.getItem(VISIT_KEY)) return;
     store?.setItem(VISIT_KEY, "1");
     clientTrack("visit_started", visitProps(window.location, document.referrer));
+    // Study habits: when this session started and how long since the last one on this browser.
+    const now = new Date();
+    const local = localStore();
+    clientTrack("session_started", sessionProps(now, local?.getItem(LAST_DAY_KEY) ?? null));
+    local?.setItem(LAST_DAY_KEY, localDay(now));
   } catch {
     // Analytics never breaks the page.
   }

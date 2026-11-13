@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import {
   addDays,
   cohortTiming,
+  deadlineHours,
   dueDate,
   focusWeek,
   formatDay,
@@ -184,5 +185,20 @@ describe("pathProgress", () => {
       ["w2", { program_week_id: "w2", status: "draft", final_score: null, submitted_at: null }],
     ]);
     expect(pathProgress(path, subs, 60)).toEqual({ lessonsDone: 2, lessonsTotal: 3, sent: 1, passed: 1, weeksTotal: 3 });
+  });
+});
+
+describe("deadlineHours", () => {
+  // Week 1 of a cohort starting 2 Nov 2026 is due 9 Nov (end of day, Accra = UTC).
+  it("counts whole hours to spare when on time", () => {
+    expect(deadlineHours("2026-11-02", 1, "2026-11-09T12:00:00Z")).toEqual({ met: true, hours: 11 });
+    expect(deadlineHours("2026-11-02", 1, "2026-11-09T23:59:00Z")).toEqual({ met: true, hours: 0 });
+  });
+  it("rounds lateness up, so a minute late is an hour", () => {
+    expect(deadlineHours("2026-11-02", 1, "2026-11-10T00:01:00Z")).toEqual({ met: false, hours: 1 });
+    expect(deadlineHours("2026-11-02", 1, "2026-11-11T00:00:01Z")).toEqual({ met: false, hours: 25 });
+  });
+  it("is null for an unreadable time", () => {
+    expect(deadlineHours("2026-11-02", 1, "soon")).toBeNull();
   });
 });

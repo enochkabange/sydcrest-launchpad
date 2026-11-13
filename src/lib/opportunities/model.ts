@@ -187,6 +187,13 @@ export function parseFilters(params: Params): OpportunityFilters {
   };
 }
 
+/** The filters in use, by their analytics name (filter_applied). */
+export function activeFilterNames(f: OpportunityFilters): ("type" | "field" | "location" | "deadline")[] {
+  return [f.kind && "type", f.field && "field", f.location && "location", f.deadline && "deadline"].filter(
+    (n): n is "type" | "field" | "location" | "deadline" => !!n,
+  );
+}
+
 export function hasActiveFilters(f: OpportunityFilters): boolean {
   return !!(f.kind || f.field || f.location || f.deadline);
 }
