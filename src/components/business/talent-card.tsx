@@ -8,6 +8,8 @@ import { availabilityLabel, trackLabel } from "@/lib/talent/forms";
 import { VerificationLabel } from "@/components/credentials/verification-label";
 import { parseTalentCredentials } from "@/lib/credentials/model";
 import { formatMonthYear } from "@/lib/credentials/share";
+import { bandLabel } from "@/lib/readiness/score";
+import { parseSharedReadiness } from "@/lib/matching/match";
 import { Badge, Chip, formatDate } from "./bits";
 
 export type TalentRow = {
@@ -27,6 +29,8 @@ export type TalentRow = {
   verified_skills?: unknown;
   /** `[{id, title, issuer_name, issued_on, verification, ...}]` (#253): certificates from other issuers the learner made public. */
   external_credentials?: unknown;
+  /** `[{roadmap_slug, roadmap_title, band, portfolio_pieces}]` (#336): only when the learner chose to share it; never a score. */
+  readiness?: unknown;
 };
 
 type Certificate = { program_title?: string; specialization_label?: string | null; issued_at?: string };
@@ -57,6 +61,7 @@ export function TalentCard({
   const certs = certificatesOf(row);
   const verified = parseVerifiedSkills(row.verified_skills);
   const external = parseTalentCredentials(row.external_credentials);
+  const readiness = parseSharedReadiness(row.readiness);
   return (
     <article className={`relative flex h-full flex-col gap-4 rounded-lg border border-line bg-surface p-5 ${href ? "transition-colors hover:bg-surface-sunken" : ""}`}>
       <header className="flex items-start gap-3">
@@ -97,6 +102,19 @@ export function TalentCard({
           <ul className="flex flex-wrap gap-2">
             {row.tracks!.map((t) => (
               <Chip key={t}>{trackLabel(t)}</Chip>
+            ))}
+          </ul>
+        </div>
+      )}
+      {readiness.length > 0 && (
+        <div data-testid="talent-readiness" className="flex flex-col gap-2">
+          <h4 className="text-sm font-semibold text-content-2">Readiness, shared by {name}</h4>
+          <ul className="flex flex-col gap-1 text-sm text-content-2">
+            {readiness.map((r) => (
+              <li key={r.roadmap_slug}>
+                <span className="font-semibold text-content">{bandLabel(r.band)}</span> in {r.roadmap_title}
+                {r.portfolio_pieces > 0 ? `, ${r.portfolio_pieces} approved portfolio ${r.portfolio_pieces === 1 ? "piece" : "pieces"}` : ""}
+              </li>
             ))}
           </ul>
         </div>

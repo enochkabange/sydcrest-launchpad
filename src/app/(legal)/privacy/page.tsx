@@ -215,9 +215,32 @@ export default function PrivacyPage() {
         in About you. It counts the skills you have verified for the track, the topics you have
         finished, your approved portfolio work, the days you learned in the last 30, and whether your
         About you goal and public profile are filled in. It never uses your region, device, internet,
-        study times, age, education or work preferences. For now only our staff can see it, while we
-        check that it is fair to every group of learners; it is not shown to you or to employers yet,
-        and we will ask your consent before any employer sees it. It is deleted with your account.
+        study times, age, education or work preferences. Our staff can see the score, to check that it
+        is fair to every group of learners. We use it to order the opportunities we suggest to you (see
+        Matching below). No employer ever sees the score or what it is made of, and they see your band
+        only if you choose to share it. It is deleted with your account.
+      </p>
+      <h3 id="matching">Matching</h3>
+      <p>
+        When you are signed in, we put the opportunities that fit you best first in your suggestions: your
+        readiness for the opportunity&apos;s track, plus a little for each skill it needs that you have
+        verified. This only changes the order; every open opportunity stays on the board for you. On an
+        opportunity we show you why it fits (the verified skills that match and your band for the track)
+        and one step that would improve your fit.
+      </p>
+      <p>
+        What employers can see, and when: only if you tick &quot;Share my readiness band&quot; when you apply,
+        the organisation you apply to sees your band for that opportunity&apos;s track (Getting started,
+        Building or Job ready), the verified skills it needs that you have, and how many of your portfolio
+        pieces were approved for that track. You can turn this off on My applications at any time. If you
+        list yourself in the talent directory, verified organisations see your band for up to three tracks
+        only if you tick that box on your listing. Sharing is off until you turn it on. Employers never see
+        the score, its parts, your About you answers or the pay you would accept.
+      </p>
+      <p>
+        Our staff check matching for fairness: who was shown each opportunity, who applied, was shortlisted
+        and was hired, by band and by group (region, device, internet, age band and education), with any
+        group under five people hidden. These groups are never used to match you.
       </p>
       <h3>Who can see it</h3>
       <p>
@@ -297,7 +320,8 @@ export default function PrivacyPage() {
         When you apply for an opportunity on SydCrest, the organisation that posted it sees your name,
         region, verified skills, public profile if you have one, your note and your portfolio link. They
         see your phone number and email only if they shortlist you, and you agree to that when you
-        apply. You can withdraw an application until you are hired.
+        apply. You can withdraw an application until you are hired. They see your readiness band for the
+        role only if you choose to share it (see <a href="#matching">Matching</a>).
       </p>
       <h3>Sponsors</h3>
       <p>

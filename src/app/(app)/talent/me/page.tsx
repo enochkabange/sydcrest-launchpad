@@ -30,7 +30,7 @@ async function Listing() {
     supabase.rpc("talent_eligibility"),
     supabase
       .from("talent_listings")
-      .select("headline, summary, skills, tracks, region, availability, open_to_remote, portfolio_url, is_active")
+      .select("headline, summary, skills, tracks, region, availability, open_to_remote, portfolio_url, is_active, share_readiness")
       .eq("profile_id", user.id)
       .maybeSingle(),
   ]);
@@ -86,6 +86,7 @@ async function Listing() {
               open_to_remote: listing?.open_to_remote ?? true,
               portfolio_url: listing?.portfolio_url ?? null,
               is_active: listing?.is_active ?? true,
+              share_readiness: listing?.share_readiness ?? false,
             }}
           />
           {listing && (

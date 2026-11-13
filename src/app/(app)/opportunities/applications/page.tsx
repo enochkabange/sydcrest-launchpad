@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { requireUser } from "@/lib/auth";
 import { canWithdraw, stageCopy } from "@/lib/opportunities/applications";
 import { createClient } from "@/lib/supabase/server";
-import { withdrawOpportunityApplication } from "./actions";
+import { setReadinessSharing, withdrawOpportunityApplication } from "./actions";
 
 export const metadata: Metadata = { title: "My applications" };
 
@@ -19,7 +19,7 @@ async function Applications({ searchParams }: { searchParams: PageProps<"/opport
   const [{ data, error }, params] = await Promise.all([
     supabase
       .from("opportunity_applications")
-      .select("id, stage, stage_changed_at, created_at, opportunities(slug, title, organisation_name)")
+      .select("id, stage, stage_changed_at, created_at, share_readiness, opportunities(slug, title, organisation_name)")
       .eq("profile_id", user.id)
       .order("created_at", { ascending: false }),
     searchParams,
@@ -51,6 +51,18 @@ async function Applications({ searchParams }: { searchParams: PageProps<"/opport
                   <span className="rounded-full bg-surface-sunken px-3 py-1 text-sm font-semibold text-content">{stage.label}</span>
                 </div>
                 <p className="text-content-2">{stage.learner}</p>
+                {a.stage !== "withdrawn" && (
+                  <form action={setReadinessSharing.bind(null, a.id, !a.share_readiness)} className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <p className="text-sm text-content-2">
+                      {a.share_readiness
+                        ? "You share your readiness band for this role with the employer."
+                        : "You do not share your readiness band with this employer."}
+                    </p>
+                    <Button type="submit" variant="ghost" className="px-0">
+                      {a.share_readiness ? "Stop sharing" : "Share my band"}
+                    </Button>
+                  </form>
+                )}
                 {canWithdraw(a.stage) && (
                   <form action={withdrawOpportunityApplication.bind(null, a.id)}>
                     <Button type="submit" variant="ghost" className="px-0">

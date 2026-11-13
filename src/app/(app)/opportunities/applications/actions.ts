@@ -18,3 +18,12 @@ export async function withdrawOpportunityApplication(applicationId: string) {
   if (error) throw new Error(`Could not withdraw the application: ${error.message}`);
   revalidatePath("/opportunities/applications");
 }
+
+/** Turns sharing the readiness band with the employer on or off for one application (#336). */
+export async function setReadinessSharing(applicationId: string, share: boolean) {
+  await requireUser();
+  const supabase = await createClient();
+  const { error } = await supabase.rpc("set_application_readiness_sharing", { p_application_id: applicationId, p_share: share });
+  if (error) throw new Error(`Could not change sharing: ${error.message}`);
+  revalidatePath("/opportunities/applications");
+}

@@ -403,3 +403,15 @@ refresh never reads a Never attribute). Admin only: `/admin/readiness`
 `/admin/learners/[id]` (`admin_learner_readiness`). Not shown to learners
 (#337) or employers, and not used for matching (#336) yet. No events.
 Model card, inputs, limits and the fairness review: `docs/readiness.md`.
+
+## 14. Matching explanations (epic #320; #336)
+
+Match score per learner per opportunity: readiness for its track plus a
+bonus per required skill verified (`private.opportunity_match`,
+`src/lib/matching/match.ts`). It ranks "Suggested for you" only. Consent:
+`share_readiness` on `opportunity_applications` and `talent_listings`, off by
+default; employers see a band and plain reasons only when it is on
+(`org_applicant_readiness`, `talent_directory.readiness`). Admin audit
+`/admin/matching` (`admin_match_audit`, `admin_match_fairness`) reads
+`opportunity_viewed` events with a `profile_id` as "shown". No new events.
+Details and limits: `docs/readiness.md`, "Matching".

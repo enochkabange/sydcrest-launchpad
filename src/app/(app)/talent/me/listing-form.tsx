@@ -19,6 +19,7 @@ export type ListingValues = {
   open_to_remote: boolean;
   portfolio_url: string | null;
   is_active: boolean;
+  share_readiness: boolean;
 };
 
 export function ListingForm({ values, isNew }: { values: ListingValues; isNew: boolean }) {
@@ -88,6 +89,12 @@ export function ListingForm({ values, isNew }: { values: ListingValues; isNew: b
       </div>
       <CheckboxField id="open_to_remote" defaultChecked={values.open_to_remote}>
         I am open to remote work
+      </CheckboxField>
+      <CheckboxField id="share_readiness" defaultChecked={values.share_readiness}>
+        Show organisations my readiness band for my tracks (optional).{" "}
+        <span className="text-content-2">
+          They see a band (Getting started, Building or Job ready) and my approved portfolio pieces, never a score.
+        </span>
       </CheckboxField>
       <TextField
         id="portfolio_url"

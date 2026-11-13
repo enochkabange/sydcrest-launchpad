@@ -7,9 +7,12 @@ import { KindLabel, WhereAndWhen } from "@/components/opportunities/meta";
 import { opportunitiesPath, opportunityPath } from "@/components/opportunities/paths";
 import { ReportOpportunity } from "@/components/opportunities/report-form";
 import { SaveControls } from "@/components/opportunities/save-controls";
+import { WhyThisFits } from "@/components/opportunities/why-fits";
 import { buttonClasses } from "@/components/ui/button";
 import { Container, MainWithRail } from "@/components/ui/layout";
 import Link from "@/components/ui/link";
+import { getLearnerContext, getSkillCatalogue } from "@/lib/matching/learner";
+import { computeMatch } from "@/lib/matching/match";
 import { getMySaveMap, getViewer } from "@/lib/opportunities/learner";
 import {
   fieldLabel,
@@ -87,6 +90,9 @@ async function Detail({ params }: Pick<PageProps<"/opportunities/[slug]">, "para
 
       <MainWithRail className="mt-8 xl:mt-12" railLabel="How to apply" sticky rail={<ApplyCard o={o} today={today} path={path} />}>
         {o.summary && <p className="max-w-reading text-lead text-content">{o.summary}</p>}
+        <Suspense fallback={null}>
+          <ViewerFit o={o} />
+        </Suspense>
         <Block title={`About this ${kindLabel(o.kind).toLowerCase()}`}>
           <Paragraphs text={o.description} />
         </Block>
@@ -157,6 +163,13 @@ function ApplyCard({ o, today, path }: { o: Opportunity; today: string; path: st
       </p>
     </>
   );
+}
+
+/** Signed in learners: why this fits them and what would improve the fit (#336). Nothing for visitors. */
+async function ViewerFit({ o }: { o: Opportunity }) {
+  const ctx = await getLearnerContext();
+  if (!ctx) return null;
+  return <WhyThisFits match={computeMatch(o, ctx, await getSkillCatalogue())} />;
 }
 
 async function ViewerSave({ o, path }: { o: Opportunity; path: string }) {
