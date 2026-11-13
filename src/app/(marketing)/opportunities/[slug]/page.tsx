@@ -11,6 +11,7 @@ import { WhyThisFits } from "@/components/opportunities/why-fits";
 import { buttonClasses } from "@/components/ui/button";
 import { Container, MainWithRail } from "@/components/ui/layout";
 import Link from "@/components/ui/link";
+import { matchingForLearners } from "@/lib/matching/flags";
 import { getLearnerContext, getSkillCatalogue } from "@/lib/matching/learner";
 import { computeMatch } from "@/lib/matching/match";
 import { getMySaveMap, getViewer } from "@/lib/opportunities/learner";
@@ -165,10 +166,10 @@ function ApplyCard({ o, today, path }: { o: Opportunity; today: string; path: st
   );
 }
 
-/** Signed in learners: why this fits them and what would improve the fit (#336). Nothing for visitors. */
+/** Signed in learners, with READINESS_FOR_LEARNERS=on: why this fits them and what would improve the fit (#336). */
 async function ViewerFit({ o }: { o: Opportunity }) {
   const ctx = await getLearnerContext();
-  if (!ctx) return null;
+  if (!ctx || !matchingForLearners()) return null;
   return <WhyThisFits match={computeMatch(o, ctx, await getSkillCatalogue())} />;
 }
 

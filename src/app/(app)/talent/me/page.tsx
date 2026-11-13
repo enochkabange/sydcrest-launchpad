@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { matchingForEmployers } from "@/lib/matching/flags";
 import { Suspense } from "react";
 import Link from "@/components/ui/link";
 import { buttonClasses } from "@/components/ui/button";
@@ -76,6 +77,7 @@ async function Listing() {
           </div>
           <ListingForm
             isNew={!listing}
+            canShareReadiness={matchingForEmployers()}
             values={{
               headline: listing?.headline ?? "",
               summary: listing?.summary ?? null,
@@ -170,7 +172,7 @@ async function Preview() {
       <h2 id="preview-heading" className="text-h3 text-content">
         What organisations see
       </h2>
-      <TalentCard row={data} full />
+      <TalentCard row={data} full showReadiness={matchingForEmployers()} />
       <p className="text-sm text-content-3">Never your email or phone number. You choose what to share when you accept a request.</p>
     </section>
   );

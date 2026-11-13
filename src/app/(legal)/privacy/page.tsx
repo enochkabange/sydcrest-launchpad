@@ -216,20 +216,23 @@ export default function PrivacyPage() {
         finished, your approved portfolio work, the days you learned in the last 30, and whether your
         About you goal and public profile are filled in. It never uses your region, device, internet,
         study times, age, education or work preferences. Our staff can see the score, to check that it
-        is fair to every group of learners. We use it to order the opportunities we suggest to you (see
-        Matching below). No employer ever sees the score or what it is made of, and they see your band
-        only if you choose to share it. It is deleted with your account.
+        is fair to every group of learners. Once we switch matching on, we will use it to order the
+        opportunities we suggest to you (see Matching below). No employer ever sees the score or what it
+        is made of, and they will see your band only if you choose to share it. It is deleted with your
+        account.
       </p>
       <h3 id="matching">Matching</h3>
       <p>
-        When you are signed in, we put the opportunities that fit you best first in your suggestions: your
+        Matching is not switched on yet. We will turn it on only after we have checked that the readiness
+        score is fair to every group of learners. Until then nothing below is shown to you or to
+        employers, and you will not be asked to share your band. Once it is on: when you are signed in, we put the opportunities that fit you best first in your suggestions: your
         readiness for the opportunity&apos;s track, plus a little for each skill it needs that you have
         verified. This only changes the order; every open opportunity stays on the board for you. On an
         opportunity we show you why it fits (the verified skills that match and your band for the track)
         and one step that would improve your fit.
       </p>
       <p>
-        What employers can see, and when: only if you tick &quot;Share my readiness band&quot; when you apply,
+        What employers can see, and when, once it is on: only if you tick &quot;Share my readiness band&quot; when you apply,
         the organisation you apply to sees your band for that opportunity&apos;s track (Getting started,
         Building or Job ready), the verified skills it needs that you have, and how many of your portfolio
         pieces were approved for that track. You can turn this off on My applications at any time. If you
@@ -321,7 +324,8 @@ export default function PrivacyPage() {
         region, verified skills, public profile if you have one, your note and your portfolio link. They
         see your phone number and email only if they shortlist you, and you agree to that when you
         apply. You can withdraw an application until you are hired. They see your readiness band for the
-        role only if you choose to share it (see <a href="#matching">Matching</a>).
+        role only if you choose to share it, once that option is switched on (see{" "}
+        <a href="#matching">Matching</a>).
       </p>
       <h3>Sponsors</h3>
       <p>

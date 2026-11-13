@@ -5,10 +5,14 @@ import { deleteRoadmap, seedRoadmap, type SeededRoadmap } from "./seed";
 import { admin, insert } from "./supabase-admin";
 
 /**
- * Matching explanations (#336): a learner sees why an opportunity fits them,
- * and an employer sees a readiness band only for the applicant who chose to
- * share it. Readiness comes from the daily maintenance, after each learner
- * starts a topic in a roadmap on the opportunity's track.
+ * Matching explanations (#336) stay switched off until the founder approves
+ * the readiness weights: with READINESS_FOR_LEARNERS and
+ * READINESS_FOR_EMPLOYERS unset (as in CI), a scored learner sees no fit
+ * block, the apply form offers no sharing box, and an employer sees no band
+ * even for an applicant whose application says they share it. That employers
+ * see a band only with consent is checked at function level in
+ * supabase/tests/database/matching.test.sql. Readiness comes from the daily
+ * maintenance, after each learner starts a topic on the opportunity's track.
  */
 
 const expect = baseExpect.configure({ timeout: 15_000 });
@@ -26,7 +30,7 @@ async function scoredOnDataTrack(roadmap: SeededRoadmap, learners: Learner[]) {
   await admin("/rest/v1/rpc/run_analytics_maintenance", { method: "POST", body: { p_days: 1 } });
 }
 
-test("a learner sees why an opportunity fits them and what would improve the fit", async ({ page }) => {
+test("with the switch off, a scored learner sees no fit block on a matching opportunity", async ({ page }) => {
   test.setTimeout(120_000);
   const tag = crypto.randomUUID().slice(0, 6);
   const roadmap = await seedRoadmap();
@@ -47,17 +51,12 @@ test("a learner sees why an opportunity fits them and what would improve the fit
     await scoredOnDataTrack(roadmap, [learner]);
     await signIn(page, learner);
     await page.goto(`/opportunities/${slug}`);
-    await expect(page.getByRole("heading", { name: "Why this fits you" })).toBeVisible();
-    await expect(page.getByText(`Your readiness for ${roadmap.title} (Data): Getting started.`)).toBeVisible();
-    await expect(page.getByRole("heading", { name: "What would improve your fit" })).toBeVisible();
-    // The next step depends on the shared skill catalogue: a Data skill to verify, else the next topic.
-    await expect(page.getByText(new RegExp(`^(Finish the next topic in ${roadmap.title}\\.|Verify .+: take its quiz)`))).toBeVisible();
-
-    // Visitors see the listing without any of it.
-    await page.context().clearCookies();
-    await page.goto(`/opportunities/${slug}`);
     await expect(page.getByRole("heading", { name: `Data entry clerk ${tag}`, level: 1 })).toBeVisible();
+    // The save controls are the signed in island beside it, so the page has finished streaming.
+    await expect(page.getByRole("button", { name: `Save Data entry clerk ${tag}` })).toBeVisible();
     await expect(page.getByRole("heading", { name: "Why this fits you" })).toHaveCount(0);
+    await expect(page.getByRole("heading", { name: "What would improve your fit" })).toHaveCount(0);
+    await expect(page.getByText(/Your readiness for/)).toHaveCount(0);
   } finally {
     await admin(`/rest/v1/opportunities?id=eq.${opp.id}`, { method: "DELETE" }).catch(() => undefined);
     await deleteRoadmap(roadmap.id).catch(() => undefined);
@@ -65,7 +64,7 @@ test("a learner sees why an opportunity fits them and what would improve the fit
   }
 });
 
-test("an employer sees a readiness band only for the applicant who shares it", async ({ page }) => {
+test("with the switch off, the apply form offers no sharing box and employers see no band", async ({ page }) => {
   test.setTimeout(120_000);
   const tag = crypto.randomUUID().slice(0, 6);
   const roadmap = await seedRoadmap();
@@ -93,6 +92,15 @@ test("an employer sees a readiness band only for the applicant who shares it", a
   ]);
   try {
     await scoredOnDataTrack(roadmap, [sharer, private_]);
+
+    // Nobody is asked to consent to something that is not live.
+    await signIn(page, private_);
+    await page.goto(`/opportunities/survey-data-${tag}/apply`);
+    await expect(page.getByLabel(new RegExp(`If ${org.name} shortlists me`))).toBeVisible();
+    await expect(page.getByLabel(/Share my readiness band/)).toHaveCount(0);
+    await page.context().clearCookies();
+
+    // Even an application stored as sharing shows no band while the switch is off.
     await insert("opportunity_applications", [
       {
         opportunity_id: opp.id,
@@ -114,9 +122,10 @@ test("an employer sees a readiness band only for the applicant who shares it", a
     await expect(page.getByRole("heading", { name: `Applicants: ${title}` })).toBeVisible();
     const shared = page.getByRole("listitem").filter({ has: page.getByRole("heading", { name: "Wumpini Alhassan" }) });
     const unshared = page.getByRole("listitem").filter({ has: page.getByRole("heading", { name: "Abdul-Rahman Issah" }) });
-    await expect(shared.getByTestId("applicant-readiness")).toContainText(`Getting started in ${roadmap.title}.`);
+    await expect(shared.getByText("I cleaned survey data for an NGO in Tamale")).toBeVisible();
     await expect(unshared.getByText("I keep the records for my family shop")).toBeVisible();
-    await expect(unshared.getByTestId("applicant-readiness")).toHaveCount(0);
+    await expect(page.getByTestId("applicant-readiness")).toHaveCount(0);
+    await expect(page.getByText(/Getting started in|Building in|Job ready in/)).toHaveCount(0);
     await expect(page.getByText(/\b\d{1,3} of 100\b/)).toHaveCount(0);
   } finally {
     await admin(`/rest/v1/opportunities?id=eq.${opp.id}`, { method: "DELETE" }).catch(() => undefined);

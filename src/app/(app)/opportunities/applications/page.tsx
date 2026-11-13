@@ -4,6 +4,7 @@ import Link from "@/components/ui/link";
 import { Alert } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { requireUser } from "@/lib/auth";
+import { matchingForEmployers } from "@/lib/matching/flags";
 import { canWithdraw, stageCopy } from "@/lib/opportunities/applications";
 import { createClient } from "@/lib/supabase/server";
 import { setReadinessSharing, withdrawOpportunityApplication } from "./actions";
@@ -25,6 +26,7 @@ async function Applications({ searchParams }: { searchParams: PageProps<"/opport
     searchParams,
   ]);
   if (error) throw new Error(`Could not load applications: ${error.message}`);
+  const canShare = matchingForEmployers();
   return (
     <div className="flex flex-col gap-4">
       {params.sent === "1" && <Alert tone="success">Application sent. We will tell you in your notifications when it moves.</Alert>}
@@ -51,7 +53,7 @@ async function Applications({ searchParams }: { searchParams: PageProps<"/opport
                   <span className="rounded-full bg-surface-sunken px-3 py-1 text-sm font-semibold text-content">{stage.label}</span>
                 </div>
                 <p className="text-content-2">{stage.learner}</p>
-                {a.stage !== "withdrawn" && (
+                {canShare && a.stage !== "withdrawn" && (
                   <form action={setReadinessSharing.bind(null, a.id, !a.share_readiness)} className="flex flex-wrap items-center gap-x-3 gap-y-1">
                     <p className="text-sm text-content-2">
                       {a.share_readiness

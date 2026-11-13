@@ -107,8 +107,25 @@ review table after the next daily run.
 
 ## Matching (issue #336)
 
-Status: **built on the proposed weights; ships to learners and (with
-consent) employers when merged.** See "Founder decision" below.
+Status: **built on the proposed weights, switched off.** Nothing
+readiness based reaches learners or employers until a switch is on (see
+"Switches" and "Founder decision" below).
+
+**Switches** (server env, read at request time, both off by default; see
+`.env.example` and `src/lib/matching/flags.ts`):
+
+- `READINESS_FOR_LEARNERS=on` (shared with My progress, #337): "Why this fits
+  you" and "What would improve your fit", and ranking "Suggested for you" by
+  match. Off: Suggested keeps the path track order and no fit block shows.
+- `READINESS_FOR_EMPLOYERS=on`: the "Share my readiness band" boxes on the
+  apply form, My applications and the talent listing, and shared bands on
+  the org applicants page and in the talent directory. Off: the boxes are
+  hidden (nobody consents to something not live), the apply action stores
+  `share_readiness = false`, a listing save leaves the stored choice alone,
+  and no page calls `org_applicant_readiness` or shows `talent_directory.readiness`.
+- `/admin/matching` is available to admins either way.
+
+The columns and database functions exist regardless; only the UI is gated.
 
 **Match score** per learner per opportunity = the learner's best readiness
 score among the roadmaps of the opportunity's tracks (`roadmaps.track`, or a
@@ -176,6 +193,8 @@ from its dimension's rate by more than 10 points (`MATCH_RATE_GAP`).
 
 **Founder decision.** The readiness card above says the score must not be
 shown beyond staff or used to rank anyone until the weights are approved and
-the fairness review is recorded. Merging #336 does both: learners see their
-band and a ranked list, and employers see a band where learners opt in.
-Either approve the weights and run the review first, or hold the merge.
+the fairness review is recorded. So both switches stay off. Turning on
+`READINESS_FOR_LEARNERS` lets learners see their band and a ranked list;
+turning on `READINESS_FOR_EMPLOYERS` lets learners opt in to employers seeing
+their band. Approve the weights (and the 5 point skill bonus) and record the
+review first.

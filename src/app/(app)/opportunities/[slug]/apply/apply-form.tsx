@@ -12,11 +12,14 @@ export function ApplyForm({
   slug,
   organisation,
   defaultPortfolio,
+  canShareReadiness = false,
 }: {
   opportunityId: string;
   slug: string;
   organisation: string;
   defaultPortfolio: string | null;
+  /** READINESS_FOR_EMPLOYERS=on: offer the readiness sharing box (#336). */
+  canShareReadiness?: boolean;
 }) {
   const [state, action, pending] = useActionState<ApplyState, FormData>(applyToOpportunity.bind(null, opportunityId, slug), {});
   const v = state.values;
@@ -45,6 +48,7 @@ export function ApplyForm({
       <CheckboxField id="contact_consent" defaultChecked={v?.contact_consent} error={state.errors?.contact_consent}>
         If {organisation} shortlists me, they can see my phone number and email to contact me.
       </CheckboxField>
+      {canShareReadiness && (
       <CheckboxField id="share_readiness" defaultChecked={v?.share_readiness ?? false}>
         Share my readiness band for this role with {organisation} (optional).{" "}
         <span className="text-content-2">
@@ -52,6 +56,7 @@ export function ApplyForm({
           it, never a score. You can turn this off on My applications.
         </span>
       </CheckboxField>
+      )}
       <Button type="submit" disabled={pending} className="self-start">
         {pending ? "Sending…" : "Send application"}
       </Button>

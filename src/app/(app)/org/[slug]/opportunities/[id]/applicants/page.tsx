@@ -5,6 +5,7 @@ import Link from "@/components/ui/link";
 import { Panel, Skeleton } from "@/components/business/bits";
 import { regionLabel } from "@/lib/regions";
 import { employerReasons } from "@/lib/matching/match";
+import { matchingForEmployers } from "@/lib/matching/flags";
 import { sharesContact, stageCopy } from "@/lib/opportunities/applications";
 import { getOrgForMember } from "@/lib/organisations/queries";
 import { createClient } from "@/lib/supabase/server";
@@ -32,8 +33,8 @@ async function Applicants({ params }: { params: PageProps<"/org/[slug]/opportuni
   if (!o) notFound();
   const [{ data: rows, error }, shared] = await Promise.all([
     supabase.rpc("org_opportunity_applicants", { p_opportunity_id: o.id }),
-    // Only applicants who chose to share their band (#336); never a score.
-    supabase.rpc("org_applicant_readiness", { p_opportunity_id: o.id }),
+    // Only applicants who chose to share their band (#336); never a score. Not called until READINESS_FOR_EMPLOYERS=on.
+    matchingForEmployers() ? supabase.rpc("org_applicant_readiness", { p_opportunity_id: o.id }) : { data: [], error: null },
   ]);
   if (error) throw new Error(`Could not load applicants: ${error.message}`);
   if (shared.error) console.error("org_applicant_readiness failed", { message: shared.error.message });
@@ -49,8 +50,7 @@ async function Applicants({ params }: { params: PageProps<"/org/[slug]/opportuni
         <h2 className="text-subtitle text-content">Applicants: {o.title}</h2>
         <p className="max-w-reading text-content-2">
           Move people through the stages; each change tells them in their notifications. Phone and email appear once you
-          shortlist someone. Marking someone hired is final and records the job for SydCrest to verify. A readiness band shows
-          only for applicants who chose to share it.
+          shortlist someone. Marking someone hired is final and records the job for SydCrest to verify.
         </p>
       </div>
       {!o.apply_on_sydcrest && (

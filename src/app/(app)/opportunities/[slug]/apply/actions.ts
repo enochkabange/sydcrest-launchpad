@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 import { trackRefusal, trackResult } from "@/lib/analytics/track";
 import { requireUser } from "@/lib/auth";
+import { matchingForEmployers } from "@/lib/matching/flags";
 import { parseApplyForm, type ApplyFormValues } from "@/lib/opportunities/applications";
 import { createClient } from "@/lib/supabase/server";
 
@@ -27,7 +28,8 @@ export async function applyToOpportunity(opportunityId: string, slug: string, _p
     note: data.note,
     portfolio_url: data.portfolio_url || null,
     contact_consent: data.contact_consent,
-    share_readiness: data.share_readiness,
+    // Only when the box can show (READINESS_FOR_EMPLOYERS=on); otherwise the column default, off.
+    share_readiness: matchingForEmployers() && data.share_readiness,
   });
   // A duplicate (23505) is not a new application, so it is not counted either way.
   if (error?.code !== "23505") await trackResult("opportunity_applied", error, { opportunity_id: opportunityId });

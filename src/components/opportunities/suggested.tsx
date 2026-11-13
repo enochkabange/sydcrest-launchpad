@@ -1,8 +1,9 @@
 import { Sparkles } from "lucide-react";
 import { buttonClasses } from "@/components/ui/button";
 import Link from "@/components/ui/link";
+import { matchingForLearners } from "@/lib/matching/flags";
 import { getLearnerContext, getSkillCatalogue } from "@/lib/matching/learner";
-import { rankForLearner } from "@/lib/matching/match";
+import { rankForLearner, type Match } from "@/lib/matching/match";
 import { getMySaveMap, getPathTracks, getViewer } from "@/lib/opportunities/learner";
 import { isOpenOn, suggestFor, trackLabel } from "@/lib/opportunities/model";
 import { getAccraToday, getOpenOpportunities } from "@/lib/opportunities/public";
@@ -17,7 +18,8 @@ import { WhyThisFits } from "./why-fits";
  * verified, ranked by match score (#336: readiness for the track plus a
  * bonus per required skill verified), each with why it fits. Ranking only
  * orders suggestions; the board below still lists everything. A request time island:
- * render it inside <Suspense>. Signed out visitors and learners with no
+ * Ranking and the fit lines need READINESS_FOR_LEARNERS=on; off, it is
+ * the path track match in board order, as before. Render it inside <Suspense>. Signed out visitors and learners with no
  * matches see nothing here, so the board stays about the board; learners
  * without a path get one prompt to take the quiz.
  *
@@ -26,8 +28,13 @@ import { WhyThisFits } from "./why-fits";
 export async function SuggestedForYou({ variant = "section" }: { variant?: "section" | "rail" }) {
   const viewer = await getViewer();
   if (!viewer) return null;
-  const [pathTracks, ctx, catalogue] = await Promise.all([getPathTracks(viewer.id), getLearnerContext(), getSkillCatalogue()]);
-  // ctx is null only when signed out, which returned above.
+  const matching = matchingForLearners();
+  const [pathTracks, ctx, catalogue] = await Promise.all([
+    getPathTracks(viewer.id),
+    matching ? getLearnerContext() : null,
+    matching ? getSkillCatalogue() : [],
+  ]);
+  // Off (or signed out, which returned above): no readiness and no skills, so nothing ranks and order stays.
   const learner = ctx ?? { readiness: [], verifiedSkillIds: new Set<string>() };
   const tracks = [
     ...new Set([...(pathTracks ?? []), ...learner.readiness.flatMap((r) => (r.track ? [r.track] : []))]),
@@ -74,6 +81,7 @@ export async function SuggestedForYou({ variant = "section" }: { variant?: "sect
     );
   }
 
+  const fit = (match: Match) => (matching ? <WhyThisFits match={match} compact /> : undefined);
   const why = learner.readiness.length || learner.verifiedSkillIds.size
     ? "Best fit first, from your verified skills and your progress on each track."
     : `Matched to your ${trackLabel(tracks[0] ?? "") ?? "path"} path.`;
@@ -89,7 +97,7 @@ export async function SuggestedForYou({ variant = "section" }: { variant?: "sect
         <ul className="flex flex-col gap-3">
           {picks.map(({ o, match }) => (
             <li key={o.id}>
-              <OpportunityCard o={o} today={today} headingLevel="h3" fit={<WhyThisFits match={match} compact />} />
+              <OpportunityCard o={o} today={today} headingLevel="h3" fit={fit(match)} />
             </li>
           ))}
         </ul>
@@ -111,7 +119,7 @@ export async function SuggestedForYou({ variant = "section" }: { variant?: "sect
       <AutoGrid as="ul">
         {picks.map(({ o, match }) => (
           <li key={o.id}>
-            <OpportunityCard o={o} today={today} headingLevel="h3" fit={<WhyThisFits match={match} compact />} />
+            <OpportunityCard o={o} today={today} headingLevel="h3" fit={fit(match)} />
           </li>
         ))}
       </AutoGrid>

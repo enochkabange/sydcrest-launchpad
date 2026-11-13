@@ -48,6 +48,7 @@ export function TalentCard({
   href,
   full = false,
   action,
+  showReadiness = false,
 }: {
   row: TalentRow;
   /** Makes the name a link that covers the card. */
@@ -55,13 +56,15 @@ export function TalentCard({
   /** Show the summary and portfolio (detail page and preview). */
   full?: boolean;
   action?: ReactNode;
+  /** Shared readiness bands (#336): only with READINESS_FOR_EMPLOYERS=on, decided by the server page. */
+  showReadiness?: boolean;
 }) {
   const name = row.display_name ?? "Launchpad learner";
   const region = regionLabel(row.region);
   const certs = certificatesOf(row);
   const verified = parseVerifiedSkills(row.verified_skills);
   const external = parseTalentCredentials(row.external_credentials);
-  const readiness = parseSharedReadiness(row.readiness);
+  const readiness = showReadiness ? parseSharedReadiness(row.readiness) : [];
   return (
     <article className={`relative flex h-full flex-col gap-4 rounded-lg border border-line bg-surface p-5 ${href ? "transition-colors hover:bg-surface-sunken" : ""}`}>
       <header className="flex items-start gap-3">

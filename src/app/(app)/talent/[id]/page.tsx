@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { matchingForEmployers } from "@/lib/matching/flags";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import Link from "@/components/ui/link";
@@ -66,7 +67,7 @@ async function Person({ params }: { params: Promise<{ id: string }> }) {
         </Panel>
       }
     >
-      <TalentCard row={row} full />
+      <TalentCard row={row} full showReadiness={matchingForEmployers()} />
     </MainWithRail>
   );
 }

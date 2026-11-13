@@ -414,4 +414,5 @@ default; employers see a band and plain reasons only when it is on
 (`org_applicant_readiness`, `talent_directory.readiness`). Admin audit
 `/admin/matching` (`admin_match_audit`, `admin_match_fairness`) reads
 `opportunity_viewed` events with a `profile_id` as "shown". No new events.
-Details and limits: `docs/readiness.md`, "Matching".
+Learner and employer parts are off until `READINESS_FOR_LEARNERS=on` and
+`READINESS_FOR_EMPLOYERS=on`. Details and limits: `docs/readiness.md`, "Matching".

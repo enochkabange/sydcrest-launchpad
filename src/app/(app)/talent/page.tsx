@@ -6,6 +6,7 @@ import { SelectField, TextField } from "@/components/ui/field";
 import { AutoGrid, MainWithRail } from "@/components/ui/layout";
 import { Panel, Skeleton } from "@/components/business/bits";
 import { TalentCard } from "@/components/business/talent-card";
+import { matchingForEmployers } from "@/lib/matching/flags";
 import { getMyProfile, requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { getMyMemberships } from "@/lib/organisations/queries";
@@ -99,7 +100,7 @@ async function Results({ filters }: { filters: DirectoryFilters }) {
       <AutoGrid min="md" as="ul">
         {rows.map((r) => (
           <li key={r.profile_id}>
-            <TalentCard row={r} href={`/talent/${r.profile_id}`} />
+            <TalentCard row={r} href={`/talent/${r.profile_id}`} showReadiness={matchingForEmployers()} />
           </li>
         ))}
       </AutoGrid>
