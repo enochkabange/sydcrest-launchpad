@@ -53,6 +53,7 @@ export const SIGNED_IN_PATTERNS: RegExp[] = [
   /^\/org\/?$/,
   /^\/org\/[^/]+\/(manage|team|requests|opportunities|impact)(\/|$)/,
   /^\/events\/[^/]+\/(check-in|feedback|host)(\/|$)/,
+  /^\/chapters\/[^/]+\/lead(\/|$)/,
   /^\/skills\/[^/]+\/(quiz|portfolio)(\/|$)/,
   /^\/experts\/[^/]+\/offers\/[^/]+\/request(\/|$)/,
   /^\/opportunities\/[^/]+\/apply(\/|$)/,

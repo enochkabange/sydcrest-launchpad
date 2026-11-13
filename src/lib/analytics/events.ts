@@ -291,6 +291,18 @@ export const EVENTS = {
   invite_sent: { feature: "sharing", source: "server", props: { method: oneOf(["copy", "share"]) } },
   notification_opened: { feature: "notifications", source: "server", props: {} },
   notifications_read_all: { feature: "notifications", source: "server", props: {} },
+
+  // Audience messaging and the chapter lead toolkit (epic #320, #334 and #335)
+  message_sent: {
+    feature: "messaging",
+    source: "server",
+    props: { channel: oneOf(["in_app", "whatsapp"]), scope: oneOf(["staff", "chapter"]), audience: count(), holdout: count() },
+  },
+  campaign_link_copied: {
+    feature: "chapters",
+    source: "client",
+    props: { action: oneOf(["copy", "download", "print"]) },
+  },
 } as const satisfies Record<string, Spec>;
 
 export type EventName = keyof typeof EVENTS;

@@ -280,6 +280,35 @@ export default function PrivacyPage() {
       </p>
       <AnalyticsChoice />
 
+      <h2 id="messages">Messages from staff and chapter leads</h2>
+      <p>
+        SydCrest staff, and the volunteer lead of a chapter you joined, can send a message to a group of
+        members. A chapter lead can only message members of their own chapter. They choose the group by
+        your stage of learning (for example, not active for two weeks), how long since you were last
+        active, your track, region, cohort or chapter, or the campaign link you first came from. They see
+        only how many people are in the group, never who, and never your phone number or email.
+      </p>
+      <ul>
+        <li>
+          <strong>In the app:</strong> the message shows in your notifications. We record that it was
+          sent to you and when you opened it.
+        </li>
+        <li>
+          <strong>On WhatsApp:</strong> only if you turned on WhatsApp updates on your profile, only to
+          the number you gave, and only in our fixed wording. Reply STOP or turn updates off at any time.
+        </li>
+        <li>
+          <strong>By email:</strong> never for these messages. You have not been asked to agree to them,
+          so we do not send them by email.
+        </li>
+      </ul>
+      <p>
+        Nobody gets more than one of these messages in two days. To learn whether a message helps, a
+        small random share of each group gets nothing, and we compare how many people in each part use
+        SydCrest again within seven days. Staff and the chapter lead see those totals only. We keep the
+        record of who a message went to for as long as your account is open.
+      </p>
+
       <h2>Who we share it with</h2>
       <p>We never sell your personal data.</p>
       <h3>Employers you apply to</h3>

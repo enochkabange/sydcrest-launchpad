@@ -2170,6 +2170,121 @@ export type Database = {
           },
         ]
       }
+      message_recipients: {
+        Row: {
+          held_out: boolean
+          message_id: string
+          notification_id: string | null
+          opened_at: string | null
+          profile_id: string
+          sent_at: string | null
+          status: string
+        }
+        Insert: {
+          held_out?: boolean
+          message_id: string
+          notification_id?: string | null
+          opened_at?: string | null
+          profile_id: string
+          sent_at?: string | null
+          status: string
+        }
+        Update: {
+          held_out?: boolean
+          message_id?: string
+          notification_id?: string | null
+          opened_at?: string | null
+          profile_id?: string
+          sent_at?: string | null
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "message_recipients_message_id_fkey"
+            columns: ["message_id"]
+            isOneToOne: false
+            referencedRelation: "message_sends"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "message_recipients_notification_id_fkey"
+            columns: ["notification_id"]
+            isOneToOne: false
+            referencedRelation: "notifications"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "message_recipients_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      message_sends: {
+        Row: {
+          audience_count: number
+          body: string | null
+          channel: string
+          chapter_id: string | null
+          created_at: string
+          filters: Json
+          holdout_count: number
+          holdout_share: number
+          href: string | null
+          id: string
+          sender_id: string | null
+          template: string
+          title: string
+        }
+        Insert: {
+          audience_count?: number
+          body?: string | null
+          channel: string
+          chapter_id?: string | null
+          created_at?: string
+          filters?: Json
+          holdout_count?: number
+          holdout_share?: number
+          href?: string | null
+          id?: string
+          sender_id?: string | null
+          template: string
+          title: string
+        }
+        Update: {
+          audience_count?: number
+          body?: string | null
+          channel?: string
+          chapter_id?: string | null
+          created_at?: string
+          filters?: Json
+          holdout_count?: number
+          holdout_share?: number
+          href?: string | null
+          id?: string
+          sender_id?: string | null
+          template?: string
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "message_sends_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "message_sends_sender_id_fkey"
+            columns: ["sender_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       node_content: {
         Row: {
           common_mistakes: string[] | null
@@ -5541,6 +5656,7 @@ export type Database = {
         Args: { p_profile_id?: string; p_program_id: string }
         Returns: Json
       }
+      chapter_dashboard: { Args: { p_chapter_id: string }; Returns: Json }
       check_in_event: {
         Args: { p_code: string; p_event_id: string }
         Returns: string
@@ -5894,6 +6010,20 @@ export type Database = {
         Returns: boolean
       }
       mark_notifications_read: { Args: { p_ids?: string[] }; Returns: number }
+      message_audience_size: {
+        Args: { p_channel: string; p_chapter_id?: string; p_filters: Json }
+        Returns: number
+      }
+      message_results: {
+        Args: { p_message_id: string }
+        Returns: {
+          came_back: number
+          delivered: number
+          held_out: boolean
+          opened: number
+          people: number
+        }[]
+      }
       mint_achievement: {
         Args: {
           p_metadata?: Json
@@ -6134,6 +6264,24 @@ export type Database = {
           isOneToOne: true
           isSetofReturn: false
         }
+      }
+      send_message: {
+        Args: {
+          p_body: string
+          p_channel: string
+          p_chapter_id?: string
+          p_filters: Json
+          p_holdout_share: number
+          p_href: string
+          p_template: string
+          p_title: string
+        }
+        Returns: {
+          audience: number
+          held_out: number
+          message_id: string
+          sent: number
+        }[]
       }
       set_application_stage: {
         Args: { p_application_id: string; p_stage: string }

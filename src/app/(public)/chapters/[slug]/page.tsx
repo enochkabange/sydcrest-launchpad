@@ -160,9 +160,14 @@ async function Membership({ chapter }: { chapter: PublicChapter }) {
       <Card title={viewer.role === "lead" ? "You lead this chapter" : "You are a member"}>
         <p className="text-sm text-content-2">
           {viewer.role === "lead"
-            ? "You can edit the chapter page and manage members below."
+            ? "Your lead tools have the chapter's numbers, its tagged link and poster, and messages to members. You edit the page and manage members below."
             : "You see the member list and chapter posts. You can leave at any time."}
         </p>
+        {viewer.role === "lead" && (
+          <Link href={`/chapters/${chapter.slug}/lead`} className={buttonClasses("primary", "self-start")}>
+            Lead tools
+          </Link>
+        )}
         <MembershipButton chapterId={chapter.id} slug={chapter.slug} member name={chapter.name} />
       </Card>
     );
