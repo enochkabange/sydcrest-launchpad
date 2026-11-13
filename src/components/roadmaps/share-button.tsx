@@ -3,11 +3,13 @@
 import { Check, Share2 } from "lucide-react";
 import { useState } from "react";
 import { buttonClasses } from "@/components/ui/button";
+import { withShareTags } from "@/lib/analytics/attribution";
 import { clientTrack } from "@/lib/analytics/client/analytics";
 
 /**
  * Native share sheet on phones (WhatsApp, SMS and the rest), copy link
- * everywhere else. Shares this deployment's URL for the given path.
+ * everywhere else. Shares this deployment's URL for the given path, tagged
+ * so visits from it count under the share (lib/analytics/attribution).
  */
 export function ShareButton({ path, title, text }: { path: string; title: string; text?: string }) {
   const [status, setStatus] = useState<"idle" | "copied" | "failed">("idle");
@@ -16,7 +18,7 @@ export function ShareButton({ path, title, text }: { path: string; title: string
     const url = new URL(path, window.location.origin).toString();
     if (typeof navigator.share === "function") {
       try {
-        await navigator.share({ title, text, url });
+        await navigator.share({ title, text, url: withShareTags(url, "share", "roadmap") });
         clientTrack("share_clicked", { target: "roadmap", channel: "share" });
         return;
       } catch (error) {
@@ -25,7 +27,7 @@ export function ShareButton({ path, title, text }: { path: string; title: string
       }
     }
     try {
-      await navigator.clipboard.writeText(url);
+      await navigator.clipboard.writeText(withShareTags(url, "copy", "roadmap"));
       clientTrack("share_clicked", { target: "roadmap", channel: "copy" });
       setStatus("copied");
     } catch {

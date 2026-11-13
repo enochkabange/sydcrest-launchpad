@@ -1,5 +1,6 @@
 "use client";
 
+import { withShareTags } from "@/lib/analytics/attribution";
 import { clientTrack } from "@/lib/analytics/client/analytics";
 import { Check, Download, Link2, Share2 } from "lucide-react";
 import { useEffect, useId, useState, useSyncExternalStore } from "react";
@@ -21,7 +22,8 @@ const FORMATS: { value: CardFormat; label: string; hint: string }[] = [
  * a WhatsApp Status. Everywhere else: copy the link and download the image.
  *
  * `imageBase` is the card route without the format (`/og/achievements/<id>`),
- * `pageUrl` the public page the link opens.
+ * `pageUrl` the public page the link opens (shared with campaign tags, see
+ * lib/analytics/attribution).
  */
 export function ShareCard({
   imageBase,
@@ -76,7 +78,7 @@ export function ShareCard({
     const file = files[format];
     if (!file) return;
     try {
-      await navigator.share({ files: [file], title: headline, text: `${text} ${pageUrl}` });
+      await navigator.share({ files: [file], title: headline, text: `${text} ${withShareTags(pageUrl, "share", sharedTarget)}` });
       clientTrack("share_clicked", { target: sharedTarget, channel: "share" });
       setStatus("Shared.");
     } catch (error) {
@@ -87,7 +89,7 @@ export function ShareCard({
 
   async function shareLink() {
     try {
-      await navigator.share({ title: headline, text, url: pageUrl });
+      await navigator.share({ title: headline, text, url: withShareTags(pageUrl, "share", sharedTarget) });
       clientTrack("share_clicked", { target: sharedTarget, channel: "share" });
       setStatus("Shared.");
     } catch (error) {
@@ -98,7 +100,7 @@ export function ShareCard({
 
   async function copy() {
     try {
-      await navigator.clipboard.writeText(pageUrl);
+      await navigator.clipboard.writeText(withShareTags(pageUrl, "copy", sharedTarget));
       clientTrack("share_clicked", { target: sharedTarget, channel: "copy" });
       setStatus("Link copied.");
     } catch {

@@ -2849,6 +2849,50 @@ export type Database = {
           },
         ]
       }
+      profile_first_touch: {
+        Row: {
+          first_seen_at: string
+          landing_route: string | null
+          linked_at: string
+          profile_id: string
+          referrer: string | null
+          utm_campaign: string | null
+          utm_content: string | null
+          utm_medium: string | null
+          utm_source: string | null
+        }
+        Insert: {
+          first_seen_at: string
+          landing_route?: string | null
+          linked_at?: string
+          profile_id: string
+          referrer?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+        }
+        Update: {
+          first_seen_at?: string
+          landing_route?: string | null
+          linked_at?: string
+          profile_id?: string
+          referrer?: string | null
+          utm_campaign?: string | null
+          utm_content?: string | null
+          utm_medium?: string | null
+          utm_source?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "profile_first_touch_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       profiles: {
         Row: {
           avatar_url: string | null
@@ -4570,6 +4614,25 @@ export type Database = {
           id: string
         }[]
       }
+      admin_insights_acquisition: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          campaign: string
+          medium: string
+          signups: number
+          source: string
+          visitors: number
+          visits: number
+        }[]
+      }
       admin_insights_at_risk: {
         Args: {
           p_chapter?: string
@@ -4854,6 +4917,23 @@ export type Database = {
           saved_path: number
           signed_up: number
           visited: number
+        }[]
+      }
+      admin_insights_landing: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          route: string
+          signups: number
+          visitors: number
+          visits: number
         }[]
       }
       admin_insights_outcomes: {

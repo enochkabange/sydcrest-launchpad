@@ -32,7 +32,7 @@ export type Dashboard = {
 
 export const DASHBOARDS: Dashboard[] = [
   { slug: "overview", href: "/admin/insights", title: "Overview", description: "Daily, weekly and monthly active people, sign ups and trends.", filters: ALL, events: true },
-  { slug: "funnel", href: "/admin/insights/funnel", title: "Acquisition and funnel", description: "From first visit to sign up, path, first topic and first pass, by device.", filters: ALL, events: true },
+  { slug: "funnel", href: "/admin/insights/funnel", title: "Acquisition and funnel", description: "Where visits and sign ups come from, landing pages, and the steps from first visit to first pass.", filters: ALL, events: true },
   { slug: "retention", href: "/admin/insights/retention", title: "Retention", description: "Weekly sign up cohorts and how many come back in weeks 1 to 8.", filters: PEOPLE, events: true },
   { slug: "learning", href: "/admin/insights/learning", title: "Learning", description: "Pass rates and drop off per roadmap and topic, hardest questions and reviews.", filters: PEOPLE, events: false },
   { slug: "features", href: "/admin/insights/features", title: "Feature use", description: "Every feature: how many people, how often, and the trend.", filters: ALL, events: true },
@@ -76,6 +76,18 @@ export const TABLES = {
     rpc: "admin_insights_signup_methods",
     title: "Sign ups by method",
     columns: [["method", "Method"], ["signups", "Sign ups"]],
+  },
+  acquisition: {
+    dashboard: "funnel",
+    rpc: "admin_insights_acquisition",
+    title: "Visits and sign ups by source",
+    columns: [["source", "Source"], ["medium", "Medium"], ["campaign", "Campaign"], ["visits", "Visits"], ["visitors", "Visitors"], ["signups", "Sign ups"]],
+  },
+  landing: {
+    dashboard: "funnel",
+    rpc: "admin_insights_landing",
+    title: "Landing pages",
+    columns: [["route", "Page"], ["visits", "Visits"], ["visitors", "Visitors"], ["signups", "Sign ups"]],
   },
   forms: {
     dashboard: "funnel",

@@ -100,6 +100,7 @@ recorded by the server; browser events come through the beacon.
 | Event | Source | Props | Notes |
 |---|---|---|---|
 | `page_view` | browser | none | Route in the `route` column. |
+| `visit_started` | browser | `utm_source`, `utm_medium`, `utm_campaign`, `utm_content` (slugs), `referrer` (direct, internal, search, whatsapp, facebook, instagram, linkedin, x, tiktok, youtube, telegram, email, other), `deep_link` | Once per tab session, before its first `page_view`; the landing route is in `route`. See section 9. |
 | `web_vital` | browser | `metric` (LCP, INP, CLS, FCP, TTFB), `value` (ms; CLS unitless), `rating`, `navigation` | 25% of sessions. |
 | `form_started` / `form_submitted` | browser | `form` | First input in a tagged form, and its submit. |
 | `share_clicked` | browser | `target` (achievement, certificate, roadmap, ...), `channel` (share, copy, download, ...) | |
@@ -213,11 +214,13 @@ refresh further back before reporting on lesson completion.
 | Function | Who | What |
 |---|---|---|
 | `public.record_events(p_events jsonb, p_context jsonb)` | anon, authenticated, service_role | Up to 25 events: `[{name, props, route}]`; context `{anonymous_id, session_id, device_class, source, route}`. Returns rows written (0 when limited). |
-| `public.run_analytics_maintenance(p_days int default 3)` | service_role | Refresh the last `p_days` days, purge raw events older than 13 months. Returns `{from, to, purged}`. |
+| `public.run_analytics_maintenance(p_days int default 3)` | service_role | Refresh the last `p_days` days, link new accounts' first touch, purge raw events older than 13 months. Returns `{from, to, purged, linked}`. |
 | `public.funnel_by_week(p_weeks int)` | admins | Visits, sign ups, activations per week (#51). |
 | `private.refresh_analytics_rollups(from date, to date)` | service_role | Rebuild a day range (at most 400 days). |
 | `private.purge_old_events()` | service_role | Batched delete of raw events past 13 months. |
 | `private.analytics_attributes(uuid)` | service_role | The attribute derivation used by `record_events`. |
+| `private.first_visit(anonymous_id text, at timestamptz)` | definer functions only | A browser's first touch for something that happened at `at` (section 9). |
+| `private.link_first_touch()` | service_role | Fills `profile_first_touch` for accounts made in the last 60 days. |
 
 ## 6. Retention
 
@@ -270,6 +273,45 @@ dashboards and exportable tables: `src/lib/insights/dashboards.ts`.
 - **Small numbers.** Rates, medians and percentiles under `MIN_SAMPLE` (5)
   cases read "Not enough data yet" (`src/lib/insights/metrics.ts`); a
   retention week that has not ended is "Not yet", never zero.
-- **Not collected yet.** Acquisition source (referrer or campaign) and
-  attendance at live cohort sessions; the dashboards say so instead of
-  estimating.
+- **Not collected yet.** Attendance at live cohort sessions; the dashboards
+  say so instead of estimating. Acquisition is collected from 13 November
+  2026 (section 9); earlier sign ups read "Not known".
+
+## 9. Attribution (epic #320)
+
+Where visits and sign ups come from. Code: `src/lib/analytics/attribution.ts`
+(pure, unit tested), migration `20261113100000_attribution.sql`.
+
+- **The visit.** On the first page of each tab session the browser records
+  `visit_started`: the link's `utm_source`, `utm_medium`, `utm_campaign` and
+  `utm_content`, each reduced to a lowercase slug of at most 60 characters
+  (dropped if it looks like an email address or phone number); the kind of
+  site in `document.referrer` (never the host or page); and `deep_link`, true
+  when the landing page is not the home page. The landing route pattern is the
+  event's `route`. A tab opened from another SydCrest page has referrer
+  `internal` and is not counted as a visit in the reports.
+- **Tagging links.** The share buttons (`ShareButton`, `ShareCard`) add
+  `utm_source=share|copy&utm_medium=share&utm_campaign=<what>`. Chapter
+  WhatsApp groups, posters and partners should use their own links, for
+  example `https://sydcrest.com/chapters/tamale?utm_source=whatsapp&utm_medium=chapter&utm_campaign=tamale`.
+  Keep tags lowercase words and hyphens.
+- **First touch.** `private.first_visit(anonymous_id, at)`: among the
+  browser's visits from 30 days before `at` to 10 minutes after (the beacon
+  batches), the earliest one with campaign tags or from another site; else the
+  earliest typed or bookmarked one. The reports count each `signup` under the
+  first touch of the browser it was made in.
+- **Kept with the account.** `public.profile_first_touch` (one row per
+  member, read by the member and by definer functions; deleted with the
+  account) holds the first touch so it outlives the 13 month purge. The daily
+  maintenance fills it for accounts made in the last 60 days, linking a
+  browser to an account through the account's signed in events (they carry
+  the `sc_aid` anonymous id). An email sign up confirmed on another device
+  links only if the first device is used signed in later.
+- **Reports.** `admin_insights_acquisition` (source, medium, campaign:
+  visits, distinct visitors, sign ups) and `admin_insights_landing` (landing
+  route: visits, visitors, sign ups; top 100), on the Acquisition and funnel
+  dashboard with CSV export (`acquisition`, `landing`). Source is the
+  `utm_source`, else the referrer kind; medium is the `utm_medium`, else none,
+  search, email or referral.
+- **Google Analytics** reads the same tags from the address on its own; its
+  numbers will differ (sessions, consent, ad blockers).

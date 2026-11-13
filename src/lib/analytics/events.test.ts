@@ -78,7 +78,7 @@ describe("event taxonomy", () => {
 
   it("lets the browser send only browser events", () => {
     expect([...CLIENT_EVENT_NAMES].sort()).toEqual(
-      ["client_error", "form_started", "form_submitted", "page_view", "share_clicked", "web_vital"].sort(),
+      ["client_error", "form_started", "form_submitted", "page_view", "share_clicked", "visit_started", "web_vital"].sort(),
     );
     expect(isClientEventName("page_view")).toBe(true);
     expect(isClientEventName("booking_requested")).toBe(false);

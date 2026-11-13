@@ -54,3 +54,28 @@ test("the privacy policy counts a page view too", async ({ page }) => {
   await page.goto("/privacy");
   await pageView;
 });
+
+test("a tagged link records where the visit came from, once per tab session", async ({ page }) => {
+  const beacons: { n: string; p?: Record<string, unknown>; r?: string }[] = [];
+  page.on("request", (r) => {
+    if (r.method() !== "POST" || new URL(r.url()).pathname !== "/api/analytics") return;
+    beacons.push(...((JSON.parse(r.postData() ?? "{}").events ?? []) as typeof beacons));
+  });
+  const first = page.waitForRequest((r) => r.method() === "POST" && new URL(r.url()).pathname === "/api/analytics", {
+    timeout: 20_000,
+  });
+  await page.goto("/programme?utm_source=WhatsApp&utm_medium=chapter&utm_campaign=Tamale");
+  await first;
+
+  const visit = beacons.find((e) => e.n === "visit_started");
+  expect(visit?.p).toEqual({ utm_source: "whatsapp", utm_medium: "chapter", utm_campaign: "tamale", referrer: "direct", deep_link: true });
+  expect(visit?.r).toBe("/programme");
+
+  // A second page in the same tab is a page view, not a new visit.
+  const second = page.waitForRequest((r) => r.method() === "POST" && new URL(r.url()).pathname === "/api/analytics", {
+    timeout: 20_000,
+  });
+  await page.goto("/about");
+  await second;
+  expect(beacons.filter((e) => e.n === "visit_started")).toHaveLength(1);
+});
