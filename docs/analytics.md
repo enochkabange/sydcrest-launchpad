@@ -121,6 +121,7 @@ recorded by the server; browser events come through the beacon.
 | Review and Study Buddy | `review_completed` (items, correct), `weekly_goal_set` (goal), `study_buddy_message` (turn) |
 | Skills | `skill_quiz_submitted` (passed, score), `skill_portfolio_submitted`, `skill_portfolio_reviewed` (decision), `path_skills_claimed` (claimed) |
 | Programme and cohort | `application_submitted`, `application_withdrawn`, `application_decided` (decision), `specialisation_chosen` (specialisation), `submission_saved` (sent), `submission_graded` (passed), `deadline_met` (kind cohort_task, hours_early), `deadline_missed` (kind, hours_late), `submission_resubmitted` (attempt), `peer_review_assigned`, `peer_review_submitted`, `learner_deferred`, `certificate_issued`, `certificate_revoked` |
+| Mentoring | `mentor_contact_logged` (kind: message, call or session; logged from the caseload) |
 | Experts and bookings | `expert_applied`, `expert_application_decided` (decision), `offer_created`, `offer_updated`, `booking_requested`, `booking_status_changed` (status), `booking_message_sent`, `booking_reviewed` (rating) |
 | Briefs | `brief_created`, `pitch_submitted`, `pitch_withdrawn`, `pitch_decided` (decision) |
 | Opportunities, outcomes, talent | `opportunity_created` (by), `opportunity_saved` (status), `opportunity_unsaved`, `opportunity_reported`, `opportunity_viewed` (browser: opportunity_id), `opportunity_apply_opened` (browser: opportunity_id, on_sydcrest; the employer's own link), `opportunity_applied` (opportunity_id), `opportunity_application_withdrawn`, `opportunity_applicant_moved` (stage), `outcome_reported`, `outcome_decided` (decision), `talent_listing_saved`, `talent_contact_requested`, `talent_contact_responded` (accepted) |
@@ -433,3 +434,50 @@ refresh never reads a Never attribute). Admin only: `/admin/readiness`
 `/admin/learners/[id]` (`admin_learner_readiness`). Not shown to learners
 (#337) or employers, and not used for matching (#336) yet. No events.
 Model card, inputs, limits and the fairness review: `docs/readiness.md`.
+## 13. Early warning and the mentor caseload (#325, #330)
+
+`private.refresh_learner_risk()` runs inside `run_analytics_maintenance`
+right after the learner attributes (result key `risk`). It writes one row
+per learner (not admins, not cohort staff) to `public.learner_risk`: a
+`level` (`none`, `watch`, `at_risk`), the `reasons` (codes below) and the
+numbers behind them, and a `route` for who acts.
+
+| Reason | Rule (UTC days) |
+| `went_quiet` | Quiet for at least twice their usual gap between active days (and at least 7), up to 60. Usual gap: 56 over their active days in the 56 days up to their last active day, when there were 3 or more |
+| `dormant` | Stage dormant, up to 60 days quiet |
+| `missed_deadlines` | Two or more `deadline_missed` in 28 days |
+| `streak_broken` | Active on 5 or more of the 14 days up to their last active day, now quiet 3 or more days (not yet `went_quiet`) |
+| `slipping` | Stage slipping |
+| `pace_slowing` | 4 or more topics done in the 56 days before the last 14, and the last 14 at most half that pace |
+| `quiz_stuck` | 3 or more failed `quiz_submitted` on one topic in 30 days, topic not passed |
+| `no_first_topic` | Saved a path 7 or more days ago, no topic started |
+
+Level: `at_risk` with `went_quiet`, `dormant` or `missed_deadlines`, or two
+or more reasons; `watch` with one. The rules are pure SQL
+(`private.risk_reasons`, `private.risk_level`) mirrored in
+`src/lib/early-warning/rules.ts`, which also words each reason for people.
+Device, connection, region and study hour never enter them.
+
+**Routing:** `mentor` when the learner is active in an enrolling or running
+cohort that has staff (`cohort_id`; every mentor and coordinator of the
+cohort sees them, as there is no per learner mentor yet); else
+`chapter_lead` for the chapter they joined last, if open and led
+(`chapter_id`); else `admin`.
+
+**Alerts:** `public.learner_risk_alerts` keeps one row per flagged stretch
+(`raised_on`, reasons at the time, `came_back_on` the first active day after,
+`closed_on` when back to `none`). Admins only.
+
+**Contacts:** `public.mentor_contacts` (staff, learner, `kind` message, call
+or session, optional `note` up to 280 characters). Logged from the caseload;
+event `mentor_contact_logged` (`kind`). Readable by whoever may contact that
+learner (`private.can_contact_learner`) and admins; never by the learner.
+
+**Pages:** `/mentor` Caseload (`mentor_caseload`: risk, last contact, next
+unsent deadline; sorted by `sortCaseload`); chapter leads see "Members to
+check in with" on their chapter page (`chapter_check_ins`); admins see
+Early warning, Mentors and Learners flagged now on `/admin/insights/cohorts`
+(`admin_insights_early_warning`, `admin_insights_mentors`,
+`admin_insights_risk_learners`). "Came back" counts alerts for going quiet
+raised at least 14 days ago, split by whether a contact was logged first. It
+is a plain comparison, not an experiment.

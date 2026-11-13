@@ -222,6 +222,18 @@ export default function PrivacyPage() {
         check that it is fair to every group of learners; it is not shown to you or to employers yet,
         and we will ask your consent before any employer sees it. It is deleted with your account.
       </p>
+      <h3 id="check-ins">Check ins from mentors and chapter leads</h3>
+      <p>
+        Once a day we also check that summary for signs that someone may need a hand: going quiet
+        compared with how often they usually come, a slower pace, failing the same quiz again and
+        again, saving a path but not starting, or missing cohort deadlines. Each flag comes with its
+        reasons in plain words, never a hidden score. It goes to your cohort mentors if you are in a
+        cohort, otherwise to your chapter lead, otherwise to our administrators, so they can check in
+        with you. When they do, they note that they sent a message, called or met you, with an
+        optional short note, so we can learn which support helps. Only they and our administrators
+        see flags and these notes; employers never do. They are kept while your account is open and
+        deleted with it.
+      </p>
       <h3>Who can see it</h3>
       <p>
         Our own analytics are stored in our own database. Only SydCrest administrators can read them,

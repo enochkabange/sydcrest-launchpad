@@ -391,6 +391,7 @@ Nav: Footer only, correct.
 - **States**: no cohorts (404 for non staff; explainer for an admin), empty queue, busy.
 - **Phone**: queue first; grid becomes a list. **Desktop**: `DataTable` roster with the cohort switcher in the rail (done).
 - **Nav**: Experts → Mentor console (staff). Should be "Your work". The rail links to `/certificates/issue` for the cohort.
+- **Caseload (#325, #330)**: the console opens on the Caseload, the week's starting list: learners sorted by early warning risk, then longest since contact, then nearest deadline, each with reasons in plain words and one tap Message, Call or Session logging. Chapter leads get the same list for their members on `/chapters/[slug]`.
 
 ### `/expert`, `/expert/offers/new`, `/expert/offers/[id]`
 - **Audience**: E (explainer for others). **Job**: run my expert listing: answer requests, keep offers current.

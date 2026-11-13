@@ -2125,6 +2125,140 @@ export type Database = {
           },
         ]
       }
+      learner_risk: {
+        Row: {
+          chapter_id: string | null
+          cohort_id: string | null
+          computed_at: string
+          days_quiet: number | null
+          deadlines_missed: number
+          flagged_since: string | null
+          level: string
+          profile_id: string
+          quiz_fails: number
+          reasons: string[]
+          route: string
+          topics_prior: number
+          topics_recent: number
+          usual_gap_days: number | null
+        }
+        Insert: {
+          chapter_id?: string | null
+          cohort_id?: string | null
+          computed_at?: string
+          days_quiet?: number | null
+          deadlines_missed?: number
+          flagged_since?: string | null
+          level?: string
+          profile_id: string
+          quiz_fails?: number
+          reasons?: string[]
+          route: string
+          topics_prior?: number
+          topics_recent?: number
+          usual_gap_days?: number | null
+        }
+        Update: {
+          chapter_id?: string | null
+          cohort_id?: string | null
+          computed_at?: string
+          days_quiet?: number | null
+          deadlines_missed?: number
+          flagged_since?: string | null
+          level?: string
+          profile_id?: string
+          quiz_fails?: number
+          reasons?: string[]
+          route?: string
+          topics_prior?: number
+          topics_recent?: number
+          usual_gap_days?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "learner_risk_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "learner_risk_cohort_id_fkey"
+            columns: ["cohort_id"]
+            isOneToOne: false
+            referencedRelation: "cohorts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "learner_risk_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      learner_risk_alerts: {
+        Row: {
+          came_back_on: string | null
+          chapter_id: string | null
+          closed_on: string | null
+          cohort_id: string | null
+          id: number
+          level: string
+          profile_id: string
+          raised_on: string
+          reasons: string[]
+          route: string
+        }
+        Insert: {
+          came_back_on?: string | null
+          chapter_id?: string | null
+          closed_on?: string | null
+          cohort_id?: string | null
+          id?: never
+          level: string
+          profile_id: string
+          raised_on: string
+          reasons: string[]
+          route: string
+        }
+        Update: {
+          came_back_on?: string | null
+          chapter_id?: string | null
+          closed_on?: string | null
+          cohort_id?: string | null
+          id?: never
+          level?: string
+          profile_id?: string
+          raised_on?: string
+          reasons?: string[]
+          route?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "learner_risk_alerts_chapter_id_fkey"
+            columns: ["chapter_id"]
+            isOneToOne: false
+            referencedRelation: "chapters"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "learner_risk_alerts_cohort_id_fkey"
+            columns: ["cohort_id"]
+            isOneToOne: false
+            referencedRelation: "cohorts"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "learner_risk_alerts_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       learner_stories: {
         Row: {
           created_at: string
@@ -2165,6 +2299,48 @@ export type Database = {
             foreignKeyName: "learner_stories_profile_id_fkey"
             columns: ["profile_id"]
             isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      mentor_contacts: {
+        Row: {
+          created_at: string
+          id: string
+          kind: string
+          learner_id: string
+          mentor_id: string
+          note: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          kind: string
+          learner_id: string
+          mentor_id?: string
+          note?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          kind?: string
+          learner_id?: string
+          mentor_id?: string
+          note?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "mentor_contacts_learner_id_fkey"
+            columns: ["learner_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "mentor_contacts_mentor_id_fkey"
+            columns: ["mentor_id"]
+            isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
           },
@@ -5021,6 +5197,26 @@ export type Database = {
           visitors: number
         }[]
       }
+      admin_insights_early_warning: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          at_risk: number
+          came_back: number
+          contacted: number
+          contacted_came_back: number
+          raised: number
+          route: string
+          settled: number
+        }[]
+      }
       admin_insights_earn: {
         Args: {
           p_chapter?: string
@@ -5234,6 +5430,32 @@ export type Database = {
           sessions: number
         }[]
       }
+      admin_insights_mentors: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          active_7d: number
+          at_risk: number
+          cohorts: number
+          contacts: number
+          graded: number
+          grading_hours_median: number
+          learners: number
+          learners_contacted: number
+          mentor_id: string
+          mentor_name: string
+          watch: number
+          weeks_graded: number
+          weeks_passed: number
+        }[]
+      }
       admin_insights_outcomes: {
         Args: {
           p_chapter?: string
@@ -5338,6 +5560,28 @@ export type Database = {
           learners: number
           questions: number
           sessions: number
+        }[]
+      }
+      admin_insights_risk_learners: {
+        Args: {
+          p_chapter?: string
+          p_cohort?: string
+          p_device?: string
+          p_from: string
+          p_region?: string
+          p_to: string
+          p_track?: string
+        }
+        Returns: {
+          flagged_since: string
+          last_active_on: string
+          last_contact_at: string
+          learner_name: string
+          level: string
+          profile_id: string
+          reasons: string[]
+          route: string
+          routed_to: string
         }[]
       }
       admin_insights_roadmaps: {
@@ -5734,6 +5978,25 @@ export type Database = {
         Args: { p_profile_id?: string; p_program_id: string }
         Returns: Json
       }
+      chapter_check_ins: {
+        Args: { p_chapter_id: string }
+        Returns: {
+          days_quiet: number
+          deadlines_missed: number
+          display_name: string
+          flagged_since: string
+          last_active_on: string
+          last_contact_at: string
+          last_contact_kind: string
+          level: string
+          profile_id: string
+          quiz_fails: number
+          reasons: string[]
+          topics_prior: number
+          topics_recent: number
+          usual_gap_days: number
+        }[]
+      }
       check_in_event: {
         Args: { p_code: string; p_event_id: string }
         Returns: string
@@ -6087,6 +6350,27 @@ export type Database = {
         Returns: boolean
       }
       mark_notifications_read: { Args: { p_ids?: string[] }; Returns: number }
+      mentor_caseload: {
+        Args: { p_cohort_id: string }
+        Returns: {
+          days_quiet: number
+          deadlines_missed: number
+          display_name: string
+          flagged_since: string
+          last_active_on: string
+          last_contact_at: string
+          last_contact_kind: string
+          level: string
+          member_id: string
+          next_due_on: string
+          profile_id: string
+          quiz_fails: number
+          reasons: string[]
+          topics_prior: number
+          topics_recent: number
+          usual_gap_days: number
+        }[]
+      }
       mint_achievement: {
         Args: {
           p_metadata?: Json

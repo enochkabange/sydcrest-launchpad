@@ -240,6 +240,8 @@ export const EVENTS = {
   peer_review_assigned: { feature: "cohort", source: "server", props: {} },
   peer_review_submitted: { feature: "cohort", source: "server", props: {} },
   learner_deferred: { feature: "cohort", source: "server", props: {} },
+  // Early warning and the mentor caseload (#325, #330)
+  mentor_contact_logged: { feature: "mentoring", source: "server", props: { kind: oneOf(["message", "call", "session"]) } },
   certificate_issued: { feature: "certificates", source: "server", props: {} },
   certificate_revoked: { feature: "certificates", source: "server", props: {} },
 

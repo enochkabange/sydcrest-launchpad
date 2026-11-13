@@ -82,7 +82,7 @@ select ok(
 select is(
   (select count(*)::int from pg_proc p join pg_namespace n on n.oid = p.pronamespace
     where n.nspname = 'public' and p.proname like 'admin\_insights\_%'),
-  31, 'thirty one report functions');
+  34, 'thirty four report functions (four from low bandwidth #331, three from early warning #325 and #330)');
 select ok(
   not has_function_privilege('anon', 'public.admin_insights_overview(date, date, text, text, uuid, uuid, text)', 'execute'),
   'signed out visitors cannot call a report function');
