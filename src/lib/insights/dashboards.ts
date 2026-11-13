@@ -39,7 +39,7 @@ export const DASHBOARDS: Dashboard[] = [
   { slug: "cohorts", href: "/admin/insights/cohorts", title: "DMP cohorts", description: "On time submissions, grading turnaround and learners at risk.", filters: PEOPLE, events: false },
   { slug: "earn", href: "/admin/insights/earn", title: "Experts and Earn", description: "Bookings, briefs, pitches, response times and outcomes.", filters: PEOPLE, events: false },
   { slug: "community", href: "/admin/insights/community", title: "Community", description: "Posts, replies, RSVPs, check ins and chapters.", filters: ["region", "chapter"], events: false },
-  { slug: "reliability", href: "/admin/insights/reliability", title: "Reliability", description: "Errors by page and action, failure rates and Web Vitals.", filters: ["device"], events: true },
+  { slug: "reliability", href: "/admin/insights/reliability", title: "Reliability", description: "Errors by page and action, failure rates, Web Vitals, and where slow connections hurt.", filters: ["device"], events: true },
 ];
 
 export function dashboard(slug: DashboardSlug): Dashboard {
@@ -205,6 +205,37 @@ export const TABLES = {
     rpc: "admin_insights_vitals",
     title: "Web Vitals by page and device",
     columns: [["route", "Page"], ["device_class", "Device"], ["metric", "Metric"], ["samples", "Samples"], ["p75", "p75"], ["good", "Good"], ["needs_improvement", "Needs work"], ["poor", "Poor"]],
+  },
+  // Low bandwidth (issue #331): the same reports split by connection.
+  slow_routes: {
+    dashboard: "reliability",
+    rpc: "admin_insights_slow_routes",
+    title: "Pages where slow connections hurt most",
+    columns: [
+      ["route", "Page"], ["slow_samples", "Slow samples"], ["fast_samples", "Fast samples"], ["slow_lcp", "LCP p75 slow"], ["fast_lcp", "LCP p75 fast"],
+      ["lcp_gap", "LCP gap"], ["slow_inp", "INP p75 slow"], ["fast_inp", "INP p75 fast"], ["inp_gap", "INP gap"],
+    ],
+  },
+  vitals_connection: {
+    dashboard: "reliability",
+    rpc: "admin_insights_vitals_connection",
+    title: "Web Vitals by connection and device",
+    columns: [["connection", "Connection"], ["device_class", "Device"], ["metric", "Metric"], ["samples", "Samples"], ["p75", "p75"], ["good", "Good"], ["needs_improvement", "Needs work"], ["poor", "Poor"]],
+  },
+  loads_connection: {
+    dashboard: "reliability",
+    rpc: "admin_insights_loads_connection",
+    title: "Failed loads by connection and device",
+    columns: [["connection", "Connection"], ["device_class", "Device"], ["sessions", "Sessions"], ["page_views", "Page views"], ["client_errors", "Browser errors"], ["server_errors", "Server errors"]],
+  },
+  learn_connection: {
+    dashboard: "reliability",
+    rpc: "admin_insights_learn_connection",
+    title: "Lessons and quizzes by connection",
+    columns: [
+      ["connection", "Connection"], ["lessons_opened", "Lessons opened"], ["lessons_left", "Lessons left"], ["read_to_end", "Read to the end"],
+      ["median_time_ms", "Median time (ms)"], ["median_scroll", "Median scroll (%)"], ["quizzes", "Quizzes sent"], ["quizzes_passed", "Quizzes passed"],
+    ],
   },
 } satisfies Record<string, TableSpec>;
 

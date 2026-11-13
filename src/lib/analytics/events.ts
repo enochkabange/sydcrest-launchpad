@@ -13,6 +13,7 @@
  * checks), and docs/analytics.md describes each event.
  */
 import { REFERRERS } from "./attribution";
+import { CONNECTION_TYPES } from "./connection";
 import { HOUR_BANDS, WEEKDAYS } from "./habits";
 import { PROFILE_FIELDS } from "../learner-profile";
 
@@ -118,7 +119,15 @@ export const EVENTS = {
   session_started: {
     feature: "habits",
     source: "client",
-    props: { hour_band: oneOf(HOUR_BANDS), weekday: oneOf(WEEKDAYS), days_since_last: count(), returning: flag() },
+    props: {
+      hour_band: oneOf(HOUR_BANDS),
+      weekday: oneOf(WEEKDAYS),
+      days_since_last: count(),
+      returning: flag(),
+      // Connection class (issue #331): never part of a score.
+      connection: oneOf(CONNECTION_TYPES),
+      save_data: flag(),
+    },
   },
   web_vital: {
     feature: "experience",
@@ -128,6 +137,9 @@ export const EVENTS = {
       value: num(),
       rating: oneOf(["good", "needs-improvement", "poor"]),
       navigation: oneOf(["navigate", "reload", "prerender", "back-forward", "back-forward-cache", "restore", "soft-navigation"]),
+      // Connection class (issue #331).
+      connection: oneOf(CONNECTION_TYPES),
+      save_data: flag(),
     },
   },
   form_started: { feature: "experience", source: "client", props: { form: oneOf(FORM_NAMES) } },
