@@ -32,8 +32,14 @@ test("a chapter lead builds a tagged link and messages their chapter", async ({ 
   await expect(page.getByRole("heading", { name: `Lead tools: ${chapter.name}`, level: 1 })).toBeVisible();
 
   // The tagged link: WhatsApp, chapter medium, the chapter slug as campaign, and a label.
-  await page.getByLabel("Label for this link (optional)").fill("Library Notice Board");
-  const link = new URL(await page.getByLabel("Your chapter link").inputValue());
+  const linkField = page.getByLabel("Your chapter link");
+  await expect(linkField).toHaveValue(/utm_campaign=/);
+  // Fill again until the page has hydrated and the link follows the label.
+  await expect(async () => {
+    await page.getByLabel("Label for this link (optional)").fill("Library Notice Board");
+    await expect(linkField).toHaveValue(/utm_content=library-notice-board/, { timeout: 2_000 });
+  }).toPass();
+  const link = new URL(await linkField.inputValue());
   expect(link.pathname).toBe(`/chapters/${chapter.slug}`);
   expect(link.searchParams.get("utm_source")).toBe("whatsapp");
   expect(link.searchParams.get("utm_medium")).toBe("chapter");
@@ -62,7 +68,7 @@ test("a chapter lead builds a tagged link and messages their chapter", async ({ 
   await page.getByRole("link", { name: "See the results" }).click();
   await expect(page.getByRole("heading", { name: "Message results", level: 1 })).toBeVisible();
   await expect(page.getByTestId("message-results")).toContainText("Got the message");
-  await expect(page.getByText(title)).toBeVisible();
+  await expect(page.getByText(title).first()).toBeVisible();
 
   // The member gets it in the app.
   await signIn(page, member.email);
