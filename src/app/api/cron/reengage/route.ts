@@ -1,5 +1,6 @@
 import { connection } from "next/server";
 import { runAnalyticsMaintenance } from "@/lib/analytics/maintenance";
+import { runAccountDeletions } from "@/lib/data-rights/deletion";
 import { createAdminClient } from "@/lib/messaging/admin";
 import { WHATSAPP_CONSENT_VERSION } from "@/lib/messaging/consent";
 import { isAuthorizedCron } from "@/lib/messaging/cron-auth";
@@ -13,8 +14,9 @@ import { SITE_URL } from "@/lib/site";
  * Daily re engagement nudge (scheduled in vercel.json). Messages consenting
  * learners who have been inactive for a week, at most once a week each.
  * Then runs analytics maintenance (rollups and 13 month retention, issue
- * #242), here because the plan allows two crons. Each step is isolated: one
- * failing does not stop the other.
+ * #242), here because the plan allows two crons, and deletes accounts whose
+ * seven day grace period has passed (issue #333). Each step is isolated: one
+ * failing does not stop the others.
  */
 export async function GET(request: Request) {
   await connection();
@@ -42,6 +44,7 @@ export async function GET(request: Request) {
     summary = { error: "reengage failed" };
   }
   const analytics = await runAnalyticsMaintenance(admin);
-  const failed = "error" in summary || !analytics.ok;
-  return Response.json({ ...summary, analytics }, { status: failed ? 500 : 200 });
+  const deletions = await runAccountDeletions(admin);
+  const failed = "error" in summary || !analytics.ok || !deletions.ok;
+  return Response.json({ ...summary, analytics, deletions }, { status: failed ? 500 : 200 });
 }

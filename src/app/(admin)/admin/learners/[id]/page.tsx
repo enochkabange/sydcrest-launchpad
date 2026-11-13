@@ -3,10 +3,12 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import Link from "@/components/ui/link";
 import { requireAdmin } from "@/lib/admin";
+import { getCurrentUser } from "@/lib/auth";
 import { eventLabel } from "@/lib/insights/metrics";
 import { daysAgo, deviceLabel, hourBandLabel, percent, stageLabel, turnUpRate } from "@/lib/learners/attributes";
 import { MULTI, SINGLE, fromRow, type MultiKey, type SingleKey } from "@/lib/learner-profile";
 import { regionLabel } from "@/lib/regions";
+import { ActionNotice, PeoplePanel } from "./people-panel";
 
 export const metadata: Metadata = { title: "Learner", robots: { index: false } };
 
@@ -56,11 +58,18 @@ function Facts({ title, items }: { title: string; items: [string, React.ReactNod
   );
 }
 
-async function Learner({ params }: Pick<PageProps<"/admin/learners/[id]">, "params">) {
+async function Learner({ params, searchParams }: PageProps<"/admin/learners/[id]">) {
   const { id } = await params;
   if (!UUID.test(id)) notFound();
   const { supabase } = await requireAdmin();
-  const [head, attrs, about, touch, progress, timeline] = await Promise.all([
+  // The account panel writes the learner_viewed audit row, so it runs first
+  // and the audit trail below includes this visit.
+  const account = await supabase.rpc("admin_learner_account", { p_profile_id: id });
+  if (account.error) throw new Error(`Could not load the account: ${account.error.message}`);
+  const [me, audit, query, head, attrs, about, touch, progress, timeline] = await Promise.all([
+    getCurrentUser(),
+    supabase.rpc("admin_audit_entries", { p_profile_id: id, p_limit: 50 }),
+    searchParams,
     supabase.rpc("admin_learner", { p_profile_id: id }),
     supabase.from("learner_attributes").select("*").eq("profile_id", id).maybeSingle(),
     supabase.from("learner_profiles").select("*").eq("profile_id", id).maybeSingle(),
@@ -69,7 +78,9 @@ async function Learner({ params }: Pick<PageProps<"/admin/learners/[id]">, "para
     supabase.from("events").select("id, name, route, props, created_at").eq("profile_id", id).order("created_at", { ascending: false }).limit(60),
   ]);
   const person = head.data?.[0];
-  if (!person) notFound();
+  const acct = account.data?.[0];
+  if (!person || !acct) notFound();
+  const notice = typeof query.error === "string" ? query.error : typeof query.done === "string" ? query.done : undefined;
   const a = attrs.data;
   const today = new Date().toISOString().slice(0, 10);
   const answers = fromRow(about.data);
@@ -96,6 +107,9 @@ async function Learner({ params }: Pick<PageProps<"/admin/learners/[id]">, "para
           {a && <> · attributes from {a.computed_at.slice(0, 10)}</>}
         </p>
       </div>
+
+      <ActionNotice code={notice} />
+      <PeoplePanel account={acct} entries={audit.data ?? []} isSelf={me?.id === id} />
 
       <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         <Facts
@@ -196,11 +210,15 @@ async function Learner({ params }: Pick<PageProps<"/admin/learners/[id]">, "para
   );
 }
 
-/** Admin: one learner's computed attributes, answers, first touch, progress and recent activity (epic #320 step 4). */
-export default function LearnerPage({ params }: PageProps<"/admin/learners/[id]">) {
+/**
+ * Admin: one learner's account, consents, programmes, safe actions and audit
+ * trail (people console, #332), then computed attributes, answers, first
+ * touch, progress and recent activity (epic #320 step 4).
+ */
+export default function LearnerPage({ params, searchParams }: PageProps<"/admin/learners/[id]">) {
   return (
     <Suspense fallback={<div className="h-[40rem] animate-skeleton rounded-lg bg-surface-sunken" />}>
-      <Learner params={params} />
+      <Learner params={params} searchParams={searchParams} />
     </Suspense>
   );
 }
