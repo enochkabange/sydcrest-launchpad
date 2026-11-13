@@ -269,6 +269,7 @@ test.describe("axe sweep", () => {
         "/admin/chapters/new",
         "/admin/cohorts",
         "/admin/content",
+        "/admin/content/quality",
         "/admin/events",
         "/admin/events/new",
         "/admin/experts",

@@ -83,6 +83,11 @@ export default function PrivacyPage() {
       <h3>When you use the platform</h3>
       <ul>
         <li>Your learning progress, such as the roadmap steps you have completed.</li>
+        <li id="lesson-feedback">
+          Your answer to &ldquo;Was this lesson clear?&rdquo; at the end of a lesson (yes or not really, and the
+          reason you tapped, if any), so we can improve the lessons. You can change it at any time; it is deleted
+          with your account.
+        </li>
         <li>
           How many questions you ask the AI tutor each day, so we can keep it free and fair for
           everyone.
@@ -160,6 +165,13 @@ export default function PrivacyPage() {
           questions you got right or wrong and whether you tried again; how many results a search or
           filter gave you (never the words you typed); which opportunities you viewed and applied to;
           and whether cohort work was sent by its due date.
+        </li>
+        <li>
+          <strong>How clear lessons are:</strong> which answer you picked on each checkpoint question and
+          whether that attempt passed; which topic you asked the AI tutor about, which message in the chat
+          it was and a rough kind of question (for example &ldquo;why&rdquo; or &ldquo;about code&rdquo;),
+          never the words; and your answer to &ldquo;Was this lesson clear?&rdquo;. Our content team sees
+          these only as totals per lesson and question.
         </li>
         <li>
           <strong>Where your visit came from:</strong> once per visit, the campaign tags in the link you

@@ -88,6 +88,11 @@ const DECISION = oneOf([
   "unverified",
   "changes_requested",
 ]);
+/** Why a lesson was not clear, from the one tap at the end of a lesson (#326). */
+export const LESSON_FEEDBACK_REASONS = ["confusing", "too_long", "too_short", "missing_example", "broken_link"] as const;
+export type LessonFeedbackReason = (typeof LESSON_FEEDBACK_REASONS)[number];
+/** The Study Buddy router's reason for a turn: a coarse kind of question, never its words. */
+export const STUDY_BUDDY_KINDS = ["routine", "long", "intent", "code"] as const;
 const SHARE_CHANNEL = oneOf(["copy", "share", "whatsapp", "x", "linkedin", "facebook", "download"]);
 
 // The taxonomy --------------------------------------------------------------------
@@ -193,7 +198,12 @@ export const EVENTS = {
     props: { roadmap: slug(), node_id: id(), time_spent_ms: ms(), scroll_percent: count(), done_before: flag() },
   },
   resource_opened: { feature: "learn", source: "client", props: { node_id: id(), kind: oneOf(["article", "video", "practice"]) } },
-  quiz_question_answered: { feature: "learn", source: "server", props: { node_id: id(), question_id: code(), correct: flag() } },
+  quiz_question_answered: {
+    feature: "learn",
+    source: "server",
+    // choice (the option index picked) and passed (the attempt's result) feed question analysis (#326).
+    props: { node_id: id(), question_id: code(), correct: flag(), choice: count(), passed: flag() },
+  },
   quiz_retried: { feature: "learn", source: "server", props: { node_id: id(), passed: flag(), passed_before: flag() } },
   search_performed: { feature: "discovery", source: "client", props: { scope: oneOf(["topics"]), results: count() } },
   filter_applied: {
@@ -207,7 +217,18 @@ export const EVENTS = {
   },
   review_completed: { feature: "review", source: "server", props: { items: count(), correct: count() } },
   weekly_goal_set: { feature: "review", source: "server", props: { goal: count() } },
-  study_buddy_message: { feature: "study_buddy", source: "server", props: { turn: count() } },
+  // The topic and a coarse kind of question (from the model router), never the words (#326).
+  study_buddy_message: {
+    feature: "study_buddy",
+    source: "server",
+    props: { turn: count(), node_id: id(), kind: oneOf(STUDY_BUDDY_KINDS) },
+  },
+  // Content quality (epic #320, issue #326)
+  lesson_feedback_given: {
+    feature: "learn",
+    source: "server",
+    props: { node_id: id(), clear: flag(), reason: oneOf(LESSON_FEEDBACK_REASONS) },
+  },
 
   // Skills
   skill_quiz_submitted: { feature: "skills", source: "server", props: { passed: flag(), score: count() } },
