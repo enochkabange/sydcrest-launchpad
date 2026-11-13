@@ -6,6 +6,7 @@ import { createClient } from "@/lib/supabase/server";
 import { nextUnfinished, requiredProgress } from "@/components/learn/next-node";
 import { buttonClasses } from "@/components/ui/button";
 import { ReportOutcomeCard } from "@/components/outcomes/report-outcome-card";
+import { AboutYouCard } from "../profile/about-you-card";
 import { AutoGrid, MainWithRail } from "@/components/ui/layout";
 import { getPublishedRoadmaps } from "@/lib/roadmaps/public";
 import { roadmapPath } from "@/lib/roadmaps/seo";
@@ -48,6 +49,7 @@ async function Greeting() {
           </Link>
         </div>
       )}
+      <AboutYouCard hideWhenComplete />
     </>
   );
 }

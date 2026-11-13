@@ -1,3 +1,4 @@
+import { TrackOnView, TrackedLink } from "@/components/analytics/track";
 import type { Metadata } from "next";
 import { ExternalLink, ShieldCheck } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -69,6 +70,7 @@ async function Detail({ params }: Pick<PageProps<"/opportunities/[slug]">, "para
   return (
     <Container className="pt-6 pb-16 md:pt-10 xl:pt-14 xl:pb-24">
       {jsonLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: jsonLdScript(jsonLd) }} />}
+      <TrackOnView track={{ name: "opportunity_viewed", props: { opportunity_id: o.id } }} />
       <nav aria-label="Breadcrumb" className="text-sm text-content-2">
         <Link href={opportunitiesPath} className="underline underline-offset-2 hover:text-content">
           Opportunities
@@ -122,16 +124,17 @@ function ApplyCard({ o, today, path }: { o: Opportunity; today: string; path: st
           </Link>
         )}
         {o.apply_url && (
-          <a
+          <TrackedLink
             href={o.apply_url}
             target="_blank"
             rel="noopener noreferrer nofollow"
+            track={{ name: "opportunity_apply_opened", props: { opportunity_id: o.id, on_sydcrest: false } }}
             className={buttonClasses(o.apply_on_sydcrest ? "secondary" : "primary", "w-full")}
           >
             Apply with {truncate(o.organisation_name, 40)}
             <ExternalLink aria-hidden className="size-4" />
             <span className="sr-only">(opens in a new tab)</span>
-          </a>
+          </TrackedLink>
         )}
         {o.apply_instructions && (
           <div className="text-sm text-content-2">

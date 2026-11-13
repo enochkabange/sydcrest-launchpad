@@ -13,6 +13,7 @@ import { VerifiedSkillsSection } from "./verified-skills-section";
 import { CredentialsSection } from "./credentials-section";
 import { WhatsAppConsent } from "./whatsapp-consent";
 import { StorySection } from "./story-section";
+import { AboutYouCard } from "./about-you-card";
 
 export const metadata: Metadata = { title: "Profile" };
 
@@ -22,6 +23,7 @@ async function ProfileDetails() {
     <>
       {profile.email && <p className="text-content-2">Signed in as {profile.email}</p>}
       <ProfileForm displayName={profile.display_name} region={profile.region} phone={profile.phone} />
+      <AboutYouCard />
     </>
   );
 }

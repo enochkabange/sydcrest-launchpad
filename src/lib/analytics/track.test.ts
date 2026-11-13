@@ -17,7 +17,7 @@ vi.mock("next/server", () => ({
 const rpc = vi.fn();
 vi.mock("@/lib/supabase/server", () => ({ createClient: async () => ({ rpc }) }));
 
-const { track, trackRefusal, trackResult } = await import("./track");
+const { track, trackMany, trackRefusal, trackResult } = await import("./track");
 
 const AID = "0d4c3c9e-6d0c-4f6c-9a39-7c0d1e2f3a4b";
 
@@ -76,5 +76,26 @@ describe("trackResult and trackRefusal", () => {
       { name: "action_failed", props: { action: "booking_requested", refusal: "forbidden", code: "42501" } },
       { name: "action_failed", props: { action: "signup", refusal: "validation" } },
     ]);
+  });
+});
+
+describe("trackMany", () => {
+  it("sends several events in one write, each with checked props", async () => {
+    await trackMany([
+      { name: "profile_field_updated", props: { field: "main_goal" } },
+      { name: "profile_field_updated", props: { field: "not_a_field" as never } },
+      { name: "learner_profile_saved", props: { answered: 3, changed: 1 } },
+    ]);
+    expect(rpc).toHaveBeenCalledTimes(1);
+    expect(rpc.mock.calls[0][1].p_events).toEqual([
+      { name: "profile_field_updated", props: { field: "main_goal" } },
+      { name: "profile_field_updated", props: {} },
+      { name: "learner_profile_saved", props: { answered: 3, changed: 1 } },
+    ]);
+  });
+
+  it("sends nothing for an empty list", async () => {
+    await trackMany([]);
+    expect(rpc).not.toHaveBeenCalled();
   });
 });

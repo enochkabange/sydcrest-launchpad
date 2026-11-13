@@ -2,6 +2,7 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { trackRefusal, trackResult } from "@/lib/analytics/track";
 import { requireUser } from "@/lib/auth";
 import { parseApplyForm, type ApplyFormValues } from "@/lib/opportunities/applications";
 import { createClient } from "@/lib/supabase/server";
@@ -16,7 +17,10 @@ export type ApplyState = { errors?: Partial<Record<keyof ApplyFormValues, string
 export async function applyToOpportunity(opportunityId: string, slug: string, _prev: ApplyState, form: FormData): Promise<ApplyState> {
   await requireUser();
   const { data, errors } = parseApplyForm(form);
-  if (Object.keys(errors).length) return { errors, values: data };
+  if (Object.keys(errors).length) {
+    await trackRefusal("opportunity_applied", "validation");
+    return { errors, values: data };
+  }
   const supabase = await createClient();
   const { error } = await supabase.from("opportunity_applications").insert({
     opportunity_id: opportunityId,
@@ -24,6 +28,8 @@ export async function applyToOpportunity(opportunityId: string, slug: string, _p
     portfolio_url: data.portfolio_url || null,
     contact_consent: data.contact_consent,
   });
+  // A duplicate (23505) is not a new application, so it is not counted either way.
+  if (error?.code !== "23505") await trackResult("opportunity_applied", error, { opportunity_id: opportunityId });
   if (error) {
     if (error.code === "23505") redirect("/opportunities/applications");
     if (error.code === "42501") return { message: "This listing is no longer taking applications.", values: data };

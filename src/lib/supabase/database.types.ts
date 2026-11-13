@@ -1941,6 +1941,190 @@ export type Database = {
           },
         ]
       }
+      learner_attributes: {
+        Row: {
+          active_days_30: number
+          active_weeks_8: number
+          avg_quiz_score: number | null
+          computed_at: string
+          days_to_first_topic: number | null
+          deadlines_met: number
+          deadlines_missed: number
+          event_no_shows: number
+          events_attended: number
+          events_going: number
+          first_active_on: string | null
+          first_touch_campaign: string | null
+          first_touch_source: string | null
+          joined_on: string
+          last_active_on: string | null
+          on_time_rate: number | null
+          opportunities_applied: number
+          opportunities_viewed_90: number
+          profile_id: string
+          quiz_retries_90: number
+          quizzes_passed: number
+          resubmissions: number
+          stage: string
+          topics_completed: number
+          topics_started: number
+          usual_device: string | null
+          usual_hour_band: string | null
+        }
+        Insert: {
+          active_days_30?: number
+          active_weeks_8?: number
+          avg_quiz_score?: number | null
+          computed_at?: string
+          days_to_first_topic?: number | null
+          deadlines_met?: number
+          deadlines_missed?: number
+          event_no_shows?: number
+          events_attended?: number
+          events_going?: number
+          first_active_on?: string | null
+          first_touch_campaign?: string | null
+          first_touch_source?: string | null
+          joined_on: string
+          last_active_on?: string | null
+          on_time_rate?: number | null
+          opportunities_applied?: number
+          opportunities_viewed_90?: number
+          profile_id: string
+          quiz_retries_90?: number
+          quizzes_passed?: number
+          resubmissions?: number
+          stage: string
+          topics_completed?: number
+          topics_started?: number
+          usual_device?: string | null
+          usual_hour_band?: string | null
+        }
+        Update: {
+          active_days_30?: number
+          active_weeks_8?: number
+          avg_quiz_score?: number | null
+          computed_at?: string
+          days_to_first_topic?: number | null
+          deadlines_met?: number
+          deadlines_missed?: number
+          event_no_shows?: number
+          events_attended?: number
+          events_going?: number
+          first_active_on?: string | null
+          first_touch_campaign?: string | null
+          first_touch_source?: string | null
+          joined_on?: string
+          last_active_on?: string | null
+          on_time_rate?: number | null
+          opportunities_applied?: number
+          opportunities_viewed_90?: number
+          profile_id?: string
+          quiz_retries_90?: number
+          quizzes_passed?: number
+          resubmissions?: number
+          stage?: string
+          topics_completed?: number
+          topics_started?: number
+          usual_device?: string | null
+          usual_hour_band?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "learner_attributes_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      learner_profiles: {
+        Row: {
+          available_from: string | null
+          career_stage: string | null
+          created_at: string
+          education: string | null
+          employment_status: string | null
+          experience: string | null
+          field_of_study: string | null
+          heard_from: string | null
+          industries: string[]
+          internet: string | null
+          languages: string[]
+          learning_styles: string[]
+          main_device: string | null
+          main_goal: string | null
+          min_pay_band: string | null
+          profile_id: string
+          study_hours: string | null
+          study_times: string[]
+          tracks: string[]
+          updated_at: string
+          willing_to_relocate: boolean | null
+          work_regions: string[]
+          work_styles: string[]
+        }
+        Insert: {
+          available_from?: string | null
+          career_stage?: string | null
+          created_at?: string
+          education?: string | null
+          employment_status?: string | null
+          experience?: string | null
+          field_of_study?: string | null
+          heard_from?: string | null
+          industries?: string[]
+          internet?: string | null
+          languages?: string[]
+          learning_styles?: string[]
+          main_device?: string | null
+          main_goal?: string | null
+          min_pay_band?: string | null
+          profile_id: string
+          study_hours?: string | null
+          study_times?: string[]
+          tracks?: string[]
+          updated_at?: string
+          willing_to_relocate?: boolean | null
+          work_regions?: string[]
+          work_styles?: string[]
+        }
+        Update: {
+          available_from?: string | null
+          career_stage?: string | null
+          created_at?: string
+          education?: string | null
+          employment_status?: string | null
+          experience?: string | null
+          field_of_study?: string | null
+          heard_from?: string | null
+          industries?: string[]
+          internet?: string | null
+          languages?: string[]
+          learning_styles?: string[]
+          main_device?: string | null
+          main_goal?: string | null
+          min_pay_band?: string | null
+          profile_id?: string
+          study_hours?: string | null
+          study_times?: string[]
+          tracks?: string[]
+          updated_at?: string
+          willing_to_relocate?: boolean | null
+          work_regions?: string[]
+          work_styles?: string[]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "learner_profiles_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       learner_stories: {
         Row: {
           created_at: string
@@ -5119,6 +5303,45 @@ export type Database = {
           poor: number
           route: string
           samples: number
+        }[]
+      }
+      admin_learner: {
+        Args: { p_profile_id: string }
+        Returns: {
+          created_at: string
+          display_name: string
+          is_public: boolean
+          profile_id: string
+          region: string
+          role: string
+        }[]
+      }
+      admin_learner_progress: {
+        Args: { p_profile_id: string }
+        Returns: {
+          completed: number
+          last_at: string
+          passed: number
+          roadmap_slug: string
+          roadmap_title: string
+          started: number
+          total: number
+        }[]
+      }
+      admin_learners: {
+        Args: { p_limit?: number; p_search?: string; p_stage?: string }
+        Returns: {
+          active_days_30: number
+          display_name: string
+          first_touch_source: string
+          joined_on: string
+          last_active_on: string
+          on_time_rate: number
+          profile_id: string
+          region: string
+          role: string
+          stage: string
+          topics_completed: number
         }[]
       }
       admin_reports: {

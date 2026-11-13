@@ -489,6 +489,13 @@ Orphan; fold into `/opportunities` as a "Saved" filter (section 1).
 - **Cut / move / collapse**: remove the outcome card (link to Outcomes); become the home for Talent listing and Expert profile sections (problem 9).
 - **Nav**: You → Profile.
 
+### `/profile/about`
+- **Audience**: every signed in type. **Job**: tell SydCrest my goal, time, interests and work preferences so my plan and suggestions fit (learner profile v2, epic #320).
+- **Primary**: save answers. Every question optional; "Prefer not to say" or unticking clears an answer.
+- **Priority**: goal; time and access; interests; languages; work preferences; how I learn.
+- **Cut / move / collapse**: the new onboarding should ask the first two groups and link here for the rest.
+- **Nav**: from the About you card on `/profile` and on the dashboard (until half are answered).
+
 ### `/u/[slug]`, `/a/[id]`, `/verify/[id]` (+ `credential.json`, `credential.jwt`), `/badges/*` (JSON)
 | Route | Audience | Job | Notes |
 |---|---|---|---|

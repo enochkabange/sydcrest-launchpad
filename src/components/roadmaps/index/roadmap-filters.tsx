@@ -1,6 +1,7 @@
 "use client";
 
 import { useId, useState, type ReactNode } from "react";
+import { clientTrack } from "@/lib/analytics/client/analytics";
 import { matchesFilters, NO_FILTERS, type Facets, type Filters } from "@/lib/roadmaps/catalogue";
 
 type Option = { id: string; label: string };
@@ -21,7 +22,15 @@ export function RoadmapFilters({
   const [filters, setFilters] = useState<Filters>(NO_FILTERS);
   const shown = items.filter((i) => matchesFilters(i.facets, filters));
   const active = filters.field || filters.band || filters.level || filters.phone;
-  const set = (patch: Partial<Filters>) => setFilters((f) => ({ ...f, ...patch }));
+  const set = (patch: Partial<Filters>) => {
+    const next = { ...filters, ...patch };
+    setFilters(next);
+    // Which filters people use and whether anything is left (epic #320).
+    const results = items.filter((i) => matchesFilters(i.facets, next)).length;
+    for (const [filter, value] of Object.entries(patch) as [keyof Filters, Filters[keyof Filters]][]) {
+      if (value) clientTrack("filter_applied", { scope: "roadmaps", filter, results });
+    }
+  };
 
   const select = "min-h-11 w-full rounded-md border border-line-strong bg-surface px-3 text-content";
   const label = "flex flex-col gap-1 text-sm font-semibold text-content-2";

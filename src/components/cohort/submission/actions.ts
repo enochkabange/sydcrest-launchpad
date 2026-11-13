@@ -1,6 +1,7 @@
 "use server";
 
-import { trackRefusal, trackResult } from "@/lib/analytics/track";
+import { trackMany, trackRefusal, trackResult } from "@/lib/analytics/track";
+import { deadlineHours } from "@/lib/cohort/schedule";
 import { refresh } from "next/cache";
 import { after } from "next/server";
 import { requireUser } from "@/lib/auth";
@@ -45,6 +46,7 @@ export async function saveSubmission(_prev: SubmissionFormState, form: FormData)
   }
 
   if (submit) {
+    await trackPunctuality(supabase, row);
     const toReview: SubmissionToReview = {
       id: row.id,
       attempt: row.attempt,
@@ -131,3 +133,35 @@ export async function gradeSubmission(_prev: GradeFormState, form: FormData): Pr
   refresh();
   return { saved: { status: data.status, at: Date.now() } };
 }
+
+type SavedRow = { attempt: number; cohort_id: string; program_week_id: string; submitted_at: string | null };
+
+/**
+ * Work-readiness signals (epic #320): whether the work was sent by its week's
+ * due date and by how many hours, and whether it is a resubmission. Reads the
+ * cohort start and week number; analytics only, so a failed read records nothing.
+ */
+async function trackPunctuality(supabase: Awaited<ReturnType<typeof createClient>>, row: SavedRow) {
+  try {
+    if (!row.submitted_at) return;
+    // Only the first send counts against the deadline; a resubmission after a return is its own signal.
+    const [{ data: cohort }, { data: week }] = await Promise.all([
+      supabase.from("cohorts").select("starts_on").eq("id", row.cohort_id).maybeSingle(),
+      supabase.from("program_weeks").select("week_number").eq("id", row.program_week_id).maybeSingle(),
+    ]);
+    const timing = row.attempt === 1 && cohort?.starts_on && week ? deadlineHours(cohort.starts_on, week.week_number, row.submitted_at) : null;
+    await trackMany([
+      ...(timing
+        ? [
+            timing.met
+              ? { name: "deadline_met" as const, props: { kind: "cohort_task" as const, hours_early: timing.hours } }
+              : { name: "deadline_missed" as const, props: { kind: "cohort_task" as const, hours_late: timing.hours } },
+          ]
+        : []),
+      ...(row.attempt > 1 ? [{ name: "submission_resubmitted" as const, props: { attempt: row.attempt } }] : []),
+    ]);
+  } catch (error) {
+    console.error("punctuality tracking failed", { error: error instanceof Error ? error.message : String(error) });
+  }
+}
+

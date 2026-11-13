@@ -16,10 +16,11 @@ import { createClient } from "@/lib/supabase/server";
  *
  * Refused: another site (Origin or Sec-Fetch-Site), bodies over 16 KB, and
  * more than the per address limit. Dropped without a write: Do Not Track,
- * Global Privacy Control and the visitor's own switch. Only browser events
- * (page_view, visit_started, web_vital, form_started, form_submitted,
- * share_clicked, client_error) are accepted, each with its props checked; the database adds
- * who the person is from the session.
+ * Global Privacy Control and the visitor's own switch. Only events declared
+ * with source "client" in src/lib/analytics/events.ts are accepted (page
+ * views, visits, sessions, lessons, searches, filters, opportunity views,
+ * forms, shares, Web Vitals and browser errors), each with its props
+ * checked; the database adds who the person is from the session.
  */
 
 const NO_STORE = { "Cache-Control": "no-store" };

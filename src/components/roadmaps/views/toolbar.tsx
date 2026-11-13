@@ -2,7 +2,8 @@
 
 import { Search } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useId, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
+import { clientTrack } from "@/lib/analytics/client/analytics";
 import { nodePath } from "@/lib/roadmaps/seo";
 import { searchTopics, type SearchItem } from "@/lib/roadmaps/search";
 import { revealNode, useRoadmapUi } from "./roadmap-ui";
@@ -58,6 +59,13 @@ function TopicSearch({ slug, items }: { slug: string; items: SearchItem[] }) {
   const [active, setActive] = useState(0);
   const results = useMemo(() => searchTopics(items, query), [items, query]);
   const showList = open && query.trim().length > 0;
+
+  // A search once the typing settles: how many topics matched, never the words (epic #320).
+  useEffect(() => {
+    if (!query.trim()) return;
+    const timer = setTimeout(() => clientTrack("search_performed", { scope: "topics", results: results.length }), 1500);
+    return () => clearTimeout(timer);
+  }, [query, results.length]);
 
   const go = (item: SearchItem) => {
     setOpen(false);

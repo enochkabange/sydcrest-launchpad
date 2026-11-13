@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { trackResult } from "@/lib/analytics/track";
 import { requireUser } from "@/lib/auth";
 import { EMPLOYER_STAGES } from "@/lib/opportunities/applications";
 import { createClient } from "@/lib/supabase/server";
@@ -14,6 +15,7 @@ export async function moveApplicant(applicationId: string, path: string, _prev: 
   if (typeof stage !== "string" || !EMPLOYER_STAGES.some((s) => s.value === stage)) return { message: "Choose a stage." };
   const supabase = await createClient();
   const { error } = await supabase.rpc("set_application_stage", { p_application_id: applicationId, p_stage: stage });
+  await trackResult("opportunity_applicant_moved", error, { stage });
   if (error) {
     if (error.code === "55000") return { message: "This application is closed: the applicant was hired or withdrew." };
     if (error.code === "42501") return { message: "You cannot manage applications for this listing." };

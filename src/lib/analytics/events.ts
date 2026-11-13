@@ -13,6 +13,8 @@
  * checks), and docs/analytics.md describes each event.
  */
 import { REFERRERS } from "./attribution";
+import { HOUR_BANDS, WEEKDAYS } from "./habits";
+import { PROFILE_FIELDS } from "../learner-profile";
 
 // Field kinds ---------------------------------------------------------------------
 
@@ -62,6 +64,7 @@ export const FORM_NAMES = [
   "talent_listing",
   "event_feedback",
   "profile",
+  "learner_profile",
   "skill_portfolio",
 ] as const;
 export type FormName = (typeof FORM_NAMES)[number];
@@ -112,6 +115,11 @@ export const EVENTS = {
       deep_link: flag(),
     },
   },
+  session_started: {
+    feature: "habits",
+    source: "client",
+    props: { hour_band: oneOf(HOUR_BANDS), weekday: oneOf(WEEKDAYS), days_since_last: count(), returning: flag() },
+  },
   web_vital: {
     feature: "experience",
     source: "client",
@@ -156,6 +164,8 @@ export const EVENTS = {
   password_updated: { feature: "auth", source: "server", props: {} },
   profile_updated: { feature: "settings", source: "server", props: { has_region: flag(), has_headline: flag() } },
   public_profile_updated: { feature: "settings", source: "server", props: { is_public: flag() } },
+  learner_profile_saved: { feature: "settings", source: "server", props: { answered: count(), changed: count() } },
+  profile_field_updated: { feature: "settings", source: "server", props: { field: oneOf(PROFILE_FIELDS) } },
   profile_published: { feature: "sharing", source: "server", props: {} },
   whatsapp_consent_set: { feature: "settings", source: "server", props: { on: flag() } },
   display_prefs_saved: { feature: "settings", source: "server", props: {} },
@@ -176,6 +186,25 @@ export const EVENTS = {
     props: { roadmap: slug(), node_id: id(), score: count(), passed: flag() },
   },
   node_completed: { feature: "learn", source: "server", props: { roadmap: slug(), node_id: id(), via: oneOf(["quiz", "self"]) } },
+  // Learning behaviour (epic #320, step 3)
+  lesson_left: {
+    feature: "learn",
+    source: "client",
+    props: { roadmap: slug(), node_id: id(), time_spent_ms: ms(), scroll_percent: count(), done_before: flag() },
+  },
+  resource_opened: { feature: "learn", source: "client", props: { node_id: id(), kind: oneOf(["article", "video", "practice"]) } },
+  quiz_question_answered: { feature: "learn", source: "server", props: { node_id: id(), question_id: code(), correct: flag() } },
+  quiz_retried: { feature: "learn", source: "server", props: { node_id: id(), passed: flag(), passed_before: flag() } },
+  search_performed: { feature: "discovery", source: "client", props: { scope: oneOf(["topics"]), results: count() } },
+  filter_applied: {
+    feature: "discovery",
+    source: "client",
+    props: {
+      scope: oneOf(["roadmaps", "opportunities"]),
+      filter: oneOf(["field", "band", "level", "phone", "type", "location", "deadline"]),
+      results: count(),
+    },
+  },
   review_completed: { feature: "review", source: "server", props: { items: count(), correct: count() } },
   weekly_goal_set: { feature: "review", source: "server", props: { goal: count() } },
   study_buddy_message: { feature: "study_buddy", source: "server", props: { turn: count() } },
@@ -193,6 +222,9 @@ export const EVENTS = {
   specialisation_chosen: { feature: "cohort", source: "server", props: { specialisation: slug() } },
   submission_saved: { feature: "cohort", source: "server", props: { sent: flag() } },
   submission_graded: { feature: "cohort", source: "server", props: { passed: flag() } },
+  submission_resubmitted: { feature: "cohort", source: "server", props: { attempt: count() } },
+  deadline_met: { feature: "cohort", source: "server", props: { kind: oneOf(["cohort_task"]), hours_early: count() } },
+  deadline_missed: { feature: "cohort", source: "server", props: { kind: oneOf(["cohort_task"]), hours_late: count() } },
   peer_review_assigned: { feature: "cohort", source: "server", props: {} },
   peer_review_submitted: { feature: "cohort", source: "server", props: {} },
   learner_deferred: { feature: "cohort", source: "server", props: {} },
@@ -224,6 +256,11 @@ export const EVENTS = {
   opportunity_reported: { feature: "opportunities", source: "server", props: {} },
   opportunity_saved: { feature: "opportunities", source: "server", props: { status: oneOf(["saved", "applied"]) } },
   opportunity_unsaved: { feature: "opportunities", source: "server", props: {} },
+  opportunity_viewed: { feature: "opportunities", source: "client", props: { opportunity_id: id() } },
+  opportunity_apply_opened: { feature: "opportunities", source: "client", props: { opportunity_id: id(), on_sydcrest: flag() } },
+  opportunity_applied: { feature: "opportunities", source: "server", props: { opportunity_id: id() } },
+  opportunity_application_withdrawn: { feature: "opportunities", source: "server", props: {} },
+  opportunity_applicant_moved: { feature: "opportunities", source: "server", props: { stage: code() } },
   outcome_reported: { feature: "outcomes", source: "server", props: {} },
   outcome_decided: { feature: "outcomes", source: "server", props: { decision: DECISION } },
   talent_listing_saved: { feature: "talent", source: "server", props: {} },

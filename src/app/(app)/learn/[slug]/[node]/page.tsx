@@ -24,6 +24,8 @@ import { isStudyBuddyConfigured } from "@/lib/study-buddy/chat";
 import { getStudyBuddyAllowance } from "@/lib/study-buddy/data";
 import { markComplete, startNode, submitQuiz } from "./actions";
 import { TopicOutline } from "./topic-outline";
+import { TrackedLink } from "@/components/analytics/track";
+import { LessonReading } from "@/components/learn/lesson-reading";
 
 export const metadata: Metadata = { title: "Learn" };
 
@@ -32,6 +34,10 @@ const RESOURCE_KIND = {
   video: { label: "Watch", icon: PlayCircle },
   practice: { label: "Practise", icon: Wrench },
 } as const;
+
+function kindKey(kind: string | null): keyof typeof RESOURCE_KIND {
+  return kind && Object.hasOwn(RESOURCE_KIND, kind) ? (kind as keyof typeof RESOURCE_KIND) : "article";
+}
 
 const STATUS_LABEL = {
   not_started: "Not started",
@@ -222,10 +228,11 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
                 const Icon = kind.icon;
                 return (
                   <li key={r.id}>
-                    <a
+                    <TrackedLink
                       href={r.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      track={{ name: "resource_opened", props: { node_id: node.id, kind: kindKey(r.kind) } }}
                       className="flex min-h-11 items-center gap-3 rounded-lg border border-line p-3 text-content transition-colors hover:border-line-strong hover:bg-surface-sunken"
                     >
                       <Icon className="size-5 shrink-0 text-content-3" aria-hidden="true" />
@@ -234,7 +241,7 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
                         <span className="block text-sm text-content-3">{kind.label}</span>
                       </span>
                       <ExternalLink className="size-4 shrink-0 text-content-3" aria-label="Opens in a new tab" />
-                    </a>
+                    </TrackedLink>
                   </li>
                 );
               })}
@@ -274,6 +281,8 @@ async function Study({ params }: { params: Promise<{ slug: string; node: string 
             />
           )}
         </Section>
+
+        <LessonReading roadmap={roadmap.slug} nodeId={node.id} done={done} />
 
         {/* Own boundary, so the lesson never waits on today's usage read. In the lesson column at every width. */}
         <Suspense fallback={<StudyBuddySkeleton />}>

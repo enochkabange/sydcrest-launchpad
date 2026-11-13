@@ -101,6 +101,7 @@ recorded by the server; browser events come through the beacon.
 |---|---|---|---|
 | `page_view` | browser | none | Route in the `route` column. |
 | `visit_started` | browser | `utm_source`, `utm_medium`, `utm_campaign`, `utm_content` (slugs), `referrer` (direct, internal, search, whatsapp, facebook, instagram, linkedin, x, tiktok, youtube, telegram, email, other), `deep_link` | Once per tab session, before its first `page_view`; the landing route is in `route`. See section 9. |
+| `session_started` | browser | `hour_band` (night, morning, afternoon, evening, late; local clock), `weekday`, `days_since_last` (count; absent on a browser's first session), `returning` | Once per tab session with `visit_started`; the last session's date is kept in localStorage (`sc_last_day`). See section 11. |
 | `web_vital` | browser | `metric` (LCP, INP, CLS, FCP, TTFB), `value` (ms; CLS unitless), `rating`, `navigation` | 25% of sessions. |
 | `form_started` / `form_submitted` | browser | `form` | First input in a tagged form, and its submit. |
 | `share_clicked` | browser | `target` (achievement, certificate, roadmap, ...), `channel` (share, copy, download, ...) | |
@@ -113,15 +114,16 @@ recorded by the server; browser events come through the beacon.
 | Feature | Events (props) |
 |---|---|
 | Auth | `signup` (method), `sign_in` (method), `sign_out`, `welcome_completed`, `password_reset_requested`, `password_updated` |
-| Settings | `profile_updated` (has_region), `public_profile_updated` (is_public), `profile_published`, `whatsapp_consent_set` (on), `display_prefs_saved`, `milestone_posts_set` (on) |
+| Settings | `profile_updated` (has_region), `public_profile_updated` (is_public), `learner_profile_saved` (answered, changed), `profile_field_updated` (field), `profile_published`, `whatsapp_consent_set` (on), `display_prefs_saved`, `milestone_posts_set` (on) |
 | Onboarding and path | `waitlist_joined`, `quiz_run` (signed_in), `path_saved`, `path_viewed` |
-| Learn | `lesson_opened` (roadmap, node_id; every open), `node_started` (first open), `quiz_submitted` (node_id, score, passed), `node_completed` (roadmap, node_id, via) |
+| Learn | `lesson_opened` (roadmap, node_id; every open), `node_started` (first open), `quiz_submitted` (node_id, score, passed), `node_completed` (roadmap, node_id, via), `lesson_left` (browser: roadmap, node_id, time_spent_ms visible, scroll_percent, done_before), `resource_opened` (browser: node_id, kind), `quiz_question_answered` (node_id, question_id, correct; one per question), `quiz_retried` (node_id, passed, passed_before) |
+| Discovery | `search_performed` (browser: scope topics, results; never the words), `filter_applied` (browser: scope roadmaps or opportunities, filter, results) |
 | Review and Study Buddy | `review_completed` (items, correct), `weekly_goal_set` (goal), `study_buddy_message` (turn) |
 | Skills | `skill_quiz_submitted` (passed, score), `skill_portfolio_submitted`, `skill_portfolio_reviewed` (decision), `path_skills_claimed` (claimed) |
-| Programme and cohort | `application_submitted`, `application_withdrawn`, `application_decided` (decision), `specialisation_chosen` (specialisation), `submission_saved` (sent), `submission_graded` (passed), `peer_review_assigned`, `peer_review_submitted`, `learner_deferred`, `certificate_issued`, `certificate_revoked` |
+| Programme and cohort | `application_submitted`, `application_withdrawn`, `application_decided` (decision), `specialisation_chosen` (specialisation), `submission_saved` (sent), `submission_graded` (passed), `deadline_met` (kind cohort_task, hours_early), `deadline_missed` (kind, hours_late), `submission_resubmitted` (attempt), `peer_review_assigned`, `peer_review_submitted`, `learner_deferred`, `certificate_issued`, `certificate_revoked` |
 | Experts and bookings | `expert_applied`, `expert_application_decided` (decision), `offer_created`, `offer_updated`, `booking_requested`, `booking_status_changed` (status), `booking_message_sent`, `booking_reviewed` (rating) |
 | Briefs | `brief_created`, `pitch_submitted`, `pitch_withdrawn`, `pitch_decided` (decision) |
-| Opportunities, outcomes, talent | `opportunity_created` (by), `opportunity_saved` (status), `opportunity_unsaved`, `opportunity_reported`, `outcome_reported`, `outcome_decided` (decision), `talent_listing_saved`, `talent_contact_requested`, `talent_contact_responded` (accepted) |
+| Opportunities, outcomes, talent | `opportunity_created` (by), `opportunity_saved` (status), `opportunity_unsaved`, `opportunity_reported`, `opportunity_viewed` (browser: opportunity_id), `opportunity_apply_opened` (browser: opportunity_id, on_sydcrest; the employer's own link), `opportunity_applied` (opportunity_id), `opportunity_application_withdrawn`, `opportunity_applicant_moved` (stage), `outcome_reported`, `outcome_decided` (decision), `talent_listing_saved`, `talent_contact_requested`, `talent_contact_responded` (accepted) |
 | Organisations | `organisation_created`, `organisation_member_invited` (role), `organisation_invite_accepted`, `organisation_decided` (decision) |
 | Community, events, chapters, social | `post_created` (scope), `reply_created`, `reaction_set` (on), `content_reported`, `content_moderated` (hide), `event_rsvp` (going), `event_checked_in` (by), `event_feedback_sent` (recommend), `chapter_joined`, `chapter_left`, `profile_followed` (on), `profile_reported` |
 | Sharing and notifications | `invite_sent` (method), `notification_opened`, `notifications_read_all` |
@@ -315,3 +317,75 @@ Where visits and sign ups come from. Code: `src/lib/analytics/attribution.ts`
   search, email or referral.
 - **Google Analytics** reads the same tags from the address on its own; its
   numbers will differ (sessions, consent, ad blockers).
+
+## 10. Learner profile v2 (epic #320)
+
+Optional answers in `public.learner_profiles` (one row per member), asked on
+`/profile/about` and linked from the dashboard (until half are answered) and
+`/profile`. Options and parsing: `src/lib/learner-profile.ts`; the
+migration's checks must list the same values (a unit test compares them).
+
+- **Used for** learning (path, pacing, low data versions, reminders) and
+  matching (filters and ranking). **Never** a readiness score input. Pay is a
+  filter only and never shown to employers.
+- **Never collected:** gender, ethnicity, religion, health or disability,
+  marital status (a unit test checks the field names).
+- **Access:** the member reads and writes their own row; admins read all
+  (`private.is_admin()`); visitors none.
+- **Events:** `learner_profile_saved` (`answered`, `changed` counts) and one
+  `profile_field_updated` per changed field (`field` name only, never the
+  answer), sent in one write with `trackMany`.
+- **Not yet:** confidence per core skill of a track (needs the track's skill
+  list on the form); asking these questions inside onboarding, which comes
+  with the new UI.
+
+## 11. Behaviour and work-readiness events (epic #320, step 3)
+
+What each person does that later predicts finishing and doing well at work.
+Wired only where the feature exists today; the rest waits for its feature.
+
+| Signal | Events | Notes |
+|---|---|---|
+| Study rhythm | `session_started` | Hour band and weekday on the learner's clock; days since the last session on this browser. Streaks are computed from progress (`src/lib/learning-loop/streak.ts`), not recorded as events. |
+| How lessons are read | `lesson_left`, `resource_opened` | Visible time only (a hidden tab does not count), capped at 2 hours; deepest scroll. |
+| Where they struggle | `quiz_question_answered`, `quiz_retried` | One event per question per submit. A retry is a submit when a score was already on file. |
+| What they look for | `search_performed`, `filter_applied` | Topic search inside a roadmap counts once the typing settles (1.5 s); the words are never sent. |
+| Going after work | `opportunity_viewed`, `opportunity_apply_opened`, `opportunity_applied`, `opportunity_application_withdrawn`, `opportunity_applicant_moved` | Applications were not tracked before this step. |
+| Reliability | `deadline_met`, `deadline_missed`, `submission_resubmitted` | Against the end of the week's due date (Accra), first send only; grace days are ignored, since this measures punctuality. |
+
+**Waiting for a feature:** `study_buddy_opened` (Study Buddy has no open
+step; `study_buddy_message` turn 1 is the first use), `goal_set`,
+`weekly_plan_set`, `module_started`, `event_no_show` (derived from RSVPs and
+check-ins in the computed attributes step), `message_replied`,
+`mentor_feedback_given`, `cv_updated`, `mock_interview_rated`,
+`interview_reported` / `offer_reported` / `hired_reported` (outcomes cover part
+of this), `employer_feedback_given`, `still_employed_checked` (#329),
+`feedback_given` (#326), `app_installed` / `offline_used`.
+
+## 12. Learner attributes and the learner view (epic #320, step 4)
+
+`public.learner_attributes`: one row per member, rebuilt by
+`private.refresh_learner_attributes()` inside the daily
+`run_analytics_maintenance` (after first touches are linked, before the
+purge). Read by admins and by the member (own row); never by employers.
+
+| Group | Columns | From |
+|---|---|---|
+| Activity | `first_active_on`, `last_active_on`, `active_days_30`, `active_weeks_8`, `stage` | Signed in events (bots left out) |
+| Learning | `topics_started`, `topics_completed`, `quizzes_passed`, `avg_quiz_score`, `days_to_first_topic`, `quiz_retries_90` | `roadmap_progress`, `quiz_retried` |
+| Rhythm | `usual_hour_band` (last 60 days), `usual_device` (last 30 days) | `session_started`, events' device class |
+| Reliability | `deadlines_met`, `deadlines_missed`, `on_time_rate`, `resubmissions`, `events_going`, `events_attended`, `event_no_shows` | Step 3 events, `event_rsvps`, `event_checkins` |
+| Work | `opportunities_viewed_90`, `opportunities_applied` | `opportunity_viewed`, `opportunity_applications` (not withdrawn) |
+| Origin | `first_touch_source`, `first_touch_campaign` | `profile_first_touch` |
+
+**Stage** (UTC day of the refresh): `new` joined in the last 14 days;
+`not_started` older and never opened a topic; `active` active in the last 7
+days; `slipping` 8 to 21 days; `dormant` over 21 days. A no show is an
+event that has ended where the member said going and did not check in.
+
+**Learner view:** `/admin/learners` (by stage, search by part of a name or an
+exact email; `admin_learners`) and `/admin/learners/[id]` (`admin_learner`,
+`admin_learner_progress`, plus the member's attributes, About you answers,
+first touch and last 60 events, which admins read under RLS). Admin only;
+everyone else gets a 404. Support actions and an audit log of who opened
+which learner come with the People console (#332).

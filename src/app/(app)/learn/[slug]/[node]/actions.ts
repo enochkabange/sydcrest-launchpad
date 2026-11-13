@@ -3,7 +3,7 @@
 import { refresh } from "next/cache";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
-import { track, trackRefusal } from "@/lib/analytics/track";
+import { track, trackMany, trackRefusal } from "@/lib/analytics/track";
 import { classifyError, errorCode } from "@/lib/analytics/refusal";
 import { achievementShareTarget } from "@/lib/share/card";
 import { biggestMilestone, sectionIdOf } from "@/lib/share/milestones";
@@ -127,6 +127,13 @@ export async function submitQuiz(_prev: CompletionState, form: FormData): Promis
   }
 
   const doneBefore = await wasDone(supabase, user.id, nodeId);
+  // A score on file means this is a retry (the table keeps the best score only).
+  const { data: before } = await supabase
+    .from("roadmap_progress")
+    .select("quiz_score, verified_at")
+    .eq("profile_id", user.id)
+    .eq("node_id", nodeId)
+    .maybeSingle();
   const { data, error } = await supabase
     .rpc("submit_node_quiz", { p_node_id: nodeId, p_answers: answers })
     .single();
@@ -137,6 +144,16 @@ export async function submitQuiz(_prev: CompletionState, form: FormData): Promis
 
   const outcome: QuizOutcome = { score: data.score, passed: data.passed, results: parseResults(data.results) };
   await track("quiz_submitted", { node_id: nodeId, score: data.score, passed: data.passed });
+  // Which questions each learner gets wrong, and whether they come back after failing (epic #320).
+  await trackMany([
+    ...(before?.quiz_score != null
+      ? [{ name: "quiz_retried" as const, props: { node_id: nodeId, passed: data.passed, passed_before: !!before.verified_at } }]
+      : []),
+    ...Object.entries(outcome.results).map(([questionId, correct]) => ({
+      name: "quiz_question_answered" as const,
+      props: { node_id: nodeId, question_id: questionId, correct },
+    })),
+  ]);
   if (!outcome.passed) return { outcome, at: Date.now() };
 
   const { unlocked, roadmapSlug } = await readUnlocked(supabase, user.id, nodeId);
