@@ -300,7 +300,8 @@ begin
               when p_channel = 'whatsapp' then 'queued'
               else 'sent' end
     from (select x.profile_id, row_number() over (order by random()) as rn, count(*) over () as n
-            from private.message_audience(p_chapter_id, p_filters, p_channel, v_uid) x) a;
+            from private.message_audience(p_chapter_id, p_filters, p_channel, v_uid) x
+           limit v_cap + 1) a;
   get diagnostics v_total = row_count;
 
   if v_total = 0 then
