@@ -68,6 +68,17 @@ export default function PrivacyPage() {
           A story for sponsors about what you learned, and whether to show your name with it. You can
           change or remove it at any time from your profile.
         </li>
+        <li id="learner-profile">
+          Your answers in <strong>About you</strong>: your goal, education and work experience, the device
+          and internet you use, the time you have to study, the tracks, industries and languages that
+          interest you, how you like to learn, and your work preferences (ways of working, when you could
+          start, whether you would move, the regions you would work in and the lowest monthly pay you
+          would accept). Every question is optional and you can change or clear an answer at any time.
+          We use the answers to shape your learning plan and reminders and to suggest opportunities.
+          They are never part of your readiness score. Employers do not see them; the pay answer is only
+          a filter on which opportunities we suggest. Our administrators can read them to help you. They
+          are deleted with your account.
+        </li>
       </ul>
       <h3>When you use the platform</h3>
       <ul>
@@ -85,7 +96,11 @@ export default function PrivacyPage() {
           turn it off.
         </li>
       </ul>
-      <p>We do not ask for and do not want sensitive data such as your health, religion or finances.</p>
+      <p>
+        We do not ask for and do not want sensitive data such as your health, religion, ethnicity, gender,
+        marital status or finances. (The lowest pay you would accept, if you choose to say, is a job
+        filter, not a question about your money.)
+      </p>
 
       <h2>Why we use it, and our legal basis</h2>
       <p>Act 843 requires a lawful reason for each use of your data. Ours are:</p>

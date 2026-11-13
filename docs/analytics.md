@@ -113,7 +113,7 @@ recorded by the server; browser events come through the beacon.
 | Feature | Events (props) |
 |---|---|
 | Auth | `signup` (method), `sign_in` (method), `sign_out`, `welcome_completed`, `password_reset_requested`, `password_updated` |
-| Settings | `profile_updated` (has_region), `public_profile_updated` (is_public), `profile_published`, `whatsapp_consent_set` (on), `display_prefs_saved`, `milestone_posts_set` (on) |
+| Settings | `profile_updated` (has_region), `public_profile_updated` (is_public), `learner_profile_saved` (answered, changed), `profile_field_updated` (field), `profile_published`, `whatsapp_consent_set` (on), `display_prefs_saved`, `milestone_posts_set` (on) |
 | Onboarding and path | `waitlist_joined`, `quiz_run` (signed_in), `path_saved`, `path_viewed` |
 | Learn | `lesson_opened` (roadmap, node_id; every open), `node_started` (first open), `quiz_submitted` (node_id, score, passed), `node_completed` (roadmap, node_id, via) |
 | Review and Study Buddy | `review_completed` (items, correct), `weekly_goal_set` (goal), `study_buddy_message` (turn) |
@@ -315,3 +315,24 @@ Where visits and sign ups come from. Code: `src/lib/analytics/attribution.ts`
   search, email or referral.
 - **Google Analytics** reads the same tags from the address on its own; its
   numbers will differ (sessions, consent, ad blockers).
+
+## 10. Learner profile v2 (epic #320)
+
+Optional answers in `public.learner_profiles` (one row per member), asked on
+`/profile/about` and linked from the dashboard (until half are answered) and
+`/profile`. Options and parsing: `src/lib/learner-profile.ts`; the
+migration's checks must list the same values (a unit test compares them).
+
+- **Used for** learning (path, pacing, low data versions, reminders) and
+  matching (filters and ranking). **Never** a readiness score input. Pay is a
+  filter only and never shown to employers.
+- **Never collected:** gender, ethnicity, religion, health or disability,
+  marital status (a unit test checks the field names).
+- **Access:** the member reads and writes their own row; admins read all
+  (`private.is_admin()`); visitors none.
+- **Events:** `learner_profile_saved` (`answered`, `changed` counts) and one
+  `profile_field_updated` per changed field (`field` name only, never the
+  answer), sent in one write with `trackMany`.
+- **Not yet:** confidence per core skill of a track (needs the track's skill
+  list on the form); asking these questions inside onboarding, which comes
+  with the new UI.

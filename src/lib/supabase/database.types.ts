@@ -1941,6 +1941,92 @@ export type Database = {
           },
         ]
       }
+      learner_profiles: {
+        Row: {
+          available_from: string | null
+          career_stage: string | null
+          created_at: string
+          education: string | null
+          employment_status: string | null
+          experience: string | null
+          field_of_study: string | null
+          heard_from: string | null
+          industries: string[]
+          internet: string | null
+          languages: string[]
+          learning_styles: string[]
+          main_device: string | null
+          main_goal: string | null
+          min_pay_band: string | null
+          profile_id: string
+          study_hours: string | null
+          study_times: string[]
+          tracks: string[]
+          updated_at: string
+          willing_to_relocate: boolean | null
+          work_regions: string[]
+          work_styles: string[]
+        }
+        Insert: {
+          available_from?: string | null
+          career_stage?: string | null
+          created_at?: string
+          education?: string | null
+          employment_status?: string | null
+          experience?: string | null
+          field_of_study?: string | null
+          heard_from?: string | null
+          industries?: string[]
+          internet?: string | null
+          languages?: string[]
+          learning_styles?: string[]
+          main_device?: string | null
+          main_goal?: string | null
+          min_pay_band?: string | null
+          profile_id: string
+          study_hours?: string | null
+          study_times?: string[]
+          tracks?: string[]
+          updated_at?: string
+          willing_to_relocate?: boolean | null
+          work_regions?: string[]
+          work_styles?: string[]
+        }
+        Update: {
+          available_from?: string | null
+          career_stage?: string | null
+          created_at?: string
+          education?: string | null
+          employment_status?: string | null
+          experience?: string | null
+          field_of_study?: string | null
+          heard_from?: string | null
+          industries?: string[]
+          internet?: string | null
+          languages?: string[]
+          learning_styles?: string[]
+          main_device?: string | null
+          main_goal?: string | null
+          min_pay_band?: string | null
+          profile_id?: string
+          study_hours?: string | null
+          study_times?: string[]
+          tracks?: string[]
+          updated_at?: string
+          willing_to_relocate?: boolean | null
+          work_regions?: string[]
+          work_styles?: string[]
+        }
+        Relationships: [
+          {
+            foreignKeyName: "learner_profiles_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       learner_stories: {
         Row: {
           created_at: string

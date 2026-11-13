@@ -13,6 +13,7 @@
  * checks), and docs/analytics.md describes each event.
  */
 import { REFERRERS } from "./attribution";
+import { PROFILE_FIELDS } from "../learner-profile";
 
 // Field kinds ---------------------------------------------------------------------
 
@@ -62,6 +63,7 @@ export const FORM_NAMES = [
   "talent_listing",
   "event_feedback",
   "profile",
+  "learner_profile",
   "skill_portfolio",
 ] as const;
 export type FormName = (typeof FORM_NAMES)[number];
@@ -156,6 +158,8 @@ export const EVENTS = {
   password_updated: { feature: "auth", source: "server", props: {} },
   profile_updated: { feature: "settings", source: "server", props: { has_region: flag(), has_headline: flag() } },
   public_profile_updated: { feature: "settings", source: "server", props: { is_public: flag() } },
+  learner_profile_saved: { feature: "settings", source: "server", props: { answered: count(), changed: count() } },
+  profile_field_updated: { feature: "settings", source: "server", props: { field: oneOf(PROFILE_FIELDS) } },
   profile_published: { feature: "sharing", source: "server", props: {} },
   whatsapp_consent_set: { feature: "settings", source: "server", props: { on: flag() } },
   display_prefs_saved: { feature: "settings", source: "server", props: {} },

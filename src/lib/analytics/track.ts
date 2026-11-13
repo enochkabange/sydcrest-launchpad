@@ -105,6 +105,15 @@ export async function track<N extends EventName>(name: N, props?: PropsOf<N>): P
   await send([{ name, props: validateProps(name, props) }], false);
 }
 
+/** Records several events in one write (at most 25), e.g. one per changed field. */
+export async function trackMany(rows: { [N in EventName]: { name: N; props?: PropsOf<N> } }[EventName][]): Promise<void> {
+  const events = rows
+    .filter((r) => isEventName(r.name))
+    .slice(0, 25)
+    .map((r) => ({ name: r.name, props: validateProps(r.name, r.props) }));
+  if (events.length) await send(events, false);
+}
+
 /**
  * As track, but waits for the write. For Server Components, where request
  * data is not available inside `after`.
