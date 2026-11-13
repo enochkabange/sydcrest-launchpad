@@ -3288,6 +3288,80 @@ export type Database = {
         }
         Relationships: []
       }
+      readiness_scores: {
+        Row: {
+          about_complete: boolean
+          active_days_30: number
+          activity_points: number
+          band: string
+          computed_at: string
+          points_available: number
+          portfolio_pieces: number
+          portfolio_points: number
+          profile_id: string
+          profile_points: number
+          profile_public: boolean
+          progress_points: number
+          roadmap_slug: string
+          score: number
+          skills_points: number
+          skills_total: number
+          skills_verified: number
+          topics_done: number
+          topics_total: number
+        }
+        Insert: {
+          about_complete?: boolean
+          active_days_30?: number
+          activity_points?: number
+          band: string
+          computed_at?: string
+          points_available: number
+          portfolio_pieces?: number
+          portfolio_points?: number
+          profile_id: string
+          profile_points?: number
+          profile_public?: boolean
+          progress_points?: number
+          roadmap_slug: string
+          score: number
+          skills_points?: number
+          skills_total?: number
+          skills_verified?: number
+          topics_done?: number
+          topics_total?: number
+        }
+        Update: {
+          about_complete?: boolean
+          active_days_30?: number
+          activity_points?: number
+          band?: string
+          computed_at?: string
+          points_available?: number
+          portfolio_pieces?: number
+          portfolio_points?: number
+          profile_id?: string
+          profile_points?: number
+          profile_public?: boolean
+          progress_points?: number
+          roadmap_slug?: string
+          score?: number
+          skills_points?: number
+          skills_total?: number
+          skills_verified?: number
+          topics_done?: number
+          topics_total?: number
+        }
+        Relationships: [
+          {
+            foreignKeyName: "readiness_scores_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       reports: {
         Row: {
           created_at: string
@@ -5328,6 +5402,30 @@ export type Database = {
           total: number
         }[]
       }
+      admin_learner_readiness: {
+        Args: { p_profile_id: string }
+        Returns: {
+          about_complete: boolean
+          active_days_30: number
+          activity_points: number
+          band: string
+          computed_at: string
+          points_available: number
+          portfolio_pieces: number
+          portfolio_points: number
+          profile_points: number
+          profile_public: boolean
+          progress_points: number
+          roadmap_slug: string
+          roadmap_title: string
+          score: number
+          skills_points: number
+          skills_total: number
+          skills_verified: number
+          topics_done: number
+          topics_total: number
+        }[]
+      }
       admin_learners: {
         Args: { p_limit?: number; p_search?: string; p_stage?: string }
         Returns: {
@@ -5342,6 +5440,18 @@ export type Database = {
           role: string
           stage: string
           topics_completed: number
+        }[]
+      }
+      admin_readiness_report: {
+        Args: never
+        Returns: {
+          building: number
+          dimension: string
+          getting_started: number
+          grp: string
+          job_ready: number
+          learners: number
+          score_sum: number
         }[]
       }
       admin_reports: {

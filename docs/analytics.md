@@ -389,3 +389,17 @@ exact email; `admin_learners`) and `/admin/learners/[id]` (`admin_learner`,
 first touch and last 60 events, which admins read under RLS). Admin only;
 everyone else gets a 404. Support actions and an audit log of who opened
 which learner come with the People console (#332).
+
+## 13. Readiness score v1 and the fairness report (epic #320, step 5; #328)
+
+`public.readiness_scores`: one row per learner per track (a published roadmap
+they started a topic in, or listed in About you), with the score, band and
+every part. Rebuilt by `private.refresh_readiness()` inside the daily
+`run_analytics_maintenance` (its result gains a `readiness` count). Weights
+live in `private.readiness_weights()`, mirrored in
+`src/lib/readiness/score.ts` (a unit test keeps them equal and checks the
+refresh never reads a Never attribute). Admin only: `/admin/readiness`
+(`admin_readiness_report`, the fairness check) and a Readiness block on
+`/admin/learners/[id]` (`admin_learner_readiness`). Not shown to learners
+(#337) or employers, and not used for matching (#336) yet. No events.
+Model card, inputs, limits and the fairness review: `docs/readiness.md`.
