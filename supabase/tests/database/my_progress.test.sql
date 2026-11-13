@@ -19,10 +19,10 @@ insert into public.roadmap_nodes (id, roadmap_id, slug, title, position, is_opti
   ('bbbbbbbb-0000-0000-0000-000000000002', 'aaaaaaaa-0000-0000-0000-000000000002', 'html', 'HTML', 1, false);
 
 -- Wumpini works on both tracks, Mariama on one, Fuseini on none.
-insert into public.roadmap_progress (profile_id, node_id, status) values
-  ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-0000-0000-0000-000000000001', 'in_progress'),
-  ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-0000-0000-0000-000000000002', 'done'),
-  ('22222222-2222-2222-2222-222222222222', 'bbbbbbbb-0000-0000-0000-000000000001', 'in_progress');
+insert into public.roadmap_progress (profile_id, node_id, status, completed_at) values
+  ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-0000-0000-0000-000000000001', 'in_progress', null),
+  ('11111111-1111-1111-1111-111111111111', 'bbbbbbbb-0000-0000-0000-000000000002', 'done', now()),
+  ('22222222-2222-2222-2222-222222222222', 'bbbbbbbb-0000-0000-0000-000000000001', 'in_progress', null);
 
 select is(private.refresh_readiness(), 3, 'three learner track rows');
 
