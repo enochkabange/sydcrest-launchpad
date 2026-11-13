@@ -5,7 +5,7 @@ import { useParams, usePathname } from "next/navigation";
 import { useReportWebVitals } from "next/web-vitals";
 import { clientTrack, installListeners, reportWebVital, setRoute } from "./client/analytics";
 import { routePattern } from "./context";
-import { gaPageView } from "./google";
+import { gaLoad } from "./google";
 import { optedOut } from "./opt-out";
 
 let lastPath: string | null = null;
@@ -17,7 +17,8 @@ let lastPath: string | null = null;
  * Web Vitals, form starts and submits, and browser errors through the batched
  * beacon (src/lib/analytics/client). Respects Do Not Track, Global Privacy
  * Control and the switch on the privacy page. When a GA4 measurement id is
- * set, Google Analytics gets the same route pattern (./google.ts).
+ * set, it also loads the Google tag, which then records page views itself
+ * (./google.ts).
  */
 export function PageViewTracker() {
   const pathname = usePathname();
@@ -36,8 +37,8 @@ export function PageViewTracker() {
     const route = routePattern(pathname, params);
     setRoute(route);
     clientTrack("page_view");
-    // Google Analytics gets the same route pattern, after the same opt out check.
-    gaPageView(route);
+    // The Google tag loads after the same opt out check and records page views itself.
+    gaLoad();
   }, [pathname, params]);
 
   return null;
