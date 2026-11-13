@@ -32,22 +32,27 @@ export interface CheckinStore {
   /** Profile id to WhatsApp number and name, for people with a live consent on their current number. */
   whatsappNumbers(): Promise<Map<string, { phone: string; displayName: string | null }>>;
   notify(profileId: string, payload: Record<string, string>): Promise<void>;
+  /** The account's sign in email and name, for the check in email (founder decision, 13 Nov 2026). */
+  accountEmail(profileId: string): Promise<{ email: string | null; displayName: string | null } | null>;
   /** outcome_checkin_sent, one per check in sent. */
   recordSent(months: number[]): Promise<void>;
 }
 
-export type CheckinSummary = { created: number; sent: number; skipped: number; whatsapp: number; failed: number };
+export type CheckinSummary = { created: number; sent: number; skipped: number; whatsapp: number; email: number; failed: number };
 
 export async function runOutcomeCheckins({
   store,
   today,
   sendWhatsApp,
+  sendEmail,
 }: {
   store: CheckinStore;
   today: string;
   sendWhatsApp: (phone: string, checkin: CreatedCheckin, displayName: string | null) => Promise<DeliveryResult>;
+  /** A service email to the account address; every learner gets one (founder decision, 13 Nov 2026). */
+  sendEmail?: (email: string, checkin: CreatedCheckin, displayName: string | null) => Promise<{ status: "sent" | "skipped" | "failed" }>;
 }): Promise<CheckinSummary> {
-  const summary: CheckinSummary = { created: 0, sent: 0, skipped: 0, whatsapp: 0, failed: 0 };
+  const summary: CheckinSummary = { created: 0, sent: 0, skipped: 0, whatsapp: 0, email: 0, failed: 0 };
   const window = finishWindow(today);
   const finishes = await store.finishes(window.from, window.to);
   if (!finishes.length) return summary;
@@ -79,6 +84,14 @@ export async function runOutcomeCheckins({
     } catch {
       summary.failed++;
       continue;
+    }
+    if (sendEmail) {
+      const account = await store.accountEmail(checkin.profile_id).catch(() => null);
+      if (account?.email) {
+        const mailed = await sendEmail(account.email, checkin, account.displayName);
+        if (mailed.status === "sent") summary.email++;
+        else if (mailed.status === "failed") summary.failed++;
+      }
     }
     const learner = numbers.get(checkin.profile_id);
     if (!learner) continue;

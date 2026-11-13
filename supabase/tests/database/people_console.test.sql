@@ -57,9 +57,8 @@ select throws_ok(
 
 select is((public.request_account_deletion()).status, 'pending', 'a member asks to delete their account');
 select ok(
-  (select delete_after between now() + interval '7 days' - interval '1 minute' and now() + interval '7 days' + interval '1 minute'
-     from public.deletion_requests where status = 'pending'),
-  'with seven days to change their mind');
+  (select delete_after <= now() + interval '1 minute' from public.deletion_requests where status = 'pending'),
+  'due at once: no grace period (founder decision)');
 select is((select count(*)::int from public.deletion_requests), 1, 'and reads their own request');
 select is(
   (public.request_account_deletion()).id,

@@ -523,7 +523,7 @@ Orphan; fold into `/opportunities` as a "Saved" filter (section 1).
 
 ### `/profile/delete` and `/profile/data`
 - **Audience**: every signed in type. **Job**: use my data rights myself (#333, Act 843): download a copy, or delete my account.
-- **Primary**: on `/profile#your-data`, Download my data (`/profile/data` returns a JSON file) and Delete my account. `/profile/delete` says what is deleted and what is kept, then starts a 7 day grace period; Keep my account on `/profile` cancels it.
+- **Primary**: on `/profile#your-data`, Download my data (`/profile/data` returns a JSON file) and Delete my account. `/profile/delete` says what is deleted and what is kept, then deletes the account at once (no grace period, founder decision 13 Nov 2026) and signs the person out; the daily cron finishes any deletion the action could not.
 - **Nav**: the Your data section of `/profile` (Settings).
 
 ### `/u/[slug]`, `/a/[id]`, `/verify/[id]` (+ `credential.json`, `credential.jwt`), `/badges/*` (JSON)

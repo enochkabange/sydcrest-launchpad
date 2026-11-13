@@ -1,2 +1,2 @@
-/** Days between "Delete my account" and the deletion (deletion_requests.delete_after). */
-export const DELETION_GRACE_DAYS = 7;
+/** Days between "Delete my account" and the deletion: none (founder decision, 13 Nov 2026). */
+export const DELETION_GRACE_DAYS = 0;

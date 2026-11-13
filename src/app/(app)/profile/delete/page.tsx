@@ -5,7 +5,6 @@ import Link from "@/components/ui/link";
 import { Alert } from "@/components/ui/alert";
 import { Button, buttonClasses } from "@/components/ui/button";
 import { requireUser } from "@/lib/auth";
-import { DELETION_GRACE_DAYS } from "@/lib/data-rights/constants";
 import { createClient } from "@/lib/supabase/server";
 import { requestAccountDeletion } from "../data-rights-actions";
 
@@ -28,7 +27,7 @@ async function Confirm({ searchParams }: Pick<PageProps<"/profile/delete">, "sea
     <div className="flex flex-col gap-4">
       {message && <Alert tone="danger">{message}</Alert>}
       <form action={requestAccountDeletion} className="flex flex-wrap gap-2">
-        <Button type="submit">Delete my account in {DELETION_GRACE_DAYS} days</Button>
+        <Button type="submit">Delete my account now</Button>
         <Link href="/profile" className={buttonClasses("secondary")}>
           Keep my account
         </Link>
@@ -37,7 +36,7 @@ async function Confirm({ searchParams }: Pick<PageProps<"/profile/delete">, "sea
   );
 }
 
-/** "Delete my account" (issue #333): what goes, what stays, and the seven day grace period. */
+/** "Delete my account" (issue #333): what goes and what stays; deletion is immediate (founder decision). */
 export default function DeleteAccountPage({ searchParams }: PageProps<"/profile/delete">) {
   return (
     <div className="flex max-w-reading flex-col gap-6">
@@ -47,8 +46,7 @@ export default function DeleteAccountPage({ searchParams }: PageProps<"/profile/
         </Link>
         <h1 className="text-title text-content">Delete my account</h1>
         <p className="text-lead text-content-2">
-          We wait {DELETION_GRACE_DAYS} days before deleting anything, in case you change your mind. Until then you can
-          sign in and use SydCrest as normal, and cancel from your profile.
+          This deletes your account straight away and cannot be undone. Download your data first if you want a copy.
         </p>
       </div>
 

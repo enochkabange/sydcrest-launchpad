@@ -7,6 +7,7 @@ import { WHATSAPP_CONSENT_VERSION } from "@/lib/messaging/consent";
 import { isAuthorizedCron } from "@/lib/messaging/cron-auth";
 import { runReengage } from "@/lib/messaging/reengage";
 import { supabaseReengageStore } from "@/lib/messaging/reengage-store";
+import { sendServiceEmail } from "@/lib/messaging/email";
 import { sendWhatsApp } from "@/lib/messaging/send";
 import { firstName } from "@/lib/messaging/templates";
 import { runOutcomeCheckins } from "@/lib/outcomes/checkins-run";
@@ -21,8 +22,8 @@ import { SITE_URL } from "@/lib/site";
  * except the reengage_holdout share, who get none (issue #327).
  * Then runs analytics maintenance (rollups and 13 month retention, issue
  * #242), here because the plan allows two crons, the outcome check ins
- * due today (#329), and deletes accounts whose seven day grace period has
- * passed (issue #333). Each step is isolated: one failing does not stop the
+ * due today (#329), and any account deletions the delete action could not
+ * finish (issue #333; no grace period). Each step is isolated: one failing does not stop the
  * others.
  */
 export async function GET(request: Request) {
@@ -63,6 +64,21 @@ export async function GET(request: Request) {
           name: firstName(displayName),
           title: `your ${checkin.months} month check in is ready, two minutes to tell us how you are doing`,
           url: `${SITE_URL.replace(/^https?:\/\//, "")}${checkinHref(checkin.id)}`,
+        }),
+      sendEmail: (email, checkin, displayName) =>
+        sendServiceEmail({
+          to: email,
+          subject: `Your ${checkin.months} month check in`,
+          text: [
+            `Hello ${firstName(displayName) || "there"},`,
+            "",
+            `It has been ${checkin.months} months since you finished on SydCrest. Two minutes to tell us how you are doing helps us support you and the learners after you:`,
+            "",
+            `${SITE_URL}${checkinHref(checkin.id)}`,
+            "",
+            "Every question is optional. Thank you.",
+            "SydCrest",
+          ].join("\n"),
         }),
     });
     console.info(`[outcomes] check ins ${JSON.stringify(checkins)}`);
