@@ -64,6 +64,20 @@ describe("event taxonomy", () => {
     expect([...databaseNames()].sort()).toEqual([...EVENT_NAMES, ...LEGACY_EVENT_NAMES].sort());
   });
 
+  it("the database list has a comma between every two names", () => {
+    // Adjacent SQL string literals on separate lines are joined into one, so a missing comma
+    // silently merges two names (it happened in the epic #320 integration migrations).
+    const dir = join(process.cwd(), "supabase/migrations");
+    const latest = readdirSync(dir)
+      .filter((f) => f.endsWith(".sql"))
+      .sort()
+      .filter((f) => readFileSync(join(dir, f), "utf8").includes("function private.is_event_name"))
+      .at(-1)!;
+    const sql = readFileSync(join(dir, latest), "utf8");
+    const body = sql.slice(sql.indexOf("function private.is_event_name"), sql.indexOf("$$;", sql.indexOf("function private.is_event_name")));
+    expect(body.replace(/--.*$/gm, "")).not.toMatch(/'\s+'/);
+  });
+
   it("names are snake case and unique", () => {
     for (const name of EVENT_NAMES) expect(name).toMatch(/^[a-z][a-z0-9_]{1,39}$/);
     expect(new Set([...EVENT_NAMES, ...LEGACY_EVENT_NAMES]).size).toBe(EVENT_NAMES.length + LEGACY_EVENT_NAMES.length);
