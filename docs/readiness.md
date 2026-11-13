@@ -1,7 +1,8 @@
 # Readiness score v1: model card
 
 Epic #320 step 5, fairness checks issue #328. Status: **staff only, weights
-proposed, awaiting founder approval.** Last fairness review: none yet (the
+proposed, awaiting founder approval.** Learners will see their own on My
+progress (#337) once `READINESS_FOR_LEARNERS=on` is set. Last fairness review: none yet (the
 first one is due when the weights are approved; see "Fairness review").
 
 ## What it is
@@ -16,10 +17,17 @@ offers and hires to learn from. Each score is stored with its parts, so staff
 - Computed: daily, by `private.refresh_readiness()` inside
   `public.run_analytics_maintenance`. Rows for tracks a learner no longer
   follows are removed on the next run. Mentors and admins are not scored.
-- Who sees it: admins only (RLS), at `/admin/readiness` and on
-  `/admin/learners/[id]`. Learners do not see it yet (#337); employers never
-  see a number or the inputs, and will see a band only with consent; matching
-  (#336) does not use it yet.
+- Who sees it: admins (RLS), at `/admin/readiness` and on
+  `/admin/learners/[id]`. Learners: the database already lets each member
+  read their own rows (policy "Members read their own readiness scores"),
+  but `/progress` (#337) shows the readiness block (band, each part's points,
+  the next steps with the biggest gain, worded kindly and never compared with
+  anyone) only when the server env var `READINESS_FOR_LEARNERS=on` is set.
+  It is off by default: switch it on only after the weights are approved and
+  a fairness review is recorded below, and update the privacy page's
+  readiness paragraph the same day. Employers
+  never see a number or the inputs, and will see a band only with consent;
+  matching (#336) does not use it yet.
 
 ## Inputs and weights
 

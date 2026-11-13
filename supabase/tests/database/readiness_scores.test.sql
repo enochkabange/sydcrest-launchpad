@@ -118,7 +118,7 @@ select ok(
 
 set local role authenticated;
 select set_config('request.jwt.claims', '{"sub":"11111111-1111-1111-1111-111111111111","role":"authenticated"}', true);
-select is((select count(*)::int from public.readiness_scores), 0, 'learners do not see scores yet, not even their own');
+select is((select count(*)::int from public.readiness_scores), 1, 'a learner reads only their own scores (My progress, #337)');
 select throws_ok($$ select * from public.admin_learner_readiness('11111111-1111-1111-1111-111111111111') $$, '42501', null,
   'a member cannot read a learner''s readiness');
 select throws_ok($$ select * from public.admin_readiness_report() $$, '42501', null, 'or the fairness report');

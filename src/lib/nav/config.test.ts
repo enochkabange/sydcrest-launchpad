@@ -25,7 +25,7 @@ describe("nav config", () => {
   });
 
   it("lists the hub contents from the #190 decision", () => {
-    expect(labels("learn", NO_ROLES)).toEqual(["Roadmaps", "Your path", "Cohort", "Skills", "Certificates", "5 minute review", "Study Buddy"]);
+    expect(labels("learn", NO_ROLES)).toEqual(["Roadmaps", "Your path", "Cohort", "Skills", "Certificates", "5 minute review", "My progress", "Study Buddy"]);
     expect(labels("experts", NO_ROLES)).toEqual(["Find an expert", "Bookings", "Briefs", "Become an expert"]);
     expect(labels("community", NO_ROLES)).toEqual(["Feed", "Events", "Chapters", "Leaderboards"]);
     expect(labels("earn", NO_ROLES)).toEqual(["Opportunities", "Outcomes", "Talent profile"]);

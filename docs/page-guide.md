@@ -366,6 +366,15 @@ Nav: Footer only, correct.
 | `/review` | Five quick questions from passed topics | Start | Entry is the "This week" card; fine as an item, but it shares the word "review" with peer and portfolio reviews: rename "Quick quiz" or "Recap". |
 | `/study-buddy` | Ask and plan next steps | Ask | Should open in context from lessons (it does); the page itself is a fallback. Rail: what it can do. |
 
+### `/progress` My progress (#337)
+- **Audience**: signed in learners. **Job**: show what SydCrest knows about their own progress and what to do next.
+- **Primary**: the next step with the biggest readiness gain. **Secondary**: study rhythm, quiz trend, time to finish, suggestions.
+- **Priority**: 1 study rhythm (streak, days learned, usual time, topics, quizzes, pace, quiz trend, time to finish); 2 readiness per track (band first, parts as points, one or two next steps); 3 rail: suggestions, about this page.
+- **States**: new (no rows yet: honest empty states, browse roadmaps); learning; readiness not computed yet (shows the day after a first topic); readiness switched off (`READINESS_FOR_LEARNERS` not `on`, the default: no readiness block).
+- **Copy**: kind, never comparing with anyone; the score only as "n of 100" under the parts, never on its own.
+- **Phone**: rhythm, readiness, then suggestions. **Desktop**: `MainWithRail`, each section its own Suspense island.
+- **Nav**: Learn group, "My progress".
+
 ### `/skills/[slug]/quiz`, `/skills/[slug]/portfolio`
 - **Audience**: L. **Job**: prove one skill. **Primary**: submit. States: retry window, pending review, verified.
 - **Nav**: from `/skills/[slug]` only; correct (a task page).

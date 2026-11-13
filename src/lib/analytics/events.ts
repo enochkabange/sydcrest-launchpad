@@ -242,6 +242,8 @@ export const EVENTS = {
     source: "server",
     props: { node_id: id(), clear: flag(), reason: oneOf(LESSON_FEEDBACK_REASONS) },
   },
+  // My progress (issue #337): the learner opened their own progress page.
+  progress_viewed: { feature: "review", source: "server", props: {} },
 
   // Skills
   skill_quiz_submitted: { feature: "skills", source: "server", props: { passed: flag(), score: count() } },
