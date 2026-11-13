@@ -433,7 +433,7 @@ live in `private.readiness_weights()`, mirrored in
 refresh never reads a Never attribute). Admin only: `/admin/readiness`
 (`admin_readiness_report`, the fairness check) and a Readiness block on
 `/admin/learners/[id]` (`admin_learner_readiness`). Not shown to learners
-(#337) or employers, and not used for matching (#336) yet. No events.
+(#337) or employers, except through matching (section 14). No events.
 Model card, inputs, limits and the fairness review: `docs/readiness.md`.
 ## 15. Early warning and the mentor caseload (#325, #330)
 
@@ -627,3 +627,16 @@ their own readiness scores", `20261114800000_my_progress.sql`) and their own
 or connection, and never compare a learner with anyone else.
 
 Event: `progress_viewed` (server, no props), once per page render.
+
+## 14. Matching explanations (epic #320; #336)
+
+Match score per learner per opportunity: readiness for its track plus a
+bonus per required skill verified (`private.opportunity_match`,
+`src/lib/matching/match.ts`). It ranks "Suggested for you" only. Consent:
+`share_readiness` on `opportunity_applications` and `talent_listings`, off by
+default; employers see a band and plain reasons only when it is on
+(`org_applicant_readiness`, `talent_directory.readiness`). Admin audit
+`/admin/matching` (`admin_match_audit`, `admin_match_fairness`) reads
+`opportunity_viewed` events with a `profile_id` as "shown". No new events.
+Learner and employer parts are off until `READINESS_FOR_LEARNERS=on` and
+`READINESS_FOR_EMPLOYERS=on`. Details and limits: `docs/readiness.md`, "Matching".

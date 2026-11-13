@@ -41,6 +41,7 @@ describe("parseListing", () => {
       open_to_remote: true,
       portfolio_url: "https://github.com/mariama",
       is_active: true,
+      share_readiness: false,
     });
   });
 
@@ -53,6 +54,14 @@ describe("parseListing", () => {
     expect(errors.portfolio_url).toBeTruthy();
     expect(data.is_active).toBe(false);
     expect(data.open_to_remote).toBe(false);
+    expect(data.share_readiness).toBe(false);
+  });
+
+  it("shares the readiness band only when ticked (#336)", () => {
+    const f = new FormData();
+    f.set("headline", "Junior data analyst");
+    f.set("share_readiness", "on");
+    expect(parseListing(f).data.share_readiness).toBe(true);
   });
 
   it("caps skills", () => {

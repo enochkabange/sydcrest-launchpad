@@ -38,11 +38,20 @@ export function sharesContact(stage: string) {
 export const NOTE_MIN = 20;
 export const NOTE_MAX = 1500;
 
-export type ApplyFormValues = { note: string; portfolio_url: string; contact_consent: boolean };
+/**
+ * share_readiness (#336): the employer may see the learner's readiness band
+ * for the opportunity's track and why. Optional, off by default.
+ */
+export type ApplyFormValues = { note: string; portfolio_url: string; contact_consent: boolean; share_readiness: boolean };
 
 export function parseApplyForm(form: FormData) {
   const get = (k: string) => (typeof form.get(k) === "string" ? (form.get(k) as string).trim() : "");
-  const data: ApplyFormValues = { note: get("note"), portfolio_url: get("portfolio_url"), contact_consent: form.get("contact_consent") === "on" };
+  const data: ApplyFormValues = {
+    note: get("note"),
+    portfolio_url: get("portfolio_url"),
+    contact_consent: form.get("contact_consent") === "on",
+    share_readiness: form.get("share_readiness") === "on",
+  };
   const errors: Partial<Record<keyof ApplyFormValues, string>> = {};
   if (data.note.length < NOTE_MIN) errors.note = `Write at least ${NOTE_MIN} characters about why you fit.`;
   else if (data.note.length > NOTE_MAX) errors.note = `Keep this under ${NOTE_MAX} characters.`;

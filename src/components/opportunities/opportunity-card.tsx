@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import type { ReactNode } from "react";
 import Link from "@/components/ui/link";
 import type { Opportunity } from "@/lib/opportunities/model";
 import { KindLabel, StatusLabel, WhereAndWhen } from "./meta";
@@ -10,11 +11,14 @@ export function OpportunityCard({
   today,
   status,
   headingLevel = "h2",
+  fit,
 }: {
   o: Opportunity;
   today: string;
   status?: "saved" | "applied";
   headingLevel?: "h2" | "h3";
+  /** Signed in contexts only: why it fits this learner (#336). */
+  fit?: ReactNode;
 }) {
   const Heading = headingLevel;
   return (
@@ -35,6 +39,7 @@ export function OpportunityCard({
         <p className="text-sm font-semibold text-content-2">{o.organisation_name}</p>
       </div>
       {o.summary && <p className="line-clamp-3 text-content-2">{o.summary}</p>}
+      {fit}
       <div className="mt-auto flex items-end justify-between gap-3 pt-1">
         <WhereAndWhen o={o} today={today} />
         <ArrowRight aria-hidden className="size-4 shrink-0 text-content-3" />

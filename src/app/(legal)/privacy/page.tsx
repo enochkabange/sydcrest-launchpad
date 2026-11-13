@@ -246,8 +246,10 @@ export default function PrivacyPage() {
         About you goal and public profile are filled in. It never uses your region, device, internet,
         study times, age, education or work preferences. For now only our staff can see it, while we
         check that it is fair to every group of learners. Once we switch it on, you will see your own,
-        with what each part is worth, on your My progress page. It is not shown to employers, and we
-        will ask your consent before any employer sees it. It is deleted with your account.
+        with what each part is worth, on your My progress page, and we will use it to order the
+        opportunities we suggest to you (see Matching below). No employer ever sees the score or what
+        it is made of, and they will see your band only if you choose to share it. It is deleted with
+        your account.
       </p>
       <h3 id="my-progress">My progress</h3>
       <p>
@@ -285,6 +287,30 @@ export default function PrivacyPage() {
         Because this happens on our side and not in your browser, the choice of who gets the reminder is
         noted even if you turned analytics off. If you turned analytics off, the website shows you the
         usual version of anything we are testing and records nothing about it.
+      </p>
+      <h3 id="matching">Matching</h3>
+      <p>
+        Matching is not switched on yet. We will turn it on only after we have checked that the readiness
+        score is fair to every group of learners. Until then nothing below is shown to you or to
+        employers, and you will not be asked to share your band. Once it is on: when you are signed in, we put the opportunities that fit you best first in your suggestions: your
+        readiness for the opportunity&apos;s track, plus a little for each skill it needs that you have
+        verified. This only changes the order; every open opportunity stays on the board for you. On an
+        opportunity we show you why it fits (the verified skills that match and your band for the track)
+        and one step that would improve your fit.
+      </p>
+      <p>
+        What employers can see, and when, once it is on: only if you tick &quot;Share my readiness band&quot; when you apply,
+        the organisation you apply to sees your band for that opportunity&apos;s track (Getting started,
+        Building or Job ready), the verified skills it needs that you have, and how many of your portfolio
+        pieces were approved for that track. You can turn this off on My applications at any time. If you
+        list yourself in the talent directory, verified organisations see your band for up to three tracks
+        only if you tick that box on your listing. Sharing is off until you turn it on. Employers never see
+        the score, its parts, your About you answers or the pay you would accept.
+      </p>
+      <p>
+        Our staff check matching for fairness: who was shown each opportunity, who applied, was shortlisted
+        and was hired, by band and by group (region, device, internet, age band and education), with any
+        group under five people hidden. These groups are never used to match you.
       </p>
       <h3>Who can see it</h3>
       <p>
@@ -364,7 +390,9 @@ export default function PrivacyPage() {
         When you apply for an opportunity on SydCrest, the organisation that posted it sees your name,
         region, verified skills, public profile if you have one, your note and your portfolio link. They
         see your phone number and email only if they shortlist you, and you agree to that when you
-        apply. You can withdraw an application until you are hired.
+        apply. You can withdraw an application until you are hired. They see your readiness band for the
+        role only if you choose to share it, once that option is switched on (see{" "}
+        <a href="#matching">Matching</a>).
       </p>
       <h3>Sponsors</h3>
       <p>

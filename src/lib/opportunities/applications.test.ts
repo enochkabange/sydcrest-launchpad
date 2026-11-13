@@ -13,7 +13,19 @@ describe("parseApplyForm (#306)", () => {
       form({ note: " I sold provisions online for two years. ", portfolio_url: "https://example.test/work", contact_consent: "on" }),
     );
     expect(errors).toEqual({});
-    expect(data).toEqual({ note: "I sold provisions online for two years.", portfolio_url: "https://example.test/work", contact_consent: true });
+    expect(data).toEqual({
+      note: "I sold provisions online for two years.",
+      portfolio_url: "https://example.test/work",
+      contact_consent: true,
+      share_readiness: false,
+    });
+  });
+
+  it("shares the readiness band only when that box is ticked (#336)", () => {
+    const base = { note: "I sold provisions online for two years.", contact_consent: "on" };
+    expect(parseApplyForm(form(base)).data.share_readiness).toBe(false);
+    expect(parseApplyForm(form({ ...base, share_readiness: "on" })).data.share_readiness).toBe(true);
+    expect(parseApplyForm(form({ ...base, share_readiness: "on" })).errors).toEqual({});
   });
 
   it("needs a real note, a real link and the agreement", () => {

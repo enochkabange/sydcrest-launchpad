@@ -2950,6 +2950,7 @@ export type Database = {
           opportunity_id: string
           portfolio_url: string | null
           profile_id: string
+          share_readiness: boolean
           stage: string
           stage_changed_at: string
           updated_at: string
@@ -2962,6 +2963,7 @@ export type Database = {
           opportunity_id: string
           portfolio_url?: string | null
           profile_id?: string
+          share_readiness?: boolean
           stage?: string
           stage_changed_at?: string
           updated_at?: string
@@ -2974,6 +2976,7 @@ export type Database = {
           opportunity_id?: string
           portfolio_url?: string | null
           profile_id?: string
+          share_readiness?: boolean
           stage?: string
           stage_changed_at?: string
           updated_at?: string
@@ -4692,6 +4695,7 @@ export type Database = {
           portfolio_url: string | null
           profile_id: string
           region: string | null
+          share_readiness: boolean
           skills: string[]
           summary: string | null
           tracks: string[]
@@ -4706,6 +4710,7 @@ export type Database = {
           portfolio_url?: string | null
           profile_id?: string
           region?: string | null
+          share_readiness?: boolean
           skills?: string[]
           summary?: string | null
           tracks?: string[]
@@ -4720,6 +4725,7 @@ export type Database = {
           portfolio_url?: string | null
           profile_id?: string
           region?: string | null
+          share_readiness?: boolean
           skills?: string[]
           summary?: string | null
           tracks?: string[]
@@ -5286,6 +5292,7 @@ export type Database = {
           portfolio_url: string | null
           profile_id: string | null
           public_slug: string | null
+          readiness: Json | null
           region: string | null
           skills: string[] | null
           summary: string | null
@@ -6207,6 +6214,30 @@ export type Database = {
         Args: { p_profile_id: string }
         Returns: undefined
       }
+      admin_match_audit: {
+        Args: never
+        Returns: {
+          applied: number
+          band: string
+          hired: number
+          opportunity_id: string
+          organisation_name: string
+          shortlisted: number
+          shown: number
+          title: string
+        }[]
+      }
+      admin_match_fairness: {
+        Args: never
+        Returns: {
+          applied: number
+          dimension: string
+          grp: string
+          hired: number
+          shortlisted: number
+          shown: number
+        }[]
+      }
       admin_outcome_checkin_totals: {
         Args: never
         Returns: {
@@ -6898,9 +6929,32 @@ export type Database = {
         }
         Returns: undefined
       }
+      my_match_readiness: {
+        Args: never
+        Returns: {
+          band: string
+          roadmap_slug: string
+          roadmap_title: string
+          score: number
+          topics_done: number
+          topics_total: number
+          track: string
+        }[]
+      }
       notify_user: {
         Args: { p_kind: string; p_payload?: Json; p_recipient_id: string }
         Returns: string
+      }
+      org_applicant_readiness: {
+        Args: { p_opportunity_id: string }
+        Returns: {
+          application_id: string
+          band: string
+          portfolio_pieces: number
+          roadmap_slug: string
+          roadmap_title: string
+          verified_skills: string[]
+        }[]
       }
       org_opportunity_applicants: {
         Args: { p_opportunity_id: string }
@@ -7161,6 +7215,10 @@ export type Database = {
           isSetofReturn: false
         }
       }
+      set_application_readiness_sharing: {
+        Args: { p_application_id: string; p_share: boolean }
+        Returns: boolean
+      }
       set_application_stage: {
         Args: { p_application_id: string; p_stage: string }
         Returns: {
@@ -7171,6 +7229,7 @@ export type Database = {
           opportunity_id: string
           portfolio_url: string | null
           profile_id: string
+          share_readiness: boolean
           stage: string
           stage_changed_at: string
           updated_at: string

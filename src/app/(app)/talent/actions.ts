@@ -3,6 +3,7 @@
 import { trackRefusal, trackResult } from "@/lib/analytics/track";
 import { refresh } from "next/cache";
 import { requireUser } from "@/lib/auth";
+import { matchingForEmployers } from "@/lib/matching/flags";
 import { createClient } from "@/lib/supabase/server";
 import { getMyVerifiedOrganisations } from "@/lib/organisations/queries";
 import {
@@ -26,7 +27,10 @@ export type ListingState = { errors?: FieldErrors<ListingFields>; message?: stri
 
 export async function saveListing(_prev: ListingState, form: FormData): Promise<ListingState> {
   const user = await requireUser();
-  const { data, errors } = parseListing(form);
+  const { data: parsed, errors } = parseListing(form);
+  // The sharing box only shows with READINESS_FOR_EMPLOYERS=on; off, the stored choice is left alone.
+  const { share_readiness, ...rest } = parsed;
+  const data = matchingForEmployers() ? { ...rest, share_readiness } : rest;
   if (Object.keys(errors).length) {
     await trackRefusal("talent_listing_saved", "validation");
     return { errors };

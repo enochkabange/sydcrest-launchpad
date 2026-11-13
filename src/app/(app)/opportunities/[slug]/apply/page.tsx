@@ -5,6 +5,7 @@ import Link from "@/components/ui/link";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 import { ApplyForm } from "./apply-form";
+import { matchingForEmployers } from "@/lib/matching/flags";
 
 export const metadata: Metadata = { title: "Apply", robots: { index: false } };
 
@@ -38,7 +39,13 @@ async function Apply({ params }: { params: PageProps<"/opportunities/[slug]/appl
           write below. Your phone and email are shared only if they shortlist you.
         </p>
       </header>
-      <ApplyForm opportunityId={o.id} slug={o.slug} organisation={o.organisation_name} defaultPortfolio={listing?.portfolio_url ?? null} />
+      <ApplyForm
+        opportunityId={o.id}
+        slug={o.slug}
+        organisation={o.organisation_name}
+        defaultPortfolio={listing?.portfolio_url ?? null}
+        canShareReadiness={matchingForEmployers()}
+      />
       <p className="text-sm text-content-3">
         <Link href={`/opportunities/${o.slug}`}>Back to the listing</Link>
       </p>

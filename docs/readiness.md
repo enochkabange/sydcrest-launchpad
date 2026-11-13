@@ -28,6 +28,11 @@ offers and hires to learn from. Each score is stored with its parts, so staff
   readiness paragraph the same day. Employers
   never see a number or the inputs, and will see a band only with consent;
   matching (#336) does not use it yet.
+- Who sees it: admins only (RLS), at `/admin/readiness` and on
+  `/admin/learners/[id]`. Learners do not see their score yet (#337), but
+  matching (#336) uses it to order their suggestions and shows them their
+  band for an opportunity's track. Employers never see a number or the
+  inputs, and see a band only when the learner shares it (see "Matching").
 
 ## Inputs and weights
 
@@ -111,3 +116,97 @@ day, record it below, and explain or fix every flag.
 Change `private.readiness_weights()` in a new migration and `WEIGHTS` in
 `src/lib/readiness/score.ts` together, update this card, and add a row to the
 review table after the next daily run.
+
+## Matching (issue #336)
+
+Status: **built on the proposed weights, switched off.** Nothing
+readiness based reaches learners or employers until a switch is on (see
+"Switches" and "Founder decision" below).
+
+**Switches** (server env, read at request time, both off by default; see
+`.env.example` and `src/lib/matching/flags.ts`):
+
+- `READINESS_FOR_LEARNERS=on` (shared with My progress, #337): "Why this fits
+  you" and "What would improve your fit", and ranking "Suggested for you" by
+  match. Off: Suggested keeps the path track order and no fit block shows.
+- `READINESS_FOR_EMPLOYERS=on`: the "Share my readiness band" boxes on the
+  apply form, My applications and the talent listing, and shared bands on
+  the org applicants page and in the talent directory. Off: the boxes are
+  hidden (nobody consents to something not live), the apply action stores
+  `share_readiness = false`, a listing save leaves the stored choice alone,
+  and no page calls `org_applicant_readiness` or shows `talent_directory.readiness`.
+- `/admin/matching` is available to admins either way.
+
+The columns and database functions exist regardless; only the UI is gated.
+
+**Match score** per learner per opportunity = the learner's best readiness
+score among the roadmaps of the opportunity's tracks (`roadmaps.track`, or a
+roadmap slug), plus **5 points for each required skill they have verified**,
+capped at 100. The bonus lives in `private.match_weights()` in
+`supabase/migrations/20261114900000_matching.sql`, mirrored in
+`src/lib/matching/match.ts` (a unit test keeps them equal).
+
+**Required skills** (`private.opportunity_required_skills`): the skills the
+listing names that are in the published SydCrest catalogue, matched by name
+or slug ignoring case. Opportunity skills are free text, so when a listing
+names none from the catalogue, the skills mapped (`skill_roadmaps`) to the
+roadmaps of its tracks count instead. When neither exists, the match is
+track readiness only, and the learner sees only their band and the next
+step.
+
+**What it does:** it orders "Suggested for you" on `/opportunities` for a
+signed in learner, best fit first. It never hides a listing: the board lists
+every open opportunity in the same order for everyone (it is cached and
+public). A learner with no readiness for the tracks and no matching verified
+skill has no match score and sorts after those with one.
+
+**Learner view:** on suggested cards and the opportunity page, "Why this fits
+you" (the verified skills that match, and the readiness band for the track)
+and "What would improve your fit" (the next required skill to verify, else
+the next topic in the track's roadmap, else starting the track). Never a
+number. Read through `public.my_match_readiness()` (own rows only); learners
+still cannot select `readiness_scores`.
+
+**Employer view, only with consent:**
+
+- Applications: `opportunity_applications.share_readiness`, a box on the
+  apply form, off by default; the learner can turn it on or off later on My
+  applications (`public.set_application_readiness_sharing`). The org
+  applicants page then shows the band for the opportunity's track, the
+  required skills the applicant verified, and their approved portfolio
+  pieces for that track (`public.org_applicant_readiness`, consenting
+  applicants only, for people who manage the applications).
+- Talent directory: `talent_listings.share_readiness`, a box on the listing,
+  off by default. `talent_directory.readiness` lists the band (and approved
+  portfolio pieces) for up to three tracks, empty unless shared.
+- Never shown to employers: the score, its parts, About you answers or pay.
+
+**Admin audit** (`/admin/matching`): `public.admin_match_audit()` per
+opportunity by band, and `public.admin_match_fairness()` by the readiness
+fairness groups (region, usual device, internet, age band, education) plus
+band. "Shown" means a signed in learner opened the listing
+(`opportunity_viewed`) or applied; shortlisted counts shortlisted, interview,
+offer and hired. Rates: applied of shown, shortlisted and hired of applied.
+A rate needs 5 cases (`MIN_SAMPLE`); a group is flagged when a rate differs
+from its dimension's rate by more than 10 points (`MATCH_RATE_GAP`).
+
+**Known limits**
+
+- Bands in the audit are today's, not the band when the learner was shown or
+  applied. A stamped band (for example a `match_band` prop on
+  `opportunity_viewed` and `opportunity_applied`, as the tracking plan
+  proposes) is a follow up.
+- Views older than 13 months are purged with raw events, so "shown" covers
+  the last 13 months; applications are kept.
+- Readiness already counts verified track skills, so a skill named on the
+  listing and mapped to the track counts twice. Intended: the bonus rewards
+  the skills this employer asked for.
+- Free text skills only match the catalogue by exact name or slug.
+
+**Founder decision.** The readiness card above says the score must not be
+shown beyond staff or used to rank anyone until the weights are approved and
+the fairness review is recorded. So both switches stay off. Turning on
+`READINESS_FOR_LEARNERS` lets learners see their band and a ranked list;
+turning on `READINESS_FOR_EMPLOYERS` lets learners opt in to employers seeing
+their band. Approve the weights (and the 5 point skill bonus) and record the
+review first.
