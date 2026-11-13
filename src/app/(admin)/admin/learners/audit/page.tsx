@@ -14,30 +14,34 @@ async function Entries() {
   const { supabase } = await requireAdmin();
   const { data, error } = await supabase.rpc("admin_audit_entries", { p_limit: 300 });
   if (error) throw new Error(`Could not load the audit log: ${error.message}`);
+  const when = (e: Entry) => e.at.slice(0, 16).replace("T", " ");
+  const member = (e: Entry) =>
+    e.target_profile_id ? (
+      <Link href={`/admin/learners/${e.target_profile_id}`} prefetch={false}>
+        {e.target_name || "No name yet"}
+      </Link>
+    ) : (
+      "–"
+    );
+  // Phones get one cell per row: what, the note, then member, admin and time
+  // underneath, so a long note is never squeezed out by the other columns.
   const columns: Column<Entry>[] = [
     {
       header: "What",
       cell: (e) => (
-        <span className="flex min-w-0 flex-col">
+        <span className="flex min-w-0 flex-col gap-0.5">
           <span className="font-semibold text-content">{auditActionLabel(e.action)}</span>
           {e.note && <span className="text-sm break-words text-content-2">{e.note}</span>}
+          <span className="text-sm text-content-3 md:hidden">
+            {member(e)} · by {e.admin_name ?? "System"} · <span className="tabular-nums">{when(e)}</span>
+          </span>
         </span>
       ),
       className: "min-w-0 flex-1",
     },
-    {
-      header: "Member",
-      cell: (e) =>
-        e.target_profile_id ? (
-          <Link href={`/admin/learners/${e.target_profile_id}`} prefetch={false}>
-            {e.target_name || "No name yet"}
-          </Link>
-        ) : (
-          "–"
-        ),
-    },
-    { header: "By", cell: (e) => e.admin_name ?? "System", className: "text-content-2" },
-    { header: "When", cell: (e) => e.at.slice(0, 16).replace("T", " "), align: "end", className: "tabular-nums text-content-2" },
+    { header: "Member", cell: member, phone: "hide" },
+    { header: "By", cell: (e) => e.admin_name ?? "System", phone: "hide", className: "text-content-2" },
+    { header: "When", cell: when, align: "end", phone: "hide", className: "tabular-nums text-content-2" },
   ];
   return (data ?? []).length ? (
     <DataTable caption="Audit log" columns={columns} rows={data ?? []} rowKey={(e) => e.id} />
