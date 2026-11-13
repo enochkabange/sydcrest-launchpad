@@ -20,11 +20,12 @@ test("admins see the fairness page and a learner's readiness per track; learners
   try {
     const [learner, boss] = await Promise.all([createLearner("Fatima Iddrisu"), createLearner("Sulemana Abukari")]);
     await promoteToAdmin(boss.id);
-    // Chose the track in About you, with a goal and career stage: 5 of the 75
-    // points a track with no mapped skills can give, so 7, Getting started.
-    await insert("learner_profiles", [
-      { profile_id: learner.id, main_goal: "job", career_stage: "first_job", tracks: [roadmap.slug] },
-    ]);
+    // Started a topic today: one learning day (1.3 of 10 points) out of the 75
+    // points a track with no mapped skills can give, so 2, Getting started.
+    const [node] = await admin<{ id: string }[]>(
+      `/rest/v1/roadmap_nodes?roadmap_id=eq.${roadmap.id}&slug=eq.${roadmap.quizNode.slug}&select=id`,
+    );
+    await insert("roadmap_progress", [{ profile_id: learner.id, node_id: node.id, status: "in_progress" }]);
     await admin("/rest/v1/rpc/run_analytics_maintenance", { method: "POST", body: { p_days: 1 } });
 
     await signIn(page, learner);
@@ -40,7 +41,7 @@ test("admins see the fairness page and a learner's readiness per track; learners
     await page.goto(`/admin/learners/${learner.id}`);
     const row = page.getByTestId("readiness-row").filter({ hasText: roadmap.title });
     await expect(row).toContainText("Getting started");
-    await expect(row).toContainText("7 of 100");
+    await expect(row).toContainText("2 of 100");
     await expect(row).toContainText("Not counted");
   } finally {
     await deleteRoadmap(roadmap.id);
