@@ -95,6 +95,30 @@ export function vitalRating(metric: string, value: number | null | undefined): V
   return "poor";
 }
 
+/** Connection types and classes (issue #331), as the reports return them. */
+export const CONNECTION_LABELS: Record<string, string> = {
+  "slow-2g": "Very slow 2G",
+  "2g": "2G",
+  "3g": "3G",
+  "4g": "4G or faster",
+  slow: "Slow (2G or 3G)",
+  fast: "Fast (4G or faster)",
+  unknown: "Not known",
+};
+
+export function connectionLabel(value: string): string {
+  return CONNECTION_LABELS[value] ?? CONNECTION_LABELS.unknown;
+}
+
+/** How much slower a slow connection was than a fast one: "2.4 s slower", "180 ms faster", "No gap", or NOT_ENOUGH. */
+export function formatGap(value: number | null | undefined): string {
+  if (value === null || value === undefined || !Number.isFinite(value)) return NOT_ENOUGH;
+  const abs = Math.abs(value);
+  if (abs < 1) return "No gap";
+  const amount = abs >= 1000 ? `${(abs / 1000).toFixed(1)} s` : `${Math.round(abs)} ms`;
+  return `${amount} ${value > 0 ? "slower" : "faster"}`;
+}
+
 /** Change against the previous period: "Up 25%", "Down 10%", "No change", "New", or null with too little to compare. */
 export function formatChange(current: number, previous: number): string | null {
   if (previous === 0 && current === 0) return null;

@@ -5,6 +5,7 @@
  * first, never throws and never blocks the page.
  */
 import { visitProps } from "../attribution";
+import { currentConnection } from "../connection";
 import { localDay, sessionProps } from "../habits";
 import { BEACON_PATH, type WireEvent } from "../beacon";
 import { ROUTE_COOKIE, SESSION_COOKIE, isSessionId } from "../context";
@@ -110,7 +111,7 @@ export function trackVisitStart() {
     // Study habits: when this session started and how long since the last one on this browser.
     const now = new Date();
     const local = localStore();
-    clientTrack("session_started", sessionProps(now, local?.getItem(LAST_DAY_KEY) ?? null));
+    clientTrack("session_started", { ...sessionProps(now, local?.getItem(LAST_DAY_KEY) ?? null), ...currentConnection() });
     local?.setItem(LAST_DAY_KEY, localDay(now));
   } catch {
     // Analytics never breaks the page.
@@ -135,6 +136,7 @@ export function reportWebVital(metric: Metric) {
     value: metric.value,
     rating: metric.rating as PropsOf<"web_vital">["rating"],
     navigation: metric.navigationType as PropsOf<"web_vital">["navigation"],
+    ...currentConnection(),
   });
 }
 

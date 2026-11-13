@@ -2,9 +2,11 @@ import { describe, expect, it } from "vitest";
 import {
   MIN_SAMPLE,
   NOT_ENOUGH,
+  connectionLabel,
   enough,
   featureOf,
   formatChange,
+  formatGap,
   formatHours,
   formatRate,
   formatShare,
@@ -155,5 +157,22 @@ describe("weekly totals", () => {
       { x: "2026-10-19", y: 5 },
       { x: "2026-10-26", y: 4 },
     ]);
+  });
+});
+
+describe("connection labels and gaps (issue #331)", () => {
+  it("names connection types and classes, anything else as not known", () => {
+    expect(connectionLabel("slow-2g")).toBe("Very slow 2G");
+    expect(connectionLabel("4g")).toBe("4G or faster");
+    expect(connectionLabel("slow")).toBe("Slow (2G or 3G)");
+    expect(connectionLabel("wifi")).toBe("Not known");
+  });
+
+  it("formats the slow against fast gap", () => {
+    expect(formatGap(5700)).toBe("5.7 s slower");
+    expect(formatGap(180.4)).toBe("180 ms slower");
+    expect(formatGap(-250)).toBe("250 ms faster");
+    expect(formatGap(0)).toBe("No gap");
+    expect(formatGap(null)).toBe(NOT_ENOUGH);
   });
 });
