@@ -18,7 +18,8 @@ export type DashboardSlug =
   | "cohorts"
   | "earn"
   | "community"
-  | "reliability";
+  | "reliability"
+  | "experiments";
 
 export type Dashboard = {
   slug: DashboardSlug;
@@ -36,10 +37,11 @@ export const DASHBOARDS: Dashboard[] = [
   { slug: "retention", href: "/admin/insights/retention", title: "Retention", description: "Weekly sign up cohorts and how many come back in weeks 1 to 8.", filters: PEOPLE, events: true },
   { slug: "learning", href: "/admin/insights/learning", title: "Learning", description: "Pass rates and drop off per roadmap and topic, hardest questions and reviews.", filters: PEOPLE, events: false },
   { slug: "features", href: "/admin/insights/features", title: "Feature use", description: "Every feature: how many people, how often, and the trend.", filters: ALL, events: true },
-  { slug: "cohorts", href: "/admin/insights/cohorts", title: "DMP cohorts", description: "On time submissions, grading turnaround and learners at risk.", filters: PEOPLE, events: false },
+  { slug: "cohorts", href: "/admin/insights/cohorts", title: "DMP cohorts", description: "On time submissions, grading turnaround, learners at risk, mentors and early warning.", filters: PEOPLE, events: false },
   { slug: "earn", href: "/admin/insights/earn", title: "Experts and Earn", description: "Bookings, briefs, pitches, response times and outcomes.", filters: PEOPLE, events: false },
   { slug: "community", href: "/admin/insights/community", title: "Community", description: "Posts, replies, RSVPs, check ins and chapters.", filters: ["region", "chapter"], events: false },
   { slug: "reliability", href: "/admin/insights/reliability", title: "Reliability", description: "Errors by page and action, failure rates, Web Vitals, and where slow connections hurt.", filters: ["device"], events: true },
+  { slug: "experiments", href: "/admin/insights/experiments", title: "Experiments", description: "Each experiment's variants, how many people met each, and how many came back.", filters: [], events: false },
 ];
 
 export function dashboard(slug: DashboardSlug): Dashboard {
@@ -158,6 +160,35 @@ export const TABLES = {
     title: "Learners at risk",
     columns: [["cohort_name", "Cohort"], ["learner_name", "Learner"], ["specialization", "Specialisation"], ["missing_weeks", "Missing weeks"], ["late_weeks", "Late weeks"], ["below_pass", "Below pass mark"], ["last_submitted", "Last sent"]],
   },
+  // Early warning and mentor quality (#325, #330)
+  mentors: {
+    dashboard: "cohorts",
+    rpc: "admin_insights_mentors",
+    title: "Mentors",
+    columns: [
+      ["mentor_name", "Mentor"], ["cohorts", "Cohorts"], ["learners", "Learners"], ["active_7d", "Active in the last 7 days"],
+      ["at_risk", "At risk now"], ["watch", "Keep an eye now"], ["contacts", "Contacts logged"], ["learners_contacted", "Learners contacted"],
+      ["graded", "Graded"], ["grading_hours_median", "Median hours to grade"], ["weeks_passed", "Weeks passed"], ["weeks_graded", "Weeks graded"],
+    ],
+  },
+  early_warning: {
+    dashboard: "cohorts",
+    rpc: "admin_insights_early_warning",
+    title: "Early warning outcomes",
+    columns: [
+      ["route", "Routed to"], ["raised", "Alerts raised"], ["at_risk", "At risk"], ["settled", "Quiet alerts 14 days old"],
+      ["came_back", "Came back within 14 days"], ["contacted", "Contacted"], ["contacted_came_back", "Contacted and came back"],
+    ],
+  },
+  risk_learners: {
+    dashboard: "cohorts",
+    rpc: "admin_insights_risk_learners",
+    title: "Learners flagged now",
+    columns: [
+      ["learner_name", "Learner"], ["level", "Level"], ["reasons", "Reasons"], ["route", "Routed to"], ["routed_to", "Cohort or chapter"],
+      ["flagged_since", "Flagged since"], ["last_active_on", "Last active"], ["last_contact_at", "Last contact"],
+    ],
+  },
   earn_daily: {
     dashboard: "earn",
     rpc: "admin_insights_earn_daily",
@@ -235,6 +266,15 @@ export const TABLES = {
     columns: [
       ["connection", "Connection"], ["lessons_opened", "Lessons opened"], ["lessons_left", "Lessons left"], ["read_to_end", "Read to the end"],
       ["median_time_ms", "Median time (ms)"], ["median_scroll", "Median scroll (%)"], ["quizzes", "Quizzes sent"], ["quizzes_passed", "Quizzes passed"],
+    ],
+  },
+  experiments: {
+    dashboard: "experiments",
+    rpc: "admin_insights_experiments",
+    title: "Experiments by variant",
+    columns: [
+      ["experiment_key", "Experiment"], ["status", "Status"], ["metric", "Measure"], ["variant", "Variant"], ["weight", "Weight"],
+      ["people", "People"], ["measured", "Seven days passed"], ["came_back", "Came back"],
     ],
   },
 } satisfies Record<string, TableSpec>;

@@ -79,7 +79,8 @@ export async function POST(request: Request) {
   const route = routeMessage(latestUserMessage);
   const params = buildRequestParams(route, buildSystemPrompt(node), messages, COMPANION_TOOLS);
   const runTool = createToolRunner(createCompanionData(supabase, user.id));
-  await track("study_buddy_message", { turn: messages.length });
+  // Counts per topic and kind of question for the content team (#326); the words are never kept.
+  await track("study_buddy_message", { turn: messages.length, node_id: node && nodeId ? nodeId : undefined, kind: route.reason });
   const reply = streamReply(client, params, (usage) => recordTokens(supabase, usage), runTool);
 
   return new Response(reply, {

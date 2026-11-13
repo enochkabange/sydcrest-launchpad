@@ -24,6 +24,7 @@ export const SIGNED_IN_PREFIXES = [
   "/certificates",
   "/study-buddy",
   "/review",
+  "/progress",
   "/programme/apply",
   "/skills/reviews",
   // Mentors
@@ -46,6 +47,8 @@ export const SIGNED_IN_PREFIXES = [
   "/business/new",
   // Staff
   "/admin",
+  // Printable reports (#329)
+  "/print",
 ];
 
 export const SIGNED_IN_PATTERNS: RegExp[] = [

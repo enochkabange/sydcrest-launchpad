@@ -59,6 +59,7 @@ export const FORM_NAMES = [
   "brief",
   "pitch",
   "outcome",
+  "outcome_checkin",
   "community_post",
   "submission",
   "organisation",
@@ -89,6 +90,11 @@ const DECISION = oneOf([
   "unverified",
   "changes_requested",
 ]);
+/** Why a lesson was not clear, from the one tap at the end of a lesson (#326). */
+export const LESSON_FEEDBACK_REASONS = ["confusing", "too_long", "too_short", "missing_example", "broken_link"] as const;
+export type LessonFeedbackReason = (typeof LESSON_FEEDBACK_REASONS)[number];
+/** The Study Buddy router's reason for a turn: a coarse kind of question, never its words. */
+export const STUDY_BUDDY_KINDS = ["routine", "long", "intent", "code"] as const;
 const SHARE_CHANNEL = oneOf(["copy", "share", "whatsapp", "x", "linkedin", "facebook", "download"]);
 
 // The taxonomy --------------------------------------------------------------------
@@ -205,7 +211,12 @@ export const EVENTS = {
     props: { roadmap: slug(), node_id: id(), time_spent_ms: ms(), scroll_percent: count(), done_before: flag() },
   },
   resource_opened: { feature: "learn", source: "client", props: { node_id: id(), kind: oneOf(["article", "video", "practice"]) } },
-  quiz_question_answered: { feature: "learn", source: "server", props: { node_id: id(), question_id: code(), correct: flag() } },
+  quiz_question_answered: {
+    feature: "learn",
+    source: "server",
+    // choice (the option index picked) and passed (the attempt's result) feed question analysis (#326).
+    props: { node_id: id(), question_id: code(), correct: flag(), choice: count(), passed: flag() },
+  },
   quiz_retried: { feature: "learn", source: "server", props: { node_id: id(), passed: flag(), passed_before: flag() } },
   search_performed: { feature: "discovery", source: "client", props: { scope: oneOf(["topics"]), results: count() } },
   filter_applied: {
@@ -219,7 +230,20 @@ export const EVENTS = {
   },
   review_completed: { feature: "review", source: "server", props: { items: count(), correct: count() } },
   weekly_goal_set: { feature: "review", source: "server", props: { goal: count() } },
-  study_buddy_message: { feature: "study_buddy", source: "server", props: { turn: count() } },
+  // The topic and a coarse kind of question (from the model router), never the words (#326).
+  study_buddy_message: {
+    feature: "study_buddy",
+    source: "server",
+    props: { turn: count(), node_id: id(), kind: oneOf(STUDY_BUDDY_KINDS) },
+  },
+  // Content quality (epic #320, issue #326)
+  lesson_feedback_given: {
+    feature: "learn",
+    source: "server",
+    props: { node_id: id(), clear: flag(), reason: oneOf(LESSON_FEEDBACK_REASONS) },
+  },
+  // My progress (issue #337): the learner opened their own progress page.
+  progress_viewed: { feature: "review", source: "server", props: {} },
 
   // Skills
   skill_quiz_submitted: { feature: "skills", source: "server", props: { passed: flag(), score: count() } },
@@ -240,6 +264,8 @@ export const EVENTS = {
   peer_review_assigned: { feature: "cohort", source: "server", props: {} },
   peer_review_submitted: { feature: "cohort", source: "server", props: {} },
   learner_deferred: { feature: "cohort", source: "server", props: {} },
+  // Early warning and the mentor caseload (#325, #330)
+  mentor_contact_logged: { feature: "mentoring", source: "server", props: { kind: oneOf(["message", "call", "session"]) } },
   certificate_issued: { feature: "certificates", source: "server", props: {} },
   certificate_revoked: { feature: "certificates", source: "server", props: {} },
 
@@ -275,6 +301,12 @@ export const EVENTS = {
   opportunity_applicant_moved: { feature: "opportunities", source: "server", props: { stage: code() } },
   outcome_reported: { feature: "outcomes", source: "server", props: {} },
   outcome_decided: { feature: "outcomes", source: "server", props: { decision: DECISION } },
+  outcome_checkin_sent: { feature: "outcomes", source: "server", props: { months: count() } },
+  outcome_checkin_answered: {
+    feature: "outcomes",
+    source: "server",
+    props: { months: count(), status: oneOf(["employed", "self_employed", "freelance", "studying", "looking", "other"]), shared: flag() },
+  },
   talent_listing_saved: { feature: "talent", source: "server", props: {} },
   talent_contact_requested: { feature: "talent", source: "server", props: {} },
   talent_contact_responded: { feature: "talent", source: "server", props: { accepted: flag() } },
@@ -304,6 +336,8 @@ export const EVENTS = {
   notification_opened: { feature: "notifications", source: "server", props: {} },
   notifications_read_all: { feature: "notifications", source: "server", props: {} },
 
+  // Experiments (issue #327): written by public.record_experiment_exposure, once per person per experiment
+  experiment_exposed: { feature: "experiments", source: "server", props: { experiment: slug(), variant: slug() } },
   // Audience messaging and the chapter lead toolkit (epic #320, #334 and #335)
   message_sent: {
     feature: "messaging",

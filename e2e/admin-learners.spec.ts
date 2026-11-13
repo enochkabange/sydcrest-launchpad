@@ -27,7 +27,7 @@ test("admins find a learner and open their view; learners get a 404", async ({ p
   await signIn(page, boss);
   await page.goto("/admin/learners?stage=new");
   await expect(page.getByRole("heading", { name: "Learners", level: 1 })).toBeVisible();
-  await page.getByLabel("Name or exact email").fill(learner.email);
+  await page.getByLabel("Name, exact email or phone").fill(learner.email);
   await page.getByRole("button", { name: "Search" }).click();
   await page.getByRole("link", { name: "Salamatu Abdulai" }).click();
 

@@ -5,6 +5,8 @@ import { buttonClasses } from "@/components/ui/button";
 import { DataTable, MainWithRail, rowLinkClass } from "@/components/ui/layout";
 import { Card, CELL_STYLE, EmptyState, Pill } from "@/components/mentor/fields";
 import { displayTheme } from "@/components/marketing/curriculum-weeks";
+import { CaseloadList } from "@/components/early-warning/caseload";
+import { loadCaseload } from "@/lib/early-warning/data";
 import { loadCohort, nameOf, pickCohort, requireStaff, shortDate, type ConsoleCohort, type RosterRow } from "@/lib/mentor/data";
 import {
   CELL_LABEL,
@@ -48,7 +50,7 @@ async function Console({ searchParams }: Pick<PageProps<"/mentor">, "searchParam
     );
   }
 
-  const data = await loadCohort(cohort);
+  const [data, caseload] = await Promise.all([loadCohort(cohort), loadCaseload(cohort.id)]);
   const names = new Map(data.members.map((m) => [m.profile_id, m]));
   const weekById = new Map(data.weeks.map((w) => [w.id, w]));
   const activeLearners = data.learners.filter((l) => l.status === "active");
@@ -94,6 +96,26 @@ async function Console({ searchParams }: Pick<PageProps<"/mentor">, "searchParam
         </p>
         <CohortSwitcher cohorts={cohorts} current={cohort} />
       </header>
+
+      <section aria-labelledby="caseload-heading" className="flex flex-col gap-3">
+        <div className="flex flex-col gap-1">
+          <h2 id="caseload-heading" className="text-subtitle text-content">
+            Caseload
+          </h2>
+          <p className="max-w-reading text-sm text-content-2">
+            Who to check in with first: highest risk, then longest since anyone made contact, then the nearest deadline. Risk is
+            worked out once a day from activity and progress. Log each message, call or session so the next mentor knows.
+          </p>
+        </div>
+        {caseload.length === 0 ? (
+          <EmptyState title="No active learners yet">Learners appear here once they join this cohort.</EmptyState>
+        ) : (
+          <CaseloadList
+            label={`Caseload for ${cohort.name}`}
+            items={caseload.map((c) => ({ ...c, href: `/mentor/learners/${c.member_id}` }))}
+          />
+        )}
+      </section>
 
       <MainWithRail
         railLabel="Cohort"

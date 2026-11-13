@@ -79,10 +79,27 @@ export default function PrivacyPage() {
           a filter on which opportunities we suggest. Our administrators can read them to help you. They
           are deleted with your account.
         </li>
+        <li id="outcome-check-ins">
+          Your answers to <strong>check ins</strong>. About 3, 6 and 12 months after you finish a cohort or
+          a track, we ask how things are going: what you are doing now (working, running a business,
+          freelancing, studying, looking for work or something else), where (optional), your monthly
+          earnings as a band in cedis (optional, and you can choose not to say), which of your skills you
+          use, and whether your answers may count in sponsor reports. We send the question in the app, and
+          on WhatsApp only if you turned WhatsApp updates on. You do not have to answer. We use the answers
+          to learn what helps people into work and to report our impact. Reports for sponsors show totals
+          only, any number under five is hidden, and your answers are counted only if you agreed; your
+          name never appears. Our administrators can read your answers. They are deleted with your
+          account.
+        </li>
       </ul>
       <h3>When you use the platform</h3>
       <ul>
         <li>Your learning progress, such as the roadmap steps you have completed.</li>
+        <li id="lesson-feedback">
+          Your answer to &ldquo;Was this lesson clear?&rdquo; at the end of a lesson (yes or not really, and the
+          reason you tapped, if any), so we can improve the lessons. You can change it at any time; it is deleted
+          with your account.
+        </li>
         <li>
           How many questions you ask the AI tutor each day, so we can keep it free and fair for
           everyone.
@@ -99,7 +116,8 @@ export default function PrivacyPage() {
       <p>
         We do not ask for and do not want sensitive data such as your health, religion, ethnicity, gender,
         marital status or finances. (The lowest pay you would accept, if you choose to say, is a job
-        filter, not a question about your money.)
+        filter, not a question about your money. The earnings band in a check in is optional and only
+        ever counted in totals.)
       </p>
 
       <h2>Why we use it, and our legal basis</h2>
@@ -130,7 +148,8 @@ export default function PrivacyPage() {
       </ul>
       <p>
         When you create an account you give your consent to this policy. You can withdraw that
-        consent at any time by asking us to delete your account.
+        consent at any time by deleting your account from your profile (see{" "}
+        <a href="#your-rights">Your rights</a>).
       </p>
 
       <h2 id="analytics">Analytics</h2>
@@ -160,6 +179,13 @@ export default function PrivacyPage() {
           questions you got right or wrong and whether you tried again; how many results a search or
           filter gave you (never the words you typed); which opportunities you viewed and applied to;
           and whether cohort work was sent by its due date.
+        </li>
+        <li>
+          <strong>How clear lessons are:</strong> which answer you picked on each checkpoint question and
+          whether that attempt passed; which topic you asked the AI tutor about, which message in the chat
+          it was and a rough kind of question (for example &ldquo;why&rdquo; or &ldquo;about code&rdquo;),
+          never the words; and your answer to &ldquo;Was this lesson clear?&rdquo;. Our content team sees
+          these only as totals per lesson and question.
         </li>
         <li>
           <strong>Where your visit came from:</strong> once per visit, the campaign tags in the link you
@@ -211,6 +237,80 @@ export default function PrivacyPage() {
         (for example, so a mentor can check in when you go quiet) and to improve SydCrest. Our
         administrators can see it; employers cannot. You can see your own, and it is deleted with your
         account.
+      </p>
+      <h3 id="readiness-score">Readiness score</h3>
+      <p>
+        Once a day we also work out a readiness score from 0 to 100 for each track you follow or chose
+        in About you. It counts the skills you have verified for the track, the topics you have
+        finished, your approved portfolio work, the days you learned in the last 30, and whether your
+        About you goal and public profile are filled in. It never uses your region, device, internet,
+        study times, age, education or work preferences. For now only our staff can see it, while we
+        check that it is fair to every group of learners. Once we switch it on, you will see your own,
+        with what each part is worth, on your My progress page, and we will use it to order the
+        opportunities we suggest to you (see Matching below). No employer ever sees the score or what
+        it is made of, and they will see your band only if you choose to share it. It is deleted with
+        your account.
+      </p>
+      <h3 id="my-progress">My progress</h3>
+      <p>
+        Your <Link href="/progress">My progress</Link> page shows you your own learning summary: your
+        streak, the days you learned, the part of the day you usually study, your quiz scores and how
+        long your current roadmap could take at your pace. Once we switch it on, it will also show your
+        readiness band for each track and the steps that would raise it most. It is worked out from the
+        information above; it adds nothing new about you. Only you and our staff can see it. We record that you opened the
+        page, and nothing about what it shows.
+      </p>
+      <h3 id="check-ins">Check ins from mentors and chapter leads</h3>
+      <p>
+        Once a day we also check that summary for signs that someone may need a hand: going quiet
+        compared with how often they usually come, a slower pace, failing the same quiz again and
+        again, saving a path but not starting, or missing cohort deadlines. Each flag comes with its
+        reasons in plain words, never a hidden score. It goes to your cohort mentors if you are in a
+        cohort, otherwise to your chapter lead, otherwise to our administrators, so they can check in
+        with you. When they do, they note that they sent a message, called or met you, with an
+        optional short note, so we can learn which support helps. Only they and our administrators
+        see flags and these notes; employers never do. They are kept while your account is open and
+        deleted with it.
+      </p>
+      <h3 id="experiments">Testing changes</h3>
+      <p>
+        Sometimes we try a change, such as a new welcome page or a reminder message, on a random share
+        of people and compare it with everyone else, to learn whether it really helps. The share is
+        picked by chance from your account (or, if you are signed out, from a random code on your
+        device), so you always see the same version. We note which version you got and whether you came
+        back in the following week; nothing else is collected for a test. We never test prices or
+        access to learning: everyone can always reach every lesson.
+      </p>
+      <p>
+        One test runs now: a weekly WhatsApp reminder goes to members who said yes to messages and went
+        quiet, and one in ten of them, picked by chance, do not get it, so we can tell whether it helps.
+        Because this happens on our side and not in your browser, the choice of who gets the reminder is
+        noted even if you turned analytics off. If you turned analytics off, the website shows you the
+        usual version of anything we are testing and records nothing about it.
+      </p>
+      <h3 id="matching">Matching</h3>
+      <p>
+        Matching is not switched on yet. We will turn it on only after we have checked that the readiness
+        score is fair to every group of learners. Until then nothing below is shown to you or to
+        employers, and you will not be asked to share your band. Once it is on: when you are signed in, we put the opportunities that fit you best first in your suggestions: your
+        readiness for the opportunity&apos;s track, plus a little for each skill it needs that you have
+        verified. This only changes the order; every open opportunity stays on the board for you. On an
+        opportunity we show you why it fits (the verified skills that match and your band for the track)
+        and one step that would improve your fit.
+      </p>
+      <p>
+        What employers can see, and when, once it is on: only if you tick &quot;Share my readiness band&quot; when you apply,
+        the organisation you apply to sees your band for that opportunity&apos;s track (Getting started,
+        Building or Job ready), the verified skills it needs that you have, and how many of your portfolio
+        pieces were approved for that track. You can turn this off on My applications at any time. If you
+        list yourself in the talent directory, verified organisations see your band for up to three tracks
+        only if you tick that box on your listing. Sharing is off until you turn it on. Employers never see
+        the score, its parts, your About you answers or the pay you would accept.
+      </p>
+      <p>
+        Our staff check matching for fairness: who was shown each opportunity, who applied, was shortlisted
+        and was hired, by band and by group (region, device, internet, age band and education), with any
+        group under five people hidden. These groups are never used to match you.
       </p>
       <h3>Who can see it</h3>
       <p>
@@ -319,14 +419,17 @@ export default function PrivacyPage() {
         When you apply for an opportunity on SydCrest, the organisation that posted it sees your name,
         region, verified skills, public profile if you have one, your note and your portfolio link. They
         see your phone number and email only if they shortlist you, and you agree to that when you
-        apply. You can withdraw an application until you are hired.
+        apply. You can withdraw an application until you are hired. They see your readiness band for the
+        role only if you choose to share it, once that option is switched on (see{" "}
+        <a href="#matching">Matching</a>).
       </p>
       <h3>Sponsors</h3>
       <p>
         Organisations that fund free seats, cohorts or chapters see totals for the learners they
         support, such as how many finished or earned a certificate. Any number under five is hidden so
         nobody can be identified. They see your story only if you write one, and your name with it only
-        if you choose to show it.
+        if you choose to show it. Their reports also show totals from <a href="#outcome-check-ins">check
+        ins</a>, such as how many learners are working now, counting only learners who agreed.
       </p>
       <h3>Service providers</h3>
       <p>We share data with service providers who help us run SydCrest, and only what each one needs:</p>
@@ -363,8 +466,9 @@ export default function PrivacyPage() {
       <ul>
         <li>
           <strong>Account details, date of birth, consent record and progress:</strong> for as long
-          as your account is open. When you ask us to delete your account, we delete this data within
-          30 days, apart from anything the law requires us to keep.
+          as your account is open. When you delete your account we wait 7 days, in case you change
+          your mind, and then delete it, apart from what is listed under{" "}
+          <a href="#your-rights">Your rights</a> and anything the law requires us to keep.
         </li>
         <li>
           <strong>AI tutor usage counts:</strong> up to 12 months.
@@ -372,6 +476,10 @@ export default function PrivacyPage() {
         <li>
           <strong>Analytics events:</strong> 13 months, then deleted automatically. Daily totals made
           from them, which do not identify anyone, are kept so we can see trends over time.
+        </li>
+        <li>
+          <strong>Which version of a test you got:</strong> kept with your account while we look at the
+          results, and deleted with your account.
         </li>
         <li>
           <strong>Backups:</strong> our hosting provider keeps backups for a limited time, after which
@@ -383,18 +491,27 @@ export default function PrivacyPage() {
         </li>
       </ul>
 
-      <h2>Your rights</h2>
+      <h2 id="your-rights">Your rights</h2>
       <p>Under Act 843 you have the right to:</p>
       <ul>
         <li>
-          <strong>Access</strong> the personal data we hold about you and get a copy.
+          <strong>Access</strong> the personal data we hold about you and get a copy. You can do
+          this yourself: <strong>Download my data</strong> on your profile gives you a file with your
+          profile, About you answers, learner attributes, where you first came from, progress, a list
+          of your submissions, certificates, applications, outcomes and consents.
         </li>
         <li>
           <strong>Correct</strong> data that is wrong or out of date. You can change your name,
           region and phone number yourself on your profile page.
         </li>
         <li>
-          <strong>Delete</strong> your account and personal data.
+          <strong>Delete</strong> your account and personal data. You can do this yourself:{" "}
+          <strong>Delete my account</strong> on your profile. We wait 7 days, and you can cancel
+          from your profile until then. After that we delete your account, your personal data and the
+          files you uploaded. We keep only the certificates we issued you, so anyone you shared one
+          with can still check it is real (they show the name and programme on the certificate, and
+          are no longer linked to an account), daily totals that never identify anyone, and a record
+          that an account was deleted on that date, without your name or details.
         </li>
         <li>
           <strong>Object</strong> to how we use your data, or withdraw your consent.
@@ -408,8 +525,8 @@ export default function PrivacyPage() {
         </li>
       </ul>
       <p>
-        To use any of these rights, contact us at <PrivacyContact />. We may ask you to confirm who
-        you are before we act. We aim to reply within 21 days.
+        For anything you cannot do from your profile, contact us at <PrivacyContact />. We may ask
+        you to confirm who you are before we act. We aim to reply within 21 days.
       </p>
 
       <h2>Children</h2>
@@ -425,6 +542,14 @@ export default function PrivacyPage() {
         Data travels between your device and SydCrest over encrypted connections. Access to our
         database is limited by rules that only let each person see their own private data, and only
         a small number of SydCrest staff can reach it, for running the service.
+      </p>
+      <p id="audit-log">
+        When a SydCrest admin helps you, for example by finding your account, opening your page,
+        resending your confirmation email, changing your role, pausing your account or writing a
+        support note about what you asked, it is written to an audit log: which admin, what they
+        did, to whose account and when. The log cannot be edited, only admins can read it, and the
+        notes about you are cleared when your account is deleted. If your account is paused you
+        cannot sign in until an admin reactivates it.
       </p>
 
       <h2>Changes to this policy</h2>

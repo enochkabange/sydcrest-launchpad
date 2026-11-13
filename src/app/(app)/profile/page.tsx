@@ -14,6 +14,7 @@ import { CredentialsSection } from "./credentials-section";
 import { WhatsAppConsent } from "./whatsapp-consent";
 import { StorySection } from "./story-section";
 import { AboutYouCard } from "./about-you-card";
+import { DataRightsSection, DeletionNotice } from "./data-rights-section";
 
 export const metadata: Metadata = { title: "Profile" };
 
@@ -28,7 +29,12 @@ async function ProfileDetails() {
   );
 }
 
-export default function ProfilePage() {
+async function Notice({ searchParams }: Pick<PageProps<"/profile">, "searchParams">) {
+  const { deletion } = await searchParams;
+  return <DeletionNotice status={typeof deletion === "string" ? deletion : undefined} />;
+}
+
+export default function ProfilePage({ searchParams }: PageProps<"/profile">) {
   return (
     // Phones and tablets get the single settings column. From lg a preview of the public profile sits in a
     // sticky rail beside the settings, so a change can be checked against what others will see.
@@ -44,6 +50,9 @@ export default function ProfilePage() {
     >
       <div className="flex max-w-md flex-col gap-6 lg:max-w-2xl">
         <h1 className="text-title text-content">Profile</h1>
+        <Suspense fallback={null}>
+          <Notice searchParams={searchParams} />
+        </Suspense>
         <Suspense fallback={<div className="h-64 animate-skeleton rounded-lg bg-surface-sunken" />}>
           <ProfileDetails />
         </Suspense>
@@ -53,6 +62,10 @@ export default function ProfilePage() {
             <WhatsAppConsent />
           </Suspense>
         </div>
+        {/* Download my data and Delete my account (#333). */}
+        <Suspense fallback={<div className="h-32 animate-skeleton rounded-lg bg-surface-sunken" />}>
+          <DataRightsSection />
+        </Suspense>
         <Suspense fallback={<div className="h-48 animate-skeleton rounded-lg bg-surface-sunken" />}>
           <VerifiedSkillsSection />
         </Suspense>

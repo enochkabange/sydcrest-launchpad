@@ -374,6 +374,15 @@ Nav: Footer only, correct.
 | `/review` | Five quick questions from passed topics | Start | Entry is the "This week" card; fine as an item, but it shares the word "review" with peer and portfolio reviews: rename "Quick quiz" or "Recap". |
 | `/study-buddy` | Ask and plan next steps | Ask | Should open in context from lessons (it does); the page itself is a fallback. Rail: what it can do. |
 
+### `/progress` My progress (#337)
+- **Audience**: signed in learners. **Job**: show what SydCrest knows about their own progress and what to do next.
+- **Primary**: the next step with the biggest readiness gain. **Secondary**: study rhythm, quiz trend, time to finish, suggestions.
+- **Priority**: 1 study rhythm (streak, days learned, usual time, topics, quizzes, pace, quiz trend, time to finish); 2 readiness per track (band first, parts as points, one or two next steps); 3 rail: suggestions, about this page.
+- **States**: new (no rows yet: honest empty states, browse roadmaps); learning; readiness not computed yet (shows the day after a first topic); readiness switched off (`READINESS_FOR_LEARNERS` not `on`, the default: no readiness block).
+- **Copy**: kind, never comparing with anyone; the score only as "n of 100" under the parts, never on its own.
+- **Phone**: rhythm, readiness, then suggestions. **Desktop**: `MainWithRail`, each section its own Suspense island.
+- **Nav**: Learn group, "My progress".
+
 ### `/skills/[slug]/quiz`, `/skills/[slug]/portfolio`
 - **Audience**: L. **Job**: prove one skill. **Primary**: submit. States: retry window, pending review, verified.
 - **Nav**: from `/skills/[slug]` only; correct (a task page).
@@ -399,6 +408,7 @@ Nav: Footer only, correct.
 - **States**: no cohorts (404 for non staff; explainer for an admin), empty queue, busy.
 - **Phone**: queue first; grid becomes a list. **Desktop**: `DataTable` roster with the cohort switcher in the rail (done).
 - **Nav**: Experts → Mentor console (staff). Should be "Your work". The rail links to `/certificates/issue` for the cohort.
+- **Caseload (#325, #330)**: the console opens on the Caseload, the week's starting list: learners sorted by early warning risk, then longest since contact, then nearest deadline, each with reasons in plain words and one tap Message, Call or Session logging. Chapter leads get the same list for their members on `/chapters/[slug]`.
 
 ### `/expert`, `/expert/offers/new`, `/expert/offers/[id]`
 - **Audience**: E (explainer for others). **Job**: run my expert listing: answer requests, keep offers current.
@@ -460,6 +470,13 @@ See section 3 hubs.
 - **Cut / move / collapse**: `/profile` also has a "Report outcome" card; keep one entry (this page) and link to it.
 - **Nav**: Earn → Outcomes.
 
+### `/outcomes/check-in/[id]` Outcome check in (#329)
+- **Audience**: L who finished a cohort or a track 3, 6 or 12 months ago. **Job**: say what they are doing now in two minutes. **Primary**: send answers (only the status is required; place, earnings band, skills and the consent to be counted in sponsor reports are optional).
+- **Entry**: the in app notification (and WhatsApp with consent) from the daily job, and the "How are things going?" panel on `/outcomes`.
+
+### `/print/outcomes` Printable impact report (#329)
+- **Audience**: sponsors (`?sponsorship=`) and admins (`?scope=&id=`). **Job**: print or save as PDF a 3, 6 or 12 month report. No app chrome; the browser's print dialog makes the PDF.
+
 ### `/talent/me` Your talent listing
 - **Audience**: adult L who are eligible (certificate or verified skill). **Job**: be findable by verified organisations and answer contact requests.
 - **Primary**: turn the listing on. **Secondary**: answer requests, edit summary.
@@ -504,6 +521,11 @@ Orphan; fold into `/opportunities` as a "Saved" filter (section 1).
 - **Cut / move / collapse**: the new onboarding should ask the first two groups and link here for the rest.
 - **Nav**: from the About you card on `/profile` and on the dashboard (until half are answered).
 
+### `/profile/delete` and `/profile/data`
+- **Audience**: every signed in type. **Job**: use my data rights myself (#333, Act 843): download a copy, or delete my account.
+- **Primary**: on `/profile#your-data`, Download my data (`/profile/data` returns a JSON file) and Delete my account. `/profile/delete` says what is deleted and what is kept, then starts a 7 day grace period; Keep my account on `/profile` cancels it.
+- **Nav**: the Your data section of `/profile` (Settings).
+
 ### `/u/[slug]`, `/a/[id]`, `/verify/[id]` (+ `credential.json`, `credential.jwt`), `/badges/*` (JSON)
 | Route | Audience | Job | Notes |
 |---|---|---|---|
@@ -538,6 +560,9 @@ and the record in another from lg. Every page checks `requireAdmin` itself.
 | `/admin/organisations` | Verify organisations | verify / reject | |
 | `/admin/outcomes` | Verify reported outcomes | verify | Feeds `/impact`. |
 | `/admin/insights`, `/funnel`, `/retention`, `/learning`, `/features`, `/cohorts`, `/earn`, `/community`, `/reliability` | Read reporting dashboards | filter, download CSV | Filters in the URL; definitions at the foot of each (#243, `docs/analytics.md` §8). |
+| `/admin/insights/experiments` | Read each experiment's variants and how many came back | download CSV | "Not enough data yet" until a variant has enough measured people (#327, `docs/analytics.md` §13). |
+| `/admin/experiments` | Create, start and stop experiments, holdouts and flags | save as draft, start, stop | Draft to running to stopped, never back; the split is fixed once started. |
+| `/admin/learners`, `/[id]`, `/audit`, `/deletions` | Find a member and help them (#332) | search, note, resend confirmation, fix role, pause | Every search, page view and action is in the audit log; pending account deletions (#333). |
 | `/admin/opportunities`, `/new`, `/[id]` | Curate the public board | post | |
 | `/admin/events`, `/new`, `/[id]` | Create events, links, recordings | create | |
 | `/admin/chapters`, `/new`, `/[id]` | Create chapters, appoint leads | appoint | |
@@ -548,9 +573,11 @@ and the record in another from lg. Every page checks `requireAdmin` itself.
 | `/admin/skills/reviewers` | Appoint portfolio reviewers (D3, #248) | Make reviewer (by sign in email) | Lists names only; remove with one button. |
 | `/admin/roadmaps`, `/new`, `/[id]`, `/[id]/nodes/[nodeId]`, `/links` | Author roadmaps, nodes, links; link health | publish | |
 | `/admin/content` | Generate and review node content | estimate / submit | Needs the AI key (503 otherwise). |
+| `/admin/content/quality` | Rewrite queue: lessons and questions most worth fixing, with the evidence | change window | Counts only (#326, `docs/analytics.md` §13). |
 | `/admin/certificates` | Find and revoke certificates | revoke | |
 | `/admin/reports` | Act on profile and post reports | resolve / unpublish | |
 | `/admin/funnel`, `/admin/impact` | Read the funnel and the North Star | none | Dashboards are #243. |
+| `/admin/check-ins` | Check in totals and impact reports by cohort, programme or chapter | show report | Printable version at `/print/outcomes`. |
 
 ---
 
@@ -622,6 +649,7 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 |---|---|---|
 | `/admin/applications` | page | 8 Admin |
 | `/admin/certificates` | page | 8 Admin |
+| `/admin/check-ins` | page | 8 Admin |
 | `/admin/chapters/[id]` | page | 8 Admin |
 | `/admin/chapters/new` | page | 8 Admin |
 | `/admin/chapters` | page | 8 Admin |
@@ -629,6 +657,7 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/admin/sponsorships` | page | 8 Admin |
 | `/admin/cohorts/[id]` | page | 8 Admin |
 | `/admin/cohorts` | page | 8 Admin |
+| `/admin/content/quality` | page | 8 Admin |
 | `/admin/content` | page | 8 Admin |
 | `/admin/events/[id]` | page | 8 Admin |
 | `/admin/events/new` | page | 8 Admin |
@@ -701,6 +730,8 @@ Every `page.tsx`, `route.ts` and `route.tsx` under `src/app`, with the section a
 | `/org` | page | 6 Earn |
 | `/outcomes/[id]/edit` | page | 6 Earn |
 | `/outcomes/new` | page | 6 Earn |
+| `/outcomes/check-in/[id]` | page | 6 Earn |
+| `/print/outcomes` | page | 6 Earn |
 | `/outcomes` | page | 6 Earn |
 | `/path` | page | 3 Learn |
 | `/profile` | page | 7 Account |

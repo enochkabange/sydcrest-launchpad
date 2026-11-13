@@ -19,9 +19,19 @@ export type ListingValues = {
   open_to_remote: boolean;
   portfolio_url: string | null;
   is_active: boolean;
+  share_readiness: boolean;
 };
 
-export function ListingForm({ values, isNew }: { values: ListingValues; isNew: boolean }) {
+export function ListingForm({
+  values,
+  isNew,
+  canShareReadiness = false,
+}: {
+  values: ListingValues;
+  isNew: boolean;
+  /** READINESS_FOR_EMPLOYERS=on: offer the readiness sharing box (#336). */
+  canShareReadiness?: boolean;
+}) {
   const [state, action, pending] = useActionState<ListingState, FormData>(saveListing, {});
   return (
     <form data-analytics-form="talent_listing" key={state.saved ?? 0} action={action} className="flex flex-col gap-4" noValidate>
@@ -89,6 +99,14 @@ export function ListingForm({ values, isNew }: { values: ListingValues; isNew: b
       <CheckboxField id="open_to_remote" defaultChecked={values.open_to_remote}>
         I am open to remote work
       </CheckboxField>
+      {canShareReadiness && (
+      <CheckboxField id="share_readiness" defaultChecked={values.share_readiness}>
+        Show organisations my readiness band for my tracks (optional).{" "}
+        <span className="text-content-2">
+          They see a band (Getting started, Building or Job ready) and my approved portfolio pieces, never a score.
+        </span>
+      </CheckboxField>
+      )}
       <TextField
         id="portfolio_url"
         label="Portfolio link (optional)"

@@ -68,22 +68,37 @@ export function shouldNudge(
   return true;
 }
 
-export type ReengageSummary = { considered: number; sent: number; skipped: number; failed: number };
+/** heldOut: people due a nudge whom the reengage_holdout experiment held back (issue #327). */
+export type ReengageSummary = { considered: number; sent: number; skipped: number; failed: number; heldOut: number };
+
+/**
+ * The holdout (issue #327): which arm a learner is in, and a way to note it
+ * the first time. The holdout arm gets no nudge, so the dashboard can compare
+ * how many come back with and without one. Learners in the nudge arm are
+ * noted only once a message was sent to them.
+ */
+export interface ReengageExperiment {
+  arm(candidate: Candidate): "nudge" | "holdout";
+  /** Never throws. */
+  record(candidate: Candidate, arm: "nudge" | "holdout"): Promise<void>;
+}
 
 export async function runReengage({
   store,
   send,
   version,
+  experiment,
   now = new Date(),
 }: {
   store: ReengageStore;
   send: (candidate: Candidate) => Promise<DeliveryResult>;
   version: string;
+  experiment?: ReengageExperiment | null;
   now?: Date;
 }): Promise<ReengageSummary> {
   const candidates = await store.consentingLearners(version);
   const progress = await store.lastProgressAt(candidates.map((c) => c.profileId));
-  const summary: ReengageSummary = { considered: candidates.length, sent: 0, skipped: 0, failed: 0 };
+  const summary: ReengageSummary = { considered: candidates.length, sent: 0, skipped: 0, failed: 0, heldOut: 0 };
 
   for (const candidate of candidates) {
     const auth = await store.authInfo(candidate.profileId);
@@ -91,9 +106,15 @@ export async function runReengage({
       summary.skipped++;
       continue;
     }
+    if (experiment?.arm(candidate) === "holdout") {
+      summary.heldOut++;
+      await experiment.record(candidate, "holdout");
+      continue;
+    }
     const result = await send(candidate);
     if (result.status === "sent") {
       summary.sent++;
+      if (experiment) await experiment.record(candidate, "nudge");
       try {
         await store.markNudged(candidate.profileId, now);
       } catch (err) {
@@ -106,7 +127,7 @@ export async function runReengage({
       summary.skipped++;
       // Not configured: every later send would skip too, so stop early.
       if (result.reason === "not_configured") {
-        summary.skipped += candidates.length - (summary.sent + summary.skipped + summary.failed);
+        summary.skipped += candidates.length - (summary.sent + summary.skipped + summary.failed + summary.heldOut);
         break;
       }
     }
