@@ -61,6 +61,41 @@ export type Database = {
         }
         Relationships: []
       }
+      achievements: {
+        Row: {
+          created_at: string
+          id: string
+          metadata: Json
+          profile_id: string
+          ref_id: string | null
+          type: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          metadata?: Json
+          profile_id: string
+          ref_id?: string | null
+          type: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          metadata?: Json
+          profile_id?: string
+          ref_id?: string | null
+          type?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "achievements_profile_id_fkey"
+            columns: ["profile_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       admin_audit_log: {
         Row: {
           action: string
@@ -97,41 +132,6 @@ export type Database = {
           {
             foreignKeyName: "admin_audit_log_target_profile_id_fkey"
             columns: ["target_profile_id"]
-            isOneToOne: false
-            referencedRelation: "profiles"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      achievements: {
-        Row: {
-          created_at: string
-          id: string
-          metadata: Json
-          profile_id: string
-          ref_id: string | null
-          type: string
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          metadata?: Json
-          profile_id: string
-          ref_id?: string | null
-          type: string
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          metadata?: Json
-          profile_id?: string
-          ref_id?: string | null
-          type?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "achievements_profile_id_fkey"
-            columns: ["profile_id"]
             isOneToOne: false
             referencedRelation: "profiles"
             referencedColumns: ["id"]
@@ -5953,7 +5953,10 @@ export type Database = {
       }
       due_deletion_requests: {
         Args: { p_limit?: number }
-        Returns: { id: string; profile_id: string }[]
+        Returns: {
+          id: string
+          profile_id: string
+        }[]
       }
       event_feedback_summary: {
         Args: { p_event_id: string }
@@ -6030,7 +6033,7 @@ export type Database = {
           id: string
           issued_at: string
           issued_by: string | null
-          profile_id: string
+          profile_id: string | null
           program_id: string
           program_title: string
           recipient_name: string
@@ -6251,7 +6254,7 @@ export type Database = {
           id: string
           issued_at: string
           issued_by: string | null
-          profile_id: string
+          profile_id: string | null
           program_id: string
           program_title: string
           recipient_name: string
