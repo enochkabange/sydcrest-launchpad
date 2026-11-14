@@ -5,7 +5,7 @@ import { redirect } from "next/navigation";
 import { requireUser } from "@/lib/auth";
 import { createClient } from "@/lib/supabase/server";
 
-/** "Delete my account": starts the seven day grace period (issue #333). Re-checks the user. */
+/** "Delete my account": starts the 30 day grace period (issue #333). Re-checks the user. */
 export async function requestAccountDeletion() {
   await requireUser();
   const supabase = await createClient();

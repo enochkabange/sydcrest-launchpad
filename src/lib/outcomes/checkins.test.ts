@@ -129,6 +129,7 @@ describe("runOutcomeCheckins", () => {
       markSkipped: async (ids) => void calls.skipped.push(...ids),
       whatsappNumbers: async () => new Map([[MARIAMA, { phone: "+233200000000", displayName: "Mariama Seidu" }]]),
       notify: async (profileId) => void calls.notified.push(profileId),
+      accountEmail: async (profileId) => ({ email: `${profileId.slice(0, 4)}@example.test`, displayName: null }),
       recordSent: async (months) => void calls.events.push(...months),
     };
     return { store, calls };
@@ -145,10 +146,26 @@ describe("runOutcomeCheckins", () => {
         return { status: "skipped", reason: "not_configured" };
       },
     });
-    expect(summary).toEqual({ created: 2, sent: 2, skipped: 0, whatsapp: 0, failed: 0 });
+    expect(summary).toEqual({ created: 2, sent: 2, skipped: 0, whatsapp: 0, email: 0, failed: 0 });
     expect(calls.notified).toEqual([WUMPINI, MARIAMA]);
     expect(whatsapp.map((w) => w.phone)).toEqual(["+233200000000"]);
     expect(calls.events).toEqual([6, 6]);
+  });
+
+  it("also emails every learner's account address when email is wired in", async () => {
+    const { store } = fakeStore([cohortFinish(WUMPINI, "2026-03-30"), cohortFinish(MARIAMA, "2026-03-30")]);
+    const emailed: string[] = [];
+    const summary = await runOutcomeCheckins({
+      store,
+      today: "2026-10-01",
+      sendWhatsApp: async () => ({ status: "skipped", reason: "not_configured" }),
+      sendEmail: async (email) => {
+        emailed.push(email);
+        return { status: "sent" };
+      },
+    });
+    expect(emailed).toHaveLength(2);
+    expect(summary.email).toBe(2);
   });
 
   it("does nothing when no finish is due", async () => {

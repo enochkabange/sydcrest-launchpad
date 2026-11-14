@@ -84,8 +84,8 @@ export default function PrivacyPage() {
           a track, we ask how things are going: what you are doing now (working, running a business,
           freelancing, studying, looking for work or something else), where (optional), your monthly
           earnings as a band in cedis (optional, and you can choose not to say), which of your skills you
-          use, and whether your answers may count in sponsor reports. We send the question in the app, and
-          on WhatsApp only if you turned WhatsApp updates on. You do not have to answer. We use the answers
+          use, and whether your answers may count in sponsor reports. We send the question in the app and
+          to the email address you sign in with, and on WhatsApp only if you turned WhatsApp updates on. You do not have to answer. We use the answers
           to learn what helps people into work and to report our impact. Reports for sponsors show totals
           only, any number under five is hidden, and your answers are counted only if you agreed; your
           name never appears. Our administrators can read your answers. They are deleted with your
@@ -466,7 +466,7 @@ export default function PrivacyPage() {
       <ul>
         <li>
           <strong>Account details, date of birth, consent record and progress:</strong> for as long
-          as your account is open. When you delete your account we wait 7 days, in case you change
+          as your account is open. When you delete your account we wait 30 days, in case you change
           your mind, and then delete it, apart from what is listed under{" "}
           <a href="#your-rights">Your rights</a> and anything the law requires us to keep.
         </li>
@@ -506,7 +506,7 @@ export default function PrivacyPage() {
         </li>
         <li>
           <strong>Delete</strong> your account and personal data. You can do this yourself:{" "}
-          <strong>Delete my account</strong> on your profile. We wait 7 days, and you can cancel
+          <strong>Delete my account</strong> on your profile. We wait 30 days, and you can cancel
           from your profile until then. After that we delete your account, your personal data and the
           files you uploaded. We keep only the certificates we issued you, so anyone you shared one
           with can still check it is real (they show the name and programme on the certificate, and

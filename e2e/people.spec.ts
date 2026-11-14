@@ -25,10 +25,10 @@ test("a member downloads their data, then asks to delete their account and cance
   await section.getByRole("link", { name: "Delete my account", exact: true }).click();
   await expect(page.getByRole("heading", { name: "Delete my account", level: 1 })).toBeVisible();
   await expect(page.getByRole("heading", { name: "What we keep" })).toBeVisible();
-  await page.getByRole("button", { name: "Delete my account in 7 days" }).click();
+  await page.getByRole("button", { name: "Delete my account in 30 days" }).click();
 
   await expect(page).toHaveURL(/\/profile\?deletion=requested/);
-  await expect(page.getByText("We will delete your account in 7 days.")).toBeVisible();
+  await expect(page.getByText("We will delete your account in 30 days.")).toBeVisible();
   await expect(page.getByText(/Your account will be deleted on/)).toBeVisible();
   await page.getByRole("button", { name: "Keep my account" }).click();
 

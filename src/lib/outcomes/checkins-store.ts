@@ -74,6 +74,15 @@ export function supabaseCheckinStore(admin: AdminClient): CheckinStore {
       if (error) throw new Error(`notify_user: ${error.message}`);
     },
 
+    async accountEmail(profileId) {
+      const [{ data: user }, { data: profile }] = await Promise.all([
+        admin.auth.admin.getUserById(profileId),
+        admin.from("profiles").select("display_name").eq("id", profileId).maybeSingle(),
+      ]);
+      if (!user?.user) return null;
+      return { email: user.user.email ?? null, displayName: profile?.display_name ?? null };
+    },
+
     async recordSent(months) {
       // A count with no person attached: the cron has no session, and the
       // service role records the event without a profile.

@@ -37,7 +37,7 @@ async function Confirm({ searchParams }: Pick<PageProps<"/profile/delete">, "sea
   );
 }
 
-/** "Delete my account" (issue #333): what goes, what stays, and the seven day grace period. */
+/** "Delete my account" (issue #333): what goes, what stays, and the 30 day grace period. */
 export default function DeleteAccountPage({ searchParams }: PageProps<"/profile/delete">) {
   return (
     <div className="flex max-w-reading flex-col gap-6">
