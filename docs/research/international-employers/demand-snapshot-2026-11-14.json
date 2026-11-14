@@ -1,0 +1,358 @@
+{
+ "sources_total_unique_ids": {
+  "Himalayas": 2635,
+  "Jobicy": 1504,
+  "Remotive": 16,
+  "Remote OK": 97,
+  "We Work Remotely": 483,
+  "Arbeitnow": 164
+ },
+ "deduped_total": 4528,
+ "fx_date": "2026-11-13",
+ "tracks": {
+  "Data Analyst": {
+   "n": 233,
+   "sen_junior": 16,
+   "sen_mid": 112,
+   "sen_senior": 105,
+   "loc_worldwide": 1,
+   "loc_africa": 6,
+   "loc_emea": 1,
+   "loc_europe-only": 22,
+   "loc_europe-board-default": 0,
+   "loc_uk-only": 13,
+   "loc_us-only": 121,
+   "loc_other-multi": 69,
+   "loc_unclear": 0,
+   "gh_yes": 1,
+   "gh_yes_junior": 0,
+   "gh_likely": 2,
+   "gh_likely_junior": 0,
+   "gh_check": 0,
+   "gh_check_junior": 0,
+   "gh_unclear": 0,
+   "gh_unclear_junior": 0,
+   "gh_no": 230,
+   "gh_no_junior": 16,
+   "ghana_mentioned": 1,
+   "africa_mentioned": 4,
+   "junior_and_ghana_yes_or_likely": 0,
+   "junior_upper_bound_incl_years": 16
+  },
+  "Digital Marketing": {
+   "n": 1103,
+   "sen_junior": 192,
+   "sen_mid": 401,
+   "sen_senior": 510,
+   "loc_worldwide": 30,
+   "loc_africa": 66,
+   "loc_emea": 4,
+   "loc_europe-only": 122,
+   "loc_europe-board-default": 15,
+   "loc_uk-only": 37,
+   "loc_us-only": 381,
+   "loc_other-multi": 445,
+   "loc_unclear": 3,
+   "gh_yes": 14,
+   "gh_yes_junior": 4,
+   "gh_likely": 31,
+   "gh_likely_junior": 1,
+   "gh_check": 0,
+   "gh_check_junior": 0,
+   "gh_unclear": 3,
+   "gh_unclear_junior": 1,
+   "gh_no": 1055,
+   "gh_no_junior": 186,
+   "ghana_mentioned": 16,
+   "africa_mentioned": 36,
+   "junior_and_ghana_yes_or_likely": 5,
+   "junior_upper_bound_incl_years": 197
+  },
+  "Frontend Developer": {
+   "n": 285,
+   "sen_junior": 18,
+   "sen_mid": 121,
+   "sen_senior": 146,
+   "loc_worldwide": 9,
+   "loc_africa": 14,
+   "loc_emea": 0,
+   "loc_europe-only": 74,
+   "loc_europe-board-default": 1,
+   "loc_uk-only": 7,
+   "loc_us-only": 72,
+   "loc_other-multi": 107,
+   "loc_unclear": 1,
+   "gh_yes": 10,
+   "gh_yes_junior": 1,
+   "gh_likely": 3,
+   "gh_likely_junior": 0,
+   "gh_check": 1,
+   "gh_check_junior": 0,
+   "gh_unclear": 1,
+   "gh_unclear_junior": 0,
+   "gh_no": 270,
+   "gh_no_junior": 17,
+   "ghana_mentioned": 5,
+   "africa_mentioned": 5,
+   "junior_and_ghana_yes_or_likely": 1,
+   "junior_upper_bound_incl_years": 19
+  }
+ },
+ "by_source": {
+  "Arbeitnow": {
+   "n": 16,
+   "junior": 3,
+   "ghana": 0,
+   "us": 0
+  },
+  "Himalayas": {
+   "n": 1471,
+   "junior": 217,
+   "ghana": 25,
+   "us": 542
+  },
+  "Jobicy": {
+   "n": 83,
+   "junior": 3,
+   "ghana": 5,
+   "us": 24
+  },
+  "Remote OK": {
+   "n": 7,
+   "junior": 1,
+   "ghana": 0,
+   "us": 4
+  },
+  "We Work Remotely": {
+   "n": 44,
+   "junior": 2,
+   "ghana": 31,
+   "us": 4
+  }
+ },
+ "pay": {
+  "Data Analyst|junior": {
+   "n": 5,
+   "p25": 70000.0,
+   "median": 82500.0,
+   "p75": 85000.0,
+   "min": 67500,
+   "max": 168500
+  },
+  "Data Analyst|mid": {
+   "n": 36,
+   "p25": 71062.5,
+   "median": 86542.0,
+   "p75": 97346.0,
+   "min": 2948,
+   "max": 141900
+  },
+  "Data Analyst|senior": {
+   "n": 50,
+   "p25": 106234.75,
+   "median": 123868.5,
+   "p75": 150000.0,
+   "min": 49732,
+   "max": 200000
+  },
+  "Data Analyst|all": {
+   "n": 91,
+   "p25": 85000.0,
+   "median": 103112.0,
+   "p75": 131500.0,
+   "min": 2948,
+   "max": 200000
+  },
+  "Digital Marketing|junior": {
+   "n": 43,
+   "p25": 16800.0,
+   "median": 33000.0,
+   "p75": 67500.0,
+   "min": 7500,
+   "max": 284978
+  },
+  "Digital Marketing|mid": {
+   "n": 111,
+   "p25": 30000.0,
+   "median": 59800.0,
+   "p75": 75000.0,
+   "min": 6366,
+   "max": 228121
+  },
+  "Digital Marketing|senior": {
+   "n": 202,
+   "p25": 73125.0,
+   "median": 107000.0,
+   "p75": 150000.0,
+   "min": 5046,
+   "max": 320950
+  },
+  "Digital Marketing|all": {
+   "n": 356,
+   "p25": 47367.75,
+   "median": 77500.0,
+   "p75": 122559.5,
+   "min": 5046,
+   "max": 320950
+  },
+  "Frontend Developer|junior": {
+   "n": 2,
+   "p25": 37536.0,
+   "median": 52524.0,
+   "p75": 67512.0,
+   "min": 22548,
+   "max": 82500
+  },
+  "Frontend Developer|mid": {
+   "n": 31,
+   "p25": 46446.5,
+   "median": 92500.0,
+   "p75": 140000.0,
+   "min": 12600,
+   "max": 197050
+  },
+  "Frontend Developer|senior": {
+   "n": 41,
+   "p25": 115000.0,
+   "median": 152106.0,
+   "p75": 192484.0,
+   "min": 14400,
+   "max": 275000
+  },
+  "Frontend Developer|all": {
+   "n": 74,
+   "p25": 64260.75,
+   "median": 136250.0,
+   "p75": 169500.0,
+   "min": 12600,
+   "max": 275000
+  },
+  "Data Analyst|ghana-open": {
+   "n": 0,
+   "p25": null,
+   "median": null,
+   "p75": null
+  },
+  "Digital Marketing|ghana-open": {
+   "n": 6,
+   "p25": 56125.0,
+   "median": 70000.0,
+   "p75": 77500.0
+  },
+  "Frontend Developer|ghana-open": {
+   "n": 1,
+   "p25": 52000,
+   "median": 52000,
+   "p75": 52000
+  }
+ },
+ "ghana_pool": {
+  "Data Analyst": {
+   "n": 11,
+   "junior": 0,
+   "mid": 9,
+   "senior": 2,
+   "explicit": 10,
+   "n_sal": 1,
+   "median": 55813,
+   "p25": 55813,
+   "p75": 55813,
+   "pay_junior": {
+    "n": 0,
+    "median": null,
+    "p25": null,
+    "p75": null
+   },
+   "pay_mid": {
+    "n": 1,
+    "median": 55813,
+    "p25": 55813,
+    "p75": 55813
+   },
+   "pay_senior": {
+    "n": 0,
+    "median": null,
+    "p25": null,
+    "p75": null
+   }
+  },
+  "Digital Marketing": {
+   "n": 103,
+   "junior": 10,
+   "mid": 15,
+   "senior": 78,
+   "explicit": 90,
+   "n_sal": 20,
+   "median": 99704.0,
+   "p25": 60375.0,
+   "p75": 122337.25,
+   "pay_junior": {
+    "n": 1,
+    "median": 13200,
+    "p25": 13200,
+    "p75": 13200
+   },
+   "pay_mid": {
+    "n": 4,
+    "median": 56750.0,
+    "p25": 45750.0,
+    "p75": 70021.5
+   },
+   "pay_senior": {
+    "n": 15,
+    "median": 108500.0,
+    "p25": 88484.0,
+    "p75": 133299.5
+   }
+  },
+  "Frontend Developer": {
+   "n": 27,
+   "junior": 2,
+   "mid": 15,
+   "senior": 10,
+   "explicit": 13,
+   "n_sal": 5,
+   "median": 66312.0,
+   "p25": 59000.0,
+   "p75": 88400.0,
+   "pay_junior": {
+    "n": 1,
+    "median": 59000,
+    "p25": 59000,
+    "p75": 59000
+   },
+   "pay_mid": {
+    "n": 2,
+    "median": 70200.0,
+    "p25": 61100.0,
+    "p75": 79300.0
+   },
+   "pay_senior": {
+    "n": 2,
+    "median": 90656.0,
+    "p25": 78484.0,
+    "p75": 102828.0
+   }
+  }
+ },
+ "himalayas_totals": {
+  "hgh_data_analyst_GH_p1.json": 61,
+  "hgh_data_analyst_GHonly.json": 43,
+  "hgh_data_analyst_all.json": 5000,
+  "hgh_digital_marketing_GH_p1.json": 95,
+  "hgh_digital_marketing_GHonly.json": 79,
+  "hgh_digital_marketing_all.json": 5000,
+  "hgh_front_end_GH_p1.json": 71,
+  "hgh_front_end_GHonly.json": 38,
+  "hgh_front_end_all.json": 3173,
+  "hgh_frontend_developer_GH_p1.json": 49,
+  "hgh_frontend_developer_GHonly.json": 27,
+  "hgh_frontend_developer_all.json": 2656,
+  "hgh_marketing_GH_p1.json": 268,
+  "hgh_marketing_GHonly.json": 216,
+  "hgh_marketing_all.json": 5000,
+  "hgh_react_developer_GH_p1.json": 68,
+  "hgh_react_developer_GHonly.json": 36,
+  "hgh_react_developer_all.json": 3129
+ }
+}

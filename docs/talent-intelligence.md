@@ -2,7 +2,8 @@
 
 Status: proposal, 14 November 2026 (updated the same day with employer
 assessments, international remote employers, the market research brief and
-the employer interview guide). Replaces the idea of a single readiness
+the employer interview guide; desk research findings added in section 15).
+Replaces the idea of a single readiness
 score (v1 in `docs/readiness.md`, staff only) with four connected parts:
 evidence of ability, the labour market, a predictive model, and personal
 growth guidance, plus employer tooling and positioning for international
@@ -523,6 +524,10 @@ behaviour, not opinions about SydCrest. Show nothing until the last part.
 2. Which do you prefer: a placement fee, a subscription, or paying per
    shortlist? Why?
 3. What guarantee would make a placement fee easy to agree to?
+4. For a full-time junior, would you rather pay a monthly all-in rate or a
+   one-off fee? What monthly cost would you expect?
+5. Have you hired from the Philippines, India or Latin America? Why there,
+   and what would make Ghana a better choice?
 
 ### Close
 
@@ -539,7 +544,116 @@ behaviour, not opinions about SydCrest. Show nothing until the last part.
 - Show the SydCrest concept only at the end, if there is time, and record
   the reaction separately from the earlier answers.
 
-## 15. Founder decisions
+## 15. Desk research findings (14 November 2026)
+
+The desk part of section 13, done in one day. The full reports, with a
+source for every claim, are in `docs/research/international-employers/`.
+Claims marked unverified there are not used here as fact. The employer
+interviews and the 8 weeks of demand tracking are still to come.
+
+### Headlines
+
+1. **The junior slot is empty.** The networks buyers know have moved
+   up-market or out of placement: Toptal sells the "top 3%", Lemon.io
+   accepts 1.2% of applicants, Andela now sells AI delivery and Turing moved
+   to AI training data. No one found sells trained Ghanaian junior data or
+   marketing talent to UK or EU employers. Blossom Academy runs our tracks
+   but places locally.
+2. **Public remote boards show very few junior roles open to Ghana** (see
+   the table below). Demand will have to be created with employers
+   directly, through agencies and employer-of-record-backed hiring.
+   Responding to public job posts will not be enough.
+3. **Digital Marketing is the strongest track for remote work. Data Analyst
+   is the weakest.** Data Analyst remote roles open to Ghana are rare and
+   none were junior. Data skills sell better as marketing analytics, or
+   to local and regional employers.
+4. **The real price anchor is offshore, not the US.** Junior Digital
+   Marketing roles open outside the US and EU have a median pay of about
+   USD 18k a year (20 postings), against USD 67k for US-only roles. We
+   compete with the Philippines, India and Latin America, and win on time
+   zone and evidence, not on price.
+5. **Employer of record works but is expensive for juniors.**
+   - Deel confirms Ghana coverage from USD 599 a month, and Multiplier,
+     Pebl, Atlas and G-P list Ghana.
+   - For a USD 1,000 a month salary the employer pays about USD 1,130
+     before the fee, so USD 1,590 to 1,830 in total. The worker takes home
+     about USD 743.
+   - The contractor route is cheaper, but the misclassification risk stays
+     with the employer.
+6. **A percentage placement fee earns little on Ghanaian salaries.** UK
+   agencies charge 15 to 20% of first-year pay, with a guarantee tied to a
+   3-month probation. On a USD 12k to 20k salary that is USD 1.8k to 4k.
+   Buyers will also expect a free trial of up to 2 weeks and a replacement
+   guarantee.
+7. **The middle price band looks unclaimed.** Roughly USD 1k to 2.5k a
+   month all-in for a full-time, trained and mentored junior. The floor is
+   Breedj at EUR 390 a month for assistants. Asian vetted talent is about
+   USD 23 to 39 an hour. This band is our inference, not a published price.
+8. **Getting paid is solved.** Workers can receive dollars, euros or pounds
+   through Payoneer or Grey and withdraw to a bank or mobile money. Press
+   reports say the Bank of Ghana treated freelance earnings as service
+   exports from April 2026.
+9. **Act 843 is manageable.**
+   - DPC registration costs GHS 156 for a small business and is renewed
+     every 2 years.
+   - People can object to decisions made solely by automated means, which
+     matches our human-review rule.
+   - We found no specific cross-border transfer clause, but we will still
+     ask for consent naming the destination countries.
+   - A new bill covering AI was announced in March 2026 and is not yet
+     law.
+
+Snapshot of 1,621 remote postings from six public feeds, 14 November 2026:
+
+| Track | Postings | Junior | Open to Ghana | Junior and open to Ghana | US only |
+|---|---|---|---|---|---|
+| Digital Marketing | 1,103 | 17% | 45 (4%) | 5 | 35% |
+| Frontend | 285 | 6% | 13 (5%) | 1 | 25% |
+| Data Analyst | 233 | 7% | 3 (1%) | 0 | 52% |
+
+Counts are a one-day sample, about plus or minus 15% from keyword
+classification. One board supplies most rows.
+
+### Hypotheses after desk research
+
+| # | Hypothesis | Status | Why |
+|---|---|---|---|
+| H1 | UK and EU small firms hire junior remote staff in our tracks | Weak on public boards | Few junior roles open to Ghana. Hidden demand through direct hiring and agencies must be tested in the interviews |
+| H2 | Trust in ability and reliability is the main barrier | Untested, indirect support | Competitors lead with vetting, trials and guarantees |
+| H3 | Work samples beat CVs and certificates | Untested | Interviews |
+| H4 | Buyers will pay a placement fee with a guarantee | Mixed | The norm exists, but a percentage of a Ghanaian salary is small. Test a flat fee and a monthly margin |
+| H5 | Employer of record makes hiring easy enough | Mixed | Coverage exists, but the fee adds 46 to 70% to a USD 1,000 salary |
+| H6 | Time-zone overlap is a real advantage | Untested | Ghana-open roles come mostly from EMEA-time-zone and global firms, which is consistent |
+| H7 | Buyers want extra tests and would use ours | Untested | Interviews |
+
+### What changes now
+
+- **Offer to test in the interviews:**
+  - a monthly all-in rate in the USD 1k to 2.5k band, including employer
+    of record, mentoring and a replacement guarantee;
+  - or a flat placement fee;
+  - in both cases a free trial of up to 2 weeks.
+- **Lead with Digital Marketing.** Position data skills as marketing
+  analytics for remote roles, and plan Data Analyst outcomes around local
+  and regional employers.
+- **Partners to approach:** Deel first, then Multiplier, plus one
+  Africa-based employer-of-record provider for cheaper junior pricing.
+  Payoneer or Grey for contractors.
+- **Add these questions to the interview guide:**
+  - Would you pay a monthly rate or a flat fee?
+  - What monthly cost would you expect for a full-time junior?
+  - Have you hired from the Philippines or Latin America, and why?
+- **Demand tracking:** run `scripts/market-demand` weekly for 8 weeks, and
+  add talent marketplaces and Africa-focused boards where their terms allow.
+- **Still to confirm:**
+  - whether Remote's Ghana service is live;
+  - Oyster's Ghana coverage;
+  - the exact wording of Act 843 sections;
+  - the DPC fee schedule;
+  - whether the Bank of Ghana's repatriation rule applies to service
+    income.
+
+## 16. Founder decisions
 
 1. The three pilot tracks for P0. Proposed: Data Analyst, Digital Marketing,
    Frontend.
@@ -559,3 +673,6 @@ behaviour, not opinions about SydCrest. Show nothing until the last part.
     15 employer interviews.
 11. The first international segment to test. Proposed: UK and EU small and
     mid-sized firms.
+12. Following the desk research (section 15): lead with Digital Marketing
+    for international employers, and keep Data Analyst for local and
+    regional employers and marketing analytics?
