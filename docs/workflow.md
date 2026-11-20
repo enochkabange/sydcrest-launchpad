@@ -47,3 +47,30 @@ CI gates. Use it when issues touch different files and different tables; keep
 work that shares a migration or a screen sequential. The founder's review time
 is the real limit, so parallel PRs should still be small enough to check on a
 preview in a few minutes.
+
+## Status report
+When the founder types `status report`, Claude runs the `status-report` skill
+and replies in this format every time. Read-only: it changes nothing, and
+section 9 only recommends. Live data only (GitHub, Vercel, Supabase). An empty
+section says "None"; a source that could not be reached says "Not checked
+(reason)". One screen, about 40 lines.
+
+```
+# SydCrest status · <date> · <N days to pilot | Pilot: Q1 2027 (date not set)>
+Sprint: <milestone>, <done>/<total> done, estimate <due>      Overall: 🟢 / 🟡 / 🔴
+
+1. Headline              the single most important thing right now
+2. Production health     Vercel deploy, Supabase advisors and errors (24h), CI on main, incidents
+3. Since last report     merged PRs, deployed to prod, decisions made
+4. Current sprint        progress, in progress, blocked / at risk, not started
+5. Open PRs              CI state and what each is waiting on
+6. Waiting on you        founder decisions and tasks, oldest first, with age and what they block
+7. Pilot critical path   each item ✅ / ⏳ / ❌ (pilot-blocker issues)
+8. Parked ideas          new backlog issues since last report, backlog count
+9. My recommendation     1 to 3 actions for this session, tied to the sprint goal
+```
+
+**Overall:** 🟢 production healthy, CI green, sprint on track. 🟡 sprint past
+its estimate, a founder item older than 7 days blocking the critical path, or
+advisor warnings. 🔴 production down or erroring, CI red on main, or a
+security error advisor.
